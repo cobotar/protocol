@@ -1,0 +1,11 @@
+syntax = "proto3";
+package messages.geometry;
+
+option go_package = "github.com/cobotar/messages/geometry";
+
+message Quad {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double w = 4;
+}
