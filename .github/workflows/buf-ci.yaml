@@ -27,6 +27,17 @@ jobs:
       - name: Generate proto messages
         run: buf generate
 
+      - name: Get next version
+        id: get_next_version
+        uses: thenativeweb/get-next-version@main
+        with:
+          prefix: 'v'
+
+      - name: Show the next version
+        run: |
+          echo ${{ steps.get_next_version.outputs.version }}
+          echo ${{ steps.get_next_version.outputs.hasNextVersion }}
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
@@ -34,3 +45,4 @@ jobs:
           author_email: lunding@me.com
           message: 'Generate new proto messages'
           add: '*.go'
+          tag: '${{ steps.get_next_version.outputs.version }}'
