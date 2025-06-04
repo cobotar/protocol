@@ -10,4 +10,3 @@ repos:
     rev: v1.6.0
     hooks:
      - id: buf-lint
-       args: [buf.yaml, --error-format=json]
