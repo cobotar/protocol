@@ -1,0 +1,8 @@
+syntax = "proto3";
+package common.v1;
+
+option go_package = "github.com/cobotar/protocol/messages/common";
+
+message Test {
+  string test = 1;
+}
