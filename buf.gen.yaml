@@ -1,0 +1,12 @@
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/cobotar/protocol/gen
+plugins:
+  - remote: buf.build/protocolbuffers/go
+    out: messages
+    opt: paths=source_relative
+inputs:
+  - directory: proto

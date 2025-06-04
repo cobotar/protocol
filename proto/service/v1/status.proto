@@ -1,11 +1,12 @@
 syntax = "proto3";
-package messages.service;
+package service.v1;
 
-option go_package = "github.com/cobotar/messages/service";
+option go_package = "github.com/cobotar/protocol/messages/service";
 
 enum Status {
-  OFFLINE = 0;
-  ONLINE = 1;
+  STATUS_UNSPECIFIED = 0;
+  STATUS_OFFLINE = 1;
+  STATUS_ONLINE = 2;
 }
 
 message Info {
