@@ -35,3 +35,12 @@ generate:
 .PHONY: verify
 verify: lint breaking generate
 	@echo 'Remember to check if new files were created!'
+
+
+## publish bump=$1: run checks, bump version, and publish
+.PHONY: publish
+publish: verify
+	@echo 'Verification complete'
+	bump-my-version bump ${bump}
+	git push --tags
+	@echo 'New version is published'
