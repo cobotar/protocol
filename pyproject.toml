@@ -27,7 +27,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://cobotar.org"
-Documentation = "https://readthedocs.org"
-Repository = "https://github.com/me/spam.git"
-"Bug Tracker" = "https://github.com/me/spam/issues"
-Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+Documentation = "https://cobotar.org/protocol"
+Repository = "https://github.com/cobotar/protocol.git"
+"Bug Tracker" = "https://github.com/cobotar/protocol/issues"
+Changelog = "https://github.com/cobotar/protocol/blob/master/CHANGELOG.md"
