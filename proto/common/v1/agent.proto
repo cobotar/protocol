@@ -4,7 +4,8 @@ package common.v1;
 import "common/v1/property.proto";
 import "geometry/v1/pose.proto";
 
-option go_package = "github.com/cobotar/protocol/messages/common";
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
 enum AgentType {
   AGENT_TYPE_UNSPECIFIED = 0;

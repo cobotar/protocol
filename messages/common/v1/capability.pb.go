@@ -136,8 +136,8 @@ const file_common_v1_capability_proto_rawDesc = "" +
 	"\apart_id\x18\x02 \x01(\tR\x06partId\x12%\n" +
 	"\x0eestimated_time\x18\x03 \x01(\x03R\restimatedTime\"I\n" +
 	"\fCapabilities\x129\n" +
-	"\fcapabilities\x18\x01 \x03(\v2\x15.common.v1.CapabilityR\fcapabilitiesB\x99\x01\n" +
-	"\rcom.common.v1B\x0fCapabilityProtoP\x01Z2github.com/cobotar/protocol/gen/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\tCommon.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\fcapabilities\x18\x01 \x03(\v2\x15.common.v1.CapabilityR\fcapabilitiesB\xa7\x01\n" +
+	"\rcom.common.v1B\x0fCapabilityProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

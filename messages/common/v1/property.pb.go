@@ -336,8 +336,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x06Origin\x12\x16\n" +
 	"\x12ORIGIN_UNSPECIFIED\x10\x00\x12\x10\n" +
 	"\fORIGIN_FIXED\x10\x01\x12\x11\n" +
-	"\rORIGIN_MIRROR\x10\x02B\x97\x01\n" +
-	"\rcom.common.v1B\rPropertyProtoP\x01Z2github.com/cobotar/protocol/gen/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\tCommon.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\rORIGIN_MIRROR\x10\x02B\xa5\x01\n" +
+	"\rcom.common.v1B\rPropertyProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

@@ -167,9 +167,8 @@ const file_tracker_v1_tracker_proto_rawDesc = "" +
 	"markerText*E\n" +
 	"\vTrackerType\x12\x1c\n" +
 	"\x18TRACKER_TYPE_UNSPECIFIED\x10\x00\x12\x18\n" +
-	"\x14TRACKER_TYPE_QR_CODE\x10\x01B\x9d\x01\n" +
-	"\x0ecom.tracker.v1B\fTrackerProtoP\x01Z4github.com/cobotar/protocol/gen/tracker/v1;trackerv1\xa2\x02\x03TXX\xaa\x02\n" +
-	"Tracker.V1\xca\x02\n" +
+	"\x14TRACKER_TYPE_QR_CODE\x10\x01B\xaa\x01\n" +
+	"\x0ecom.tracker.v1B\fTrackerProtoP\x01Z9github.com/cobotar/protocol/messages/tracker/v1;trackerv1\xa2\x02\x03TXX\xaa\x02\x12Messages.Common.V1\xca\x02\n" +
 	"Tracker\\V1\xe2\x02\x16Tracker\\V1\\GPBMetadata\xea\x02\vTracker::V1b\x06proto3"
 
 var (

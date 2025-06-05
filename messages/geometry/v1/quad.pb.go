@@ -98,8 +98,8 @@ const file_geometry_v1_quad_proto_rawDesc = "" +
 	"\x01x\x18\x01 \x01(\x01R\x01x\x12\f\n" +
 	"\x01y\x18\x02 \x01(\x01R\x01y\x12\f\n" +
 	"\x01z\x18\x03 \x01(\x01R\x01z\x12\f\n" +
-	"\x01w\x18\x04 \x01(\x01R\x01wB\xa1\x01\n" +
-	"\x0fcom.geometry.v1B\tQuadProtoP\x01Z6github.com/cobotar/protocol/gen/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\vGeometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\x01w\x18\x04 \x01(\x01R\x01wB\xad\x01\n" +
+	"\x0fcom.geometry.v1B\tQuadProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_quad_proto_rawDescOnce sync.Once

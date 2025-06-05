@@ -99,9 +99,9 @@ const file_common_v1_color_proto_rawDesc = "" +
 	"\x03red\x18\x01 \x01(\x02R\x03red\x12\x14\n" +
 	"\x05green\x18\x02 \x01(\x02R\x05green\x12\x12\n" +
 	"\x04blue\x18\x03 \x01(\x02R\x04blue\x12\x14\n" +
-	"\x05alpha\x18\x04 \x01(\x02R\x05alphaB\x94\x01\n" +
+	"\x05alpha\x18\x04 \x01(\x02R\x05alphaB\xa2\x01\n" +
 	"\rcom.common.v1B\n" +
-	"ColorProtoP\x01Z2github.com/cobotar/protocol/gen/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\tCommon.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"ColorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

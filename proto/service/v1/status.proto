@@ -1,7 +1,8 @@
 syntax = "proto3";
 package service.v1;
 
-option go_package = "github.com/cobotar/protocol/messages/service";
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/service/v1";
 
 enum Status {
   STATUS_UNSPECIFIED = 0;

@@ -7,7 +7,7 @@
 package commonv1
 
 import (
-	v1 "github.com/cobotar/protocol/gen/geometry/v1"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -421,9 +421,9 @@ const file_common_v1_agent_proto_rawDesc = "" +
 	"\x1dEND_EFFECTOR_TYPE_UNSPECIFIED\x10\x00\x12$\n" +
 	" END_EFFECTOR_TYPE_ROBOTIQ_HAND_E\x10\n" +
 	"\x12\"\n" +
-	"\x1eEND_EFFECTOR_TYPE_CUSTOM_MOUNT\x10\x14B\x94\x01\n" +
+	"\x1eEND_EFFECTOR_TYPE_CUSTOM_MOUNT\x10\x14B\xa2\x01\n" +
 	"\rcom.common.v1B\n" +
-	"AgentProtoP\x01Z2github.com/cobotar/protocol/gen/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\tCommon.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"AgentProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

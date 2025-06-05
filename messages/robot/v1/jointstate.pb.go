@@ -99,8 +99,8 @@ const file_robot_v1_jointstate_proto_rawDesc = "" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12\x12\n" +
 	"\x04live\x18\x02 \x01(\bR\x04live\x12\x1a\n" +
 	"\bposition\x18\x03 \x03(\x01R\bposition\x12\x1a\n" +
-	"\bvelocity\x18\x04 \x03(\x01R\bvelocityB\x92\x01\n" +
-	"\fcom.robot.v1B\x0fJointstateProtoP\x01Z0github.com/cobotar/protocol/gen/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\bRobot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\bvelocity\x18\x04 \x03(\x01R\bvelocityB\xa1\x01\n" +
+	"\fcom.robot.v1B\x0fJointstateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_jointstate_proto_rawDescOnce sync.Once

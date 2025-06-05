@@ -170,9 +170,8 @@ const file_service_v1_status_proto_rawDesc = "" +
 	"\x06Status\x12\x16\n" +
 	"\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n" +
 	"\x0eSTATUS_OFFLINE\x10\x01\x12\x11\n" +
-	"\rSTATUS_ONLINE\x10\x02B\x9c\x01\n" +
-	"\x0ecom.service.v1B\vStatusProtoP\x01Z4github.com/cobotar/protocol/gen/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\n" +
-	"Service.V1\xca\x02\n" +
+	"\rSTATUS_ONLINE\x10\x02B\xa9\x01\n" +
+	"\x0ecom.service.v1B\vStatusProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x12Messages.Common.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

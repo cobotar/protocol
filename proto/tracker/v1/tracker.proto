@@ -1,7 +1,8 @@
 syntax = "proto3";
 package tracker.v1;
 
-option go_package = "github.com/cobotar/protocol/messages/tracker";
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/tracker/v1";
 
 enum TrackerType {
   TRACKER_TYPE_UNSPECIFIED = 0;

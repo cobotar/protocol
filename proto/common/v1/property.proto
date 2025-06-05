@@ -1,7 +1,8 @@
 syntax = "proto3";
 package common.v1;
 
-option go_package = "github.com/cobotar/protocol/messages/common";
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
 // Used to specify the type of a property
 enum PropertyType {

@@ -80,8 +80,8 @@ const file_geometry_v1_wrench_proto_rawDesc = "" +
 	"\x18geometry/v1/wrench.proto\x12\vgeometry.v1\x1a\x19geometry/v1/vector3.proto\"b\n" +
 	"\x06Wrench\x12*\n" +
 	"\x05force\x18\x01 \x01(\v2\x14.geometry.v1.Vector3R\x05force\x12,\n" +
-	"\x06torque\x18\x02 \x01(\v2\x14.geometry.v1.Vector3R\x06torqueB\xa3\x01\n" +
-	"\x0fcom.geometry.v1B\vWrenchProtoP\x01Z6github.com/cobotar/protocol/gen/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\vGeometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\x06torque\x18\x02 \x01(\v2\x14.geometry.v1.Vector3R\x06torqueB\xaf\x01\n" +
+	"\x0fcom.geometry.v1B\vWrenchProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_wrench_proto_rawDescOnce sync.Once

@@ -82,8 +82,8 @@ const file_geometry_v1_anchor_proto_rawDesc = "" +
 	"\x18geometry/v1/anchor.proto\x12\vgeometry.v1\"<\n" +
 	"\x06Anchor\x12\x1c\n" +
 	"\treference\x18\x01 \x01(\tR\treference\x12\x14\n" +
-	"\x05frame\x18\x02 \x01(\tR\x05frameB\xa3\x01\n" +
-	"\x0fcom.geometry.v1B\vAnchorProtoP\x01Z6github.com/cobotar/protocol/gen/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\vGeometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\x05frame\x18\x02 \x01(\tR\x05frameB\xaf\x01\n" +
+	"\x0fcom.geometry.v1B\vAnchorProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_anchor_proto_rawDescOnce sync.Once
