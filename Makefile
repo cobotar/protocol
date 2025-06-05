@@ -42,5 +42,6 @@ verify: lint breaking generate
 publish: verify
 	@echo 'Verification complete'
 	bump-my-version bump ${bump}
+	git push
 	git push --tags
 	@echo 'New version is published'
