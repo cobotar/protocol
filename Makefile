@@ -21,6 +21,11 @@ confirm:
 lint:
 	buf lint
 
+## format: run the buf format command
+.PHONY: format
+format:
+	buf format
+
 ## breaking: run the buf breaking command
 .PHONY: breaking
 breaking:
@@ -31,11 +36,10 @@ breaking:
 generate:
 	buf generate
 
-## verify: run lint, breaking, and generate command
+## verify: run lint, format, breaking, and generate command
 .PHONY: verify
-verify: lint breaking generate
+verify: lint format breaking generate
 	@echo 'Remember to check if new files were created!'
-
 
 ## publish bump=$1: run checks, bump version, and publish
 .PHONY: publish
