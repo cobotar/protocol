@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Used to specify the type of a property
 type PropertyType int32
 
 const (
@@ -97,12 +98,13 @@ func (PropertyType) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_property_proto_rawDescGZIP(), []int{0}
 }
 
+// Specifies where the value of a property originates from.
 type Origin int32
 
 const (
 	Origin_ORIGIN_UNSPECIFIED Origin = 0
-	Origin_ORIGIN_FIXED       Origin = 1
-	Origin_ORIGIN_MIRROR      Origin = 2
+	Origin_ORIGIN_FIXED       Origin = 1 // The value of the property is fixed and must be changed manually
+	Origin_ORIGIN_MIRROR      Origin = 2 // The value of the property mirrors the value of another property
 )
 
 // Enum value maps for Origin.
@@ -146,6 +148,7 @@ func (Origin) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_property_proto_rawDescGZIP(), []int{1}
 }
 
+// Properties are used by various components to define them, such as: feedback, actions, and conditions.
 type Property struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -153,9 +156,9 @@ type Property struct {
 	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type             PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
-	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`
-	Extras           string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"`
-	UserEditable     bool                   `protobuf:"varint,8,opt,name=user_editable,json=userEditable,proto3" json:"user_editable,omitempty"`
+	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`                                    // the current value of the property (JSON encoded)
+	Extras           string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"`                                  // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
+	UserEditable     bool                   `protobuf:"varint,8,opt,name=user_editable,json=userEditable,proto3" json:"user_editable,omitempty"` // TODO: create different user permissions, this field should then set the "minimum required permission"
 	Origin           Origin                 `protobuf:"varint,9,opt,name=origin,proto3,enum=common.v1.Origin" json:"origin,omitempty"`
 	Origins          []Origin               `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=common.v1.Origin" json:"origins,omitempty"`
 	MirrorPropertyId string                 `protobuf:"bytes,14,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`

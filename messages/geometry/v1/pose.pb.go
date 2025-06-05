@@ -9,6 +9,7 @@ package geometryv1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -21,6 +22,62 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type LocalizedState int32
+
+const (
+	LocalizedState_LOCALIZED_STATE_UNSPECIFIED LocalizedState = 0
+	LocalizedState_LOCALIZED_STATE_FOUND       LocalizedState = 1
+	LocalizedState_LOCALIZED_STATE_LOST        LocalizedState = 2
+	LocalizedState_LOCALIZED_STATE_STATIC      LocalizedState = 3
+	LocalizedState_LOCALIZED_STATE_UNKNOWN     LocalizedState = 4
+)
+
+// Enum value maps for LocalizedState.
+var (
+	LocalizedState_name = map[int32]string{
+		0: "LOCALIZED_STATE_UNSPECIFIED",
+		1: "LOCALIZED_STATE_FOUND",
+		2: "LOCALIZED_STATE_LOST",
+		3: "LOCALIZED_STATE_STATIC",
+		4: "LOCALIZED_STATE_UNKNOWN",
+	}
+	LocalizedState_value = map[string]int32{
+		"LOCALIZED_STATE_UNSPECIFIED": 0,
+		"LOCALIZED_STATE_FOUND":       1,
+		"LOCALIZED_STATE_LOST":        2,
+		"LOCALIZED_STATE_STATIC":      3,
+		"LOCALIZED_STATE_UNKNOWN":     4,
+	}
+)
+
+func (x LocalizedState) Enum() *LocalizedState {
+	p := new(LocalizedState)
+	*p = x
+	return p
+}
+
+func (x LocalizedState) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (LocalizedState) Descriptor() protoreflect.EnumDescriptor {
+	return file_geometry_v1_pose_proto_enumTypes[0].Descriptor()
+}
+
+func (LocalizedState) Type() protoreflect.EnumType {
+	return &file_geometry_v1_pose_proto_enumTypes[0]
+}
+
+func (x LocalizedState) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use LocalizedState.Descriptor instead.
+func (LocalizedState) EnumDescriptor() ([]byte, []int) {
+	return file_geometry_v1_pose_proto_rawDescGZIP(), []int{0}
+}
+
+// A simple pose consisting of a position and orientation
 type Pose struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Position      *Point                 `protobuf:"bytes,1,opt,name=position,proto3" json:"position,omitempty"`
@@ -73,14 +130,94 @@ func (x *Pose) GetOrientation() *Quad {
 	return nil
 }
 
+// A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
+type LocalizedPose struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pose          *Pose                  `protobuf:"bytes,1,opt,name=pose,proto3" json:"pose,omitempty"`
+	AnchorId      string                 `protobuf:"bytes,2,opt,name=anchor_id,json=anchorId,proto3" json:"anchor_id,omitempty"`
+	State         LocalizedState         `protobuf:"varint,3,opt,name=state,proto3,enum=geometry.v1.LocalizedState" json:"state,omitempty"`
+	LastUpdated   *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LocalizedPose) Reset() {
+	*x = LocalizedPose{}
+	mi := &file_geometry_v1_pose_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LocalizedPose) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LocalizedPose) ProtoMessage() {}
+
+func (x *LocalizedPose) ProtoReflect() protoreflect.Message {
+	mi := &file_geometry_v1_pose_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LocalizedPose.ProtoReflect.Descriptor instead.
+func (*LocalizedPose) Descriptor() ([]byte, []int) {
+	return file_geometry_v1_pose_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *LocalizedPose) GetPose() *Pose {
+	if x != nil {
+		return x.Pose
+	}
+	return nil
+}
+
+func (x *LocalizedPose) GetAnchorId() string {
+	if x != nil {
+		return x.AnchorId
+	}
+	return ""
+}
+
+func (x *LocalizedPose) GetState() LocalizedState {
+	if x != nil {
+		return x.State
+	}
+	return LocalizedState_LOCALIZED_STATE_UNSPECIFIED
+}
+
+func (x *LocalizedPose) GetLastUpdated() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastUpdated
+	}
+	return nil
+}
+
 var File_geometry_v1_pose_proto protoreflect.FileDescriptor
 
 const file_geometry_v1_pose_proto_rawDesc = "" +
 	"\n" +
-	"\x16geometry/v1/pose.proto\x12\vgeometry.v1\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"k\n" +
+	"\x16geometry/v1/pose.proto\x12\vgeometry.v1\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n" +
 	"\x04Pose\x12.\n" +
 	"\bposition\x18\x01 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
-	"\vorientation\x18\x02 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\xa1\x01\n" +
+	"\vorientation\x18\x02 \x01(\v2\x11.geometry.v1.QuadR\vorientation\"\xc5\x01\n" +
+	"\rLocalizedPose\x12%\n" +
+	"\x04pose\x18\x01 \x01(\v2\x11.geometry.v1.PoseR\x04pose\x12\x1b\n" +
+	"\tanchor_id\x18\x02 \x01(\tR\banchorId\x121\n" +
+	"\x05state\x18\x03 \x01(\x0e2\x1b.geometry.v1.LocalizedStateR\x05state\x12=\n" +
+	"\flast_updated\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\vlastUpdated*\x9f\x01\n" +
+	"\x0eLocalizedState\x12\x1f\n" +
+	"\x1bLOCALIZED_STATE_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15LOCALIZED_STATE_FOUND\x10\x01\x12\x18\n" +
+	"\x14LOCALIZED_STATE_LOST\x10\x02\x12\x1a\n" +
+	"\x16LOCALIZED_STATE_STATIC\x10\x03\x12\x1b\n" +
+	"\x17LOCALIZED_STATE_UNKNOWN\x10\x04B\xa1\x01\n" +
 	"\x0fcom.geometry.v1B\tPoseProtoP\x01Z6github.com/cobotar/protocol/gen/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\vGeometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
@@ -95,20 +232,27 @@ func file_geometry_v1_pose_proto_rawDescGZIP() []byte {
 	return file_geometry_v1_pose_proto_rawDescData
 }
 
-var file_geometry_v1_pose_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_geometry_v1_pose_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_geometry_v1_pose_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_geometry_v1_pose_proto_goTypes = []any{
-	(*Pose)(nil),  // 0: geometry.v1.Pose
-	(*Point)(nil), // 1: geometry.v1.Point
-	(*Quad)(nil),  // 2: geometry.v1.Quad
+	(LocalizedState)(0),           // 0: geometry.v1.LocalizedState
+	(*Pose)(nil),                  // 1: geometry.v1.Pose
+	(*LocalizedPose)(nil),         // 2: geometry.v1.LocalizedPose
+	(*Point)(nil),                 // 3: geometry.v1.Point
+	(*Quad)(nil),                  // 4: geometry.v1.Quad
+	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
 }
 var file_geometry_v1_pose_proto_depIdxs = []int32{
-	1, // 0: geometry.v1.Pose.position:type_name -> geometry.v1.Point
-	2, // 1: geometry.v1.Pose.orientation:type_name -> geometry.v1.Quad
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 0: geometry.v1.Pose.position:type_name -> geometry.v1.Point
+	4, // 1: geometry.v1.Pose.orientation:type_name -> geometry.v1.Quad
+	1, // 2: geometry.v1.LocalizedPose.pose:type_name -> geometry.v1.Pose
+	0, // 3: geometry.v1.LocalizedPose.state:type_name -> geometry.v1.LocalizedState
+	5, // 4: geometry.v1.LocalizedPose.last_updated:type_name -> google.protobuf.Timestamp
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_geometry_v1_pose_proto_init() }
@@ -123,13 +267,14 @@ func file_geometry_v1_pose_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geometry_v1_pose_proto_rawDesc), len(file_geometry_v1_pose_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   1,
+			NumEnums:      1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_geometry_v1_pose_proto_goTypes,
 		DependencyIndexes: file_geometry_v1_pose_proto_depIdxs,
+		EnumInfos:         file_geometry_v1_pose_proto_enumTypes,
 		MessageInfos:      file_geometry_v1_pose_proto_msgTypes,
 	}.Build()
 	File_geometry_v1_pose_proto = out.File

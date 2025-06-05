@@ -21,12 +21,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
 type Color struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Red           float32                `protobuf:"fixed32,1,opt,name=red,proto3" json:"red,omitempty"`
-	Green         float32                `protobuf:"fixed32,2,opt,name=green,proto3" json:"green,omitempty"`
-	Blue          float32                `protobuf:"fixed32,3,opt,name=blue,proto3" json:"blue,omitempty"`
-	Alpha         float32                `protobuf:"fixed32,4,opt,name=alpha,proto3" json:"alpha,omitempty"`
+	Red           float32                `protobuf:"fixed32,1,opt,name=red,proto3" json:"red,omitempty"`     // Ranging from [0:1]
+	Green         float32                `protobuf:"fixed32,2,opt,name=green,proto3" json:"green,omitempty"` // Ranging from [0:1]
+	Blue          float32                `protobuf:"fixed32,3,opt,name=blue,proto3" json:"blue,omitempty"`   // Ranging from [0:1]
+	Alpha         float32                `protobuf:"fixed32,4,opt,name=alpha,proto3" json:"alpha,omitempty"` // Ranging from [0:1] --> [transparent : opaque]
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
