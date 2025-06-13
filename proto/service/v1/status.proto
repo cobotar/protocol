@@ -10,7 +10,7 @@ enum Status {
   STATUS_ONLINE = 2;
 }
 
-message Info {
+message ServiceStatus {
   string id = 1;
   string name = 2;
   string description = 3;
