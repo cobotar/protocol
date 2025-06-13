@@ -70,7 +70,7 @@ func (Status) EnumDescriptor() ([]byte, []int) {
 	return file_service_v1_status_proto_rawDescGZIP(), []int{0}
 }
 
-type Info struct {
+type ServiceStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -82,20 +82,20 @@ type Info struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Info) Reset() {
-	*x = Info{}
+func (x *ServiceStatus) Reset() {
+	*x = ServiceStatus{}
 	mi := &file_service_v1_status_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Info) String() string {
+func (x *ServiceStatus) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Info) ProtoMessage() {}
+func (*ServiceStatus) ProtoMessage() {}
 
-func (x *Info) ProtoReflect() protoreflect.Message {
+func (x *ServiceStatus) ProtoReflect() protoreflect.Message {
 	mi := &file_service_v1_status_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -107,47 +107,47 @@ func (x *Info) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Info.ProtoReflect.Descriptor instead.
-func (*Info) Descriptor() ([]byte, []int) {
+// Deprecated: Use ServiceStatus.ProtoReflect.Descriptor instead.
+func (*ServiceStatus) Descriptor() ([]byte, []int) {
 	return file_service_v1_status_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Info) GetId() string {
+func (x *ServiceStatus) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Info) GetName() string {
+func (x *ServiceStatus) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Info) GetDescription() string {
+func (x *ServiceStatus) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *Info) GetType() string {
+func (x *ServiceStatus) GetType() string {
 	if x != nil {
 		return x.Type
 	}
 	return ""
 }
 
-func (x *Info) GetIp() string {
+func (x *ServiceStatus) GetIp() string {
 	if x != nil {
 		return x.Ip
 	}
 	return ""
 }
 
-func (x *Info) GetStatus() Status {
+func (x *ServiceStatus) GetStatus() Status {
 	if x != nil {
 		return x.Status
 	}
@@ -159,8 +159,8 @@ var File_service_v1_status_proto protoreflect.FileDescriptor
 const file_service_v1_status_proto_rawDesc = "" +
 	"\n" +
 	"\x17service/v1/status.proto\x12\n" +
-	"service.v1\"\x9c\x01\n" +
-	"\x04Info\x12\x0e\n" +
+	"service.v1\"\xa5\x01\n" +
+	"\rServiceStatus\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
@@ -189,11 +189,11 @@ func file_service_v1_status_proto_rawDescGZIP() []byte {
 var file_service_v1_status_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_service_v1_status_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_service_v1_status_proto_goTypes = []any{
-	(Status)(0),  // 0: service.v1.Status
-	(*Info)(nil), // 1: service.v1.Info
+	(Status)(0),           // 0: service.v1.Status
+	(*ServiceStatus)(nil), // 1: service.v1.ServiceStatus
 }
 var file_service_v1_status_proto_depIdxs = []int32{
-	0, // 0: service.v1.Info.status:type_name -> service.v1.Status
+	0, // 0: service.v1.ServiceStatus.status:type_name -> service.v1.Status
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

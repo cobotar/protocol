@@ -24,20 +24,21 @@ namespace Messages.Common.V1 {
     static StatusReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzZXJ2aWNlL3YxL3N0YXR1cy5wcm90bxIKc2VydmljZS52MSKcAQoESW5m",
-            "bxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNj",
-            "cmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SEgoEdHlwZRgEIAEoCVIEdHlw",
-            "ZRIOCgJpcBgFIAEoCVICaXASKgoGc3RhdHVzGAYgASgOMhIuc2VydmljZS52",
-            "MS5TdGF0dXNSBnN0YXR1cypHCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lG",
-            "SUVEEAASEgoOU1RBVFVTX09GRkxJTkUQARIRCg1TVEFUVVNfT05MSU5FEAJC",
-            "qQEKDmNvbS5zZXJ2aWNlLnYxQgtTdGF0dXNQcm90b1ABWjlnaXRodWIuY29t",
-            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvc2VydmljZS92MTtzZXJ2aWNl",
-            "djGiAgNTWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAgpTZXJ2aWNlXFYx4gIW",
-            "U2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6OlYxYgZwcm90bzM="));
+            "ChdzZXJ2aWNlL3YxL3N0YXR1cy5wcm90bxIKc2VydmljZS52MSKlAQoNU2Vy",
+            "dmljZVN0YXR1cxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFt",
+            "ZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SEgoEdHlwZRgE",
+            "IAEoCVIEdHlwZRIOCgJpcBgFIAEoCVICaXASKgoGc3RhdHVzGAYgASgOMhIu",
+            "c2VydmljZS52MS5TdGF0dXNSBnN0YXR1cypHCgZTdGF0dXMSFgoSU1RBVFVT",
+            "X1VOU1BFQ0lGSUVEEAASEgoOU1RBVFVTX09GRkxJTkUQARIRCg1TVEFUVVNf",
+            "T05MSU5FEAJCqQEKDmNvbS5zZXJ2aWNlLnYxQgtTdGF0dXNQcm90b1ABWjln",
+            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvc2VydmljZS92",
+            "MTtzZXJ2aWNldjGiAgNTWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAgpTZXJ2",
+            "aWNlXFYx4gIWU2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.Status), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Info), global::Messages.Common.V1.Info.Parser, new[]{ "Id", "Name", "Description", "Type", "Ip", "Status" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ServiceStatus), global::Messages.Common.V1.ServiceStatus.Parser, new[]{ "Id", "Name", "Description", "Type", "Ip", "Status" }, null, null, null, null)
           }));
     }
     #endregion
@@ -54,16 +55,16 @@ namespace Messages.Common.V1 {
 
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class Info : pb::IMessage<Info>
+  public sealed partial class ServiceStatus : pb::IMessage<ServiceStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Info> _parser = new pb::MessageParser<Info>(() => new Info());
+    private static readonly pb::MessageParser<ServiceStatus> _parser = new pb::MessageParser<ServiceStatus>(() => new ServiceStatus());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Info> Parser { get { return _parser; } }
+    public static pb::MessageParser<ServiceStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -79,7 +80,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Info() {
+    public ServiceStatus() {
       OnConstruction();
     }
 
@@ -87,7 +88,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Info(Info other) : this() {
+    public ServiceStatus(ServiceStatus other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       description_ = other.description_;
@@ -99,8 +100,8 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Info Clone() {
-      return new Info(this);
+    public ServiceStatus Clone() {
+      return new ServiceStatus(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -178,12 +179,12 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as Info);
+      return Equals(other as ServiceStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Info other) {
+    public bool Equals(ServiceStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -321,7 +322,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Info other) {
+    public void MergeFrom(ServiceStatus other) {
       if (other == null) {
         return;
       }

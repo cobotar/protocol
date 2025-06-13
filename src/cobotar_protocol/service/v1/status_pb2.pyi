@@ -14,7 +14,7 @@ STATUS_UNSPECIFIED: Status
 STATUS_OFFLINE: Status
 STATUS_ONLINE: Status
 
-class Info(_message.Message):
+class ServiceStatus(_message.Message):
     __slots__ = ("id", "name", "description", "type", "ip", "status")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

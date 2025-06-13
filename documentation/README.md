@@ -52,11 +52,31 @@
 - [robot/v1/jointstate.proto](#robot_v1_jointstate-proto)
     - [JointState](#robot-v1-JointState)
   
+- [robot/v1/popup.proto](#robot_v1_popup-proto)
+    - [RobotHidePopupRequest](#robot-v1-RobotHidePopupRequest)
+    - [RobotShowPopupRequest](#robot-v1-RobotShowPopupRequest)
+  
+- [robot/v1/program_state.proto](#robot_v1_program_state-proto)
+    - [ProgramStateMessage](#robot-v1-ProgramStateMessage)
+  
+    - [ProgramState](#robot-v1-ProgramState)
+  
+- [robot/v1/program_state_request.proto](#robot_v1_program_state_request-proto)
+    - [ProgramStateRequest](#robot-v1-ProgramStateRequest)
+  
+- [robot/v1/robot_state.proto](#robot_v1_robot_state-proto)
+    - [RobotStateMessage](#robot-v1-RobotStateMessage)
+  
+    - [RobotState](#robot-v1-RobotState)
+  
 - [robot/v1/tcp.proto](#robot_v1_tcp-proto)
     - [Tcp](#robot-v1-Tcp)
   
+- [service/v1/response.proto](#service_v1_response-proto)
+    - [Response](#service-v1-Response)
+  
 - [service/v1/status.proto](#service_v1_status-proto)
-    - [Info](#service-v1-Info)
+    - [ServiceStatus](#service-v1-ServiceStatus)
   
     - [Status](#service-v1-Status)
   
@@ -633,6 +653,188 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="robot_v1_popup-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/popup.proto
+
+
+
+<a name="robot-v1-RobotHidePopupRequest"></a>
+
+### RobotHidePopupRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="robot-v1-RobotShowPopupRequest"></a>
+
+### RobotShowPopupRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+| text | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_program_state-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/program_state.proto
+
+
+
+<a name="robot-v1-ProgramStateMessage"></a>
+
+### ProgramStateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| state_code | [ProgramState](#robot-v1-ProgramState) |  |  |
+| state | [string](#string) |  |  |
+| program_file | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-ProgramState"></a>
+
+### ProgramState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROGRAM_STATE_UNSPECIFIED | 0 |  |
+| PROGRAM_STATE_PLAY | 1 |  |
+| PROGRAM_STATE_PAUSE | 2 |  |
+| PROGRAM_STATE_STOP | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_program_state_request-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/program_state_request.proto
+
+
+
+<a name="robot-v1-ProgramStateRequest"></a>
+
+### ProgramStateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+| state | [ProgramState](#robot-v1-ProgramState) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_state-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_state.proto
+
+
+
+<a name="robot-v1-RobotStateMessage"></a>
+
+### RobotStateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| state_code | [RobotState](#robot-v1-RobotState) |  |  |
+| state | [string](#string) |  |  |
+| target_speed | [double](#double) |  |  |
+| actual_speed | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-RobotState"></a>
+
+### RobotState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_STATE_UNSPECIFIED | 0 |  |
+| ROBOT_STATE_STOPPING | 1 |  |
+| ROBOT_STATE_STOPPED | 2 |  |
+| ROBOT_STATE_PLAYING | 3 |  |
+| ROBOT_STATE_PAUSING | 4 |  |
+| ROBOT_STATE_PAUSED | 5 |  |
+| ROBOT_STATE_RESUMING | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="robot_v1_tcp-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -666,6 +868,39 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="service_v1_response-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/response.proto
+
+
+
+<a name="service-v1-Response"></a>
+
+### Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| success | [bool](#bool) |  | True if the request was carried out |
+| message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="service_v1_status-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -673,9 +908,9 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="service-v1-Info"></a>
+<a name="service-v1-ServiceStatus"></a>
 
-### Info
+### ServiceStatus
 
 
 
