@@ -41,7 +41,7 @@ generate:
 verify: format lint breaking generate
 	@echo 'Remember to check if new files were created!'
 
-## publish bump=$1: run checks, bump version, and publish
+## publish bump=$1: run checks, bump version, and publish. bump={major,minor,patch}
 .PHONY: publish
 publish: verify
 	@echo 'Verification complete'
