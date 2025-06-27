@@ -12,6 +12,7 @@ class PropertyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_TYPE_UNSPECIFIED: _ClassVar[PropertyType]
     PROPERTY_TYPE_BOOL: _ClassVar[PropertyType]
     PROPERTY_TYPE_INT: _ClassVar[PropertyType]
+    PROPERTY_TYPE_FLOAT: _ClassVar[PropertyType]
     PROPERTY_TYPE_DOUBLE: _ClassVar[PropertyType]
     PROPERTY_TYPE_STRING: _ClassVar[PropertyType]
     PROPERTY_TYPE_VECTOR3: _ClassVar[PropertyType]
@@ -22,14 +23,15 @@ class PropertyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_TYPE_ENUM: _ClassVar[PropertyType]
     PROPERTY_TYPE_ENUM_MULTI: _ClassVar[PropertyType]
 
-class Origin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+class PropertyOrigin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    ORIGIN_UNSPECIFIED: _ClassVar[Origin]
-    ORIGIN_FIXED: _ClassVar[Origin]
-    ORIGIN_MIRROR: _ClassVar[Origin]
+    PROPERTY_ORIGIN_UNSPECIFIED: _ClassVar[PropertyOrigin]
+    PROPERTY_ORIGIN_FIXED: _ClassVar[PropertyOrigin]
+    PROPERTY_ORIGIN_MIRROR: _ClassVar[PropertyOrigin]
 PROPERTY_TYPE_UNSPECIFIED: PropertyType
 PROPERTY_TYPE_BOOL: PropertyType
 PROPERTY_TYPE_INT: PropertyType
+PROPERTY_TYPE_FLOAT: PropertyType
 PROPERTY_TYPE_DOUBLE: PropertyType
 PROPERTY_TYPE_STRING: PropertyType
 PROPERTY_TYPE_VECTOR3: PropertyType
@@ -39,9 +41,9 @@ PROPERTY_TYPE_COLOR: PropertyType
 PROPERTY_TYPE_AGENT: PropertyType
 PROPERTY_TYPE_ENUM: PropertyType
 PROPERTY_TYPE_ENUM_MULTI: PropertyType
-ORIGIN_UNSPECIFIED: Origin
-ORIGIN_FIXED: Origin
-ORIGIN_MIRROR: Origin
+PROPERTY_ORIGIN_UNSPECIFIED: PropertyOrigin
+PROPERTY_ORIGIN_FIXED: PropertyOrigin
+PROPERTY_ORIGIN_MIRROR: PropertyOrigin
 
 class Property(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "value", "extras", "user_editable", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group")
@@ -67,10 +69,34 @@ class Property(_message.Message):
     value: str
     extras: str
     user_editable: bool
-    origin: Origin
-    origins: _containers.RepeatedScalarFieldContainer[Origin]
+    origin: PropertyOrigin
+    origins: _containers.RepeatedScalarFieldContainer[PropertyOrigin]
     mirror_property_id: str
     group: str
     ordering: int
     hide_group: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., user_editable: bool = ..., origin: _Optional[_Union[Origin, str]] = ..., origins: _Optional[_Iterable[_Union[Origin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., user_editable: bool = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...
+
+class PropertyUpdate(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "value", "origin", "mirror_property_id")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    value: str
+    origin: PropertyOrigin
+    mirror_property_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., value: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ...) -> None: ...
+
+class PropertyDelete(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...

@@ -5,8 +5,10 @@
 
 - [common/v1/property.proto](#common_v1_property-proto)
     - [Property](#common-v1-Property)
+    - [PropertyDelete](#common-v1-PropertyDelete)
+    - [PropertyUpdate](#common-v1-PropertyUpdate)
   
-    - [Origin](#common-v1-Origin)
+    - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyType](#common-v1-PropertyType)
   
 - [geometry/v1/point.proto](#geometry_v1_point-proto)
@@ -112,8 +114,8 @@ Properties are used by various components to define them, such as: feedback, act
 | value | [string](#string) |  | the current value of the property (JSON encoded) |
 | extras | [string](#string) |  | JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property. |
 | user_editable | [bool](#bool) |  | TODO: create different user permissions, this field should then set the &#34;minimum required permission&#34; |
-| origin | [Origin](#common-v1-Origin) |  |  |
-| origins | [Origin](#common-v1-Origin) | repeated |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
+| origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
 | mirror_property_id | [string](#string) |  |  |
 | group | [string](#string) |  |  |
 | ordering | [int32](#int32) |  |  |
@@ -123,19 +125,55 @@ Properties are used by various components to define them, such as: feedback, act
 
 
 
+
+<a name="common-v1-PropertyDelete"></a>
+
+### PropertyDelete
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyUpdate"></a>
+
+### PropertyUpdate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
+| mirror_property_id | [string](#string) |  |  |
+
+
+
+
+
  
 
 
-<a name="common-v1-Origin"></a>
+<a name="common-v1-PropertyOrigin"></a>
 
-### Origin
+### PropertyOrigin
 Specifies where the value of a property originates from.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ORIGIN_UNSPECIFIED | 0 |  |
-| ORIGIN_FIXED | 1 | The value of the property is fixed and must be changed manually |
-| ORIGIN_MIRROR | 2 | The value of the property mirrors the value of another property |
+| PROPERTY_ORIGIN_UNSPECIFIED | 0 |  |
+| PROPERTY_ORIGIN_FIXED | 1 | The value of the property is fixed and must be changed manually |
+| PROPERTY_ORIGIN_MIRROR | 2 | The value of the property mirrors the value of another property |
 
 
 
@@ -149,15 +187,16 @@ Used to specify the type of a property
 | PROPERTY_TYPE_UNSPECIFIED | 0 |  |
 | PROPERTY_TYPE_BOOL | 1 |  |
 | PROPERTY_TYPE_INT | 2 |  |
-| PROPERTY_TYPE_DOUBLE | 3 |  |
-| PROPERTY_TYPE_STRING | 4 |  |
-| PROPERTY_TYPE_VECTOR3 | 5 |  |
-| PROPERTY_TYPE_POSE | 6 |  |
-| PROPERTY_TYPE_ANCHOR | 7 |  |
-| PROPERTY_TYPE_COLOR | 8 |  |
-| PROPERTY_TYPE_AGENT | 9 |  |
-| PROPERTY_TYPE_ENUM | 10 |  |
-| PROPERTY_TYPE_ENUM_MULTI | 11 |  |
+| PROPERTY_TYPE_FLOAT | 3 |  |
+| PROPERTY_TYPE_DOUBLE | 4 |  |
+| PROPERTY_TYPE_STRING | 5 |  |
+| PROPERTY_TYPE_VECTOR3 | 6 |  |
+| PROPERTY_TYPE_POSE | 7 |  |
+| PROPERTY_TYPE_ANCHOR | 8 |  |
+| PROPERTY_TYPE_COLOR | 9 |  |
+| PROPERTY_TYPE_AGENT | 10 |  |
+| PROPERTY_TYPE_ENUM | 11 |  |
+| PROPERTY_TYPE_ENUM_MULTI | 12 |  |
 
 
  
