@@ -40,6 +40,7 @@ class RobotType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 class EndEffectorType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     END_EFFECTOR_TYPE_UNSPECIFIED: _ClassVar[EndEffectorType]
+    END_EFFECTOR_TYPE_EMPTY: _ClassVar[EndEffectorType]
     END_EFFECTOR_TYPE_ROBOTIQ_HAND_E: _ClassVar[EndEffectorType]
     END_EFFECTOR_TYPE_CUSTOM_MOUNT: _ClassVar[EndEffectorType]
 AGENT_TYPE_UNSPECIFIED: AgentType
@@ -59,6 +60,7 @@ ROBOT_TYPE_UR5E: RobotType
 ROBOT_TYPE_UR10E: RobotType
 ROBOT_TYPE_KUKA_IIWA: RobotType
 END_EFFECTOR_TYPE_UNSPECIFIED: EndEffectorType
+END_EFFECTOR_TYPE_EMPTY: EndEffectorType
 END_EFFECTOR_TYPE_ROBOTIQ_HAND_E: EndEffectorType
 END_EFFECTOR_TYPE_CUSTOM_MOUNT: EndEffectorType
 

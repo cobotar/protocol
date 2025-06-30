@@ -5,8 +5,6 @@
 
 - [common/v1/property.proto](#common_v1_property-proto)
     - [Property](#common-v1-Property)
-    - [PropertyDelete](#common-v1-PropertyDelete)
-    - [PropertyUpdate](#common-v1-PropertyUpdate)
   
     - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyType](#common-v1-PropertyType)
@@ -39,6 +37,9 @@
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
   
+- [common/v1/delete.proto](#common_v1_delete-proto)
+    - [DeleteMessage](#common-v1-DeleteMessage)
+  
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
   
@@ -70,6 +71,9 @@
     - [RobotStateMessage](#robot-v1-RobotStateMessage)
   
     - [RobotState](#robot-v1-RobotState)
+  
+- [robot/v1/robot_visibility.proto](#robot_v1_robot_visibility-proto)
+    - [RobotVisibility](#robot-v1-RobotVisibility)
   
 - [robot/v1/tcp.proto](#robot_v1_tcp-proto)
     - [Tcp](#robot-v1-Tcp)
@@ -120,42 +124,6 @@ Properties are used by various components to define them, such as: feedback, act
 | group | [string](#string) |  |  |
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="common-v1-PropertyDelete"></a>
-
-### PropertyDelete
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="common-v1-PropertyUpdate"></a>
-
-### PropertyUpdate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| value | [string](#string) |  |  |
-| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
-| mirror_property_id | [string](#string) |  |  |
 
 
 
@@ -391,6 +359,7 @@ A simple pose consisting of a position and orientation
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | END_EFFECTOR_TYPE_UNSPECIFIED | 0 |  |
+| END_EFFECTOR_TYPE_EMPTY | 1 |  |
 | END_EFFECTOR_TYPE_ROBOTIQ_HAND_E | 10 |  |
 | END_EFFECTOR_TYPE_CUSTOM_MOUNT | 20 |  |
 
@@ -513,6 +482,38 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | green | [float](#float) |  | Ranging from [0:1] |
 | blue | [float](#float) |  | Ranging from [0:1] |
 | alpha | [float](#float) |  | Ranging from [0:1] --&gt; [transparent : opaque] |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_delete-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/delete.proto
+
+
+
+<a name="common-v1-DeleteMessage"></a>
+
+### DeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Id of the entity to be deleted |
+| message | [string](#string) |  | Optional message |
 
 
 
@@ -865,6 +866,43 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | ROBOT_STATE_PAUSED | 5 |  |
 | ROBOT_STATE_RESUMING | 6 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_visibility-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_visibility.proto
+
+
+
+<a name="robot-v1-RobotVisibility"></a>
+
+### RobotVisibility
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| base_visible | [bool](#bool) |  |  |
+| upper_arm_visible | [bool](#bool) |  |  |
+| forearm_visible | [bool](#bool) |  |  |
+| wrist_visible | [bool](#bool) |  |  |
+| end_effector_visible | [bool](#bool) |  |  |
+| tcp_visible | [bool](#bool) |  |  |
+
+
+
+
+
+ 
 
  
 

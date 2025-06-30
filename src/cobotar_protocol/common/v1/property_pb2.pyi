@@ -76,27 +76,3 @@ class Property(_message.Message):
     ordering: int
     hide_group: bool
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., user_editable: bool = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...
-
-class PropertyUpdate(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "value", "origin", "mirror_property_id")
-    ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    ICON_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    VALUE_FIELD_NUMBER: _ClassVar[int]
-    ORIGIN_FIELD_NUMBER: _ClassVar[int]
-    MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    name: str
-    icon: str
-    description: str
-    value: str
-    origin: PropertyOrigin
-    mirror_property_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., value: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ...) -> None: ...
-
-class PropertyDelete(_message.Message):
-    __slots__ = ("id",)
-    ID_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    def __init__(self, id: _Optional[str] = ...) -> None: ...

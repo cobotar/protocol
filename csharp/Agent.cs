@@ -45,14 +45,14 @@ namespace Messages.Common.V1 {
             "EAISHAoYT1BFUkFUT1JfUEVSTUlTU0lPTl9GVUxMEAMqgQEKCVJvYm90VHlw",
             "ZRIaChZST0JPVF9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPUk9CT1RfVFlQRV9V",
             "UjNFEAoSEwoPUk9CT1RfVFlQRV9VUjVFEAsSFAoQUk9CT1RfVFlQRV9VUjEw",
-            "RRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqfgoPRW5kRWZmZWN0b3JU",
-            "eXBlEiEKHUVORF9FRkZFQ1RPUl9UWVBFX1VOU1BFQ0lGSUVEEAASJAogRU5E",
-            "X0VGRkVDVE9SX1RZUEVfUk9CT1RJUV9IQU5EX0UQChIiCh5FTkRfRUZGRUNU",
-            "T1JfVFlQRV9DVVNUT01fTU9VTlQQFEKiAQoNY29tLmNvbW1vbi52MUIKQWdl",
-            "bnRQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
-            "ZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9u",
-            "LlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29t",
-            "bW9uOjpWMWIGcHJvdG8z"));
+            "RRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqmwEKD0VuZEVmZmVjdG9y",
+            "VHlwZRIhCh1FTkRfRUZGRUNUT1JfVFlQRV9VTlNQRUNJRklFRBAAEhsKF0VO",
+            "RF9FRkZFQ1RPUl9UWVBFX0VNUFRZEAESJAogRU5EX0VGRkVDVE9SX1RZUEVf",
+            "Uk9CT1RJUV9IQU5EX0UQChIiCh5FTkRfRUZGRUNUT1JfVFlQRV9DVVNUT01f",
+            "TU9VTlQQFEKiAQoNY29tLmNvbW1vbi52MUIKQWdlbnRQcm90b1ABWjdnaXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2Nv",
+            "bW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx",
+            "4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.AgentType), typeof(global::Messages.Common.V1.OperatorType), typeof(global::Messages.Common.V1.OperatorPermission), typeof(global::Messages.Common.V1.RobotType), typeof(global::Messages.Common.V1.EndEffectorType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,6 +93,7 @@ namespace Messages.Common.V1 {
 
   public enum EndEffectorType {
     [pbr::OriginalName("END_EFFECTOR_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("END_EFFECTOR_TYPE_EMPTY")] Empty = 1,
     [pbr::OriginalName("END_EFFECTOR_TYPE_ROBOTIQ_HAND_E")] RobotiqHandE = 10,
     [pbr::OriginalName("END_EFFECTOR_TYPE_CUSTOM_MOUNT")] CustomMount = 20,
   }

@@ -234,6 +234,7 @@ type EndEffectorType int32
 
 const (
 	EndEffectorType_END_EFFECTOR_TYPE_UNSPECIFIED    EndEffectorType = 0
+	EndEffectorType_END_EFFECTOR_TYPE_EMPTY          EndEffectorType = 1
 	EndEffectorType_END_EFFECTOR_TYPE_ROBOTIQ_HAND_E EndEffectorType = 10
 	EndEffectorType_END_EFFECTOR_TYPE_CUSTOM_MOUNT   EndEffectorType = 20
 )
@@ -242,11 +243,13 @@ const (
 var (
 	EndEffectorType_name = map[int32]string{
 		0:  "END_EFFECTOR_TYPE_UNSPECIFIED",
+		1:  "END_EFFECTOR_TYPE_EMPTY",
 		10: "END_EFFECTOR_TYPE_ROBOTIQ_HAND_E",
 		20: "END_EFFECTOR_TYPE_CUSTOM_MOUNT",
 	}
 	EndEffectorType_value = map[string]int32{
 		"END_EFFECTOR_TYPE_UNSPECIFIED":    0,
+		"END_EFFECTOR_TYPE_EMPTY":          1,
 		"END_EFFECTOR_TYPE_ROBOTIQ_HAND_E": 10,
 		"END_EFFECTOR_TYPE_CUSTOM_MOUNT":   20,
 	}
@@ -416,9 +419,10 @@ const file_common_v1_agent_proto_rawDesc = "" +
 	"\x12\x13\n" +
 	"\x0fROBOT_TYPE_UR5E\x10\v\x12\x14\n" +
 	"\x10ROBOT_TYPE_UR10E\x10\f\x12\x18\n" +
-	"\x14ROBOT_TYPE_KUKA_IIWA\x10\x14*~\n" +
+	"\x14ROBOT_TYPE_KUKA_IIWA\x10\x14*\x9b\x01\n" +
 	"\x0fEndEffectorType\x12!\n" +
-	"\x1dEND_EFFECTOR_TYPE_UNSPECIFIED\x10\x00\x12$\n" +
+	"\x1dEND_EFFECTOR_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17END_EFFECTOR_TYPE_EMPTY\x10\x01\x12$\n" +
 	" END_EFFECTOR_TYPE_ROBOTIQ_HAND_E\x10\n" +
 	"\x12\"\n" +
 	"\x1eEND_EFFECTOR_TYPE_CUSTOM_MOUNT\x10\x14B\xa2\x01\n" +

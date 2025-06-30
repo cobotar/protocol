@@ -45,17 +45,3 @@ message Property {
   int32 ordering = 13;
   bool hide_group = 14;
 }
-
-message PropertyUpdate {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  string value = 6;
-  PropertyOrigin origin = 9;
-  string mirror_property_id = 14;
-}
-
-message PropertyDelete {
-  string id = 1;
-}
