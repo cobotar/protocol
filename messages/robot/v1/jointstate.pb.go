@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type JointState struct {
+type JointStateMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
 	Live          bool                   `protobuf:"varint,2,opt,name=live,proto3" json:"live,omitempty"`
@@ -31,20 +31,20 @@ type JointState struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *JointState) Reset() {
-	*x = JointState{}
+func (x *JointStateMessage) Reset() {
+	*x = JointStateMessage{}
 	mi := &file_robot_v1_jointstate_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *JointState) String() string {
+func (x *JointStateMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*JointState) ProtoMessage() {}
+func (*JointStateMessage) ProtoMessage() {}
 
-func (x *JointState) ProtoReflect() protoreflect.Message {
+func (x *JointStateMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_robot_v1_jointstate_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,33 +56,33 @@ func (x *JointState) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use JointState.ProtoReflect.Descriptor instead.
-func (*JointState) Descriptor() ([]byte, []int) {
+// Deprecated: Use JointStateMessage.ProtoReflect.Descriptor instead.
+func (*JointStateMessage) Descriptor() ([]byte, []int) {
 	return file_robot_v1_jointstate_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *JointState) GetRobotId() string {
+func (x *JointStateMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
 	}
 	return ""
 }
 
-func (x *JointState) GetLive() bool {
+func (x *JointStateMessage) GetLive() bool {
 	if x != nil {
 		return x.Live
 	}
 	return false
 }
 
-func (x *JointState) GetPosition() []float64 {
+func (x *JointStateMessage) GetPosition() []float64 {
 	if x != nil {
 		return x.Position
 	}
 	return nil
 }
 
-func (x *JointState) GetVelocity() []float64 {
+func (x *JointStateMessage) GetVelocity() []float64 {
 	if x != nil {
 		return x.Velocity
 	}
@@ -93,9 +93,8 @@ var File_robot_v1_jointstate_proto protoreflect.FileDescriptor
 
 const file_robot_v1_jointstate_proto_rawDesc = "" +
 	"\n" +
-	"\x19robot/v1/jointstate.proto\x12\brobot.v1\"s\n" +
-	"\n" +
-	"JointState\x12\x19\n" +
+	"\x19robot/v1/jointstate.proto\x12\brobot.v1\"z\n" +
+	"\x11JointStateMessage\x12\x19\n" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12\x12\n" +
 	"\x04live\x18\x02 \x01(\bR\x04live\x12\x1a\n" +
 	"\bposition\x18\x03 \x03(\x01R\bposition\x12\x1a\n" +
@@ -116,7 +115,7 @@ func file_robot_v1_jointstate_proto_rawDescGZIP() []byte {
 
 var file_robot_v1_jointstate_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_robot_v1_jointstate_proto_goTypes = []any{
-	(*JointState)(nil), // 0: robot.v1.JointState
+	(*JointStateMessage)(nil), // 0: robot.v1.JointStateMessage
 }
 var file_robot_v1_jointstate_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

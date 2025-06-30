@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_visibility.proto\x12\x08robot.v1\"\x9c\x02\n\x0fRobotVisibility\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12!\n\x0c\x62\x61se_visible\x18\x02 \x01(\x08R\x0b\x62\x61seVisible\x12*\n\x11upper_arm_visible\x18\x03 \x01(\x08R\x0fupperArmVisible\x12\'\n\x0f\x66orearm_visible\x18\x04 \x01(\x08R\x0e\x66orearmVisible\x12#\n\rwrist_visible\x18\x05 \x01(\x08R\x0cwristVisible\x12\x30\n\x14\x65nd_effector_visible\x18\x06 \x01(\x08R\x12\x65ndEffectorVisible\x12\x1f\n\x0btcp_visible\x18\x07 \x01(\x08R\ntcpVisibleB\xa6\x01\n\x0c\x63om.robot.v1B\x14RobotVisibilityProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_visibility.proto\x12\x08robot.v1\"\xa3\x02\n\x16RobotVisibilityMessage\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12!\n\x0c\x62\x61se_visible\x18\x02 \x01(\x08R\x0b\x62\x61seVisible\x12*\n\x11upper_arm_visible\x18\x03 \x01(\x08R\x0fupperArmVisible\x12\'\n\x0f\x66orearm_visible\x18\x04 \x01(\x08R\x0e\x66orearmVisible\x12#\n\rwrist_visible\x18\x05 \x01(\x08R\x0cwristVisible\x12\x30\n\x14\x65nd_effector_visible\x18\x06 \x01(\x08R\x12\x65ndEffectorVisible\x12\x1f\n\x0btcp_visible\x18\x07 \x01(\x08R\ntcpVisibleB\xa6\x01\n\x0c\x63om.robot.v1B\x14RobotVisibilityProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.robot_visibility_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\024RobotVisibilityProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\022Messages.Common.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
-  _globals['_ROBOTVISIBILITY']._serialized_start=46
-  _globals['_ROBOTVISIBILITY']._serialized_end=330
+  _globals['_ROBOTVISIBILITYMESSAGE']._serialized_start=46
+  _globals['_ROBOTVISIBILITYMESSAGE']._serialized_end=337
 # @@protoc_insertion_point(module_scope)

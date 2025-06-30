@@ -22,7 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Tcp struct {
+type TcpMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
 	Position      *v1.Point              `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty"`
@@ -31,20 +31,20 @@ type Tcp struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Tcp) Reset() {
-	*x = Tcp{}
+func (x *TcpMessage) Reset() {
+	*x = TcpMessage{}
 	mi := &file_robot_v1_tcp_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Tcp) String() string {
+func (x *TcpMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Tcp) ProtoMessage() {}
+func (*TcpMessage) ProtoMessage() {}
 
-func (x *Tcp) ProtoReflect() protoreflect.Message {
+func (x *TcpMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_robot_v1_tcp_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,26 +56,26 @@ func (x *Tcp) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Tcp.ProtoReflect.Descriptor instead.
-func (*Tcp) Descriptor() ([]byte, []int) {
+// Deprecated: Use TcpMessage.ProtoReflect.Descriptor instead.
+func (*TcpMessage) Descriptor() ([]byte, []int) {
 	return file_robot_v1_tcp_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Tcp) GetRobotId() string {
+func (x *TcpMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
 	}
 	return ""
 }
 
-func (x *Tcp) GetPosition() *v1.Point {
+func (x *TcpMessage) GetPosition() *v1.Point {
 	if x != nil {
 		return x.Position
 	}
 	return nil
 }
 
-func (x *Tcp) GetOrientation() *v1.Quad {
+func (x *TcpMessage) GetOrientation() *v1.Quad {
 	if x != nil {
 		return x.Orientation
 	}
@@ -86,8 +86,9 @@ var File_robot_v1_tcp_proto protoreflect.FileDescriptor
 
 const file_robot_v1_tcp_proto_rawDesc = "" +
 	"\n" +
-	"\x12robot/v1/tcp.proto\x12\brobot.v1\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x85\x01\n" +
-	"\x03Tcp\x12\x19\n" +
+	"\x12robot/v1/tcp.proto\x12\brobot.v1\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x8c\x01\n" +
+	"\n" +
+	"TcpMessage\x12\x19\n" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12.\n" +
 	"\bposition\x18\x02 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
 	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\x9a\x01\n" +
@@ -107,13 +108,13 @@ func file_robot_v1_tcp_proto_rawDescGZIP() []byte {
 
 var file_robot_v1_tcp_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_robot_v1_tcp_proto_goTypes = []any{
-	(*Tcp)(nil),      // 0: robot.v1.Tcp
-	(*v1.Point)(nil), // 1: geometry.v1.Point
-	(*v1.Quad)(nil),  // 2: geometry.v1.Quad
+	(*TcpMessage)(nil), // 0: robot.v1.TcpMessage
+	(*v1.Point)(nil),   // 1: geometry.v1.Point
+	(*v1.Quad)(nil),    // 2: geometry.v1.Quad
 }
 var file_robot_v1_tcp_proto_depIdxs = []int32{
-	1, // 0: robot.v1.Tcp.position:type_name -> geometry.v1.Point
-	2, // 1: robot.v1.Tcp.orientation:type_name -> geometry.v1.Quad
+	1, // 0: robot.v1.TcpMessage.position:type_name -> geometry.v1.Point
+	2, // 1: robot.v1.TcpMessage.orientation:type_name -> geometry.v1.Quad
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class EndEffector(_message.Message):
+class EndEffectorStateMessage(_message.Message):
     __slots__ = ("robot_id", "live", "state")
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     LIVE_FIELD_NUMBER: _ClassVar[int]

@@ -24,18 +24,18 @@ namespace Messages.Common.V1 {
     static JointstateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chlyb2JvdC92MS9qb2ludHN0YXRlLnByb3RvEghyb2JvdC52MSJzCgpKb2lu",
-            "dFN0YXRlEhkKCHJvYm90X2lkGAEgASgJUgdyb2JvdElkEhIKBGxpdmUYAiAB",
-            "KAhSBGxpdmUSGgoIcG9zaXRpb24YAyADKAFSCHBvc2l0aW9uEhoKCHZlbG9j",
-            "aXR5GAQgAygBUgh2ZWxvY2l0eUKhAQoMY29tLnJvYm90LnYxQg9Kb2ludHN0",
-            "YXRlUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
-            "Z2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24u",
-            "VjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6",
-            "OlYxYgZwcm90bzM="));
+            "Chlyb2JvdC92MS9qb2ludHN0YXRlLnByb3RvEghyb2JvdC52MSJ6ChFKb2lu",
+            "dFN0YXRlTWVzc2FnZRIZCghyb2JvdF9pZBgBIAEoCVIHcm9ib3RJZBISCgRs",
+            "aXZlGAIgASgIUgRsaXZlEhoKCHBvc2l0aW9uGAMgAygBUghwb3NpdGlvbhIa",
+            "Cgh2ZWxvY2l0eRgEIAMoAVIIdmVsb2NpdHlCoQEKDGNvbS5yb2JvdC52MUIP",
+            "Sm9pbnRzdGF0ZVByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgISTWVzc2FnZXMu",
+            "Q29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoC",
+            "CVJvYm90OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.JointState), global::Messages.Common.V1.JointState.Parser, new[]{ "RobotId", "Live", "Position", "Velocity" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.JointStateMessage), global::Messages.Common.V1.JointStateMessage.Parser, new[]{ "RobotId", "Live", "Position", "Velocity" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,16 +43,16 @@ namespace Messages.Common.V1 {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class JointState : pb::IMessage<JointState>
+  public sealed partial class JointStateMessage : pb::IMessage<JointStateMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<JointState> _parser = new pb::MessageParser<JointState>(() => new JointState());
+    private static readonly pb::MessageParser<JointStateMessage> _parser = new pb::MessageParser<JointStateMessage>(() => new JointStateMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<JointState> Parser { get { return _parser; } }
+    public static pb::MessageParser<JointStateMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -68,7 +68,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public JointState() {
+    public JointStateMessage() {
       OnConstruction();
     }
 
@@ -76,7 +76,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public JointState(JointState other) : this() {
+    public JointStateMessage(JointStateMessage other) : this() {
       robotId_ = other.robotId_;
       live_ = other.live_;
       position_ = other.position_.Clone();
@@ -86,8 +86,8 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public JointState Clone() {
-      return new JointState(this);
+    public JointStateMessage Clone() {
+      return new JointStateMessage(this);
     }
 
     /// <summary>Field number for the "robot_id" field.</summary>
@@ -139,12 +139,12 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as JointState);
+      return Equals(other as JointStateMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(JointState other) {
+    public bool Equals(JointStateMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -240,7 +240,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(JointState other) {
+    public void MergeFrom(JointStateMessage other) {
       if (other == null) {
         return;
       }

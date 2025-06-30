@@ -50,10 +50,13 @@
     - [Wrench](#geometry-v1-Wrench)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
-    - [EndEffector](#robot-v1-EndEffector)
+    - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
   
 - [robot/v1/jointstate.proto](#robot_v1_jointstate-proto)
-    - [JointState](#robot-v1-JointState)
+    - [JointStateMessage](#robot-v1-JointStateMessage)
+  
+- [robot/v1/path.proto](#robot_v1_path-proto)
+    - [PathMessage](#robot-v1-PathMessage)
   
 - [robot/v1/popup.proto](#robot_v1_popup-proto)
     - [RobotHidePopupRequest](#robot-v1-RobotHidePopupRequest)
@@ -73,10 +76,17 @@
     - [RobotState](#robot-v1-RobotState)
   
 - [robot/v1/robot_visibility.proto](#robot_v1_robot_visibility-proto)
-    - [RobotVisibility](#robot-v1-RobotVisibility)
+    - [RobotVisibilityMessage](#robot-v1-RobotVisibilityMessage)
   
 - [robot/v1/tcp.proto](#robot_v1_tcp-proto)
-    - [Tcp](#robot-v1-Tcp)
+    - [TcpMessage](#robot-v1-TcpMessage)
+  
+- [robot/v1/waypoints.proto](#robot_v1_waypoints-proto)
+    - [WaypointMessage](#robot-v1-WaypointMessage)
+    - [WaypointsMessage](#robot-v1-WaypointsMessage)
+  
+- [robot/v1/zone.proto](#robot_v1_zone-proto)
+    - [ZoneMessage](#robot-v1-ZoneMessage)
   
 - [service/v1/response.proto](#service_v1_response-proto)
     - [Response](#service-v1-Response)
@@ -633,9 +643,9 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="robot-v1-EndEffector"></a>
+<a name="robot-v1-EndEffectorStateMessage"></a>
 
-### EndEffector
+### EndEffectorStateMessage
 
 
 
@@ -666,9 +676,9 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="robot-v1-JointState"></a>
+<a name="robot-v1-JointStateMessage"></a>
 
-### JointState
+### JointStateMessage
 
 
 
@@ -678,6 +688,39 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | live | [bool](#bool) |  |  |
 | position | [double](#double) | repeated |  |
 | velocity | [double](#double) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_path-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/path.proto
+
+
+
+<a name="robot-v1-PathMessage"></a>
+
+### PathMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+| points | [geometry.v1.Point](#geometry-v1-Point) | repeated |  |
 
 
 
@@ -882,9 +925,9 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="robot-v1-RobotVisibility"></a>
+<a name="robot-v1-RobotVisibilityMessage"></a>
 
-### RobotVisibility
+### RobotVisibilityMessage
 
 
 
@@ -919,9 +962,9 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="robot-v1-Tcp"></a>
+<a name="robot-v1-TcpMessage"></a>
 
-### Tcp
+### TcpMessage
 
 
 
@@ -930,6 +973,90 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | robot_id | [string](#string) |  |  |
 | position | [geometry.v1.Point](#geometry-v1-Point) |  |  |
 | orientation | [geometry.v1.Quad](#geometry-v1-Quad) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_waypoints-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/waypoints.proto
+
+
+
+<a name="robot-v1-WaypointMessage"></a>
+
+### WaypointMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| point | [geometry.v1.Point](#geometry-v1-Point) |  |  |
+
+
+
+
+
+
+<a name="robot-v1-WaypointsMessage"></a>
+
+### WaypointsMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+| frame_id | [string](#string) |  |  |
+| highlight_idx | [int32](#int32) |  |  |
+| waypoints | [WaypointMessage](#robot-v1-WaypointMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_zone-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/zone.proto
+
+
+
+<a name="robot-v1-ZoneMessage"></a>
+
+### ZoneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| frame_id | [string](#string) |  |  |
+| points | [geometry.v1.Point](#geometry-v1-Point) | repeated |  |
 
 
 

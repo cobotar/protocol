@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type RobotVisibility struct {
+type RobotVisibilityMessage struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	RobotId            string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
 	BaseVisible        bool                   `protobuf:"varint,2,opt,name=base_visible,json=baseVisible,proto3" json:"base_visible,omitempty"`
@@ -34,20 +34,20 @@ type RobotVisibility struct {
 	sizeCache          protoimpl.SizeCache
 }
 
-func (x *RobotVisibility) Reset() {
-	*x = RobotVisibility{}
+func (x *RobotVisibilityMessage) Reset() {
+	*x = RobotVisibilityMessage{}
 	mi := &file_robot_v1_robot_visibility_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *RobotVisibility) String() string {
+func (x *RobotVisibilityMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RobotVisibility) ProtoMessage() {}
+func (*RobotVisibilityMessage) ProtoMessage() {}
 
-func (x *RobotVisibility) ProtoReflect() protoreflect.Message {
+func (x *RobotVisibilityMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_robot_v1_robot_visibility_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -59,54 +59,54 @@ func (x *RobotVisibility) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RobotVisibility.ProtoReflect.Descriptor instead.
-func (*RobotVisibility) Descriptor() ([]byte, []int) {
+// Deprecated: Use RobotVisibilityMessage.ProtoReflect.Descriptor instead.
+func (*RobotVisibilityMessage) Descriptor() ([]byte, []int) {
 	return file_robot_v1_robot_visibility_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RobotVisibility) GetRobotId() string {
+func (x *RobotVisibilityMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
 	}
 	return ""
 }
 
-func (x *RobotVisibility) GetBaseVisible() bool {
+func (x *RobotVisibilityMessage) GetBaseVisible() bool {
 	if x != nil {
 		return x.BaseVisible
 	}
 	return false
 }
 
-func (x *RobotVisibility) GetUpperArmVisible() bool {
+func (x *RobotVisibilityMessage) GetUpperArmVisible() bool {
 	if x != nil {
 		return x.UpperArmVisible
 	}
 	return false
 }
 
-func (x *RobotVisibility) GetForearmVisible() bool {
+func (x *RobotVisibilityMessage) GetForearmVisible() bool {
 	if x != nil {
 		return x.ForearmVisible
 	}
 	return false
 }
 
-func (x *RobotVisibility) GetWristVisible() bool {
+func (x *RobotVisibilityMessage) GetWristVisible() bool {
 	if x != nil {
 		return x.WristVisible
 	}
 	return false
 }
 
-func (x *RobotVisibility) GetEndEffectorVisible() bool {
+func (x *RobotVisibilityMessage) GetEndEffectorVisible() bool {
 	if x != nil {
 		return x.EndEffectorVisible
 	}
 	return false
 }
 
-func (x *RobotVisibility) GetTcpVisible() bool {
+func (x *RobotVisibilityMessage) GetTcpVisible() bool {
 	if x != nil {
 		return x.TcpVisible
 	}
@@ -117,8 +117,8 @@ var File_robot_v1_robot_visibility_proto protoreflect.FileDescriptor
 
 const file_robot_v1_robot_visibility_proto_rawDesc = "" +
 	"\n" +
-	"\x1frobot/v1/robot_visibility.proto\x12\brobot.v1\"\x9c\x02\n" +
-	"\x0fRobotVisibility\x12\x19\n" +
+	"\x1frobot/v1/robot_visibility.proto\x12\brobot.v1\"\xa3\x02\n" +
+	"\x16RobotVisibilityMessage\x12\x19\n" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12!\n" +
 	"\fbase_visible\x18\x02 \x01(\bR\vbaseVisible\x12*\n" +
 	"\x11upper_arm_visible\x18\x03 \x01(\bR\x0fupperArmVisible\x12'\n" +
@@ -143,7 +143,7 @@ func file_robot_v1_robot_visibility_proto_rawDescGZIP() []byte {
 
 var file_robot_v1_robot_visibility_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_robot_v1_robot_visibility_proto_goTypes = []any{
-	(*RobotVisibility)(nil), // 0: robot.v1.RobotVisibility
+	(*RobotVisibilityMessage)(nil), // 0: robot.v1.RobotVisibilityMessage
 }
 var file_robot_v1_robot_visibility_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

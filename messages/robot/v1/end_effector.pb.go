@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type EndEffector struct {
+type EndEffectorStateMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
 	Live          bool                   `protobuf:"varint,2,opt,name=live,proto3" json:"live,omitempty"`
@@ -30,20 +30,20 @@ type EndEffector struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *EndEffector) Reset() {
-	*x = EndEffector{}
+func (x *EndEffectorStateMessage) Reset() {
+	*x = EndEffectorStateMessage{}
 	mi := &file_robot_v1_end_effector_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *EndEffector) String() string {
+func (x *EndEffectorStateMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*EndEffector) ProtoMessage() {}
+func (*EndEffectorStateMessage) ProtoMessage() {}
 
-func (x *EndEffector) ProtoReflect() protoreflect.Message {
+func (x *EndEffectorStateMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_robot_v1_end_effector_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,26 +55,26 @@ func (x *EndEffector) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use EndEffector.ProtoReflect.Descriptor instead.
-func (*EndEffector) Descriptor() ([]byte, []int) {
+// Deprecated: Use EndEffectorStateMessage.ProtoReflect.Descriptor instead.
+func (*EndEffectorStateMessage) Descriptor() ([]byte, []int) {
 	return file_robot_v1_end_effector_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *EndEffector) GetRobotId() string {
+func (x *EndEffectorStateMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
 	}
 	return ""
 }
 
-func (x *EndEffector) GetLive() bool {
+func (x *EndEffectorStateMessage) GetLive() bool {
 	if x != nil {
 		return x.Live
 	}
 	return false
 }
 
-func (x *EndEffector) GetState() string {
+func (x *EndEffectorStateMessage) GetState() string {
 	if x != nil {
 		return x.State
 	}
@@ -85,8 +85,8 @@ var File_robot_v1_end_effector_proto protoreflect.FileDescriptor
 
 const file_robot_v1_end_effector_proto_rawDesc = "" +
 	"\n" +
-	"\x1brobot/v1/end_effector.proto\x12\brobot.v1\"R\n" +
-	"\vEndEffector\x12\x19\n" +
+	"\x1brobot/v1/end_effector.proto\x12\brobot.v1\"^\n" +
+	"\x17EndEffectorStateMessage\x12\x19\n" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12\x12\n" +
 	"\x04live\x18\x02 \x01(\bR\x04live\x12\x14\n" +
 	"\x05state\x18\x03 \x01(\tR\x05stateB\xa2\x01\n" +
@@ -106,7 +106,7 @@ func file_robot_v1_end_effector_proto_rawDescGZIP() []byte {
 
 var file_robot_v1_end_effector_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_robot_v1_end_effector_proto_goTypes = []any{
-	(*EndEffector)(nil), // 0: robot.v1.EndEffector
+	(*EndEffectorStateMessage)(nil), // 0: robot.v1.EndEffectorStateMessage
 }
 var file_robot_v1_end_effector_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

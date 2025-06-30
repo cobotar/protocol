@@ -24,22 +24,22 @@ namespace Messages.Common.V1 {
     static RobotVisibilityReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9yb2JvdC92MS9yb2JvdF92aXNpYmlsaXR5LnByb3RvEghyb2JvdC52MSKc",
-            "AgoPUm9ib3RWaXNpYmlsaXR5EhkKCHJvYm90X2lkGAEgASgJUgdyb2JvdElk",
-            "EiEKDGJhc2VfdmlzaWJsZRgCIAEoCFILYmFzZVZpc2libGUSKgoRdXBwZXJf",
-            "YXJtX3Zpc2libGUYAyABKAhSD3VwcGVyQXJtVmlzaWJsZRInCg9mb3JlYXJt",
-            "X3Zpc2libGUYBCABKAhSDmZvcmVhcm1WaXNpYmxlEiMKDXdyaXN0X3Zpc2li",
-            "bGUYBSABKAhSDHdyaXN0VmlzaWJsZRIwChRlbmRfZWZmZWN0b3JfdmlzaWJs",
-            "ZRgGIAEoCFISZW5kRWZmZWN0b3JWaXNpYmxlEh8KC3RjcF92aXNpYmxlGAcg",
-            "ASgIUgp0Y3BWaXNpYmxlQqYBCgxjb20ucm9ib3QudjFCFFJvYm90VmlzaWJp",
-            "bGl0eVByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
-            "YWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgISTWVzc2FnZXMuQ29tbW9u",
-            "LlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90",
-            "OjpWMWIGcHJvdG8z"));
+            "Ch9yb2JvdC92MS9yb2JvdF92aXNpYmlsaXR5LnByb3RvEghyb2JvdC52MSKj",
+            "AgoWUm9ib3RWaXNpYmlsaXR5TWVzc2FnZRIZCghyb2JvdF9pZBgBIAEoCVIH",
+            "cm9ib3RJZBIhCgxiYXNlX3Zpc2libGUYAiABKAhSC2Jhc2VWaXNpYmxlEioK",
+            "EXVwcGVyX2FybV92aXNpYmxlGAMgASgIUg91cHBlckFybVZpc2libGUSJwoP",
+            "Zm9yZWFybV92aXNpYmxlGAQgASgIUg5mb3JlYXJtVmlzaWJsZRIjCg13cmlz",
+            "dF92aXNpYmxlGAUgASgIUgx3cmlzdFZpc2libGUSMAoUZW5kX2VmZmVjdG9y",
+            "X3Zpc2libGUYBiABKAhSEmVuZEVmZmVjdG9yVmlzaWJsZRIfCgt0Y3Bfdmlz",
+            "aWJsZRgHIAEoCFIKdGNwVmlzaWJsZUKmAQoMY29tLnJvYm90LnYxQhRSb2Jv",
+            "dFZpc2liaWxpdHlQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEk1lc3NhZ2Vz",
+            "LkNvbW1vbi5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHq",
+            "AglSb2JvdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotVisibility), global::Messages.Common.V1.RobotVisibility.Parser, new[]{ "RobotId", "BaseVisible", "UpperArmVisible", "ForearmVisible", "WristVisible", "EndEffectorVisible", "TcpVisible" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotVisibilityMessage), global::Messages.Common.V1.RobotVisibilityMessage.Parser, new[]{ "RobotId", "BaseVisible", "UpperArmVisible", "ForearmVisible", "WristVisible", "EndEffectorVisible", "TcpVisible" }, null, null, null, null)
           }));
     }
     #endregion
@@ -47,16 +47,16 @@ namespace Messages.Common.V1 {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class RobotVisibility : pb::IMessage<RobotVisibility>
+  public sealed partial class RobotVisibilityMessage : pb::IMessage<RobotVisibilityMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<RobotVisibility> _parser = new pb::MessageParser<RobotVisibility>(() => new RobotVisibility());
+    private static readonly pb::MessageParser<RobotVisibilityMessage> _parser = new pb::MessageParser<RobotVisibilityMessage>(() => new RobotVisibilityMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<RobotVisibility> Parser { get { return _parser; } }
+    public static pb::MessageParser<RobotVisibilityMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -72,7 +72,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotVisibility() {
+    public RobotVisibilityMessage() {
       OnConstruction();
     }
 
@@ -80,7 +80,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotVisibility(RobotVisibility other) : this() {
+    public RobotVisibilityMessage(RobotVisibilityMessage other) : this() {
       robotId_ = other.robotId_;
       baseVisible_ = other.baseVisible_;
       upperArmVisible_ = other.upperArmVisible_;
@@ -93,8 +93,8 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotVisibility Clone() {
-      return new RobotVisibility(this);
+    public RobotVisibilityMessage Clone() {
+      return new RobotVisibilityMessage(this);
     }
 
     /// <summary>Field number for the "robot_id" field.</summary>
@@ -184,12 +184,12 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as RobotVisibility);
+      return Equals(other as RobotVisibilityMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RobotVisibility other) {
+    public bool Equals(RobotVisibilityMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -340,7 +340,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RobotVisibility other) {
+    public void MergeFrom(RobotVisibilityMessage other) {
       if (other == null) {
         return;
       }

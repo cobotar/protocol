@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class RobotVisibility(_message.Message):
+class RobotVisibilityMessage(_message.Message):
     __slots__ = ("robot_id", "base_visible", "upper_arm_visible", "forearm_visible", "wrist_visible", "end_effector_visible", "tcp_visible")
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     BASE_VISIBLE_FIELD_NUMBER: _ClassVar[int]

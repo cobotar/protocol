@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class JointState(_message.Message):
+class JointStateMessage(_message.Message):
     __slots__ = ("robot_id", "live", "position", "velocity")
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     LIVE_FIELD_NUMBER: _ClassVar[int]

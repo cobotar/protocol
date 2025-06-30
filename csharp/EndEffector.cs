@@ -24,17 +24,17 @@ namespace Messages.Common.V1 {
     static EndEffectorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chtyb2JvdC92MS9lbmRfZWZmZWN0b3IucHJvdG8SCHJvYm90LnYxIlIKC0Vu",
-            "ZEVmZmVjdG9yEhkKCHJvYm90X2lkGAEgASgJUgdyb2JvdElkEhIKBGxpdmUY",
-            "AiABKAhSBGxpdmUSFAoFc3RhdGUYAyABKAlSBXN0YXRlQqIBCgxjb20ucm9i",
-            "b3QudjFCEEVuZEVmZmVjdG9yUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJN",
-            "ZXNzYWdlcy5Db21tb24uVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1l",
-            "dGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
+            "Chtyb2JvdC92MS9lbmRfZWZmZWN0b3IucHJvdG8SCHJvYm90LnYxIl4KF0Vu",
+            "ZEVmZmVjdG9yU3RhdGVNZXNzYWdlEhkKCHJvYm90X2lkGAEgASgJUgdyb2Jv",
+            "dElkEhIKBGxpdmUYAiABKAhSBGxpdmUSFAoFc3RhdGUYAyABKAlSBXN0YXRl",
+            "QqIBCgxjb20ucm9ib3QudjFCEEVuZEVmZmVjdG9yUHJvdG9QAVo1Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90",
+            "djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAghSb2JvdFxWMeICFFJv",
+            "Ym90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.EndEffector), global::Messages.Common.V1.EndEffector.Parser, new[]{ "RobotId", "Live", "State" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.EndEffectorStateMessage), global::Messages.Common.V1.EndEffectorStateMessage.Parser, new[]{ "RobotId", "Live", "State" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,16 +42,16 @@ namespace Messages.Common.V1 {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EndEffector : pb::IMessage<EndEffector>
+  public sealed partial class EndEffectorStateMessage : pb::IMessage<EndEffectorStateMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<EndEffector> _parser = new pb::MessageParser<EndEffector>(() => new EndEffector());
+    private static readonly pb::MessageParser<EndEffectorStateMessage> _parser = new pb::MessageParser<EndEffectorStateMessage>(() => new EndEffectorStateMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EndEffector> Parser { get { return _parser; } }
+    public static pb::MessageParser<EndEffectorStateMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -67,7 +67,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EndEffector() {
+    public EndEffectorStateMessage() {
       OnConstruction();
     }
 
@@ -75,7 +75,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EndEffector(EndEffector other) : this() {
+    public EndEffectorStateMessage(EndEffectorStateMessage other) : this() {
       robotId_ = other.robotId_;
       live_ = other.live_;
       state_ = other.state_;
@@ -84,8 +84,8 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EndEffector Clone() {
-      return new EndEffector(this);
+    public EndEffectorStateMessage Clone() {
+      return new EndEffectorStateMessage(this);
     }
 
     /// <summary>Field number for the "robot_id" field.</summary>
@@ -127,12 +127,12 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as EndEffector);
+      return Equals(other as EndEffectorStateMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EndEffector other) {
+    public bool Equals(EndEffectorStateMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -231,7 +231,7 @@ namespace Messages.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EndEffector other) {
+    public void MergeFrom(EndEffectorStateMessage other) {
       if (other == null) {
         return;
       }
