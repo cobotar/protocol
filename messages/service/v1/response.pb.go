@@ -91,8 +91,8 @@ const file_service_v1_response_proto_rawDesc = "" +
 	"\n" +
 	"request_id\x18\x01 \x01(\tR\trequestId\x12\x18\n" +
 	"\asuccess\x18\x02 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessageB\xab\x01\n" +
-	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x12Messages.Common.V1\xca\x02\n" +
+	"\amessage\x18\x03 \x01(\tR\amessageB\xac\x01\n" +
+	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

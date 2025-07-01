@@ -37,8 +37,29 @@
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
   
+- [tracker/v1/tracker.proto](#tracker_v1_tracker-proto)
+    - [Tracker](#tracker-v1-Tracker)
+  
+    - [TrackerType](#tracker-v1-TrackerType)
+  
+- [common/v1/configuration.proto](#common_v1_configuration-proto)
+    - [AddConfigurationMessage](#common-v1-AddConfigurationMessage)
+    - [ConfigurationMessage](#common-v1-ConfigurationMessage)
+    - [LoadConfigurationMessage](#common-v1-LoadConfigurationMessage)
+  
+- [common/v1/configurations.proto](#common_v1_configurations-proto)
+    - [ConfigurationInfoMessage](#common-v1-ConfigurationInfoMessage)
+    - [ConfigurationInfoMessages](#common-v1-ConfigurationInfoMessages)
+  
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
+  
+- [common/v1/template.proto](#common_v1_template-proto)
+    - [TemplateMessage](#common-v1-TemplateMessage)
+  
+- [common/v1/templates.proto](#common_v1_templates-proto)
+    - [TemplateInfoMessage](#common-v1-TemplateInfoMessage)
+    - [TemplateInfoMessages](#common-v1-TemplateInfoMessages)
   
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
@@ -88,18 +109,21 @@
 - [robot/v1/zone.proto](#robot_v1_zone-proto)
     - [ZoneMessage](#robot-v1-ZoneMessage)
   
+- [service/v1/ar_client.proto](#service_v1_ar_client-proto)
+    - [ARClientMessage](#service-v1-ARClientMessage)
+  
+    - [ARClientRole](#service-v1-ARClientRole)
+  
 - [service/v1/response.proto](#service_v1_response-proto)
     - [Response](#service-v1-Response)
+  
+- [service/v1/robot_adapter.proto](#service_v1_robot_adapter-proto)
+    - [RobotAdapterInfoMessage](#service-v1-RobotAdapterInfoMessage)
   
 - [service/v1/status.proto](#service_v1_status-proto)
     - [ServiceStatus](#service-v1-ServiceStatus)
   
     - [Status](#service-v1-Status)
-  
-- [tracker/v1/tracker.proto](#tracker_v1_tracker-proto)
-    - [Tracker](#tracker-v1-Tracker)
-  
-    - [TrackerType](#tracker-v1-TrackerType)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -507,6 +531,172 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="tracker_v1_tracker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## tracker/v1/tracker.proto
+
+
+
+<a name="tracker-v1-Tracker"></a>
+
+### Tracker
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| reference | [string](#string) |  |  |
+| frame | [string](#string) |  |  |
+| type | [TrackerType](#tracker-v1-TrackerType) |  |  |
+| marker_text | [string](#string) |  | TODO: add properties |
+
+
+
+
+
+ 
+
+
+<a name="tracker-v1-TrackerType"></a>
+
+### TrackerType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TRACKER_TYPE_UNSPECIFIED | 0 |  |
+| TRACKER_TYPE_QR_CODE | 1 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_configuration-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/configuration.proto
+
+
+
+<a name="common-v1-AddConfigurationMessage"></a>
+
+### AddConfigurationMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the new configuration |
+| description | [string](#string) |  | A description of the new configuration |
+| template_id | [string](#string) |  | Template id is used to pre-populate a configuration. Leave empty for a new fresh start. |
+
+
+
+
+
+
+<a name="common-v1-ConfigurationMessage"></a>
+
+### ConfigurationMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| instance_id | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| agents | [Agent](#common-v1-Agent) | repeated |  |
+| trackers | [tracker.v1.Tracker](#tracker-v1-Tracker) | repeated |  |
+| properties | [Property](#common-v1-Property) | repeated | Feedback Actions |
+
+
+
+
+
+
+<a name="common-v1-LoadConfigurationMessage"></a>
+
+### LoadConfigurationMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Id of the configuration to be loaded |
+| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_configurations-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/configurations.proto
+
+
+
+<a name="common-v1-ConfigurationInfoMessage"></a>
+
+### ConfigurationInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| descriptions | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="common-v1-ConfigurationInfoMessages"></a>
+
+### ConfigurationInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| configurations | [ConfigurationInfoMessage](#common-v1-ConfigurationInfoMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_delete-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -524,6 +714,90 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Id of the entity to be deleted |
 | message | [string](#string) |  | Optional message |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_template-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/template.proto
+
+
+
+<a name="common-v1-TemplateMessage"></a>
+
+### TemplateMessage
+TODO: consider this a bit more?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| agents | [Agent](#common-v1-Agent) | repeated |  |
+| trackers | [tracker.v1.Tracker](#tracker-v1-Tracker) | repeated |  |
+| properties | [Property](#common-v1-Property) | repeated | Feedback Actions |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_templates-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/templates.proto
+
+
+
+<a name="common-v1-TemplateInfoMessage"></a>
+
+### TemplateInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="common-v1-TemplateInfoMessages"></a>
+
+### TemplateInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| templates | [TemplateInfoMessage](#common-v1-TemplateInfoMessage) | repeated |  |
 
 
 
@@ -1072,6 +1346,52 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="service_v1_ar_client-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/ar_client.proto
+
+
+
+<a name="service-v1-ARClientMessage"></a>
+
+### ARClientMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| role | [ARClientRole](#service-v1-ARClientRole) |  |  |
+| operator_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="service-v1-ARClientRole"></a>
+
+### ARClientRole
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CLIENT_ROLE_UNSPECIFIED | 0 |  |
+| AR_CLIENT_ROLE_MAIN | 1 |  |
+| AR_CLIENT_ROLE_SPECTATOR | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="service_v1_response-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1090,6 +1410,39 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | request_id | [string](#string) |  |  |
 | success | [bool](#bool) |  | True if the request was carried out |
 | message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="service_v1_robot_adapter-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/robot_adapter.proto
+
+
+
+<a name="service-v1-RobotAdapterInfoMessage"></a>
+
+### RobotAdapterInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| robot_type | [string](#string) |  | TODO: use type enum? |
+| identifier | [string](#string) |  |  |
 
 
 
@@ -1144,54 +1497,6 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | STATUS_UNSPECIFIED | 0 |  |
 | STATUS_OFFLINE | 1 |  |
 | STATUS_ONLINE | 2 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="tracker_v1_tracker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## tracker/v1/tracker.proto
-
-
-
-<a name="tracker-v1-Tracker"></a>
-
-### Tracker
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| reference | [string](#string) |  |  |
-| frame | [string](#string) |  |  |
-| type | [TrackerType](#tracker-v1-TrackerType) |  |  |
-| marker_text | [string](#string) |  | TODO: add properties |
-
-
-
-
-
- 
-
-
-<a name="tracker-v1-TrackerType"></a>
-
-### TrackerType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TRACKER_TYPE_UNSPECIFIED | 0 |  |
-| TRACKER_TYPE_QR_CODE | 1 |  |
 
 
  
