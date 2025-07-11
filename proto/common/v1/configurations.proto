@@ -7,7 +7,7 @@ option go_package = "github.com/cobotar/protocol/messages/common/v1";
 message ConfigurationInfoMessage {
   string id = 1;
   string name = 2;
-  string descriptions = 3;
+  string description = 3;
 }
 
 message ConfigurationInfoMessages {
