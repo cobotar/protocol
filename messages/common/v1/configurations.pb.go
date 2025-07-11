@@ -25,7 +25,7 @@ type ConfigurationInfoMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Descriptions  string                 `protobuf:"bytes,3,opt,name=descriptions,proto3" json:"descriptions,omitempty"`
+	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -74,9 +74,9 @@ func (x *ConfigurationInfoMessage) GetName() string {
 	return ""
 }
 
-func (x *ConfigurationInfoMessage) GetDescriptions() string {
+func (x *ConfigurationInfoMessage) GetDescription() string {
 	if x != nil {
-		return x.Descriptions
+		return x.Description
 	}
 	return ""
 }
@@ -129,11 +129,11 @@ var File_common_v1_configurations_proto protoreflect.FileDescriptor
 
 const file_common_v1_configurations_proto_rawDesc = "" +
 	"\n" +
-	"\x1ecommon/v1/configurations.proto\x12\tcommon.v1\"b\n" +
+	"\x1ecommon/v1/configurations.proto\x12\tcommon.v1\"`\n" +
 	"\x18ConfigurationInfoMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\"\n" +
-	"\fdescriptions\x18\x03 \x01(\tR\fdescriptions\"h\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\"h\n" +
 	"\x19ConfigurationInfoMessages\x12K\n" +
 	"\x0econfigurations\x18\x01 \x03(\v2#.common.v1.ConfigurationInfoMessageR\x0econfigurationsB\xab\x01\n" +
 	"\rcom.common.v1B\x13ConfigurationsProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +

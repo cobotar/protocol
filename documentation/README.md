@@ -70,6 +70,17 @@
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
   
+- [plm/v1/assembly.proto](#plm_v1_assembly-proto)
+    - [LoadProcessMessage](#plm-v1-LoadProcessMessage)
+    - [ReassignTaskMessage](#plm-v1-ReassignTaskMessage)
+    - [UpdateTaskStateMessage](#plm-v1-UpdateTaskStateMessage)
+  
+    - [TaskStateRequest](#plm-v1-TaskStateRequest)
+  
+- [plm/v1/process.proto](#plm_v1_process-proto)
+- [plm/v1/task.proto](#plm_v1_task-proto)
+    - [TaskState](#plm-v1-TaskState)
+  
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
   
@@ -666,7 +677,7 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| descriptions | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -901,6 +912,136 @@ TODO: consider this a bit more?
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_assembly-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/assembly.proto
+
+
+
+<a name="plm-v1-LoadProcessMessage"></a>
+
+### LoadProcessMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| process_id | [string](#string) |  |  |
+| location_id | [string](#string) |  | TODO: What name should this be? |
+
+
+
+
+
+
+<a name="plm-v1-ReassignTaskMessage"></a>
+
+### ReassignTaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
+| assignee | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateTaskStateMessage"></a>
+
+### UpdateTaskStateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
+| state | [TaskStateRequest](#plm-v1-TaskStateRequest) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-TaskStateRequest"></a>
+
+### TaskStateRequest
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_STATE_REQUEST_UNSPECIFIED | 0 |  |
+| TASK_STATE_REQUEST_IN_PROGRESS | 3 |  |
+| TASK_STATE_REQUEST_COMPLETED | 4 |  |
+| TASK_STATE_REQUEST_UNDO | 5 |  |
+| TASK_STATE_REQUEST_ERROR | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_process-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_task-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task.proto
+
+
+ 
+
+
+<a name="plm-v1-TaskState"></a>
+
+### TaskState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_STATE_UNSPECIFIED | 0 |  |
+| TASK_STATE_IN_MISSING_PRECONDITION | 1 |  |
+| TASK_STATE_IN_WAITING | 2 |  |
+| TASK_STATE_IN_PROGRESS | 3 |  |
+| TASK_STATE_COMPLETED | 4 |  |
+| TASK_STATE_ERROR | 6 |  |
+
 
  
 

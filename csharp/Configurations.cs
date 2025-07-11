@@ -24,20 +24,20 @@ namespace Messages.Common.V1 {
     static ConfigurationsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5jb21tb24vdjEvY29uZmlndXJhdGlvbnMucHJvdG8SCWNvbW1vbi52MSJi",
+            "Ch5jb21tb24vdjEvY29uZmlndXJhdGlvbnMucHJvdG8SCWNvbW1vbi52MSJg",
             "ChhDb25maWd1cmF0aW9uSW5mb01lc3NhZ2USDgoCaWQYASABKAlSAmlkEhIK",
-            "BG5hbWUYAiABKAlSBG5hbWUSIgoMZGVzY3JpcHRpb25zGAMgASgJUgxkZXNj",
-            "cmlwdGlvbnMiaAoZQ29uZmlndXJhdGlvbkluZm9NZXNzYWdlcxJLCg5jb25m",
-            "aWd1cmF0aW9ucxgBIAMoCzIjLmNvbW1vbi52MS5Db25maWd1cmF0aW9uSW5m",
-            "b01lc3NhZ2VSDmNvbmZpZ3VyYXRpb25zQqsBCg1jb20uY29tbW9uLnYxQhND",
-            "b25maWd1cmF0aW9uc1Byb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJNZXNz",
-            "YWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BCTWV0",
-            "YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
+            "BG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2Ny",
+            "aXB0aW9uImgKGUNvbmZpZ3VyYXRpb25JbmZvTWVzc2FnZXMSSwoOY29uZmln",
+            "dXJhdGlvbnMYASADKAsyIy5jb21tb24udjEuQ29uZmlndXJhdGlvbkluZm9N",
+            "ZXNzYWdlUg5jb25maWd1cmF0aW9uc0KrAQoNY29tLmNvbW1vbi52MUITQ29u",
+            "ZmlndXJhdGlvbnNQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2Fn",
+            "ZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFk",
+            "YXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ConfigurationInfoMessage), global::Messages.Common.V1.ConfigurationInfoMessage.Parser, new[]{ "Id", "Name", "Descriptions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ConfigurationInfoMessage), global::Messages.Common.V1.ConfigurationInfoMessage.Parser, new[]{ "Id", "Name", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ConfigurationInfoMessages), global::Messages.Common.V1.ConfigurationInfoMessages.Parser, new[]{ "Configurations" }, null, null, null, null)
           }));
     }
@@ -82,7 +82,7 @@ namespace Messages.Common.V1 {
     public ConfigurationInfoMessage(ConfigurationInfoMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      descriptions_ = other.descriptions_;
+      description_ = other.description_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -116,15 +116,15 @@ namespace Messages.Common.V1 {
       }
     }
 
-    /// <summary>Field number for the "descriptions" field.</summary>
-    public const int DescriptionsFieldNumber = 3;
-    private string descriptions_ = "";
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Descriptions {
-      get { return descriptions_; }
+    public string Description {
+      get { return description_; }
       set {
-        descriptions_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -145,7 +145,7 @@ namespace Messages.Common.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Descriptions != other.Descriptions) return false;
+      if (Description != other.Description) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -155,7 +155,7 @@ namespace Messages.Common.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Descriptions.Length != 0) hash ^= Descriptions.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,9 +182,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Descriptions.Length != 0) {
+      if (Description.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Descriptions);
+        output.WriteString(Description);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -204,9 +204,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Descriptions.Length != 0) {
+      if (Description.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Descriptions);
+        output.WriteString(Description);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -224,8 +224,8 @@ namespace Messages.Common.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Descriptions.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Descriptions);
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -245,8 +245,8 @@ namespace Messages.Common.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Descriptions.Length != 0) {
-        Descriptions = other.Descriptions;
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -276,7 +276,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 26: {
-            Descriptions = input.ReadString();
+            Description = input.ReadString();
             break;
           }
         }
@@ -307,7 +307,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 26: {
-            Descriptions = input.ReadString();
+            Description = input.ReadString();
             break;
           }
         }

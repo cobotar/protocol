@@ -14,9 +14,9 @@ enum TaskState {
 }
 
 /*
-message TaskMessage {
-  string id = 1;
-  string message = 2;
-}
+   message TaskMessage {
+     string id = 1;
+     string message = 2;
+   }
 
 */

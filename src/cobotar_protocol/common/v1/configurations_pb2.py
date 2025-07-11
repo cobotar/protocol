@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63ommon/v1/configurations.proto\x12\tcommon.v1\"b\n\x18\x43onfigurationInfoMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\"\n\x0c\x64\x65scriptions\x18\x03 \x01(\tR\x0c\x64\x65scriptions\"h\n\x19\x43onfigurationInfoMessages\x12K\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32#.common.v1.ConfigurationInfoMessageR\x0e\x63onfigurationsB\xab\x01\n\rcom.common.v1B\x13\x43onfigurationsProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63ommon/v1/configurations.proto\x12\tcommon.v1\"`\n\x18\x43onfigurationInfoMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\"h\n\x19\x43onfigurationInfoMessages\x12K\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32#.common.v1.ConfigurationInfoMessageR\x0e\x63onfigurationsB\xab\x01\n\rcom.common.v1B\x13\x43onfigurationsProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\023ConfigurationsProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
   _globals['_CONFIGURATIONINFOMESSAGE']._serialized_start=45
-  _globals['_CONFIGURATIONINFOMESSAGE']._serialized_end=143
-  _globals['_CONFIGURATIONINFOMESSAGES']._serialized_start=145
-  _globals['_CONFIGURATIONINFOMESSAGES']._serialized_end=249
+  _globals['_CONFIGURATIONINFOMESSAGE']._serialized_end=141
+  _globals['_CONFIGURATIONINFOMESSAGES']._serialized_start=143
+  _globals['_CONFIGURATIONINFOMESSAGES']._serialized_end=247
 # @@protoc_insertion_point(module_scope)
