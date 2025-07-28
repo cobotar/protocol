@@ -34,6 +34,9 @@ breaking:
 ## generate: run the buf generate command
 .PHONY: generate
 generate:
+	rm -rf ./messages/*
+	rm -r ./src/cobotar_protocol/*/
+	rm -rf ./csharp/*.cs
 	buf generate
 
 ## verify: run lint, format, breaking, and generate command
