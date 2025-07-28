@@ -70,16 +70,52 @@
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
   
-- [plm/v1/assembly.proto](#plm_v1_assembly-proto)
-    - [LoadProcessMessage](#plm-v1-LoadProcessMessage)
-    - [ReassignTaskMessage](#plm-v1-ReassignTaskMessage)
-    - [UpdateTaskStateMessage](#plm-v1-UpdateTaskStateMessage)
+- [plm/v1/sequence.proto](#plm_v1_sequence-proto)
+    - [SequenceMessage](#plm-v1-SequenceMessage)
+    - [SequenceUpdatedMessage](#plm-v1-SequenceUpdatedMessage)
   
-    - [TaskStateRequest](#plm-v1-TaskStateRequest)
+    - [SequenceState](#plm-v1-SequenceState)
+  
+- [plm/v1/task.proto](#plm_v1_task-proto)
+    - [TaskMessage](#plm-v1-TaskMessage)
+    - [TaskUpdatedMessage](#plm-v1-TaskUpdatedMessage)
+  
+    - [TaskState](#plm-v1-TaskState)
+    - [TaskType](#plm-v1-TaskType)
   
 - [plm/v1/process.proto](#plm_v1_process-proto)
-- [plm/v1/task.proto](#plm_v1_task-proto)
-    - [TaskState](#plm-v1-TaskState)
+    - [ProcessMessage](#plm-v1-ProcessMessage)
+  
+    - [ProcessType](#plm-v1-ProcessType)
+  
+- [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
+    - [DeleteProcessMessage](#plm-v1-DeleteProcessMessage)
+    - [NewProcessMessage](#plm-v1-NewProcessMessage)
+    - [UpdateProcessMessage](#plm-v1-UpdateProcessMessage)
+  
+- [plm/v1/process_load.proto](#plm_v1_process_load-proto)
+    - [ProcessLoadMessage](#plm-v1-ProcessLoadMessage)
+  
+- [plm/v1/requests.proto](#plm_v1_requests-proto)
+    - [ProcessAtLocationMessage](#plm-v1-ProcessAtLocationMessage)
+    - [TasksForAgentMessage](#plm-v1-TasksForAgentMessage)
+  
+- [plm/v1/sequence_complete.proto](#plm_v1_sequence_complete-proto)
+    - [SequenceBulkCompleteMessage](#plm-v1-SequenceBulkCompleteMessage)
+  
+- [plm/v1/sequence_reassign.proto](#plm_v1_sequence_reassign-proto)
+    - [SequenceReassignMessage](#plm-v1-SequenceReassignMessage)
+  
+- [plm/v1/task_progress.proto](#plm_v1_task_progress-proto)
+    - [TaskProgressMessage](#plm-v1-TaskProgressMessage)
+  
+- [plm/v1/task_reassign.proto](#plm_v1_task_reassign-proto)
+    - [TaskReassignMessage](#plm-v1-TaskReassignMessage)
+  
+- [plm/v1/task_state_change.proto](#plm_v1_task_state_change-proto)
+    - [TaskStateChangeMessage](#plm-v1-TaskStateChangeMessage)
+  
+    - [TaskStateRequest](#plm-v1-TaskStateRequest)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -921,16 +957,306 @@ TODO: consider this a bit more?
 
 
 
-<a name="plm_v1_assembly-proto"></a>
+<a name="plm_v1_sequence-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plm/v1/assembly.proto
+## plm/v1/sequence.proto
 
 
 
-<a name="plm-v1-LoadProcessMessage"></a>
+<a name="plm-v1-SequenceMessage"></a>
 
-### LoadProcessMessage
+### SequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| parent_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| assigned_to | [string](#string) | repeated |  |
+| state | [SequenceState](#plm-v1-SequenceState) |  |  |
+| completed_tasks | [int64](#int64) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-SequenceUpdatedMessage"></a>
+
+### SequenceUpdatedMessage
+Update published when the state of an sequence have changed
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence_id | [string](#string) |  |  |
+| assigned_to | [string](#string) | repeated |  |
+| state | [SequenceState](#plm-v1-SequenceState) |  |  |
+| completed_tasks | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-SequenceState"></a>
+
+### SequenceState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_STATE_UNSPECIFIED | 0 |  |
+| SEQUENCE_STATE_MISSING_PRECONDITION | 1 |  |
+| SEQUENCE_STATE_WAITING | 2 |  |
+| SEQUENCE_STATE_IN_PROGRESS | 3 |  |
+| SEQUENCE_STATE_COMPLETED | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_task-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task.proto
+
+
+
+<a name="plm-v1-TaskMessage"></a>
+
+### TaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| part_id | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
+| task_type | [TaskType](#plm-v1-TaskType) |  |  |
+| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| parent_id | [string](#string) |  |  |
+| agents_ids | [string](#string) | repeated |  |
+| assigned_to | [string](#string) |  |  |
+| state | [TaskState](#plm-v1-TaskState) |  |  |
+| preconditions | [string](#string) | repeated |  |
+| dependants | [string](#string) | repeated |  |
+| can_reassign | [bool](#bool) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-TaskUpdatedMessage"></a>
+
+### TaskUpdatedMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| assigned_to | [string](#string) |  |  |
+| state | [TaskState](#plm-v1-TaskState) |  |  |
+| can_reassign | [bool](#bool) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-TaskState"></a>
+
+### TaskState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_STATE_UNSPECIFIED | 0 |  |
+| TASK_STATE_MISSING_PRECONDITION | 1 |  |
+| TASK_STATE_WAITING | 2 |  |
+| TASK_STATE_IN_PROGRESS | 3 |  |
+| TASK_STATE_COMPLETED | 4 |  |
+| TASK_STATE_ERROR | 6 |  |
+
+
+
+<a name="plm-v1-TaskType"></a>
+
+### TaskType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_TYPE_UNSPECIFIED | 0 |  |
+| TASK_TYPE_INSPECT | 1 |  |
+| TASK_TYPE_FASTEN | 2 |  |
+| TASK_TYPE_UNFASTEN | 3 |  |
+| TASK_TYPE_MOUNT | 4 |  |
+| TASK_TYPE_UNMOUNT | 5 |  |
+| TASK_TYPE_MOVE | 6 |  |
+| TASK_TYPE_REMOVE | 7 |  |
+| TASK_TYPE_APPLY | 8 |  |
+| TASK_TYPE_WIPE | 9 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_process-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process.proto
+
+
+
+<a name="plm-v1-ProcessMessage"></a>
+
+### ProcessMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| instance_id | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#plm-v1-ProcessType) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_id | [string](#string) |  |  |
+| sequences | [SequenceMessage](#plm-v1-SequenceMessage) | repeated |  |
+| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-ProcessType"></a>
+
+### ProcessType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_TYPE_UNSPECIFIED | 0 |  |
+| PROCESS_TYPE_ASSEMBLY | 1 |  |
+| PROCESS_TYPE_DISASSEMBLY | 2 |  |
+| PROCESS_TYPE_INSPECTION | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_process_authoring-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process_authoring.proto
+
+
+
+<a name="plm-v1-DeleteProcessMessage"></a>
+
+### DeleteProcessMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-NewProcessMessage"></a>
+
+### NewProcessMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#plm-v1-ProcessType) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateProcessMessage"></a>
+
+### UpdateProcessMessage
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_process_load-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process_load.proto
+
+
+
+<a name="plm-v1-ProcessLoadMessage"></a>
+
+### ProcessLoadMessage
 
 
 
@@ -939,21 +1265,193 @@ TODO: consider this a bit more?
 | request_id | [string](#string) |  |  |
 | process_id | [string](#string) |  |  |
 | location_id | [string](#string) |  | TODO: What name should this be? |
+| abort_running_process | [bool](#bool) |  | TODO: allocation strategy TODO: list participating actors? |
 
 
 
 
 
+ 
 
-<a name="plm-v1-ReassignTaskMessage"></a>
+ 
 
-### ReassignTaskMessage
+ 
+
+ 
+
+
+
+<a name="plm_v1_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/requests.proto
+
+
+
+<a name="plm-v1-ProcessAtLocationMessage"></a>
+
+### ProcessAtLocationMessage
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | request_id | [string](#string) |  |  |
+| location_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-TasksForAgentMessage"></a>
+
+### TasksForAgentMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_sequence_complete-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/sequence_complete.proto
+
+
+
+<a name="plm-v1-SequenceBulkCompleteMessage"></a>
+
+### SequenceBulkCompleteMessage
+Complete all tasks or or sub-sequences (TODO: should that be possible?)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| sequence_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_sequence_reassign-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/sequence_reassign.proto
+
+
+
+<a name="plm-v1-SequenceReassignMessage"></a>
+
+### SequenceReassignMessage
+Reassign all sub-tasks to the assignee (if possible)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| sequence_id | [string](#string) |  |  |
+| assignee | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_task_progress-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task_progress.proto
+
+
+
+<a name="plm-v1-TaskProgressMessage"></a>
+
+### TaskProgressMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| elapsed_time | [int64](#int64) |  |  |
+| estimated_time_left | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_task_reassign-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task_reassign.proto
+
+
+
+<a name="plm-v1-TaskReassignMessage"></a>
+
+### TaskReassignMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
 | task_id | [string](#string) |  |  |
 | assignee | [string](#string) |  |  |
 
@@ -961,16 +1459,33 @@ TODO: consider this a bit more?
 
 
 
+ 
 
-<a name="plm-v1-UpdateTaskStateMessage"></a>
+ 
 
-### UpdateTaskStateMessage
+ 
+
+ 
+
+
+
+<a name="plm_v1_task_state_change-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task_state_change.proto
+
+
+
+<a name="plm-v1-TaskStateChangeMessage"></a>
+
+### TaskStateChangeMessage
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
 | task_id | [string](#string) |  |  |
 | state | [TaskStateRequest](#plm-v1-TaskStateRequest) |  |  |
 
@@ -993,54 +1508,6 @@ TODO: consider this a bit more?
 | TASK_STATE_REQUEST_COMPLETED | 4 |  |
 | TASK_STATE_REQUEST_UNDO | 5 |  |
 | TASK_STATE_REQUEST_ERROR | 6 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process.proto
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task.proto
-
-
- 
-
-
-<a name="plm-v1-TaskState"></a>
-
-### TaskState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_STATE_UNSPECIFIED | 0 |  |
-| TASK_STATE_IN_MISSING_PRECONDITION | 1 |  |
-| TASK_STATE_IN_WAITING | 2 |  |
-| TASK_STATE_IN_PROGRESS | 3 |  |
-| TASK_STATE_COMPLETED | 4 |  |
-| TASK_STATE_ERROR | 6 |  |
 
 
  
