@@ -9,6 +9,46 @@
     - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyType](#common-v1-PropertyType)
   
+- [ar/v1/action.proto](#ar_v1_action-proto)
+    - [ActionMessage](#ar-v1-ActionMessage)
+  
+    - [ActionType](#ar-v1-ActionType)
+  
+- [ar/v1/events.proto](#ar_v1_events-proto)
+    - [SupportedEventsMessage](#ar-v1-SupportedEventsMessage)
+  
+    - [EventType](#ar-v1-EventType)
+  
+- [ar/v1/action_info.proto](#ar_v1_action_info-proto)
+    - [ActionInfoMessage](#ar-v1-ActionInfoMessage)
+    - [ActionInfosMessage](#ar-v1-ActionInfosMessage)
+  
+- [ar/v1/authoring_action.proto](#ar_v1_authoring_action-proto)
+    - [ActionDeleteMessage](#ar-v1-ActionDeleteMessage)
+    - [ActionNewMessage](#ar-v1-ActionNewMessage)
+    - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
+  
+- [ar/v1/feedback.proto](#ar_v1_feedback-proto)
+    - [FeedbackMessage](#ar-v1-FeedbackMessage)
+  
+    - [FeedbackType](#ar-v1-FeedbackType)
+  
+- [ar/v1/helper.proto](#ar_v1_helper-proto)
+    - [HelperMessage](#ar-v1-HelperMessage)
+  
+    - [HelperType](#ar-v1-HelperType)
+  
+- [ar/v1/authoring_config.proto](#ar_v1_authoring_config-proto)
+    - [ConfigDeleteMessage](#ar-v1-ConfigDeleteMessage)
+    - [ConfigNewMessage](#ar-v1-ConfigNewMessage)
+    - [ConfigUpdateMessage](#ar-v1-ConfigUpdateMessage)
+  
+- [ar/v1/authoring_feedback.proto](#ar_v1_authoring_feedback-proto)
+    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
+    - [FeedbackDeleteMessage](#ar-v1-FeedbackDeleteMessage)
+    - [FeedbackNewMessage](#ar-v1-FeedbackNewMessage)
+    - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
+  
 - [geometry/v1/point.proto](#geometry_v1_point-proto)
     - [Point](#geometry-v1-Point)
   
@@ -30,6 +70,36 @@
     - [OperatorType](#common-v1-OperatorType)
     - [RobotType](#common-v1-RobotType)
   
+- [ar/v1/authoring_marker.proto](#ar_v1_authoring_marker-proto)
+    - [MarkerDeleteMessage](#ar-v1-MarkerDeleteMessage)
+    - [MarkerNewMessage](#ar-v1-MarkerNewMessage)
+    - [MarkerUpdateMessage](#ar-v1-MarkerUpdateMessage)
+  
+- [ar/v1/config.proto](#ar_v1_config-proto)
+    - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
+    - [ARConfigMessage](#ar-v1-ARConfigMessage)
+  
+- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
+    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
+  
+- [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
+    - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
+    - [FeedbackInfosMessage](#ar-v1-FeedbackInfosMessage)
+  
+- [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
+    - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
+    - [HelperInfosMessage](#ar-v1-HelperInfosMessage)
+  
+- [ar/v1/marker.proto](#ar_v1_marker-proto)
+    - [MarkerMessage](#ar-v1-MarkerMessage)
+  
+    - [MarkerType](#ar-v1-MarkerType)
+  
+- [ar/v1/template.proto](#ar_v1_template-proto)
+    - [TemplateInfoMessage](#ar-v1-TemplateInfoMessage)
+    - [TemplateInfoMessages](#ar-v1-TemplateInfoMessages)
+    - [TemplateMessage](#ar-v1-TemplateMessage)
+  
 - [common/v1/capability.proto](#common_v1_capability-proto)
     - [Capabilities](#common-v1-Capabilities)
     - [Capability](#common-v1-Capability)
@@ -37,29 +107,8 @@
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
   
-- [tracker/v1/tracker.proto](#tracker_v1_tracker-proto)
-    - [Tracker](#tracker-v1-Tracker)
-  
-    - [TrackerType](#tracker-v1-TrackerType)
-  
-- [common/v1/configuration.proto](#common_v1_configuration-proto)
-    - [AddConfigurationMessage](#common-v1-AddConfigurationMessage)
-    - [ConfigurationMessage](#common-v1-ConfigurationMessage)
-    - [LoadConfigurationMessage](#common-v1-LoadConfigurationMessage)
-  
-- [common/v1/configurations.proto](#common_v1_configurations-proto)
-    - [ConfigurationInfoMessage](#common-v1-ConfigurationInfoMessage)
-    - [ConfigurationInfoMessages](#common-v1-ConfigurationInfoMessages)
-  
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
-  
-- [common/v1/template.proto](#common_v1_template-proto)
-    - [TemplateMessage](#common-v1-TemplateMessage)
-  
-- [common/v1/templates.proto](#common_v1_templates-proto)
-    - [TemplateInfoMessage](#common-v1-TemplateInfoMessage)
-    - [TemplateInfoMessages](#common-v1-TemplateInfoMessages)
   
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
@@ -80,12 +129,14 @@
     - [TaskMessage](#plm-v1-TaskMessage)
     - [TaskUpdatedMessage](#plm-v1-TaskUpdatedMessage)
   
+    - [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference)
     - [TaskState](#plm-v1-TaskState)
     - [TaskType](#plm-v1-TaskType)
   
 - [plm/v1/process.proto](#plm_v1_process-proto)
     - [ProcessMessage](#plm-v1-ProcessMessage)
   
+    - [ProcessState](#plm-v1-ProcessState)
     - [ProcessType](#plm-v1-ProcessType)
   
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
@@ -247,6 +298,513 @@ Used to specify the type of a property
 | PROPERTY_TYPE_ENUM | 11 |  |
 | PROPERTY_TYPE_ENUM_MULTI | 12 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_action-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/action.proto
+
+
+
+<a name="ar-v1-ActionMessage"></a>
+
+### ActionMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ActionType](#ar-v1-ActionType) |  |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| output_properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ActionType"></a>
+
+### ActionType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTION_TYPE_UNSPECIFIED | 0 |  |
+| ACTION_TYPE_TASK_COMPLETE | 10 |  |
+| ACTION_TYPE_TASK_UNDO | 11 |  |
+| ACTION_TYPE_TASK_ASSIGN | 12 |  |
+| ACTION_TYPE_TASK_HIGHLIGHT | 13 |  |
+| ACTION_TYPE_TASK_HELP | 14 |  |
+| ACTION_TYPE_ROBOT_PLAY_PAUSE | 50 |  |
+| ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 | ACTION_TYPE_ROBOT_FREE_DRIVE = 52; |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_events-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/events.proto
+
+
+
+<a name="ar-v1-SupportedEventsMessage"></a>
+
+### SupportedEventsMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| events | [EventType](#ar-v1-EventType) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-EventType"></a>
+
+### EventType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| EVENT_TYPE_UNSPECIFIED | 0 |  |
+| EVENT_TYPE_TASK_COMPLETE | 10 |  |
+| EVENT_TYPE_TASK_UNDO | 11 |  |
+| EVENT_TYPE_TASK_ASSIGN | 12 |  |
+| EVENT_TYPE_TASK_HIGHLIGHT | 13 |  |
+| EVENT_TYPE_TASK_HELP | 14 |  |
+| EVENT_TYPE_ROBOT_TCP | 100 |  |
+| EVENT_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
+| EVENT_TYPE_ROBOT_FORCE_TORQUE | 102 |  |
+| EVENT_TYPE_ROBOT_STATE | 110 |  |
+| EVENT_TYPE_ROBOT_PATH | 120 |  |
+| EVENT_TYPE_ROBOT_WAYPOINTS | 121 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_action_info-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/action_info.proto
+
+
+
+<a name="ar-v1-ActionInfoMessage"></a>
+
+### ActionInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ActionType](#ar-v1-ActionType) |  |  |
+| group | [string](#string) |  |  |
+| require_agent | [bool](#bool) |  |  |
+| required_events | [EventType](#ar-v1-EventType) | repeated |  |
+| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ActionInfosMessage"></a>
+
+### ActionInfosMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| action_infos | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_action-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_action.proto
+
+
+
+<a name="ar-v1-ActionDeleteMessage"></a>
+
+### ActionDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ActionNewMessage"></a>
+
+### ActionNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent_config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ActionType](#ar-v1-ActionType) |  |  |
+| trigger_property_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ActionUpdateMessage"></a>
+
+### ActionUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_feedback-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/feedback.proto
+
+
+
+<a name="ar-v1-FeedbackMessage"></a>
+
+### FeedbackMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| output_properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-FeedbackType"></a>
+
+### FeedbackType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| FEEDBACK_TYPE_UNSPECIFIED | 0 |  |
+| FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
+| FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
+| FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
+| FEEDBACK_TYPE_TASK_OVERVIEW | 13 |  |
+| FEEDBACK_TYPE_ROBOT_PATH | 50 |  |
+| FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
+| FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
+| FEEDBACK_TYPE_ROBOT_STATUS | 53 |  |
+| FEEDBACK_TYPE_ROBOT_LIGHT | 54 |  |
+| FEEDBACK_TYPE_MESSAGE | 100 |  |
+| FEEDBACK_TYPE_ICON | 101 |  |
+| FEEDBACK_TYPE_ZONE | 102 |  |
+| FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
+| FEEDBACK_TYPE_RULER | 104 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_helper-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/helper.proto
+
+
+
+<a name="ar-v1-HelperMessage"></a>
+
+### HelperMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| output_properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-HelperType"></a>
+
+### HelperType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HELPER_TYPE_UNSPECIFIED | 0 |  |
+| HELPER_TYPE_PROXIMITY | 10 |  |
+| HELPER_TYPE_STATIONARY | 11 |  |
+| HELPER_TYPE_TIMER | 21 |  |
+| HELPER_TYPE_AND | 100 |  |
+| HELPER_TYPE_OR | 101 |  |
+| HELPER_TYPE_NOT | 102 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_config-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_config.proto
+
+
+
+<a name="ar-v1-ConfigDeleteMessage"></a>
+
+### ConfigDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ConfigNewMessage"></a>
+
+### ConfigNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| template_id | [string](#string) |  | Template id is used to pre-populate a configuration. Leave empty for a new fresh start. |
+
+
+
+
+
+
+<a name="ar-v1-ConfigUpdateMessage"></a>
+
+### ConfigUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
+| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm when the UI is expected to disable the AR for this marker |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_feedback-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_feedback.proto
+
+
+
+<a name="ar-v1-FeedbackCloneMessage"></a>
+
+### FeedbackCloneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| original_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackDeleteMessage"></a>
+
+### FeedbackDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackNewMessage"></a>
+
+### FeedbackNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent_config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| frame_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackUpdateMessage"></a>
+
+### FeedbackUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+ 
 
  
 
@@ -496,6 +1054,390 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="ar_v1_authoring_marker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_marker.proto
+
+
+
+<a name="ar-v1-MarkerDeleteMessage"></a>
+
+### MarkerDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-MarkerNewMessage"></a>
+
+### MarkerNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| marker_text | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-MarkerUpdateMessage"></a>
+
+### MarkerUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
+| agents | [common.v1.Agent](#common-v1-Agent) | repeated | List of agents associated with this marker |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm when the UI is expected to disable the AR for this marker |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_config-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/config.proto
+
+
+
+<a name="ar-v1-ARConfigInfoMessage"></a>
+
+### ARConfigInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessage"></a>
+
+### ARConfigMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
+| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| ar_disappear_distance | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_config_load-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/config_load.proto
+
+
+
+<a name="ar-v1-ConfigurationLoadMessage"></a>
+
+### ConfigurationLoadMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| config_id | [string](#string) |  | Id of the configuration to be loaded |
+| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_feedback_info-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/feedback_info.proto
+
+
+
+<a name="ar-v1-FeedbackInfoMessage"></a>
+
+### FeedbackInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| group | [string](#string) |  |  |
+| require_agent | [bool](#bool) |  |  |
+| require_frame | [bool](#bool) |  |  |
+| required_events | [EventType](#ar-v1-EventType) | repeated |  |
+| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackInfosMessage"></a>
+
+### FeedbackInfosMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| feedback_infos | [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_helper_info-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/helper_info.proto
+
+
+
+<a name="ar-v1-HelperInfoMessage"></a>
+
+### HelperInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+| group | [string](#string) |  |  |
+| require_agent | [bool](#bool) |  |  |
+| required_events | [EventType](#ar-v1-EventType) | repeated |  |
+| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperInfosMessage"></a>
+
+### HelperInfosMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| helper_infos | [HelperInfoMessage](#ar-v1-HelperInfoMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_marker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/marker.proto
+
+
+
+<a name="ar-v1-MarkerMessage"></a>
+
+### MarkerMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
+| type | [MarkerType](#ar-v1-MarkerType) |  |  |
+| agents | [common.v1.Agent](#common-v1-Agent) | repeated | List of agents associated with this marker |
+| ar_configs | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | List of ARConfigs which can be used to retrieve a specific configuration |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm when the UI is expected to disable the AR for this marker |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-MarkerType"></a>
+
+### MarkerType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MARKER_TYPE_UNSPECIFIED | 0 |  |
+| MARKER_TYPE_QR_CODE | 1 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_template-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/template.proto
+
+
+
+<a name="ar-v1-TemplateInfoMessage"></a>
+
+### TemplateInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-TemplateInfoMessages"></a>
+
+### TemplateInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| templates | [TemplateInfoMessage](#ar-v1-TemplateInfoMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-TemplateMessage"></a>
+
+### TemplateMessage
+TODO: consider this a bit more?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| agents | [common.v1.Agent](#common-v1-Agent) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated | Feedback Actions |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_capability-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -578,172 +1520,6 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
-<a name="tracker_v1_tracker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## tracker/v1/tracker.proto
-
-
-
-<a name="tracker-v1-Tracker"></a>
-
-### Tracker
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| reference | [string](#string) |  |  |
-| frame | [string](#string) |  |  |
-| type | [TrackerType](#tracker-v1-TrackerType) |  |  |
-| marker_text | [string](#string) |  | TODO: add properties |
-
-
-
-
-
- 
-
-
-<a name="tracker-v1-TrackerType"></a>
-
-### TrackerType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TRACKER_TYPE_UNSPECIFIED | 0 |  |
-| TRACKER_TYPE_QR_CODE | 1 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="common_v1_configuration-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/configuration.proto
-
-
-
-<a name="common-v1-AddConfigurationMessage"></a>
-
-### AddConfigurationMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Name of the new configuration |
-| description | [string](#string) |  | A description of the new configuration |
-| template_id | [string](#string) |  | Template id is used to pre-populate a configuration. Leave empty for a new fresh start. |
-
-
-
-
-
-
-<a name="common-v1-ConfigurationMessage"></a>
-
-### ConfigurationMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| instance_id | [string](#string) |  |  |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| agents | [Agent](#common-v1-Agent) | repeated |  |
-| trackers | [tracker.v1.Tracker](#tracker-v1-Tracker) | repeated |  |
-| properties | [Property](#common-v1-Property) | repeated | Feedback Actions |
-
-
-
-
-
-
-<a name="common-v1-LoadConfigurationMessage"></a>
-
-### LoadConfigurationMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Id of the configuration to be loaded |
-| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="common_v1_configurations-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/configurations.proto
-
-
-
-<a name="common-v1-ConfigurationInfoMessage"></a>
-
-### ConfigurationInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="common-v1-ConfigurationInfoMessages"></a>
-
-### ConfigurationInfoMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| configurations | [ConfigurationInfoMessage](#common-v1-ConfigurationInfoMessage) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="common_v1_delete-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -761,90 +1537,6 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Id of the entity to be deleted |
 | message | [string](#string) |  | Optional message |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="common_v1_template-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/template.proto
-
-
-
-<a name="common-v1-TemplateMessage"></a>
-
-### TemplateMessage
-TODO: consider this a bit more?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| agents | [Agent](#common-v1-Agent) | repeated |  |
-| trackers | [tracker.v1.Tracker](#tracker-v1-Tracker) | repeated |  |
-| properties | [Property](#common-v1-Property) | repeated | Feedback Actions |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="common_v1_templates-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/templates.proto
-
-
-
-<a name="common-v1-TemplateInfoMessage"></a>
-
-### TemplateInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="common-v1-TemplateInfoMessages"></a>
-
-### TemplateInfoMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| templates | [TemplateInfoMessage](#common-v1-TemplateInfoMessage) | repeated |  |
 
 
 
@@ -1062,6 +1754,7 @@ Update published when the state of an sequence have changed
 | state | [TaskState](#plm-v1-TaskState) |  |  |
 | preconditions | [string](#string) | repeated |  |
 | dependants | [string](#string) | repeated |  |
+| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 | can_reassign | [bool](#bool) |  |  |
 | can_do | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
@@ -1091,6 +1784,21 @@ Update published when the state of an sequence have changed
 
 
  
+
+
+<a name="plm-v1-TaskAssignmentPreference"></a>
+
+### TaskAssignmentPreference
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED | 0 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 |  |
+
 
 
 <a name="plm-v1-TaskState"></a>
@@ -1160,12 +1868,28 @@ Update published when the state of an sequence have changed
 | root_sequence_id | [string](#string) |  |  |
 | sequences | [SequenceMessage](#plm-v1-SequenceMessage) | repeated |  |
 | tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
+| state | [ProcessState](#plm-v1-ProcessState) |  |  |
 
 
 
 
 
  
+
+
+<a name="plm-v1-ProcessState"></a>
+
+### ProcessState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_STATE_UNSPECIFIED | 0 |  |
+| PROCESS_STATE_WAITING | 1 |  |
+| PROCESS_STATE_IN_PROGRESS | 2 |  |
+| PROCESS_STATE_COMPLETED | 3 |  |
+| PROCESS_STATE_ABORTED | 4 |  |
+
 
 
 <a name="plm-v1-ProcessType"></a>
@@ -1232,6 +1956,16 @@ Update published when the state of an sequence have changed
 
 ### UpdateProcessMessage
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#plm-v1-ProcessType) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_id | [string](#string) |  |  |
 
 
 

@@ -15,6 +15,14 @@ enum ProcessType {
   PROCESS_TYPE_INSPECTION = 3;
 }
 
+enum ProcessState {
+  PROCESS_STATE_UNSPECIFIED = 0;
+  PROCESS_STATE_WAITING = 1;
+  PROCESS_STATE_IN_PROGRESS = 2;
+  PROCESS_STATE_COMPLETED = 3;
+  PROCESS_STATE_ABORTED = 4;
+}
+
 message ProcessMessage {
   string instance_id = 1;
   string id = 2;
@@ -25,4 +33,5 @@ message ProcessMessage {
   string root_sequence_id = 7;
   repeated SequenceMessage sequences = 8;
   repeated TaskMessage tasks = 9;
+  ProcessState state = 10;
 }

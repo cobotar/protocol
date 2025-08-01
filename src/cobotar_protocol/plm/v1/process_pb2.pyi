@@ -16,13 +16,26 @@ class ProcessType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_TYPE_ASSEMBLY: _ClassVar[ProcessType]
     PROCESS_TYPE_DISASSEMBLY: _ClassVar[ProcessType]
     PROCESS_TYPE_INSPECTION: _ClassVar[ProcessType]
+
+class ProcessState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    PROCESS_STATE_UNSPECIFIED: _ClassVar[ProcessState]
+    PROCESS_STATE_WAITING: _ClassVar[ProcessState]
+    PROCESS_STATE_IN_PROGRESS: _ClassVar[ProcessState]
+    PROCESS_STATE_COMPLETED: _ClassVar[ProcessState]
+    PROCESS_STATE_ABORTED: _ClassVar[ProcessState]
 PROCESS_TYPE_UNSPECIFIED: ProcessType
 PROCESS_TYPE_ASSEMBLY: ProcessType
 PROCESS_TYPE_DISASSEMBLY: ProcessType
 PROCESS_TYPE_INSPECTION: ProcessType
+PROCESS_STATE_UNSPECIFIED: ProcessState
+PROCESS_STATE_WAITING: ProcessState
+PROCESS_STATE_IN_PROGRESS: ProcessState
+PROCESS_STATE_COMPLETED: ProcessState
+PROCESS_STATE_ABORTED: ProcessState
 
 class ProcessMessage(_message.Message):
-    __slots__ = ("instance_id", "id", "name", "description", "type", "frame", "root_sequence_id", "sequences", "tasks")
+    __slots__ = ("instance_id", "id", "name", "description", "type", "frame", "root_sequence_id", "sequences", "tasks", "state")
     INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +45,7 @@ class ProcessMessage(_message.Message):
     ROOT_SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCES_FIELD_NUMBER: _ClassVar[int]
     TASKS_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
     instance_id: str
     id: str
     name: str
@@ -41,4 +55,5 @@ class ProcessMessage(_message.Message):
     root_sequence_id: str
     sequences: _containers.RepeatedCompositeFieldContainer[_sequence_pb2.SequenceMessage]
     tasks: _containers.RepeatedCompositeFieldContainer[_task_pb2.TaskMessage]
-    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ...) -> None: ...
+    state: ProcessState
+    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ..., state: _Optional[_Union[ProcessState, str]] = ...) -> None: ...

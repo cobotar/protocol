@@ -30,6 +30,14 @@ class TaskType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TASK_TYPE_REMOVE: _ClassVar[TaskType]
     TASK_TYPE_APPLY: _ClassVar[TaskType]
     TASK_TYPE_WIPE: _ClassVar[TaskType]
+
+class TaskAssignmentPreference(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED: _ClassVar[TaskAssignmentPreference]
+    TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN: _ClassVar[TaskAssignmentPreference]
+    TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN: _ClassVar[TaskAssignmentPreference]
+    TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: _ClassVar[TaskAssignmentPreference]
+    TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: _ClassVar[TaskAssignmentPreference]
 TASK_STATE_UNSPECIFIED: TaskState
 TASK_STATE_MISSING_PRECONDITION: TaskState
 TASK_STATE_WAITING: TaskState
@@ -46,9 +54,14 @@ TASK_TYPE_MOVE: TaskType
 TASK_TYPE_REMOVE: TaskType
 TASK_TYPE_APPLY: TaskType
 TASK_TYPE_WIPE: TaskType
+TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED: TaskAssignmentPreference
+TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN: TaskAssignmentPreference
+TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN: TaskAssignmentPreference
+TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: TaskAssignmentPreference
+TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: TaskAssignmentPreference
 
 class TaskMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "parent_id", "agents_ids", "assigned_to", "state", "preconditions", "dependants", "can_reassign", "can_do", "can_undo")
+    __slots__ = ("id", "name", "description", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "parent_id", "agents_ids", "assigned_to", "state", "preconditions", "dependants", "assignment_preference", "can_reassign", "can_do", "can_undo")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -64,6 +77,7 @@ class TaskMessage(_message.Message):
     STATE_FIELD_NUMBER: _ClassVar[int]
     PRECONDITIONS_FIELD_NUMBER: _ClassVar[int]
     DEPENDANTS_FIELD_NUMBER: _ClassVar[int]
+    ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     CAN_REASSIGN_FIELD_NUMBER: _ClassVar[int]
     CAN_DO_FIELD_NUMBER: _ClassVar[int]
     CAN_UNDO_FIELD_NUMBER: _ClassVar[int]
@@ -82,10 +96,11 @@ class TaskMessage(_message.Message):
     state: TaskState
     preconditions: _containers.RepeatedScalarFieldContainer[str]
     dependants: _containers.RepeatedScalarFieldContainer[str]
+    assignment_preference: TaskAssignmentPreference
     can_reassign: bool
     can_do: bool
     can_undo: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., parent_id: _Optional[str] = ..., agents_ids: _Optional[_Iterable[str]] = ..., assigned_to: _Optional[str] = ..., state: _Optional[_Union[TaskState, str]] = ..., preconditions: _Optional[_Iterable[str]] = ..., dependants: _Optional[_Iterable[str]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., parent_id: _Optional[str] = ..., agents_ids: _Optional[_Iterable[str]] = ..., assigned_to: _Optional[str] = ..., state: _Optional[_Union[TaskState, str]] = ..., preconditions: _Optional[_Iterable[str]] = ..., dependants: _Optional[_Iterable[str]] = ..., assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ...) -> None: ...
 
 class TaskUpdatedMessage(_message.Message):
     __slots__ = ("id", "assigned_to", "state", "can_reassign", "can_do", "can_undo")

@@ -1,6 +1,7 @@
 syntax = "proto3";
 package plm.v1;
 
+import "geometry/v1/pose.proto";
 import "plm/v1/process.proto";
 
 option csharp_namespace = "Messages.Plm.V1";
@@ -12,7 +13,14 @@ message NewProcessMessage {
   ProcessType type = 5;
 }
 
-message UpdateProcessMessage {}
+message UpdateProcessMessage {
+  string id = 2;
+  string name = 3;
+  string description = 4;
+  ProcessType type = 5;
+  geometry.v1.LocalizedPose frame = 6;
+  string root_sequence_id = 7;
+}
 
 message DeleteProcessMessage {
   string process_id = 1;

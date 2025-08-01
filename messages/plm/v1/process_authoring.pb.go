@@ -7,6 +7,7 @@
 package plmv1
 
 import (
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -82,9 +83,15 @@ func (x *NewProcessMessage) GetType() ProcessType {
 }
 
 type UpdateProcessMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type           ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
+	Frame          *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceId string                 `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *UpdateProcessMessage) Reset() {
@@ -115,6 +122,48 @@ func (x *UpdateProcessMessage) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateProcessMessage.ProtoReflect.Descriptor instead.
 func (*UpdateProcessMessage) Descriptor() ([]byte, []int) {
 	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *UpdateProcessMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdateProcessMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateProcessMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *UpdateProcessMessage) GetType() ProcessType {
+	if x != nil {
+		return x.Type
+	}
+	return ProcessType_PROCESS_TYPE_UNSPECIFIED
+}
+
+func (x *UpdateProcessMessage) GetFrame() *v1.LocalizedPose {
+	if x != nil {
+		return x.Frame
+	}
+	return nil
+}
+
+func (x *UpdateProcessMessage) GetRootSequenceId() string {
+	if x != nil {
+		return x.RootSequenceId
+	}
+	return ""
 }
 
 type DeleteProcessMessage struct {
@@ -165,12 +214,18 @@ var File_plm_v1_process_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x14plm/v1/process.proto\"r\n" +
+	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\"r\n" +
 	"\x11NewProcessMessage\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\"\x16\n" +
-	"\x14UpdateProcessMessage\"5\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\"\xe1\x01\n" +
+	"\x14UpdateProcessMessage\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
+	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
+	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\"5\n" +
 	"\x14DeleteProcessMessage\x12\x1d\n" +
 	"\n" +
 	"process_id\x18\x01 \x01(\tR\tprocessIdB\x98\x01\n" +
@@ -195,14 +250,17 @@ var file_plm_v1_process_authoring_proto_goTypes = []any{
 	(*UpdateProcessMessage)(nil), // 1: plm.v1.UpdateProcessMessage
 	(*DeleteProcessMessage)(nil), // 2: plm.v1.DeleteProcessMessage
 	(ProcessType)(0),             // 3: plm.v1.ProcessType
+	(*v1.LocalizedPose)(nil),     // 4: geometry.v1.LocalizedPose
 }
 var file_plm_v1_process_authoring_proto_depIdxs = []int32{
 	3, // 0: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	3, // 1: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
+	4, // 2: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_process_authoring_proto_init() }

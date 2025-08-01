@@ -74,6 +74,61 @@ func (ProcessType) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_process_proto_rawDescGZIP(), []int{0}
 }
 
+type ProcessState int32
+
+const (
+	ProcessState_PROCESS_STATE_UNSPECIFIED ProcessState = 0
+	ProcessState_PROCESS_STATE_WAITING     ProcessState = 1
+	ProcessState_PROCESS_STATE_IN_PROGRESS ProcessState = 2
+	ProcessState_PROCESS_STATE_COMPLETED   ProcessState = 3
+	ProcessState_PROCESS_STATE_ABORTED     ProcessState = 4
+)
+
+// Enum value maps for ProcessState.
+var (
+	ProcessState_name = map[int32]string{
+		0: "PROCESS_STATE_UNSPECIFIED",
+		1: "PROCESS_STATE_WAITING",
+		2: "PROCESS_STATE_IN_PROGRESS",
+		3: "PROCESS_STATE_COMPLETED",
+		4: "PROCESS_STATE_ABORTED",
+	}
+	ProcessState_value = map[string]int32{
+		"PROCESS_STATE_UNSPECIFIED": 0,
+		"PROCESS_STATE_WAITING":     1,
+		"PROCESS_STATE_IN_PROGRESS": 2,
+		"PROCESS_STATE_COMPLETED":   3,
+		"PROCESS_STATE_ABORTED":     4,
+	}
+)
+
+func (x ProcessState) Enum() *ProcessState {
+	p := new(ProcessState)
+	*p = x
+	return p
+}
+
+func (x ProcessState) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProcessState) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_process_proto_enumTypes[1].Descriptor()
+}
+
+func (ProcessState) Type() protoreflect.EnumType {
+	return &file_plm_v1_process_proto_enumTypes[1]
+}
+
+func (x ProcessState) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProcessState.Descriptor instead.
+func (ProcessState) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_process_proto_rawDescGZIP(), []int{1}
+}
+
 type ProcessMessage struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	InstanceId     string                 `protobuf:"bytes,1,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"`
@@ -85,6 +140,7 @@ type ProcessMessage struct {
 	RootSequenceId string                 `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	Sequences      []*SequenceMessage     `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
 	Tasks          []*TaskMessage         `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	State          ProcessState           `protobuf:"varint,10,opt,name=state,proto3,enum=plm.v1.ProcessState" json:"state,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -182,11 +238,18 @@ func (x *ProcessMessage) GetTasks() []*TaskMessage {
 	return nil
 }
 
+func (x *ProcessMessage) GetState() ProcessState {
+	if x != nil {
+		return x.State
+	}
+	return ProcessState_PROCESS_STATE_UNSPECIFIED
+}
+
 var File_plm_v1_process_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_proto_rawDesc = "" +
 	"\n" +
-	"\x14plm/v1/process.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\xde\x02\n" +
+	"\x14plm/v1/process.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\x8a\x03\n" +
 	"\x0eProcessMessage\x12\x1f\n" +
 	"\vinstance_id\x18\x01 \x01(\tR\n" +
 	"instanceId\x12\x0e\n" +
@@ -197,12 +260,20 @@ const file_plm_v1_process_proto_rawDesc = "" +
 	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
 	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\x125\n" +
 	"\tsequences\x18\b \x03(\v2\x17.plm.v1.SequenceMessageR\tsequences\x12)\n" +
-	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks*\x81\x01\n" +
+	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\x12*\n" +
+	"\x05state\x18\n" +
+	" \x01(\x0e2\x14.plm.v1.ProcessStateR\x05state*\x81\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n" +
 	"\x18PROCESS_TYPE_DISASSEMBLY\x10\x02\x12\x1b\n" +
-	"\x17PROCESS_TYPE_INSPECTION\x10\x03B\x8f\x01\n" +
+	"\x17PROCESS_TYPE_INSPECTION\x10\x03*\x9f\x01\n" +
+	"\fProcessState\x12\x1d\n" +
+	"\x19PROCESS_STATE_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15PROCESS_STATE_WAITING\x10\x01\x12\x1d\n" +
+	"\x19PROCESS_STATE_IN_PROGRESS\x10\x02\x12\x1b\n" +
+	"\x17PROCESS_STATE_COMPLETED\x10\x03\x12\x19\n" +
+	"\x15PROCESS_STATE_ABORTED\x10\x04B\x8f\x01\n" +
 	"\n" +
 	"com.plm.v1B\fProcessProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -218,25 +289,27 @@ func file_plm_v1_process_proto_rawDescGZIP() []byte {
 	return file_plm_v1_process_proto_rawDescData
 }
 
-var file_plm_v1_process_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_plm_v1_process_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_plm_v1_process_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_plm_v1_process_proto_goTypes = []any{
 	(ProcessType)(0),         // 0: plm.v1.ProcessType
-	(*ProcessMessage)(nil),   // 1: plm.v1.ProcessMessage
-	(*v1.LocalizedPose)(nil), // 2: geometry.v1.LocalizedPose
-	(*SequenceMessage)(nil),  // 3: plm.v1.SequenceMessage
-	(*TaskMessage)(nil),      // 4: plm.v1.TaskMessage
+	(ProcessState)(0),        // 1: plm.v1.ProcessState
+	(*ProcessMessage)(nil),   // 2: plm.v1.ProcessMessage
+	(*v1.LocalizedPose)(nil), // 3: geometry.v1.LocalizedPose
+	(*SequenceMessage)(nil),  // 4: plm.v1.SequenceMessage
+	(*TaskMessage)(nil),      // 5: plm.v1.TaskMessage
 }
 var file_plm_v1_process_proto_depIdxs = []int32{
 	0, // 0: plm.v1.ProcessMessage.type:type_name -> plm.v1.ProcessType
-	2, // 1: plm.v1.ProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
-	3, // 2: plm.v1.ProcessMessage.sequences:type_name -> plm.v1.SequenceMessage
-	4, // 3: plm.v1.ProcessMessage.tasks:type_name -> plm.v1.TaskMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 1: plm.v1.ProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 2: plm.v1.ProcessMessage.sequences:type_name -> plm.v1.SequenceMessage
+	5, // 3: plm.v1.ProcessMessage.tasks:type_name -> plm.v1.TaskMessage
+	1, // 4: plm.v1.ProcessMessage.state:type_name -> plm.v1.ProcessState
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_process_proto_init() }
@@ -251,7 +324,7 @@ func file_plm_v1_process_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_process_proto_rawDesc), len(file_plm_v1_process_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,

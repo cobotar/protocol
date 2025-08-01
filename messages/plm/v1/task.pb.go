@@ -150,28 +150,84 @@ func (TaskType) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_task_proto_rawDescGZIP(), []int{1}
 }
 
+type TaskAssignmentPreference int32
+
+const (
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED  TaskAssignmentPreference = 0
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN TaskAssignmentPreference = 1
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN   TaskAssignmentPreference = 2
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT TaskAssignmentPreference = 3
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT   TaskAssignmentPreference = 4
+)
+
+// Enum value maps for TaskAssignmentPreference.
+var (
+	TaskAssignmentPreference_name = map[int32]string{
+		0: "TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED",
+		1: "TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN",
+		2: "TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN",
+		3: "TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT",
+		4: "TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT",
+	}
+	TaskAssignmentPreference_value = map[string]int32{
+		"TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED":  0,
+		"TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN": 1,
+		"TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN":   2,
+		"TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT": 3,
+		"TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT":   4,
+	}
+)
+
+func (x TaskAssignmentPreference) Enum() *TaskAssignmentPreference {
+	p := new(TaskAssignmentPreference)
+	*p = x
+	return p
+}
+
+func (x TaskAssignmentPreference) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TaskAssignmentPreference) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_task_proto_enumTypes[2].Descriptor()
+}
+
+func (TaskAssignmentPreference) Type() protoreflect.EnumType {
+	return &file_plm_v1_task_proto_enumTypes[2]
+}
+
+func (x TaskAssignmentPreference) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TaskAssignmentPreference.Descriptor instead.
+func (TaskAssignmentPreference) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_task_proto_rawDescGZIP(), []int{2}
+}
+
 type TaskMessage struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description    string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber int64                  `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	PartId         string                 `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
-	ModelId        string                 `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	TaskType       TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
-	Target         *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
-	Approach       *v1.Vector3            `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
-	ParentId       string                 `protobuf:"bytes,10,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	AgentsIds      []string               `protobuf:"bytes,11,rep,name=agents_ids,json=agentsIds,proto3" json:"agents_ids,omitempty"`
-	AssignedTo     string                 `protobuf:"bytes,12,opt,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
-	State          TaskState              `protobuf:"varint,13,opt,name=state,proto3,enum=plm.v1.TaskState" json:"state,omitempty"`
-	Preconditions  []string               `protobuf:"bytes,14,rep,name=preconditions,proto3" json:"preconditions,omitempty"`
-	Dependants     []string               `protobuf:"bytes,15,rep,name=dependants,proto3" json:"dependants,omitempty"`
-	CanReassign    bool                   `protobuf:"varint,16,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
-	CanDo          bool                   `protobuf:"varint,17,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo        bool                   `protobuf:"varint,18,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state                protoimpl.MessageState   `protogen:"open.v1"`
+	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	SequenceNumber       int64                    `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	PartId               string                   `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	ModelId              string                   `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	TaskType             TaskType                 `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
+	Target               *v1.LocalizedPose        `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
+	Approach             *v1.Vector3              `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
+	ParentId             string                   `protobuf:"bytes,10,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	AgentsIds            []string                 `protobuf:"bytes,11,rep,name=agents_ids,json=agentsIds,proto3" json:"agents_ids,omitempty"`
+	AssignedTo           string                   `protobuf:"bytes,12,opt,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
+	State                TaskState                `protobuf:"varint,13,opt,name=state,proto3,enum=plm.v1.TaskState" json:"state,omitempty"`
+	Preconditions        []string                 `protobuf:"bytes,14,rep,name=preconditions,proto3" json:"preconditions,omitempty"`
+	Dependants           []string                 `protobuf:"bytes,15,rep,name=dependants,proto3" json:"dependants,omitempty"`
+	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,19,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	CanReassign          bool                     `protobuf:"varint,16,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
+	CanDo                bool                     `protobuf:"varint,17,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
+	CanUndo              bool                     `protobuf:"varint,18,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *TaskMessage) Reset() {
@@ -309,6 +365,13 @@ func (x *TaskMessage) GetDependants() []string {
 	return nil
 }
 
+func (x *TaskMessage) GetAssignmentPreference() TaskAssignmentPreference {
+	if x != nil {
+		return x.AssignmentPreference
+	}
+	return TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED
+}
+
 func (x *TaskMessage) GetCanReassign() bool {
 	if x != nil {
 		return x.CanReassign
@@ -418,7 +481,7 @@ var File_plm_v1_task_proto protoreflect.FileDescriptor
 
 const file_plm_v1_task_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xe6\x04\n" +
+	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xbd\x05\n" +
 	"\vTaskMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -439,7 +502,8 @@ const file_plm_v1_task_proto_rawDesc = "" +
 	"\rpreconditions\x18\x0e \x03(\tR\rpreconditions\x12\x1e\n" +
 	"\n" +
 	"dependants\x18\x0f \x03(\tR\n" +
-	"dependants\x12!\n" +
+	"dependants\x12U\n" +
+	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12!\n" +
 	"\fcan_reassign\x18\x10 \x01(\bR\vcanReassign\x12\x15\n" +
 	"\x06can_do\x18\x11 \x01(\bR\x05canDo\x12\x19\n" +
 	"\bcan_undo\x18\x12 \x01(\bR\acanUndo\"\xc3\x01\n" +
@@ -468,7 +532,13 @@ const file_plm_v1_task_proto_rawDesc = "" +
 	"\x0eTASK_TYPE_MOVE\x10\x06\x12\x14\n" +
 	"\x10TASK_TYPE_REMOVE\x10\a\x12\x13\n" +
 	"\x0fTASK_TYPE_APPLY\x10\b\x12\x12\n" +
-	"\x0eTASK_TYPE_WIPE\x10\tB\x8c\x01\n" +
+	"\x0eTASK_TYPE_WIPE\x10\t*\xf6\x01\n" +
+	"\x18TaskAssignmentPreference\x12*\n" +
+	"&TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED\x10\x00\x12+\n" +
+	"'TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN\x10\x01\x12)\n" +
+	"%TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN\x10\x02\x12+\n" +
+	"'TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT\x10\x03\x12)\n" +
+	"%TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT\x10\x04B\x8c\x01\n" +
 	"\n" +
 	"com.plm.v1B\tTaskProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -484,27 +554,29 @@ func file_plm_v1_task_proto_rawDescGZIP() []byte {
 	return file_plm_v1_task_proto_rawDescData
 }
 
-var file_plm_v1_task_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_plm_v1_task_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_plm_v1_task_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_plm_v1_task_proto_goTypes = []any{
-	(TaskState)(0),             // 0: plm.v1.TaskState
-	(TaskType)(0),              // 1: plm.v1.TaskType
-	(*TaskMessage)(nil),        // 2: plm.v1.TaskMessage
-	(*TaskUpdatedMessage)(nil), // 3: plm.v1.TaskUpdatedMessage
-	(*v1.LocalizedPose)(nil),   // 4: geometry.v1.LocalizedPose
-	(*v1.Vector3)(nil),         // 5: geometry.v1.Vector3
+	(TaskState)(0),                // 0: plm.v1.TaskState
+	(TaskType)(0),                 // 1: plm.v1.TaskType
+	(TaskAssignmentPreference)(0), // 2: plm.v1.TaskAssignmentPreference
+	(*TaskMessage)(nil),           // 3: plm.v1.TaskMessage
+	(*TaskUpdatedMessage)(nil),    // 4: plm.v1.TaskUpdatedMessage
+	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
+	(*v1.Vector3)(nil),            // 6: geometry.v1.Vector3
 }
 var file_plm_v1_task_proto_depIdxs = []int32{
 	1, // 0: plm.v1.TaskMessage.task_type:type_name -> plm.v1.TaskType
-	4, // 1: plm.v1.TaskMessage.target:type_name -> geometry.v1.LocalizedPose
-	5, // 2: plm.v1.TaskMessage.approach:type_name -> geometry.v1.Vector3
+	5, // 1: plm.v1.TaskMessage.target:type_name -> geometry.v1.LocalizedPose
+	6, // 2: plm.v1.TaskMessage.approach:type_name -> geometry.v1.Vector3
 	0, // 3: plm.v1.TaskMessage.state:type_name -> plm.v1.TaskState
-	0, // 4: plm.v1.TaskUpdatedMessage.state:type_name -> plm.v1.TaskState
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	2, // 4: plm.v1.TaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
+	0, // 5: plm.v1.TaskUpdatedMessage.state:type_name -> plm.v1.TaskState
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_task_proto_init() }
@@ -517,7 +589,7 @@ func file_plm_v1_task_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_task_proto_rawDesc), len(file_plm_v1_task_proto_rawDesc)),
-			NumEnums:      2,
+			NumEnums:      3,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,

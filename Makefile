@@ -34,9 +34,11 @@ breaking:
 ## generate: run the buf generate command
 .PHONY: generate
 generate:
+	@echo 'Deleting old files...'
 	rm -rf ./messages/*
 	rm -r ./src/cobotar_protocol/*/
 	rm -rf ./csharp/*.cs
+	@echo 'Generating new files...'
 	buf generate
 
 ## verify: run lint, format, breaking, and generate command

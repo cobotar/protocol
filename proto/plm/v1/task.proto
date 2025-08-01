@@ -29,6 +29,14 @@ enum TaskType {
   TASK_TYPE_WIPE = 9;
 }
 
+enum TaskAssignmentPreference {
+  TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED = 0;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN = 1;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN = 2;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT = 3;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4;
+}
+
 message TaskMessage {
   string id = 1;
   string name = 2;
@@ -45,6 +53,7 @@ message TaskMessage {
   TaskState state = 13;
   repeated string preconditions = 14;
   repeated string dependants = 15;
+  TaskAssignmentPreference assignment_preference = 19;
   bool can_reassign = 16;
   bool can_do = 17;
   bool can_undo = 18;

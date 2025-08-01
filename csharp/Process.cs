@@ -26,25 +26,29 @@ namespace Messages.Plm.V1 {
           string.Concat(
             "ChRwbG0vdjEvcHJvY2Vzcy5wcm90bxIGcGxtLnYxGhZnZW9tZXRyeS92MS9w",
             "b3NlLnByb3RvGhVwbG0vdjEvc2VxdWVuY2UucHJvdG8aEXBsbS92MS90YXNr",
-            "LnByb3RvIt4CCg5Qcm9jZXNzTWVzc2FnZRIfCgtpbnN0YW5jZV9pZBgBIAEo",
+            "LnByb3RvIooDCg5Qcm9jZXNzTWVzc2FnZRIfCgtpbnN0YW5jZV9pZBgBIAEo",
             "CVIKaW5zdGFuY2VJZBIOCgJpZBgCIAEoCVICaWQSEgoEbmFtZRgDIAEoCVIE",
             "bmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoEdHlw",
             "ZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZVIEdHlwZRIwCgVmcmFtZRgG",
             "IAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lEigKEHJv",
             "b3Rfc2VxdWVuY2VfaWQYByABKAlSDnJvb3RTZXF1ZW5jZUlkEjUKCXNlcXVl",
             "bmNlcxgIIAMoCzIXLnBsbS52MS5TZXF1ZW5jZU1lc3NhZ2VSCXNlcXVlbmNl",
-            "cxIpCgV0YXNrcxgJIAMoCzITLnBsbS52MS5UYXNrTWVzc2FnZVIFdGFza3Mq",
-            "gQEKC1Byb2Nlc3NUeXBlEhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAA",
-            "EhkKFVBST0NFU1NfVFlQRV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9E",
-            "SVNBU1NFTUJMWRACEhsKF1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEANCjwEK",
-            "CmNvbS5wbG0udjFCDFByb2Nlc3NQcm90b1ABWjFnaXRodWIuY29tL2NvYm90",
-            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVz",
-            "c2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIH",
-            "UGxtOjpWMWIGcHJvdG8z"));
+            "cxIpCgV0YXNrcxgJIAMoCzITLnBsbS52MS5UYXNrTWVzc2FnZVIFdGFza3MS",
+            "KgoFc3RhdGUYCiABKA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlUgVzdGF0ZSqB",
+            "AQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "GQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJ",
+            "U0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAyqfAQoM",
+            "UHJvY2Vzc1N0YXRlEh0KGVBST0NFU1NfU1RBVEVfVU5TUEVDSUZJRUQQABIZ",
+            "ChVQUk9DRVNTX1NUQVRFX1dBSVRJTkcQARIdChlQUk9DRVNTX1NUQVRFX0lO",
+            "X1BST0dSRVNTEAISGwoXUFJPQ0VTU19TVEFURV9DT01QTEVURUQQAxIZChVQ",
+            "Uk9DRVNTX1NUQVRFX0FCT1JURUQQBEKPAQoKY29tLnBsbS52MUIMUHJvY2Vz",
+            "c1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
+            "cy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1c",
+            "VjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ProcessType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessMessage), global::Messages.Plm.V1.ProcessMessage.Parser, new[]{ "InstanceId", "Id", "Name", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ProcessType), typeof(global::Messages.Plm.V1.ProcessState), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessMessage), global::Messages.Plm.V1.ProcessMessage.Parser, new[]{ "InstanceId", "Id", "Name", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks", "State" }, null, null, null, null)
           }));
     }
     #endregion
@@ -56,6 +60,14 @@ namespace Messages.Plm.V1 {
     [pbr::OriginalName("PROCESS_TYPE_ASSEMBLY")] Assembly = 1,
     [pbr::OriginalName("PROCESS_TYPE_DISASSEMBLY")] Disassembly = 2,
     [pbr::OriginalName("PROCESS_TYPE_INSPECTION")] Inspection = 3,
+  }
+
+  public enum ProcessState {
+    [pbr::OriginalName("PROCESS_STATE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("PROCESS_STATE_WAITING")] Waiting = 1,
+    [pbr::OriginalName("PROCESS_STATE_IN_PROGRESS")] InProgress = 2,
+    [pbr::OriginalName("PROCESS_STATE_COMPLETED")] Completed = 3,
+    [pbr::OriginalName("PROCESS_STATE_ABORTED")] Aborted = 4,
   }
 
   #endregion
@@ -105,6 +117,7 @@ namespace Messages.Plm.V1 {
       rootSequenceId_ = other.rootSequenceId_;
       sequences_ = other.sequences_.Clone();
       tasks_ = other.tasks_.Clone();
+      state_ = other.state_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -220,6 +233,18 @@ namespace Messages.Plm.V1 {
       get { return tasks_; }
     }
 
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 10;
+    private global::Messages.Plm.V1.ProcessState state_ = global::Messages.Plm.V1.ProcessState.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Plm.V1.ProcessState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -244,6 +269,7 @@ namespace Messages.Plm.V1 {
       if (RootSequenceId != other.RootSequenceId) return false;
       if(!sequences_.Equals(other.sequences_)) return false;
       if(!tasks_.Equals(other.tasks_)) return false;
+      if (State != other.State) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -260,6 +286,7 @@ namespace Messages.Plm.V1 {
       if (RootSequenceId.Length != 0) hash ^= RootSequenceId.GetHashCode();
       hash ^= sequences_.GetHashCode();
       hash ^= tasks_.GetHashCode();
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) hash ^= State.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -308,6 +335,10 @@ namespace Messages.Plm.V1 {
       }
       sequences_.WriteTo(output, _repeated_sequences_codec);
       tasks_.WriteTo(output, _repeated_tasks_codec);
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -348,6 +379,10 @@ namespace Messages.Plm.V1 {
       }
       sequences_.WriteTo(ref output, _repeated_sequences_codec);
       tasks_.WriteTo(ref output, _repeated_tasks_codec);
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -381,6 +416,9 @@ namespace Messages.Plm.V1 {
       }
       size += sequences_.CalculateSize(_repeated_sequences_codec);
       size += tasks_.CalculateSize(_repeated_tasks_codec);
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -419,6 +457,9 @@ namespace Messages.Plm.V1 {
       }
       sequences_.Add(other.sequences_);
       tasks_.Add(other.tasks_);
+      if (other.State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        State = other.State;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -477,6 +518,10 @@ namespace Messages.Plm.V1 {
             tasks_.AddEntriesFrom(input, _repeated_tasks_codec);
             break;
           }
+          case 80: {
+            State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -533,6 +578,10 @@ namespace Messages.Plm.V1 {
           }
           case 74: {
             tasks_.AddEntriesFrom(ref input, _repeated_tasks_codec);
+            break;
+          }
+          case 80: {
+            State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
             break;
           }
         }
