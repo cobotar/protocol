@@ -24,4 +24,9 @@ message MarkerMessage {
   // string parent_marker_id = 9; // TODO: this could perhaps be used to improve accuracy
   // geometry.v1.LocalizedPose parent_maker_pose = 10;
   // TODO: should: fixtures for BoP, tools, parts, and capabilities also be defined here? It should belong to the physical setup and not the AR-config
+  // Part location
+}
+
+message MarkersMessage {
+  repeated MarkerMessage markers = 1;
 }

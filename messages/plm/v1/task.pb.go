@@ -225,7 +225,7 @@ type TaskMessage struct {
 	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,19,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
 	CanReassign          bool                     `protobuf:"varint,16,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
 	CanDo                bool                     `protobuf:"varint,17,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo              bool                     `protobuf:"varint,18,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	CanUndo              bool                     `protobuf:"varint,18,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"` // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }

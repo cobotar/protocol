@@ -92,6 +92,7 @@
   
 - [ar/v1/marker.proto](#ar_v1_marker-proto)
     - [MarkerMessage](#ar-v1-MarkerMessage)
+    - [MarkersMessage](#ar-v1-MarkersMessage)
   
     - [MarkerType](#ar-v1-MarkerType)
   
@@ -118,6 +119,11 @@
   
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
+  
+- [plm/v1/part.proto](#plm_v1_part-proto)
+    - [PartMessage](#plm-v1-PartMessage)
+  
+    - [PartType](#plm-v1-PartType)
   
 - [plm/v1/sequence.proto](#plm_v1_sequence-proto)
     - [SequenceMessage](#plm-v1-SequenceMessage)
@@ -1349,6 +1355,21 @@ A simple pose consisting of a position and orientation
 
 
 
+
+<a name="ar-v1-MarkersMessage"></a>
+
+### MarkersMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markers | [MarkerMessage](#ar-v1-MarkerMessage) | repeated |  |
+
+
+
+
+
  
 
 
@@ -1649,6 +1670,58 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="plm_v1_part-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/part.proto
+
+
+
+<a name="plm-v1-PartMessage"></a>
+
+### PartMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PartType](#plm-v1-PartType) |  |  |
+| weight | [int64](#int64) |  |  |
+| model_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-PartType"></a>
+
+### PartType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PART_TYPE_UNSPECIFIED | 0 |  |
+| PART_TYPE_SUB_ASSEMBLY | 1 |  |
+| PART_TYPE_FASTENER | 2 |  |
+| PART_TYPE_PLATE | 3 |  |
+| PART_TYPE_LUBRICANT | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_sequence-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1757,7 +1830,7 @@ Update published when the state of an sequence have changed
 | assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 | can_reassign | [bool](#bool) |  |  |
 | can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  | TODO: &#39;complete-importance&#39;: could be different levels of &#34;this must be explicitly completed&#34; or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task. |
 
 
 

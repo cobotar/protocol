@@ -57,6 +57,7 @@ message TaskMessage {
   bool can_reassign = 16;
   bool can_do = 17;
   bool can_undo = 18;
+  // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
 }
 
 message TaskUpdatedMessage {

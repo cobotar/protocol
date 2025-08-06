@@ -387,6 +387,9 @@ namespace Messages.Plm.V1 {
     /// <summary>Field number for the "can_undo" field.</summary>
     public const int CanUndoFieldNumber = 18;
     private bool canUndo_;
+    /// <summary>
+    /// TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool CanUndo {

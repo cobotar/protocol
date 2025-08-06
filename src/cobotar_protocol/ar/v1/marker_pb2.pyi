@@ -35,3 +35,9 @@ class MarkerMessage(_message.Message):
     ar_configs: _containers.RepeatedCompositeFieldContainer[_config_pb2.ARConfigInfoMessage]
     ar_disappear_distance: int
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ..., agents: _Optional[_Iterable[_Union[_agent_pb2.Agent, _Mapping]]] = ..., ar_configs: _Optional[_Iterable[_Union[_config_pb2.ARConfigInfoMessage, _Mapping]]] = ..., ar_disappear_distance: _Optional[int] = ...) -> None: ...
+
+class MarkersMessage(_message.Message):
+    __slots__ = ("markers",)
+    MARKERS_FIELD_NUMBER: _ClassVar[int]
+    markers: _containers.RepeatedCompositeFieldContainer[MarkerMessage]
+    def __init__(self, markers: _Optional[_Iterable[_Union[MarkerMessage, _Mapping]]] = ...) -> None: ...
