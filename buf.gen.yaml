@@ -21,6 +21,5 @@ plugins:
     opt: markdown,README.md
   - remote: buf.build/bufbuild/es:v2.6.3
     out: lib
-    opt: target=ts
 inputs:
   - directory: proto

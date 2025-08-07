@@ -28,3 +28,6 @@ filename = "README.md"
 
 [[tool.bumpversion.files]]
 filename = "csharp/csharp.csproj"
+
+[[tool.bumpversion.files]]
+filename = "package.json"
