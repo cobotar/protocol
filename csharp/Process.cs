@@ -25,30 +25,39 @@ namespace Messages.Plm.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRwbG0vdjEvcHJvY2Vzcy5wcm90bxIGcGxtLnYxGhZnZW9tZXRyeS92MS9w",
-            "b3NlLnByb3RvGhVwbG0vdjEvc2VxdWVuY2UucHJvdG8aEXBsbS92MS90YXNr",
-            "LnByb3RvIooDCg5Qcm9jZXNzTWVzc2FnZRIfCgtpbnN0YW5jZV9pZBgBIAEo",
-            "CVIKaW5zdGFuY2VJZBIOCgJpZBgCIAEoCVICaWQSEgoEbmFtZRgDIAEoCVIE",
-            "bmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoEdHlw",
-            "ZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZVIEdHlwZRIwCgVmcmFtZRgG",
-            "IAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lEigKEHJv",
-            "b3Rfc2VxdWVuY2VfaWQYByABKAlSDnJvb3RTZXF1ZW5jZUlkEjUKCXNlcXVl",
-            "bmNlcxgIIAMoCzIXLnBsbS52MS5TZXF1ZW5jZU1lc3NhZ2VSCXNlcXVlbmNl",
-            "cxIpCgV0YXNrcxgJIAMoCzITLnBsbS52MS5UYXNrTWVzc2FnZVIFdGFza3MS",
-            "KgoFc3RhdGUYCiABKA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlUgVzdGF0ZSqB",
-            "AQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAAS",
-            "GQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJ",
-            "U0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAyqfAQoM",
-            "UHJvY2Vzc1N0YXRlEh0KGVBST0NFU1NfU1RBVEVfVU5TUEVDSUZJRUQQABIZ",
-            "ChVQUk9DRVNTX1NUQVRFX1dBSVRJTkcQARIdChlQUk9DRVNTX1NUQVRFX0lO",
-            "X1BST0dSRVNTEAISGwoXUFJPQ0VTU19TVEFURV9DT01QTEVURUQQAxIZChVQ",
-            "Uk9DRVNTX1NUQVRFX0FCT1JURUQQBEKPAQoKY29tLnBsbS52MUIMUHJvY2Vz",
-            "c1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
-            "cy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1c",
-            "VjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
+            "b3NlLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGhVw",
+            "bG0vdjEvc2VxdWVuY2UucHJvdG8aEXBsbS92MS90YXNrLnByb3RvIqoECg5Q",
+            "cm9jZXNzTWVzc2FnZRIfCgtpbnN0YW5jZV9pZBgBIAEoCVIKaW5zdGFuY2VJ",
+            "ZBIOCgJpZBgCIAEoCVICaWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIgCgtkZXNj",
+            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoEdHlwZRgFIAEoDjITLnBs",
+            "bS52MS5Qcm9jZXNzVHlwZVIEdHlwZRIwCgVmcmFtZRgGIAEoCzIaLmdlb21l",
+            "dHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lEigKEHJvb3Rfc2VxdWVuY2Vf",
+            "aWQYByABKAlSDnJvb3RTZXF1ZW5jZUlkEjUKCXNlcXVlbmNlcxgIIAMoCzIX",
+            "LnBsbS52MS5TZXF1ZW5jZU1lc3NhZ2VSCXNlcXVlbmNlcxIpCgV0YXNrcxgJ",
+            "IAMoCzITLnBsbS52MS5UYXNrTWVzc2FnZVIFdGFza3MSKgoFc3RhdGUYCiAB",
+            "KA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlUgVzdGF0ZRI4Cglpbml0aWF0ZWQY",
+            "CyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglpbml0aWF0ZWQS",
+            "MAoFZW5kZWQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgVl",
+            "bmRlZBIZCghvcmRlcl9pZBgNIAEoCVIHb3JkZXJJZBIXCgdsaW5lX2lkGA4g",
+            "ASgJUgZsaW5lSWQipgEKFVByb2Nlc3NVcGRhdGVkTWVzc2FnZRIfCgtpbnN0",
+            "YW5jZV9pZBgBIAEoCVIKaW5zdGFuY2VJZBIOCgJpZBgCIAEoCVICaWQSKgoF",
+            "c3RhdGUYCiABKA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlUgVzdGF0ZRIwCgVl",
+            "bmRlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBWVuZGVk",
+            "KoEBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQ",
+            "ABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVf",
+            "RElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADKp8B",
+            "CgxQcm9jZXNzU3RhdGUSHQoZUFJPQ0VTU19TVEFURV9VTlNQRUNJRklFRBAA",
+            "EhkKFVBST0NFU1NfU1RBVEVfV0FJVElORxABEh0KGVBST0NFU1NfU1RBVEVf",
+            "SU5fUFJPR1JFU1MQAhIbChdQUk9DRVNTX1NUQVRFX0NPTVBMRVRFRBADEhkK",
+            "FVBST0NFU1NfU1RBVEVfQUJPUlRFRBAEQo8BCgpjb20ucGxtLnYxQgxQcm9j",
+            "ZXNzUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBs",
+            "bVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ProcessType), typeof(global::Messages.Plm.V1.ProcessState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessMessage), global::Messages.Plm.V1.ProcessMessage.Parser, new[]{ "InstanceId", "Id", "Name", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks", "State" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessMessage), global::Messages.Plm.V1.ProcessMessage.Parser, new[]{ "InstanceId", "Id", "Name", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks", "State", "Initiated", "Ended", "OrderId", "LineId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessUpdatedMessage), global::Messages.Plm.V1.ProcessUpdatedMessage.Parser, new[]{ "InstanceId", "Id", "State", "Ended" }, null, null, null, null)
           }));
     }
     #endregion
@@ -118,6 +127,10 @@ namespace Messages.Plm.V1 {
       sequences_ = other.sequences_.Clone();
       tasks_ = other.tasks_.Clone();
       state_ = other.state_;
+      initiated_ = other.initiated_ != null ? other.initiated_.Clone() : null;
+      ended_ = other.ended_ != null ? other.ended_.Clone() : null;
+      orderId_ = other.orderId_;
+      lineId_ = other.lineId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -245,6 +258,54 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "initiated" field.</summary>
+    public const int InitiatedFieldNumber = 11;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp initiated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Initiated {
+      get { return initiated_; }
+      set {
+        initiated_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ended" field.</summary>
+    public const int EndedFieldNumber = 12;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp ended_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Ended {
+      get { return ended_; }
+      set {
+        ended_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "order_id" field.</summary>
+    public const int OrderIdFieldNumber = 13;
+    private string orderId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OrderId {
+      get { return orderId_; }
+      set {
+        orderId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "line_id" field.</summary>
+    public const int LineIdFieldNumber = 14;
+    private string lineId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LineId {
+      get { return lineId_; }
+      set {
+        lineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -270,6 +331,10 @@ namespace Messages.Plm.V1 {
       if(!sequences_.Equals(other.sequences_)) return false;
       if(!tasks_.Equals(other.tasks_)) return false;
       if (State != other.State) return false;
+      if (!object.Equals(Initiated, other.Initiated)) return false;
+      if (!object.Equals(Ended, other.Ended)) return false;
+      if (OrderId != other.OrderId) return false;
+      if (LineId != other.LineId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -287,6 +352,10 @@ namespace Messages.Plm.V1 {
       hash ^= sequences_.GetHashCode();
       hash ^= tasks_.GetHashCode();
       if (State != global::Messages.Plm.V1.ProcessState.Unspecified) hash ^= State.GetHashCode();
+      if (initiated_ != null) hash ^= Initiated.GetHashCode();
+      if (ended_ != null) hash ^= Ended.GetHashCode();
+      if (OrderId.Length != 0) hash ^= OrderId.GetHashCode();
+      if (LineId.Length != 0) hash ^= LineId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -339,6 +408,22 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(80);
         output.WriteEnum((int) State);
       }
+      if (initiated_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Initiated);
+      }
+      if (ended_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Ended);
+      }
+      if (OrderId.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(OrderId);
+      }
+      if (LineId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(LineId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -383,6 +468,22 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(80);
         output.WriteEnum((int) State);
       }
+      if (initiated_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Initiated);
+      }
+      if (ended_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Ended);
+      }
+      if (OrderId.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(OrderId);
+      }
+      if (LineId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(LineId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -418,6 +519,18 @@ namespace Messages.Plm.V1 {
       size += tasks_.CalculateSize(_repeated_tasks_codec);
       if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (initiated_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Initiated);
+      }
+      if (ended_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ended);
+      }
+      if (OrderId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OrderId);
+      }
+      if (LineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LineId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -459,6 +572,24 @@ namespace Messages.Plm.V1 {
       tasks_.Add(other.tasks_);
       if (other.State != global::Messages.Plm.V1.ProcessState.Unspecified) {
         State = other.State;
+      }
+      if (other.initiated_ != null) {
+        if (initiated_ == null) {
+          Initiated = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Initiated.MergeFrom(other.Initiated);
+      }
+      if (other.ended_ != null) {
+        if (ended_ == null) {
+          Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Ended.MergeFrom(other.Ended);
+      }
+      if (other.OrderId.Length != 0) {
+        OrderId = other.OrderId;
+      }
+      if (other.LineId.Length != 0) {
+        LineId = other.LineId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -522,6 +653,28 @@ namespace Messages.Plm.V1 {
             State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
             break;
           }
+          case 90: {
+            if (initiated_ == null) {
+              Initiated = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Initiated);
+            break;
+          }
+          case 98: {
+            if (ended_ == null) {
+              Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Ended);
+            break;
+          }
+          case 106: {
+            OrderId = input.ReadString();
+            break;
+          }
+          case 114: {
+            LineId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -582,6 +735,349 @@ namespace Messages.Plm.V1 {
           }
           case 80: {
             State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
+            break;
+          }
+          case 90: {
+            if (initiated_ == null) {
+              Initiated = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Initiated);
+            break;
+          }
+          case 98: {
+            if (ended_ == null) {
+              Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Ended);
+            break;
+          }
+          case 106: {
+            OrderId = input.ReadString();
+            break;
+          }
+          case 114: {
+            LineId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Update published when the state of a process have changed
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ProcessUpdatedMessage : pb::IMessage<ProcessUpdatedMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ProcessUpdatedMessage> _parser = new pb::MessageParser<ProcessUpdatedMessage>(() => new ProcessUpdatedMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ProcessUpdatedMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Plm.V1.ProcessReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProcessUpdatedMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProcessUpdatedMessage(ProcessUpdatedMessage other) : this() {
+      instanceId_ = other.instanceId_;
+      id_ = other.id_;
+      state_ = other.state_;
+      ended_ = other.ended_ != null ? other.ended_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProcessUpdatedMessage Clone() {
+      return new ProcessUpdatedMessage(this);
+    }
+
+    /// <summary>Field number for the "instance_id" field.</summary>
+    public const int InstanceIdFieldNumber = 1;
+    private string instanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 10;
+    private global::Messages.Plm.V1.ProcessState state_ = global::Messages.Plm.V1.ProcessState.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Plm.V1.ProcessState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ended" field.</summary>
+    public const int EndedFieldNumber = 12;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp ended_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Ended {
+      get { return ended_; }
+      set {
+        ended_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ProcessUpdatedMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ProcessUpdatedMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InstanceId != other.InstanceId) return false;
+      if (Id != other.Id) return false;
+      if (State != other.State) return false;
+      if (!object.Equals(Ended, other.Ended)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InstanceId.Length != 0) hash ^= InstanceId.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) hash ^= State.GetHashCode();
+      if (ended_ != null) hash ^= Ended.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (InstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InstanceId);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Id);
+      }
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
+      if (ended_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Ended);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (InstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InstanceId);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Id);
+      }
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
+      if (ended_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Ended);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (InstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstanceId);
+      }
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (ended_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ended);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ProcessUpdatedMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InstanceId.Length != 0) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.State != global::Messages.Plm.V1.ProcessState.Unspecified) {
+        State = other.State;
+      }
+      if (other.ended_ != null) {
+        if (ended_ == null) {
+          Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Ended.MergeFrom(other.Ended);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            InstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Id = input.ReadString();
+            break;
+          }
+          case 80: {
+            State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
+            break;
+          }
+          case 98: {
+            if (ended_ == null) {
+              Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Ended);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            InstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Id = input.ReadString();
+            break;
+          }
+          case 80: {
+            State = (global::Messages.Plm.V1.ProcessState) input.ReadEnum();
+            break;
+          }
+          case 98: {
+            if (ended_ == null) {
+              Ended = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Ended);
             break;
           }
         }

@@ -24,24 +24,35 @@ namespace Messages.Plm.V1 {
     static ProcessLoadReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlwbG0vdjEvcHJvY2Vzc19sb2FkLnByb3RvEgZwbG0udjEipwEKElByb2Nl",
+            "ChlwbG0vdjEvcHJvY2Vzc19sb2FkLnByb3RvEgZwbG0udjEi0wEKElByb2Nl",
             "c3NMb2FkTWVzc2FnZRIdCgpyZXF1ZXN0X2lkGAEgASgJUglyZXF1ZXN0SWQS",
-            "HQoKcHJvY2Vzc19pZBgCIAEoCVIJcHJvY2Vzc0lkEh8KC2xvY2F0aW9uX2lk",
-            "GAMgASgJUgpsb2NhdGlvbklkEjIKFWFib3J0X3J1bm5pbmdfcHJvY2VzcxgE",
-            "IAEoCFITYWJvcnRSdW5uaW5nUHJvY2Vzc0KTAQoKY29tLnBsbS52MUIQUHJv",
+            "HQoKcHJvY2Vzc19pZBgCIAEoCVIJcHJvY2Vzc0lkEhcKB2xpbmVfaWQYAyAB",
+            "KAlSBmxpbmVJZBIZCghvcmRlcl9pZBgEIAEoCVIHb3JkZXJJZBJLChNhbGxv",
+            "Y2F0aW9uX3N0cmF0ZWd5GAUgASgOMhoucGxtLnYxLkFsbG9jYXRpb25TdHJh",
+            "dGVneVISYWxsb2NhdGlvblN0cmF0ZWd5KlkKEkFsbG9jYXRpb25TdHJhdGVn",
+            "eRIjCh9BTExPQ0FUSU9OX1NUUkFURUdZX1VOU1BFQ0lGSUVEEAASHgoaQUxM",
+            "T0NBVElPTl9TVFJBVEVHWV9TVEFUSUMQAUKTAQoKY29tLnBsbS52MUIQUHJv",
             "Y2Vzc0xvYWRQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
             "bWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYx",
             "ygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJv",
             "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessLoadMessage), global::Messages.Plm.V1.ProcessLoadMessage.Parser, new[]{ "RequestId", "ProcessId", "LocationId", "AbortRunningProcess" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.AllocationStrategy), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessLoadMessage), global::Messages.Plm.V1.ProcessLoadMessage.Parser, new[]{ "RequestId", "ProcessId", "LineId", "OrderId", "AllocationStrategy" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum AllocationStrategy {
+    [pbr::OriginalName("ALLOCATION_STRATEGY_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("ALLOCATION_STRATEGY_STATIC")] Static = 1,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessLoadMessage : pb::IMessage<ProcessLoadMessage>
@@ -80,8 +91,9 @@ namespace Messages.Plm.V1 {
     public ProcessLoadMessage(ProcessLoadMessage other) : this() {
       requestId_ = other.requestId_;
       processId_ = other.processId_;
-      locationId_ = other.locationId_;
-      abortRunningProcess_ = other.abortRunningProcess_;
+      lineId_ = other.lineId_;
+      orderId_ = other.orderId_;
+      allocationStrategy_ = other.allocationStrategy_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,34 +127,42 @@ namespace Messages.Plm.V1 {
       }
     }
 
-    /// <summary>Field number for the "location_id" field.</summary>
-    public const int LocationIdFieldNumber = 3;
-    private string locationId_ = "";
-    /// <summary>
-    /// TODO: What name should this be?
-    /// </summary>
+    /// <summary>Field number for the "line_id" field.</summary>
+    public const int LineIdFieldNumber = 3;
+    private string lineId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string LocationId {
-      get { return locationId_; }
+    public string LineId {
+      get { return lineId_; }
       set {
-        locationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        lineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "abort_running_process" field.</summary>
-    public const int AbortRunningProcessFieldNumber = 4;
-    private bool abortRunningProcess_;
+    /// <summary>Field number for the "order_id" field.</summary>
+    public const int OrderIdFieldNumber = 4;
+    private string orderId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OrderId {
+      get { return orderId_; }
+      set {
+        orderId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "allocation_strategy" field.</summary>
+    public const int AllocationStrategyFieldNumber = 5;
+    private global::Messages.Plm.V1.AllocationStrategy allocationStrategy_ = global::Messages.Plm.V1.AllocationStrategy.Unspecified;
     /// <summary>
-    /// TODO: allocation strategy
     /// TODO: list participating actors?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool AbortRunningProcess {
-      get { return abortRunningProcess_; }
+    public global::Messages.Plm.V1.AllocationStrategy AllocationStrategy {
+      get { return allocationStrategy_; }
       set {
-        abortRunningProcess_ = value;
+        allocationStrategy_ = value;
       }
     }
 
@@ -163,8 +183,9 @@ namespace Messages.Plm.V1 {
       }
       if (RequestId != other.RequestId) return false;
       if (ProcessId != other.ProcessId) return false;
-      if (LocationId != other.LocationId) return false;
-      if (AbortRunningProcess != other.AbortRunningProcess) return false;
+      if (LineId != other.LineId) return false;
+      if (OrderId != other.OrderId) return false;
+      if (AllocationStrategy != other.AllocationStrategy) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,8 +195,9 @@ namespace Messages.Plm.V1 {
       int hash = 1;
       if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
       if (ProcessId.Length != 0) hash ^= ProcessId.GetHashCode();
-      if (LocationId.Length != 0) hash ^= LocationId.GetHashCode();
-      if (AbortRunningProcess != false) hash ^= AbortRunningProcess.GetHashCode();
+      if (LineId.Length != 0) hash ^= LineId.GetHashCode();
+      if (OrderId.Length != 0) hash ^= OrderId.GetHashCode();
+      if (AllocationStrategy != global::Messages.Plm.V1.AllocationStrategy.Unspecified) hash ^= AllocationStrategy.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,13 +224,17 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(ProcessId);
       }
-      if (LocationId.Length != 0) {
+      if (LineId.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(LocationId);
+        output.WriteString(LineId);
       }
-      if (AbortRunningProcess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(AbortRunningProcess);
+      if (OrderId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OrderId);
+      }
+      if (AllocationStrategy != global::Messages.Plm.V1.AllocationStrategy.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) AllocationStrategy);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,13 +254,17 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(ProcessId);
       }
-      if (LocationId.Length != 0) {
+      if (LineId.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(LocationId);
+        output.WriteString(LineId);
       }
-      if (AbortRunningProcess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(AbortRunningProcess);
+      if (OrderId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OrderId);
+      }
+      if (AllocationStrategy != global::Messages.Plm.V1.AllocationStrategy.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) AllocationStrategy);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -252,11 +282,14 @@ namespace Messages.Plm.V1 {
       if (ProcessId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessId);
       }
-      if (LocationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LocationId);
+      if (LineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LineId);
       }
-      if (AbortRunningProcess != false) {
-        size += 1 + 1;
+      if (OrderId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OrderId);
+      }
+      if (AllocationStrategy != global::Messages.Plm.V1.AllocationStrategy.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AllocationStrategy);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -276,11 +309,14 @@ namespace Messages.Plm.V1 {
       if (other.ProcessId.Length != 0) {
         ProcessId = other.ProcessId;
       }
-      if (other.LocationId.Length != 0) {
-        LocationId = other.LocationId;
+      if (other.LineId.Length != 0) {
+        LineId = other.LineId;
       }
-      if (other.AbortRunningProcess != false) {
-        AbortRunningProcess = other.AbortRunningProcess;
+      if (other.OrderId.Length != 0) {
+        OrderId = other.OrderId;
+      }
+      if (other.AllocationStrategy != global::Messages.Plm.V1.AllocationStrategy.Unspecified) {
+        AllocationStrategy = other.AllocationStrategy;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -310,11 +346,15 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
-            LocationId = input.ReadString();
+            LineId = input.ReadString();
             break;
           }
-          case 32: {
-            AbortRunningProcess = input.ReadBool();
+          case 34: {
+            OrderId = input.ReadString();
+            break;
+          }
+          case 40: {
+            AllocationStrategy = (global::Messages.Plm.V1.AllocationStrategy) input.ReadEnum();
             break;
           }
         }
@@ -345,11 +385,15 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
-            LocationId = input.ReadString();
+            LineId = input.ReadString();
             break;
           }
-          case 32: {
-            AbortRunningProcess = input.ReadBool();
+          case 34: {
+            OrderId = input.ReadString();
+            break;
+          }
+          case 40: {
+            AllocationStrategy = (global::Messages.Plm.V1.AllocationStrategy) input.ReadEnum();
             break;
           }
         }

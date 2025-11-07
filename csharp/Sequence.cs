@@ -651,7 +651,7 @@ namespace Messages.Plm.V1 {
   }
 
   /// <summary>
-  /// Update published when the state of an sequence have changed
+  /// Update published when the state of a sequence have changed
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SequenceUpdatedMessage : pb::IMessage<SequenceUpdatedMessage>

@@ -29,7 +29,7 @@ message SequenceMessage {
   bool can_bulk_complete = 12;
 }
 
-// Update published when the state of an sequence have changed
+// Update published when the state of a sequence have changed
 message SequenceUpdatedMessage {
   string sequence_id = 1;
   repeated string assigned_to = 2;

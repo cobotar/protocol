@@ -120,6 +120,11 @@
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
   
+- [plm/v1/line.proto](#plm_v1_line-proto)
+    - [LineMessage](#plm-v1-LineMessage)
+  
+    - [LineType](#plm-v1-LineType)
+  
 - [plm/v1/part.proto](#plm_v1_part-proto)
     - [PartMessage](#plm-v1-PartMessage)
   
@@ -141,9 +146,13 @@
   
 - [plm/v1/process.proto](#plm_v1_process-proto)
     - [ProcessMessage](#plm-v1-ProcessMessage)
+    - [ProcessUpdatedMessage](#plm-v1-ProcessUpdatedMessage)
   
     - [ProcessState](#plm-v1-ProcessState)
     - [ProcessType](#plm-v1-ProcessType)
+  
+- [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
+    - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
     - [DeleteProcessMessage](#plm-v1-DeleteProcessMessage)
@@ -152,6 +161,8 @@
   
 - [plm/v1/process_load.proto](#plm_v1_process_load-proto)
     - [ProcessLoadMessage](#plm-v1-ProcessLoadMessage)
+  
+    - [AllocationStrategy](#plm-v1-AllocationStrategy)
   
 - [plm/v1/requests.proto](#plm_v1_requests-proto)
     - [ProcessAtLocationMessage](#plm-v1-ProcessAtLocationMessage)
@@ -1670,6 +1681,56 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="plm_v1_line-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/line.proto
+
+
+
+<a name="plm-v1-LineMessage"></a>
+
+### LineMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [LineType](#plm-v1-LineType) |  | TODO: agents TODO: capabilities |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-LineType"></a>
+
+### LineType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LINE_TYPE_UNSPECIFIED | 0 |  |
+| LINE_TYPE_SUB_ASSEMBLY | 1 |  |
+| LINE_TYPE_FASTENER | 2 |  |
+| LINE_TYPE_PLATE | 3 |  |
+| LINE_TYPE_LUBRICANT | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_part-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1758,7 +1819,7 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 <a name="plm-v1-SequenceUpdatedMessage"></a>
 
 ### SequenceUpdatedMessage
-Update published when the state of an sequence have changed
+Update published when the state of a sequence have changed
 
 
 | Field | Type | Label | Description |
@@ -1942,6 +2003,28 @@ Update published when the state of an sequence have changed
 | sequences | [SequenceMessage](#plm-v1-SequenceMessage) | repeated |  |
 | tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
 | state | [ProcessState](#plm-v1-ProcessState) |  |  |
+| initiated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| ended | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| order_id | [string](#string) |  |  |
+| line_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-ProcessUpdatedMessage"></a>
+
+### ProcessUpdatedMessage
+Update published when the state of a process have changed
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| instance_id | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| state | [ProcessState](#plm-v1-ProcessState) |  |  |
+| ended | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 
 
 
@@ -1977,6 +2060,39 @@ Update published when the state of an sequence have changed
 | PROCESS_TYPE_DISASSEMBLY | 2 |  |
 | PROCESS_TYPE_INSPECTION | 3 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_process_abort-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process_abort.proto
+
+
+
+<a name="plm-v1-ProcessAbortMessage"></a>
+
+### ProcessAbortMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| reason | [string](#string) |  |  |
+
+
+
+
+
+ 
 
  
 
@@ -2071,14 +2187,27 @@ Update published when the state of an sequence have changed
 | ----- | ---- | ----- | ----------- |
 | request_id | [string](#string) |  |  |
 | process_id | [string](#string) |  |  |
-| location_id | [string](#string) |  | TODO: What name should this be? |
-| abort_running_process | [bool](#bool) |  | TODO: allocation strategy TODO: list participating actors? |
+| line_id | [string](#string) |  |  |
+| order_id | [string](#string) |  |  |
+| allocation_strategy | [AllocationStrategy](#plm-v1-AllocationStrategy) |  | TODO: list participating actors? |
 
 
 
 
 
  
+
+
+<a name="plm-v1-AllocationStrategy"></a>
+
+### AllocationStrategy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ALLOCATION_STRATEGY_UNSPECIFIED | 0 |  |
+| ALLOCATION_STRATEGY_STATIC | 1 |  |
+
 
  
 

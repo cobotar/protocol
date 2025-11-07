@@ -2,6 +2,7 @@ syntax = "proto3";
 package plm.v1;
 
 import "geometry/v1/pose.proto";
+import "google/protobuf/timestamp.proto";
 import "plm/v1/sequence.proto";
 import "plm/v1/task.proto";
 
@@ -34,4 +35,16 @@ message ProcessMessage {
   repeated SequenceMessage sequences = 8;
   repeated TaskMessage tasks = 9;
   ProcessState state = 10;
+  google.protobuf.Timestamp initiated = 11;
+  google.protobuf.Timestamp ended = 12;
+  string order_id = 13;
+  string line_id = 14;
+}
+
+// Update published when the state of a process have changed
+message ProcessUpdatedMessage {
+  string instance_id = 1;
+  string id = 2;
+  ProcessState state = 10;
+  google.protobuf.Timestamp ended = 12;
 }

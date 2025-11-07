@@ -1,4 +1,7 @@
+import datetime
+
 from geometry.v1 import pose_pb2 as _pose_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from plm.v1 import sequence_pb2 as _sequence_pb2
 from plm.v1 import task_pb2 as _task_pb2
 from google.protobuf.internal import containers as _containers
@@ -35,7 +38,7 @@ PROCESS_STATE_COMPLETED: ProcessState
 PROCESS_STATE_ABORTED: ProcessState
 
 class ProcessMessage(_message.Message):
-    __slots__ = ("instance_id", "id", "name", "description", "type", "frame", "root_sequence_id", "sequences", "tasks", "state")
+    __slots__ = ("instance_id", "id", "name", "description", "type", "frame", "root_sequence_id", "sequences", "tasks", "state", "initiated", "ended", "order_id", "line_id")
     INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -46,6 +49,10 @@ class ProcessMessage(_message.Message):
     SEQUENCES_FIELD_NUMBER: _ClassVar[int]
     TASKS_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
+    INITIATED_FIELD_NUMBER: _ClassVar[int]
+    ENDED_FIELD_NUMBER: _ClassVar[int]
+    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    LINE_ID_FIELD_NUMBER: _ClassVar[int]
     instance_id: str
     id: str
     name: str
@@ -56,4 +63,20 @@ class ProcessMessage(_message.Message):
     sequences: _containers.RepeatedCompositeFieldContainer[_sequence_pb2.SequenceMessage]
     tasks: _containers.RepeatedCompositeFieldContainer[_task_pb2.TaskMessage]
     state: ProcessState
-    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ..., state: _Optional[_Union[ProcessState, str]] = ...) -> None: ...
+    initiated: _timestamp_pb2.Timestamp
+    ended: _timestamp_pb2.Timestamp
+    order_id: str
+    line_id: str
+    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ..., state: _Optional[_Union[ProcessState, str]] = ..., initiated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., order_id: _Optional[str] = ..., line_id: _Optional[str] = ...) -> None: ...
+
+class ProcessUpdatedMessage(_message.Message):
+    __slots__ = ("instance_id", "id", "state", "ended")
+    INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    ENDED_FIELD_NUMBER: _ClassVar[int]
+    instance_id: str
+    id: str
+    state: ProcessState
+    ended: _timestamp_pb2.Timestamp
+    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., state: _Optional[_Union[ProcessState, str]] = ..., ended: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
