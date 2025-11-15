@@ -8,9 +8,3 @@ message ProcessAtLocationMessage {
   string request_id = 1;
   string location_id = 2;
 }
-
-message TasksForAgentMessage {
-  string request_id = 1;
-  string instance_id = 2;
-  string agent_id = 3;
-}
