@@ -31,29 +31,3 @@ export declare type ProcessAtLocationMessage = Message<"plm.v1.ProcessAtLocation
  */
 export declare const ProcessAtLocationMessageSchema: GenMessage<ProcessAtLocationMessage>;
 
-/**
- * @generated from message plm.v1.TasksForAgentMessage
- */
-export declare type TasksForAgentMessage = Message<"plm.v1.TasksForAgentMessage"> & {
-  /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: string instance_id = 2;
-   */
-  instanceId: string;
-
-  /**
-   * @generated from field: string agent_id = 3;
-   */
-  agentId: string;
-};
-
-/**
- * Describes the message plm.v1.TasksForAgentMessage.
- * Use `create(TasksForAgentMessageSchema)` to create a new message.
- */
-export declare const TasksForAgentMessageSchema: GenMessage<TasksForAgentMessage>;
-

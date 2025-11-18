@@ -11,13 +11,3 @@ class ProcessAtLocationMessage(_message.Message):
     request_id: str
     location_id: str
     def __init__(self, request_id: _Optional[str] = ..., location_id: _Optional[str] = ...) -> None: ...
-
-class TasksForAgentMessage(_message.Message):
-    __slots__ = ("request_id", "instance_id", "agent_id")
-    REQUEST_ID_FIELD_NUMBER: _ClassVar[int]
-    INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
-    request_id: str
-    instance_id: str
-    agent_id: str
-    def __init__(self, request_id: _Optional[str] = ..., instance_id: _Optional[str] = ..., agent_id: _Optional[str] = ...) -> None: ...

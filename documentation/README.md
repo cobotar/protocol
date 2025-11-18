@@ -166,7 +166,6 @@
   
 - [plm/v1/requests.proto](#plm_v1_requests-proto)
     - [ProcessAtLocationMessage](#plm-v1-ProcessAtLocationMessage)
-    - [TasksForAgentMessage](#plm-v1-TasksForAgentMessage)
   
 - [plm/v1/sequence_complete.proto](#plm_v1_sequence_complete-proto)
     - [SequenceBulkCompleteMessage](#plm-v1-SequenceBulkCompleteMessage)
@@ -184,6 +183,10 @@
     - [TaskStateChangeMessage](#plm-v1-TaskStateChangeMessage)
   
     - [TaskStateRequest](#plm-v1-TaskStateRequest)
+  
+- [plm/v1/tasks_list.proto](#plm_v1_tasks_list-proto)
+    - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
+    - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -2239,23 +2242,6 @@ Update published when the state of a process have changed
 
 
 
-
-<a name="plm-v1-TasksForAgentMessage"></a>
-
-### TasksForAgentMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-
-
-
-
-
  
 
  
@@ -2445,6 +2431,58 @@ Reassign all sub-tasks to the assignee (if possible)
 | TASK_STATE_REQUEST_UNDO | 5 |  |
 | TASK_STATE_REQUEST_ERROR | 6 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_tasks_list-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/tasks_list.proto
+
+
+
+<a name="plm-v1-TasksForAgentRequest"></a>
+
+### TasksForAgentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+| state | [TaskState](#plm-v1-TaskState) |  | Filter based on state. 0 (unspecified) returns all |
+
+
+
+
+
+
+<a name="plm-v1-TasksForAgentResponse"></a>
+
+### TasksForAgentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| agent_id | [string](#string) |  |  |
+| task_ids | [string](#string) | repeated |  |
+
+
+
+
+
+ 
 
  
 
