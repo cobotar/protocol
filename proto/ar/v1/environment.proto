@@ -1,0 +1,36 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/marker.proto";
+import "ar/v1/property.proto";
+import "geometry/v1/pose.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+message AgentLocation {
+  string id = 1;
+  geometry.v1.LocalizedPose location = 2;
+}
+
+message PartLocation {
+  string id = 1;
+  geometry.v1.LocalizedPose location = 2;
+}
+
+message ToolLocation {
+  string id = 1;
+  geometry.v1.LocalizedPose location = 2;
+}
+
+message Environment {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  repeated ar.v1.MarkerMessage markers = 5; // Markers associated with this environment. The first marker in the list will be the origin of the environment.
+  repeated AgentLocation agents = 6;
+  repeated PartLocation parts = 7;
+  repeated ToolLocation tools = 8;
+  repeated ar.v1.Property properties = 9;
+}

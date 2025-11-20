@@ -24,25 +24,23 @@ namespace Messages.AR.V1 {
     static MarkerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhJhci92MS9jb25maWcucHJv",
-            "dG8aFWNvbW1vbi92MS9hZ2VudC5wcm90byK2AgoNTWFya2VyTWVzc2FnZRIO",
-            "CgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlw",
-            "dGlvbhgDIAEoCVILZGVzY3JpcHRpb24SHwoLbWFya2VyX3RleHQYBCABKAlS",
-            "Cm1hcmtlclRleHQSJQoEdHlwZRgFIAEoDjIRLmFyLnYxLk1hcmtlclR5cGVS",
-            "BHR5cGUSKAoGYWdlbnRzGAYgAygLMhAuY29tbW9uLnYxLkFnZW50UgZhZ2Vu",
-            "dHMSOQoKYXJfY29uZmlncxgHIAMoCzIaLmFyLnYxLkFSQ29uZmlnSW5mb01l",
-            "c3NhZ2VSCWFyQ29uZmlncxIyChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYCCAB",
-            "KANSE2FyRGlzYXBwZWFyRGlzdGFuY2UiQAoOTWFya2Vyc01lc3NhZ2USLgoH",
-            "bWFya2VycxgBIAMoCzIULmFyLnYxLk1hcmtlck1lc3NhZ2VSB21hcmtlcnMq",
-            "QgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhcK",
-            "E01BUktFUl9UWVBFX1FSX0NPREUQAUKHAQoJY29tLmFyLnYxQgtNYXJrZXJQ",
-            "cm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
-            "YXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFB",
-            "clxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhZnZW9tZXRyeS92MS9wb3Nl",
+            "LnByb3RvIuUBCg1NYXJrZXJNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRu",
+            "YW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
+            "dGlvbhIfCgttYXJrZXJfdGV4dBgEIAEoCVIKbWFya2VyVGV4dBIlCgR0eXBl",
+            "GAUgASgOMhEuYXIudjEuTWFya2VyVHlwZVIEdHlwZRJGChFwYXJlbnRfbWFr",
+            "ZXJfcG9zZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSD3Bh",
+            "cmVudE1ha2VyUG9zZSJACg5NYXJrZXJzTWVzc2FnZRIuCgdtYXJrZXJzGAEg",
+            "AygLMhQuYXIudjEuTWFya2VyTWVzc2FnZVIHbWFya2VycypCCgpNYXJrZXJU",
+            "eXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZ",
+            "UEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYx",
+            "ogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1l",
+            "dGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.ConfigReflection.Descriptor, global::Messages.Common.V1.AgentReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type", "Agents", "ArConfigs", "ArDisappearDistance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type", "ParentMakerPose" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkersMessage), global::Messages.AR.V1.MarkersMessage.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
@@ -98,9 +96,7 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       markerText_ = other.markerText_;
       type_ = other.type_;
-      agents_ = other.agents_.Clone();
-      arConfigs_ = other.arConfigs_.Clone();
-      arDisappearDistance_ = other.arDisappearDistance_;
+      parentMakerPose_ = other.parentMakerPose_ != null ? other.parentMakerPose_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -173,46 +169,23 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "agents" field.</summary>
-    public const int AgentsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Agent> _repeated_agents_codec
-        = pb::FieldCodec.ForMessage(50, global::Messages.Common.V1.Agent.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Agent> agents_ = new pbc::RepeatedField<global::Messages.Common.V1.Agent>();
+    /// <summary>Field number for the "parent_maker_pose" field.</summary>
+    public const int ParentMakerPoseFieldNumber = 6;
+    private global::Messages.Common.V1.LocalizedPose parentMakerPose_;
     /// <summary>
-    /// List of agents associated with this marker
+    ///repeated common.v1.Agent agents = 6; // List of agents associated with this marker
+    ///repeated ar.v1.ARConfigInfoMessage ar_configs = 7; // List of ARConfigs which can be used to retrieve a specific configuration
+    ///int64 ar_disappear_distance = 8; // Threshold distance in cm when the UI is expected to disable the AR for this marker
+    /// string parent_marker_id = 9; // TODO: this could perhaps be used to improve accuracy
+    /// TODO: should: fixtures for BoP, tools, parts, and capabilities also be defined here? It should belong to the physical setup and not the AR-config
+    /// Part location
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Agent> Agents {
-      get { return agents_; }
-    }
-
-    /// <summary>Field number for the "ar_configs" field.</summary>
-    public const int ArConfigsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARConfigInfoMessage> _repeated_arConfigs_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.ARConfigInfoMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARConfigInfoMessage> arConfigs_ = new pbc::RepeatedField<global::Messages.AR.V1.ARConfigInfoMessage>();
-    /// <summary>
-    /// List of ARConfigs which can be used to retrieve a specific configuration
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ARConfigInfoMessage> ArConfigs {
-      get { return arConfigs_; }
-    }
-
-    /// <summary>Field number for the "ar_disappear_distance" field.</summary>
-    public const int ArDisappearDistanceFieldNumber = 8;
-    private long arDisappearDistance_;
-    /// <summary>
-    /// Threshold distance in cm when the UI is expected to disable the AR for this marker
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ArDisappearDistance {
-      get { return arDisappearDistance_; }
+    public global::Messages.Common.V1.LocalizedPose ParentMakerPose {
+      get { return parentMakerPose_; }
       set {
-        arDisappearDistance_ = value;
+        parentMakerPose_ = value;
       }
     }
 
@@ -236,9 +209,7 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (MarkerText != other.MarkerText) return false;
       if (Type != other.Type) return false;
-      if(!agents_.Equals(other.agents_)) return false;
-      if(!arConfigs_.Equals(other.arConfigs_)) return false;
-      if (ArDisappearDistance != other.ArDisappearDistance) return false;
+      if (!object.Equals(ParentMakerPose, other.ParentMakerPose)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -251,9 +222,7 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (MarkerText.Length != 0) hash ^= MarkerText.GetHashCode();
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) hash ^= Type.GetHashCode();
-      hash ^= agents_.GetHashCode();
-      hash ^= arConfigs_.GetHashCode();
-      if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
+      if (parentMakerPose_ != null) hash ^= ParentMakerPose.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -292,11 +261,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      agents_.WriteTo(output, _repeated_agents_codec);
-      arConfigs_.WriteTo(output, _repeated_arConfigs_codec);
-      if (ArDisappearDistance != 0L) {
-        output.WriteRawTag(64);
-        output.WriteInt64(ArDisappearDistance);
+      if (parentMakerPose_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(ParentMakerPose);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -328,11 +295,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      agents_.WriteTo(ref output, _repeated_agents_codec);
-      arConfigs_.WriteTo(ref output, _repeated_arConfigs_codec);
-      if (ArDisappearDistance != 0L) {
-        output.WriteRawTag(64);
-        output.WriteInt64(ArDisappearDistance);
+      if (parentMakerPose_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(ParentMakerPose);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -359,10 +324,8 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      size += agents_.CalculateSize(_repeated_agents_codec);
-      size += arConfigs_.CalculateSize(_repeated_arConfigs_codec);
-      if (ArDisappearDistance != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
+      if (parentMakerPose_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ParentMakerPose);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -391,10 +354,11 @@ namespace Messages.AR.V1 {
       if (other.Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         Type = other.Type;
       }
-      agents_.Add(other.agents_);
-      arConfigs_.Add(other.arConfigs_);
-      if (other.ArDisappearDistance != 0L) {
-        ArDisappearDistance = other.ArDisappearDistance;
+      if (other.parentMakerPose_ != null) {
+        if (parentMakerPose_ == null) {
+          ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
+        }
+        ParentMakerPose.MergeFrom(other.ParentMakerPose);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -436,15 +400,10 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            agents_.AddEntriesFrom(input, _repeated_agents_codec);
-            break;
-          }
-          case 58: {
-            arConfigs_.AddEntriesFrom(input, _repeated_arConfigs_codec);
-            break;
-          }
-          case 64: {
-            ArDisappearDistance = input.ReadInt64();
+            if (parentMakerPose_ == null) {
+              ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(ParentMakerPose);
             break;
           }
         }
@@ -487,15 +446,10 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            agents_.AddEntriesFrom(ref input, _repeated_agents_codec);
-            break;
-          }
-          case 58: {
-            arConfigs_.AddEntriesFrom(ref input, _repeated_arConfigs_codec);
-            break;
-          }
-          case 64: {
-            ArDisappearDistance = input.ReadInt64();
+            if (parentMakerPose_ == null) {
+              ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(ParentMakerPose);
             break;
           }
         }

@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: common/v1/agent.proto
+// source: ar/v1/agent.proto
 
-package commonv1
+package arv1
 
 import (
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
@@ -55,11 +55,11 @@ func (x AgentType) String() string {
 }
 
 func (AgentType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_agent_proto_enumTypes[0].Descriptor()
+	return file_ar_v1_agent_proto_enumTypes[0].Descriptor()
 }
 
 func (AgentType) Type() protoreflect.EnumType {
-	return &file_common_v1_agent_proto_enumTypes[0]
+	return &file_ar_v1_agent_proto_enumTypes[0]
 }
 
 func (x AgentType) Number() protoreflect.EnumNumber {
@@ -68,7 +68,7 @@ func (x AgentType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AgentType.Descriptor instead.
 func (AgentType) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{0}
 }
 
 type OperatorType int32
@@ -107,11 +107,11 @@ func (x OperatorType) String() string {
 }
 
 func (OperatorType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_agent_proto_enumTypes[1].Descriptor()
+	return file_ar_v1_agent_proto_enumTypes[1].Descriptor()
 }
 
 func (OperatorType) Type() protoreflect.EnumType {
-	return &file_common_v1_agent_proto_enumTypes[1]
+	return &file_ar_v1_agent_proto_enumTypes[1]
 }
 
 func (x OperatorType) Number() protoreflect.EnumNumber {
@@ -120,7 +120,7 @@ func (x OperatorType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OperatorType.Descriptor instead.
 func (OperatorType) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{1}
 }
 
 type OperatorPermission int32
@@ -159,11 +159,11 @@ func (x OperatorPermission) String() string {
 }
 
 func (OperatorPermission) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_agent_proto_enumTypes[2].Descriptor()
+	return file_ar_v1_agent_proto_enumTypes[2].Descriptor()
 }
 
 func (OperatorPermission) Type() protoreflect.EnumType {
-	return &file_common_v1_agent_proto_enumTypes[2]
+	return &file_ar_v1_agent_proto_enumTypes[2]
 }
 
 func (x OperatorPermission) Number() protoreflect.EnumNumber {
@@ -172,7 +172,7 @@ func (x OperatorPermission) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OperatorPermission.Descriptor instead.
 func (OperatorPermission) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{2}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{2}
 }
 
 type RobotType int32
@@ -214,11 +214,11 @@ func (x RobotType) String() string {
 }
 
 func (RobotType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_agent_proto_enumTypes[3].Descriptor()
+	return file_ar_v1_agent_proto_enumTypes[3].Descriptor()
 }
 
 func (RobotType) Type() protoreflect.EnumType {
-	return &file_common_v1_agent_proto_enumTypes[3]
+	return &file_ar_v1_agent_proto_enumTypes[3]
 }
 
 func (x RobotType) Number() protoreflect.EnumNumber {
@@ -227,7 +227,7 @@ func (x RobotType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RobotType.Descriptor instead.
 func (RobotType) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{3}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{3}
 }
 
 type EndEffectorType int32
@@ -266,11 +266,11 @@ func (x EndEffectorType) String() string {
 }
 
 func (EndEffectorType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_agent_proto_enumTypes[4].Descriptor()
+	return file_ar_v1_agent_proto_enumTypes[4].Descriptor()
 }
 
 func (EndEffectorType) Type() protoreflect.EnumType {
-	return &file_common_v1_agent_proto_enumTypes[4]
+	return &file_ar_v1_agent_proto_enumTypes[4]
 }
 
 func (x EndEffectorType) Number() protoreflect.EnumNumber {
@@ -279,17 +279,17 @@ func (x EndEffectorType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use EndEffectorType.Descriptor instead.
 func (EndEffectorType) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{4}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{4}
 }
 
 type Agent struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Type            AgentType              `protobuf:"varint,3,opt,name=type,proto3,enum=common.v1.AgentType" json:"type,omitempty"`
-	OperatorType    OperatorType           `protobuf:"varint,4,opt,name=operator_type,json=operatorType,proto3,enum=common.v1.OperatorType" json:"operator_type,omitempty"`
-	RobotType       RobotType              `protobuf:"varint,5,opt,name=robot_type,json=robotType,proto3,enum=common.v1.RobotType" json:"robot_type,omitempty"`
-	EndEffectorType EndEffectorType        `protobuf:"varint,6,opt,name=end_effector_type,json=endEffectorType,proto3,enum=common.v1.EndEffectorType" json:"end_effector_type,omitempty"`
+	Type            AgentType              `protobuf:"varint,3,opt,name=type,proto3,enum=ar.v1.AgentType" json:"type,omitempty"`
+	OperatorType    OperatorType           `protobuf:"varint,4,opt,name=operator_type,json=operatorType,proto3,enum=ar.v1.OperatorType" json:"operator_type,omitempty"`
+	RobotType       RobotType              `protobuf:"varint,5,opt,name=robot_type,json=robotType,proto3,enum=ar.v1.RobotType" json:"robot_type,omitempty"`
+	EndEffectorType EndEffectorType        `protobuf:"varint,6,opt,name=end_effector_type,json=endEffectorType,proto3,enum=ar.v1.EndEffectorType" json:"end_effector_type,omitempty"`
 	Location        *v1.LocalizedPose      `protobuf:"bytes,7,opt,name=location,proto3" json:"location,omitempty"`
 	Properties      []*Property            `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
 	unknownFields   protoimpl.UnknownFields
@@ -298,7 +298,7 @@ type Agent struct {
 
 func (x *Agent) Reset() {
 	*x = Agent{}
-	mi := &file_common_v1_agent_proto_msgTypes[0]
+	mi := &file_ar_v1_agent_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -310,7 +310,7 @@ func (x *Agent) String() string {
 func (*Agent) ProtoMessage() {}
 
 func (x *Agent) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_agent_proto_msgTypes[0]
+	mi := &file_ar_v1_agent_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -323,7 +323,7 @@ func (x *Agent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Agent.ProtoReflect.Descriptor instead.
 func (*Agent) Descriptor() ([]byte, []int) {
-	return file_common_v1_agent_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Agent) GetId() string {
@@ -382,22 +382,22 @@ func (x *Agent) GetProperties() []*Property {
 	return nil
 }
 
-var File_common_v1_agent_proto protoreflect.FileDescriptor
+var File_ar_v1_agent_proto protoreflect.FileDescriptor
 
-const file_common_v1_agent_proto_rawDesc = "" +
+const file_ar_v1_agent_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/agent.proto\x12\tcommon.v1\x1a\x18common/v1/property.proto\x1a\x16geometry/v1/pose.proto\"\xfd\x02\n" +
+	"\x11ar/v1/agent.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"\xe9\x02\n" +
 	"\x05Agent\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12(\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x14.common.v1.AgentTypeR\x04type\x12<\n" +
-	"\roperator_type\x18\x04 \x01(\x0e2\x17.common.v1.OperatorTypeR\foperatorType\x123\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
+	"\x04type\x18\x03 \x01(\x0e2\x10.ar.v1.AgentTypeR\x04type\x128\n" +
+	"\roperator_type\x18\x04 \x01(\x0e2\x13.ar.v1.OperatorTypeR\foperatorType\x12/\n" +
 	"\n" +
-	"robot_type\x18\x05 \x01(\x0e2\x14.common.v1.RobotTypeR\trobotType\x12F\n" +
-	"\x11end_effector_type\x18\x06 \x01(\x0e2\x1a.common.v1.EndEffectorTypeR\x0fendEffectorType\x126\n" +
-	"\blocation\x18\a \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\x123\n" +
+	"robot_type\x18\x05 \x01(\x0e2\x10.ar.v1.RobotTypeR\trobotType\x12B\n" +
+	"\x11end_effector_type\x18\x06 \x01(\x0e2\x16.ar.v1.EndEffectorTypeR\x0fendEffectorType\x126\n" +
+	"\blocation\x18\a \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\x12/\n" +
 	"\n" +
-	"properties\x18\b \x03(\v2\x13.common.v1.PropertyR\n" +
+	"properties\x18\b \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties*V\n" +
 	"\tAgentType\x12\x1a\n" +
 	"\x16AGENT_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
@@ -425,42 +425,41 @@ const file_common_v1_agent_proto_rawDesc = "" +
 	"\x17END_EFFECTOR_TYPE_EMPTY\x10\x01\x12$\n" +
 	" END_EFFECTOR_TYPE_ROBOTIQ_HAND_E\x10\n" +
 	"\x12\"\n" +
-	"\x1eEND_EFFECTOR_TYPE_CUSTOM_MOUNT\x10\x14B\xa2\x01\n" +
-	"\rcom.common.v1B\n" +
-	"AgentProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
-	"Common::V1b\x06proto3"
+	"\x1eEND_EFFECTOR_TYPE_CUSTOM_MOUNT\x10\x14B\x86\x01\n" +
+	"\tcom.ar.v1B\n" +
+	"AgentProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
-	file_common_v1_agent_proto_rawDescOnce sync.Once
-	file_common_v1_agent_proto_rawDescData []byte
+	file_ar_v1_agent_proto_rawDescOnce sync.Once
+	file_ar_v1_agent_proto_rawDescData []byte
 )
 
-func file_common_v1_agent_proto_rawDescGZIP() []byte {
-	file_common_v1_agent_proto_rawDescOnce.Do(func() {
-		file_common_v1_agent_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_v1_agent_proto_rawDesc), len(file_common_v1_agent_proto_rawDesc)))
+func file_ar_v1_agent_proto_rawDescGZIP() []byte {
+	file_ar_v1_agent_proto_rawDescOnce.Do(func() {
+		file_ar_v1_agent_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_ar_v1_agent_proto_rawDesc), len(file_ar_v1_agent_proto_rawDesc)))
 	})
-	return file_common_v1_agent_proto_rawDescData
+	return file_ar_v1_agent_proto_rawDescData
 }
 
-var file_common_v1_agent_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_common_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_common_v1_agent_proto_goTypes = []any{
-	(AgentType)(0),           // 0: common.v1.AgentType
-	(OperatorType)(0),        // 1: common.v1.OperatorType
-	(OperatorPermission)(0),  // 2: common.v1.OperatorPermission
-	(RobotType)(0),           // 3: common.v1.RobotType
-	(EndEffectorType)(0),     // 4: common.v1.EndEffectorType
-	(*Agent)(nil),            // 5: common.v1.Agent
+var file_ar_v1_agent_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
+var file_ar_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_agent_proto_goTypes = []any{
+	(AgentType)(0),           // 0: ar.v1.AgentType
+	(OperatorType)(0),        // 1: ar.v1.OperatorType
+	(OperatorPermission)(0),  // 2: ar.v1.OperatorPermission
+	(RobotType)(0),           // 3: ar.v1.RobotType
+	(EndEffectorType)(0),     // 4: ar.v1.EndEffectorType
+	(*Agent)(nil),            // 5: ar.v1.Agent
 	(*v1.LocalizedPose)(nil), // 6: geometry.v1.LocalizedPose
-	(*Property)(nil),         // 7: common.v1.Property
+	(*Property)(nil),         // 7: ar.v1.Property
 }
-var file_common_v1_agent_proto_depIdxs = []int32{
-	0, // 0: common.v1.Agent.type:type_name -> common.v1.AgentType
-	1, // 1: common.v1.Agent.operator_type:type_name -> common.v1.OperatorType
-	3, // 2: common.v1.Agent.robot_type:type_name -> common.v1.RobotType
-	4, // 3: common.v1.Agent.end_effector_type:type_name -> common.v1.EndEffectorType
-	6, // 4: common.v1.Agent.location:type_name -> geometry.v1.LocalizedPose
-	7, // 5: common.v1.Agent.properties:type_name -> common.v1.Property
+var file_ar_v1_agent_proto_depIdxs = []int32{
+	0, // 0: ar.v1.Agent.type:type_name -> ar.v1.AgentType
+	1, // 1: ar.v1.Agent.operator_type:type_name -> ar.v1.OperatorType
+	3, // 2: ar.v1.Agent.robot_type:type_name -> ar.v1.RobotType
+	4, // 3: ar.v1.Agent.end_effector_type:type_name -> ar.v1.EndEffectorType
+	6, // 4: ar.v1.Agent.location:type_name -> geometry.v1.LocalizedPose
+	7, // 5: ar.v1.Agent.properties:type_name -> ar.v1.Property
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -468,28 +467,28 @@ var file_common_v1_agent_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_common_v1_agent_proto_init() }
-func file_common_v1_agent_proto_init() {
-	if File_common_v1_agent_proto != nil {
+func init() { file_ar_v1_agent_proto_init() }
+func file_ar_v1_agent_proto_init() {
+	if File_ar_v1_agent_proto != nil {
 		return
 	}
-	file_common_v1_property_proto_init()
+	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_agent_proto_rawDesc), len(file_common_v1_agent_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_agent_proto_rawDesc), len(file_ar_v1_agent_proto_rawDesc)),
 			NumEnums:      5,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_v1_agent_proto_goTypes,
-		DependencyIndexes: file_common_v1_agent_proto_depIdxs,
-		EnumInfos:         file_common_v1_agent_proto_enumTypes,
-		MessageInfos:      file_common_v1_agent_proto_msgTypes,
+		GoTypes:           file_ar_v1_agent_proto_goTypes,
+		DependencyIndexes: file_ar_v1_agent_proto_depIdxs,
+		EnumInfos:         file_ar_v1_agent_proto_enumTypes,
+		MessageInfos:      file_ar_v1_agent_proto_msgTypes,
 	}.Build()
-	File_common_v1_agent_proto = out.File
-	file_common_v1_agent_proto_goTypes = nil
-	file_common_v1_agent_proto_depIdxs = nil
+	File_ar_v1_agent_proto = out.File
+	file_ar_v1_agent_proto_goTypes = nil
+	file_ar_v1_agent_proto_depIdxs = nil
 }

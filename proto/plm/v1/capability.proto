@@ -1,8 +1,8 @@
 syntax = "proto3";
-package common.v1;
+package plm.v1;
 
-option csharp_namespace = "Messages.Common.V1";
-option go_package = "github.com/cobotar/protocol/messages/common/v1";
+option csharp_namespace = "Messages.Plm.V1";
+option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
 message Capability {
   string agent_id = 1; // Id of the agent (either an operator or robot)

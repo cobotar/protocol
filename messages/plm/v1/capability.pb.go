@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: common/v1/capability.proto
+// source: plm/v1/capability.proto
 
-package commonv1
+package plmv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -32,7 +32,7 @@ type Capability struct {
 
 func (x *Capability) Reset() {
 	*x = Capability{}
-	mi := &file_common_v1_capability_proto_msgTypes[0]
+	mi := &file_plm_v1_capability_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *Capability) String() string {
 func (*Capability) ProtoMessage() {}
 
 func (x *Capability) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_capability_proto_msgTypes[0]
+	mi := &file_plm_v1_capability_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *Capability) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Capability.ProtoReflect.Descriptor instead.
 func (*Capability) Descriptor() ([]byte, []int) {
-	return file_common_v1_capability_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_capability_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Capability) GetAgentId() string {
@@ -90,7 +90,7 @@ type Capabilities struct {
 
 func (x *Capabilities) Reset() {
 	*x = Capabilities{}
-	mi := &file_common_v1_capability_proto_msgTypes[1]
+	mi := &file_plm_v1_capability_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -102,7 +102,7 @@ func (x *Capabilities) String() string {
 func (*Capabilities) ProtoMessage() {}
 
 func (x *Capabilities) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_capability_proto_msgTypes[1]
+	mi := &file_plm_v1_capability_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +115,7 @@ func (x *Capabilities) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Capabilities.ProtoReflect.Descriptor instead.
 func (*Capabilities) Descriptor() ([]byte, []int) {
-	return file_common_v1_capability_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_capability_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Capabilities) GetCapabilities() []*Capability {
@@ -125,40 +125,40 @@ func (x *Capabilities) GetCapabilities() []*Capability {
 	return nil
 }
 
-var File_common_v1_capability_proto protoreflect.FileDescriptor
+var File_plm_v1_capability_proto protoreflect.FileDescriptor
 
-const file_common_v1_capability_proto_rawDesc = "" +
+const file_plm_v1_capability_proto_rawDesc = "" +
 	"\n" +
-	"\x1acommon/v1/capability.proto\x12\tcommon.v1\"g\n" +
+	"\x17plm/v1/capability.proto\x12\x06plm.v1\"g\n" +
 	"\n" +
 	"Capability\x12\x19\n" +
 	"\bagent_id\x18\x01 \x01(\tR\aagentId\x12\x17\n" +
 	"\apart_id\x18\x02 \x01(\tR\x06partId\x12%\n" +
-	"\x0eestimated_time\x18\x03 \x01(\x03R\restimatedTime\"I\n" +
-	"\fCapabilities\x129\n" +
-	"\fcapabilities\x18\x01 \x03(\v2\x15.common.v1.CapabilityR\fcapabilitiesB\xa7\x01\n" +
-	"\rcom.common.v1B\x0fCapabilityProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
-	"Common::V1b\x06proto3"
+	"\x0eestimated_time\x18\x03 \x01(\x03R\restimatedTime\"F\n" +
+	"\fCapabilities\x126\n" +
+	"\fcapabilities\x18\x01 \x03(\v2\x12.plm.v1.CapabilityR\fcapabilitiesB\x92\x01\n" +
+	"\n" +
+	"com.plm.v1B\x0fCapabilityProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
 var (
-	file_common_v1_capability_proto_rawDescOnce sync.Once
-	file_common_v1_capability_proto_rawDescData []byte
+	file_plm_v1_capability_proto_rawDescOnce sync.Once
+	file_plm_v1_capability_proto_rawDescData []byte
 )
 
-func file_common_v1_capability_proto_rawDescGZIP() []byte {
-	file_common_v1_capability_proto_rawDescOnce.Do(func() {
-		file_common_v1_capability_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_v1_capability_proto_rawDesc), len(file_common_v1_capability_proto_rawDesc)))
+func file_plm_v1_capability_proto_rawDescGZIP() []byte {
+	file_plm_v1_capability_proto_rawDescOnce.Do(func() {
+		file_plm_v1_capability_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_capability_proto_rawDesc), len(file_plm_v1_capability_proto_rawDesc)))
 	})
-	return file_common_v1_capability_proto_rawDescData
+	return file_plm_v1_capability_proto_rawDescData
 }
 
-var file_common_v1_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_common_v1_capability_proto_goTypes = []any{
-	(*Capability)(nil),   // 0: common.v1.Capability
-	(*Capabilities)(nil), // 1: common.v1.Capabilities
+var file_plm_v1_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_plm_v1_capability_proto_goTypes = []any{
+	(*Capability)(nil),   // 0: plm.v1.Capability
+	(*Capabilities)(nil), // 1: plm.v1.Capabilities
 }
-var file_common_v1_capability_proto_depIdxs = []int32{
-	0, // 0: common.v1.Capabilities.capabilities:type_name -> common.v1.Capability
+var file_plm_v1_capability_proto_depIdxs = []int32{
+	0, // 0: plm.v1.Capabilities.capabilities:type_name -> plm.v1.Capability
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -166,26 +166,26 @@ var file_common_v1_capability_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_common_v1_capability_proto_init() }
-func file_common_v1_capability_proto_init() {
-	if File_common_v1_capability_proto != nil {
+func init() { file_plm_v1_capability_proto_init() }
+func file_plm_v1_capability_proto_init() {
+	if File_plm_v1_capability_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_capability_proto_rawDesc), len(file_common_v1_capability_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_capability_proto_rawDesc), len(file_plm_v1_capability_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_v1_capability_proto_goTypes,
-		DependencyIndexes: file_common_v1_capability_proto_depIdxs,
-		MessageInfos:      file_common_v1_capability_proto_msgTypes,
+		GoTypes:           file_plm_v1_capability_proto_goTypes,
+		DependencyIndexes: file_plm_v1_capability_proto_depIdxs,
+		MessageInfos:      file_plm_v1_capability_proto_msgTypes,
 	}.Build()
-	File_common_v1_capability_proto = out.File
-	file_common_v1_capability_proto_goTypes = nil
-	file_common_v1_capability_proto_depIdxs = nil
+	File_plm_v1_capability_proto = out.File
+	file_plm_v1_capability_proto_goTypes = nil
+	file_plm_v1_capability_proto_depIdxs = nil
 }

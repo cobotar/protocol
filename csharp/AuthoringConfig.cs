@@ -26,27 +26,26 @@ namespace Messages.AR.V1 {
           string.Concat(
             "Chxhci92MS9hdXRob3JpbmdfY29uZmlnLnByb3RvEgVhci52MRoSYXIvdjEv",
             "YWN0aW9uLnByb3RvGhRhci92MS9mZWVkYmFjay5wcm90bxoSYXIvdjEvaGVs",
-            "cGVyLnByb3RvGhhjb21tb24vdjEvcHJvcGVydHkucHJvdG8iaQoQQ29uZmln",
-            "TmV3TWVzc2FnZRISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
-            "GAIgASgJUgtkZXNjcmlwdGlvbhIfCgt0ZW1wbGF0ZV9pZBgDIAEoCVIKdGVt",
-            "cGxhdGVJZCLsAgoTQ29uZmlnVXBkYXRlTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
-            "aWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAK",
-            "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCghmZWVkYmFjaxgF",
-            "IAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZVIIZmVlZGJhY2sSLgoHYWN0",
-            "aW9ucxgGIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2VSB2FjdGlvbnMSLgoH",
-            "aGVscGVycxgHIAMoCzIULmFyLnYxLkhlbHBlck1lc3NhZ2VSB2hlbHBlcnMS",
-            "MwoKcHJvcGVydGllcxgIIAMoCzITLmNvbW1vbi52MS5Qcm9wZXJ0eVIKcHJv",
-            "cGVydGllcxIyChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYCSABKANSE2FyRGlz",
-            "YXBwZWFyRGlzdGFuY2UiJQoTQ29uZmlnRGVsZXRlTWVzc2FnZRIOCgJpZBgB",
-            "IAEoCVICaWRCkAEKCWNvbS5hci52MUIUQXV0aG9yaW5nQ29uZmlnUHJvdG9Q",
-            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
-            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
-            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "cGVyLnByb3RvGhRhci92MS9wcm9wZXJ0eS5wcm90byJpChBDb25maWdOZXdN",
+            "ZXNzYWdlEhIKBG5hbWUYASABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAiAB",
+            "KAlSC2Rlc2NyaXB0aW9uEh8KC3RlbXBsYXRlX2lkGAMgASgJUgp0ZW1wbGF0",
+            "ZUlkIrQCChNDb25maWdVcGRhdGVNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIS",
+            "CgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
+            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjIKCGZlZWRiYWNrGAUgAygL",
+            "MhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlUghmZWVkYmFjaxIuCgdhY3Rpb25z",
+            "GAYgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZVIHYWN0aW9ucxIuCgdoZWxw",
+            "ZXJzGAcgAygLMhQuYXIudjEuSGVscGVyTWVzc2FnZVIHaGVscGVycxIvCgpw",
+            "cm9wZXJ0aWVzGAggAygLMg8uYXIudjEuUHJvcGVydHlSCnByb3BlcnRpZXMi",
+            "JQoTQ29uZmlnRGVsZXRlTWVzc2FnZRIOCgJpZBgBIAEoCVICaWRCkAEKCWNv",
+            "bS5hci52MUIUQXV0aG9yaW5nQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9j",
+            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5N",
+            "ZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZB",
+            "cjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Messages.AR.V1.HelperReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Messages.AR.V1.HelperReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigNewMessage), global::Messages.AR.V1.ConfigNewMessage.Parser, new[]{ "Name", "Description", "TemplateId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigUpdateMessage), global::Messages.AR.V1.ConfigUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Feedback", "Actions", "Helpers", "Properties", "ArDisappearDistance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigUpdateMessage), global::Messages.AR.V1.ConfigUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Feedback", "Actions", "Helpers", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigDeleteMessage), global::Messages.AR.V1.ConfigDeleteMessage.Parser, new[]{ "Id" }, null, null, null, null)
           }));
     }
@@ -372,7 +371,6 @@ namespace Messages.AR.V1 {
       actions_ = other.actions_.Clone();
       helpers_ = other.helpers_.Clone();
       properties_ = other.properties_.Clone();
-      arDisappearDistance_ = other.arDisappearDistance_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -465,28 +463,13 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(66, global::Messages.Common.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.Common.V1.Property>();
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.Property.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Property> Properties {
+    public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
       get { return properties_; }
-    }
-
-    /// <summary>Field number for the "ar_disappear_distance" field.</summary>
-    public const int ArDisappearDistanceFieldNumber = 9;
-    private long arDisappearDistance_;
-    /// <summary>
-    /// Threshold distance in cm when the UI is expected to disable the AR for this marker
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ArDisappearDistance {
-      get { return arDisappearDistance_; }
-      set {
-        arDisappearDistance_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -512,7 +495,6 @@ namespace Messages.AR.V1 {
       if(!actions_.Equals(other.actions_)) return false;
       if(!helpers_.Equals(other.helpers_)) return false;
       if(!properties_.Equals(other.properties_)) return false;
-      if (ArDisappearDistance != other.ArDisappearDistance) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -528,7 +510,6 @@ namespace Messages.AR.V1 {
       hash ^= actions_.GetHashCode();
       hash ^= helpers_.GetHashCode();
       hash ^= properties_.GetHashCode();
-      if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -567,10 +548,6 @@ namespace Messages.AR.V1 {
       actions_.WriteTo(output, _repeated_actions_codec);
       helpers_.WriteTo(output, _repeated_helpers_codec);
       properties_.WriteTo(output, _repeated_properties_codec);
-      if (ArDisappearDistance != 0L) {
-        output.WriteRawTag(72);
-        output.WriteInt64(ArDisappearDistance);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -601,10 +578,6 @@ namespace Messages.AR.V1 {
       actions_.WriteTo(ref output, _repeated_actions_codec);
       helpers_.WriteTo(ref output, _repeated_helpers_codec);
       properties_.WriteTo(ref output, _repeated_properties_codec);
-      if (ArDisappearDistance != 0L) {
-        output.WriteRawTag(72);
-        output.WriteInt64(ArDisappearDistance);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -631,9 +604,6 @@ namespace Messages.AR.V1 {
       size += actions_.CalculateSize(_repeated_actions_codec);
       size += helpers_.CalculateSize(_repeated_helpers_codec);
       size += properties_.CalculateSize(_repeated_properties_codec);
-      if (ArDisappearDistance != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -662,9 +632,6 @@ namespace Messages.AR.V1 {
       actions_.Add(other.actions_);
       helpers_.Add(other.helpers_);
       properties_.Add(other.properties_);
-      if (other.ArDisappearDistance != 0L) {
-        ArDisappearDistance = other.ArDisappearDistance;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -716,10 +683,6 @@ namespace Messages.AR.V1 {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
-          case 72: {
-            ArDisappearDistance = input.ReadInt64();
-            break;
-          }
         }
       }
     #endif
@@ -769,10 +732,6 @@ namespace Messages.AR.V1 {
           }
           case 66: {
             properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
-            break;
-          }
-          case 72: {
-            ArDisappearDistance = input.ReadInt64();
             break;
           }
         }

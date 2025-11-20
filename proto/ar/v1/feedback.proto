@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ar.v1;
 
-import "common/v1/property.proto";
+import "ar/v1/property.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -32,6 +32,6 @@ message FeedbackMessage {
   string icon = 3;
   string description = 4;
   FeedbackType type = 5;
-  repeated common.v1.Property properties = 6;
-  repeated common.v1.Property output_properties = 7;
+  repeated ar.v1.Property properties = 6;
+  repeated ar.v1.Property output_properties = 7;
 }

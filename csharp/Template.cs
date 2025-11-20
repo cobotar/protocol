@@ -24,22 +24,21 @@ namespace Messages.AR.V1 {
     static TemplateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRhci92MS90ZW1wbGF0ZS5wcm90bxIFYXIudjEaFWNvbW1vbi92MS9hZ2Vu",
-            "dC5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnByb3RvIrYBCg9UZW1wbGF0",
-            "ZU1lc3NhZ2USDgoCaWQYAiABKAlSAmlkEhIKBG5hbWUYAyABKAlSBG5hbWUS",
-            "IAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEigKBmFnZW50cxgF",
-            "IAMoCzIQLmNvbW1vbi52MS5BZ2VudFIGYWdlbnRzEjMKCnByb3BlcnRpZXMY",
-            "ByADKAsyEy5jb21tb24udjEuUHJvcGVydHlSCnByb3BlcnRpZXMiWwoTVGVt",
-            "cGxhdGVJbmZvTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24iUAoU",
-            "VGVtcGxhdGVJbmZvTWVzc2FnZXMSOAoJdGVtcGxhdGVzGAEgAygLMhouYXIu",
-            "djEuVGVtcGxhdGVJbmZvTWVzc2FnZVIJdGVtcGxhdGVzQokBCgljb20uYXIu",
-            "djFCDVRlbXBsYXRlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
-            "Y29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5W",
-            "McoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3Rv",
-            "Mw=="));
+            "ChRhci92MS90ZW1wbGF0ZS5wcm90bxIFYXIudjEaEWFyL3YxL2FnZW50LnBy",
+            "b3RvGhRhci92MS9wcm9wZXJ0eS5wcm90byKuAQoPVGVtcGxhdGVNZXNzYWdl",
+            "Eg4KAmlkGAIgASgJUgJpZBISCgRuYW1lGAMgASgJUgRuYW1lEiAKC2Rlc2Ny",
+            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIkCgZhZ2VudHMYBSADKAsyDC5h",
+            "ci52MS5BZ2VudFIGYWdlbnRzEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52",
+            "MS5Qcm9wZXJ0eVIKcHJvcGVydGllcyJbChNUZW1wbGF0ZUluZm9NZXNzYWdl",
+            "Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
+            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbiJQChRUZW1wbGF0ZUluZm9NZXNz",
+            "YWdlcxI4Cgl0ZW1wbGF0ZXMYASADKAsyGi5hci52MS5UZW1wbGF0ZUluZm9N",
+            "ZXNzYWdlUgl0ZW1wbGF0ZXNCiQEKCWNvbS5hci52MUINVGVtcGxhdGVQcm90",
+            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
+            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
+            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.AgentReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.AgentReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateMessage), global::Messages.AR.V1.TemplateMessage.Parser, new[]{ "Id", "Name", "Description", "Agents", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateInfoMessage), global::Messages.AR.V1.TemplateInfoMessage.Parser, new[]{ "Id", "Name", "Description" }, null, null, null, null),
@@ -140,27 +139,27 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "agents" field.</summary>
     public const int AgentsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Agent> _repeated_agents_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.Common.V1.Agent.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Agent> agents_ = new pbc::RepeatedField<global::Messages.Common.V1.Agent>();
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.Agent> _repeated_agents_codec
+        = pb::FieldCodec.ForMessage(42, global::Messages.AR.V1.Agent.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.Agent> agents_ = new pbc::RepeatedField<global::Messages.AR.V1.Agent>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Agent> Agents {
+    public pbc::RepeatedField<global::Messages.AR.V1.Agent> Agents {
       get { return agents_; }
     }
 
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.Common.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.Common.V1.Property>();
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.Property.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     /// <summary>
     /// Feedback
     /// Actions
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Property> Properties {
+    public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
       get { return properties_; }
     }
 

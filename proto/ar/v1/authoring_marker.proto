@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ar.v1;
 
-import "common/v1/agent.proto";
+import "geometry/v1/pose.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -13,14 +13,13 @@ message MarkerNewMessage {
 }
 
 message MarkerUpdateMessage {
-  string id = 1;
-  string name = 2;
-  string description = 3;
+  string id = 1; // Unique id of the maker (this won't be changed)
+  string name = 2; // Name of the maker
+  string description = 3; // Description of the maker
   string marker_text = 4; // Text on the physical marker (QR-code)
-  repeated common.v1.Agent agents = 5; // List of agents associated with this marker
-  int64 ar_disappear_distance = 7; // Threshold distance in cm when the UI is expected to disable the AR for this marker
+  geometry.v1.LocalizedPose parent_maker_pose = 5; // Location of this marker in relation to its parent
 }
 
 message MarkerDeleteMessage {
-  string id = 1;
+  string id = 1; // Id of the marker to be deleted
 }

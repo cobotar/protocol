@@ -7,7 +7,6 @@
 package arv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -83,18 +82,17 @@ func (x *ConfigNewMessage) GetTemplateId() string {
 }
 
 type ConfigUpdateMessage struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Feedback            []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"`
-	Actions             []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
-	Helpers             []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
-	Properties          []*v1.Property         `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
-	ArDisappearDistance int64                  `protobuf:"varint,9,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm when the UI is expected to disable the AR for this marker
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Feedback      []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"`
+	Actions       []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
+	Helpers       []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
+	Properties    []*Property            `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConfigUpdateMessage) Reset() {
@@ -176,18 +174,11 @@ func (x *ConfigUpdateMessage) GetHelpers() []*HelperMessage {
 	return nil
 }
 
-func (x *ConfigUpdateMessage) GetProperties() []*v1.Property {
+func (x *ConfigUpdateMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
 	}
 	return nil
-}
-
-func (x *ConfigUpdateMessage) GetArDisappearDistance() int64 {
-	if x != nil {
-		return x.ArDisappearDistance
-	}
-	return 0
 }
 
 type ConfigDeleteMessage struct {
@@ -238,12 +229,12 @@ var File_ar_v1_authoring_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_authoring_config_proto_rawDesc = "" +
 	"\n" +
-	"\x1car/v1/authoring_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x18common/v1/property.proto\"i\n" +
+	"\x1car/v1/authoring_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x14ar/v1/property.proto\"i\n" +
 	"\x10ConfigNewMessage\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vtemplate_id\x18\x03 \x01(\tR\n" +
-	"templateId\"\xec\x02\n" +
+	"templateId\"\xb4\x02\n" +
 	"\x13ConfigUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -251,11 +242,10 @@ const file_ar_v1_authoring_config_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\bfeedback\x18\x05 \x03(\v2\x16.ar.v1.FeedbackMessageR\bfeedback\x12.\n" +
 	"\aactions\x18\x06 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\x12.\n" +
-	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x123\n" +
+	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x12/\n" +
 	"\n" +
-	"properties\x18\b \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x122\n" +
-	"\x15ar_disappear_distance\x18\t \x01(\x03R\x13arDisappearDistance\"%\n" +
+	"properties\x18\b \x03(\v2\x0f.ar.v1.PropertyR\n" +
+	"properties\"%\n" +
 	"\x13ConfigDeleteMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02idB\x90\x01\n" +
 	"\tcom.ar.v1B\x14AuthoringConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
@@ -280,13 +270,13 @@ var file_ar_v1_authoring_config_proto_goTypes = []any{
 	(*FeedbackMessage)(nil),     // 3: ar.v1.FeedbackMessage
 	(*ActionMessage)(nil),       // 4: ar.v1.ActionMessage
 	(*HelperMessage)(nil),       // 5: ar.v1.HelperMessage
-	(*v1.Property)(nil),         // 6: common.v1.Property
+	(*Property)(nil),            // 6: ar.v1.Property
 }
 var file_ar_v1_authoring_config_proto_depIdxs = []int32{
 	3, // 0: ar.v1.ConfigUpdateMessage.feedback:type_name -> ar.v1.FeedbackMessage
 	4, // 1: ar.v1.ConfigUpdateMessage.actions:type_name -> ar.v1.ActionMessage
 	5, // 2: ar.v1.ConfigUpdateMessage.helpers:type_name -> ar.v1.HelperMessage
-	6, // 3: ar.v1.ConfigUpdateMessage.properties:type_name -> common.v1.Property
+	6, // 3: ar.v1.ConfigUpdateMessage.properties:type_name -> ar.v1.Property
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -302,6 +292,7 @@ func file_ar_v1_authoring_config_proto_init() {
 	file_ar_v1_action_proto_init()
 	file_ar_v1_feedback_proto_init()
 	file_ar_v1_helper_proto_init()
+	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

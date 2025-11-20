@@ -7,7 +7,7 @@ import type { Message } from "@bufbuild/protobuf";
 import type { FeedbackMessage } from "./feedback_pb";
 import type { ActionMessage } from "./action_pb";
 import type { HelperMessage } from "./helper_pb";
-import type { Property } from "../../common/v1/property_pb";
+import type { Property } from "./property_pb";
 
 /**
  * Describes the file ar/v1/authoring_config.proto.
@@ -82,16 +82,9 @@ export declare type ConfigUpdateMessage = Message<"ar.v1.ConfigUpdateMessage"> &
   helpers: HelperMessage[];
 
   /**
-   * @generated from field: repeated common.v1.Property properties = 8;
+   * @generated from field: repeated ar.v1.Property properties = 8;
    */
   properties: Property[];
-
-  /**
-   * Threshold distance in cm when the UI is expected to disable the AR for this marker
-   *
-   * @generated from field: int64 ar_disappear_distance = 9;
-   */
-  arDisappearDistance: bigint;
 };
 
 /**

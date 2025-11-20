@@ -4,7 +4,7 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Agent } from "../../common/v1/agent_pb";
+import type { LocalizedPose } from "../../geometry/v1/pose_pb";
 
 /**
  * Describes the file ar/v1/authoring_marker.proto.
@@ -42,16 +42,22 @@ export declare const MarkerNewMessageSchema: GenMessage<MarkerNewMessage>;
  */
 export declare type MarkerUpdateMessage = Message<"ar.v1.MarkerUpdateMessage"> & {
   /**
+   * Unique id of the maker (this won't be changed)
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * Name of the maker
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * Description of the maker
+   *
    * @generated from field: string description = 3;
    */
   description: string;
@@ -64,18 +70,11 @@ export declare type MarkerUpdateMessage = Message<"ar.v1.MarkerUpdateMessage"> &
   markerText: string;
 
   /**
-   * List of agents associated with this marker
+   * Location of this marker in relation to its parent
    *
-   * @generated from field: repeated common.v1.Agent agents = 5;
+   * @generated from field: geometry.v1.LocalizedPose parent_maker_pose = 5;
    */
-  agents: Agent[];
-
-  /**
-   * Threshold distance in cm when the UI is expected to disable the AR for this marker
-   *
-   * @generated from field: int64 ar_disappear_distance = 7;
-   */
-  arDisappearDistance: bigint;
+  parentMakerPose?: LocalizedPose;
 };
 
 /**
@@ -89,6 +88,8 @@ export declare const MarkerUpdateMessageSchema: GenMessage<MarkerUpdateMessage>;
  */
 export declare type MarkerDeleteMessage = Message<"ar.v1.MarkerDeleteMessage"> & {
   /**
+   * Id of the marker to be deleted
+   *
    * @generated from field: string id = 1;
    */
   id: string;

@@ -4,7 +4,7 @@ package ar.v1;
 import "ar/v1/action.proto";
 import "ar/v1/feedback.proto";
 import "ar/v1/helper.proto";
-import "common/v1/property.proto";
+import "ar/v1/property.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -23,8 +23,7 @@ message ConfigUpdateMessage {
   repeated ar.v1.FeedbackMessage feedback = 5;
   repeated ar.v1.ActionMessage actions = 6;
   repeated ar.v1.HelperMessage helpers = 7;
-  repeated common.v1.Property properties = 8;
-  int64 ar_disappear_distance = 9; // Threshold distance in cm when the UI is expected to disable the AR for this marker
+  repeated ar.v1.Property properties = 8;
 }
 
 message ConfigDeleteMessage {

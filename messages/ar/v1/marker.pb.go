@@ -7,7 +7,7 @@
 package arv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -69,17 +69,15 @@ func (MarkerType) EnumDescriptor() ([]byte, []int) {
 }
 
 type MarkerMessage struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description         string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	MarkerText          string                 `protobuf:"bytes,4,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
-	Type                MarkerType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
-	Agents              []*v1.Agent            `protobuf:"bytes,6,rep,name=agents,proto3" json:"agents,omitempty"`                                                         // List of agents associated with this marker
-	ArConfigs           []*ARConfigInfoMessage `protobuf:"bytes,7,rep,name=ar_configs,json=arConfigs,proto3" json:"ar_configs,omitempty"`                                  // List of ARConfigs which can be used to retrieve a specific configuration
-	ArDisappearDistance int64                  `protobuf:"varint,8,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm when the UI is expected to disable the AR for this marker
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	MarkerText      string                 `protobuf:"bytes,4,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
+	Type            MarkerType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
+	ParentMakerPose *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=parent_maker_pose,json=parentMakerPose,proto3" json:"parent_maker_pose,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *MarkerMessage) Reset() {
@@ -147,25 +145,11 @@ func (x *MarkerMessage) GetType() MarkerType {
 	return MarkerType_MARKER_TYPE_UNSPECIFIED
 }
 
-func (x *MarkerMessage) GetAgents() []*v1.Agent {
+func (x *MarkerMessage) GetParentMakerPose() *v1.LocalizedPose {
 	if x != nil {
-		return x.Agents
+		return x.ParentMakerPose
 	}
 	return nil
-}
-
-func (x *MarkerMessage) GetArConfigs() []*ARConfigInfoMessage {
-	if x != nil {
-		return x.ArConfigs
-	}
-	return nil
-}
-
-func (x *MarkerMessage) GetArDisappearDistance() int64 {
-	if x != nil {
-		return x.ArDisappearDistance
-	}
-	return 0
 }
 
 type MarkersMessage struct {
@@ -216,18 +200,15 @@ var File_ar_v1_marker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x12ar/v1/config.proto\x1a\x15common/v1/agent.proto\"\xb6\x02\n" +
+	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x16geometry/v1/pose.proto\"\xe5\x01\n" +
 	"\rMarkerMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vmarker_text\x18\x04 \x01(\tR\n" +
 	"markerText\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.MarkerTypeR\x04type\x12(\n" +
-	"\x06agents\x18\x06 \x03(\v2\x10.common.v1.AgentR\x06agents\x129\n" +
-	"\n" +
-	"ar_configs\x18\a \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\tarConfigs\x122\n" +
-	"\x15ar_disappear_distance\x18\b \x01(\x03R\x13arDisappearDistance\"@\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.MarkerTypeR\x04type\x12F\n" +
+	"\x11parent_maker_pose\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x0fparentMakerPose\"@\n" +
 	"\x0eMarkersMessage\x12.\n" +
 	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageR\amarkers*B\n" +
 	"\n" +
@@ -251,22 +232,20 @@ func file_ar_v1_marker_proto_rawDescGZIP() []byte {
 var file_ar_v1_marker_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_marker_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_marker_proto_goTypes = []any{
-	(MarkerType)(0),             // 0: ar.v1.MarkerType
-	(*MarkerMessage)(nil),       // 1: ar.v1.MarkerMessage
-	(*MarkersMessage)(nil),      // 2: ar.v1.MarkersMessage
-	(*v1.Agent)(nil),            // 3: common.v1.Agent
-	(*ARConfigInfoMessage)(nil), // 4: ar.v1.ARConfigInfoMessage
+	(MarkerType)(0),          // 0: ar.v1.MarkerType
+	(*MarkerMessage)(nil),    // 1: ar.v1.MarkerMessage
+	(*MarkersMessage)(nil),   // 2: ar.v1.MarkersMessage
+	(*v1.LocalizedPose)(nil), // 3: geometry.v1.LocalizedPose
 }
 var file_ar_v1_marker_proto_depIdxs = []int32{
 	0, // 0: ar.v1.MarkerMessage.type:type_name -> ar.v1.MarkerType
-	3, // 1: ar.v1.MarkerMessage.agents:type_name -> common.v1.Agent
-	4, // 2: ar.v1.MarkerMessage.ar_configs:type_name -> ar.v1.ARConfigInfoMessage
-	1, // 3: ar.v1.MarkersMessage.markers:type_name -> ar.v1.MarkerMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 1: ar.v1.MarkerMessage.parent_maker_pose:type_name -> geometry.v1.LocalizedPose
+	1, // 2: ar.v1.MarkersMessage.markers:type_name -> ar.v1.MarkerMessage
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_marker_proto_init() }
@@ -274,7 +253,6 @@ func file_ar_v1_marker_proto_init() {
 	if File_ar_v1_marker_proto != nil {
 		return
 	}
-	file_ar_v1_config_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

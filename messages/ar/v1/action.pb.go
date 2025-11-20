@@ -7,7 +7,6 @@
 package arv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -93,8 +92,8 @@ type ActionMessage struct {
 	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type             ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
-	Properties       []*v1.Property         `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	OutputProperties []*v1.Property         `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
+	Properties       []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	OutputProperties []*Property            `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -164,14 +163,14 @@ func (x *ActionMessage) GetType() ActionType {
 	return ActionType_ACTION_TYPE_UNSPECIFIED
 }
 
-func (x *ActionMessage) GetProperties() []*v1.Property {
+func (x *ActionMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
 	}
 	return nil
 }
 
-func (x *ActionMessage) GetOutputProperties() []*v1.Property {
+func (x *ActionMessage) GetOutputProperties() []*Property {
 	if x != nil {
 		return x.OutputProperties
 	}
@@ -182,17 +181,17 @@ var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x18common/v1/property.proto\"\x87\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\xff\x01\n" +
 	"\rActionMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeR\x04type\x123\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeR\x04type\x12/\n" +
 	"\n" +
-	"properties\x18\x06 \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x12@\n" +
-	"\x11output_properties\x18\a \x03(\v2\x13.common.v1.PropertyR\x10outputProperties*\x80\x02\n" +
+	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
+	"properties\x12<\n" +
+	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties*\x80\x02\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -223,12 +222,12 @@ var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_ar_v1_action_proto_goTypes = []any{
 	(ActionType)(0),       // 0: ar.v1.ActionType
 	(*ActionMessage)(nil), // 1: ar.v1.ActionMessage
-	(*v1.Property)(nil),   // 2: common.v1.Property
+	(*Property)(nil),      // 2: ar.v1.Property
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	2, // 1: ar.v1.ActionMessage.properties:type_name -> common.v1.Property
-	2, // 2: ar.v1.ActionMessage.output_properties:type_name -> common.v1.Property
+	2, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
+	2, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -241,6 +240,7 @@ func file_ar_v1_action_proto_init() {
 	if File_ar_v1_action_proto != nil {
 		return
 	}
+	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

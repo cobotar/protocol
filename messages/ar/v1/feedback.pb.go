@@ -7,7 +7,6 @@
 package arv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -114,8 +113,8 @@ type FeedbackMessage struct {
 	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type             FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	Properties       []*v1.Property         `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	OutputProperties []*v1.Property         `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
+	Properties       []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	OutputProperties []*Property            `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -185,14 +184,14 @@ func (x *FeedbackMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
-func (x *FeedbackMessage) GetProperties() []*v1.Property {
+func (x *FeedbackMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
 	}
 	return nil
 }
 
-func (x *FeedbackMessage) GetOutputProperties() []*v1.Property {
+func (x *FeedbackMessage) GetOutputProperties() []*Property {
 	if x != nil {
 		return x.OutputProperties
 	}
@@ -203,17 +202,17 @@ var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x18common/v1/property.proto\"\x8b\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\x83\x02\n" +
 	"\x0fFeedbackMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeR\x04type\x123\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeR\x04type\x12/\n" +
 	"\n" +
-	"properties\x18\x06 \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x12@\n" +
-	"\x11output_properties\x18\a \x03(\v2\x13.common.v1.PropertyR\x10outputProperties*\xe4\x03\n" +
+	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
+	"properties\x12<\n" +
+	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties*\xe4\x03\n" +
 	"\fFeedbackType\x12\x1d\n" +
 	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cFEEDBACK_TYPE_TASK_HIGHLIGHT\x10\n" +
@@ -250,12 +249,12 @@ var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_ar_v1_feedback_proto_goTypes = []any{
 	(FeedbackType)(0),       // 0: ar.v1.FeedbackType
 	(*FeedbackMessage)(nil), // 1: ar.v1.FeedbackMessage
-	(*v1.Property)(nil),     // 2: common.v1.Property
+	(*Property)(nil),        // 2: ar.v1.Property
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
-	2, // 1: ar.v1.FeedbackMessage.properties:type_name -> common.v1.Property
-	2, // 2: ar.v1.FeedbackMessage.output_properties:type_name -> common.v1.Property
+	2, // 1: ar.v1.FeedbackMessage.properties:type_name -> ar.v1.Property
+	2, // 2: ar.v1.FeedbackMessage.output_properties:type_name -> ar.v1.Property
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -268,6 +267,7 @@ func file_ar_v1_feedback_proto_init() {
 	if File_ar_v1_feedback_proto != nil {
 		return
 	}
+	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

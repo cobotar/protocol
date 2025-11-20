@@ -4,7 +4,7 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Property } from "../../common/v1/property_pb";
+import type { Property } from "./property_pb";
 
 /**
  * Describes the file ar/v1/feedback.proto.
@@ -41,12 +41,12 @@ export declare type FeedbackMessage = Message<"ar.v1.FeedbackMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: repeated common.v1.Property properties = 6;
+   * @generated from field: repeated ar.v1.Property properties = 6;
    */
   properties: Property[];
 
   /**
-   * @generated from field: repeated common.v1.Property output_properties = 7;
+   * @generated from field: repeated ar.v1.Property output_properties = 7;
    */
   outputProperties: Property[];
 };

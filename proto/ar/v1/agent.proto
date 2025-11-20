@@ -1,11 +1,11 @@
 syntax = "proto3";
-package common.v1;
+package ar.v1;
 
-import "common/v1/property.proto";
+import "ar/v1/property.proto";
 import "geometry/v1/pose.proto";
 
-option csharp_namespace = "Messages.Common.V1";
-option go_package = "github.com/cobotar/protocol/messages/common/v1";
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 enum AgentType {
   AGENT_TYPE_UNSPECIFIED = 0;
@@ -50,5 +50,5 @@ message Agent {
   RobotType robot_type = 5;
   EndEffectorType end_effector_type = 6;
   geometry.v1.LocalizedPose location = 7;
-  repeated common.v1.Property properties = 8;
+  repeated ar.v1.Property properties = 8;
 }

@@ -24,30 +24,30 @@ namespace Messages.AR.V1 {
     static FeedbackReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEaGGNvbW1vbi92MS9wcm9w",
-            "ZXJ0eS5wcm90byKLAgoPRmVlZGJhY2tNZXNzYWdlEg4KAmlkGAEgASgJUgJp",
-            "ZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
-            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEicKBHR5cGUYBSABKA4y",
-            "Ey5hci52MS5GZWVkYmFja1R5cGVSBHR5cGUSMwoKcHJvcGVydGllcxgGIAMo",
-            "CzITLmNvbW1vbi52MS5Qcm9wZXJ0eVIKcHJvcGVydGllcxJAChFvdXRwdXRf",
-            "cHJvcGVydGllcxgHIAMoCzITLmNvbW1vbi52MS5Qcm9wZXJ0eVIQb3V0cHV0",
-            "UHJvcGVydGllcyrkAwoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNLX1RZUEVf",
-            "VU5TUEVDSUZJRUQQABIgChxGRUVEQkFDS19UWVBFX1RBU0tfSElHSExJR0hU",
-            "EAoSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1BBUlRfSElHSExJR0hUEAsSJQoh",
-            "RkVFREJBQ0tfVFlQRV9UQVNLX1RPT0xfSElHSExJR0hUEAwSHwobRkVFREJB",
-            "Q0tfVFlQRV9UQVNLX09WRVJWSUVXEA0SHAoYRkVFREJBQ0tfVFlQRV9ST0JP",
-            "VF9QQVRIEDISIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEDMS",
-            "IQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVEQkFD",
-            "S19UWVBFX1JPQk9UX1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9CT1Rf",
-            "TElHSFQQNhIZChVGRUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVEQkFD",
-            "S19UWVBFX0lDT04QZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhGRUVE",
-            "QkFDS19UWVBFX1BMQVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JVTEVS",
-            "EGhCiQEKCWNvbS5hci52MUINRmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29t",
-            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoC",
-            "Dk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoC",
-            "BkFyOjpWMWIGcHJvdG8z"));
+            "ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5",
+            "LnByb3RvIoMCCg9GZWVkYmFja01lc3NhZ2USDgoCaWQYASABKAlSAmlkEhIK",
+            "BG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
+            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoEdHlwZRgFIAEoDjITLmFy",
+            "LnYxLkZlZWRiYWNrVHlwZVIEdHlwZRIvCgpwcm9wZXJ0aWVzGAYgAygLMg8u",
+            "YXIudjEuUHJvcGVydHlSCnByb3BlcnRpZXMSPAoRb3V0cHV0X3Byb3BlcnRp",
+            "ZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eVIQb3V0cHV0UHJvcGVydGllcyrk",
+            "AwoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNLX1RZUEVfVU5TUEVDSUZJRUQQ",
+            "ABIgChxGRUVEQkFDS19UWVBFX1RBU0tfSElHSExJR0hUEAoSJQohRkVFREJB",
+            "Q0tfVFlQRV9UQVNLX1BBUlRfSElHSExJR0hUEAsSJQohRkVFREJBQ0tfVFlQ",
+            "RV9UQVNLX1RPT0xfSElHSExJR0hUEAwSHwobRkVFREJBQ0tfVFlQRV9UQVNL",
+            "X09WRVJWSUVXEA0SHAoYRkVFREJBQ0tfVFlQRV9ST0JPVF9QQVRIEDISIgoe",
+            "RkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEDMSIQodRkVFREJBQ0tf",
+            "VFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVEQkFDS19UWVBFX1JPQk9U",
+            "X1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQNhIZChVG",
+            "RUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVEQkFDS19UWVBFX0lDT04Q",
+            "ZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhGRUVEQkFDS19UWVBFX1BM",
+            "QVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JVTEVSEGhCiQEKCWNvbS5h",
+            "ci52MUINRmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJv",
+            "dG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFS",
+            "LlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PropertyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Properties", "OutputProperties" }, null, null, null, null)
           }));
@@ -190,23 +190,23 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(50, global::Messages.Common.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.Common.V1.Property>();
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(50, global::Messages.AR.V1.Property.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Property> Properties {
+    public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
       get { return properties_; }
     }
 
     /// <summary>Field number for the "output_properties" field.</summary>
     public const int OutputPropertiesFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Property> _repeated_outputProperties_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.Common.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Property> outputProperties_ = new pbc::RepeatedField<global::Messages.Common.V1.Property>();
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_outputProperties_codec
+        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.Property.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> outputProperties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Property> OutputProperties {
+    public pbc::RepeatedField<global::Messages.AR.V1.Property> OutputProperties {
       get { return outputProperties_; }
     }
 

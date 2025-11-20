@@ -1,4 +1,4 @@
-from common.v1 import property_pb2 as _property_pb2
+from ar.v1 import property_pb2 as _property_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper

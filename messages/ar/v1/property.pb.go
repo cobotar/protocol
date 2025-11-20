@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        (unknown)
-// source: common/v1/property.proto
+// source: ar/v1/property.proto
 
-package commonv1
+package arv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -85,11 +85,11 @@ func (x PropertyType) String() string {
 }
 
 func (PropertyType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_property_proto_enumTypes[0].Descriptor()
+	return file_ar_v1_property_proto_enumTypes[0].Descriptor()
 }
 
 func (PropertyType) Type() protoreflect.EnumType {
-	return &file_common_v1_property_proto_enumTypes[0]
+	return &file_ar_v1_property_proto_enumTypes[0]
 }
 
 func (x PropertyType) Number() protoreflect.EnumNumber {
@@ -98,7 +98,7 @@ func (x PropertyType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PropertyType.Descriptor instead.
 func (PropertyType) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_property_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{0}
 }
 
 // Specifies where the value of a property originates from.
@@ -135,11 +135,11 @@ func (x PropertyOrigin) String() string {
 }
 
 func (PropertyOrigin) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_property_proto_enumTypes[1].Descriptor()
+	return file_ar_v1_property_proto_enumTypes[1].Descriptor()
 }
 
 func (PropertyOrigin) Type() protoreflect.EnumType {
-	return &file_common_v1_property_proto_enumTypes[1]
+	return &file_ar_v1_property_proto_enumTypes[1]
 }
 
 func (x PropertyOrigin) Number() protoreflect.EnumNumber {
@@ -148,7 +148,7 @@ func (x PropertyOrigin) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PropertyOrigin.Descriptor instead.
 func (PropertyOrigin) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_property_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{1}
 }
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
@@ -158,12 +158,12 @@ type Property struct {
 	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type             PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
+	Type             PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.PropertyType" json:"type,omitempty"`
 	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`                                    // the current value of the property (JSON encoded)
 	Extras           string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"`                                  // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
 	UserEditable     bool                   `protobuf:"varint,8,opt,name=user_editable,json=userEditable,proto3" json:"user_editable,omitempty"` // TODO: create different user permissions, this field should then set the "minimum required permission"
-	Origin           PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=common.v1.PropertyOrigin" json:"origin,omitempty"`
-	Origins          []PropertyOrigin       `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=common.v1.PropertyOrigin" json:"origins,omitempty"`
+	Origin           PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
+	Origins          []PropertyOrigin       `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=ar.v1.PropertyOrigin" json:"origins,omitempty"`
 	MirrorPropertyId string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
 	Group            string                 `protobuf:"bytes,12,opt,name=group,proto3" json:"group,omitempty"`
 	Ordering         int32                  `protobuf:"varint,13,opt,name=ordering,proto3" json:"ordering,omitempty"`
@@ -174,7 +174,7 @@ type Property struct {
 
 func (x *Property) Reset() {
 	*x = Property{}
-	mi := &file_common_v1_property_proto_msgTypes[0]
+	mi := &file_ar_v1_property_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -186,7 +186,7 @@ func (x *Property) String() string {
 func (*Property) ProtoMessage() {}
 
 func (x *Property) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_property_proto_msgTypes[0]
+	mi := &file_ar_v1_property_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -199,7 +199,7 @@ func (x *Property) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Property.ProtoReflect.Descriptor instead.
 func (*Property) Descriptor() ([]byte, []int) {
-	return file_common_v1_property_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Property) GetId() string {
@@ -300,23 +300,23 @@ func (x *Property) GetHideGroup() bool {
 	return false
 }
 
-var File_common_v1_property_proto protoreflect.FileDescriptor
+var File_ar_v1_property_proto protoreflect.FileDescriptor
 
-const file_common_v1_property_proto_rawDesc = "" +
+const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\"\xcb\x03\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\"\xbf\x03\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12+\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x17.common.v1.PropertyTypeR\x04type\x12\x14\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeR\x04type\x12\x14\n" +
 	"\x05value\x18\x06 \x01(\tR\x05value\x12\x16\n" +
 	"\x06extras\x18\a \x01(\tR\x06extras\x12#\n" +
-	"\ruser_editable\x18\b \x01(\bR\fuserEditable\x121\n" +
-	"\x06origin\x18\t \x01(\x0e2\x19.common.v1.PropertyOriginR\x06origin\x123\n" +
+	"\ruser_editable\x18\b \x01(\bR\fuserEditable\x12-\n" +
+	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginR\x06origin\x12/\n" +
 	"\aorigins\x18\n" +
-	" \x03(\x0e2\x19.common.v1.PropertyOriginR\aorigins\x12,\n" +
+	" \x03(\x0e2\x15.ar.v1.PropertyOriginR\aorigins\x12,\n" +
 	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId\x12\x14\n" +
 	"\x05group\x18\f \x01(\tR\x05group\x12\x1a\n" +
 	"\bordering\x18\r \x01(\x05R\bordering\x12\x1d\n" +
@@ -340,33 +340,32 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02B\xa5\x01\n" +
-	"\rcom.common.v1B\rPropertyProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
-	"Common::V1b\x06proto3"
+	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02B\x89\x01\n" +
+	"\tcom.ar.v1B\rPropertyProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
-	file_common_v1_property_proto_rawDescOnce sync.Once
-	file_common_v1_property_proto_rawDescData []byte
+	file_ar_v1_property_proto_rawDescOnce sync.Once
+	file_ar_v1_property_proto_rawDescData []byte
 )
 
-func file_common_v1_property_proto_rawDescGZIP() []byte {
-	file_common_v1_property_proto_rawDescOnce.Do(func() {
-		file_common_v1_property_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)))
+func file_ar_v1_property_proto_rawDescGZIP() []byte {
+	file_ar_v1_property_proto_rawDescOnce.Do(func() {
+		file_ar_v1_property_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_ar_v1_property_proto_rawDesc), len(file_ar_v1_property_proto_rawDesc)))
 	})
-	return file_common_v1_property_proto_rawDescData
+	return file_ar_v1_property_proto_rawDescData
 }
 
-var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_common_v1_property_proto_goTypes = []any{
-	(PropertyType)(0),   // 0: common.v1.PropertyType
-	(PropertyOrigin)(0), // 1: common.v1.PropertyOrigin
-	(*Property)(nil),    // 2: common.v1.Property
+var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_property_proto_goTypes = []any{
+	(PropertyType)(0),   // 0: ar.v1.PropertyType
+	(PropertyOrigin)(0), // 1: ar.v1.PropertyOrigin
+	(*Property)(nil),    // 2: ar.v1.Property
 }
-var file_common_v1_property_proto_depIdxs = []int32{
-	0, // 0: common.v1.Property.type:type_name -> common.v1.PropertyType
-	1, // 1: common.v1.Property.origin:type_name -> common.v1.PropertyOrigin
-	1, // 2: common.v1.Property.origins:type_name -> common.v1.PropertyOrigin
+var file_ar_v1_property_proto_depIdxs = []int32{
+	0, // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
+	1, // 1: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
+	1, // 2: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -374,27 +373,27 @@ var file_common_v1_property_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_common_v1_property_proto_init() }
-func file_common_v1_property_proto_init() {
-	if File_common_v1_property_proto != nil {
+func init() { file_ar_v1_property_proto_init() }
+func file_ar_v1_property_proto_init() {
+	if File_ar_v1_property_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_property_proto_rawDesc), len(file_ar_v1_property_proto_rawDesc)),
 			NumEnums:      2,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_v1_property_proto_goTypes,
-		DependencyIndexes: file_common_v1_property_proto_depIdxs,
-		EnumInfos:         file_common_v1_property_proto_enumTypes,
-		MessageInfos:      file_common_v1_property_proto_msgTypes,
+		GoTypes:           file_ar_v1_property_proto_goTypes,
+		DependencyIndexes: file_ar_v1_property_proto_depIdxs,
+		EnumInfos:         file_ar_v1_property_proto_enumTypes,
+		MessageInfos:      file_ar_v1_property_proto_msgTypes,
 	}.Build()
-	File_common_v1_property_proto = out.File
-	file_common_v1_property_proto_goTypes = nil
-	file_common_v1_property_proto_depIdxs = nil
+	File_ar_v1_property_proto = out.File
+	file_ar_v1_property_proto_goTypes = nil
+	file_ar_v1_property_proto_depIdxs = nil
 }
