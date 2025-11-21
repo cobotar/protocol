@@ -1,4 +1,3 @@
-from geometry.v1 import pose_pb2 as _pose_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -16,20 +15,18 @@ MARKER_TYPE_UNSPECIFIED: MarkerType
 MARKER_TYPE_QR_CODE: MarkerType
 
 class MarkerMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "marker_text", "type", "parent_maker_pose")
+    __slots__ = ("id", "name", "description", "marker_text", "type")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     MARKER_TEXT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    PARENT_MAKER_POSE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
     marker_text: str
     type: MarkerType
-    parent_maker_pose: _pose_pb2.LocalizedPose
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ..., parent_maker_pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ...) -> None: ...
 
 class MarkersMessage(_message.Message):
     __slots__ = ("markers",)

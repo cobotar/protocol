@@ -282,7 +282,7 @@ func (EndEffectorType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_agent_proto_rawDescGZIP(), []int{4}
 }
 
-type Agent struct {
+type AgentMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -296,20 +296,20 @@ type Agent struct {
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *Agent) Reset() {
-	*x = Agent{}
+func (x *AgentMessage) Reset() {
+	*x = AgentMessage{}
 	mi := &file_ar_v1_agent_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Agent) String() string {
+func (x *AgentMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Agent) ProtoMessage() {}
+func (*AgentMessage) ProtoMessage() {}
 
-func (x *Agent) ProtoReflect() protoreflect.Message {
+func (x *AgentMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_agent_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -321,61 +321,61 @@ func (x *Agent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Agent.ProtoReflect.Descriptor instead.
-func (*Agent) Descriptor() ([]byte, []int) {
+// Deprecated: Use AgentMessage.ProtoReflect.Descriptor instead.
+func (*AgentMessage) Descriptor() ([]byte, []int) {
 	return file_ar_v1_agent_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Agent) GetId() string {
+func (x *AgentMessage) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Agent) GetName() string {
+func (x *AgentMessage) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Agent) GetType() AgentType {
+func (x *AgentMessage) GetType() AgentType {
 	if x != nil {
 		return x.Type
 	}
 	return AgentType_AGENT_TYPE_UNSPECIFIED
 }
 
-func (x *Agent) GetOperatorType() OperatorType {
+func (x *AgentMessage) GetOperatorType() OperatorType {
 	if x != nil {
 		return x.OperatorType
 	}
 	return OperatorType_OPERATOR_TYPE_UNSPECIFIED
 }
 
-func (x *Agent) GetRobotType() RobotType {
+func (x *AgentMessage) GetRobotType() RobotType {
 	if x != nil {
 		return x.RobotType
 	}
 	return RobotType_ROBOT_TYPE_UNSPECIFIED
 }
 
-func (x *Agent) GetEndEffectorType() EndEffectorType {
+func (x *AgentMessage) GetEndEffectorType() EndEffectorType {
 	if x != nil {
 		return x.EndEffectorType
 	}
 	return EndEffectorType_END_EFFECTOR_TYPE_UNSPECIFIED
 }
 
-func (x *Agent) GetLocation() *v1.LocalizedPose {
+func (x *AgentMessage) GetLocation() *v1.LocalizedPose {
 	if x != nil {
 		return x.Location
 	}
 	return nil
 }
 
-func (x *Agent) GetProperties() []*Property {
+func (x *AgentMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
 	}
@@ -386,8 +386,8 @@ var File_ar_v1_agent_proto protoreflect.FileDescriptor
 
 const file_ar_v1_agent_proto_rawDesc = "" +
 	"\n" +
-	"\x11ar/v1/agent.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"\xe9\x02\n" +
-	"\x05Agent\x12\x0e\n" +
+	"\x11ar/v1/agent.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"\xf0\x02\n" +
+	"\fAgentMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
 	"\x04type\x18\x03 \x01(\x0e2\x10.ar.v1.AgentTypeR\x04type\x128\n" +
@@ -449,17 +449,17 @@ var file_ar_v1_agent_proto_goTypes = []any{
 	(OperatorPermission)(0),  // 2: ar.v1.OperatorPermission
 	(RobotType)(0),           // 3: ar.v1.RobotType
 	(EndEffectorType)(0),     // 4: ar.v1.EndEffectorType
-	(*Agent)(nil),            // 5: ar.v1.Agent
+	(*AgentMessage)(nil),     // 5: ar.v1.AgentMessage
 	(*v1.LocalizedPose)(nil), // 6: geometry.v1.LocalizedPose
 	(*Property)(nil),         // 7: ar.v1.Property
 }
 var file_ar_v1_agent_proto_depIdxs = []int32{
-	0, // 0: ar.v1.Agent.type:type_name -> ar.v1.AgentType
-	1, // 1: ar.v1.Agent.operator_type:type_name -> ar.v1.OperatorType
-	3, // 2: ar.v1.Agent.robot_type:type_name -> ar.v1.RobotType
-	4, // 3: ar.v1.Agent.end_effector_type:type_name -> ar.v1.EndEffectorType
-	6, // 4: ar.v1.Agent.location:type_name -> geometry.v1.LocalizedPose
-	7, // 5: ar.v1.Agent.properties:type_name -> ar.v1.Property
+	0, // 0: ar.v1.AgentMessage.type:type_name -> ar.v1.AgentType
+	1, // 1: ar.v1.AgentMessage.operator_type:type_name -> ar.v1.OperatorType
+	3, // 2: ar.v1.AgentMessage.robot_type:type_name -> ar.v1.RobotType
+	4, // 3: ar.v1.AgentMessage.end_effector_type:type_name -> ar.v1.EndEffectorType
+	6, // 4: ar.v1.AgentMessage.location:type_name -> geometry.v1.LocalizedPose
+	7, // 5: ar.v1.AgentMessage.properties:type_name -> ar.v1.Property
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name

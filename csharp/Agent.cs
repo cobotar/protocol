@@ -25,37 +25,37 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFhci92MS9hZ2VudC5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5LnBy",
-            "b3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIukCCgVBZ2VudBIOCgJpZBgB",
-            "IAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIkCgR0eXBlGAMgASgOMhAu",
-            "YXIudjEuQWdlbnRUeXBlUgR0eXBlEjgKDW9wZXJhdG9yX3R5cGUYBCABKA4y",
-            "Ey5hci52MS5PcGVyYXRvclR5cGVSDG9wZXJhdG9yVHlwZRIvCgpyb2JvdF90",
-            "eXBlGAUgASgOMhAuYXIudjEuUm9ib3RUeXBlUglyb2JvdFR5cGUSQgoRZW5k",
-            "X2VmZmVjdG9yX3R5cGUYBiABKA4yFi5hci52MS5FbmRFZmZlY3RvclR5cGVS",
-            "D2VuZEVmZmVjdG9yVHlwZRI2Cghsb2NhdGlvbhgHIAEoCzIaLmdlb21ldHJ5",
-            "LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uEi8KCnByb3BlcnRpZXMYCCAD",
-            "KAsyDy5hci52MS5Qcm9wZXJ0eVIKcHJvcGVydGllcypWCglBZ2VudFR5cGUS",
-            "GgoWQUdFTlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE0FHRU5UX1RZUEVfT1BF",
-            "UkFUT1IQARIUChBBR0VOVF9UWVBFX1JPQk9UEAIqgQEKDE9wZXJhdG9yVHlw",
-            "ZRIdChlPUEVSQVRPUl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUT1BFUkFUT1Jf",
-            "VFlQRV9OT1ZJQ0UQARIeChpPUEVSQVRPUl9UWVBFX0lOVEVSTUVESUFURRAC",
-            "EhgKFE9QRVJBVE9SX1RZUEVfRVhQRVJUEAMqlwEKEk9wZXJhdG9yUGVybWlz",
-            "c2lvbhIjCh9PUEVSQVRPUl9QRVJNSVNTSU9OX1VOU1BFQ0lGSUVEEAASHAoY",
-            "T1BFUkFUT1JfUEVSTUlTU0lPTl9OT05FEAESIAocT1BFUkFUT1JfUEVSTUlT",
-            "U0lPTl9DT1NNRVRJQxACEhwKGE9QRVJBVE9SX1BFUk1JU1NJT05fRlVMTBAD",
-            "KoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMK",
-            "D1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJP",
-            "Qk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKpsB",
-            "Cg9FbmRFZmZlY3RvclR5cGUSIQodRU5EX0VGRkVDVE9SX1RZUEVfVU5TUEVD",
-            "SUZJRUQQABIbChdFTkRfRUZGRUNUT1JfVFlQRV9FTVBUWRABEiQKIEVORF9F",
-            "RkZFQ1RPUl9UWVBFX1JPQk9USVFfSEFORF9FEAoSIgoeRU5EX0VGRkVDVE9S",
-            "X1RZUEVfQ1VTVE9NX01PVU5UEBRChgEKCWNvbS5hci52MUIKQWdlbnRQcm90",
-            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
-            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
-            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "b3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIvACCgxBZ2VudE1lc3NhZ2US",
+            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSJAoEdHlwZRgD",
+            "IAEoDjIQLmFyLnYxLkFnZW50VHlwZVIEdHlwZRI4Cg1vcGVyYXRvcl90eXBl",
+            "GAQgASgOMhMuYXIudjEuT3BlcmF0b3JUeXBlUgxvcGVyYXRvclR5cGUSLwoK",
+            "cm9ib3RfdHlwZRgFIAEoDjIQLmFyLnYxLlJvYm90VHlwZVIJcm9ib3RUeXBl",
+            "EkIKEWVuZF9lZmZlY3Rvcl90eXBlGAYgASgOMhYuYXIudjEuRW5kRWZmZWN0",
+            "b3JUeXBlUg9lbmRFZmZlY3RvclR5cGUSNgoIbG9jYXRpb24YByABKAsyGi5n",
+            "ZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghsb2NhdGlvbhIvCgpwcm9wZXJ0",
+            "aWVzGAggAygLMg8uYXIudjEuUHJvcGVydHlSCnByb3BlcnRpZXMqVgoJQWdl",
+            "bnRUeXBlEhoKFkFHRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIXChNBR0VOVF9U",
+            "WVBFX09QRVJBVE9SEAESFAoQQUdFTlRfVFlQRV9ST0JPVBACKoEBCgxPcGVy",
+            "YXRvclR5cGUSHQoZT1BFUkFUT1JfVFlQRV9VTlNQRUNJRklFRBAAEhgKFE9Q",
+            "RVJBVE9SX1RZUEVfTk9WSUNFEAESHgoaT1BFUkFUT1JfVFlQRV9JTlRFUk1F",
+            "RElBVEUQAhIYChRPUEVSQVRPUl9UWVBFX0VYUEVSVBADKpcBChJPcGVyYXRv",
+            "clBlcm1pc3Npb24SIwofT1BFUkFUT1JfUEVSTUlTU0lPTl9VTlNQRUNJRklF",
+            "RBAAEhwKGE9QRVJBVE9SX1BFUk1JU1NJT05fTk9ORRABEiAKHE9QRVJBVE9S",
+            "X1BFUk1JU1NJT05fQ09TTUVUSUMQAhIcChhPUEVSQVRPUl9QRVJNSVNTSU9O",
+            "X0ZVTEwQAyqBAQoJUm9ib3RUeXBlEhoKFlJPQk9UX1RZUEVfVU5TUEVDSUZJ",
+            "RUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9ST0JPVF9UWVBFX1VSNUUQ",
+            "CxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9CT1RfVFlQRV9LVUtBX0lJ",
+            "V0EQFCqbAQoPRW5kRWZmZWN0b3JUeXBlEiEKHUVORF9FRkZFQ1RPUl9UWVBF",
+            "X1VOU1BFQ0lGSUVEEAASGwoXRU5EX0VGRkVDVE9SX1RZUEVfRU1QVFkQARIk",
+            "CiBFTkRfRUZGRUNUT1JfVFlQRV9ST0JPVElRX0hBTkRfRRAKEiIKHkVORF9F",
+            "RkZFQ1RPUl9UWVBFX0NVU1RPTV9NT1VOVBAUQoYBCgljb20uYXIudjFCCkFn",
+            "ZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx",
+            "4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.AgentType), typeof(global::Messages.AR.V1.OperatorType), typeof(global::Messages.AR.V1.OperatorPermission), typeof(global::Messages.AR.V1.RobotType), typeof(global::Messages.AR.V1.EndEffectorType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Agent), global::Messages.AR.V1.Agent.Parser, new[]{ "Id", "Name", "Type", "OperatorType", "RobotType", "EndEffectorType", "Location", "Properties" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AgentMessage), global::Messages.AR.V1.AgentMessage.Parser, new[]{ "Id", "Name", "Type", "OperatorType", "RobotType", "EndEffectorType", "Location", "Properties" }, null, null, null, null)
           }));
     }
     #endregion
@@ -101,16 +101,16 @@ namespace Messages.AR.V1 {
 
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class Agent : pb::IMessage<Agent>
+  public sealed partial class AgentMessage : pb::IMessage<AgentMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Agent> _parser = new pb::MessageParser<Agent>(() => new Agent());
+    private static readonly pb::MessageParser<AgentMessage> _parser = new pb::MessageParser<AgentMessage>(() => new AgentMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Agent> Parser { get { return _parser; } }
+    public static pb::MessageParser<AgentMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +126,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Agent() {
+    public AgentMessage() {
       OnConstruction();
     }
 
@@ -134,7 +134,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Agent(Agent other) : this() {
+    public AgentMessage(AgentMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       type_ = other.type_;
@@ -148,8 +148,8 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Agent Clone() {
-      return new Agent(this);
+    public AgentMessage Clone() {
+      return new AgentMessage(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -250,12 +250,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as Agent);
+      return Equals(other as AgentMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Agent other) {
+    public bool Equals(AgentMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -411,7 +411,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Agent other) {
+    public void MergeFrom(AgentMessage other) {
       if (other == null) {
         return;
       }

@@ -64,7 +64,7 @@ END_EFFECTOR_TYPE_EMPTY: EndEffectorType
 END_EFFECTOR_TYPE_ROBOTIQ_HAND_E: EndEffectorType
 END_EFFECTOR_TYPE_CUSTOM_MOUNT: EndEffectorType
 
-class Agent(_message.Message):
+class AgentMessage(_message.Message):
     __slots__ = ("id", "name", "type", "operator_type", "robot_type", "end_effector_type", "location", "properties")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

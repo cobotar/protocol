@@ -22,10 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x61r/v1/authoring_marker.proto\x12\x05\x61r.v1\x1a\x16geometry/v1/pose.proto\"i\n\x10MarkerNewMessage\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x1f\n\x0bmarker_text\x18\x03 \x01(\tR\nmarkerText\"\xc4\x01\n\x13MarkerUpdateMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x1f\n\x0bmarker_text\x18\x04 \x01(\tR\nmarkerText\x12\x46\n\x11parent_maker_pose\x18\x05 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x0fparentMakerPose\"%\n\x13MarkerDeleteMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02idB\x90\x01\n\tcom.ar.v1B\x14\x41uthoringMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x61r/v1/authoring_marker.proto\x12\x05\x61r.v1\"i\n\x10MarkerNewMessage\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x1f\n\x0bmarker_text\x18\x03 \x01(\tR\nmarkerText\"|\n\x13MarkerUpdateMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x1f\n\x0bmarker_text\x18\x04 \x01(\tR\nmarkerText\"%\n\x13MarkerDeleteMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02idB\x90\x01\n\tcom.ar.v1B\x14\x41uthoringMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ar.v1.authoring_marker_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\024AuthoringMarkerProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
-  _globals['_MARKERNEWMESSAGE']._serialized_start=63
-  _globals['_MARKERNEWMESSAGE']._serialized_end=168
-  _globals['_MARKERUPDATEMESSAGE']._serialized_start=171
-  _globals['_MARKERUPDATEMESSAGE']._serialized_end=367
-  _globals['_MARKERDELETEMESSAGE']._serialized_start=369
-  _globals['_MARKERDELETEMESSAGE']._serialized_end=406
+  _globals['_MARKERNEWMESSAGE']._serialized_start=39
+  _globals['_MARKERNEWMESSAGE']._serialized_end=144
+  _globals['_MARKERUPDATEMESSAGE']._serialized_start=146
+  _globals['_MARKERUPDATEMESSAGE']._serialized_end=270
+  _globals['_MARKERDELETEMESSAGE']._serialized_start=272
+  _globals['_MARKERDELETEMESSAGE']._serialized_end=309
 # @@protoc_insertion_point(module_scope)

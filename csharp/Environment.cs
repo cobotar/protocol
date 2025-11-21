@@ -24,38 +24,310 @@ namespace Messages.AR.V1 {
     static EnvironmentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEaEmFyL3YxL21hcmtl",
-            "ci5wcm90bxoUYXIvdjEvcHJvcGVydHkucHJvdG8aFmdlb21ldHJ5L3YxL3Bv",
-            "c2UucHJvdG8iVwoNQWdlbnRMb2NhdGlvbhIOCgJpZBgBIAEoCVICaWQSNgoI",
-            "bG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghs",
-            "b2NhdGlvbiJWCgxQYXJ0TG9jYXRpb24SDgoCaWQYASABKAlSAmlkEjYKCGxv",
-            "Y2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIIbG9j",
-            "YXRpb24iVgoMVG9vbExvY2F0aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2Nh",
-            "dGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0",
-            "aW9uIswCCgtFbnZpcm9ubWVudBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgC",
-            "IAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
-            "GAQgASgJUgtkZXNjcmlwdGlvbhIuCgdtYXJrZXJzGAUgAygLMhQuYXIudjEu",
-            "TWFya2VyTWVzc2FnZVIHbWFya2VycxIsCgZhZ2VudHMYBiADKAsyFC5hci52",
-            "MS5BZ2VudExvY2F0aW9uUgZhZ2VudHMSKQoFcGFydHMYByADKAsyEy5hci52",
-            "MS5QYXJ0TG9jYXRpb25SBXBhcnRzEikKBXRvb2xzGAggAygLMhMuYXIudjEu",
-            "VG9vbExvY2F0aW9uUgV0b29scxIvCgpwcm9wZXJ0aWVzGAkgAygLMg8uYXIu",
-            "djEuUHJvcGVydHlSCnByb3BlcnRpZXNCjAEKCWNvbS5hci52MUIQRW52aXJv",
-            "bm1lbnRQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJc",
-            "VjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3Bl",
+            "cnR5LnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIlgKDk1hcmtlckxv",
+            "Y2F0aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdl",
+            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlcKDUFnZW50TG9j",
+            "YXRpb24SDgoCaWQYASABKAlSAmlkEjYKCGxvY2F0aW9uGAIgASgLMhouZ2Vv",
+            "bWV0cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVgoMUGFydExvY2F0",
+            "aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21l",
+            "dHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlYKDFRvb2xMb2NhdGlv",
+            "bhIOCgJpZBgBIAEoCVICaWQSNgoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRy",
+            "eS52MS5Mb2NhbGl6ZWRQb3NlUghsb2NhdGlvbiKAAwoSRW52aXJvbm1lbnRN",
+            "ZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEioKBHR5cGUYBSABKA4yFi5hci52MS5FbnZpcm9ubWVudFR5cGVS",
+            "BHR5cGUSLwoHbWFya2VycxgGIAMoCzIVLmFyLnYxLk1hcmtlckxvY2F0aW9u",
+            "UgdtYXJrZXJzEiwKBmFnZW50cxgHIAMoCzIULmFyLnYxLkFnZW50TG9jYXRp",
+            "b25SBmFnZW50cxIpCgVwYXJ0cxgIIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlv",
+            "blIFcGFydHMSKQoFdG9vbHMYCSADKAsyEy5hci52MS5Ub29sTG9jYXRpb25S",
+            "BXRvb2xzEi8KCnByb3BlcnRpZXMYCiADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
+            "cHJvcGVydGllcyJUChNFbnZpcm9ubWVudHNNZXNzYWdlEj0KDGVudmlyb25t",
+            "ZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZVIMZW52aXJv",
+            "bm1lbnRzKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQ",
+            "RV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRAB",
+            "EiMKH0VOVklST05NRU5UX1RZUEVfTUFOVUFMX1NUQVRJT04QAhImCiJFTlZJ",
+            "Uk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSIwofRU5WSVJPTk1F",
+            "TlRfVFlQRV9IWUJSSURfU1RBVElPThAEEiAKHEVOVklST05NRU5UX1RZUEVf",
+            "TUFOVUFMX0xJTkUQBRIjCh9FTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19M",
+            "SU5FEAYSIAocRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfTElORRAHQowBCglj",
+            "b20uYXIudjFCEEVudmlyb25tZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2Jv",
+            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNz",
+            "YWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.MarkerReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.EnvironmentType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerLocation), global::Messages.AR.V1.MarkerLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AgentLocation), global::Messages.AR.V1.AgentLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PartLocation), global::Messages.AR.V1.PartLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ToolLocation), global::Messages.AR.V1.ToolLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Environment), global::Messages.AR.V1.Environment.Parser, new[]{ "Id", "Name", "Icon", "Description", "Markers", "Agents", "Parts", "Tools", "Properties" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Agents", "Parts", "Tools", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentsMessage), global::Messages.AR.V1.EnvironmentsMessage.Parser, new[]{ "Environments" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum EnvironmentType {
+    [pbr::OriginalName("ENVIRONMENT_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_STORAGE")] Storage = 1,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_MANUAL_STATION")] ManualStation = 2,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_AUTOMATIC_STATION")] AutomaticStation = 3,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_HYBRID_STATION")] HybridStation = 4,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_MANUAL_LINE")] ManualLine = 5,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_AUTOMATIC_LINE")] AutomaticLine = 6,
+    [pbr::OriginalName("ENVIRONMENT_TYPE_HYBRID_LINE")] HybridLine = 7,
+  }
+
+  #endregion
+
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class MarkerLocation : pb::IMessage<MarkerLocation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MarkerLocation> _parser = new pb::MessageParser<MarkerLocation>(() => new MarkerLocation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MarkerLocation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkerLocation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkerLocation(MarkerLocation other) : this() {
+      id_ = other.id_;
+      location_ = other.location_ != null ? other.location_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkerLocation Clone() {
+      return new MarkerLocation(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 2;
+    private global::Messages.Common.V1.LocalizedPose location_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.LocalizedPose Location {
+      get { return location_; }
+      set {
+        location_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MarkerLocation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MarkerLocation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(Location, other.Location)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (location_ != null) hash ^= Location.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (location_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MarkerLocation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.location_ != null) {
+        if (location_ == null) {
+          Location = new global::Messages.Common.V1.LocalizedPose();
+        }
+        Location.MergeFrom(other.Location);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class AgentLocation : pb::IMessage<AgentLocation>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -71,7 +343,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -315,7 +587,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -559,7 +831,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -789,21 +1061,21 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class Environment : pb::IMessage<Environment>
+  public sealed partial class EnvironmentMessage : pb::IMessage<EnvironmentMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Environment> _parser = new pb::MessageParser<Environment>(() => new Environment());
+    private static readonly pb::MessageParser<EnvironmentMessage> _parser = new pb::MessageParser<EnvironmentMessage>(() => new EnvironmentMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Environment> Parser { get { return _parser; } }
+    public static pb::MessageParser<EnvironmentMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -814,7 +1086,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Environment() {
+    public EnvironmentMessage() {
       OnConstruction();
     }
 
@@ -822,11 +1094,12 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Environment(Environment other) : this() {
+    public EnvironmentMessage(EnvironmentMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
+      type_ = other.type_;
       markers_ = other.markers_.Clone();
       agents_ = other.agents_.Clone();
       parts_ = other.parts_.Clone();
@@ -837,8 +1110,8 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Environment Clone() {
-      return new Environment(this);
+    public EnvironmentMessage Clone() {
+      return new EnvironmentMessage(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -889,24 +1162,36 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::Messages.AR.V1.EnvironmentType type_ = global::Messages.AR.V1.EnvironmentType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.EnvironmentType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     /// <summary>Field number for the "markers" field.</summary>
-    public const int MarkersFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.MarkerMessage> _repeated_markers_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.AR.V1.MarkerMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.MarkerMessage> markers_ = new pbc::RepeatedField<global::Messages.AR.V1.MarkerMessage>();
+    public const int MarkersFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.MarkerLocation> _repeated_markers_codec
+        = pb::FieldCodec.ForMessage(50, global::Messages.AR.V1.MarkerLocation.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.MarkerLocation> markers_ = new pbc::RepeatedField<global::Messages.AR.V1.MarkerLocation>();
     /// <summary>
-    /// Markers associated with this environment. The first marker in the list will be the origin of the environment.
+    /// Markers associated with this environment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.MarkerMessage> Markers {
+    public pbc::RepeatedField<global::Messages.AR.V1.MarkerLocation> Markers {
       get { return markers_; }
     }
 
     /// <summary>Field number for the "agents" field.</summary>
-    public const int AgentsFieldNumber = 6;
+    public const int AgentsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.AgentLocation> _repeated_agents_codec
-        = pb::FieldCodec.ForMessage(50, global::Messages.AR.V1.AgentLocation.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.AgentLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.AgentLocation> agents_ = new pbc::RepeatedField<global::Messages.AR.V1.AgentLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -915,9 +1200,9 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "parts" field.</summary>
-    public const int PartsFieldNumber = 7;
+    public const int PartsFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.PartLocation> _repeated_parts_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.PartLocation.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.PartLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.PartLocation> parts_ = new pbc::RepeatedField<global::Messages.AR.V1.PartLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -926,9 +1211,9 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "tools" field.</summary>
-    public const int ToolsFieldNumber = 8;
+    public const int ToolsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ToolLocation> _repeated_tools_codec
-        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.ToolLocation.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.ToolLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ToolLocation> tools_ = new pbc::RepeatedField<global::Messages.AR.V1.ToolLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -937,9 +1222,9 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "properties" field.</summary>
-    public const int PropertiesFieldNumber = 9;
+    public const int PropertiesFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.Property.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.Property.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -950,12 +1235,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as Environment);
+      return Equals(other as EnvironmentMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Environment other) {
+    public bool Equals(EnvironmentMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -966,6 +1251,7 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
+      if (Type != other.Type) return false;
       if(!markers_.Equals(other.markers_)) return false;
       if(!agents_.Equals(other.agents_)) return false;
       if(!parts_.Equals(other.parts_)) return false;
@@ -982,6 +1268,7 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Type != global::Messages.AR.V1.EnvironmentType.Unspecified) hash ^= Type.GetHashCode();
       hash ^= markers_.GetHashCode();
       hash ^= agents_.GetHashCode();
       hash ^= parts_.GetHashCode();
@@ -1021,6 +1308,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (Type != global::Messages.AR.V1.EnvironmentType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
       markers_.WriteTo(output, _repeated_markers_codec);
       agents_.WriteTo(output, _repeated_agents_codec);
       parts_.WriteTo(output, _repeated_parts_codec);
@@ -1052,6 +1343,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (Type != global::Messages.AR.V1.EnvironmentType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
       markers_.WriteTo(ref output, _repeated_markers_codec);
       agents_.WriteTo(ref output, _repeated_agents_codec);
       parts_.WriteTo(ref output, _repeated_parts_codec);
@@ -1079,6 +1374,9 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
+      if (Type != global::Messages.AR.V1.EnvironmentType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
       size += markers_.CalculateSize(_repeated_markers_codec);
       size += agents_.CalculateSize(_repeated_agents_codec);
       size += parts_.CalculateSize(_repeated_parts_codec);
@@ -1092,7 +1390,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Environment other) {
+    public void MergeFrom(EnvironmentMessage other) {
       if (other == null) {
         return;
       }
@@ -1107,6 +1405,9 @@ namespace Messages.AR.V1 {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.Type != global::Messages.AR.V1.EnvironmentType.Unspecified) {
+        Type = other.Type;
       }
       markers_.Add(other.markers_);
       agents_.Add(other.agents_);
@@ -1148,23 +1449,27 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            markers_.AddEntriesFrom(input, _repeated_markers_codec);
+          case 40: {
+            Type = (global::Messages.AR.V1.EnvironmentType) input.ReadEnum();
             break;
           }
           case 50: {
-            agents_.AddEntriesFrom(input, _repeated_agents_codec);
+            markers_.AddEntriesFrom(input, _repeated_markers_codec);
             break;
           }
           case 58: {
-            parts_.AddEntriesFrom(input, _repeated_parts_codec);
+            agents_.AddEntriesFrom(input, _repeated_agents_codec);
             break;
           }
           case 66: {
-            tools_.AddEntriesFrom(input, _repeated_tools_codec);
+            parts_.AddEntriesFrom(input, _repeated_parts_codec);
             break;
           }
           case 74: {
+            tools_.AddEntriesFrom(input, _repeated_tools_codec);
+            break;
+          }
+          case 82: {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
@@ -1203,24 +1508,215 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            markers_.AddEntriesFrom(ref input, _repeated_markers_codec);
+          case 40: {
+            Type = (global::Messages.AR.V1.EnvironmentType) input.ReadEnum();
             break;
           }
           case 50: {
-            agents_.AddEntriesFrom(ref input, _repeated_agents_codec);
+            markers_.AddEntriesFrom(ref input, _repeated_markers_codec);
             break;
           }
           case 58: {
-            parts_.AddEntriesFrom(ref input, _repeated_parts_codec);
+            agents_.AddEntriesFrom(ref input, _repeated_agents_codec);
             break;
           }
           case 66: {
-            tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
+            parts_.AddEntriesFrom(ref input, _repeated_parts_codec);
             break;
           }
           case 74: {
+            tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
+            break;
+          }
+          case 82: {
             properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class EnvironmentsMessage : pb::IMessage<EnvironmentsMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EnvironmentsMessage> _parser = new pb::MessageParser<EnvironmentsMessage>(() => new EnvironmentsMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EnvironmentsMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnvironmentsMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnvironmentsMessage(EnvironmentsMessage other) : this() {
+      environments_ = other.environments_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnvironmentsMessage Clone() {
+      return new EnvironmentsMessage(this);
+    }
+
+    /// <summary>Field number for the "environments" field.</summary>
+    public const int EnvironmentsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.EnvironmentMessage> _repeated_environments_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.EnvironmentMessage.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.EnvironmentMessage> environments_ = new pbc::RepeatedField<global::Messages.AR.V1.EnvironmentMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.EnvironmentMessage> Environments {
+      get { return environments_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EnvironmentsMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EnvironmentsMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!environments_.Equals(other.environments_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= environments_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      environments_.WriteTo(output, _repeated_environments_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      environments_.WriteTo(ref output, _repeated_environments_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += environments_.CalculateSize(_repeated_environments_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EnvironmentsMessage other) {
+      if (other == null) {
+        return;
+      }
+      environments_.Add(other.environments_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            environments_.AddEntriesFrom(input, _repeated_environments_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            environments_.AddEntriesFrom(ref input, _repeated_environments_codec);
             break;
           }
         }

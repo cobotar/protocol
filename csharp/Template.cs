@@ -24,23 +24,22 @@ namespace Messages.AR.V1 {
     static TemplateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRhci92MS90ZW1wbGF0ZS5wcm90bxIFYXIudjEaEWFyL3YxL2FnZW50LnBy",
-            "b3RvGhRhci92MS9wcm9wZXJ0eS5wcm90byKuAQoPVGVtcGxhdGVNZXNzYWdl",
-            "Eg4KAmlkGAIgASgJUgJpZBISCgRuYW1lGAMgASgJUgRuYW1lEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIkCgZhZ2VudHMYBSADKAsyDC5h",
-            "ci52MS5BZ2VudFIGYWdlbnRzEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52",
-            "MS5Qcm9wZXJ0eVIKcHJvcGVydGllcyJbChNUZW1wbGF0ZUluZm9NZXNzYWdl",
-            "Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
-            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbiJQChRUZW1wbGF0ZUluZm9NZXNz",
-            "YWdlcxI4Cgl0ZW1wbGF0ZXMYASADKAsyGi5hci52MS5UZW1wbGF0ZUluZm9N",
-            "ZXNzYWdlUgl0ZW1wbGF0ZXNCiQEKCWNvbS5hci52MUINVGVtcGxhdGVQcm90",
-            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
-            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
-            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "ChRhci92MS90ZW1wbGF0ZS5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5",
+            "LnByb3RvIogBCg9UZW1wbGF0ZU1lc3NhZ2USDgoCaWQYAiABKAlSAmlkEhIK",
+            "BG5hbWUYAyABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
+            "cHJvcGVydGllcyJbChNUZW1wbGF0ZUluZm9NZXNzYWdlEg4KAmlkGAEgASgJ",
+            "UgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJ",
+            "UgtkZXNjcmlwdGlvbiJQChRUZW1wbGF0ZUluZm9NZXNzYWdlcxI4Cgl0ZW1w",
+            "bGF0ZXMYASADKAsyGi5hci52MS5UZW1wbGF0ZUluZm9NZXNzYWdlUgl0ZW1w",
+            "bGF0ZXNCiQEKCWNvbS5hci52MUINVGVtcGxhdGVQcm90b1ABWi9naXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
+            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
+            "YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.AgentReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateMessage), global::Messages.AR.V1.TemplateMessage.Parser, new[]{ "Id", "Name", "Description", "Agents", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateMessage), global::Messages.AR.V1.TemplateMessage.Parser, new[]{ "Id", "Name", "Description", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateInfoMessage), global::Messages.AR.V1.TemplateInfoMessage.Parser, new[]{ "Id", "Name", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.TemplateInfoMessages), global::Messages.AR.V1.TemplateInfoMessages.Parser, new[]{ "Templates" }, null, null, null, null)
           }));
@@ -90,7 +89,6 @@ namespace Messages.AR.V1 {
       id_ = other.id_;
       name_ = other.name_;
       description_ = other.description_;
-      agents_ = other.agents_.Clone();
       properties_ = other.properties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -137,25 +135,13 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "agents" field.</summary>
-    public const int AgentsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.Agent> _repeated_agents_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.AR.V1.Agent.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.Agent> agents_ = new pbc::RepeatedField<global::Messages.AR.V1.Agent>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.Agent> Agents {
-      get { return agents_; }
-    }
-
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
         = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.Property.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
     /// <summary>
-    /// Feedback
-    /// Actions
+    ///repeated ar.v1.Agent agents = 5;
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,7 +167,6 @@ namespace Messages.AR.V1 {
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
-      if(!agents_.Equals(other.agents_)) return false;
       if(!properties_.Equals(other.properties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -193,7 +178,6 @@ namespace Messages.AR.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      hash ^= agents_.GetHashCode();
       hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -225,7 +209,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      agents_.WriteTo(output, _repeated_agents_codec);
       properties_.WriteTo(output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -249,7 +232,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      agents_.WriteTo(ref output, _repeated_agents_codec);
       properties_.WriteTo(ref output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -270,7 +252,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      size += agents_.CalculateSize(_repeated_agents_codec);
       size += properties_.CalculateSize(_repeated_properties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -293,7 +274,6 @@ namespace Messages.AR.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      agents_.Add(other.agents_);
       properties_.Add(other.properties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -324,10 +304,6 @@ namespace Messages.AR.V1 {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 42: {
-            agents_.AddEntriesFrom(input, _repeated_agents_codec);
             break;
           }
           case 58: {
@@ -363,10 +339,6 @@ namespace Messages.AR.V1 {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 42: {
-            agents_.AddEntriesFrom(ref input, _repeated_agents_codec);
             break;
           }
           case 58: {

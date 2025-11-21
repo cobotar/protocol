@@ -7,7 +7,6 @@
 package arv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -83,14 +82,13 @@ func (x *MarkerNewMessage) GetMarkerText() string {
 }
 
 type MarkerUpdateMessage struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                                    // Unique id of the maker (this won't be changed)
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                                // Name of the maker
-	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`                                  // Description of the maker
-	MarkerText      string                 `protobuf:"bytes,4,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"`                  // Text on the physical marker (QR-code)
-	ParentMakerPose *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=parent_maker_pose,json=parentMakerPose,proto3" json:"parent_maker_pose,omitempty"` // Location of this marker in relation to its parent
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                   // Unique id of the maker (this won't be changed)
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                               // Name of the maker
+	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`                 // Description of the maker
+	MarkerText    string                 `protobuf:"bytes,4,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *MarkerUpdateMessage) Reset() {
@@ -151,13 +149,6 @@ func (x *MarkerUpdateMessage) GetMarkerText() string {
 	return ""
 }
 
-func (x *MarkerUpdateMessage) GetParentMakerPose() *v1.LocalizedPose {
-	if x != nil {
-		return x.ParentMakerPose
-	}
-	return nil
-}
-
 type MarkerDeleteMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Id of the marker to be deleted
@@ -206,19 +197,18 @@ var File_ar_v1_authoring_marker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_authoring_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x1car/v1/authoring_marker.proto\x12\x05ar.v1\x1a\x16geometry/v1/pose.proto\"i\n" +
+	"\x1car/v1/authoring_marker.proto\x12\x05ar.v1\"i\n" +
 	"\x10MarkerNewMessage\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vmarker_text\x18\x03 \x01(\tR\n" +
-	"markerText\"\xc4\x01\n" +
+	"markerText\"|\n" +
 	"\x13MarkerUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vmarker_text\x18\x04 \x01(\tR\n" +
-	"markerText\x12F\n" +
-	"\x11parent_maker_pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x0fparentMakerPose\"%\n" +
+	"markerText\"%\n" +
 	"\x13MarkerDeleteMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02idB\x90\x01\n" +
 	"\tcom.ar.v1B\x14AuthoringMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
@@ -240,15 +230,13 @@ var file_ar_v1_authoring_marker_proto_goTypes = []any{
 	(*MarkerNewMessage)(nil),    // 0: ar.v1.MarkerNewMessage
 	(*MarkerUpdateMessage)(nil), // 1: ar.v1.MarkerUpdateMessage
 	(*MarkerDeleteMessage)(nil), // 2: ar.v1.MarkerDeleteMessage
-	(*v1.LocalizedPose)(nil),    // 3: geometry.v1.LocalizedPose
 }
 var file_ar_v1_authoring_marker_proto_depIdxs = []int32{
-	3, // 0: ar.v1.MarkerUpdateMessage.parent_maker_pose:type_name -> geometry.v1.LocalizedPose
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_authoring_marker_proto_init() }

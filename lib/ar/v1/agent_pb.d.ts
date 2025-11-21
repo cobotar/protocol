@@ -13,9 +13,9 @@ import type { Property } from "./property_pb";
 export declare const file_ar_v1_agent: GenFile;
 
 /**
- * @generated from message ar.v1.Agent
+ * @generated from message ar.v1.AgentMessage
  */
-export declare type Agent = Message<"ar.v1.Agent"> & {
+export declare type AgentMessage = Message<"ar.v1.AgentMessage"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -58,10 +58,10 @@ export declare type Agent = Message<"ar.v1.Agent"> & {
 };
 
 /**
- * Describes the message ar.v1.Agent.
- * Use `create(AgentSchema)` to create a new message.
+ * Describes the message ar.v1.AgentMessage.
+ * Use `create(AgentMessageSchema)` to create a new message.
  */
-export declare const AgentSchema: GenMessage<Agent>;
+export declare const AgentMessageSchema: GenMessage<AgentMessage>;
 
 /**
  * @generated from enum ar.v1.AgentType

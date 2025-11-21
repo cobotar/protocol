@@ -1,4 +1,3 @@
-from ar.v1 import agent_pb2 as _agent_pb2
 from ar.v1 import property_pb2 as _property_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -9,18 +8,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TemplateMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "agents", "properties")
+    __slots__ = ("id", "name", "description", "properties")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    AGENTS_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
-    agents: _containers.RepeatedCompositeFieldContainer[_agent_pb2.Agent]
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., agents: _Optional[_Iterable[_Union[_agent_pb2.Agent, _Mapping]]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
 
 class TemplateInfoMessage(_message.Message):
     __slots__ = ("id", "name", "description")

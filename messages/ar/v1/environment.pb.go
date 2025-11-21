@@ -22,6 +22,122 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type EnvironmentType int32
+
+const (
+	EnvironmentType_ENVIRONMENT_TYPE_UNSPECIFIED       EnvironmentType = 0
+	EnvironmentType_ENVIRONMENT_TYPE_STORAGE           EnvironmentType = 1
+	EnvironmentType_ENVIRONMENT_TYPE_MANUAL_STATION    EnvironmentType = 2
+	EnvironmentType_ENVIRONMENT_TYPE_AUTOMATIC_STATION EnvironmentType = 3
+	EnvironmentType_ENVIRONMENT_TYPE_HYBRID_STATION    EnvironmentType = 4
+	EnvironmentType_ENVIRONMENT_TYPE_MANUAL_LINE       EnvironmentType = 5
+	EnvironmentType_ENVIRONMENT_TYPE_AUTOMATIC_LINE    EnvironmentType = 6
+	EnvironmentType_ENVIRONMENT_TYPE_HYBRID_LINE       EnvironmentType = 7
+)
+
+// Enum value maps for EnvironmentType.
+var (
+	EnvironmentType_name = map[int32]string{
+		0: "ENVIRONMENT_TYPE_UNSPECIFIED",
+		1: "ENVIRONMENT_TYPE_STORAGE",
+		2: "ENVIRONMENT_TYPE_MANUAL_STATION",
+		3: "ENVIRONMENT_TYPE_AUTOMATIC_STATION",
+		4: "ENVIRONMENT_TYPE_HYBRID_STATION",
+		5: "ENVIRONMENT_TYPE_MANUAL_LINE",
+		6: "ENVIRONMENT_TYPE_AUTOMATIC_LINE",
+		7: "ENVIRONMENT_TYPE_HYBRID_LINE",
+	}
+	EnvironmentType_value = map[string]int32{
+		"ENVIRONMENT_TYPE_UNSPECIFIED":       0,
+		"ENVIRONMENT_TYPE_STORAGE":           1,
+		"ENVIRONMENT_TYPE_MANUAL_STATION":    2,
+		"ENVIRONMENT_TYPE_AUTOMATIC_STATION": 3,
+		"ENVIRONMENT_TYPE_HYBRID_STATION":    4,
+		"ENVIRONMENT_TYPE_MANUAL_LINE":       5,
+		"ENVIRONMENT_TYPE_AUTOMATIC_LINE":    6,
+		"ENVIRONMENT_TYPE_HYBRID_LINE":       7,
+	}
+)
+
+func (x EnvironmentType) Enum() *EnvironmentType {
+	p := new(EnvironmentType)
+	*p = x
+	return p
+}
+
+func (x EnvironmentType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnvironmentType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_environment_proto_enumTypes[0].Descriptor()
+}
+
+func (EnvironmentType) Type() protoreflect.EnumType {
+	return &file_ar_v1_environment_proto_enumTypes[0]
+}
+
+func (x EnvironmentType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnvironmentType.Descriptor instead.
+func (EnvironmentType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{0}
+}
+
+type MarkerLocation struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Location      *v1.LocalizedPose      `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MarkerLocation) Reset() {
+	*x = MarkerLocation{}
+	mi := &file_ar_v1_environment_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MarkerLocation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MarkerLocation) ProtoMessage() {}
+
+func (x *MarkerLocation) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_environment_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MarkerLocation.ProtoReflect.Descriptor instead.
+func (*MarkerLocation) Descriptor() ([]byte, []int) {
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *MarkerLocation) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *MarkerLocation) GetLocation() *v1.LocalizedPose {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
 type AgentLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -32,7 +148,7 @@ type AgentLocation struct {
 
 func (x *AgentLocation) Reset() {
 	*x = AgentLocation{}
-	mi := &file_ar_v1_environment_proto_msgTypes[0]
+	mi := &file_ar_v1_environment_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +160,7 @@ func (x *AgentLocation) String() string {
 func (*AgentLocation) ProtoMessage() {}
 
 func (x *AgentLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[0]
+	mi := &file_ar_v1_environment_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +173,7 @@ func (x *AgentLocation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgentLocation.ProtoReflect.Descriptor instead.
 func (*AgentLocation) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AgentLocation) GetId() string {
@@ -84,7 +200,7 @@ type PartLocation struct {
 
 func (x *PartLocation) Reset() {
 	*x = PartLocation{}
-	mi := &file_ar_v1_environment_proto_msgTypes[1]
+	mi := &file_ar_v1_environment_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +212,7 @@ func (x *PartLocation) String() string {
 func (*PartLocation) ProtoMessage() {}
 
 func (x *PartLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[1]
+	mi := &file_ar_v1_environment_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +225,7 @@ func (x *PartLocation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PartLocation.ProtoReflect.Descriptor instead.
 func (*PartLocation) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PartLocation) GetId() string {
@@ -136,7 +252,7 @@ type ToolLocation struct {
 
 func (x *ToolLocation) Reset() {
 	*x = ToolLocation{}
-	mi := &file_ar_v1_environment_proto_msgTypes[2]
+	mi := &file_ar_v1_environment_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -148,7 +264,7 @@ func (x *ToolLocation) String() string {
 func (*ToolLocation) ProtoMessage() {}
 
 func (x *ToolLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[2]
+	mi := &file_ar_v1_environment_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -161,7 +277,7 @@ func (x *ToolLocation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ToolLocation.ProtoReflect.Descriptor instead.
 func (*ToolLocation) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{2}
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ToolLocation) GetId() string {
@@ -178,36 +294,37 @@ func (x *ToolLocation) GetLocation() *v1.LocalizedPose {
 	return nil
 }
 
-type Environment struct {
+type EnvironmentMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Markers       []*MarkerMessage       `protobuf:"bytes,5,rep,name=markers,proto3" json:"markers,omitempty"` // Markers associated with this environment. The first marker in the list will be the origin of the environment.
-	Agents        []*AgentLocation       `protobuf:"bytes,6,rep,name=agents,proto3" json:"agents,omitempty"`
-	Parts         []*PartLocation        `protobuf:"bytes,7,rep,name=parts,proto3" json:"parts,omitempty"`
-	Tools         []*ToolLocation        `protobuf:"bytes,8,rep,name=tools,proto3" json:"tools,omitempty"`
-	Properties    []*Property            `protobuf:"bytes,9,rep,name=properties,proto3" json:"properties,omitempty"`
+	Type          EnvironmentType        `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.EnvironmentType" json:"type,omitempty"`
+	Markers       []*MarkerLocation      `protobuf:"bytes,6,rep,name=markers,proto3" json:"markers,omitempty"` // Markers associated with this environment.
+	Agents        []*AgentLocation       `protobuf:"bytes,7,rep,name=agents,proto3" json:"agents,omitempty"`
+	Parts         []*PartLocation        `protobuf:"bytes,8,rep,name=parts,proto3" json:"parts,omitempty"`
+	Tools         []*ToolLocation        `protobuf:"bytes,9,rep,name=tools,proto3" json:"tools,omitempty"`
+	Properties    []*Property            `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Environment) Reset() {
-	*x = Environment{}
-	mi := &file_ar_v1_environment_proto_msgTypes[3]
+func (x *EnvironmentMessage) Reset() {
+	*x = EnvironmentMessage{}
+	mi := &file_ar_v1_environment_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Environment) String() string {
+func (x *EnvironmentMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Environment) ProtoMessage() {}
+func (*EnvironmentMessage) ProtoMessage() {}
 
-func (x *Environment) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[3]
+func (x *EnvironmentMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_environment_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -218,70 +335,121 @@ func (x *Environment) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Environment.ProtoReflect.Descriptor instead.
-func (*Environment) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{3}
+// Deprecated: Use EnvironmentMessage.ProtoReflect.Descriptor instead.
+func (*EnvironmentMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *Environment) GetId() string {
+func (x *EnvironmentMessage) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Environment) GetName() string {
+func (x *EnvironmentMessage) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Environment) GetIcon() string {
+func (x *EnvironmentMessage) GetIcon() string {
 	if x != nil {
 		return x.Icon
 	}
 	return ""
 }
 
-func (x *Environment) GetDescription() string {
+func (x *EnvironmentMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *Environment) GetMarkers() []*MarkerMessage {
+func (x *EnvironmentMessage) GetType() EnvironmentType {
+	if x != nil {
+		return x.Type
+	}
+	return EnvironmentType_ENVIRONMENT_TYPE_UNSPECIFIED
+}
+
+func (x *EnvironmentMessage) GetMarkers() []*MarkerLocation {
 	if x != nil {
 		return x.Markers
 	}
 	return nil
 }
 
-func (x *Environment) GetAgents() []*AgentLocation {
+func (x *EnvironmentMessage) GetAgents() []*AgentLocation {
 	if x != nil {
 		return x.Agents
 	}
 	return nil
 }
 
-func (x *Environment) GetParts() []*PartLocation {
+func (x *EnvironmentMessage) GetParts() []*PartLocation {
 	if x != nil {
 		return x.Parts
 	}
 	return nil
 }
 
-func (x *Environment) GetTools() []*ToolLocation {
+func (x *EnvironmentMessage) GetTools() []*ToolLocation {
 	if x != nil {
 		return x.Tools
 	}
 	return nil
 }
 
-func (x *Environment) GetProperties() []*Property {
+func (x *EnvironmentMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
+	}
+	return nil
+}
+
+type EnvironmentsMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Environments  []*EnvironmentMessage  `protobuf:"bytes,1,rep,name=environments,proto3" json:"environments,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnvironmentsMessage) Reset() {
+	*x = EnvironmentsMessage{}
+	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnvironmentsMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnvironmentsMessage) ProtoMessage() {}
+
+func (x *EnvironmentsMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnvironmentsMessage.ProtoReflect.Descriptor instead.
+func (*EnvironmentsMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *EnvironmentsMessage) GetEnvironments() []*EnvironmentMessage {
+	if x != nil {
+		return x.Environments
 	}
 	return nil
 }
@@ -290,7 +458,10 @@ var File_ar_v1_environment_proto protoreflect.FileDescriptor
 
 const file_ar_v1_environment_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/environment.proto\x12\x05ar.v1\x1a\x12ar/v1/marker.proto\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"W\n" +
+	"\x17ar/v1/environment.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"X\n" +
+	"\x0eMarkerLocation\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"W\n" +
 	"\rAgentLocation\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
 	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"V\n" +
@@ -299,19 +470,32 @@ const file_ar_v1_environment_proto_rawDesc = "" +
 	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"V\n" +
 	"\fToolLocation\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"\xcc\x02\n" +
-	"\vEnvironment\x12\x0e\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"\x80\x03\n" +
+	"\x12EnvironmentMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12.\n" +
-	"\amarkers\x18\x05 \x03(\v2\x14.ar.v1.MarkerMessageR\amarkers\x12,\n" +
-	"\x06agents\x18\x06 \x03(\v2\x14.ar.v1.AgentLocationR\x06agents\x12)\n" +
-	"\x05parts\x18\a \x03(\v2\x13.ar.v1.PartLocationR\x05parts\x12)\n" +
-	"\x05tools\x18\b \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x16.ar.v1.EnvironmentTypeR\x04type\x12/\n" +
+	"\amarkers\x18\x06 \x03(\v2\x15.ar.v1.MarkerLocationR\amarkers\x12,\n" +
+	"\x06agents\x18\a \x03(\v2\x14.ar.v1.AgentLocationR\x06agents\x12)\n" +
+	"\x05parts\x18\b \x03(\v2\x13.ar.v1.PartLocationR\x05parts\x12)\n" +
+	"\x05tools\x18\t \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\x12/\n" +
 	"\n" +
-	"properties\x18\t \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"propertiesB\x8c\x01\n" +
+	"properties\x18\n" +
+	" \x03(\v2\x0f.ar.v1.PropertyR\n" +
+	"properties\"T\n" +
+	"\x13EnvironmentsMessage\x12=\n" +
+	"\fenvironments\x18\x01 \x03(\v2\x19.ar.v1.EnvironmentMessageR\fenvironments*\xac\x02\n" +
+	"\x0fEnvironmentType\x12 \n" +
+	"\x1cENVIRONMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18ENVIRONMENT_TYPE_STORAGE\x10\x01\x12#\n" +
+	"\x1fENVIRONMENT_TYPE_MANUAL_STATION\x10\x02\x12&\n" +
+	"\"ENVIRONMENT_TYPE_AUTOMATIC_STATION\x10\x03\x12#\n" +
+	"\x1fENVIRONMENT_TYPE_HYBRID_STATION\x10\x04\x12 \n" +
+	"\x1cENVIRONMENT_TYPE_MANUAL_LINE\x10\x05\x12#\n" +
+	"\x1fENVIRONMENT_TYPE_AUTOMATIC_LINE\x10\x06\x12 \n" +
+	"\x1cENVIRONMENT_TYPE_HYBRID_LINE\x10\aB\x8c\x01\n" +
 	"\tcom.ar.v1B\x10EnvironmentProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -326,30 +510,36 @@ func file_ar_v1_environment_proto_rawDescGZIP() []byte {
 	return file_ar_v1_environment_proto_rawDescData
 }
 
-var file_ar_v1_environment_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ar_v1_environment_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_ar_v1_environment_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_ar_v1_environment_proto_goTypes = []any{
-	(*AgentLocation)(nil),    // 0: ar.v1.AgentLocation
-	(*PartLocation)(nil),     // 1: ar.v1.PartLocation
-	(*ToolLocation)(nil),     // 2: ar.v1.ToolLocation
-	(*Environment)(nil),      // 3: ar.v1.Environment
-	(*v1.LocalizedPose)(nil), // 4: geometry.v1.LocalizedPose
-	(*MarkerMessage)(nil),    // 5: ar.v1.MarkerMessage
-	(*Property)(nil),         // 6: ar.v1.Property
+	(EnvironmentType)(0),        // 0: ar.v1.EnvironmentType
+	(*MarkerLocation)(nil),      // 1: ar.v1.MarkerLocation
+	(*AgentLocation)(nil),       // 2: ar.v1.AgentLocation
+	(*PartLocation)(nil),        // 3: ar.v1.PartLocation
+	(*ToolLocation)(nil),        // 4: ar.v1.ToolLocation
+	(*EnvironmentMessage)(nil),  // 5: ar.v1.EnvironmentMessage
+	(*EnvironmentsMessage)(nil), // 6: ar.v1.EnvironmentsMessage
+	(*v1.LocalizedPose)(nil),    // 7: geometry.v1.LocalizedPose
+	(*Property)(nil),            // 8: ar.v1.Property
 }
 var file_ar_v1_environment_proto_depIdxs = []int32{
-	4, // 0: ar.v1.AgentLocation.location:type_name -> geometry.v1.LocalizedPose
-	4, // 1: ar.v1.PartLocation.location:type_name -> geometry.v1.LocalizedPose
-	4, // 2: ar.v1.ToolLocation.location:type_name -> geometry.v1.LocalizedPose
-	5, // 3: ar.v1.Environment.markers:type_name -> ar.v1.MarkerMessage
-	0, // 4: ar.v1.Environment.agents:type_name -> ar.v1.AgentLocation
-	1, // 5: ar.v1.Environment.parts:type_name -> ar.v1.PartLocation
-	2, // 6: ar.v1.Environment.tools:type_name -> ar.v1.ToolLocation
-	6, // 7: ar.v1.Environment.properties:type_name -> ar.v1.Property
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	7,  // 0: ar.v1.MarkerLocation.location:type_name -> geometry.v1.LocalizedPose
+	7,  // 1: ar.v1.AgentLocation.location:type_name -> geometry.v1.LocalizedPose
+	7,  // 2: ar.v1.PartLocation.location:type_name -> geometry.v1.LocalizedPose
+	7,  // 3: ar.v1.ToolLocation.location:type_name -> geometry.v1.LocalizedPose
+	0,  // 4: ar.v1.EnvironmentMessage.type:type_name -> ar.v1.EnvironmentType
+	1,  // 5: ar.v1.EnvironmentMessage.markers:type_name -> ar.v1.MarkerLocation
+	2,  // 6: ar.v1.EnvironmentMessage.agents:type_name -> ar.v1.AgentLocation
+	3,  // 7: ar.v1.EnvironmentMessage.parts:type_name -> ar.v1.PartLocation
+	4,  // 8: ar.v1.EnvironmentMessage.tools:type_name -> ar.v1.ToolLocation
+	8,  // 9: ar.v1.EnvironmentMessage.properties:type_name -> ar.v1.Property
+	5,  // 10: ar.v1.EnvironmentsMessage.environments:type_name -> ar.v1.EnvironmentMessage
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_environment_proto_init() }
@@ -357,20 +547,20 @@ func file_ar_v1_environment_proto_init() {
 	if File_ar_v1_environment_proto != nil {
 		return
 	}
-	file_ar_v1_marker_proto_init()
 	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_environment_proto_rawDesc), len(file_ar_v1_environment_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   4,
+			NumEnums:      1,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ar_v1_environment_proto_goTypes,
 		DependencyIndexes: file_ar_v1_environment_proto_depIdxs,
+		EnumInfos:         file_ar_v1_environment_proto_enumTypes,
 		MessageInfos:      file_ar_v1_environment_proto_msgTypes,
 	}.Build()
 	File_ar_v1_environment_proto = out.File

@@ -2,16 +2,36 @@
 // @generated from file ar/v1/environment.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb";
-import type { MarkerMessage } from "./marker_pb";
 import type { Property } from "./property_pb";
 
 /**
  * Describes the file ar/v1/environment.proto.
  */
 export declare const file_ar_v1_environment: GenFile;
+
+/**
+ * @generated from message ar.v1.MarkerLocation
+ */
+export declare type MarkerLocation = Message<"ar.v1.MarkerLocation"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose location = 2;
+   */
+  location?: LocalizedPose;
+};
+
+/**
+ * Describes the message ar.v1.MarkerLocation.
+ * Use `create(MarkerLocationSchema)` to create a new message.
+ */
+export declare const MarkerLocationSchema: GenMessage<MarkerLocation>;
 
 /**
  * @generated from message ar.v1.AgentLocation
@@ -77,9 +97,9 @@ export declare type ToolLocation = Message<"ar.v1.ToolLocation"> & {
 export declare const ToolLocationSchema: GenMessage<ToolLocation>;
 
 /**
- * @generated from message ar.v1.Environment
+ * @generated from message ar.v1.EnvironmentMessage
  */
-export declare type Environment = Message<"ar.v1.Environment"> & {
+export declare type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -101,36 +121,107 @@ export declare type Environment = Message<"ar.v1.Environment"> & {
   description: string;
 
   /**
-   * Markers associated with this environment. The first marker in the list will be the origin of the environment.
-   *
-   * @generated from field: repeated ar.v1.MarkerMessage markers = 5;
+   * @generated from field: ar.v1.EnvironmentType type = 5;
    */
-  markers: MarkerMessage[];
+  type: EnvironmentType;
 
   /**
-   * @generated from field: repeated ar.v1.AgentLocation agents = 6;
+   * Markers associated with this environment.
+   *
+   * @generated from field: repeated ar.v1.MarkerLocation markers = 6;
+   */
+  markers: MarkerLocation[];
+
+  /**
+   * @generated from field: repeated ar.v1.AgentLocation agents = 7;
    */
   agents: AgentLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.PartLocation parts = 7;
+   * @generated from field: repeated ar.v1.PartLocation parts = 8;
    */
   parts: PartLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.ToolLocation tools = 8;
+   * @generated from field: repeated ar.v1.ToolLocation tools = 9;
    */
   tools: ToolLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.Property properties = 9;
+   * @generated from field: repeated ar.v1.Property properties = 10;
    */
   properties: Property[];
 };
 
 /**
- * Describes the message ar.v1.Environment.
- * Use `create(EnvironmentSchema)` to create a new message.
+ * Describes the message ar.v1.EnvironmentMessage.
+ * Use `create(EnvironmentMessageSchema)` to create a new message.
  */
-export declare const EnvironmentSchema: GenMessage<Environment>;
+export declare const EnvironmentMessageSchema: GenMessage<EnvironmentMessage>;
+
+/**
+ * @generated from message ar.v1.EnvironmentsMessage
+ */
+export declare type EnvironmentsMessage = Message<"ar.v1.EnvironmentsMessage"> & {
+  /**
+   * @generated from field: repeated ar.v1.EnvironmentMessage environments = 1;
+   */
+  environments: EnvironmentMessage[];
+};
+
+/**
+ * Describes the message ar.v1.EnvironmentsMessage.
+ * Use `create(EnvironmentsMessageSchema)` to create a new message.
+ */
+export declare const EnvironmentsMessageSchema: GenMessage<EnvironmentsMessage>;
+
+/**
+ * @generated from enum ar.v1.EnvironmentType
+ */
+export enum EnvironmentType {
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_STORAGE = 1;
+   */
+  STORAGE = 1,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_MANUAL_STATION = 2;
+   */
+  MANUAL_STATION = 2,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_AUTOMATIC_STATION = 3;
+   */
+  AUTOMATIC_STATION = 3,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_HYBRID_STATION = 4;
+   */
+  HYBRID_STATION = 4,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_MANUAL_LINE = 5;
+   */
+  MANUAL_LINE = 5,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_AUTOMATIC_LINE = 6;
+   */
+  AUTOMATIC_LINE = 6,
+
+  /**
+   * @generated from enum value: ENVIRONMENT_TYPE_HYBRID_LINE = 7;
+   */
+  HYBRID_LINE = 7,
+}
+
+/**
+ * Describes the enum ar.v1.EnvironmentType.
+ */
+export declare const EnvironmentTypeSchema: GenEnum<EnvironmentType>;
 

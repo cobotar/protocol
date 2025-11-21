@@ -36,7 +36,7 @@
     - [LocalizedState](#geometry-v1-LocalizedState)
   
 - [ar/v1/agent.proto](#ar_v1_agent-proto)
-    - [Agent](#ar-v1-Agent)
+    - [AgentMessage](#ar-v1-AgentMessage)
   
     - [AgentType](#ar-v1-AgentType)
     - [EndEffectorType](#ar-v1-EndEffectorType)
@@ -63,16 +63,46 @@
     - [ActionNewMessage](#ar-v1-ActionNewMessage)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
   
-- [ar/v1/authoring_config.proto](#ar_v1_authoring_config-proto)
-    - [ConfigDeleteMessage](#ar-v1-ConfigDeleteMessage)
-    - [ConfigNewMessage](#ar-v1-ConfigNewMessage)
-    - [ConfigUpdateMessage](#ar-v1-ConfigUpdateMessage)
+- [ar/v1/authoring_agent.proto](#ar_v1_authoring_agent-proto)
+    - [AgentDeleteMessage](#ar-v1-AgentDeleteMessage)
+    - [AgentNewMessage](#ar-v1-AgentNewMessage)
+    - [AgentUpdateMessage](#ar-v1-AgentUpdateMessage)
+  
+- [ar/v1/authoring_ar_config.proto](#ar_v1_authoring_ar_config-proto)
+    - [ARConfigDeleteMessage](#ar-v1-ARConfigDeleteMessage)
+    - [ARConfigNewMessage](#ar-v1-ARConfigNewMessage)
+    - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
+  
+- [ar/v1/environment.proto](#ar_v1_environment-proto)
+    - [AgentLocation](#ar-v1-AgentLocation)
+    - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
+    - [EnvironmentsMessage](#ar-v1-EnvironmentsMessage)
+    - [MarkerLocation](#ar-v1-MarkerLocation)
+    - [PartLocation](#ar-v1-PartLocation)
+    - [ToolLocation](#ar-v1-ToolLocation)
+  
+    - [EnvironmentType](#ar-v1-EnvironmentType)
+  
+- [ar/v1/authoring_environment.proto](#ar_v1_authoring_environment-proto)
+    - [EnvironmentDeleteMessage](#ar-v1-EnvironmentDeleteMessage)
+    - [EnvironmentNewMessage](#ar-v1-EnvironmentNewMessage)
+    - [EnvironmentUpdateMessage](#ar-v1-EnvironmentUpdateMessage)
   
 - [ar/v1/authoring_feedback.proto](#ar_v1_authoring_feedback-proto)
     - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
     - [FeedbackDeleteMessage](#ar-v1-FeedbackDeleteMessage)
     - [FeedbackNewMessage](#ar-v1-FeedbackNewMessage)
     - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
+  
+- [ar/v1/mapping.proto](#ar_v1_mapping-proto)
+    - [ARPriority](#ar-v1-ARPriority)
+    - [MappingMessage](#ar-v1-MappingMessage)
+    - [MappingsMessage](#ar-v1-MappingsMessage)
+  
+- [ar/v1/authoring_mapping.proto](#ar_v1_authoring_mapping-proto)
+    - [MappingDeleteMessage](#ar-v1-MappingDeleteMessage)
+    - [MappingNewMessage](#ar-v1-MappingNewMessage)
+    - [MappingUpdateMessage](#ar-v1-MappingUpdateMessage)
   
 - [ar/v1/authoring_marker.proto](#ar_v1_authoring_marker-proto)
     - [MarkerDeleteMessage](#ar-v1-MarkerDeleteMessage)
@@ -82,18 +112,6 @@
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
-- [ar/v1/marker.proto](#ar_v1_marker-proto)
-    - [MarkerMessage](#ar-v1-MarkerMessage)
-    - [MarkersMessage](#ar-v1-MarkersMessage)
-  
-    - [MarkerType](#ar-v1-MarkerType)
-  
-- [ar/v1/environment.proto](#ar_v1_environment-proto)
-    - [AgentLocation](#ar-v1-AgentLocation)
-    - [Environment](#ar-v1-Environment)
-    - [PartLocation](#ar-v1-PartLocation)
-    - [ToolLocation](#ar-v1-ToolLocation)
-  
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
     - [FeedbackInfosMessage](#ar-v1-FeedbackInfosMessage)
@@ -101,6 +119,12 @@
 - [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
     - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
     - [HelperInfosMessage](#ar-v1-HelperInfosMessage)
+  
+- [ar/v1/marker.proto](#ar_v1_marker-proto)
+    - [MarkerMessage](#ar-v1-MarkerMessage)
+    - [MarkersMessage](#ar-v1-MarkersMessage)
+  
+    - [MarkerType](#ar-v1-MarkerType)
   
 - [ar/v1/template.proto](#ar_v1_template-proto)
     - [TemplateInfoMessage](#ar-v1-TemplateInfoMessage)
@@ -634,9 +658,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-Agent"></a>
+<a name="ar-v1-AgentMessage"></a>
 
-### Agent
+### AgentMessage
 
 
 
@@ -978,16 +1002,85 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar_v1_authoring_config-proto"></a>
+<a name="ar_v1_authoring_agent-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/authoring_config.proto
+## ar/v1/authoring_agent.proto
 
 
 
-<a name="ar-v1-ConfigDeleteMessage"></a>
+<a name="ar-v1-AgentDeleteMessage"></a>
 
-### ConfigDeleteMessage
+### AgentDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Id of the marker to be deleted |
+
+
+
+
+
+
+<a name="ar-v1-AgentNewMessage"></a>
+
+### AgentNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| type | [AgentType](#ar-v1-AgentType) |  |  |
+| operator_type | [OperatorType](#ar-v1-OperatorType) |  |  |
+| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
+| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-AgentUpdateMessage"></a>
+
+### AgentUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Unique id of the maker (this won&#39;t be changed) |
+| name | [string](#string) |  |  |
+| operator_type | [OperatorType](#ar-v1-OperatorType) |  |  |
+| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
+| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_ar_config-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_ar_config.proto
+
+
+
+<a name="ar-v1-ARConfigDeleteMessage"></a>
+
+### ARConfigDeleteMessage
 
 
 
@@ -1000,9 +1093,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-ConfigNewMessage"></a>
+<a name="ar-v1-ARConfigNewMessage"></a>
 
-### ConfigNewMessage
+### ARConfigNewMessage
 
 
 
@@ -1017,9 +1110,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-ConfigUpdateMessage"></a>
+<a name="ar-v1-ARConfigUpdateMessage"></a>
 
-### ConfigUpdateMessage
+### ARConfigUpdateMessage
 
 
 
@@ -1033,6 +1126,216 @@ A simple pose consisting of a position and orientation
 | actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
+| ar_disappear_distance | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_environment-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/environment.proto
+
+
+
+<a name="ar-v1-AgentLocation"></a>
+
+### AgentLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-EnvironmentMessage"></a>
+
+### EnvironmentMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
+| markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated | Markers associated with this environment. |
+| agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
+| parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
+| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
+| properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-EnvironmentsMessage"></a>
+
+### EnvironmentsMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| environments | [EnvironmentMessage](#ar-v1-EnvironmentMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-MarkerLocation"></a>
+
+### MarkerLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PartLocation"></a>
+
+### PartLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ToolLocation"></a>
+
+### ToolLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-EnvironmentType"></a>
+
+### EnvironmentType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ENVIRONMENT_TYPE_UNSPECIFIED | 0 |  |
+| ENVIRONMENT_TYPE_STORAGE | 1 |  |
+| ENVIRONMENT_TYPE_MANUAL_STATION | 2 |  |
+| ENVIRONMENT_TYPE_AUTOMATIC_STATION | 3 |  |
+| ENVIRONMENT_TYPE_HYBRID_STATION | 4 |  |
+| ENVIRONMENT_TYPE_MANUAL_LINE | 5 |  |
+| ENVIRONMENT_TYPE_AUTOMATIC_LINE | 6 |  |
+| ENVIRONMENT_TYPE_HYBRID_LINE | 7 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_environment-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_environment.proto
+
+
+
+<a name="ar-v1-EnvironmentDeleteMessage"></a>
+
+### EnvironmentDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Id of the marker to be deleted |
+
+
+
+
+
+
+<a name="ar-v1-EnvironmentNewMessage"></a>
+
+### EnvironmentNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-EnvironmentUpdateMessage"></a>
+
+### EnvironmentUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Unique id of the environment (this won&#39;t be changed) |
+| name | [string](#string) |  | Name of the environment |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  | Description of the environment |
+| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
+| markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated |  |
+| agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
+| parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
+| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
 
 
 
@@ -1136,6 +1439,141 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="ar_v1_mapping-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/mapping.proto
+
+
+
+<a name="ar-v1-ARPriority"></a>
+
+### ARPriority
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ar_config_id | [string](#string) |  |  |
+| active_property_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-MappingMessage"></a>
+
+### MappingMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| environment_ids | [string](#string) | repeated |  |
+| ar_config_priorities | [ARPriority](#ar-v1-ARPriority) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-MappingsMessage"></a>
+
+### MappingsMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_authoring_mapping-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/authoring_mapping.proto
+
+
+
+<a name="ar-v1-MappingDeleteMessage"></a>
+
+### MappingDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Id of the marker to be deleted |
+
+
+
+
+
+
+<a name="ar-v1-MappingNewMessage"></a>
+
+### MappingNewMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-MappingUpdateMessage"></a>
+
+### MappingUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| environment_ids | [string](#string) | repeated |  |
+| ar_config_priorities | [ARPriority](#ar-v1-ARPriority) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_authoring_marker-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1187,7 +1625,6 @@ A simple pose consisting of a position and orientation
 | name | [string](#string) |  | Name of the maker |
 | description | [string](#string) |  | Description of the maker |
 | marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
-| parent_maker_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Location of this marker in relation to its parent |
 
 
 
@@ -1221,156 +1658,6 @@ A simple pose consisting of a position and orientation
 | request_id | [string](#string) |  |  |
 | config_id | [string](#string) |  | Id of the configuration to be loaded |
 | instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_marker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/marker.proto
-
-
-
-<a name="ar-v1-MarkerMessage"></a>
-
-### MarkerMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
-| type | [MarkerType](#ar-v1-MarkerType) |  |  |
-| parent_maker_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | repeated common.v1.Agent agents = 6; // List of agents associated with this marker repeated ar.v1.ARConfigInfoMessage ar_configs = 7; // List of ARConfigs which can be used to retrieve a specific configuration int64 ar_disappear_distance = 8; // Threshold distance in cm when the UI is expected to disable the AR for this marker string parent_marker_id = 9; // TODO: this could perhaps be used to improve accuracy TODO: should: fixtures for BoP, tools, parts, and capabilities also be defined here? It should belong to the physical setup and not the AR-config Part location |
-
-
-
-
-
-
-<a name="ar-v1-MarkersMessage"></a>
-
-### MarkersMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| markers | [MarkerMessage](#ar-v1-MarkerMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-MarkerType"></a>
-
-### MarkerType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MARKER_TYPE_UNSPECIFIED | 0 |  |
-| MARKER_TYPE_QR_CODE | 1 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_environment-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/environment.proto
-
-
-
-<a name="ar-v1-AgentLocation"></a>
-
-### AgentLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-Environment"></a>
-
-### Environment
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| markers | [MarkerMessage](#ar-v1-MarkerMessage) | repeated | Markers associated with this environment. The first marker in the list will be the origin of the environment. |
-| agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
-| parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
-| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-PartLocation"></a>
-
-### PartLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ToolLocation"></a>
-
-### ToolLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 
 
 
@@ -1495,6 +1782,68 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="ar_v1_marker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/marker.proto
+
+
+
+<a name="ar-v1-MarkerMessage"></a>
+
+### MarkerMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
+| type | [MarkerType](#ar-v1-MarkerType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-MarkersMessage"></a>
+
+### MarkersMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markers | [MarkerMessage](#ar-v1-MarkerMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-MarkerType"></a>
+
+### MarkerType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MARKER_TYPE_UNSPECIFIED | 0 |  |
+| MARKER_TYPE_QR_CODE | 1 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_template-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1545,8 +1894,9 @@ TODO: consider this a bit more?
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| agents | [Agent](#ar-v1-Agent) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated | Feedback Actions |
+| properties | [Property](#ar-v1-Property) | repeated | repeated ar.v1.Agent agents = 5;
+
+Feedback Actions |
 
 
 

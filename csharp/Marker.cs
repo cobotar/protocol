@@ -24,23 +24,21 @@ namespace Messages.AR.V1 {
     static MarkerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhZnZW9tZXRyeS92MS9wb3Nl",
-            "LnByb3RvIuUBCg1NYXJrZXJNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRu",
-            "YW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
-            "dGlvbhIfCgttYXJrZXJfdGV4dBgEIAEoCVIKbWFya2VyVGV4dBIlCgR0eXBl",
-            "GAUgASgOMhEuYXIudjEuTWFya2VyVHlwZVIEdHlwZRJGChFwYXJlbnRfbWFr",
-            "ZXJfcG9zZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSD3Bh",
-            "cmVudE1ha2VyUG9zZSJACg5NYXJrZXJzTWVzc2FnZRIuCgdtYXJrZXJzGAEg",
-            "AygLMhQuYXIudjEuTWFya2VyTWVzc2FnZVIHbWFya2VycypCCgpNYXJrZXJU",
-            "eXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZ",
-            "UEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYx",
-            "ogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1l",
-            "dGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIp0BCg1NYXJrZXJNZXNzYWdl",
+            "Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
+            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIfCgttYXJrZXJfdGV4dBgEIAEo",
+            "CVIKbWFya2VyVGV4dBIlCgR0eXBlGAUgASgOMhEuYXIudjEuTWFya2VyVHlw",
+            "ZVIEdHlwZSJACg5NYXJrZXJzTWVzc2FnZRIuCgdtYXJrZXJzGAEgAygLMhQu",
+            "YXIudjEuTWFya2VyTWVzc2FnZVIHbWFya2VycypCCgpNYXJrZXJUeXBlEhsK",
+            "F01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJf",
+            "Q09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5j",
+            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhY",
+            "qgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh",
+            "6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type", "ParentMakerPose" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkersMessage), global::Messages.AR.V1.MarkersMessage.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
@@ -96,7 +94,6 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       markerText_ = other.markerText_;
       type_ = other.type_;
-      parentMakerPose_ = other.parentMakerPose_ != null ? other.parentMakerPose_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -169,26 +166,6 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "parent_maker_pose" field.</summary>
-    public const int ParentMakerPoseFieldNumber = 6;
-    private global::Messages.Common.V1.LocalizedPose parentMakerPose_;
-    /// <summary>
-    ///repeated common.v1.Agent agents = 6; // List of agents associated with this marker
-    ///repeated ar.v1.ARConfigInfoMessage ar_configs = 7; // List of ARConfigs which can be used to retrieve a specific configuration
-    ///int64 ar_disappear_distance = 8; // Threshold distance in cm when the UI is expected to disable the AR for this marker
-    /// string parent_marker_id = 9; // TODO: this could perhaps be used to improve accuracy
-    /// TODO: should: fixtures for BoP, tools, parts, and capabilities also be defined here? It should belong to the physical setup and not the AR-config
-    /// Part location
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose ParentMakerPose {
-      get { return parentMakerPose_; }
-      set {
-        parentMakerPose_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -209,7 +186,6 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (MarkerText != other.MarkerText) return false;
       if (Type != other.Type) return false;
-      if (!object.Equals(ParentMakerPose, other.ParentMakerPose)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -222,7 +198,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (MarkerText.Length != 0) hash ^= MarkerText.GetHashCode();
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) hash ^= Type.GetHashCode();
-      if (parentMakerPose_ != null) hash ^= ParentMakerPose.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -261,10 +236,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (parentMakerPose_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(ParentMakerPose);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -295,10 +266,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (parentMakerPose_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(ParentMakerPose);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -323,9 +290,6 @@ namespace Messages.AR.V1 {
       }
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-      }
-      if (parentMakerPose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ParentMakerPose);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -353,12 +317,6 @@ namespace Messages.AR.V1 {
       }
       if (other.Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         Type = other.Type;
-      }
-      if (other.parentMakerPose_ != null) {
-        if (parentMakerPose_ == null) {
-          ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
-        }
-        ParentMakerPose.MergeFrom(other.ParentMakerPose);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -399,13 +357,6 @@ namespace Messages.AR.V1 {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
             break;
           }
-          case 50: {
-            if (parentMakerPose_ == null) {
-              ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(ParentMakerPose);
-            break;
-          }
         }
       }
     #endif
@@ -443,13 +394,6 @@ namespace Messages.AR.V1 {
           }
           case 40: {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
-            break;
-          }
-          case 50: {
-            if (parentMakerPose_ == null) {
-              ParentMakerPose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(ParentMakerPose);
             break;
           }
         }

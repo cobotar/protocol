@@ -4,7 +4,6 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb";
 
 /**
  * Describes the file ar/v1/marker.proto.
@@ -41,18 +40,6 @@ export declare type MarkerMessage = Message<"ar.v1.MarkerMessage"> & {
    * @generated from field: ar.v1.MarkerType type = 5;
    */
   type: MarkerType;
-
-  /**
-   * repeated common.v1.Agent agents = 6; // List of agents associated with this marker
-   * repeated ar.v1.ARConfigInfoMessage ar_configs = 7; // List of ARConfigs which can be used to retrieve a specific configuration
-   * int64 ar_disappear_distance = 8; // Threshold distance in cm when the UI is expected to disable the AR for this marker
-   * string parent_marker_id = 9; // TODO: this could perhaps be used to improve accuracy
-   * TODO: should: fixtures for BoP, tools, parts, and capabilities also be defined here? It should belong to the physical setup and not the AR-config
-   * Part location
-   *
-   * @generated from field: geometry.v1.LocalizedPose parent_maker_pose = 6;
-   */
-  parentMakerPose?: LocalizedPose;
 };
 
 /**

@@ -4,7 +4,6 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb";
 
 /**
  * Describes the file ar/v1/authoring_marker.proto.
@@ -68,13 +67,6 @@ export declare type MarkerUpdateMessage = Message<"ar.v1.MarkerUpdateMessage"> &
    * @generated from field: string marker_text = 4;
    */
   markerText: string;
-
-  /**
-   * Location of this marker in relation to its parent
-   *
-   * @generated from field: geometry.v1.LocalizedPose parent_maker_pose = 5;
-   */
-  parentMakerPose?: LocalizedPose;
 };
 
 /**

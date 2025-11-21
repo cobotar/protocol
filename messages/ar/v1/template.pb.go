@@ -23,12 +23,12 @@ const (
 
 // TODO: consider this a bit more?
 type TemplateMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Agents        []*Agent               `protobuf:"bytes,5,rep,name=agents,proto3" json:"agents,omitempty"`
-	Properties    []*Property            `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	// repeated ar.v1.Agent agents = 5;
+	Properties    []*Property `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -82,13 +82,6 @@ func (x *TemplateMessage) GetDescription() string {
 		return x.Description
 	}
 	return ""
-}
-
-func (x *TemplateMessage) GetAgents() []*Agent {
-	if x != nil {
-		return x.Agents
-	}
-	return nil
 }
 
 func (x *TemplateMessage) GetProperties() []*Property {
@@ -206,12 +199,11 @@ var File_ar_v1_template_proto protoreflect.FileDescriptor
 
 const file_ar_v1_template_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/template.proto\x12\x05ar.v1\x1a\x11ar/v1/agent.proto\x1a\x14ar/v1/property.proto\"\xae\x01\n" +
+	"\x14ar/v1/template.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\x88\x01\n" +
 	"\x0fTemplateMessage\x12\x0e\n" +
 	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12$\n" +
-	"\x06agents\x18\x05 \x03(\v2\f.ar.v1.AgentR\x06agents\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12/\n" +
 	"\n" +
 	"properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\"[\n" +
@@ -240,18 +232,16 @@ var file_ar_v1_template_proto_goTypes = []any{
 	(*TemplateMessage)(nil),      // 0: ar.v1.TemplateMessage
 	(*TemplateInfoMessage)(nil),  // 1: ar.v1.TemplateInfoMessage
 	(*TemplateInfoMessages)(nil), // 2: ar.v1.TemplateInfoMessages
-	(*Agent)(nil),                // 3: ar.v1.Agent
-	(*Property)(nil),             // 4: ar.v1.Property
+	(*Property)(nil),             // 3: ar.v1.Property
 }
 var file_ar_v1_template_proto_depIdxs = []int32{
-	3, // 0: ar.v1.TemplateMessage.agents:type_name -> ar.v1.Agent
-	4, // 1: ar.v1.TemplateMessage.properties:type_name -> ar.v1.Property
-	1, // 2: ar.v1.TemplateInfoMessages.templates:type_name -> ar.v1.TemplateInfoMessage
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 0: ar.v1.TemplateMessage.properties:type_name -> ar.v1.Property
+	1, // 1: ar.v1.TemplateInfoMessages.templates:type_name -> ar.v1.TemplateInfoMessage
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_template_proto_init() }
@@ -259,7 +249,6 @@ func file_ar_v1_template_proto_init() {
 	if File_ar_v1_template_proto != nil {
 		return
 	}
-	file_ar_v1_agent_proto_init()
 	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{

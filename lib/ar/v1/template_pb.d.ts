@@ -4,7 +4,6 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
-import type { Agent } from "./agent_pb";
 import type { Property } from "./property_pb";
 
 /**
@@ -34,11 +33,8 @@ export declare type TemplateMessage = Message<"ar.v1.TemplateMessage"> & {
   description: string;
 
   /**
-   * @generated from field: repeated ar.v1.Agent agents = 5;
-   */
-  agents: Agent[];
-
-  /**
+   * repeated ar.v1.Agent agents = 5;
+   *
    * Feedback
    * Actions
    *
