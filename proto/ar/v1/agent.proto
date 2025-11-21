@@ -42,7 +42,7 @@ enum EndEffectorType {
   END_EFFECTOR_TYPE_CUSTOM_MOUNT = 20;
 }
 
-message Agent {
+message AgentMessage {
   string id = 1;
   string name = 2;
   AgentType type = 3;

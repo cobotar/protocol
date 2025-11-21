@@ -1,12 +1,16 @@
 syntax = "proto3";
 package ar.v1;
 
-import "ar/v1/marker.proto";
 import "ar/v1/property.proto";
 import "geometry/v1/pose.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+message MarkerLocation {
+  string id = 1;
+  geometry.v1.LocalizedPose location = 2;
+}
 
 message AgentLocation {
   string id = 1;
@@ -23,14 +27,30 @@ message ToolLocation {
   geometry.v1.LocalizedPose location = 2;
 }
 
-message Environment {
+enum EnvironmentType {
+  ENVIRONMENT_TYPE_UNSPECIFIED = 0;
+  ENVIRONMENT_TYPE_STORAGE = 1;
+  ENVIRONMENT_TYPE_MANUAL_STATION = 2;
+  ENVIRONMENT_TYPE_AUTOMATIC_STATION = 3;
+  ENVIRONMENT_TYPE_HYBRID_STATION = 4;
+  ENVIRONMENT_TYPE_MANUAL_LINE = 5;
+  ENVIRONMENT_TYPE_AUTOMATIC_LINE = 6;
+  ENVIRONMENT_TYPE_HYBRID_LINE = 7;
+}
+
+message EnvironmentMessage {
   string id = 1;
   string name = 2;
   string icon = 3;
   string description = 4;
-  repeated ar.v1.MarkerMessage markers = 5; // Markers associated with this environment. The first marker in the list will be the origin of the environment.
-  repeated AgentLocation agents = 6;
-  repeated PartLocation parts = 7;
-  repeated ToolLocation tools = 8;
-  repeated ar.v1.Property properties = 9;
+  EnvironmentType type = 5;
+  repeated MarkerLocation markers = 6; // Markers associated with this environment.
+  repeated AgentLocation agents = 7;
+  repeated PartLocation parts = 8;
+  repeated ToolLocation tools = 9;
+  repeated ar.v1.Property properties = 10;
+}
+
+message EnvironmentsMessage {
+  repeated EnvironmentMessage environments = 1;
 }

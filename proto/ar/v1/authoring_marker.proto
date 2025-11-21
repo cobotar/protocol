@@ -1,8 +1,6 @@
 syntax = "proto3";
 package ar.v1;
 
-import "geometry/v1/pose.proto";
-
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
@@ -17,7 +15,6 @@ message MarkerUpdateMessage {
   string name = 2; // Name of the maker
   string description = 3; // Description of the maker
   string marker_text = 4; // Text on the physical marker (QR-code)
-  geometry.v1.LocalizedPose parent_maker_pose = 5; // Location of this marker in relation to its parent
 }
 
 message MarkerDeleteMessage {
