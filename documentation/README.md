@@ -177,6 +177,7 @@
 - [plm/v1/process.proto](#plm_v1_process-proto)
     - [ProcessMessage](#plm-v1-ProcessMessage)
     - [ProcessUpdatedMessage](#plm-v1-ProcessUpdatedMessage)
+    - [ProcessesMessage](#plm-v1-ProcessesMessage)
   
     - [ProcessState](#plm-v1-ProcessState)
     - [ProcessType](#plm-v1-ProcessType)
@@ -194,6 +195,7 @@
     - [DeleteProcessMessage](#plm-v1-DeleteProcessMessage)
     - [NewProcessMessage](#plm-v1-NewProcessMessage)
     - [StoredProcessMessage](#plm-v1-StoredProcessMessage)
+    - [StoredProcessesMessage](#plm-v1-StoredProcessesMessage)
     - [UpdateProcessMessage](#plm-v1-UpdateProcessMessage)
   
 - [plm/v1/process_load.proto](#plm_v1_process_load-proto)
@@ -2485,6 +2487,21 @@ Update published when the state of a process have changed
 
 
 
+
+<a name="plm-v1-ProcessesMessage"></a>
+
+### ProcessesMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| processes | [ProcessMessage](#plm-v1-ProcessMessage) | repeated |  |
+
+
+
+
+
  
 
 
@@ -2706,6 +2723,21 @@ Update published when the state of a process have changed
 | root_sequence_id | [string](#string) |  |  |
 | sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
 | tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredProcessesMessage"></a>
+
+### StoredProcessesMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| processes | [StoredProcessMessage](#plm-v1-StoredProcessMessage) | repeated |  |
 
 
 

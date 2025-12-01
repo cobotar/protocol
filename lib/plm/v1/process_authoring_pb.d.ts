@@ -66,6 +66,22 @@ export declare type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"
 export declare const StoredProcessMessageSchema: GenMessage<StoredProcessMessage>;
 
 /**
+ * @generated from message plm.v1.StoredProcessesMessage
+ */
+export declare type StoredProcessesMessage = Message<"plm.v1.StoredProcessesMessage"> & {
+  /**
+   * @generated from field: repeated plm.v1.StoredProcessMessage processes = 1;
+   */
+  processes: StoredProcessMessage[];
+};
+
+/**
+ * Describes the message plm.v1.StoredProcessesMessage.
+ * Use `create(StoredProcessesMessageSchema)` to create a new message.
+ */
+export declare const StoredProcessesMessageSchema: GenMessage<StoredProcessesMessage>;
+
+/**
  * @generated from message plm.v1.NewProcessMessage
  */
 export declare type NewProcessMessage = Message<"plm.v1.NewProcessMessage"> & {

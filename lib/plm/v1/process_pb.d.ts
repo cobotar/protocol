@@ -129,6 +129,22 @@ export declare type ProcessUpdatedMessage = Message<"plm.v1.ProcessUpdatedMessag
 export declare const ProcessUpdatedMessageSchema: GenMessage<ProcessUpdatedMessage>;
 
 /**
+ * @generated from message plm.v1.ProcessesMessage
+ */
+export declare type ProcessesMessage = Message<"plm.v1.ProcessesMessage"> & {
+  /**
+   * @generated from field: repeated plm.v1.ProcessMessage processes = 1;
+   */
+  processes: ProcessMessage[];
+};
+
+/**
+ * Describes the message plm.v1.ProcessesMessage.
+ * Use `create(ProcessesMessageSchema)` to create a new message.
+ */
+export declare const ProcessesMessageSchema: GenMessage<ProcessesMessage>;
+
+/**
  * @generated from enum plm.v1.ProcessType
  */
 export enum ProcessType {

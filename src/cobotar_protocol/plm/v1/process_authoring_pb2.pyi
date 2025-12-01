@@ -30,6 +30,12 @@ class StoredProcessMessage(_message.Message):
     tasks: _containers.RepeatedCompositeFieldContainer[_task_pb2.TaskMessage]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_authoring_pb2.StoredSequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ...) -> None: ...
 
+class StoredProcessesMessage(_message.Message):
+    __slots__ = ("processes",)
+    PROCESSES_FIELD_NUMBER: _ClassVar[int]
+    processes: _containers.RepeatedCompositeFieldContainer[StoredProcessMessage]
+    def __init__(self, processes: _Optional[_Iterable[_Union[StoredProcessMessage, _Mapping]]] = ...) -> None: ...
+
 class NewProcessMessage(_message.Message):
     __slots__ = ("name", "description", "type")
     NAME_FIELD_NUMBER: _ClassVar[int]
