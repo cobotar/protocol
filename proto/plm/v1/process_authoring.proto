@@ -20,6 +20,10 @@ message StoredProcessMessage {
   repeated TaskMessage tasks = 9;
 }
 
+message StoredProcessesMessage {
+  repeated StoredProcessMessage processes = 1;
+}
+
 message NewProcessMessage {
   string name = 3;
   string description = 4;
