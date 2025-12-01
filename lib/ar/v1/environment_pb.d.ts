@@ -148,6 +148,8 @@ export declare type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
   tools: ToolLocation[];
 
   /**
+   * TODO: add change_type: add, update, delete, unspecified?
+   *
    * @generated from field: repeated ar.v1.Property properties = 10;
    */
   properties: Property[];

@@ -49,6 +49,7 @@ message EnvironmentMessage {
   repeated PartLocation parts = 8;
   repeated ToolLocation tools = 9;
   repeated ar.v1.Property properties = 10;
+  // TODO: add change_type: add, update, delete, unspecified?
 }
 
 message EnvironmentsMessage {

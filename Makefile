@@ -39,6 +39,7 @@ generate:
 	rm -r ./src/cobotar_protocol/*/
 	rm -rf ./csharp/*.cs
 	rm -rf ./lib/*.ts
+	rm -rf ./lib/*.js
 	@echo 'Generating new files...'
 	buf generate
 

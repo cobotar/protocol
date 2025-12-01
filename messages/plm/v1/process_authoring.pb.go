@@ -22,6 +22,106 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type StoredProcessMessage struct {
+	state          protoimpl.MessageState   `protogen:"open.v1"`
+	Id             string                   `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string                   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Description    string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type           ProcessType              `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
+	Frame          *v1.LocalizedPose        `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceId string                   `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	Sequences      []*StoredSequenceMessage `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks          []*TaskMessage           `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *StoredProcessMessage) Reset() {
+	*x = StoredProcessMessage{}
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoredProcessMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoredProcessMessage) ProtoMessage() {}
+
+func (x *StoredProcessMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoredProcessMessage.ProtoReflect.Descriptor instead.
+func (*StoredProcessMessage) Descriptor() ([]byte, []int) {
+	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *StoredProcessMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *StoredProcessMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *StoredProcessMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *StoredProcessMessage) GetType() ProcessType {
+	if x != nil {
+		return x.Type
+	}
+	return ProcessType_PROCESS_TYPE_UNSPECIFIED
+}
+
+func (x *StoredProcessMessage) GetFrame() *v1.LocalizedPose {
+	if x != nil {
+		return x.Frame
+	}
+	return nil
+}
+
+func (x *StoredProcessMessage) GetRootSequenceId() string {
+	if x != nil {
+		return x.RootSequenceId
+	}
+	return ""
+}
+
+func (x *StoredProcessMessage) GetSequences() []*StoredSequenceMessage {
+	if x != nil {
+		return x.Sequences
+	}
+	return nil
+}
+
+func (x *StoredProcessMessage) GetTasks() []*TaskMessage {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
 type NewProcessMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
@@ -33,7 +133,7 @@ type NewProcessMessage struct {
 
 func (x *NewProcessMessage) Reset() {
 	*x = NewProcessMessage{}
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[0]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +145,7 @@ func (x *NewProcessMessage) String() string {
 func (*NewProcessMessage) ProtoMessage() {}
 
 func (x *NewProcessMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[0]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +158,7 @@ func (x *NewProcessMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewProcessMessage.ProtoReflect.Descriptor instead.
 func (*NewProcessMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *NewProcessMessage) GetName() string {
@@ -96,7 +196,7 @@ type UpdateProcessMessage struct {
 
 func (x *UpdateProcessMessage) Reset() {
 	*x = UpdateProcessMessage{}
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -108,7 +208,7 @@ func (x *UpdateProcessMessage) String() string {
 func (*UpdateProcessMessage) ProtoMessage() {}
 
 func (x *UpdateProcessMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -121,7 +221,7 @@ func (x *UpdateProcessMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateProcessMessage.ProtoReflect.Descriptor instead.
 func (*UpdateProcessMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UpdateProcessMessage) GetId() string {
@@ -175,7 +275,7 @@ type DeleteProcessMessage struct {
 
 func (x *DeleteProcessMessage) Reset() {
 	*x = DeleteProcessMessage{}
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -187,7 +287,7 @@ func (x *DeleteProcessMessage) String() string {
 func (*DeleteProcessMessage) ProtoMessage() {}
 
 func (x *DeleteProcessMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_process_authoring_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,7 +300,7 @@ func (x *DeleteProcessMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteProcessMessage.ProtoReflect.Descriptor instead.
 func (*DeleteProcessMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{2}
+	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DeleteProcessMessage) GetProcessId() string {
@@ -214,7 +314,16 @@ var File_plm_v1_process_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\"r\n" +
+	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\x1a\x1fplm/v1/sequence_authoring.proto\x1a\x11plm/v1/task.proto\"\xc9\x02\n" +
+	"\x14StoredProcessMessage\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
+	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
+	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\x12;\n" +
+	"\tsequences\x18\b \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\x12)\n" +
+	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\"r\n" +
 	"\x11NewProcessMessage\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
@@ -244,23 +353,30 @@ func file_plm_v1_process_authoring_proto_rawDescGZIP() []byte {
 	return file_plm_v1_process_authoring_proto_rawDescData
 }
 
-var file_plm_v1_process_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_plm_v1_process_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_plm_v1_process_authoring_proto_goTypes = []any{
-	(*NewProcessMessage)(nil),    // 0: plm.v1.NewProcessMessage
-	(*UpdateProcessMessage)(nil), // 1: plm.v1.UpdateProcessMessage
-	(*DeleteProcessMessage)(nil), // 2: plm.v1.DeleteProcessMessage
-	(ProcessType)(0),             // 3: plm.v1.ProcessType
-	(*v1.LocalizedPose)(nil),     // 4: geometry.v1.LocalizedPose
+	(*StoredProcessMessage)(nil),  // 0: plm.v1.StoredProcessMessage
+	(*NewProcessMessage)(nil),     // 1: plm.v1.NewProcessMessage
+	(*UpdateProcessMessage)(nil),  // 2: plm.v1.UpdateProcessMessage
+	(*DeleteProcessMessage)(nil),  // 3: plm.v1.DeleteProcessMessage
+	(ProcessType)(0),              // 4: plm.v1.ProcessType
+	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
+	(*StoredSequenceMessage)(nil), // 6: plm.v1.StoredSequenceMessage
+	(*TaskMessage)(nil),           // 7: plm.v1.TaskMessage
 }
 var file_plm_v1_process_authoring_proto_depIdxs = []int32{
-	3, // 0: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
-	3, // 1: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
-	4, // 2: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 0: plm.v1.StoredProcessMessage.type:type_name -> plm.v1.ProcessType
+	5, // 1: plm.v1.StoredProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	6, // 2: plm.v1.StoredProcessMessage.sequences:type_name -> plm.v1.StoredSequenceMessage
+	7, // 3: plm.v1.StoredProcessMessage.tasks:type_name -> plm.v1.TaskMessage
+	4, // 4: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
+	4, // 5: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
+	5, // 6: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_process_authoring_proto_init() }
@@ -269,13 +385,15 @@ func file_plm_v1_process_authoring_proto_init() {
 		return
 	}
 	file_plm_v1_process_proto_init()
+	file_plm_v1_sequence_authoring_proto_init()
+	file_plm_v1_task_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_process_authoring_proto_rawDesc), len(file_plm_v1_process_authoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -184,9 +184,16 @@
 - [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
     - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
+- [plm/v1/sequence_authoring.proto](#plm_v1_sequence_authoring-proto)
+    - [DeleteSequenceMessage](#plm-v1-DeleteSequenceMessage)
+    - [NewSequenceMessage](#plm-v1-NewSequenceMessage)
+    - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
+    - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
+  
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
     - [DeleteProcessMessage](#plm-v1-DeleteProcessMessage)
     - [NewProcessMessage](#plm-v1-NewProcessMessage)
+    - [StoredProcessMessage](#plm-v1-StoredProcessMessage)
     - [UpdateProcessMessage](#plm-v1-UpdateProcessMessage)
   
 - [plm/v1/process_load.proto](#plm_v1_process_load-proto)
@@ -202,6 +209,12 @@
   
 - [plm/v1/sequence_reassign.proto](#plm_v1_sequence_reassign-proto)
     - [SequenceReassignMessage](#plm-v1-SequenceReassignMessage)
+  
+- [plm/v1/task_authoring.proto](#plm_v1_task_authoring-proto)
+    - [DeleteTaskMessage](#plm-v1-DeleteTaskMessage)
+    - [NewTaskMessage](#plm-v1-NewTaskMessage)
+    - [StoredTaskMessage](#plm-v1-StoredTaskMessage)
+    - [UpdateTaskMessage](#plm-v1-UpdateTaskMessage)
   
 - [plm/v1/task_progress.proto](#plm_v1_task_progress-proto)
     - [TaskProgressMessage](#plm-v1-TaskProgressMessage)
@@ -1182,7 +1195,7 @@ A simple pose consisting of a position and orientation
 | agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
 | parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
 | tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [Property](#ar-v1-Property) | repeated | TODO: add change_type: add, update, delete, unspecified? |
 
 
 
@@ -2544,6 +2557,100 @@ Update published when the state of a process have changed
 
 
 
+<a name="plm_v1_sequence_authoring-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/sequence_authoring.proto
+
+
+
+<a name="plm-v1-DeleteSequenceMessage"></a>
+
+### DeleteSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-NewSequenceMessage"></a>
+
+### NewSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| parent_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredSequenceMessage"></a>
+
+### StoredSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| parent_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateSequenceMessage"></a>
+
+### UpdateSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| parent_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_process_authoring-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2577,6 +2684,28 @@ Update published when the state of a process have changed
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredProcessMessage"></a>
+
+### StoredProcessMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#plm-v1-ProcessType) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_id | [string](#string) |  |  |
+| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
+| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
 
 
 
@@ -2744,6 +2873,103 @@ Reassign all sub-tasks to the assignee (if possible)
 | instance_id | [string](#string) |  |  |
 | sequence_id | [string](#string) |  |  |
 | assignee | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_task_authoring-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/task_authoring.proto
+
+
+
+<a name="plm-v1-DeleteTaskMessage"></a>
+
+### DeleteTaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-NewTaskMessage"></a>
+
+### NewTaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| parent_sequence_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredTaskMessage"></a>
+
+### StoredTaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| part_id | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
+| task_type | [TaskType](#plm-v1-TaskType) |  |  |
+| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateTaskMessage"></a>
+
+### UpdateTaskMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| part_id | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
+| task_type | [TaskType](#plm-v1-TaskType) |  |  |
+| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 
 
 

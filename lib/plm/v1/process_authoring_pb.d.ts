@@ -6,11 +6,64 @@ import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { ProcessType } from "./process_pb";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb";
+import type { StoredSequenceMessage } from "./sequence_authoring_pb";
+import type { TaskMessage } from "./task_pb";
 
 /**
  * Describes the file plm/v1/process_authoring.proto.
  */
 export declare const file_plm_v1_process_authoring: GenFile;
+
+/**
+ * @generated from message plm.v1.StoredProcessMessage
+ */
+export declare type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
+  /**
+   * @generated from field: string id = 2;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: plm.v1.ProcessType type = 5;
+   */
+  type: ProcessType;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   */
+  frame?: LocalizedPose;
+
+  /**
+   * @generated from field: string root_sequence_id = 7;
+   */
+  rootSequenceId: string;
+
+  /**
+   * @generated from field: repeated plm.v1.StoredSequenceMessage sequences = 8;
+   */
+  sequences: StoredSequenceMessage[];
+
+  /**
+   * @generated from field: repeated plm.v1.TaskMessage tasks = 9;
+   */
+  tasks: TaskMessage[];
+};
+
+/**
+ * Describes the message plm.v1.StoredProcessMessage.
+ * Use `create(StoredProcessMessageSchema)` to create a new message.
+ */
+export declare const StoredProcessMessageSchema: GenMessage<StoredProcessMessage>;
 
 /**
  * @generated from message plm.v1.NewProcessMessage

@@ -1226,6 +1226,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
         = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.Property.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
+    /// <summary>
+    /// TODO: add change_type: add, update, delete, unspecified?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {

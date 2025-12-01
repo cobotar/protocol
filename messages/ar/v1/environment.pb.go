@@ -305,7 +305,7 @@ type EnvironmentMessage struct {
 	Agents        []*AgentLocation       `protobuf:"bytes,7,rep,name=agents,proto3" json:"agents,omitempty"`
 	Parts         []*PartLocation        `protobuf:"bytes,8,rep,name=parts,proto3" json:"parts,omitempty"`
 	Tools         []*ToolLocation        `protobuf:"bytes,9,rep,name=tools,proto3" json:"tools,omitempty"`
-	Properties    []*Property            `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
+	Properties    []*Property            `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"` // TODO: add change_type: add, update, delete, unspecified?
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
