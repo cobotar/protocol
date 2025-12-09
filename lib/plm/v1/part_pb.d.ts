@@ -48,6 +48,11 @@ export declare type PartMessage = Message<"plm.v1.PartMessage"> & {
    * @generated from field: string model_id = 7;
    */
   modelId: string;
+
+  /**
+   * @generated from field: repeated string tool_ids = 8;
+   */
+  toolIds: string[];
 };
 
 /**
@@ -55,6 +60,115 @@ export declare type PartMessage = Message<"plm.v1.PartMessage"> & {
  * Use `create(PartMessageSchema)` to create a new message.
  */
 export declare const PartMessageSchema: GenMessage<PartMessage>;
+
+/**
+ * @generated from message plm.v1.PartMessages
+ */
+export declare type PartMessages = Message<"plm.v1.PartMessages"> & {
+  /**
+   * @generated from field: repeated plm.v1.PartMessage parts = 1;
+   */
+  parts: PartMessage[];
+};
+
+/**
+ * Describes the message plm.v1.PartMessages.
+ * Use `create(PartMessagesSchema)` to create a new message.
+ */
+export declare const PartMessagesSchema: GenMessage<PartMessages>;
+
+/**
+ * @generated from message plm.v1.NewPartMessage
+ */
+export declare type NewPartMessage = Message<"plm.v1.NewPartMessage"> & {
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: plm.v1.PartType type = 5;
+   */
+  type: PartType;
+};
+
+/**
+ * Describes the message plm.v1.NewPartMessage.
+ * Use `create(NewPartMessageSchema)` to create a new message.
+ */
+export declare const NewPartMessageSchema: GenMessage<NewPartMessage>;
+
+/**
+ * @generated from message plm.v1.UpdatePartMessage
+ */
+export declare type UpdatePartMessage = Message<"plm.v1.UpdatePartMessage"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: plm.v1.PartType type = 5;
+   */
+  type: PartType;
+
+  /**
+   * @generated from field: int64 weight = 6;
+   */
+  weight: bigint;
+
+  /**
+   * @generated from field: string model_id = 7;
+   */
+  modelId: string;
+
+  /**
+   * @generated from field: repeated string tool_ids = 8;
+   */
+  toolIds: string[];
+};
+
+/**
+ * Describes the message plm.v1.UpdatePartMessage.
+ * Use `create(UpdatePartMessageSchema)` to create a new message.
+ */
+export declare const UpdatePartMessageSchema: GenMessage<UpdatePartMessage>;
+
+/**
+ * @generated from message plm.v1.DeletePartMessage
+ */
+export declare type DeletePartMessage = Message<"plm.v1.DeletePartMessage"> & {
+  /**
+   * @generated from field: string part_id = 1;
+   */
+  partId: string;
+};
+
+/**
+ * Describes the message plm.v1.DeletePartMessage.
+ * Use `create(DeletePartMessageSchema)` to create a new message.
+ */
+export declare const DeletePartMessageSchema: GenMessage<DeletePartMessage>;
 
 /**
  * @generated from enum plm.v1.PartType

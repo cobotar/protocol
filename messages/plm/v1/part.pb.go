@@ -85,6 +85,7 @@ type PartMessage struct {
 	Type          PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.PartType" json:"type,omitempty"`
 	Weight        int64                  `protobuf:"varint,6,opt,name=weight,proto3" json:"weight,omitempty"`
 	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	ToolIds       []string               `protobuf:"bytes,8,rep,name=tool_ids,json=toolIds,proto3" json:"tool_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -168,11 +169,266 @@ func (x *PartMessage) GetModelId() string {
 	return ""
 }
 
+func (x *PartMessage) GetToolIds() []string {
+	if x != nil {
+		return x.ToolIds
+	}
+	return nil
+}
+
+type PartMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Parts         []*PartMessage         `protobuf:"bytes,1,rep,name=parts,proto3" json:"parts,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PartMessages) Reset() {
+	*x = PartMessages{}
+	mi := &file_plm_v1_part_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PartMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PartMessages) ProtoMessage() {}
+
+func (x *PartMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_part_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PartMessages.ProtoReflect.Descriptor instead.
+func (*PartMessages) Descriptor() ([]byte, []int) {
+	return file_plm_v1_part_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PartMessages) GetParts() []*PartMessage {
+	if x != nil {
+		return x.Parts
+	}
+	return nil
+}
+
+type NewPartMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.PartType" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *NewPartMessage) Reset() {
+	*x = NewPartMessage{}
+	mi := &file_plm_v1_part_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NewPartMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NewPartMessage) ProtoMessage() {}
+
+func (x *NewPartMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_part_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NewPartMessage.ProtoReflect.Descriptor instead.
+func (*NewPartMessage) Descriptor() ([]byte, []int) {
+	return file_plm_v1_part_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *NewPartMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *NewPartMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *NewPartMessage) GetType() PartType {
+	if x != nil {
+		return x.Type
+	}
+	return PartType_PART_TYPE_UNSPECIFIED
+}
+
+type UpdatePartMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.PartType" json:"type,omitempty"`
+	Weight        int64                  `protobuf:"varint,6,opt,name=weight,proto3" json:"weight,omitempty"`
+	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	ToolIds       []string               `protobuf:"bytes,8,rep,name=tool_ids,json=toolIds,proto3" json:"tool_ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdatePartMessage) Reset() {
+	*x = UpdatePartMessage{}
+	mi := &file_plm_v1_part_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdatePartMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePartMessage) ProtoMessage() {}
+
+func (x *UpdatePartMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_part_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePartMessage.ProtoReflect.Descriptor instead.
+func (*UpdatePartMessage) Descriptor() ([]byte, []int) {
+	return file_plm_v1_part_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *UpdatePartMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpdatePartMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdatePartMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *UpdatePartMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *UpdatePartMessage) GetType() PartType {
+	if x != nil {
+		return x.Type
+	}
+	return PartType_PART_TYPE_UNSPECIFIED
+}
+
+func (x *UpdatePartMessage) GetWeight() int64 {
+	if x != nil {
+		return x.Weight
+	}
+	return 0
+}
+
+func (x *UpdatePartMessage) GetModelId() string {
+	if x != nil {
+		return x.ModelId
+	}
+	return ""
+}
+
+func (x *UpdatePartMessage) GetToolIds() []string {
+	if x != nil {
+		return x.ToolIds
+	}
+	return nil
+}
+
+type DeletePartMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PartId        string                 `protobuf:"bytes,1,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeletePartMessage) Reset() {
+	*x = DeletePartMessage{}
+	mi := &file_plm_v1_part_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeletePartMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeletePartMessage) ProtoMessage() {}
+
+func (x *DeletePartMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_part_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeletePartMessage.ProtoReflect.Descriptor instead.
+func (*DeletePartMessage) Descriptor() ([]byte, []int) {
+	return file_plm_v1_part_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *DeletePartMessage) GetPartId() string {
+	if x != nil {
+		return x.PartId
+	}
+	return ""
+}
+
 var File_plm_v1_part_proto protoreflect.FileDescriptor
 
 const file_plm_v1_part_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/part.proto\x12\x06plm.v1\"\xc0\x01\n" +
+	"\x11plm/v1/part.proto\x12\x06plm.v1\"\xdb\x01\n" +
 	"\vPartMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -180,7 +436,25 @@ const file_plm_v1_part_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12$\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x10.plm.v1.PartTypeR\x04type\x12\x16\n" +
 	"\x06weight\x18\x06 \x01(\x03R\x06weight\x12\x19\n" +
-	"\bmodel_id\x18\a \x01(\tR\amodelId*\x87\x01\n" +
+	"\bmodel_id\x18\a \x01(\tR\amodelId\x12\x19\n" +
+	"\btool_ids\x18\b \x03(\tR\atoolIds\"9\n" +
+	"\fPartMessages\x12)\n" +
+	"\x05parts\x18\x01 \x03(\v2\x13.plm.v1.PartMessageR\x05parts\"l\n" +
+	"\x0eNewPartMessage\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12$\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x10.plm.v1.PartTypeR\x04type\"\xe1\x01\n" +
+	"\x11UpdatePartMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12$\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x10.plm.v1.PartTypeR\x04type\x12\x16\n" +
+	"\x06weight\x18\x06 \x01(\x03R\x06weight\x12\x19\n" +
+	"\bmodel_id\x18\a \x01(\tR\amodelId\x12\x19\n" +
+	"\btool_ids\x18\b \x03(\tR\atoolIds\",\n" +
+	"\x11DeletePartMessage\x12\x17\n" +
+	"\apart_id\x18\x01 \x01(\tR\x06partId*\x87\x01\n" +
 	"\bPartType\x12\x19\n" +
 	"\x15PART_TYPE_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16PART_TYPE_SUB_ASSEMBLY\x10\x01\x12\x16\n" +
@@ -203,18 +477,25 @@ func file_plm_v1_part_proto_rawDescGZIP() []byte {
 }
 
 var file_plm_v1_part_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_plm_v1_part_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_plm_v1_part_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_plm_v1_part_proto_goTypes = []any{
-	(PartType)(0),       // 0: plm.v1.PartType
-	(*PartMessage)(nil), // 1: plm.v1.PartMessage
+	(PartType)(0),             // 0: plm.v1.PartType
+	(*PartMessage)(nil),       // 1: plm.v1.PartMessage
+	(*PartMessages)(nil),      // 2: plm.v1.PartMessages
+	(*NewPartMessage)(nil),    // 3: plm.v1.NewPartMessage
+	(*UpdatePartMessage)(nil), // 4: plm.v1.UpdatePartMessage
+	(*DeletePartMessage)(nil), // 5: plm.v1.DeletePartMessage
 }
 var file_plm_v1_part_proto_depIdxs = []int32{
 	0, // 0: plm.v1.PartMessage.type:type_name -> plm.v1.PartType
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 1: plm.v1.PartMessages.parts:type_name -> plm.v1.PartMessage
+	0, // 2: plm.v1.NewPartMessage.type:type_name -> plm.v1.PartType
+	0, // 3: plm.v1.UpdatePartMessage.type:type_name -> plm.v1.PartType
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_part_proto_init() }
@@ -228,7 +509,7 @@ func file_plm_v1_part_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_part_proto_rawDesc), len(file_plm_v1_part_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

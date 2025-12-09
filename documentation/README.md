@@ -155,8 +155,16 @@
   
     - [LineType](#plm-v1-LineType)
   
+- [plm/v1/models.proto](#plm_v1_models-proto)
+    - [ModelMessage](#plm-v1-ModelMessage)
+    - [ModelMessages](#plm-v1-ModelMessages)
+  
 - [plm/v1/part.proto](#plm_v1_part-proto)
+    - [DeletePartMessage](#plm-v1-DeletePartMessage)
+    - [NewPartMessage](#plm-v1-NewPartMessage)
     - [PartMessage](#plm-v1-PartMessage)
+    - [PartMessages](#plm-v1-PartMessages)
+    - [UpdatePartMessage](#plm-v1-UpdatePartMessage)
   
     - [PartType](#plm-v1-PartType)
   
@@ -232,6 +240,13 @@
 - [plm/v1/tasks_list.proto](#plm_v1_tasks_list-proto)
     - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
     - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
+  
+- [plm/v1/tool.proto](#plm_v1_tool-proto)
+    - [DeleteToolMessage](#plm-v1-DeleteToolMessage)
+    - [NewToolMessage](#plm-v1-NewToolMessage)
+    - [ToolMessage](#plm-v1-ToolMessage)
+    - [ToolMessages](#plm-v1-ToolMessages)
+    - [UpdateToolMessage](#plm-v1-UpdateToolMessage)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -2188,10 +2203,89 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="plm_v1_models-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/models.proto
+
+
+
+<a name="plm-v1-ModelMessage"></a>
+
+### ModelMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| url | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-ModelMessages"></a>
+
+### ModelMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| models | [ModelMessage](#plm-v1-ModelMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_part-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## plm/v1/part.proto
+
+
+
+<a name="plm-v1-DeletePartMessage"></a>
+
+### DeletePartMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| part_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-NewPartMessage"></a>
+
+### NewPartMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PartType](#plm-v1-PartType) |  |  |
+
+
+
 
 
 
@@ -2210,6 +2304,44 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | type | [PartType](#plm-v1-PartType) |  |  |
 | weight | [int64](#int64) |  |  |
 | model_id | [string](#string) |  |  |
+| tool_ids | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-PartMessages"></a>
+
+### PartMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parts | [PartMessage](#plm-v1-PartMessage) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdatePartMessage"></a>
+
+### UpdatePartMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PartType](#plm-v1-PartType) |  |  |
+| weight | [int64](#int64) |  |  |
+| model_id | [string](#string) |  |  |
+| tool_ids | [string](#string) | repeated |  |
 
 
 
@@ -3174,6 +3306,105 @@ Reassign all sub-tasks to the assignee (if possible)
 | instance_id | [string](#string) |  |  |
 | agent_id | [string](#string) |  |  |
 | task_ids | [string](#string) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_tool-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/tool.proto
+
+
+
+<a name="plm-v1-DeleteToolMessage"></a>
+
+### DeleteToolMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tool_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-NewToolMessage"></a>
+
+### NewToolMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-ToolMessage"></a>
+
+### ToolMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-ToolMessages"></a>
+
+### ToolMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tools | [ToolMessage](#plm-v1-ToolMessage) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateToolMessage"></a>
+
+### UpdateToolMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
 
 
 
