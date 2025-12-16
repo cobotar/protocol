@@ -24,17 +24,17 @@ namespace Messages.Plm.V1 {
     static ModelsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNwbG0vdjEvbW9kZWxzLnByb3RvEgZwbG0udjEiMAoMTW9kZWxNZXNzYWdl",
-            "Eg4KAmlkGAEgASgJUgJpZBIQCgN1cmwYAiABKAlSA3VybCI9Cg1Nb2RlbE1l",
-            "c3NhZ2VzEiwKBm1vZGVscxgBIAMoCzIULnBsbS52MS5Nb2RlbE1lc3NhZ2VS",
-            "Bm1vZGVsc0KOAQoKY29tLnBsbS52MUILTW9kZWxzUHJvdG9QAVoxZ2l0aHVi",
-            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaIC",
-            "A1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJN",
-            "ZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw=="));
+            "ChNwbG0vdjEvbW9kZWxzLnByb3RvEgZwbG0udjEiRAoMTW9kZWxNZXNzYWdl",
+            "Eg4KAmlkGAEgASgJUgJpZBIQCgN1cmwYAiABKAlSA3VybBISCgRuYW1lGAMg",
+            "ASgJUgRuYW1lIj0KDU1vZGVsTWVzc2FnZXMSLAoGbW9kZWxzGAEgAygLMhQu",
+            "cGxtLnYxLk1vZGVsTWVzc2FnZVIGbW9kZWxzQo4BCgpjb20ucGxtLnYxQgtN",
+            "b2RlbHNQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIG",
+            "UGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessage), global::Messages.Plm.V1.ModelMessage.Parser, new[]{ "Id", "Url" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessage), global::Messages.Plm.V1.ModelMessage.Parser, new[]{ "Id", "Url", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessages), global::Messages.Plm.V1.ModelMessages.Parser, new[]{ "Models" }, null, null, null, null)
           }));
     }
@@ -79,6 +79,7 @@ namespace Messages.Plm.V1 {
     public ModelMessage(ModelMessage other) : this() {
       id_ = other.id_;
       url_ = other.url_;
+      name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -112,6 +113,18 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -129,6 +142,7 @@ namespace Messages.Plm.V1 {
       }
       if (Id != other.Id) return false;
       if (Url != other.Url) return false;
+      if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,6 +152,7 @@ namespace Messages.Plm.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Url.Length != 0) hash ^= Url.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -164,6 +179,10 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Url);
       }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,6 +201,10 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Url);
       }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -197,6 +220,9 @@ namespace Messages.Plm.V1 {
       }
       if (Url.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -215,6 +241,9 @@ namespace Messages.Plm.V1 {
       }
       if (other.Url.Length != 0) {
         Url = other.Url;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -243,6 +272,10 @@ namespace Messages.Plm.V1 {
             Url = input.ReadString();
             break;
           }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -268,6 +301,10 @@ namespace Messages.Plm.V1 {
           }
           case 18: {
             Url = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
             break;
           }
         }

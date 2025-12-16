@@ -23,6 +23,11 @@ export declare type ModelMessage = Message<"plm.v1.ModelMessage"> & {
    * @generated from field: string url = 2;
    */
   url: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
 };
 
 /**

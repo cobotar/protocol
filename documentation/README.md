@@ -137,6 +137,9 @@
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
   
+- [common/v1/empty.proto](#common_v1_empty-proto)
+    - [EmptyMessage](#common-v1-EmptyMessage)
+  
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
   
@@ -2008,6 +2011,32 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 
 
+<a name="common_v1_empty-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/empty.proto
+
+
+
+<a name="common-v1-EmptyMessage"></a>
+
+### EmptyMessage
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="geometry_v1_anchor-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2220,6 +2249,7 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | url | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 

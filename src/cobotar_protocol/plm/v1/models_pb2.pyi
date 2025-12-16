@@ -7,12 +7,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ModelMessage(_message.Message):
-    __slots__ = ("id", "url")
+    __slots__ = ("id", "url", "name")
     ID_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     id: str
     url: str
-    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ...) -> None: ...
+    name: str
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ModelMessages(_message.Message):
     __slots__ = ("models",)
