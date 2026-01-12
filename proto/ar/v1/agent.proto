@@ -42,7 +42,8 @@ enum EndEffectorType {
   END_EFFECTOR_TYPE_CUSTOM_MOUNT = 20;
 }
 
-message AgentMessage {
+// TODO: Add worker (including skill-matrix)?
+message AgentMessage { // TODO: Rename to robots? And extend with equipment?
   string id = 1;
   string name = 2;
   AgentType type = 3;
@@ -51,4 +52,8 @@ message AgentMessage {
   EndEffectorType end_effector_type = 6;
   geometry.v1.LocalizedPose location = 7;
   repeated ar.v1.Property properties = 8;
+}
+
+message AgentsMessage {
+  repeated AgentMessage agents = 1;
 }

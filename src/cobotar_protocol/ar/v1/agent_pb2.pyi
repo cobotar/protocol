@@ -83,3 +83,9 @@ class AgentMessage(_message.Message):
     location: _pose_pb2.LocalizedPose
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., type: _Optional[_Union[AgentType, str]] = ..., operator_type: _Optional[_Union[OperatorType, str]] = ..., robot_type: _Optional[_Union[RobotType, str]] = ..., end_effector_type: _Optional[_Union[EndEffectorType, str]] = ..., location: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+
+class AgentsMessage(_message.Message):
+    __slots__ = ("agents",)
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    agents: _containers.RepeatedCompositeFieldContainer[AgentMessage]
+    def __init__(self, agents: _Optional[_Iterable[_Union[AgentMessage, _Mapping]]] = ...) -> None: ...

@@ -282,6 +282,7 @@ func (EndEffectorType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_agent_proto_rawDescGZIP(), []int{4}
 }
 
+// TODO: Add worker (including skill-matrix)?
 type AgentMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -382,6 +383,50 @@ func (x *AgentMessage) GetProperties() []*Property {
 	return nil
 }
 
+type AgentsMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Agents        []*AgentMessage        `protobuf:"bytes,1,rep,name=agents,proto3" json:"agents,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AgentsMessage) Reset() {
+	*x = AgentsMessage{}
+	mi := &file_ar_v1_agent_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AgentsMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AgentsMessage) ProtoMessage() {}
+
+func (x *AgentsMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_agent_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AgentsMessage.ProtoReflect.Descriptor instead.
+func (*AgentsMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_agent_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *AgentsMessage) GetAgents() []*AgentMessage {
+	if x != nil {
+		return x.Agents
+	}
+	return nil
+}
+
 var File_ar_v1_agent_proto protoreflect.FileDescriptor
 
 const file_ar_v1_agent_proto_rawDesc = "" +
@@ -398,7 +443,9 @@ const file_ar_v1_agent_proto_rawDesc = "" +
 	"\blocation\x18\a \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\x12/\n" +
 	"\n" +
 	"properties\x18\b \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties*V\n" +
+	"properties\"<\n" +
+	"\rAgentsMessage\x12+\n" +
+	"\x06agents\x18\x01 \x03(\v2\x13.ar.v1.AgentMessageR\x06agents*V\n" +
 	"\tAgentType\x12\x1a\n" +
 	"\x16AGENT_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13AGENT_TYPE_OPERATOR\x10\x01\x12\x14\n" +
@@ -442,7 +489,7 @@ func file_ar_v1_agent_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_agent_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_ar_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_agent_proto_goTypes = []any{
 	(AgentType)(0),           // 0: ar.v1.AgentType
 	(OperatorType)(0),        // 1: ar.v1.OperatorType
@@ -450,21 +497,23 @@ var file_ar_v1_agent_proto_goTypes = []any{
 	(RobotType)(0),           // 3: ar.v1.RobotType
 	(EndEffectorType)(0),     // 4: ar.v1.EndEffectorType
 	(*AgentMessage)(nil),     // 5: ar.v1.AgentMessage
-	(*v1.LocalizedPose)(nil), // 6: geometry.v1.LocalizedPose
-	(*Property)(nil),         // 7: ar.v1.Property
+	(*AgentsMessage)(nil),    // 6: ar.v1.AgentsMessage
+	(*v1.LocalizedPose)(nil), // 7: geometry.v1.LocalizedPose
+	(*Property)(nil),         // 8: ar.v1.Property
 }
 var file_ar_v1_agent_proto_depIdxs = []int32{
 	0, // 0: ar.v1.AgentMessage.type:type_name -> ar.v1.AgentType
 	1, // 1: ar.v1.AgentMessage.operator_type:type_name -> ar.v1.OperatorType
 	3, // 2: ar.v1.AgentMessage.robot_type:type_name -> ar.v1.RobotType
 	4, // 3: ar.v1.AgentMessage.end_effector_type:type_name -> ar.v1.EndEffectorType
-	6, // 4: ar.v1.AgentMessage.location:type_name -> geometry.v1.LocalizedPose
-	7, // 5: ar.v1.AgentMessage.properties:type_name -> ar.v1.Property
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	7, // 4: ar.v1.AgentMessage.location:type_name -> geometry.v1.LocalizedPose
+	8, // 5: ar.v1.AgentMessage.properties:type_name -> ar.v1.Property
+	5, // 6: ar.v1.AgentsMessage.agents:type_name -> ar.v1.AgentMessage
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_agent_proto_init() }
@@ -479,7 +528,7 @@ func file_ar_v1_agent_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_agent_proto_rawDesc), len(file_ar_v1_agent_proto_rawDesc)),
 			NumEnums:      5,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
