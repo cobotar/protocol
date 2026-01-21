@@ -3,6 +3,8 @@ managed:
   enabled: true
   disable:
     - file_option: csharp_namespace
+    - file_option: go_package
+      module: buf.build/bufbuild/protovalidate
   override:
     - file_option: go_package_prefix
       value: github.com/cobotar/protocol/messages
@@ -24,5 +26,6 @@ plugins:
     opt:
       - target=ts
       - import_extension=ts
+    include_imports: true
 inputs:
   - directory: proto

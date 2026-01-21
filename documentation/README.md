@@ -23,27 +23,6 @@
     - [ActionInfoMessage](#ar-v1-ActionInfoMessage)
     - [ActionInfosMessage](#ar-v1-ActionInfosMessage)
   
-- [geometry/v1/point.proto](#geometry_v1_point-proto)
-    - [Point](#geometry-v1-Point)
-  
-- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
-    - [Quad](#geometry-v1-Quad)
-  
-- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
-    - [LocalizedPose](#geometry-v1-LocalizedPose)
-    - [Pose](#geometry-v1-Pose)
-  
-    - [LocalizedState](#geometry-v1-LocalizedState)
-  
-- [ar/v1/agent.proto](#ar_v1_agent-proto)
-    - [AgentMessage](#ar-v1-AgentMessage)
-  
-    - [AgentType](#ar-v1-AgentType)
-    - [EndEffectorType](#ar-v1-EndEffectorType)
-    - [OperatorPermission](#ar-v1-OperatorPermission)
-    - [OperatorType](#ar-v1-OperatorType)
-    - [RobotType](#ar-v1-RobotType)
-  
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
   
@@ -58,20 +37,34 @@
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
   
+- [ar/v1/assets.proto](#ar_v1_assets-proto)
+    - [AssetMessage](#ar-v1-AssetMessage)
+    - [AssetMessages](#ar-v1-AssetMessages)
+  
+    - [AssetDriverType](#ar-v1-AssetDriverType)
+    - [AssetType](#ar-v1-AssetType)
+  
 - [ar/v1/authoring_action.proto](#ar_v1_authoring_action-proto)
     - [ActionDeleteMessage](#ar-v1-ActionDeleteMessage)
     - [ActionNewMessage](#ar-v1-ActionNewMessage)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
   
-- [ar/v1/authoring_agent.proto](#ar_v1_authoring_agent-proto)
-    - [AgentDeleteMessage](#ar-v1-AgentDeleteMessage)
-    - [AgentNewMessage](#ar-v1-AgentNewMessage)
-    - [AgentUpdateMessage](#ar-v1-AgentUpdateMessage)
-  
 - [ar/v1/authoring_ar_config.proto](#ar_v1_authoring_ar_config-proto)
     - [ARConfigDeleteMessage](#ar-v1-ARConfigDeleteMessage)
     - [ARConfigNewMessage](#ar-v1-ARConfigNewMessage)
     - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
+  
+- [geometry/v1/point.proto](#geometry_v1_point-proto)
+    - [Point](#geometry-v1-Point)
+  
+- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
+    - [Quad](#geometry-v1-Quad)
+  
+- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
+    - [LocalizedPose](#geometry-v1-LocalizedPose)
+    - [Pose](#geometry-v1-Pose)
+  
+    - [LocalizedState](#geometry-v1-LocalizedState)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AgentLocation](#ar-v1-AgentLocation)
@@ -126,10 +119,25 @@
   
     - [MarkerType](#ar-v1-MarkerType)
   
+- [ar/v1/robots.proto](#ar_v1_robots-proto)
+    - [RobotMessage](#ar-v1-RobotMessage)
+    - [RobotMessages](#ar-v1-RobotMessages)
+  
+    - [EndEffectorType](#ar-v1-EndEffectorType)
+    - [RobotDriverType](#ar-v1-RobotDriverType)
+    - [RobotType](#ar-v1-RobotType)
+  
 - [ar/v1/template.proto](#ar_v1_template-proto)
     - [TemplateInfoMessage](#ar-v1-TemplateInfoMessage)
     - [TemplateInfoMessages](#ar-v1-TemplateInfoMessages)
     - [TemplateMessage](#ar-v1-TemplateMessage)
+  
+- [ar/v1/worker.proto](#ar_v1_worker-proto)
+    - [WorkerMessage](#ar-v1-WorkerMessage)
+    - [WorkerMessages](#ar-v1-WorkerMessages)
+  
+    - [WorkerPermission](#ar-v1-WorkerPermission)
+    - [WorkerType](#ar-v1-WorkerType)
   
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
@@ -139,6 +147,9 @@
   
 - [common/v1/empty.proto](#common_v1_empty-proto)
     - [EmptyMessage](#common-v1-EmptyMessage)
+  
+- [common/v1/get.proto](#common_v1_get-proto)
+    - [GetMessage](#common-v1-GetMessage)
   
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
@@ -552,246 +563,6 @@ Used to specify the type of a property
 
 
 
-<a name="geometry_v1_point-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/point.proto
-
-
-
-<a name="geometry-v1-Point"></a>
-
-### Point
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_quad-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/quad.proto
-
-
-
-<a name="geometry-v1-Quad"></a>
-
-### Quad
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
-| w | [double](#double) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_pose-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/pose.proto
-
-
-
-<a name="geometry-v1-LocalizedPose"></a>
-
-### LocalizedPose
-A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| pose | [Pose](#geometry-v1-Pose) |  |  |
-| anchor_id | [string](#string) |  |  |
-| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
-| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="geometry-v1-Pose"></a>
-
-### Pose
-A simple pose consisting of a position and orientation
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| position | [Point](#geometry-v1-Point) |  |  |
-| orientation | [Quad](#geometry-v1-Quad) |  |  |
-
-
-
-
-
- 
-
-
-<a name="geometry-v1-LocalizedState"></a>
-
-### LocalizedState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
-| LOCALIZED_STATE_FOUND | 1 |  |
-| LOCALIZED_STATE_LOST | 2 |  |
-| LOCALIZED_STATE_STATIC | 3 |  |
-| LOCALIZED_STATE_UNKNOWN | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_agent-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/agent.proto
-
-
-
-<a name="ar-v1-AgentMessage"></a>
-
-### AgentMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| type | [AgentType](#ar-v1-AgentType) |  |  |
-| operator_type | [OperatorType](#ar-v1-OperatorType) |  |  |
-| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
-| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-AgentType"></a>
-
-### AgentType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AGENT_TYPE_UNSPECIFIED | 0 |  |
-| AGENT_TYPE_OPERATOR | 1 |  |
-| AGENT_TYPE_ROBOT | 2 |  |
-
-
-
-<a name="ar-v1-EndEffectorType"></a>
-
-### EndEffectorType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| END_EFFECTOR_TYPE_UNSPECIFIED | 0 |  |
-| END_EFFECTOR_TYPE_EMPTY | 1 |  |
-| END_EFFECTOR_TYPE_ROBOTIQ_HAND_E | 10 |  |
-| END_EFFECTOR_TYPE_CUSTOM_MOUNT | 20 |  |
-
-
-
-<a name="ar-v1-OperatorPermission"></a>
-
-### OperatorPermission
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| OPERATOR_PERMISSION_UNSPECIFIED | 0 |  |
-| OPERATOR_PERMISSION_NONE | 1 |  |
-| OPERATOR_PERMISSION_COSMETIC | 2 |  |
-| OPERATOR_PERMISSION_FULL | 3 |  |
-
-
-
-<a name="ar-v1-OperatorType"></a>
-
-### OperatorType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| OPERATOR_TYPE_UNSPECIFIED | 0 |  |
-| OPERATOR_TYPE_NOVICE | 1 |  |
-| OPERATOR_TYPE_INTERMEDIATE | 2 |  |
-| OPERATOR_TYPE_EXPERT | 3 |  |
-
-
-
-<a name="ar-v1-RobotType"></a>
-
-### RobotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_TYPE_UR3E | 10 |  |
-| ROBOT_TYPE_UR5E | 11 |  |
-| ROBOT_TYPE_UR10E | 12 |  |
-| ROBOT_TYPE_KUKA_IIWA | 20 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="ar_v1_feedback-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -833,7 +604,7 @@ A simple pose consisting of a position and orientation
 | FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
 | FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
 | FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
-| FEEDBACK_TYPE_TASK_OVERVIEW | 13 |  |
+| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | TODO: configure to show all or only one task at a time? |
 | FEEDBACK_TYPE_ROBOT_PATH | 50 |  |
 | FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
 | FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
@@ -965,6 +736,84 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="ar_v1_assets-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/assets.proto
+
+
+
+<a name="ar-v1-AssetMessage"></a>
+
+### AssetMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [AssetType](#ar-v1-AssetType) |  |  |
+| asset_driver_type | [AssetDriverType](#ar-v1-AssetDriverType) |  |  |
+| properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-AssetMessages"></a>
+
+### AssetMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assets | [AssetMessage](#ar-v1-AssetMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-AssetDriverType"></a>
+
+### AssetDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
+
+
+
+<a name="ar-v1-AssetType"></a>
+
+### AssetType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_TYPE_CAMERA | 1 |  |
+| ASSET_TYPE_LIGHT | 2 |  |
+| ASSET_TYPE_CONVEYOR | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_authoring_action-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1020,75 +869,6 @@ A simple pose consisting of a position and orientation
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_authoring_agent-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/authoring_agent.proto
-
-
-
-<a name="ar-v1-AgentDeleteMessage"></a>
-
-### AgentDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Id of the marker to be deleted |
-
-
-
-
-
-
-<a name="ar-v1-AgentNewMessage"></a>
-
-### AgentNewMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| type | [AgentType](#ar-v1-AgentType) |  |  |
-| operator_type | [OperatorType](#ar-v1-OperatorType) |  |  |
-| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
-| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-AgentUpdateMessage"></a>
-
-### AgentUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Unique id of the maker (this won&#39;t be changed) |
-| name | [string](#string) |  |  |
-| operator_type | [OperatorType](#ar-v1-OperatorType) |  |  |
-| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
-| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
 
 
 
@@ -1166,6 +946,138 @@ A simple pose consisting of a position and orientation
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_point-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/point.proto
+
+
+
+<a name="geometry-v1-Point"></a>
+
+### Point
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [double](#double) |  |  |
+| y | [double](#double) |  |  |
+| z | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_quad-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/quad.proto
+
+
+
+<a name="geometry-v1-Quad"></a>
+
+### Quad
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [double](#double) |  |  |
+| y | [double](#double) |  |  |
+| z | [double](#double) |  |  |
+| w | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_pose-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/pose.proto
+
+
+
+<a name="geometry-v1-LocalizedPose"></a>
+
+### LocalizedPose
+A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pose | [Pose](#geometry-v1-Pose) |  |  |
+| anchor_id | [string](#string) |  |  |
+| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
+| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="geometry-v1-Pose"></a>
+
+### Pose
+A simple pose consisting of a position and orientation
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="geometry-v1-LocalizedState"></a>
+
+### LocalizedState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
+| LOCALIZED_STATE_FOUND | 1 |  |
+| LOCALIZED_STATE_LOST | 2 |  |
+| LOCALIZED_STATE_STATIC | 3 |  |
+| LOCALIZED_STATE_UNKNOWN | 4 |  |
+
 
  
 
@@ -1877,6 +1789,100 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="ar_v1_robots-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/robots.proto
+
+
+
+<a name="ar-v1-RobotMessage"></a>
+
+### RobotMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
+| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
+| robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  |  |
+| properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-RobotMessages"></a>
+
+### RobotMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robots | [RobotMessage](#ar-v1-RobotMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-EndEffectorType"></a>
+
+### EndEffectorType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| END_EFFECTOR_TYPE_UNSPECIFIED | 0 |  |
+| END_EFFECTOR_TYPE_EMPTY | 1 |  |
+| END_EFFECTOR_TYPE_ROBOTIQ_HAND_E | 10 |  |
+| END_EFFECTOR_TYPE_CUSTOM_MOUNT | 20 |  |
+
+
+
+<a name="ar-v1-RobotDriverType"></a>
+
+### RobotDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_DRIVER_TYPE_UR | 1 |  |
+
+
+
+<a name="ar-v1-RobotType"></a>
+
+### RobotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_TYPE_UR3E | 10 |  |
+| ROBOT_TYPE_UR5E | 11 |  |
+| ROBOT_TYPE_UR10E | 12 |  |
+| ROBOT_TYPE_KUKA_IIWA | 20 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_template-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1936,6 +1942,91 @@ Feedback Actions |
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_worker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/worker.proto
+
+
+
+<a name="ar-v1-WorkerMessage"></a>
+
+### WorkerMessage
+TODO: Environments should also have devices/drivers, e.g. camera drivers, stacked light drivers, ... - the flow could be that someone set-up the physical thing that adheres to some interface (driver), it can then be selected from a list of drivers and perhaps configured a bit (a light version of Homeassistant).
+TODO: split human and robots?
+TODO: Agent should have drivers (e.g. build in UR-driver) that comes with a specific set of properties.
+TODO: Add worker (including skill-matrix)?
+
+TODO: Rename to robots/assets/equipment? And extend with equipment?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [WorkerType](#ar-v1-WorkerType) |  |  |
+| permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
+| properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-WorkerMessages"></a>
+
+### WorkerMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| workers | [WorkerMessage](#ar-v1-WorkerMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-WorkerPermission"></a>
+
+### WorkerPermission
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| WORKER_PERMISSION_UNSPECIFIED | 0 |  |
+| WORKER_PERMISSION_NONE | 1 |  |
+| WORKER_PERMISSION_COSMETIC | 2 |  |
+| WORKER_PERMISSION_FULL | 3 |  |
+
+
+
+<a name="ar-v1-WorkerType"></a>
+
+### WorkerType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| WORKER_TYPE_UNSPECIFIED | 0 |  |
+| WORKER_TYPE_NOVICE | 1 |  |
+| WORKER_TYPE_INTERMEDIATE | 2 |  |
+| WORKER_TYPE_EXPERT | 3 |  |
+
 
  
 
@@ -2022,6 +2113,37 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 
 ### EmptyMessage
 
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_get-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/get.proto
+
+
+
+<a name="common-v1-GetMessage"></a>
+
+### GetMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
 
 
 
@@ -2192,7 +2314,7 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 <a name="plm-v1-LineMessage"></a>
 
 ### LineMessage
-
+TODO: allow multiple processes to make active at the same time?
 
 
 | Field | Type | Label | Description |
@@ -2333,7 +2455,7 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | description | [string](#string) |  |  |
 | type | [PartType](#plm-v1-PartType) |  |  |
 | weight | [int64](#int64) |  |  |
-| model_id | [string](#string) |  |  |
+| model_id | [string](#string) |  | TODO: add dimensions TODO: add material |
 | tool_ids | [string](#string) | repeated |  |
 
 
@@ -2607,7 +2729,8 @@ Update published when the state of a sequence have changed
 <a name="plm-v1-ProcessMessage"></a>
 
 ### ProcessMessage
-
+TODO: should &#39;running&#39; be called process and &#39;static&#39; recipe?
+TODO: Add/assign the agent(s) at runtime, instead of allocating them to the environment. THen there could also be a situation where each agent is asked to take a task during execution.
 
 
 | Field | Type | Label | Description |
@@ -2692,7 +2815,8 @@ Update published when the state of a process have changed
 | PROCESS_TYPE_UNSPECIFIED | 0 |  |
 | PROCESS_TYPE_ASSEMBLY | 1 |  |
 | PROCESS_TYPE_DISASSEMBLY | 2 |  |
-| PROCESS_TYPE_INSPECTION | 3 |  |
+| PROCESS_TYPE_INSPECTION | 3 | TODO: what should this be? |
+| PROCESS_TYPE_CHECKLIST | 4 | TODO: this could be startup procedures, fault fixing, ... |
 
 
  
@@ -2872,7 +2996,7 @@ Update published when the state of a process have changed
 <a name="plm-v1-StoredProcessMessage"></a>
 
 ### StoredProcessMessage
-
+TODO: rename to recipe?
 
 
 | Field | Type | Label | Description |
@@ -2884,7 +3008,7 @@ Update published when the state of a process have changed
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | root_sequence_id | [string](#string) |  |  |
 | sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
-| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
+| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated | TODO: make &#39;interchanceable&#39;, such that multiple variants can be selected |
 
 
 
@@ -2945,7 +3069,7 @@ Update published when the state of a process have changed
 <a name="plm-v1-ProcessLoadMessage"></a>
 
 ### ProcessLoadMessage
-
+TODO: Assign agents at runtime?
 
 
 | Field | Type | Label | Description |
