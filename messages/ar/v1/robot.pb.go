@@ -131,8 +131,8 @@ type RobotMessage struct {
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"` // Optional description of the robot
 	Type               RobotType              `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.RobotType" json:"type,omitempty"`
 	RobotDriverType    RobotDriverType        `protobuf:"varint,6,opt,name=robot_driver_type,json=robotDriverType,proto3,enum=ar.v1.RobotDriverType" json:"robot_driver_type,omitempty"`
-	CouplerModelId     *string                `protobuf:"bytes,7,opt,name=coupler_model_id,json=couplerModelId,proto3,oneof" json:"coupler_model_id,omitempty"`
-	EndEffectorModelId *string                `protobuf:"bytes,8,opt,name=end_effector_model_id,json=endEffectorModelId,proto3,oneof" json:"end_effector_model_id,omitempty"`
+	CouplerModelId     string                 `protobuf:"bytes,7,opt,name=coupler_model_id,json=couplerModelId,proto3" json:"coupler_model_id,omitempty"`
+	EndEffectorModelId string                 `protobuf:"bytes,8,opt,name=end_effector_model_id,json=endEffectorModelId,proto3" json:"end_effector_model_id,omitempty"`
 	Properties         []*Property            `protobuf:"bytes,9,rep,name=properties,proto3" json:"properties,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
@@ -211,15 +211,15 @@ func (x *RobotMessage) GetRobotDriverType() RobotDriverType {
 }
 
 func (x *RobotMessage) GetCouplerModelId() string {
-	if x != nil && x.CouplerModelId != nil {
-		return *x.CouplerModelId
+	if x != nil {
+		return x.CouplerModelId
 	}
 	return ""
 }
 
 func (x *RobotMessage) GetEndEffectorModelId() string {
-	if x != nil && x.EndEffectorModelId != nil {
-		return *x.EndEffectorModelId
+	if x != nil {
+		return x.EndEffectorModelId
 	}
 	return ""
 }
@@ -279,23 +279,21 @@ var File_ar_v1_robot_proto protoreflect.FileDescriptor
 
 const file_ar_v1_robot_proto_rawDesc = "" +
 	"\n" +
-	"\x11ar/v1/robot.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\"\xdc\x03\n" +
+	"\x11ar/v1/robot.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\"\xa3\x03\n" +
 	"\fRobotMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x121\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x10.ar.v1.RobotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12O\n" +
-	"\x11robot_driver_type\x18\x06 \x01(\x0e2\x16.ar.v1.RobotDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x0frobotDriverType\x12<\n" +
+	"\x11robot_driver_type\x18\x06 \x01(\x0e2\x16.ar.v1.RobotDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x0frobotDriverType\x127\n" +
 	"\x10coupler_model_id\x18\a \x01(\tB\r\xbaH\n" +
-	"r\b:\x06model-H\x00R\x0ecouplerModelId\x88\x01\x01\x12E\n" +
+	"r\b:\x06model-R\x0ecouplerModelId\x12@\n" +
 	"\x15end_effector_model_id\x18\b \x01(\tB\r\xbaH\n" +
-	"r\b:\x06model-H\x01R\x12endEffectorModelId\x88\x01\x01\x12/\n" +
+	"r\b:\x06model-R\x12endEffectorModelId\x12/\n" +
 	"\n" +
 	"properties\x18\t \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"propertiesB\x13\n" +
-	"\x11_coupler_model_idB\x18\n" +
-	"\x16_end_effector_model_id\"<\n" +
+	"properties\"<\n" +
 	"\rRobotMessages\x12+\n" +
 	"\x06robots\x18\x01 \x03(\v2\x13.ar.v1.RobotMessageR\x06robots*\x81\x01\n" +
 	"\tRobotType\x12\x1a\n" +
@@ -350,7 +348,6 @@ func file_ar_v1_robot_proto_init() {
 		return
 	}
 	file_ar_v1_property_proto_init()
-	file_ar_v1_robot_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

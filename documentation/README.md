@@ -1520,8 +1520,8 @@ A simple pose consisting of a position and orientation
 | description | [string](#string) |  | Optional description of the robot |
 | type | [RobotType](#ar-v1-RobotType) |  |  |
 | robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  |  |
-| coupler_model_id | [string](#string) | optional |  |
-| end_effector_model_id | [string](#string) | optional |  |
+| coupler_model_id | [string](#string) |  |  |
+| end_effector_model_id | [string](#string) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 
 

@@ -25,31 +25,30 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFhci92MS9yb2JvdC5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5LnBy",
-            "b3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8i3AMKDFJvYm90TWVz",
+            "b3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8iowMKDFJvYm90TWVz",
             "c2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQARhA",
             "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
             "KAlSC2Rlc2NyaXB0aW9uEjEKBHR5cGUYBSABKA4yEC5hci52MS5Sb2JvdFR5",
             "cGVCC7pICIIBAhAByAEBUgR0eXBlEk8KEXJvYm90X2RyaXZlcl90eXBlGAYg",
             "ASgOMhYuYXIudjEuUm9ib3REcml2ZXJUeXBlQgu6SAiCAQIQAcgBAVIPcm9i",
-            "b3REcml2ZXJUeXBlEjwKEGNvdXBsZXJfbW9kZWxfaWQYByABKAlCDbpICnII",
-            "OgZtb2RlbC1IAFIOY291cGxlck1vZGVsSWSIAQESRQoVZW5kX2VmZmVjdG9y",
-            "X21vZGVsX2lkGAggASgJQg26SApyCDoGbW9kZWwtSAFSEmVuZEVmZmVjdG9y",
-            "TW9kZWxJZIgBARIvCgpwcm9wZXJ0aWVzGAkgAygLMg8uYXIudjEuUHJvcGVy",
-            "dHlSCnByb3BlcnRpZXNCEwoRX2NvdXBsZXJfbW9kZWxfaWRCGAoWX2VuZF9l",
-            "ZmZlY3Rvcl9tb2RlbF9pZCI8Cg1Sb2JvdE1lc3NhZ2VzEisKBnJvYm90cxgB",
-            "IAMoCzITLmFyLnYxLlJvYm90TWVzc2FnZVIGcm9ib3RzKoEBCglSb2JvdFR5",
-            "cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVf",
-            "VVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIx",
-            "MEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKk4KD1JvYm90RHJpdmVy",
-            "VHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJP",
-            "Qk9UX0RSSVZFUl9UWVBFX1VSEAFChgEKCWNvbS5hci52MUIKUm9ib3RQcm90",
-            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
-            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
-            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "b3REcml2ZXJUeXBlEjcKEGNvdXBsZXJfbW9kZWxfaWQYByABKAlCDbpICnII",
+            "OgZtb2RlbC1SDmNvdXBsZXJNb2RlbElkEkAKFWVuZF9lZmZlY3Rvcl9tb2Rl",
+            "bF9pZBgIIAEoCUINukgKcgg6Bm1vZGVsLVISZW5kRWZmZWN0b3JNb2RlbElk",
+            "Ei8KCnByb3BlcnRpZXMYCSADKAsyDy5hci52MS5Qcm9wZXJ0eVIKcHJvcGVy",
+            "dGllcyI8Cg1Sb2JvdE1lc3NhZ2VzEisKBnJvYm90cxgBIAMoCzITLmFyLnYx",
+            "LlJvYm90TWVzc2FnZVIGcm9ib3RzKoEBCglSb2JvdFR5cGUSGgoWUk9CT1Rf",
+            "VFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JP",
+            "Qk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JP",
+            "VF9UWVBFX0tVS0FfSUlXQRAUKk4KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JP",
+            "VF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9U",
+            "WVBFX1VSEAFChgEKCWNvbS5hci52MUIKUm9ib3RQcm90b1ABWi9naXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
+            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
+            "YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.RobotType), typeof(global::Messages.AR.V1.RobotDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMessage), global::Messages.AR.V1.RobotMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "RobotDriverType", "CouplerModelId", "EndEffectorModelId", "Properties" }, new[]{ "CouplerModelId", "EndEffectorModelId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMessage), global::Messages.AR.V1.RobotMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "RobotDriverType", "CouplerModelId", "EndEffectorModelId", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMessages), global::Messages.AR.V1.RobotMessages.Parser, new[]{ "Robots" }, null, null, null, null)
           }));
     }
@@ -212,54 +211,26 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "coupler_model_id" field.</summary>
     public const int CouplerModelIdFieldNumber = 7;
-    private readonly static string CouplerModelIdDefaultValue = "";
-
-    private string couplerModelId_;
+    private string couplerModelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CouplerModelId {
-      get { return couplerModelId_ ?? CouplerModelIdDefaultValue; }
+      get { return couplerModelId_; }
       set {
         couplerModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "coupler_model_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasCouplerModelId {
-      get { return couplerModelId_ != null; }
-    }
-    /// <summary>Clears the value of the "coupler_model_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearCouplerModelId() {
-      couplerModelId_ = null;
-    }
 
     /// <summary>Field number for the "end_effector_model_id" field.</summary>
     public const int EndEffectorModelIdFieldNumber = 8;
-    private readonly static string EndEffectorModelIdDefaultValue = "";
-
-    private string endEffectorModelId_;
+    private string endEffectorModelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EndEffectorModelId {
-      get { return endEffectorModelId_ ?? EndEffectorModelIdDefaultValue; }
+      get { return endEffectorModelId_; }
       set {
         endEffectorModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "end_effector_model_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasEndEffectorModelId {
-      get { return endEffectorModelId_ != null; }
-    }
-    /// <summary>Clears the value of the "end_effector_model_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearEndEffectorModelId() {
-      endEffectorModelId_ = null;
     }
 
     /// <summary>Field number for the "properties" field.</summary>
@@ -310,8 +281,8 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.RobotType.Unspecified) hash ^= Type.GetHashCode();
       if (RobotDriverType != global::Messages.AR.V1.RobotDriverType.Unspecified) hash ^= RobotDriverType.GetHashCode();
-      if (HasCouplerModelId) hash ^= CouplerModelId.GetHashCode();
-      if (HasEndEffectorModelId) hash ^= EndEffectorModelId.GetHashCode();
+      if (CouplerModelId.Length != 0) hash ^= CouplerModelId.GetHashCode();
+      if (EndEffectorModelId.Length != 0) hash ^= EndEffectorModelId.GetHashCode();
       hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -355,11 +326,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) RobotDriverType);
       }
-      if (HasCouplerModelId) {
+      if (CouplerModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(CouplerModelId);
       }
-      if (HasEndEffectorModelId) {
+      if (EndEffectorModelId.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(EndEffectorModelId);
       }
@@ -398,11 +369,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) RobotDriverType);
       }
-      if (HasCouplerModelId) {
+      if (CouplerModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(CouplerModelId);
       }
-      if (HasEndEffectorModelId) {
+      if (EndEffectorModelId.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(EndEffectorModelId);
       }
@@ -435,10 +406,10 @@ namespace Messages.AR.V1 {
       if (RobotDriverType != global::Messages.AR.V1.RobotDriverType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RobotDriverType);
       }
-      if (HasCouplerModelId) {
+      if (CouplerModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CouplerModelId);
       }
-      if (HasEndEffectorModelId) {
+      if (EndEffectorModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(EndEffectorModelId);
       }
       size += properties_.CalculateSize(_repeated_properties_codec);
@@ -472,10 +443,10 @@ namespace Messages.AR.V1 {
       if (other.RobotDriverType != global::Messages.AR.V1.RobotDriverType.Unspecified) {
         RobotDriverType = other.RobotDriverType;
       }
-      if (other.HasCouplerModelId) {
+      if (other.CouplerModelId.Length != 0) {
         CouplerModelId = other.CouplerModelId;
       }
-      if (other.HasEndEffectorModelId) {
+      if (other.EndEffectorModelId.Length != 0) {
         EndEffectorModelId = other.EndEffectorModelId;
       }
       properties_.Add(other.properties_);

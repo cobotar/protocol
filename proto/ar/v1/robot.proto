@@ -36,8 +36,8 @@ message RobotMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  optional string coupler_model_id = 7 [(buf.validate.field).string.prefix = 'model-'];
-  optional string end_effector_model_id = 8 [(buf.validate.field).string.prefix = 'model-'];
+  string coupler_model_id = 7 [(buf.validate.field).string.prefix = 'model-'];
+  string end_effector_model_id = 8 [(buf.validate.field).string.prefix = 'model-'];
   repeated ar.v1.Property properties = 9;
 }
 
