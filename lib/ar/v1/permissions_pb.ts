@@ -9,9 +9,27 @@ import { enumDesc, fileDesc } from "@bufbuild/protobuf/codegenv2";
  * Describes the file ar/v1/permissions.proto.
  */
 export const file_ar_v1_permissions: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9wZXJtaXNzaW9ucy5wcm90bxIFYXIudjEqjQEKEFdvcmtlclBlcm1pc3Npb24SIQodV09SS0VSX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIaChZXT1JLRVJfUEVSTUlTU0lPTl9OT05FEAESHgoaV09SS0VSX1BFUk1JU1NJT05fQ09TTUVUSUMQAhIaChZXT1JLRVJfUEVSTUlTU0lPTl9GVUxMEANCjAEKCWNvbS5hci52MUIQUGVybWlzc2lvbnNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z");
+  fileDesc("Chdhci92MS9wZXJtaXNzaW9ucy5wcm90bxIFYXIudjEqqgEKEFdvcmtlclBlcm1pc3Npb24SIQodV09SS0VSX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIbChdXT1JLRVJfUEVSTUlTU0lPTl9CQVNJQxABEh4KGldPUktFUl9QRVJNSVNTSU9OX0NPU01FVElDEAISGgoWV09SS0VSX1BFUk1JU1NJT05fRlVMTBADEhoKFldPUktFUl9QRVJNSVNTSU9OX05PTkUQBEKMAQoJY29tLmFyLnYxQhBQZXJtaXNzaW9uc1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM");
 
 /**
+ *
+ * TODO: Rename to AREditPermission? - what about 'automatic' systems?
+ * Consider the mapping, e.g: unspecified, none = nothing, cosmetic = some, full =
+ * User:
+ * - Unspecified: can't edit any properties
+ * - Basic: can edit {basic} properties
+ * - Cosmetic: can edit {basic, cosmetic} properties
+ * - Full: can edit all editable properties
+ * - None: <not in use?>
+ * Properties:
+ * - Unspecified: can be edited by all?
+ * - Basic: can be edited by users with some permission to edit
+ * - Cosmetic: can be edited by users with cosmetic+full permission
+ * - Full: can be edited by users with full permission
+ * - None: can't be edited (e.g. outputs or stuff that requires a delete + create new)
+ *
+ * TODO: consider the order. It should be possible to use < or > to determine if things are editable (not possible right now when COSMETIC is 'in the middle')
+ *
  * @generated from enum ar.v1.WorkerPermission
  */
 export enum WorkerPermission {
@@ -21,9 +39,9 @@ export enum WorkerPermission {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: WORKER_PERMISSION_NONE = 1;
+   * @generated from enum value: WORKER_PERMISSION_BASIC = 1;
    */
-  NONE = 1,
+  BASIC = 1,
 
   /**
    * @generated from enum value: WORKER_PERMISSION_COSMETIC = 2;
@@ -34,6 +52,11 @@ export enum WorkerPermission {
    * @generated from enum value: WORKER_PERMISSION_FULL = 3;
    */
   FULL = 3,
+
+  /**
+   * @generated from enum value: WORKER_PERMISSION_NONE = 4;
+   */
+  NONE = 4,
 }
 
 /**

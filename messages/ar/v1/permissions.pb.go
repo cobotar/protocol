@@ -21,28 +21,45 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// TODO: Rename to AREditPermission? - what about 'automatic' systems?
+// Consider the mapping, e.g: unspecified, none = nothing, cosmetic = some, full =
+// User:
+// - Unspecified: can't edit any properties
+// - Basic: can edit {basic} properties
+// - Cosmetic: can edit {basic, cosmetic} properties
+// - Full: can edit all editable properties
+// - None: <not in use?>
+// Properties:
+// - Unspecified: can be edited by all?
+// - Basic: can be edited by users with some permission to edit
+// - Cosmetic: can be edited by users with cosmetic+full permission
+// - Full: can be edited by users with full permission
+// - None: can't be edited (e.g. outputs or stuff that requires a delete + create new)
 type WorkerPermission int32
 
 const (
 	WorkerPermission_WORKER_PERMISSION_UNSPECIFIED WorkerPermission = 0
-	WorkerPermission_WORKER_PERMISSION_NONE        WorkerPermission = 1
+	WorkerPermission_WORKER_PERMISSION_BASIC       WorkerPermission = 1
 	WorkerPermission_WORKER_PERMISSION_COSMETIC    WorkerPermission = 2
 	WorkerPermission_WORKER_PERMISSION_FULL        WorkerPermission = 3
+	WorkerPermission_WORKER_PERMISSION_NONE        WorkerPermission = 4
 )
 
 // Enum value maps for WorkerPermission.
 var (
 	WorkerPermission_name = map[int32]string{
 		0: "WORKER_PERMISSION_UNSPECIFIED",
-		1: "WORKER_PERMISSION_NONE",
+		1: "WORKER_PERMISSION_BASIC",
 		2: "WORKER_PERMISSION_COSMETIC",
 		3: "WORKER_PERMISSION_FULL",
+		4: "WORKER_PERMISSION_NONE",
 	}
 	WorkerPermission_value = map[string]int32{
 		"WORKER_PERMISSION_UNSPECIFIED": 0,
-		"WORKER_PERMISSION_NONE":        1,
+		"WORKER_PERMISSION_BASIC":       1,
 		"WORKER_PERMISSION_COSMETIC":    2,
 		"WORKER_PERMISSION_FULL":        3,
+		"WORKER_PERMISSION_NONE":        4,
 	}
 )
 
@@ -77,12 +94,13 @@ var File_ar_v1_permissions_proto protoreflect.FileDescriptor
 
 const file_ar_v1_permissions_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/permissions.proto\x12\x05ar.v1*\x8d\x01\n" +
+	"\x17ar/v1/permissions.proto\x12\x05ar.v1*\xaa\x01\n" +
 	"\x10WorkerPermission\x12!\n" +
-	"\x1dWORKER_PERMISSION_UNSPECIFIED\x10\x00\x12\x1a\n" +
-	"\x16WORKER_PERMISSION_NONE\x10\x01\x12\x1e\n" +
+	"\x1dWORKER_PERMISSION_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17WORKER_PERMISSION_BASIC\x10\x01\x12\x1e\n" +
 	"\x1aWORKER_PERMISSION_COSMETIC\x10\x02\x12\x1a\n" +
-	"\x16WORKER_PERMISSION_FULL\x10\x03B\x8c\x01\n" +
+	"\x16WORKER_PERMISSION_FULL\x10\x03\x12\x1a\n" +
+	"\x16WORKER_PERMISSION_NONE\x10\x04B\x8c\x01\n" +
 	"\tcom.ar.v1B\x10PermissionsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

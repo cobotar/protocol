@@ -24,14 +24,14 @@ namespace Messages.AR.V1 {
     static PermissionsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chdhci92MS9wZXJtaXNzaW9ucy5wcm90bxIFYXIudjEqjQEKEFdvcmtlclBl",
-            "cm1pc3Npb24SIQodV09SS0VSX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIa",
-            "ChZXT1JLRVJfUEVSTUlTU0lPTl9OT05FEAESHgoaV09SS0VSX1BFUk1JU1NJ",
-            "T05fQ09TTUVUSUMQAhIaChZXT1JLRVJfUEVSTUlTU0lPTl9GVUxMEANCjAEK",
-            "CWNvbS5hci52MUIQUGVybWlzc2lvbnNQcm90b1ABWi9naXRodWIuY29tL2Nv",
-            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1l",
-            "c3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFy",
-            "OjpWMWIGcHJvdG8z"));
+            "Chdhci92MS9wZXJtaXNzaW9ucy5wcm90bxIFYXIudjEqqgEKEFdvcmtlclBl",
+            "cm1pc3Npb24SIQodV09SS0VSX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIb",
+            "ChdXT1JLRVJfUEVSTUlTU0lPTl9CQVNJQxABEh4KGldPUktFUl9QRVJNSVNT",
+            "SU9OX0NPU01FVElDEAISGgoWV09SS0VSX1BFUk1JU1NJT05fRlVMTBADEhoK",
+            "FldPUktFUl9QRVJNSVNTSU9OX05PTkUQBEKMAQoJY29tLmFyLnYxQhBQZXJt",
+            "aXNzaW9uc1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
+            "ZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVB",
+            "clxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.WorkerPermission), }, null, null));
@@ -40,11 +40,29 @@ namespace Messages.AR.V1 {
 
   }
   #region Enums
+  /// <summary>
+  ///
+  ///TODO: Rename to AREditPermission? - what about 'automatic' systems?
+  ///Consider the mapping, e.g: unspecified, none = nothing, cosmetic = some, full =
+  ///User:
+  ///- Unspecified: can't edit any properties
+  ///- Basic: can edit {basic} properties
+  ///- Cosmetic: can edit {basic, cosmetic} properties
+  ///- Full: can edit all editable properties
+  ///- None: &lt;not in use?>
+  ///Properties:
+  ///- Unspecified: can be edited by all?
+  ///- Basic: can be edited by users with some permission to edit
+  ///- Cosmetic: can be edited by users with cosmetic+full permission
+  ///- Full: can be edited by users with full permission
+  ///- None: can't be edited (e.g. outputs or stuff that requires a delete + create new)
+  /// </summary>
   public enum WorkerPermission {
     [pbr::OriginalName("WORKER_PERMISSION_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("WORKER_PERMISSION_NONE")] None = 1,
+    [pbr::OriginalName("WORKER_PERMISSION_BASIC")] Basic = 1,
     [pbr::OriginalName("WORKER_PERMISSION_COSMETIC")] Cosmetic = 2,
     [pbr::OriginalName("WORKER_PERMISSION_FULL")] Full = 3,
+    [pbr::OriginalName("WORKER_PERMISSION_NONE")] None = 4,
   }
 
   #endregion

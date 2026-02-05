@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/permissions.proto\x12\x05\x61r.v1*\x8d\x01\n\x10WorkerPermission\x12!\n\x1dWORKER_PERMISSION_UNSPECIFIED\x10\x00\x12\x1a\n\x16WORKER_PERMISSION_NONE\x10\x01\x12\x1e\n\x1aWORKER_PERMISSION_COSMETIC\x10\x02\x12\x1a\n\x16WORKER_PERMISSION_FULL\x10\x03\x42\x8c\x01\n\tcom.ar.v1B\x10PermissionsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/permissions.proto\x12\x05\x61r.v1*\xaa\x01\n\x10WorkerPermission\x12!\n\x1dWORKER_PERMISSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17WORKER_PERMISSION_BASIC\x10\x01\x12\x1e\n\x1aWORKER_PERMISSION_COSMETIC\x10\x02\x12\x1a\n\x16WORKER_PERMISSION_FULL\x10\x03\x12\x1a\n\x16WORKER_PERMISSION_NONE\x10\x04\x42\x8c\x01\n\tcom.ar.v1B\x10PermissionsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\020PermissionsProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
   _globals['_WORKERPERMISSION']._serialized_start=35
-  _globals['_WORKERPERMISSION']._serialized_end=176
+  _globals['_WORKERPERMISSION']._serialized_end=205
 # @@protoc_insertion_point(module_scope)

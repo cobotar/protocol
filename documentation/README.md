@@ -310,14 +310,30 @@
 <a name="ar-v1-WorkerPermission"></a>
 
 ### WorkerPermission
+TODO: Rename to AREditPermission? - what about &#39;automatic&#39; systems?
+Consider the mapping, e.g: unspecified, none = nothing, cosmetic = some, full =
+User:
+- Unspecified: can&#39;t edit any properties
+- Basic: can edit {basic} properties
+- Cosmetic: can edit {basic, cosmetic} properties
+- Full: can edit all editable properties
+- None: &lt;not in use?&gt;
+Properties:
+- Unspecified: can be edited by all?
+- Basic: can be edited by users with some permission to edit
+- Cosmetic: can be edited by users with cosmetic&#43;full permission
+- Full: can be edited by users with full permission
+- None: can&#39;t be edited (e.g. outputs or stuff that requires a delete &#43; create new)
 
+TODO: consider the order. It should be possible to use &lt; or &gt; to determine if things are editable (not possible right now when COSMETIC is &#39;in the middle&#39;)
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | WORKER_PERMISSION_UNSPECIFIED | 0 |  |
-| WORKER_PERMISSION_NONE | 1 |  |
+| WORKER_PERMISSION_BASIC | 1 |  |
 | WORKER_PERMISSION_COSMETIC | 2 |  |
 | WORKER_PERMISSION_FULL | 3 |  |
+| WORKER_PERMISSION_NONE | 4 |  |
 
 
  
@@ -3089,7 +3105,7 @@ Reassign all sub-tasks to the assignee (if possible)
 | type | [ToolType](#plm-v1-ToolType) |  |  |
 | actor | [ToolActor](#plm-v1-ToolActor) |  |  |
 | properties | [ToolProperty](#plm-v1-ToolProperty) | repeated |  |
-| model_id | [string](#string) | optional |  |
+| model_id | [string](#string) |  |  |
 
 
 

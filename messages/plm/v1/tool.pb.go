@@ -218,7 +218,7 @@ type ToolMessage struct {
 	Type          ToolType               `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ToolType" json:"type,omitempty"`
 	Actor         ToolActor              `protobuf:"varint,6,opt,name=actor,proto3,enum=plm.v1.ToolActor" json:"actor,omitempty"`
 	Properties    []ToolProperty         `protobuf:"varint,7,rep,packed,name=properties,proto3,enum=plm.v1.ToolProperty" json:"properties,omitempty"`
-	ModelId       *string                `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3,oneof" json:"model_id,omitempty"`
+	ModelId       string                 `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -303,8 +303,8 @@ func (x *ToolMessage) GetProperties() []ToolProperty {
 }
 
 func (x *ToolMessage) GetModelId() string {
-	if x != nil && x.ModelId != nil {
-		return *x.ModelId
+	if x != nil {
+		return x.ModelId
 	}
 	return ""
 }
@@ -357,7 +357,7 @@ var File_plm_v1_tool_proto protoreflect.FileDescriptor
 
 const file_plm_v1_tool_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/tool.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcb\x02\n" +
+	"\x11plm/v1/tool.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xca\x02\n" +
 	"\vToolMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -366,12 +366,11 @@ const file_plm_v1_tool_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x10.plm.v1.ToolTypeB\r\xbaH\n" +
 	"\xc8\x01\x01\x82\x01\x04\x10\x01(\n" +
 	"R\x04type\x124\n" +
-	"\x05actor\x18\x06 \x01(\x0e2\x11.plm.v1.ToolActorB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05actor\x124\n" +
+	"\x05actor\x18\x06 \x01(\x0e2\x11.plm.v1.ToolActorB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05actor\x12E\n" +
 	"\n" +
-	"properties\x18\a \x03(\x0e2\x14.plm.v1.ToolPropertyR\n" +
-	"properties\x12)\n" +
-	"\bmodel_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01H\x00R\amodelId\x88\x01\x01B\v\n" +
-	"\t_model_id\"9\n" +
+	"properties\x18\a \x03(\x0e2\x14.plm.v1.ToolPropertyB\x0f\xbaH\f\x92\x01\t\x18\x01\"\x05\x82\x01\x02\x10\x01R\n" +
+	"properties\x12$\n" +
+	"\bmodel_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\"9\n" +
 	"\fToolMessages\x12)\n" +
 	"\x05tools\x18\x01 \x03(\v2\x13.plm.v1.ToolMessageR\x05tools*\xc5\x02\n" +
 	"\bToolType\x12\x19\n" +
@@ -441,7 +440,6 @@ func file_plm_v1_tool_proto_init() {
 	if File_plm_v1_tool_proto != nil {
 		return
 	}
-	file_plm_v1_tool_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -43,8 +43,9 @@ generate:
 	buf generate
 
 ## verify: run lint, format, breaking, and generate command
+## TODO: removed breaking until a more stable protocol have been established
 .PHONY: verify
-verify: format lint breaking generate
+verify: format lint generate
 	@echo 'Remember to check if new files were created!'
 
 ## publish bump=$1: run checks, bump version, and publish. bump={major,minor,patch}

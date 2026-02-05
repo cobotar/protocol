@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11plm/v1/tool.proto\x12\x06plm.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcb\x02\n\x0bToolMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x10.plm.v1.ToolTypeB\r\xbaH\n\x82\x01\x04\x10\x01(\n\xc8\x01\x01R\x04type\x12\x34\n\x05\x61\x63tor\x18\x06 \x01(\x0e\x32\x11.plm.v1.ToolActorB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05\x61\x63tor\x12\x34\n\nproperties\x18\x07 \x03(\x0e\x32\x14.plm.v1.ToolPropertyR\nproperties\x12)\n\x08model_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01H\x00R\x07modelId\x88\x01\x01\x42\x0b\n\t_model_id\"9\n\x0cToolMessages\x12)\n\x05tools\x18\x01 \x03(\x0b\x32\x13.plm.v1.ToolMessageR\x05tools*\xc5\x02\n\x08ToolType\x12\x19\n\x15TOOL_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11TOOL_TYPE_CUTTING\x10\n\x12\x15\n\x11TOOL_TYPE_SHAPING\x10\x14\x12\x17\n\x13TOOL_TYPE_FASTENING\x10\x1e\x12\x16\n\x12TOOL_TYPE_GRIPPING\x10(\x12\x15\n\x11TOOL_TYPE_TURNING\x10\x32\x12\x16\n\x12TOOL_TYPE_STRIKING\x10<\x12\x17\n\x13TOOL_TYPE_MEASURING\x10\x46\x12\x15\n\x11TOOL_TYPE_MARKING\x10P\x12\x17\n\x13TOOL_TYPE_FINISHING\x10Z\x12\x16\n\x12TOOL_TYPE_ABRASIVE\x10\x64\x12\x14\n\x10TOOL_TYPE_SAFETY\x10n\x12\x19\n\x15TOOL_TYPE_ELECTRONICS\x10x*\xac\x01\n\x0cToolProperty\x12\x1d\n\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n\x17TOOL_PROPERTY_INSULATED\x10\x03\x12\x1f\n\x1bTOOL_PROPERTY_COLLABORATIVE\x10\x04*j\n\tToolActor\x12\x1a\n\x16TOOL_ACTOR_UNSPECIFIED\x10\x00\x12\x14\n\x10TOOL_ACTOR_HUMAN\x10\x01\x12\x14\n\x10TOOL_ACTOR_ROBOT\x10\x02\x12\x15\n\x11TOOL_ACTOR_HYBRID\x10\x03\x42\x8c\x01\n\ncom.plm.v1B\tToolProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11plm/v1/tool.proto\x12\x06plm.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xca\x02\n\x0bToolMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x10.plm.v1.ToolTypeB\r\xbaH\n\x82\x01\x04\x10\x01(\n\xc8\x01\x01R\x04type\x12\x34\n\x05\x61\x63tor\x18\x06 \x01(\x0e\x32\x11.plm.v1.ToolActorB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05\x61\x63tor\x12\x45\n\nproperties\x18\x07 \x03(\x0e\x32\x14.plm.v1.ToolPropertyB\x0f\xbaH\x0c\x92\x01\t\x18\x01\"\x05\x82\x01\x02\x10\x01R\nproperties\x12$\n\x08model_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x07modelId\"9\n\x0cToolMessages\x12)\n\x05tools\x18\x01 \x03(\x0b\x32\x13.plm.v1.ToolMessageR\x05tools*\xc5\x02\n\x08ToolType\x12\x19\n\x15TOOL_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11TOOL_TYPE_CUTTING\x10\n\x12\x15\n\x11TOOL_TYPE_SHAPING\x10\x14\x12\x17\n\x13TOOL_TYPE_FASTENING\x10\x1e\x12\x16\n\x12TOOL_TYPE_GRIPPING\x10(\x12\x15\n\x11TOOL_TYPE_TURNING\x10\x32\x12\x16\n\x12TOOL_TYPE_STRIKING\x10<\x12\x17\n\x13TOOL_TYPE_MEASURING\x10\x46\x12\x15\n\x11TOOL_TYPE_MARKING\x10P\x12\x17\n\x13TOOL_TYPE_FINISHING\x10Z\x12\x16\n\x12TOOL_TYPE_ABRASIVE\x10\x64\x12\x14\n\x10TOOL_TYPE_SAFETY\x10n\x12\x19\n\x15TOOL_TYPE_ELECTRONICS\x10x*\xac\x01\n\x0cToolProperty\x12\x1d\n\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n\x17TOOL_PROPERTY_INSULATED\x10\x03\x12\x1f\n\x1bTOOL_PROPERTY_COLLABORATIVE\x10\x04*j\n\tToolActor\x12\x1a\n\x16TOOL_ACTOR_UNSPECIFIED\x10\x00\x12\x14\n\x10TOOL_ACTOR_HUMAN\x10\x01\x12\x14\n\x10TOOL_ACTOR_ROBOT\x10\x02\x12\x15\n\x11TOOL_ACTOR_HYBRID\x10\x03\x42\x8c\x01\n\ncom.plm.v1B\tToolProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,16 +40,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TOOLMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\n\202\001\004\020\001(\n\310\001\001'
   _globals['_TOOLMESSAGE'].fields_by_name['actor']._loaded_options = None
   _globals['_TOOLMESSAGE'].fields_by_name['actor']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_TOOLMESSAGE'].fields_by_name['properties']._loaded_options = None
+  _globals['_TOOLMESSAGE'].fields_by_name['properties']._serialized_options = b'\272H\014\222\001\t\030\001\"\005\202\001\002\020\001'
   _globals['_TOOLMESSAGE'].fields_by_name['model_id']._loaded_options = None
   _globals['_TOOLMESSAGE'].fields_by_name['model_id']._serialized_options = b'\272H\006r\004\210\361\004\001'
-  _globals['_TOOLTYPE']._serialized_start=497
-  _globals['_TOOLTYPE']._serialized_end=822
-  _globals['_TOOLPROPERTY']._serialized_start=825
-  _globals['_TOOLPROPERTY']._serialized_end=997
-  _globals['_TOOLACTOR']._serialized_start=999
-  _globals['_TOOLACTOR']._serialized_end=1105
+  _globals['_TOOLTYPE']._serialized_start=496
+  _globals['_TOOLTYPE']._serialized_end=821
+  _globals['_TOOLPROPERTY']._serialized_start=824
+  _globals['_TOOLPROPERTY']._serialized_end=996
+  _globals['_TOOLACTOR']._serialized_start=998
+  _globals['_TOOLACTOR']._serialized_end=1104
   _globals['_TOOLMESSAGE']._serialized_start=104
-  _globals['_TOOLMESSAGE']._serialized_end=435
-  _globals['_TOOLMESSAGES']._serialized_start=437
-  _globals['_TOOLMESSAGES']._serialized_end=494
+  _globals['_TOOLMESSAGE']._serialized_end=434
+  _globals['_TOOLMESSAGES']._serialized_start=436
+  _globals['_TOOLMESSAGES']._serialized_end=493
 # @@protoc_insertion_point(module_scope)

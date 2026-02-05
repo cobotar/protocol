@@ -26,36 +26,36 @@ namespace Messages.Plm.V1 {
           string.Concat(
             "ChFwbG0vdjEvdG9vbC5wcm90bxIGcGxtLnYxGhtidWYvdmFsaWRhdGUvdmFs",
             "aWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
-            "cnVsZXMucHJvdG8iywIKC1Rvb2xNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBId",
+            "cnVsZXMucHJvdG8iygIKC1Rvb2xNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBId",
             "CgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIE",
             "aWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SMwoEdHlw",
             "ZRgFIAEoDjIQLnBsbS52MS5Ub29sVHlwZUINukgKggEEEAEoCsgBAVIEdHlw",
             "ZRI0CgVhY3RvchgGIAEoDjIRLnBsbS52MS5Ub29sQWN0b3JCC7pICIIBAhAB",
-            "yAEBUgVhY3RvchI0Cgpwcm9wZXJ0aWVzGAcgAygOMhQucGxtLnYxLlRvb2xQ",
-            "cm9wZXJ0eVIKcHJvcGVydGllcxIpCghtb2RlbF9pZBgIIAEoCUIJukgGcgSI",
-            "8QQBSABSB21vZGVsSWSIAQFCCwoJX21vZGVsX2lkIjkKDFRvb2xNZXNzYWdl",
-            "cxIpCgV0b29scxgBIAMoCzITLnBsbS52MS5Ub29sTWVzc2FnZVIFdG9vbHMq",
-            "xQIKCFRvb2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRP",
-            "T0xfVFlQRV9DVVRUSU5HEAoSFQoRVE9PTF9UWVBFX1NIQVBJTkcQFBIXChNU",
-            "T09MX1RZUEVfRkFTVEVOSU5HEB4SFgoSVE9PTF9UWVBFX0dSSVBQSU5HECgS",
-            "FQoRVE9PTF9UWVBFX1RVUk5JTkcQMhIWChJUT09MX1RZUEVfU1RSSUtJTkcQ",
-            "PBIXChNUT09MX1RZUEVfTUVBU1VSSU5HEEYSFQoRVE9PTF9UWVBFX01BUktJ",
-            "TkcQUBIXChNUT09MX1RZUEVfRklOSVNISU5HEFoSFgoSVE9PTF9UWVBFX0FC",
-            "UkFTSVZFEGQSFAoQVE9PTF9UWVBFX1NBRkVUWRBuEhkKFVRPT0xfVFlQRV9F",
-            "TEVDVFJPTklDUxB4KqwBCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJU",
-            "WV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRS",
-            "T0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9Q",
-            "Uk9QRVJUWV9JTlNVTEFURUQQAxIfChtUT09MX1BST1BFUlRZX0NPTExBQk9S",
-            "QVRJVkUQBCpqCglUb29sQWN0b3ISGgoWVE9PTF9BQ1RPUl9VTlNQRUNJRklF",
-            "RBAAEhQKEFRPT0xfQUNUT1JfSFVNQU4QARIUChBUT09MX0FDVE9SX1JPQk9U",
-            "EAISFQoRVE9PTF9BQ1RPUl9IWUJSSUQQA0KMAQoKY29tLnBsbS52MUIJVG9v",
-            "bFByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
-            "cy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1c",
-            "VjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
+            "yAEBUgVhY3RvchJFCgpwcm9wZXJ0aWVzGAcgAygOMhQucGxtLnYxLlRvb2xQ",
+            "cm9wZXJ0eUIPukgMkgEJGAEiBYIBAhABUgpwcm9wZXJ0aWVzEiQKCG1vZGVs",
+            "X2lkGAggASgJQgm6SAZyBIjxBAFSB21vZGVsSWQiOQoMVG9vbE1lc3NhZ2Vz",
+            "EikKBXRvb2xzGAEgAygLMhMucGxtLnYxLlRvb2xNZXNzYWdlUgV0b29scyrF",
+            "AgoIVG9vbFR5cGUSGQoVVE9PTF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVE9P",
+            "TF9UWVBFX0NVVFRJTkcQChIVChFUT09MX1RZUEVfU0hBUElORxAUEhcKE1RP",
+            "T0xfVFlQRV9GQVNURU5JTkcQHhIWChJUT09MX1RZUEVfR1JJUFBJTkcQKBIV",
+            "ChFUT09MX1RZUEVfVFVSTklORxAyEhYKElRPT0xfVFlQRV9TVFJJS0lORxA8",
+            "EhcKE1RPT0xfVFlQRV9NRUFTVVJJTkcQRhIVChFUT09MX1RZUEVfTUFSS0lO",
+            "RxBQEhcKE1RPT0xfVFlQRV9GSU5JU0hJTkcQWhIWChJUT09MX1RZUEVfQUJS",
+            "QVNJVkUQZBIUChBUT09MX1RZUEVfU0FGRVRZEG4SGQoVVE9PTF9UWVBFX0VM",
+            "RUNUUk9OSUNTEHgqrAEKDFRvb2xQcm9wZXJ0eRIdChlUT09MX1BST1BFUlRZ",
+            "X1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JRVUVfQ09OVFJP",
+            "TExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIbChdUT09MX1BS",
+            "T1BFUlRZX0lOU1VMQVRFRBADEh8KG1RPT0xfUFJPUEVSVFlfQ09MTEFCT1JB",
+            "VElWRRAEKmoKCVRvb2xBY3RvchIaChZUT09MX0FDVE9SX1VOU1BFQ0lGSUVE",
+            "EAASFAoQVE9PTF9BQ1RPUl9IVU1BThABEhQKEFRPT0xfQUNUT1JfUk9CT1QQ",
+            "AhIVChFUT09MX0FDVE9SX0hZQlJJRBADQowBCgpjb20ucGxtLnYxQglUb29s",
+            "UHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxW",
+            "MeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ToolType), typeof(global::Messages.Plm.V1.ToolProperty), typeof(global::Messages.Plm.V1.ToolActor), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ToolMessage), global::Messages.Plm.V1.ToolMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Actor", "Properties", "ModelId" }, new[]{ "ModelId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ToolMessage), global::Messages.Plm.V1.ToolMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Actor", "Properties", "ModelId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ToolMessages), global::Messages.Plm.V1.ToolMessages.Parser, new[]{ "Tools" }, null, null, null, null)
           }));
     }
@@ -234,28 +234,14 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "model_id" field.</summary>
     public const int ModelIdFieldNumber = 8;
-    private readonly static string ModelIdDefaultValue = "";
-
-    private string modelId_;
+    private string modelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ModelId {
-      get { return modelId_ ?? ModelIdDefaultValue; }
+      get { return modelId_; }
       set {
         modelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "model_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasModelId {
-      get { return modelId_ != null; }
-    }
-    /// <summary>Clears the value of the "model_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearModelId() {
-      modelId_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -295,7 +281,7 @@ namespace Messages.Plm.V1 {
       if (Type != global::Messages.Plm.V1.ToolType.Unspecified) hash ^= Type.GetHashCode();
       if (Actor != global::Messages.Plm.V1.ToolActor.Unspecified) hash ^= Actor.GetHashCode();
       hash ^= properties_.GetHashCode();
-      if (HasModelId) hash ^= ModelId.GetHashCode();
+      if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -339,7 +325,7 @@ namespace Messages.Plm.V1 {
         output.WriteEnum((int) Actor);
       }
       properties_.WriteTo(output, _repeated_properties_codec);
-      if (HasModelId) {
+      if (ModelId.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
@@ -378,7 +364,7 @@ namespace Messages.Plm.V1 {
         output.WriteEnum((int) Actor);
       }
       properties_.WriteTo(ref output, _repeated_properties_codec);
-      if (HasModelId) {
+      if (ModelId.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
@@ -411,7 +397,7 @@ namespace Messages.Plm.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Actor);
       }
       size += properties_.CalculateSize(_repeated_properties_codec);
-      if (HasModelId) {
+      if (ModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelId);
       }
       if (_unknownFields != null) {
@@ -445,7 +431,7 @@ namespace Messages.Plm.V1 {
         Actor = other.Actor;
       }
       properties_.Add(other.properties_);
-      if (other.HasModelId) {
+      if (other.ModelId.Length != 0) {
         ModelId = other.ModelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
