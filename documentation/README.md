@@ -1470,6 +1470,7 @@ A simple pose consisting of a position and orientation
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
 | type | [MarkerType](#ar-v1-MarkerType) |  |  |
@@ -1534,10 +1535,10 @@ A simple pose consisting of a position and orientation
 | name | [string](#string) |  | Name of the robot |
 | icon | [string](#string) |  | Optional icon representing the robot |
 | description | [string](#string) |  | Optional description of the robot |
-| type | [RobotType](#ar-v1-RobotType) |  |  |
-| robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  |  |
-| coupler_model_id | [string](#string) |  |  |
-| end_effector_model_id | [string](#string) |  |  |
+| type | [RobotType](#ar-v1-RobotType) |  | Required type of robot |
+| robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  | Required driver type for robot |
+| coupler_model_id | [string](#string) |  | Optional coupler model |
+| end_effector_model_id | [string](#string) |  | Optional end-effector model |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 
 

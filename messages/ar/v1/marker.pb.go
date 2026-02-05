@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -72,9 +73,10 @@ type MarkerMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	MarkerText    string                 `protobuf:"bytes,4,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
-	Type          MarkerType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	MarkerText    string                 `protobuf:"bytes,5,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
+	Type          MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,6 +121,13 @@ func (x *MarkerMessage) GetId() string {
 func (x *MarkerMessage) GetName() string {
 	if x != nil {
 		return x.Name
+	}
+	return ""
+}
+
+func (x *MarkerMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
 	}
 	return ""
 }
@@ -192,16 +201,18 @@ var File_ar_v1_marker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\"\xc3\x01\n" +
+	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdc\x01\n" +
 	"\rMarkerMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x122\n" +
-	"\vmarker_text\x18\x04 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
-	"markerText\x12-\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.MarkerTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\"@\n" +
-	"\x0eMarkerMessages\x12.\n" +
-	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageR\amarkers*B\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\vmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
+	"markerText\x122\n" +
+	"\x04type\x18\x06 \x01(\x0e2\x11.ar.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xa8\x01\n" +
+	"\x0eMarkerMessages\x12\x95\x01\n" +
+	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageBe\xbaHb\xba\x01_\n" +
+	"\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\amarkers*B\n" +
 	"\n" +
 	"MarkerType\x12\x1b\n" +
 	"\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +

@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -16,18 +17,20 @@ MARKER_TYPE_UNSPECIFIED: MarkerType
 MARKER_TYPE_QR_CODE: MarkerType
 
 class MarkerMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "marker_text", "type")
+    __slots__ = ("id", "name", "icon", "description", "marker_text", "type")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     MARKER_TEXT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
+    icon: str
     description: str
     marker_text: str
     type: MarkerType
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ...) -> None: ...
 
 class MarkerMessages(_message.Message):
     __slots__ = ("markers",)

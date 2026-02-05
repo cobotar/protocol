@@ -7,13 +7,14 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/robot.proto.
  */
 export const file_ar_v1_robot: GenFile = /*@__PURE__*/
-  fileDesc("ChFhci92MS9yb2JvdC5wcm90bxIFYXIudjEivwIKDFJvYm90TWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIrCgR0eXBlGAUgASgOMhAuYXIudjEuUm9ib3RUeXBlQgu6SAjIAQGCAQIQARI+ChFyb2JvdF9kcml2ZXJfdHlwZRgGIAEoDjIWLmFyLnYxLlJvYm90RHJpdmVyVHlwZUILukgIyAEBggECEAESJwoQY291cGxlcl9tb2RlbF9pZBgHIAEoCUINukgKcgg6Bm1vZGVsLRIsChVlbmRfZWZmZWN0b3JfbW9kZWxfaWQYCCABKAlCDbpICnIIOgZtb2RlbC0SIwoKcHJvcGVydGllcxgJIAMoCzIPLmFyLnYxLlByb3BlcnR5IjQKDVJvYm90TWVzc2FnZXMSIwoGcm9ib3RzGAEgAygLMhMuYXIudjEuUm9ib3RNZXNzYWdlKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKk4KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAFChgEKCWNvbS5hci52MUIKUm9ib3RQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_property, file_buf_validate_validate]);
+  fileDesc("ChFhci92MS9yb2JvdC5wcm90bxIFYXIudjEitwIKDFJvYm90TWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIrCgR0eXBlGAUgASgOMhAuYXIudjEuUm9ib3RUeXBlQgu6SAjIAQGCAQIQARI+ChFyb2JvdF9kcml2ZXJfdHlwZRgGIAEoDjIWLmFyLnYxLlJvYm90RHJpdmVyVHlwZUILukgIyAEBggECEAESIwoQY291cGxlcl9tb2RlbF9pZBgHIAEoCUIJukgGcgSI8QQBEigKFWVuZF9lZmZlY3Rvcl9tb2RlbF9pZBgIIAEoCUIJukgGcgSI8QQBEiMKCnByb3BlcnRpZXMYCSADKAsyDy5hci52MS5Qcm9wZXJ0eSI0Cg1Sb2JvdE1lc3NhZ2VzEiMKBnJvYm90cxgBIAMoCzITLmFyLnYxLlJvYm90TWVzc2FnZSqBAQoJUm9ib3RUeXBlEhoKFlJPQk9UX1RZUEVfVU5TUEVDSUZJRUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9ST0JPVF9UWVBFX1VSNUUQCxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9CT1RfVFlQRV9LVUtBX0lJV0EQFCpOCg9Sb2JvdERyaXZlclR5cGUSIQodUk9CT1RfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIYChRST0JPVF9EUklWRVJfVFlQRV9VUhABQoYBCgljb20uYXIudjFCClJvYm90UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.RobotMessage
@@ -48,21 +49,29 @@ export type RobotMessage = Message<"ar.v1.RobotMessage"> & {
   description: string;
 
   /**
+   * Required type of robot
+   *
    * @generated from field: ar.v1.RobotType type = 5;
    */
   type: RobotType;
 
   /**
+   * Required driver type for robot
+   *
    * @generated from field: ar.v1.RobotDriverType robot_driver_type = 6;
    */
   robotDriverType: RobotDriverType;
 
   /**
+   * Optional coupler model
+   *
    * @generated from field: string coupler_model_id = 7;
    */
   couplerModelId: string;
 
   /**
+   * Optional end-effector model
+   *
    * @generated from field: string end_effector_model_id = 8;
    */
   endEffectorModelId: string;

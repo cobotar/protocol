@@ -25,21 +25,25 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
-            "aWRhdGUucHJvdG8iwwEKDU1hcmtlck1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
-            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEEAEYQFIEbmFtZRIgCgtkZXNjcmlwdGlv",
-            "bhgDIAEoCVILZGVzY3JpcHRpb24SMgoLbWFya2VyX3RleHQYBCABKAlCEbpI",
-            "DnIMEAKSAgdyb2JlcnRhUgptYXJrZXJUZXh0Ei0KBHR5cGUYBSABKA4yES5h",
-            "ci52MS5NYXJrZXJUeXBlQga6SAPIAQFSBHR5cGUiQAoOTWFya2VyTWVzc2Fn",
-            "ZXMSLgoHbWFya2VycxgBIAMoCzIULmFyLnYxLk1hcmtlck1lc3NhZ2VSB21h",
-            "cmtlcnMqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklF",
-            "RBAAEhcKE01BUktFUl9UWVBFX1FSX0NPREUQAUKHAQoJY29tLmFyLnYxQgtN",
-            "YXJrZXJQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJc",
-            "VjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "aWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
+            "cnVsZXMucHJvdG8i3AEKDU1hcmtlck1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
+            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgtt",
+            "YXJrZXJfdGV4dBgFIAEoCUIRukgOcgwQApICB3JvYmVydGFSCm1hcmtlclRl",
+            "eHQSMgoEdHlwZRgGIAEoDjIRLmFyLnYxLk1hcmtlclR5cGVCC7pICIIBAhAB",
+            "yAEBUgR0eXBlIqgBCg5NYXJrZXJNZXNzYWdlcxKVAQoHbWFya2VycxgBIAMo",
+            "CzIULmFyLnYxLk1hcmtlck1lc3NhZ2VCZbpIYroBXwoSdW5pcXVlX21hcmtl",
+            "cl90ZXh0EhptYXJrZXIgdGV4dCBtdXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAo",
+            "bWFya2VyLCBtYXJrZXIubWFya2VyX3RleHQpLnVuaXF1ZSgpUgdtYXJrZXJz",
+            "KkIKCk1hcmtlclR5cGUSGwoXTUFSS0VSX1RZUEVfVU5TUEVDSUZJRUQQABIX",
+            "ChNNQVJLRVJfVFlQRV9RUl9DT0RFEAFChwEKCWNvbS5hci52MUILTWFya2Vy",
+            "UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIR",
+            "QXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "MarkerText", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessages), global::Messages.AR.V1.MarkerMessages.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
@@ -92,6 +96,7 @@ namespace Messages.AR.V1 {
     public MarkerMessage(MarkerMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      icon_ = other.icon_;
       description_ = other.description_;
       markerText_ = other.markerText_;
       type_ = other.type_;
@@ -128,8 +133,20 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,7 +158,7 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "marker_text" field.</summary>
-    public const int MarkerTextFieldNumber = 4;
+    public const int MarkerTextFieldNumber = 5;
     private string markerText_ = "";
     /// <summary>
     /// Text on the physical marker (QR-code)
@@ -156,7 +173,7 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 5;
+    public const int TypeFieldNumber = 6;
     private global::Messages.AR.V1.MarkerType type_ = global::Messages.AR.V1.MarkerType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -184,6 +201,7 @@ namespace Messages.AR.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (MarkerText != other.MarkerText) return false;
       if (Type != other.Type) return false;
@@ -196,6 +214,7 @@ namespace Messages.AR.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (MarkerText.Length != 0) hash ^= MarkerText.GetHashCode();
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) hash ^= Type.GetHashCode();
@@ -225,16 +244,20 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
       if (MarkerText.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(MarkerText);
       }
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -255,16 +278,20 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
       if (MarkerText.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(MarkerText);
       }
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -282,6 +309,9 @@ namespace Messages.AR.V1 {
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
@@ -309,6 +339,9 @@ namespace Messages.AR.V1 {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
@@ -347,14 +380,18 @@ namespace Messages.AR.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             MarkerText = input.ReadString();
             break;
           }
-          case 40: {
+          case 48: {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
             break;
           }
@@ -386,14 +423,18 @@ namespace Messages.AR.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             MarkerText = input.ReadString();
             break;
           }
-          case 40: {
+          case 48: {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
             break;
           }

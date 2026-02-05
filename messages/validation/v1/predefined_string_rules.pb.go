@@ -55,10 +55,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"+validation/v1/predefined_string_rules.proto\x12\rvalidation.v1\x1a\x1bbuf/validate/validate.proto:\xb1\x01\n" +
 	"\x0ename_component\x12\x19.buf.validate.StringRules\x18\x90N \x01(\bBn\xc2Hk\n" +
 	"i\n" +
-	"\x15string.name_component\x12*name must have between 1 and 64 characters\x1a$this.size() > 0 && this.size() <= 64R\rnameComponent:\xaa\x01\n" +
-	"\x12model_id_component\x12\x19.buf.validate.StringRules\x18\x91N \x01(\bB`\xc2H]\n" +
-	"[\n" +
-	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a\x19this.startsWith('model-')R\x10modelIdComponentB\xb5\x01\n" +
+	"\x15string.name_component\x12*Name must have between 1 and 64 characters\x1a$this.size() > 0 && this.size() <= 64R\rnameComponent:\xba\x01\n" +
+	"\x12model_id_component\x12\x19.buf.validate.StringRules\x18\x91N \x01(\bBp\xc2Hm\n" +
+	"k\n" +
+	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a)(this == '' || this.startsWith('model-'))R\x10modelIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{

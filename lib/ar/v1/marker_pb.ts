@@ -5,13 +5,14 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/marker.proto.
  */
 export const file_ar_v1_marker: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIpoBCg1NYXJrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBITCgtkZXNjcmlwdGlvbhgDIAEoCRImCgttYXJrZXJfdGV4dBgEIAEoCUIRukgOcgwQApICB3JvYmVydGESJwoEdHlwZRgFIAEoDjIRLmFyLnYxLk1hcmtlclR5cGVCBrpIA8gBASI3Cg5NYXJrZXJNZXNzYWdlcxIlCgdtYXJrZXJzGAEgAygLMhQuYXIudjEuTWFya2VyTWVzc2FnZSpCCgpNYXJrZXJUeXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate]);
+  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIq0BCg1NYXJrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKC21hcmtlcl90ZXh0GAUgASgJQhG6SA5yDBACkgIHcm9iZXJ0YRIsCgR0eXBlGAYgASgOMhEuYXIudjEuTWFya2VyVHlwZUILukgIyAEBggECEAEinwEKDk1hcmtlck1lc3NhZ2VzEowBCgdtYXJrZXJzGAEgAygLMhQuYXIudjEuTWFya2VyTWVzc2FnZUJlukhiugFfChJ1bmlxdWVfbWFya2VyX3RleHQSGm1hcmtlciB0ZXh0IG11c3QgYmUgdW5pcXVlGi10aGlzLm1hcChtYXJrZXIsIG1hcmtlci5tYXJrZXJfdGV4dCkudW5pcXVlKCkqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhcKE01BUktFUl9UWVBFX1FSX0NPREUQAUKHAQoJY29tLmFyLnYxQgtNYXJrZXJQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.MarkerMessage
@@ -28,19 +29,24 @@ export type MarkerMessage = Message<"ar.v1.MarkerMessage"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
    * Text on the physical marker (QR-code)
    *
-   * @generated from field: string marker_text = 4;
+   * @generated from field: string marker_text = 5;
    */
   markerText: string;
 
   /**
-   * @generated from field: ar.v1.MarkerType type = 5;
+   * @generated from field: ar.v1.MarkerType type = 6;
    */
   type: MarkerType;
 };

@@ -2,6 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -13,18 +14,23 @@ enum MarkerType {
 
 message MarkerMessage {
   string id = 1;
-  string name = 2 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }];
-  string description = 3;
-  string marker_text = 4 [(buf.validate.field).string = {
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  string marker_text = 5 [(buf.validate.field).string = {
     min_len: 2
     example: 'roberta'
   }]; // Text on the physical marker (QR-code)
-  MarkerType type = 5 [(buf.validate.field).required = true];
+  MarkerType type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message MarkerMessages {
-  repeated MarkerMessage markers = 1;
+  repeated MarkerMessage markers = 1 [(buf.validate.field).cel = {
+    id: "unique_marker_text"
+    message: "marker text must be unique"
+    expression: "this.map(marker, marker.marker_text).unique()"
+  }];
 }
