@@ -6,13 +6,15 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/feedback.proto.
  */
 export const file_ar_v1_feedback: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEiwgEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZRIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSrkAwoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNLX1RZUEVfVU5TUEVDSUZJRUQQABIgChxGRUVEQkFDS19UWVBFX1RBU0tfSElHSExJR0hUEAoSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1BBUlRfSElHSExJR0hUEAsSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1RPT0xfSElHSExJR0hUEAwSHwobRkVFREJBQ0tfVFlQRV9UQVNLX09WRVJWSUVXEA0SHAoYRkVFREJBQ0tfVFlQRV9ST0JPVF9QQVRIEDISIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEDMSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVEQkFDS19UWVBFX1JPQk9UX1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQNhIZChVGRUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVEQkFDS19UWVBFX0lDT04QZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhGRUVEQkFDS19UWVBFX1BMQVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JVTEVSEGhCiQEKCWNvbS5hci52MUINRmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_property]);
+  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi2gEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI9ChBGZWVkYmFja01lc3NhZ2VzEikKCWZlZWRiYWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZSJcChRGZWVkYmFja0Nsb25lTWVzc2FnZRITCgtvcmlnaW5hbF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkqqgQKDEZlZWRiYWNrVHlwZRIdChlGRUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNLX0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hMSUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAMEh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNLX1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFTS19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9CT1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNPThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVfUExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaEKJAQoJY29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackMessage
@@ -62,6 +64,55 @@ export const FeedbackMessageSchema: GenMessage<FeedbackMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_feedback, 0);
 
 /**
+ * @generated from message ar.v1.FeedbackMessages
+ */
+export type FeedbackMessages = Message<"ar.v1.FeedbackMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.FeedbackMessage feedbacks = 1;
+   */
+  feedbacks: FeedbackMessage[];
+};
+
+/**
+ * Describes the message ar.v1.FeedbackMessages.
+ * Use `create(FeedbackMessagesSchema)` to create a new message.
+ */
+export const FeedbackMessagesSchema: GenMessage<FeedbackMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_feedback, 1);
+
+/**
+ * @generated from message ar.v1.FeedbackCloneMessage
+ */
+export type FeedbackCloneMessage = Message<"ar.v1.FeedbackCloneMessage"> & {
+  /**
+   * @generated from field: string original_id = 1;
+   */
+  originalId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message ar.v1.FeedbackCloneMessage.
+ * Use `create(FeedbackCloneMessageSchema)` to create a new message.
+ */
+export const FeedbackCloneMessageSchema: GenMessage<FeedbackCloneMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_feedback, 2);
+
+/**
  * @generated from enum ar.v1.FeedbackType
  */
 export enum FeedbackType {
@@ -86,11 +137,29 @@ export enum FeedbackType {
   TASK_TOOL_HIGHLIGHT = 12,
 
   /**
+   * Provides an overview of all current tasks
+   *
    * @generated from enum value: FEEDBACK_TYPE_TASK_OVERVIEW = 13;
    */
   TASK_OVERVIEW = 13,
 
   /**
+   * Provide instructions of the current task
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TASK_INSTRUCTION = 14;
+   */
+  TASK_INSTRUCTION = 14,
+
+  /**
+   * Tailored towards tasks that are more checklist oriented than assembly
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TASK_CHECKLIST = 15;
+   */
+  TASK_CHECKLIST = 15,
+
+  /**
+   * Show the expected path of the robot
+   *
    * @generated from enum value: FEEDBACK_TYPE_ROBOT_PATH = 50;
    */
   ROBOT_PATH = 50,

@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -73,61 +75,6 @@ func (WorkerType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_worker_proto_rawDescGZIP(), []int{0}
 }
 
-type WorkerPermission int32
-
-const (
-	WorkerPermission_WORKER_PERMISSION_UNSPECIFIED WorkerPermission = 0
-	WorkerPermission_WORKER_PERMISSION_NONE        WorkerPermission = 1
-	WorkerPermission_WORKER_PERMISSION_COSMETIC    WorkerPermission = 2
-	WorkerPermission_WORKER_PERMISSION_FULL        WorkerPermission = 3
-)
-
-// Enum value maps for WorkerPermission.
-var (
-	WorkerPermission_name = map[int32]string{
-		0: "WORKER_PERMISSION_UNSPECIFIED",
-		1: "WORKER_PERMISSION_NONE",
-		2: "WORKER_PERMISSION_COSMETIC",
-		3: "WORKER_PERMISSION_FULL",
-	}
-	WorkerPermission_value = map[string]int32{
-		"WORKER_PERMISSION_UNSPECIFIED": 0,
-		"WORKER_PERMISSION_NONE":        1,
-		"WORKER_PERMISSION_COSMETIC":    2,
-		"WORKER_PERMISSION_FULL":        3,
-	}
-)
-
-func (x WorkerPermission) Enum() *WorkerPermission {
-	p := new(WorkerPermission)
-	*p = x
-	return p
-}
-
-func (x WorkerPermission) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (WorkerPermission) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_worker_proto_enumTypes[1].Descriptor()
-}
-
-func (WorkerPermission) Type() protoreflect.EnumType {
-	return &file_ar_v1_worker_proto_enumTypes[1]
-}
-
-func (x WorkerPermission) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use WorkerPermission.Descriptor instead.
-func (WorkerPermission) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_worker_proto_rawDescGZIP(), []int{1}
-}
-
-// TODO: Environments should also have devices/drivers, e.g. camera drivers, stacked light drivers, ... - the flow could be that someone set-up the physical thing that adheres to some interface (driver), it can then be selected from a list of drivers and perhaps configured a bit (a light version of Homeassistant).
-// TODO: split human and robots?
-// TODO: Agent should have drivers (e.g. build in UR-driver) that comes with a specific set of properties.
 // TODO: Add worker (including skill-matrix)?
 type WorkerMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -138,6 +85,7 @@ type WorkerMessage struct {
 	Type          WorkerType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.WorkerType" json:"type,omitempty"`
 	Permission    WorkerPermission       `protobuf:"varint,6,opt,name=permission,proto3,enum=ar.v1.WorkerPermission" json:"permission,omitempty"`
 	Properties    []*Property            `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
+	Disabled      bool                   `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"` // If disabled, the worker can't be selected
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -221,6 +169,13 @@ func (x *WorkerMessage) GetProperties() []*Property {
 	return nil
 }
 
+func (x *WorkerMessage) GetDisabled() bool {
+	if x != nil {
+		return x.Disabled
+	}
+	return false
+}
+
 type WorkerMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workers       []*WorkerMessage       `protobuf:"bytes,1,rep,name=workers,proto3" json:"workers,omitempty"`
@@ -269,10 +224,10 @@ var File_ar_v1_worker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_worker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/worker.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\xfa\x01\n" +
+	"\x12ar/v1/worker.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa1\x02\n" +
 	"\rWorkerMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.WorkerTypeR\x04type\x127\n" +
@@ -281,7 +236,8 @@ const file_ar_v1_worker_proto_rawDesc = "" +
 	"permission\x12/\n" +
 	"\n" +
 	"properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\"@\n" +
+	"properties\x12\x1a\n" +
+	"\bdisabled\x18\b \x01(\bR\bdisabled\"@\n" +
 	"\x0eWorkerMessages\x12.\n" +
 	"\aworkers\x18\x01 \x03(\v2\x14.ar.v1.WorkerMessageR\aworkers*w\n" +
 	"\n" +
@@ -289,12 +245,7 @@ const file_ar_v1_worker_proto_rawDesc = "" +
 	"\x17WORKER_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12WORKER_TYPE_NOVICE\x10\x01\x12\x1c\n" +
 	"\x18WORKER_TYPE_INTERMEDIATE\x10\x02\x12\x16\n" +
-	"\x12WORKER_TYPE_EXPERT\x10\x03*\x8d\x01\n" +
-	"\x10WorkerPermission\x12!\n" +
-	"\x1dWORKER_PERMISSION_UNSPECIFIED\x10\x00\x12\x1a\n" +
-	"\x16WORKER_PERMISSION_NONE\x10\x01\x12\x1e\n" +
-	"\x1aWORKER_PERMISSION_COSMETIC\x10\x02\x12\x1a\n" +
-	"\x16WORKER_PERMISSION_FULL\x10\x03B\x87\x01\n" +
+	"\x12WORKER_TYPE_EXPERT\x10\x03B\x87\x01\n" +
 	"\tcom.ar.v1B\vWorkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -309,20 +260,20 @@ func file_ar_v1_worker_proto_rawDescGZIP() []byte {
 	return file_ar_v1_worker_proto_rawDescData
 }
 
-var file_ar_v1_worker_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_ar_v1_worker_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_worker_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_worker_proto_goTypes = []any{
 	(WorkerType)(0),        // 0: ar.v1.WorkerType
-	(WorkerPermission)(0),  // 1: ar.v1.WorkerPermission
-	(*WorkerMessage)(nil),  // 2: ar.v1.WorkerMessage
-	(*WorkerMessages)(nil), // 3: ar.v1.WorkerMessages
+	(*WorkerMessage)(nil),  // 1: ar.v1.WorkerMessage
+	(*WorkerMessages)(nil), // 2: ar.v1.WorkerMessages
+	(WorkerPermission)(0),  // 3: ar.v1.WorkerPermission
 	(*Property)(nil),       // 4: ar.v1.Property
 }
 var file_ar_v1_worker_proto_depIdxs = []int32{
 	0, // 0: ar.v1.WorkerMessage.type:type_name -> ar.v1.WorkerType
-	1, // 1: ar.v1.WorkerMessage.permission:type_name -> ar.v1.WorkerPermission
+	3, // 1: ar.v1.WorkerMessage.permission:type_name -> ar.v1.WorkerPermission
 	4, // 2: ar.v1.WorkerMessage.properties:type_name -> ar.v1.Property
-	2, // 3: ar.v1.WorkerMessages.workers:type_name -> ar.v1.WorkerMessage
+	1, // 3: ar.v1.WorkerMessages.workers:type_name -> ar.v1.WorkerMessage
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -335,13 +286,14 @@ func file_ar_v1_worker_proto_init() {
 	if File_ar_v1_worker_proto != nil {
 		return
 	}
+	file_ar_v1_permissions_proto_init()
 	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_worker_proto_rawDesc), len(file_ar_v1_worker_proto_rawDesc)),
-			NumEnums:      2,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,

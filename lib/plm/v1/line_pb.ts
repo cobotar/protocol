@@ -13,6 +13,8 @@ export const file_plm_v1_line: GenFile = /*@__PURE__*/
   fileDesc("ChFwbG0vdjEvbGluZS5wcm90bxIGcGxtLnYxImoKC0xpbmVNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIeCgR0eXBlGAUgASgOMhAucGxtLnYxLkxpbmVUeXBlKocBCghMaW5lVHlwZRIZChVMSU5FX1RZUEVfVU5TUEVDSUZJRUQQABIaChZMSU5FX1RZUEVfU1VCX0FTU0VNQkxZEAESFgoSTElORV9UWVBFX0ZBU1RFTkVSEAISEwoPTElORV9UWVBFX1BMQVRFEAMSFwoTTElORV9UWVBFX0xVQlJJQ0FOVBAEQowBCgpjb20ucGxtLnYxQglMaW5lUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw");
 
 /**
+ * TODO: allow multiple processes to make active at the same time?
+ *
  * @generated from message plm.v1.LineMessage
  */
 export type LineMessage = Message<"plm.v1.LineMessage"> & {

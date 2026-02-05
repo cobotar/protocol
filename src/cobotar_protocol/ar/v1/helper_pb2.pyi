@@ -42,3 +42,9 @@ class HelperMessage(_message.Message):
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     output_properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[HelperType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., output_properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+
+class HelperMessages(_message.Message):
+    __slots__ = ("helpers",)
+    HELPERS_FIELD_NUMBER: _ClassVar[int]
+    helpers: _containers.RepeatedCompositeFieldContainer[HelperMessage]
+    def __init__(self, helpers: _Optional[_Iterable[_Union[HelperMessage, _Mapping]]] = ...) -> None: ...

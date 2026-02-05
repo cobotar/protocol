@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -137,27 +138,27 @@ func (x *FeedbackInfoMessage) GetDisabled() bool {
 	return false
 }
 
-type FeedbackInfosMessage struct {
+type FeedbackInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	FeedbackInfos []*FeedbackInfoMessage `protobuf:"bytes,1,rep,name=feedback_infos,json=feedbackInfos,proto3" json:"feedback_infos,omitempty"`
+	Infos         []*FeedbackInfoMessage `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *FeedbackInfosMessage) Reset() {
-	*x = FeedbackInfosMessage{}
+func (x *FeedbackInfoMessages) Reset() {
+	*x = FeedbackInfoMessages{}
 	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FeedbackInfosMessage) String() string {
+func (x *FeedbackInfoMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FeedbackInfosMessage) ProtoMessage() {}
+func (*FeedbackInfoMessages) ProtoMessage() {}
 
-func (x *FeedbackInfosMessage) ProtoReflect() protoreflect.Message {
+func (x *FeedbackInfoMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -169,14 +170,14 @@ func (x *FeedbackInfosMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FeedbackInfosMessage.ProtoReflect.Descriptor instead.
-func (*FeedbackInfosMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use FeedbackInfoMessages.ProtoReflect.Descriptor instead.
+func (*FeedbackInfoMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *FeedbackInfosMessage) GetFeedbackInfos() []*FeedbackInfoMessage {
+func (x *FeedbackInfoMessages) GetInfos() []*FeedbackInfoMessage {
 	if x != nil {
-		return x.FeedbackInfos
+		return x.Infos
 	}
 	return nil
 }
@@ -185,21 +186,21 @@ var File_ar_v1_feedback_info_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_info_proto_rawDesc = "" +
 	"\n" +
-	"\x19ar/v1/feedback_info.proto\x12\x05ar.v1\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/feedback.proto\"\xfa\x02\n" +
-	"\x13FeedbackInfoMessage\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x19ar/v1/feedback_info.proto\x12\x05ar.v1\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/feedback.proto\x1a\x1bbuf/validate/validate.proto\"\x95\x03\n" +
+	"\x13FeedbackInfoMessage\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeR\x04type\x12\x14\n" +
-	"\x05group\x18\x06 \x01(\tR\x05group\x12#\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12/\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\x12\x1c\n" +
+	"\x05group\x18\x06 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x05group\x12#\n" +
 	"\rrequire_agent\x18\a \x01(\bR\frequireAgent\x12#\n" +
 	"\rrequire_frame\x18\b \x01(\bR\frequireFrame\x129\n" +
 	"\x0frequired_events\x18\t \x03(\x0e2\x10.ar.v1.EventTypeR\x0erequiredEvents\x129\n" +
 	"\x0foptional_events\x18\n" +
 	" \x03(\x0e2\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n" +
-	"\bdisabled\x18\v \x01(\bR\bdisabled\"Y\n" +
-	"\x14FeedbackInfosMessage\x12A\n" +
-	"\x0efeedback_infos\x18\x01 \x03(\v2\x1a.ar.v1.FeedbackInfoMessageR\rfeedbackInfosB\x8d\x01\n" +
+	"\bdisabled\x18\v \x01(\bR\bdisabled\"H\n" +
+	"\x14FeedbackInfoMessages\x120\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FeedbackInfoMessageR\x05infosB\x8d\x01\n" +
 	"\tcom.ar.v1B\x11FeedbackInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -217,7 +218,7 @@ func file_ar_v1_feedback_info_proto_rawDescGZIP() []byte {
 var file_ar_v1_feedback_info_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_feedback_info_proto_goTypes = []any{
 	(*FeedbackInfoMessage)(nil),  // 0: ar.v1.FeedbackInfoMessage
-	(*FeedbackInfosMessage)(nil), // 1: ar.v1.FeedbackInfosMessage
+	(*FeedbackInfoMessages)(nil), // 1: ar.v1.FeedbackInfoMessages
 	(FeedbackType)(0),            // 2: ar.v1.FeedbackType
 	(EventType)(0),               // 3: ar.v1.EventType
 }
@@ -225,7 +226,7 @@ var file_ar_v1_feedback_info_proto_depIdxs = []int32{
 	2, // 0: ar.v1.FeedbackInfoMessage.type:type_name -> ar.v1.FeedbackType
 	3, // 1: ar.v1.FeedbackInfoMessage.required_events:type_name -> ar.v1.EventType
 	3, // 2: ar.v1.FeedbackInfoMessage.optional_events:type_name -> ar.v1.EventType
-	0, // 3: ar.v1.FeedbackInfosMessage.feedback_infos:type_name -> ar.v1.FeedbackInfoMessage
+	0, // 3: ar.v1.FeedbackInfoMessages.infos:type_name -> ar.v1.FeedbackInfoMessage
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

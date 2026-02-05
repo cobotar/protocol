@@ -37,10 +37,14 @@ enum TaskAssignmentPreference {
   TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4;
 }
 
+// TODO: add required skill?
+// TODO: add tool_role?
+// TODO: add validation
+// TODO: add allowed_actors
 message TaskMessage {
   string id = 1;
   string name = 2;
-  string description = 3;
+  string description = 3; // TODO: rename to instruction_text
   int64 sequence_number = 4;
   string part_id = 5;
   string model_id = 6;

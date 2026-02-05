@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -143,27 +144,27 @@ func (x *MarkerMessage) GetType() MarkerType {
 	return MarkerType_MARKER_TYPE_UNSPECIFIED
 }
 
-type MarkersMessage struct {
+type MarkerMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Markers       []*MarkerMessage       `protobuf:"bytes,1,rep,name=markers,proto3" json:"markers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *MarkersMessage) Reset() {
-	*x = MarkersMessage{}
+func (x *MarkerMessages) Reset() {
+	*x = MarkerMessages{}
 	mi := &file_ar_v1_marker_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *MarkersMessage) String() string {
+func (x *MarkerMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MarkersMessage) ProtoMessage() {}
+func (*MarkerMessages) ProtoMessage() {}
 
-func (x *MarkersMessage) ProtoReflect() protoreflect.Message {
+func (x *MarkerMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_marker_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -175,12 +176,12 @@ func (x *MarkersMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MarkersMessage.ProtoReflect.Descriptor instead.
-func (*MarkersMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use MarkerMessages.ProtoReflect.Descriptor instead.
+func (*MarkerMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_marker_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *MarkersMessage) GetMarkers() []*MarkerMessage {
+func (x *MarkerMessages) GetMarkers() []*MarkerMessage {
 	if x != nil {
 		return x.Markers
 	}
@@ -191,15 +192,15 @@ var File_ar_v1_marker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/marker.proto\x12\x05ar.v1\"\x9d\x01\n" +
+	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\"\xc3\x01\n" +
 	"\rMarkerMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1f\n" +
-	"\vmarker_text\x18\x04 \x01(\tR\n" +
-	"markerText\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.MarkerTypeR\x04type\"@\n" +
-	"\x0eMarkersMessage\x12.\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x122\n" +
+	"\vmarker_text\x18\x04 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
+	"markerText\x12-\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.MarkerTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\"@\n" +
+	"\x0eMarkerMessages\x12.\n" +
 	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageR\amarkers*B\n" +
 	"\n" +
 	"MarkerType\x12\x1b\n" +
@@ -224,11 +225,11 @@ var file_ar_v1_marker_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_marker_proto_goTypes = []any{
 	(MarkerType)(0),        // 0: ar.v1.MarkerType
 	(*MarkerMessage)(nil),  // 1: ar.v1.MarkerMessage
-	(*MarkersMessage)(nil), // 2: ar.v1.MarkersMessage
+	(*MarkerMessages)(nil), // 2: ar.v1.MarkerMessages
 }
 var file_ar_v1_marker_proto_depIdxs = []int32{
 	0, // 0: ar.v1.MarkerMessage.type:type_name -> ar.v1.MarkerType
-	1, // 1: ar.v1.MarkersMessage.markers:type_name -> ar.v1.MarkerMessage
+	1, // 1: ar.v1.MarkerMessages.markers:type_name -> ar.v1.MarkerMessage
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

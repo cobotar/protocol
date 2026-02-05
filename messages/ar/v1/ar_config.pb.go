@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -89,6 +90,50 @@ func (x *ARConfigInfoMessage) GetDescription() string {
 	return ""
 }
 
+type ARConfigInfoMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Infos         []*ARConfigInfoMessage `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ARConfigInfoMessages) Reset() {
+	*x = ARConfigInfoMessages{}
+	mi := &file_ar_v1_ar_config_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARConfigInfoMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARConfigInfoMessages) ProtoMessage() {}
+
+func (x *ARConfigInfoMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARConfigInfoMessages.ProtoReflect.Descriptor instead.
+func (*ARConfigInfoMessages) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ARConfigInfoMessages) GetInfos() []*ARConfigInfoMessage {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
 type ARConfigMessage struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -99,14 +144,14 @@ type ARConfigMessage struct {
 	Actions             []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
 	Helpers             []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
 	Properties          []*Property            `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
-	ArDisappearDistance int64                  `protobuf:"varint,9,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear.
+	ArDisappearDistance int64                  `protobuf:"varint,9,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *ARConfigMessage) Reset() {
 	*x = ARConfigMessage{}
-	mi := &file_ar_v1_ar_config_proto_msgTypes[1]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -118,7 +163,7 @@ func (x *ARConfigMessage) String() string {
 func (*ARConfigMessage) ProtoMessage() {}
 
 func (x *ARConfigMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_proto_msgTypes[1]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +176,7 @@ func (x *ARConfigMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARConfigMessage.ProtoReflect.Descriptor instead.
 func (*ARConfigMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ARConfigMessage) GetId() string {
@@ -197,19 +242,65 @@ func (x *ARConfigMessage) GetArDisappearDistance() int64 {
 	return 0
 }
 
+type ARConfigMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Configs       []*ARConfigMessage     `protobuf:"bytes,1,rep,name=configs,proto3" json:"configs,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ARConfigMessages) Reset() {
+	*x = ARConfigMessages{}
+	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARConfigMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARConfigMessages) ProtoMessage() {}
+
+func (x *ARConfigMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARConfigMessages.ProtoReflect.Descriptor instead.
+func (*ARConfigMessages) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ARConfigMessages) GetConfigs() []*ARConfigMessage {
+	if x != nil {
+		return x.Configs
+	}
+	return nil
+}
+
 var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\n" +
-	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x14ar/v1/property.proto\"o\n" +
+	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\"z\n" +
 	"\x13ARConfigInfoMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\"\xe4\x02\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
+	"\x14ARConfigInfoMessages\x120\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xfb\x02\n" +
 	"\x0fARConfigMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\bfeedback\x18\x05 \x03(\v2\x16.ar.v1.FeedbackMessageR\bfeedback\x12.\n" +
@@ -217,8 +308,11 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x12/\n" +
 	"\n" +
 	"properties\x18\b \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\x122\n" +
-	"\x15ar_disappear_distance\x18\t \x01(\x03R\x13arDisappearDistanceB\x89\x01\n" +
+	"properties\x12>\n" +
+	"\x15ar_disappear_distance\x18\t \x01(\x03B\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\"D\n" +
+	"\x10ARConfigMessages\x120\n" +
+	"\aconfigs\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\aconfigsB\x89\x01\n" +
 	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -233,25 +327,29 @@ func file_ar_v1_ar_config_proto_rawDescGZIP() []byte {
 	return file_ar_v1_ar_config_proto_rawDescData
 }
 
-var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_ar_config_proto_goTypes = []any{
-	(*ARConfigInfoMessage)(nil), // 0: ar.v1.ARConfigInfoMessage
-	(*ARConfigMessage)(nil),     // 1: ar.v1.ARConfigMessage
-	(*FeedbackMessage)(nil),     // 2: ar.v1.FeedbackMessage
-	(*ActionMessage)(nil),       // 3: ar.v1.ActionMessage
-	(*HelperMessage)(nil),       // 4: ar.v1.HelperMessage
-	(*Property)(nil),            // 5: ar.v1.Property
+	(*ARConfigInfoMessage)(nil),  // 0: ar.v1.ARConfigInfoMessage
+	(*ARConfigInfoMessages)(nil), // 1: ar.v1.ARConfigInfoMessages
+	(*ARConfigMessage)(nil),      // 2: ar.v1.ARConfigMessage
+	(*ARConfigMessages)(nil),     // 3: ar.v1.ARConfigMessages
+	(*FeedbackMessage)(nil),      // 4: ar.v1.FeedbackMessage
+	(*ActionMessage)(nil),        // 5: ar.v1.ActionMessage
+	(*HelperMessage)(nil),        // 6: ar.v1.HelperMessage
+	(*Property)(nil),             // 7: ar.v1.Property
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
-	2, // 0: ar.v1.ARConfigMessage.feedback:type_name -> ar.v1.FeedbackMessage
-	3, // 1: ar.v1.ARConfigMessage.actions:type_name -> ar.v1.ActionMessage
-	4, // 2: ar.v1.ARConfigMessage.helpers:type_name -> ar.v1.HelperMessage
-	5, // 3: ar.v1.ARConfigMessage.properties:type_name -> ar.v1.Property
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
+	4, // 1: ar.v1.ARConfigMessage.feedback:type_name -> ar.v1.FeedbackMessage
+	5, // 2: ar.v1.ARConfigMessage.actions:type_name -> ar.v1.ActionMessage
+	6, // 3: ar.v1.ARConfigMessage.helpers:type_name -> ar.v1.HelperMessage
+	7, // 4: ar.v1.ARConfigMessage.properties:type_name -> ar.v1.Property
+	2, // 5: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -269,7 +367,7 @@ func file_ar_v1_ar_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_ar_config_proto_rawDesc), len(file_ar_v1_ar_config_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

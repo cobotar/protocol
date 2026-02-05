@@ -24,22 +24,23 @@ namespace Messages.AR.V1 {
     static MarkerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIp0BCg1NYXJrZXJNZXNzYWdl",
-            "Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
-            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIfCgttYXJrZXJfdGV4dBgEIAEo",
-            "CVIKbWFya2VyVGV4dBIlCgR0eXBlGAUgASgOMhEuYXIudjEuTWFya2VyVHlw",
-            "ZVIEdHlwZSJACg5NYXJrZXJzTWVzc2FnZRIuCgdtYXJrZXJzGAEgAygLMhQu",
-            "YXIudjEuTWFya2VyTWVzc2FnZVIHbWFya2VycypCCgpNYXJrZXJUeXBlEhsK",
-            "F01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJf",
-            "Q09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhY",
-            "qgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh",
-            "6gIGQXI6OlYxYgZwcm90bzM="));
+            "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
+            "aWRhdGUucHJvdG8iwwEKDU1hcmtlck1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
+            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEEAEYQFIEbmFtZRIgCgtkZXNjcmlwdGlv",
+            "bhgDIAEoCVILZGVzY3JpcHRpb24SMgoLbWFya2VyX3RleHQYBCABKAlCEbpI",
+            "DnIMEAKSAgdyb2JlcnRhUgptYXJrZXJUZXh0Ei0KBHR5cGUYBSABKA4yES5h",
+            "ci52MS5NYXJrZXJUeXBlQga6SAPIAQFSBHR5cGUiQAoOTWFya2VyTWVzc2Fn",
+            "ZXMSLgoHbWFya2VycxgBIAMoCzIULmFyLnYxLk1hcmtlck1lc3NhZ2VSB21h",
+            "cmtlcnMqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEhcKE01BUktFUl9UWVBFX1FSX0NPREUQAUKHAQoJY29tLmFyLnYxQgtN",
+            "YXJrZXJQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJc",
+            "VjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Description", "MarkerText", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkersMessage), global::Messages.AR.V1.MarkersMessage.Parser, new[]{ "Markers" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessages), global::Messages.AR.V1.MarkerMessages.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
     #endregion
@@ -404,16 +405,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class MarkersMessage : pb::IMessage<MarkersMessage>
+  public sealed partial class MarkerMessages : pb::IMessage<MarkerMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MarkersMessage> _parser = new pb::MessageParser<MarkersMessage>(() => new MarkersMessage());
+    private static readonly pb::MessageParser<MarkerMessages> _parser = new pb::MessageParser<MarkerMessages>(() => new MarkerMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MarkersMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<MarkerMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -429,7 +430,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MarkersMessage() {
+    public MarkerMessages() {
       OnConstruction();
     }
 
@@ -437,15 +438,15 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MarkersMessage(MarkersMessage other) : this() {
+    public MarkerMessages(MarkerMessages other) : this() {
       markers_ = other.markers_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MarkersMessage Clone() {
-      return new MarkersMessage(this);
+    public MarkerMessages Clone() {
+      return new MarkerMessages(this);
     }
 
     /// <summary>Field number for the "markers" field.</summary>
@@ -462,12 +463,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MarkersMessage);
+      return Equals(other as MarkerMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MarkersMessage other) {
+    public bool Equals(MarkerMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -532,7 +533,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MarkersMessage other) {
+    public void MergeFrom(MarkerMessages other) {
       if (other == null) {
         return;
       }

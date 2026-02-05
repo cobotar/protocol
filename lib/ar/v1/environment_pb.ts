@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/environment.proto.
  */
 export const file_ar_v1_environment: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiSgoOTWFya2VyTG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkkKDUFnZW50TG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkgKDFBhcnRMb2NhdGlvbhIKCgJpZBgBIAEoCRIsCghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2UiSAoMVG9vbExvY2F0aW9uEgoKAmlkGAEgASgJEiwKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSKyAgoSRW52aXJvbm1lbnRNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIkCgR0eXBlGAUgASgOMhYuYXIudjEuRW52aXJvbm1lbnRUeXBlEiYKB21hcmtlcnMYBiADKAsyFS5hci52MS5NYXJrZXJMb2NhdGlvbhIkCgZhZ2VudHMYByADKAsyFC5hci52MS5BZ2VudExvY2F0aW9uEiIKBXBhcnRzGAggAygLMhMuYXIudjEuUGFydExvY2F0aW9uEiIKBXRvb2xzGAkgAygLMhMuYXIudjEuVG9vbExvY2F0aW9uEiMKCnByb3BlcnRpZXMYCiADKAsyDy5hci52MS5Qcm9wZXJ0eSJGChNFbnZpcm9ubWVudHNNZXNzYWdlEi8KDGVudmlyb25tZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZSqsAgoPRW52aXJvbm1lbnRUeXBlEiAKHEVOVklST05NRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIcChhFTlZJUk9OTUVOVF9UWVBFX1NUT1JBR0UQARIjCh9FTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9TVEFUSU9OEAISJgoiRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfU1RBVElPThADEiMKH0VOVklST05NRU5UX1RZUEVfSFlCUklEX1NUQVRJT04QBBIgChxFTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9MSU5FEAUSIwofRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfTElORRAGEiAKHEVOVklST05NRU5UX1RZUEVfSFlCUklEX0xJTkUQB0KMAQoJY29tLmFyLnYxQhBFbnZpcm9ubWVudFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_property, file_geometry_v1_pose]);
+  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiSgoOTWFya2VyTG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkkKDVJvYm90TG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkkKDUFzc2V0TG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkgKDFBhcnRMb2NhdGlvbhIKCgJpZBgBIAEoCRIsCghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2UiSAoMVG9vbExvY2F0aW9uEgoKAmlkGAEgASgJEiwKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSLYAgoSRW52aXJvbm1lbnRNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIkCgR0eXBlGAUgASgOMhYuYXIudjEuRW52aXJvbm1lbnRUeXBlEiYKB21hcmtlcnMYBiADKAsyFS5hci52MS5NYXJrZXJMb2NhdGlvbhIkCgZyb2JvdHMYByADKAsyFC5hci52MS5Sb2JvdExvY2F0aW9uEiQKBmFzc2V0cxgIIAMoCzIULmFyLnYxLkFzc2V0TG9jYXRpb24SIgoFcGFydHMYCSADKAsyEy5hci52MS5QYXJ0TG9jYXRpb24SIgoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRpb24SIwoKcHJvcGVydGllcxgLIAMoCzIPLmFyLnYxLlByb3BlcnR5IkYKE0Vudmlyb25tZW50c01lc3NhZ2USLwoMZW52aXJvbm1lbnRzGAEgAygLMhkuYXIudjEuRW52aXJvbm1lbnRNZXNzYWdlKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRABEiMKH0VOVklST05NRU5UX1RZUEVfTUFOVUFMX1NUQVRJT04QAhImCiJFTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSIwofRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfU1RBVElPThAEEiAKHEVOVklST05NRU5UX1RZUEVfTUFOVUFMX0xJTkUQBRIjCh9FTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19MSU5FEAYSIAocRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfTElORRAHQowBCgljb20uYXIudjFCEEVudmlyb25tZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_geometry_v1_pose]);
 
 /**
  * @generated from message ar.v1.MarkerLocation
@@ -39,9 +39,9 @@ export const MarkerLocationSchema: GenMessage<MarkerLocation> = /*@__PURE__*/
   messageDesc(file_ar_v1_environment, 0);
 
 /**
- * @generated from message ar.v1.AgentLocation
+ * @generated from message ar.v1.RobotLocation
  */
-export type AgentLocation = Message<"ar.v1.AgentLocation"> & {
+export type RobotLocation = Message<"ar.v1.RobotLocation"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -54,11 +54,33 @@ export type AgentLocation = Message<"ar.v1.AgentLocation"> & {
 };
 
 /**
- * Describes the message ar.v1.AgentLocation.
- * Use `create(AgentLocationSchema)` to create a new message.
+ * Describes the message ar.v1.RobotLocation.
+ * Use `create(RobotLocationSchema)` to create a new message.
  */
-export const AgentLocationSchema: GenMessage<AgentLocation> = /*@__PURE__*/
+export const RobotLocationSchema: GenMessage<RobotLocation> = /*@__PURE__*/
   messageDesc(file_ar_v1_environment, 1);
+
+/**
+ * @generated from message ar.v1.AssetLocation
+ */
+export type AssetLocation = Message<"ar.v1.AssetLocation"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose location = 2;
+   */
+  location?: LocalizedPose;
+};
+
+/**
+ * Describes the message ar.v1.AssetLocation.
+ * Use `create(AssetLocationSchema)` to create a new message.
+ */
+export const AssetLocationSchema: GenMessage<AssetLocation> = /*@__PURE__*/
+  messageDesc(file_ar_v1_environment, 2);
 
 /**
  * @generated from message ar.v1.PartLocation
@@ -80,7 +102,7 @@ export type PartLocation = Message<"ar.v1.PartLocation"> & {
  * Use `create(PartLocationSchema)` to create a new message.
  */
 export const PartLocationSchema: GenMessage<PartLocation> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 2);
+  messageDesc(file_ar_v1_environment, 3);
 
 /**
  * @generated from message ar.v1.ToolLocation
@@ -102,7 +124,7 @@ export type ToolLocation = Message<"ar.v1.ToolLocation"> & {
  * Use `create(ToolLocationSchema)` to create a new message.
  */
 export const ToolLocationSchema: GenMessage<ToolLocation> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 3);
+  messageDesc(file_ar_v1_environment, 4);
 
 /**
  * @generated from message ar.v1.EnvironmentMessage
@@ -141,24 +163,27 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
   markers: MarkerLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.AgentLocation agents = 7;
+   * @generated from field: repeated ar.v1.RobotLocation robots = 7;
    */
-  agents: AgentLocation[];
+  robots: RobotLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.PartLocation parts = 8;
+   * @generated from field: repeated ar.v1.AssetLocation assets = 8;
+   */
+  assets: AssetLocation[];
+
+  /**
+   * @generated from field: repeated ar.v1.PartLocation parts = 9;
    */
   parts: PartLocation[];
 
   /**
-   * @generated from field: repeated ar.v1.ToolLocation tools = 9;
+   * @generated from field: repeated ar.v1.ToolLocation tools = 10;
    */
   tools: ToolLocation[];
 
   /**
-   * TODO: add change_type: add, update, delete, unspecified?
-   *
-   * @generated from field: repeated ar.v1.Property properties = 10;
+   * @generated from field: repeated ar.v1.Property properties = 11;
    */
   properties: Property[];
 };
@@ -168,7 +193,7 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
  * Use `create(EnvironmentMessageSchema)` to create a new message.
  */
 export const EnvironmentMessageSchema: GenMessage<EnvironmentMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 4);
+  messageDesc(file_ar_v1_environment, 5);
 
 /**
  * @generated from message ar.v1.EnvironmentsMessage
@@ -185,7 +210,7 @@ export type EnvironmentsMessage = Message<"ar.v1.EnvironmentsMessage"> & {
  * Use `create(EnvironmentsMessageSchema)` to create a new message.
  */
 export const EnvironmentsMessageSchema: GenMessage<EnvironmentsMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 5);
+  messageDesc(file_ar_v1_environment, 6);
 
 /**
  * @generated from enum ar.v1.EnvironmentType

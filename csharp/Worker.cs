@@ -24,28 +24,28 @@ namespace Messages.AR.V1 {
     static WorkerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxGhRhci92MS9wcm9wZXJ0eS5w",
-            "cm90byL6AQoNV29ya2VyTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
-            "ZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
-            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIlCgR0eXBlGAUgASgOMhEuYXIudjEu",
-            "V29ya2VyVHlwZVIEdHlwZRI3CgpwZXJtaXNzaW9uGAYgASgOMhcuYXIudjEu",
-            "V29ya2VyUGVybWlzc2lvblIKcGVybWlzc2lvbhIvCgpwcm9wZXJ0aWVzGAcg",
-            "AygLMg8uYXIudjEuUHJvcGVydHlSCnByb3BlcnRpZXMiQAoOV29ya2VyTWVz",
-            "c2FnZXMSLgoHd29ya2VycxgBIAMoCzIULmFyLnYxLldvcmtlck1lc3NhZ2VS",
-            "B3dvcmtlcnMqdwoKV29ya2VyVHlwZRIbChdXT1JLRVJfVFlQRV9VTlNQRUNJ",
-            "RklFRBAAEhYKEldPUktFUl9UWVBFX05PVklDRRABEhwKGFdPUktFUl9UWVBF",
-            "X0lOVEVSTUVESUFURRACEhYKEldPUktFUl9UWVBFX0VYUEVSVBADKo0BChBX",
-            "b3JrZXJQZXJtaXNzaW9uEiEKHVdPUktFUl9QRVJNSVNTSU9OX1VOU1BFQ0lG",
-            "SUVEEAASGgoWV09SS0VSX1BFUk1JU1NJT05fTk9ORRABEh4KGldPUktFUl9Q",
-            "RVJNSVNTSU9OX0NPU01FVElDEAISGgoWV09SS0VSX1BFUk1JU1NJT05fRlVM",
-            "TBADQocBCgljb20uYXIudjFCC1dvcmtlclByb3RvUAFaL2dpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
-            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
-            "QXI6OlYxYgZwcm90bzM="));
+            "ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxGhdhci92MS9wZXJtaXNzaW9u",
+            "cy5wcm90bxoUYXIvdjEvcHJvcGVydHkucHJvdG8aG2J1Zi92YWxpZGF0ZS92",
+            "YWxpZGF0ZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmlu",
+            "Z19ydWxlcy5wcm90byKhAgoNV29ya2VyTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
+            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
+            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiUK",
+            "BHR5cGUYBSABKA4yES5hci52MS5Xb3JrZXJUeXBlUgR0eXBlEjcKCnBlcm1p",
+            "c3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uUgpwZXJtaXNz",
+            "aW9uEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eVIKcHJv",
+            "cGVydGllcxIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQiQAoOV29ya2Vy",
+            "TWVzc2FnZXMSLgoHd29ya2VycxgBIAMoCzIULmFyLnYxLldvcmtlck1lc3Nh",
+            "Z2VSB3dvcmtlcnMqdwoKV29ya2VyVHlwZRIbChdXT1JLRVJfVFlQRV9VTlNQ",
+            "RUNJRklFRBAAEhYKEldPUktFUl9UWVBFX05PVklDRRABEhwKGFdPUktFUl9U",
+            "WVBFX0lOVEVSTUVESUFURRACEhYKEldPUktFUl9UWVBFX0VYUEVSVBADQocB",
+            "Cgljb20uYXIudjFCC1dvcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2Fn",
+            "ZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.WorkerType), typeof(global::Messages.AR.V1.WorkerPermission), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessage), global::Messages.AR.V1.WorkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Permission", "Properties" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.WorkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessage), global::Messages.AR.V1.WorkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Permission", "Properties", "Disabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessages), global::Messages.AR.V1.WorkerMessages.Parser, new[]{ "Workers" }, null, null, null, null)
           }));
     }
@@ -60,20 +60,10 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("WORKER_TYPE_EXPERT")] Expert = 3,
   }
 
-  public enum WorkerPermission {
-    [pbr::OriginalName("WORKER_PERMISSION_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("WORKER_PERMISSION_NONE")] None = 1,
-    [pbr::OriginalName("WORKER_PERMISSION_COSMETIC")] Cosmetic = 2,
-    [pbr::OriginalName("WORKER_PERMISSION_FULL")] Full = 3,
-  }
-
   #endregion
 
   #region Messages
   /// <summary>
-  /// TODO: Environments should also have devices/drivers, e.g. camera drivers, stacked light drivers, ... - the flow could be that someone set-up the physical thing that adheres to some interface (driver), it can then be selected from a list of drivers and perhaps configured a bit (a light version of Homeassistant).
-  /// TODO: split human and robots?
-  /// TODO: Agent should have drivers (e.g. build in UR-driver) that comes with a specific set of properties.
   /// TODO: Add worker (including skill-matrix)?
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -118,6 +108,7 @@ namespace Messages.AR.V1 {
       type_ = other.type_;
       permission_ = other.permission_;
       properties_ = other.properties_.Clone();
+      disabled_ = other.disabled_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -210,6 +201,21 @@ namespace Messages.AR.V1 {
       get { return properties_; }
     }
 
+    /// <summary>Field number for the "disabled" field.</summary>
+    public const int DisabledFieldNumber = 8;
+    private bool disabled_;
+    /// <summary>
+    /// If disabled, the worker can't be selected
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Disabled {
+      get { return disabled_; }
+      set {
+        disabled_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -232,6 +238,7 @@ namespace Messages.AR.V1 {
       if (Type != other.Type) return false;
       if (Permission != other.Permission) return false;
       if(!properties_.Equals(other.properties_)) return false;
+      if (Disabled != other.Disabled) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -246,6 +253,7 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.WorkerType.Unspecified) hash ^= Type.GetHashCode();
       if (Permission != global::Messages.AR.V1.WorkerPermission.Unspecified) hash ^= Permission.GetHashCode();
       hash ^= properties_.GetHashCode();
+      if (Disabled != false) hash ^= Disabled.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -289,6 +297,10 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Permission);
       }
       properties_.WriteTo(output, _repeated_properties_codec);
+      if (Disabled != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Disabled);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -324,6 +336,10 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Permission);
       }
       properties_.WriteTo(ref output, _repeated_properties_codec);
+      if (Disabled != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Disabled);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -353,6 +369,9 @@ namespace Messages.AR.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Permission);
       }
       size += properties_.CalculateSize(_repeated_properties_codec);
+      if (Disabled != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -384,6 +403,9 @@ namespace Messages.AR.V1 {
         Permission = other.Permission;
       }
       properties_.Add(other.properties_);
+      if (other.Disabled != false) {
+        Disabled = other.Disabled;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -431,6 +453,10 @@ namespace Messages.AR.V1 {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
+          case 64: {
+            Disabled = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -476,6 +502,10 @@ namespace Messages.AR.V1 {
           }
           case 58: {
             properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
+            break;
+          }
+          case 64: {
+            Disabled = input.ReadBool();
             break;
           }
         }

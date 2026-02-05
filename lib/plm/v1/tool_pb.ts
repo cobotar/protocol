@@ -2,15 +2,17 @@
 // @generated from file plm/v1/tool.proto (package plm.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file plm/v1/tool.proto.
  */
 export const file_plm_v1_tool: GenFile = /*@__PURE__*/
-  fileDesc("ChFwbG0vdjEvdG9vbC5wcm90bxIGcGxtLnYxIlwKC1Rvb2xNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIQCghtb2RlbF9pZBgFIAEoCSIyCgxUb29sTWVzc2FnZXMSIgoFdG9vbHMYASADKAsyEy5wbG0udjEuVG9vbE1lc3NhZ2UiHgoOTmV3VG9vbE1lc3NhZ2USDAoEbmFtZRgCIAEoCSJiChFVcGRhdGVUb29sTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSEAoIbW9kZWxfaWQYBSABKAkiJAoRRGVsZXRlVG9vbE1lc3NhZ2USDwoHdG9vbF9pZBgBIAEoCUKMAQoKY29tLnBsbS52MUIJVG9vbFByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM");
+  fileDesc("ChFwbG0vdjEvdG9vbC5wcm90bxIGcGxtLnYxIowCCgtUb29sTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRItCgR0eXBlGAUgASgOMhAucGxtLnYxLlRvb2xUeXBlQg26SArIAQGCAQQQASgKEi0KBWFjdG9yGAYgASgOMhEucGxtLnYxLlRvb2xBY3RvckILukgIyAEBggECEAESKAoKcHJvcGVydGllcxgHIAMoDjIULnBsbS52MS5Ub29sUHJvcGVydHkSIAoIbW9kZWxfaWQYCCABKAlCCbpIBnIEiPEEAUgAiAEBQgsKCV9tb2RlbF9pZCIyCgxUb29sTWVzc2FnZXMSIgoFdG9vbHMYASADKAsyEy5wbG0udjEuVG9vbE1lc3NhZ2UqxQIKCFRvb2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRPT0xfVFlQRV9DVVRUSU5HEAoSFQoRVE9PTF9UWVBFX1NIQVBJTkcQFBIXChNUT09MX1RZUEVfRkFTVEVOSU5HEB4SFgoSVE9PTF9UWVBFX0dSSVBQSU5HECgSFQoRVE9PTF9UWVBFX1RVUk5JTkcQMhIWChJUT09MX1RZUEVfU1RSSUtJTkcQPBIXChNUT09MX1RZUEVfTUVBU1VSSU5HEEYSFQoRVE9PTF9UWVBFX01BUktJTkcQUBIXChNUT09MX1RZUEVfRklOSVNISU5HEFoSFgoSVE9PTF9UWVBFX0FCUkFTSVZFEGQSFAoQVE9PTF9UWVBFX1NBRkVUWRBuEhkKFVRPT0xfVFlQRV9FTEVDVFJPTklDUxB4KqwBCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNVTEFURUQQAxIfChtUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkUQBCpqCglUb29sQWN0b3ISGgoWVE9PTF9BQ1RPUl9VTlNQRUNJRklFRBAAEhQKEFRPT0xfQUNUT1JfSFVNQU4QARIUChBUT09MX0FDVE9SX1JPQk9UEAISFQoRVE9PTF9BQ1RPUl9IWUJSSUQQA0KMAQoKY29tLnBsbS52MUIJVG9vbFByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message plm.v1.ToolMessage
@@ -37,9 +39,24 @@ export type ToolMessage = Message<"plm.v1.ToolMessage"> & {
   description: string;
 
   /**
-   * @generated from field: string model_id = 5;
+   * @generated from field: plm.v1.ToolType type = 5;
    */
-  modelId: string;
+  type: ToolType;
+
+  /**
+   * @generated from field: plm.v1.ToolActor actor = 6;
+   */
+  actor: ToolActor;
+
+  /**
+   * @generated from field: repeated plm.v1.ToolProperty properties = 7;
+   */
+  properties: ToolProperty[];
+
+  /**
+   * @generated from field: optional string model_id = 8;
+   */
+  modelId?: string;
 };
 
 /**
@@ -67,73 +84,145 @@ export const ToolMessagesSchema: GenMessage<ToolMessages> = /*@__PURE__*/
   messageDesc(file_plm_v1_tool, 1);
 
 /**
- * @generated from message plm.v1.NewToolMessage
+ * @generated from enum plm.v1.ToolType
  */
-export type NewToolMessage = Message<"plm.v1.NewToolMessage"> & {
+export enum ToolType {
   /**
-   * @generated from field: string name = 2;
+   * @generated from enum value: TOOL_TYPE_UNSPECIFIED = 0;
    */
-  name: string;
-};
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_CUTTING = 10;
+   */
+  CUTTING = 10,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_SHAPING = 20;
+   */
+  SHAPING = 20,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_FASTENING = 30;
+   */
+  FASTENING = 30,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_GRIPPING = 40;
+   */
+  GRIPPING = 40,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_TURNING = 50;
+   */
+  TURNING = 50,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_STRIKING = 60;
+   */
+  STRIKING = 60,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_MEASURING = 70;
+   */
+  MEASURING = 70,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_MARKING = 80;
+   */
+  MARKING = 80,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_FINISHING = 90;
+   */
+  FINISHING = 90,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_ABRASIVE = 100;
+   */
+  ABRASIVE = 100,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_SAFETY = 110;
+   */
+  SAFETY = 110,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_ELECTRONICS = 120;
+   */
+  ELECTRONICS = 120,
+}
 
 /**
- * Describes the message plm.v1.NewToolMessage.
- * Use `create(NewToolMessageSchema)` to create a new message.
+ * Describes the enum plm.v1.ToolType.
  */
-export const NewToolMessageSchema: GenMessage<NewToolMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_tool, 2);
+export const ToolTypeSchema: GenEnum<ToolType> = /*@__PURE__*/
+  enumDesc(file_plm_v1_tool, 0);
 
 /**
- * @generated from message plm.v1.UpdateToolMessage
+ * @generated from enum plm.v1.ToolProperty
  */
-export type UpdateToolMessage = Message<"plm.v1.UpdateToolMessage"> & {
+export enum ToolProperty {
   /**
-   * @generated from field: string id = 1;
+   * @generated from enum value: TOOL_PROPERTY_UNSPECIFIED = 0;
    */
-  id: string;
+  UNSPECIFIED = 0,
 
   /**
-   * @generated from field: string name = 2;
+   * @generated from enum value: TOOL_PROPERTY_TORQUE_CONTROLLED = 1;
    */
-  name: string;
+  TORQUE_CONTROLLED = 1,
 
   /**
-   * @generated from field: string icon = 3;
+   * @generated from enum value: TOOL_PROPERTY_ESD_SAFE = 2;
    */
-  icon: string;
+  ESD_SAFE = 2,
 
   /**
-   * @generated from field: string description = 4;
+   * @generated from enum value: TOOL_PROPERTY_INSULATED = 3;
    */
-  description: string;
+  INSULATED = 3,
 
   /**
-   * @generated from field: string model_id = 5;
+   * @generated from enum value: TOOL_PROPERTY_COLLABORATIVE = 4;
    */
-  modelId: string;
-};
+  COLLABORATIVE = 4,
+}
 
 /**
- * Describes the message plm.v1.UpdateToolMessage.
- * Use `create(UpdateToolMessageSchema)` to create a new message.
+ * Describes the enum plm.v1.ToolProperty.
  */
-export const UpdateToolMessageSchema: GenMessage<UpdateToolMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_tool, 3);
+export const ToolPropertySchema: GenEnum<ToolProperty> = /*@__PURE__*/
+  enumDesc(file_plm_v1_tool, 1);
 
 /**
- * @generated from message plm.v1.DeleteToolMessage
+ * @generated from enum plm.v1.ToolActor
  */
-export type DeleteToolMessage = Message<"plm.v1.DeleteToolMessage"> & {
+export enum ToolActor {
   /**
-   * @generated from field: string tool_id = 1;
+   * @generated from enum value: TOOL_ACTOR_UNSPECIFIED = 0;
    */
-  toolId: string;
-};
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: TOOL_ACTOR_HUMAN = 1;
+   */
+  HUMAN = 1,
+
+  /**
+   * @generated from enum value: TOOL_ACTOR_ROBOT = 2;
+   */
+  ROBOT = 2,
+
+  /**
+   * @generated from enum value: TOOL_ACTOR_HYBRID = 3;
+   */
+  HYBRID = 3,
+}
 
 /**
- * Describes the message plm.v1.DeleteToolMessage.
- * Use `create(DeleteToolMessageSchema)` to create a new message.
+ * Describes the enum plm.v1.ToolActor.
  */
-export const DeleteToolMessageSchema: GenMessage<DeleteToolMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_tool, 4);
+export const ToolActorSchema: GenEnum<ToolActor> = /*@__PURE__*/
+  enumDesc(file_plm_v1_tool, 2);
 

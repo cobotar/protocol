@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -122,9 +123,9 @@ func (AssetDriverType) EnumDescriptor() ([]byte, []int) {
 type AssetMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`               // Name of the asset
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`               // Optional icon representing the asset
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"` // Optional description of the asset
 	Type            AssetType              `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.AssetType" json:"type,omitempty"`
 	AssetDriverType AssetDriverType        `protobuf:"varint,6,opt,name=asset_driver_type,json=assetDriverType,proto3,enum=ar.v1.AssetDriverType" json:"asset_driver_type,omitempty"`
 	Properties      []*Property            `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
@@ -259,14 +260,15 @@ var File_ar_v1_assets_proto protoreflect.FileDescriptor
 
 const file_ar_v1_assets_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/assets.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\x83\x02\n" +
+	"\x12ar/v1/assets.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\"\xaa\x02\n" +
 	"\fAssetMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12$\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x10.ar.v1.AssetTypeR\x04type\x12B\n" +
-	"\x11asset_driver_type\x18\x06 \x01(\x0e2\x16.ar.v1.AssetDriverTypeR\x0fassetDriverType\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x123\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x10.ar.v1.AssetTypeB\r\xbaH\n" +
+	"\xc8\x01\x01\x82\x01\x04\x10\x01(\x01R\x04type\x12O\n" +
+	"\x11asset_driver_type\x18\x06 \x01(\x0e2\x16.ar.v1.AssetDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x0fassetDriverType\x12/\n" +
 	"\n" +
 	"properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\"<\n" +

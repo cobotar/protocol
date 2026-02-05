@@ -4,13 +4,15 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file plm/v1/part.proto.
  */
 export const file_plm_v1_part: GenFile = /*@__PURE__*/
-  fileDesc("ChFwbG0vdjEvcGFydC5wcm90bxIGcGxtLnYxIp4BCgtQYXJ0TWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSHgoEdHlwZRgFIAEoDjIQLnBsbS52MS5QYXJ0VHlwZRIOCgZ3ZWlnaHQYBiABKAMSEAoIbW9kZWxfaWQYByABKAkSEAoIdG9vbF9pZHMYCCADKAkiMgoMUGFydE1lc3NhZ2VzEiIKBXBhcnRzGAEgAygLMhMucGxtLnYxLlBhcnRNZXNzYWdlIlMKDk5ld1BhcnRNZXNzYWdlEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSHgoEdHlwZRgFIAEoDjIQLnBsbS52MS5QYXJ0VHlwZSKkAQoRVXBkYXRlUGFydE1lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh4KBHR5cGUYBSABKA4yEC5wbG0udjEuUGFydFR5cGUSDgoGd2VpZ2h0GAYgASgDEhAKCG1vZGVsX2lkGAcgASgJEhAKCHRvb2xfaWRzGAggAygJIiQKEURlbGV0ZVBhcnRNZXNzYWdlEg8KB3BhcnRfaWQYASABKAkqhwEKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhoKFlBBUlRfVFlQRV9TVUJfQVNTRU1CTFkQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhITCg9QQVJUX1RZUEVfUExBVEUQAxIXChNQQVJUX1RZUEVfTFVCUklDQU5UEARCjAEKCmNvbS5wbG0udjFCCVBhcnRQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z");
+  fileDesc("ChFwbG0vdjEvcGFydC5wcm90bxIGcGxtLnYxItoBCgtQYXJ0TWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIoCgR0eXBlGAUgASgOMhAucGxtLnYxLlBhcnRUeXBlQgi6SAWCAQIQARIXCgZ3ZWlnaHQYBiABKANCB7pIBCICKAASGwoIbW9kZWxfaWQYByABKAlCCbpIBnIEiPEEARIjCgh0b29sX2lkcxgIIAMoCUIRukgOkgELIglyBzoFdG9vbC0iMgoMUGFydE1lc3NhZ2VzEiIKBXBhcnRzGAEgAygLMhMucGxtLnYxLlBhcnRNZXNzYWdlKocBCghQYXJ0VHlwZRIZChVQQVJUX1RZUEVfVU5TUEVDSUZJRUQQABIaChZQQVJUX1RZUEVfU1VCX0FTU0VNQkxZEAESFgoSUEFSVF9UWVBFX0ZBU1RFTkVSEAISEwoPUEFSVF9UWVBFX1BMQVRFEAMSFwoTUEFSVF9UWVBFX0xVQlJJQ0FOVBAEQowBCgpjb20ucGxtLnYxQglQYXJ0UHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message plm.v1.PartMessage
@@ -42,11 +44,16 @@ export type PartMessage = Message<"plm.v1.PartMessage"> & {
   type: PartType;
 
   /**
+   * weight in grams
+   *
    * @generated from field: int64 weight = 6;
    */
   weight: bigint;
 
   /**
+   * TODO: add dimensions
+   * TODO: add material
+   *
    * @generated from field: string model_id = 7;
    */
   modelId: string;
@@ -80,102 +87,6 @@ export type PartMessages = Message<"plm.v1.PartMessages"> & {
  */
 export const PartMessagesSchema: GenMessage<PartMessages> = /*@__PURE__*/
   messageDesc(file_plm_v1_part, 1);
-
-/**
- * @generated from message plm.v1.NewPartMessage
- */
-export type NewPartMessage = Message<"plm.v1.NewPartMessage"> & {
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
-
-  /**
-   * @generated from field: string description = 4;
-   */
-  description: string;
-
-  /**
-   * @generated from field: plm.v1.PartType type = 5;
-   */
-  type: PartType;
-};
-
-/**
- * Describes the message plm.v1.NewPartMessage.
- * Use `create(NewPartMessageSchema)` to create a new message.
- */
-export const NewPartMessageSchema: GenMessage<NewPartMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_part, 2);
-
-/**
- * @generated from message plm.v1.UpdatePartMessage
- */
-export type UpdatePartMessage = Message<"plm.v1.UpdatePartMessage"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
-
-  /**
-   * @generated from field: string icon = 3;
-   */
-  icon: string;
-
-  /**
-   * @generated from field: string description = 4;
-   */
-  description: string;
-
-  /**
-   * @generated from field: plm.v1.PartType type = 5;
-   */
-  type: PartType;
-
-  /**
-   * @generated from field: int64 weight = 6;
-   */
-  weight: bigint;
-
-  /**
-   * @generated from field: string model_id = 7;
-   */
-  modelId: string;
-
-  /**
-   * @generated from field: repeated string tool_ids = 8;
-   */
-  toolIds: string[];
-};
-
-/**
- * Describes the message plm.v1.UpdatePartMessage.
- * Use `create(UpdatePartMessageSchema)` to create a new message.
- */
-export const UpdatePartMessageSchema: GenMessage<UpdatePartMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_part, 3);
-
-/**
- * @generated from message plm.v1.DeletePartMessage
- */
-export type DeletePartMessage = Message<"plm.v1.DeletePartMessage"> & {
-  /**
-   * @generated from field: string part_id = 1;
-   */
-  partId: string;
-};
-
-/**
- * Describes the message plm.v1.DeletePartMessage.
- * Use `create(DeletePartMessageSchema)` to create a new message.
- */
-export const DeletePartMessageSchema: GenMessage<DeletePartMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_part, 4);
 
 /**
  * @generated from enum plm.v1.PartType

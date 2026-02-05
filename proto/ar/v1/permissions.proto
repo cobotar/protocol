@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ar.v1;
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum WorkerPermission {
+  WORKER_PERMISSION_UNSPECIFIED = 0;
+  WORKER_PERMISSION_NONE = 1;
+  WORKER_PERMISSION_COSMETIC = 2;
+  WORKER_PERMISSION_FULL = 3;
+}

@@ -1,6 +1,9 @@
 syntax = "proto3";
 package plm.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
@@ -14,36 +17,20 @@ enum PartType {
 
 message PartMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  PartType type = 5;
-  int64 weight = 6;
-  string model_id = 7;
-  repeated string tool_ids = 8;
+  PartType type = 5 [
+    // (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int64 weight = 6 [(buf.validate.field).int64.gte = 0]; // weight in grams
+  // TODO: add dimensions
+  // TODO: add material
+  string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
+  repeated string tool_ids = 8 [(buf.validate.field).repeated.items.string.prefix = "tool-"];
 }
 
 message PartMessages {
   repeated PartMessage parts = 1;
-}
-
-message NewPartMessage {
-  string name = 2;
-  string description = 4;
-  PartType type = 5;
-}
-
-message UpdatePartMessage {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  PartType type = 5;
-  int64 weight = 6;
-  string model_id = 7;
-  repeated string tool_ids = 8;
-}
-
-message DeletePartMessage {
-  string part_id = 1;
 }

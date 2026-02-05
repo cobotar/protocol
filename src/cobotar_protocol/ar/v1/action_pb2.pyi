@@ -1,4 +1,6 @@
 from ar.v1 import property_pb2 as _property_pb2
+from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -44,3 +46,9 @@ class ActionMessage(_message.Message):
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     output_properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., output_properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+
+class ActionMessages(_message.Message):
+    __slots__ = ("actions",)
+    ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    actions: _containers.RepeatedCompositeFieldContainer[ActionMessage]
+    def __init__(self, actions: _Optional[_Iterable[_Union[ActionMessage, _Mapping]]] = ...) -> None: ...

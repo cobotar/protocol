@@ -19,6 +19,6 @@ message HelperInfoMessage {
   bool disabled = 11;
 }
 
-message HelperInfosMessage {
-  repeated HelperInfoMessage helper_infos = 1;
+message HelperInfoMessages {
+  repeated HelperInfoMessage infos = 1;
 }

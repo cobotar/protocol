@@ -108,6 +108,12 @@ namespace Messages.Plm.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: add required skill?
+  /// TODO: add tool_role?
+  /// TODO: add validation
+  /// TODO: add allowed_actors
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TaskMessage : pb::IMessage<TaskMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -198,6 +204,9 @@ namespace Messages.Plm.V1 {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 3;
     private string description_ = "";
+    /// <summary>
+    /// TODO: rename to instruction_text
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {

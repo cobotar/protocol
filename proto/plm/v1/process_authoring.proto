@@ -9,7 +9,7 @@ import "plm/v1/task.proto";
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
-message StoredProcessMessage {
+message StoredProcessMessage { // TODO: rename to recipe?
   string id = 2;
   string name = 3;
   string description = 4;
@@ -17,7 +17,7 @@ message StoredProcessMessage {
   geometry.v1.LocalizedPose frame = 6;
   string root_sequence_id = 7;
   repeated StoredSequenceMessage sequences = 8;
-  repeated TaskMessage tasks = 9;
+  repeated TaskMessage tasks = 9; // TODO: make 'interchanceable', such that multiple variants can be selected
 }
 
 message StoredProcessesMessage {

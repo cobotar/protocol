@@ -1,4 +1,7 @@
+from ar.v1 import permissions_pb2 as _permissions_pb2
 from ar.v1 import property_pb2 as _property_pb2
+from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -14,24 +17,13 @@ class WorkerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     WORKER_TYPE_NOVICE: _ClassVar[WorkerType]
     WORKER_TYPE_INTERMEDIATE: _ClassVar[WorkerType]
     WORKER_TYPE_EXPERT: _ClassVar[WorkerType]
-
-class WorkerPermission(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    WORKER_PERMISSION_UNSPECIFIED: _ClassVar[WorkerPermission]
-    WORKER_PERMISSION_NONE: _ClassVar[WorkerPermission]
-    WORKER_PERMISSION_COSMETIC: _ClassVar[WorkerPermission]
-    WORKER_PERMISSION_FULL: _ClassVar[WorkerPermission]
 WORKER_TYPE_UNSPECIFIED: WorkerType
 WORKER_TYPE_NOVICE: WorkerType
 WORKER_TYPE_INTERMEDIATE: WorkerType
 WORKER_TYPE_EXPERT: WorkerType
-WORKER_PERMISSION_UNSPECIFIED: WorkerPermission
-WORKER_PERMISSION_NONE: WorkerPermission
-WORKER_PERMISSION_COSMETIC: WorkerPermission
-WORKER_PERMISSION_FULL: WorkerPermission
 
 class WorkerMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "permission", "properties")
+    __slots__ = ("id", "name", "icon", "description", "type", "permission", "properties", "disabled")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -39,14 +31,16 @@ class WorkerMessage(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     PERMISSION_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
+    DISABLED_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: WorkerType
-    permission: WorkerPermission
+    permission: _permissions_pb2.WorkerPermission
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[WorkerType, str]] = ..., permission: _Optional[_Union[WorkerPermission, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+    disabled: bool
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[WorkerType, str]] = ..., permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., disabled: bool = ...) -> None: ...
 
 class WorkerMessages(_message.Message):
     __slots__ = ("workers",)

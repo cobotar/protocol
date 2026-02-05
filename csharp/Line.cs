@@ -56,6 +56,9 @@ namespace Messages.Plm.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: allow multiple processes to make active at the same time?
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class LineMessage : pb::IMessage<LineMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

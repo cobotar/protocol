@@ -1,0 +1,18 @@
+syntax = "proto2";
+package validation.v1;
+
+import "buf/validate/validate.proto";
+
+extend buf.validate.StringRules {
+  optional bool name_component = 10000 [(buf.validate.predefined).cel = {
+    id: "string.name_component"
+    message: "name must have between 1 and 64 characters"
+    expression: "this.size() > 0 && this.size() <= 64"
+  }];
+
+  optional bool model_id_component = 10001 [(buf.validate.predefined).cel = {
+    id: "string.model_id_component"
+    message: "this does not seem to be a model id"
+    expression: "this.startsWith('model-')"
+  }];
+}

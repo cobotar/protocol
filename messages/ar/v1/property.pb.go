@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -153,23 +154,23 @@ func (PropertyOrigin) EnumDescriptor() ([]byte, []int) {
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 type Property struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type             PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.PropertyType" json:"type,omitempty"`
-	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`                                    // the current value of the property (JSON encoded)
-	Extras           string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"`                                  // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
-	UserEditable     bool                   `protobuf:"varint,8,opt,name=user_editable,json=userEditable,proto3" json:"user_editable,omitempty"` // TODO: create different user permissions, this field should then set the "minimum required permission"
-	Origin           PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
-	Origins          []PropertyOrigin       `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=ar.v1.PropertyOrigin" json:"origins,omitempty"`
-	MirrorPropertyId string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
-	Group            string                 `protobuf:"bytes,12,opt,name=group,proto3" json:"group,omitempty"`
-	Ordering         int32                  `protobuf:"varint,13,opt,name=ordering,proto3" json:"ordering,omitempty"`
-	HideGroup        bool                   `protobuf:"varint,14,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                      string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                      string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description               string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                      PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.PropertyType" json:"type,omitempty"`
+	Value                     string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`   // the current value of the property (JSON encoded)
+	Extras                    string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"` // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
+	MinimumRequiredPermission WorkerPermission       `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=ar.v1.WorkerPermission" json:"minimum_required_permission,omitempty"`
+	Origin                    PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
+	Origins                   []PropertyOrigin       `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=ar.v1.PropertyOrigin" json:"origins,omitempty"`
+	MirrorPropertyId          string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
+	Group                     string                 `protobuf:"bytes,12,opt,name=group,proto3" json:"group,omitempty"`
+	Ordering                  int32                  `protobuf:"varint,13,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool                   `protobuf:"varint,14,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
 }
 
 func (x *Property) Reset() {
@@ -251,11 +252,11 @@ func (x *Property) GetExtras() string {
 	return ""
 }
 
-func (x *Property) GetUserEditable() bool {
+func (x *Property) GetMinimumRequiredPermission() WorkerPermission {
 	if x != nil {
-		return x.UserEditable
+		return x.MinimumRequiredPermission
 	}
-	return false
+	return WorkerPermission_WORKER_PERMISSION_UNSPECIFIED
 }
 
 func (x *Property) GetOrigin() PropertyOrigin {
@@ -304,24 +305,26 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\"\xbf\x03\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\"\xbf\x05\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeR\x04type\x12\x14\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x14\n" +
 	"\x05value\x18\x06 \x01(\tR\x05value\x12\x16\n" +
-	"\x06extras\x18\a \x01(\tR\x06extras\x12#\n" +
-	"\ruser_editable\x18\b \x01(\bR\fuserEditable\x12-\n" +
-	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginR\x06origin\x12/\n" +
+	"\x06extras\x18\a \x01(\tR\x06extras\x12a\n" +
+	"\x1bminimum_required_permission\x18\b \x01(\x0e2\x17.ar.v1.WorkerPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x127\n" +
+	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06origin\x12>\n" +
 	"\aorigins\x18\n" +
-	" \x03(\x0e2\x15.ar.v1.PropertyOriginR\aorigins\x12,\n" +
+	" \x03(\x0e2\x15.ar.v1.PropertyOriginB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\aorigins\x12,\n" +
 	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId\x12\x14\n" +
 	"\x05group\x18\f \x01(\tR\x05group\x12\x1a\n" +
 	"\bordering\x18\r \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
-	"hide_group\x18\x0e \x01(\bR\thideGroup*\xde\x02\n" +
+	"hide_group\x18\x0e \x01(\bR\thideGroup:\x99\x01\xbaH\x95\x01\x1a\x92\x01\n" +
+	"!mirror_id_set_if_origin_is_mirror\x12+Mirror ID must be set when origin is mirror\x1a@!this.mirror_property_id.startsWith('prop-') && this.origin == 2*\xde\x02\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -358,19 +361,21 @@ func file_ar_v1_property_proto_rawDescGZIP() []byte {
 var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_ar_v1_property_proto_goTypes = []any{
-	(PropertyType)(0),   // 0: ar.v1.PropertyType
-	(PropertyOrigin)(0), // 1: ar.v1.PropertyOrigin
-	(*Property)(nil),    // 2: ar.v1.Property
+	(PropertyType)(0),     // 0: ar.v1.PropertyType
+	(PropertyOrigin)(0),   // 1: ar.v1.PropertyOrigin
+	(*Property)(nil),      // 2: ar.v1.Property
+	(WorkerPermission)(0), // 3: ar.v1.WorkerPermission
 }
 var file_ar_v1_property_proto_depIdxs = []int32{
 	0, // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
-	1, // 1: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
-	1, // 2: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
+	1, // 2: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
+	1, // 3: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_property_proto_init() }
@@ -378,6 +383,7 @@ func file_ar_v1_property_proto_init() {
 	if File_ar_v1_property_proto != nil {
 		return
 	}
+	file_ar_v1_permissions_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -30,7 +30,7 @@ class MappingMessage(_message.Message):
     ar_config_priorities: _containers.RepeatedCompositeFieldContainer[ARPriority]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., environment_ids: _Optional[_Iterable[str]] = ..., ar_config_priorities: _Optional[_Iterable[_Union[ARPriority, _Mapping]]] = ...) -> None: ...
 
-class MappingsMessage(_message.Message):
+class MappingMessages(_message.Message):
     __slots__ = ("mappings",)
     MAPPINGS_FIELD_NUMBER: _ClassVar[int]
     mappings: _containers.RepeatedCompositeFieldContainer[MappingMessage]

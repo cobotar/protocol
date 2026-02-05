@@ -12,6 +12,7 @@ enum LineType {
   LINE_TYPE_LUBRICANT = 4;
 }
 
+// TODO: allow multiple processes to make active at the same time?
 message LineMessage {
   string id = 1;
   string name = 2;
@@ -21,3 +22,5 @@ message LineMessage {
   // TODO: agents
   // TODO: capabilities
 }
+
+// TODO: Distinguish between 'static' configuration and runtime, e.g. such that HMD¨s (humans) can be assigned during runtime and automatically added to running tasks.

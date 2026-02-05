@@ -2,6 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/property.proto";
+import "buf/validate/validate.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -20,11 +21,21 @@ enum AssetDriverType {
 
 message AssetMessage {
   string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  AssetType type = 5;
-  AssetDriverType asset_driver_type = 6;
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }]; // Name of the asset
+  string icon = 3; // Optional icon representing the asset
+  string description = 4; // Optional description of the asset
+  AssetType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true,
+    (buf.validate.field).enum.example = 1 // ASSET_TYPE_CAMERA
+  ];
+  AssetDriverType asset_driver_type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   repeated ar.v1.Property properties = 7;
 }
 

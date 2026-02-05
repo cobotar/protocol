@@ -8,13 +8,14 @@ import type { EventType } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
 import type { FeedbackType } from "./feedback_pb.ts";
 import { file_ar_v1_feedback } from "./feedback_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/feedback_info.proto.
  */
 export const file_ar_v1_feedback_info: GenFile = /*@__PURE__*/
-  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKOAgoTRmVlZGJhY2tJbmZvTWVzc2FnZRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZRINCgVncm91cBgGIAEoCRIVCg1yZXF1aXJlX2FnZW50GAcgASgIEhUKDXJlcXVpcmVfZnJhbWUYCCABKAgSKQoPcmVxdWlyZWRfZXZlbnRzGAkgAygOMhAuYXIudjEuRXZlbnRUeXBlEikKD29wdGlvbmFsX2V2ZW50cxgKIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIQCghkaXNhYmxlZBgLIAEoCCJKChRGZWVkYmFja0luZm9zTWVzc2FnZRIyCg5mZWVkYmFja19pbmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2VCjQEKCWNvbS5hci52MUIRRmVlZGJhY2tJbmZvUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_events, file_ar_v1_feedback]);
+  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKpAgoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQga6SAPIAQESFQoFZ3JvdXAYBiABKAlCBrpIA8gBARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEhUKDXJlcXVpcmVfZnJhbWUYCCABKAgSKQoPcmVxdWlyZWRfZXZlbnRzGAkgAygOMhAuYXIudjEuRXZlbnRUeXBlEikKD29wdGlvbmFsX2V2ZW50cxgKIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIQCghkaXNhYmxlZBgLIAEoCCJBChRGZWVkYmFja0luZm9NZXNzYWdlcxIpCgVpbmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2VCjQEKCWNvbS5hci52MUIRRmVlZGJhY2tJbmZvUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate]);
 
 /**
  * @generated from message ar.v1.FeedbackInfoMessage
@@ -79,19 +80,19 @@ export const FeedbackInfoMessageSchema: GenMessage<FeedbackInfoMessage> = /*@__P
   messageDesc(file_ar_v1_feedback_info, 0);
 
 /**
- * @generated from message ar.v1.FeedbackInfosMessage
+ * @generated from message ar.v1.FeedbackInfoMessages
  */
-export type FeedbackInfosMessage = Message<"ar.v1.FeedbackInfosMessage"> & {
+export type FeedbackInfoMessages = Message<"ar.v1.FeedbackInfoMessages"> & {
   /**
-   * @generated from field: repeated ar.v1.FeedbackInfoMessage feedback_infos = 1;
+   * @generated from field: repeated ar.v1.FeedbackInfoMessage infos = 1;
    */
-  feedbackInfos: FeedbackInfoMessage[];
+  infos: FeedbackInfoMessage[];
 };
 
 /**
- * Describes the message ar.v1.FeedbackInfosMessage.
- * Use `create(FeedbackInfosMessageSchema)` to create a new message.
+ * Describes the message ar.v1.FeedbackInfoMessages.
+ * Use `create(FeedbackInfoMessagesSchema)` to create a new message.
  */
-export const FeedbackInfosMessageSchema: GenMessage<FeedbackInfosMessage> = /*@__PURE__*/
+export const FeedbackInfoMessagesSchema: GenMessage<FeedbackInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_feedback_info, 1);
 

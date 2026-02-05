@@ -12,7 +12,12 @@ message MarkerLocation {
   geometry.v1.LocalizedPose location = 2;
 }
 
-message AgentLocation {
+message RobotLocation {
+  string id = 1;
+  geometry.v1.LocalizedPose location = 2;
+}
+
+message AssetLocation {
   string id = 1;
   geometry.v1.LocalizedPose location = 2;
 }
@@ -45,11 +50,11 @@ message EnvironmentMessage {
   string description = 4;
   EnvironmentType type = 5;
   repeated MarkerLocation markers = 6; // Markers associated with this environment.
-  repeated AgentLocation agents = 7;
-  repeated PartLocation parts = 8;
-  repeated ToolLocation tools = 9;
-  repeated ar.v1.Property properties = 10;
-  // TODO: add change_type: add, update, delete, unspecified?
+  repeated RobotLocation robots = 7;
+  repeated AssetLocation assets = 8;
+  repeated PartLocation parts = 9;
+  repeated ToolLocation tools = 10;
+  repeated ar.v1.Property properties = 11;
 }
 
 message EnvironmentsMessage {

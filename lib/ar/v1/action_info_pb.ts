@@ -8,13 +8,14 @@ import type { ActionType } from "./action_pb.ts";
 import { file_ar_v1_action } from "./action_pb.ts";
 import type { EventType } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/action_info.proto.
  */
 export const file_ar_v1_action_info: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9hY3Rpb25faW5mby5wcm90bxIFYXIudjEi8wEKEUFjdGlvbkluZm9NZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZRINCgVncm91cBgGIAEoCRIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgIIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCSADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCiABKAgiRAoSQWN0aW9uSW5mb3NNZXNzYWdlEi4KDGFjdGlvbl9pbmZvcxgBIAMoCzIYLmFyLnYxLkFjdGlvbkluZm9NZXNzYWdlQosBCgljb20uYXIudjFCD0FjdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_events]);
+  fileDesc("Chdhci92MS9hY3Rpb25faW5mby5wcm90bxIFYXIudjEijgIKEUFjdGlvbkluZm9NZXNzYWdlEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEicKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQga6SAPIAQESFQoFZ3JvdXAYBiABKAlCBrpIA8gBARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgIIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCSADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCiABKAgiPQoSQWN0aW9uSW5mb01lc3NhZ2VzEicKBWluZm9zGAEgAygLMhguYXIudjEuQWN0aW9uSW5mb01lc3NhZ2VCiwEKCWNvbS5hci52MUIPQWN0aW9uSW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_action, file_ar_v1_events, file_buf_validate_validate]);
 
 /**
  * @generated from message ar.v1.ActionInfoMessage
@@ -74,19 +75,19 @@ export const ActionInfoMessageSchema: GenMessage<ActionInfoMessage> = /*@__PURE_
   messageDesc(file_ar_v1_action_info, 0);
 
 /**
- * @generated from message ar.v1.ActionInfosMessage
+ * @generated from message ar.v1.ActionInfoMessages
  */
-export type ActionInfosMessage = Message<"ar.v1.ActionInfosMessage"> & {
+export type ActionInfoMessages = Message<"ar.v1.ActionInfoMessages"> & {
   /**
-   * @generated from field: repeated ar.v1.ActionInfoMessage action_infos = 1;
+   * @generated from field: repeated ar.v1.ActionInfoMessage infos = 1;
    */
-  actionInfos: ActionInfoMessage[];
+  infos: ActionInfoMessage[];
 };
 
 /**
- * Describes the message ar.v1.ActionInfosMessage.
- * Use `create(ActionInfosMessageSchema)` to create a new message.
+ * Describes the message ar.v1.ActionInfoMessages.
+ * Use `create(ActionInfoMessagesSchema)` to create a new message.
  */
-export const ActionInfosMessageSchema: GenMessage<ActionInfosMessage> = /*@__PURE__*/
+export const ActionInfoMessagesSchema: GenMessage<ActionInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_action_info, 1);
 

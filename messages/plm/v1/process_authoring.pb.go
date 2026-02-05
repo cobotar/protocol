@@ -31,7 +31,7 @@ type StoredProcessMessage struct {
 	Frame          *v1.LocalizedPose        `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
 	RootSequenceId string                   `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	Sequences      []*StoredSequenceMessage `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks          []*TaskMessage           `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	Tasks          []*TaskMessage           `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"` // TODO: make 'interchanceable', such that multiple variants can be selected
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }

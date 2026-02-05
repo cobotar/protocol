@@ -29,7 +29,8 @@ const (
 	ProcessType_PROCESS_TYPE_UNSPECIFIED ProcessType = 0
 	ProcessType_PROCESS_TYPE_ASSEMBLY    ProcessType = 1
 	ProcessType_PROCESS_TYPE_DISASSEMBLY ProcessType = 2
-	ProcessType_PROCESS_TYPE_INSPECTION  ProcessType = 3
+	ProcessType_PROCESS_TYPE_INSPECTION  ProcessType = 3 // TODO: what should this be?
+	ProcessType_PROCESS_TYPE_CHECKLIST   ProcessType = 4 // TODO: this could be startup procedures, fault fixing, ...
 )
 
 // Enum value maps for ProcessType.
@@ -39,12 +40,14 @@ var (
 		1: "PROCESS_TYPE_ASSEMBLY",
 		2: "PROCESS_TYPE_DISASSEMBLY",
 		3: "PROCESS_TYPE_INSPECTION",
+		4: "PROCESS_TYPE_CHECKLIST",
 	}
 	ProcessType_value = map[string]int32{
 		"PROCESS_TYPE_UNSPECIFIED": 0,
 		"PROCESS_TYPE_ASSEMBLY":    1,
 		"PROCESS_TYPE_DISASSEMBLY": 2,
 		"PROCESS_TYPE_INSPECTION":  3,
+		"PROCESS_TYPE_CHECKLIST":   4,
 	}
 )
 
@@ -130,6 +133,8 @@ func (ProcessState) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_process_proto_rawDescGZIP(), []int{1}
 }
 
+// TODO: should 'running' be called process and 'static' recipe?
+// TODO: Add/assign the agent(s) at runtime, instead of allocating them to the environment. THen there could also be a situation where each agent is asked to take a task during execution.
 type ProcessMessage struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	InstanceId     string                 `protobuf:"bytes,1,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"`
@@ -421,12 +426,13 @@ const file_plm_v1_process_proto_rawDesc = "" +
 	" \x01(\x0e2\x14.plm.v1.ProcessStateR\x05state\x120\n" +
 	"\x05ended\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\x05ended\"H\n" +
 	"\x10ProcessesMessage\x124\n" +
-	"\tprocesses\x18\x01 \x03(\v2\x16.plm.v1.ProcessMessageR\tprocesses*\x81\x01\n" +
+	"\tprocesses\x18\x01 \x03(\v2\x16.plm.v1.ProcessMessageR\tprocesses*\x9d\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n" +
 	"\x18PROCESS_TYPE_DISASSEMBLY\x10\x02\x12\x1b\n" +
-	"\x17PROCESS_TYPE_INSPECTION\x10\x03*\x9f\x01\n" +
+	"\x17PROCESS_TYPE_INSPECTION\x10\x03\x12\x1a\n" +
+	"\x16PROCESS_TYPE_CHECKLIST\x10\x04*\x9f\x01\n" +
 	"\fProcessState\x12\x1d\n" +
 	"\x19PROCESS_STATE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_STATE_WAITING\x10\x01\x12\x1d\n" +

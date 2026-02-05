@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -28,8 +30,10 @@ const (
 	FeedbackType_FEEDBACK_TYPE_TASK_HIGHLIGHT      FeedbackType = 10
 	FeedbackType_FEEDBACK_TYPE_TASK_PART_HIGHLIGHT FeedbackType = 11
 	FeedbackType_FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT FeedbackType = 12
-	FeedbackType_FEEDBACK_TYPE_TASK_OVERVIEW       FeedbackType = 13
-	FeedbackType_FEEDBACK_TYPE_ROBOT_PATH          FeedbackType = 50
+	FeedbackType_FEEDBACK_TYPE_TASK_OVERVIEW       FeedbackType = 13 // Provides an overview of all current tasks
+	FeedbackType_FEEDBACK_TYPE_TASK_INSTRUCTION    FeedbackType = 14 // Provide instructions of the current task
+	FeedbackType_FEEDBACK_TYPE_TASK_CHECKLIST      FeedbackType = 15 // Tailored towards tasks that are more checklist oriented than assembly
+	FeedbackType_FEEDBACK_TYPE_ROBOT_PATH          FeedbackType = 50 // Show the expected path of the robot
 	FeedbackType_FEEDBACK_TYPE_ROBOT_SILHOUETTE    FeedbackType = 51
 	FeedbackType_FEEDBACK_TYPE_ROBOT_WAYPOINTS     FeedbackType = 52
 	FeedbackType_FEEDBACK_TYPE_ROBOT_STATUS        FeedbackType = 53
@@ -49,6 +53,8 @@ var (
 		11:  "FEEDBACK_TYPE_TASK_PART_HIGHLIGHT",
 		12:  "FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT",
 		13:  "FEEDBACK_TYPE_TASK_OVERVIEW",
+		14:  "FEEDBACK_TYPE_TASK_INSTRUCTION",
+		15:  "FEEDBACK_TYPE_TASK_CHECKLIST",
 		50:  "FEEDBACK_TYPE_ROBOT_PATH",
 		51:  "FEEDBACK_TYPE_ROBOT_SILHOUETTE",
 		52:  "FEEDBACK_TYPE_ROBOT_WAYPOINTS",
@@ -66,6 +72,8 @@ var (
 		"FEEDBACK_TYPE_TASK_PART_HIGHLIGHT": 11,
 		"FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT": 12,
 		"FEEDBACK_TYPE_TASK_OVERVIEW":       13,
+		"FEEDBACK_TYPE_TASK_INSTRUCTION":    14,
+		"FEEDBACK_TYPE_TASK_CHECKLIST":      15,
 		"FEEDBACK_TYPE_ROBOT_PATH":          50,
 		"FEEDBACK_TYPE_ROBOT_SILHOUETTE":    51,
 		"FEEDBACK_TYPE_ROBOT_WAYPOINTS":     52,
@@ -198,28 +206,150 @@ func (x *FeedbackMessage) GetOutputProperties() []*Property {
 	return nil
 }
 
+type FeedbackMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Feedbacks     []*FeedbackMessage     `protobuf:"bytes,1,rep,name=feedbacks,proto3" json:"feedbacks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FeedbackMessages) Reset() {
+	*x = FeedbackMessages{}
+	mi := &file_ar_v1_feedback_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FeedbackMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FeedbackMessages) ProtoMessage() {}
+
+func (x *FeedbackMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_feedback_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FeedbackMessages.ProtoReflect.Descriptor instead.
+func (*FeedbackMessages) Descriptor() ([]byte, []int) {
+	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *FeedbackMessages) GetFeedbacks() []*FeedbackMessage {
+	if x != nil {
+		return x.Feedbacks
+	}
+	return nil
+}
+
+type FeedbackCloneMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OriginalId    string                 `protobuf:"bytes,1,opt,name=original_id,json=originalId,proto3" json:"original_id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FeedbackCloneMessage) Reset() {
+	*x = FeedbackCloneMessage{}
+	mi := &file_ar_v1_feedback_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FeedbackCloneMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FeedbackCloneMessage) ProtoMessage() {}
+
+func (x *FeedbackCloneMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_feedback_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FeedbackCloneMessage.ProtoReflect.Descriptor instead.
+func (*FeedbackCloneMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *FeedbackCloneMessage) GetOriginalId() string {
+	if x != nil {
+		return x.OriginalId
+	}
+	return ""
+}
+
+func (x *FeedbackCloneMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *FeedbackCloneMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *FeedbackCloneMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\x83\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9b\x02\n" +
 	"\x0fFeedbackMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeR\x04type\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
 	"\n" +
 	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\x12<\n" +
-	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties*\xe4\x03\n" +
+	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\"H\n" +
+	"\x10FeedbackMessages\x124\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\x81\x01\n" +
+	"\x14FeedbackCloneMessage\x12\x1f\n" +
+	"\voriginal_id\x18\x01 \x01(\tR\n" +
+	"originalId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xaa\x04\n" +
 	"\fFeedbackType\x12\x1d\n" +
 	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cFEEDBACK_TYPE_TASK_HIGHLIGHT\x10\n" +
 	"\x12%\n" +
 	"!FEEDBACK_TYPE_TASK_PART_HIGHLIGHT\x10\v\x12%\n" +
 	"!FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT\x10\f\x12\x1f\n" +
-	"\x1bFEEDBACK_TYPE_TASK_OVERVIEW\x10\r\x12\x1c\n" +
+	"\x1bFEEDBACK_TYPE_TASK_OVERVIEW\x10\r\x12\"\n" +
+	"\x1eFEEDBACK_TYPE_TASK_INSTRUCTION\x10\x0e\x12 \n" +
+	"\x1cFEEDBACK_TYPE_TASK_CHECKLIST\x10\x0f\x12\x1c\n" +
 	"\x18FEEDBACK_TYPE_ROBOT_PATH\x102\x12\"\n" +
 	"\x1eFEEDBACK_TYPE_ROBOT_SILHOUETTE\x103\x12!\n" +
 	"\x1dFEEDBACK_TYPE_ROBOT_WAYPOINTS\x104\x12\x1e\n" +
@@ -245,21 +375,24 @@ func file_ar_v1_feedback_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_feedback_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ar_v1_feedback_proto_goTypes = []any{
-	(FeedbackType)(0),       // 0: ar.v1.FeedbackType
-	(*FeedbackMessage)(nil), // 1: ar.v1.FeedbackMessage
-	(*Property)(nil),        // 2: ar.v1.Property
+	(FeedbackType)(0),            // 0: ar.v1.FeedbackType
+	(*FeedbackMessage)(nil),      // 1: ar.v1.FeedbackMessage
+	(*FeedbackMessages)(nil),     // 2: ar.v1.FeedbackMessages
+	(*FeedbackCloneMessage)(nil), // 3: ar.v1.FeedbackCloneMessage
+	(*Property)(nil),             // 4: ar.v1.Property
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
-	2, // 1: ar.v1.FeedbackMessage.properties:type_name -> ar.v1.Property
-	2, // 2: ar.v1.FeedbackMessage.output_properties:type_name -> ar.v1.Property
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 1: ar.v1.FeedbackMessage.properties:type_name -> ar.v1.Property
+	4, // 2: ar.v1.FeedbackMessage.output_properties:type_name -> ar.v1.Property
+	1, // 3: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }
@@ -274,7 +407,7 @@ func file_ar_v1_feedback_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_feedback_proto_rawDesc), len(file_ar_v1_feedback_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

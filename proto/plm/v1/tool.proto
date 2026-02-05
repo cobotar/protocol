@@ -1,33 +1,63 @@
 syntax = "proto3";
 package plm.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
+enum ToolType {
+  TOOL_TYPE_UNSPECIFIED = 0;
+  TOOL_TYPE_CUTTING = 10;
+  TOOL_TYPE_SHAPING = 20;
+  TOOL_TYPE_FASTENING = 30;
+  TOOL_TYPE_GRIPPING = 40;
+  TOOL_TYPE_TURNING = 50;
+  TOOL_TYPE_STRIKING = 60;
+  TOOL_TYPE_MEASURING = 70;
+  TOOL_TYPE_MARKING = 80;
+  TOOL_TYPE_FINISHING = 90;
+  TOOL_TYPE_ABRASIVE = 100;
+  TOOL_TYPE_SAFETY = 110;
+  TOOL_TYPE_ELECTRONICS = 120;
+}
+
+enum ToolProperty {
+  TOOL_PROPERTY_UNSPECIFIED = 0;
+  TOOL_PROPERTY_TORQUE_CONTROLLED = 1;
+  TOOL_PROPERTY_ESD_SAFE = 2;
+  TOOL_PROPERTY_INSULATED = 3;
+  TOOL_PROPERTY_COLLABORATIVE = 4;
+}
+
+enum ToolActor {
+  TOOL_ACTOR_UNSPECIFIED = 0;
+  TOOL_ACTOR_HUMAN = 1;
+  TOOL_ACTOR_ROBOT = 2;
+  TOOL_ACTOR_HYBRID = 3;
+}
+
 message ToolMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  string model_id = 5;
+  ToolType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum = {
+      defined_only: true
+      example: 10 // TOOL_TYPE_CUTTING
+    }
+  ];
+  ToolActor actor = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated ToolProperty properties = 7;
+  optional string model_id = 8 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
 }
 
 message ToolMessages {
   repeated ToolMessage tools = 1;
-}
-
-message NewToolMessage {
-  string name = 2;
-}
-
-message UpdateToolMessage {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  string model_id = 5;
-}
-
-message DeleteToolMessage {
-  string tool_id = 1;
 }

@@ -5,25 +5,43 @@ import "ar/v1/action.proto";
 import "ar/v1/feedback.proto";
 import "ar/v1/helper.proto";
 import "ar/v1/property.proto";
+import "buf/validate/validate.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message ARConfigInfoMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
   string icon = 3;
   string description = 4;
 }
 
+message ARConfigInfoMessages {
+  repeated ARConfigInfoMessage infos = 1;
+}
+
 message ARConfigMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
   string icon = 3;
   string description = 4;
   repeated ar.v1.FeedbackMessage feedback = 5;
   repeated ar.v1.ActionMessage actions = 6;
   repeated ar.v1.HelperMessage helpers = 7;
   repeated ar.v1.Property properties = 8;
-  int64 ar_disappear_distance = 9; // Threshold distance in cm all AR elements should disappear.
+  int64 ar_disappear_distance = 9 [(buf.validate.field).int64 = {
+    gte: 0
+    example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
+  }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
+}
+
+message ARConfigMessages {
+  repeated ARConfigMessage configs = 1;
 }

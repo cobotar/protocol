@@ -51,7 +51,7 @@ verify: format lint breaking generate
 .PHONY: publish
 publish: verify
 	@echo 'Verification complete'
-	bump-my-version bump ${bump}
+	bump-my-version bump ${bump} --no-allow-dirty
 	git push
 	git push --tags
 	@echo 'New version is published'

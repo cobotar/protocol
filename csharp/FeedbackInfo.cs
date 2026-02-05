@@ -25,26 +25,27 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MRoSYXIvdjEvZXZl",
-            "bnRzLnByb3RvGhRhci92MS9mZWVkYmFjay5wcm90byL6AgoTRmVlZGJhY2tJ",
-            "bmZvTWVzc2FnZRISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlS",
-            "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEicKBHR5",
-            "cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVSBHR5cGUSFAoFZ3JvdXAY",
-            "BiABKAlSBWdyb3VwEiMKDXJlcXVpcmVfYWdlbnQYByABKAhSDHJlcXVpcmVB",
-            "Z2VudBIjCg1yZXF1aXJlX2ZyYW1lGAggASgIUgxyZXF1aXJlRnJhbWUSOQoP",
-            "cmVxdWlyZWRfZXZlbnRzGAkgAygOMhAuYXIudjEuRXZlbnRUeXBlUg5yZXF1",
-            "aXJlZEV2ZW50cxI5Cg9vcHRpb25hbF9ldmVudHMYCiADKA4yEC5hci52MS5F",
-            "dmVudFR5cGVSDm9wdGlvbmFsRXZlbnRzEhoKCGRpc2FibGVkGAsgASgIUghk",
-            "aXNhYmxlZCJZChRGZWVkYmFja0luZm9zTWVzc2FnZRJBCg5mZWVkYmFja19p",
-            "bmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2VSDWZlZWRi",
-            "YWNrSW5mb3NCjQEKCWNvbS5hci52MUIRRmVlZGJhY2tJbmZvUHJvdG9QAVov",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2Fy",
-            "djGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BC",
-            "TWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "bnRzLnByb3RvGhRhci92MS9mZWVkYmFjay5wcm90bxobYnVmL3ZhbGlkYXRl",
+            "L3ZhbGlkYXRlLnByb3RvIpUDChNGZWVkYmFja0luZm9NZXNzYWdlEh0KBG5h",
+            "bWUYAiABKAlCCbpIBnIEEAEYQFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
+            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIvCgR0eXBlGAUg",
+            "ASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQga6SAPIAQFSBHR5cGUSHAoFZ3Jv",
+            "dXAYBiABKAlCBrpIA8gBAVIFZ3JvdXASIwoNcmVxdWlyZV9hZ2VudBgHIAEo",
+            "CFIMcmVxdWlyZUFnZW50EiMKDXJlcXVpcmVfZnJhbWUYCCABKAhSDHJlcXVp",
+            "cmVGcmFtZRI5Cg9yZXF1aXJlZF9ldmVudHMYCSADKA4yEC5hci52MS5FdmVu",
+            "dFR5cGVSDnJlcXVpcmVkRXZlbnRzEjkKD29wdGlvbmFsX2V2ZW50cxgKIAMo",
+            "DjIQLmFyLnYxLkV2ZW50VHlwZVIOb3B0aW9uYWxFdmVudHMSGgoIZGlzYWJs",
+            "ZWQYCyABKAhSCGRpc2FibGVkIkgKFEZlZWRiYWNrSW5mb01lc3NhZ2VzEjAK",
+            "BWluZm9zGAEgAygLMhouYXIudjEuRmVlZGJhY2tJbmZvTWVzc2FnZVIFaW5m",
+            "b3NCjQEKCWNvbS5hci52MUIRRmVlZGJhY2tJbmZvUHJvdG9QAVovZ2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNB",
+            "WFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRh",
+            "dGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackInfoMessage), global::Messages.AR.V1.FeedbackInfoMessage.Parser, new[]{ "Name", "Icon", "Description", "Type", "Group", "RequireAgent", "RequireFrame", "RequiredEvents", "OptionalEvents", "Disabled" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackInfosMessage), global::Messages.AR.V1.FeedbackInfosMessage.Parser, new[]{ "FeedbackInfos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackInfoMessages), global::Messages.AR.V1.FeedbackInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -565,16 +566,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class FeedbackInfosMessage : pb::IMessage<FeedbackInfosMessage>
+  public sealed partial class FeedbackInfoMessages : pb::IMessage<FeedbackInfoMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeedbackInfosMessage> _parser = new pb::MessageParser<FeedbackInfosMessage>(() => new FeedbackInfosMessage());
+    private static readonly pb::MessageParser<FeedbackInfoMessages> _parser = new pb::MessageParser<FeedbackInfoMessages>(() => new FeedbackInfoMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<FeedbackInfosMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeedbackInfoMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -590,7 +591,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedbackInfosMessage() {
+    public FeedbackInfoMessages() {
       OnConstruction();
     }
 
@@ -598,44 +599,44 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedbackInfosMessage(FeedbackInfosMessage other) : this() {
-      feedbackInfos_ = other.feedbackInfos_.Clone();
+    public FeedbackInfoMessages(FeedbackInfoMessages other) : this() {
+      infos_ = other.infos_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedbackInfosMessage Clone() {
-      return new FeedbackInfosMessage(this);
+    public FeedbackInfoMessages Clone() {
+      return new FeedbackInfoMessages(this);
     }
 
-    /// <summary>Field number for the "feedback_infos" field.</summary>
-    public const int FeedbackInfosFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.FeedbackInfoMessage> _repeated_feedbackInfos_codec
+    /// <summary>Field number for the "infos" field.</summary>
+    public const int InfosFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.FeedbackInfoMessage> _repeated_infos_codec
         = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.FeedbackInfoMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage> feedbackInfos_ = new pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage>();
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage> infos_ = new pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage> FeedbackInfos {
-      get { return feedbackInfos_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.FeedbackInfoMessage> Infos {
+      get { return infos_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as FeedbackInfosMessage);
+      return Equals(other as FeedbackInfoMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(FeedbackInfosMessage other) {
+    public bool Equals(FeedbackInfoMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!feedbackInfos_.Equals(other.feedbackInfos_)) return false;
+      if(!infos_.Equals(other.infos_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -643,7 +644,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= feedbackInfos_.GetHashCode();
+      hash ^= infos_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -662,7 +663,7 @@ namespace Messages.AR.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      feedbackInfos_.WriteTo(output, _repeated_feedbackInfos_codec);
+      infos_.WriteTo(output, _repeated_infos_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -673,7 +674,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      feedbackInfos_.WriteTo(ref output, _repeated_feedbackInfos_codec);
+      infos_.WriteTo(ref output, _repeated_infos_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -684,7 +685,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += feedbackInfos_.CalculateSize(_repeated_feedbackInfos_codec);
+      size += infos_.CalculateSize(_repeated_infos_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -693,11 +694,11 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(FeedbackInfosMessage other) {
+    public void MergeFrom(FeedbackInfoMessages other) {
       if (other == null) {
         return;
       }
-      feedbackInfos_.Add(other.feedbackInfos_);
+      infos_.Add(other.infos_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -718,7 +719,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            feedbackInfos_.AddEntriesFrom(input, _repeated_feedbackInfos_codec);
+            infos_.AddEntriesFrom(input, _repeated_infos_codec);
             break;
           }
         }
@@ -741,7 +742,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            feedbackInfos_.AddEntriesFrom(ref input, _repeated_feedbackInfos_codec);
+            infos_.AddEntriesFrom(ref input, _repeated_infos_codec);
             break;
           }
         }

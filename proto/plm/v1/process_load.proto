@@ -9,6 +9,7 @@ enum AllocationStrategy {
   ALLOCATION_STRATEGY_STATIC = 1;
 }
 
+// TODO: Assign agents at runtime?
 message ProcessLoadMessage {
   string request_id = 1;
   string process_id = 2;

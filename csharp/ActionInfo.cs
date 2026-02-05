@@ -25,25 +25,26 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chdhci92MS9hY3Rpb25faW5mby5wcm90bxIFYXIudjEaEmFyL3YxL2FjdGlv",
-            "bi5wcm90bxoSYXIvdjEvZXZlbnRzLnByb3RvItECChFBY3Rpb25JbmZvTWVz",
-            "c2FnZRISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24S",
-            "IAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiUKBHR5cGUYBSAB",
-            "KA4yES5hci52MS5BY3Rpb25UeXBlUgR0eXBlEhQKBWdyb3VwGAYgASgJUgVn",
-            "cm91cBIjCg1yZXF1aXJlX2FnZW50GAcgASgIUgxyZXF1aXJlQWdlbnQSOQoP",
-            "cmVxdWlyZWRfZXZlbnRzGAggAygOMhAuYXIudjEuRXZlbnRUeXBlUg5yZXF1",
-            "aXJlZEV2ZW50cxI5Cg9vcHRpb25hbF9ldmVudHMYCSADKA4yEC5hci52MS5F",
-            "dmVudFR5cGVSDm9wdGlvbmFsRXZlbnRzEhoKCGRpc2FibGVkGAogASgIUghk",
-            "aXNhYmxlZCJRChJBY3Rpb25JbmZvc01lc3NhZ2USOwoMYWN0aW9uX2luZm9z",
-            "GAEgAygLMhguYXIudjEuQWN0aW9uSW5mb01lc3NhZ2VSC2FjdGlvbkluZm9z",
-            "QosBCgljb20uYXIudjFCD0FjdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29t",
-            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoC",
-            "Dk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoC",
-            "BkFyOjpWMWIGcHJvdG8z"));
+            "bi5wcm90bxoSYXIvdjEvZXZlbnRzLnByb3RvGhtidWYvdmFsaWRhdGUvdmFs",
+            "aWRhdGUucHJvdG8i7AIKEUFjdGlvbkluZm9NZXNzYWdlEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEEAEYQFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhItCgR0eXBlGAUgASgOMhEu",
+            "YXIudjEuQWN0aW9uVHlwZUIGukgDyAEBUgR0eXBlEhwKBWdyb3VwGAYgASgJ",
+            "Qga6SAPIAQFSBWdyb3VwEiMKDXJlcXVpcmVfYWdlbnQYByABKAhSDHJlcXVp",
+            "cmVBZ2VudBI5Cg9yZXF1aXJlZF9ldmVudHMYCCADKA4yEC5hci52MS5FdmVu",
+            "dFR5cGVSDnJlcXVpcmVkRXZlbnRzEjkKD29wdGlvbmFsX2V2ZW50cxgJIAMo",
+            "DjIQLmFyLnYxLkV2ZW50VHlwZVIOb3B0aW9uYWxFdmVudHMSGgoIZGlzYWJs",
+            "ZWQYCiABKAhSCGRpc2FibGVkIkQKEkFjdGlvbkluZm9NZXNzYWdlcxIuCgVp",
+            "bmZvcxgBIAMoCzIYLmFyLnYxLkFjdGlvbkluZm9NZXNzYWdlUgVpbmZvc0KL",
+            "AQoJY29tLmFyLnYxQg9BY3Rpb25JbmZvUHJvdG9QAVovZ2l0aHViLmNvbS9j",
+            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5N",
+            "ZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZB",
+            "cjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.EventsReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.EventsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionInfoMessage), global::Messages.AR.V1.ActionInfoMessage.Parser, new[]{ "Name", "Icon", "Description", "Type", "Group", "RequireAgent", "RequiredEvents", "OptionalEvents", "Disabled" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionInfosMessage), global::Messages.AR.V1.ActionInfosMessage.Parser, new[]{ "ActionInfos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionInfoMessages), global::Messages.AR.V1.ActionInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -527,16 +528,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ActionInfosMessage : pb::IMessage<ActionInfosMessage>
+  public sealed partial class ActionInfoMessages : pb::IMessage<ActionInfoMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ActionInfosMessage> _parser = new pb::MessageParser<ActionInfosMessage>(() => new ActionInfosMessage());
+    private static readonly pb::MessageParser<ActionInfoMessages> _parser = new pb::MessageParser<ActionInfoMessages>(() => new ActionInfoMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ActionInfosMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<ActionInfoMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -552,7 +553,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionInfosMessage() {
+    public ActionInfoMessages() {
       OnConstruction();
     }
 
@@ -560,44 +561,44 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionInfosMessage(ActionInfosMessage other) : this() {
-      actionInfos_ = other.actionInfos_.Clone();
+    public ActionInfoMessages(ActionInfoMessages other) : this() {
+      infos_ = other.infos_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionInfosMessage Clone() {
-      return new ActionInfosMessage(this);
+    public ActionInfoMessages Clone() {
+      return new ActionInfoMessages(this);
     }
 
-    /// <summary>Field number for the "action_infos" field.</summary>
-    public const int ActionInfosFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ActionInfoMessage> _repeated_actionInfos_codec
+    /// <summary>Field number for the "infos" field.</summary>
+    public const int InfosFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ActionInfoMessage> _repeated_infos_codec
         = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.ActionInfoMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage> actionInfos_ = new pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage>();
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage> infos_ = new pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage> ActionInfos {
-      get { return actionInfos_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.ActionInfoMessage> Infos {
+      get { return infos_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as ActionInfosMessage);
+      return Equals(other as ActionInfoMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ActionInfosMessage other) {
+    public bool Equals(ActionInfoMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!actionInfos_.Equals(other.actionInfos_)) return false;
+      if(!infos_.Equals(other.infos_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -605,7 +606,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= actionInfos_.GetHashCode();
+      hash ^= infos_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -624,7 +625,7 @@ namespace Messages.AR.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      actionInfos_.WriteTo(output, _repeated_actionInfos_codec);
+      infos_.WriteTo(output, _repeated_infos_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -635,7 +636,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      actionInfos_.WriteTo(ref output, _repeated_actionInfos_codec);
+      infos_.WriteTo(ref output, _repeated_infos_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -646,7 +647,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += actionInfos_.CalculateSize(_repeated_actionInfos_codec);
+      size += infos_.CalculateSize(_repeated_infos_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -655,11 +656,11 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ActionInfosMessage other) {
+    public void MergeFrom(ActionInfoMessages other) {
       if (other == null) {
         return;
       }
-      actionInfos_.Add(other.actionInfos_);
+      infos_.Add(other.infos_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -680,7 +681,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            actionInfos_.AddEntriesFrom(input, _repeated_actionInfos_codec);
+            infos_.AddEntriesFrom(input, _repeated_infos_codec);
             break;
           }
         }
@@ -703,7 +704,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            actionInfos_.AddEntriesFrom(ref input, _repeated_actionInfos_codec);
+            infos_.AddEntriesFrom(ref input, _repeated_infos_codec);
             break;
           }
         }

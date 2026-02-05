@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/helper_info.proto.
  */
 export const file_ar_v1_helper_info: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9oZWxwZXJfaW5mby5wcm90bxIFYXIudjEi8wEKEUhlbHBlckluZm9NZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRINCgVncm91cBgGIAEoCRIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgJIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCiADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCyABKAgiRAoSSGVscGVySW5mb3NNZXNzYWdlEi4KDGhlbHBlcl9pbmZvcxgBIAMoCzIYLmFyLnYxLkhlbHBlckluZm9NZXNzYWdlQosBCgljb20uYXIudjFCD0hlbHBlckluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_events, file_ar_v1_helper]);
+  fileDesc("Chdhci92MS9oZWxwZXJfaW5mby5wcm90bxIFYXIudjEi8wEKEUhlbHBlckluZm9NZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRINCgVncm91cBgGIAEoCRIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgJIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCiADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCyABKAgiPQoSSGVscGVySW5mb01lc3NhZ2VzEicKBWluZm9zGAEgAygLMhguYXIudjEuSGVscGVySW5mb01lc3NhZ2VCiwEKCWNvbS5hci52MUIPSGVscGVySW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_helper]);
 
 /**
  * @generated from message ar.v1.HelperInfoMessage
@@ -74,19 +74,19 @@ export const HelperInfoMessageSchema: GenMessage<HelperInfoMessage> = /*@__PURE_
   messageDesc(file_ar_v1_helper_info, 0);
 
 /**
- * @generated from message ar.v1.HelperInfosMessage
+ * @generated from message ar.v1.HelperInfoMessages
  */
-export type HelperInfosMessage = Message<"ar.v1.HelperInfosMessage"> & {
+export type HelperInfoMessages = Message<"ar.v1.HelperInfoMessages"> & {
   /**
-   * @generated from field: repeated ar.v1.HelperInfoMessage helper_infos = 1;
+   * @generated from field: repeated ar.v1.HelperInfoMessage infos = 1;
    */
-  helperInfos: HelperInfoMessage[];
+  infos: HelperInfoMessage[];
 };
 
 /**
- * Describes the message ar.v1.HelperInfosMessage.
- * Use `create(HelperInfosMessageSchema)` to create a new message.
+ * Describes the message ar.v1.HelperInfoMessages.
+ * Use `create(HelperInfoMessagesSchema)` to create a new message.
  */
-export const HelperInfosMessageSchema: GenMessage<HelperInfosMessage> = /*@__PURE__*/
+export const HelperInfoMessagesSchema: GenMessage<HelperInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_helper_info, 1);
 

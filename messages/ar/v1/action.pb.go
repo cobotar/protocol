@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -177,21 +179,67 @@ func (x *ActionMessage) GetOutputProperties() []*Property {
 	return nil
 }
 
+type ActionMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Actions       []*ActionMessage       `protobuf:"bytes,1,rep,name=actions,proto3" json:"actions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ActionMessages) Reset() {
+	*x = ActionMessages{}
+	mi := &file_ar_v1_action_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActionMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActionMessages) ProtoMessage() {}
+
+func (x *ActionMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_action_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActionMessages.ProtoReflect.Descriptor instead.
+func (*ActionMessages) Descriptor() ([]byte, []int) {
+	return file_ar_v1_action_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ActionMessages) GetActions() []*ActionMessage {
+	if x != nil {
+		return x.Actions
+	}
+	return nil
+}
+
 var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\xff\x01\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x02\n" +
 	"\rActionMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeR\x04type\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
 	"\n" +
 	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\x12<\n" +
-	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties*\x80\x02\n" +
+	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\"@\n" +
+	"\x0eActionMessages\x12.\n" +
+	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions*\x80\x02\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -218,21 +266,23 @@ func file_ar_v1_action_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_action_proto_goTypes = []any{
-	(ActionType)(0),       // 0: ar.v1.ActionType
-	(*ActionMessage)(nil), // 1: ar.v1.ActionMessage
-	(*Property)(nil),      // 2: ar.v1.Property
+	(ActionType)(0),        // 0: ar.v1.ActionType
+	(*ActionMessage)(nil),  // 1: ar.v1.ActionMessage
+	(*ActionMessages)(nil), // 2: ar.v1.ActionMessages
+	(*Property)(nil),       // 3: ar.v1.Property
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	2, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
-	2, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
+	3, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
+	1, // 3: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }
@@ -247,7 +297,7 @@ func file_ar_v1_action_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_proto_rawDesc), len(file_ar_v1_action_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

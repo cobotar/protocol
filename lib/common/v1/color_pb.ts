@@ -4,13 +4,14 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file common/v1/color.proto.
  */
 export const file_common_v1_color: GenFile = /*@__PURE__*/
-  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJACgVDb2xvchILCgNyZWQYASABKAISDQoFZ3JlZW4YAiABKAISDAoEYmx1ZRgDIAEoAhINCgVhbHBoYRgEIAEoAkKiAQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z");
+  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJRCgVDb2xvchIcCgNyZWQYASABKAJCD7pIDAoKHQAAgD8tAAAAABINCgVncmVlbhgCIAEoAhIMCgRibHVlGAMgASgCEg0KBWFscGhhGAQgASgCQqIBCg1jb20uY29tbW9uLnYxQgpDb2xvclByb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM", [file_buf_validate_validate]);
 
 /**
  * Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.

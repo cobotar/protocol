@@ -1,0 +1,193 @@
+syntax = "proto3";
+package ar.v1;
+
+//import "buf/validate/validate.proto";
+//import "validation/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum SkillLevel {
+  SKILL_LEVEL_UNSPECIFIED = 0;
+  SKILL_LEVEL_NOT_ALLOWED = 1; // Human: Untrained, Robot: Not programmed
+  SKILL_LEVEL_ASSISTED = 2; // Human: AR-guided, Robot: Supervised execution
+  SKILL_LEVEL_QUALIFIED = 3; // Human: Certified operator, Robot: validated program
+  SKILL_LEVEL_EXPERT = 4; // Human: Technician, Robot: Optimized & adaptive
+  SKILL_LEVEL_AUTHORITY = 5; // Human: Trainer, Robot: Self-adjusting
+}
+
+/*
+   message Skill {
+     string id = 1;
+     string name = 2;
+     string domain = 3; // TODO: equal to tool-types (put in a separate file?)
+     string description = 4;
+     repeated string tool_roles = 5;
+     string actors = 6;
+     string safety_relevance = 7; //
+   }
+
+   Instead of just a static level, store the following:
+   message OperatorSkillLevel {
+     actor_id
+     skill_id
+     SkillLevel (1, 2, 3, 4)
+     Status: Active | Restricted | Expired
+     Confidence: [0-1]
+     last_evident_at (timestamp)
+     evidence_count (since last training)
+     valid_until (timestamp) or policy-derived
+     policy_id (which rule set is used)
+     reasons: ["inactivity_>30d"]
+     next_actions: e.g. ["micro_training", "extra_verification_required"]
+   }
+   This lets your authoring/runtime decide: “Can they do it?” and “How much guidance should AR show?”
+
+
+   Policies:
+   Use policy types per Skill Unit (and optionally per context/tool constraint)
+   - Time-based expiry (certification-style)
+     Good for safety/quality critical skills.
+     Example policy (SK-03 Apply Controlled Torque):
+   	•	Active for 180 days after training or validated evidence
+   	•	Restricted after 180 days (allowed only with AR guidance + extra checks)
+   	•	Expired after 365 days (not allowed)
+
+   - Usage-based decay (practice-style)
+     Good for skills that fade when not used.
+     Example:
+       •	If no executions in the last 30 days → confidence drops
+       •	If no executions in 90 days → status becomes Restricted
+       •	If no executions in 180 days → Expired
+
+   - Error-rate/quality-triggered restriction (performance-style)
+     Good when you have tool telemetry or inspection results.
+     Example:
+       •	If torque-out-of-range rate > 2% in last 50 ops → Restricted + mandatory refresher micro-training
+       •	If > 5% → Expired (lockout until retrained)
+
+   - Change-triggered invalidation (engineering-change-style)
+     Critical for robots and tooling changes.
+     Triggers:
+       •	Tool model/variant changes (new torque driver range, new bit, new EOAT)
+       •	Process parameter changes (torque spec changes)
+       •	Product revision changes (new screw length/material)
+       •	Robot program hash changes (or new validated program version)
+     Result:
+       •	Human: may become Restricted until quick re-brief
+       •	Robot: becomes Expired until program re-validated
+
+     Ideas for starter policies (use just three tiers across all skills at first):
+         1.	Critical (safety/quality): time-based expiry + error-trigger restriction
+         2.	Important (performance): usage-based decay + mild restriction
+         3.	General: no expiry, only change-triggered invalidation
+
+   3) Retraining types (keep it lightweight)
+     Define retraining as small “events” with effect sizes:
+       •	Micro-training (2–5 min): restores confidence + extends Active by a short period
+         Use when Restricted due to inactivity.
+       •	Refresher training (15–30 min): restores to prior level, extends Active fully
+         Use when near-expiry or minor performance drift.
+       •	Re-certification (formal): required if Expired or high-risk triggers
+         Use for safety-critical skills.
+
+     Store retraining as evidence with a training_type and grants (level/status/validity).
+
+   4) Runtime rules in AR (what the operator experiences)
+      When a step requires skill_id = SK-03, min_level = 2:
+       •	Active, level ≥ 2 → normal UI, minimal prompts
+       •	Restricted, level ≥ 2 → AR “assist mode”:
+         •	show screw sequence overlays
+         •	require explicit tool confirmation
+         •	add extra verification (e.g., torque log must be present)
+       •	Expired or level < 2 → block step:
+         •	show “Training required: Apply Controlled Torque”
+         •	offer “Call supervisor / start micro-training” (workflow hook)
+     This makes degradation felt as guidance and gating—not just admin paperwork.
+
+   5) Robot equivalence: “skill validity” = “program + cell validation”
+       For robots, the same mechanism works if you treat evidence differently:
+       Robot evidence examples:
+         •	Program validation record (version/hash, cell ID, EOAT ID)
+         •	Successful run count with pass/fail inspection linkage
+         •	Safety validation state (collab mode constraints satisfied)
+       Degradation examples:
+         •	No runs for N days → confidence drops (recommend supervised first run)
+         •	Program changed → Expired until validated
+         •	EOAT changed → Expired until TCP + force/torque calibration verified
+
+*/
+/*
+   Example skills
+
+   Step 1 - Position Cover
+     Instruction: “Place the gearbox cover onto the housing.”
+   •	Skill required: SK-01 – Grip and Position Component
+         •	Minimum level: 1 (Assisted)
+         •	Tool roles: Grip workpiece, Position component
+         •	Actors allowed: Human, Robot
+
+   AR Behavior
+   •	Outline shows correct placement
+   •	Ghosted preview snaps into place
+   •	If skill level = 1 → alignment hints stay visible
+   •	If skill level ≥ 2 → hints fade earlier
+
+   Step 2 - Align the Cover
+     Instruction: “Align the cover until all guide pins are seated.”
+
+     •	Skill: SK-06 – Align Component
+     •	Tool roles: Align component
+     •	Safety relevance: Medium
+
+     AR behavior
+     •	Arrows indicate micro-adjustments
+     •	Live feedback: “Alignment OK”
+     •	Step cannot complete until tolerance met
+
+   Step 3 — Fasten Screws (HRC Decision Point)
+     Instruction (dynamic): “Fasten 4 screws to 0.8 Nm.”
+
+     Skill-gated decision
+     •	Skill: SK-03 – Apply Controlled Torque
+     •	Minimum level: 2 (Qualified)
+     •	Tool role: Apply torque
+     System checks
+     Option                                    Result
+     Human + torque screwdriver + certified    ✅
+     Human + manual screwdriver                ❌
+     Robot screwdriver EOAT + validated        ✅ (EOAT = End-of-Arm Tooling)
+
+     Path A - Human performs fastening
+       AR behavior
+       •	Highlights correct screw order
+       •	Shows live torque gauge
+       •	Locks step until torque confirmed
+       •	Warns on wrong bit or tool
+
+     Path B — Robot Performs Fastening
+       AR behavior
+       •	Shows robot intent path
+       •	Displays “Robot fastening in progress”
+       •	Human restricted zone visualized
+       •	Status updates per screw
+
+   Step 4 — Validate Fastening
+   Instruction: “Verify all screws are secured.”
+     Logic
+       •	Skill: SK-05 – Validate Fastening Quality
+       •	Actors: Human or Robot
+       •	Tool roles: Detect presence, Measure torque
+
+     AR behavior
+       •	Checkmarks appear per screw
+       •	Vision system or torque log auto-confirms
+       •	Manual confirmation only allowed if skill ≥ 2
+
+   Step 5 — Completion & Traceability
+     System outcome
+     •	Skills used recorded
+     •	Tools logged
+     •	Actor (human/robot) recorded
+     •	Deviations flagged automatically
+*/

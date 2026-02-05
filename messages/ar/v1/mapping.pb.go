@@ -157,27 +157,27 @@ func (x *MappingMessage) GetArConfigPriorities() []*ARPriority {
 	return nil
 }
 
-type MappingsMessage struct {
+type MappingMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Mappings      []*MappingMessage      `protobuf:"bytes,1,rep,name=mappings,proto3" json:"mappings,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *MappingsMessage) Reset() {
-	*x = MappingsMessage{}
+func (x *MappingMessages) Reset() {
+	*x = MappingMessages{}
 	mi := &file_ar_v1_mapping_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *MappingsMessage) String() string {
+func (x *MappingMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MappingsMessage) ProtoMessage() {}
+func (*MappingMessages) ProtoMessage() {}
 
-func (x *MappingsMessage) ProtoReflect() protoreflect.Message {
+func (x *MappingMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_mapping_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -189,12 +189,12 @@ func (x *MappingsMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MappingsMessage.ProtoReflect.Descriptor instead.
-func (*MappingsMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use MappingMessages.ProtoReflect.Descriptor instead.
+func (*MappingMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *MappingsMessage) GetMappings() []*MappingMessage {
+func (x *MappingMessages) GetMappings() []*MappingMessage {
 	if x != nil {
 		return x.Mappings
 	}
@@ -218,7 +218,7 @@ const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
 	"\x0fenvironment_ids\x18\x05 \x03(\tR\x0eenvironmentIds\x12C\n" +
 	"\x14ar_config_priorities\x18\x06 \x03(\v2\x11.ar.v1.ARPriorityR\x12arConfigPriorities\"D\n" +
-	"\x0fMappingsMessage\x121\n" +
+	"\x0fMappingMessages\x121\n" +
 	"\bmappings\x18\x01 \x03(\v2\x15.ar.v1.MappingMessageR\bmappingsB\x88\x01\n" +
 	"\tcom.ar.v1B\fMappingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
@@ -238,11 +238,11 @@ var file_ar_v1_mapping_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ar_v1_mapping_proto_goTypes = []any{
 	(*ARPriority)(nil),      // 0: ar.v1.ARPriority
 	(*MappingMessage)(nil),  // 1: ar.v1.MappingMessage
-	(*MappingsMessage)(nil), // 2: ar.v1.MappingsMessage
+	(*MappingMessages)(nil), // 2: ar.v1.MappingMessages
 }
 var file_ar_v1_mapping_proto_depIdxs = []int32{
 	0, // 0: ar.v1.MappingMessage.ar_config_priorities:type_name -> ar.v1.ARPriority
-	1, // 1: ar.v1.MappingsMessage.mappings:type_name -> ar.v1.MappingMessage
+	1, // 1: ar.v1.MappingMessages.mappings:type_name -> ar.v1.MappingMessage
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

@@ -2,6 +2,8 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/property.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -20,10 +22,17 @@ enum ActionType {
 
 message ActionMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ActionType type = 5;
+  ActionType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   repeated ar.v1.Property properties = 6;
   repeated ar.v1.Property output_properties = 7;
+}
+
+message ActionMessages {
+  repeated ActionMessage actions = 1;
 }

@@ -4,23 +4,22 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { WorkerPermission } from "./permissions_pb.ts";
+import { file_ar_v1_permissions } from "./permissions_pb.ts";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/worker.proto.
  */
 export const file_ar_v1_worker: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxIr8BCg1Xb3JrZXJNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuV29ya2VyVHlwZRIrCgpwZXJtaXNzaW9uGAYgASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbhIjCgpwcm9wZXJ0aWVzGAcgAygLMg8uYXIudjEuUHJvcGVydHkiNwoOV29ya2VyTWVzc2FnZXMSJQoHd29ya2VycxgBIAMoCzIULmFyLnYxLldvcmtlck1lc3NhZ2UqdwoKV29ya2VyVHlwZRIbChdXT1JLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhYKEldPUktFUl9UWVBFX05PVklDRRABEhwKGFdPUktFUl9UWVBFX0lOVEVSTUVESUFURRACEhYKEldPUktFUl9UWVBFX0VYUEVSVBADKo0BChBXb3JrZXJQZXJtaXNzaW9uEiEKHVdPUktFUl9QRVJNSVNTSU9OX1VOU1BFQ0lGSUVEEAASGgoWV09SS0VSX1BFUk1JU1NJT05fTk9ORRABEh4KGldPUktFUl9QRVJNSVNTSU9OX0NPU01FVElDEAISGgoWV09SS0VSX1BFUk1JU1NJT05fRlVMTBADQocBCgljb20uYXIudjFCC1dvcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_property]);
+  fileDesc("ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxItwBCg1Xb3JrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHR5cGUYBSABKA4yES5hci52MS5Xb3JrZXJUeXBlEisKCnBlcm1pc3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uEiMKCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eRIQCghkaXNhYmxlZBgIIAEoCCI3Cg5Xb3JrZXJNZXNzYWdlcxIlCgd3b3JrZXJzGAEgAygLMhQuYXIudjEuV29ya2VyTWVzc2FnZSp3CgpXb3JrZXJUeXBlEhsKF1dPUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSV09SS0VSX1RZUEVfTk9WSUNFEAESHAoYV09SS0VSX1RZUEVfSU5URVJNRURJQVRFEAISFgoSV09SS0VSX1RZUEVfRVhQRVJUEANChwEKCWNvbS5hci52MUILV29ya2VyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_permissions, file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
- * TODO: Environments should also have devices/drivers, e.g. camera drivers, stacked light drivers, ... - the flow could be that someone set-up the physical thing that adheres to some interface (driver), it can then be selected from a list of drivers and perhaps configured a bit (a light version of Homeassistant).
- * TODO: split human and robots?
- * TODO: Agent should have drivers (e.g. build in UR-driver) that comes with a specific set of properties.
  * TODO: Add worker (including skill-matrix)?
- *
- * TODO: Rename to robots/assets/equipment? And extend with equipment?
  *
  * @generated from message ar.v1.WorkerMessage
  */
@@ -59,6 +58,13 @@ export type WorkerMessage = Message<"ar.v1.WorkerMessage"> & {
    * @generated from field: repeated ar.v1.Property properties = 7;
    */
   properties: Property[];
+
+  /**
+   * If disabled, the worker can't be selected
+   *
+   * @generated from field: bool disabled = 8;
+   */
+  disabled: boolean;
 };
 
 /**
@@ -115,35 +121,4 @@ export enum WorkerType {
  */
 export const WorkerTypeSchema: GenEnum<WorkerType> = /*@__PURE__*/
   enumDesc(file_ar_v1_worker, 0);
-
-/**
- * @generated from enum ar.v1.WorkerPermission
- */
-export enum WorkerPermission {
-  /**
-   * @generated from enum value: WORKER_PERMISSION_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: WORKER_PERMISSION_NONE = 1;
-   */
-  NONE = 1,
-
-  /**
-   * @generated from enum value: WORKER_PERMISSION_COSMETIC = 2;
-   */
-  COSMETIC = 2,
-
-  /**
-   * @generated from enum value: WORKER_PERMISSION_FULL = 3;
-   */
-  FULL = 3,
-}
-
-/**
- * Describes the enum ar.v1.WorkerPermission.
- */
-export const WorkerPermissionSchema: GenEnum<WorkerPermission> = /*@__PURE__*/
-  enumDesc(file_ar_v1_worker, 1);
 

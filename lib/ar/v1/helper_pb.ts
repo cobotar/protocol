@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/helper.proto.
  */
 export const file_ar_v1_helper: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9oZWxwZXIucHJvdG8SBWFyLnYxIr4BCg1IZWxwZXJNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSq1AQoKSGVscGVyVHlwZRIbChdIRUxQRVJfVFlQRV9VTlNQRUNJRklFRBAAEhkKFUhFTFBFUl9UWVBFX1BST1hJTUlUWRAKEhoKFkhFTFBFUl9UWVBFX1NUQVRJT05BUlkQCxIVChFIRUxQRVJfVFlQRV9USU1FUhAVEhMKD0hFTFBFUl9UWVBFX0FORBBkEhIKDkhFTFBFUl9UWVBFX09SEGUSEwoPSEVMUEVSX1RZUEVfTk9UEGZChwEKCWNvbS5hci52MUILSGVscGVyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property]);
+  fileDesc("ChJhci92MS9oZWxwZXIucHJvdG8SBWFyLnYxIr4BCg1IZWxwZXJNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5IZWxwZXJNZXNzYWdlcxIlCgdoZWxwZXJzGAEgAygLMhQuYXIudjEuSGVscGVyTWVzc2FnZSq1AQoKSGVscGVyVHlwZRIbChdIRUxQRVJfVFlQRV9VTlNQRUNJRklFRBAAEhkKFUhFTFBFUl9UWVBFX1BST1hJTUlUWRAKEhoKFkhFTFBFUl9UWVBFX1NUQVRJT05BUlkQCxIVChFIRUxQRVJfVFlQRV9USU1FUhAVEhMKD0hFTFBFUl9UWVBFX0FORBBkEhIKDkhFTFBFUl9UWVBFX09SEGUSEwoPSEVMUEVSX1RZUEVfTk9UEGZChwEKCWNvbS5hci52MUILSGVscGVyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property]);
 
 /**
  * @generated from message ar.v1.HelperMessage
@@ -60,6 +60,23 @@ export type HelperMessage = Message<"ar.v1.HelperMessage"> & {
  */
 export const HelperMessageSchema: GenMessage<HelperMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_helper, 0);
+
+/**
+ * @generated from message ar.v1.HelperMessages
+ */
+export type HelperMessages = Message<"ar.v1.HelperMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.HelperMessage helpers = 1;
+   */
+  helpers: HelperMessage[];
+};
+
+/**
+ * Describes the message ar.v1.HelperMessages.
+ * Use `create(HelperMessagesSchema)` to create a new message.
+ */
+export const HelperMessagesSchema: GenMessage<HelperMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_helper, 1);
 
 /**
  * @generated from enum ar.v1.HelperType

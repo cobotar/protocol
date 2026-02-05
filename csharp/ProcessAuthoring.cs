@@ -63,6 +63,9 @@ namespace Messages.Plm.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// TODO: rename to recipe?
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class StoredProcessMessage : pb::IMessage<StoredProcessMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -203,6 +206,9 @@ namespace Messages.Plm.V1 {
     private static readonly pb::FieldCodec<global::Messages.Plm.V1.TaskMessage> _repeated_tasks_codec
         = pb::FieldCodec.ForMessage(74, global::Messages.Plm.V1.TaskMessage.Parser);
     private readonly pbc::RepeatedField<global::Messages.Plm.V1.TaskMessage> tasks_ = new pbc::RepeatedField<global::Messages.Plm.V1.TaskMessage>();
+    /// <summary>
+    /// TODO: make 'interchanceable', such that multiple variants can be selected
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Plm.V1.TaskMessage> Tasks {

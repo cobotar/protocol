@@ -24,35 +24,42 @@ namespace Messages.AR.V1 {
     static PropertyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEivwMKCFByb3BlcnR5Eg4K",
-            "AmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEicK",
-            "BHR5cGUYBSABKA4yEy5hci52MS5Qcm9wZXJ0eVR5cGVSBHR5cGUSFAoFdmFs",
-            "dWUYBiABKAlSBXZhbHVlEhYKBmV4dHJhcxgHIAEoCVIGZXh0cmFzEiMKDXVz",
-            "ZXJfZWRpdGFibGUYCCABKAhSDHVzZXJFZGl0YWJsZRItCgZvcmlnaW4YCSAB",
-            "KA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpblIGb3JpZ2luEi8KB29yaWdpbnMY",
-            "CiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpblIHb3JpZ2lucxIsChJtaXJy",
-            "b3JfcHJvcGVydHlfaWQYCyABKAlSEG1pcnJvclByb3BlcnR5SWQSFAoFZ3Jv",
-            "dXAYDCABKAlSBWdyb3VwEhoKCG9yZGVyaW5nGA0gASgFUghvcmRlcmluZxId",
-            "CgpoaWRlX2dyb3VwGA4gASgIUgloaWRlR3JvdXAq3gIKDFByb3BlcnR5VHlw",
-            "ZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlf",
-            "VFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJU",
-            "WV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQ",
-            "Uk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9S",
-            "MxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVf",
-            "QU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZ",
-            "X1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9Q",
-            "RVJUWV9UWVBFX0VOVU1fTVVMVEkQDCpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQ",
-            "Uk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklH",
-            "SU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAJCiQEKCWNv",
-            "bS5hci52MUINUHJvcGVydHlQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIv",
-            "cHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2Vz",
-            "LkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIG",
-            "cHJvdG8z"));
+            "ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEaF2FyL3YxL3Blcm1pc3Np",
+            "b25zLnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8ivwUKCFBy",
+            "b3BlcnR5Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEjQKBHR5cGUYBSABKA4yEy5hci52MS5Qcm9wZXJ0eVR5cGVCC7pI",
+            "CIIBAhAByAEBUgR0eXBlEhQKBXZhbHVlGAYgASgJUgV2YWx1ZRIWCgZleHRy",
+            "YXMYByABKAlSBmV4dHJhcxJhChttaW5pbXVtX3JlcXVpcmVkX3Blcm1pc3Np",
+            "b24YCCABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uQgi6SAWCAQIQAVIZ",
+            "bWluaW11bVJlcXVpcmVkUGVybWlzc2lvbhI3CgZvcmlnaW4YCSABKA4yFS5h",
+            "ci52MS5Qcm9wZXJ0eU9yaWdpbkIIukgFggECEAFSBm9yaWdpbhI+Cgdvcmln",
+            "aW5zGAogAygOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CDbpICpIBByIFggEC",
+            "EAFSB29yaWdpbnMSLAoSbWlycm9yX3Byb3BlcnR5X2lkGAsgASgJUhBtaXJy",
+            "b3JQcm9wZXJ0eUlkEhQKBWdyb3VwGAwgASgJUgVncm91cBIaCghvcmRlcmlu",
+            "ZxgNIAEoBVIIb3JkZXJpbmcSHQoKaGlkZV9ncm91cBgOIAEoCFIJaGlkZUdy",
+            "b3VwOpkBukiVARqSAQohbWlycm9yX2lkX3NldF9pZl9vcmlnaW5faXNfbWly",
+            "cm9yEitNaXJyb3IgSUQgbXVzdCBiZSBzZXQgd2hlbiBvcmlnaW4gaXMgbWly",
+            "cm9yGkAhdGhpcy5taXJyb3JfcHJvcGVydHlfaWQuc3RhcnRzV2l0aCgncHJv",
+            "cC0nKSAmJiB0aGlzLm9yaWdpbiA9PSAyKt4CCgxQcm9wZXJ0eVR5cGUSHQoZ",
+            "UFJPUEVSVFlfVFlQRV9VTlNQRUNJRklFRBAAEhYKElBST1BFUlRZX1RZUEVf",
+            "Qk9PTBABEhUKEVBST1BFUlRZX1RZUEVfSU5UEAISFwoTUFJPUEVSVFlfVFlQ",
+            "RV9GTE9BVBADEhgKFFBST1BFUlRZX1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVS",
+            "VFlfVFlQRV9TVFJJTkcQBRIZChVQUk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIW",
+            "ChJQUk9QRVJUWV9UWVBFX1BPU0UQBxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hP",
+            "UhAIEhcKE1BST1BFUlRZX1RZUEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBF",
+            "X0FHRU5UEAoSFgoSUFJPUEVSVFlfVFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlf",
+            "VFlQRV9FTlVNX01VTFRJEAwqaAoOUHJvcGVydHlPcmlnaW4SHwobUFJPUEVS",
+            "VFlfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfT1JJR0lOX0ZJ",
+            "WEVEEAESGgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACQokBCgljb20uYXIu",
+            "djFCDVByb3BlcnR5UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5W",
+            "McoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PropertyType), typeof(global::Messages.AR.V1.PropertyOrigin), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Value", "Extras", "UserEditable", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Value", "Extras", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup" }, null, null, null, null)
           }));
     }
     #endregion
@@ -141,7 +148,7 @@ namespace Messages.AR.V1 {
       type_ = other.type_;
       value_ = other.value_;
       extras_ = other.extras_;
-      userEditable_ = other.userEditable_;
+      minimumRequiredPermission_ = other.minimumRequiredPermission_;
       origin_ = other.origin_;
       origins_ = other.origins_.Clone();
       mirrorPropertyId_ = other.mirrorPropertyId_;
@@ -247,18 +254,15 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "user_editable" field.</summary>
-    public const int UserEditableFieldNumber = 8;
-    private bool userEditable_;
-    /// <summary>
-    /// TODO: create different user permissions, this field should then set the "minimum required permission"
-    /// </summary>
+    /// <summary>Field number for the "minimum_required_permission" field.</summary>
+    public const int MinimumRequiredPermissionFieldNumber = 8;
+    private global::Messages.AR.V1.WorkerPermission minimumRequiredPermission_ = global::Messages.AR.V1.WorkerPermission.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool UserEditable {
-      get { return userEditable_; }
+    public global::Messages.AR.V1.WorkerPermission MinimumRequiredPermission {
+      get { return minimumRequiredPermission_; }
       set {
-        userEditable_ = value;
+        minimumRequiredPermission_ = value;
       }
     }
 
@@ -355,7 +359,7 @@ namespace Messages.AR.V1 {
       if (Type != other.Type) return false;
       if (Value != other.Value) return false;
       if (Extras != other.Extras) return false;
-      if (UserEditable != other.UserEditable) return false;
+      if (MinimumRequiredPermission != other.MinimumRequiredPermission) return false;
       if (Origin != other.Origin) return false;
       if(!origins_.Equals(other.origins_)) return false;
       if (MirrorPropertyId != other.MirrorPropertyId) return false;
@@ -376,7 +380,7 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.PropertyType.Unspecified) hash ^= Type.GetHashCode();
       if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (Extras.Length != 0) hash ^= Extras.GetHashCode();
-      if (UserEditable != false) hash ^= UserEditable.GetHashCode();
+      if (MinimumRequiredPermission != global::Messages.AR.V1.WorkerPermission.Unspecified) hash ^= MinimumRequiredPermission.GetHashCode();
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) hash ^= Origin.GetHashCode();
       hash ^= origins_.GetHashCode();
       if (MirrorPropertyId.Length != 0) hash ^= MirrorPropertyId.GetHashCode();
@@ -429,9 +433,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(58);
         output.WriteString(Extras);
       }
-      if (UserEditable != false) {
+      if (MinimumRequiredPermission != global::Messages.AR.V1.WorkerPermission.Unspecified) {
         output.WriteRawTag(64);
-        output.WriteBool(UserEditable);
+        output.WriteEnum((int) MinimumRequiredPermission);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         output.WriteRawTag(72);
@@ -492,9 +496,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(58);
         output.WriteString(Extras);
       }
-      if (UserEditable != false) {
+      if (MinimumRequiredPermission != global::Messages.AR.V1.WorkerPermission.Unspecified) {
         output.WriteRawTag(64);
-        output.WriteBool(UserEditable);
+        output.WriteEnum((int) MinimumRequiredPermission);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         output.WriteRawTag(72);
@@ -548,8 +552,8 @@ namespace Messages.AR.V1 {
       if (Extras.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Extras);
       }
-      if (UserEditable != false) {
-        size += 1 + 1;
+      if (MinimumRequiredPermission != global::Messages.AR.V1.WorkerPermission.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MinimumRequiredPermission);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Origin);
@@ -600,8 +604,8 @@ namespace Messages.AR.V1 {
       if (other.Extras.Length != 0) {
         Extras = other.Extras;
       }
-      if (other.UserEditable != false) {
-        UserEditable = other.UserEditable;
+      if (other.MinimumRequiredPermission != global::Messages.AR.V1.WorkerPermission.Unspecified) {
+        MinimumRequiredPermission = other.MinimumRequiredPermission;
       }
       if (other.Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         Origin = other.Origin;
@@ -667,7 +671,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 64: {
-            UserEditable = input.ReadBool();
+            MinimumRequiredPermission = (global::Messages.AR.V1.WorkerPermission) input.ReadEnum();
             break;
           }
           case 72: {
@@ -743,7 +747,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 64: {
-            UserEditable = input.ReadBool();
+            MinimumRequiredPermission = (global::Messages.AR.V1.WorkerPermission) input.ReadEnum();
             break;
           }
           case 72: {

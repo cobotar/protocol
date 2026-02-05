@@ -3,14 +3,22 @@
 
 ## Table of Contents
 
+- [ar/v1/permissions.proto](#ar_v1_permissions-proto)
+    - [WorkerPermission](#ar-v1-WorkerPermission)
+  
 - [ar/v1/property.proto](#ar_v1_property-proto)
     - [Property](#ar-v1-Property)
   
     - [PropertyOrigin](#ar-v1-PropertyOrigin)
     - [PropertyType](#ar-v1-PropertyType)
   
+- [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+  
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionMessage](#ar-v1-ActionMessage)
+    - [ActionMessages](#ar-v1-ActionMessages)
   
     - [ActionType](#ar-v1-ActionType)
   
@@ -21,21 +29,26 @@
   
 - [ar/v1/action_info.proto](#ar_v1_action_info-proto)
     - [ActionInfoMessage](#ar-v1-ActionInfoMessage)
-    - [ActionInfosMessage](#ar-v1-ActionInfosMessage)
+    - [ActionInfoMessages](#ar-v1-ActionInfoMessages)
   
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
+    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
+    - [FeedbackMessages](#ar-v1-FeedbackMessages)
   
     - [FeedbackType](#ar-v1-FeedbackType)
   
 - [ar/v1/helper.proto](#ar_v1_helper-proto)
     - [HelperMessage](#ar-v1-HelperMessage)
+    - [HelperMessages](#ar-v1-HelperMessages)
   
     - [HelperType](#ar-v1-HelperType)
   
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
+    - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
+    - [ARConfigMessages](#ar-v1-ARConfigMessages)
   
 - [ar/v1/assets.proto](#ar_v1_assets-proto)
     - [AssetMessage](#ar-v1-AssetMessage)
@@ -44,15 +57,8 @@
     - [AssetDriverType](#ar-v1-AssetDriverType)
     - [AssetType](#ar-v1-AssetType)
   
-- [ar/v1/authoring_action.proto](#ar_v1_authoring_action-proto)
-    - [ActionDeleteMessage](#ar-v1-ActionDeleteMessage)
-    - [ActionNewMessage](#ar-v1-ActionNewMessage)
-    - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
-  
-- [ar/v1/authoring_ar_config.proto](#ar_v1_authoring_ar_config-proto)
-    - [ARConfigDeleteMessage](#ar-v1-ARConfigDeleteMessage)
-    - [ARConfigNewMessage](#ar-v1-ARConfigNewMessage)
-    - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
+- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
+    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
 - [geometry/v1/point.proto](#geometry_v1_point-proto)
     - [Point](#geometry-v1-Point)
@@ -67,76 +73,49 @@
     - [LocalizedState](#geometry-v1-LocalizedState)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
-    - [AgentLocation](#ar-v1-AgentLocation)
+    - [AssetLocation](#ar-v1-AssetLocation)
     - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
     - [EnvironmentsMessage](#ar-v1-EnvironmentsMessage)
     - [MarkerLocation](#ar-v1-MarkerLocation)
     - [PartLocation](#ar-v1-PartLocation)
+    - [RobotLocation](#ar-v1-RobotLocation)
     - [ToolLocation](#ar-v1-ToolLocation)
   
     - [EnvironmentType](#ar-v1-EnvironmentType)
   
-- [ar/v1/authoring_environment.proto](#ar_v1_authoring_environment-proto)
-    - [EnvironmentDeleteMessage](#ar-v1-EnvironmentDeleteMessage)
-    - [EnvironmentNewMessage](#ar-v1-EnvironmentNewMessage)
-    - [EnvironmentUpdateMessage](#ar-v1-EnvironmentUpdateMessage)
+- [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
+    - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
+    - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
   
-- [ar/v1/authoring_feedback.proto](#ar_v1_authoring_feedback-proto)
-    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
-    - [FeedbackDeleteMessage](#ar-v1-FeedbackDeleteMessage)
-    - [FeedbackNewMessage](#ar-v1-FeedbackNewMessage)
-    - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
+- [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
+    - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
+    - [HelperInfoMessages](#ar-v1-HelperInfoMessages)
   
 - [ar/v1/mapping.proto](#ar_v1_mapping-proto)
     - [ARPriority](#ar-v1-ARPriority)
     - [MappingMessage](#ar-v1-MappingMessage)
-    - [MappingsMessage](#ar-v1-MappingsMessage)
-  
-- [ar/v1/authoring_mapping.proto](#ar_v1_authoring_mapping-proto)
-    - [MappingDeleteMessage](#ar-v1-MappingDeleteMessage)
-    - [MappingNewMessage](#ar-v1-MappingNewMessage)
-    - [MappingUpdateMessage](#ar-v1-MappingUpdateMessage)
-  
-- [ar/v1/authoring_marker.proto](#ar_v1_authoring_marker-proto)
-    - [MarkerDeleteMessage](#ar-v1-MarkerDeleteMessage)
-    - [MarkerNewMessage](#ar-v1-MarkerNewMessage)
-    - [MarkerUpdateMessage](#ar-v1-MarkerUpdateMessage)
-  
-- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
-    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
-  
-- [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
-    - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
-    - [FeedbackInfosMessage](#ar-v1-FeedbackInfosMessage)
-  
-- [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
-    - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
-    - [HelperInfosMessage](#ar-v1-HelperInfosMessage)
+    - [MappingMessages](#ar-v1-MappingMessages)
   
 - [ar/v1/marker.proto](#ar_v1_marker-proto)
     - [MarkerMessage](#ar-v1-MarkerMessage)
-    - [MarkersMessage](#ar-v1-MarkersMessage)
+    - [MarkerMessages](#ar-v1-MarkerMessages)
   
     - [MarkerType](#ar-v1-MarkerType)
   
-- [ar/v1/robots.proto](#ar_v1_robots-proto)
+- [ar/v1/robot.proto](#ar_v1_robot-proto)
     - [RobotMessage](#ar-v1-RobotMessage)
     - [RobotMessages](#ar-v1-RobotMessages)
   
-    - [EndEffectorType](#ar-v1-EndEffectorType)
     - [RobotDriverType](#ar-v1-RobotDriverType)
     - [RobotType](#ar-v1-RobotType)
   
-- [ar/v1/template.proto](#ar_v1_template-proto)
-    - [TemplateInfoMessage](#ar-v1-TemplateInfoMessage)
-    - [TemplateInfoMessages](#ar-v1-TemplateInfoMessages)
-    - [TemplateMessage](#ar-v1-TemplateMessage)
+- [ar/v1/skill.proto](#ar_v1_skill-proto)
+    - [SkillLevel](#ar-v1-SkillLevel)
   
 - [ar/v1/worker.proto](#ar_v1_worker-proto)
     - [WorkerMessage](#ar-v1-WorkerMessage)
     - [WorkerMessages](#ar-v1-WorkerMessages)
   
-    - [WorkerPermission](#ar-v1-WorkerPermission)
     - [WorkerType](#ar-v1-WorkerType)
   
 - [common/v1/color.proto](#common_v1_color-proto)
@@ -174,11 +153,8 @@
     - [ModelMessages](#plm-v1-ModelMessages)
   
 - [plm/v1/part.proto](#plm_v1_part-proto)
-    - [DeletePartMessage](#plm-v1-DeletePartMessage)
-    - [NewPartMessage](#plm-v1-NewPartMessage)
     - [PartMessage](#plm-v1-PartMessage)
     - [PartMessages](#plm-v1-PartMessages)
-    - [UpdatePartMessage](#plm-v1-UpdatePartMessage)
   
     - [PartType](#plm-v1-PartType)
   
@@ -256,11 +232,12 @@
     - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
   
 - [plm/v1/tool.proto](#plm_v1_tool-proto)
-    - [DeleteToolMessage](#plm-v1-DeleteToolMessage)
-    - [NewToolMessage](#plm-v1-NewToolMessage)
     - [ToolMessage](#plm-v1-ToolMessage)
     - [ToolMessages](#plm-v1-ToolMessages)
-    - [UpdateToolMessage](#plm-v1-UpdateToolMessage)
+  
+    - [ToolActor](#plm-v1-ToolActor)
+    - [ToolProperty](#plm-v1-ToolProperty)
+    - [ToolType](#plm-v1-ToolType)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -321,6 +298,36 @@
 
 
 
+<a name="ar_v1_permissions-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/permissions.proto
+
+
+ 
+
+
+<a name="ar-v1-WorkerPermission"></a>
+
+### WorkerPermission
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| WORKER_PERMISSION_UNSPECIFIED | 0 |  |
+| WORKER_PERMISSION_NONE | 1 |  |
+| WORKER_PERMISSION_COSMETIC | 2 |  |
+| WORKER_PERMISSION_FULL | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_property-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -343,7 +350,7 @@ Properties are used by various components to define them, such as: feedback, act
 | type | [PropertyType](#ar-v1-PropertyType) |  |  |
 | value | [string](#string) |  | the current value of the property (JSON encoded) |
 | extras | [string](#string) |  | JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property. |
-| user_editable | [bool](#bool) |  | TODO: create different user permissions, this field should then set the &#34;minimum required permission&#34; |
+| minimum_required_permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
 | origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
 | origins | [PropertyOrigin](#ar-v1-PropertyOrigin) | repeated |  |
 | mirror_property_id | [string](#string) |  |  |
@@ -401,6 +408,31 @@ Used to specify the type of a property
 
 
 
+<a name="validation_v1_predefined_string_rules-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## validation/v1/predefined_string_rules.proto
+
+
+ 
+
+ 
+
+
+<a name="validation_v1_predefined_string_rules-proto-extensions"></a>
+
+### File-level Extensions
+| Extension | Type | Base | Number | Description |
+| --------- | ---- | ---- | ------ | ----------- |
+| model_id_component | bool | .buf.validate.StringRules | 10001 |  |
+| name_component | bool | .buf.validate.StringRules | 10000 |  |
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_action-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -423,6 +455,21 @@ Used to specify the type of a property
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 | output_properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-ActionMessages"></a>
+
+### ActionMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 
 
 
@@ -539,15 +586,15 @@ Used to specify the type of a property
 
 
 
-<a name="ar-v1-ActionInfosMessage"></a>
+<a name="ar-v1-ActionInfoMessages"></a>
 
-### ActionInfosMessage
+### ActionInfoMessages
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| action_infos | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
+| infos | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
 
 
 
@@ -567,6 +614,24 @@ Used to specify the type of a property
 <p align="right"><a href="#top">Top</a></p>
 
 ## ar/v1/feedback.proto
+
+
+
+<a name="ar-v1-FeedbackCloneMessage"></a>
+
+### FeedbackCloneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| original_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
 
 
 
@@ -590,6 +655,21 @@ Used to specify the type of a property
 
 
 
+
+<a name="ar-v1-FeedbackMessages"></a>
+
+### FeedbackMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| feedbacks | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+
+
+
+
+
  
 
 
@@ -604,8 +684,10 @@ Used to specify the type of a property
 | FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
 | FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
 | FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
-| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | TODO: configure to show all or only one task at a time? |
-| FEEDBACK_TYPE_ROBOT_PATH | 50 |  |
+| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | Provides an overview of all current tasks |
+| FEEDBACK_TYPE_TASK_INSTRUCTION | 14 | Provide instructions of the current task |
+| FEEDBACK_TYPE_TASK_CHECKLIST | 15 | Tailored towards tasks that are more checklist oriented than assembly |
+| FEEDBACK_TYPE_ROBOT_PATH | 50 | Show the expected path of the robot |
 | FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
 | FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
 | FEEDBACK_TYPE_ROBOT_STATUS | 53 |  |
@@ -647,6 +729,21 @@ Used to specify the type of a property
 | type | [HelperType](#ar-v1-HelperType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 | output_properties | [Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperMessages"></a>
+
+### HelperMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
 
 
 
@@ -704,6 +801,21 @@ Used to specify the type of a property
 
 
 
+<a name="ar-v1-ARConfigInfoMessages"></a>
+
+### ARConfigInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated |  |
+
+
+
+
+
+
 <a name="ar-v1-ARConfigMessage"></a>
 
 ### ARConfigMessage
@@ -720,7 +832,22 @@ Used to specify the type of a property
 | actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
-| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessages"></a>
+
+### ARConfigMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated |  |
 
 
 
@@ -752,9 +879,9 @@ Used to specify the type of a property
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
+| name | [string](#string) |  | Name of the asset |
+| icon | [string](#string) |  | Optional icon representing the asset |
+| description | [string](#string) |  | Optional description of the asset |
 | type | [AssetType](#ar-v1-AssetType) |  |  |
 | asset_driver_type | [AssetDriverType](#ar-v1-AssetDriverType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
@@ -814,132 +941,24 @@ Used to specify the type of a property
 
 
 
-<a name="ar_v1_authoring_action-proto"></a>
+<a name="ar_v1_config_load-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/authoring_action.proto
+## ar/v1/config_load.proto
 
 
 
-<a name="ar-v1-ActionDeleteMessage"></a>
+<a name="ar-v1-ConfigurationLoadMessage"></a>
 
-### ActionDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ActionNewMessage"></a>
-
-### ActionNewMessage
+### ConfigurationLoadMessage
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent_config_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ActionType](#ar-v1-ActionType) |  |  |
-| trigger_property_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ActionUpdateMessage"></a>
-
-### ActionUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_authoring_ar_config-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/authoring_ar_config.proto
-
-
-
-<a name="ar-v1-ARConfigDeleteMessage"></a>
-
-### ARConfigDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigNewMessage"></a>
-
-### ARConfigNewMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| template_id | [string](#string) |  | Template id is used to pre-populate a configuration. Leave empty for a new fresh start. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigUpdateMessage"></a>
-
-### ARConfigUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
-| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
-| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-| ar_disappear_distance | [int64](#int64) |  |  |
+| request_id | [string](#string) |  |  |
+| config_id | [string](#string) |  | Id of the configuration to be loaded |
+| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
 
 
 
@@ -1037,7 +1056,9 @@ A localized pose with reference to an anchorId. The state and last updated time 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| pose | [Pose](#geometry-v1-Pose) |  |  |
+| id | [string](#string) |  |  |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
 | anchor_id | [string](#string) |  |  |
 | state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
 | last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
@@ -1076,7 +1097,6 @@ A simple pose consisting of a position and orientation
 | LOCALIZED_STATE_FOUND | 1 |  |
 | LOCALIZED_STATE_LOST | 2 |  |
 | LOCALIZED_STATE_STATIC | 3 |  |
-| LOCALIZED_STATE_UNKNOWN | 4 |  |
 
 
  
@@ -1094,9 +1114,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-AgentLocation"></a>
+<a name="ar-v1-AssetLocation"></a>
 
-### AgentLocation
+### AssetLocation
 
 
 
@@ -1124,10 +1144,11 @@ A simple pose consisting of a position and orientation
 | description | [string](#string) |  |  |
 | type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
 | markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated | Markers associated with this environment. |
-| agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
+| robots | [RobotLocation](#ar-v1-RobotLocation) | repeated |  |
+| assets | [AssetLocation](#ar-v1-AssetLocation) | repeated |  |
 | parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
 | tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated | TODO: add change_type: add, update, delete, unspecified? |
+| properties | [Property](#ar-v1-Property) | repeated |  |
 
 
 
@@ -1168,6 +1189,22 @@ A simple pose consisting of a position and orientation
 <a name="ar-v1-PartLocation"></a>
 
 ### PartLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-RobotLocation"></a>
+
+### RobotLocation
 
 
 
@@ -1224,151 +1261,100 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar_v1_authoring_environment-proto"></a>
+<a name="ar_v1_feedback_info-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/authoring_environment.proto
+## ar/v1/feedback_info.proto
 
 
 
-<a name="ar-v1-EnvironmentDeleteMessage"></a>
+<a name="ar-v1-FeedbackInfoMessage"></a>
 
-### EnvironmentDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Id of the marker to be deleted |
-
-
-
-
-
-
-<a name="ar-v1-EnvironmentNewMessage"></a>
-
-### EnvironmentNewMessage
+### FeedbackInfoMessage
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-EnvironmentUpdateMessage"></a>
-
-### EnvironmentUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Unique id of the environment (this won&#39;t be changed) |
-| name | [string](#string) |  | Name of the environment |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  | Description of the environment |
-| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
-| markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated |  |
-| agents | [AgentLocation](#ar-v1-AgentLocation) | repeated |  |
-| parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
-| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_authoring_feedback-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/authoring_feedback.proto
-
-
-
-<a name="ar-v1-FeedbackCloneMessage"></a>
-
-### FeedbackCloneMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| original_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackDeleteMessage"></a>
-
-### FeedbackDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackNewMessage"></a>
-
-### FeedbackNewMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| parent_config_id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| frame_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
+| group | [string](#string) |  |  |
+| require_agent | [bool](#bool) |  |  |
+| require_frame | [bool](#bool) |  |  |
+| required_events | [EventType](#ar-v1-EventType) | repeated |  |
+| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| disabled | [bool](#bool) |  |  |
 
 
 
 
 
 
-<a name="ar-v1-FeedbackUpdateMessage"></a>
+<a name="ar-v1-FeedbackInfoMessages"></a>
 
-### FeedbackUpdateMessage
+### FeedbackInfoMessages
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| infos | [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_helper_info-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/helper_info.proto
+
+
+
+<a name="ar-v1-HelperInfoMessage"></a>
+
+### HelperInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+| group | [string](#string) |  |  |
+| require_agent | [bool](#bool) |  |  |
+| required_events | [EventType](#ar-v1-EventType) | repeated |  |
+| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperInfoMessages"></a>
+
+### HelperInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| infos | [HelperInfoMessage](#ar-v1-HelperInfoMessage) | repeated |  |
 
 
 
@@ -1427,291 +1413,15 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-MappingsMessage"></a>
+<a name="ar-v1-MappingMessages"></a>
 
-### MappingsMessage
+### MappingMessages
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_authoring_mapping-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/authoring_mapping.proto
-
-
-
-<a name="ar-v1-MappingDeleteMessage"></a>
-
-### MappingDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Id of the marker to be deleted |
-
-
-
-
-
-
-<a name="ar-v1-MappingNewMessage"></a>
-
-### MappingNewMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-MappingUpdateMessage"></a>
-
-### MappingUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| environment_ids | [string](#string) | repeated |  |
-| ar_config_priorities | [ARPriority](#ar-v1-ARPriority) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_authoring_marker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/authoring_marker.proto
-
-
-
-<a name="ar-v1-MarkerDeleteMessage"></a>
-
-### MarkerDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Id of the marker to be deleted |
-
-
-
-
-
-
-<a name="ar-v1-MarkerNewMessage"></a>
-
-### MarkerNewMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| marker_text | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-MarkerUpdateMessage"></a>
-
-### MarkerUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Unique id of the maker (this won&#39;t be changed) |
-| name | [string](#string) |  | Name of the maker |
-| description | [string](#string) |  | Description of the maker |
-| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_config_load-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/config_load.proto
-
-
-
-<a name="ar-v1-ConfigurationLoadMessage"></a>
-
-### ConfigurationLoadMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| config_id | [string](#string) |  | Id of the configuration to be loaded |
-| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_feedback_info-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/feedback_info.proto
-
-
-
-<a name="ar-v1-FeedbackInfoMessage"></a>
-
-### FeedbackInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| group | [string](#string) |  |  |
-| require_agent | [bool](#bool) |  |  |
-| require_frame | [bool](#bool) |  |  |
-| required_events | [EventType](#ar-v1-EventType) | repeated |  |
-| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
-| disabled | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackInfosMessage"></a>
-
-### FeedbackInfosMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| feedback_infos | [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_helper_info-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/helper_info.proto
-
-
-
-<a name="ar-v1-HelperInfoMessage"></a>
-
-### HelperInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
-| group | [string](#string) |  |  |
-| require_agent | [bool](#bool) |  |  |
-| required_events | [EventType](#ar-v1-EventType) | repeated |  |
-| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
-| disabled | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-HelperInfosMessage"></a>
-
-### HelperInfosMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| helper_infos | [HelperInfoMessage](#ar-v1-HelperInfoMessage) | repeated |  |
 
 
 
@@ -1753,9 +1463,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-MarkersMessage"></a>
+<a name="ar-v1-MarkerMessages"></a>
 
-### MarkersMessage
+### MarkerMessages
 
 
 
@@ -1789,10 +1499,10 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar_v1_robots-proto"></a>
+<a name="ar_v1_robot-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/robots.proto
+## ar/v1/robot.proto
 
 
 
@@ -1804,13 +1514,14 @@ A simple pose consisting of a position and orientation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| robot_type | [RobotType](#ar-v1-RobotType) |  |  |
-| end_effector_type | [EndEffectorType](#ar-v1-EndEffectorType) |  |  |
+| id | [string](#string) |  | Autogenerated id |
+| name | [string](#string) |  | Name of the robot |
+| icon | [string](#string) |  | Optional icon representing the robot |
+| description | [string](#string) |  | Optional description of the robot |
+| type | [RobotType](#ar-v1-RobotType) |  |  |
 | robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  |  |
+| coupler_model_id | [string](#string) | optional |  |
+| end_effector_model_id | [string](#string) | optional |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 
 
@@ -1833,20 +1544,6 @@ A simple pose consisting of a position and orientation
 
 
  
-
-
-<a name="ar-v1-EndEffectorType"></a>
-
-### EndEffectorType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| END_EFFECTOR_TYPE_UNSPECIFIED | 0 |  |
-| END_EFFECTOR_TYPE_EMPTY | 1 |  |
-| END_EFFECTOR_TYPE_ROBOTIQ_HAND_E | 10 |  |
-| END_EFFECTOR_TYPE_CUSTOM_MOUNT | 20 |  |
-
 
 
 <a name="ar-v1-RobotDriverType"></a>
@@ -1883,65 +1580,29 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar_v1_template-proto"></a>
+<a name="ar_v1_skill-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/template.proto
-
-
-
-<a name="ar-v1-TemplateInfoMessage"></a>
-
-### TemplateInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-TemplateInfoMessages"></a>
-
-### TemplateInfoMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| templates | [TemplateInfoMessage](#ar-v1-TemplateInfoMessage) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-TemplateMessage"></a>
-
-### TemplateMessage
-TODO: consider this a bit more?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated | repeated ar.v1.Agent agents = 5;
-
-Feedback Actions |
-
-
-
+## ar/v1/skill.proto
 
 
  
+
+
+<a name="ar-v1-SkillLevel"></a>
+
+### SkillLevel
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_LEVEL_UNSPECIFIED | 0 |  |
+| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
+| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
+| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
+| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
+| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
+
 
  
 
@@ -1961,12 +1622,7 @@ Feedback Actions |
 <a name="ar-v1-WorkerMessage"></a>
 
 ### WorkerMessage
-TODO: Environments should also have devices/drivers, e.g. camera drivers, stacked light drivers, ... - the flow could be that someone set-up the physical thing that adheres to some interface (driver), it can then be selected from a list of drivers and perhaps configured a bit (a light version of Homeassistant).
-TODO: split human and robots?
-TODO: Agent should have drivers (e.g. build in UR-driver) that comes with a specific set of properties.
 TODO: Add worker (including skill-matrix)?
-
-TODO: Rename to robots/assets/equipment? And extend with equipment?
 
 
 | Field | Type | Label | Description |
@@ -1978,6 +1634,7 @@ TODO: Rename to robots/assets/equipment? And extend with equipment?
 | type | [WorkerType](#ar-v1-WorkerType) |  |  |
 | permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
+| disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
 
 
 
@@ -1999,20 +1656,6 @@ TODO: Rename to robots/assets/equipment? And extend with equipment?
 
 
  
-
-
-<a name="ar-v1-WorkerPermission"></a>
-
-### WorkerPermission
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| WORKER_PERMISSION_UNSPECIFIED | 0 |  |
-| WORKER_PERMISSION_NONE | 1 |  |
-| WORKER_PERMISSION_COSMETIC | 2 |  |
-| WORKER_PERMISSION_FULL | 3 |  |
-
 
 
 <a name="ar-v1-WorkerType"></a>
@@ -2409,38 +2052,6 @@ TODO: allow multiple processes to make active at the same time?
 
 
 
-<a name="plm-v1-DeletePartMessage"></a>
-
-### DeletePartMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| part_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-NewPartMessage"></a>
-
-### NewPartMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PartType](#plm-v1-PartType) |  |  |
-
-
-
-
-
-
 <a name="plm-v1-PartMessage"></a>
 
 ### PartMessage
@@ -2454,7 +2065,7 @@ TODO: allow multiple processes to make active at the same time?
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [PartType](#plm-v1-PartType) |  |  |
-| weight | [int64](#int64) |  |  |
+| weight | [int64](#int64) |  | weight in grams |
 | model_id | [string](#string) |  | TODO: add dimensions TODO: add material |
 | tool_ids | [string](#string) | repeated |  |
 
@@ -2472,28 +2083,6 @@ TODO: allow multiple processes to make active at the same time?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parts | [PartMessage](#plm-v1-PartMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-UpdatePartMessage"></a>
-
-### UpdatePartMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PartType](#plm-v1-PartType) |  |  |
-| weight | [int64](#int64) |  |  |
-| model_id | [string](#string) |  |  |
-| tool_ids | [string](#string) | repeated |  |
 
 
 
@@ -2609,14 +2198,17 @@ Update published when the state of a sequence have changed
 <a name="plm-v1-TaskMessage"></a>
 
 ### TaskMessage
-
+TODO: add required skill?
+TODO: add tool_role?
+TODO: add validation
+TODO: add allowed_actors
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
+| description | [string](#string) |  | TODO: rename to instruction_text |
 | sequence_number | [int64](#int64) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
@@ -3482,36 +3074,6 @@ Reassign all sub-tasks to the assignee (if possible)
 
 
 
-<a name="plm-v1-DeleteToolMessage"></a>
-
-### DeleteToolMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tool_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-NewToolMessage"></a>
-
-### NewToolMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="plm-v1-ToolMessage"></a>
 
 ### ToolMessage
@@ -3524,7 +3086,10 @@ Reassign all sub-tasks to the assignee (if possible)
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| model_id | [string](#string) |  |  |
+| type | [ToolType](#plm-v1-ToolType) |  |  |
+| actor | [ToolActor](#plm-v1-ToolActor) |  |  |
+| properties | [ToolProperty](#plm-v1-ToolProperty) | repeated |  |
+| model_id | [string](#string) | optional |  |
 
 
 
@@ -3545,26 +3110,59 @@ Reassign all sub-tasks to the assignee (if possible)
 
 
 
-
-<a name="plm-v1-UpdateToolMessage"></a>
-
-### UpdateToolMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| model_id | [string](#string) |  |  |
-
-
-
-
-
  
+
+
+<a name="plm-v1-ToolActor"></a>
+
+### ToolActor
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_ACTOR_UNSPECIFIED | 0 |  |
+| TOOL_ACTOR_HUMAN | 1 |  |
+| TOOL_ACTOR_ROBOT | 2 |  |
+| TOOL_ACTOR_HYBRID | 3 |  |
+
+
+
+<a name="plm-v1-ToolProperty"></a>
+
+### ToolProperty
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_PROPERTY_UNSPECIFIED | 0 |  |
+| TOOL_PROPERTY_TORQUE_CONTROLLED | 1 |  |
+| TOOL_PROPERTY_ESD_SAFE | 2 |  |
+| TOOL_PROPERTY_INSULATED | 3 |  |
+| TOOL_PROPERTY_COLLABORATIVE | 4 |  |
+
+
+
+<a name="plm-v1-ToolType"></a>
+
+### ToolType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_TYPE_UNSPECIFIED | 0 |  |
+| TOOL_TYPE_CUTTING | 10 |  |
+| TOOL_TYPE_SHAPING | 20 |  |
+| TOOL_TYPE_FASTENING | 30 |  |
+| TOOL_TYPE_GRIPPING | 40 |  |
+| TOOL_TYPE_TURNING | 50 |  |
+| TOOL_TYPE_STRIKING | 60 |  |
+| TOOL_TYPE_MEASURING | 70 |  |
+| TOOL_TYPE_MARKING | 80 |  |
+| TOOL_TYPE_FINISHING | 90 |  |
+| TOOL_TYPE_ABRASIVE | 100 |  |
+| TOOL_TYPE_SAFETY | 110 |  |
+| TOOL_TYPE_ELECTRONICS | 120 |  |
+
 
  
 

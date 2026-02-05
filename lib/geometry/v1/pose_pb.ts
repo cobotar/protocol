@@ -4,6 +4,7 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Point } from "./point_pb.ts";
 import { file_geometry_v1_point } from "./point_pb.ts";
 import type { Quad } from "./quad_pb.ts";
@@ -16,7 +17,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file geometry/v1/pose.proto.
  */
 export const file_geometry_v1_pose: GenFile = /*@__PURE__*/
-  fileDesc("ChZnZW9tZXRyeS92MS9wb3NlLnByb3RvEgtnZW9tZXRyeS52MSJUCgRQb3NlEiQKCHBvc2l0aW9uGAEgASgLMhIuZ2VvbWV0cnkudjEuUG9pbnQSJgoLb3JpZW50YXRpb24YAiABKAsyES5nZW9tZXRyeS52MS5RdWFkIqEBCg1Mb2NhbGl6ZWRQb3NlEh8KBHBvc2UYASABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhEKCWFuY2hvcl9pZBgCIAEoCRIqCgVzdGF0ZRgDIAEoDjIbLmdlb21ldHJ5LnYxLkxvY2FsaXplZFN0YXRlEjAKDGxhc3RfdXBkYXRlZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAqnwEKDkxvY2FsaXplZFN0YXRlEh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkKFUxPQ0FMSVpFRF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9MT1NUEAISGgoWTE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADEhsKF0xPQ0FMSVpFRF9TVEFURV9VTktOT1dOEARCrQEKD2NvbS5nZW9tZXRyeS52MUIJUG9zZVByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRyeS92MTtnZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z", [file_geometry_v1_point, file_geometry_v1_quad, file_google_protobuf_timestamp]);
+  fileDesc("ChZnZW9tZXRyeS92MS9wb3NlLnByb3RvEgtnZW9tZXRyeS52MSJUCgRQb3NlEiQKCHBvc2l0aW9uGAEgASgLMhIuZ2VvbWV0cnkudjEuUG9pbnQSJgoLb3JpZW50YXRpb24YAiABKAsyES5nZW9tZXRyeS52MS5RdWFkIokDCg1Mb2NhbGl6ZWRQb3NlEhIKAmlkGAEgASgJQga6SAPIAQESLAoIcG9zaXRpb24YAiABKAsyEi5nZW9tZXRyeS52MS5Qb2ludEIGukgDyAEBEi4KC29yaWVudGF0aW9uGAMgASgLMhEuZ2VvbWV0cnkudjEuUXVhZEIGukgDyAEBEhEKCWFuY2hvcl9pZBgEIAEoCRI0CgVzdGF0ZRgFIAEoDjIbLmdlb21ldHJ5LnYxLkxvY2FsaXplZFN0YXRlQgi6SAWCAQIQARIwCgxsYXN0X3VwZGF0ZWQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wOooBukiGARqDAQoiYW5jaG9yX2lkX3NldF93aGVuX3N0YXRlX3NwZWNpZmllZBpddGhpcy5zdGF0ZSAhPSAwICYmIGhhcyh0aGlzLmFuY2hvcl9pZCkgPyAnYW5jaG9yIElEIG11c3QgYmUgc2V0IHdoZW4gc3RhdGUgaXMgc3BlY2lmaWVkJyA6ICcnKoIBCg5Mb2NhbGl6ZWRTdGF0ZRIfChtMT0NBTElaRURfU1RBVEVfVU5TUEVDSUZJRUQQABIZChVMT0NBTElaRURfU1RBVEVfRk9VTkQQARIYChRMT0NBTElaRURfU1RBVEVfTE9TVBACEhoKFkxPQ0FMSVpFRF9TVEFURV9TVEFUSUMQA0KtAQoPY29tLmdlb21ldHJ5LnYxQglQb3NlUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh6gIMR2VvbWV0cnk6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_point, file_geometry_v1_quad, file_google_protobuf_timestamp]);
 
 /**
  * A simple pose consisting of a position and orientation
@@ -49,22 +50,32 @@ export const PoseSchema: GenMessage<Pose> = /*@__PURE__*/
  */
 export type LocalizedPose = Message<"geometry.v1.LocalizedPose"> & {
   /**
-   * @generated from field: geometry.v1.Pose pose = 1;
+   * @generated from field: string id = 1;
    */
-  pose?: Pose;
+  id: string;
 
   /**
-   * @generated from field: string anchor_id = 2;
+   * @generated from field: geometry.v1.Point position = 2;
+   */
+  position?: Point;
+
+  /**
+   * @generated from field: geometry.v1.Quad orientation = 3;
+   */
+  orientation?: Quad;
+
+  /**
+   * @generated from field: string anchor_id = 4;
    */
   anchorId: string;
 
   /**
-   * @generated from field: geometry.v1.LocalizedState state = 3;
+   * @generated from field: geometry.v1.LocalizedState state = 5;
    */
   state: LocalizedState;
 
   /**
-   * @generated from field: google.protobuf.Timestamp last_updated = 4;
+   * @generated from field: google.protobuf.Timestamp last_updated = 6;
    */
   lastUpdated?: Timestamp;
 };
@@ -99,11 +110,6 @@ export enum LocalizedState {
    * @generated from enum value: LOCALIZED_STATE_STATIC = 3;
    */
   STATIC = 3,
-
-  /**
-   * @generated from enum value: LOCALIZED_STATE_UNKNOWN = 4;
-   */
-  UNKNOWN = 4,
 }
 
 /**

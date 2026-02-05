@@ -129,27 +129,27 @@ func (x *HelperInfoMessage) GetDisabled() bool {
 	return false
 }
 
-type HelperInfosMessage struct {
+type HelperInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	HelperInfos   []*HelperInfoMessage   `protobuf:"bytes,1,rep,name=helper_infos,json=helperInfos,proto3" json:"helper_infos,omitempty"`
+	Infos         []*HelperInfoMessage   `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *HelperInfosMessage) Reset() {
-	*x = HelperInfosMessage{}
+func (x *HelperInfoMessages) Reset() {
+	*x = HelperInfoMessages{}
 	mi := &file_ar_v1_helper_info_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *HelperInfosMessage) String() string {
+func (x *HelperInfoMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HelperInfosMessage) ProtoMessage() {}
+func (*HelperInfoMessages) ProtoMessage() {}
 
-func (x *HelperInfosMessage) ProtoReflect() protoreflect.Message {
+func (x *HelperInfoMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_helper_info_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -161,14 +161,14 @@ func (x *HelperInfosMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HelperInfosMessage.ProtoReflect.Descriptor instead.
-func (*HelperInfosMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use HelperInfoMessages.ProtoReflect.Descriptor instead.
+func (*HelperInfoMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_helper_info_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *HelperInfosMessage) GetHelperInfos() []*HelperInfoMessage {
+func (x *HelperInfoMessages) GetInfos() []*HelperInfoMessage {
 	if x != nil {
-		return x.HelperInfos
+		return x.Infos
 	}
 	return nil
 }
@@ -188,9 +188,9 @@ const file_ar_v1_helper_info_proto_rawDesc = "" +
 	"\x0frequired_events\x18\t \x03(\x0e2\x10.ar.v1.EventTypeR\x0erequiredEvents\x129\n" +
 	"\x0foptional_events\x18\n" +
 	" \x03(\x0e2\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n" +
-	"\bdisabled\x18\v \x01(\bR\bdisabled\"Q\n" +
-	"\x12HelperInfosMessage\x12;\n" +
-	"\fhelper_infos\x18\x01 \x03(\v2\x18.ar.v1.HelperInfoMessageR\vhelperInfosB\x8b\x01\n" +
+	"\bdisabled\x18\v \x01(\bR\bdisabled\"D\n" +
+	"\x12HelperInfoMessages\x12.\n" +
+	"\x05infos\x18\x01 \x03(\v2\x18.ar.v1.HelperInfoMessageR\x05infosB\x8b\x01\n" +
 	"\tcom.ar.v1B\x0fHelperInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -208,7 +208,7 @@ func file_ar_v1_helper_info_proto_rawDescGZIP() []byte {
 var file_ar_v1_helper_info_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_helper_info_proto_goTypes = []any{
 	(*HelperInfoMessage)(nil),  // 0: ar.v1.HelperInfoMessage
-	(*HelperInfosMessage)(nil), // 1: ar.v1.HelperInfosMessage
+	(*HelperInfoMessages)(nil), // 1: ar.v1.HelperInfoMessages
 	(HelperType)(0),            // 2: ar.v1.HelperType
 	(EventType)(0),             // 3: ar.v1.EventType
 }
@@ -216,7 +216,7 @@ var file_ar_v1_helper_info_proto_depIdxs = []int32{
 	2, // 0: ar.v1.HelperInfoMessage.type:type_name -> ar.v1.HelperType
 	3, // 1: ar.v1.HelperInfoMessage.required_events:type_name -> ar.v1.EventType
 	3, // 2: ar.v1.HelperInfoMessage.optional_events:type_name -> ar.v1.EventType
-	0, // 3: ar.v1.HelperInfosMessage.helper_infos:type_name -> ar.v1.HelperInfoMessage
+	0, // 3: ar.v1.HelperInfoMessages.infos:type_name -> ar.v1.HelperInfoMessage
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

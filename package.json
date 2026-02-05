@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "2.6.3"
+    "@bufbuild/protobuf": "2.11.0"
   },
   "private": false
 }

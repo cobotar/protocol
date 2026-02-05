@@ -1,4 +1,6 @@
 from ar.v1 import property_pb2 as _property_pb2
+from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -15,6 +17,8 @@ class FeedbackType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_TASK_OVERVIEW: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TASK_INSTRUCTION: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TASK_CHECKLIST: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_PATH: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_SILHOUETTE: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_WAYPOINTS: _ClassVar[FeedbackType]
@@ -30,6 +34,8 @@ FEEDBACK_TYPE_TASK_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_TASK_OVERVIEW: FeedbackType
+FEEDBACK_TYPE_TASK_INSTRUCTION: FeedbackType
+FEEDBACK_TYPE_TASK_CHECKLIST: FeedbackType
 FEEDBACK_TYPE_ROBOT_PATH: FeedbackType
 FEEDBACK_TYPE_ROBOT_SILHOUETTE: FeedbackType
 FEEDBACK_TYPE_ROBOT_WAYPOINTS: FeedbackType
@@ -58,3 +64,21 @@ class FeedbackMessage(_message.Message):
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     output_properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., output_properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+
+class FeedbackMessages(_message.Message):
+    __slots__ = ("feedbacks",)
+    FEEDBACKS_FIELD_NUMBER: _ClassVar[int]
+    feedbacks: _containers.RepeatedCompositeFieldContainer[FeedbackMessage]
+    def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
+
+class FeedbackCloneMessage(_message.Message):
+    __slots__ = ("original_id", "name", "icon", "description")
+    ORIGINAL_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    original_id: str
+    name: str
+    icon: str
+    description: str
+    def __init__(self, original_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...

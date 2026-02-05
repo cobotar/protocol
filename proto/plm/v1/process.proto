@@ -13,7 +13,8 @@ enum ProcessType {
   PROCESS_TYPE_UNSPECIFIED = 0;
   PROCESS_TYPE_ASSEMBLY = 1;
   PROCESS_TYPE_DISASSEMBLY = 2;
-  PROCESS_TYPE_INSPECTION = 3;
+  PROCESS_TYPE_INSPECTION = 3; // TODO: what should this be?
+  PROCESS_TYPE_CHECKLIST = 4; // TODO: this could be startup procedures, fault fixing, ...
 }
 
 enum ProcessState {
@@ -24,6 +25,8 @@ enum ProcessState {
   PROCESS_STATE_ABORTED = 4;
 }
 
+// TODO: should 'running' be called process and 'static' recipe?
+// TODO: Add/assign the agent(s) at runtime, instead of allocating them to the environment. THen there could also be a situation where each agent is asked to take a task during execution.
 message ProcessMessage {
   string instance_id = 1;
   string id = 2;

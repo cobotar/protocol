@@ -54,6 +54,9 @@ namespace Messages.Plm.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: Assign agents at runtime?
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessLoadMessage : pb::IMessage<ProcessLoadMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

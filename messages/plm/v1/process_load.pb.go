@@ -67,6 +67,7 @@ func (AllocationStrategy) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_process_load_proto_rawDescGZIP(), []int{0}
 }
 
+// TODO: Assign agents at runtime?
 type ProcessLoadMessage struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	RequestId          string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`

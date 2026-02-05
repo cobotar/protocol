@@ -27,21 +27,24 @@ namespace Messages.AR.V1 {
             "Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3Bl",
             "cnR5LnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIlgKDk1hcmtlckxv",
             "Y2F0aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdl",
-            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlcKDUFnZW50TG9j",
+            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlcKDVJvYm90TG9j",
             "YXRpb24SDgoCaWQYASABKAlSAmlkEjYKCGxvY2F0aW9uGAIgASgLMhouZ2Vv",
-            "bWV0cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVgoMUGFydExvY2F0",
-            "aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21l",
-            "dHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlYKDFRvb2xMb2NhdGlv",
-            "bhIOCgJpZBgBIAEoCVICaWQSNgoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRy",
-            "eS52MS5Mb2NhbGl6ZWRQb3NlUghsb2NhdGlvbiKAAwoSRW52aXJvbm1lbnRN",
-            "ZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
-            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
-            "aXB0aW9uEioKBHR5cGUYBSABKA4yFi5hci52MS5FbnZpcm9ubWVudFR5cGVS",
-            "BHR5cGUSLwoHbWFya2VycxgGIAMoCzIVLmFyLnYxLk1hcmtlckxvY2F0aW9u",
-            "UgdtYXJrZXJzEiwKBmFnZW50cxgHIAMoCzIULmFyLnYxLkFnZW50TG9jYXRp",
-            "b25SBmFnZW50cxIpCgVwYXJ0cxgIIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlv",
-            "blIFcGFydHMSKQoFdG9vbHMYCSADKAsyEy5hci52MS5Ub29sTG9jYXRpb25S",
-            "BXRvb2xzEi8KCnByb3BlcnRpZXMYCiADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
+            "bWV0cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVwoNQXNzZXRMb2Nh",
+            "dGlvbhIOCgJpZBgBIAEoCVICaWQSNgoIbG9jYXRpb24YAiABKAsyGi5nZW9t",
+            "ZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghsb2NhdGlvbiJWCgxQYXJ0TG9jYXRp",
+            "b24SDgoCaWQYASABKAlSAmlkEjYKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0",
+            "cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVgoMVG9vbExvY2F0aW9u",
+            "Eg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5",
+            "LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIq4DChJFbnZpcm9ubWVudE1l",
+            "c3NhZ2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
+            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
+            "cHRpb24SKgoEdHlwZRgFIAEoDjIWLmFyLnYxLkVudmlyb25tZW50VHlwZVIE",
+            "dHlwZRIvCgdtYXJrZXJzGAYgAygLMhUuYXIudjEuTWFya2VyTG9jYXRpb25S",
+            "B21hcmtlcnMSLAoGcm9ib3RzGAcgAygLMhQuYXIudjEuUm9ib3RMb2NhdGlv",
+            "blIGcm9ib3RzEiwKBmFzc2V0cxgIIAMoCzIULmFyLnYxLkFzc2V0TG9jYXRp",
+            "b25SBmFzc2V0cxIpCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlv",
+            "blIFcGFydHMSKQoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRpb25S",
+            "BXRvb2xzEi8KCnByb3BlcnRpZXMYCyADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
             "cHJvcGVydGllcyJUChNFbnZpcm9ubWVudHNNZXNzYWdlEj0KDGVudmlyb25t",
             "ZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZVIMZW52aXJv",
             "bm1lbnRzKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQ",
@@ -59,10 +62,11 @@ namespace Messages.AR.V1 {
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.EnvironmentType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerLocation), global::Messages.AR.V1.MarkerLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AgentLocation), global::Messages.AR.V1.AgentLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotLocation), global::Messages.AR.V1.RobotLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetLocation), global::Messages.AR.V1.AssetLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PartLocation), global::Messages.AR.V1.PartLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ToolLocation), global::Messages.AR.V1.ToolLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Agents", "Parts", "Tools", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentsMessage), global::Messages.AR.V1.EnvironmentsMessage.Parser, new[]{ "Environments" }, null, null, null, null)
           }));
     }
@@ -329,16 +333,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class AgentLocation : pb::IMessage<AgentLocation>
+  public sealed partial class RobotLocation : pb::IMessage<RobotLocation>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<AgentLocation> _parser = new pb::MessageParser<AgentLocation>(() => new AgentLocation());
+    private static readonly pb::MessageParser<RobotLocation> _parser = new pb::MessageParser<RobotLocation>(() => new RobotLocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<AgentLocation> Parser { get { return _parser; } }
+    public static pb::MessageParser<RobotLocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -354,7 +358,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AgentLocation() {
+    public RobotLocation() {
       OnConstruction();
     }
 
@@ -362,7 +366,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AgentLocation(AgentLocation other) : this() {
+    public RobotLocation(RobotLocation other) : this() {
       id_ = other.id_;
       location_ = other.location_ != null ? other.location_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -370,8 +374,8 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AgentLocation Clone() {
-      return new AgentLocation(this);
+    public RobotLocation Clone() {
+      return new RobotLocation(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -401,12 +405,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as AgentLocation);
+      return Equals(other as RobotLocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(AgentLocation other) {
+    public bool Equals(RobotLocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -492,7 +496,251 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(AgentLocation other) {
+    public void MergeFrom(RobotLocation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.location_ != null) {
+        if (location_ == null) {
+          Location = new global::Messages.Common.V1.LocalizedPose();
+        }
+        Location.MergeFrom(other.Location);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class AssetLocation : pb::IMessage<AssetLocation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AssetLocation> _parser = new pb::MessageParser<AssetLocation>(() => new AssetLocation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AssetLocation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetLocation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetLocation(AssetLocation other) : this() {
+      id_ = other.id_;
+      location_ = other.location_ != null ? other.location_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetLocation Clone() {
+      return new AssetLocation(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 2;
+    private global::Messages.Common.V1.LocalizedPose location_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.LocalizedPose Location {
+      get { return location_; }
+      set {
+        location_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AssetLocation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AssetLocation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(Location, other.Location)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (location_ != null) hash ^= Location.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (location_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AssetLocation other) {
       if (other == null) {
         return;
       }
@@ -587,7 +835,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -831,7 +1079,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1075,7 +1323,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1101,7 +1349,8 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       type_ = other.type_;
       markers_ = other.markers_.Clone();
-      agents_ = other.agents_.Clone();
+      robots_ = other.robots_.Clone();
+      assets_ = other.assets_.Clone();
       parts_ = other.parts_.Clone();
       tools_ = other.tools_.Clone();
       properties_ = other.properties_.Clone();
@@ -1188,21 +1437,32 @@ namespace Messages.AR.V1 {
       get { return markers_; }
     }
 
-    /// <summary>Field number for the "agents" field.</summary>
-    public const int AgentsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.AgentLocation> _repeated_agents_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.AgentLocation.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.AgentLocation> agents_ = new pbc::RepeatedField<global::Messages.AR.V1.AgentLocation>();
+    /// <summary>Field number for the "robots" field.</summary>
+    public const int RobotsFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotLocation> _repeated_robots_codec
+        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.RobotLocation.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotLocation> robots_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.AgentLocation> Agents {
-      get { return agents_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.RobotLocation> Robots {
+      get { return robots_; }
+    }
+
+    /// <summary>Field number for the "assets" field.</summary>
+    public const int AssetsFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.AssetLocation> _repeated_assets_codec
+        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.AssetLocation.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.AssetLocation> assets_ = new pbc::RepeatedField<global::Messages.AR.V1.AssetLocation>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.AssetLocation> Assets {
+      get { return assets_; }
     }
 
     /// <summary>Field number for the "parts" field.</summary>
-    public const int PartsFieldNumber = 8;
+    public const int PartsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.PartLocation> _repeated_parts_codec
-        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.PartLocation.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.PartLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.PartLocation> parts_ = new pbc::RepeatedField<global::Messages.AR.V1.PartLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1211,9 +1471,9 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "tools" field.</summary>
-    public const int ToolsFieldNumber = 9;
+    public const int ToolsFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ToolLocation> _repeated_tools_codec
-        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.ToolLocation.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ToolLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ToolLocation> tools_ = new pbc::RepeatedField<global::Messages.AR.V1.ToolLocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1222,13 +1482,10 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "properties" field.</summary>
-    public const int PropertiesFieldNumber = 10;
+    public const int PropertiesFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.Property.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.Property.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
-    /// <summary>
-    /// TODO: add change_type: add, update, delete, unspecified?
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
@@ -1256,7 +1513,8 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if(!markers_.Equals(other.markers_)) return false;
-      if(!agents_.Equals(other.agents_)) return false;
+      if(!robots_.Equals(other.robots_)) return false;
+      if(!assets_.Equals(other.assets_)) return false;
       if(!parts_.Equals(other.parts_)) return false;
       if(!tools_.Equals(other.tools_)) return false;
       if(!properties_.Equals(other.properties_)) return false;
@@ -1273,7 +1531,8 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.EnvironmentType.Unspecified) hash ^= Type.GetHashCode();
       hash ^= markers_.GetHashCode();
-      hash ^= agents_.GetHashCode();
+      hash ^= robots_.GetHashCode();
+      hash ^= assets_.GetHashCode();
       hash ^= parts_.GetHashCode();
       hash ^= tools_.GetHashCode();
       hash ^= properties_.GetHashCode();
@@ -1316,7 +1575,8 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Type);
       }
       markers_.WriteTo(output, _repeated_markers_codec);
-      agents_.WriteTo(output, _repeated_agents_codec);
+      robots_.WriteTo(output, _repeated_robots_codec);
+      assets_.WriteTo(output, _repeated_assets_codec);
       parts_.WriteTo(output, _repeated_parts_codec);
       tools_.WriteTo(output, _repeated_tools_codec);
       properties_.WriteTo(output, _repeated_properties_codec);
@@ -1351,7 +1611,8 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Type);
       }
       markers_.WriteTo(ref output, _repeated_markers_codec);
-      agents_.WriteTo(ref output, _repeated_agents_codec);
+      robots_.WriteTo(ref output, _repeated_robots_codec);
+      assets_.WriteTo(ref output, _repeated_assets_codec);
       parts_.WriteTo(ref output, _repeated_parts_codec);
       tools_.WriteTo(ref output, _repeated_tools_codec);
       properties_.WriteTo(ref output, _repeated_properties_codec);
@@ -1381,7 +1642,8 @@ namespace Messages.AR.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       size += markers_.CalculateSize(_repeated_markers_codec);
-      size += agents_.CalculateSize(_repeated_agents_codec);
+      size += robots_.CalculateSize(_repeated_robots_codec);
+      size += assets_.CalculateSize(_repeated_assets_codec);
       size += parts_.CalculateSize(_repeated_parts_codec);
       size += tools_.CalculateSize(_repeated_tools_codec);
       size += properties_.CalculateSize(_repeated_properties_codec);
@@ -1413,7 +1675,8 @@ namespace Messages.AR.V1 {
         Type = other.Type;
       }
       markers_.Add(other.markers_);
-      agents_.Add(other.agents_);
+      robots_.Add(other.robots_);
+      assets_.Add(other.assets_);
       parts_.Add(other.parts_);
       tools_.Add(other.tools_);
       properties_.Add(other.properties_);
@@ -1461,18 +1724,22 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            agents_.AddEntriesFrom(input, _repeated_agents_codec);
+            robots_.AddEntriesFrom(input, _repeated_robots_codec);
             break;
           }
           case 66: {
-            parts_.AddEntriesFrom(input, _repeated_parts_codec);
+            assets_.AddEntriesFrom(input, _repeated_assets_codec);
             break;
           }
           case 74: {
-            tools_.AddEntriesFrom(input, _repeated_tools_codec);
+            parts_.AddEntriesFrom(input, _repeated_parts_codec);
             break;
           }
           case 82: {
+            tools_.AddEntriesFrom(input, _repeated_tools_codec);
+            break;
+          }
+          case 90: {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
@@ -1520,18 +1787,22 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            agents_.AddEntriesFrom(ref input, _repeated_agents_codec);
+            robots_.AddEntriesFrom(ref input, _repeated_robots_codec);
             break;
           }
           case 66: {
-            parts_.AddEntriesFrom(ref input, _repeated_parts_codec);
+            assets_.AddEntriesFrom(ref input, _repeated_assets_codec);
             break;
           }
           case 74: {
-            tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
+            parts_.AddEntriesFrom(ref input, _repeated_parts_codec);
             break;
           }
           case 82: {
+            tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
+            break;
+          }
+          case 90: {
             properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
             break;
           }
@@ -1557,7 +1828,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

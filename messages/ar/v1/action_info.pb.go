@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -129,27 +130,27 @@ func (x *ActionInfoMessage) GetDisabled() bool {
 	return false
 }
 
-type ActionInfosMessage struct {
+type ActionInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ActionInfos   []*ActionInfoMessage   `protobuf:"bytes,1,rep,name=action_infos,json=actionInfos,proto3" json:"action_infos,omitempty"`
+	Infos         []*ActionInfoMessage   `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ActionInfosMessage) Reset() {
-	*x = ActionInfosMessage{}
+func (x *ActionInfoMessages) Reset() {
+	*x = ActionInfoMessages{}
 	mi := &file_ar_v1_action_info_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ActionInfosMessage) String() string {
+func (x *ActionInfoMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ActionInfosMessage) ProtoMessage() {}
+func (*ActionInfoMessages) ProtoMessage() {}
 
-func (x *ActionInfosMessage) ProtoReflect() protoreflect.Message {
+func (x *ActionInfoMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_action_info_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -161,14 +162,14 @@ func (x *ActionInfosMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ActionInfosMessage.ProtoReflect.Descriptor instead.
-func (*ActionInfosMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use ActionInfoMessages.ProtoReflect.Descriptor instead.
+func (*ActionInfoMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_action_info_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ActionInfosMessage) GetActionInfos() []*ActionInfoMessage {
+func (x *ActionInfoMessages) GetInfos() []*ActionInfoMessage {
 	if x != nil {
-		return x.ActionInfos
+		return x.Infos
 	}
 	return nil
 }
@@ -177,20 +178,20 @@ var File_ar_v1_action_info_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_info_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/action_info.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x12ar/v1/events.proto\"\xd1\x02\n" +
-	"\x11ActionInfoMessage\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x17ar/v1/action_info.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x12ar/v1/events.proto\x1a\x1bbuf/validate/validate.proto\"\xec\x02\n" +
+	"\x11ActionInfoMessage\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeR\x04type\x12\x14\n" +
-	"\x05group\x18\x06 \x01(\tR\x05group\x12#\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12-\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\x12\x1c\n" +
+	"\x05group\x18\x06 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x05group\x12#\n" +
 	"\rrequire_agent\x18\a \x01(\bR\frequireAgent\x129\n" +
 	"\x0frequired_events\x18\b \x03(\x0e2\x10.ar.v1.EventTypeR\x0erequiredEvents\x129\n" +
 	"\x0foptional_events\x18\t \x03(\x0e2\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n" +
 	"\bdisabled\x18\n" +
-	" \x01(\bR\bdisabled\"Q\n" +
-	"\x12ActionInfosMessage\x12;\n" +
-	"\faction_infos\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\vactionInfosB\x8b\x01\n" +
+	" \x01(\bR\bdisabled\"D\n" +
+	"\x12ActionInfoMessages\x12.\n" +
+	"\x05infos\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\x05infosB\x8b\x01\n" +
 	"\tcom.ar.v1B\x0fActionInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -208,7 +209,7 @@ func file_ar_v1_action_info_proto_rawDescGZIP() []byte {
 var file_ar_v1_action_info_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_action_info_proto_goTypes = []any{
 	(*ActionInfoMessage)(nil),  // 0: ar.v1.ActionInfoMessage
-	(*ActionInfosMessage)(nil), // 1: ar.v1.ActionInfosMessage
+	(*ActionInfoMessages)(nil), // 1: ar.v1.ActionInfoMessages
 	(ActionType)(0),            // 2: ar.v1.ActionType
 	(EventType)(0),             // 3: ar.v1.EventType
 }
@@ -216,7 +217,7 @@ var file_ar_v1_action_info_proto_depIdxs = []int32{
 	2, // 0: ar.v1.ActionInfoMessage.type:type_name -> ar.v1.ActionType
 	3, // 1: ar.v1.ActionInfoMessage.required_events:type_name -> ar.v1.EventType
 	3, // 2: ar.v1.ActionInfoMessage.optional_events:type_name -> ar.v1.EventType
-	0, // 3: ar.v1.ActionInfosMessage.action_infos:type_name -> ar.v1.ActionInfoMessage
+	0, // 3: ar.v1.ActionInfoMessages.infos:type_name -> ar.v1.ActionInfoMessage
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

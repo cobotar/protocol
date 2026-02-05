@@ -1,5 +1,6 @@
 from ar.v1 import events_pb2 as _events_pb2
 from ar.v1 import feedback_pb2 as _feedback_pb2
+from buf.validate import validate_pb2 as _validate_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -32,8 +33,8 @@ class FeedbackInfoMessage(_message.Message):
     disabled: bool
     def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., group: _Optional[str] = ..., require_agent: bool = ..., require_frame: bool = ..., required_events: _Optional[_Iterable[_Union[_events_pb2.EventType, str]]] = ..., optional_events: _Optional[_Iterable[_Union[_events_pb2.EventType, str]]] = ..., disabled: bool = ...) -> None: ...
 
-class FeedbackInfosMessage(_message.Message):
-    __slots__ = ("feedback_infos",)
-    FEEDBACK_INFOS_FIELD_NUMBER: _ClassVar[int]
-    feedback_infos: _containers.RepeatedCompositeFieldContainer[FeedbackInfoMessage]
-    def __init__(self, feedback_infos: _Optional[_Iterable[_Union[FeedbackInfoMessage, _Mapping]]] = ...) -> None: ...
+class FeedbackInfoMessages(_message.Message):
+    __slots__ = ("infos",)
+    INFOS_FIELD_NUMBER: _ClassVar[int]
+    infos: _containers.RepeatedCompositeFieldContainer[FeedbackInfoMessage]
+    def __init__(self, infos: _Optional[_Iterable[_Union[FeedbackInfoMessage, _Mapping]]] = ...) -> None: ...

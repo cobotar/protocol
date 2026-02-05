@@ -30,8 +30,8 @@ class HelperInfoMessage(_message.Message):
     disabled: bool
     def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_helper_pb2.HelperType, str]] = ..., group: _Optional[str] = ..., require_agent: bool = ..., required_events: _Optional[_Iterable[_Union[_events_pb2.EventType, str]]] = ..., optional_events: _Optional[_Iterable[_Union[_events_pb2.EventType, str]]] = ..., disabled: bool = ...) -> None: ...
 
-class HelperInfosMessage(_message.Message):
-    __slots__ = ("helper_infos",)
-    HELPER_INFOS_FIELD_NUMBER: _ClassVar[int]
-    helper_infos: _containers.RepeatedCompositeFieldContainer[HelperInfoMessage]
-    def __init__(self, helper_infos: _Optional[_Iterable[_Union[HelperInfoMessage, _Mapping]]] = ...) -> None: ...
+class HelperInfoMessages(_message.Message):
+    __slots__ = ("infos",)
+    INFOS_FIELD_NUMBER: _ClassVar[int]
+    infos: _containers.RepeatedCompositeFieldContainer[HelperInfoMessage]
+    def __init__(self, infos: _Optional[_Iterable[_Union[HelperInfoMessage, _Mapping]]] = ...) -> None: ...

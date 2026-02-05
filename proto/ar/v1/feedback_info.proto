@@ -3,16 +3,20 @@ package ar.v1;
 
 import "ar/v1/events.proto";
 import "ar/v1/feedback.proto";
+import "buf/validate/validate.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message FeedbackInfoMessage {
-  string name = 2;
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
   string icon = 3;
   string description = 4;
-  FeedbackType type = 5;
-  string group = 6;
+  FeedbackType type = 5 [(buf.validate.field).required = true];
+  string group = 6 [(buf.validate.field).required = true];
   bool require_agent = 7;
   bool require_frame = 8;
   repeated EventType required_events = 9;
@@ -20,6 +24,6 @@ message FeedbackInfoMessage {
   bool disabled = 11;
 }
 
-message FeedbackInfosMessage {
-  repeated FeedbackInfoMessage feedback_infos = 1;
+message FeedbackInfoMessages {
+  repeated FeedbackInfoMessage infos = 1;
 }

@@ -21,6 +21,8 @@ export const file_plm_v1_process_authoring: GenFile = /*@__PURE__*/
   fileDesc("Ch5wbG0vdjEvcHJvY2Vzc19hdXRob3JpbmcucHJvdG8SBnBsbS52MSKDAgoUU3RvcmVkUHJvY2Vzc01lc3NhZ2USCgoCaWQYAiABKAkSDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIYChByb290X3NlcXVlbmNlX2lkGAcgASgJEjAKCXNlcXVlbmNlcxgIIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1ZW5jZU1lc3NhZ2USIgoFdGFza3MYCSADKAsyEy5wbG0udjEuVGFza01lc3NhZ2UiSQoWU3RvcmVkUHJvY2Vzc2VzTWVzc2FnZRIvCglwcm9jZXNzZXMYASADKAsyHC5wbG0udjEuU3RvcmVkUHJvY2Vzc01lc3NhZ2UiWQoRTmV3UHJvY2Vzc01lc3NhZ2USDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlIq0BChRVcGRhdGVQcm9jZXNzTWVzc2FnZRIKCgJpZBgCIAEoCRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhgKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAkiKgoURGVsZXRlUHJvY2Vzc01lc3NhZ2USEgoKcHJvY2Vzc19pZBgBIAEoCUKYAQoKY29tLnBsbS52MUIVUHJvY2Vzc0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_plm_v1_process, file_plm_v1_sequence_authoring, file_plm_v1_task]);
 
 /**
+ * TODO: rename to recipe?
+ *
  * @generated from message plm.v1.StoredProcessMessage
  */
 export type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
@@ -60,6 +62,8 @@ export type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
   sequences: StoredSequenceMessage[];
 
   /**
+   * TODO: make 'interchanceable', such that multiple variants can be selected
+   *
    * @generated from field: repeated plm.v1.TaskMessage tasks = 9;
    */
   tasks: TaskMessage[];

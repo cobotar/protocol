@@ -76,6 +76,7 @@ func (LineType) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_line_proto_rawDescGZIP(), []int{0}
 }
 
+// TODO: allow multiple processes to make active at the same time?
 type LineMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`

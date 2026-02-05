@@ -1,6 +1,9 @@
 syntax = "proto3";
 package ar.v1;
 
+import "ar/v1/permissions.proto";
+import "buf/validate/validate.proto";
+
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
@@ -30,16 +33,25 @@ enum PropertyOrigin {
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 message Property {
+  option (buf.validate.message).cel = {
+    id: "mirror_id_set_if_origin_is_mirror"
+    expression: "!this.mirror_property_id.startsWith('prop-') && this.origin == 2"
+    message: "Mirror ID must be set when origin is mirror"
+  };
+
   string id = 1;
   string name = 2;
   string icon = 3;
   string description = 4;
-  PropertyType type = 5;
+  PropertyType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   string value = 6; // the current value of the property (JSON encoded)
   string extras = 7; // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
-  bool user_editable = 8; // TODO: create different user permissions, this field should then set the "minimum required permission"
-  PropertyOrigin origin = 9;
-  repeated PropertyOrigin origins = 10;
+  WorkerPermission minimum_required_permission = 8 [(buf.validate.field).enum.defined_only = true];
+  PropertyOrigin origin = 9 [(buf.validate.field).enum.defined_only = true];
+  repeated PropertyOrigin origins = 10 [(buf.validate.field).repeated.items.enum.defined_only = true];
   string mirror_property_id = 11;
   string group = 12;
   int32 ordering = 13;

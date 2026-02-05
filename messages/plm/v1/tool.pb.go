@@ -7,6 +7,8 @@
 package plmv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,13 +23,202 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ToolType int32
+
+const (
+	ToolType_TOOL_TYPE_UNSPECIFIED ToolType = 0
+	ToolType_TOOL_TYPE_CUTTING     ToolType = 10
+	ToolType_TOOL_TYPE_SHAPING     ToolType = 20
+	ToolType_TOOL_TYPE_FASTENING   ToolType = 30
+	ToolType_TOOL_TYPE_GRIPPING    ToolType = 40
+	ToolType_TOOL_TYPE_TURNING     ToolType = 50
+	ToolType_TOOL_TYPE_STRIKING    ToolType = 60
+	ToolType_TOOL_TYPE_MEASURING   ToolType = 70
+	ToolType_TOOL_TYPE_MARKING     ToolType = 80
+	ToolType_TOOL_TYPE_FINISHING   ToolType = 90
+	ToolType_TOOL_TYPE_ABRASIVE    ToolType = 100
+	ToolType_TOOL_TYPE_SAFETY      ToolType = 110
+	ToolType_TOOL_TYPE_ELECTRONICS ToolType = 120
+)
+
+// Enum value maps for ToolType.
+var (
+	ToolType_name = map[int32]string{
+		0:   "TOOL_TYPE_UNSPECIFIED",
+		10:  "TOOL_TYPE_CUTTING",
+		20:  "TOOL_TYPE_SHAPING",
+		30:  "TOOL_TYPE_FASTENING",
+		40:  "TOOL_TYPE_GRIPPING",
+		50:  "TOOL_TYPE_TURNING",
+		60:  "TOOL_TYPE_STRIKING",
+		70:  "TOOL_TYPE_MEASURING",
+		80:  "TOOL_TYPE_MARKING",
+		90:  "TOOL_TYPE_FINISHING",
+		100: "TOOL_TYPE_ABRASIVE",
+		110: "TOOL_TYPE_SAFETY",
+		120: "TOOL_TYPE_ELECTRONICS",
+	}
+	ToolType_value = map[string]int32{
+		"TOOL_TYPE_UNSPECIFIED": 0,
+		"TOOL_TYPE_CUTTING":     10,
+		"TOOL_TYPE_SHAPING":     20,
+		"TOOL_TYPE_FASTENING":   30,
+		"TOOL_TYPE_GRIPPING":    40,
+		"TOOL_TYPE_TURNING":     50,
+		"TOOL_TYPE_STRIKING":    60,
+		"TOOL_TYPE_MEASURING":   70,
+		"TOOL_TYPE_MARKING":     80,
+		"TOOL_TYPE_FINISHING":   90,
+		"TOOL_TYPE_ABRASIVE":    100,
+		"TOOL_TYPE_SAFETY":      110,
+		"TOOL_TYPE_ELECTRONICS": 120,
+	}
+)
+
+func (x ToolType) Enum() *ToolType {
+	p := new(ToolType)
+	*p = x
+	return p
+}
+
+func (x ToolType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ToolType) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_tool_proto_enumTypes[0].Descriptor()
+}
+
+func (ToolType) Type() protoreflect.EnumType {
+	return &file_plm_v1_tool_proto_enumTypes[0]
+}
+
+func (x ToolType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ToolType.Descriptor instead.
+func (ToolType) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_tool_proto_rawDescGZIP(), []int{0}
+}
+
+type ToolProperty int32
+
+const (
+	ToolProperty_TOOL_PROPERTY_UNSPECIFIED       ToolProperty = 0
+	ToolProperty_TOOL_PROPERTY_TORQUE_CONTROLLED ToolProperty = 1
+	ToolProperty_TOOL_PROPERTY_ESD_SAFE          ToolProperty = 2
+	ToolProperty_TOOL_PROPERTY_INSULATED         ToolProperty = 3
+	ToolProperty_TOOL_PROPERTY_COLLABORATIVE     ToolProperty = 4
+)
+
+// Enum value maps for ToolProperty.
+var (
+	ToolProperty_name = map[int32]string{
+		0: "TOOL_PROPERTY_UNSPECIFIED",
+		1: "TOOL_PROPERTY_TORQUE_CONTROLLED",
+		2: "TOOL_PROPERTY_ESD_SAFE",
+		3: "TOOL_PROPERTY_INSULATED",
+		4: "TOOL_PROPERTY_COLLABORATIVE",
+	}
+	ToolProperty_value = map[string]int32{
+		"TOOL_PROPERTY_UNSPECIFIED":       0,
+		"TOOL_PROPERTY_TORQUE_CONTROLLED": 1,
+		"TOOL_PROPERTY_ESD_SAFE":          2,
+		"TOOL_PROPERTY_INSULATED":         3,
+		"TOOL_PROPERTY_COLLABORATIVE":     4,
+	}
+)
+
+func (x ToolProperty) Enum() *ToolProperty {
+	p := new(ToolProperty)
+	*p = x
+	return p
+}
+
+func (x ToolProperty) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ToolProperty) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_tool_proto_enumTypes[1].Descriptor()
+}
+
+func (ToolProperty) Type() protoreflect.EnumType {
+	return &file_plm_v1_tool_proto_enumTypes[1]
+}
+
+func (x ToolProperty) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ToolProperty.Descriptor instead.
+func (ToolProperty) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_tool_proto_rawDescGZIP(), []int{1}
+}
+
+type ToolActor int32
+
+const (
+	ToolActor_TOOL_ACTOR_UNSPECIFIED ToolActor = 0
+	ToolActor_TOOL_ACTOR_HUMAN       ToolActor = 1
+	ToolActor_TOOL_ACTOR_ROBOT       ToolActor = 2
+	ToolActor_TOOL_ACTOR_HYBRID      ToolActor = 3
+)
+
+// Enum value maps for ToolActor.
+var (
+	ToolActor_name = map[int32]string{
+		0: "TOOL_ACTOR_UNSPECIFIED",
+		1: "TOOL_ACTOR_HUMAN",
+		2: "TOOL_ACTOR_ROBOT",
+		3: "TOOL_ACTOR_HYBRID",
+	}
+	ToolActor_value = map[string]int32{
+		"TOOL_ACTOR_UNSPECIFIED": 0,
+		"TOOL_ACTOR_HUMAN":       1,
+		"TOOL_ACTOR_ROBOT":       2,
+		"TOOL_ACTOR_HYBRID":      3,
+	}
+)
+
+func (x ToolActor) Enum() *ToolActor {
+	p := new(ToolActor)
+	*p = x
+	return p
+}
+
+func (x ToolActor) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ToolActor) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_tool_proto_enumTypes[2].Descriptor()
+}
+
+func (ToolActor) Type() protoreflect.EnumType {
+	return &file_plm_v1_tool_proto_enumTypes[2]
+}
+
+func (x ToolActor) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ToolActor.Descriptor instead.
+func (ToolActor) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_tool_proto_rawDescGZIP(), []int{2}
+}
+
 type ToolMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	ModelId       string                 `protobuf:"bytes,5,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	Type          ToolType               `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ToolType" json:"type,omitempty"`
+	Actor         ToolActor              `protobuf:"varint,6,opt,name=actor,proto3,enum=plm.v1.ToolActor" json:"actor,omitempty"`
+	Properties    []ToolProperty         `protobuf:"varint,7,rep,packed,name=properties,proto3,enum=plm.v1.ToolProperty" json:"properties,omitempty"`
+	ModelId       *string                `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3,oneof" json:"model_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,9 +281,30 @@ func (x *ToolMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ToolMessage) GetModelId() string {
+func (x *ToolMessage) GetType() ToolType {
 	if x != nil {
-		return x.ModelId
+		return x.Type
+	}
+	return ToolType_TOOL_TYPE_UNSPECIFIED
+}
+
+func (x *ToolMessage) GetActor() ToolActor {
+	if x != nil {
+		return x.Actor
+	}
+	return ToolActor_TOOL_ACTOR_UNSPECIFIED
+}
+
+func (x *ToolMessage) GetProperties() []ToolProperty {
+	if x != nil {
+		return x.Properties
+	}
+	return nil
+}
+
+func (x *ToolMessage) GetModelId() string {
+	if x != nil && x.ModelId != nil {
+		return *x.ModelId
 	}
 	return ""
 }
@@ -141,193 +353,53 @@ func (x *ToolMessages) GetTools() []*ToolMessage {
 	return nil
 }
 
-type NewToolMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *NewToolMessage) Reset() {
-	*x = NewToolMessage{}
-	mi := &file_plm_v1_tool_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *NewToolMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NewToolMessage) ProtoMessage() {}
-
-func (x *NewToolMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_tool_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NewToolMessage.ProtoReflect.Descriptor instead.
-func (*NewToolMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_tool_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *NewToolMessage) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-type UpdateToolMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	ModelId       string                 `protobuf:"bytes,5,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UpdateToolMessage) Reset() {
-	*x = UpdateToolMessage{}
-	mi := &file_plm_v1_tool_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UpdateToolMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateToolMessage) ProtoMessage() {}
-
-func (x *UpdateToolMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_tool_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateToolMessage.ProtoReflect.Descriptor instead.
-func (*UpdateToolMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_tool_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *UpdateToolMessage) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *UpdateToolMessage) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *UpdateToolMessage) GetIcon() string {
-	if x != nil {
-		return x.Icon
-	}
-	return ""
-}
-
-func (x *UpdateToolMessage) GetDescription() string {
-	if x != nil {
-		return x.Description
-	}
-	return ""
-}
-
-func (x *UpdateToolMessage) GetModelId() string {
-	if x != nil {
-		return x.ModelId
-	}
-	return ""
-}
-
-type DeleteToolMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ToolId        string                 `protobuf:"bytes,1,opt,name=tool_id,json=toolId,proto3" json:"tool_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteToolMessage) Reset() {
-	*x = DeleteToolMessage{}
-	mi := &file_plm_v1_tool_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteToolMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteToolMessage) ProtoMessage() {}
-
-func (x *DeleteToolMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_tool_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteToolMessage.ProtoReflect.Descriptor instead.
-func (*DeleteToolMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_tool_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *DeleteToolMessage) GetToolId() string {
-	if x != nil {
-		return x.ToolId
-	}
-	return ""
-}
-
 var File_plm_v1_tool_proto protoreflect.FileDescriptor
 
 const file_plm_v1_tool_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/tool.proto\x12\x06plm.v1\"\x82\x01\n" +
+	"\x11plm/v1/tool.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcb\x02\n" +
 	"\vToolMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
-	"\bmodel_id\x18\x05 \x01(\tR\amodelId\"9\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x123\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x10.plm.v1.ToolTypeB\r\xbaH\n" +
+	"\xc8\x01\x01\x82\x01\x04\x10\x01(\n" +
+	"R\x04type\x124\n" +
+	"\x05actor\x18\x06 \x01(\x0e2\x11.plm.v1.ToolActorB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05actor\x124\n" +
+	"\n" +
+	"properties\x18\a \x03(\x0e2\x14.plm.v1.ToolPropertyR\n" +
+	"properties\x12)\n" +
+	"\bmodel_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01H\x00R\amodelId\x88\x01\x01B\v\n" +
+	"\t_model_id\"9\n" +
 	"\fToolMessages\x12)\n" +
-	"\x05tools\x18\x01 \x03(\v2\x13.plm.v1.ToolMessageR\x05tools\"$\n" +
-	"\x0eNewToolMessage\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\x88\x01\n" +
-	"\x11UpdateToolMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
-	"\bmodel_id\x18\x05 \x01(\tR\amodelId\",\n" +
-	"\x11DeleteToolMessage\x12\x17\n" +
-	"\atool_id\x18\x01 \x01(\tR\x06toolIdB\x8c\x01\n" +
+	"\x05tools\x18\x01 \x03(\v2\x13.plm.v1.ToolMessageR\x05tools*\xc5\x02\n" +
+	"\bToolType\x12\x19\n" +
+	"\x15TOOL_TYPE_UNSPECIFIED\x10\x00\x12\x15\n" +
+	"\x11TOOL_TYPE_CUTTING\x10\n" +
+	"\x12\x15\n" +
+	"\x11TOOL_TYPE_SHAPING\x10\x14\x12\x17\n" +
+	"\x13TOOL_TYPE_FASTENING\x10\x1e\x12\x16\n" +
+	"\x12TOOL_TYPE_GRIPPING\x10(\x12\x15\n" +
+	"\x11TOOL_TYPE_TURNING\x102\x12\x16\n" +
+	"\x12TOOL_TYPE_STRIKING\x10<\x12\x17\n" +
+	"\x13TOOL_TYPE_MEASURING\x10F\x12\x15\n" +
+	"\x11TOOL_TYPE_MARKING\x10P\x12\x17\n" +
+	"\x13TOOL_TYPE_FINISHING\x10Z\x12\x16\n" +
+	"\x12TOOL_TYPE_ABRASIVE\x10d\x12\x14\n" +
+	"\x10TOOL_TYPE_SAFETY\x10n\x12\x19\n" +
+	"\x15TOOL_TYPE_ELECTRONICS\x10x*\xac\x01\n" +
+	"\fToolProperty\x12\x1d\n" +
+	"\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n" +
+	"\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n" +
+	"\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n" +
+	"\x17TOOL_PROPERTY_INSULATED\x10\x03\x12\x1f\n" +
+	"\x1bTOOL_PROPERTY_COLLABORATIVE\x10\x04*j\n" +
+	"\tToolActor\x12\x1a\n" +
+	"\x16TOOL_ACTOR_UNSPECIFIED\x10\x00\x12\x14\n" +
+	"\x10TOOL_ACTOR_HUMAN\x10\x01\x12\x14\n" +
+	"\x10TOOL_ACTOR_ROBOT\x10\x02\x12\x15\n" +
+	"\x11TOOL_ACTOR_HYBRID\x10\x03B\x8c\x01\n" +
 	"\n" +
 	"com.plm.v1B\tToolProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -343,21 +415,25 @@ func file_plm_v1_tool_proto_rawDescGZIP() []byte {
 	return file_plm_v1_tool_proto_rawDescData
 }
 
-var file_plm_v1_tool_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_plm_v1_tool_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_plm_v1_tool_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_plm_v1_tool_proto_goTypes = []any{
-	(*ToolMessage)(nil),       // 0: plm.v1.ToolMessage
-	(*ToolMessages)(nil),      // 1: plm.v1.ToolMessages
-	(*NewToolMessage)(nil),    // 2: plm.v1.NewToolMessage
-	(*UpdateToolMessage)(nil), // 3: plm.v1.UpdateToolMessage
-	(*DeleteToolMessage)(nil), // 4: plm.v1.DeleteToolMessage
+	(ToolType)(0),        // 0: plm.v1.ToolType
+	(ToolProperty)(0),    // 1: plm.v1.ToolProperty
+	(ToolActor)(0),       // 2: plm.v1.ToolActor
+	(*ToolMessage)(nil),  // 3: plm.v1.ToolMessage
+	(*ToolMessages)(nil), // 4: plm.v1.ToolMessages
 }
 var file_plm_v1_tool_proto_depIdxs = []int32{
-	0, // 0: plm.v1.ToolMessages.tools:type_name -> plm.v1.ToolMessage
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 0: plm.v1.ToolMessage.type:type_name -> plm.v1.ToolType
+	2, // 1: plm.v1.ToolMessage.actor:type_name -> plm.v1.ToolActor
+	1, // 2: plm.v1.ToolMessage.properties:type_name -> plm.v1.ToolProperty
+	3, // 3: plm.v1.ToolMessages.tools:type_name -> plm.v1.ToolMessage
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_tool_proto_init() }
@@ -365,18 +441,20 @@ func file_plm_v1_tool_proto_init() {
 	if File_plm_v1_tool_proto != nil {
 		return
 	}
+	file_plm_v1_tool_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_tool_proto_rawDesc), len(file_plm_v1_tool_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   5,
+			NumEnums:      3,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_plm_v1_tool_proto_goTypes,
 		DependencyIndexes: file_plm_v1_tool_proto_depIdxs,
+		EnumInfos:         file_plm_v1_tool_proto_enumTypes,
 		MessageInfos:      file_plm_v1_tool_proto_msgTypes,
 	}.Build()
 	File_plm_v1_tool_proto = out.File

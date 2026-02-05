@@ -25,23 +25,25 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJhci92MS9hc3NldHMucHJvdG8SBWFyLnYxGhRhci92MS9wcm9wZXJ0eS5w",
-            "cm90byKDAgoMQXNzZXRNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1l",
-            "GAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
-            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEiQKBHR5cGUYBSABKA4yEC5hci52MS5B",
-            "c3NldFR5cGVSBHR5cGUSQgoRYXNzZXRfZHJpdmVyX3R5cGUYBiABKA4yFi5h",
-            "ci52MS5Bc3NldERyaXZlclR5cGVSD2Fzc2V0RHJpdmVyVHlwZRIvCgpwcm9w",
-            "ZXJ0aWVzGAcgAygLMg8uYXIudjEuUHJvcGVydHlSCnByb3BlcnRpZXMiPAoN",
-            "QXNzZXRNZXNzYWdlcxIrCgZhc3NldHMYASADKAsyEy5hci52MS5Bc3NldE1l",
-            "c3NhZ2VSBmFzc2V0cyptCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQ",
-            "RUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQ",
-            "RV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAypTCg9Bc3NldERy",
-            "aXZlclR5cGUSIQodQVNTRVRfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABId",
-            "ChlBU1NFVF9EUklWRVJfVFlQRV9ERUZBVUxUEAFChwEKCWNvbS5hci52MUIL",
-            "QXNzZXRzUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
-            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
-            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "cm90bxobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvIqoCCgxBc3NldE1l",
+            "c3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEEAEY",
+            "QFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
+            "ASgJUgtkZXNjcmlwdGlvbhIzCgR0eXBlGAUgASgOMhAuYXIudjEuQXNzZXRU",
+            "eXBlQg26SAqCAQQQASgByAEBUgR0eXBlEk8KEWFzc2V0X2RyaXZlcl90eXBl",
+            "GAYgASgOMhYuYXIudjEuQXNzZXREcml2ZXJUeXBlQgu6SAiCAQIQAcgBAVIP",
+            "YXNzZXREcml2ZXJUeXBlEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Q",
+            "cm9wZXJ0eVIKcHJvcGVydGllcyI8Cg1Bc3NldE1lc3NhZ2VzEisKBmFzc2V0",
+            "cxgBIAMoCzITLmFyLnYxLkFzc2V0TWVzc2FnZVIGYXNzZXRzKm0KCUFzc2V0",
+            "VHlwZRIaChZBU1NFVF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQ",
+            "RV9DQU1FUkEQARIUChBBU1NFVF9UWVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQ",
+            "RV9DT05WRVlPUhADKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9EUklW",
+            "RVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBFX0RF",
+            "RkFVTFQQAUKHAQoJY29tLmFyLnYxQgtBc3NldHNQcm90b1ABWi9naXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
+            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
+            "YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.AssetType), typeof(global::Messages.AR.V1.AssetDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMessage), global::Messages.AR.V1.AssetMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "AssetDriverType", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMessages), global::Messages.AR.V1.AssetMessages.Parser, new[]{ "Assets" }, null, null, null, null)
@@ -132,6 +134,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
+    /// <summary>
+    /// Name of the asset
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
@@ -144,6 +149,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "icon" field.</summary>
     public const int IconFieldNumber = 3;
     private string icon_ = "";
+    /// <summary>
+    /// Optional icon representing the asset
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Icon {
@@ -156,6 +164,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 4;
     private string description_ = "";
+    /// <summary>
+    /// Optional description of the asset
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {

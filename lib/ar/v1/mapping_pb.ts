@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/mapping.proto.
  */
 export const file_ar_v1_mapping: GenFile = /*@__PURE__*/
-  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSI+CgpBUlByaW9yaXR5EhQKDGFyX2NvbmZpZ19pZBgBIAEoCRIaChJhY3RpdmVfcHJvcGVydHlfaWQYAiABKAkilwEKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9lbnZpcm9ubWVudF9pZHMYBSADKAkSLwoUYXJfY29uZmlnX3ByaW9yaXRpZXMYBiADKAsyES5hci52MS5BUlByaW9yaXR5IjoKD01hcHBpbmdzTWVzc2FnZRInCghtYXBwaW5ncxgBIAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z");
+  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSI+CgpBUlByaW9yaXR5EhQKDGFyX2NvbmZpZ19pZBgBIAEoCRIaChJhY3RpdmVfcHJvcGVydHlfaWQYAiABKAkilwEKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9lbnZpcm9ubWVudF9pZHMYBSADKAkSLwoUYXJfY29uZmlnX3ByaW9yaXRpZXMYBiADKAsyES5hci52MS5BUlByaW9yaXR5IjoKD01hcHBpbmdNZXNzYWdlcxInCghtYXBwaW5ncxgBIAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message ar.v1.ARPriority
@@ -77,9 +77,9 @@ export const MappingMessageSchema: GenMessage<MappingMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_mapping, 1);
 
 /**
- * @generated from message ar.v1.MappingsMessage
+ * @generated from message ar.v1.MappingMessages
  */
-export type MappingsMessage = Message<"ar.v1.MappingsMessage"> & {
+export type MappingMessages = Message<"ar.v1.MappingMessages"> & {
   /**
    * @generated from field: repeated ar.v1.MappingMessage mappings = 1;
    */
@@ -87,9 +87,9 @@ export type MappingsMessage = Message<"ar.v1.MappingsMessage"> & {
 };
 
 /**
- * Describes the message ar.v1.MappingsMessage.
- * Use `create(MappingsMessageSchema)` to create a new message.
+ * Describes the message ar.v1.MappingMessages.
+ * Use `create(MappingMessagesSchema)` to create a new message.
  */
-export const MappingsMessageSchema: GenMessage<MappingsMessage> = /*@__PURE__*/
+export const MappingMessagesSchema: GenMessage<MappingMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_mapping, 2);
 

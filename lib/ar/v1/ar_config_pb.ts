@@ -12,13 +12,14 @@ import type { HelperMessage } from "./helper_pb.ts";
 import { file_ar_v1_helper } from "./helper_pb.ts";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIlIKE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJIooCCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEigKCGZlZWRiYWNrGAUgAygLMhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlEiUKB2FjdGlvbnMYBiADKAsyFC5hci52MS5BY3Rpb25NZXNzYWdlEiUKB2hlbHBlcnMYByADKAsyFC5hci52MS5IZWxwZXJNZXNzYWdlEiMKCnByb3BlcnRpZXMYCCADKAsyDy5hci52MS5Qcm9wZXJ0eRIdChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYCSABKANCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_ar_v1_property]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIqECCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoIZmVlZGJhY2sYBSADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2USJQoHYWN0aW9ucxgGIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2USJQoHaGVscGVycxgHIAMoCzIULmFyLnYxLkhlbHBlck1lc3NhZ2USIwoKcHJvcGVydGllcxgIIAMoCzIPLmFyLnYxLlByb3BlcnR5EikKFWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgJIAEoA0IKukgHIgVI3gIoACI7ChBBUkNvbmZpZ01lc3NhZ2VzEicKB2NvbmZpZ3MYASADKAsyFi5hci52MS5BUkNvbmZpZ01lc3NhZ2VCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_ar_v1_property, file_buf_validate_validate]);
 
 /**
  * @generated from message ar.v1.ARConfigInfoMessage
@@ -51,6 +52,23 @@ export type ARConfigInfoMessage = Message<"ar.v1.ARConfigInfoMessage"> & {
  */
 export const ARConfigInfoMessageSchema: GenMessage<ARConfigInfoMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_ar_config, 0);
+
+/**
+ * @generated from message ar.v1.ARConfigInfoMessages
+ */
+export type ARConfigInfoMessages = Message<"ar.v1.ARConfigInfoMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.ARConfigInfoMessage infos = 1;
+   */
+  infos: ARConfigInfoMessage[];
+};
+
+/**
+ * Describes the message ar.v1.ARConfigInfoMessages.
+ * Use `create(ARConfigInfoMessagesSchema)` to create a new message.
+ */
+export const ARConfigInfoMessagesSchema: GenMessage<ARConfigInfoMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 1);
 
 /**
  * @generated from message ar.v1.ARConfigMessage
@@ -97,7 +115,7 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
   properties: Property[];
 
   /**
-   * Threshold distance in cm all AR elements should disappear.
+   * Threshold distance in cm all AR elements should disappear. 0 = ignored
    *
    * @generated from field: int64 ar_disappear_distance = 9;
    */
@@ -109,5 +127,22 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
  * Use `create(ARConfigMessageSchema)` to create a new message.
  */
 export const ARConfigMessageSchema: GenMessage<ARConfigMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config, 1);
+  messageDesc(file_ar_v1_ar_config, 2);
+
+/**
+ * @generated from message ar.v1.ARConfigMessages
+ */
+export type ARConfigMessages = Message<"ar.v1.ARConfigMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.ARConfigMessage configs = 1;
+   */
+  configs: ARConfigMessage[];
+};
+
+/**
+ * Describes the message ar.v1.ARConfigMessages.
+ * Use `create(ARConfigMessagesSchema)` to create a new message.
+ */
+export const ARConfigMessagesSchema: GenMessage<ARConfigMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 3);
 

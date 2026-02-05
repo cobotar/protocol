@@ -4,13 +4,14 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/marker.proto.
  */
 export const file_ar_v1_marker: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxInQKDU1hcmtlck1lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRITCgttYXJrZXJfdGV4dBgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuTWFya2VyVHlwZSI3Cg5NYXJrZXJzTWVzc2FnZRIlCgdtYXJrZXJzGAEgAygLMhQuYXIudjEuTWFya2VyTWVzc2FnZSpCCgpNYXJrZXJUeXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM");
+  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIpoBCg1NYXJrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBITCgtkZXNjcmlwdGlvbhgDIAEoCRImCgttYXJrZXJfdGV4dBgEIAEoCUIRukgOcgwQApICB3JvYmVydGESJwoEdHlwZRgFIAEoDjIRLmFyLnYxLk1hcmtlclR5cGVCBrpIA8gBASI3Cg5NYXJrZXJNZXNzYWdlcxIlCgdtYXJrZXJzGAEgAygLMhQuYXIudjEuTWFya2VyTWVzc2FnZSpCCgpNYXJrZXJUeXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate]);
 
 /**
  * @generated from message ar.v1.MarkerMessage
@@ -52,9 +53,9 @@ export const MarkerMessageSchema: GenMessage<MarkerMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_marker, 0);
 
 /**
- * @generated from message ar.v1.MarkersMessage
+ * @generated from message ar.v1.MarkerMessages
  */
-export type MarkersMessage = Message<"ar.v1.MarkersMessage"> & {
+export type MarkerMessages = Message<"ar.v1.MarkerMessages"> & {
   /**
    * @generated from field: repeated ar.v1.MarkerMessage markers = 1;
    */
@@ -62,10 +63,10 @@ export type MarkersMessage = Message<"ar.v1.MarkersMessage"> & {
 };
 
 /**
- * Describes the message ar.v1.MarkersMessage.
- * Use `create(MarkersMessageSchema)` to create a new message.
+ * Describes the message ar.v1.MarkerMessages.
+ * Use `create(MarkerMessagesSchema)` to create a new message.
  */
-export const MarkersMessageSchema: GenMessage<MarkersMessage> = /*@__PURE__*/
+export const MarkerMessagesSchema: GenMessage<MarkerMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_marker, 1);
 
 /**

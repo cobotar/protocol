@@ -24,29 +24,34 @@ namespace Messages.Common.V1 {
     static PoseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZnZW9tZXRyeS92MS9wb3NlLnByb3RvEgtnZW9tZXRyeS52MRoXZ2VvbWV0",
-            "cnkvdjEvcG9pbnQucHJvdG8aFmdlb21ldHJ5L3YxL3F1YWQucHJvdG8aH2dv",
-            "b2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8iawoEUG9zZRIuCghwb3Np",
-            "dGlvbhgBIAEoCzISLmdlb21ldHJ5LnYxLlBvaW50Ughwb3NpdGlvbhIzCgtv",
-            "cmllbnRhdGlvbhgCIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRSC29yaWVudGF0",
-            "aW9uIsUBCg1Mb2NhbGl6ZWRQb3NlEiUKBHBvc2UYASABKAsyES5nZW9tZXRy",
-            "eS52MS5Qb3NlUgRwb3NlEhsKCWFuY2hvcl9pZBgCIAEoCVIIYW5jaG9ySWQS",
-            "MQoFc3RhdGUYAyABKA4yGy5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRTdGF0ZVIF",
-            "c3RhdGUSPQoMbGFzdF91cGRhdGVkGAQgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQqnwEKDkxvY2FsaXplZFN0YXRlEh8K",
-            "G0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkKFUxPQ0FMSVpFRF9T",
-            "VEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9MT1NUEAISGgoWTE9D",
-            "QUxJWkVEX1NUQVRFX1NUQVRJQxADEhsKF0xPQ0FMSVpFRF9TVEFURV9VTktO",
-            "T1dOEARCrQEKD2NvbS5nZW9tZXRyeS52MUIJUG9zZVByb3RvUAFaO2dpdGh1",
-            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRyeS92MTtn",
-            "ZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygILR2VvbWV0",
-            "cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpW",
-            "MWIGcHJvdG8z"));
+            "ChZnZW9tZXRyeS92MS9wb3NlLnByb3RvEgtnZW9tZXRyeS52MRobYnVmL3Zh",
+            "bGlkYXRlL3ZhbGlkYXRlLnByb3RvGhdnZW9tZXRyeS92MS9wb2ludC5wcm90",
+            "bxoWZ2VvbWV0cnkvdjEvcXVhZC5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3Rp",
+            "bWVzdGFtcC5wcm90byJrCgRQb3NlEi4KCHBvc2l0aW9uGAEgASgLMhIuZ2Vv",
+            "bWV0cnkudjEuUG9pbnRSCHBvc2l0aW9uEjMKC29yaWVudGF0aW9uGAIgASgL",
+            "MhEuZ2VvbWV0cnkudjEuUXVhZFILb3JpZW50YXRpb24iwgMKDUxvY2FsaXpl",
+            "ZFBvc2USFgoCaWQYASABKAlCBrpIA8gBAVICaWQSNgoIcG9zaXRpb24YAiAB",
+            "KAsyEi5nZW9tZXRyeS52MS5Qb2ludEIGukgDyAEBUghwb3NpdGlvbhI7Cgtv",
+            "cmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRCBrpIA8gBAVIL",
+            "b3JpZW50YXRpb24SGwoJYW5jaG9yX2lkGAQgASgJUghhbmNob3JJZBI7CgVz",
+            "dGF0ZRgFIAEoDjIbLmdlb21ldHJ5LnYxLkxvY2FsaXplZFN0YXRlQgi6SAWC",
+            "AQIQAVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAYgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQ6igG6SIYBGoMBCiJhbmNo",
+            "b3JfaWRfc2V0X3doZW5fc3RhdGVfc3BlY2lmaWVkGl10aGlzLnN0YXRlICE9",
+            "IDAgJiYgaGFzKHRoaXMuYW5jaG9yX2lkKSA/ICdhbmNob3IgSUQgbXVzdCBi",
+            "ZSBzZXQgd2hlbiBzdGF0ZSBpcyBzcGVjaWZpZWQnIDogJycqggEKDkxvY2Fs",
+            "aXplZFN0YXRlEh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkK",
+            "FUxPQ0FMSVpFRF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9M",
+            "T1NUEAISGgoWTE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq0BCg9jb20uZ2Vv",
+            "bWV0cnkudjFCCVBvc2VQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJv",
+            "dG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoC",
+            "Ek1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlc",
+            "VjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.LocalizedState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Pose), global::Messages.Common.V1.Pose.Parser, new[]{ "Position", "Orientation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalizedPose), global::Messages.Common.V1.LocalizedPose.Parser, new[]{ "Pose", "AnchorId", "State", "LastUpdated" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalizedPose), global::Messages.Common.V1.LocalizedPose.Parser, new[]{ "Id", "Position", "Orientation", "AnchorId", "State", "LastUpdated" }, null, null, null, null)
           }));
     }
     #endregion
@@ -58,7 +63,6 @@ namespace Messages.Common.V1 {
     [pbr::OriginalName("LOCALIZED_STATE_FOUND")] Found = 1,
     [pbr::OriginalName("LOCALIZED_STATE_LOST")] Lost = 2,
     [pbr::OriginalName("LOCALIZED_STATE_STATIC")] Static = 3,
-    [pbr::OriginalName("LOCALIZED_STATE_UNKNOWN")] Unknown = 4,
   }
 
   #endregion
@@ -358,7 +362,9 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LocalizedPose(LocalizedPose other) : this() {
-      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
+      id_ = other.id_;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
+      orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
       anchorId_ = other.anchorId_;
       state_ = other.state_;
       lastUpdated_ = other.lastUpdated_ != null ? other.lastUpdated_.Clone() : null;
@@ -371,20 +377,44 @@ namespace Messages.Common.V1 {
       return new LocalizedPose(this);
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 1;
-    private global::Messages.Common.V1.Pose pose_;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose Pose {
-      get { return pose_; }
+    public string Id {
+      get { return id_; }
       set {
-        pose_ = value;
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 2;
+    private global::Messages.Common.V1.Point position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Point Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "orientation" field.</summary>
+    public const int OrientationFieldNumber = 3;
+    private global::Messages.Common.V1.Quad orientation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Quad Orientation {
+      get { return orientation_; }
+      set {
+        orientation_ = value;
       }
     }
 
     /// <summary>Field number for the "anchor_id" field.</summary>
-    public const int AnchorIdFieldNumber = 2;
+    public const int AnchorIdFieldNumber = 4;
     private string anchorId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -396,7 +426,7 @@ namespace Messages.Common.V1 {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 3;
+    public const int StateFieldNumber = 5;
     private global::Messages.Common.V1.LocalizedState state_ = global::Messages.Common.V1.LocalizedState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -408,7 +438,7 @@ namespace Messages.Common.V1 {
     }
 
     /// <summary>Field number for the "last_updated" field.</summary>
-    public const int LastUpdatedFieldNumber = 4;
+    public const int LastUpdatedFieldNumber = 6;
     private global::Google.Protobuf.WellKnownTypes.Timestamp lastUpdated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -434,7 +464,9 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Pose, other.Pose)) return false;
+      if (Id != other.Id) return false;
+      if (!object.Equals(Position, other.Position)) return false;
+      if (!object.Equals(Orientation, other.Orientation)) return false;
       if (AnchorId != other.AnchorId) return false;
       if (State != other.State) return false;
       if (!object.Equals(LastUpdated, other.LastUpdated)) return false;
@@ -445,7 +477,9 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (pose_ != null) hash ^= Pose.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
+      if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (AnchorId.Length != 0) hash ^= AnchorId.GetHashCode();
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) hash ^= State.GetHashCode();
       if (lastUpdated_ != null) hash ^= LastUpdated.GetHashCode();
@@ -467,20 +501,28 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (pose_ != null) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Pose);
+        output.WriteString(Id);
+      }
+      if (position_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Position);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Orientation);
       }
       if (AnchorId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteString(AnchorId);
       }
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteEnum((int) State);
       }
       if (lastUpdated_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(LastUpdated);
       }
       if (_unknownFields != null) {
@@ -493,20 +535,28 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (pose_ != null) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Pose);
+        output.WriteString(Id);
+      }
+      if (position_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Position);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Orientation);
       }
       if (AnchorId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteString(AnchorId);
       }
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteEnum((int) State);
       }
       if (lastUpdated_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(LastUpdated);
       }
       if (_unknownFields != null) {
@@ -519,8 +569,14 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (pose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (position_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (orientation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Orientation);
       }
       if (AnchorId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AnchorId);
@@ -543,11 +599,20 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.pose_ != null) {
-        if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.Pose();
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.position_ != null) {
+        if (position_ == null) {
+          Position = new global::Messages.Common.V1.Point();
         }
-        Pose.MergeFrom(other.Pose);
+        Position.MergeFrom(other.Position);
+      }
+      if (other.orientation_ != null) {
+        if (orientation_ == null) {
+          Orientation = new global::Messages.Common.V1.Quad();
+        }
+        Orientation.MergeFrom(other.Orientation);
       }
       if (other.AnchorId.Length != 0) {
         AnchorId = other.AnchorId;
@@ -581,21 +646,32 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.Pose();
-            }
-            input.ReadMessage(Pose);
+            Id = input.ReadString();
             break;
           }
           case 18: {
-            AnchorId = input.ReadString();
+            if (position_ == null) {
+              Position = new global::Messages.Common.V1.Point();
+            }
+            input.ReadMessage(Position);
             break;
           }
-          case 24: {
-            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+          case 26: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Common.V1.Quad();
+            }
+            input.ReadMessage(Orientation);
             break;
           }
           case 34: {
+            AnchorId = input.ReadString();
+            break;
+          }
+          case 40: {
+            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+            break;
+          }
+          case 50: {
             if (lastUpdated_ == null) {
               LastUpdated = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
@@ -622,21 +698,32 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.Pose();
-            }
-            input.ReadMessage(Pose);
+            Id = input.ReadString();
             break;
           }
           case 18: {
-            AnchorId = input.ReadString();
+            if (position_ == null) {
+              Position = new global::Messages.Common.V1.Point();
+            }
+            input.ReadMessage(Position);
             break;
           }
-          case 24: {
-            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+          case 26: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Common.V1.Quad();
+            }
+            input.ReadMessage(Orientation);
             break;
           }
           case 34: {
+            AnchorId = input.ReadString();
+            break;
+          }
+          case 40: {
+            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+            break;
+          }
+          case 50: {
             if (lastUpdated_ == null) {
               LastUpdated = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }

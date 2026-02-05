@@ -25,3 +25,7 @@ message HelperMessage {
   repeated ar.v1.Property properties = 6;
   repeated ar.v1.Property output_properties = 7;
 }
+
+message HelperMessages {
+  repeated HelperMessage helpers = 1;
+}

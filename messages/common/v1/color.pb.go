@@ -7,6 +7,7 @@
 package commonv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -94,9 +95,11 @@ var File_common_v1_color_proto protoreflect.FileDescriptor
 
 const file_common_v1_color_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/color.proto\x12\tcommon.v1\"Y\n" +
-	"\x05Color\x12\x10\n" +
-	"\x03red\x18\x01 \x01(\x02R\x03red\x12\x14\n" +
+	"\x15common/v1/color.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"j\n" +
+	"\x05Color\x12!\n" +
+	"\x03red\x18\x01 \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x03red\x12\x14\n" +
 	"\x05green\x18\x02 \x01(\x02R\x05green\x12\x12\n" +
 	"\x04blue\x18\x03 \x01(\x02R\x04blue\x12\x14\n" +
 	"\x05alpha\x18\x04 \x01(\x02R\x05alphaB\xa2\x01\n" +

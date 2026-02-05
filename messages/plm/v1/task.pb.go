@@ -205,11 +205,15 @@ func (TaskAssignmentPreference) EnumDescriptor() ([]byte, []int) {
 	return file_plm_v1_task_proto_rawDescGZIP(), []int{2}
 }
 
+// TODO: add required skill?
+// TODO: add tool_role?
+// TODO: add validation
+// TODO: add allowed_actors
 type TaskMessage struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
 	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"` // TODO: rename to instruction_text
 	SequenceNumber       int64                    `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
 	PartId               string                   `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
 	ModelId              string                   `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`

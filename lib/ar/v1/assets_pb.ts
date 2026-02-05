@@ -6,13 +6,14 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/assets.proto.
  */
 export const file_ar_v1_assets: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9hc3NldHMucHJvdG8SBWFyLnYxIsMBCgxBc3NldE1lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh4KBHR5cGUYBSABKA4yEC5hci52MS5Bc3NldFR5cGUSMQoRYXNzZXRfZHJpdmVyX3R5cGUYBiABKA4yFi5hci52MS5Bc3NldERyaXZlclR5cGUSIwoKcHJvcGVydGllcxgHIAMoCzIPLmFyLnYxLlByb3BlcnR5IjQKDUFzc2V0TWVzc2FnZXMSIwoGYXNzZXRzGAEgAygLMhMuYXIudjEuQXNzZXRNZXNzYWdlKm0KCUFzc2V0VHlwZRIaChZBU1NFVF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQRV9DQU1FUkEQARIUChBBU1NFVF9UWVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQRV9DT05WRVlPUhADKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAUKHAQoJY29tLmFyLnYxQgtBc3NldHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_property]);
+  fileDesc("ChJhci92MS9hc3NldHMucHJvdG8SBWFyLnYxIuoBCgxBc3NldE1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLQoEdHlwZRgFIAEoDjIQLmFyLnYxLkFzc2V0VHlwZUINukgKyAEBggEEEAEoARI+ChFhc3NldF9kcml2ZXJfdHlwZRgGIAEoDjIWLmFyLnYxLkFzc2V0RHJpdmVyVHlwZUILukgIyAEBggECEAESIwoKcHJvcGVydGllcxgHIAMoCzIPLmFyLnYxLlByb3BlcnR5IjQKDUFzc2V0TWVzc2FnZXMSIwoGYXNzZXRzGAEgAygLMhMuYXIudjEuQXNzZXRNZXNzYWdlKm0KCUFzc2V0VHlwZRIaChZBU1NFVF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQRV9DQU1FUkEQARIUChBBU1NFVF9UWVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQRV9DT05WRVlPUhADKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAUKHAQoJY29tLmFyLnYxQgtBc3NldHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_property, file_buf_validate_validate]);
 
 /**
  * @generated from message ar.v1.AssetMessage
@@ -24,16 +25,22 @@ export type AssetMessage = Message<"ar.v1.AssetMessage"> & {
   id: string;
 
   /**
+   * Name of the asset
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * Optional icon representing the asset
+   *
    * @generated from field: string icon = 3;
    */
   icon: string;
 
   /**
+   * Optional description of the asset
+   *
    * @generated from field: string description = 4;
    */
   description: string;

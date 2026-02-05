@@ -24,15 +24,16 @@ namespace Messages.Common.V1 {
     static ColorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJZCgVDb2xvchIQ",
-            "CgNyZWQYASABKAJSA3JlZBIUCgVncmVlbhgCIAEoAlIFZ3JlZW4SEgoEYmx1",
-            "ZRgDIAEoAlIEYmx1ZRIUCgVhbHBoYRgEIAEoAlIFYWxwaGFCogEKDWNvbS5j",
-            "b21tb24udjFCCkNvbG9yUHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1l",
-            "c3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJN",
-            "ZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
+            "ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MRobYnVmL3ZhbGlk",
+            "YXRlL3ZhbGlkYXRlLnByb3RvImoKBUNvbG9yEiEKA3JlZBgBIAEoAkIPukgM",
+            "CgodAACAPy0AAAAAUgNyZWQSFAoFZ3JlZW4YAiABKAJSBWdyZWVuEhIKBGJs",
+            "dWUYAyABKAJSBGJsdWUSFAoFYWxwaGEYBCABKAJSBWFscGhhQqIBCg1jb20u",
+            "Y29tbW9uLnYxQgpDb2xvclByb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJN",
+            "ZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BC",
+            "TWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Color), global::Messages.Common.V1.Color.Parser, new[]{ "Red", "Green", "Blue", "Alpha" }, null, null, null, null)
           }));

@@ -19,6 +19,7 @@ class ProcessType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_TYPE_ASSEMBLY: _ClassVar[ProcessType]
     PROCESS_TYPE_DISASSEMBLY: _ClassVar[ProcessType]
     PROCESS_TYPE_INSPECTION: _ClassVar[ProcessType]
+    PROCESS_TYPE_CHECKLIST: _ClassVar[ProcessType]
 
 class ProcessState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -31,6 +32,7 @@ PROCESS_TYPE_UNSPECIFIED: ProcessType
 PROCESS_TYPE_ASSEMBLY: ProcessType
 PROCESS_TYPE_DISASSEMBLY: ProcessType
 PROCESS_TYPE_INSPECTION: ProcessType
+PROCESS_TYPE_CHECKLIST: ProcessType
 PROCESS_STATE_UNSPECIFIED: ProcessState
 PROCESS_STATE_WAITING: ProcessState
 PROCESS_STATE_IN_PROGRESS: ProcessState

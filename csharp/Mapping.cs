@@ -31,7 +31,7 @@ namespace Messages.AR.V1 {
             "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
             "aXB0aW9uEicKD2Vudmlyb25tZW50X2lkcxgFIAMoCVIOZW52aXJvbm1lbnRJ",
             "ZHMSQwoUYXJfY29uZmlnX3ByaW9yaXRpZXMYBiADKAsyES5hci52MS5BUlBy",
-            "aW9yaXR5UhJhckNvbmZpZ1ByaW9yaXRpZXMiRAoPTWFwcGluZ3NNZXNzYWdl",
+            "aW9yaXR5UhJhckNvbmZpZ1ByaW9yaXRpZXMiRAoPTWFwcGluZ01lc3NhZ2Vz",
             "EjEKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEuTWFwcGluZ01lc3NhZ2VSCG1h",
             "cHBpbmdzQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIu",
             "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
@@ -42,7 +42,7 @@ namespace Messages.AR.V1 {
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARPriority), global::Messages.AR.V1.ARPriority.Parser, new[]{ "ArConfigId", "ActivePropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentIds", "ArConfigPriorities" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingsMessage), global::Messages.AR.V1.MappingsMessage.Parser, new[]{ "Mappings" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessages), global::Messages.AR.V1.MappingMessages.Parser, new[]{ "Mappings" }, null, null, null, null)
           }));
     }
     #endregion
@@ -646,16 +646,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class MappingsMessage : pb::IMessage<MappingsMessage>
+  public sealed partial class MappingMessages : pb::IMessage<MappingMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MappingsMessage> _parser = new pb::MessageParser<MappingsMessage>(() => new MappingsMessage());
+    private static readonly pb::MessageParser<MappingMessages> _parser = new pb::MessageParser<MappingMessages>(() => new MappingMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MappingsMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<MappingMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -671,7 +671,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MappingsMessage() {
+    public MappingMessages() {
       OnConstruction();
     }
 
@@ -679,15 +679,15 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MappingsMessage(MappingsMessage other) : this() {
+    public MappingMessages(MappingMessages other) : this() {
       mappings_ = other.mappings_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MappingsMessage Clone() {
-      return new MappingsMessage(this);
+    public MappingMessages Clone() {
+      return new MappingMessages(this);
     }
 
     /// <summary>Field number for the "mappings" field.</summary>
@@ -704,12 +704,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MappingsMessage);
+      return Equals(other as MappingMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MappingsMessage other) {
+    public bool Equals(MappingMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -774,7 +774,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MappingsMessage other) {
+    public void MergeFrom(MappingMessages other) {
       if (other == null) {
         return;
       }

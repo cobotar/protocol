@@ -2,6 +2,8 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/property.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -11,9 +13,11 @@ enum FeedbackType {
   FEEDBACK_TYPE_TASK_HIGHLIGHT = 10;
   FEEDBACK_TYPE_TASK_PART_HIGHLIGHT = 11;
   FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT = 12;
-  FEEDBACK_TYPE_TASK_OVERVIEW = 13;
+  FEEDBACK_TYPE_TASK_OVERVIEW = 13; // Provides an overview of all current tasks
+  FEEDBACK_TYPE_TASK_INSTRUCTION = 14; // Provide instructions of the current task
+  FEEDBACK_TYPE_TASK_CHECKLIST = 15; // Tailored towards tasks that are more checklist oriented than assembly
 
-  FEEDBACK_TYPE_ROBOT_PATH = 50;
+  FEEDBACK_TYPE_ROBOT_PATH = 50; // Show the expected path of the robot
   FEEDBACK_TYPE_ROBOT_SILHOUETTE = 51;
   FEEDBACK_TYPE_ROBOT_WAYPOINTS = 52;
   FEEDBACK_TYPE_ROBOT_STATUS = 53;
@@ -28,10 +32,24 @@ enum FeedbackType {
 
 message FeedbackMessage {
   string id = 1;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  FeedbackType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated ar.v1.Property properties = 6;
+  repeated ar.v1.Property output_properties = 7;
+}
+
+message FeedbackMessages {
+  repeated FeedbackMessage feedbacks = 1;
+}
+
+message FeedbackCloneMessage {
+  string original_id = 1;
   string name = 2;
   string icon = 3;
   string description = 4;
-  FeedbackType type = 5;
-  repeated ar.v1.Property properties = 6;
-  repeated ar.v1.Property output_properties = 7;
 }

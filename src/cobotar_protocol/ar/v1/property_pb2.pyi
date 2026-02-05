@@ -1,3 +1,5 @@
+from ar.v1 import permissions_pb2 as _permissions_pb2
+from buf.validate import validate_pb2 as _validate_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -46,7 +48,7 @@ PROPERTY_ORIGIN_FIXED: PropertyOrigin
 PROPERTY_ORIGIN_MIRROR: PropertyOrigin
 
 class Property(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "value", "extras", "user_editable", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group")
+    __slots__ = ("id", "name", "icon", "description", "type", "value", "extras", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -54,7 +56,7 @@ class Property(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     EXTRAS_FIELD_NUMBER: _ClassVar[int]
-    USER_EDITABLE_FIELD_NUMBER: _ClassVar[int]
+    MINIMUM_REQUIRED_PERMISSION_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     ORIGINS_FIELD_NUMBER: _ClassVar[int]
     MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -68,11 +70,11 @@ class Property(_message.Message):
     type: PropertyType
     value: str
     extras: str
-    user_editable: bool
+    minimum_required_permission: _permissions_pb2.WorkerPermission
     origin: PropertyOrigin
     origins: _containers.RepeatedScalarFieldContainer[PropertyOrigin]
     mirror_property_id: str
     group: str
     ordering: int
     hide_group: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., user_editable: bool = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...

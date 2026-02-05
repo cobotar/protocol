@@ -44,17 +44,18 @@ namespace Messages.Plm.V1 {
             "c3RhdGUYCiABKA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlUgVzdGF0ZRIwCgVl",
             "bmRlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBWVuZGVk",
             "IkgKEFByb2Nlc3Nlc01lc3NhZ2USNAoJcHJvY2Vzc2VzGAEgAygLMhYucGxt",
-            "LnYxLlByb2Nlc3NNZXNzYWdlUglwcm9jZXNzZXMqgQEKC1Byb2Nlc3NUeXBl",
+            "LnYxLlByb2Nlc3NNZXNzYWdlUglwcm9jZXNzZXMqnQEKC1Byb2Nlc3NUeXBl",
             "EhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAAEhkKFVBST0NFU1NfVFlQ",
             "RV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9ESVNBU1NFTUJMWRACEhsK",
-            "F1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMqnwEKDFByb2Nlc3NTdGF0ZRId",
-            "ChlQUk9DRVNTX1NUQVRFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19TVEFU",
-            "RV9XQUlUSU5HEAESHQoZUFJPQ0VTU19TVEFURV9JTl9QUk9HUkVTUxACEhsK",
-            "F1BST0NFU1NfU1RBVEVfQ09NUExFVEVEEAMSGQoVUFJPQ0VTU19TVEFURV9B",
-            "Qk9SVEVEEARCjwEKCmNvbS5wbG0udjFCDFByb2Nlc3NQcm90b1ABWjFnaXRo",
-            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYx",
-            "ogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQ",
-            "Qk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
+            "F1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMSGgoWUFJPQ0VTU19UWVBFX0NI",
+            "RUNLTElTVBAEKp8BCgxQcm9jZXNzU3RhdGUSHQoZUFJPQ0VTU19TVEFURV9V",
+            "TlNQRUNJRklFRBAAEhkKFVBST0NFU1NfU1RBVEVfV0FJVElORxABEh0KGVBS",
+            "T0NFU1NfU1RBVEVfSU5fUFJPR1JFU1MQAhIbChdQUk9DRVNTX1NUQVRFX0NP",
+            "TVBMRVRFRBADEhkKFVBST0NFU1NfU1RBVEVfQUJPUlRFRBAEQo8BCgpjb20u",
+            "cGxtLnYxQgxQcm9jZXNzUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2Vz",
+            "LlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ProcessType), typeof(global::Messages.Plm.V1.ProcessState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -71,7 +72,14 @@ namespace Messages.Plm.V1 {
     [pbr::OriginalName("PROCESS_TYPE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("PROCESS_TYPE_ASSEMBLY")] Assembly = 1,
     [pbr::OriginalName("PROCESS_TYPE_DISASSEMBLY")] Disassembly = 2,
+    /// <summary>
+    /// TODO: what should this be?
+    /// </summary>
     [pbr::OriginalName("PROCESS_TYPE_INSPECTION")] Inspection = 3,
+    /// <summary>
+    /// TODO: this could be startup procedures, fault fixing, ...
+    /// </summary>
+    [pbr::OriginalName("PROCESS_TYPE_CHECKLIST")] Checklist = 4,
   }
 
   public enum ProcessState {
@@ -85,6 +93,10 @@ namespace Messages.Plm.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: should 'running' be called process and 'static' recipe?
+  /// TODO: Add/assign the agent(s) at runtime, instead of allocating them to the environment. THen there could also be a situation where each agent is asked to take a task during execution.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessMessage : pb::IMessage<ProcessMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
