@@ -470,27 +470,27 @@ func (x *EnvironmentMessage) GetProperties() []*Property {
 	return nil
 }
 
-type EnvironmentsMessage struct {
+type EnvironmentMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Environments  []*EnvironmentMessage  `protobuf:"bytes,1,rep,name=environments,proto3" json:"environments,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *EnvironmentsMessage) Reset() {
-	*x = EnvironmentsMessage{}
+func (x *EnvironmentMessages) Reset() {
+	*x = EnvironmentMessages{}
 	mi := &file_ar_v1_environment_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *EnvironmentsMessage) String() string {
+func (x *EnvironmentMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*EnvironmentsMessage) ProtoMessage() {}
+func (*EnvironmentMessages) ProtoMessage() {}
 
-func (x *EnvironmentsMessage) ProtoReflect() protoreflect.Message {
+func (x *EnvironmentMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_environment_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -502,12 +502,12 @@ func (x *EnvironmentsMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use EnvironmentsMessage.ProtoReflect.Descriptor instead.
-func (*EnvironmentsMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use EnvironmentMessages.ProtoReflect.Descriptor instead.
+func (*EnvironmentMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_environment_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *EnvironmentsMessage) GetEnvironments() []*EnvironmentMessage {
+func (x *EnvironmentMessages) GetEnvironments() []*EnvironmentMessage {
 	if x != nil {
 		return x.Environments
 	}
@@ -549,7 +549,7 @@ const file_ar_v1_environment_proto_rawDesc = "" +
 	"\n" +
 	"properties\x18\v \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\"T\n" +
-	"\x13EnvironmentsMessage\x12=\n" +
+	"\x13EnvironmentMessages\x12=\n" +
 	"\fenvironments\x18\x01 \x03(\v2\x19.ar.v1.EnvironmentMessageR\fenvironments*\xac\x02\n" +
 	"\x0fEnvironmentType\x12 \n" +
 	"\x1cENVIRONMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n" +
@@ -584,7 +584,7 @@ var file_ar_v1_environment_proto_goTypes = []any{
 	(*PartLocation)(nil),        // 4: ar.v1.PartLocation
 	(*ToolLocation)(nil),        // 5: ar.v1.ToolLocation
 	(*EnvironmentMessage)(nil),  // 6: ar.v1.EnvironmentMessage
-	(*EnvironmentsMessage)(nil), // 7: ar.v1.EnvironmentsMessage
+	(*EnvironmentMessages)(nil), // 7: ar.v1.EnvironmentMessages
 	(*v1.LocalizedPose)(nil),    // 8: geometry.v1.LocalizedPose
 	(*Property)(nil),            // 9: ar.v1.Property
 }
@@ -601,7 +601,7 @@ var file_ar_v1_environment_proto_depIdxs = []int32{
 	4,  // 9: ar.v1.EnvironmentMessage.parts:type_name -> ar.v1.PartLocation
 	5,  // 10: ar.v1.EnvironmentMessage.tools:type_name -> ar.v1.ToolLocation
 	9,  // 11: ar.v1.EnvironmentMessage.properties:type_name -> ar.v1.Property
-	6,  // 12: ar.v1.EnvironmentsMessage.environments:type_name -> ar.v1.EnvironmentMessage
+	6,  // 12: ar.v1.EnvironmentMessages.environments:type_name -> ar.v1.EnvironmentMessage
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name

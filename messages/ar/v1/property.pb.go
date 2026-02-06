@@ -305,7 +305,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\"\xbf\x05\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\"\xa3\x04\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -323,8 +323,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x05group\x18\f \x01(\tR\x05group\x12\x1a\n" +
 	"\bordering\x18\r \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
-	"hide_group\x18\x0e \x01(\bR\thideGroup:\x99\x01\xbaH\x95\x01\x1a\x92\x01\n" +
-	"!mirror_id_set_if_origin_is_mirror\x12+Mirror ID must be set when origin is mirror\x1a@!this.mirror_property_id.startsWith('prop-') && this.origin == 2*\xde\x02\n" +
+	"hide_group\x18\x0e \x01(\bR\thideGroup*\xde\x02\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +

@@ -75,7 +75,7 @@
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AssetLocation](#ar-v1-AssetLocation)
     - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
-    - [EnvironmentsMessage](#ar-v1-EnvironmentsMessage)
+    - [EnvironmentMessages](#ar-v1-EnvironmentMessages)
     - [MarkerLocation](#ar-v1-MarkerLocation)
     - [PartLocation](#ar-v1-PartLocation)
     - [RobotLocation](#ar-v1-RobotLocation)
@@ -148,7 +148,7 @@
   
     - [LineType](#plm-v1-LineType)
   
-- [plm/v1/models.proto](#plm_v1_models-proto)
+- [plm/v1/model.proto](#plm_v1_model-proto)
     - [ModelMessage](#plm-v1-ModelMessage)
     - [ModelMessages](#plm-v1-ModelMessages)
   
@@ -355,6 +355,13 @@ TODO: consider the order. It should be possible to use &lt; or &gt; to determine
 
 ### Property
 Properties are used by various components to define them, such as: feedback, actions, and conditions.
+
+TODO: Fix this
+option (buf.validate.message).cel = {
+id: &#34;mirror_id_set_if_origin_is_mirror&#34;
+expression: &#34;!this.mirror_property_id.startsWith(&#39;prop-&#39;) &amp;&amp; this.origin == 2&#34;
+message: &#34;Mirror ID must be set when origin is mirror&#34;
+};
 
 
 | Field | Type | Label | Description |
@@ -1171,9 +1178,9 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-EnvironmentsMessage"></a>
+<a name="ar-v1-EnvironmentMessages"></a>
 
-### EnvironmentsMessage
+### EnvironmentMessages
 
 
 
@@ -2014,10 +2021,10 @@ TODO: allow multiple processes to make active at the same time?
 
 
 
-<a name="plm_v1_models-proto"></a>
+<a name="plm_v1_model-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plm/v1/models.proto
+## plm/v1/model.proto
 
 
 
@@ -2030,8 +2037,11 @@ TODO: allow multiple processes to make active at the same time?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| url | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| group | [string](#string) |  |  |
+| url | [string](#string) |  |  |
 
 
 

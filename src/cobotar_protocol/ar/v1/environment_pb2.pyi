@@ -94,7 +94,7 @@ class EnvironmentMessage(_message.Message):
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[EnvironmentType, str]] = ..., markers: _Optional[_Iterable[_Union[MarkerLocation, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[RobotLocation, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[AssetLocation, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[PartLocation, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[ToolLocation, _Mapping]]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
 
-class EnvironmentsMessage(_message.Message):
+class EnvironmentMessages(_message.Message):
     __slots__ = ("environments",)
     ENVIRONMENTS_FIELD_NUMBER: _ClassVar[int]
     environments: _containers.RepeatedCompositeFieldContainer[EnvironmentMessage]

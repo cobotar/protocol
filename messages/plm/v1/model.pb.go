@@ -2,11 +2,13 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: plm/v1/models.proto
+// source: plm/v1/model.proto
 
 package plmv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -24,15 +26,18 @@ const (
 type ModelMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Url           string                 `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Group         string                 `protobuf:"bytes,5,opt,name=group,proto3" json:"group,omitempty"`
+	Url           string                 `protobuf:"bytes,6,opt,name=url,proto3" json:"url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ModelMessage) Reset() {
 	*x = ModelMessage{}
-	mi := &file_plm_v1_models_proto_msgTypes[0]
+	mi := &file_plm_v1_model_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +49,7 @@ func (x *ModelMessage) String() string {
 func (*ModelMessage) ProtoMessage() {}
 
 func (x *ModelMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_models_proto_msgTypes[0]
+	mi := &file_plm_v1_model_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +62,7 @@ func (x *ModelMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMessage.ProtoReflect.Descriptor instead.
 func (*ModelMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_models_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_model_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ModelMessage) GetId() string {
@@ -67,16 +72,37 @@ func (x *ModelMessage) GetId() string {
 	return ""
 }
 
-func (x *ModelMessage) GetUrl() string {
+func (x *ModelMessage) GetName() string {
 	if x != nil {
-		return x.Url
+		return x.Name
 	}
 	return ""
 }
 
-func (x *ModelMessage) GetName() string {
+func (x *ModelMessage) GetIcon() string {
 	if x != nil {
-		return x.Name
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ModelMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ModelMessage) GetGroup() string {
+	if x != nil {
+		return x.Group
+	}
+	return ""
+}
+
+func (x *ModelMessage) GetUrl() string {
+	if x != nil {
+		return x.Url
 	}
 	return ""
 }
@@ -90,7 +116,7 @@ type ModelMessages struct {
 
 func (x *ModelMessages) Reset() {
 	*x = ModelMessages{}
-	mi := &file_plm_v1_models_proto_msgTypes[1]
+	mi := &file_plm_v1_model_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -102,7 +128,7 @@ func (x *ModelMessages) String() string {
 func (*ModelMessages) ProtoMessage() {}
 
 func (x *ModelMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_models_proto_msgTypes[1]
+	mi := &file_plm_v1_model_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +141,7 @@ func (x *ModelMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMessages.ProtoReflect.Descriptor instead.
 func (*ModelMessages) Descriptor() ([]byte, []int) {
-	return file_plm_v1_models_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_model_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ModelMessages) GetModels() []*ModelMessage {
@@ -125,38 +151,43 @@ func (x *ModelMessages) GetModels() []*ModelMessage {
 	return nil
 }
 
-var File_plm_v1_models_proto protoreflect.FileDescriptor
+var File_plm_v1_model_proto protoreflect.FileDescriptor
 
-const file_plm_v1_models_proto_rawDesc = "" +
+const file_plm_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x13plm/v1/models.proto\x12\x06plm.v1\"D\n" +
+	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa7\x01\n" +
 	"\fModelMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x10\n" +
-	"\x03url\x18\x02 \x01(\tR\x03url\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\"=\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x14\n" +
+	"\x05group\x18\x05 \x01(\tR\x05group\x12\x1c\n" +
+	"\x03url\x18\x06 \x01(\tB\n" +
+	"\xbaH\a\xd8\x01\x01r\x02h\x01R\x03url\"=\n" +
 	"\rModelMessages\x12,\n" +
-	"\x06models\x18\x01 \x03(\v2\x14.plm.v1.ModelMessageR\x06modelsB\x8e\x01\n" +
+	"\x06models\x18\x01 \x03(\v2\x14.plm.v1.ModelMessageR\x06modelsB\x8d\x01\n" +
 	"\n" +
-	"com.plm.v1B\vModelsProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
+	"com.plm.v1B\n" +
+	"ModelProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
 var (
-	file_plm_v1_models_proto_rawDescOnce sync.Once
-	file_plm_v1_models_proto_rawDescData []byte
+	file_plm_v1_model_proto_rawDescOnce sync.Once
+	file_plm_v1_model_proto_rawDescData []byte
 )
 
-func file_plm_v1_models_proto_rawDescGZIP() []byte {
-	file_plm_v1_models_proto_rawDescOnce.Do(func() {
-		file_plm_v1_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_models_proto_rawDesc), len(file_plm_v1_models_proto_rawDesc)))
+func file_plm_v1_model_proto_rawDescGZIP() []byte {
+	file_plm_v1_model_proto_rawDescOnce.Do(func() {
+		file_plm_v1_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_model_proto_rawDesc), len(file_plm_v1_model_proto_rawDesc)))
 	})
-	return file_plm_v1_models_proto_rawDescData
+	return file_plm_v1_model_proto_rawDescData
 }
 
-var file_plm_v1_models_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_plm_v1_models_proto_goTypes = []any{
+var file_plm_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_plm_v1_model_proto_goTypes = []any{
 	(*ModelMessage)(nil),  // 0: plm.v1.ModelMessage
 	(*ModelMessages)(nil), // 1: plm.v1.ModelMessages
 }
-var file_plm_v1_models_proto_depIdxs = []int32{
+var file_plm_v1_model_proto_depIdxs = []int32{
 	0, // 0: plm.v1.ModelMessages.models:type_name -> plm.v1.ModelMessage
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
@@ -165,26 +196,26 @@ var file_plm_v1_models_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_plm_v1_models_proto_init() }
-func file_plm_v1_models_proto_init() {
-	if File_plm_v1_models_proto != nil {
+func init() { file_plm_v1_model_proto_init() }
+func file_plm_v1_model_proto_init() {
+	if File_plm_v1_model_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_models_proto_rawDesc), len(file_plm_v1_models_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_model_proto_rawDesc), len(file_plm_v1_model_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_plm_v1_models_proto_goTypes,
-		DependencyIndexes: file_plm_v1_models_proto_depIdxs,
-		MessageInfos:      file_plm_v1_models_proto_msgTypes,
+		GoTypes:           file_plm_v1_model_proto_goTypes,
+		DependencyIndexes: file_plm_v1_model_proto_depIdxs,
+		MessageInfos:      file_plm_v1_model_proto_msgTypes,
 	}.Build()
-	File_plm_v1_models_proto = out.File
-	file_plm_v1_models_proto_goTypes = nil
-	file_plm_v1_models_proto_depIdxs = nil
+	File_plm_v1_model_proto = out.File
+	file_plm_v1_model_proto_goTypes = nil
+	file_plm_v1_model_proto_depIdxs = nil
 }

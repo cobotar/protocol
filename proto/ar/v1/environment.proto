@@ -57,6 +57,6 @@ message EnvironmentMessage {
   repeated ar.v1.Property properties = 11;
 }
 
-message EnvironmentsMessage {
+message EnvironmentMessages {
   repeated EnvironmentMessage environments = 1;
 }

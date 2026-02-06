@@ -45,7 +45,7 @@ namespace Messages.AR.V1 {
             "b25SBmFzc2V0cxIpCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlv",
             "blIFcGFydHMSKQoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRpb25S",
             "BXRvb2xzEi8KCnByb3BlcnRpZXMYCyADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
-            "cHJvcGVydGllcyJUChNFbnZpcm9ubWVudHNNZXNzYWdlEj0KDGVudmlyb25t",
+            "cHJvcGVydGllcyJUChNFbnZpcm9ubWVudE1lc3NhZ2VzEj0KDGVudmlyb25t",
             "ZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZVIMZW52aXJv",
             "bm1lbnRzKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQ",
             "RV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRAB",
@@ -67,7 +67,7 @@ namespace Messages.AR.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PartLocation), global::Messages.AR.V1.PartLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ToolLocation), global::Messages.AR.V1.ToolLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools", "Properties" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentsMessage), global::Messages.AR.V1.EnvironmentsMessage.Parser, new[]{ "Environments" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessages), global::Messages.AR.V1.EnvironmentMessages.Parser, new[]{ "Environments" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1814,16 +1814,16 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EnvironmentsMessage : pb::IMessage<EnvironmentsMessage>
+  public sealed partial class EnvironmentMessages : pb::IMessage<EnvironmentMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<EnvironmentsMessage> _parser = new pb::MessageParser<EnvironmentsMessage>(() => new EnvironmentsMessage());
+    private static readonly pb::MessageParser<EnvironmentMessages> _parser = new pb::MessageParser<EnvironmentMessages>(() => new EnvironmentMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EnvironmentsMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<EnvironmentMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1839,7 +1839,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EnvironmentsMessage() {
+    public EnvironmentMessages() {
       OnConstruction();
     }
 
@@ -1847,15 +1847,15 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EnvironmentsMessage(EnvironmentsMessage other) : this() {
+    public EnvironmentMessages(EnvironmentMessages other) : this() {
       environments_ = other.environments_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EnvironmentsMessage Clone() {
-      return new EnvironmentsMessage(this);
+    public EnvironmentMessages Clone() {
+      return new EnvironmentMessages(this);
     }
 
     /// <summary>Field number for the "environments" field.</summary>
@@ -1872,12 +1872,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as EnvironmentsMessage);
+      return Equals(other as EnvironmentMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EnvironmentsMessage other) {
+    public bool Equals(EnvironmentMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1942,7 +1942,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EnvironmentsMessage other) {
+    public void MergeFrom(EnvironmentMessages other) {
       if (other == null) {
         return;
       }

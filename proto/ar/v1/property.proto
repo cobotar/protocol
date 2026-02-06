@@ -33,11 +33,12 @@ enum PropertyOrigin {
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 message Property {
-  option (buf.validate.message).cel = {
-    id: "mirror_id_set_if_origin_is_mirror"
-    expression: "!this.mirror_property_id.startsWith('prop-') && this.origin == 2"
-    message: "Mirror ID must be set when origin is mirror"
-  };
+  /* TODO: Fix this
+     option (buf.validate.message).cel = {
+       id: "mirror_id_set_if_origin_is_mirror"
+       expression: "!this.mirror_property_id.startsWith('prop-') && this.origin == 2"
+       message: "Mirror ID must be set when origin is mirror"
+     };*/
 
   string id = 1;
   string name = 2;

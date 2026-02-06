@@ -1,0 +1,24 @@
+syntax = "proto3";
+package plm.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Plm.V1";
+option go_package = "github.com/cobotar/protocol/messages/plm/v1";
+
+message ModelMessage {
+  string id = 1;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  string group = 5;
+  string url = 6 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.hostname = true
+  ];
+}
+
+message ModelMessages {
+  repeated ModelMessage models = 1;
+}
