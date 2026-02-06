@@ -1,9 +1,9 @@
 name: Buf CI
 on:
   push:
-  pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
-  delete:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
 permissions:
   contents: write
   pull-requests: write
