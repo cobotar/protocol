@@ -25,30 +25,55 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chdhci92MS9oZWxwZXJfaW5mby5wcm90bxIFYXIudjEaEmFyL3YxL2V2ZW50",
-            "cy5wcm90bxoSYXIvdjEvaGVscGVyLnByb3RvItECChFIZWxwZXJJbmZvTWVz",
-            "c2FnZRISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24S",
-            "IAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiUKBHR5cGUYBSAB",
-            "KA4yES5hci52MS5IZWxwZXJUeXBlUgR0eXBlEhQKBWdyb3VwGAYgASgJUgVn",
-            "cm91cBIjCg1yZXF1aXJlX2FnZW50GAcgASgIUgxyZXF1aXJlQWdlbnQSOQoP",
-            "cmVxdWlyZWRfZXZlbnRzGAkgAygOMhAuYXIudjEuRXZlbnRUeXBlUg5yZXF1",
-            "aXJlZEV2ZW50cxI5Cg9vcHRpb25hbF9ldmVudHMYCiADKA4yEC5hci52MS5F",
-            "dmVudFR5cGVSDm9wdGlvbmFsRXZlbnRzEhoKCGRpc2FibGVkGAsgASgIUghk",
-            "aXNhYmxlZCJEChJIZWxwZXJJbmZvTWVzc2FnZXMSLgoFaW5mb3MYASADKAsy",
-            "GC5hci52MS5IZWxwZXJJbmZvTWVzc2FnZVIFaW5mb3NCiwEKCWNvbS5hci52",
-            "MUIPSGVscGVySW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIu",
-            "VjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90",
-            "bzM="));
+            "cy5wcm90bxoSYXIvdjEvaGVscGVyLnByb3RvGhtidWYvdmFsaWRhdGUvdmFs",
+            "aWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
+            "cnVsZXMucHJvdG8isQQKEUhlbHBlckluZm9NZXNzYWdlEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgOMhEu",
+            "YXIudjEuSGVscGVyVHlwZUILukgIggECEAHIAQFSBHR5cGUSMgoFZ3JvdXAY",
+            "BiABKA4yEi5hci52MS5IZWxwZXJHcm91cEIIukgFggECEAFSBWdyb3VwEiMK",
+            "DXJlcXVpcmVfYWdlbnQYByABKAhSDHJlcXVpcmVBZ2VudBIjCg1yZXF1aXJl",
+            "X2ZyYW1lGAggASgIUgxyZXF1aXJlRnJhbWUSQgoSY29uc3VtZXJzX3JlcXVp",
+            "cmVkGAkgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlUhFjb25zdW1lcnNSZXF1",
+            "aXJlZBJCChJjb25zdW1lcnNfb3B0aW9uYWwYCiADKAsyEy5hci52MS5FeGNo",
+            "YW5nZVR5cGVSEWNvbnN1bWVyc09wdGlvbmFsEkYKEXJlcXVpcmVkX2hhbmRs",
+            "ZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50UhByZXF1aXJl",
+            "ZEhhbmRsZXJzEikKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBl",
+            "UgVlbWl0cxIaCghkaXNhYmxlZBgNIAEoCFIIZGlzYWJsZWQiRAoSSGVscGVy",
+            "SW5mb01lc3NhZ2VzEi4KBWluZm9zGAEgAygLMhguYXIudjEuSGVscGVySW5m",
+            "b01lc3NhZ2VSBWluZm9zKt8BCgtIZWxwZXJHcm91cBIcChhIRUxQRVJfR1JP",
+            "VVBfVU5TUEVDSUZJRUQQABIYChRIRUxQRVJfR1JPVVBfR0VORVJBTBABEhYK",
+            "EkhFTFBFUl9HUk9VUF9ST0JPVBACEhUKEUhFTFBFUl9HUk9VUF9UQVNLEAMS",
+            "HAoYSEVMUEVSX0dST1VQX0VOVklST05NRU5UEAQSGQoVSEVMUEVSX0dST1VQ",
+            "X09QRVJBVE9SEAUSGAoUSEVMUEVSX0dST1VQX1NQQVRJQUwQBhIWChJIRUxQ",
+            "RVJfR1JPVVBfTE9HSUMQB0KLAQoJY29tLmFyLnYxQg9IZWxwZXJJbmZvUHJv",
+            "dG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fy",
+            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
+            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.HelperReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.HelperInfoMessage), global::Messages.AR.V1.HelperInfoMessage.Parser, new[]{ "Name", "Icon", "Description", "Type", "Group", "RequireAgent", "RequiredEvents", "OptionalEvents", "Disabled" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.HelperReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.HelperGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.HelperInfoMessage), global::Messages.AR.V1.HelperInfoMessage.Parser, new[]{ "Name", "Icon", "Description", "Type", "Group", "RequireAgent", "RequireFrame", "ConsumersRequired", "ConsumersOptional", "RequiredHandlers", "Emits", "Disabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.HelperInfoMessages), global::Messages.AR.V1.HelperInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum HelperGroup {
+    [pbr::OriginalName("HELPER_GROUP_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("HELPER_GROUP_GENERAL")] General = 1,
+    [pbr::OriginalName("HELPER_GROUP_ROBOT")] Robot = 2,
+    [pbr::OriginalName("HELPER_GROUP_TASK")] Task = 3,
+    [pbr::OriginalName("HELPER_GROUP_ENVIRONMENT")] Environment = 4,
+    [pbr::OriginalName("HELPER_GROUP_OPERATOR")] Operator = 5,
+    [pbr::OriginalName("HELPER_GROUP_SPATIAL")] Spatial = 6,
+    [pbr::OriginalName("HELPER_GROUP_LOGIC")] Logic = 7,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class HelperInfoMessage : pb::IMessage<HelperInfoMessage>
@@ -91,8 +116,11 @@ namespace Messages.AR.V1 {
       type_ = other.type_;
       group_ = other.group_;
       requireAgent_ = other.requireAgent_;
-      requiredEvents_ = other.requiredEvents_.Clone();
-      optionalEvents_ = other.optionalEvents_.Clone();
+      requireFrame_ = other.requireFrame_;
+      consumersRequired_ = other.consumersRequired_.Clone();
+      consumersOptional_ = other.consumersOptional_.Clone();
+      requiredHandlers_ = other.requiredHandlers_.Clone();
+      emits_ = other.emits_.Clone();
       disabled_ = other.disabled_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -153,13 +181,13 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "group" field.</summary>
     public const int GroupFieldNumber = 6;
-    private string group_ = "";
+    private global::Messages.AR.V1.HelperGroup group_ = global::Messages.AR.V1.HelperGroup.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Group {
+    public global::Messages.AR.V1.HelperGroup Group {
       get { return group_; }
       set {
-        group_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        group_ = value;
       }
     }
 
@@ -175,30 +203,76 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "required_events" field.</summary>
-    public const int RequiredEventsFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.EventType> _repeated_requiredEvents_codec
-        = pb::FieldCodec.ForEnum(74, x => (int) x, x => (global::Messages.AR.V1.EventType) x);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.EventType> requiredEvents_ = new pbc::RepeatedField<global::Messages.AR.V1.EventType>();
+    /// <summary>Field number for the "require_frame" field.</summary>
+    public const int RequireFrameFieldNumber = 8;
+    private bool requireFrame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.EventType> RequiredEvents {
-      get { return requiredEvents_; }
+    public bool RequireFrame {
+      get { return requireFrame_; }
+      set {
+        requireFrame_ = value;
+      }
     }
 
-    /// <summary>Field number for the "optional_events" field.</summary>
-    public const int OptionalEventsFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.EventType> _repeated_optionalEvents_codec
-        = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Messages.AR.V1.EventType) x);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.EventType> optionalEvents_ = new pbc::RepeatedField<global::Messages.AR.V1.EventType>();
+    /// <summary>Field number for the "consumers_required" field.</summary>
+    public const int ConsumersRequiredFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_consumersRequired_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.ExchangeType.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersRequired_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
+    /// <summary>
+    /// Inputs the action expects to receive
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.EventType> OptionalEvents {
-      get { return optionalEvents_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> ConsumersRequired {
+      get { return consumersRequired_; }
+    }
+
+    /// <summary>Field number for the "consumers_optional" field.</summary>
+    public const int ConsumersOptionalFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_consumersOptional_codec
+        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ExchangeType.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersOptional_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
+    /// <summary>
+    /// Inputs that will enhance the action, but not needed to function
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> ConsumersOptional {
+      get { return consumersOptional_; }
+    }
+
+    /// <summary>Field number for the "required_handlers" field.</summary>
+    public const int RequiredHandlersFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.HandlerRequirement> _repeated_requiredHandlers_codec
+        = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.HandlerRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement> requiredHandlers_ = new pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement>();
+    /// <summary>
+    /// Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement> RequiredHandlers {
+      get { return requiredHandlers_; }
+    }
+
+    /// <summary>Field number for the "emits" field.</summary>
+    public const int EmitsFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_emits_codec
+        = pb::FieldCodec.ForMessage(98, global::Messages.AR.V1.ExchangeType.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> emits_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
+    /// <summary>
+    /// / Outputs the feedback publishes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> Emits {
+      get { return emits_; }
     }
 
     /// <summary>Field number for the "disabled" field.</summary>
-    public const int DisabledFieldNumber = 11;
+    public const int DisabledFieldNumber = 13;
     private bool disabled_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -230,8 +304,11 @@ namespace Messages.AR.V1 {
       if (Type != other.Type) return false;
       if (Group != other.Group) return false;
       if (RequireAgent != other.RequireAgent) return false;
-      if(!requiredEvents_.Equals(other.requiredEvents_)) return false;
-      if(!optionalEvents_.Equals(other.optionalEvents_)) return false;
+      if (RequireFrame != other.RequireFrame) return false;
+      if(!consumersRequired_.Equals(other.consumersRequired_)) return false;
+      if(!consumersOptional_.Equals(other.consumersOptional_)) return false;
+      if(!requiredHandlers_.Equals(other.requiredHandlers_)) return false;
+      if(!emits_.Equals(other.emits_)) return false;
       if (Disabled != other.Disabled) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -244,10 +321,13 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.HelperType.Unspecified) hash ^= Type.GetHashCode();
-      if (Group.Length != 0) hash ^= Group.GetHashCode();
+      if (Group != global::Messages.AR.V1.HelperGroup.Unspecified) hash ^= Group.GetHashCode();
       if (RequireAgent != false) hash ^= RequireAgent.GetHashCode();
-      hash ^= requiredEvents_.GetHashCode();
-      hash ^= optionalEvents_.GetHashCode();
+      if (RequireFrame != false) hash ^= RequireFrame.GetHashCode();
+      hash ^= consumersRequired_.GetHashCode();
+      hash ^= consumersOptional_.GetHashCode();
+      hash ^= requiredHandlers_.GetHashCode();
+      hash ^= emits_.GetHashCode();
       if (Disabled != false) hash ^= Disabled.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -283,18 +363,24 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (Group.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Group);
+      if (Group != global::Messages.AR.V1.HelperGroup.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Group);
       }
       if (RequireAgent != false) {
         output.WriteRawTag(56);
         output.WriteBool(RequireAgent);
       }
-      requiredEvents_.WriteTo(output, _repeated_requiredEvents_codec);
-      optionalEvents_.WriteTo(output, _repeated_optionalEvents_codec);
+      if (RequireFrame != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(RequireFrame);
+      }
+      consumersRequired_.WriteTo(output, _repeated_consumersRequired_codec);
+      consumersOptional_.WriteTo(output, _repeated_consumersOptional_codec);
+      requiredHandlers_.WriteTo(output, _repeated_requiredHandlers_codec);
+      emits_.WriteTo(output, _repeated_emits_codec);
       if (Disabled != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteBool(Disabled);
       }
       if (_unknownFields != null) {
@@ -323,18 +409,24 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (Group.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Group);
+      if (Group != global::Messages.AR.V1.HelperGroup.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Group);
       }
       if (RequireAgent != false) {
         output.WriteRawTag(56);
         output.WriteBool(RequireAgent);
       }
-      requiredEvents_.WriteTo(ref output, _repeated_requiredEvents_codec);
-      optionalEvents_.WriteTo(ref output, _repeated_optionalEvents_codec);
+      if (RequireFrame != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(RequireFrame);
+      }
+      consumersRequired_.WriteTo(ref output, _repeated_consumersRequired_codec);
+      consumersOptional_.WriteTo(ref output, _repeated_consumersOptional_codec);
+      requiredHandlers_.WriteTo(ref output, _repeated_requiredHandlers_codec);
+      emits_.WriteTo(ref output, _repeated_emits_codec);
       if (Disabled != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteBool(Disabled);
       }
       if (_unknownFields != null) {
@@ -359,14 +451,19 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.HelperType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (Group.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Group);
+      if (Group != global::Messages.AR.V1.HelperGroup.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Group);
       }
       if (RequireAgent != false) {
         size += 1 + 1;
       }
-      size += requiredEvents_.CalculateSize(_repeated_requiredEvents_codec);
-      size += optionalEvents_.CalculateSize(_repeated_optionalEvents_codec);
+      if (RequireFrame != false) {
+        size += 1 + 1;
+      }
+      size += consumersRequired_.CalculateSize(_repeated_consumersRequired_codec);
+      size += consumersOptional_.CalculateSize(_repeated_consumersOptional_codec);
+      size += requiredHandlers_.CalculateSize(_repeated_requiredHandlers_codec);
+      size += emits_.CalculateSize(_repeated_emits_codec);
       if (Disabled != false) {
         size += 1 + 1;
       }
@@ -394,14 +491,19 @@ namespace Messages.AR.V1 {
       if (other.Type != global::Messages.AR.V1.HelperType.Unspecified) {
         Type = other.Type;
       }
-      if (other.Group.Length != 0) {
+      if (other.Group != global::Messages.AR.V1.HelperGroup.Unspecified) {
         Group = other.Group;
       }
       if (other.RequireAgent != false) {
         RequireAgent = other.RequireAgent;
       }
-      requiredEvents_.Add(other.requiredEvents_);
-      optionalEvents_.Add(other.optionalEvents_);
+      if (other.RequireFrame != false) {
+        RequireFrame = other.RequireFrame;
+      }
+      consumersRequired_.Add(other.consumersRequired_);
+      consumersOptional_.Add(other.consumersOptional_);
+      requiredHandlers_.Add(other.requiredHandlers_);
+      emits_.Add(other.emits_);
       if (other.Disabled != false) {
         Disabled = other.Disabled;
       }
@@ -440,25 +542,35 @@ namespace Messages.AR.V1 {
             Type = (global::Messages.AR.V1.HelperType) input.ReadEnum();
             break;
           }
-          case 50: {
-            Group = input.ReadString();
+          case 48: {
+            Group = (global::Messages.AR.V1.HelperGroup) input.ReadEnum();
             break;
           }
           case 56: {
             RequireAgent = input.ReadBool();
             break;
           }
-          case 74:
-          case 72: {
-            requiredEvents_.AddEntriesFrom(input, _repeated_requiredEvents_codec);
+          case 64: {
+            RequireFrame = input.ReadBool();
             break;
           }
-          case 82:
-          case 80: {
-            optionalEvents_.AddEntriesFrom(input, _repeated_optionalEvents_codec);
+          case 74: {
+            consumersRequired_.AddEntriesFrom(input, _repeated_consumersRequired_codec);
             break;
           }
-          case 88: {
+          case 82: {
+            consumersOptional_.AddEntriesFrom(input, _repeated_consumersOptional_codec);
+            break;
+          }
+          case 90: {
+            requiredHandlers_.AddEntriesFrom(input, _repeated_requiredHandlers_codec);
+            break;
+          }
+          case 98: {
+            emits_.AddEntriesFrom(input, _repeated_emits_codec);
+            break;
+          }
+          case 104: {
             Disabled = input.ReadBool();
             break;
           }
@@ -497,25 +609,35 @@ namespace Messages.AR.V1 {
             Type = (global::Messages.AR.V1.HelperType) input.ReadEnum();
             break;
           }
-          case 50: {
-            Group = input.ReadString();
+          case 48: {
+            Group = (global::Messages.AR.V1.HelperGroup) input.ReadEnum();
             break;
           }
           case 56: {
             RequireAgent = input.ReadBool();
             break;
           }
-          case 74:
-          case 72: {
-            requiredEvents_.AddEntriesFrom(ref input, _repeated_requiredEvents_codec);
+          case 64: {
+            RequireFrame = input.ReadBool();
             break;
           }
-          case 82:
-          case 80: {
-            optionalEvents_.AddEntriesFrom(ref input, _repeated_optionalEvents_codec);
+          case 74: {
+            consumersRequired_.AddEntriesFrom(ref input, _repeated_consumersRequired_codec);
             break;
           }
-          case 88: {
+          case 82: {
+            consumersOptional_.AddEntriesFrom(ref input, _repeated_consumersOptional_codec);
+            break;
+          }
+          case 90: {
+            requiredHandlers_.AddEntriesFrom(ref input, _repeated_requiredHandlers_codec);
+            break;
+          }
+          case 98: {
+            emits_.AddEntriesFrom(ref input, _repeated_emits_codec);
+            break;
+          }
+          case 104: {
             Disabled = input.ReadBool();
             break;
           }

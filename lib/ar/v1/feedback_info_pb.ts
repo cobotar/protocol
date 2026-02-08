@@ -79,7 +79,7 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
   requiredHandlers: HandlerRequirement[];
 
   /**
-   * / Outputs the action publishes
+   * / Outputs the feedback publishes
    *
    * @generated from field: repeated ar.v1.ExchangeType emits = 12;
    */

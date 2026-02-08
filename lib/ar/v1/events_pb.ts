@@ -11,26 +11,48 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/events.proto.
  */
 export const file_ar_v1_events: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxIr8BCgxFeGNoYW5nZVR5cGUSLQoHY29tbWFuZBgBIAEoDjISLmFyLnYxLkNvbW1hbmRUeXBlQgi6SAWCAQIQARIpCgVldmVudBgCIAEoDjIQLmFyLnYxLkV2ZW50VHlwZUIIukgFggECEAESMQoJdGVsZW1ldHJ5GAMgASgOMhQuYXIudjEuVGVsZW1ldHJ5VHlwZUIIukgFggECEAE6IrpIHyIdCgdjb21tYW5kCgVldmVudAoJdGVsZW1ldHJ5EAEihwEKEkhhbmRsZXJSZXF1aXJlbWVudBIkCgdtZXNzYWdlGAEgASgLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjgKC2NhcmRpbmFsaXR5GAIgASgOMhkuYXIudjEuSGFuZGxlckNhcmRpbmFsaXR5Qgi6SAWCAQIQARIRCglyYXRpb25hbGUYAyABKAkiOgoWU3VwcG9ydGVkRXZlbnRzTWVzc2FnZRIgCgZldmVudHMYASADKA4yEC5hci52MS5FdmVudFR5cGUq5gIKC0NvbW1hbmRUeXBlEhwKGENPTU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEh4KGkNPTU1BTkRfVFlQRV9UQVNLX0NPTVBMRVRFEAoSHAoYQ09NTUFORF9UWVBFX1RBU0tfQVNTSUdOEAsSGgoWQ09NTUFORF9UWVBFX1RBU0tfVU5ETxAMEh8KG0NPTU1BTkRfVFlQRV9UQVNLX0hJR0hMSUdIVBANEhoKFkNPTU1BTkRfVFlQRV9UQVNLX0hFTFAQDhIhCh1DT01NQU5EX1RZUEVfUk9CT1RfU1RBUlRfU1RPUBBkEigKJENPTU1BTkRfVFlQRV9ST0JPVF9UT0dHTEVfRlJFRV9EUklWRRBlEioKJkNPTU1BTkRfVFlQRV9ST0JPVF9TVEFSVF9DT0xMQUJPUkFUSU9OEGYSKQolQ09NTUFORF9UWVBFX1JPQk9UX1NUT1BfQ09MTEFCT1JBVElPThBnKr4BCglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEh8KG0VWRU5UX1RZUEVfUFJPQ0VTU19DT01QTEVURRAKEiIKHkVWRU5UX1RZUEVfUk9CT1RfU1RBUlRJTkdfVEFTSxBkEiUKIUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfSEVMUBBlEikKJUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19UQVNLX1JFTEVBU0UQZir+AQoNVGVsZW1ldHJ5VHlwZRIeChpURUxFTUVUUllfVFlQRV9VTlNQRUNJRklFRBAAEhwKGFRFTEVNRVRSWV9UWVBFX1JPQk9UX1RDUBBkEiUKIVRFTEVNRVRSWV9UWVBFX1JPQk9UX0pPSU5UX0FOR0xFUxBlEiUKIVRFTEVNRVRSWV9UWVBFX1JPQk9UX0ZPUkNFX1RPUlFVRRBmEh4KGlRFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEG4SHQoZVEVMRU1FVFJZX1RZUEVfUk9CT1RfUEFUSBB4EiIKHlRFTEVNRVRSWV9UWVBFX1JPQk9UX1dBWVBPSU5UUxB5KqkBChJIYW5kbGVyQ2FyZGluYWxpdHkSIwofSEFORExFUl9DQVJESU5BTElUWV9VTlNQRUNJRklFRBAAEiQKIEhBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTEVBU1RfT05FEAESIwofSEFORExFUl9DQVJESU5BTElUWV9FWEFDVExZX09ORRACEiMKH0hBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTU9TVF9PTkUQA0KHAQoJY29tLmFyLnYxQgtFdmVudHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxIuwBCgxFeGNoYW5nZVR5cGUSLQoHY29tbWFuZBgBIAEoDjISLmFyLnYxLkNvbW1hbmRUeXBlQgi6SAWCAQIQARIpCgVldmVudBgCIAEoDjIQLmFyLnYxLkV2ZW50VHlwZUIIukgFggECEAESMQoJdGVsZW1ldHJ5GAMgASgOMhQuYXIudjEuVGVsZW1ldHJ5VHlwZUIIukgFggECEAESJwoEcGxhbhgEIAEoDjIPLmFyLnYxLlBsYW5UeXBlQgi6SAWCAQIQATomukgjIiEKB2NvbW1hbmQKBWV2ZW50Cg10ZWxlbWV0cnlwbGFuEAEihwEKEkhhbmRsZXJSZXF1aXJlbWVudBIkCgdtZXNzYWdlGAEgASgLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjgKC2NhcmRpbmFsaXR5GAIgASgOMhkuYXIudjEuSGFuZGxlckNhcmRpbmFsaXR5Qgi6SAWCAQIQARIRCglyYXRpb25hbGUYAyABKAkiOgoWU3VwcG9ydGVkRXZlbnRzTWVzc2FnZRIgCgZldmVudHMYASADKA4yEC5hci52MS5FdmVudFR5cGUq5gIKC0NvbW1hbmRUeXBlEhwKGENPTU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEh4KGkNPTU1BTkRfVFlQRV9UQVNLX0NPTVBMRVRFEAoSHAoYQ09NTUFORF9UWVBFX1RBU0tfQVNTSUdOEAsSGgoWQ09NTUFORF9UWVBFX1RBU0tfVU5ETxAMEh8KG0NPTU1BTkRfVFlQRV9UQVNLX0hJR0hMSUdIVBANEhoKFkNPTU1BTkRfVFlQRV9UQVNLX0hFTFAQDhIhCh1DT01NQU5EX1RZUEVfUk9CT1RfU1RBUlRfU1RPUBBkEigKJENPTU1BTkRfVFlQRV9ST0JPVF9UT0dHTEVfRlJFRV9EUklWRRBlEioKJkNPTU1BTkRfVFlQRV9ST0JPVF9TVEFSVF9DT0xMQUJPUkFUSU9OEGYSKQolQ09NTUFORF9UWVBFX1JPQk9UX1NUT1BfQ09MTEFCT1JBVElPThBnKsQDCglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEh8KG0VWRU5UX1RZUEVfUFJPQ0VTU19DT01QTEVURRAKEiAKHEVWRU5UX1RZUEVfU0VRVUVOQ0VfQ09NUExFVEUQCxIcChhFVkVOVF9UWVBFX1RBU0tfQ09NUExFVEUQDBIlCiFFVkVOVF9UWVBFX1JPQk9UX1dBWVBPSU5UX1JFQUNIRUQQZBIiCh1FVkVOVF9UWVBFX1JPQk9UX1BMQU5fU1RBUlRFRBCCARIiCh1FVkVOVF9UWVBFX1JPQk9UX1BMQU5fQ0hBTkdFRBCDARIiCh1FVkVOVF9UWVBFX1JPQk9UX1BMQU5fQUJPUlRFRBCEARIkCh9FVkVOVF9UWVBFX1JPQk9UX1BMQU5fQ09NUExFVEVEEIUBEi0KKEVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfQUNLTk9XTEVER0UQlgESJgohRVZFTlRfVFlQRV9ST0JPVF9XQUlUSU5HX0ZPUl9IRUxQEJcBEioKJUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19UQVNLX1JFTEVBU0UQmAEq/gEKDVRlbGVtZXRyeVR5cGUSHgoaVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIcChhURUxFTUVUUllfVFlQRV9ST0JPVF9UQ1AQZBIlCiFURUxFTUVUUllfVFlQRV9ST0JPVF9KT0lOVF9BTkdMRVMQZRIlCiFURUxFTUVUUllfVFlQRV9ST0JPVF9GT1JDRV9UT1JRVUUQZhIeChpURUxFTUVUUllfVFlQRV9ST0JPVF9TVEFURRBuEh0KGVRFTEVNRVRSWV9UWVBFX1JPQk9UX1BBVEgQeBIiCh5URUxFTUVUUllfVFlQRV9ST0JPVF9XQVlQT0lOVFMQeSrrAQoIUGxhblR5cGUSGQoVUExBTl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUExBTl9UWVBFX1JPQk9UX1BBVEgQZBIgChxQTEFOX1RZUEVfUk9CT1RfSk9JTlRfQU5HTEVTEGUSHQoZUExBTl9UWVBFX1JPQk9UX1dBWVBPSU5UUxBmEigKJFBMQU5fVFlQRV9ST0JPVF9FU1RJTUFURURfQ09NUExFVElPThB7EiEKHVBMQU5fVFlQRV9ST0JPVF9UQVNLX1NFUVVFTkNFEHwSHAoXUExBTl9UWVBFX1RBU0tfU0VRVUVOQ0UQyAEqqQEKEkhhbmRsZXJDYXJkaW5hbGl0eRIjCh9IQU5ETEVSX0NBUkRJTkFMSVRZX1VOU1BFQ0lGSUVEEAASJAogSEFORExFUl9DQVJESU5BTElUWV9BVF9MRUFTVF9PTkUQARIjCh9IQU5ETEVSX0NBUkRJTkFMSVRZX0VYQUNUTFlfT05FEAISIwofSEFORExFUl9DQVJESU5BTElUWV9BVF9NT1NUX09ORRADQocBCgljb20uYXIudjFCC0V2ZW50c1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate]);
 
 /**
+ *
+ * ExchangeType represent a single 'event' or exchange.
+ *
+ * Example: robot motion
+ * 1) UI produces: { Command: ROBOT_START_STOP }
+ * 2) Planner produces: { Plan: ROBOT_PATH }
+ * 3) Driver publishes: { Telemetry: ROBOT_TCP }
+ * 4) System emits: { Event: ROBOT_STARTED_TASK }
+ *
  * @generated from message ar.v1.ExchangeType
  */
 export type ExchangeType = Message<"ar.v1.ExchangeType"> & {
   /**
+   * Requested intent (future)
+   *
    * @generated from field: ar.v1.CommandType command = 1;
    */
   command: CommandType;
 
   /**
+   * Confirmed fact (past)
+   *
    * @generated from field: ar.v1.EventType event = 2;
    */
   event: EventType;
 
   /**
+   * Observed state (now)
+   *
    * @generated from field: ar.v1.TelemetryType telemetry = 3;
    */
   telemetry: TelemetryType;
+
+  /**
+   * Planned intent (future)
+   *
+   * @generated from field: ar.v1.PlanType plan = 4;
+   */
+  plan: PlanType;
 };
 
 /**
@@ -72,6 +94,8 @@ export const HandlerRequirementSchema: GenMessage<HandlerRequirement> = /*@__PUR
 /**
  * Supported events is a list of all supported events in the current configuration
  * TODO: should this be a field of ARConfig?
+ *
+ * TODO: this shouldn't be 'EventType', but either exchange-type or similar
  *
  * @generated from message ar.v1.SupportedEventsMessage
  */
@@ -157,7 +181,12 @@ export const CommandTypeSchema: GenEnum<CommandType> = /*@__PURE__*/
   enumDesc(file_ar_v1_events, 0);
 
 /**
- * Events are 'facts', i.e. "this happened".
+ *
+ * EventType: events are facts, i.e. "this just happened".
+ *
+ * It is intended for low-frequency events. One example could be WAYPOINT_REACHED contrary to TELEMETRY_ROBOT_TCP
+ * Events must be grounded in actual events and not just because "a prediction said so".
+ *
  *
  * @generated from enum ar.v1.EventType
  */
@@ -175,19 +204,54 @@ export enum EventType {
   PROCESS_COMPLETE = 10,
 
   /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_STARTING_TASK = 100;
+   * @generated from enum value: EVENT_TYPE_SEQUENCE_COMPLETE = 11;
    */
-  ROBOT_STARTING_TASK = 100,
+  SEQUENCE_COMPLETE = 11,
 
   /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 101;
+   * @generated from enum value: EVENT_TYPE_TASK_COMPLETE = 12;
    */
-  ROBOT_WAITING_FOR_HELP = 101,
+  TASK_COMPLETE = 12,
 
   /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 102;
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAYPOINT_REACHED = 100;
    */
-  ROBOT_WAITING_TASK_RELEASE = 102,
+  ROBOT_WAYPOINT_REACHED = 100,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_PLAN_STARTED = 130;
+   */
+  ROBOT_PLAN_STARTED = 130,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_PLAN_CHANGED = 131;
+   */
+  ROBOT_PLAN_CHANGED = 131,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_PLAN_ABORTED = 132;
+   */
+  ROBOT_PLAN_ABORTED = 132,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_PLAN_COMPLETED = 133;
+   */
+  ROBOT_PLAN_COMPLETED = 133,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE = 150;
+   */
+  ROBOT_WAITING_FOR_ACKNOWLEDGE = 150,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 151;
+   */
+  ROBOT_WAITING_FOR_HELP = 151,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 152;
+   */
+  ROBOT_WAITING_TASK_RELEASE = 152,
 }
 
 /**
@@ -197,6 +261,10 @@ export const EventTypeSchema: GenEnum<EventType> = /*@__PURE__*/
   enumDesc(file_ar_v1_events, 1);
 
 /**
+ *
+ * TelemetryType: telemetry is current state, i.e. "here is my state"
+ * It is expected to be high-frequency updates or at least updates every time the state have changed
+ *
  * @generated from enum ar.v1.TelemetryType
  */
 export enum TelemetryType {
@@ -243,6 +311,54 @@ export const TelemetryTypeSchema: GenEnum<TelemetryType> = /*@__PURE__*/
   enumDesc(file_ar_v1_events, 2);
 
 /**
+ * Plan is planned (or expected) future state.
+ *
+ * @generated from enum ar.v1.PlanType
+ */
+export enum PlanType {
+  /**
+   * @generated from enum value: PLAN_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_ROBOT_PATH = 100;
+   */
+  ROBOT_PATH = 100,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_ROBOT_JOINT_ANGLES = 101;
+   */
+  ROBOT_JOINT_ANGLES = 101,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_ROBOT_WAYPOINTS = 102;
+   */
+  ROBOT_WAYPOINTS = 102,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION = 123;
+   */
+  ROBOT_ESTIMATED_COMPLETION = 123,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_ROBOT_TASK_SEQUENCE = 124;
+   */
+  ROBOT_TASK_SEQUENCE = 124,
+
+  /**
+   * @generated from enum value: PLAN_TYPE_TASK_SEQUENCE = 200;
+   */
+  TASK_SEQUENCE = 200,
+}
+
+/**
+ * Describes the enum ar.v1.PlanType.
+ */
+export const PlanTypeSchema: GenEnum<PlanType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_events, 3);
+
+/**
  * @generated from enum ar.v1.HandlerCardinality
  */
 export enum HandlerCardinality {
@@ -271,5 +387,5 @@ export enum HandlerCardinality {
  * Describes the enum ar.v1.HandlerCardinality.
  */
 export const HandlerCardinalitySchema: GenEnum<HandlerCardinality> = /*@__PURE__*/
-  enumDesc(file_ar_v1_events, 3);
+  enumDesc(file_ar_v1_events, 4);
 

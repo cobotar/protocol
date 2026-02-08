@@ -25,46 +25,58 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
-            "aWRhdGUucHJvdG8i2gEKDEV4Y2hhbmdlVHlwZRI2Cgdjb21tYW5kGAEgASgO",
+            "aWRhdGUucHJvdG8ijQIKDEV4Y2hhbmdlVHlwZRI2Cgdjb21tYW5kGAEgASgO",
             "MhIuYXIudjEuQ29tbWFuZFR5cGVCCLpIBYIBAhABUgdjb21tYW5kEjAKBWV2",
             "ZW50GAIgASgOMhAuYXIudjEuRXZlbnRUeXBlQgi6SAWCAQIQAVIFZXZlbnQS",
             "PAoJdGVsZW1ldHJ5GAMgASgOMhQuYXIudjEuVGVsZW1ldHJ5VHlwZUIIukgF",
-            "ggECEAFSCXRlbGVtZXRyeToiukgfIh0KB2NvbW1hbmQKBWV2ZW50Cgl0ZWxl",
-            "bWV0cnkQASKoAQoSSGFuZGxlclJlcXVpcmVtZW50Ei0KB21lc3NhZ2UYASAB",
-            "KAsyEy5hci52MS5FeGNoYW5nZVR5cGVSB21lc3NhZ2USRQoLY2FyZGluYWxp",
-            "dHkYAiABKA4yGS5hci52MS5IYW5kbGVyQ2FyZGluYWxpdHlCCLpIBYIBAhAB",
-            "UgtjYXJkaW5hbGl0eRIcCglyYXRpb25hbGUYAyABKAlSCXJhdGlvbmFsZSJC",
-            "ChZTdXBwb3J0ZWRFdmVudHNNZXNzYWdlEigKBmV2ZW50cxgBIAMoDjIQLmFy",
-            "LnYxLkV2ZW50VHlwZVIGZXZlbnRzKuYCCgtDb21tYW5kVHlwZRIcChhDT01N",
-            "QU5EX1RZUEVfVU5TUEVDSUZJRUQQABIeChpDT01NQU5EX1RZUEVfVEFTS19D",
-            "T01QTEVURRAKEhwKGENPTU1BTkRfVFlQRV9UQVNLX0FTU0lHThALEhoKFkNP",
-            "TU1BTkRfVFlQRV9UQVNLX1VORE8QDBIfChtDT01NQU5EX1RZUEVfVEFTS19I",
-            "SUdITElHSFQQDRIaChZDT01NQU5EX1RZUEVfVEFTS19IRUxQEA4SIQodQ09N",
-            "TUFORF9UWVBFX1JPQk9UX1NUQVJUX1NUT1AQZBIoCiRDT01NQU5EX1RZUEVf",
-            "Uk9CT1RfVE9HR0xFX0ZSRUVfRFJJVkUQZRIqCiZDT01NQU5EX1RZUEVfUk9C",
-            "T1RfU1RBUlRfQ09MTEFCT1JBVElPThBmEikKJUNPTU1BTkRfVFlQRV9ST0JP",
-            "VF9TVE9QX0NPTExBQk9SQVRJT04QZyq+AQoJRXZlbnRUeXBlEhoKFkVWRU5U",
-            "X1RZUEVfVU5TUEVDSUZJRUQQABIfChtFVkVOVF9UWVBFX1BST0NFU1NfQ09N",
-            "UExFVEUQChIiCh5FVkVOVF9UWVBFX1JPQk9UX1NUQVJUSU5HX1RBU0sQZBIl",
-            "CiFFVkVOVF9UWVBFX1JPQk9UX1dBSVRJTkdfRk9SX0hFTFAQZRIpCiVFVkVO",
-            "VF9UWVBFX1JPQk9UX1dBSVRJTkdfVEFTS19SRUxFQVNFEGYq/gEKDVRlbGVt",
-            "ZXRyeVR5cGUSHgoaVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIcChhU",
-            "RUxFTUVUUllfVFlQRV9ST0JPVF9UQ1AQZBIlCiFURUxFTUVUUllfVFlQRV9S",
-            "T0JPVF9KT0lOVF9BTkdMRVMQZRIlCiFURUxFTUVUUllfVFlQRV9ST0JPVF9G",
-            "T1JDRV9UT1JRVUUQZhIeChpURUxFTUVUUllfVFlQRV9ST0JPVF9TVEFURRBu",
-            "Eh0KGVRFTEVNRVRSWV9UWVBFX1JPQk9UX1BBVEgQeBIiCh5URUxFTUVUUllf",
-            "VFlQRV9ST0JPVF9XQVlQT0lOVFMQeSqpAQoSSGFuZGxlckNhcmRpbmFsaXR5",
-            "EiMKH0hBTkRMRVJfQ0FSRElOQUxJVFlfVU5TUEVDSUZJRUQQABIkCiBIQU5E",
-            "TEVSX0NBUkRJTkFMSVRZX0FUX0xFQVNUX09ORRABEiMKH0hBTkRMRVJfQ0FS",
-            "RElOQUxJVFlfRVhBQ1RMWV9PTkUQAhIjCh9IQU5ETEVSX0NBUkRJTkFMSVRZ",
-            "X0FUX01PU1RfT05FEANChwEKCWNvbS5hci52MUILRXZlbnRzUHJvdG9QAVov",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2Fy",
-            "djGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BC",
-            "TWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "ggECEAFSCXRlbGVtZXRyeRItCgRwbGFuGAQgASgOMg8uYXIudjEuUGxhblR5",
+            "cGVCCLpIBYIBAhABUgRwbGFuOia6SCMiIQoHY29tbWFuZAoFZXZlbnQKDXRl",
+            "bGVtZXRyeXBsYW4QASKoAQoSSGFuZGxlclJlcXVpcmVtZW50Ei0KB21lc3Nh",
+            "Z2UYASABKAsyEy5hci52MS5FeGNoYW5nZVR5cGVSB21lc3NhZ2USRQoLY2Fy",
+            "ZGluYWxpdHkYAiABKA4yGS5hci52MS5IYW5kbGVyQ2FyZGluYWxpdHlCCLpI",
+            "BYIBAhABUgtjYXJkaW5hbGl0eRIcCglyYXRpb25hbGUYAyABKAlSCXJhdGlv",
+            "bmFsZSJCChZTdXBwb3J0ZWRFdmVudHNNZXNzYWdlEigKBmV2ZW50cxgBIAMo",
+            "DjIQLmFyLnYxLkV2ZW50VHlwZVIGZXZlbnRzKuYCCgtDb21tYW5kVHlwZRIc",
+            "ChhDT01NQU5EX1RZUEVfVU5TUEVDSUZJRUQQABIeChpDT01NQU5EX1RZUEVf",
+            "VEFTS19DT01QTEVURRAKEhwKGENPTU1BTkRfVFlQRV9UQVNLX0FTU0lHThAL",
+            "EhoKFkNPTU1BTkRfVFlQRV9UQVNLX1VORE8QDBIfChtDT01NQU5EX1RZUEVf",
+            "VEFTS19ISUdITElHSFQQDRIaChZDT01NQU5EX1RZUEVfVEFTS19IRUxQEA4S",
+            "IQodQ09NTUFORF9UWVBFX1JPQk9UX1NUQVJUX1NUT1AQZBIoCiRDT01NQU5E",
+            "X1RZUEVfUk9CT1RfVE9HR0xFX0ZSRUVfRFJJVkUQZRIqCiZDT01NQU5EX1RZ",
+            "UEVfUk9CT1RfU1RBUlRfQ09MTEFCT1JBVElPThBmEikKJUNPTU1BTkRfVFlQ",
+            "RV9ST0JPVF9TVE9QX0NPTExBQk9SQVRJT04QZyrEAwoJRXZlbnRUeXBlEhoK",
+            "FkVWRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIfChtFVkVOVF9UWVBFX1BST0NF",
+            "U1NfQ09NUExFVEUQChIgChxFVkVOVF9UWVBFX1NFUVVFTkNFX0NPTVBMRVRF",
+            "EAsSHAoYRVZFTlRfVFlQRV9UQVNLX0NPTVBMRVRFEAwSJQohRVZFTlRfVFlQ",
+            "RV9ST0JPVF9XQVlQT0lOVF9SRUFDSEVEEGQSIgodRVZFTlRfVFlQRV9ST0JP",
+            "VF9QTEFOX1NUQVJURUQQggESIgodRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0NI",
+            "QU5HRUQQgwESIgodRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0FCT1JURUQQhAES",
+            "JAofRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0NPTVBMRVRFRBCFARItCihFVkVO",
+            "VF9UWVBFX1JPQk9UX1dBSVRJTkdfRk9SX0FDS05PV0xFREdFEJYBEiYKIUVW",
+            "RU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfSEVMUBCXARIqCiVFVkVOVF9U",
+            "WVBFX1JPQk9UX1dBSVRJTkdfVEFTS19SRUxFQVNFEJgBKv4BCg1UZWxlbWV0",
+            "cnlUeXBlEh4KGlRFTEVNRVRSWV9UWVBFX1VOU1BFQ0lGSUVEEAASHAoYVEVM",
+            "RU1FVFJZX1RZUEVfUk9CT1RfVENQEGQSJQohVEVMRU1FVFJZX1RZUEVfUk9C",
+            "T1RfSk9JTlRfQU5HTEVTEGUSJQohVEVMRU1FVFJZX1RZUEVfUk9CT1RfRk9S",
+            "Q0VfVE9SUVVFEGYSHgoaVEVMRU1FVFJZX1RZUEVfUk9CT1RfU1RBVEUQbhId",
+            "ChlURUxFTUVUUllfVFlQRV9ST0JPVF9QQVRIEHgSIgoeVEVMRU1FVFJZX1RZ",
+            "UEVfUk9CT1RfV0FZUE9JTlRTEHkq6wEKCFBsYW5UeXBlEhkKFVBMQU5fVFlQ",
+            "RV9VTlNQRUNJRklFRBAAEhgKFFBMQU5fVFlQRV9ST0JPVF9QQVRIEGQSIAoc",
+            "UExBTl9UWVBFX1JPQk9UX0pPSU5UX0FOR0xFUxBlEh0KGVBMQU5fVFlQRV9S",
+            "T0JPVF9XQVlQT0lOVFMQZhIoCiRQTEFOX1RZUEVfUk9CT1RfRVNUSU1BVEVE",
+            "X0NPTVBMRVRJT04QexIhCh1QTEFOX1RZUEVfUk9CT1RfVEFTS19TRVFVRU5D",
+            "RRB8EhwKF1BMQU5fVFlQRV9UQVNLX1NFUVVFTkNFEMgBKqkBChJIYW5kbGVy",
+            "Q2FyZGluYWxpdHkSIwofSEFORExFUl9DQVJESU5BTElUWV9VTlNQRUNJRklF",
+            "RBAAEiQKIEhBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTEVBU1RfT05FEAESIwof",
+            "SEFORExFUl9DQVJESU5BTElUWV9FWEFDVExZX09ORRACEiMKH0hBTkRMRVJf",
+            "Q0FSRElOQUxJVFlfQVRfTU9TVF9PTkUQA0KHAQoJY29tLmFyLnYxQgtFdmVu",
+            "dHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
+            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.CommandType), typeof(global::Messages.AR.V1.EventType), typeof(global::Messages.AR.V1.TelemetryType), typeof(global::Messages.AR.V1.HandlerCardinality), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ExchangeType), global::Messages.AR.V1.ExchangeType.Parser, new[]{ "Command", "Event", "Telemetry" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.CommandType), typeof(global::Messages.AR.V1.EventType), typeof(global::Messages.AR.V1.TelemetryType), typeof(global::Messages.AR.V1.PlanType), typeof(global::Messages.AR.V1.HandlerCardinality), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ExchangeType), global::Messages.AR.V1.ExchangeType.Parser, new[]{ "Command", "Event", "Telemetry", "Plan" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.HandlerRequirement), global::Messages.AR.V1.HandlerRequirement.Parser, new[]{ "Message", "Cardinality", "Rationale" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.SupportedEventsMessage), global::Messages.AR.V1.SupportedEventsMessage.Parser, new[]{ "Events" }, null, null, null, null)
           }));
@@ -96,7 +108,11 @@ namespace Messages.AR.V1 {
   }
 
   /// <summary>
-  /// Events are 'facts', i.e. "this happened".
+  ///
+  ///EventType: events are facts, i.e. "this just happened".
+  ///
+  ///It is intended for low-frequency events. One example could be WAYPOINT_REACHED contrary to TELEMETRY_ROBOT_TCP
+  ///Events must be grounded in actual events and not just because "a prediction said so".
   /// </summary>
   public enum EventType {
     [pbr::OriginalName("EVENT_TYPE_UNSPECIFIED")] Unspecified = 0,
@@ -104,11 +120,23 @@ namespace Messages.AR.V1 {
     /// Workflow facts
     /// </summary>
     [pbr::OriginalName("EVENT_TYPE_PROCESS_COMPLETE")] ProcessComplete = 10,
-    [pbr::OriginalName("EVENT_TYPE_ROBOT_STARTING_TASK")] RobotStartingTask = 100,
-    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAITING_FOR_HELP")] RobotWaitingForHelp = 101,
-    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE")] RobotWaitingTaskRelease = 102,
+    [pbr::OriginalName("EVENT_TYPE_SEQUENCE_COMPLETE")] SequenceComplete = 11,
+    [pbr::OriginalName("EVENT_TYPE_TASK_COMPLETE")] TaskComplete = 12,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAYPOINT_REACHED")] RobotWaypointReached = 100,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_PLAN_STARTED")] RobotPlanStarted = 130,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_PLAN_CHANGED")] RobotPlanChanged = 131,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_PLAN_ABORTED")] RobotPlanAborted = 132,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_PLAN_COMPLETED")] RobotPlanCompleted = 133,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE")] RobotWaitingForAcknowledge = 150,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAITING_FOR_HELP")] RobotWaitingForHelp = 151,
+    [pbr::OriginalName("EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE")] RobotWaitingTaskRelease = 152,
   }
 
+  /// <summary>
+  ///
+  ///TelemetryType: telemetry is current state, i.e. "here is my state"
+  ///It is expected to be high-frequency updates or at least updates every time the state have changed
+  /// </summary>
   public enum TelemetryType {
     [pbr::OriginalName("TELEMETRY_TYPE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_TCP")] RobotTcp = 100,
@@ -117,6 +145,19 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_STATE")] RobotState = 110,
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_PATH")] RobotPath = 120,
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 121,
+  }
+
+  /// <summary>
+  /// Plan is planned (or expected) future state.
+  /// </summary>
+  public enum PlanType {
+    [pbr::OriginalName("PLAN_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("PLAN_TYPE_ROBOT_PATH")] RobotPath = 100,
+    [pbr::OriginalName("PLAN_TYPE_ROBOT_JOINT_ANGLES")] RobotJointAngles = 101,
+    [pbr::OriginalName("PLAN_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 102,
+    [pbr::OriginalName("PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION")] RobotEstimatedCompletion = 123,
+    [pbr::OriginalName("PLAN_TYPE_ROBOT_TASK_SEQUENCE")] RobotTaskSequence = 124,
+    [pbr::OriginalName("PLAN_TYPE_TASK_SEQUENCE")] TaskSequence = 200,
   }
 
   public enum HandlerCardinality {
@@ -129,6 +170,16 @@ namespace Messages.AR.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  ///
+  ///ExchangeType represent a single 'event' or exchange.
+  ///
+  ///Example: robot motion
+  ///1) UI produces: { Command: ROBOT_START_STOP }
+  ///2) Planner produces: { Plan: ROBOT_PATH }
+  ///3) Driver publishes: { Telemetry: ROBOT_TCP }
+  ///4) System emits: { Event: ROBOT_STARTED_TASK }
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ExchangeType : pb::IMessage<ExchangeType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -167,6 +218,7 @@ namespace Messages.AR.V1 {
       command_ = other.command_;
       event_ = other.event_;
       telemetry_ = other.telemetry_;
+      plan_ = other.plan_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -179,6 +231,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "command" field.</summary>
     public const int CommandFieldNumber = 1;
     private global::Messages.AR.V1.CommandType command_ = global::Messages.AR.V1.CommandType.Unspecified;
+    /// <summary>
+    /// Requested intent (future)
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.CommandType Command {
@@ -191,6 +246,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "event" field.</summary>
     public const int EventFieldNumber = 2;
     private global::Messages.AR.V1.EventType event_ = global::Messages.AR.V1.EventType.Unspecified;
+    /// <summary>
+    /// Confirmed fact (past)
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.EventType Event {
@@ -203,12 +261,30 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "telemetry" field.</summary>
     public const int TelemetryFieldNumber = 3;
     private global::Messages.AR.V1.TelemetryType telemetry_ = global::Messages.AR.V1.TelemetryType.Unspecified;
+    /// <summary>
+    /// Observed state (now)
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.TelemetryType Telemetry {
       get { return telemetry_; }
       set {
         telemetry_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "plan" field.</summary>
+    public const int PlanFieldNumber = 4;
+    private global::Messages.AR.V1.PlanType plan_ = global::Messages.AR.V1.PlanType.Unspecified;
+    /// <summary>
+    /// Planned intent (future)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.PlanType Plan {
+      get { return plan_; }
+      set {
+        plan_ = value;
       }
     }
 
@@ -230,6 +306,7 @@ namespace Messages.AR.V1 {
       if (Command != other.Command) return false;
       if (Event != other.Event) return false;
       if (Telemetry != other.Telemetry) return false;
+      if (Plan != other.Plan) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -240,6 +317,7 @@ namespace Messages.AR.V1 {
       if (Command != global::Messages.AR.V1.CommandType.Unspecified) hash ^= Command.GetHashCode();
       if (Event != global::Messages.AR.V1.EventType.Unspecified) hash ^= Event.GetHashCode();
       if (Telemetry != global::Messages.AR.V1.TelemetryType.Unspecified) hash ^= Telemetry.GetHashCode();
+      if (Plan != global::Messages.AR.V1.PlanType.Unspecified) hash ^= Plan.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -270,6 +348,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Telemetry);
       }
+      if (Plan != global::Messages.AR.V1.PlanType.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Plan);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -292,6 +374,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Telemetry);
       }
+      if (Plan != global::Messages.AR.V1.PlanType.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Plan);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -310,6 +396,9 @@ namespace Messages.AR.V1 {
       }
       if (Telemetry != global::Messages.AR.V1.TelemetryType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Telemetry);
+      }
+      if (Plan != global::Messages.AR.V1.PlanType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Plan);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -331,6 +420,9 @@ namespace Messages.AR.V1 {
       }
       if (other.Telemetry != global::Messages.AR.V1.TelemetryType.Unspecified) {
         Telemetry = other.Telemetry;
+      }
+      if (other.Plan != global::Messages.AR.V1.PlanType.Unspecified) {
+        Plan = other.Plan;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -363,6 +455,10 @@ namespace Messages.AR.V1 {
             Telemetry = (global::Messages.AR.V1.TelemetryType) input.ReadEnum();
             break;
           }
+          case 32: {
+            Plan = (global::Messages.AR.V1.PlanType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -392,6 +488,10 @@ namespace Messages.AR.V1 {
           }
           case 24: {
             Telemetry = (global::Messages.AR.V1.TelemetryType) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            Plan = (global::Messages.AR.V1.PlanType) input.ReadEnum();
             break;
           }
         }

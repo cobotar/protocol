@@ -24,18 +24,37 @@ enum CommandType {
   COMMAND_TYPE_ROBOT_STOP_COLLABORATION = 103;
 }
 
-// Events are 'facts', i.e. "this happened".
+/*
+   EventType: events are facts, i.e. "this just happened".
+
+   It is intended for low-frequency events. One example could be WAYPOINT_REACHED contrary to TELEMETRY_ROBOT_TCP
+   Events must be grounded in actual events and not just because "a prediction said so".
+
+*/
 enum EventType {
   EVENT_TYPE_UNSPECIFIED = 0;
 
   // Workflow facts
   EVENT_TYPE_PROCESS_COMPLETE = 10;
+  EVENT_TYPE_SEQUENCE_COMPLETE = 11;
+  EVENT_TYPE_TASK_COMPLETE = 12;
 
-  EVENT_TYPE_ROBOT_STARTING_TASK = 100;
-  EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 101;
-  EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 102;
+  EVENT_TYPE_ROBOT_WAYPOINT_REACHED = 100;
+
+  EVENT_TYPE_ROBOT_PLAN_STARTED = 130;
+  EVENT_TYPE_ROBOT_PLAN_CHANGED = 131;
+  EVENT_TYPE_ROBOT_PLAN_ABORTED = 132;
+  EVENT_TYPE_ROBOT_PLAN_COMPLETED = 133;
+
+  EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE = 150;
+  EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 151;
+  EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 152;
 }
 
+/*
+   TelemetryType: telemetry is current state, i.e. "here is my state"
+   It is expected to be high-frequency updates or at least updates every time the state have changed
+*/
 enum TelemetryType {
   TELEMETRY_TYPE_UNSPECIFIED = 0;
 
@@ -49,18 +68,43 @@ enum TelemetryType {
   TELEMETRY_TYPE_ROBOT_WAYPOINTS = 121;
 }
 
+// Plan is planned (or expected) future state.
+enum PlanType {
+  PLAN_TYPE_UNSPECIFIED = 0;
+
+  PLAN_TYPE_ROBOT_PATH = 100;
+  PLAN_TYPE_ROBOT_JOINT_ANGLES = 101;
+  PLAN_TYPE_ROBOT_WAYPOINTS = 102;
+
+  PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION = 123;
+  PLAN_TYPE_ROBOT_TASK_SEQUENCE = 124;
+
+  PLAN_TYPE_TASK_SEQUENCE = 200;
+}
+
+/*
+   ExchangeType represent a single 'event' or exchange.
+
+   Example: robot motion
+     1) UI produces: { Command: ROBOT_START_STOP }
+     2) Planner produces: { Plan: ROBOT_PATH }
+     3) Driver publishes: { Telemetry: ROBOT_TCP }
+     4) System emits: { Event: ROBOT_STARTED_TASK }
+*/
 message ExchangeType {
   option (buf.validate.message).oneof = {
     fields: [
       "command",
       "event",
       "telemetry"
+      "plan"
     ]
     required: true
   };
-  CommandType command = 1 [(buf.validate.field).enum.defined_only = true];
-  EventType event = 2 [(buf.validate.field).enum.defined_only = true];
-  TelemetryType telemetry = 3 [(buf.validate.field).enum.defined_only = true];
+  CommandType command = 1 [(buf.validate.field).enum.defined_only = true]; // Requested intent (future)
+  EventType event = 2 [(buf.validate.field).enum.defined_only = true]; // Confirmed fact (past)
+  TelemetryType telemetry = 3 [(buf.validate.field).enum.defined_only = true]; // Observed state (now)
+  PlanType plan = 4 [(buf.validate.field).enum.defined_only = true]; // Planned intent (future)
 }
 
 enum HandlerCardinality {
@@ -78,6 +122,6 @@ message HandlerRequirement {
 
 // Supported events is a list of all supported events in the current configuration
 // TODO: should this be a field of ARConfig?
-message SupportedEventsMessage {
+message SupportedEventsMessage { // TODO: this shouldn't be 'EventType', but either exchange-type or similar
   repeated EventType events = 1;
 }

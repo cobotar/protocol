@@ -33,6 +33,7 @@
     - [CommandType](#ar-v1-CommandType)
     - [EventType](#ar-v1-EventType)
     - [HandlerCardinality](#ar-v1-HandlerCardinality)
+    - [PlanType](#ar-v1-PlanType)
     - [TelemetryType](#ar-v1-TelemetryType)
   
 - [ar/v1/action_info.proto](#ar_v1_action_info-proto)
@@ -104,6 +105,8 @@
 - [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
     - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
     - [HelperInfoMessages](#ar-v1-HelperInfoMessages)
+  
+    - [HelperGroup](#ar-v1-HelperGroup)
   
 - [ar/v1/mapping.proto](#ar_v1_mapping-proto)
     - [ARPriority](#ar-v1-ARPriority)
@@ -594,14 +597,21 @@ Used to specify the type of a property
 <a name="ar-v1-ExchangeType"></a>
 
 ### ExchangeType
+ExchangeType represent a single &#39;event&#39; or exchange.
 
+Example: robot motion
+1) UI produces: { Command: ROBOT_START_STOP }
+2) Planner produces: { Plan: ROBOT_PATH }
+3) Driver publishes: { Telemetry: ROBOT_TCP }
+4) System emits: { Event: ROBOT_STARTED_TASK }
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| command | [CommandType](#ar-v1-CommandType) |  |  |
-| event | [EventType](#ar-v1-EventType) |  |  |
-| telemetry | [TelemetryType](#ar-v1-TelemetryType) |  |  |
+| command | [CommandType](#ar-v1-CommandType) |  | Requested intent (future) |
+| event | [EventType](#ar-v1-EventType) |  | Confirmed fact (past) |
+| telemetry | [TelemetryType](#ar-v1-TelemetryType) |  | Observed state (now) |
+| plan | [PlanType](#ar-v1-PlanType) |  | Planned intent (future) |
 
 
 
@@ -630,6 +640,8 @@ Used to specify the type of a property
 ### SupportedEventsMessage
 Supported events is a list of all supported events in the current configuration
 TODO: should this be a field of ARConfig?
+
+TODO: this shouldn&#39;t be &#39;EventType&#39;, but either exchange-type or similar
 
 
 | Field | Type | Label | Description |
@@ -666,15 +678,25 @@ Commands are intents, i.e. &#34;please do this&#34;. Example: Start/STOP from UI
 <a name="ar-v1-EventType"></a>
 
 ### EventType
-Events are &#39;facts&#39;, i.e. &#34;this happened&#34;.
+EventType: events are facts, i.e. &#34;this just happened&#34;.
+
+It is intended for low-frequency events. One example could be WAYPOINT_REACHED contrary to TELEMETRY_ROBOT_TCP
+Events must be grounded in actual events and not just because &#34;a prediction said so&#34;.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | EVENT_TYPE_UNSPECIFIED | 0 |  |
 | EVENT_TYPE_PROCESS_COMPLETE | 10 | Workflow facts |
-| EVENT_TYPE_ROBOT_STARTING_TASK | 100 |  |
-| EVENT_TYPE_ROBOT_WAITING_FOR_HELP | 101 |  |
-| EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE | 102 |  |
+| EVENT_TYPE_SEQUENCE_COMPLETE | 11 |  |
+| EVENT_TYPE_TASK_COMPLETE | 12 |  |
+| EVENT_TYPE_ROBOT_WAYPOINT_REACHED | 100 |  |
+| EVENT_TYPE_ROBOT_PLAN_STARTED | 130 |  |
+| EVENT_TYPE_ROBOT_PLAN_CHANGED | 131 |  |
+| EVENT_TYPE_ROBOT_PLAN_ABORTED | 132 |  |
+| EVENT_TYPE_ROBOT_PLAN_COMPLETED | 133 |  |
+| EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE | 150 |  |
+| EVENT_TYPE_ROBOT_WAITING_FOR_HELP | 151 |  |
+| EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE | 152 |  |
 
 
 
@@ -692,10 +714,28 @@ Events are &#39;facts&#39;, i.e. &#34;this happened&#34;.
 
 
 
+<a name="ar-v1-PlanType"></a>
+
+### PlanType
+Plan is planned (or expected) future state.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PLAN_TYPE_UNSPECIFIED | 0 |  |
+| PLAN_TYPE_ROBOT_PATH | 100 |  |
+| PLAN_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
+| PLAN_TYPE_ROBOT_WAYPOINTS | 102 |  |
+| PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION | 123 |  |
+| PLAN_TYPE_ROBOT_TASK_SEQUENCE | 124 |  |
+| PLAN_TYPE_TASK_SEQUENCE | 200 |  |
+
+
+
 <a name="ar-v1-TelemetryType"></a>
 
 ### TelemetryType
-
+TelemetryType: telemetry is current state, i.e. &#34;here is my state&#34;
+It is expected to be high-frequency updates or at least updates every time the state have changed
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -1501,7 +1541,7 @@ A simple pose consisting of a position and orientation
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
 | consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
-| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the action publishes |
+| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
 | disabled | [bool](#bool) |  |  |
 
 
@@ -1567,10 +1607,13 @@ A simple pose consisting of a position and orientation
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [HelperType](#ar-v1-HelperType) |  |  |
-| group | [string](#string) |  |  |
+| group | [HelperGroup](#ar-v1-HelperGroup) |  |  |
 | require_agent | [bool](#bool) |  |  |
-| required_events | [EventType](#ar-v1-EventType) | repeated |  |
-| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| require_frame | [bool](#bool) |  |  |
+| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
+| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
 | disabled | [bool](#bool) |  |  |
 
 
@@ -1593,6 +1636,24 @@ A simple pose consisting of a position and orientation
 
 
  
+
+
+<a name="ar-v1-HelperGroup"></a>
+
+### HelperGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HELPER_GROUP_UNSPECIFIED | 0 |  |
+| HELPER_GROUP_GENERAL | 1 |  |
+| HELPER_GROUP_ROBOT | 2 |  |
+| HELPER_GROUP_TASK | 3 |  |
+| HELPER_GROUP_ENVIRONMENT | 4 |  |
+| HELPER_GROUP_OPERATOR | 5 |  |
+| HELPER_GROUP_SPATIAL | 6 |  |
+| HELPER_GROUP_LOGIC | 7 |  |
+
 
  
 

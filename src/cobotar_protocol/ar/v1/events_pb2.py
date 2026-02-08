@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/events.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\"\xda\x01\n\x0c\x45xchangeType\x12\x36\n\x07\x63ommand\x18\x01 \x01(\x0e\x32\x12.ar.v1.CommandTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x07\x63ommand\x12\x30\n\x05\x65vent\x18\x02 \x01(\x0e\x32\x10.ar.v1.EventTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05\x65vent\x12<\n\ttelemetry\x18\x03 \x01(\x0e\x32\x14.ar.v1.TelemetryTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\ttelemetry:\"\xbaH\x1f\"\x1d\n\x07\x63ommand\n\x05\x65vent\n\ttelemetry\x10\x01\"\xa8\x01\n\x12HandlerRequirement\x12-\n\x07message\x18\x01 \x01(\x0b\x32\x13.ar.v1.ExchangeTypeR\x07message\x12\x45\n\x0b\x63\x61rdinality\x18\x02 \x01(\x0e\x32\x19.ar.v1.HandlerCardinalityB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x0b\x63\x61rdinality\x12\x1c\n\trationale\x18\x03 \x01(\tR\trationale\"B\n\x16SupportedEventsMessage\x12(\n\x06\x65vents\x18\x01 \x03(\x0e\x32\x10.ar.v1.EventTypeR\x06\x65vents*\xe6\x02\n\x0b\x43ommandType\x12\x1c\n\x18\x43OMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x43OMMAND_TYPE_TASK_COMPLETE\x10\n\x12\x1c\n\x18\x43OMMAND_TYPE_TASK_ASSIGN\x10\x0b\x12\x1a\n\x16\x43OMMAND_TYPE_TASK_UNDO\x10\x0c\x12\x1f\n\x1b\x43OMMAND_TYPE_TASK_HIGHLIGHT\x10\r\x12\x1a\n\x16\x43OMMAND_TYPE_TASK_HELP\x10\x0e\x12!\n\x1d\x43OMMAND_TYPE_ROBOT_START_STOP\x10\x64\x12(\n$COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE\x10\x65\x12*\n&COMMAND_TYPE_ROBOT_START_COLLABORATION\x10\x66\x12)\n%COMMAND_TYPE_ROBOT_STOP_COLLABORATION\x10g*\xbe\x01\n\tEventType\x12\x1a\n\x16\x45VENT_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45VENT_TYPE_PROCESS_COMPLETE\x10\n\x12\"\n\x1e\x45VENT_TYPE_ROBOT_STARTING_TASK\x10\x64\x12%\n!EVENT_TYPE_ROBOT_WAITING_FOR_HELP\x10\x65\x12)\n%EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE\x10\x66*\xfe\x01\n\rTelemetryType\x12\x1e\n\x1aTELEMETRY_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18TELEMETRY_TYPE_ROBOT_TCP\x10\x64\x12%\n!TELEMETRY_TYPE_ROBOT_JOINT_ANGLES\x10\x65\x12%\n!TELEMETRY_TYPE_ROBOT_FORCE_TORQUE\x10\x66\x12\x1e\n\x1aTELEMETRY_TYPE_ROBOT_STATE\x10n\x12\x1d\n\x19TELEMETRY_TYPE_ROBOT_PATH\x10x\x12\"\n\x1eTELEMETRY_TYPE_ROBOT_WAYPOINTS\x10y*\xa9\x01\n\x12HandlerCardinality\x12#\n\x1fHANDLER_CARDINALITY_UNSPECIFIED\x10\x00\x12$\n HANDLER_CARDINALITY_AT_LEAST_ONE\x10\x01\x12#\n\x1fHANDLER_CARDINALITY_EXACTLY_ONE\x10\x02\x12#\n\x1fHANDLER_CARDINALITY_AT_MOST_ONE\x10\x03\x42\x87\x01\n\tcom.ar.v1B\x0b\x45ventsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/events.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\"\x8d\x02\n\x0c\x45xchangeType\x12\x36\n\x07\x63ommand\x18\x01 \x01(\x0e\x32\x12.ar.v1.CommandTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x07\x63ommand\x12\x30\n\x05\x65vent\x18\x02 \x01(\x0e\x32\x10.ar.v1.EventTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05\x65vent\x12<\n\ttelemetry\x18\x03 \x01(\x0e\x32\x14.ar.v1.TelemetryTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\ttelemetry\x12-\n\x04plan\x18\x04 \x01(\x0e\x32\x0f.ar.v1.PlanTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x04plan:&\xbaH#\"!\n\x07\x63ommand\n\x05\x65vent\n\rtelemetryplan\x10\x01\"\xa8\x01\n\x12HandlerRequirement\x12-\n\x07message\x18\x01 \x01(\x0b\x32\x13.ar.v1.ExchangeTypeR\x07message\x12\x45\n\x0b\x63\x61rdinality\x18\x02 \x01(\x0e\x32\x19.ar.v1.HandlerCardinalityB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x0b\x63\x61rdinality\x12\x1c\n\trationale\x18\x03 \x01(\tR\trationale\"B\n\x16SupportedEventsMessage\x12(\n\x06\x65vents\x18\x01 \x03(\x0e\x32\x10.ar.v1.EventTypeR\x06\x65vents*\xe6\x02\n\x0b\x43ommandType\x12\x1c\n\x18\x43OMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x43OMMAND_TYPE_TASK_COMPLETE\x10\n\x12\x1c\n\x18\x43OMMAND_TYPE_TASK_ASSIGN\x10\x0b\x12\x1a\n\x16\x43OMMAND_TYPE_TASK_UNDO\x10\x0c\x12\x1f\n\x1b\x43OMMAND_TYPE_TASK_HIGHLIGHT\x10\r\x12\x1a\n\x16\x43OMMAND_TYPE_TASK_HELP\x10\x0e\x12!\n\x1d\x43OMMAND_TYPE_ROBOT_START_STOP\x10\x64\x12(\n$COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE\x10\x65\x12*\n&COMMAND_TYPE_ROBOT_START_COLLABORATION\x10\x66\x12)\n%COMMAND_TYPE_ROBOT_STOP_COLLABORATION\x10g*\xc4\x03\n\tEventType\x12\x1a\n\x16\x45VENT_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45VENT_TYPE_PROCESS_COMPLETE\x10\n\x12 \n\x1c\x45VENT_TYPE_SEQUENCE_COMPLETE\x10\x0b\x12\x1c\n\x18\x45VENT_TYPE_TASK_COMPLETE\x10\x0c\x12%\n!EVENT_TYPE_ROBOT_WAYPOINT_REACHED\x10\x64\x12\"\n\x1d\x45VENT_TYPE_ROBOT_PLAN_STARTED\x10\x82\x01\x12\"\n\x1d\x45VENT_TYPE_ROBOT_PLAN_CHANGED\x10\x83\x01\x12\"\n\x1d\x45VENT_TYPE_ROBOT_PLAN_ABORTED\x10\x84\x01\x12$\n\x1f\x45VENT_TYPE_ROBOT_PLAN_COMPLETED\x10\x85\x01\x12-\n(EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE\x10\x96\x01\x12&\n!EVENT_TYPE_ROBOT_WAITING_FOR_HELP\x10\x97\x01\x12*\n%EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE\x10\x98\x01*\xfe\x01\n\rTelemetryType\x12\x1e\n\x1aTELEMETRY_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18TELEMETRY_TYPE_ROBOT_TCP\x10\x64\x12%\n!TELEMETRY_TYPE_ROBOT_JOINT_ANGLES\x10\x65\x12%\n!TELEMETRY_TYPE_ROBOT_FORCE_TORQUE\x10\x66\x12\x1e\n\x1aTELEMETRY_TYPE_ROBOT_STATE\x10n\x12\x1d\n\x19TELEMETRY_TYPE_ROBOT_PATH\x10x\x12\"\n\x1eTELEMETRY_TYPE_ROBOT_WAYPOINTS\x10y*\xeb\x01\n\x08PlanType\x12\x19\n\x15PLAN_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14PLAN_TYPE_ROBOT_PATH\x10\x64\x12 \n\x1cPLAN_TYPE_ROBOT_JOINT_ANGLES\x10\x65\x12\x1d\n\x19PLAN_TYPE_ROBOT_WAYPOINTS\x10\x66\x12(\n$PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION\x10{\x12!\n\x1dPLAN_TYPE_ROBOT_TASK_SEQUENCE\x10|\x12\x1c\n\x17PLAN_TYPE_TASK_SEQUENCE\x10\xc8\x01*\xa9\x01\n\x12HandlerCardinality\x12#\n\x1fHANDLER_CARDINALITY_UNSPECIFIED\x10\x00\x12$\n HANDLER_CARDINALITY_AT_LEAST_ONE\x10\x01\x12#\n\x1fHANDLER_CARDINALITY_EXACTLY_ONE\x10\x02\x12#\n\x1fHANDLER_CARDINALITY_AT_MOST_ONE\x10\x03\x42\x87\x01\n\tcom.ar.v1B\x0b\x45ventsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,22 +39,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EXCHANGETYPE'].fields_by_name['event']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_EXCHANGETYPE'].fields_by_name['telemetry']._loaded_options = None
   _globals['_EXCHANGETYPE'].fields_by_name['telemetry']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_EXCHANGETYPE'].fields_by_name['plan']._loaded_options = None
+  _globals['_EXCHANGETYPE'].fields_by_name['plan']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_EXCHANGETYPE']._loaded_options = None
-  _globals['_EXCHANGETYPE']._serialized_options = b'\272H\037\"\035\n\007command\n\005event\n\ttelemetry\020\001'
+  _globals['_EXCHANGETYPE']._serialized_options = b'\272H#\"!\n\007command\n\005event\n\rtelemetryplan\020\001'
   _globals['_HANDLERREQUIREMENT'].fields_by_name['cardinality']._loaded_options = None
   _globals['_HANDLERREQUIREMENT'].fields_by_name['cardinality']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_COMMANDTYPE']._serialized_start=519
-  _globals['_COMMANDTYPE']._serialized_end=877
-  _globals['_EVENTTYPE']._serialized_start=880
-  _globals['_EVENTTYPE']._serialized_end=1070
-  _globals['_TELEMETRYTYPE']._serialized_start=1073
-  _globals['_TELEMETRYTYPE']._serialized_end=1327
-  _globals['_HANDLERCARDINALITY']._serialized_start=1330
-  _globals['_HANDLERCARDINALITY']._serialized_end=1499
+  _globals['_COMMANDTYPE']._serialized_start=570
+  _globals['_COMMANDTYPE']._serialized_end=928
+  _globals['_EVENTTYPE']._serialized_start=931
+  _globals['_EVENTTYPE']._serialized_end=1383
+  _globals['_TELEMETRYTYPE']._serialized_start=1386
+  _globals['_TELEMETRYTYPE']._serialized_end=1640
+  _globals['_PLANTYPE']._serialized_start=1643
+  _globals['_PLANTYPE']._serialized_end=1878
+  _globals['_HANDLERCARDINALITY']._serialized_start=1881
+  _globals['_HANDLERCARDINALITY']._serialized_end=2050
   _globals['_EXCHANGETYPE']._serialized_start=59
-  _globals['_EXCHANGETYPE']._serialized_end=277
-  _globals['_HANDLERREQUIREMENT']._serialized_start=280
-  _globals['_HANDLERREQUIREMENT']._serialized_end=448
-  _globals['_SUPPORTEDEVENTSMESSAGE']._serialized_start=450
-  _globals['_SUPPORTEDEVENTSMESSAGE']._serialized_end=516
+  _globals['_EXCHANGETYPE']._serialized_end=328
+  _globals['_HANDLERREQUIREMENT']._serialized_start=331
+  _globals['_HANDLERREQUIREMENT']._serialized_end=499
+  _globals['_SUPPORTEDEVENTSMESSAGE']._serialized_start=501
+  _globals['_SUPPORTEDEVENTSMESSAGE']._serialized_end=567
 # @@protoc_insertion_point(module_scope)

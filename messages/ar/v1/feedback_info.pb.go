@@ -90,7 +90,7 @@ type FeedbackInfoMessage struct {
 	ConsumersRequired []*ExchangeType        `protobuf:"bytes,9,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"`  // Inputs the action expects to receive
 	ConsumersOptional []*ExchangeType        `protobuf:"bytes,10,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the action, but not needed to function
 	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,11,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
-	Emits             []*ExchangeType        `protobuf:"bytes,12,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // / Outputs the action publishes
+	Emits             []*ExchangeType        `protobuf:"bytes,12,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // / Outputs the feedback publishes
 	Disabled          bool                   `protobuf:"varint,13,opt,name=disabled,proto3" json:"disabled,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache

@@ -259,7 +259,7 @@ namespace Messages.AR.V1 {
         = pb::FieldCodec.ForMessage(98, global::Messages.AR.V1.ExchangeType.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> emits_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
     /// <summary>
-    /// / Outputs the action publishes
+    /// / Outputs the feedback publishes
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

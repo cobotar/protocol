@@ -31,7 +31,7 @@ message FeedbackInfoMessage {
   repeated ExchangeType consumers_required = 9; // Inputs the action expects to receive
   repeated ExchangeType consumers_optional = 10; // Inputs that will enhance the action, but not needed to function
   repeated HandlerRequirement required_handlers = 11; // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
-  repeated ExchangeType emits = 12; // / Outputs the action publishes
+  repeated ExchangeType emits = 12; // / Outputs the feedback publishes
   bool disabled = 13;
 }
 

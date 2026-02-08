@@ -2,19 +2,21 @@
 // @generated from file ar/v1/helper_info.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { EventType } from "./events_pb.ts";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
 import type { HelperType } from "./helper_pb.ts";
 import { file_ar_v1_helper } from "./helper_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/helper_info.proto.
  */
 export const file_ar_v1_helper_info: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9oZWxwZXJfaW5mby5wcm90bxIFYXIudjEi8wEKEUhlbHBlckluZm9NZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRINCgVncm91cBgGIAEoCRIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgJIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCiADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCyABKAgiPQoSSGVscGVySW5mb01lc3NhZ2VzEicKBWluZm9zGAEgAygLMhguYXIudjEuSGVscGVySW5mb01lc3NhZ2VCiwEKCWNvbS5hci52MUIPSGVscGVySW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_helper]);
+  fileDesc("Chdhci92MS9oZWxwZXJfaW5mby5wcm90bxIFYXIudjEipgMKEUhlbHBlckluZm9NZXNzYWdlEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5IZWxwZXJUeXBlQgu6SAjIAQGCAQIQARIrCgVncm91cBgGIAEoDjISLmFyLnYxLkhlbHBlckdyb3VwQgi6SAWCAQIQARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEhUKDXJlcXVpcmVfZnJhbWUYCCABKAgSLwoSY29uc3VtZXJzX3JlcXVpcmVkGAkgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEi8KEmNvbnN1bWVyc19vcHRpb25hbBgKIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRI0ChFyZXF1aXJlZF9oYW5kbGVycxgLIAMoCzIZLmFyLnYxLkhhbmRsZXJSZXF1aXJlbWVudBIiCgVlbWl0cxgMIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRIQCghkaXNhYmxlZBgNIAEoCCI9ChJIZWxwZXJJbmZvTWVzc2FnZXMSJwoFaW5mb3MYASADKAsyGC5hci52MS5IZWxwZXJJbmZvTWVzc2FnZSrfAQoLSGVscGVyR3JvdXASHAoYSEVMUEVSX0dST1VQX1VOU1BFQ0lGSUVEEAASGAoUSEVMUEVSX0dST1VQX0dFTkVSQUwQARIWChJIRUxQRVJfR1JPVVBfUk9CT1QQAhIVChFIRUxQRVJfR1JPVVBfVEFTSxADEhwKGEhFTFBFUl9HUk9VUF9FTlZJUk9OTUVOVBAEEhkKFUhFTFBFUl9HUk9VUF9PUEVSQVRPUhAFEhgKFEhFTFBFUl9HUk9VUF9TUEFUSUFMEAYSFgoSSEVMUEVSX0dST1VQX0xPR0lDEAdCiwEKCWNvbS5hci52MUIPSGVscGVySW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_helper, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.HelperInfoMessage
@@ -41,9 +43,9 @@ export type HelperInfoMessage = Message<"ar.v1.HelperInfoMessage"> & {
   type: HelperType;
 
   /**
-   * @generated from field: string group = 6;
+   * @generated from field: ar.v1.HelperGroup group = 6;
    */
-  group: string;
+  group: HelperGroup;
 
   /**
    * @generated from field: bool require_agent = 7;
@@ -51,17 +53,40 @@ export type HelperInfoMessage = Message<"ar.v1.HelperInfoMessage"> & {
   requireAgent: boolean;
 
   /**
-   * @generated from field: repeated ar.v1.EventType required_events = 9;
+   * @generated from field: bool require_frame = 8;
    */
-  requiredEvents: EventType[];
+  requireFrame: boolean;
 
   /**
-   * @generated from field: repeated ar.v1.EventType optional_events = 10;
+   * Inputs the action expects to receive
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 9;
    */
-  optionalEvents: EventType[];
+  consumersRequired: ExchangeType[];
 
   /**
-   * @generated from field: bool disabled = 11;
+   * Inputs that will enhance the action, but not needed to function
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 10;
+   */
+  consumersOptional: ExchangeType[];
+
+  /**
+   * Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+   *
+   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 11;
+   */
+  requiredHandlers: HandlerRequirement[];
+
+  /**
+   * / Outputs the feedback publishes
+   *
+   * @generated from field: repeated ar.v1.ExchangeType emits = 12;
+   */
+  emits: ExchangeType[];
+
+  /**
+   * @generated from field: bool disabled = 13;
    */
   disabled: boolean;
 };
@@ -89,4 +114,55 @@ export type HelperInfoMessages = Message<"ar.v1.HelperInfoMessages"> & {
  */
 export const HelperInfoMessagesSchema: GenMessage<HelperInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_helper_info, 1);
+
+/**
+ * @generated from enum ar.v1.HelperGroup
+ */
+export enum HelperGroup {
+  /**
+   * @generated from enum value: HELPER_GROUP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_GENERAL = 1;
+   */
+  GENERAL = 1,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_ROBOT = 2;
+   */
+  ROBOT = 2,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_TASK = 3;
+   */
+  TASK = 3,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_ENVIRONMENT = 4;
+   */
+  ENVIRONMENT = 4,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_OPERATOR = 5;
+   */
+  OPERATOR = 5,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_SPATIAL = 6;
+   */
+  SPATIAL = 6,
+
+  /**
+   * @generated from enum value: HELPER_GROUP_LOGIC = 7;
+   */
+  LOGIC = 7,
+}
+
+/**
+ * Describes the enum ar.v1.HelperGroup.
+ */
+export const HelperGroupSchema: GenEnum<HelperGroup> = /*@__PURE__*/
+  enumDesc(file_ar_v1_helper_info, 0);
 
