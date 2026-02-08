@@ -58,6 +58,9 @@ namespace Messages.AR.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// Just delete this?
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARConfigInfoMessage : pb::IMessage<ARConfigInfoMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

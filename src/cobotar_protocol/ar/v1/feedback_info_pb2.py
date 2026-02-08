@@ -25,9 +25,10 @@ _sym_db = _symbol_database.Default()
 from ar.v1 import events_pb2 as ar_dot_v1_dot_events__pb2
 from ar.v1 import feedback_pb2 as ar_dot_v1_dot_feedback__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61r/v1/feedback_info.proto\x12\x05\x61r.v1\x1a\x12\x61r/v1/events.proto\x1a\x14\x61r/v1/feedback.proto\x1a\x1b\x62uf/validate/validate.proto\"\x95\x03\n\x13\x46\x65\x65\x64\x62\x61\x63kInfoMessage\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12/\n\x04type\x18\x05 \x01(\x0e\x32\x13.ar.v1.FeedbackTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\x12\x1c\n\x05group\x18\x06 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x05group\x12#\n\rrequire_agent\x18\x07 \x01(\x08R\x0crequireAgent\x12#\n\rrequire_frame\x18\x08 \x01(\x08R\x0crequireFrame\x12\x39\n\x0frequired_events\x18\t \x03(\x0e\x32\x10.ar.v1.EventTypeR\x0erequiredEvents\x12\x39\n\x0foptional_events\x18\n \x03(\x0e\x32\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n\x08\x64isabled\x18\x0b \x01(\x08R\x08\x64isabled\"H\n\x14\x46\x65\x65\x64\x62\x61\x63kInfoMessages\x12\x30\n\x05infos\x18\x01 \x03(\x0b\x32\x1a.ar.v1.FeedbackInfoMessageR\x05infosB\x8d\x01\n\tcom.ar.v1B\x11\x46\x65\x65\x64\x62\x61\x63kInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61r/v1/feedback_info.proto\x12\x05\x61r.v1\x1a\x12\x61r/v1/events.proto\x1a\x14\x61r/v1/feedback.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x04\n\x13\x46\x65\x65\x64\x62\x61\x63kInfoMessage\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x34\n\x04type\x18\x05 \x01(\x0e\x32\x13.ar.v1.FeedbackTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x34\n\x05group\x18\x06 \x01(\x0e\x32\x14.ar.v1.FeedbackGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12#\n\rrequire_agent\x18\x07 \x01(\x08R\x0crequireAgent\x12#\n\rrequire_frame\x18\x08 \x01(\x08R\x0crequireFrame\x12\x42\n\x12\x63onsumers_required\x18\t \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersRequired\x12\x42\n\x12\x63onsumers_optional\x18\n \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersOptional\x12\x46\n\x11required_handlers\x18\x0b \x03(\x0b\x32\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n\x05\x65mits\x18\x0c \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x05\x65mits\x12\x1a\n\x08\x64isabled\x18\r \x01(\x08R\x08\x64isabled\"H\n\x14\x46\x65\x65\x64\x62\x61\x63kInfoMessages\x12\x30\n\x05infos\x18\x01 \x03(\x0b\x32\x1a.ar.v1.FeedbackInfoMessageR\x05infos*\x9e\x01\n\rFeedbackGroup\x12\x1e\n\x1a\x46\x45\x45\x44\x42\x41\x43K_GROUP_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x46\x45\x45\x44\x42\x41\x43K_GROUP_GENERAL\x10\x01\x12\x18\n\x14\x46\x45\x45\x44\x42\x41\x43K_GROUP_ROBOT\x10\x02\x12\x17\n\x13\x46\x45\x45\x44\x42\x41\x43K_GROUP_TASK\x10\x03\x12\x1e\n\x1a\x46\x45\x45\x44\x42\x41\x43K_GROUP_ENVIRONMENT\x10\x04\x42\x8d\x01\n\tcom.ar.v1B\x11\x46\x65\x65\x64\x62\x61\x63kInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,13 +37,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\021FeedbackInfoProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
   _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['name']._loaded_options = None
-  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\020\001\030@'
+  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['type']._loaded_options = None
-  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['group']._loaded_options = None
-  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['group']._serialized_options = b'\272H\003\310\001\001'
-  _globals['_FEEDBACKINFOMESSAGE']._serialized_start=108
-  _globals['_FEEDBACKINFOMESSAGE']._serialized_end=513
-  _globals['_FEEDBACKINFOMESSAGES']._serialized_start=515
-  _globals['_FEEDBACKINFOMESSAGES']._serialized_end=587
+  _globals['_FEEDBACKINFOMESSAGE'].fields_by_name['group']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_FEEDBACKGROUP']._serialized_start=797
+  _globals['_FEEDBACKGROUP']._serialized_end=955
+  _globals['_FEEDBACKINFOMESSAGE']._serialized_start=153
+  _globals['_FEEDBACKINFOMESSAGE']._serialized_end=720
+  _globals['_FEEDBACKINFOMESSAGES']._serialized_start=722
+  _globals['_FEEDBACKINFOMESSAGES']._serialized_end=794
 # @@protoc_insertion_point(module_scope)

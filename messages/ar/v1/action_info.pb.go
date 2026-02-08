@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,19 +23,73 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ActionGroup int32
+
+const (
+	ActionGroup_ACTION_GROUP_UNSPECIFIED ActionGroup = 0
+	ActionGroup_ACTION_GROUP_GENERAL     ActionGroup = 1
+	ActionGroup_ACTION_GROUP_ROBOT       ActionGroup = 2
+	ActionGroup_ACTION_GROUP_TASK        ActionGroup = 3
+)
+
+// Enum value maps for ActionGroup.
+var (
+	ActionGroup_name = map[int32]string{
+		0: "ACTION_GROUP_UNSPECIFIED",
+		1: "ACTION_GROUP_GENERAL",
+		2: "ACTION_GROUP_ROBOT",
+		3: "ACTION_GROUP_TASK",
+	}
+	ActionGroup_value = map[string]int32{
+		"ACTION_GROUP_UNSPECIFIED": 0,
+		"ACTION_GROUP_GENERAL":     1,
+		"ACTION_GROUP_ROBOT":       2,
+		"ACTION_GROUP_TASK":        3,
+	}
+)
+
+func (x ActionGroup) Enum() *ActionGroup {
+	p := new(ActionGroup)
+	*p = x
+	return p
+}
+
+func (x ActionGroup) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ActionGroup) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_action_info_proto_enumTypes[0].Descriptor()
+}
+
+func (ActionGroup) Type() protoreflect.EnumType {
+	return &file_ar_v1_action_info_proto_enumTypes[0]
+}
+
+func (x ActionGroup) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ActionGroup.Descriptor instead.
+func (ActionGroup) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_action_info_proto_rawDescGZIP(), []int{0}
+}
+
 type ActionInfoMessage struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type           ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
-	Group          string                 `protobuf:"bytes,6,opt,name=group,proto3" json:"group,omitempty"`
-	RequireAgent   bool                   `protobuf:"varint,7,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
-	RequiredEvents []EventType            `protobuf:"varint,8,rep,packed,name=required_events,json=requiredEvents,proto3,enum=ar.v1.EventType" json:"required_events,omitempty"`
-	OptionalEvents []EventType            `protobuf:"varint,9,rep,packed,name=optional_events,json=optionalEvents,proto3,enum=ar.v1.EventType" json:"optional_events,omitempty"`
-	Disabled       bool                   `protobuf:"varint,10,opt,name=disabled,proto3" json:"disabled,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon              string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description       string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type              ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	Group             ActionGroup            `protobuf:"varint,6,opt,name=group,proto3,enum=ar.v1.ActionGroup" json:"group,omitempty"`
+	RequireAgent      bool                   `protobuf:"varint,7,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
+	ConsumersRequired []*ExchangeType        `protobuf:"bytes,8,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"` // Inputs the action expects to receive
+	ConsumersOptional []*ExchangeType        `protobuf:"bytes,9,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the action, but not needed to function
+	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,10,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`   // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+	Emits             []*ExchangeType        `protobuf:"bytes,11,rep,name=emits,proto3" json:"emits,omitempty"`                                                 // / Outputs the action publishes
+	Disabled          bool                   `protobuf:"varint,12,opt,name=disabled,proto3" json:"disabled,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ActionInfoMessage) Reset() {
@@ -95,11 +150,11 @@ func (x *ActionInfoMessage) GetType() ActionType {
 	return ActionType_ACTION_TYPE_UNSPECIFIED
 }
 
-func (x *ActionInfoMessage) GetGroup() string {
+func (x *ActionInfoMessage) GetGroup() ActionGroup {
 	if x != nil {
 		return x.Group
 	}
-	return ""
+	return ActionGroup_ACTION_GROUP_UNSPECIFIED
 }
 
 func (x *ActionInfoMessage) GetRequireAgent() bool {
@@ -109,16 +164,30 @@ func (x *ActionInfoMessage) GetRequireAgent() bool {
 	return false
 }
 
-func (x *ActionInfoMessage) GetRequiredEvents() []EventType {
+func (x *ActionInfoMessage) GetConsumersRequired() []*ExchangeType {
 	if x != nil {
-		return x.RequiredEvents
+		return x.ConsumersRequired
 	}
 	return nil
 }
 
-func (x *ActionInfoMessage) GetOptionalEvents() []EventType {
+func (x *ActionInfoMessage) GetConsumersOptional() []*ExchangeType {
 	if x != nil {
-		return x.OptionalEvents
+		return x.ConsumersOptional
+	}
+	return nil
+}
+
+func (x *ActionInfoMessage) GetRequiredHandlers() []*HandlerRequirement {
+	if x != nil {
+		return x.RequiredHandlers
+	}
+	return nil
+}
+
+func (x *ActionInfoMessage) GetEmits() []*ExchangeType {
+	if x != nil {
+		return x.Emits
 	}
 	return nil
 }
@@ -178,20 +247,27 @@ var File_ar_v1_action_info_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_info_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/action_info.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x12ar/v1/events.proto\x1a\x1bbuf/validate/validate.proto\"\xec\x02\n" +
+	"\x17ar/v1/action_info.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x12ar/v1/events.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8c\x04\n" +
 	"\x11ActionInfoMessage\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12-\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\x12\x1c\n" +
-	"\x05group\x18\x06 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x05group\x12#\n" +
-	"\rrequire_agent\x18\a \x01(\bR\frequireAgent\x129\n" +
-	"\x0frequired_events\x18\b \x03(\x0e2\x10.ar.v1.EventTypeR\x0erequiredEvents\x129\n" +
-	"\x0foptional_events\x18\t \x03(\x0e2\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n" +
-	"\bdisabled\x18\n" +
-	" \x01(\bR\bdisabled\"D\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x122\n" +
+	"\x05group\x18\x06 \x01(\x0e2\x12.ar.v1.ActionGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12#\n" +
+	"\rrequire_agent\x18\a \x01(\bR\frequireAgent\x12B\n" +
+	"\x12consumers_required\x18\b \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersRequired\x12B\n" +
+	"\x12consumers_optional\x18\t \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersOptional\x12F\n" +
+	"\x11required_handlers\x18\n" +
+	" \x03(\v2\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n" +
+	"\x05emits\x18\v \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\x1a\n" +
+	"\bdisabled\x18\f \x01(\bR\bdisabled\"D\n" +
 	"\x12ActionInfoMessages\x12.\n" +
-	"\x05infos\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\x05infosB\x8b\x01\n" +
+	"\x05infos\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\x05infos*t\n" +
+	"\vActionGroup\x12\x1c\n" +
+	"\x18ACTION_GROUP_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14ACTION_GROUP_GENERAL\x10\x01\x12\x16\n" +
+	"\x12ACTION_GROUP_ROBOT\x10\x02\x12\x15\n" +
+	"\x11ACTION_GROUP_TASK\x10\x03B\x8b\x01\n" +
 	"\tcom.ar.v1B\x0fActionInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -206,23 +282,29 @@ func file_ar_v1_action_info_proto_rawDescGZIP() []byte {
 	return file_ar_v1_action_info_proto_rawDescData
 }
 
+var file_ar_v1_action_info_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_action_info_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_action_info_proto_goTypes = []any{
-	(*ActionInfoMessage)(nil),  // 0: ar.v1.ActionInfoMessage
-	(*ActionInfoMessages)(nil), // 1: ar.v1.ActionInfoMessages
-	(ActionType)(0),            // 2: ar.v1.ActionType
-	(EventType)(0),             // 3: ar.v1.EventType
+	(ActionGroup)(0),           // 0: ar.v1.ActionGroup
+	(*ActionInfoMessage)(nil),  // 1: ar.v1.ActionInfoMessage
+	(*ActionInfoMessages)(nil), // 2: ar.v1.ActionInfoMessages
+	(ActionType)(0),            // 3: ar.v1.ActionType
+	(*ExchangeType)(nil),       // 4: ar.v1.ExchangeType
+	(*HandlerRequirement)(nil), // 5: ar.v1.HandlerRequirement
 }
 var file_ar_v1_action_info_proto_depIdxs = []int32{
-	2, // 0: ar.v1.ActionInfoMessage.type:type_name -> ar.v1.ActionType
-	3, // 1: ar.v1.ActionInfoMessage.required_events:type_name -> ar.v1.EventType
-	3, // 2: ar.v1.ActionInfoMessage.optional_events:type_name -> ar.v1.EventType
-	0, // 3: ar.v1.ActionInfoMessages.infos:type_name -> ar.v1.ActionInfoMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 0: ar.v1.ActionInfoMessage.type:type_name -> ar.v1.ActionType
+	0, // 1: ar.v1.ActionInfoMessage.group:type_name -> ar.v1.ActionGroup
+	4, // 2: ar.v1.ActionInfoMessage.consumers_required:type_name -> ar.v1.ExchangeType
+	4, // 3: ar.v1.ActionInfoMessage.consumers_optional:type_name -> ar.v1.ExchangeType
+	5, // 4: ar.v1.ActionInfoMessage.required_handlers:type_name -> ar.v1.HandlerRequirement
+	4, // 5: ar.v1.ActionInfoMessage.emits:type_name -> ar.v1.ExchangeType
+	1, // 6: ar.v1.ActionInfoMessages.infos:type_name -> ar.v1.ActionInfoMessage
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_info_proto_init() }
@@ -237,13 +319,14 @@ func file_ar_v1_action_info_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_info_proto_rawDesc), len(file_ar_v1_action_info_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ar_v1_action_info_proto_goTypes,
 		DependencyIndexes: file_ar_v1_action_info_proto_depIdxs,
+		EnumInfos:         file_ar_v1_action_info_proto_enumTypes,
 		MessageInfos:      file_ar_v1_action_info_proto_msgTypes,
 	}.Build()
 	File_ar_v1_action_info_proto = out.File

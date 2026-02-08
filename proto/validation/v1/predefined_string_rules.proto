@@ -15,4 +15,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a model id"
     expression: "(this == '' || this.startsWith('model-'))"
   }];
+
+  optional bool ar_config_id_component = 10002 [(buf.validate.predefined).cel = {
+    id: "string.ar_config_id_component"
+    message: "this does not seem to be a ARConfig id"
+    expression: "(this == '' || this.startsWith('arconfig-'))"
+  }];
 }

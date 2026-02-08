@@ -1,24 +1,83 @@
 syntax = "proto3";
 package ar.v1;
 
+import "buf/validate/validate.proto";
+
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-enum EventType {
-  EVENT_TYPE_UNSPECIFIED = 0;
-  EVENT_TYPE_TASK_COMPLETE = 10;
-  EVENT_TYPE_TASK_UNDO = 11;
-  EVENT_TYPE_TASK_ASSIGN = 12;
-  EVENT_TYPE_TASK_HIGHLIGHT = 13;
-  EVENT_TYPE_TASK_HELP = 14;
-  EVENT_TYPE_ROBOT_TCP = 100;
-  EVENT_TYPE_ROBOT_JOINT_ANGLES = 101;
-  EVENT_TYPE_ROBOT_FORCE_TORQUE = 102;
-  EVENT_TYPE_ROBOT_STATE = 110;
-  EVENT_TYPE_ROBOT_PATH = 120;
-  EVENT_TYPE_ROBOT_WAYPOINTS = 121;
+// Commands are intents, i.e. "please do this". Example: Start/STOP from UI -> Robot driver
+enum CommandType {
+  COMMAND_TYPE_UNSPECIFIED = 0;
+
+  // Workflow/UI intent
+  COMMAND_TYPE_TASK_COMPLETE = 10;
+  COMMAND_TYPE_TASK_ASSIGN = 11;
+  COMMAND_TYPE_TASK_UNDO = 12;
+  COMMAND_TYPE_TASK_HIGHLIGHT = 13;
+  COMMAND_TYPE_TASK_HELP = 14;
+
+  // Robot control intent
+  COMMAND_TYPE_ROBOT_START_STOP = 100;
+  COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE = 101;
+  COMMAND_TYPE_ROBOT_START_COLLABORATION = 102;
+  COMMAND_TYPE_ROBOT_STOP_COLLABORATION = 103;
 }
 
+// Events are 'facts', i.e. "this happened".
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+
+  // Workflow facts
+  EVENT_TYPE_PROCESS_COMPLETE = 10;
+
+  EVENT_TYPE_ROBOT_STARTING_TASK = 100;
+  EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 101;
+  EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 102;
+}
+
+enum TelemetryType {
+  TELEMETRY_TYPE_UNSPECIFIED = 0;
+
+  TELEMETRY_TYPE_ROBOT_TCP = 100;
+  TELEMETRY_TYPE_ROBOT_JOINT_ANGLES = 101;
+  TELEMETRY_TYPE_ROBOT_FORCE_TORQUE = 102;
+
+  TELEMETRY_TYPE_ROBOT_STATE = 110;
+
+  TELEMETRY_TYPE_ROBOT_PATH = 120;
+  TELEMETRY_TYPE_ROBOT_WAYPOINTS = 121;
+}
+
+message ExchangeType {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "command",
+      "event",
+      "telemetry"
+    ]
+    required: true
+  };
+  CommandType command = 1 [(buf.validate.field).enum.defined_only = true];
+  EventType event = 2 [(buf.validate.field).enum.defined_only = true];
+  TelemetryType telemetry = 3 [(buf.validate.field).enum.defined_only = true];
+}
+
+enum HandlerCardinality {
+  HANDLER_CARDINALITY_UNSPECIFIED = 0;
+  HANDLER_CARDINALITY_AT_LEAST_ONE = 1;
+  HANDLER_CARDINALITY_EXACTLY_ONE = 2;
+  HANDLER_CARDINALITY_AT_MOST_ONE = 3;
+}
+
+message HandlerRequirement {
+  ExchangeType message = 1;
+  HandlerCardinality cardinality = 2 [(buf.validate.field).enum.defined_only = true];
+  string rationale = 3; // optional but super helpful for UI
+}
+
+// Supported events is a list of all supported events in the current configuration
+// TODO: should this be a field of ARConfig?
 message SupportedEventsMessage {
   repeated EventType events = 1;
 }

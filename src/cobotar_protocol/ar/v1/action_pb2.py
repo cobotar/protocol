@@ -27,7 +27,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/action.proto\x12\x05\x61r.v1\x1a\x14\x61r/v1/property.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x02\n\rActionMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12/\n\nproperties\x18\x06 \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\x12<\n\x11output_properties\x18\x07 \x03(\x0b\x32\x0f.ar.v1.PropertyR\x10outputProperties\"@\n\x0e\x41\x63tionMessages\x12.\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x14.ar.v1.ActionMessageR\x07\x61\x63tions*\x80\x02\n\nActionType\x12\x1b\n\x17\x41\x43TION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41\x43TION_TYPE_TASK_COMPLETE\x10\n\x12\x19\n\x15\x41\x43TION_TYPE_TASK_UNDO\x10\x0b\x12\x1b\n\x17\x41\x43TION_TYPE_TASK_ASSIGN\x10\x0c\x12\x1e\n\x1a\x41\x43TION_TYPE_TASK_HIGHLIGHT\x10\r\x12\x19\n\x15\x41\x43TION_TYPE_TASK_HELP\x10\x0e\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_PLAY_PAUSE\x10\x32\x12!\n\x1d\x41\x43TION_TYPE_ROBOT_ACKNOWLEDGE\x10\x33\x42\x87\x01\n\tcom.ar.v1B\x0b\x41\x63tionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/action.proto\x12\x05\x61r.v1\x1a\x14\x61r/v1/property.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x02\n\rActionMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12/\n\nproperties\x18\x06 \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\x12<\n\x11output_properties\x18\x07 \x03(\x0b\x32\x0f.ar.v1.PropertyR\x10outputProperties\"@\n\x0e\x41\x63tionMessages\x12.\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x14.ar.v1.ActionMessageR\x07\x61\x63tions\"\x94\x02\n\x10\x41\x63tionAddMessage\x12&\n\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x19\n\x08\x61gent_id\x18\x06 \x01(\tR\x07\x61gentId\x12\x34\n\x16\x61\x63tivating_property_id\x18\x07 \x01(\tR\x14\x61\x63tivatingPropertyId\"z\n\x13\x41\x63tionUpdateMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription*\xa2\x02\n\nActionType\x12\x1b\n\x17\x41\x43TION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41\x43TION_TYPE_TASK_COMPLETE\x10\n\x12\x19\n\x15\x41\x43TION_TYPE_TASK_UNDO\x10\x0b\x12\x1b\n\x17\x41\x43TION_TYPE_TASK_ASSIGN\x10\x0c\x12\x1e\n\x1a\x41\x43TION_TYPE_TASK_HIGHLIGHT\x10\r\x12\x19\n\x15\x41\x43TION_TYPE_TASK_HELP\x10\x0e\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_PLAY_PAUSE\x10\x32\x12!\n\x1d\x41\x43TION_TYPE_ROBOT_ACKNOWLEDGE\x10\x33\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_FREE_DRIVE\x10\x34\x42\x87\x01\n\tcom.ar.v1B\x0b\x41\x63tionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,10 +39,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACTIONMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ACTIONMESSAGE'].fields_by_name['type']._loaded_options = None
   _globals['_ACTIONMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_ACTIONTYPE']._serialized_start=474
-  _globals['_ACTIONTYPE']._serialized_end=730
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['config_id']._loaded_options = None
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\006r\004\220\361\004\001'
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['name']._loaded_options = None
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['type']._loaded_options = None
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['name']._loaded_options = None
+  _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_ACTIONTYPE']._serialized_start=877
+  _globals['_ACTIONTYPE']._serialized_end=1167
   _globals['_ACTIONMESSAGE']._serialized_start=126
   _globals['_ACTIONMESSAGE']._serialized_end=405
   _globals['_ACTIONMESSAGES']._serialized_start=407
   _globals['_ACTIONMESSAGES']._serialized_end=471
+  _globals['_ACTIONADDMESSAGE']._serialized_start=474
+  _globals['_ACTIONADDMESSAGE']._serialized_end=750
+  _globals['_ACTIONUPDATEMESSAGE']._serialized_start=752
+  _globals['_ACTIONUPDATEMESSAGE']._serialized_end=874
 # @@protoc_insertion_point(module_scope)

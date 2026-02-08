@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa7\x01\n\x0cModelMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05group\x18\x05 \x01(\tR\x05group\x12\x1c\n\x03url\x18\x06 \x01(\tB\n\xbaH\x07r\x02h\x01\xd8\x01\x01R\x03url\"=\n\rModelMessages\x12,\n\x06models\x18\x01 \x03(\x0b\x32\x14.plm.v1.ModelMessageR\x06modelsB\x8d\x01\n\ncom.plm.v1B\nModelProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb4\x02\n\x0cModelMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x05group\x18\x05 \x01(\x0e\x32\x12.plm.v1.ModelGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12\x38\n\x06origin\x18\x06 \x01(\x0e\x32\x13.plm.v1.ModelOriginB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06origin\x12\x1a\n\x08\x66ilename\x18\x07 \x01(\tR\x08\x66ilename\x12\x1d\n\x03url\x18\x08 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03url:\x16\xbaH\x13\"\x11\n\x08\x66ilename\n\x03url\x10\x01\"=\n\rModelMessages\x12,\n\x06models\x18\x01 \x03(\x0b\x32\x14.plm.v1.ModelMessageR\x06models*\x87\x01\n\nModelGroup\x12\x1b\n\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x15\n\x11MODEL_GROUP_TOOLS\x10\x01\x12\x15\n\x11MODEL_GROUP_PARTS\x10\x02\x12\x16\n\x12MODEL_GROUP_ROBOTS\x10\x03\x12\x16\n\x12MODEL_GROUP_ASSETS\x10\x04*|\n\x0bModelOrigin\x12\x1c\n\x18MODEL_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_ORIGIN_BUILD_IN\x10\x01\x12\x19\n\x15MODEL_ORIGIN_UPLOADED\x10\x02\x12\x19\n\x15MODEL_ORIGIN_EXTERNAL\x10\x03\x42\x8d\x01\n\ncom.plm.v1B\nModelProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,10 +36,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\ncom.plm.v1B\nModelProtoP\001Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\242\002\003PXX\252\002\017Messages.Plm.V1\312\002\006Plm\\V1\342\002\022Plm\\V1\\GPBMetadata\352\002\007Plm::V1'
   _globals['_MODELMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_MODELMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_MODELMESSAGE'].fields_by_name['group']._loaded_options = None
+  _globals['_MODELMESSAGE'].fields_by_name['group']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_MODELMESSAGE'].fields_by_name['origin']._loaded_options = None
+  _globals['_MODELMESSAGE'].fields_by_name['origin']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_MODELMESSAGE'].fields_by_name['url']._loaded_options = None
-  _globals['_MODELMESSAGE'].fields_by_name['url']._serialized_options = b'\272H\007r\002h\001\330\001\001'
+  _globals['_MODELMESSAGE'].fields_by_name['url']._serialized_options = b'\272H\010r\003\210\001\001\330\001\001'
+  _globals['_MODELMESSAGE']._loaded_options = None
+  _globals['_MODELMESSAGE']._serialized_options = b'\272H\023\"\021\n\010filename\n\003url\020\001'
+  _globals['_MODELGROUP']._serialized_start=479
+  _globals['_MODELGROUP']._serialized_end=614
+  _globals['_MODELORIGIN']._serialized_start=616
+  _globals['_MODELORIGIN']._serialized_end=740
   _globals['_MODELMESSAGE']._serialized_start=105
-  _globals['_MODELMESSAGE']._serialized_end=272
-  _globals['_MODELMESSAGES']._serialized_start=274
-  _globals['_MODELMESSAGES']._serialized_end=335
+  _globals['_MODELMESSAGE']._serialized_end=413
+  _globals['_MODELMESSAGES']._serialized_start=415
+  _globals['_MODELMESSAGES']._serialized_end=476
 # @@protoc_insertion_point(module_scope)

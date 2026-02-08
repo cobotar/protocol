@@ -2,20 +2,21 @@
 // @generated from file ar/v1/feedback_info.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { EventType } from "./events_pb.ts";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
 import type { FeedbackType } from "./feedback_pb.ts";
 import { file_ar_v1_feedback } from "./feedback_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/feedback_info.proto.
  */
 export const file_ar_v1_feedback_info: GenFile = /*@__PURE__*/
-  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKpAgoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQga6SAPIAQESFQoFZ3JvdXAYBiABKAlCBrpIA8gBARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEhUKDXJlcXVpcmVfZnJhbWUYCCABKAgSKQoPcmVxdWlyZWRfZXZlbnRzGAkgAygOMhAuYXIudjEuRXZlbnRUeXBlEikKD29wdGlvbmFsX2V2ZW50cxgKIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIQCghkaXNhYmxlZBgLIAEoCCJBChRGZWVkYmFja0luZm9NZXNzYWdlcxIpCgVpbmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2VCjQEKCWNvbS5hci52MUIRRmVlZGJhY2tJbmZvUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate]);
+  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKsAwoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZlZWRiYWNrR3JvdXBCCLpIBYIBAhABEhUKDXJlcXVpcmVfYWdlbnQYByABKAgSFQoNcmVxdWlyZV9mcmFtZRgIIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAogAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEhAKCGRpc2FibGVkGA0gASgIIkEKFEZlZWRiYWNrSW5mb01lc3NhZ2VzEikKBWluZm9zGAEgAygLMhouYXIudjEuRmVlZGJhY2tJbmZvTWVzc2FnZSqeAQoNRmVlZGJhY2tHcm91cBIeChpGRUVEQkFDS19HUk9VUF9VTlNQRUNJRklFRBAAEhoKFkZFRURCQUNLX0dST1VQX0dFTkVSQUwQARIYChRGRUVEQkFDS19HUk9VUF9ST0JPVBACEhcKE0ZFRURCQUNLX0dST1VQX1RBU0sQAxIeChpGRUVEQkFDS19HUk9VUF9FTlZJUk9OTUVOVBAEQo0BCgljb20uYXIudjFCEUZlZWRiYWNrSW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackInfoMessage
@@ -42,9 +43,9 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: string group = 6;
+   * @generated from field: ar.v1.FeedbackGroup group = 6;
    */
-  group: string;
+  group: FeedbackGroup;
 
   /**
    * @generated from field: bool require_agent = 7;
@@ -57,17 +58,35 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
   requireFrame: boolean;
 
   /**
-   * @generated from field: repeated ar.v1.EventType required_events = 9;
+   * Inputs the action expects to receive
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 9;
    */
-  requiredEvents: EventType[];
+  consumersRequired: ExchangeType[];
 
   /**
-   * @generated from field: repeated ar.v1.EventType optional_events = 10;
+   * Inputs that will enhance the action, but not needed to function
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 10;
    */
-  optionalEvents: EventType[];
+  consumersOptional: ExchangeType[];
 
   /**
-   * @generated from field: bool disabled = 11;
+   * Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+   *
+   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 11;
+   */
+  requiredHandlers: HandlerRequirement[];
+
+  /**
+   * / Outputs the action publishes
+   *
+   * @generated from field: repeated ar.v1.ExchangeType emits = 12;
+   */
+  emits: ExchangeType[];
+
+  /**
+   * @generated from field: bool disabled = 13;
    */
   disabled: boolean;
 };
@@ -95,4 +114,40 @@ export type FeedbackInfoMessages = Message<"ar.v1.FeedbackInfoMessages"> & {
  */
 export const FeedbackInfoMessagesSchema: GenMessage<FeedbackInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_feedback_info, 1);
+
+/**
+ * @generated from enum ar.v1.FeedbackGroup
+ */
+export enum FeedbackGroup {
+  /**
+   * @generated from enum value: FEEDBACK_GROUP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: FEEDBACK_GROUP_GENERAL = 1;
+   */
+  GENERAL = 1,
+
+  /**
+   * @generated from enum value: FEEDBACK_GROUP_ROBOT = 2;
+   */
+  ROBOT = 2,
+
+  /**
+   * @generated from enum value: FEEDBACK_GROUP_TASK = 3;
+   */
+  TASK = 3,
+
+  /**
+   * @generated from enum value: FEEDBACK_GROUP_ENVIRONMENT = 4;
+   */
+  ENVIRONMENT = 4,
+}
+
+/**
+ * Describes the enum ar.v1.FeedbackGroup.
+ */
+export const FeedbackGroupSchema: GenEnum<FeedbackGroup> = /*@__PURE__*/
+  enumDesc(file_ar_v1_feedback_info, 0);
 

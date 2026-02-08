@@ -7,15 +7,42 @@ import "validation/v1/predefined_string_rules.proto";
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
+enum ModelGroup {
+  MODEL_GROUP_UNSPECIFIED = 0;
+  MODEL_GROUP_TOOLS = 1;
+  MODEL_GROUP_PARTS = 2;
+  MODEL_GROUP_ROBOTS = 3;
+  MODEL_GROUP_ASSETS = 4;
+}
+
+enum ModelOrigin {
+  MODEL_ORIGIN_UNSPECIFIED = 0;
+  MODEL_ORIGIN_BUILD_IN = 1;
+  MODEL_ORIGIN_UPLOADED = 2;
+  MODEL_ORIGIN_EXTERNAL = 3;
+}
+
 message ModelMessage {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "filename",
+      "url"
+    ]
+    required: true
+  };
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  string group = 5;
-  string url = 6 [
+  ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
+  ModelOrigin origin = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string filename = 7;
+  string url = 8 [
     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
-    (buf.validate.field).string.hostname = true
+    (buf.validate.field).string.uri = true
   ];
 }
 

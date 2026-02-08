@@ -23,14 +23,123 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ModelGroup int32
+
+const (
+	ModelGroup_MODEL_GROUP_UNSPECIFIED ModelGroup = 0
+	ModelGroup_MODEL_GROUP_TOOLS       ModelGroup = 1
+	ModelGroup_MODEL_GROUP_PARTS       ModelGroup = 2
+	ModelGroup_MODEL_GROUP_ROBOTS      ModelGroup = 3
+	ModelGroup_MODEL_GROUP_ASSETS      ModelGroup = 4
+)
+
+// Enum value maps for ModelGroup.
+var (
+	ModelGroup_name = map[int32]string{
+		0: "MODEL_GROUP_UNSPECIFIED",
+		1: "MODEL_GROUP_TOOLS",
+		2: "MODEL_GROUP_PARTS",
+		3: "MODEL_GROUP_ROBOTS",
+		4: "MODEL_GROUP_ASSETS",
+	}
+	ModelGroup_value = map[string]int32{
+		"MODEL_GROUP_UNSPECIFIED": 0,
+		"MODEL_GROUP_TOOLS":       1,
+		"MODEL_GROUP_PARTS":       2,
+		"MODEL_GROUP_ROBOTS":      3,
+		"MODEL_GROUP_ASSETS":      4,
+	}
+)
+
+func (x ModelGroup) Enum() *ModelGroup {
+	p := new(ModelGroup)
+	*p = x
+	return p
+}
+
+func (x ModelGroup) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ModelGroup) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_model_proto_enumTypes[0].Descriptor()
+}
+
+func (ModelGroup) Type() protoreflect.EnumType {
+	return &file_plm_v1_model_proto_enumTypes[0]
+}
+
+func (x ModelGroup) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ModelGroup.Descriptor instead.
+func (ModelGroup) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_model_proto_rawDescGZIP(), []int{0}
+}
+
+type ModelOrigin int32
+
+const (
+	ModelOrigin_MODEL_ORIGIN_UNSPECIFIED ModelOrigin = 0
+	ModelOrigin_MODEL_ORIGIN_BUILD_IN    ModelOrigin = 1
+	ModelOrigin_MODEL_ORIGIN_UPLOADED    ModelOrigin = 2
+	ModelOrigin_MODEL_ORIGIN_EXTERNAL    ModelOrigin = 3
+)
+
+// Enum value maps for ModelOrigin.
+var (
+	ModelOrigin_name = map[int32]string{
+		0: "MODEL_ORIGIN_UNSPECIFIED",
+		1: "MODEL_ORIGIN_BUILD_IN",
+		2: "MODEL_ORIGIN_UPLOADED",
+		3: "MODEL_ORIGIN_EXTERNAL",
+	}
+	ModelOrigin_value = map[string]int32{
+		"MODEL_ORIGIN_UNSPECIFIED": 0,
+		"MODEL_ORIGIN_BUILD_IN":    1,
+		"MODEL_ORIGIN_UPLOADED":    2,
+		"MODEL_ORIGIN_EXTERNAL":    3,
+	}
+)
+
+func (x ModelOrigin) Enum() *ModelOrigin {
+	p := new(ModelOrigin)
+	*p = x
+	return p
+}
+
+func (x ModelOrigin) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ModelOrigin) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_model_proto_enumTypes[1].Descriptor()
+}
+
+func (ModelOrigin) Type() protoreflect.EnumType {
+	return &file_plm_v1_model_proto_enumTypes[1]
+}
+
+func (x ModelOrigin) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ModelOrigin.Descriptor instead.
+func (ModelOrigin) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_model_proto_rawDescGZIP(), []int{1}
+}
+
 type ModelMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Group         string                 `protobuf:"bytes,5,opt,name=group,proto3" json:"group,omitempty"`
-	Url           string                 `protobuf:"bytes,6,opt,name=url,proto3" json:"url,omitempty"`
+	Group         ModelGroup             `protobuf:"varint,5,opt,name=group,proto3,enum=plm.v1.ModelGroup" json:"group,omitempty"`
+	Origin        ModelOrigin            `protobuf:"varint,6,opt,name=origin,proto3,enum=plm.v1.ModelOrigin" json:"origin,omitempty"`
+	Filename      string                 `protobuf:"bytes,7,opt,name=filename,proto3" json:"filename,omitempty"`
+	Url           string                 `protobuf:"bytes,8,opt,name=url,proto3" json:"url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -93,9 +202,23 @@ func (x *ModelMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ModelMessage) GetGroup() string {
+func (x *ModelMessage) GetGroup() ModelGroup {
 	if x != nil {
 		return x.Group
+	}
+	return ModelGroup_MODEL_GROUP_UNSPECIFIED
+}
+
+func (x *ModelMessage) GetOrigin() ModelOrigin {
+	if x != nil {
+		return x.Origin
+	}
+	return ModelOrigin_MODEL_ORIGIN_UNSPECIFIED
+}
+
+func (x *ModelMessage) GetFilename() string {
+	if x != nil {
+		return x.Filename
 	}
 	return ""
 }
@@ -155,17 +278,32 @@ var File_plm_v1_model_proto protoreflect.FileDescriptor
 
 const file_plm_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa7\x01\n" +
+	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb4\x02\n" +
 	"\fModelMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x14\n" +
-	"\x05group\x18\x05 \x01(\tR\x05group\x12\x1c\n" +
-	"\x03url\x18\x06 \x01(\tB\n" +
-	"\xbaH\a\xd8\x01\x01r\x02h\x01R\x03url\"=\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x05group\x18\x05 \x01(\x0e2\x12.plm.v1.ModelGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x128\n" +
+	"\x06origin\x18\x06 \x01(\x0e2\x13.plm.v1.ModelOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x1a\n" +
+	"\bfilename\x18\a \x01(\tR\bfilename\x12\x1d\n" +
+	"\x03url\x18\b \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03url:\x16\xbaH\x13\"\x11\n" +
+	"\bfilename\n" +
+	"\x03url\x10\x01\"=\n" +
 	"\rModelMessages\x12,\n" +
-	"\x06models\x18\x01 \x03(\v2\x14.plm.v1.ModelMessageR\x06modelsB\x8d\x01\n" +
+	"\x06models\x18\x01 \x03(\v2\x14.plm.v1.ModelMessageR\x06models*\x87\x01\n" +
+	"\n" +
+	"ModelGroup\x12\x1b\n" +
+	"\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x15\n" +
+	"\x11MODEL_GROUP_TOOLS\x10\x01\x12\x15\n" +
+	"\x11MODEL_GROUP_PARTS\x10\x02\x12\x16\n" +
+	"\x12MODEL_GROUP_ROBOTS\x10\x03\x12\x16\n" +
+	"\x12MODEL_GROUP_ASSETS\x10\x04*|\n" +
+	"\vModelOrigin\x12\x1c\n" +
+	"\x18MODEL_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15MODEL_ORIGIN_BUILD_IN\x10\x01\x12\x19\n" +
+	"\x15MODEL_ORIGIN_UPLOADED\x10\x02\x12\x19\n" +
+	"\x15MODEL_ORIGIN_EXTERNAL\x10\x03B\x8d\x01\n" +
 	"\n" +
 	"com.plm.v1B\n" +
 	"ModelProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
@@ -182,18 +320,23 @@ func file_plm_v1_model_proto_rawDescGZIP() []byte {
 	return file_plm_v1_model_proto_rawDescData
 }
 
+var file_plm_v1_model_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_plm_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_plm_v1_model_proto_goTypes = []any{
-	(*ModelMessage)(nil),  // 0: plm.v1.ModelMessage
-	(*ModelMessages)(nil), // 1: plm.v1.ModelMessages
+	(ModelGroup)(0),       // 0: plm.v1.ModelGroup
+	(ModelOrigin)(0),      // 1: plm.v1.ModelOrigin
+	(*ModelMessage)(nil),  // 2: plm.v1.ModelMessage
+	(*ModelMessages)(nil), // 3: plm.v1.ModelMessages
 }
 var file_plm_v1_model_proto_depIdxs = []int32{
-	0, // 0: plm.v1.ModelMessages.models:type_name -> plm.v1.ModelMessage
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 0: plm.v1.ModelMessage.group:type_name -> plm.v1.ModelGroup
+	1, // 1: plm.v1.ModelMessage.origin:type_name -> plm.v1.ModelOrigin
+	2, // 2: plm.v1.ModelMessages.models:type_name -> plm.v1.ModelMessage
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_model_proto_init() }
@@ -206,13 +349,14 @@ func file_plm_v1_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_model_proto_rawDesc), len(file_plm_v1_model_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      2,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_plm_v1_model_proto_goTypes,
 		DependencyIndexes: file_plm_v1_model_proto_depIdxs,
+		EnumInfos:         file_plm_v1_model_proto_enumTypes,
 		MessageInfos:      file_plm_v1_model_proto_msgTypes,
 	}.Build()
 	File_plm_v1_model_proto = out.File

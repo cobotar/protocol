@@ -71,6 +71,36 @@ class FeedbackMessages(_message.Message):
     feedbacks: _containers.RepeatedCompositeFieldContainer[FeedbackMessage]
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
+class FeedbackAddMessage(_message.Message):
+    __slots__ = ("config_id", "name", "icon", "description", "type", "agent_id", "anchor_id")
+    CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    ANCHOR_ID_FIELD_NUMBER: _ClassVar[int]
+    config_id: str
+    name: str
+    icon: str
+    description: str
+    type: FeedbackType
+    agent_id: str
+    anchor_id: str
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., agent_id: _Optional[str] = ..., anchor_id: _Optional[str] = ...) -> None: ...
+
+class FeedbackUpdateMessage(_message.Message):
+    __slots__ = ("id", "name", "icon", "description")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+
 class FeedbackCloneMessage(_message.Message):
     __slots__ = ("original_id", "name", "icon", "description")
     ORIGINAL_ID_FIELD_NUMBER: _ClassVar[int]

@@ -4,15 +4,75 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/events.proto.
  */
 export const file_ar_v1_events: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxIjoKFlN1cHBvcnRlZEV2ZW50c01lc3NhZ2USIAoGZXZlbnRzGAEgAygOMhAuYXIudjEuRXZlbnRUeXBlKusCCglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEVWRU5UX1RZUEVfVEFTS19DT01QTEVURRAKEhgKFEVWRU5UX1RZUEVfVEFTS19VTkRPEAsSGgoWRVZFTlRfVFlQRV9UQVNLX0FTU0lHThAMEh0KGUVWRU5UX1RZUEVfVEFTS19ISUdITElHSFQQDRIYChRFVkVOVF9UWVBFX1RBU0tfSEVMUBAOEhgKFEVWRU5UX1RZUEVfUk9CT1RfVENQEGQSIQodRVZFTlRfVFlQRV9ST0JPVF9KT0lOVF9BTkdMRVMQZRIhCh1FVkVOVF9UWVBFX1JPQk9UX0ZPUkNFX1RPUlFVRRBmEhoKFkVWRU5UX1RZUEVfUk9CT1RfU1RBVEUQbhIZChVFVkVOVF9UWVBFX1JPQk9UX1BBVEgQeBIeChpFVkVOVF9UWVBFX1JPQk9UX1dBWVBPSU5UUxB5QocBCgljb20uYXIudjFCC0V2ZW50c1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM");
+  fileDesc("ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxIr8BCgxFeGNoYW5nZVR5cGUSLQoHY29tbWFuZBgBIAEoDjISLmFyLnYxLkNvbW1hbmRUeXBlQgi6SAWCAQIQARIpCgVldmVudBgCIAEoDjIQLmFyLnYxLkV2ZW50VHlwZUIIukgFggECEAESMQoJdGVsZW1ldHJ5GAMgASgOMhQuYXIudjEuVGVsZW1ldHJ5VHlwZUIIukgFggECEAE6IrpIHyIdCgdjb21tYW5kCgVldmVudAoJdGVsZW1ldHJ5EAEihwEKEkhhbmRsZXJSZXF1aXJlbWVudBIkCgdtZXNzYWdlGAEgASgLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjgKC2NhcmRpbmFsaXR5GAIgASgOMhkuYXIudjEuSGFuZGxlckNhcmRpbmFsaXR5Qgi6SAWCAQIQARIRCglyYXRpb25hbGUYAyABKAkiOgoWU3VwcG9ydGVkRXZlbnRzTWVzc2FnZRIgCgZldmVudHMYASADKA4yEC5hci52MS5FdmVudFR5cGUq5gIKC0NvbW1hbmRUeXBlEhwKGENPTU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEh4KGkNPTU1BTkRfVFlQRV9UQVNLX0NPTVBMRVRFEAoSHAoYQ09NTUFORF9UWVBFX1RBU0tfQVNTSUdOEAsSGgoWQ09NTUFORF9UWVBFX1RBU0tfVU5ETxAMEh8KG0NPTU1BTkRfVFlQRV9UQVNLX0hJR0hMSUdIVBANEhoKFkNPTU1BTkRfVFlQRV9UQVNLX0hFTFAQDhIhCh1DT01NQU5EX1RZUEVfUk9CT1RfU1RBUlRfU1RPUBBkEigKJENPTU1BTkRfVFlQRV9ST0JPVF9UT0dHTEVfRlJFRV9EUklWRRBlEioKJkNPTU1BTkRfVFlQRV9ST0JPVF9TVEFSVF9DT0xMQUJPUkFUSU9OEGYSKQolQ09NTUFORF9UWVBFX1JPQk9UX1NUT1BfQ09MTEFCT1JBVElPThBnKr4BCglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEh8KG0VWRU5UX1RZUEVfUFJPQ0VTU19DT01QTEVURRAKEiIKHkVWRU5UX1RZUEVfUk9CT1RfU1RBUlRJTkdfVEFTSxBkEiUKIUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfSEVMUBBlEikKJUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19UQVNLX1JFTEVBU0UQZir+AQoNVGVsZW1ldHJ5VHlwZRIeChpURUxFTUVUUllfVFlQRV9VTlNQRUNJRklFRBAAEhwKGFRFTEVNRVRSWV9UWVBFX1JPQk9UX1RDUBBkEiUKIVRFTEVNRVRSWV9UWVBFX1JPQk9UX0pPSU5UX0FOR0xFUxBlEiUKIVRFTEVNRVRSWV9UWVBFX1JPQk9UX0ZPUkNFX1RPUlFVRRBmEh4KGlRFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEG4SHQoZVEVMRU1FVFJZX1RZUEVfUk9CT1RfUEFUSBB4EiIKHlRFTEVNRVRSWV9UWVBFX1JPQk9UX1dBWVBPSU5UUxB5KqkBChJIYW5kbGVyQ2FyZGluYWxpdHkSIwofSEFORExFUl9DQVJESU5BTElUWV9VTlNQRUNJRklFRBAAEiQKIEhBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTEVBU1RfT05FEAESIwofSEFORExFUl9DQVJESU5BTElUWV9FWEFDVExZX09ORRACEiMKH0hBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTU9TVF9PTkUQA0KHAQoJY29tLmFyLnYxQgtFdmVudHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
 
 /**
+ * @generated from message ar.v1.ExchangeType
+ */
+export type ExchangeType = Message<"ar.v1.ExchangeType"> & {
+  /**
+   * @generated from field: ar.v1.CommandType command = 1;
+   */
+  command: CommandType;
+
+  /**
+   * @generated from field: ar.v1.EventType event = 2;
+   */
+  event: EventType;
+
+  /**
+   * @generated from field: ar.v1.TelemetryType telemetry = 3;
+   */
+  telemetry: TelemetryType;
+};
+
+/**
+ * Describes the message ar.v1.ExchangeType.
+ * Use `create(ExchangeTypeSchema)` to create a new message.
+ */
+export const ExchangeTypeSchema: GenMessage<ExchangeType> = /*@__PURE__*/
+  messageDesc(file_ar_v1_events, 0);
+
+/**
+ * @generated from message ar.v1.HandlerRequirement
+ */
+export type HandlerRequirement = Message<"ar.v1.HandlerRequirement"> & {
+  /**
+   * @generated from field: ar.v1.ExchangeType message = 1;
+   */
+  message?: ExchangeType;
+
+  /**
+   * @generated from field: ar.v1.HandlerCardinality cardinality = 2;
+   */
+  cardinality: HandlerCardinality;
+
+  /**
+   * optional but super helpful for UI
+   *
+   * @generated from field: string rationale = 3;
+   */
+  rationale: string;
+};
+
+/**
+ * Describes the message ar.v1.HandlerRequirement.
+ * Use `create(HandlerRequirementSchema)` to create a new message.
+ */
+export const HandlerRequirementSchema: GenMessage<HandlerRequirement> = /*@__PURE__*/
+  messageDesc(file_ar_v1_events, 1);
+
+/**
+ * Supported events is a list of all supported events in the current configuration
+ * TODO: should this be a field of ARConfig?
+ *
  * @generated from message ar.v1.SupportedEventsMessage
  */
 export type SupportedEventsMessage = Message<"ar.v1.SupportedEventsMessage"> & {
@@ -27,9 +87,78 @@ export type SupportedEventsMessage = Message<"ar.v1.SupportedEventsMessage"> & {
  * Use `create(SupportedEventsMessageSchema)` to create a new message.
  */
 export const SupportedEventsMessageSchema: GenMessage<SupportedEventsMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_events, 0);
+  messageDesc(file_ar_v1_events, 2);
 
 /**
+ * Commands are intents, i.e. "please do this". Example: Start/STOP from UI -> Robot driver
+ *
+ * @generated from enum ar.v1.CommandType
+ */
+export enum CommandType {
+  /**
+   * @generated from enum value: COMMAND_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Workflow/UI intent
+   *
+   * @generated from enum value: COMMAND_TYPE_TASK_COMPLETE = 10;
+   */
+  TASK_COMPLETE = 10,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_TASK_ASSIGN = 11;
+   */
+  TASK_ASSIGN = 11,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_TASK_UNDO = 12;
+   */
+  TASK_UNDO = 12,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_TASK_HIGHLIGHT = 13;
+   */
+  TASK_HIGHLIGHT = 13,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_TASK_HELP = 14;
+   */
+  TASK_HELP = 14,
+
+  /**
+   * Robot control intent
+   *
+   * @generated from enum value: COMMAND_TYPE_ROBOT_START_STOP = 100;
+   */
+  ROBOT_START_STOP = 100,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE = 101;
+   */
+  ROBOT_TOGGLE_FREE_DRIVE = 101,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_ROBOT_START_COLLABORATION = 102;
+   */
+  ROBOT_START_COLLABORATION = 102,
+
+  /**
+   * @generated from enum value: COMMAND_TYPE_ROBOT_STOP_COLLABORATION = 103;
+   */
+  ROBOT_STOP_COLLABORATION = 103,
+}
+
+/**
+ * Describes the enum ar.v1.CommandType.
+ */
+export const CommandTypeSchema: GenEnum<CommandType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_events, 0);
+
+/**
+ * Events are 'facts', i.e. "this happened".
+ *
  * @generated from enum ar.v1.EventType
  */
 export enum EventType {
@@ -39,64 +168,108 @@ export enum EventType {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: EVENT_TYPE_TASK_COMPLETE = 10;
+   * Workflow facts
+   *
+   * @generated from enum value: EVENT_TYPE_PROCESS_COMPLETE = 10;
    */
-  TASK_COMPLETE = 10,
+  PROCESS_COMPLETE = 10,
 
   /**
-   * @generated from enum value: EVENT_TYPE_TASK_UNDO = 11;
+   * @generated from enum value: EVENT_TYPE_ROBOT_STARTING_TASK = 100;
    */
-  TASK_UNDO = 11,
+  ROBOT_STARTING_TASK = 100,
 
   /**
-   * @generated from enum value: EVENT_TYPE_TASK_ASSIGN = 12;
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_FOR_HELP = 101;
    */
-  TASK_ASSIGN = 12,
+  ROBOT_WAITING_FOR_HELP = 101,
 
   /**
-   * @generated from enum value: EVENT_TYPE_TASK_HIGHLIGHT = 13;
+   * @generated from enum value: EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE = 102;
    */
-  TASK_HIGHLIGHT = 13,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_TASK_HELP = 14;
-   */
-  TASK_HELP = 14,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_TCP = 100;
-   */
-  ROBOT_TCP = 100,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_JOINT_ANGLES = 101;
-   */
-  ROBOT_JOINT_ANGLES = 101,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_FORCE_TORQUE = 102;
-   */
-  ROBOT_FORCE_TORQUE = 102,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_STATE = 110;
-   */
-  ROBOT_STATE = 110,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_PATH = 120;
-   */
-  ROBOT_PATH = 120,
-
-  /**
-   * @generated from enum value: EVENT_TYPE_ROBOT_WAYPOINTS = 121;
-   */
-  ROBOT_WAYPOINTS = 121,
+  ROBOT_WAITING_TASK_RELEASE = 102,
 }
 
 /**
  * Describes the enum ar.v1.EventType.
  */
 export const EventTypeSchema: GenEnum<EventType> = /*@__PURE__*/
-  enumDesc(file_ar_v1_events, 0);
+  enumDesc(file_ar_v1_events, 1);
+
+/**
+ * @generated from enum ar.v1.TelemetryType
+ */
+export enum TelemetryType {
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_TCP = 100;
+   */
+  ROBOT_TCP = 100,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_JOINT_ANGLES = 101;
+   */
+  ROBOT_JOINT_ANGLES = 101,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_FORCE_TORQUE = 102;
+   */
+  ROBOT_FORCE_TORQUE = 102,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_STATE = 110;
+   */
+  ROBOT_STATE = 110,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_PATH = 120;
+   */
+  ROBOT_PATH = 120,
+
+  /**
+   * @generated from enum value: TELEMETRY_TYPE_ROBOT_WAYPOINTS = 121;
+   */
+  ROBOT_WAYPOINTS = 121,
+}
+
+/**
+ * Describes the enum ar.v1.TelemetryType.
+ */
+export const TelemetryTypeSchema: GenEnum<TelemetryType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_events, 2);
+
+/**
+ * @generated from enum ar.v1.HandlerCardinality
+ */
+export enum HandlerCardinality {
+  /**
+   * @generated from enum value: HANDLER_CARDINALITY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: HANDLER_CARDINALITY_AT_LEAST_ONE = 1;
+   */
+  AT_LEAST_ONE = 1,
+
+  /**
+   * @generated from enum value: HANDLER_CARDINALITY_EXACTLY_ONE = 2;
+   */
+  EXACTLY_ONE = 2,
+
+  /**
+   * @generated from enum value: HANDLER_CARDINALITY_AT_MOST_ONE = 3;
+   */
+  AT_MOST_ONE = 3,
+}
+
+/**
+ * Describes the enum ar.v1.HandlerCardinality.
+ */
+export const HandlerCardinalitySchema: GenEnum<HandlerCardinality> = /*@__PURE__*/
+  enumDesc(file_ar_v1_events, 3);
 

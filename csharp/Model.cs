@@ -26,25 +26,52 @@ namespace Messages.Plm.V1 {
           string.Concat(
             "ChJwbG0vdjEvbW9kZWwucHJvdG8SBnBsbS52MRobYnVmL3ZhbGlkYXRlL3Zh",
             "bGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
-            "X3J1bGVzLnByb3RvIqcBCgxNb2RlbE1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
+            "X3J1bGVzLnByb3RvIrQCCgxNb2RlbE1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
             "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
-            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIUCgVn",
-            "cm91cBgFIAEoCVIFZ3JvdXASHAoDdXJsGAYgASgJQgq6SAdyAmgB2AEBUgN1",
-            "cmwiPQoNTW9kZWxNZXNzYWdlcxIsCgZtb2RlbHMYASADKAsyFC5wbG0udjEu",
-            "TW9kZWxNZXNzYWdlUgZtb2RlbHNCjQEKCmNvbS5wbG0udjFCCk1vZGVsUHJv",
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgVn",
+            "cm91cBgFIAEoDjISLnBsbS52MS5Nb2RlbEdyb3VwQgi6SAWCAQIQAVIFZ3Jv",
+            "dXASOAoGb3JpZ2luGAYgASgOMhMucGxtLnYxLk1vZGVsT3JpZ2luQgu6SAiC",
+            "AQIQAcgBAVIGb3JpZ2luEhoKCGZpbGVuYW1lGAcgASgJUghmaWxlbmFtZRId",
+            "CgN1cmwYCCABKAlCC7pICHIDiAEB2AEBUgN1cmw6FrpIEyIRCghmaWxlbmFt",
+            "ZQoDdXJsEAEiPQoNTW9kZWxNZXNzYWdlcxIsCgZtb2RlbHMYASADKAsyFC5w",
+            "bG0udjEuTW9kZWxNZXNzYWdlUgZtb2RlbHMqhwEKCk1vZGVsR3JvdXASGwoX",
+            "TU9ERUxfR1JPVVBfVU5TUEVDSUZJRUQQABIVChFNT0RFTF9HUk9VUF9UT09M",
+            "UxABEhUKEU1PREVMX0dST1VQX1BBUlRTEAISFgoSTU9ERUxfR1JPVVBfUk9C",
+            "T1RTEAMSFgoSTU9ERUxfR1JPVVBfQVNTRVRTEAQqfAoLTW9kZWxPcmlnaW4S",
+            "HAoYTU9ERUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJR0lO",
+            "X0JVSUxEX0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoVTU9E",
+            "RUxfT1JJR0lOX0VYVEVSTkFMEANCjQEKCmNvbS5wbG0udjFCCk1vZGVsUHJv",
             "dG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Bs",
             "bS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeIC",
             "ElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessage), global::Messages.Plm.V1.ModelMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Group", "Url" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ModelGroup), typeof(global::Messages.Plm.V1.ModelOrigin), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessage), global::Messages.Plm.V1.ModelMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Group", "Origin", "Filename", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ModelMessages), global::Messages.Plm.V1.ModelMessages.Parser, new[]{ "Models" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum ModelGroup {
+    [pbr::OriginalName("MODEL_GROUP_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("MODEL_GROUP_TOOLS")] Tools = 1,
+    [pbr::OriginalName("MODEL_GROUP_PARTS")] Parts = 2,
+    [pbr::OriginalName("MODEL_GROUP_ROBOTS")] Robots = 3,
+    [pbr::OriginalName("MODEL_GROUP_ASSETS")] Assets = 4,
+  }
+
+  public enum ModelOrigin {
+    [pbr::OriginalName("MODEL_ORIGIN_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("MODEL_ORIGIN_BUILD_IN")] BuildIn = 1,
+    [pbr::OriginalName("MODEL_ORIGIN_UPLOADED")] Uploaded = 2,
+    [pbr::OriginalName("MODEL_ORIGIN_EXTERNAL")] External = 3,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ModelMessage : pb::IMessage<ModelMessage>
@@ -86,6 +113,8 @@ namespace Messages.Plm.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       group_ = other.group_;
+      origin_ = other.origin_;
+      filename_ = other.filename_;
       url_ = other.url_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -146,18 +175,42 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "group" field.</summary>
     public const int GroupFieldNumber = 5;
-    private string group_ = "";
+    private global::Messages.Plm.V1.ModelGroup group_ = global::Messages.Plm.V1.ModelGroup.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Group {
+    public global::Messages.Plm.V1.ModelGroup Group {
       get { return group_; }
       set {
-        group_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        group_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "origin" field.</summary>
+    public const int OriginFieldNumber = 6;
+    private global::Messages.Plm.V1.ModelOrigin origin_ = global::Messages.Plm.V1.ModelOrigin.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Plm.V1.ModelOrigin Origin {
+      get { return origin_; }
+      set {
+        origin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "filename" field.</summary>
+    public const int FilenameFieldNumber = 7;
+    private string filename_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Filename {
+      get { return filename_; }
+      set {
+        filename_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "url" field.</summary>
-    public const int UrlFieldNumber = 6;
+    public const int UrlFieldNumber = 8;
     private string url_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -188,6 +241,8 @@ namespace Messages.Plm.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Group != other.Group) return false;
+      if (Origin != other.Origin) return false;
+      if (Filename != other.Filename) return false;
       if (Url != other.Url) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -200,7 +255,9 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Group.Length != 0) hash ^= Group.GetHashCode();
+      if (Group != global::Messages.Plm.V1.ModelGroup.Unspecified) hash ^= Group.GetHashCode();
+      if (Origin != global::Messages.Plm.V1.ModelOrigin.Unspecified) hash ^= Origin.GetHashCode();
+      if (Filename.Length != 0) hash ^= Filename.GetHashCode();
       if (Url.Length != 0) hash ^= Url.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -236,12 +293,20 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Group.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(Group);
+      if (Group != global::Messages.Plm.V1.ModelGroup.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Group);
+      }
+      if (Origin != global::Messages.Plm.V1.ModelOrigin.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Origin);
+      }
+      if (Filename.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Filename);
       }
       if (Url.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(Url);
       }
       if (_unknownFields != null) {
@@ -270,12 +335,20 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Group.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(Group);
+      if (Group != global::Messages.Plm.V1.ModelGroup.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Group);
+      }
+      if (Origin != global::Messages.Plm.V1.ModelOrigin.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Origin);
+      }
+      if (Filename.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Filename);
       }
       if (Url.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(Url);
       }
       if (_unknownFields != null) {
@@ -300,8 +373,14 @@ namespace Messages.Plm.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Group.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Group);
+      if (Group != global::Messages.Plm.V1.ModelGroup.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Group);
+      }
+      if (Origin != global::Messages.Plm.V1.ModelOrigin.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Origin);
+      }
+      if (Filename.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filename);
       }
       if (Url.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
@@ -330,8 +409,14 @@ namespace Messages.Plm.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Group.Length != 0) {
+      if (other.Group != global::Messages.Plm.V1.ModelGroup.Unspecified) {
         Group = other.Group;
+      }
+      if (other.Origin != global::Messages.Plm.V1.ModelOrigin.Unspecified) {
+        Origin = other.Origin;
+      }
+      if (other.Filename.Length != 0) {
+        Filename = other.Filename;
       }
       if (other.Url.Length != 0) {
         Url = other.Url;
@@ -371,11 +456,19 @@ namespace Messages.Plm.V1 {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            Group = input.ReadString();
+          case 40: {
+            Group = (global::Messages.Plm.V1.ModelGroup) input.ReadEnum();
             break;
           }
-          case 50: {
+          case 48: {
+            Origin = (global::Messages.Plm.V1.ModelOrigin) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            Filename = input.ReadString();
+            break;
+          }
+          case 66: {
             Url = input.ReadString();
             break;
           }
@@ -414,11 +507,19 @@ namespace Messages.Plm.V1 {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            Group = input.ReadString();
+          case 40: {
+            Group = (global::Messages.Plm.V1.ModelGroup) input.ReadEnum();
             break;
           }
-          case 50: {
+          case 48: {
+            Origin = (global::Messages.Plm.V1.ModelOrigin) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            Filename = input.ReadString();
+            break;
+          }
+          case 66: {
             Url = input.ReadString();
             break;
           }

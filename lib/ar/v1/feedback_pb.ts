@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback.proto.
  */
 export const file_ar_v1_feedback: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi2gEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI9ChBGZWVkYmFja01lc3NhZ2VzEikKCWZlZWRiYWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZSJcChRGZWVkYmFja0Nsb25lTWVzc2FnZRITCgtvcmlnaW5hbF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkqqgQKDEZlZWRiYWNrVHlwZRIdChlGRUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNLX0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hMSUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAMEh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNLX1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFTS19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9CT1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNPThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVfUExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaEKJAQoJY29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi2gEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI9ChBGZWVkYmFja01lc3NhZ2VzEikKCWZlZWRiYWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZSLDAQoSRmVlZGJhY2tBZGRNZXNzYWdlEhwKCWNvbmZpZ19pZBgBIAEoCUIJukgGcgSQ8QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pICMgBAYIBAhABEhAKCGFnZW50X2lkGAYgASgJEhEKCWFuY2hvcl9pZBgHIAEoCSJfChVGZWVkYmFja1VwZGF0ZU1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiXAoURmVlZGJhY2tDbG9uZU1lc3NhZ2USEwoLb3JpZ2luYWxfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKqoECgxGZWVkYmFja1R5cGUSHQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklFRBAAEiAKHEZFRURCQUNLX1RZUEVfVEFTS19ISUdITElHSFQQChIlCiFGRUVEQkFDS19UWVBFX1RBU0tfUEFSVF9ISUdITElHSFQQCxIlCiFGRUVEQkFDS19UWVBFX1RBU0tfVE9PTF9ISUdITElHSFQQDBIfChtGRUVEQkFDS19UWVBFX1RBU0tfT1ZFUlZJRVcQDRIiCh5GRUVEQkFDS19UWVBFX1RBU0tfSU5TVFJVQ1RJT04QDhIgChxGRUVEQkFDS19UWVBFX1RBU0tfQ0hFQ0tMSVNUEA8SHAoYRkVFREJBQ0tfVFlQRV9ST0JPVF9QQVRIEDISIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEDMSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVEQkFDS19UWVBFX1JPQk9UX1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQNhIZChVGRUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVEQkFDS19UWVBFX0lDT04QZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhGRUVEQkFDS19UWVBFX1BMQVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JVTEVSEGhCiQEKCWNvbS5hci52MUINRmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackMessage
@@ -81,6 +81,85 @@ export const FeedbackMessagesSchema: GenMessage<FeedbackMessages> = /*@__PURE__*
   messageDesc(file_ar_v1_feedback, 1);
 
 /**
+ * @generated from message ar.v1.FeedbackAddMessage
+ */
+export type FeedbackAddMessage = Message<"ar.v1.FeedbackAddMessage"> & {
+  /**
+   * @generated from field: string config_id = 1;
+   */
+  configId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: ar.v1.FeedbackType type = 5;
+   */
+  type: FeedbackType;
+
+  /**
+   * @generated from field: string agent_id = 6;
+   */
+  agentId: string;
+
+  /**
+   * @generated from field: string anchor_id = 7;
+   */
+  anchorId: string;
+};
+
+/**
+ * Describes the message ar.v1.FeedbackAddMessage.
+ * Use `create(FeedbackAddMessageSchema)` to create a new message.
+ */
+export const FeedbackAddMessageSchema: GenMessage<FeedbackAddMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_feedback, 2);
+
+/**
+ * @generated from message ar.v1.FeedbackUpdateMessage
+ */
+export type FeedbackUpdateMessage = Message<"ar.v1.FeedbackUpdateMessage"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message ar.v1.FeedbackUpdateMessage.
+ * Use `create(FeedbackUpdateMessageSchema)` to create a new message.
+ */
+export const FeedbackUpdateMessageSchema: GenMessage<FeedbackUpdateMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_feedback, 3);
+
+/**
  * @generated from message ar.v1.FeedbackCloneMessage
  */
 export type FeedbackCloneMessage = Message<"ar.v1.FeedbackCloneMessage"> & {
@@ -110,7 +189,7 @@ export type FeedbackCloneMessage = Message<"ar.v1.FeedbackCloneMessage"> & {
  * Use `create(FeedbackCloneMessageSchema)` to create a new message.
  */
 export const FeedbackCloneMessageSchema: GenMessage<FeedbackCloneMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_feedback, 2);
+  messageDesc(file_ar_v1_feedback, 4);
 
 /**
  * @generated from enum ar.v1.FeedbackType

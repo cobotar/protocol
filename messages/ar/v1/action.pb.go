@@ -33,7 +33,8 @@ const (
 	ActionType_ACTION_TYPE_TASK_HIGHLIGHT    ActionType = 13
 	ActionType_ACTION_TYPE_TASK_HELP         ActionType = 14
 	ActionType_ACTION_TYPE_ROBOT_PLAY_PAUSE  ActionType = 50
-	ActionType_ACTION_TYPE_ROBOT_ACKNOWLEDGE ActionType = 51 // ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
+	ActionType_ACTION_TYPE_ROBOT_ACKNOWLEDGE ActionType = 51
+	ActionType_ACTION_TYPE_ROBOT_FREE_DRIVE  ActionType = 52
 )
 
 // Enum value maps for ActionType.
@@ -47,6 +48,7 @@ var (
 		14: "ACTION_TYPE_TASK_HELP",
 		50: "ACTION_TYPE_ROBOT_PLAY_PAUSE",
 		51: "ACTION_TYPE_ROBOT_ACKNOWLEDGE",
+		52: "ACTION_TYPE_ROBOT_FREE_DRIVE",
 	}
 	ActionType_value = map[string]int32{
 		"ACTION_TYPE_UNSPECIFIED":       0,
@@ -57,6 +59,7 @@ var (
 		"ACTION_TYPE_TASK_HELP":         14,
 		"ACTION_TYPE_ROBOT_PLAY_PAUSE":  50,
 		"ACTION_TYPE_ROBOT_ACKNOWLEDGE": 51,
+		"ACTION_TYPE_ROBOT_FREE_DRIVE":  52,
 	}
 )
 
@@ -223,6 +226,166 @@ func (x *ActionMessages) GetActions() []*ActionMessage {
 	return nil
 }
 
+type ActionAddMessage struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId             string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                 ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	AgentId              string                 `protobuf:"bytes,6,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
+	ActivatingPropertyId string                 `protobuf:"bytes,7,opt,name=activating_property_id,json=activatingPropertyId,proto3" json:"activating_property_id,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ActionAddMessage) Reset() {
+	*x = ActionAddMessage{}
+	mi := &file_ar_v1_action_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActionAddMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActionAddMessage) ProtoMessage() {}
+
+func (x *ActionAddMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_action_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActionAddMessage.ProtoReflect.Descriptor instead.
+func (*ActionAddMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_action_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ActionAddMessage) GetConfigId() string {
+	if x != nil {
+		return x.ConfigId
+	}
+	return ""
+}
+
+func (x *ActionAddMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ActionAddMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ActionAddMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ActionAddMessage) GetType() ActionType {
+	if x != nil {
+		return x.Type
+	}
+	return ActionType_ACTION_TYPE_UNSPECIFIED
+}
+
+func (x *ActionAddMessage) GetAgentId() string {
+	if x != nil {
+		return x.AgentId
+	}
+	return ""
+}
+
+func (x *ActionAddMessage) GetActivatingPropertyId() string {
+	if x != nil {
+		return x.ActivatingPropertyId
+	}
+	return ""
+}
+
+type ActionUpdateMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ActionUpdateMessage) Reset() {
+	*x = ActionUpdateMessage{}
+	mi := &file_ar_v1_action_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActionUpdateMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActionUpdateMessage) ProtoMessage() {}
+
+func (x *ActionUpdateMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_action_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActionUpdateMessage.ProtoReflect.Descriptor instead.
+func (*ActionUpdateMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_action_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ActionUpdateMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ActionUpdateMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ActionUpdateMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ActionUpdateMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
@@ -239,7 +402,20 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"properties\x12<\n" +
 	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\"@\n" +
 	"\x0eActionMessages\x12.\n" +
-	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions*\x80\x02\n" +
+	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\"\x94\x02\n" +
+	"\x10ActionAddMessage\x12&\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x19\n" +
+	"\bagent_id\x18\x06 \x01(\tR\aagentId\x124\n" +
+	"\x16activating_property_id\x18\a \x01(\tR\x14activatingPropertyId\"z\n" +
+	"\x13ActionUpdateMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xa2\x02\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -250,7 +426,8 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x1aACTION_TYPE_TASK_HIGHLIGHT\x10\r\x12\x19\n" +
 	"\x15ACTION_TYPE_TASK_HELP\x10\x0e\x12 \n" +
 	"\x1cACTION_TYPE_ROBOT_PLAY_PAUSE\x102\x12!\n" +
-	"\x1dACTION_TYPE_ROBOT_ACKNOWLEDGE\x103B\x87\x01\n" +
+	"\x1dACTION_TYPE_ROBOT_ACKNOWLEDGE\x103\x12 \n" +
+	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104B\x87\x01\n" +
 	"\tcom.ar.v1B\vActionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -266,23 +443,26 @@ func file_ar_v1_action_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_action_proto_goTypes = []any{
-	(ActionType)(0),        // 0: ar.v1.ActionType
-	(*ActionMessage)(nil),  // 1: ar.v1.ActionMessage
-	(*ActionMessages)(nil), // 2: ar.v1.ActionMessages
-	(*Property)(nil),       // 3: ar.v1.Property
+	(ActionType)(0),             // 0: ar.v1.ActionType
+	(*ActionMessage)(nil),       // 1: ar.v1.ActionMessage
+	(*ActionMessages)(nil),      // 2: ar.v1.ActionMessages
+	(*ActionAddMessage)(nil),    // 3: ar.v1.ActionAddMessage
+	(*ActionUpdateMessage)(nil), // 4: ar.v1.ActionUpdateMessage
+	(*Property)(nil),            // 5: ar.v1.Property
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	3, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
-	3, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
+	5, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
+	5, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
 	1, // 3: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 4: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }
@@ -297,7 +477,7 @@ func file_ar_v1_action_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_proto_rawDesc), len(file_ar_v1_action_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

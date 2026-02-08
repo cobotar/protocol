@@ -7,6 +7,7 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,52 +22,106 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Commands are intents, i.e. "please do this". Example: Start/STOP from UI -> Robot driver
+type CommandType int32
+
+const (
+	CommandType_COMMAND_TYPE_UNSPECIFIED CommandType = 0
+	// Workflow/UI intent
+	CommandType_COMMAND_TYPE_TASK_COMPLETE  CommandType = 10
+	CommandType_COMMAND_TYPE_TASK_ASSIGN    CommandType = 11
+	CommandType_COMMAND_TYPE_TASK_UNDO      CommandType = 12
+	CommandType_COMMAND_TYPE_TASK_HIGHLIGHT CommandType = 13
+	CommandType_COMMAND_TYPE_TASK_HELP      CommandType = 14
+	// Robot control intent
+	CommandType_COMMAND_TYPE_ROBOT_START_STOP          CommandType = 100
+	CommandType_COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE   CommandType = 101
+	CommandType_COMMAND_TYPE_ROBOT_START_COLLABORATION CommandType = 102
+	CommandType_COMMAND_TYPE_ROBOT_STOP_COLLABORATION  CommandType = 103
+)
+
+// Enum value maps for CommandType.
+var (
+	CommandType_name = map[int32]string{
+		0:   "COMMAND_TYPE_UNSPECIFIED",
+		10:  "COMMAND_TYPE_TASK_COMPLETE",
+		11:  "COMMAND_TYPE_TASK_ASSIGN",
+		12:  "COMMAND_TYPE_TASK_UNDO",
+		13:  "COMMAND_TYPE_TASK_HIGHLIGHT",
+		14:  "COMMAND_TYPE_TASK_HELP",
+		100: "COMMAND_TYPE_ROBOT_START_STOP",
+		101: "COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE",
+		102: "COMMAND_TYPE_ROBOT_START_COLLABORATION",
+		103: "COMMAND_TYPE_ROBOT_STOP_COLLABORATION",
+	}
+	CommandType_value = map[string]int32{
+		"COMMAND_TYPE_UNSPECIFIED":               0,
+		"COMMAND_TYPE_TASK_COMPLETE":             10,
+		"COMMAND_TYPE_TASK_ASSIGN":               11,
+		"COMMAND_TYPE_TASK_UNDO":                 12,
+		"COMMAND_TYPE_TASK_HIGHLIGHT":            13,
+		"COMMAND_TYPE_TASK_HELP":                 14,
+		"COMMAND_TYPE_ROBOT_START_STOP":          100,
+		"COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE":   101,
+		"COMMAND_TYPE_ROBOT_START_COLLABORATION": 102,
+		"COMMAND_TYPE_ROBOT_STOP_COLLABORATION":  103,
+	}
+)
+
+func (x CommandType) Enum() *CommandType {
+	p := new(CommandType)
+	*p = x
+	return p
+}
+
+func (x CommandType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CommandType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_events_proto_enumTypes[0].Descriptor()
+}
+
+func (CommandType) Type() protoreflect.EnumType {
+	return &file_ar_v1_events_proto_enumTypes[0]
+}
+
+func (x CommandType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CommandType.Descriptor instead.
+func (CommandType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{0}
+}
+
+// Events are 'facts', i.e. "this happened".
 type EventType int32
 
 const (
-	EventType_EVENT_TYPE_UNSPECIFIED        EventType = 0
-	EventType_EVENT_TYPE_TASK_COMPLETE      EventType = 10
-	EventType_EVENT_TYPE_TASK_UNDO          EventType = 11
-	EventType_EVENT_TYPE_TASK_ASSIGN        EventType = 12
-	EventType_EVENT_TYPE_TASK_HIGHLIGHT     EventType = 13
-	EventType_EVENT_TYPE_TASK_HELP          EventType = 14
-	EventType_EVENT_TYPE_ROBOT_TCP          EventType = 100
-	EventType_EVENT_TYPE_ROBOT_JOINT_ANGLES EventType = 101
-	EventType_EVENT_TYPE_ROBOT_FORCE_TORQUE EventType = 102
-	EventType_EVENT_TYPE_ROBOT_STATE        EventType = 110
-	EventType_EVENT_TYPE_ROBOT_PATH         EventType = 120
-	EventType_EVENT_TYPE_ROBOT_WAYPOINTS    EventType = 121
+	EventType_EVENT_TYPE_UNSPECIFIED EventType = 0
+	// Workflow facts
+	EventType_EVENT_TYPE_PROCESS_COMPLETE           EventType = 10
+	EventType_EVENT_TYPE_ROBOT_STARTING_TASK        EventType = 100
+	EventType_EVENT_TYPE_ROBOT_WAITING_FOR_HELP     EventType = 101
+	EventType_EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE EventType = 102
 )
 
 // Enum value maps for EventType.
 var (
 	EventType_name = map[int32]string{
 		0:   "EVENT_TYPE_UNSPECIFIED",
-		10:  "EVENT_TYPE_TASK_COMPLETE",
-		11:  "EVENT_TYPE_TASK_UNDO",
-		12:  "EVENT_TYPE_TASK_ASSIGN",
-		13:  "EVENT_TYPE_TASK_HIGHLIGHT",
-		14:  "EVENT_TYPE_TASK_HELP",
-		100: "EVENT_TYPE_ROBOT_TCP",
-		101: "EVENT_TYPE_ROBOT_JOINT_ANGLES",
-		102: "EVENT_TYPE_ROBOT_FORCE_TORQUE",
-		110: "EVENT_TYPE_ROBOT_STATE",
-		120: "EVENT_TYPE_ROBOT_PATH",
-		121: "EVENT_TYPE_ROBOT_WAYPOINTS",
+		10:  "EVENT_TYPE_PROCESS_COMPLETE",
+		100: "EVENT_TYPE_ROBOT_STARTING_TASK",
+		101: "EVENT_TYPE_ROBOT_WAITING_FOR_HELP",
+		102: "EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE",
 	}
 	EventType_value = map[string]int32{
-		"EVENT_TYPE_UNSPECIFIED":        0,
-		"EVENT_TYPE_TASK_COMPLETE":      10,
-		"EVENT_TYPE_TASK_UNDO":          11,
-		"EVENT_TYPE_TASK_ASSIGN":        12,
-		"EVENT_TYPE_TASK_HIGHLIGHT":     13,
-		"EVENT_TYPE_TASK_HELP":          14,
-		"EVENT_TYPE_ROBOT_TCP":          100,
-		"EVENT_TYPE_ROBOT_JOINT_ANGLES": 101,
-		"EVENT_TYPE_ROBOT_FORCE_TORQUE": 102,
-		"EVENT_TYPE_ROBOT_STATE":        110,
-		"EVENT_TYPE_ROBOT_PATH":         120,
-		"EVENT_TYPE_ROBOT_WAYPOINTS":    121,
+		"EVENT_TYPE_UNSPECIFIED":                0,
+		"EVENT_TYPE_PROCESS_COMPLETE":           10,
+		"EVENT_TYPE_ROBOT_STARTING_TASK":        100,
+		"EVENT_TYPE_ROBOT_WAITING_FOR_HELP":     101,
+		"EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE": 102,
 	}
 )
 
@@ -81,11 +136,11 @@ func (x EventType) String() string {
 }
 
 func (EventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_events_proto_enumTypes[0].Descriptor()
+	return file_ar_v1_events_proto_enumTypes[1].Descriptor()
 }
 
 func (EventType) Type() protoreflect.EnumType {
-	return &file_ar_v1_events_proto_enumTypes[0]
+	return &file_ar_v1_events_proto_enumTypes[1]
 }
 
 func (x EventType) Number() protoreflect.EnumNumber {
@@ -94,9 +149,244 @@ func (x EventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use EventType.Descriptor instead.
 func (EventType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{1}
+}
+
+type TelemetryType int32
+
+const (
+	TelemetryType_TELEMETRY_TYPE_UNSPECIFIED        TelemetryType = 0
+	TelemetryType_TELEMETRY_TYPE_ROBOT_TCP          TelemetryType = 100
+	TelemetryType_TELEMETRY_TYPE_ROBOT_JOINT_ANGLES TelemetryType = 101
+	TelemetryType_TELEMETRY_TYPE_ROBOT_FORCE_TORQUE TelemetryType = 102
+	TelemetryType_TELEMETRY_TYPE_ROBOT_STATE        TelemetryType = 110
+	TelemetryType_TELEMETRY_TYPE_ROBOT_PATH         TelemetryType = 120
+	TelemetryType_TELEMETRY_TYPE_ROBOT_WAYPOINTS    TelemetryType = 121
+)
+
+// Enum value maps for TelemetryType.
+var (
+	TelemetryType_name = map[int32]string{
+		0:   "TELEMETRY_TYPE_UNSPECIFIED",
+		100: "TELEMETRY_TYPE_ROBOT_TCP",
+		101: "TELEMETRY_TYPE_ROBOT_JOINT_ANGLES",
+		102: "TELEMETRY_TYPE_ROBOT_FORCE_TORQUE",
+		110: "TELEMETRY_TYPE_ROBOT_STATE",
+		120: "TELEMETRY_TYPE_ROBOT_PATH",
+		121: "TELEMETRY_TYPE_ROBOT_WAYPOINTS",
+	}
+	TelemetryType_value = map[string]int32{
+		"TELEMETRY_TYPE_UNSPECIFIED":        0,
+		"TELEMETRY_TYPE_ROBOT_TCP":          100,
+		"TELEMETRY_TYPE_ROBOT_JOINT_ANGLES": 101,
+		"TELEMETRY_TYPE_ROBOT_FORCE_TORQUE": 102,
+		"TELEMETRY_TYPE_ROBOT_STATE":        110,
+		"TELEMETRY_TYPE_ROBOT_PATH":         120,
+		"TELEMETRY_TYPE_ROBOT_WAYPOINTS":    121,
+	}
+)
+
+func (x TelemetryType) Enum() *TelemetryType {
+	p := new(TelemetryType)
+	*p = x
+	return p
+}
+
+func (x TelemetryType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TelemetryType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_events_proto_enumTypes[2].Descriptor()
+}
+
+func (TelemetryType) Type() protoreflect.EnumType {
+	return &file_ar_v1_events_proto_enumTypes[2]
+}
+
+func (x TelemetryType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TelemetryType.Descriptor instead.
+func (TelemetryType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{2}
+}
+
+type HandlerCardinality int32
+
+const (
+	HandlerCardinality_HANDLER_CARDINALITY_UNSPECIFIED  HandlerCardinality = 0
+	HandlerCardinality_HANDLER_CARDINALITY_AT_LEAST_ONE HandlerCardinality = 1
+	HandlerCardinality_HANDLER_CARDINALITY_EXACTLY_ONE  HandlerCardinality = 2
+	HandlerCardinality_HANDLER_CARDINALITY_AT_MOST_ONE  HandlerCardinality = 3
+)
+
+// Enum value maps for HandlerCardinality.
+var (
+	HandlerCardinality_name = map[int32]string{
+		0: "HANDLER_CARDINALITY_UNSPECIFIED",
+		1: "HANDLER_CARDINALITY_AT_LEAST_ONE",
+		2: "HANDLER_CARDINALITY_EXACTLY_ONE",
+		3: "HANDLER_CARDINALITY_AT_MOST_ONE",
+	}
+	HandlerCardinality_value = map[string]int32{
+		"HANDLER_CARDINALITY_UNSPECIFIED":  0,
+		"HANDLER_CARDINALITY_AT_LEAST_ONE": 1,
+		"HANDLER_CARDINALITY_EXACTLY_ONE":  2,
+		"HANDLER_CARDINALITY_AT_MOST_ONE":  3,
+	}
+)
+
+func (x HandlerCardinality) Enum() *HandlerCardinality {
+	p := new(HandlerCardinality)
+	*p = x
+	return p
+}
+
+func (x HandlerCardinality) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (HandlerCardinality) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_events_proto_enumTypes[3].Descriptor()
+}
+
+func (HandlerCardinality) Type() protoreflect.EnumType {
+	return &file_ar_v1_events_proto_enumTypes[3]
+}
+
+func (x HandlerCardinality) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use HandlerCardinality.Descriptor instead.
+func (HandlerCardinality) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{3}
+}
+
+type ExchangeType struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Command       CommandType            `protobuf:"varint,1,opt,name=command,proto3,enum=ar.v1.CommandType" json:"command,omitempty"`
+	Event         EventType              `protobuf:"varint,2,opt,name=event,proto3,enum=ar.v1.EventType" json:"event,omitempty"`
+	Telemetry     TelemetryType          `protobuf:"varint,3,opt,name=telemetry,proto3,enum=ar.v1.TelemetryType" json:"telemetry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExchangeType) Reset() {
+	*x = ExchangeType{}
+	mi := &file_ar_v1_events_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExchangeType) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExchangeType) ProtoMessage() {}
+
+func (x *ExchangeType) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_events_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExchangeType.ProtoReflect.Descriptor instead.
+func (*ExchangeType) Descriptor() ([]byte, []int) {
 	return file_ar_v1_events_proto_rawDescGZIP(), []int{0}
 }
 
+func (x *ExchangeType) GetCommand() CommandType {
+	if x != nil {
+		return x.Command
+	}
+	return CommandType_COMMAND_TYPE_UNSPECIFIED
+}
+
+func (x *ExchangeType) GetEvent() EventType {
+	if x != nil {
+		return x.Event
+	}
+	return EventType_EVENT_TYPE_UNSPECIFIED
+}
+
+func (x *ExchangeType) GetTelemetry() TelemetryType {
+	if x != nil {
+		return x.Telemetry
+	}
+	return TelemetryType_TELEMETRY_TYPE_UNSPECIFIED
+}
+
+type HandlerRequirement struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *ExchangeType          `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	Cardinality   HandlerCardinality     `protobuf:"varint,2,opt,name=cardinality,proto3,enum=ar.v1.HandlerCardinality" json:"cardinality,omitempty"`
+	Rationale     string                 `protobuf:"bytes,3,opt,name=rationale,proto3" json:"rationale,omitempty"` // optional but super helpful for UI
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HandlerRequirement) Reset() {
+	*x = HandlerRequirement{}
+	mi := &file_ar_v1_events_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HandlerRequirement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HandlerRequirement) ProtoMessage() {}
+
+func (x *HandlerRequirement) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_events_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HandlerRequirement.ProtoReflect.Descriptor instead.
+func (*HandlerRequirement) Descriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *HandlerRequirement) GetMessage() *ExchangeType {
+	if x != nil {
+		return x.Message
+	}
+	return nil
+}
+
+func (x *HandlerRequirement) GetCardinality() HandlerCardinality {
+	if x != nil {
+		return x.Cardinality
+	}
+	return HandlerCardinality_HANDLER_CARDINALITY_UNSPECIFIED
+}
+
+func (x *HandlerRequirement) GetRationale() string {
+	if x != nil {
+		return x.Rationale
+	}
+	return ""
+}
+
+// Supported events is a list of all supported events in the current configuration
+// TODO: should this be a field of ARConfig?
 type SupportedEventsMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Events        []EventType            `protobuf:"varint,1,rep,packed,name=events,proto3,enum=ar.v1.EventType" json:"events,omitempty"`
@@ -106,7 +396,7 @@ type SupportedEventsMessage struct {
 
 func (x *SupportedEventsMessage) Reset() {
 	*x = SupportedEventsMessage{}
-	mi := &file_ar_v1_events_proto_msgTypes[0]
+	mi := &file_ar_v1_events_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -118,7 +408,7 @@ func (x *SupportedEventsMessage) String() string {
 func (*SupportedEventsMessage) ProtoMessage() {}
 
 func (x *SupportedEventsMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_events_proto_msgTypes[0]
+	mi := &file_ar_v1_events_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +421,7 @@ func (x *SupportedEventsMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SupportedEventsMessage.ProtoReflect.Descriptor instead.
 func (*SupportedEventsMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_events_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SupportedEventsMessage) GetEvents() []EventType {
@@ -145,23 +435,52 @@ var File_ar_v1_events_proto protoreflect.FileDescriptor
 
 const file_ar_v1_events_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/events.proto\x12\x05ar.v1\"B\n" +
+	"\x12ar/v1/events.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\"\xda\x01\n" +
+	"\fExchangeType\x126\n" +
+	"\acommand\x18\x01 \x01(\x0e2\x12.ar.v1.CommandTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\acommand\x120\n" +
+	"\x05event\x18\x02 \x01(\x0e2\x10.ar.v1.EventTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05event\x12<\n" +
+	"\ttelemetry\x18\x03 \x01(\x0e2\x14.ar.v1.TelemetryTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\ttelemetry:\"\xbaH\x1f\"\x1d\n" +
+	"\acommand\n" +
+	"\x05event\n" +
+	"\ttelemetry\x10\x01\"\xa8\x01\n" +
+	"\x12HandlerRequirement\x12-\n" +
+	"\amessage\x18\x01 \x01(\v2\x13.ar.v1.ExchangeTypeR\amessage\x12E\n" +
+	"\vcardinality\x18\x02 \x01(\x0e2\x19.ar.v1.HandlerCardinalityB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcardinality\x12\x1c\n" +
+	"\trationale\x18\x03 \x01(\tR\trationale\"B\n" +
 	"\x16SupportedEventsMessage\x12(\n" +
-	"\x06events\x18\x01 \x03(\x0e2\x10.ar.v1.EventTypeR\x06events*\xeb\x02\n" +
+	"\x06events\x18\x01 \x03(\x0e2\x10.ar.v1.EventTypeR\x06events*\xe6\x02\n" +
+	"\vCommandType\x12\x1c\n" +
+	"\x18COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
+	"\x1aCOMMAND_TYPE_TASK_COMPLETE\x10\n" +
+	"\x12\x1c\n" +
+	"\x18COMMAND_TYPE_TASK_ASSIGN\x10\v\x12\x1a\n" +
+	"\x16COMMAND_TYPE_TASK_UNDO\x10\f\x12\x1f\n" +
+	"\x1bCOMMAND_TYPE_TASK_HIGHLIGHT\x10\r\x12\x1a\n" +
+	"\x16COMMAND_TYPE_TASK_HELP\x10\x0e\x12!\n" +
+	"\x1dCOMMAND_TYPE_ROBOT_START_STOP\x10d\x12(\n" +
+	"$COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE\x10e\x12*\n" +
+	"&COMMAND_TYPE_ROBOT_START_COLLABORATION\x10f\x12)\n" +
+	"%COMMAND_TYPE_ROBOT_STOP_COLLABORATION\x10g*\xbe\x01\n" +
 	"\tEventType\x12\x1a\n" +
-	"\x16EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n" +
-	"\x18EVENT_TYPE_TASK_COMPLETE\x10\n" +
-	"\x12\x18\n" +
-	"\x14EVENT_TYPE_TASK_UNDO\x10\v\x12\x1a\n" +
-	"\x16EVENT_TYPE_TASK_ASSIGN\x10\f\x12\x1d\n" +
-	"\x19EVENT_TYPE_TASK_HIGHLIGHT\x10\r\x12\x18\n" +
-	"\x14EVENT_TYPE_TASK_HELP\x10\x0e\x12\x18\n" +
-	"\x14EVENT_TYPE_ROBOT_TCP\x10d\x12!\n" +
-	"\x1dEVENT_TYPE_ROBOT_JOINT_ANGLES\x10e\x12!\n" +
-	"\x1dEVENT_TYPE_ROBOT_FORCE_TORQUE\x10f\x12\x1a\n" +
-	"\x16EVENT_TYPE_ROBOT_STATE\x10n\x12\x19\n" +
-	"\x15EVENT_TYPE_ROBOT_PATH\x10x\x12\x1e\n" +
-	"\x1aEVENT_TYPE_ROBOT_WAYPOINTS\x10yB\x87\x01\n" +
+	"\x16EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bEVENT_TYPE_PROCESS_COMPLETE\x10\n" +
+	"\x12\"\n" +
+	"\x1eEVENT_TYPE_ROBOT_STARTING_TASK\x10d\x12%\n" +
+	"!EVENT_TYPE_ROBOT_WAITING_FOR_HELP\x10e\x12)\n" +
+	"%EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE\x10f*\xfe\x01\n" +
+	"\rTelemetryType\x12\x1e\n" +
+	"\x1aTELEMETRY_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18TELEMETRY_TYPE_ROBOT_TCP\x10d\x12%\n" +
+	"!TELEMETRY_TYPE_ROBOT_JOINT_ANGLES\x10e\x12%\n" +
+	"!TELEMETRY_TYPE_ROBOT_FORCE_TORQUE\x10f\x12\x1e\n" +
+	"\x1aTELEMETRY_TYPE_ROBOT_STATE\x10n\x12\x1d\n" +
+	"\x19TELEMETRY_TYPE_ROBOT_PATH\x10x\x12\"\n" +
+	"\x1eTELEMETRY_TYPE_ROBOT_WAYPOINTS\x10y*\xa9\x01\n" +
+	"\x12HandlerCardinality\x12#\n" +
+	"\x1fHANDLER_CARDINALITY_UNSPECIFIED\x10\x00\x12$\n" +
+	" HANDLER_CARDINALITY_AT_LEAST_ONE\x10\x01\x12#\n" +
+	"\x1fHANDLER_CARDINALITY_EXACTLY_ONE\x10\x02\x12#\n" +
+	"\x1fHANDLER_CARDINALITY_AT_MOST_ONE\x10\x03B\x87\x01\n" +
 	"\tcom.ar.v1B\vEventsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -176,19 +495,29 @@ func file_ar_v1_events_proto_rawDescGZIP() []byte {
 	return file_ar_v1_events_proto_rawDescData
 }
 
-var file_ar_v1_events_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_events_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_events_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_ar_v1_events_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ar_v1_events_proto_goTypes = []any{
-	(EventType)(0),                 // 0: ar.v1.EventType
-	(*SupportedEventsMessage)(nil), // 1: ar.v1.SupportedEventsMessage
+	(CommandType)(0),               // 0: ar.v1.CommandType
+	(EventType)(0),                 // 1: ar.v1.EventType
+	(TelemetryType)(0),             // 2: ar.v1.TelemetryType
+	(HandlerCardinality)(0),        // 3: ar.v1.HandlerCardinality
+	(*ExchangeType)(nil),           // 4: ar.v1.ExchangeType
+	(*HandlerRequirement)(nil),     // 5: ar.v1.HandlerRequirement
+	(*SupportedEventsMessage)(nil), // 6: ar.v1.SupportedEventsMessage
 }
 var file_ar_v1_events_proto_depIdxs = []int32{
-	0, // 0: ar.v1.SupportedEventsMessage.events:type_name -> ar.v1.EventType
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 0: ar.v1.ExchangeType.command:type_name -> ar.v1.CommandType
+	1, // 1: ar.v1.ExchangeType.event:type_name -> ar.v1.EventType
+	2, // 2: ar.v1.ExchangeType.telemetry:type_name -> ar.v1.TelemetryType
+	4, // 3: ar.v1.HandlerRequirement.message:type_name -> ar.v1.ExchangeType
+	3, // 4: ar.v1.HandlerRequirement.cardinality:type_name -> ar.v1.HandlerCardinality
+	1, // 5: ar.v1.SupportedEventsMessage.events:type_name -> ar.v1.EventType
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_events_proto_init() }
@@ -201,8 +530,8 @@ func file_ar_v1_events_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_events_proto_rawDesc), len(file_ar_v1_events_proto_rawDesc)),
-			NumEnums:      1,
-			NumMessages:   1,
+			NumEnums:      4,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

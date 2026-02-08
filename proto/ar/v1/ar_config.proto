@@ -10,7 +10,7 @@ import "buf/validate/validate.proto";
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-message ARConfigInfoMessage {
+message ARConfigInfoMessage { // Just delete this?
   string id = 1;
   string name = 2 [(buf.validate.field).string = {
     min_len: 1

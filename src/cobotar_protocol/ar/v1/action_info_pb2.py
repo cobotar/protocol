@@ -25,9 +25,10 @@ _sym_db = _symbol_database.Default()
 from ar.v1 import action_pb2 as ar_dot_v1_dot_action__pb2
 from ar.v1 import events_pb2 as ar_dot_v1_dot_events__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/action_info.proto\x12\x05\x61r.v1\x1a\x12\x61r/v1/action.proto\x1a\x12\x61r/v1/events.proto\x1a\x1b\x62uf/validate/validate.proto\"\xec\x02\n\x11\x41\x63tionInfoMessage\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12-\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x06\xbaH\x03\xc8\x01\x01R\x04type\x12\x1c\n\x05group\x18\x06 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x05group\x12#\n\rrequire_agent\x18\x07 \x01(\x08R\x0crequireAgent\x12\x39\n\x0frequired_events\x18\x08 \x03(\x0e\x32\x10.ar.v1.EventTypeR\x0erequiredEvents\x12\x39\n\x0foptional_events\x18\t \x03(\x0e\x32\x10.ar.v1.EventTypeR\x0eoptionalEvents\x12\x1a\n\x08\x64isabled\x18\n \x01(\x08R\x08\x64isabled\"D\n\x12\x41\x63tionInfoMessages\x12.\n\x05infos\x18\x01 \x03(\x0b\x32\x18.ar.v1.ActionInfoMessageR\x05infosB\x8b\x01\n\tcom.ar.v1B\x0f\x41\x63tionInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/action_info.proto\x12\x05\x61r.v1\x1a\x12\x61r/v1/action.proto\x1a\x12\x61r/v1/events.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8c\x04\n\x11\x41\x63tionInfoMessage\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x32\n\x05group\x18\x06 \x01(\x0e\x32\x12.ar.v1.ActionGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12#\n\rrequire_agent\x18\x07 \x01(\x08R\x0crequireAgent\x12\x42\n\x12\x63onsumers_required\x18\x08 \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersRequired\x12\x42\n\x12\x63onsumers_optional\x18\t \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersOptional\x12\x46\n\x11required_handlers\x18\n \x03(\x0b\x32\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n\x05\x65mits\x18\x0b \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x05\x65mits\x12\x1a\n\x08\x64isabled\x18\x0c \x01(\x08R\x08\x64isabled\"D\n\x12\x41\x63tionInfoMessages\x12.\n\x05infos\x18\x01 \x03(\x0b\x32\x18.ar.v1.ActionInfoMessageR\x05infos*t\n\x0b\x41\x63tionGroup\x12\x1c\n\x18\x41\x43TION_GROUP_UNSPECIFIED\x10\x00\x12\x18\n\x14\x41\x43TION_GROUP_GENERAL\x10\x01\x12\x16\n\x12\x41\x43TION_GROUP_ROBOT\x10\x02\x12\x15\n\x11\x41\x43TION_GROUP_TASK\x10\x03\x42\x8b\x01\n\tcom.ar.v1B\x0f\x41\x63tionInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,13 +37,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\017ActionInfoProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
   _globals['_ACTIONINFOMESSAGE'].fields_by_name['name']._loaded_options = None
-  _globals['_ACTIONINFOMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\020\001\030@'
+  _globals['_ACTIONINFOMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ACTIONINFOMESSAGE'].fields_by_name['type']._loaded_options = None
-  _globals['_ACTIONINFOMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_ACTIONINFOMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_ACTIONINFOMESSAGE'].fields_by_name['group']._loaded_options = None
-  _globals['_ACTIONINFOMESSAGE'].fields_by_name['group']._serialized_options = b'\272H\003\310\001\001'
-  _globals['_ACTIONINFOMESSAGE']._serialized_start=104
-  _globals['_ACTIONINFOMESSAGE']._serialized_end=468
-  _globals['_ACTIONINFOMESSAGES']._serialized_start=470
-  _globals['_ACTIONINFOMESSAGES']._serialized_end=538
+  _globals['_ACTIONINFOMESSAGE'].fields_by_name['group']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_ACTIONGROUP']._serialized_start=745
+  _globals['_ACTIONGROUP']._serialized_end=861
+  _globals['_ACTIONINFOMESSAGE']._serialized_start=149
+  _globals['_ACTIONINFOMESSAGE']._serialized_end=673
+  _globals['_ACTIONINFOMESSAGES']._serialized_start=675
+  _globals['_ACTIONINFOMESSAGES']._serialized_end=743
 # @@protoc_insertion_point(module_scope)

@@ -2,20 +2,21 @@
 // @generated from file ar/v1/action_info.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { ActionType } from "./action_pb.ts";
 import { file_ar_v1_action } from "./action_pb.ts";
-import type { EventType } from "./events_pb.ts";
+import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/action_info.proto.
  */
 export const file_ar_v1_action_info: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9hY3Rpb25faW5mby5wcm90bxIFYXIudjEijgIKEUFjdGlvbkluZm9NZXNzYWdlEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEicKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQga6SAPIAQESFQoFZ3JvdXAYBiABKAlCBrpIA8gBARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEikKD3JlcXVpcmVkX2V2ZW50cxgIIAMoDjIQLmFyLnYxLkV2ZW50VHlwZRIpCg9vcHRpb25hbF9ldmVudHMYCSADKA4yEC5hci52MS5FdmVudFR5cGUSEAoIZGlzYWJsZWQYCiABKAgiPQoSQWN0aW9uSW5mb01lc3NhZ2VzEicKBWluZm9zGAEgAygLMhguYXIudjEuQWN0aW9uSW5mb01lc3NhZ2VCiwEKCWNvbS5hci52MUIPQWN0aW9uSW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_action, file_ar_v1_events, file_buf_validate_validate]);
+  fileDesc("Chdhci92MS9hY3Rpb25faW5mby5wcm90bxIFYXIudjEijwMKEUFjdGlvbkluZm9NZXNzYWdlEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARIrCgVncm91cBgGIAEoDjISLmFyLnYxLkFjdGlvbkdyb3VwQgi6SAWCAQIQARIVCg1yZXF1aXJlX2FnZW50GAcgASgIEi8KEmNvbnN1bWVyc19yZXF1aXJlZBgIIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRIvChJjb25zdW1lcnNfb3B0aW9uYWwYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSNAoRcmVxdWlyZWRfaGFuZGxlcnMYCiADKAsyGS5hci52MS5IYW5kbGVyUmVxdWlyZW1lbnQSIgoFZW1pdHMYCyADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSEAoIZGlzYWJsZWQYDCABKAgiPQoSQWN0aW9uSW5mb01lc3NhZ2VzEicKBWluZm9zGAEgAygLMhguYXIudjEuQWN0aW9uSW5mb01lc3NhZ2UqdAoLQWN0aW9uR3JvdXASHAoYQUNUSU9OX0dST1VQX1VOU1BFQ0lGSUVEEAASGAoUQUNUSU9OX0dST1VQX0dFTkVSQUwQARIWChJBQ1RJT05fR1JPVVBfUk9CT1QQAhIVChFBQ1RJT05fR1JPVVBfVEFTSxADQosBCgljb20uYXIudjFCD0FjdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_events, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionInfoMessage
@@ -42,9 +43,9 @@ export type ActionInfoMessage = Message<"ar.v1.ActionInfoMessage"> & {
   type: ActionType;
 
   /**
-   * @generated from field: string group = 6;
+   * @generated from field: ar.v1.ActionGroup group = 6;
    */
-  group: string;
+  group: ActionGroup;
 
   /**
    * @generated from field: bool require_agent = 7;
@@ -52,17 +53,35 @@ export type ActionInfoMessage = Message<"ar.v1.ActionInfoMessage"> & {
   requireAgent: boolean;
 
   /**
-   * @generated from field: repeated ar.v1.EventType required_events = 8;
+   * Inputs the action expects to receive
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 8;
    */
-  requiredEvents: EventType[];
+  consumersRequired: ExchangeType[];
 
   /**
-   * @generated from field: repeated ar.v1.EventType optional_events = 9;
+   * Inputs that will enhance the action, but not needed to function
+   *
+   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 9;
    */
-  optionalEvents: EventType[];
+  consumersOptional: ExchangeType[];
 
   /**
-   * @generated from field: bool disabled = 10;
+   * Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+   *
+   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 10;
+   */
+  requiredHandlers: HandlerRequirement[];
+
+  /**
+   * / Outputs the action publishes
+   *
+   * @generated from field: repeated ar.v1.ExchangeType emits = 11;
+   */
+  emits: ExchangeType[];
+
+  /**
+   * @generated from field: bool disabled = 12;
    */
   disabled: boolean;
 };
@@ -90,4 +109,35 @@ export type ActionInfoMessages = Message<"ar.v1.ActionInfoMessages"> & {
  */
 export const ActionInfoMessagesSchema: GenMessage<ActionInfoMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_action_info, 1);
+
+/**
+ * @generated from enum ar.v1.ActionGroup
+ */
+export enum ActionGroup {
+  /**
+   * @generated from enum value: ACTION_GROUP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ACTION_GROUP_GENERAL = 1;
+   */
+  GENERAL = 1,
+
+  /**
+   * @generated from enum value: ACTION_GROUP_ROBOT = 2;
+   */
+  ROBOT = 2,
+
+  /**
+   * @generated from enum value: ACTION_GROUP_TASK = 3;
+   */
+  TASK = 3,
+}
+
+/**
+ * Describes the enum ar.v1.ActionGroup.
+ */
+export const ActionGroupSchema: GenEnum<ActionGroup> = /*@__PURE__*/
+  enumDesc(file_ar_v1_action_info, 0);
 

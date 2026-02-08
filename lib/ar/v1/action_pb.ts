@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/action.proto.
  */
 export const file_ar_v1_action: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxItYBCg1BY3Rpb25NZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5BY3Rpb25NZXNzYWdlcxIlCgdhY3Rpb25zGAEgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZSqAAgoKQWN0aW9uVHlwZRIbChdBQ1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFDVElPTl9UWVBFX1RBU0tfQ09NUExFVEUQChIZChVBQ1RJT05fVFlQRV9UQVNLX1VORE8QCxIbChdBQ1RJT05fVFlQRV9UQVNLX0FTU0lHThAMEh4KGkFDVElPTl9UWVBFX1RBU0tfSElHSExJR0hUEA0SGQoVQUNUSU9OX1RZUEVfVEFTS19IRUxQEA4SIAocQUNUSU9OX1RZUEVfUk9CT1RfUExBWV9QQVVTRRAyEiEKHUFDVElPTl9UWVBFX1JPQk9UX0FDS05PV0xFREdFEDNChwEKCWNvbS5hci52MUILQWN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxItYBCg1BY3Rpb25NZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5BY3Rpb25NZXNzYWdlcxIlCgdhY3Rpb25zGAEgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZSLMAQoQQWN0aW9uQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIsCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESEAoIYWdlbnRfaWQYBiABKAkSHgoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCSJdChNBY3Rpb25VcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKqICCgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNUSU9OX1RZUEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQDhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDRChwEKCWNvbS5hci52MUILQWN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionMessage
@@ -81,6 +81,85 @@ export const ActionMessagesSchema: GenMessage<ActionMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_action, 1);
 
 /**
+ * @generated from message ar.v1.ActionAddMessage
+ */
+export type ActionAddMessage = Message<"ar.v1.ActionAddMessage"> & {
+  /**
+   * @generated from field: string config_id = 1;
+   */
+  configId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: ar.v1.ActionType type = 5;
+   */
+  type: ActionType;
+
+  /**
+   * @generated from field: string agent_id = 6;
+   */
+  agentId: string;
+
+  /**
+   * @generated from field: string activating_property_id = 7;
+   */
+  activatingPropertyId: string;
+};
+
+/**
+ * Describes the message ar.v1.ActionAddMessage.
+ * Use `create(ActionAddMessageSchema)` to create a new message.
+ */
+export const ActionAddMessageSchema: GenMessage<ActionAddMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_action, 2);
+
+/**
+ * @generated from message ar.v1.ActionUpdateMessage
+ */
+export type ActionUpdateMessage = Message<"ar.v1.ActionUpdateMessage"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message ar.v1.ActionUpdateMessage.
+ * Use `create(ActionUpdateMessageSchema)` to create a new message.
+ */
+export const ActionUpdateMessageSchema: GenMessage<ActionUpdateMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_action, 3);
+
+/**
  * @generated from enum ar.v1.ActionType
  */
 export enum ActionType {
@@ -120,11 +199,14 @@ export enum ActionType {
   ROBOT_PLAY_PAUSE = 50,
 
   /**
-   * ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
-   *
    * @generated from enum value: ACTION_TYPE_ROBOT_ACKNOWLEDGE = 51;
    */
   ROBOT_ACKNOWLEDGE = 51,
+
+  /**
+   * @generated from enum value: ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
+   */
+  ROBOT_FREE_DRIVE = 52,
 }
 
 /**

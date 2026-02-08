@@ -15,26 +15,38 @@
 - [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
+    - [ActionAddMessage](#ar-v1-ActionAddMessage)
     - [ActionMessage](#ar-v1-ActionMessage)
     - [ActionMessages](#ar-v1-ActionMessages)
+    - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
   
     - [ActionType](#ar-v1-ActionType)
   
 - [ar/v1/events.proto](#ar_v1_events-proto)
+    - [ExchangeType](#ar-v1-ExchangeType)
+    - [HandlerRequirement](#ar-v1-HandlerRequirement)
     - [SupportedEventsMessage](#ar-v1-SupportedEventsMessage)
   
+    - [CommandType](#ar-v1-CommandType)
     - [EventType](#ar-v1-EventType)
+    - [HandlerCardinality](#ar-v1-HandlerCardinality)
+    - [TelemetryType](#ar-v1-TelemetryType)
   
 - [ar/v1/action_info.proto](#ar_v1_action_info-proto)
     - [ActionInfoMessage](#ar-v1-ActionInfoMessage)
     - [ActionInfoMessages](#ar-v1-ActionInfoMessages)
   
+    - [ActionGroup](#ar-v1-ActionGroup)
+  
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
+    - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
     - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
     - [FeedbackMessages](#ar-v1-FeedbackMessages)
+    - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
   
     - [FeedbackType](#ar-v1-FeedbackType)
   
@@ -86,6 +98,8 @@
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
     - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
+  
+    - [FeedbackGroup](#ar-v1-FeedbackGroup)
   
 - [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
     - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
@@ -151,6 +165,9 @@
 - [plm/v1/model.proto](#plm_v1_model-proto)
     - [ModelMessage](#plm-v1-ModelMessage)
     - [ModelMessages](#plm-v1-ModelMessages)
+  
+    - [ModelGroup](#plm-v1-ModelGroup)
+    - [ModelOrigin](#plm-v1-ModelOrigin)
   
 - [plm/v1/part.proto](#plm_v1_part-proto)
     - [PartMessage](#plm-v1-PartMessage)
@@ -447,6 +464,7 @@ Used to specify the type of a property
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
 
@@ -460,6 +478,27 @@ Used to specify the type of a property
 <p align="right"><a href="#top">Top</a></p>
 
 ## ar/v1/action.proto
+
+
+
+<a name="ar-v1-ActionAddMessage"></a>
+
+### ActionAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ActionType](#ar-v1-ActionType) |  |  |
+| agent_id | [string](#string) |  |  |
+| activating_property_id | [string](#string) |  |  |
+
+
+
 
 
 
@@ -498,6 +537,24 @@ Used to specify the type of a property
 
 
 
+
+<a name="ar-v1-ActionUpdateMessage"></a>
+
+### ActionUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
  
 
 
@@ -515,7 +572,8 @@ Used to specify the type of a property
 | ACTION_TYPE_TASK_HIGHLIGHT | 13 |  |
 | ACTION_TYPE_TASK_HELP | 14 |  |
 | ACTION_TYPE_ROBOT_PLAY_PAUSE | 50 |  |
-| ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 | ACTION_TYPE_ROBOT_FREE_DRIVE = 52; |
+| ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 |  |
+| ACTION_TYPE_ROBOT_FREE_DRIVE | 52 |  |
 
 
  
@@ -533,10 +591,45 @@ Used to specify the type of a property
 
 
 
+<a name="ar-v1-ExchangeType"></a>
+
+### ExchangeType
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| command | [CommandType](#ar-v1-CommandType) |  |  |
+| event | [EventType](#ar-v1-EventType) |  |  |
+| telemetry | [TelemetryType](#ar-v1-TelemetryType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-HandlerRequirement"></a>
+
+### HandlerRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| message | [ExchangeType](#ar-v1-ExchangeType) |  |  |
+| cardinality | [HandlerCardinality](#ar-v1-HandlerCardinality) |  |  |
+| rationale | [string](#string) |  | optional but super helpful for UI |
+
+
+
+
+
+
 <a name="ar-v1-SupportedEventsMessage"></a>
 
 ### SupportedEventsMessage
-
+Supported events is a list of all supported events in the current configuration
+TODO: should this be a field of ARConfig?
 
 
 | Field | Type | Label | Description |
@@ -550,25 +643,69 @@ Used to specify the type of a property
  
 
 
+<a name="ar-v1-CommandType"></a>
+
+### CommandType
+Commands are intents, i.e. &#34;please do this&#34;. Example: Start/STOP from UI -&gt; Robot driver
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| COMMAND_TYPE_UNSPECIFIED | 0 |  |
+| COMMAND_TYPE_TASK_COMPLETE | 10 | Workflow/UI intent |
+| COMMAND_TYPE_TASK_ASSIGN | 11 |  |
+| COMMAND_TYPE_TASK_UNDO | 12 |  |
+| COMMAND_TYPE_TASK_HIGHLIGHT | 13 |  |
+| COMMAND_TYPE_TASK_HELP | 14 |  |
+| COMMAND_TYPE_ROBOT_START_STOP | 100 | Robot control intent |
+| COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE | 101 |  |
+| COMMAND_TYPE_ROBOT_START_COLLABORATION | 102 |  |
+| COMMAND_TYPE_ROBOT_STOP_COLLABORATION | 103 |  |
+
+
+
 <a name="ar-v1-EventType"></a>
 
 ### EventType
-
+Events are &#39;facts&#39;, i.e. &#34;this happened&#34;.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | EVENT_TYPE_UNSPECIFIED | 0 |  |
-| EVENT_TYPE_TASK_COMPLETE | 10 |  |
-| EVENT_TYPE_TASK_UNDO | 11 |  |
-| EVENT_TYPE_TASK_ASSIGN | 12 |  |
-| EVENT_TYPE_TASK_HIGHLIGHT | 13 |  |
-| EVENT_TYPE_TASK_HELP | 14 |  |
-| EVENT_TYPE_ROBOT_TCP | 100 |  |
-| EVENT_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
-| EVENT_TYPE_ROBOT_FORCE_TORQUE | 102 |  |
-| EVENT_TYPE_ROBOT_STATE | 110 |  |
-| EVENT_TYPE_ROBOT_PATH | 120 |  |
-| EVENT_TYPE_ROBOT_WAYPOINTS | 121 |  |
+| EVENT_TYPE_PROCESS_COMPLETE | 10 | Workflow facts |
+| EVENT_TYPE_ROBOT_STARTING_TASK | 100 |  |
+| EVENT_TYPE_ROBOT_WAITING_FOR_HELP | 101 |  |
+| EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE | 102 |  |
+
+
+
+<a name="ar-v1-HandlerCardinality"></a>
+
+### HandlerCardinality
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HANDLER_CARDINALITY_UNSPECIFIED | 0 |  |
+| HANDLER_CARDINALITY_AT_LEAST_ONE | 1 |  |
+| HANDLER_CARDINALITY_EXACTLY_ONE | 2 |  |
+| HANDLER_CARDINALITY_AT_MOST_ONE | 3 |  |
+
+
+
+<a name="ar-v1-TelemetryType"></a>
+
+### TelemetryType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
+| TELEMETRY_TYPE_ROBOT_TCP | 100 |  |
+| TELEMETRY_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
+| TELEMETRY_TYPE_ROBOT_FORCE_TORQUE | 102 |  |
+| TELEMETRY_TYPE_ROBOT_STATE | 110 |  |
+| TELEMETRY_TYPE_ROBOT_PATH | 120 |  |
+| TELEMETRY_TYPE_ROBOT_WAYPOINTS | 121 |  |
 
 
  
@@ -598,10 +735,12 @@ Used to specify the type of a property
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
-| group | [string](#string) |  |  |
+| group | [ActionGroup](#ar-v1-ActionGroup) |  |  |
 | require_agent | [bool](#bool) |  |  |
-| required_events | [EventType](#ar-v1-EventType) | repeated |  |
-| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
+| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the action publishes |
 | disabled | [bool](#bool) |  |  |
 
 
@@ -625,6 +764,20 @@ Used to specify the type of a property
 
  
 
+
+<a name="ar-v1-ActionGroup"></a>
+
+### ActionGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTION_GROUP_UNSPECIFIED | 0 |  |
+| ACTION_GROUP_GENERAL | 1 |  |
+| ACTION_GROUP_ROBOT | 2 |  |
+| ACTION_GROUP_TASK | 3 |  |
+
+
  
 
  
@@ -637,6 +790,27 @@ Used to specify the type of a property
 <p align="right"><a href="#top">Top</a></p>
 
 ## ar/v1/feedback.proto
+
+
+
+<a name="ar-v1-FeedbackAddMessage"></a>
+
+### FeedbackAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| agent_id | [string](#string) |  |  |
+| anchor_id | [string](#string) |  |  |
+
+
+
 
 
 
@@ -688,6 +862,24 @@ Used to specify the type of a property
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | feedbacks | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackUpdateMessage"></a>
+
+### FeedbackUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -809,7 +1001,7 @@ Used to specify the type of a property
 <a name="ar-v1-ARConfigInfoMessage"></a>
 
 ### ARConfigInfoMessage
-
+Just delete this?
 
 
 | Field | Type | Label | Description |
@@ -1303,11 +1495,13 @@ A simple pose consisting of a position and orientation
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| group | [string](#string) |  |  |
+| group | [FeedbackGroup](#ar-v1-FeedbackGroup) |  |  |
 | require_agent | [bool](#bool) |  |  |
 | require_frame | [bool](#bool) |  |  |
-| required_events | [EventType](#ar-v1-EventType) | repeated |  |
-| optional_events | [EventType](#ar-v1-EventType) | repeated |  |
+| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
+| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the action publishes |
 | disabled | [bool](#bool) |  |  |
 
 
@@ -1330,6 +1524,21 @@ A simple pose consisting of a position and orientation
 
 
  
+
+
+<a name="ar-v1-FeedbackGroup"></a>
+
+### FeedbackGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| FEEDBACK_GROUP_UNSPECIFIED | 0 |  |
+| FEEDBACK_GROUP_GENERAL | 1 |  |
+| FEEDBACK_GROUP_ROBOT | 2 |  |
+| FEEDBACK_GROUP_TASK | 3 |  |
+| FEEDBACK_GROUP_ENVIRONMENT | 4 |  |
+
 
  
 
@@ -2040,7 +2249,9 @@ TODO: allow multiple processes to make active at the same time?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| group | [string](#string) |  |  |
+| group | [ModelGroup](#plm-v1-ModelGroup) |  |  |
+| origin | [ModelOrigin](#plm-v1-ModelOrigin) |  |  |
+| filename | [string](#string) |  |  |
 | url | [string](#string) |  |  |
 
 
@@ -2063,6 +2274,35 @@ TODO: allow multiple processes to make active at the same time?
 
 
  
+
+
+<a name="plm-v1-ModelGroup"></a>
+
+### ModelGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_GROUP_UNSPECIFIED | 0 |  |
+| MODEL_GROUP_TOOLS | 1 |  |
+| MODEL_GROUP_PARTS | 2 |  |
+| MODEL_GROUP_ROBOTS | 3 |  |
+| MODEL_GROUP_ASSETS | 4 |  |
+
+
+
+<a name="plm-v1-ModelOrigin"></a>
+
+### ModelOrigin
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
+| MODEL_ORIGIN_BUILD_IN | 1 |  |
+| MODEL_ORIGIN_UPLOADED | 2 |  |
+| MODEL_ORIGIN_EXTERNAL | 3 |  |
+
 
  
 

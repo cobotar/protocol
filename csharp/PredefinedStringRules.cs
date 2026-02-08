@@ -34,14 +34,18 @@ namespace Validation.V1 {
             "dWxlcxiRTiABKAhCcMJIbQprChlzdHJpbmcubW9kZWxfaWRfY29tcG9uZW50",
             "EiN0aGlzIGRvZXMgbm90IHNlZW0gdG8gYmUgYSBtb2RlbCBpZBopKHRoaXMg",
             "PT0gJycgfHwgdGhpcy5zdGFydHNXaXRoKCdtb2RlbC0nKSlSEG1vZGVsSWRD",
-            "b21wb25lbnRCtQEKEWNvbS52YWxpZGF0aW9uLnYxQhpQcmVkZWZpbmVkU3Ry",
-            "aW5nUnVsZXNQcm90b1ABWj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "bWVzc2FnZXMvdmFsaWRhdGlvbi92MTt2YWxpZGF0aW9udjGiAgNWWFjKAg1W",
-            "YWxpZGF0aW9uXFYx4gIZVmFsaWRhdGlvblxWMVxHUEJNZXRhZGF0YeoCDlZh",
-            "bGlkYXRpb246OlYx"));
+            "b21wb25lbnQ6ywEKFmFyX2NvbmZpZ19pZF9jb21wb25lbnQSGS5idWYudmFs",
+            "aWRhdGUuU3RyaW5nUnVsZXMYkk4gASgIQnrCSHcKdQodc3RyaW5nLmFyX2Nv",
+            "bmZpZ19pZF9jb21wb25lbnQSJnRoaXMgZG9lcyBub3Qgc2VlbSB0byBiZSBh",
+            "IEFSQ29uZmlnIGlkGiwodGhpcyA9PSAnJyB8fCB0aGlzLnN0YXJ0c1dpdGgo",
+            "J2FyY29uZmlnLScpKVITYXJDb25maWdJZENvbXBvbmVudEK1AQoRY29tLnZh",
+            "bGlkYXRpb24udjFCGlByZWRlZmluZWRTdHJpbmdSdWxlc1Byb3RvUAFaP2dp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy92YWxpZGF0aW9u",
+            "L3YxO3ZhbGlkYXRpb252MaICA1ZYWMoCDVZhbGlkYXRpb25cVjHiAhlWYWxp",
+            "ZGF0aW9uXFYxXEdQQk1ldGFkYXRh6gIOVmFsaWRhdGlvbjo6VjE="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent }, null));
+          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent, PredefinedStringRulesExtensions.ArConfigIdComponent }, null));
     }
     #endregion
 
@@ -52,6 +56,8 @@ namespace Validation.V1 {
       new pb::Extension<global::Buf.Validate.StringRules, bool>(10000, pb::FieldCodec.ForBool(80000, false));
     public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> ModelIdComponent =
       new pb::Extension<global::Buf.Validate.StringRules, bool>(10001, pb::FieldCodec.ForBool(80008, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> ArConfigIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10002, pb::FieldCodec.ForBool(80016, false));
   }
 
 }

@@ -4,23 +4,33 @@ package ar.v1;
 import "ar/v1/action.proto";
 import "ar/v1/events.proto";
 import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
+enum ActionGroup {
+  ACTION_GROUP_UNSPECIFIED = 0;
+  ACTION_GROUP_GENERAL = 1;
+  ACTION_GROUP_ROBOT = 2;
+  ACTION_GROUP_TASK = 3;
+}
+
 message ActionInfoMessage {
-  string name = 2 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ActionType type = 5 [(buf.validate.field).required = true];
-  string group = 6 [(buf.validate.field).required = true];
+  ActionType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ActionGroup group = 6 [(buf.validate.field).enum.defined_only = true];
   bool require_agent = 7;
-  repeated EventType required_events = 8;
-  repeated EventType optional_events = 9;
-  bool disabled = 10;
+  repeated ExchangeType consumers_required = 8; // Inputs the action expects to receive
+  repeated ExchangeType consumers_optional = 9; // Inputs that will enhance the action, but not needed to function
+  repeated HandlerRequirement required_handlers = 10; // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+  repeated ExchangeType emits = 11; // / Outputs the action publishes
+  bool disabled = 12;
 }
 
 message ActionInfoMessages {

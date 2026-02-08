@@ -2,8 +2,8 @@
 // @generated from file plm/v1/model.proto (package plm.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/model.proto.
  */
 export const file_plm_v1_model: GenFile = /*@__PURE__*/
-  fileDesc("ChJwbG0vdjEvbW9kZWwucHJvdG8SBnBsbS52MSJ+CgxNb2RlbE1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSDQoFZ3JvdXAYBSABKAkSFwoDdXJsGAYgASgJQgq6SAfYAQFyAmgBIjUKDU1vZGVsTWVzc2FnZXMSJAoGbW9kZWxzGAEgAygLMhQucGxtLnYxLk1vZGVsTWVzc2FnZUKNAQoKY29tLnBsbS52MUIKTW9kZWxQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJwbG0vdjEvbW9kZWwucHJvdG8SBnBsbS52MSL5AQoMTW9kZWxNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEisKBWdyb3VwGAUgASgOMhIucGxtLnYxLk1vZGVsR3JvdXBCCLpIBYIBAhABEjAKBm9yaWdpbhgGIAEoDjITLnBsbS52MS5Nb2RlbE9yaWdpbkILukgIyAEBggECEAESEAoIZmlsZW5hbWUYByABKAkSGAoDdXJsGAggASgJQgu6SAjYAQFyA4gBAToWukgTIhEKCGZpbGVuYW1lCgN1cmwQASI1Cg1Nb2RlbE1lc3NhZ2VzEiQKBm1vZGVscxgBIAMoCzIULnBsbS52MS5Nb2RlbE1lc3NhZ2UqhwEKCk1vZGVsR3JvdXASGwoXTU9ERUxfR1JPVVBfVU5TUEVDSUZJRUQQABIVChFNT0RFTF9HUk9VUF9UT09MUxABEhUKEU1PREVMX0dST1VQX1BBUlRTEAISFgoSTU9ERUxfR1JPVVBfUk9CT1RTEAMSFgoSTU9ERUxfR1JPVVBfQVNTRVRTEAQqfAoLTW9kZWxPcmlnaW4SHAoYTU9ERUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJR0lOX0JVSUxEX0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoVTU9ERUxfT1JJR0lOX0VYVEVSTkFMEANCjQEKCmNvbS5wbG0udjFCCk1vZGVsUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message plm.v1.ModelMessage
@@ -39,12 +39,22 @@ export type ModelMessage = Message<"plm.v1.ModelMessage"> & {
   description: string;
 
   /**
-   * @generated from field: string group = 5;
+   * @generated from field: plm.v1.ModelGroup group = 5;
    */
-  group: string;
+  group: ModelGroup;
 
   /**
-   * @generated from field: string url = 6;
+   * @generated from field: plm.v1.ModelOrigin origin = 6;
+   */
+  origin: ModelOrigin;
+
+  /**
+   * @generated from field: string filename = 7;
+   */
+  filename: string;
+
+  /**
+   * @generated from field: string url = 8;
    */
   url: string;
 };
@@ -72,4 +82,71 @@ export type ModelMessages = Message<"plm.v1.ModelMessages"> & {
  */
 export const ModelMessagesSchema: GenMessage<ModelMessages> = /*@__PURE__*/
   messageDesc(file_plm_v1_model, 1);
+
+/**
+ * @generated from enum plm.v1.ModelGroup
+ */
+export enum ModelGroup {
+  /**
+   * @generated from enum value: MODEL_GROUP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MODEL_GROUP_TOOLS = 1;
+   */
+  TOOLS = 1,
+
+  /**
+   * @generated from enum value: MODEL_GROUP_PARTS = 2;
+   */
+  PARTS = 2,
+
+  /**
+   * @generated from enum value: MODEL_GROUP_ROBOTS = 3;
+   */
+  ROBOTS = 3,
+
+  /**
+   * @generated from enum value: MODEL_GROUP_ASSETS = 4;
+   */
+  ASSETS = 4,
+}
+
+/**
+ * Describes the enum plm.v1.ModelGroup.
+ */
+export const ModelGroupSchema: GenEnum<ModelGroup> = /*@__PURE__*/
+  enumDesc(file_plm_v1_model, 0);
+
+/**
+ * @generated from enum plm.v1.ModelOrigin
+ */
+export enum ModelOrigin {
+  /**
+   * @generated from enum value: MODEL_ORIGIN_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MODEL_ORIGIN_BUILD_IN = 1;
+   */
+  BUILD_IN = 1,
+
+  /**
+   * @generated from enum value: MODEL_ORIGIN_UPLOADED = 2;
+   */
+  UPLOADED = 2,
+
+  /**
+   * @generated from enum value: MODEL_ORIGIN_EXTERNAL = 3;
+   */
+  EXTERNAL = 3,
+}
+
+/**
+ * Describes the enum plm.v1.ModelOrigin.
+ */
+export const ModelOriginSchema: GenEnum<ModelOrigin> = /*@__PURE__*/
+  enumDesc(file_plm_v1_model, 1);
 
