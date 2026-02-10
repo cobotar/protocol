@@ -19,6 +19,7 @@
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
+    - [ActionCloneMessage](#ar-v1-ActionCloneMessage)
     - [ActionMessage](#ar-v1-ActionMessage)
     - [ActionMessages](#ar-v1-ActionMessages)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
@@ -505,6 +506,24 @@ Used to specify the type of a property
 
 
 
+<a name="ar-v1-ActionCloneMessage"></a>
+
+### ActionCloneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| original_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="ar-v1-ActionMessage"></a>
 
 ### ActionMessage
@@ -520,6 +539,7 @@ Used to specify the type of a property
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 | output_properties | [Property](#ar-v1-Property) | repeated |  |
+| config_id | [string](#string) |  |  |
 
 
 
@@ -887,6 +907,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 | output_properties | [Property](#ar-v1-Property) | repeated |  |
+| config_id | [string](#string) |  |  |
 
 
 
@@ -1083,7 +1104,7 @@ Just delete this?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated | TODO: just a list of Id&#39;s? |
 | actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |

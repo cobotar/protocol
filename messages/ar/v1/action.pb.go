@@ -99,6 +99,7 @@ type ActionMessage struct {
 	Type             ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
 	Properties       []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
 	OutputProperties []*Property            `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
+	ConfigId         string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -180,6 +181,13 @@ func (x *ActionMessage) GetOutputProperties() []*Property {
 		return x.OutputProperties
 	}
 	return nil
+}
+
+func (x *ActionMessage) GetConfigId() string {
+	if x != nil {
+		return x.ConfigId
+	}
+	return ""
 }
 
 type ActionMessages struct {
@@ -386,11 +394,79 @@ func (x *ActionUpdateMessage) GetDescription() string {
 	return ""
 }
 
+type ActionCloneMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OriginalId    string                 `protobuf:"bytes,1,opt,name=original_id,json=originalId,proto3" json:"original_id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ActionCloneMessage) Reset() {
+	*x = ActionCloneMessage{}
+	mi := &file_ar_v1_action_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActionCloneMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActionCloneMessage) ProtoMessage() {}
+
+func (x *ActionCloneMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_action_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActionCloneMessage.ProtoReflect.Descriptor instead.
+func (*ActionCloneMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_action_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ActionCloneMessage) GetOriginalId() string {
+	if x != nil {
+		return x.OriginalId
+	}
+	return ""
+}
+
+func (x *ActionCloneMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ActionCloneMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ActionCloneMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbf\x02\n" +
 	"\rActionMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -400,12 +476,13 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
 	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\x12<\n" +
-	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\"@\n" +
+	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\x12&\n" +
+	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
 	"\x0eActionMessages\x12.\n" +
-	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\"\x94\x02\n" +
+	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\"\x89\x02\n" +
 	"\x10ActionAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x19\n" +
@@ -414,6 +491,12 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x13ActionUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\"\x7f\n" +
+	"\x12ActionCloneMessage\x12\x1f\n" +
+	"\voriginal_id\x18\x01 \x01(\tR\n" +
+	"originalId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription*\xa2\x02\n" +
 	"\n" +
@@ -443,19 +526,20 @@ func file_ar_v1_action_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_ar_v1_action_proto_goTypes = []any{
 	(ActionType)(0),             // 0: ar.v1.ActionType
 	(*ActionMessage)(nil),       // 1: ar.v1.ActionMessage
 	(*ActionMessages)(nil),      // 2: ar.v1.ActionMessages
 	(*ActionAddMessage)(nil),    // 3: ar.v1.ActionAddMessage
 	(*ActionUpdateMessage)(nil), // 4: ar.v1.ActionUpdateMessage
-	(*Property)(nil),            // 5: ar.v1.Property
+	(*ActionCloneMessage)(nil),  // 5: ar.v1.ActionCloneMessage
+	(*Property)(nil),            // 6: ar.v1.Property
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	5, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
-	5, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
+	6, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
+	6, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
 	1, // 3: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
 	0, // 4: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
 	5, // [5:5] is the sub-list for method output_type
@@ -477,7 +561,7 @@ func file_ar_v1_action_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_proto_rawDesc), len(file_ar_v1_action_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

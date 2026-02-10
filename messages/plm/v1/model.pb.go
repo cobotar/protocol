@@ -278,7 +278,7 @@ var File_plm_v1_model_proto protoreflect.FileDescriptor
 
 const file_plm_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb4\x02\n" +
+	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9c\x02\n" +
 	"\fModelMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -287,9 +287,7 @@ const file_plm_v1_model_proto_rawDesc = "" +
 	"\x05group\x18\x05 \x01(\x0e2\x12.plm.v1.ModelGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x128\n" +
 	"\x06origin\x18\x06 \x01(\x0e2\x13.plm.v1.ModelOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x1a\n" +
 	"\bfilename\x18\a \x01(\tR\bfilename\x12\x1d\n" +
-	"\x03url\x18\b \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03url:\x16\xbaH\x13\"\x11\n" +
-	"\bfilename\n" +
-	"\x03url\x10\x01\"=\n" +
+	"\x03url\x18\b \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03url\"=\n" +
 	"\rModelMessages\x12,\n" +
 	"\x06models\x18\x01 \x03(\v2\x14.plm.v1.ModelMessageR\x06models*\x87\x01\n" +
 	"\n" +

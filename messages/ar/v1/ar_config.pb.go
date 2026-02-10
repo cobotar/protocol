@@ -140,7 +140,7 @@ type ARConfigMessage struct {
 	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Feedback            []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"`
+	Feedback            []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"` // TODO: just a list of Id's?
 	Actions             []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
 	Helpers             []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
 	Properties          []*Property            `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`

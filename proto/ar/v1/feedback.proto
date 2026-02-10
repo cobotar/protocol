@@ -41,6 +41,7 @@ message FeedbackMessage {
   ];
   repeated ar.v1.Property properties = 6;
   repeated ar.v1.Property output_properties = 7;
+  string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
 message FeedbackMessages {
@@ -49,7 +50,7 @@ message FeedbackMessages {
 
 message FeedbackAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string name = 2;
   string icon = 3;
   string description = 4;
   FeedbackType type = 5 [

@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/action.proto.
  */
 export const file_ar_v1_action: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxItYBCg1BY3Rpb25NZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5BY3Rpb25NZXNzYWdlcxIlCgdhY3Rpb25zGAEgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZSLMAQoQQWN0aW9uQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIsCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESEAoIYWdlbnRfaWQYBiABKAkSHgoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCSJdChNBY3Rpb25VcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKqICCgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNUSU9OX1RZUEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQDhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDRChwEKCWNvbS5hci52MUILQWN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxIvQBCg1BY3Rpb25NZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eRIcCgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEASI3Cg5BY3Rpb25NZXNzYWdlcxIlCgdhY3Rpb25zGAEgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZSLBAQoQQWN0aW9uQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEhAKCGFnZW50X2lkGAYgASgJEh4KFmFjdGl2YXRpbmdfcHJvcGVydHlfaWQYByABKAkiXQoTQWN0aW9uVXBkYXRlTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSJaChJBY3Rpb25DbG9uZU1lc3NhZ2USEwoLb3JpZ2luYWxfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKqICCgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNUSU9OX1RZUEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQDhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDRChwEKCWNvbS5hci52MUILQWN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionMessage
@@ -54,6 +54,11 @@ export type ActionMessage = Message<"ar.v1.ActionMessage"> & {
    * @generated from field: repeated ar.v1.Property output_properties = 7;
    */
   outputProperties: Property[];
+
+  /**
+   * @generated from field: string config_id = 8;
+   */
+  configId: string;
 };
 
 /**
@@ -158,6 +163,38 @@ export type ActionUpdateMessage = Message<"ar.v1.ActionUpdateMessage"> & {
  */
 export const ActionUpdateMessageSchema: GenMessage<ActionUpdateMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_action, 3);
+
+/**
+ * @generated from message ar.v1.ActionCloneMessage
+ */
+export type ActionCloneMessage = Message<"ar.v1.ActionCloneMessage"> & {
+  /**
+   * @generated from field: string original_id = 1;
+   */
+  originalId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message ar.v1.ActionCloneMessage.
+ * Use `create(ActionCloneMessageSchema)` to create a new message.
+ */
+export const ActionCloneMessageSchema: GenMessage<ActionCloneMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_action, 4);
 
 /**
  * @generated from enum ar.v1.ActionType

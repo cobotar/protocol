@@ -32,7 +32,7 @@ message ARConfigMessage {
   }];
   string icon = 3;
   string description = 4;
-  repeated ar.v1.FeedbackMessage feedback = 5;
+  repeated ar.v1.FeedbackMessage feedback = 5; // TODO: just a list of Id's?
   repeated ar.v1.ActionMessage actions = 6;
   repeated ar.v1.HelperMessage helpers = 7;
   repeated ar.v1.Property properties = 8;

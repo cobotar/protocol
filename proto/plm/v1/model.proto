@@ -23,13 +23,6 @@ enum ModelOrigin {
 }
 
 message ModelMessage {
-  option (buf.validate.message).oneof = {
-    fields: [
-      "filename",
-      "url"
-    ]
-    required: true
-  };
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;

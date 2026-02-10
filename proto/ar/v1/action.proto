@@ -10,11 +10,13 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 enum ActionType {
   ACTION_TYPE_UNSPECIFIED = 0;
+
   ACTION_TYPE_TASK_COMPLETE = 10;
   ACTION_TYPE_TASK_UNDO = 11;
   ACTION_TYPE_TASK_ASSIGN = 12;
   ACTION_TYPE_TASK_HIGHLIGHT = 13;
   ACTION_TYPE_TASK_HELP = 14;
+
   ACTION_TYPE_ROBOT_PLAY_PAUSE = 50;
   ACTION_TYPE_ROBOT_ACKNOWLEDGE = 51;
   ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
@@ -31,6 +33,7 @@ message ActionMessage {
   ];
   repeated ar.v1.Property properties = 6;
   repeated ar.v1.Property output_properties = 7;
+  string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
 message ActionMessages {
@@ -39,7 +42,7 @@ message ActionMessages {
 
 message ActionAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string name = 2;
   string icon = 3;
   string description = 4;
   ActionType type = 5 [
@@ -53,6 +56,13 @@ message ActionAddMessage {
 message ActionUpdateMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+}
+
+message ActionCloneMessage {
+  string original_id = 1;
+  string name = 2;
   string icon = 3;
   string description = 4;
 }

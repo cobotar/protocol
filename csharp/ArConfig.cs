@@ -663,6 +663,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.FeedbackMessage> _repeated_feedback_codec
         = pb::FieldCodec.ForMessage(42, global::Messages.AR.V1.FeedbackMessage.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.FeedbackMessage> feedback_ = new pbc::RepeatedField<global::Messages.AR.V1.FeedbackMessage>();
+    /// <summary>
+    /// TODO: just a list of Id's?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.FeedbackMessage> Feedback {

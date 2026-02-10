@@ -97,6 +97,8 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
   description: string;
 
   /**
+   * TODO: just a list of Id's?
+   *
    * @generated from field: repeated ar.v1.FeedbackMessage feedback = 5;
    */
   feedback: FeedbackMessage[];
