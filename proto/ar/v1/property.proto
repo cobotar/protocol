@@ -57,9 +57,14 @@ message Property {
   string group = 12;
   int32 ordering = 13;
   bool hide_group = 14;
+  string parent_id = 15;
 }
 
-message PropertyUpdate {
+message PropertyMessages {
+  repeated Property properties = 1;
+}
+
+message PropertyValueUpdate {
   string id = 1;
   string value = 6;
   PropertyOrigin origin = 9;

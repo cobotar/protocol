@@ -13,7 +13,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/property.proto.
  */
 export const file_ar_v1_property: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEilwMKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARINCgV2YWx1ZRgGIAEoCRIOCgZleHRyYXMYByABKAkSRgobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbkIIukgFggECEAESLwoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjUKB29yaWdpbnMYCiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkSDQoFZ3JvdXAYDCABKAkSEAoIb3JkZXJpbmcYDSABKAUSEgoKaGlkZV9ncm91cBgOIAEoCCJuCg5Qcm9wZXJ0eVVwZGF0ZRIKCgJpZBgBIAEoCRINCgV2YWx1ZRgGIAEoCRIlCgZvcmlnaW4YCSABKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbhIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkq3gIKDFByb3BlcnR5VHlwZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBFX0VOVU1fTVVMVEkQDCpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAJCiQEKCWNvbS5hci52MUINUHJvcGVydHlQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_permissions, file_buf_validate_validate]);
+  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEiqgMKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARINCgV2YWx1ZRgGIAEoCRIOCgZleHRyYXMYByABKAkSRgobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbkIIukgFggECEAESLwoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjUKB29yaWdpbnMYCiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkSDQoFZ3JvdXAYDCABKAkSEAoIb3JkZXJpbmcYDSABKAUSEgoKaGlkZV9ncm91cBgOIAEoCBIRCglwYXJlbnRfaWQYDyABKAkiNwoQUHJvcGVydHlNZXNzYWdlcxIjCgpwcm9wZXJ0aWVzGAEgAygLMg8uYXIudjEuUHJvcGVydHkicwoTUHJvcGVydHlWYWx1ZVVwZGF0ZRIKCgJpZBgBIAEoCRINCgV2YWx1ZRgGIAEoCRIlCgZvcmlnaW4YCSABKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbhIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkq3gIKDFByb3BlcnR5VHlwZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBFX0VOVU1fTVVMVEkQDCpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAJCiQEKCWNvbS5hci52MUINUHJvcGVydHlQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_permissions, file_buf_validate_validate]);
 
 /**
  * Properties are used by various components to define them, such as: feedback, actions, and conditions.
@@ -101,6 +101,11 @@ export type Property = Message<"ar.v1.Property"> & {
    * @generated from field: bool hide_group = 14;
    */
   hideGroup: boolean;
+
+  /**
+   * @generated from field: string parent_id = 15;
+   */
+  parentId: string;
 };
 
 /**
@@ -111,9 +116,26 @@ export const PropertySchema: GenMessage<Property> = /*@__PURE__*/
   messageDesc(file_ar_v1_property, 0);
 
 /**
- * @generated from message ar.v1.PropertyUpdate
+ * @generated from message ar.v1.PropertyMessages
  */
-export type PropertyUpdate = Message<"ar.v1.PropertyUpdate"> & {
+export type PropertyMessages = Message<"ar.v1.PropertyMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.Property properties = 1;
+   */
+  properties: Property[];
+};
+
+/**
+ * Describes the message ar.v1.PropertyMessages.
+ * Use `create(PropertyMessagesSchema)` to create a new message.
+ */
+export const PropertyMessagesSchema: GenMessage<PropertyMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 1);
+
+/**
+ * @generated from message ar.v1.PropertyValueUpdate
+ */
+export type PropertyValueUpdate = Message<"ar.v1.PropertyValueUpdate"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -136,11 +158,11 @@ export type PropertyUpdate = Message<"ar.v1.PropertyUpdate"> & {
 };
 
 /**
- * Describes the message ar.v1.PropertyUpdate.
- * Use `create(PropertyUpdateSchema)` to create a new message.
+ * Describes the message ar.v1.PropertyValueUpdate.
+ * Use `create(PropertyValueUpdateSchema)` to create a new message.
  */
-export const PropertyUpdateSchema: GenMessage<PropertyUpdate> = /*@__PURE__*/
-  messageDesc(file_ar_v1_property, 1);
+export const PropertyValueUpdateSchema: GenMessage<PropertyValueUpdate> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 2);
 
 /**
  * Used to specify the type of a property

@@ -4,7 +4,7 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -48,7 +48,7 @@ PROPERTY_ORIGIN_FIXED: PropertyOrigin
 PROPERTY_ORIGIN_MIRROR: PropertyOrigin
 
 class Property(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "value", "extras", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group")
+    __slots__ = ("id", "name", "icon", "description", "type", "value", "extras", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -63,6 +63,7 @@ class Property(_message.Message):
     GROUP_FIELD_NUMBER: _ClassVar[int]
     ORDERING_FIELD_NUMBER: _ClassVar[int]
     HIDE_GROUP_FIELD_NUMBER: _ClassVar[int]
+    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -77,9 +78,16 @@ class Property(_message.Message):
     group: str
     ordering: int
     hide_group: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ...) -> None: ...
+    parent_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., value: _Optional[str] = ..., extras: _Optional[str] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[str] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ...) -> None: ...
 
-class PropertyUpdate(_message.Message):
+class PropertyMessages(_message.Message):
+    __slots__ = ("properties",)
+    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
+    properties: _containers.RepeatedCompositeFieldContainer[Property]
+    def __init__(self, properties: _Optional[_Iterable[_Union[Property, _Mapping]]] = ...) -> None: ...
+
+class PropertyValueUpdate(_message.Message):
     __slots__ = ("id", "value", "origin", "mirror_property_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
