@@ -301,6 +301,74 @@ func (x *Property) GetHideGroup() bool {
 	return false
 }
 
+type PropertyUpdate struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`
+	Origin           PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
+	MirrorPropertyId string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *PropertyUpdate) Reset() {
+	*x = PropertyUpdate{}
+	mi := &file_ar_v1_property_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PropertyUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PropertyUpdate) ProtoMessage() {}
+
+func (x *PropertyUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PropertyUpdate.ProtoReflect.Descriptor instead.
+func (*PropertyUpdate) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PropertyUpdate) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PropertyUpdate) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+func (x *PropertyUpdate) GetOrigin() PropertyOrigin {
+	if x != nil {
+		return x.Origin
+	}
+	return PropertyOrigin_PROPERTY_ORIGIN_UNSPECIFIED
+}
+
+func (x *PropertyUpdate) GetMirrorPropertyId() string {
+	if x != nil {
+		return x.MirrorPropertyId
+	}
+	return ""
+}
+
 var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
@@ -323,7 +391,12 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x05group\x18\f \x01(\tR\x05group\x12\x1a\n" +
 	"\bordering\x18\r \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
-	"hide_group\x18\x0e \x01(\bR\thideGroup*\xde\x02\n" +
+	"hide_group\x18\x0e \x01(\bR\thideGroup\"\x93\x01\n" +
+	"\x0ePropertyUpdate\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05value\x18\x06 \x01(\tR\x05value\x12-\n" +
+	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginR\x06origin\x12,\n" +
+	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId*\xde\x02\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -358,23 +431,25 @@ func file_ar_v1_property_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_property_proto_goTypes = []any{
-	(PropertyType)(0),     // 0: ar.v1.PropertyType
-	(PropertyOrigin)(0),   // 1: ar.v1.PropertyOrigin
-	(*Property)(nil),      // 2: ar.v1.Property
-	(WorkerPermission)(0), // 3: ar.v1.WorkerPermission
+	(PropertyType)(0),      // 0: ar.v1.PropertyType
+	(PropertyOrigin)(0),    // 1: ar.v1.PropertyOrigin
+	(*Property)(nil),       // 2: ar.v1.Property
+	(*PropertyUpdate)(nil), // 3: ar.v1.PropertyUpdate
+	(WorkerPermission)(0),  // 4: ar.v1.WorkerPermission
 }
 var file_ar_v1_property_proto_depIdxs = []int32{
 	0, // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
-	3, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
+	4, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
 	1, // 2: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
 	1, // 3: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	1, // 4: ar.v1.PropertyUpdate.origin:type_name -> ar.v1.PropertyOrigin
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_property_proto_init() }
@@ -389,7 +464,7 @@ func file_ar_v1_property_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_property_proto_rawDesc), len(file_ar_v1_property_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

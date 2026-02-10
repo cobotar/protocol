@@ -8,6 +8,7 @@
   
 - [ar/v1/property.proto](#ar_v1_property-proto)
     - [Property](#ar-v1-Property)
+    - [PropertyUpdate](#ar-v1-PropertyUpdate)
   
     - [PropertyOrigin](#ar-v1-PropertyOrigin)
     - [PropertyType](#ar-v1-PropertyType)
@@ -401,6 +402,24 @@ message: &#34;Mirror ID must be set when origin is mirror&#34;
 | group | [string](#string) |  |  |
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PropertyUpdate"></a>
+
+### PropertyUpdate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
+| mirror_property_id | [string](#string) |  |  |
 
 
 

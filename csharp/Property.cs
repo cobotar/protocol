@@ -38,24 +38,28 @@ namespace Messages.AR.V1 {
             "EAFSB29yaWdpbnMSLAoSbWlycm9yX3Byb3BlcnR5X2lkGAsgASgJUhBtaXJy",
             "b3JQcm9wZXJ0eUlkEhQKBWdyb3VwGAwgASgJUgVncm91cBIaCghvcmRlcmlu",
             "ZxgNIAEoBVIIb3JkZXJpbmcSHQoKaGlkZV9ncm91cBgOIAEoCFIJaGlkZUdy",
-            "b3VwKt4CCgxQcm9wZXJ0eVR5cGUSHQoZUFJPUEVSVFlfVFlQRV9VTlNQRUNJ",
-            "RklFRBAAEhYKElBST1BFUlRZX1RZUEVfQk9PTBABEhUKEVBST1BFUlRZX1RZ",
-            "UEVfSU5UEAISFwoTUFJPUEVSVFlfVFlQRV9GTE9BVBADEhgKFFBST1BFUlRZ",
-            "X1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVSVFlfVFlQRV9TVFJJTkcQBRIZChVQ",
-            "Uk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIWChJQUk9QRVJUWV9UWVBFX1BPU0UQ",
-            "BxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hPUhAIEhcKE1BST1BFUlRZX1RZUEVf",
-            "Q09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX0FHRU5UEAoSFgoSUFJPUEVSVFlf",
-            "VFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlfVFlQRV9FTlVNX01VTFRJEAwqaAoO",
-            "UHJvcGVydHlPcmlnaW4SHwobUFJPUEVSVFlfT1JJR0lOX1VOU1BFQ0lGSUVE",
-            "EAASGQoVUFJPUEVSVFlfT1JJR0lOX0ZJWEVEEAESGgoWUFJPUEVSVFlfT1JJ",
-            "R0lOX01JUlJPUhACQokBCgljb20uYXIudjFCDVByb3BlcnR5UHJvdG9QAVov",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2Fy",
-            "djGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BC",
-            "TWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "b3VwIpMBCg5Qcm9wZXJ0eVVwZGF0ZRIOCgJpZBgBIAEoCVICaWQSFAoFdmFs",
+            "dWUYBiABKAlSBXZhbHVlEi0KBm9yaWdpbhgJIAEoDjIVLmFyLnYxLlByb3Bl",
+            "cnR5T3JpZ2luUgZvcmlnaW4SLAoSbWlycm9yX3Byb3BlcnR5X2lkGAsgASgJ",
+            "UhBtaXJyb3JQcm9wZXJ0eUlkKt4CCgxQcm9wZXJ0eVR5cGUSHQoZUFJPUEVS",
+            "VFlfVFlQRV9VTlNQRUNJRklFRBAAEhYKElBST1BFUlRZX1RZUEVfQk9PTBAB",
+            "EhUKEVBST1BFUlRZX1RZUEVfSU5UEAISFwoTUFJPUEVSVFlfVFlQRV9GTE9B",
+            "VBADEhgKFFBST1BFUlRZX1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVSVFlfVFlQ",
+            "RV9TVFJJTkcQBRIZChVQUk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIWChJQUk9Q",
+            "RVJUWV9UWVBFX1BPU0UQBxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hPUhAIEhcK",
+            "E1BST1BFUlRZX1RZUEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX0FHRU5U",
+            "EAoSFgoSUFJPUEVSVFlfVFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlfVFlQRV9F",
+            "TlVNX01VTFRJEAwqaAoOUHJvcGVydHlPcmlnaW4SHwobUFJPUEVSVFlfT1JJ",
+            "R0lOX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfT1JJR0lOX0ZJWEVEEAES",
+            "GgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACQokBCgljb20uYXIudjFCDVBy",
+            "b3BlcnR5UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
+            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PropertyType), typeof(global::Messages.AR.V1.PropertyOrigin), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Value", "Extras", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Value", "Extras", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyUpdate), global::Messages.AR.V1.PropertyUpdate.Parser, new[]{ "Id", "Value", "Origin", "MirrorPropertyId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -769,6 +773,315 @@ namespace Messages.AR.V1 {
           }
           case 112: {
             HideGroup = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PropertyUpdate : pb::IMessage<PropertyUpdate>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PropertyUpdate> _parser = new pb::MessageParser<PropertyUpdate>(() => new PropertyUpdate());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PropertyUpdate> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.PropertyReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PropertyUpdate() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PropertyUpdate(PropertyUpdate other) : this() {
+      id_ = other.id_;
+      value_ = other.value_;
+      origin_ = other.origin_;
+      mirrorPropertyId_ = other.mirrorPropertyId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PropertyUpdate Clone() {
+      return new PropertyUpdate(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 6;
+    private string value_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Value {
+      get { return value_; }
+      set {
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "origin" field.</summary>
+    public const int OriginFieldNumber = 9;
+    private global::Messages.AR.V1.PropertyOrigin origin_ = global::Messages.AR.V1.PropertyOrigin.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.PropertyOrigin Origin {
+      get { return origin_; }
+      set {
+        origin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mirror_property_id" field.</summary>
+    public const int MirrorPropertyIdFieldNumber = 11;
+    private string mirrorPropertyId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MirrorPropertyId {
+      get { return mirrorPropertyId_; }
+      set {
+        mirrorPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PropertyUpdate);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PropertyUpdate other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Value != other.Value) return false;
+      if (Origin != other.Origin) return false;
+      if (MirrorPropertyId != other.MirrorPropertyId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) hash ^= Origin.GetHashCode();
+      if (MirrorPropertyId.Length != 0) hash ^= MirrorPropertyId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Value.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Value);
+      }
+      if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) Origin);
+      }
+      if (MirrorPropertyId.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(MirrorPropertyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Value.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Value);
+      }
+      if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) Origin);
+      }
+      if (MirrorPropertyId.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(MirrorPropertyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      }
+      if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Origin);
+      }
+      if (MirrorPropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MirrorPropertyId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PropertyUpdate other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Value.Length != 0) {
+        Value = other.Value;
+      }
+      if (other.Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
+        Origin = other.Origin;
+      }
+      if (other.MirrorPropertyId.Length != 0) {
+        MirrorPropertyId = other.MirrorPropertyId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 50: {
+            Value = input.ReadString();
+            break;
+          }
+          case 72: {
+            Origin = (global::Messages.AR.V1.PropertyOrigin) input.ReadEnum();
+            break;
+          }
+          case 90: {
+            MirrorPropertyId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 50: {
+            Value = input.ReadString();
+            break;
+          }
+          case 72: {
+            Origin = (global::Messages.AR.V1.PropertyOrigin) input.ReadEnum();
+            break;
+          }
+          case 90: {
+            MirrorPropertyId = input.ReadString();
             break;
           }
         }

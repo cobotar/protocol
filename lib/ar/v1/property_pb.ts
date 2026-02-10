@@ -13,7 +13,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/property.proto.
  */
 export const file_ar_v1_property: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEilwMKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARINCgV2YWx1ZRgGIAEoCRIOCgZleHRyYXMYByABKAkSRgobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbkIIukgFggECEAESLwoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjUKB29yaWdpbnMYCiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkSDQoFZ3JvdXAYDCABKAkSEAoIb3JkZXJpbmcYDSABKAUSEgoKaGlkZV9ncm91cBgOIAEoCCreAgoMUHJvcGVydHlUeXBlEh0KGVBST1BFUlRZX1RZUEVfVU5TUEVDSUZJRUQQABIWChJQUk9QRVJUWV9UWVBFX0JPT0wQARIVChFQUk9QRVJUWV9UWVBFX0lOVBACEhcKE1BST1BFUlRZX1RZUEVfRkxPQVQQAxIYChRQUk9QRVJUWV9UWVBFX0RPVUJMRRAEEhgKFFBST1BFUlRZX1RZUEVfU1RSSU5HEAUSGQoVUFJPUEVSVFlfVFlQRV9WRUNUT1IzEAYSFgoSUFJPUEVSVFlfVFlQRV9QT1NFEAcSGAoUUFJPUEVSVFlfVFlQRV9BTkNIT1IQCBIXChNQUk9QRVJUWV9UWVBFX0NPTE9SEAkSFwoTUFJPUEVSVFlfVFlQRV9BR0VOVBAKEhYKElBST1BFUlRZX1RZUEVfRU5VTRALEhwKGFBST1BFUlRZX1RZUEVfRU5VTV9NVUxUSRAMKmgKDlByb3BlcnR5T3JpZ2luEh8KG1BST1BFUlRZX09SSUdJTl9VTlNQRUNJRklFRBAAEhkKFVBST1BFUlRZX09SSUdJTl9GSVhFRBABEhoKFlBST1BFUlRZX09SSUdJTl9NSVJST1IQAkKJAQoJY29tLmFyLnYxQg1Qcm9wZXJ0eVByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_permissions, file_buf_validate_validate]);
+  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEilwMKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARINCgV2YWx1ZRgGIAEoCRIOCgZleHRyYXMYByABKAkSRgobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbkIIukgFggECEAESLwoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjUKB29yaWdpbnMYCiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkSDQoFZ3JvdXAYDCABKAkSEAoIb3JkZXJpbmcYDSABKAUSEgoKaGlkZV9ncm91cBgOIAEoCCJuCg5Qcm9wZXJ0eVVwZGF0ZRIKCgJpZBgBIAEoCRINCgV2YWx1ZRgGIAEoCRIlCgZvcmlnaW4YCSABKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbhIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkq3gIKDFByb3BlcnR5VHlwZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBFX0VOVU1fTVVMVEkQDCpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAJCiQEKCWNvbS5hci52MUINUHJvcGVydHlQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_permissions, file_buf_validate_validate]);
 
 /**
  * Properties are used by various components to define them, such as: feedback, actions, and conditions.
@@ -109,6 +109,38 @@ export type Property = Message<"ar.v1.Property"> & {
  */
 export const PropertySchema: GenMessage<Property> = /*@__PURE__*/
   messageDesc(file_ar_v1_property, 0);
+
+/**
+ * @generated from message ar.v1.PropertyUpdate
+ */
+export type PropertyUpdate = Message<"ar.v1.PropertyUpdate"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string value = 6;
+   */
+  value: string;
+
+  /**
+   * @generated from field: ar.v1.PropertyOrigin origin = 9;
+   */
+  origin: PropertyOrigin;
+
+  /**
+   * @generated from field: string mirror_property_id = 11;
+   */
+  mirrorPropertyId: string;
+};
+
+/**
+ * Describes the message ar.v1.PropertyUpdate.
+ * Use `create(PropertyUpdateSchema)` to create a new message.
+ */
+export const PropertyUpdateSchema: GenMessage<PropertyUpdate> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 1);
 
 /**
  * Used to specify the type of a property
