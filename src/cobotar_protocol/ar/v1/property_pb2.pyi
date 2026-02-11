@@ -146,8 +146,8 @@ class Property(_message.Message):
     enum_extras: EnumExtras
     vector3_extras: Vector3Extras
     color_extras: ColorExtras
-    agent_extras: AgentExtrasType
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., agent_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., agent_extras: _Optional[_Union[AgentExtrasType, str]] = ...) -> None: ...
+    agent_extras: AgentExtras
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., agent_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., agent_extras: _Optional[_Union[AgentExtras, _Mapping]] = ...) -> None: ...
 
 class PropertyMessages(_message.Message):
     __slots__ = ("properties",)
@@ -156,16 +156,42 @@ class PropertyMessages(_message.Message):
     def __init__(self, properties: _Optional[_Iterable[_Union[Property, _Mapping]]] = ...) -> None: ...
 
 class PropertyValueUpdate(_message.Message):
-    __slots__ = ("id", "value", "origin", "mirror_property_id")
+    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "agent_id_value", "enum_value", "enum_multi_value", "icon_value")
     ID_FIELD_NUMBER: _ClassVar[int]
-    VALUE_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+    BOOL_VALUE_FIELD_NUMBER: _ClassVar[int]
+    INT_VALUE_FIELD_NUMBER: _ClassVar[int]
+    FLOAT_VALUE_FIELD_NUMBER: _ClassVar[int]
+    DOUBLE_VALUE_FIELD_NUMBER: _ClassVar[int]
+    STRING_VALUE_FIELD_NUMBER: _ClassVar[int]
+    VECTOR3_VALUE_FIELD_NUMBER: _ClassVar[int]
+    POSE_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ANCHOR_VALUE_FIELD_NUMBER: _ClassVar[int]
+    COLOR_VALUE_FIELD_NUMBER: _ClassVar[int]
+    AGENT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
     id: str
-    value: str
+    type: PropertyType
     origin: PropertyOrigin
     mirror_property_id: str
-    def __init__(self, id: _Optional[str] = ..., value: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ...) -> None: ...
+    bool_value: bool
+    int_value: int
+    float_value: float
+    double_value: float
+    string_value: str
+    vector3_value: _vector3_pb2.Vector3
+    pose_value: _pose_pb2.LocalizedPose
+    anchor_value: _anchor_pb2.Anchor
+    color_value: _color_pb2.Color
+    agent_id_value: str
+    enum_value: str
+    enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
+    icon_value: str
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., agent_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ...) -> None: ...
 
 class NumberExtras(_message.Message):
     __slots__ = ("min", "max", "step", "unit", "precision")

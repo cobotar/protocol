@@ -67,7 +67,7 @@ message Property {
       "color_value",
       "agent_id_value",
       "enum_value",
-      "multi_enum_value",
+      "enum_multi_value",
       "icon_value"
     ]
     required: true
@@ -131,7 +131,7 @@ message Property {
   EnumExtras enum_extras = 42;
   Vector3Extras vector3_extras = 43;
   ColorExtras color_extras = 44;
-  AgentExtrasType agent_extras = 45;
+  AgentExtras agent_extras = 45;
 }
 
 message PropertyMessages {
@@ -139,10 +139,58 @@ message PropertyMessages {
 }
 
 message PropertyValueUpdate {
+  option (buf.validate.message).cel = {
+    id: "property_type_matches_value_kind"
+    message: "property.type must match the kind of property.value"
+    expression: "((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))"
+  };
+
+  option (buf.validate.message).oneof = {
+    fields: [
+      "bool_value",
+      "int_value",
+      "float_value",
+      "double_value",
+      "string_value",
+      "vector3_value",
+      "pose_value",
+      "anchor_value",
+      "color_value",
+      "agent_id_value",
+      "enum_value",
+      "enum_multi_value",
+      "icon_value"
+    ]
+    required: true
+  };
+
+  option (buf.validate.message).cel = {
+    id: "mirror_requires_mirror_property_id"
+    message: "mirror_property_id must be set when origin is MIRROR"
+    expression: "this.origin != 2 || this.mirror_property_id != ''"
+  };
+
   string id = 1;
-  string value = 6;
-  PropertyOrigin origin = 9;
-  string mirror_property_id = 11;
+  PropertyType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  PropertyOrigin origin = 7 [(buf.validate.field).enum.defined_only = true];
+  string mirror_property_id = 9;
+
+  bool bool_value = 21;
+  sint64 int_value = 22;
+  float float_value = 23;
+  double double_value = 24;
+  string string_value = 25;
+  geometry.v1.Vector3 vector3_value = 26;
+  geometry.v1.LocalizedPose pose_value = 27;
+  geometry.v1.Anchor anchor_value = 28;
+  common.v1.Color color_value = 29;
+  string agent_id_value = 20;
+  string enum_value = 31;
+  repeated string enum_multi_value = 32;
+  string icon_value = 33;
 }
 
 message NumberExtras {

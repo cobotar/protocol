@@ -28,7 +28,7 @@ namespace Messages.AR.V1 {
             "b25zLnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aFWNvbW1v",
             "bi92MS9jb2xvci5wcm90bxoYZ2VvbWV0cnkvdjEvYW5jaG9yLnByb3RvGhZn",
             "ZW9tZXRyeS92MS9wb3NlLnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnBy",
-            "b3RvIqIUCghQcm9wZXJ0eRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
+            "b3RvIp4UCghQcm9wZXJ0eRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
             "CVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
             "ASgJUgtkZXNjcmlwdGlvbhI0CgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVy",
             "dHlUeXBlQgu6SAiCAQIQAcgBAVIEdHlwZRJhChttaW5pbXVtX3JlcXVpcmVk",
@@ -57,90 +57,125 @@ namespace Messages.AR.V1 {
             "dHJhcxIyCgtlbnVtX2V4dHJhcxgqIAEoCzIRLmFyLnYxLkVudW1FeHRyYXNS",
             "CmVudW1FeHRyYXMSOwoOdmVjdG9yM19leHRyYXMYKyABKAsyFC5hci52MS5W",
             "ZWN0b3IzRXh0cmFzUg12ZWN0b3IzRXh0cmFzEjUKDGNvbG9yX2V4dHJhcxgs",
-            "IAEoCzISLmFyLnYxLkNvbG9yRXh0cmFzUgtjb2xvckV4dHJhcxI5CgxhZ2Vu",
-            "dF9leHRyYXMYLSABKA4yFi5hci52MS5BZ2VudEV4dHJhc1R5cGVSC2FnZW50",
-            "RXh0cmFzOqwJukioCRqvBQogcHJvcGVydHlfdHlwZV9tYXRjaGVzX3ZhbHVl",
-            "X2tpbmQSM3Byb3BlcnR5LnR5cGUgbXVzdCBtYXRjaCB0aGUga2luZCBvZiBw",
-            "cm9wZXJ0eS52YWx1ZRrVBCgodGhpcy50eXBlID09IDEgJiYgaGFzKHRoaXMu",
-            "Ym9vbF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMiAmJiBoYXModGhpcy5p",
-            "bnRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDMgJiYgaGFzKHRoaXMuZmxv",
-            "YXRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDQgJiYgaGFzKHRoaXMuZG91",
-            "YmxlX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA1ICYmIGhhcyh0aGlzLnN0",
-            "cmluZ192YWx1ZSkpIHx8KHRoaXMudHlwZSA9PSA2ICYmIGhhcyh0aGlzLnZl",
-            "Y3RvcjNfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDcgJiYgaGFzKHRoaXMu",
-            "cG9zZV92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gOCAmJiBoYXModGhpcy5h",
-            "bmNob3JfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDkgJiYgaGFzKHRoaXMu",
-            "Y29sb3JfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDEwICYmIGhhcyh0aGlz",
-            "LmFnZW50X2lkX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAxMSAmJiBoYXMo",
-            "dGhpcy5lbnVtX3ZhbHVlKSkgfHwodGhpcy50eXBlID09IDEyICYmIHNpemUo",
-            "dGhpcy5lbnVtX211bHRpX3ZhbHVlKSA+IDApKSB8fCAodGhpcy50eXBlID09",
-            "IDEzICYmIGhhcyh0aGlzLmljb25fdmFsdWUpKRqNAQoibWlycm9yX3JlcXVp",
-            "cmVzX21pcnJvcl9wcm9wZXJ0eV9pZBI0bWlycm9yX3Byb3BlcnR5X2lkIG11",
-            "c3QgYmUgc2V0IHdoZW4gb3JpZ2luIGlzIE1JUlJPUhoxdGhpcy5vcmlnaW4g",
-            "IT0gMiB8fCB0aGlzLm1pcnJvcl9wcm9wZXJ0eV9pZCAhPSAnJxplChRvdXRw",
-            "dXRfbXVzdF9iZV9maXhlZBIob3V0cHV0IHByb3BlcnRpZXMgbXVzdCBoYXZl",
-            "IG9yaWdpbiBGSVhFRBojdGhpcy5ncm91cCAhPSAxIHx8IHRoaXMub3JpZ2lu",
-            "ID09IDEisgEKCmJvb2xfdmFsdWUKCWludF92YWx1ZQoLZmxvYXRfdmFsdWUK",
-            "DGRvdWJsZV92YWx1ZQoMc3RyaW5nX3ZhbHVlCg12ZWN0b3IzX3ZhbHVlCgpw",
-            "b3NlX3ZhbHVlCgxhbmNob3JfdmFsdWUKC2NvbG9yX3ZhbHVlCg5hZ2VudF9p",
-            "ZF92YWx1ZQoKZW51bV92YWx1ZQoQbXVsdGlfZW51bV92YWx1ZQoKaWNvbl92",
-            "YWx1ZRABIkgKDW51bWJlcl9leHRyYXMKC2VudW1fZXh0cmFzCg52ZWN0b3Iz",
-            "X2V4dHJhcwoMY29sb3JfZXh0cmFzCgxhZ2VudF9leHRyYXMiQwoQUHJvcGVy",
-            "dHlNZXNzYWdlcxIvCgpwcm9wZXJ0aWVzGAEgAygLMg8uYXIudjEuUHJvcGVy",
-            "dHlSCnByb3BlcnRpZXMimAEKE1Byb3BlcnR5VmFsdWVVcGRhdGUSDgoCaWQY",
-            "ASABKAlSAmlkEhQKBXZhbHVlGAYgASgJUgV2YWx1ZRItCgZvcmlnaW4YCSAB",
-            "KA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpblIGb3JpZ2luEiwKEm1pcnJvcl9w",
-            "cm9wZXJ0eV9pZBgLIAEoCVIQbWlycm9yUHJvcGVydHlJZCKIAQoMTnVtYmVy",
-            "RXh0cmFzEhAKA21pbhgBIAEoAVIDbWluEhAKA21heBgCIAEoAVIDbWF4EiIK",
-            "BHN0ZXAYAyABKAFCDrpICxIJKQAAAAAAAAAAUgRzdGVwEhIKBHVuaXQYBCAB",
-            "KAlSBHVuaXQSHAoJcHJlY2lzaW9uGAUgASgNUglwcmVjaXNpb24ikAEKCkVu",
-            "dW1PcHRpb24SHQoFdmFsdWUYASABKAlCB7pIBHICEAFSBXZhbHVlEh0KBWxh",
-            "YmVsGAIgASgJQge6SARyAhABUgVsYWJlbBISCgRpY29uGAMgASgJUgRpY29u",
-            "EhQKBWdyb3VwGAQgASgJUgVncm91cBIaCghkaXNhYmxlZBgFIAEoCFIIZGlz",
-            "YWJsZWQi5gEKCkVudW1FeHRyYXMSIAoLcGxhY2Vob2xkZXIYASABKAlSC3Bs",
-            "YWNlaG9sZGVyEhYKBmZpbHRlchgCIAEoCFIGZmlsdGVyEhgKB2dyb3VwZWQY",
-            "AyABKAhSB2dyb3VwZWQSHQoKc2hvd19pY29ucxgEIAEoCFIJc2hvd0ljb25z",
-            "Ei4KE21heF9zZWxlY3RlZF9sYWJlbHMYBSABKA1SEW1heFNlbGVjdGVkTGFi",
-            "ZWxzEjUKB29wdGlvbnMYBiADKAsyES5hci52MS5FbnVtT3B0aW9uQgi6SAWS",
-            "AQIIAVIHb3B0aW9ucyKPAQoNVmVjdG9yM0V4dHJhcxIQCgNtaW4YASABKAFS",
-            "A21pbhIQCgNtYXgYAiABKAFSA21heBIiCgRzdGVwGAMgASgBQg66SAsSCSkA",
-            "AAAAAAAAAFIEc3RlcBIiCgZsYWJlbHMYBCADKAlCCrpIB5IBBAgDEANSBmxh",
-            "YmVscxISCgR1bml0GAUgASgJUgR1bml0Il0KC0NvbG9yRXh0cmFzEiIKBHN0",
-            "ZXAYASABKAFCDrpICxIJKQAAAAAAAAAAUgRzdGVwEioKB2RlZmF1bHQYAiAB",
-            "KAsyEC5jb21tb24udjEuQ29sb3JSB2RlZmF1bHQiMQoMQW5jaG9yRXh0cmFz",
-            "EiEKDG9ubHlfbWFya2VycxgBIAEoCFILb25seU1hcmtlcnMiWgoKUG9zZUV4",
-            "dHJhcxInCg9hbmNob3JfZWRpdGFibGUYASABKAhSDmFuY2hvckVkaXRhYmxl",
-            "EiMKDXBvc2VfZWRpdGFibGUYAiABKAhSDHBvc2VFZGl0YWJsZSJECgtBZ2Vu",
-            "dEV4dHJhcxI1CgphZ2VudF90eXBlGAEgASgOMhYuYXIudjEuQWdlbnRFeHRy",
-            "YXNUeXBlUglhZ2VudFR5cGUq9gIKDFByb3BlcnR5VHlwZRIdChlQUk9QRVJU",
-            "WV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09MEAES",
-            "FQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZMT0FU",
-            "EAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9UWVBF",
-            "X1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBST1BF",
-            "UlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgSFwoT",
-            "UFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfQUdFTlQQ",
-            "ChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBFX0VO",
-            "VU1fTVVMVEkQDBIWChJQUk9QRVJUWV9UWVBFX0lDT04QDSpoCg5Qcm9wZXJ0",
-            "eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQ",
-            "Uk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlS",
-            "Uk9SEAIq3wEKDVByb3BlcnR5R3JvdXASHgoaUFJPUEVSVFlfR1JPVVBfVU5T",
-            "UEVDSUZJRUQQABIZChVQUk9QRVJUWV9HUk9VUF9PVVRQVVQQARIfChtQUk9Q",
-            "RVJUWV9HUk9VUF9OT05fRURJVEFCTEUQAhIaChZQUk9QRVJUWV9HUk9VUF9T",
-            "VFlMSU5HEAMSGwoXUFJPUEVSVFlfR1JPVVBfTE9DQVRJT04QBBIXChNQUk9Q",
-            "RVJUWV9HUk9VUF9JQ09OEAUSIAocUFJPUEVSVFlfR1JPVVBfQ09ORklHVVJB",
-            "VElPThAGKooBCg9BZ2VudEV4dHJhc1R5cGUSIQodQUdFTlRfRVhUUkFTX1RZ",
-            "UEVfVU5TUEVDSUZJRUQQABIbChdBR0VOVF9FWFRSQVNfVFlQRV9IVU1BThAB",
-            "EhsKF0FHRU5UX0VYVFJBU19UWVBFX1JPQk9UEAISGgoWQUdFTlRfRVhUUkFT",
-            "X1RZUEVfQk9USBADQokBCgljb20uYXIudjFCDVByb3BlcnR5UHJvdG9QAVov",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2Fy",
-            "djGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BC",
-            "TWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "IAEoCzISLmFyLnYxLkNvbG9yRXh0cmFzUgtjb2xvckV4dHJhcxI1CgxhZ2Vu",
+            "dF9leHRyYXMYLSABKAsyEi5hci52MS5BZ2VudEV4dHJhc1ILYWdlbnRFeHRy",
+            "YXM6rAm6SKgJGq8FCiBwcm9wZXJ0eV90eXBlX21hdGNoZXNfdmFsdWVfa2lu",
+            "ZBIzcHJvcGVydHkudHlwZSBtdXN0IG1hdGNoIHRoZSBraW5kIG9mIHByb3Bl",
+            "cnR5LnZhbHVlGtUEKCh0aGlzLnR5cGUgPT0gMSAmJiBoYXModGhpcy5ib29s",
+            "X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAyICYmIGhhcyh0aGlzLmludF92",
+            "YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMyAmJiBoYXModGhpcy5mbG9hdF92",
+            "YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNCAmJiBoYXModGhpcy5kb3VibGVf",
+            "dmFsdWUpKSB8fCAodGhpcy50eXBlID09IDUgJiYgaGFzKHRoaXMuc3RyaW5n",
+            "X3ZhbHVlKSkgfHwodGhpcy50eXBlID09IDYgJiYgaGFzKHRoaXMudmVjdG9y",
+            "M192YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNyAmJiBoYXModGhpcy5wb3Nl",
+            "X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA4ICYmIGhhcyh0aGlzLmFuY2hv",
+            "cl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gOSAmJiBoYXModGhpcy5jb2xv",
+            "cl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTAgJiYgaGFzKHRoaXMuYWdl",
+            "bnRfaWRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDExICYmIGhhcyh0aGlz",
+            "LmVudW1fdmFsdWUpKSB8fCh0aGlzLnR5cGUgPT0gMTIgJiYgc2l6ZSh0aGlz",
+            "LmVudW1fbXVsdGlfdmFsdWUpID4gMCkpIHx8ICh0aGlzLnR5cGUgPT0gMTMg",
+            "JiYgaGFzKHRoaXMuaWNvbl92YWx1ZSkpGo0BCiJtaXJyb3JfcmVxdWlyZXNf",
+            "bWlycm9yX3Byb3BlcnR5X2lkEjRtaXJyb3JfcHJvcGVydHlfaWQgbXVzdCBi",
+            "ZSBzZXQgd2hlbiBvcmlnaW4gaXMgTUlSUk9SGjF0aGlzLm9yaWdpbiAhPSAy",
+            "IHx8IHRoaXMubWlycm9yX3Byb3BlcnR5X2lkICE9ICcnGmUKFG91dHB1dF9t",
+            "dXN0X2JlX2ZpeGVkEihvdXRwdXQgcHJvcGVydGllcyBtdXN0IGhhdmUgb3Jp",
+            "Z2luIEZJWEVEGiN0aGlzLmdyb3VwICE9IDEgfHwgdGhpcy5vcmlnaW4gPT0g",
+            "MSKyAQoKYm9vbF92YWx1ZQoJaW50X3ZhbHVlCgtmbG9hdF92YWx1ZQoMZG91",
+            "YmxlX3ZhbHVlCgxzdHJpbmdfdmFsdWUKDXZlY3RvcjNfdmFsdWUKCnBvc2Vf",
+            "dmFsdWUKDGFuY2hvcl92YWx1ZQoLY29sb3JfdmFsdWUKDmFnZW50X2lkX3Zh",
+            "bHVlCgplbnVtX3ZhbHVlChBlbnVtX211bHRpX3ZhbHVlCgppY29uX3ZhbHVl",
+            "EAEiSAoNbnVtYmVyX2V4dHJhcwoLZW51bV9leHRyYXMKDnZlY3RvcjNfZXh0",
+            "cmFzCgxjb2xvcl9leHRyYXMKDGFnZW50X2V4dHJhcyJDChBQcm9wZXJ0eU1l",
+            "c3NhZ2VzEi8KCnByb3BlcnRpZXMYASADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
+            "cHJvcGVydGllcyLSDQoTUHJvcGVydHlWYWx1ZVVwZGF0ZRIOCgJpZBgBIAEo",
+            "CVICaWQSNAoEdHlwZRgFIAEoDjITLmFyLnYxLlByb3BlcnR5VHlwZUILukgI",
+            "ggECEAHIAQFSBHR5cGUSNwoGb3JpZ2luGAcgASgOMhUuYXIudjEuUHJvcGVy",
+            "dHlPcmlnaW5CCLpIBYIBAhABUgZvcmlnaW4SLAoSbWlycm9yX3Byb3BlcnR5",
+            "X2lkGAkgASgJUhBtaXJyb3JQcm9wZXJ0eUlkEh0KCmJvb2xfdmFsdWUYFSAB",
+            "KAhSCWJvb2xWYWx1ZRIbCglpbnRfdmFsdWUYFiABKBJSCGludFZhbHVlEh8K",
+            "C2Zsb2F0X3ZhbHVlGBcgASgCUgpmbG9hdFZhbHVlEiEKDGRvdWJsZV92YWx1",
+            "ZRgYIAEoAVILZG91YmxlVmFsdWUSIQoMc3RyaW5nX3ZhbHVlGBkgASgJUgtz",
+            "dHJpbmdWYWx1ZRI5Cg12ZWN0b3IzX3ZhbHVlGBogASgLMhQuZ2VvbWV0cnku",
+            "djEuVmVjdG9yM1IMdmVjdG9yM1ZhbHVlEjkKCnBvc2VfdmFsdWUYGyABKAsy",
+            "Gi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUglwb3NlVmFsdWUSNgoMYW5j",
+            "aG9yX3ZhbHVlGBwgASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9yUgthbmNob3JW",
+            "YWx1ZRIxCgtjb2xvcl92YWx1ZRgdIAEoCzIQLmNvbW1vbi52MS5Db2xvclIK",
+            "Y29sb3JWYWx1ZRIkCg5hZ2VudF9pZF92YWx1ZRgUIAEoCVIMYWdlbnRJZFZh",
+            "bHVlEh0KCmVudW1fdmFsdWUYHyABKAlSCWVudW1WYWx1ZRIoChBlbnVtX211",
+            "bHRpX3ZhbHVlGCAgAygJUg5lbnVtTXVsdGlWYWx1ZRIdCgppY29uX3ZhbHVl",
+            "GCEgASgJUglpY29uVmFsdWU6+we6SPcHGq8FCiBwcm9wZXJ0eV90eXBlX21h",
+            "dGNoZXNfdmFsdWVfa2luZBIzcHJvcGVydHkudHlwZSBtdXN0IG1hdGNoIHRo",
+            "ZSBraW5kIG9mIHByb3BlcnR5LnZhbHVlGtUEKCh0aGlzLnR5cGUgPT0gMSAm",
+            "JiBoYXModGhpcy5ib29sX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAyICYm",
+            "IGhhcyh0aGlzLmludF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMyAmJiBo",
+            "YXModGhpcy5mbG9hdF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNCAmJiBo",
+            "YXModGhpcy5kb3VibGVfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDUgJiYg",
+            "aGFzKHRoaXMuc3RyaW5nX3ZhbHVlKSkgfHwodGhpcy50eXBlID09IDYgJiYg",
+            "aGFzKHRoaXMudmVjdG9yM192YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNyAm",
+            "JiBoYXModGhpcy5wb3NlX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA4ICYm",
+            "IGhhcyh0aGlzLmFuY2hvcl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gOSAm",
+            "JiBoYXModGhpcy5jb2xvcl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTAg",
+            "JiYgaGFzKHRoaXMuYWdlbnRfaWRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09",
+            "IDExICYmIGhhcyh0aGlzLmVudW1fdmFsdWUpKSB8fCh0aGlzLnR5cGUgPT0g",
+            "MTIgJiYgc2l6ZSh0aGlzLmVudW1fbXVsdGlfdmFsdWUpID4gMCkpIHx8ICh0",
+            "aGlzLnR5cGUgPT0gMTMgJiYgaGFzKHRoaXMuaWNvbl92YWx1ZSkpGo0BCiJt",
+            "aXJyb3JfcmVxdWlyZXNfbWlycm9yX3Byb3BlcnR5X2lkEjRtaXJyb3JfcHJv",
+            "cGVydHlfaWQgbXVzdCBiZSBzZXQgd2hlbiBvcmlnaW4gaXMgTUlSUk9SGjF0",
+            "aGlzLm9yaWdpbiAhPSAyIHx8IHRoaXMubWlycm9yX3Byb3BlcnR5X2lkICE9",
+            "ICcnIrIBCgpib29sX3ZhbHVlCglpbnRfdmFsdWUKC2Zsb2F0X3ZhbHVlCgxk",
+            "b3VibGVfdmFsdWUKDHN0cmluZ192YWx1ZQoNdmVjdG9yM192YWx1ZQoKcG9z",
+            "ZV92YWx1ZQoMYW5jaG9yX3ZhbHVlCgtjb2xvcl92YWx1ZQoOYWdlbnRfaWRf",
+            "dmFsdWUKCmVudW1fdmFsdWUKEGVudW1fbXVsdGlfdmFsdWUKCmljb25fdmFs",
+            "dWUQASKIAQoMTnVtYmVyRXh0cmFzEhAKA21pbhgBIAEoAVIDbWluEhAKA21h",
+            "eBgCIAEoAVIDbWF4EiIKBHN0ZXAYAyABKAFCDrpICxIJKQAAAAAAAAAAUgRz",
+            "dGVwEhIKBHVuaXQYBCABKAlSBHVuaXQSHAoJcHJlY2lzaW9uGAUgASgNUglw",
+            "cmVjaXNpb24ikAEKCkVudW1PcHRpb24SHQoFdmFsdWUYASABKAlCB7pIBHIC",
+            "EAFSBXZhbHVlEh0KBWxhYmVsGAIgASgJQge6SARyAhABUgVsYWJlbBISCgRp",
+            "Y29uGAMgASgJUgRpY29uEhQKBWdyb3VwGAQgASgJUgVncm91cBIaCghkaXNh",
+            "YmxlZBgFIAEoCFIIZGlzYWJsZWQi5gEKCkVudW1FeHRyYXMSIAoLcGxhY2Vo",
+            "b2xkZXIYASABKAlSC3BsYWNlaG9sZGVyEhYKBmZpbHRlchgCIAEoCFIGZmls",
+            "dGVyEhgKB2dyb3VwZWQYAyABKAhSB2dyb3VwZWQSHQoKc2hvd19pY29ucxgE",
+            "IAEoCFIJc2hvd0ljb25zEi4KE21heF9zZWxlY3RlZF9sYWJlbHMYBSABKA1S",
+            "EW1heFNlbGVjdGVkTGFiZWxzEjUKB29wdGlvbnMYBiADKAsyES5hci52MS5F",
+            "bnVtT3B0aW9uQgi6SAWSAQIIAVIHb3B0aW9ucyKPAQoNVmVjdG9yM0V4dHJh",
+            "cxIQCgNtaW4YASABKAFSA21pbhIQCgNtYXgYAiABKAFSA21heBIiCgRzdGVw",
+            "GAMgASgBQg66SAsSCSkAAAAAAAAAAFIEc3RlcBIiCgZsYWJlbHMYBCADKAlC",
+            "CrpIB5IBBAgDEANSBmxhYmVscxISCgR1bml0GAUgASgJUgR1bml0Il0KC0Nv",
+            "bG9yRXh0cmFzEiIKBHN0ZXAYASABKAFCDrpICxIJKQAAAAAAAAAAUgRzdGVw",
+            "EioKB2RlZmF1bHQYAiABKAsyEC5jb21tb24udjEuQ29sb3JSB2RlZmF1bHQi",
+            "MQoMQW5jaG9yRXh0cmFzEiEKDG9ubHlfbWFya2VycxgBIAEoCFILb25seU1h",
+            "cmtlcnMiWgoKUG9zZUV4dHJhcxInCg9hbmNob3JfZWRpdGFibGUYASABKAhS",
+            "DmFuY2hvckVkaXRhYmxlEiMKDXBvc2VfZWRpdGFibGUYAiABKAhSDHBvc2VF",
+            "ZGl0YWJsZSJECgtBZ2VudEV4dHJhcxI1CgphZ2VudF90eXBlGAEgASgOMhYu",
+            "YXIudjEuQWdlbnRFeHRyYXNUeXBlUglhZ2VudFR5cGUq9gIKDFByb3BlcnR5",
+            "VHlwZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVS",
+            "VFlfVFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9Q",
+            "RVJUWV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIY",
+            "ChRQUk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVD",
+            "VE9SMxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZ",
+            "UEVfQU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BF",
+            "UlRZX1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQ",
+            "Uk9QRVJUWV9UWVBFX0VOVU1fTVVMVEkQDBIWChJQUk9QRVJUWV9UWVBFX0lD",
+            "T04QDSpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5T",
+            "UEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9Q",
+            "RVJUWV9PUklHSU5fTUlSUk9SEAIq3wEKDVByb3BlcnR5R3JvdXASHgoaUFJP",
+            "UEVSVFlfR1JPVVBfVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9HUk9VUF9P",
+            "VVRQVVQQARIfChtQUk9QRVJUWV9HUk9VUF9OT05fRURJVEFCTEUQAhIaChZQ",
+            "Uk9QRVJUWV9HUk9VUF9TVFlMSU5HEAMSGwoXUFJPUEVSVFlfR1JPVVBfTE9D",
+            "QVRJT04QBBIXChNQUk9QRVJUWV9HUk9VUF9JQ09OEAUSIAocUFJPUEVSVFlf",
+            "R1JPVVBfQ09ORklHVVJBVElPThAGKooBCg9BZ2VudEV4dHJhc1R5cGUSIQod",
+            "QUdFTlRfRVhUUkFTX1RZUEVfVU5TUEVDSUZJRUQQABIbChdBR0VOVF9FWFRS",
+            "QVNfVFlQRV9IVU1BThABEhsKF0FHRU5UX0VYVFJBU19UWVBFX1JPQk9UEAIS",
+            "GgoWQUdFTlRfRVhUUkFTX1RZUEVfQk9USBADQokBCgljb20uYXIudjFCDVBy",
+            "b3BlcnR5UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
+            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PropertyType), typeof(global::Messages.AR.V1.PropertyOrigin), typeof(global::Messages.AR.V1.PropertyGroup), typeof(global::Messages.AR.V1.AgentExtrasType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup", "ParentId", "Advanced", "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "Vector3Value", "PoseValue", "AnchorValue", "ColorValue", "AgentIdValue", "EnumValue", "EnumMultiValue", "IconValue", "NumberExtras", "EnumExtras", "Vector3Extras", "ColorExtras", "AgentExtras" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyMessages), global::Messages.AR.V1.PropertyMessages.Parser, new[]{ "Properties" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyValueUpdate), global::Messages.AR.V1.PropertyValueUpdate.Parser, new[]{ "Id", "Value", "Origin", "MirrorPropertyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyValueUpdate), global::Messages.AR.V1.PropertyValueUpdate.Parser, new[]{ "Id", "Type", "Origin", "MirrorPropertyId", "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "Vector3Value", "PoseValue", "AnchorValue", "ColorValue", "AgentIdValue", "EnumValue", "EnumMultiValue", "IconValue" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.NumberExtras), global::Messages.AR.V1.NumberExtras.Parser, new[]{ "Min", "Max", "Step", "Unit", "Precision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnumOption), global::Messages.AR.V1.EnumOption.Parser, new[]{ "Value", "Label", "Icon", "Group", "Disabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnumExtras), global::Messages.AR.V1.EnumExtras.Parser, new[]{ "Placeholder", "Filter", "Grouped", "ShowIcons", "MaxSelectedLabels", "Options" }, null, null, null, null),
@@ -279,7 +314,7 @@ namespace Messages.AR.V1 {
       enumExtras_ = other.enumExtras_ != null ? other.enumExtras_.Clone() : null;
       vector3Extras_ = other.vector3Extras_ != null ? other.vector3Extras_.Clone() : null;
       colorExtras_ = other.colorExtras_ != null ? other.colorExtras_.Clone() : null;
-      agentExtras_ = other.agentExtras_;
+      agentExtras_ = other.agentExtras_ != null ? other.agentExtras_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -664,10 +699,10 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "agent_extras" field.</summary>
     public const int AgentExtrasFieldNumber = 45;
-    private global::Messages.AR.V1.AgentExtrasType agentExtras_ = global::Messages.AR.V1.AgentExtrasType.Unspecified;
+    private global::Messages.AR.V1.AgentExtras agentExtras_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.AR.V1.AgentExtrasType AgentExtras {
+    public global::Messages.AR.V1.AgentExtras AgentExtras {
       get { return agentExtras_; }
       set {
         agentExtras_ = value;
@@ -720,7 +755,7 @@ namespace Messages.AR.V1 {
       if (!object.Equals(EnumExtras, other.EnumExtras)) return false;
       if (!object.Equals(Vector3Extras, other.Vector3Extras)) return false;
       if (!object.Equals(ColorExtras, other.ColorExtras)) return false;
-      if (AgentExtras != other.AgentExtras) return false;
+      if (!object.Equals(AgentExtras, other.AgentExtras)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -759,7 +794,7 @@ namespace Messages.AR.V1 {
       if (enumExtras_ != null) hash ^= EnumExtras.GetHashCode();
       if (vector3Extras_ != null) hash ^= Vector3Extras.GetHashCode();
       if (colorExtras_ != null) hash ^= ColorExtras.GetHashCode();
-      if (AgentExtras != global::Messages.AR.V1.AgentExtrasType.Unspecified) hash ^= AgentExtras.GetHashCode();
+      if (agentExtras_ != null) hash ^= AgentExtras.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -896,9 +931,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(226, 2);
         output.WriteMessage(ColorExtras);
       }
-      if (AgentExtras != global::Messages.AR.V1.AgentExtrasType.Unspecified) {
-        output.WriteRawTag(232, 2);
-        output.WriteEnum((int) AgentExtras);
+      if (agentExtras_ != null) {
+        output.WriteRawTag(234, 2);
+        output.WriteMessage(AgentExtras);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1028,9 +1063,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(226, 2);
         output.WriteMessage(ColorExtras);
       }
-      if (AgentExtras != global::Messages.AR.V1.AgentExtrasType.Unspecified) {
-        output.WriteRawTag(232, 2);
-        output.WriteEnum((int) AgentExtras);
+      if (agentExtras_ != null) {
+        output.WriteRawTag(234, 2);
+        output.WriteMessage(AgentExtras);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1131,8 +1166,8 @@ namespace Messages.AR.V1 {
       if (colorExtras_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(ColorExtras);
       }
-      if (AgentExtras != global::Messages.AR.V1.AgentExtrasType.Unspecified) {
-        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AgentExtras);
+      if (agentExtras_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AgentExtras);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1259,8 +1294,11 @@ namespace Messages.AR.V1 {
         }
         ColorExtras.MergeFrom(other.ColorExtras);
       }
-      if (other.AgentExtras != global::Messages.AR.V1.AgentExtrasType.Unspecified) {
-        AgentExtras = other.AgentExtras;
+      if (other.agentExtras_ != null) {
+        if (agentExtras_ == null) {
+          AgentExtras = new global::Messages.AR.V1.AgentExtras();
+        }
+        AgentExtras.MergeFrom(other.AgentExtras);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1430,8 +1468,11 @@ namespace Messages.AR.V1 {
             input.ReadMessage(ColorExtras);
             break;
           }
-          case 360: {
-            AgentExtras = (global::Messages.AR.V1.AgentExtrasType) input.ReadEnum();
+          case 362: {
+            if (agentExtras_ == null) {
+              AgentExtras = new global::Messages.AR.V1.AgentExtras();
+            }
+            input.ReadMessage(AgentExtras);
             break;
           }
         }
@@ -1602,8 +1643,11 @@ namespace Messages.AR.V1 {
             input.ReadMessage(ColorExtras);
             break;
           }
-          case 360: {
-            AgentExtras = (global::Messages.AR.V1.AgentExtrasType) input.ReadEnum();
+          case 362: {
+            if (agentExtras_ == null) {
+              AgentExtras = new global::Messages.AR.V1.AgentExtras();
+            }
+            input.ReadMessage(AgentExtras);
             break;
           }
         }
@@ -1836,9 +1880,22 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PropertyValueUpdate(PropertyValueUpdate other) : this() {
       id_ = other.id_;
-      value_ = other.value_;
+      type_ = other.type_;
       origin_ = other.origin_;
       mirrorPropertyId_ = other.mirrorPropertyId_;
+      boolValue_ = other.boolValue_;
+      intValue_ = other.intValue_;
+      floatValue_ = other.floatValue_;
+      doubleValue_ = other.doubleValue_;
+      stringValue_ = other.stringValue_;
+      vector3Value_ = other.vector3Value_ != null ? other.vector3Value_.Clone() : null;
+      poseValue_ = other.poseValue_ != null ? other.poseValue_.Clone() : null;
+      anchorValue_ = other.anchorValue_ != null ? other.anchorValue_.Clone() : null;
+      colorValue_ = other.colorValue_ != null ? other.colorValue_.Clone() : null;
+      agentIdValue_ = other.agentIdValue_;
+      enumValue_ = other.enumValue_;
+      enumMultiValue_ = other.enumMultiValue_.Clone();
+      iconValue_ = other.iconValue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1860,20 +1917,20 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 6;
-    private string value_ = "";
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::Messages.AR.V1.PropertyType type_ = global::Messages.AR.V1.PropertyType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Value {
-      get { return value_; }
+    public global::Messages.AR.V1.PropertyType Type {
+      get { return type_; }
       set {
-        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        type_ = value;
       }
     }
 
     /// <summary>Field number for the "origin" field.</summary>
-    public const int OriginFieldNumber = 9;
+    public const int OriginFieldNumber = 7;
     private global::Messages.AR.V1.PropertyOrigin origin_ = global::Messages.AR.V1.PropertyOrigin.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1885,7 +1942,7 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "mirror_property_id" field.</summary>
-    public const int MirrorPropertyIdFieldNumber = 11;
+    public const int MirrorPropertyIdFieldNumber = 9;
     private string mirrorPropertyId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1893,6 +1950,161 @@ namespace Messages.AR.V1 {
       get { return mirrorPropertyId_; }
       set {
         mirrorPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "bool_value" field.</summary>
+    public const int BoolValueFieldNumber = 21;
+    private bool boolValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool BoolValue {
+      get { return boolValue_; }
+      set {
+        boolValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 22;
+    private long intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "float_value" field.</summary>
+    public const int FloatValueFieldNumber = 23;
+    private float floatValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float FloatValue {
+      get { return floatValue_; }
+      set {
+        floatValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 24;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 25;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "vector3_value" field.</summary>
+    public const int Vector3ValueFieldNumber = 26;
+    private global::Messages.Common.V1.Vector3 vector3Value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Vector3 Vector3Value {
+      get { return vector3Value_; }
+      set {
+        vector3Value_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pose_value" field.</summary>
+    public const int PoseValueFieldNumber = 27;
+    private global::Messages.Common.V1.LocalizedPose poseValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.LocalizedPose PoseValue {
+      get { return poseValue_; }
+      set {
+        poseValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "anchor_value" field.</summary>
+    public const int AnchorValueFieldNumber = 28;
+    private global::Messages.Common.V1.Anchor anchorValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Anchor AnchorValue {
+      get { return anchorValue_; }
+      set {
+        anchorValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "color_value" field.</summary>
+    public const int ColorValueFieldNumber = 29;
+    private global::Messages.Common.V1.Color colorValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Color ColorValue {
+      get { return colorValue_; }
+      set {
+        colorValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "agent_id_value" field.</summary>
+    public const int AgentIdValueFieldNumber = 20;
+    private string agentIdValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AgentIdValue {
+      get { return agentIdValue_; }
+      set {
+        agentIdValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "enum_value" field.</summary>
+    public const int EnumValueFieldNumber = 31;
+    private string enumValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EnumValue {
+      get { return enumValue_; }
+      set {
+        enumValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "enum_multi_value" field.</summary>
+    public const int EnumMultiValueFieldNumber = 32;
+    private static readonly pb::FieldCodec<string> _repeated_enumMultiValue_codec
+        = pb::FieldCodec.ForString(258);
+    private readonly pbc::RepeatedField<string> enumMultiValue_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> EnumMultiValue {
+      get { return enumMultiValue_; }
+    }
+
+    /// <summary>Field number for the "icon_value" field.</summary>
+    public const int IconValueFieldNumber = 33;
+    private string iconValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string IconValue {
+      get { return iconValue_; }
+      set {
+        iconValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1912,9 +2124,22 @@ namespace Messages.AR.V1 {
         return true;
       }
       if (Id != other.Id) return false;
-      if (Value != other.Value) return false;
+      if (Type != other.Type) return false;
       if (Origin != other.Origin) return false;
       if (MirrorPropertyId != other.MirrorPropertyId) return false;
+      if (BoolValue != other.BoolValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FloatValue, other.FloatValue)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (StringValue != other.StringValue) return false;
+      if (!object.Equals(Vector3Value, other.Vector3Value)) return false;
+      if (!object.Equals(PoseValue, other.PoseValue)) return false;
+      if (!object.Equals(AnchorValue, other.AnchorValue)) return false;
+      if (!object.Equals(ColorValue, other.ColorValue)) return false;
+      if (AgentIdValue != other.AgentIdValue) return false;
+      if (EnumValue != other.EnumValue) return false;
+      if(!enumMultiValue_.Equals(other.enumMultiValue_)) return false;
+      if (IconValue != other.IconValue) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1923,9 +2148,22 @@ namespace Messages.AR.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (Type != global::Messages.AR.V1.PropertyType.Unspecified) hash ^= Type.GetHashCode();
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) hash ^= Origin.GetHashCode();
       if (MirrorPropertyId.Length != 0) hash ^= MirrorPropertyId.GetHashCode();
+      if (BoolValue != false) hash ^= BoolValue.GetHashCode();
+      if (IntValue != 0L) hash ^= IntValue.GetHashCode();
+      if (FloatValue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatValue);
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (vector3Value_ != null) hash ^= Vector3Value.GetHashCode();
+      if (poseValue_ != null) hash ^= PoseValue.GetHashCode();
+      if (anchorValue_ != null) hash ^= AnchorValue.GetHashCode();
+      if (colorValue_ != null) hash ^= ColorValue.GetHashCode();
+      if (AgentIdValue.Length != 0) hash ^= AgentIdValue.GetHashCode();
+      if (EnumValue.Length != 0) hash ^= EnumValue.GetHashCode();
+      hash ^= enumMultiValue_.GetHashCode();
+      if (IconValue.Length != 0) hash ^= IconValue.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1948,17 +2186,66 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Value.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Value);
+      if (Type != global::Messages.AR.V1.PropertyType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Origin);
       }
       if (MirrorPropertyId.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteString(MirrorPropertyId);
+      }
+      if (AgentIdValue.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(AgentIdValue);
+      }
+      if (BoolValue != false) {
+        output.WriteRawTag(168, 1);
+        output.WriteBool(BoolValue);
+      }
+      if (IntValue != 0L) {
+        output.WriteRawTag(176, 1);
+        output.WriteSInt64(IntValue);
+      }
+      if (FloatValue != 0F) {
+        output.WriteRawTag(189, 1);
+        output.WriteFloat(FloatValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(193, 1);
+        output.WriteDouble(DoubleValue);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(StringValue);
+      }
+      if (vector3Value_ != null) {
+        output.WriteRawTag(210, 1);
+        output.WriteMessage(Vector3Value);
+      }
+      if (poseValue_ != null) {
+        output.WriteRawTag(218, 1);
+        output.WriteMessage(PoseValue);
+      }
+      if (anchorValue_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(AnchorValue);
+      }
+      if (colorValue_ != null) {
+        output.WriteRawTag(234, 1);
+        output.WriteMessage(ColorValue);
+      }
+      if (EnumValue.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(EnumValue);
+      }
+      enumMultiValue_.WriteTo(output, _repeated_enumMultiValue_codec);
+      if (IconValue.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(IconValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1974,17 +2261,66 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Value.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Value);
+      if (Type != global::Messages.AR.V1.PropertyType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Origin);
       }
       if (MirrorPropertyId.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteString(MirrorPropertyId);
+      }
+      if (AgentIdValue.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(AgentIdValue);
+      }
+      if (BoolValue != false) {
+        output.WriteRawTag(168, 1);
+        output.WriteBool(BoolValue);
+      }
+      if (IntValue != 0L) {
+        output.WriteRawTag(176, 1);
+        output.WriteSInt64(IntValue);
+      }
+      if (FloatValue != 0F) {
+        output.WriteRawTag(189, 1);
+        output.WriteFloat(FloatValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(193, 1);
+        output.WriteDouble(DoubleValue);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(StringValue);
+      }
+      if (vector3Value_ != null) {
+        output.WriteRawTag(210, 1);
+        output.WriteMessage(Vector3Value);
+      }
+      if (poseValue_ != null) {
+        output.WriteRawTag(218, 1);
+        output.WriteMessage(PoseValue);
+      }
+      if (anchorValue_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(AnchorValue);
+      }
+      if (colorValue_ != null) {
+        output.WriteRawTag(234, 1);
+        output.WriteMessage(ColorValue);
+      }
+      if (EnumValue.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(EnumValue);
+      }
+      enumMultiValue_.WriteTo(ref output, _repeated_enumMultiValue_codec);
+      if (IconValue.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(IconValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1999,14 +2335,51 @@ namespace Messages.AR.V1 {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (Value.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      if (Type != global::Messages.AR.V1.PropertyType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Origin);
       }
       if (MirrorPropertyId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MirrorPropertyId);
+      }
+      if (BoolValue != false) {
+        size += 2 + 1;
+      }
+      if (IntValue != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeSInt64Size(IntValue);
+      }
+      if (FloatValue != 0F) {
+        size += 2 + 4;
+      }
+      if (DoubleValue != 0D) {
+        size += 2 + 8;
+      }
+      if (StringValue.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (vector3Value_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Vector3Value);
+      }
+      if (poseValue_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PoseValue);
+      }
+      if (anchorValue_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AnchorValue);
+      }
+      if (colorValue_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ColorValue);
+      }
+      if (AgentIdValue.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(AgentIdValue);
+      }
+      if (EnumValue.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(EnumValue);
+      }
+      size += enumMultiValue_.CalculateSize(_repeated_enumMultiValue_codec);
+      if (IconValue.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(IconValue);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2023,14 +2396,63 @@ namespace Messages.AR.V1 {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.Value.Length != 0) {
-        Value = other.Value;
+      if (other.Type != global::Messages.AR.V1.PropertyType.Unspecified) {
+        Type = other.Type;
       }
       if (other.Origin != global::Messages.AR.V1.PropertyOrigin.Unspecified) {
         Origin = other.Origin;
       }
       if (other.MirrorPropertyId.Length != 0) {
         MirrorPropertyId = other.MirrorPropertyId;
+      }
+      if (other.BoolValue != false) {
+        BoolValue = other.BoolValue;
+      }
+      if (other.IntValue != 0L) {
+        IntValue = other.IntValue;
+      }
+      if (other.FloatValue != 0F) {
+        FloatValue = other.FloatValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.vector3Value_ != null) {
+        if (vector3Value_ == null) {
+          Vector3Value = new global::Messages.Common.V1.Vector3();
+        }
+        Vector3Value.MergeFrom(other.Vector3Value);
+      }
+      if (other.poseValue_ != null) {
+        if (poseValue_ == null) {
+          PoseValue = new global::Messages.Common.V1.LocalizedPose();
+        }
+        PoseValue.MergeFrom(other.PoseValue);
+      }
+      if (other.anchorValue_ != null) {
+        if (anchorValue_ == null) {
+          AnchorValue = new global::Messages.Common.V1.Anchor();
+        }
+        AnchorValue.MergeFrom(other.AnchorValue);
+      }
+      if (other.colorValue_ != null) {
+        if (colorValue_ == null) {
+          ColorValue = new global::Messages.Common.V1.Color();
+        }
+        ColorValue.MergeFrom(other.ColorValue);
+      }
+      if (other.AgentIdValue.Length != 0) {
+        AgentIdValue = other.AgentIdValue;
+      }
+      if (other.EnumValue.Length != 0) {
+        EnumValue = other.EnumValue;
+      }
+      enumMultiValue_.Add(other.enumMultiValue_);
+      if (other.IconValue.Length != 0) {
+        IconValue = other.IconValue;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2055,16 +2477,80 @@ namespace Messages.AR.V1 {
             Id = input.ReadString();
             break;
           }
-          case 50: {
-            Value = input.ReadString();
+          case 40: {
+            Type = (global::Messages.AR.V1.PropertyType) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 56: {
             Origin = (global::Messages.AR.V1.PropertyOrigin) input.ReadEnum();
             break;
           }
-          case 90: {
+          case 74: {
             MirrorPropertyId = input.ReadString();
+            break;
+          }
+          case 162: {
+            AgentIdValue = input.ReadString();
+            break;
+          }
+          case 168: {
+            BoolValue = input.ReadBool();
+            break;
+          }
+          case 176: {
+            IntValue = input.ReadSInt64();
+            break;
+          }
+          case 189: {
+            FloatValue = input.ReadFloat();
+            break;
+          }
+          case 193: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 202: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 210: {
+            if (vector3Value_ == null) {
+              Vector3Value = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(Vector3Value);
+            break;
+          }
+          case 218: {
+            if (poseValue_ == null) {
+              PoseValue = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(PoseValue);
+            break;
+          }
+          case 226: {
+            if (anchorValue_ == null) {
+              AnchorValue = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(AnchorValue);
+            break;
+          }
+          case 234: {
+            if (colorValue_ == null) {
+              ColorValue = new global::Messages.Common.V1.Color();
+            }
+            input.ReadMessage(ColorValue);
+            break;
+          }
+          case 250: {
+            EnumValue = input.ReadString();
+            break;
+          }
+          case 258: {
+            enumMultiValue_.AddEntriesFrom(input, _repeated_enumMultiValue_codec);
+            break;
+          }
+          case 266: {
+            IconValue = input.ReadString();
             break;
           }
         }
@@ -2090,16 +2576,80 @@ namespace Messages.AR.V1 {
             Id = input.ReadString();
             break;
           }
-          case 50: {
-            Value = input.ReadString();
+          case 40: {
+            Type = (global::Messages.AR.V1.PropertyType) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 56: {
             Origin = (global::Messages.AR.V1.PropertyOrigin) input.ReadEnum();
             break;
           }
-          case 90: {
+          case 74: {
             MirrorPropertyId = input.ReadString();
+            break;
+          }
+          case 162: {
+            AgentIdValue = input.ReadString();
+            break;
+          }
+          case 168: {
+            BoolValue = input.ReadBool();
+            break;
+          }
+          case 176: {
+            IntValue = input.ReadSInt64();
+            break;
+          }
+          case 189: {
+            FloatValue = input.ReadFloat();
+            break;
+          }
+          case 193: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 202: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 210: {
+            if (vector3Value_ == null) {
+              Vector3Value = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(Vector3Value);
+            break;
+          }
+          case 218: {
+            if (poseValue_ == null) {
+              PoseValue = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(PoseValue);
+            break;
+          }
+          case 226: {
+            if (anchorValue_ == null) {
+              AnchorValue = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(AnchorValue);
+            break;
+          }
+          case 234: {
+            if (colorValue_ == null) {
+              ColorValue = new global::Messages.Common.V1.Color();
+            }
+            input.ReadMessage(ColorValue);
+            break;
+          }
+          case 250: {
+            EnumValue = input.ReadString();
+            break;
+          }
+          case 258: {
+            enumMultiValue_.AddEntriesFrom(ref input, _repeated_enumMultiValue_codec);
+            break;
+          }
+          case 266: {
+            IconValue = input.ReadString();
             break;
           }
         }

@@ -304,7 +304,7 @@ type Property struct {
 	EnumExtras                *EnumExtras            `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
 	Vector3Extras             *Vector3Extras         `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
 	ColorExtras               *ColorExtras           `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
-	AgentExtras               AgentExtrasType        `protobuf:"varint,45,opt,name=agent_extras,json=agentExtras,proto3,enum=ar.v1.AgentExtrasType" json:"agent_extras,omitempty"`
+	AgentExtras               *AgentExtras           `protobuf:"bytes,45,opt,name=agent_extras,json=agentExtras,proto3" json:"agent_extras,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -556,11 +556,11 @@ func (x *Property) GetColorExtras() *ColorExtras {
 	return nil
 }
 
-func (x *Property) GetAgentExtras() AgentExtrasType {
+func (x *Property) GetAgentExtras() *AgentExtras {
 	if x != nil {
 		return x.AgentExtras
 	}
-	return AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED
+	return nil
 }
 
 type PropertyMessages struct {
@@ -610,9 +610,22 @@ func (x *PropertyMessages) GetProperties() []*Property {
 type PropertyValueUpdate struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Value            string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`
-	Origin           PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
-	MirrorPropertyId string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
+	Type             PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.PropertyType" json:"type,omitempty"`
+	Origin           PropertyOrigin         `protobuf:"varint,7,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
+	MirrorPropertyId string                 `protobuf:"bytes,9,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
+	BoolValue        bool                   `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3" json:"bool_value,omitempty"`
+	IntValue         int64                  `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3" json:"int_value,omitempty"`
+	FloatValue       float32                `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3" json:"float_value,omitempty"`
+	DoubleValue      float64                `protobuf:"fixed64,24,opt,name=double_value,json=doubleValue,proto3" json:"double_value,omitempty"`
+	StringValue      string                 `protobuf:"bytes,25,opt,name=string_value,json=stringValue,proto3" json:"string_value,omitempty"`
+	Vector3Value     *v1.Vector3            `protobuf:"bytes,26,opt,name=vector3_value,json=vector3Value,proto3" json:"vector3_value,omitempty"`
+	PoseValue        *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
+	AnchorValue      *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
+	ColorValue       *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
+	AgentIdValue     string                 `protobuf:"bytes,20,opt,name=agent_id_value,json=agentIdValue,proto3" json:"agent_id_value,omitempty"`
+	EnumValue        string                 `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3" json:"enum_value,omitempty"`
+	EnumMultiValue   []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
+	IconValue        string                 `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3" json:"icon_value,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -654,11 +667,11 @@ func (x *PropertyValueUpdate) GetId() string {
 	return ""
 }
 
-func (x *PropertyValueUpdate) GetValue() string {
+func (x *PropertyValueUpdate) GetType() PropertyType {
 	if x != nil {
-		return x.Value
+		return x.Type
 	}
-	return ""
+	return PropertyType_PROPERTY_TYPE_UNSPECIFIED
 }
 
 func (x *PropertyValueUpdate) GetOrigin() PropertyOrigin {
@@ -671,6 +684,97 @@ func (x *PropertyValueUpdate) GetOrigin() PropertyOrigin {
 func (x *PropertyValueUpdate) GetMirrorPropertyId() string {
 	if x != nil {
 		return x.MirrorPropertyId
+	}
+	return ""
+}
+
+func (x *PropertyValueUpdate) GetBoolValue() bool {
+	if x != nil {
+		return x.BoolValue
+	}
+	return false
+}
+
+func (x *PropertyValueUpdate) GetIntValue() int64 {
+	if x != nil {
+		return x.IntValue
+	}
+	return 0
+}
+
+func (x *PropertyValueUpdate) GetFloatValue() float32 {
+	if x != nil {
+		return x.FloatValue
+	}
+	return 0
+}
+
+func (x *PropertyValueUpdate) GetDoubleValue() float64 {
+	if x != nil {
+		return x.DoubleValue
+	}
+	return 0
+}
+
+func (x *PropertyValueUpdate) GetStringValue() string {
+	if x != nil {
+		return x.StringValue
+	}
+	return ""
+}
+
+func (x *PropertyValueUpdate) GetVector3Value() *v1.Vector3 {
+	if x != nil {
+		return x.Vector3Value
+	}
+	return nil
+}
+
+func (x *PropertyValueUpdate) GetPoseValue() *v1.LocalizedPose {
+	if x != nil {
+		return x.PoseValue
+	}
+	return nil
+}
+
+func (x *PropertyValueUpdate) GetAnchorValue() *v1.Anchor {
+	if x != nil {
+		return x.AnchorValue
+	}
+	return nil
+}
+
+func (x *PropertyValueUpdate) GetColorValue() *v11.Color {
+	if x != nil {
+		return x.ColorValue
+	}
+	return nil
+}
+
+func (x *PropertyValueUpdate) GetAgentIdValue() string {
+	if x != nil {
+		return x.AgentIdValue
+	}
+	return ""
+}
+
+func (x *PropertyValueUpdate) GetEnumValue() string {
+	if x != nil {
+		return x.EnumValue
+	}
+	return ""
+}
+
+func (x *PropertyValueUpdate) GetEnumMultiValue() []string {
+	if x != nil {
+		return x.EnumMultiValue
+	}
+	return nil
+}
+
+func (x *PropertyValueUpdate) GetIconValue() string {
+	if x != nil {
+		return x.IconValue
 	}
 	return ""
 }
@@ -1183,7 +1287,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xa2\x14\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\x9e\x14\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1225,8 +1329,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\venum_extras\x18* \x01(\v2\x11.ar.v1.EnumExtrasR\n" +
 	"enumExtras\x12;\n" +
 	"\x0evector3_extras\x18+ \x01(\v2\x14.ar.v1.Vector3ExtrasR\rvector3Extras\x125\n" +
-	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x129\n" +
-	"\fagent_extras\x18- \x01(\x0e2\x16.ar.v1.AgentExtrasTypeR\vagentExtras:\xac\t\xbaH\xa8\t\x1a\xaf\x05\n" +
+	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x125\n" +
+	"\fagent_extras\x18- \x01(\v2\x12.ar.v1.AgentExtrasR\vagentExtras:\xac\t\xbaH\xa8\t\x1a\xaf\x05\n" +
 	" property_type_matches_value_kind\x123property.type must match the kind of property.value\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))\x1a\x8d\x01\n" +
 	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\x1ae\n" +
 	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\"\xb2\x01\n" +
@@ -1244,7 +1348,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x0eagent_id_value\n" +
 	"\n" +
 	"enum_value\n" +
-	"\x10multi_enum_value\n" +
+	"\x10enum_multi_value\n" +
 	"\n" +
 	"icon_value\x10\x01\"H\n" +
 	"\rnumber_extras\n" +
@@ -1255,12 +1359,50 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x10PropertyMessages\x12/\n" +
 	"\n" +
 	"properties\x18\x01 \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\"\x98\x01\n" +
+	"properties\"\xd2\r\n" +
 	"\x13PropertyValueUpdate\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05value\x18\x06 \x01(\tR\x05value\x12-\n" +
-	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginR\x06origin\x12,\n" +
-	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId\"\x88\x01\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x124\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
+	"\x06origin\x18\a \x01(\x0e2\x15.ar.v1.PropertyOriginB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06origin\x12,\n" +
+	"\x12mirror_property_id\x18\t \x01(\tR\x10mirrorPropertyId\x12\x1d\n" +
+	"\n" +
+	"bool_value\x18\x15 \x01(\bR\tboolValue\x12\x1b\n" +
+	"\tint_value\x18\x16 \x01(\x12R\bintValue\x12\x1f\n" +
+	"\vfloat_value\x18\x17 \x01(\x02R\n" +
+	"floatValue\x12!\n" +
+	"\fdouble_value\x18\x18 \x01(\x01R\vdoubleValue\x12!\n" +
+	"\fstring_value\x18\x19 \x01(\tR\vstringValue\x129\n" +
+	"\rvector3_value\x18\x1a \x01(\v2\x14.geometry.v1.Vector3R\fvector3Value\x129\n" +
+	"\n" +
+	"pose_value\x18\x1b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\tposeValue\x126\n" +
+	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
+	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
+	"colorValue\x12$\n" +
+	"\x0eagent_id_value\x18\x14 \x01(\tR\fagentIdValue\x12\x1d\n" +
+	"\n" +
+	"enum_value\x18\x1f \x01(\tR\tenumValue\x12(\n" +
+	"\x10enum_multi_value\x18  \x03(\tR\x0eenumMultiValue\x12\x1d\n" +
+	"\n" +
+	"icon_value\x18! \x01(\tR\ticonValue:\xfb\a\xbaH\xf7\a\x1a\xaf\x05\n" +
+	" property_type_matches_value_kind\x123property.type must match the kind of property.value\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))\x1a\x8d\x01\n" +
+	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\"\xb2\x01\n" +
+	"\n" +
+	"bool_value\n" +
+	"\tint_value\n" +
+	"\vfloat_value\n" +
+	"\fdouble_value\n" +
+	"\fstring_value\n" +
+	"\rvector3_value\n" +
+	"\n" +
+	"pose_value\n" +
+	"\fanchor_value\n" +
+	"\vcolor_value\n" +
+	"\x0eagent_id_value\n" +
+	"\n" +
+	"enum_value\n" +
+	"\x10enum_multi_value\n" +
+	"\n" +
+	"icon_value\x10\x01\"\x88\x01\n" +
 	"\fNumberExtras\x12\x10\n" +
 	"\x03min\x18\x01 \x01(\x01R\x03min\x12\x10\n" +
 	"\x03max\x18\x02 \x01(\x01R\x03max\x12\"\n" +
@@ -1387,17 +1529,22 @@ var file_ar_v1_property_proto_depIdxs = []int32{
 	9,  // 10: ar.v1.Property.enum_extras:type_name -> ar.v1.EnumExtras
 	10, // 11: ar.v1.Property.vector3_extras:type_name -> ar.v1.Vector3Extras
 	11, // 12: ar.v1.Property.color_extras:type_name -> ar.v1.ColorExtras
-	3,  // 13: ar.v1.Property.agent_extras:type_name -> ar.v1.AgentExtrasType
+	14, // 13: ar.v1.Property.agent_extras:type_name -> ar.v1.AgentExtras
 	4,  // 14: ar.v1.PropertyMessages.properties:type_name -> ar.v1.Property
-	1,  // 15: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
-	8,  // 16: ar.v1.EnumExtras.options:type_name -> ar.v1.EnumOption
-	19, // 17: ar.v1.ColorExtras.default:type_name -> common.v1.Color
-	3,  // 18: ar.v1.AgentExtras.agent_type:type_name -> ar.v1.AgentExtrasType
-	19, // [19:19] is the sub-list for method output_type
-	19, // [19:19] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	0,  // 15: ar.v1.PropertyValueUpdate.type:type_name -> ar.v1.PropertyType
+	1,  // 16: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
+	16, // 17: ar.v1.PropertyValueUpdate.vector3_value:type_name -> geometry.v1.Vector3
+	17, // 18: ar.v1.PropertyValueUpdate.pose_value:type_name -> geometry.v1.LocalizedPose
+	18, // 19: ar.v1.PropertyValueUpdate.anchor_value:type_name -> geometry.v1.Anchor
+	19, // 20: ar.v1.PropertyValueUpdate.color_value:type_name -> common.v1.Color
+	8,  // 21: ar.v1.EnumExtras.options:type_name -> ar.v1.EnumOption
+	19, // 22: ar.v1.ColorExtras.default:type_name -> common.v1.Color
+	3,  // 23: ar.v1.AgentExtras.agent_type:type_name -> ar.v1.AgentExtrasType
+	24, // [24:24] is the sub-list for method output_type
+	24, // [24:24] is the sub-list for method input_type
+	24, // [24:24] is the sub-list for extension type_name
+	24, // [24:24] is the sub-list for extension extendee
+	0,  // [0:24] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_property_proto_init() }
