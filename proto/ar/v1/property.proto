@@ -79,7 +79,8 @@ message Property {
       "enum_extras",
       "vector3_extras",
       "color_extras",
-      "agent_extras"
+      "pose_extras",
+      "anchor_extras"
     ]
   };
 
@@ -136,6 +137,8 @@ message Property {
   EnumExtras enum_extras = 42;
   Vector3Extras vector3_extras = 43;
   ColorExtras color_extras = 44;
+  PoseExtras pose_extras = 45;
+  AnchorExtras anchor_extras = 46;
 }
 
 message PropertyMessages {
@@ -182,19 +185,24 @@ message PropertyValueUpdate {
   PropertyOrigin origin = 7 [(buf.validate.field).enum.defined_only = true];
   string mirror_property_id = 9;
 
-  bool bool_value = 21;
-  sint64 int_value = 22;
-  float float_value = 23;
-  double double_value = 24;
-  string string_value = 25;
+  optional bool bool_value = 21;
+  optional sint64 int_value = 22;
+  optional float float_value = 23;
+  optional double double_value = 24;
+  optional string string_value = 25;
   geometry.v1.Vector3 vector3_value = 26;
   geometry.v1.LocalizedPose pose_value = 27;
   geometry.v1.Anchor anchor_value = 28;
   common.v1.Color color_value = 29;
-  string robot_id_value = 20;
-  string enum_value = 31;
-  repeated string enum_multi_value = 32;
-  string icon_value = 33;
+  optional string robot_id_value = 20 [(buf.validate.field).string.min_len = 1];
+  optional string enum_value = 31 [(buf.validate.field).string.min_len = 1];
+  repeated string enum_multi_value = 32 [(buf.validate.field).repeated = {
+    min_items: 1
+    items: {
+      string: {min_len: 1}
+    }
+  }];
+  optional string icon_value = 33;
 }
 
 message NumberExtras {

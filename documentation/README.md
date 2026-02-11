@@ -760,6 +760,8 @@ Properties are used by various components to define them, such as: feedback, act
 | enum_extras | [EnumExtras](#ar-v1-EnumExtras) |  |  |
 | vector3_extras | [Vector3Extras](#ar-v1-Vector3Extras) |  |  |
 | color_extras | [ColorExtras](#ar-v1-ColorExtras) |  |  |
+| pose_extras | [PoseExtras](#ar-v1-PoseExtras) |  |  |
+| anchor_extras | [AnchorExtras](#ar-v1-AnchorExtras) |  |  |
 
 
 
@@ -793,19 +795,19 @@ Properties are used by various components to define them, such as: feedback, act
 | type | [PropertyType](#ar-v1-PropertyType) |  |  |
 | origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
 | mirror_property_id | [string](#string) |  |  |
-| bool_value | [bool](#bool) |  |  |
-| int_value | [sint64](#sint64) |  |  |
-| float_value | [float](#float) |  |  |
-| double_value | [double](#double) |  |  |
-| string_value | [string](#string) |  |  |
+| bool_value | [bool](#bool) | optional |  |
+| int_value | [sint64](#sint64) | optional |  |
+| float_value | [float](#float) | optional |  |
+| double_value | [double](#double) | optional |  |
+| string_value | [string](#string) | optional |  |
 | vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 | color_value | [common.v1.Color](#common-v1-Color) |  |  |
-| robot_id_value | [string](#string) |  |  |
-| enum_value | [string](#string) |  |  |
+| robot_id_value | [string](#string) | optional |  |
+| enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
-| icon_value | [string](#string) |  |  |
+| icon_value | [string](#string) | optional |  |
 
 
 
