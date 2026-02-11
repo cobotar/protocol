@@ -218,58 +218,6 @@ func (PropertyGroup) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_property_proto_rawDescGZIP(), []int{2}
 }
 
-type AgentExtrasType int32
-
-const (
-	AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED AgentExtrasType = 0
-	AgentExtrasType_AGENT_EXTRAS_TYPE_HUMAN       AgentExtrasType = 1
-	AgentExtrasType_AGENT_EXTRAS_TYPE_ROBOT       AgentExtrasType = 2
-	AgentExtrasType_AGENT_EXTRAS_TYPE_BOTH        AgentExtrasType = 3
-)
-
-// Enum value maps for AgentExtrasType.
-var (
-	AgentExtrasType_name = map[int32]string{
-		0: "AGENT_EXTRAS_TYPE_UNSPECIFIED",
-		1: "AGENT_EXTRAS_TYPE_HUMAN",
-		2: "AGENT_EXTRAS_TYPE_ROBOT",
-		3: "AGENT_EXTRAS_TYPE_BOTH",
-	}
-	AgentExtrasType_value = map[string]int32{
-		"AGENT_EXTRAS_TYPE_UNSPECIFIED": 0,
-		"AGENT_EXTRAS_TYPE_HUMAN":       1,
-		"AGENT_EXTRAS_TYPE_ROBOT":       2,
-		"AGENT_EXTRAS_TYPE_BOTH":        3,
-	}
-)
-
-func (x AgentExtrasType) Enum() *AgentExtrasType {
-	p := new(AgentExtrasType)
-	*p = x
-	return p
-}
-
-func (x AgentExtrasType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (AgentExtrasType) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_property_proto_enumTypes[3].Descriptor()
-}
-
-func (AgentExtrasType) Type() protoreflect.EnumType {
-	return &file_ar_v1_property_proto_enumTypes[3]
-}
-
-func (x AgentExtrasType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use AgentExtrasType.Descriptor instead.
-func (AgentExtrasType) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_property_proto_rawDescGZIP(), []int{3}
-}
-
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 type Property struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
@@ -287,24 +235,23 @@ type Property struct {
 	HideGroup                 bool                   `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
 	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
-	BoolValue                 bool                   `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3" json:"bool_value,omitempty"`
-	IntValue                  int64                  `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3" json:"int_value,omitempty"`
-	FloatValue                float32                `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3" json:"float_value,omitempty"`
-	DoubleValue               float64                `protobuf:"fixed64,24,opt,name=double_value,json=doubleValue,proto3" json:"double_value,omitempty"`
-	StringValue               string                 `protobuf:"bytes,25,opt,name=string_value,json=stringValue,proto3" json:"string_value,omitempty"`
+	BoolValue                 *bool                  `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3,oneof" json:"bool_value,omitempty"`
+	IntValue                  *int64                 `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3,oneof" json:"int_value,omitempty"`
+	FloatValue                *float32               `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3,oneof" json:"float_value,omitempty"`
+	DoubleValue               *float64               `protobuf:"fixed64,24,opt,name=double_value,json=doubleValue,proto3,oneof" json:"double_value,omitempty"`
+	StringValue               *string                `protobuf:"bytes,25,opt,name=string_value,json=stringValue,proto3,oneof" json:"string_value,omitempty"`
 	Vector3Value              *v1.Vector3            `protobuf:"bytes,26,opt,name=vector3_value,json=vector3Value,proto3" json:"vector3_value,omitempty"`
 	PoseValue                 *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
 	AnchorValue               *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
 	ColorValue                *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
-	AgentIdValue              string                 `protobuf:"bytes,20,opt,name=agent_id_value,json=agentIdValue,proto3" json:"agent_id_value,omitempty"`
-	EnumValue                 string                 `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3" json:"enum_value,omitempty"`
+	RobotIdValue              *string                `protobuf:"bytes,20,opt,name=robot_id_value,json=robotIdValue,proto3,oneof" json:"robot_id_value,omitempty"`
+	EnumValue                 *string                `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3,oneof" json:"enum_value,omitempty"`
 	EnumMultiValue            []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
-	IconValue                 string                 `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3" json:"icon_value,omitempty"`
+	IconValue                 *string                `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3,oneof" json:"icon_value,omitempty"`
 	NumberExtras              *NumberExtras          `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
 	EnumExtras                *EnumExtras            `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
 	Vector3Extras             *Vector3Extras         `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
 	ColorExtras               *ColorExtras           `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
-	AgentExtras               *AgentExtras           `protobuf:"bytes,45,opt,name=agent_extras,json=agentExtras,proto3" json:"agent_extras,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -438,36 +385,36 @@ func (x *Property) GetAdvanced() bool {
 }
 
 func (x *Property) GetBoolValue() bool {
-	if x != nil {
-		return x.BoolValue
+	if x != nil && x.BoolValue != nil {
+		return *x.BoolValue
 	}
 	return false
 }
 
 func (x *Property) GetIntValue() int64 {
-	if x != nil {
-		return x.IntValue
+	if x != nil && x.IntValue != nil {
+		return *x.IntValue
 	}
 	return 0
 }
 
 func (x *Property) GetFloatValue() float32 {
-	if x != nil {
-		return x.FloatValue
+	if x != nil && x.FloatValue != nil {
+		return *x.FloatValue
 	}
 	return 0
 }
 
 func (x *Property) GetDoubleValue() float64 {
-	if x != nil {
-		return x.DoubleValue
+	if x != nil && x.DoubleValue != nil {
+		return *x.DoubleValue
 	}
 	return 0
 }
 
 func (x *Property) GetStringValue() string {
-	if x != nil {
-		return x.StringValue
+	if x != nil && x.StringValue != nil {
+		return *x.StringValue
 	}
 	return ""
 }
@@ -500,16 +447,16 @@ func (x *Property) GetColorValue() *v11.Color {
 	return nil
 }
 
-func (x *Property) GetAgentIdValue() string {
-	if x != nil {
-		return x.AgentIdValue
+func (x *Property) GetRobotIdValue() string {
+	if x != nil && x.RobotIdValue != nil {
+		return *x.RobotIdValue
 	}
 	return ""
 }
 
 func (x *Property) GetEnumValue() string {
-	if x != nil {
-		return x.EnumValue
+	if x != nil && x.EnumValue != nil {
+		return *x.EnumValue
 	}
 	return ""
 }
@@ -522,8 +469,8 @@ func (x *Property) GetEnumMultiValue() []string {
 }
 
 func (x *Property) GetIconValue() string {
-	if x != nil {
-		return x.IconValue
+	if x != nil && x.IconValue != nil {
+		return *x.IconValue
 	}
 	return ""
 }
@@ -552,13 +499,6 @@ func (x *Property) GetVector3Extras() *Vector3Extras {
 func (x *Property) GetColorExtras() *ColorExtras {
 	if x != nil {
 		return x.ColorExtras
-	}
-	return nil
-}
-
-func (x *Property) GetAgentExtras() *AgentExtras {
-	if x != nil {
-		return x.AgentExtras
 	}
 	return nil
 }
@@ -622,7 +562,7 @@ type PropertyValueUpdate struct {
 	PoseValue        *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
 	AnchorValue      *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
 	ColorValue       *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
-	AgentIdValue     string                 `protobuf:"bytes,20,opt,name=agent_id_value,json=agentIdValue,proto3" json:"agent_id_value,omitempty"`
+	RobotIdValue     string                 `protobuf:"bytes,20,opt,name=robot_id_value,json=robotIdValue,proto3" json:"robot_id_value,omitempty"`
 	EnumValue        string                 `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3" json:"enum_value,omitempty"`
 	EnumMultiValue   []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
 	IconValue        string                 `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3" json:"icon_value,omitempty"`
@@ -751,9 +691,9 @@ func (x *PropertyValueUpdate) GetColorValue() *v11.Color {
 	return nil
 }
 
-func (x *PropertyValueUpdate) GetAgentIdValue() string {
+func (x *PropertyValueUpdate) GetRobotIdValue() string {
 	if x != nil {
-		return x.AgentIdValue
+		return x.RobotIdValue
 	}
 	return ""
 }
@@ -1239,55 +1179,11 @@ func (x *PoseExtras) GetPoseEditable() bool {
 	return false
 }
 
-type AgentExtras struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AgentType     AgentExtrasType        `protobuf:"varint,1,opt,name=agent_type,json=agentType,proto3,enum=ar.v1.AgentExtrasType" json:"agent_type,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *AgentExtras) Reset() {
-	*x = AgentExtras{}
-	mi := &file_ar_v1_property_proto_msgTypes[10]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *AgentExtras) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AgentExtras) ProtoMessage() {}
-
-func (x *AgentExtras) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_property_proto_msgTypes[10]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AgentExtras.ProtoReflect.Descriptor instead.
-func (*AgentExtras) Descriptor() ([]byte, []int) {
-	return file_ar_v1_property_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *AgentExtras) GetAgentType() AgentExtrasType {
-	if x != nil {
-		return x.AgentType
-	}
-	return AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED
-}
-
 var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\x9e\x14\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xa5\x15\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1305,33 +1201,32 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1b\n" +
 	"\tparent_id\x18\r \x01(\tR\bparentId\x12\x1a\n" +
-	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\x1d\n" +
+	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\"\n" +
 	"\n" +
-	"bool_value\x18\x15 \x01(\bR\tboolValue\x12\x1b\n" +
-	"\tint_value\x18\x16 \x01(\x12R\bintValue\x12\x1f\n" +
-	"\vfloat_value\x18\x17 \x01(\x02R\n" +
-	"floatValue\x12!\n" +
-	"\fdouble_value\x18\x18 \x01(\x01R\vdoubleValue\x12!\n" +
-	"\fstring_value\x18\x19 \x01(\tR\vstringValue\x129\n" +
+	"bool_value\x18\x15 \x01(\bH\x00R\tboolValue\x88\x01\x01\x12 \n" +
+	"\tint_value\x18\x16 \x01(\x12H\x01R\bintValue\x88\x01\x01\x12$\n" +
+	"\vfloat_value\x18\x17 \x01(\x02H\x02R\n" +
+	"floatValue\x88\x01\x01\x12&\n" +
+	"\fdouble_value\x18\x18 \x01(\x01H\x03R\vdoubleValue\x88\x01\x01\x12&\n" +
+	"\fstring_value\x18\x19 \x01(\tH\x04R\vstringValue\x88\x01\x01\x129\n" +
 	"\rvector3_value\x18\x1a \x01(\v2\x14.geometry.v1.Vector3R\fvector3Value\x129\n" +
 	"\n" +
 	"pose_value\x18\x1b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\tposeValue\x126\n" +
 	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
 	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
-	"colorValue\x12$\n" +
-	"\x0eagent_id_value\x18\x14 \x01(\tR\fagentIdValue\x12\x1d\n" +
+	"colorValue\x122\n" +
+	"\x0erobot_id_value\x18\x14 \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x05R\frobotIdValue\x88\x01\x01\x12+\n" +
 	"\n" +
-	"enum_value\x18\x1f \x01(\tR\tenumValue\x12(\n" +
-	"\x10enum_multi_value\x18  \x03(\tR\x0eenumMultiValue\x12\x1d\n" +
+	"enum_value\x18\x1f \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x06R\tenumValue\x88\x01\x01\x128\n" +
+	"\x10enum_multi_value\x18  \x03(\tB\x0e\xbaH\v\x92\x01\b\b\x01\"\x04r\x02\x10\x01R\x0eenumMultiValue\x12\"\n" +
 	"\n" +
-	"icon_value\x18! \x01(\tR\ticonValue\x128\n" +
+	"icon_value\x18! \x01(\tH\aR\ticonValue\x88\x01\x01\x128\n" +
 	"\rnumber_extras\x18) \x01(\v2\x13.ar.v1.NumberExtrasR\fnumberExtras\x122\n" +
 	"\venum_extras\x18* \x01(\v2\x11.ar.v1.EnumExtrasR\n" +
 	"enumExtras\x12;\n" +
 	"\x0evector3_extras\x18+ \x01(\v2\x14.ar.v1.Vector3ExtrasR\rvector3Extras\x125\n" +
-	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x125\n" +
-	"\fagent_extras\x18- \x01(\v2\x12.ar.v1.AgentExtrasR\vagentExtras:\xac\t\xbaH\xa8\t\x1a\xaf\x05\n" +
-	" property_type_matches_value_kind\x123property.type must match the kind of property.value\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))\x1a\x8d\x01\n" +
+	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras:\xa0\t\xbaH\x9c\t\x1a\xa3\x05\n" +
+	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))\x1a\x8d\x01\n" +
 	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\x1ae\n" +
 	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\"\xb2\x01\n" +
 	"\n" +
@@ -1345,7 +1240,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"pose_value\n" +
 	"\fanchor_value\n" +
 	"\vcolor_value\n" +
-	"\x0eagent_id_value\n" +
+	"\x0erobot_id_value\n" +
 	"\n" +
 	"enum_value\n" +
 	"\x10enum_multi_value\n" +
@@ -1355,11 +1250,20 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\venum_extras\n" +
 	"\x0evector3_extras\n" +
 	"\fcolor_extras\n" +
-	"\fagent_extras\"C\n" +
+	"\fagent_extrasB\r\n" +
+	"\v_bool_valueB\f\n" +
+	"\n" +
+	"_int_valueB\x0e\n" +
+	"\f_float_valueB\x0f\n" +
+	"\r_double_valueB\x0f\n" +
+	"\r_string_valueB\x11\n" +
+	"\x0f_robot_id_valueB\r\n" +
+	"\v_enum_valueB\r\n" +
+	"\v_icon_value\"C\n" +
 	"\x10PropertyMessages\x12/\n" +
 	"\n" +
 	"properties\x18\x01 \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\"\xd2\r\n" +
+	"properties\"\xc6\r\n" +
 	"\x13PropertyValueUpdate\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x124\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
@@ -1378,13 +1282,13 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
 	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
 	"colorValue\x12$\n" +
-	"\x0eagent_id_value\x18\x14 \x01(\tR\fagentIdValue\x12\x1d\n" +
+	"\x0erobot_id_value\x18\x14 \x01(\tR\frobotIdValue\x12\x1d\n" +
 	"\n" +
 	"enum_value\x18\x1f \x01(\tR\tenumValue\x12(\n" +
 	"\x10enum_multi_value\x18  \x03(\tR\x0eenumMultiValue\x12\x1d\n" +
 	"\n" +
-	"icon_value\x18! \x01(\tR\ticonValue:\xfb\a\xbaH\xf7\a\x1a\xaf\x05\n" +
-	" property_type_matches_value_kind\x123property.type must match the kind of property.value\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))\x1a\x8d\x01\n" +
+	"icon_value\x18! \x01(\tR\ticonValue:\xef\a\xbaH\xeb\a\x1a\xa3\x05\n" +
+	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))\x1a\x8d\x01\n" +
 	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\"\xb2\x01\n" +
 	"\n" +
 	"bool_value\n" +
@@ -1397,7 +1301,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"pose_value\n" +
 	"\fanchor_value\n" +
 	"\vcolor_value\n" +
-	"\x0eagent_id_value\n" +
+	"\x0erobot_id_value\n" +
 	"\n" +
 	"enum_value\n" +
 	"\x10enum_multi_value\n" +
@@ -1440,10 +1344,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"D\n" +
-	"\vAgentExtras\x125\n" +
-	"\n" +
-	"agent_type\x18\x01 \x01(\x0e2\x16.ar.v1.AgentExtrasTypeR\tagentType*\xf6\x02\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable*\xf6\x02\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -1471,12 +1372,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x16PROPERTY_GROUP_STYLING\x10\x03\x12\x1b\n" +
 	"\x17PROPERTY_GROUP_LOCATION\x10\x04\x12\x17\n" +
 	"\x13PROPERTY_GROUP_ICON\x10\x05\x12 \n" +
-	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06*\x8a\x01\n" +
-	"\x0fAgentExtrasType\x12!\n" +
-	"\x1dAGENT_EXTRAS_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
-	"\x17AGENT_EXTRAS_TYPE_HUMAN\x10\x01\x12\x1b\n" +
-	"\x17AGENT_EXTRAS_TYPE_ROBOT\x10\x02\x12\x1a\n" +
-	"\x16AGENT_EXTRAS_TYPE_BOTH\x10\x03B\x89\x01\n" +
+	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06B\x89\x01\n" +
 	"\tcom.ar.v1B\rPropertyProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -1491,60 +1387,56 @@ func file_ar_v1_property_proto_rawDescGZIP() []byte {
 	return file_ar_v1_property_proto_rawDescData
 }
 
-var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_ar_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),           // 0: ar.v1.PropertyType
 	(PropertyOrigin)(0),         // 1: ar.v1.PropertyOrigin
 	(PropertyGroup)(0),          // 2: ar.v1.PropertyGroup
-	(AgentExtrasType)(0),        // 3: ar.v1.AgentExtrasType
-	(*Property)(nil),            // 4: ar.v1.Property
-	(*PropertyMessages)(nil),    // 5: ar.v1.PropertyMessages
-	(*PropertyValueUpdate)(nil), // 6: ar.v1.PropertyValueUpdate
-	(*NumberExtras)(nil),        // 7: ar.v1.NumberExtras
-	(*EnumOption)(nil),          // 8: ar.v1.EnumOption
-	(*EnumExtras)(nil),          // 9: ar.v1.EnumExtras
-	(*Vector3Extras)(nil),       // 10: ar.v1.Vector3Extras
-	(*ColorExtras)(nil),         // 11: ar.v1.ColorExtras
-	(*AnchorExtras)(nil),        // 12: ar.v1.AnchorExtras
-	(*PoseExtras)(nil),          // 13: ar.v1.PoseExtras
-	(*AgentExtras)(nil),         // 14: ar.v1.AgentExtras
-	(WorkerPermission)(0),       // 15: ar.v1.WorkerPermission
-	(*v1.Vector3)(nil),          // 16: geometry.v1.Vector3
-	(*v1.LocalizedPose)(nil),    // 17: geometry.v1.LocalizedPose
-	(*v1.Anchor)(nil),           // 18: geometry.v1.Anchor
-	(*v11.Color)(nil),           // 19: common.v1.Color
+	(*Property)(nil),            // 3: ar.v1.Property
+	(*PropertyMessages)(nil),    // 4: ar.v1.PropertyMessages
+	(*PropertyValueUpdate)(nil), // 5: ar.v1.PropertyValueUpdate
+	(*NumberExtras)(nil),        // 6: ar.v1.NumberExtras
+	(*EnumOption)(nil),          // 7: ar.v1.EnumOption
+	(*EnumExtras)(nil),          // 8: ar.v1.EnumExtras
+	(*Vector3Extras)(nil),       // 9: ar.v1.Vector3Extras
+	(*ColorExtras)(nil),         // 10: ar.v1.ColorExtras
+	(*AnchorExtras)(nil),        // 11: ar.v1.AnchorExtras
+	(*PoseExtras)(nil),          // 12: ar.v1.PoseExtras
+	(WorkerPermission)(0),       // 13: ar.v1.WorkerPermission
+	(*v1.Vector3)(nil),          // 14: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),    // 15: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),           // 16: geometry.v1.Anchor
+	(*v11.Color)(nil),           // 17: common.v1.Color
 }
 var file_ar_v1_property_proto_depIdxs = []int32{
 	0,  // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
-	15, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
+	13, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
 	1,  // 2: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
 	1,  // 3: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
 	2,  // 4: ar.v1.Property.group:type_name -> ar.v1.PropertyGroup
-	16, // 5: ar.v1.Property.vector3_value:type_name -> geometry.v1.Vector3
-	17, // 6: ar.v1.Property.pose_value:type_name -> geometry.v1.LocalizedPose
-	18, // 7: ar.v1.Property.anchor_value:type_name -> geometry.v1.Anchor
-	19, // 8: ar.v1.Property.color_value:type_name -> common.v1.Color
-	7,  // 9: ar.v1.Property.number_extras:type_name -> ar.v1.NumberExtras
-	9,  // 10: ar.v1.Property.enum_extras:type_name -> ar.v1.EnumExtras
-	10, // 11: ar.v1.Property.vector3_extras:type_name -> ar.v1.Vector3Extras
-	11, // 12: ar.v1.Property.color_extras:type_name -> ar.v1.ColorExtras
-	14, // 13: ar.v1.Property.agent_extras:type_name -> ar.v1.AgentExtras
-	4,  // 14: ar.v1.PropertyMessages.properties:type_name -> ar.v1.Property
-	0,  // 15: ar.v1.PropertyValueUpdate.type:type_name -> ar.v1.PropertyType
-	1,  // 16: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
-	16, // 17: ar.v1.PropertyValueUpdate.vector3_value:type_name -> geometry.v1.Vector3
-	17, // 18: ar.v1.PropertyValueUpdate.pose_value:type_name -> geometry.v1.LocalizedPose
-	18, // 19: ar.v1.PropertyValueUpdate.anchor_value:type_name -> geometry.v1.Anchor
-	19, // 20: ar.v1.PropertyValueUpdate.color_value:type_name -> common.v1.Color
-	8,  // 21: ar.v1.EnumExtras.options:type_name -> ar.v1.EnumOption
-	19, // 22: ar.v1.ColorExtras.default:type_name -> common.v1.Color
-	3,  // 23: ar.v1.AgentExtras.agent_type:type_name -> ar.v1.AgentExtrasType
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	14, // 5: ar.v1.Property.vector3_value:type_name -> geometry.v1.Vector3
+	15, // 6: ar.v1.Property.pose_value:type_name -> geometry.v1.LocalizedPose
+	16, // 7: ar.v1.Property.anchor_value:type_name -> geometry.v1.Anchor
+	17, // 8: ar.v1.Property.color_value:type_name -> common.v1.Color
+	6,  // 9: ar.v1.Property.number_extras:type_name -> ar.v1.NumberExtras
+	8,  // 10: ar.v1.Property.enum_extras:type_name -> ar.v1.EnumExtras
+	9,  // 11: ar.v1.Property.vector3_extras:type_name -> ar.v1.Vector3Extras
+	10, // 12: ar.v1.Property.color_extras:type_name -> ar.v1.ColorExtras
+	3,  // 13: ar.v1.PropertyMessages.properties:type_name -> ar.v1.Property
+	0,  // 14: ar.v1.PropertyValueUpdate.type:type_name -> ar.v1.PropertyType
+	1,  // 15: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
+	14, // 16: ar.v1.PropertyValueUpdate.vector3_value:type_name -> geometry.v1.Vector3
+	15, // 17: ar.v1.PropertyValueUpdate.pose_value:type_name -> geometry.v1.LocalizedPose
+	16, // 18: ar.v1.PropertyValueUpdate.anchor_value:type_name -> geometry.v1.Anchor
+	17, // 19: ar.v1.PropertyValueUpdate.color_value:type_name -> common.v1.Color
+	7,  // 20: ar.v1.EnumExtras.options:type_name -> ar.v1.EnumOption
+	17, // 21: ar.v1.ColorExtras.default:type_name -> common.v1.Color
+	22, // [22:22] is the sub-list for method output_type
+	22, // [22:22] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_property_proto_init() }
@@ -1553,13 +1445,14 @@ func file_ar_v1_property_proto_init() {
 		return
 	}
 	file_ar_v1_permissions_proto_init()
+	file_ar_v1_property_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_property_proto_rawDesc), len(file_ar_v1_property_proto_rawDesc)),
-			NumEnums:      4,
-			NumMessages:   11,
+			NumEnums:      3,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -45,13 +45,6 @@ class PropertyGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_GROUP_LOCATION: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_ICON: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_CONFIGURATION: _ClassVar[PropertyGroup]
-
-class AgentExtrasType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    AGENT_EXTRAS_TYPE_UNSPECIFIED: _ClassVar[AgentExtrasType]
-    AGENT_EXTRAS_TYPE_HUMAN: _ClassVar[AgentExtrasType]
-    AGENT_EXTRAS_TYPE_ROBOT: _ClassVar[AgentExtrasType]
-    AGENT_EXTRAS_TYPE_BOTH: _ClassVar[AgentExtrasType]
 PROPERTY_TYPE_UNSPECIFIED: PropertyType
 PROPERTY_TYPE_BOOL: PropertyType
 PROPERTY_TYPE_INT: PropertyType
@@ -76,13 +69,9 @@ PROPERTY_GROUP_STYLING: PropertyGroup
 PROPERTY_GROUP_LOCATION: PropertyGroup
 PROPERTY_GROUP_ICON: PropertyGroup
 PROPERTY_GROUP_CONFIGURATION: PropertyGroup
-AGENT_EXTRAS_TYPE_UNSPECIFIED: AgentExtrasType
-AGENT_EXTRAS_TYPE_HUMAN: AgentExtrasType
-AGENT_EXTRAS_TYPE_ROBOT: AgentExtrasType
-AGENT_EXTRAS_TYPE_BOTH: AgentExtrasType
 
 class Property(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "agent_id_value", "enum_value", "enum_multi_value", "icon_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "agent_extras")
+    __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "number_extras", "enum_extras", "vector3_extras", "color_extras")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -106,7 +95,7 @@ class Property(_message.Message):
     POSE_VALUE_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_VALUE_FIELD_NUMBER: _ClassVar[int]
     COLOR_VALUE_FIELD_NUMBER: _ClassVar[int]
-    AGENT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
     ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -114,7 +103,6 @@ class Property(_message.Message):
     ENUM_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     VECTOR3_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     COLOR_EXTRAS_FIELD_NUMBER: _ClassVar[int]
-    AGENT_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -138,7 +126,7 @@ class Property(_message.Message):
     pose_value: _pose_pb2.LocalizedPose
     anchor_value: _anchor_pb2.Anchor
     color_value: _color_pb2.Color
-    agent_id_value: str
+    robot_id_value: str
     enum_value: str
     enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
     icon_value: str
@@ -146,8 +134,7 @@ class Property(_message.Message):
     enum_extras: EnumExtras
     vector3_extras: Vector3Extras
     color_extras: ColorExtras
-    agent_extras: AgentExtras
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., agent_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., agent_extras: _Optional[_Union[AgentExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ...) -> None: ...
 
 class PropertyMessages(_message.Message):
     __slots__ = ("properties",)
@@ -156,7 +143,7 @@ class PropertyMessages(_message.Message):
     def __init__(self, properties: _Optional[_Iterable[_Union[Property, _Mapping]]] = ...) -> None: ...
 
 class PropertyValueUpdate(_message.Message):
-    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "agent_id_value", "enum_value", "enum_multi_value", "icon_value")
+    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value")
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
@@ -170,7 +157,7 @@ class PropertyValueUpdate(_message.Message):
     POSE_VALUE_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_VALUE_FIELD_NUMBER: _ClassVar[int]
     COLOR_VALUE_FIELD_NUMBER: _ClassVar[int]
-    AGENT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
     ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -187,11 +174,11 @@ class PropertyValueUpdate(_message.Message):
     pose_value: _pose_pb2.LocalizedPose
     anchor_value: _anchor_pb2.Anchor
     color_value: _color_pb2.Color
-    agent_id_value: str
+    robot_id_value: str
     enum_value: str
     enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
     icon_value: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., agent_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ...) -> None: ...
 
 class NumberExtras(_message.Message):
     __slots__ = ("min", "max", "step", "unit", "precision")
@@ -272,9 +259,3 @@ class PoseExtras(_message.Message):
     anchor_editable: bool
     pose_editable: bool
     def __init__(self, anchor_editable: bool = ..., pose_editable: bool = ...) -> None: ...
-
-class AgentExtras(_message.Message):
-    __slots__ = ("agent_type",)
-    AGENT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    agent_type: AgentExtrasType
-    def __init__(self, agent_type: _Optional[_Union[AgentExtrasType, str]] = ...) -> None: ...

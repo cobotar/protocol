@@ -28,7 +28,6 @@
     - [Vector3](#geometry-v1-Vector3)
   
 - [ar/v1/property.proto](#ar_v1_property-proto)
-    - [AgentExtras](#ar-v1-AgentExtras)
     - [AnchorExtras](#ar-v1-AnchorExtras)
     - [ColorExtras](#ar-v1-ColorExtras)
     - [EnumExtras](#ar-v1-EnumExtras)
@@ -40,7 +39,6 @@
     - [PropertyValueUpdate](#ar-v1-PropertyValueUpdate)
     - [Vector3Extras](#ar-v1-Vector3Extras)
   
-    - [AgentExtrasType](#ar-v1-AgentExtrasType)
     - [PropertyGroup](#ar-v1-PropertyGroup)
     - [PropertyOrigin](#ar-v1-PropertyOrigin)
     - [PropertyType](#ar-v1-PropertyType)
@@ -618,21 +616,6 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-AgentExtras"></a>
-
-### AgentExtras
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agent_type | [AgentExtrasType](#ar-v1-AgentExtrasType) |  |  |
-
-
-
-
-
-
 <a name="ar-v1-AnchorExtras"></a>
 
 ### AnchorExtras
@@ -760,24 +743,23 @@ Properties are used by various components to define them, such as: feedback, act
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
 | advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
-| bool_value | [bool](#bool) |  |  |
-| int_value | [sint64](#sint64) |  |  |
-| float_value | [float](#float) |  |  |
-| double_value | [double](#double) |  |  |
-| string_value | [string](#string) |  |  |
+| bool_value | [bool](#bool) | optional |  |
+| int_value | [sint64](#sint64) | optional |  |
+| float_value | [float](#float) | optional |  |
+| double_value | [double](#double) | optional |  |
+| string_value | [string](#string) | optional |  |
 | vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 | color_value | [common.v1.Color](#common-v1-Color) |  |  |
-| agent_id_value | [string](#string) |  |  |
-| enum_value | [string](#string) |  |  |
+| robot_id_value | [string](#string) | optional |  |
+| enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
-| icon_value | [string](#string) |  |  |
+| icon_value | [string](#string) | optional |  |
 | number_extras | [NumberExtras](#ar-v1-NumberExtras) |  |  |
 | enum_extras | [EnumExtras](#ar-v1-EnumExtras) |  |  |
 | vector3_extras | [Vector3Extras](#ar-v1-Vector3Extras) |  |  |
 | color_extras | [ColorExtras](#ar-v1-ColorExtras) |  |  |
-| agent_extras | [AgentExtras](#ar-v1-AgentExtras) |  |  |
 
 
 
@@ -820,7 +802,7 @@ Properties are used by various components to define them, such as: feedback, act
 | pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 | color_value | [common.v1.Color](#common-v1-Color) |  |  |
-| agent_id_value | [string](#string) |  |  |
+| robot_id_value | [string](#string) |  |  |
 | enum_value | [string](#string) |  |  |
 | enum_multi_value | [string](#string) | repeated |  |
 | icon_value | [string](#string) |  |  |
@@ -849,20 +831,6 @@ Properties are used by various components to define them, such as: feedback, act
 
 
  
-
-
-<a name="ar-v1-AgentExtrasType"></a>
-
-### AgentExtrasType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AGENT_EXTRAS_TYPE_UNSPECIFIED | 0 |  |
-| AGENT_EXTRAS_TYPE_HUMAN | 1 |  |
-| AGENT_EXTRAS_TYPE_ROBOT | 2 |  |
-| AGENT_EXTRAS_TYPE_BOTH | 3 |  |
-
 
 
 <a name="ar-v1-PropertyGroup"></a>
