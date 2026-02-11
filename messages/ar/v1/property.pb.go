@@ -8,6 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v11 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -39,6 +41,7 @@ const (
 	PropertyType_PROPERTY_TYPE_AGENT       PropertyType = 10
 	PropertyType_PROPERTY_TYPE_ENUM        PropertyType = 11
 	PropertyType_PROPERTY_TYPE_ENUM_MULTI  PropertyType = 12
+	PropertyType_PROPERTY_TYPE_ICON        PropertyType = 13
 )
 
 // Enum value maps for PropertyType.
@@ -57,6 +60,7 @@ var (
 		10: "PROPERTY_TYPE_AGENT",
 		11: "PROPERTY_TYPE_ENUM",
 		12: "PROPERTY_TYPE_ENUM_MULTI",
+		13: "PROPERTY_TYPE_ICON",
 	}
 	PropertyType_value = map[string]int32{
 		"PROPERTY_TYPE_UNSPECIFIED": 0,
@@ -72,6 +76,7 @@ var (
 		"PROPERTY_TYPE_AGENT":       10,
 		"PROPERTY_TYPE_ENUM":        11,
 		"PROPERTY_TYPE_ENUM_MULTI":  12,
+		"PROPERTY_TYPE_ICON":        13,
 	}
 )
 
@@ -152,6 +157,119 @@ func (PropertyOrigin) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_property_proto_rawDescGZIP(), []int{1}
 }
 
+type PropertyGroup int32
+
+const (
+	PropertyGroup_PROPERTY_GROUP_UNSPECIFIED   PropertyGroup = 0
+	PropertyGroup_PROPERTY_GROUP_OUTPUT        PropertyGroup = 1
+	PropertyGroup_PROPERTY_GROUP_NON_EDITABLE  PropertyGroup = 2
+	PropertyGroup_PROPERTY_GROUP_STYLING       PropertyGroup = 3
+	PropertyGroup_PROPERTY_GROUP_LOCATION      PropertyGroup = 4
+	PropertyGroup_PROPERTY_GROUP_ICON          PropertyGroup = 5
+	PropertyGroup_PROPERTY_GROUP_CONFIGURATION PropertyGroup = 6
+)
+
+// Enum value maps for PropertyGroup.
+var (
+	PropertyGroup_name = map[int32]string{
+		0: "PROPERTY_GROUP_UNSPECIFIED",
+		1: "PROPERTY_GROUP_OUTPUT",
+		2: "PROPERTY_GROUP_NON_EDITABLE",
+		3: "PROPERTY_GROUP_STYLING",
+		4: "PROPERTY_GROUP_LOCATION",
+		5: "PROPERTY_GROUP_ICON",
+		6: "PROPERTY_GROUP_CONFIGURATION",
+	}
+	PropertyGroup_value = map[string]int32{
+		"PROPERTY_GROUP_UNSPECIFIED":   0,
+		"PROPERTY_GROUP_OUTPUT":        1,
+		"PROPERTY_GROUP_NON_EDITABLE":  2,
+		"PROPERTY_GROUP_STYLING":       3,
+		"PROPERTY_GROUP_LOCATION":      4,
+		"PROPERTY_GROUP_ICON":          5,
+		"PROPERTY_GROUP_CONFIGURATION": 6,
+	}
+)
+
+func (x PropertyGroup) Enum() *PropertyGroup {
+	p := new(PropertyGroup)
+	*p = x
+	return p
+}
+
+func (x PropertyGroup) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PropertyGroup) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_property_proto_enumTypes[2].Descriptor()
+}
+
+func (PropertyGroup) Type() protoreflect.EnumType {
+	return &file_ar_v1_property_proto_enumTypes[2]
+}
+
+func (x PropertyGroup) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PropertyGroup.Descriptor instead.
+func (PropertyGroup) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{2}
+}
+
+type AgentExtrasType int32
+
+const (
+	AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED AgentExtrasType = 0
+	AgentExtrasType_AGENT_EXTRAS_TYPE_HUMAN       AgentExtrasType = 1
+	AgentExtrasType_AGENT_EXTRAS_TYPE_ROBOT       AgentExtrasType = 2
+	AgentExtrasType_AGENT_EXTRAS_TYPE_BOTH        AgentExtrasType = 3
+)
+
+// Enum value maps for AgentExtrasType.
+var (
+	AgentExtrasType_name = map[int32]string{
+		0: "AGENT_EXTRAS_TYPE_UNSPECIFIED",
+		1: "AGENT_EXTRAS_TYPE_HUMAN",
+		2: "AGENT_EXTRAS_TYPE_ROBOT",
+		3: "AGENT_EXTRAS_TYPE_BOTH",
+	}
+	AgentExtrasType_value = map[string]int32{
+		"AGENT_EXTRAS_TYPE_UNSPECIFIED": 0,
+		"AGENT_EXTRAS_TYPE_HUMAN":       1,
+		"AGENT_EXTRAS_TYPE_ROBOT":       2,
+		"AGENT_EXTRAS_TYPE_BOTH":        3,
+	}
+)
+
+func (x AgentExtrasType) Enum() *AgentExtrasType {
+	p := new(AgentExtrasType)
+	*p = x
+	return p
+}
+
+func (x AgentExtrasType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AgentExtrasType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_property_proto_enumTypes[3].Descriptor()
+}
+
+func (AgentExtrasType) Type() protoreflect.EnumType {
+	return &file_ar_v1_property_proto_enumTypes[3]
+}
+
+func (x AgentExtrasType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AgentExtrasType.Descriptor instead.
+func (AgentExtrasType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{3}
+}
+
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 type Property struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
@@ -160,16 +278,33 @@ type Property struct {
 	Icon                      string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description               string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type                      PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.PropertyType" json:"type,omitempty"`
-	Value                     string                 `protobuf:"bytes,6,opt,name=value,proto3" json:"value,omitempty"`   // the current value of the property (JSON encoded)
-	Extras                    string                 `protobuf:"bytes,7,opt,name=extras,proto3" json:"extras,omitempty"` // JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
-	MinimumRequiredPermission WorkerPermission       `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=ar.v1.WorkerPermission" json:"minimum_required_permission,omitempty"`
-	Origin                    PropertyOrigin         `protobuf:"varint,9,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
-	Origins                   []PropertyOrigin       `protobuf:"varint,10,rep,packed,name=origins,proto3,enum=ar.v1.PropertyOrigin" json:"origins,omitempty"`
-	MirrorPropertyId          string                 `protobuf:"bytes,11,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
-	Group                     string                 `protobuf:"bytes,12,opt,name=group,proto3" json:"group,omitempty"`
-	Ordering                  int32                  `protobuf:"varint,13,opt,name=ordering,proto3" json:"ordering,omitempty"`
-	HideGroup                 bool                   `protobuf:"varint,14,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
-	ParentId                  string                 `protobuf:"bytes,15,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	MinimumRequiredPermission WorkerPermission       `protobuf:"varint,6,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=ar.v1.WorkerPermission" json:"minimum_required_permission,omitempty"`
+	Origin                    PropertyOrigin         `protobuf:"varint,7,opt,name=origin,proto3,enum=ar.v1.PropertyOrigin" json:"origin,omitempty"`
+	Origins                   []PropertyOrigin       `protobuf:"varint,8,rep,packed,name=origins,proto3,enum=ar.v1.PropertyOrigin" json:"origins,omitempty"`
+	MirrorPropertyId          string                 `protobuf:"bytes,9,opt,name=mirror_property_id,json=mirrorPropertyId,proto3" json:"mirror_property_id,omitempty"`
+	Group                     PropertyGroup          `protobuf:"varint,10,opt,name=group,proto3,enum=ar.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32                  `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool                   `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
+	BoolValue                 bool                   `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3" json:"bool_value,omitempty"`
+	IntValue                  int64                  `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3" json:"int_value,omitempty"`
+	FloatValue                float32                `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3" json:"float_value,omitempty"`
+	DoubleValue               float64                `protobuf:"fixed64,24,opt,name=double_value,json=doubleValue,proto3" json:"double_value,omitempty"`
+	StringValue               string                 `protobuf:"bytes,25,opt,name=string_value,json=stringValue,proto3" json:"string_value,omitempty"`
+	Vector3Value              *v1.Vector3            `protobuf:"bytes,26,opt,name=vector3_value,json=vector3Value,proto3" json:"vector3_value,omitempty"`
+	PoseValue                 *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
+	AnchorValue               *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
+	ColorValue                *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
+	AgentIdValue              string                 `protobuf:"bytes,20,opt,name=agent_id_value,json=agentIdValue,proto3" json:"agent_id_value,omitempty"`
+	EnumValue                 string                 `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3" json:"enum_value,omitempty"`
+	EnumMultiValue            []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
+	IconValue                 string                 `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3" json:"icon_value,omitempty"`
+	NumberExtras              *NumberExtras          `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
+	EnumExtras                *EnumExtras            `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
+	Vector3Extras             *Vector3Extras         `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
+	ColorExtras               *ColorExtras           `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
+	AgentExtras               AgentExtrasType        `protobuf:"varint,45,opt,name=agent_extras,json=agentExtras,proto3,enum=ar.v1.AgentExtrasType" json:"agent_extras,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -239,20 +374,6 @@ func (x *Property) GetType() PropertyType {
 	return PropertyType_PROPERTY_TYPE_UNSPECIFIED
 }
 
-func (x *Property) GetValue() string {
-	if x != nil {
-		return x.Value
-	}
-	return ""
-}
-
-func (x *Property) GetExtras() string {
-	if x != nil {
-		return x.Extras
-	}
-	return ""
-}
-
 func (x *Property) GetMinimumRequiredPermission() WorkerPermission {
 	if x != nil {
 		return x.MinimumRequiredPermission
@@ -281,11 +402,11 @@ func (x *Property) GetMirrorPropertyId() string {
 	return ""
 }
 
-func (x *Property) GetGroup() string {
+func (x *Property) GetGroup() PropertyGroup {
 	if x != nil {
 		return x.Group
 	}
-	return ""
+	return PropertyGroup_PROPERTY_GROUP_UNSPECIFIED
 }
 
 func (x *Property) GetOrdering() int32 {
@@ -307,6 +428,139 @@ func (x *Property) GetParentId() string {
 		return x.ParentId
 	}
 	return ""
+}
+
+func (x *Property) GetAdvanced() bool {
+	if x != nil {
+		return x.Advanced
+	}
+	return false
+}
+
+func (x *Property) GetBoolValue() bool {
+	if x != nil {
+		return x.BoolValue
+	}
+	return false
+}
+
+func (x *Property) GetIntValue() int64 {
+	if x != nil {
+		return x.IntValue
+	}
+	return 0
+}
+
+func (x *Property) GetFloatValue() float32 {
+	if x != nil {
+		return x.FloatValue
+	}
+	return 0
+}
+
+func (x *Property) GetDoubleValue() float64 {
+	if x != nil {
+		return x.DoubleValue
+	}
+	return 0
+}
+
+func (x *Property) GetStringValue() string {
+	if x != nil {
+		return x.StringValue
+	}
+	return ""
+}
+
+func (x *Property) GetVector3Value() *v1.Vector3 {
+	if x != nil {
+		return x.Vector3Value
+	}
+	return nil
+}
+
+func (x *Property) GetPoseValue() *v1.LocalizedPose {
+	if x != nil {
+		return x.PoseValue
+	}
+	return nil
+}
+
+func (x *Property) GetAnchorValue() *v1.Anchor {
+	if x != nil {
+		return x.AnchorValue
+	}
+	return nil
+}
+
+func (x *Property) GetColorValue() *v11.Color {
+	if x != nil {
+		return x.ColorValue
+	}
+	return nil
+}
+
+func (x *Property) GetAgentIdValue() string {
+	if x != nil {
+		return x.AgentIdValue
+	}
+	return ""
+}
+
+func (x *Property) GetEnumValue() string {
+	if x != nil {
+		return x.EnumValue
+	}
+	return ""
+}
+
+func (x *Property) GetEnumMultiValue() []string {
+	if x != nil {
+		return x.EnumMultiValue
+	}
+	return nil
+}
+
+func (x *Property) GetIconValue() string {
+	if x != nil {
+		return x.IconValue
+	}
+	return ""
+}
+
+func (x *Property) GetNumberExtras() *NumberExtras {
+	if x != nil {
+		return x.NumberExtras
+	}
+	return nil
+}
+
+func (x *Property) GetEnumExtras() *EnumExtras {
+	if x != nil {
+		return x.EnumExtras
+	}
+	return nil
+}
+
+func (x *Property) GetVector3Extras() *Vector3Extras {
+	if x != nil {
+		return x.Vector3Extras
+	}
+	return nil
+}
+
+func (x *Property) GetColorExtras() *ColorExtras {
+	if x != nil {
+		return x.ColorExtras
+	}
+	return nil
+}
+
+func (x *Property) GetAgentExtras() AgentExtrasType {
+	if x != nil {
+		return x.AgentExtras
+	}
+	return AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED
 }
 
 type PropertyMessages struct {
@@ -421,30 +675,583 @@ func (x *PropertyValueUpdate) GetMirrorPropertyId() string {
 	return ""
 }
 
+type NumberExtras struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=min,proto3" json:"min,omitempty"`
+	Max           float64                `protobuf:"fixed64,2,opt,name=max,proto3" json:"max,omitempty"`
+	Step          float64                `protobuf:"fixed64,3,opt,name=step,proto3" json:"step,omitempty"`
+	Unit          string                 `protobuf:"bytes,4,opt,name=unit,proto3" json:"unit,omitempty"`            // "mm", "deg", "N"
+	Precision     uint32                 `protobuf:"varint,5,opt,name=precision,proto3" json:"precision,omitempty"` // Decimal places for display
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *NumberExtras) Reset() {
+	*x = NumberExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NumberExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NumberExtras) ProtoMessage() {}
+
+func (x *NumberExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NumberExtras.ProtoReflect.Descriptor instead.
+func (*NumberExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *NumberExtras) GetMin() float64 {
+	if x != nil {
+		return x.Min
+	}
+	return 0
+}
+
+func (x *NumberExtras) GetMax() float64 {
+	if x != nil {
+		return x.Max
+	}
+	return 0
+}
+
+func (x *NumberExtras) GetStep() float64 {
+	if x != nil {
+		return x.Step
+	}
+	return 0
+}
+
+func (x *NumberExtras) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+func (x *NumberExtras) GetPrecision() uint32 {
+	if x != nil {
+		return x.Precision
+	}
+	return 0
+}
+
+type EnumOption struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Value         string                 `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+	Label         string                 `protobuf:"bytes,2,opt,name=label,proto3" json:"label,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Group         string                 `protobuf:"bytes,4,opt,name=group,proto3" json:"group,omitempty"`
+	Disabled      bool                   `protobuf:"varint,5,opt,name=disabled,proto3" json:"disabled,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnumOption) Reset() {
+	*x = EnumOption{}
+	mi := &file_ar_v1_property_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnumOption) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnumOption) ProtoMessage() {}
+
+func (x *EnumOption) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnumOption.ProtoReflect.Descriptor instead.
+func (*EnumOption) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *EnumOption) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+func (x *EnumOption) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *EnumOption) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *EnumOption) GetGroup() string {
+	if x != nil {
+		return x.Group
+	}
+	return ""
+}
+
+func (x *EnumOption) GetDisabled() bool {
+	if x != nil {
+		return x.Disabled
+	}
+	return false
+}
+
+type EnumExtras struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Placeholder       string                 `protobuf:"bytes,1,opt,name=placeholder,proto3" json:"placeholder,omitempty"`
+	Filter            bool                   `protobuf:"varint,2,opt,name=filter,proto3" json:"filter,omitempty"`
+	Grouped           bool                   `protobuf:"varint,3,opt,name=grouped,proto3" json:"grouped,omitempty"`
+	ShowIcons         bool                   `protobuf:"varint,4,opt,name=show_icons,json=showIcons,proto3" json:"show_icons,omitempty"`
+	MaxSelectedLabels uint32                 `protobuf:"varint,5,opt,name=max_selected_labels,json=maxSelectedLabels,proto3" json:"max_selected_labels,omitempty"`
+	Options           []*EnumOption          `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *EnumExtras) Reset() {
+	*x = EnumExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnumExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnumExtras) ProtoMessage() {}
+
+func (x *EnumExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnumExtras.ProtoReflect.Descriptor instead.
+func (*EnumExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *EnumExtras) GetPlaceholder() string {
+	if x != nil {
+		return x.Placeholder
+	}
+	return ""
+}
+
+func (x *EnumExtras) GetFilter() bool {
+	if x != nil {
+		return x.Filter
+	}
+	return false
+}
+
+func (x *EnumExtras) GetGrouped() bool {
+	if x != nil {
+		return x.Grouped
+	}
+	return false
+}
+
+func (x *EnumExtras) GetShowIcons() bool {
+	if x != nil {
+		return x.ShowIcons
+	}
+	return false
+}
+
+func (x *EnumExtras) GetMaxSelectedLabels() uint32 {
+	if x != nil {
+		return x.MaxSelectedLabels
+	}
+	return 0
+}
+
+func (x *EnumExtras) GetOptions() []*EnumOption {
+	if x != nil {
+		return x.Options
+	}
+	return nil
+}
+
+type Vector3Extras struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=min,proto3" json:"min,omitempty"`
+	Max           float64                `protobuf:"fixed64,2,opt,name=max,proto3" json:"max,omitempty"`
+	Step          float64                `protobuf:"fixed64,3,opt,name=step,proto3" json:"step,omitempty"`
+	Labels        []string               `protobuf:"bytes,4,rep,name=labels,proto3" json:"labels,omitempty"`
+	Unit          string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Vector3Extras) Reset() {
+	*x = Vector3Extras{}
+	mi := &file_ar_v1_property_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Vector3Extras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Vector3Extras) ProtoMessage() {}
+
+func (x *Vector3Extras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Vector3Extras.ProtoReflect.Descriptor instead.
+func (*Vector3Extras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Vector3Extras) GetMin() float64 {
+	if x != nil {
+		return x.Min
+	}
+	return 0
+}
+
+func (x *Vector3Extras) GetMax() float64 {
+	if x != nil {
+		return x.Max
+	}
+	return 0
+}
+
+func (x *Vector3Extras) GetStep() float64 {
+	if x != nil {
+		return x.Step
+	}
+	return 0
+}
+
+func (x *Vector3Extras) GetLabels() []string {
+	if x != nil {
+		return x.Labels
+	}
+	return nil
+}
+
+func (x *Vector3Extras) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
+type ColorExtras struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Step          float64                `protobuf:"fixed64,1,opt,name=step,proto3" json:"step,omitempty"`
+	Default       *v11.Color             `protobuf:"bytes,2,opt,name=default,proto3" json:"default,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ColorExtras) Reset() {
+	*x = ColorExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ColorExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ColorExtras) ProtoMessage() {}
+
+func (x *ColorExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ColorExtras.ProtoReflect.Descriptor instead.
+func (*ColorExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ColorExtras) GetStep() float64 {
+	if x != nil {
+		return x.Step
+	}
+	return 0
+}
+
+func (x *ColorExtras) GetDefault() *v11.Color {
+	if x != nil {
+		return x.Default
+	}
+	return nil
+}
+
+type AnchorExtras struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OnlyMarkers   bool                   `protobuf:"varint,1,opt,name=only_markers,json=onlyMarkers,proto3" json:"only_markers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AnchorExtras) Reset() {
+	*x = AnchorExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AnchorExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AnchorExtras) ProtoMessage() {}
+
+func (x *AnchorExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AnchorExtras.ProtoReflect.Descriptor instead.
+func (*AnchorExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *AnchorExtras) GetOnlyMarkers() bool {
+	if x != nil {
+		return x.OnlyMarkers
+	}
+	return false
+}
+
+type PoseExtras struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	AnchorEditable bool                   `protobuf:"varint,1,opt,name=anchor_editable,json=anchorEditable,proto3" json:"anchor_editable,omitempty"`
+	PoseEditable   bool                   `protobuf:"varint,2,opt,name=pose_editable,json=poseEditable,proto3" json:"pose_editable,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *PoseExtras) Reset() {
+	*x = PoseExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PoseExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PoseExtras) ProtoMessage() {}
+
+func (x *PoseExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PoseExtras.ProtoReflect.Descriptor instead.
+func (*PoseExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *PoseExtras) GetAnchorEditable() bool {
+	if x != nil {
+		return x.AnchorEditable
+	}
+	return false
+}
+
+func (x *PoseExtras) GetPoseEditable() bool {
+	if x != nil {
+		return x.PoseEditable
+	}
+	return false
+}
+
+type AgentExtras struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AgentType     AgentExtrasType        `protobuf:"varint,1,opt,name=agent_type,json=agentType,proto3,enum=ar.v1.AgentExtrasType" json:"agent_type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AgentExtras) Reset() {
+	*x = AgentExtras{}
+	mi := &file_ar_v1_property_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AgentExtras) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AgentExtras) ProtoMessage() {}
+
+func (x *AgentExtras) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_property_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AgentExtras.ProtoReflect.Descriptor instead.
+func (*AgentExtras) Descriptor() ([]byte, []int) {
+	return file_ar_v1_property_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *AgentExtras) GetAgentType() AgentExtrasType {
+	if x != nil {
+		return x.AgentType
+	}
+	return AgentExtrasType_AGENT_EXTRAS_TYPE_UNSPECIFIED
+}
+
 var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\"\xc0\x04\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xa2\x14\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x14\n" +
-	"\x05value\x18\x06 \x01(\tR\x05value\x12\x16\n" +
-	"\x06extras\x18\a \x01(\tR\x06extras\x12a\n" +
-	"\x1bminimum_required_permission\x18\b \x01(\x0e2\x17.ar.v1.WorkerPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x127\n" +
-	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06origin\x12>\n" +
-	"\aorigins\x18\n" +
-	" \x03(\x0e2\x15.ar.v1.PropertyOriginB\r\xbaH\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12a\n" +
+	"\x1bminimum_required_permission\x18\x06 \x01(\x0e2\x17.ar.v1.WorkerPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x127\n" +
+	"\x06origin\x18\a \x01(\x0e2\x15.ar.v1.PropertyOriginB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06origin\x12>\n" +
+	"\aorigins\x18\b \x03(\x0e2\x15.ar.v1.PropertyOriginB\r\xbaH\n" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\aorigins\x12,\n" +
-	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId\x12\x14\n" +
-	"\x05group\x18\f \x01(\tR\x05group\x12\x1a\n" +
-	"\bordering\x18\r \x01(\x05R\bordering\x12\x1d\n" +
+	"\x12mirror_property_id\x18\t \x01(\tR\x10mirrorPropertyId\x12*\n" +
+	"\x05group\x18\n" +
+	" \x01(\x0e2\x14.ar.v1.PropertyGroupR\x05group\x12\x1a\n" +
+	"\bordering\x18\v \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
-	"hide_group\x18\x0e \x01(\bR\thideGroup\x12\x1b\n" +
-	"\tparent_id\x18\x0f \x01(\tR\bparentId\"C\n" +
+	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1b\n" +
+	"\tparent_id\x18\r \x01(\tR\bparentId\x12\x1a\n" +
+	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\x1d\n" +
+	"\n" +
+	"bool_value\x18\x15 \x01(\bR\tboolValue\x12\x1b\n" +
+	"\tint_value\x18\x16 \x01(\x12R\bintValue\x12\x1f\n" +
+	"\vfloat_value\x18\x17 \x01(\x02R\n" +
+	"floatValue\x12!\n" +
+	"\fdouble_value\x18\x18 \x01(\x01R\vdoubleValue\x12!\n" +
+	"\fstring_value\x18\x19 \x01(\tR\vstringValue\x129\n" +
+	"\rvector3_value\x18\x1a \x01(\v2\x14.geometry.v1.Vector3R\fvector3Value\x129\n" +
+	"\n" +
+	"pose_value\x18\x1b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\tposeValue\x126\n" +
+	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
+	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
+	"colorValue\x12$\n" +
+	"\x0eagent_id_value\x18\x14 \x01(\tR\fagentIdValue\x12\x1d\n" +
+	"\n" +
+	"enum_value\x18\x1f \x01(\tR\tenumValue\x12(\n" +
+	"\x10enum_multi_value\x18  \x03(\tR\x0eenumMultiValue\x12\x1d\n" +
+	"\n" +
+	"icon_value\x18! \x01(\tR\ticonValue\x128\n" +
+	"\rnumber_extras\x18) \x01(\v2\x13.ar.v1.NumberExtrasR\fnumberExtras\x122\n" +
+	"\venum_extras\x18* \x01(\v2\x11.ar.v1.EnumExtrasR\n" +
+	"enumExtras\x12;\n" +
+	"\x0evector3_extras\x18+ \x01(\v2\x14.ar.v1.Vector3ExtrasR\rvector3Extras\x125\n" +
+	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x129\n" +
+	"\fagent_extras\x18- \x01(\x0e2\x16.ar.v1.AgentExtrasTypeR\vagentExtras:\xac\t\xbaH\xa8\t\x1a\xaf\x05\n" +
+	" property_type_matches_value_kind\x123property.type must match the kind of property.value\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.agent_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0)) || (this.type == 13 && has(this.icon_value))\x1a\x8d\x01\n" +
+	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\x1ae\n" +
+	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\"\xb2\x01\n" +
+	"\n" +
+	"bool_value\n" +
+	"\tint_value\n" +
+	"\vfloat_value\n" +
+	"\fdouble_value\n" +
+	"\fstring_value\n" +
+	"\rvector3_value\n" +
+	"\n" +
+	"pose_value\n" +
+	"\fanchor_value\n" +
+	"\vcolor_value\n" +
+	"\x0eagent_id_value\n" +
+	"\n" +
+	"enum_value\n" +
+	"\x10multi_enum_value\n" +
+	"\n" +
+	"icon_value\x10\x01\"H\n" +
+	"\rnumber_extras\n" +
+	"\venum_extras\n" +
+	"\x0evector3_extras\n" +
+	"\fcolor_extras\n" +
+	"\fagent_extras\"C\n" +
 	"\x10PropertyMessages\x12/\n" +
 	"\n" +
 	"properties\x18\x01 \x03(\v2\x0f.ar.v1.PropertyR\n" +
@@ -453,7 +1260,48 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05value\x18\x06 \x01(\tR\x05value\x12-\n" +
 	"\x06origin\x18\t \x01(\x0e2\x15.ar.v1.PropertyOriginR\x06origin\x12,\n" +
-	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId*\xde\x02\n" +
+	"\x12mirror_property_id\x18\v \x01(\tR\x10mirrorPropertyId\"\x88\x01\n" +
+	"\fNumberExtras\x12\x10\n" +
+	"\x03min\x18\x01 \x01(\x01R\x03min\x12\x10\n" +
+	"\x03max\x18\x02 \x01(\x01R\x03max\x12\"\n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12\x12\n" +
+	"\x04unit\x18\x04 \x01(\tR\x04unit\x12\x1c\n" +
+	"\tprecision\x18\x05 \x01(\rR\tprecision\"\x90\x01\n" +
+	"\n" +
+	"EnumOption\x12\x1d\n" +
+	"\x05value\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05value\x12\x1d\n" +
+	"\x05label\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05label\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12\x14\n" +
+	"\x05group\x18\x04 \x01(\tR\x05group\x12\x1a\n" +
+	"\bdisabled\x18\x05 \x01(\bR\bdisabled\"\xe6\x01\n" +
+	"\n" +
+	"EnumExtras\x12 \n" +
+	"\vplaceholder\x18\x01 \x01(\tR\vplaceholder\x12\x16\n" +
+	"\x06filter\x18\x02 \x01(\bR\x06filter\x12\x18\n" +
+	"\agrouped\x18\x03 \x01(\bR\agrouped\x12\x1d\n" +
+	"\n" +
+	"show_icons\x18\x04 \x01(\bR\tshowIcons\x12.\n" +
+	"\x13max_selected_labels\x18\x05 \x01(\rR\x11maxSelectedLabels\x125\n" +
+	"\aoptions\x18\x06 \x03(\v2\x11.ar.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\x8f\x01\n" +
+	"\rVector3Extras\x12\x10\n" +
+	"\x03min\x18\x01 \x01(\x01R\x03min\x12\x10\n" +
+	"\x03max\x18\x02 \x01(\x01R\x03max\x12\"\n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12\"\n" +
+	"\x06labels\x18\x04 \x03(\tB\n" +
+	"\xbaH\a\x92\x01\x04\b\x03\x10\x03R\x06labels\x12\x12\n" +
+	"\x04unit\x18\x05 \x01(\tR\x04unit\"]\n" +
+	"\vColorExtras\x12\"\n" +
+	"\x04step\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12*\n" +
+	"\adefault\x18\x02 \x01(\v2\x10.common.v1.ColorR\adefault\"1\n" +
+	"\fAnchorExtras\x12!\n" +
+	"\fonly_markers\x18\x01 \x01(\bR\vonlyMarkers\"Z\n" +
+	"\n" +
+	"PoseExtras\x12'\n" +
+	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"D\n" +
+	"\vAgentExtras\x125\n" +
+	"\n" +
+	"agent_type\x18\x01 \x01(\x0e2\x16.ar.v1.AgentExtrasTypeR\tagentType*\xf6\x02\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -468,11 +1316,25 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x13PROPERTY_TYPE_AGENT\x10\n" +
 	"\x12\x16\n" +
 	"\x12PROPERTY_TYPE_ENUM\x10\v\x12\x1c\n" +
-	"\x18PROPERTY_TYPE_ENUM_MULTI\x10\f*h\n" +
+	"\x18PROPERTY_TYPE_ENUM_MULTI\x10\f\x12\x16\n" +
+	"\x12PROPERTY_TYPE_ICON\x10\r*h\n" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02B\x89\x01\n" +
+	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\xdf\x01\n" +
+	"\rPropertyGroup\x12\x1e\n" +
+	"\x1aPROPERTY_GROUP_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15PROPERTY_GROUP_OUTPUT\x10\x01\x12\x1f\n" +
+	"\x1bPROPERTY_GROUP_NON_EDITABLE\x10\x02\x12\x1a\n" +
+	"\x16PROPERTY_GROUP_STYLING\x10\x03\x12\x1b\n" +
+	"\x17PROPERTY_GROUP_LOCATION\x10\x04\x12\x17\n" +
+	"\x13PROPERTY_GROUP_ICON\x10\x05\x12 \n" +
+	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06*\x8a\x01\n" +
+	"\x0fAgentExtrasType\x12!\n" +
+	"\x1dAGENT_EXTRAS_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17AGENT_EXTRAS_TYPE_HUMAN\x10\x01\x12\x1b\n" +
+	"\x17AGENT_EXTRAS_TYPE_ROBOT\x10\x02\x12\x1a\n" +
+	"\x16AGENT_EXTRAS_TYPE_BOTH\x10\x03B\x89\x01\n" +
 	"\tcom.ar.v1B\rPropertyProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -487,28 +1349,55 @@ func file_ar_v1_property_proto_rawDescGZIP() []byte {
 	return file_ar_v1_property_proto_rawDescData
 }
 
-var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_ar_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_ar_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_ar_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),           // 0: ar.v1.PropertyType
 	(PropertyOrigin)(0),         // 1: ar.v1.PropertyOrigin
-	(*Property)(nil),            // 2: ar.v1.Property
-	(*PropertyMessages)(nil),    // 3: ar.v1.PropertyMessages
-	(*PropertyValueUpdate)(nil), // 4: ar.v1.PropertyValueUpdate
-	(WorkerPermission)(0),       // 5: ar.v1.WorkerPermission
+	(PropertyGroup)(0),          // 2: ar.v1.PropertyGroup
+	(AgentExtrasType)(0),        // 3: ar.v1.AgentExtrasType
+	(*Property)(nil),            // 4: ar.v1.Property
+	(*PropertyMessages)(nil),    // 5: ar.v1.PropertyMessages
+	(*PropertyValueUpdate)(nil), // 6: ar.v1.PropertyValueUpdate
+	(*NumberExtras)(nil),        // 7: ar.v1.NumberExtras
+	(*EnumOption)(nil),          // 8: ar.v1.EnumOption
+	(*EnumExtras)(nil),          // 9: ar.v1.EnumExtras
+	(*Vector3Extras)(nil),       // 10: ar.v1.Vector3Extras
+	(*ColorExtras)(nil),         // 11: ar.v1.ColorExtras
+	(*AnchorExtras)(nil),        // 12: ar.v1.AnchorExtras
+	(*PoseExtras)(nil),          // 13: ar.v1.PoseExtras
+	(*AgentExtras)(nil),         // 14: ar.v1.AgentExtras
+	(WorkerPermission)(0),       // 15: ar.v1.WorkerPermission
+	(*v1.Vector3)(nil),          // 16: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),    // 17: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),           // 18: geometry.v1.Anchor
+	(*v11.Color)(nil),           // 19: common.v1.Color
 }
 var file_ar_v1_property_proto_depIdxs = []int32{
-	0, // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
-	5, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
-	1, // 2: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
-	1, // 3: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
-	2, // 4: ar.v1.PropertyMessages.properties:type_name -> ar.v1.Property
-	1, // 5: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	0,  // 0: ar.v1.Property.type:type_name -> ar.v1.PropertyType
+	15, // 1: ar.v1.Property.minimum_required_permission:type_name -> ar.v1.WorkerPermission
+	1,  // 2: ar.v1.Property.origin:type_name -> ar.v1.PropertyOrigin
+	1,  // 3: ar.v1.Property.origins:type_name -> ar.v1.PropertyOrigin
+	2,  // 4: ar.v1.Property.group:type_name -> ar.v1.PropertyGroup
+	16, // 5: ar.v1.Property.vector3_value:type_name -> geometry.v1.Vector3
+	17, // 6: ar.v1.Property.pose_value:type_name -> geometry.v1.LocalizedPose
+	18, // 7: ar.v1.Property.anchor_value:type_name -> geometry.v1.Anchor
+	19, // 8: ar.v1.Property.color_value:type_name -> common.v1.Color
+	7,  // 9: ar.v1.Property.number_extras:type_name -> ar.v1.NumberExtras
+	9,  // 10: ar.v1.Property.enum_extras:type_name -> ar.v1.EnumExtras
+	10, // 11: ar.v1.Property.vector3_extras:type_name -> ar.v1.Vector3Extras
+	11, // 12: ar.v1.Property.color_extras:type_name -> ar.v1.ColorExtras
+	3,  // 13: ar.v1.Property.agent_extras:type_name -> ar.v1.AgentExtrasType
+	4,  // 14: ar.v1.PropertyMessages.properties:type_name -> ar.v1.Property
+	1,  // 15: ar.v1.PropertyValueUpdate.origin:type_name -> ar.v1.PropertyOrigin
+	8,  // 16: ar.v1.EnumExtras.options:type_name -> ar.v1.EnumOption
+	19, // 17: ar.v1.ColorExtras.default:type_name -> common.v1.Color
+	3,  // 18: ar.v1.AgentExtras.agent_type:type_name -> ar.v1.AgentExtrasType
+	19, // [19:19] is the sub-list for method output_type
+	19, // [19:19] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_property_proto_init() }
@@ -522,8 +1411,8 @@ func file_ar_v1_property_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_property_proto_rawDesc), len(file_ar_v1_property_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   3,
+			NumEnums:      4,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

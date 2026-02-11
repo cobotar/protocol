@@ -6,13 +6,15 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Property } from "./property_pb.ts";
 import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/helper.proto.
  */
 export const file_ar_v1_helper: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9oZWxwZXIucHJvdG8SBWFyLnYxIr4BCg1IZWxwZXJNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfCgR0eXBlGAUgASgOMhEuYXIudjEuSGVscGVyVHlwZRIjCgpwcm9wZXJ0aWVzGAYgAygLMg8uYXIudjEuUHJvcGVydHkSKgoRb3V0cHV0X3Byb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5IZWxwZXJNZXNzYWdlcxIlCgdoZWxwZXJzGAEgAygLMhQuYXIudjEuSGVscGVyTWVzc2FnZSq1AQoKSGVscGVyVHlwZRIbChdIRUxQRVJfVFlQRV9VTlNQRUNJRklFRBAAEhkKFUhFTFBFUl9UWVBFX1BST1hJTUlUWRAKEhoKFkhFTFBFUl9UWVBFX1NUQVRJT05BUlkQCxIVChFIRUxQRVJfVFlQRV9USU1FUhAVEhMKD0hFTFBFUl9UWVBFX0FORBBkEhIKDkhFTFBFUl9UWVBFX09SEGUSEwoPSEVMUEVSX1RZUEVfTk9UEGZChwEKCWNvbS5hci52MUILSGVscGVyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property]);
+  fileDesc("ChJhci92MS9oZWxwZXIucHJvdG8SBWFyLnYxIp0BCg1IZWxwZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHR5cGUYBSABKA4yES5hci52MS5IZWxwZXJUeXBlEiMKCnByb3BlcnRpZXMYBiADKAsyDy5hci52MS5Qcm9wZXJ0eSI3Cg5IZWxwZXJNZXNzYWdlcxIlCgdoZWxwZXJzGAEgAygLMhQuYXIudjEuSGVscGVyTWVzc2FnZSKPAQoQSGVscGVyQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkhlbHBlclR5cGVCC7pICMgBAYIBAhABIl0KE0hlbHBlclVwZGF0ZU1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkqtQEKCkhlbHBlclR5cGUSGwoXSEVMUEVSX1RZUEVfVU5TUEVDSUZJRUQQABIZChVIRUxQRVJfVFlQRV9QUk9YSU1JVFkQChIaChZIRUxQRVJfVFlQRV9TVEFUSU9OQVJZEAsSFQoRSEVMUEVSX1RZUEVfVElNRVIQFRITCg9IRUxQRVJfVFlQRV9BTkQQZBISCg5IRUxQRVJfVFlQRV9PUhBlEhMKD0hFTFBFUl9UWVBFX05PVBBmQocBCgljb20uYXIudjFCC0hlbHBlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.HelperMessage
@@ -47,11 +49,6 @@ export type HelperMessage = Message<"ar.v1.HelperMessage"> & {
    * @generated from field: repeated ar.v1.Property properties = 6;
    */
   properties: Property[];
-
-  /**
-   * @generated from field: repeated ar.v1.Property output_properties = 7;
-   */
-  outputProperties: Property[];
 };
 
 /**
@@ -77,6 +74,75 @@ export type HelperMessages = Message<"ar.v1.HelperMessages"> & {
  */
 export const HelperMessagesSchema: GenMessage<HelperMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_helper, 1);
+
+/**
+ * @generated from message ar.v1.HelperAddMessage
+ */
+export type HelperAddMessage = Message<"ar.v1.HelperAddMessage"> & {
+  /**
+   * @generated from field: string config_id = 1;
+   */
+  configId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: ar.v1.HelperType type = 5;
+   */
+  type: HelperType;
+};
+
+/**
+ * Describes the message ar.v1.HelperAddMessage.
+ * Use `create(HelperAddMessageSchema)` to create a new message.
+ */
+export const HelperAddMessageSchema: GenMessage<HelperAddMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_helper, 2);
+
+/**
+ * @generated from message ar.v1.HelperUpdateMessage
+ */
+export type HelperUpdateMessage = Message<"ar.v1.HelperUpdateMessage"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message ar.v1.HelperUpdateMessage.
+ * Use `create(HelperUpdateMessageSchema)` to create a new message.
+ */
+export const HelperUpdateMessageSchema: GenMessage<HelperUpdateMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_helper, 3);
 
 /**
  * @generated from enum ar.v1.HelperType

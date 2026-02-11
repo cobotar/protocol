@@ -12,7 +12,16 @@ message Color {
     gte: 0
     lte: 1
   }]; // Ranging from [0:1]
-  float green = 2; // Ranging from [0:1]
-  float blue = 3; // Ranging from [0:1]
-  float alpha = 4; // Ranging from [0:1] --> [transparent : opaque]
+  float green = 2 [(buf.validate.field).float = {
+    gte: 0
+    lte: 1
+  }]; // Ranging from [0:1]
+  float blue = 3 [(buf.validate.field).float = {
+    gte: 0
+    lte: 1
+  }]; // Ranging from [0:1]
+  float alpha = 4 [(buf.validate.field).float = {
+    gte: 0
+    lte: 1
+  }]; // Ranging from [0:1] --> [transparent : opaque]
 }

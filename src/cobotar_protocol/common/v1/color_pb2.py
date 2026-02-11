@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/color.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"j\n\x05\x43olor\x12!\n\x03red\x18\x01 \x01(\x02\x42\x0f\xbaH\x0c\n\n\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x03red\x12\x14\n\x05green\x18\x02 \x01(\x02R\x05green\x12\x12\n\x04\x62lue\x18\x03 \x01(\x02R\x04\x62lue\x12\x14\n\x05\x61lpha\x18\x04 \x01(\x02R\x05\x61lphaB\xa2\x01\n\rcom.common.v1B\nColorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/color.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"\x9d\x01\n\x05\x43olor\x12!\n\x03red\x18\x01 \x01(\x02\x42\x0f\xbaH\x0c\n\n\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x03red\x12%\n\x05green\x18\x02 \x01(\x02\x42\x0f\xbaH\x0c\n\n\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x05green\x12#\n\x04\x62lue\x18\x03 \x01(\x02\x42\x0f\xbaH\x0c\n\n\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x04\x62lue\x12%\n\x05\x61lpha\x18\x04 \x01(\x02\x42\x0f\xbaH\x0c\n\n\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x05\x61lphaB\xa2\x01\n\rcom.common.v1B\nColorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nColorProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
   _globals['_COLOR'].fields_by_name['red']._loaded_options = None
   _globals['_COLOR'].fields_by_name['red']._serialized_options = b'\272H\014\n\n\035\000\000\200?-\000\000\000\000'
-  _globals['_COLOR']._serialized_start=65
-  _globals['_COLOR']._serialized_end=171
+  _globals['_COLOR'].fields_by_name['green']._loaded_options = None
+  _globals['_COLOR'].fields_by_name['green']._serialized_options = b'\272H\014\n\n\035\000\000\200?-\000\000\000\000'
+  _globals['_COLOR'].fields_by_name['blue']._loaded_options = None
+  _globals['_COLOR'].fields_by_name['blue']._serialized_options = b'\272H\014\n\n\035\000\000\200?-\000\000\000\000'
+  _globals['_COLOR'].fields_by_name['alpha']._loaded_options = None
+  _globals['_COLOR'].fields_by_name['alpha']._serialized_options = b'\272H\014\n\n\035\000\000\200?-\000\000\000\000'
+  _globals['_COLOR']._serialized_start=66
+  _globals['_COLOR']._serialized_end=223
 # @@protoc_insertion_point(module_scope)

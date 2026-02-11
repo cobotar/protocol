@@ -91,17 +91,16 @@ func (ActionType) EnumDescriptor() ([]byte, []int) {
 }
 
 type ActionMessage struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type             ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
-	Properties       []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	OutputProperties []*Property            `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
-	ConfigId         string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	Properties    []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	ConfigId      string                 `protobuf:"bytes,7,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ActionMessage) Reset() {
@@ -172,13 +171,6 @@ func (x *ActionMessage) GetType() ActionType {
 func (x *ActionMessage) GetProperties() []*Property {
 	if x != nil {
 		return x.Properties
-	}
-	return nil
-}
-
-func (x *ActionMessage) GetOutputProperties() []*Property {
-	if x != nil {
-		return x.OutputProperties
 	}
 	return nil
 }
@@ -466,7 +458,7 @@ var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbf\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x81\x02\n" +
 	"\rActionMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -475,9 +467,8 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
 	"\n" +
 	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\x12<\n" +
-	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\x12&\n" +
-	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
+	"properties\x12&\n" +
+	"\tconfig_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
 	"\x0eActionMessages\x12.\n" +
 	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\"\x89\x02\n" +
 	"\x10ActionAddMessage\x12&\n" +
@@ -539,14 +530,13 @@ var file_ar_v1_action_proto_goTypes = []any{
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
 	6, // 1: ar.v1.ActionMessage.properties:type_name -> ar.v1.Property
-	6, // 2: ar.v1.ActionMessage.output_properties:type_name -> ar.v1.Property
-	1, // 3: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
-	0, // 4: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 2: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
+	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }

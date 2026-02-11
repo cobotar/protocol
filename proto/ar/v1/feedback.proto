@@ -40,8 +40,7 @@ message FeedbackMessage {
     (buf.validate.field).enum.defined_only = true
   ];
   repeated ar.v1.Property properties = 6;
-  repeated ar.v1.Property output_properties = 7;
-  string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 7 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
 message FeedbackMessages {

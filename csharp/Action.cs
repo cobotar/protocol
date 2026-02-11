@@ -26,41 +26,40 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxGhRhci92MS9wcm9wZXJ0eS5w",
             "cm90bxobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9u",
-            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIr8CCg1BY3Rpb25N",
+            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoECCg1BY3Rpb25N",
             "ZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDx",
             "BAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgE",
             "IAEoCVILZGVzY3JpcHRpb24SMgoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlv",
             "blR5cGVCC7pICIIBAhAByAEBUgR0eXBlEi8KCnByb3BlcnRpZXMYBiADKAsy",
-            "Dy5hci52MS5Qcm9wZXJ0eVIKcHJvcGVydGllcxI8ChFvdXRwdXRfcHJvcGVy",
-            "dGllcxgHIAMoCzIPLmFyLnYxLlByb3BlcnR5UhBvdXRwdXRQcm9wZXJ0aWVz",
-            "EiYKCWNvbmZpZ19pZBgIIAEoCUIJukgGcgSQ8QQBUghjb25maWdJZCJACg5B",
-            "Y3Rpb25NZXNzYWdlcxIuCgdhY3Rpb25zGAEgAygLMhQuYXIudjEuQWN0aW9u",
-            "TWVzc2FnZVIHYWN0aW9ucyKJAgoQQWN0aW9uQWRkTWVzc2FnZRImCgljb25m",
-            "aWdfaWQYASABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
-            "ASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9u",
-            "VHlwZUILukgIggECEAHIAQFSBHR5cGUSGQoIYWdlbnRfaWQYBiABKAlSB2Fn",
-            "ZW50SWQSNAoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCVIUYWN0aXZh",
-            "dGluZ1Byb3BlcnR5SWQiegoTQWN0aW9uVXBkYXRlTWVzc2FnZRIOCgJpZBgB",
-            "IAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGlj",
-            "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
-            "aW9uIn8KEkFjdGlvbkNsb25lTWVzc2FnZRIfCgtvcmlnaW5hbF9pZBgBIAEo",
-            "CVIKb3JpZ2luYWxJZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uKqIC",
-            "CgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZ",
-            "QUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RB",
-            "U0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNU",
-            "SU9OX1RZUEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNL",
-            "X0hFTFAQDhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQod",
-            "QUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQ",
-            "RV9ST0JPVF9GUkVFX0RSSVZFEDRChwEKCWNvbS5hci52MUILQWN0aW9uUHJv",
-            "dG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fy",
-            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
-            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "Dy5hci52MS5Qcm9wZXJ0eVIKcHJvcGVydGllcxImCgljb25maWdfaWQYByAB",
+            "KAlCCbpIBnIEkPEEAVIIY29uZmlnSWQiQAoOQWN0aW9uTWVzc2FnZXMSLgoH",
+            "YWN0aW9ucxgBIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2VSB2FjdGlvbnMi",
+            "iQIKEEFjdGlvbkFkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6SAZy",
+            "BJDxBAFSCGNvbmZpZ0lkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
+            "MgoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICIIBAhAByAEB",
+            "UgR0eXBlEhkKCGFnZW50X2lkGAYgASgJUgdhZ2VudElkEjQKFmFjdGl2YXRp",
+            "bmdfcHJvcGVydHlfaWQYByABKAlSFGFjdGl2YXRpbmdQcm9wZXJ0eUlkInoK",
+            "E0FjdGlvblVwZGF0ZU1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUY",
+            "AiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAK",
+            "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiJ/ChJBY3Rpb25DbG9u",
+            "ZU1lc3NhZ2USHwoLb3JpZ2luYWxfaWQYASABKAlSCm9yaWdpbmFsSWQSEgoE",
+            "bmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
+            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiqiAgoKQWN0aW9uVHlwZRIbChdB",
+            "Q1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFDVElPTl9UWVBFX1RBU0tf",
+            "Q09NUExFVEUQChIZChVBQ1RJT05fVFlQRV9UQVNLX1VORE8QCxIbChdBQ1RJ",
+            "T05fVFlQRV9UQVNLX0FTU0lHThAMEh4KGkFDVElPTl9UWVBFX1RBU0tfSElH",
+            "SExJR0hUEA0SGQoVQUNUSU9OX1RZUEVfVEFTS19IRUxQEA4SIAocQUNUSU9O",
+            "X1RZUEVfUk9CT1RfUExBWV9QQVVTRRAyEiEKHUFDVElPTl9UWVBFX1JPQk9U",
+            "X0FDS05PV0xFREdFEDMSIAocQUNUSU9OX1RZUEVfUk9CT1RfRlJFRV9EUklW",
+            "RRA0QocBCgljb20uYXIudjFCC0FjdGlvblByb3RvUAFaL2dpdGh1Yi5jb20v",
+            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
+            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
+            "QXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ActionType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessage), global::Messages.AR.V1.ActionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Properties", "OutputProperties", "ConfigId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessage), global::Messages.AR.V1.ActionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Properties", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessages), global::Messages.AR.V1.ActionMessages.Parser, new[]{ "Actions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionAddMessage), global::Messages.AR.V1.ActionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "AgentId", "ActivatingPropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionUpdateMessage), global::Messages.AR.V1.ActionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
@@ -127,7 +126,6 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       type_ = other.type_;
       properties_ = other.properties_.Clone();
-      outputProperties_ = other.outputProperties_.Clone();
       configId_ = other.configId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -209,19 +207,8 @@ namespace Messages.AR.V1 {
       get { return properties_; }
     }
 
-    /// <summary>Field number for the "output_properties" field.</summary>
-    public const int OutputPropertiesFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_outputProperties_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> outputProperties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.Property> OutputProperties {
-      get { return outputProperties_; }
-    }
-
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 8;
+    public const int ConfigIdFieldNumber = 7;
     private string configId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -253,7 +240,6 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if(!properties_.Equals(other.properties_)) return false;
-      if(!outputProperties_.Equals(other.outputProperties_)) return false;
       if (ConfigId != other.ConfigId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -268,7 +254,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.ActionType.Unspecified) hash ^= Type.GetHashCode();
       hash ^= properties_.GetHashCode();
-      hash ^= outputProperties_.GetHashCode();
       if (ConfigId.Length != 0) hash ^= ConfigId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -309,9 +294,8 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Type);
       }
       properties_.WriteTo(output, _repeated_properties_codec);
-      outputProperties_.WriteTo(output, _repeated_outputProperties_codec);
       if (ConfigId.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteString(ConfigId);
       }
       if (_unknownFields != null) {
@@ -345,9 +329,8 @@ namespace Messages.AR.V1 {
         output.WriteEnum((int) Type);
       }
       properties_.WriteTo(ref output, _repeated_properties_codec);
-      outputProperties_.WriteTo(ref output, _repeated_outputProperties_codec);
       if (ConfigId.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteString(ConfigId);
       }
       if (_unknownFields != null) {
@@ -376,7 +359,6 @@ namespace Messages.AR.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       size += properties_.CalculateSize(_repeated_properties_codec);
-      size += outputProperties_.CalculateSize(_repeated_outputProperties_codec);
       if (ConfigId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ConfigId);
       }
@@ -408,7 +390,6 @@ namespace Messages.AR.V1 {
         Type = other.Type;
       }
       properties_.Add(other.properties_);
-      outputProperties_.Add(other.outputProperties_);
       if (other.ConfigId.Length != 0) {
         ConfigId = other.ConfigId;
       }
@@ -456,10 +437,6 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            outputProperties_.AddEntriesFrom(input, _repeated_outputProperties_codec);
-            break;
-          }
-          case 66: {
             ConfigId = input.ReadString();
             break;
           }
@@ -507,10 +484,6 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            outputProperties_.AddEntriesFrom(ref input, _repeated_outputProperties_codec);
-            break;
-          }
-          case 66: {
             ConfigId = input.ReadString();
             break;
           }

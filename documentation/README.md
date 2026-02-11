@@ -6,11 +6,42 @@
 - [ar/v1/permissions.proto](#ar_v1_permissions-proto)
     - [WorkerPermission](#ar-v1-WorkerPermission)
   
+- [common/v1/color.proto](#common_v1_color-proto)
+    - [Color](#common-v1-Color)
+  
+- [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
+    - [Anchor](#geometry-v1-Anchor)
+  
+- [geometry/v1/point.proto](#geometry_v1_point-proto)
+    - [Point](#geometry-v1-Point)
+  
+- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
+    - [Quad](#geometry-v1-Quad)
+  
+- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
+    - [LocalizedPose](#geometry-v1-LocalizedPose)
+    - [Pose](#geometry-v1-Pose)
+  
+    - [LocalizedState](#geometry-v1-LocalizedState)
+  
+- [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
+    - [Vector3](#geometry-v1-Vector3)
+  
 - [ar/v1/property.proto](#ar_v1_property-proto)
+    - [AgentExtras](#ar-v1-AgentExtras)
+    - [AnchorExtras](#ar-v1-AnchorExtras)
+    - [ColorExtras](#ar-v1-ColorExtras)
+    - [EnumExtras](#ar-v1-EnumExtras)
+    - [EnumOption](#ar-v1-EnumOption)
+    - [NumberExtras](#ar-v1-NumberExtras)
+    - [PoseExtras](#ar-v1-PoseExtras)
     - [Property](#ar-v1-Property)
     - [PropertyMessages](#ar-v1-PropertyMessages)
     - [PropertyValueUpdate](#ar-v1-PropertyValueUpdate)
+    - [Vector3Extras](#ar-v1-Vector3Extras)
   
+    - [AgentExtrasType](#ar-v1-AgentExtrasType)
+    - [PropertyGroup](#ar-v1-PropertyGroup)
     - [PropertyOrigin](#ar-v1-PropertyOrigin)
     - [PropertyType](#ar-v1-PropertyType)
   
@@ -55,8 +86,10 @@
     - [FeedbackType](#ar-v1-FeedbackType)
   
 - [ar/v1/helper.proto](#ar_v1_helper-proto)
+    - [HelperAddMessage](#ar-v1-HelperAddMessage)
     - [HelperMessage](#ar-v1-HelperMessage)
     - [HelperMessages](#ar-v1-HelperMessages)
+    - [HelperUpdateMessage](#ar-v1-HelperUpdateMessage)
   
     - [HelperType](#ar-v1-HelperType)
   
@@ -75,18 +108,6 @@
   
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
-  
-- [geometry/v1/point.proto](#geometry_v1_point-proto)
-    - [Point](#geometry-v1-Point)
-  
-- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
-    - [Quad](#geometry-v1-Quad)
-  
-- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
-    - [LocalizedPose](#geometry-v1-LocalizedPose)
-    - [Pose](#geometry-v1-Pose)
-  
-    - [LocalizedState](#geometry-v1-LocalizedState)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AssetLocation](#ar-v1-AssetLocation)
@@ -138,9 +159,6 @@
   
     - [WorkerType](#ar-v1-WorkerType)
   
-- [common/v1/color.proto](#common_v1_color-proto)
-    - [Color](#common-v1-Color)
-  
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
   
@@ -149,12 +167,6 @@
   
 - [common/v1/get.proto](#common_v1_get-proto)
     - [GetMessage](#common-v1-GetMessage)
-  
-- [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
-    - [Anchor](#geometry-v1-Anchor)
-  
-- [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
-    - [Vector3](#geometry-v1-Vector3)
   
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
@@ -367,6 +379,238 @@ TODO: consider the order. It should be possible to use &lt; or &gt; to determine
 
 
 
+<a name="common_v1_color-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/color.proto
+
+
+
+<a name="common-v1-Color"></a>
+
+### Color
+Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| red | [float](#float) |  | Ranging from [0:1] |
+| green | [float](#float) |  | Ranging from [0:1] |
+| blue | [float](#float) |  | Ranging from [0:1] |
+| alpha | [float](#float) |  | Ranging from [0:1] --&gt; [transparent : opaque] |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_anchor-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/anchor.proto
+
+
+
+<a name="geometry-v1-Anchor"></a>
+
+### Anchor
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| reference | [string](#string) |  | Reference point towards an object or a thing, e.g. the environment, a robot, the user, ... |
+| frame | [string](#string) |  | Frame is something in relation to the reference, e.g. wrist, tcp, left-hand, ... |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_point-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/point.proto
+
+
+
+<a name="geometry-v1-Point"></a>
+
+### Point
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [double](#double) |  |  |
+| y | [double](#double) |  |  |
+| z | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_quad-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/quad.proto
+
+
+
+<a name="geometry-v1-Quad"></a>
+
+### Quad
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [double](#double) |  |  |
+| y | [double](#double) |  |  |
+| z | [double](#double) |  |  |
+| w | [double](#double) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_pose-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/pose.proto
+
+
+
+<a name="geometry-v1-LocalizedPose"></a>
+
+### LocalizedPose
+A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
+| anchor_id | [string](#string) |  |  |
+| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
+| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="geometry-v1-Pose"></a>
+
+### Pose
+A simple pose consisting of a position and orientation
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="geometry-v1-LocalizedState"></a>
+
+### LocalizedState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
+| LOCALIZED_STATE_FOUND | 1 |  |
+| LOCALIZED_STATE_LOST | 2 |  |
+| LOCALIZED_STATE_STATIC | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_vector3-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/vector3.proto
+
+
+
+<a name="geometry-v1-Vector3"></a>
+
+### Vector3
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_property-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -374,17 +618,130 @@ TODO: consider the order. It should be possible to use &lt; or &gt; to determine
 
 
 
+<a name="ar-v1-AgentExtras"></a>
+
+### AgentExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent_type | [AgentExtrasType](#ar-v1-AgentExtrasType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-AnchorExtras"></a>
+
+### AnchorExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| only_markers | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ColorExtras"></a>
+
+### ColorExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| step | [double](#double) |  |  |
+| default | [common.v1.Color](#common-v1-Color) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-EnumExtras"></a>
+
+### EnumExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| placeholder | [string](#string) |  |  |
+| filter | [bool](#bool) |  |  |
+| grouped | [bool](#bool) |  |  |
+| show_icons | [bool](#bool) |  |  |
+| max_selected_labels | [uint32](#uint32) |  |  |
+| options | [EnumOption](#ar-v1-EnumOption) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-EnumOption"></a>
+
+### EnumOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| group | [string](#string) |  |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-NumberExtras"></a>
+
+### NumberExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min | [double](#double) |  |  |
+| max | [double](#double) |  |  |
+| step | [double](#double) |  |  |
+| unit | [string](#string) |  | &#34;mm&#34;, &#34;deg&#34;, &#34;N&#34; |
+| precision | [uint32](#uint32) |  | Decimal places for display |
+
+
+
+
+
+
+<a name="ar-v1-PoseExtras"></a>
+
+### PoseExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| anchor_editable | [bool](#bool) |  |  |
+| pose_editable | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="ar-v1-Property"></a>
 
 ### Property
 Properties are used by various components to define them, such as: feedback, actions, and conditions.
-
-TODO: Fix this
-option (buf.validate.message).cel = {
-id: &#34;mirror_id_set_if_origin_is_mirror&#34;
-expression: &#34;!this.mirror_property_id.startsWith(&#39;prop-&#39;) &amp;&amp; this.origin == 2&#34;
-message: &#34;Mirror ID must be set when origin is mirror&#34;
-};
 
 
 | Field | Type | Label | Description |
@@ -394,16 +751,33 @@ message: &#34;Mirror ID must be set when origin is mirror&#34;
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [PropertyType](#ar-v1-PropertyType) |  |  |
-| value | [string](#string) |  | the current value of the property (JSON encoded) |
-| extras | [string](#string) |  | JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property. |
 | minimum_required_permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
 | origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
 | origins | [PropertyOrigin](#ar-v1-PropertyOrigin) | repeated |  |
 | mirror_property_id | [string](#string) |  |  |
-| group | [string](#string) |  |  |
+| group | [PropertyGroup](#ar-v1-PropertyGroup) |  |  |
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
+| advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
+| bool_value | [bool](#bool) |  |  |
+| int_value | [sint64](#sint64) |  |  |
+| float_value | [float](#float) |  |  |
+| double_value | [double](#double) |  |  |
+| string_value | [string](#string) |  |  |
+| vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
+| color_value | [common.v1.Color](#common-v1-Color) |  |  |
+| agent_id_value | [string](#string) |  |  |
+| enum_value | [string](#string) |  |  |
+| enum_multi_value | [string](#string) | repeated |  |
+| icon_value | [string](#string) |  |  |
+| number_extras | [NumberExtras](#ar-v1-NumberExtras) |  |  |
+| enum_extras | [EnumExtras](#ar-v1-EnumExtras) |  |  |
+| vector3_extras | [Vector3Extras](#ar-v1-Vector3Extras) |  |  |
+| color_extras | [ColorExtras](#ar-v1-ColorExtras) |  |  |
+| agent_extras | [AgentExtrasType](#ar-v1-AgentExtrasType) |  |  |
 
 
 
@@ -442,7 +816,57 @@ message: &#34;Mirror ID must be set when origin is mirror&#34;
 
 
 
+
+<a name="ar-v1-Vector3Extras"></a>
+
+### Vector3Extras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min | [double](#double) |  |  |
+| max | [double](#double) |  |  |
+| step | [double](#double) |  |  |
+| labels | [string](#string) | repeated |  |
+| unit | [string](#string) |  |  |
+
+
+
+
+
  
+
+
+<a name="ar-v1-AgentExtrasType"></a>
+
+### AgentExtrasType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AGENT_EXTRAS_TYPE_UNSPECIFIED | 0 |  |
+| AGENT_EXTRAS_TYPE_HUMAN | 1 |  |
+| AGENT_EXTRAS_TYPE_ROBOT | 2 |  |
+| AGENT_EXTRAS_TYPE_BOTH | 3 |  |
+
+
+
+<a name="ar-v1-PropertyGroup"></a>
+
+### PropertyGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_GROUP_UNSPECIFIED | 0 |  |
+| PROPERTY_GROUP_OUTPUT | 1 |  |
+| PROPERTY_GROUP_NON_EDITABLE | 2 |  |
+| PROPERTY_GROUP_STYLING | 3 |  |
+| PROPERTY_GROUP_LOCATION | 4 |  |
+| PROPERTY_GROUP_ICON | 5 |  |
+| PROPERTY_GROUP_CONFIGURATION | 6 |  |
+
 
 
 <a name="ar-v1-PropertyOrigin"></a>
@@ -478,6 +902,7 @@ Used to specify the type of a property
 | PROPERTY_TYPE_AGENT | 10 |  |
 | PROPERTY_TYPE_ENUM | 11 |  |
 | PROPERTY_TYPE_ENUM_MULTI | 12 |  |
+| PROPERTY_TYPE_ICON | 13 |  |
 
 
  
@@ -574,7 +999,6 @@ Used to specify the type of a property
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
-| output_properties | [Property](#ar-v1-Property) | repeated |  |
 | config_id | [string](#string) |  |  |
 
 
@@ -942,7 +1366,6 @@ It is expected to be high-frequency updates or at least updates every time the s
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
-| output_properties | [Property](#ar-v1-Property) | repeated |  |
 | config_id | [string](#string) |  |  |
 
 
@@ -1026,6 +1449,25 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
+<a name="ar-v1-HelperAddMessage"></a>
+
+### HelperAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+
+
+
+
+
+
 <a name="ar-v1-HelperMessage"></a>
 
 ### HelperMessage
@@ -1040,7 +1482,6 @@ It is expected to be high-frequency updates or at least updates every time the s
 | description | [string](#string) |  |  |
 | type | [HelperType](#ar-v1-HelperType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
-| output_properties | [Property](#ar-v1-Property) | repeated |  |
 
 
 
@@ -1056,6 +1497,24 @@ It is expected to be high-frequency updates or at least updates every time the s
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperUpdateMessage"></a>
+
+### HelperUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -1277,139 +1736,6 @@ Just delete this?
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_point-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/point.proto
-
-
-
-<a name="geometry-v1-Point"></a>
-
-### Point
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_quad-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/quad.proto
-
-
-
-<a name="geometry-v1-Quad"></a>
-
-### Quad
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
-| w | [double](#double) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_pose-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/pose.proto
-
-
-
-<a name="geometry-v1-LocalizedPose"></a>
-
-### LocalizedPose
-A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| position | [Point](#geometry-v1-Point) |  |  |
-| orientation | [Quad](#geometry-v1-Quad) |  |  |
-| anchor_id | [string](#string) |  |  |
-| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
-| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="geometry-v1-Pose"></a>
-
-### Pose
-A simple pose consisting of a position and orientation
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| position | [Point](#geometry-v1-Point) |  |  |
-| orientation | [Quad](#geometry-v1-Quad) |  |  |
-
-
-
-
-
- 
-
-
-<a name="geometry-v1-LocalizedState"></a>
-
-### LocalizedState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
-| LOCALIZED_STATE_FOUND | 1 |  |
-| LOCALIZED_STATE_LOST | 2 |  |
-| LOCALIZED_STATE_STATIC | 3 |  |
-
 
  
 
@@ -2030,40 +2356,6 @@ TODO: Add worker (including skill-matrix)?
 
 
 
-<a name="common_v1_color-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/color.proto
-
-
-
-<a name="common-v1-Color"></a>
-
-### Color
-Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| red | [float](#float) |  | Ranging from [0:1] |
-| green | [float](#float) |  | Ranging from [0:1] |
-| blue | [float](#float) |  | Ranging from [0:1] |
-| alpha | [float](#float) |  | Ranging from [0:1] --&gt; [transparent : opaque] |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="common_v1_delete-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2138,71 +2430,6 @@ Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half tr
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_anchor-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/anchor.proto
-
-
-
-<a name="geometry-v1-Anchor"></a>
-
-### Anchor
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| reference | [string](#string) |  | Reference point towards an object or a thing, e.g. the environment, a robot, the user, ... |
-| frame | [string](#string) |  | Frame is something in relation to the reference, e.g. wrist, tcp, left-hand, ... |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_vector3-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/vector3.proto
-
-
-
-<a name="geometry-v1-Vector3"></a>
-
-### Vector3
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
 
 
 

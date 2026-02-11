@@ -48,14 +48,13 @@ FEEDBACK_TYPE_PLAY_SOUND: FeedbackType
 FEEDBACK_TYPE_RULER: FeedbackType
 
 class FeedbackMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "properties", "output_properties", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "properties", "config_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
-    OUTPUT_PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
@@ -63,9 +62,8 @@ class FeedbackMessage(_message.Message):
     description: str
     type: FeedbackType
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
-    output_properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., output_properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
 
 class FeedbackMessages(_message.Message):
     __slots__ = ("feedbacks",)

@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -83,16 +85,15 @@ func (HelperType) EnumDescriptor() ([]byte, []int) {
 }
 
 type HelperMessage struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type             HelperType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.HelperType" json:"type,omitempty"`
-	Properties       []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	OutputProperties []*Property            `protobuf:"bytes,7,rep,name=output_properties,json=outputProperties,proto3" json:"output_properties,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          HelperType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.HelperType" json:"type,omitempty"`
+	Properties    []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *HelperMessage) Reset() {
@@ -167,13 +168,6 @@ func (x *HelperMessage) GetProperties() []*Property {
 	return nil
 }
 
-func (x *HelperMessage) GetOutputProperties() []*Property {
-	if x != nil {
-		return x.OutputProperties
-	}
-	return nil
-}
-
 type HelperMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Helpers       []*HelperMessage       `protobuf:"bytes,1,rep,name=helpers,proto3" json:"helpers,omitempty"`
@@ -218,23 +212,177 @@ func (x *HelperMessages) GetHelpers() []*HelperMessage {
 	return nil
 }
 
+type HelperAddMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId      string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          HelperType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.HelperType" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HelperAddMessage) Reset() {
+	*x = HelperAddMessage{}
+	mi := &file_ar_v1_helper_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HelperAddMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HelperAddMessage) ProtoMessage() {}
+
+func (x *HelperAddMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_helper_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HelperAddMessage.ProtoReflect.Descriptor instead.
+func (*HelperAddMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_helper_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *HelperAddMessage) GetConfigId() string {
+	if x != nil {
+		return x.ConfigId
+	}
+	return ""
+}
+
+func (x *HelperAddMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *HelperAddMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *HelperAddMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *HelperAddMessage) GetType() HelperType {
+	if x != nil {
+		return x.Type
+	}
+	return HelperType_HELPER_TYPE_UNSPECIFIED
+}
+
+type HelperUpdateMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HelperUpdateMessage) Reset() {
+	*x = HelperUpdateMessage{}
+	mi := &file_ar_v1_helper_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HelperUpdateMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HelperUpdateMessage) ProtoMessage() {}
+
+func (x *HelperUpdateMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_helper_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HelperUpdateMessage.ProtoReflect.Descriptor instead.
+func (*HelperUpdateMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_helper_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *HelperUpdateMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *HelperUpdateMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *HelperUpdateMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *HelperUpdateMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 var File_ar_v1_helper_proto protoreflect.FileDescriptor
 
 const file_ar_v1_helper_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/helper.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\"\xff\x01\n" +
+	"\x12ar/v1/helper.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x01\n" +
 	"\rHelperMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.HelperTypeR\x04type\x12/\n" +
 	"\n" +
 	"properties\x18\x06 \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\x12<\n" +
-	"\x11output_properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\x10outputProperties\"@\n" +
+	"properties\"@\n" +
 	"\x0eHelperMessages\x12.\n" +
-	"\ahelpers\x18\x01 \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers*\xb5\x01\n" +
+	"\ahelpers\x18\x01 \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\"\xb8\x01\n" +
+	"\x10HelperAddMessage\x12&\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.HelperTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"z\n" +
+	"\x13HelperUpdateMessage\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xb5\x01\n" +
 	"\n" +
 	"HelperType\x12\x1b\n" +
 	"\x17HELPER_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
@@ -260,18 +408,20 @@ func file_ar_v1_helper_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_helper_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_helper_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_ar_v1_helper_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_helper_proto_goTypes = []any{
-	(HelperType)(0),        // 0: ar.v1.HelperType
-	(*HelperMessage)(nil),  // 1: ar.v1.HelperMessage
-	(*HelperMessages)(nil), // 2: ar.v1.HelperMessages
-	(*Property)(nil),       // 3: ar.v1.Property
+	(HelperType)(0),             // 0: ar.v1.HelperType
+	(*HelperMessage)(nil),       // 1: ar.v1.HelperMessage
+	(*HelperMessages)(nil),      // 2: ar.v1.HelperMessages
+	(*HelperAddMessage)(nil),    // 3: ar.v1.HelperAddMessage
+	(*HelperUpdateMessage)(nil), // 4: ar.v1.HelperUpdateMessage
+	(*Property)(nil),            // 5: ar.v1.Property
 }
 var file_ar_v1_helper_proto_depIdxs = []int32{
 	0, // 0: ar.v1.HelperMessage.type:type_name -> ar.v1.HelperType
-	3, // 1: ar.v1.HelperMessage.properties:type_name -> ar.v1.Property
-	3, // 2: ar.v1.HelperMessage.output_properties:type_name -> ar.v1.Property
-	1, // 3: ar.v1.HelperMessages.helpers:type_name -> ar.v1.HelperMessage
+	5, // 1: ar.v1.HelperMessage.properties:type_name -> ar.v1.Property
+	1, // 2: ar.v1.HelperMessages.helpers:type_name -> ar.v1.HelperMessage
+	0, // 3: ar.v1.HelperAddMessage.type:type_name -> ar.v1.HelperType
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -291,7 +441,7 @@ func file_ar_v1_helper_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_helper_proto_rawDesc), len(file_ar_v1_helper_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

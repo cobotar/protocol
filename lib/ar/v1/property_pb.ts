@@ -7,23 +7,24 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { WorkerPermission } from "./permissions_pb.ts";
 import { file_ar_v1_permissions } from "./permissions_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { Color } from "../../common/v1/color_pb.ts";
+import { file_common_v1_color } from "../../common/v1/color_pb.ts";
+import type { Anchor } from "../../geometry/v1/anchor_pb.ts";
+import { file_geometry_v1_anchor } from "../../geometry/v1/anchor_pb.ts";
+import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
+import { file_geometry_v1_vector3 } from "../../geometry/v1/vector3_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/property.proto.
  */
 export const file_ar_v1_property: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEiqgMKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARINCgV2YWx1ZRgGIAEoCRIOCgZleHRyYXMYByABKAkSRgobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMhcuYXIudjEuV29ya2VyUGVybWlzc2lvbkIIukgFggECEAESLwoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjUKB29yaWdpbnMYCiADKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkSDQoFZ3JvdXAYDCABKAkSEAoIb3JkZXJpbmcYDSABKAUSEgoKaGlkZV9ncm91cBgOIAEoCBIRCglwYXJlbnRfaWQYDyABKAkiNwoQUHJvcGVydHlNZXNzYWdlcxIjCgpwcm9wZXJ0aWVzGAEgAygLMg8uYXIudjEuUHJvcGVydHkicwoTUHJvcGVydHlWYWx1ZVVwZGF0ZRIKCgJpZBgBIAEoCRINCgV2YWx1ZRgGIAEoCRIlCgZvcmlnaW4YCSABKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbhIaChJtaXJyb3JfcHJvcGVydHlfaWQYCyABKAkq3gIKDFByb3BlcnR5VHlwZRIdChlQUk9QRVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09MEAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZMT0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9UWVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBST1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgSFwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfQUdFTlQQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBFX0VOVU1fTVVMVEkQDCpoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAJCiQEKCWNvbS5hci52MUINUHJvcGVydHlQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_permissions, file_buf_validate_validate]);
+  fileDesc("ChRhci92MS9wcm9wZXJ0eS5wcm90bxIFYXIudjEirREKCFByb3BlcnR5EgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARJGChttaW5pbXVtX3JlcXVpcmVkX3Blcm1pc3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uQgi6SAWCAQIQARIvCgZvcmlnaW4YByABKA4yFS5hci52MS5Qcm9wZXJ0eU9yaWdpbkIIukgFggECEAESNQoHb3JpZ2lucxgIIAMoDjIVLmFyLnYxLlByb3BlcnR5T3JpZ2luQg26SAqSAQciBYIBAhABEhoKEm1pcnJvcl9wcm9wZXJ0eV9pZBgJIAEoCRIjCgVncm91cBgKIAEoDjIULmFyLnYxLlByb3BlcnR5R3JvdXASEAoIb3JkZXJpbmcYCyABKAUSEgoKaGlkZV9ncm91cBgMIAEoCBIRCglwYXJlbnRfaWQYDSABKAkSEAoIYWR2YW5jZWQYDiABKAgSEgoKYm9vbF92YWx1ZRgVIAEoCBIRCglpbnRfdmFsdWUYFiABKBISEwoLZmxvYXRfdmFsdWUYFyABKAISFAoMZG91YmxlX3ZhbHVlGBggASgBEhQKDHN0cmluZ192YWx1ZRgZIAEoCRIrCg12ZWN0b3IzX3ZhbHVlGBogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIuCgpwb3NlX3ZhbHVlGBsgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIpCgxhbmNob3JfdmFsdWUYHCABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISJQoLY29sb3JfdmFsdWUYHSABKAsyEC5jb21tb24udjEuQ29sb3ISFgoOYWdlbnRfaWRfdmFsdWUYFCABKAkSEgoKZW51bV92YWx1ZRgfIAEoCRIYChBlbnVtX211bHRpX3ZhbHVlGCAgAygJEhIKCmljb25fdmFsdWUYISABKAkSKgoNbnVtYmVyX2V4dHJhcxgpIAEoCzITLmFyLnYxLk51bWJlckV4dHJhcxImCgtlbnVtX2V4dHJhcxgqIAEoCzIRLmFyLnYxLkVudW1FeHRyYXMSLAoOdmVjdG9yM19leHRyYXMYKyABKAsyFC5hci52MS5WZWN0b3IzRXh0cmFzEigKDGNvbG9yX2V4dHJhcxgsIAEoCzISLmFyLnYxLkNvbG9yRXh0cmFzEiwKDGFnZW50X2V4dHJhcxgtIAEoDjIWLmFyLnYxLkFnZW50RXh0cmFzVHlwZTqsCbpIqAkarwUKIHByb3BlcnR5X3R5cGVfbWF0Y2hlc192YWx1ZV9raW5kEjNwcm9wZXJ0eS50eXBlIG11c3QgbWF0Y2ggdGhlIGtpbmQgb2YgcHJvcGVydHkudmFsdWUa1QQoKHRoaXMudHlwZSA9PSAxICYmIGhhcyh0aGlzLmJvb2xfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDIgJiYgaGFzKHRoaXMuaW50X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAzICYmIGhhcyh0aGlzLmZsb2F0X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA0ICYmIGhhcyh0aGlzLmRvdWJsZV92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNSAmJiBoYXModGhpcy5zdHJpbmdfdmFsdWUpKSB8fCh0aGlzLnR5cGUgPT0gNiAmJiBoYXModGhpcy52ZWN0b3IzX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA3ICYmIGhhcyh0aGlzLnBvc2VfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDggJiYgaGFzKHRoaXMuYW5jaG9yX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA5ICYmIGhhcyh0aGlzLmNvbG9yX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAxMCAmJiBoYXModGhpcy5hZ2VudF9pZF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTEgJiYgaGFzKHRoaXMuZW51bV92YWx1ZSkpIHx8KHRoaXMudHlwZSA9PSAxMiAmJiBzaXplKHRoaXMuZW51bV9tdWx0aV92YWx1ZSkgPiAwKSkgfHwgKHRoaXMudHlwZSA9PSAxMyAmJiBoYXModGhpcy5pY29uX3ZhbHVlKSkajQEKIm1pcnJvcl9yZXF1aXJlc19taXJyb3JfcHJvcGVydHlfaWQSNG1pcnJvcl9wcm9wZXJ0eV9pZCBtdXN0IGJlIHNldCB3aGVuIG9yaWdpbiBpcyBNSVJST1IaMXRoaXMub3JpZ2luICE9IDIgfHwgdGhpcy5taXJyb3JfcHJvcGVydHlfaWQgIT0gJycaZQoUb3V0cHV0X211c3RfYmVfZml4ZWQSKG91dHB1dCBwcm9wZXJ0aWVzIG11c3QgaGF2ZSBvcmlnaW4gRklYRUQaI3RoaXMuZ3JvdXAgIT0gMSB8fCB0aGlzLm9yaWdpbiA9PSAxIrIBCgpib29sX3ZhbHVlCglpbnRfdmFsdWUKC2Zsb2F0X3ZhbHVlCgxkb3VibGVfdmFsdWUKDHN0cmluZ192YWx1ZQoNdmVjdG9yM192YWx1ZQoKcG9zZV92YWx1ZQoMYW5jaG9yX3ZhbHVlCgtjb2xvcl92YWx1ZQoOYWdlbnRfaWRfdmFsdWUKCmVudW1fdmFsdWUKEG11bHRpX2VudW1fdmFsdWUKCmljb25fdmFsdWUQASJICg1udW1iZXJfZXh0cmFzCgtlbnVtX2V4dHJhcwoOdmVjdG9yM19leHRyYXMKDGNvbG9yX2V4dHJhcwoMYWdlbnRfZXh0cmFzIjcKEFByb3BlcnR5TWVzc2FnZXMSIwoKcHJvcGVydGllcxgBIAMoCzIPLmFyLnYxLlByb3BlcnR5InMKE1Byb3BlcnR5VmFsdWVVcGRhdGUSCgoCaWQYASABKAkSDQoFdmFsdWUYBiABKAkSJQoGb3JpZ2luGAkgASgOMhUuYXIudjEuUHJvcGVydHlPcmlnaW4SGgoSbWlycm9yX3Byb3BlcnR5X2lkGAsgASgJImcKDE51bWJlckV4dHJhcxILCgNtaW4YASABKAESCwoDbWF4GAIgASgBEhwKBHN0ZXAYAyABKAFCDrpICxIJKQAAAAAAAAAAEgwKBHVuaXQYBCABKAkSEQoJcHJlY2lzaW9uGAUgASgNImsKCkVudW1PcHRpb24SFgoFdmFsdWUYASABKAlCB7pIBHICEAESFgoFbGFiZWwYAiABKAlCB7pIBHICEAESDAoEaWNvbhgDIAEoCRINCgVncm91cBgEIAEoCRIQCghkaXNhYmxlZBgFIAEoCCKhAQoKRW51bUV4dHJhcxITCgtwbGFjZWhvbGRlchgBIAEoCRIOCgZmaWx0ZXIYAiABKAgSDwoHZ3JvdXBlZBgDIAEoCBISCgpzaG93X2ljb25zGAQgASgIEhsKE21heF9zZWxlY3RlZF9sYWJlbHMYBSABKA0SLAoHb3B0aW9ucxgGIAMoCzIRLmFyLnYxLkVudW1PcHRpb25CCLpIBZIBAggBInEKDVZlY3RvcjNFeHRyYXMSCwoDbWluGAEgASgBEgsKA21heBgCIAEoARIcCgRzdGVwGAMgASgBQg66SAsSCSkAAAAAAAAAABIaCgZsYWJlbHMYBCADKAlCCrpIB5IBBAgDEAMSDAoEdW5pdBgFIAEoCSJOCgtDb2xvckV4dHJhcxIcCgRzdGVwGAEgASgBQg66SAsSCSkAAAAAAAAAABIhCgdkZWZhdWx0GAIgASgLMhAuY29tbW9uLnYxLkNvbG9yIiQKDEFuY2hvckV4dHJhcxIUCgxvbmx5X21hcmtlcnMYASABKAgiPAoKUG9zZUV4dHJhcxIXCg9hbmNob3JfZWRpdGFibGUYASABKAgSFQoNcG9zZV9lZGl0YWJsZRgCIAEoCCI5CgtBZ2VudEV4dHJhcxIqCgphZ2VudF90eXBlGAEgASgOMhYuYXIudjEuQWdlbnRFeHRyYXNUeXBlKvYCCgxQcm9wZXJ0eVR5cGUSHQoZUFJPUEVSVFlfVFlQRV9VTlNQRUNJRklFRBAAEhYKElBST1BFUlRZX1RZUEVfQk9PTBABEhUKEVBST1BFUlRZX1RZUEVfSU5UEAISFwoTUFJPUEVSVFlfVFlQRV9GTE9BVBADEhgKFFBST1BFUlRZX1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVSVFlfVFlQRV9TVFJJTkcQBRIZChVQUk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIWChJQUk9QRVJUWV9UWVBFX1BPU0UQBxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hPUhAIEhcKE1BST1BFUlRZX1RZUEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX0FHRU5UEAoSFgoSUFJPUEVSVFlfVFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlfVFlQRV9FTlVNX01VTFRJEAwSFgoSUFJPUEVSVFlfVFlQRV9JQ09OEA0qaAoOUHJvcGVydHlPcmlnaW4SHwobUFJPUEVSVFlfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfT1JJR0lOX0ZJWEVEEAESGgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACKt8BCg1Qcm9wZXJ0eUdyb3VwEh4KGlBST1BFUlRZX0dST1VQX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfR1JPVVBfT1VUUFVUEAESHwobUFJPUEVSVFlfR1JPVVBfTk9OX0VESVRBQkxFEAISGgoWUFJPUEVSVFlfR1JPVVBfU1RZTElORxADEhsKF1BST1BFUlRZX0dST1VQX0xPQ0FUSU9OEAQSFwoTUFJPUEVSVFlfR1JPVVBfSUNPThAFEiAKHFBST1BFUlRZX0dST1VQX0NPTkZJR1VSQVRJT04QBiqKAQoPQWdlbnRFeHRyYXNUeXBlEiEKHUFHRU5UX0VYVFJBU19UWVBFX1VOU1BFQ0lGSUVEEAASGwoXQUdFTlRfRVhUUkFTX1RZUEVfSFVNQU4QARIbChdBR0VOVF9FWFRSQVNfVFlQRV9ST0JPVBACEhoKFkFHRU5UX0VYVFJBU19UWVBFX0JPVEgQA0KJAQoJY29tLmFyLnYxQg1Qcm9wZXJ0eVByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_permissions, file_buf_validate_validate, file_common_v1_color, file_geometry_v1_anchor, file_geometry_v1_pose, file_geometry_v1_vector3]);
 
 /**
  * Properties are used by various components to define them, such as: feedback, actions, and conditions.
- *
- * TODO: Fix this
- * option (buf.validate.message).cel = {
- * id: "mirror_id_set_if_origin_is_mirror"
- * expression: "!this.mirror_property_id.startsWith('prop-') && this.origin == 2"
- * message: "Mirror ID must be set when origin is mirror"
- * };
  *
  * @generated from message ar.v1.Property
  */
@@ -54,58 +55,141 @@ export type Property = Message<"ar.v1.Property"> & {
   type: PropertyType;
 
   /**
-   * the current value of the property (JSON encoded)
-   *
-   * @generated from field: string value = 6;
-   */
-  value: string;
-
-  /**
-   * JSON encoded extra values, e.g. {min: -0.1, max: 0.5, step: 0.1} for a double property.
-   *
-   * @generated from field: string extras = 7;
-   */
-  extras: string;
-
-  /**
-   * @generated from field: ar.v1.WorkerPermission minimum_required_permission = 8;
+   * @generated from field: ar.v1.WorkerPermission minimum_required_permission = 6;
    */
   minimumRequiredPermission: WorkerPermission;
 
   /**
-   * @generated from field: ar.v1.PropertyOrigin origin = 9;
+   * @generated from field: ar.v1.PropertyOrigin origin = 7;
    */
   origin: PropertyOrigin;
 
   /**
-   * @generated from field: repeated ar.v1.PropertyOrigin origins = 10;
+   * @generated from field: repeated ar.v1.PropertyOrigin origins = 8;
    */
   origins: PropertyOrigin[];
 
   /**
-   * @generated from field: string mirror_property_id = 11;
+   * @generated from field: string mirror_property_id = 9;
    */
   mirrorPropertyId: string;
 
   /**
-   * @generated from field: string group = 12;
+   * @generated from field: ar.v1.PropertyGroup group = 10;
    */
-  group: string;
+  group: PropertyGroup;
 
   /**
-   * @generated from field: int32 ordering = 13;
+   * @generated from field: int32 ordering = 11;
    */
   ordering: number;
 
   /**
-   * @generated from field: bool hide_group = 14;
+   * @generated from field: bool hide_group = 12;
    */
   hideGroup: boolean;
 
   /**
-   * @generated from field: string parent_id = 15;
+   * @generated from field: string parent_id = 13;
    */
   parentId: string;
+
+  /**
+   * Hide behind "Advanced" toogle
+   *
+   * @generated from field: bool advanced = 14;
+   */
+  advanced: boolean;
+
+  /**
+   * @generated from field: bool bool_value = 21;
+   */
+  boolValue: boolean;
+
+  /**
+   * @generated from field: sint64 int_value = 22;
+   */
+  intValue: bigint;
+
+  /**
+   * @generated from field: float float_value = 23;
+   */
+  floatValue: number;
+
+  /**
+   * @generated from field: double double_value = 24;
+   */
+  doubleValue: number;
+
+  /**
+   * @generated from field: string string_value = 25;
+   */
+  stringValue: string;
+
+  /**
+   * @generated from field: geometry.v1.Vector3 vector3_value = 26;
+   */
+  vector3Value?: Vector3;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose pose_value = 27;
+   */
+  poseValue?: LocalizedPose;
+
+  /**
+   * @generated from field: geometry.v1.Anchor anchor_value = 28;
+   */
+  anchorValue?: Anchor;
+
+  /**
+   * @generated from field: common.v1.Color color_value = 29;
+   */
+  colorValue?: Color;
+
+  /**
+   * @generated from field: string agent_id_value = 20;
+   */
+  agentIdValue: string;
+
+  /**
+   * @generated from field: string enum_value = 31;
+   */
+  enumValue: string;
+
+  /**
+   * @generated from field: repeated string enum_multi_value = 32;
+   */
+  enumMultiValue: string[];
+
+  /**
+   * @generated from field: string icon_value = 33;
+   */
+  iconValue: string;
+
+  /**
+   * @generated from field: ar.v1.NumberExtras number_extras = 41;
+   */
+  numberExtras?: NumberExtras;
+
+  /**
+   * @generated from field: ar.v1.EnumExtras enum_extras = 42;
+   */
+  enumExtras?: EnumExtras;
+
+  /**
+   * @generated from field: ar.v1.Vector3Extras vector3_extras = 43;
+   */
+  vector3Extras?: Vector3Extras;
+
+  /**
+   * @generated from field: ar.v1.ColorExtras color_extras = 44;
+   */
+  colorExtras?: ColorExtras;
+
+  /**
+   * @generated from field: ar.v1.AgentExtrasType agent_extras = 45;
+   */
+  agentExtras: AgentExtrasType;
 };
 
 /**
@@ -163,6 +247,241 @@ export type PropertyValueUpdate = Message<"ar.v1.PropertyValueUpdate"> & {
  */
 export const PropertyValueUpdateSchema: GenMessage<PropertyValueUpdate> = /*@__PURE__*/
   messageDesc(file_ar_v1_property, 2);
+
+/**
+ * @generated from message ar.v1.NumberExtras
+ */
+export type NumberExtras = Message<"ar.v1.NumberExtras"> & {
+  /**
+   * @generated from field: double min = 1;
+   */
+  min: number;
+
+  /**
+   * @generated from field: double max = 2;
+   */
+  max: number;
+
+  /**
+   * @generated from field: double step = 3;
+   */
+  step: number;
+
+  /**
+   * "mm", "deg", "N"
+   *
+   * @generated from field: string unit = 4;
+   */
+  unit: string;
+
+  /**
+   * Decimal places for display
+   *
+   * @generated from field: uint32 precision = 5;
+   */
+  precision: number;
+};
+
+/**
+ * Describes the message ar.v1.NumberExtras.
+ * Use `create(NumberExtrasSchema)` to create a new message.
+ */
+export const NumberExtrasSchema: GenMessage<NumberExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 3);
+
+/**
+ * @generated from message ar.v1.EnumOption
+ */
+export type EnumOption = Message<"ar.v1.EnumOption"> & {
+  /**
+   * @generated from field: string value = 1;
+   */
+  value: string;
+
+  /**
+   * @generated from field: string label = 2;
+   */
+  label: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string group = 4;
+   */
+  group: string;
+
+  /**
+   * @generated from field: bool disabled = 5;
+   */
+  disabled: boolean;
+};
+
+/**
+ * Describes the message ar.v1.EnumOption.
+ * Use `create(EnumOptionSchema)` to create a new message.
+ */
+export const EnumOptionSchema: GenMessage<EnumOption> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 4);
+
+/**
+ * @generated from message ar.v1.EnumExtras
+ */
+export type EnumExtras = Message<"ar.v1.EnumExtras"> & {
+  /**
+   * @generated from field: string placeholder = 1;
+   */
+  placeholder: string;
+
+  /**
+   * @generated from field: bool filter = 2;
+   */
+  filter: boolean;
+
+  /**
+   * @generated from field: bool grouped = 3;
+   */
+  grouped: boolean;
+
+  /**
+   * @generated from field: bool show_icons = 4;
+   */
+  showIcons: boolean;
+
+  /**
+   * @generated from field: uint32 max_selected_labels = 5;
+   */
+  maxSelectedLabels: number;
+
+  /**
+   * @generated from field: repeated ar.v1.EnumOption options = 6;
+   */
+  options: EnumOption[];
+};
+
+/**
+ * Describes the message ar.v1.EnumExtras.
+ * Use `create(EnumExtrasSchema)` to create a new message.
+ */
+export const EnumExtrasSchema: GenMessage<EnumExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 5);
+
+/**
+ * @generated from message ar.v1.Vector3Extras
+ */
+export type Vector3Extras = Message<"ar.v1.Vector3Extras"> & {
+  /**
+   * @generated from field: double min = 1;
+   */
+  min: number;
+
+  /**
+   * @generated from field: double max = 2;
+   */
+  max: number;
+
+  /**
+   * @generated from field: double step = 3;
+   */
+  step: number;
+
+  /**
+   * @generated from field: repeated string labels = 4;
+   */
+  labels: string[];
+
+  /**
+   * @generated from field: string unit = 5;
+   */
+  unit: string;
+};
+
+/**
+ * Describes the message ar.v1.Vector3Extras.
+ * Use `create(Vector3ExtrasSchema)` to create a new message.
+ */
+export const Vector3ExtrasSchema: GenMessage<Vector3Extras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 6);
+
+/**
+ * @generated from message ar.v1.ColorExtras
+ */
+export type ColorExtras = Message<"ar.v1.ColorExtras"> & {
+  /**
+   * @generated from field: double step = 1;
+   */
+  step: number;
+
+  /**
+   * @generated from field: common.v1.Color default = 2;
+   */
+  default?: Color;
+};
+
+/**
+ * Describes the message ar.v1.ColorExtras.
+ * Use `create(ColorExtrasSchema)` to create a new message.
+ */
+export const ColorExtrasSchema: GenMessage<ColorExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 7);
+
+/**
+ * @generated from message ar.v1.AnchorExtras
+ */
+export type AnchorExtras = Message<"ar.v1.AnchorExtras"> & {
+  /**
+   * @generated from field: bool only_markers = 1;
+   */
+  onlyMarkers: boolean;
+};
+
+/**
+ * Describes the message ar.v1.AnchorExtras.
+ * Use `create(AnchorExtrasSchema)` to create a new message.
+ */
+export const AnchorExtrasSchema: GenMessage<AnchorExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 8);
+
+/**
+ * @generated from message ar.v1.PoseExtras
+ */
+export type PoseExtras = Message<"ar.v1.PoseExtras"> & {
+  /**
+   * @generated from field: bool anchor_editable = 1;
+   */
+  anchorEditable: boolean;
+
+  /**
+   * @generated from field: bool pose_editable = 2;
+   */
+  poseEditable: boolean;
+};
+
+/**
+ * Describes the message ar.v1.PoseExtras.
+ * Use `create(PoseExtrasSchema)` to create a new message.
+ */
+export const PoseExtrasSchema: GenMessage<PoseExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 9);
+
+/**
+ * @generated from message ar.v1.AgentExtras
+ */
+export type AgentExtras = Message<"ar.v1.AgentExtras"> & {
+  /**
+   * @generated from field: ar.v1.AgentExtrasType agent_type = 1;
+   */
+  agentType: AgentExtrasType;
+};
+
+/**
+ * Describes the message ar.v1.AgentExtras.
+ * Use `create(AgentExtrasSchema)` to create a new message.
+ */
+export const AgentExtrasSchema: GenMessage<AgentExtras> = /*@__PURE__*/
+  messageDesc(file_ar_v1_property, 10);
 
 /**
  * Used to specify the type of a property
@@ -234,6 +553,11 @@ export enum PropertyType {
    * @generated from enum value: PROPERTY_TYPE_ENUM_MULTI = 12;
    */
   ENUM_MULTI = 12,
+
+  /**
+   * @generated from enum value: PROPERTY_TYPE_ICON = 13;
+   */
+  ICON = 13,
 }
 
 /**
@@ -273,4 +597,81 @@ export enum PropertyOrigin {
  */
 export const PropertyOriginSchema: GenEnum<PropertyOrigin> = /*@__PURE__*/
   enumDesc(file_ar_v1_property, 1);
+
+/**
+ * @generated from enum ar.v1.PropertyGroup
+ */
+export enum PropertyGroup {
+  /**
+   * @generated from enum value: PROPERTY_GROUP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_OUTPUT = 1;
+   */
+  OUTPUT = 1,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_NON_EDITABLE = 2;
+   */
+  NON_EDITABLE = 2,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_STYLING = 3;
+   */
+  STYLING = 3,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_LOCATION = 4;
+   */
+  LOCATION = 4,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_ICON = 5;
+   */
+  ICON = 5,
+
+  /**
+   * @generated from enum value: PROPERTY_GROUP_CONFIGURATION = 6;
+   */
+  CONFIGURATION = 6,
+}
+
+/**
+ * Describes the enum ar.v1.PropertyGroup.
+ */
+export const PropertyGroupSchema: GenEnum<PropertyGroup> = /*@__PURE__*/
+  enumDesc(file_ar_v1_property, 2);
+
+/**
+ * @generated from enum ar.v1.AgentExtrasType
+ */
+export enum AgentExtrasType {
+  /**
+   * @generated from enum value: AGENT_EXTRAS_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: AGENT_EXTRAS_TYPE_HUMAN = 1;
+   */
+  HUMAN = 1,
+
+  /**
+   * @generated from enum value: AGENT_EXTRAS_TYPE_ROBOT = 2;
+   */
+  ROBOT = 2,
+
+  /**
+   * @generated from enum value: AGENT_EXTRAS_TYPE_BOTH = 3;
+   */
+  BOTH = 3,
+}
+
+/**
+ * Describes the enum ar.v1.AgentExtrasType.
+ */
+export const AgentExtrasTypeSchema: GenEnum<AgentExtrasType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_property, 3);
 

@@ -25,13 +25,14 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MRobYnVmL3ZhbGlk",
-            "YXRlL3ZhbGlkYXRlLnByb3RvImoKBUNvbG9yEiEKA3JlZBgBIAEoAkIPukgM",
-            "CgodAACAPy0AAAAAUgNyZWQSFAoFZ3JlZW4YAiABKAJSBWdyZWVuEhIKBGJs",
-            "dWUYAyABKAJSBGJsdWUSFAoFYWxwaGEYBCABKAJSBWFscGhhQqIBCg1jb20u",
-            "Y29tbW9uLnYxQgpDb2xvclByb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJN",
-            "ZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BC",
-            "TWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
+            "YXRlL3ZhbGlkYXRlLnByb3RvIp0BCgVDb2xvchIhCgNyZWQYASABKAJCD7pI",
+            "DAoKHQAAgD8tAAAAAFIDcmVkEiUKBWdyZWVuGAIgASgCQg+6SAwKCh0AAIA/",
+            "LQAAAABSBWdyZWVuEiMKBGJsdWUYAyABKAJCD7pIDAoKHQAAgD8tAAAAAFIE",
+            "Ymx1ZRIlCgVhbHBoYRgEIAEoAkIPukgMCgodAACAPy0AAAAAUgVhbHBoYUKi",
+            "AQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2Nv",
+            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogID",
+            "Q1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9u",
+            "XFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
