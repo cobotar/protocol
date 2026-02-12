@@ -11,39 +11,39 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file common/v1/color.proto.
  */
 export const file_common_v1_color: GenFile = /*@__PURE__*/
-  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSKEAQoFQ29sb3ISHAoDcmVkGAEgASgCQg+6SAwKCh0AAIA/LQAAAAASHgoFZ3JlZW4YAiABKAJCD7pIDAoKHQAAgD8tAAAAABIdCgRibHVlGAMgASgCQg+6SAwKCh0AAIA/LQAAAAASHgoFYWxwaGEYBCABKAJCD7pIDAoKHQAAgD8tAAAAAEKiAQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJwCgVDb2xvchIXCgNyZWQYASABKA1CCrpIByoFGP8BKAASGQoFZ3JlZW4YAiABKA1CCrpIByoFGP8BKAASGAoEYmx1ZRgDIAEoDUIKukgHKgUY/wEoABIZCgVhbHBoYRgEIAEoDUIKukgHKgUY/wEoAEKiAQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
 
 /**
- * Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+ * Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
  *
  * @generated from message common.v1.Color
  */
 export type Color = Message<"common.v1.Color"> & {
   /**
-   * Ranging from [0:1]
+   * Ranging from [0:255]
    *
-   * @generated from field: float red = 1;
+   * @generated from field: uint32 red = 1;
    */
   red: number;
 
   /**
-   * Ranging from [0:1]
+   * Ranging from [0:255]
    *
-   * @generated from field: float green = 2;
+   * @generated from field: uint32 green = 2;
    */
   green: number;
 
   /**
-   * Ranging from [0:1]
+   * Ranging from [0:255]
    *
-   * @generated from field: float blue = 3;
+   * @generated from field: uint32 blue = 3;
    */
   blue: number;
 
   /**
-   * Ranging from [0:1] --> [transparent : opaque]
+   * Ranging from [0:255] --> [transparent : opaque]
    *
-   * @generated from field: float alpha = 4;
+   * @generated from field: uint32 alpha = 4;
    */
   alpha: number;
 };

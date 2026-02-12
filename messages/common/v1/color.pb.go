@@ -22,13 +22,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+// Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
 type Color struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Red           float32                `protobuf:"fixed32,1,opt,name=red,proto3" json:"red,omitempty"`     // Ranging from [0:1]
-	Green         float32                `protobuf:"fixed32,2,opt,name=green,proto3" json:"green,omitempty"` // Ranging from [0:1]
-	Blue          float32                `protobuf:"fixed32,3,opt,name=blue,proto3" json:"blue,omitempty"`   // Ranging from [0:1]
-	Alpha         float32                `protobuf:"fixed32,4,opt,name=alpha,proto3" json:"alpha,omitempty"` // Ranging from [0:1] --> [transparent : opaque]
+	Red           uint32                 `protobuf:"varint,1,opt,name=red,proto3" json:"red,omitempty"`     // Ranging from [0:255]
+	Green         uint32                 `protobuf:"varint,2,opt,name=green,proto3" json:"green,omitempty"` // Ranging from [0:255]
+	Blue          uint32                 `protobuf:"varint,3,opt,name=blue,proto3" json:"blue,omitempty"`   // Ranging from [0:255]
+	Alpha         uint32                 `protobuf:"varint,4,opt,name=alpha,proto3" json:"alpha,omitempty"` // Ranging from [0:255] --> [transparent : opaque]
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -63,28 +63,28 @@ func (*Color) Descriptor() ([]byte, []int) {
 	return file_common_v1_color_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Color) GetRed() float32 {
+func (x *Color) GetRed() uint32 {
 	if x != nil {
 		return x.Red
 	}
 	return 0
 }
 
-func (x *Color) GetGreen() float32 {
+func (x *Color) GetGreen() uint32 {
 	if x != nil {
 		return x.Green
 	}
 	return 0
 }
 
-func (x *Color) GetBlue() float32 {
+func (x *Color) GetBlue() uint32 {
 	if x != nil {
 		return x.Blue
 	}
 	return 0
 }
 
-func (x *Color) GetAlpha() float32 {
+func (x *Color) GetAlpha() uint32 {
 	if x != nil {
 		return x.Alpha
 	}
@@ -95,20 +95,16 @@ var File_common_v1_color_proto protoreflect.FileDescriptor
 
 const file_common_v1_color_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/color.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"\x9d\x01\n" +
-	"\x05Color\x12!\n" +
-	"\x03red\x18\x01 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x03red\x12%\n" +
-	"\x05green\x18\x02 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x05green\x12#\n" +
-	"\x04blue\x18\x03 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x04blue\x12%\n" +
-	"\x05alpha\x18\x04 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x05alphaB\xa2\x01\n" +
+	"\x15common/v1/color.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"\x89\x01\n" +
+	"\x05Color\x12\x1c\n" +
+	"\x03red\x18\x01 \x01(\rB\n" +
+	"\xbaH\a*\x05\x18\xff\x01(\x00R\x03red\x12 \n" +
+	"\x05green\x18\x02 \x01(\rB\n" +
+	"\xbaH\a*\x05\x18\xff\x01(\x00R\x05green\x12\x1e\n" +
+	"\x04blue\x18\x03 \x01(\rB\n" +
+	"\xbaH\a*\x05\x18\xff\x01(\x00R\x04blue\x12 \n" +
+	"\x05alpha\x18\x04 \x01(\rB\n" +
+	"\xbaH\a*\x05\x18\xff\x01(\x00R\x05alphaB\xa2\x01\n" +
 	"\rcom.common.v1B\n" +
 	"ColorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"

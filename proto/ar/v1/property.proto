@@ -23,7 +23,7 @@ enum PropertyType {
   PROPERTY_TYPE_POSE = 7;
   PROPERTY_TYPE_ANCHOR = 8;
   PROPERTY_TYPE_COLOR = 9;
-  PROPERTY_TYPE_AGENT = 10;
+  PROPERTY_TYPE_ROBOT = 10;
   PROPERTY_TYPE_ENUM = 11;
   PROPERTY_TYPE_ENUM_MULTI = 12;
   PROPERTY_TYPE_ICON = 13;
@@ -44,6 +44,7 @@ enum PropertyGroup {
   PROPERTY_GROUP_LOCATION = 4;
   PROPERTY_GROUP_ICON = 5;
   PROPERTY_GROUP_CONFIGURATION = 6;
+  PROPERTY_GROUP_HIDDEN = 7;
 }
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.

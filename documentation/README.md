@@ -387,15 +387,15 @@ TODO: consider the order. It should be possible to use &lt; or &gt; to determine
 <a name="common-v1-Color"></a>
 
 ### Color
-Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| red | [float](#float) |  | Ranging from [0:1] |
-| green | [float](#float) |  | Ranging from [0:1] |
-| blue | [float](#float) |  | Ranging from [0:1] |
-| alpha | [float](#float) |  | Ranging from [0:1] --&gt; [transparent : opaque] |
+| red | [uint32](#uint32) |  | Ranging from [0:255] |
+| green | [uint32](#uint32) |  | Ranging from [0:255] |
+| blue | [uint32](#uint32) |  | Ranging from [0:255] |
+| alpha | [uint32](#uint32) |  | Ranging from [0:255] --&gt; [transparent : opaque] |
 
 
 
@@ -849,6 +849,7 @@ Properties are used by various components to define them, such as: feedback, act
 | PROPERTY_GROUP_LOCATION | 4 |  |
 | PROPERTY_GROUP_ICON | 5 |  |
 | PROPERTY_GROUP_CONFIGURATION | 6 |  |
+| PROPERTY_GROUP_HIDDEN | 7 |  |
 
 
 
@@ -882,7 +883,7 @@ Used to specify the type of a property
 | PROPERTY_TYPE_POSE | 7 |  |
 | PROPERTY_TYPE_ANCHOR | 8 |  |
 | PROPERTY_TYPE_COLOR | 9 |  |
-| PROPERTY_TYPE_AGENT | 10 |  |
+| PROPERTY_TYPE_ROBOT | 10 |  |
 | PROPERTY_TYPE_ENUM | 11 |  |
 | PROPERTY_TYPE_ENUM_MULTI | 12 |  |
 | PROPERTY_TYPE_ICON | 13 |  |

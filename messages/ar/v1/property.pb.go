@@ -38,7 +38,7 @@ const (
 	PropertyType_PROPERTY_TYPE_POSE        PropertyType = 7
 	PropertyType_PROPERTY_TYPE_ANCHOR      PropertyType = 8
 	PropertyType_PROPERTY_TYPE_COLOR       PropertyType = 9
-	PropertyType_PROPERTY_TYPE_AGENT       PropertyType = 10
+	PropertyType_PROPERTY_TYPE_ROBOT       PropertyType = 10
 	PropertyType_PROPERTY_TYPE_ENUM        PropertyType = 11
 	PropertyType_PROPERTY_TYPE_ENUM_MULTI  PropertyType = 12
 	PropertyType_PROPERTY_TYPE_ICON        PropertyType = 13
@@ -57,7 +57,7 @@ var (
 		7:  "PROPERTY_TYPE_POSE",
 		8:  "PROPERTY_TYPE_ANCHOR",
 		9:  "PROPERTY_TYPE_COLOR",
-		10: "PROPERTY_TYPE_AGENT",
+		10: "PROPERTY_TYPE_ROBOT",
 		11: "PROPERTY_TYPE_ENUM",
 		12: "PROPERTY_TYPE_ENUM_MULTI",
 		13: "PROPERTY_TYPE_ICON",
@@ -73,7 +73,7 @@ var (
 		"PROPERTY_TYPE_POSE":        7,
 		"PROPERTY_TYPE_ANCHOR":      8,
 		"PROPERTY_TYPE_COLOR":       9,
-		"PROPERTY_TYPE_AGENT":       10,
+		"PROPERTY_TYPE_ROBOT":       10,
 		"PROPERTY_TYPE_ENUM":        11,
 		"PROPERTY_TYPE_ENUM_MULTI":  12,
 		"PROPERTY_TYPE_ICON":        13,
@@ -167,6 +167,7 @@ const (
 	PropertyGroup_PROPERTY_GROUP_LOCATION      PropertyGroup = 4
 	PropertyGroup_PROPERTY_GROUP_ICON          PropertyGroup = 5
 	PropertyGroup_PROPERTY_GROUP_CONFIGURATION PropertyGroup = 6
+	PropertyGroup_PROPERTY_GROUP_HIDDEN        PropertyGroup = 7
 )
 
 // Enum value maps for PropertyGroup.
@@ -179,6 +180,7 @@ var (
 		4: "PROPERTY_GROUP_LOCATION",
 		5: "PROPERTY_GROUP_ICON",
 		6: "PROPERTY_GROUP_CONFIGURATION",
+		7: "PROPERTY_GROUP_HIDDEN",
 	}
 	PropertyGroup_value = map[string]int32{
 		"PROPERTY_GROUP_UNSPECIFIED":   0,
@@ -188,6 +190,7 @@ var (
 		"PROPERTY_GROUP_LOCATION":      4,
 		"PROPERTY_GROUP_ICON":          5,
 		"PROPERTY_GROUP_CONFIGURATION": 6,
+		"PROPERTY_GROUP_HIDDEN":        7,
 	}
 )
 
@@ -1385,7 +1388,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x12PROPERTY_TYPE_POSE\x10\a\x12\x18\n" +
 	"\x14PROPERTY_TYPE_ANCHOR\x10\b\x12\x17\n" +
 	"\x13PROPERTY_TYPE_COLOR\x10\t\x12\x17\n" +
-	"\x13PROPERTY_TYPE_AGENT\x10\n" +
+	"\x13PROPERTY_TYPE_ROBOT\x10\n" +
 	"\x12\x16\n" +
 	"\x12PROPERTY_TYPE_ENUM\x10\v\x12\x1c\n" +
 	"\x18PROPERTY_TYPE_ENUM_MULTI\x10\f\x12\x16\n" +
@@ -1393,7 +1396,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\xdf\x01\n" +
+	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\xfa\x01\n" +
 	"\rPropertyGroup\x12\x1e\n" +
 	"\x1aPROPERTY_GROUP_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_GROUP_OUTPUT\x10\x01\x12\x1f\n" +
@@ -1401,7 +1404,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x16PROPERTY_GROUP_STYLING\x10\x03\x12\x1b\n" +
 	"\x17PROPERTY_GROUP_LOCATION\x10\x04\x12\x17\n" +
 	"\x13PROPERTY_GROUP_ICON\x10\x05\x12 \n" +
-	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06B\x89\x01\n" +
+	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06\x12\x19\n" +
+	"\x15PROPERTY_GROUP_HIDDEN\x10\aB\x89\x01\n" +
 	"\tcom.ar.v1B\rPropertyProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

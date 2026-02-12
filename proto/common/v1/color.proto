@@ -6,22 +6,22 @@ import "buf/validate/validate.proto";
 option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
-// Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+// Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
 message Color {
-  float red = 1 [(buf.validate.field).float = {
+  uint32 red = 1 [(buf.validate.field).uint32 = {
     gte: 0
-    lte: 1
-  }]; // Ranging from [0:1]
-  float green = 2 [(buf.validate.field).float = {
+    lte: 255
+  }]; // Ranging from [0:255]
+  uint32 green = 2 [(buf.validate.field).uint32 = {
     gte: 0
-    lte: 1
-  }]; // Ranging from [0:1]
-  float blue = 3 [(buf.validate.field).float = {
+    lte: 255
+  }]; // Ranging from [0:255]
+  uint32 blue = 3 [(buf.validate.field).uint32 = {
     gte: 0
-    lte: 1
-  }]; // Ranging from [0:1]
-  float alpha = 4 [(buf.validate.field).float = {
+    lte: 255
+  }]; // Ranging from [0:255]
+  uint32 alpha = 4 [(buf.validate.field).uint32 = {
     gte: 0
-    lte: 1
-  }]; // Ranging from [0:1] --> [transparent : opaque]
+    lte: 255
+  }]; // Ranging from [0:255] --> [transparent : opaque]
 }

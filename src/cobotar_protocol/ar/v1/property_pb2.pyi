@@ -25,7 +25,7 @@ class PropertyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_TYPE_POSE: _ClassVar[PropertyType]
     PROPERTY_TYPE_ANCHOR: _ClassVar[PropertyType]
     PROPERTY_TYPE_COLOR: _ClassVar[PropertyType]
-    PROPERTY_TYPE_AGENT: _ClassVar[PropertyType]
+    PROPERTY_TYPE_ROBOT: _ClassVar[PropertyType]
     PROPERTY_TYPE_ENUM: _ClassVar[PropertyType]
     PROPERTY_TYPE_ENUM_MULTI: _ClassVar[PropertyType]
     PROPERTY_TYPE_ICON: _ClassVar[PropertyType]
@@ -45,6 +45,7 @@ class PropertyGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_GROUP_LOCATION: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_ICON: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_CONFIGURATION: _ClassVar[PropertyGroup]
+    PROPERTY_GROUP_HIDDEN: _ClassVar[PropertyGroup]
 PROPERTY_TYPE_UNSPECIFIED: PropertyType
 PROPERTY_TYPE_BOOL: PropertyType
 PROPERTY_TYPE_INT: PropertyType
@@ -55,7 +56,7 @@ PROPERTY_TYPE_VECTOR3: PropertyType
 PROPERTY_TYPE_POSE: PropertyType
 PROPERTY_TYPE_ANCHOR: PropertyType
 PROPERTY_TYPE_COLOR: PropertyType
-PROPERTY_TYPE_AGENT: PropertyType
+PROPERTY_TYPE_ROBOT: PropertyType
 PROPERTY_TYPE_ENUM: PropertyType
 PROPERTY_TYPE_ENUM_MULTI: PropertyType
 PROPERTY_TYPE_ICON: PropertyType
@@ -69,6 +70,7 @@ PROPERTY_GROUP_STYLING: PropertyGroup
 PROPERTY_GROUP_LOCATION: PropertyGroup
 PROPERTY_GROUP_ICON: PropertyGroup
 PROPERTY_GROUP_CONFIGURATION: PropertyGroup
+PROPERTY_GROUP_HIDDEN: PropertyGroup
 
 class Property(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")

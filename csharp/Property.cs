@@ -162,20 +162,20 @@ namespace Messages.AR.V1 {
             "UlRZX1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVSVFlfVFlQRV9TVFJJTkcQBRIZ",
             "ChVQUk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIWChJQUk9QRVJUWV9UWVBFX1BP",
             "U0UQBxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hPUhAIEhcKE1BST1BFUlRZX1RZ",
-            "UEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX0FHRU5UEAoSFgoSUFJPUEVS",
+            "UEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX1JPQk9UEAoSFgoSUFJPUEVS",
             "VFlfVFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlfVFlQRV9FTlVNX01VTFRJEAwS",
             "FgoSUFJPUEVSVFlfVFlQRV9JQ09OEA0qaAoOUHJvcGVydHlPcmlnaW4SHwob",
             "UFJPUEVSVFlfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfT1JJ",
-            "R0lOX0ZJWEVEEAESGgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACKt8BCg1Q",
+            "R0lOX0ZJWEVEEAESGgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACKvoBCg1Q",
             "cm9wZXJ0eUdyb3VwEh4KGlBST1BFUlRZX0dST1VQX1VOU1BFQ0lGSUVEEAAS",
             "GQoVUFJPUEVSVFlfR1JPVVBfT1VUUFVUEAESHwobUFJPUEVSVFlfR1JPVVBf",
             "Tk9OX0VESVRBQkxFEAISGgoWUFJPUEVSVFlfR1JPVVBfU1RZTElORxADEhsK",
             "F1BST1BFUlRZX0dST1VQX0xPQ0FUSU9OEAQSFwoTUFJPUEVSVFlfR1JPVVBf",
-            "SUNPThAFEiAKHFBST1BFUlRZX0dST1VQX0NPTkZJR1VSQVRJT04QBkKJAQoJ",
-            "Y29tLmFyLnYxQg1Qcm9wZXJ0eVByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2Fn",
-            "ZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYx",
-            "YgZwcm90bzM="));
+            "SUNPThAFEiAKHFBST1BFUlRZX0dST1VQX0NPTkZJR1VSQVRJT04QBhIZChVQ",
+            "Uk9QRVJUWV9HUk9VUF9ISURERU4QB0KJAQoJY29tLmFyLnYxQg1Qcm9wZXJ0",
+            "eVByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
+            "cy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeIC",
+            "EUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PropertyType), typeof(global::Messages.AR.V1.PropertyOrigin), typeof(global::Messages.AR.V1.PropertyGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -209,7 +209,7 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("PROPERTY_TYPE_POSE")] Pose = 7,
     [pbr::OriginalName("PROPERTY_TYPE_ANCHOR")] Anchor = 8,
     [pbr::OriginalName("PROPERTY_TYPE_COLOR")] Color = 9,
-    [pbr::OriginalName("PROPERTY_TYPE_AGENT")] Agent = 10,
+    [pbr::OriginalName("PROPERTY_TYPE_ROBOT")] Robot = 10,
     [pbr::OriginalName("PROPERTY_TYPE_ENUM")] Enum = 11,
     [pbr::OriginalName("PROPERTY_TYPE_ENUM_MULTI")] EnumMulti = 12,
     [pbr::OriginalName("PROPERTY_TYPE_ICON")] Icon = 13,
@@ -238,6 +238,7 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("PROPERTY_GROUP_LOCATION")] Location = 4,
     [pbr::OriginalName("PROPERTY_GROUP_ICON")] Icon = 5,
     [pbr::OriginalName("PROPERTY_GROUP_CONFIGURATION")] Configuration = 6,
+    [pbr::OriginalName("PROPERTY_GROUP_HIDDEN")] Hidden = 7,
   }
 
   #endregion

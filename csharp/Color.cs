@@ -25,14 +25,14 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MRobYnVmL3ZhbGlk",
-            "YXRlL3ZhbGlkYXRlLnByb3RvIp0BCgVDb2xvchIhCgNyZWQYASABKAJCD7pI",
-            "DAoKHQAAgD8tAAAAAFIDcmVkEiUKBWdyZWVuGAIgASgCQg+6SAwKCh0AAIA/",
-            "LQAAAABSBWdyZWVuEiMKBGJsdWUYAyABKAJCD7pIDAoKHQAAgD8tAAAAAFIE",
-            "Ymx1ZRIlCgVhbHBoYRgEIAEoAkIPukgMCgodAACAPy0AAAAAUgVhbHBoYUKi",
-            "AQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2Nv",
-            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogID",
-            "Q1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9u",
-            "XFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
+            "YXRlL3ZhbGlkYXRlLnByb3RvIokBCgVDb2xvchIcCgNyZWQYASABKA1CCrpI",
+            "ByoFGP8BKABSA3JlZBIgCgVncmVlbhgCIAEoDUIKukgHKgUY/wEoAFIFZ3Jl",
+            "ZW4SHgoEYmx1ZRgDIAEoDUIKukgHKgUY/wEoAFIEYmx1ZRIgCgVhbHBoYRgE",
+            "IAEoDUIKukgHKgUY/wEoAFIFYWxwaGFCogEKDWNvbS5jb21tb24udjFCCkNv",
+            "bG9yUHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1v",
+            "bi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNv",
+            "bW1vbjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,7 +44,7 @@ namespace Messages.Common.V1 {
   }
   #region Messages
   /// <summary>
-  /// Represents a color. Where (1, 1, 1, 1) is solid white, (1, 0, 0, 0.5) is half transparent red, and so on.
+  /// Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Color : pb::IMessage<Color>
@@ -96,13 +96,13 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "red" field.</summary>
     public const int RedFieldNumber = 1;
-    private float red_;
+    private uint red_;
     /// <summary>
-    /// Ranging from [0:1]
+    /// Ranging from [0:255]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Red {
+    public uint Red {
       get { return red_; }
       set {
         red_ = value;
@@ -111,13 +111,13 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "green" field.</summary>
     public const int GreenFieldNumber = 2;
-    private float green_;
+    private uint green_;
     /// <summary>
-    /// Ranging from [0:1]
+    /// Ranging from [0:255]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Green {
+    public uint Green {
       get { return green_; }
       set {
         green_ = value;
@@ -126,13 +126,13 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "blue" field.</summary>
     public const int BlueFieldNumber = 3;
-    private float blue_;
+    private uint blue_;
     /// <summary>
-    /// Ranging from [0:1]
+    /// Ranging from [0:255]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Blue {
+    public uint Blue {
       get { return blue_; }
       set {
         blue_ = value;
@@ -141,13 +141,13 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "alpha" field.</summary>
     public const int AlphaFieldNumber = 4;
-    private float alpha_;
+    private uint alpha_;
     /// <summary>
-    /// Ranging from [0:1] --> [transparent : opaque]
+    /// Ranging from [0:255] --> [transparent : opaque]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Alpha {
+    public uint Alpha {
       get { return alpha_; }
       set {
         alpha_ = value;
@@ -169,10 +169,10 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Red, other.Red)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Green, other.Green)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Blue, other.Blue)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Alpha, other.Alpha)) return false;
+      if (Red != other.Red) return false;
+      if (Green != other.Green) return false;
+      if (Blue != other.Blue) return false;
+      if (Alpha != other.Alpha) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,10 +180,10 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Red != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Red);
-      if (Green != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Green);
-      if (Blue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Blue);
-      if (Alpha != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Alpha);
+      if (Red != 0) hash ^= Red.GetHashCode();
+      if (Green != 0) hash ^= Green.GetHashCode();
+      if (Blue != 0) hash ^= Blue.GetHashCode();
+      if (Alpha != 0) hash ^= Alpha.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,21 +202,21 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Red != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(Red);
+      if (Red != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Red);
       }
-      if (Green != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Green);
+      if (Green != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Green);
       }
-      if (Blue != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Blue);
+      if (Blue != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Blue);
       }
-      if (Alpha != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Alpha);
+      if (Alpha != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Alpha);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,21 +228,21 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Red != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(Red);
+      if (Red != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Red);
       }
-      if (Green != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Green);
+      if (Green != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Green);
       }
-      if (Blue != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Blue);
+      if (Blue != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Blue);
       }
-      if (Alpha != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Alpha);
+      if (Alpha != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Alpha);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -254,17 +254,17 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Red != 0F) {
-        size += 1 + 4;
+      if (Red != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Red);
       }
-      if (Green != 0F) {
-        size += 1 + 4;
+      if (Green != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Green);
       }
-      if (Blue != 0F) {
-        size += 1 + 4;
+      if (Blue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Blue);
       }
-      if (Alpha != 0F) {
-        size += 1 + 4;
+      if (Alpha != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Alpha);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -278,16 +278,16 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.Red != 0F) {
+      if (other.Red != 0) {
         Red = other.Red;
       }
-      if (other.Green != 0F) {
+      if (other.Green != 0) {
         Green = other.Green;
       }
-      if (other.Blue != 0F) {
+      if (other.Blue != 0) {
         Blue = other.Blue;
       }
-      if (other.Alpha != 0F) {
+      if (other.Alpha != 0) {
         Alpha = other.Alpha;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -309,20 +309,20 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 13: {
-            Red = input.ReadFloat();
+          case 8: {
+            Red = input.ReadUInt32();
             break;
           }
-          case 21: {
-            Green = input.ReadFloat();
+          case 16: {
+            Green = input.ReadUInt32();
             break;
           }
-          case 29: {
-            Blue = input.ReadFloat();
+          case 24: {
+            Blue = input.ReadUInt32();
             break;
           }
-          case 37: {
-            Alpha = input.ReadFloat();
+          case 32: {
+            Alpha = input.ReadUInt32();
             break;
           }
         }
@@ -344,20 +344,20 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 13: {
-            Red = input.ReadFloat();
+          case 8: {
+            Red = input.ReadUInt32();
             break;
           }
-          case 21: {
-            Green = input.ReadFloat();
+          case 16: {
+            Green = input.ReadUInt32();
             break;
           }
-          case 29: {
-            Blue = input.ReadFloat();
+          case 24: {
+            Blue = input.ReadUInt32();
             break;
           }
-          case 37: {
-            Alpha = input.ReadFloat();
+          case 32: {
+            Alpha = input.ReadUInt32();
             break;
           }
         }
