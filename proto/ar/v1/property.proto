@@ -97,6 +97,24 @@ message Property {
     expression: "this.group != 1 || this.origin == 1"
   };
 
+  option (buf.validate.message).cel = {
+    id: "enum_requires_enum_extras"
+    message: "enum_extras must be set when type is ENUM or ENUM_MULTI"
+    expression: "!(this.type == 11 || this.type == 12) || has(this.enum_extras)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "enum_value_must_be_in_options"
+    message: "enum_value must be one of enum_extras.options[].value"
+    expression: "this.type != 11 || this.enum_extras.options.exists(o, o.value == this.enum_value)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "enum_multi_values_must_be_in_options"
+    message: "enum_multi_value values must be in enum_extras.options[].value"
+    expression: "this.type != 12 || this.enum_multi_value.all(v, this.enum_extras.options.exists(o, o.value == v))"
+  };
+
   string id = 1;
   string name = 2;
   string icon = 3;

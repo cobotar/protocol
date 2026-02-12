@@ -1202,7 +1202,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xa1\x16\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xb0\x1a\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1247,10 +1247,13 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x122\n" +
 	"\vpose_extras\x18- \x01(\v2\x11.ar.v1.PoseExtrasR\n" +
 	"poseExtras\x128\n" +
-	"\ranchor_extras\x18. \x01(\v2\x13.ar.v1.AnchorExtrasR\fanchorExtras:\xae\t\xbaH\xaa\t\x1a\xa3\x05\n" +
+	"\ranchor_extras\x18. \x01(\v2\x13.ar.v1.AnchorExtrasR\fanchorExtras:\xbd\r\xbaH\xb9\r\x1a\xa3\x05\n" +
 	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))\x1a\x8d\x01\n" +
 	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\x1ae\n" +
-	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\"\xb2\x01\n" +
+	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\x1a\x94\x01\n" +
+	"\x19enum_requires_enum_extras\x127enum_extras must be set when type is ENUM or ENUM_MULTI\x1a>!(this.type == 11 || this.type == 12) || has(this.enum_extras)\x1a\xa9\x01\n" +
+	"\x1denum_value_must_be_in_options\x125enum_value must be one of enum_extras.options[].value\x1aQthis.type != 11 || this.enum_extras.options.exists(o, o.value == this.enum_value)\x1a\xc9\x01\n" +
+	"$enum_multi_values_must_be_in_options\x12>enum_multi_value values must be in enum_extras.options[].value\x1aathis.type != 12 || this.enum_multi_value.all(v, this.enum_extras.options.exists(o, o.value == v))\"\xb2\x01\n" +
 	"\n" +
 	"bool_value\n" +
 	"\tint_value\n" +
