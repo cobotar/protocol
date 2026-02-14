@@ -4,22 +4,23 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file common/v1/get.proto.
  */
 export const file_common_v1_get: GenFile = /*@__PURE__*/
-  fileDesc("ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEiGAoKR2V0TWVzc2FnZRIKCgJpZBgBIAEoCUKgAQoNY29tLmNvbW1vbi52MUIIR2V0UHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw");
+  fileDesc("ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEiJQoKR2V0TWVzc2FnZRIXCgNpZHMYASADKAlCCrpIB5IBBAgBGAFCoAEKDWNvbS5jb21tb24udjFCCEdldFByb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM", [file_buf_validate_validate]);
 
 /**
  * @generated from message common.v1.GetMessage
  */
 export type GetMessage = Message<"common.v1.GetMessage"> & {
   /**
-   * @generated from field: string id = 1;
+   * @generated from field: repeated string ids = 1;
    */
-  id: string;
+  ids: string[];
 };
 
 /**

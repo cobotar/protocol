@@ -7,6 +7,7 @@
 package commonv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -23,7 +24,7 @@ const (
 
 type GetMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -58,21 +59,22 @@ func (*GetMessage) Descriptor() ([]byte, []int) {
 	return file_common_v1_get_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *GetMessage) GetId() string {
+func (x *GetMessage) GetIds() []string {
 	if x != nil {
-		return x.Id
+		return x.Ids
 	}
-	return ""
+	return nil
 }
 
 var File_common_v1_get_proto protoreflect.FileDescriptor
 
 const file_common_v1_get_proto_rawDesc = "" +
 	"\n" +
-	"\x13common/v1/get.proto\x12\tcommon.v1\"\x1c\n" +
+	"\x13common/v1/get.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"*\n" +
 	"\n" +
-	"GetMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02idB\xa0\x01\n" +
+	"GetMessage\x12\x1c\n" +
+	"\x03ids\x18\x01 \x03(\tB\n" +
+	"\xbaH\a\x92\x01\x04\b\x01\x18\x01R\x03idsB\xa0\x01\n" +
 	"\rcom.common.v1B\bGetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 

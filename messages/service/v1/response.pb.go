@@ -23,9 +23,8 @@ const (
 
 type Response struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	Success       bool                   `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"` // True if the request was carried out
-	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`  // Either a status/response message or an error message if the request wasn't a success
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"` // True if the request was carried out, false if an error occured
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`  // Either a status/response message or an error message if the request wasn't a success
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,13 +59,6 @@ func (*Response) Descriptor() ([]byte, []int) {
 	return file_service_v1_response_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Response) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
-
 func (x *Response) GetSuccess() bool {
 	if x != nil {
 		return x.Success
@@ -86,12 +78,10 @@ var File_service_v1_response_proto protoreflect.FileDescriptor
 const file_service_v1_response_proto_rawDesc = "" +
 	"\n" +
 	"\x19service/v1/response.proto\x12\n" +
-	"service.v1\"]\n" +
-	"\bResponse\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12\x18\n" +
-	"\asuccess\x18\x02 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessageB\xac\x01\n" +
+	"service.v1\">\n" +
+	"\bResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessageB\xac\x01\n" +
 	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 

@@ -2413,7 +2413,7 @@ TODO: Add worker (including skill-matrix)?
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| ids | [string](#string) | repeated |  |
 
 
 
@@ -4265,8 +4265,7 @@ Reassign all sub-tasks to the assignee (if possible)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| success | [bool](#bool) |  | True if the request was carried out |
+| success | [bool](#bool) |  | True if the request was carried out, false if an error occured |
 | message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
 
 

@@ -24,18 +24,17 @@ namespace Messages.Service.V1 {
     static ResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIl0KCFJl",
-            "c3BvbnNlEh0KCnJlcXVlc3RfaWQYASABKAlSCXJlcXVlc3RJZBIYCgdzdWNj",
-            "ZXNzGAIgASgIUgdzdWNjZXNzEhgKB21lc3NhZ2UYAyABKAlSB21lc3NhZ2VC",
-            "rAEKDmNvbS5zZXJ2aWNlLnYxQg1SZXNwb25zZVByb3RvUAFaOWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9zZXJ2aWNlL3YxO3NlcnZp",
-            "Y2V2MaICA1NYWKoCE01lc3NhZ2VzLlNlcnZpY2UuVjHKAgpTZXJ2aWNlXFYx",
-            "4gIWU2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6OlYxYgZwcm90",
-            "bzM="));
+            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIj4KCFJl",
+            "c3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3MSGAoHbWVzc2FnZRgC",
+            "IAEoCVIHbWVzc2FnZUKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJv",
+            "dG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Nl",
+            "cnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5W",
+            "McoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2Vy",
+            "dmljZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "RequestId", "Success", "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "Success", "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,7 +76,6 @@ namespace Messages.Service.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Response(Response other) : this() {
-      requestId_ = other.requestId_;
       success_ = other.success_;
       message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -89,23 +87,11 @@ namespace Messages.Service.V1 {
       return new Response(this);
     }
 
-    /// <summary>Field number for the "request_id" field.</summary>
-    public const int RequestIdFieldNumber = 1;
-    private string requestId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RequestId {
-      get { return requestId_; }
-      set {
-        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 2;
+    public const int SuccessFieldNumber = 1;
     private bool success_;
     /// <summary>
-    /// True if the request was carried out
+    /// True if the request was carried out, false if an error occured
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,7 +103,7 @@ namespace Messages.Service.V1 {
     }
 
     /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 3;
+    public const int MessageFieldNumber = 2;
     private string message_ = "";
     /// <summary>
     /// Either a status/response message or an error message if the request wasn't a success
@@ -146,7 +132,6 @@ namespace Messages.Service.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RequestId != other.RequestId) return false;
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -156,7 +141,6 @@ namespace Messages.Service.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
@@ -177,16 +161,12 @@ namespace Messages.Service.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (Success != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(Success);
       }
       if (Message.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Message);
       }
       if (_unknownFields != null) {
@@ -199,16 +179,12 @@ namespace Messages.Service.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (Success != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(Success);
       }
       if (Message.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Message);
       }
       if (_unknownFields != null) {
@@ -221,9 +197,6 @@ namespace Messages.Service.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RequestId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
-      }
       if (Success != false) {
         size += 1 + 1;
       }
@@ -241,9 +214,6 @@ namespace Messages.Service.V1 {
     public void MergeFrom(Response other) {
       if (other == null) {
         return;
-      }
-      if (other.RequestId.Length != 0) {
-        RequestId = other.RequestId;
       }
       if (other.Success != false) {
         Success = other.Success;
@@ -270,15 +240,11 @@ namespace Messages.Service.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 16: {
+          case 8: {
             Success = input.ReadBool();
             break;
           }
-          case 26: {
+          case 18: {
             Message = input.ReadString();
             break;
           }
@@ -301,15 +267,11 @@ namespace Messages.Service.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 16: {
+          case 8: {
             Success = input.ReadBool();
             break;
           }
-          case 26: {
+          case 18: {
             Message = input.ReadString();
             break;
           }

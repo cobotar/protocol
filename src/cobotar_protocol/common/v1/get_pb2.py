@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommon/v1/get.proto\x12\tcommon.v1\"\x1c\n\nGetMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02idB\xa0\x01\n\rcom.common.v1B\x08GetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommon/v1/get.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"*\n\nGetMessage\x12\x1c\n\x03ids\x18\x01 \x03(\tB\n\xbaH\x07\x92\x01\x04\x08\x01\x18\x01R\x03idsB\xa0\x01\n\rcom.common.v1B\x08GetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.get_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\010GetProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
-  _globals['_GETMESSAGE']._serialized_start=34
-  _globals['_GETMESSAGE']._serialized_end=62
+  _globals['_GETMESSAGE'].fields_by_name['ids']._loaded_options = None
+  _globals['_GETMESSAGE'].fields_by_name['ids']._serialized_options = b'\272H\007\222\001\004\010\001\030\001'
+  _globals['_GETMESSAGE']._serialized_start=63
+  _globals['_GETMESSAGE']._serialized_end=105
 # @@protoc_insertion_point(module_scope)

@@ -1,9 +1,14 @@
 syntax = "proto3";
 package common.v1;
 
+import "buf/validate/validate.proto";
+
 option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
 message GetMessage {
-  string id = 1;
+  repeated string ids = 1 [(buf.validate.field).repeated = {
+    min_items: 1
+    unique: true
+  }];
 }

@@ -24,16 +24,17 @@ namespace Messages.Common.V1 {
     static GetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEiHAoKR2V0TWVzc2Fn",
-            "ZRIOCgJpZBgBIAEoCVICaWRCoAEKDWNvbS5jb21tb24udjFCCEdldFByb3Rv",
-            "UAFaN2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21t",
-            "b24vdjE7Y29tbW9udjGiAgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglD",
-            "b21tb25cVjHiAhVDb21tb25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYx",
-            "YgZwcm90bzM="));
+            "ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEaG2J1Zi92YWxpZGF0",
+            "ZS92YWxpZGF0ZS5wcm90byIqCgpHZXRNZXNzYWdlEhwKA2lkcxgBIAMoCUIK",
+            "ukgHkgEECAEYAVIDaWRzQqABCg1jb20uY29tbW9uLnYxQghHZXRQcm90b1AB",
+            "WjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9u",
+            "L3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29t",
+            "bW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetMessage), global::Messages.Common.V1.GetMessage.Parser, new[]{ "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetMessage), global::Messages.Common.V1.GetMessage.Parser, new[]{ "Ids" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +76,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetMessage(GetMessage other) : this() {
-      id_ = other.id_;
+      ids_ = other.ids_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,16 +86,15 @@ namespace Messages.Common.V1 {
       return new GetMessage(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private string id_ = "";
+    /// <summary>Field number for the "ids" field.</summary>
+    public const int IdsFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_ids_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> ids_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Id {
-      get { return id_; }
-      set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
+    public pbc::RepeatedField<string> Ids {
+      get { return ids_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
+      if(!ids_.Equals(other.ids_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -120,7 +120,7 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      hash ^= ids_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -139,10 +139,7 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
-      }
+      ids_.WriteTo(output, _repeated_ids_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -153,10 +150,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
-      }
+      ids_.WriteTo(ref output, _repeated_ids_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -167,9 +161,7 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
-      }
+      size += ids_.CalculateSize(_repeated_ids_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -182,9 +174,7 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.Id.Length != 0) {
-        Id = other.Id;
-      }
+      ids_.Add(other.ids_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -205,7 +195,7 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Id = input.ReadString();
+            ids_.AddEntriesFrom(input, _repeated_ids_codec);
             break;
           }
         }
@@ -228,7 +218,7 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Id = input.ReadString();
+            ids_.AddEntriesFrom(ref input, _repeated_ids_codec);
             break;
           }
         }
