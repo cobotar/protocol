@@ -164,6 +164,7 @@
     - [EmptyMessage](#common-v1-EmptyMessage)
   
 - [common/v1/get.proto](#common_v1_get-proto)
+    - [GetByIdMessage](#common-v1-GetByIdMessage)
     - [GetMessage](#common-v1-GetMessage)
   
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
@@ -2405,6 +2406,21 @@ TODO: Add worker (including skill-matrix)?
 
 
 
+<a name="common-v1-GetByIdMessage"></a>
+
+### GetByIdMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ids | [string](#string) | repeated |  |
+
+
+
+
+
+
 <a name="common-v1-GetMessage"></a>
 
 ### GetMessage
@@ -2413,7 +2429,7 @@ TODO: Add worker (including skill-matrix)?
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ids | [string](#string) | repeated |  |
+| id | [string](#string) |  |  |
 
 
 
