@@ -45,17 +45,18 @@ namespace Messages.AR.V1 {
             "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiJ/ChJBY3Rpb25DbG9u",
             "ZU1lc3NhZ2USHwoLb3JpZ2luYWxfaWQYASABKAlSCm9yaWdpbmFsSWQSEgoE",
             "bmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiqiAgoKQWN0aW9uVHlwZRIbChdB",
+            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbirFAgoKQWN0aW9uVHlwZRIbChdB",
             "Q1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFDVElPTl9UWVBFX1RBU0tf",
             "Q09NUExFVEUQChIZChVBQ1RJT05fVFlQRV9UQVNLX1VORE8QCxIbChdBQ1RJ",
             "T05fVFlQRV9UQVNLX0FTU0lHThAMEh4KGkFDVElPTl9UWVBFX1RBU0tfSElH",
             "SExJR0hUEA0SGQoVQUNUSU9OX1RZUEVfVEFTS19IRUxQEA4SIAocQUNUSU9O",
             "X1RZUEVfUk9CT1RfUExBWV9QQVVTRRAyEiEKHUFDVElPTl9UWVBFX1JPQk9U",
             "X0FDS05PV0xFREdFEDMSIAocQUNUSU9OX1RZUEVfUk9CT1RfRlJFRV9EUklW",
-            "RRA0QocBCgljb20uYXIudjFCC0FjdGlvblByb3RvUAFaL2dpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
-            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
-            "QXI6OlYxYgZwcm90bzM="));
+            "RRA0EiEKHUFDVElPTl9UWVBFX1JPQk9UX0NPTExBQk9SQVRFEDVChwEKCWNv",
+            "bS5hci52MUILQWN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5B",
+            "Ui5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ActionType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -80,6 +81,7 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("ACTION_TYPE_ROBOT_PLAY_PAUSE")] RobotPlayPause = 50,
     [pbr::OriginalName("ACTION_TYPE_ROBOT_ACKNOWLEDGE")] RobotAcknowledge = 51,
     [pbr::OriginalName("ACTION_TYPE_ROBOT_FREE_DRIVE")] RobotFreeDrive = 52,
+    [pbr::OriginalName("ACTION_TYPE_ROBOT_COLLABORATE")] RobotCollaborate = 53,
   }
 
   #endregion

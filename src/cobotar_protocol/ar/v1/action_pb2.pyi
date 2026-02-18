@@ -21,6 +21,7 @@ class ActionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ACTION_TYPE_ROBOT_PLAY_PAUSE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_ACKNOWLEDGE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_FREE_DRIVE: _ClassVar[ActionType]
+    ACTION_TYPE_ROBOT_COLLABORATE: _ClassVar[ActionType]
 ACTION_TYPE_UNSPECIFIED: ActionType
 ACTION_TYPE_TASK_COMPLETE: ActionType
 ACTION_TYPE_TASK_UNDO: ActionType
@@ -30,6 +31,7 @@ ACTION_TYPE_TASK_HELP: ActionType
 ACTION_TYPE_ROBOT_PLAY_PAUSE: ActionType
 ACTION_TYPE_ROBOT_ACKNOWLEDGE: ActionType
 ACTION_TYPE_ROBOT_FREE_DRIVE: ActionType
+ACTION_TYPE_ROBOT_COLLABORATE: ActionType
 
 class ActionMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "properties", "config_id")

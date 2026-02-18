@@ -35,6 +35,7 @@ const (
 	ActionType_ACTION_TYPE_ROBOT_PLAY_PAUSE  ActionType = 50
 	ActionType_ACTION_TYPE_ROBOT_ACKNOWLEDGE ActionType = 51
 	ActionType_ACTION_TYPE_ROBOT_FREE_DRIVE  ActionType = 52
+	ActionType_ACTION_TYPE_ROBOT_COLLABORATE ActionType = 53
 )
 
 // Enum value maps for ActionType.
@@ -49,6 +50,7 @@ var (
 		50: "ACTION_TYPE_ROBOT_PLAY_PAUSE",
 		51: "ACTION_TYPE_ROBOT_ACKNOWLEDGE",
 		52: "ACTION_TYPE_ROBOT_FREE_DRIVE",
+		53: "ACTION_TYPE_ROBOT_COLLABORATE",
 	}
 	ActionType_value = map[string]int32{
 		"ACTION_TYPE_UNSPECIFIED":       0,
@@ -60,6 +62,7 @@ var (
 		"ACTION_TYPE_ROBOT_PLAY_PAUSE":  50,
 		"ACTION_TYPE_ROBOT_ACKNOWLEDGE": 51,
 		"ACTION_TYPE_ROBOT_FREE_DRIVE":  52,
+		"ACTION_TYPE_ROBOT_COLLABORATE": 53,
 	}
 )
 
@@ -489,7 +492,7 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"originalId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xa2\x02\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xc5\x02\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -501,7 +504,8 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x15ACTION_TYPE_TASK_HELP\x10\x0e\x12 \n" +
 	"\x1cACTION_TYPE_ROBOT_PLAY_PAUSE\x102\x12!\n" +
 	"\x1dACTION_TYPE_ROBOT_ACKNOWLEDGE\x103\x12 \n" +
-	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104B\x87\x01\n" +
+	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104\x12!\n" +
+	"\x1dACTION_TYPE_ROBOT_COLLABORATE\x105B\x87\x01\n" +
 	"\tcom.ar.v1B\vActionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

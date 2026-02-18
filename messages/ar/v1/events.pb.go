@@ -38,6 +38,7 @@ const (
 	CommandType_COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE   CommandType = 101
 	CommandType_COMMAND_TYPE_ROBOT_START_COLLABORATION CommandType = 102
 	CommandType_COMMAND_TYPE_ROBOT_STOP_COLLABORATION  CommandType = 103
+	CommandType_COMMAND_TYPE_ROBOT_ACKNOWLEDGE         CommandType = 104
 )
 
 // Enum value maps for CommandType.
@@ -53,6 +54,7 @@ var (
 		101: "COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE",
 		102: "COMMAND_TYPE_ROBOT_START_COLLABORATION",
 		103: "COMMAND_TYPE_ROBOT_STOP_COLLABORATION",
+		104: "COMMAND_TYPE_ROBOT_ACKNOWLEDGE",
 	}
 	CommandType_value = map[string]int32{
 		"COMMAND_TYPE_UNSPECIFIED":               0,
@@ -65,6 +67,7 @@ var (
 		"COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE":   101,
 		"COMMAND_TYPE_ROBOT_START_COLLABORATION": 102,
 		"COMMAND_TYPE_ROBOT_STOP_COLLABORATION":  103,
+		"COMMAND_TYPE_ROBOT_ACKNOWLEDGE":         104,
 	}
 )
 
@@ -608,7 +611,7 @@ const file_ar_v1_events_proto_rawDesc = "" +
 	"\amessage\x18\x01 \x01(\v2\x13.ar.v1.ExchangeTypeR\amessage\x12\x1c\n" +
 	"\trationale\x18\x02 \x01(\tR\trationale\"Q\n" +
 	"\x19SupportedExchangesMessage\x124\n" +
-	"\texchanges\x18\x01 \x03(\v2\x16.ar.v1.ExchangeSupportR\texchanges*\xe6\x02\n" +
+	"\texchanges\x18\x01 \x03(\v2\x16.ar.v1.ExchangeSupportR\texchanges*\x8a\x03\n" +
 	"\vCommandType\x12\x1c\n" +
 	"\x18COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aCOMMAND_TYPE_TASK_COMPLETE\x10\n" +
@@ -620,7 +623,8 @@ const file_ar_v1_events_proto_rawDesc = "" +
 	"\x1dCOMMAND_TYPE_ROBOT_START_STOP\x10d\x12(\n" +
 	"$COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE\x10e\x12*\n" +
 	"&COMMAND_TYPE_ROBOT_START_COLLABORATION\x10f\x12)\n" +
-	"%COMMAND_TYPE_ROBOT_STOP_COLLABORATION\x10g*\xc4\x03\n" +
+	"%COMMAND_TYPE_ROBOT_STOP_COLLABORATION\x10g\x12\"\n" +
+	"\x1eCOMMAND_TYPE_ROBOT_ACKNOWLEDGE\x10h*\xc4\x03\n" +
 	"\tEventType\x12\x1a\n" +
 	"\x16EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bEVENT_TYPE_PROCESS_COMPLETE\x10\n" +

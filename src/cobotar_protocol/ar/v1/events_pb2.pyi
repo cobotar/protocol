@@ -20,6 +20,7 @@ class CommandType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE: _ClassVar[CommandType]
     COMMAND_TYPE_ROBOT_START_COLLABORATION: _ClassVar[CommandType]
     COMMAND_TYPE_ROBOT_STOP_COLLABORATION: _ClassVar[CommandType]
+    COMMAND_TYPE_ROBOT_ACKNOWLEDGE: _ClassVar[CommandType]
 
 class EventType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -72,6 +73,7 @@ COMMAND_TYPE_ROBOT_START_STOP: CommandType
 COMMAND_TYPE_ROBOT_TOGGLE_FREE_DRIVE: CommandType
 COMMAND_TYPE_ROBOT_START_COLLABORATION: CommandType
 COMMAND_TYPE_ROBOT_STOP_COLLABORATION: CommandType
+COMMAND_TYPE_ROBOT_ACKNOWLEDGE: CommandType
 EVENT_TYPE_UNSPECIFIED: EventType
 EVENT_TYPE_PROCESS_COMPLETE: EventType
 EVENT_TYPE_SEQUENCE_COMPLETE: EventType
