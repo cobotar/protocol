@@ -47,6 +47,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
@@ -58,9 +59,10 @@
     - [ActionType](#ar-v1-ActionType)
   
 - [ar/v1/events.proto](#ar_v1_events-proto)
+    - [ExchangeSupport](#ar-v1-ExchangeSupport)
     - [ExchangeType](#ar-v1-ExchangeType)
     - [HandlerRequirement](#ar-v1-HandlerRequirement)
-    - [SupportedEventsMessage](#ar-v1-SupportedEventsMessage)
+    - [SupportedExchangesMessage](#ar-v1-SupportedExchangesMessage)
   
     - [CommandType](#ar-v1-CommandType)
     - [EventType](#ar-v1-EventType)
@@ -917,6 +919,7 @@ Used to specify the type of a property
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
+| property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 
  
 
@@ -1059,6 +1062,22 @@ Used to specify the type of a property
 
 
 
+<a name="ar-v1-ExchangeSupport"></a>
+
+### ExchangeSupport
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| message | [ExchangeType](#ar-v1-ExchangeType) |  |  |
+| rationale | [string](#string) |  | optional but super helpful for UI |
+
+
+
+
+
+
 <a name="ar-v1-ExchangeType"></a>
 
 ### ExchangeType
@@ -1100,18 +1119,16 @@ Example: robot motion
 
 
 
-<a name="ar-v1-SupportedEventsMessage"></a>
+<a name="ar-v1-SupportedExchangesMessage"></a>
 
-### SupportedEventsMessage
+### SupportedExchangesMessage
 Supported events is a list of all supported events in the current configuration
 TODO: should this be a field of ARConfig?
-
-TODO: this shouldn&#39;t be &#39;EventType&#39;, but either exchange-type or similar
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| events | [EventType](#ar-v1-EventType) | repeated |  |
+| exchanges | [ExchangeSupport](#ar-v1-ExchangeSupport) | repeated |  |
 
 
 
@@ -1351,7 +1368,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | properties | [Property](#ar-v1-Property) | repeated |  |
-| config_id | [string](#string) |  |  |
+| config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
 
 
 

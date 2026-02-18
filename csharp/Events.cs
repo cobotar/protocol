@@ -25,60 +25,64 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJhci92MS9ldmVudHMucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
-            "aWRhdGUucHJvdG8ijQIKDEV4Y2hhbmdlVHlwZRI2Cgdjb21tYW5kGAEgASgO",
+            "aWRhdGUucHJvdG8ijwIKDEV4Y2hhbmdlVHlwZRI2Cgdjb21tYW5kGAEgASgO",
             "MhIuYXIudjEuQ29tbWFuZFR5cGVCCLpIBYIBAhABUgdjb21tYW5kEjAKBWV2",
             "ZW50GAIgASgOMhAuYXIudjEuRXZlbnRUeXBlQgi6SAWCAQIQAVIFZXZlbnQS",
             "PAoJdGVsZW1ldHJ5GAMgASgOMhQuYXIudjEuVGVsZW1ldHJ5VHlwZUIIukgF",
             "ggECEAFSCXRlbGVtZXRyeRItCgRwbGFuGAQgASgOMg8uYXIudjEuUGxhblR5",
-            "cGVCCLpIBYIBAhABUgRwbGFuOia6SCMiIQoHY29tbWFuZAoFZXZlbnQKDXRl",
-            "bGVtZXRyeXBsYW4QASKoAQoSSGFuZGxlclJlcXVpcmVtZW50Ei0KB21lc3Nh",
-            "Z2UYASABKAsyEy5hci52MS5FeGNoYW5nZVR5cGVSB21lc3NhZ2USRQoLY2Fy",
-            "ZGluYWxpdHkYAiABKA4yGS5hci52MS5IYW5kbGVyQ2FyZGluYWxpdHlCCLpI",
-            "BYIBAhABUgtjYXJkaW5hbGl0eRIcCglyYXRpb25hbGUYAyABKAlSCXJhdGlv",
-            "bmFsZSJCChZTdXBwb3J0ZWRFdmVudHNNZXNzYWdlEigKBmV2ZW50cxgBIAMo",
-            "DjIQLmFyLnYxLkV2ZW50VHlwZVIGZXZlbnRzKuYCCgtDb21tYW5kVHlwZRIc",
-            "ChhDT01NQU5EX1RZUEVfVU5TUEVDSUZJRUQQABIeChpDT01NQU5EX1RZUEVf",
-            "VEFTS19DT01QTEVURRAKEhwKGENPTU1BTkRfVFlQRV9UQVNLX0FTU0lHThAL",
-            "EhoKFkNPTU1BTkRfVFlQRV9UQVNLX1VORE8QDBIfChtDT01NQU5EX1RZUEVf",
-            "VEFTS19ISUdITElHSFQQDRIaChZDT01NQU5EX1RZUEVfVEFTS19IRUxQEA4S",
-            "IQodQ09NTUFORF9UWVBFX1JPQk9UX1NUQVJUX1NUT1AQZBIoCiRDT01NQU5E",
-            "X1RZUEVfUk9CT1RfVE9HR0xFX0ZSRUVfRFJJVkUQZRIqCiZDT01NQU5EX1RZ",
-            "UEVfUk9CT1RfU1RBUlRfQ09MTEFCT1JBVElPThBmEikKJUNPTU1BTkRfVFlQ",
-            "RV9ST0JPVF9TVE9QX0NPTExBQk9SQVRJT04QZyrEAwoJRXZlbnRUeXBlEhoK",
-            "FkVWRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIfChtFVkVOVF9UWVBFX1BST0NF",
-            "U1NfQ09NUExFVEUQChIgChxFVkVOVF9UWVBFX1NFUVVFTkNFX0NPTVBMRVRF",
-            "EAsSHAoYRVZFTlRfVFlQRV9UQVNLX0NPTVBMRVRFEAwSJQohRVZFTlRfVFlQ",
-            "RV9ST0JPVF9XQVlQT0lOVF9SRUFDSEVEEGQSIgodRVZFTlRfVFlQRV9ST0JP",
-            "VF9QTEFOX1NUQVJURUQQggESIgodRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0NI",
-            "QU5HRUQQgwESIgodRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0FCT1JURUQQhAES",
-            "JAofRVZFTlRfVFlQRV9ST0JPVF9QTEFOX0NPTVBMRVRFRBCFARItCihFVkVO",
-            "VF9UWVBFX1JPQk9UX1dBSVRJTkdfRk9SX0FDS05PV0xFREdFEJYBEiYKIUVW",
-            "RU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfSEVMUBCXARIqCiVFVkVOVF9U",
-            "WVBFX1JPQk9UX1dBSVRJTkdfVEFTS19SRUxFQVNFEJgBKv4BCg1UZWxlbWV0",
-            "cnlUeXBlEh4KGlRFTEVNRVRSWV9UWVBFX1VOU1BFQ0lGSUVEEAASHAoYVEVM",
-            "RU1FVFJZX1RZUEVfUk9CT1RfVENQEGQSJQohVEVMRU1FVFJZX1RZUEVfUk9C",
-            "T1RfSk9JTlRfQU5HTEVTEGUSJQohVEVMRU1FVFJZX1RZUEVfUk9CT1RfRk9S",
-            "Q0VfVE9SUVVFEGYSHgoaVEVMRU1FVFJZX1RZUEVfUk9CT1RfU1RBVEUQbhId",
-            "ChlURUxFTUVUUllfVFlQRV9ST0JPVF9QQVRIEHgSIgoeVEVMRU1FVFJZX1RZ",
-            "UEVfUk9CT1RfV0FZUE9JTlRTEHkq6wEKCFBsYW5UeXBlEhkKFVBMQU5fVFlQ",
-            "RV9VTlNQRUNJRklFRBAAEhgKFFBMQU5fVFlQRV9ST0JPVF9QQVRIEGQSIAoc",
-            "UExBTl9UWVBFX1JPQk9UX0pPSU5UX0FOR0xFUxBlEh0KGVBMQU5fVFlQRV9S",
-            "T0JPVF9XQVlQT0lOVFMQZhIoCiRQTEFOX1RZUEVfUk9CT1RfRVNUSU1BVEVE",
-            "X0NPTVBMRVRJT04QexIhCh1QTEFOX1RZUEVfUk9CT1RfVEFTS19TRVFVRU5D",
-            "RRB8EhwKF1BMQU5fVFlQRV9UQVNLX1NFUVVFTkNFEMgBKqkBChJIYW5kbGVy",
-            "Q2FyZGluYWxpdHkSIwofSEFORExFUl9DQVJESU5BTElUWV9VTlNQRUNJRklF",
-            "RBAAEiQKIEhBTkRMRVJfQ0FSRElOQUxJVFlfQVRfTEVBU1RfT05FEAESIwof",
-            "SEFORExFUl9DQVJESU5BTElUWV9FWEFDVExZX09ORRACEiMKH0hBTkRMRVJf",
-            "Q0FSRElOQUxJVFlfQVRfTU9TVF9PTkUQA0KHAQoJY29tLmFyLnYxQgtFdmVu",
-            "dHNQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
-            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
-            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "cGVCCLpIBYIBAhABUgRwbGFuOii6SCUiIwoHY29tbWFuZAoFZXZlbnQKCXRl",
+            "bGVtZXRyeQoEcGxhbhABIqgBChJIYW5kbGVyUmVxdWlyZW1lbnQSLQoHbWVz",
+            "c2FnZRgBIAEoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZVIHbWVzc2FnZRJFCgtj",
+            "YXJkaW5hbGl0eRgCIAEoDjIZLmFyLnYxLkhhbmRsZXJDYXJkaW5hbGl0eUII",
+            "ukgFggECEAFSC2NhcmRpbmFsaXR5EhwKCXJhdGlvbmFsZRgDIAEoCVIJcmF0",
+            "aW9uYWxlIl4KD0V4Y2hhbmdlU3VwcG9ydBItCgdtZXNzYWdlGAEgASgLMhMu",
+            "YXIudjEuRXhjaGFuZ2VUeXBlUgdtZXNzYWdlEhwKCXJhdGlvbmFsZRgCIAEo",
+            "CVIJcmF0aW9uYWxlIlEKGVN1cHBvcnRlZEV4Y2hhbmdlc01lc3NhZ2USNAoJ",
+            "ZXhjaGFuZ2VzGAEgAygLMhYuYXIudjEuRXhjaGFuZ2VTdXBwb3J0UglleGNo",
+            "YW5nZXMq5gIKC0NvbW1hbmRUeXBlEhwKGENPTU1BTkRfVFlQRV9VTlNQRUNJ",
+            "RklFRBAAEh4KGkNPTU1BTkRfVFlQRV9UQVNLX0NPTVBMRVRFEAoSHAoYQ09N",
+            "TUFORF9UWVBFX1RBU0tfQVNTSUdOEAsSGgoWQ09NTUFORF9UWVBFX1RBU0tf",
+            "VU5ETxAMEh8KG0NPTU1BTkRfVFlQRV9UQVNLX0hJR0hMSUdIVBANEhoKFkNP",
+            "TU1BTkRfVFlQRV9UQVNLX0hFTFAQDhIhCh1DT01NQU5EX1RZUEVfUk9CT1Rf",
+            "U1RBUlRfU1RPUBBkEigKJENPTU1BTkRfVFlQRV9ST0JPVF9UT0dHTEVfRlJF",
+            "RV9EUklWRRBlEioKJkNPTU1BTkRfVFlQRV9ST0JPVF9TVEFSVF9DT0xMQUJP",
+            "UkFUSU9OEGYSKQolQ09NTUFORF9UWVBFX1JPQk9UX1NUT1BfQ09MTEFCT1JB",
+            "VElPThBnKsQDCglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEh8KG0VWRU5UX1RZUEVfUFJPQ0VTU19DT01QTEVURRAKEiAKHEVWRU5U",
+            "X1RZUEVfU0VRVUVOQ0VfQ09NUExFVEUQCxIcChhFVkVOVF9UWVBFX1RBU0tf",
+            "Q09NUExFVEUQDBIlCiFFVkVOVF9UWVBFX1JPQk9UX1dBWVBPSU5UX1JFQUNI",
+            "RUQQZBIiCh1FVkVOVF9UWVBFX1JPQk9UX1BMQU5fU1RBUlRFRBCCARIiCh1F",
+            "VkVOVF9UWVBFX1JPQk9UX1BMQU5fQ0hBTkdFRBCDARIiCh1FVkVOVF9UWVBF",
+            "X1JPQk9UX1BMQU5fQUJPUlRFRBCEARIkCh9FVkVOVF9UWVBFX1JPQk9UX1BM",
+            "QU5fQ09NUExFVEVEEIUBEi0KKEVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19G",
+            "T1JfQUNLTk9XTEVER0UQlgESJgohRVZFTlRfVFlQRV9ST0JPVF9XQUlUSU5H",
+            "X0ZPUl9IRUxQEJcBEioKJUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19UQVNL",
+            "X1JFTEVBU0UQmAEq/gEKDVRlbGVtZXRyeVR5cGUSHgoaVEVMRU1FVFJZX1RZ",
+            "UEVfVU5TUEVDSUZJRUQQABIcChhURUxFTUVUUllfVFlQRV9ST0JPVF9UQ1AQ",
+            "ZBIlCiFURUxFTUVUUllfVFlQRV9ST0JPVF9KT0lOVF9BTkdMRVMQZRIlCiFU",
+            "RUxFTUVUUllfVFlQRV9ST0JPVF9GT1JDRV9UT1JRVUUQZhIeChpURUxFTUVU",
+            "UllfVFlQRV9ST0JPVF9TVEFURRBuEh0KGVRFTEVNRVRSWV9UWVBFX1JPQk9U",
+            "X1BBVEgQeBIiCh5URUxFTUVUUllfVFlQRV9ST0JPVF9XQVlQT0lOVFMQeSrr",
+            "AQoIUGxhblR5cGUSGQoVUExBTl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUExB",
+            "Tl9UWVBFX1JPQk9UX1BBVEgQZBIgChxQTEFOX1RZUEVfUk9CT1RfSk9JTlRf",
+            "QU5HTEVTEGUSHQoZUExBTl9UWVBFX1JPQk9UX1dBWVBPSU5UUxBmEigKJFBM",
+            "QU5fVFlQRV9ST0JPVF9FU1RJTUFURURfQ09NUExFVElPThB7EiEKHVBMQU5f",
+            "VFlQRV9ST0JPVF9UQVNLX1NFUVVFTkNFEHwSHAoXUExBTl9UWVBFX1RBU0tf",
+            "U0VRVUVOQ0UQyAEqqQEKEkhhbmRsZXJDYXJkaW5hbGl0eRIjCh9IQU5ETEVS",
+            "X0NBUkRJTkFMSVRZX1VOU1BFQ0lGSUVEEAASJAogSEFORExFUl9DQVJESU5B",
+            "TElUWV9BVF9MRUFTVF9PTkUQARIjCh9IQU5ETEVSX0NBUkRJTkFMSVRZX0VY",
+            "QUNUTFlfT05FEAISIwofSEFORExFUl9DQVJESU5BTElUWV9BVF9NT1NUX09O",
+            "RRADQocBCgljb20uYXIudjFCC0V2ZW50c1Byb3RvUAFaL2dpdGh1Yi5jb20v",
+            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
+            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
+            "QXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.CommandType), typeof(global::Messages.AR.V1.EventType), typeof(global::Messages.AR.V1.TelemetryType), typeof(global::Messages.AR.V1.PlanType), typeof(global::Messages.AR.V1.HandlerCardinality), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ExchangeType), global::Messages.AR.V1.ExchangeType.Parser, new[]{ "Command", "Event", "Telemetry", "Plan" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.HandlerRequirement), global::Messages.AR.V1.HandlerRequirement.Parser, new[]{ "Message", "Cardinality", "Rationale" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.SupportedEventsMessage), global::Messages.AR.V1.SupportedEventsMessage.Parser, new[]{ "Events" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ExchangeSupport), global::Messages.AR.V1.ExchangeSupport.Parser, new[]{ "Message", "Rationale" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.SupportedExchangesMessage), global::Messages.AR.V1.SupportedExchangesMessage.Parser, new[]{ "Exchanges" }, null, null, null, null)
           }));
     }
     #endregion
@@ -785,21 +789,17 @@ namespace Messages.AR.V1 {
 
   }
 
-  /// <summary>
-  /// Supported events is a list of all supported events in the current configuration
-  /// TODO: should this be a field of ARConfig?
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class SupportedEventsMessage : pb::IMessage<SupportedEventsMessage>
+  public sealed partial class ExchangeSupport : pb::IMessage<ExchangeSupport>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<SupportedEventsMessage> _parser = new pb::MessageParser<SupportedEventsMessage>(() => new SupportedEventsMessage());
+    private static readonly pb::MessageParser<ExchangeSupport> _parser = new pb::MessageParser<ExchangeSupport>(() => new ExchangeSupport());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<SupportedEventsMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<ExchangeSupport> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -815,7 +815,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SupportedEventsMessage() {
+    public ExchangeSupport() {
       OnConstruction();
     }
 
@@ -823,44 +823,62 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SupportedEventsMessage(SupportedEventsMessage other) : this() {
-      events_ = other.events_.Clone();
+    public ExchangeSupport(ExchangeSupport other) : this() {
+      message_ = other.message_ != null ? other.message_.Clone() : null;
+      rationale_ = other.rationale_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SupportedEventsMessage Clone() {
-      return new SupportedEventsMessage(this);
+    public ExchangeSupport Clone() {
+      return new ExchangeSupport(this);
     }
 
-    /// <summary>Field number for the "events" field.</summary>
-    public const int EventsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.EventType> _repeated_events_codec
-        = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::Messages.AR.V1.EventType) x);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.EventType> events_ = new pbc::RepeatedField<global::Messages.AR.V1.EventType>();
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 1;
+    private global::Messages.AR.V1.ExchangeType message_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.EventType> Events {
-      get { return events_; }
+    public global::Messages.AR.V1.ExchangeType Message {
+      get { return message_; }
+      set {
+        message_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rationale" field.</summary>
+    public const int RationaleFieldNumber = 2;
+    private string rationale_ = "";
+    /// <summary>
+    /// optional but super helpful for UI
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Rationale {
+      get { return rationale_; }
+      set {
+        rationale_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as SupportedEventsMessage);
+      return Equals(other as ExchangeSupport);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(SupportedEventsMessage other) {
+    public bool Equals(ExchangeSupport other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!events_.Equals(other.events_)) return false;
+      if (!object.Equals(Message, other.Message)) return false;
+      if (Rationale != other.Rationale) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -868,7 +886,8 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= events_.GetHashCode();
+      if (message_ != null) hash ^= Message.GetHashCode();
+      if (Rationale.Length != 0) hash ^= Rationale.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -887,7 +906,14 @@ namespace Messages.AR.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      events_.WriteTo(output, _repeated_events_codec);
+      if (message_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Message);
+      }
+      if (Rationale.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Rationale);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -898,7 +924,14 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      events_.WriteTo(ref output, _repeated_events_codec);
+      if (message_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Message);
+      }
+      if (Rationale.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Rationale);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -909,7 +942,12 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += events_.CalculateSize(_repeated_events_codec);
+      if (message_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
+      }
+      if (Rationale.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Rationale);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -918,11 +956,19 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(SupportedEventsMessage other) {
+    public void MergeFrom(ExchangeSupport other) {
       if (other == null) {
         return;
       }
-      events_.Add(other.events_);
+      if (other.message_ != null) {
+        if (message_ == null) {
+          Message = new global::Messages.AR.V1.ExchangeType();
+        }
+        Message.MergeFrom(other.Message);
+      }
+      if (other.Rationale.Length != 0) {
+        Rationale = other.Rationale;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -942,9 +988,15 @@ namespace Messages.AR.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            events_.AddEntriesFrom(input, _repeated_events_codec);
+          case 10: {
+            if (message_ == null) {
+              Message = new global::Messages.AR.V1.ExchangeType();
+            }
+            input.ReadMessage(Message);
+            break;
+          }
+          case 18: {
+            Rationale = input.ReadString();
             break;
           }
         }
@@ -966,9 +1018,206 @@ namespace Messages.AR.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            events_.AddEntriesFrom(ref input, _repeated_events_codec);
+          case 10: {
+            if (message_ == null) {
+              Message = new global::Messages.AR.V1.ExchangeType();
+            }
+            input.ReadMessage(Message);
+            break;
+          }
+          case 18: {
+            Rationale = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Supported events is a list of all supported events in the current configuration
+  /// TODO: should this be a field of ARConfig?
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SupportedExchangesMessage : pb::IMessage<SupportedExchangesMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SupportedExchangesMessage> _parser = new pb::MessageParser<SupportedExchangesMessage>(() => new SupportedExchangesMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SupportedExchangesMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.EventsReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SupportedExchangesMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SupportedExchangesMessage(SupportedExchangesMessage other) : this() {
+      exchanges_ = other.exchanges_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SupportedExchangesMessage Clone() {
+      return new SupportedExchangesMessage(this);
+    }
+
+    /// <summary>Field number for the "exchanges" field.</summary>
+    public const int ExchangesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeSupport> _repeated_exchanges_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.ExchangeSupport.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeSupport> exchanges_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeSupport>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeSupport> Exchanges {
+      get { return exchanges_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SupportedExchangesMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SupportedExchangesMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!exchanges_.Equals(other.exchanges_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= exchanges_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      exchanges_.WriteTo(output, _repeated_exchanges_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      exchanges_.WriteTo(ref output, _repeated_exchanges_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += exchanges_.CalculateSize(_repeated_exchanges_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SupportedExchangesMessage other) {
+      if (other == null) {
+        return;
+      }
+      exchanges_.Add(other.exchanges_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            exchanges_.AddEntriesFrom(input, _repeated_exchanges_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            exchanges_.AddEntriesFrom(ref input, _repeated_exchanges_codec);
             break;
           }
         }

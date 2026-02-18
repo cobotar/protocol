@@ -488,29 +488,28 @@ func (x *HandlerRequirement) GetRationale() string {
 	return ""
 }
 
-// Supported events is a list of all supported events in the current configuration
-// TODO: should this be a field of ARConfig?
-type SupportedEventsMessage struct {
+type ExchangeSupport struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Events        []EventType            `protobuf:"varint,1,rep,packed,name=events,proto3,enum=ar.v1.EventType" json:"events,omitempty"`
+	Message       *ExchangeType          `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	Rationale     string                 `protobuf:"bytes,2,opt,name=rationale,proto3" json:"rationale,omitempty"` // optional but super helpful for UI
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *SupportedEventsMessage) Reset() {
-	*x = SupportedEventsMessage{}
+func (x *ExchangeSupport) Reset() {
+	*x = ExchangeSupport{}
 	mi := &file_ar_v1_events_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SupportedEventsMessage) String() string {
+func (x *ExchangeSupport) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SupportedEventsMessage) ProtoMessage() {}
+func (*ExchangeSupport) ProtoMessage() {}
 
-func (x *SupportedEventsMessage) ProtoReflect() protoreflect.Message {
+func (x *ExchangeSupport) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_events_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -522,14 +521,67 @@ func (x *SupportedEventsMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SupportedEventsMessage.ProtoReflect.Descriptor instead.
-func (*SupportedEventsMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use ExchangeSupport.ProtoReflect.Descriptor instead.
+func (*ExchangeSupport) Descriptor() ([]byte, []int) {
 	return file_ar_v1_events_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SupportedEventsMessage) GetEvents() []EventType {
+func (x *ExchangeSupport) GetMessage() *ExchangeType {
 	if x != nil {
-		return x.Events
+		return x.Message
+	}
+	return nil
+}
+
+func (x *ExchangeSupport) GetRationale() string {
+	if x != nil {
+		return x.Rationale
+	}
+	return ""
+}
+
+// Supported events is a list of all supported events in the current configuration
+// TODO: should this be a field of ARConfig?
+type SupportedExchangesMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Exchanges     []*ExchangeSupport     `protobuf:"bytes,1,rep,name=exchanges,proto3" json:"exchanges,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SupportedExchangesMessage) Reset() {
+	*x = SupportedExchangesMessage{}
+	mi := &file_ar_v1_events_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SupportedExchangesMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SupportedExchangesMessage) ProtoMessage() {}
+
+func (x *SupportedExchangesMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_events_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SupportedExchangesMessage.ProtoReflect.Descriptor instead.
+func (*SupportedExchangesMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_events_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SupportedExchangesMessage) GetExchanges() []*ExchangeSupport {
+	if x != nil {
+		return x.Exchanges
 	}
 	return nil
 }
@@ -538,21 +590,25 @@ var File_ar_v1_events_proto protoreflect.FileDescriptor
 
 const file_ar_v1_events_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/events.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\"\x8d\x02\n" +
+	"\x12ar/v1/events.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\"\x8f\x02\n" +
 	"\fExchangeType\x126\n" +
 	"\acommand\x18\x01 \x01(\x0e2\x12.ar.v1.CommandTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\acommand\x120\n" +
 	"\x05event\x18\x02 \x01(\x0e2\x10.ar.v1.EventTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05event\x12<\n" +
 	"\ttelemetry\x18\x03 \x01(\x0e2\x14.ar.v1.TelemetryTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\ttelemetry\x12-\n" +
-	"\x04plan\x18\x04 \x01(\x0e2\x0f.ar.v1.PlanTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04plan:&\xbaH#\"!\n" +
+	"\x04plan\x18\x04 \x01(\x0e2\x0f.ar.v1.PlanTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04plan:(\xbaH%\"#\n" +
 	"\acommand\n" +
 	"\x05event\n" +
-	"\rtelemetryplan\x10\x01\"\xa8\x01\n" +
+	"\ttelemetry\n" +
+	"\x04plan\x10\x01\"\xa8\x01\n" +
 	"\x12HandlerRequirement\x12-\n" +
 	"\amessage\x18\x01 \x01(\v2\x13.ar.v1.ExchangeTypeR\amessage\x12E\n" +
 	"\vcardinality\x18\x02 \x01(\x0e2\x19.ar.v1.HandlerCardinalityB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcardinality\x12\x1c\n" +
-	"\trationale\x18\x03 \x01(\tR\trationale\"B\n" +
-	"\x16SupportedEventsMessage\x12(\n" +
-	"\x06events\x18\x01 \x03(\x0e2\x10.ar.v1.EventTypeR\x06events*\xe6\x02\n" +
+	"\trationale\x18\x03 \x01(\tR\trationale\"^\n" +
+	"\x0fExchangeSupport\x12-\n" +
+	"\amessage\x18\x01 \x01(\v2\x13.ar.v1.ExchangeTypeR\amessage\x12\x1c\n" +
+	"\trationale\x18\x02 \x01(\tR\trationale\"Q\n" +
+	"\x19SupportedExchangesMessage\x124\n" +
+	"\texchanges\x18\x01 \x03(\v2\x16.ar.v1.ExchangeSupportR\texchanges*\xe6\x02\n" +
 	"\vCommandType\x12\x1c\n" +
 	"\x18COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aCOMMAND_TYPE_TASK_COMPLETE\x10\n" +
@@ -615,16 +671,17 @@ func file_ar_v1_events_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_events_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_ar_v1_events_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_ar_v1_events_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_events_proto_goTypes = []any{
-	(CommandType)(0),               // 0: ar.v1.CommandType
-	(EventType)(0),                 // 1: ar.v1.EventType
-	(TelemetryType)(0),             // 2: ar.v1.TelemetryType
-	(PlanType)(0),                  // 3: ar.v1.PlanType
-	(HandlerCardinality)(0),        // 4: ar.v1.HandlerCardinality
-	(*ExchangeType)(nil),           // 5: ar.v1.ExchangeType
-	(*HandlerRequirement)(nil),     // 6: ar.v1.HandlerRequirement
-	(*SupportedEventsMessage)(nil), // 7: ar.v1.SupportedEventsMessage
+	(CommandType)(0),                  // 0: ar.v1.CommandType
+	(EventType)(0),                    // 1: ar.v1.EventType
+	(TelemetryType)(0),                // 2: ar.v1.TelemetryType
+	(PlanType)(0),                     // 3: ar.v1.PlanType
+	(HandlerCardinality)(0),           // 4: ar.v1.HandlerCardinality
+	(*ExchangeType)(nil),              // 5: ar.v1.ExchangeType
+	(*HandlerRequirement)(nil),        // 6: ar.v1.HandlerRequirement
+	(*ExchangeSupport)(nil),           // 7: ar.v1.ExchangeSupport
+	(*SupportedExchangesMessage)(nil), // 8: ar.v1.SupportedExchangesMessage
 }
 var file_ar_v1_events_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ExchangeType.command:type_name -> ar.v1.CommandType
@@ -633,12 +690,13 @@ var file_ar_v1_events_proto_depIdxs = []int32{
 	3, // 3: ar.v1.ExchangeType.plan:type_name -> ar.v1.PlanType
 	5, // 4: ar.v1.HandlerRequirement.message:type_name -> ar.v1.ExchangeType
 	4, // 5: ar.v1.HandlerRequirement.cardinality:type_name -> ar.v1.HandlerCardinality
-	1, // 6: ar.v1.SupportedEventsMessage.events:type_name -> ar.v1.EventType
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	5, // 6: ar.v1.ExchangeSupport.message:type_name -> ar.v1.ExchangeType
+	7, // 7: ar.v1.SupportedExchangesMessage.exchanges:type_name -> ar.v1.ExchangeSupport
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_events_proto_init() }
@@ -652,7 +710,7 @@ func file_ar_v1_events_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_events_proto_rawDesc), len(file_ar_v1_events_proto_rawDesc)),
 			NumEnums:      5,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

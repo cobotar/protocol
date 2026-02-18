@@ -9,3 +9,5 @@ MODEL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 model_id_component: _descriptor.FieldDescriptor
 AR_CONFIG_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_config_id_component: _descriptor.FieldDescriptor
+PROPERTY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+property_id_component: _descriptor.FieldDescriptor

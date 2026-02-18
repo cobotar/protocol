@@ -236,6 +236,12 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 7;
     private string configId_ = "";
+    /// <summary>
+    ///repeated string property_ids = 6 [
+    ///(buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
+    ///(buf.validate.field).repeated.unique = true
+    ///];
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConfigId {

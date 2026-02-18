@@ -125,8 +125,16 @@ class HandlerRequirement(_message.Message):
     rationale: str
     def __init__(self, message: _Optional[_Union[ExchangeType, _Mapping]] = ..., cardinality: _Optional[_Union[HandlerCardinality, str]] = ..., rationale: _Optional[str] = ...) -> None: ...
 
-class SupportedEventsMessage(_message.Message):
-    __slots__ = ("events",)
-    EVENTS_FIELD_NUMBER: _ClassVar[int]
-    events: _containers.RepeatedScalarFieldContainer[EventType]
-    def __init__(self, events: _Optional[_Iterable[_Union[EventType, str]]] = ...) -> None: ...
+class ExchangeSupport(_message.Message):
+    __slots__ = ("message", "rationale")
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    RATIONALE_FIELD_NUMBER: _ClassVar[int]
+    message: ExchangeType
+    rationale: str
+    def __init__(self, message: _Optional[_Union[ExchangeType, _Mapping]] = ..., rationale: _Optional[str] = ...) -> None: ...
+
+class SupportedExchangesMessage(_message.Message):
+    __slots__ = ("exchanges",)
+    EXCHANGES_FIELD_NUMBER: _ClassVar[int]
+    exchanges: _containers.RepeatedCompositeFieldContainer[ExchangeSupport]
+    def __init__(self, exchanges: _Optional[_Iterable[_Union[ExchangeSupport, _Mapping]]] = ...) -> None: ...

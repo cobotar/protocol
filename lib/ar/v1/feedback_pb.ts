@@ -51,6 +51,11 @@ export type FeedbackMessage = Message<"ar.v1.FeedbackMessage"> & {
   properties: Property[];
 
   /**
+   * repeated string property_ids = 6 [
+   * (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
+   * (buf.validate.field).repeated.unique = true
+   * ];
+   *
    * @generated from field: string config_id = 7;
    */
   configId: string;

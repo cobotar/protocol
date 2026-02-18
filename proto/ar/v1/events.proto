@@ -96,7 +96,7 @@ message ExchangeType {
     fields: [
       "command",
       "event",
-      "telemetry"
+      "telemetry",
       "plan"
     ]
     required: true
@@ -120,8 +120,13 @@ message HandlerRequirement {
   string rationale = 3; // optional but super helpful for UI
 }
 
+message ExchangeSupport {
+  ExchangeType message = 1;
+  string rationale = 2; // optional but super helpful for UI
+}
+
 // Supported events is a list of all supported events in the current configuration
 // TODO: should this be a field of ARConfig?
-message SupportedEventsMessage { // TODO: this shouldn't be 'EventType', but either exchange-type or similar
-  repeated EventType events = 1;
+message SupportedExchangesMessage {
+  repeated ExchangeSupport exchanges = 1;
 }

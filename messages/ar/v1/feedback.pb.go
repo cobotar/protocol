@@ -115,14 +115,18 @@ func (FeedbackType) EnumDescriptor() ([]byte, []int) {
 }
 
 type FeedbackMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	Properties    []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	ConfigId      string                 `protobuf:"bytes,7,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type        FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	Properties  []*Property            `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	// repeated string property_ids = 6 [
+	// (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
+	// (buf.validate.field).repeated.unique = true
+	// ];
+	ConfigId      string `protobuf:"bytes,7,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

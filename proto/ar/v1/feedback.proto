@@ -40,6 +40,10 @@ message FeedbackMessage {
     (buf.validate.field).enum.defined_only = true
   ];
   repeated ar.v1.Property properties = 6;
+  /*repeated string property_ids = 6 [
+       (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
+       (buf.validate.field).repeated.unique = true
+     ];*/
   string config_id = 7 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
