@@ -1,6 +1,7 @@
 import datetime
 
 from buf.validate import validate_pb2 as _validate_pb2
+from geometry.v1 import anchor_pb2 as _anchor_pb2
 from geometry.v1 import point_pb2 as _point_pb2
 from geometry.v1 import quad_pb2 as _quad_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -32,17 +33,17 @@ class Pose(_message.Message):
     def __init__(self, position: _Optional[_Union[_point_pb2.Point, _Mapping]] = ..., orientation: _Optional[_Union[_quad_pb2.Quad, _Mapping]] = ...) -> None: ...
 
 class LocalizedPose(_message.Message):
-    __slots__ = ("id", "position", "orientation", "anchor_id", "state", "last_updated")
+    __slots__ = ("id", "position", "orientation", "anchor", "state", "last_updated")
     ID_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     ORIENTATION_FIELD_NUMBER: _ClassVar[int]
-    ANCHOR_ID_FIELD_NUMBER: _ClassVar[int]
+    ANCHOR_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     LAST_UPDATED_FIELD_NUMBER: _ClassVar[int]
     id: str
     position: _point_pb2.Point
     orientation: _quad_pb2.Quad
-    anchor_id: str
+    anchor: _anchor_pb2.Anchor
     state: LocalizedState
     last_updated: _timestamp_pb2.Timestamp
-    def __init__(self, id: _Optional[str] = ..., position: _Optional[_Union[_point_pb2.Point, _Mapping]] = ..., orientation: _Optional[_Union[_quad_pb2.Quad, _Mapping]] = ..., anchor_id: _Optional[str] = ..., state: _Optional[_Union[LocalizedState, str]] = ..., last_updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., position: _Optional[_Union[_point_pb2.Point, _Mapping]] = ..., orientation: _Optional[_Union[_quad_pb2.Quad, _Mapping]] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., state: _Optional[_Union[LocalizedState, str]] = ..., last_updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

@@ -25,49 +25,50 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5",
-            "LnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlkYXRp",
-            "b24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8ihQIKD0ZlZWRi",
-            "YWNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgG",
-            "cgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
-            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEjQKBHR5cGUYBSABKA4yEy5hci52MS5G",
-            "ZWVkYmFja1R5cGVCC7pICIIBAhAByAEBUgR0eXBlEi8KCnByb3BlcnRpZXMY",
-            "BiADKAsyDy5hci52MS5Qcm9wZXJ0eVIKcHJvcGVydGllcxImCgljb25maWdf",
-            "aWQYByABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQiSAoQRmVlZGJhY2tNZXNz",
-            "YWdlcxI0CglmZWVkYmFja3MYASADKAsyFi5hci52MS5GZWVkYmFja01lc3Nh",
-            "Z2VSCWZlZWRiYWNrcyL0AQoSRmVlZGJhY2tBZGRNZXNzYWdlEiYKCWNvbmZp",
-            "Z19pZBgBIAEoCUIJukgGcgSQ8QQBUghjb25maWdJZBISCgRuYW1lGAIgASgJ",
-            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
-            "KAlSC2Rlc2NyaXB0aW9uEjQKBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFj",
-            "a1R5cGVCC7pICIIBAhAByAEBUgR0eXBlEhkKCGFnZW50X2lkGAYgASgJUgdh",
-            "Z2VudElkEhsKCWFuY2hvcl9pZBgHIAEoCVIIYW5jaG9ySWQifAoVRmVlZGJh",
-            "Y2tVcGRhdGVNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJ",
-            "Qgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
-            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24igQEKFEZlZWRiYWNrQ2xvbmVN",
-            "ZXNzYWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElkEhIKBG5h",
-            "bWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlw",
-            "dGlvbhgEIAEoCVILZGVzY3JpcHRpb24qqgQKDEZlZWRiYWNrVHlwZRIdChlG",
-            "RUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9U",
-            "QVNLX0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJ",
-            "R0hMSUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdI",
-            "VBAMEh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURC",
-            "QUNLX1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVf",
-            "VEFTS19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQ",
-            "MhIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVE",
-            "QkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVf",
-            "Uk9CT1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2",
-            "EhkKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVf",
-            "SUNPThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZ",
-            "UEVfUExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaEKJAQoJ",
-            "Y29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2Fn",
-            "ZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYx",
-            "YgZwcm90bzM="));
+            "LnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aGGdlb21ldHJ5",
+            "L3YxL2FuY2hvci5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0",
+            "cmluZ19ydWxlcy5wcm90byKFAgoPRmVlZGJhY2tNZXNzYWdlEg4KAmlkGAEg",
+            "ASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNv",
+            "bhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp",
+            "b24SNAoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggEC",
+            "EAHIAQFSBHR5cGUSLwoKcHJvcGVydGllcxgGIAMoCzIPLmFyLnYxLlByb3Bl",
+            "cnR5Ugpwcm9wZXJ0aWVzEiYKCWNvbmZpZ19pZBgHIAEoCUIJukgGcgSQ8QQB",
+            "Ughjb25maWdJZCJIChBGZWVkYmFja01lc3NhZ2VzEjQKCWZlZWRiYWNrcxgB",
+            "IAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZVIJZmVlZGJhY2tzIoQCChJG",
+            "ZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDx",
+            "BAFSCGNvbmZpZ0lkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SNAoE",
+            "dHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggECEAHIAQFS",
+            "BHR5cGUSGQoIcm9ib3RfaWQYBiABKAlSB3JvYm90SWQSKwoGYW5jaG9yGAcg",
+            "ASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9yUgZhbmNob3IifAoVRmVlZGJhY2tV",
+            "cGRhdGVNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6",
+            "SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlw",
+            "dGlvbhgEIAEoCVILZGVzY3JpcHRpb24igQEKFEZlZWRiYWNrQ2xvbmVNZXNz",
+            "YWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElkEhIKBG5hbWUY",
+            "AiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlv",
+            "bhgEIAEoCVILZGVzY3JpcHRpb24qqgQKDEZlZWRiYWNrVHlwZRIdChlGRUVE",
+            "QkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNL",
+            "X0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hM",
+            "SUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAM",
+            "Eh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNL",
+            "X1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFT",
+            "S19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIi",
+            "Ch5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFD",
+            "S19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9C",
+            "T1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkK",
+            "FUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNP",
+            "ThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVf",
+            "UExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaEKJAQoJY29t",
+            "LmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMu",
+            "QVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Properties", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessages), global::Messages.AR.V1.FeedbackMessages.Parser, new[]{ "Feedbacks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "AgentId", "AnchorId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "RobotId", "Anchor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackUpdateMessage), global::Messages.AR.V1.FeedbackUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackCloneMessage), global::Messages.AR.V1.FeedbackCloneMessage.Parser, new[]{ "OriginalId", "Name", "Icon", "Description" }, null, null, null, null)
           }));
@@ -753,8 +754,8 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
-      agentId_ = other.agentId_;
-      anchorId_ = other.anchorId_;
+      robotId_ = other.robotId_;
+      anchor_ = other.anchor_ != null ? other.anchor_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -824,27 +825,27 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "agent_id" field.</summary>
-    public const int AgentIdFieldNumber = 6;
-    private string agentId_ = "";
+    /// <summary>Field number for the "robot_id" field.</summary>
+    public const int RobotIdFieldNumber = 6;
+    private string robotId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AgentId {
-      get { return agentId_; }
+    public string RobotId {
+      get { return robotId_; }
       set {
-        agentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "anchor_id" field.</summary>
-    public const int AnchorIdFieldNumber = 7;
-    private string anchorId_ = "";
+    /// <summary>Field number for the "anchor" field.</summary>
+    public const int AnchorFieldNumber = 7;
+    private global::Messages.Common.V1.Anchor anchor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AnchorId {
-      get { return anchorId_; }
+    public global::Messages.Common.V1.Anchor Anchor {
+      get { return anchor_; }
       set {
-        anchorId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        anchor_ = value;
       }
     }
 
@@ -868,8 +869,8 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
-      if (AgentId != other.AgentId) return false;
-      if (AnchorId != other.AnchorId) return false;
+      if (RobotId != other.RobotId) return false;
+      if (!object.Equals(Anchor, other.Anchor)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -882,8 +883,8 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.FeedbackType.Unspecified) hash ^= Type.GetHashCode();
-      if (AgentId.Length != 0) hash ^= AgentId.GetHashCode();
-      if (AnchorId.Length != 0) hash ^= AnchorId.GetHashCode();
+      if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
+      if (anchor_ != null) hash ^= Anchor.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -922,13 +923,13 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (AgentId.Length != 0) {
+      if (RobotId.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(AgentId);
+        output.WriteString(RobotId);
       }
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(58);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -960,13 +961,13 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (AgentId.Length != 0) {
+      if (RobotId.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(AgentId);
+        output.WriteString(RobotId);
       }
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(58);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -993,11 +994,11 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.FeedbackType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (AgentId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AgentId);
+      if (RobotId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
-      if (AnchorId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AnchorId);
+      if (anchor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1026,11 +1027,14 @@ namespace Messages.AR.V1 {
       if (other.Type != global::Messages.AR.V1.FeedbackType.Unspecified) {
         Type = other.Type;
       }
-      if (other.AgentId.Length != 0) {
-        AgentId = other.AgentId;
+      if (other.RobotId.Length != 0) {
+        RobotId = other.RobotId;
       }
-      if (other.AnchorId.Length != 0) {
-        AnchorId = other.AnchorId;
+      if (other.anchor_ != null) {
+        if (anchor_ == null) {
+          Anchor = new global::Messages.Common.V1.Anchor();
+        }
+        Anchor.MergeFrom(other.Anchor);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1072,11 +1076,14 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            AgentId = input.ReadString();
+            RobotId = input.ReadString();
             break;
           }
           case 58: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
         }
@@ -1119,11 +1126,14 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            AgentId = input.ReadString();
+            RobotId = input.ReadString();
             break;
           }
           case 58: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
         }

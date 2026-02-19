@@ -1,5 +1,6 @@
 from ar.v1 import property_pb2 as _property_pb2
 from buf.validate import validate_pb2 as _validate_pb2
+from geometry.v1 import anchor_pb2 as _anchor_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -72,22 +73,22 @@ class FeedbackMessages(_message.Message):
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
 class FeedbackAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "agent_id", "anchor_id")
+    __slots__ = ("config_id", "name", "icon", "description", "type", "robot_id", "anchor")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
-    ANCHOR_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
+    ANCHOR_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
     icon: str
     description: str
     type: FeedbackType
-    agent_id: str
-    anchor_id: str
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., agent_id: _Optional[str] = ..., anchor_id: _Optional[str] = ...) -> None: ...
+    robot_id: str
+    anchor: _anchor_pb2.Anchor
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., robot_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
 
 class FeedbackUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description")

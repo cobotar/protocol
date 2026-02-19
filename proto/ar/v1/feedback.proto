@@ -3,6 +3,7 @@ package ar.v1;
 
 import "ar/v1/property.proto";
 import "buf/validate/validate.proto";
+import "geometry/v1/anchor.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -60,8 +61,8 @@ message FeedbackAddMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string agent_id = 6;
-  string anchor_id = 7;
+  string robot_id = 6;
+  geometry.v1.Anchor anchor = 7;
 }
 
 message FeedbackUpdateMessage {

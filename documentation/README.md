@@ -531,7 +531,7 @@ A localized pose with reference to an anchorId. The state and last updated time 
 | id | [string](#string) |  |  |
 | position | [Point](#geometry-v1-Point) |  |  |
 | orientation | [Quad](#geometry-v1-Quad) |  |  |
-| anchor_id | [string](#string) |  |  |
+| anchor | [Anchor](#geometry-v1-Anchor) |  |  |
 | state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
 | last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 
@@ -1330,8 +1330,8 @@ It is expected to be high-frequency updates or at least updates every time the s
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| agent_id | [string](#string) |  |  |
-| anchor_id | [string](#string) |  |  |
+| robot_id | [string](#string) |  |  |
+| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 
 
 

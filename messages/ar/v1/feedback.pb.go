@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -261,8 +262,8 @@ type FeedbackAddMessage struct {
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	AgentId       string                 `protobuf:"bytes,6,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
-	AnchorId      string                 `protobuf:"bytes,7,opt,name=anchor_id,json=anchorId,proto3" json:"anchor_id,omitempty"`
+	RobotId       string                 `protobuf:"bytes,6,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	Anchor        *v1.Anchor             `protobuf:"bytes,7,opt,name=anchor,proto3" json:"anchor,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -332,18 +333,18 @@ func (x *FeedbackAddMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
-func (x *FeedbackAddMessage) GetAgentId() string {
+func (x *FeedbackAddMessage) GetRobotId() string {
 	if x != nil {
-		return x.AgentId
+		return x.RobotId
 	}
 	return ""
 }
 
-func (x *FeedbackAddMessage) GetAnchorId() string {
+func (x *FeedbackAddMessage) GetAnchor() *v1.Anchor {
 	if x != nil {
-		return x.AnchorId
+		return x.Anchor
 	}
-	return ""
+	return nil
 }
 
 type FeedbackUpdateMessage struct {
@@ -486,7 +487,7 @@ var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x02\n" +
 	"\x0fFeedbackMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -498,15 +499,15 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"properties\x12&\n" +
 	"\tconfig_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xf4\x01\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\x84\x02\n" +
 	"\x12FeedbackAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x19\n" +
-	"\bagent_id\x18\x06 \x01(\tR\aagentId\x12\x1b\n" +
-	"\tanchor_id\x18\a \x01(\tR\banchorId\"|\n" +
+	"\brobot_id\x18\x06 \x01(\tR\arobotId\x12+\n" +
+	"\x06anchor\x18\a \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\"|\n" +
 	"\x15FeedbackUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -561,17 +562,19 @@ var file_ar_v1_feedback_proto_goTypes = []any{
 	(*FeedbackUpdateMessage)(nil), // 4: ar.v1.FeedbackUpdateMessage
 	(*FeedbackCloneMessage)(nil),  // 5: ar.v1.FeedbackCloneMessage
 	(*Property)(nil),              // 6: ar.v1.Property
+	(*v1.Anchor)(nil),             // 7: geometry.v1.Anchor
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
 	6, // 1: ar.v1.FeedbackMessage.properties:type_name -> ar.v1.Property
 	1, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
 	0, // 3: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	7, // 4: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }

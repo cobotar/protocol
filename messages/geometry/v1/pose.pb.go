@@ -134,7 +134,7 @@ type LocalizedPose struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Position      *Point                 `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty"`
 	Orientation   *Quad                  `protobuf:"bytes,3,opt,name=orientation,proto3" json:"orientation,omitempty"`
-	AnchorId      string                 `protobuf:"bytes,4,opt,name=anchor_id,json=anchorId,proto3" json:"anchor_id,omitempty"`
+	Anchor        *Anchor                `protobuf:"bytes,4,opt,name=anchor,proto3" json:"anchor,omitempty"`
 	State         LocalizedState         `protobuf:"varint,5,opt,name=state,proto3,enum=geometry.v1.LocalizedState" json:"state,omitempty"`
 	LastUpdated   *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -192,11 +192,11 @@ func (x *LocalizedPose) GetOrientation() *Quad {
 	return nil
 }
 
-func (x *LocalizedPose) GetAnchorId() string {
+func (x *LocalizedPose) GetAnchor() *Anchor {
 	if x != nil {
-		return x.AnchorId
+		return x.Anchor
 	}
-	return ""
+	return nil
 }
 
 func (x *LocalizedPose) GetState() LocalizedState {
@@ -217,18 +217,17 @@ var File_geometry_v1_pose_proto protoreflect.FileDescriptor
 
 const file_geometry_v1_pose_proto_rawDesc = "" +
 	"\n" +
-	"\x16geometry/v1/pose.proto\x12\vgeometry.v1\x1a\x1bbuf/validate/validate.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n" +
+	"\x16geometry/v1/pose.proto\x12\vgeometry.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n" +
 	"\x04Pose\x12.\n" +
 	"\bposition\x18\x01 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
-	"\vorientation\x18\x02 \x01(\v2\x11.geometry.v1.QuadR\vorientation\"\xc2\x03\n" +
+	"\vorientation\x18\x02 \x01(\v2\x11.geometry.v1.QuadR\vorientation\"\xc5\x02\n" +
 	"\rLocalizedPose\x12\x16\n" +
 	"\x02id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x02id\x126\n" +
 	"\bposition\x18\x02 \x01(\v2\x12.geometry.v1.PointB\x06\xbaH\x03\xc8\x01\x01R\bposition\x12;\n" +
-	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadB\x06\xbaH\x03\xc8\x01\x01R\vorientation\x12\x1b\n" +
-	"\tanchor_id\x18\x04 \x01(\tR\banchorId\x12;\n" +
+	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadB\x06\xbaH\x03\xc8\x01\x01R\vorientation\x12+\n" +
+	"\x06anchor\x18\x04 \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x12;\n" +
 	"\x05state\x18\x05 \x01(\x0e2\x1b.geometry.v1.LocalizedStateB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05state\x12=\n" +
-	"\flast_updated\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vlastUpdated:\x8a\x01\xbaH\x86\x01\x1a\x83\x01\n" +
-	"\"anchor_id_set_when_state_specified\x1a]this.state != 0 && has(this.anchor_id) ? 'anchor ID must be set when state is specified' : ''*\x82\x01\n" +
+	"\flast_updated\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vlastUpdated*\x82\x01\n" +
 	"\x0eLocalizedState\x12\x1f\n" +
 	"\x1bLOCALIZED_STATE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15LOCALIZED_STATE_FOUND\x10\x01\x12\x18\n" +
@@ -256,20 +255,22 @@ var file_geometry_v1_pose_proto_goTypes = []any{
 	(*LocalizedPose)(nil),         // 2: geometry.v1.LocalizedPose
 	(*Point)(nil),                 // 3: geometry.v1.Point
 	(*Quad)(nil),                  // 4: geometry.v1.Quad
-	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
+	(*Anchor)(nil),                // 5: geometry.v1.Anchor
+	(*timestamppb.Timestamp)(nil), // 6: google.protobuf.Timestamp
 }
 var file_geometry_v1_pose_proto_depIdxs = []int32{
 	3, // 0: geometry.v1.Pose.position:type_name -> geometry.v1.Point
 	4, // 1: geometry.v1.Pose.orientation:type_name -> geometry.v1.Quad
 	3, // 2: geometry.v1.LocalizedPose.position:type_name -> geometry.v1.Point
 	4, // 3: geometry.v1.LocalizedPose.orientation:type_name -> geometry.v1.Quad
-	0, // 4: geometry.v1.LocalizedPose.state:type_name -> geometry.v1.LocalizedState
-	5, // 5: geometry.v1.LocalizedPose.last_updated:type_name -> google.protobuf.Timestamp
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	5, // 4: geometry.v1.LocalizedPose.anchor:type_name -> geometry.v1.Anchor
+	0, // 5: geometry.v1.LocalizedPose.state:type_name -> geometry.v1.LocalizedState
+	6, // 6: geometry.v1.LocalizedPose.last_updated:type_name -> google.protobuf.Timestamp
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_geometry_v1_pose_proto_init() }
@@ -277,6 +278,7 @@ func file_geometry_v1_pose_proto_init() {
 	if File_geometry_v1_pose_proto != nil {
 		return
 	}
+	file_geometry_v1_anchor_proto_init()
 	file_geometry_v1_point_proto_init()
 	file_geometry_v1_quad_proto_init()
 	type x struct{}

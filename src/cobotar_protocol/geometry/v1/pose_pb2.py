@@ -23,12 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
 from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
 from geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/pose.proto\x12\x0bgeometry.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n\x04Pose\x12.\n\x08position\x18\x01 \x01(\x0b\x32\x12.geometry.v1.PointR\x08position\x12\x33\n\x0borientation\x18\x02 \x01(\x0b\x32\x11.geometry.v1.QuadR\x0borientation\"\xc2\x03\n\rLocalizedPose\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x36\n\x08position\x18\x02 \x01(\x0b\x32\x12.geometry.v1.PointB\x06\xbaH\x03\xc8\x01\x01R\x08position\x12;\n\x0borientation\x18\x03 \x01(\x0b\x32\x11.geometry.v1.QuadB\x06\xbaH\x03\xc8\x01\x01R\x0borientation\x12\x1b\n\tanchor_id\x18\x04 \x01(\tR\x08\x61nchorId\x12;\n\x05state\x18\x05 \x01(\x0e\x32\x1b.geometry.v1.LocalizedStateB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05state\x12=\n\x0clast_updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0blastUpdated:\x8a\x01\xbaH\x86\x01\x1a\x83\x01\n\"anchor_id_set_when_state_specified\x1a]this.state != 0 && has(this.anchor_id) ? \'anchor ID must be set when state is specified\' : \'\'*\x82\x01\n\x0eLocalizedState\x12\x1f\n\x1bLOCALIZED_STATE_UNSPECIFIED\x10\x00\x12\x19\n\x15LOCALIZED_STATE_FOUND\x10\x01\x12\x18\n\x14LOCALIZED_STATE_LOST\x10\x02\x12\x1a\n\x16LOCALIZED_STATE_STATIC\x10\x03\x42\xad\x01\n\x0f\x63om.geometry.v1B\tPoseProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/pose.proto\x12\x0bgeometry.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n\x04Pose\x12.\n\x08position\x18\x01 \x01(\x0b\x32\x12.geometry.v1.PointR\x08position\x12\x33\n\x0borientation\x18\x02 \x01(\x0b\x32\x11.geometry.v1.QuadR\x0borientation\"\xc5\x02\n\rLocalizedPose\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x36\n\x08position\x18\x02 \x01(\x0b\x32\x12.geometry.v1.PointB\x06\xbaH\x03\xc8\x01\x01R\x08position\x12;\n\x0borientation\x18\x03 \x01(\x0b\x32\x11.geometry.v1.QuadB\x06\xbaH\x03\xc8\x01\x01R\x0borientation\x12+\n\x06\x61nchor\x18\x04 \x01(\x0b\x32\x13.geometry.v1.AnchorR\x06\x61nchor\x12;\n\x05state\x18\x05 \x01(\x0e\x32\x1b.geometry.v1.LocalizedStateB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05state\x12=\n\x0clast_updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0blastUpdated*\x82\x01\n\x0eLocalizedState\x12\x1f\n\x1bLOCALIZED_STATE_UNSPECIFIED\x10\x00\x12\x19\n\x15LOCALIZED_STATE_FOUND\x10\x01\x12\x18\n\x14LOCALIZED_STATE_LOST\x10\x02\x12\x1a\n\x16LOCALIZED_STATE_STATIC\x10\x03\x42\xad\x01\n\x0f\x63om.geometry.v1B\tPoseProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,12 +45,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOCALIZEDPOSE'].fields_by_name['orientation']._serialized_options = b'\272H\003\310\001\001'
   _globals['_LOCALIZEDPOSE'].fields_by_name['state']._loaded_options = None
   _globals['_LOCALIZEDPOSE'].fields_by_name['state']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_LOCALIZEDPOSE']._loaded_options = None
-  _globals['_LOCALIZEDPOSE']._serialized_options = b'\272H\206\001\032\203\001\n\"anchor_id_set_when_state_specified\032]this.state != 0 && has(this.anchor_id) ? \'anchor ID must be set when state is specified\' : \'\''
-  _globals['_LOCALIZEDSTATE']._serialized_start=713
-  _globals['_LOCALIZEDSTATE']._serialized_end=843
-  _globals['_POSE']._serialized_start=150
-  _globals['_POSE']._serialized_end=257
-  _globals['_LOCALIZEDPOSE']._serialized_start=260
-  _globals['_LOCALIZEDPOSE']._serialized_end=710
+  _globals['_LOCALIZEDSTATE']._serialized_start=614
+  _globals['_LOCALIZEDSTATE']._serialized_end=744
+  _globals['_POSE']._serialized_start=176
+  _globals['_POSE']._serialized_end=283
+  _globals['_LOCALIZEDPOSE']._serialized_start=286
+  _globals['_LOCALIZEDPOSE']._serialized_end=611
 # @@protoc_insertion_point(module_scope)

@@ -2,6 +2,7 @@ syntax = "proto3";
 package geometry.v1;
 
 import "buf/validate/validate.proto";
+import "geometry/v1/anchor.proto";
 import "geometry/v1/point.proto";
 import "geometry/v1/quad.proto";
 import "google/protobuf/timestamp.proto";
@@ -24,15 +25,10 @@ enum LocalizedState {
 
 // A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
 message LocalizedPose {
-  option (buf.validate.message).cel = {
-    id: "anchor_id_set_when_state_specified"
-    expression: "this.state != 0 && has(this.anchor_id) ? 'anchor ID must be set when state is specified' : ''"
-  };
-
   string id = 1 [(buf.validate.field).required = true];
   Point position = 2 [(buf.validate.field).required = true];
   Quad orientation = 3 [(buf.validate.field).required = true];
-  string anchor_id = 4;
+  Anchor anchor = 4;
   LocalizedState state = 5 [(buf.validate.field).enum.defined_only = true];
   google.protobuf.Timestamp last_updated = 6;
 }

@@ -25,33 +25,31 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZnZW9tZXRyeS92MS9wb3NlLnByb3RvEgtnZW9tZXRyeS52MRobYnVmL3Zh",
-            "bGlkYXRlL3ZhbGlkYXRlLnByb3RvGhdnZW9tZXRyeS92MS9wb2ludC5wcm90",
-            "bxoWZ2VvbWV0cnkvdjEvcXVhZC5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3Rp",
-            "bWVzdGFtcC5wcm90byJrCgRQb3NlEi4KCHBvc2l0aW9uGAEgASgLMhIuZ2Vv",
-            "bWV0cnkudjEuUG9pbnRSCHBvc2l0aW9uEjMKC29yaWVudGF0aW9uGAIgASgL",
-            "MhEuZ2VvbWV0cnkudjEuUXVhZFILb3JpZW50YXRpb24iwgMKDUxvY2FsaXpl",
-            "ZFBvc2USFgoCaWQYASABKAlCBrpIA8gBAVICaWQSNgoIcG9zaXRpb24YAiAB",
-            "KAsyEi5nZW9tZXRyeS52MS5Qb2ludEIGukgDyAEBUghwb3NpdGlvbhI7Cgtv",
-            "cmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRCBrpIA8gBAVIL",
-            "b3JpZW50YXRpb24SGwoJYW5jaG9yX2lkGAQgASgJUghhbmNob3JJZBI7CgVz",
-            "dGF0ZRgFIAEoDjIbLmdlb21ldHJ5LnYxLkxvY2FsaXplZFN0YXRlQgi6SAWC",
-            "AQIQAVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAYgASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQ6igG6SIYBGoMBCiJhbmNo",
-            "b3JfaWRfc2V0X3doZW5fc3RhdGVfc3BlY2lmaWVkGl10aGlzLnN0YXRlICE9",
-            "IDAgJiYgaGFzKHRoaXMuYW5jaG9yX2lkKSA/ICdhbmNob3IgSUQgbXVzdCBi",
-            "ZSBzZXQgd2hlbiBzdGF0ZSBpcyBzcGVjaWZpZWQnIDogJycqggEKDkxvY2Fs",
-            "aXplZFN0YXRlEh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkK",
-            "FUxPQ0FMSVpFRF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9M",
-            "T1NUEAISGgoWTE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq0BCg9jb20uZ2Vv",
-            "bWV0cnkudjFCCVBvc2VQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJv",
-            "dG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoC",
-            "Ek1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlc",
-            "VjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
+            "bGlkYXRlL3ZhbGlkYXRlLnByb3RvGhhnZW9tZXRyeS92MS9hbmNob3IucHJv",
+            "dG8aF2dlb21ldHJ5L3YxL3BvaW50LnByb3RvGhZnZW9tZXRyeS92MS9xdWFk",
+            "LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvImsKBFBv",
+            "c2USLgoIcG9zaXRpb24YASABKAsyEi5nZW9tZXRyeS52MS5Qb2ludFIIcG9z",
+            "aXRpb24SMwoLb3JpZW50YXRpb24YAiABKAsyES5nZW9tZXRyeS52MS5RdWFk",
+            "UgtvcmllbnRhdGlvbiLFAgoNTG9jYWxpemVkUG9zZRIWCgJpZBgBIAEoCUIG",
+            "ukgDyAEBUgJpZBI2Cghwb3NpdGlvbhgCIAEoCzISLmdlb21ldHJ5LnYxLlBv",
+            "aW50Qga6SAPIAQFSCHBvc2l0aW9uEjsKC29yaWVudGF0aW9uGAMgASgLMhEu",
+            "Z2VvbWV0cnkudjEuUXVhZEIGukgDyAEBUgtvcmllbnRhdGlvbhIrCgZhbmNo",
+            "b3IYBCABKAsyEy5nZW9tZXRyeS52MS5BbmNob3JSBmFuY2hvchI7CgVzdGF0",
+            "ZRgFIAEoDjIbLmdlb21ldHJ5LnYxLkxvY2FsaXplZFN0YXRlQgi6SAWCAQIQ",
+            "AVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAYgASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQqggEKDkxvY2FsaXplZFN0YXRl",
+            "Eh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkKFUxPQ0FMSVpF",
+            "RF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9MT1NUEAISGgoW",
+            "TE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq0BCg9jb20uZ2VvbWV0cnkudjFC",
+            "CVBvc2VQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCEk1lc3NhZ2Vz",
+            "LkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0",
+            "YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.LocalizedState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Pose), global::Messages.Common.V1.Pose.Parser, new[]{ "Position", "Orientation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalizedPose), global::Messages.Common.V1.LocalizedPose.Parser, new[]{ "Id", "Position", "Orientation", "AnchorId", "State", "LastUpdated" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalizedPose), global::Messages.Common.V1.LocalizedPose.Parser, new[]{ "Id", "Position", "Orientation", "Anchor", "State", "LastUpdated" }, null, null, null, null)
           }));
     }
     #endregion
@@ -365,7 +363,7 @@ namespace Messages.Common.V1 {
       id_ = other.id_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
       orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
-      anchorId_ = other.anchorId_;
+      anchor_ = other.anchor_ != null ? other.anchor_.Clone() : null;
       state_ = other.state_;
       lastUpdated_ = other.lastUpdated_ != null ? other.lastUpdated_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -413,15 +411,15 @@ namespace Messages.Common.V1 {
       }
     }
 
-    /// <summary>Field number for the "anchor_id" field.</summary>
-    public const int AnchorIdFieldNumber = 4;
-    private string anchorId_ = "";
+    /// <summary>Field number for the "anchor" field.</summary>
+    public const int AnchorFieldNumber = 4;
+    private global::Messages.Common.V1.Anchor anchor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AnchorId {
-      get { return anchorId_; }
+    public global::Messages.Common.V1.Anchor Anchor {
+      get { return anchor_; }
       set {
-        anchorId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        anchor_ = value;
       }
     }
 
@@ -467,7 +465,7 @@ namespace Messages.Common.V1 {
       if (Id != other.Id) return false;
       if (!object.Equals(Position, other.Position)) return false;
       if (!object.Equals(Orientation, other.Orientation)) return false;
-      if (AnchorId != other.AnchorId) return false;
+      if (!object.Equals(Anchor, other.Anchor)) return false;
       if (State != other.State) return false;
       if (!object.Equals(LastUpdated, other.LastUpdated)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -480,7 +478,7 @@ namespace Messages.Common.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
       if (orientation_ != null) hash ^= Orientation.GetHashCode();
-      if (AnchorId.Length != 0) hash ^= AnchorId.GetHashCode();
+      if (anchor_ != null) hash ^= Anchor.GetHashCode();
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) hash ^= State.GetHashCode();
       if (lastUpdated_ != null) hash ^= LastUpdated.GetHashCode();
       if (_unknownFields != null) {
@@ -513,9 +511,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(Orientation);
       }
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(34);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
         output.WriteRawTag(40);
@@ -547,9 +545,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(Orientation);
       }
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(34);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
         output.WriteRawTag(40);
@@ -578,8 +576,8 @@ namespace Messages.Common.V1 {
       if (orientation_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Orientation);
       }
-      if (AnchorId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AnchorId);
+      if (anchor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
       }
       if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
@@ -614,8 +612,11 @@ namespace Messages.Common.V1 {
         }
         Orientation.MergeFrom(other.Orientation);
       }
-      if (other.AnchorId.Length != 0) {
-        AnchorId = other.AnchorId;
+      if (other.anchor_ != null) {
+        if (anchor_ == null) {
+          Anchor = new global::Messages.Common.V1.Anchor();
+        }
+        Anchor.MergeFrom(other.Anchor);
       }
       if (other.State != global::Messages.Common.V1.LocalizedState.Unspecified) {
         State = other.State;
@@ -664,7 +665,10 @@ namespace Messages.Common.V1 {
             break;
           }
           case 34: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
           case 40: {
@@ -716,7 +720,10 @@ namespace Messages.Common.V1 {
             break;
           }
           case 34: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
           case 40: {
