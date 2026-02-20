@@ -27,6 +27,12 @@
 - [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
     - [Vector3](#geometry-v1-Vector3)
   
+- [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+  
 - [ar/v1/property.proto](#ar_v1_property-proto)
     - [AnchorExtras](#ar-v1-AnchorExtras)
     - [ColorExtras](#ar-v1-ColorExtras)
@@ -42,12 +48,6 @@
     - [PropertyGroup](#ar-v1-PropertyGroup)
     - [PropertyOrigin](#ar-v1-PropertyOrigin)
     - [PropertyType](#ar-v1-PropertyType)
-  
-- [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
-    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
-    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
-    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
-    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
@@ -612,6 +612,33 @@ A simple pose consisting of a position and orientation
 
 
 
+<a name="validation_v1_predefined_string_rules-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## validation/v1/predefined_string_rules.proto
+
+
+ 
+
+ 
+
+
+<a name="validation_v1_predefined_string_rules-proto-extensions"></a>
+
+### File-level Extensions
+| Extension | Type | Base | Number | Description |
+| --------- | ---- | ---- | ------ | ----------- |
+| ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
+| model_id_component | bool | .buf.validate.StringRules | 10001 |  |
+| name_component | bool | .buf.validate.StringRules | 10000 |  |
+| property_id_component | bool | .buf.validate.StringRules | 10003 |  |
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_property-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -828,7 +855,9 @@ Properties are used by various components to define them, such as: feedback, act
 | min | [double](#double) |  |  |
 | max | [double](#double) |  |  |
 | step | [double](#double) |  |  |
-| labels | [string](#string) | repeated |  |
+| label_x | [string](#string) |  |  |
+| label_y | [string](#string) |  |  |
+| label_z | [string](#string) |  |  |
 | unit | [string](#string) |  |  |
 
 
@@ -893,33 +922,6 @@ Used to specify the type of a property
 
 
  
-
- 
-
- 
-
-
-
-<a name="validation_v1_predefined_string_rules-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## validation/v1/predefined_string_rules.proto
-
-
- 
-
- 
-
-
-<a name="validation_v1_predefined_string_rules-proto-extensions"></a>
-
-### File-level Extensions
-| Extension | Type | Base | Number | Description |
-| --------- | ---- | ---- | ------ | ----------- |
-| ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
-| model_id_component | bool | .buf.validate.StringRules | 10001 |  |
-| name_component | bool | .buf.validate.StringRules | 10000 |  |
-| property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 
  
 

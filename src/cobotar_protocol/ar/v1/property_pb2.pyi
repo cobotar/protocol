@@ -4,6 +4,7 @@ from common.v1 import color_pb2 as _color_pb2
 from geometry.v1 import anchor_pb2 as _anchor_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -231,18 +232,22 @@ class EnumExtras(_message.Message):
     def __init__(self, placeholder: _Optional[str] = ..., filter: bool = ..., grouped: bool = ..., show_icons: bool = ..., max_selected_labels: _Optional[int] = ..., options: _Optional[_Iterable[_Union[EnumOption, _Mapping]]] = ...) -> None: ...
 
 class Vector3Extras(_message.Message):
-    __slots__ = ("min", "max", "step", "labels", "unit")
+    __slots__ = ("min", "max", "step", "label_x", "label_y", "label_z", "unit")
     MIN_FIELD_NUMBER: _ClassVar[int]
     MAX_FIELD_NUMBER: _ClassVar[int]
     STEP_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
+    LABEL_X_FIELD_NUMBER: _ClassVar[int]
+    LABEL_Y_FIELD_NUMBER: _ClassVar[int]
+    LABEL_Z_FIELD_NUMBER: _ClassVar[int]
     UNIT_FIELD_NUMBER: _ClassVar[int]
     min: float
     max: float
     step: float
-    labels: _containers.RepeatedScalarFieldContainer[str]
+    label_x: str
+    label_y: str
+    label_z: str
     unit: str
-    def __init__(self, min: _Optional[float] = ..., max: _Optional[float] = ..., step: _Optional[float] = ..., labels: _Optional[_Iterable[str]] = ..., unit: _Optional[str] = ...) -> None: ...
+    def __init__(self, min: _Optional[float] = ..., max: _Optional[float] = ..., step: _Optional[float] = ..., label_x: _Optional[str] = ..., label_y: _Optional[str] = ..., label_z: _Optional[str] = ..., unit: _Optional[str] = ...) -> None: ...
 
 class ColorExtras(_message.Message):
     __slots__ = ("step", "default")
