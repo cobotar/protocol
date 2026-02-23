@@ -230,13 +230,13 @@ message NumberExtras {
   option (buf.validate.message).cel = {
     id: "min_less_than_max"
     message: "Min must be less than max"
-    expression: "this.min < this.max"
+    expression: "!has(this.min) || !has(this.max) || this.min < this.max"
   };
 
   option (buf.validate.message).cel = {
     id: "step_less_than_max_min"
     message: "Step must be: step <= (max - min)"
-    expression: "this.step > (this.max - this.min)"
+    expression: "!has(this.min) || !has(this.max) || !has(this.step) || this.step <= (this.max - this.min)"
   };
 
   option (buf.validate.message).cel = {
@@ -274,13 +274,13 @@ message Vector3Extras {
   option (buf.validate.message).cel = {
     id: "min_less_than_max"
     message: "Min must be less than max"
-    expression: "this.min < this.max"
+    expression: "!has(this.min) || !has(this.max) || this.min < this.max"
   };
 
   option (buf.validate.message).cel = {
     id: "step_less_than_max_min"
     message: "Step must be: step <= (max - min)"
-    expression: "this.step > (this.max - this.min)"
+    expression: "!has(this.min) || !has(this.max) || !has(this.step) || this.step <= (this.max - this.min)"
   };
 
   option (buf.validate.message).cel = {
