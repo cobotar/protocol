@@ -44,8 +44,6 @@ class TelemetryType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TELEMETRY_TYPE_ROBOT_JOINT_ANGLES: _ClassVar[TelemetryType]
     TELEMETRY_TYPE_ROBOT_FORCE_TORQUE: _ClassVar[TelemetryType]
     TELEMETRY_TYPE_ROBOT_STATE: _ClassVar[TelemetryType]
-    TELEMETRY_TYPE_ROBOT_PATH: _ClassVar[TelemetryType]
-    TELEMETRY_TYPE_ROBOT_WAYPOINTS: _ClassVar[TelemetryType]
 
 class PlanType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -91,8 +89,6 @@ TELEMETRY_TYPE_ROBOT_TCP: TelemetryType
 TELEMETRY_TYPE_ROBOT_JOINT_ANGLES: TelemetryType
 TELEMETRY_TYPE_ROBOT_FORCE_TORQUE: TelemetryType
 TELEMETRY_TYPE_ROBOT_STATE: TelemetryType
-TELEMETRY_TYPE_ROBOT_PATH: TelemetryType
-TELEMETRY_TYPE_ROBOT_WAYPOINTS: TelemetryType
 PLAN_TYPE_UNSPECIFIED: PlanType
 PLAN_TYPE_ROBOT_PATH: PlanType
 PLAN_TYPE_ROBOT_JOINT_ANGLES: PlanType

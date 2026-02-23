@@ -44,6 +44,7 @@ const (
 	FeedbackType_FEEDBACK_TYPE_ZONE                FeedbackType = 102
 	FeedbackType_FEEDBACK_TYPE_PLAY_SOUND          FeedbackType = 103
 	FeedbackType_FEEDBACK_TYPE_RULER               FeedbackType = 104
+	FeedbackType_FEEDBACK_TYPE_HIGHLIGHT           FeedbackType = 105
 )
 
 // Enum value maps for FeedbackType.
@@ -66,6 +67,7 @@ var (
 		102: "FEEDBACK_TYPE_ZONE",
 		103: "FEEDBACK_TYPE_PLAY_SOUND",
 		104: "FEEDBACK_TYPE_RULER",
+		105: "FEEDBACK_TYPE_HIGHLIGHT",
 	}
 	FeedbackType_value = map[string]int32{
 		"FEEDBACK_TYPE_UNSPECIFIED":         0,
@@ -85,6 +87,7 @@ var (
 		"FEEDBACK_TYPE_ZONE":                102,
 		"FEEDBACK_TYPE_PLAY_SOUND":          103,
 		"FEEDBACK_TYPE_RULER":               104,
+		"FEEDBACK_TYPE_HIGHLIGHT":           105,
 	}
 )
 
@@ -518,7 +521,7 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"originalId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xaa\x04\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xc7\x04\n" +
 	"\fFeedbackType\x12\x1d\n" +
 	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cFEEDBACK_TYPE_TASK_HIGHLIGHT\x10\n" +
@@ -537,7 +540,8 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x12FEEDBACK_TYPE_ICON\x10e\x12\x16\n" +
 	"\x12FEEDBACK_TYPE_ZONE\x10f\x12\x1c\n" +
 	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10g\x12\x17\n" +
-	"\x13FEEDBACK_TYPE_RULER\x10hB\x89\x01\n" +
+	"\x13FEEDBACK_TYPE_RULER\x10h\x12\x1b\n" +
+	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10iB\x89\x01\n" +
 	"\tcom.ar.v1B\rFeedbackProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

@@ -59,23 +59,20 @@ enum EventType {
 enum TelemetryType {
   TELEMETRY_TYPE_UNSPECIFIED = 0;
 
-  TELEMETRY_TYPE_ROBOT_TCP = 100;
-  TELEMETRY_TYPE_ROBOT_JOINT_ANGLES = 101;
-  TELEMETRY_TYPE_ROBOT_FORCE_TORQUE = 102;
+  TELEMETRY_TYPE_ROBOT_TCP = 100; // Current TCP for the robot
+  TELEMETRY_TYPE_ROBOT_JOINT_ANGLES = 101; // Current joint angles for the robot
+  TELEMETRY_TYPE_ROBOT_FORCE_TORQUE = 102; // Current measured force/torque values
 
-  TELEMETRY_TYPE_ROBOT_STATE = 110;
-
-  TELEMETRY_TYPE_ROBOT_PATH = 120;
-  TELEMETRY_TYPE_ROBOT_WAYPOINTS = 121;
+  TELEMETRY_TYPE_ROBOT_STATE = 110; // Current robot state. Check robot.v1.robot_state.proto for actual values.
 }
 
 // Plan is planned (or expected) future state.
 enum PlanType {
   PLAN_TYPE_UNSPECIFIED = 0;
 
-  PLAN_TYPE_ROBOT_PATH = 100;
-  PLAN_TYPE_ROBOT_JOINT_ANGLES = 101;
-  PLAN_TYPE_ROBOT_WAYPOINTS = 102;
+  PLAN_TYPE_ROBOT_PATH = 100; // Planned path for the robot's next action(s)
+  PLAN_TYPE_ROBOT_JOINT_ANGLES = 101; // Planned joint angles for the robot's next action(s)
+  PLAN_TYPE_ROBOT_WAYPOINTS = 102; // Planned waypoints for the robot's next action(s)
 
   PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION = 123;
   PLAN_TYPE_ROBOT_TASK_SEQUENCE = 124;

@@ -21,6 +21,7 @@ enum ToolType {
   TOOL_TYPE_ABRASIVE = 100;
   TOOL_TYPE_SAFETY = 110;
   TOOL_TYPE_ELECTRONICS = 120;
+  // TODO: Cleaning, lubricating?
 }
 
 enum ToolProperty {

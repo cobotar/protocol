@@ -58,25 +58,23 @@ namespace Messages.AR.V1 {
             "VEVEEIUBEi0KKEVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19GT1JfQUNLTk9X",
             "TEVER0UQlgESJgohRVZFTlRfVFlQRV9ST0JPVF9XQUlUSU5HX0ZPUl9IRUxQ",
             "EJcBEioKJUVWRU5UX1RZUEVfUk9CT1RfV0FJVElOR19UQVNLX1JFTEVBU0UQ",
-            "mAEq/gEKDVRlbGVtZXRyeVR5cGUSHgoaVEVMRU1FVFJZX1RZUEVfVU5TUEVD",
+            "mAEquwEKDVRlbGVtZXRyeVR5cGUSHgoaVEVMRU1FVFJZX1RZUEVfVU5TUEVD",
             "SUZJRUQQABIcChhURUxFTUVUUllfVFlQRV9ST0JPVF9UQ1AQZBIlCiFURUxF",
             "TUVUUllfVFlQRV9ST0JPVF9KT0lOVF9BTkdMRVMQZRIlCiFURUxFTUVUUllf",
             "VFlQRV9ST0JPVF9GT1JDRV9UT1JRVUUQZhIeChpURUxFTUVUUllfVFlQRV9S",
-            "T0JPVF9TVEFURRBuEh0KGVRFTEVNRVRSWV9UWVBFX1JPQk9UX1BBVEgQeBIi",
-            "Ch5URUxFTUVUUllfVFlQRV9ST0JPVF9XQVlQT0lOVFMQeSrrAQoIUGxhblR5",
-            "cGUSGQoVUExBTl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUExBTl9UWVBFX1JP",
-            "Qk9UX1BBVEgQZBIgChxQTEFOX1RZUEVfUk9CT1RfSk9JTlRfQU5HTEVTEGUS",
-            "HQoZUExBTl9UWVBFX1JPQk9UX1dBWVBPSU5UUxBmEigKJFBMQU5fVFlQRV9S",
-            "T0JPVF9FU1RJTUFURURfQ09NUExFVElPThB7EiEKHVBMQU5fVFlQRV9ST0JP",
-            "VF9UQVNLX1NFUVVFTkNFEHwSHAoXUExBTl9UWVBFX1RBU0tfU0VRVUVOQ0UQ",
-            "yAEqqQEKEkhhbmRsZXJDYXJkaW5hbGl0eRIjCh9IQU5ETEVSX0NBUkRJTkFM",
-            "SVRZX1VOU1BFQ0lGSUVEEAASJAogSEFORExFUl9DQVJESU5BTElUWV9BVF9M",
-            "RUFTVF9PTkUQARIjCh9IQU5ETEVSX0NBUkRJTkFMSVRZX0VYQUNUTFlfT05F",
-            "EAISIwofSEFORExFUl9DQVJESU5BTElUWV9BVF9NT1NUX09ORRADQocBCglj",
-            "b20uYXIudjFCC0V2ZW50c1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMu",
-            "QVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZw",
-            "cm90bzM="));
+            "T0JPVF9TVEFURRBuKusBCghQbGFuVHlwZRIZChVQTEFOX1RZUEVfVU5TUEVD",
+            "SUZJRUQQABIYChRQTEFOX1RZUEVfUk9CT1RfUEFUSBBkEiAKHFBMQU5fVFlQ",
+            "RV9ST0JPVF9KT0lOVF9BTkdMRVMQZRIdChlQTEFOX1RZUEVfUk9CT1RfV0FZ",
+            "UE9JTlRTEGYSKAokUExBTl9UWVBFX1JPQk9UX0VTVElNQVRFRF9DT01QTEVU",
+            "SU9OEHsSIQodUExBTl9UWVBFX1JPQk9UX1RBU0tfU0VRVUVOQ0UQfBIcChdQ",
+            "TEFOX1RZUEVfVEFTS19TRVFVRU5DRRDIASqpAQoSSGFuZGxlckNhcmRpbmFs",
+            "aXR5EiMKH0hBTkRMRVJfQ0FSRElOQUxJVFlfVU5TUEVDSUZJRUQQABIkCiBI",
+            "QU5ETEVSX0NBUkRJTkFMSVRZX0FUX0xFQVNUX09ORRABEiMKH0hBTkRMRVJf",
+            "Q0FSRElOQUxJVFlfRVhBQ1RMWV9PTkUQAhIjCh9IQU5ETEVSX0NBUkRJTkFM",
+            "SVRZX0FUX01PU1RfT05FEANChwEKCWNvbS5hci52MUILRXZlbnRzUHJvdG9Q",
+            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
+            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
+            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.CommandType), typeof(global::Messages.AR.V1.EventType), typeof(global::Messages.AR.V1.TelemetryType), typeof(global::Messages.AR.V1.PlanType), typeof(global::Messages.AR.V1.HandlerCardinality), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -145,12 +143,22 @@ namespace Messages.AR.V1 {
   /// </summary>
   public enum TelemetryType {
     [pbr::OriginalName("TELEMETRY_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Current TCP for the robot
+    /// </summary>
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_TCP")] RobotTcp = 100,
+    /// <summary>
+    /// Current joint angles for the robot
+    /// </summary>
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_JOINT_ANGLES")] RobotJointAngles = 101,
+    /// <summary>
+    /// Current measured force/torque values
+    /// </summary>
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_FORCE_TORQUE")] RobotForceTorque = 102,
+    /// <summary>
+    /// Current robot state. Check robot.v1.robot_state.proto for actual values.
+    /// </summary>
     [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_STATE")] RobotState = 110,
-    [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_PATH")] RobotPath = 120,
-    [pbr::OriginalName("TELEMETRY_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 121,
   }
 
   /// <summary>
@@ -158,8 +166,17 @@ namespace Messages.AR.V1 {
   /// </summary>
   public enum PlanType {
     [pbr::OriginalName("PLAN_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Planned path for the robot's next action(s)
+    /// </summary>
     [pbr::OriginalName("PLAN_TYPE_ROBOT_PATH")] RobotPath = 100,
+    /// <summary>
+    /// Planned joint angles for the robot's next action(s)
+    /// </summary>
     [pbr::OriginalName("PLAN_TYPE_ROBOT_JOINT_ANGLES")] RobotJointAngles = 101,
+    /// <summary>
+    /// Planned waypoints for the robot's next action(s)
+    /// </summary>
     [pbr::OriginalName("PLAN_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 102,
     [pbr::OriginalName("PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION")] RobotEstimatedCompletion = 123,
     [pbr::OriginalName("PLAN_TYPE_ROBOT_TASK_SEQUENCE")] RobotTaskSequence = 124,

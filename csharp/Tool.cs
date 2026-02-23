@@ -76,6 +76,9 @@ namespace Messages.Plm.V1 {
     [pbr::OriginalName("TOOL_TYPE_FINISHING")] Finishing = 90,
     [pbr::OriginalName("TOOL_TYPE_ABRASIVE")] Abrasive = 100,
     [pbr::OriginalName("TOOL_TYPE_SAFETY")] Safety = 110,
+    /// <summary>
+    /// TODO: Cleaning, lubricating?
+    /// </summary>
     [pbr::OriginalName("TOOL_TYPE_ELECTRONICS")] Electronics = 120,
   }
 

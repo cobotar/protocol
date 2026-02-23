@@ -38,7 +38,7 @@ const (
 	ToolType_TOOL_TYPE_FINISHING   ToolType = 90
 	ToolType_TOOL_TYPE_ABRASIVE    ToolType = 100
 	ToolType_TOOL_TYPE_SAFETY      ToolType = 110
-	ToolType_TOOL_TYPE_ELECTRONICS ToolType = 120
+	ToolType_TOOL_TYPE_ELECTRONICS ToolType = 120 // TODO: Cleaning, lubricating?
 )
 
 // Enum value maps for ToolType.

@@ -29,6 +29,7 @@ enum FeedbackType {
   FEEDBACK_TYPE_ZONE = 102;
   FEEDBACK_TYPE_PLAY_SOUND = 103;
   FEEDBACK_TYPE_RULER = 104;
+  FEEDBACK_TYPE_HIGHLIGHT = 105;
 }
 
 message FeedbackMessage {

@@ -185,12 +185,10 @@ type TelemetryType int32
 
 const (
 	TelemetryType_TELEMETRY_TYPE_UNSPECIFIED        TelemetryType = 0
-	TelemetryType_TELEMETRY_TYPE_ROBOT_TCP          TelemetryType = 100
-	TelemetryType_TELEMETRY_TYPE_ROBOT_JOINT_ANGLES TelemetryType = 101
-	TelemetryType_TELEMETRY_TYPE_ROBOT_FORCE_TORQUE TelemetryType = 102
-	TelemetryType_TELEMETRY_TYPE_ROBOT_STATE        TelemetryType = 110
-	TelemetryType_TELEMETRY_TYPE_ROBOT_PATH         TelemetryType = 120
-	TelemetryType_TELEMETRY_TYPE_ROBOT_WAYPOINTS    TelemetryType = 121
+	TelemetryType_TELEMETRY_TYPE_ROBOT_TCP          TelemetryType = 100 // Current TCP for the robot
+	TelemetryType_TELEMETRY_TYPE_ROBOT_JOINT_ANGLES TelemetryType = 101 // Current joint angles for the robot
+	TelemetryType_TELEMETRY_TYPE_ROBOT_FORCE_TORQUE TelemetryType = 102 // Current measured force/torque values
+	TelemetryType_TELEMETRY_TYPE_ROBOT_STATE        TelemetryType = 110 // Current robot state. Check robot.v1.robot_state.proto for actual values.
 )
 
 // Enum value maps for TelemetryType.
@@ -201,8 +199,6 @@ var (
 		101: "TELEMETRY_TYPE_ROBOT_JOINT_ANGLES",
 		102: "TELEMETRY_TYPE_ROBOT_FORCE_TORQUE",
 		110: "TELEMETRY_TYPE_ROBOT_STATE",
-		120: "TELEMETRY_TYPE_ROBOT_PATH",
-		121: "TELEMETRY_TYPE_ROBOT_WAYPOINTS",
 	}
 	TelemetryType_value = map[string]int32{
 		"TELEMETRY_TYPE_UNSPECIFIED":        0,
@@ -210,8 +206,6 @@ var (
 		"TELEMETRY_TYPE_ROBOT_JOINT_ANGLES": 101,
 		"TELEMETRY_TYPE_ROBOT_FORCE_TORQUE": 102,
 		"TELEMETRY_TYPE_ROBOT_STATE":        110,
-		"TELEMETRY_TYPE_ROBOT_PATH":         120,
-		"TELEMETRY_TYPE_ROBOT_WAYPOINTS":    121,
 	}
 )
 
@@ -247,9 +241,9 @@ type PlanType int32
 
 const (
 	PlanType_PLAN_TYPE_UNSPECIFIED                PlanType = 0
-	PlanType_PLAN_TYPE_ROBOT_PATH                 PlanType = 100
-	PlanType_PLAN_TYPE_ROBOT_JOINT_ANGLES         PlanType = 101
-	PlanType_PLAN_TYPE_ROBOT_WAYPOINTS            PlanType = 102
+	PlanType_PLAN_TYPE_ROBOT_PATH                 PlanType = 100 // Planned path for the robot's next action(s)
+	PlanType_PLAN_TYPE_ROBOT_JOINT_ANGLES         PlanType = 101 // Planned joint angles for the robot's next action(s)
+	PlanType_PLAN_TYPE_ROBOT_WAYPOINTS            PlanType = 102 // Planned waypoints for the robot's next action(s)
 	PlanType_PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION PlanType = 123
 	PlanType_PLAN_TYPE_ROBOT_TASK_SEQUENCE        PlanType = 124
 	PlanType_PLAN_TYPE_TASK_SEQUENCE              PlanType = 200
@@ -638,15 +632,13 @@ const file_ar_v1_events_proto_rawDesc = "" +
 	"\x1fEVENT_TYPE_ROBOT_PLAN_COMPLETED\x10\x85\x01\x12-\n" +
 	"(EVENT_TYPE_ROBOT_WAITING_FOR_ACKNOWLEDGE\x10\x96\x01\x12&\n" +
 	"!EVENT_TYPE_ROBOT_WAITING_FOR_HELP\x10\x97\x01\x12*\n" +
-	"%EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE\x10\x98\x01*\xfe\x01\n" +
+	"%EVENT_TYPE_ROBOT_WAITING_TASK_RELEASE\x10\x98\x01*\xbb\x01\n" +
 	"\rTelemetryType\x12\x1e\n" +
 	"\x1aTELEMETRY_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18TELEMETRY_TYPE_ROBOT_TCP\x10d\x12%\n" +
 	"!TELEMETRY_TYPE_ROBOT_JOINT_ANGLES\x10e\x12%\n" +
 	"!TELEMETRY_TYPE_ROBOT_FORCE_TORQUE\x10f\x12\x1e\n" +
-	"\x1aTELEMETRY_TYPE_ROBOT_STATE\x10n\x12\x1d\n" +
-	"\x19TELEMETRY_TYPE_ROBOT_PATH\x10x\x12\"\n" +
-	"\x1eTELEMETRY_TYPE_ROBOT_WAYPOINTS\x10y*\xeb\x01\n" +
+	"\x1aTELEMETRY_TYPE_ROBOT_STATE\x10n*\xeb\x01\n" +
 	"\bPlanType\x12\x19\n" +
 	"\x15PLAN_TYPE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14PLAN_TYPE_ROBOT_PATH\x10d\x12 \n" +

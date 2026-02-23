@@ -58,21 +58,21 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
   requireFrame: boolean;
 
   /**
-   * Inputs the action expects to receive
+   * Inputs the feedback expects to receive
    *
    * @generated from field: repeated ar.v1.ExchangeType consumers_required = 9;
    */
   consumersRequired: ExchangeType[];
 
   /**
-   * Inputs that will enhance the action, but not needed to function
+   * Inputs that will enhance the feedback, but not needed to function
    *
    * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 10;
    */
   consumersOptional: ExchangeType[];
 
   /**
-   * Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+   * Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
    *
    * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 11;
    */

@@ -133,6 +133,7 @@ message Property {
   bool hide_group = 12;
   string parent_id = 13;
   bool advanced = 14; // Hide behind "Advanced" toogle
+  string scope_id = 15;
 
   optional bool bool_value = 21;
   optional sint64 int_value = 22;
@@ -226,10 +227,28 @@ message PropertyValueUpdate {
 }
 
 message NumberExtras {
-  double min = 1;
-  double max = 2;
-  double step = 3 [(buf.validate.field).double.gte = 0];
-  string unit = 4; // "mm", "deg", "N"
+  option (buf.validate.message).cel = {
+    id: "min_less_than_max"
+    message: "Min must be less than max"
+    expression: "this.min < this.max"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "step_less_than_max_min"
+    message: "Step must be: step <= (max - min)"
+    expression: "this.step > (this.max - this.min)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "all_or_none"
+    message: "Min, max, and step must all be set or all be unset"
+    expression: "(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))"
+  };
+
+  optional double min = 1;
+  optional double max = 2;
+  optional double step = 3 [(buf.validate.field).double.gte = 0];
+  string unit = 4 [(buf.validate.field).string.max_len = 5]; // "mm", "deg", "N"
   uint32 precision = 5; // Decimal places for display
 }
 
@@ -242,23 +261,41 @@ message EnumOption {
 }
 
 message EnumExtras {
-  string placeholder = 1;
-  bool filter = 2;
-  bool grouped = 3;
-  bool show_icons = 4;
-  uint32 max_selected_labels = 5;
+  string placeholder = 1; // Placeholder value shown in UI when no enum is selected
+  bool filter = 2; // Show filter input
+  bool grouped = 3; // If options should be grouped
+  bool show_icons = 4; // If options have icons and these should be shown
+  uint32 max_selected_labels = 5; // Only relevant for MultiSelect: limits number of selected labels
 
   repeated EnumOption options = 6 [(buf.validate.field).repeated.min_items = 1];
 }
 
 message Vector3Extras {
-  double min = 1;
-  double max = 2;
-  double step = 3 [(buf.validate.field).double.gte = 0];
-  string label_x = 4;
-  string label_y = 5;
-  string label_z = 6;
-  string unit = 7;
+  option (buf.validate.message).cel = {
+    id: "min_less_than_max"
+    message: "Min must be less than max"
+    expression: "this.min < this.max"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "step_less_than_max_min"
+    message: "Step must be: step <= (max - min)"
+    expression: "this.step > (this.max - this.min)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "all_or_none"
+    message: "Min, max, and step must all be set or all be unset"
+    expression: "(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))"
+  };
+
+  optional double min = 1;
+  optional double max = 2;
+  optional double step = 3 [(buf.validate.field).double.gte = 0];
+  string label_x = 4 [(buf.validate.field).string.max_len = 5];
+  string label_y = 5 [(buf.validate.field).string.max_len = 5];
+  string label_z = 6 [(buf.validate.field).string.max_len = 5];
+  string unit = 7 [(buf.validate.field).string.max_len = 3];
 }
 
 message ColorExtras {

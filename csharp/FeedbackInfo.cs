@@ -217,7 +217,7 @@ namespace Messages.AR.V1 {
         = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.ExchangeType.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersRequired_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
     /// <summary>
-    /// Inputs the action expects to receive
+    /// Inputs the feedback expects to receive
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -231,7 +231,7 @@ namespace Messages.AR.V1 {
         = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ExchangeType.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersOptional_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
     /// <summary>
-    /// Inputs that will enhance the action, but not needed to function
+    /// Inputs that will enhance the feedback, but not needed to function
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -245,7 +245,7 @@ namespace Messages.AR.V1 {
         = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.HandlerRequirement.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement> requiredHandlers_ = new pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement>();
     /// <summary>
-    /// Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+    /// Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

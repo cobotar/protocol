@@ -46,7 +46,7 @@ namespace Messages.AR.V1 {
             "dGlvbhgEIAEoCVILZGVzY3JpcHRpb24igQEKFEZlZWRiYWNrQ2xvbmVNZXNz",
             "YWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElkEhIKBG5hbWUY",
             "AiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlv",
-            "bhgEIAEoCVILZGVzY3JpcHRpb24qqgQKDEZlZWRiYWNrVHlwZRIdChlGRUVE",
+            "bhgEIAEoCVILZGVzY3JpcHRpb24qxwQKDEZlZWRiYWNrVHlwZRIdChlGRUVE",
             "QkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNL",
             "X0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hM",
             "SUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAM",
@@ -58,11 +58,11 @@ namespace Messages.AR.V1 {
             "T1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkK",
             "FUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNP",
             "ThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVf",
-            "UExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaEKJAQoJY29t",
-            "LmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMu",
-            "QVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZw",
-            "cm90bzM="));
+            "UExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaBIbChdGRUVE",
+            "QkFDS19UWVBFX0hJR0hMSUdIVBBpQokBCgljb20uYXIudjFCDUZlZWRiYWNr",
+            "UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIR",
+            "QXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -107,6 +107,7 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("FEEDBACK_TYPE_ZONE")] Zone = 102,
     [pbr::OriginalName("FEEDBACK_TYPE_PLAY_SOUND")] PlaySound = 103,
     [pbr::OriginalName("FEEDBACK_TYPE_RULER")] Ruler = 104,
+    [pbr::OriginalName("FEEDBACK_TYPE_HIGHLIGHT")] Highlight = 105,
   }
 
   #endregion

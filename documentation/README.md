@@ -685,11 +685,11 @@ A simple pose consisting of a position and orientation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| placeholder | [string](#string) |  |  |
-| filter | [bool](#bool) |  |  |
-| grouped | [bool](#bool) |  |  |
-| show_icons | [bool](#bool) |  |  |
-| max_selected_labels | [uint32](#uint32) |  |  |
+| placeholder | [string](#string) |  | Placeholder value shown in UI when no enum is selected |
+| filter | [bool](#bool) |  | Show filter input |
+| grouped | [bool](#bool) |  | If options should be grouped |
+| show_icons | [bool](#bool) |  | If options have icons and these should be shown |
+| max_selected_labels | [uint32](#uint32) |  | Only relevant for MultiSelect: limits number of selected labels |
 | options | [EnumOption](#ar-v1-EnumOption) | repeated |  |
 
 
@@ -724,9 +724,9 @@ A simple pose consisting of a position and orientation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| min | [double](#double) |  |  |
-| max | [double](#double) |  |  |
-| step | [double](#double) |  |  |
+| min | [double](#double) | optional |  |
+| max | [double](#double) | optional |  |
+| step | [double](#double) | optional |  |
 | unit | [string](#string) |  | &#34;mm&#34;, &#34;deg&#34;, &#34;N&#34; |
 | precision | [uint32](#uint32) |  | Decimal places for display |
 
@@ -773,6 +773,7 @@ Properties are used by various components to define them, such as: feedback, act
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
 | advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
+| scope_id | [string](#string) |  |  |
 | bool_value | [bool](#bool) | optional |  |
 | int_value | [sint64](#sint64) | optional |  |
 | float_value | [float](#float) | optional |  |
@@ -852,9 +853,9 @@ Properties are used by various components to define them, such as: feedback, act
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| min | [double](#double) |  |  |
-| max | [double](#double) |  |  |
-| step | [double](#double) |  |  |
+| min | [double](#double) | optional |  |
+| max | [double](#double) | optional |  |
+| step | [double](#double) | optional |  |
 | label_x | [string](#string) |  |  |
 | label_y | [string](#string) |  |  |
 | label_z | [string](#string) |  |  |
@@ -1208,9 +1209,9 @@ Plan is planned (or expected) future state.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PLAN_TYPE_UNSPECIFIED | 0 |  |
-| PLAN_TYPE_ROBOT_PATH | 100 |  |
-| PLAN_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
-| PLAN_TYPE_ROBOT_WAYPOINTS | 102 |  |
+| PLAN_TYPE_ROBOT_PATH | 100 | Planned path for the robot&#39;s next action(s) |
+| PLAN_TYPE_ROBOT_JOINT_ANGLES | 101 | Planned joint angles for the robot&#39;s next action(s) |
+| PLAN_TYPE_ROBOT_WAYPOINTS | 102 | Planned waypoints for the robot&#39;s next action(s) |
 | PLAN_TYPE_ROBOT_ESTIMATED_COMPLETION | 123 |  |
 | PLAN_TYPE_ROBOT_TASK_SEQUENCE | 124 |  |
 | PLAN_TYPE_TASK_SEQUENCE | 200 |  |
@@ -1226,12 +1227,10 @@ It is expected to be high-frequency updates or at least updates every time the s
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
-| TELEMETRY_TYPE_ROBOT_TCP | 100 |  |
-| TELEMETRY_TYPE_ROBOT_JOINT_ANGLES | 101 |  |
-| TELEMETRY_TYPE_ROBOT_FORCE_TORQUE | 102 |  |
-| TELEMETRY_TYPE_ROBOT_STATE | 110 |  |
-| TELEMETRY_TYPE_ROBOT_PATH | 120 |  |
-| TELEMETRY_TYPE_ROBOT_WAYPOINTS | 121 |  |
+| TELEMETRY_TYPE_ROBOT_TCP | 100 | Current TCP for the robot |
+| TELEMETRY_TYPE_ROBOT_JOINT_ANGLES | 101 | Current joint angles for the robot |
+| TELEMETRY_TYPE_ROBOT_FORCE_TORQUE | 102 | Current measured force/torque values |
+| TELEMETRY_TYPE_ROBOT_STATE | 110 | Current robot state. Check robot.v1.robot_state.proto for actual values. |
 
 
  
@@ -1438,6 +1437,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 | FEEDBACK_TYPE_ZONE | 102 |  |
 | FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
 | FEEDBACK_TYPE_RULER | 104 |  |
+| FEEDBACK_TYPE_HIGHLIGHT | 105 |  |
 
 
  
@@ -1927,9 +1927,9 @@ Just delete this?
 | group | [FeedbackGroup](#ar-v1-FeedbackGroup) |  |  |
 | require_agent | [bool](#bool) |  |  |
 | require_frame | [bool](#bool) |  |  |
-| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
+| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the feedback expects to receive |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the feedback, but not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react) |
 | emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
 | disabled | [bool](#bool) |  |  |
 
@@ -3794,7 +3794,7 @@ Reassign all sub-tasks to the assignee (if possible)
 | TOOL_TYPE_FINISHING | 90 |  |
 | TOOL_TYPE_ABRASIVE | 100 |  |
 | TOOL_TYPE_SAFETY | 110 |  |
-| TOOL_TYPE_ELECTRONICS | 120 |  |
+| TOOL_TYPE_ELECTRONICS | 120 | TODO: Cleaning, lubricating? |
 
 
  

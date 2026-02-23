@@ -239,6 +239,7 @@ type Property struct {
 	HideGroup                 bool                   `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
 	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
+	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"`
 	BoolValue                 *bool                  `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3,oneof" json:"bool_value,omitempty"`
 	IntValue                  *int64                 `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3,oneof" json:"int_value,omitempty"`
 	FloatValue                *float32               `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3,oneof" json:"float_value,omitempty"`
@@ -388,6 +389,13 @@ func (x *Property) GetAdvanced() bool {
 		return x.Advanced
 	}
 	return false
+}
+
+func (x *Property) GetScopeId() string {
+	if x != nil {
+		return x.ScopeId
+	}
+	return ""
 }
 
 func (x *Property) GetBoolValue() bool {
@@ -741,9 +749,9 @@ func (x *PropertyValueUpdate) GetIconValue() string {
 
 type NumberExtras struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=min,proto3" json:"min,omitempty"`
-	Max           float64                `protobuf:"fixed64,2,opt,name=max,proto3" json:"max,omitempty"`
-	Step          float64                `protobuf:"fixed64,3,opt,name=step,proto3" json:"step,omitempty"`
+	Min           *float64               `protobuf:"fixed64,1,opt,name=min,proto3,oneof" json:"min,omitempty"`
+	Max           *float64               `protobuf:"fixed64,2,opt,name=max,proto3,oneof" json:"max,omitempty"`
+	Step          *float64               `protobuf:"fixed64,3,opt,name=step,proto3,oneof" json:"step,omitempty"`
 	Unit          string                 `protobuf:"bytes,4,opt,name=unit,proto3" json:"unit,omitempty"`            // "mm", "deg", "N"
 	Precision     uint32                 `protobuf:"varint,5,opt,name=precision,proto3" json:"precision,omitempty"` // Decimal places for display
 	unknownFields protoimpl.UnknownFields
@@ -781,22 +789,22 @@ func (*NumberExtras) Descriptor() ([]byte, []int) {
 }
 
 func (x *NumberExtras) GetMin() float64 {
-	if x != nil {
-		return x.Min
+	if x != nil && x.Min != nil {
+		return *x.Min
 	}
 	return 0
 }
 
 func (x *NumberExtras) GetMax() float64 {
-	if x != nil {
-		return x.Max
+	if x != nil && x.Max != nil {
+		return *x.Max
 	}
 	return 0
 }
 
 func (x *NumberExtras) GetStep() float64 {
-	if x != nil {
-		return x.Step
+	if x != nil && x.Step != nil {
+		return *x.Step
 	}
 	return 0
 }
@@ -893,11 +901,11 @@ func (x *EnumOption) GetDisabled() bool {
 
 type EnumExtras struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Placeholder       string                 `protobuf:"bytes,1,opt,name=placeholder,proto3" json:"placeholder,omitempty"`
-	Filter            bool                   `protobuf:"varint,2,opt,name=filter,proto3" json:"filter,omitempty"`
-	Grouped           bool                   `protobuf:"varint,3,opt,name=grouped,proto3" json:"grouped,omitempty"`
-	ShowIcons         bool                   `protobuf:"varint,4,opt,name=show_icons,json=showIcons,proto3" json:"show_icons,omitempty"`
-	MaxSelectedLabels uint32                 `protobuf:"varint,5,opt,name=max_selected_labels,json=maxSelectedLabels,proto3" json:"max_selected_labels,omitempty"`
+	Placeholder       string                 `protobuf:"bytes,1,opt,name=placeholder,proto3" json:"placeholder,omitempty"`                                         // Placeholder value shown in UI when no enum is selected
+	Filter            bool                   `protobuf:"varint,2,opt,name=filter,proto3" json:"filter,omitempty"`                                                  // Show filter input
+	Grouped           bool                   `protobuf:"varint,3,opt,name=grouped,proto3" json:"grouped,omitempty"`                                                // If options should be grouped
+	ShowIcons         bool                   `protobuf:"varint,4,opt,name=show_icons,json=showIcons,proto3" json:"show_icons,omitempty"`                           // If options have icons and these should be shown
+	MaxSelectedLabels uint32                 `protobuf:"varint,5,opt,name=max_selected_labels,json=maxSelectedLabels,proto3" json:"max_selected_labels,omitempty"` // Only relevant for MultiSelect: limits number of selected labels
 	Options           []*EnumOption          `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -977,9 +985,9 @@ func (x *EnumExtras) GetOptions() []*EnumOption {
 
 type Vector3Extras struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=min,proto3" json:"min,omitempty"`
-	Max           float64                `protobuf:"fixed64,2,opt,name=max,proto3" json:"max,omitempty"`
-	Step          float64                `protobuf:"fixed64,3,opt,name=step,proto3" json:"step,omitempty"`
+	Min           *float64               `protobuf:"fixed64,1,opt,name=min,proto3,oneof" json:"min,omitempty"`
+	Max           *float64               `protobuf:"fixed64,2,opt,name=max,proto3,oneof" json:"max,omitempty"`
+	Step          *float64               `protobuf:"fixed64,3,opt,name=step,proto3,oneof" json:"step,omitempty"`
 	LabelX        string                 `protobuf:"bytes,4,opt,name=label_x,json=labelX,proto3" json:"label_x,omitempty"`
 	LabelY        string                 `protobuf:"bytes,5,opt,name=label_y,json=labelY,proto3" json:"label_y,omitempty"`
 	LabelZ        string                 `protobuf:"bytes,6,opt,name=label_z,json=labelZ,proto3" json:"label_z,omitempty"`
@@ -1019,22 +1027,22 @@ func (*Vector3Extras) Descriptor() ([]byte, []int) {
 }
 
 func (x *Vector3Extras) GetMin() float64 {
-	if x != nil {
-		return x.Min
+	if x != nil && x.Min != nil {
+		return *x.Min
 	}
 	return 0
 }
 
 func (x *Vector3Extras) GetMax() float64 {
-	if x != nil {
-		return x.Max
+	if x != nil && x.Max != nil {
+		return *x.Max
 	}
 	return 0
 }
 
 func (x *Vector3Extras) GetStep() float64 {
-	if x != nil {
-		return x.Step
+	if x != nil && x.Step != nil {
+		return *x.Step
 	}
 	return 0
 }
@@ -1219,7 +1227,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbb\x1a\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd6\x1a\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1237,7 +1245,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1b\n" +
 	"\tparent_id\x18\r \x01(\tR\bparentId\x12\x1a\n" +
-	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\"\n" +
+	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\x19\n" +
+	"\bscope_id\x18\x0f \x01(\tR\ascopeId\x12\"\n" +
 	"\n" +
 	"bool_value\x18\x15 \x01(\bH\x00R\tboolValue\x88\x01\x01\x12 \n" +
 	"\tint_value\x18\x16 \x01(\x12H\x01R\bintValue\x88\x01\x01\x12$\n" +
@@ -1358,13 +1367,19 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\r_string_valueB\x11\n" +
 	"\x0f_robot_id_valueB\r\n" +
 	"\v_enum_valueB\r\n" +
-	"\v_icon_value\"\x88\x01\n" +
-	"\fNumberExtras\x12\x10\n" +
-	"\x03min\x18\x01 \x01(\x01R\x03min\x12\x10\n" +
-	"\x03max\x18\x02 \x01(\x01R\x03max\x12\"\n" +
-	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12\x12\n" +
-	"\x04unit\x18\x04 \x01(\tR\x04unit\x12\x1c\n" +
-	"\tprecision\x18\x05 \x01(\rR\tprecision\"\x90\x01\n" +
+	"\v_icon_value\"\x96\x04\n" +
+	"\fNumberExtras\x12\x15\n" +
+	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
+	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12\x1b\n" +
+	"\x04unit\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x04unit\x12\x1c\n" +
+	"\tprecision\x18\x05 \x01(\rR\tprecision:\xda\x02\xbaH\xd6\x02\x1aC\n" +
+	"\x11min_less_than_max\x12\x19Min must be less than max\x1a\x13this.min < this.max\x1a^\n" +
+	"\x16step_less_than_max_min\x12!Step must be: step <= (max - min)\x1a!this.step > (this.max - this.min)\x1a\xae\x01\n" +
+	"\vall_or_none\x122Min, max, and step must all be set or all be unset\x1ak(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))B\x06\n" +
+	"\x04_minB\x06\n" +
+	"\x04_maxB\a\n" +
+	"\x05_step\"\x90\x01\n" +
 	"\n" +
 	"EnumOption\x12\x1d\n" +
 	"\x05value\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x05value\x12\x1d\n" +
@@ -1380,15 +1395,21 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"show_icons\x18\x04 \x01(\bR\tshowIcons\x12.\n" +
 	"\x13max_selected_labels\x18\x05 \x01(\rR\x11maxSelectedLabels\x125\n" +
-	"\aoptions\x18\x06 \x03(\v2\x11.ar.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\xb6\x01\n" +
-	"\rVector3Extras\x12\x10\n" +
-	"\x03min\x18\x01 \x01(\x01R\x03min\x12\x10\n" +
-	"\x03max\x18\x02 \x01(\x01R\x03max\x12\"\n" +
-	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12\x17\n" +
-	"\alabel_x\x18\x04 \x01(\tR\x06labelX\x12\x17\n" +
-	"\alabel_y\x18\x05 \x01(\tR\x06labelY\x12\x17\n" +
-	"\alabel_z\x18\x06 \x01(\tR\x06labelZ\x12\x12\n" +
-	"\x04unit\x18\a \x01(\tR\x04unit\"]\n" +
+	"\aoptions\x18\x06 \x03(\v2\x11.ar.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\xdf\x04\n" +
+	"\rVector3Extras\x12\x15\n" +
+	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
+	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12 \n" +
+	"\alabel_x\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelX\x12 \n" +
+	"\alabel_y\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelY\x12 \n" +
+	"\alabel_z\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelZ\x12\x1b\n" +
+	"\x04unit\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit:\xda\x02\xbaH\xd6\x02\x1aC\n" +
+	"\x11min_less_than_max\x12\x19Min must be less than max\x1a\x13this.min < this.max\x1a^\n" +
+	"\x16step_less_than_max_min\x12!Step must be: step <= (max - min)\x1a!this.step > (this.max - this.min)\x1a\xae\x01\n" +
+	"\vall_or_none\x122Min, max, and step must all be set or all be unset\x1ak(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))B\x06\n" +
+	"\x04_minB\x06\n" +
+	"\x04_maxB\a\n" +
+	"\x05_step\"]\n" +
 	"\vColorExtras\x12\"\n" +
 	"\x04step\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x04step\x12*\n" +
 	"\adefault\x18\x02 \x01(\v2\x10.common.v1.ColorR\adefault\"1\n" +
@@ -1503,6 +1524,8 @@ func file_ar_v1_property_proto_init() {
 	file_ar_v1_permissions_proto_init()
 	file_ar_v1_property_proto_msgTypes[0].OneofWrappers = []any{}
 	file_ar_v1_property_proto_msgTypes[2].OneofWrappers = []any{}
+	file_ar_v1_property_proto_msgTypes[3].OneofWrappers = []any{}
+	file_ar_v1_property_proto_msgTypes[6].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

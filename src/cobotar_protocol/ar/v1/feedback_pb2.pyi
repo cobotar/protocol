@@ -30,6 +30,7 @@ class FeedbackType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FEEDBACK_TYPE_ZONE: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_PLAY_SOUND: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_RULER: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_HIGHLIGHT: _ClassVar[FeedbackType]
 FEEDBACK_TYPE_UNSPECIFIED: FeedbackType
 FEEDBACK_TYPE_TASK_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: FeedbackType
@@ -47,6 +48,7 @@ FEEDBACK_TYPE_ICON: FeedbackType
 FEEDBACK_TYPE_ZONE: FeedbackType
 FEEDBACK_TYPE_PLAY_SOUND: FeedbackType
 FEEDBACK_TYPE_RULER: FeedbackType
+FEEDBACK_TYPE_HIGHLIGHT: FeedbackType
 
 class FeedbackMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "properties", "config_id")

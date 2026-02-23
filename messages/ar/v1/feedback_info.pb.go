@@ -87,9 +87,9 @@ type FeedbackInfoMessage struct {
 	Group             FeedbackGroup          `protobuf:"varint,6,opt,name=group,proto3,enum=ar.v1.FeedbackGroup" json:"group,omitempty"`
 	RequireAgent      bool                   `protobuf:"varint,7,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
 	RequireFrame      bool                   `protobuf:"varint,8,opt,name=require_frame,json=requireFrame,proto3" json:"require_frame,omitempty"`
-	ConsumersRequired []*ExchangeType        `protobuf:"bytes,9,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"`  // Inputs the action expects to receive
-	ConsumersOptional []*ExchangeType        `protobuf:"bytes,10,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the action, but not needed to function
-	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,11,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
+	ConsumersRequired []*ExchangeType        `protobuf:"bytes,9,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"`  // Inputs the feedback expects to receive
+	ConsumersOptional []*ExchangeType        `protobuf:"bytes,10,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the feedback, but not needed to function
+	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,11,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
 	Emits             []*ExchangeType        `protobuf:"bytes,12,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // / Outputs the feedback publishes
 	Disabled          bool                   `protobuf:"varint,13,opt,name=disabled,proto3" json:"disabled,omitempty"`
 	unknownFields     protoimpl.UnknownFields

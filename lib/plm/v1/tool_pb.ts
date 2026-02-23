@@ -148,6 +148,8 @@ export enum ToolType {
   SAFETY = 110,
 
   /**
+   * TODO: Cleaning, lubricating?
+   *
    * @generated from enum value: TOOL_TYPE_ELECTRONICS = 120;
    */
   ELECTRONICS = 120,
