@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Title>CobotAR Protocol</Title>
-    <Version>0.15.15</Version>
+    <Version>0.16.0</Version>
     <Authors>Rasmus Lunding</Authors>
     <Company>cobotar.org</Company>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
