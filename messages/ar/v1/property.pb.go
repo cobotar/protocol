@@ -1367,16 +1367,14 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\r_string_valueB\x11\n" +
 	"\x0f_robot_id_valueB\r\n" +
 	"\v_enum_valueB\r\n" +
-	"\v_icon_value\"\xf3\x04\n" +
+	"\v_icon_value\"\xe7\x03\n" +
 	"\fNumberExtras\x12\x15\n" +
 	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
 	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
-	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12\x1b\n" +
-	"\x04unit\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x04unit\x12\x1c\n" +
-	"\tprecision\x18\x05 \x01(\rR\tprecision:\xb7\x03\xbaH\xb3\x03\x1ag\n" +
-	"\x11min_less_than_max\x12\x19Min must be less than max\x1a7!has(this.min) || !has(this.max) || this.min < this.max\x1a\x96\x01\n" +
-	"\x16step_less_than_max_min\x12!Step must be: step <= (max - min)\x1aY!has(this.min) || !has(this.max) || !has(this.step) || this.step <= (this.max - this.min)\x1a\xae\x01\n" +
-	"\vall_or_none\x122Min, max, and step must all be set or all be unset\x1ak(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))B\x06\n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12\x1b\n" +
+	"\x04unit\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit\x12%\n" +
+	"\tprecision\x18\x05 \x01(\rB\a\xbaH\x04*\x02(\x00R\tprecision:\xa2\x02\xbaH\x9e\x02\x1a\x9b\x02\n" +
+	"\x18number_extras_consistent\x12TIf any of min/max/step is set, all must be set; and min < max; and step <= (max-min)\x1a\xa8\x01(!has(this.min) && !has(this.max) && !has(this.step)) || (has(this.min) && has(this.max) && has(this.step) && this.min < this.max && this.step <= (this.max - this.min))B\x06\n" +
 	"\x04_minB\x06\n" +
 	"\x04_maxB\a\n" +
 	"\x05_step\"\x90\x01\n" +
@@ -1395,18 +1393,16 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"show_icons\x18\x04 \x01(\bR\tshowIcons\x12.\n" +
 	"\x13max_selected_labels\x18\x05 \x01(\rR\x11maxSelectedLabels\x125\n" +
-	"\aoptions\x18\x06 \x03(\v2\x11.ar.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\xbc\x05\n" +
+	"\aoptions\x18\x06 \x03(\v2\x11.ar.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\xa7\x04\n" +
 	"\rVector3Extras\x12\x15\n" +
 	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
 	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
-	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12 \n" +
+	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12 \n" +
 	"\alabel_x\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelX\x12 \n" +
 	"\alabel_y\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelY\x12 \n" +
 	"\alabel_z\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelZ\x12\x1b\n" +
-	"\x04unit\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit:\xb7\x03\xbaH\xb3\x03\x1ag\n" +
-	"\x11min_less_than_max\x12\x19Min must be less than max\x1a7!has(this.min) || !has(this.max) || this.min < this.max\x1a\x96\x01\n" +
-	"\x16step_less_than_max_min\x12!Step must be: step <= (max - min)\x1aY!has(this.min) || !has(this.max) || !has(this.step) || this.step <= (this.max - this.min)\x1a\xae\x01\n" +
-	"\vall_or_none\x122Min, max, and step must all be set or all be unset\x1ak(has(this.min) && has(this.max) && has(this.step)) || (!has(this.min) && !has(this.max) && !has(this.step))B\x06\n" +
+	"\x04unit\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit:\xa2\x02\xbaH\x9e\x02\x1a\x9b\x02\n" +
+	"\x18number_extras_consistent\x12TIf any of min/max/step is set, all must be set; and min < max; and step <= (max-min)\x1a\xa8\x01(!has(this.min) && !has(this.max) && !has(this.step)) || (has(this.min) && has(this.max) && has(this.step) && this.min < this.max && this.step <= (this.max - this.min))B\x06\n" +
 	"\x04_minB\x06\n" +
 	"\x04_maxB\a\n" +
 	"\x05_step\"]\n" +
