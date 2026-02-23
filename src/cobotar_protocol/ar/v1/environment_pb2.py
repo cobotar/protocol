@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from ar.v1 import property_pb2 as ar_dot_v1_dot_property__pb2
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/environment.proto\x12\x05\x61r.v1\x1a\x14\x61r/v1/property.proto\x1a\x16geometry/v1/pose.proto\"X\n\x0eMarkerLocation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x36\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08location\"W\n\rRobotLocation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x36\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08location\"W\n\rAssetLocation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x36\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08location\"V\n\x0cPartLocation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x36\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08location\"V\n\x0cToolLocation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x36\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08location\"\xae\x03\n\x12\x45nvironmentMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12*\n\x04type\x18\x05 \x01(\x0e\x32\x16.ar.v1.EnvironmentTypeR\x04type\x12/\n\x07markers\x18\x06 \x03(\x0b\x32\x15.ar.v1.MarkerLocationR\x07markers\x12,\n\x06robots\x18\x07 \x03(\x0b\x32\x14.ar.v1.RobotLocationR\x06robots\x12,\n\x06\x61ssets\x18\x08 \x03(\x0b\x32\x14.ar.v1.AssetLocationR\x06\x61ssets\x12)\n\x05parts\x18\t \x03(\x0b\x32\x13.ar.v1.PartLocationR\x05parts\x12)\n\x05tools\x18\n \x03(\x0b\x32\x13.ar.v1.ToolLocationR\x05tools\x12/\n\nproperties\x18\x0b \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\"T\n\x13\x45nvironmentMessages\x12=\n\x0c\x65nvironments\x18\x01 \x03(\x0b\x32\x19.ar.v1.EnvironmentMessageR\x0c\x65nvironments*\xac\x02\n\x0f\x45nvironmentType\x12 \n\x1c\x45NVIRONMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x45NVIRONMENT_TYPE_STORAGE\x10\x01\x12#\n\x1f\x45NVIRONMENT_TYPE_MANUAL_STATION\x10\x02\x12&\n\"ENVIRONMENT_TYPE_AUTOMATIC_STATION\x10\x03\x12#\n\x1f\x45NVIRONMENT_TYPE_HYBRID_STATION\x10\x04\x12 \n\x1c\x45NVIRONMENT_TYPE_MANUAL_LINE\x10\x05\x12#\n\x1f\x45NVIRONMENT_TYPE_AUTOMATIC_LINE\x10\x06\x12 \n\x1c\x45NVIRONMENT_TYPE_HYBRID_LINE\x10\x07\x42\x8c\x01\n\tcom.ar.v1B\x10\x45nvironmentProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61r/v1/environment.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"k\n\x0eMarkerLocation\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x02id\x12>\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\x08location\"j\n\rRobotLocation\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa0\xf1\x04\x01R\x02id\x12>\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\x08location\"j\n\rAssetLocation\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x02id\x12>\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\x08location\"i\n\x0cPartLocation\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x02id\x12>\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\x08location\"i\n\x0cToolLocation\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf1\x04\x01R\x02id\x12>\n\x08location\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\x08location\"\x97\x03\n\x12\x45nvironmentMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x39\n\x04type\x18\x05 \x01(\x0e\x32\x16.ar.v1.EnvironmentTypeB\r\xbaH\n\x82\x01\x04\x10\x01(\x04\xc8\x01\x01R\x04type\x12/\n\x07markers\x18\x06 \x03(\x0b\x32\x15.ar.v1.MarkerLocationR\x07markers\x12,\n\x06robots\x18\x07 \x03(\x0b\x32\x14.ar.v1.RobotLocationR\x06robots\x12,\n\x06\x61ssets\x18\x08 \x03(\x0b\x32\x14.ar.v1.AssetLocationR\x06\x61ssets\x12)\n\x05parts\x18\t \x03(\x0b\x32\x13.ar.v1.PartLocationR\x05parts\x12)\n\x05tools\x18\n \x03(\x0b\x32\x13.ar.v1.ToolLocationR\x05tools\"T\n\x13\x45nvironmentMessages\x12=\n\x0c\x65nvironments\x18\x01 \x03(\x0b\x32\x19.ar.v1.EnvironmentMessageR\x0c\x65nvironments*\xac\x02\n\x0f\x45nvironmentType\x12 \n\x1c\x45NVIRONMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x45NVIRONMENT_TYPE_STORAGE\x10\x01\x12#\n\x1f\x45NVIRONMENT_TYPE_MANUAL_STATION\x10\x02\x12&\n\"ENVIRONMENT_TYPE_AUTOMATIC_STATION\x10\x03\x12#\n\x1f\x45NVIRONMENT_TYPE_HYBRID_STATION\x10\x04\x12 \n\x1c\x45NVIRONMENT_TYPE_MANUAL_LINE\x10\x05\x12#\n\x1f\x45NVIRONMENT_TYPE_AUTOMATIC_LINE\x10\x06\x12 \n\x1c\x45NVIRONMENT_TYPE_HYBRID_LINE\x10\x07\x42\x8c\x01\n\tcom.ar.v1B\x10\x45nvironmentProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,20 +35,44 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ar.v1.environment_pb2', _gl
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\020EnvironmentProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
-  _globals['_ENVIRONMENTTYPE']._serialized_start=1044
-  _globals['_ENVIRONMENTTYPE']._serialized_end=1344
-  _globals['_MARKERLOCATION']._serialized_start=80
-  _globals['_MARKERLOCATION']._serialized_end=168
-  _globals['_ROBOTLOCATION']._serialized_start=170
-  _globals['_ROBOTLOCATION']._serialized_end=257
-  _globals['_ASSETLOCATION']._serialized_start=259
-  _globals['_ASSETLOCATION']._serialized_end=346
-  _globals['_PARTLOCATION']._serialized_start=348
-  _globals['_PARTLOCATION']._serialized_end=434
-  _globals['_TOOLLOCATION']._serialized_start=436
-  _globals['_TOOLLOCATION']._serialized_end=522
-  _globals['_ENVIRONMENTMESSAGE']._serialized_start=525
-  _globals['_ENVIRONMENTMESSAGE']._serialized_end=955
-  _globals['_ENVIRONMENTMESSAGES']._serialized_start=957
-  _globals['_ENVIRONMENTMESSAGES']._serialized_end=1041
+  _globals['_MARKERLOCATION'].fields_by_name['id']._loaded_options = None
+  _globals['_MARKERLOCATION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\310\361\004\001'
+  _globals['_MARKERLOCATION'].fields_by_name['location']._loaded_options = None
+  _globals['_MARKERLOCATION'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_ROBOTLOCATION'].fields_by_name['id']._loaded_options = None
+  _globals['_ROBOTLOCATION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\240\361\004\001'
+  _globals['_ROBOTLOCATION'].fields_by_name['location']._loaded_options = None
+  _globals['_ROBOTLOCATION'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_ASSETLOCATION'].fields_by_name['id']._loaded_options = None
+  _globals['_ASSETLOCATION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\250\361\004\001'
+  _globals['_ASSETLOCATION'].fields_by_name['location']._loaded_options = None
+  _globals['_ASSETLOCATION'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_PARTLOCATION'].fields_by_name['id']._loaded_options = None
+  _globals['_PARTLOCATION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\270\361\004\001'
+  _globals['_PARTLOCATION'].fields_by_name['location']._loaded_options = None
+  _globals['_PARTLOCATION'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_TOOLLOCATION'].fields_by_name['id']._loaded_options = None
+  _globals['_TOOLLOCATION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\300\361\004\001'
+  _globals['_TOOLLOCATION'].fields_by_name['location']._loaded_options = None
+  _globals['_TOOLLOCATION'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_ENVIRONMENTMESSAGE'].fields_by_name['name']._loaded_options = None
+  _globals['_ENVIRONMENTMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_ENVIRONMENTMESSAGE'].fields_by_name['type']._loaded_options = None
+  _globals['_ENVIRONMENTMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\n\202\001\004\020\001(\004\310\001\001'
+  _globals['_ENVIRONMENTTYPE']._serialized_start=1168
+  _globals['_ENVIRONMENTTYPE']._serialized_end=1468
+  _globals['_MARKERLOCATION']._serialized_start=132
+  _globals['_MARKERLOCATION']._serialized_end=239
+  _globals['_ROBOTLOCATION']._serialized_start=241
+  _globals['_ROBOTLOCATION']._serialized_end=347
+  _globals['_ASSETLOCATION']._serialized_start=349
+  _globals['_ASSETLOCATION']._serialized_end=455
+  _globals['_PARTLOCATION']._serialized_start=457
+  _globals['_PARTLOCATION']._serialized_end=562
+  _globals['_TOOLLOCATION']._serialized_start=564
+  _globals['_TOOLLOCATION']._serialized_end=669
+  _globals['_ENVIRONMENTMESSAGE']._serialized_start=672
+  _globals['_ENVIRONMENTMESSAGE']._serialized_end=1079
+  _globals['_ENVIRONMENTMESSAGES']._serialized_start=1081
+  _globals['_ENVIRONMENTMESSAGES']._serialized_end=1165
 # @@protoc_insertion_point(module_scope)

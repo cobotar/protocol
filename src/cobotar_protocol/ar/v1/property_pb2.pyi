@@ -30,6 +30,7 @@ class PropertyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_TYPE_ENUM: _ClassVar[PropertyType]
     PROPERTY_TYPE_ENUM_MULTI: _ClassVar[PropertyType]
     PROPERTY_TYPE_ICON: _ClassVar[PropertyType]
+    PROPERTY_TYPE_ASSET: _ClassVar[PropertyType]
 
 class PropertyOrigin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -61,6 +62,7 @@ PROPERTY_TYPE_ROBOT: PropertyType
 PROPERTY_TYPE_ENUM: PropertyType
 PROPERTY_TYPE_ENUM_MULTI: PropertyType
 PROPERTY_TYPE_ICON: PropertyType
+PROPERTY_TYPE_ASSET: PropertyType
 PROPERTY_ORIGIN_UNSPECIFIED: PropertyOrigin
 PROPERTY_ORIGIN_FIXED: PropertyOrigin
 PROPERTY_ORIGIN_MIRROR: PropertyOrigin
@@ -74,7 +76,7 @@ PROPERTY_GROUP_CONFIGURATION: PropertyGroup
 PROPERTY_GROUP_HIDDEN: PropertyGroup
 
 class Property(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "scope_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "scope_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "asset_id_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -103,6 +105,7 @@ class Property(_message.Message):
     ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
     ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ASSET_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     NUMBER_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     ENUM_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     VECTOR3_EXTRAS_FIELD_NUMBER: _ClassVar[int]
@@ -137,13 +140,14 @@ class Property(_message.Message):
     enum_value: str
     enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
     icon_value: str
+    asset_id_value: str
     number_extras: NumberExtras
     enum_extras: EnumExtras
     vector3_extras: Vector3Extras
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., scope_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., scope_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., asset_id_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
 
 class PropertyMessages(_message.Message):
     __slots__ = ("properties",)
@@ -152,7 +156,7 @@ class PropertyMessages(_message.Message):
     def __init__(self, properties: _Optional[_Iterable[_Union[Property, _Mapping]]] = ...) -> None: ...
 
 class PropertyValueUpdate(_message.Message):
-    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value")
+    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "asset_id_value")
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
@@ -170,6 +174,7 @@ class PropertyValueUpdate(_message.Message):
     ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
     ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
     ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
+    ASSET_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     id: str
     type: PropertyType
     origin: PropertyOrigin
@@ -187,7 +192,8 @@ class PropertyValueUpdate(_message.Message):
     enum_value: str
     enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
     icon_value: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ...) -> None: ...
+    asset_id_value: str
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., asset_id_value: _Optional[str] = ...) -> None: ...
 
 class NumberExtras(_message.Message):
     __slots__ = ("min", "max", "step", "unit", "precision")

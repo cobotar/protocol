@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,28 +23,28 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ARPriority struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	ArConfigId       string                 `protobuf:"bytes,1,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`
-	ActivePropertyId string                 `protobuf:"bytes,2,opt,name=active_property_id,json=activePropertyId,proto3" json:"active_property_id,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+type RobotMapping struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ARPriority) Reset() {
-	*x = ARPriority{}
+func (x *RobotMapping) Reset() {
+	*x = RobotMapping{}
 	mi := &file_ar_v1_mapping_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ARPriority) String() string {
+func (x *RobotMapping) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ARPriority) ProtoMessage() {}
+func (*RobotMapping) ProtoMessage() {}
 
-func (x *ARPriority) ProtoReflect() protoreflect.Message {
+func (x *RobotMapping) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_mapping_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,40 +56,97 @@ func (x *ARPriority) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ARPriority.ProtoReflect.Descriptor instead.
-func (*ARPriority) Descriptor() ([]byte, []int) {
+// Deprecated: Use RobotMapping.ProtoReflect.Descriptor instead.
+func (*RobotMapping) Descriptor() ([]byte, []int) {
 	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ARPriority) GetArConfigId() string {
+func (x *RobotMapping) GetRobotId() string {
 	if x != nil {
-		return x.ArConfigId
+		return x.RobotId
 	}
 	return ""
 }
 
-func (x *ARPriority) GetActivePropertyId() string {
+func (x *RobotMapping) GetPropertyId() string {
 	if x != nil {
-		return x.ActivePropertyId
+		return x.PropertyId
+	}
+	return ""
+}
+
+type AssetMapping struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AssetMapping) Reset() {
+	*x = AssetMapping{}
+	mi := &file_ar_v1_mapping_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssetMapping) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssetMapping) ProtoMessage() {}
+
+func (x *AssetMapping) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_mapping_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssetMapping.ProtoReflect.Descriptor instead.
+func (*AssetMapping) Descriptor() ([]byte, []int) {
+	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *AssetMapping) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *AssetMapping) GetPropertyId() string {
+	if x != nil {
+		return x.PropertyId
 	}
 	return ""
 }
 
 type MappingMessage struct {
-	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	EnvironmentIds     []string               `protobuf:"bytes,5,rep,name=environment_ids,json=environmentIds,proto3" json:"environment_ids,omitempty"`
-	ArConfigPriorities []*ARPriority          `protobuf:"bytes,6,rep,name=ar_config_priorities,json=arConfigPriorities,proto3" json:"ar_config_priorities,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	EnvironmentId string                 `protobuf:"bytes,5,opt,name=environment_id,json=environmentId,proto3" json:"environment_id,omitempty"`
+	ArConfigId    string                 `protobuf:"bytes,6,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`
+	Disabled      bool                   `protobuf:"varint,7,opt,name=disabled,proto3" json:"disabled,omitempty"`
+	RobotMappings []*RobotMapping        `protobuf:"bytes,8,rep,name=robot_mappings,json=robotMappings,proto3" json:"robot_mappings,omitempty"`
+	AssetMapping  []*AssetMapping        `protobuf:"bytes,9,rep,name=asset_mapping,json=assetMapping,proto3" json:"asset_mapping,omitempty"`
+	Standalone    bool                   `protobuf:"varint,10,opt,name=standalone,proto3" json:"standalone,omitempty"` // Only this AR-config should be shown (winner have highest priority)
+	Priority      int32                  `protobuf:"varint,11,opt,name=priority,proto3" json:"priority,omitempty"`     // High value configs will be shown first
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *MappingMessage) Reset() {
 	*x = MappingMessage{}
-	mi := &file_ar_v1_mapping_proto_msgTypes[1]
+	mi := &file_ar_v1_mapping_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -99,7 +158,7 @@ func (x *MappingMessage) String() string {
 func (*MappingMessage) ProtoMessage() {}
 
 func (x *MappingMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_mapping_proto_msgTypes[1]
+	mi := &file_ar_v1_mapping_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -112,7 +171,7 @@ func (x *MappingMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MappingMessage.ProtoReflect.Descriptor instead.
 func (*MappingMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MappingMessage) GetId() string {
@@ -143,18 +202,53 @@ func (x *MappingMessage) GetDescription() string {
 	return ""
 }
 
-func (x *MappingMessage) GetEnvironmentIds() []string {
+func (x *MappingMessage) GetEnvironmentId() string {
 	if x != nil {
-		return x.EnvironmentIds
+		return x.EnvironmentId
+	}
+	return ""
+}
+
+func (x *MappingMessage) GetArConfigId() string {
+	if x != nil {
+		return x.ArConfigId
+	}
+	return ""
+}
+
+func (x *MappingMessage) GetDisabled() bool {
+	if x != nil {
+		return x.Disabled
+	}
+	return false
+}
+
+func (x *MappingMessage) GetRobotMappings() []*RobotMapping {
+	if x != nil {
+		return x.RobotMappings
 	}
 	return nil
 }
 
-func (x *MappingMessage) GetArConfigPriorities() []*ARPriority {
+func (x *MappingMessage) GetAssetMapping() []*AssetMapping {
 	if x != nil {
-		return x.ArConfigPriorities
+		return x.AssetMapping
 	}
 	return nil
+}
+
+func (x *MappingMessage) GetStandalone() bool {
+	if x != nil {
+		return x.Standalone
+	}
+	return false
+}
+
+func (x *MappingMessage) GetPriority() int32 {
+	if x != nil {
+		return x.Priority
+	}
+	return 0
 }
 
 type MappingMessages struct {
@@ -166,7 +260,7 @@ type MappingMessages struct {
 
 func (x *MappingMessages) Reset() {
 	*x = MappingMessages{}
-	mi := &file_ar_v1_mapping_proto_msgTypes[2]
+	mi := &file_ar_v1_mapping_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -178,7 +272,7 @@ func (x *MappingMessages) String() string {
 func (*MappingMessages) ProtoMessage() {}
 
 func (x *MappingMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_mapping_proto_msgTypes[2]
+	mi := &file_ar_v1_mapping_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -191,7 +285,7 @@ func (x *MappingMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MappingMessages.ProtoReflect.Descriptor instead.
 func (*MappingMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{2}
+	return file_ar_v1_mapping_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MappingMessages) GetMappings() []*MappingMessage {
@@ -205,19 +299,31 @@ var File_ar_v1_mapping_proto protoreflect.FileDescriptor
 
 const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\n" +
-	"\x13ar/v1/mapping.proto\x12\x05ar.v1\"\\\n" +
-	"\n" +
-	"ARPriority\x12 \n" +
-	"\far_config_id\x18\x01 \x01(\tR\n" +
-	"arConfigId\x12,\n" +
-	"\x12active_property_id\x18\x02 \x01(\tR\x10activePropertyId\"\xd8\x01\n" +
+	"\x13ar/v1/mapping.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"`\n" +
+	"\fRobotMapping\x12$\n" +
+	"\brobot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa0\xf1\x04\x01R\arobotId\x12*\n" +
+	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
+	"propertyId\"`\n" +
+	"\fAssetMapping\x12$\n" +
+	"\basset_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\aassetId\x12*\n" +
+	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
+	"propertyId\"\xa2\x03\n" +
 	"\x0eMappingMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fenvironment_ids\x18\x05 \x03(\tR\x0eenvironmentIds\x12C\n" +
-	"\x14ar_config_priorities\x18\x06 \x03(\v2\x11.ar.v1.ARPriorityR\x12arConfigPriorities\"D\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x120\n" +
+	"\x0eenvironment_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\renvironmentId\x12+\n" +
+	"\far_config_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\n" +
+	"arConfigId\x12\x1a\n" +
+	"\bdisabled\x18\a \x01(\bR\bdisabled\x12:\n" +
+	"\x0erobot_mappings\x18\b \x03(\v2\x13.ar.v1.RobotMappingR\rrobotMappings\x128\n" +
+	"\rasset_mapping\x18\t \x03(\v2\x13.ar.v1.AssetMappingR\fassetMapping\x12\x1e\n" +
+	"\n" +
+	"standalone\x18\n" +
+	" \x01(\bR\n" +
+	"standalone\x12\x1a\n" +
+	"\bpriority\x18\v \x01(\x05R\bpriority\"D\n" +
 	"\x0fMappingMessages\x121\n" +
 	"\bmappings\x18\x01 \x03(\v2\x15.ar.v1.MappingMessageR\bmappingsB\x88\x01\n" +
 	"\tcom.ar.v1B\fMappingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
@@ -234,20 +340,22 @@ func file_ar_v1_mapping_proto_rawDescGZIP() []byte {
 	return file_ar_v1_mapping_proto_rawDescData
 }
 
-var file_ar_v1_mapping_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_ar_v1_mapping_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_mapping_proto_goTypes = []any{
-	(*ARPriority)(nil),      // 0: ar.v1.ARPriority
-	(*MappingMessage)(nil),  // 1: ar.v1.MappingMessage
-	(*MappingMessages)(nil), // 2: ar.v1.MappingMessages
+	(*RobotMapping)(nil),    // 0: ar.v1.RobotMapping
+	(*AssetMapping)(nil),    // 1: ar.v1.AssetMapping
+	(*MappingMessage)(nil),  // 2: ar.v1.MappingMessage
+	(*MappingMessages)(nil), // 3: ar.v1.MappingMessages
 }
 var file_ar_v1_mapping_proto_depIdxs = []int32{
-	0, // 0: ar.v1.MappingMessage.ar_config_priorities:type_name -> ar.v1.ARPriority
-	1, // 1: ar.v1.MappingMessages.mappings:type_name -> ar.v1.MappingMessage
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // 0: ar.v1.MappingMessage.robot_mappings:type_name -> ar.v1.RobotMapping
+	1, // 1: ar.v1.MappingMessage.asset_mapping:type_name -> ar.v1.AssetMapping
+	2, // 2: ar.v1.MappingMessages.mappings:type_name -> ar.v1.MappingMessage
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_mapping_proto_init() }
@@ -261,7 +369,7 @@ func file_ar_v1_mapping_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_mapping_proto_rawDesc), len(file_ar_v1_mapping_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

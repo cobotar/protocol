@@ -54,6 +54,54 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10003,opt,name=property_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10004,
+		Name:          "validation.v1.robot_id_component",
+		Tag:           "varint,10004,opt,name=robot_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10005,
+		Name:          "validation.v1.asset_id_component",
+		Tag:           "varint,10005,opt,name=asset_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10006,
+		Name:          "validation.v1.environment_id_component",
+		Tag:           "varint,10006,opt,name=environment_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10007,
+		Name:          "validation.v1.part_id_component",
+		Tag:           "varint,10007,opt,name=part_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10008,
+		Name:          "validation.v1.tool_id_component",
+		Tag:           "varint,10008,opt,name=tool_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10009,
+		Name:          "validation.v1.marker_id_component",
+		Tag:           "varint,10009,opt,name=marker_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -66,6 +114,18 @@ var (
 	E_ArConfigIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[2]
 	// optional bool property_id_component = 10003;
 	E_PropertyIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[3]
+	// optional bool robot_id_component = 10004;
+	E_RobotIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[4]
+	// optional bool asset_id_component = 10005;
+	E_AssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[5]
+	// optional bool environment_id_component = 10006;
+	E_EnvironmentIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[6]
+	// optional bool part_id_component = 10007;
+	E_PartIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[7]
+	// optional bool tool_id_component = 10008;
+	E_ToolIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[8]
+	// optional bool marker_id_component = 10009;
+	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -84,22 +144,46 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1dstring.ar_config_id_component\x12&this does not seem to be a ARConfig id\x1a,(this == '' || this.startsWith('arconfig-'))R\x13arConfigIdComponent:\xc9\x01\n" +
 	"\x15property_id_component\x12\x19.buf.validate.StringRules\x18\x93N \x01(\bBy\xc2Hv\n" +
 	"t\n" +
-	"\x1cstring.property_id_component\x12&this does not seem to be a property id\x1a,(this == '' || this.startsWith('property-'))R\x13propertyIdComponentB\xb5\x01\n" +
+	"\x1cstring.property_id_component\x12&this does not seem to be a property id\x1a,(this == '' || this.startsWith('property-'))R\x13propertyIdComponent:\xba\x01\n" +
+	"\x12robot_id_component\x12\x19.buf.validate.StringRules\x18\x94N \x01(\bBp\xc2Hm\n" +
+	"k\n" +
+	"\x19string.robot_id_component\x12#this does not seem to be a robot id\x1a)(this == '' || this.startsWith('robot-'))R\x10robotIdComponent:\xba\x01\n" +
+	"\x12asset_id_component\x12\x19.buf.validate.StringRules\x18\x95N \x01(\bBp\xc2Hm\n" +
+	"k\n" +
+	"\x19string.asset_id_component\x12#this does not seem to be a asset id\x1a)(this == '' || this.startsWith('asset-'))R\x10assetIdComponent:\xd9\x01\n" +
+	"\x18environment_id_component\x12\x19.buf.validate.StringRules\x18\x96N \x01(\bB\x82\x01\xc2H\x7f\n" +
+	"}\n" +
+	"\x1fstring.environment_id_component\x12)this does not seem to be a environment id\x1a/(this == '' || this.startsWith('environment-'))R\x16environmentIdComponent:\xb5\x01\n" +
+	"\x11part_id_component\x12\x19.buf.validate.StringRules\x18\x97N \x01(\bBm\xc2Hj\n" +
+	"h\n" +
+	"\x18string.part_id_component\x12\"this does not seem to be a part id\x1a((this == '' || this.startsWith('part-'))R\x0fpartIdComponent:\xb5\x01\n" +
+	"\x11tool_id_component\x12\x19.buf.validate.StringRules\x18\x98N \x01(\bBm\xc2Hj\n" +
+	"h\n" +
+	"\x18string.tool_id_component\x12\"this does not seem to be a tool id\x1a((this == '' || this.startsWith('tool-'))R\x0ftoolIdComponent:\xbf\x01\n" +
+	"\x13marker_id_component\x12\x19.buf.validate.StringRules\x18\x99N \x01(\bBs\xc2Hp\n" +
+	"n\n" +
+	"\x1astring.marker_id_component\x12$this does not seem to be a marker id\x1a*(this == '' || this.startsWith('marker-'))R\x11markerIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
 	(*validate.StringRules)(nil), // 0: buf.validate.StringRules
 }
 var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
-	0, // 0: validation.v1.name_component:extendee -> buf.validate.StringRules
-	0, // 1: validation.v1.model_id_component:extendee -> buf.validate.StringRules
-	0, // 2: validation.v1.ar_config_id_component:extendee -> buf.validate.StringRules
-	0, // 3: validation.v1.property_id_component:extendee -> buf.validate.StringRules
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	0, // [0:4] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: validation.v1.name_component:extendee -> buf.validate.StringRules
+	0,  // 1: validation.v1.model_id_component:extendee -> buf.validate.StringRules
+	0,  // 2: validation.v1.ar_config_id_component:extendee -> buf.validate.StringRules
+	0,  // 3: validation.v1.property_id_component:extendee -> buf.validate.StringRules
+	0,  // 4: validation.v1.robot_id_component:extendee -> buf.validate.StringRules
+	0,  // 5: validation.v1.asset_id_component:extendee -> buf.validate.StringRules
+	0,  // 6: validation.v1.environment_id_component:extendee -> buf.validate.StringRules
+	0,  // 7: validation.v1.part_id_component:extendee -> buf.validate.StringRules
+	0,  // 8: validation.v1.tool_id_component:extendee -> buf.validate.StringRules
+	0,  // 9: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	0,  // [0:10] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_validation_v1_predefined_string_rules_proto_init() }
@@ -114,7 +198,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 4,
+			NumExtensions: 10,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

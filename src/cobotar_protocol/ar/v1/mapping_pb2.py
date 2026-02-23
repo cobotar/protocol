@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x61r/v1/mapping.proto\x12\x05\x61r.v1\"\\\n\nARPriority\x12 \n\x0c\x61r_config_id\x18\x01 \x01(\tR\narConfigId\x12,\n\x12\x61\x63tive_property_id\x18\x02 \x01(\tR\x10\x61\x63tivePropertyId\"\xd8\x01\n\x0eMappingMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0f\x65nvironment_ids\x18\x05 \x03(\tR\x0e\x65nvironmentIds\x12\x43\n\x14\x61r_config_priorities\x18\x06 \x03(\x0b\x32\x11.ar.v1.ARPriorityR\x12\x61rConfigPriorities\"D\n\x0fMappingMessages\x12\x31\n\x08mappings\x18\x01 \x03(\x0b\x32\x15.ar.v1.MappingMessageR\x08mappingsB\x88\x01\n\tcom.ar.v1B\x0cMappingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x61r/v1/mapping.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"`\n\x0cRobotMapping\x12$\n\x08robot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa0\xf1\x04\x01R\x07robotId\x12*\n\x0bproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\npropertyId\"`\n\x0c\x41ssetMapping\x12$\n\x08\x61sset_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x07\x61ssetId\x12*\n\x0bproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\npropertyId\"\xa2\x03\n\x0eMappingMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x30\n\x0e\x65nvironment_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\renvironmentId\x12+\n\x0c\x61r_config_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\narConfigId\x12\x1a\n\x08\x64isabled\x18\x07 \x01(\x08R\x08\x64isabled\x12:\n\x0erobot_mappings\x18\x08 \x03(\x0b\x32\x13.ar.v1.RobotMappingR\rrobotMappings\x12\x38\n\rasset_mapping\x18\t \x03(\x0b\x32\x13.ar.v1.AssetMappingR\x0c\x61ssetMapping\x12\x1e\n\nstandalone\x18\n \x01(\x08R\nstandalone\x12\x1a\n\x08priority\x18\x0b \x01(\x05R\x08priority\"D\n\x0fMappingMessages\x12\x31\n\x08mappings\x18\x01 \x03(\x0b\x32\x15.ar.v1.MappingMessageR\x08mappingsB\x88\x01\n\tcom.ar.v1B\x0cMappingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +34,26 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ar.v1.mapping_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\014MappingProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
-  _globals['_ARPRIORITY']._serialized_start=30
-  _globals['_ARPRIORITY']._serialized_end=122
-  _globals['_MAPPINGMESSAGE']._serialized_start=125
-  _globals['_MAPPINGMESSAGE']._serialized_end=341
-  _globals['_MAPPINGMESSAGES']._serialized_start=343
-  _globals['_MAPPINGMESSAGES']._serialized_end=411
+  _globals['_ROBOTMAPPING'].fields_by_name['robot_id']._loaded_options = None
+  _globals['_ROBOTMAPPING'].fields_by_name['robot_id']._serialized_options = b'\272H\006r\004\240\361\004\001'
+  _globals['_ROBOTMAPPING'].fields_by_name['property_id']._loaded_options = None
+  _globals['_ROBOTMAPPING'].fields_by_name['property_id']._serialized_options = b'\272H\006r\004\230\361\004\001'
+  _globals['_ASSETMAPPING'].fields_by_name['asset_id']._loaded_options = None
+  _globals['_ASSETMAPPING'].fields_by_name['asset_id']._serialized_options = b'\272H\006r\004\250\361\004\001'
+  _globals['_ASSETMAPPING'].fields_by_name['property_id']._loaded_options = None
+  _globals['_ASSETMAPPING'].fields_by_name['property_id']._serialized_options = b'\272H\006r\004\230\361\004\001'
+  _globals['_MAPPINGMESSAGE'].fields_by_name['name']._loaded_options = None
+  _globals['_MAPPINGMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_MAPPINGMESSAGE'].fields_by_name['environment_id']._loaded_options = None
+  _globals['_MAPPINGMESSAGE'].fields_by_name['environment_id']._serialized_options = b'\272H\006r\004\260\361\004\001'
+  _globals['_MAPPINGMESSAGE'].fields_by_name['ar_config_id']._loaded_options = None
+  _globals['_MAPPINGMESSAGE'].fields_by_name['ar_config_id']._serialized_options = b'\272H\006r\004\220\361\004\001'
+  _globals['_ROBOTMAPPING']._serialized_start=104
+  _globals['_ROBOTMAPPING']._serialized_end=200
+  _globals['_ASSETMAPPING']._serialized_start=202
+  _globals['_ASSETMAPPING']._serialized_end=298
+  _globals['_MAPPINGMESSAGE']._serialized_start=301
+  _globals['_MAPPINGMESSAGE']._serialized_end=719
+  _globals['_MAPPINGMESSAGES']._serialized_start=721
+  _globals['_MAPPINGMESSAGES']._serialized_end=789
 # @@protoc_insertion_point(module_scope)

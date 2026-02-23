@@ -7,7 +7,9 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -352,13 +354,12 @@ type EnvironmentMessage struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          EnvironmentType        `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.EnvironmentType" json:"type,omitempty"`
-	Markers       []*MarkerLocation      `protobuf:"bytes,6,rep,name=markers,proto3" json:"markers,omitempty"` // Markers associated with this environment.
-	Robots        []*RobotLocation       `protobuf:"bytes,7,rep,name=robots,proto3" json:"robots,omitempty"`
-	Assets        []*AssetLocation       `protobuf:"bytes,8,rep,name=assets,proto3" json:"assets,omitempty"`
-	Parts         []*PartLocation        `protobuf:"bytes,9,rep,name=parts,proto3" json:"parts,omitempty"`
-	Tools         []*ToolLocation        `protobuf:"bytes,10,rep,name=tools,proto3" json:"tools,omitempty"`
-	Properties    []*Property            `protobuf:"bytes,11,rep,name=properties,proto3" json:"properties,omitempty"`
+	Type          EnvironmentType        `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.EnvironmentType" json:"type,omitempty"` // Type of environment
+	Markers       []*MarkerLocation      `protobuf:"bytes,6,rep,name=markers,proto3" json:"markers,omitempty"`                       // Markers associated with this environment.
+	Robots        []*RobotLocation       `protobuf:"bytes,7,rep,name=robots,proto3" json:"robots,omitempty"`                         // Robot located in this environment
+	Assets        []*AssetLocation       `protobuf:"bytes,8,rep,name=assets,proto3" json:"assets,omitempty"`                         // Assets located in this environment
+	Parts         []*PartLocation        `protobuf:"bytes,9,rep,name=parts,proto3" json:"parts,omitempty"`                           // Parts located in this environment
+	Tools         []*ToolLocation        `protobuf:"bytes,10,rep,name=tools,proto3" json:"tools,omitempty"`                          // Tools located in this environment
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -463,13 +464,6 @@ func (x *EnvironmentMessage) GetTools() []*ToolLocation {
 	return nil
 }
 
-func (x *EnvironmentMessage) GetProperties() []*Property {
-	if x != nil {
-		return x.Properties
-	}
-	return nil
-}
-
 type EnvironmentMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Environments  []*EnvironmentMessage  `protobuf:"bytes,1,rep,name=environments,proto3" json:"environments,omitempty"`
@@ -518,37 +512,35 @@ var File_ar_v1_environment_proto protoreflect.FileDescriptor
 
 const file_ar_v1_environment_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/environment.proto\x12\x05ar.v1\x1a\x14ar/v1/property.proto\x1a\x16geometry/v1/pose.proto\"X\n" +
-	"\x0eMarkerLocation\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"W\n" +
-	"\rRobotLocation\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"W\n" +
-	"\rAssetLocation\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"V\n" +
-	"\fPartLocation\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"V\n" +
-	"\fToolLocation\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x126\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\blocation\"\xae\x03\n" +
+	"\x17ar/v1/environment.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"k\n" +
+	"\x0eMarkerLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"j\n" +
+	"\rRobotLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa0\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"j\n" +
+	"\rAssetLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"i\n" +
+	"\fPartLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"i\n" +
+	"\fToolLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"\x97\x03\n" +
 	"\x12EnvironmentMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x16.ar.v1.EnvironmentTypeR\x04type\x12/\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x129\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x16.ar.v1.EnvironmentTypeB\r\xbaH\n" +
+	"\xc8\x01\x01\x82\x01\x04\x10\x01(\x04R\x04type\x12/\n" +
 	"\amarkers\x18\x06 \x03(\v2\x15.ar.v1.MarkerLocationR\amarkers\x12,\n" +
 	"\x06robots\x18\a \x03(\v2\x14.ar.v1.RobotLocationR\x06robots\x12,\n" +
 	"\x06assets\x18\b \x03(\v2\x14.ar.v1.AssetLocationR\x06assets\x12)\n" +
 	"\x05parts\x18\t \x03(\v2\x13.ar.v1.PartLocationR\x05parts\x12)\n" +
 	"\x05tools\x18\n" +
-	" \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\x12/\n" +
-	"\n" +
-	"properties\x18\v \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\"T\n" +
+	" \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\"T\n" +
 	"\x13EnvironmentMessages\x12=\n" +
 	"\fenvironments\x18\x01 \x03(\v2\x19.ar.v1.EnvironmentMessageR\fenvironments*\xac\x02\n" +
 	"\x0fEnvironmentType\x12 \n" +
@@ -586,7 +578,6 @@ var file_ar_v1_environment_proto_goTypes = []any{
 	(*EnvironmentMessage)(nil),  // 6: ar.v1.EnvironmentMessage
 	(*EnvironmentMessages)(nil), // 7: ar.v1.EnvironmentMessages
 	(*v1.LocalizedPose)(nil),    // 8: geometry.v1.LocalizedPose
-	(*Property)(nil),            // 9: ar.v1.Property
 }
 var file_ar_v1_environment_proto_depIdxs = []int32{
 	8,  // 0: ar.v1.MarkerLocation.location:type_name -> geometry.v1.LocalizedPose
@@ -600,13 +591,12 @@ var file_ar_v1_environment_proto_depIdxs = []int32{
 	3,  // 8: ar.v1.EnvironmentMessage.assets:type_name -> ar.v1.AssetLocation
 	4,  // 9: ar.v1.EnvironmentMessage.parts:type_name -> ar.v1.PartLocation
 	5,  // 10: ar.v1.EnvironmentMessage.tools:type_name -> ar.v1.ToolLocation
-	9,  // 11: ar.v1.EnvironmentMessage.properties:type_name -> ar.v1.Property
-	6,  // 12: ar.v1.EnvironmentMessages.environments:type_name -> ar.v1.EnvironmentMessage
-	13, // [13:13] is the sub-list for method output_type
-	13, // [13:13] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	6,  // 11: ar.v1.EnvironmentMessages.environments:type_name -> ar.v1.EnvironmentMessage
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_environment_proto_init() }
@@ -614,7 +604,6 @@ func file_ar_v1_environment_proto_init() {
 	if File_ar_v1_environment_proto != nil {
 		return
 	}
-	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

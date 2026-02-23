@@ -11,3 +11,15 @@ AR_CONFIG_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_config_id_component: _descriptor.FieldDescriptor
 PROPERTY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 property_id_component: _descriptor.FieldDescriptor
+ROBOT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+robot_id_component: _descriptor.FieldDescriptor
+ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+asset_id_component: _descriptor.FieldDescriptor
+ENVIRONMENT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+environment_id_component: _descriptor.FieldDescriptor
+PART_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+part_id_component: _descriptor.FieldDescriptor
+TOOL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+tool_id_component: _descriptor.FieldDescriptor
+MARKER_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+marker_id_component: _descriptor.FieldDescriptor

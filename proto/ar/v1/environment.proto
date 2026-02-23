@@ -1,35 +1,36 @@
 syntax = "proto3";
 package ar.v1;
 
-import "ar/v1/property.proto";
+import "buf/validate/validate.proto";
 import "geometry/v1/pose.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message MarkerLocation {
-  string id = 1;
-  geometry.v1.LocalizedPose location = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.marker_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message RobotLocation {
-  string id = 1;
-  geometry.v1.LocalizedPose location = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.robot_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message AssetLocation {
-  string id = 1;
-  geometry.v1.LocalizedPose location = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.asset_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message PartLocation {
-  string id = 1;
-  geometry.v1.LocalizedPose location = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.part_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message ToolLocation {
-  string id = 1;
-  geometry.v1.LocalizedPose location = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.tool_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 enum EnvironmentType {
@@ -45,16 +46,19 @@ enum EnvironmentType {
 
 message EnvironmentMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  EnvironmentType type = 5;
+  EnvironmentType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true,
+    (buf.validate.field).enum.example = 4 // ENVIRONMENT_TYPE_HYBRID_STATION
+  ]; // Type of environment
   repeated MarkerLocation markers = 6; // Markers associated with this environment.
-  repeated RobotLocation robots = 7;
-  repeated AssetLocation assets = 8;
-  repeated PartLocation parts = 9;
-  repeated ToolLocation tools = 10;
-  repeated ar.v1.Property properties = 11;
+  repeated RobotLocation robots = 7; // Robot located in this environment
+  repeated AssetLocation assets = 8; // Assets located in this environment
+  repeated PartLocation parts = 9; // Parts located in this environment
+  repeated ToolLocation tools = 10; // Tools located in this environment
 }
 
 message EnvironmentMessages {

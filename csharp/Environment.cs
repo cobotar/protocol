@@ -24,49 +24,51 @@ namespace Messages.AR.V1 {
     static EnvironmentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3Bl",
-            "cnR5LnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIlgKDk1hcmtlckxv",
-            "Y2F0aW9uEg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdl",
-            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIlcKDVJvYm90TG9j",
-            "YXRpb24SDgoCaWQYASABKAlSAmlkEjYKCGxvY2F0aW9uGAIgASgLMhouZ2Vv",
-            "bWV0cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVwoNQXNzZXRMb2Nh",
-            "dGlvbhIOCgJpZBgBIAEoCVICaWQSNgoIbG9jYXRpb24YAiABKAsyGi5nZW9t",
-            "ZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghsb2NhdGlvbiJWCgxQYXJ0TG9jYXRp",
-            "b24SDgoCaWQYASABKAlSAmlkEjYKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0",
-            "cnkudjEuTG9jYWxpemVkUG9zZVIIbG9jYXRpb24iVgoMVG9vbExvY2F0aW9u",
-            "Eg4KAmlkGAEgASgJUgJpZBI2Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5",
-            "LnYxLkxvY2FsaXplZFBvc2VSCGxvY2F0aW9uIq4DChJFbnZpcm9ubWVudE1l",
-            "c3NhZ2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
-            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
-            "cHRpb24SKgoEdHlwZRgFIAEoDjIWLmFyLnYxLkVudmlyb25tZW50VHlwZVIE",
-            "dHlwZRIvCgdtYXJrZXJzGAYgAygLMhUuYXIudjEuTWFya2VyTG9jYXRpb25S",
-            "B21hcmtlcnMSLAoGcm9ib3RzGAcgAygLMhQuYXIudjEuUm9ib3RMb2NhdGlv",
-            "blIGcm9ib3RzEiwKBmFzc2V0cxgIIAMoCzIULmFyLnYxLkFzc2V0TG9jYXRp",
-            "b25SBmFzc2V0cxIpCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlv",
-            "blIFcGFydHMSKQoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRpb25S",
-            "BXRvb2xzEi8KCnByb3BlcnRpZXMYCyADKAsyDy5hci52MS5Qcm9wZXJ0eVIK",
-            "cHJvcGVydGllcyJUChNFbnZpcm9ubWVudE1lc3NhZ2VzEj0KDGVudmlyb25t",
-            "ZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZVIMZW52aXJv",
-            "bm1lbnRzKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQ",
-            "RV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRAB",
-            "EiMKH0VOVklST05NRU5UX1RZUEVfTUFOVUFMX1NUQVRJT04QAhImCiJFTlZJ",
-            "Uk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSIwofRU5WSVJPTk1F",
-            "TlRfVFlQRV9IWUJSSURfU1RBVElPThAEEiAKHEVOVklST05NRU5UX1RZUEVf",
-            "TUFOVUFMX0xJTkUQBRIjCh9FTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19M",
-            "SU5FEAYSIAocRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfTElORRAHQowBCglj",
-            "b20uYXIudjFCEEVudmlyb25tZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2Jv",
-            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNz",
-            "YWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6",
-            "VjFiBnByb3RvMw=="));
+            "Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEaG2J1Zi92YWxpZGF0",
+            "ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0cnkvdjEvcG9zZS5wcm90bxordmFs",
+            "aWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byJrCg5N",
+            "YXJrZXJMb2NhdGlvbhIZCgJpZBgBIAEoCUIJukgGcgTI8QQBUgJpZBI+Cghs",
+            "b2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpI",
+            "A8gBAVIIbG9jYXRpb24iagoNUm9ib3RMb2NhdGlvbhIZCgJpZBgBIAEoCUIJ",
+            "ukgGcgSg8QQBUgJpZBI+Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYx",
+            "LkxvY2FsaXplZFBvc2VCBrpIA8gBAVIIbG9jYXRpb24iagoNQXNzZXRMb2Nh",
+            "dGlvbhIZCgJpZBgBIAEoCUIJukgGcgSo8QQBUgJpZBI+Cghsb2NhdGlvbhgC",
+            "IAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpIA8gBAVIIbG9j",
+            "YXRpb24iaQoMUGFydExvY2F0aW9uEhkKAmlkGAEgASgJQgm6SAZyBLjxBAFS",
+            "AmlkEj4KCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVk",
+            "UG9zZUIGukgDyAEBUghsb2NhdGlvbiJpCgxUb29sTG9jYXRpb24SGQoCaWQY",
+            "ASABKAlCCbpIBnIEwPEEAVICaWQSPgoIbG9jYXRpb24YAiABKAsyGi5nZW9t",
+            "ZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQFSCGxvY2F0aW9uIpcDChJF",
+            "bnZpcm9ubWVudE1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI5CgR0eXBlGAUgASgOMhYu",
+            "YXIudjEuRW52aXJvbm1lbnRUeXBlQg26SAqCAQQQASgEyAEBUgR0eXBlEi8K",
+            "B21hcmtlcnMYBiADKAsyFS5hci52MS5NYXJrZXJMb2NhdGlvblIHbWFya2Vy",
+            "cxIsCgZyb2JvdHMYByADKAsyFC5hci52MS5Sb2JvdExvY2F0aW9uUgZyb2Jv",
+            "dHMSLAoGYXNzZXRzGAggAygLMhQuYXIudjEuQXNzZXRMb2NhdGlvblIGYXNz",
+            "ZXRzEikKBXBhcnRzGAkgAygLMhMuYXIudjEuUGFydExvY2F0aW9uUgVwYXJ0",
+            "cxIpCgV0b29scxgKIAMoCzITLmFyLnYxLlRvb2xMb2NhdGlvblIFdG9vbHMi",
+            "VAoTRW52aXJvbm1lbnRNZXNzYWdlcxI9CgxlbnZpcm9ubWVudHMYASADKAsy",
+            "GS5hci52MS5FbnZpcm9ubWVudE1lc3NhZ2VSDGVudmlyb25tZW50cyqsAgoP",
+            "RW52aXJvbm1lbnRUeXBlEiAKHEVOVklST05NRU5UX1RZUEVfVU5TUEVDSUZJ",
+            "RUQQABIcChhFTlZJUk9OTUVOVF9UWVBFX1NUT1JBR0UQARIjCh9FTlZJUk9O",
+            "TUVOVF9UWVBFX01BTlVBTF9TVEFUSU9OEAISJgoiRU5WSVJPTk1FTlRfVFlQ",
+            "RV9BVVRPTUFUSUNfU1RBVElPThADEiMKH0VOVklST05NRU5UX1RZUEVfSFlC",
+            "UklEX1NUQVRJT04QBBIgChxFTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9MSU5F",
+            "EAUSIwofRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfTElORRAGEiAKHEVO",
+            "VklST05NRU5UX1RZUEVfSFlCUklEX0xJTkUQB0KMAQoJY29tLmFyLnYxQhBF",
+            "bnZpcm9ubWVudFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHK",
+            "AgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.EnvironmentType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerLocation), global::Messages.AR.V1.MarkerLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotLocation), global::Messages.AR.V1.RobotLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetLocation), global::Messages.AR.V1.AssetLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PartLocation), global::Messages.AR.V1.PartLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ToolLocation), global::Messages.AR.V1.ToolLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessages), global::Messages.AR.V1.EnvironmentMessages.Parser, new[]{ "Environments" }, null, null, null, null)
           }));
     }
@@ -1353,7 +1355,6 @@ namespace Messages.AR.V1 {
       assets_ = other.assets_.Clone();
       parts_ = other.parts_.Clone();
       tools_ = other.tools_.Clone();
-      properties_ = other.properties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1414,6 +1415,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
     private global::Messages.AR.V1.EnvironmentType type_ = global::Messages.AR.V1.EnvironmentType.Unspecified;
+    /// <summary>
+    /// Type of environment
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.EnvironmentType Type {
@@ -1442,6 +1446,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotLocation> _repeated_robots_codec
         = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.RobotLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotLocation> robots_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotLocation>();
+    /// <summary>
+    /// Robot located in this environment
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.RobotLocation> Robots {
@@ -1453,6 +1460,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.AssetLocation> _repeated_assets_codec
         = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.AssetLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.AssetLocation> assets_ = new pbc::RepeatedField<global::Messages.AR.V1.AssetLocation>();
+    /// <summary>
+    /// Assets located in this environment
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.AssetLocation> Assets {
@@ -1464,6 +1474,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.PartLocation> _repeated_parts_codec
         = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.PartLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.PartLocation> parts_ = new pbc::RepeatedField<global::Messages.AR.V1.PartLocation>();
+    /// <summary>
+    /// Parts located in this environment
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.PartLocation> Parts {
@@ -1475,21 +1488,13 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ToolLocation> _repeated_tools_codec
         = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ToolLocation.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ToolLocation> tools_ = new pbc::RepeatedField<global::Messages.AR.V1.ToolLocation>();
+    /// <summary>
+    /// Tools located in this environment
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.ToolLocation> Tools {
       get { return tools_; }
-    }
-
-    /// <summary>Field number for the "properties" field.</summary>
-    public const int PropertiesFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
-      get { return properties_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1517,7 +1522,6 @@ namespace Messages.AR.V1 {
       if(!assets_.Equals(other.assets_)) return false;
       if(!parts_.Equals(other.parts_)) return false;
       if(!tools_.Equals(other.tools_)) return false;
-      if(!properties_.Equals(other.properties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1535,7 +1539,6 @@ namespace Messages.AR.V1 {
       hash ^= assets_.GetHashCode();
       hash ^= parts_.GetHashCode();
       hash ^= tools_.GetHashCode();
-      hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1579,7 +1582,6 @@ namespace Messages.AR.V1 {
       assets_.WriteTo(output, _repeated_assets_codec);
       parts_.WriteTo(output, _repeated_parts_codec);
       tools_.WriteTo(output, _repeated_tools_codec);
-      properties_.WriteTo(output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1615,7 +1617,6 @@ namespace Messages.AR.V1 {
       assets_.WriteTo(ref output, _repeated_assets_codec);
       parts_.WriteTo(ref output, _repeated_parts_codec);
       tools_.WriteTo(ref output, _repeated_tools_codec);
-      properties_.WriteTo(ref output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1646,7 +1647,6 @@ namespace Messages.AR.V1 {
       size += assets_.CalculateSize(_repeated_assets_codec);
       size += parts_.CalculateSize(_repeated_parts_codec);
       size += tools_.CalculateSize(_repeated_tools_codec);
-      size += properties_.CalculateSize(_repeated_properties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1679,7 +1679,6 @@ namespace Messages.AR.V1 {
       assets_.Add(other.assets_);
       parts_.Add(other.parts_);
       tools_.Add(other.tools_);
-      properties_.Add(other.properties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1739,10 +1738,6 @@ namespace Messages.AR.V1 {
             tools_.AddEntriesFrom(input, _repeated_tools_codec);
             break;
           }
-          case 90: {
-            properties_.AddEntriesFrom(input, _repeated_properties_codec);
-            break;
-          }
         }
       }
     #endif
@@ -1800,10 +1795,6 @@ namespace Messages.AR.V1 {
           }
           case 82: {
             tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
-            break;
-          }
-          case 90: {
-            properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
             break;
           }
         }

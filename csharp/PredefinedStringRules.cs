@@ -43,14 +43,40 @@ namespace Validation.V1 {
             "IAEoCEJ5wkh2CnQKHHN0cmluZy5wcm9wZXJ0eV9pZF9jb21wb25lbnQSJnRo",
             "aXMgZG9lcyBub3Qgc2VlbSB0byBiZSBhIHByb3BlcnR5IGlkGiwodGhpcyA9",
             "PSAnJyB8fCB0aGlzLnN0YXJ0c1dpdGgoJ3Byb3BlcnR5LScpKVITcHJvcGVy",
-            "dHlJZENvbXBvbmVudEK1AQoRY29tLnZhbGlkYXRpb24udjFCGlByZWRlZmlu",
-            "ZWRTdHJpbmdSdWxlc1Byb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy92YWxpZGF0aW9uL3YxO3ZhbGlkYXRpb252MaICA1ZY",
-            "WMoCDVZhbGlkYXRpb25cVjHiAhlWYWxpZGF0aW9uXFYxXEdQQk1ldGFkYXRh",
-            "6gIOVmFsaWRhdGlvbjo6VjE="));
+            "dHlJZENvbXBvbmVudDq6AQoScm9ib3RfaWRfY29tcG9uZW50EhkuYnVmLnZh",
+            "bGlkYXRlLlN0cmluZ1J1bGVzGJROIAEoCEJwwkhtCmsKGXN0cmluZy5yb2Jv",
+            "dF9pZF9jb21wb25lbnQSI3RoaXMgZG9lcyBub3Qgc2VlbSB0byBiZSBhIHJv",
+            "Ym90IGlkGikodGhpcyA9PSAnJyB8fCB0aGlzLnN0YXJ0c1dpdGgoJ3JvYm90",
+            "LScpKVIQcm9ib3RJZENvbXBvbmVudDq6AQoSYXNzZXRfaWRfY29tcG9uZW50",
+            "EhkuYnVmLnZhbGlkYXRlLlN0cmluZ1J1bGVzGJVOIAEoCEJwwkhtCmsKGXN0",
+            "cmluZy5hc3NldF9pZF9jb21wb25lbnQSI3RoaXMgZG9lcyBub3Qgc2VlbSB0",
+            "byBiZSBhIGFzc2V0IGlkGikodGhpcyA9PSAnJyB8fCB0aGlzLnN0YXJ0c1dp",
+            "dGgoJ2Fzc2V0LScpKVIQYXNzZXRJZENvbXBvbmVudDrZAQoYZW52aXJvbm1l",
+            "bnRfaWRfY29tcG9uZW50EhkuYnVmLnZhbGlkYXRlLlN0cmluZ1J1bGVzGJZO",
+            "IAEoCEKCAcJIfwp9Ch9zdHJpbmcuZW52aXJvbm1lbnRfaWRfY29tcG9uZW50",
+            "Eil0aGlzIGRvZXMgbm90IHNlZW0gdG8gYmUgYSBlbnZpcm9ubWVudCBpZBov",
+            "KHRoaXMgPT0gJycgfHwgdGhpcy5zdGFydHNXaXRoKCdlbnZpcm9ubWVudC0n",
+            "KSlSFmVudmlyb25tZW50SWRDb21wb25lbnQ6tQEKEXBhcnRfaWRfY29tcG9u",
+            "ZW50EhkuYnVmLnZhbGlkYXRlLlN0cmluZ1J1bGVzGJdOIAEoCEJtwkhqCmgK",
+            "GHN0cmluZy5wYXJ0X2lkX2NvbXBvbmVudBIidGhpcyBkb2VzIG5vdCBzZWVt",
+            "IHRvIGJlIGEgcGFydCBpZBooKHRoaXMgPT0gJycgfHwgdGhpcy5zdGFydHNX",
+            "aXRoKCdwYXJ0LScpKVIPcGFydElkQ29tcG9uZW50OrUBChF0b29sX2lkX2Nv",
+            "bXBvbmVudBIZLmJ1Zi52YWxpZGF0ZS5TdHJpbmdSdWxlcxiYTiABKAhCbcJI",
+            "agpoChhzdHJpbmcudG9vbF9pZF9jb21wb25lbnQSInRoaXMgZG9lcyBub3Qg",
+            "c2VlbSB0byBiZSBhIHRvb2wgaWQaKCh0aGlzID09ICcnIHx8IHRoaXMuc3Rh",
+            "cnRzV2l0aCgndG9vbC0nKSlSD3Rvb2xJZENvbXBvbmVudDq/AQoTbWFya2Vy",
+            "X2lkX2NvbXBvbmVudBIZLmJ1Zi52YWxpZGF0ZS5TdHJpbmdSdWxlcxiZTiAB",
+            "KAhCc8JIcApuChpzdHJpbmcubWFya2VyX2lkX2NvbXBvbmVudBIkdGhpcyBk",
+            "b2VzIG5vdCBzZWVtIHRvIGJlIGEgbWFya2VyIGlkGioodGhpcyA9PSAnJyB8",
+            "fCB0aGlzLnN0YXJ0c1dpdGgoJ21hcmtlci0nKSlSEW1hcmtlcklkQ29tcG9u",
+            "ZW50QrUBChFjb20udmFsaWRhdGlvbi52MUIaUHJlZGVmaW5lZFN0cmluZ1J1",
+            "bGVzUHJvdG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL3ZhbGlkYXRpb24vdjE7dmFsaWRhdGlvbnYxogIDVlhYygINVmFsaWRh",
+            "dGlvblxWMeICGVZhbGlkYXRpb25cVjFcR1BCTWV0YWRhdGHqAg5WYWxpZGF0",
+            "aW9uOjpWMQ=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent, PredefinedStringRulesExtensions.ArConfigIdComponent, PredefinedStringRulesExtensions.PropertyIdComponent }, null));
+          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent, PredefinedStringRulesExtensions.ArConfigIdComponent, PredefinedStringRulesExtensions.PropertyIdComponent, PredefinedStringRulesExtensions.RobotIdComponent, PredefinedStringRulesExtensions.AssetIdComponent, PredefinedStringRulesExtensions.EnvironmentIdComponent, PredefinedStringRulesExtensions.PartIdComponent, PredefinedStringRulesExtensions.ToolIdComponent, PredefinedStringRulesExtensions.MarkerIdComponent }, null));
     }
     #endregion
 
@@ -65,6 +91,18 @@ namespace Validation.V1 {
       new pb::Extension<global::Buf.Validate.StringRules, bool>(10002, pb::FieldCodec.ForBool(80016, false));
     public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> PropertyIdComponent =
       new pb::Extension<global::Buf.Validate.StringRules, bool>(10003, pb::FieldCodec.ForBool(80024, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> RobotIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10004, pb::FieldCodec.ForBool(80032, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> AssetIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10005, pb::FieldCodec.ForBool(80040, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> EnvironmentIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10006, pb::FieldCodec.ForBool(80048, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> PartIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10007, pb::FieldCodec.ForBool(80056, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> ToolIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10008, pb::FieldCodec.ForBool(80064, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> MarkerIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10009, pb::FieldCodec.ForBool(80072, false));
   }
 
 }

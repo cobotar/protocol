@@ -4,35 +4,59 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/mapping.proto.
  */
 export const file_ar_v1_mapping: GenFile = /*@__PURE__*/
-  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSI+CgpBUlByaW9yaXR5EhQKDGFyX2NvbmZpZ19pZBgBIAEoCRIaChJhY3RpdmVfcHJvcGVydHlfaWQYAiABKAkilwEKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9lbnZpcm9ubWVudF9pZHMYBSADKAkSLwoUYXJfY29uZmlnX3ByaW9yaXRpZXMYBiADKAsyES5hci52MS5BUlByaW9yaXR5IjoKD01hcHBpbmdNZXNzYWdlcxInCghtYXBwaW5ncxgBIAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z");
+  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSJLCgxSb2JvdE1hcHBpbmcSGwoIcm9ib3RfaWQYASABKAlCCbpIBnIEoPEEARIeCgtwcm9wZXJ0eV9pZBgCIAEoCUIJukgGcgSY8QQBIksKDEFzc2V0TWFwcGluZxIbCghhc3NldF9pZBgBIAEoCUIJukgGcgSo8QQBEh4KC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAEirQIKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKDmVudmlyb25tZW50X2lkGAUgASgJQgm6SAZyBLDxBAESHwoMYXJfY29uZmlnX2lkGAYgASgJQgm6SAZyBJDxBAESEAoIZGlzYWJsZWQYByABKAgSKwoOcm9ib3RfbWFwcGluZ3MYCCADKAsyEy5hci52MS5Sb2JvdE1hcHBpbmcSKgoNYXNzZXRfbWFwcGluZxgJIAMoCzITLmFyLnYxLkFzc2V0TWFwcGluZxISCgpzdGFuZGFsb25lGAogASgIEhAKCHByaW9yaXR5GAsgASgFIjoKD01hcHBpbmdNZXNzYWdlcxInCghtYXBwaW5ncxgBIAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
- * @generated from message ar.v1.ARPriority
+ * @generated from message ar.v1.RobotMapping
  */
-export type ARPriority = Message<"ar.v1.ARPriority"> & {
+export type RobotMapping = Message<"ar.v1.RobotMapping"> & {
   /**
-   * @generated from field: string ar_config_id = 1;
+   * @generated from field: string robot_id = 1;
    */
-  arConfigId: string;
+  robotId: string;
 
   /**
-   * @generated from field: string active_property_id = 2;
+   * @generated from field: string property_id = 2;
    */
-  activePropertyId: string;
+  propertyId: string;
 };
 
 /**
- * Describes the message ar.v1.ARPriority.
- * Use `create(ARPrioritySchema)` to create a new message.
+ * Describes the message ar.v1.RobotMapping.
+ * Use `create(RobotMappingSchema)` to create a new message.
  */
-export const ARPrioritySchema: GenMessage<ARPriority> = /*@__PURE__*/
+export const RobotMappingSchema: GenMessage<RobotMapping> = /*@__PURE__*/
   messageDesc(file_ar_v1_mapping, 0);
+
+/**
+ * @generated from message ar.v1.AssetMapping
+ */
+export type AssetMapping = Message<"ar.v1.AssetMapping"> & {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId: string;
+
+  /**
+   * @generated from field: string property_id = 2;
+   */
+  propertyId: string;
+};
+
+/**
+ * Describes the message ar.v1.AssetMapping.
+ * Use `create(AssetMappingSchema)` to create a new message.
+ */
+export const AssetMappingSchema: GenMessage<AssetMapping> = /*@__PURE__*/
+  messageDesc(file_ar_v1_mapping, 1);
 
 /**
  * @generated from message ar.v1.MappingMessage
@@ -59,14 +83,43 @@ export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
   description: string;
 
   /**
-   * @generated from field: repeated string environment_ids = 5;
+   * @generated from field: string environment_id = 5;
    */
-  environmentIds: string[];
+  environmentId: string;
 
   /**
-   * @generated from field: repeated ar.v1.ARPriority ar_config_priorities = 6;
+   * @generated from field: string ar_config_id = 6;
    */
-  arConfigPriorities: ARPriority[];
+  arConfigId: string;
+
+  /**
+   * @generated from field: bool disabled = 7;
+   */
+  disabled: boolean;
+
+  /**
+   * @generated from field: repeated ar.v1.RobotMapping robot_mappings = 8;
+   */
+  robotMappings: RobotMapping[];
+
+  /**
+   * @generated from field: repeated ar.v1.AssetMapping asset_mapping = 9;
+   */
+  assetMapping: AssetMapping[];
+
+  /**
+   * Only this AR-config should be shown (winner have highest priority)
+   *
+   * @generated from field: bool standalone = 10;
+   */
+  standalone: boolean;
+
+  /**
+   * High value configs will be shown first
+   *
+   * @generated from field: int32 priority = 11;
+   */
+  priority: number;
 };
 
 /**
@@ -74,7 +127,7 @@ export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
  * Use `create(MappingMessageSchema)` to create a new message.
  */
 export const MappingMessageSchema: GenMessage<MappingMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_mapping, 1);
+  messageDesc(file_ar_v1_mapping, 2);
 
 /**
  * @generated from message ar.v1.MappingMessages
@@ -91,5 +144,5 @@ export type MappingMessages = Message<"ar.v1.MappingMessages"> & {
  * Use `create(MappingMessagesSchema)` to create a new message.
  */
 export const MappingMessagesSchema: GenMessage<MappingMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_mapping, 2);
+  messageDesc(file_ar_v1_mapping, 3);
 

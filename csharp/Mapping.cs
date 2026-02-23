@@ -24,24 +24,33 @@ namespace Messages.AR.V1 {
     static MappingReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSJcCgpBUlByaW9yaXR5EiAK",
-            "DGFyX2NvbmZpZ19pZBgBIAEoCVIKYXJDb25maWdJZBIsChJhY3RpdmVfcHJv",
-            "cGVydHlfaWQYAiABKAlSEGFjdGl2ZVByb3BlcnR5SWQi2AEKDk1hcHBpbmdN",
-            "ZXNzYWdlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
-            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
-            "aXB0aW9uEicKD2Vudmlyb25tZW50X2lkcxgFIAMoCVIOZW52aXJvbm1lbnRJ",
-            "ZHMSQwoUYXJfY29uZmlnX3ByaW9yaXRpZXMYBiADKAsyES5hci52MS5BUlBy",
-            "aW9yaXR5UhJhckNvbmZpZ1ByaW9yaXRpZXMiRAoPTWFwcGluZ01lc3NhZ2Vz",
-            "EjEKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEuTWFwcGluZ01lc3NhZ2VSCG1h",
-            "cHBpbmdzQogBCgljb20uYXIudjFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIu",
-            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
-            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
-            "YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MRobYnVmL3ZhbGlkYXRlL3Zh",
+            "bGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
+            "X3J1bGVzLnByb3RvImAKDFJvYm90TWFwcGluZxIkCghyb2JvdF9pZBgBIAEo",
+            "CUIJukgGcgSg8QQBUgdyb2JvdElkEioKC3Byb3BlcnR5X2lkGAIgASgJQgm6",
+            "SAZyBJjxBAFSCnByb3BlcnR5SWQiYAoMQXNzZXRNYXBwaW5nEiQKCGFzc2V0",
+            "X2lkGAEgASgJQgm6SAZyBKjxBAFSB2Fzc2V0SWQSKgoLcHJvcGVydHlfaWQY",
+            "AiABKAlCCbpIBnIEmPEEAVIKcHJvcGVydHlJZCKiAwoOTWFwcGluZ01lc3Nh",
+            "Z2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
+            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
+            "UgtkZXNjcmlwdGlvbhIwCg5lbnZpcm9ubWVudF9pZBgFIAEoCUIJukgGcgSw",
+            "8QQBUg1lbnZpcm9ubWVudElkEisKDGFyX2NvbmZpZ19pZBgGIAEoCUIJukgG",
+            "cgSQ8QQBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVkGAcgASgIUghkaXNhYmxl",
+            "ZBI6Cg5yb2JvdF9tYXBwaW5ncxgIIAMoCzITLmFyLnYxLlJvYm90TWFwcGlu",
+            "Z1INcm9ib3RNYXBwaW5ncxI4Cg1hc3NldF9tYXBwaW5nGAkgAygLMhMuYXIu",
+            "djEuQXNzZXRNYXBwaW5nUgxhc3NldE1hcHBpbmcSHgoKc3RhbmRhbG9uZRgK",
+            "IAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgLIAEoBVIIcHJpb3JpdHki",
+            "RAoPTWFwcGluZ01lc3NhZ2VzEjEKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEu",
+            "TWFwcGluZ01lc3NhZ2VSCG1hcHBpbmdzQogBCgljb20uYXIudjFCDE1hcHBp",
+            "bmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
+            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARPriority), global::Messages.AR.V1.ARPriority.Parser, new[]{ "ArConfigId", "ActivePropertyId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentIds", "ArConfigPriorities" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMapping), global::Messages.AR.V1.RobotMapping.Parser, new[]{ "RobotId", "PropertyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMapping), global::Messages.AR.V1.AssetMapping.Parser, new[]{ "AssetId", "PropertyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentId", "ArConfigId", "Disabled", "RobotMappings", "AssetMapping", "Standalone", "Priority" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessages), global::Messages.AR.V1.MappingMessages.Parser, new[]{ "Mappings" }, null, null, null, null)
           }));
     }
@@ -50,16 +59,16 @@ namespace Messages.AR.V1 {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ARPriority : pb::IMessage<ARPriority>
+  public sealed partial class RobotMapping : pb::IMessage<RobotMapping>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ARPriority> _parser = new pb::MessageParser<ARPriority>(() => new ARPriority());
+    private static readonly pb::MessageParser<RobotMapping> _parser = new pb::MessageParser<RobotMapping>(() => new RobotMapping());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ARPriority> Parser { get { return _parser; } }
+    public static pb::MessageParser<RobotMapping> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -75,7 +84,7 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ARPriority() {
+    public RobotMapping() {
       OnConstruction();
     }
 
@@ -83,59 +92,59 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ARPriority(ARPriority other) : this() {
-      arConfigId_ = other.arConfigId_;
-      activePropertyId_ = other.activePropertyId_;
+    public RobotMapping(RobotMapping other) : this() {
+      robotId_ = other.robotId_;
+      propertyId_ = other.propertyId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ARPriority Clone() {
-      return new ARPriority(this);
+    public RobotMapping Clone() {
+      return new RobotMapping(this);
     }
 
-    /// <summary>Field number for the "ar_config_id" field.</summary>
-    public const int ArConfigIdFieldNumber = 1;
-    private string arConfigId_ = "";
+    /// <summary>Field number for the "robot_id" field.</summary>
+    public const int RobotIdFieldNumber = 1;
+    private string robotId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ArConfigId {
-      get { return arConfigId_; }
+    public string RobotId {
+      get { return robotId_; }
       set {
-        arConfigId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "active_property_id" field.</summary>
-    public const int ActivePropertyIdFieldNumber = 2;
-    private string activePropertyId_ = "";
+    /// <summary>Field number for the "property_id" field.</summary>
+    public const int PropertyIdFieldNumber = 2;
+    private string propertyId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ActivePropertyId {
-      get { return activePropertyId_; }
+    public string PropertyId {
+      get { return propertyId_; }
       set {
-        activePropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        propertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as ARPriority);
+      return Equals(other as RobotMapping);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ARPriority other) {
+    public bool Equals(RobotMapping other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ArConfigId != other.ArConfigId) return false;
-      if (ActivePropertyId != other.ActivePropertyId) return false;
+      if (RobotId != other.RobotId) return false;
+      if (PropertyId != other.PropertyId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -143,8 +152,8 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArConfigId.Length != 0) hash ^= ArConfigId.GetHashCode();
-      if (ActivePropertyId.Length != 0) hash ^= ActivePropertyId.GetHashCode();
+      if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
+      if (PropertyId.Length != 0) hash ^= PropertyId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -163,13 +172,13 @@ namespace Messages.AR.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ArConfigId.Length != 0) {
+      if (RobotId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(ArConfigId);
+        output.WriteString(RobotId);
       }
-      if (ActivePropertyId.Length != 0) {
+      if (PropertyId.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(ActivePropertyId);
+        output.WriteString(PropertyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -181,13 +190,13 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ArConfigId.Length != 0) {
+      if (RobotId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(ArConfigId);
+        output.WriteString(RobotId);
       }
-      if (ActivePropertyId.Length != 0) {
+      if (PropertyId.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(ActivePropertyId);
+        output.WriteString(PropertyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -199,11 +208,11 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ArConfigId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ArConfigId);
+      if (RobotId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
-      if (ActivePropertyId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ActivePropertyId);
+      if (PropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -213,15 +222,15 @@ namespace Messages.AR.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ARPriority other) {
+    public void MergeFrom(RobotMapping other) {
       if (other == null) {
         return;
       }
-      if (other.ArConfigId.Length != 0) {
-        ArConfigId = other.ArConfigId;
+      if (other.RobotId.Length != 0) {
+        RobotId = other.RobotId;
       }
-      if (other.ActivePropertyId.Length != 0) {
-        ActivePropertyId = other.ActivePropertyId;
+      if (other.PropertyId.Length != 0) {
+        PropertyId = other.PropertyId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -243,11 +252,11 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            ArConfigId = input.ReadString();
+            RobotId = input.ReadString();
             break;
           }
           case 18: {
-            ActivePropertyId = input.ReadString();
+            PropertyId = input.ReadString();
             break;
           }
         }
@@ -270,11 +279,246 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            ArConfigId = input.ReadString();
+            RobotId = input.ReadString();
             break;
           }
           case 18: {
-            ActivePropertyId = input.ReadString();
+            PropertyId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class AssetMapping : pb::IMessage<AssetMapping>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AssetMapping> _parser = new pb::MessageParser<AssetMapping>(() => new AssetMapping());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AssetMapping> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.MappingReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetMapping() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetMapping(AssetMapping other) : this() {
+      assetId_ = other.assetId_;
+      propertyId_ = other.propertyId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AssetMapping Clone() {
+      return new AssetMapping(this);
+    }
+
+    /// <summary>Field number for the "asset_id" field.</summary>
+    public const int AssetIdFieldNumber = 1;
+    private string assetId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AssetId {
+      get { return assetId_; }
+      set {
+        assetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "property_id" field.</summary>
+    public const int PropertyIdFieldNumber = 2;
+    private string propertyId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PropertyId {
+      get { return propertyId_; }
+      set {
+        propertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AssetMapping);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AssetMapping other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AssetId != other.AssetId) return false;
+      if (PropertyId != other.PropertyId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AssetId.Length != 0) hash ^= AssetId.GetHashCode();
+      if (PropertyId.Length != 0) hash ^= PropertyId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AssetId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AssetId);
+      }
+      if (PropertyId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PropertyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AssetId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AssetId);
+      }
+      if (PropertyId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PropertyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AssetId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetId);
+      }
+      if (PropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AssetMapping other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AssetId.Length != 0) {
+        AssetId = other.AssetId;
+      }
+      if (other.PropertyId.Length != 0) {
+        PropertyId = other.PropertyId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            AssetId = input.ReadString();
+            break;
+          }
+          case 18: {
+            PropertyId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            AssetId = input.ReadString();
+            break;
+          }
+          case 18: {
+            PropertyId = input.ReadString();
             break;
           }
         }
@@ -299,7 +543,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.MappingReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.AR.V1.MappingReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -323,8 +567,13 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      environmentIds_ = other.environmentIds_.Clone();
-      arConfigPriorities_ = other.arConfigPriorities_.Clone();
+      environmentId_ = other.environmentId_;
+      arConfigId_ = other.arConfigId_;
+      disabled_ = other.disabled_;
+      robotMappings_ = other.robotMappings_.Clone();
+      assetMapping_ = other.assetMapping_.Clone();
+      standalone_ = other.standalone_;
+      priority_ = other.priority_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -382,26 +631,92 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "environment_ids" field.</summary>
-    public const int EnvironmentIdsFieldNumber = 5;
-    private static readonly pb::FieldCodec<string> _repeated_environmentIds_codec
-        = pb::FieldCodec.ForString(42);
-    private readonly pbc::RepeatedField<string> environmentIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "environment_id" field.</summary>
+    public const int EnvironmentIdFieldNumber = 5;
+    private string environmentId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> EnvironmentIds {
-      get { return environmentIds_; }
+    public string EnvironmentId {
+      get { return environmentId_; }
+      set {
+        environmentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
-    /// <summary>Field number for the "ar_config_priorities" field.</summary>
-    public const int ArConfigPrioritiesFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARPriority> _repeated_arConfigPriorities_codec
-        = pb::FieldCodec.ForMessage(50, global::Messages.AR.V1.ARPriority.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARPriority> arConfigPriorities_ = new pbc::RepeatedField<global::Messages.AR.V1.ARPriority>();
+    /// <summary>Field number for the "ar_config_id" field.</summary>
+    public const int ArConfigIdFieldNumber = 6;
+    private string arConfigId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ARPriority> ArConfigPriorities {
-      get { return arConfigPriorities_; }
+    public string ArConfigId {
+      get { return arConfigId_; }
+      set {
+        arConfigId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "disabled" field.</summary>
+    public const int DisabledFieldNumber = 7;
+    private bool disabled_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Disabled {
+      get { return disabled_; }
+      set {
+        disabled_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "robot_mappings" field.</summary>
+    public const int RobotMappingsFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotMapping> _repeated_robotMappings_codec
+        = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.RobotMapping.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> robotMappings_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotMapping>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> RobotMappings {
+      get { return robotMappings_; }
+    }
+
+    /// <summary>Field number for the "asset_mapping" field.</summary>
+    public const int AssetMappingFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.AssetMapping> _repeated_assetMapping_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.AssetMapping.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.AssetMapping> assetMapping_ = new pbc::RepeatedField<global::Messages.AR.V1.AssetMapping>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.AssetMapping> AssetMapping {
+      get { return assetMapping_; }
+    }
+
+    /// <summary>Field number for the "standalone" field.</summary>
+    public const int StandaloneFieldNumber = 10;
+    private bool standalone_;
+    /// <summary>
+    /// Only this AR-config should be shown (winner have highest priority)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Standalone {
+      get { return standalone_; }
+      set {
+        standalone_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "priority" field.</summary>
+    public const int PriorityFieldNumber = 11;
+    private int priority_;
+    /// <summary>
+    /// High value configs will be shown first
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Priority {
+      get { return priority_; }
+      set {
+        priority_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -423,8 +738,13 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if(!environmentIds_.Equals(other.environmentIds_)) return false;
-      if(!arConfigPriorities_.Equals(other.arConfigPriorities_)) return false;
+      if (EnvironmentId != other.EnvironmentId) return false;
+      if (ArConfigId != other.ArConfigId) return false;
+      if (Disabled != other.Disabled) return false;
+      if(!robotMappings_.Equals(other.robotMappings_)) return false;
+      if(!assetMapping_.Equals(other.assetMapping_)) return false;
+      if (Standalone != other.Standalone) return false;
+      if (Priority != other.Priority) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -436,8 +756,13 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      hash ^= environmentIds_.GetHashCode();
-      hash ^= arConfigPriorities_.GetHashCode();
+      if (EnvironmentId.Length != 0) hash ^= EnvironmentId.GetHashCode();
+      if (ArConfigId.Length != 0) hash ^= ArConfigId.GetHashCode();
+      if (Disabled != false) hash ^= Disabled.GetHashCode();
+      hash ^= robotMappings_.GetHashCode();
+      hash ^= assetMapping_.GetHashCode();
+      if (Standalone != false) hash ^= Standalone.GetHashCode();
+      if (Priority != 0) hash ^= Priority.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -472,8 +797,28 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      environmentIds_.WriteTo(output, _repeated_environmentIds_codec);
-      arConfigPriorities_.WriteTo(output, _repeated_arConfigPriorities_codec);
+      if (EnvironmentId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(EnvironmentId);
+      }
+      if (ArConfigId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ArConfigId);
+      }
+      if (Disabled != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Disabled);
+      }
+      robotMappings_.WriteTo(output, _repeated_robotMappings_codec);
+      assetMapping_.WriteTo(output, _repeated_assetMapping_codec);
+      if (Standalone != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Standalone);
+      }
+      if (Priority != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Priority);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -500,8 +845,28 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      environmentIds_.WriteTo(ref output, _repeated_environmentIds_codec);
-      arConfigPriorities_.WriteTo(ref output, _repeated_arConfigPriorities_codec);
+      if (EnvironmentId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(EnvironmentId);
+      }
+      if (ArConfigId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ArConfigId);
+      }
+      if (Disabled != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Disabled);
+      }
+      robotMappings_.WriteTo(ref output, _repeated_robotMappings_codec);
+      assetMapping_.WriteTo(ref output, _repeated_assetMapping_codec);
+      if (Standalone != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Standalone);
+      }
+      if (Priority != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Priority);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -524,8 +889,23 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      size += environmentIds_.CalculateSize(_repeated_environmentIds_codec);
-      size += arConfigPriorities_.CalculateSize(_repeated_arConfigPriorities_codec);
+      if (EnvironmentId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EnvironmentId);
+      }
+      if (ArConfigId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ArConfigId);
+      }
+      if (Disabled != false) {
+        size += 1 + 1;
+      }
+      size += robotMappings_.CalculateSize(_repeated_robotMappings_codec);
+      size += assetMapping_.CalculateSize(_repeated_assetMapping_codec);
+      if (Standalone != false) {
+        size += 1 + 1;
+      }
+      if (Priority != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Priority);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -550,8 +930,23 @@ namespace Messages.AR.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      environmentIds_.Add(other.environmentIds_);
-      arConfigPriorities_.Add(other.arConfigPriorities_);
+      if (other.EnvironmentId.Length != 0) {
+        EnvironmentId = other.EnvironmentId;
+      }
+      if (other.ArConfigId.Length != 0) {
+        ArConfigId = other.ArConfigId;
+      }
+      if (other.Disabled != false) {
+        Disabled = other.Disabled;
+      }
+      robotMappings_.Add(other.robotMappings_);
+      assetMapping_.Add(other.assetMapping_);
+      if (other.Standalone != false) {
+        Standalone = other.Standalone;
+      }
+      if (other.Priority != 0) {
+        Priority = other.Priority;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -588,11 +983,31 @@ namespace Messages.AR.V1 {
             break;
           }
           case 42: {
-            environmentIds_.AddEntriesFrom(input, _repeated_environmentIds_codec);
+            EnvironmentId = input.ReadString();
             break;
           }
           case 50: {
-            arConfigPriorities_.AddEntriesFrom(input, _repeated_arConfigPriorities_codec);
+            ArConfigId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Disabled = input.ReadBool();
+            break;
+          }
+          case 66: {
+            robotMappings_.AddEntriesFrom(input, _repeated_robotMappings_codec);
+            break;
+          }
+          case 74: {
+            assetMapping_.AddEntriesFrom(input, _repeated_assetMapping_codec);
+            break;
+          }
+          case 80: {
+            Standalone = input.ReadBool();
+            break;
+          }
+          case 88: {
+            Priority = input.ReadInt32();
             break;
           }
         }
@@ -631,11 +1046,31 @@ namespace Messages.AR.V1 {
             break;
           }
           case 42: {
-            environmentIds_.AddEntriesFrom(ref input, _repeated_environmentIds_codec);
+            EnvironmentId = input.ReadString();
             break;
           }
           case 50: {
-            arConfigPriorities_.AddEntriesFrom(ref input, _repeated_arConfigPriorities_codec);
+            ArConfigId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Disabled = input.ReadBool();
+            break;
+          }
+          case 66: {
+            robotMappings_.AddEntriesFrom(ref input, _repeated_robotMappings_codec);
+            break;
+          }
+          case 74: {
+            assetMapping_.AddEntriesFrom(ref input, _repeated_assetMapping_codec);
+            break;
+          }
+          case 80: {
+            Standalone = input.ReadBool();
+            break;
+          }
+          case 88: {
+            Priority = input.ReadInt32();
             break;
           }
         }
@@ -660,7 +1095,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.MappingReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.MappingReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

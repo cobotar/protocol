@@ -1,21 +1,34 @@
 syntax = "proto3";
 package ar.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-message ARPriority {
-  string ar_config_id = 1;
-  string active_property_id = 2;
+message RobotMapping {
+  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_id_component) = true];
+  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
+}
+
+message AssetMapping {
+  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_id_component) = true];
+  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
 }
 
 message MappingMessage {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  repeated string environment_ids = 5;
-  repeated ARPriority ar_config_priorities = 6;
+  string environment_id = 5 [(buf.validate.field).string.(validation.v1.environment_id_component) = true];
+  string ar_config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  bool disabled = 7;
+  repeated RobotMapping robot_mappings = 8;
+  repeated AssetMapping asset_mapping = 9;
+  bool standalone = 10; // Only this AR-config should be shown (winner have highest priority)
+  int32 priority = 11; // High value configs will be shown first
 }
 
 message MappingMessages {

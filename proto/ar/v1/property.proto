@@ -28,6 +28,7 @@ enum PropertyType {
   PROPERTY_TYPE_ENUM = 11;
   PROPERTY_TYPE_ENUM_MULTI = 12;
   PROPERTY_TYPE_ICON = 13;
+  PROPERTY_TYPE_ASSET = 14;
 }
 
 // Specifies where the value of a property originates from.
@@ -53,7 +54,7 @@ message Property {
   option (buf.validate.message).cel = {
     id: "property_type_matches_value_kind"
     message: "type must match the kind of value field"
-    expression: "((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))"
+    expression: "((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)) || (this.type == 14 && has(this.asset_id_value)))"
   };
 
   option (buf.validate.message).oneof = {
@@ -70,7 +71,8 @@ message Property {
       "robot_id_value",
       "enum_value",
       "enum_multi_value",
-      "icon_value"
+      "icon_value",
+      "asset_id_value"
     ]
     required: true
   };
@@ -144,7 +146,7 @@ message Property {
   geometry.v1.LocalizedPose pose_value = 27;
   geometry.v1.Anchor anchor_value = 28;
   common.v1.Color color_value = 29;
-  optional string robot_id_value = 20 [(buf.validate.field).string.min_len = 1];
+  optional string robot_id_value = 30;
   optional string enum_value = 31 [(buf.validate.field).string.min_len = 1];
   repeated string enum_multi_value = 32 [(buf.validate.field).repeated = {
     min_items: 1
@@ -153,6 +155,7 @@ message Property {
     }
   }];
   optional string icon_value = 33;
+  optional string asset_id_value = 34;
 
   NumberExtras number_extras = 41;
   EnumExtras enum_extras = 42;
@@ -170,7 +173,7 @@ message PropertyValueUpdate {
   option (buf.validate.message).cel = {
     id: "property_type_matches_value_kind"
     message: "type must match the kind of value field"
-    expression: "((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))"
+    expression: "((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)) || (this.type == 14 && has(this.asset_id_value)))"
   };
 
   option (buf.validate.message).oneof = {
@@ -187,7 +190,8 @@ message PropertyValueUpdate {
       "robot_id_value",
       "enum_value",
       "enum_multi_value",
-      "icon_value"
+      "icon_value",
+      "asset_id_value"
     ]
     required: true
   };
@@ -215,7 +219,7 @@ message PropertyValueUpdate {
   geometry.v1.LocalizedPose pose_value = 27;
   geometry.v1.Anchor anchor_value = 28;
   common.v1.Color color_value = 29;
-  optional string robot_id_value = 20 [(buf.validate.field).string.min_len = 1];
+  optional string robot_id_value = 30;
   optional string enum_value = 31 [(buf.validate.field).string.min_len = 1];
   repeated string enum_multi_value = 32 [(buf.validate.field).repeated = {
     min_items: 1
@@ -224,6 +228,7 @@ message PropertyValueUpdate {
     }
   }];
   optional string icon_value = 33;
+  optional string asset_id_value = 34;
 }
 
 message NumberExtras {

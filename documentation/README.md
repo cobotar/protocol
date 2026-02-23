@@ -32,6 +32,12 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/property.proto](#ar_v1_property-proto)
     - [AnchorExtras](#ar-v1-AnchorExtras)
@@ -133,9 +139,10 @@
     - [HelperGroup](#ar-v1-HelperGroup)
   
 - [ar/v1/mapping.proto](#ar_v1_mapping-proto)
-    - [ARPriority](#ar-v1-ARPriority)
+    - [AssetMapping](#ar-v1-AssetMapping)
     - [MappingMessage](#ar-v1-MappingMessage)
     - [MappingMessages](#ar-v1-MappingMessages)
+    - [RobotMapping](#ar-v1-RobotMapping)
   
 - [ar/v1/marker.proto](#ar_v1_marker-proto)
     - [MarkerMessage](#ar-v1-MarkerMessage)
@@ -629,9 +636,15 @@ A simple pose consisting of a position and orientation
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
+| asset_id_component | bool | .buf.validate.StringRules | 10005 |  |
+| environment_id_component | bool | .buf.validate.StringRules | 10006 |  |
+| marker_id_component | bool | .buf.validate.StringRules | 10009 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
+| part_id_component | bool | .buf.validate.StringRules | 10007 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
+| robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
 
  
 
@@ -787,6 +800,7 @@ Properties are used by various components to define them, such as: feedback, act
 | enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
 | icon_value | [string](#string) | optional |  |
+| asset_id_value | [string](#string) | optional |  |
 | number_extras | [NumberExtras](#ar-v1-NumberExtras) |  |  |
 | enum_extras | [EnumExtras](#ar-v1-EnumExtras) |  |  |
 | vector3_extras | [Vector3Extras](#ar-v1-Vector3Extras) |  |  |
@@ -839,6 +853,7 @@ Properties are used by various components to define them, such as: feedback, act
 | enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
 | icon_value | [string](#string) | optional |  |
+| asset_id_value | [string](#string) | optional |  |
 
 
 
@@ -920,6 +935,7 @@ Used to specify the type of a property
 | PROPERTY_TYPE_ENUM | 11 |  |
 | PROPERTY_TYPE_ENUM_MULTI | 12 |  |
 | PROPERTY_TYPE_ICON | 13 |  |
+| PROPERTY_TYPE_ASSET | 14 |  |
 
 
  
@@ -1786,13 +1802,12 @@ Just delete this?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [EnvironmentType](#ar-v1-EnvironmentType) |  |  |
+| type | [EnvironmentType](#ar-v1-EnvironmentType) |  | Type of environment |
 | markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated | Markers associated with this environment. |
-| robots | [RobotLocation](#ar-v1-RobotLocation) | repeated |  |
-| assets | [AssetLocation](#ar-v1-AssetLocation) | repeated |  |
-| parts | [PartLocation](#ar-v1-PartLocation) | repeated |  |
-| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| robots | [RobotLocation](#ar-v1-RobotLocation) | repeated | Robot located in this environment |
+| assets | [AssetLocation](#ar-v1-AssetLocation) | repeated | Assets located in this environment |
+| parts | [PartLocation](#ar-v1-PartLocation) | repeated | Parts located in this environment |
+| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated | Tools located in this environment |
 
 
 
@@ -2059,16 +2074,16 @@ Just delete this?
 
 
 
-<a name="ar-v1-ARPriority"></a>
+<a name="ar-v1-AssetMapping"></a>
 
-### ARPriority
+### AssetMapping
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ar_config_id | [string](#string) |  |  |
-| active_property_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| property_id | [string](#string) |  |  |
 
 
 
@@ -2087,8 +2102,13 @@ Just delete this?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| environment_ids | [string](#string) | repeated |  |
-| ar_config_priorities | [ARPriority](#ar-v1-ARPriority) | repeated |  |
+| environment_id | [string](#string) |  |  |
+| ar_config_id | [string](#string) |  |  |
+| disabled | [bool](#bool) |  |  |
+| robot_mappings | [RobotMapping](#ar-v1-RobotMapping) | repeated |  |
+| asset_mapping | [AssetMapping](#ar-v1-AssetMapping) | repeated |  |
+| standalone | [bool](#bool) |  | Only this AR-config should be shown (winner have highest priority) |
+| priority | [int32](#int32) |  | High value configs will be shown first |
 
 
 
@@ -2104,6 +2124,22 @@ Just delete this?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-RobotMapping"></a>
+
+### RobotMapping
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| property_id | [string](#string) |  |  |
 
 
 

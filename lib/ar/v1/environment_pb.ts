@@ -4,17 +4,17 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { Property } from "./property_pb.ts";
-import { file_ar_v1_property } from "./property_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/environment.proto.
  */
 export const file_ar_v1_environment: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiSgoOTWFya2VyTG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkkKDVJvYm90TG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkkKDUFzc2V0TG9jYXRpb24SCgoCaWQYASABKAkSLAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIkgKDFBhcnRMb2NhdGlvbhIKCgJpZBgBIAEoCRIsCghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2UiSAoMVG9vbExvY2F0aW9uEgoKAmlkGAEgASgJEiwKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSLYAgoSRW52aXJvbm1lbnRNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIkCgR0eXBlGAUgASgOMhYuYXIudjEuRW52aXJvbm1lbnRUeXBlEiYKB21hcmtlcnMYBiADKAsyFS5hci52MS5NYXJrZXJMb2NhdGlvbhIkCgZyb2JvdHMYByADKAsyFC5hci52MS5Sb2JvdExvY2F0aW9uEiQKBmFzc2V0cxgIIAMoCzIULmFyLnYxLkFzc2V0TG9jYXRpb24SIgoFcGFydHMYCSADKAsyEy5hci52MS5QYXJ0TG9jYXRpb24SIgoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRpb24SIwoKcHJvcGVydGllcxgLIAMoCzIPLmFyLnYxLlByb3BlcnR5IkYKE0Vudmlyb25tZW50TWVzc2FnZXMSLwoMZW52aXJvbm1lbnRzGAEgAygLMhkuYXIudjEuRW52aXJvbm1lbnRNZXNzYWdlKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRABEiMKH0VOVklST05NRU5UX1RZUEVfTUFOVUFMX1NUQVRJT04QAhImCiJFTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSIwofRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfU1RBVElPThAEEiAKHEVOVklST05NRU5UX1RZUEVfTUFOVUFMX0xJTkUQBRIjCh9FTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19MSU5FEAYSIAocRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfTElORRAHQowBCgljb20uYXIudjFCEEVudmlyb25tZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_property, file_geometry_v1_pose]);
+  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiXQoOTWFya2VyTG9jYXRpb24SFQoCaWQYASABKAlCCbpIBnIEyPEEARI0Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpIA8gBASJcCg1Sb2JvdExvY2F0aW9uEhUKAmlkGAEgASgJQgm6SAZyBKDxBAESNAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQEiXAoNQXNzZXRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFBhcnRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgS48QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFRvb2xMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTA8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIs0CChJFbnZpcm9ubWVudE1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMwoEdHlwZRgFIAEoDjIWLmFyLnYxLkVudmlyb25tZW50VHlwZUINukgKyAEBggEEEAEoBBImCgdtYXJrZXJzGAYgAygLMhUuYXIudjEuTWFya2VyTG9jYXRpb24SJAoGcm9ib3RzGAcgAygLMhQuYXIudjEuUm9ib3RMb2NhdGlvbhIkCgZhc3NldHMYCCADKAsyFC5hci52MS5Bc3NldExvY2F0aW9uEiIKBXBhcnRzGAkgAygLMhMuYXIudjEuUGFydExvY2F0aW9uEiIKBXRvb2xzGAogAygLMhMuYXIudjEuVG9vbExvY2F0aW9uIkYKE0Vudmlyb25tZW50TWVzc2FnZXMSLwoMZW52aXJvbm1lbnRzGAEgAygLMhkuYXIudjEuRW52aXJvbm1lbnRNZXNzYWdlKqwCCg9FbnZpcm9ubWVudFR5cGUSIAocRU5WSVJPTk1FTlRfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEVOVklST05NRU5UX1RZUEVfU1RPUkFHRRABEiMKH0VOVklST05NRU5UX1RZUEVfTUFOVUFMX1NUQVRJT04QAhImCiJFTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSIwofRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfU1RBVElPThAEEiAKHEVOVklST05NRU5UX1RZUEVfTUFOVUFMX0xJTkUQBRIjCh9FTlZJUk9OTUVOVF9UWVBFX0FVVE9NQVRJQ19MSU5FEAYSIAocRU5WSVJPTk1FTlRfVFlQRV9IWUJSSURfTElORRAHQowBCgljb20uYXIudjFCEEVudmlyb25tZW50UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.MarkerLocation
@@ -151,6 +151,8 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
   description: string;
 
   /**
+   * Type of environment
+   *
    * @generated from field: ar.v1.EnvironmentType type = 5;
    */
   type: EnvironmentType;
@@ -163,29 +165,32 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
   markers: MarkerLocation[];
 
   /**
+   * Robot located in this environment
+   *
    * @generated from field: repeated ar.v1.RobotLocation robots = 7;
    */
   robots: RobotLocation[];
 
   /**
+   * Assets located in this environment
+   *
    * @generated from field: repeated ar.v1.AssetLocation assets = 8;
    */
   assets: AssetLocation[];
 
   /**
+   * Parts located in this environment
+   *
    * @generated from field: repeated ar.v1.PartLocation parts = 9;
    */
   parts: PartLocation[];
 
   /**
+   * Tools located in this environment
+   *
    * @generated from field: repeated ar.v1.ToolLocation tools = 10;
    */
   tools: ToolLocation[];
-
-  /**
-   * @generated from field: repeated ar.v1.Property properties = 11;
-   */
-  properties: Property[];
 };
 
 /**

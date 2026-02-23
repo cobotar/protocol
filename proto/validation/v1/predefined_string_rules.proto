@@ -27,4 +27,40 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a property id"
     expression: "(this == '' || this.startsWith('property-'))"
   }];
+
+  optional bool robot_id_component = 10004 [(buf.validate.predefined).cel = {
+    id: "string.robot_id_component"
+    message: "this does not seem to be a robot id"
+    expression: "(this == '' || this.startsWith('robot-'))"
+  }];
+
+  optional bool asset_id_component = 10005 [(buf.validate.predefined).cel = {
+    id: "string.asset_id_component"
+    message: "this does not seem to be a asset id"
+    expression: "(this == '' || this.startsWith('asset-'))"
+  }];
+
+  optional bool environment_id_component = 10006 [(buf.validate.predefined).cel = {
+    id: "string.environment_id_component"
+    message: "this does not seem to be a environment id"
+    expression: "(this == '' || this.startsWith('environment-'))"
+  }];
+
+  optional bool part_id_component = 10007 [(buf.validate.predefined).cel = {
+    id: "string.part_id_component"
+    message: "this does not seem to be a part id"
+    expression: "(this == '' || this.startsWith('part-'))"
+  }];
+
+  optional bool tool_id_component = 10008 [(buf.validate.predefined).cel = {
+    id: "string.tool_id_component"
+    message: "this does not seem to be a tool id"
+    expression: "(this == '' || this.startsWith('tool-'))"
+  }];
+
+  optional bool marker_id_component = 10009 [(buf.validate.predefined).cel = {
+    id: "string.marker_id_component"
+    message: "this does not seem to be a marker id"
+    expression: "(this == '' || this.startsWith('marker-'))"
+  }];
 }

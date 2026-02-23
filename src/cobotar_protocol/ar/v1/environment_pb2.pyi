@@ -1,5 +1,6 @@
-from ar.v1 import property_pb2 as _property_pb2
+from buf.validate import validate_pb2 as _validate_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -69,7 +70,7 @@ class ToolLocation(_message.Message):
     def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
 
 class EnvironmentMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "markers", "robots", "assets", "parts", "tools", "properties")
+    __slots__ = ("id", "name", "icon", "description", "type", "markers", "robots", "assets", "parts", "tools")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -80,7 +81,6 @@ class EnvironmentMessage(_message.Message):
     ASSETS_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     TOOLS_FIELD_NUMBER: _ClassVar[int]
-    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -91,8 +91,7 @@ class EnvironmentMessage(_message.Message):
     assets: _containers.RepeatedCompositeFieldContainer[AssetLocation]
     parts: _containers.RepeatedCompositeFieldContainer[PartLocation]
     tools: _containers.RepeatedCompositeFieldContainer[ToolLocation]
-    properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[EnvironmentType, str]] = ..., markers: _Optional[_Iterable[_Union[MarkerLocation, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[RobotLocation, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[AssetLocation, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[PartLocation, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[ToolLocation, _Mapping]]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[EnvironmentType, str]] = ..., markers: _Optional[_Iterable[_Union[MarkerLocation, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[RobotLocation, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[AssetLocation, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[PartLocation, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[ToolLocation, _Mapping]]] = ...) -> None: ...
 
 class EnvironmentMessages(_message.Message):
     __slots__ = ("environments",)

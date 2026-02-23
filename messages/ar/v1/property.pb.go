@@ -43,6 +43,7 @@ const (
 	PropertyType_PROPERTY_TYPE_ENUM        PropertyType = 11
 	PropertyType_PROPERTY_TYPE_ENUM_MULTI  PropertyType = 12
 	PropertyType_PROPERTY_TYPE_ICON        PropertyType = 13
+	PropertyType_PROPERTY_TYPE_ASSET       PropertyType = 14
 )
 
 // Enum value maps for PropertyType.
@@ -62,6 +63,7 @@ var (
 		11: "PROPERTY_TYPE_ENUM",
 		12: "PROPERTY_TYPE_ENUM_MULTI",
 		13: "PROPERTY_TYPE_ICON",
+		14: "PROPERTY_TYPE_ASSET",
 	}
 	PropertyType_value = map[string]int32{
 		"PROPERTY_TYPE_UNSPECIFIED": 0,
@@ -78,6 +80,7 @@ var (
 		"PROPERTY_TYPE_ENUM":        11,
 		"PROPERTY_TYPE_ENUM_MULTI":  12,
 		"PROPERTY_TYPE_ICON":        13,
+		"PROPERTY_TYPE_ASSET":       14,
 	}
 )
 
@@ -249,10 +252,11 @@ type Property struct {
 	PoseValue                 *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
 	AnchorValue               *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
 	ColorValue                *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
-	RobotIdValue              *string                `protobuf:"bytes,20,opt,name=robot_id_value,json=robotIdValue,proto3,oneof" json:"robot_id_value,omitempty"`
+	RobotIdValue              *string                `protobuf:"bytes,30,opt,name=robot_id_value,json=robotIdValue,proto3,oneof" json:"robot_id_value,omitempty"`
 	EnumValue                 *string                `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3,oneof" json:"enum_value,omitempty"`
 	EnumMultiValue            []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
 	IconValue                 *string                `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3,oneof" json:"icon_value,omitempty"`
+	AssetIdValue              *string                `protobuf:"bytes,34,opt,name=asset_id_value,json=assetIdValue,proto3,oneof" json:"asset_id_value,omitempty"`
 	NumberExtras              *NumberExtras          `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
 	EnumExtras                *EnumExtras            `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
 	Vector3Extras             *Vector3Extras         `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
@@ -489,6 +493,13 @@ func (x *Property) GetIconValue() string {
 	return ""
 }
 
+func (x *Property) GetAssetIdValue() string {
+	if x != nil && x.AssetIdValue != nil {
+		return *x.AssetIdValue
+	}
+	return ""
+}
+
 func (x *Property) GetNumberExtras() *NumberExtras {
 	if x != nil {
 		return x.NumberExtras
@@ -590,10 +601,11 @@ type PropertyValueUpdate struct {
 	PoseValue        *v1.LocalizedPose      `protobuf:"bytes,27,opt,name=pose_value,json=poseValue,proto3" json:"pose_value,omitempty"`
 	AnchorValue      *v1.Anchor             `protobuf:"bytes,28,opt,name=anchor_value,json=anchorValue,proto3" json:"anchor_value,omitempty"`
 	ColorValue       *v11.Color             `protobuf:"bytes,29,opt,name=color_value,json=colorValue,proto3" json:"color_value,omitempty"`
-	RobotIdValue     *string                `protobuf:"bytes,20,opt,name=robot_id_value,json=robotIdValue,proto3,oneof" json:"robot_id_value,omitempty"`
+	RobotIdValue     *string                `protobuf:"bytes,30,opt,name=robot_id_value,json=robotIdValue,proto3,oneof" json:"robot_id_value,omitempty"`
 	EnumValue        *string                `protobuf:"bytes,31,opt,name=enum_value,json=enumValue,proto3,oneof" json:"enum_value,omitempty"`
 	EnumMultiValue   []string               `protobuf:"bytes,32,rep,name=enum_multi_value,json=enumMultiValue,proto3" json:"enum_multi_value,omitempty"`
 	IconValue        *string                `protobuf:"bytes,33,opt,name=icon_value,json=iconValue,proto3,oneof" json:"icon_value,omitempty"`
+	AssetIdValue     *string                `protobuf:"bytes,34,opt,name=asset_id_value,json=assetIdValue,proto3,oneof" json:"asset_id_value,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -743,6 +755,13 @@ func (x *PropertyValueUpdate) GetEnumMultiValue() []string {
 func (x *PropertyValueUpdate) GetIconValue() string {
 	if x != nil && x.IconValue != nil {
 		return *x.IconValue
+	}
+	return ""
+}
+
+func (x *PropertyValueUpdate) GetAssetIdValue() string {
+	if x != nil && x.AssetIdValue != nil {
+		return *x.AssetIdValue
 	}
 	return ""
 }
@@ -1227,7 +1246,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd6\x1a\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x1b\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1259,13 +1278,14 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"pose_value\x18\x1b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\tposeValue\x126\n" +
 	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
 	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
-	"colorValue\x122\n" +
-	"\x0erobot_id_value\x18\x14 \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x05R\frobotIdValue\x88\x01\x01\x12+\n" +
+	"colorValue\x12)\n" +
+	"\x0erobot_id_value\x18\x1e \x01(\tH\x05R\frobotIdValue\x88\x01\x01\x12+\n" +
 	"\n" +
 	"enum_value\x18\x1f \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x06R\tenumValue\x88\x01\x01\x128\n" +
 	"\x10enum_multi_value\x18  \x03(\tB\x0e\xbaH\v\x92\x01\b\b\x01\"\x04r\x02\x10\x01R\x0eenumMultiValue\x12\"\n" +
 	"\n" +
-	"icon_value\x18! \x01(\tH\aR\ticonValue\x88\x01\x01\x128\n" +
+	"icon_value\x18! \x01(\tH\aR\ticonValue\x88\x01\x01\x12)\n" +
+	"\x0easset_id_value\x18\" \x01(\tH\bR\fassetIdValue\x88\x01\x01\x128\n" +
 	"\rnumber_extras\x18) \x01(\v2\x13.ar.v1.NumberExtrasR\fnumberExtras\x122\n" +
 	"\venum_extras\x18* \x01(\v2\x11.ar.v1.EnumExtrasR\n" +
 	"enumExtras\x12;\n" +
@@ -1273,13 +1293,13 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\fcolor_extras\x18, \x01(\v2\x12.ar.v1.ColorExtrasR\vcolorExtras\x122\n" +
 	"\vpose_extras\x18- \x01(\v2\x11.ar.v1.PoseExtrasR\n" +
 	"poseExtras\x128\n" +
-	"\ranchor_extras\x18. \x01(\v2\x13.ar.v1.AnchorExtrasR\fanchorExtras:\xbd\r\xbaH\xb9\r\x1a\xa3\x05\n" +
-	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))\x1a\x8d\x01\n" +
+	"\ranchor_extras\x18. \x01(\v2\x13.ar.v1.AnchorExtrasR\fanchorExtras:\xfe\r\xbaH\xfa\r\x1a\xd4\x05\n" +
+	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\x86\x05((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)) || (this.type == 14 && has(this.asset_id_value)))\x1a\x8d\x01\n" +
 	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\x1ae\n" +
 	"\x14output_must_be_fixed\x12(output properties must have origin FIXED\x1a#this.group != 1 || this.origin == 1\x1a\x94\x01\n" +
 	"\x19enum_requires_enum_extras\x127enum_extras must be set when type is ENUM or ENUM_MULTI\x1a>!(this.type == 11 || this.type == 12) || has(this.enum_extras)\x1a\xa9\x01\n" +
 	"\x1denum_value_must_be_in_options\x125enum_value must be one of enum_extras.options[].value\x1aQthis.type != 11 || this.enum_extras.options.exists(o, o.value == this.enum_value)\x1a\xc9\x01\n" +
-	"$enum_multi_values_must_be_in_options\x12>enum_multi_value values must be in enum_extras.options[].value\x1aathis.type != 12 || this.enum_multi_value.all(v, this.enum_extras.options.exists(o, o.value == v))\"\xb2\x01\n" +
+	"$enum_multi_values_must_be_in_options\x12>enum_multi_value values must be in enum_extras.options[].value\x1aathis.type != 12 || this.enum_multi_value.all(v, this.enum_extras.options.exists(o, o.value == v))\"\xc2\x01\n" +
 	"\n" +
 	"bool_value\n" +
 	"\tint_value\n" +
@@ -1296,7 +1316,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"enum_value\n" +
 	"\x10enum_multi_value\n" +
 	"\n" +
-	"icon_value\x10\x01\"V\n" +
+	"icon_value\n" +
+	"\x0easset_id_value\x10\x01\"V\n" +
 	"\rnumber_extras\n" +
 	"\venum_extras\n" +
 	"\x0evector3_extras\n" +
@@ -1311,11 +1332,12 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\r_string_valueB\x11\n" +
 	"\x0f_robot_id_valueB\r\n" +
 	"\v_enum_valueB\r\n" +
-	"\v_icon_value\"C\n" +
+	"\v_icon_valueB\x11\n" +
+	"\x0f_asset_id_value\"C\n" +
 	"\x10PropertyMessages\x12/\n" +
 	"\n" +
 	"properties\x18\x01 \x03(\v2\x0f.ar.v1.PropertyR\n" +
-	"properties\"\x90\x0f\n" +
+	"properties\"\x86\x10\n" +
 	"\x13PropertyValueUpdate\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x124\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
@@ -1333,15 +1355,16 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"pose_value\x18\x1b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\tposeValue\x126\n" +
 	"\fanchor_value\x18\x1c \x01(\v2\x13.geometry.v1.AnchorR\vanchorValue\x121\n" +
 	"\vcolor_value\x18\x1d \x01(\v2\x10.common.v1.ColorR\n" +
-	"colorValue\x122\n" +
-	"\x0erobot_id_value\x18\x14 \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x05R\frobotIdValue\x88\x01\x01\x12+\n" +
+	"colorValue\x12)\n" +
+	"\x0erobot_id_value\x18\x1e \x01(\tH\x05R\frobotIdValue\x88\x01\x01\x12+\n" +
 	"\n" +
 	"enum_value\x18\x1f \x01(\tB\a\xbaH\x04r\x02\x10\x01H\x06R\tenumValue\x88\x01\x01\x128\n" +
 	"\x10enum_multi_value\x18  \x03(\tB\x0e\xbaH\v\x92\x01\b\b\x01\"\x04r\x02\x10\x01R\x0eenumMultiValue\x12\"\n" +
 	"\n" +
-	"icon_value\x18! \x01(\tH\aR\ticonValue\x88\x01\x01:\xef\a\xbaH\xeb\a\x1a\xa3\x05\n" +
-	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\xd5\x04((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)))\x1a\x8d\x01\n" +
-	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\"\xb2\x01\n" +
+	"icon_value\x18! \x01(\tH\aR\ticonValue\x88\x01\x01\x12)\n" +
+	"\x0easset_id_value\x18\" \x01(\tH\bR\fassetIdValue\x88\x01\x01:\xb0\b\xbaH\xac\b\x1a\xd4\x05\n" +
+	" property_type_matches_value_kind\x12'type must match the kind of value field\x1a\x86\x05((this.type == 1 && has(this.bool_value)) || (this.type == 2 && has(this.int_value)) || (this.type == 3 && has(this.float_value)) || (this.type == 4 && has(this.double_value)) || (this.type == 5 && has(this.string_value)) ||(this.type == 6 && has(this.vector3_value)) || (this.type == 7 && has(this.pose_value)) || (this.type == 8 && has(this.anchor_value)) || (this.type == 9 && has(this.color_value)) || (this.type == 10 && has(this.robot_id_value)) || (this.type == 11 && has(this.enum_value)) ||(this.type == 12 && size(this.enum_multi_value) > 0) || (this.type == 13 && has(this.icon_value)) || (this.type == 14 && has(this.asset_id_value)))\x1a\x8d\x01\n" +
+	"\"mirror_requires_mirror_property_id\x124mirror_property_id must be set when origin is MIRROR\x1a1this.origin != 2 || this.mirror_property_id != ''\"\xc2\x01\n" +
 	"\n" +
 	"bool_value\n" +
 	"\tint_value\n" +
@@ -1358,7 +1381,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"enum_value\n" +
 	"\x10enum_multi_value\n" +
 	"\n" +
-	"icon_value\x10\x01B\r\n" +
+	"icon_value\n" +
+	"\x0easset_id_value\x10\x01B\r\n" +
 	"\v_bool_valueB\f\n" +
 	"\n" +
 	"_int_valueB\x0e\n" +
@@ -1367,7 +1391,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\r_string_valueB\x11\n" +
 	"\x0f_robot_id_valueB\r\n" +
 	"\v_enum_valueB\r\n" +
-	"\v_icon_value\"\xe7\x03\n" +
+	"\v_icon_valueB\x11\n" +
+	"\x0f_asset_id_value\"\xe7\x03\n" +
 	"\fNumberExtras\x12\x15\n" +
 	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
 	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
@@ -1414,7 +1439,7 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable*\xf6\x02\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable*\x8f\x03\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -1430,7 +1455,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"\x12\x16\n" +
 	"\x12PROPERTY_TYPE_ENUM\x10\v\x12\x1c\n" +
 	"\x18PROPERTY_TYPE_ENUM_MULTI\x10\f\x12\x16\n" +
-	"\x12PROPERTY_TYPE_ICON\x10\r*h\n" +
+	"\x12PROPERTY_TYPE_ICON\x10\r\x12\x17\n" +
+	"\x13PROPERTY_TYPE_ASSET\x10\x0e*h\n" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
