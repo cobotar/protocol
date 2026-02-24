@@ -22,10 +22,16 @@ message MappingMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  string environment_id = 5 [(buf.validate.field).string.(validation.v1.environment_id_component) = true];
-  string ar_config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string environment_id = 5 [
+    (buf.validate.field).string.(validation.v1.environment_id_component) = true,
+    (buf.validate.field).required = true
+  ];
+  string ar_config_id = 6 [
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
+    (buf.validate.field).required = true
+  ];
   bool disabled = 7;
-  repeated RobotMapping robot_mappings = 8;
+  repeated RobotMapping robot_mapping = 8;
   repeated AssetMapping asset_mapping = 9;
   bool standalone = 10; // Only this AR-config should be shown (winner have highest priority)
   int32 priority = 11; // High value configs will be shown first

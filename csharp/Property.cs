@@ -236,19 +236,61 @@ namespace Messages.AR.V1 {
   /// </summary>
   public enum PropertyType {
     [pbr::OriginalName("PROPERTY_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Bool type property (true/false)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_BOOL")] Bool = 1,
+    /// <summary>
+    /// Int type property
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_INT")] Int = 2,
+    /// <summary>
+    /// Float type property
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_FLOAT")] Float = 3,
+    /// <summary>
+    /// Double type property
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_DOUBLE")] Double = 4,
+    /// <summary>
+    /// String type property
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_STRING")] String = 5,
+    /// <summary>
+    /// Vector3 type property - {x, y, z}
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_VECTOR3")] Vector3 = 6,
+    /// <summary>
+    /// Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_POSE")] Pose = 7,
+    /// <summary>
+    /// Anchor type property - Anchor(reference, frame)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ANCHOR")] Anchor = 8,
+    /// <summary>
+    /// Color type property - Color(r,g,b,a)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_COLOR")] Color = 9,
+    /// <summary>
+    /// Robot type property - robot_id as string
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ROBOT")] Robot = 10,
+    /// <summary>
+    /// Enum type property - string from list of strings (defined in EnumExtras)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ENUM")] Enum = 11,
+    /// <summary>
+    /// Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras)
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ENUM_MULTI")] EnumMulti = 12,
+    /// <summary>
+    /// Icon property type - icon-name-something from https://pictogrammers.com/
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ICON")] Icon = 13,
+    /// <summary>
+    /// Asset type property - asset_id as string
+    /// </summary>
     [pbr::OriginalName("PROPERTY_TYPE_ASSET")] Asset = 14,
   }
 
@@ -538,6 +580,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "scope_id" field.</summary>
     public const int ScopeIdFieldNumber = 15;
     private string scopeId_ = "";
+    /// <summary>
+    /// TODO: local or global property?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ScopeId {

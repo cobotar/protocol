@@ -30,20 +30,20 @@ type PropertyType int32
 
 const (
 	PropertyType_PROPERTY_TYPE_UNSPECIFIED PropertyType = 0
-	PropertyType_PROPERTY_TYPE_BOOL        PropertyType = 1
-	PropertyType_PROPERTY_TYPE_INT         PropertyType = 2
-	PropertyType_PROPERTY_TYPE_FLOAT       PropertyType = 3
-	PropertyType_PROPERTY_TYPE_DOUBLE      PropertyType = 4
-	PropertyType_PROPERTY_TYPE_STRING      PropertyType = 5
-	PropertyType_PROPERTY_TYPE_VECTOR3     PropertyType = 6
-	PropertyType_PROPERTY_TYPE_POSE        PropertyType = 7
-	PropertyType_PROPERTY_TYPE_ANCHOR      PropertyType = 8
-	PropertyType_PROPERTY_TYPE_COLOR       PropertyType = 9
-	PropertyType_PROPERTY_TYPE_ROBOT       PropertyType = 10
-	PropertyType_PROPERTY_TYPE_ENUM        PropertyType = 11
-	PropertyType_PROPERTY_TYPE_ENUM_MULTI  PropertyType = 12
-	PropertyType_PROPERTY_TYPE_ICON        PropertyType = 13
-	PropertyType_PROPERTY_TYPE_ASSET       PropertyType = 14
+	PropertyType_PROPERTY_TYPE_BOOL        PropertyType = 1  // Bool type property (true/false)
+	PropertyType_PROPERTY_TYPE_INT         PropertyType = 2  // Int type property
+	PropertyType_PROPERTY_TYPE_FLOAT       PropertyType = 3  // Float type property
+	PropertyType_PROPERTY_TYPE_DOUBLE      PropertyType = 4  // Double type property
+	PropertyType_PROPERTY_TYPE_STRING      PropertyType = 5  // String type property
+	PropertyType_PROPERTY_TYPE_VECTOR3     PropertyType = 6  // Vector3 type property - {x, y, z}
+	PropertyType_PROPERTY_TYPE_POSE        PropertyType = 7  // Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...)
+	PropertyType_PROPERTY_TYPE_ANCHOR      PropertyType = 8  // Anchor type property - Anchor(reference, frame)
+	PropertyType_PROPERTY_TYPE_COLOR       PropertyType = 9  // Color type property - Color(r,g,b,a)
+	PropertyType_PROPERTY_TYPE_ROBOT       PropertyType = 10 // Robot type property - robot_id as string
+	PropertyType_PROPERTY_TYPE_ENUM        PropertyType = 11 // Enum type property - string from list of strings (defined in EnumExtras)
+	PropertyType_PROPERTY_TYPE_ENUM_MULTI  PropertyType = 12 // Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras)
+	PropertyType_PROPERTY_TYPE_ICON        PropertyType = 13 // Icon property type - icon-name-something from https://pictogrammers.com/
+	PropertyType_PROPERTY_TYPE_ASSET       PropertyType = 14 // Asset type property - asset_id as string
 )
 
 // Enum value maps for PropertyType.
@@ -241,8 +241,8 @@ type Property struct {
 	Ordering                  int32                  `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
 	HideGroup                 bool                   `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
 	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
-	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"`
+	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`             // Hide behind "Advanced" toogle
+	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"` // TODO: local or global property?
 	BoolValue                 *bool                  `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3,oneof" json:"bool_value,omitempty"`
 	IntValue                  *int64                 `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3,oneof" json:"int_value,omitempty"`
 	FloatValue                *float32               `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3,oneof" json:"float_value,omitempty"`

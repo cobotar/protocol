@@ -103,6 +103,8 @@ export type Property = Message<"ar.v1.Property"> & {
   advanced: boolean;
 
   /**
+   * TODO: local or global property?
+   *
    * @generated from field: string scope_id = 15;
    */
   scopeId: string;
@@ -584,71 +586,99 @@ export enum PropertyType {
   UNSPECIFIED = 0,
 
   /**
+   * Bool type property (true/false)
+   *
    * @generated from enum value: PROPERTY_TYPE_BOOL = 1;
    */
   BOOL = 1,
 
   /**
+   * Int type property
+   *
    * @generated from enum value: PROPERTY_TYPE_INT = 2;
    */
   INT = 2,
 
   /**
+   * Float type property
+   *
    * @generated from enum value: PROPERTY_TYPE_FLOAT = 3;
    */
   FLOAT = 3,
 
   /**
+   * Double type property
+   *
    * @generated from enum value: PROPERTY_TYPE_DOUBLE = 4;
    */
   DOUBLE = 4,
 
   /**
+   * String type property
+   *
    * @generated from enum value: PROPERTY_TYPE_STRING = 5;
    */
   STRING = 5,
 
   /**
+   * Vector3 type property - {x, y, z}
+   *
    * @generated from enum value: PROPERTY_TYPE_VECTOR3 = 6;
    */
   VECTOR3 = 6,
 
   /**
+   * Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...)
+   *
    * @generated from enum value: PROPERTY_TYPE_POSE = 7;
    */
   POSE = 7,
 
   /**
+   * Anchor type property - Anchor(reference, frame)
+   *
    * @generated from enum value: PROPERTY_TYPE_ANCHOR = 8;
    */
   ANCHOR = 8,
 
   /**
+   * Color type property - Color(r,g,b,a)
+   *
    * @generated from enum value: PROPERTY_TYPE_COLOR = 9;
    */
   COLOR = 9,
 
   /**
+   * Robot type property - robot_id as string
+   *
    * @generated from enum value: PROPERTY_TYPE_ROBOT = 10;
    */
   ROBOT = 10,
 
   /**
+   * Enum type property - string from list of strings (defined in EnumExtras)
+   *
    * @generated from enum value: PROPERTY_TYPE_ENUM = 11;
    */
   ENUM = 11,
 
   /**
+   * Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras)
+   *
    * @generated from enum value: PROPERTY_TYPE_ENUM_MULTI = 12;
    */
   ENUM_MULTI = 12,
 
   /**
+   * Icon property type - icon-name-something from https://pictogrammers.com/
+   *
    * @generated from enum value: PROPERTY_TYPE_ICON = 13;
    */
   ICON = 13,
 
   /**
+   * Asset type property - asset_id as string
+   *
    * @generated from enum value: PROPERTY_TYPE_ASSET = 14;
    */
   ASSET = 14,

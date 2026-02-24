@@ -15,20 +15,21 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 // Used to specify the type of a property
 enum PropertyType {
   PROPERTY_TYPE_UNSPECIFIED = 0;
-  PROPERTY_TYPE_BOOL = 1;
-  PROPERTY_TYPE_INT = 2;
-  PROPERTY_TYPE_FLOAT = 3;
-  PROPERTY_TYPE_DOUBLE = 4;
-  PROPERTY_TYPE_STRING = 5;
-  PROPERTY_TYPE_VECTOR3 = 6;
-  PROPERTY_TYPE_POSE = 7;
-  PROPERTY_TYPE_ANCHOR = 8;
-  PROPERTY_TYPE_COLOR = 9;
-  PROPERTY_TYPE_ROBOT = 10;
-  PROPERTY_TYPE_ENUM = 11;
-  PROPERTY_TYPE_ENUM_MULTI = 12;
-  PROPERTY_TYPE_ICON = 13;
-  PROPERTY_TYPE_ASSET = 14;
+  PROPERTY_TYPE_BOOL = 1; // Bool type property (true/false)
+  PROPERTY_TYPE_INT = 2; // Int type property
+  PROPERTY_TYPE_FLOAT = 3; // Float type property
+  PROPERTY_TYPE_DOUBLE = 4; // Double type property
+  PROPERTY_TYPE_STRING = 5; // String type property
+  PROPERTY_TYPE_VECTOR3 = 6; // Vector3 type property - {x, y, z}
+  PROPERTY_TYPE_POSE = 7; // Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...)
+  PROPERTY_TYPE_ANCHOR = 8; // Anchor type property - Anchor(reference, frame)
+  PROPERTY_TYPE_COLOR = 9; // Color type property - Color(r,g,b,a)
+  PROPERTY_TYPE_ROBOT = 10; // Robot type property - robot_id as string
+  PROPERTY_TYPE_ENUM = 11; // Enum type property - string from list of strings (defined in EnumExtras)
+  PROPERTY_TYPE_ENUM_MULTI = 12; // Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras)
+  PROPERTY_TYPE_ICON = 13; // Icon property type - icon-name-something from https://pictogrammers.com/
+  PROPERTY_TYPE_ASSET = 14; // Asset type property - asset_id as string
+  //PROPERTY_TYPE_AGENT = 15; // Agent is a combination of workers, robots, and assets (who can perform tasks) TODO: should it point towards the worker or an AR-device?
 }
 
 // Specifies where the value of a property originates from.
@@ -136,6 +137,7 @@ message Property {
   string parent_id = 13;
   bool advanced = 14; // Hide behind "Advanced" toogle
   string scope_id = 15;
+  // TODO: local or global property?
 
   optional bool bool_value = 21;
   optional sint64 int_value = 22;

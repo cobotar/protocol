@@ -115,6 +115,12 @@
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
+- [ar/v1/device.proto](#ar_v1_device-proto)
+    - [DeviceMessage](#ar-v1-DeviceMessage)
+    - [DeviceMessages](#ar-v1-DeviceMessages)
+  
+    - [DeviceType](#ar-v1-DeviceType)
+  
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AssetLocation](#ar-v1-AssetLocation)
     - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
@@ -786,7 +792,7 @@ Properties are used by various components to define them, such as: feedback, act
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
 | advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
-| scope_id | [string](#string) |  |  |
+| scope_id | [string](#string) |  | TODO: local or global property? |
 | bool_value | [bool](#bool) | optional |  |
 | int_value | [sint64](#sint64) | optional |  |
 | float_value | [float](#float) | optional |  |
@@ -922,20 +928,20 @@ Used to specify the type of a property
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PROPERTY_TYPE_UNSPECIFIED | 0 |  |
-| PROPERTY_TYPE_BOOL | 1 |  |
-| PROPERTY_TYPE_INT | 2 |  |
-| PROPERTY_TYPE_FLOAT | 3 |  |
-| PROPERTY_TYPE_DOUBLE | 4 |  |
-| PROPERTY_TYPE_STRING | 5 |  |
-| PROPERTY_TYPE_VECTOR3 | 6 |  |
-| PROPERTY_TYPE_POSE | 7 |  |
-| PROPERTY_TYPE_ANCHOR | 8 |  |
-| PROPERTY_TYPE_COLOR | 9 |  |
-| PROPERTY_TYPE_ROBOT | 10 |  |
-| PROPERTY_TYPE_ENUM | 11 |  |
-| PROPERTY_TYPE_ENUM_MULTI | 12 |  |
-| PROPERTY_TYPE_ICON | 13 |  |
-| PROPERTY_TYPE_ASSET | 14 |  |
+| PROPERTY_TYPE_BOOL | 1 | Bool type property (true/false) |
+| PROPERTY_TYPE_INT | 2 | Int type property |
+| PROPERTY_TYPE_FLOAT | 3 | Float type property |
+| PROPERTY_TYPE_DOUBLE | 4 | Double type property |
+| PROPERTY_TYPE_STRING | 5 | String type property |
+| PROPERTY_TYPE_VECTOR3 | 6 | Vector3 type property - {x, y, z} |
+| PROPERTY_TYPE_POSE | 7 | Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...) |
+| PROPERTY_TYPE_ANCHOR | 8 | Anchor type property - Anchor(reference, frame) |
+| PROPERTY_TYPE_COLOR | 9 | Color type property - Color(r,g,b,a) |
+| PROPERTY_TYPE_ROBOT | 10 | Robot type property - robot_id as string |
+| PROPERTY_TYPE_ENUM | 11 | Enum type property - string from list of strings (defined in EnumExtras) |
+| PROPERTY_TYPE_ENUM_MULTI | 12 | Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras) |
+| PROPERTY_TYPE_ICON | 13 | Icon property type - icon-name-something from https://pictogrammers.com/ |
+| PROPERTY_TYPE_ASSET | 14 | Asset type property - asset_id as string |
 
 
  
@@ -1767,6 +1773,70 @@ Just delete this?
 
 
 
+<a name="ar_v1_device-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/device.proto
+
+
+
+<a name="ar-v1-DeviceMessage"></a>
+
+### DeviceMessage
+DeviceMessage hold basic information about AR-devices, such as a HoloLens2
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [DeviceType](#ar-v1-DeviceType) |  | repeated ar.v1.Property properties = 7; |
+
+
+
+
+
+
+<a name="ar-v1-DeviceMessages"></a>
+
+### DeviceMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devices | [DeviceMessage](#ar-v1-DeviceMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-DeviceType"></a>
+
+### DeviceType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_TYPE_UNSPECIFIED | 0 |  |
+| DEVICE_TYPE_HOLOLENS2 | 1 |  |
+| DEVICE_TYPE_PHONE | 2 |  |
+| DEVICE_TYPE_TABLET | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_environment-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2105,7 +2175,7 @@ Just delete this?
 | environment_id | [string](#string) |  |  |
 | ar_config_id | [string](#string) |  |  |
 | disabled | [bool](#bool) |  |  |
-| robot_mappings | [RobotMapping](#ar-v1-RobotMapping) | repeated |  |
+| robot_mapping | [RobotMapping](#ar-v1-RobotMapping) | repeated |  |
 | asset_mapping | [AssetMapping](#ar-v1-AssetMapping) | repeated |  |
 | standalone | [bool](#bool) |  | Only this AR-config should be shown (winner have highest priority) |
 | priority | [int32](#int32) |  | High value configs will be shown first |

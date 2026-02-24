@@ -30,27 +30,27 @@ namespace Messages.AR.V1 {
             "CUIJukgGcgSg8QQBUgdyb2JvdElkEioKC3Byb3BlcnR5X2lkGAIgASgJQgm6",
             "SAZyBJjxBAFSCnByb3BlcnR5SWQiYAoMQXNzZXRNYXBwaW5nEiQKCGFzc2V0",
             "X2lkGAEgASgJQgm6SAZyBKjxBAFSB2Fzc2V0SWQSKgoLcHJvcGVydHlfaWQY",
-            "AiABKAlCCbpIBnIEmPEEAVIKcHJvcGVydHlJZCKiAwoOTWFwcGluZ01lc3Nh",
+            "AiABKAlCCbpIBnIEmPEEAVIKcHJvcGVydHlJZCKmAwoOTWFwcGluZ01lc3Nh",
             "Z2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
             "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
-            "UgtkZXNjcmlwdGlvbhIwCg5lbnZpcm9ubWVudF9pZBgFIAEoCUIJukgGcgSw",
-            "8QQBUg1lbnZpcm9ubWVudElkEisKDGFyX2NvbmZpZ19pZBgGIAEoCUIJukgG",
-            "cgSQ8QQBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVkGAcgASgIUghkaXNhYmxl",
-            "ZBI6Cg5yb2JvdF9tYXBwaW5ncxgIIAMoCzITLmFyLnYxLlJvYm90TWFwcGlu",
-            "Z1INcm9ib3RNYXBwaW5ncxI4Cg1hc3NldF9tYXBwaW5nGAkgAygLMhMuYXIu",
-            "djEuQXNzZXRNYXBwaW5nUgxhc3NldE1hcHBpbmcSHgoKc3RhbmRhbG9uZRgK",
-            "IAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgLIAEoBVIIcHJpb3JpdHki",
-            "RAoPTWFwcGluZ01lc3NhZ2VzEjEKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEu",
-            "TWFwcGluZ01lc3NhZ2VSCG1hcHBpbmdzQogBCgljb20uYXIudjFCDE1hcHBp",
-            "bmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
-            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
-            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "UgtkZXNjcmlwdGlvbhIzCg5lbnZpcm9ubWVudF9pZBgFIAEoCUIMukgJcgSw",
+            "8QQByAEBUg1lbnZpcm9ubWVudElkEi4KDGFyX2NvbmZpZ19pZBgGIAEoCUIM",
+            "ukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVkGAcgASgIUghk",
+            "aXNhYmxlZBI4Cg1yb2JvdF9tYXBwaW5nGAggAygLMhMuYXIudjEuUm9ib3RN",
+            "YXBwaW5nUgxyb2JvdE1hcHBpbmcSOAoNYXNzZXRfbWFwcGluZxgJIAMoCzIT",
+            "LmFyLnYxLkFzc2V0TWFwcGluZ1IMYXNzZXRNYXBwaW5nEh4KCnN0YW5kYWxv",
+            "bmUYCiABKAhSCnN0YW5kYWxvbmUSGgoIcHJpb3JpdHkYCyABKAVSCHByaW9y",
+            "aXR5IkQKD01hcHBpbmdNZXNzYWdlcxIxCghtYXBwaW5ncxgBIAMoCzIVLmFy",
+            "LnYxLk1hcHBpbmdNZXNzYWdlUghtYXBwaW5nc0KIAQoJY29tLmFyLnYxQgxN",
+            "YXBwaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
+            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMapping), global::Messages.AR.V1.RobotMapping.Parser, new[]{ "RobotId", "PropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMapping), global::Messages.AR.V1.AssetMapping.Parser, new[]{ "AssetId", "PropertyId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentId", "ArConfigId", "Disabled", "RobotMappings", "AssetMapping", "Standalone", "Priority" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentId", "ArConfigId", "Disabled", "RobotMapping", "AssetMapping", "Standalone", "Priority" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessages), global::Messages.AR.V1.MappingMessages.Parser, new[]{ "Mappings" }, null, null, null, null)
           }));
     }
@@ -570,7 +570,7 @@ namespace Messages.AR.V1 {
       environmentId_ = other.environmentId_;
       arConfigId_ = other.arConfigId_;
       disabled_ = other.disabled_;
-      robotMappings_ = other.robotMappings_.Clone();
+      robotMapping_ = other.robotMapping_.Clone();
       assetMapping_ = other.assetMapping_.Clone();
       standalone_ = other.standalone_;
       priority_ = other.priority_;
@@ -667,15 +667,15 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "robot_mappings" field.</summary>
-    public const int RobotMappingsFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotMapping> _repeated_robotMappings_codec
+    /// <summary>Field number for the "robot_mapping" field.</summary>
+    public const int RobotMappingFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotMapping> _repeated_robotMapping_codec
         = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.RobotMapping.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> robotMappings_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotMapping>();
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> robotMapping_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotMapping>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> RobotMappings {
-      get { return robotMappings_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> RobotMapping {
+      get { return robotMapping_; }
     }
 
     /// <summary>Field number for the "asset_mapping" field.</summary>
@@ -741,7 +741,7 @@ namespace Messages.AR.V1 {
       if (EnvironmentId != other.EnvironmentId) return false;
       if (ArConfigId != other.ArConfigId) return false;
       if (Disabled != other.Disabled) return false;
-      if(!robotMappings_.Equals(other.robotMappings_)) return false;
+      if(!robotMapping_.Equals(other.robotMapping_)) return false;
       if(!assetMapping_.Equals(other.assetMapping_)) return false;
       if (Standalone != other.Standalone) return false;
       if (Priority != other.Priority) return false;
@@ -759,7 +759,7 @@ namespace Messages.AR.V1 {
       if (EnvironmentId.Length != 0) hash ^= EnvironmentId.GetHashCode();
       if (ArConfigId.Length != 0) hash ^= ArConfigId.GetHashCode();
       if (Disabled != false) hash ^= Disabled.GetHashCode();
-      hash ^= robotMappings_.GetHashCode();
+      hash ^= robotMapping_.GetHashCode();
       hash ^= assetMapping_.GetHashCode();
       if (Standalone != false) hash ^= Standalone.GetHashCode();
       if (Priority != 0) hash ^= Priority.GetHashCode();
@@ -809,7 +809,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(56);
         output.WriteBool(Disabled);
       }
-      robotMappings_.WriteTo(output, _repeated_robotMappings_codec);
+      robotMapping_.WriteTo(output, _repeated_robotMapping_codec);
       assetMapping_.WriteTo(output, _repeated_assetMapping_codec);
       if (Standalone != false) {
         output.WriteRawTag(80);
@@ -857,7 +857,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(56);
         output.WriteBool(Disabled);
       }
-      robotMappings_.WriteTo(ref output, _repeated_robotMappings_codec);
+      robotMapping_.WriteTo(ref output, _repeated_robotMapping_codec);
       assetMapping_.WriteTo(ref output, _repeated_assetMapping_codec);
       if (Standalone != false) {
         output.WriteRawTag(80);
@@ -898,7 +898,7 @@ namespace Messages.AR.V1 {
       if (Disabled != false) {
         size += 1 + 1;
       }
-      size += robotMappings_.CalculateSize(_repeated_robotMappings_codec);
+      size += robotMapping_.CalculateSize(_repeated_robotMapping_codec);
       size += assetMapping_.CalculateSize(_repeated_assetMapping_codec);
       if (Standalone != false) {
         size += 1 + 1;
@@ -939,7 +939,7 @@ namespace Messages.AR.V1 {
       if (other.Disabled != false) {
         Disabled = other.Disabled;
       }
-      robotMappings_.Add(other.robotMappings_);
+      robotMapping_.Add(other.robotMapping_);
       assetMapping_.Add(other.assetMapping_);
       if (other.Standalone != false) {
         Standalone = other.Standalone;
@@ -995,7 +995,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 66: {
-            robotMappings_.AddEntriesFrom(input, _repeated_robotMappings_codec);
+            robotMapping_.AddEntriesFrom(input, _repeated_robotMapping_codec);
             break;
           }
           case 74: {
@@ -1058,7 +1058,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 66: {
-            robotMappings_.AddEntriesFrom(ref input, _repeated_robotMappings_codec);
+            robotMapping_.AddEntriesFrom(ref input, _repeated_robotMapping_codec);
             break;
           }
           case 74: {

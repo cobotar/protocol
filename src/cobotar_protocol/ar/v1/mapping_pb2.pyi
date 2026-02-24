@@ -25,7 +25,7 @@ class AssetMapping(_message.Message):
     def __init__(self, asset_id: _Optional[str] = ..., property_id: _Optional[str] = ...) -> None: ...
 
 class MappingMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "environment_id", "ar_config_id", "disabled", "robot_mappings", "asset_mapping", "standalone", "priority")
+    __slots__ = ("id", "name", "icon", "description", "environment_id", "ar_config_id", "disabled", "robot_mapping", "asset_mapping", "standalone", "priority")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -33,7 +33,7 @@ class MappingMessage(_message.Message):
     ENVIRONMENT_ID_FIELD_NUMBER: _ClassVar[int]
     AR_CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     DISABLED_FIELD_NUMBER: _ClassVar[int]
-    ROBOT_MAPPINGS_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_MAPPING_FIELD_NUMBER: _ClassVar[int]
     ASSET_MAPPING_FIELD_NUMBER: _ClassVar[int]
     STANDALONE_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
@@ -44,11 +44,11 @@ class MappingMessage(_message.Message):
     environment_id: str
     ar_config_id: str
     disabled: bool
-    robot_mappings: _containers.RepeatedCompositeFieldContainer[RobotMapping]
+    robot_mapping: _containers.RepeatedCompositeFieldContainer[RobotMapping]
     asset_mapping: _containers.RepeatedCompositeFieldContainer[AssetMapping]
     standalone: bool
     priority: int
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., environment_id: _Optional[str] = ..., ar_config_id: _Optional[str] = ..., disabled: bool = ..., robot_mappings: _Optional[_Iterable[_Union[RobotMapping, _Mapping]]] = ..., asset_mapping: _Optional[_Iterable[_Union[AssetMapping, _Mapping]]] = ..., standalone: bool = ..., priority: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., environment_id: _Optional[str] = ..., ar_config_id: _Optional[str] = ..., disabled: bool = ..., robot_mapping: _Optional[_Iterable[_Union[RobotMapping, _Mapping]]] = ..., asset_mapping: _Optional[_Iterable[_Union[AssetMapping, _Mapping]]] = ..., standalone: bool = ..., priority: _Optional[int] = ...) -> None: ...
 
 class MappingMessages(_message.Message):
     __slots__ = ("mappings",)

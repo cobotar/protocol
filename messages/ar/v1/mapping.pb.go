@@ -136,7 +136,7 @@ type MappingMessage struct {
 	EnvironmentId string                 `protobuf:"bytes,5,opt,name=environment_id,json=environmentId,proto3" json:"environment_id,omitempty"`
 	ArConfigId    string                 `protobuf:"bytes,6,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`
 	Disabled      bool                   `protobuf:"varint,7,opt,name=disabled,proto3" json:"disabled,omitempty"`
-	RobotMappings []*RobotMapping        `protobuf:"bytes,8,rep,name=robot_mappings,json=robotMappings,proto3" json:"robot_mappings,omitempty"`
+	RobotMapping  []*RobotMapping        `protobuf:"bytes,8,rep,name=robot_mapping,json=robotMapping,proto3" json:"robot_mapping,omitempty"`
 	AssetMapping  []*AssetMapping        `protobuf:"bytes,9,rep,name=asset_mapping,json=assetMapping,proto3" json:"asset_mapping,omitempty"`
 	Standalone    bool                   `protobuf:"varint,10,opt,name=standalone,proto3" json:"standalone,omitempty"` // Only this AR-config should be shown (winner have highest priority)
 	Priority      int32                  `protobuf:"varint,11,opt,name=priority,proto3" json:"priority,omitempty"`     // High value configs will be shown first
@@ -223,9 +223,9 @@ func (x *MappingMessage) GetDisabled() bool {
 	return false
 }
 
-func (x *MappingMessage) GetRobotMappings() []*RobotMapping {
+func (x *MappingMessage) GetRobotMapping() []*RobotMapping {
 	if x != nil {
-		return x.RobotMappings
+		return x.RobotMapping
 	}
 	return nil
 }
@@ -307,17 +307,17 @@ const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\fAssetMapping\x12$\n" +
 	"\basset_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\aassetId\x12*\n" +
 	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\"\xa2\x03\n" +
+	"propertyId\"\xa6\x03\n" +
 	"\x0eMappingMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x120\n" +
-	"\x0eenvironment_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\renvironmentId\x12+\n" +
-	"\far_config_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x123\n" +
+	"\x0eenvironment_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xb0\xf1\x04\x01R\renvironmentId\x12.\n" +
+	"\far_config_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\n" +
 	"arConfigId\x12\x1a\n" +
-	"\bdisabled\x18\a \x01(\bR\bdisabled\x12:\n" +
-	"\x0erobot_mappings\x18\b \x03(\v2\x13.ar.v1.RobotMappingR\rrobotMappings\x128\n" +
+	"\bdisabled\x18\a \x01(\bR\bdisabled\x128\n" +
+	"\rrobot_mapping\x18\b \x03(\v2\x13.ar.v1.RobotMappingR\frobotMapping\x128\n" +
 	"\rasset_mapping\x18\t \x03(\v2\x13.ar.v1.AssetMappingR\fassetMapping\x12\x1e\n" +
 	"\n" +
 	"standalone\x18\n" +
@@ -348,7 +348,7 @@ var file_ar_v1_mapping_proto_goTypes = []any{
 	(*MappingMessages)(nil), // 3: ar.v1.MappingMessages
 }
 var file_ar_v1_mapping_proto_depIdxs = []int32{
-	0, // 0: ar.v1.MappingMessage.robot_mappings:type_name -> ar.v1.RobotMapping
+	0, // 0: ar.v1.MappingMessage.robot_mapping:type_name -> ar.v1.RobotMapping
 	1, // 1: ar.v1.MappingMessage.asset_mapping:type_name -> ar.v1.AssetMapping
 	2, // 2: ar.v1.MappingMessages.mappings:type_name -> ar.v1.MappingMessage
 	3, // [3:3] is the sub-list for method output_type
