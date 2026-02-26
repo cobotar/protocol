@@ -23,7 +23,7 @@ WORKER_TYPE_INTERMEDIATE: WorkerType
 WORKER_TYPE_EXPERT: WorkerType
 
 class WorkerMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "permission", "properties", "disabled")
+    __slots__ = ("id", "name", "icon", "description", "type", "permission", "properties", "disabled", "employee_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +32,7 @@ class WorkerMessage(_message.Message):
     PERMISSION_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     DISABLED_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEE_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -40,7 +41,8 @@ class WorkerMessage(_message.Message):
     permission: _permissions_pb2.WorkerPermission
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     disabled: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[WorkerType, str]] = ..., permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., disabled: bool = ...) -> None: ...
+    employee_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[WorkerType, str]] = ..., permission: _Optional[_Union[_permissions_pb2.WorkerPermission, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., disabled: bool = ..., employee_id: _Optional[str] = ...) -> None: ...
 
 class WorkerMessages(_message.Message):
     __slots__ = ("workers",)

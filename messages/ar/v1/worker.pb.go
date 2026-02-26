@@ -76,6 +76,7 @@ func (WorkerType) EnumDescriptor() ([]byte, []int) {
 }
 
 // TODO: Add worker (including skill-matrix)?
+// TODO: remove to PLM
 type WorkerMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -83,9 +84,10 @@ type WorkerMessage struct {
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          WorkerType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.WorkerType" json:"type,omitempty"`
-	Permission    WorkerPermission       `protobuf:"varint,6,opt,name=permission,proto3,enum=ar.v1.WorkerPermission" json:"permission,omitempty"`
+	Permission    WorkerPermission       `protobuf:"varint,6,opt,name=permission,proto3,enum=ar.v1.WorkerPermission" json:"permission,omitempty"` // TODO: rename to edit permissions
 	Properties    []*Property            `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
 	Disabled      bool                   `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"` // If disabled, the worker can't be selected
+	EmployeeId    string                 `protobuf:"bytes,9,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -176,6 +178,13 @@ func (x *WorkerMessage) GetDisabled() bool {
 	return false
 }
 
+func (x *WorkerMessage) GetEmployeeId() string {
+	if x != nil {
+		return x.EmployeeId
+	}
+	return ""
+}
+
 type WorkerMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workers       []*WorkerMessage       `protobuf:"bytes,1,rep,name=workers,proto3" json:"workers,omitempty"`
@@ -224,7 +233,7 @@ var File_ar_v1_worker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_worker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/worker.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa1\x02\n" +
+	"\x12ar/v1/worker.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc2\x02\n" +
 	"\rWorkerMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -237,7 +246,9 @@ const file_ar_v1_worker_proto_rawDesc = "" +
 	"\n" +
 	"properties\x18\a \x03(\v2\x0f.ar.v1.PropertyR\n" +
 	"properties\x12\x1a\n" +
-	"\bdisabled\x18\b \x01(\bR\bdisabled\"@\n" +
+	"\bdisabled\x18\b \x01(\bR\bdisabled\x12\x1f\n" +
+	"\vemployee_id\x18\t \x01(\tR\n" +
+	"employeeId\"@\n" +
 	"\x0eWorkerMessages\x12.\n" +
 	"\aworkers\x18\x01 \x03(\v2\x14.ar.v1.WorkerMessageR\aworkers*w\n" +
 	"\n" +

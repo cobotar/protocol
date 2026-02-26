@@ -26,22 +26,34 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChJhci92MS9kZXZpY2UucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
             "aWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
-            "cnVsZXMucHJvdG8imwEKDURldmljZU1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
+            "cnVsZXMucHJvdG8iiAMKDURldmljZU1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
             "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
-            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIlCgR0",
-            "eXBlGAUgASgOMhEuYXIudjEuRGV2aWNlVHlwZVIEdHlwZSJACg5EZXZpY2VN",
-            "ZXNzYWdlcxIuCgdkZXZpY2VzGAEgAygLMhQuYXIudjEuRGV2aWNlTWVzc2Fn",
-            "ZVIHZGV2aWNlcypzCgpEZXZpY2VUeXBlEhsKF0RFVklDRV9UWVBFX1VOU1BF",
-            "Q0lGSUVEEAASGQoVREVWSUNFX1RZUEVfSE9MT0xFTlMyEAESFQoRREVWSUNF",
-            "X1RZUEVfUEhPTkUQAhIWChJERVZJQ0VfVFlQRV9UQUJMRVQQA0KHAQoJY29t",
-            "LmFyLnYxQgtEZXZpY2VQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJv",
-            "dG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFS",
-            "LlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJv",
-            "dG8z"));
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0",
+            "eXBlGAUgASgOMhEuYXIudjEuRGV2aWNlVHlwZUILukgIggECEAHIAQFSBHR5",
+            "cGUSGwoJZGV2aWNlX2lkGAYgASgJUghkZXZpY2VJZBI4CgZzdGF0dXMYByAB",
+            "KA4yEy5hci52MS5EZXZpY2VTdGF0dXNCC7pICIIBAhAByAEBUgZzdGF0dXMS",
+            "NwoNYmF0dGVyeV9sZXZlbBgIIAEoBUISukgPGg0YZCj///////////8BUgxi",
+            "YXR0ZXJ5TGV2ZWwSTgoOYmF0dGVyeV9zdGF0dXMYCSABKA4yGi5hci52MS5E",
+            "ZXZpY2VCYXR0ZXJ5U3RhdHVzQgu6SAiCAQIQAcgBAVINYmF0dGVyeVN0YXR1",
+            "cyJACg5EZXZpY2VNZXNzYWdlcxIuCgdkZXZpY2VzGAEgAygLMhQuYXIudjEu",
+            "RGV2aWNlTWVzc2FnZVIHZGV2aWNlcyqHAQoKRGV2aWNlVHlwZRIbChdERVZJ",
+            "Q0VfVFlQRV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9UWVBFX0hPTE9MRU5T",
+            "MhABEhUKEURFVklDRV9UWVBFX1BIT05FEAISFgoSREVWSUNFX1RZUEVfVEFC",
+            "TEVUEAMSEgoOREVWSUNFX1RZUEVfUEMQBCpiCgxEZXZpY2VTdGF0dXMSHQoZ",
+            "REVWSUNFX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFERFVklDRV9TVEFUVVNf",
+            "T05MSU5FEAESGQoVREVWSUNFX1NUQVRVU19PRkZMSU5FEAIqzwEKE0Rldmlj",
+            "ZUJhdHRlcnlTdGF0dXMSJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX1VOU1BF",
+            "Q0lGSUVEEAASIgoeREVWSUNFX0JBVFRFUllfU1RBVFVTX0NIQVJHSU5HEAES",
+            "JQohREVWSUNFX0JBVFRFUllfU1RBVFVTX0RJU0NIQVJHSU5HEAISJgoiREVW",
+            "SUNFX0JBVFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxADEh4KGkRFVklDRV9C",
+            "QVRURVJZX1NUQVRVU19GVUxMEARChwEKCWNvbS5hci52MUILRGV2aWNlUHJv",
+            "dG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fy",
+            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
+            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.DeviceType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessage), global::Messages.AR.V1.DeviceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.DeviceType), typeof(global::Messages.AR.V1.DeviceStatus), typeof(global::Messages.AR.V1.DeviceBatteryStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessage), global::Messages.AR.V1.DeviceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DeviceId", "Status", "BatteryLevel", "BatteryStatus" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessages), global::Messages.AR.V1.DeviceMessages.Parser, new[]{ "Devices" }, null, null, null, null)
           }));
     }
@@ -54,6 +66,36 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("DEVICE_TYPE_HOLOLENS2")] Hololens2 = 1,
     [pbr::OriginalName("DEVICE_TYPE_PHONE")] Phone = 2,
     [pbr::OriginalName("DEVICE_TYPE_TABLET")] Tablet = 3,
+    [pbr::OriginalName("DEVICE_TYPE_PC")] Pc = 4,
+  }
+
+  public enum DeviceStatus {
+    [pbr::OriginalName("DEVICE_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("DEVICE_STATUS_ONLINE")] Online = 1,
+    [pbr::OriginalName("DEVICE_STATUS_OFFLINE")] Offline = 2,
+  }
+
+  public enum DeviceBatteryStatus {
+    /// <summary>
+    /// The device's battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value.
+    /// </summary>
+    [pbr::OriginalName("DEVICE_BATTERY_STATUS_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Device is plugged in and charging.
+    /// </summary>
+    [pbr::OriginalName("DEVICE_BATTERY_STATUS_CHARGING")] Charging = 1,
+    /// <summary>
+    /// Device is unplugged and discharging.
+    /// </summary>
+    [pbr::OriginalName("DEVICE_BATTERY_STATUS_DISCHARGING")] Discharging = 2,
+    /// <summary>
+    /// Device is plugged in, but is not charging.
+    /// </summary>
+    [pbr::OriginalName("DEVICE_BATTERY_STATUS_NOT_CHARGING")] NotCharging = 3,
+    /// <summary>
+    /// Device is plugged in and the battery is full.
+    /// </summary>
+    [pbr::OriginalName("DEVICE_BATTERY_STATUS_FULL")] Full = 4,
   }
 
   #endregion
@@ -102,6 +144,10 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
+      deviceId_ = other.deviceId_;
+      status_ = other.status_;
+      batteryLevel_ = other.batteryLevel_;
+      batteryStatus_ = other.batteryStatus_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -162,15 +208,60 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
     private global::Messages.AR.V1.DeviceType type_ = global::Messages.AR.V1.DeviceType.Unspecified;
-    /// <summary>
-    /// repeated ar.v1.Property properties = 7;
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.DeviceType Type {
       get { return type_; }
       set {
         type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "device_id" field.</summary>
+    public const int DeviceIdFieldNumber = 6;
+    private string deviceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceId {
+      get { return deviceId_; }
+      set {
+        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 7;
+    private global::Messages.AR.V1.DeviceStatus status_ = global::Messages.AR.V1.DeviceStatus.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.DeviceStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battery_level" field.</summary>
+    public const int BatteryLevelFieldNumber = 8;
+    private int batteryLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int BatteryLevel {
+      get { return batteryLevel_; }
+      set {
+        batteryLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battery_status" field.</summary>
+    public const int BatteryStatusFieldNumber = 9;
+    private global::Messages.AR.V1.DeviceBatteryStatus batteryStatus_ = global::Messages.AR.V1.DeviceBatteryStatus.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.DeviceBatteryStatus BatteryStatus {
+      get { return batteryStatus_; }
+      set {
+        batteryStatus_ = value;
       }
     }
 
@@ -194,6 +285,10 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
+      if (DeviceId != other.DeviceId) return false;
+      if (Status != other.Status) return false;
+      if (BatteryLevel != other.BatteryLevel) return false;
+      if (BatteryStatus != other.BatteryStatus) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -206,6 +301,10 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.DeviceType.Unspecified) hash ^= Type.GetHashCode();
+      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
+      if (Status != global::Messages.AR.V1.DeviceStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (BatteryLevel != 0) hash ^= BatteryLevel.GetHashCode();
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) hash ^= BatteryStatus.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -244,6 +343,22 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (DeviceId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(DeviceId);
+      }
+      if (Status != global::Messages.AR.V1.DeviceStatus.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Status);
+      }
+      if (BatteryLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) BatteryStatus);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -274,6 +389,22 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (DeviceId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(DeviceId);
+      }
+      if (Status != global::Messages.AR.V1.DeviceStatus.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Status);
+      }
+      if (BatteryLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) BatteryStatus);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -298,6 +429,18 @@ namespace Messages.AR.V1 {
       }
       if (Type != global::Messages.AR.V1.DeviceType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (DeviceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
+      }
+      if (Status != global::Messages.AR.V1.DeviceStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (BatteryLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BatteryStatus);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -325,6 +468,18 @@ namespace Messages.AR.V1 {
       }
       if (other.Type != global::Messages.AR.V1.DeviceType.Unspecified) {
         Type = other.Type;
+      }
+      if (other.DeviceId.Length != 0) {
+        DeviceId = other.DeviceId;
+      }
+      if (other.Status != global::Messages.AR.V1.DeviceStatus.Unspecified) {
+        Status = other.Status;
+      }
+      if (other.BatteryLevel != 0) {
+        BatteryLevel = other.BatteryLevel;
+      }
+      if (other.BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        BatteryStatus = other.BatteryStatus;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -365,6 +520,22 @@ namespace Messages.AR.V1 {
             Type = (global::Messages.AR.V1.DeviceType) input.ReadEnum();
             break;
           }
+          case 50: {
+            DeviceId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.AR.V1.DeviceStatus) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            BatteryLevel = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            BatteryStatus = (global::Messages.AR.V1.DeviceBatteryStatus) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -402,6 +573,22 @@ namespace Messages.AR.V1 {
           }
           case 40: {
             Type = (global::Messages.AR.V1.DeviceType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            DeviceId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.AR.V1.DeviceStatus) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            BatteryLevel = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            BatteryStatus = (global::Messages.AR.V1.DeviceBatteryStatus) input.ReadEnum();
             break;
           }
         }

@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/device.proto.
  */
 export const file_ar_v1_device: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9kZXZpY2UucHJvdG8SBWFyLnYxIngKDURldmljZU1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSHwoEdHlwZRgFIAEoDjIRLmFyLnYxLkRldmljZVR5cGUiNwoORGV2aWNlTWVzc2FnZXMSJQoHZGV2aWNlcxgBIAMoCzIULmFyLnYxLkRldmljZU1lc3NhZ2UqcwoKRGV2aWNlVHlwZRIbChdERVZJQ0VfVFlQRV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9UWVBFX0hPTE9MRU5TMhABEhUKEURFVklDRV9UWVBFX1BIT05FEAISFgoSREVWSUNFX1RZUEVfVEFCTEVUEANChwEKCWNvbS5hci52MUILRGV2aWNlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9kZXZpY2UucHJvdG8SBWFyLnYxIrYCCg1EZXZpY2VNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5EZXZpY2VUeXBlQgu6SAjIAQGCAQIQARIRCglkZXZpY2VfaWQYBiABKAkSMAoGc3RhdHVzGAcgASgOMhMuYXIudjEuRGV2aWNlU3RhdHVzQgu6SAjIAQGCAQIQARIpCg1iYXR0ZXJ5X2xldmVsGAggASgFQhK6SA8aDRhkKP///////////wESPwoOYmF0dGVyeV9zdGF0dXMYCSABKA4yGi5hci52MS5EZXZpY2VCYXR0ZXJ5U3RhdHVzQgu6SAjIAQGCAQIQASI3Cg5EZXZpY2VNZXNzYWdlcxIlCgdkZXZpY2VzGAEgAygLMhQuYXIudjEuRGV2aWNlTWVzc2FnZSqHAQoKRGV2aWNlVHlwZRIbChdERVZJQ0VfVFlQRV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9UWVBFX0hPTE9MRU5TMhABEhUKEURFVklDRV9UWVBFX1BIT05FEAISFgoSREVWSUNFX1RZUEVfVEFCTEVUEAMSEgoOREVWSUNFX1RZUEVfUEMQBCpiCgxEZXZpY2VTdGF0dXMSHQoZREVWSUNFX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFERFVklDRV9TVEFUVVNfT05MSU5FEAESGQoVREVWSUNFX1NUQVRVU19PRkZMSU5FEAIqzwEKE0RldmljZUJhdHRlcnlTdGF0dXMSJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX1VOU1BFQ0lGSUVEEAASIgoeREVWSUNFX0JBVFRFUllfU1RBVFVTX0NIQVJHSU5HEAESJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX0RJU0NIQVJHSU5HEAISJgoiREVWSUNFX0JBVFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxADEh4KGkRFVklDRV9CQVRURVJZX1NUQVRVU19GVUxMEARChwEKCWNvbS5hci52MUILRGV2aWNlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * DeviceMessage hold basic information about AR-devices, such as a HoloLens2
@@ -41,11 +41,29 @@ export type DeviceMessage = Message<"ar.v1.DeviceMessage"> & {
   description: string;
 
   /**
-   * repeated ar.v1.Property properties = 7;
-   *
    * @generated from field: ar.v1.DeviceType type = 5;
    */
   type: DeviceType;
+
+  /**
+   * @generated from field: string device_id = 6;
+   */
+  deviceId: string;
+
+  /**
+   * @generated from field: ar.v1.DeviceStatus status = 7;
+   */
+  status: DeviceStatus;
+
+  /**
+   * @generated from field: int32 battery_level = 8;
+   */
+  batteryLevel: number;
+
+  /**
+   * @generated from field: ar.v1.DeviceBatteryStatus battery_status = 9;
+   */
+  batteryStatus: DeviceBatteryStatus;
 };
 
 /**
@@ -95,6 +113,11 @@ export enum DeviceType {
    * @generated from enum value: DEVICE_TYPE_TABLET = 3;
    */
   TABLET = 3,
+
+  /**
+   * @generated from enum value: DEVICE_TYPE_PC = 4;
+   */
+  PC = 4,
 }
 
 /**
@@ -102,4 +125,76 @@ export enum DeviceType {
  */
 export const DeviceTypeSchema: GenEnum<DeviceType> = /*@__PURE__*/
   enumDesc(file_ar_v1_device, 0);
+
+/**
+ * @generated from enum ar.v1.DeviceStatus
+ */
+export enum DeviceStatus {
+  /**
+   * @generated from enum value: DEVICE_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: DEVICE_STATUS_ONLINE = 1;
+   */
+  ONLINE = 1,
+
+  /**
+   * @generated from enum value: DEVICE_STATUS_OFFLINE = 2;
+   */
+  OFFLINE = 2,
+}
+
+/**
+ * Describes the enum ar.v1.DeviceStatus.
+ */
+export const DeviceStatusSchema: GenEnum<DeviceStatus> = /*@__PURE__*/
+  enumDesc(file_ar_v1_device, 1);
+
+/**
+ * @generated from enum ar.v1.DeviceBatteryStatus
+ */
+export enum DeviceBatteryStatus {
+  /**
+   * The device's battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value.
+   *
+   * @generated from enum value: DEVICE_BATTERY_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Device is plugged in and charging.
+   *
+   * @generated from enum value: DEVICE_BATTERY_STATUS_CHARGING = 1;
+   */
+  CHARGING = 1,
+
+  /**
+   * Device is unplugged and discharging.
+   *
+   * @generated from enum value: DEVICE_BATTERY_STATUS_DISCHARGING = 2;
+   */
+  DISCHARGING = 2,
+
+  /**
+   * Device is plugged in, but is not charging.
+   *
+   * @generated from enum value: DEVICE_BATTERY_STATUS_NOT_CHARGING = 3;
+   */
+  NOT_CHARGING = 3,
+
+  /**
+   * Device is plugged in and the battery is full.
+   *
+   * @generated from enum value: DEVICE_BATTERY_STATUS_FULL = 4;
+   */
+  FULL = 4,
+}
+
+/**
+ * Describes the enum ar.v1.DeviceBatteryStatus.
+ */
+export const DeviceBatteryStatusSchema: GenEnum<DeviceBatteryStatus> = /*@__PURE__*/
+  enumDesc(file_ar_v1_device, 2);
 

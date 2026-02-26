@@ -28,7 +28,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/worker.proto\x12\x05\x61r.v1\x1a\x17\x61r/v1/permissions.proto\x1a\x14\x61r/v1/property.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa1\x02\n\rWorkerMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12%\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.WorkerTypeR\x04type\x12\x37\n\npermission\x18\x06 \x01(\x0e\x32\x17.ar.v1.WorkerPermissionR\npermission\x12/\n\nproperties\x18\x07 \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\x12\x1a\n\x08\x64isabled\x18\x08 \x01(\x08R\x08\x64isabled\"@\n\x0eWorkerMessages\x12.\n\x07workers\x18\x01 \x03(\x0b\x32\x14.ar.v1.WorkerMessageR\x07workers*w\n\nWorkerType\x12\x1b\n\x17WORKER_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12WORKER_TYPE_NOVICE\x10\x01\x12\x1c\n\x18WORKER_TYPE_INTERMEDIATE\x10\x02\x12\x16\n\x12WORKER_TYPE_EXPERT\x10\x03\x42\x87\x01\n\tcom.ar.v1B\x0bWorkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/worker.proto\x12\x05\x61r.v1\x1a\x17\x61r/v1/permissions.proto\x1a\x14\x61r/v1/property.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc2\x02\n\rWorkerMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12%\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.WorkerTypeR\x04type\x12\x37\n\npermission\x18\x06 \x01(\x0e\x32\x17.ar.v1.WorkerPermissionR\npermission\x12/\n\nproperties\x18\x07 \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\x12\x1a\n\x08\x64isabled\x18\x08 \x01(\x08R\x08\x64isabled\x12\x1f\n\x0b\x65mployee_id\x18\t \x01(\tR\nemployeeId\"@\n\x0eWorkerMessages\x12.\n\x07workers\x18\x01 \x03(\x0b\x32\x14.ar.v1.WorkerMessageR\x07workers*w\n\nWorkerType\x12\x1b\n\x17WORKER_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12WORKER_TYPE_NOVICE\x10\x01\x12\x1c\n\x18WORKER_TYPE_INTERMEDIATE\x10\x02\x12\x16\n\x12WORKER_TYPE_EXPERT\x10\x03\x42\x87\x01\n\tcom.ar.v1B\x0bWorkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,10 +38,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\013WorkerProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
   _globals['_WORKERMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_WORKERMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_WORKERTYPE']._serialized_start=508
-  _globals['_WORKERTYPE']._serialized_end=627
+  _globals['_WORKERTYPE']._serialized_start=541
+  _globals['_WORKERTYPE']._serialized_end=660
   _globals['_WORKERMESSAGE']._serialized_start=151
-  _globals['_WORKERMESSAGE']._serialized_end=440
-  _globals['_WORKERMESSAGES']._serialized_start=442
-  _globals['_WORKERMESSAGES']._serialized_end=506
+  _globals['_WORKERMESSAGE']._serialized_end=473
+  _globals['_WORKERMESSAGES']._serialized_start=475
+  _globals['_WORKERMESSAGES']._serialized_end=539
 # @@protoc_insertion_point(module_scope)

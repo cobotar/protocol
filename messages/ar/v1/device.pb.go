@@ -30,6 +30,7 @@ const (
 	DeviceType_DEVICE_TYPE_HOLOLENS2   DeviceType = 1
 	DeviceType_DEVICE_TYPE_PHONE       DeviceType = 2
 	DeviceType_DEVICE_TYPE_TABLET      DeviceType = 3
+	DeviceType_DEVICE_TYPE_PC          DeviceType = 4
 )
 
 // Enum value maps for DeviceType.
@@ -39,12 +40,14 @@ var (
 		1: "DEVICE_TYPE_HOLOLENS2",
 		2: "DEVICE_TYPE_PHONE",
 		3: "DEVICE_TYPE_TABLET",
+		4: "DEVICE_TYPE_PC",
 	}
 	DeviceType_value = map[string]int32{
 		"DEVICE_TYPE_UNSPECIFIED": 0,
 		"DEVICE_TYPE_HOLOLENS2":   1,
 		"DEVICE_TYPE_PHONE":       2,
 		"DEVICE_TYPE_TABLET":      3,
+		"DEVICE_TYPE_PC":          4,
 	}
 )
 
@@ -75,6 +78,110 @@ func (DeviceType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_device_proto_rawDescGZIP(), []int{0}
 }
 
+type DeviceStatus int32
+
+const (
+	DeviceStatus_DEVICE_STATUS_UNSPECIFIED DeviceStatus = 0
+	DeviceStatus_DEVICE_STATUS_ONLINE      DeviceStatus = 1
+	DeviceStatus_DEVICE_STATUS_OFFLINE     DeviceStatus = 2
+)
+
+// Enum value maps for DeviceStatus.
+var (
+	DeviceStatus_name = map[int32]string{
+		0: "DEVICE_STATUS_UNSPECIFIED",
+		1: "DEVICE_STATUS_ONLINE",
+		2: "DEVICE_STATUS_OFFLINE",
+	}
+	DeviceStatus_value = map[string]int32{
+		"DEVICE_STATUS_UNSPECIFIED": 0,
+		"DEVICE_STATUS_ONLINE":      1,
+		"DEVICE_STATUS_OFFLINE":     2,
+	}
+)
+
+func (x DeviceStatus) Enum() *DeviceStatus {
+	p := new(DeviceStatus)
+	*p = x
+	return p
+}
+
+func (x DeviceStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (DeviceStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_device_proto_enumTypes[1].Descriptor()
+}
+
+func (DeviceStatus) Type() protoreflect.EnumType {
+	return &file_ar_v1_device_proto_enumTypes[1]
+}
+
+func (x DeviceStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use DeviceStatus.Descriptor instead.
+func (DeviceStatus) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_device_proto_rawDescGZIP(), []int{1}
+}
+
+type DeviceBatteryStatus int32
+
+const (
+	DeviceBatteryStatus_DEVICE_BATTERY_STATUS_UNSPECIFIED  DeviceBatteryStatus = 0 // The device's battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value.
+	DeviceBatteryStatus_DEVICE_BATTERY_STATUS_CHARGING     DeviceBatteryStatus = 1 // Device is plugged in and charging.
+	DeviceBatteryStatus_DEVICE_BATTERY_STATUS_DISCHARGING  DeviceBatteryStatus = 2 // Device is unplugged and discharging.
+	DeviceBatteryStatus_DEVICE_BATTERY_STATUS_NOT_CHARGING DeviceBatteryStatus = 3 // Device is plugged in, but is not charging.
+	DeviceBatteryStatus_DEVICE_BATTERY_STATUS_FULL         DeviceBatteryStatus = 4 // Device is plugged in and the battery is full.
+)
+
+// Enum value maps for DeviceBatteryStatus.
+var (
+	DeviceBatteryStatus_name = map[int32]string{
+		0: "DEVICE_BATTERY_STATUS_UNSPECIFIED",
+		1: "DEVICE_BATTERY_STATUS_CHARGING",
+		2: "DEVICE_BATTERY_STATUS_DISCHARGING",
+		3: "DEVICE_BATTERY_STATUS_NOT_CHARGING",
+		4: "DEVICE_BATTERY_STATUS_FULL",
+	}
+	DeviceBatteryStatus_value = map[string]int32{
+		"DEVICE_BATTERY_STATUS_UNSPECIFIED":  0,
+		"DEVICE_BATTERY_STATUS_CHARGING":     1,
+		"DEVICE_BATTERY_STATUS_DISCHARGING":  2,
+		"DEVICE_BATTERY_STATUS_NOT_CHARGING": 3,
+		"DEVICE_BATTERY_STATUS_FULL":         4,
+	}
+)
+
+func (x DeviceBatteryStatus) Enum() *DeviceBatteryStatus {
+	p := new(DeviceBatteryStatus)
+	*p = x
+	return p
+}
+
+func (x DeviceBatteryStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (DeviceBatteryStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_device_proto_enumTypes[2].Descriptor()
+}
+
+func (DeviceBatteryStatus) Type() protoreflect.EnumType {
+	return &file_ar_v1_device_proto_enumTypes[2]
+}
+
+func (x DeviceBatteryStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use DeviceBatteryStatus.Descriptor instead.
+func (DeviceBatteryStatus) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_device_proto_rawDescGZIP(), []int{2}
+}
+
 // DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 type DeviceMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -82,7 +189,11 @@ type DeviceMessage struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          DeviceType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.DeviceType" json:"type,omitempty"` // repeated ar.v1.Property properties = 7;
+	Type          DeviceType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.DeviceType" json:"type,omitempty"`
+	DeviceId      string                 `protobuf:"bytes,6,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	Status        DeviceStatus           `protobuf:"varint,7,opt,name=status,proto3,enum=ar.v1.DeviceStatus" json:"status,omitempty"`
+	BatteryLevel  int32                  `protobuf:"varint,8,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
+	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=ar.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -152,6 +263,34 @@ func (x *DeviceMessage) GetType() DeviceType {
 	return DeviceType_DEVICE_TYPE_UNSPECIFIED
 }
 
+func (x *DeviceMessage) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
+func (x *DeviceMessage) GetStatus() DeviceStatus {
+	if x != nil {
+		return x.Status
+	}
+	return DeviceStatus_DEVICE_STATUS_UNSPECIFIED
+}
+
+func (x *DeviceMessage) GetBatteryLevel() int32 {
+	if x != nil {
+		return x.BatteryLevel
+	}
+	return 0
+}
+
+func (x *DeviceMessage) GetBatteryStatus() DeviceBatteryStatus {
+	if x != nil {
+		return x.BatteryStatus
+	}
+	return DeviceBatteryStatus_DEVICE_BATTERY_STATUS_UNSPECIFIED
+}
+
 type DeviceMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Devices       []*DeviceMessage       `protobuf:"bytes,1,rep,name=devices,proto3" json:"devices,omitempty"`
@@ -200,21 +339,36 @@ var File_ar_v1_device_proto protoreflect.FileDescriptor
 
 const file_ar_v1_device_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/device.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9b\x01\n" +
+	"\x12ar/v1/device.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x88\x03\n" +
 	"\rDeviceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.DeviceTypeR\x04type\"@\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.DeviceTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1b\n" +
+	"\tdevice_id\x18\x06 \x01(\tR\bdeviceId\x128\n" +
+	"\x06status\x18\a \x01(\x0e2\x13.ar.v1.DeviceStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x127\n" +
+	"\rbattery_level\x18\b \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12N\n" +
+	"\x0ebattery_status\x18\t \x01(\x0e2\x1a.ar.v1.DeviceBatteryStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\rbatteryStatus\"@\n" +
 	"\x0eDeviceMessages\x12.\n" +
-	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices*s\n" +
+	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices*\x87\x01\n" +
 	"\n" +
 	"DeviceType\x12\x1b\n" +
 	"\x17DEVICE_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15DEVICE_TYPE_HOLOLENS2\x10\x01\x12\x15\n" +
 	"\x11DEVICE_TYPE_PHONE\x10\x02\x12\x16\n" +
-	"\x12DEVICE_TYPE_TABLET\x10\x03B\x87\x01\n" +
+	"\x12DEVICE_TYPE_TABLET\x10\x03\x12\x12\n" +
+	"\x0eDEVICE_TYPE_PC\x10\x04*b\n" +
+	"\fDeviceStatus\x12\x1d\n" +
+	"\x19DEVICE_STATUS_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14DEVICE_STATUS_ONLINE\x10\x01\x12\x19\n" +
+	"\x15DEVICE_STATUS_OFFLINE\x10\x02*\xcf\x01\n" +
+	"\x13DeviceBatteryStatus\x12%\n" +
+	"!DEVICE_BATTERY_STATUS_UNSPECIFIED\x10\x00\x12\"\n" +
+	"\x1eDEVICE_BATTERY_STATUS_CHARGING\x10\x01\x12%\n" +
+	"!DEVICE_BATTERY_STATUS_DISCHARGING\x10\x02\x12&\n" +
+	"\"DEVICE_BATTERY_STATUS_NOT_CHARGING\x10\x03\x12\x1e\n" +
+	"\x1aDEVICE_BATTERY_STATUS_FULL\x10\x04B\x87\x01\n" +
 	"\tcom.ar.v1B\vDeviceProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -229,21 +383,25 @@ func file_ar_v1_device_proto_rawDescGZIP() []byte {
 	return file_ar_v1_device_proto_rawDescData
 }
 
-var file_ar_v1_device_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_ar_v1_device_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_ar_v1_device_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_device_proto_goTypes = []any{
-	(DeviceType)(0),        // 0: ar.v1.DeviceType
-	(*DeviceMessage)(nil),  // 1: ar.v1.DeviceMessage
-	(*DeviceMessages)(nil), // 2: ar.v1.DeviceMessages
+	(DeviceType)(0),          // 0: ar.v1.DeviceType
+	(DeviceStatus)(0),        // 1: ar.v1.DeviceStatus
+	(DeviceBatteryStatus)(0), // 2: ar.v1.DeviceBatteryStatus
+	(*DeviceMessage)(nil),    // 3: ar.v1.DeviceMessage
+	(*DeviceMessages)(nil),   // 4: ar.v1.DeviceMessages
 }
 var file_ar_v1_device_proto_depIdxs = []int32{
 	0, // 0: ar.v1.DeviceMessage.type:type_name -> ar.v1.DeviceType
-	1, // 1: ar.v1.DeviceMessages.devices:type_name -> ar.v1.DeviceMessage
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	1, // 1: ar.v1.DeviceMessage.status:type_name -> ar.v1.DeviceStatus
+	2, // 2: ar.v1.DeviceMessage.battery_status:type_name -> ar.v1.DeviceBatteryStatus
+	3, // 3: ar.v1.DeviceMessages.devices:type_name -> ar.v1.DeviceMessage
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_device_proto_init() }
@@ -256,7 +414,7 @@ func file_ar_v1_device_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_device_proto_rawDesc), len(file_ar_v1_device_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      3,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,

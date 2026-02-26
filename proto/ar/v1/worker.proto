@@ -17,15 +17,17 @@ enum WorkerType {
 }
 
 // TODO: Add worker (including skill-matrix)?
+// TODO: remove to PLM
 message WorkerMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   WorkerType type = 5;
-  WorkerPermission permission = 6;
+  WorkerPermission permission = 6; // TODO: rename to edit permissions
   repeated ar.v1.Property properties = 7;
   bool disabled = 8; // If disabled, the worker can't be selected
+  string employee_id = 9;
 }
 
 message WorkerMessages {

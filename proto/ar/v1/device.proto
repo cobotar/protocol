@@ -12,6 +12,21 @@ enum DeviceType {
   DEVICE_TYPE_HOLOLENS2 = 1;
   DEVICE_TYPE_PHONE = 2;
   DEVICE_TYPE_TABLET = 3;
+  DEVICE_TYPE_PC = 4;
+}
+
+enum DeviceStatus {
+  DEVICE_STATUS_UNSPECIFIED = 0;
+  DEVICE_STATUS_ONLINE = 1;
+  DEVICE_STATUS_OFFLINE = 2;
+}
+
+enum DeviceBatteryStatus {
+  DEVICE_BATTERY_STATUS_UNSPECIFIED = 0; // The device's battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value.
+  DEVICE_BATTERY_STATUS_CHARGING = 1; // Device is plugged in and charging.
+  DEVICE_BATTERY_STATUS_DISCHARGING = 2; // Device is unplugged and discharging.
+  DEVICE_BATTERY_STATUS_NOT_CHARGING = 3; // Device is plugged in, but is not charging.
+  DEVICE_BATTERY_STATUS_FULL = 4; // Device is plugged in and the battery is full.
 }
 
 // DeviceMessage hold basic information about AR-devices, such as a HoloLens2
@@ -20,8 +35,23 @@ message DeviceMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  DeviceType type = 5;
-  // repeated ar.v1.Property properties = 7;
+  DeviceType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string device_id = 6;
+  DeviceStatus status = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 battery_level = 8 [(buf.validate.field).int32 = {
+    gte: -1
+    lte: 100
+  }];
+  DeviceBatteryStatus battery_status = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message DeviceMessages {

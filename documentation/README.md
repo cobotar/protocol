@@ -119,6 +119,8 @@
     - [DeviceMessage](#ar-v1-DeviceMessage)
     - [DeviceMessages](#ar-v1-DeviceMessages)
   
+    - [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus)
+    - [DeviceStatus](#ar-v1-DeviceStatus)
     - [DeviceType](#ar-v1-DeviceType)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
@@ -1792,7 +1794,11 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [DeviceType](#ar-v1-DeviceType) |  | repeated ar.v1.Property properties = 7; |
+| type | [DeviceType](#ar-v1-DeviceType) |  |  |
+| device_id | [string](#string) |  |  |
+| status | [DeviceStatus](#ar-v1-DeviceStatus) |  |  |
+| battery_level | [int32](#int32) |  |  |
+| battery_status | [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus) |  |  |
 
 
 
@@ -1816,6 +1822,34 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
  
 
 
+<a name="ar-v1-DeviceBatteryStatus"></a>
+
+### DeviceBatteryStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_BATTERY_STATUS_UNSPECIFIED | 0 | The device&#39;s battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value. |
+| DEVICE_BATTERY_STATUS_CHARGING | 1 | Device is plugged in and charging. |
+| DEVICE_BATTERY_STATUS_DISCHARGING | 2 | Device is unplugged and discharging. |
+| DEVICE_BATTERY_STATUS_NOT_CHARGING | 3 | Device is plugged in, but is not charging. |
+| DEVICE_BATTERY_STATUS_FULL | 4 | Device is plugged in and the battery is full. |
+
+
+
+<a name="ar-v1-DeviceStatus"></a>
+
+### DeviceStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_STATUS_UNSPECIFIED | 0 |  |
+| DEVICE_STATUS_ONLINE | 1 |  |
+| DEVICE_STATUS_OFFLINE | 2 |  |
+
+
+
 <a name="ar-v1-DeviceType"></a>
 
 ### DeviceType
@@ -1827,6 +1861,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | DEVICE_TYPE_HOLOLENS2 | 1 |  |
 | DEVICE_TYPE_PHONE | 2 |  |
 | DEVICE_TYPE_TABLET | 3 |  |
+| DEVICE_TYPE_PC | 4 |  |
 
 
  
@@ -2412,6 +2447,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 ### WorkerMessage
 TODO: Add worker (including skill-matrix)?
+TODO: remove to PLM
 
 
 | Field | Type | Label | Description |
@@ -2421,9 +2457,10 @@ TODO: Add worker (including skill-matrix)?
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [WorkerType](#ar-v1-WorkerType) |  |  |
-| permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
+| permission | [WorkerPermission](#ar-v1-WorkerPermission) |  | TODO: rename to edit permissions |
 | properties | [Property](#ar-v1-Property) | repeated |  |
 | disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
+| employee_id | [string](#string) |  |  |
 
 
 

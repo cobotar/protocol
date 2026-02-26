@@ -16,10 +16,11 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/worker.proto.
  */
 export const file_ar_v1_worker: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxItwBCg1Xb3JrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHR5cGUYBSABKA4yES5hci52MS5Xb3JrZXJUeXBlEisKCnBlcm1pc3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uEiMKCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eRIQCghkaXNhYmxlZBgIIAEoCCI3Cg5Xb3JrZXJNZXNzYWdlcxIlCgd3b3JrZXJzGAEgAygLMhQuYXIudjEuV29ya2VyTWVzc2FnZSp3CgpXb3JrZXJUeXBlEhsKF1dPUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSV09SS0VSX1RZUEVfTk9WSUNFEAESHAoYV09SS0VSX1RZUEVfSU5URVJNRURJQVRFEAISFgoSV09SS0VSX1RZUEVfRVhQRVJUEANChwEKCWNvbS5hci52MUILV29ya2VyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_permissions, file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxIvEBCg1Xb3JrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHR5cGUYBSABKA4yES5hci52MS5Xb3JrZXJUeXBlEisKCnBlcm1pc3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uEiMKCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eRIQCghkaXNhYmxlZBgIIAEoCBITCgtlbXBsb3llZV9pZBgJIAEoCSI3Cg5Xb3JrZXJNZXNzYWdlcxIlCgd3b3JrZXJzGAEgAygLMhQuYXIudjEuV29ya2VyTWVzc2FnZSp3CgpXb3JrZXJUeXBlEhsKF1dPUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSV09SS0VSX1RZUEVfTk9WSUNFEAESHAoYV09SS0VSX1RZUEVfSU5URVJNRURJQVRFEAISFgoSV09SS0VSX1RZUEVfRVhQRVJUEANChwEKCWNvbS5hci52MUILV29ya2VyUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_permissions, file_ar_v1_property, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * TODO: Add worker (including skill-matrix)?
+ * TODO: remove to PLM
  *
  * @generated from message ar.v1.WorkerMessage
  */
@@ -50,6 +51,8 @@ export type WorkerMessage = Message<"ar.v1.WorkerMessage"> & {
   type: WorkerType;
 
   /**
+   * TODO: rename to edit permissions
+   *
    * @generated from field: ar.v1.WorkerPermission permission = 6;
    */
   permission: WorkerPermission;
@@ -65,6 +68,11 @@ export type WorkerMessage = Message<"ar.v1.WorkerMessage"> & {
    * @generated from field: bool disabled = 8;
    */
   disabled: boolean;
+
+  /**
+   * @generated from field: string employee_id = 9;
+   */
+  employeeId: string;
 };
 
 /**

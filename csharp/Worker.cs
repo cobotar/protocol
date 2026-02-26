@@ -27,25 +27,25 @@ namespace Messages.AR.V1 {
             "ChJhci92MS93b3JrZXIucHJvdG8SBWFyLnYxGhdhci92MS9wZXJtaXNzaW9u",
             "cy5wcm90bxoUYXIvdjEvcHJvcGVydHkucHJvdG8aG2J1Zi92YWxpZGF0ZS92",
             "YWxpZGF0ZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmlu",
-            "Z19ydWxlcy5wcm90byKhAgoNV29ya2VyTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
+            "Z19ydWxlcy5wcm90byLCAgoNV29ya2VyTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
             "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
             "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiUK",
             "BHR5cGUYBSABKA4yES5hci52MS5Xb3JrZXJUeXBlUgR0eXBlEjcKCnBlcm1p",
             "c3Npb24YBiABKA4yFy5hci52MS5Xb3JrZXJQZXJtaXNzaW9uUgpwZXJtaXNz",
             "aW9uEi8KCnByb3BlcnRpZXMYByADKAsyDy5hci52MS5Qcm9wZXJ0eVIKcHJv",
-            "cGVydGllcxIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQiQAoOV29ya2Vy",
-            "TWVzc2FnZXMSLgoHd29ya2VycxgBIAMoCzIULmFyLnYxLldvcmtlck1lc3Nh",
-            "Z2VSB3dvcmtlcnMqdwoKV29ya2VyVHlwZRIbChdXT1JLRVJfVFlQRV9VTlNQ",
-            "RUNJRklFRBAAEhYKEldPUktFUl9UWVBFX05PVklDRRABEhwKGFdPUktFUl9U",
-            "WVBFX0lOVEVSTUVESUFURRACEhYKEldPUktFUl9UWVBFX0VYUEVSVBADQocB",
-            "Cgljb20uYXIudjFCC1dvcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2Fn",
-            "ZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYx",
-            "YgZwcm90bzM="));
+            "cGVydGllcxIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQSHwoLZW1wbG95",
+            "ZWVfaWQYCSABKAlSCmVtcGxveWVlSWQiQAoOV29ya2VyTWVzc2FnZXMSLgoH",
+            "d29ya2VycxgBIAMoCzIULmFyLnYxLldvcmtlck1lc3NhZ2VSB3dvcmtlcnMq",
+            "dwoKV29ya2VyVHlwZRIbChdXT1JLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhYK",
+            "EldPUktFUl9UWVBFX05PVklDRRABEhwKGFdPUktFUl9UWVBFX0lOVEVSTUVE",
+            "SUFURRACEhYKEldPUktFUl9UWVBFX0VYUEVSVBADQocBCgljb20uYXIudjFC",
+            "C1dvcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
+            "ZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVB",
+            "clxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.WorkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessage), global::Messages.AR.V1.WorkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Permission", "Properties", "Disabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessage), global::Messages.AR.V1.WorkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Permission", "Properties", "Disabled", "EmployeeId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.WorkerMessages), global::Messages.AR.V1.WorkerMessages.Parser, new[]{ "Workers" }, null, null, null, null)
           }));
     }
@@ -65,6 +65,7 @@ namespace Messages.AR.V1 {
   #region Messages
   /// <summary>
   /// TODO: Add worker (including skill-matrix)?
+  /// TODO: remove to PLM
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class WorkerMessage : pb::IMessage<WorkerMessage>
@@ -109,6 +110,7 @@ namespace Messages.AR.V1 {
       permission_ = other.permission_;
       properties_ = other.properties_.Clone();
       disabled_ = other.disabled_;
+      employeeId_ = other.employeeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -181,6 +183,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "permission" field.</summary>
     public const int PermissionFieldNumber = 6;
     private global::Messages.AR.V1.WorkerPermission permission_ = global::Messages.AR.V1.WorkerPermission.Unspecified;
+    /// <summary>
+    /// TODO: rename to edit permissions
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.AR.V1.WorkerPermission Permission {
@@ -216,6 +221,18 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "employee_id" field.</summary>
+    public const int EmployeeIdFieldNumber = 9;
+    private string employeeId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EmployeeId {
+      get { return employeeId_; }
+      set {
+        employeeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -239,6 +256,7 @@ namespace Messages.AR.V1 {
       if (Permission != other.Permission) return false;
       if(!properties_.Equals(other.properties_)) return false;
       if (Disabled != other.Disabled) return false;
+      if (EmployeeId != other.EmployeeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -254,6 +272,7 @@ namespace Messages.AR.V1 {
       if (Permission != global::Messages.AR.V1.WorkerPermission.Unspecified) hash ^= Permission.GetHashCode();
       hash ^= properties_.GetHashCode();
       if (Disabled != false) hash ^= Disabled.GetHashCode();
+      if (EmployeeId.Length != 0) hash ^= EmployeeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -301,6 +320,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(64);
         output.WriteBool(Disabled);
       }
+      if (EmployeeId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(EmployeeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -340,6 +363,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(64);
         output.WriteBool(Disabled);
       }
+      if (EmployeeId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(EmployeeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -371,6 +398,9 @@ namespace Messages.AR.V1 {
       size += properties_.CalculateSize(_repeated_properties_codec);
       if (Disabled != false) {
         size += 1 + 1;
+      }
+      if (EmployeeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmployeeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -405,6 +435,9 @@ namespace Messages.AR.V1 {
       properties_.Add(other.properties_);
       if (other.Disabled != false) {
         Disabled = other.Disabled;
+      }
+      if (other.EmployeeId.Length != 0) {
+        EmployeeId = other.EmployeeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -457,6 +490,10 @@ namespace Messages.AR.V1 {
             Disabled = input.ReadBool();
             break;
           }
+          case 74: {
+            EmployeeId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -506,6 +543,10 @@ namespace Messages.AR.V1 {
           }
           case 64: {
             Disabled = input.ReadBool();
+            break;
+          }
+          case 74: {
+            EmployeeId = input.ReadString();
             break;
           }
         }

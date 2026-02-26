@@ -14,11 +14,13 @@ Find it here: [documentation/README.md](documentation/README.md)
 
 ## NATS subject convention
 ### CRUD
-* add: `<kind>-add`
-* update: `<kind>-update`
-* delete: `<kind>-delete`
-* get: `<kind>-get`
-* getAll: `<kind>s`
+* add: `edit.<domain>.add`
+* update: `edit.<domain>.update`
+* delete: `edit.<domain>.delete`
+* get: `get.<domain>.one`
+* getByIds: `get.<domain>.some`
+* getAll: `get.<domain>.all`
+
 
 ### Events
  Subject shape: `<kind>.<domain>.<type>.<scope..>`
