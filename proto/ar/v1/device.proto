@@ -40,18 +40,12 @@ message DeviceMessage {
     (buf.validate.field).enum.defined_only = true
   ];
   string device_id = 6;
-  DeviceStatus status = 7 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
+  DeviceStatus status = 7 [(buf.validate.field).enum.defined_only = true];
   int32 battery_level = 8 [(buf.validate.field).int32 = {
     gte: -1
     lte: 100
   }];
-  DeviceBatteryStatus battery_status = 9 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
+  DeviceBatteryStatus battery_status = 9 [(buf.validate.field).enum.defined_only = true];
 }
 
 message DeviceMessages {
