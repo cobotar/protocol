@@ -335,6 +335,66 @@ func (x *DeviceMessages) GetDevices() []*DeviceMessage {
 	return nil
 }
 
+type DeviceHeartbeat struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	BatteryLevel  int32                  `protobuf:"varint,2,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"` // -1..100
+	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,3,opt,name=battery_status,json=batteryStatus,proto3,enum=ar.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceHeartbeat) Reset() {
+	*x = DeviceHeartbeat{}
+	mi := &file_ar_v1_device_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceHeartbeat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceHeartbeat) ProtoMessage() {}
+
+func (x *DeviceHeartbeat) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_device_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceHeartbeat.ProtoReflect.Descriptor instead.
+func (*DeviceHeartbeat) Descriptor() ([]byte, []int) {
+	return file_ar_v1_device_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DeviceHeartbeat) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
+func (x *DeviceHeartbeat) GetBatteryLevel() int32 {
+	if x != nil {
+		return x.BatteryLevel
+	}
+	return 0
+}
+
+func (x *DeviceHeartbeat) GetBatteryStatus() DeviceBatteryStatus {
+	if x != nil {
+		return x.BatteryStatus
+	}
+	return DeviceBatteryStatus_DEVICE_BATTERY_STATUS_UNSPECIFIED
+}
+
 var File_ar_v1_device_proto protoreflect.FileDescriptor
 
 const file_ar_v1_device_proto_rawDesc = "" +
@@ -351,7 +411,11 @@ const file_ar_v1_device_proto_rawDesc = "" +
 	"\rbattery_level\x18\b \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12K\n" +
 	"\x0ebattery_status\x18\t \x01(\x0e2\x1a.ar.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\"@\n" +
 	"\x0eDeviceMessages\x12.\n" +
-	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices*\x87\x01\n" +
+	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices\"\x96\x01\n" +
+	"\x0fDeviceHeartbeat\x12\x1b\n" +
+	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12#\n" +
+	"\rbattery_level\x18\x02 \x01(\x05R\fbatteryLevel\x12A\n" +
+	"\x0ebattery_status\x18\x03 \x01(\x0e2\x1a.ar.v1.DeviceBatteryStatusR\rbatteryStatus*\x87\x01\n" +
 	"\n" +
 	"DeviceType\x12\x1b\n" +
 	"\x17DEVICE_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
@@ -384,24 +448,26 @@ func file_ar_v1_device_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_device_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_ar_v1_device_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_ar_v1_device_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ar_v1_device_proto_goTypes = []any{
 	(DeviceType)(0),          // 0: ar.v1.DeviceType
 	(DeviceStatus)(0),        // 1: ar.v1.DeviceStatus
 	(DeviceBatteryStatus)(0), // 2: ar.v1.DeviceBatteryStatus
 	(*DeviceMessage)(nil),    // 3: ar.v1.DeviceMessage
 	(*DeviceMessages)(nil),   // 4: ar.v1.DeviceMessages
+	(*DeviceHeartbeat)(nil),  // 5: ar.v1.DeviceHeartbeat
 }
 var file_ar_v1_device_proto_depIdxs = []int32{
 	0, // 0: ar.v1.DeviceMessage.type:type_name -> ar.v1.DeviceType
 	1, // 1: ar.v1.DeviceMessage.status:type_name -> ar.v1.DeviceStatus
 	2, // 2: ar.v1.DeviceMessage.battery_status:type_name -> ar.v1.DeviceBatteryStatus
 	3, // 3: ar.v1.DeviceMessages.devices:type_name -> ar.v1.DeviceMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2, // 4: ar.v1.DeviceHeartbeat.battery_status:type_name -> ar.v1.DeviceBatteryStatus
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_device_proto_init() }
@@ -415,7 +481,7 @@ func file_ar_v1_device_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_device_proto_rawDesc), len(file_ar_v1_device_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

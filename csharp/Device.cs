@@ -36,25 +36,29 @@ namespace Messages.AR.V1 {
             "ZXJ5TGV2ZWwSSwoOYmF0dGVyeV9zdGF0dXMYCSABKA4yGi5hci52MS5EZXZp",
             "Y2VCYXR0ZXJ5U3RhdHVzQgi6SAWCAQIQAVINYmF0dGVyeVN0YXR1cyJACg5E",
             "ZXZpY2VNZXNzYWdlcxIuCgdkZXZpY2VzGAEgAygLMhQuYXIudjEuRGV2aWNl",
-            "TWVzc2FnZVIHZGV2aWNlcyqHAQoKRGV2aWNlVHlwZRIbChdERVZJQ0VfVFlQ",
-            "RV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9UWVBFX0hPTE9MRU5TMhABEhUK",
-            "EURFVklDRV9UWVBFX1BIT05FEAISFgoSREVWSUNFX1RZUEVfVEFCTEVUEAMS",
-            "EgoOREVWSUNFX1RZUEVfUEMQBCpiCgxEZXZpY2VTdGF0dXMSHQoZREVWSUNF",
-            "X1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFERFVklDRV9TVEFUVVNfT05MSU5F",
-            "EAESGQoVREVWSUNFX1NUQVRVU19PRkZMSU5FEAIqzwEKE0RldmljZUJhdHRl",
-            "cnlTdGF0dXMSJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX1VOU1BFQ0lGSUVE",
-            "EAASIgoeREVWSUNFX0JBVFRFUllfU1RBVFVTX0NIQVJHSU5HEAESJQohREVW",
-            "SUNFX0JBVFRFUllfU1RBVFVTX0RJU0NIQVJHSU5HEAISJgoiREVWSUNFX0JB",
-            "VFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxADEh4KGkRFVklDRV9CQVRURVJZ",
-            "X1NUQVRVU19GVUxMEARChwEKCWNvbS5hci52MUILRGV2aWNlUHJvdG9QAVov",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2Fy",
-            "djGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BC",
-            "TWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "TWVzc2FnZVIHZGV2aWNlcyKWAQoPRGV2aWNlSGVhcnRiZWF0EhsKCWRldmlj",
+            "ZV9pZBgBIAEoCVIIZGV2aWNlSWQSIwoNYmF0dGVyeV9sZXZlbBgCIAEoBVIM",
+            "YmF0dGVyeUxldmVsEkEKDmJhdHRlcnlfc3RhdHVzGAMgASgOMhouYXIudjEu",
+            "RGV2aWNlQmF0dGVyeVN0YXR1c1INYmF0dGVyeVN0YXR1cyqHAQoKRGV2aWNl",
+            "VHlwZRIbChdERVZJQ0VfVFlQRV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9U",
+            "WVBFX0hPTE9MRU5TMhABEhUKEURFVklDRV9UWVBFX1BIT05FEAISFgoSREVW",
+            "SUNFX1RZUEVfVEFCTEVUEAMSEgoOREVWSUNFX1RZUEVfUEMQBCpiCgxEZXZp",
+            "Y2VTdGF0dXMSHQoZREVWSUNFX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFERF",
+            "VklDRV9TVEFUVVNfT05MSU5FEAESGQoVREVWSUNFX1NUQVRVU19PRkZMSU5F",
+            "EAIqzwEKE0RldmljZUJhdHRlcnlTdGF0dXMSJQohREVWSUNFX0JBVFRFUllf",
+            "U1RBVFVTX1VOU1BFQ0lGSUVEEAASIgoeREVWSUNFX0JBVFRFUllfU1RBVFVT",
+            "X0NIQVJHSU5HEAESJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX0RJU0NIQVJH",
+            "SU5HEAISJgoiREVWSUNFX0JBVFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxAD",
+            "Eh4KGkRFVklDRV9CQVRURVJZX1NUQVRVU19GVUxMEARChwEKCWNvbS5hci52",
+            "MUILRGV2aWNlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
+            "L21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoC",
+            "BUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.DeviceType), typeof(global::Messages.AR.V1.DeviceStatus), typeof(global::Messages.AR.V1.DeviceBatteryStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessage), global::Messages.AR.V1.DeviceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DeviceId", "Status", "BatteryLevel", "BatteryStatus" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessages), global::Messages.AR.V1.DeviceMessages.Parser, new[]{ "Devices" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceMessages), global::Messages.AR.V1.DeviceMessages.Parser, new[]{ "Devices" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.DeviceHeartbeat), global::Messages.AR.V1.DeviceHeartbeat.Parser, new[]{ "DeviceId", "BatteryLevel", "BatteryStatus" }, null, null, null, null)
           }));
     }
     #endregion
@@ -776,6 +780,281 @@ namespace Messages.AR.V1 {
             break;
           case 10: {
             devices_.AddEntriesFrom(ref input, _repeated_devices_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class DeviceHeartbeat : pb::IMessage<DeviceHeartbeat>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DeviceHeartbeat> _parser = new pb::MessageParser<DeviceHeartbeat>(() => new DeviceHeartbeat());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DeviceHeartbeat> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.DeviceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeviceHeartbeat() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeviceHeartbeat(DeviceHeartbeat other) : this() {
+      deviceId_ = other.deviceId_;
+      batteryLevel_ = other.batteryLevel_;
+      batteryStatus_ = other.batteryStatus_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeviceHeartbeat Clone() {
+      return new DeviceHeartbeat(this);
+    }
+
+    /// <summary>Field number for the "device_id" field.</summary>
+    public const int DeviceIdFieldNumber = 1;
+    private string deviceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceId {
+      get { return deviceId_; }
+      set {
+        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "battery_level" field.</summary>
+    public const int BatteryLevelFieldNumber = 2;
+    private int batteryLevel_;
+    /// <summary>
+    /// -1..100
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int BatteryLevel {
+      get { return batteryLevel_; }
+      set {
+        batteryLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battery_status" field.</summary>
+    public const int BatteryStatusFieldNumber = 3;
+    private global::Messages.AR.V1.DeviceBatteryStatus batteryStatus_ = global::Messages.AR.V1.DeviceBatteryStatus.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.DeviceBatteryStatus BatteryStatus {
+      get { return batteryStatus_; }
+      set {
+        batteryStatus_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DeviceHeartbeat);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DeviceHeartbeat other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DeviceId != other.DeviceId) return false;
+      if (BatteryLevel != other.BatteryLevel) return false;
+      if (BatteryStatus != other.BatteryStatus) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
+      if (BatteryLevel != 0) hash ^= BatteryLevel.GetHashCode();
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) hash ^= BatteryStatus.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DeviceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DeviceId);
+      }
+      if (BatteryLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) BatteryStatus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DeviceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DeviceId);
+      }
+      if (BatteryLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) BatteryStatus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DeviceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
+      }
+      if (BatteryLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BatteryLevel);
+      }
+      if (BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BatteryStatus);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DeviceHeartbeat other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DeviceId.Length != 0) {
+        DeviceId = other.DeviceId;
+      }
+      if (other.BatteryLevel != 0) {
+        BatteryLevel = other.BatteryLevel;
+      }
+      if (other.BatteryStatus != global::Messages.AR.V1.DeviceBatteryStatus.Unspecified) {
+        BatteryStatus = other.BatteryStatus;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            DeviceId = input.ReadString();
+            break;
+          }
+          case 16: {
+            BatteryLevel = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            BatteryStatus = (global::Messages.AR.V1.DeviceBatteryStatus) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            DeviceId = input.ReadString();
+            break;
+          }
+          case 16: {
+            BatteryLevel = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            BatteryStatus = (global::Messages.AR.V1.DeviceBatteryStatus) input.ReadEnum();
             break;
           }
         }

@@ -116,6 +116,7 @@
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
 - [ar/v1/device.proto](#ar_v1_device-proto)
+    - [DeviceHeartbeat](#ar-v1-DeviceHeartbeat)
     - [DeviceMessage](#ar-v1-DeviceMessage)
     - [DeviceMessages](#ar-v1-DeviceMessages)
   
@@ -1779,6 +1780,23 @@ Just delete this?
 <p align="right"><a href="#top">Top</a></p>
 
 ## ar/v1/device.proto
+
+
+
+<a name="ar-v1-DeviceHeartbeat"></a>
+
+### DeviceHeartbeat
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device_id | [string](#string) |  |  |
+| battery_level | [int32](#int32) |  | -1..100 |
+| battery_status | [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus) |  |  |
+
+
+
 
 
 

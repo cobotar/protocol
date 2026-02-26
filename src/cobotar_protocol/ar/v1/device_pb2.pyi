@@ -71,3 +71,13 @@ class DeviceMessages(_message.Message):
     DEVICES_FIELD_NUMBER: _ClassVar[int]
     devices: _containers.RepeatedCompositeFieldContainer[DeviceMessage]
     def __init__(self, devices: _Optional[_Iterable[_Union[DeviceMessage, _Mapping]]] = ...) -> None: ...
+
+class DeviceHeartbeat(_message.Message):
+    __slots__ = ("device_id", "battery_level", "battery_status")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    BATTERY_LEVEL_FIELD_NUMBER: _ClassVar[int]
+    BATTERY_STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_id: str
+    battery_level: int
+    battery_status: DeviceBatteryStatus
+    def __init__(self, device_id: _Optional[str] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ...) -> None: ...

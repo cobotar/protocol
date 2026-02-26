@@ -51,3 +51,9 @@ message DeviceMessage {
 message DeviceMessages {
   repeated DeviceMessage devices = 1;
 }
+
+message DeviceHeartbeat {
+  string device_id = 1;
+  int32 battery_level = 2; // -1..100
+  DeviceBatteryStatus battery_status = 3;
+}
