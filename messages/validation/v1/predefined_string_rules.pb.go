@@ -138,10 +138,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x15string.name_component\x12*Name must have between 1 and 64 characters\x1a$this.size() > 0 && this.size() <= 64R\rnameComponent:\xba\x01\n" +
 	"\x12model_id_component\x12\x19.buf.validate.StringRules\x18\x91N \x01(\bBp\xc2Hm\n" +
 	"k\n" +
-	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a)(this == '' || this.startsWith('model-'))R\x10modelIdComponent:\xcb\x01\n" +
-	"\x16ar_config_id_component\x12\x19.buf.validate.StringRules\x18\x92N \x01(\bBz\xc2Hw\n" +
-	"u\n" +
-	"\x1dstring.ar_config_id_component\x12&this does not seem to be a ARConfig id\x1a,(this == '' || this.startsWith('arconfig-'))R\x13arConfigIdComponent:\xc9\x01\n" +
+	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a)(this == '' || this.startsWith('model-'))R\x10modelIdComponent:\xcc\x01\n" +
+	"\x16ar_config_id_component\x12\x19.buf.validate.StringRules\x18\x92N \x01(\bB{\xc2Hx\n" +
+	"v\n" +
+	"\x1dstring.ar_config_id_component\x12&this does not seem to be a ARConfig id\x1a-(this == '' || this.startsWith('ar_config-'))R\x13arConfigIdComponent:\xc9\x01\n" +
 	"\x15property_id_component\x12\x19.buf.validate.StringRules\x18\x93N \x01(\bBy\xc2Hv\n" +
 	"t\n" +
 	"\x1cstring.property_id_component\x12&this does not seem to be a property id\x1a,(this == '' || this.startsWith('property-'))R\x13propertyIdComponent:\xba\x01\n" +

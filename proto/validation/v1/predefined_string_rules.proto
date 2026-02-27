@@ -19,7 +19,7 @@ extend buf.validate.StringRules {
   optional bool ar_config_id_component = 10002 [(buf.validate.predefined).cel = {
     id: "string.ar_config_id_component"
     message: "this does not seem to be a ARConfig id"
-    expression: "(this == '' || this.startsWith('arconfig-'))"
+    expression: "(this == '' || this.startsWith('ar_config-'))"
   }];
 
   optional bool property_id_component = 10003 [(buf.validate.predefined).cel = {

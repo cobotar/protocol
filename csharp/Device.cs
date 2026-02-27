@@ -36,23 +36,24 @@ namespace Messages.AR.V1 {
             "ZXJ5TGV2ZWwSSwoOYmF0dGVyeV9zdGF0dXMYCSABKA4yGi5hci52MS5EZXZp",
             "Y2VCYXR0ZXJ5U3RhdHVzQgi6SAWCAQIQAVINYmF0dGVyeVN0YXR1cyJACg5E",
             "ZXZpY2VNZXNzYWdlcxIuCgdkZXZpY2VzGAEgAygLMhQuYXIudjEuRGV2aWNl",
-            "TWVzc2FnZVIHZGV2aWNlcyKWAQoPRGV2aWNlSGVhcnRiZWF0EhsKCWRldmlj",
-            "ZV9pZBgBIAEoCVIIZGV2aWNlSWQSIwoNYmF0dGVyeV9sZXZlbBgCIAEoBVIM",
-            "YmF0dGVyeUxldmVsEkEKDmJhdHRlcnlfc3RhdHVzGAMgASgOMhouYXIudjEu",
-            "RGV2aWNlQmF0dGVyeVN0YXR1c1INYmF0dGVyeVN0YXR1cyqHAQoKRGV2aWNl",
-            "VHlwZRIbChdERVZJQ0VfVFlQRV9VTlNQRUNJRklFRBAAEhkKFURFVklDRV9U",
-            "WVBFX0hPTE9MRU5TMhABEhUKEURFVklDRV9UWVBFX1BIT05FEAISFgoSREVW",
-            "SUNFX1RZUEVfVEFCTEVUEAMSEgoOREVWSUNFX1RZUEVfUEMQBCpiCgxEZXZp",
-            "Y2VTdGF0dXMSHQoZREVWSUNFX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFERF",
-            "VklDRV9TVEFUVVNfT05MSU5FEAESGQoVREVWSUNFX1NUQVRVU19PRkZMSU5F",
-            "EAIqzwEKE0RldmljZUJhdHRlcnlTdGF0dXMSJQohREVWSUNFX0JBVFRFUllf",
-            "U1RBVFVTX1VOU1BFQ0lGSUVEEAASIgoeREVWSUNFX0JBVFRFUllfU1RBVFVT",
-            "X0NIQVJHSU5HEAESJQohREVWSUNFX0JBVFRFUllfU1RBVFVTX0RJU0NIQVJH",
-            "SU5HEAISJgoiREVWSUNFX0JBVFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxAD",
-            "Eh4KGkRFVklDRV9CQVRURVJZX1NUQVRVU19GVUxMEARChwEKCWNvbS5hci52",
-            "MUILRGV2aWNlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoC",
-            "BUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "TWVzc2FnZVIHZGV2aWNlcyKqAQoPRGV2aWNlSGVhcnRiZWF0EhsKCWRldmlj",
+            "ZV9pZBgBIAEoCVIIZGV2aWNlSWQSNwoNYmF0dGVyeV9sZXZlbBgCIAEoBUIS",
+            "ukgPGg0YZCj///////////8BUgxiYXR0ZXJ5TGV2ZWwSQQoOYmF0dGVyeV9z",
+            "dGF0dXMYAyABKA4yGi5hci52MS5EZXZpY2VCYXR0ZXJ5U3RhdHVzUg1iYXR0",
+            "ZXJ5U3RhdHVzKocBCgpEZXZpY2VUeXBlEhsKF0RFVklDRV9UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASGQoVREVWSUNFX1RZUEVfSE9MT0xFTlMyEAESFQoRREVWSUNF",
+            "X1RZUEVfUEhPTkUQAhIWChJERVZJQ0VfVFlQRV9UQUJMRVQQAxISCg5ERVZJ",
+            "Q0VfVFlQRV9QQxAEKmIKDERldmljZVN0YXR1cxIdChlERVZJQ0VfU1RBVFVT",
+            "X1VOU1BFQ0lGSUVEEAASGAoUREVWSUNFX1NUQVRVU19PTkxJTkUQARIZChVE",
+            "RVZJQ0VfU1RBVFVTX09GRkxJTkUQAirPAQoTRGV2aWNlQmF0dGVyeVN0YXR1",
+            "cxIlCiFERVZJQ0VfQkFUVEVSWV9TVEFUVVNfVU5TUEVDSUZJRUQQABIiCh5E",
+            "RVZJQ0VfQkFUVEVSWV9TVEFUVVNfQ0hBUkdJTkcQARIlCiFERVZJQ0VfQkFU",
+            "VEVSWV9TVEFUVVNfRElTQ0hBUkdJTkcQAhImCiJERVZJQ0VfQkFUVEVSWV9T",
+            "VEFUVVNfTk9UX0NIQVJHSU5HEAMSHgoaREVWSUNFX0JBVFRFUllfU1RBVFVT",
+            "X0ZVTEwQBEKHAQoJY29tLmFyLnYxQgtEZXZpY2VQcm90b1ABWi9naXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
+            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
+            "YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.DeviceType), typeof(global::Messages.AR.V1.DeviceStatus), typeof(global::Messages.AR.V1.DeviceBatteryStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -851,9 +852,6 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "battery_level" field.</summary>
     public const int BatteryLevelFieldNumber = 2;
     private int batteryLevel_;
-    /// <summary>
-    /// -1..100
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int BatteryLevel {

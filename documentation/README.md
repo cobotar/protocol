@@ -341,6 +341,9 @@
 - [service/v1/robot_adapter.proto](#service_v1_robot_adapter-proto)
     - [RobotAdapterInfoMessage](#service-v1-RobotAdapterInfoMessage)
   
+- [service/v1/server.proto](#service_v1_server-proto)
+    - [ServerInfo](#service-v1-ServerInfo)
+  
 - [service/v1/status.proto](#service_v1_status-proto)
     - [ServiceStatus](#service-v1-ServiceStatus)
   
@@ -1792,7 +1795,7 @@ Just delete this?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device_id | [string](#string) |  |  |
-| battery_level | [int32](#int32) |  | -1..100 |
+| battery_level | [int32](#int32) |  |  |
 | battery_status | [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus) |  |  |
 
 
@@ -2299,6 +2302,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | description | [string](#string) |  |  |
 | marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
 | type | [MarkerType](#ar-v1-MarkerType) |  |  |
+| confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
 
 
 
@@ -4498,6 +4502,42 @@ Reassign all sub-tasks to the assignee (if possible)
 | robot_id | [string](#string) |  |  |
 | robot_type | [string](#string) |  | TODO: use type enum? |
 | identifier | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="service_v1_server-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/server.proto
+
+
+
+<a name="service-v1-ServerInfo"></a>
+
+### ServerInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| service | [string](#string) |  | E.g. &#34;backend&#34; |
+| instance_id | [string](#string) |  | random UUID per process start |
+| epoch | [uint64](#uint64) |  | Increments each restart (or derived) |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| reset_reason | [string](#string) |  | e.g. &#34;process_restart&#34;, &#34;db_wiped&#34; |
+| data_wiped | [bool](#bool) |  | If true clients should strongly consider refetching data |
 
 
 

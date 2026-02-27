@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/marker.proto.
  */
 export const file_ar_v1_marker: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIq0BCg1NYXJrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKC21hcmtlcl90ZXh0GAUgASgJQhG6SA5yDBACkgIHcm9iZXJ0YRIsCgR0eXBlGAYgASgOMhEuYXIudjEuTWFya2VyVHlwZUILukgIyAEBggECEAEinwEKDk1hcmtlck1lc3NhZ2VzEowBCgdtYXJrZXJzGAEgAygLMhQuYXIudjEuTWFya2VyTWVzc2FnZUJlukhiugFfChJ1bmlxdWVfbWFya2VyX3RleHQSGm1hcmtlciB0ZXh0IG11c3QgYmUgdW5pcXVlGi10aGlzLm1hcChtYXJrZXIsIG1hcmtlci5tYXJrZXJfdGV4dCkudW5pcXVlKCkqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhcKE01BUktFUl9UWVBFX1FSX0NPREUQAUKHAQoJY29tLmFyLnYxQgtNYXJrZXJQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxIsoBCg1NYXJrZXJNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKC21hcmtlcl90ZXh0GAUgASgJQhG6SA5yDBACkgIHcm9iZXJ0YRIsCgR0eXBlGAYgASgOMhEuYXIudjEuTWFya2VyVHlwZUILukgIyAEBggECEAESGwoTY29uZmlybV9pbnN0YW50aWF0ZRgHIAEoCCKfAQoOTWFya2VyTWVzc2FnZXMSjAEKB21hcmtlcnMYASADKAsyFC5hci52MS5NYXJrZXJNZXNzYWdlQmW6SGK6AV8KEnVuaXF1ZV9tYXJrZXJfdGV4dBIabWFya2VyIHRleHQgbXVzdCBiZSB1bmlxdWUaLXRoaXMubWFwKG1hcmtlciwgbWFya2VyLm1hcmtlcl90ZXh0KS51bmlxdWUoKSpCCgpNYXJrZXJUeXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTTUFSS0VSX1RZUEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01hcmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.MarkerMessage
@@ -49,6 +49,13 @@ export type MarkerMessage = Message<"ar.v1.MarkerMessage"> & {
    * @generated from field: ar.v1.MarkerType type = 6;
    */
   type: MarkerType;
+
+  /**
+   * If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
+   *
+   * @generated from field: bool confirm_instantiate = 7;
+   */
+  confirmInstantiate: boolean;
 };
 
 /**

@@ -26,24 +26,25 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChJhci92MS9tYXJrZXIucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
             "aWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
-            "cnVsZXMucHJvdG8i3AEKDU1hcmtlck1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
+            "cnVsZXMucHJvdG8ijQIKDU1hcmtlck1lc3NhZ2USDgoCaWQYASABKAlSAmlk",
             "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
             "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgtt",
             "YXJrZXJfdGV4dBgFIAEoCUIRukgOcgwQApICB3JvYmVydGFSCm1hcmtlclRl",
             "eHQSMgoEdHlwZRgGIAEoDjIRLmFyLnYxLk1hcmtlclR5cGVCC7pICIIBAhAB",
-            "yAEBUgR0eXBlIqgBCg5NYXJrZXJNZXNzYWdlcxKVAQoHbWFya2VycxgBIAMo",
-            "CzIULmFyLnYxLk1hcmtlck1lc3NhZ2VCZbpIYroBXwoSdW5pcXVlX21hcmtl",
-            "cl90ZXh0EhptYXJrZXIgdGV4dCBtdXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAo",
-            "bWFya2VyLCBtYXJrZXIubWFya2VyX3RleHQpLnVuaXF1ZSgpUgdtYXJrZXJz",
-            "KkIKCk1hcmtlclR5cGUSGwoXTUFSS0VSX1RZUEVfVU5TUEVDSUZJRUQQABIX",
-            "ChNNQVJLRVJfVFlQRV9RUl9DT0RFEAFChwEKCWNvbS5hci52MUILTWFya2Vy",
-            "UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIR",
-            "QXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "yAEBUgR0eXBlEi8KE2NvbmZpcm1faW5zdGFudGlhdGUYByABKAhSEmNvbmZp",
+            "cm1JbnN0YW50aWF0ZSKoAQoOTWFya2VyTWVzc2FnZXMSlQEKB21hcmtlcnMY",
+            "ASADKAsyFC5hci52MS5NYXJrZXJNZXNzYWdlQmW6SGK6AV8KEnVuaXF1ZV9t",
+            "YXJrZXJfdGV4dBIabWFya2VyIHRleHQgbXVzdCBiZSB1bmlxdWUaLXRoaXMu",
+            "bWFwKG1hcmtlciwgbWFya2VyLm1hcmtlcl90ZXh0KS51bmlxdWUoKVIHbWFy",
+            "a2VycypCCgpNYXJrZXJUeXBlEhsKF01BUktFUl9UWVBFX1VOU1BFQ0lGSUVE",
+            "EAASFwoTTUFSS0VSX1RZUEVfUVJfQ09ERRABQocBCgljb20uYXIudjFCC01h",
+            "cmtlclByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxW",
+            "MeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "MarkerText", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessage), global::Messages.AR.V1.MarkerMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "MarkerText", "Type", "ConfirmInstantiate" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MarkerMessages), global::Messages.AR.V1.MarkerMessages.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
@@ -100,6 +101,7 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       markerText_ = other.markerText_;
       type_ = other.type_;
+      confirmInstantiate_ = other.confirmInstantiate_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -184,6 +186,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "confirm_instantiate" field.</summary>
+    public const int ConfirmInstantiateFieldNumber = 7;
+    private bool confirmInstantiate_;
+    /// <summary>
+    /// If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool ConfirmInstantiate {
+      get { return confirmInstantiate_; }
+      set {
+        confirmInstantiate_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -205,6 +222,7 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (MarkerText != other.MarkerText) return false;
       if (Type != other.Type) return false;
+      if (ConfirmInstantiate != other.ConfirmInstantiate) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -218,6 +236,7 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (MarkerText.Length != 0) hash ^= MarkerText.GetHashCode();
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) hash ^= Type.GetHashCode();
+      if (ConfirmInstantiate != false) hash ^= ConfirmInstantiate.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -260,6 +279,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
+      if (ConfirmInstantiate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(ConfirmInstantiate);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -294,6 +317,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
+      if (ConfirmInstantiate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(ConfirmInstantiate);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -321,6 +348,9 @@ namespace Messages.AR.V1 {
       }
       if (Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (ConfirmInstantiate != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -351,6 +381,9 @@ namespace Messages.AR.V1 {
       }
       if (other.Type != global::Messages.AR.V1.MarkerType.Unspecified) {
         Type = other.Type;
+      }
+      if (other.ConfirmInstantiate != false) {
+        ConfirmInstantiate = other.ConfirmInstantiate;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -395,6 +428,10 @@ namespace Messages.AR.V1 {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
             break;
           }
+          case 56: {
+            ConfirmInstantiate = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -436,6 +473,10 @@ namespace Messages.AR.V1 {
           }
           case 48: {
             Type = (global::Messages.AR.V1.MarkerType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            ConfirmInstantiate = input.ReadBool();
             break;
           }
         }

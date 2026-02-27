@@ -70,15 +70,16 @@ func (MarkerType) EnumDescriptor() ([]byte, []int) {
 }
 
 type MarkerMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	MarkerText    string                 `protobuf:"bytes,5,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
-	Type          MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	MarkerText         string                 `protobuf:"bytes,5,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
+	Type               MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
+	ConfirmInstantiate bool                   `protobuf:"varint,7,opt,name=confirm_instantiate,json=confirmInstantiate,proto3" json:"confirm_instantiate,omitempty"` // If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *MarkerMessage) Reset() {
@@ -153,6 +154,13 @@ func (x *MarkerMessage) GetType() MarkerType {
 	return MarkerType_MARKER_TYPE_UNSPECIFIED
 }
 
+func (x *MarkerMessage) GetConfirmInstantiate() bool {
+	if x != nil {
+		return x.ConfirmInstantiate
+	}
+	return false
+}
+
 type MarkerMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Markers       []*MarkerMessage       `protobuf:"bytes,1,rep,name=markers,proto3" json:"markers,omitempty"`
@@ -201,7 +209,7 @@ var File_ar_v1_marker_proto protoreflect.FileDescriptor
 
 const file_ar_v1_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdc\x01\n" +
+	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8d\x02\n" +
 	"\rMarkerMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -209,7 +217,8 @@ const file_ar_v1_marker_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\vmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
 	"markerText\x122\n" +
-	"\x04type\x18\x06 \x01(\x0e2\x11.ar.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xa8\x01\n" +
+	"\x04type\x18\x06 \x01(\x0e2\x11.ar.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
+	"\x13confirm_instantiate\x18\a \x01(\bR\x12confirmInstantiate\"\xa8\x01\n" +
 	"\x0eMarkerMessages\x12\x95\x01\n" +
 	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageBe\xbaHb\xba\x01_\n" +
 	"\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\amarkers*B\n" +

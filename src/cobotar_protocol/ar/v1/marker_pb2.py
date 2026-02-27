@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/marker.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdc\x01\n\rMarkerMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x0bmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\x0c\x10\x02\x92\x02\x07robertaR\nmarkerText\x12\x32\n\x04type\x18\x06 \x01(\x0e\x32\x11.ar.v1.MarkerTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\"\xa8\x01\n\x0eMarkerMessages\x12\x95\x01\n\x07markers\x18\x01 \x03(\x0b\x32\x14.ar.v1.MarkerMessageBe\xbaHb\xba\x01_\n\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\x07markers*B\n\nMarkerType\x12\x1b\n\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MARKER_TYPE_QR_CODE\x10\x01\x42\x87\x01\n\tcom.ar.v1B\x0bMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/marker.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8d\x02\n\rMarkerMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x0bmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\x0c\x10\x02\x92\x02\x07robertaR\nmarkerText\x12\x32\n\x04type\x18\x06 \x01(\x0e\x32\x11.ar.v1.MarkerTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12/\n\x13\x63onfirm_instantiate\x18\x07 \x01(\x08R\x12\x63onfirmInstantiate\"\xa8\x01\n\x0eMarkerMessages\x12\x95\x01\n\x07markers\x18\x01 \x03(\x0b\x32\x14.ar.v1.MarkerMessageBe\xbaHb\xba\x01_\n\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\x07markers*B\n\nMarkerType\x12\x1b\n\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MARKER_TYPE_QR_CODE\x10\x01\x42\x87\x01\n\tcom.ar.v1B\x0bMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,10 +42,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MARKERMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_MARKERMESSAGES'].fields_by_name['markers']._loaded_options = None
   _globals['_MARKERMESSAGES'].fields_by_name['markers']._serialized_options = b'\272Hb\272\001_\n\022unique_marker_text\022\032marker text must be unique\032-this.map(marker, marker.marker_text).unique()'
-  _globals['_MARKERTYPE']._serialized_start=497
-  _globals['_MARKERTYPE']._serialized_end=563
+  _globals['_MARKERTYPE']._serialized_start=546
+  _globals['_MARKERTYPE']._serialized_end=612
   _globals['_MARKERMESSAGE']._serialized_start=104
-  _globals['_MARKERMESSAGE']._serialized_end=324
-  _globals['_MARKERMESSAGES']._serialized_start=327
-  _globals['_MARKERMESSAGES']._serialized_end=495
+  _globals['_MARKERMESSAGE']._serialized_end=373
+  _globals['_MARKERMESSAGES']._serialized_start=376
+  _globals['_MARKERMESSAGES']._serialized_end=544
 # @@protoc_insertion_point(module_scope)

@@ -25,6 +25,7 @@ message MarkerMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
+  bool confirm_instantiate = 7; // If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
 }
 
 message MarkerMessages {

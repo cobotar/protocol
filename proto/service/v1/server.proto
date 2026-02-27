@@ -1,0 +1,18 @@
+syntax = "proto3";
+package service.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Service.V1";
+option go_package = "github.com/cobotar/protocol/messages/service/v1";
+
+message ServerInfo {
+  string service = 1 [(buf.validate.field).required = true]; // E.g. "backend"
+  string instance_id = 2 [(buf.validate.field).string.uuid = true]; // random UUID per process start
+  uint64 epoch = 3; // Increments each restart (or derived)
+  google.protobuf.Timestamp started_at = 4 [(buf.validate.field).timestamp.lt_now = true];
+
+  string reset_reason = 5; // e.g. "process_restart", "db_wiped"
+  bool data_wiped = 6; // If true clients should strongly consider refetching data
+}

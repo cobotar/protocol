@@ -338,7 +338,7 @@ func (x *DeviceMessages) GetDevices() []*DeviceMessage {
 type DeviceHeartbeat struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DeviceId      string                 `protobuf:"bytes,1,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
-	BatteryLevel  int32                  `protobuf:"varint,2,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"` // -1..100
+	BatteryLevel  int32                  `protobuf:"varint,2,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
 	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,3,opt,name=battery_status,json=batteryStatus,proto3,enum=ar.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -411,10 +411,10 @@ const file_ar_v1_device_proto_rawDesc = "" +
 	"\rbattery_level\x18\b \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12K\n" +
 	"\x0ebattery_status\x18\t \x01(\x0e2\x1a.ar.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\"@\n" +
 	"\x0eDeviceMessages\x12.\n" +
-	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices\"\x96\x01\n" +
+	"\adevices\x18\x01 \x03(\v2\x14.ar.v1.DeviceMessageR\adevices\"\xaa\x01\n" +
 	"\x0fDeviceHeartbeat\x12\x1b\n" +
-	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12#\n" +
-	"\rbattery_level\x18\x02 \x01(\x05R\fbatteryLevel\x12A\n" +
+	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x127\n" +
+	"\rbattery_level\x18\x02 \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12A\n" +
 	"\x0ebattery_status\x18\x03 \x01(\x0e2\x1a.ar.v1.DeviceBatteryStatusR\rbatteryStatus*\x87\x01\n" +
 	"\n" +
 	"DeviceType\x12\x1b\n" +

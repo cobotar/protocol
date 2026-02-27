@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/device.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x03\n\rDeviceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.DeviceTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x1b\n\tdevice_id\x18\x06 \x01(\tR\x08\x64\x65viceId\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32\x13.ar.v1.DeviceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x37\n\rbattery_level\x18\x08 \x01(\x05\x42\x12\xbaH\x0f\x1a\r\x18\x64(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\x0c\x62\x61tteryLevel\x12K\n\x0e\x62\x61ttery_status\x18\t \x01(\x0e\x32\x1a.ar.v1.DeviceBatteryStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\"@\n\x0e\x44\x65viceMessages\x12.\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x14.ar.v1.DeviceMessageR\x07\x64\x65vices\"\x96\x01\n\x0f\x44\x65viceHeartbeat\x12\x1b\n\tdevice_id\x18\x01 \x01(\tR\x08\x64\x65viceId\x12#\n\rbattery_level\x18\x02 \x01(\x05R\x0c\x62\x61tteryLevel\x12\x41\n\x0e\x62\x61ttery_status\x18\x03 \x01(\x0e\x32\x1a.ar.v1.DeviceBatteryStatusR\rbatteryStatus*\x87\x01\n\nDeviceType\x12\x1b\n\x17\x44\x45VICE_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15\x44\x45VICE_TYPE_HOLOLENS2\x10\x01\x12\x15\n\x11\x44\x45VICE_TYPE_PHONE\x10\x02\x12\x16\n\x12\x44\x45VICE_TYPE_TABLET\x10\x03\x12\x12\n\x0e\x44\x45VICE_TYPE_PC\x10\x04*b\n\x0c\x44\x65viceStatus\x12\x1d\n\x19\x44\x45VICE_STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14\x44\x45VICE_STATUS_ONLINE\x10\x01\x12\x19\n\x15\x44\x45VICE_STATUS_OFFLINE\x10\x02*\xcf\x01\n\x13\x44\x65viceBatteryStatus\x12%\n!DEVICE_BATTERY_STATUS_UNSPECIFIED\x10\x00\x12\"\n\x1e\x44\x45VICE_BATTERY_STATUS_CHARGING\x10\x01\x12%\n!DEVICE_BATTERY_STATUS_DISCHARGING\x10\x02\x12&\n\"DEVICE_BATTERY_STATUS_NOT_CHARGING\x10\x03\x12\x1e\n\x1a\x44\x45VICE_BATTERY_STATUS_FULL\x10\x04\x42\x87\x01\n\tcom.ar.v1B\x0b\x44\x65viceProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/device.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x03\n\rDeviceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.DeviceTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x1b\n\tdevice_id\x18\x06 \x01(\tR\x08\x64\x65viceId\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32\x13.ar.v1.DeviceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x37\n\rbattery_level\x18\x08 \x01(\x05\x42\x12\xbaH\x0f\x1a\r\x18\x64(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\x0c\x62\x61tteryLevel\x12K\n\x0e\x62\x61ttery_status\x18\t \x01(\x0e\x32\x1a.ar.v1.DeviceBatteryStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\"@\n\x0e\x44\x65viceMessages\x12.\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x14.ar.v1.DeviceMessageR\x07\x64\x65vices\"\xaa\x01\n\x0f\x44\x65viceHeartbeat\x12\x1b\n\tdevice_id\x18\x01 \x01(\tR\x08\x64\x65viceId\x12\x37\n\rbattery_level\x18\x02 \x01(\x05\x42\x12\xbaH\x0f\x1a\r\x18\x64(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\x0c\x62\x61tteryLevel\x12\x41\n\x0e\x62\x61ttery_status\x18\x03 \x01(\x0e\x32\x1a.ar.v1.DeviceBatteryStatusR\rbatteryStatus*\x87\x01\n\nDeviceType\x12\x1b\n\x17\x44\x45VICE_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15\x44\x45VICE_TYPE_HOLOLENS2\x10\x01\x12\x15\n\x11\x44\x45VICE_TYPE_PHONE\x10\x02\x12\x16\n\x12\x44\x45VICE_TYPE_TABLET\x10\x03\x12\x12\n\x0e\x44\x45VICE_TYPE_PC\x10\x04*b\n\x0c\x44\x65viceStatus\x12\x1d\n\x19\x44\x45VICE_STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14\x44\x45VICE_STATUS_ONLINE\x10\x01\x12\x19\n\x15\x44\x45VICE_STATUS_OFFLINE\x10\x02*\xcf\x01\n\x13\x44\x65viceBatteryStatus\x12%\n!DEVICE_BATTERY_STATUS_UNSPECIFIED\x10\x00\x12\"\n\x1e\x44\x45VICE_BATTERY_STATUS_CHARGING\x10\x01\x12%\n!DEVICE_BATTERY_STATUS_DISCHARGING\x10\x02\x12&\n\"DEVICE_BATTERY_STATUS_NOT_CHARGING\x10\x03\x12\x1e\n\x1a\x44\x45VICE_BATTERY_STATUS_FULL\x10\x04\x42\x87\x01\n\tcom.ar.v1B\x0b\x44\x65viceProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,16 +44,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DEVICEMESSAGE'].fields_by_name['battery_level']._serialized_options = b'\272H\017\032\r\030d(\377\377\377\377\377\377\377\377\377\001'
   _globals['_DEVICEMESSAGE'].fields_by_name['battery_status']._loaded_options = None
   _globals['_DEVICEMESSAGE'].fields_by_name['battery_status']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_DEVICETYPE']._serialized_start=712
-  _globals['_DEVICETYPE']._serialized_end=847
-  _globals['_DEVICESTATUS']._serialized_start=849
-  _globals['_DEVICESTATUS']._serialized_end=947
-  _globals['_DEVICEBATTERYSTATUS']._serialized_start=950
-  _globals['_DEVICEBATTERYSTATUS']._serialized_end=1157
+  _globals['_DEVICEHEARTBEAT'].fields_by_name['battery_level']._loaded_options = None
+  _globals['_DEVICEHEARTBEAT'].fields_by_name['battery_level']._serialized_options = b'\272H\017\032\r\030d(\377\377\377\377\377\377\377\377\377\001'
+  _globals['_DEVICETYPE']._serialized_start=732
+  _globals['_DEVICETYPE']._serialized_end=867
+  _globals['_DEVICESTATUS']._serialized_start=869
+  _globals['_DEVICESTATUS']._serialized_end=967
+  _globals['_DEVICEBATTERYSTATUS']._serialized_start=970
+  _globals['_DEVICEBATTERYSTATUS']._serialized_end=1177
   _globals['_DEVICEMESSAGE']._serialized_start=104
   _globals['_DEVICEMESSAGE']._serialized_end=490
   _globals['_DEVICEMESSAGES']._serialized_start=492
   _globals['_DEVICEMESSAGES']._serialized_end=556
   _globals['_DEVICEHEARTBEAT']._serialized_start=559
-  _globals['_DEVICEHEARTBEAT']._serialized_end=709
+  _globals['_DEVICEHEARTBEAT']._serialized_end=729
 # @@protoc_insertion_point(module_scope)

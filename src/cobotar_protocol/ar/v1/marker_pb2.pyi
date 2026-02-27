@@ -17,20 +17,22 @@ MARKER_TYPE_UNSPECIFIED: MarkerType
 MARKER_TYPE_QR_CODE: MarkerType
 
 class MarkerMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "marker_text", "type")
+    __slots__ = ("id", "name", "icon", "description", "marker_text", "type", "confirm_instantiate")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     MARKER_TEXT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    CONFIRM_INSTANTIATE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     marker_text: str
     type: MarkerType
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ...) -> None: ...
+    confirm_instantiate: bool
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., marker_text: _Optional[str] = ..., type: _Optional[_Union[MarkerType, str]] = ..., confirm_instantiate: bool = ...) -> None: ...
 
 class MarkerMessages(_message.Message):
     __slots__ = ("markers",)
