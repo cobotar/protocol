@@ -16,3 +16,11 @@ message ServerInfo {
   string reset_reason = 5; // e.g. "process_restart", "db_wiped"
   bool data_wiped = 6; // If true clients should strongly consider refetching data
 }
+
+message ServerHeartbeat {
+  string service = 1 [(buf.validate.field).required = true]; // e.g. "backend"
+  string server_id = 2 [(buf.validate.field).required = true]; // stable id (hostname/uuid)
+  uint64 epoch = 3; // increments on restart (same concept as your restart storm protection)
+  int64 unix_ms = 4; // server time
+  string ip = 5; // ip of server
+}

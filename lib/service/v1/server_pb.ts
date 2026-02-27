@@ -13,7 +13,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file service/v1/server.proto.
  */
 export const file_service_v1_server: GenFile = /*@__PURE__*/
-  fileDesc("ChdzZXJ2aWNlL3YxL3NlcnZlci5wcm90bxIKc2VydmljZS52MSK3AQoKU2VydmVySW5mbxIXCgdzZXJ2aWNlGAEgASgJQga6SAPIAQESHQoLaW5zdGFuY2VfaWQYAiABKAlCCLpIBXIDsAEBEg0KBWVwb2NoGAMgASgEEjgKCnN0YXJ0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgi6SAWyAQI4ARIUCgxyZXNldF9yZWFzb24YBSABKAkSEgoKZGF0YV93aXBlZBgGIAEoCEKqAQoOY29tLnNlcnZpY2UudjFCC1NlcnZlclByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9zZXJ2aWNlL3YxO3NlcnZpY2V2MaICA1NYWKoCE01lc3NhZ2VzLlNlcnZpY2UuVjHKAgpTZXJ2aWNlXFYx4gIWU2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("ChdzZXJ2aWNlL3YxL3NlcnZlci5wcm90bxIKc2VydmljZS52MSK3AQoKU2VydmVySW5mbxIXCgdzZXJ2aWNlGAEgASgJQga6SAPIAQESHQoLaW5zdGFuY2VfaWQYAiABKAlCCLpIBXIDsAEBEg0KBWVwb2NoGAMgASgEEjgKCnN0YXJ0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgi6SAWyAQI4ARIUCgxyZXNldF9yZWFzb24YBSABKAkSEgoKZGF0YV93aXBlZBgGIAEoCCJxCg9TZXJ2ZXJIZWFydGJlYXQSFwoHc2VydmljZRgBIAEoCUIGukgDyAEBEhkKCXNlcnZlcl9pZBgCIAEoCUIGukgDyAEBEg0KBWVwb2NoGAMgASgEEg8KB3VuaXhfbXMYBCABKAMSCgoCaXAYBSABKAlCqgEKDmNvbS5zZXJ2aWNlLnYxQgtTZXJ2ZXJQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvc2VydmljZS92MTtzZXJ2aWNldjGiAgNTWFiqAhNNZXNzYWdlcy5TZXJ2aWNlLlYxygIKU2VydmljZVxWMeICFlNlcnZpY2VcVjFcR1BCTWV0YWRhdGHqAgtTZXJ2aWNlOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message service.v1.ServerInfo
@@ -66,4 +66,51 @@ export type ServerInfo = Message<"service.v1.ServerInfo"> & {
  */
 export const ServerInfoSchema: GenMessage<ServerInfo> = /*@__PURE__*/
   messageDesc(file_service_v1_server, 0);
+
+/**
+ * @generated from message service.v1.ServerHeartbeat
+ */
+export type ServerHeartbeat = Message<"service.v1.ServerHeartbeat"> & {
+  /**
+   * e.g. "backend"
+   *
+   * @generated from field: string service = 1;
+   */
+  service: string;
+
+  /**
+   * stable id (hostname/uuid)
+   *
+   * @generated from field: string server_id = 2;
+   */
+  serverId: string;
+
+  /**
+   * increments on restart (same concept as your restart storm protection)
+   *
+   * @generated from field: uint64 epoch = 3;
+   */
+  epoch: bigint;
+
+  /**
+   * server time
+   *
+   * @generated from field: int64 unix_ms = 4;
+   */
+  unixMs: bigint;
+
+  /**
+   * ip of server
+   *
+   * @generated from field: string ip = 5;
+   */
+  ip: string;
+};
+
+/**
+ * Describes the message service.v1.ServerHeartbeat.
+ * Use `create(ServerHeartbeatSchema)` to create a new message.
+ */
+export const ServerHeartbeatSchema: GenMessage<ServerHeartbeat> = /*@__PURE__*/
+  messageDesc(file_service_v1_server, 1);
 

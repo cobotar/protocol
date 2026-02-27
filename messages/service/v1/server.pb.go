@@ -107,6 +107,82 @@ func (x *ServerInfo) GetDataWiped() bool {
 	return false
 }
 
+type ServerHeartbeat struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Service       string                 `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`                   // e.g. "backend"
+	ServerId      string                 `protobuf:"bytes,2,opt,name=server_id,json=serverId,proto3" json:"server_id,omitempty"` // stable id (hostname/uuid)
+	Epoch         uint64                 `protobuf:"varint,3,opt,name=epoch,proto3" json:"epoch,omitempty"`                      // increments on restart (same concept as your restart storm protection)
+	UnixMs        int64                  `protobuf:"varint,4,opt,name=unix_ms,json=unixMs,proto3" json:"unix_ms,omitempty"`      // server time
+	Ip            string                 `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`                             // ip of server
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ServerHeartbeat) Reset() {
+	*x = ServerHeartbeat{}
+	mi := &file_service_v1_server_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ServerHeartbeat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ServerHeartbeat) ProtoMessage() {}
+
+func (x *ServerHeartbeat) ProtoReflect() protoreflect.Message {
+	mi := &file_service_v1_server_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ServerHeartbeat.ProtoReflect.Descriptor instead.
+func (*ServerHeartbeat) Descriptor() ([]byte, []int) {
+	return file_service_v1_server_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ServerHeartbeat) GetService() string {
+	if x != nil {
+		return x.Service
+	}
+	return ""
+}
+
+func (x *ServerHeartbeat) GetServerId() string {
+	if x != nil {
+		return x.ServerId
+	}
+	return ""
+}
+
+func (x *ServerHeartbeat) GetEpoch() uint64 {
+	if x != nil {
+		return x.Epoch
+	}
+	return 0
+}
+
+func (x *ServerHeartbeat) GetUnixMs() int64 {
+	if x != nil {
+		return x.UnixMs
+	}
+	return 0
+}
+
+func (x *ServerHeartbeat) GetIp() string {
+	if x != nil {
+		return x.Ip
+	}
+	return ""
+}
+
 var File_service_v1_server_proto protoreflect.FileDescriptor
 
 const file_service_v1_server_proto_rawDesc = "" +
@@ -123,7 +199,13 @@ const file_service_v1_server_proto_rawDesc = "" +
 	"started_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\b\xbaH\x05\xb2\x01\x028\x01R\tstartedAt\x12!\n" +
 	"\freset_reason\x18\x05 \x01(\tR\vresetReason\x12\x1d\n" +
 	"\n" +
-	"data_wiped\x18\x06 \x01(\bR\tdataWipedB\xaa\x01\n" +
+	"data_wiped\x18\x06 \x01(\bR\tdataWiped\"\x97\x01\n" +
+	"\x0fServerHeartbeat\x12 \n" +
+	"\aservice\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\aservice\x12#\n" +
+	"\tserver_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\bserverId\x12\x14\n" +
+	"\x05epoch\x18\x03 \x01(\x04R\x05epoch\x12\x17\n" +
+	"\aunix_ms\x18\x04 \x01(\x03R\x06unixMs\x12\x0e\n" +
+	"\x02ip\x18\x05 \x01(\tR\x02ipB\xaa\x01\n" +
 	"\x0ecom.service.v1B\vServerProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
@@ -139,13 +221,14 @@ func file_service_v1_server_proto_rawDescGZIP() []byte {
 	return file_service_v1_server_proto_rawDescData
 }
 
-var file_service_v1_server_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_service_v1_server_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_service_v1_server_proto_goTypes = []any{
 	(*ServerInfo)(nil),            // 0: service.v1.ServerInfo
-	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
+	(*ServerHeartbeat)(nil),       // 1: service.v1.ServerHeartbeat
+	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 }
 var file_service_v1_server_proto_depIdxs = []int32{
-	1, // 0: service.v1.ServerInfo.started_at:type_name -> google.protobuf.Timestamp
+	2, // 0: service.v1.ServerInfo.started_at:type_name -> google.protobuf.Timestamp
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -164,7 +247,7 @@ func file_service_v1_server_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_v1_server_proto_rawDesc), len(file_service_v1_server_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

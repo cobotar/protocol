@@ -342,6 +342,7 @@
     - [RobotAdapterInfoMessage](#service-v1-RobotAdapterInfoMessage)
   
 - [service/v1/server.proto](#service_v1_server-proto)
+    - [ServerHeartbeat](#service-v1-ServerHeartbeat)
     - [ServerInfo](#service-v1-ServerInfo)
   
 - [service/v1/status.proto](#service_v1_status-proto)
@@ -4521,6 +4522,25 @@ Reassign all sub-tasks to the assignee (if possible)
 <p align="right"><a href="#top">Top</a></p>
 
 ## service/v1/server.proto
+
+
+
+<a name="service-v1-ServerHeartbeat"></a>
+
+### ServerHeartbeat
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| service | [string](#string) |  | e.g. &#34;backend&#34; |
+| server_id | [string](#string) |  | stable id (hostname/uuid) |
+| epoch | [uint64](#uint64) |  | increments on restart (same concept as your restart storm protection) |
+| unix_ms | [int64](#int64) |  | server time |
+| ip | [string](#string) |  | ip of server |
+
+
+
 
 
 

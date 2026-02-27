@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17service/v1/server.proto\x12\nservice.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf6\x01\n\nServerInfo\x12 \n\x07service\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x07service\x12)\n\x0binstance_id\x18\x02 \x01(\tB\x08\xbaH\x05r\x03\xb0\x01\x01R\ninstanceId\x12\x14\n\x05\x65poch\x18\x03 \x01(\x04R\x05\x65poch\x12\x43\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xbaH\x05\xb2\x01\x02\x38\x01R\tstartedAt\x12!\n\x0creset_reason\x18\x05 \x01(\tR\x0bresetReason\x12\x1d\n\ndata_wiped\x18\x06 \x01(\x08R\tdataWipedB\xaa\x01\n\x0e\x63om.service.v1B\x0bServerProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\nService\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\x0bService::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17service/v1/server.proto\x12\nservice.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf6\x01\n\nServerInfo\x12 \n\x07service\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x07service\x12)\n\x0binstance_id\x18\x02 \x01(\tB\x08\xbaH\x05r\x03\xb0\x01\x01R\ninstanceId\x12\x14\n\x05\x65poch\x18\x03 \x01(\x04R\x05\x65poch\x12\x43\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xbaH\x05\xb2\x01\x02\x38\x01R\tstartedAt\x12!\n\x0creset_reason\x18\x05 \x01(\tR\x0bresetReason\x12\x1d\n\ndata_wiped\x18\x06 \x01(\x08R\tdataWiped\"\x97\x01\n\x0fServerHeartbeat\x12 \n\x07service\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x07service\x12#\n\tserver_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x08serverId\x12\x14\n\x05\x65poch\x18\x03 \x01(\x04R\x05\x65poch\x12\x17\n\x07unix_ms\x18\x04 \x01(\x03R\x06unixMs\x12\x0e\n\x02ip\x18\x05 \x01(\tR\x02ipB\xaa\x01\n\x0e\x63om.service.v1B\x0bServerProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\nService\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\x0bService::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,6 +40,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVERINFO'].fields_by_name['instance_id']._serialized_options = b'\272H\005r\003\260\001\001'
   _globals['_SERVERINFO'].fields_by_name['started_at']._loaded_options = None
   _globals['_SERVERINFO'].fields_by_name['started_at']._serialized_options = b'\272H\005\262\001\0028\001'
+  _globals['_SERVERHEARTBEAT'].fields_by_name['service']._loaded_options = None
+  _globals['_SERVERHEARTBEAT'].fields_by_name['service']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_SERVERHEARTBEAT'].fields_by_name['server_id']._loaded_options = None
+  _globals['_SERVERHEARTBEAT'].fields_by_name['server_id']._serialized_options = b'\272H\003\310\001\001'
   _globals['_SERVERINFO']._serialized_start=102
   _globals['_SERVERINFO']._serialized_end=348
+  _globals['_SERVERHEARTBEAT']._serialized_start=351
+  _globals['_SERVERHEARTBEAT']._serialized_end=502
 # @@protoc_insertion_point(module_scope)

@@ -31,15 +31,20 @@ namespace Messages.Service.V1 {
             "Cmluc3RhbmNlSWQSFAoFZXBvY2gYAyABKARSBWVwb2NoEkMKCnN0YXJ0ZWRf",
             "YXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgi6SAWyAQI4",
             "AVIJc3RhcnRlZEF0EiEKDHJlc2V0X3JlYXNvbhgFIAEoCVILcmVzZXRSZWFz",
-            "b24SHQoKZGF0YV93aXBlZBgGIAEoCFIJZGF0YVdpcGVkQqoBCg5jb20uc2Vy",
-            "dmljZS52MUILU2VydmVyUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgIT",
-            "TWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYx",
-            "XEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw=="));
+            "b24SHQoKZGF0YV93aXBlZBgGIAEoCFIJZGF0YVdpcGVkIpcBCg9TZXJ2ZXJI",
+            "ZWFydGJlYXQSIAoHc2VydmljZRgBIAEoCUIGukgDyAEBUgdzZXJ2aWNlEiMK",
+            "CXNlcnZlcl9pZBgCIAEoCUIGukgDyAEBUghzZXJ2ZXJJZBIUCgVlcG9jaBgD",
+            "IAEoBFIFZXBvY2gSFwoHdW5peF9tcxgEIAEoA1IGdW5peE1zEg4KAmlwGAUg",
+            "ASgJUgJpcEKqAQoOY29tLnNlcnZpY2UudjFCC1NlcnZlclByb3RvUAFaOWdp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9zZXJ2aWNlL3Yx",
+            "O3NlcnZpY2V2MaICA1NYWKoCE01lc3NhZ2VzLlNlcnZpY2UuVjHKAgpTZXJ2",
+            "aWNlXFYx4gIWU2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.ServerInfo), global::Messages.Service.V1.ServerInfo.Parser, new[]{ "Service", "InstanceId", "Epoch", "StartedAt", "ResetReason", "DataWiped" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.ServerInfo), global::Messages.Service.V1.ServerInfo.Parser, new[]{ "Service", "InstanceId", "Epoch", "StartedAt", "ResetReason", "DataWiped" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.ServerHeartbeat), global::Messages.Service.V1.ServerHeartbeat.Parser, new[]{ "Service", "ServerId", "Epoch", "UnixMs", "Ip" }, null, null, null, null)
           }));
     }
     #endregion
@@ -444,6 +449,367 @@ namespace Messages.Service.V1 {
           }
           case 48: {
             DataWiped = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ServerHeartbeat : pb::IMessage<ServerHeartbeat>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ServerHeartbeat> _parser = new pb::MessageParser<ServerHeartbeat>(() => new ServerHeartbeat());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ServerHeartbeat> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Service.V1.ServerReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerHeartbeat() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerHeartbeat(ServerHeartbeat other) : this() {
+      service_ = other.service_;
+      serverId_ = other.serverId_;
+      epoch_ = other.epoch_;
+      unixMs_ = other.unixMs_;
+      ip_ = other.ip_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerHeartbeat Clone() {
+      return new ServerHeartbeat(this);
+    }
+
+    /// <summary>Field number for the "service" field.</summary>
+    public const int ServiceFieldNumber = 1;
+    private string service_ = "";
+    /// <summary>
+    /// e.g. "backend"
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Service {
+      get { return service_; }
+      set {
+        service_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "server_id" field.</summary>
+    public const int ServerIdFieldNumber = 2;
+    private string serverId_ = "";
+    /// <summary>
+    /// stable id (hostname/uuid)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ServerId {
+      get { return serverId_; }
+      set {
+        serverId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "epoch" field.</summary>
+    public const int EpochFieldNumber = 3;
+    private ulong epoch_;
+    /// <summary>
+    /// increments on restart (same concept as your restart storm protection)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Epoch {
+      get { return epoch_; }
+      set {
+        epoch_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unix_ms" field.</summary>
+    public const int UnixMsFieldNumber = 4;
+    private long unixMs_;
+    /// <summary>
+    /// server time
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long UnixMs {
+      get { return unixMs_; }
+      set {
+        unixMs_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ip" field.</summary>
+    public const int IpFieldNumber = 5;
+    private string ip_ = "";
+    /// <summary>
+    /// ip of server
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Ip {
+      get { return ip_; }
+      set {
+        ip_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ServerHeartbeat);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ServerHeartbeat other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Service != other.Service) return false;
+      if (ServerId != other.ServerId) return false;
+      if (Epoch != other.Epoch) return false;
+      if (UnixMs != other.UnixMs) return false;
+      if (Ip != other.Ip) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Service.Length != 0) hash ^= Service.GetHashCode();
+      if (ServerId.Length != 0) hash ^= ServerId.GetHashCode();
+      if (Epoch != 0UL) hash ^= Epoch.GetHashCode();
+      if (UnixMs != 0L) hash ^= UnixMs.GetHashCode();
+      if (Ip.Length != 0) hash ^= Ip.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Service.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Service);
+      }
+      if (ServerId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ServerId);
+      }
+      if (Epoch != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Epoch);
+      }
+      if (UnixMs != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(UnixMs);
+      }
+      if (Ip.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Ip);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Service.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Service);
+      }
+      if (ServerId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ServerId);
+      }
+      if (Epoch != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Epoch);
+      }
+      if (UnixMs != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(UnixMs);
+      }
+      if (Ip.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Ip);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Service.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Service);
+      }
+      if (ServerId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerId);
+      }
+      if (Epoch != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Epoch);
+      }
+      if (UnixMs != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnixMs);
+      }
+      if (Ip.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ip);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ServerHeartbeat other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Service.Length != 0) {
+        Service = other.Service;
+      }
+      if (other.ServerId.Length != 0) {
+        ServerId = other.ServerId;
+      }
+      if (other.Epoch != 0UL) {
+        Epoch = other.Epoch;
+      }
+      if (other.UnixMs != 0L) {
+        UnixMs = other.UnixMs;
+      }
+      if (other.Ip.Length != 0) {
+        Ip = other.Ip;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Service = input.ReadString();
+            break;
+          }
+          case 18: {
+            ServerId = input.ReadString();
+            break;
+          }
+          case 24: {
+            Epoch = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            UnixMs = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            Ip = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Service = input.ReadString();
+            break;
+          }
+          case 18: {
+            ServerId = input.ReadString();
+            break;
+          }
+          case 24: {
+            Epoch = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            UnixMs = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            Ip = input.ReadString();
             break;
           }
         }
