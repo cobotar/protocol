@@ -1,0 +1,18 @@
+syntax = "proto3";
+package plm.v1;
+
+option csharp_namespace = "Messages.Plm.V1";
+option go_package = "github.com/cobotar/protocol/messages/plm/v1";
+
+enum FixtureType {
+  FIXTURE_TYPE_UNSPECIFIED = 0;
+}
+
+message FixtureMessage {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  FixtureType type = 5;
+  repeated string accepted_part_ids = 6;
+}

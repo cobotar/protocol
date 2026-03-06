@@ -23,15 +23,14 @@ const (
 )
 
 type StoredProcessMessage struct {
-	state          protoimpl.MessageState   `protogen:"open.v1"`
-	Id             string                   `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	Name           string                   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Description    string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type           ProcessType              `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
-	Frame          *v1.LocalizedPose        `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceId string                   `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
-	Sequences      []*StoredSequenceMessage `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks          []*TaskMessage           `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"` // TODO: make 'interchanceable', such that multiple variants can be selected
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type           ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
+	FixtureOffset  *v1.Pose               `protobuf:"bytes,6,opt,name=fixture_offset,json=fixtureOffset,proto3" json:"fixture_offset,omitempty"`
+	RootSequenceId string                 `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -80,6 +79,13 @@ func (x *StoredProcessMessage) GetName() string {
 	return ""
 }
 
+func (x *StoredProcessMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *StoredProcessMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -94,9 +100,9 @@ func (x *StoredProcessMessage) GetType() ProcessType {
 	return ProcessType_PROCESS_TYPE_UNSPECIFIED
 }
 
-func (x *StoredProcessMessage) GetFrame() *v1.LocalizedPose {
+func (x *StoredProcessMessage) GetFixtureOffset() *v1.Pose {
 	if x != nil {
-		return x.Frame
+		return x.FixtureOffset
 	}
 	return nil
 }
@@ -106,20 +112,6 @@ func (x *StoredProcessMessage) GetRootSequenceId() string {
 		return x.RootSequenceId
 	}
 	return ""
-}
-
-func (x *StoredProcessMessage) GetSequences() []*StoredSequenceMessage {
-	if x != nil {
-		return x.Sequences
-	}
-	return nil
-}
-
-func (x *StoredProcessMessage) GetTasks() []*TaskMessage {
-	if x != nil {
-		return x.Tasks
-	}
-	return nil
 }
 
 type StoredProcessMessages struct {
@@ -168,7 +160,8 @@ func (x *StoredProcessMessages) GetProcesses() []*StoredProcessMessage {
 
 type NewProcessMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -212,6 +205,13 @@ func (x *NewProcessMessage) GetName() string {
 	return ""
 }
 
+func (x *NewProcessMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *NewProcessMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -228,11 +228,12 @@ func (x *NewProcessMessage) GetType() ProcessType {
 
 type UpdateProcessMessage struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Id             string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	Name           string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type           ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
-	Frame          *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	FixtureOffset  *v1.Pose               `protobuf:"bytes,6,opt,name=fixture_offset,json=fixtureOffset,proto3" json:"fixture_offset,omitempty"`
 	RootSequenceId string                 `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -282,6 +283,13 @@ func (x *UpdateProcessMessage) GetName() string {
 	return ""
 }
 
+func (x *UpdateProcessMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *UpdateProcessMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -296,9 +304,9 @@ func (x *UpdateProcessMessage) GetType() ProcessType {
 	return ProcessType_PROCESS_TYPE_UNSPECIFIED
 }
 
-func (x *UpdateProcessMessage) GetFrame() *v1.LocalizedPose {
+func (x *UpdateProcessMessage) GetFixtureOffset() *v1.Pose {
 	if x != nil {
-		return x.Frame
+		return x.FixtureOffset
 	}
 	return nil
 }
@@ -314,28 +322,29 @@ var File_plm_v1_process_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\x1a\x1fplm/v1/sequence_authoring.proto\x1a\x11plm/v1/task.proto\"\xc9\x02\n" +
+	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\"\xfd\x01\n" +
 	"\x14StoredProcessMessage\x12\x0e\n" +
-	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
-	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\x12;\n" +
-	"\tsequences\x18\b \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\x12)\n" +
-	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\"S\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x128\n" +
+	"\x0efixture_offset\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n" +
+	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\"S\n" +
 	"\x15StoredProcessMessages\x12:\n" +
-	"\tprocesses\x18\x01 \x03(\v2\x1c.plm.v1.StoredProcessMessageR\tprocesses\"r\n" +
+	"\tprocesses\x18\x01 \x03(\v2\x1c.plm.v1.StoredProcessMessageR\tprocesses\"\x86\x01\n" +
 	"\x11NewProcessMessage\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\"\xe1\x01\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\"\xfd\x01\n" +
 	"\x14UpdateProcessMessage\x12\x0e\n" +
-	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x128\n" +
+	"\x0efixture_offset\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n" +
 	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceIdB\x98\x01\n" +
 	"\n" +
 	"com.plm.v1B\x15ProcessAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
@@ -359,24 +368,20 @@ var file_plm_v1_process_authoring_proto_goTypes = []any{
 	(*NewProcessMessage)(nil),     // 2: plm.v1.NewProcessMessage
 	(*UpdateProcessMessage)(nil),  // 3: plm.v1.UpdateProcessMessage
 	(ProcessType)(0),              // 4: plm.v1.ProcessType
-	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
-	(*StoredSequenceMessage)(nil), // 6: plm.v1.StoredSequenceMessage
-	(*TaskMessage)(nil),           // 7: plm.v1.TaskMessage
+	(*v1.Pose)(nil),               // 5: geometry.v1.Pose
 }
 var file_plm_v1_process_authoring_proto_depIdxs = []int32{
 	4, // 0: plm.v1.StoredProcessMessage.type:type_name -> plm.v1.ProcessType
-	5, // 1: plm.v1.StoredProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
-	6, // 2: plm.v1.StoredProcessMessage.sequences:type_name -> plm.v1.StoredSequenceMessage
-	7, // 3: plm.v1.StoredProcessMessage.tasks:type_name -> plm.v1.TaskMessage
-	0, // 4: plm.v1.StoredProcessMessages.processes:type_name -> plm.v1.StoredProcessMessage
-	4, // 5: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
-	4, // 6: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
-	5, // 7: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	5, // 1: plm.v1.StoredProcessMessage.fixture_offset:type_name -> geometry.v1.Pose
+	0, // 2: plm.v1.StoredProcessMessages.processes:type_name -> plm.v1.StoredProcessMessage
+	4, // 3: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
+	4, // 4: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
+	5, // 5: plm.v1.UpdateProcessMessage.fixture_offset:type_name -> geometry.v1.Pose
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_process_authoring_proto_init() }
@@ -385,8 +390,6 @@ func file_plm_v1_process_authoring_proto_init() {
 		return
 	}
 	file_plm_v1_process_proto_init()
-	file_plm_v1_sequence_authoring_proto_init()
-	file_plm_v1_task_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

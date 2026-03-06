@@ -4,21 +4,17 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import type { Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { ProcessType } from "./process_pb.ts";
 import { file_plm_v1_process } from "./process_pb.ts";
-import type { StoredSequenceMessage } from "./sequence_authoring_pb.ts";
-import { file_plm_v1_sequence_authoring } from "./sequence_authoring_pb.ts";
-import type { TaskMessage } from "./task_pb.ts";
-import { file_plm_v1_task } from "./task_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file plm/v1/process_authoring.proto.
  */
 export const file_plm_v1_process_authoring: GenFile = /*@__PURE__*/
-  fileDesc("Ch5wbG0vdjEvcHJvY2Vzc19hdXRob3JpbmcucHJvdG8SBnBsbS52MSKDAgoUU3RvcmVkUHJvY2Vzc01lc3NhZ2USCgoCaWQYAiABKAkSDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIYChByb290X3NlcXVlbmNlX2lkGAcgASgJEjAKCXNlcXVlbmNlcxgIIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1ZW5jZU1lc3NhZ2USIgoFdGFza3MYCSADKAsyEy5wbG0udjEuVGFza01lc3NhZ2UiSAoVU3RvcmVkUHJvY2Vzc01lc3NhZ2VzEi8KCXByb2Nlc3NlcxgBIAMoCzIcLnBsbS52MS5TdG9yZWRQcm9jZXNzTWVzc2FnZSJZChFOZXdQcm9jZXNzTWVzc2FnZRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUirQEKFFVwZGF0ZVByb2Nlc3NNZXNzYWdlEgoKAmlkGAIgASgJEgwKBG5hbWUYAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USGAoQcm9vdF9zZXF1ZW5jZV9pZBgHIAEoCUKYAQoKY29tLnBsbS52MUIVUHJvY2Vzc0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_plm_v1_process, file_plm_v1_sequence_authoring, file_plm_v1_task]);
+  fileDesc("Ch5wbG0vdjEvcHJvY2Vzc19hdXRob3JpbmcucHJvdG8SBnBsbS52MSK7AQoUU3RvcmVkUHJvY2Vzc01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUSKQoOZml4dHVyZV9vZmZzZXQYBiABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhgKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAkiSAoVU3RvcmVkUHJvY2Vzc01lc3NhZ2VzEi8KCXByb2Nlc3NlcxgBIAMoCzIcLnBsbS52MS5TdG9yZWRQcm9jZXNzTWVzc2FnZSJnChFOZXdQcm9jZXNzTWVzc2FnZRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZSK7AQoUVXBkYXRlUHJvY2Vzc01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUSKQoOZml4dHVyZV9vZmZzZXQYBiABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhgKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAlCmAEKCmNvbS5wbG0udjFCFVByb2Nlc3NBdXRob3JpbmdQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose, file_plm_v1_process]);
 
 /**
  * TODO: rename to recipe?
@@ -27,14 +23,19 @@ export const file_plm_v1_process_authoring: GenFile = /*@__PURE__*/
  */
 export type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
   /**
-   * @generated from field: string id = 2;
+   * @generated from field: string id = 1;
    */
   id: string;
 
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string name = 2;
    */
   name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
 
   /**
    * @generated from field: string description = 4;
@@ -47,26 +48,14 @@ export type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
   type: ProcessType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   * @generated from field: geometry.v1.Pose fixture_offset = 6;
    */
-  frame?: LocalizedPose;
+  fixtureOffset?: Pose;
 
   /**
    * @generated from field: string root_sequence_id = 7;
    */
   rootSequenceId: string;
-
-  /**
-   * @generated from field: repeated plm.v1.StoredSequenceMessage sequences = 8;
-   */
-  sequences: StoredSequenceMessage[];
-
-  /**
-   * TODO: make 'interchanceable', such that multiple variants can be selected
-   *
-   * @generated from field: repeated plm.v1.TaskMessage tasks = 9;
-   */
-  tasks: TaskMessage[];
 };
 
 /**
@@ -98,9 +87,14 @@ export const StoredProcessMessagesSchema: GenMessage<StoredProcessMessages> = /*
  */
 export type NewProcessMessage = Message<"plm.v1.NewProcessMessage"> & {
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string name = 2;
    */
   name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
 
   /**
    * @generated from field: string description = 4;
@@ -125,14 +119,19 @@ export const NewProcessMessageSchema: GenMessage<NewProcessMessage> = /*@__PURE_
  */
 export type UpdateProcessMessage = Message<"plm.v1.UpdateProcessMessage"> & {
   /**
-   * @generated from field: string id = 2;
+   * @generated from field: string id = 1;
    */
   id: string;
 
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string name = 2;
    */
   name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
 
   /**
    * @generated from field: string description = 4;
@@ -145,9 +144,9 @@ export type UpdateProcessMessage = Message<"plm.v1.UpdateProcessMessage"> & {
   type: ProcessType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   * @generated from field: geometry.v1.Pose fixture_offset = 6;
    */
-  frame?: LocalizedPose;
+  fixtureOffset?: Pose;
 
   /**
    * @generated from field: string root_sequence_id = 7;

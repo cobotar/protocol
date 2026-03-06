@@ -192,6 +192,11 @@
     - [Capabilities](#plm-v1-Capabilities)
     - [Capability](#plm-v1-Capability)
   
+- [plm/v1/fixture.proto](#plm_v1_fixture-proto)
+    - [FixtureMessage](#plm-v1-FixtureMessage)
+  
+    - [FixtureType](#plm-v1-FixtureType)
+  
 - [plm/v1/line.proto](#plm_v1_line-proto)
     - [LineMessage](#plm-v1-LineMessage)
   
@@ -235,12 +240,6 @@
 - [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
     - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
-- [plm/v1/sequence_authoring.proto](#plm_v1_sequence_authoring-proto)
-    - [NewSequenceMessage](#plm-v1-NewSequenceMessage)
-    - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
-    - [StoredSequenceMessages](#plm-v1-StoredSequenceMessages)
-    - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
-  
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
     - [NewProcessMessage](#plm-v1-NewProcessMessage)
     - [StoredProcessMessage](#plm-v1-StoredProcessMessage)
@@ -254,6 +253,12 @@
   
 - [plm/v1/requests.proto](#plm_v1_requests-proto)
     - [ProcessAtLocationMessage](#plm-v1-ProcessAtLocationMessage)
+  
+- [plm/v1/sequence_authoring.proto](#plm_v1_sequence_authoring-proto)
+    - [NewSequenceMessage](#plm-v1-NewSequenceMessage)
+    - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
+    - [StoredSequenceMessages](#plm-v1-StoredSequenceMessages)
+    - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
   
 - [plm/v1/sequence_complete.proto](#plm_v1_sequence_complete-proto)
     - [SequenceBulkCompleteMessage](#plm-v1-SequenceBulkCompleteMessage)
@@ -2712,6 +2717,53 @@ TODO: remove to PLM
 
 
 
+<a name="plm_v1_fixture-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/fixture.proto
+
+
+
+<a name="plm-v1-FixtureMessage"></a>
+
+### FixtureMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FixtureType](#plm-v1-FixtureType) |  |  |
+| accepted_part_ids | [string](#string) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="plm-v1-FixtureType"></a>
+
+### FixtureType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| FIXTURE_TYPE_UNSPECIFIED | 0 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_line-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3251,100 +3303,6 @@ Update published when the state of a process have changed
 
 
 
-<a name="plm_v1_sequence_authoring-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/sequence_authoring.proto
-
-
-
-<a name="plm-v1-NewSequenceMessage"></a>
-
-### NewSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| parent_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredSequenceMessage"></a>
-
-### StoredSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| parent_id | [string](#string) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredSequenceMessages"></a>
-
-### StoredSequenceMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-UpdateSequenceMessage"></a>
-
-### UpdateSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| parent_id | [string](#string) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="plm_v1_process_authoring-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3361,6 +3319,7 @@ Update published when the state of a process have changed
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
 
@@ -3379,12 +3338,11 @@ TODO: rename to recipe?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| fixture_offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | root_sequence_id | [string](#string) |  |  |
-| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
-| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated | TODO: make &#39;interchanceable&#39;, such that multiple variants can be selected |
 
 
 
@@ -3416,9 +3374,10 @@ TODO: rename to recipe?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| fixture_offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | root_sequence_id | [string](#string) |  |  |
 
 
@@ -3499,6 +3458,100 @@ TODO: Assign agents at runtime?
 | ----- | ---- | ----- | ----------- |
 | request_id | [string](#string) |  |  |
 | location_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="plm_v1_sequence_authoring-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/sequence_authoring.proto
+
+
+
+<a name="plm-v1-NewSequenceMessage"></a>
+
+### NewSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| parent_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredSequenceMessage"></a>
+
+### StoredSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| parent_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredSequenceMessages"></a>
+
+### StoredSequenceMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-UpdateSequenceMessage"></a>
+
+### UpdateSequenceMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| sequence_number | [int64](#int64) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| parent_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| can_bulk_complete | [bool](#bool) |  |  |
 
 
 
