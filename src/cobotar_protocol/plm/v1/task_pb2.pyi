@@ -61,10 +61,12 @@ TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: TaskAssignmentPreference
 
 class TaskMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "parent_id", "agents_ids", "assigned_to", "state", "preconditions", "dependants", "assignment_preference", "can_reassign", "can_do", "can_undo")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "parent_id", "agents_ids", "assigned_to", "state", "preconditions", "dependants", "assignment_preference", "can_reassign", "can_do", "can_undo")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    INSTRUCTION_TEXT_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
     PART_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -83,7 +85,9 @@ class TaskMessage(_message.Message):
     CAN_UNDO_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
+    icon: str
     description: str
+    instruction_text: str
     sequence_number: int
     part_id: str
     model_id: str
@@ -100,7 +104,7 @@ class TaskMessage(_message.Message):
     can_reassign: bool
     can_do: bool
     can_undo: bool
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., parent_id: _Optional[str] = ..., agents_ids: _Optional[_Iterable[str]] = ..., assigned_to: _Optional[str] = ..., state: _Optional[_Union[TaskState, str]] = ..., preconditions: _Optional[_Iterable[str]] = ..., dependants: _Optional[_Iterable[str]] = ..., assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., parent_id: _Optional[str] = ..., agents_ids: _Optional[_Iterable[str]] = ..., assigned_to: _Optional[str] = ..., state: _Optional[_Union[TaskState, str]] = ..., preconditions: _Optional[_Iterable[str]] = ..., dependants: _Optional[_Iterable[str]] = ..., assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ...) -> None: ...
 
 class TaskUpdatedMessage(_message.Message):
     __slots__ = ("id", "assigned_to", "state", "can_reassign", "can_do", "can_undo")

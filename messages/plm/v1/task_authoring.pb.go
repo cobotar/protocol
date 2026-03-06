@@ -26,14 +26,16 @@ type StoredTaskMessage struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
 	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber       int64                    `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	PartId               string                   `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
-	ModelId              string                   `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	TaskType             TaskType                 `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
-	Target               *v1.LocalizedPose        `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
-	Approach             *v1.Vector3              `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
-	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,19,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	Icon                 string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	InstructionText      string                   `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
+	SequenceNumber       int64                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	ModelId              string                   `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	TaskType             TaskType                 `protobuf:"varint,9,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
+	Target               *v1.Pose                 `protobuf:"bytes,10,opt,name=target,proto3" json:"target,omitempty"`
+	Approach             *v1.Vector3              `protobuf:"bytes,11,opt,name=approach,proto3" json:"approach,omitempty"`
+	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,12,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -82,9 +84,23 @@ func (x *StoredTaskMessage) GetName() string {
 	return ""
 }
 
+func (x *StoredTaskMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *StoredTaskMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
+	}
+	return ""
+}
+
+func (x *StoredTaskMessage) GetInstructionText() string {
+	if x != nil {
+		return x.InstructionText
 	}
 	return ""
 }
@@ -117,7 +133,7 @@ func (x *StoredTaskMessage) GetTaskType() TaskType {
 	return TaskType_TASK_TYPE_UNSPECIFIED
 }
 
-func (x *StoredTaskMessage) GetTarget() *v1.LocalizedPose {
+func (x *StoredTaskMessage) GetTarget() *v1.Pose {
 	if x != nil {
 		return x.Target
 	}
@@ -254,14 +270,16 @@ type UpdateTaskMessage struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
 	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber       int64                    `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	PartId               string                   `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
-	ModelId              string                   `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	TaskType             TaskType                 `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
-	Target               *v1.LocalizedPose        `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
-	Approach             *v1.Vector3              `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
-	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,19,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	Icon                 string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	InstructionText      string                   `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
+	SequenceNumber       int64                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	ModelId              string                   `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	TaskType             TaskType                 `protobuf:"varint,9,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
+	Target               *v1.Pose                 `protobuf:"bytes,10,opt,name=target,proto3" json:"target,omitempty"`
+	Approach             *v1.Vector3              `protobuf:"bytes,11,opt,name=approach,proto3" json:"approach,omitempty"`
+	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,12,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -310,9 +328,23 @@ func (x *UpdateTaskMessage) GetName() string {
 	return ""
 }
 
+func (x *UpdateTaskMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *UpdateTaskMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
+	}
+	return ""
+}
+
+func (x *UpdateTaskMessage) GetInstructionText() string {
+	if x != nil {
+		return x.InstructionText
 	}
 	return ""
 }
@@ -345,7 +377,7 @@ func (x *UpdateTaskMessage) GetTaskType() TaskType {
 	return TaskType_TASK_TYPE_UNSPECIFIED
 }
 
-func (x *UpdateTaskMessage) GetTarget() *v1.LocalizedPose {
+func (x *UpdateTaskMessage) GetTarget() *v1.Pose {
 	if x != nil {
 		return x.Target
 	}
@@ -370,36 +402,42 @@ var File_plm_v1_task_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_task_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1bplm/v1/task_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a\x11plm/v1/task.proto\"\xa2\x03\n" +
+	"\x1bplm/v1/task_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a\x11plm/v1/task.proto\"\xd8\x03\n" +
 	"\x11StoredTaskMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
-	"\apart_id\x18\x05 \x01(\tR\x06partId\x12\x19\n" +
-	"\bmodel_id\x18\x06 \x01(\tR\amodelId\x12-\n" +
-	"\ttask_type\x18\a \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
-	"\x06target\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
-	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
-	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\"E\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
+	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
+	"\apart_id\x18\a \x01(\tR\x06partId\x12\x19\n" +
+	"\bmodel_id\x18\b \x01(\tR\amodelId\x12-\n" +
+	"\ttask_type\x18\t \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x12)\n" +
+	"\x06target\x18\n" +
+	" \x01(\v2\x11.geometry.v1.PoseR\x06target\x120\n" +
+	"\bapproach\x18\v \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
+	"\x15assignment_preference\x18\f \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\"E\n" +
 	"\x12StoredTaskMessages\x12/\n" +
 	"\x05tasks\x18\x01 \x03(\v2\x19.plm.v1.StoredTaskMessageR\x05tasks\"\x9d\x01\n" +
 	"\x0eNewTaskMessage\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
 	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x12,\n" +
-	"\x12parent_sequence_id\x18\x05 \x01(\tR\x10parentSequenceId\"\xa2\x03\n" +
+	"\x12parent_sequence_id\x18\x05 \x01(\tR\x10parentSequenceId\"\xd8\x03\n" +
 	"\x11UpdateTaskMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
-	"\apart_id\x18\x05 \x01(\tR\x06partId\x12\x19\n" +
-	"\bmodel_id\x18\x06 \x01(\tR\amodelId\x12-\n" +
-	"\ttask_type\x18\a \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
-	"\x06target\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
-	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
-	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreferenceB\x95\x01\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
+	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
+	"\apart_id\x18\a \x01(\tR\x06partId\x12\x19\n" +
+	"\bmodel_id\x18\b \x01(\tR\amodelId\x12-\n" +
+	"\ttask_type\x18\t \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x12)\n" +
+	"\x06target\x18\n" +
+	" \x01(\v2\x11.geometry.v1.PoseR\x06target\x120\n" +
+	"\bapproach\x18\v \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
+	"\x15assignment_preference\x18\f \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreferenceB\x95\x01\n" +
 	"\n" +
 	"com.plm.v1B\x12TaskAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -422,18 +460,18 @@ var file_plm_v1_task_authoring_proto_goTypes = []any{
 	(*NewTaskMessage)(nil),        // 2: plm.v1.NewTaskMessage
 	(*UpdateTaskMessage)(nil),     // 3: plm.v1.UpdateTaskMessage
 	(TaskType)(0),                 // 4: plm.v1.TaskType
-	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
+	(*v1.Pose)(nil),               // 5: geometry.v1.Pose
 	(*v1.Vector3)(nil),            // 6: geometry.v1.Vector3
 	(TaskAssignmentPreference)(0), // 7: plm.v1.TaskAssignmentPreference
 }
 var file_plm_v1_task_authoring_proto_depIdxs = []int32{
 	4, // 0: plm.v1.StoredTaskMessage.task_type:type_name -> plm.v1.TaskType
-	5, // 1: plm.v1.StoredTaskMessage.target:type_name -> geometry.v1.LocalizedPose
+	5, // 1: plm.v1.StoredTaskMessage.target:type_name -> geometry.v1.Pose
 	6, // 2: plm.v1.StoredTaskMessage.approach:type_name -> geometry.v1.Vector3
 	7, // 3: plm.v1.StoredTaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
 	0, // 4: plm.v1.StoredTaskMessages.tasks:type_name -> plm.v1.StoredTaskMessage
 	4, // 5: plm.v1.UpdateTaskMessage.task_type:type_name -> plm.v1.TaskType
-	5, // 6: plm.v1.UpdateTaskMessage.target:type_name -> geometry.v1.LocalizedPose
+	5, // 6: plm.v1.UpdateTaskMessage.target:type_name -> geometry.v1.Pose
 	6, // 7: plm.v1.UpdateTaskMessage.approach:type_name -> geometry.v1.Vector3
 	7, // 8: plm.v1.UpdateTaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
 	9, // [9:9] is the sub-list for method output_type

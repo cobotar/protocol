@@ -31,17 +31,18 @@ message ProcessMessage {
   string instance_id = 1;
   string id = 2;
   string name = 3;
-  string description = 4;
-  ProcessType type = 5;
-  geometry.v1.LocalizedPose frame = 6;
-  string root_sequence_id = 7;
-  repeated SequenceMessage sequences = 8;
-  repeated TaskMessage tasks = 9;
-  ProcessState state = 10;
-  google.protobuf.Timestamp initiated = 11;
-  google.protobuf.Timestamp ended = 12;
-  string order_id = 13;
-  string line_id = 14;
+  string icon = 4;
+  string description = 5;
+  ProcessType type = 6;
+  geometry.v1.LocalizedPose frame = 7;
+  string root_sequence_id = 8;
+  repeated SequenceMessage sequences = 9;
+  repeated TaskMessage tasks = 10;
+  ProcessState state = 11;
+  google.protobuf.Timestamp initiated = 12;
+  google.protobuf.Timestamp ended = 13;
+  string order_id = 14;
+  string line_id = 15;
 }
 
 // Update published when the state of a process have changed

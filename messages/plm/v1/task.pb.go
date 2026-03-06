@@ -213,23 +213,25 @@ type TaskMessage struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
 	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description          string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"` // TODO: rename to instruction_text
-	SequenceNumber       int64                    `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	PartId               string                   `protobuf:"bytes,5,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
-	ModelId              string                   `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	TaskType             TaskType                 `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
-	Target               *v1.LocalizedPose        `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
-	Approach             *v1.Vector3              `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
-	ParentId             string                   `protobuf:"bytes,10,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	AgentsIds            []string                 `protobuf:"bytes,11,rep,name=agents_ids,json=agentsIds,proto3" json:"agents_ids,omitempty"`
-	AssignedTo           string                   `protobuf:"bytes,12,opt,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
-	State                TaskState                `protobuf:"varint,13,opt,name=state,proto3,enum=plm.v1.TaskState" json:"state,omitempty"`
-	Preconditions        []string                 `protobuf:"bytes,14,rep,name=preconditions,proto3" json:"preconditions,omitempty"`
-	Dependants           []string                 `protobuf:"bytes,15,rep,name=dependants,proto3" json:"dependants,omitempty"`
-	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,19,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
-	CanReassign          bool                     `protobuf:"varint,16,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
-	CanDo                bool                     `protobuf:"varint,17,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo              bool                     `protobuf:"varint,18,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"` // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
+	Icon                 string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	InstructionText      string                   `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
+	SequenceNumber       int64                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	ModelId              string                   `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	TaskType             TaskType                 `protobuf:"varint,9,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
+	Target               *v1.LocalizedPose        `protobuf:"bytes,10,opt,name=target,proto3" json:"target,omitempty"`
+	Approach             *v1.Vector3              `protobuf:"bytes,11,opt,name=approach,proto3" json:"approach,omitempty"`
+	ParentId             string                   `protobuf:"bytes,12,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	AgentsIds            []string                 `protobuf:"bytes,13,rep,name=agents_ids,json=agentsIds,proto3" json:"agents_ids,omitempty"`
+	AssignedTo           string                   `protobuf:"bytes,14,opt,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
+	State                TaskState                `protobuf:"varint,15,opt,name=state,proto3,enum=plm.v1.TaskState" json:"state,omitempty"`
+	Preconditions        []string                 `protobuf:"bytes,16,rep,name=preconditions,proto3" json:"preconditions,omitempty"`
+	Dependants           []string                 `protobuf:"bytes,17,rep,name=dependants,proto3" json:"dependants,omitempty"`
+	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,18,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	CanReassign          bool                     `protobuf:"varint,19,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
+	CanDo                bool                     `protobuf:"varint,20,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
+	CanUndo              bool                     `protobuf:"varint,21,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"` // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -278,9 +280,23 @@ func (x *TaskMessage) GetName() string {
 	return ""
 }
 
+func (x *TaskMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *TaskMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
+	}
+	return ""
+}
+
+func (x *TaskMessage) GetInstructionText() string {
+	if x != nil {
+		return x.InstructionText
 	}
 	return ""
 }
@@ -485,32 +501,34 @@ var File_plm_v1_task_proto protoreflect.FileDescriptor
 
 const file_plm_v1_task_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xbd\x05\n" +
+	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xfc\x05\n" +
 	"\vTaskMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
-	"\apart_id\x18\x05 \x01(\tR\x06partId\x12\x19\n" +
-	"\bmodel_id\x18\x06 \x01(\tR\amodelId\x12-\n" +
-	"\ttask_type\x18\a \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
-	"\x06target\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
-	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12\x1b\n" +
-	"\tparent_id\x18\n" +
-	" \x01(\tR\bparentId\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
+	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
+	"\apart_id\x18\a \x01(\tR\x06partId\x12\x19\n" +
+	"\bmodel_id\x18\b \x01(\tR\amodelId\x12-\n" +
+	"\ttask_type\x18\t \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
+	"\x06target\x18\n" +
+	" \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
+	"\bapproach\x18\v \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12\x1b\n" +
+	"\tparent_id\x18\f \x01(\tR\bparentId\x12\x1d\n" +
 	"\n" +
-	"agents_ids\x18\v \x03(\tR\tagentsIds\x12\x1f\n" +
-	"\vassigned_to\x18\f \x01(\tR\n" +
+	"agents_ids\x18\r \x03(\tR\tagentsIds\x12\x1f\n" +
+	"\vassigned_to\x18\x0e \x01(\tR\n" +
 	"assignedTo\x12'\n" +
-	"\x05state\x18\r \x01(\x0e2\x11.plm.v1.TaskStateR\x05state\x12$\n" +
-	"\rpreconditions\x18\x0e \x03(\tR\rpreconditions\x12\x1e\n" +
+	"\x05state\x18\x0f \x01(\x0e2\x11.plm.v1.TaskStateR\x05state\x12$\n" +
+	"\rpreconditions\x18\x10 \x03(\tR\rpreconditions\x12\x1e\n" +
 	"\n" +
-	"dependants\x18\x0f \x03(\tR\n" +
+	"dependants\x18\x11 \x03(\tR\n" +
 	"dependants\x12U\n" +
-	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12!\n" +
-	"\fcan_reassign\x18\x10 \x01(\bR\vcanReassign\x12\x15\n" +
-	"\x06can_do\x18\x11 \x01(\bR\x05canDo\x12\x19\n" +
-	"\bcan_undo\x18\x12 \x01(\bR\acanUndo\"\xc3\x01\n" +
+	"\x15assignment_preference\x18\x12 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12!\n" +
+	"\fcan_reassign\x18\x13 \x01(\bR\vcanReassign\x12\x15\n" +
+	"\x06can_do\x18\x14 \x01(\bR\x05canDo\x12\x19\n" +
+	"\bcan_undo\x18\x15 \x01(\bR\acanUndo\"\xc3\x01\n" +
 	"\x12TaskUpdatedMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vassigned_to\x18\x02 \x01(\tR\n" +

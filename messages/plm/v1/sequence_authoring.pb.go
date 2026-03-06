@@ -26,12 +26,12 @@ type StoredSequenceMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber  int64                  `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	Frame           *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=frame,proto3" json:"frame,omitempty"`
-	ParentId        string                 `protobuf:"bytes,6,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	SequenceIds     []string               `protobuf:"bytes,7,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
-	TaskIds         []string               `protobuf:"bytes,8,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	SequenceNumber  int64                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	Frame           *v1.Pose               `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
+	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	CanBulkComplete bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -81,6 +81,13 @@ func (x *StoredSequenceMessage) GetName() string {
 	return ""
 }
 
+func (x *StoredSequenceMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *StoredSequenceMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -95,18 +102,11 @@ func (x *StoredSequenceMessage) GetSequenceNumber() int64 {
 	return 0
 }
 
-func (x *StoredSequenceMessage) GetFrame() *v1.LocalizedPose {
+func (x *StoredSequenceMessage) GetFrame() *v1.Pose {
 	if x != nil {
 		return x.Frame
 	}
 	return nil
-}
-
-func (x *StoredSequenceMessage) GetParentId() string {
-	if x != nil {
-		return x.ParentId
-	}
-	return ""
 }
 
 func (x *StoredSequenceMessage) GetSequenceIds() []string {
@@ -238,12 +238,12 @@ type UpdateSequenceMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber  int64                  `protobuf:"varint,4,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	Frame           *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=frame,proto3" json:"frame,omitempty"`
-	ParentId        string                 `protobuf:"bytes,6,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	SequenceIds     []string               `protobuf:"bytes,7,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
-	TaskIds         []string               `protobuf:"bytes,8,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	SequenceNumber  int64                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	Frame           *v1.Pose               `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
+	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	CanBulkComplete bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -293,6 +293,13 @@ func (x *UpdateSequenceMessage) GetName() string {
 	return ""
 }
 
+func (x *UpdateSequenceMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *UpdateSequenceMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -307,18 +314,11 @@ func (x *UpdateSequenceMessage) GetSequenceNumber() int64 {
 	return 0
 }
 
-func (x *UpdateSequenceMessage) GetFrame() *v1.LocalizedPose {
+func (x *UpdateSequenceMessage) GetFrame() *v1.Pose {
 	if x != nil {
 		return x.Frame
 	}
 	return nil
-}
-
-func (x *UpdateSequenceMessage) GetParentId() string {
-	if x != nil {
-		return x.ParentId
-	}
-	return ""
 }
 
 func (x *UpdateSequenceMessage) GetSequenceIds() []string {
@@ -346,32 +346,32 @@ var File_plm_v1_sequence_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_sequence_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xbf\x02\n" +
+	"\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xad\x02\n" +
 	"\x15StoredSequenceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x120\n" +
-	"\x05frame\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1b\n" +
-	"\tparent_id\x18\x06 \x01(\tR\bparentId\x12!\n" +
-	"\fsequence_ids\x18\a \x03(\tR\vsequenceIds\x12\x19\n" +
-	"\btask_ids\x18\b \x03(\tR\ataskIds\x12*\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12'\n" +
+	"\x05frame\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x05frame\x12!\n" +
+	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
+	"\btask_ids\x18\t \x03(\tR\ataskIds\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"U\n" +
 	"\x16StoredSequenceMessages\x12;\n" +
 	"\tsequences\x18\x01 \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\"g\n" +
 	"\x12NewSequenceMessage\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1b\n" +
-	"\tparent_id\x18\x06 \x01(\tR\bparentId\"\xbf\x02\n" +
+	"\tparent_id\x18\x06 \x01(\tR\bparentId\"\xad\x02\n" +
 	"\x15UpdateSequenceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x04 \x01(\x03R\x0esequenceNumber\x120\n" +
-	"\x05frame\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1b\n" +
-	"\tparent_id\x18\x06 \x01(\tR\bparentId\x12!\n" +
-	"\fsequence_ids\x18\a \x03(\tR\vsequenceIds\x12\x19\n" +
-	"\btask_ids\x18\b \x03(\tR\ataskIds\x12*\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12'\n" +
+	"\x05frame\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x05frame\x12!\n" +
+	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
+	"\btask_ids\x18\t \x03(\tR\ataskIds\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkCompleteB\x99\x01\n" +
 	"\n" +
 	"com.plm.v1B\x16SequenceAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
@@ -394,12 +394,12 @@ var file_plm_v1_sequence_authoring_proto_goTypes = []any{
 	(*StoredSequenceMessages)(nil), // 1: plm.v1.StoredSequenceMessages
 	(*NewSequenceMessage)(nil),     // 2: plm.v1.NewSequenceMessage
 	(*UpdateSequenceMessage)(nil),  // 3: plm.v1.UpdateSequenceMessage
-	(*v1.LocalizedPose)(nil),       // 4: geometry.v1.LocalizedPose
+	(*v1.Pose)(nil),                // 4: geometry.v1.Pose
 }
 var file_plm_v1_sequence_authoring_proto_depIdxs = []int32{
-	4, // 0: plm.v1.StoredSequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 0: plm.v1.StoredSequenceMessage.frame:type_name -> geometry.v1.Pose
 	0, // 1: plm.v1.StoredSequenceMessages.sequences:type_name -> plm.v1.StoredSequenceMessage
-	4, // 2: plm.v1.UpdateSequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 2: plm.v1.UpdateSequenceMessage.frame:type_name -> geometry.v1.Pose
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

@@ -40,10 +40,11 @@ PROCESS_STATE_COMPLETED: ProcessState
 PROCESS_STATE_ABORTED: ProcessState
 
 class ProcessMessage(_message.Message):
-    __slots__ = ("instance_id", "id", "name", "description", "type", "frame", "root_sequence_id", "sequences", "tasks", "state", "initiated", "ended", "order_id", "line_id")
+    __slots__ = ("instance_id", "id", "name", "icon", "description", "type", "frame", "root_sequence_id", "sequences", "tasks", "state", "initiated", "ended", "order_id", "line_id")
     INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     FRAME_FIELD_NUMBER: _ClassVar[int]
@@ -58,6 +59,7 @@ class ProcessMessage(_message.Message):
     instance_id: str
     id: str
     name: str
+    icon: str
     description: str
     type: ProcessType
     frame: _pose_pb2.LocalizedPose
@@ -69,7 +71,7 @@ class ProcessMessage(_message.Message):
     ended: _timestamp_pb2.Timestamp
     order_id: str
     line_id: str
-    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ..., state: _Optional[_Union[ProcessState, str]] = ..., initiated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., order_id: _Optional[str] = ..., line_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_pb2.SequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ..., state: _Optional[_Union[ProcessState, str]] = ..., initiated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., order_id: _Optional[str] = ..., line_id: _Optional[str] = ...) -> None: ...
 
 class ProcessUpdatedMessage(_message.Message):
     __slots__ = ("instance_id", "id", "state", "ended")

@@ -4,7 +4,7 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import type { Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
 import { file_geometry_v1_vector3 } from "../../geometry/v1/vector3_pb.ts";
@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task_authoring.proto.
  */
 export const file_plm_v1_task_authoring: GenFile = /*@__PURE__*/
-  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSK4AgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSDwoHcGFydF9pZBgFIAEoCRIQCghtb2RlbF9pZBgGIAEoCRIjCgl0YXNrX3R5cGUYByABKA4yEC5wbG0udjEuVGFza1R5cGUSKgoGdGFyZ2V0GAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRImCghhcHByb2FjaBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSPwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGBMgASgOMiAucGxtLnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZSI+ChJTdG9yZWRUYXNrTWVzc2FnZXMSKAoFdGFza3MYASADKAsyGS5wbG0udjEuU3RvcmVkVGFza01lc3NhZ2UiaAoOTmV3VGFza01lc3NhZ2USDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSGgoScGFyZW50X3NlcXVlbmNlX2lkGAUgASgJIrgCChFVcGRhdGVUYXNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIPCgdwYXJ0X2lkGAUgASgJEhAKCG1vZGVsX2lkGAYgASgJEiMKCXRhc2tfdHlwZRgHIAEoDjIQLnBsbS52MS5UYXNrVHlwZRIqCgZ0YXJnZXQYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEiYKCGFwcHJvYWNoGAkgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI/ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEyABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlQpUBCgpjb20ucGxtLnYxQhJUYXNrQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
+  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSLXAgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiPgoSU3RvcmVkVGFza01lc3NhZ2VzEigKBXRhc2tzGAEgAygLMhkucGxtLnYxLlN0b3JlZFRhc2tNZXNzYWdlImgKDk5ld1Rhc2tNZXNzYWdlEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAQgASgDEhoKEnBhcmVudF9zZXF1ZW5jZV9pZBgFIAEoCSLXAgoRVXBkYXRlVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2VClQEKCmNvbS5wbG0udjFCElRhc2tBdXRob3JpbmdQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
 
 /**
  * @generated from message plm.v1.StoredTaskMessage
@@ -33,42 +33,52 @@ export type StoredTaskMessage = Message<"plm.v1.StoredTaskMessage"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 4;
+   * @generated from field: string instruction_text = 5;
+   */
+  instructionText: string;
+
+  /**
+   * @generated from field: int64 sequence_number = 6;
    */
   sequenceNumber: bigint;
 
   /**
-   * @generated from field: string part_id = 5;
+   * @generated from field: string part_id = 7;
    */
   partId: string;
 
   /**
-   * @generated from field: string model_id = 6;
+   * @generated from field: string model_id = 8;
    */
   modelId: string;
 
   /**
-   * @generated from field: plm.v1.TaskType task_type = 7;
+   * @generated from field: plm.v1.TaskType task_type = 9;
    */
   taskType: TaskType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose target = 8;
+   * @generated from field: geometry.v1.Pose target = 10;
    */
-  target?: LocalizedPose;
+  target?: Pose;
 
   /**
-   * @generated from field: geometry.v1.Vector3 approach = 9;
+   * @generated from field: geometry.v1.Vector3 approach = 11;
    */
   approach?: Vector3;
 
   /**
-   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 19;
+   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 12;
    */
   assignmentPreference: TaskAssignmentPreference;
 };
@@ -144,42 +154,52 @@ export type UpdateTaskMessage = Message<"plm.v1.UpdateTaskMessage"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 4;
+   * @generated from field: string instruction_text = 5;
+   */
+  instructionText: string;
+
+  /**
+   * @generated from field: int64 sequence_number = 6;
    */
   sequenceNumber: bigint;
 
   /**
-   * @generated from field: string part_id = 5;
+   * @generated from field: string part_id = 7;
    */
   partId: string;
 
   /**
-   * @generated from field: string model_id = 6;
+   * @generated from field: string model_id = 8;
    */
   modelId: string;
 
   /**
-   * @generated from field: plm.v1.TaskType task_type = 7;
+   * @generated from field: plm.v1.TaskType task_type = 9;
    */
   taskType: TaskType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose target = 8;
+   * @generated from field: geometry.v1.Pose target = 10;
    */
-  target?: LocalizedPose;
+  target?: Pose;
 
   /**
-   * @generated from field: geometry.v1.Vector3 approach = 9;
+   * @generated from field: geometry.v1.Vector3 approach = 11;
    */
   approach?: Vector3;
 
   /**
-   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 19;
+   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 12;
    */
   assignmentPreference: TaskAssignmentPreference;
 };

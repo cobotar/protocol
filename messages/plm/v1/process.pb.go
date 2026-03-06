@@ -140,17 +140,18 @@ type ProcessMessage struct {
 	InstanceId     string                 `protobuf:"bytes,1,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"`
 	Id             string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
 	Name           string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type           ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
-	Frame          *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceId string                 `protobuf:"bytes,7,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
-	Sequences      []*SequenceMessage     `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks          []*TaskMessage         `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
-	State          ProcessState           `protobuf:"varint,10,opt,name=state,proto3,enum=plm.v1.ProcessState" json:"state,omitempty"`
-	Initiated      *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=initiated,proto3" json:"initiated,omitempty"`
-	Ended          *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=ended,proto3" json:"ended,omitempty"`
-	OrderId        string                 `protobuf:"bytes,13,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	LineId         string                 `protobuf:"bytes,14,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	Icon           string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description    string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	Type           ProcessType            `protobuf:"varint,6,opt,name=type,proto3,enum=plm.v1.ProcessType" json:"type,omitempty"`
+	Frame          *v1.LocalizedPose      `protobuf:"bytes,7,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceId string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	Sequences      []*SequenceMessage     `protobuf:"bytes,9,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks          []*TaskMessage         `protobuf:"bytes,10,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	State          ProcessState           `protobuf:"varint,11,opt,name=state,proto3,enum=plm.v1.ProcessState" json:"state,omitempty"`
+	Initiated      *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=initiated,proto3" json:"initiated,omitempty"`
+	Ended          *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=ended,proto3" json:"ended,omitempty"`
+	OrderId        string                 `protobuf:"bytes,14,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	LineId         string                 `protobuf:"bytes,15,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -202,6 +203,13 @@ func (x *ProcessMessage) GetId() string {
 func (x *ProcessMessage) GetName() string {
 	if x != nil {
 		return x.Name
+	}
+	return ""
+}
+
+func (x *ProcessMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
 	}
 	return ""
 }
@@ -400,24 +408,25 @@ var File_plm_v1_process_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_proto_rawDesc = "" +
 	"\n" +
-	"\x14plm/v1/process.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\xaa\x04\n" +
+	"\x14plm/v1/process.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\xbe\x04\n" +
 	"\x0eProcessMessage\x12\x1f\n" +
 	"\vinstance_id\x18\x01 \x01(\tR\n" +
 	"instanceId\x12\x0e\n" +
 	"\x02id\x18\x02 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
-	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\x125\n" +
-	"\tsequences\x18\b \x03(\v2\x17.plm.v1.SequenceMessageR\tsequences\x12)\n" +
-	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\x12*\n" +
-	"\x05state\x18\n" +
-	" \x01(\x0e2\x14.plm.v1.ProcessStateR\x05state\x128\n" +
-	"\tinitiated\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tinitiated\x120\n" +
-	"\x05ended\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\x05ended\x12\x19\n" +
-	"\border_id\x18\r \x01(\tR\aorderId\x12\x17\n" +
-	"\aline_id\x18\x0e \x01(\tR\x06lineId\"\xa6\x01\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12'\n" +
+	"\x04type\x18\x06 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
+	"\x05frame\x18\a \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
+	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x125\n" +
+	"\tsequences\x18\t \x03(\v2\x17.plm.v1.SequenceMessageR\tsequences\x12)\n" +
+	"\x05tasks\x18\n" +
+	" \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\x12*\n" +
+	"\x05state\x18\v \x01(\x0e2\x14.plm.v1.ProcessStateR\x05state\x128\n" +
+	"\tinitiated\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tinitiated\x120\n" +
+	"\x05ended\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\x05ended\x12\x19\n" +
+	"\border_id\x18\x0e \x01(\tR\aorderId\x12\x17\n" +
+	"\aline_id\x18\x0f \x01(\tR\x06lineId\"\xa6\x01\n" +
 	"\x15ProcessUpdatedMessage\x12\x1f\n" +
 	"\vinstance_id\x18\x01 \x01(\tR\n" +
 	"instanceId\x12\x0e\n" +

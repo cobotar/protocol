@@ -25,49 +25,51 @@ namespace Messages.Plm.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFwbG0vdjEvdGFzay5wcm90bxIGcGxtLnYxGhZnZW9tZXRyeS92MS9wb3Nl",
-            "LnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIr0FCgtUYXNrTWVz",
-            "c2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtk",
-            "ZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SJwoPc2VxdWVuY2VfbnVt",
-            "YmVyGAQgASgDUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0X2lkGAUgASgJUgZw",
-            "YXJ0SWQSGQoIbW9kZWxfaWQYBiABKAlSB21vZGVsSWQSLQoJdGFza190eXBl",
-            "GAcgASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlwZRIyCgZ0YXJnZXQY",
-            "CCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgZ0YXJnZXQSMAoI",
-            "YXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2Fj",
-            "aBIbCglwYXJlbnRfaWQYCiABKAlSCHBhcmVudElkEh0KCmFnZW50c19pZHMY",
-            "CyADKAlSCWFnZW50c0lkcxIfCgthc3NpZ25lZF90bxgMIAEoCVIKYXNzaWdu",
-            "ZWRUbxInCgVzdGF0ZRgNIAEoDjIRLnBsbS52MS5UYXNrU3RhdGVSBXN0YXRl",
-            "EiQKDXByZWNvbmRpdGlvbnMYDiADKAlSDXByZWNvbmRpdGlvbnMSHgoKZGVw",
-            "ZW5kYW50cxgPIAMoCVIKZGVwZW5kYW50cxJVChVhc3NpZ25tZW50X3ByZWZl",
-            "cmVuY2UYEyABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNl",
-            "UhRhc3NpZ25tZW50UHJlZmVyZW5jZRIhCgxjYW5fcmVhc3NpZ24YECABKAhS",
-            "C2NhblJlYXNzaWduEhUKBmNhbl9kbxgRIAEoCFIFY2FuRG8SGQoIY2FuX3Vu",
-            "ZG8YEiABKAhSB2NhblVuZG8iwwEKElRhc2tVcGRhdGVkTWVzc2FnZRIOCgJp",
-            "ZBgBIAEoCVICaWQSHwoLYXNzaWduZWRfdG8YAiABKAlSCmFzc2lnbmVkVG8S",
-            "JwoFc3RhdGUYAyABKA4yES5wbG0udjEuVGFza1N0YXRlUgVzdGF0ZRIhCgxj",
-            "YW5fcmVhc3NpZ24YBCABKAhSC2NhblJlYXNzaWduEhUKBmNhbl9kbxgFIAEo",
-            "CFIFY2FuRG8SGQoIY2FuX3VuZG8YBiABKAhSB2NhblVuZG8qsAEKCVRhc2tT",
-            "dGF0ZRIaChZUQVNLX1NUQVRFX1VOU1BFQ0lGSUVEEAASIwofVEFTS19TVEFU",
-            "RV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhYKElRBU0tfU1RBVEVfV0FJVElO",
-            "RxACEhoKFlRBU0tfU1RBVEVfSU5fUFJPR1JFU1MQAxIYChRUQVNLX1NUQVRF",
-            "X0NPTVBMRVRFRBAEEhQKEFRBU0tfU1RBVEVfRVJST1IQBirpAQoIVGFza1R5",
-            "cGUSGQoVVEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFTS19UWVBFX0lO",
-            "U1BFQ1QQARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFTS19UWVBFX1VO",
-            "RkFTVEVOEAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFTS19UWVBFX1VO",
-            "TU9VTlQQBRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tfVFlQRV9SRU1P",
-            "VkUQBxITCg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZUEVfV0lQRRAJ",
-            "KvYBChhUYXNrQXNzaWdubWVudFByZWZlcmVuY2USKgomVEFTS19BU1NJR05N",
-            "RU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQABIrCidUQVNLX0FTU0lHTk1F",
-            "TlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4QARIpCiVUQVNLX0FTU0lHTk1F",
-            "TlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAISKwonVEFTS19BU1NJR05NRU5U",
-            "X1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMSKQolVEFTS19BU1NJR05NRU5U",
-            "X1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEQowBCgpjb20ucGxtLnYxQglUYXNr",
-            "UHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxW",
-            "MeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw=="));
+            "LnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIvwFCgtUYXNrTWVz",
+            "c2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
+            "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
+            "dGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0cnVjdGlvblRl",
+            "eHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDUg5zZXF1ZW5jZU51bWJlchIX",
+            "CgdwYXJ0X2lkGAcgASgJUgZwYXJ0SWQSGQoIbW9kZWxfaWQYCCABKAlSB21v",
+            "ZGVsSWQSLQoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0",
+            "YXNrVHlwZRIyCgZ0YXJnZXQYCiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6",
+            "ZWRQb3NlUgZ0YXJnZXQSMAoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52",
+            "MS5WZWN0b3IzUghhcHByb2FjaBIbCglwYXJlbnRfaWQYDCABKAlSCHBhcmVu",
+            "dElkEh0KCmFnZW50c19pZHMYDSADKAlSCWFnZW50c0lkcxIfCgthc3NpZ25l",
+            "ZF90bxgOIAEoCVIKYXNzaWduZWRUbxInCgVzdGF0ZRgPIAEoDjIRLnBsbS52",
+            "MS5UYXNrU3RhdGVSBXN0YXRlEiQKDXByZWNvbmRpdGlvbnMYECADKAlSDXBy",
+            "ZWNvbmRpdGlvbnMSHgoKZGVwZW5kYW50cxgRIAMoCVIKZGVwZW5kYW50cxJV",
+            "ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEiABKA4yIC5wbG0udjEuVGFza0Fz",
+            "c2lnbm1lbnRQcmVmZXJlbmNlUhRhc3NpZ25tZW50UHJlZmVyZW5jZRIhCgxj",
+            "YW5fcmVhc3NpZ24YEyABKAhSC2NhblJlYXNzaWduEhUKBmNhbl9kbxgUIAEo",
+            "CFIFY2FuRG8SGQoIY2FuX3VuZG8YFSABKAhSB2NhblVuZG8iwwEKElRhc2tV",
+            "cGRhdGVkTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHwoLYXNzaWduZWRfdG8Y",
+            "AiABKAlSCmFzc2lnbmVkVG8SJwoFc3RhdGUYAyABKA4yES5wbG0udjEuVGFz",
+            "a1N0YXRlUgVzdGF0ZRIhCgxjYW5fcmVhc3NpZ24YBCABKAhSC2NhblJlYXNz",
+            "aWduEhUKBmNhbl9kbxgFIAEoCFIFY2FuRG8SGQoIY2FuX3VuZG8YBiABKAhS",
+            "B2NhblVuZG8qsAEKCVRhc2tTdGF0ZRIaChZUQVNLX1NUQVRFX1VOU1BFQ0lG",
+            "SUVEEAASIwofVEFTS19TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhYK",
+            "ElRBU0tfU1RBVEVfV0FJVElORxACEhoKFlRBU0tfU1RBVEVfSU5fUFJPR1JF",
+            "U1MQAxIYChRUQVNLX1NUQVRFX0NPTVBMRVRFRBAEEhQKEFRBU0tfU1RBVEVf",
+            "RVJST1IQBirpAQoIVGFza1R5cGUSGQoVVEFTS19UWVBFX1VOU1BFQ0lGSUVE",
+            "EAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQARIUChBUQVNLX1RZUEVfRkFTVEVO",
+            "EAISFgoSVEFTS19UWVBFX1VORkFTVEVOEAMSEwoPVEFTS19UWVBFX01PVU5U",
+            "EAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQBRISCg5UQVNLX1RZUEVfTU9WRRAG",
+            "EhQKEFRBU0tfVFlQRV9SRU1PVkUQBxITCg9UQVNLX1RZUEVfQVBQTFkQCBIS",
+            "Cg5UQVNLX1RZUEVfV0lQRRAJKvYBChhUYXNrQXNzaWdubWVudFByZWZlcmVu",
+            "Y2USKgomVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQ",
+            "ABIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4Q",
+            "ARIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAIS",
+            "KwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMS",
+            "KQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEQowB",
+            "Cgpjb20ucGxtLnYxQglUYXNrUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFy",
+            "L3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3Nh",
+            "Z2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1Bs",
+            "bTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.TaskState), typeof(global::Messages.Plm.V1.TaskType), typeof(global::Messages.Plm.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskMessage), global::Messages.Plm.V1.TaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "ParentId", "AgentsIds", "AssignedTo", "State", "Preconditions", "Dependants", "AssignmentPreference", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskMessage), global::Messages.Plm.V1.TaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "ParentId", "AgentsIds", "AssignedTo", "State", "Preconditions", "Dependants", "AssignmentPreference", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskUpdatedMessage), global::Messages.Plm.V1.TaskUpdatedMessage.Parser, new[]{ "Id", "AssignedTo", "State", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null)
           }));
     }
@@ -151,7 +153,9 @@ namespace Messages.Plm.V1 {
     public TaskMessage(TaskMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      icon_ = other.icon_;
       description_ = other.description_;
+      instructionText_ = other.instructionText_;
       sequenceNumber_ = other.sequenceNumber_;
       partId_ = other.partId_;
       modelId_ = other.modelId_;
@@ -201,12 +205,21 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
-    /// <summary>
-    /// TODO: rename to instruction_text
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
@@ -216,8 +229,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "instruction_text" field.</summary>
+    public const int InstructionTextFieldNumber = 5;
+    private string instructionText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstructionText {
+      get { return instructionText_; }
+      set {
+        instructionText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sequence_number" field.</summary>
-    public const int SequenceNumberFieldNumber = 4;
+    public const int SequenceNumberFieldNumber = 6;
     private long sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -229,7 +254,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "part_id" field.</summary>
-    public const int PartIdFieldNumber = 5;
+    public const int PartIdFieldNumber = 7;
     private string partId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -241,7 +266,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "model_id" field.</summary>
-    public const int ModelIdFieldNumber = 6;
+    public const int ModelIdFieldNumber = 8;
     private string modelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -253,7 +278,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "task_type" field.</summary>
-    public const int TaskTypeFieldNumber = 7;
+    public const int TaskTypeFieldNumber = 9;
     private global::Messages.Plm.V1.TaskType taskType_ = global::Messages.Plm.V1.TaskType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -265,7 +290,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "target" field.</summary>
-    public const int TargetFieldNumber = 8;
+    public const int TargetFieldNumber = 10;
     private global::Messages.Common.V1.LocalizedPose target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -277,7 +302,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "approach" field.</summary>
-    public const int ApproachFieldNumber = 9;
+    public const int ApproachFieldNumber = 11;
     private global::Messages.Common.V1.Vector3 approach_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -289,7 +314,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "parent_id" field.</summary>
-    public const int ParentIdFieldNumber = 10;
+    public const int ParentIdFieldNumber = 12;
     private string parentId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -301,9 +326,9 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "agents_ids" field.</summary>
-    public const int AgentsIdsFieldNumber = 11;
+    public const int AgentsIdsFieldNumber = 13;
     private static readonly pb::FieldCodec<string> _repeated_agentsIds_codec
-        = pb::FieldCodec.ForString(90);
+        = pb::FieldCodec.ForString(106);
     private readonly pbc::RepeatedField<string> agentsIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -312,7 +337,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "assigned_to" field.</summary>
-    public const int AssignedToFieldNumber = 12;
+    public const int AssignedToFieldNumber = 14;
     private string assignedTo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -324,7 +349,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 13;
+    public const int StateFieldNumber = 15;
     private global::Messages.Plm.V1.TaskState state_ = global::Messages.Plm.V1.TaskState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -336,9 +361,9 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "preconditions" field.</summary>
-    public const int PreconditionsFieldNumber = 14;
+    public const int PreconditionsFieldNumber = 16;
     private static readonly pb::FieldCodec<string> _repeated_preconditions_codec
-        = pb::FieldCodec.ForString(114);
+        = pb::FieldCodec.ForString(130);
     private readonly pbc::RepeatedField<string> preconditions_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -347,9 +372,9 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "dependants" field.</summary>
-    public const int DependantsFieldNumber = 15;
+    public const int DependantsFieldNumber = 17;
     private static readonly pb::FieldCodec<string> _repeated_dependants_codec
-        = pb::FieldCodec.ForString(122);
+        = pb::FieldCodec.ForString(138);
     private readonly pbc::RepeatedField<string> dependants_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -358,7 +383,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "assignment_preference" field.</summary>
-    public const int AssignmentPreferenceFieldNumber = 19;
+    public const int AssignmentPreferenceFieldNumber = 18;
     private global::Messages.Plm.V1.TaskAssignmentPreference assignmentPreference_ = global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -370,7 +395,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "can_reassign" field.</summary>
-    public const int CanReassignFieldNumber = 16;
+    public const int CanReassignFieldNumber = 19;
     private bool canReassign_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -382,7 +407,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "can_do" field.</summary>
-    public const int CanDoFieldNumber = 17;
+    public const int CanDoFieldNumber = 20;
     private bool canDo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -394,7 +419,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "can_undo" field.</summary>
-    public const int CanUndoFieldNumber = 18;
+    public const int CanUndoFieldNumber = 21;
     private bool canUndo_;
     /// <summary>
     /// TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
@@ -425,7 +450,9 @@ namespace Messages.Plm.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
+      if (InstructionText != other.InstructionText) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
       if (PartId != other.PartId) return false;
       if (ModelId != other.ModelId) return false;
@@ -451,7 +478,9 @@ namespace Messages.Plm.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
       if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
@@ -494,64 +523,72 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (ParentId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(98);
         output.WriteString(ParentId);
       }
       agentsIds_.WriteTo(output, _repeated_agentsIds_codec);
       if (AssignedTo.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteString(AssignedTo);
       }
       if (State != global::Messages.Plm.V1.TaskState.Unspecified) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteEnum((int) State);
       }
       preconditions_.WriteTo(output, _repeated_preconditions_codec);
       dependants_.WriteTo(output, _repeated_dependants_codec);
+      if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
+        output.WriteRawTag(144, 1);
+        output.WriteEnum((int) AssignmentPreference);
+      }
       if (CanReassign != false) {
-        output.WriteRawTag(128, 1);
+        output.WriteRawTag(152, 1);
         output.WriteBool(CanReassign);
       }
       if (CanDo != false) {
-        output.WriteRawTag(136, 1);
+        output.WriteRawTag(160, 1);
         output.WriteBool(CanDo);
       }
       if (CanUndo != false) {
-        output.WriteRawTag(144, 1);
+        output.WriteRawTag(168, 1);
         output.WriteBool(CanUndo);
-      }
-      if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
-        output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -571,64 +608,72 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (ParentId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(98);
         output.WriteString(ParentId);
       }
       agentsIds_.WriteTo(ref output, _repeated_agentsIds_codec);
       if (AssignedTo.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteString(AssignedTo);
       }
       if (State != global::Messages.Plm.V1.TaskState.Unspecified) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteEnum((int) State);
       }
       preconditions_.WriteTo(ref output, _repeated_preconditions_codec);
       dependants_.WriteTo(ref output, _repeated_dependants_codec);
+      if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
+        output.WriteRawTag(144, 1);
+        output.WriteEnum((int) AssignmentPreference);
+      }
       if (CanReassign != false) {
-        output.WriteRawTag(128, 1);
+        output.WriteRawTag(152, 1);
         output.WriteBool(CanReassign);
       }
       if (CanDo != false) {
-        output.WriteRawTag(136, 1);
+        output.WriteRawTag(160, 1);
         output.WriteBool(CanDo);
       }
       if (CanUndo != false) {
-        output.WriteRawTag(144, 1);
+        output.WriteRawTag(168, 1);
         output.WriteBool(CanUndo);
-      }
-      if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
-        output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -646,8 +691,14 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (InstructionText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
       if (SequenceNumber != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
@@ -709,8 +760,14 @@ namespace Messages.Plm.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.InstructionText.Length != 0) {
+        InstructionText = other.InstructionText;
       }
       if (other.SequenceNumber != 0L) {
         SequenceNumber = other.SequenceNumber;
@@ -788,77 +845,85 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
               Target = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 82: {
+          case 98: {
             ParentId = input.ReadString();
             break;
           }
-          case 90: {
+          case 106: {
             agentsIds_.AddEntriesFrom(input, _repeated_agentsIds_codec);
             break;
           }
-          case 98: {
+          case 114: {
             AssignedTo = input.ReadString();
             break;
           }
-          case 104: {
+          case 120: {
             State = (global::Messages.Plm.V1.TaskState) input.ReadEnum();
             break;
           }
-          case 114: {
+          case 130: {
             preconditions_.AddEntriesFrom(input, _repeated_preconditions_codec);
             break;
           }
-          case 122: {
+          case 138: {
             dependants_.AddEntriesFrom(input, _repeated_dependants_codec);
             break;
           }
-          case 128: {
-            CanReassign = input.ReadBool();
-            break;
-          }
-          case 136: {
-            CanDo = input.ReadBool();
-            break;
-          }
           case 144: {
-            CanUndo = input.ReadBool();
+            AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }
           case 152: {
-            AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
+            CanReassign = input.ReadBool();
+            break;
+          }
+          case 160: {
+            CanDo = input.ReadBool();
+            break;
+          }
+          case 168: {
+            CanUndo = input.ReadBool();
             break;
           }
         }
@@ -889,77 +954,85 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
               Target = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 82: {
+          case 98: {
             ParentId = input.ReadString();
             break;
           }
-          case 90: {
+          case 106: {
             agentsIds_.AddEntriesFrom(ref input, _repeated_agentsIds_codec);
             break;
           }
-          case 98: {
+          case 114: {
             AssignedTo = input.ReadString();
             break;
           }
-          case 104: {
+          case 120: {
             State = (global::Messages.Plm.V1.TaskState) input.ReadEnum();
             break;
           }
-          case 114: {
+          case 130: {
             preconditions_.AddEntriesFrom(ref input, _repeated_preconditions_codec);
             break;
           }
-          case 122: {
+          case 138: {
             dependants_.AddEntriesFrom(ref input, _repeated_dependants_codec);
             break;
           }
-          case 128: {
-            CanReassign = input.ReadBool();
-            break;
-          }
-          case 136: {
-            CanDo = input.ReadBool();
-            break;
-          }
           case 144: {
-            CanUndo = input.ReadBool();
+            AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }
           case 152: {
-            AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
+            CanReassign = input.ReadBool();
+            break;
+          }
+          case 160: {
+            CanDo = input.ReadBool();
+            break;
+          }
+          case 168: {
+            CanUndo = input.ReadBool();
             break;
           }
         }

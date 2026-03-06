@@ -2997,6 +2997,7 @@ TODO: allow multiple processes to make active at the same time?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
@@ -3075,7 +3076,9 @@ TODO: add allowed_actors
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  | TODO: rename to instruction_text |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| instruction_text | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
@@ -3197,6 +3200,7 @@ TODO: Add/assign the agent(s) at runtime, instead of allocating them to the envi
 | instance_id | [string](#string) |  |  |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
@@ -3523,10 +3527,10 @@ TODO: Assign agents at runtime?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| parent_id | [string](#string) |  |  |
+| frame | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
 | can_bulk_complete | [bool](#bool) |  |  |
@@ -3561,10 +3565,10 @@ TODO: Assign agents at runtime?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| parent_id | [string](#string) |  |  |
+| frame | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
 | can_bulk_complete | [bool](#bool) |  |  |
@@ -3686,12 +3690,14 @@ Reassign all sub-tasks to the assignee (if possible)
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| instruction_text | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
-| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| target | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 
@@ -3725,12 +3731,14 @@ Reassign all sub-tasks to the assignee (if possible)
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| instruction_text | [string](#string) |  |  |
 | sequence_number | [int64](#int64) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
-| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| target | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 

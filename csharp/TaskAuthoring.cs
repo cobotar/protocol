@@ -26,41 +26,44 @@ namespace Messages.Plm.V1 {
           string.Concat(
             "ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MRoWZ2VvbWV0",
             "cnkvdjEvcG9zZS5wcm90bxoZZ2VvbWV0cnkvdjEvdmVjdG9yMy5wcm90bxoR",
-            "cGxtL3YxL3Rhc2sucHJvdG8iogMKEVN0b3JlZFRhc2tNZXNzYWdlEg4KAmlk",
-            "GAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
-            "GAMgASgJUgtkZXNjcmlwdGlvbhInCg9zZXF1ZW5jZV9udW1iZXIYBCABKANS",
-            "DnNlcXVlbmNlTnVtYmVyEhcKB3BhcnRfaWQYBSABKAlSBnBhcnRJZBIZCght",
-            "b2RlbF9pZBgGIAEoCVIHbW9kZWxJZBItCgl0YXNrX3R5cGUYByABKA4yEC5w",
-            "bG0udjEuVGFza1R5cGVSCHRhc2tUeXBlEjIKBnRhcmdldBgIIAEoCzIaLmdl",
-            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBnRhcmdldBIwCghhcHByb2FjaBgJ",
-            "IAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSCGFwcHJvYWNoElUKFWFzc2ln",
-            "bm1lbnRfcHJlZmVyZW5jZRgTIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVu",
-            "dFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIkUKElN0b3JlZFRh",
-            "c2tNZXNzYWdlcxIvCgV0YXNrcxgBIAMoCzIZLnBsbS52MS5TdG9yZWRUYXNr",
-            "TWVzc2FnZVIFdGFza3MinQEKDk5ld1Rhc2tNZXNzYWdlEhIKBG5hbWUYAiAB",
-            "KAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEicK",
-            "D3NlcXVlbmNlX251bWJlchgEIAEoA1IOc2VxdWVuY2VOdW1iZXISLAoScGFy",
-            "ZW50X3NlcXVlbmNlX2lkGAUgASgJUhBwYXJlbnRTZXF1ZW5jZUlkIqIDChFV",
-            "cGRhdGVUYXNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SJwoP",
-            "c2VxdWVuY2VfbnVtYmVyGAQgASgDUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0",
-            "X2lkGAUgASgJUgZwYXJ0SWQSGQoIbW9kZWxfaWQYBiABKAlSB21vZGVsSWQS",
-            "LQoJdGFza190eXBlGAcgASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlw",
-            "ZRIyCgZ0YXJnZXQYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3Nl",
-            "UgZ0YXJnZXQSMAoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5WZWN0",
-            "b3IzUghhcHByb2FjaBJVChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEyABKA4y",
-            "IC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlUhRhc3NpZ25tZW50",
-            "UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52MUISVGFza0F1dGhvcmluZ1Byb3Rv",
-            "UAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0v",
-            "djE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQ",
-            "bG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
+            "cGxtL3YxL3Rhc2sucHJvdG8i2AMKEVN0b3JlZFRhc2tNZXNzYWdlEg4KAmlk",
+            "GAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlS",
+            "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKEGlu",
+            "c3RydWN0aW9uX3RleHQYBSABKAlSD2luc3RydWN0aW9uVGV4dBInCg9zZXF1",
+            "ZW5jZV9udW1iZXIYBiABKANSDnNlcXVlbmNlTnVtYmVyEhcKB3BhcnRfaWQY",
+            "ByABKAlSBnBhcnRJZBIZCghtb2RlbF9pZBgIIAEoCVIHbW9kZWxJZBItCgl0",
+            "YXNrX3R5cGUYCSABKA4yEC5wbG0udjEuVGFza1R5cGVSCHRhc2tUeXBlEikK",
+            "BnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2VSBnRhcmdldBIwCghh",
+            "cHByb2FjaBgLIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSCGFwcHJvYWNo",
+            "ElUKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNr",
+            "QXNzaWdubWVudFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIkUK",
+            "ElN0b3JlZFRhc2tNZXNzYWdlcxIvCgV0YXNrcxgBIAMoCzIZLnBsbS52MS5T",
+            "dG9yZWRUYXNrTWVzc2FnZVIFdGFza3MinQEKDk5ld1Rhc2tNZXNzYWdlEhIK",
+            "BG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2Ny",
+            "aXB0aW9uEicKD3NlcXVlbmNlX251bWJlchgEIAEoA1IOc2VxdWVuY2VOdW1i",
+            "ZXISLAoScGFyZW50X3NlcXVlbmNlX2lkGAUgASgJUhBwYXJlbnRTZXF1ZW5j",
+            "ZUlkItgDChFVcGRhdGVUYXNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoE",
+            "bmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
+            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0",
+            "GAUgASgJUg9pbnN0cnVjdGlvblRleHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYg",
+            "ASgDUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0X2lkGAcgASgJUgZwYXJ0SWQS",
+            "GQoIbW9kZWxfaWQYCCABKAlSB21vZGVsSWQSLQoJdGFza190eXBlGAkgASgO",
+            "MhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlwZRIpCgZ0YXJnZXQYCiABKAsy",
+            "ES5nZW9tZXRyeS52MS5Qb3NlUgZ0YXJnZXQSMAoIYXBwcm9hY2gYCyABKAsy",
+            "FC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2FjaBJVChVhc3NpZ25tZW50",
+            "X3ByZWZlcmVuY2UYDCABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVm",
+            "ZXJlbmNlUhRhc3NpZ25tZW50UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52MUIS",
+            "VGFza0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90",
+            "b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5Q",
+            "bG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessage), global::Messages.Plm.V1.StoredTaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessage), global::Messages.Plm.V1.StoredTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessages), global::Messages.Plm.V1.StoredTaskMessages.Parser, new[]{ "Tasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "Name", "Description", "SequenceNumber", "ParentSequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null)
           }));
     }
     #endregion
@@ -104,7 +107,9 @@ namespace Messages.Plm.V1 {
     public StoredTaskMessage(StoredTaskMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      icon_ = other.icon_;
       description_ = other.description_;
+      instructionText_ = other.instructionText_;
       sequenceNumber_ = other.sequenceNumber_;
       partId_ = other.partId_;
       modelId_ = other.modelId_;
@@ -145,8 +150,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,8 +174,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "instruction_text" field.</summary>
+    public const int InstructionTextFieldNumber = 5;
+    private string instructionText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstructionText {
+      get { return instructionText_; }
+      set {
+        instructionText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sequence_number" field.</summary>
-    public const int SequenceNumberFieldNumber = 4;
+    public const int SequenceNumberFieldNumber = 6;
     private long sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -170,7 +199,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "part_id" field.</summary>
-    public const int PartIdFieldNumber = 5;
+    public const int PartIdFieldNumber = 7;
     private string partId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -182,7 +211,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "model_id" field.</summary>
-    public const int ModelIdFieldNumber = 6;
+    public const int ModelIdFieldNumber = 8;
     private string modelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,7 +223,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "task_type" field.</summary>
-    public const int TaskTypeFieldNumber = 7;
+    public const int TaskTypeFieldNumber = 9;
     private global::Messages.Plm.V1.TaskType taskType_ = global::Messages.Plm.V1.TaskType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -206,11 +235,11 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "target" field.</summary>
-    public const int TargetFieldNumber = 8;
-    private global::Messages.Common.V1.LocalizedPose target_;
+    public const int TargetFieldNumber = 10;
+    private global::Messages.Common.V1.Pose target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Target {
+    public global::Messages.Common.V1.Pose Target {
       get { return target_; }
       set {
         target_ = value;
@@ -218,7 +247,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "approach" field.</summary>
-    public const int ApproachFieldNumber = 9;
+    public const int ApproachFieldNumber = 11;
     private global::Messages.Common.V1.Vector3 approach_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -230,7 +259,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "assignment_preference" field.</summary>
-    public const int AssignmentPreferenceFieldNumber = 19;
+    public const int AssignmentPreferenceFieldNumber = 12;
     private global::Messages.Plm.V1.TaskAssignmentPreference assignmentPreference_ = global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -258,7 +287,9 @@ namespace Messages.Plm.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
+      if (InstructionText != other.InstructionText) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
       if (PartId != other.PartId) return false;
       if (ModelId != other.ModelId) return false;
@@ -275,7 +306,9 @@ namespace Messages.Plm.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
       if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
@@ -309,36 +342,44 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
+        output.WriteRawTag(96);
         output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
@@ -359,36 +400,44 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
+        output.WriteRawTag(96);
         output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
@@ -407,8 +456,14 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (InstructionText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
       if (SequenceNumber != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
@@ -429,7 +484,7 @@ namespace Messages.Plm.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AssignmentPreference);
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -449,8 +504,14 @@ namespace Messages.Plm.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.InstructionText.Length != 0) {
+        InstructionText = other.InstructionText;
       }
       if (other.SequenceNumber != 0L) {
         SequenceNumber = other.SequenceNumber;
@@ -466,7 +527,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.target_ != null) {
         if (target_ == null) {
-          Target = new global::Messages.Common.V1.LocalizedPose();
+          Target = new global::Messages.Common.V1.Pose();
         }
         Target.MergeFrom(other.Target);
       }
@@ -507,40 +568,48 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Common.V1.Pose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 152: {
+          case 96: {
             AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }
@@ -572,40 +641,48 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Common.V1.Pose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 152: {
+          case 96: {
             AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }
@@ -1149,7 +1226,9 @@ namespace Messages.Plm.V1 {
     public UpdateTaskMessage(UpdateTaskMessage other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      icon_ = other.icon_;
       description_ = other.description_;
+      instructionText_ = other.instructionText_;
       sequenceNumber_ = other.sequenceNumber_;
       partId_ = other.partId_;
       modelId_ = other.modelId_;
@@ -1190,8 +1269,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1202,8 +1293,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "instruction_text" field.</summary>
+    public const int InstructionTextFieldNumber = 5;
+    private string instructionText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstructionText {
+      get { return instructionText_; }
+      set {
+        instructionText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sequence_number" field.</summary>
-    public const int SequenceNumberFieldNumber = 4;
+    public const int SequenceNumberFieldNumber = 6;
     private long sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1215,7 +1318,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "part_id" field.</summary>
-    public const int PartIdFieldNumber = 5;
+    public const int PartIdFieldNumber = 7;
     private string partId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1227,7 +1330,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "model_id" field.</summary>
-    public const int ModelIdFieldNumber = 6;
+    public const int ModelIdFieldNumber = 8;
     private string modelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1239,7 +1342,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "task_type" field.</summary>
-    public const int TaskTypeFieldNumber = 7;
+    public const int TaskTypeFieldNumber = 9;
     private global::Messages.Plm.V1.TaskType taskType_ = global::Messages.Plm.V1.TaskType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1251,11 +1354,11 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "target" field.</summary>
-    public const int TargetFieldNumber = 8;
-    private global::Messages.Common.V1.LocalizedPose target_;
+    public const int TargetFieldNumber = 10;
+    private global::Messages.Common.V1.Pose target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Target {
+    public global::Messages.Common.V1.Pose Target {
       get { return target_; }
       set {
         target_ = value;
@@ -1263,7 +1366,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "approach" field.</summary>
-    public const int ApproachFieldNumber = 9;
+    public const int ApproachFieldNumber = 11;
     private global::Messages.Common.V1.Vector3 approach_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1275,7 +1378,7 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "assignment_preference" field.</summary>
-    public const int AssignmentPreferenceFieldNumber = 19;
+    public const int AssignmentPreferenceFieldNumber = 12;
     private global::Messages.Plm.V1.TaskAssignmentPreference assignmentPreference_ = global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1303,7 +1406,9 @@ namespace Messages.Plm.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
+      if (InstructionText != other.InstructionText) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
       if (PartId != other.PartId) return false;
       if (ModelId != other.ModelId) return false;
@@ -1320,7 +1425,9 @@ namespace Messages.Plm.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
       if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
@@ -1354,36 +1461,44 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
+        output.WriteRawTag(96);
         output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
@@ -1404,36 +1519,44 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InstructionText);
+      }
       if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(SequenceNumber);
       }
       if (PartId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(PartId);
       }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(ModelId);
       }
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteEnum((int) TaskType);
       }
       if (target_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(82);
         output.WriteMessage(Target);
       }
       if (approach_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(90);
         output.WriteMessage(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        output.WriteRawTag(152, 1);
+        output.WriteRawTag(96);
         output.WriteEnum((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
@@ -1452,8 +1575,14 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (InstructionText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
       if (SequenceNumber != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
@@ -1474,7 +1603,7 @@ namespace Messages.Plm.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Approach);
       }
       if (AssignmentPreference != global::Messages.Plm.V1.TaskAssignmentPreference.Unspecified) {
-        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AssignmentPreference);
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AssignmentPreference);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1494,8 +1623,14 @@ namespace Messages.Plm.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.InstructionText.Length != 0) {
+        InstructionText = other.InstructionText;
       }
       if (other.SequenceNumber != 0L) {
         SequenceNumber = other.SequenceNumber;
@@ -1511,7 +1646,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.target_ != null) {
         if (target_ == null) {
-          Target = new global::Messages.Common.V1.LocalizedPose();
+          Target = new global::Messages.Common.V1.Pose();
         }
         Target.MergeFrom(other.Target);
       }
@@ -1552,40 +1687,48 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Common.V1.Pose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 152: {
+          case 96: {
             AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }
@@ -1617,40 +1760,48 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
+          case 42: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 48: {
             SequenceNumber = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 58: {
             PartId = input.ReadString();
             break;
           }
-          case 50: {
+          case 66: {
             ModelId = input.ReadString();
             break;
           }
-          case 56: {
+          case 72: {
             TaskType = (global::Messages.Plm.V1.TaskType) input.ReadEnum();
             break;
           }
-          case 66: {
+          case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Common.V1.Pose();
             }
             input.ReadMessage(Target);
             break;
           }
-          case 74: {
+          case 90: {
             if (approach_ == null) {
               Approach = new global::Messages.Common.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
           }
-          case 152: {
+          case 96: {
             AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
             break;
           }

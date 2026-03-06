@@ -11,14 +11,16 @@ option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 message StoredTaskMessage {
   string id = 1;
   string name = 2;
-  string description = 3;
-  int64 sequence_number = 4;
-  string part_id = 5;
-  string model_id = 6;
-  TaskType task_type = 7;
-  geometry.v1.LocalizedPose target = 8;
-  geometry.v1.Vector3 approach = 9;
-  TaskAssignmentPreference assignment_preference = 19;
+  string icon = 3;
+  string description = 4;
+  string instruction_text = 5;
+  int64 sequence_number = 6;
+  string part_id = 7;
+  string model_id = 8;
+  TaskType task_type = 9;
+  geometry.v1.Pose target = 10;
+  geometry.v1.Vector3 approach = 11;
+  TaskAssignmentPreference assignment_preference = 12;
 }
 
 message StoredTaskMessages {
@@ -35,12 +37,14 @@ message NewTaskMessage {
 message UpdateTaskMessage {
   string id = 1;
   string name = 2;
-  string description = 3;
-  int64 sequence_number = 4;
-  string part_id = 5;
-  string model_id = 6;
-  TaskType task_type = 7;
-  geometry.v1.LocalizedPose target = 8;
-  geometry.v1.Vector3 approach = 9;
-  TaskAssignmentPreference assignment_preference = 19;
+  string icon = 3;
+  string description = 4;
+  string instruction_text = 5;
+  int64 sequence_number = 6;
+  string part_id = 7;
+  string model_id = 8;
+  TaskType task_type = 9;
+  geometry.v1.Pose target = 10;
+  geometry.v1.Vector3 approach = 11;
+  TaskAssignmentPreference assignment_preference = 12;
 }

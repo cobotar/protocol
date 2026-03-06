@@ -17,16 +17,17 @@ enum SequenceState {
 message SequenceMessage {
   string id = 1;
   string name = 2;
-  string description = 3;
-  int64 sequence_number = 4;
-  geometry.v1.LocalizedPose frame = 5;
-  string parent_id = 6;
-  repeated string sequence_ids = 7;
-  repeated string task_ids = 8;
-  repeated string assigned_to = 9;
-  SequenceState state = 10;
-  int64 completed_tasks = 11;
-  bool can_bulk_complete = 12;
+  string icon = 3;
+  string description = 4;
+  int64 sequence_number = 5;
+  geometry.v1.LocalizedPose frame = 6;
+  string parent_id = 7;
+  repeated string sequence_ids = 8;
+  repeated string task_ids = 9;
+  repeated string assigned_to = 10;
+  SequenceState state = 11;
+  int64 completed_tasks = 12;
+  bool can_bulk_complete = 13;
 }
 
 // Update published when the state of a sequence have changed

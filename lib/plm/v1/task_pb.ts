@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task.proto.
  */
 export const file_plm_v1_task: GenFile = /*@__PURE__*/
-  fileDesc("ChFwbG0vdjEvdGFzay5wcm90bxIGcGxtLnYxIvMDCgtUYXNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIPCgdwYXJ0X2lkGAUgASgJEhAKCG1vZGVsX2lkGAYgASgJEiMKCXRhc2tfdHlwZRgHIAEoDjIQLnBsbS52MS5UYXNrVHlwZRIqCgZ0YXJnZXQYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEiYKCGFwcHJvYWNoGAkgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIRCglwYXJlbnRfaWQYCiABKAkSEgoKYWdlbnRzX2lkcxgLIAMoCRITCgthc3NpZ25lZF90bxgMIAEoCRIgCgVzdGF0ZRgNIAEoDjIRLnBsbS52MS5UYXNrU3RhdGUSFQoNcHJlY29uZGl0aW9ucxgOIAMoCRISCgpkZXBlbmRhbnRzGA8gAygJEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgTIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2USFAoMY2FuX3JlYXNzaWduGBAgASgIEg4KBmNhbl9kbxgRIAEoCBIQCghjYW5fdW5kbxgSIAEoCCKPAQoSVGFza1VwZGF0ZWRNZXNzYWdlEgoKAmlkGAEgASgJEhMKC2Fzc2lnbmVkX3RvGAIgASgJEiAKBXN0YXRlGAMgASgOMhEucGxtLnYxLlRhc2tTdGF0ZRIUCgxjYW5fcmVhc3NpZ24YBCABKAgSDgoGY2FuX2RvGAUgASgIEhAKCGNhbl91bmRvGAYgASgIKrABCglUYXNrU3RhdGUSGgoWVEFTS19TVEFURV9VTlNQRUNJRklFRBAAEiMKH1RBU0tfU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIWChJUQVNLX1NUQVRFX1dBSVRJTkcQAhIaChZUQVNLX1NUQVRFX0lOX1BST0dSRVNTEAMSGAoUVEFTS19TVEFURV9DT01QTEVURUQQBBIUChBUQVNLX1NUQVRFX0VSUk9SEAYq6QEKCFRhc2tUeXBlEhkKFVRBU0tfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRBU0tfVFlQRV9JTlNQRUNUEAESFAoQVEFTS19UWVBFX0ZBU1RFThACEhYKElRBU0tfVFlQRV9VTkZBU1RFThADEhMKD1RBU0tfVFlQRV9NT1VOVBAEEhUKEVRBU0tfVFlQRV9VTk1PVU5UEAUSEgoOVEFTS19UWVBFX01PVkUQBhIUChBUQVNLX1RZUEVfUkVNT1ZFEAcSEwoPVEFTS19UWVBFX0FQUExZEAgSEgoOVEFTS19UWVBFX1dJUEUQCSr2AQoYVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1VOU1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfUk9CT1QQBEKMAQoKY29tLnBsbS52MUIJVGFza1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_geometry_v1_vector3]);
+  fileDesc("ChFwbG0vdjEvdGFzay5wcm90bxIGcGxtLnYxIpsECgtUYXNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSGAoQaW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBiABKAMSDwoHcGFydF9pZBgHIAEoCRIQCghtb2RlbF9pZBgIIAEoCRIjCgl0YXNrX3R5cGUYCSABKA4yEC5wbG0udjEuVGFza1R5cGUSKgoGdGFyZ2V0GAogASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRImCghhcHByb2FjaBgLIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSEQoJcGFyZW50X2lkGAwgASgJEhIKCmFnZW50c19pZHMYDSADKAkSEwoLYXNzaWduZWRfdG8YDiABKAkSIAoFc3RhdGUYDyABKA4yES5wbG0udjEuVGFza1N0YXRlEhUKDXByZWNvbmRpdGlvbnMYECADKAkSEgoKZGVwZW5kYW50cxgRIAMoCRI/ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEiABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlEhQKDGNhbl9yZWFzc2lnbhgTIAEoCBIOCgZjYW5fZG8YFCABKAgSEAoIY2FuX3VuZG8YFSABKAgijwEKElRhc2tVcGRhdGVkTWVzc2FnZRIKCgJpZBgBIAEoCRITCgthc3NpZ25lZF90bxgCIAEoCRIgCgVzdGF0ZRgDIAEoDjIRLnBsbS52MS5UYXNrU3RhdGUSFAoMY2FuX3JlYXNzaWduGAQgASgIEg4KBmNhbl9kbxgFIAEoCBIQCghjYW5fdW5kbxgGIAEoCCqwAQoJVGFza1N0YXRlEhoKFlRBU0tfU1RBVEVfVU5TUEVDSUZJRUQQABIjCh9UQVNLX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESFgoSVEFTS19TVEFURV9XQUlUSU5HEAISGgoWVEFTS19TVEFURV9JTl9QUk9HUkVTUxADEhgKFFRBU0tfU1RBVEVfQ09NUExFVEVEEAQSFAoQVEFTS19TVEFURV9FUlJPUhAGKukBCghUYXNrVHlwZRIZChVUQVNLX1RZUEVfVU5TUEVDSUZJRUQQABIVChFUQVNLX1RZUEVfSU5TUEVDVBABEhQKEFRBU0tfVFlQRV9GQVNURU4QAhIWChJUQVNLX1RZUEVfVU5GQVNURU4QAxITCg9UQVNLX1RZUEVfTU9VTlQQBBIVChFUQVNLX1RZUEVfVU5NT1VOVBAFEhIKDlRBU0tfVFlQRV9NT1ZFEAYSFAoQVEFTS19UWVBFX1JFTU9WRRAHEhMKD1RBU0tfVFlQRV9BUFBMWRAIEhIKDlRBU0tfVFlQRV9XSVBFEAkq9gEKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIqCiZUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEARCjAEKCmNvbS5wbG0udjFCCVRhc2tQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose, file_geometry_v1_vector3]);
 
 /**
  * TODO: add required skill?
@@ -36,91 +36,99 @@ export type TaskMessage = Message<"plm.v1.TaskMessage"> & {
   name: string;
 
   /**
-   * TODO: rename to instruction_text
-   *
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 4;
+   * @generated from field: string instruction_text = 5;
+   */
+  instructionText: string;
+
+  /**
+   * @generated from field: int64 sequence_number = 6;
    */
   sequenceNumber: bigint;
 
   /**
-   * @generated from field: string part_id = 5;
+   * @generated from field: string part_id = 7;
    */
   partId: string;
 
   /**
-   * @generated from field: string model_id = 6;
+   * @generated from field: string model_id = 8;
    */
   modelId: string;
 
   /**
-   * @generated from field: plm.v1.TaskType task_type = 7;
+   * @generated from field: plm.v1.TaskType task_type = 9;
    */
   taskType: TaskType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose target = 8;
+   * @generated from field: geometry.v1.LocalizedPose target = 10;
    */
   target?: LocalizedPose;
 
   /**
-   * @generated from field: geometry.v1.Vector3 approach = 9;
+   * @generated from field: geometry.v1.Vector3 approach = 11;
    */
   approach?: Vector3;
 
   /**
-   * @generated from field: string parent_id = 10;
+   * @generated from field: string parent_id = 12;
    */
   parentId: string;
 
   /**
-   * @generated from field: repeated string agents_ids = 11;
+   * @generated from field: repeated string agents_ids = 13;
    */
   agentsIds: string[];
 
   /**
-   * @generated from field: string assigned_to = 12;
+   * @generated from field: string assigned_to = 14;
    */
   assignedTo: string;
 
   /**
-   * @generated from field: plm.v1.TaskState state = 13;
+   * @generated from field: plm.v1.TaskState state = 15;
    */
   state: TaskState;
 
   /**
-   * @generated from field: repeated string preconditions = 14;
+   * @generated from field: repeated string preconditions = 16;
    */
   preconditions: string[];
 
   /**
-   * @generated from field: repeated string dependants = 15;
+   * @generated from field: repeated string dependants = 17;
    */
   dependants: string[];
 
   /**
-   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 19;
+   * @generated from field: plm.v1.TaskAssignmentPreference assignment_preference = 18;
    */
   assignmentPreference: TaskAssignmentPreference;
 
   /**
-   * @generated from field: bool can_reassign = 16;
+   * @generated from field: bool can_reassign = 19;
    */
   canReassign: boolean;
 
   /**
-   * @generated from field: bool can_do = 17;
+   * @generated from field: bool can_do = 20;
    */
   canDo: boolean;
 
   /**
    * TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
    *
-   * @generated from field: bool can_undo = 18;
+   * @generated from field: bool can_undo = 21;
    */
   canUndo: boolean;
 };

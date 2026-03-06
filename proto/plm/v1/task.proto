@@ -44,23 +44,25 @@ enum TaskAssignmentPreference {
 message TaskMessage {
   string id = 1;
   string name = 2;
-  string description = 3; // TODO: rename to instruction_text
-  int64 sequence_number = 4;
-  string part_id = 5;
-  string model_id = 6;
-  TaskType task_type = 7;
-  geometry.v1.LocalizedPose target = 8;
-  geometry.v1.Vector3 approach = 9;
-  string parent_id = 10;
-  repeated string agents_ids = 11;
-  string assigned_to = 12;
-  TaskState state = 13;
-  repeated string preconditions = 14;
-  repeated string dependants = 15;
-  TaskAssignmentPreference assignment_preference = 19;
-  bool can_reassign = 16;
-  bool can_do = 17;
-  bool can_undo = 18;
+  string icon = 3;
+  string description = 4;
+  string instruction_text = 5;
+  int64 sequence_number = 6;
+  string part_id = 7;
+  string model_id = 8;
+  TaskType task_type = 9;
+  geometry.v1.LocalizedPose target = 10;
+  geometry.v1.Vector3 approach = 11;
+  string parent_id = 12;
+  repeated string agents_ids = 13;
+  string assigned_to = 14;
+  TaskState state = 15;
+  repeated string preconditions = 16;
+  repeated string dependants = 17;
+  TaskAssignmentPreference assignment_preference = 18;
+  bool can_reassign = 19;
+  bool can_do = 20;
+  bool can_undo = 21;
   // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
 }
 

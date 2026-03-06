@@ -18,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/process.proto.
  */
 export const file_plm_v1_process: GenFile = /*@__PURE__*/
-  fileDesc("ChRwbG0vdjEvcHJvY2Vzcy5wcm90bxIGcGxtLnYxIq4DCg5Qcm9jZXNzTWVzc2FnZRITCgtpbnN0YW5jZV9pZBgBIAEoCRIKCgJpZBgCIAEoCRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhgKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAkSKgoJc2VxdWVuY2VzGAggAygLMhcucGxtLnYxLlNlcXVlbmNlTWVzc2FnZRIiCgV0YXNrcxgJIAMoCzITLnBsbS52MS5UYXNrTWVzc2FnZRIjCgVzdGF0ZRgKIAEoDjIULnBsbS52MS5Qcm9jZXNzU3RhdGUSLQoJaW5pdGlhdGVkGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIpCgVlbmRlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEAoIb3JkZXJfaWQYDSABKAkSDwoHbGluZV9pZBgOIAEoCSKIAQoVUHJvY2Vzc1VwZGF0ZWRNZXNzYWdlEhMKC2luc3RhbmNlX2lkGAEgASgJEgoKAmlkGAIgASgJEiMKBXN0YXRlGAogASgOMhQucGxtLnYxLlByb2Nlc3NTdGF0ZRIpCgVlbmRlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiPAoPUHJvY2Vzc01lc3NhZ2VzEikKCXByb2Nlc3NlcxgBIAMoCzIWLnBsbS52MS5Qcm9jZXNzTWVzc2FnZSqdAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQqnwEKDFByb2Nlc3NTdGF0ZRIdChlQUk9DRVNTX1NUQVRFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19TVEFURV9XQUlUSU5HEAESHQoZUFJPQ0VTU19TVEFURV9JTl9QUk9HUkVTUxACEhsKF1BST0NFU1NfU1RBVEVfQ09NUExFVEVEEAMSGQoVUFJPQ0VTU19TVEFURV9BQk9SVEVEEARCjwEKCmNvbS5wbG0udjFCDFByb2Nlc3NQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose, file_google_protobuf_timestamp, file_plm_v1_sequence, file_plm_v1_task]);
+  fileDesc("ChRwbG0vdjEvcHJvY2Vzcy5wcm90bxIGcGxtLnYxIrwDCg5Qcm9jZXNzTWVzc2FnZRITCgtpbnN0YW5jZV9pZBgBIAEoCRIKCgJpZBgCIAEoCRIMCgRuYW1lGAMgASgJEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSIQoEdHlwZRgGIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZRIpCgVmcmFtZRgHIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIqCglzZXF1ZW5jZXMYCSADKAsyFy5wbG0udjEuU2VxdWVuY2VNZXNzYWdlEiIKBXRhc2tzGAogAygLMhMucGxtLnYxLlRhc2tNZXNzYWdlEiMKBXN0YXRlGAsgASgOMhQucGxtLnYxLlByb2Nlc3NTdGF0ZRItCglpbml0aWF0ZWQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEikKBWVuZGVkGA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIQCghvcmRlcl9pZBgOIAEoCRIPCgdsaW5lX2lkGA8gASgJIogBChVQcm9jZXNzVXBkYXRlZE1lc3NhZ2USEwoLaW5zdGFuY2VfaWQYASABKAkSCgoCaWQYAiABKAkSIwoFc3RhdGUYCiABKA4yFC5wbG0udjEuUHJvY2Vzc1N0YXRlEikKBWVuZGVkGAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCI8Cg9Qcm9jZXNzTWVzc2FnZXMSKQoJcHJvY2Vzc2VzGAEgAygLMhYucGxtLnYxLlByb2Nlc3NNZXNzYWdlKp0BCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBCqfAQoMUHJvY2Vzc1N0YXRlEh0KGVBST0NFU1NfU1RBVEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1NUQVRFX1dBSVRJTkcQARIdChlQUk9DRVNTX1NUQVRFX0lOX1BST0dSRVNTEAISGwoXUFJPQ0VTU19TVEFURV9DT01QTEVURUQQAxIZChVQUk9DRVNTX1NUQVRFX0FCT1JURUQQBEKPAQoKY29tLnBsbS52MUIMUHJvY2Vzc1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_google_protobuf_timestamp, file_plm_v1_sequence, file_plm_v1_task]);
 
 /**
  * TODO: should 'running' be called process and 'static' recipe?
@@ -43,57 +43,62 @@ export type ProcessMessage = Message<"plm.v1.ProcessMessage"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 4;
+   * @generated from field: string icon = 4;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 5;
    */
   description: string;
 
   /**
-   * @generated from field: plm.v1.ProcessType type = 5;
+   * @generated from field: plm.v1.ProcessType type = 6;
    */
   type: ProcessType;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   * @generated from field: geometry.v1.LocalizedPose frame = 7;
    */
   frame?: LocalizedPose;
 
   /**
-   * @generated from field: string root_sequence_id = 7;
+   * @generated from field: string root_sequence_id = 8;
    */
   rootSequenceId: string;
 
   /**
-   * @generated from field: repeated plm.v1.SequenceMessage sequences = 8;
+   * @generated from field: repeated plm.v1.SequenceMessage sequences = 9;
    */
   sequences: SequenceMessage[];
 
   /**
-   * @generated from field: repeated plm.v1.TaskMessage tasks = 9;
+   * @generated from field: repeated plm.v1.TaskMessage tasks = 10;
    */
   tasks: TaskMessage[];
 
   /**
-   * @generated from field: plm.v1.ProcessState state = 10;
+   * @generated from field: plm.v1.ProcessState state = 11;
    */
   state: ProcessState;
 
   /**
-   * @generated from field: google.protobuf.Timestamp initiated = 11;
+   * @generated from field: google.protobuf.Timestamp initiated = 12;
    */
   initiated?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp ended = 12;
+   * @generated from field: google.protobuf.Timestamp ended = 13;
    */
   ended?: Timestamp;
 
   /**
-   * @generated from field: string order_id = 13;
+   * @generated from field: string order_id = 14;
    */
   orderId: string;
 
   /**
-   * @generated from field: string line_id = 14;
+   * @generated from field: string line_id = 15;
    */
   lineId: string;
 };

@@ -10,10 +10,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class StoredTaskMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "assignment_preference")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "assignment_preference")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    INSTRUCTION_TEXT_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
     PART_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -23,15 +25,17 @@ class StoredTaskMessage(_message.Message):
     ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
+    icon: str
     description: str
+    instruction_text: str
     sequence_number: int
     part_id: str
     model_id: str
     task_type: _task_pb2.TaskType
-    target: _pose_pb2.LocalizedPose
+    target: _pose_pb2.Pose
     approach: _vector3_pb2.Vector3
     assignment_preference: _task_pb2.TaskAssignmentPreference
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
 
 class StoredTaskMessages(_message.Message):
     __slots__ = ("tasks",)
@@ -52,10 +56,12 @@ class NewTaskMessage(_message.Message):
     def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., parent_sequence_id: _Optional[str] = ...) -> None: ...
 
 class UpdateTaskMessage(_message.Message):
-    __slots__ = ("id", "name", "description", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "assignment_preference")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "assignment_preference")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    INSTRUCTION_TEXT_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
     PART_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -65,12 +71,14 @@ class UpdateTaskMessage(_message.Message):
     ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
+    icon: str
     description: str
+    instruction_text: str
     sequence_number: int
     part_id: str
     model_id: str
     task_type: _task_pb2.TaskType
-    target: _pose_pb2.LocalizedPose
+    target: _pose_pb2.Pose
     approach: _vector3_pb2.Vector3
     assignment_preference: _task_pb2.TaskAssignmentPreference
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
