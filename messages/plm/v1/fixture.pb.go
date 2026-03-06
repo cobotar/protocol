@@ -148,6 +148,50 @@ func (x *FixtureMessage) GetAcceptedPartIds() []string {
 	return nil
 }
 
+type FixtureMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Fixtures      []*FixtureMessage      `protobuf:"bytes,1,rep,name=fixtures,proto3" json:"fixtures,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FixtureMessages) Reset() {
+	*x = FixtureMessages{}
+	mi := &file_plm_v1_fixture_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FixtureMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FixtureMessages) ProtoMessage() {}
+
+func (x *FixtureMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_fixture_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FixtureMessages.ProtoReflect.Descriptor instead.
+func (*FixtureMessages) Descriptor() ([]byte, []int) {
+	return file_plm_v1_fixture_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *FixtureMessages) GetFixtures() []*FixtureMessage {
+	if x != nil {
+		return x.Fixtures
+	}
+	return nil
+}
+
 var File_plm_v1_fixture_proto protoreflect.FileDescriptor
 
 const file_plm_v1_fixture_proto_rawDesc = "" +
@@ -159,7 +203,9 @@ const file_plm_v1_fixture_proto_rawDesc = "" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.FixtureTypeR\x04type\x12*\n" +
-	"\x11accepted_part_ids\x18\x06 \x03(\tR\x0facceptedPartIds*+\n" +
+	"\x11accepted_part_ids\x18\x06 \x03(\tR\x0facceptedPartIds\"E\n" +
+	"\x0fFixtureMessages\x122\n" +
+	"\bfixtures\x18\x01 \x03(\v2\x16.plm.v1.FixtureMessageR\bfixtures*+\n" +
 	"\vFixtureType\x12\x1c\n" +
 	"\x18FIXTURE_TYPE_UNSPECIFIED\x10\x00B\x8f\x01\n" +
 	"\n" +
@@ -178,18 +224,20 @@ func file_plm_v1_fixture_proto_rawDescGZIP() []byte {
 }
 
 var file_plm_v1_fixture_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_plm_v1_fixture_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_plm_v1_fixture_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_plm_v1_fixture_proto_goTypes = []any{
-	(FixtureType)(0),       // 0: plm.v1.FixtureType
-	(*FixtureMessage)(nil), // 1: plm.v1.FixtureMessage
+	(FixtureType)(0),        // 0: plm.v1.FixtureType
+	(*FixtureMessage)(nil),  // 1: plm.v1.FixtureMessage
+	(*FixtureMessages)(nil), // 2: plm.v1.FixtureMessages
 }
 var file_plm_v1_fixture_proto_depIdxs = []int32{
 	0, // 0: plm.v1.FixtureMessage.type:type_name -> plm.v1.FixtureType
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 1: plm.v1.FixtureMessages.fixtures:type_name -> plm.v1.FixtureMessage
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_fixture_proto_init() }
@@ -203,7 +251,7 @@ func file_plm_v1_fixture_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_fixture_proto_rawDesc), len(file_plm_v1_fixture_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

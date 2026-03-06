@@ -16,3 +16,7 @@ message FixtureMessage {
   FixtureType type = 5;
   repeated string accepted_part_ids = 6;
 }
+
+message FixtureMessages {
+  repeated FixtureMessage fixtures = 1;
+}

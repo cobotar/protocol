@@ -194,6 +194,7 @@
   
 - [plm/v1/fixture.proto](#plm_v1_fixture-proto)
     - [FixtureMessage](#plm-v1-FixtureMessage)
+    - [FixtureMessages](#plm-v1-FixtureMessages)
   
     - [FixtureType](#plm-v1-FixtureType)
   
@@ -2738,6 +2739,21 @@ TODO: remove to PLM
 | description | [string](#string) |  |  |
 | type | [FixtureType](#plm-v1-FixtureType) |  |  |
 | accepted_part_ids | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="plm-v1-FixtureMessages"></a>
+
+### FixtureMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fixtures | [FixtureMessage](#plm-v1-FixtureMessage) | repeated |  |
 
 
 

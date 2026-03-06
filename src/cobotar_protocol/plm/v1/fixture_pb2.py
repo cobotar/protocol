@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14plm/v1/fixture.proto\x12\x06plm.v1\"\xbf\x01\n\x0e\x46ixtureMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.FixtureTypeR\x04type\x12*\n\x11\x61\x63\x63\x65pted_part_ids\x18\x06 \x03(\tR\x0f\x61\x63\x63\x65ptedPartIds*+\n\x0b\x46ixtureType\x12\x1c\n\x18\x46IXTURE_TYPE_UNSPECIFIED\x10\x00\x42\x8f\x01\n\ncom.plm.v1B\x0c\x46ixtureProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14plm/v1/fixture.proto\x12\x06plm.v1\"\xbf\x01\n\x0e\x46ixtureMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.FixtureTypeR\x04type\x12*\n\x11\x61\x63\x63\x65pted_part_ids\x18\x06 \x03(\tR\x0f\x61\x63\x63\x65ptedPartIds\"E\n\x0f\x46ixtureMessages\x12\x32\n\x08\x66ixtures\x18\x01 \x03(\x0b\x32\x16.plm.v1.FixtureMessageR\x08\x66ixtures*+\n\x0b\x46ixtureType\x12\x1c\n\x18\x46IXTURE_TYPE_UNSPECIFIED\x10\x00\x42\x8f\x01\n\ncom.plm.v1B\x0c\x46ixtureProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'plm.v1.fixture_pb2', _globa
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\ncom.plm.v1B\014FixtureProtoP\001Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\242\002\003PXX\252\002\017Messages.Plm.V1\312\002\006Plm\\V1\342\002\022Plm\\V1\\GPBMetadata\352\002\007Plm::V1'
-  _globals['_FIXTURETYPE']._serialized_start=226
-  _globals['_FIXTURETYPE']._serialized_end=269
+  _globals['_FIXTURETYPE']._serialized_start=297
+  _globals['_FIXTURETYPE']._serialized_end=340
   _globals['_FIXTUREMESSAGE']._serialized_start=33
   _globals['_FIXTUREMESSAGE']._serialized_end=224
+  _globals['_FIXTUREMESSAGES']._serialized_start=226
+  _globals['_FIXTUREMESSAGES']._serialized_end=295
 # @@protoc_insertion_point(module_scope)

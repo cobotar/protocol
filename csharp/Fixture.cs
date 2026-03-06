@@ -28,16 +28,18 @@ namespace Messages.Plm.V1 {
             "c2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
             "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
             "dGlvbhInCgR0eXBlGAUgASgOMhMucGxtLnYxLkZpeHR1cmVUeXBlUgR0eXBl",
-            "EioKEWFjY2VwdGVkX3BhcnRfaWRzGAYgAygJUg9hY2NlcHRlZFBhcnRJZHMq",
-            "KwoLRml4dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEABC",
-            "jwEKCmNvbS5wbG0udjFCDEZpeHR1cmVQcm90b1ABWjFnaXRodWIuY29tL2Nv",
-            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIP",
-            "TWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh",
-            "6gIHUGxtOjpWMWIGcHJvdG8z"));
+            "EioKEWFjY2VwdGVkX3BhcnRfaWRzGAYgAygJUg9hY2NlcHRlZFBhcnRJZHMi",
+            "RQoPRml4dHVyZU1lc3NhZ2VzEjIKCGZpeHR1cmVzGAEgAygLMhYucGxtLnYx",
+            "LkZpeHR1cmVNZXNzYWdlUghmaXh0dXJlcyorCgtGaXh0dXJlVHlwZRIcChhG",
+            "SVhUVVJFX1RZUEVfVU5TUEVDSUZJRUQQAEKPAQoKY29tLnBsbS52MUIMRml4",
+            "dHVyZVByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQ",
+            "bG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.FixtureType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.FixtureMessage), global::Messages.Plm.V1.FixtureMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "AcceptedPartIds" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.FixtureMessage), global::Messages.Plm.V1.FixtureMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "AcceptedPartIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.FixtureMessages), global::Messages.Plm.V1.FixtureMessages.Parser, new[]{ "Fixtures" }, null, null, null, null)
           }));
     }
     #endregion
@@ -414,6 +416,193 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             acceptedPartIds_.AddEntriesFrom(ref input, _repeated_acceptedPartIds_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class FixtureMessages : pb::IMessage<FixtureMessages>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FixtureMessages> _parser = new pb::MessageParser<FixtureMessages>(() => new FixtureMessages());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FixtureMessages> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Plm.V1.FixtureReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureMessages() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureMessages(FixtureMessages other) : this() {
+      fixtures_ = other.fixtures_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureMessages Clone() {
+      return new FixtureMessages(this);
+    }
+
+    /// <summary>Field number for the "fixtures" field.</summary>
+    public const int FixturesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Plm.V1.FixtureMessage> _repeated_fixtures_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Plm.V1.FixtureMessage.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Plm.V1.FixtureMessage> fixtures_ = new pbc::RepeatedField<global::Messages.Plm.V1.FixtureMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Plm.V1.FixtureMessage> Fixtures {
+      get { return fixtures_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FixtureMessages);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FixtureMessages other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!fixtures_.Equals(other.fixtures_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= fixtures_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      fixtures_.WriteTo(output, _repeated_fixtures_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      fixtures_.WriteTo(ref output, _repeated_fixtures_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += fixtures_.CalculateSize(_repeated_fixtures_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FixtureMessages other) {
+      if (other == null) {
+        return;
+      }
+      fixtures_.Add(other.fixtures_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            fixtures_.AddEntriesFrom(input, _repeated_fixtures_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            fixtures_.AddEntriesFrom(ref input, _repeated_fixtures_codec);
             break;
           }
         }

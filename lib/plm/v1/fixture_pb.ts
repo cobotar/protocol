@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/fixture.proto.
  */
 export const file_plm_v1_fixture: GenFile = /*@__PURE__*/
-  fileDesc("ChRwbG0vdjEvZml4dHVyZS5wcm90bxIGcGxtLnYxIosBCg5GaXh0dXJlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLnBsbS52MS5GaXh0dXJlVHlwZRIZChFhY2NlcHRlZF9wYXJ0X2lkcxgGIAMoCSorCgtGaXh0dXJlVHlwZRIcChhGSVhUVVJFX1RZUEVfVU5TUEVDSUZJRUQQAEKPAQoKY29tLnBsbS52MUIMRml4dHVyZVByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM");
+  fileDesc("ChRwbG0vdjEvZml4dHVyZS5wcm90bxIGcGxtLnYxIosBCg5GaXh0dXJlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLnBsbS52MS5GaXh0dXJlVHlwZRIZChFhY2NlcHRlZF9wYXJ0X2lkcxgGIAMoCSI7Cg9GaXh0dXJlTWVzc2FnZXMSKAoIZml4dHVyZXMYASADKAsyFi5wbG0udjEuRml4dHVyZU1lc3NhZ2UqKwoLRml4dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEABCjwEKCmNvbS5wbG0udjFCDEZpeHR1cmVQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message plm.v1.FixtureMessage
@@ -53,6 +53,23 @@ export type FixtureMessage = Message<"plm.v1.FixtureMessage"> & {
  */
 export const FixtureMessageSchema: GenMessage<FixtureMessage> = /*@__PURE__*/
   messageDesc(file_plm_v1_fixture, 0);
+
+/**
+ * @generated from message plm.v1.FixtureMessages
+ */
+export type FixtureMessages = Message<"plm.v1.FixtureMessages"> & {
+  /**
+   * @generated from field: repeated plm.v1.FixtureMessage fixtures = 1;
+   */
+  fixtures: FixtureMessage[];
+};
+
+/**
+ * Describes the message plm.v1.FixtureMessages.
+ * Use `create(FixtureMessagesSchema)` to create a new message.
+ */
+export const FixtureMessagesSchema: GenMessage<FixtureMessages> = /*@__PURE__*/
+  messageDesc(file_plm_v1_fixture, 1);
 
 /**
  * @generated from enum plm.v1.FixtureType
