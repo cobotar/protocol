@@ -226,8 +226,8 @@
   
 - [plm/v1/process.proto](#plm_v1_process-proto)
     - [ProcessMessage](#plm-v1-ProcessMessage)
+    - [ProcessMessages](#plm-v1-ProcessMessages)
     - [ProcessUpdatedMessage](#plm-v1-ProcessUpdatedMessage)
-    - [ProcessesMessage](#plm-v1-ProcessesMessage)
   
     - [ProcessState](#plm-v1-ProcessState)
     - [ProcessType](#plm-v1-ProcessType)
@@ -236,16 +236,15 @@
     - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
 - [plm/v1/sequence_authoring.proto](#plm_v1_sequence_authoring-proto)
-    - [DeleteSequenceMessage](#plm-v1-DeleteSequenceMessage)
     - [NewSequenceMessage](#plm-v1-NewSequenceMessage)
     - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
+    - [StoredSequenceMessages](#plm-v1-StoredSequenceMessages)
     - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
   
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
-    - [DeleteProcessMessage](#plm-v1-DeleteProcessMessage)
     - [NewProcessMessage](#plm-v1-NewProcessMessage)
     - [StoredProcessMessage](#plm-v1-StoredProcessMessage)
-    - [StoredProcessesMessage](#plm-v1-StoredProcessesMessage)
+    - [StoredProcessMessages](#plm-v1-StoredProcessMessages)
     - [UpdateProcessMessage](#plm-v1-UpdateProcessMessage)
   
 - [plm/v1/process_load.proto](#plm_v1_process_load-proto)
@@ -263,9 +262,9 @@
     - [SequenceReassignMessage](#plm-v1-SequenceReassignMessage)
   
 - [plm/v1/task_authoring.proto](#plm_v1_task_authoring-proto)
-    - [DeleteTaskMessage](#plm-v1-DeleteTaskMessage)
     - [NewTaskMessage](#plm-v1-NewTaskMessage)
     - [StoredTaskMessage](#plm-v1-StoredTaskMessage)
+    - [StoredTaskMessages](#plm-v1-StoredTaskMessages)
     - [UpdateTaskMessage](#plm-v1-UpdateTaskMessage)
   
 - [plm/v1/task_progress.proto](#plm_v1_task_progress-proto)
@@ -696,7 +695,7 @@ A simple pose consisting of a position and orientation
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | step | [double](#double) |  |  |
-| default | [common.v1.Color](#common-v1-Color) |  |  |
+| default | [common.v1.Color](#common-v1-Color) |  | TODO: allow user-preference override |
 
 
 
@@ -799,7 +798,8 @@ Properties are used by various components to define them, such as: feedback, act
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
 | advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
-| scope_id | [string](#string) |  | TODO: local or global property? |
+| scope_id | [string](#string) |  |  |
+| disable_mirroring | [bool](#bool) |  | If true, this property is not allowed to be mirrored by other properties |
 | bool_value | [bool](#bool) | optional |  |
 | int_value | [sint64](#sint64) | optional |  |
 | float_value | [float](#float) | optional |  |
@@ -3146,6 +3146,21 @@ TODO: Add/assign the agent(s) at runtime, instead of allocating them to the envi
 
 
 
+<a name="plm-v1-ProcessMessages"></a>
+
+### ProcessMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| processes | [ProcessMessage](#plm-v1-ProcessMessage) | repeated |  |
+
+
+
+
+
+
 <a name="plm-v1-ProcessUpdatedMessage"></a>
 
 ### ProcessUpdatedMessage
@@ -3158,21 +3173,6 @@ Update published when the state of a process have changed
 | id | [string](#string) |  |  |
 | state | [ProcessState](#plm-v1-ProcessState) |  |  |
 | ended | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-ProcessesMessage"></a>
-
-### ProcessesMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| processes | [ProcessMessage](#plm-v1-ProcessMessage) | repeated |  |
 
 
 
@@ -3258,21 +3258,6 @@ Update published when the state of a process have changed
 
 
 
-<a name="plm-v1-DeleteSequenceMessage"></a>
-
-### DeleteSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sequence_id | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="plm-v1-NewSequenceMessage"></a>
 
 ### NewSequenceMessage
@@ -3307,6 +3292,21 @@ Update published when the state of a process have changed
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
 | can_bulk_complete | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredSequenceMessages"></a>
+
+### StoredSequenceMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
 
 
 
@@ -3352,21 +3352,6 @@ Update published when the state of a process have changed
 
 
 
-<a name="plm-v1-DeleteProcessMessage"></a>
-
-### DeleteProcessMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| process_id | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="plm-v1-NewProcessMessage"></a>
 
 ### NewProcessMessage
@@ -3406,9 +3391,9 @@ TODO: rename to recipe?
 
 
 
-<a name="plm-v1-StoredProcessesMessage"></a>
+<a name="plm-v1-StoredProcessMessages"></a>
 
-### StoredProcessesMessage
+### StoredProcessMessages
 
 
 
@@ -3604,21 +3589,6 @@ Reassign all sub-tasks to the assignee (if possible)
 
 
 
-<a name="plm-v1-DeleteTaskMessage"></a>
-
-### DeleteTaskMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| task_id | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="plm-v1-NewTaskMessage"></a>
 
 ### NewTaskMessage
@@ -3655,6 +3625,21 @@ Reassign all sub-tasks to the assignee (if possible)
 | target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
+
+
+
+
+
+
+<a name="plm-v1-StoredTaskMessages"></a>
+
+### StoredTaskMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tasks | [StoredTaskMessage](#plm-v1-StoredTaskMessage) | repeated |  |
 
 
 

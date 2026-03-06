@@ -138,6 +138,50 @@ func (x *StoredTaskMessage) GetAssignmentPreference() TaskAssignmentPreference {
 	return TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED
 }
 
+type StoredTaskMessages struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tasks         []*StoredTaskMessage   `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoredTaskMessages) Reset() {
+	*x = StoredTaskMessages{}
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoredTaskMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoredTaskMessages) ProtoMessage() {}
+
+func (x *StoredTaskMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoredTaskMessages.ProtoReflect.Descriptor instead.
+func (*StoredTaskMessages) Descriptor() ([]byte, []int) {
+	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *StoredTaskMessages) GetTasks() []*StoredTaskMessage {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
 type NewTaskMessage struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -150,7 +194,7 @@ type NewTaskMessage struct {
 
 func (x *NewTaskMessage) Reset() {
 	*x = NewTaskMessage{}
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -162,7 +206,7 @@ func (x *NewTaskMessage) String() string {
 func (*NewTaskMessage) ProtoMessage() {}
 
 func (x *NewTaskMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -175,7 +219,7 @@ func (x *NewTaskMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewTaskMessage.ProtoReflect.Descriptor instead.
 func (*NewTaskMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *NewTaskMessage) GetName() string {
@@ -224,7 +268,7 @@ type UpdateTaskMessage struct {
 
 func (x *UpdateTaskMessage) Reset() {
 	*x = UpdateTaskMessage{}
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -236,7 +280,7 @@ func (x *UpdateTaskMessage) String() string {
 func (*UpdateTaskMessage) ProtoMessage() {}
 
 func (x *UpdateTaskMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_task_authoring_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -249,7 +293,7 @@ func (x *UpdateTaskMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTaskMessage.ProtoReflect.Descriptor instead.
 func (*UpdateTaskMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{2}
+	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateTaskMessage) GetId() string {
@@ -322,50 +366,6 @@ func (x *UpdateTaskMessage) GetAssignmentPreference() TaskAssignmentPreference {
 	return TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED
 }
 
-type DeleteTaskMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TaskId        string                 `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteTaskMessage) Reset() {
-	*x = DeleteTaskMessage{}
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteTaskMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteTaskMessage) ProtoMessage() {}
-
-func (x *DeleteTaskMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_task_authoring_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteTaskMessage.ProtoReflect.Descriptor instead.
-func (*DeleteTaskMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *DeleteTaskMessage) GetTaskId() string {
-	if x != nil {
-		return x.TaskId
-	}
-	return ""
-}
-
 var File_plm_v1_task_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_task_authoring_proto_rawDesc = "" +
@@ -381,7 +381,9 @@ const file_plm_v1_task_authoring_proto_rawDesc = "" +
 	"\ttask_type\x18\a \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
 	"\x06target\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
 	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
-	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\"\x9d\x01\n" +
+	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\"E\n" +
+	"\x12StoredTaskMessages\x12/\n" +
+	"\x05tasks\x18\x01 \x03(\v2\x19.plm.v1.StoredTaskMessageR\x05tasks\"\x9d\x01\n" +
 	"\x0eNewTaskMessage\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12'\n" +
@@ -397,9 +399,7 @@ const file_plm_v1_task_authoring_proto_rawDesc = "" +
 	"\ttask_type\x18\a \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +
 	"\x06target\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x06target\x120\n" +
 	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
-	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\",\n" +
-	"\x11DeleteTaskMessage\x12\x17\n" +
-	"\atask_id\x18\x01 \x01(\tR\x06taskIdB\x95\x01\n" +
+	"\x15assignment_preference\x18\x13 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreferenceB\x95\x01\n" +
 	"\n" +
 	"com.plm.v1B\x12TaskAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -418,9 +418,9 @@ func file_plm_v1_task_authoring_proto_rawDescGZIP() []byte {
 var file_plm_v1_task_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_plm_v1_task_authoring_proto_goTypes = []any{
 	(*StoredTaskMessage)(nil),     // 0: plm.v1.StoredTaskMessage
-	(*NewTaskMessage)(nil),        // 1: plm.v1.NewTaskMessage
-	(*UpdateTaskMessage)(nil),     // 2: plm.v1.UpdateTaskMessage
-	(*DeleteTaskMessage)(nil),     // 3: plm.v1.DeleteTaskMessage
+	(*StoredTaskMessages)(nil),    // 1: plm.v1.StoredTaskMessages
+	(*NewTaskMessage)(nil),        // 2: plm.v1.NewTaskMessage
+	(*UpdateTaskMessage)(nil),     // 3: plm.v1.UpdateTaskMessage
 	(TaskType)(0),                 // 4: plm.v1.TaskType
 	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
 	(*v1.Vector3)(nil),            // 6: geometry.v1.Vector3
@@ -431,15 +431,16 @@ var file_plm_v1_task_authoring_proto_depIdxs = []int32{
 	5, // 1: plm.v1.StoredTaskMessage.target:type_name -> geometry.v1.LocalizedPose
 	6, // 2: plm.v1.StoredTaskMessage.approach:type_name -> geometry.v1.Vector3
 	7, // 3: plm.v1.StoredTaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
-	4, // 4: plm.v1.UpdateTaskMessage.task_type:type_name -> plm.v1.TaskType
-	5, // 5: plm.v1.UpdateTaskMessage.target:type_name -> geometry.v1.LocalizedPose
-	6, // 6: plm.v1.UpdateTaskMessage.approach:type_name -> geometry.v1.Vector3
-	7, // 7: plm.v1.UpdateTaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	0, // 4: plm.v1.StoredTaskMessages.tasks:type_name -> plm.v1.StoredTaskMessage
+	4, // 5: plm.v1.UpdateTaskMessage.task_type:type_name -> plm.v1.TaskType
+	5, // 6: plm.v1.UpdateTaskMessage.target:type_name -> geometry.v1.LocalizedPose
+	6, // 7: plm.v1.UpdateTaskMessage.approach:type_name -> geometry.v1.Vector3
+	7, // 8: plm.v1.UpdateTaskMessage.assignment_preference:type_name -> plm.v1.TaskAssignmentPreference
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_task_authoring_proto_init() }

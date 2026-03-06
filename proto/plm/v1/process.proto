@@ -52,6 +52,6 @@ message ProcessUpdatedMessage {
   google.protobuf.Timestamp ended = 12;
 }
 
-message ProcessesMessage {
+message ProcessMessages {
   repeated ProcessMessage processes = 1;
 }

@@ -18,6 +18,10 @@ message StoredSequenceMessage {
   bool can_bulk_complete = 12;
 }
 
+message StoredSequenceMessages {
+  repeated StoredSequenceMessage sequences = 1;
+}
+
 message NewSequenceMessage {
   string name = 3;
   string description = 4;
@@ -34,8 +38,4 @@ message UpdateSequenceMessage {
   repeated string sequence_ids = 7;
   repeated string task_ids = 8;
   bool can_bulk_complete = 12;
-}
-
-message DeleteSequenceMessage {
-  string sequence_id = 1;
 }

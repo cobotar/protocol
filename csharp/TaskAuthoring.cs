@@ -35,32 +35,32 @@ namespace Messages.Plm.V1 {
             "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBnRhcmdldBIwCghhcHByb2FjaBgJ",
             "IAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSCGFwcHJvYWNoElUKFWFzc2ln",
             "bm1lbnRfcHJlZmVyZW5jZRgTIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVu",
-            "dFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIp0BCg5OZXdUYXNr",
-            "TWVzc2FnZRISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMg",
-            "ASgJUgtkZXNjcmlwdGlvbhInCg9zZXF1ZW5jZV9udW1iZXIYBCABKANSDnNl",
-            "cXVlbmNlTnVtYmVyEiwKEnBhcmVudF9zZXF1ZW5jZV9pZBgFIAEoCVIQcGFy",
-            "ZW50U2VxdWVuY2VJZCKiAwoRVXBkYXRlVGFza01lc3NhZ2USDgoCaWQYASAB",
-            "KAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyAB",
-            "KAlSC2Rlc2NyaXB0aW9uEicKD3NlcXVlbmNlX251bWJlchgEIAEoA1IOc2Vx",
-            "dWVuY2VOdW1iZXISFwoHcGFydF9pZBgFIAEoCVIGcGFydElkEhkKCG1vZGVs",
-            "X2lkGAYgASgJUgdtb2RlbElkEi0KCXRhc2tfdHlwZRgHIAEoDjIQLnBsbS52",
-            "MS5UYXNrVHlwZVIIdGFza1R5cGUSMgoGdGFyZ2V0GAggASgLMhouZ2VvbWV0",
-            "cnkudjEuTG9jYWxpemVkUG9zZVIGdGFyZ2V0EjAKCGFwcHJvYWNoGAkgASgL",
-            "MhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IIYXBwcm9hY2gSVQoVYXNzaWdubWVu",
-            "dF9wcmVmZXJlbmNlGBMgASgOMiAucGxtLnYxLlRhc2tBc3NpZ25tZW50UHJl",
-            "ZmVyZW5jZVIUYXNzaWdubWVudFByZWZlcmVuY2UiLAoRRGVsZXRlVGFza01l",
-            "c3NhZ2USFwoHdGFza19pZBgBIAEoCVIGdGFza0lkQpUBCgpjb20ucGxtLnYx",
-            "QhJUYXNrQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2Vz",
-            "LlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6",
-            "VjFiBnByb3RvMw=="));
+            "dFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIkUKElN0b3JlZFRh",
+            "c2tNZXNzYWdlcxIvCgV0YXNrcxgBIAMoCzIZLnBsbS52MS5TdG9yZWRUYXNr",
+            "TWVzc2FnZVIFdGFza3MinQEKDk5ld1Rhc2tNZXNzYWdlEhIKBG5hbWUYAiAB",
+            "KAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEicK",
+            "D3NlcXVlbmNlX251bWJlchgEIAEoA1IOc2VxdWVuY2VOdW1iZXISLAoScGFy",
+            "ZW50X3NlcXVlbmNlX2lkGAUgASgJUhBwYXJlbnRTZXF1ZW5jZUlkIqIDChFV",
+            "cGRhdGVUYXNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
+            "CVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SJwoP",
+            "c2VxdWVuY2VfbnVtYmVyGAQgASgDUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0",
+            "X2lkGAUgASgJUgZwYXJ0SWQSGQoIbW9kZWxfaWQYBiABKAlSB21vZGVsSWQS",
+            "LQoJdGFza190eXBlGAcgASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlw",
+            "ZRIyCgZ0YXJnZXQYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3Nl",
+            "UgZ0YXJnZXQSMAoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5WZWN0",
+            "b3IzUghhcHByb2FjaBJVChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEyABKA4y",
+            "IC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlUhRhc3NpZ25tZW50",
+            "UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52MUISVGFza0F1dGhvcmluZ1Byb3Rv",
+            "UAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0v",
+            "djE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQ",
+            "bG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessage), global::Messages.Plm.V1.StoredTaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessages), global::Messages.Plm.V1.StoredTaskMessages.Parser, new[]{ "Tasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "Name", "Description", "SequenceNumber", "ParentSequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.DeleteTaskMessage), global::Messages.Plm.V1.DeleteTaskMessage.Parser, new[]{ "TaskId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Description", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null)
           }));
     }
     #endregion
@@ -617,6 +617,193 @@ namespace Messages.Plm.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class StoredTaskMessages : pb::IMessage<StoredTaskMessages>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<StoredTaskMessages> _parser = new pb::MessageParser<StoredTaskMessages>(() => new StoredTaskMessages());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<StoredTaskMessages> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredTaskMessages() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredTaskMessages(StoredTaskMessages other) : this() {
+      tasks_ = other.tasks_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredTaskMessages Clone() {
+      return new StoredTaskMessages(this);
+    }
+
+    /// <summary>Field number for the "tasks" field.</summary>
+    public const int TasksFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Plm.V1.StoredTaskMessage> _repeated_tasks_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Plm.V1.StoredTaskMessage.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Plm.V1.StoredTaskMessage> tasks_ = new pbc::RepeatedField<global::Messages.Plm.V1.StoredTaskMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Plm.V1.StoredTaskMessage> Tasks {
+      get { return tasks_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as StoredTaskMessages);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(StoredTaskMessages other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!tasks_.Equals(other.tasks_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= tasks_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      tasks_.WriteTo(output, _repeated_tasks_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      tasks_.WriteTo(ref output, _repeated_tasks_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += tasks_.CalculateSize(_repeated_tasks_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(StoredTaskMessages other) {
+      if (other == null) {
+        return;
+      }
+      tasks_.Add(other.tasks_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            tasks_.AddEntriesFrom(input, _repeated_tasks_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            tasks_.AddEntriesFrom(ref input, _repeated_tasks_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class NewTaskMessage : pb::IMessage<NewTaskMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -631,7 +818,7 @@ namespace Messages.Plm.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -940,7 +1127,7 @@ namespace Messages.Plm.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1465,204 +1652,6 @@ namespace Messages.Plm.V1 {
           }
           case 152: {
             AssignmentPreference = (global::Messages.Plm.V1.TaskAssignmentPreference) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class DeleteTaskMessage : pb::IMessage<DeleteTaskMessage>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<DeleteTaskMessage> _parser = new pb::MessageParser<DeleteTaskMessage>(() => new DeleteTaskMessage());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<DeleteTaskMessage> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Plm.V1.TaskAuthoringReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteTaskMessage() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteTaskMessage(DeleteTaskMessage other) : this() {
-      taskId_ = other.taskId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteTaskMessage Clone() {
-      return new DeleteTaskMessage(this);
-    }
-
-    /// <summary>Field number for the "task_id" field.</summary>
-    public const int TaskIdFieldNumber = 1;
-    private string taskId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string TaskId {
-      get { return taskId_; }
-      set {
-        taskId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as DeleteTaskMessage);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(DeleteTaskMessage other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (TaskId != other.TaskId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (TaskId.Length != 0) hash ^= TaskId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (TaskId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(TaskId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TaskId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(TaskId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (TaskId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(DeleteTaskMessage other) {
-      if (other == null) {
-        return;
-      }
-      if (other.TaskId.Length != 0) {
-        TaskId = other.TaskId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            TaskId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            TaskId = input.ReadString();
             break;
           }
         }

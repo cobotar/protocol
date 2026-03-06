@@ -130,6 +130,50 @@ func (x *StoredSequenceMessage) GetCanBulkComplete() bool {
 	return false
 }
 
+type StoredSequenceMessages struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Sequences     []*StoredSequenceMessage `protobuf:"bytes,1,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StoredSequenceMessages) Reset() {
+	*x = StoredSequenceMessages{}
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StoredSequenceMessages) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoredSequenceMessages) ProtoMessage() {}
+
+func (x *StoredSequenceMessages) ProtoReflect() protoreflect.Message {
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoredSequenceMessages.ProtoReflect.Descriptor instead.
+func (*StoredSequenceMessages) Descriptor() ([]byte, []int) {
+	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *StoredSequenceMessages) GetSequences() []*StoredSequenceMessage {
+	if x != nil {
+		return x.Sequences
+	}
+	return nil
+}
+
 type NewSequenceMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
@@ -141,7 +185,7 @@ type NewSequenceMessage struct {
 
 func (x *NewSequenceMessage) Reset() {
 	*x = NewSequenceMessage{}
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -153,7 +197,7 @@ func (x *NewSequenceMessage) String() string {
 func (*NewSequenceMessage) ProtoMessage() {}
 
 func (x *NewSequenceMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[1]
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -166,7 +210,7 @@ func (x *NewSequenceMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewSequenceMessage.ProtoReflect.Descriptor instead.
 func (*NewSequenceMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *NewSequenceMessage) GetName() string {
@@ -207,7 +251,7 @@ type UpdateSequenceMessage struct {
 
 func (x *UpdateSequenceMessage) Reset() {
 	*x = UpdateSequenceMessage{}
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -219,7 +263,7 @@ func (x *UpdateSequenceMessage) String() string {
 func (*UpdateSequenceMessage) ProtoMessage() {}
 
 func (x *UpdateSequenceMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[2]
+	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -232,7 +276,7 @@ func (x *UpdateSequenceMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSequenceMessage.ProtoReflect.Descriptor instead.
 func (*UpdateSequenceMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{2}
+	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateSequenceMessage) GetId() string {
@@ -298,50 +342,6 @@ func (x *UpdateSequenceMessage) GetCanBulkComplete() bool {
 	return false
 }
 
-type DeleteSequenceMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	SequenceId    string                 `protobuf:"bytes,1,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteSequenceMessage) Reset() {
-	*x = DeleteSequenceMessage{}
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteSequenceMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteSequenceMessage) ProtoMessage() {}
-
-func (x *DeleteSequenceMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_sequence_authoring_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteSequenceMessage.ProtoReflect.Descriptor instead.
-func (*DeleteSequenceMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *DeleteSequenceMessage) GetSequenceId() string {
-	if x != nil {
-		return x.SequenceId
-	}
-	return ""
-}
-
 var File_plm_v1_sequence_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_sequence_authoring_proto_rawDesc = "" +
@@ -356,7 +356,9 @@ const file_plm_v1_sequence_authoring_proto_rawDesc = "" +
 	"\tparent_id\x18\x06 \x01(\tR\bparentId\x12!\n" +
 	"\fsequence_ids\x18\a \x03(\tR\vsequenceIds\x12\x19\n" +
 	"\btask_ids\x18\b \x03(\tR\ataskIds\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"g\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"U\n" +
+	"\x16StoredSequenceMessages\x12;\n" +
+	"\tsequences\x18\x01 \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\"g\n" +
 	"\x12NewSequenceMessage\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1b\n" +
@@ -370,10 +372,7 @@ const file_plm_v1_sequence_authoring_proto_rawDesc = "" +
 	"\tparent_id\x18\x06 \x01(\tR\bparentId\x12!\n" +
 	"\fsequence_ids\x18\a \x03(\tR\vsequenceIds\x12\x19\n" +
 	"\btask_ids\x18\b \x03(\tR\ataskIds\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"8\n" +
-	"\x15DeleteSequenceMessage\x12\x1f\n" +
-	"\vsequence_id\x18\x01 \x01(\tR\n" +
-	"sequenceIdB\x99\x01\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkCompleteB\x99\x01\n" +
 	"\n" +
 	"com.plm.v1B\x16SequenceAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -391,20 +390,21 @@ func file_plm_v1_sequence_authoring_proto_rawDescGZIP() []byte {
 
 var file_plm_v1_sequence_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_plm_v1_sequence_authoring_proto_goTypes = []any{
-	(*StoredSequenceMessage)(nil), // 0: plm.v1.StoredSequenceMessage
-	(*NewSequenceMessage)(nil),    // 1: plm.v1.NewSequenceMessage
-	(*UpdateSequenceMessage)(nil), // 2: plm.v1.UpdateSequenceMessage
-	(*DeleteSequenceMessage)(nil), // 3: plm.v1.DeleteSequenceMessage
-	(*v1.LocalizedPose)(nil),      // 4: geometry.v1.LocalizedPose
+	(*StoredSequenceMessage)(nil),  // 0: plm.v1.StoredSequenceMessage
+	(*StoredSequenceMessages)(nil), // 1: plm.v1.StoredSequenceMessages
+	(*NewSequenceMessage)(nil),     // 2: plm.v1.NewSequenceMessage
+	(*UpdateSequenceMessage)(nil),  // 3: plm.v1.UpdateSequenceMessage
+	(*v1.LocalizedPose)(nil),       // 4: geometry.v1.LocalizedPose
 }
 var file_plm_v1_sequence_authoring_proto_depIdxs = []int32{
 	4, // 0: plm.v1.StoredSequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
-	4, // 1: plm.v1.UpdateSequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // 1: plm.v1.StoredSequenceMessages.sequences:type_name -> plm.v1.StoredSequenceMessage
+	4, // 2: plm.v1.UpdateSequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_plm_v1_sequence_authoring_proto_init() }

@@ -122,27 +122,27 @@ func (x *StoredProcessMessage) GetTasks() []*TaskMessage {
 	return nil
 }
 
-type StoredProcessesMessage struct {
+type StoredProcessMessages struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
 	Processes     []*StoredProcessMessage `protobuf:"bytes,1,rep,name=processes,proto3" json:"processes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *StoredProcessesMessage) Reset() {
-	*x = StoredProcessesMessage{}
+func (x *StoredProcessMessages) Reset() {
+	*x = StoredProcessMessages{}
 	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *StoredProcessesMessage) String() string {
+func (x *StoredProcessMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StoredProcessesMessage) ProtoMessage() {}
+func (*StoredProcessMessages) ProtoMessage() {}
 
-func (x *StoredProcessesMessage) ProtoReflect() protoreflect.Message {
+func (x *StoredProcessMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_plm_v1_process_authoring_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -154,12 +154,12 @@ func (x *StoredProcessesMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StoredProcessesMessage.ProtoReflect.Descriptor instead.
-func (*StoredProcessesMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use StoredProcessMessages.ProtoReflect.Descriptor instead.
+func (*StoredProcessMessages) Descriptor() ([]byte, []int) {
 	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *StoredProcessesMessage) GetProcesses() []*StoredProcessMessage {
+func (x *StoredProcessMessages) GetProcesses() []*StoredProcessMessage {
 	if x != nil {
 		return x.Processes
 	}
@@ -310,50 +310,6 @@ func (x *UpdateProcessMessage) GetRootSequenceId() string {
 	return ""
 }
 
-type DeleteProcessMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ProcessId     string                 `protobuf:"bytes,1,opt,name=process_id,json=processId,proto3" json:"process_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteProcessMessage) Reset() {
-	*x = DeleteProcessMessage{}
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteProcessMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteProcessMessage) ProtoMessage() {}
-
-func (x *DeleteProcessMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_authoring_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteProcessMessage.ProtoReflect.Descriptor instead.
-func (*DeleteProcessMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_authoring_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *DeleteProcessMessage) GetProcessId() string {
-	if x != nil {
-		return x.ProcessId
-	}
-	return ""
-}
-
 var File_plm_v1_process_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_authoring_proto_rawDesc = "" +
@@ -367,8 +323,8 @@ const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
 	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\x12;\n" +
 	"\tsequences\x18\b \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\x12)\n" +
-	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\"T\n" +
-	"\x16StoredProcessesMessage\x12:\n" +
+	"\x05tasks\x18\t \x03(\v2\x13.plm.v1.TaskMessageR\x05tasks\"S\n" +
+	"\x15StoredProcessMessages\x12:\n" +
 	"\tprocesses\x18\x01 \x03(\v2\x1c.plm.v1.StoredProcessMessageR\tprocesses\"r\n" +
 	"\x11NewProcessMessage\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
@@ -380,10 +336,7 @@ const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.plm.v1.ProcessTypeR\x04type\x120\n" +
 	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12(\n" +
-	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceId\"5\n" +
-	"\x14DeleteProcessMessage\x12\x1d\n" +
-	"\n" +
-	"process_id\x18\x01 \x01(\tR\tprocessIdB\x98\x01\n" +
+	"\x10root_sequence_id\x18\a \x01(\tR\x0erootSequenceIdB\x98\x01\n" +
 	"\n" +
 	"com.plm.v1B\x15ProcessAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -399,27 +352,26 @@ func file_plm_v1_process_authoring_proto_rawDescGZIP() []byte {
 	return file_plm_v1_process_authoring_proto_rawDescData
 }
 
-var file_plm_v1_process_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_plm_v1_process_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_plm_v1_process_authoring_proto_goTypes = []any{
-	(*StoredProcessMessage)(nil),   // 0: plm.v1.StoredProcessMessage
-	(*StoredProcessesMessage)(nil), // 1: plm.v1.StoredProcessesMessage
-	(*NewProcessMessage)(nil),      // 2: plm.v1.NewProcessMessage
-	(*UpdateProcessMessage)(nil),   // 3: plm.v1.UpdateProcessMessage
-	(*DeleteProcessMessage)(nil),   // 4: plm.v1.DeleteProcessMessage
-	(ProcessType)(0),               // 5: plm.v1.ProcessType
-	(*v1.LocalizedPose)(nil),       // 6: geometry.v1.LocalizedPose
-	(*StoredSequenceMessage)(nil),  // 7: plm.v1.StoredSequenceMessage
-	(*TaskMessage)(nil),            // 8: plm.v1.TaskMessage
+	(*StoredProcessMessage)(nil),  // 0: plm.v1.StoredProcessMessage
+	(*StoredProcessMessages)(nil), // 1: plm.v1.StoredProcessMessages
+	(*NewProcessMessage)(nil),     // 2: plm.v1.NewProcessMessage
+	(*UpdateProcessMessage)(nil),  // 3: plm.v1.UpdateProcessMessage
+	(ProcessType)(0),              // 4: plm.v1.ProcessType
+	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
+	(*StoredSequenceMessage)(nil), // 6: plm.v1.StoredSequenceMessage
+	(*TaskMessage)(nil),           // 7: plm.v1.TaskMessage
 }
 var file_plm_v1_process_authoring_proto_depIdxs = []int32{
-	5, // 0: plm.v1.StoredProcessMessage.type:type_name -> plm.v1.ProcessType
-	6, // 1: plm.v1.StoredProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
-	7, // 2: plm.v1.StoredProcessMessage.sequences:type_name -> plm.v1.StoredSequenceMessage
-	8, // 3: plm.v1.StoredProcessMessage.tasks:type_name -> plm.v1.TaskMessage
-	0, // 4: plm.v1.StoredProcessesMessage.processes:type_name -> plm.v1.StoredProcessMessage
-	5, // 5: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
-	5, // 6: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
-	6, // 7: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 0: plm.v1.StoredProcessMessage.type:type_name -> plm.v1.ProcessType
+	5, // 1: plm.v1.StoredProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
+	6, // 2: plm.v1.StoredProcessMessage.sequences:type_name -> plm.v1.StoredSequenceMessage
+	7, // 3: plm.v1.StoredProcessMessage.tasks:type_name -> plm.v1.TaskMessage
+	0, // 4: plm.v1.StoredProcessMessages.processes:type_name -> plm.v1.StoredProcessMessage
+	4, // 5: plm.v1.NewProcessMessage.type:type_name -> plm.v1.ProcessType
+	4, // 6: plm.v1.UpdateProcessMessage.type:type_name -> plm.v1.ProcessType
+	5, // 7: plm.v1.UpdateProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
 	8, // [8:8] is the sub-list for method output_type
 	8, // [8:8] is the sub-list for method input_type
 	8, // [8:8] is the sub-list for extension type_name
@@ -441,7 +393,7 @@ func file_plm_v1_process_authoring_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_process_authoring_proto_rawDesc), len(file_plm_v1_process_authoring_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

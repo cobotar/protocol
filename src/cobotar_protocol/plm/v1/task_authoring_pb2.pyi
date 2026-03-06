@@ -1,9 +1,10 @@
 from geometry.v1 import pose_pb2 as _pose_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
 from plm.v1 import task_pb2 as _task_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -31,6 +32,12 @@ class StoredTaskMessage(_message.Message):
     approach: _vector3_pb2.Vector3
     assignment_preference: _task_pb2.TaskAssignmentPreference
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
+
+class StoredTaskMessages(_message.Message):
+    __slots__ = ("tasks",)
+    TASKS_FIELD_NUMBER: _ClassVar[int]
+    tasks: _containers.RepeatedCompositeFieldContainer[StoredTaskMessage]
+    def __init__(self, tasks: _Optional[_Iterable[_Union[StoredTaskMessage, _Mapping]]] = ...) -> None: ...
 
 class NewTaskMessage(_message.Message):
     __slots__ = ("name", "description", "sequence_number", "parent_sequence_id")
@@ -67,9 +74,3 @@ class UpdateTaskMessage(_message.Message):
     approach: _vector3_pb2.Vector3
     assignment_preference: _task_pb2.TaskAssignmentPreference
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., part_id: _Optional[str] = ..., model_id: _Optional[str] = ..., task_type: _Optional[_Union[_task_pb2.TaskType, str]] = ..., target: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., assignment_preference: _Optional[_Union[_task_pb2.TaskAssignmentPreference, str]] = ...) -> None: ...
-
-class DeleteTaskMessage(_message.Message):
-    __slots__ = ("task_id",)
-    TASK_ID_FIELD_NUMBER: _ClassVar[int]
-    task_id: str
-    def __init__(self, task_id: _Optional[str] = ...) -> None: ...

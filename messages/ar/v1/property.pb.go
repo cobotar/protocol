@@ -241,8 +241,9 @@ type Property struct {
 	Ordering                  int32                  `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
 	HideGroup                 bool                   `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
 	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`             // Hide behind "Advanced" toogle
-	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"` // TODO: local or global property?
+	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
+	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"`
+	DisableMirroring          bool                   `protobuf:"varint,16,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"` // If true, this property is not allowed to be mirrored by other properties
 	BoolValue                 *bool                  `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3,oneof" json:"bool_value,omitempty"`
 	IntValue                  *int64                 `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3,oneof" json:"int_value,omitempty"`
 	FloatValue                *float32               `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3,oneof" json:"float_value,omitempty"`
@@ -400,6 +401,13 @@ func (x *Property) GetScopeId() string {
 		return x.ScopeId
 	}
 	return ""
+}
+
+func (x *Property) GetDisableMirroring() bool {
+	if x != nil {
+		return x.DisableMirroring
+	}
+	return false
 }
 
 func (x *Property) GetBoolValue() bool {
@@ -1097,7 +1105,7 @@ func (x *Vector3Extras) GetUnit() string {
 type ColorExtras struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Step          float64                `protobuf:"fixed64,1,opt,name=step,proto3" json:"step,omitempty"`
-	Default       *v11.Color             `protobuf:"bytes,2,opt,name=default,proto3" json:"default,omitempty"`
+	Default       *v11.Color             `protobuf:"bytes,2,opt,name=default,proto3" json:"default,omitempty"` // TODO: allow user-preference override
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1246,7 +1254,7 @@ var File_ar_v1_property_proto protoreflect.FileDescriptor
 
 const file_ar_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x1b\n" +
+	"\x14ar/v1/property.proto\x12\x05ar.v1\x1a\x17ar/v1/permissions.proto\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf9\x1b\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1265,7 +1273,8 @@ const file_ar_v1_property_proto_rawDesc = "" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1b\n" +
 	"\tparent_id\x18\r \x01(\tR\bparentId\x12\x1a\n" +
 	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\x19\n" +
-	"\bscope_id\x18\x0f \x01(\tR\ascopeId\x12\"\n" +
+	"\bscope_id\x18\x0f \x01(\tR\ascopeId\x12+\n" +
+	"\x11disable_mirroring\x18\x10 \x01(\bR\x10disableMirroring\x12\"\n" +
 	"\n" +
 	"bool_value\x18\x15 \x01(\bH\x00R\tboolValue\x88\x01\x01\x12 \n" +
 	"\tint_value\x18\x16 \x01(\x12H\x01R\bintValue\x88\x01\x01\x12$\n" +

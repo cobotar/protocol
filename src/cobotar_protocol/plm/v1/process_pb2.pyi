@@ -83,7 +83,7 @@ class ProcessUpdatedMessage(_message.Message):
     ended: _timestamp_pb2.Timestamp
     def __init__(self, instance_id: _Optional[str] = ..., id: _Optional[str] = ..., state: _Optional[_Union[ProcessState, str]] = ..., ended: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
-class ProcessesMessage(_message.Message):
+class ProcessMessages(_message.Message):
     __slots__ = ("processes",)
     PROCESSES_FIELD_NUMBER: _ClassVar[int]
     processes: _containers.RepeatedCompositeFieldContainer[ProcessMessage]

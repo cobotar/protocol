@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task_authoring.proto.
  */
 export const file_plm_v1_task_authoring: GenFile = /*@__PURE__*/
-  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSK4AgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSDwoHcGFydF9pZBgFIAEoCRIQCghtb2RlbF9pZBgGIAEoCRIjCgl0YXNrX3R5cGUYByABKA4yEC5wbG0udjEuVGFza1R5cGUSKgoGdGFyZ2V0GAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRImCghhcHByb2FjaBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSPwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGBMgASgOMiAucGxtLnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZSJoCg5OZXdUYXNrTWVzc2FnZRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIaChJwYXJlbnRfc2VxdWVuY2VfaWQYBSABKAkiuAIKEVVwZGF0ZVRhc2tNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAQgASgDEg8KB3BhcnRfaWQYBSABKAkSEAoIbW9kZWxfaWQYBiABKAkSIwoJdGFza190eXBlGAcgASgOMhAucGxtLnYxLlRhc2tUeXBlEioKBnRhcmdldBgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USJgoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgTIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiJAoRRGVsZXRlVGFza01lc3NhZ2USDwoHdGFza19pZBgBIAEoCUKVAQoKY29tLnBsbS52MUISVGFza0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
+  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSK4AgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSDwoHcGFydF9pZBgFIAEoCRIQCghtb2RlbF9pZBgGIAEoCRIjCgl0YXNrX3R5cGUYByABKA4yEC5wbG0udjEuVGFza1R5cGUSKgoGdGFyZ2V0GAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRImCghhcHByb2FjaBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSPwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGBMgASgOMiAucGxtLnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZSI+ChJTdG9yZWRUYXNrTWVzc2FnZXMSKAoFdGFza3MYASADKAsyGS5wbG0udjEuU3RvcmVkVGFza01lc3NhZ2UiaAoOTmV3VGFza01lc3NhZ2USDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSGgoScGFyZW50X3NlcXVlbmNlX2lkGAUgASgJIrgCChFVcGRhdGVUYXNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIPCgdwYXJ0X2lkGAUgASgJEhAKCG1vZGVsX2lkGAYgASgJEiMKCXRhc2tfdHlwZRgHIAEoDjIQLnBsbS52MS5UYXNrVHlwZRIqCgZ0YXJnZXQYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEiYKCGFwcHJvYWNoGAkgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI/ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEyABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlQpUBCgpjb20ucGxtLnYxQhJUYXNrQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
 
 /**
  * @generated from message plm.v1.StoredTaskMessage
@@ -81,6 +81,23 @@ export const StoredTaskMessageSchema: GenMessage<StoredTaskMessage> = /*@__PURE_
   messageDesc(file_plm_v1_task_authoring, 0);
 
 /**
+ * @generated from message plm.v1.StoredTaskMessages
+ */
+export type StoredTaskMessages = Message<"plm.v1.StoredTaskMessages"> & {
+  /**
+   * @generated from field: repeated plm.v1.StoredTaskMessage tasks = 1;
+   */
+  tasks: StoredTaskMessage[];
+};
+
+/**
+ * Describes the message plm.v1.StoredTaskMessages.
+ * Use `create(StoredTaskMessagesSchema)` to create a new message.
+ */
+export const StoredTaskMessagesSchema: GenMessage<StoredTaskMessages> = /*@__PURE__*/
+  messageDesc(file_plm_v1_task_authoring, 1);
+
+/**
  * @generated from message plm.v1.NewTaskMessage
  */
 export type NewTaskMessage = Message<"plm.v1.NewTaskMessage"> & {
@@ -110,7 +127,7 @@ export type NewTaskMessage = Message<"plm.v1.NewTaskMessage"> & {
  * Use `create(NewTaskMessageSchema)` to create a new message.
  */
 export const NewTaskMessageSchema: GenMessage<NewTaskMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_task_authoring, 1);
+  messageDesc(file_plm_v1_task_authoring, 2);
 
 /**
  * @generated from message plm.v1.UpdateTaskMessage
@@ -172,22 +189,5 @@ export type UpdateTaskMessage = Message<"plm.v1.UpdateTaskMessage"> & {
  * Use `create(UpdateTaskMessageSchema)` to create a new message.
  */
 export const UpdateTaskMessageSchema: GenMessage<UpdateTaskMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_task_authoring, 2);
-
-/**
- * @generated from message plm.v1.DeleteTaskMessage
- */
-export type DeleteTaskMessage = Message<"plm.v1.DeleteTaskMessage"> & {
-  /**
-   * @generated from field: string task_id = 1;
-   */
-  taskId: string;
-};
-
-/**
- * Describes the message plm.v1.DeleteTaskMessage.
- * Use `create(DeleteTaskMessageSchema)` to create a new message.
- */
-export const DeleteTaskMessageSchema: GenMessage<DeleteTaskMessage> = /*@__PURE__*/
   messageDesc(file_plm_v1_task_authoring, 3);
 

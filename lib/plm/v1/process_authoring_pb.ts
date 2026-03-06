@@ -18,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/process_authoring.proto.
  */
 export const file_plm_v1_process_authoring: GenFile = /*@__PURE__*/
-  fileDesc("Ch5wbG0vdjEvcHJvY2Vzc19hdXRob3JpbmcucHJvdG8SBnBsbS52MSKDAgoUU3RvcmVkUHJvY2Vzc01lc3NhZ2USCgoCaWQYAiABKAkSDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIYChByb290X3NlcXVlbmNlX2lkGAcgASgJEjAKCXNlcXVlbmNlcxgIIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1ZW5jZU1lc3NhZ2USIgoFdGFza3MYCSADKAsyEy5wbG0udjEuVGFza01lc3NhZ2UiSQoWU3RvcmVkUHJvY2Vzc2VzTWVzc2FnZRIvCglwcm9jZXNzZXMYASADKAsyHC5wbG0udjEuU3RvcmVkUHJvY2Vzc01lc3NhZ2UiWQoRTmV3UHJvY2Vzc01lc3NhZ2USDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlIq0BChRVcGRhdGVQcm9jZXNzTWVzc2FnZRIKCgJpZBgCIAEoCRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhgKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAkiKgoURGVsZXRlUHJvY2Vzc01lc3NhZ2USEgoKcHJvY2Vzc19pZBgBIAEoCUKYAQoKY29tLnBsbS52MUIVUHJvY2Vzc0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_plm_v1_process, file_plm_v1_sequence_authoring, file_plm_v1_task]);
+  fileDesc("Ch5wbG0vdjEvcHJvY2Vzc19hdXRob3JpbmcucHJvdG8SBnBsbS52MSKDAgoUU3RvcmVkUHJvY2Vzc01lc3NhZ2USCgoCaWQYAiABKAkSDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIYChByb290X3NlcXVlbmNlX2lkGAcgASgJEjAKCXNlcXVlbmNlcxgIIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1ZW5jZU1lc3NhZ2USIgoFdGFza3MYCSADKAsyEy5wbG0udjEuVGFza01lc3NhZ2UiSAoVU3RvcmVkUHJvY2Vzc01lc3NhZ2VzEi8KCXByb2Nlc3NlcxgBIAMoCzIcLnBsbS52MS5TdG9yZWRQcm9jZXNzTWVzc2FnZSJZChFOZXdQcm9jZXNzTWVzc2FnZRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiEKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGUirQEKFFVwZGF0ZVByb2Nlc3NNZXNzYWdlEgoKAmlkGAIgASgJEgwKBG5hbWUYAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIQoEdHlwZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USGAoQcm9vdF9zZXF1ZW5jZV9pZBgHIAEoCUKYAQoKY29tLnBsbS52MUIVUHJvY2Vzc0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_plm_v1_process, file_plm_v1_sequence_authoring, file_plm_v1_task]);
 
 /**
  * TODO: rename to recipe?
@@ -77,9 +77,9 @@ export const StoredProcessMessageSchema: GenMessage<StoredProcessMessage> = /*@_
   messageDesc(file_plm_v1_process_authoring, 0);
 
 /**
- * @generated from message plm.v1.StoredProcessesMessage
+ * @generated from message plm.v1.StoredProcessMessages
  */
-export type StoredProcessesMessage = Message<"plm.v1.StoredProcessesMessage"> & {
+export type StoredProcessMessages = Message<"plm.v1.StoredProcessMessages"> & {
   /**
    * @generated from field: repeated plm.v1.StoredProcessMessage processes = 1;
    */
@@ -87,10 +87,10 @@ export type StoredProcessesMessage = Message<"plm.v1.StoredProcessesMessage"> & 
 };
 
 /**
- * Describes the message plm.v1.StoredProcessesMessage.
- * Use `create(StoredProcessesMessageSchema)` to create a new message.
+ * Describes the message plm.v1.StoredProcessMessages.
+ * Use `create(StoredProcessMessagesSchema)` to create a new message.
  */
-export const StoredProcessesMessageSchema: GenMessage<StoredProcessesMessage> = /*@__PURE__*/
+export const StoredProcessMessagesSchema: GenMessage<StoredProcessMessages> = /*@__PURE__*/
   messageDesc(file_plm_v1_process_authoring, 1);
 
 /**
@@ -161,21 +161,4 @@ export type UpdateProcessMessage = Message<"plm.v1.UpdateProcessMessage"> & {
  */
 export const UpdateProcessMessageSchema: GenMessage<UpdateProcessMessage> = /*@__PURE__*/
   messageDesc(file_plm_v1_process_authoring, 3);
-
-/**
- * @generated from message plm.v1.DeleteProcessMessage
- */
-export type DeleteProcessMessage = Message<"plm.v1.DeleteProcessMessage"> & {
-  /**
-   * @generated from field: string process_id = 1;
-   */
-  processId: string;
-};
-
-/**
- * Describes the message plm.v1.DeleteProcessMessage.
- * Use `create(DeleteProcessMessageSchema)` to create a new message.
- */
-export const DeleteProcessMessageSchema: GenMessage<DeleteProcessMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_process_authoring, 4);
 

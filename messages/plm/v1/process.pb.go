@@ -352,27 +352,27 @@ func (x *ProcessUpdatedMessage) GetEnded() *timestamppb.Timestamp {
 	return nil
 }
 
-type ProcessesMessage struct {
+type ProcessMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Processes     []*ProcessMessage      `protobuf:"bytes,1,rep,name=processes,proto3" json:"processes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ProcessesMessage) Reset() {
-	*x = ProcessesMessage{}
+func (x *ProcessMessages) Reset() {
+	*x = ProcessMessages{}
 	mi := &file_plm_v1_process_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ProcessesMessage) String() string {
+func (x *ProcessMessages) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProcessesMessage) ProtoMessage() {}
+func (*ProcessMessages) ProtoMessage() {}
 
-func (x *ProcessesMessage) ProtoReflect() protoreflect.Message {
+func (x *ProcessMessages) ProtoReflect() protoreflect.Message {
 	mi := &file_plm_v1_process_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -384,12 +384,12 @@ func (x *ProcessesMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProcessesMessage.ProtoReflect.Descriptor instead.
-func (*ProcessesMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProcessMessages.ProtoReflect.Descriptor instead.
+func (*ProcessMessages) Descriptor() ([]byte, []int) {
 	return file_plm_v1_process_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ProcessesMessage) GetProcesses() []*ProcessMessage {
+func (x *ProcessMessages) GetProcesses() []*ProcessMessage {
 	if x != nil {
 		return x.Processes
 	}
@@ -424,8 +424,8 @@ const file_plm_v1_process_proto_rawDesc = "" +
 	"\x02id\x18\x02 \x01(\tR\x02id\x12*\n" +
 	"\x05state\x18\n" +
 	" \x01(\x0e2\x14.plm.v1.ProcessStateR\x05state\x120\n" +
-	"\x05ended\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\x05ended\"H\n" +
-	"\x10ProcessesMessage\x124\n" +
+	"\x05ended\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\x05ended\"G\n" +
+	"\x0fProcessMessages\x124\n" +
 	"\tprocesses\x18\x01 \x03(\v2\x16.plm.v1.ProcessMessageR\tprocesses*\x9d\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
@@ -461,7 +461,7 @@ var file_plm_v1_process_proto_goTypes = []any{
 	(ProcessState)(0),             // 1: plm.v1.ProcessState
 	(*ProcessMessage)(nil),        // 2: plm.v1.ProcessMessage
 	(*ProcessUpdatedMessage)(nil), // 3: plm.v1.ProcessUpdatedMessage
-	(*ProcessesMessage)(nil),      // 4: plm.v1.ProcessesMessage
+	(*ProcessMessages)(nil),       // 4: plm.v1.ProcessMessages
 	(*v1.LocalizedPose)(nil),      // 5: geometry.v1.LocalizedPose
 	(*SequenceMessage)(nil),       // 6: plm.v1.SequenceMessage
 	(*TaskMessage)(nil),           // 7: plm.v1.TaskMessage
@@ -477,7 +477,7 @@ var file_plm_v1_process_proto_depIdxs = []int32{
 	8,  // 6: plm.v1.ProcessMessage.ended:type_name -> google.protobuf.Timestamp
 	1,  // 7: plm.v1.ProcessUpdatedMessage.state:type_name -> plm.v1.ProcessState
 	8,  // 8: plm.v1.ProcessUpdatedMessage.ended:type_name -> google.protobuf.Timestamp
-	2,  // 9: plm.v1.ProcessesMessage.processes:type_name -> plm.v1.ProcessMessage
+	2,  // 9: plm.v1.ProcessMessages.processes:type_name -> plm.v1.ProcessMessage
 	10, // [10:10] is the sub-list for method output_type
 	10, // [10:10] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name

@@ -34,29 +34,27 @@ namespace Messages.Plm.V1 {
             "c2VSBWZyYW1lEigKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAlSDnJvb3RTZXF1",
             "ZW5jZUlkEjsKCXNlcXVlbmNlcxgIIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1",
             "ZW5jZU1lc3NhZ2VSCXNlcXVlbmNlcxIpCgV0YXNrcxgJIAMoCzITLnBsbS52",
-            "MS5UYXNrTWVzc2FnZVIFdGFza3MiVAoWU3RvcmVkUHJvY2Vzc2VzTWVzc2Fn",
-            "ZRI6Cglwcm9jZXNzZXMYASADKAsyHC5wbG0udjEuU3RvcmVkUHJvY2Vzc01l",
-            "c3NhZ2VSCXByb2Nlc3NlcyJyChFOZXdQcm9jZXNzTWVzc2FnZRISCgRuYW1l",
+            "MS5UYXNrTWVzc2FnZVIFdGFza3MiUwoVU3RvcmVkUHJvY2Vzc01lc3NhZ2Vz",
+            "EjoKCXByb2Nlc3NlcxgBIAMoCzIcLnBsbS52MS5TdG9yZWRQcm9jZXNzTWVz",
+            "c2FnZVIJcHJvY2Vzc2VzInIKEU5ld1Byb2Nlc3NNZXNzYWdlEhIKBG5hbWUY",
+            "AyABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u",
+            "EicKBHR5cGUYBSABKA4yEy5wbG0udjEuUHJvY2Vzc1R5cGVSBHR5cGUi4QEK",
+            "FFVwZGF0ZVByb2Nlc3NNZXNzYWdlEg4KAmlkGAIgASgJUgJpZBISCgRuYW1l",
             "GAMgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlv",
-            "bhInCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlUgR0eXBlIuEB",
-            "ChRVcGRhdGVQcm9jZXNzTWVzc2FnZRIOCgJpZBgCIAEoCVICaWQSEgoEbmFt",
-            "ZRgDIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp",
-            "b24SJwoEdHlwZRgFIAEoDjITLnBsbS52MS5Qcm9jZXNzVHlwZVIEdHlwZRIw",
-            "CgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZy",
-            "YW1lEigKEHJvb3Rfc2VxdWVuY2VfaWQYByABKAlSDnJvb3RTZXF1ZW5jZUlk",
-            "IjUKFERlbGV0ZVByb2Nlc3NNZXNzYWdlEh0KCnByb2Nlc3NfaWQYASABKAlS",
-            "CXByb2Nlc3NJZEKYAQoKY29tLnBsbS52MUIVUHJvY2Vzc0F1dGhvcmluZ1By",
-            "b3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9w",
-            "bG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHi",
-            "AhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM="));
+            "bhInCgR0eXBlGAUgASgOMhMucGxtLnYxLlByb2Nlc3NUeXBlUgR0eXBlEjAK",
+            "BWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIFZnJh",
+            "bWUSKAoQcm9vdF9zZXF1ZW5jZV9pZBgHIAEoCVIOcm9vdFNlcXVlbmNlSWRC",
+            "mAEKCmNvbS5wbG0udjFCFVByb2Nlc3NBdXRob3JpbmdQcm90b1ABWjFnaXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYx",
+            "ogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQ",
+            "Qk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Plm.V1.ProcessReflection.Descriptor, global::Messages.Plm.V1.SequenceAuthoringReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredProcessMessage), global::Messages.Plm.V1.StoredProcessMessage.Parser, new[]{ "Id", "Name", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredProcessesMessage), global::Messages.Plm.V1.StoredProcessesMessage.Parser, new[]{ "Processes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredProcessMessages), global::Messages.Plm.V1.StoredProcessMessages.Parser, new[]{ "Processes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewProcessMessage), global::Messages.Plm.V1.NewProcessMessage.Parser, new[]{ "Name", "Description", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateProcessMessage), global::Messages.Plm.V1.UpdateProcessMessage.Parser, new[]{ "Id", "Name", "Description", "Type", "Frame", "RootSequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.DeleteProcessMessage), global::Messages.Plm.V1.DeleteProcessMessage.Parser, new[]{ "ProcessId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateProcessMessage), global::Messages.Plm.V1.UpdateProcessMessage.Parser, new[]{ "Id", "Name", "Description", "Type", "Frame", "RootSequenceId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -514,16 +512,16 @@ namespace Messages.Plm.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class StoredProcessesMessage : pb::IMessage<StoredProcessesMessage>
+  public sealed partial class StoredProcessMessages : pb::IMessage<StoredProcessMessages>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<StoredProcessesMessage> _parser = new pb::MessageParser<StoredProcessesMessage>(() => new StoredProcessesMessage());
+    private static readonly pb::MessageParser<StoredProcessMessages> _parser = new pb::MessageParser<StoredProcessMessages>(() => new StoredProcessMessages());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<StoredProcessesMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<StoredProcessMessages> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -539,7 +537,7 @@ namespace Messages.Plm.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public StoredProcessesMessage() {
+    public StoredProcessMessages() {
       OnConstruction();
     }
 
@@ -547,15 +545,15 @@ namespace Messages.Plm.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public StoredProcessesMessage(StoredProcessesMessage other) : this() {
+    public StoredProcessMessages(StoredProcessMessages other) : this() {
       processes_ = other.processes_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public StoredProcessesMessage Clone() {
-      return new StoredProcessesMessage(this);
+    public StoredProcessMessages Clone() {
+      return new StoredProcessMessages(this);
     }
 
     /// <summary>Field number for the "processes" field.</summary>
@@ -572,12 +570,12 @@ namespace Messages.Plm.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as StoredProcessesMessage);
+      return Equals(other as StoredProcessMessages);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(StoredProcessesMessage other) {
+    public bool Equals(StoredProcessMessages other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -642,7 +640,7 @@ namespace Messages.Plm.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(StoredProcessesMessage other) {
+    public void MergeFrom(StoredProcessMessages other) {
       if (other == null) {
         return;
       }
@@ -1355,204 +1353,6 @@ namespace Messages.Plm.V1 {
           }
           case 58: {
             RootSequenceId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class DeleteProcessMessage : pb::IMessage<DeleteProcessMessage>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<DeleteProcessMessage> _parser = new pb::MessageParser<DeleteProcessMessage>(() => new DeleteProcessMessage());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<DeleteProcessMessage> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Plm.V1.ProcessAuthoringReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteProcessMessage() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteProcessMessage(DeleteProcessMessage other) : this() {
-      processId_ = other.processId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DeleteProcessMessage Clone() {
-      return new DeleteProcessMessage(this);
-    }
-
-    /// <summary>Field number for the "process_id" field.</summary>
-    public const int ProcessIdFieldNumber = 1;
-    private string processId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ProcessId {
-      get { return processId_; }
-      set {
-        processId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as DeleteProcessMessage);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(DeleteProcessMessage other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ProcessId != other.ProcessId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ProcessId.Length != 0) hash ^= ProcessId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (ProcessId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ProcessId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ProcessId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ProcessId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (ProcessId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(DeleteProcessMessage other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ProcessId.Length != 0) {
-        ProcessId = other.ProcessId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ProcessId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            ProcessId = input.ReadString();
             break;
           }
         }

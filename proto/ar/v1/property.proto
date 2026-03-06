@@ -137,6 +137,7 @@ message Property {
   string parent_id = 13;
   bool advanced = 14; // Hide behind "Advanced" toogle
   string scope_id = 15;
+  bool disable_mirroring = 16; // If true, this property is not allowed to be mirrored by other properties
   // TODO: local or global property?
 
   optional bool bool_value = 21;
@@ -284,6 +285,7 @@ message Vector3Extras {
 message ColorExtras {
   double step = 1 [(buf.validate.field).double.gte = 0];
   common.v1.Color default = 2;
+  // TODO: allow user-preference override
 }
 
 message AnchorExtras {

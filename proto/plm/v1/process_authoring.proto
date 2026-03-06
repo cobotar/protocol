@@ -20,7 +20,7 @@ message StoredProcessMessage { // TODO: rename to recipe?
   repeated TaskMessage tasks = 9; // TODO: make 'interchanceable', such that multiple variants can be selected
 }
 
-message StoredProcessesMessage {
+message StoredProcessMessages {
   repeated StoredProcessMessage processes = 1;
 }
 
@@ -37,8 +37,4 @@ message UpdateProcessMessage {
   ProcessType type = 5;
   geometry.v1.LocalizedPose frame = 6;
   string root_sequence_id = 7;
-}
-
-message DeleteProcessMessage {
-  string process_id = 1;
 }

@@ -30,7 +30,7 @@ class StoredProcessMessage(_message.Message):
     tasks: _containers.RepeatedCompositeFieldContainer[_task_pb2.TaskMessage]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_authoring_pb2.StoredSequenceMessage, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_pb2.TaskMessage, _Mapping]]] = ...) -> None: ...
 
-class StoredProcessesMessage(_message.Message):
+class StoredProcessMessages(_message.Message):
     __slots__ = ("processes",)
     PROCESSES_FIELD_NUMBER: _ClassVar[int]
     processes: _containers.RepeatedCompositeFieldContainer[StoredProcessMessage]
@@ -61,9 +61,3 @@ class UpdateProcessMessage(_message.Message):
     frame: _pose_pb2.LocalizedPose
     root_sequence_id: str
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ...) -> None: ...
-
-class DeleteProcessMessage(_message.Message):
-    __slots__ = ("process_id",)
-    PROCESS_ID_FIELD_NUMBER: _ClassVar[int]
-    process_id: str
-    def __init__(self, process_id: _Optional[str] = ...) -> None: ...

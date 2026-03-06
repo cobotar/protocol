@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/sequence_authoring.proto.
  */
 export const file_plm_v1_sequence_authoring: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wbG0vdjEvc2VxdWVuY2VfYXV0aG9yaW5nLnByb3RvEgZwbG0udjEi4AEKFVN0b3JlZFNlcXVlbmNlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIpCgVmcmFtZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USEQoJcGFyZW50X2lkGAYgASgJEhQKDHNlcXVlbmNlX2lkcxgHIAMoCRIQCgh0YXNrX2lkcxgIIAMoCRIZChFjYW5fYnVsa19jb21wbGV0ZRgMIAEoCCJKChJOZXdTZXF1ZW5jZU1lc3NhZ2USDAoEbmFtZRgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIRCglwYXJlbnRfaWQYBiABKAki4AEKFVVwZGF0ZVNlcXVlbmNlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIpCgVmcmFtZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USEQoJcGFyZW50X2lkGAYgASgJEhQKDHNlcXVlbmNlX2lkcxgHIAMoCRIQCgh0YXNrX2lkcxgIIAMoCRIZChFjYW5fYnVsa19jb21wbGV0ZRgMIAEoCCIsChVEZWxldGVTZXF1ZW5jZU1lc3NhZ2USEwoLc2VxdWVuY2VfaWQYASABKAlCmQEKCmNvbS5wbG0udjFCFlNlcXVlbmNlQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose]);
+  fileDesc("Ch9wbG0vdjEvc2VxdWVuY2VfYXV0aG9yaW5nLnByb3RvEgZwbG0udjEi4AEKFVN0b3JlZFNlcXVlbmNlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhcKD3NlcXVlbmNlX251bWJlchgEIAEoAxIpCgVmcmFtZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USEQoJcGFyZW50X2lkGAYgASgJEhQKDHNlcXVlbmNlX2lkcxgHIAMoCRIQCgh0YXNrX2lkcxgIIAMoCRIZChFjYW5fYnVsa19jb21wbGV0ZRgMIAEoCCJKChZTdG9yZWRTZXF1ZW5jZU1lc3NhZ2VzEjAKCXNlcXVlbmNlcxgBIAMoCzIdLnBsbS52MS5TdG9yZWRTZXF1ZW5jZU1lc3NhZ2UiSgoSTmV3U2VxdWVuY2VNZXNzYWdlEgwKBG5hbWUYAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSEQoJcGFyZW50X2lkGAYgASgJIuABChVVcGRhdGVTZXF1ZW5jZU1lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBCABKAMSKQoFZnJhbWUYBSABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhEKCXBhcmVudF9pZBgGIAEoCRIUCgxzZXF1ZW5jZV9pZHMYByADKAkSEAoIdGFza19pZHMYCCADKAkSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAhCmQEKCmNvbS5wbG0udjFCFlNlcXVlbmNlQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose]);
 
 /**
  * @generated from message plm.v1.StoredSequenceMessage
@@ -72,6 +72,23 @@ export const StoredSequenceMessageSchema: GenMessage<StoredSequenceMessage> = /*
   messageDesc(file_plm_v1_sequence_authoring, 0);
 
 /**
+ * @generated from message plm.v1.StoredSequenceMessages
+ */
+export type StoredSequenceMessages = Message<"plm.v1.StoredSequenceMessages"> & {
+  /**
+   * @generated from field: repeated plm.v1.StoredSequenceMessage sequences = 1;
+   */
+  sequences: StoredSequenceMessage[];
+};
+
+/**
+ * Describes the message plm.v1.StoredSequenceMessages.
+ * Use `create(StoredSequenceMessagesSchema)` to create a new message.
+ */
+export const StoredSequenceMessagesSchema: GenMessage<StoredSequenceMessages> = /*@__PURE__*/
+  messageDesc(file_plm_v1_sequence_authoring, 1);
+
+/**
  * @generated from message plm.v1.NewSequenceMessage
  */
 export type NewSequenceMessage = Message<"plm.v1.NewSequenceMessage"> & {
@@ -96,7 +113,7 @@ export type NewSequenceMessage = Message<"plm.v1.NewSequenceMessage"> & {
  * Use `create(NewSequenceMessageSchema)` to create a new message.
  */
 export const NewSequenceMessageSchema: GenMessage<NewSequenceMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_sequence_authoring, 1);
+  messageDesc(file_plm_v1_sequence_authoring, 2);
 
 /**
  * @generated from message plm.v1.UpdateSequenceMessage
@@ -153,22 +170,5 @@ export type UpdateSequenceMessage = Message<"plm.v1.UpdateSequenceMessage"> & {
  * Use `create(UpdateSequenceMessageSchema)` to create a new message.
  */
 export const UpdateSequenceMessageSchema: GenMessage<UpdateSequenceMessage> = /*@__PURE__*/
-  messageDesc(file_plm_v1_sequence_authoring, 2);
-
-/**
- * @generated from message plm.v1.DeleteSequenceMessage
- */
-export type DeleteSequenceMessage = Message<"plm.v1.DeleteSequenceMessage"> & {
-  /**
-   * @generated from field: string sequence_id = 1;
-   */
-  sequenceId: string;
-};
-
-/**
- * Describes the message plm.v1.DeleteSequenceMessage.
- * Use `create(DeleteSequenceMessageSchema)` to create a new message.
- */
-export const DeleteSequenceMessageSchema: GenMessage<DeleteSequenceMessage> = /*@__PURE__*/
   messageDesc(file_plm_v1_sequence_authoring, 3);
 

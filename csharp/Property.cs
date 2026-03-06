@@ -29,7 +29,7 @@ namespace Messages.AR.V1 {
             "bi92MS9jb2xvci5wcm90bxoYZ2VvbWV0cnkvdjEvYW5jaG9yLnByb3RvGhZn",
             "ZW9tZXRyeS92MS9wb3NlLnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnBy",
             "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvIswbCghQcm9wZXJ0eRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEo",
+            "b3RvIvkbCghQcm9wZXJ0eRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEo",
             "CUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
             "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjQKBHR5cGUYBSABKA4yEy5h",
             "ci52MS5Qcm9wZXJ0eVR5cGVCC7pICIIBAhAByAEBUgR0eXBlEmEKG21pbmlt",
@@ -42,7 +42,8 @@ namespace Messages.AR.V1 {
             "KA4yFC5hci52MS5Qcm9wZXJ0eUdyb3VwUgVncm91cBIaCghvcmRlcmluZxgL",
             "IAEoBVIIb3JkZXJpbmcSHQoKaGlkZV9ncm91cBgMIAEoCFIJaGlkZUdyb3Vw",
             "EhsKCXBhcmVudF9pZBgNIAEoCVIIcGFyZW50SWQSGgoIYWR2YW5jZWQYDiAB",
-            "KAhSCGFkdmFuY2VkEhkKCHNjb3BlX2lkGA8gASgJUgdzY29wZUlkEiIKCmJv",
+            "KAhSCGFkdmFuY2VkEhkKCHNjb3BlX2lkGA8gASgJUgdzY29wZUlkEisKEWRp",
+            "c2FibGVfbWlycm9yaW5nGBAgASgIUhBkaXNhYmxlTWlycm9yaW5nEiIKCmJv",
             "b2xfdmFsdWUYFSABKAhIAFIJYm9vbFZhbHVliAEBEiAKCWludF92YWx1ZRgW",
             "IAEoEkgBUghpbnRWYWx1ZYgBARIkCgtmbG9hdF92YWx1ZRgXIAEoAkgCUgpm",
             "bG9hdFZhbHVliAEBEiYKDGRvdWJsZV92YWx1ZRgYIAEoAUgDUgtkb3VibGVW",
@@ -215,7 +216,7 @@ namespace Messages.AR.V1 {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.PermissionsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PropertyType), typeof(global::Messages.AR.V1.PropertyOrigin), typeof(global::Messages.AR.V1.PropertyGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup", "ParentId", "Advanced", "ScopeId", "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "Vector3Value", "PoseValue", "AnchorValue", "ColorValue", "RobotIdValue", "EnumValue", "EnumMultiValue", "IconValue", "AssetIdValue", "NumberExtras", "EnumExtras", "Vector3Extras", "ColorExtras", "PoseExtras", "AnchorExtras" }, new[]{ "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "RobotIdValue", "EnumValue", "IconValue", "AssetIdValue" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.Property), global::Messages.AR.V1.Property.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "MinimumRequiredPermission", "Origin", "Origins", "MirrorPropertyId", "Group", "Ordering", "HideGroup", "ParentId", "Advanced", "ScopeId", "DisableMirroring", "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "Vector3Value", "PoseValue", "AnchorValue", "ColorValue", "RobotIdValue", "EnumValue", "EnumMultiValue", "IconValue", "AssetIdValue", "NumberExtras", "EnumExtras", "Vector3Extras", "ColorExtras", "PoseExtras", "AnchorExtras" }, new[]{ "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "RobotIdValue", "EnumValue", "IconValue", "AssetIdValue" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyMessages), global::Messages.AR.V1.PropertyMessages.Parser, new[]{ "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyValueUpdate), global::Messages.AR.V1.PropertyValueUpdate.Parser, new[]{ "Id", "Type", "Origin", "MirrorPropertyId", "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "Vector3Value", "PoseValue", "AnchorValue", "ColorValue", "RobotIdValue", "EnumValue", "EnumMultiValue", "IconValue", "AssetIdValue" }, new[]{ "BoolValue", "IntValue", "FloatValue", "DoubleValue", "StringValue", "RobotIdValue", "EnumValue", "IconValue", "AssetIdValue" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.NumberExtras), global::Messages.AR.V1.NumberExtras.Parser, new[]{ "Min", "Max", "Step", "Unit", "Precision" }, new[]{ "Min", "Max", "Step" }, null, null, null),
@@ -378,6 +379,7 @@ namespace Messages.AR.V1 {
       parentId_ = other.parentId_;
       advanced_ = other.advanced_;
       scopeId_ = other.scopeId_;
+      disableMirroring_ = other.disableMirroring_;
       boolValue_ = other.boolValue_;
       intValue_ = other.intValue_;
       floatValue_ = other.floatValue_;
@@ -580,15 +582,27 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "scope_id" field.</summary>
     public const int ScopeIdFieldNumber = 15;
     private string scopeId_ = "";
-    /// <summary>
-    /// TODO: local or global property?
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ScopeId {
       get { return scopeId_; }
       set {
         scopeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "disable_mirroring" field.</summary>
+    public const int DisableMirroringFieldNumber = 16;
+    private bool disableMirroring_;
+    /// <summary>
+    /// If true, this property is not allowed to be mirrored by other properties
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool DisableMirroring {
+      get { return disableMirroring_; }
+      set {
+        disableMirroring_ = value;
       }
     }
 
@@ -991,6 +1005,7 @@ namespace Messages.AR.V1 {
       if (ParentId != other.ParentId) return false;
       if (Advanced != other.Advanced) return false;
       if (ScopeId != other.ScopeId) return false;
+      if (DisableMirroring != other.DisableMirroring) return false;
       if (BoolValue != other.BoolValue) return false;
       if (IntValue != other.IntValue) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FloatValue, other.FloatValue)) return false;
@@ -1033,6 +1048,7 @@ namespace Messages.AR.V1 {
       if (ParentId.Length != 0) hash ^= ParentId.GetHashCode();
       if (Advanced != false) hash ^= Advanced.GetHashCode();
       if (ScopeId.Length != 0) hash ^= ScopeId.GetHashCode();
+      if (DisableMirroring != false) hash ^= DisableMirroring.GetHashCode();
       if (HasBoolValue) hash ^= BoolValue.GetHashCode();
       if (HasIntValue) hash ^= IntValue.GetHashCode();
       if (HasFloatValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatValue);
@@ -1127,6 +1143,10 @@ namespace Messages.AR.V1 {
       if (ScopeId.Length != 0) {
         output.WriteRawTag(122);
         output.WriteString(ScopeId);
+      }
+      if (DisableMirroring != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(DisableMirroring);
       }
       if (HasBoolValue) {
         output.WriteRawTag(168, 1);
@@ -1272,6 +1292,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(122);
         output.WriteString(ScopeId);
       }
+      if (DisableMirroring != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(DisableMirroring);
+      }
       if (HasBoolValue) {
         output.WriteRawTag(168, 1);
         output.WriteBool(BoolValue);
@@ -1402,6 +1426,9 @@ namespace Messages.AR.V1 {
       if (ScopeId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ScopeId);
       }
+      if (DisableMirroring != false) {
+        size += 2 + 1;
+      }
       if (HasBoolValue) {
         size += 2 + 1;
       }
@@ -1514,6 +1541,9 @@ namespace Messages.AR.V1 {
       }
       if (other.ScopeId.Length != 0) {
         ScopeId = other.ScopeId;
+      }
+      if (other.DisableMirroring != false) {
+        DisableMirroring = other.DisableMirroring;
       }
       if (other.HasBoolValue) {
         BoolValue = other.BoolValue;
@@ -1681,6 +1711,10 @@ namespace Messages.AR.V1 {
           }
           case 122: {
             ScopeId = input.ReadString();
+            break;
+          }
+          case 128: {
+            DisableMirroring = input.ReadBool();
             break;
           }
           case 168: {
@@ -1871,6 +1905,10 @@ namespace Messages.AR.V1 {
           }
           case 122: {
             ScopeId = input.ReadString();
+            break;
+          }
+          case 128: {
+            DisableMirroring = input.ReadBool();
             break;
           }
           case 168: {
@@ -4821,6 +4859,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "default" field.</summary>
     public const int DefaultFieldNumber = 2;
     private global::Messages.Common.V1.Color default_;
+    /// <summary>
+    /// TODO: allow user-preference override
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.Color Default {

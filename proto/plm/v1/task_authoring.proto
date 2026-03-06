@@ -21,6 +21,10 @@ message StoredTaskMessage {
   TaskAssignmentPreference assignment_preference = 19;
 }
 
+message StoredTaskMessages {
+  repeated StoredTaskMessage tasks = 1;
+}
+
 message NewTaskMessage {
   string name = 2;
   string description = 3;
@@ -39,8 +43,4 @@ message UpdateTaskMessage {
   geometry.v1.LocalizedPose target = 8;
   geometry.v1.Vector3 approach = 9;
   TaskAssignmentPreference assignment_preference = 19;
-}
-
-message DeleteTaskMessage {
-  string task_id = 1;
 }

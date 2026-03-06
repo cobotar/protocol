@@ -29,6 +29,12 @@ class StoredSequenceMessage(_message.Message):
     can_bulk_complete: bool
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., parent_id: _Optional[str] = ..., sequence_ids: _Optional[_Iterable[str]] = ..., task_ids: _Optional[_Iterable[str]] = ..., can_bulk_complete: bool = ...) -> None: ...
 
+class StoredSequenceMessages(_message.Message):
+    __slots__ = ("sequences",)
+    SEQUENCES_FIELD_NUMBER: _ClassVar[int]
+    sequences: _containers.RepeatedCompositeFieldContainer[StoredSequenceMessage]
+    def __init__(self, sequences: _Optional[_Iterable[_Union[StoredSequenceMessage, _Mapping]]] = ...) -> None: ...
+
 class NewSequenceMessage(_message.Message):
     __slots__ = ("name", "description", "parent_id")
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -60,9 +66,3 @@ class UpdateSequenceMessage(_message.Message):
     task_ids: _containers.RepeatedScalarFieldContainer[str]
     can_bulk_complete: bool
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., parent_id: _Optional[str] = ..., sequence_ids: _Optional[_Iterable[str]] = ..., task_ids: _Optional[_Iterable[str]] = ..., can_bulk_complete: bool = ...) -> None: ...
-
-class DeleteSequenceMessage(_message.Message):
-    __slots__ = ("sequence_id",)
-    SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
-    sequence_id: str
-    def __init__(self, sequence_id: _Optional[str] = ...) -> None: ...
