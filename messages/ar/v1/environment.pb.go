@@ -348,6 +348,58 @@ func (x *ToolLocation) GetLocation() *v1.LocalizedPose {
 	return nil
 }
 
+type FixtureLocation struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Location      *v1.LocalizedPose      `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FixtureLocation) Reset() {
+	*x = FixtureLocation{}
+	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FixtureLocation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FixtureLocation) ProtoMessage() {}
+
+func (x *FixtureLocation) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FixtureLocation.ProtoReflect.Descriptor instead.
+func (*FixtureLocation) Descriptor() ([]byte, []int) {
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *FixtureLocation) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FixtureLocation) GetLocation() *v1.LocalizedPose {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
 type EnvironmentMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -360,13 +412,14 @@ type EnvironmentMessage struct {
 	Assets        []*AssetLocation       `protobuf:"bytes,8,rep,name=assets,proto3" json:"assets,omitempty"`                         // Assets located in this environment
 	Parts         []*PartLocation        `protobuf:"bytes,9,rep,name=parts,proto3" json:"parts,omitempty"`                           // Parts located in this environment
 	Tools         []*ToolLocation        `protobuf:"bytes,10,rep,name=tools,proto3" json:"tools,omitempty"`                          // Tools located in this environment
+	Fixtures      []*FixtureLocation     `protobuf:"bytes,11,rep,name=fixtures,proto3" json:"fixtures,omitempty"`                    // Fixtures located in this environment
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EnvironmentMessage) Reset() {
 	*x = EnvironmentMessage{}
-	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	mi := &file_ar_v1_environment_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -378,7 +431,7 @@ func (x *EnvironmentMessage) String() string {
 func (*EnvironmentMessage) ProtoMessage() {}
 
 func (x *EnvironmentMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[5]
+	mi := &file_ar_v1_environment_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -391,7 +444,7 @@ func (x *EnvironmentMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnvironmentMessage.ProtoReflect.Descriptor instead.
 func (*EnvironmentMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{5}
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *EnvironmentMessage) GetId() string {
@@ -464,6 +517,13 @@ func (x *EnvironmentMessage) GetTools() []*ToolLocation {
 	return nil
 }
 
+func (x *EnvironmentMessage) GetFixtures() []*FixtureLocation {
+	if x != nil {
+		return x.Fixtures
+	}
+	return nil
+}
+
 type EnvironmentMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Environments  []*EnvironmentMessage  `protobuf:"bytes,1,rep,name=environments,proto3" json:"environments,omitempty"`
@@ -473,7 +533,7 @@ type EnvironmentMessages struct {
 
 func (x *EnvironmentMessages) Reset() {
 	*x = EnvironmentMessages{}
-	mi := &file_ar_v1_environment_proto_msgTypes[6]
+	mi := &file_ar_v1_environment_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -485,7 +545,7 @@ func (x *EnvironmentMessages) String() string {
 func (*EnvironmentMessages) ProtoMessage() {}
 
 func (x *EnvironmentMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_environment_proto_msgTypes[6]
+	mi := &file_ar_v1_environment_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +558,7 @@ func (x *EnvironmentMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnvironmentMessages.ProtoReflect.Descriptor instead.
 func (*EnvironmentMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_environment_proto_rawDescGZIP(), []int{6}
+	return file_ar_v1_environment_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *EnvironmentMessages) GetEnvironments() []*EnvironmentMessage {
@@ -527,7 +587,10 @@ const file_ar_v1_environment_proto_rawDesc = "" +
 	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"i\n" +
 	"\fToolLocation\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf1\x04\x01R\x02id\x12>\n" +
-	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"\xa1\x03\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"l\n" +
+	"\x0fFixtureLocation\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf1\x04\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.geometry.v1.LocalizedPoseB\x06\xbaH\x03\xc8\x01\x01R\blocation\"\xd5\x03\n" +
 	"\x12EnvironmentMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -540,7 +603,8 @@ const file_ar_v1_environment_proto_rawDesc = "" +
 	"\x06assets\x18\b \x03(\v2\x14.ar.v1.AssetLocationR\x06assets\x12)\n" +
 	"\x05parts\x18\t \x03(\v2\x13.ar.v1.PartLocationR\x05parts\x12)\n" +
 	"\x05tools\x18\n" +
-	" \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\"T\n" +
+	" \x03(\v2\x13.ar.v1.ToolLocationR\x05tools\x122\n" +
+	"\bfixtures\x18\v \x03(\v2\x16.ar.v1.FixtureLocationR\bfixtures\"T\n" +
 	"\x13EnvironmentMessages\x12=\n" +
 	"\fenvironments\x18\x01 \x03(\v2\x19.ar.v1.EnvironmentMessageR\fenvironments*\xac\x02\n" +
 	"\x0fEnvironmentType\x12 \n" +
@@ -567,7 +631,7 @@ func file_ar_v1_environment_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_environment_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_environment_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_ar_v1_environment_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_ar_v1_environment_proto_goTypes = []any{
 	(EnvironmentType)(0),        // 0: ar.v1.EnvironmentType
 	(*MarkerLocation)(nil),      // 1: ar.v1.MarkerLocation
@@ -575,28 +639,31 @@ var file_ar_v1_environment_proto_goTypes = []any{
 	(*AssetLocation)(nil),       // 3: ar.v1.AssetLocation
 	(*PartLocation)(nil),        // 4: ar.v1.PartLocation
 	(*ToolLocation)(nil),        // 5: ar.v1.ToolLocation
-	(*EnvironmentMessage)(nil),  // 6: ar.v1.EnvironmentMessage
-	(*EnvironmentMessages)(nil), // 7: ar.v1.EnvironmentMessages
-	(*v1.LocalizedPose)(nil),    // 8: geometry.v1.LocalizedPose
+	(*FixtureLocation)(nil),     // 6: ar.v1.FixtureLocation
+	(*EnvironmentMessage)(nil),  // 7: ar.v1.EnvironmentMessage
+	(*EnvironmentMessages)(nil), // 8: ar.v1.EnvironmentMessages
+	(*v1.LocalizedPose)(nil),    // 9: geometry.v1.LocalizedPose
 }
 var file_ar_v1_environment_proto_depIdxs = []int32{
-	8,  // 0: ar.v1.MarkerLocation.location:type_name -> geometry.v1.LocalizedPose
-	8,  // 1: ar.v1.RobotLocation.location:type_name -> geometry.v1.LocalizedPose
-	8,  // 2: ar.v1.AssetLocation.location:type_name -> geometry.v1.LocalizedPose
-	8,  // 3: ar.v1.PartLocation.location:type_name -> geometry.v1.LocalizedPose
-	8,  // 4: ar.v1.ToolLocation.location:type_name -> geometry.v1.LocalizedPose
-	0,  // 5: ar.v1.EnvironmentMessage.type:type_name -> ar.v1.EnvironmentType
-	1,  // 6: ar.v1.EnvironmentMessage.markers:type_name -> ar.v1.MarkerLocation
-	2,  // 7: ar.v1.EnvironmentMessage.robots:type_name -> ar.v1.RobotLocation
-	3,  // 8: ar.v1.EnvironmentMessage.assets:type_name -> ar.v1.AssetLocation
-	4,  // 9: ar.v1.EnvironmentMessage.parts:type_name -> ar.v1.PartLocation
-	5,  // 10: ar.v1.EnvironmentMessage.tools:type_name -> ar.v1.ToolLocation
-	6,  // 11: ar.v1.EnvironmentMessages.environments:type_name -> ar.v1.EnvironmentMessage
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	9,  // 0: ar.v1.MarkerLocation.location:type_name -> geometry.v1.LocalizedPose
+	9,  // 1: ar.v1.RobotLocation.location:type_name -> geometry.v1.LocalizedPose
+	9,  // 2: ar.v1.AssetLocation.location:type_name -> geometry.v1.LocalizedPose
+	9,  // 3: ar.v1.PartLocation.location:type_name -> geometry.v1.LocalizedPose
+	9,  // 4: ar.v1.ToolLocation.location:type_name -> geometry.v1.LocalizedPose
+	9,  // 5: ar.v1.FixtureLocation.location:type_name -> geometry.v1.LocalizedPose
+	0,  // 6: ar.v1.EnvironmentMessage.type:type_name -> ar.v1.EnvironmentType
+	1,  // 7: ar.v1.EnvironmentMessage.markers:type_name -> ar.v1.MarkerLocation
+	2,  // 8: ar.v1.EnvironmentMessage.robots:type_name -> ar.v1.RobotLocation
+	3,  // 9: ar.v1.EnvironmentMessage.assets:type_name -> ar.v1.AssetLocation
+	4,  // 10: ar.v1.EnvironmentMessage.parts:type_name -> ar.v1.PartLocation
+	5,  // 11: ar.v1.EnvironmentMessage.tools:type_name -> ar.v1.ToolLocation
+	6,  // 12: ar.v1.EnvironmentMessage.fixtures:type_name -> ar.v1.FixtureLocation
+	7,  // 13: ar.v1.EnvironmentMessages.environments:type_name -> ar.v1.EnvironmentMessage
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_environment_proto_init() }
@@ -610,7 +677,7 @@ func file_ar_v1_environment_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_environment_proto_rawDesc), len(file_ar_v1_environment_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

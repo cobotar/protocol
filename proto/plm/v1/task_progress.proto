@@ -10,6 +10,6 @@ message TaskProgressMessage {
   string task_id = 3;
   string agent_id = 4;
   string message = 5;
-  int64 elapsed_time = 6;
-  int64 estimated_time_left = 7;
+  int32 elapsed_time = 6; // elapsed time in seconds
+  int32 estimated_time_left = 7; // estimated time left in seconds
 }

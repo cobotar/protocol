@@ -19,14 +19,14 @@ message SequenceMessage {
   string name = 2;
   string icon = 3;
   string description = 4;
-  int64 sequence_number = 5;
+  int32 sequence_number = 5;
   geometry.v1.LocalizedPose frame = 6;
   string parent_id = 7;
   repeated string sequence_ids = 8;
   repeated string task_ids = 9;
   repeated string assigned_to = 10;
   SequenceState state = 11;
-  int64 completed_tasks = 12;
+  int32 completed_tasks = 12;
   bool can_bulk_complete = 13;
 }
 
@@ -35,5 +35,5 @@ message SequenceUpdatedMessage {
   string sequence_id = 1;
   repeated string assigned_to = 2;
   SequenceState state = 3;
-  int64 completed_tasks = 4;
+  int32 completed_tasks = 4;
 }

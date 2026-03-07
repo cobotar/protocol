@@ -216,7 +216,7 @@ type TaskMessage struct {
 	Icon                 string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description          string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	InstructionText      string                   `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
-	SequenceNumber       int64                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	SequenceNumber       int32                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
 	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
 	ModelId              string                   `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	TaskType             TaskType                 `protobuf:"varint,9,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
@@ -301,7 +301,7 @@ func (x *TaskMessage) GetInstructionText() string {
 	return ""
 }
 
-func (x *TaskMessage) GetSequenceNumber() int64 {
+func (x *TaskMessage) GetSequenceNumber() int32 {
 	if x != nil {
 		return x.SequenceNumber
 	}
@@ -508,7 +508,7 @@ const file_plm_v1_task_proto_rawDesc = "" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
 	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
-	"\x0fsequence_number\x18\x06 \x01(\x03R\x0esequenceNumber\x12\x17\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x05R\x0esequenceNumber\x12\x17\n" +
 	"\apart_id\x18\a \x01(\tR\x06partId\x12\x19\n" +
 	"\bmodel_id\x18\b \x01(\tR\amodelId\x12-\n" +
 	"\ttask_type\x18\t \x01(\x0e2\x10.plm.v1.TaskTypeR\btaskType\x122\n" +

@@ -38,6 +38,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/property.proto](#ar_v1_property-proto)
     - [AnchorExtras](#ar-v1-AnchorExtras)
@@ -128,6 +129,7 @@
     - [AssetLocation](#ar-v1-AssetLocation)
     - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
     - [EnvironmentMessages](#ar-v1-EnvironmentMessages)
+    - [FixtureLocation](#ar-v1-FixtureLocation)
     - [MarkerLocation](#ar-v1-MarkerLocation)
     - [PartLocation](#ar-v1-PartLocation)
     - [RobotLocation](#ar-v1-RobotLocation)
@@ -260,6 +262,8 @@
     - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
     - [StoredSequenceMessages](#plm-v1-StoredSequenceMessages)
     - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
+  
+    - [SequenceType](#plm-v1-SequenceType)
   
 - [plm/v1/sequence_complete.proto](#plm_v1_sequence_complete-proto)
     - [SequenceBulkCompleteMessage](#plm-v1-SequenceBulkCompleteMessage)
@@ -656,6 +660,7 @@ A simple pose consisting of a position and orientation
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | asset_id_component | bool | .buf.validate.StringRules | 10005 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10006 |  |
+| fixture_id_component | bool | .buf.validate.StringRules | 10010 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10009 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
@@ -1941,6 +1946,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | assets | [AssetLocation](#ar-v1-AssetLocation) | repeated | Assets located in this environment |
 | parts | [PartLocation](#ar-v1-PartLocation) | repeated | Parts located in this environment |
 | tools | [ToolLocation](#ar-v1-ToolLocation) | repeated | Tools located in this environment |
+| fixtures | [FixtureLocation](#ar-v1-FixtureLocation) | repeated | Fixtures located in this environment |
 
 
 
@@ -1956,6 +1962,22 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | environments | [EnvironmentMessage](#ar-v1-EnvironmentMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-FixtureLocation"></a>
+
+### FixtureLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 
 
 
@@ -2999,14 +3021,14 @@ TODO: allow multiple processes to make active at the same time?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | parent_id | [string](#string) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
 | assigned_to | [string](#string) | repeated |  |
 | state | [SequenceState](#plm-v1-SequenceState) |  |  |
-| completed_tasks | [int64](#int64) |  |  |
+| completed_tasks | [int32](#int32) |  |  |
 | can_bulk_complete | [bool](#bool) |  |  |
 
 
@@ -3025,7 +3047,7 @@ Update published when the state of a sequence have changed
 | sequence_id | [string](#string) |  |  |
 | assigned_to | [string](#string) | repeated |  |
 | state | [SequenceState](#plm-v1-SequenceState) |  |  |
-| completed_tasks | [int64](#int64) |  |  |
+| completed_tasks | [int32](#int32) |  |  |
 
 
 
@@ -3079,7 +3101,7 @@ TODO: add allowed_actors
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | instruction_text | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
@@ -3362,7 +3384,7 @@ TODO: rename to recipe?
 | description | [string](#string) |  |  |
 | type | [ProcessType](#plm-v1-ProcessType) |  |  |
 | fixture_offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| root_sequence_id | [string](#string) |  |  |
+| root_sequence_id | [string](#string) |  | TODO: add calculated customization possibilities (or something like that) Then when loadProcess is called, a list with selected IDS must be selected/send with |
 
 
 
@@ -3509,8 +3531,9 @@ TODO: Assign agents at runtime?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| parent_id | [string](#string) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 
 
 
@@ -3529,11 +3552,11 @@ TODO: Assign agents at runtime?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+| sequence_number | [int32](#int32) |  |  |
+| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
-| can_bulk_complete | [bool](#bool) |  |  |
+| can_bulk_complete | [bool](#bool) |  | TODO: if variant (or something) to allow for customizeable products |
 
 
 
@@ -3567,8 +3590,8 @@ TODO: Assign agents at runtime?
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
-| frame | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+| sequence_number | [int32](#int32) |  |  |
+| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
 | can_bulk_complete | [bool](#bool) |  |  |
@@ -3578,6 +3601,19 @@ TODO: Assign agents at runtime?
 
 
  
+
+
+<a name="plm-v1-SequenceType"></a>
+
+### SequenceType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_TYPE_UNSPECIFIED | 0 |  |
+| SEQUENCE_TYPE_ALL_OF_CHILDREN | 1 |  |
+| SEQUENCE_TYPE_ONE_OF_CHILDREN | 2 |  |
+
 
  
 
@@ -3671,9 +3707,9 @@ Reassign all sub-tasks to the assignee (if possible)
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
-| parent_sequence_id | [string](#string) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 
 
 
@@ -3693,7 +3729,7 @@ Reassign all sub-tasks to the assignee (if possible)
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | instruction_text | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
@@ -3734,7 +3770,7 @@ Reassign all sub-tasks to the assignee (if possible)
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | instruction_text | [string](#string) |  |  |
-| sequence_number | [int64](#int64) |  |  |
+| sequence_number | [int32](#int32) |  |  |
 | part_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
@@ -3776,8 +3812,8 @@ Reassign all sub-tasks to the assignee (if possible)
 | task_id | [string](#string) |  |  |
 | agent_id | [string](#string) |  |  |
 | message | [string](#string) |  |  |
-| elapsed_time | [int64](#int64) |  |  |
-| estimated_time_left | [int64](#int64) |  |  |
+| elapsed_time | [int32](#int32) |  | elapsed time in seconds |
+| estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
 
 
 

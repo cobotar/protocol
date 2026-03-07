@@ -69,8 +69,16 @@ class ToolLocation(_message.Message):
     location: _pose_pb2.LocalizedPose
     def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
 
+class FixtureLocation(_message.Message):
+    __slots__ = ("id", "location")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    LOCATION_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    location: _pose_pb2.LocalizedPose
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
+
 class EnvironmentMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "markers", "robots", "assets", "parts", "tools")
+    __slots__ = ("id", "name", "icon", "description", "type", "markers", "robots", "assets", "parts", "tools", "fixtures")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -81,6 +89,7 @@ class EnvironmentMessage(_message.Message):
     ASSETS_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     TOOLS_FIELD_NUMBER: _ClassVar[int]
+    FIXTURES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -91,7 +100,8 @@ class EnvironmentMessage(_message.Message):
     assets: _containers.RepeatedCompositeFieldContainer[AssetLocation]
     parts: _containers.RepeatedCompositeFieldContainer[PartLocation]
     tools: _containers.RepeatedCompositeFieldContainer[ToolLocation]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[EnvironmentType, str]] = ..., markers: _Optional[_Iterable[_Union[MarkerLocation, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[RobotLocation, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[AssetLocation, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[PartLocation, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[ToolLocation, _Mapping]]] = ...) -> None: ...
+    fixtures: _containers.RepeatedCompositeFieldContainer[FixtureLocation]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[EnvironmentType, str]] = ..., markers: _Optional[_Iterable[_Union[MarkerLocation, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[RobotLocation, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[AssetLocation, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[PartLocation, _Mapping]]] = ..., tools: _Optional[_Iterable[_Union[ToolLocation, _Mapping]]] = ..., fixtures: _Optional[_Iterable[_Union[FixtureLocation, _Mapping]]] = ...) -> None: ...
 
 class EnvironmentMessages(_message.Message):
     __slots__ = ("environments",)

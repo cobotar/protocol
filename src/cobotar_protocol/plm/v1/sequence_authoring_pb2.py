@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xad\x02\n\x15StoredSequenceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12\'\n\x05\x66rame\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\x05\x66rame\x12!\n\x0csequence_ids\x18\x08 \x03(\tR\x0bsequenceIds\x12\x19\n\x08task_ids\x18\t \x03(\tR\x07taskIds\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkComplete\"U\n\x16StoredSequenceMessages\x12;\n\tsequences\x18\x01 \x03(\x0b\x32\x1d.plm.v1.StoredSequenceMessageR\tsequences\"g\n\x12NewSequenceMessage\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x1b\n\tparent_id\x18\x06 \x01(\tR\x08parentId\"\xad\x02\n\x15UpdateSequenceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12\'\n\x05\x66rame\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\x05\x66rame\x12!\n\x0csequence_ids\x18\x08 \x03(\tR\x0bsequenceIds\x12\x19\n\x08task_ids\x18\t \x03(\tR\x07taskIds\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkCompleteB\x99\x01\n\ncom.plm.v1B\x16SequenceAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xaf\x02\n\x15StoredSequenceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12)\n\x06offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\x06offset\x12!\n\x0csequence_ids\x18\x08 \x03(\tR\x0bsequenceIds\x12\x19\n\x08task_ids\x18\t \x03(\tR\x07taskIds\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkComplete\"U\n\x16StoredSequenceMessages\x12;\n\tsequences\x18\x01 \x03(\x0b\x32\x1d.plm.v1.StoredSequenceMessageR\tsequences\"\x87\x01\n\x12NewSequenceMessage\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\"\xaf\x02\n\x15UpdateSequenceMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12)\n\x06offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\x06offset\x12!\n\x0csequence_ids\x18\x08 \x03(\tR\x0bsequenceIds\x12\x19\n\x08task_ids\x18\t \x03(\tR\x07taskIds\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkComplete*s\n\x0cSequenceType\x12\x1d\n\x19SEQUENCE_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1dSEQUENCE_TYPE_ALL_OF_CHILDREN\x10\x01\x12!\n\x1dSEQUENCE_TYPE_ONE_OF_CHILDREN\x10\x02\x42\x99\x01\n\ncom.plm.v1B\x16SequenceAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'plm.v1.sequence_authoring_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\ncom.plm.v1B\026SequenceAuthoringProtoP\001Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\242\002\003PXX\252\002\017Messages.Plm.V1\312\002\006Plm\\V1\342\002\022Plm\\V1\\GPBMetadata\352\002\007Plm::V1'
+  _globals['_SEQUENCETYPE']._serialized_start=904
+  _globals['_SEQUENCETYPE']._serialized_end=1019
   _globals['_STOREDSEQUENCEMESSAGE']._serialized_start=68
-  _globals['_STOREDSEQUENCEMESSAGE']._serialized_end=369
-  _globals['_STOREDSEQUENCEMESSAGES']._serialized_start=371
-  _globals['_STOREDSEQUENCEMESSAGES']._serialized_end=456
-  _globals['_NEWSEQUENCEMESSAGE']._serialized_start=458
-  _globals['_NEWSEQUENCEMESSAGE']._serialized_end=561
-  _globals['_UPDATESEQUENCEMESSAGE']._serialized_start=564
-  _globals['_UPDATESEQUENCEMESSAGE']._serialized_end=865
+  _globals['_STOREDSEQUENCEMESSAGE']._serialized_end=371
+  _globals['_STOREDSEQUENCEMESSAGES']._serialized_start=373
+  _globals['_STOREDSEQUENCEMESSAGES']._serialized_end=458
+  _globals['_NEWSEQUENCEMESSAGE']._serialized_start=461
+  _globals['_NEWSEQUENCEMESSAGE']._serialized_end=596
+  _globals['_UPDATESEQUENCEMESSAGE']._serialized_start=599
+  _globals['_UPDATESEQUENCEMESSAGE']._serialized_end=902
 # @@protoc_insertion_point(module_scope)

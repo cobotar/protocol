@@ -63,4 +63,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a marker id"
     expression: "(this == '' || this.startsWith('marker-'))"
   }];
+
+  optional bool fixture_id_component = 10010 [(buf.validate.predefined).cel = {
+    id: "string.fixture_id_component"
+    message: "this does not seem to be a fixture id"
+    expression: "(this == '' || this.startsWith('fixture-'))"
+  }];
 }

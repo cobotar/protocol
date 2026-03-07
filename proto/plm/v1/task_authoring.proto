@@ -14,7 +14,7 @@ message StoredTaskMessage {
   string icon = 3;
   string description = 4;
   string instruction_text = 5;
-  int64 sequence_number = 6;
+  int32 sequence_number = 6;
   string part_id = 7;
   string model_id = 8;
   TaskType task_type = 9;
@@ -29,9 +29,9 @@ message StoredTaskMessages {
 
 message NewTaskMessage {
   string name = 2;
-  string description = 3;
-  int64 sequence_number = 4;
-  string parent_sequence_id = 5;
+  string icon = 3;
+  string description = 4;
+  int32 sequence_number = 5;
 }
 
 message UpdateTaskMessage {
@@ -40,7 +40,7 @@ message UpdateTaskMessage {
   string icon = 3;
   string description = 4;
   string instruction_text = 5;
-  int64 sequence_number = 6;
+  int32 sequence_number = 6;
   string part_id = 7;
   string model_id = 8;
   TaskType task_type = 9;

@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task_authoring.proto.
  */
 export const file_plm_v1_task_authoring: GenFile = /*@__PURE__*/
-  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSLXAgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiPgoSU3RvcmVkVGFza01lc3NhZ2VzEigKBXRhc2tzGAEgAygLMhkucGxtLnYxLlN0b3JlZFRhc2tNZXNzYWdlImgKDk5ld1Rhc2tNZXNzYWdlEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAQgASgDEhoKEnBhcmVudF9zZXF1ZW5jZV9pZBgFIAEoCSLXAgoRVXBkYXRlVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2VClQEKCmNvbS5wbG0udjFCElRhc2tBdXRob3JpbmdQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
+  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSLXAgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiPgoSU3RvcmVkVGFza01lc3NhZ2VzEigKBXRhc2tzGAEgAygLMhkucGxtLnYxLlN0b3JlZFRhc2tNZXNzYWdlIloKDk5ld1Rhc2tNZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUi1wIKEVVwZGF0ZVRhc2tNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIYChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJEhcKD3NlcXVlbmNlX251bWJlchgGIAEoBRIPCgdwYXJ0X2lkGAcgASgJEhAKCG1vZGVsX2lkGAggASgJEiMKCXRhc2tfdHlwZRgJIAEoDjIQLnBsbS52MS5UYXNrVHlwZRIhCgZ0YXJnZXQYCiABKAsyES5nZW9tZXRyeS52MS5Qb3NlEiYKCGFwcHJvYWNoGAsgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI/ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYDCABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlQpUBCgpjb20ucGxtLnYxQhJUYXNrQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
 
 /**
  * @generated from message plm.v1.StoredTaskMessage
@@ -48,9 +48,9 @@ export type StoredTaskMessage = Message<"plm.v1.StoredTaskMessage"> & {
   instructionText: string;
 
   /**
-   * @generated from field: int64 sequence_number = 6;
+   * @generated from field: int32 sequence_number = 6;
    */
-  sequenceNumber: bigint;
+  sequenceNumber: number;
 
   /**
    * @generated from field: string part_id = 7;
@@ -117,19 +117,19 @@ export type NewTaskMessage = Message<"plm.v1.NewTaskMessage"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 4;
+   * @generated from field: int32 sequence_number = 5;
    */
-  sequenceNumber: bigint;
-
-  /**
-   * @generated from field: string parent_sequence_id = 5;
-   */
-  parentSequenceId: string;
+  sequenceNumber: number;
 };
 
 /**
@@ -169,9 +169,9 @@ export type UpdateTaskMessage = Message<"plm.v1.UpdateTaskMessage"> & {
   instructionText: string;
 
   /**
-   * @generated from field: int64 sequence_number = 6;
+   * @generated from field: int32 sequence_number = 6;
    */
-  sequenceNumber: bigint;
+  sequenceNumber: number;
 
   /**
    * @generated from field: string part_id = 7;

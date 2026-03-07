@@ -28,8 +28,8 @@ namespace Messages.Plm.V1 {
             "UHJvZ3Jlc3NNZXNzYWdlEh0KCnJlcXVlc3RfaWQYASABKAlSCXJlcXVlc3RJ",
             "ZBIfCgtpbnN0YW5jZV9pZBgCIAEoCVIKaW5zdGFuY2VJZBIXCgd0YXNrX2lk",
             "GAMgASgJUgZ0YXNrSWQSGQoIYWdlbnRfaWQYBCABKAlSB2FnZW50SWQSGAoH",
-            "bWVzc2FnZRgFIAEoCVIHbWVzc2FnZRIhCgxlbGFwc2VkX3RpbWUYBiABKANS",
-            "C2VsYXBzZWRUaW1lEi4KE2VzdGltYXRlZF90aW1lX2xlZnQYByABKANSEWVz",
+            "bWVzc2FnZRgFIAEoCVIHbWVzc2FnZRIhCgxlbGFwc2VkX3RpbWUYBiABKAVS",
+            "C2VsYXBzZWRUaW1lEi4KE2VzdGltYXRlZF90aW1lX2xlZnQYByABKAVSEWVz",
             "dGltYXRlZFRpbWVMZWZ0QpQBCgpjb20ucGxtLnYxQhFUYXNrUHJvZ3Jlc3NQ",
             "cm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
             "cGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx",
@@ -157,10 +157,13 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "elapsed_time" field.</summary>
     public const int ElapsedTimeFieldNumber = 6;
-    private long elapsedTime_;
+    private int elapsedTime_;
+    /// <summary>
+    /// elapsed time in seconds
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ElapsedTime {
+    public int ElapsedTime {
       get { return elapsedTime_; }
       set {
         elapsedTime_ = value;
@@ -169,10 +172,13 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "estimated_time_left" field.</summary>
     public const int EstimatedTimeLeftFieldNumber = 7;
-    private long estimatedTimeLeft_;
+    private int estimatedTimeLeft_;
+    /// <summary>
+    /// estimated time left in seconds
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long EstimatedTimeLeft {
+    public int EstimatedTimeLeft {
       get { return estimatedTimeLeft_; }
       set {
         estimatedTimeLeft_ = value;
@@ -213,8 +219,8 @@ namespace Messages.Plm.V1 {
       if (TaskId.Length != 0) hash ^= TaskId.GetHashCode();
       if (AgentId.Length != 0) hash ^= AgentId.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (ElapsedTime != 0L) hash ^= ElapsedTime.GetHashCode();
-      if (EstimatedTimeLeft != 0L) hash ^= EstimatedTimeLeft.GetHashCode();
+      if (ElapsedTime != 0) hash ^= ElapsedTime.GetHashCode();
+      if (EstimatedTimeLeft != 0) hash ^= EstimatedTimeLeft.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -253,13 +259,13 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(Message);
       }
-      if (ElapsedTime != 0L) {
+      if (ElapsedTime != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(ElapsedTime);
+        output.WriteInt32(ElapsedTime);
       }
-      if (EstimatedTimeLeft != 0L) {
+      if (EstimatedTimeLeft != 0) {
         output.WriteRawTag(56);
-        output.WriteInt64(EstimatedTimeLeft);
+        output.WriteInt32(EstimatedTimeLeft);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -291,13 +297,13 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(Message);
       }
-      if (ElapsedTime != 0L) {
+      if (ElapsedTime != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(ElapsedTime);
+        output.WriteInt32(ElapsedTime);
       }
-      if (EstimatedTimeLeft != 0L) {
+      if (EstimatedTimeLeft != 0) {
         output.WriteRawTag(56);
-        output.WriteInt64(EstimatedTimeLeft);
+        output.WriteInt32(EstimatedTimeLeft);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -324,11 +330,11 @@ namespace Messages.Plm.V1 {
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
-      if (ElapsedTime != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ElapsedTime);
+      if (ElapsedTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ElapsedTime);
       }
-      if (EstimatedTimeLeft != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(EstimatedTimeLeft);
+      if (EstimatedTimeLeft != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EstimatedTimeLeft);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -357,10 +363,10 @@ namespace Messages.Plm.V1 {
       if (other.Message.Length != 0) {
         Message = other.Message;
       }
-      if (other.ElapsedTime != 0L) {
+      if (other.ElapsedTime != 0) {
         ElapsedTime = other.ElapsedTime;
       }
-      if (other.EstimatedTimeLeft != 0L) {
+      if (other.EstimatedTimeLeft != 0) {
         EstimatedTimeLeft = other.EstimatedTimeLeft;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -403,11 +409,11 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            ElapsedTime = input.ReadInt64();
+            ElapsedTime = input.ReadInt32();
             break;
           }
           case 56: {
-            EstimatedTimeLeft = input.ReadInt64();
+            EstimatedTimeLeft = input.ReadInt32();
             break;
           }
         }
@@ -450,11 +456,11 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            ElapsedTime = input.ReadInt64();
+            ElapsedTime = input.ReadInt32();
             break;
           }
           case 56: {
-            EstimatedTimeLeft = input.ReadInt64();
+            EstimatedTimeLeft = input.ReadInt32();
             break;
           }
         }

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aplm/v1/task_progress.proto\x12\x06plm.v1\"\xf6\x01\n\x13TaskProgressMessage\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\x12\x1f\n\x0binstance_id\x18\x02 \x01(\tR\ninstanceId\x12\x17\n\x07task_id\x18\x03 \x01(\tR\x06taskId\x12\x19\n\x08\x61gent_id\x18\x04 \x01(\tR\x07\x61gentId\x12\x18\n\x07message\x18\x05 \x01(\tR\x07message\x12!\n\x0c\x65lapsed_time\x18\x06 \x01(\x03R\x0b\x65lapsedTime\x12.\n\x13\x65stimated_time_left\x18\x07 \x01(\x03R\x11\x65stimatedTimeLeftB\x94\x01\n\ncom.plm.v1B\x11TaskProgressProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aplm/v1/task_progress.proto\x12\x06plm.v1\"\xf6\x01\n\x13TaskProgressMessage\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\x12\x1f\n\x0binstance_id\x18\x02 \x01(\tR\ninstanceId\x12\x17\n\x07task_id\x18\x03 \x01(\tR\x06taskId\x12\x19\n\x08\x61gent_id\x18\x04 \x01(\tR\x07\x61gentId\x12\x18\n\x07message\x18\x05 \x01(\tR\x07message\x12!\n\x0c\x65lapsed_time\x18\x06 \x01(\x05R\x0b\x65lapsedTime\x12.\n\x13\x65stimated_time_left\x18\x07 \x01(\x05R\x11\x65stimatedTimeLeftB\x94\x01\n\ncom.plm.v1B\x11TaskProgressProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

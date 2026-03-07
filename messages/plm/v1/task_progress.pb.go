@@ -28,8 +28,8 @@ type TaskProgressMessage struct {
 	TaskId            string                 `protobuf:"bytes,3,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
 	AgentId           string                 `protobuf:"bytes,4,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
 	Message           string                 `protobuf:"bytes,5,opt,name=message,proto3" json:"message,omitempty"`
-	ElapsedTime       int64                  `protobuf:"varint,6,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`
-	EstimatedTimeLeft int64                  `protobuf:"varint,7,opt,name=estimated_time_left,json=estimatedTimeLeft,proto3" json:"estimated_time_left,omitempty"`
+	ElapsedTime       int32                  `protobuf:"varint,6,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`                     // elapsed time in seconds
+	EstimatedTimeLeft int32                  `protobuf:"varint,7,opt,name=estimated_time_left,json=estimatedTimeLeft,proto3" json:"estimated_time_left,omitempty"` // estimated time left in seconds
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -99,14 +99,14 @@ func (x *TaskProgressMessage) GetMessage() string {
 	return ""
 }
 
-func (x *TaskProgressMessage) GetElapsedTime() int64 {
+func (x *TaskProgressMessage) GetElapsedTime() int32 {
 	if x != nil {
 		return x.ElapsedTime
 	}
 	return 0
 }
 
-func (x *TaskProgressMessage) GetEstimatedTimeLeft() int64 {
+func (x *TaskProgressMessage) GetEstimatedTimeLeft() int32 {
 	if x != nil {
 		return x.EstimatedTimeLeft
 	}
@@ -126,8 +126,8 @@ const file_plm_v1_task_progress_proto_rawDesc = "" +
 	"\atask_id\x18\x03 \x01(\tR\x06taskId\x12\x19\n" +
 	"\bagent_id\x18\x04 \x01(\tR\aagentId\x12\x18\n" +
 	"\amessage\x18\x05 \x01(\tR\amessage\x12!\n" +
-	"\felapsed_time\x18\x06 \x01(\x03R\velapsedTime\x12.\n" +
-	"\x13estimated_time_left\x18\a \x01(\x03R\x11estimatedTimeLeftB\x94\x01\n" +
+	"\felapsed_time\x18\x06 \x01(\x05R\velapsedTime\x12.\n" +
+	"\x13estimated_time_left\x18\a \x01(\x05R\x11estimatedTimeLeftB\x94\x01\n" +
 	"\n" +
 	"com.plm.v1B\x11TaskProgressProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 

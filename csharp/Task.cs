@@ -29,7 +29,7 @@ namespace Messages.Plm.V1 {
             "c2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
             "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
             "dGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0cnVjdGlvblRl",
-            "eHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYgASgDUg5zZXF1ZW5jZU51bWJlchIX",
+            "eHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFUg5zZXF1ZW5jZU51bWJlchIX",
             "CgdwYXJ0X2lkGAcgASgJUgZwYXJ0SWQSGQoIbW9kZWxfaWQYCCABKAlSB21v",
             "ZGVsSWQSLQoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0",
             "YXNrVHlwZRIyCgZ0YXJnZXQYCiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6",
@@ -243,10 +243,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 6;
-    private long sequenceNumber_;
+    private int sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SequenceNumber {
+    public int SequenceNumber {
       get { return sequenceNumber_; }
       set {
         sequenceNumber_ = value;
@@ -481,7 +481,7 @@ namespace Messages.Plm.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
-      if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
+      if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) hash ^= TaskType.GetHashCode();
@@ -535,9 +535,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -620,9 +620,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -700,8 +700,8 @@ namespace Messages.Plm.V1 {
       if (InstructionText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
-      if (SequenceNumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
+      if (SequenceNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
       }
       if (PartId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PartId);
@@ -769,7 +769,7 @@ namespace Messages.Plm.V1 {
       if (other.InstructionText.Length != 0) {
         InstructionText = other.InstructionText;
       }
-      if (other.SequenceNumber != 0L) {
+      if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
       }
       if (other.PartId.Length != 0) {
@@ -857,7 +857,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {
@@ -966,7 +966,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {

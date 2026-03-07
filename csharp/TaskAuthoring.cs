@@ -30,7 +30,7 @@ namespace Messages.Plm.V1 {
             "GAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlS",
             "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKEGlu",
             "c3RydWN0aW9uX3RleHQYBSABKAlSD2luc3RydWN0aW9uVGV4dBInCg9zZXF1",
-            "ZW5jZV9udW1iZXIYBiABKANSDnNlcXVlbmNlTnVtYmVyEhcKB3BhcnRfaWQY",
+            "ZW5jZV9udW1iZXIYBiABKAVSDnNlcXVlbmNlTnVtYmVyEhcKB3BhcnRfaWQY",
             "ByABKAlSBnBhcnRJZBIZCghtb2RlbF9pZBgIIAEoCVIHbW9kZWxJZBItCgl0",
             "YXNrX3R5cGUYCSABKA4yEC5wbG0udjEuVGFza1R5cGVSCHRhc2tUeXBlEikK",
             "BnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2VSBnRhcmdldBIwCghh",
@@ -38,31 +38,30 @@ namespace Messages.Plm.V1 {
             "ElUKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNr",
             "QXNzaWdubWVudFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIkUK",
             "ElN0b3JlZFRhc2tNZXNzYWdlcxIvCgV0YXNrcxgBIAMoCzIZLnBsbS52MS5T",
-            "dG9yZWRUYXNrTWVzc2FnZVIFdGFza3MinQEKDk5ld1Rhc2tNZXNzYWdlEhIK",
-            "BG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2Ny",
-            "aXB0aW9uEicKD3NlcXVlbmNlX251bWJlchgEIAEoA1IOc2VxdWVuY2VOdW1i",
-            "ZXISLAoScGFyZW50X3NlcXVlbmNlX2lkGAUgASgJUhBwYXJlbnRTZXF1ZW5j",
-            "ZUlkItgDChFVcGRhdGVUYXNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSEgoE",
-            "bmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0",
-            "GAUgASgJUg9pbnN0cnVjdGlvblRleHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYg",
-            "ASgDUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0X2lkGAcgASgJUgZwYXJ0SWQS",
-            "GQoIbW9kZWxfaWQYCCABKAlSB21vZGVsSWQSLQoJdGFza190eXBlGAkgASgO",
-            "MhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlwZRIpCgZ0YXJnZXQYCiABKAsy",
-            "ES5nZW9tZXRyeS52MS5Qb3NlUgZ0YXJnZXQSMAoIYXBwcm9hY2gYCyABKAsy",
-            "FC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2FjaBJVChVhc3NpZ25tZW50",
-            "X3ByZWZlcmVuY2UYDCABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVm",
-            "ZXJlbmNlUhRhc3NpZ25tZW50UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52MUIS",
-            "VGFza0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5Q",
-            "bG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYx",
-            "YgZwcm90bzM="));
+            "dG9yZWRUYXNrTWVzc2FnZVIFdGFza3MigwEKDk5ld1Rhc2tNZXNzYWdlEhIK",
+            "BG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
+            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoPc2VxdWVuY2VfbnVtYmVy",
+            "GAUgASgFUg5zZXF1ZW5jZU51bWJlciLYAwoRVXBkYXRlVGFza01lc3NhZ2US",
+            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
+            "KQoQaW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EicK",
+            "D3NlcXVlbmNlX251bWJlchgGIAEoBVIOc2VxdWVuY2VOdW1iZXISFwoHcGFy",
+            "dF9pZBgHIAEoCVIGcGFydElkEhkKCG1vZGVsX2lkGAggASgJUgdtb2RlbElk",
+            "Ei0KCXRhc2tfdHlwZRgJIAEoDjIQLnBsbS52MS5UYXNrVHlwZVIIdGFza1R5",
+            "cGUSKQoGdGFyZ2V0GAogASgLMhEuZ2VvbWV0cnkudjEuUG9zZVIGdGFyZ2V0",
+            "EjAKCGFwcHJvYWNoGAsgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IIYXBw",
+            "cm9hY2gSVQoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAwgASgOMiAucGxtLnYx",
+            "LlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZVIUYXNzaWdubWVudFByZWZlcmVu",
+            "Y2VClQEKCmNvbS5wbG0udjFCElRhc2tBdXRob3JpbmdQcm90b1ABWjFnaXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYx",
+            "ogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQ",
+            "Qk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessage), global::Messages.Plm.V1.StoredTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessages), global::Messages.Plm.V1.StoredTaskMessages.Parser, new[]{ "Tasks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "Name", "Description", "SequenceNumber", "ParentSequenceId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "Name", "Icon", "Description", "SequenceNumber" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null)
           }));
     }
@@ -188,10 +187,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 6;
-    private long sequenceNumber_;
+    private int sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SequenceNumber {
+    public int SequenceNumber {
       get { return sequenceNumber_; }
       set {
         sequenceNumber_ = value;
@@ -309,7 +308,7 @@ namespace Messages.Plm.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
-      if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
+      if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) hash ^= TaskType.GetHashCode();
@@ -354,9 +353,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -412,9 +411,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -465,8 +464,8 @@ namespace Messages.Plm.V1 {
       if (InstructionText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
-      if (SequenceNumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
+      if (SequenceNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
       }
       if (PartId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PartId);
@@ -513,7 +512,7 @@ namespace Messages.Plm.V1 {
       if (other.InstructionText.Length != 0) {
         InstructionText = other.InstructionText;
       }
-      if (other.SequenceNumber != 0L) {
+      if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
       }
       if (other.PartId.Length != 0) {
@@ -580,7 +579,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {
@@ -653,7 +652,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {
@@ -916,9 +915,9 @@ namespace Messages.Plm.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NewTaskMessage(NewTaskMessage other) : this() {
       name_ = other.name_;
+      icon_ = other.icon_;
       description_ = other.description_;
       sequenceNumber_ = other.sequenceNumber_;
-      parentSequenceId_ = other.parentSequenceId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -940,8 +939,20 @@ namespace Messages.Plm.V1 {
       }
     }
 
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -953,26 +964,14 @@ namespace Messages.Plm.V1 {
     }
 
     /// <summary>Field number for the "sequence_number" field.</summary>
-    public const int SequenceNumberFieldNumber = 4;
-    private long sequenceNumber_;
+    public const int SequenceNumberFieldNumber = 5;
+    private int sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SequenceNumber {
+    public int SequenceNumber {
       get { return sequenceNumber_; }
       set {
         sequenceNumber_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "parent_sequence_id" field.</summary>
-    public const int ParentSequenceIdFieldNumber = 5;
-    private string parentSequenceId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ParentSequenceId {
-      get { return parentSequenceId_; }
-      set {
-        parentSequenceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -992,9 +991,9 @@ namespace Messages.Plm.V1 {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
-      if (ParentSequenceId != other.ParentSequenceId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1003,9 +1002,9 @@ namespace Messages.Plm.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
-      if (ParentSequenceId.Length != 0) hash ^= ParentSequenceId.GetHashCode();
+      if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1028,17 +1027,17 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(SequenceNumber);
-      }
-      if (ParentSequenceId.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(ParentSequenceId);
+      if (SequenceNumber != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SequenceNumber);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1054,17 +1053,17 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
+      if (Icon.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (SequenceNumber != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(SequenceNumber);
-      }
-      if (ParentSequenceId.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(ParentSequenceId);
+      if (SequenceNumber != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SequenceNumber);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1079,14 +1078,14 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (SequenceNumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
-      }
-      if (ParentSequenceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentSequenceId);
+      if (SequenceNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1103,14 +1102,14 @@ namespace Messages.Plm.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.SequenceNumber != 0L) {
+      if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
-      }
-      if (other.ParentSequenceId.Length != 0) {
-        ParentSequenceId = other.ParentSequenceId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1136,15 +1135,15 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
-            SequenceNumber = input.ReadInt64();
-            break;
-          }
-          case 42: {
-            ParentSequenceId = input.ReadString();
+          case 40: {
+            SequenceNumber = input.ReadInt32();
             break;
           }
         }
@@ -1171,15 +1170,15 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             Description = input.ReadString();
             break;
           }
-          case 32: {
-            SequenceNumber = input.ReadInt64();
-            break;
-          }
-          case 42: {
-            ParentSequenceId = input.ReadString();
+          case 40: {
+            SequenceNumber = input.ReadInt32();
             break;
           }
         }
@@ -1307,10 +1306,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 6;
-    private long sequenceNumber_;
+    private int sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SequenceNumber {
+    public int SequenceNumber {
       get { return sequenceNumber_; }
       set {
         sequenceNumber_ = value;
@@ -1428,7 +1427,7 @@ namespace Messages.Plm.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
-      if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
+      if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (PartId.Length != 0) hash ^= PartId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (TaskType != global::Messages.Plm.V1.TaskType.Unspecified) hash ^= TaskType.GetHashCode();
@@ -1473,9 +1472,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -1531,9 +1530,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(42);
         output.WriteString(InstructionText);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(48);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (PartId.Length != 0) {
         output.WriteRawTag(58);
@@ -1584,8 +1583,8 @@ namespace Messages.Plm.V1 {
       if (InstructionText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
-      if (SequenceNumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
+      if (SequenceNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
       }
       if (PartId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PartId);
@@ -1632,7 +1631,7 @@ namespace Messages.Plm.V1 {
       if (other.InstructionText.Length != 0) {
         InstructionText = other.InstructionText;
       }
-      if (other.SequenceNumber != 0L) {
+      if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
       }
       if (other.PartId.Length != 0) {
@@ -1699,7 +1698,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {
@@ -1772,7 +1771,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 48: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 58: {

@@ -42,6 +42,11 @@ message ToolLocation {
   geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
+message FixtureLocation {
+  string id = 1 [(buf.validate.field).string.(validation.v1.fixture_id_component) = true];
+  geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
+}
+
 enum EnvironmentType {
   ENVIRONMENT_TYPE_UNSPECIFIED = 0;
   ENVIRONMENT_TYPE_STORAGE = 1;
@@ -68,6 +73,7 @@ message EnvironmentMessage {
   repeated AssetLocation assets = 8; // Assets located in this environment
   repeated PartLocation parts = 9; // Parts located in this environment
   repeated ToolLocation tools = 10; // Tools located in this environment
+  repeated FixtureLocation fixtures = 11; // Fixtures located in this environment
 }
 
 message EnvironmentMessages {

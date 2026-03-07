@@ -38,29 +38,32 @@ namespace Messages.AR.V1 {
             "AmlkEj4KCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVk",
             "UG9zZUIGukgDyAEBUghsb2NhdGlvbiJpCgxUb29sTG9jYXRpb24SGQoCaWQY",
             "ASABKAlCCbpIBnIEwPEEAVICaWQSPgoIbG9jYXRpb24YAiABKAsyGi5nZW9t",
-            "ZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQFSCGxvY2F0aW9uIqEDChJF",
-            "bnZpcm9ubWVudE1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiAB",
-            "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
-            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI5CgR0eXBlGAUgASgOMhYu",
-            "YXIudjEuRW52aXJvbm1lbnRUeXBlQg26SAqCAQQQASgEyAEBUgR0eXBlEjkK",
-            "B21hcmtlcnMYBiADKAsyFS5hci52MS5NYXJrZXJMb2NhdGlvbkIIukgFkgEC",
-            "CAFSB21hcmtlcnMSLAoGcm9ib3RzGAcgAygLMhQuYXIudjEuUm9ib3RMb2Nh",
-            "dGlvblIGcm9ib3RzEiwKBmFzc2V0cxgIIAMoCzIULmFyLnYxLkFzc2V0TG9j",
-            "YXRpb25SBmFzc2V0cxIpCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2Nh",
-            "dGlvblIFcGFydHMSKQoFdG9vbHMYCiADKAsyEy5hci52MS5Ub29sTG9jYXRp",
-            "b25SBXRvb2xzIlQKE0Vudmlyb25tZW50TWVzc2FnZXMSPQoMZW52aXJvbm1l",
-            "bnRzGAEgAygLMhkuYXIudjEuRW52aXJvbm1lbnRNZXNzYWdlUgxlbnZpcm9u",
-            "bWVudHMqrAIKD0Vudmlyb25tZW50VHlwZRIgChxFTlZJUk9OTUVOVF9UWVBF",
-            "X1VOU1BFQ0lGSUVEEAASHAoYRU5WSVJPTk1FTlRfVFlQRV9TVE9SQUdFEAES",
-            "IwofRU5WSVJPTk1FTlRfVFlQRV9NQU5VQUxfU1RBVElPThACEiYKIkVOVklS",
-            "T05NRU5UX1RZUEVfQVVUT01BVElDX1NUQVRJT04QAxIjCh9FTlZJUk9OTUVO",
-            "VF9UWVBFX0hZQlJJRF9TVEFUSU9OEAQSIAocRU5WSVJPTk1FTlRfVFlQRV9N",
-            "QU5VQUxfTElORRAFEiMKH0VOVklST05NRU5UX1RZUEVfQVVUT01BVElDX0xJ",
-            "TkUQBhIgChxFTlZJUk9OTUVOVF9UWVBFX0hZQlJJRF9MSU5FEAdCjAEKCWNv",
-            "bS5hci52MUIQRW52aXJvbm1lbnRQcm90b1ABWi9naXRodWIuY29tL2NvYm90",
-            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3Nh",
-            "Z2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpW",
-            "MWIGcHJvdG8z"));
+            "ZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQFSCGxvY2F0aW9uImwKD0Zp",
+            "eHR1cmVMb2NhdGlvbhIZCgJpZBgBIAEoCUIJukgGcgTQ8QQBUgJpZBI+Cghs",
+            "b2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpI",
+            "A8gBAVIIbG9jYXRpb24i1QMKEkVudmlyb25tZW50TWVzc2FnZRIOCgJpZBgB",
+            "IAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGlj",
+            "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
+            "aW9uEjkKBHR5cGUYBSABKA4yFi5hci52MS5FbnZpcm9ubWVudFR5cGVCDbpI",
+            "CoIBBBABKATIAQFSBHR5cGUSOQoHbWFya2VycxgGIAMoCzIVLmFyLnYxLk1h",
+            "cmtlckxvY2F0aW9uQgi6SAWSAQIIAVIHbWFya2VycxIsCgZyb2JvdHMYByAD",
+            "KAsyFC5hci52MS5Sb2JvdExvY2F0aW9uUgZyb2JvdHMSLAoGYXNzZXRzGAgg",
+            "AygLMhQuYXIudjEuQXNzZXRMb2NhdGlvblIGYXNzZXRzEikKBXBhcnRzGAkg",
+            "AygLMhMuYXIudjEuUGFydExvY2F0aW9uUgVwYXJ0cxIpCgV0b29scxgKIAMo",
+            "CzITLmFyLnYxLlRvb2xMb2NhdGlvblIFdG9vbHMSMgoIZml4dHVyZXMYCyAD",
+            "KAsyFi5hci52MS5GaXh0dXJlTG9jYXRpb25SCGZpeHR1cmVzIlQKE0Vudmly",
+            "b25tZW50TWVzc2FnZXMSPQoMZW52aXJvbm1lbnRzGAEgAygLMhkuYXIudjEu",
+            "RW52aXJvbm1lbnRNZXNzYWdlUgxlbnZpcm9ubWVudHMqrAIKD0Vudmlyb25t",
+            "ZW50VHlwZRIgChxFTlZJUk9OTUVOVF9UWVBFX1VOU1BFQ0lGSUVEEAASHAoY",
+            "RU5WSVJPTk1FTlRfVFlQRV9TVE9SQUdFEAESIwofRU5WSVJPTk1FTlRfVFlQ",
+            "RV9NQU5VQUxfU1RBVElPThACEiYKIkVOVklST05NRU5UX1RZUEVfQVVUT01B",
+            "VElDX1NUQVRJT04QAxIjCh9FTlZJUk9OTUVOVF9UWVBFX0hZQlJJRF9TVEFU",
+            "SU9OEAQSIAocRU5WSVJPTk1FTlRfVFlQRV9NQU5VQUxfTElORRAFEiMKH0VO",
+            "VklST05NRU5UX1RZUEVfQVVUT01BVElDX0xJTkUQBhIgChxFTlZJUk9OTUVO",
+            "VF9UWVBFX0hZQlJJRF9MSU5FEAdCjAEKCWNvbS5hci52MUIQRW52aXJvbm1l",
+            "bnRQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
+            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.EnvironmentType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -69,7 +72,8 @@ namespace Messages.AR.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetLocation), global::Messages.AR.V1.AssetLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PartLocation), global::Messages.AR.V1.PartLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ToolLocation), global::Messages.AR.V1.ToolLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FixtureLocation), global::Messages.AR.V1.FixtureLocation.Parser, new[]{ "Id", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessage), global::Messages.AR.V1.EnvironmentMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Markers", "Robots", "Assets", "Parts", "Tools", "Fixtures" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.EnvironmentMessages), global::Messages.AR.V1.EnvironmentMessages.Parser, new[]{ "Environments" }, null, null, null, null)
           }));
     }
@@ -1312,6 +1316,250 @@ namespace Messages.AR.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class FixtureLocation : pb::IMessage<FixtureLocation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FixtureLocation> _parser = new pb::MessageParser<FixtureLocation>(() => new FixtureLocation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FixtureLocation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureLocation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureLocation(FixtureLocation other) : this() {
+      id_ = other.id_;
+      location_ = other.location_ != null ? other.location_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FixtureLocation Clone() {
+      return new FixtureLocation(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 2;
+    private global::Messages.Common.V1.LocalizedPose location_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.LocalizedPose Location {
+      get { return location_; }
+      set {
+        location_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FixtureLocation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FixtureLocation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(Location, other.Location)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (location_ != null) hash ^= Location.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Location);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (location_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FixtureLocation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.location_ != null) {
+        if (location_ == null) {
+          Location = new global::Messages.Common.V1.LocalizedPose();
+        }
+        Location.MergeFrom(other.Location);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (location_ == null) {
+              Location = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class EnvironmentMessage : pb::IMessage<EnvironmentMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1326,7 +1574,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1356,6 +1604,7 @@ namespace Messages.AR.V1 {
       assets_ = other.assets_.Clone();
       parts_ = other.parts_.Clone();
       tools_ = other.tools_.Clone();
+      fixtures_ = other.fixtures_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1498,6 +1747,20 @@ namespace Messages.AR.V1 {
       get { return tools_; }
     }
 
+    /// <summary>Field number for the "fixtures" field.</summary>
+    public const int FixturesFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.FixtureLocation> _repeated_fixtures_codec
+        = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.FixtureLocation.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.FixtureLocation> fixtures_ = new pbc::RepeatedField<global::Messages.AR.V1.FixtureLocation>();
+    /// <summary>
+    /// Fixtures located in this environment
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.FixtureLocation> Fixtures {
+      get { return fixtures_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1523,6 +1786,7 @@ namespace Messages.AR.V1 {
       if(!assets_.Equals(other.assets_)) return false;
       if(!parts_.Equals(other.parts_)) return false;
       if(!tools_.Equals(other.tools_)) return false;
+      if(!fixtures_.Equals(other.fixtures_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1540,6 +1804,7 @@ namespace Messages.AR.V1 {
       hash ^= assets_.GetHashCode();
       hash ^= parts_.GetHashCode();
       hash ^= tools_.GetHashCode();
+      hash ^= fixtures_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1583,6 +1848,7 @@ namespace Messages.AR.V1 {
       assets_.WriteTo(output, _repeated_assets_codec);
       parts_.WriteTo(output, _repeated_parts_codec);
       tools_.WriteTo(output, _repeated_tools_codec);
+      fixtures_.WriteTo(output, _repeated_fixtures_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1618,6 +1884,7 @@ namespace Messages.AR.V1 {
       assets_.WriteTo(ref output, _repeated_assets_codec);
       parts_.WriteTo(ref output, _repeated_parts_codec);
       tools_.WriteTo(ref output, _repeated_tools_codec);
+      fixtures_.WriteTo(ref output, _repeated_fixtures_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1648,6 +1915,7 @@ namespace Messages.AR.V1 {
       size += assets_.CalculateSize(_repeated_assets_codec);
       size += parts_.CalculateSize(_repeated_parts_codec);
       size += tools_.CalculateSize(_repeated_tools_codec);
+      size += fixtures_.CalculateSize(_repeated_fixtures_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1680,6 +1948,7 @@ namespace Messages.AR.V1 {
       assets_.Add(other.assets_);
       parts_.Add(other.parts_);
       tools_.Add(other.tools_);
+      fixtures_.Add(other.fixtures_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1737,6 +2006,10 @@ namespace Messages.AR.V1 {
           }
           case 82: {
             tools_.AddEntriesFrom(input, _repeated_tools_codec);
+            break;
+          }
+          case 90: {
+            fixtures_.AddEntriesFrom(input, _repeated_fixtures_codec);
             break;
           }
         }
@@ -1798,6 +2071,10 @@ namespace Messages.AR.V1 {
             tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
             break;
           }
+          case 90: {
+            fixtures_.AddEntriesFrom(ref input, _repeated_fixtures_codec);
+            break;
+          }
         }
       }
     }
@@ -1820,7 +2097,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Messages.AR.V1.EnvironmentReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/sequence.proto.
  */
 export const file_plm_v1_sequence: GenFile = /*@__PURE__*/
-  fileDesc("ChVwbG0vdjEvc2VxdWVuY2UucHJvdG8SBnBsbS52MSK8AgoPU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAMSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhEKCXBhcmVudF9pZBgHIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCCADKAkSEAoIdGFza19pZHMYCSADKAkSEwoLYXNzaWduZWRfdG8YCiADKAkSJAoFc3RhdGUYCyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYDCABKAMSGQoRY2FuX2J1bGtfY29tcGxldGUYDSABKAgigQEKFlNlcXVlbmNlVXBkYXRlZE1lc3NhZ2USEwoLc2VxdWVuY2VfaWQYASABKAkSEwoLYXNzaWduZWRfdG8YAiADKAkSJAoFc3RhdGUYAyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYBCABKAMqsgEKDVNlcXVlbmNlU3RhdGUSHgoaU0VRVUVOQ0VfU1RBVEVfVU5TUEVDSUZJRUQQABInCiNTRVFVRU5DRV9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlNFUVVFTkNFX1NUQVRFX1dBSVRJTkcQAhIeChpTRVFVRU5DRV9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFNFUVVFTkNFX1NUQVRFX0NPTVBMRVRFRBAEQpABCgpjb20ucGxtLnYxQg1TZXF1ZW5jZVByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose]);
+  fileDesc("ChVwbG0vdjEvc2VxdWVuY2UucHJvdG8SBnBsbS52MSK8AgoPU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhEKCXBhcmVudF9pZBgHIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCCADKAkSEAoIdGFza19pZHMYCSADKAkSEwoLYXNzaWduZWRfdG8YCiADKAkSJAoFc3RhdGUYCyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYDCABKAUSGQoRY2FuX2J1bGtfY29tcGxldGUYDSABKAgigQEKFlNlcXVlbmNlVXBkYXRlZE1lc3NhZ2USEwoLc2VxdWVuY2VfaWQYASABKAkSEwoLYXNzaWduZWRfdG8YAiADKAkSJAoFc3RhdGUYAyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYBCABKAUqsgEKDVNlcXVlbmNlU3RhdGUSHgoaU0VRVUVOQ0VfU1RBVEVfVU5TUEVDSUZJRUQQABInCiNTRVFVRU5DRV9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlNFUVVFTkNFX1NUQVRFX1dBSVRJTkcQAhIeChpTRVFVRU5DRV9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFNFUVVFTkNFX1NUQVRFX0NPTVBMRVRFRBAEQpABCgpjb20ucGxtLnYxQg1TZXF1ZW5jZVByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose]);
 
 /**
  * @generated from message plm.v1.SequenceMessage
@@ -39,9 +39,9 @@ export type SequenceMessage = Message<"plm.v1.SequenceMessage"> & {
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 5;
+   * @generated from field: int32 sequence_number = 5;
    */
-  sequenceNumber: bigint;
+  sequenceNumber: number;
 
   /**
    * @generated from field: geometry.v1.LocalizedPose frame = 6;
@@ -74,9 +74,9 @@ export type SequenceMessage = Message<"plm.v1.SequenceMessage"> & {
   state: SequenceState;
 
   /**
-   * @generated from field: int64 completed_tasks = 12;
+   * @generated from field: int32 completed_tasks = 12;
    */
-  completedTasks: bigint;
+  completedTasks: number;
 
   /**
    * @generated from field: bool can_bulk_complete = 13;
@@ -113,9 +113,9 @@ export type SequenceUpdatedMessage = Message<"plm.v1.SequenceUpdatedMessage"> & 
   state: SequenceState;
 
   /**
-   * @generated from field: int64 completed_tasks = 4;
+   * @generated from field: int32 completed_tasks = 4;
    */
-  completedTasks: bigint;
+  completedTasks: number;
 };
 
 /**

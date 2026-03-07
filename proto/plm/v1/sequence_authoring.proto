@@ -6,16 +6,23 @@ import "geometry/v1/pose.proto";
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
+enum SequenceType {
+  SEQUENCE_TYPE_UNSPECIFIED = 0;
+  SEQUENCE_TYPE_ALL_OF_CHILDREN = 1;
+  SEQUENCE_TYPE_ONE_OF_CHILDREN = 2;
+}
+
 message StoredSequenceMessage {
   string id = 1;
   string name = 2;
   string icon = 3;
   string description = 4;
-  int64 sequence_number = 5;
-  geometry.v1.Pose frame = 6;
+  int32 sequence_number = 5;
+  geometry.v1.Pose offset = 6;
   repeated string sequence_ids = 8;
   repeated string task_ids = 9;
   bool can_bulk_complete = 12;
+  // TODO: if variant (or something) to allow for customizeable products
 }
 
 message StoredSequenceMessages {
@@ -23,9 +30,10 @@ message StoredSequenceMessages {
 }
 
 message NewSequenceMessage {
-  string name = 3;
+  string name = 2;
+  string icon = 3;
   string description = 4;
-  string parent_id = 6;
+  int32 sequence_number = 5;
 }
 
 message UpdateSequenceMessage {
@@ -33,8 +41,8 @@ message UpdateSequenceMessage {
   string name = 2;
   string icon = 3;
   string description = 4;
-  int64 sequence_number = 5;
-  geometry.v1.Pose frame = 6;
+  int32 sequence_number = 5;
+  geometry.v1.Pose offset = 6;
   repeated string sequence_ids = 8;
   repeated string task_ids = 9;
   bool can_bulk_complete = 12;

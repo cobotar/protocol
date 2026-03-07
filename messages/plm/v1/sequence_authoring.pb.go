@@ -22,17 +22,66 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type SequenceType int32
+
+const (
+	SequenceType_SEQUENCE_TYPE_UNSPECIFIED     SequenceType = 0
+	SequenceType_SEQUENCE_TYPE_ALL_OF_CHILDREN SequenceType = 1
+	SequenceType_SEQUENCE_TYPE_ONE_OF_CHILDREN SequenceType = 2
+)
+
+// Enum value maps for SequenceType.
+var (
+	SequenceType_name = map[int32]string{
+		0: "SEQUENCE_TYPE_UNSPECIFIED",
+		1: "SEQUENCE_TYPE_ALL_OF_CHILDREN",
+		2: "SEQUENCE_TYPE_ONE_OF_CHILDREN",
+	}
+	SequenceType_value = map[string]int32{
+		"SEQUENCE_TYPE_UNSPECIFIED":     0,
+		"SEQUENCE_TYPE_ALL_OF_CHILDREN": 1,
+		"SEQUENCE_TYPE_ONE_OF_CHILDREN": 2,
+	}
+)
+
+func (x SequenceType) Enum() *SequenceType {
+	p := new(SequenceType)
+	*p = x
+	return p
+}
+
+func (x SequenceType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SequenceType) Descriptor() protoreflect.EnumDescriptor {
+	return file_plm_v1_sequence_authoring_proto_enumTypes[0].Descriptor()
+}
+
+func (SequenceType) Type() protoreflect.EnumType {
+	return &file_plm_v1_sequence_authoring_proto_enumTypes[0]
+}
+
+func (x SequenceType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SequenceType.Descriptor instead.
+func (SequenceType) EnumDescriptor() ([]byte, []int) {
+	return file_plm_v1_sequence_authoring_proto_rawDescGZIP(), []int{0}
+}
+
 type StoredSequenceMessage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber  int64                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	Frame           *v1.Pose               `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	SequenceNumber  int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	Offset          *v1.Pose               `protobuf:"bytes,6,opt,name=offset,proto3" json:"offset,omitempty"`
 	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
 	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
-	CanBulkComplete bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
+	CanBulkComplete bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"` // TODO: if variant (or something) to allow for customizeable products
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -95,16 +144,16 @@ func (x *StoredSequenceMessage) GetDescription() string {
 	return ""
 }
 
-func (x *StoredSequenceMessage) GetSequenceNumber() int64 {
+func (x *StoredSequenceMessage) GetSequenceNumber() int32 {
 	if x != nil {
 		return x.SequenceNumber
 	}
 	return 0
 }
 
-func (x *StoredSequenceMessage) GetFrame() *v1.Pose {
+func (x *StoredSequenceMessage) GetOffset() *v1.Pose {
 	if x != nil {
-		return x.Frame
+		return x.Offset
 	}
 	return nil
 }
@@ -175,12 +224,13 @@ func (x *StoredSequenceMessages) GetSequences() []*StoredSequenceMessage {
 }
 
 type NewSequenceMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	ParentId      string                 `protobuf:"bytes,6,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	SequenceNumber int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *NewSequenceMessage) Reset() {
@@ -220,6 +270,13 @@ func (x *NewSequenceMessage) GetName() string {
 	return ""
 }
 
+func (x *NewSequenceMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *NewSequenceMessage) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -227,11 +284,11 @@ func (x *NewSequenceMessage) GetDescription() string {
 	return ""
 }
 
-func (x *NewSequenceMessage) GetParentId() string {
+func (x *NewSequenceMessage) GetSequenceNumber() int32 {
 	if x != nil {
-		return x.ParentId
+		return x.SequenceNumber
 	}
-	return ""
+	return 0
 }
 
 type UpdateSequenceMessage struct {
@@ -240,8 +297,8 @@ type UpdateSequenceMessage struct {
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber  int64                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	Frame           *v1.Pose               `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	SequenceNumber  int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	Offset          *v1.Pose               `protobuf:"bytes,6,opt,name=offset,proto3" json:"offset,omitempty"`
 	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
 	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	CanBulkComplete bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
@@ -307,16 +364,16 @@ func (x *UpdateSequenceMessage) GetDescription() string {
 	return ""
 }
 
-func (x *UpdateSequenceMessage) GetSequenceNumber() int64 {
+func (x *UpdateSequenceMessage) GetSequenceNumber() int32 {
 	if x != nil {
 		return x.SequenceNumber
 	}
 	return 0
 }
 
-func (x *UpdateSequenceMessage) GetFrame() *v1.Pose {
+func (x *UpdateSequenceMessage) GetOffset() *v1.Pose {
 	if x != nil {
-		return x.Frame
+		return x.Offset
 	}
 	return nil
 }
@@ -346,33 +403,38 @@ var File_plm_v1_sequence_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_sequence_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xad\x02\n" +
+	"\x1fplm/v1/sequence_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xaf\x02\n" +
 	"\x15StoredSequenceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12'\n" +
-	"\x05frame\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x05frame\x12!\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12)\n" +
+	"\x06offset\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x06offset\x12!\n" +
 	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
 	"\btask_ids\x18\t \x03(\tR\ataskIds\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"U\n" +
 	"\x16StoredSequenceMessages\x12;\n" +
-	"\tsequences\x18\x01 \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\"g\n" +
+	"\tsequences\x18\x01 \x03(\v2\x1d.plm.v1.StoredSequenceMessageR\tsequences\"\x87\x01\n" +
 	"\x12NewSequenceMessage\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1b\n" +
-	"\tparent_id\x18\x06 \x01(\tR\bparentId\"\xad\x02\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\"\xaf\x02\n" +
 	"\x15UpdateSequenceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x12'\n" +
-	"\x05frame\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x05frame\x12!\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12)\n" +
+	"\x06offset\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x06offset\x12!\n" +
 	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
 	"\btask_ids\x18\t \x03(\tR\ataskIds\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkCompleteB\x99\x01\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete*s\n" +
+	"\fSequenceType\x12\x1d\n" +
+	"\x19SEQUENCE_TYPE_UNSPECIFIED\x10\x00\x12!\n" +
+	"\x1dSEQUENCE_TYPE_ALL_OF_CHILDREN\x10\x01\x12!\n" +
+	"\x1dSEQUENCE_TYPE_ONE_OF_CHILDREN\x10\x02B\x99\x01\n" +
 	"\n" +
 	"com.plm.v1B\x16SequenceAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
@@ -388,18 +450,20 @@ func file_plm_v1_sequence_authoring_proto_rawDescGZIP() []byte {
 	return file_plm_v1_sequence_authoring_proto_rawDescData
 }
 
+var file_plm_v1_sequence_authoring_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_plm_v1_sequence_authoring_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_plm_v1_sequence_authoring_proto_goTypes = []any{
-	(*StoredSequenceMessage)(nil),  // 0: plm.v1.StoredSequenceMessage
-	(*StoredSequenceMessages)(nil), // 1: plm.v1.StoredSequenceMessages
-	(*NewSequenceMessage)(nil),     // 2: plm.v1.NewSequenceMessage
-	(*UpdateSequenceMessage)(nil),  // 3: plm.v1.UpdateSequenceMessage
-	(*v1.Pose)(nil),                // 4: geometry.v1.Pose
+	(SequenceType)(0),              // 0: plm.v1.SequenceType
+	(*StoredSequenceMessage)(nil),  // 1: plm.v1.StoredSequenceMessage
+	(*StoredSequenceMessages)(nil), // 2: plm.v1.StoredSequenceMessages
+	(*NewSequenceMessage)(nil),     // 3: plm.v1.NewSequenceMessage
+	(*UpdateSequenceMessage)(nil),  // 4: plm.v1.UpdateSequenceMessage
+	(*v1.Pose)(nil),                // 5: geometry.v1.Pose
 }
 var file_plm_v1_sequence_authoring_proto_depIdxs = []int32{
-	4, // 0: plm.v1.StoredSequenceMessage.frame:type_name -> geometry.v1.Pose
-	0, // 1: plm.v1.StoredSequenceMessages.sequences:type_name -> plm.v1.StoredSequenceMessage
-	4, // 2: plm.v1.UpdateSequenceMessage.frame:type_name -> geometry.v1.Pose
+	5, // 0: plm.v1.StoredSequenceMessage.offset:type_name -> geometry.v1.Pose
+	1, // 1: plm.v1.StoredSequenceMessages.sequences:type_name -> plm.v1.StoredSequenceMessage
+	5, // 2: plm.v1.UpdateSequenceMessage.offset:type_name -> geometry.v1.Pose
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -417,13 +481,14 @@ func file_plm_v1_sequence_authoring_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_sequence_authoring_proto_rawDesc), len(file_plm_v1_sequence_authoring_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_plm_v1_sequence_authoring_proto_goTypes,
 		DependencyIndexes: file_plm_v1_sequence_authoring_proto_depIdxs,
+		EnumInfos:         file_plm_v1_sequence_authoring_proto_enumTypes,
 		MessageInfos:      file_plm_v1_sequence_authoring_proto_msgTypes,
 	}.Build()
 	File_plm_v1_sequence_authoring_proto = out.File

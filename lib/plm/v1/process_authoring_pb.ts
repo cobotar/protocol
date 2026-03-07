@@ -53,6 +53,9 @@ export type StoredProcessMessage = Message<"plm.v1.StoredProcessMessage"> & {
   fixtureOffset?: Pose;
 
   /**
+   * TODO: add calculated customization possibilities (or something like that)
+   * Then when loadProcess is called, a list with selected IDS must be selected/send with
+   *
    * @generated from field: string root_sequence_id = 7;
    */
   rootSequenceId: string;

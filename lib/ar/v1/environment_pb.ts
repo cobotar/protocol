@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/environment.proto.
  */
 export const file_ar_v1_environment: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiXQoOTWFya2VyTG9jYXRpb24SFQoCaWQYASABKAlCCbpIBnIEyPEEARI0Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpIA8gBASJcCg1Sb2JvdExvY2F0aW9uEhUKAmlkGAEgASgJQgm6SAZyBKDxBAESNAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQEiXAoNQXNzZXRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFBhcnRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgS48QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFRvb2xMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTA8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBItcCChJFbnZpcm9ubWVudE1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMwoEdHlwZRgFIAEoDjIWLmFyLnYxLkVudmlyb25tZW50VHlwZUINukgKyAEBggEEEAEoBBIwCgdtYXJrZXJzGAYgAygLMhUuYXIudjEuTWFya2VyTG9jYXRpb25CCLpIBZIBAggBEiQKBnJvYm90cxgHIAMoCzIULmFyLnYxLlJvYm90TG9jYXRpb24SJAoGYXNzZXRzGAggAygLMhQuYXIudjEuQXNzZXRMb2NhdGlvbhIiCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlvbhIiCgV0b29scxgKIAMoCzITLmFyLnYxLlRvb2xMb2NhdGlvbiJGChNFbnZpcm9ubWVudE1lc3NhZ2VzEi8KDGVudmlyb25tZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZSqsAgoPRW52aXJvbm1lbnRUeXBlEiAKHEVOVklST05NRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIcChhFTlZJUk9OTUVOVF9UWVBFX1NUT1JBR0UQARIjCh9FTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9TVEFUSU9OEAISJgoiRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfU1RBVElPThADEiMKH0VOVklST05NRU5UX1RZUEVfSFlCUklEX1NUQVRJT04QBBIgChxFTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9MSU5FEAUSIwofRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfTElORRAGEiAKHEVOVklST05NRU5UX1RZUEVfSFlCUklEX0xJTkUQB0KMAQoJY29tLmFyLnYxQhBFbnZpcm9ubWVudFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chdhci92MS9lbnZpcm9ubWVudC5wcm90bxIFYXIudjEiXQoOTWFya2VyTG9jYXRpb24SFQoCaWQYASABKAlCCbpIBnIEyPEEARI0Cghsb2NhdGlvbhgCIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VCBrpIA8gBASJcCg1Sb2JvdExvY2F0aW9uEhUKAmlkGAEgASgJQgm6SAZyBKDxBAESNAoIbG9jYXRpb24YAiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlQga6SAPIAQEiXAoNQXNzZXRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFBhcnRMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgS48QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIlsKDFRvb2xMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTA8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIl4KD0ZpeHR1cmVMb2NhdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTQ8QQBEjQKCGxvY2F0aW9uGAIgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZUIGukgDyAEBIoEDChJFbnZpcm9ubWVudE1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMwoEdHlwZRgFIAEoDjIWLmFyLnYxLkVudmlyb25tZW50VHlwZUINukgKyAEBggEEEAEoBBIwCgdtYXJrZXJzGAYgAygLMhUuYXIudjEuTWFya2VyTG9jYXRpb25CCLpIBZIBAggBEiQKBnJvYm90cxgHIAMoCzIULmFyLnYxLlJvYm90TG9jYXRpb24SJAoGYXNzZXRzGAggAygLMhQuYXIudjEuQXNzZXRMb2NhdGlvbhIiCgVwYXJ0cxgJIAMoCzITLmFyLnYxLlBhcnRMb2NhdGlvbhIiCgV0b29scxgKIAMoCzITLmFyLnYxLlRvb2xMb2NhdGlvbhIoCghmaXh0dXJlcxgLIAMoCzIWLmFyLnYxLkZpeHR1cmVMb2NhdGlvbiJGChNFbnZpcm9ubWVudE1lc3NhZ2VzEi8KDGVudmlyb25tZW50cxgBIAMoCzIZLmFyLnYxLkVudmlyb25tZW50TWVzc2FnZSqsAgoPRW52aXJvbm1lbnRUeXBlEiAKHEVOVklST05NRU5UX1RZUEVfVU5TUEVDSUZJRUQQABIcChhFTlZJUk9OTUVOVF9UWVBFX1NUT1JBR0UQARIjCh9FTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9TVEFUSU9OEAISJgoiRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfU1RBVElPThADEiMKH0VOVklST05NRU5UX1RZUEVfSFlCUklEX1NUQVRJT04QBBIgChxFTlZJUk9OTUVOVF9UWVBFX01BTlVBTF9MSU5FEAUSIwofRU5WSVJPTk1FTlRfVFlQRV9BVVRPTUFUSUNfTElORRAGEiAKHEVOVklST05NRU5UX1RZUEVfSFlCUklEX0xJTkUQB0KMAQoJY29tLmFyLnYxQhBFbnZpcm9ubWVudFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.MarkerLocation
@@ -127,6 +127,28 @@ export const ToolLocationSchema: GenMessage<ToolLocation> = /*@__PURE__*/
   messageDesc(file_ar_v1_environment, 4);
 
 /**
+ * @generated from message ar.v1.FixtureLocation
+ */
+export type FixtureLocation = Message<"ar.v1.FixtureLocation"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose location = 2;
+   */
+  location?: LocalizedPose;
+};
+
+/**
+ * Describes the message ar.v1.FixtureLocation.
+ * Use `create(FixtureLocationSchema)` to create a new message.
+ */
+export const FixtureLocationSchema: GenMessage<FixtureLocation> = /*@__PURE__*/
+  messageDesc(file_ar_v1_environment, 5);
+
+/**
  * @generated from message ar.v1.EnvironmentMessage
  */
 export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
@@ -191,6 +213,13 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
    * @generated from field: repeated ar.v1.ToolLocation tools = 10;
    */
   tools: ToolLocation[];
+
+  /**
+   * Fixtures located in this environment
+   *
+   * @generated from field: repeated ar.v1.FixtureLocation fixtures = 11;
+   */
+  fixtures: FixtureLocation[];
 };
 
 /**
@@ -198,7 +227,7 @@ export type EnvironmentMessage = Message<"ar.v1.EnvironmentMessage"> & {
  * Use `create(EnvironmentMessageSchema)` to create a new message.
  */
 export const EnvironmentMessageSchema: GenMessage<EnvironmentMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 5);
+  messageDesc(file_ar_v1_environment, 6);
 
 /**
  * @generated from message ar.v1.EnvironmentMessages
@@ -215,7 +244,7 @@ export type EnvironmentMessages = Message<"ar.v1.EnvironmentMessages"> & {
  * Use `create(EnvironmentMessagesSchema)` to create a new message.
  */
 export const EnvironmentMessagesSchema: GenMessage<EnvironmentMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_environment, 6);
+  messageDesc(file_ar_v1_environment, 7);
 
 /**
  * @generated from enum ar.v1.EnvironmentType

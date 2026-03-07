@@ -47,7 +47,7 @@ message TaskMessage {
   string icon = 3;
   string description = 4;
   string instruction_text = 5;
-  int64 sequence_number = 6;
+  int32 sequence_number = 6;
   string part_id = 7;
   string model_id = 8;
   TaskType task_type = 9;

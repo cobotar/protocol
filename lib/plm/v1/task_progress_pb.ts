@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task_progress.proto.
  */
 export const file_plm_v1_task_progress: GenFile = /*@__PURE__*/
-  fileDesc("ChpwbG0vdjEvdGFza19wcm9ncmVzcy5wcm90bxIGcGxtLnYxIqUBChNUYXNrUHJvZ3Jlc3NNZXNzYWdlEhIKCnJlcXVlc3RfaWQYASABKAkSEwoLaW5zdGFuY2VfaWQYAiABKAkSDwoHdGFza19pZBgDIAEoCRIQCghhZ2VudF9pZBgEIAEoCRIPCgdtZXNzYWdlGAUgASgJEhQKDGVsYXBzZWRfdGltZRgGIAEoAxIbChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAcgASgDQpQBCgpjb20ucGxtLnYxQhFUYXNrUHJvZ3Jlc3NQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z");
+  fileDesc("ChpwbG0vdjEvdGFza19wcm9ncmVzcy5wcm90bxIGcGxtLnYxIqUBChNUYXNrUHJvZ3Jlc3NNZXNzYWdlEhIKCnJlcXVlc3RfaWQYASABKAkSEwoLaW5zdGFuY2VfaWQYAiABKAkSDwoHdGFza19pZBgDIAEoCRIQCghhZ2VudF9pZBgEIAEoCRIPCgdtZXNzYWdlGAUgASgJEhQKDGVsYXBzZWRfdGltZRgGIAEoBRIbChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAcgASgFQpQBCgpjb20ucGxtLnYxQhFUYXNrUHJvZ3Jlc3NQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message plm.v1.TaskProgressMessage
@@ -42,14 +42,18 @@ export type TaskProgressMessage = Message<"plm.v1.TaskProgressMessage"> & {
   message: string;
 
   /**
-   * @generated from field: int64 elapsed_time = 6;
+   * elapsed time in seconds
+   *
+   * @generated from field: int32 elapsed_time = 6;
    */
-  elapsedTime: bigint;
+  elapsedTime: number;
 
   /**
-   * @generated from field: int64 estimated_time_left = 7;
+   * estimated time left in seconds
+   *
+   * @generated from field: int32 estimated_time_left = 7;
    */
-  estimatedTimeLeft: bigint;
+  estimatedTimeLeft: number;
 };
 
 /**

@@ -2,8 +2,8 @@
 // @generated from file plm/v1/sequence_authoring.proto (package plm.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/sequence_authoring.proto.
  */
 export const file_plm_v1_sequence_authoring: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wbG0vdjEvc2VxdWVuY2VfYXV0aG9yaW5nLnByb3RvEgZwbG0udjEi0gEKFVN0b3JlZFNlcXVlbmNlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAUgASgDEiAKBWZyYW1lGAYgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIUCgxzZXF1ZW5jZV9pZHMYCCADKAkSEAoIdGFza19pZHMYCSADKAkSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgiSgoWU3RvcmVkU2VxdWVuY2VNZXNzYWdlcxIwCglzZXF1ZW5jZXMYASADKAsyHS5wbG0udjEuU3RvcmVkU2VxdWVuY2VNZXNzYWdlIkoKEk5ld1NlcXVlbmNlTWVzc2FnZRIMCgRuYW1lGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhEKCXBhcmVudF9pZBgGIAEoCSLSAQoVVXBkYXRlU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAMSIAoFZnJhbWUYBiABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhQKDHNlcXVlbmNlX2lkcxgIIAMoCRIQCgh0YXNrX2lkcxgJIAMoCRIZChFjYW5fYnVsa19jb21wbGV0ZRgMIAEoCEKZAQoKY29tLnBsbS52MUIWU2VxdWVuY2VBdXRob3JpbmdQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose]);
+  fileDesc("Ch9wbG0vdjEvc2VxdWVuY2VfYXV0aG9yaW5nLnByb3RvEgZwbG0udjEi0wEKFVN0b3JlZFNlcXVlbmNlTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFEiEKBm9mZnNldBgGIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USFAoMc2VxdWVuY2VfaWRzGAggAygJEhAKCHRhc2tfaWRzGAkgAygJEhkKEWNhbl9idWxrX2NvbXBsZXRlGAwgASgIIkoKFlN0b3JlZFNlcXVlbmNlTWVzc2FnZXMSMAoJc2VxdWVuY2VzGAEgAygLMh0ucGxtLnYxLlN0b3JlZFNlcXVlbmNlTWVzc2FnZSJeChJOZXdTZXF1ZW5jZU1lc3NhZ2USDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhcKD3NlcXVlbmNlX251bWJlchgFIAEoBSLTAQoVVXBkYXRlU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUSIQoGb2Zmc2V0GAYgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIUCgxzZXF1ZW5jZV9pZHMYCCADKAkSEAoIdGFza19pZHMYCSADKAkSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgqcwoMU2VxdWVuY2VUeXBlEh0KGVNFUVVFTkNFX1RZUEVfVU5TUEVDSUZJRUQQABIhCh1TRVFVRU5DRV9UWVBFX0FMTF9PRl9DSElMRFJFThABEiEKHVNFUVVFTkNFX1RZUEVfT05FX09GX0NISUxEUkVOEAJCmQEKCmNvbS5wbG0udjFCFlNlcXVlbmNlQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose]);
 
 /**
  * @generated from message plm.v1.StoredSequenceMessage
@@ -39,14 +39,14 @@ export type StoredSequenceMessage = Message<"plm.v1.StoredSequenceMessage"> & {
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 5;
+   * @generated from field: int32 sequence_number = 5;
    */
-  sequenceNumber: bigint;
+  sequenceNumber: number;
 
   /**
-   * @generated from field: geometry.v1.Pose frame = 6;
+   * @generated from field: geometry.v1.Pose offset = 6;
    */
-  frame?: Pose;
+  offset?: Pose;
 
   /**
    * @generated from field: repeated string sequence_ids = 8;
@@ -59,6 +59,8 @@ export type StoredSequenceMessage = Message<"plm.v1.StoredSequenceMessage"> & {
   taskIds: string[];
 
   /**
+   * TODO: if variant (or something) to allow for customizeable products
+   *
    * @generated from field: bool can_bulk_complete = 12;
    */
   canBulkComplete: boolean;
@@ -93,9 +95,14 @@ export const StoredSequenceMessagesSchema: GenMessage<StoredSequenceMessages> = 
  */
 export type NewSequenceMessage = Message<"plm.v1.NewSequenceMessage"> & {
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string name = 2;
    */
   name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
 
   /**
    * @generated from field: string description = 4;
@@ -103,9 +110,9 @@ export type NewSequenceMessage = Message<"plm.v1.NewSequenceMessage"> & {
   description: string;
 
   /**
-   * @generated from field: string parent_id = 6;
+   * @generated from field: int32 sequence_number = 5;
    */
-  parentId: string;
+  sequenceNumber: number;
 };
 
 /**
@@ -140,14 +147,14 @@ export type UpdateSequenceMessage = Message<"plm.v1.UpdateSequenceMessage"> & {
   description: string;
 
   /**
-   * @generated from field: int64 sequence_number = 5;
+   * @generated from field: int32 sequence_number = 5;
    */
-  sequenceNumber: bigint;
+  sequenceNumber: number;
 
   /**
-   * @generated from field: geometry.v1.Pose frame = 6;
+   * @generated from field: geometry.v1.Pose offset = 6;
    */
-  frame?: Pose;
+  offset?: Pose;
 
   /**
    * @generated from field: repeated string sequence_ids = 8;
@@ -171,4 +178,30 @@ export type UpdateSequenceMessage = Message<"plm.v1.UpdateSequenceMessage"> & {
  */
 export const UpdateSequenceMessageSchema: GenMessage<UpdateSequenceMessage> = /*@__PURE__*/
   messageDesc(file_plm_v1_sequence_authoring, 3);
+
+/**
+ * @generated from enum plm.v1.SequenceType
+ */
+export enum SequenceType {
+  /**
+   * @generated from enum value: SEQUENCE_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: SEQUENCE_TYPE_ALL_OF_CHILDREN = 1;
+   */
+  ALL_OF_CHILDREN = 1,
+
+  /**
+   * @generated from enum value: SEQUENCE_TYPE_ONE_OF_CHILDREN = 2;
+   */
+  ONE_OF_CHILDREN = 2,
+}
+
+/**
+ * Describes the enum plm.v1.SequenceType.
+ */
+export const SequenceTypeSchema: GenEnum<SequenceType> = /*@__PURE__*/
+  enumDesc(file_plm_v1_sequence_authoring, 0);
 

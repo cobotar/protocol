@@ -28,17 +28,17 @@ namespace Messages.Plm.V1 {
             "cG9zZS5wcm90byLEAwoPU2VxdWVuY2VNZXNzYWdlEg4KAmlkGAEgASgJUgJp",
             "ZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
             "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEicKD3NlcXVlbmNlX251",
-            "bWJlchgFIAEoA1IOc2VxdWVuY2VOdW1iZXISMAoFZnJhbWUYBiABKAsyGi5n",
+            "bWJlchgFIAEoBVIOc2VxdWVuY2VOdW1iZXISMAoFZnJhbWUYBiABKAsyGi5n",
             "ZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgVmcmFtZRIbCglwYXJlbnRfaWQY",
             "ByABKAlSCHBhcmVudElkEiEKDHNlcXVlbmNlX2lkcxgIIAMoCVILc2VxdWVu",
             "Y2VJZHMSGQoIdGFza19pZHMYCSADKAlSB3Rhc2tJZHMSHwoLYXNzaWduZWRf",
             "dG8YCiADKAlSCmFzc2lnbmVkVG8SKwoFc3RhdGUYCyABKA4yFS5wbG0udjEu",
-            "U2VxdWVuY2VTdGF0ZVIFc3RhdGUSJwoPY29tcGxldGVkX3Rhc2tzGAwgASgD",
+            "U2VxdWVuY2VTdGF0ZVIFc3RhdGUSJwoPY29tcGxldGVkX3Rhc2tzGAwgASgF",
             "Ug5jb21wbGV0ZWRUYXNrcxIqChFjYW5fYnVsa19jb21wbGV0ZRgNIAEoCFIP",
             "Y2FuQnVsa0NvbXBsZXRlIrABChZTZXF1ZW5jZVVwZGF0ZWRNZXNzYWdlEh8K",
             "C3NlcXVlbmNlX2lkGAEgASgJUgpzZXF1ZW5jZUlkEh8KC2Fzc2lnbmVkX3Rv",
             "GAIgAygJUgphc3NpZ25lZFRvEisKBXN0YXRlGAMgASgOMhUucGxtLnYxLlNl",
-            "cXVlbmNlU3RhdGVSBXN0YXRlEicKD2NvbXBsZXRlZF90YXNrcxgEIAEoA1IO",
+            "cXVlbmNlU3RhdGVSBXN0YXRlEicKD2NvbXBsZXRlZF90YXNrcxgEIAEoBVIO",
             "Y29tcGxldGVkVGFza3MqsgEKDVNlcXVlbmNlU3RhdGUSHgoaU0VRVUVOQ0Vf",
             "U1RBVEVfVU5TUEVDSUZJRUQQABInCiNTRVFVRU5DRV9TVEFURV9NSVNTSU5H",
             "X1BSRUNPTkRJVElPThABEhoKFlNFUVVFTkNFX1NUQVRFX1dBSVRJTkcQAhIe",
@@ -176,10 +176,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 5;
-    private long sequenceNumber_;
+    private int sequenceNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SequenceNumber {
+    public int SequenceNumber {
       get { return sequenceNumber_; }
       set {
         sequenceNumber_ = value;
@@ -257,10 +257,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "completed_tasks" field.</summary>
     public const int CompletedTasksFieldNumber = 12;
-    private long completedTasks_;
+    private int completedTasks_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CompletedTasks {
+    public int CompletedTasks {
       get { return completedTasks_; }
       set {
         completedTasks_ = value;
@@ -318,14 +318,14 @@ namespace Messages.Plm.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
+      if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
       if (ParentId.Length != 0) hash ^= ParentId.GetHashCode();
       hash ^= sequenceIds_.GetHashCode();
       hash ^= taskIds_.GetHashCode();
       hash ^= assignedTo_.GetHashCode();
       if (State != global::Messages.Plm.V1.SequenceState.Unspecified) hash ^= State.GetHashCode();
-      if (CompletedTasks != 0L) hash ^= CompletedTasks.GetHashCode();
+      if (CompletedTasks != 0) hash ^= CompletedTasks.GetHashCode();
       if (CanBulkComplete != false) hash ^= CanBulkComplete.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -361,9 +361,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(40);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (frame_ != null) {
         output.WriteRawTag(50);
@@ -380,9 +380,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) State);
       }
-      if (CompletedTasks != 0L) {
+      if (CompletedTasks != 0) {
         output.WriteRawTag(96);
-        output.WriteInt64(CompletedTasks);
+        output.WriteInt32(CompletedTasks);
       }
       if (CanBulkComplete != false) {
         output.WriteRawTag(104);
@@ -414,9 +414,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (SequenceNumber != 0L) {
+      if (SequenceNumber != 0) {
         output.WriteRawTag(40);
-        output.WriteInt64(SequenceNumber);
+        output.WriteInt32(SequenceNumber);
       }
       if (frame_ != null) {
         output.WriteRawTag(50);
@@ -433,9 +433,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) State);
       }
-      if (CompletedTasks != 0L) {
+      if (CompletedTasks != 0) {
         output.WriteRawTag(96);
-        output.WriteInt64(CompletedTasks);
+        output.WriteInt32(CompletedTasks);
       }
       if (CanBulkComplete != false) {
         output.WriteRawTag(104);
@@ -463,8 +463,8 @@ namespace Messages.Plm.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (SequenceNumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SequenceNumber);
+      if (SequenceNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
       }
       if (frame_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
@@ -478,8 +478,8 @@ namespace Messages.Plm.V1 {
       if (State != global::Messages.Plm.V1.SequenceState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
-      if (CompletedTasks != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CompletedTasks);
+      if (CompletedTasks != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CompletedTasks);
       }
       if (CanBulkComplete != false) {
         size += 1 + 1;
@@ -508,7 +508,7 @@ namespace Messages.Plm.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.SequenceNumber != 0L) {
+      if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
       }
       if (other.frame_ != null) {
@@ -526,7 +526,7 @@ namespace Messages.Plm.V1 {
       if (other.State != global::Messages.Plm.V1.SequenceState.Unspecified) {
         State = other.State;
       }
-      if (other.CompletedTasks != 0L) {
+      if (other.CompletedTasks != 0) {
         CompletedTasks = other.CompletedTasks;
       }
       if (other.CanBulkComplete != false) {
@@ -568,7 +568,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 40: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 50: {
@@ -599,7 +599,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 96: {
-            CompletedTasks = input.ReadInt64();
+            CompletedTasks = input.ReadInt32();
             break;
           }
           case 104: {
@@ -642,7 +642,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 40: {
-            SequenceNumber = input.ReadInt64();
+            SequenceNumber = input.ReadInt32();
             break;
           }
           case 50: {
@@ -673,7 +673,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 96: {
-            CompletedTasks = input.ReadInt64();
+            CompletedTasks = input.ReadInt32();
             break;
           }
           case 104: {
@@ -775,10 +775,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "completed_tasks" field.</summary>
     public const int CompletedTasksFieldNumber = 4;
-    private long completedTasks_;
+    private int completedTasks_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CompletedTasks {
+    public int CompletedTasks {
       get { return completedTasks_; }
       set {
         completedTasks_ = value;
@@ -814,7 +814,7 @@ namespace Messages.Plm.V1 {
       if (SequenceId.Length != 0) hash ^= SequenceId.GetHashCode();
       hash ^= assignedTo_.GetHashCode();
       if (State != global::Messages.Plm.V1.SequenceState.Unspecified) hash ^= State.GetHashCode();
-      if (CompletedTasks != 0L) hash ^= CompletedTasks.GetHashCode();
+      if (CompletedTasks != 0) hash ^= CompletedTasks.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -842,9 +842,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) State);
       }
-      if (CompletedTasks != 0L) {
+      if (CompletedTasks != 0) {
         output.WriteRawTag(32);
-        output.WriteInt64(CompletedTasks);
+        output.WriteInt32(CompletedTasks);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -865,9 +865,9 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) State);
       }
-      if (CompletedTasks != 0L) {
+      if (CompletedTasks != 0) {
         output.WriteRawTag(32);
-        output.WriteInt64(CompletedTasks);
+        output.WriteInt32(CompletedTasks);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -886,8 +886,8 @@ namespace Messages.Plm.V1 {
       if (State != global::Messages.Plm.V1.SequenceState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
-      if (CompletedTasks != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CompletedTasks);
+      if (CompletedTasks != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CompletedTasks);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -908,7 +908,7 @@ namespace Messages.Plm.V1 {
       if (other.State != global::Messages.Plm.V1.SequenceState.Unspecified) {
         State = other.State;
       }
-      if (other.CompletedTasks != 0L) {
+      if (other.CompletedTasks != 0) {
         CompletedTasks = other.CompletedTasks;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -943,7 +943,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 32: {
-            CompletedTasks = input.ReadInt64();
+            CompletedTasks = input.ReadInt32();
             break;
           }
         }
@@ -978,7 +978,7 @@ namespace Messages.Plm.V1 {
             break;
           }
           case 32: {
-            CompletedTasks = input.ReadInt64();
+            CompletedTasks = input.ReadInt32();
             break;
           }
         }

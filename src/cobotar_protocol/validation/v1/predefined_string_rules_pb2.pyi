@@ -23,3 +23,5 @@ TOOL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 tool_id_component: _descriptor.FieldDescriptor
 MARKER_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 marker_id_component: _descriptor.FieldDescriptor
+FIXTURE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+fixture_id_component: _descriptor.FieldDescriptor

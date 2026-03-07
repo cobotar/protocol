@@ -188,6 +188,10 @@ namespace Messages.Plm.V1 {
     /// <summary>Field number for the "root_sequence_id" field.</summary>
     public const int RootSequenceIdFieldNumber = 7;
     private string rootSequenceId_ = "";
+    /// <summary>
+    /// TODO: add calculated customization possibilities (or something like that)
+    /// Then when loadProcess is called, a list with selected IDS must be selected/send with
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RootSequenceId {

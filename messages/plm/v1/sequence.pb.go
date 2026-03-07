@@ -83,14 +83,14 @@ type SequenceMessage struct {
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber  int64                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	SequenceNumber  int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
 	Frame           *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
 	ParentId        string                 `protobuf:"bytes,7,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
 	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	AssignedTo      []string               `protobuf:"bytes,10,rep,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
 	State           SequenceState          `protobuf:"varint,11,opt,name=state,proto3,enum=plm.v1.SequenceState" json:"state,omitempty"`
-	CompletedTasks  int64                  `protobuf:"varint,12,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
+	CompletedTasks  int32                  `protobuf:"varint,12,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
 	CanBulkComplete bool                   `protobuf:"varint,13,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -154,7 +154,7 @@ func (x *SequenceMessage) GetDescription() string {
 	return ""
 }
 
-func (x *SequenceMessage) GetSequenceNumber() int64 {
+func (x *SequenceMessage) GetSequenceNumber() int32 {
 	if x != nil {
 		return x.SequenceNumber
 	}
@@ -203,7 +203,7 @@ func (x *SequenceMessage) GetState() SequenceState {
 	return SequenceState_SEQUENCE_STATE_UNSPECIFIED
 }
 
-func (x *SequenceMessage) GetCompletedTasks() int64 {
+func (x *SequenceMessage) GetCompletedTasks() int32 {
 	if x != nil {
 		return x.CompletedTasks
 	}
@@ -223,7 +223,7 @@ type SequenceUpdatedMessage struct {
 	SequenceId     string                 `protobuf:"bytes,1,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
 	AssignedTo     []string               `protobuf:"bytes,2,rep,name=assigned_to,json=assignedTo,proto3" json:"assigned_to,omitempty"`
 	State          SequenceState          `protobuf:"varint,3,opt,name=state,proto3,enum=plm.v1.SequenceState" json:"state,omitempty"`
-	CompletedTasks int64                  `protobuf:"varint,4,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
+	CompletedTasks int32                  `protobuf:"varint,4,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -279,7 +279,7 @@ func (x *SequenceUpdatedMessage) GetState() SequenceState {
 	return SequenceState_SEQUENCE_STATE_UNSPECIFIED
 }
 
-func (x *SequenceUpdatedMessage) GetCompletedTasks() int64 {
+func (x *SequenceUpdatedMessage) GetCompletedTasks() int32 {
 	if x != nil {
 		return x.CompletedTasks
 	}
@@ -296,7 +296,7 @@ const file_plm_v1_sequence_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x03R\x0esequenceNumber\x120\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x120\n" +
 	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1b\n" +
 	"\tparent_id\x18\a \x01(\tR\bparentId\x12!\n" +
 	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
@@ -305,7 +305,7 @@ const file_plm_v1_sequence_proto_rawDesc = "" +
 	" \x03(\tR\n" +
 	"assignedTo\x12+\n" +
 	"\x05state\x18\v \x01(\x0e2\x15.plm.v1.SequenceStateR\x05state\x12'\n" +
-	"\x0fcompleted_tasks\x18\f \x01(\x03R\x0ecompletedTasks\x12*\n" +
+	"\x0fcompleted_tasks\x18\f \x01(\x05R\x0ecompletedTasks\x12*\n" +
 	"\x11can_bulk_complete\x18\r \x01(\bR\x0fcanBulkComplete\"\xb0\x01\n" +
 	"\x16SequenceUpdatedMessage\x12\x1f\n" +
 	"\vsequence_id\x18\x01 \x01(\tR\n" +
@@ -313,7 +313,7 @@ const file_plm_v1_sequence_proto_rawDesc = "" +
 	"\vassigned_to\x18\x02 \x03(\tR\n" +
 	"assignedTo\x12+\n" +
 	"\x05state\x18\x03 \x01(\x0e2\x15.plm.v1.SequenceStateR\x05state\x12'\n" +
-	"\x0fcompleted_tasks\x18\x04 \x01(\x03R\x0ecompletedTasks*\xb2\x01\n" +
+	"\x0fcompleted_tasks\x18\x04 \x01(\x05R\x0ecompletedTasks*\xb2\x01\n" +
 	"\rSequenceState\x12\x1e\n" +
 	"\x1aSEQUENCE_STATE_UNSPECIFIED\x10\x00\x12'\n" +
 	"#SEQUENCE_STATE_MISSING_PRECONDITION\x10\x01\x12\x1a\n" +
