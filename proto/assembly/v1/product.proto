@@ -1,0 +1,118 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/common.proto";
+import "geometry/v1/pose.proto";
+import "geometry/v1/vector3.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum PartType {
+  PART_TYPE_UNSPECIFIED = 0;
+  PART_TYPE_COMPONENT = 1;
+  PART_TYPE_FASTENER = 2;
+  PART_TYPE_SUBASSEMBLY = 3;
+  PART_TYPE_CONSUMABLE = 4;
+  PART_TYPE_LABEL = 5;
+  PART_TYPE_PACKAGING = 6;
+}
+
+enum NodeKind {
+  NODE_KIND_UNSPECIFIED = 0;
+  NODE_KIND_GROUP = 1;
+  NODE_KIND_PART_OCCURRENCE = 2;
+  NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3;
+  NODE_KIND_PATTERN = 4;
+}
+
+enum JoinMethod {
+  JOIN_METHOD_UNSPECIFIED = 0;
+  JOIN_METHOD_NONE = 1;
+  JOIN_METHOD_FASTEN = 2;
+  JOIN_METHOD_PRESS_FIT = 3;
+  JOIN_METHOD_SNAP_FIT = 4;
+  JOIN_METHOD_ADHESIVE = 5;
+  JOIN_METHOD_WELD = 6;
+  JOIN_METHOD_PLACE = 7;
+}
+
+message Dimensions {
+  double x_mm = 1;
+  double y_mm = 2;
+  double z_mm = 3;
+}
+
+message MaterialSpec {
+  string name = 1;
+  string grade = 2;
+}
+
+message PartHandlingProfile {
+  bool fragile = 1;
+  bool esd_sensitive = 2;
+  bool requires_two_hand_lift = 3;
+  bool requires_fixture_support = 4;
+  double max_grip_force_n = 5;
+  double max_torque_nm = 6;
+  repeated KeyValueConstraint constraints = 7;
+}
+
+message PartDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  PartType type = 5;
+  int64 weight_g = 6;
+  Dimensions dimensions = 7;
+  MaterialSpec material = 8;
+  string default_model_id = 9;
+  PartHandlingProfile handling = 10;
+  repeated ExternalReference external_references = 11;
+  CustomProperties custom = 12;
+}
+
+message ProductDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  string root_node_id = 5;
+  repeated AssemblyNode nodes = 6;
+  repeated ExternalReference external_references = 7;
+  CustomProperties custom = 8;
+}
+
+message VariantCondition {
+  string dimension = 1; // e.g. "hinge_side"
+  repeated string values = 2; // e.g. ["left"]
+}
+
+message AssemblyNode {
+  string id = 1;
+  string parent_node_id = 2;
+  string name = 3;
+  NodeKind kind = 4;
+  string part_definition_id = 5;
+  string override_model_id = 6;
+  geometry.v1.Pose local_pose = 7;
+  repeated string child_node_ids = 8;
+  int32 sequence_hint = 9;
+  string cad_occurrence_path = 10; // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
+  JoinMethod join_method_hint = 11;
+  geometry.v1.Vector3 insertion_axis_hint = 12;
+  geometry.v1.Vector3 preferred_approach_hint = 13;
+  bool optional = 14;
+  repeated VariantCondition applicability = 15;
+  CustomProperties custom = 16;
+  // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+}
+
+message PartDefinitions {
+  repeated PartDefinition items = 1;
+}
+
+message ProductDefinitions {
+  repeated ProductDefinition items = 1;
+}

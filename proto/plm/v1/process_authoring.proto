@@ -2,7 +2,7 @@ syntax = "proto3";
 package plm.v1;
 
 import "geometry/v1/pose.proto";
-import "plm/v1/process.proto";
+import "plm/v1/process_old.proto";
 
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";

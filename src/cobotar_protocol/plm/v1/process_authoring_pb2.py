@@ -23,10 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
-from plm.v1 import process_pb2 as plm_dot_v1_dot_process__pb2
+from plm.v1 import process_old_pb2 as plm_dot_v1_dot_process__old__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\"\xfd\x01\n\x14StoredProcessMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\x12\x38\n\x0e\x66ixture_offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n\x10root_sequence_id\x18\x07 \x01(\tR\x0erootSequenceId\"S\n\x15StoredProcessMessages\x12:\n\tprocesses\x18\x01 \x03(\x0b\x32\x1c.plm.v1.StoredProcessMessageR\tprocesses\"\x86\x01\n\x11NewProcessMessage\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\"\xfd\x01\n\x14UpdateProcessMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\x12\x38\n\x0e\x66ixture_offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n\x10root_sequence_id\x18\x07 \x01(\tR\x0erootSequenceIdB\x98\x01\n\ncom.plm.v1B\x15ProcessAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x18plm/v1/process_old.proto\"\xfd\x01\n\x14StoredProcessMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\x12\x38\n\x0e\x66ixture_offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n\x10root_sequence_id\x18\x07 \x01(\tR\x0erootSequenceId\"S\n\x15StoredProcessMessages\x12:\n\tprocesses\x18\x01 \x03(\x0b\x32\x1c.plm.v1.StoredProcessMessageR\tprocesses\"\x86\x01\n\x11NewProcessMessage\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\"\xfd\x01\n\x14UpdateProcessMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x04type\x18\x05 \x01(\x0e\x32\x13.plm.v1.ProcessTypeR\x04type\x12\x38\n\x0e\x66ixture_offset\x18\x06 \x01(\x0b\x32\x11.geometry.v1.PoseR\rfixtureOffset\x12(\n\x10root_sequence_id\x18\x07 \x01(\tR\x0erootSequenceIdB\x98\x01\n\ncom.plm.v1B\x15ProcessAuthoringProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\x07Plm::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,12 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'plm.v1.process_authoring_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\ncom.plm.v1B\025ProcessAuthoringProtoP\001Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\242\002\003PXX\252\002\017Messages.Plm.V1\312\002\006Plm\\V1\342\002\022Plm\\V1\\GPBMetadata\352\002\007Plm::V1'
-  _globals['_STOREDPROCESSMESSAGE']._serialized_start=89
-  _globals['_STOREDPROCESSMESSAGE']._serialized_end=342
-  _globals['_STOREDPROCESSMESSAGES']._serialized_start=344
-  _globals['_STOREDPROCESSMESSAGES']._serialized_end=427
-  _globals['_NEWPROCESSMESSAGE']._serialized_start=430
-  _globals['_NEWPROCESSMESSAGE']._serialized_end=564
-  _globals['_UPDATEPROCESSMESSAGE']._serialized_start=567
-  _globals['_UPDATEPROCESSMESSAGE']._serialized_end=820
+  _globals['_STOREDPROCESSMESSAGE']._serialized_start=93
+  _globals['_STOREDPROCESSMESSAGE']._serialized_end=346
+  _globals['_STOREDPROCESSMESSAGES']._serialized_start=348
+  _globals['_STOREDPROCESSMESSAGES']._serialized_end=431
+  _globals['_NEWPROCESSMESSAGE']._serialized_start=434
+  _globals['_NEWPROCESSMESSAGE']._serialized_end=568
+  _globals['_UPDATEPROCESSMESSAGE']._serialized_start=571
+  _globals['_UPDATEPROCESSMESSAGE']._serialized_end=824
 # @@protoc_insertion_point(module_scope)

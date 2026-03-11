@@ -1,0 +1,55 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/common.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum ModelGroup {
+  MODEL_GROUP_UNSPECIFIED = 0;
+  MODEL_GROUP_PART = 1;
+  MODEL_GROUP_PRODUCT = 2;
+  MODEL_GROUP_TOOL = 3;
+  MODEL_GROUP_ROBOT = 4;
+  MODEL_GROUP_FIXTURE = 5;
+  MODEL_GROUP_ASSET = 6;
+}
+
+enum ModelOrigin {
+  MODEL_ORIGIN_UNSPECIFIED = 0;
+  MODEL_ORIGIN_BUILT_IN = 1;
+  MODEL_ORIGIN_UPLOADED = 2;
+  MODEL_ORIGIN_EXTERNAL = 3;
+}
+
+enum ModelFormat {
+  MODEL_FORMAT_UNSPECIFIED = 0;
+  MODEL_FORMAT_GLB = 1;
+  MODEL_FORMAT_GLTF = 2;
+  MODEL_FORMAT_OBJ = 3;
+  MODEL_FORMAT_STEP = 4;
+  MODEL_FORMAT_STL = 5;
+  MODEL_FORMAT_USDZ = 6;
+}
+
+message ModelArtifact {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  ModelGroup group = 5;
+  ModelOrigin origin = 6;
+  ModelFormat format = 7;
+  string filename = 8;
+  string uri = 9;
+  string thumbnail_uri = 10;
+  string version = 11;
+  string unit = 12;
+  repeated ExternalReference external_references = 13;
+  CustomProperties custom = 14;
+}
+
+message ModelArtifacts {
+  repeated ModelArtifact items = 1;
+}

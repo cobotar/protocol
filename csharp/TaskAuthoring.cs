@@ -38,30 +38,31 @@ namespace Messages.Plm.V1 {
             "ElUKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNr",
             "QXNzaWdubWVudFByZWZlcmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlIkUK",
             "ElN0b3JlZFRhc2tNZXNzYWdlcxIvCgV0YXNrcxgBIAMoCzIZLnBsbS52MS5T",
-            "dG9yZWRUYXNrTWVzc2FnZVIFdGFza3MigwEKDk5ld1Rhc2tNZXNzYWdlEhIK",
-            "BG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
-            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoPc2VxdWVuY2VfbnVtYmVy",
-            "GAUgASgFUg5zZXF1ZW5jZU51bWJlciLYAwoRVXBkYXRlVGFza01lc3NhZ2US",
-            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
-            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
-            "KQoQaW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EicK",
-            "D3NlcXVlbmNlX251bWJlchgGIAEoBVIOc2VxdWVuY2VOdW1iZXISFwoHcGFy",
-            "dF9pZBgHIAEoCVIGcGFydElkEhkKCG1vZGVsX2lkGAggASgJUgdtb2RlbElk",
-            "Ei0KCXRhc2tfdHlwZRgJIAEoDjIQLnBsbS52MS5UYXNrVHlwZVIIdGFza1R5",
-            "cGUSKQoGdGFyZ2V0GAogASgLMhEuZ2VvbWV0cnkudjEuUG9zZVIGdGFyZ2V0",
-            "EjAKCGFwcHJvYWNoGAsgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IIYXBw",
-            "cm9hY2gSVQoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAwgASgOMiAucGxtLnYx",
-            "LlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZVIUYXNzaWdubWVudFByZWZlcmVu",
-            "Y2VClQEKCmNvbS5wbG0udjFCElRhc2tBdXRob3JpbmdQcm90b1ABWjFnaXRo",
-            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYx",
-            "ogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQ",
-            "Qk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
+            "dG9yZWRUYXNrTWVzc2FnZVIFdGFza3MioAEKDk5ld1Rhc2tNZXNzYWdlEhsK",
+            "CXBhcmVudF9pZBgBIAEoCVIIcGFyZW50SWQSEgoEbmFtZRgCIAEoCVIEbmFt",
+            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
+            "ZXNjcmlwdGlvbhInCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVSDnNlcXVlbmNl",
+            "TnVtYmVyItgDChFVcGRhdGVUYXNrTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQS",
+            "EgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90",
+            "ZXh0GAUgASgJUg9pbnN0cnVjdGlvblRleHQSJwoPc2VxdWVuY2VfbnVtYmVy",
+            "GAYgASgFUg5zZXF1ZW5jZU51bWJlchIXCgdwYXJ0X2lkGAcgASgJUgZwYXJ0",
+            "SWQSGQoIbW9kZWxfaWQYCCABKAlSB21vZGVsSWQSLQoJdGFza190eXBlGAkg",
+            "ASgOMhAucGxtLnYxLlRhc2tUeXBlUgh0YXNrVHlwZRIpCgZ0YXJnZXQYCiAB",
+            "KAsyES5nZW9tZXRyeS52MS5Qb3NlUgZ0YXJnZXQSMAoIYXBwcm9hY2gYCyAB",
+            "KAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2FjaBJVChVhc3NpZ25t",
+            "ZW50X3ByZWZlcmVuY2UYDCABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQ",
+            "cmVmZXJlbmNlUhRhc3NpZ25tZW50UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52",
+            "MUISVGFza0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdl",
+            "cy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06",
+            "OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessage), global::Messages.Plm.V1.StoredTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredTaskMessages), global::Messages.Plm.V1.StoredTaskMessages.Parser, new[]{ "Tasks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "Name", "Icon", "Description", "SequenceNumber" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.NewTaskMessage), global::Messages.Plm.V1.NewTaskMessage.Parser, new[]{ "ParentId", "Name", "Icon", "Description", "SequenceNumber" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.UpdateTaskMessage), global::Messages.Plm.V1.UpdateTaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "AssignmentPreference" }, null, null, null, null)
           }));
     }
@@ -69,6 +70,9 @@ namespace Messages.Plm.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// TODO: can this be made more generic, e.g. from a different pool of 'actions' (screw, mount, ….), instead of creating a new stored step for each actual step.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class StoredTaskMessage : pb::IMessage<StoredTaskMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -914,6 +918,7 @@ namespace Messages.Plm.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NewTaskMessage(NewTaskMessage other) : this() {
+      parentId_ = other.parentId_;
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
@@ -925,6 +930,18 @@ namespace Messages.Plm.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NewTaskMessage Clone() {
       return new NewTaskMessage(this);
+    }
+
+    /// <summary>Field number for the "parent_id" field.</summary>
+    public const int ParentIdFieldNumber = 1;
+    private string parentId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ParentId {
+      get { return parentId_; }
+      set {
+        parentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -990,6 +1007,7 @@ namespace Messages.Plm.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ParentId != other.ParentId) return false;
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
@@ -1001,6 +1019,7 @@ namespace Messages.Plm.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ParentId.Length != 0) hash ^= ParentId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
@@ -1023,6 +1042,10 @@ namespace Messages.Plm.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ParentId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ParentId);
+      }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Name);
@@ -1049,6 +1072,10 @@ namespace Messages.Plm.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ParentId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ParentId);
+      }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Name);
@@ -1075,6 +1102,9 @@ namespace Messages.Plm.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ParentId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentId);
+      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
@@ -1098,6 +1128,9 @@ namespace Messages.Plm.V1 {
     public void MergeFrom(NewTaskMessage other) {
       if (other == null) {
         return;
+      }
+      if (other.ParentId.Length != 0) {
+        ParentId = other.ParentId;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -1130,6 +1163,10 @@ namespace Messages.Plm.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            ParentId = input.ReadString();
+            break;
+          }
           case 18: {
             Name = input.ReadString();
             break;
@@ -1165,6 +1202,10 @@ namespace Messages.Plm.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            ParentId = input.ReadString();
+            break;
+          }
           case 18: {
             Name = input.ReadString();
             break;
@@ -1319,6 +1360,9 @@ namespace Messages.Plm.V1 {
     /// <summary>Field number for the "part_id" field.</summary>
     public const int PartIdFieldNumber = 7;
     private string partId_ = "";
+    /// <summary>
+    /// TODO: what is the difference between part_id and model_id? doesn't all parts have a model?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PartId {

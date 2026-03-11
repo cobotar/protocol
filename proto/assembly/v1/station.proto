@@ -1,0 +1,30 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/common.proto";
+import "geometry/v1/pose.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+message StationDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  repeated string tool_instance_ids = 5;
+  repeated string fixture_instance_ids = 6;
+  repeated string robot_instance_ids = 7;
+  repeated string asset_instance_ids = 8;
+  geometry.v1.LocalizedPose frame = 9;
+  CustomProperties custom = 10;
+}
+
+message CellDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  repeated string station_ids = 5;
+  CustomProperties custom = 6;
+}

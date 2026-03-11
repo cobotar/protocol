@@ -322,7 +322,7 @@ var File_plm_v1_process_authoring_proto protoreflect.FileDescriptor
 
 const file_plm_v1_process_authoring_proto_rawDesc = "" +
 	"\n" +
-	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x14plm/v1/process.proto\"\xfd\x01\n" +
+	"\x1eplm/v1/process_authoring.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x18plm/v1/process_old.proto\"\xfd\x01\n" +
 	"\x14StoredProcessMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -389,7 +389,7 @@ func file_plm_v1_process_authoring_proto_init() {
 	if File_plm_v1_process_authoring_proto != nil {
 		return
 	}
-	file_plm_v1_process_proto_init()
+	file_plm_v1_process_old_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

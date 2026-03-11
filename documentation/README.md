@@ -168,14 +168,124 @@
     - [RobotDriverType](#ar-v1-RobotDriverType)
     - [RobotType](#ar-v1-RobotType)
   
-- [ar/v1/skill.proto](#ar_v1_skill-proto)
-    - [SkillLevel](#ar-v1-SkillLevel)
-  
 - [ar/v1/worker.proto](#ar_v1_worker-proto)
     - [WorkerMessage](#ar-v1-WorkerMessage)
     - [WorkerMessages](#ar-v1-WorkerMessages)
   
     - [WorkerType](#ar-v1-WorkerType)
+  
+- [assembly/v1/common.proto](#assembly_v1_common-proto)
+    - [CustomProperties](#assembly-v1-CustomProperties)
+    - [DisplayText](#assembly-v1-DisplayText)
+    - [EstimatedDuration](#assembly-v1-EstimatedDuration)
+    - [ExternalReference](#assembly-v1-ExternalReference)
+    - [KeyValueConstraint](#assembly-v1-KeyValueConstraint)
+    - [LocalTarget](#assembly-v1-LocalTarget)
+    - [NamedRef](#assembly-v1-NamedRef)
+    - [Ref](#assembly-v1-Ref)
+    - [TimeWindow](#assembly-v1-TimeWindow)
+  
+    - [ActorKind](#assembly-v1-ActorKind)
+    - [CollaborationMode](#assembly-v1-CollaborationMode)
+    - [ConstraintOperator](#assembly-v1-ConstraintOperator)
+    - [ResourceStatus](#assembly-v1-ResourceStatus)
+    - [SafetyRelevance](#assembly-v1-SafetyRelevance)
+  
+- [assembly/v1/actor.proto](#assembly_v1_actor-proto)
+    - [ActorAssignment](#assembly-v1-ActorAssignment)
+    - [ActorRef](#assembly-v1-ActorRef)
+    - [WorkerDefinition](#assembly-v1-WorkerDefinition)
+  
+- [assembly/v1/execution.proto](#assembly_v1_execution-proto)
+    - [EvidenceFact](#assembly-v1-EvidenceFact)
+    - [ExecutionEvidence](#assembly-v1-ExecutionEvidence)
+    - [ProcessRun](#assembly-v1-ProcessRun)
+    - [RunParameter](#assembly-v1-RunParameter)
+    - [SequenceRun](#assembly-v1-SequenceRun)
+    - [TaskRun](#assembly-v1-TaskRun)
+    - [VariantSelection](#assembly-v1-VariantSelection)
+  
+    - [ProcessRunState](#assembly-v1-ProcessRunState)
+    - [SequenceRunState](#assembly-v1-SequenceRunState)
+    - [TaskRunState](#assembly-v1-TaskRunState)
+  
+- [assembly/v1/model.proto](#assembly_v1_model-proto)
+    - [ModelArtifact](#assembly-v1-ModelArtifact)
+    - [ModelArtifacts](#assembly-v1-ModelArtifacts)
+  
+    - [ModelFormat](#assembly-v1-ModelFormat)
+    - [ModelGroup](#assembly-v1-ModelGroup)
+    - [ModelOrigin](#assembly-v1-ModelOrigin)
+  
+- [assembly/v1/product.proto](#assembly_v1_product-proto)
+    - [AssemblyNode](#assembly-v1-AssemblyNode)
+    - [Dimensions](#assembly-v1-Dimensions)
+    - [MaterialSpec](#assembly-v1-MaterialSpec)
+    - [PartDefinition](#assembly-v1-PartDefinition)
+    - [PartDefinitions](#assembly-v1-PartDefinitions)
+    - [PartHandlingProfile](#assembly-v1-PartHandlingProfile)
+    - [ProductDefinition](#assembly-v1-ProductDefinition)
+    - [ProductDefinitions](#assembly-v1-ProductDefinitions)
+    - [VariantCondition](#assembly-v1-VariantCondition)
+  
+    - [JoinMethod](#assembly-v1-JoinMethod)
+    - [NodeKind](#assembly-v1-NodeKind)
+    - [PartType](#assembly-v1-PartType)
+  
+- [assembly/v1/resources.proto](#assembly_v1_resources-proto)
+    - [AssetDefinition](#assembly-v1-AssetDefinition)
+    - [AssetInstance](#assembly-v1-AssetInstance)
+    - [CapabilityProfile](#assembly-v1-CapabilityProfile)
+    - [FixtureDefinition](#assembly-v1-FixtureDefinition)
+    - [FixtureInstance](#assembly-v1-FixtureInstance)
+    - [RobotDefinition](#assembly-v1-RobotDefinition)
+    - [RobotInstance](#assembly-v1-RobotInstance)
+    - [ToolDefinition](#assembly-v1-ToolDefinition)
+    - [ToolInstance](#assembly-v1-ToolInstance)
+  
+    - [AssetDriverType](#assembly-v1-AssetDriverType)
+    - [AssetType](#assembly-v1-AssetType)
+    - [FixtureType](#assembly-v1-FixtureType)
+    - [RobotDriverType](#assembly-v1-RobotDriverType)
+    - [RobotType](#assembly-v1-RobotType)
+    - [ToolProperty](#assembly-v1-ToolProperty)
+    - [ToolRole](#assembly-v1-ToolRole)
+    - [ToolType](#assembly-v1-ToolType)
+  
+- [assembly/v1/skill.proto](#assembly_v1_skill-proto)
+    - [ActorConstraint](#assembly-v1-ActorConstraint)
+    - [ActorSkill](#assembly-v1-ActorSkill)
+    - [SkillDefinition](#assembly-v1-SkillDefinition)
+    - [SkillRequirement](#assembly-v1-SkillRequirement)
+    - [ToolRequirement](#assembly-v1-ToolRequirement)
+    - [ValidityPolicyRef](#assembly-v1-ValidityPolicyRef)
+  
+    - [SkillDomain](#assembly-v1-SkillDomain)
+    - [SkillLevel](#assembly-v1-SkillLevel)
+    - [SkillStatus](#assembly-v1-SkillStatus)
+  
+- [assembly/v1/process.proto](#assembly_v1_process-proto)
+    - [ProcessRecipe](#assembly-v1-ProcessRecipe)
+    - [RecipeApplicability](#assembly-v1-RecipeApplicability)
+    - [SequenceDefinition](#assembly-v1-SequenceDefinition)
+    - [TaskDefinition](#assembly-v1-TaskDefinition)
+    - [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy)
+    - [TaskTarget](#assembly-v1-TaskTarget)
+    - [ValidationRequirement](#assembly-v1-ValidationRequirement)
+  
+    - [ProcessType](#assembly-v1-ProcessType)
+    - [SequenceOperator](#assembly-v1-SequenceOperator)
+    - [TaskAssignmentPreference](#assembly-v1-TaskAssignmentPreference)
+    - [TaskType](#assembly-v1-TaskType)
+  
+- [assembly/v1/station.proto](#assembly_v1_station-proto)
+    - [CellDefinition](#assembly-v1-CellDefinition)
+    - [StationDefinition](#assembly-v1-StationDefinition)
+  
+- [assembly/v1/validation.proto](#assembly_v1_validation-proto)
+    - [ValidationResult](#assembly-v1-ValidationResult)
+  
+    - [ValidationStatus](#assembly-v1-ValidationStatus)
   
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
@@ -205,7 +315,7 @@
   
     - [LineType](#plm-v1-LineType)
   
-- [plm/v1/model.proto](#plm_v1_model-proto)
+- [plm/v1/model_old.proto](#plm_v1_model_old-proto)
     - [ModelMessage](#plm-v1-ModelMessage)
     - [ModelMessages](#plm-v1-ModelMessages)
   
@@ -217,6 +327,9 @@
     - [PartMessages](#plm-v1-PartMessages)
   
     - [PartType](#plm-v1-PartType)
+  
+- [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
+    - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
 - [plm/v1/sequence.proto](#plm_v1_sequence-proto)
     - [SequenceMessage](#plm-v1-SequenceMessage)
@@ -232,16 +345,13 @@
     - [TaskState](#plm-v1-TaskState)
     - [TaskType](#plm-v1-TaskType)
   
-- [plm/v1/process.proto](#plm_v1_process-proto)
+- [plm/v1/process_old.proto](#plm_v1_process_old-proto)
     - [ProcessMessage](#plm-v1-ProcessMessage)
     - [ProcessMessages](#plm-v1-ProcessMessages)
     - [ProcessUpdatedMessage](#plm-v1-ProcessUpdatedMessage)
   
     - [ProcessState](#plm-v1-ProcessState)
     - [ProcessType](#plm-v1-ProcessType)
-  
-- [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
-    - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
 - [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
     - [NewProcessMessage](#plm-v1-NewProcessMessage)
@@ -2455,38 +2565,6 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
-<a name="ar_v1_skill-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/skill.proto
-
-
- 
-
-
-<a name="ar-v1-SkillLevel"></a>
-
-### SkillLevel
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_LEVEL_UNSPECIFIED | 0 |  |
-| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
-| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
-| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
-| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
-| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="ar_v1_worker-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2546,6 +2624,1774 @@ TODO: remove to PLM
 | WORKER_TYPE_NOVICE | 1 |  |
 | WORKER_TYPE_INTERMEDIATE | 2 |  |
 | WORKER_TYPE_EXPERT | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_common-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/common.proto
+
+
+
+<a name="assembly-v1-CustomProperties"></a>
+
+### CustomProperties
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| properties | [ar.v1.Property](#ar-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-DisplayText"></a>
+
+### DisplayText
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| title | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| operator_instruction | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-EstimatedDuration"></a>
+
+### EstimatedDuration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nominal | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+| min | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+| max | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ExternalReference"></a>
+
+### ExternalReference
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| system | [string](#string) |  |  |
+| external_id | [string](#string) |  |  |
+| url | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-KeyValueConstraint"></a>
+
+### KeyValueConstraint
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| op | [ConstraintOperator](#assembly-v1-ConstraintOperator) |  |  |
+| value | [string](#string) |  |  |
+| values | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-LocalTarget"></a>
+
+### LocalTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| anchor_id | [string](#string) |  |  |
+| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-NamedRef"></a>
+
+### NamedRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-Ref"></a>
+
+### Ref
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-TimeWindow"></a>
+
+### TimeWindow
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| start | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| end | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ActorKind"></a>
+
+### ActorKind
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTOR_KIND_UNSPECIFIED | 0 |  |
+| ACTOR_KIND_HUMAN | 1 |  |
+| ACTOR_KIND_ROBOT | 2 |  |
+| ACTOR_KIND_HYBRID | 3 |  |
+
+
+
+<a name="assembly-v1-CollaborationMode"></a>
+
+### CollaborationMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| COLLABORATION_MODE_UNSPECIFIED | 0 |  |
+| COLLABORATION_MODE_HUMAN_ONLY | 1 |  |
+| COLLABORATION_MODE_ROBOT_ONLY | 2 |  |
+| COLLABORATION_MODE_SEQUENTIAL_HRC | 3 |  |
+| COLLABORATION_MODE_SIMULTANEOUS_HRC | 4 |  |
+
+
+
+<a name="assembly-v1-ConstraintOperator"></a>
+
+### ConstraintOperator
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CONSTRAINT_OPERATOR_UNSPECIFIED | 0 |  |
+| CONSTRAINT_OPERATOR_EQ | 1 |  |
+| CONSTRAINT_OPERATOR_NEQ | 2 |  |
+| CONSTRAINT_OPERATOR_GT | 3 |  |
+| CONSTRAINT_OPERATOR_GTE | 4 |  |
+| CONSTRAINT_OPERATOR_LT | 5 |  |
+| CONSTRAINT_OPERATOR_LTE | 6 |  |
+| CONSTRAINT_OPERATOR_IN | 7 |  |
+| CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
+
+
+
+<a name="assembly-v1-ResourceStatus"></a>
+
+### ResourceStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RESOURCE_STATUS_UNSPECIFIED | 0 |  |
+| RESOURCE_STATUS_AVAILABLE | 1 |  |
+| RESOURCE_STATUS_UNAVAILABLE | 2 |  |
+| RESOURCE_STATUS_DISABLED | 3 |  |
+| RESOURCE_STATUS_MAINTENANCE | 4 |  |
+
+
+
+<a name="assembly-v1-SafetyRelevance"></a>
+
+### SafetyRelevance
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SAFETY_RELEVANCE_UNSPECIFIED | 0 |  |
+| SAFETY_RELEVANCE_LOW | 1 |  |
+| SAFETY_RELEVANCE_MEDIUM | 2 |  |
+| SAFETY_RELEVANCE_HIGH | 3 |  |
+| SAFETY_RELEVANCE_CRITICAL | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_actor-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/actor.proto
+
+
+
+<a name="assembly-v1-ActorAssignment"></a>
+
+### ActorAssignment
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
+| process_run_id | [string](#string) |  |  |
+| sequence_run_id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| assigned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| released_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ActorRef"></a>
+
+### ActorRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| kind | [ActorKind](#assembly-v1-ActorKind) |  |  |
+| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
+
+
+
+
+
+
+<a name="assembly-v1-WorkerDefinition"></a>
+
+### WorkerDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| disabled | [bool](#bool) |  |  |
+| employee_id | [string](#string) |  |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_execution-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/execution.proto
+
+
+
+<a name="assembly-v1-EvidenceFact"></a>
+
+### EvidenceFact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| unit | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ExecutionEvidence"></a>
+
+### ExecutionEvidence
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
+| recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| facts | [EvidenceFact](#assembly-v1-EvidenceFact) | repeated |  |
+| blob_uri | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProcessRun"></a>
+
+### ProcessRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| recipe_id | [string](#string) |  |  |
+| order_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_run_id | [string](#string) |  |  |
+| sequences | [SequenceRun](#assembly-v1-SequenceRun) | repeated |  |
+| tasks | [TaskRun](#assembly-v1-TaskRun) | repeated |  |
+| state | [ProcessRunState](#assembly-v1-ProcessRunState) |  |  |
+| initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| assignments | [ActorAssignment](#assembly-v1-ActorAssignment) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+| product_selections | [VariantSelection](#assembly-v1-VariantSelection) | repeated |  |
+| parameters | [RunParameter](#assembly-v1-RunParameter) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-RunParameter"></a>
+
+### RunParameter
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | &#34;color&#34;, &#34;label_text&#34;, &#34;customer_name&#34; |
+| value | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-SequenceRun"></a>
+
+### SequenceRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| sequence_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| child_sequence_run_ids | [string](#string) | repeated |  |
+| child_task_run_ids | [string](#string) | repeated |  |
+| state | [SequenceRunState](#assembly-v1-SequenceRunState) |  |  |
+| completed_tasks | [int32](#int32) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+| assigned_actors | [ActorRef](#assembly-v1-ActorRef) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-TaskRun"></a>
+
+### TaskRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| state | [TaskRunState](#assembly-v1-TaskRunState) |  |  |
+| candidate_actors | [ActorRef](#assembly-v1-ActorRef) | repeated |  |
+| assigned_actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+| workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
+| estimated_duration | [EstimatedDuration](#assembly-v1-EstimatedDuration) |  |  |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| error_code | [string](#string) |  |  |
+| error_message | [string](#string) |  |  |
+| evidence | [ExecutionEvidence](#assembly-v1-ExecutionEvidence) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-VariantSelection"></a>
+
+### VariantSelection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dimension | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ProcessRunState"></a>
+
+### ProcessRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_STATE_WAITING | 1 |  |
+| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
+| PROCESS_RUN_STATE_COMPLETED | 3 |  |
+| PROCESS_RUN_STATE_ABORTED | 4 |  |
+
+
+
+<a name="assembly-v1-SequenceRunState"></a>
+
+### SequenceRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
+| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| SEQUENCE_RUN_STATE_WAITING | 2 |  |
+| SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
+| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
+| SEQUENCE_RUN_STATE_ABORTED | 5 |  |
+
+
+
+<a name="assembly-v1-TaskRunState"></a>
+
+### TaskRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
+| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| TASK_RUN_STATE_WAITING | 2 |  |
+| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
+| TASK_RUN_STATE_COMPLETED | 4 |  |
+| TASK_RUN_STATE_ERROR | 5 |  |
+| TASK_RUN_STATE_ABORTED | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_model-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/model.proto
+
+
+
+<a name="assembly-v1-ModelArtifact"></a>
+
+### ModelArtifact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| group | [ModelGroup](#assembly-v1-ModelGroup) |  |  |
+| origin | [ModelOrigin](#assembly-v1-ModelOrigin) |  |  |
+| format | [ModelFormat](#assembly-v1-ModelFormat) |  |  |
+| filename | [string](#string) |  |  |
+| uri | [string](#string) |  |  |
+| thumbnail_uri | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| unit | [string](#string) |  |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ModelArtifacts"></a>
+
+### ModelArtifacts
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ModelArtifact](#assembly-v1-ModelArtifact) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ModelFormat"></a>
+
+### ModelFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_FORMAT_UNSPECIFIED | 0 |  |
+| MODEL_FORMAT_GLB | 1 |  |
+| MODEL_FORMAT_GLTF | 2 |  |
+| MODEL_FORMAT_OBJ | 3 |  |
+| MODEL_FORMAT_STEP | 4 |  |
+| MODEL_FORMAT_STL | 5 |  |
+| MODEL_FORMAT_USDZ | 6 |  |
+
+
+
+<a name="assembly-v1-ModelGroup"></a>
+
+### ModelGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_GROUP_UNSPECIFIED | 0 |  |
+| MODEL_GROUP_PART | 1 |  |
+| MODEL_GROUP_PRODUCT | 2 |  |
+| MODEL_GROUP_TOOL | 3 |  |
+| MODEL_GROUP_ROBOT | 4 |  |
+| MODEL_GROUP_FIXTURE | 5 |  |
+| MODEL_GROUP_ASSET | 6 |  |
+
+
+
+<a name="assembly-v1-ModelOrigin"></a>
+
+### ModelOrigin
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
+| MODEL_ORIGIN_BUILT_IN | 1 |  |
+| MODEL_ORIGIN_UPLOADED | 2 |  |
+| MODEL_ORIGIN_EXTERNAL | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_product-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/product.proto
+
+
+
+<a name="assembly-v1-AssemblyNode"></a>
+
+### AssemblyNode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| parent_node_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
+| part_definition_id | [string](#string) |  |  |
+| override_model_id | [string](#string) |  |  |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+| child_node_ids | [string](#string) | repeated |  |
+| sequence_hint | [int32](#int32) |  |  |
+| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
+| join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
+| insertion_axis_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| preferred_approach_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| optional | [bool](#bool) |  |  |
+| applicability | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
+
+
+
+
+
+
+<a name="assembly-v1-Dimensions"></a>
+
+### Dimensions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x_mm | [double](#double) |  |  |
+| y_mm | [double](#double) |  |  |
+| z_mm | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-MaterialSpec"></a>
+
+### MaterialSpec
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| grade | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-PartDefinition"></a>
+
+### PartDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [PartType](#assembly-v1-PartType) |  |  |
+| weight_g | [int64](#int64) |  |  |
+| dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
+| material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
+| default_model_id | [string](#string) |  |  |
+| handling | [PartHandlingProfile](#assembly-v1-PartHandlingProfile) |  |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-PartDefinitions"></a>
+
+### PartDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PartDefinition](#assembly-v1-PartDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-PartHandlingProfile"></a>
+
+### PartHandlingProfile
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fragile | [bool](#bool) |  |  |
+| esd_sensitive | [bool](#bool) |  |  |
+| requires_two_hand_lift | [bool](#bool) |  |  |
+| requires_fixture_support | [bool](#bool) |  |  |
+| max_grip_force_n | [double](#double) |  |  |
+| max_torque_nm | [double](#double) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProductDefinition"></a>
+
+### ProductDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| root_node_id | [string](#string) |  |  |
+| nodes | [AssemblyNode](#assembly-v1-AssemblyNode) | repeated |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProductDefinitions"></a>
+
+### ProductDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProductDefinition](#assembly-v1-ProductDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-VariantCondition"></a>
+
+### VariantCondition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dimension | [string](#string) |  | e.g. &#34;hinge_side&#34; |
+| values | [string](#string) | repeated | e.g. [&#34;left&#34;] |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-JoinMethod"></a>
+
+### JoinMethod
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| JOIN_METHOD_UNSPECIFIED | 0 |  |
+| JOIN_METHOD_NONE | 1 |  |
+| JOIN_METHOD_FASTEN | 2 |  |
+| JOIN_METHOD_PRESS_FIT | 3 |  |
+| JOIN_METHOD_SNAP_FIT | 4 |  |
+| JOIN_METHOD_ADHESIVE | 5 |  |
+| JOIN_METHOD_WELD | 6 |  |
+| JOIN_METHOD_PLACE | 7 |  |
+
+
+
+<a name="assembly-v1-NodeKind"></a>
+
+### NodeKind
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_KIND_UNSPECIFIED | 0 |  |
+| NODE_KIND_GROUP | 1 |  |
+| NODE_KIND_PART_OCCURRENCE | 2 |  |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 |  |
+| NODE_KIND_PATTERN | 4 |  |
+
+
+
+<a name="assembly-v1-PartType"></a>
+
+### PartType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PART_TYPE_UNSPECIFIED | 0 |  |
+| PART_TYPE_COMPONENT | 1 |  |
+| PART_TYPE_FASTENER | 2 |  |
+| PART_TYPE_SUBASSEMBLY | 3 |  |
+| PART_TYPE_CONSUMABLE | 4 |  |
+| PART_TYPE_LABEL | 5 |  |
+| PART_TYPE_PACKAGING | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_resources-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/resources.proto
+
+
+
+<a name="assembly-v1-AssetDefinition"></a>
+
+### AssetDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [AssetType](#assembly-v1-AssetType) |  |  |
+| driver_type | [AssetDriverType](#assembly-v1-AssetDriverType) |  |  |
+| model_id | [string](#string) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-AssetInstance"></a>
+
+### AssetInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| asset_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-CapabilityProfile"></a>
+
+### CapabilityProfile
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min_force_n | [double](#double) |  |  |
+| max_force_n | [double](#double) |  |  |
+| min_torque_nm | [double](#double) |  |  |
+| max_torque_nm | [double](#double) |  |  |
+| repeatability_mm | [double](#double) |  |  |
+| max_payload_g | [double](#double) |  |  |
+| min_grip_width_mm | [double](#double) |  |  |
+| max_grip_width_mm | [double](#double) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-FixtureDefinition"></a>
+
+### FixtureDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [FixtureType](#assembly-v1-FixtureType) |  |  |
+| supported_product_definition_ids | [string](#string) | repeated |  |
+| supported_root_part_definition_ids | [string](#string) | repeated |  |
+| model_id | [string](#string) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-FixtureInstance"></a>
+
+### FixtureInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| fixture_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-RobotDefinition"></a>
+
+### RobotDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [RobotType](#assembly-v1-RobotType) |  |  |
+| driver_type | [RobotDriverType](#assembly-v1-RobotDriverType) |  |  |
+| coupler_model_id | [string](#string) |  |  |
+| end_effector_tool_definition_id | [string](#string) |  |  |
+| model_id | [string](#string) |  |  |
+| capability_profile | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-RobotInstance"></a>
+
+### RobotInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| robot_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
+| base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ToolDefinition"></a>
+
+### ToolDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [ToolType](#assembly-v1-ToolType) |  |  |
+| actor_kind | [ActorKind](#assembly-v1-ActorKind) |  |  |
+| roles | [ToolRole](#assembly-v1-ToolRole) | repeated |  |
+| properties | [ToolProperty](#assembly-v1-ToolProperty) | repeated |  |
+| capability_profile | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
+| model_id | [string](#string) |  |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ToolInstance"></a>
+
+### ToolInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| tool_definition_id | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
+| calibrated | [bool](#bool) |  |  |
+| calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-AssetDriverType"></a>
+
+### AssetDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
+
+
+
+<a name="assembly-v1-AssetType"></a>
+
+### AssetType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_TYPE_CAMERA | 1 |  |
+| ASSET_TYPE_LIGHT | 2 |  |
+| ASSET_TYPE_CONVEYOR | 3 |  |
+| ASSET_TYPE_SENSOR | 4 |  |
+| ASSET_TYPE_HMI | 5 |  |
+
+
+
+<a name="assembly-v1-FixtureType"></a>
+
+### FixtureType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| FIXTURE_TYPE_UNSPECIFIED | 0 |  |
+| FIXTURE_TYPE_BASE | 1 |  |
+| FIXTURE_TYPE_CLAMP | 2 |  |
+| FIXTURE_TYPE_JIG | 3 |  |
+| FIXTURE_TYPE_PALLET | 4 |  |
+
+
+
+<a name="assembly-v1-RobotDriverType"></a>
+
+### RobotDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_DRIVER_TYPE_UR | 1 |  |
+| ROBOT_DRIVER_TYPE_GENERIC | 2 |  |
+
+
+
+<a name="assembly-v1-RobotType"></a>
+
+### RobotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_TYPE_UR3E | 10 |  |
+| ROBOT_TYPE_UR5E | 11 |  |
+| ROBOT_TYPE_UR10E | 12 |  |
+| ROBOT_TYPE_KUKA_IIWA | 20 |  |
+
+
+
+<a name="assembly-v1-ToolProperty"></a>
+
+### ToolProperty
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_PROPERTY_UNSPECIFIED | 0 |  |
+| TOOL_PROPERTY_TORQUE_CONTROLLED | 1 |  |
+| TOOL_PROPERTY_ESD_SAFE | 2 |  |
+| TOOL_PROPERTY_INSULATED | 3 |  |
+| TOOL_PROPERTY_COLLABORATIVE_SAFE | 4 |  |
+| TOOL_PROPERTY_CALIBRATED | 5 |  |
+| TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
+
+
+
+<a name="assembly-v1-ToolRole"></a>
+
+### ToolRole
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_ROLE_UNSPECIFIED | 0 |  |
+| TOOL_ROLE_GRIP_WORKPIECE | 1 |  |
+| TOOL_ROLE_POSITION_COMPONENT | 2 |  |
+| TOOL_ROLE_ALIGN_COMPONENT | 3 |  |
+| TOOL_ROLE_APPLY_TORQUE | 4 |  |
+| TOOL_ROLE_APPLY_LINEAR_FORCE | 5 |  |
+| TOOL_ROLE_MEASURE_DIMENSION | 6 |  |
+| TOOL_ROLE_DETECT_PRESENCE | 7 |  |
+| TOOL_ROLE_DISPENSE_MATERIAL | 8 |  |
+| TOOL_ROLE_EXECUTE_MOTION | 9 |  |
+| TOOL_ROLE_SAFETY_INTERACTION | 10 |  |
+| TOOL_ROLE_HANDLE_ESD | 11 |  |
+| TOOL_ROLE_VISUAL_INSPECTION | 12 |  |
+
+
+
+<a name="assembly-v1-ToolType"></a>
+
+### ToolType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_TYPE_UNSPECIFIED | 0 |  |
+| TOOL_TYPE_FASTENING | 1 |  |
+| TOOL_TYPE_GRIPPING | 2 |  |
+| TOOL_TYPE_CUTTING | 3 |  |
+| TOOL_TYPE_MEASURING | 4 |  |
+| TOOL_TYPE_POSITIONING | 5 |  |
+| TOOL_TYPE_DISPENSING | 6 |  |
+| TOOL_TYPE_INSPECTION | 7 |  |
+| TOOL_TYPE_SAFETY | 8 |  |
+| TOOL_TYPE_ELECTRONICS | 9 |  |
+| TOOL_TYPE_FIXTURE_ACCESSORY | 10 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_skill-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/skill.proto
+
+
+
+<a name="assembly-v1-ActorConstraint"></a>
+
+### ActorConstraint
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| allowed_actor_kinds | [ActorKind](#assembly-v1-ActorKind) | repeated |  |
+| collaboration_mode | [CollaborationMode](#assembly-v1-CollaborationMode) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-ActorSkill"></a>
+
+### ActorSkill
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
+| skill_id | [string](#string) |  |  |
+| level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
+| status | [SkillStatus](#assembly-v1-SkillStatus) |  |  |
+| confidence | [double](#double) |  | [0, 1] |
+| last_evidence_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | timestamp |
+| evidence_count | [int32](#int32) |  | since last training |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | (timestamp) or policy-derived |
+| validity_policy | [ValidityPolicyRef](#assembly-v1-ValidityPolicyRef) |  | which rule set is used |
+| reasons | [string](#string) | repeated | [&#34;inactivity_&gt;30d&#34;] |
+| next_actions | [string](#string) | repeated | [&#34;micro_training&#34;, &#34;extra_verification_required&#34;] |
+
+
+
+
+
+
+<a name="assembly-v1-SkillDefinition"></a>
+
+### SkillDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| domain | [SkillDomain](#assembly-v1-SkillDomain) |  |  |
+| tool_roles | [ToolRole](#assembly-v1-ToolRole) | repeated |  |
+| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-SkillRequirement"></a>
+
+### SkillRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| skill_id | [string](#string) |  |  |
+| minimum_level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-ToolRequirement"></a>
+
+### ToolRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| role | [ToolRole](#assembly-v1-ToolRole) |  |  |
+| required_properties | [ToolProperty](#assembly-v1-ToolProperty) | repeated |  |
+| minimum_capability | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
+| allowed_tool_definition_ids | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-ValidityPolicyRef"></a>
+
+### ValidityPolicyRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| policy_id | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-SkillDomain"></a>
+
+### SkillDomain
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_DOMAIN_UNSPECIFIED | 0 |  |
+| SKILL_DOMAIN_HANDLING | 1 |  |
+| SKILL_DOMAIN_ASSEMBLY | 2 |  |
+| SKILL_DOMAIN_FASTENING | 3 |  |
+| SKILL_DOMAIN_INSPECTION | 4 |  |
+| SKILL_DOMAIN_ELECTRICAL | 5 |  |
+| SKILL_DOMAIN_COLLABORATION | 6 |  |
+| SKILL_DOMAIN_SAFETY | 7 |  |
+| SKILL_DOMAIN_ROBOT_OPERATION | 8 |  |
+
+
+
+<a name="assembly-v1-SkillLevel"></a>
+
+### SkillLevel
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_LEVEL_UNSPECIFIED | 0 |  |
+| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
+| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
+| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
+| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
+| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
+
+
+
+<a name="assembly-v1-SkillStatus"></a>
+
+### SkillStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_STATUS_UNSPECIFIED | 0 |  |
+| SKILL_STATUS_ACTIVE | 1 |  |
+| SKILL_STATUS_RESTRICTED | 2 |  |
+| SKILL_STATUS_EXPIRED | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_process-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/process.proto
+
+
+
+<a name="assembly-v1-ProcessRecipe"></a>
+
+### ProcessRecipe
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [ProcessType](#assembly-v1-ProcessType) |  |  |
+| product_definition_id | [string](#string) |  |  |
+| applicability | [RecipeApplicability](#assembly-v1-RecipeApplicability) |  |  |
+| root_sequence_id | [string](#string) |  |  |
+| sequences | [SequenceDefinition](#assembly-v1-SequenceDefinition) | repeated |  |
+| tasks | [TaskDefinition](#assembly-v1-TaskDefinition) | repeated |  |
+| supported_fixture_definition_ids | [string](#string) | repeated |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-RecipeApplicability"></a>
+
+### RecipeApplicability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| required | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
+| excluded | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-SequenceDefinition"></a>
+
+### SequenceDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| sequence_number | [int32](#int32) |  |  |
+| parent_sequence_id | [string](#string) |  |  |
+| operator | [SequenceOperator](#assembly-v1-SequenceOperator) |  |  |
+| child_sequence_ids | [string](#string) | repeated |  |
+| child_task_ids | [string](#string) | repeated |  |
+| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  |  |
+| optional | [bool](#bool) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-TaskDefinition"></a>
+
+### TaskDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| instruction_text | [string](#string) |  |  |
+| sequence_number | [int32](#int32) |  |  |
+| task_type | [TaskType](#assembly-v1-TaskType) |  |  |
+| target | [TaskTarget](#assembly-v1-TaskTarget) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| tool_requirements | [ToolRequirement](#assembly-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11; |
+| skill_requirements | [SkillRequirement](#assembly-v1-SkillRequirement) | repeated |  |
+| validation | [ValidationRequirement](#assembly-v1-ValidationRequirement) |  |  |
+| execution_policy | [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy) |  |  |
+| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  |  |
+| source_node_id | [string](#string) |  | optional: where part comes from for move/mount |
+| destination_node_id | [string](#string) |  | optional |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-TaskExecutionPolicy"></a>
+
+### TaskExecutionPolicy
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assignment_preference | [TaskAssignmentPreference](#assembly-v1-TaskAssignmentPreference) |  |  |
+| actor_constraint | [ActorConstraint](#assembly-v1-ActorConstraint) |  |  |
+| can_reassign | [bool](#bool) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+| estimated_duration | [EstimatedDuration](#assembly-v1-EstimatedDuration) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-TaskTarget"></a>
+
+### TaskTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_node_id | [string](#string) |  | Assembly node occurrence |
+| target_part_definition_id | [string](#string) |  | optional denormalized helper |
+| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ValidationRequirement"></a>
+
+### ValidationRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| require_tool_feedback | [bool](#bool) |  |  |
+| require_vision_check | [bool](#bool) |  |  |
+| allow_manual_confirmation | [bool](#bool) |  |  |
+| manual_confirmation_min_level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ProcessType"></a>
+
+### ProcessType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_TYPE_UNSPECIFIED | 0 |  |
+| PROCESS_TYPE_ASSEMBLY | 1 |  |
+| PROCESS_TYPE_DISASSEMBLY | 2 |  |
+| PROCESS_TYPE_INSPECTION | 3 |  |
+| PROCESS_TYPE_CHECKLIST | 4 |  |
+
+
+
+<a name="assembly-v1-SequenceOperator"></a>
+
+### SequenceOperator
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_OPERATOR_UNSPECIFIED | 0 |  |
+| SEQUENCE_OPERATOR_ALL_OF_CHILDREN | 1 |  |
+| SEQUENCE_OPERATOR_ONE_OF_CHILDREN | 2 |  |
+| SEQUENCE_OPERATOR_ORDERED | 3 |  |
+
+
+
+<a name="assembly-v1-TaskAssignmentPreference"></a>
+
+### TaskAssignmentPreference
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED | 0 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 |  |
+| TASK_ASSIGNMENT_PREFERENCE_EITHER | 5 |  |
+
+
+
+<a name="assembly-v1-TaskType"></a>
+
+### TaskType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_TYPE_UNSPECIFIED | 0 |  |
+| TASK_TYPE_INSPECT | 1 |  |
+| TASK_TYPE_FASTEN | 2 |  |
+| TASK_TYPE_UNFASTEN | 3 |  |
+| TASK_TYPE_MOUNT | 4 |  |
+| TASK_TYPE_UNMOUNT | 5 |  |
+| TASK_TYPE_MOVE | 6 |  |
+| TASK_TYPE_REMOVE | 7 |  |
+| TASK_TYPE_APPLY | 8 |  |
+| TASK_TYPE_WIPE | 9 |  |
+| TASK_TYPE_ALIGN | 10 |  |
+| TASK_TYPE_INSERT | 11 |  |
+| TASK_TYPE_HOLD | 12 |  |
+| TASK_TYPE_VERIFY | 13 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_station-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/station.proto
+
+
+
+<a name="assembly-v1-CellDefinition"></a>
+
+### CellDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| station_ids | [string](#string) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-StationDefinition"></a>
+
+### StationDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| tool_instance_ids | [string](#string) | repeated |  |
+| fixture_instance_ids | [string](#string) | repeated |  |
+| robot_instance_ids | [string](#string) | repeated |  |
+| asset_instance_ids | [string](#string) | repeated |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_validation-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/validation.proto
+
+
+
+<a name="assembly-v1-ValidationResult"></a>
+
+### ValidationResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| status | [ValidationStatus](#assembly-v1-ValidationStatus) |  |  |
+| method | [string](#string) |  | tool_feedback / vision / manual / external_qc |
+| validated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| measurements | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+| validated_by_actor_id | [string](#string) |  |  |
+| comment | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ValidationStatus"></a>
+
+### ValidationStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VALIDATION_STATUS_UNSPECIFIED | 0 |  |
+| VALIDATION_STATUS_PENDING | 1 |  |
+| VALIDATION_STATUS_PASSED | 2 |  |
+| VALIDATION_STATUS_FAILED | 3 |  |
+| VALIDATION_STATUS_BYPASSED | 4 |  |
 
 
  
@@ -2852,10 +4698,10 @@ TODO: allow multiple processes to make active at the same time?
 
 
 
-<a name="plm_v1_model-proto"></a>
+<a name="plm_v1_model_old-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plm/v1/model.proto
+## plm/v1/model_old.proto
 
 
 
@@ -3002,6 +4848,39 @@ TODO: allow multiple processes to make active at the same time?
 
 
 
+<a name="plm_v1_process_abort-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## plm/v1/process_abort.proto
+
+
+
+<a name="plm-v1-ProcessAbortMessage"></a>
+
+### ProcessAbortMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| reason | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="plm_v1_sequence-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3022,7 +4901,7 @@ TODO: allow multiple processes to make active at the same time?
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | sequence_number | [int32](#int32) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
 | parent_id | [string](#string) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
@@ -3116,7 +4995,11 @@ TODO: add allowed_actors
 | assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
 | can_reassign | [bool](#bool) |  |  |
 | can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  | TODO: &#39;complete-importance&#39;: could be different levels of &#34;this must be explicitly completed&#34; or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task. |
+| can_undo | [bool](#bool) |  |  |
+| horizon | [int32](#int32) |  | TODO: &#39;complete-importance&#39;: could be different levels of &#34;this must be explicitly completed&#34; or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
+
+steps needed to complete before this step is workable. Could be use to better calculate what task to do next, especially if paired with time estimate for each task. |
+| estimated_completion_time | [int32](#int32) |  | estimated time to complete (in seconds) |
 
 
 
@@ -3203,10 +5086,10 @@ TODO: add allowed_actors
 
 
 
-<a name="plm_v1_process-proto"></a>
+<a name="plm_v1_process_old-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plm/v1/process.proto
+## plm/v1/process_old.proto
 
 
 
@@ -3303,39 +5186,6 @@ Update published when the state of a process have changed
 | PROCESS_TYPE_INSPECTION | 3 | TODO: what should this be? |
 | PROCESS_TYPE_CHECKLIST | 4 | TODO: this could be startup procedures, fault fixing, ... |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process_abort-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process_abort.proto
-
-
-
-<a name="plm-v1-ProcessAbortMessage"></a>
-
-### ProcessAbortMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| reason | [string](#string) |  |  |
-
-
-
-
-
- 
 
  
 
@@ -3706,6 +5556,7 @@ Reassign all sub-tasks to the assignee (if possible)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent_id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
@@ -3719,7 +5570,7 @@ Reassign all sub-tasks to the assignee (if possible)
 <a name="plm-v1-StoredTaskMessage"></a>
 
 ### StoredTaskMessage
-
+TODO: can this be made more generic, e.g. from a different pool of &#39;actions&#39; (screw, mount, ….), instead of creating a new stored step for each actual step.
 
 
 | Field | Type | Label | Description |
@@ -3771,7 +5622,7 @@ Reassign all sub-tasks to the assignee (if possible)
 | description | [string](#string) |  |  |
 | instruction_text | [string](#string) |  |  |
 | sequence_number | [int32](#int32) |  |  |
-| part_id | [string](#string) |  |  |
+| part_id | [string](#string) |  | TODO: what is the difference between part_id and model_id? doesn&#39;t all parts have a model? |
 | model_id | [string](#string) |  |  |
 | task_type | [TaskType](#plm-v1-TaskType) |  |  |
 | target | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |

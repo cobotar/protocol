@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: plm/v1/model.proto
+// source: plm/v1/model_old.proto
 
 package plmv1
 
@@ -62,11 +62,11 @@ func (x ModelGroup) String() string {
 }
 
 func (ModelGroup) Descriptor() protoreflect.EnumDescriptor {
-	return file_plm_v1_model_proto_enumTypes[0].Descriptor()
+	return file_plm_v1_model_old_proto_enumTypes[0].Descriptor()
 }
 
 func (ModelGroup) Type() protoreflect.EnumType {
-	return &file_plm_v1_model_proto_enumTypes[0]
+	return &file_plm_v1_model_old_proto_enumTypes[0]
 }
 
 func (x ModelGroup) Number() protoreflect.EnumNumber {
@@ -75,7 +75,7 @@ func (x ModelGroup) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ModelGroup.Descriptor instead.
 func (ModelGroup) EnumDescriptor() ([]byte, []int) {
-	return file_plm_v1_model_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_model_old_proto_rawDescGZIP(), []int{0}
 }
 
 type ModelOrigin int32
@@ -114,11 +114,11 @@ func (x ModelOrigin) String() string {
 }
 
 func (ModelOrigin) Descriptor() protoreflect.EnumDescriptor {
-	return file_plm_v1_model_proto_enumTypes[1].Descriptor()
+	return file_plm_v1_model_old_proto_enumTypes[1].Descriptor()
 }
 
 func (ModelOrigin) Type() protoreflect.EnumType {
-	return &file_plm_v1_model_proto_enumTypes[1]
+	return &file_plm_v1_model_old_proto_enumTypes[1]
 }
 
 func (x ModelOrigin) Number() protoreflect.EnumNumber {
@@ -127,7 +127,7 @@ func (x ModelOrigin) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ModelOrigin.Descriptor instead.
 func (ModelOrigin) EnumDescriptor() ([]byte, []int) {
-	return file_plm_v1_model_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_model_old_proto_rawDescGZIP(), []int{1}
 }
 
 type ModelMessage struct {
@@ -146,7 +146,7 @@ type ModelMessage struct {
 
 func (x *ModelMessage) Reset() {
 	*x = ModelMessage{}
-	mi := &file_plm_v1_model_proto_msgTypes[0]
+	mi := &file_plm_v1_model_old_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -158,7 +158,7 @@ func (x *ModelMessage) String() string {
 func (*ModelMessage) ProtoMessage() {}
 
 func (x *ModelMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_model_proto_msgTypes[0]
+	mi := &file_plm_v1_model_old_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +171,7 @@ func (x *ModelMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMessage.ProtoReflect.Descriptor instead.
 func (*ModelMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_model_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_model_old_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ModelMessage) GetId() string {
@@ -239,7 +239,7 @@ type ModelMessages struct {
 
 func (x *ModelMessages) Reset() {
 	*x = ModelMessages{}
-	mi := &file_plm_v1_model_proto_msgTypes[1]
+	mi := &file_plm_v1_model_old_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +251,7 @@ func (x *ModelMessages) String() string {
 func (*ModelMessages) ProtoMessage() {}
 
 func (x *ModelMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_model_proto_msgTypes[1]
+	mi := &file_plm_v1_model_old_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +264,7 @@ func (x *ModelMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMessages.ProtoReflect.Descriptor instead.
 func (*ModelMessages) Descriptor() ([]byte, []int) {
-	return file_plm_v1_model_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_model_old_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ModelMessages) GetModels() []*ModelMessage {
@@ -274,11 +274,11 @@ func (x *ModelMessages) GetModels() []*ModelMessage {
 	return nil
 }
 
-var File_plm_v1_model_proto protoreflect.FileDescriptor
+var File_plm_v1_model_old_proto protoreflect.FileDescriptor
 
-const file_plm_v1_model_proto_rawDesc = "" +
+const file_plm_v1_model_old_proto_rawDesc = "" +
 	"\n" +
-	"\x12plm/v1/model.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9c\x02\n" +
+	"\x16plm/v1/model_old.proto\x12\x06plm.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9c\x02\n" +
 	"\fModelMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -301,32 +301,31 @@ const file_plm_v1_model_proto_rawDesc = "" +
 	"\x18MODEL_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15MODEL_ORIGIN_BUILD_IN\x10\x01\x12\x19\n" +
 	"\x15MODEL_ORIGIN_UPLOADED\x10\x02\x12\x19\n" +
-	"\x15MODEL_ORIGIN_EXTERNAL\x10\x03B\x8d\x01\n" +
+	"\x15MODEL_ORIGIN_EXTERNAL\x10\x03B\x90\x01\n" +
 	"\n" +
-	"com.plm.v1B\n" +
-	"ModelProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
+	"com.plm.v1B\rModelOldProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
 var (
-	file_plm_v1_model_proto_rawDescOnce sync.Once
-	file_plm_v1_model_proto_rawDescData []byte
+	file_plm_v1_model_old_proto_rawDescOnce sync.Once
+	file_plm_v1_model_old_proto_rawDescData []byte
 )
 
-func file_plm_v1_model_proto_rawDescGZIP() []byte {
-	file_plm_v1_model_proto_rawDescOnce.Do(func() {
-		file_plm_v1_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_model_proto_rawDesc), len(file_plm_v1_model_proto_rawDesc)))
+func file_plm_v1_model_old_proto_rawDescGZIP() []byte {
+	file_plm_v1_model_old_proto_rawDescOnce.Do(func() {
+		file_plm_v1_model_old_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_model_old_proto_rawDesc), len(file_plm_v1_model_old_proto_rawDesc)))
 	})
-	return file_plm_v1_model_proto_rawDescData
+	return file_plm_v1_model_old_proto_rawDescData
 }
 
-var file_plm_v1_model_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_plm_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_plm_v1_model_proto_goTypes = []any{
+var file_plm_v1_model_old_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_plm_v1_model_old_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_plm_v1_model_old_proto_goTypes = []any{
 	(ModelGroup)(0),       // 0: plm.v1.ModelGroup
 	(ModelOrigin)(0),      // 1: plm.v1.ModelOrigin
 	(*ModelMessage)(nil),  // 2: plm.v1.ModelMessage
 	(*ModelMessages)(nil), // 3: plm.v1.ModelMessages
 }
-var file_plm_v1_model_proto_depIdxs = []int32{
+var file_plm_v1_model_old_proto_depIdxs = []int32{
 	0, // 0: plm.v1.ModelMessage.group:type_name -> plm.v1.ModelGroup
 	1, // 1: plm.v1.ModelMessage.origin:type_name -> plm.v1.ModelOrigin
 	2, // 2: plm.v1.ModelMessages.models:type_name -> plm.v1.ModelMessage
@@ -337,27 +336,27 @@ var file_plm_v1_model_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_plm_v1_model_proto_init() }
-func file_plm_v1_model_proto_init() {
-	if File_plm_v1_model_proto != nil {
+func init() { file_plm_v1_model_old_proto_init() }
+func file_plm_v1_model_old_proto_init() {
+	if File_plm_v1_model_old_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_model_proto_rawDesc), len(file_plm_v1_model_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_model_old_proto_rawDesc), len(file_plm_v1_model_old_proto_rawDesc)),
 			NumEnums:      2,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_plm_v1_model_proto_goTypes,
-		DependencyIndexes: file_plm_v1_model_proto_depIdxs,
-		EnumInfos:         file_plm_v1_model_proto_enumTypes,
-		MessageInfos:      file_plm_v1_model_proto_msgTypes,
+		GoTypes:           file_plm_v1_model_old_proto_goTypes,
+		DependencyIndexes: file_plm_v1_model_old_proto_depIdxs,
+		EnumInfos:         file_plm_v1_model_old_proto_enumTypes,
+		MessageInfos:      file_plm_v1_model_old_proto_msgTypes,
 	}.Build()
-	File_plm_v1_model_proto = out.File
-	file_plm_v1_model_proto_goTypes = nil
-	file_plm_v1_model_proto_depIdxs = nil
+	File_plm_v1_model_old_proto = out.File
+	file_plm_v1_model_old_proto_goTypes = nil
+	file_plm_v1_model_old_proto_depIdxs = nil
 }

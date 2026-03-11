@@ -20,7 +20,7 @@ message SequenceMessage {
   string icon = 3;
   string description = 4;
   int32 sequence_number = 5;
-  geometry.v1.LocalizedPose frame = 6;
+  geometry.v1.Pose offset = 6;
   string parent_id = 7;
   repeated string sequence_ids = 8;
   repeated string task_ids = 9;

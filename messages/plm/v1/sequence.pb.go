@@ -84,7 +84,7 @@ type SequenceMessage struct {
 	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	SequenceNumber  int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	Frame           *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	Offset          *v1.Pose               `protobuf:"bytes,6,opt,name=offset,proto3" json:"offset,omitempty"`
 	ParentId        string                 `protobuf:"bytes,7,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	SequenceIds     []string               `protobuf:"bytes,8,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
 	TaskIds         []string               `protobuf:"bytes,9,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
@@ -161,9 +161,9 @@ func (x *SequenceMessage) GetSequenceNumber() int32 {
 	return 0
 }
 
-func (x *SequenceMessage) GetFrame() *v1.LocalizedPose {
+func (x *SequenceMessage) GetOffset() *v1.Pose {
 	if x != nil {
-		return x.Frame
+		return x.Offset
 	}
 	return nil
 }
@@ -290,14 +290,14 @@ var File_plm_v1_sequence_proto protoreflect.FileDescriptor
 
 const file_plm_v1_sequence_proto_rawDesc = "" +
 	"\n" +
-	"\x15plm/v1/sequence.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xc4\x03\n" +
+	"\x15plm/v1/sequence.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\"\xbd\x03\n" +
 	"\x0fSequenceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1b\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12)\n" +
+	"\x06offset\x18\x06 \x01(\v2\x11.geometry.v1.PoseR\x06offset\x12\x1b\n" +
 	"\tparent_id\x18\a \x01(\tR\bparentId\x12!\n" +
 	"\fsequence_ids\x18\b \x03(\tR\vsequenceIds\x12\x19\n" +
 	"\btask_ids\x18\t \x03(\tR\ataskIds\x12\x1f\n" +
@@ -341,10 +341,10 @@ var file_plm_v1_sequence_proto_goTypes = []any{
 	(SequenceState)(0),             // 0: plm.v1.SequenceState
 	(*SequenceMessage)(nil),        // 1: plm.v1.SequenceMessage
 	(*SequenceUpdatedMessage)(nil), // 2: plm.v1.SequenceUpdatedMessage
-	(*v1.LocalizedPose)(nil),       // 3: geometry.v1.LocalizedPose
+	(*v1.Pose)(nil),                // 3: geometry.v1.Pose
 }
 var file_plm_v1_sequence_proto_depIdxs = []int32{
-	3, // 0: plm.v1.SequenceMessage.frame:type_name -> geometry.v1.LocalizedPose
+	3, // 0: plm.v1.SequenceMessage.offset:type_name -> geometry.v1.Pose
 	0, // 1: plm.v1.SequenceMessage.state:type_name -> plm.v1.SequenceState
 	0, // 2: plm.v1.SequenceUpdatedMessage.state:type_name -> plm.v1.SequenceState
 	3, // [3:3] is the sub-list for method output_type

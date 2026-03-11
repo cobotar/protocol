@@ -16,9 +16,11 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/task_authoring.proto.
  */
 export const file_plm_v1_task_authoring: GenFile = /*@__PURE__*/
-  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSLXAgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiPgoSU3RvcmVkVGFza01lc3NhZ2VzEigKBXRhc2tzGAEgAygLMhkucGxtLnYxLlN0b3JlZFRhc2tNZXNzYWdlIloKDk5ld1Rhc2tNZXNzYWdlEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUi1wIKEVVwZGF0ZVRhc2tNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIYChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJEhcKD3NlcXVlbmNlX251bWJlchgGIAEoBRIPCgdwYXJ0X2lkGAcgASgJEhAKCG1vZGVsX2lkGAggASgJEiMKCXRhc2tfdHlwZRgJIAEoDjIQLnBsbS52MS5UYXNrVHlwZRIhCgZ0YXJnZXQYCiABKAsyES5nZW9tZXRyeS52MS5Qb3NlEiYKCGFwcHJvYWNoGAsgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI/ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYDCABKA4yIC5wbG0udjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlQpUBCgpjb20ucGxtLnYxQhJUYXNrQXV0aG9yaW5nUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3NhZ2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1BsbTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
+  fileDesc("ChtwbG0vdjEvdGFza19hdXRob3JpbmcucHJvdG8SBnBsbS52MSLXAgoRU3RvcmVkVGFza01lc3NhZ2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFEg8KB3BhcnRfaWQYByABKAkSEAoIbW9kZWxfaWQYCCABKAkSIwoJdGFza190eXBlGAkgASgOMhAucGxtLnYxLlRhc2tUeXBlEiEKBnRhcmdldBgKIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USJgoIYXBwcm9hY2gYCyABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEj8KFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgMIAEoDjIgLnBsbS52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2UiPgoSU3RvcmVkVGFza01lc3NhZ2VzEigKBXRhc2tzGAEgAygLMhkucGxtLnYxLlN0b3JlZFRhc2tNZXNzYWdlIm0KDk5ld1Rhc2tNZXNzYWdlEhEKCXBhcmVudF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFItcCChFVcGRhdGVUYXNrTWVzc2FnZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSGAoQaW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBiABKAUSDwoHcGFydF9pZBgHIAEoCRIQCghtb2RlbF9pZBgIIAEoCRIjCgl0YXNrX3R5cGUYCSABKA4yEC5wbG0udjEuVGFza1R5cGUSIQoGdGFyZ2V0GAogASgLMhEuZ2VvbWV0cnkudjEuUG9zZRImCghhcHByb2FjaBgLIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSPwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAwgASgOMiAucGxtLnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZUKVAQoKY29tLnBsbS52MUISVGFza0F1dGhvcmluZ1Byb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose, file_geometry_v1_vector3, file_plm_v1_task]);
 
 /**
+ * TODO: can this be made more generic, e.g. from a different pool of 'actions' (screw, mount, ….), instead of creating a new stored step for each actual step.
+ *
  * @generated from message plm.v1.StoredTaskMessage
  */
 export type StoredTaskMessage = Message<"plm.v1.StoredTaskMessage"> & {
@@ -112,6 +114,11 @@ export const StoredTaskMessagesSchema: GenMessage<StoredTaskMessages> = /*@__PUR
  */
 export type NewTaskMessage = Message<"plm.v1.NewTaskMessage"> & {
   /**
+   * @generated from field: string parent_id = 1;
+   */
+  parentId: string;
+
+  /**
    * @generated from field: string name = 2;
    */
   name: string;
@@ -174,6 +181,8 @@ export type UpdateTaskMessage = Message<"plm.v1.UpdateTaskMessage"> & {
   sequenceNumber: number;
 
   /**
+   * TODO: what is the difference between part_id and model_id? doesn't all parts have a model?
+   *
    * @generated from field: string part_id = 7;
    */
   partId: string;

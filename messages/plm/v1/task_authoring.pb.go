@@ -22,6 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// TODO: can this be made more generic, e.g. from a different pool of 'actions' (screw, mount, ….), instead of creating a new stored step for each actual step.
 type StoredTaskMessage struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
 	Id                   string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -200,6 +201,7 @@ func (x *StoredTaskMessages) GetTasks() []*StoredTaskMessage {
 
 type NewTaskMessage struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
+	ParentId       string                 `protobuf:"bytes,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
@@ -238,6 +240,13 @@ func (*NewTaskMessage) Descriptor() ([]byte, []int) {
 	return file_plm_v1_task_authoring_proto_rawDescGZIP(), []int{2}
 }
 
+func (x *NewTaskMessage) GetParentId() string {
+	if x != nil {
+		return x.ParentId
+	}
+	return ""
+}
+
 func (x *NewTaskMessage) GetName() string {
 	if x != nil {
 		return x.Name
@@ -274,7 +283,7 @@ type UpdateTaskMessage struct {
 	Description          string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	InstructionText      string                   `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
 	SequenceNumber       int32                    `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"`
+	PartId               string                   `protobuf:"bytes,7,opt,name=part_id,json=partId,proto3" json:"part_id,omitempty"` // TODO: what is the difference between part_id and model_id? doesn't all parts have a model?
 	ModelId              string                   `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	TaskType             TaskType                 `protobuf:"varint,9,opt,name=task_type,json=taskType,proto3,enum=plm.v1.TaskType" json:"task_type,omitempty"`
 	Target               *v1.Pose                 `protobuf:"bytes,10,opt,name=target,proto3" json:"target,omitempty"`
@@ -418,8 +427,9 @@ const file_plm_v1_task_authoring_proto_rawDesc = "" +
 	"\bapproach\x18\v \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12U\n" +
 	"\x15assignment_preference\x18\f \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\"E\n" +
 	"\x12StoredTaskMessages\x12/\n" +
-	"\x05tasks\x18\x01 \x03(\v2\x19.plm.v1.StoredTaskMessageR\x05tasks\"\x83\x01\n" +
-	"\x0eNewTaskMessage\x12\x12\n" +
+	"\x05tasks\x18\x01 \x03(\v2\x19.plm.v1.StoredTaskMessageR\x05tasks\"\xa0\x01\n" +
+	"\x0eNewTaskMessage\x12\x1b\n" +
+	"\tparent_id\x18\x01 \x01(\tR\bparentId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +

@@ -231,9 +231,12 @@ type TaskMessage struct {
 	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,18,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=plm.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
 	CanReassign          bool                     `protobuf:"varint,19,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
 	CanDo                bool                     `protobuf:"varint,20,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo              bool                     `protobuf:"varint,21,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"` // TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	CanUndo              bool                     `protobuf:"varint,21,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	// TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
+	Horizon                 int32 `protobuf:"varint,22,opt,name=horizon,proto3" json:"horizon,omitempty"`                                                                  // steps needed to complete before this step is workable. Could be use to better calculate what task to do next, especially if paired with time estimate for each task.
+	EstimatedCompletionTime int32 `protobuf:"varint,23,opt,name=estimated_completion_time,json=estimatedCompletionTime,proto3" json:"estimated_completion_time,omitempty"` // estimated time to complete (in seconds)
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *TaskMessage) Reset() {
@@ -413,6 +416,20 @@ func (x *TaskMessage) GetCanUndo() bool {
 	return false
 }
 
+func (x *TaskMessage) GetHorizon() int32 {
+	if x != nil {
+		return x.Horizon
+	}
+	return 0
+}
+
+func (x *TaskMessage) GetEstimatedCompletionTime() int32 {
+	if x != nil {
+		return x.EstimatedCompletionTime
+	}
+	return 0
+}
+
 type TaskUpdatedMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -501,7 +518,7 @@ var File_plm_v1_task_proto protoreflect.FileDescriptor
 
 const file_plm_v1_task_proto_rawDesc = "" +
 	"\n" +
-	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xfc\x05\n" +
+	"\x11plm/v1/task.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"\xd2\x06\n" +
 	"\vTaskMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -528,7 +545,9 @@ const file_plm_v1_task_proto_rawDesc = "" +
 	"\x15assignment_preference\x18\x12 \x01(\x0e2 .plm.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12!\n" +
 	"\fcan_reassign\x18\x13 \x01(\bR\vcanReassign\x12\x15\n" +
 	"\x06can_do\x18\x14 \x01(\bR\x05canDo\x12\x19\n" +
-	"\bcan_undo\x18\x15 \x01(\bR\acanUndo\"\xc3\x01\n" +
+	"\bcan_undo\x18\x15 \x01(\bR\acanUndo\x12\x18\n" +
+	"\ahorizon\x18\x16 \x01(\x05R\ahorizon\x12:\n" +
+	"\x19estimated_completion_time\x18\x17 \x01(\x05R\x17estimatedCompletionTime\"\xc3\x01\n" +
 	"\x12TaskUpdatedMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vassigned_to\x18\x02 \x01(\tR\n" +

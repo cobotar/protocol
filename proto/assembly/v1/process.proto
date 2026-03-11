@@ -1,0 +1,133 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/common.proto";
+import "assembly/v1/product.proto";
+import "assembly/v1/skill.proto";
+import "geometry/v1/vector3.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum ProcessType {
+  PROCESS_TYPE_UNSPECIFIED = 0;
+  PROCESS_TYPE_ASSEMBLY = 1;
+  PROCESS_TYPE_DISASSEMBLY = 2;
+  PROCESS_TYPE_INSPECTION = 3;
+  PROCESS_TYPE_CHECKLIST = 4;
+}
+
+enum SequenceOperator {
+  SEQUENCE_OPERATOR_UNSPECIFIED = 0;
+  SEQUENCE_OPERATOR_ALL_OF_CHILDREN = 1;
+  SEQUENCE_OPERATOR_ONE_OF_CHILDREN = 2;
+  SEQUENCE_OPERATOR_ORDERED = 3;
+}
+
+enum TaskType {
+  TASK_TYPE_UNSPECIFIED = 0;
+  TASK_TYPE_INSPECT = 1;
+  TASK_TYPE_FASTEN = 2;
+  TASK_TYPE_UNFASTEN = 3;
+  TASK_TYPE_MOUNT = 4;
+  TASK_TYPE_UNMOUNT = 5;
+  TASK_TYPE_MOVE = 6;
+  TASK_TYPE_REMOVE = 7;
+  TASK_TYPE_APPLY = 8;
+  TASK_TYPE_WIPE = 9;
+  TASK_TYPE_ALIGN = 10;
+  TASK_TYPE_INSERT = 11;
+  TASK_TYPE_HOLD = 12;
+  TASK_TYPE_VERIFY = 13;
+}
+
+enum TaskAssignmentPreference {
+  TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED = 0;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN = 1;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN = 2;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT = 3;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4;
+  TASK_ASSIGNMENT_PREFERENCE_EITHER = 5;
+}
+
+message RecipeApplicability {
+  repeated VariantCondition required = 1;
+  repeated VariantCondition excluded = 2;
+}
+
+message ProcessRecipe {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  ProcessType type = 5;
+  string product_definition_id = 6;
+  RecipeApplicability applicability = 7;
+  string root_sequence_id = 8;
+  repeated SequenceDefinition sequences = 9;
+  repeated TaskDefinition tasks = 10;
+  repeated string supported_fixture_definition_ids = 11;
+  repeated ExternalReference external_references = 12;
+  CustomProperties custom = 13;
+}
+
+message SequenceDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  int32 sequence_number = 5;
+  string parent_sequence_id = 6;
+  SequenceOperator operator = 7;
+  repeated string child_sequence_ids = 8;
+  repeated string child_task_ids = 9;
+  LocalTarget local_target = 10;
+  bool optional = 11;
+  bool can_bulk_complete = 12;
+  CustomProperties custom = 13;
+}
+
+message TaskTarget {
+  string target_node_id = 1; // Assembly node occurrence
+  string target_part_definition_id = 2; // optional denormalized helper
+  LocalTarget local_target = 3;
+}
+
+message ValidationRequirement {
+  bool require_tool_feedback = 1;
+  bool require_vision_check = 2;
+  bool allow_manual_confirmation = 3;
+  SkillLevel manual_confirmation_min_level = 4;
+  repeated KeyValueConstraint constraints = 5;
+}
+
+message TaskExecutionPolicy {
+  TaskAssignmentPreference assignment_preference = 1;
+  ActorConstraint actor_constraint = 2;
+  bool can_reassign = 3;
+  bool can_do = 4;
+  bool can_undo = 5;
+  EstimatedDuration estimated_duration = 6;
+}
+
+message TaskDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  string instruction_text = 5;
+  int32 sequence_number = 6;
+  TaskType task_type = 7;
+  TaskTarget target = 8;
+  geometry.v1.Vector3 approach = 9;
+  //repeated string precondition_task_ids = 10;
+  // repeated string dependant_task_ids = 11;
+  repeated ToolRequirement tool_requirements = 12;
+  repeated SkillRequirement skill_requirements = 13;
+  ValidationRequirement validation = 14;
+  TaskExecutionPolicy execution_policy = 15;
+  SafetyRelevance safety_relevance = 16;
+  string source_node_id = 17; // optional: where part comes from for move/mount
+  string destination_node_id = 18; // optional
+  CustomProperties custom = 19;
+}

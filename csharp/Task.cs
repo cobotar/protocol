@@ -25,7 +25,7 @@ namespace Messages.Plm.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFwbG0vdjEvdGFzay5wcm90bxIGcGxtLnYxGhZnZW9tZXRyeS92MS9wb3Nl",
-            "LnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIvwFCgtUYXNrTWVz",
+            "LnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvItIGCgtUYXNrTWVz",
             "c2FnZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
             "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
             "dGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0cnVjdGlvblRl",
@@ -42,34 +42,36 @@ namespace Messages.Plm.V1 {
             "ChVhc3NpZ25tZW50X3ByZWZlcmVuY2UYEiABKA4yIC5wbG0udjEuVGFza0Fz",
             "c2lnbm1lbnRQcmVmZXJlbmNlUhRhc3NpZ25tZW50UHJlZmVyZW5jZRIhCgxj",
             "YW5fcmVhc3NpZ24YEyABKAhSC2NhblJlYXNzaWduEhUKBmNhbl9kbxgUIAEo",
-            "CFIFY2FuRG8SGQoIY2FuX3VuZG8YFSABKAhSB2NhblVuZG8iwwEKElRhc2tV",
-            "cGRhdGVkTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHwoLYXNzaWduZWRfdG8Y",
-            "AiABKAlSCmFzc2lnbmVkVG8SJwoFc3RhdGUYAyABKA4yES5wbG0udjEuVGFz",
-            "a1N0YXRlUgVzdGF0ZRIhCgxjYW5fcmVhc3NpZ24YBCABKAhSC2NhblJlYXNz",
-            "aWduEhUKBmNhbl9kbxgFIAEoCFIFY2FuRG8SGQoIY2FuX3VuZG8YBiABKAhS",
-            "B2NhblVuZG8qsAEKCVRhc2tTdGF0ZRIaChZUQVNLX1NUQVRFX1VOU1BFQ0lG",
-            "SUVEEAASIwofVEFTS19TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhYK",
-            "ElRBU0tfU1RBVEVfV0FJVElORxACEhoKFlRBU0tfU1RBVEVfSU5fUFJPR1JF",
-            "U1MQAxIYChRUQVNLX1NUQVRFX0NPTVBMRVRFRBAEEhQKEFRBU0tfU1RBVEVf",
-            "RVJST1IQBirpAQoIVGFza1R5cGUSGQoVVEFTS19UWVBFX1VOU1BFQ0lGSUVE",
-            "EAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQARIUChBUQVNLX1RZUEVfRkFTVEVO",
-            "EAISFgoSVEFTS19UWVBFX1VORkFTVEVOEAMSEwoPVEFTS19UWVBFX01PVU5U",
-            "EAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQBRISCg5UQVNLX1RZUEVfTU9WRRAG",
-            "EhQKEFRBU0tfVFlQRV9SRU1PVkUQBxITCg9UQVNLX1RZUEVfQVBQTFkQCBIS",
-            "Cg5UQVNLX1RZUEVfV0lQRRAJKvYBChhUYXNrQXNzaWdubWVudFByZWZlcmVu",
-            "Y2USKgomVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQ",
-            "ABIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4Q",
-            "ARIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAIS",
-            "KwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMS",
-            "KQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEQowB",
-            "Cgpjb20ucGxtLnYxQglUYXNrUHJvdG9QAVoxZ2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3BsbS92MTtwbG12MaICA1BYWKoCD01lc3Nh",
-            "Z2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1Bs",
-            "bTo6VjFiBnByb3RvMw=="));
+            "CFIFY2FuRG8SGQoIY2FuX3VuZG8YFSABKAhSB2NhblVuZG8SGAoHaG9yaXpv",
+            "bhgWIAEoBVIHaG9yaXpvbhI6Chllc3RpbWF0ZWRfY29tcGxldGlvbl90aW1l",
+            "GBcgASgFUhdlc3RpbWF0ZWRDb21wbGV0aW9uVGltZSLDAQoSVGFza1VwZGF0",
+            "ZWRNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIfCgthc3NpZ25lZF90bxgCIAEo",
+            "CVIKYXNzaWduZWRUbxInCgVzdGF0ZRgDIAEoDjIRLnBsbS52MS5UYXNrU3Rh",
+            "dGVSBXN0YXRlEiEKDGNhbl9yZWFzc2lnbhgEIAEoCFILY2FuUmVhc3NpZ24S",
+            "FQoGY2FuX2RvGAUgASgIUgVjYW5EbxIZCghjYW5fdW5kbxgGIAEoCFIHY2Fu",
+            "VW5kbyqwAQoJVGFza1N0YXRlEhoKFlRBU0tfU1RBVEVfVU5TUEVDSUZJRUQQ",
+            "ABIjCh9UQVNLX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESFgoSVEFT",
+            "S19TVEFURV9XQUlUSU5HEAISGgoWVEFTS19TVEFURV9JTl9QUk9HUkVTUxAD",
+            "EhgKFFRBU0tfU1RBVEVfQ09NUExFVEVEEAQSFAoQVEFTS19TVEFURV9FUlJP",
+            "UhAGKukBCghUYXNrVHlwZRIZChVUQVNLX1RZUEVfVU5TUEVDSUZJRUQQABIV",
+            "ChFUQVNLX1RZUEVfSU5TUEVDVBABEhQKEFRBU0tfVFlQRV9GQVNURU4QAhIW",
+            "ChJUQVNLX1RZUEVfVU5GQVNURU4QAxITCg9UQVNLX1RZUEVfTU9VTlQQBBIV",
+            "ChFUQVNLX1RZUEVfVU5NT1VOVBAFEhIKDlRBU0tfVFlQRV9NT1ZFEAYSFAoQ",
+            "VEFTS19UWVBFX1JFTU9WRRAHEhMKD1RBU0tfVFlQRV9BUFBMWRAIEhIKDlRB",
+            "U0tfVFlQRV9XSVBFEAkq9gEKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIq",
+            "CiZUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisK",
+            "J1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikK",
+            "JVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidU",
+            "QVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVU",
+            "QVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEARCjAEKCmNv",
+            "bS5wbG0udjFCCVRhc2tQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJv",
+            "dG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMu",
+            "UGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.TaskState), typeof(global::Messages.Plm.V1.TaskType), typeof(global::Messages.Plm.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskMessage), global::Messages.Plm.V1.TaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "ParentId", "AgentsIds", "AssignedTo", "State", "Preconditions", "Dependants", "AssignmentPreference", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskMessage), global::Messages.Plm.V1.TaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "ParentId", "AgentsIds", "AssignedTo", "State", "Preconditions", "Dependants", "AssignmentPreference", "CanReassign", "CanDo", "CanUndo", "Horizon", "EstimatedCompletionTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskUpdatedMessage), global::Messages.Plm.V1.TaskUpdatedMessage.Parser, new[]{ "Id", "AssignedTo", "State", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null)
           }));
     }
@@ -172,6 +174,8 @@ namespace Messages.Plm.V1 {
       canReassign_ = other.canReassign_;
       canDo_ = other.canDo_;
       canUndo_ = other.canUndo_;
+      horizon_ = other.horizon_;
+      estimatedCompletionTime_ = other.estimatedCompletionTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -421,15 +425,42 @@ namespace Messages.Plm.V1 {
     /// <summary>Field number for the "can_undo" field.</summary>
     public const int CanUndoFieldNumber = 21;
     private bool canUndo_;
-    /// <summary>
-    /// TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool CanUndo {
       get { return canUndo_; }
       set {
         canUndo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "horizon" field.</summary>
+    public const int HorizonFieldNumber = 22;
+    private int horizon_;
+    /// <summary>
+    /// TODO: 'complete-importance': could be different levels of "this must be explicitly completed" or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Horizon {
+      get { return horizon_; }
+      set {
+        horizon_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "estimated_completion_time" field.</summary>
+    public const int EstimatedCompletionTimeFieldNumber = 23;
+    private int estimatedCompletionTime_;
+    /// <summary>
+    /// estimated time to complete (in seconds)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int EstimatedCompletionTime {
+      get { return estimatedCompletionTime_; }
+      set {
+        estimatedCompletionTime_ = value;
       }
     }
 
@@ -469,6 +500,8 @@ namespace Messages.Plm.V1 {
       if (CanReassign != other.CanReassign) return false;
       if (CanDo != other.CanDo) return false;
       if (CanUndo != other.CanUndo) return false;
+      if (Horizon != other.Horizon) return false;
+      if (EstimatedCompletionTime != other.EstimatedCompletionTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -497,6 +530,8 @@ namespace Messages.Plm.V1 {
       if (CanReassign != false) hash ^= CanReassign.GetHashCode();
       if (CanDo != false) hash ^= CanDo.GetHashCode();
       if (CanUndo != false) hash ^= CanUndo.GetHashCode();
+      if (Horizon != 0) hash ^= Horizon.GetHashCode();
+      if (EstimatedCompletionTime != 0) hash ^= EstimatedCompletionTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -590,6 +625,14 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(168, 1);
         output.WriteBool(CanUndo);
       }
+      if (Horizon != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(Horizon);
+      }
+      if (EstimatedCompletionTime != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(EstimatedCompletionTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -675,6 +718,14 @@ namespace Messages.Plm.V1 {
         output.WriteRawTag(168, 1);
         output.WriteBool(CanUndo);
       }
+      if (Horizon != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(Horizon);
+      }
+      if (EstimatedCompletionTime != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(EstimatedCompletionTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -741,6 +792,12 @@ namespace Messages.Plm.V1 {
       }
       if (CanUndo != false) {
         size += 2 + 1;
+      }
+      if (Horizon != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Horizon);
+      }
+      if (EstimatedCompletionTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(EstimatedCompletionTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -816,6 +873,12 @@ namespace Messages.Plm.V1 {
       }
       if (other.CanUndo != false) {
         CanUndo = other.CanUndo;
+      }
+      if (other.Horizon != 0) {
+        Horizon = other.Horizon;
+      }
+      if (other.EstimatedCompletionTime != 0) {
+        EstimatedCompletionTime = other.EstimatedCompletionTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -926,6 +989,14 @@ namespace Messages.Plm.V1 {
             CanUndo = input.ReadBool();
             break;
           }
+          case 176: {
+            Horizon = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            EstimatedCompletionTime = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1033,6 +1104,14 @@ namespace Messages.Plm.V1 {
           }
           case 168: {
             CanUndo = input.ReadBool();
+            break;
+          }
+          case 176: {
+            Horizon = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            EstimatedCompletionTime = input.ReadInt32();
             break;
           }
         }

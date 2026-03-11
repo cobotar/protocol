@@ -1,0 +1,189 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/common.proto";
+import "geometry/v1/pose.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum ToolType {
+  TOOL_TYPE_UNSPECIFIED = 0;
+  TOOL_TYPE_FASTENING = 1;
+  TOOL_TYPE_GRIPPING = 2;
+  TOOL_TYPE_CUTTING = 3;
+  TOOL_TYPE_MEASURING = 4;
+  TOOL_TYPE_POSITIONING = 5;
+  TOOL_TYPE_DISPENSING = 6;
+  TOOL_TYPE_INSPECTION = 7;
+  TOOL_TYPE_SAFETY = 8;
+  TOOL_TYPE_ELECTRONICS = 9;
+  TOOL_TYPE_FIXTURE_ACCESSORY = 10;
+}
+
+enum ToolRole {
+  TOOL_ROLE_UNSPECIFIED = 0;
+  TOOL_ROLE_GRIP_WORKPIECE = 1;
+  TOOL_ROLE_POSITION_COMPONENT = 2;
+  TOOL_ROLE_ALIGN_COMPONENT = 3;
+  TOOL_ROLE_APPLY_TORQUE = 4;
+  TOOL_ROLE_APPLY_LINEAR_FORCE = 5;
+  TOOL_ROLE_MEASURE_DIMENSION = 6;
+  TOOL_ROLE_DETECT_PRESENCE = 7;
+  TOOL_ROLE_DISPENSE_MATERIAL = 8;
+  TOOL_ROLE_EXECUTE_MOTION = 9;
+  TOOL_ROLE_SAFETY_INTERACTION = 10;
+  TOOL_ROLE_HANDLE_ESD = 11;
+  TOOL_ROLE_VISUAL_INSPECTION = 12;
+}
+
+enum ToolProperty {
+  TOOL_PROPERTY_UNSPECIFIED = 0;
+  TOOL_PROPERTY_TORQUE_CONTROLLED = 1;
+  TOOL_PROPERTY_ESD_SAFE = 2;
+  TOOL_PROPERTY_INSULATED = 3;
+  TOOL_PROPERTY_COLLABORATIVE_SAFE = 4;
+  TOOL_PROPERTY_CALIBRATED = 5;
+  TOOL_PROPERTY_QUICK_CHANGE = 6;
+}
+
+message CapabilityProfile {
+  double min_force_n = 1;
+  double max_force_n = 2;
+  double min_torque_nm = 3;
+  double max_torque_nm = 4;
+  double repeatability_mm = 5;
+  double max_payload_g = 6;
+  double min_grip_width_mm = 7;
+  double max_grip_width_mm = 8;
+  repeated KeyValueConstraint constraints = 9;
+}
+
+message ToolDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  ToolType type = 5;
+  ActorKind actor_kind = 6;
+  repeated ToolRole roles = 7;
+  repeated ToolProperty properties = 8;
+  CapabilityProfile capability_profile = 9;
+  string model_id = 10;
+  repeated ExternalReference external_references = 11;
+  CustomProperties custom = 12;
+}
+
+message ToolInstance {
+  string id = 1;
+  string tool_definition_id = 2;
+  string serial_number = 3;
+  string station_id = 4;
+  ResourceStatus status = 5;
+  bool calibrated = 6;
+  google.protobuf.Timestamp calibration_valid_until = 7;
+  geometry.v1.LocalizedPose pose = 8;
+  CustomProperties custom = 9;
+}
+
+enum FixtureType {
+  FIXTURE_TYPE_UNSPECIFIED = 0;
+  FIXTURE_TYPE_BASE = 1;
+  FIXTURE_TYPE_CLAMP = 2;
+  FIXTURE_TYPE_JIG = 3;
+  FIXTURE_TYPE_PALLET = 4;
+}
+
+message FixtureDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  FixtureType type = 5;
+  repeated string supported_product_definition_ids = 6;
+  repeated string supported_root_part_definition_ids = 7;
+  string model_id = 8;
+  repeated KeyValueConstraint constraints = 9;
+  CustomProperties custom = 10;
+}
+
+message FixtureInstance {
+  string id = 1;
+  string fixture_definition_id = 2;
+  string station_id = 3;
+  ResourceStatus status = 4;
+  geometry.v1.LocalizedPose pose = 5;
+  CustomProperties custom = 6;
+}
+
+enum RobotType {
+  ROBOT_TYPE_UNSPECIFIED = 0;
+  ROBOT_TYPE_UR3E = 10;
+  ROBOT_TYPE_UR5E = 11;
+  ROBOT_TYPE_UR10E = 12;
+  ROBOT_TYPE_KUKA_IIWA = 20;
+}
+
+enum RobotDriverType {
+  ROBOT_DRIVER_TYPE_UNSPECIFIED = 0;
+  ROBOT_DRIVER_TYPE_UR = 1;
+  ROBOT_DRIVER_TYPE_GENERIC = 2;
+}
+
+message RobotDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  RobotType type = 5;
+  RobotDriverType driver_type = 6;
+  string coupler_model_id = 7;
+  string end_effector_tool_definition_id = 8;
+  string model_id = 9;
+  CapabilityProfile capability_profile = 10;
+  CustomProperties custom = 11;
+}
+
+message RobotInstance {
+  string id = 1;
+  string robot_definition_id = 2;
+  string station_id = 3;
+  ResourceStatus status = 4;
+  geometry.v1.LocalizedPose base_pose = 5;
+  CustomProperties custom = 6;
+}
+
+enum AssetType {
+  ASSET_TYPE_UNSPECIFIED = 0;
+  ASSET_TYPE_CAMERA = 1;
+  ASSET_TYPE_LIGHT = 2;
+  ASSET_TYPE_CONVEYOR = 3;
+  ASSET_TYPE_SENSOR = 4;
+  ASSET_TYPE_HMI = 5;
+}
+
+enum AssetDriverType {
+  ASSET_DRIVER_TYPE_UNSPECIFIED = 0;
+  ASSET_DRIVER_TYPE_DEFAULT = 1;
+}
+
+message AssetDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  AssetType type = 5;
+  AssetDriverType driver_type = 6;
+  string model_id = 7;
+  CustomProperties custom = 8;
+}
+
+message AssetInstance {
+  string id = 1;
+  string asset_definition_id = 2;
+  string station_id = 3;
+  ResourceStatus status = 4;
+  geometry.v1.LocalizedPose pose = 5;
+  CustomProperties custom = 6;
+}

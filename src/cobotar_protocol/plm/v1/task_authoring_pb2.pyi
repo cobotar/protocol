@@ -44,16 +44,18 @@ class StoredTaskMessages(_message.Message):
     def __init__(self, tasks: _Optional[_Iterable[_Union[StoredTaskMessage, _Mapping]]] = ...) -> None: ...
 
 class NewTaskMessage(_message.Message):
-    __slots__ = ("name", "icon", "description", "sequence_number")
+    __slots__ = ("parent_id", "name", "icon", "description", "sequence_number")
+    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
+    parent_id: str
     name: str
     icon: str
     description: str
     sequence_number: int
-    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ...) -> None: ...
+    def __init__(self, parent_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ...) -> None: ...
 
 class UpdateTaskMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "part_id", "model_id", "task_type", "target", "approach", "assignment_preference")

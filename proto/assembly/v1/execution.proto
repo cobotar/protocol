@@ -1,0 +1,187 @@
+syntax = "proto3";
+package assembly.v1;
+
+import "assembly/v1/actor.proto";
+import "assembly/v1/common.proto";
+import "geometry/v1/pose.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum ProcessRunState {
+  PROCESS_RUN_STATE_UNSPECIFIED = 0;
+  PROCESS_RUN_STATE_WAITING = 1;
+  PROCESS_RUN_STATE_IN_PROGRESS = 2;
+  PROCESS_RUN_STATE_COMPLETED = 3;
+  PROCESS_RUN_STATE_ABORTED = 4;
+}
+
+enum SequenceRunState {
+  SEQUENCE_RUN_STATE_UNSPECIFIED = 0;
+  SEQUENCE_RUN_STATE_MISSING_PRECONDITION = 1;
+  SEQUENCE_RUN_STATE_WAITING = 2;
+  SEQUENCE_RUN_STATE_IN_PROGRESS = 3;
+  SEQUENCE_RUN_STATE_COMPLETED = 4;
+  SEQUENCE_RUN_STATE_ABORTED = 5;
+}
+
+enum TaskRunState {
+  TASK_RUN_STATE_UNSPECIFIED = 0;
+  TASK_RUN_STATE_MISSING_PRECONDITION = 1;
+  TASK_RUN_STATE_WAITING = 2;
+  TASK_RUN_STATE_IN_PROGRESS = 3;
+  TASK_RUN_STATE_COMPLETED = 4;
+  TASK_RUN_STATE_ERROR = 5;
+  TASK_RUN_STATE_ABORTED = 6;
+}
+
+message VariantSelection {
+  string dimension = 1;
+  string value = 2;
+}
+
+message RunParameter {
+  string key = 1; // "color", "label_text", "customer_name"
+  string value = 2;
+}
+
+message ProcessRun {
+  string id = 1;
+  string recipe_id = 2;
+  string order_id = 3;
+  string station_id = 4;
+  string cell_id = 5;
+  geometry.v1.LocalizedPose frame = 6;
+  string root_sequence_run_id = 7;
+  repeated SequenceRun sequences = 8;
+  repeated TaskRun tasks = 9;
+  ProcessRunState state = 10;
+  google.protobuf.Timestamp initiated_at = 11;
+  google.protobuf.Timestamp ended_at = 12;
+  repeated ActorAssignment assignments = 13;
+  CustomProperties custom = 14;
+  repeated VariantSelection product_selections = 15;
+  repeated RunParameter parameters = 16;
+}
+
+message SequenceRun {
+  string id = 1;
+  string sequence_definition_id = 2;
+  string parent_sequence_run_id = 3;
+  repeated string child_sequence_run_ids = 4;
+  repeated string child_task_run_ids = 5;
+  SequenceRunState state = 6;
+  int32 completed_tasks = 7;
+  bool can_bulk_complete = 8;
+  repeated ActorRef assigned_actors = 9;
+}
+
+message TaskRun {
+  string id = 1;
+  string task_definition_id = 2;
+  string parent_sequence_run_id = 3;
+  TaskRunState state = 4;
+  repeated ActorRef candidate_actors = 5;
+  ActorRef assigned_actor = 6;
+  bool can_do = 7;
+  bool can_undo = 8;
+  int32 workable_horizon = 9; // steps needed to complete before this step is workable.
+  EstimatedDuration estimated_duration = 10;
+  google.protobuf.Timestamp started_at = 11;
+  google.protobuf.Timestamp completed_at = 12;
+  string error_code = 13;
+  string error_message = 14;
+  repeated ExecutionEvidence evidence = 15;
+  CustomProperties custom = 16;
+}
+
+message EvidenceFact {
+  string key = 1;
+  string value = 2;
+  string unit = 3;
+}
+
+message ExecutionEvidence {
+  string id = 1;
+  string task_run_id = 2;
+  string source = 3; // tool, vision, operator, robot driver, etc.
+  google.protobuf.Timestamp recorded_at = 4;
+  repeated EvidenceFact facts = 5;
+  string blob_uri = 6;
+}
+
+/* ExecutionEvidence examples:
+
+   // Example - torque tool evidence
+   ExecutionEvidence {
+     id: "evidence-001"
+     task_run_id: "taskrun-fasten-screw-1"
+     source: "tool:torque-driver-7"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "torque"
+         value: "0.81"
+         unit: "nm"
+       },
+       {
+         key: "angle_deg"
+         value: "132"
+         unit: "deg"
+       },
+       {
+         key: "program"
+         value: "M4_COVER_08NM"
+       },
+       {
+         key: "result"
+         value: "pass"
+       }
+     ]
+   }
+
+   // Example - vision inspection evidence
+   ExecutionEvidence {
+     id: "evidence-002"
+     task_run_id: "taskrun-verify-cover"
+     source: "vision:cam-top-1"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "screw_count_detected"
+         value: "4"
+       },
+       {
+         key: "cover_present"
+         value: "true"
+       },
+       {
+         key: "confidence"
+         value: "0.95"
+       },
+       {
+         key: "result"
+         value: "pass"
+       }
+     ]
+   }
+
+   // Example - manual confirmation evidence
+   ExecutionEvidence {
+     id: "evidence-003"
+     task_run_id: "taskrun-place-cover"
+     source: "operator:worker-17"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "confirmation"
+         value: "completed"
+       },
+       {
+         key: "comment"
+         value: "cover aligned visually"
+       }
+     ]
+   }
+*/

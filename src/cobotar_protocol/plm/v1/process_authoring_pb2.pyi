@@ -1,5 +1,5 @@
 from geometry.v1 import pose_pb2 as _pose_pb2
-from plm.v1 import process_pb2 as _process_pb2
+from plm.v1 import process_old_pb2 as _process_old_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -21,10 +21,10 @@ class StoredProcessMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: _process_pb2.ProcessType
+    type: _process_old_pb2.ProcessType
     fixture_offset: _pose_pb2.Pose
     root_sequence_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ..., fixture_offset: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_old_pb2.ProcessType, str]] = ..., fixture_offset: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ...) -> None: ...
 
 class StoredProcessMessages(_message.Message):
     __slots__ = ("processes",)
@@ -41,8 +41,8 @@ class NewProcessMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: _process_pb2.ProcessType
-    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ...) -> None: ...
+    type: _process_old_pb2.ProcessType
+    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_old_pb2.ProcessType, str]] = ...) -> None: ...
 
 class UpdateProcessMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "fixture_offset", "root_sequence_id")
@@ -57,7 +57,7 @@ class UpdateProcessMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: _process_pb2.ProcessType
+    type: _process_old_pb2.ProcessType
     fixture_offset: _pose_pb2.Pose
     root_sequence_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_pb2.ProcessType, str]] = ..., fixture_offset: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_process_old_pb2.ProcessType, str]] = ..., fixture_offset: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., root_sequence_id: _Optional[str] = ...) -> None: ...

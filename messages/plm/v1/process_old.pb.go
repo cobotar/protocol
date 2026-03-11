@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: plm/v1/process.proto
+// source: plm/v1/process_old.proto
 
 package plmv1
 
@@ -62,11 +62,11 @@ func (x ProcessType) String() string {
 }
 
 func (ProcessType) Descriptor() protoreflect.EnumDescriptor {
-	return file_plm_v1_process_proto_enumTypes[0].Descriptor()
+	return file_plm_v1_process_old_proto_enumTypes[0].Descriptor()
 }
 
 func (ProcessType) Type() protoreflect.EnumType {
-	return &file_plm_v1_process_proto_enumTypes[0]
+	return &file_plm_v1_process_old_proto_enumTypes[0]
 }
 
 func (x ProcessType) Number() protoreflect.EnumNumber {
@@ -75,7 +75,7 @@ func (x ProcessType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessType.Descriptor instead.
 func (ProcessType) EnumDescriptor() ([]byte, []int) {
-	return file_plm_v1_process_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_process_old_proto_rawDescGZIP(), []int{0}
 }
 
 type ProcessState int32
@@ -117,11 +117,11 @@ func (x ProcessState) String() string {
 }
 
 func (ProcessState) Descriptor() protoreflect.EnumDescriptor {
-	return file_plm_v1_process_proto_enumTypes[1].Descriptor()
+	return file_plm_v1_process_old_proto_enumTypes[1].Descriptor()
 }
 
 func (ProcessState) Type() protoreflect.EnumType {
-	return &file_plm_v1_process_proto_enumTypes[1]
+	return &file_plm_v1_process_old_proto_enumTypes[1]
 }
 
 func (x ProcessState) Number() protoreflect.EnumNumber {
@@ -130,7 +130,7 @@ func (x ProcessState) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessState.Descriptor instead.
 func (ProcessState) EnumDescriptor() ([]byte, []int) {
-	return file_plm_v1_process_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_process_old_proto_rawDescGZIP(), []int{1}
 }
 
 // TODO: should 'running' be called process and 'static' recipe?
@@ -158,7 +158,7 @@ type ProcessMessage struct {
 
 func (x *ProcessMessage) Reset() {
 	*x = ProcessMessage{}
-	mi := &file_plm_v1_process_proto_msgTypes[0]
+	mi := &file_plm_v1_process_old_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -170,7 +170,7 @@ func (x *ProcessMessage) String() string {
 func (*ProcessMessage) ProtoMessage() {}
 
 func (x *ProcessMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_proto_msgTypes[0]
+	mi := &file_plm_v1_process_old_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -183,7 +183,7 @@ func (x *ProcessMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessMessage.ProtoReflect.Descriptor instead.
 func (*ProcessMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_proto_rawDescGZIP(), []int{0}
+	return file_plm_v1_process_old_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ProcessMessage) GetInstanceId() string {
@@ -304,7 +304,7 @@ type ProcessUpdatedMessage struct {
 
 func (x *ProcessUpdatedMessage) Reset() {
 	*x = ProcessUpdatedMessage{}
-	mi := &file_plm_v1_process_proto_msgTypes[1]
+	mi := &file_plm_v1_process_old_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -316,7 +316,7 @@ func (x *ProcessUpdatedMessage) String() string {
 func (*ProcessUpdatedMessage) ProtoMessage() {}
 
 func (x *ProcessUpdatedMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_proto_msgTypes[1]
+	mi := &file_plm_v1_process_old_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -329,7 +329,7 @@ func (x *ProcessUpdatedMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessUpdatedMessage.ProtoReflect.Descriptor instead.
 func (*ProcessUpdatedMessage) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_proto_rawDescGZIP(), []int{1}
+	return file_plm_v1_process_old_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ProcessUpdatedMessage) GetInstanceId() string {
@@ -369,7 +369,7 @@ type ProcessMessages struct {
 
 func (x *ProcessMessages) Reset() {
 	*x = ProcessMessages{}
-	mi := &file_plm_v1_process_proto_msgTypes[2]
+	mi := &file_plm_v1_process_old_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -381,7 +381,7 @@ func (x *ProcessMessages) String() string {
 func (*ProcessMessages) ProtoMessage() {}
 
 func (x *ProcessMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_plm_v1_process_proto_msgTypes[2]
+	mi := &file_plm_v1_process_old_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -394,7 +394,7 @@ func (x *ProcessMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessMessages.ProtoReflect.Descriptor instead.
 func (*ProcessMessages) Descriptor() ([]byte, []int) {
-	return file_plm_v1_process_proto_rawDescGZIP(), []int{2}
+	return file_plm_v1_process_old_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ProcessMessages) GetProcesses() []*ProcessMessage {
@@ -404,11 +404,11 @@ func (x *ProcessMessages) GetProcesses() []*ProcessMessage {
 	return nil
 }
 
-var File_plm_v1_process_proto protoreflect.FileDescriptor
+var File_plm_v1_process_old_proto protoreflect.FileDescriptor
 
-const file_plm_v1_process_proto_rawDesc = "" +
+const file_plm_v1_process_old_proto_rawDesc = "" +
 	"\n" +
-	"\x14plm/v1/process.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\xbe\x04\n" +
+	"\x18plm/v1/process_old.proto\x12\x06plm.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15plm/v1/sequence.proto\x1a\x11plm/v1/task.proto\"\xbe\x04\n" +
 	"\x0eProcessMessage\x12\x1f\n" +
 	"\vinstance_id\x18\x01 \x01(\tR\n" +
 	"instanceId\x12\x0e\n" +
@@ -447,25 +447,25 @@ const file_plm_v1_process_proto_rawDesc = "" +
 	"\x15PROCESS_STATE_WAITING\x10\x01\x12\x1d\n" +
 	"\x19PROCESS_STATE_IN_PROGRESS\x10\x02\x12\x1b\n" +
 	"\x17PROCESS_STATE_COMPLETED\x10\x03\x12\x19\n" +
-	"\x15PROCESS_STATE_ABORTED\x10\x04B\x8f\x01\n" +
+	"\x15PROCESS_STATE_ABORTED\x10\x04B\x92\x01\n" +
 	"\n" +
-	"com.plm.v1B\fProcessProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
+	"com.plm.v1B\x0fProcessOldProtoP\x01Z1github.com/cobotar/protocol/messages/plm/v1;plmv1\xa2\x02\x03PXX\xaa\x02\x0fMessages.Plm.V1\xca\x02\x06Plm\\V1\xe2\x02\x12Plm\\V1\\GPBMetadata\xea\x02\aPlm::V1b\x06proto3"
 
 var (
-	file_plm_v1_process_proto_rawDescOnce sync.Once
-	file_plm_v1_process_proto_rawDescData []byte
+	file_plm_v1_process_old_proto_rawDescOnce sync.Once
+	file_plm_v1_process_old_proto_rawDescData []byte
 )
 
-func file_plm_v1_process_proto_rawDescGZIP() []byte {
-	file_plm_v1_process_proto_rawDescOnce.Do(func() {
-		file_plm_v1_process_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_process_proto_rawDesc), len(file_plm_v1_process_proto_rawDesc)))
+func file_plm_v1_process_old_proto_rawDescGZIP() []byte {
+	file_plm_v1_process_old_proto_rawDescOnce.Do(func() {
+		file_plm_v1_process_old_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plm_v1_process_old_proto_rawDesc), len(file_plm_v1_process_old_proto_rawDesc)))
 	})
-	return file_plm_v1_process_proto_rawDescData
+	return file_plm_v1_process_old_proto_rawDescData
 }
 
-var file_plm_v1_process_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_plm_v1_process_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_plm_v1_process_proto_goTypes = []any{
+var file_plm_v1_process_old_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_plm_v1_process_old_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_plm_v1_process_old_proto_goTypes = []any{
 	(ProcessType)(0),              // 0: plm.v1.ProcessType
 	(ProcessState)(0),             // 1: plm.v1.ProcessState
 	(*ProcessMessage)(nil),        // 2: plm.v1.ProcessMessage
@@ -476,7 +476,7 @@ var file_plm_v1_process_proto_goTypes = []any{
 	(*TaskMessage)(nil),           // 7: plm.v1.TaskMessage
 	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
-var file_plm_v1_process_proto_depIdxs = []int32{
+var file_plm_v1_process_old_proto_depIdxs = []int32{
 	0,  // 0: plm.v1.ProcessMessage.type:type_name -> plm.v1.ProcessType
 	5,  // 1: plm.v1.ProcessMessage.frame:type_name -> geometry.v1.LocalizedPose
 	6,  // 2: plm.v1.ProcessMessage.sequences:type_name -> plm.v1.SequenceMessage
@@ -494,9 +494,9 @@ var file_plm_v1_process_proto_depIdxs = []int32{
 	0,  // [0:10] is the sub-list for field type_name
 }
 
-func init() { file_plm_v1_process_proto_init() }
-func file_plm_v1_process_proto_init() {
-	if File_plm_v1_process_proto != nil {
+func init() { file_plm_v1_process_old_proto_init() }
+func file_plm_v1_process_old_proto_init() {
+	if File_plm_v1_process_old_proto != nil {
 		return
 	}
 	file_plm_v1_sequence_proto_init()
@@ -505,18 +505,18 @@ func file_plm_v1_process_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_process_proto_rawDesc), len(file_plm_v1_process_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plm_v1_process_old_proto_rawDesc), len(file_plm_v1_process_old_proto_rawDesc)),
 			NumEnums:      2,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_plm_v1_process_proto_goTypes,
-		DependencyIndexes: file_plm_v1_process_proto_depIdxs,
-		EnumInfos:         file_plm_v1_process_proto_enumTypes,
-		MessageInfos:      file_plm_v1_process_proto_msgTypes,
+		GoTypes:           file_plm_v1_process_old_proto_goTypes,
+		DependencyIndexes: file_plm_v1_process_old_proto_depIdxs,
+		EnumInfos:         file_plm_v1_process_old_proto_enumTypes,
+		MessageInfos:      file_plm_v1_process_old_proto_msgTypes,
 	}.Build()
-	File_plm_v1_process_proto = out.File
-	file_plm_v1_process_proto_goTypes = nil
-	file_plm_v1_process_proto_depIdxs = nil
+	File_plm_v1_process_old_proto = out.File
+	file_plm_v1_process_old_proto_goTypes = nil
+	file_plm_v1_process_old_proto_depIdxs = nil
 }

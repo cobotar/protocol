@@ -4,7 +4,7 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import type { Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file plm/v1/sequence.proto.
  */
 export const file_plm_v1_sequence: GenFile = /*@__PURE__*/
-  fileDesc("ChVwbG0vdjEvc2VxdWVuY2UucHJvdG8SBnBsbS52MSK8AgoPU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUSKQoFZnJhbWUYBiABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEhEKCXBhcmVudF9pZBgHIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCCADKAkSEAoIdGFza19pZHMYCSADKAkSEwoLYXNzaWduZWRfdG8YCiADKAkSJAoFc3RhdGUYCyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYDCABKAUSGQoRY2FuX2J1bGtfY29tcGxldGUYDSABKAgigQEKFlNlcXVlbmNlVXBkYXRlZE1lc3NhZ2USEwoLc2VxdWVuY2VfaWQYASABKAkSEwoLYXNzaWduZWRfdG8YAiADKAkSJAoFc3RhdGUYAyABKA4yFS5wbG0udjEuU2VxdWVuY2VTdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYBCABKAUqsgEKDVNlcXVlbmNlU3RhdGUSHgoaU0VRVUVOQ0VfU1RBVEVfVU5TUEVDSUZJRUQQABInCiNTRVFVRU5DRV9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlNFUVVFTkNFX1NUQVRFX1dBSVRJTkcQAhIeChpTRVFVRU5DRV9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFNFUVVFTkNFX1NUQVRFX0NPTVBMRVRFRBAEQpABCgpjb20ucGxtLnYxQg1TZXF1ZW5jZVByb3RvUAFaMWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wbG0vdjE7cGxtdjGiAgNQWFiqAg9NZXNzYWdlcy5QbG0uVjHKAgZQbG1cVjHiAhJQbG1cVjFcR1BCTWV0YWRhdGHqAgdQbG06OlYxYgZwcm90bzM", [file_geometry_v1_pose]);
+  fileDesc("ChVwbG0vdjEvc2VxdWVuY2UucHJvdG8SBnBsbS52MSK0AgoPU2VxdWVuY2VNZXNzYWdlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUSIQoGb2Zmc2V0GAYgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIRCglwYXJlbnRfaWQYByABKAkSFAoMc2VxdWVuY2VfaWRzGAggAygJEhAKCHRhc2tfaWRzGAkgAygJEhMKC2Fzc2lnbmVkX3RvGAogAygJEiQKBXN0YXRlGAsgASgOMhUucGxtLnYxLlNlcXVlbmNlU3RhdGUSFwoPY29tcGxldGVkX3Rhc2tzGAwgASgFEhkKEWNhbl9idWxrX2NvbXBsZXRlGA0gASgIIoEBChZTZXF1ZW5jZVVwZGF0ZWRNZXNzYWdlEhMKC3NlcXVlbmNlX2lkGAEgASgJEhMKC2Fzc2lnbmVkX3RvGAIgAygJEiQKBXN0YXRlGAMgASgOMhUucGxtLnYxLlNlcXVlbmNlU3RhdGUSFwoPY29tcGxldGVkX3Rhc2tzGAQgASgFKrIBCg1TZXF1ZW5jZVN0YXRlEh4KGlNFUVVFTkNFX1NUQVRFX1VOU1BFQ0lGSUVEEAASJwojU0VRVUVOQ0VfU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIaChZTRVFVRU5DRV9TVEFURV9XQUlUSU5HEAISHgoaU0VRVUVOQ0VfU1RBVEVfSU5fUFJPR1JFU1MQAxIcChhTRVFVRU5DRV9TVEFURV9DT01QTEVURUQQBEKQAQoKY29tLnBsbS52MUINU2VxdWVuY2VQcm90b1ABWjFnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z", [file_geometry_v1_pose]);
 
 /**
  * @generated from message plm.v1.SequenceMessage
@@ -44,9 +44,9 @@ export type SequenceMessage = Message<"plm.v1.SequenceMessage"> & {
   sequenceNumber: number;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   * @generated from field: geometry.v1.Pose offset = 6;
    */
-  frame?: LocalizedPose;
+  offset?: Pose;
 
   /**
    * @generated from field: string parent_id = 7;

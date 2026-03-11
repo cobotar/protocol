@@ -36,7 +36,8 @@ breaking:
 generate:
 	@echo 'Deleting old files...'
 	rm -rf ./messages/*
-	rm -r ./src/cobotar_protocol/*/
+	rm -r ./src/cobotar_protocol/*
+	touch ./src/cobotar_protocol/__init__.py
 	rm -rf ./csharp/*.cs
 	rm -rf ./lib/*
 	@echo 'Generating new files...'

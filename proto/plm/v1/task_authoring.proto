@@ -8,6 +8,7 @@ import "plm/v1/task.proto";
 option csharp_namespace = "Messages.Plm.V1";
 option go_package = "github.com/cobotar/protocol/messages/plm/v1";
 
+// TODO: can this be made more generic, e.g. from a different pool of 'actions' (screw, mount, ….), instead of creating a new stored step for each actual step.
 message StoredTaskMessage {
   string id = 1;
   string name = 2;
@@ -28,6 +29,7 @@ message StoredTaskMessages {
 }
 
 message NewTaskMessage {
+  string parent_id = 1;
   string name = 2;
   string icon = 3;
   string description = 4;
@@ -41,7 +43,7 @@ message UpdateTaskMessage {
   string description = 4;
   string instruction_text = 5;
   int32 sequence_number = 6;
-  string part_id = 7;
+  string part_id = 7; // TODO: what is the difference between part_id and model_id? doesn't all parts have a model?
   string model_id = 8;
   TaskType task_type = 9;
   geometry.v1.Pose target = 10;
