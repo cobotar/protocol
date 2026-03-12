@@ -27,8 +27,8 @@ namespace Messages.Common.V1 {
             "ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEaG2J1Zi92YWxpZGF0",
             "ZS92YWxpZGF0ZS5wcm90byIcCgpHZXRNZXNzYWdlEg4KAmlkGAEgASgJUgJp",
             "ZCIuCg5HZXRCeUlkTWVzc2FnZRIcCgNpZHMYASADKAlCCrpIB5IBBAgBGAFS",
-            "A2lkcyIpChFHZXRCeUZpZWxkTWVzc2FnZRIUCgVmaWVsZBgBIAEoCVIFZmll",
-            "bGRCoAEKDWNvbS5jb21tb24udjFCCEdldFByb3RvUAFaN2dpdGh1Yi5jb20v",
+            "A2lkcyIpChFHZXRCeUZpZWxkTWVzc2FnZRIUCgV2YWx1ZRgBIAEoCVIFdmFs",
+            "dWVCoAEKDWNvbS5jb21tb24udjFCCEdldFByb3RvUAFaN2dpdGh1Yi5jb20v",
             "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGi",
             "AgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21t",
             "b25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
@@ -37,7 +37,7 @@ namespace Messages.Common.V1 {
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetMessage), global::Messages.Common.V1.GetMessage.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetByIdMessage), global::Messages.Common.V1.GetByIdMessage.Parser, new[]{ "Ids" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetByFieldMessage), global::Messages.Common.V1.GetByFieldMessage.Parser, new[]{ "Field" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetByFieldMessage), global::Messages.Common.V1.GetByFieldMessage.Parser, new[]{ "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -429,6 +429,9 @@ namespace Messages.Common.V1 {
 
   }
 
+  /// <summary>
+  /// Used to retrieve entities which have a field with the given value. The actual field is determined by the subject, e.g. robot.field.driver
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class GetByFieldMessage : pb::IMessage<GetByFieldMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -464,7 +467,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetByFieldMessage(GetByFieldMessage other) : this() {
-      field_ = other.field_;
+      value_ = other.value_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -474,15 +477,15 @@ namespace Messages.Common.V1 {
       return new GetByFieldMessage(this);
     }
 
-    /// <summary>Field number for the "field" field.</summary>
-    public const int FieldFieldNumber = 1;
-    private string field_ = "";
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 1;
+    private string value_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Field {
-      get { return field_; }
+    public string Value {
+      get { return value_; }
       set {
-        field_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -501,7 +504,7 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Field != other.Field) return false;
+      if (Value != other.Value) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -509,7 +512,7 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Field.Length != 0) hash ^= Field.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -528,9 +531,9 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Field.Length != 0) {
+      if (Value.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Field);
+        output.WriteString(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -542,9 +545,9 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Field.Length != 0) {
+      if (Value.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Field);
+        output.WriteString(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -556,8 +559,8 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Field.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Field);
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -571,8 +574,8 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.Field.Length != 0) {
-        Field = other.Field;
+      if (other.Value.Length != 0) {
+        Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -594,7 +597,7 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Field = input.ReadString();
+            Value = input.ReadString();
             break;
           }
         }
@@ -617,7 +620,7 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Field = input.ReadString();
+            Value = input.ReadString();
             break;
           }
         }

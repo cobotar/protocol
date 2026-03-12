@@ -96,11 +96,11 @@ class PartHandlingProfile(_message.Message):
     def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_fixture_support: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     WEIGHT_G_FIELD_NUMBER: _ClassVar[int]
     DIMENSIONS_FIELD_NUMBER: _ClassVar[int]
@@ -111,8 +111,8 @@ class PartDefinition(_message.Message):
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     type: PartType
     weight_g: int
     dimensions: Dimensions
@@ -121,27 +121,27 @@ class PartDefinition(_message.Message):
     handling: PartHandlingProfile
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class ProductDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "root_node_id", "nodes", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "root_node_id", "nodes", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ROOT_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     NODES_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     root_node_id: str
     nodes: _containers.RepeatedCompositeFieldContainer[AssemblyNode]
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., root_node_id: _Optional[str] = ..., nodes: _Optional[_Iterable[_Union[AssemblyNode, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., root_node_id: _Optional[str] = ..., nodes: _Optional[_Iterable[_Union[AssemblyNode, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class VariantCondition(_message.Message):
     __slots__ = ("dimension", "values")
@@ -152,10 +152,10 @@ class VariantCondition(_message.Message):
     def __init__(self, dimension: _Optional[str] = ..., values: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class AssemblyNode(_message.Message):
-    __slots__ = ("id", "parent_node_id", "name", "kind", "part_definition_id", "override_model_id", "local_pose", "child_node_ids", "sequence_hint", "cad_occurrence_path", "join_method_hint", "insertion_axis_hint", "preferred_approach_hint", "optional", "applicability", "custom")
+    __slots__ = ("id", "name", "parent_node_id", "kind", "part_definition_id", "override_model_id", "local_pose", "child_node_ids", "sequence_hint", "cad_occurrence_path", "join_method_hint", "insertion_axis_hint", "preferred_approach_hint", "optional", "applicability", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
-    PARENT_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    PARENT_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     KIND_FIELD_NUMBER: _ClassVar[int]
     PART_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     OVERRIDE_MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -170,8 +170,8 @@ class AssemblyNode(_message.Message):
     APPLICABILITY_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
-    parent_node_id: str
     name: str
+    parent_node_id: str
     kind: NodeKind
     part_definition_id: str
     override_model_id: str
@@ -185,7 +185,7 @@ class AssemblyNode(_message.Message):
     optional: bool
     applicability: _containers.RepeatedCompositeFieldContainer[VariantCondition]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., name: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., child_node_ids: _Optional[_Iterable[str]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_axis_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., preferred_approach_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Iterable[_Union[VariantCondition, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., child_node_ids: _Optional[_Iterable[str]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_axis_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., preferred_approach_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Iterable[_Union[VariantCondition, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class PartDefinitions(_message.Message):
     __slots__ = ("items",)

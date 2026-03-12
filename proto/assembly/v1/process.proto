@@ -65,8 +65,8 @@ message RecipeApplicability {
 message ProcessRecipe {
   string id = 1;
   string name = 2;
-  string description = 3;
-  string icon = 4;
+  string icon = 3;
+  string description = 4;
   ProcessType type = 5;
   string product_definition_id = 6;
   RecipeApplicability applicability = 7;
@@ -81,8 +81,8 @@ message ProcessRecipe {
 message SequenceDefinition {
   string id = 1;
   string name = 2;
-  string description = 3;
-  string icon = 4;
+  string icon = 3;
+  string description = 4;
   int32 sequence_number = 5;
   string parent_sequence_id = 6;
   SequenceOperator operator = 7;
@@ -120,8 +120,8 @@ message TaskExecutionPolicy {
 message TaskDefinition {
   string id = 1;
   string name = 2;
-  string description = 3;
-  string icon = 4;
+  string icon = 3;
+  string description = 4;
   string instruction_text = 5;
   int32 sequence_number = 6;
   TaskType task_type = 7;

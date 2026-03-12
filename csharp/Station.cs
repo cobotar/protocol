@@ -204,6 +204,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "frame" field.</summary>
     public const int FrameFieldNumber = 9;
     private global::Messages.Common.V1.LocalizedPose frame_;
+    /// <summary>
+    /// TODO: add makers here?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.LocalizedPose Frame {

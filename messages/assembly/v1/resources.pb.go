@@ -635,8 +635,8 @@ type ToolDefinition struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type               ToolType               `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.ToolType" json:"type,omitempty"`
 	ActorKind          ActorKind              `protobuf:"varint,6,opt,name=actor_kind,json=actorKind,proto3,enum=assembly.v1.ActorKind" json:"actor_kind,omitempty"`
 	Roles              []ToolRole             `protobuf:"varint,7,rep,packed,name=roles,proto3,enum=assembly.v1.ToolRole" json:"roles,omitempty"`
@@ -693,16 +693,16 @@ func (x *ToolDefinition) GetName() string {
 	return ""
 }
 
-func (x *ToolDefinition) GetDescription() string {
+func (x *ToolDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *ToolDefinition) GetIcon() string {
+func (x *ToolDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -810,14 +810,17 @@ func (x *ToolDefinitions) GetItems() []*ToolDefinition {
 type ToolInstance struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ToolDefinitionId      string                 `protobuf:"bytes,2,opt,name=tool_definition_id,json=toolDefinitionId,proto3" json:"tool_definition_id,omitempty"`
-	SerialNumber          string                 `protobuf:"bytes,3,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
-	StationId             string                 `protobuf:"bytes,4,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Status                ResourceStatus         `protobuf:"varint,5,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	Calibrated            bool                   `protobuf:"varint,6,opt,name=calibrated,proto3" json:"calibrated,omitempty"`
-	CalibrationValidUntil *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=calibration_valid_until,json=calibrationValidUntil,proto3" json:"calibration_valid_until,omitempty"`
-	Pose                  *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=pose,proto3" json:"pose,omitempty"`
-	Custom                *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	ToolDefinitionId      string                 `protobuf:"bytes,5,opt,name=tool_definition_id,json=toolDefinitionId,proto3" json:"tool_definition_id,omitempty"`
+	SerialNumber          string                 `protobuf:"bytes,6,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
+	StationId             string                 `protobuf:"bytes,7,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	Status                ResourceStatus         `protobuf:"varint,8,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	Calibrated            bool                   `protobuf:"varint,9,opt,name=calibrated,proto3" json:"calibrated,omitempty"`
+	CalibrationValidUntil *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=calibration_valid_until,json=calibrationValidUntil,proto3" json:"calibration_valid_until,omitempty"`
+	Pose                  *v1.LocalizedPose      `protobuf:"bytes,11,opt,name=pose,proto3" json:"pose,omitempty"`
+	Custom                *CustomProperties      `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -855,6 +858,27 @@ func (*ToolInstance) Descriptor() ([]byte, []int) {
 func (x *ToolInstance) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *ToolInstance) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ToolInstance) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ToolInstance) GetDescription() string {
+	if x != nil {
+		return x.Description
 	}
 	return ""
 }
@@ -963,8 +987,8 @@ type FixtureDefinition struct {
 	state                          protoimpl.MessageState `protogen:"open.v1"`
 	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description                    string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon                           string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon                           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description                    string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type                           FixtureType            `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.FixtureType" json:"type,omitempty"`
 	SupportedProductDefinitionIds  []string               `protobuf:"bytes,6,rep,name=supported_product_definition_ids,json=supportedProductDefinitionIds,proto3" json:"supported_product_definition_ids,omitempty"`      // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
 	SupportedRootPartDefinitionIds []string               `protobuf:"bytes,7,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"` // This fixture support products whose root assembly is one of these root parts
@@ -1019,16 +1043,16 @@ func (x *FixtureDefinition) GetName() string {
 	return ""
 }
 
-func (x *FixtureDefinition) GetDescription() string {
+func (x *FixtureDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *FixtureDefinition) GetIcon() string {
+func (x *FixtureDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -1122,11 +1146,14 @@ func (x *FixtureDefinitions) GetItems() []*FixtureDefinition {
 type FixtureInstance struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	FixtureDefinitionId string                 `protobuf:"bytes,2,opt,name=fixture_definition_id,json=fixtureDefinitionId,proto3" json:"fixture_definition_id,omitempty"`
-	StationId           string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Status              ResourceStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	Pose                *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=pose,proto3" json:"pose,omitempty"`
-	Custom              *CustomProperties      `protobuf:"bytes,6,opt,name=custom,proto3" json:"custom,omitempty"`
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	FixtureDefinitionId string                 `protobuf:"bytes,5,opt,name=fixture_definition_id,json=fixtureDefinitionId,proto3" json:"fixture_definition_id,omitempty"`
+	StationId           string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	Status              ResourceStatus         `protobuf:"varint,7,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	Pose                *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=pose,proto3" json:"pose,omitempty"`
+	Custom              *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -1164,6 +1191,27 @@ func (*FixtureInstance) Descriptor() ([]byte, []int) {
 func (x *FixtureInstance) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *FixtureInstance) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *FixtureInstance) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *FixtureInstance) GetDescription() string {
+	if x != nil {
+		return x.Description
 	}
 	return ""
 }
@@ -1251,8 +1299,8 @@ type RobotDefinition struct {
 	state       protoimpl.MessageState `protogen:"open.v1"`
 	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon        string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type        RobotType              `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.RobotType" json:"type,omitempty"`
 	DriverType  RobotDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=assembly.v1.RobotDriverType" json:"driver_type,omitempty"`
 	ModelId     string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
@@ -1311,16 +1359,16 @@ func (x *RobotDefinition) GetName() string {
 	return ""
 }
 
-func (x *RobotDefinition) GetDescription() string {
+func (x *RobotDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *RobotDefinition) GetIcon() string {
+func (x *RobotDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -1435,14 +1483,17 @@ func (x *RobotDefinitions) GetItems() []*RobotDefinition {
 type RobotInstance struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
 	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	RobotDefinitionId        string                 `protobuf:"bytes,2,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
-	StationId                string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	MountedToolInstanceId    string                 `protobuf:"bytes,4,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // what is attached right now
-	AvailableToolInstanceIds []string               `protobuf:"bytes,5,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // what is in the cell/magazine/dock and usable
-	SupportsToolChange       bool                   `protobuf:"varint,6,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                    // whether dynamic switching is allowed
-	Status                   ResourceStatus         `protobuf:"varint,7,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	BasePose                 *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
-	Custom                   *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Name                     string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                     string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description              string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	RobotDefinitionId        string                 `protobuf:"bytes,5,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
+	StationId                string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	MountedToolInstanceId    string                 `protobuf:"bytes,7,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // what is attached right now
+	AvailableToolInstanceIds []string               `protobuf:"bytes,8,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // what is in the cell/magazine/dock and usable
+	SupportsToolChange       bool                   `protobuf:"varint,9,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                    // whether dynamic switching is allowed
+	Status                   ResourceStatus         `protobuf:"varint,10,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	BasePose                 *v1.LocalizedPose      `protobuf:"bytes,11,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
+	Custom                   *CustomProperties      `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -1480,6 +1531,27 @@ func (*RobotInstance) Descriptor() ([]byte, []int) {
 func (x *RobotInstance) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *RobotInstance) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RobotInstance) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *RobotInstance) GetDescription() string {
+	if x != nil {
+		return x.Description
 	}
 	return ""
 }
@@ -1588,8 +1660,8 @@ type AssetDefinition struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon          string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          AssetType              `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.AssetType" json:"type,omitempty"`
 	DriverType    AssetDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=assembly.v1.AssetDriverType" json:"driver_type,omitempty"`
 	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
@@ -1642,16 +1714,16 @@ func (x *AssetDefinition) GetName() string {
 	return ""
 }
 
-func (x *AssetDefinition) GetDescription() string {
+func (x *AssetDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *AssetDefinition) GetIcon() string {
+func (x *AssetDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -1731,11 +1803,14 @@ func (x *AssetDefinitions) GetItems() []*AssetDefinition {
 type AssetInstance struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	AssetDefinitionId string                 `protobuf:"bytes,2,opt,name=asset_definition_id,json=assetDefinitionId,proto3" json:"asset_definition_id,omitempty"`
-	StationId         string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Status            ResourceStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	Pose              *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=pose,proto3" json:"pose,omitempty"`
-	Custom            *CustomProperties      `protobuf:"bytes,6,opt,name=custom,proto3" json:"custom,omitempty"`
+	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon              string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description       string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	AssetDefinitionId string                 `protobuf:"bytes,5,opt,name=asset_definition_id,json=assetDefinitionId,proto3" json:"asset_definition_id,omitempty"`
+	StationId         string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	Status            ResourceStatus         `protobuf:"varint,7,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	Pose              *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=pose,proto3" json:"pose,omitempty"`
+	Custom            *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1773,6 +1848,27 @@ func (*AssetInstance) Descriptor() ([]byte, []int) {
 func (x *AssetInstance) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *AssetInstance) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AssetInstance) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *AssetInstance) GetDescription() string {
+	if x != nil {
+		return x.Description
 	}
 	return ""
 }
@@ -1873,9 +1969,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\vconstraints\x18\t \x03(\v2\x1f.assembly.v1.KeyValueConstraintR\vconstraints\"\xa6\x04\n" +
 	"\x0eToolDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12)\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x15.assembly.v1.ToolTypeR\x04type\x125\n" +
 	"\n" +
 	"actor_kind\x18\x06 \x01(\x0e2\x16.assembly.v1.ActorKindR\tactorKind\x12+\n" +
@@ -1889,27 +1985,31 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x13external_references\x18\v \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
 	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"D\n" +
 	"\x0fToolDefinitions\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.assembly.v1.ToolDefinitionR\x05items\"\xa0\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.assembly.v1.ToolDefinitionR\x05items\"\xea\x03\n" +
 	"\fToolInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
-	"\x12tool_definition_id\x18\x02 \x01(\tR\x10toolDefinitionId\x12#\n" +
-	"\rserial_number\x18\x03 \x01(\tR\fserialNumber\x12\x1d\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12,\n" +
+	"\x12tool_definition_id\x18\x05 \x01(\tR\x10toolDefinitionId\x12#\n" +
+	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x04 \x01(\tR\tstationId\x123\n" +
-	"\x06status\x18\x05 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12\x1e\n" +
+	"station_id\x18\a \x01(\tR\tstationId\x123\n" +
+	"\x06status\x18\b \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12\x1e\n" +
 	"\n" +
-	"calibrated\x18\x06 \x01(\bR\n" +
+	"calibrated\x18\t \x01(\bR\n" +
 	"calibrated\x12R\n" +
-	"\x17calibration_valid_until\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\x12.\n" +
-	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"@\n" +
+	"\x17calibration_valid_until\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\x12.\n" +
+	"\x04pose\x18\v \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
+	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"@\n" +
 	"\rToolInstances\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.assembly.v1.ToolInstanceR\x05items\"\xc5\x03\n" +
 	"\x11FixtureDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12,\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12,\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x18.assembly.v1.FixtureTypeR\x04type\x12G\n" +
 	" supported_product_definition_ids\x18\x06 \x03(\tR\x1dsupportedProductDefinitionIds\x12J\n" +
 	"\"supported_root_part_definition_ids\x18\a \x03(\tR\x1esupportedRootPartDefinitionIds\x12\x19\n" +
@@ -1918,22 +2018,25 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x06custom\x18\n" +
 	" \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"J\n" +
 	"\x12FixtureDefinitions\x124\n" +
-	"\x05items\x18\x01 \x03(\v2\x1e.assembly.v1.FixtureDefinitionR\x05items\"\x90\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.assembly.v1.FixtureDefinitionR\x05items\"\xda\x02\n" +
 	"\x0fFixtureInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x122\n" +
-	"\x15fixture_definition_id\x18\x02 \x01(\tR\x13fixtureDefinitionId\x12\x1d\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
+	"\x15fixture_definition_id\x18\x05 \x01(\tR\x13fixtureDefinitionId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
-	"\x04pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
+	"station_id\x18\x06 \x01(\tR\tstationId\x123\n" +
+	"\x06status\x18\a \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
+	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
 	"\x10FixtureInstances\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.FixtureInstanceR\x05items\"\xc0\x04\n" +
 	"\x0fRobotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12*\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x16.assembly.v1.RobotTypeR\x04type\x12=\n" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1c.assembly.v1.RobotDriverTypeR\n" +
 	"driverType\x12\x19\n" +
@@ -1947,40 +2050,47 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x12capability_profile\x18\f \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
 	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
 	"\x10RobotDefinitions\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.RobotDefinitionR\x05items\"\xbd\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.RobotDefinitionR\x05items\"\x87\x04\n" +
 	"\rRobotInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
-	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12.\n" +
+	"\x13robot_definition_id\x18\x05 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x127\n" +
-	"\x18mounted_tool_instance_id\x18\x04 \x01(\tR\x15mountedToolInstanceId\x12=\n" +
-	"\x1bavailable_tool_instance_ids\x18\x05 \x03(\tR\x18availableToolInstanceIds\x120\n" +
-	"\x14supports_tool_change\x18\x06 \x01(\bR\x12supportsToolChange\x123\n" +
-	"\x06status\x18\a \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
-	"\tbase_pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
-	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"station_id\x18\x06 \x01(\tR\tstationId\x127\n" +
+	"\x18mounted_tool_instance_id\x18\a \x01(\tR\x15mountedToolInstanceId\x12=\n" +
+	"\x1bavailable_tool_instance_ids\x18\b \x03(\tR\x18availableToolInstanceIds\x120\n" +
+	"\x14supports_tool_change\x18\t \x01(\bR\x12supportsToolChange\x123\n" +
+	"\x06status\x18\n" +
+	" \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
+	"\tbase_pose\x18\v \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
+	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eRobotInstances\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.RobotInstanceR\x05items\"\xa8\x02\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12*\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x16.assembly.v1.AssetTypeR\x04type\x12=\n" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1c.assembly.v1.AssetDriverTypeR\n" +
 	"driverType\x12\x19\n" +
 	"\bmodel_id\x18\a \x01(\tR\amodelId\x125\n" +
 	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
 	"\x10AssetDefinitions\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.AssetDefinitionR\x05items\"\x8a\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.AssetDefinitionR\x05items\"\xd4\x02\n" +
 	"\rAssetInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
-	"\x13asset_definition_id\x18\x02 \x01(\tR\x11assetDefinitionId\x12\x1d\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12.\n" +
+	"\x13asset_definition_id\x18\x05 \x01(\tR\x11assetDefinitionId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
-	"\x04pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"station_id\x18\x06 \x01(\tR\tstationId\x123\n" +
+	"\x06status\x18\a \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
+	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eAssetInstances\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.AssetInstanceR\x05items*\xcd\x03\n" +
 	"\bToolType\x12\x19\n" +

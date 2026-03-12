@@ -17,6 +17,7 @@ message GetByIdMessage {
   }];
 }
 
+// Used to retrieve entities which have a field with the given value. The actual field is determined by the subject, e.g. robot.field.driver
 message GetByFieldMessage {
-  string field = 1;
+  string value = 1;
 }

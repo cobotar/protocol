@@ -31,8 +31,8 @@ namespace Messages.Assembly.V1 {
             "ZBgBIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb25SCHJlcXVp",
             "cmVkEjkKCGV4Y2x1ZGVkGAIgAygLMh0uYXNzZW1ibHkudjEuVmFyaWFudENv",
             "bmRpdGlvblIIZXhjbHVkZWQigAUKDVByb2Nlc3NSZWNpcGUSDgoCaWQYASAB",
-            "KAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyAB",
-            "KAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGljb24SLAoEdHlwZRgF",
+            "KAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNv",
+            "bhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoEdHlwZRgF",
             "IAEoDjIYLmFzc2VtYmx5LnYxLlByb2Nlc3NUeXBlUgR0eXBlEjIKFXByb2R1",
             "Y3RfZGVmaW5pdGlvbl9pZBgGIAEoCVITcHJvZHVjdERlZmluaXRpb25JZBJG",
             "Cg1hcHBsaWNhYmlsaXR5GAcgASgLMiAuYXNzZW1ibHkudjEuUmVjaXBlQXBw",
@@ -46,8 +46,8 @@ namespace Messages.Assembly.V1 {
             "UhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1i",
             "bHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIpAEChJTZXF1ZW5jZURl",
             "ZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUS",
-            "IAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCAB",
-            "KAlSBGljb24SJwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFUg5zZXF1ZW5jZU51",
+            "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
+            "Y3JpcHRpb24SJwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFUg5zZXF1ZW5jZU51",
             "bWJlchIsChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAlSEHBhcmVudFNlcXVl",
             "bmNlSWQSOQoIb3BlcmF0b3IYByABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5j",
             "ZU9wZXJhdG9yUghvcGVyYXRvchIsChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCAD",
@@ -77,8 +77,8 @@ namespace Messages.Assembly.V1 {
             "blVuZG8STQoSZXN0aW1hdGVkX2R1cmF0aW9uGAYgASgLMh4uYXNzZW1ibHku",
             "djEuRXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uItUGCg5U",
             "YXNrRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIE",
-            "bmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SEgoEaWNv",
-            "bhgEIAEoCVIEaWNvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0",
+            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
+            "UgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0",
             "cnVjdGlvblRleHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFUg5zZXF1ZW5j",
             "ZU51bWJlchIyCgl0YXNrX3R5cGUYByABKA4yFS5hc3NlbWJseS52MS5UYXNr",
             "VHlwZVIIdGFza1R5cGUSLwoGdGFyZ2V0GAggASgLMhcuYXNzZW1ibHkudjEu",
@@ -124,12 +124,12 @@ namespace Messages.Assembly.V1 {
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.ProductReflection.Descriptor, global::Messages.Assembly.V1.SkillReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ProcessType), typeof(global::Messages.Assembly.V1.SequenceOperator), typeof(global::Messages.Assembly.V1.TaskType), typeof(global::Messages.Assembly.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RecipeApplicability), global::Messages.Assembly.V1.RecipeApplicability.Parser, new[]{ "Required", "Excluded" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProcessRecipe), global::Messages.Assembly.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedFixtureDefinitionIds", "ExternalReferences", "Custom" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.SequenceDefinition), global::Messages.Assembly.V1.SequenceDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "SequenceNumber", "ParentSequenceId", "Operator", "ChildSequenceIds", "ChildTaskIds", "LocalTarget", "Optional", "CanBulkComplete", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProcessRecipe), global::Messages.Assembly.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedFixtureDefinitionIds", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.SequenceDefinition), global::Messages.Assembly.V1.SequenceDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "SequenceNumber", "ParentSequenceId", "Operator", "ChildSequenceIds", "ChildTaskIds", "LocalTarget", "Optional", "CanBulkComplete", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskTarget), global::Messages.Assembly.V1.TaskTarget.Parser, new[]{ "TargetNodeId", "TargetPartDefinitionId", "LocalTarget" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ValidationRequirement), global::Messages.Assembly.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskExecutionPolicy), global::Messages.Assembly.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanDo", "CanUndo", "EstimatedDuration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "Custom" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "Custom" }, null, null, null, null)
           }));
     }
     #endregion
@@ -442,8 +442,8 @@ namespace Messages.Assembly.V1 {
     public ProcessRecipe(ProcessRecipe other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       productDefinitionId_ = other.productDefinitionId_;
       applicability_ = other.applicability_ != null ? other.applicability_.Clone() : null;
@@ -486,20 +486,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -507,6 +495,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -634,8 +634,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (ProductDefinitionId != other.ProductDefinitionId) return false;
       if (!object.Equals(Applicability, other.Applicability)) return false;
@@ -654,8 +654,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.ProcessType.Unspecified) hash ^= Type.GetHashCode();
       if (ProductDefinitionId.Length != 0) hash ^= ProductDefinitionId.GetHashCode();
       if (applicability_ != null) hash ^= Applicability.GetHashCode();
@@ -691,13 +691,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.ProcessType.Unspecified) {
         output.WriteRawTag(40);
@@ -741,13 +741,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.ProcessType.Unspecified) {
         output.WriteRawTag(40);
@@ -789,11 +789,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.ProcessType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -832,11 +832,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.ProcessType.Unspecified) {
         Type = other.Type;
@@ -891,11 +891,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -968,11 +968,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1061,8 +1061,8 @@ namespace Messages.Assembly.V1 {
     public SequenceDefinition(SequenceDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       sequenceNumber_ = other.sequenceNumber_;
       parentSequenceId_ = other.parentSequenceId_;
       operator_ = other.operator_;
@@ -1105,20 +1105,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1126,6 +1114,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1252,8 +1252,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
       if (ParentSequenceId != other.ParentSequenceId) return false;
       if (Operator != other.Operator) return false;
@@ -1272,8 +1272,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (ParentSequenceId.Length != 0) hash ^= ParentSequenceId.GetHashCode();
       if (Operator != global::Messages.Assembly.V1.SequenceOperator.Unspecified) hash ^= Operator.GetHashCode();
@@ -1309,13 +1309,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (SequenceNumber != 0) {
         output.WriteRawTag(40);
@@ -1365,13 +1365,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (SequenceNumber != 0) {
         output.WriteRawTag(40);
@@ -1419,11 +1419,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (SequenceNumber != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(SequenceNumber);
@@ -1466,11 +1466,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.SequenceNumber != 0) {
         SequenceNumber = other.SequenceNumber;
@@ -1529,11 +1529,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1606,11 +1606,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -2722,8 +2722,8 @@ namespace Messages.Assembly.V1 {
     public TaskDefinition(TaskDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       instructionText_ = other.instructionText_;
       sequenceNumber_ = other.sequenceNumber_;
       taskType_ = other.taskType_;
@@ -2770,20 +2770,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2791,6 +2779,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2975,8 +2975,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (InstructionText != other.InstructionText) return false;
       if (SequenceNumber != other.SequenceNumber) return false;
       if (TaskType != other.TaskType) return false;
@@ -2999,8 +2999,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
       if (SequenceNumber != 0) hash ^= SequenceNumber.GetHashCode();
       if (TaskType != global::Messages.Assembly.V1.TaskType.Unspecified) hash ^= TaskType.GetHashCode();
@@ -3040,13 +3040,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (InstructionText.Length != 0) {
         output.WriteRawTag(42);
@@ -3112,13 +3112,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (InstructionText.Length != 0) {
         output.WriteRawTag(42);
@@ -3182,11 +3182,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (InstructionText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
@@ -3241,11 +3241,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.InstructionText.Length != 0) {
         InstructionText = other.InstructionText;
@@ -3325,11 +3325,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {
@@ -3427,11 +3427,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {

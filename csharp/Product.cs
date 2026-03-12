@@ -38,8 +38,8 @@ namespace Messages.Assembly.V1 {
             "cnF1ZV9ubRgGIAEoAVILbWF4VG9ycXVlTm0SQQoLY29uc3RyYWludHMYByAD",
             "KAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFp",
             "bnRzIpAECg5QYXJ0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
-            "ZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRp",
-            "b24SEgoEaWNvbhgEIAEoCVIEaWNvbhIpCgR0eXBlGAUgASgOMhUuYXNzZW1i",
+            "ZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
+            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpCgR0eXBlGAUgASgOMhUuYXNzZW1i",
             "bHkudjEuUGFydFR5cGVSBHR5cGUSGQoId2VpZ2h0X2cYBiABKANSB3dlaWdo",
             "dEcSNwoKZGltZW5zaW9ucxgHIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lv",
             "bnNSCmRpbWVuc2lvbnMSNQoIbWF0ZXJpYWwYCCABKAsyGS5hc3NlbWJseS52",
@@ -50,16 +50,16 @@ namespace Messages.Assembly.V1 {
             "UmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGAwgASgL",
             "Mh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIsgCChFQ",
             "cm9kdWN0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SEgoE",
-            "aWNvbhgEIAEoCVIEaWNvbhIgCgxyb290X25vZGVfaWQYBSABKAlSCnJvb3RO",
+            "CVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
+            "ASgJUgtkZXNjcmlwdGlvbhIgCgxyb290X25vZGVfaWQYBSABKAlSCnJvb3RO",
             "b2RlSWQSLwoFbm9kZXMYBiADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5v",
             "ZGVSBW5vZGVzEk8KE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3Nl",
             "bWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2Vz",
             "EjUKBmN1c3RvbRgIIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRp",
             "ZXNSBmN1c3RvbSJIChBWYXJpYW50Q29uZGl0aW9uEhwKCWRpbWVuc2lvbhgB",
             "IAEoCVIJZGltZW5zaW9uEhYKBnZhbHVlcxgCIAMoCVIGdmFsdWVzIvkFCgxB",
-            "c3NlbWJseU5vZGUSDgoCaWQYASABKAlSAmlkEiQKDnBhcmVudF9ub2RlX2lk",
-            "GAIgASgJUgxwYXJlbnROb2RlSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIpCgRr",
+            "c3NlbWJseU5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5h",
+            "bWUSJAoOcGFyZW50X25vZGVfaWQYAyABKAlSDHBhcmVudE5vZGVJZBIpCgRr",
             "aW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmRSBGtpbmQSLAoScGFy",
             "dF9kZWZpbml0aW9uX2lkGAUgASgJUhBwYXJ0RGVmaW5pdGlvbklkEioKEW92",
             "ZXJyaWRlX21vZGVsX2lkGAYgASgJUg9vdmVycmlkZU1vZGVsSWQSMAoKbG9j",
@@ -101,10 +101,10 @@ namespace Messages.Assembly.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.Dimensions), global::Messages.Assembly.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.MaterialSpec), global::Messages.Assembly.V1.MaterialSpec.Parser, new[]{ "Name", "Grade" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartHandlingProfile), global::Messages.Assembly.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinition), global::Messages.Assembly.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinition), global::Messages.Assembly.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.VariantCondition), global::Messages.Assembly.V1.VariantCondition.Parser, new[]{ "Dimension", "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssemblyNode), global::Messages.Assembly.V1.AssemblyNode.Parser, new[]{ "Id", "ParentNodeId", "Name", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "ChildNodeIds", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionAxisHint", "PreferredApproachHint", "Optional", "Applicability", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssemblyNode), global::Messages.Assembly.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "ChildNodeIds", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionAxisHint", "PreferredApproachHint", "Optional", "Applicability", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinitions), global::Messages.Assembly.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinitions), global::Messages.Assembly.V1.ProductDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -1140,8 +1140,8 @@ namespace Messages.Assembly.V1 {
     public PartDefinition(PartDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       weightG_ = other.weightG_;
       dimensions_ = other.dimensions_ != null ? other.dimensions_.Clone() : null;
@@ -1183,20 +1183,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1204,6 +1192,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1322,8 +1322,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (WeightG != other.WeightG) return false;
       if (!object.Equals(Dimensions, other.Dimensions)) return false;
@@ -1341,8 +1341,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) hash ^= Type.GetHashCode();
       if (WeightG != 0L) hash ^= WeightG.GetHashCode();
       if (dimensions_ != null) hash ^= Dimensions.GetHashCode();
@@ -1377,13 +1377,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         output.WriteRawTag(40);
@@ -1432,13 +1432,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         output.WriteRawTag(40);
@@ -1485,11 +1485,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -1531,11 +1531,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         Type = other.Type;
@@ -1599,11 +1599,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1678,11 +1678,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1773,8 +1773,8 @@ namespace Messages.Assembly.V1 {
     public ProductDefinition(ProductDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       rootNodeId_ = other.rootNodeId_;
       nodes_ = other.nodes_.Clone();
       externalReferences_ = other.externalReferences_.Clone();
@@ -1812,20 +1812,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1833,6 +1821,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1899,8 +1899,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (RootNodeId != other.RootNodeId) return false;
       if(!nodes_.Equals(other.nodes_)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
@@ -1914,8 +1914,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (RootNodeId.Length != 0) hash ^= RootNodeId.GetHashCode();
       hash ^= nodes_.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
@@ -1946,13 +1946,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (RootNodeId.Length != 0) {
         output.WriteRawTag(42);
@@ -1982,13 +1982,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (RootNodeId.Length != 0) {
         output.WriteRawTag(42);
@@ -2016,11 +2016,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (RootNodeId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RootNodeId);
@@ -2048,11 +2048,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.RootNodeId.Length != 0) {
         RootNodeId = other.RootNodeId;
@@ -2093,11 +2093,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {
@@ -2147,11 +2147,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {
@@ -2446,8 +2446,8 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AssemblyNode(AssemblyNode other) : this() {
       id_ = other.id_;
-      parentNodeId_ = other.parentNodeId_;
       name_ = other.name_;
+      parentNodeId_ = other.parentNodeId_;
       kind_ = other.kind_;
       partDefinitionId_ = other.partDefinitionId_;
       overrideModelId_ = other.overrideModelId_;
@@ -2482,23 +2482,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "parent_node_id" field.</summary>
-    public const int ParentNodeIdFieldNumber = 2;
-    private string parentNodeId_ = "";
-    /// <summary>
-    /// Empty if root, otherwise set to parent AssemblyNode id.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ParentNodeId {
-      get { return parentNodeId_; }
-      set {
-        parentNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 3;
+    public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
     /// Name of this assembly node
@@ -2509,6 +2494,21 @@ namespace Messages.Assembly.V1 {
       get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "parent_node_id" field.</summary>
+    public const int ParentNodeIdFieldNumber = 3;
+    private string parentNodeId_ = "";
+    /// <summary>
+    /// Empty if root, otherwise set to parent AssemblyNode id.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ParentNodeId {
+      get { return parentNodeId_; }
+      set {
+        parentNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2691,8 +2691,8 @@ namespace Messages.Assembly.V1 {
         return true;
       }
       if (Id != other.Id) return false;
-      if (ParentNodeId != other.ParentNodeId) return false;
       if (Name != other.Name) return false;
+      if (ParentNodeId != other.ParentNodeId) return false;
       if (Kind != other.Kind) return false;
       if (PartDefinitionId != other.PartDefinitionId) return false;
       if (OverrideModelId != other.OverrideModelId) return false;
@@ -2714,8 +2714,8 @@ namespace Messages.Assembly.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (ParentNodeId.Length != 0) hash ^= ParentNodeId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ParentNodeId.Length != 0) hash ^= ParentNodeId.GetHashCode();
       if (Kind != global::Messages.Assembly.V1.NodeKind.Unspecified) hash ^= Kind.GetHashCode();
       if (PartDefinitionId.Length != 0) hash ^= PartDefinitionId.GetHashCode();
       if (OverrideModelId.Length != 0) hash ^= OverrideModelId.GetHashCode();
@@ -2751,13 +2751,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ParentNodeId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ParentNodeId);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Name);
+      }
+      if (ParentNodeId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ParentNodeId);
       }
       if (Kind != global::Messages.Assembly.V1.NodeKind.Unspecified) {
         output.WriteRawTag(32);
@@ -2819,13 +2819,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ParentNodeId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ParentNodeId);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Name);
+      }
+      if (ParentNodeId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ParentNodeId);
       }
       if (Kind != global::Messages.Assembly.V1.NodeKind.Unspecified) {
         output.WriteRawTag(32);
@@ -2886,11 +2886,11 @@ namespace Messages.Assembly.V1 {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (ParentNodeId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentNodeId);
-      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ParentNodeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentNodeId);
       }
       if (Kind != global::Messages.Assembly.V1.NodeKind.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Kind);
@@ -2942,11 +2942,11 @@ namespace Messages.Assembly.V1 {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.ParentNodeId.Length != 0) {
-        ParentNodeId = other.ParentNodeId;
-      }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.ParentNodeId.Length != 0) {
+        ParentNodeId = other.ParentNodeId;
       }
       if (other.Kind != global::Messages.Assembly.V1.NodeKind.Unspecified) {
         Kind = other.Kind;
@@ -3019,11 +3019,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            ParentNodeId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            Name = input.ReadString();
+            ParentNodeId = input.ReadString();
             break;
           }
           case 32: {
@@ -3114,11 +3114,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            ParentNodeId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            Name = input.ReadString();
+            ParentNodeId = input.ReadString();
             break;
           }
           case 32: {

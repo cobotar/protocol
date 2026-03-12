@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/resources.proto.
  */
 export const file_assembly_v1_resources: GenFile = /*@__PURE__*/
-  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj0KD1Rvb2xEZWZpbml0aW9ucxIqCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZpbml0aW9uIrgCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSGgoSdG9vbF9kZWZpbml0aW9uX2lkGAIgASgJEhUKDXNlcmlhbF9udW1iZXIYAyABKAkSEgoKc3RhdGlvbl9pZBgEIAEoCRIrCgZzdGF0dXMYBSABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxISCgpjYWxpYnJhdGVkGAYgASgIEjsKF2NhbGlicmF0aW9uX3ZhbGlkX3VudGlsGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjkKDVRvb2xJbnN0YW5jZXMSKAoFaXRlbXMYASADKAsyGS5hc3NlbWJseS52MS5Ub29sSW5zdGFuY2UixQIKEUZpeHR1cmVEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRImCgR0eXBlGAUgASgOMhguYXNzZW1ibHkudjEuRml4dHVyZVR5cGUSKAogc3VwcG9ydGVkX3Byb2R1Y3RfZGVmaW5pdGlvbl9pZHMYBiADKAkSKgoic3VwcG9ydGVkX3Jvb3RfcGFydF9kZWZpbml0aW9uX2lkcxgHIAMoCRIQCghtb2RlbF9pZBgIIAEoCRI0Cgtjb25zdHJhaW50cxgJIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3RyYWludBItCgZjdXN0b20YCiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIkMKEkZpeHR1cmVEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLmFzc2VtYmx5LnYxLkZpeHR1cmVEZWZpbml0aW9uItYBCg9GaXh0dXJlSW5zdGFuY2USCgoCaWQYASABKAkSHQoVZml4dHVyZV9kZWZpbml0aW9uX2lkGAIgASgJEhIKCnN0YXRpb25faWQYAyABKAkSKwoGc3RhdHVzGAQgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBGaXh0dXJlSW5zdGFuY2VzEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuRml4dHVyZUluc3RhbmNlIp0DCg9Sb2JvdERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Sb2JvdFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Sb2JvdERyaXZlclR5cGUSEAoIbW9kZWxfaWQYByABKAkSGAoQY291cGxlcl9tb2RlbF9pZBgIIAEoCRIlCh1zdXBwb3J0ZWRfdG9vbF9kZWZpbml0aW9uX2lkcxgJIAMoCRIiChpkZWZhdWx0X3Rvb2xfZGVmaW5pdGlvbl9pZBgKIAEoCRISCgp0b29sX3Nsb3RzGAsgASgFEjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgMIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEi0KBmN1c3RvbRgNIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiPwoQUm9ib3REZWZpbml0aW9ucxIrCgVpdGVtcxgBIAMoCzIcLmFzc2VtYmx5LnYxLlJvYm90RGVmaW5pdGlvbiK8AgoNUm9ib3RJbnN0YW5jZRIKCgJpZBgBIAEoCRIbChNyb2JvdF9kZWZpbml0aW9uX2lkGAIgASgJEhIKCnN0YXRpb25faWQYAyABKAkSIAoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAQgASgJEiMKG2F2YWlsYWJsZV90b29sX2luc3RhbmNlX2lkcxgFIAMoCRIcChRzdXBwb3J0c190b29sX2NoYW5nZRgGIAEoCBIrCgZzdGF0dXMYByABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxItCgliYXNlX3Bvc2UYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEi0KBmN1c3RvbRgJIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOUm9ib3RJbnN0YW5jZXMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Sb2JvdEluc3RhbmNlIugBCg9Bc3NldERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Bc3NldFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Bc3NldERyaXZlclR5cGUSEAoIbW9kZWxfaWQYByABKAkSLQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBBc3NldERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuQXNzZXREZWZpbml0aW9uItIBCg1Bc3NldEluc3RhbmNlEgoKAmlkGAEgASgJEhsKE2Fzc2V0X2RlZmluaXRpb25faWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRIrCgZzdGF0dXMYBCABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxIoCgRwb3NlGAUgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YBiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjsKDkFzc2V0SW5zdGFuY2VzEikKBWl0ZW1zGAEgAygLMhouYXNzZW1ibHkudjEuQXNzZXRJbnN0YW5jZSrNAwoIVG9vbFR5cGUSGQoVVE9PTF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTVE9PTF9UWVBFX0ZBU1RFTklORxABEhYKElRPT0xfVFlQRV9HUklQUElORxACEhUKEVRPT0xfVFlQRV9DVVRUSU5HEAMSFwoTVE9PTF9UWVBFX01FQVNVUklORxAEEhkKFVRPT0xfVFlQRV9QT1NJVElPTklORxAFEhgKFFRPT0xfVFlQRV9ESVNQRU5TSU5HEAYSGAoUVE9PTF9UWVBFX0lOU1BFQ1RJT04QBxIUChBUT09MX1RZUEVfU0FGRVRZEAgSGQoVVE9PTF9UWVBFX0VMRUNUUk9OSUNTEAkSHwobVE9PTF9UWVBFX0ZJWFRVUkVfQUNDRVNTT1JZEAoSFQoRVE9PTF9UWVBFX1NIQVBJTkcQCxIVChFUT09MX1RZUEVfVFVSTklORxAMEhYKElRPT0xfVFlQRV9TVFJJS0lORxANEhUKEVRPT0xfVFlQRV9NQVJLSU5HEA4SFwoTVE9PTF9UWVBFX0ZJTklTSElORxAPEhYKElRPT0xfVFlQRV9BQlJBU0lWRRAQEhYKElRPT0xfVFlQRV9DTEVBTklORxARKrgDCghUb29sUm9sZRIZChVUT09MX1JPTEVfVU5TUEVDSUZJRUQQABIcChhUT09MX1JPTEVfR1JJUF9XT1JLUElFQ0UQARIgChxUT09MX1JPTEVfUE9TSVRJT05fQ09NUE9ORU5UEAISHQoZVE9PTF9ST0xFX0FMSUdOX0NPTVBPTkVOVBADEhoKFlRPT0xfUk9MRV9BUFBMWV9UT1JRVUUQBBIgChxUT09MX1JPTEVfQVBQTFlfTElORUFSX0ZPUkNFEAUSHwobVE9PTF9ST0xFX01FQVNVUkVfRElNRU5TSU9OEAYSHQoZVE9PTF9ST0xFX0RFVEVDVF9QUkVTRU5DRRAHEh8KG1RPT0xfUk9MRV9ESVNQRU5TRV9NQVRFUklBTBAIEhwKGFRPT0xfUk9MRV9FWEVDVVRFX01PVElPThAJEiAKHFRPT0xfUk9MRV9TQUZFVFlfSU5URVJBQ1RJT04QChIYChRUT09MX1JPTEVfSEFORExFX0VTRBALEh8KG1RPT0xfUk9MRV9WSVNVQUxfSU5TUEVDVElPThAMEhgKFFRPT0xfUk9MRV9XSVBFX0NMRUFOEA0q7wEKDFRvb2xQcm9wZXJ0eRIdChlUT09MX1BST1BFUlRZX1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JRVUVfQ09OVFJPTExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIbChdUT09MX1BST1BFUlRZX0lOU1VMQVRFRBADEiQKIFRPT0xfUFJPUEVSVFlfQ09MTEFCT1JBVElWRV9TQUZFEAQSHAoYVE9PTF9QUk9QRVJUWV9DQUxJQlJBVEVEEAUSHgoaVE9PTF9QUk9QRVJUWV9RVUlDS19DSEFOR0UQBiqJAQoLRml4dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRRklYVFVSRV9UWVBFX0JBU0UQARIWChJGSVhUVVJFX1RZUEVfQ0xBTVAQAhIUChBGSVhUVVJFX1RZUEVfSklHEAMSFwoTRklYVFVSRV9UWVBFX1BBTExFVBAEKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACKpgBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1JEAUqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1ibHkudjFCDlJlc291cmNlc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
+  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj0KD1Rvb2xEZWZpbml0aW9ucxIqCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZpbml0aW9uIukCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhoKEnRvb2xfZGVmaW5pdGlvbl9pZBgFIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEhIKCnN0YXRpb25faWQYByABKAkSKwoGc3RhdHVzGAggASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSEgoKY2FsaWJyYXRlZBgJIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKAoEcG9zZRgLIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAwgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI5Cg1Ub29sSW5zdGFuY2VzEigKBWl0ZW1zGAEgAygLMhkuYXNzZW1ibHkudjEuVG9vbEluc3RhbmNlIsUCChFGaXh0dXJlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJgoEdHlwZRgFIAEoDjIYLmFzc2VtYmx5LnYxLkZpeHR1cmVUeXBlEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAYgAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYByADKAkSEAoIbW9kZWxfaWQYCCABKAkSNAoLY29uc3RyYWludHMYCSADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQSLQoGY3VzdG9tGAogASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyJDChJGaXh0dXJlRGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5GaXh0dXJlRGVmaW5pdGlvbiKHAgoPRml4dHVyZUluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIdChVmaXh0dXJlX2RlZmluaXRpb25faWQYBSABKAkSEgoKc3RhdGlvbl9pZBgGIAEoCRIrCgZzdGF0dXMYByABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj8KEEZpeHR1cmVJbnN0YW5jZXMSKwoFaXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5GaXh0dXJlSW5zdGFuY2UinQMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJAoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLlJvYm90VHlwZRIxCgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLlJvYm90RHJpdmVyVHlwZRIQCghtb2RlbF9pZBgHIAEoCRIYChBjb3VwbGVyX21vZGVsX2lkGAggASgJEiUKHXN1cHBvcnRlZF90b29sX2RlZmluaXRpb25faWRzGAkgAygJEiIKGmRlZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAogASgJEhIKCnRvb2xfc2xvdHMYCyABKAUSOgoSY2FwYWJpbGl0eV9wcm9maWxlGAwgASgLMh4uYXNzZW1ibHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSLQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBSb2JvdERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuUm9ib3REZWZpbml0aW9uIu0CCg1Sb2JvdEluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIbChNyb2JvdF9kZWZpbml0aW9uX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSIAoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAcgASgJEiMKG2F2YWlsYWJsZV90b29sX2luc3RhbmNlX2lkcxgIIAMoCRIcChRzdXBwb3J0c190b29sX2NoYW5nZRgJIAEoCBIrCgZzdGF0dXMYCiABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxItCgliYXNlX3Bvc2UYCyABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEi0KBmN1c3RvbRgMIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOUm9ib3RJbnN0YW5jZXMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Sb2JvdEluc3RhbmNlIugBCg9Bc3NldERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Bc3NldFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Bc3NldERyaXZlclR5cGUSEAoIbW9kZWxfaWQYByABKAkSLQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBBc3NldERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuQXNzZXREZWZpbml0aW9uIoMCCg1Bc3NldEluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIbChNhc3NldF9kZWZpbml0aW9uX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSKwoGc3RhdHVzGAcgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAkgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI7Cg5Bc3NldEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYxLkFzc2V0SW5zdGFuY2UqzQMKCFRvb2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1RPT0xfVFlQRV9GQVNURU5JTkcQARIWChJUT09MX1RZUEVfR1JJUFBJTkcQAhIVChFUT09MX1RZUEVfQ1VUVElORxADEhcKE1RPT0xfVFlQRV9NRUFTVVJJTkcQBBIZChVUT09MX1RZUEVfUE9TSVRJT05JTkcQBRIYChRUT09MX1RZUEVfRElTUEVOU0lORxAGEhgKFFRPT0xfVFlQRV9JTlNQRUNUSU9OEAcSFAoQVE9PTF9UWVBFX1NBRkVUWRAIEhkKFVRPT0xfVFlQRV9FTEVDVFJPTklDUxAJEh8KG1RPT0xfVFlQRV9GSVhUVVJFX0FDQ0VTU09SWRAKEhUKEVRPT0xfVFlQRV9TSEFQSU5HEAsSFQoRVE9PTF9UWVBFX1RVUk5JTkcQDBIWChJUT09MX1RZUEVfU1RSSUtJTkcQDRIVChFUT09MX1RZUEVfTUFSS0lORxAOEhcKE1RPT0xfVFlQRV9GSU5JU0hJTkcQDxIWChJUT09MX1RZUEVfQUJSQVNJVkUQEBIWChJUT09MX1RZUEVfQ0xFQU5JTkcQESq4AwoIVG9vbFJvbGUSGQoVVE9PTF9ST0xFX1VOU1BFQ0lGSUVEEAASHAoYVE9PTF9ST0xFX0dSSVBfV09SS1BJRUNFEAESIAocVE9PTF9ST0xFX1BPU0lUSU9OX0NPTVBPTkVOVBACEh0KGVRPT0xfUk9MRV9BTElHTl9DT01QT05FTlQQAxIaChZUT09MX1JPTEVfQVBQTFlfVE9SUVVFEAQSIAocVE9PTF9ST0xFX0FQUExZX0xJTkVBUl9GT1JDRRAFEh8KG1RPT0xfUk9MRV9NRUFTVVJFX0RJTUVOU0lPThAGEh0KGVRPT0xfUk9MRV9ERVRFQ1RfUFJFU0VOQ0UQBxIfChtUT09MX1JPTEVfRElTUEVOU0VfTUFURVJJQUwQCBIcChhUT09MX1JPTEVfRVhFQ1VURV9NT1RJT04QCRIgChxUT09MX1JPTEVfU0FGRVRZX0lOVEVSQUNUSU9OEAoSGAoUVE9PTF9ST0xFX0hBTkRMRV9FU0QQCxIfChtUT09MX1JPTEVfVklTVUFMX0lOU1BFQ1RJT04QDBIYChRUT09MX1JPTEVfV0lQRV9DTEVBThANKu8BCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNVTEFURUQQAxIkCiBUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkVfU0FGRRAEEhwKGFRPT0xfUFJPUEVSVFlfQ0FMSUJSQVRFRBAFEh4KGlRPT0xfUFJPUEVSVFlfUVVJQ0tfQ0hBTkdFEAYqiQEKC0ZpeHR1cmVUeXBlEhwKGEZJWFRVUkVfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUZJWFRVUkVfVFlQRV9CQVNFEAESFgoSRklYVFVSRV9UWVBFX0NMQU1QEAISFAoQRklYVFVSRV9UWVBFX0pJRxADEhcKE0ZJWFRVUkVfVFlQRV9QQUxMRVQQBCqBAQoJUm9ib3RUeXBlEhoKFlJPQk9UX1RZUEVfVU5TUEVDSUZJRUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9ST0JPVF9UWVBFX1VSNUUQCxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9CT1RfVFlQRV9LVUtBX0lJV0EQFCptCg9Sb2JvdERyaXZlclR5cGUSIQodUk9CT1RfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIYChRST0JPVF9EUklWRVJfVFlQRV9VUhABEh0KGVJPQk9UX0RSSVZFUl9UWVBFX0dFTkVSSUMQAiqYAQoJQXNzZXRUeXBlEhoKFkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NFVF9UWVBFX0NBTUVSQRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NFVF9UWVBFX0NPTlZFWU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5BU1NFVF9UWVBFX0hNSRAFKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAUK0AQoPY29tLmFzc2VtYmx5LnYxQg5SZXNvdXJjZXNQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z", [file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message assembly.v1.CapabilityProfile
@@ -90,14 +90,14 @@ export type ToolDefinition = Message<"assembly.v1.ToolDefinition"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
-   */
-  description: string;
-
-  /**
-   * @generated from field: string icon = 4;
+   * @generated from field: string icon = 3;
    */
   icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
 
   /**
    * @generated from field: assembly.v1.ToolType type = 5;
@@ -174,42 +174,57 @@ export type ToolInstance = Message<"assembly.v1.ToolInstance"> & {
   id: string;
 
   /**
-   * @generated from field: string tool_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: string tool_definition_id = 5;
    */
   toolDefinitionId: string;
 
   /**
-   * @generated from field: string serial_number = 3;
+   * @generated from field: string serial_number = 6;
    */
   serialNumber: string;
 
   /**
-   * @generated from field: string station_id = 4;
+   * @generated from field: string station_id = 7;
    */
   stationId: string;
 
   /**
-   * @generated from field: assembly.v1.ResourceStatus status = 5;
+   * @generated from field: assembly.v1.ResourceStatus status = 8;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: bool calibrated = 6;
+   * @generated from field: bool calibrated = 9;
    */
   calibrated: boolean;
 
   /**
-   * @generated from field: google.protobuf.Timestamp calibration_valid_until = 7;
+   * @generated from field: google.protobuf.Timestamp calibration_valid_until = 10;
    */
   calibrationValidUntil?: Timestamp;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 8;
+   * @generated from field: geometry.v1.LocalizedPose pose = 11;
    */
   pose?: LocalizedPose;
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 9;
+   * @generated from field: assembly.v1.CustomProperties custom = 12;
    */
   custom?: CustomProperties;
 };
@@ -253,14 +268,14 @@ export type FixtureDefinition = Message<"assembly.v1.FixtureDefinition"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
-   */
-  description: string;
-
-  /**
-   * @generated from field: string icon = 4;
+   * @generated from field: string icon = 3;
    */
   icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
 
   /**
    * @generated from field: assembly.v1.FixtureType type = 5;
@@ -331,27 +346,42 @@ export type FixtureInstance = Message<"assembly.v1.FixtureInstance"> & {
   id: string;
 
   /**
-   * @generated from field: string fixture_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: string fixture_definition_id = 5;
    */
   fixtureDefinitionId: string;
 
   /**
-   * @generated from field: string station_id = 3;
+   * @generated from field: string station_id = 6;
    */
   stationId: string;
 
   /**
-   * @generated from field: assembly.v1.ResourceStatus status = 4;
+   * @generated from field: assembly.v1.ResourceStatus status = 7;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 5;
+   * @generated from field: geometry.v1.LocalizedPose pose = 8;
    */
   pose?: LocalizedPose;
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 6;
+   * @generated from field: assembly.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;
 };
@@ -395,14 +425,14 @@ export type RobotDefinition = Message<"assembly.v1.RobotDefinition"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
-   */
-  description: string;
-
-  /**
-   * @generated from field: string icon = 4;
+   * @generated from field: string icon = 3;
    */
   icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
 
   /**
    * @generated from field: assembly.v1.RobotType type = 5;
@@ -486,48 +516,63 @@ export type RobotInstance = Message<"assembly.v1.RobotInstance"> & {
   id: string;
 
   /**
-   * @generated from field: string robot_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: string robot_definition_id = 5;
    */
   robotDefinitionId: string;
 
   /**
-   * @generated from field: string station_id = 3;
+   * @generated from field: string station_id = 6;
    */
   stationId: string;
 
   /**
    * what is attached right now
    *
-   * @generated from field: string mounted_tool_instance_id = 4;
+   * @generated from field: string mounted_tool_instance_id = 7;
    */
   mountedToolInstanceId: string;
 
   /**
    * what is in the cell/magazine/dock and usable
    *
-   * @generated from field: repeated string available_tool_instance_ids = 5;
+   * @generated from field: repeated string available_tool_instance_ids = 8;
    */
   availableToolInstanceIds: string[];
 
   /**
    * whether dynamic switching is allowed
    *
-   * @generated from field: bool supports_tool_change = 6;
+   * @generated from field: bool supports_tool_change = 9;
    */
   supportsToolChange: boolean;
 
   /**
-   * @generated from field: assembly.v1.ResourceStatus status = 7;
+   * @generated from field: assembly.v1.ResourceStatus status = 10;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose base_pose = 8;
+   * @generated from field: geometry.v1.LocalizedPose base_pose = 11;
    */
   basePose?: LocalizedPose;
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 9;
+   * @generated from field: assembly.v1.CustomProperties custom = 12;
    */
   custom?: CustomProperties;
 };
@@ -571,14 +616,14 @@ export type AssetDefinition = Message<"assembly.v1.AssetDefinition"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
-   */
-  description: string;
-
-  /**
-   * @generated from field: string icon = 4;
+   * @generated from field: string icon = 3;
    */
   icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
 
   /**
    * @generated from field: assembly.v1.AssetType type = 5;
@@ -635,27 +680,42 @@ export type AssetInstance = Message<"assembly.v1.AssetInstance"> & {
   id: string;
 
   /**
-   * @generated from field: string asset_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: string asset_definition_id = 5;
    */
   assetDefinitionId: string;
 
   /**
-   * @generated from field: string station_id = 3;
+   * @generated from field: string station_id = 6;
    */
   stationId: string;
 
   /**
-   * @generated from field: assembly.v1.ResourceStatus status = 4;
+   * @generated from field: assembly.v1.ResourceStatus status = 7;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 5;
+   * @generated from field: geometry.v1.LocalizedPose pose = 8;
    */
   pose?: LocalizedPose;
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 6;
+   * @generated from field: assembly.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;
 };

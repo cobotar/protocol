@@ -3329,8 +3329,8 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
 | name | [string](#string) |  | Name of this assembly node |
+| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
 | kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
 | part_definition_id | [string](#string) |  |  |
 | override_model_id | [string](#string) |  |  |
@@ -3403,8 +3403,8 @@ name: TPU, grade: 70 Shore A
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [PartType](#assembly-v1-PartType) |  |  |
 | weight_g | [int64](#int64) |  |  |
 | dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
@@ -3465,8 +3465,8 @@ name: TPU, grade: 70 Shore A
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | root_node_id | [string](#string) |  |  |
 | nodes | [AssemblyNode](#assembly-v1-AssemblyNode) | repeated |  |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
@@ -3589,8 +3589,8 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [AssetType](#assembly-v1-AssetType) |  |  |
 | driver_type | [AssetDriverType](#assembly-v1-AssetDriverType) |  |  |
 | model_id | [string](#string) |  |  |
@@ -3625,6 +3625,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | asset_definition_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
@@ -3684,8 +3687,8 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [FixtureType](#assembly-v1-FixtureType) |  |  |
 | supported_product_definition_ids | [string](#string) | repeated | This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B |
 | supported_root_part_definition_ids | [string](#string) | repeated | This fixture support products whose root assembly is one of these root parts |
@@ -3722,6 +3725,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | fixture_definition_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
@@ -3758,8 +3764,8 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [RobotType](#assembly-v1-RobotType) |  |  |
 | driver_type | [RobotDriverType](#assembly-v1-RobotDriverType) |  |  |
 | model_id | [string](#string) |  |  |
@@ -3799,6 +3805,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | robot_definition_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | mounted_tool_instance_id | [string](#string) |  | what is attached right now |
@@ -3838,8 +3847,8 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [ToolType](#assembly-v1-ToolType) |  |  |
 | actor_kind | [ActorKind](#assembly-v1-ActorKind) |  |  |
 | roles | [ToolRole](#assembly-v1-ToolRole) | repeated |  |
@@ -3878,6 +3887,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | tool_definition_id | [string](#string) |  |  |
 | serial_number | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
@@ -4258,8 +4270,8 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | type | [ProcessType](#assembly-v1-ProcessType) |  |  |
 | product_definition_id | [string](#string) |  |  |
 | applicability | [RecipeApplicability](#assembly-v1-RecipeApplicability) |  |  |
@@ -4301,8 +4313,8 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | sequence_number | [int32](#int32) |  |  |
 | parent_sequence_id | [string](#string) |  |  |
 | operator | [SequenceOperator](#assembly-v1-SequenceOperator) |  |  |
@@ -4328,8 +4340,8 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | instruction_text | [string](#string) |  |  |
 | sequence_number | [int32](#int32) |  |  |
 | task_type | [TaskType](#assembly-v1-TaskType) |  |  |
@@ -4742,7 +4754,7 @@ Thus the following must be evaluated:
 | fixture_instance_ids | [string](#string) | repeated |  |
 | robot_instance_ids | [string](#string) | repeated |  |
 | asset_instance_ids | [string](#string) | repeated |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | TODO: add makers here? |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
 
@@ -4880,12 +4892,12 @@ Thus the following must be evaluated:
 <a name="common-v1-GetByFieldMessage"></a>
 
 ### GetByFieldMessage
-
+Used to retrieve entities which have a field with the given value. The actual field is determined by the subject, e.g. robot.field.driver
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| field | [string](#string) |  |  |
+| value | [string](#string) |  |  |
 
 
 

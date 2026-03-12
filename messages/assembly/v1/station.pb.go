@@ -32,10 +32,11 @@ type StationDefinition struct {
 	FixtureInstanceIds []string               `protobuf:"bytes,6,rep,name=fixture_instance_ids,json=fixtureInstanceIds,proto3" json:"fixture_instance_ids,omitempty"`
 	RobotInstanceIds   []string               `protobuf:"bytes,7,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`
 	AssetInstanceIds   []string               `protobuf:"bytes,8,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`
-	Frame              *v1.LocalizedPose      `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
-	Custom             *CustomProperties      `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// TODO: add makers here?
+	Frame         *v1.LocalizedPose `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
+	Custom        *CustomProperties `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *StationDefinition) Reset() {

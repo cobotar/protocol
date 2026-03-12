@@ -61,6 +61,8 @@ export type StationDefinition = Message<"assembly.v1.StationDefinition"> & {
   assetInstanceIds: string[];
 
   /**
+   * TODO: add makers here?
+   *
    * @generated from field: geometry.v1.LocalizedPose frame = 9;
    */
   frame?: LocalizedPose;

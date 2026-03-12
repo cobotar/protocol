@@ -36,8 +36,8 @@ namespace Messages.Assembly.V1 {
             "EikKEW1heF9ncmlwX3dpZHRoX21tGAggASgBUg5tYXhHcmlwV2lkdGhNbRJB",
             "Cgtjb25zdHJhaW50cxgJIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29u",
             "c3RyYWludFILY29uc3RyYWludHMipgQKDlRvb2xEZWZpbml0aW9uEg4KAmlk",
-            "GAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
-            "GAMgASgJUgtkZXNjcmlwdGlvbhISCgRpY29uGAQgASgJUgRpY29uEikKBHR5",
+            "GAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlS",
+            "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKBHR5",
             "cGUYBSABKA4yFS5hc3NlbWJseS52MS5Ub29sVHlwZVIEdHlwZRI1CgphY3Rv",
             "cl9raW5kGAYgASgOMhYuYXNzZW1ibHkudjEuQWN0b3JLaW5kUglhY3Rvcktp",
             "bmQSKwoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZVIFcm9s",
@@ -49,141 +49,148 @@ namespace Messages.Assembly.V1 {
             "bmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGAwgASgLMh0uYXNz",
             "ZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkQKD1Rvb2xEZWZp",
             "bml0aW9ucxIxCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZp",
-            "bml0aW9uUgVpdGVtcyKgAwoMVG9vbEluc3RhbmNlEg4KAmlkGAEgASgJUgJp",
-            "ZBIsChJ0b29sX2RlZmluaXRpb25faWQYAiABKAlSEHRvb2xEZWZpbml0aW9u",
-            "SWQSIwoNc2VyaWFsX251bWJlchgDIAEoCVIMc2VyaWFsTnVtYmVyEh0KCnN0",
-            "YXRpb25faWQYBCABKAlSCXN0YXRpb25JZBIzCgZzdGF0dXMYBSABKA4yGy5h",
-            "c3NlbWJseS52MS5SZXNvdXJjZVN0YXR1c1IGc3RhdHVzEh4KCmNhbGlicmF0",
-            "ZWQYBiABKAhSCmNhbGlicmF0ZWQSUgoXY2FsaWJyYXRpb25fdmFsaWRfdW50",
-            "aWwYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhVjYWxpYnJh",
-            "dGlvblZhbGlkVW50aWwSLgoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxv",
-            "Y2FsaXplZFBvc2VSBHBvc2USNQoGY3VzdG9tGAkgASgLMh0uYXNzZW1ibHku",
-            "djEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkAKDVRvb2xJbnN0YW5jZXMS",
-            "LwoFaXRlbXMYASADKAsyGS5hc3NlbWJseS52MS5Ub29sSW5zdGFuY2VSBWl0",
-            "ZW1zIsUDChFGaXh0dXJlRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoE",
-            "bmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3Jp",
-            "cHRpb24SEgoEaWNvbhgEIAEoCVIEaWNvbhIsCgR0eXBlGAUgASgOMhguYXNz",
-            "ZW1ibHkudjEuRml4dHVyZVR5cGVSBHR5cGUSRwogc3VwcG9ydGVkX3Byb2R1",
-            "Y3RfZGVmaW5pdGlvbl9pZHMYBiADKAlSHXN1cHBvcnRlZFByb2R1Y3REZWZp",
-            "bml0aW9uSWRzEkoKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9p",
-            "ZHMYByADKAlSHnN1cHBvcnRlZFJvb3RQYXJ0RGVmaW5pdGlvbklkcxIZCght",
-            "b2RlbF9pZBgIIAEoCVIHbW9kZWxJZBJBCgtjb25zdHJhaW50cxgJIAMoCzIf",
-            "LmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3RyYWludFILY29uc3RyYWludHMS",
-            "NQoGY3VzdG9tGAogASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGll",
-            "c1IGY3VzdG9tIkoKEkZpeHR1cmVEZWZpbml0aW9ucxI0CgVpdGVtcxgBIAMo",
-            "CzIeLmFzc2VtYmx5LnYxLkZpeHR1cmVEZWZpbml0aW9uUgVpdGVtcyKQAgoP",
-            "Rml4dHVyZUluc3RhbmNlEg4KAmlkGAEgASgJUgJpZBIyChVmaXh0dXJlX2Rl",
-            "ZmluaXRpb25faWQYAiABKAlSE2ZpeHR1cmVEZWZpbml0aW9uSWQSHQoKc3Rh",
-            "dGlvbl9pZBgDIAEoCVIJc3RhdGlvbklkEjMKBnN0YXR1cxgEIAEoDjIbLmFz",
-            "c2VtYmx5LnYxLlJlc291cmNlU3RhdHVzUgZzdGF0dXMSLgoEcG9zZRgFIAEo",
-            "CzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBHBvc2USNQoGY3VzdG9t",
-            "GAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9t",
-            "IkYKEEZpeHR1cmVJbnN0YW5jZXMSMgoFaXRlbXMYASADKAsyHC5hc3NlbWJs",
-            "eS52MS5GaXh0dXJlSW5zdGFuY2VSBWl0ZW1zIsAECg9Sb2JvdERlZmluaXRp",
-            "b24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVz",
-            "Y3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGlj",
-            "b24SKgoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLlJvYm90VHlwZVIEdHlw",
-            "ZRI9Cgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLlJvYm90RHJp",
-            "dmVyVHlwZVIKZHJpdmVyVHlwZRIZCghtb2RlbF9pZBgHIAEoCVIHbW9kZWxJ",
-            "ZBIoChBjb3VwbGVyX21vZGVsX2lkGAggASgJUg5jb3VwbGVyTW9kZWxJZBJB",
-            "Ch1zdXBwb3J0ZWRfdG9vbF9kZWZpbml0aW9uX2lkcxgJIAMoCVIac3VwcG9y",
-            "dGVkVG9vbERlZmluaXRpb25JZHMSOwoaZGVmYXVsdF90b29sX2RlZmluaXRp",
-            "b25faWQYCiABKAlSF2RlZmF1bHRUb29sRGVmaW5pdGlvbklkEh0KCnRvb2xf",
-            "c2xvdHMYCyABKAVSCXRvb2xTbG90cxJNChJjYXBhYmlsaXR5X3Byb2ZpbGUY",
-            "DCABKAsyHi5hc3NlbWJseS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRY2FwYWJp",
-            "bGl0eVByb2ZpbGUSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3Vz",
-            "dG9tUHJvcGVydGllc1IGY3VzdG9tIkYKEFJvYm90RGVmaW5pdGlvbnMSMgoF",
-            "aXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5Sb2JvdERlZmluaXRpb25SBWl0",
-            "ZW1zIr0DCg1Sb2JvdEluc3RhbmNlEg4KAmlkGAEgASgJUgJpZBIuChNyb2Jv",
-            "dF9kZWZpbml0aW9uX2lkGAIgASgJUhFyb2JvdERlZmluaXRpb25JZBIdCgpz",
-            "dGF0aW9uX2lkGAMgASgJUglzdGF0aW9uSWQSNwoYbW91bnRlZF90b29sX2lu",
-            "c3RhbmNlX2lkGAQgASgJUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQobYXZh",
-            "aWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAUgAygJUhhhdmFpbGFibGVUb29s",
-            "SW5zdGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYBiABKAhSEnN1",
-            "cHBvcnRzVG9vbENoYW5nZRIzCgZzdGF0dXMYByABKA4yGy5hc3NlbWJseS52",
-            "MS5SZXNvdXJjZVN0YXR1c1IGc3RhdHVzEjcKCWJhc2VfcG9zZRgIIAEoCzIa",
-            "Lmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGJhc2VQb3NlEjUKBmN1c3Rv",
-            "bRgJIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3Rv",
-            "bSJCCg5Sb2JvdEluc3RhbmNlcxIwCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5",
-            "LnYxLlJvYm90SW5zdGFuY2VSBWl0ZW1zIqgCCg9Bc3NldERlZmluaXRpb24S",
-            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3Jp",
-            "cHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGljb24S",
-            "KgoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLkFzc2V0VHlwZVIEdHlwZRI9",
-            "Cgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLkFzc2V0RHJpdmVy",
-            "VHlwZVIKZHJpdmVyVHlwZRIZCghtb2RlbF9pZBgHIAEoCVIHbW9kZWxJZBI1",
-            "CgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVz",
-            "UgZjdXN0b20iRgoQQXNzZXREZWZpbml0aW9ucxIyCgVpdGVtcxgBIAMoCzIc",
-            "LmFzc2VtYmx5LnYxLkFzc2V0RGVmaW5pdGlvblIFaXRlbXMiigIKDUFzc2V0",
-            "SW5zdGFuY2USDgoCaWQYASABKAlSAmlkEi4KE2Fzc2V0X2RlZmluaXRpb25f",
-            "aWQYAiABKAlSEWFzc2V0RGVmaW5pdGlvbklkEh0KCnN0YXRpb25faWQYAyAB",
-            "KAlSCXN0YXRpb25JZBIzCgZzdGF0dXMYBCABKA4yGy5hc3NlbWJseS52MS5S",
-            "ZXNvdXJjZVN0YXR1c1IGc3RhdHVzEi4KBHBvc2UYBSABKAsyGi5nZW9tZXRy",
-            "eS52MS5Mb2NhbGl6ZWRQb3NlUgRwb3NlEjUKBmN1c3RvbRgGIAEoCzIdLmFz",
-            "c2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJCCg5Bc3NldElu",
-            "c3RhbmNlcxIwCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYxLkFzc2V0SW5z",
-            "dGFuY2VSBWl0ZW1zKs0DCghUb29sVHlwZRIZChVUT09MX1RZUEVfVU5TUEVD",
-            "SUZJRUQQABIXChNUT09MX1RZUEVfRkFTVEVOSU5HEAESFgoSVE9PTF9UWVBF",
-            "X0dSSVBQSU5HEAISFQoRVE9PTF9UWVBFX0NVVFRJTkcQAxIXChNUT09MX1RZ",
-            "UEVfTUVBU1VSSU5HEAQSGQoVVE9PTF9UWVBFX1BPU0lUSU9OSU5HEAUSGAoU",
-            "VE9PTF9UWVBFX0RJU1BFTlNJTkcQBhIYChRUT09MX1RZUEVfSU5TUEVDVElP",
-            "ThAHEhQKEFRPT0xfVFlQRV9TQUZFVFkQCBIZChVUT09MX1RZUEVfRUxFQ1RS",
-            "T05JQ1MQCRIfChtUT09MX1RZUEVfRklYVFVSRV9BQ0NFU1NPUlkQChIVChFU",
-            "T09MX1RZUEVfU0hBUElORxALEhUKEVRPT0xfVFlQRV9UVVJOSU5HEAwSFgoS",
-            "VE9PTF9UWVBFX1NUUklLSU5HEA0SFQoRVE9PTF9UWVBFX01BUktJTkcQDhIX",
-            "ChNUT09MX1RZUEVfRklOSVNISU5HEA8SFgoSVE9PTF9UWVBFX0FCUkFTSVZF",
-            "EBASFgoSVE9PTF9UWVBFX0NMRUFOSU5HEBEquAMKCFRvb2xSb2xlEhkKFVRP",
-            "T0xfUk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQ",
-            "SUVDRRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlU",
-            "T09MX1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZ",
-            "X1RPUlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIf",
-            "ChtUT09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVf",
-            "REVURUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVS",
-            "SUFMEAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9S",
-            "T0xFX1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVf",
-            "RVNEEAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwSGAoUVE9P",
-            "TF9ST0xFX1dJUEVfQ0xFQU4QDSrvAQoMVG9vbFByb3BlcnR5Eh0KGVRPT0xf",
-            "UFJPUEVSVFlfVU5TUEVDSUZJRUQQABIjCh9UT09MX1BST1BFUlRZX1RPUlFV",
-            "RV9DT05UUk9MTEVEEAESGgoWVE9PTF9QUk9QRVJUWV9FU0RfU0FGRRACEhsK",
-            "F1RPT0xfUFJPUEVSVFlfSU5TVUxBVEVEEAMSJAogVE9PTF9QUk9QRVJUWV9D",
-            "T0xMQUJPUkFUSVZFX1NBRkUQBBIcChhUT09MX1BST1BFUlRZX0NBTElCUkFU",
-            "RUQQBRIeChpUT09MX1BST1BFUlRZX1FVSUNLX0NIQU5HRRAGKokBCgtGaXh0",
-            "dXJlVHlwZRIcChhGSVhUVVJFX1RZUEVfVU5TUEVDSUZJRUQQABIVChFGSVhU",
-            "VVJFX1RZUEVfQkFTRRABEhYKEkZJWFRVUkVfVFlQRV9DTEFNUBACEhQKEEZJ",
-            "WFRVUkVfVFlQRV9KSUcQAxIXChNGSVhUVVJFX1RZUEVfUEFMTEVUEAQqgQEK",
-            "CVJvYm90VHlwZRIaChZST0JPVF9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPUk9C",
-            "T1RfVFlQRV9VUjNFEAoSEwoPUk9CT1RfVFlQRV9VUjVFEAsSFAoQUk9CT1Rf",
-            "VFlQRV9VUjEwRRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqbQoPUm9i",
-            "b3REcml2ZXJUeXBlEiEKHVJPQk9UX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVE",
-            "EAASGAoUUk9CT1RfRFJJVkVSX1RZUEVfVVIQARIdChlST0JPVF9EUklWRVJf",
-            "VFlQRV9HRU5FUklDEAIqmAEKCUFzc2V0VHlwZRIaChZBU1NFVF9UWVBFX1VO",
-            "U1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQRV9DQU1FUkEQARIUChBBU1NFVF9U",
-            "WVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQRV9DT05WRVlPUhADEhUKEUFTU0VU",
-            "X1RZUEVfU0VOU09SEAQSEgoOQVNTRVRfVFlQRV9ITUkQBSpTCg9Bc3NldERy",
-            "aXZlclR5cGUSIQodQVNTRVRfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABId",
-            "ChlBU1NFVF9EUklWRVJfVFlQRV9ERUZBVUxUEAFCtAEKD2NvbS5hc3NlbWJs",
-            "eS52MUIOUmVzb3VyY2VzUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiq",
-            "AhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1i",
-            "bHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw=="));
+            "bml0aW9uUgVpdGVtcyLqAwoMVG9vbEluc3RhbmNlEg4KAmlkGAEgASgJUgJp",
+            "ZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
+            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiwKEnRvb2xfZGVmaW5p",
+            "dGlvbl9pZBgFIAEoCVIQdG9vbERlZmluaXRpb25JZBIjCg1zZXJpYWxfbnVt",
+            "YmVyGAYgASgJUgxzZXJpYWxOdW1iZXISHQoKc3RhdGlvbl9pZBgHIAEoCVIJ",
+            "c3RhdGlvbklkEjMKBnN0YXR1cxgIIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291",
+            "cmNlU3RhdHVzUgZzdGF0dXMSHgoKY2FsaWJyYXRlZBgJIAEoCFIKY2FsaWJy",
+            "YXRlZBJSChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgKIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBSFWNhbGlicmF0aW9uVmFsaWRVbnRpbBIu",
+            "CgRwb3NlGAsgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIEcG9z",
+            "ZRI1CgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0",
+            "aWVzUgZjdXN0b20iQAoNVG9vbEluc3RhbmNlcxIvCgVpdGVtcxgBIAMoCzIZ",
+            "LmFzc2VtYmx5LnYxLlRvb2xJbnN0YW5jZVIFaXRlbXMixQMKEUZpeHR1cmVE",
+            "ZWZpbml0aW9uEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l",
+            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
+            "c2NyaXB0aW9uEiwKBHR5cGUYBSABKA4yGC5hc3NlbWJseS52MS5GaXh0dXJl",
+            "VHlwZVIEdHlwZRJHCiBzdXBwb3J0ZWRfcHJvZHVjdF9kZWZpbml0aW9uX2lk",
+            "cxgGIAMoCVIdc3VwcG9ydGVkUHJvZHVjdERlZmluaXRpb25JZHMSSgoic3Vw",
+            "cG9ydGVkX3Jvb3RfcGFydF9kZWZpbml0aW9uX2lkcxgHIAMoCVIec3VwcG9y",
+            "dGVkUm9vdFBhcnREZWZpbml0aW9uSWRzEhkKCG1vZGVsX2lkGAggASgJUgdt",
+            "b2RlbElkEkEKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5",
+            "VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50cxI1CgZjdXN0b20YCiABKAsy",
+            "HS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iSgoSRml4",
+            "dHVyZURlZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEu",
+            "Rml4dHVyZURlZmluaXRpb25SBWl0ZW1zItoCCg9GaXh0dXJlSW5zdGFuY2US",
+            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
+            "MgoVZml4dHVyZV9kZWZpbml0aW9uX2lkGAUgASgJUhNmaXh0dXJlRGVmaW5p",
+            "dGlvbklkEh0KCnN0YXRpb25faWQYBiABKAlSCXN0YXRpb25JZBIzCgZzdGF0",
+            "dXMYByABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1c1IGc3RhdHVz",
+            "Ei4KBHBvc2UYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgRw",
+            "b3NlEjUKBmN1c3RvbRgJIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3Bl",
+            "cnRpZXNSBmN1c3RvbSJGChBGaXh0dXJlSW5zdGFuY2VzEjIKBWl0ZW1zGAEg",
+            "AygLMhwuYXNzZW1ibHkudjEuRml4dHVyZUluc3RhbmNlUgVpdGVtcyLABAoP",
+            "Um9ib3REZWZpbml0aW9uEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJ",
+            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
+            "KAlSC2Rlc2NyaXB0aW9uEioKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5S",
+            "b2JvdFR5cGVSBHR5cGUSPQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJs",
+            "eS52MS5Sb2JvdERyaXZlclR5cGVSCmRyaXZlclR5cGUSGQoIbW9kZWxfaWQY",
+            "ByABKAlSB21vZGVsSWQSKAoQY291cGxlcl9tb2RlbF9pZBgIIAEoCVIOY291",
+            "cGxlck1vZGVsSWQSQQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlvbl9pZHMY",
+            "CSADKAlSGnN1cHBvcnRlZFRvb2xEZWZpbml0aW9uSWRzEjsKGmRlZmF1bHRf",
+            "dG9vbF9kZWZpbml0aW9uX2lkGAogASgJUhdkZWZhdWx0VG9vbERlZmluaXRp",
+            "b25JZBIdCgp0b29sX3Nsb3RzGAsgASgFUgl0b29sU2xvdHMSTQoSY2FwYWJp",
+            "bGl0eV9wcm9maWxlGAwgASgLMh4uYXNzZW1ibHkudjEuQ2FwYWJpbGl0eVBy",
+            "b2ZpbGVSEWNhcGFiaWxpdHlQcm9maWxlEjUKBmN1c3RvbRgNIAEoCzIdLmFz",
+            "c2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJGChBSb2JvdERl",
+            "ZmluaXRpb25zEjIKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuUm9ib3RE",
+            "ZWZpbml0aW9uUgVpdGVtcyKHBAoNUm9ib3RJbnN0YW5jZRIOCgJpZBgBIAEo",
+            "CVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
+            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIuChNyb2JvdF9k",
+            "ZWZpbml0aW9uX2lkGAUgASgJUhFyb2JvdERlZmluaXRpb25JZBIdCgpzdGF0",
+            "aW9uX2lkGAYgASgJUglzdGF0aW9uSWQSNwoYbW91bnRlZF90b29sX2luc3Rh",
+            "bmNlX2lkGAcgASgJUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQobYXZhaWxh",
+            "YmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAggAygJUhhhdmFpbGFibGVUb29sSW5z",
+            "dGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYCSABKAhSEnN1cHBv",
+            "cnRzVG9vbENoYW5nZRIzCgZzdGF0dXMYCiABKA4yGy5hc3NlbWJseS52MS5S",
+            "ZXNvdXJjZVN0YXR1c1IGc3RhdHVzEjcKCWJhc2VfcG9zZRgLIAEoCzIaLmdl",
+            "b21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGJhc2VQb3NlEjUKBmN1c3RvbRgM",
+            "IAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJC",
+            "Cg5Sb2JvdEluc3RhbmNlcxIwCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYx",
+            "LlJvYm90SW5zdGFuY2VSBWl0ZW1zIqgCCg9Bc3NldERlZmluaXRpb24SDgoC",
+            "aWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SKgoE",
+            "dHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLkFzc2V0VHlwZVIEdHlwZRI9Cgtk",
+            "cml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLkFzc2V0RHJpdmVyVHlw",
+            "ZVIKZHJpdmVyVHlwZRIZCghtb2RlbF9pZBgHIAEoCVIHbW9kZWxJZBI1CgZj",
+            "dXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZj",
+            "dXN0b20iRgoQQXNzZXREZWZpbml0aW9ucxIyCgVpdGVtcxgBIAMoCzIcLmFz",
+            "c2VtYmx5LnYxLkFzc2V0RGVmaW5pdGlvblIFaXRlbXMi1AIKDUFzc2V0SW5z",
+            "dGFuY2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
+            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
+            "cHRpb24SLgoTYXNzZXRfZGVmaW5pdGlvbl9pZBgFIAEoCVIRYXNzZXREZWZp",
+            "bml0aW9uSWQSHQoKc3RhdGlvbl9pZBgGIAEoCVIJc3RhdGlvbklkEjMKBnN0",
+            "YXR1cxgHIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291cmNlU3RhdHVzUgZzdGF0",
+            "dXMSLgoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VS",
+            "BHBvc2USNQoGY3VzdG9tGAkgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJv",
+            "cGVydGllc1IGY3VzdG9tIkIKDkFzc2V0SW5zdGFuY2VzEjAKBWl0ZW1zGAEg",
+            "AygLMhouYXNzZW1ibHkudjEuQXNzZXRJbnN0YW5jZVIFaXRlbXMqzQMKCFRv",
+            "b2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1RPT0xfVFlQ",
+            "RV9GQVNURU5JTkcQARIWChJUT09MX1RZUEVfR1JJUFBJTkcQAhIVChFUT09M",
+            "X1RZUEVfQ1VUVElORxADEhcKE1RPT0xfVFlQRV9NRUFTVVJJTkcQBBIZChVU",
+            "T09MX1RZUEVfUE9TSVRJT05JTkcQBRIYChRUT09MX1RZUEVfRElTUEVOU0lO",
+            "RxAGEhgKFFRPT0xfVFlQRV9JTlNQRUNUSU9OEAcSFAoQVE9PTF9UWVBFX1NB",
+            "RkVUWRAIEhkKFVRPT0xfVFlQRV9FTEVDVFJPTklDUxAJEh8KG1RPT0xfVFlQ",
+            "RV9GSVhUVVJFX0FDQ0VTU09SWRAKEhUKEVRPT0xfVFlQRV9TSEFQSU5HEAsS",
+            "FQoRVE9PTF9UWVBFX1RVUk5JTkcQDBIWChJUT09MX1RZUEVfU1RSSUtJTkcQ",
+            "DRIVChFUT09MX1RZUEVfTUFSS0lORxAOEhcKE1RPT0xfVFlQRV9GSU5JU0hJ",
+            "TkcQDxIWChJUT09MX1RZUEVfQUJSQVNJVkUQEBIWChJUT09MX1RZUEVfQ0xF",
+            "QU5JTkcQESq4AwoIVG9vbFJvbGUSGQoVVE9PTF9ST0xFX1VOU1BFQ0lGSUVE",
+            "EAASHAoYVE9PTF9ST0xFX0dSSVBfV09SS1BJRUNFEAESIAocVE9PTF9ST0xF",
+            "X1BPU0lUSU9OX0NPTVBPTkVOVBACEh0KGVRPT0xfUk9MRV9BTElHTl9DT01Q",
+            "T05FTlQQAxIaChZUT09MX1JPTEVfQVBQTFlfVE9SUVVFEAQSIAocVE9PTF9S",
+            "T0xFX0FQUExZX0xJTkVBUl9GT1JDRRAFEh8KG1RPT0xfUk9MRV9NRUFTVVJF",
+            "X0RJTUVOU0lPThAGEh0KGVRPT0xfUk9MRV9ERVRFQ1RfUFJFU0VOQ0UQBxIf",
+            "ChtUT09MX1JPTEVfRElTUEVOU0VfTUFURVJJQUwQCBIcChhUT09MX1JPTEVf",
+            "RVhFQ1VURV9NT1RJT04QCRIgChxUT09MX1JPTEVfU0FGRVRZX0lOVEVSQUNU",
+            "SU9OEAoSGAoUVE9PTF9ST0xFX0hBTkRMRV9FU0QQCxIfChtUT09MX1JPTEVf",
+            "VklTVUFMX0lOU1BFQ1RJT04QDBIYChRUT09MX1JPTEVfV0lQRV9DTEVBThAN",
+            "Ku8BCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklF",
+            "RBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZU",
+            "T09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNV",
+            "TEFURUQQAxIkCiBUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkVfU0FGRRAE",
+            "EhwKGFRPT0xfUFJPUEVSVFlfQ0FMSUJSQVRFRBAFEh4KGlRPT0xfUFJPUEVS",
+            "VFlfUVVJQ0tfQ0hBTkdFEAYqiQEKC0ZpeHR1cmVUeXBlEhwKGEZJWFRVUkVf",
+            "VFlQRV9VTlNQRUNJRklFRBAAEhUKEUZJWFRVUkVfVFlQRV9CQVNFEAESFgoS",
+            "RklYVFVSRV9UWVBFX0NMQU1QEAISFAoQRklYVFVSRV9UWVBFX0pJRxADEhcK",
+            "E0ZJWFRVUkVfVFlQRV9QQUxMRVQQBCqBAQoJUm9ib3RUeXBlEhoKFlJPQk9U",
+            "X1RZUEVfVU5TUEVDSUZJRUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9S",
+            "T0JPVF9UWVBFX1VSNUUQCxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9C",
+            "T1RfVFlQRV9LVUtBX0lJV0EQFCptCg9Sb2JvdERyaXZlclR5cGUSIQodUk9C",
+            "T1RfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIYChRST0JPVF9EUklWRVJf",
+            "VFlQRV9VUhABEh0KGVJPQk9UX0RSSVZFUl9UWVBFX0dFTkVSSUMQAiqYAQoJ",
+            "QXNzZXRUeXBlEhoKFkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NF",
+            "VF9UWVBFX0NBTUVSQRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NF",
+            "VF9UWVBFX0NPTlZFWU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5B",
+            "U1NFVF9UWVBFX0hNSRAFKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9E",
+            "UklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBF",
+            "X0RFRkFVTFQQAUK0AQoPY29tLmFzc2VtYmx5LnYxQg5SZXNvdXJjZXNQcm90",
+            "b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNz",
+            "ZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5",
+            "LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoC",
+            "DEFzc2VtYmx5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ToolType), typeof(global::Messages.Assembly.V1.ToolRole), typeof(global::Messages.Assembly.V1.ToolProperty), typeof(global::Messages.Assembly.V1.FixtureType), typeof(global::Messages.Assembly.V1.RobotType), typeof(global::Messages.Assembly.V1.RobotDriverType), typeof(global::Messages.Assembly.V1.AssetType), typeof(global::Messages.Assembly.V1.AssetDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.CapabilityProfile), global::Messages.Assembly.V1.CapabilityProfile.Parser, new[]{ "MinForceN", "MaxForceN", "MinTorqueNm", "MaxTorqueNm", "RepeatabilityMm", "MaxPayloadG", "MinGripWidthMm", "MaxGripWidthMm", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolDefinition), global::Messages.Assembly.V1.ToolDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "ActorKind", "Roles", "Properties", "CapabilityProfile", "ModelId", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolDefinition), global::Messages.Assembly.V1.ToolDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ActorKind", "Roles", "Properties", "CapabilityProfile", "ModelId", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolDefinitions), global::Messages.Assembly.V1.ToolDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolInstance), global::Messages.Assembly.V1.ToolInstance.Parser, new[]{ "Id", "ToolDefinitionId", "SerialNumber", "StationId", "Status", "Calibrated", "CalibrationValidUntil", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolInstance), global::Messages.Assembly.V1.ToolInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ToolDefinitionId", "SerialNumber", "StationId", "Status", "Calibrated", "CalibrationValidUntil", "Pose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ToolInstances), global::Messages.Assembly.V1.ToolInstances.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureDefinition), global::Messages.Assembly.V1.FixtureDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "ModelId", "Constraints", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureDefinition), global::Messages.Assembly.V1.FixtureDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "ModelId", "Constraints", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureDefinitions), global::Messages.Assembly.V1.FixtureDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureInstance), global::Messages.Assembly.V1.FixtureInstance.Parser, new[]{ "Id", "FixtureDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureInstance), global::Messages.Assembly.V1.FixtureInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "FixtureDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureInstances), global::Messages.Assembly.V1.FixtureInstances.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinition), global::Messages.Assembly.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinition), global::Messages.Assembly.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinitions), global::Messages.Assembly.V1.RobotDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstance), global::Messages.Assembly.V1.RobotInstance.Parser, new[]{ "Id", "RobotDefinitionId", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "Status", "BasePose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstance), global::Messages.Assembly.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "Status", "BasePose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstances), global::Messages.Assembly.V1.RobotInstances.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetDefinition), global::Messages.Assembly.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "DriverType", "ModelId", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetDefinition), global::Messages.Assembly.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetDefinitions), global::Messages.Assembly.V1.AssetDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetInstance), global::Messages.Assembly.V1.AssetInstance.Parser, new[]{ "Id", "AssetDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetInstance), global::Messages.Assembly.V1.AssetInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "AssetDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetInstances), global::Messages.Assembly.V1.AssetInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -798,8 +805,8 @@ namespace Messages.Assembly.V1 {
     public ToolDefinition(ToolDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       actorKind_ = other.actorKind_;
       roles_ = other.roles_.Clone();
@@ -841,20 +848,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -862,6 +857,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -975,8 +982,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (ActorKind != other.ActorKind) return false;
       if(!roles_.Equals(other.roles_)) return false;
@@ -994,8 +1001,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.ToolType.Unspecified) hash ^= Type.GetHashCode();
       if (ActorKind != global::Messages.Assembly.V1.ActorKind.Unspecified) hash ^= ActorKind.GetHashCode();
       hash ^= roles_.GetHashCode();
@@ -1030,13 +1037,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.ToolType.Unspecified) {
         output.WriteRawTag(40);
@@ -1079,13 +1086,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.ToolType.Unspecified) {
         output.WriteRawTag(40);
@@ -1126,11 +1133,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.ToolType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -1168,11 +1175,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.ToolType.Unspecified) {
         Type = other.Type;
@@ -1226,11 +1233,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1301,11 +1308,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -1578,6 +1585,9 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ToolInstance(ToolInstance other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
+      description_ = other.description_;
       toolDefinitionId_ = other.toolDefinitionId_;
       serialNumber_ = other.serialNumber_;
       stationId_ = other.stationId_;
@@ -1607,8 +1617,44 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "tool_definition_id" field.</summary>
-    public const int ToolDefinitionIdFieldNumber = 2;
+    public const int ToolDefinitionIdFieldNumber = 5;
     private string toolDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1620,7 +1666,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "serial_number" field.</summary>
-    public const int SerialNumberFieldNumber = 3;
+    public const int SerialNumberFieldNumber = 6;
     private string serialNumber_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1632,7 +1678,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 4;
+    public const int StationIdFieldNumber = 7;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1644,7 +1690,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 5;
+    public const int StatusFieldNumber = 8;
     private global::Messages.Assembly.V1.ResourceStatus status_ = global::Messages.Assembly.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1656,7 +1702,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "calibrated" field.</summary>
-    public const int CalibratedFieldNumber = 6;
+    public const int CalibratedFieldNumber = 9;
     private bool calibrated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1668,7 +1714,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "calibration_valid_until" field.</summary>
-    public const int CalibrationValidUntilFieldNumber = 7;
+    public const int CalibrationValidUntilFieldNumber = 10;
     private global::Google.Protobuf.WellKnownTypes.Timestamp calibrationValidUntil_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1680,7 +1726,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 8;
+    public const int PoseFieldNumber = 11;
     private global::Messages.Common.V1.LocalizedPose pose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1692,7 +1738,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
+    public const int CustomFieldNumber = 12;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1719,6 +1765,9 @@ namespace Messages.Assembly.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (ToolDefinitionId != other.ToolDefinitionId) return false;
       if (SerialNumber != other.SerialNumber) return false;
       if (StationId != other.StationId) return false;
@@ -1735,6 +1784,9 @@ namespace Messages.Assembly.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ToolDefinitionId.Length != 0) hash ^= ToolDefinitionId.GetHashCode();
       if (SerialNumber.Length != 0) hash ^= SerialNumber.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
@@ -1765,36 +1817,48 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ToolDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (ToolDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(ToolDefinitionId);
       }
       if (SerialNumber.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteEnum((int) Status);
       }
       if (Calibrated != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(Calibrated);
       }
       if (calibrationValidUntil_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(82);
         output.WriteMessage(CalibrationValidUntil);
       }
       if (pose_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -1811,36 +1875,48 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ToolDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (ToolDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(ToolDefinitionId);
       }
       if (SerialNumber.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteEnum((int) Status);
       }
       if (Calibrated != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(Calibrated);
       }
       if (calibrationValidUntil_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(82);
         output.WriteMessage(CalibrationValidUntil);
       }
       if (pose_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -1855,6 +1931,15 @@ namespace Messages.Assembly.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (ToolDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ToolDefinitionId);
@@ -1894,6 +1979,15 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.ToolDefinitionId.Length != 0) {
         ToolDefinitionId = other.ToolDefinitionId;
@@ -1952,40 +2046,52 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            ToolDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            SerialNumber = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            StationId = input.ReadString();
+            Description = input.ReadString();
             break;
           }
-          case 40: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 42: {
+            ToolDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            Calibrated = input.ReadBool();
+          case 50: {
+            SerialNumber = input.ReadString();
             break;
           }
           case 58: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 64: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            Calibrated = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (calibrationValidUntil_ == null) {
               CalibrationValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CalibrationValidUntil);
             break;
           }
-          case 66: {
+          case 90: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 74: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -2016,40 +2122,52 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            ToolDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            SerialNumber = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            StationId = input.ReadString();
+            Description = input.ReadString();
             break;
           }
-          case 40: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 42: {
+            ToolDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            Calibrated = input.ReadBool();
+          case 50: {
+            SerialNumber = input.ReadString();
             break;
           }
           case 58: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 64: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            Calibrated = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (calibrationValidUntil_ == null) {
               CalibrationValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CalibrationValidUntil);
             break;
           }
-          case 66: {
+          case 90: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 74: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -2287,8 +2405,8 @@ namespace Messages.Assembly.V1 {
     public FixtureDefinition(FixtureDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       supportedProductDefinitionIds_ = other.supportedProductDefinitionIds_.Clone();
       supportedRootPartDefinitionIds_ = other.supportedRootPartDefinitionIds_.Clone();
@@ -2328,20 +2446,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2349,6 +2455,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2444,8 +2562,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if(!supportedProductDefinitionIds_.Equals(other.supportedProductDefinitionIds_)) return false;
       if(!supportedRootPartDefinitionIds_.Equals(other.supportedRootPartDefinitionIds_)) return false;
@@ -2461,8 +2579,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.FixtureType.Unspecified) hash ^= Type.GetHashCode();
       hash ^= supportedProductDefinitionIds_.GetHashCode();
       hash ^= supportedRootPartDefinitionIds_.GetHashCode();
@@ -2495,13 +2613,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.FixtureType.Unspecified) {
         output.WriteRawTag(40);
@@ -2536,13 +2654,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.FixtureType.Unspecified) {
         output.WriteRawTag(40);
@@ -2575,11 +2693,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.FixtureType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -2611,11 +2729,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.FixtureType.Unspecified) {
         Type = other.Type;
@@ -2660,11 +2778,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -2722,11 +2840,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -2986,6 +3104,9 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FixtureInstance(FixtureInstance other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
+      description_ = other.description_;
       fixtureDefinitionId_ = other.fixtureDefinitionId_;
       stationId_ = other.stationId_;
       status_ = other.status_;
@@ -3012,8 +3133,44 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "fixture_definition_id" field.</summary>
-    public const int FixtureDefinitionIdFieldNumber = 2;
+    public const int FixtureDefinitionIdFieldNumber = 5;
     private string fixtureDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3025,7 +3182,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 3;
+    public const int StationIdFieldNumber = 6;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3037,7 +3194,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 4;
+    public const int StatusFieldNumber = 7;
     private global::Messages.Assembly.V1.ResourceStatus status_ = global::Messages.Assembly.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3049,7 +3206,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 5;
+    public const int PoseFieldNumber = 8;
     private global::Messages.Common.V1.LocalizedPose pose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3061,7 +3218,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 6;
+    public const int CustomFieldNumber = 9;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3088,6 +3245,9 @@ namespace Messages.Assembly.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (FixtureDefinitionId != other.FixtureDefinitionId) return false;
       if (StationId != other.StationId) return false;
       if (Status != other.Status) return false;
@@ -3101,6 +3261,9 @@ namespace Messages.Assembly.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (FixtureDefinitionId.Length != 0) hash ^= FixtureDefinitionId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
@@ -3128,24 +3291,36 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (FixtureDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (FixtureDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(FixtureDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (pose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3162,24 +3337,36 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (FixtureDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (FixtureDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(FixtureDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (pose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3194,6 +3381,15 @@ namespace Messages.Assembly.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (FixtureDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FixtureDefinitionId);
@@ -3224,6 +3420,15 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.FixtureDefinitionId.Length != 0) {
         FixtureDefinitionId = other.FixtureDefinitionId;
@@ -3270,25 +3475,37 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            FixtureDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            Description = input.ReadString();
             break;
           }
           case 42: {
+            FixtureDefinitionId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -3319,25 +3536,37 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            FixtureDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            Description = input.ReadString();
             break;
           }
           case 42: {
+            FixtureDefinitionId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -3575,8 +3804,8 @@ namespace Messages.Assembly.V1 {
     public RobotDefinition(RobotDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       driverType_ = other.driverType_;
       modelId_ = other.modelId_;
@@ -3619,20 +3848,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3640,6 +3857,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -3770,8 +3999,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (DriverType != other.DriverType) return false;
       if (ModelId != other.ModelId) return false;
@@ -3790,8 +4019,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.RobotType.Unspecified) hash ^= Type.GetHashCode();
       if (DriverType != global::Messages.Assembly.V1.RobotDriverType.Unspecified) hash ^= DriverType.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
@@ -3827,13 +4056,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.RobotType.Unspecified) {
         output.WriteRawTag(40);
@@ -3886,13 +4115,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.RobotType.Unspecified) {
         output.WriteRawTag(40);
@@ -3943,11 +4172,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.RobotType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -3992,11 +4221,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.RobotType.Unspecified) {
         Type = other.Type;
@@ -4057,11 +4286,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -4134,11 +4363,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -4413,6 +4642,9 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RobotInstance(RobotInstance other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
+      description_ = other.description_;
       robotDefinitionId_ = other.robotDefinitionId_;
       stationId_ = other.stationId_;
       mountedToolInstanceId_ = other.mountedToolInstanceId_;
@@ -4442,8 +4674,44 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "robot_definition_id" field.</summary>
-    public const int RobotDefinitionIdFieldNumber = 2;
+    public const int RobotDefinitionIdFieldNumber = 5;
     private string robotDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4455,7 +4723,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 3;
+    public const int StationIdFieldNumber = 6;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4467,7 +4735,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "mounted_tool_instance_id" field.</summary>
-    public const int MountedToolInstanceIdFieldNumber = 4;
+    public const int MountedToolInstanceIdFieldNumber = 7;
     private string mountedToolInstanceId_ = "";
     /// <summary>
     /// what is attached right now
@@ -4482,9 +4750,9 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "available_tool_instance_ids" field.</summary>
-    public const int AvailableToolInstanceIdsFieldNumber = 5;
+    public const int AvailableToolInstanceIdsFieldNumber = 8;
     private static readonly pb::FieldCodec<string> _repeated_availableToolInstanceIds_codec
-        = pb::FieldCodec.ForString(42);
+        = pb::FieldCodec.ForString(66);
     private readonly pbc::RepeatedField<string> availableToolInstanceIds_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// what is in the cell/magazine/dock and usable
@@ -4496,7 +4764,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "supports_tool_change" field.</summary>
-    public const int SupportsToolChangeFieldNumber = 6;
+    public const int SupportsToolChangeFieldNumber = 9;
     private bool supportsToolChange_;
     /// <summary>
     /// whether dynamic switching is allowed
@@ -4511,7 +4779,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 7;
+    public const int StatusFieldNumber = 10;
     private global::Messages.Assembly.V1.ResourceStatus status_ = global::Messages.Assembly.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4523,7 +4791,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "base_pose" field.</summary>
-    public const int BasePoseFieldNumber = 8;
+    public const int BasePoseFieldNumber = 11;
     private global::Messages.Common.V1.LocalizedPose basePose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4535,7 +4803,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
+    public const int CustomFieldNumber = 12;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4562,6 +4830,9 @@ namespace Messages.Assembly.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (RobotDefinitionId != other.RobotDefinitionId) return false;
       if (StationId != other.StationId) return false;
       if (MountedToolInstanceId != other.MountedToolInstanceId) return false;
@@ -4578,6 +4849,9 @@ namespace Messages.Assembly.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (RobotDefinitionId.Length != 0) hash ^= RobotDefinitionId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (MountedToolInstanceId.Length != 0) hash ^= MountedToolInstanceId.GetHashCode();
@@ -4608,33 +4882,45 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (RobotDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (RobotDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(RobotDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (MountedToolInstanceId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(MountedToolInstanceId);
       }
       availableToolInstanceIds_.WriteTo(output, _repeated_availableToolInstanceIds_codec);
       if (SupportsToolChange != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(SupportsToolChange);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -4651,33 +4937,45 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (RobotDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (RobotDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(RobotDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (MountedToolInstanceId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(MountedToolInstanceId);
       }
       availableToolInstanceIds_.WriteTo(ref output, _repeated_availableToolInstanceIds_codec);
       if (SupportsToolChange != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(SupportsToolChange);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -4692,6 +4990,15 @@ namespace Messages.Assembly.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (RobotDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotDefinitionId);
@@ -4729,6 +5036,15 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.RobotDefinitionId.Length != 0) {
         RobotDefinitionId = other.RobotDefinitionId;
@@ -4782,37 +5098,49 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            RobotDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            MountedToolInstanceId = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {
-            availableToolInstanceIds_.AddEntriesFrom(input, _repeated_availableToolInstanceIds_codec);
+            RobotDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            SupportsToolChange = input.ReadBool();
+          case 50: {
+            StationId = input.ReadString();
             break;
           }
-          case 56: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 58: {
+            MountedToolInstanceId = input.ReadString();
             break;
           }
           case 66: {
+            availableToolInstanceIds_.AddEntriesFrom(input, _repeated_availableToolInstanceIds_codec);
+            break;
+          }
+          case 72: {
+            SupportsToolChange = input.ReadBool();
+            break;
+          }
+          case 80: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 90: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 74: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -4843,37 +5171,49 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            RobotDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            MountedToolInstanceId = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 42: {
-            availableToolInstanceIds_.AddEntriesFrom(ref input, _repeated_availableToolInstanceIds_codec);
+            RobotDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            SupportsToolChange = input.ReadBool();
+          case 50: {
+            StationId = input.ReadString();
             break;
           }
-          case 56: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 58: {
+            MountedToolInstanceId = input.ReadString();
             break;
           }
           case 66: {
+            availableToolInstanceIds_.AddEntriesFrom(ref input, _repeated_availableToolInstanceIds_codec);
+            break;
+          }
+          case 72: {
+            SupportsToolChange = input.ReadBool();
+            break;
+          }
+          case 80: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 90: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 74: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -5111,8 +5451,8 @@ namespace Messages.Assembly.V1 {
     public AssetDefinition(AssetDefinition other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      description_ = other.description_;
       icon_ = other.icon_;
+      description_ = other.description_;
       type_ = other.type_;
       driverType_ = other.driverType_;
       modelId_ = other.modelId_;
@@ -5150,20 +5490,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 4;
+    public const int IconFieldNumber = 3;
     private string icon_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5171,6 +5499,18 @@ namespace Messages.Assembly.V1 {
       get { return icon_; }
       set {
         icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -5239,8 +5579,8 @@ namespace Messages.Assembly.V1 {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (DriverType != other.DriverType) return false;
       if (ModelId != other.ModelId) return false;
@@ -5254,8 +5594,8 @@ namespace Messages.Assembly.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.AssetType.Unspecified) hash ^= Type.GetHashCode();
       if (DriverType != global::Messages.Assembly.V1.AssetDriverType.Unspecified) hash ^= DriverType.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
@@ -5286,13 +5626,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.AssetType.Unspecified) {
         output.WriteRawTag(40);
@@ -5328,13 +5668,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Description);
-      }
       if (Icon.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
       }
       if (Type != global::Messages.Assembly.V1.AssetType.Unspecified) {
         output.WriteRawTag(40);
@@ -5368,11 +5708,11 @@ namespace Messages.Assembly.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (Type != global::Messages.Assembly.V1.AssetType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -5404,11 +5744,11 @@ namespace Messages.Assembly.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.Type != global::Messages.Assembly.V1.AssetType.Unspecified) {
         Type = other.Type;
@@ -5453,11 +5793,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -5507,11 +5847,11 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            Icon = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 40: {
@@ -5763,6 +6103,9 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AssetInstance(AssetInstance other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
+      description_ = other.description_;
       assetDefinitionId_ = other.assetDefinitionId_;
       stationId_ = other.stationId_;
       status_ = other.status_;
@@ -5789,8 +6132,44 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "asset_definition_id" field.</summary>
-    public const int AssetDefinitionIdFieldNumber = 2;
+    public const int AssetDefinitionIdFieldNumber = 5;
     private string assetDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5802,7 +6181,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 3;
+    public const int StationIdFieldNumber = 6;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5814,7 +6193,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 4;
+    public const int StatusFieldNumber = 7;
     private global::Messages.Assembly.V1.ResourceStatus status_ = global::Messages.Assembly.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5826,7 +6205,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 5;
+    public const int PoseFieldNumber = 8;
     private global::Messages.Common.V1.LocalizedPose pose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5838,7 +6217,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 6;
+    public const int CustomFieldNumber = 9;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5865,6 +6244,9 @@ namespace Messages.Assembly.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if (AssetDefinitionId != other.AssetDefinitionId) return false;
       if (StationId != other.StationId) return false;
       if (Status != other.Status) return false;
@@ -5878,6 +6260,9 @@ namespace Messages.Assembly.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (AssetDefinitionId.Length != 0) hash ^= AssetDefinitionId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
@@ -5905,24 +6290,36 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (AssetDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (AssetDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(AssetDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (pose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -5939,24 +6336,36 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (AssetDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      if (AssetDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(AssetDefinitionId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (pose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(Pose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -5971,6 +6380,15 @@ namespace Messages.Assembly.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (AssetDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetDefinitionId);
@@ -6001,6 +6419,15 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       if (other.AssetDefinitionId.Length != 0) {
         AssetDefinitionId = other.AssetDefinitionId;
@@ -6047,25 +6474,37 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            AssetDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            Description = input.ReadString();
             break;
           }
           case 42: {
+            AssetDefinitionId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -6096,25 +6535,37 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 18: {
-            AssetDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            StationId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            Description = input.ReadString();
             break;
           }
           case 42: {
+            AssetDefinitionId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (pose_ == null) {
               Pose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }

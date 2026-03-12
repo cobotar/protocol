@@ -427,8 +427,8 @@ type PartDefinition struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type               PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.PartType" json:"type,omitempty"`
 	WeightG            int64                  `protobuf:"varint,6,opt,name=weight_g,json=weightG,proto3" json:"weight_g,omitempty"`
 	Dimensions         *Dimensions            `protobuf:"bytes,7,opt,name=dimensions,proto3" json:"dimensions,omitempty"`
@@ -485,16 +485,16 @@ func (x *PartDefinition) GetName() string {
 	return ""
 }
 
-func (x *PartDefinition) GetDescription() string {
+func (x *PartDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *PartDefinition) GetIcon() string {
+func (x *PartDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -559,8 +559,8 @@ type ProductDefinition struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	RootNodeId         string                 `protobuf:"bytes,5,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
 	Nodes              []*AssemblyNode        `protobuf:"bytes,6,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	ExternalReferences []*ExternalReference   `protobuf:"bytes,7,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
@@ -613,16 +613,16 @@ func (x *ProductDefinition) GetName() string {
 	return ""
 }
 
-func (x *ProductDefinition) GetDescription() string {
+func (x *ProductDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *ProductDefinition) GetIcon() string {
+func (x *ProductDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -710,8 +710,8 @@ func (x *VariantCondition) GetValues() []string {
 type AssemblyNode struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ParentNodeId          string                 `protobuf:"bytes,2,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"` // Empty if root, otherwise set to parent AssemblyNode id.
-	Name                  string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`                                       // Name of this assembly node
+	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                       // Name of this assembly node
+	ParentNodeId          string                 `protobuf:"bytes,3,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"` // Empty if root, otherwise set to parent AssemblyNode id.
 	Kind                  NodeKind               `protobuf:"varint,4,opt,name=kind,proto3,enum=assembly.v1.NodeKind" json:"kind,omitempty"`
 	PartDefinitionId      string                 `protobuf:"bytes,5,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"`
 	OverrideModelId       string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
@@ -766,16 +766,16 @@ func (x *AssemblyNode) GetId() string {
 	return ""
 }
 
-func (x *AssemblyNode) GetParentNodeId() string {
+func (x *AssemblyNode) GetName() string {
 	if x != nil {
-		return x.ParentNodeId
+		return x.Name
 	}
 	return ""
 }
 
-func (x *AssemblyNode) GetName() string {
+func (x *AssemblyNode) GetParentNodeId() string {
 	if x != nil {
-		return x.Name
+		return x.ParentNodeId
 	}
 	return ""
 }
@@ -982,9 +982,9 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\vconstraints\x18\a \x03(\v2\x1f.assembly.v1.KeyValueConstraintR\vconstraints\"\x90\x04\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12)\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x15.assembly.v1.PartTypeR\x04type\x12\x19\n" +
 	"\bweight_g\x18\x06 \x01(\x03R\aweightG\x127\n" +
 	"\n" +
@@ -998,9 +998,9 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xc8\x02\n" +
 	"\x11ProductDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12 \n" +
 	"\froot_node_id\x18\x05 \x01(\tR\n" +
 	"rootNodeId\x12/\n" +
 	"\x05nodes\x18\x06 \x03(\v2\x19.assembly.v1.AssemblyNodeR\x05nodes\x12O\n" +
@@ -1010,9 +1010,9 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\tdimension\x18\x01 \x01(\tR\tdimension\x12\x16\n" +
 	"\x06values\x18\x02 \x03(\tR\x06values\"\xf9\x05\n" +
 	"\fAssemblyNode\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12$\n" +
-	"\x0eparent_node_id\x18\x02 \x01(\tR\fparentNodeId\x12\x12\n" +
-	"\x04name\x18\x03 \x01(\tR\x04name\x12)\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
+	"\x0eparent_node_id\x18\x03 \x01(\tR\fparentNodeId\x12)\n" +
 	"\x04kind\x18\x04 \x01(\x0e2\x15.assembly.v1.NodeKindR\x04kind\x12,\n" +
 	"\x12part_definition_id\x18\x05 \x01(\tR\x10partDefinitionId\x12*\n" +
 	"\x11override_model_id\x18\x06 \x01(\tR\x0foverrideModelId\x120\n" +

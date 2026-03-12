@@ -20,7 +20,7 @@ class GetByIdMessage(_message.Message):
     def __init__(self, ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetByFieldMessage(_message.Message):
-    __slots__ = ("field",)
-    FIELD_FIELD_NUMBER: _ClassVar[int]
-    field: str
-    def __init__(self, field: _Optional[str] = ...) -> None: ...
+    __slots__ = ("value",)
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    value: str
+    def __init__(self, value: _Optional[str] = ...) -> None: ...

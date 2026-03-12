@@ -16,6 +16,7 @@ message StationDefinition {
   repeated string fixture_instance_ids = 6;
   repeated string robot_instance_ids = 7;
   repeated string asset_instance_ids = 8;
+  // TODO: add makers here?
   geometry.v1.LocalizedPose frame = 9;
   CustomProperties custom = 10;
 }

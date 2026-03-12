@@ -332,8 +332,8 @@ type ProcessRecipe struct {
 	state                         protoimpl.MessageState `protogen:"open.v1"`
 	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description                   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon                          string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon                          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description                   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type                          ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.ProcessType" json:"type,omitempty"`
 	ProductDefinitionId           string                 `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
 	Applicability                 *RecipeApplicability   `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
@@ -391,16 +391,16 @@ func (x *ProcessRecipe) GetName() string {
 	return ""
 }
 
-func (x *ProcessRecipe) GetDescription() string {
+func (x *ProcessRecipe) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *ProcessRecipe) GetIcon() string {
+func (x *ProcessRecipe) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -472,8 +472,8 @@ type SequenceDefinition struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description      string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon             string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	SequenceNumber   int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
 	ParentSequenceId string                 `protobuf:"bytes,6,opt,name=parent_sequence_id,json=parentSequenceId,proto3" json:"parent_sequence_id,omitempty"`
 	Operator         SequenceOperator       `protobuf:"varint,7,opt,name=operator,proto3,enum=assembly.v1.SequenceOperator" json:"operator,omitempty"`
@@ -531,16 +531,16 @@ func (x *SequenceDefinition) GetName() string {
 	return ""
 }
 
-func (x *SequenceDefinition) GetDescription() string {
+func (x *SequenceDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *SequenceDefinition) GetIcon() string {
+func (x *SequenceDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -832,8 +832,8 @@ type TaskDefinition struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon            string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	InstructionText string                 `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
 	SequenceNumber  int32                  `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
 	TaskType        TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=assembly.v1.TaskType" json:"task_type,omitempty"`
@@ -897,16 +897,16 @@ func (x *TaskDefinition) GetName() string {
 	return ""
 }
 
-func (x *TaskDefinition) GetDescription() string {
+func (x *TaskDefinition) GetIcon() string {
 	if x != nil {
-		return x.Description
+		return x.Icon
 	}
 	return ""
 }
 
-func (x *TaskDefinition) GetIcon() string {
+func (x *TaskDefinition) GetDescription() string {
 	if x != nil {
-		return x.Icon
+		return x.Description
 	}
 	return ""
 }
@@ -1012,9 +1012,9 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\bexcluded\x18\x02 \x03(\v2\x1d.assembly.v1.VariantConditionR\bexcluded\"\x80\x05\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12,\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12,\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x18.assembly.v1.ProcessTypeR\x04type\x122\n" +
 	"\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12F\n" +
 	"\rapplicability\x18\a \x01(\v2 .assembly.v1.RecipeApplicabilityR\rapplicability\x12(\n" +
@@ -1027,9 +1027,9 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x90\x04\n" +
 	"\x12SequenceDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12'\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
 	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12,\n" +
 	"\x12parent_sequence_id\x18\x06 \x01(\tR\x10parentSequenceId\x129\n" +
 	"\boperator\x18\a \x01(\x0e2\x1d.assembly.v1.SequenceOperatorR\boperator\x12,\n" +
@@ -1060,9 +1060,9 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x12estimated_duration\x18\x06 \x01(\v2\x1e.assembly.v1.EstimatedDurationR\x11estimatedDuration\"\xd5\x06\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12)\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
 	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
 	"\x0fsequence_number\x18\x06 \x01(\x05R\x0esequenceNumber\x122\n" +
 	"\ttask_type\x18\a \x01(\x0e2\x15.assembly.v1.TaskTypeR\btaskType\x12/\n" +

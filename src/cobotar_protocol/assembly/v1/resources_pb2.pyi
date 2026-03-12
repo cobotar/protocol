@@ -179,11 +179,11 @@ class CapabilityProfile(_message.Message):
     def __init__(self, min_force_n: _Optional[float] = ..., max_force_n: _Optional[float] = ..., min_torque_nm: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., repeatability_mm: _Optional[float] = ..., max_payload_g: _Optional[float] = ..., min_grip_width_mm: _Optional[float] = ..., max_grip_width_mm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class ToolDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "actor_kind", "roles", "properties", "capability_profile", "model_id", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "actor_kind", "roles", "properties", "capability_profile", "model_id", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ACTOR_KIND_FIELD_NUMBER: _ClassVar[int]
     ROLES_FIELD_NUMBER: _ClassVar[int]
@@ -194,8 +194,8 @@ class ToolDefinition(_message.Message):
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     type: ToolType
     actor_kind: _common_pb2.ActorKind
     roles: _containers.RepeatedScalarFieldContainer[ToolRole]
@@ -204,7 +204,7 @@ class ToolDefinition(_message.Message):
     model_id: str
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[ToolType, str]] = ..., actor_kind: _Optional[_Union[_common_pb2.ActorKind, str]] = ..., roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., properties: _Optional[_Iterable[_Union[ToolProperty, str]]] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., model_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ToolType, str]] = ..., actor_kind: _Optional[_Union[_common_pb2.ActorKind, str]] = ..., roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., properties: _Optional[_Iterable[_Union[ToolProperty, str]]] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., model_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class ToolDefinitions(_message.Message):
     __slots__ = ("items",)
@@ -213,8 +213,11 @@ class ToolDefinitions(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[ToolDefinition, _Mapping]]] = ...) -> None: ...
 
 class ToolInstance(_message.Message):
-    __slots__ = ("id", "tool_definition_id", "serial_number", "station_id", "status", "calibrated", "calibration_valid_until", "pose", "custom")
+    __slots__ = ("id", "name", "icon", "description", "tool_definition_id", "serial_number", "station_id", "status", "calibrated", "calibration_valid_until", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TOOL_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -224,6 +227,9 @@ class ToolInstance(_message.Message):
     POSE_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
+    name: str
+    icon: str
+    description: str
     tool_definition_id: str
     serial_number: str
     station_id: str
@@ -232,7 +238,7 @@ class ToolInstance(_message.Message):
     calibration_valid_until: _timestamp_pb2.Timestamp
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., tool_definition_id: _Optional[str] = ..., serial_number: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., calibrated: bool = ..., calibration_valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., tool_definition_id: _Optional[str] = ..., serial_number: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., calibrated: bool = ..., calibration_valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class ToolInstances(_message.Message):
     __slots__ = ("items",)
@@ -241,11 +247,11 @@ class ToolInstances(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[ToolInstance, _Mapping]]] = ...) -> None: ...
 
 class FixtureDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "model_id", "constraints", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "model_id", "constraints", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_PRODUCT_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_ROOT_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -254,15 +260,15 @@ class FixtureDefinition(_message.Message):
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     type: FixtureType
     supported_product_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     supported_root_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     model_id: str
     constraints: _containers.RepeatedCompositeFieldContainer[_common_pb2.KeyValueConstraint]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[FixtureType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., model_id: _Optional[str] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FixtureType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., model_id: _Optional[str] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class FixtureDefinitions(_message.Message):
     __slots__ = ("items",)
@@ -271,20 +277,26 @@ class FixtureDefinitions(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[FixtureDefinition, _Mapping]]] = ...) -> None: ...
 
 class FixtureInstance(_message.Message):
-    __slots__ = ("id", "fixture_definition_id", "station_id", "status", "pose", "custom")
+    __slots__ = ("id", "name", "icon", "description", "fixture_definition_id", "station_id", "status", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     FIXTURE_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSE_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
+    name: str
+    icon: str
+    description: str
     fixture_definition_id: str
     station_id: str
     status: _common_pb2.ResourceStatus
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class FixtureInstances(_message.Message):
     __slots__ = ("items",)
@@ -293,11 +305,11 @@ class FixtureInstances(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[FixtureInstance, _Mapping]]] = ...) -> None: ...
 
 class RobotDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DRIVER_TYPE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -309,8 +321,8 @@ class RobotDefinition(_message.Message):
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     type: RobotType
     driver_type: RobotDriverType
     model_id: str
@@ -320,7 +332,7 @@ class RobotDefinition(_message.Message):
     tool_slots: int
     capability_profile: CapabilityProfile
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class RobotDefinitions(_message.Message):
     __slots__ = ("items",)
@@ -329,8 +341,11 @@ class RobotDefinitions(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[RobotDefinition, _Mapping]]] = ...) -> None: ...
 
 class RobotInstance(_message.Message):
-    __slots__ = ("id", "robot_definition_id", "station_id", "mounted_tool_instance_id", "available_tool_instance_ids", "supports_tool_change", "status", "base_pose", "custom")
+    __slots__ = ("id", "name", "icon", "description", "robot_definition_id", "station_id", "mounted_tool_instance_id", "available_tool_instance_ids", "supports_tool_change", "status", "base_pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ROBOT_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     MOUNTED_TOOL_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -340,6 +355,9 @@ class RobotInstance(_message.Message):
     BASE_POSE_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
+    name: str
+    icon: str
+    description: str
     robot_definition_id: str
     station_id: str
     mounted_tool_instance_id: str
@@ -348,7 +366,7 @@ class RobotInstance(_message.Message):
     status: _common_pb2.ResourceStatus
     base_pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., robot_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., mounted_tool_instance_id: _Optional[str] = ..., available_tool_instance_ids: _Optional[_Iterable[str]] = ..., supports_tool_change: bool = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., base_pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., robot_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., mounted_tool_instance_id: _Optional[str] = ..., available_tool_instance_ids: _Optional[_Iterable[str]] = ..., supports_tool_change: bool = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., base_pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class RobotInstances(_message.Message):
     __slots__ = ("items",)
@@ -357,24 +375,24 @@ class RobotInstances(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[RobotInstance, _Mapping]]] = ...) -> None: ...
 
 class AssetDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "driver_type", "model_id", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DRIVER_TYPE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
-    description: str
     icon: str
+    description: str
     type: AssetType
     driver_type: AssetDriverType
     model_id: str
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class AssetDefinitions(_message.Message):
     __slots__ = ("items",)
@@ -383,20 +401,26 @@ class AssetDefinitions(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[AssetDefinition, _Mapping]]] = ...) -> None: ...
 
 class AssetInstance(_message.Message):
-    __slots__ = ("id", "asset_definition_id", "station_id", "status", "pose", "custom")
+    __slots__ = ("id", "name", "icon", "description", "asset_definition_id", "station_id", "status", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ASSET_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSE_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
+    name: str
+    icon: str
+    description: str
     asset_definition_id: str
     station_id: str
     status: _common_pb2.ResourceStatus
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., asset_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., asset_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class AssetInstances(_message.Message):
     __slots__ = ("items",)
