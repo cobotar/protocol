@@ -175,7 +175,7 @@ message RobotDefinition {
 }
 
 message RobotDefinitions {
-  repeated RobotDefinitions items = 1;
+  repeated RobotDefinition items = 1;
 }
 
 message RobotInstance {

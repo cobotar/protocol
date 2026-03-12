@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommon/v1/get.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"\x1c\n\nGetMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\".\n\x0eGetByIdMessage\x12\x1c\n\x03ids\x18\x01 \x03(\tB\n\xbaH\x07\x92\x01\x04\x08\x01\x18\x01R\x03idsB\xa0\x01\n\rcom.common.v1B\x08GetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommon/v1/get.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"\x1c\n\nGetMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\".\n\x0eGetByIdMessage\x12\x1c\n\x03ids\x18\x01 \x03(\tB\n\xbaH\x07\x92\x01\x04\x08\x01\x18\x01R\x03ids\")\n\x11GetByFieldMessage\x12\x14\n\x05\x66ield\x18\x01 \x01(\tR\x05\x66ieldB\xa0\x01\n\rcom.common.v1B\x08GetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,4 +39,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETMESSAGE']._serialized_end=91
   _globals['_GETBYIDMESSAGE']._serialized_start=93
   _globals['_GETBYIDMESSAGE']._serialized_end=139
+  _globals['_GETBYFIELDMESSAGE']._serialized_start=141
+  _globals['_GETBYFIELDMESSAGE']._serialized_end=182
 # @@protoc_insertion_point(module_scope)

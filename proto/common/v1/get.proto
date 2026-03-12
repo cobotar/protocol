@@ -16,3 +16,7 @@ message GetByIdMessage {
     unique: true
   }];
 }
+
+message GetByFieldMessage {
+  string field = 1;
+}

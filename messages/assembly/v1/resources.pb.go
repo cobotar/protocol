@@ -1390,7 +1390,7 @@ func (x *RobotDefinition) GetCustom() *CustomProperties {
 
 type RobotDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*RobotDefinitions    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*RobotDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1425,7 +1425,7 @@ func (*RobotDefinitions) Descriptor() ([]byte, []int) {
 	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *RobotDefinitions) GetItems() []*RobotDefinitions {
+func (x *RobotDefinitions) GetItems() []*RobotDefinition {
 	if x != nil {
 		return x.Items
 	}
@@ -1945,9 +1945,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\n" +
 	"tool_slots\x18\v \x01(\x05R\ttoolSlots\x12M\n" +
 	"\x12capability_profile\x18\f \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
-	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"G\n" +
-	"\x10RobotDefinitions\x123\n" +
-	"\x05items\x18\x01 \x03(\v2\x1d.assembly.v1.RobotDefinitionsR\x05items\"\xbd\x03\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
+	"\x10RobotDefinitions\x122\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.RobotDefinitionR\x05items\"\xbd\x03\n" +
 	"\rRobotInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
 	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
@@ -2131,7 +2131,7 @@ var file_assembly_v1_resources_proto_depIdxs = []int32{
 	5,  // 23: assembly.v1.RobotDefinition.driver_type:type_name -> assembly.v1.RobotDriverType
 	8,  // 24: assembly.v1.RobotDefinition.capability_profile:type_name -> assembly.v1.CapabilityProfile
 	28, // 25: assembly.v1.RobotDefinition.custom:type_name -> assembly.v1.CustomProperties
-	18, // 26: assembly.v1.RobotDefinitions.items:type_name -> assembly.v1.RobotDefinitions
+	17, // 26: assembly.v1.RobotDefinitions.items:type_name -> assembly.v1.RobotDefinition
 	29, // 27: assembly.v1.RobotInstance.status:type_name -> assembly.v1.ResourceStatus
 	31, // 28: assembly.v1.RobotInstance.base_pose:type_name -> geometry.v1.LocalizedPose
 	28, // 29: assembly.v1.RobotInstance.custom:type_name -> assembly.v1.CustomProperties

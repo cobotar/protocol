@@ -325,8 +325,8 @@ class RobotDefinition(_message.Message):
 class RobotDefinitions(_message.Message):
     __slots__ = ("items",)
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[RobotDefinitions]
-    def __init__(self, items: _Optional[_Iterable[_Union[RobotDefinitions, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[RobotDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[RobotDefinition, _Mapping]]] = ...) -> None: ...
 
 class RobotInstance(_message.Message):
     __slots__ = ("id", "robot_definition_id", "station_id", "mounted_tool_instance_id", "available_tool_instance_ids", "supports_tool_change", "status", "base_pose", "custom")

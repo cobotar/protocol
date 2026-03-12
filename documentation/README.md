@@ -316,6 +316,7 @@
     - [EmptyMessage](#common-v1-EmptyMessage)
   
 - [common/v1/get.proto](#common_v1_get-proto)
+    - [GetByFieldMessage](#common-v1-GetByFieldMessage)
     - [GetByIdMessage](#common-v1-GetByIdMessage)
     - [GetMessage](#common-v1-GetMessage)
   
@@ -3782,7 +3783,7 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [RobotDefinitions](#assembly-v1-RobotDefinitions) | repeated |  |
+| items | [RobotDefinition](#assembly-v1-RobotDefinition) | repeated |  |
 
 
 
@@ -4873,6 +4874,21 @@ Thus the following must be evaluated:
 <p align="right"><a href="#top">Top</a></p>
 
 ## common/v1/get.proto
+
+
+
+<a name="common-v1-GetByFieldMessage"></a>
+
+### GetByFieldMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| field | [string](#string) |  |  |
+
+
+
 
 
 

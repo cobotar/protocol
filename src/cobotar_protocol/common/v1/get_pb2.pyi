@@ -18,3 +18,9 @@ class GetByIdMessage(_message.Message):
     IDS_FIELD_NUMBER: _ClassVar[int]
     ids: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, ids: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class GetByFieldMessage(_message.Message):
+    __slots__ = ("field",)
+    FIELD_FIELD_NUMBER: _ClassVar[int]
+    field: str
+    def __init__(self, field: _Optional[str] = ...) -> None: ...
