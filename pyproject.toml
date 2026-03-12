@@ -7,7 +7,7 @@ packages = ["src/cobotar_protocol"]
 
 [project]
 name = "cobotar-protocol"
-version = "0.17.3"
+version = "0.17.4"
 dependencies = [
 
 ]
