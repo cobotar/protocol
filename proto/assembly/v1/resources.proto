@@ -43,6 +43,7 @@ enum ToolRole {
   TOOL_ROLE_SAFETY_INTERACTION = 10;
   TOOL_ROLE_HANDLE_ESD = 11;
   TOOL_ROLE_VISUAL_INSPECTION = 12;
+  TOOL_ROLE_WIPE_CLEAN = 13;
 }
 
 enum ToolProperty {
@@ -161,11 +162,16 @@ message RobotDefinition {
   string icon = 4;
   RobotType type = 5;
   RobotDriverType driver_type = 6;
-  string coupler_model_id = 7;
-  string end_effector_tool_definition_id = 8;
-  string model_id = 9;
-  CapabilityProfile capability_profile = 10;
-  CustomProperties custom = 11;
+  string model_id = 7;
+
+  // Tool mounting capability
+  string coupler_model_id = 8;
+  repeated string supported_tool_definition_ids = 9;
+  string default_tool_definition_id = 10;
+  int32 tool_slots = 11;
+
+  CapabilityProfile capability_profile = 12;
+  CustomProperties custom = 13;
 }
 
 message RobotDefinitions {
@@ -176,9 +182,12 @@ message RobotInstance {
   string id = 1;
   string robot_definition_id = 2;
   string station_id = 3;
-  ResourceStatus status = 4;
-  geometry.v1.LocalizedPose base_pose = 5;
-  CustomProperties custom = 6;
+  string mounted_tool_instance_id = 4; // what is attached right now
+  repeated string available_tool_instance_ids = 5; // what is in the cell/magazine/dock and usable
+  bool supports_tool_change = 6; // whether dynamic switching is allowed
+  ResourceStatus status = 7;
+  geometry.v1.LocalizedPose base_pose = 8;
+  CustomProperties custom = 9;
 }
 
 message RobotInstances {

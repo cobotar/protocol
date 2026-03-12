@@ -79,86 +79,92 @@ namespace Messages.Assembly.V1 {
             "CzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBHBvc2USNQoGY3VzdG9t",
             "GAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9t",
             "IkYKEEZpeHR1cmVJbnN0YW5jZXMSMgoFaXRlbXMYASADKAsyHC5hc3NlbWJs",
-            "eS52MS5GaXh0dXJlSW5zdGFuY2VSBWl0ZW1zIucDCg9Sb2JvdERlZmluaXRp",
+            "eS52MS5GaXh0dXJlSW5zdGFuY2VSBWl0ZW1zIsAECg9Sb2JvdERlZmluaXRp",
             "b24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVz",
             "Y3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGlj",
             "b24SKgoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLlJvYm90VHlwZVIEdHlw",
             "ZRI9Cgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLlJvYm90RHJp",
-            "dmVyVHlwZVIKZHJpdmVyVHlwZRIoChBjb3VwbGVyX21vZGVsX2lkGAcgASgJ",
-            "Ug5jb3VwbGVyTW9kZWxJZBJECh9lbmRfZWZmZWN0b3JfdG9vbF9kZWZpbml0",
-            "aW9uX2lkGAggASgJUhtlbmRFZmZlY3RvclRvb2xEZWZpbml0aW9uSWQSGQoI",
-            "bW9kZWxfaWQYCSABKAlSB21vZGVsSWQSTQoSY2FwYWJpbGl0eV9wcm9maWxl",
-            "GAogASgLMh4uYXNzZW1ibHkudjEuQ2FwYWJpbGl0eVByb2ZpbGVSEWNhcGFi",
-            "aWxpdHlQcm9maWxlEjUKBmN1c3RvbRgLIAEoCzIdLmFzc2VtYmx5LnYxLkN1",
-            "c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJHChBSb2JvdERlZmluaXRpb25zEjMK",
-            "BWl0ZW1zGAEgAygLMh0uYXNzZW1ibHkudjEuUm9ib3REZWZpbml0aW9uc1IF",
-            "aXRlbXMikwIKDVJvYm90SW5zdGFuY2USDgoCaWQYASABKAlSAmlkEi4KE3Jv",
-            "Ym90X2RlZmluaXRpb25faWQYAiABKAlSEXJvYm90RGVmaW5pdGlvbklkEh0K",
-            "CnN0YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBIzCgZzdGF0dXMYBCABKA4y",
-            "Gy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1c1IGc3RhdHVzEjcKCWJhc2Vf",
-            "cG9zZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSCGJhc2VQ",
-            "b3NlEjUKBmN1c3RvbRgGIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3Bl",
-            "cnRpZXNSBmN1c3RvbSJCCg5Sb2JvdEluc3RhbmNlcxIwCgVpdGVtcxgBIAMo",
-            "CzIaLmFzc2VtYmx5LnYxLlJvYm90SW5zdGFuY2VSBWl0ZW1zIqgCCg9Bc3Nl",
-            "dERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5h",
-            "bWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGljb24Y",
-            "BCABKAlSBGljb24SKgoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLkFzc2V0",
-            "VHlwZVIEdHlwZRI9Cgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYx",
-            "LkFzc2V0RHJpdmVyVHlwZVIKZHJpdmVyVHlwZRIZCghtb2RlbF9pZBgHIAEo",
-            "CVIHbW9kZWxJZBI1CgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0",
-            "b21Qcm9wZXJ0aWVzUgZjdXN0b20iRgoQQXNzZXREZWZpbml0aW9ucxIyCgVp",
-            "dGVtcxgBIAMoCzIcLmFzc2VtYmx5LnYxLkFzc2V0RGVmaW5pdGlvblIFaXRl",
-            "bXMiigIKDUFzc2V0SW5zdGFuY2USDgoCaWQYASABKAlSAmlkEi4KE2Fzc2V0",
-            "X2RlZmluaXRpb25faWQYAiABKAlSEWFzc2V0RGVmaW5pdGlvbklkEh0KCnN0",
-            "YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBIzCgZzdGF0dXMYBCABKA4yGy5h",
-            "c3NlbWJseS52MS5SZXNvdXJjZVN0YXR1c1IGc3RhdHVzEi4KBHBvc2UYBSAB",
-            "KAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgRwb3NlEjUKBmN1c3Rv",
-            "bRgGIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3Rv",
-            "bSJCCg5Bc3NldEluc3RhbmNlcxIwCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5",
-            "LnYxLkFzc2V0SW5zdGFuY2VSBWl0ZW1zKs0DCghUb29sVHlwZRIZChVUT09M",
-            "X1RZUEVfVU5TUEVDSUZJRUQQABIXChNUT09MX1RZUEVfRkFTVEVOSU5HEAES",
-            "FgoSVE9PTF9UWVBFX0dSSVBQSU5HEAISFQoRVE9PTF9UWVBFX0NVVFRJTkcQ",
-            "AxIXChNUT09MX1RZUEVfTUVBU1VSSU5HEAQSGQoVVE9PTF9UWVBFX1BPU0lU",
-            "SU9OSU5HEAUSGAoUVE9PTF9UWVBFX0RJU1BFTlNJTkcQBhIYChRUT09MX1RZ",
-            "UEVfSU5TUEVDVElPThAHEhQKEFRPT0xfVFlQRV9TQUZFVFkQCBIZChVUT09M",
-            "X1RZUEVfRUxFQ1RST05JQ1MQCRIfChtUT09MX1RZUEVfRklYVFVSRV9BQ0NF",
-            "U1NPUlkQChIVChFUT09MX1RZUEVfU0hBUElORxALEhUKEVRPT0xfVFlQRV9U",
-            "VVJOSU5HEAwSFgoSVE9PTF9UWVBFX1NUUklLSU5HEA0SFQoRVE9PTF9UWVBF",
-            "X01BUktJTkcQDhIXChNUT09MX1RZUEVfRklOSVNISU5HEA8SFgoSVE9PTF9U",
-            "WVBFX0FCUkFTSVZFEBASFgoSVE9PTF9UWVBFX0NMRUFOSU5HEBEqngMKCFRv",
-            "b2xSb2xlEhkKFVRPT0xfUk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9M",
-            "RV9HUklQX1dPUktQSUVDRRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01Q",
-            "T05FTlQQAhIdChlUT09MX1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9P",
-            "TF9ST0xFX0FQUExZX1RPUlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5F",
-            "QVJfRk9SQ0UQBRIfChtUT09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhId",
-            "ChlUT09MX1JPTEVfREVURUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJ",
-            "U1BFTlNFX01BVEVSSUFMEAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9O",
-            "EAkSIAocVE9PTF9ST0xFX1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xf",
-            "Uk9MRV9IQU5ETEVfRVNEEAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNU",
-            "SU9OEAwq7wEKDFRvb2xQcm9wZXJ0eRIdChlUT09MX1BST1BFUlRZX1VOU1BF",
-            "Q0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JRVUVfQ09OVFJPTExFRBAB",
-            "EhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIbChdUT09MX1BST1BFUlRZ",
-            "X0lOU1VMQVRFRBADEiQKIFRPT0xfUFJPUEVSVFlfQ09MTEFCT1JBVElWRV9T",
-            "QUZFEAQSHAoYVE9PTF9QUk9QRVJUWV9DQUxJQlJBVEVEEAUSHgoaVE9PTF9Q",
-            "Uk9QRVJUWV9RVUlDS19DSEFOR0UQBiqJAQoLRml4dHVyZVR5cGUSHAoYRklY",
-            "VFVSRV9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRRklYVFVSRV9UWVBFX0JBU0UQ",
-            "ARIWChJGSVhUVVJFX1RZUEVfQ0xBTVAQAhIUChBGSVhUVVJFX1RZUEVfSklH",
-            "EAMSFwoTRklYVFVSRV9UWVBFX1BBTExFVBAEKoEBCglSb2JvdFR5cGUSGgoW",
-            "Uk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAK",
-            "EhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIY",
-            "ChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIh",
-            "Ch1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RS",
-            "SVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxAC",
-            "KpgBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUK",
-            "EUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcK",
-            "E0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAE",
-            "EhIKDkFTU0VUX1RZUEVfSE1JEAUqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFT",
-            "U0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVS",
-            "X1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1ibHkudjFCDlJlc291cmNl",
-            "c1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
-            "cy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNz",
-            "ZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFk",
-            "YXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM="));
+            "dmVyVHlwZVIKZHJpdmVyVHlwZRIZCghtb2RlbF9pZBgHIAEoCVIHbW9kZWxJ",
+            "ZBIoChBjb3VwbGVyX21vZGVsX2lkGAggASgJUg5jb3VwbGVyTW9kZWxJZBJB",
+            "Ch1zdXBwb3J0ZWRfdG9vbF9kZWZpbml0aW9uX2lkcxgJIAMoCVIac3VwcG9y",
+            "dGVkVG9vbERlZmluaXRpb25JZHMSOwoaZGVmYXVsdF90b29sX2RlZmluaXRp",
+            "b25faWQYCiABKAlSF2RlZmF1bHRUb29sRGVmaW5pdGlvbklkEh0KCnRvb2xf",
+            "c2xvdHMYCyABKAVSCXRvb2xTbG90cxJNChJjYXBhYmlsaXR5X3Byb2ZpbGUY",
+            "DCABKAsyHi5hc3NlbWJseS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRY2FwYWJp",
+            "bGl0eVByb2ZpbGUSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3Vz",
+            "dG9tUHJvcGVydGllc1IGY3VzdG9tIkcKEFJvYm90RGVmaW5pdGlvbnMSMwoF",
+            "aXRlbXMYASADKAsyHS5hc3NlbWJseS52MS5Sb2JvdERlZmluaXRpb25zUgVp",
+            "dGVtcyK9AwoNUm9ib3RJbnN0YW5jZRIOCgJpZBgBIAEoCVICaWQSLgoTcm9i",
+            "b3RfZGVmaW5pdGlvbl9pZBgCIAEoCVIRcm9ib3REZWZpbml0aW9uSWQSHQoK",
+            "c3RhdGlvbl9pZBgDIAEoCVIJc3RhdGlvbklkEjcKGG1vdW50ZWRfdG9vbF9p",
+            "bnN0YW5jZV9pZBgEIAEoCVIVbW91bnRlZFRvb2xJbnN0YW5jZUlkEj0KG2F2",
+            "YWlsYWJsZV90b29sX2luc3RhbmNlX2lkcxgFIAMoCVIYYXZhaWxhYmxlVG9v",
+            "bEluc3RhbmNlSWRzEjAKFHN1cHBvcnRzX3Rvb2xfY2hhbmdlGAYgASgIUhJz",
+            "dXBwb3J0c1Rvb2xDaGFuZ2USMwoGc3RhdHVzGAcgASgOMhsuYXNzZW1ibHku",
+            "djEuUmVzb3VyY2VTdGF0dXNSBnN0YXR1cxI3CgliYXNlX3Bvc2UYCCABKAsy",
+            "Gi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghiYXNlUG9zZRI1CgZjdXN0",
+            "b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0",
+            "b20iQgoOUm9ib3RJbnN0YW5jZXMSMAoFaXRlbXMYASADKAsyGi5hc3NlbWJs",
+            "eS52MS5Sb2JvdEluc3RhbmNlUgVpdGVtcyKoAgoPQXNzZXREZWZpbml0aW9u",
+            "Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
+            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhISCgRpY29uGAQgASgJUgRpY29u",
+            "EioKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Bc3NldFR5cGVSBHR5cGUS",
+            "PQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Bc3NldERyaXZl",
+            "clR5cGVSCmRyaXZlclR5cGUSGQoIbW9kZWxfaWQYByABKAlSB21vZGVsSWQS",
+            "NQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGll",
+            "c1IGY3VzdG9tIkYKEEFzc2V0RGVmaW5pdGlvbnMSMgoFaXRlbXMYASADKAsy",
+            "HC5hc3NlbWJseS52MS5Bc3NldERlZmluaXRpb25SBWl0ZW1zIooCCg1Bc3Nl",
+            "dEluc3RhbmNlEg4KAmlkGAEgASgJUgJpZBIuChNhc3NldF9kZWZpbml0aW9u",
+            "X2lkGAIgASgJUhFhc3NldERlZmluaXRpb25JZBIdCgpzdGF0aW9uX2lkGAMg",
+            "ASgJUglzdGF0aW9uSWQSMwoGc3RhdHVzGAQgASgOMhsuYXNzZW1ibHkudjEu",
+            "UmVzb3VyY2VTdGF0dXNSBnN0YXR1cxIuCgRwb3NlGAUgASgLMhouZ2VvbWV0",
+            "cnkudjEuTG9jYWxpemVkUG9zZVIEcG9zZRI1CgZjdXN0b20YBiABKAsyHS5h",
+            "c3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iQgoOQXNzZXRJ",
+            "bnN0YW5jZXMSMAoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Bc3NldElu",
+            "c3RhbmNlUgVpdGVtcyrNAwoIVG9vbFR5cGUSGQoVVE9PTF9UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASFwoTVE9PTF9UWVBFX0ZBU1RFTklORxABEhYKElRPT0xfVFlQ",
+            "RV9HUklQUElORxACEhUKEVRPT0xfVFlQRV9DVVRUSU5HEAMSFwoTVE9PTF9U",
+            "WVBFX01FQVNVUklORxAEEhkKFVRPT0xfVFlQRV9QT1NJVElPTklORxAFEhgK",
+            "FFRPT0xfVFlQRV9ESVNQRU5TSU5HEAYSGAoUVE9PTF9UWVBFX0lOU1BFQ1RJ",
+            "T04QBxIUChBUT09MX1RZUEVfU0FGRVRZEAgSGQoVVE9PTF9UWVBFX0VMRUNU",
+            "Uk9OSUNTEAkSHwobVE9PTF9UWVBFX0ZJWFRVUkVfQUNDRVNTT1JZEAoSFQoR",
+            "VE9PTF9UWVBFX1NIQVBJTkcQCxIVChFUT09MX1RZUEVfVFVSTklORxAMEhYK",
+            "ElRPT0xfVFlQRV9TVFJJS0lORxANEhUKEVRPT0xfVFlQRV9NQVJLSU5HEA4S",
+            "FwoTVE9PTF9UWVBFX0ZJTklTSElORxAPEhYKElRPT0xfVFlQRV9BQlJBU0lW",
+            "RRAQEhYKElRPT0xfVFlQRV9DTEVBTklORxARKrgDCghUb29sUm9sZRIZChVU",
+            "T09MX1JPTEVfVU5TUEVDSUZJRUQQABIcChhUT09MX1JPTEVfR1JJUF9XT1JL",
+            "UElFQ0UQARIgChxUT09MX1JPTEVfUE9TSVRJT05fQ09NUE9ORU5UEAISHQoZ",
+            "VE9PTF9ST0xFX0FMSUdOX0NPTVBPTkVOVBADEhoKFlRPT0xfUk9MRV9BUFBM",
+            "WV9UT1JRVUUQBBIgChxUT09MX1JPTEVfQVBQTFlfTElORUFSX0ZPUkNFEAUS",
+            "HwobVE9PTF9ST0xFX01FQVNVUkVfRElNRU5TSU9OEAYSHQoZVE9PTF9ST0xF",
+            "X0RFVEVDVF9QUkVTRU5DRRAHEh8KG1RPT0xfUk9MRV9ESVNQRU5TRV9NQVRF",
+            "UklBTBAIEhwKGFRPT0xfUk9MRV9FWEVDVVRFX01PVElPThAJEiAKHFRPT0xf",
+            "Uk9MRV9TQUZFVFlfSU5URVJBQ1RJT04QChIYChRUT09MX1JPTEVfSEFORExF",
+            "X0VTRBALEh8KG1RPT0xfUk9MRV9WSVNVQUxfSU5TUEVDVElPThAMEhgKFFRP",
+            "T0xfUk9MRV9XSVBFX0NMRUFOEA0q7wEKDFRvb2xQcm9wZXJ0eRIdChlUT09M",
+            "X1BST1BFUlRZX1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JR",
+            "VUVfQ09OVFJPTExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIb",
+            "ChdUT09MX1BST1BFUlRZX0lOU1VMQVRFRBADEiQKIFRPT0xfUFJPUEVSVFlf",
+            "Q09MTEFCT1JBVElWRV9TQUZFEAQSHAoYVE9PTF9QUk9QRVJUWV9DQUxJQlJB",
+            "VEVEEAUSHgoaVE9PTF9QUk9QRVJUWV9RVUlDS19DSEFOR0UQBiqJAQoLRml4",
+            "dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRRklY",
+            "VFVSRV9UWVBFX0JBU0UQARIWChJGSVhUVVJFX1RZUEVfQ0xBTVAQAhIUChBG",
+            "SVhUVVJFX1RZUEVfSklHEAMSFwoTRklYVFVSRV9UWVBFX1BBTExFVBAEKoEB",
+            "CglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JP",
+            "Qk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9U",
+            "X1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1Jv",
+            "Ym90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVS",
+            "X1RZUEVfR0VORVJJQxACKpgBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9V",
+            "TlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRf",
+            "VFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NF",
+            "VF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1JEAUqUwoPQXNzZXRE",
+            "cml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "HQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1i",
+            "bHkudjFCDlJlc291cmNlc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhY",
+            "qgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2Vt",
+            "Ymx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ToolType), typeof(global::Messages.Assembly.V1.ToolRole), typeof(global::Messages.Assembly.V1.ToolProperty), typeof(global::Messages.Assembly.V1.FixtureType), typeof(global::Messages.Assembly.V1.RobotType), typeof(global::Messages.Assembly.V1.RobotDriverType), typeof(global::Messages.Assembly.V1.AssetType), typeof(global::Messages.Assembly.V1.AssetDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -171,9 +177,9 @@ namespace Messages.Assembly.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureDefinitions), global::Messages.Assembly.V1.FixtureDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureInstance), global::Messages.Assembly.V1.FixtureInstance.Parser, new[]{ "Id", "FixtureDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.FixtureInstances), global::Messages.Assembly.V1.FixtureInstances.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinition), global::Messages.Assembly.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "DriverType", "CouplerModelId", "EndEffectorToolDefinitionId", "ModelId", "CapabilityProfile", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinition), global::Messages.Assembly.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotDefinitions), global::Messages.Assembly.V1.RobotDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstance), global::Messages.Assembly.V1.RobotInstance.Parser, new[]{ "Id", "RobotDefinitionId", "StationId", "Status", "BasePose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstance), global::Messages.Assembly.V1.RobotInstance.Parser, new[]{ "Id", "RobotDefinitionId", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "Status", "BasePose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RobotInstances), global::Messages.Assembly.V1.RobotInstances.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetDefinition), global::Messages.Assembly.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "DriverType", "ModelId", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssetDefinitions), global::Messages.Assembly.V1.AssetDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
@@ -220,6 +226,7 @@ namespace Messages.Assembly.V1 {
     [pbr::OriginalName("TOOL_ROLE_SAFETY_INTERACTION")] SafetyInteraction = 10,
     [pbr::OriginalName("TOOL_ROLE_HANDLE_ESD")] HandleEsd = 11,
     [pbr::OriginalName("TOOL_ROLE_VISUAL_INSPECTION")] VisualInspection = 12,
+    [pbr::OriginalName("TOOL_ROLE_WIPE_CLEAN")] WipeClean = 13,
   }
 
   public enum ToolProperty {
@@ -3572,9 +3579,11 @@ namespace Messages.Assembly.V1 {
       icon_ = other.icon_;
       type_ = other.type_;
       driverType_ = other.driverType_;
-      couplerModelId_ = other.couplerModelId_;
-      endEffectorToolDefinitionId_ = other.endEffectorToolDefinitionId_;
       modelId_ = other.modelId_;
+      couplerModelId_ = other.couplerModelId_;
+      supportedToolDefinitionIds_ = other.supportedToolDefinitionIds_.Clone();
+      defaultToolDefinitionId_ = other.defaultToolDefinitionId_;
+      toolSlots_ = other.toolSlots_;
       capabilityProfile_ = other.capabilityProfile_ != null ? other.capabilityProfile_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3658,32 +3667,8 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "coupler_model_id" field.</summary>
-    public const int CouplerModelIdFieldNumber = 7;
-    private string couplerModelId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CouplerModelId {
-      get { return couplerModelId_; }
-      set {
-        couplerModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "end_effector_tool_definition_id" field.</summary>
-    public const int EndEffectorToolDefinitionIdFieldNumber = 8;
-    private string endEffectorToolDefinitionId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string EndEffectorToolDefinitionId {
-      get { return endEffectorToolDefinitionId_; }
-      set {
-        endEffectorToolDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "model_id" field.</summary>
-    public const int ModelIdFieldNumber = 9;
+    public const int ModelIdFieldNumber = 7;
     private string modelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3694,8 +3679,58 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "coupler_model_id" field.</summary>
+    public const int CouplerModelIdFieldNumber = 8;
+    private string couplerModelId_ = "";
+    /// <summary>
+    /// Tool mounting capability
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CouplerModelId {
+      get { return couplerModelId_; }
+      set {
+        couplerModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "supported_tool_definition_ids" field.</summary>
+    public const int SupportedToolDefinitionIdsFieldNumber = 9;
+    private static readonly pb::FieldCodec<string> _repeated_supportedToolDefinitionIds_codec
+        = pb::FieldCodec.ForString(74);
+    private readonly pbc::RepeatedField<string> supportedToolDefinitionIds_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> SupportedToolDefinitionIds {
+      get { return supportedToolDefinitionIds_; }
+    }
+
+    /// <summary>Field number for the "default_tool_definition_id" field.</summary>
+    public const int DefaultToolDefinitionIdFieldNumber = 10;
+    private string defaultToolDefinitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DefaultToolDefinitionId {
+      get { return defaultToolDefinitionId_; }
+      set {
+        defaultToolDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tool_slots" field.</summary>
+    public const int ToolSlotsFieldNumber = 11;
+    private int toolSlots_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ToolSlots {
+      get { return toolSlots_; }
+      set {
+        toolSlots_ = value;
+      }
+    }
+
     /// <summary>Field number for the "capability_profile" field.</summary>
-    public const int CapabilityProfileFieldNumber = 10;
+    public const int CapabilityProfileFieldNumber = 12;
     private global::Messages.Assembly.V1.CapabilityProfile capabilityProfile_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3707,7 +3742,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 11;
+    public const int CustomFieldNumber = 13;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3739,9 +3774,11 @@ namespace Messages.Assembly.V1 {
       if (Icon != other.Icon) return false;
       if (Type != other.Type) return false;
       if (DriverType != other.DriverType) return false;
-      if (CouplerModelId != other.CouplerModelId) return false;
-      if (EndEffectorToolDefinitionId != other.EndEffectorToolDefinitionId) return false;
       if (ModelId != other.ModelId) return false;
+      if (CouplerModelId != other.CouplerModelId) return false;
+      if(!supportedToolDefinitionIds_.Equals(other.supportedToolDefinitionIds_)) return false;
+      if (DefaultToolDefinitionId != other.DefaultToolDefinitionId) return false;
+      if (ToolSlots != other.ToolSlots) return false;
       if (!object.Equals(CapabilityProfile, other.CapabilityProfile)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -3757,9 +3794,11 @@ namespace Messages.Assembly.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Type != global::Messages.Assembly.V1.RobotType.Unspecified) hash ^= Type.GetHashCode();
       if (DriverType != global::Messages.Assembly.V1.RobotDriverType.Unspecified) hash ^= DriverType.GetHashCode();
-      if (CouplerModelId.Length != 0) hash ^= CouplerModelId.GetHashCode();
-      if (EndEffectorToolDefinitionId.Length != 0) hash ^= EndEffectorToolDefinitionId.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
+      if (CouplerModelId.Length != 0) hash ^= CouplerModelId.GetHashCode();
+      hash ^= supportedToolDefinitionIds_.GetHashCode();
+      if (DefaultToolDefinitionId.Length != 0) hash ^= DefaultToolDefinitionId.GetHashCode();
+      if (ToolSlots != 0) hash ^= ToolSlots.GetHashCode();
       if (capabilityProfile_ != null) hash ^= CapabilityProfile.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
@@ -3804,24 +3843,29 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) DriverType);
       }
-      if (CouplerModelId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(CouplerModelId);
-      }
-      if (EndEffectorToolDefinitionId.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(EndEffectorToolDefinitionId);
-      }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteString(ModelId);
       }
-      if (capabilityProfile_ != null) {
+      if (CouplerModelId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(CouplerModelId);
+      }
+      supportedToolDefinitionIds_.WriteTo(output, _repeated_supportedToolDefinitionIds_codec);
+      if (DefaultToolDefinitionId.Length != 0) {
         output.WriteRawTag(82);
+        output.WriteString(DefaultToolDefinitionId);
+      }
+      if (ToolSlots != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(ToolSlots);
+      }
+      if (capabilityProfile_ != null) {
+        output.WriteRawTag(98);
         output.WriteMessage(CapabilityProfile);
       }
       if (custom_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3858,24 +3902,29 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) DriverType);
       }
-      if (CouplerModelId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(CouplerModelId);
-      }
-      if (EndEffectorToolDefinitionId.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(EndEffectorToolDefinitionId);
-      }
       if (ModelId.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteString(ModelId);
       }
-      if (capabilityProfile_ != null) {
+      if (CouplerModelId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(CouplerModelId);
+      }
+      supportedToolDefinitionIds_.WriteTo(ref output, _repeated_supportedToolDefinitionIds_codec);
+      if (DefaultToolDefinitionId.Length != 0) {
         output.WriteRawTag(82);
+        output.WriteString(DefaultToolDefinitionId);
+      }
+      if (ToolSlots != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(ToolSlots);
+      }
+      if (capabilityProfile_ != null) {
+        output.WriteRawTag(98);
         output.WriteMessage(CapabilityProfile);
       }
       if (custom_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3906,14 +3955,18 @@ namespace Messages.Assembly.V1 {
       if (DriverType != global::Messages.Assembly.V1.RobotDriverType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DriverType);
       }
+      if (ModelId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelId);
+      }
       if (CouplerModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CouplerModelId);
       }
-      if (EndEffectorToolDefinitionId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EndEffectorToolDefinitionId);
+      size += supportedToolDefinitionIds_.CalculateSize(_repeated_supportedToolDefinitionIds_codec);
+      if (DefaultToolDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefaultToolDefinitionId);
       }
-      if (ModelId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelId);
+      if (ToolSlots != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ToolSlots);
       }
       if (capabilityProfile_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CapabilityProfile);
@@ -3951,14 +4004,18 @@ namespace Messages.Assembly.V1 {
       if (other.DriverType != global::Messages.Assembly.V1.RobotDriverType.Unspecified) {
         DriverType = other.DriverType;
       }
+      if (other.ModelId.Length != 0) {
+        ModelId = other.ModelId;
+      }
       if (other.CouplerModelId.Length != 0) {
         CouplerModelId = other.CouplerModelId;
       }
-      if (other.EndEffectorToolDefinitionId.Length != 0) {
-        EndEffectorToolDefinitionId = other.EndEffectorToolDefinitionId;
+      supportedToolDefinitionIds_.Add(other.supportedToolDefinitionIds_);
+      if (other.DefaultToolDefinitionId.Length != 0) {
+        DefaultToolDefinitionId = other.DefaultToolDefinitionId;
       }
-      if (other.ModelId.Length != 0) {
-        ModelId = other.ModelId;
+      if (other.ToolSlots != 0) {
+        ToolSlots = other.ToolSlots;
       }
       if (other.capabilityProfile_ != null) {
         if (capabilityProfile_ == null) {
@@ -4016,25 +4073,33 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 58: {
-            CouplerModelId = input.ReadString();
-            break;
-          }
-          case 66: {
-            EndEffectorToolDefinitionId = input.ReadString();
-            break;
-          }
-          case 74: {
             ModelId = input.ReadString();
             break;
           }
+          case 66: {
+            CouplerModelId = input.ReadString();
+            break;
+          }
+          case 74: {
+            supportedToolDefinitionIds_.AddEntriesFrom(input, _repeated_supportedToolDefinitionIds_codec);
+            break;
+          }
           case 82: {
+            DefaultToolDefinitionId = input.ReadString();
+            break;
+          }
+          case 88: {
+            ToolSlots = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (capabilityProfile_ == null) {
               CapabilityProfile = new global::Messages.Assembly.V1.CapabilityProfile();
             }
             input.ReadMessage(CapabilityProfile);
             break;
           }
-          case 90: {
+          case 106: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -4085,25 +4150,33 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 58: {
-            CouplerModelId = input.ReadString();
-            break;
-          }
-          case 66: {
-            EndEffectorToolDefinitionId = input.ReadString();
-            break;
-          }
-          case 74: {
             ModelId = input.ReadString();
             break;
           }
+          case 66: {
+            CouplerModelId = input.ReadString();
+            break;
+          }
+          case 74: {
+            supportedToolDefinitionIds_.AddEntriesFrom(ref input, _repeated_supportedToolDefinitionIds_codec);
+            break;
+          }
           case 82: {
+            DefaultToolDefinitionId = input.ReadString();
+            break;
+          }
+          case 88: {
+            ToolSlots = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (capabilityProfile_ == null) {
               CapabilityProfile = new global::Messages.Assembly.V1.CapabilityProfile();
             }
             input.ReadMessage(CapabilityProfile);
             break;
           }
-          case 90: {
+          case 106: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -4342,6 +4415,9 @@ namespace Messages.Assembly.V1 {
       id_ = other.id_;
       robotDefinitionId_ = other.robotDefinitionId_;
       stationId_ = other.stationId_;
+      mountedToolInstanceId_ = other.mountedToolInstanceId_;
+      availableToolInstanceIds_ = other.availableToolInstanceIds_.Clone();
+      supportsToolChange_ = other.supportsToolChange_;
       status_ = other.status_;
       basePose_ = other.basePose_ != null ? other.basePose_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
@@ -4390,8 +4466,52 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "mounted_tool_instance_id" field.</summary>
+    public const int MountedToolInstanceIdFieldNumber = 4;
+    private string mountedToolInstanceId_ = "";
+    /// <summary>
+    /// what is attached right now
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MountedToolInstanceId {
+      get { return mountedToolInstanceId_; }
+      set {
+        mountedToolInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "available_tool_instance_ids" field.</summary>
+    public const int AvailableToolInstanceIdsFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_availableToolInstanceIds_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> availableToolInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// what is in the cell/magazine/dock and usable
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> AvailableToolInstanceIds {
+      get { return availableToolInstanceIds_; }
+    }
+
+    /// <summary>Field number for the "supports_tool_change" field.</summary>
+    public const int SupportsToolChangeFieldNumber = 6;
+    private bool supportsToolChange_;
+    /// <summary>
+    /// whether dynamic switching is allowed
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool SupportsToolChange {
+      get { return supportsToolChange_; }
+      set {
+        supportsToolChange_ = value;
+      }
+    }
+
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 4;
+    public const int StatusFieldNumber = 7;
     private global::Messages.Assembly.V1.ResourceStatus status_ = global::Messages.Assembly.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4403,7 +4523,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "base_pose" field.</summary>
-    public const int BasePoseFieldNumber = 5;
+    public const int BasePoseFieldNumber = 8;
     private global::Messages.Common.V1.LocalizedPose basePose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4415,7 +4535,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 6;
+    public const int CustomFieldNumber = 9;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4444,6 +4564,9 @@ namespace Messages.Assembly.V1 {
       if (Id != other.Id) return false;
       if (RobotDefinitionId != other.RobotDefinitionId) return false;
       if (StationId != other.StationId) return false;
+      if (MountedToolInstanceId != other.MountedToolInstanceId) return false;
+      if(!availableToolInstanceIds_.Equals(other.availableToolInstanceIds_)) return false;
+      if (SupportsToolChange != other.SupportsToolChange) return false;
       if (Status != other.Status) return false;
       if (!object.Equals(BasePose, other.BasePose)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
@@ -4457,6 +4580,9 @@ namespace Messages.Assembly.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (RobotDefinitionId.Length != 0) hash ^= RobotDefinitionId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (MountedToolInstanceId.Length != 0) hash ^= MountedToolInstanceId.GetHashCode();
+      hash ^= availableToolInstanceIds_.GetHashCode();
+      if (SupportsToolChange != false) hash ^= SupportsToolChange.GetHashCode();
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (basePose_ != null) hash ^= BasePose.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
@@ -4490,16 +4616,25 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(26);
         output.WriteString(StationId);
       }
+      if (MountedToolInstanceId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(MountedToolInstanceId);
+      }
+      availableToolInstanceIds_.WriteTo(output, _repeated_availableToolInstanceIds_codec);
+      if (SupportsToolChange != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(SupportsToolChange);
+      }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -4524,16 +4659,25 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(26);
         output.WriteString(StationId);
       }
+      if (MountedToolInstanceId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(MountedToolInstanceId);
+      }
+      availableToolInstanceIds_.WriteTo(ref output, _repeated_availableToolInstanceIds_codec);
+      if (SupportsToolChange != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(SupportsToolChange);
+      }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -4554,6 +4698,13 @@ namespace Messages.Assembly.V1 {
       }
       if (StationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
+      }
+      if (MountedToolInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MountedToolInstanceId);
+      }
+      size += availableToolInstanceIds_.CalculateSize(_repeated_availableToolInstanceIds_codec);
+      if (SupportsToolChange != false) {
+        size += 1 + 1;
       }
       if (Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
@@ -4584,6 +4735,13 @@ namespace Messages.Assembly.V1 {
       }
       if (other.StationId.Length != 0) {
         StationId = other.StationId;
+      }
+      if (other.MountedToolInstanceId.Length != 0) {
+        MountedToolInstanceId = other.MountedToolInstanceId;
+      }
+      availableToolInstanceIds_.Add(other.availableToolInstanceIds_);
+      if (other.SupportsToolChange != false) {
+        SupportsToolChange = other.SupportsToolChange;
       }
       if (other.Status != global::Messages.Assembly.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
@@ -4631,18 +4789,30 @@ namespace Messages.Assembly.V1 {
             StationId = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            MountedToolInstanceId = input.ReadString();
             break;
           }
           case 42: {
+            availableToolInstanceIds_.AddEntriesFrom(input, _repeated_availableToolInstanceIds_codec);
+            break;
+          }
+          case 48: {
+            SupportsToolChange = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -4680,18 +4850,30 @@ namespace Messages.Assembly.V1 {
             StationId = input.ReadString();
             break;
           }
-          case 32: {
-            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+          case 34: {
+            MountedToolInstanceId = input.ReadString();
             break;
           }
           case 42: {
+            availableToolInstanceIds_.AddEntriesFrom(ref input, _repeated_availableToolInstanceIds_codec);
+            break;
+          }
+          case 48: {
+            SupportsToolChange = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Status = (global::Messages.Assembly.V1.ResourceStatus) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 50: {
+          case 74: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }

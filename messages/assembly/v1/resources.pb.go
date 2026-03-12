@@ -133,6 +133,7 @@ const (
 	ToolRole_TOOL_ROLE_SAFETY_INTERACTION ToolRole = 10
 	ToolRole_TOOL_ROLE_HANDLE_ESD         ToolRole = 11
 	ToolRole_TOOL_ROLE_VISUAL_INSPECTION  ToolRole = 12
+	ToolRole_TOOL_ROLE_WIPE_CLEAN         ToolRole = 13
 )
 
 // Enum value maps for ToolRole.
@@ -151,6 +152,7 @@ var (
 		10: "TOOL_ROLE_SAFETY_INTERACTION",
 		11: "TOOL_ROLE_HANDLE_ESD",
 		12: "TOOL_ROLE_VISUAL_INSPECTION",
+		13: "TOOL_ROLE_WIPE_CLEAN",
 	}
 	ToolRole_value = map[string]int32{
 		"TOOL_ROLE_UNSPECIFIED":        0,
@@ -166,6 +168,7 @@ var (
 		"TOOL_ROLE_SAFETY_INTERACTION": 10,
 		"TOOL_ROLE_HANDLE_ESD":         11,
 		"TOOL_ROLE_VISUAL_INSPECTION":  12,
+		"TOOL_ROLE_WIPE_CLEAN":         13,
 	}
 )
 
@@ -1245,20 +1248,23 @@ func (x *FixtureInstances) GetItems() []*FixtureInstance {
 }
 
 type RobotDefinition struct {
-	state                       protoimpl.MessageState `protogen:"open.v1"`
-	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description                 string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon                        string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Type                        RobotType              `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.RobotType" json:"type,omitempty"`
-	DriverType                  RobotDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=assembly.v1.RobotDriverType" json:"driver_type,omitempty"`
-	CouplerModelId              string                 `protobuf:"bytes,7,opt,name=coupler_model_id,json=couplerModelId,proto3" json:"coupler_model_id,omitempty"`
-	EndEffectorToolDefinitionId string                 `protobuf:"bytes,8,opt,name=end_effector_tool_definition_id,json=endEffectorToolDefinitionId,proto3" json:"end_effector_tool_definition_id,omitempty"`
-	ModelId                     string                 `protobuf:"bytes,9,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	CapabilityProfile           *CapabilityProfile     `protobuf:"bytes,10,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
-	Custom                      *CustomProperties      `protobuf:"bytes,11,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields               protoimpl.UnknownFields
-	sizeCache                   protoimpl.SizeCache
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon        string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Type        RobotType              `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.RobotType" json:"type,omitempty"`
+	DriverType  RobotDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=assembly.v1.RobotDriverType" json:"driver_type,omitempty"`
+	ModelId     string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	// Tool mounting capability
+	CouplerModelId             string             `protobuf:"bytes,8,opt,name=coupler_model_id,json=couplerModelId,proto3" json:"coupler_model_id,omitempty"`
+	SupportedToolDefinitionIds []string           `protobuf:"bytes,9,rep,name=supported_tool_definition_ids,json=supportedToolDefinitionIds,proto3" json:"supported_tool_definition_ids,omitempty"`
+	DefaultToolDefinitionId    string             `protobuf:"bytes,10,opt,name=default_tool_definition_id,json=defaultToolDefinitionId,proto3" json:"default_tool_definition_id,omitempty"`
+	ToolSlots                  int32              `protobuf:"varint,11,opt,name=tool_slots,json=toolSlots,proto3" json:"tool_slots,omitempty"`
+	CapabilityProfile          *CapabilityProfile `protobuf:"bytes,12,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
+	Custom                     *CustomProperties  `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
 }
 
 func (x *RobotDefinition) Reset() {
@@ -1333,6 +1339,13 @@ func (x *RobotDefinition) GetDriverType() RobotDriverType {
 	return RobotDriverType_ROBOT_DRIVER_TYPE_UNSPECIFIED
 }
 
+func (x *RobotDefinition) GetModelId() string {
+	if x != nil {
+		return x.ModelId
+	}
+	return ""
+}
+
 func (x *RobotDefinition) GetCouplerModelId() string {
 	if x != nil {
 		return x.CouplerModelId
@@ -1340,18 +1353,25 @@ func (x *RobotDefinition) GetCouplerModelId() string {
 	return ""
 }
 
-func (x *RobotDefinition) GetEndEffectorToolDefinitionId() string {
+func (x *RobotDefinition) GetSupportedToolDefinitionIds() []string {
 	if x != nil {
-		return x.EndEffectorToolDefinitionId
+		return x.SupportedToolDefinitionIds
+	}
+	return nil
+}
+
+func (x *RobotDefinition) GetDefaultToolDefinitionId() string {
+	if x != nil {
+		return x.DefaultToolDefinitionId
 	}
 	return ""
 }
 
-func (x *RobotDefinition) GetModelId() string {
+func (x *RobotDefinition) GetToolSlots() int32 {
 	if x != nil {
-		return x.ModelId
+		return x.ToolSlots
 	}
-	return ""
+	return 0
 }
 
 func (x *RobotDefinition) GetCapabilityProfile() *CapabilityProfile {
@@ -1413,15 +1433,18 @@ func (x *RobotDefinitions) GetItems() []*RobotDefinitions {
 }
 
 type RobotInstance struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	RobotDefinitionId string                 `protobuf:"bytes,2,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
-	StationId         string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Status            ResourceStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	BasePose          *v1.LocalizedPose      `protobuf:"bytes,5,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
-	Custom            *CustomProperties      `protobuf:"bytes,6,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RobotDefinitionId        string                 `protobuf:"bytes,2,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
+	StationId                string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	MountedToolInstanceId    string                 `protobuf:"bytes,4,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // what is attached right now
+	AvailableToolInstanceIds []string               `protobuf:"bytes,5,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // what is in the cell/magazine/dock and usable
+	SupportsToolChange       bool                   `protobuf:"varint,6,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                    // whether dynamic switching is allowed
+	Status                   ResourceStatus         `protobuf:"varint,7,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	BasePose                 *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
+	Custom                   *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *RobotInstance) Reset() {
@@ -1473,6 +1496,27 @@ func (x *RobotInstance) GetStationId() string {
 		return x.StationId
 	}
 	return ""
+}
+
+func (x *RobotInstance) GetMountedToolInstanceId() string {
+	if x != nil {
+		return x.MountedToolInstanceId
+	}
+	return ""
+}
+
+func (x *RobotInstance) GetAvailableToolInstanceIds() []string {
+	if x != nil {
+		return x.AvailableToolInstanceIds
+	}
+	return nil
+}
+
+func (x *RobotInstance) GetSupportsToolChange() bool {
+	if x != nil {
+		return x.SupportsToolChange
+	}
+	return false
 }
 
 func (x *RobotInstance) GetStatus() ResourceStatus {
@@ -1884,7 +1928,7 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x04pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
 	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
 	"\x10FixtureInstances\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.FixtureInstanceR\x05items\"\xe7\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.FixtureInstanceR\x05items\"\xc0\x04\n" +
 	"\x0fRobotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -1892,23 +1936,29 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12*\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x16.assembly.v1.RobotTypeR\x04type\x12=\n" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1c.assembly.v1.RobotDriverTypeR\n" +
-	"driverType\x12(\n" +
-	"\x10coupler_model_id\x18\a \x01(\tR\x0ecouplerModelId\x12D\n" +
-	"\x1fend_effector_tool_definition_id\x18\b \x01(\tR\x1bendEffectorToolDefinitionId\x12\x19\n" +
-	"\bmodel_id\x18\t \x01(\tR\amodelId\x12M\n" +
-	"\x12capability_profile\x18\n" +
-	" \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
-	"\x06custom\x18\v \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"G\n" +
+	"driverType\x12\x19\n" +
+	"\bmodel_id\x18\a \x01(\tR\amodelId\x12(\n" +
+	"\x10coupler_model_id\x18\b \x01(\tR\x0ecouplerModelId\x12A\n" +
+	"\x1dsupported_tool_definition_ids\x18\t \x03(\tR\x1asupportedToolDefinitionIds\x12;\n" +
+	"\x1adefault_tool_definition_id\x18\n" +
+	" \x01(\tR\x17defaultToolDefinitionId\x12\x1d\n" +
+	"\n" +
+	"tool_slots\x18\v \x01(\x05R\ttoolSlots\x12M\n" +
+	"\x12capability_profile\x18\f \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"G\n" +
 	"\x10RobotDefinitions\x123\n" +
-	"\x05items\x18\x01 \x03(\v2\x1d.assembly.v1.RobotDefinitionsR\x05items\"\x93\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.assembly.v1.RobotDefinitionsR\x05items\"\xbd\x03\n" +
 	"\rRobotInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
 	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
-	"\tbase_pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"station_id\x18\x03 \x01(\tR\tstationId\x127\n" +
+	"\x18mounted_tool_instance_id\x18\x04 \x01(\tR\x15mountedToolInstanceId\x12=\n" +
+	"\x1bavailable_tool_instance_ids\x18\x05 \x03(\tR\x18availableToolInstanceIds\x120\n" +
+	"\x14supports_tool_change\x18\x06 \x01(\bR\x12supportsToolChange\x123\n" +
+	"\x06status\x18\a \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
+	"\tbase_pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eRobotInstances\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.RobotInstanceR\x05items\"\xa8\x02\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
@@ -1952,7 +2002,7 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x11TOOL_TYPE_MARKING\x10\x0e\x12\x17\n" +
 	"\x13TOOL_TYPE_FINISHING\x10\x0f\x12\x16\n" +
 	"\x12TOOL_TYPE_ABRASIVE\x10\x10\x12\x16\n" +
-	"\x12TOOL_TYPE_CLEANING\x10\x11*\x9e\x03\n" +
+	"\x12TOOL_TYPE_CLEANING\x10\x11*\xb8\x03\n" +
 	"\bToolRole\x12\x19\n" +
 	"\x15TOOL_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18TOOL_ROLE_GRIP_WORKPIECE\x10\x01\x12 \n" +
@@ -1967,7 +2017,8 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x1cTOOL_ROLE_SAFETY_INTERACTION\x10\n" +
 	"\x12\x18\n" +
 	"\x14TOOL_ROLE_HANDLE_ESD\x10\v\x12\x1f\n" +
-	"\x1bTOOL_ROLE_VISUAL_INSPECTION\x10\f*\xef\x01\n" +
+	"\x1bTOOL_ROLE_VISUAL_INSPECTION\x10\f\x12\x18\n" +
+	"\x14TOOL_ROLE_WIPE_CLEAN\x10\r*\xef\x01\n" +
 	"\fToolProperty\x12\x1d\n" +
 	"\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n" +
 	"\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n" +

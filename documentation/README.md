@@ -3761,9 +3761,11 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | icon | [string](#string) |  |  |
 | type | [RobotType](#assembly-v1-RobotType) |  |  |
 | driver_type | [RobotDriverType](#assembly-v1-RobotDriverType) |  |  |
-| coupler_model_id | [string](#string) |  |  |
-| end_effector_tool_definition_id | [string](#string) |  |  |
 | model_id | [string](#string) |  |  |
+| coupler_model_id | [string](#string) |  | Tool mounting capability |
+| supported_tool_definition_ids | [string](#string) | repeated |  |
+| default_tool_definition_id | [string](#string) |  |  |
+| tool_slots | [int32](#int32) |  |  |
 | capability_profile | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
@@ -3798,6 +3800,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | id | [string](#string) |  |  |
 | robot_definition_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
+| mounted_tool_instance_id | [string](#string) |  | what is attached right now |
+| available_tool_instance_ids | [string](#string) | repeated | what is in the cell/magazine/dock and usable |
+| supports_tool_change | [bool](#bool) |  | whether dynamic switching is allowed |
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
 | base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
@@ -4011,6 +4016,7 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | TOOL_ROLE_SAFETY_INTERACTION | 10 |  |
 | TOOL_ROLE_HANDLE_ESD | 11 |  |
 | TOOL_ROLE_VISUAL_INSPECTION | 12 |  |
+| TOOL_ROLE_WIPE_CLEAN | 13 |  |
 
 
 
