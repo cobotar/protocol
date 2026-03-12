@@ -30,6 +30,12 @@ class WorkerDefinition(_message.Message):
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., disabled: bool = ..., employee_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
+class WorkerDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[WorkerDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[WorkerDefinition, _Mapping]]] = ...) -> None: ...
+
 class ActorRef(_message.Message):
     __slots__ = ("kind", "actor_id")
     KIND_FIELD_NUMBER: _ClassVar[int]

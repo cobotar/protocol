@@ -619,6 +619,10 @@ namespace Messages.Assembly.V1 {
 
   }
 
+  /// <summary>
+  /// ProcessRun is only created when a concrete cell can currently satisfy it.
+  /// Is is based upon a ProcessRecipe which defines what must be possible.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessRun : pb::IMessage<ProcessRun>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

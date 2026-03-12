@@ -218,7 +218,7 @@ const (
 	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN TaskAssignmentPreference = 1
 	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN   TaskAssignmentPreference = 2
 	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT TaskAssignmentPreference = 3
-	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT   TaskAssignmentPreference = 4
+	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT   TaskAssignmentPreference = 4 // Only use this if it truly must be done by a robot. Otherwise use prefer-robot
 	TaskAssignmentPreference_TASK_ASSIGNMENT_PREFERENCE_EITHER       TaskAssignmentPreference = 5
 )
 
@@ -321,6 +321,13 @@ func (x *RecipeApplicability) GetExcluded() []*VariantCondition {
 	return nil
 }
 
+// ProcessRecipe describes the following:
+// - What work must be done
+// - What kinds of capabilities are required
+// - What tool roles are required
+// - What skills are required
+// - What actor constrains exist
+// - What validation is needed
 type ProcessRecipe struct {
 	state                         protoimpl.MessageState `protogen:"open.v1"`
 	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -333,7 +340,7 @@ type ProcessRecipe struct {
 	RootSequenceId                string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	Sequences                     []*SequenceDefinition  `protobuf:"bytes,9,rep,name=sequences,proto3" json:"sequences,omitempty"`
 	Tasks                         []*TaskDefinition      `protobuf:"bytes,10,rep,name=tasks,proto3" json:"tasks,omitempty"`
-	SupportedFixtureDefinitionIds []string               `protobuf:"bytes,11,rep,name=supported_fixture_definition_ids,json=supportedFixtureDefinitionIds,proto3" json:"supported_fixture_definition_ids,omitempty"`
+	SupportedFixtureDefinitionIds []string               `protobuf:"bytes,11,rep,name=supported_fixture_definition_ids,json=supportedFixtureDefinitionIds,proto3" json:"supported_fixture_definition_ids,omitempty"` // Meaning: this recipe is intended to run with these fixtures
 	ExternalReferences            []*ExternalReference   `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Custom                        *CustomProperties      `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields                 protoimpl.UnknownFields

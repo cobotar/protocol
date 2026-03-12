@@ -7,6 +7,8 @@
 package assemblyv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -196,21 +198,27 @@ func (ModelFormat) EnumDescriptor() ([]byte, []int) {
 }
 
 type ModelArtifact struct {
-	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Group              ModelGroup             `protobuf:"varint,5,opt,name=group,proto3,enum=assembly.v1.ModelGroup" json:"group,omitempty"`
-	Origin             ModelOrigin            `protobuf:"varint,6,opt,name=origin,proto3,enum=assembly.v1.ModelOrigin" json:"origin,omitempty"`
-	Format             ModelFormat            `protobuf:"varint,7,opt,name=format,proto3,enum=assembly.v1.ModelFormat" json:"format,omitempty"`
-	Filename           string                 `protobuf:"bytes,8,opt,name=filename,proto3" json:"filename,omitempty"`
-	Uri                string                 `protobuf:"bytes,9,opt,name=uri,proto3" json:"uri,omitempty"`
-	ThumbnailUri       string                 `protobuf:"bytes,10,opt,name=thumbnail_uri,json=thumbnailUri,proto3" json:"thumbnail_uri,omitempty"`
-	Version            string                 `protobuf:"bytes,11,opt,name=version,proto3" json:"version,omitempty"`
-	Unit               string                 `protobuf:"bytes,12,opt,name=unit,proto3" json:"unit,omitempty"`
-	ExternalReferences []*ExternalReference   `protobuf:"bytes,13,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *CustomProperties      `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon        string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Group       ModelGroup             `protobuf:"varint,5,opt,name=group,proto3,enum=assembly.v1.ModelGroup" json:"group,omitempty"`
+	Origin      ModelOrigin            `protobuf:"varint,6,opt,name=origin,proto3,enum=assembly.v1.ModelOrigin" json:"origin,omitempty"`
+	Format      ModelFormat            `protobuf:"varint,7,opt,name=format,proto3,enum=assembly.v1.ModelFormat" json:"format,omitempty"`
+	// Filename is required for BUILT_IN models, ignored otherwise
+	Filename string `protobuf:"bytes,8,opt,name=filename,proto3" json:"filename,omitempty"`
+	// Uri is required for uploaded and external models
+	Uri          string `protobuf:"bytes,9,opt,name=uri,proto3" json:"uri,omitempty"`
+	ThumbnailUri string `protobuf:"bytes,10,opt,name=thumbnail_uri,json=thumbnailUri,proto3" json:"thumbnail_uri,omitempty"`
+	Version      string `protobuf:"bytes,11,opt,name=version,proto3" json:"version,omitempty"`
+	// Unit used for the model geometry coordinates.
+	// Typically "mm", "cm", "m", "in", etc.
+	// Used to scale the model correctly when loading.
+	Unit               string               `protobuf:"bytes,12,opt,name=unit,proto3" json:"unit,omitempty"`
+	UpAxis             string               `protobuf:"bytes,13,opt,name=up_axis,json=upAxis,proto3" json:"up_axis,omitempty"` // "X", "Y", "Z"
+	ExternalReferences []*ExternalReference `protobuf:"bytes,14,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Custom             *CustomProperties    `protobuf:"bytes,15,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -329,6 +337,13 @@ func (x *ModelArtifact) GetUnit() string {
 	return ""
 }
 
+func (x *ModelArtifact) GetUpAxis() string {
+	if x != nil {
+		return x.UpAxis
+	}
+	return ""
+}
+
 func (x *ModelArtifact) GetExternalReferences() []*ExternalReference {
 	if x != nil {
 		return x.ExternalReferences
@@ -391,23 +406,24 @@ var File_assembly_v1_model_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x17assembly/v1/model.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\"\x85\x04\n" +
+	"\x17assembly/v1/model.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe7\x04\n" +
 	"\rModelArtifact\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12-\n" +
-	"\x05group\x18\x05 \x01(\x0e2\x17.assembly.v1.ModelGroupR\x05group\x120\n" +
-	"\x06origin\x18\x06 \x01(\x0e2\x18.assembly.v1.ModelOriginR\x06origin\x120\n" +
-	"\x06format\x18\a \x01(\x0e2\x18.assembly.v1.ModelFormatR\x06format\x12\x1a\n" +
-	"\bfilename\x18\b \x01(\tR\bfilename\x12\x10\n" +
-	"\x03uri\x18\t \x01(\tR\x03uri\x12#\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x127\n" +
+	"\x05group\x18\x05 \x01(\x0e2\x17.assembly.v1.ModelGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12=\n" +
+	"\x06origin\x18\x06 \x01(\x0e2\x18.assembly.v1.ModelOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12=\n" +
+	"\x06format\x18\a \x01(\x0e2\x18.assembly.v1.ModelFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12\x1a\n" +
+	"\bfilename\x18\b \x01(\tR\bfilename\x12\x1d\n" +
+	"\x03uri\x18\t \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03uri\x120\n" +
 	"\rthumbnail_uri\x18\n" +
-	" \x01(\tR\fthumbnailUri\x12\x18\n" +
+	" \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\fthumbnailUri\x12\x18\n" +
 	"\aversion\x18\v \x01(\tR\aversion\x12\x12\n" +
-	"\x04unit\x18\f \x01(\tR\x04unit\x12O\n" +
-	"\x13external_references\x18\r \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"\x04unit\x18\f \x01(\tR\x04unit\x12\x17\n" +
+	"\aup_axis\x18\r \x01(\tR\x06upAxis\x12O\n" +
+	"\x13external_references\x18\x0e \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
+	"\x06custom\x18\x0f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eModelArtifacts\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.ModelArtifactR\x05items*\xb5\x01\n" +
 	"\n" +

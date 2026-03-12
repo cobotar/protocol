@@ -25,39 +25,43 @@ namespace Messages.Assembly.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chdhc3NlbWJseS92MS9tb2RlbC5wcm90bxILYXNzZW1ibHkudjEaGGFzc2Vt",
-            "Ymx5L3YxL2NvbW1vbi5wcm90byKFBAoNTW9kZWxBcnRpZmFjdBIOCgJpZBgB",
-            "IAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgD",
-            "IAEoCVILZGVzY3JpcHRpb24SEgoEaWNvbhgEIAEoCVIEaWNvbhItCgVncm91",
-            "cBgFIAEoDjIXLmFzc2VtYmx5LnYxLk1vZGVsR3JvdXBSBWdyb3VwEjAKBm9y",
-            "aWdpbhgGIAEoDjIYLmFzc2VtYmx5LnYxLk1vZGVsT3JpZ2luUgZvcmlnaW4S",
-            "MAoGZm9ybWF0GAcgASgOMhguYXNzZW1ibHkudjEuTW9kZWxGb3JtYXRSBmZv",
-            "cm1hdBIaCghmaWxlbmFtZRgIIAEoCVIIZmlsZW5hbWUSEAoDdXJpGAkgASgJ",
-            "UgN1cmkSIwoNdGh1bWJuYWlsX3VyaRgKIAEoCVIMdGh1bWJuYWlsVXJpEhgK",
-            "B3ZlcnNpb24YCyABKAlSB3ZlcnNpb24SEgoEdW5pdBgMIAEoCVIEdW5pdBJP",
-            "ChNleHRlcm5hbF9yZWZlcmVuY2VzGA0gAygLMh4uYXNzZW1ibHkudjEuRXh0",
-            "ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxI1CgZjdXN0b20Y",
-            "DiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20i",
-            "QgoOTW9kZWxBcnRpZmFjdHMSMAoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52",
-            "MS5Nb2RlbEFydGlmYWN0UgVpdGVtcyq1AQoKTW9kZWxHcm91cBIbChdNT0RF",
-            "TF9HUk9VUF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0dST1VQX1BBUlQQARIX",
-            "ChNNT0RFTF9HUk9VUF9QUk9EVUNUEAISFAoQTU9ERUxfR1JPVVBfVE9PTBAD",
-            "EhUKEU1PREVMX0dST1VQX1JPQk9UEAQSFwoTTU9ERUxfR1JPVVBfRklYVFVS",
-            "RRAFEhUKEU1PREVMX0dST1VQX0FTU0VUEAYqfAoLTW9kZWxPcmlnaW4SHAoY",
-            "TU9ERUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJR0lOX0JV",
-            "SUxUX0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoVTU9ERUxf",
-            "T1JJR0lOX0VYVEVSTkFMEAMqsgEKC01vZGVsRm9ybWF0EhwKGE1PREVMX0ZP",
-            "Uk1BVF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0ZPUk1BVF9HTEIQARIVChFN",
-            "T0RFTF9GT1JNQVRfR0xURhACEhQKEE1PREVMX0ZPUk1BVF9PQkoQAxIVChFN",
-            "T0RFTF9GT1JNQVRfU1RFUBAEEhQKEE1PREVMX0ZPUk1BVF9TVEwQBRIVChFN",
-            "T0RFTF9GT1JNQVRfVVNEWhAGQrABCg9jb20uYXNzZW1ibHkudjFCCk1vZGVs",
-            "UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3Nl",
-            "bWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRh",
-            "dGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw=="));
+            "Ymx5L3YxL2NvbW1vbi5wcm90bxobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnBy",
+            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
+            "b3RvIucECg1Nb2RlbEFydGlmYWN0Eg4KAmlkGAEgASgJUgJpZBIdCgRuYW1l",
+            "GAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlS",
+            "C2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGljb24SNwoFZ3JvdXAYBSAB",
+            "KA4yFy5hc3NlbWJseS52MS5Nb2RlbEdyb3VwQgi6SAWCAQIQAVIFZ3JvdXAS",
+            "PQoGb3JpZ2luGAYgASgOMhguYXNzZW1ibHkudjEuTW9kZWxPcmlnaW5CC7pI",
+            "CIIBAhAByAEBUgZvcmlnaW4SPQoGZm9ybWF0GAcgASgOMhguYXNzZW1ibHku",
+            "djEuTW9kZWxGb3JtYXRCC7pICIIBAhAByAEBUgZmb3JtYXQSGgoIZmlsZW5h",
+            "bWUYCCABKAlSCGZpbGVuYW1lEh0KA3VyaRgJIAEoCUILukgIcgOIAQHYAQFS",
+            "A3VyaRIwCg10aHVtYm5haWxfdXJpGAogASgJQgu6SAhyA4gBAdgBAVIMdGh1",
+            "bWJuYWlsVXJpEhgKB3ZlcnNpb24YCyABKAlSB3ZlcnNpb24SEgoEdW5pdBgM",
+            "IAEoCVIEdW5pdBIXCgd1cF9heGlzGA0gASgJUgZ1cEF4aXMSTwoTZXh0ZXJu",
+            "YWxfcmVmZXJlbmNlcxgOIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVm",
+            "ZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGA8gASgLMh0u",
+            "YXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkIKDk1vZGVs",
+            "QXJ0aWZhY3RzEjAKBWl0ZW1zGAEgAygLMhouYXNzZW1ibHkudjEuTW9kZWxB",
+            "cnRpZmFjdFIFaXRlbXMqtQEKCk1vZGVsR3JvdXASGwoXTU9ERUxfR1JPVVBf",
+            "VU5TUEVDSUZJRUQQABIUChBNT0RFTF9HUk9VUF9QQVJUEAESFwoTTU9ERUxf",
+            "R1JPVVBfUFJPRFVDVBACEhQKEE1PREVMX0dST1VQX1RPT0wQAxIVChFNT0RF",
+            "TF9HUk9VUF9ST0JPVBAEEhcKE01PREVMX0dST1VQX0ZJWFRVUkUQBRIVChFN",
+            "T0RFTF9HUk9VUF9BU1NFVBAGKnwKC01vZGVsT3JpZ2luEhwKGE1PREVMX09S",
+            "SUdJTl9VTlNQRUNJRklFRBAAEhkKFU1PREVMX09SSUdJTl9CVUlMVF9JThAB",
+            "EhkKFU1PREVMX09SSUdJTl9VUExPQURFRBACEhkKFU1PREVMX09SSUdJTl9F",
+            "WFRFUk5BTBADKrIBCgtNb2RlbEZvcm1hdBIcChhNT0RFTF9GT1JNQVRfVU5T",
+            "UEVDSUZJRUQQABIUChBNT0RFTF9GT1JNQVRfR0xCEAESFQoRTU9ERUxfRk9S",
+            "TUFUX0dMVEYQAhIUChBNT0RFTF9GT1JNQVRfT0JKEAMSFQoRTU9ERUxfRk9S",
+            "TUFUX1NURVAQBBIUChBNT0RFTF9GT1JNQVRfU1RMEAUSFQoRTU9ERUxfRk9S",
+            "TUFUX1VTRFoQBkKwAQoPY29tLmFzc2VtYmx5LnYxQgpNb2RlbFByb3RvUAFa",
+            "O2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJs",
+            "eS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHK",
+            "AgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNz",
+            "ZW1ibHk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ModelGroup), typeof(global::Messages.Assembly.V1.ModelOrigin), typeof(global::Messages.Assembly.V1.ModelFormat), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ModelArtifact), global::Messages.Assembly.V1.ModelArtifact.Parser, new[]{ "Id", "Name", "Description", "Icon", "Group", "Origin", "Format", "Filename", "Uri", "ThumbnailUri", "Version", "Unit", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ModelArtifact), global::Messages.Assembly.V1.ModelArtifact.Parser, new[]{ "Id", "Name", "Description", "Icon", "Group", "Origin", "Format", "Filename", "Uri", "ThumbnailUri", "Version", "Unit", "UpAxis", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ModelArtifacts), global::Messages.Assembly.V1.ModelArtifacts.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -142,6 +146,7 @@ namespace Messages.Assembly.V1 {
       thumbnailUri_ = other.thumbnailUri_;
       version_ = other.version_;
       unit_ = other.unit_;
+      upAxis_ = other.upAxis_;
       externalReferences_ = other.externalReferences_.Clone();
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -240,6 +245,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "filename" field.</summary>
     public const int FilenameFieldNumber = 8;
     private string filename_ = "";
+    /// <summary>
+    /// Filename is required for BUILT_IN models, ignored otherwise
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filename {
@@ -252,6 +260,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "uri" field.</summary>
     public const int UriFieldNumber = 9;
     private string uri_ = "";
+    /// <summary>
+    /// Uri is required for uploaded and external models
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Uri {
@@ -288,6 +299,11 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "unit" field.</summary>
     public const int UnitFieldNumber = 12;
     private string unit_ = "";
+    /// <summary>
+    /// Unit used for the model geometry coordinates.
+    /// Typically "mm", "cm", "m", "in", etc.
+    /// Used to scale the model correctly when loading.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Unit {
@@ -297,10 +313,25 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "up_axis" field.</summary>
+    public const int UpAxisFieldNumber = 13;
+    private string upAxis_ = "";
+    /// <summary>
+    /// "X", "Y", "Z"
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string UpAxis {
+      get { return upAxis_; }
+      set {
+        upAxis_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "external_references" field.</summary>
-    public const int ExternalReferencesFieldNumber = 13;
+    public const int ExternalReferencesFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Messages.Assembly.V1.ExternalReference> _repeated_externalReferences_codec
-        = pb::FieldCodec.ForMessage(106, global::Messages.Assembly.V1.ExternalReference.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Messages.Assembly.V1.ExternalReference.Parser);
     private readonly pbc::RepeatedField<global::Messages.Assembly.V1.ExternalReference> externalReferences_ = new pbc::RepeatedField<global::Messages.Assembly.V1.ExternalReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -309,7 +340,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 14;
+    public const int CustomFieldNumber = 15;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -347,6 +378,7 @@ namespace Messages.Assembly.V1 {
       if (ThumbnailUri != other.ThumbnailUri) return false;
       if (Version != other.Version) return false;
       if (Unit != other.Unit) return false;
+      if (UpAxis != other.UpAxis) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -368,6 +400,7 @@ namespace Messages.Assembly.V1 {
       if (ThumbnailUri.Length != 0) hash ^= ThumbnailUri.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Unit.Length != 0) hash ^= Unit.GetHashCode();
+      if (UpAxis.Length != 0) hash ^= UpAxis.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
@@ -436,9 +469,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(98);
         output.WriteString(Unit);
       }
+      if (UpAxis.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(UpAxis);
+      }
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -499,9 +536,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(98);
         output.WriteString(Unit);
       }
+      if (UpAxis.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(UpAxis);
+      }
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -549,6 +590,9 @@ namespace Messages.Assembly.V1 {
       }
       if (Unit.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Unit);
+      }
+      if (UpAxis.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UpAxis);
       }
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (custom_ != null) {
@@ -601,6 +645,9 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Unit.Length != 0) {
         Unit = other.Unit;
+      }
+      if (other.UpAxis.Length != 0) {
+        UpAxis = other.UpAxis;
       }
       externalReferences_.Add(other.externalReferences_);
       if (other.custom_ != null) {
@@ -677,10 +724,14 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 106: {
-            externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
+            UpAxis = input.ReadString();
             break;
           }
           case 114: {
+            externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
+            break;
+          }
+          case 122: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -755,10 +806,14 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 106: {
-            externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
+            UpAxis = input.ReadString();
             break;
           }
           case 114: {
+            externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
+            break;
+          }
+          case 122: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }

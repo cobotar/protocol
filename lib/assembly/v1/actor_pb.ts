@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/actor.proto.
  */
 export const file_assembly_v1_actor: GenFile = /*@__PURE__*/
-  fileDesc("Chdhc3NlbWJseS92MS9hY3Rvci5wcm90bxILYXNzZW1ibHkudjEi4gEKEFdvcmtlckRlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIkIKCEFjdG9yUmVmEiQKBGtpbmQYASABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSEAoIYWN0b3JfaWQYAiABKAki6wEKD0FjdG9yQXNzaWdubWVudBIKCgJpZBgBIAEoCRIkCgVhY3RvchgCIAEoCzIVLmFzc2VtYmx5LnYxLkFjdG9yUmVmEhYKDnByb2Nlc3NfcnVuX2lkGAMgASgJEhcKD3NlcXVlbmNlX3J1bl9pZBgEIAEoCRITCgt0YXNrX3J1bl9pZBgFIAEoCRIvCgthc3NpZ25lZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLcmVsZWFzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQrABCg9jb20uYXNzZW1ibHkudjFCCkFjdG9yUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw", [file_assembly_v1_common, file_google_protobuf_timestamp]);
+  fileDesc("Chdhc3NlbWJseS92MS9hY3Rvci5wcm90bxILYXNzZW1ibHkudjEi4gEKEFdvcmtlckRlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIkEKEVdvcmtlckRlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0uYXNzZW1ibHkudjEuV29ya2VyRGVmaW5pdGlvbiJCCghBY3RvclJlZhIkCgRraW5kGAEgASgOMhYuYXNzZW1ibHkudjEuQWN0b3JLaW5kEhAKCGFjdG9yX2lkGAIgASgJIusBCg9BY3RvckFzc2lnbm1lbnQSCgoCaWQYASABKAkSJAoFYWN0b3IYAiABKAsyFS5hc3NlbWJseS52MS5BY3RvclJlZhIWCg5wcm9jZXNzX3J1bl9pZBgDIAEoCRIXCg9zZXF1ZW5jZV9ydW5faWQYBCABKAkSEwoLdGFza19ydW5faWQYBSABKAkSLwoLYXNzaWduZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC3JlbGVhc2VkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEKwAQoPY29tLmFzc2VtYmx5LnYxQgpBY3RvclByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message assembly.v1.WorkerDefinition
@@ -41,6 +41,8 @@ export type WorkerDefinition = Message<"assembly.v1.WorkerDefinition"> & {
   icon: string;
 
   /**
+   * If disabled, the worker can't be selected
+   *
    * @generated from field: bool disabled = 5;
    */
   disabled: boolean;
@@ -69,6 +71,23 @@ export const WorkerDefinitionSchema: GenMessage<WorkerDefinition> = /*@__PURE__*
   messageDesc(file_assembly_v1_actor, 0);
 
 /**
+ * @generated from message assembly.v1.WorkerDefinitions
+ */
+export type WorkerDefinitions = Message<"assembly.v1.WorkerDefinitions"> & {
+  /**
+   * @generated from field: repeated assembly.v1.WorkerDefinition items = 1;
+   */
+  items: WorkerDefinition[];
+};
+
+/**
+ * Describes the message assembly.v1.WorkerDefinitions.
+ * Use `create(WorkerDefinitionsSchema)` to create a new message.
+ */
+export const WorkerDefinitionsSchema: GenMessage<WorkerDefinitions> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_actor, 1);
+
+/**
  * @generated from message assembly.v1.ActorRef
  */
 export type ActorRef = Message<"assembly.v1.ActorRef"> & {
@@ -90,7 +109,7 @@ export type ActorRef = Message<"assembly.v1.ActorRef"> & {
  * Use `create(ActorRefSchema)` to create a new message.
  */
 export const ActorRefSchema: GenMessage<ActorRef> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_actor, 1);
+  messageDesc(file_assembly_v1_actor, 2);
 
 /**
  * @generated from message assembly.v1.ActorAssignment
@@ -137,5 +156,5 @@ export type ActorAssignment = Message<"assembly.v1.ActorAssignment"> & {
  * Use `create(ActorAssignmentSchema)` to create a new message.
  */
 export const ActorAssignmentSchema: GenMessage<ActorAssignment> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_actor, 2);
+  messageDesc(file_assembly_v1_actor, 3);
 

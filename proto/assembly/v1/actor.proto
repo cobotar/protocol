@@ -12,10 +12,14 @@ message WorkerDefinition {
   string name = 2;
   string description = 3;
   string icon = 4;
-  bool disabled = 5;
+  bool disabled = 5; // If disabled, the worker can't be selected
   string employee_id = 6;
   repeated ExternalReference external_references = 7;
   CustomProperties custom = 8;
+}
+
+message WorkerDefinitions {
+  repeated WorkerDefinition items = 1;
 }
 
 message ActorRef {

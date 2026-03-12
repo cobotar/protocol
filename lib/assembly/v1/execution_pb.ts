@@ -67,6 +67,9 @@ export const RunParameterSchema: GenMessage<RunParameter> = /*@__PURE__*/
   messageDesc(file_assembly_v1_execution, 1);
 
 /**
+ * ProcessRun is only created when a concrete cell can currently satisfy it.
+ * Is is based upon a ProcessRecipe which defines what must be possible.
+ *
  * @generated from message assembly.v1.ProcessRun
  */
 export type ProcessRun = Message<"assembly.v1.ProcessRun"> & {

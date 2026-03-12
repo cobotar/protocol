@@ -46,6 +46,8 @@ message RunParameter {
   string value = 2;
 }
 
+// ProcessRun is only created when a concrete cell can currently satisfy it.
+// Is is based upon a ProcessRecipe which defines what must be possible.
 message ProcessRun {
   string id = 1;
   string recipe_id = 2;

@@ -37,6 +37,13 @@ const (
 	ToolType_TOOL_TYPE_SAFETY            ToolType = 8
 	ToolType_TOOL_TYPE_ELECTRONICS       ToolType = 9
 	ToolType_TOOL_TYPE_FIXTURE_ACCESSORY ToolType = 10
+	ToolType_TOOL_TYPE_SHAPING           ToolType = 11
+	ToolType_TOOL_TYPE_TURNING           ToolType = 12
+	ToolType_TOOL_TYPE_STRIKING          ToolType = 13
+	ToolType_TOOL_TYPE_MARKING           ToolType = 14
+	ToolType_TOOL_TYPE_FINISHING         ToolType = 15
+	ToolType_TOOL_TYPE_ABRASIVE          ToolType = 16
+	ToolType_TOOL_TYPE_CLEANING          ToolType = 17
 )
 
 // Enum value maps for ToolType.
@@ -53,6 +60,13 @@ var (
 		8:  "TOOL_TYPE_SAFETY",
 		9:  "TOOL_TYPE_ELECTRONICS",
 		10: "TOOL_TYPE_FIXTURE_ACCESSORY",
+		11: "TOOL_TYPE_SHAPING",
+		12: "TOOL_TYPE_TURNING",
+		13: "TOOL_TYPE_STRIKING",
+		14: "TOOL_TYPE_MARKING",
+		15: "TOOL_TYPE_FINISHING",
+		16: "TOOL_TYPE_ABRASIVE",
+		17: "TOOL_TYPE_CLEANING",
 	}
 	ToolType_value = map[string]int32{
 		"TOOL_TYPE_UNSPECIFIED":       0,
@@ -66,6 +80,13 @@ var (
 		"TOOL_TYPE_SAFETY":            8,
 		"TOOL_TYPE_ELECTRONICS":       9,
 		"TOOL_TYPE_FIXTURE_ACCESSORY": 10,
+		"TOOL_TYPE_SHAPING":           11,
+		"TOOL_TYPE_TURNING":           12,
+		"TOOL_TYPE_STRIKING":          13,
+		"TOOL_TYPE_MARKING":           14,
+		"TOOL_TYPE_FINISHING":         15,
+		"TOOL_TYPE_ABRASIVE":          16,
+		"TOOL_TYPE_CLEANING":          17,
 	}
 )
 
@@ -739,6 +760,50 @@ func (x *ToolDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+type ToolDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ToolDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ToolDefinitions) Reset() {
+	*x = ToolDefinitions{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToolDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToolDefinitions) ProtoMessage() {}
+
+func (x *ToolDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToolDefinitions.ProtoReflect.Descriptor instead.
+func (*ToolDefinitions) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ToolDefinitions) GetItems() []*ToolDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type ToolInstance struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -756,7 +821,7 @@ type ToolInstance struct {
 
 func (x *ToolInstance) Reset() {
 	*x = ToolInstance{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[2]
+	mi := &file_assembly_v1_resources_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -768,7 +833,7 @@ func (x *ToolInstance) String() string {
 func (*ToolInstance) ProtoMessage() {}
 
 func (x *ToolInstance) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[2]
+	mi := &file_assembly_v1_resources_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -781,7 +846,7 @@ func (x *ToolInstance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ToolInstance.ProtoReflect.Descriptor instead.
 func (*ToolInstance) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{2}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ToolInstance) GetId() string {
@@ -847,6 +912,50 @@ func (x *ToolInstance) GetCustom() *CustomProperties {
 	return nil
 }
 
+type ToolInstances struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ToolInstance        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ToolInstances) Reset() {
+	*x = ToolInstances{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToolInstances) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToolInstances) ProtoMessage() {}
+
+func (x *ToolInstances) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToolInstances.ProtoReflect.Descriptor instead.
+func (*ToolInstances) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ToolInstances) GetItems() []*ToolInstance {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type FixtureDefinition struct {
 	state                          protoimpl.MessageState `protogen:"open.v1"`
 	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -854,8 +963,8 @@ type FixtureDefinition struct {
 	Description                    string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	Icon                           string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Type                           FixtureType            `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.FixtureType" json:"type,omitempty"`
-	SupportedProductDefinitionIds  []string               `protobuf:"bytes,6,rep,name=supported_product_definition_ids,json=supportedProductDefinitionIds,proto3" json:"supported_product_definition_ids,omitempty"`
-	SupportedRootPartDefinitionIds []string               `protobuf:"bytes,7,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"`
+	SupportedProductDefinitionIds  []string               `protobuf:"bytes,6,rep,name=supported_product_definition_ids,json=supportedProductDefinitionIds,proto3" json:"supported_product_definition_ids,omitempty"`      // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
+	SupportedRootPartDefinitionIds []string               `protobuf:"bytes,7,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"` // This fixture support products whose root assembly is one of these root parts
 	ModelId                        string                 `protobuf:"bytes,8,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	Constraints                    []*KeyValueConstraint  `protobuf:"bytes,9,rep,name=constraints,proto3" json:"constraints,omitempty"`
 	Custom                         *CustomProperties      `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
@@ -865,7 +974,7 @@ type FixtureDefinition struct {
 
 func (x *FixtureDefinition) Reset() {
 	*x = FixtureDefinition{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[3]
+	mi := &file_assembly_v1_resources_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -877,7 +986,7 @@ func (x *FixtureDefinition) String() string {
 func (*FixtureDefinition) ProtoMessage() {}
 
 func (x *FixtureDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[3]
+	mi := &file_assembly_v1_resources_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -890,7 +999,7 @@ func (x *FixtureDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FixtureDefinition.ProtoReflect.Descriptor instead.
 func (*FixtureDefinition) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{3}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *FixtureDefinition) GetId() string {
@@ -963,6 +1072,50 @@ func (x *FixtureDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+type FixtureDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*FixtureDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FixtureDefinitions) Reset() {
+	*x = FixtureDefinitions{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FixtureDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FixtureDefinitions) ProtoMessage() {}
+
+func (x *FixtureDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FixtureDefinitions.ProtoReflect.Descriptor instead.
+func (*FixtureDefinitions) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *FixtureDefinitions) GetItems() []*FixtureDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type FixtureInstance struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -977,7 +1130,7 @@ type FixtureInstance struct {
 
 func (x *FixtureInstance) Reset() {
 	*x = FixtureInstance{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[4]
+	mi := &file_assembly_v1_resources_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -989,7 +1142,7 @@ func (x *FixtureInstance) String() string {
 func (*FixtureInstance) ProtoMessage() {}
 
 func (x *FixtureInstance) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[4]
+	mi := &file_assembly_v1_resources_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1002,7 +1155,7 @@ func (x *FixtureInstance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FixtureInstance.ProtoReflect.Descriptor instead.
 func (*FixtureInstance) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{4}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *FixtureInstance) GetId() string {
@@ -1047,6 +1200,50 @@ func (x *FixtureInstance) GetCustom() *CustomProperties {
 	return nil
 }
 
+type FixtureInstances struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*FixtureInstance     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FixtureInstances) Reset() {
+	*x = FixtureInstances{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FixtureInstances) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FixtureInstances) ProtoMessage() {}
+
+func (x *FixtureInstances) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FixtureInstances.ProtoReflect.Descriptor instead.
+func (*FixtureInstances) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *FixtureInstances) GetItems() []*FixtureInstance {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type RobotDefinition struct {
 	state                       protoimpl.MessageState `protogen:"open.v1"`
 	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -1066,7 +1263,7 @@ type RobotDefinition struct {
 
 func (x *RobotDefinition) Reset() {
 	*x = RobotDefinition{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[5]
+	mi := &file_assembly_v1_resources_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1078,7 +1275,7 @@ func (x *RobotDefinition) String() string {
 func (*RobotDefinition) ProtoMessage() {}
 
 func (x *RobotDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[5]
+	mi := &file_assembly_v1_resources_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1091,7 +1288,7 @@ func (x *RobotDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotDefinition.ProtoReflect.Descriptor instead.
 func (*RobotDefinition) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{5}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *RobotDefinition) GetId() string {
@@ -1171,6 +1368,50 @@ func (x *RobotDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+type RobotDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*RobotDefinitions    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RobotDefinitions) Reset() {
+	*x = RobotDefinitions{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RobotDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RobotDefinitions) ProtoMessage() {}
+
+func (x *RobotDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RobotDefinitions.ProtoReflect.Descriptor instead.
+func (*RobotDefinitions) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *RobotDefinitions) GetItems() []*RobotDefinitions {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type RobotInstance struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -1185,7 +1426,7 @@ type RobotInstance struct {
 
 func (x *RobotInstance) Reset() {
 	*x = RobotInstance{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[6]
+	mi := &file_assembly_v1_resources_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1197,7 +1438,7 @@ func (x *RobotInstance) String() string {
 func (*RobotInstance) ProtoMessage() {}
 
 func (x *RobotInstance) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[6]
+	mi := &file_assembly_v1_resources_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1210,7 +1451,7 @@ func (x *RobotInstance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotInstance.ProtoReflect.Descriptor instead.
 func (*RobotInstance) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{6}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *RobotInstance) GetId() string {
@@ -1255,6 +1496,50 @@ func (x *RobotInstance) GetCustom() *CustomProperties {
 	return nil
 }
 
+type RobotInstances struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*RobotInstance       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RobotInstances) Reset() {
+	*x = RobotInstances{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RobotInstances) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RobotInstances) ProtoMessage() {}
+
+func (x *RobotInstances) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RobotInstances.ProtoReflect.Descriptor instead.
+func (*RobotInstances) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RobotInstances) GetItems() []*RobotInstance {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type AssetDefinition struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -1271,7 +1556,7 @@ type AssetDefinition struct {
 
 func (x *AssetDefinition) Reset() {
 	*x = AssetDefinition{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[7]
+	mi := &file_assembly_v1_resources_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1283,7 +1568,7 @@ func (x *AssetDefinition) String() string {
 func (*AssetDefinition) ProtoMessage() {}
 
 func (x *AssetDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[7]
+	mi := &file_assembly_v1_resources_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1296,7 +1581,7 @@ func (x *AssetDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetDefinition.ProtoReflect.Descriptor instead.
 func (*AssetDefinition) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{7}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *AssetDefinition) GetId() string {
@@ -1355,6 +1640,50 @@ func (x *AssetDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+type AssetDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*AssetDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AssetDefinitions) Reset() {
+	*x = AssetDefinitions{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssetDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssetDefinitions) ProtoMessage() {}
+
+func (x *AssetDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssetDefinitions.ProtoReflect.Descriptor instead.
+func (*AssetDefinitions) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *AssetDefinitions) GetItems() []*AssetDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type AssetInstance struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -1369,7 +1698,7 @@ type AssetInstance struct {
 
 func (x *AssetInstance) Reset() {
 	*x = AssetInstance{}
-	mi := &file_assembly_v1_resources_proto_msgTypes[8]
+	mi := &file_assembly_v1_resources_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1381,7 +1710,7 @@ func (x *AssetInstance) String() string {
 func (*AssetInstance) ProtoMessage() {}
 
 func (x *AssetInstance) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_resources_proto_msgTypes[8]
+	mi := &file_assembly_v1_resources_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1394,7 +1723,7 @@ func (x *AssetInstance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetInstance.ProtoReflect.Descriptor instead.
 func (*AssetInstance) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{8}
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *AssetInstance) GetId() string {
@@ -1439,6 +1768,50 @@ func (x *AssetInstance) GetCustom() *CustomProperties {
 	return nil
 }
 
+type AssetInstances struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*AssetInstance       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AssetInstances) Reset() {
+	*x = AssetInstances{}
+	mi := &file_assembly_v1_resources_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssetInstances) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssetInstances) ProtoMessage() {}
+
+func (x *AssetInstances) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_resources_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssetInstances.ProtoReflect.Descriptor instead.
+func (*AssetInstances) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_resources_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *AssetInstances) GetItems() []*AssetInstance {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_assembly_v1_resources_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_resources_proto_rawDesc = "" +
@@ -1470,7 +1843,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\bmodel_id\x18\n" +
 	" \x01(\tR\amodelId\x12O\n" +
 	"\x13external_references\x18\v \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xa0\x03\n" +
+	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"D\n" +
+	"\x0fToolDefinitions\x121\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.assembly.v1.ToolDefinitionR\x05items\"\xa0\x03\n" +
 	"\fToolInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
 	"\x12tool_definition_id\x18\x02 \x01(\tR\x10toolDefinitionId\x12#\n" +
@@ -1483,7 +1858,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"calibrated\x12R\n" +
 	"\x17calibration_valid_until\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\x12.\n" +
 	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xc5\x03\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"@\n" +
+	"\rToolInstances\x12/\n" +
+	"\x05items\x18\x01 \x03(\v2\x19.assembly.v1.ToolInstanceR\x05items\"\xc5\x03\n" +
 	"\x11FixtureDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -1495,7 +1872,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\bmodel_id\x18\b \x01(\tR\amodelId\x12A\n" +
 	"\vconstraints\x18\t \x03(\v2\x1f.assembly.v1.KeyValueConstraintR\vconstraints\x125\n" +
 	"\x06custom\x18\n" +
-	" \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x90\x02\n" +
+	" \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"J\n" +
+	"\x12FixtureDefinitions\x124\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.assembly.v1.FixtureDefinitionR\x05items\"\x90\x02\n" +
 	"\x0fFixtureInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x122\n" +
 	"\x15fixture_definition_id\x18\x02 \x01(\tR\x13fixtureDefinitionId\x12\x1d\n" +
@@ -1503,7 +1882,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
 	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
 	"\x04pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xe7\x03\n" +
+	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
+	"\x10FixtureInstances\x122\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.FixtureInstanceR\x05items\"\xe7\x03\n" +
 	"\x0fRobotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -1517,7 +1898,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\bmodel_id\x18\t \x01(\tR\amodelId\x12M\n" +
 	"\x12capability_profile\x18\n" +
 	" \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
-	"\x06custom\x18\v \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x93\x02\n" +
+	"\x06custom\x18\v \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"G\n" +
+	"\x10RobotDefinitions\x123\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.assembly.v1.RobotDefinitionsR\x05items\"\x93\x02\n" +
 	"\rRobotInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
 	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
@@ -1525,7 +1908,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
 	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
 	"\tbase_pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xa8\x02\n" +
+	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"\x0eRobotInstances\x120\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.RobotInstanceR\x05items\"\xa8\x02\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -1535,7 +1920,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1c.assembly.v1.AssetDriverTypeR\n" +
 	"driverType\x12\x19\n" +
 	"\bmodel_id\x18\a \x01(\tR\amodelId\x125\n" +
-	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x8a\x02\n" +
+	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
+	"\x10AssetDefinitions\x122\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.AssetDefinitionR\x05items\"\x8a\x02\n" +
 	"\rAssetInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12.\n" +
 	"\x13asset_definition_id\x18\x02 \x01(\tR\x11assetDefinitionId\x12\x1d\n" +
@@ -1543,7 +1930,9 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x123\n" +
 	"\x06status\x18\x04 \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x12.\n" +
 	"\x04pose\x18\x05 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x125\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom*\xa7\x02\n" +
+	"\x06custom\x18\x06 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"\x0eAssetInstances\x120\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.AssetInstanceR\x05items*\xcd\x03\n" +
 	"\bToolType\x12\x19\n" +
 	"\x15TOOL_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13TOOL_TYPE_FASTENING\x10\x01\x12\x16\n" +
@@ -1556,7 +1945,14 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x10TOOL_TYPE_SAFETY\x10\b\x12\x19\n" +
 	"\x15TOOL_TYPE_ELECTRONICS\x10\t\x12\x1f\n" +
 	"\x1bTOOL_TYPE_FIXTURE_ACCESSORY\x10\n" +
-	"*\x9e\x03\n" +
+	"\x12\x15\n" +
+	"\x11TOOL_TYPE_SHAPING\x10\v\x12\x15\n" +
+	"\x11TOOL_TYPE_TURNING\x10\f\x12\x16\n" +
+	"\x12TOOL_TYPE_STRIKING\x10\r\x12\x15\n" +
+	"\x11TOOL_TYPE_MARKING\x10\x0e\x12\x17\n" +
+	"\x13TOOL_TYPE_FINISHING\x10\x0f\x12\x16\n" +
+	"\x12TOOL_TYPE_ABRASIVE\x10\x10\x12\x16\n" +
+	"\x12TOOL_TYPE_CLEANING\x10\x11*\x9e\x03\n" +
 	"\bToolRole\x12\x19\n" +
 	"\x15TOOL_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18TOOL_ROLE_GRIP_WORKPIECE\x10\x01\x12 \n" +
@@ -1622,7 +2018,7 @@ func file_assembly_v1_resources_proto_rawDescGZIP() []byte {
 }
 
 var file_assembly_v1_resources_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
-var file_assembly_v1_resources_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_assembly_v1_resources_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_assembly_v1_resources_proto_goTypes = []any{
 	(ToolType)(0),                 // 0: assembly.v1.ToolType
 	(ToolRole)(0),                 // 1: assembly.v1.ToolRole
@@ -1634,58 +2030,74 @@ var file_assembly_v1_resources_proto_goTypes = []any{
 	(AssetDriverType)(0),          // 7: assembly.v1.AssetDriverType
 	(*CapabilityProfile)(nil),     // 8: assembly.v1.CapabilityProfile
 	(*ToolDefinition)(nil),        // 9: assembly.v1.ToolDefinition
-	(*ToolInstance)(nil),          // 10: assembly.v1.ToolInstance
-	(*FixtureDefinition)(nil),     // 11: assembly.v1.FixtureDefinition
-	(*FixtureInstance)(nil),       // 12: assembly.v1.FixtureInstance
-	(*RobotDefinition)(nil),       // 13: assembly.v1.RobotDefinition
-	(*RobotInstance)(nil),         // 14: assembly.v1.RobotInstance
-	(*AssetDefinition)(nil),       // 15: assembly.v1.AssetDefinition
-	(*AssetInstance)(nil),         // 16: assembly.v1.AssetInstance
-	(*KeyValueConstraint)(nil),    // 17: assembly.v1.KeyValueConstraint
-	(ActorKind)(0),                // 18: assembly.v1.ActorKind
-	(*ExternalReference)(nil),     // 19: assembly.v1.ExternalReference
-	(*CustomProperties)(nil),      // 20: assembly.v1.CustomProperties
-	(ResourceStatus)(0),           // 21: assembly.v1.ResourceStatus
-	(*timestamppb.Timestamp)(nil), // 22: google.protobuf.Timestamp
-	(*v1.LocalizedPose)(nil),      // 23: geometry.v1.LocalizedPose
+	(*ToolDefinitions)(nil),       // 10: assembly.v1.ToolDefinitions
+	(*ToolInstance)(nil),          // 11: assembly.v1.ToolInstance
+	(*ToolInstances)(nil),         // 12: assembly.v1.ToolInstances
+	(*FixtureDefinition)(nil),     // 13: assembly.v1.FixtureDefinition
+	(*FixtureDefinitions)(nil),    // 14: assembly.v1.FixtureDefinitions
+	(*FixtureInstance)(nil),       // 15: assembly.v1.FixtureInstance
+	(*FixtureInstances)(nil),      // 16: assembly.v1.FixtureInstances
+	(*RobotDefinition)(nil),       // 17: assembly.v1.RobotDefinition
+	(*RobotDefinitions)(nil),      // 18: assembly.v1.RobotDefinitions
+	(*RobotInstance)(nil),         // 19: assembly.v1.RobotInstance
+	(*RobotInstances)(nil),        // 20: assembly.v1.RobotInstances
+	(*AssetDefinition)(nil),       // 21: assembly.v1.AssetDefinition
+	(*AssetDefinitions)(nil),      // 22: assembly.v1.AssetDefinitions
+	(*AssetInstance)(nil),         // 23: assembly.v1.AssetInstance
+	(*AssetInstances)(nil),        // 24: assembly.v1.AssetInstances
+	(*KeyValueConstraint)(nil),    // 25: assembly.v1.KeyValueConstraint
+	(ActorKind)(0),                // 26: assembly.v1.ActorKind
+	(*ExternalReference)(nil),     // 27: assembly.v1.ExternalReference
+	(*CustomProperties)(nil),      // 28: assembly.v1.CustomProperties
+	(ResourceStatus)(0),           // 29: assembly.v1.ResourceStatus
+	(*timestamppb.Timestamp)(nil), // 30: google.protobuf.Timestamp
+	(*v1.LocalizedPose)(nil),      // 31: geometry.v1.LocalizedPose
 }
 var file_assembly_v1_resources_proto_depIdxs = []int32{
-	17, // 0: assembly.v1.CapabilityProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
+	25, // 0: assembly.v1.CapabilityProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
 	0,  // 1: assembly.v1.ToolDefinition.type:type_name -> assembly.v1.ToolType
-	18, // 2: assembly.v1.ToolDefinition.actor_kind:type_name -> assembly.v1.ActorKind
+	26, // 2: assembly.v1.ToolDefinition.actor_kind:type_name -> assembly.v1.ActorKind
 	1,  // 3: assembly.v1.ToolDefinition.roles:type_name -> assembly.v1.ToolRole
 	2,  // 4: assembly.v1.ToolDefinition.properties:type_name -> assembly.v1.ToolProperty
 	8,  // 5: assembly.v1.ToolDefinition.capability_profile:type_name -> assembly.v1.CapabilityProfile
-	19, // 6: assembly.v1.ToolDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	20, // 7: assembly.v1.ToolDefinition.custom:type_name -> assembly.v1.CustomProperties
-	21, // 8: assembly.v1.ToolInstance.status:type_name -> assembly.v1.ResourceStatus
-	22, // 9: assembly.v1.ToolInstance.calibration_valid_until:type_name -> google.protobuf.Timestamp
-	23, // 10: assembly.v1.ToolInstance.pose:type_name -> geometry.v1.LocalizedPose
-	20, // 11: assembly.v1.ToolInstance.custom:type_name -> assembly.v1.CustomProperties
-	3,  // 12: assembly.v1.FixtureDefinition.type:type_name -> assembly.v1.FixtureType
-	17, // 13: assembly.v1.FixtureDefinition.constraints:type_name -> assembly.v1.KeyValueConstraint
-	20, // 14: assembly.v1.FixtureDefinition.custom:type_name -> assembly.v1.CustomProperties
-	21, // 15: assembly.v1.FixtureInstance.status:type_name -> assembly.v1.ResourceStatus
-	23, // 16: assembly.v1.FixtureInstance.pose:type_name -> geometry.v1.LocalizedPose
-	20, // 17: assembly.v1.FixtureInstance.custom:type_name -> assembly.v1.CustomProperties
-	4,  // 18: assembly.v1.RobotDefinition.type:type_name -> assembly.v1.RobotType
-	5,  // 19: assembly.v1.RobotDefinition.driver_type:type_name -> assembly.v1.RobotDriverType
-	8,  // 20: assembly.v1.RobotDefinition.capability_profile:type_name -> assembly.v1.CapabilityProfile
-	20, // 21: assembly.v1.RobotDefinition.custom:type_name -> assembly.v1.CustomProperties
-	21, // 22: assembly.v1.RobotInstance.status:type_name -> assembly.v1.ResourceStatus
-	23, // 23: assembly.v1.RobotInstance.base_pose:type_name -> geometry.v1.LocalizedPose
-	20, // 24: assembly.v1.RobotInstance.custom:type_name -> assembly.v1.CustomProperties
-	6,  // 25: assembly.v1.AssetDefinition.type:type_name -> assembly.v1.AssetType
-	7,  // 26: assembly.v1.AssetDefinition.driver_type:type_name -> assembly.v1.AssetDriverType
-	20, // 27: assembly.v1.AssetDefinition.custom:type_name -> assembly.v1.CustomProperties
-	21, // 28: assembly.v1.AssetInstance.status:type_name -> assembly.v1.ResourceStatus
-	23, // 29: assembly.v1.AssetInstance.pose:type_name -> geometry.v1.LocalizedPose
-	20, // 30: assembly.v1.AssetInstance.custom:type_name -> assembly.v1.CustomProperties
-	31, // [31:31] is the sub-list for method output_type
-	31, // [31:31] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	27, // 6: assembly.v1.ToolDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	28, // 7: assembly.v1.ToolDefinition.custom:type_name -> assembly.v1.CustomProperties
+	9,  // 8: assembly.v1.ToolDefinitions.items:type_name -> assembly.v1.ToolDefinition
+	29, // 9: assembly.v1.ToolInstance.status:type_name -> assembly.v1.ResourceStatus
+	30, // 10: assembly.v1.ToolInstance.calibration_valid_until:type_name -> google.protobuf.Timestamp
+	31, // 11: assembly.v1.ToolInstance.pose:type_name -> geometry.v1.LocalizedPose
+	28, // 12: assembly.v1.ToolInstance.custom:type_name -> assembly.v1.CustomProperties
+	11, // 13: assembly.v1.ToolInstances.items:type_name -> assembly.v1.ToolInstance
+	3,  // 14: assembly.v1.FixtureDefinition.type:type_name -> assembly.v1.FixtureType
+	25, // 15: assembly.v1.FixtureDefinition.constraints:type_name -> assembly.v1.KeyValueConstraint
+	28, // 16: assembly.v1.FixtureDefinition.custom:type_name -> assembly.v1.CustomProperties
+	13, // 17: assembly.v1.FixtureDefinitions.items:type_name -> assembly.v1.FixtureDefinition
+	29, // 18: assembly.v1.FixtureInstance.status:type_name -> assembly.v1.ResourceStatus
+	31, // 19: assembly.v1.FixtureInstance.pose:type_name -> geometry.v1.LocalizedPose
+	28, // 20: assembly.v1.FixtureInstance.custom:type_name -> assembly.v1.CustomProperties
+	15, // 21: assembly.v1.FixtureInstances.items:type_name -> assembly.v1.FixtureInstance
+	4,  // 22: assembly.v1.RobotDefinition.type:type_name -> assembly.v1.RobotType
+	5,  // 23: assembly.v1.RobotDefinition.driver_type:type_name -> assembly.v1.RobotDriverType
+	8,  // 24: assembly.v1.RobotDefinition.capability_profile:type_name -> assembly.v1.CapabilityProfile
+	28, // 25: assembly.v1.RobotDefinition.custom:type_name -> assembly.v1.CustomProperties
+	18, // 26: assembly.v1.RobotDefinitions.items:type_name -> assembly.v1.RobotDefinitions
+	29, // 27: assembly.v1.RobotInstance.status:type_name -> assembly.v1.ResourceStatus
+	31, // 28: assembly.v1.RobotInstance.base_pose:type_name -> geometry.v1.LocalizedPose
+	28, // 29: assembly.v1.RobotInstance.custom:type_name -> assembly.v1.CustomProperties
+	19, // 30: assembly.v1.RobotInstances.items:type_name -> assembly.v1.RobotInstance
+	6,  // 31: assembly.v1.AssetDefinition.type:type_name -> assembly.v1.AssetType
+	7,  // 32: assembly.v1.AssetDefinition.driver_type:type_name -> assembly.v1.AssetDriverType
+	28, // 33: assembly.v1.AssetDefinition.custom:type_name -> assembly.v1.CustomProperties
+	21, // 34: assembly.v1.AssetDefinitions.items:type_name -> assembly.v1.AssetDefinition
+	29, // 35: assembly.v1.AssetInstance.status:type_name -> assembly.v1.ResourceStatus
+	31, // 36: assembly.v1.AssetInstance.pose:type_name -> geometry.v1.LocalizedPose
+	28, // 37: assembly.v1.AssetInstance.custom:type_name -> assembly.v1.CustomProperties
+	23, // 38: assembly.v1.AssetInstances.items:type_name -> assembly.v1.AssetInstance
+	39, // [39:39] is the sub-list for method output_type
+	39, // [39:39] is the sub-list for method input_type
+	39, // [39:39] is the sub-list for extension type_name
+	39, // [39:39] is the sub-list for extension extendee
+	0,  // [0:39] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_resources_proto_init() }
@@ -1700,7 +2112,7 @@ func file_assembly_v1_resources_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_resources_proto_rawDesc), len(file_assembly_v1_resources_proto_rawDesc)),
 			NumEnums:      8,
-			NumMessages:   9,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

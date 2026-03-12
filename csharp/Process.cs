@@ -173,6 +173,9 @@ namespace Messages.Assembly.V1 {
     [pbr::OriginalName("TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN")] PreferHuman = 1,
     [pbr::OriginalName("TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN")] OnlyHuman = 2,
     [pbr::OriginalName("TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT")] PreferRobot = 3,
+    /// <summary>
+    /// Only use this if it truly must be done by a robot. Otherwise use prefer-robot
+    /// </summary>
     [pbr::OriginalName("TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT")] OnlyRobot = 4,
     [pbr::OriginalName("TASK_ASSIGNMENT_PREFERENCE_EITHER")] Either = 5,
   }
@@ -393,6 +396,15 @@ namespace Messages.Assembly.V1 {
 
   }
 
+  /// <summary>
+  /// ProcessRecipe describes the following:
+  /// - What work must be done
+  /// - What kinds of capabilities are required
+  /// - What tool roles are required
+  /// - What skills are required
+  /// - What actor constrains exist
+  /// - What validation is needed
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessRecipe : pb::IMessage<ProcessRecipe>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -573,6 +585,9 @@ namespace Messages.Assembly.V1 {
     private static readonly pb::FieldCodec<string> _repeated_supportedFixtureDefinitionIds_codec
         = pb::FieldCodec.ForString(90);
     private readonly pbc::RepeatedField<string> supportedFixtureDefinitionIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Meaning: this recipe is intended to run with these fixtures
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> SupportedFixtureDefinitionIds {

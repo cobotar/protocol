@@ -25,6 +25,13 @@ class ToolType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TOOL_TYPE_SAFETY: _ClassVar[ToolType]
     TOOL_TYPE_ELECTRONICS: _ClassVar[ToolType]
     TOOL_TYPE_FIXTURE_ACCESSORY: _ClassVar[ToolType]
+    TOOL_TYPE_SHAPING: _ClassVar[ToolType]
+    TOOL_TYPE_TURNING: _ClassVar[ToolType]
+    TOOL_TYPE_STRIKING: _ClassVar[ToolType]
+    TOOL_TYPE_MARKING: _ClassVar[ToolType]
+    TOOL_TYPE_FINISHING: _ClassVar[ToolType]
+    TOOL_TYPE_ABRASIVE: _ClassVar[ToolType]
+    TOOL_TYPE_CLEANING: _ClassVar[ToolType]
 
 class ToolRole(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -98,6 +105,13 @@ TOOL_TYPE_INSPECTION: ToolType
 TOOL_TYPE_SAFETY: ToolType
 TOOL_TYPE_ELECTRONICS: ToolType
 TOOL_TYPE_FIXTURE_ACCESSORY: ToolType
+TOOL_TYPE_SHAPING: ToolType
+TOOL_TYPE_TURNING: ToolType
+TOOL_TYPE_STRIKING: ToolType
+TOOL_TYPE_MARKING: ToolType
+TOOL_TYPE_FINISHING: ToolType
+TOOL_TYPE_ABRASIVE: ToolType
+TOOL_TYPE_CLEANING: ToolType
 TOOL_ROLE_UNSPECIFIED: ToolRole
 TOOL_ROLE_GRIP_WORKPIECE: ToolRole
 TOOL_ROLE_POSITION_COMPONENT: ToolRole
@@ -190,6 +204,12 @@ class ToolDefinition(_message.Message):
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[ToolType, str]] = ..., actor_kind: _Optional[_Union[_common_pb2.ActorKind, str]] = ..., roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., properties: _Optional[_Iterable[_Union[ToolProperty, str]]] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., model_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
+class ToolDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ToolDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[ToolDefinition, _Mapping]]] = ...) -> None: ...
+
 class ToolInstance(_message.Message):
     __slots__ = ("id", "tool_definition_id", "serial_number", "station_id", "status", "calibrated", "calibration_valid_until", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -211,6 +231,12 @@ class ToolInstance(_message.Message):
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., tool_definition_id: _Optional[str] = ..., serial_number: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., calibrated: bool = ..., calibration_valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class ToolInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ToolInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[ToolInstance, _Mapping]]] = ...) -> None: ...
 
 class FixtureDefinition(_message.Message):
     __slots__ = ("id", "name", "description", "icon", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "model_id", "constraints", "custom")
@@ -236,6 +262,12 @@ class FixtureDefinition(_message.Message):
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[FixtureType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., model_id: _Optional[str] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
+class FixtureDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[FixtureDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[FixtureDefinition, _Mapping]]] = ...) -> None: ...
+
 class FixtureInstance(_message.Message):
     __slots__ = ("id", "fixture_definition_id", "station_id", "status", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -251,6 +283,12 @@ class FixtureInstance(_message.Message):
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class FixtureInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[FixtureInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[FixtureInstance, _Mapping]]] = ...) -> None: ...
 
 class RobotDefinition(_message.Message):
     __slots__ = ("id", "name", "description", "icon", "type", "driver_type", "coupler_model_id", "end_effector_tool_definition_id", "model_id", "capability_profile", "custom")
@@ -278,6 +316,12 @@ class RobotDefinition(_message.Message):
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., coupler_model_id: _Optional[str] = ..., end_effector_tool_definition_id: _Optional[str] = ..., model_id: _Optional[str] = ..., capability_profile: _Optional[_Union[CapabilityProfile, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
+class RobotDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[RobotDefinitions]
+    def __init__(self, items: _Optional[_Iterable[_Union[RobotDefinitions, _Mapping]]] = ...) -> None: ...
+
 class RobotInstance(_message.Message):
     __slots__ = ("id", "robot_definition_id", "station_id", "status", "base_pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -293,6 +337,12 @@ class RobotInstance(_message.Message):
     base_pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., robot_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., base_pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class RobotInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[RobotInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[RobotInstance, _Mapping]]] = ...) -> None: ...
 
 class AssetDefinition(_message.Message):
     __slots__ = ("id", "name", "description", "icon", "type", "driver_type", "model_id", "custom")
@@ -314,6 +364,12 @@ class AssetDefinition(_message.Message):
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
+class AssetDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[AssetDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[AssetDefinition, _Mapping]]] = ...) -> None: ...
+
 class AssetInstance(_message.Message):
     __slots__ = ("id", "asset_definition_id", "station_id", "status", "pose", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -329,3 +385,9 @@ class AssetInstance(_message.Message):
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., asset_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class AssetInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[AssetInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[AssetInstance, _Mapping]]] = ...) -> None: ...

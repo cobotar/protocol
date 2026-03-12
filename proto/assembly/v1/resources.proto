@@ -20,6 +20,13 @@ enum ToolType {
   TOOL_TYPE_SAFETY = 8;
   TOOL_TYPE_ELECTRONICS = 9;
   TOOL_TYPE_FIXTURE_ACCESSORY = 10;
+  TOOL_TYPE_SHAPING = 11;
+  TOOL_TYPE_TURNING = 12;
+  TOOL_TYPE_STRIKING = 13;
+  TOOL_TYPE_MARKING = 14;
+  TOOL_TYPE_FINISHING = 15;
+  TOOL_TYPE_ABRASIVE = 16;
+  TOOL_TYPE_CLEANING = 17;
 }
 
 enum ToolRole {
@@ -75,6 +82,10 @@ message ToolDefinition {
   CustomProperties custom = 12;
 }
 
+message ToolDefinitions {
+  repeated ToolDefinition items = 1;
+}
+
 message ToolInstance {
   string id = 1;
   string tool_definition_id = 2;
@@ -85,6 +96,10 @@ message ToolInstance {
   google.protobuf.Timestamp calibration_valid_until = 7;
   geometry.v1.LocalizedPose pose = 8;
   CustomProperties custom = 9;
+}
+
+message ToolInstances {
+  repeated ToolInstance items = 1;
 }
 
 enum FixtureType {
@@ -101,11 +116,15 @@ message FixtureDefinition {
   string description = 3;
   string icon = 4;
   FixtureType type = 5;
-  repeated string supported_product_definition_ids = 6;
-  repeated string supported_root_part_definition_ids = 7;
+  repeated string supported_product_definition_ids = 6; // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
+  repeated string supported_root_part_definition_ids = 7; // This fixture support products whose root assembly is one of these root parts
   string model_id = 8;
   repeated KeyValueConstraint constraints = 9;
   CustomProperties custom = 10;
+}
+
+message FixtureDefinitions {
+  repeated FixtureDefinition items = 1;
 }
 
 message FixtureInstance {
@@ -115,6 +134,10 @@ message FixtureInstance {
   ResourceStatus status = 4;
   geometry.v1.LocalizedPose pose = 5;
   CustomProperties custom = 6;
+}
+
+message FixtureInstances {
+  repeated FixtureInstance items = 1;
 }
 
 enum RobotType {
@@ -145,6 +168,10 @@ message RobotDefinition {
   CustomProperties custom = 11;
 }
 
+message RobotDefinitions {
+  repeated RobotDefinitions items = 1;
+}
+
 message RobotInstance {
   string id = 1;
   string robot_definition_id = 2;
@@ -152,6 +179,10 @@ message RobotInstance {
   ResourceStatus status = 4;
   geometry.v1.LocalizedPose base_pose = 5;
   CustomProperties custom = 6;
+}
+
+message RobotInstances {
+  repeated RobotInstance items = 1;
 }
 
 enum AssetType {
@@ -179,6 +210,10 @@ message AssetDefinition {
   CustomProperties custom = 8;
 }
 
+message AssetDefinitions {
+  repeated AssetDefinition items = 1;
+}
+
 message AssetInstance {
   string id = 1;
   string asset_definition_id = 2;
@@ -186,4 +221,8 @@ message AssetInstance {
   ResourceStatus status = 4;
   geometry.v1.LocalizedPose pose = 5;
   CustomProperties custom = 6;
+}
+
+message AssetInstances {
+  repeated AssetInstance items = 1;
 }

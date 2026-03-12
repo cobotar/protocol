@@ -43,6 +43,14 @@ export const RecipeApplicabilitySchema: GenMessage<RecipeApplicability> = /*@__P
   messageDesc(file_assembly_v1_process, 0);
 
 /**
+ * ProcessRecipe describes the following:
+ * - What work must be done
+ * - What kinds of capabilities are required
+ * - What tool roles are required
+ * - What skills are required
+ * - What actor constrains exist
+ * - What validation is needed
+ *
  * @generated from message assembly.v1.ProcessRecipe
  */
 export type ProcessRecipe = Message<"assembly.v1.ProcessRecipe"> & {
@@ -97,6 +105,8 @@ export type ProcessRecipe = Message<"assembly.v1.ProcessRecipe"> & {
   tasks: TaskDefinition[];
 
   /**
+   * Meaning: this recipe is intended to run with these fixtures
+   *
    * @generated from field: repeated string supported_fixture_definition_ids = 11;
    */
   supportedFixtureDefinitionIds: string[];
@@ -583,6 +593,8 @@ export enum TaskAssignmentPreference {
   PREFER_ROBOT = 3,
 
   /**
+   * Only use this if it truly must be done by a robot. Otherwise use prefer-robot
+   *
    * @generated from enum value: TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4;
    */
   ONLY_ROBOT = 4,

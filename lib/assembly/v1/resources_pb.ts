@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/resources.proto.
  */
 export const file_assembly_v1_resources: GenFile = /*@__PURE__*/
-  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIrgCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSGgoSdG9vbF9kZWZpbml0aW9uX2lkGAIgASgJEhUKDXNlcmlhbF9udW1iZXIYAyABKAkSEgoKc3RhdGlvbl9pZBgEIAEoCRIrCgZzdGF0dXMYBSABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxISCgpjYWxpYnJhdGVkGAYgASgIEjsKF2NhbGlicmF0aW9uX3ZhbGlkX3VudGlsGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIsUCChFGaXh0dXJlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSJgoEdHlwZRgFIAEoDjIYLmFzc2VtYmx5LnYxLkZpeHR1cmVUeXBlEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAYgAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYByADKAkSEAoIbW9kZWxfaWQYCCABKAkSNAoLY29uc3RyYWludHMYCSADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQSLQoGY3VzdG9tGAogASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyLWAQoPRml4dHVyZUluc3RhbmNlEgoKAmlkGAEgASgJEh0KFWZpeHR1cmVfZGVmaW5pdGlvbl9pZBgCIAEoCRISCgpzdGF0aW9uX2lkGAMgASgJEisKBnN0YXR1cxgEIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291cmNlU3RhdHVzEigKBHBvc2UYBSABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEi0KBmN1c3RvbRgGIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMi5wIKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSJAoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLlJvYm90VHlwZRIxCgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLlJvYm90RHJpdmVyVHlwZRIYChBjb3VwbGVyX21vZGVsX2lkGAcgASgJEicKH2VuZF9lZmZlY3Rvcl90b29sX2RlZmluaXRpb25faWQYCCABKAkSEAoIbW9kZWxfaWQYCSABKAkSOgoSY2FwYWJpbGl0eV9wcm9maWxlGAogASgLMh4uYXNzZW1ibHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSLQoGY3VzdG9tGAsgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyLXAQoNUm9ib3RJbnN0YW5jZRIKCgJpZBgBIAEoCRIbChNyb2JvdF9kZWZpbml0aW9uX2lkGAIgASgJEhIKCnN0YXRpb25faWQYAyABKAkSKwoGc3RhdHVzGAQgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSLQoJYmFzZV9wb3NlGAUgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YBiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIugBCg9Bc3NldERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Bc3NldFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Bc3NldERyaXZlclR5cGUSEAoIbW9kZWxfaWQYByABKAkSLQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyLSAQoNQXNzZXRJbnN0YW5jZRIKCgJpZBgBIAEoCRIbChNhc3NldF9kZWZpbml0aW9uX2lkGAIgASgJEhIKCnN0YXRpb25faWQYAyABKAkSKwoGc3RhdHVzGAQgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyqnAgoIVG9vbFR5cGUSGQoVVE9PTF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTVE9PTF9UWVBFX0ZBU1RFTklORxABEhYKElRPT0xfVFlQRV9HUklQUElORxACEhUKEVRPT0xfVFlQRV9DVVRUSU5HEAMSFwoTVE9PTF9UWVBFX01FQVNVUklORxAEEhkKFVRPT0xfVFlQRV9QT1NJVElPTklORxAFEhgKFFRPT0xfVFlQRV9ESVNQRU5TSU5HEAYSGAoUVE9PTF9UWVBFX0lOU1BFQ1RJT04QBxIUChBUT09MX1RZUEVfU0FGRVRZEAgSGQoVVE9PTF9UWVBFX0VMRUNUUk9OSUNTEAkSHwobVE9PTF9UWVBFX0ZJWFRVUkVfQUNDRVNTT1JZEAoqngMKCFRvb2xSb2xlEhkKFVRPT0xfUk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQSUVDRRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlUT09MX1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZX1RPUlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIfChtUT09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVfREVURUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVSSUFMEAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9ST0xFX1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVfRVNEEAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwq7wEKDFRvb2xQcm9wZXJ0eRIdChlUT09MX1BST1BFUlRZX1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JRVUVfQ09OVFJPTExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIbChdUT09MX1BST1BFUlRZX0lOU1VMQVRFRBADEiQKIFRPT0xfUFJPUEVSVFlfQ09MTEFCT1JBVElWRV9TQUZFEAQSHAoYVE9PTF9QUk9QRVJUWV9DQUxJQlJBVEVEEAUSHgoaVE9PTF9QUk9QRVJUWV9RVUlDS19DSEFOR0UQBiqJAQoLRml4dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRRklYVFVSRV9UWVBFX0JBU0UQARIWChJGSVhUVVJFX1RZUEVfQ0xBTVAQAhIUChBGSVhUVVJFX1RZUEVfSklHEAMSFwoTRklYVFVSRV9UWVBFX1BBTExFVBAEKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACKpgBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1JEAUqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1ibHkudjFCDlJlc291cmNlc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
+  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj0KD1Rvb2xEZWZpbml0aW9ucxIqCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZpbml0aW9uIrgCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSGgoSdG9vbF9kZWZpbml0aW9uX2lkGAIgASgJEhUKDXNlcmlhbF9udW1iZXIYAyABKAkSEgoKc3RhdGlvbl9pZBgEIAEoCRIrCgZzdGF0dXMYBSABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxISCgpjYWxpYnJhdGVkGAYgASgIEjsKF2NhbGlicmF0aW9uX3ZhbGlkX3VudGlsGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjkKDVRvb2xJbnN0YW5jZXMSKAoFaXRlbXMYASADKAsyGS5hc3NlbWJseS52MS5Ub29sSW5zdGFuY2UixQIKEUZpeHR1cmVEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRImCgR0eXBlGAUgASgOMhguYXNzZW1ibHkudjEuRml4dHVyZVR5cGUSKAogc3VwcG9ydGVkX3Byb2R1Y3RfZGVmaW5pdGlvbl9pZHMYBiADKAkSKgoic3VwcG9ydGVkX3Jvb3RfcGFydF9kZWZpbml0aW9uX2lkcxgHIAMoCRIQCghtb2RlbF9pZBgIIAEoCRI0Cgtjb25zdHJhaW50cxgJIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3RyYWludBItCgZjdXN0b20YCiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIkMKEkZpeHR1cmVEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLmFzc2VtYmx5LnYxLkZpeHR1cmVEZWZpbml0aW9uItYBCg9GaXh0dXJlSW5zdGFuY2USCgoCaWQYASABKAkSHQoVZml4dHVyZV9kZWZpbml0aW9uX2lkGAIgASgJEhIKCnN0YXRpb25faWQYAyABKAkSKwoGc3RhdHVzGAQgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBGaXh0dXJlSW5zdGFuY2VzEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuRml4dHVyZUluc3RhbmNlIucCCg9Sb2JvdERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Sb2JvdFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Sb2JvdERyaXZlclR5cGUSGAoQY291cGxlcl9tb2RlbF9pZBgHIAEoCRInCh9lbmRfZWZmZWN0b3JfdG9vbF9kZWZpbml0aW9uX2lkGAggASgJEhAKCG1vZGVsX2lkGAkgASgJEjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgKIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEi0KBmN1c3RvbRgLIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiQAoQUm9ib3REZWZpbml0aW9ucxIsCgVpdGVtcxgBIAMoCzIdLmFzc2VtYmx5LnYxLlJvYm90RGVmaW5pdGlvbnMi1wEKDVJvYm90SW5zdGFuY2USCgoCaWQYASABKAkSGwoTcm9ib3RfZGVmaW5pdGlvbl9pZBgCIAEoCRISCgpzdGF0aW9uX2lkGAMgASgJEisKBnN0YXR1cxgEIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291cmNlU3RhdHVzEi0KCWJhc2VfcG9zZRgFIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI7Cg5Sb2JvdEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYxLlJvYm90SW5zdGFuY2Ui6AEKD0Fzc2V0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSJAoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLkFzc2V0VHlwZRIxCgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLkFzc2V0RHJpdmVyVHlwZRIQCghtb2RlbF9pZBgHIAEoCRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj8KEEFzc2V0RGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5Bc3NldERlZmluaXRpb24i0gEKDUFzc2V0SW5zdGFuY2USCgoCaWQYASABKAkSGwoTYXNzZXRfZGVmaW5pdGlvbl9pZBgCIAEoCRISCgpzdGF0aW9uX2lkGAMgASgJEisKBnN0YXR1cxgEIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291cmNlU3RhdHVzEigKBHBvc2UYBSABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEi0KBmN1c3RvbRgGIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOQXNzZXRJbnN0YW5jZXMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Bc3NldEluc3RhbmNlKs0DCghUb29sVHlwZRIZChVUT09MX1RZUEVfVU5TUEVDSUZJRUQQABIXChNUT09MX1RZUEVfRkFTVEVOSU5HEAESFgoSVE9PTF9UWVBFX0dSSVBQSU5HEAISFQoRVE9PTF9UWVBFX0NVVFRJTkcQAxIXChNUT09MX1RZUEVfTUVBU1VSSU5HEAQSGQoVVE9PTF9UWVBFX1BPU0lUSU9OSU5HEAUSGAoUVE9PTF9UWVBFX0RJU1BFTlNJTkcQBhIYChRUT09MX1RZUEVfSU5TUEVDVElPThAHEhQKEFRPT0xfVFlQRV9TQUZFVFkQCBIZChVUT09MX1RZUEVfRUxFQ1RST05JQ1MQCRIfChtUT09MX1RZUEVfRklYVFVSRV9BQ0NFU1NPUlkQChIVChFUT09MX1RZUEVfU0hBUElORxALEhUKEVRPT0xfVFlQRV9UVVJOSU5HEAwSFgoSVE9PTF9UWVBFX1NUUklLSU5HEA0SFQoRVE9PTF9UWVBFX01BUktJTkcQDhIXChNUT09MX1RZUEVfRklOSVNISU5HEA8SFgoSVE9PTF9UWVBFX0FCUkFTSVZFEBASFgoSVE9PTF9UWVBFX0NMRUFOSU5HEBEqngMKCFRvb2xSb2xlEhkKFVRPT0xfUk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQSUVDRRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlUT09MX1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZX1RPUlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIfChtUT09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVfREVURUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVSSUFMEAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9ST0xFX1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVfRVNEEAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwq7wEKDFRvb2xQcm9wZXJ0eRIdChlUT09MX1BST1BFUlRZX1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9QRVJUWV9UT1JRVUVfQ09OVFJPTExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNEX1NBRkUQAhIbChdUT09MX1BST1BFUlRZX0lOU1VMQVRFRBADEiQKIFRPT0xfUFJPUEVSVFlfQ09MTEFCT1JBVElWRV9TQUZFEAQSHAoYVE9PTF9QUk9QRVJUWV9DQUxJQlJBVEVEEAUSHgoaVE9PTF9QUk9QRVJUWV9RVUlDS19DSEFOR0UQBiqJAQoLRml4dHVyZVR5cGUSHAoYRklYVFVSRV9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRRklYVFVSRV9UWVBFX0JBU0UQARIWChJGSVhUVVJFX1RZUEVfQ0xBTVAQAhIUChBGSVhUVVJFX1RZUEVfSklHEAMSFwoTRklYVFVSRV9UWVBFX1BBTExFVBAEKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACKpgBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1JEAUqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1ibHkudjFCDlJlc291cmNlc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message assembly.v1.CapabilityProfile
@@ -148,6 +148,23 @@ export const ToolDefinitionSchema: GenMessage<ToolDefinition> = /*@__PURE__*/
   messageDesc(file_assembly_v1_resources, 1);
 
 /**
+ * @generated from message assembly.v1.ToolDefinitions
+ */
+export type ToolDefinitions = Message<"assembly.v1.ToolDefinitions"> & {
+  /**
+   * @generated from field: repeated assembly.v1.ToolDefinition items = 1;
+   */
+  items: ToolDefinition[];
+};
+
+/**
+ * Describes the message assembly.v1.ToolDefinitions.
+ * Use `create(ToolDefinitionsSchema)` to create a new message.
+ */
+export const ToolDefinitionsSchema: GenMessage<ToolDefinitions> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 2);
+
+/**
  * @generated from message assembly.v1.ToolInstance
  */
 export type ToolInstance = Message<"assembly.v1.ToolInstance"> & {
@@ -202,7 +219,24 @@ export type ToolInstance = Message<"assembly.v1.ToolInstance"> & {
  * Use `create(ToolInstanceSchema)` to create a new message.
  */
 export const ToolInstanceSchema: GenMessage<ToolInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 2);
+  messageDesc(file_assembly_v1_resources, 3);
+
+/**
+ * @generated from message assembly.v1.ToolInstances
+ */
+export type ToolInstances = Message<"assembly.v1.ToolInstances"> & {
+  /**
+   * @generated from field: repeated assembly.v1.ToolInstance items = 1;
+   */
+  items: ToolInstance[];
+};
+
+/**
+ * Describes the message assembly.v1.ToolInstances.
+ * Use `create(ToolInstancesSchema)` to create a new message.
+ */
+export const ToolInstancesSchema: GenMessage<ToolInstances> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 4);
 
 /**
  * @generated from message assembly.v1.FixtureDefinition
@@ -234,11 +268,15 @@ export type FixtureDefinition = Message<"assembly.v1.FixtureDefinition"> & {
   type: FixtureType;
 
   /**
+   * This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
+   *
    * @generated from field: repeated string supported_product_definition_ids = 6;
    */
   supportedProductDefinitionIds: string[];
 
   /**
+   * This fixture support products whose root assembly is one of these root parts
+   *
    * @generated from field: repeated string supported_root_part_definition_ids = 7;
    */
   supportedRootPartDefinitionIds: string[];
@@ -264,7 +302,24 @@ export type FixtureDefinition = Message<"assembly.v1.FixtureDefinition"> & {
  * Use `create(FixtureDefinitionSchema)` to create a new message.
  */
 export const FixtureDefinitionSchema: GenMessage<FixtureDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 3);
+  messageDesc(file_assembly_v1_resources, 5);
+
+/**
+ * @generated from message assembly.v1.FixtureDefinitions
+ */
+export type FixtureDefinitions = Message<"assembly.v1.FixtureDefinitions"> & {
+  /**
+   * @generated from field: repeated assembly.v1.FixtureDefinition items = 1;
+   */
+  items: FixtureDefinition[];
+};
+
+/**
+ * Describes the message assembly.v1.FixtureDefinitions.
+ * Use `create(FixtureDefinitionsSchema)` to create a new message.
+ */
+export const FixtureDefinitionsSchema: GenMessage<FixtureDefinitions> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 6);
 
 /**
  * @generated from message assembly.v1.FixtureInstance
@@ -306,7 +361,24 @@ export type FixtureInstance = Message<"assembly.v1.FixtureInstance"> & {
  * Use `create(FixtureInstanceSchema)` to create a new message.
  */
 export const FixtureInstanceSchema: GenMessage<FixtureInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 4);
+  messageDesc(file_assembly_v1_resources, 7);
+
+/**
+ * @generated from message assembly.v1.FixtureInstances
+ */
+export type FixtureInstances = Message<"assembly.v1.FixtureInstances"> & {
+  /**
+   * @generated from field: repeated assembly.v1.FixtureInstance items = 1;
+   */
+  items: FixtureInstance[];
+};
+
+/**
+ * Describes the message assembly.v1.FixtureInstances.
+ * Use `create(FixtureInstancesSchema)` to create a new message.
+ */
+export const FixtureInstancesSchema: GenMessage<FixtureInstances> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 8);
 
 /**
  * @generated from message assembly.v1.RobotDefinition
@@ -373,7 +445,24 @@ export type RobotDefinition = Message<"assembly.v1.RobotDefinition"> & {
  * Use `create(RobotDefinitionSchema)` to create a new message.
  */
 export const RobotDefinitionSchema: GenMessage<RobotDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 5);
+  messageDesc(file_assembly_v1_resources, 9);
+
+/**
+ * @generated from message assembly.v1.RobotDefinitions
+ */
+export type RobotDefinitions = Message<"assembly.v1.RobotDefinitions"> & {
+  /**
+   * @generated from field: repeated assembly.v1.RobotDefinitions items = 1;
+   */
+  items: RobotDefinitions[];
+};
+
+/**
+ * Describes the message assembly.v1.RobotDefinitions.
+ * Use `create(RobotDefinitionsSchema)` to create a new message.
+ */
+export const RobotDefinitionsSchema: GenMessage<RobotDefinitions> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 10);
 
 /**
  * @generated from message assembly.v1.RobotInstance
@@ -415,7 +504,24 @@ export type RobotInstance = Message<"assembly.v1.RobotInstance"> & {
  * Use `create(RobotInstanceSchema)` to create a new message.
  */
 export const RobotInstanceSchema: GenMessage<RobotInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 6);
+  messageDesc(file_assembly_v1_resources, 11);
+
+/**
+ * @generated from message assembly.v1.RobotInstances
+ */
+export type RobotInstances = Message<"assembly.v1.RobotInstances"> & {
+  /**
+   * @generated from field: repeated assembly.v1.RobotInstance items = 1;
+   */
+  items: RobotInstance[];
+};
+
+/**
+ * Describes the message assembly.v1.RobotInstances.
+ * Use `create(RobotInstancesSchema)` to create a new message.
+ */
+export const RobotInstancesSchema: GenMessage<RobotInstances> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 12);
 
 /**
  * @generated from message assembly.v1.AssetDefinition
@@ -467,7 +573,24 @@ export type AssetDefinition = Message<"assembly.v1.AssetDefinition"> & {
  * Use `create(AssetDefinitionSchema)` to create a new message.
  */
 export const AssetDefinitionSchema: GenMessage<AssetDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 7);
+  messageDesc(file_assembly_v1_resources, 13);
+
+/**
+ * @generated from message assembly.v1.AssetDefinitions
+ */
+export type AssetDefinitions = Message<"assembly.v1.AssetDefinitions"> & {
+  /**
+   * @generated from field: repeated assembly.v1.AssetDefinition items = 1;
+   */
+  items: AssetDefinition[];
+};
+
+/**
+ * Describes the message assembly.v1.AssetDefinitions.
+ * Use `create(AssetDefinitionsSchema)` to create a new message.
+ */
+export const AssetDefinitionsSchema: GenMessage<AssetDefinitions> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 14);
 
 /**
  * @generated from message assembly.v1.AssetInstance
@@ -509,7 +632,24 @@ export type AssetInstance = Message<"assembly.v1.AssetInstance"> & {
  * Use `create(AssetInstanceSchema)` to create a new message.
  */
 export const AssetInstanceSchema: GenMessage<AssetInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 8);
+  messageDesc(file_assembly_v1_resources, 15);
+
+/**
+ * @generated from message assembly.v1.AssetInstances
+ */
+export type AssetInstances = Message<"assembly.v1.AssetInstances"> & {
+  /**
+   * @generated from field: repeated assembly.v1.AssetInstance items = 1;
+   */
+  items: AssetInstance[];
+};
+
+/**
+ * Describes the message assembly.v1.AssetInstances.
+ * Use `create(AssetInstancesSchema)` to create a new message.
+ */
+export const AssetInstancesSchema: GenMessage<AssetInstances> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 16);
 
 /**
  * @generated from enum assembly.v1.ToolType
@@ -569,6 +709,41 @@ export enum ToolType {
    * @generated from enum value: TOOL_TYPE_FIXTURE_ACCESSORY = 10;
    */
   FIXTURE_ACCESSORY = 10,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_SHAPING = 11;
+   */
+  SHAPING = 11,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_TURNING = 12;
+   */
+  TURNING = 12,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_STRIKING = 13;
+   */
+  STRIKING = 13,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_MARKING = 14;
+   */
+  MARKING = 14,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_FINISHING = 15;
+   */
+  FINISHING = 15,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_ABRASIVE = 16;
+   */
+  ABRASIVE = 16,
+
+  /**
+   * @generated from enum value: TOOL_TYPE_CLEANING = 17;
+   */
+  CLEANING = 17,
 }
 
 /**

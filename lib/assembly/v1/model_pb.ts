@@ -6,13 +6,15 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { CustomProperties, ExternalReference } from "./common_pb.ts";
 import { file_assembly_v1_common } from "./common_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file assembly/v1/model.proto.
  */
 export const file_assembly_v1_model: GenFile = /*@__PURE__*/
-  fileDesc("Chdhc3NlbWJseS92MS9tb2RlbC5wcm90bxILYXNzZW1ibHkudjEiiQMKDU1vZGVsQXJ0aWZhY3QSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEiYKBWdyb3VwGAUgASgOMhcuYXNzZW1ibHkudjEuTW9kZWxHcm91cBIoCgZvcmlnaW4YBiABKA4yGC5hc3NlbWJseS52MS5Nb2RlbE9yaWdpbhIoCgZmb3JtYXQYByABKA4yGC5hc3NlbWJseS52MS5Nb2RlbEZvcm1hdBIQCghmaWxlbmFtZRgIIAEoCRILCgN1cmkYCSABKAkSFQoNdGh1bWJuYWlsX3VyaRgKIAEoCRIPCgd2ZXJzaW9uGAsgASgJEgwKBHVuaXQYDCABKAkSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgNIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgOIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOTW9kZWxBcnRpZmFjdHMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Nb2RlbEFydGlmYWN0KrUBCgpNb2RlbEdyb3VwEhsKF01PREVMX0dST1VQX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfR1JPVVBfUEFSVBABEhcKE01PREVMX0dST1VQX1BST0RVQ1QQAhIUChBNT0RFTF9HUk9VUF9UT09MEAMSFQoRTU9ERUxfR1JPVVBfUk9CT1QQBBIXChNNT0RFTF9HUk9VUF9GSVhUVVJFEAUSFQoRTU9ERUxfR1JPVVBfQVNTRVQQBip8CgtNb2RlbE9yaWdpbhIcChhNT0RFTF9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVNT0RFTF9PUklHSU5fQlVJTFRfSU4QARIZChVNT0RFTF9PUklHSU5fVVBMT0FERUQQAhIZChVNT0RFTF9PUklHSU5fRVhURVJOQUwQAyqyAQoLTW9kZWxGb3JtYXQSHAoYTU9ERUxfRk9STUFUX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfRk9STUFUX0dMQhABEhUKEU1PREVMX0ZPUk1BVF9HTFRGEAISFAoQTU9ERUxfRk9STUFUX09CShADEhUKEU1PREVMX0ZPUk1BVF9TVEVQEAQSFAoQTU9ERUxfRk9STUFUX1NUTBAFEhUKEU1PREVMX0ZPUk1BVF9VU0RaEAZCsAEKD2NvbS5hc3NlbWJseS52MUIKTW9kZWxQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z", [file_assembly_v1_common]);
+  fileDesc("Chdhc3NlbWJseS92MS9tb2RlbC5wcm90bxILYXNzZW1ibHkudjEi4wMKDU1vZGVsQXJ0aWZhY3QSCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSMAoFZ3JvdXAYBSABKA4yFy5hc3NlbWJseS52MS5Nb2RlbEdyb3VwQgi6SAWCAQIQARI1CgZvcmlnaW4YBiABKA4yGC5hc3NlbWJseS52MS5Nb2RlbE9yaWdpbkILukgIyAEBggECEAESNQoGZm9ybWF0GAcgASgOMhguYXNzZW1ibHkudjEuTW9kZWxGb3JtYXRCC7pICMgBAYIBAhABEhAKCGZpbGVuYW1lGAggASgJEhgKA3VyaRgJIAEoCUILukgI2AEBcgOIAQESIgoNdGh1bWJuYWlsX3VyaRgKIAEoCUILukgI2AEBcgOIAQESDwoHdmVyc2lvbhgLIAEoCRIMCgR1bml0GAwgASgJEg8KB3VwX2F4aXMYDSABKAkSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgOIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgPIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOTW9kZWxBcnRpZmFjdHMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Nb2RlbEFydGlmYWN0KrUBCgpNb2RlbEdyb3VwEhsKF01PREVMX0dST1VQX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfR1JPVVBfUEFSVBABEhcKE01PREVMX0dST1VQX1BST0RVQ1QQAhIUChBNT0RFTF9HUk9VUF9UT09MEAMSFQoRTU9ERUxfR1JPVVBfUk9CT1QQBBIXChNNT0RFTF9HUk9VUF9GSVhUVVJFEAUSFQoRTU9ERUxfR1JPVVBfQVNTRVQQBip8CgtNb2RlbE9yaWdpbhIcChhNT0RFTF9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVNT0RFTF9PUklHSU5fQlVJTFRfSU4QARIZChVNT0RFTF9PUklHSU5fVVBMT0FERUQQAhIZChVNT0RFTF9PUklHSU5fRVhURVJOQUwQAyqyAQoLTW9kZWxGb3JtYXQSHAoYTU9ERUxfRk9STUFUX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfRk9STUFUX0dMQhABEhUKEU1PREVMX0ZPUk1BVF9HTFRGEAISFAoQTU9ERUxfRk9STUFUX09CShADEhUKEU1PREVMX0ZPUk1BVF9TVEVQEAQSFAoQTU9ERUxfRk9STUFUX1NUTBAFEhUKEU1PREVMX0ZPUk1BVF9VU0RaEAZCsAEKD2NvbS5hc3NlbWJseS52MUIKTW9kZWxQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z", [file_assembly_v1_common, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message assembly.v1.ModelArtifact
@@ -54,11 +56,15 @@ export type ModelArtifact = Message<"assembly.v1.ModelArtifact"> & {
   format: ModelFormat;
 
   /**
+   * Filename is required for BUILT_IN models, ignored otherwise
+   *
    * @generated from field: string filename = 8;
    */
   filename: string;
 
   /**
+   * Uri is required for uploaded and external models
+   *
    * @generated from field: string uri = 9;
    */
   uri: string;
@@ -74,17 +80,28 @@ export type ModelArtifact = Message<"assembly.v1.ModelArtifact"> & {
   version: string;
 
   /**
+   * Unit used for the model geometry coordinates.
+   * Typically "mm", "cm", "m", "in", etc.
+   * Used to scale the model correctly when loading.
+   *
    * @generated from field: string unit = 12;
    */
   unit: string;
 
   /**
-   * @generated from field: repeated assembly.v1.ExternalReference external_references = 13;
+   * "X", "Y", "Z"
+   *
+   * @generated from field: string up_axis = 13;
+   */
+  upAxis: string;
+
+  /**
+   * @generated from field: repeated assembly.v1.ExternalReference external_references = 14;
    */
   externalReferences: ExternalReference[];
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 14;
+   * @generated from field: assembly.v1.CustomProperties custom = 15;
    */
   custom?: CustomProperties;
 };

@@ -1,4 +1,6 @@
 from assembly.v1 import common_pb2 as _common_pb2
+from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -54,7 +56,7 @@ MODEL_FORMAT_STL: ModelFormat
 MODEL_FORMAT_USDZ: ModelFormat
 
 class ModelArtifact(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "group", "origin", "format", "filename", "uri", "thumbnail_uri", "version", "unit", "external_references", "custom")
+    __slots__ = ("id", "name", "description", "icon", "group", "origin", "format", "filename", "uri", "thumbnail_uri", "version", "unit", "up_axis", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -67,6 +69,7 @@ class ModelArtifact(_message.Message):
     THUMBNAIL_URI_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     UNIT_FIELD_NUMBER: _ClassVar[int]
+    UP_AXIS_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -81,9 +84,10 @@ class ModelArtifact(_message.Message):
     thumbnail_uri: str
     version: str
     unit: str
+    up_axis: str
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., origin: _Optional[_Union[ModelOrigin, str]] = ..., format: _Optional[_Union[ModelFormat, str]] = ..., filename: _Optional[str] = ..., uri: _Optional[str] = ..., thumbnail_uri: _Optional[str] = ..., version: _Optional[str] = ..., unit: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., origin: _Optional[_Union[ModelOrigin, str]] = ..., format: _Optional[_Union[ModelFormat, str]] = ..., filename: _Optional[str] = ..., uri: _Optional[str] = ..., thumbnail_uri: _Optional[str] = ..., version: _Optional[str] = ..., unit: _Optional[str] = ..., up_axis: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class ModelArtifacts(_message.Message):
     __slots__ = ("items",)

@@ -83,14 +83,20 @@ func (PartType) EnumDescriptor() ([]byte, []int) {
 	return file_assembly_v1_product_proto_rawDescGZIP(), []int{0}
 }
 
+// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+// NodeKind               Represents                    Physical part?   Has children?
+// GROUP                  logical grouping              ❌               yes
+// PART_OCCURRENCE        single physical part instance ✅               usually no
+// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+// PATTERN                repeated pattern structure    ❌ (structure)   yes
 type NodeKind int32
 
 const (
 	NodeKind_NODE_KIND_UNSPECIFIED            NodeKind = 0
-	NodeKind_NODE_KIND_GROUP                  NodeKind = 1
-	NodeKind_NODE_KIND_PART_OCCURRENCE        NodeKind = 2
-	NodeKind_NODE_KIND_SUBASSEMBLY_OCCURRENCE NodeKind = 3
-	NodeKind_NODE_KIND_PATTERN                NodeKind = 4
+	NodeKind_NODE_KIND_GROUP                  NodeKind = 1 // A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+	NodeKind_NODE_KIND_PART_OCCURRENCE        NodeKind = 2 // The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+	NodeKind_NODE_KIND_SUBASSEMBLY_OCCURRENCE NodeKind = 3 // A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+	NodeKind_NODE_KIND_PATTERN                NodeKind = 4 // A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
 )
 
 // Enum value maps for NodeKind.
@@ -262,10 +268,21 @@ func (x *Dimensions) GetZMm() float64 {
 	return 0
 }
 
+// MaterialSpec is meant to capture the engineering material identity of a part
+// name → the material family / type
+// grade → the standardized grade or specification
+// Examples:
+// name: aluminium, grade: 6061-T6
+// name: Steel, grade: S355JR
+// name: stainless steel, grade: AISI 304
+// name: ABS, grade: general purpose
+// name: Polycarbonate, grade: PC-110
+// name: Nylon, grade: PA6 GF15
+// name: TPU, grade: 70 Shore A
 type MaterialSpec struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Grade         string                 `protobuf:"bytes,2,opt,name=grade,proto3" json:"grade,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`   // Material family
+	Grade         string                 `protobuf:"bytes,2,opt,name=grade,proto3" json:"grade,omitempty"` // Standard/Specification
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -319,7 +336,7 @@ type PartHandlingProfile struct {
 	Fragile                bool                   `protobuf:"varint,1,opt,name=fragile,proto3" json:"fragile,omitempty"`
 	EsdSensitive           bool                   `protobuf:"varint,2,opt,name=esd_sensitive,json=esdSensitive,proto3" json:"esd_sensitive,omitempty"`
 	RequiresTwoHandLift    bool                   `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`
-	RequiresFixtureSupport bool                   `protobuf:"varint,4,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"`
+	RequiresFixtureSupport bool                   `protobuf:"varint,4,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"` // If true, this part cannot realistically be handled/assembled without some fixture support
 	MaxGripForceN          float64                `protobuf:"fixed64,5,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`
 	MaxTorqueNm            float64                `protobuf:"fixed64,6,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`
 	Constraints            []*KeyValueConstraint  `protobuf:"bytes,7,rep,name=constraints,proto3" json:"constraints,omitempty"`
@@ -416,7 +433,7 @@ type PartDefinition struct {
 	WeightG            int64                  `protobuf:"varint,6,opt,name=weight_g,json=weightG,proto3" json:"weight_g,omitempty"`
 	Dimensions         *Dimensions            `protobuf:"bytes,7,opt,name=dimensions,proto3" json:"dimensions,omitempty"`
 	Material           *MaterialSpec          `protobuf:"bytes,8,opt,name=material,proto3" json:"material,omitempty"`
-	DefaultModelId     string                 `protobuf:"bytes,9,opt,name=default_model_id,json=defaultModelId,proto3" json:"default_model_id,omitempty"`
+	DefaultModelId     string                 `protobuf:"bytes,9,opt,name=default_model_id,json=defaultModelId,proto3" json:"default_model_id,omitempty"` // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
 	Handling           *PartHandlingProfile   `protobuf:"bytes,10,opt,name=handling,proto3" json:"handling,omitempty"`
 	ExternalReferences []*ExternalReference   `protobuf:"bytes,11,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Custom             *CustomProperties      `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
@@ -693,13 +710,13 @@ func (x *VariantCondition) GetValues() []string {
 type AssemblyNode struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ParentNodeId          string                 `protobuf:"bytes,2,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"`
-	Name                  string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	ParentNodeId          string                 `protobuf:"bytes,2,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"` // Empty if root, otherwise set to parent AssemblyNode id.
+	Name                  string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`                                       // Name of this assembly node
 	Kind                  NodeKind               `protobuf:"varint,4,opt,name=kind,proto3,enum=assembly.v1.NodeKind" json:"kind,omitempty"`
 	PartDefinitionId      string                 `protobuf:"bytes,5,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"`
 	OverrideModelId       string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
 	LocalPose             *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"`
-	ChildNodeIds          []string               `protobuf:"bytes,8,rep,name=child_node_ids,json=childNodeIds,proto3" json:"child_node_ids,omitempty"`
+	ChildNodeIds          []string               `protobuf:"bytes,8,rep,name=child_node_ids,json=childNodeIds,proto3" json:"child_node_ids,omitempty"` // Children of this node, their parent_node_id must be set to this.id
 	SequenceHint          int32                  `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
 	CadOccurrencePath     string                 `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
 	JoinMethodHint        JoinMethod             `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=assembly.v1.JoinMethod" json:"join_method_hint,omitempty"`

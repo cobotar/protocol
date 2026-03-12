@@ -123,11 +123,31 @@ namespace Messages.Assembly.V1 {
     [pbr::OriginalName("PART_TYPE_PACKAGING")] Packaging = 6,
   }
 
+  /// <summary>
+  /// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+  /// NodeKind               Represents                    Physical part?   Has children?
+  /// GROUP                  logical grouping              ❌               yes
+  /// PART_OCCURRENCE        single physical part instance ✅               usually no
+  /// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+  /// PATTERN                repeated pattern structure    ❌ (structure)   yes
+  /// </summary>
   public enum NodeKind {
     [pbr::OriginalName("NODE_KIND_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+    /// </summary>
     [pbr::OriginalName("NODE_KIND_GROUP")] Group = 1,
+    /// <summary>
+    /// The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+    /// </summary>
     [pbr::OriginalName("NODE_KIND_PART_OCCURRENCE")] PartOccurrence = 2,
+    /// <summary>
+    /// A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+    /// </summary>
     [pbr::OriginalName("NODE_KIND_SUBASSEMBLY_OCCURRENCE")] SubassemblyOccurrence = 3,
+    /// <summary>
+    /// A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
+    /// </summary>
     [pbr::OriginalName("NODE_KIND_PATTERN")] Pattern = 4,
   }
 
@@ -417,6 +437,19 @@ namespace Messages.Assembly.V1 {
 
   }
 
+  /// <summary>
+  /// MaterialSpec is meant to capture the engineering material identity of a part
+  /// name → the material family / type
+  /// grade → the standardized grade or specification
+  /// Examples:
+  /// name: aluminium, grade: 6061-T6
+  /// name: Steel, grade: S355JR
+  /// name: stainless steel, grade: AISI 304
+  /// name: ABS, grade: general purpose
+  /// name: Polycarbonate, grade: PC-110
+  /// name: Nylon, grade: PA6 GF15
+  /// name: TPU, grade: 70 Shore A
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class MaterialSpec : pb::IMessage<MaterialSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -466,6 +499,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    /// <summary>
+    /// Material family
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
@@ -478,6 +514,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 2;
     private string grade_ = "";
+    /// <summary>
+    /// Standard/Specification
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Grade {
@@ -742,6 +781,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "requires_fixture_support" field.</summary>
     public const int RequiresFixtureSupportFieldNumber = 4;
     private bool requiresFixtureSupport_;
+    /// <summary>
+    /// If true, this part cannot realistically be handled/assembled without some fixture support
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool RequiresFixtureSupport {
@@ -1216,6 +1258,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "default_model_id" field.</summary>
     public const int DefaultModelIdFieldNumber = 9;
     private string defaultModelId_ = "";
+    /// <summary>
+    /// Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DefaultModelId {
@@ -2440,6 +2485,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "parent_node_id" field.</summary>
     public const int ParentNodeIdFieldNumber = 2;
     private string parentNodeId_ = "";
+    /// <summary>
+    /// Empty if root, otherwise set to parent AssemblyNode id.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ParentNodeId {
@@ -2452,6 +2500,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 3;
     private string name_ = "";
+    /// <summary>
+    /// Name of this assembly node
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
@@ -2514,6 +2565,9 @@ namespace Messages.Assembly.V1 {
     private static readonly pb::FieldCodec<string> _repeated_childNodeIds_codec
         = pb::FieldCodec.ForString(66);
     private readonly pbc::RepeatedField<string> childNodeIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Children of this node, their parent_node_id must be set to this.id
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ChildNodeIds {

@@ -46,7 +46,7 @@ enum TaskAssignmentPreference {
   TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN = 1;
   TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN = 2;
   TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT = 3;
-  TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4; // Only use this if it truly must be done by a robot. Otherwise use prefer-robot
   TASK_ASSIGNMENT_PREFERENCE_EITHER = 5;
 }
 
@@ -55,6 +55,13 @@ message RecipeApplicability {
   repeated VariantCondition excluded = 2;
 }
 
+// ProcessRecipe describes the following:
+// - What work must be done
+// - What kinds of capabilities are required
+// - What tool roles are required
+// - What skills are required
+// - What actor constrains exist
+// - What validation is needed
 message ProcessRecipe {
   string id = 1;
   string name = 2;
@@ -66,7 +73,7 @@ message ProcessRecipe {
   string root_sequence_id = 8;
   repeated SequenceDefinition sequences = 9;
   repeated TaskDefinition tasks = 10;
-  repeated string supported_fixture_definition_ids = 11;
+  repeated string supported_fixture_definition_ids = 11; // Meaning: this recipe is intended to run with these fixtures
   repeated ExternalReference external_references = 12;
   CustomProperties custom = 13;
 }

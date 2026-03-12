@@ -2,6 +2,8 @@ syntax = "proto3";
 package assembly.v1;
 
 import "assembly/v1/common.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Assembly.V1";
 option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
@@ -35,19 +37,42 @@ enum ModelFormat {
 
 message ModelArtifact {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
-  ModelGroup group = 5;
-  ModelOrigin origin = 6;
-  ModelFormat format = 7;
+  ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
+  ModelOrigin origin = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ModelFormat format = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Filename is required for BUILT_IN models, ignored otherwise
   string filename = 8;
-  string uri = 9;
-  string thumbnail_uri = 10;
+
+  // Uri is required for uploaded and external models
+  string uri = 9 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.uri = true
+  ];
+
+  string thumbnail_uri = 10 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.uri = true
+  ];
+
   string version = 11;
+
+  // Unit used for the model geometry coordinates.
+  // Typically "mm", "cm", "m", "in", etc.
+  // Used to scale the model correctly when loading.
   string unit = 12;
-  repeated ExternalReference external_references = 13;
-  CustomProperties custom = 14;
+  string up_axis = 13; // "X", "Y", "Z"
+  repeated ExternalReference external_references = 14;
+  CustomProperties custom = 15;
 }
 
 message ModelArtifacts {

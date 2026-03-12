@@ -301,6 +301,8 @@ func (x *RunParameter) GetValue() string {
 	return ""
 }
 
+// ProcessRun is only created when a concrete cell can currently satisfy it.
+// Is is based upon a ProcessRecipe which defines what must be possible.
 type ProcessRun struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`

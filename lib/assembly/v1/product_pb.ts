@@ -46,15 +46,31 @@ export const DimensionsSchema: GenMessage<Dimensions> = /*@__PURE__*/
   messageDesc(file_assembly_v1_product, 0);
 
 /**
+ * MaterialSpec is meant to capture the engineering material identity of a part
+ * name → the material family / type
+ * grade → the standardized grade or specification
+ * Examples:
+ * name: aluminium, grade: 6061-T6
+ * name: Steel, grade: S355JR
+ * name: stainless steel, grade: AISI 304
+ * name: ABS, grade: general purpose
+ * name: Polycarbonate, grade: PC-110
+ * name: Nylon, grade: PA6 GF15
+ * name: TPU, grade: 70 Shore A
+ *
  * @generated from message assembly.v1.MaterialSpec
  */
 export type MaterialSpec = Message<"assembly.v1.MaterialSpec"> & {
   /**
+   * Material family
+   *
    * @generated from field: string name = 1;
    */
   name: string;
 
   /**
+   * Standard/Specification
+   *
    * @generated from field: string grade = 2;
    */
   grade: string;
@@ -87,6 +103,8 @@ export type PartHandlingProfile = Message<"assembly.v1.PartHandlingProfile"> & {
   requiresTwoHandLift: boolean;
 
   /**
+   * If true, this part cannot realistically be handled/assembled without some fixture support
+   *
    * @generated from field: bool requires_fixture_support = 4;
    */
   requiresFixtureSupport: boolean;
@@ -159,6 +177,8 @@ export type PartDefinition = Message<"assembly.v1.PartDefinition"> & {
   material?: MaterialSpec;
 
   /**
+   * Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
+   *
    * @generated from field: string default_model_id = 9;
    */
   defaultModelId: string;
@@ -274,11 +294,15 @@ export type AssemblyNode = Message<"assembly.v1.AssemblyNode"> & {
   id: string;
 
   /**
+   * Empty if root, otherwise set to parent AssemblyNode id.
+   *
    * @generated from field: string parent_node_id = 2;
    */
   parentNodeId: string;
 
   /**
+   * Name of this assembly node
+   *
    * @generated from field: string name = 3;
    */
   name: string;
@@ -304,6 +328,8 @@ export type AssemblyNode = Message<"assembly.v1.AssemblyNode"> & {
   localPose?: Pose;
 
   /**
+   * Children of this node, their parent_node_id must be set to this.id
+   *
    * @generated from field: repeated string child_node_ids = 8;
    */
   childNodeIds: string[];
@@ -441,6 +467,13 @@ export const PartTypeSchema: GenEnum<PartType> = /*@__PURE__*/
   enumDesc(file_assembly_v1_product, 0);
 
 /**
+ * NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+ * NodeKind               Represents                    Physical part?   Has children?
+ * GROUP                  logical grouping              ❌               yes
+ * PART_OCCURRENCE        single physical part instance ✅               usually no
+ * SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+ * PATTERN                repeated pattern structure    ❌ (structure)   yes
+ *
  * @generated from enum assembly.v1.NodeKind
  */
 export enum NodeKind {
@@ -450,21 +483,29 @@ export enum NodeKind {
   UNSPECIFIED = 0,
 
   /**
+   * A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+   *
    * @generated from enum value: NODE_KIND_GROUP = 1;
    */
   GROUP = 1,
 
   /**
+   * The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+   *
    * @generated from enum value: NODE_KIND_PART_OCCURRENCE = 2;
    */
   PART_OCCURRENCE = 2,
 
   /**
+   * A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+   *
    * @generated from enum value: NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3;
    */
   SUBASSEMBLY_OCCURRENCE = 3,
 
   /**
+   * A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
+   *
    * @generated from enum value: NODE_KIND_PATTERN = 4;
    */
   PATTERN = 4,

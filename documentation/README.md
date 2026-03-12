@@ -195,6 +195,7 @@
     - [ActorAssignment](#assembly-v1-ActorAssignment)
     - [ActorRef](#assembly-v1-ActorRef)
     - [WorkerDefinition](#assembly-v1-WorkerDefinition)
+    - [WorkerDefinitions](#assembly-v1-WorkerDefinitions)
   
 - [assembly/v1/execution.proto](#assembly_v1_execution-proto)
     - [EvidenceFact](#assembly-v1-EvidenceFact)
@@ -234,14 +235,22 @@
   
 - [assembly/v1/resources.proto](#assembly_v1_resources-proto)
     - [AssetDefinition](#assembly-v1-AssetDefinition)
+    - [AssetDefinitions](#assembly-v1-AssetDefinitions)
     - [AssetInstance](#assembly-v1-AssetInstance)
+    - [AssetInstances](#assembly-v1-AssetInstances)
     - [CapabilityProfile](#assembly-v1-CapabilityProfile)
     - [FixtureDefinition](#assembly-v1-FixtureDefinition)
+    - [FixtureDefinitions](#assembly-v1-FixtureDefinitions)
     - [FixtureInstance](#assembly-v1-FixtureInstance)
+    - [FixtureInstances](#assembly-v1-FixtureInstances)
     - [RobotDefinition](#assembly-v1-RobotDefinition)
+    - [RobotDefinitions](#assembly-v1-RobotDefinitions)
     - [RobotInstance](#assembly-v1-RobotInstance)
+    - [RobotInstances](#assembly-v1-RobotInstances)
     - [ToolDefinition](#assembly-v1-ToolDefinition)
+    - [ToolDefinitions](#assembly-v1-ToolDefinitions)
     - [ToolInstance](#assembly-v1-ToolInstance)
+    - [ToolInstances](#assembly-v1-ToolInstances)
   
     - [AssetDriverType](#assembly-v1-AssetDriverType)
     - [AssetType](#assembly-v1-AssetType)
@@ -277,6 +286,19 @@
     - [SequenceOperator](#assembly-v1-SequenceOperator)
     - [TaskAssignmentPreference](#assembly-v1-TaskAssignmentPreference)
     - [TaskType](#assembly-v1-TaskType)
+  
+- [assembly/v1/process_requests.proto](#assembly_v1_process_requests-proto)
+    - [ProcessLoadRequest](#assembly-v1-ProcessLoadRequest)
+    - [ProcessLoadResult](#assembly-v1-ProcessLoadResult)
+    - [ProcessRunIssue](#assembly-v1-ProcessRunIssue)
+    - [ProcessRunPrecheckResult](#assembly-v1-ProcessRunPrecheckResult)
+    - [TaskFeasibility](#assembly-v1-TaskFeasibility)
+  
+    - [ProcessLoadFailure](#assembly-v1-ProcessLoadFailure)
+    - [ProcessLoadStatus](#assembly-v1-ProcessLoadStatus)
+    - [ProcessRunIssueSeverity](#assembly-v1-ProcessRunIssueSeverity)
+    - [ProcessRunPrecheckStatus](#assembly-v1-ProcessRunPrecheckStatus)
+    - [RequirementImportance](#assembly-v1-RequirementImportance)
   
 - [assembly/v1/station.proto](#assembly_v1_station-proto)
     - [CellDefinition](#assembly-v1-CellDefinition)
@@ -2931,10 +2953,25 @@ TODO: remove to PLM
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| disabled | [bool](#bool) |  |  |
+| disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
 | employee_id | [string](#string) |  |  |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-WorkerDefinitions"></a>
+
+### WorkerDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [WorkerDefinition](#assembly-v1-WorkerDefinition) | repeated |  |
 
 
 
@@ -2997,7 +3034,8 @@ TODO: remove to PLM
 <a name="assembly-v1-ProcessRun"></a>
 
 ### ProcessRun
-
+ProcessRun is only created when a concrete cell can currently satisfy it.
+Is is based upon a ProcessRecipe which defines what must be possible.
 
 
 | Field | Type | Label | Description |
@@ -3188,11 +3226,12 @@ TODO: remove to PLM
 | group | [ModelGroup](#assembly-v1-ModelGroup) |  |  |
 | origin | [ModelOrigin](#assembly-v1-ModelOrigin) |  |  |
 | format | [ModelFormat](#assembly-v1-ModelFormat) |  |  |
-| filename | [string](#string) |  |  |
-| uri | [string](#string) |  |  |
+| filename | [string](#string) |  | Filename is required for BUILT_IN models, ignored otherwise |
+| uri | [string](#string) |  | Uri is required for uploaded and external models |
 | thumbnail_uri | [string](#string) |  |  |
 | version | [string](#string) |  |  |
-| unit | [string](#string) |  |  |
+| unit | [string](#string) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
+| up_axis | [string](#string) |  | &#34;X&#34;, &#34;Y&#34;, &#34;Z&#34; |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
@@ -3289,13 +3328,13 @@ TODO: remove to PLM
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| parent_node_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
+| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
+| name | [string](#string) |  | Name of this assembly node |
 | kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
 | part_definition_id | [string](#string) |  |  |
 | override_model_id | [string](#string) |  |  |
 | local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| child_node_ids | [string](#string) | repeated |  |
+| child_node_ids | [string](#string) | repeated | Children of this node, their parent_node_id must be set to this.id |
 | sequence_hint | [int32](#int32) |  |  |
 | cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
 | join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
@@ -3330,13 +3369,23 @@ TODO: remove to PLM
 <a name="assembly-v1-MaterialSpec"></a>
 
 ### MaterialSpec
-
+MaterialSpec is meant to capture the engineering material identity of a part
+name → the material family / type
+grade → the standardized grade or specification
+Examples:
+name: aluminium, grade: 6061-T6
+name: Steel, grade: S355JR
+name: stainless steel, grade: AISI 304
+name: ABS, grade: general purpose
+name: Polycarbonate, grade: PC-110
+name: Nylon, grade: PA6 GF15
+name: TPU, grade: 70 Shore A
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| grade | [string](#string) |  |  |
+| name | [string](#string) |  | Material family |
+| grade | [string](#string) |  | Standard/Specification |
 
 
 
@@ -3359,7 +3408,7 @@ TODO: remove to PLM
 | weight_g | [int64](#int64) |  |  |
 | dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
 | material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
-| default_model_id | [string](#string) |  |  |
+| default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
 | handling | [PartHandlingProfile](#assembly-v1-PartHandlingProfile) |  |  |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
@@ -3395,7 +3444,7 @@ TODO: remove to PLM
 | fragile | [bool](#bool) |  |  |
 | esd_sensitive | [bool](#bool) |  |  |
 | requires_two_hand_lift | [bool](#bool) |  |  |
-| requires_fixture_support | [bool](#bool) |  |  |
+| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
 | max_grip_force_n | [double](#double) |  |  |
 | max_torque_nm | [double](#double) |  |  |
 | constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
@@ -3481,15 +3530,20 @@ TODO: remove to PLM
 <a name="assembly-v1-NodeKind"></a>
 
 ### NodeKind
-
+NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+NodeKind               Represents                    Physical part?   Has children?
+GROUP                  logical grouping              ❌               yes
+PART_OCCURRENCE        single physical part instance ✅               usually no
+SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+PATTERN                repeated pattern structure    ❌ (structure)   yes
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | NODE_KIND_UNSPECIFIED | 0 |  |
-| NODE_KIND_GROUP | 1 |  |
-| NODE_KIND_PART_OCCURRENCE | 2 |  |
-| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 |  |
-| NODE_KIND_PATTERN | 4 |  |
+| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
+| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
+| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
 
 
 
@@ -3546,6 +3600,21 @@ TODO: remove to PLM
 
 
 
+<a name="assembly-v1-AssetDefinitions"></a>
+
+### AssetDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetDefinition](#assembly-v1-AssetDefinition) | repeated |  |
+
+
+
+
+
+
 <a name="assembly-v1-AssetInstance"></a>
 
 ### AssetInstance
@@ -3560,6 +3629,21 @@ TODO: remove to PLM
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
 | pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-AssetInstances"></a>
+
+### AssetInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetInstance](#assembly-v1-AssetInstance) | repeated |  |
 
 
 
@@ -3602,11 +3686,26 @@ TODO: remove to PLM
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | type | [FixtureType](#assembly-v1-FixtureType) |  |  |
-| supported_product_definition_ids | [string](#string) | repeated |  |
-| supported_root_part_definition_ids | [string](#string) | repeated |  |
+| supported_product_definition_ids | [string](#string) | repeated | This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B |
+| supported_root_part_definition_ids | [string](#string) | repeated | This fixture support products whose root assembly is one of these root parts |
 | model_id | [string](#string) |  |  |
 | constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-FixtureDefinitions"></a>
+
+### FixtureDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [FixtureDefinition](#assembly-v1-FixtureDefinition) | repeated |  |
 
 
 
@@ -3627,6 +3726,21 @@ TODO: remove to PLM
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
 | pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-FixtureInstances"></a>
+
+### FixtureInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [FixtureInstance](#assembly-v1-FixtureInstance) | repeated |  |
 
 
 
@@ -3658,6 +3772,21 @@ TODO: remove to PLM
 
 
 
+<a name="assembly-v1-RobotDefinitions"></a>
+
+### RobotDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [RobotDefinitions](#assembly-v1-RobotDefinitions) | repeated |  |
+
+
+
+
+
+
 <a name="assembly-v1-RobotInstance"></a>
 
 ### RobotInstance
@@ -3672,6 +3801,21 @@ TODO: remove to PLM
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
 | base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-RobotInstances"></a>
+
+### RobotInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [RobotInstance](#assembly-v1-RobotInstance) | repeated |  |
 
 
 
@@ -3704,6 +3848,21 @@ TODO: remove to PLM
 
 
 
+<a name="assembly-v1-ToolDefinitions"></a>
+
+### ToolDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ToolDefinition](#assembly-v1-ToolDefinition) | repeated |  |
+
+
+
+
+
+
 <a name="assembly-v1-ToolInstance"></a>
 
 ### ToolInstance
@@ -3721,6 +3880,21 @@ TODO: remove to PLM
 | calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ToolInstances"></a>
+
+### ToolInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ToolInstance](#assembly-v1-ToolInstance) | repeated |  |
 
 
 
@@ -3858,6 +4032,13 @@ TODO: remove to PLM
 | TOOL_TYPE_SAFETY | 8 |  |
 | TOOL_TYPE_ELECTRONICS | 9 |  |
 | TOOL_TYPE_FIXTURE_ACCESSORY | 10 |  |
+| TOOL_TYPE_SHAPING | 11 |  |
+| TOOL_TYPE_TURNING | 12 |  |
+| TOOL_TYPE_STRIKING | 13 |  |
+| TOOL_TYPE_MARKING | 14 |  |
+| TOOL_TYPE_FINISHING | 15 |  |
+| TOOL_TYPE_ABRASIVE | 16 |  |
+| TOOL_TYPE_CLEANING | 17 |  |
 
 
  
@@ -4057,7 +4238,13 @@ TODO: remove to PLM
 <a name="assembly-v1-ProcessRecipe"></a>
 
 ### ProcessRecipe
-
+ProcessRecipe describes the following:
+- What work must be done
+- What kinds of capabilities are required
+- What tool roles are required
+- What skills are required
+- What actor constrains exist
+- What validation is needed
 
 
 | Field | Type | Label | Description |
@@ -4072,7 +4259,7 @@ TODO: remove to PLM
 | root_sequence_id | [string](#string) |  |  |
 | sequences | [SequenceDefinition](#assembly-v1-SequenceDefinition) | repeated |  |
 | tasks | [TaskDefinition](#assembly-v1-TaskDefinition) | repeated |  |
-| supported_fixture_definition_ids | [string](#string) | repeated |  |
+| supported_fixture_definition_ids | [string](#string) | repeated | Meaning: this recipe is intended to run with these fixtures |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
@@ -4253,7 +4440,7 @@ TODO: remove to PLM
 | TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
 | TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
 | TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
-| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 | Only use this if it truly must be done by a robot. Otherwise use prefer-robot |
 | TASK_ASSIGNMENT_PREFERENCE_EITHER | 5 |  |
 
 
@@ -4279,6 +4466,222 @@ TODO: remove to PLM
 | TASK_TYPE_INSERT | 11 |  |
 | TASK_TYPE_HOLD | 12 |  |
 | TASK_TYPE_VERIFY | 13 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_process_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/process_requests.proto
+
+
+
+<a name="assembly-v1-ProcessLoadRequest"></a>
+
+### ProcessLoadRequest
+ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
+During this process, resources feasibility should be checked, i.e.
+   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
+
+Thus the following must be evaluated:
+- available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
+- available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
+- available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
+- valid calibration
+- fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
+- safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
+- active faults / disabled resources
+- asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --&gt; then verify those assets exist and are available.)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_recipe_id | [string](#string) |  |  |
+| target_line_id | [string](#string) |  |  |
+| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
+
+
+
+
+
+
+<a name="assembly-v1-ProcessLoadResult"></a>
+
+### ProcessLoadResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [ProcessLoadStatus](#assembly-v1-ProcessLoadStatus) |  |  |
+| precheck | [ProcessRunPrecheckResult](#assembly-v1-ProcessRunPrecheckResult) |  |  |
+| process_run | [ProcessRun](#assembly-v1-ProcessRun) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProcessRunIssue"></a>
+
+### ProcessRunIssue
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| failure | [ProcessLoadFailure](#assembly-v1-ProcessLoadFailure) |  |  |
+| message | [string](#string) |  |  |
+| severity | [ProcessRunIssueSeverity](#assembly-v1-ProcessRunIssueSeverity) |  |  |
+| process_recipe_id | [string](#string) |  | Scope |
+| sequence_definition_id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| required_tool_role | [string](#string) |  | Related requirement/resource |
+| required_skill_id | [string](#string) |  |  |
+| fixture_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| actor_id | [string](#string) |  |  |
+| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
+| remediation | [string](#string) |  | Optional remediation hint |
+| importance | [RequirementImportance](#assembly-v1-RequirementImportance) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProcessRunPrecheckResult"></a>
+
+### ProcessRunPrecheckResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ok | [bool](#bool) |  |  |
+| issues | [ProcessRunIssue](#assembly-v1-ProcessRunIssue) | repeated |  |
+| blocking_issue_count | [int32](#int32) |  | Optional summary counts for UI / fast filtering |
+| warning_issue_count | [int32](#int32) |  |  |
+| process_recipe_id | [string](#string) |  | What was checked |
+| target_line_id | [string](#string) |  |  |
+| task_feasibility | [TaskFeasibility](#assembly-v1-TaskFeasibility) | repeated | Optional: useful if precheck computes feasible assignments/resources |
+| status | [ProcessRunPrecheckStatus](#assembly-v1-ProcessRunPrecheckStatus) |  | Optional overall status |
+
+
+
+
+
+
+<a name="assembly-v1-TaskFeasibility"></a>
+
+### TaskFeasibility
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_definition_id | [string](#string) |  |  |
+| feasible | [bool](#bool) |  |  |
+| candidate_actor_ids | [string](#string) | repeated |  |
+| candidate_tool_instance_ids | [string](#string) | repeated |  |
+| candidate_fixture_instance_ids | [string](#string) | repeated |  |
+| candidate_asset_instance_ids | [string](#string) | repeated |  |
+| issues | [ProcessRunIssue](#assembly-v1-ProcessRunIssue) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-ProcessLoadFailure"></a>
+
+### ProcessLoadFailure
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
+| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
+| PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
+| PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
+| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
+| PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
+| PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
+| PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
+| PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
+| PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
+| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
+| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
+| PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
+| PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
+| PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
+| PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
+
+
+
+<a name="assembly-v1-ProcessLoadStatus"></a>
+
+### ProcessLoadStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
+| PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
+| PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
+
+
+
+<a name="assembly-v1-ProcessRunIssueSeverity"></a>
+
+### ProcessRunIssueSeverity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_ISSUE_SEVERITY_BLOCKING | 1 | Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task |
+| PROCESS_RUN_ISSUE_SEVERITY_WARNING | 2 | Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed. |
+
+
+
+<a name="assembly-v1-ProcessRunPrecheckStatus"></a>
+
+### ProcessRunPrecheckStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_PRECHECK_STATUS_OK | 1 | Neither warning nor blocking issues |
+| PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS | 2 | One or more warning issues, but no blocking |
+| PROCESS_RUN_PRECHECK_STATUS_BLOCKED | 3 | One or more blocking issues |
+
+
+
+<a name="assembly-v1-RequirementImportance"></a>
+
+### RequirementImportance
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
+| REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
+| REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
 
 
  

@@ -28,7 +28,7 @@ type WorkerDefinition struct {
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Disabled           bool                   `protobuf:"varint,5,opt,name=disabled,proto3" json:"disabled,omitempty"`
+	Disabled           bool                   `protobuf:"varint,5,opt,name=disabled,proto3" json:"disabled,omitempty"` // If disabled, the worker can't be selected
 	EmployeeId         string                 `protobuf:"bytes,6,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
 	ExternalReferences []*ExternalReference   `protobuf:"bytes,7,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Custom             *CustomProperties      `protobuf:"bytes,8,opt,name=custom,proto3" json:"custom,omitempty"`
@@ -122,6 +122,50 @@ func (x *WorkerDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+type WorkerDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*WorkerDefinition    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *WorkerDefinitions) Reset() {
+	*x = WorkerDefinitions{}
+	mi := &file_assembly_v1_actor_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WorkerDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WorkerDefinitions) ProtoMessage() {}
+
+func (x *WorkerDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_actor_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WorkerDefinitions.ProtoReflect.Descriptor instead.
+func (*WorkerDefinitions) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_actor_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *WorkerDefinitions) GetItems() []*WorkerDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type ActorRef struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Kind          ActorKind              `protobuf:"varint,1,opt,name=kind,proto3,enum=assembly.v1.ActorKind" json:"kind,omitempty"`
@@ -132,7 +176,7 @@ type ActorRef struct {
 
 func (x *ActorRef) Reset() {
 	*x = ActorRef{}
-	mi := &file_assembly_v1_actor_proto_msgTypes[1]
+	mi := &file_assembly_v1_actor_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -144,7 +188,7 @@ func (x *ActorRef) String() string {
 func (*ActorRef) ProtoMessage() {}
 
 func (x *ActorRef) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_actor_proto_msgTypes[1]
+	mi := &file_assembly_v1_actor_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +201,7 @@ func (x *ActorRef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActorRef.ProtoReflect.Descriptor instead.
 func (*ActorRef) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_actor_proto_rawDescGZIP(), []int{1}
+	return file_assembly_v1_actor_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ActorRef) GetKind() ActorKind {
@@ -189,7 +233,7 @@ type ActorAssignment struct {
 
 func (x *ActorAssignment) Reset() {
 	*x = ActorAssignment{}
-	mi := &file_assembly_v1_actor_proto_msgTypes[2]
+	mi := &file_assembly_v1_actor_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -201,7 +245,7 @@ func (x *ActorAssignment) String() string {
 func (*ActorAssignment) ProtoMessage() {}
 
 func (x *ActorAssignment) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_actor_proto_msgTypes[2]
+	mi := &file_assembly_v1_actor_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -214,7 +258,7 @@ func (x *ActorAssignment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActorAssignment.ProtoReflect.Descriptor instead.
 func (*ActorAssignment) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_actor_proto_rawDescGZIP(), []int{2}
+	return file_assembly_v1_actor_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ActorAssignment) GetId() string {
@@ -280,7 +324,9 @@ const file_assembly_v1_actor_proto_rawDesc = "" +
 	"\vemployee_id\x18\x06 \x01(\tR\n" +
 	"employeeId\x12O\n" +
 	"\x13external_references\x18\a \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"Q\n" +
+	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"H\n" +
+	"\x11WorkerDefinitions\x123\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.assembly.v1.WorkerDefinitionR\x05items\"Q\n" +
 	"\bActorRef\x12*\n" +
 	"\x04kind\x18\x01 \x01(\x0e2\x16.assembly.v1.ActorKindR\x04kind\x12\x19\n" +
 	"\bactor_id\x18\x02 \x01(\tR\aactorId\"\xb6\x02\n" +
@@ -309,28 +355,30 @@ func file_assembly_v1_actor_proto_rawDescGZIP() []byte {
 	return file_assembly_v1_actor_proto_rawDescData
 }
 
-var file_assembly_v1_actor_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_assembly_v1_actor_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_assembly_v1_actor_proto_goTypes = []any{
 	(*WorkerDefinition)(nil),      // 0: assembly.v1.WorkerDefinition
-	(*ActorRef)(nil),              // 1: assembly.v1.ActorRef
-	(*ActorAssignment)(nil),       // 2: assembly.v1.ActorAssignment
-	(*ExternalReference)(nil),     // 3: assembly.v1.ExternalReference
-	(*CustomProperties)(nil),      // 4: assembly.v1.CustomProperties
-	(ActorKind)(0),                // 5: assembly.v1.ActorKind
-	(*timestamppb.Timestamp)(nil), // 6: google.protobuf.Timestamp
+	(*WorkerDefinitions)(nil),     // 1: assembly.v1.WorkerDefinitions
+	(*ActorRef)(nil),              // 2: assembly.v1.ActorRef
+	(*ActorAssignment)(nil),       // 3: assembly.v1.ActorAssignment
+	(*ExternalReference)(nil),     // 4: assembly.v1.ExternalReference
+	(*CustomProperties)(nil),      // 5: assembly.v1.CustomProperties
+	(ActorKind)(0),                // 6: assembly.v1.ActorKind
+	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
 }
 var file_assembly_v1_actor_proto_depIdxs = []int32{
-	3, // 0: assembly.v1.WorkerDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	4, // 1: assembly.v1.WorkerDefinition.custom:type_name -> assembly.v1.CustomProperties
-	5, // 2: assembly.v1.ActorRef.kind:type_name -> assembly.v1.ActorKind
-	1, // 3: assembly.v1.ActorAssignment.actor:type_name -> assembly.v1.ActorRef
-	6, // 4: assembly.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
-	6, // 5: assembly.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	4, // 0: assembly.v1.WorkerDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	5, // 1: assembly.v1.WorkerDefinition.custom:type_name -> assembly.v1.CustomProperties
+	0, // 2: assembly.v1.WorkerDefinitions.items:type_name -> assembly.v1.WorkerDefinition
+	6, // 3: assembly.v1.ActorRef.kind:type_name -> assembly.v1.ActorKind
+	2, // 4: assembly.v1.ActorAssignment.actor:type_name -> assembly.v1.ActorRef
+	7, // 5: assembly.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
+	7, // 6: assembly.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_actor_proto_init() }
@@ -345,7 +393,7 @@ func file_assembly_v1_actor_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_actor_proto_rawDesc), len(file_assembly_v1_actor_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
