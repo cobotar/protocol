@@ -3,10 +3,24 @@ package assembly.v1;
 
 import "assembly/v1/common.proto";
 import "geometry/v1/pose.proto";
+import "geometry/v1/vector3.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Messages.Assembly.V1";
 option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+enum LocationType {
+  LOCATION_TYPE_UNSPECIFIED = 0;
+  LOCATION_TYPE_STORAGE_BIN = 1; // A storage bin, shelf bin, drawer bin, or similar source location.
+  LOCATION_TYPE_KIT_SLOT = 2; // A logical slot in a kit used to collect required parts before assembly.
+  LOCATION_TYPE_TRAY_CELL = 3; // A specific pocket/cell in a tray or tote.
+  LOCATION_TYPE_FIXTURE_SLOT = 4; // A specific pocket/slot/position in a fixture used for holding or presenting parts.
+}
+
+message LocationRef {
+  string id = 1; // Identifier of the referenced location or location-like resource.
+  LocationType type = 2; // The semantic kind of location, used for interpretation and UI behavior.
+}
 
 enum ToolType {
   TOOL_TYPE_UNSPECIFIED = 0;
@@ -106,12 +120,41 @@ message ToolInstances {
   repeated ToolInstance items = 1;
 }
 
+message FixtureSlot {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+
+  geometry.v1.Pose pose = 4;     // position relative to fixture
+  geometry.v1.Vector3 size = 5;  // optional bounding box
+
+  repeated string supported_product_definition_ids = 6; // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
+  repeated string supported_root_part_definition_ids = 7; // This fixture support products whose root assembly is one of these root parts
+
+  repeated KeyValueConstraint constraints = 8;
+}
+
+message FixtureLocator {
+  string id = 1;
+  geometry.v1.Pose pose = 2;
+  string type = 3; // pin, surface, stop
+}
+
+// Fixture types ...
+//
+// Example of a stack
+// Robot Table
+//      --> BASE fixture plate
+//            --> Clamp fixtures
+//            --> Jigs
+//            --> Pallet interface
+//                --> Pallet with parts
 enum FixtureType {
   FIXTURE_TYPE_UNSPECIFIED = 0;
-  FIXTURE_TYPE_BASE = 1;
-  FIXTURE_TYPE_CLAMP = 2;
-  FIXTURE_TYPE_JIG = 3;
-  FIXTURE_TYPE_PALLET = 4;
+  FIXTURE_TYPE_BASE = 1; // A station base fixture that defines the coordinate system and mounting interface for other fixtures. Purpose: provides a reference frame, bolts to the table/robot cell, often contains dowels pins or grid plates.
+  FIXTURE_TYPE_CLAMP = 2; // A device that holds a part. Examples: (1) toggle clamp for holding plastic parts or sheet metal, (2) Pneumatic clamp, (3) Magnetic clamp
+  FIXTURE_TYPE_JIG = 3; // A guiding fixture that positions or constrains the part for a specific operation. I.e. instead of holding (clamp) it guides/positions. Examples: (1) Drill jig, (2) Assembly jig, (3) Welding jig
+  FIXTURE_TYPE_PALLET = 4; // A moveable fixture used for transporting parts between stations. Examples: (1) Robot pallet, contains pockets for parts, locating pints, ... (2) CNC pallet, (3) Conveyor pallet
 }
 
 message FixtureDefinition {
@@ -120,11 +163,10 @@ message FixtureDefinition {
   string icon = 3;
   string description = 4;
   FixtureType type = 5;
-  repeated string supported_product_definition_ids = 6; // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
-  repeated string supported_root_part_definition_ids = 7; // This fixture support products whose root assembly is one of these root parts
-  string model_id = 8;
-  repeated KeyValueConstraint constraints = 9;
-  CustomProperties custom = 10;
+  repeated FixtureSlot slots = 6;
+  string model_id = 7;
+  repeated KeyValueConstraint constraints = 8;
+  CustomProperties custom = 9;
 }
 
 message FixtureDefinitions {
@@ -191,9 +233,9 @@ message RobotInstance {
   string description = 4;
   string robot_definition_id = 5;
   string station_id = 6;
-  string mounted_tool_instance_id = 7; // what is attached right now
-  repeated string available_tool_instance_ids = 8; // what is in the cell/magazine/dock and usable
-  bool supports_tool_change = 9; // whether dynamic switching is allowed
+  string mounted_tool_instance_id = 7; // The tool instance currently mounted on the robot, if any.
+  repeated string available_tool_instance_ids = 8; // Tool instances available to this robot in the cell/tool dock/tool magazine.
+  bool supports_tool_change = 9; // Whether this robot instance can dynamically change between available tools.
   ResourceStatus status = 10;
   geometry.v1.LocalizedPose base_pose = 11;
   CustomProperties custom = 12;
@@ -210,6 +252,9 @@ enum AssetType {
   ASSET_TYPE_CONVEYOR = 3;
   ASSET_TYPE_SENSOR = 4;
   ASSET_TYPE_HMI = 5;
+  ASSET_TYPE_STORAGE_BIN = 6; // Storage location used as a source for picking or replenishment.
+  ASSET_TYPE_KIT_TRAY = 7; // Tray/tote/box used to hold a prepared kit.
+  ASSET_TYPE_PART_FEEDER = 8; // Feeder or presentation device used to supply parts in a controlled way.
 }
 
 enum AssetDriverType {

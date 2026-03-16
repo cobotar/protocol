@@ -1,3 +1,29 @@
+## Assembly
+Current structure:
+- Product structure
+  product.proto
+  CAD/BOM-derived product hierarchy
+- Process template
+  process.proto
+  what work must be done
+- Runtime
+  execution.proto
+  actual execution state
+- Resources
+  resources.proto
+  tools, robots, fixtures, assets
+- Skills
+  skill.proto
+  actor capabilities
+- Station/cell
+  station.proto
+  deployment environment
+- Precheck
+  process_requests.proto
+  feasibility analysis
+
+
+
 Consider a new structure:
 
 ## Product
