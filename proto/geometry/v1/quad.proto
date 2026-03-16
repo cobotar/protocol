@@ -5,8 +5,8 @@ option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/messages/geometry/v1";
 
 message Quad {
-  double x = 1;
-  double y = 2;
-  double z = 3;
-  double w = 4;
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float w = 4;
 }
