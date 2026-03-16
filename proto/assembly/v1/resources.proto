@@ -9,17 +9,44 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Messages.Assembly.V1";
 option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
 
-enum LocationType {
-  LOCATION_TYPE_UNSPECIFIED = 0;
-  LOCATION_TYPE_STORAGE_BIN = 1; // A storage bin, shelf bin, drawer bin, or similar source location.
-  LOCATION_TYPE_KIT_SLOT = 2; // A logical slot in a kit used to collect required parts before assembly.
-  LOCATION_TYPE_TRAY_CELL = 3; // A specific pocket/cell in a tray or tote.
-  LOCATION_TYPE_FIXTURE_SLOT = 4; // A specific pocket/slot/position in a fixture used for holding or presenting parts.
+// ContainerType classifies physical holders/carriers used to store, stage, present,
+// or constrain products and parts in a station.
+//
+// This unifies concepts that previously lived as separate resources such as storage
+// bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
+// one or more addressable slots.
+enum ContainerType {
+  CONTAINER_TYPE_UNSPECIFIED = 0;
+
+  CONTAINER_TYPE_STORAGE = 1; // A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin.
+  CONTAINER_TYPE_KIT = 2; // A kit container used to collect the exact set of parts required for later work.
+  CONTAINER_TYPE_TRAY = 3; // A tray/tote/carrier with one or more regular cells or pockets.
+  CONTAINER_TYPE_FIXTURE = 4; // A workholding/presentation container such as a base, clamp, jig, or pallet.
 }
 
-message LocationRef {
-  string id = 1; // Identifier of the referenced location or location-like resource.
-  LocationType type = 2; // The semantic kind of location, used for interpretation and UI behavior.
+// ContainerSlotType classifies the semantic role of a slot within a container.
+//
+// The slot type is what task planning, UI rendering, and robot/AR logic typically
+// interact with. For example, a tray and a fixture may both have slots, but their
+// semantics differ.
+enum ContainerSlotType {
+  CONTAINER_SLOT_TYPE_UNSPECIFIED = 0;
+
+  CONTAINER_SLOT_TYPE_STORAGE_BIN = 1; // A storage slot/bin used primarily as a source/sink location for material.
+  CONTAINER_SLOT_TYPE_KIT_SLOT = 2; // A logical slot in a kit used to collect and verify required contents.
+  CONTAINER_SLOT_TYPE_TRAY_CELL = 3; // A regular cell/pocket in a tray, tote, or carrier.
+  CONTAINER_SLOT_TYPE_FIXTURE_SLOT = 4; // A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product.
+}
+
+// ContainerSlotRef points to a concrete slot on a concrete container instance.
+//
+// This is the preferred task-planning reference for storage, kitting, tray, and
+// fixture interactions because it identifies both the physical carrier and the
+// addressable place inside it.
+message ContainerSlotRef {
+  string container_instance_id = 1; // Identifier of the container instance that owns the referenced slot.
+  string slot_id = 2; // Identifier of the slot definition within that container.
+  ContainerSlotType type = 3; // Semantic kind of slot, used for interpretation, UI behavior, and routing.
 }
 
 enum ToolType {
@@ -120,73 +147,79 @@ message ToolInstances {
   repeated ToolInstance items = 1;
 }
 
-message FixtureSlot {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-
-  geometry.v1.Pose pose = 4;     // position relative to fixture
-  geometry.v1.Vector3 size = 5;  // optional bounding box
-
-  repeated string supported_product_definition_ids = 6; // This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
-  repeated string supported_root_part_definition_ids = 7; // This fixture support products whose root assembly is one of these root parts
-
-  repeated KeyValueConstraint constraints = 8;
-}
-
-message FixtureLocator {
-  string id = 1;
-  geometry.v1.Pose pose = 2;
-  string type = 3; // pin, surface, stop
-}
-
-// Fixture types ...
+// ContainerSlotDefinition describes one addressable place inside a container.
 //
-// Example of a stack
-// Robot Table
-//      --> BASE fixture plate
-//            --> Clamp fixtures
-//            --> Jigs
-//            --> Pallet interface
-//                --> Pallet with parts
-enum FixtureType {
-  FIXTURE_TYPE_UNSPECIFIED = 0;
-  FIXTURE_TYPE_BASE = 1; // A station base fixture that defines the coordinate system and mounting interface for other fixtures. Purpose: provides a reference frame, bolts to the table/robot cell, often contains dowels pins or grid plates.
-  FIXTURE_TYPE_CLAMP = 2; // A device that holds a part. Examples: (1) toggle clamp for holding plastic parts or sheet metal, (2) Pneumatic clamp, (3) Magnetic clamp
-  FIXTURE_TYPE_JIG = 3; // A guiding fixture that positions or constrains the part for a specific operation. I.e. instead of holding (clamp) it guides/positions. Examples: (1) Drill jig, (2) Assembly jig, (3) Welding jig
-  FIXTURE_TYPE_PALLET = 4; // A moveable fixture used for transporting parts between stations. Examples: (1) Robot pallet, contains pockets for parts, locating pints, ... (2) CNC pallet, (3) Conveyor pallet
+// A slot is the thing that operators, robots, and AR guidance normally target.
+// Examples:
+// - a shelf bin in storage
+// - a logical slot in a kit
+// - a tray pocket
+// - a fixture nest / clamp position / pallet pocket
+message ContainerSlotDefinition {
+  string id = 1; // Stable identifier unique within the parent container definition.
+  string name = 2; // Human-readable slot name shown in UI and AR, e.g. "Slot A" or "Motor Nest".
+  string icon = 3; // Optional icon override for UIs. If empty, the container icon may be reused.
+  string description = 4; // Optional longer description of the slot's purpose or usage constraints.
+
+  geometry.v1.Pose pose = 5; // Pose of the slot relative to the container definition coordinate frame.
+  geometry.v1.Vector3 size = 6; // Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+
+  ContainerSlotType type = 7; // Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot.
+
+  repeated string supported_product_definition_ids = 8; // Products that this slot explicitly supports holding/presenting.
+  repeated string supported_root_part_definition_ids = 9; // Root assemblies/root parts that this slot supports.
+  repeated string supported_part_definition_ids = 10; // Specific part definitions that this slot supports.
+
+  repeated KeyValueConstraint constraints = 11; // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
+  CustomProperties custom = 12; // Extension point for domain-specific slot data.
 }
 
-message FixtureDefinition {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  FixtureType type = 5;
-  repeated FixtureSlot slots = 6;
-  string model_id = 7;
-  repeated KeyValueConstraint constraints = 8;
-  CustomProperties custom = 9;
+// ContainerDefinition describes a physical holder/carrier with one or more slots.
+//
+// This unifies what used to be modeled separately as fixtures, kit trays, storage
+// bins, and trays/totes. The semantic differences are captured by ContainerType and
+// ContainerSlotType rather than by separate top-level resources.
+message ContainerDefinition {
+  string id = 1; // Stable identifier of the reusable container definition.
+  string name = 2; // Display name, e.g. "Shelf Bin 01", "Starter Kit Tray", or "Motor Pallet".
+  string icon = 3; // UI icon representing the container.
+  string description = 4; // Human-readable description of the container's purpose.
+
+  ContainerType type = 5; // High-level category: storage, kit, tray, or fixture.
+  string model_id = 6; // Optional 3D model used in simulation, AR, and UI rendering.
+
+  repeated ContainerSlotDefinition slots = 7; // Addressable places inside/on the container.
+
+  repeated KeyValueConstraint constraints = 8; // Container-level constraints applying to the whole carrier.
+  CustomProperties custom = 9; // Extension point for domain-specific container metadata.
 }
 
-message FixtureDefinitions {
-  repeated FixtureDefinition items = 1;
+message ContainerDefinitions {
+  repeated ContainerDefinition items = 1; // List wrapper used for transport/query responses.
 }
 
-message FixtureInstance {
-  string id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
-  string fixture_definition_id = 5;
-  string station_id = 6;
-  ResourceStatus status = 7;
-  geometry.v1.LocalizedPose pose = 8;
-  CustomProperties custom = 9;
+// ContainerInstance represents a concrete container in a station/cell.
+//
+// Examples:
+// - the actual shelf bin mounted in station A
+// - the actual pallet currently loaded on an indexing table
+// - the actual jig installed on a workbench
+message ContainerInstance {
+  string id = 1; // Stable identifier of the concrete container instance.
+  string name = 2; // Display name of the instance. Often copied from the definition, but may be station-specific.
+  string icon = 3; // UI icon for the instance.
+  string description = 4; // Human-readable description of this particular instance.
+
+  string container_definition_id = 5; // The reusable container definition that this instance realizes.
+  string station_id = 6; // Station/cell where this container currently belongs or is mounted.
+  ResourceStatus status = 7; // Operational status such as available, disabled, or faulted.
+  geometry.v1.LocalizedPose pose = 8; // Pose of the container instance in the station/environment.
+
+  CustomProperties custom = 9; // Extension point for instance-specific data.
 }
 
-message FixtureInstances {
-  repeated FixtureInstance items = 1;
+message ContainerInstances {
+  repeated ContainerInstance items = 1; // List wrapper used for transport/query responses.
 }
 
 enum RobotType {
@@ -247,14 +280,12 @@ message RobotInstances {
 
 enum AssetType {
   ASSET_TYPE_UNSPECIFIED = 0;
-  ASSET_TYPE_CAMERA = 1;
-  ASSET_TYPE_LIGHT = 2;
-  ASSET_TYPE_CONVEYOR = 3;
-  ASSET_TYPE_SENSOR = 4;
-  ASSET_TYPE_HMI = 5;
-  ASSET_TYPE_STORAGE_BIN = 6; // Storage location used as a source for picking or replenishment.
-  ASSET_TYPE_KIT_TRAY = 7; // Tray/tote/box used to hold a prepared kit.
-  ASSET_TYPE_PART_FEEDER = 8; // Feeder or presentation device used to supply parts in a controlled way.
+  ASSET_TYPE_CAMERA = 1; // Vision device used for inspection, guidance, or detection.
+  ASSET_TYPE_LIGHT = 2; // Lighting device such as ring light, spot light, or backlight.
+  ASSET_TYPE_CONVEYOR = 3; // Conveying device used to move workpieces or pallets between areas.
+  ASSET_TYPE_SENSOR = 4; // Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor.
+  ASSET_TYPE_HMI = 5; // Human-machine interface such as touch panel, button box, or stack-light UI endpoint.
+  ASSET_TYPE_PART_FEEDER = 8; // Feeder/presentation device used to supply parts in a controlled way.
 }
 
 enum AssetDriverType {

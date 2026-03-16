@@ -83,7 +83,7 @@ message ProcessRecipe {
   string root_sequence_id = 8;
   repeated SequenceDefinition sequences = 9;
   repeated TaskDefinition tasks = 10;
-  repeated string supported_fixture_definition_ids = 11; // Meaning: this recipe is intended to run with these fixtures
+  repeated string supported_container_definition_ids = 11; // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
   repeated ExternalReference external_references = 12;
   CustomProperties custom = 13;
 }
@@ -112,16 +112,16 @@ message TaskTarget {
   // Optional non-product targets.
   // These are useful when a task is not primarily about an AssemblyNode.
   // Examples:
-  // - asset_instance_id   -> check camera, read HMI, pick from storage bin
-  // - robot_instance_id   -> move robot to home, inspect robot state
-  // - station_id          -> clear work surface, perform station startup step
-  // - fixture_instance_id -> place part in jig, verify fixture setup
-  string asset_instance_id = 4; // Optional asset target such as camera, HMI, storage bin, tray, or feeder.
+  // - asset_instance_id     -> check camera, read HMI, inspect feeder
+  // - robot_instance_id     -> move robot to home, inspect robot state
+  // - station_id            -> clear work surface, perform station startup step
+  // - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+  string asset_instance_id = 4; // Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
   string robot_instance_id = 5; // Optional robot target for robot-specific actions.
   string station_id = 6; // Optional station target for station-level or area-level actions.
-  string fixture_instance_id = 7; // Optional fixture target for jig/nest/clamp interactions.
+  string container_instance_id = 7; // Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
 
-  LocationRef location = 8; // Optional logical/physical location target such as storage bin, kit slot, tray cell, or fixture slot.
+  ContainerSlotRef location = 8; // Optional slot-level target when a task acts on a specific addressable place in a container.
 }
 
 message ValidationRequirement {
@@ -161,8 +161,8 @@ message TaskDefinition {
   string source_node_id = 17; // Optional source assembly node when something is moved/picked from a product structure.
   string destination_node_id = 18; // Optional destination assembly node when something is moved/placed into a product structure.
 
-  LocationRef source_location = 19; // Optional source location for kitting, pick/place, storage, feeder, or tray operations.
-  LocationRef destination_location = 20; // Optional destination location for kitting, pick/place, storage, feeder, or tray operations.
+  ContainerSlotRef source_location = 19; // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+  ContainerSlotRef destination_location = 20; // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
 
   CustomProperties custom = 21;
 }
