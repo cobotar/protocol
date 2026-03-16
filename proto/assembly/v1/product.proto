@@ -49,7 +49,22 @@ message Dimensions {
   double z_mm = 3;
 }
 
-// MaterialSpec is meant to capture the engineering material identity of a part
+
+enum MaterialCategory {
+  MATERIAL_CATEGORY_UNSPECIFIED = 0;
+
+  MATERIAL_CATEGORY_METAL = 1;      // Metals and metal alloys
+  MATERIAL_CATEGORY_POLYMER = 2;    // Thermoplastics / thermosets
+  MATERIAL_CATEGORY_ELASTOMER = 3;  // Flexible rubber-like materials
+  MATERIAL_CATEGORY_COMPOSITE = 4;  // Fiber-reinforced / layered materials
+  MATERIAL_CATEGORY_CERAMIC = 5;    // Ceramics and similar brittle inorganic materials
+  MATERIAL_CATEGORY_GLASS = 6;      // Glass and glass-like transparent materials
+  MATERIAL_CATEGORY_WOOD = 7;       // Wood and wood-derived materials
+  MATERIAL_CATEGORY_FOAM = 8;       // Cellular / expanded materials
+  MATERIAL_CATEGORY_OTHER = 9;      // Anything not fitting the categories above
+}
+
+// MaterialSpec is meant to capture the engineering material identity of a part.
 // name → the material family / type
 // grade → the standardized grade or specification
 // Examples:
@@ -61,8 +76,9 @@ message Dimensions {
 // name: Nylon, grade: PA6 GF15
 // name: TPU, grade: 70 Shore A
 message MaterialSpec {
-  string name = 1; // Material family
-  string grade = 2; // Standard/Specification
+  MaterialCategory category = 1; // Broad material class, e.g. metal, polymer, elastomer
+  string name = 2;               // Material family, e.g. aluminium, steel, ABS
+  string grade = 3;              // Standard/specification, e.g. 6061-T6, S355JR, AISI 304
 }
 
 message PartHandlingProfile {
