@@ -626,9 +626,9 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
 
 
 
@@ -659,10 +659,10 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| x | [double](#double) |  |  |
-| y | [double](#double) |  |  |
-| z | [double](#double) |  |  |
-| w | [double](#double) |  |  |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| w | [float](#float) |  |  |
 
 
 

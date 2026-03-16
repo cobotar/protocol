@@ -10,29 +10,29 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file geometry/v1/quad.proto.
  */
 export const file_geometry_v1_quad: GenFile = /*@__PURE__*/
-  fileDesc("ChZnZW9tZXRyeS92MS9xdWFkLnByb3RvEgtnZW9tZXRyeS52MSIyCgRRdWFkEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgBEgkKAXcYBCABKAFCrQEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRyeS92MTtnZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z");
+  fileDesc("ChZnZW9tZXRyeS92MS9xdWFkLnByb3RvEgtnZW9tZXRyeS52MSIyCgRRdWFkEgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCEgkKAXcYBCABKAJCrQEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRyeS92MTtnZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message geometry.v1.Quad
  */
 export type Quad = Message<"geometry.v1.Quad"> & {
   /**
-   * @generated from field: double x = 1;
+   * @generated from field: float x = 1;
    */
   x: number;
 
   /**
-   * @generated from field: double y = 2;
+   * @generated from field: float y = 2;
    */
   y: number;
 
   /**
-   * @generated from field: double z = 3;
+   * @generated from field: float z = 3;
    */
   z: number;
 
   /**
-   * @generated from field: double w = 4;
+   * @generated from field: float w = 4;
    */
   w: number;
 };

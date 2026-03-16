@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/quad.proto\x12\x0bgeometry.v1\">\n\x04Quad\x12\x0c\n\x01x\x18\x01 \x01(\x01R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x01R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x01R\x01z\x12\x0c\n\x01w\x18\x04 \x01(\x01R\x01wB\xad\x01\n\x0f\x63om.geometry.v1B\tQuadProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/quad.proto\x12\x0bgeometry.v1\">\n\x04Quad\x12\x0c\n\x01x\x18\x01 \x01(\x02R\x01x\x12\x0c\n\x01y\x18\x02 \x01(\x02R\x01y\x12\x0c\n\x01z\x18\x03 \x01(\x02R\x01z\x12\x0c\n\x01w\x18\x04 \x01(\x02R\x01wB\xad\x01\n\x0f\x63om.geometry.v1B\tQuadProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

@@ -23,10 +23,10 @@ const (
 
 type Quad struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	X             float64                `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty"`
-	Y             float64                `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty"`
-	Z             float64                `protobuf:"fixed64,3,opt,name=z,proto3" json:"z,omitempty"`
-	W             float64                `protobuf:"fixed64,4,opt,name=w,proto3" json:"w,omitempty"`
+	X             float32                `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
+	Y             float32                `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
+	Z             float32                `protobuf:"fixed32,3,opt,name=z,proto3" json:"z,omitempty"`
+	W             float32                `protobuf:"fixed32,4,opt,name=w,proto3" json:"w,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -61,28 +61,28 @@ func (*Quad) Descriptor() ([]byte, []int) {
 	return file_geometry_v1_quad_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Quad) GetX() float64 {
+func (x *Quad) GetX() float32 {
 	if x != nil {
 		return x.X
 	}
 	return 0
 }
 
-func (x *Quad) GetY() float64 {
+func (x *Quad) GetY() float32 {
 	if x != nil {
 		return x.Y
 	}
 	return 0
 }
 
-func (x *Quad) GetZ() float64 {
+func (x *Quad) GetZ() float32 {
 	if x != nil {
 		return x.Z
 	}
 	return 0
 }
 
-func (x *Quad) GetW() float64 {
+func (x *Quad) GetW() float32 {
 	if x != nil {
 		return x.W
 	}
@@ -95,10 +95,10 @@ const file_geometry_v1_quad_proto_rawDesc = "" +
 	"\n" +
 	"\x16geometry/v1/quad.proto\x12\vgeometry.v1\">\n" +
 	"\x04Quad\x12\f\n" +
-	"\x01x\x18\x01 \x01(\x01R\x01x\x12\f\n" +
-	"\x01y\x18\x02 \x01(\x01R\x01y\x12\f\n" +
-	"\x01z\x18\x03 \x01(\x01R\x01z\x12\f\n" +
-	"\x01w\x18\x04 \x01(\x01R\x01wB\xad\x01\n" +
+	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
+	"\x01y\x18\x02 \x01(\x02R\x01y\x12\f\n" +
+	"\x01z\x18\x03 \x01(\x02R\x01z\x12\f\n" +
+	"\x01w\x18\x04 \x01(\x02R\x01wB\xad\x01\n" +
 	"\x0fcom.geometry.v1B\tQuadProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (

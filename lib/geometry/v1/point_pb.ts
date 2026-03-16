@@ -10,24 +10,24 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file geometry/v1/point.proto.
  */
 export const file_geometry_v1_point: GenFile = /*@__PURE__*/
-  fileDesc("ChdnZW9tZXRyeS92MS9wb2ludC5wcm90bxILZ2VvbWV0cnkudjEiKAoFUG9pbnQSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoYAyABKAFCrgEKD2NvbS5nZW9tZXRyeS52MUIKUG9pbnRQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw");
+  fileDesc("ChdnZW9tZXRyeS92MS9wb2ludC5wcm90bxILZ2VvbWV0cnkudjEiKAoFUG9pbnQSCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyABKAJCrgEKD2NvbS5nZW9tZXRyeS52MUIKUG9pbnRQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw");
 
 /**
  * @generated from message geometry.v1.Point
  */
 export type Point = Message<"geometry.v1.Point"> & {
   /**
-   * @generated from field: double x = 1;
+   * @generated from field: float x = 1;
    */
   x: number;
 
   /**
-   * @generated from field: double y = 2;
+   * @generated from field: float y = 2;
    */
   y: number;
 
   /**
-   * @generated from field: double z = 3;
+   * @generated from field: float z = 3;
    */
   z: number;
 };

@@ -25,8 +25,8 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZnZW9tZXRyeS92MS9xdWFkLnByb3RvEgtnZW9tZXRyeS52MSI+CgRRdWFk",
-            "EgwKAXgYASABKAFSAXgSDAoBeRgCIAEoAVIBeRIMCgF6GAMgASgBUgF6EgwK",
-            "AXcYBCABKAFSAXdCrQEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFa",
+            "EgwKAXgYASABKAJSAXgSDAoBeRgCIAEoAlIBeRIMCgF6GAMgASgCUgF6EgwK",
+            "AXcYBCABKAJSAXdCrQEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFa",
             "O2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRy",
             "eS92MTtnZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIL",
             "R2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21l",
@@ -91,10 +91,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "x" field.</summary>
     public const int XFieldNumber = 1;
-    private double x_;
+    private float x_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public double X {
+    public float X {
       get { return x_; }
       set {
         x_ = value;
@@ -103,10 +103,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "y" field.</summary>
     public const int YFieldNumber = 2;
-    private double y_;
+    private float y_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public double Y {
+    public float Y {
       get { return y_; }
       set {
         y_ = value;
@@ -115,10 +115,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "z" field.</summary>
     public const int ZFieldNumber = 3;
-    private double z_;
+    private float z_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public double Z {
+    public float Z {
       get { return z_; }
       set {
         z_ = value;
@@ -127,10 +127,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "w" field.</summary>
     public const int WFieldNumber = 4;
-    private double w_;
+    private float w_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public double W {
+    public float W {
       get { return w_; }
       set {
         w_ = value;
@@ -152,10 +152,10 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Y, other.Y)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Z, other.Z)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(W, other.W)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(W, other.W)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,10 +163,10 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (X != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(X);
-      if (Y != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Y);
-      if (Z != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Z);
-      if (W != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(W);
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (W != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(W);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,21 +185,21 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (X != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(X);
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
       }
-      if (Y != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(Y);
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
       }
-      if (Z != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Z);
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
       }
-      if (W != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(W);
+      if (W != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(W);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -211,21 +211,21 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (X != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(X);
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
       }
-      if (Y != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(Y);
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
       }
-      if (Z != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Z);
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
       }
-      if (W != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(W);
+      if (W != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(W);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,17 +237,17 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (X != 0D) {
-        size += 1 + 8;
+      if (X != 0F) {
+        size += 1 + 4;
       }
-      if (Y != 0D) {
-        size += 1 + 8;
+      if (Y != 0F) {
+        size += 1 + 4;
       }
-      if (Z != 0D) {
-        size += 1 + 8;
+      if (Z != 0F) {
+        size += 1 + 4;
       }
-      if (W != 0D) {
-        size += 1 + 8;
+      if (W != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,16 +261,16 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.X != 0D) {
+      if (other.X != 0F) {
         X = other.X;
       }
-      if (other.Y != 0D) {
+      if (other.Y != 0F) {
         Y = other.Y;
       }
-      if (other.Z != 0D) {
+      if (other.Z != 0F) {
         Z = other.Z;
       }
-      if (other.W != 0D) {
+      if (other.W != 0F) {
         W = other.W;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -292,20 +292,20 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 9: {
-            X = input.ReadDouble();
+          case 13: {
+            X = input.ReadFloat();
             break;
           }
-          case 17: {
-            Y = input.ReadDouble();
+          case 21: {
+            Y = input.ReadFloat();
             break;
           }
-          case 25: {
-            Z = input.ReadDouble();
+          case 29: {
+            Z = input.ReadFloat();
             break;
           }
-          case 33: {
-            W = input.ReadDouble();
+          case 37: {
+            W = input.ReadFloat();
             break;
           }
         }
@@ -327,20 +327,20 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 9: {
-            X = input.ReadDouble();
+          case 13: {
+            X = input.ReadFloat();
             break;
           }
-          case 17: {
-            Y = input.ReadDouble();
+          case 21: {
+            Y = input.ReadFloat();
             break;
           }
-          case 25: {
-            Z = input.ReadDouble();
+          case 29: {
+            Z = input.ReadFloat();
             break;
           }
-          case 33: {
-            W = input.ReadDouble();
+          case 37: {
+            W = input.ReadFloat();
             break;
           }
         }
