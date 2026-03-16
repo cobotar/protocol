@@ -26,110 +26,124 @@ namespace Messages.Assembly.V1 {
           string.Concat(
             "Chlhc3NlbWJseS92MS9wcm9jZXNzLnByb3RvEgthc3NlbWJseS52MRoYYXNz",
             "ZW1ibHkvdjEvY29tbW9uLnByb3RvGhlhc3NlbWJseS92MS9wcm9kdWN0LnBy",
-            "b3RvGhdhc3NlbWJseS92MS9za2lsbC5wcm90bxoZZ2VvbWV0cnkvdjEvdmVj",
-            "dG9yMy5wcm90byKLAQoTUmVjaXBlQXBwbGljYWJpbGl0eRI5CghyZXF1aXJl",
-            "ZBgBIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb25SCHJlcXVp",
-            "cmVkEjkKCGV4Y2x1ZGVkGAIgAygLMh0uYXNzZW1ibHkudjEuVmFyaWFudENv",
-            "bmRpdGlvblIIZXhjbHVkZWQigAUKDVByb2Nlc3NSZWNpcGUSDgoCaWQYASAB",
-            "KAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNv",
-            "bhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoEdHlwZRgF",
-            "IAEoDjIYLmFzc2VtYmx5LnYxLlByb2Nlc3NUeXBlUgR0eXBlEjIKFXByb2R1",
-            "Y3RfZGVmaW5pdGlvbl9pZBgGIAEoCVITcHJvZHVjdERlZmluaXRpb25JZBJG",
-            "Cg1hcHBsaWNhYmlsaXR5GAcgASgLMiAuYXNzZW1ibHkudjEuUmVjaXBlQXBw",
-            "bGljYWJpbGl0eVINYXBwbGljYWJpbGl0eRIoChByb290X3NlcXVlbmNlX2lk",
-            "GAggASgJUg5yb290U2VxdWVuY2VJZBI9CglzZXF1ZW5jZXMYCSADKAsyHy5h",
-            "c3NlbWJseS52MS5TZXF1ZW5jZURlZmluaXRpb25SCXNlcXVlbmNlcxIxCgV0",
-            "YXNrcxgKIAMoCzIbLmFzc2VtYmx5LnYxLlRhc2tEZWZpbml0aW9uUgV0YXNr",
-            "cxJHCiBzdXBwb3J0ZWRfZml4dHVyZV9kZWZpbml0aW9uX2lkcxgLIAMoCVId",
-            "c3VwcG9ydGVkRml4dHVyZURlZmluaXRpb25JZHMSTwoTZXh0ZXJuYWxfcmVm",
-            "ZXJlbmNlcxgMIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNl",
-            "UhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1i",
-            "bHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIpAEChJTZXF1ZW5jZURl",
-            "ZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUS",
-            "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
-            "Y3JpcHRpb24SJwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFUg5zZXF1ZW5jZU51",
-            "bWJlchIsChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAlSEHBhcmVudFNlcXVl",
-            "bmNlSWQSOQoIb3BlcmF0b3IYByABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5j",
-            "ZU9wZXJhdG9yUghvcGVyYXRvchIsChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCAD",
-            "KAlSEGNoaWxkU2VxdWVuY2VJZHMSJAoOY2hpbGRfdGFza19pZHMYCSADKAlS",
-            "DGNoaWxkVGFza0lkcxI7Cgxsb2NhbF90YXJnZXQYCiABKAsyGC5hc3NlbWJs",
-            "eS52MS5Mb2NhbFRhcmdldFILbG9jYWxUYXJnZXQSGgoIb3B0aW9uYWwYCyAB",
-            "KAhSCG9wdGlvbmFsEioKEWNhbl9idWxrX2NvbXBsZXRlGAwgASgIUg9jYW5C",
-            "dWxrQ29tcGxldGUSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3Vz",
-            "dG9tUHJvcGVydGllc1IGY3VzdG9tIqoBCgpUYXNrVGFyZ2V0EiQKDnRhcmdl",
-            "dF9ub2RlX2lkGAEgASgJUgx0YXJnZXROb2RlSWQSOQoZdGFyZ2V0X3BhcnRf",
-            "ZGVmaW5pdGlvbl9pZBgCIAEoCVIWdGFyZ2V0UGFydERlZmluaXRpb25JZBI7",
-            "Cgxsb2NhbF90YXJnZXQYAyABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRhcmdl",
-            "dFILbG9jYWxUYXJnZXQi2AIKFVZhbGlkYXRpb25SZXF1aXJlbWVudBIyChVy",
-            "ZXF1aXJlX3Rvb2xfZmVlZGJhY2sYASABKAhSE3JlcXVpcmVUb29sRmVlZGJh",
-            "Y2sSMAoUcmVxdWlyZV92aXNpb25fY2hlY2sYAiABKAhSEnJlcXVpcmVWaXNp",
-            "b25DaGVjaxI6ChlhbGxvd19tYW51YWxfY29uZmlybWF0aW9uGAMgASgIUhdh",
-            "bGxvd01hbnVhbENvbmZpcm1hdGlvbhJaCh1tYW51YWxfY29uZmlybWF0aW9u",
-            "X21pbl9sZXZlbBgEIAEoDjIXLmFzc2VtYmx5LnYxLlNraWxsTGV2ZWxSGm1h",
-            "bnVhbENvbmZpcm1hdGlvbk1pbkxldmVsEkEKC2NvbnN0cmFpbnRzGAUgAygL",
-            "Mh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50",
-            "cyLeAgoTVGFza0V4ZWN1dGlvblBvbGljeRJaChVhc3NpZ25tZW50X3ByZWZl",
-            "cmVuY2UYASABKA4yJS5hc3NlbWJseS52MS5UYXNrQXNzaWdubWVudFByZWZl",
-            "cmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlEkcKEGFjdG9yX2NvbnN0cmFp",
-            "bnQYAiABKAsyHC5hc3NlbWJseS52MS5BY3RvckNvbnN0cmFpbnRSD2FjdG9y",
-            "Q29uc3RyYWludBIhCgxjYW5fcmVhc3NpZ24YAyABKAhSC2NhblJlYXNzaWdu",
-            "EhUKBmNhbl9kbxgEIAEoCFIFY2FuRG8SGQoIY2FuX3VuZG8YBSABKAhSB2Nh",
-            "blVuZG8STQoSZXN0aW1hdGVkX2R1cmF0aW9uGAYgASgLMh4uYXNzZW1ibHku",
-            "djEuRXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uItUGCg5U",
-            "YXNrRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIE",
-            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
-            "UgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0",
-            "cnVjdGlvblRleHQSJwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFUg5zZXF1ZW5j",
-            "ZU51bWJlchIyCgl0YXNrX3R5cGUYByABKA4yFS5hc3NlbWJseS52MS5UYXNr",
-            "VHlwZVIIdGFza1R5cGUSLwoGdGFyZ2V0GAggASgLMhcuYXNzZW1ibHkudjEu",
-            "VGFza1RhcmdldFIGdGFyZ2V0EjAKCGFwcHJvYWNoGAkgASgLMhQuZ2VvbWV0",
-            "cnkudjEuVmVjdG9yM1IIYXBwcm9hY2gSSQoRdG9vbF9yZXF1aXJlbWVudHMY",
-            "DCADKAsyHC5hc3NlbWJseS52MS5Ub29sUmVxdWlyZW1lbnRSEHRvb2xSZXF1",
-            "aXJlbWVudHMSTAoSc2tpbGxfcmVxdWlyZW1lbnRzGA0gAygLMh0uYXNzZW1i",
-            "bHkudjEuU2tpbGxSZXF1aXJlbWVudFIRc2tpbGxSZXF1aXJlbWVudHMSQgoK",
-            "dmFsaWRhdGlvbhgOIAEoCzIiLmFzc2VtYmx5LnYxLlZhbGlkYXRpb25SZXF1",
-            "aXJlbWVudFIKdmFsaWRhdGlvbhJLChBleGVjdXRpb25fcG9saWN5GA8gASgL",
-            "MiAuYXNzZW1ibHkudjEuVGFza0V4ZWN1dGlvblBvbGljeVIPZXhlY3V0aW9u",
-            "UG9saWN5EkcKEHNhZmV0eV9yZWxldmFuY2UYECABKA4yHC5hc3NlbWJseS52",
-            "MS5TYWZldHlSZWxldmFuY2VSD3NhZmV0eVJlbGV2YW5jZRIkCg5zb3VyY2Vf",
-            "bm9kZV9pZBgRIAEoCVIMc291cmNlTm9kZUlkEi4KE2Rlc3RpbmF0aW9uX25v",
-            "ZGVfaWQYEiABKAlSEWRlc3RpbmF0aW9uTm9kZUlkEjUKBmN1c3RvbRgTIAEo",
-            "CzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSqdAQoL",
-            "UHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoV",
-            "UFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FT",
-            "U0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9D",
-            "RVNTX1RZUEVfQ0hFQ0tMSVNUEAQqogEKEFNlcXVlbmNlT3BlcmF0b3ISIQod",
-            "U0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIlCiFTRVFVRU5DRV9P",
-            "UEVSQVRPUl9BTExfT0ZfQ0hJTERSRU4QARIlCiFTRVFVRU5DRV9PUEVSQVRP",
-            "Ul9PTkVfT0ZfQ0hJTERSRU4QAhIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRF",
-            "UkVEEAMqvgIKCFRhc2tUeXBlEhkKFVRBU0tfVFlQRV9VTlNQRUNJRklFRBAA",
-            "EhUKEVRBU0tfVFlQRV9JTlNQRUNUEAESFAoQVEFTS19UWVBFX0ZBU1RFThAC",
-            "EhYKElRBU0tfVFlQRV9VTkZBU1RFThADEhMKD1RBU0tfVFlQRV9NT1VOVBAE",
-            "EhUKEVRBU0tfVFlQRV9VTk1PVU5UEAUSEgoOVEFTS19UWVBFX01PVkUQBhIU",
-            "ChBUQVNLX1RZUEVfUkVNT1ZFEAcSEwoPVEFTS19UWVBFX0FQUExZEAgSEgoO",
-            "VEFTS19UWVBFX1dJUEUQCRITCg9UQVNLX1RZUEVfQUxJR04QChIUChBUQVNL",
-            "X1RZUEVfSU5TRVJUEAsSEgoOVEFTS19UWVBFX0hPTEQQDBIUChBUQVNLX1RZ",
-            "UEVfVkVSSUZZEA0qnQIKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIqCiZU",
-            "QVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisKJ1RB",
-            "U0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikKJVRB",
-            "U0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidUQVNL",
-            "X0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVUQVNL",
-            "X0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEAQSJQohVEFTS19B",
-            "U1NJR05NRU5UX1BSRUZFUkVOQ0VfRUlUSEVSEAVCsgEKD2NvbS5hc3NlbWJs",
-            "eS52MUIMUHJvY2Vzc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIU",
-            "TWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5",
-            "XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM="));
+            "b3RvGhthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8aF2Fzc2VtYmx5L3Yx",
+            "L3NraWxsLnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIosBChNS",
+            "ZWNpcGVBcHBsaWNhYmlsaXR5EjkKCHJlcXVpcmVkGAEgAygLMh0uYXNzZW1i",
+            "bHkudjEuVmFyaWFudENvbmRpdGlvblIIcmVxdWlyZWQSOQoIZXhjbHVkZWQY",
+            "AiADKAsyHS5hc3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uUghleGNsdWRl",
+            "ZCKEBQoNUHJvY2Vzc1JlY2lwZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgC",
+            "IAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
+            "GAQgASgJUgtkZXNjcmlwdGlvbhIsCgR0eXBlGAUgASgOMhguYXNzZW1ibHku",
+            "djEuUHJvY2Vzc1R5cGVSBHR5cGUSMgoVcHJvZHVjdF9kZWZpbml0aW9uX2lk",
+            "GAYgASgJUhNwcm9kdWN0RGVmaW5pdGlvbklkEkYKDWFwcGxpY2FiaWxpdHkY",
+            "ByABKAsyIC5hc3NlbWJseS52MS5SZWNpcGVBcHBsaWNhYmlsaXR5Ug1hcHBs",
+            "aWNhYmlsaXR5EigKEHJvb3Rfc2VxdWVuY2VfaWQYCCABKAlSDnJvb3RTZXF1",
+            "ZW5jZUlkEj0KCXNlcXVlbmNlcxgJIAMoCzIfLmFzc2VtYmx5LnYxLlNlcXVl",
+            "bmNlRGVmaW5pdGlvblIJc2VxdWVuY2VzEjEKBXRhc2tzGAogAygLMhsuYXNz",
+            "ZW1ibHkudjEuVGFza0RlZmluaXRpb25SBXRhc2tzEksKInN1cHBvcnRlZF9j",
+            "b250YWluZXJfZGVmaW5pdGlvbl9pZHMYCyADKAlSH3N1cHBvcnRlZENvbnRh",
+            "aW5lckRlZmluaXRpb25JZHMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMo",
+            "CzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJl",
+            "ZmVyZW5jZXMSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9t",
+            "UHJvcGVydGllc1IGY3VzdG9tIpAEChJTZXF1ZW5jZURlZmluaXRpb24SDgoC",
+            "aWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoP",
+            "c2VxdWVuY2VfbnVtYmVyGAUgASgFUg5zZXF1ZW5jZU51bWJlchIsChJwYXJl",
+            "bnRfc2VxdWVuY2VfaWQYBiABKAlSEHBhcmVudFNlcXVlbmNlSWQSOQoIb3Bl",
+            "cmF0b3IYByABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5jZU9wZXJhdG9yUghv",
+            "cGVyYXRvchIsChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAlSEGNoaWxkU2Vx",
+            "dWVuY2VJZHMSJAoOY2hpbGRfdGFza19pZHMYCSADKAlSDGNoaWxkVGFza0lk",
+            "cxI7Cgxsb2NhbF90YXJnZXQYCiABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRh",
+            "cmdldFILbG9jYWxUYXJnZXQSGgoIb3B0aW9uYWwYCyABKAhSCG9wdGlvbmFs",
+            "EioKEWNhbl9idWxrX2NvbXBsZXRlGAwgASgIUg9jYW5CdWxrQ29tcGxldGUS",
+            "NQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGll",
+            "c1IGY3VzdG9tIpADCgpUYXNrVGFyZ2V0EiQKDnRhcmdldF9ub2RlX2lkGAEg",
+            "ASgJUgx0YXJnZXROb2RlSWQSOQoZdGFyZ2V0X3BhcnRfZGVmaW5pdGlvbl9p",
+            "ZBgCIAEoCVIWdGFyZ2V0UGFydERlZmluaXRpb25JZBI7Cgxsb2NhbF90YXJn",
+            "ZXQYAyABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRhcmdldFILbG9jYWxUYXJn",
+            "ZXQSKgoRYXNzZXRfaW5zdGFuY2VfaWQYBCABKAlSD2Fzc2V0SW5zdGFuY2VJ",
+            "ZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgFIAEoCVIPcm9ib3RJbnN0YW5jZUlk",
+            "Eh0KCnN0YXRpb25faWQYBiABKAlSCXN0YXRpb25JZBIyChVjb250YWluZXJf",
+            "aW5zdGFuY2VfaWQYByABKAlSE2NvbnRhaW5lckluc3RhbmNlSWQSOQoIbG9j",
+            "YXRpb24YCCABKAsyHS5hc3NlbWJseS52MS5Db250YWluZXJTbG90UmVmUghs",
+            "b2NhdGlvbiLYAgoVVmFsaWRhdGlvblJlcXVpcmVtZW50EjIKFXJlcXVpcmVf",
+            "dG9vbF9mZWVkYmFjaxgBIAEoCFITcmVxdWlyZVRvb2xGZWVkYmFjaxIwChRy",
+            "ZXF1aXJlX3Zpc2lvbl9jaGVjaxgCIAEoCFIScmVxdWlyZVZpc2lvbkNoZWNr",
+            "EjoKGWFsbG93X21hbnVhbF9jb25maXJtYXRpb24YAyABKAhSF2FsbG93TWFu",
+            "dWFsQ29uZmlybWF0aW9uEloKHW1hbnVhbF9jb25maXJtYXRpb25fbWluX2xl",
+            "dmVsGAQgASgOMhcuYXNzZW1ibHkudjEuU2tpbGxMZXZlbFIabWFudWFsQ29u",
+            "ZmlybWF0aW9uTWluTGV2ZWwSQQoLY29uc3RyYWludHMYBSADKAsyHy5hc3Nl",
+            "bWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIt4CChNU",
+            "YXNrRXhlY3V0aW9uUG9saWN5EloKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgB",
+            "IAEoDjIlLmFzc2VtYmx5LnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZVIU",
+            "YXNzaWdubWVudFByZWZlcmVuY2USRwoQYWN0b3JfY29uc3RyYWludBgCIAEo",
+            "CzIcLmFzc2VtYmx5LnYxLkFjdG9yQ29uc3RyYWludFIPYWN0b3JDb25zdHJh",
+            "aW50EiEKDGNhbl9yZWFzc2lnbhgDIAEoCFILY2FuUmVhc3NpZ24SFQoGY2Fu",
+            "X2RvGAQgASgIUgVjYW5EbxIZCghjYW5fdW5kbxgFIAEoCFIHY2FuVW5kbxJN",
+            "ChJlc3RpbWF0ZWRfZHVyYXRpb24YBiABKAsyHi5hc3NlbWJseS52MS5Fc3Rp",
+            "bWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVyYXRpb24i7wcKDlRhc2tEZWZp",
+            "bml0aW9uEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEikKEGluc3RydWN0aW9uX3RleHQYBSABKAlSD2luc3RydWN0aW9u",
+            "VGV4dBInCg9zZXF1ZW5jZV9udW1iZXIYBiABKAVSDnNlcXVlbmNlTnVtYmVy",
+            "EjIKCXRhc2tfdHlwZRgHIAEoDjIVLmFzc2VtYmx5LnYxLlRhc2tUeXBlUgh0",
+            "YXNrVHlwZRIvCgZ0YXJnZXQYCCABKAsyFy5hc3NlbWJseS52MS5UYXNrVGFy",
+            "Z2V0UgZ0YXJnZXQSMAoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5W",
+            "ZWN0b3IzUghhcHByb2FjaBJJChF0b29sX3JlcXVpcmVtZW50cxgMIAMoCzIc",
+            "LmFzc2VtYmx5LnYxLlRvb2xSZXF1aXJlbWVudFIQdG9vbFJlcXVpcmVtZW50",
+            "cxJMChJza2lsbF9yZXF1aXJlbWVudHMYDSADKAsyHS5hc3NlbWJseS52MS5T",
+            "a2lsbFJlcXVpcmVtZW50UhFza2lsbFJlcXVpcmVtZW50cxJCCgp2YWxpZGF0",
+            "aW9uGA4gASgLMiIuYXNzZW1ibHkudjEuVmFsaWRhdGlvblJlcXVpcmVtZW50",
+            "Ugp2YWxpZGF0aW9uEksKEGV4ZWN1dGlvbl9wb2xpY3kYDyABKAsyIC5hc3Nl",
+            "bWJseS52MS5UYXNrRXhlY3V0aW9uUG9saWN5Ug9leGVjdXRpb25Qb2xpY3kS",
+            "RwoQc2FmZXR5X3JlbGV2YW5jZRgQIAEoDjIcLmFzc2VtYmx5LnYxLlNhZmV0",
+            "eVJlbGV2YW5jZVIPc2FmZXR5UmVsZXZhbmNlEiQKDnNvdXJjZV9ub2RlX2lk",
+            "GBEgASgJUgxzb3VyY2VOb2RlSWQSLgoTZGVzdGluYXRpb25fbm9kZV9pZBgS",
+            "IAEoCVIRZGVzdGluYXRpb25Ob2RlSWQSRgoPc291cmNlX2xvY2F0aW9uGBMg",
+            "ASgLMh0uYXNzZW1ibHkudjEuQ29udGFpbmVyU2xvdFJlZlIOc291cmNlTG9j",
+            "YXRpb24SUAoUZGVzdGluYXRpb25fbG9jYXRpb24YFCABKAsyHS5hc3NlbWJs",
+            "eS52MS5Db250YWluZXJTbG90UmVmUhNkZXN0aW5hdGlvbkxvY2F0aW9uEjUK",
+            "BmN1c3RvbRgVIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNS",
+            "BmN1c3RvbSrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VT",
+            "U19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJ",
+            "T04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19U",
+            "WVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBiqi",
+            "AQoQU2VxdWVuY2VPcGVyYXRvchIhCh1TRVFVRU5DRV9PUEVSQVRPUl9VTlNQ",
+            "RUNJRklFRBAAEiUKIVNFUVVFTkNFX09QRVJBVE9SX0FMTF9PRl9DSElMRFJF",
+            "ThABEiUKIVNFUVVFTkNFX09QRVJBVE9SX09ORV9PRl9DSElMRFJFThACEh0K",
+            "GVNFUVVFTkNFX09QRVJBVE9SX09SREVSRUQQAyq/AwoIVGFza1R5cGUSGQoV",
+            "VEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQ",
+            "ARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFTS19UWVBFX1VORkFTVEVO",
+            "EAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQ",
+            "BRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tfVFlQRV9SRU1PVkUQBxIT",
+            "Cg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZUEVfV0lQRRAJEhMKD1RB",
+            "U0tfVFlQRV9BTElHThAKEhQKEFRBU0tfVFlQRV9JTlNFUlQQCxISCg5UQVNL",
+            "X1RZUEVfSE9MRBAMEhQKEFRBU0tfVFlQRV9WRVJJRlkQDRISCg5UQVNLX1RZ",
+            "UEVfUElDSxAOEhMKD1RBU0tfVFlQRV9QTEFDRRAPEhIKDlRBU0tfVFlQRV9T",
+            "Q0FOEBASEgoOVEFTS19UWVBFX1dBSVQQERITCg9UQVNLX1RZUEVfQ0hFQ0sQ",
+            "EhIZChVUQVNLX1RZUEVfQUNLTk9XTEVER0UQEyqdAgoYVGFza0Fzc2lnbm1l",
+            "bnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1VO",
+            "U1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJF",
+            "RkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05M",
+            "WV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZF",
+            "Ul9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlf",
+            "Uk9CT1QQBBIlCiFUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9FSVRIRVIQ",
+            "BUKyAQoPY29tLmFzc2VtYmx5LnYxQgxQcm9jZXNzUHJvdG9QAVo7Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fz",
+            "c2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2Vt",
+            "Ymx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.ProductReflection.Descriptor, global::Messages.Assembly.V1.SkillReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.ProductReflection.Descriptor, global::Messages.Assembly.V1.ResourcesReflection.Descriptor, global::Messages.Assembly.V1.SkillReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ProcessType), typeof(global::Messages.Assembly.V1.SequenceOperator), typeof(global::Messages.Assembly.V1.TaskType), typeof(global::Messages.Assembly.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RecipeApplicability), global::Messages.Assembly.V1.RecipeApplicability.Parser, new[]{ "Required", "Excluded" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProcessRecipe), global::Messages.Assembly.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedFixtureDefinitionIds", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProcessRecipe), global::Messages.Assembly.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedContainerDefinitionIds", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.SequenceDefinition), global::Messages.Assembly.V1.SequenceDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "SequenceNumber", "ParentSequenceId", "Operator", "ChildSequenceIds", "ChildTaskIds", "LocalTarget", "Optional", "CanBulkComplete", "Custom" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskTarget), global::Messages.Assembly.V1.TaskTarget.Parser, new[]{ "TargetNodeId", "TargetPartDefinitionId", "LocalTarget" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskTarget), global::Messages.Assembly.V1.TaskTarget.Parser, new[]{ "TargetNodeId", "TargetPartDefinitionId", "LocalTarget", "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerInstanceId", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ValidationRequirement), global::Messages.Assembly.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskExecutionPolicy), global::Messages.Assembly.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanDo", "CanUndo", "EstimatedDuration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "Custom" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "SourceLocation", "DestinationLocation", "Custom" }, null, null, null, null)
           }));
     }
     #endregion
@@ -138,10 +152,30 @@ namespace Messages.Assembly.V1 {
   #region Enums
   public enum ProcessType {
     [pbr::OriginalName("PROCESS_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Example: build gearbox
+    /// </summary>
     [pbr::OriginalName("PROCESS_TYPE_ASSEMBLY")] Assembly = 1,
+    /// <summary>
+    /// Example: take mould apart for maintenance
+    /// </summary>
     [pbr::OriginalName("PROCESS_TYPE_DISASSEMBLY")] Disassembly = 2,
+    /// <summary>
+    /// Example: QC Check
+    /// </summary>
     [pbr::OriginalName("PROCESS_TYPE_INSPECTION")] Inspection = 3,
+    /// <summary>
+    /// Example: line startup
+    /// </summary>
     [pbr::OriginalName("PROCESS_TYPE_CHECKLIST")] Checklist = 4,
+    /// <summary>
+    /// Example: prepare parts kit
+    /// </summary>
+    [pbr::OriginalName("PROCESS_TYPE_KITTING")] Kitting = 5,
+    /// <summary>
+    /// Example: replace filter
+    /// </summary>
+    [pbr::OriginalName("PROCESS_TYPE_MAINTENANCE")] Maintenance = 6,
   }
 
   public enum SequenceOperator {
@@ -166,6 +200,15 @@ namespace Messages.Assembly.V1 {
     [pbr::OriginalName("TASK_TYPE_INSERT")] Insert = 11,
     [pbr::OriginalName("TASK_TYPE_HOLD")] Hold = 12,
     [pbr::OriginalName("TASK_TYPE_VERIFY")] Verify = 13,
+    [pbr::OriginalName("TASK_TYPE_PICK")] Pick = 14,
+    [pbr::OriginalName("TASK_TYPE_PLACE")] Place = 15,
+    [pbr::OriginalName("TASK_TYPE_SCAN")] Scan = 16,
+    [pbr::OriginalName("TASK_TYPE_WAIT")] Wait = 17,
+    [pbr::OriginalName("TASK_TYPE_CHECK")] Check = 18,
+    /// <summary>
+    /// Start, stop, reset, open, close,
+    /// </summary>
+    [pbr::OriginalName("TASK_TYPE_ACKNOWLEDGE")] Acknowledge = 19,
   }
 
   public enum TaskAssignmentPreference {
@@ -450,7 +493,7 @@ namespace Messages.Assembly.V1 {
       rootSequenceId_ = other.rootSequenceId_;
       sequences_ = other.sequences_.Clone();
       tasks_ = other.tasks_.Clone();
-      supportedFixtureDefinitionIds_ = other.supportedFixtureDefinitionIds_.Clone();
+      supportedContainerDefinitionIds_ = other.supportedContainerDefinitionIds_.Clone();
       externalReferences_ = other.externalReferences_.Clone();
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -580,18 +623,18 @@ namespace Messages.Assembly.V1 {
       get { return tasks_; }
     }
 
-    /// <summary>Field number for the "supported_fixture_definition_ids" field.</summary>
-    public const int SupportedFixtureDefinitionIdsFieldNumber = 11;
-    private static readonly pb::FieldCodec<string> _repeated_supportedFixtureDefinitionIds_codec
+    /// <summary>Field number for the "supported_container_definition_ids" field.</summary>
+    public const int SupportedContainerDefinitionIdsFieldNumber = 11;
+    private static readonly pb::FieldCodec<string> _repeated_supportedContainerDefinitionIds_codec
         = pb::FieldCodec.ForString(90);
-    private readonly pbc::RepeatedField<string> supportedFixtureDefinitionIds_ = new pbc::RepeatedField<string>();
+    private readonly pbc::RepeatedField<string> supportedContainerDefinitionIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Meaning: this recipe is intended to run with these fixtures
+    /// Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> SupportedFixtureDefinitionIds {
-      get { return supportedFixtureDefinitionIds_; }
+    public pbc::RepeatedField<string> SupportedContainerDefinitionIds {
+      get { return supportedContainerDefinitionIds_; }
     }
 
     /// <summary>Field number for the "external_references" field.</summary>
@@ -642,7 +685,7 @@ namespace Messages.Assembly.V1 {
       if (RootSequenceId != other.RootSequenceId) return false;
       if(!sequences_.Equals(other.sequences_)) return false;
       if(!tasks_.Equals(other.tasks_)) return false;
-      if(!supportedFixtureDefinitionIds_.Equals(other.supportedFixtureDefinitionIds_)) return false;
+      if(!supportedContainerDefinitionIds_.Equals(other.supportedContainerDefinitionIds_)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -662,7 +705,7 @@ namespace Messages.Assembly.V1 {
       if (RootSequenceId.Length != 0) hash ^= RootSequenceId.GetHashCode();
       hash ^= sequences_.GetHashCode();
       hash ^= tasks_.GetHashCode();
-      hash ^= supportedFixtureDefinitionIds_.GetHashCode();
+      hash ^= supportedContainerDefinitionIds_.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
@@ -717,7 +760,7 @@ namespace Messages.Assembly.V1 {
       }
       sequences_.WriteTo(output, _repeated_sequences_codec);
       tasks_.WriteTo(output, _repeated_tasks_codec);
-      supportedFixtureDefinitionIds_.WriteTo(output, _repeated_supportedFixtureDefinitionIds_codec);
+      supportedContainerDefinitionIds_.WriteTo(output, _repeated_supportedContainerDefinitionIds_codec);
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (custom_ != null) {
         output.WriteRawTag(106);
@@ -767,7 +810,7 @@ namespace Messages.Assembly.V1 {
       }
       sequences_.WriteTo(ref output, _repeated_sequences_codec);
       tasks_.WriteTo(ref output, _repeated_tasks_codec);
-      supportedFixtureDefinitionIds_.WriteTo(ref output, _repeated_supportedFixtureDefinitionIds_codec);
+      supportedContainerDefinitionIds_.WriteTo(ref output, _repeated_supportedContainerDefinitionIds_codec);
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (custom_ != null) {
         output.WriteRawTag(106);
@@ -809,7 +852,7 @@ namespace Messages.Assembly.V1 {
       }
       size += sequences_.CalculateSize(_repeated_sequences_codec);
       size += tasks_.CalculateSize(_repeated_tasks_codec);
-      size += supportedFixtureDefinitionIds_.CalculateSize(_repeated_supportedFixtureDefinitionIds_codec);
+      size += supportedContainerDefinitionIds_.CalculateSize(_repeated_supportedContainerDefinitionIds_codec);
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -855,7 +898,7 @@ namespace Messages.Assembly.V1 {
       }
       sequences_.Add(other.sequences_);
       tasks_.Add(other.tasks_);
-      supportedFixtureDefinitionIds_.Add(other.supportedFixtureDefinitionIds_);
+      supportedContainerDefinitionIds_.Add(other.supportedContainerDefinitionIds_);
       externalReferences_.Add(other.externalReferences_);
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -926,7 +969,7 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 90: {
-            supportedFixtureDefinitionIds_.AddEntriesFrom(input, _repeated_supportedFixtureDefinitionIds_codec);
+            supportedContainerDefinitionIds_.AddEntriesFrom(input, _repeated_supportedContainerDefinitionIds_codec);
             break;
           }
           case 98: {
@@ -1003,7 +1046,7 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 90: {
-            supportedFixtureDefinitionIds_.AddEntriesFrom(ref input, _repeated_supportedFixtureDefinitionIds_codec);
+            supportedContainerDefinitionIds_.AddEntriesFrom(ref input, _repeated_supportedContainerDefinitionIds_codec);
             break;
           }
           case 98: {
@@ -1700,6 +1743,11 @@ namespace Messages.Assembly.V1 {
       targetNodeId_ = other.targetNodeId_;
       targetPartDefinitionId_ = other.targetPartDefinitionId_;
       localTarget_ = other.localTarget_ != null ? other.localTarget_.Clone() : null;
+      assetInstanceId_ = other.assetInstanceId_;
+      robotInstanceId_ = other.robotInstanceId_;
+      stationId_ = other.stationId_;
+      containerInstanceId_ = other.containerInstanceId_;
+      location_ = other.location_ != null ? other.location_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1713,7 +1761,7 @@ namespace Messages.Assembly.V1 {
     public const int TargetNodeIdFieldNumber = 1;
     private string targetNodeId_ = "";
     /// <summary>
-    /// Assembly node occurrence
+    /// Optional target assembly node when the task acts on a product structure occurrence.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1728,7 +1776,7 @@ namespace Messages.Assembly.V1 {
     public const int TargetPartDefinitionIdFieldNumber = 2;
     private string targetPartDefinitionId_ = "";
     /// <summary>
-    /// optional denormalized helper
+    /// Optional denormalized helper for UIs, planning, and filtering.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1742,12 +1790,96 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "local_target" field.</summary>
     public const int LocalTargetFieldNumber = 3;
     private global::Messages.Assembly.V1.LocalTarget localTarget_;
+    /// <summary>
+    /// Optional pose/anchor relative to the chosen target reference.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.LocalTarget LocalTarget {
       get { return localTarget_; }
       set {
         localTarget_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "asset_instance_id" field.</summary>
+    public const int AssetInstanceIdFieldNumber = 4;
+    private string assetInstanceId_ = "";
+    /// <summary>
+    /// Optional non-product targets.
+    /// These are useful when a task is not primarily about an AssemblyNode.
+    /// Examples:
+    /// - asset_instance_id     -> check camera, read HMI, inspect feeder
+    /// - robot_instance_id     -> move robot to home, inspect robot state
+    /// - station_id            -> clear work surface, perform station startup step
+    /// - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AssetInstanceId {
+      get { return assetInstanceId_; }
+      set {
+        assetInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "robot_instance_id" field.</summary>
+    public const int RobotInstanceIdFieldNumber = 5;
+    private string robotInstanceId_ = "";
+    /// <summary>
+    /// Optional robot target for robot-specific actions.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RobotInstanceId {
+      get { return robotInstanceId_; }
+      set {
+        robotInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "station_id" field.</summary>
+    public const int StationIdFieldNumber = 6;
+    private string stationId_ = "";
+    /// <summary>
+    /// Optional station target for station-level or area-level actions.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StationId {
+      get { return stationId_; }
+      set {
+        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "container_instance_id" field.</summary>
+    public const int ContainerInstanceIdFieldNumber = 7;
+    private string containerInstanceId_ = "";
+    /// <summary>
+    /// Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ContainerInstanceId {
+      get { return containerInstanceId_; }
+      set {
+        containerInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 8;
+    private global::Messages.Assembly.V1.ContainerSlotRef location_;
+    /// <summary>
+    /// Optional slot-level target when a task acts on a specific addressable place in a container.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Assembly.V1.ContainerSlotRef Location {
+      get { return location_; }
+      set {
+        location_ = value;
       }
     }
 
@@ -1769,6 +1901,11 @@ namespace Messages.Assembly.V1 {
       if (TargetNodeId != other.TargetNodeId) return false;
       if (TargetPartDefinitionId != other.TargetPartDefinitionId) return false;
       if (!object.Equals(LocalTarget, other.LocalTarget)) return false;
+      if (AssetInstanceId != other.AssetInstanceId) return false;
+      if (RobotInstanceId != other.RobotInstanceId) return false;
+      if (StationId != other.StationId) return false;
+      if (ContainerInstanceId != other.ContainerInstanceId) return false;
+      if (!object.Equals(Location, other.Location)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1779,6 +1916,11 @@ namespace Messages.Assembly.V1 {
       if (TargetNodeId.Length != 0) hash ^= TargetNodeId.GetHashCode();
       if (TargetPartDefinitionId.Length != 0) hash ^= TargetPartDefinitionId.GetHashCode();
       if (localTarget_ != null) hash ^= LocalTarget.GetHashCode();
+      if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
+      if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
+      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (ContainerInstanceId.Length != 0) hash ^= ContainerInstanceId.GetHashCode();
+      if (location_ != null) hash ^= Location.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1809,6 +1951,26 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(LocalTarget);
       }
+      if (AssetInstanceId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(StationId);
+      }
+      if (ContainerInstanceId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ContainerInstanceId);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Location);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1831,6 +1993,26 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(LocalTarget);
       }
+      if (AssetInstanceId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(StationId);
+      }
+      if (ContainerInstanceId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ContainerInstanceId);
+      }
+      if (location_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Location);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1849,6 +2031,21 @@ namespace Messages.Assembly.V1 {
       }
       if (localTarget_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LocalTarget);
+      }
+      if (AssetInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
+      }
+      if (ContainerInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ContainerInstanceId);
+      }
+      if (location_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1873,6 +2070,24 @@ namespace Messages.Assembly.V1 {
           LocalTarget = new global::Messages.Assembly.V1.LocalTarget();
         }
         LocalTarget.MergeFrom(other.LocalTarget);
+      }
+      if (other.AssetInstanceId.Length != 0) {
+        AssetInstanceId = other.AssetInstanceId;
+      }
+      if (other.RobotInstanceId.Length != 0) {
+        RobotInstanceId = other.RobotInstanceId;
+      }
+      if (other.StationId.Length != 0) {
+        StationId = other.StationId;
+      }
+      if (other.ContainerInstanceId.Length != 0) {
+        ContainerInstanceId = other.ContainerInstanceId;
+      }
+      if (other.location_ != null) {
+        if (location_ == null) {
+          Location = new global::Messages.Assembly.V1.ContainerSlotRef();
+        }
+        Location.MergeFrom(other.Location);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1908,6 +2123,29 @@ namespace Messages.Assembly.V1 {
             input.ReadMessage(LocalTarget);
             break;
           }
+          case 34: {
+            AssetInstanceId = input.ReadString();
+            break;
+          }
+          case 42: {
+            RobotInstanceId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 58: {
+            ContainerInstanceId = input.ReadString();
+            break;
+          }
+          case 66: {
+            if (location_ == null) {
+              Location = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(Location);
+            break;
+          }
         }
       }
     #endif
@@ -1940,6 +2178,29 @@ namespace Messages.Assembly.V1 {
               LocalTarget = new global::Messages.Assembly.V1.LocalTarget();
             }
             input.ReadMessage(LocalTarget);
+            break;
+          }
+          case 34: {
+            AssetInstanceId = input.ReadString();
+            break;
+          }
+          case 42: {
+            RobotInstanceId = input.ReadString();
+            break;
+          }
+          case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 58: {
+            ContainerInstanceId = input.ReadString();
+            break;
+          }
+          case 66: {
+            if (location_ == null) {
+              Location = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(Location);
             break;
           }
         }
@@ -2736,6 +2997,8 @@ namespace Messages.Assembly.V1 {
       safetyRelevance_ = other.safetyRelevance_;
       sourceNodeId_ = other.sourceNodeId_;
       destinationNodeId_ = other.destinationNodeId_;
+      sourceLocation_ = other.sourceLocation_ != null ? other.sourceLocation_.Clone() : null;
+      destinationLocation_ = other.destinationLocation_ != null ? other.destinationLocation_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2797,6 +3060,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "instruction_text" field.</summary>
     public const int InstructionTextFieldNumber = 5;
     private string instructionText_ = "";
+    /// <summary>
+    /// Human-readable instruction shown to the operator or author.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string InstructionText {
@@ -2809,6 +3075,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 6;
     private int sequenceNumber_;
+    /// <summary>
+    /// Ordering hint within the parent sequence.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int SequenceNumber {
@@ -2821,6 +3090,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "task_type" field.</summary>
     public const int TaskTypeFieldNumber = 7;
     private global::Messages.Assembly.V1.TaskType taskType_ = global::Messages.Assembly.V1.TaskType.Unspecified;
+    /// <summary>
+    /// The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.TaskType TaskType {
@@ -2833,6 +3105,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "target" field.</summary>
     public const int TargetFieldNumber = 8;
     private global::Messages.Assembly.V1.TaskTarget target_;
+    /// <summary>
+    /// The primary thing/location/resource this task acts on.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.TaskTarget Target {
@@ -2845,6 +3120,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "approach" field.</summary>
     public const int ApproachFieldNumber = 9;
     private global::Messages.Common.V1.Vector3 approach_;
+    /// <summary>
+    /// Optional approach direction for AR guidance, picking, insertion, or robot planning.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.Vector3 Approach {
@@ -2874,6 +3152,9 @@ namespace Messages.Assembly.V1 {
     private static readonly pb::FieldCodec<global::Messages.Assembly.V1.SkillRequirement> _repeated_skillRequirements_codec
         = pb::FieldCodec.ForMessage(106, global::Messages.Assembly.V1.SkillRequirement.Parser);
     private readonly pbc::RepeatedField<global::Messages.Assembly.V1.SkillRequirement> skillRequirements_ = new pbc::RepeatedField<global::Messages.Assembly.V1.SkillRequirement>();
+    /// <summary>
+    /// Skills/qualifications needed by the acting human/robot.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Assembly.V1.SkillRequirement> SkillRequirements {
@@ -2883,6 +3164,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "validation" field.</summary>
     public const int ValidationFieldNumber = 14;
     private global::Messages.Assembly.V1.ValidationRequirement validation_;
+    /// <summary>
+    /// How task completion should be confirmed or validated.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.ValidationRequirement Validation {
@@ -2895,6 +3179,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "execution_policy" field.</summary>
     public const int ExecutionPolicyFieldNumber = 15;
     private global::Messages.Assembly.V1.TaskExecutionPolicy executionPolicy_;
+    /// <summary>
+    /// Assignment preferences and execution permissions.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.TaskExecutionPolicy ExecutionPolicy {
@@ -2907,6 +3194,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "safety_relevance" field.</summary>
     public const int SafetyRelevanceFieldNumber = 16;
     private global::Messages.Assembly.V1.SafetyRelevance safetyRelevance_ = global::Messages.Assembly.V1.SafetyRelevance.Unspecified;
+    /// <summary>
+    /// Safety significance of the task.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.SafetyRelevance SafetyRelevance {
@@ -2920,7 +3210,7 @@ namespace Messages.Assembly.V1 {
     public const int SourceNodeIdFieldNumber = 17;
     private string sourceNodeId_ = "";
     /// <summary>
-    /// optional: where part comes from for move/mount
+    /// Optional source assembly node when something is moved/picked from a product structure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2935,7 +3225,7 @@ namespace Messages.Assembly.V1 {
     public const int DestinationNodeIdFieldNumber = 18;
     private string destinationNodeId_ = "";
     /// <summary>
-    /// optional
+    /// Optional destination assembly node when something is moved/placed into a product structure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2946,8 +3236,38 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "source_location" field.</summary>
+    public const int SourceLocationFieldNumber = 19;
+    private global::Messages.Assembly.V1.ContainerSlotRef sourceLocation_;
+    /// <summary>
+    /// Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Assembly.V1.ContainerSlotRef SourceLocation {
+      get { return sourceLocation_; }
+      set {
+        sourceLocation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "destination_location" field.</summary>
+    public const int DestinationLocationFieldNumber = 20;
+    private global::Messages.Assembly.V1.ContainerSlotRef destinationLocation_;
+    /// <summary>
+    /// Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Assembly.V1.ContainerSlotRef DestinationLocation {
+      get { return destinationLocation_; }
+      set {
+        destinationLocation_ = value;
+      }
+    }
+
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 19;
+    public const int CustomFieldNumber = 21;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2989,6 +3309,8 @@ namespace Messages.Assembly.V1 {
       if (SafetyRelevance != other.SafetyRelevance) return false;
       if (SourceNodeId != other.SourceNodeId) return false;
       if (DestinationNodeId != other.DestinationNodeId) return false;
+      if (!object.Equals(SourceLocation, other.SourceLocation)) return false;
+      if (!object.Equals(DestinationLocation, other.DestinationLocation)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -3013,6 +3335,8 @@ namespace Messages.Assembly.V1 {
       if (SafetyRelevance != global::Messages.Assembly.V1.SafetyRelevance.Unspecified) hash ^= SafetyRelevance.GetHashCode();
       if (SourceNodeId.Length != 0) hash ^= SourceNodeId.GetHashCode();
       if (DestinationNodeId.Length != 0) hash ^= DestinationNodeId.GetHashCode();
+      if (sourceLocation_ != null) hash ^= SourceLocation.GetHashCode();
+      if (destinationLocation_ != null) hash ^= DestinationLocation.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3090,8 +3414,16 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(146, 1);
         output.WriteString(DestinationNodeId);
       }
-      if (custom_ != null) {
+      if (sourceLocation_ != null) {
         output.WriteRawTag(154, 1);
+        output.WriteMessage(SourceLocation);
+      }
+      if (destinationLocation_ != null) {
+        output.WriteRawTag(162, 1);
+        output.WriteMessage(DestinationLocation);
+      }
+      if (custom_ != null) {
+        output.WriteRawTag(170, 1);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3162,8 +3494,16 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(146, 1);
         output.WriteString(DestinationNodeId);
       }
-      if (custom_ != null) {
+      if (sourceLocation_ != null) {
         output.WriteRawTag(154, 1);
+        output.WriteMessage(SourceLocation);
+      }
+      if (destinationLocation_ != null) {
+        output.WriteRawTag(162, 1);
+        output.WriteMessage(DestinationLocation);
+      }
+      if (custom_ != null) {
+        output.WriteRawTag(170, 1);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -3219,6 +3559,12 @@ namespace Messages.Assembly.V1 {
       }
       if (DestinationNodeId.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(DestinationNodeId);
+      }
+      if (sourceLocation_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SourceLocation);
+      }
+      if (destinationLocation_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DestinationLocation);
       }
       if (custom_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -3290,6 +3636,18 @@ namespace Messages.Assembly.V1 {
       }
       if (other.DestinationNodeId.Length != 0) {
         DestinationNodeId = other.DestinationNodeId;
+      }
+      if (other.sourceLocation_ != null) {
+        if (sourceLocation_ == null) {
+          SourceLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+        }
+        SourceLocation.MergeFrom(other.SourceLocation);
+      }
+      if (other.destinationLocation_ != null) {
+        if (destinationLocation_ == null) {
+          DestinationLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+        }
+        DestinationLocation.MergeFrom(other.DestinationLocation);
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -3393,6 +3751,20 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 154: {
+            if (sourceLocation_ == null) {
+              SourceLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(SourceLocation);
+            break;
+          }
+          case 162: {
+            if (destinationLocation_ == null) {
+              DestinationLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(DestinationLocation);
+            break;
+          }
+          case 170: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -3495,6 +3867,20 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 154: {
+            if (sourceLocation_ == null) {
+              SourceLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(SourceLocation);
+            break;
+          }
+          case 162: {
+            if (destinationLocation_ == null) {
+              DestinationLocation = new global::Messages.Assembly.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(DestinationLocation);
+            break;
+          }
+          case 170: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }

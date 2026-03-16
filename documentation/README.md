@@ -239,10 +239,12 @@
     - [AssetInstance](#assembly-v1-AssetInstance)
     - [AssetInstances](#assembly-v1-AssetInstances)
     - [CapabilityProfile](#assembly-v1-CapabilityProfile)
-    - [FixtureDefinition](#assembly-v1-FixtureDefinition)
-    - [FixtureDefinitions](#assembly-v1-FixtureDefinitions)
-    - [FixtureInstance](#assembly-v1-FixtureInstance)
-    - [FixtureInstances](#assembly-v1-FixtureInstances)
+    - [ContainerDefinition](#assembly-v1-ContainerDefinition)
+    - [ContainerDefinitions](#assembly-v1-ContainerDefinitions)
+    - [ContainerInstance](#assembly-v1-ContainerInstance)
+    - [ContainerInstances](#assembly-v1-ContainerInstances)
+    - [ContainerSlotDefinition](#assembly-v1-ContainerSlotDefinition)
+    - [ContainerSlotRef](#assembly-v1-ContainerSlotRef)
     - [RobotDefinition](#assembly-v1-RobotDefinition)
     - [RobotDefinitions](#assembly-v1-RobotDefinitions)
     - [RobotInstance](#assembly-v1-RobotInstance)
@@ -254,7 +256,8 @@
   
     - [AssetDriverType](#assembly-v1-AssetDriverType)
     - [AssetType](#assembly-v1-AssetType)
-    - [FixtureType](#assembly-v1-FixtureType)
+    - [ContainerSlotType](#assembly-v1-ContainerSlotType)
+    - [ContainerType](#assembly-v1-ContainerType)
     - [RobotDriverType](#assembly-v1-RobotDriverType)
     - [RobotType](#assembly-v1-RobotType)
     - [ToolProperty](#assembly-v1-ToolProperty)
@@ -3287,7 +3290,7 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | MODEL_GROUP_PRODUCT | 2 |  |
 | MODEL_GROUP_TOOL | 3 |  |
 | MODEL_GROUP_ROBOT | 4 |  |
-| MODEL_GROUP_FIXTURE | 5 |  |
+| MODEL_GROUP_CONTAINER | 5 |  |
 | MODEL_GROUP_ASSET | 6 |  |
 
 
@@ -3677,77 +3680,139 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 
 
 
-<a name="assembly-v1-FixtureDefinition"></a>
+<a name="assembly-v1-ContainerDefinition"></a>
 
-### FixtureDefinition
+### ContainerDefinition
+ContainerDefinition describes a physical holder/carrier with one or more slots.
+
+This unifies what used to be modeled separately as fixtures, kit trays, storage
+bins, and trays/totes. The semantic differences are captured by ContainerType and
+ContainerSlotType rather than by separate top-level resources.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier of the reusable container definition. |
+| name | [string](#string) |  | Display name, e.g. &#34;Shelf Bin 01&#34;, &#34;Starter Kit Tray&#34;, or &#34;Motor Pallet&#34;. |
+| icon | [string](#string) |  | UI icon representing the container. |
+| description | [string](#string) |  | Human-readable description of the container&#39;s purpose. |
+| type | [ContainerType](#assembly-v1-ContainerType) |  | High-level category: storage, kit, tray, or fixture. |
+| model_id | [string](#string) |  | Optional 3D model used in simulation, AR, and UI rendering. |
+| slots | [ContainerSlotDefinition](#assembly-v1-ContainerSlotDefinition) | repeated | Addressable places inside/on the container. |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated | Container-level constraints applying to the whole carrier. |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for domain-specific container metadata. |
+
+
+
+
+
+
+<a name="assembly-v1-ContainerDefinitions"></a>
+
+### ContainerDefinitions
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [FixtureType](#assembly-v1-FixtureType) |  |  |
-| supported_product_definition_ids | [string](#string) | repeated | This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B |
-| supported_root_part_definition_ids | [string](#string) | repeated | This fixture support products whose root assembly is one of these root parts |
-| model_id | [string](#string) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+| items | [ContainerDefinition](#assembly-v1-ContainerDefinition) | repeated | List wrapper used for transport/query responses. |
 
 
 
 
 
 
-<a name="assembly-v1-FixtureDefinitions"></a>
+<a name="assembly-v1-ContainerInstance"></a>
 
-### FixtureDefinitions
+### ContainerInstance
+ContainerInstance represents a concrete container in a station/cell.
+
+Examples:
+- the actual shelf bin mounted in station A
+- the actual pallet currently loaded on an indexing table
+- the actual jig installed on a workbench
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier of the concrete container instance. |
+| name | [string](#string) |  | Display name of the instance. Often copied from the definition, but may be station-specific. |
+| icon | [string](#string) |  | UI icon for the instance. |
+| description | [string](#string) |  | Human-readable description of this particular instance. |
+| container_definition_id | [string](#string) |  | The reusable container definition that this instance realizes. |
+| station_id | [string](#string) |  | Station/cell where this container currently belongs or is mounted. |
+| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  | Operational status such as available, disabled, or faulted. |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Pose of the container instance in the station/environment. |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for instance-specific data. |
+
+
+
+
+
+
+<a name="assembly-v1-ContainerInstances"></a>
+
+### ContainerInstances
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [FixtureDefinition](#assembly-v1-FixtureDefinition) | repeated |  |
+| items | [ContainerInstance](#assembly-v1-ContainerInstance) | repeated | List wrapper used for transport/query responses. |
 
 
 
 
 
 
-<a name="assembly-v1-FixtureInstance"></a>
+<a name="assembly-v1-ContainerSlotDefinition"></a>
 
-### FixtureInstance
+### ContainerSlotDefinition
+ContainerSlotDefinition describes one addressable place inside a container.
 
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| fixture_definition_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-FixtureInstances"></a>
-
-### FixtureInstances
-
+A slot is the thing that operators, robots, and AR guidance normally target.
+Examples:
+- a shelf bin in storage
+- a logical slot in a kit
+- a tray pocket
+- a fixture nest / clamp position / pallet pocket
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [FixtureInstance](#assembly-v1-FixtureInstance) | repeated |  |
+| id | [string](#string) |  | Stable identifier unique within the parent container definition. |
+| name | [string](#string) |  | Human-readable slot name shown in UI and AR, e.g. &#34;Slot A&#34; or &#34;Motor Nest&#34;. |
+| icon | [string](#string) |  | Optional icon override for UIs. If empty, the container icon may be reused. |
+| description | [string](#string) |  | Optional longer description of the slot&#39;s purpose or usage constraints. |
+| pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | Pose of the slot relative to the container definition coordinate frame. |
+| size | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approximate slot extents/bounds, useful for UI, AR, and planning. |
+| type | [ContainerSlotType](#assembly-v1-ContainerSlotType) |  | Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot. |
+| supported_product_definition_ids | [string](#string) | repeated | Products that this slot explicitly supports holding/presenting. |
+| supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
+| supported_part_definition_ids | [string](#string) | repeated | Specific part definitions that this slot supports. |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated | Additional semantic/compatibility constraints such as orientation, handedness, or required variants. |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for domain-specific slot data. |
+
+
+
+
+
+
+<a name="assembly-v1-ContainerSlotRef"></a>
+
+### ContainerSlotRef
+ContainerSlotRef points to a concrete slot on a concrete container instance.
+
+This is the preferred task-planning reference for storage, kitting, tray, and
+fixture interactions because it identifies both the physical carrier and the
+addressable place inside it.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_instance_id | [string](#string) |  | Identifier of the container instance that owns the referenced slot. |
+| slot_id | [string](#string) |  | Identifier of the slot definition within that container. |
+| type | [ContainerSlotType](#assembly-v1-ContainerSlotType) |  | Semantic kind of slot, used for interpretation, UI behavior, and routing. |
 
 
 
@@ -3810,9 +3875,9 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | description | [string](#string) |  |  |
 | robot_definition_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
-| mounted_tool_instance_id | [string](#string) |  | what is attached right now |
-| available_tool_instance_ids | [string](#string) | repeated | what is in the cell/magazine/dock and usable |
-| supports_tool_change | [bool](#bool) |  | whether dynamic switching is allowed |
+| mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
+| available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
+| supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
 | status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
 | base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
@@ -3941,26 +4006,51 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | ASSET_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_TYPE_CAMERA | 1 |  |
-| ASSET_TYPE_LIGHT | 2 |  |
-| ASSET_TYPE_CONVEYOR | 3 |  |
-| ASSET_TYPE_SENSOR | 4 |  |
-| ASSET_TYPE_HMI | 5 |  |
+| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
+| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
+| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
+| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
+| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
+| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
 
 
 
-<a name="assembly-v1-FixtureType"></a>
+<a name="assembly-v1-ContainerSlotType"></a>
 
-### FixtureType
+### ContainerSlotType
+ContainerSlotType classifies the semantic role of a slot within a container.
 
+The slot type is what task planning, UI rendering, and robot/AR logic typically
+interact with. For example, a tray and a fixture may both have slots, but their
+semantics differ.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| FIXTURE_TYPE_UNSPECIFIED | 0 |  |
-| FIXTURE_TYPE_BASE | 1 |  |
-| FIXTURE_TYPE_CLAMP | 2 |  |
-| FIXTURE_TYPE_JIG | 3 |  |
-| FIXTURE_TYPE_PALLET | 4 |  |
+| CONTAINER_SLOT_TYPE_UNSPECIFIED | 0 |  |
+| CONTAINER_SLOT_TYPE_STORAGE_BIN | 1 | A storage slot/bin used primarily as a source/sink location for material. |
+| CONTAINER_SLOT_TYPE_KIT_SLOT | 2 | A logical slot in a kit used to collect and verify required contents. |
+| CONTAINER_SLOT_TYPE_TRAY_CELL | 3 | A regular cell/pocket in a tray, tote, or carrier. |
+| CONTAINER_SLOT_TYPE_FIXTURE_SLOT | 4 | A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product. |
+
+
+
+<a name="assembly-v1-ContainerType"></a>
+
+### ContainerType
+ContainerType classifies physical holders/carriers used to store, stage, present,
+or constrain products and parts in a station.
+
+This unifies concepts that previously lived as separate resources such as storage
+bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
+one or more addressable slots.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CONTAINER_TYPE_UNSPECIFIED | 0 |  |
+| CONTAINER_TYPE_STORAGE | 1 | A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin. |
+| CONTAINER_TYPE_KIT | 2 | A kit container used to collect the exact set of parts required for later work. |
+| CONTAINER_TYPE_TRAY | 3 | A tray/tote/carrier with one or more regular cells or pockets. |
+| CONTAINER_TYPE_FIXTURE | 4 | A workholding/presentation container such as a base, clamp, jig, or pallet. |
 
 
 
@@ -4278,7 +4368,7 @@ ProcessRecipe describes the following:
 | root_sequence_id | [string](#string) |  |  |
 | sequences | [SequenceDefinition](#assembly-v1-SequenceDefinition) | repeated |  |
 | tasks | [TaskDefinition](#assembly-v1-TaskDefinition) | repeated |  |
-| supported_fixture_definition_ids | [string](#string) | repeated | Meaning: this recipe is intended to run with these fixtures |
+| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
 | external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
@@ -4342,18 +4432,22 @@ ProcessRecipe describes the following:
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| instruction_text | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| task_type | [TaskType](#assembly-v1-TaskType) |  |  |
-| target | [TaskTarget](#assembly-v1-TaskTarget) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| tool_requirements | [ToolRequirement](#assembly-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11; |
-| skill_requirements | [SkillRequirement](#assembly-v1-SkillRequirement) | repeated |  |
-| validation | [ValidationRequirement](#assembly-v1-ValidationRequirement) |  |  |
-| execution_policy | [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy) |  |  |
-| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  |  |
-| source_node_id | [string](#string) |  | optional: where part comes from for move/mount |
-| destination_node_id | [string](#string) |  | optional |
+| instruction_text | [string](#string) |  | Human-readable instruction shown to the operator or author. |
+| sequence_number | [int32](#int32) |  | Ordering hint within the parent sequence. |
+| task_type | [TaskType](#assembly-v1-TaskType) |  | The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY. |
+| target | [TaskTarget](#assembly-v1-TaskTarget) |  | The primary thing/location/resource this task acts on. |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approach direction for AR guidance, picking, insertion, or robot planning. |
+| tool_requirements | [ToolRequirement](#assembly-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11;
+
+Tools or tool roles needed to perform the task. |
+| skill_requirements | [SkillRequirement](#assembly-v1-SkillRequirement) | repeated | Skills/qualifications needed by the acting human/robot. |
+| validation | [ValidationRequirement](#assembly-v1-ValidationRequirement) |  | How task completion should be confirmed or validated. |
+| execution_policy | [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy) |  | Assignment preferences and execution permissions. |
+| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  | Safety significance of the task. |
+| source_node_id | [string](#string) |  | Optional source assembly node when something is moved/picked from a product structure. |
+| destination_node_id | [string](#string) |  | Optional destination assembly node when something is moved/placed into a product structure. |
+| source_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
+| destination_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
 
 
@@ -4389,9 +4483,16 @@ ProcessRecipe describes the following:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target_node_id | [string](#string) |  | Assembly node occurrence |
-| target_part_definition_id | [string](#string) |  | optional denormalized helper |
-| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  |  |
+| target_node_id | [string](#string) |  | Optional target assembly node when the task acts on a product structure occurrence. |
+| target_part_definition_id | [string](#string) |  | Optional denormalized helper for UIs, planning, and filtering. |
+| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  | Optional pose/anchor relative to the chosen target reference. |
+| asset_instance_id | [string](#string) |  | Optional non-product targets. These are useful when a task is not primarily about an AssemblyNode. Examples: - asset_instance_id -&gt; check camera, read HMI, inspect feeder - robot_instance_id -&gt; move robot to home, inspect robot state - station_id -&gt; clear work surface, perform station startup step - container_instance_id -&gt; interact with a specific pallet, jig, tray, or storage bin
+
+Optional asset target such as camera, HMI, sensor, conveyor, or feeder. |
+| robot_instance_id | [string](#string) |  | Optional robot target for robot-specific actions. |
+| station_id | [string](#string) |  | Optional station target for station-level or area-level actions. |
+| container_instance_id | [string](#string) |  | Optional container target such as storage bin, kit, tray, pallet, clamp, or jig. |
+| location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional slot-level target when a task acts on a specific addressable place in a container. |
 
 
 
@@ -4427,10 +4528,12 @@ ProcessRecipe describes the following:
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PROCESS_TYPE_UNSPECIFIED | 0 |  |
-| PROCESS_TYPE_ASSEMBLY | 1 |  |
-| PROCESS_TYPE_DISASSEMBLY | 2 |  |
-| PROCESS_TYPE_INSPECTION | 3 |  |
-| PROCESS_TYPE_CHECKLIST | 4 |  |
+| PROCESS_TYPE_ASSEMBLY | 1 | Example: build gearbox |
+| PROCESS_TYPE_DISASSEMBLY | 2 | Example: take mould apart for maintenance |
+| PROCESS_TYPE_INSPECTION | 3 | Example: QC Check |
+| PROCESS_TYPE_CHECKLIST | 4 | Example: line startup |
+| PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
+| PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
 
 
 
@@ -4485,6 +4588,12 @@ ProcessRecipe describes the following:
 | TASK_TYPE_INSERT | 11 |  |
 | TASK_TYPE_HOLD | 12 |  |
 | TASK_TYPE_VERIFY | 13 |  |
+| TASK_TYPE_PICK | 14 |  |
+| TASK_TYPE_PLACE | 15 |  |
+| TASK_TYPE_SCAN | 16 |  |
+| TASK_TYPE_WAIT | 17 |  |
+| TASK_TYPE_CHECK | 18 |  |
+| TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
 
 
  
@@ -4751,7 +4860,7 @@ Thus the following must be evaluated:
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | tool_instance_ids | [string](#string) | repeated |  |
-| fixture_instance_ids | [string](#string) | repeated |  |
+| container_instance_ids | [string](#string) | repeated |  |
 | robot_instance_ids | [string](#string) | repeated |  |
 | asset_instance_ids | [string](#string) | repeated |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | TODO: add makers here? |

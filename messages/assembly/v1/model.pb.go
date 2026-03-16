@@ -31,7 +31,7 @@ const (
 	ModelGroup_MODEL_GROUP_PRODUCT     ModelGroup = 2
 	ModelGroup_MODEL_GROUP_TOOL        ModelGroup = 3
 	ModelGroup_MODEL_GROUP_ROBOT       ModelGroup = 4
-	ModelGroup_MODEL_GROUP_FIXTURE     ModelGroup = 5
+	ModelGroup_MODEL_GROUP_CONTAINER   ModelGroup = 5
 	ModelGroup_MODEL_GROUP_ASSET       ModelGroup = 6
 )
 
@@ -43,7 +43,7 @@ var (
 		2: "MODEL_GROUP_PRODUCT",
 		3: "MODEL_GROUP_TOOL",
 		4: "MODEL_GROUP_ROBOT",
-		5: "MODEL_GROUP_FIXTURE",
+		5: "MODEL_GROUP_CONTAINER",
 		6: "MODEL_GROUP_ASSET",
 	}
 	ModelGroup_value = map[string]int32{
@@ -52,7 +52,7 @@ var (
 		"MODEL_GROUP_PRODUCT":     2,
 		"MODEL_GROUP_TOOL":        3,
 		"MODEL_GROUP_ROBOT":       4,
-		"MODEL_GROUP_FIXTURE":     5,
+		"MODEL_GROUP_CONTAINER":   5,
 		"MODEL_GROUP_ASSET":       6,
 	}
 )
@@ -425,15 +425,15 @@ const file_assembly_v1_model_proto_rawDesc = "" +
 	"\x13external_references\x18\x0e \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
 	"\x06custom\x18\x0f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eModelArtifacts\x120\n" +
-	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.ModelArtifactR\x05items*\xb5\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.ModelArtifactR\x05items*\xb7\x01\n" +
 	"\n" +
 	"ModelGroup\x12\x1b\n" +
 	"\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10MODEL_GROUP_PART\x10\x01\x12\x17\n" +
 	"\x13MODEL_GROUP_PRODUCT\x10\x02\x12\x14\n" +
 	"\x10MODEL_GROUP_TOOL\x10\x03\x12\x15\n" +
-	"\x11MODEL_GROUP_ROBOT\x10\x04\x12\x17\n" +
-	"\x13MODEL_GROUP_FIXTURE\x10\x05\x12\x15\n" +
+	"\x11MODEL_GROUP_ROBOT\x10\x04\x12\x19\n" +
+	"\x15MODEL_GROUP_CONTAINER\x10\x05\x12\x15\n" +
 	"\x11MODEL_GROUP_ASSET\x10\x06*|\n" +
 	"\vModelOrigin\x12\x1c\n" +
 	"\x18MODEL_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +

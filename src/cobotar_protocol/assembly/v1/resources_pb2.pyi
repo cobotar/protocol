@@ -2,6 +2,7 @@ import datetime
 
 from assembly.v1 import common_pb2 as _common_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
+from geometry.v1 import vector3_pb2 as _vector3_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -11,6 +12,22 @@ from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class ContainerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    CONTAINER_TYPE_UNSPECIFIED: _ClassVar[ContainerType]
+    CONTAINER_TYPE_STORAGE: _ClassVar[ContainerType]
+    CONTAINER_TYPE_KIT: _ClassVar[ContainerType]
+    CONTAINER_TYPE_TRAY: _ClassVar[ContainerType]
+    CONTAINER_TYPE_FIXTURE: _ClassVar[ContainerType]
+
+class ContainerSlotType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    CONTAINER_SLOT_TYPE_UNSPECIFIED: _ClassVar[ContainerSlotType]
+    CONTAINER_SLOT_TYPE_STORAGE_BIN: _ClassVar[ContainerSlotType]
+    CONTAINER_SLOT_TYPE_KIT_SLOT: _ClassVar[ContainerSlotType]
+    CONTAINER_SLOT_TYPE_TRAY_CELL: _ClassVar[ContainerSlotType]
+    CONTAINER_SLOT_TYPE_FIXTURE_SLOT: _ClassVar[ContainerSlotType]
 
 class ToolType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -60,14 +77,6 @@ class ToolProperty(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TOOL_PROPERTY_CALIBRATED: _ClassVar[ToolProperty]
     TOOL_PROPERTY_QUICK_CHANGE: _ClassVar[ToolProperty]
 
-class FixtureType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    FIXTURE_TYPE_UNSPECIFIED: _ClassVar[FixtureType]
-    FIXTURE_TYPE_BASE: _ClassVar[FixtureType]
-    FIXTURE_TYPE_CLAMP: _ClassVar[FixtureType]
-    FIXTURE_TYPE_JIG: _ClassVar[FixtureType]
-    FIXTURE_TYPE_PALLET: _ClassVar[FixtureType]
-
 class RobotType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     ROBOT_TYPE_UNSPECIFIED: _ClassVar[RobotType]
@@ -90,11 +99,22 @@ class AssetType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ASSET_TYPE_CONVEYOR: _ClassVar[AssetType]
     ASSET_TYPE_SENSOR: _ClassVar[AssetType]
     ASSET_TYPE_HMI: _ClassVar[AssetType]
+    ASSET_TYPE_PART_FEEDER: _ClassVar[AssetType]
 
 class AssetDriverType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     ASSET_DRIVER_TYPE_UNSPECIFIED: _ClassVar[AssetDriverType]
     ASSET_DRIVER_TYPE_DEFAULT: _ClassVar[AssetDriverType]
+CONTAINER_TYPE_UNSPECIFIED: ContainerType
+CONTAINER_TYPE_STORAGE: ContainerType
+CONTAINER_TYPE_KIT: ContainerType
+CONTAINER_TYPE_TRAY: ContainerType
+CONTAINER_TYPE_FIXTURE: ContainerType
+CONTAINER_SLOT_TYPE_UNSPECIFIED: ContainerSlotType
+CONTAINER_SLOT_TYPE_STORAGE_BIN: ContainerSlotType
+CONTAINER_SLOT_TYPE_KIT_SLOT: ContainerSlotType
+CONTAINER_SLOT_TYPE_TRAY_CELL: ContainerSlotType
+CONTAINER_SLOT_TYPE_FIXTURE_SLOT: ContainerSlotType
 TOOL_TYPE_UNSPECIFIED: ToolType
 TOOL_TYPE_FASTENING: ToolType
 TOOL_TYPE_GRIPPING: ToolType
@@ -134,11 +154,6 @@ TOOL_PROPERTY_INSULATED: ToolProperty
 TOOL_PROPERTY_COLLABORATIVE_SAFE: ToolProperty
 TOOL_PROPERTY_CALIBRATED: ToolProperty
 TOOL_PROPERTY_QUICK_CHANGE: ToolProperty
-FIXTURE_TYPE_UNSPECIFIED: FixtureType
-FIXTURE_TYPE_BASE: FixtureType
-FIXTURE_TYPE_CLAMP: FixtureType
-FIXTURE_TYPE_JIG: FixtureType
-FIXTURE_TYPE_PALLET: FixtureType
 ROBOT_TYPE_UNSPECIFIED: RobotType
 ROBOT_TYPE_UR3E: RobotType
 ROBOT_TYPE_UR5E: RobotType
@@ -153,8 +168,19 @@ ASSET_TYPE_LIGHT: AssetType
 ASSET_TYPE_CONVEYOR: AssetType
 ASSET_TYPE_SENSOR: AssetType
 ASSET_TYPE_HMI: AssetType
+ASSET_TYPE_PART_FEEDER: AssetType
 ASSET_DRIVER_TYPE_UNSPECIFIED: AssetDriverType
 ASSET_DRIVER_TYPE_DEFAULT: AssetDriverType
+
+class ContainerSlotRef(_message.Message):
+    __slots__ = ("container_instance_id", "slot_id", "type")
+    CONTAINER_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    SLOT_ID_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    container_instance_id: str
+    slot_id: str
+    type: ContainerSlotType
+    def __init__(self, container_instance_id: _Optional[str] = ..., slot_id: _Optional[str] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ...) -> None: ...
 
 class CapabilityProfile(_message.Message):
     __slots__ = ("min_force_n", "max_force_n", "min_torque_nm", "max_torque_nm", "repeatability_mm", "max_payload_g", "min_grip_width_mm", "max_grip_width_mm", "constraints")
@@ -246,43 +272,69 @@ class ToolInstances(_message.Message):
     items: _containers.RepeatedCompositeFieldContainer[ToolInstance]
     def __init__(self, items: _Optional[_Iterable[_Union[ToolInstance, _Mapping]]] = ...) -> None: ...
 
-class FixtureDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "model_id", "constraints", "custom")
+class ContainerSlotDefinition(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "pose", "size", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "supported_part_definition_ids", "constraints", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    POSE_FIELD_NUMBER: _ClassVar[int]
+    SIZE_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_PRODUCT_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_ROOT_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
-    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    SUPPORTED_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    type: FixtureType
+    pose: _pose_pb2.Pose
+    size: _vector3_pb2.Vector3
+    type: ContainerSlotType
     supported_product_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     supported_root_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
-    model_id: str
+    supported_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     constraints: _containers.RepeatedCompositeFieldContainer[_common_pb2.KeyValueConstraint]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FixtureType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., model_id: _Optional[str] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., size: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
-class FixtureDefinitions(_message.Message):
-    __slots__ = ("items",)
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[FixtureDefinition]
-    def __init__(self, items: _Optional[_Iterable[_Union[FixtureDefinition, _Mapping]]] = ...) -> None: ...
-
-class FixtureInstance(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "fixture_definition_id", "station_id", "status", "pose", "custom")
+class ContainerDefinition(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "slots", "constraints", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    FIXTURE_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    SLOTS_FIELD_NUMBER: _ClassVar[int]
+    CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+    CUSTOM_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    type: ContainerType
+    model_id: str
+    slots: _containers.RepeatedCompositeFieldContainer[ContainerSlotDefinition]
+    constraints: _containers.RepeatedCompositeFieldContainer[_common_pb2.KeyValueConstraint]
+    custom: _common_pb2.CustomProperties
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ContainerType, str]] = ..., model_id: _Optional[str] = ..., slots: _Optional[_Iterable[_Union[ContainerSlotDefinition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class ContainerDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ContainerDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[ContainerDefinition, _Mapping]]] = ...) -> None: ...
+
+class ContainerInstance(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "container_definition_id", "station_id", "status", "pose", "custom")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSE_FIELD_NUMBER: _ClassVar[int]
@@ -291,18 +343,18 @@ class FixtureInstance(_message.Message):
     name: str
     icon: str
     description: str
-    fixture_definition_id: str
+    container_definition_id: str
     station_id: str
     status: _common_pb2.ResourceStatus
     pose: _pose_pb2.LocalizedPose
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., container_definition_id: _Optional[str] = ..., station_id: _Optional[str] = ..., status: _Optional[_Union[_common_pb2.ResourceStatus, str]] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
-class FixtureInstances(_message.Message):
+class ContainerInstances(_message.Message):
     __slots__ = ("items",)
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[FixtureInstance]
-    def __init__(self, items: _Optional[_Iterable[_Union[FixtureInstance, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[ContainerInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[ContainerInstance, _Mapping]]] = ...) -> None: ...
 
 class RobotDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "custom")

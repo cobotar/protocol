@@ -26,10 +26,12 @@ type ProcessType int32
 
 const (
 	ProcessType_PROCESS_TYPE_UNSPECIFIED ProcessType = 0
-	ProcessType_PROCESS_TYPE_ASSEMBLY    ProcessType = 1
-	ProcessType_PROCESS_TYPE_DISASSEMBLY ProcessType = 2
-	ProcessType_PROCESS_TYPE_INSPECTION  ProcessType = 3
-	ProcessType_PROCESS_TYPE_CHECKLIST   ProcessType = 4
+	ProcessType_PROCESS_TYPE_ASSEMBLY    ProcessType = 1 // Example: build gearbox
+	ProcessType_PROCESS_TYPE_DISASSEMBLY ProcessType = 2 // Example: take mould apart for maintenance
+	ProcessType_PROCESS_TYPE_INSPECTION  ProcessType = 3 // Example: QC Check
+	ProcessType_PROCESS_TYPE_CHECKLIST   ProcessType = 4 // Example: line startup
+	ProcessType_PROCESS_TYPE_KITTING     ProcessType = 5 // Example: prepare parts kit
+	ProcessType_PROCESS_TYPE_MAINTENANCE ProcessType = 6 // Example: replace filter
 )
 
 // Enum value maps for ProcessType.
@@ -40,6 +42,8 @@ var (
 		2: "PROCESS_TYPE_DISASSEMBLY",
 		3: "PROCESS_TYPE_INSPECTION",
 		4: "PROCESS_TYPE_CHECKLIST",
+		5: "PROCESS_TYPE_KITTING",
+		6: "PROCESS_TYPE_MAINTENANCE",
 	}
 	ProcessType_value = map[string]int32{
 		"PROCESS_TYPE_UNSPECIFIED": 0,
@@ -47,6 +51,8 @@ var (
 		"PROCESS_TYPE_DISASSEMBLY": 2,
 		"PROCESS_TYPE_INSPECTION":  3,
 		"PROCESS_TYPE_CHECKLIST":   4,
+		"PROCESS_TYPE_KITTING":     5,
+		"PROCESS_TYPE_MAINTENANCE": 6,
 	}
 )
 
@@ -146,6 +152,12 @@ const (
 	TaskType_TASK_TYPE_INSERT      TaskType = 11
 	TaskType_TASK_TYPE_HOLD        TaskType = 12
 	TaskType_TASK_TYPE_VERIFY      TaskType = 13
+	TaskType_TASK_TYPE_PICK        TaskType = 14
+	TaskType_TASK_TYPE_PLACE       TaskType = 15
+	TaskType_TASK_TYPE_SCAN        TaskType = 16
+	TaskType_TASK_TYPE_WAIT        TaskType = 17
+	TaskType_TASK_TYPE_CHECK       TaskType = 18
+	TaskType_TASK_TYPE_ACKNOWLEDGE TaskType = 19 // Start, stop, reset, open, close,
 )
 
 // Enum value maps for TaskType.
@@ -165,6 +177,12 @@ var (
 		11: "TASK_TYPE_INSERT",
 		12: "TASK_TYPE_HOLD",
 		13: "TASK_TYPE_VERIFY",
+		14: "TASK_TYPE_PICK",
+		15: "TASK_TYPE_PLACE",
+		16: "TASK_TYPE_SCAN",
+		17: "TASK_TYPE_WAIT",
+		18: "TASK_TYPE_CHECK",
+		19: "TASK_TYPE_ACKNOWLEDGE",
 	}
 	TaskType_value = map[string]int32{
 		"TASK_TYPE_UNSPECIFIED": 0,
@@ -181,6 +199,12 @@ var (
 		"TASK_TYPE_INSERT":      11,
 		"TASK_TYPE_HOLD":        12,
 		"TASK_TYPE_VERIFY":      13,
+		"TASK_TYPE_PICK":        14,
+		"TASK_TYPE_PLACE":       15,
+		"TASK_TYPE_SCAN":        16,
+		"TASK_TYPE_WAIT":        17,
+		"TASK_TYPE_CHECK":       18,
+		"TASK_TYPE_ACKNOWLEDGE": 19,
 	}
 )
 
@@ -329,22 +353,22 @@ func (x *RecipeApplicability) GetExcluded() []*VariantCondition {
 // - What actor constrains exist
 // - What validation is needed
 type ProcessRecipe struct {
-	state                         protoimpl.MessageState `protogen:"open.v1"`
-	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description                   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                          ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.ProcessType" json:"type,omitempty"`
-	ProductDefinitionId           string                 `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
-	Applicability                 *RecipeApplicability   `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
-	RootSequenceId                string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
-	Sequences                     []*SequenceDefinition  `protobuf:"bytes,9,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks                         []*TaskDefinition      `protobuf:"bytes,10,rep,name=tasks,proto3" json:"tasks,omitempty"`
-	SupportedFixtureDefinitionIds []string               `protobuf:"bytes,11,rep,name=supported_fixture_definition_ids,json=supportedFixtureDefinitionIds,proto3" json:"supported_fixture_definition_ids,omitempty"` // Meaning: this recipe is intended to run with these fixtures
-	ExternalReferences            []*ExternalReference   `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom                        *CustomProperties      `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields                 protoimpl.UnknownFields
-	sizeCache                     protoimpl.SizeCache
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description                     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                            ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.ProcessType" json:"type,omitempty"`
+	ProductDefinitionId             string                 `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
+	Applicability                   *RecipeApplicability   `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
+	RootSequenceId                  string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	Sequences                       []*SequenceDefinition  `protobuf:"bytes,9,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks                           []*TaskDefinition      `protobuf:"bytes,10,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	SupportedContainerDefinitionIds []string               `protobuf:"bytes,11,rep,name=supported_container_definition_ids,json=supportedContainerDefinitionIds,proto3" json:"supported_container_definition_ids,omitempty"` // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
+	ExternalReferences              []*ExternalReference   `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Custom                          *CustomProperties      `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
 }
 
 func (x *ProcessRecipe) Reset() {
@@ -447,9 +471,9 @@ func (x *ProcessRecipe) GetTasks() []*TaskDefinition {
 	return nil
 }
 
-func (x *ProcessRecipe) GetSupportedFixtureDefinitionIds() []string {
+func (x *ProcessRecipe) GetSupportedContainerDefinitionIds() []string {
 	if x != nil {
-		return x.SupportedFixtureDefinitionIds
+		return x.SupportedContainerDefinitionIds
 	}
 	return nil
 }
@@ -610,11 +634,23 @@ func (x *SequenceDefinition) GetCustom() *CustomProperties {
 
 type TaskTarget struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	TargetNodeId           string                 `protobuf:"bytes,1,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`                                 // Assembly node occurrence
-	TargetPartDefinitionId string                 `protobuf:"bytes,2,opt,name=target_part_definition_id,json=targetPartDefinitionId,proto3" json:"target_part_definition_id,omitempty"` // optional denormalized helper
-	LocalTarget            *LocalTarget           `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	TargetNodeId           string                 `protobuf:"bytes,1,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`                                 // Optional target assembly node when the task acts on a product structure occurrence.
+	TargetPartDefinitionId string                 `protobuf:"bytes,2,opt,name=target_part_definition_id,json=targetPartDefinitionId,proto3" json:"target_part_definition_id,omitempty"` // Optional denormalized helper for UIs, planning, and filtering.
+	LocalTarget            *LocalTarget           `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`                                      // Optional pose/anchor relative to the chosen target reference.
+	// Optional non-product targets.
+	// These are useful when a task is not primarily about an AssemblyNode.
+	// Examples:
+	// - asset_instance_id     -> check camera, read HMI, inspect feeder
+	// - robot_instance_id     -> move robot to home, inspect robot state
+	// - station_id            -> clear work surface, perform station startup step
+	// - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+	AssetInstanceId     string            `protobuf:"bytes,4,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`             // Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
+	RobotInstanceId     string            `protobuf:"bytes,5,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`             // Optional robot target for robot-specific actions.
+	StationId           string            `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                                 // Optional station target for station-level or area-level actions.
+	ContainerInstanceId string            `protobuf:"bytes,7,opt,name=container_instance_id,json=containerInstanceId,proto3" json:"container_instance_id,omitempty"` // Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+	Location            *ContainerSlotRef `protobuf:"bytes,8,opt,name=location,proto3" json:"location,omitempty"`                                                    // Optional slot-level target when a task acts on a specific addressable place in a container.
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TaskTarget) Reset() {
@@ -664,6 +700,41 @@ func (x *TaskTarget) GetTargetPartDefinitionId() string {
 func (x *TaskTarget) GetLocalTarget() *LocalTarget {
 	if x != nil {
 		return x.LocalTarget
+	}
+	return nil
+}
+
+func (x *TaskTarget) GetAssetInstanceId() string {
+	if x != nil {
+		return x.AssetInstanceId
+	}
+	return ""
+}
+
+func (x *TaskTarget) GetRobotInstanceId() string {
+	if x != nil {
+		return x.RobotInstanceId
+	}
+	return ""
+}
+
+func (x *TaskTarget) GetStationId() string {
+	if x != nil {
+		return x.StationId
+	}
+	return ""
+}
+
+func (x *TaskTarget) GetContainerInstanceId() string {
+	if x != nil {
+		return x.ContainerInstanceId
+	}
+	return ""
+}
+
+func (x *TaskTarget) GetLocation() *ContainerSlotRef {
+	if x != nil {
+		return x.Location
 	}
 	return nil
 }
@@ -834,23 +905,25 @@ type TaskDefinition struct {
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	InstructionText string                 `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
-	SequenceNumber  int32                  `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	TaskType        TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=assembly.v1.TaskType" json:"task_type,omitempty"`
-	Target          *TaskTarget            `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`
-	Approach        *v1.Vector3            `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`
+	InstructionText string                 `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`       // Human-readable instruction shown to the operator or author.
+	SequenceNumber  int32                  `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`         // Ordering hint within the parent sequence.
+	TaskType        TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=assembly.v1.TaskType" json:"task_type,omitempty"` // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+	Target          *TaskTarget            `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`                                                // The primary thing/location/resource this task acts on.
+	Approach        *v1.Vector3            `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`                                            // Optional approach direction for AR guidance, picking, insertion, or robot planning.
 	// repeated string precondition_task_ids = 10;
 	// repeated string dependant_task_ids = 11;
-	ToolRequirements  []*ToolRequirement     `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`
-	SkillRequirements []*SkillRequirement    `protobuf:"bytes,13,rep,name=skill_requirements,json=skillRequirements,proto3" json:"skill_requirements,omitempty"`
-	Validation        *ValidationRequirement `protobuf:"bytes,14,opt,name=validation,proto3" json:"validation,omitempty"`
-	ExecutionPolicy   *TaskExecutionPolicy   `protobuf:"bytes,15,opt,name=execution_policy,json=executionPolicy,proto3" json:"execution_policy,omitempty"`
-	SafetyRelevance   SafetyRelevance        `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=assembly.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
-	SourceNodeId      string                 `protobuf:"bytes,17,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`                // optional: where part comes from for move/mount
-	DestinationNodeId string                 `protobuf:"bytes,18,opt,name=destination_node_id,json=destinationNodeId,proto3" json:"destination_node_id,omitempty"` // optional
-	Custom            *CustomProperties      `protobuf:"bytes,19,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	ToolRequirements    []*ToolRequirement     `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`                                // Tools or tool roles needed to perform the task.
+	SkillRequirements   []*SkillRequirement    `protobuf:"bytes,13,rep,name=skill_requirements,json=skillRequirements,proto3" json:"skill_requirements,omitempty"`                             // Skills/qualifications needed by the acting human/robot.
+	Validation          *ValidationRequirement `protobuf:"bytes,14,opt,name=validation,proto3" json:"validation,omitempty"`                                                                    // How task completion should be confirmed or validated.
+	ExecutionPolicy     *TaskExecutionPolicy   `protobuf:"bytes,15,opt,name=execution_policy,json=executionPolicy,proto3" json:"execution_policy,omitempty"`                                   // Assignment preferences and execution permissions.
+	SafetyRelevance     SafetyRelevance        `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=assembly.v1.SafetyRelevance" json:"safety_relevance,omitempty"` // Safety significance of the task.
+	SourceNodeId        string                 `protobuf:"bytes,17,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`                                          // Optional source assembly node when something is moved/picked from a product structure.
+	DestinationNodeId   string                 `protobuf:"bytes,18,opt,name=destination_node_id,json=destinationNodeId,proto3" json:"destination_node_id,omitempty"`                           // Optional destination assembly node when something is moved/placed into a product structure.
+	SourceLocation      *ContainerSlotRef      `protobuf:"bytes,19,opt,name=source_location,json=sourceLocation,proto3" json:"source_location,omitempty"`                                      // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+	DestinationLocation *ContainerSlotRef      `protobuf:"bytes,20,opt,name=destination_location,json=destinationLocation,proto3" json:"destination_location,omitempty"`                       // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+	Custom              *CustomProperties      `protobuf:"bytes,21,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TaskDefinition) Reset() {
@@ -995,6 +1068,20 @@ func (x *TaskDefinition) GetDestinationNodeId() string {
 	return ""
 }
 
+func (x *TaskDefinition) GetSourceLocation() *ContainerSlotRef {
+	if x != nil {
+		return x.SourceLocation
+	}
+	return nil
+}
+
+func (x *TaskDefinition) GetDestinationLocation() *ContainerSlotRef {
+	if x != nil {
+		return x.DestinationLocation
+	}
+	return nil
+}
+
 func (x *TaskDefinition) GetCustom() *CustomProperties {
 	if x != nil {
 		return x.Custom
@@ -1006,10 +1093,10 @@ var File_assembly_v1_process_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_process_proto_rawDesc = "" +
 	"\n" +
-	"\x19assembly/v1/process.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x19assembly/v1/product.proto\x1a\x17assembly/v1/skill.proto\x1a\x19geometry/v1/vector3.proto\"\x8b\x01\n" +
+	"\x19assembly/v1/process.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x19assembly/v1/product.proto\x1a\x1bassembly/v1/resources.proto\x1a\x17assembly/v1/skill.proto\x1a\x19geometry/v1/vector3.proto\"\x8b\x01\n" +
 	"\x13RecipeApplicability\x129\n" +
 	"\brequired\x18\x01 \x03(\v2\x1d.assembly.v1.VariantConditionR\brequired\x129\n" +
-	"\bexcluded\x18\x02 \x03(\v2\x1d.assembly.v1.VariantConditionR\bexcluded\"\x80\x05\n" +
+	"\bexcluded\x18\x02 \x03(\v2\x1d.assembly.v1.VariantConditionR\bexcluded\"\x84\x05\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1021,8 +1108,8 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12=\n" +
 	"\tsequences\x18\t \x03(\v2\x1f.assembly.v1.SequenceDefinitionR\tsequences\x121\n" +
 	"\x05tasks\x18\n" +
-	" \x03(\v2\x1b.assembly.v1.TaskDefinitionR\x05tasks\x12G\n" +
-	" supported_fixture_definition_ids\x18\v \x03(\tR\x1dsupportedFixtureDefinitionIds\x12O\n" +
+	" \x03(\v2\x1b.assembly.v1.TaskDefinitionR\x05tasks\x12K\n" +
+	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12O\n" +
 	"\x13external_references\x18\f \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
 	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x90\x04\n" +
 	"\x12SequenceDefinition\x12\x0e\n" +
@@ -1039,12 +1126,18 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	" \x01(\v2\x18.assembly.v1.LocalTargetR\vlocalTarget\x12\x1a\n" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\x125\n" +
-	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xaa\x01\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x90\x03\n" +
 	"\n" +
 	"TaskTarget\x12$\n" +
 	"\x0etarget_node_id\x18\x01 \x01(\tR\ftargetNodeId\x129\n" +
 	"\x19target_part_definition_id\x18\x02 \x01(\tR\x16targetPartDefinitionId\x12;\n" +
-	"\flocal_target\x18\x03 \x01(\v2\x18.assembly.v1.LocalTargetR\vlocalTarget\"\xd8\x02\n" +
+	"\flocal_target\x18\x03 \x01(\v2\x18.assembly.v1.LocalTargetR\vlocalTarget\x12*\n" +
+	"\x11asset_instance_id\x18\x04 \x01(\tR\x0fassetInstanceId\x12*\n" +
+	"\x11robot_instance_id\x18\x05 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
+	"\n" +
+	"station_id\x18\x06 \x01(\tR\tstationId\x122\n" +
+	"\x15container_instance_id\x18\a \x01(\tR\x13containerInstanceId\x129\n" +
+	"\blocation\x18\b \x01(\v2\x1d.assembly.v1.ContainerSlotRefR\blocation\"\xd8\x02\n" +
 	"\x15ValidationRequirement\x122\n" +
 	"\x15require_tool_feedback\x18\x01 \x01(\bR\x13requireToolFeedback\x120\n" +
 	"\x14require_vision_check\x18\x02 \x01(\bR\x12requireVisionCheck\x12:\n" +
@@ -1057,7 +1150,7 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x15\n" +
 	"\x06can_do\x18\x04 \x01(\bR\x05canDo\x12\x19\n" +
 	"\bcan_undo\x18\x05 \x01(\bR\acanUndo\x12M\n" +
-	"\x12estimated_duration\x18\x06 \x01(\v2\x1e.assembly.v1.EstimatedDurationR\x11estimatedDuration\"\xd5\x06\n" +
+	"\x12estimated_duration\x18\x06 \x01(\v2\x1e.assembly.v1.EstimatedDurationR\x11estimatedDuration\"\xef\a\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1076,19 +1169,23 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x10execution_policy\x18\x0f \x01(\v2 .assembly.v1.TaskExecutionPolicyR\x0fexecutionPolicy\x12G\n" +
 	"\x10safety_relevance\x18\x10 \x01(\x0e2\x1c.assembly.v1.SafetyRelevanceR\x0fsafetyRelevance\x12$\n" +
 	"\x0esource_node_id\x18\x11 \x01(\tR\fsourceNodeId\x12.\n" +
-	"\x13destination_node_id\x18\x12 \x01(\tR\x11destinationNodeId\x125\n" +
-	"\x06custom\x18\x13 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom*\x9d\x01\n" +
+	"\x13destination_node_id\x18\x12 \x01(\tR\x11destinationNodeId\x12F\n" +
+	"\x0fsource_location\x18\x13 \x01(\v2\x1d.assembly.v1.ContainerSlotRefR\x0esourceLocation\x12P\n" +
+	"\x14destination_location\x18\x14 \x01(\v2\x1d.assembly.v1.ContainerSlotRefR\x13destinationLocation\x125\n" +
+	"\x06custom\x18\x15 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom*\xd5\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n" +
 	"\x18PROCESS_TYPE_DISASSEMBLY\x10\x02\x12\x1b\n" +
 	"\x17PROCESS_TYPE_INSPECTION\x10\x03\x12\x1a\n" +
-	"\x16PROCESS_TYPE_CHECKLIST\x10\x04*\xa2\x01\n" +
+	"\x16PROCESS_TYPE_CHECKLIST\x10\x04\x12\x18\n" +
+	"\x14PROCESS_TYPE_KITTING\x10\x05\x12\x1c\n" +
+	"\x18PROCESS_TYPE_MAINTENANCE\x10\x06*\xa2\x01\n" +
 	"\x10SequenceOperator\x12!\n" +
 	"\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12%\n" +
 	"!SEQUENCE_OPERATOR_ALL_OF_CHILDREN\x10\x01\x12%\n" +
 	"!SEQUENCE_OPERATOR_ONE_OF_CHILDREN\x10\x02\x12\x1d\n" +
-	"\x19SEQUENCE_OPERATOR_ORDERED\x10\x03*\xbe\x02\n" +
+	"\x19SEQUENCE_OPERATOR_ORDERED\x10\x03*\xbf\x03\n" +
 	"\bTaskType\x12\x19\n" +
 	"\x15TASK_TYPE_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11TASK_TYPE_INSPECT\x10\x01\x12\x14\n" +
@@ -1104,7 +1201,13 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x12\x14\n" +
 	"\x10TASK_TYPE_INSERT\x10\v\x12\x12\n" +
 	"\x0eTASK_TYPE_HOLD\x10\f\x12\x14\n" +
-	"\x10TASK_TYPE_VERIFY\x10\r*\x9d\x02\n" +
+	"\x10TASK_TYPE_VERIFY\x10\r\x12\x12\n" +
+	"\x0eTASK_TYPE_PICK\x10\x0e\x12\x13\n" +
+	"\x0fTASK_TYPE_PLACE\x10\x0f\x12\x12\n" +
+	"\x0eTASK_TYPE_SCAN\x10\x10\x12\x12\n" +
+	"\x0eTASK_TYPE_WAIT\x10\x11\x12\x13\n" +
+	"\x0fTASK_TYPE_CHECK\x10\x12\x12\x19\n" +
+	"\x15TASK_TYPE_ACKNOWLEDGE\x10\x13*\x9d\x02\n" +
 	"\x18TaskAssignmentPreference\x12*\n" +
 	"&TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED\x10\x00\x12+\n" +
 	"'TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN\x10\x01\x12)\n" +
@@ -1144,14 +1247,15 @@ var file_assembly_v1_process_proto_goTypes = []any{
 	(*ExternalReference)(nil),     // 12: assembly.v1.ExternalReference
 	(*CustomProperties)(nil),      // 13: assembly.v1.CustomProperties
 	(*LocalTarget)(nil),           // 14: assembly.v1.LocalTarget
-	(SkillLevel)(0),               // 15: assembly.v1.SkillLevel
-	(*KeyValueConstraint)(nil),    // 16: assembly.v1.KeyValueConstraint
-	(*ActorConstraint)(nil),       // 17: assembly.v1.ActorConstraint
-	(*EstimatedDuration)(nil),     // 18: assembly.v1.EstimatedDuration
-	(*v1.Vector3)(nil),            // 19: geometry.v1.Vector3
-	(*ToolRequirement)(nil),       // 20: assembly.v1.ToolRequirement
-	(*SkillRequirement)(nil),      // 21: assembly.v1.SkillRequirement
-	(SafetyRelevance)(0),          // 22: assembly.v1.SafetyRelevance
+	(*ContainerSlotRef)(nil),      // 15: assembly.v1.ContainerSlotRef
+	(SkillLevel)(0),               // 16: assembly.v1.SkillLevel
+	(*KeyValueConstraint)(nil),    // 17: assembly.v1.KeyValueConstraint
+	(*ActorConstraint)(nil),       // 18: assembly.v1.ActorConstraint
+	(*EstimatedDuration)(nil),     // 19: assembly.v1.EstimatedDuration
+	(*v1.Vector3)(nil),            // 20: geometry.v1.Vector3
+	(*ToolRequirement)(nil),       // 21: assembly.v1.ToolRequirement
+	(*SkillRequirement)(nil),      // 22: assembly.v1.SkillRequirement
+	(SafetyRelevance)(0),          // 23: assembly.v1.SafetyRelevance
 }
 var file_assembly_v1_process_proto_depIdxs = []int32{
 	11, // 0: assembly.v1.RecipeApplicability.required:type_name -> assembly.v1.VariantCondition
@@ -1166,25 +1270,28 @@ var file_assembly_v1_process_proto_depIdxs = []int32{
 	14, // 9: assembly.v1.SequenceDefinition.local_target:type_name -> assembly.v1.LocalTarget
 	13, // 10: assembly.v1.SequenceDefinition.custom:type_name -> assembly.v1.CustomProperties
 	14, // 11: assembly.v1.TaskTarget.local_target:type_name -> assembly.v1.LocalTarget
-	15, // 12: assembly.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> assembly.v1.SkillLevel
-	16, // 13: assembly.v1.ValidationRequirement.constraints:type_name -> assembly.v1.KeyValueConstraint
-	3,  // 14: assembly.v1.TaskExecutionPolicy.assignment_preference:type_name -> assembly.v1.TaskAssignmentPreference
-	17, // 15: assembly.v1.TaskExecutionPolicy.actor_constraint:type_name -> assembly.v1.ActorConstraint
-	18, // 16: assembly.v1.TaskExecutionPolicy.estimated_duration:type_name -> assembly.v1.EstimatedDuration
-	2,  // 17: assembly.v1.TaskDefinition.task_type:type_name -> assembly.v1.TaskType
-	7,  // 18: assembly.v1.TaskDefinition.target:type_name -> assembly.v1.TaskTarget
-	19, // 19: assembly.v1.TaskDefinition.approach:type_name -> geometry.v1.Vector3
-	20, // 20: assembly.v1.TaskDefinition.tool_requirements:type_name -> assembly.v1.ToolRequirement
-	21, // 21: assembly.v1.TaskDefinition.skill_requirements:type_name -> assembly.v1.SkillRequirement
-	8,  // 22: assembly.v1.TaskDefinition.validation:type_name -> assembly.v1.ValidationRequirement
-	9,  // 23: assembly.v1.TaskDefinition.execution_policy:type_name -> assembly.v1.TaskExecutionPolicy
-	22, // 24: assembly.v1.TaskDefinition.safety_relevance:type_name -> assembly.v1.SafetyRelevance
-	13, // 25: assembly.v1.TaskDefinition.custom:type_name -> assembly.v1.CustomProperties
-	26, // [26:26] is the sub-list for method output_type
-	26, // [26:26] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	15, // 12: assembly.v1.TaskTarget.location:type_name -> assembly.v1.ContainerSlotRef
+	16, // 13: assembly.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> assembly.v1.SkillLevel
+	17, // 14: assembly.v1.ValidationRequirement.constraints:type_name -> assembly.v1.KeyValueConstraint
+	3,  // 15: assembly.v1.TaskExecutionPolicy.assignment_preference:type_name -> assembly.v1.TaskAssignmentPreference
+	18, // 16: assembly.v1.TaskExecutionPolicy.actor_constraint:type_name -> assembly.v1.ActorConstraint
+	19, // 17: assembly.v1.TaskExecutionPolicy.estimated_duration:type_name -> assembly.v1.EstimatedDuration
+	2,  // 18: assembly.v1.TaskDefinition.task_type:type_name -> assembly.v1.TaskType
+	7,  // 19: assembly.v1.TaskDefinition.target:type_name -> assembly.v1.TaskTarget
+	20, // 20: assembly.v1.TaskDefinition.approach:type_name -> geometry.v1.Vector3
+	21, // 21: assembly.v1.TaskDefinition.tool_requirements:type_name -> assembly.v1.ToolRequirement
+	22, // 22: assembly.v1.TaskDefinition.skill_requirements:type_name -> assembly.v1.SkillRequirement
+	8,  // 23: assembly.v1.TaskDefinition.validation:type_name -> assembly.v1.ValidationRequirement
+	9,  // 24: assembly.v1.TaskDefinition.execution_policy:type_name -> assembly.v1.TaskExecutionPolicy
+	23, // 25: assembly.v1.TaskDefinition.safety_relevance:type_name -> assembly.v1.SafetyRelevance
+	15, // 26: assembly.v1.TaskDefinition.source_location:type_name -> assembly.v1.ContainerSlotRef
+	15, // 27: assembly.v1.TaskDefinition.destination_location:type_name -> assembly.v1.ContainerSlotRef
+	13, // 28: assembly.v1.TaskDefinition.custom:type_name -> assembly.v1.CustomProperties
+	29, // [29:29] is the sub-list for method output_type
+	29, // [29:29] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_process_proto_init() }
@@ -1194,6 +1301,7 @@ func file_assembly_v1_process_proto_init() {
 	}
 	file_assembly_v1_common_proto_init()
 	file_assembly_v1_product_proto_init()
+	file_assembly_v1_resources_proto_init()
 	file_assembly_v1_skill_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{

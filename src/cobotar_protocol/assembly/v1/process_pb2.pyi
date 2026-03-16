@@ -1,5 +1,6 @@
 from assembly.v1 import common_pb2 as _common_pb2
 from assembly.v1 import product_pb2 as _product_pb2
+from assembly.v1 import resources_pb2 as _resources_pb2
 from assembly.v1 import skill_pb2 as _skill_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
 from google.protobuf.internal import containers as _containers
@@ -18,6 +19,8 @@ class ProcessType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_TYPE_DISASSEMBLY: _ClassVar[ProcessType]
     PROCESS_TYPE_INSPECTION: _ClassVar[ProcessType]
     PROCESS_TYPE_CHECKLIST: _ClassVar[ProcessType]
+    PROCESS_TYPE_KITTING: _ClassVar[ProcessType]
+    PROCESS_TYPE_MAINTENANCE: _ClassVar[ProcessType]
 
 class SequenceOperator(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -42,6 +45,12 @@ class TaskType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TASK_TYPE_INSERT: _ClassVar[TaskType]
     TASK_TYPE_HOLD: _ClassVar[TaskType]
     TASK_TYPE_VERIFY: _ClassVar[TaskType]
+    TASK_TYPE_PICK: _ClassVar[TaskType]
+    TASK_TYPE_PLACE: _ClassVar[TaskType]
+    TASK_TYPE_SCAN: _ClassVar[TaskType]
+    TASK_TYPE_WAIT: _ClassVar[TaskType]
+    TASK_TYPE_CHECK: _ClassVar[TaskType]
+    TASK_TYPE_ACKNOWLEDGE: _ClassVar[TaskType]
 
 class TaskAssignmentPreference(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -56,6 +65,8 @@ PROCESS_TYPE_ASSEMBLY: ProcessType
 PROCESS_TYPE_DISASSEMBLY: ProcessType
 PROCESS_TYPE_INSPECTION: ProcessType
 PROCESS_TYPE_CHECKLIST: ProcessType
+PROCESS_TYPE_KITTING: ProcessType
+PROCESS_TYPE_MAINTENANCE: ProcessType
 SEQUENCE_OPERATOR_UNSPECIFIED: SequenceOperator
 SEQUENCE_OPERATOR_ALL_OF_CHILDREN: SequenceOperator
 SEQUENCE_OPERATOR_ONE_OF_CHILDREN: SequenceOperator
@@ -74,6 +85,12 @@ TASK_TYPE_ALIGN: TaskType
 TASK_TYPE_INSERT: TaskType
 TASK_TYPE_HOLD: TaskType
 TASK_TYPE_VERIFY: TaskType
+TASK_TYPE_PICK: TaskType
+TASK_TYPE_PLACE: TaskType
+TASK_TYPE_SCAN: TaskType
+TASK_TYPE_WAIT: TaskType
+TASK_TYPE_CHECK: TaskType
+TASK_TYPE_ACKNOWLEDGE: TaskType
 TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN: TaskAssignmentPreference
@@ -90,7 +107,7 @@ class RecipeApplicability(_message.Message):
     def __init__(self, required: _Optional[_Iterable[_Union[_product_pb2.VariantCondition, _Mapping]]] = ..., excluded: _Optional[_Iterable[_Union[_product_pb2.VariantCondition, _Mapping]]] = ...) -> None: ...
 
 class ProcessRecipe(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequences", "tasks", "supported_fixture_definition_ids", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequences", "tasks", "supported_container_definition_ids", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -101,7 +118,7 @@ class ProcessRecipe(_message.Message):
     ROOT_SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCES_FIELD_NUMBER: _ClassVar[int]
     TASKS_FIELD_NUMBER: _ClassVar[int]
-    SUPPORTED_FIXTURE_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
+    SUPPORTED_CONTAINER_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -114,10 +131,10 @@ class ProcessRecipe(_message.Message):
     root_sequence_id: str
     sequences: _containers.RepeatedCompositeFieldContainer[SequenceDefinition]
     tasks: _containers.RepeatedCompositeFieldContainer[TaskDefinition]
-    supported_fixture_definition_ids: _containers.RepeatedScalarFieldContainer[str]
+    supported_container_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[TaskDefinition, _Mapping]]] = ..., supported_fixture_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[TaskDefinition, _Mapping]]] = ..., supported_container_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class SequenceDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "sequence_number", "parent_sequence_id", "operator", "child_sequence_ids", "child_task_ids", "local_target", "optional", "can_bulk_complete", "custom")
@@ -150,14 +167,24 @@ class SequenceDefinition(_message.Message):
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., parent_sequence_id: _Optional[str] = ..., operator: _Optional[_Union[SequenceOperator, str]] = ..., child_sequence_ids: _Optional[_Iterable[str]] = ..., child_task_ids: _Optional[_Iterable[str]] = ..., local_target: _Optional[_Union[_common_pb2.LocalTarget, _Mapping]] = ..., optional: bool = ..., can_bulk_complete: bool = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class TaskTarget(_message.Message):
-    __slots__ = ("target_node_id", "target_part_definition_id", "local_target")
+    __slots__ = ("target_node_id", "target_part_definition_id", "local_target", "asset_instance_id", "robot_instance_id", "station_id", "container_instance_id", "location")
     TARGET_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_PART_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     LOCAL_TARGET_FIELD_NUMBER: _ClassVar[int]
+    ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    STATION_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCATION_FIELD_NUMBER: _ClassVar[int]
     target_node_id: str
     target_part_definition_id: str
     local_target: _common_pb2.LocalTarget
-    def __init__(self, target_node_id: _Optional[str] = ..., target_part_definition_id: _Optional[str] = ..., local_target: _Optional[_Union[_common_pb2.LocalTarget, _Mapping]] = ...) -> None: ...
+    asset_instance_id: str
+    robot_instance_id: str
+    station_id: str
+    container_instance_id: str
+    location: _resources_pb2.ContainerSlotRef
+    def __init__(self, target_node_id: _Optional[str] = ..., target_part_definition_id: _Optional[str] = ..., local_target: _Optional[_Union[_common_pb2.LocalTarget, _Mapping]] = ..., asset_instance_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., container_instance_id: _Optional[str] = ..., location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ...) -> None: ...
 
 class ValidationRequirement(_message.Message):
     __slots__ = ("require_tool_feedback", "require_vision_check", "allow_manual_confirmation", "manual_confirmation_min_level", "constraints")
@@ -190,7 +217,7 @@ class TaskExecutionPolicy(_message.Message):
     def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_skill_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ..., estimated_duration: _Optional[_Union[_common_pb2.EstimatedDuration, _Mapping]] = ...) -> None: ...
 
 class TaskDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "approach", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source_node_id", "destination_node_id", "custom")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "approach", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source_node_id", "destination_node_id", "source_location", "destination_location", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -207,6 +234,8 @@ class TaskDefinition(_message.Message):
     SAFETY_RELEVANCE_FIELD_NUMBER: _ClassVar[int]
     SOURCE_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_NODE_ID_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_LOCATION_FIELD_NUMBER: _ClassVar[int]
+    DESTINATION_LOCATION_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
@@ -224,5 +253,7 @@ class TaskDefinition(_message.Message):
     safety_relevance: _common_pb2.SafetyRelevance
     source_node_id: str
     destination_node_id: str
+    source_location: _resources_pb2.ContainerSlotRef
+    destination_location: _resources_pb2.ContainerSlotRef
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_skill_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_common_pb2.SafetyRelevance, str]] = ..., source_node_id: _Optional[str] = ..., destination_node_id: _Optional[str] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_skill_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_common_pb2.SafetyRelevance, str]] = ..., source_node_id: _Optional[str] = ..., destination_node_id: _Optional[str] = ..., source_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., destination_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...

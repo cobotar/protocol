@@ -17,7 +17,7 @@ class ModelGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     MODEL_GROUP_PRODUCT: _ClassVar[ModelGroup]
     MODEL_GROUP_TOOL: _ClassVar[ModelGroup]
     MODEL_GROUP_ROBOT: _ClassVar[ModelGroup]
-    MODEL_GROUP_FIXTURE: _ClassVar[ModelGroup]
+    MODEL_GROUP_CONTAINER: _ClassVar[ModelGroup]
     MODEL_GROUP_ASSET: _ClassVar[ModelGroup]
 
 class ModelOrigin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -41,7 +41,7 @@ MODEL_GROUP_PART: ModelGroup
 MODEL_GROUP_PRODUCT: ModelGroup
 MODEL_GROUP_TOOL: ModelGroup
 MODEL_GROUP_ROBOT: ModelGroup
-MODEL_GROUP_FIXTURE: ModelGroup
+MODEL_GROUP_CONTAINER: ModelGroup
 MODEL_GROUP_ASSET: ModelGroup
 MODEL_ORIGIN_UNSPECIFIED: ModelOrigin
 MODEL_ORIGIN_BUILT_IN: ModelOrigin

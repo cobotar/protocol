@@ -8,6 +8,8 @@ import type { CustomProperties, EstimatedDuration, ExternalReference, KeyValueCo
 import { file_assembly_v1_common } from "./common_pb.ts";
 import type { VariantCondition } from "./product_pb.ts";
 import { file_assembly_v1_product } from "./product_pb.ts";
+import type { ContainerSlotRef } from "./resources_pb.ts";
+import { file_assembly_v1_resources } from "./resources_pb.ts";
 import type { ActorConstraint, SkillLevel, SkillRequirement, ToolRequirement } from "./skill_pb.ts";
 import { file_assembly_v1_skill } from "./skill_pb.ts";
 import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
@@ -18,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/process.proto.
  */
 export const file_assembly_v1_process: GenFile = /*@__PURE__*/
-  fileDesc("Chlhc3NlbWJseS92MS9wcm9jZXNzLnByb3RvEgthc3NlbWJseS52MSJ3ChNSZWNpcGVBcHBsaWNhYmlsaXR5Ei8KCHJlcXVpcmVkGAEgAygLMh0uYXNzZW1ibHkudjEuVmFyaWFudENvbmRpdGlvbhIvCghleGNsdWRlZBgCIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb24i3AMKDVByb2Nlc3NSZWNpcGUSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKBHR5cGUYBSABKA4yGC5hc3NlbWJseS52MS5Qcm9jZXNzVHlwZRIdChVwcm9kdWN0X2RlZmluaXRpb25faWQYBiABKAkSNwoNYXBwbGljYWJpbGl0eRgHIAEoCzIgLmFzc2VtYmx5LnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIyCglzZXF1ZW5jZXMYCSADKAsyHy5hc3NlbWJseS52MS5TZXF1ZW5jZURlZmluaXRpb24SKgoFdGFza3MYCiADKAsyGy5hc3NlbWJseS52MS5UYXNrRGVmaW5pdGlvbhIoCiBzdXBwb3J0ZWRfZml4dHVyZV9kZWZpbml0aW9uX2lkcxgLIAMoCRI7ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMh4uYXNzZW1ibHkudjEuRXh0ZXJuYWxSZWZlcmVuY2USLQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyL3AgoSU2VxdWVuY2VEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIXCg9zZXF1ZW5jZV9udW1iZXIYBSABKAUSGgoScGFyZW50X3NlcXVlbmNlX2lkGAYgASgJEi8KCG9wZXJhdG9yGAcgASgOMh0uYXNzZW1ibHkudjEuU2VxdWVuY2VPcGVyYXRvchIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguYXNzZW1ibHkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgSLQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyJ3CgpUYXNrVGFyZ2V0EhYKDnRhcmdldF9ub2RlX2lkGAEgASgJEiEKGXRhcmdldF9wYXJ0X2RlZmluaXRpb25faWQYAiABKAkSLgoMbG9jYWxfdGFyZ2V0GAMgASgLMhguYXNzZW1ibHkudjEuTG9jYWxUYXJnZXQi7QEKFVZhbGlkYXRpb25SZXF1aXJlbWVudBIdChVyZXF1aXJlX3Rvb2xfZmVlZGJhY2sYASABKAgSHAoUcmVxdWlyZV92aXNpb25fY2hlY2sYAiABKAgSIQoZYWxsb3dfbWFudWFsX2NvbmZpcm1hdGlvbhgDIAEoCBI+Ch1tYW51YWxfY29uZmlybWF0aW9uX21pbl9sZXZlbBgEIAEoDjIXLmFzc2VtYmx5LnYxLlNraWxsTGV2ZWwSNAoLY29uc3RyYWludHMYBSADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQihwIKE1Rhc2tFeGVjdXRpb25Qb2xpY3kSRAoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAEgASgOMiUuYXNzZW1ibHkudjEuVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlEjYKEGFjdG9yX2NvbnN0cmFpbnQYAiABKAsyHC5hc3NlbWJseS52MS5BY3RvckNvbnN0cmFpbnQSFAoMY2FuX3JlYXNzaWduGAMgASgIEg4KBmNhbl9kbxgEIAEoCBIQCghjYW5fdW5kbxgFIAEoCBI6ChJlc3RpbWF0ZWRfZHVyYXRpb24YBiABKAsyHi5hc3NlbWJseS52MS5Fc3RpbWF0ZWREdXJhdGlvbiL/BAoOVGFza0RlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhgKEGluc3RydWN0aW9uX3RleHQYBSABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAYgASgFEigKCXRhc2tfdHlwZRgHIAEoDjIVLmFzc2VtYmx5LnYxLlRhc2tUeXBlEicKBnRhcmdldBgIIAEoCzIXLmFzc2VtYmx5LnYxLlRhc2tUYXJnZXQSJgoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjcKEXRvb2xfcmVxdWlyZW1lbnRzGAwgAygLMhwuYXNzZW1ibHkudjEuVG9vbFJlcXVpcmVtZW50EjkKEnNraWxsX3JlcXVpcmVtZW50cxgNIAMoCzIdLmFzc2VtYmx5LnYxLlNraWxsUmVxdWlyZW1lbnQSNgoKdmFsaWRhdGlvbhgOIAEoCzIiLmFzc2VtYmx5LnYxLlZhbGlkYXRpb25SZXF1aXJlbWVudBI6ChBleGVjdXRpb25fcG9saWN5GA8gASgLMiAuYXNzZW1ibHkudjEuVGFza0V4ZWN1dGlvblBvbGljeRI2ChBzYWZldHlfcmVsZXZhbmNlGBAgASgOMhwuYXNzZW1ibHkudjEuU2FmZXR5UmVsZXZhbmNlEhYKDnNvdXJjZV9ub2RlX2lkGBEgASgJEhsKE2Rlc3RpbmF0aW9uX25vZGVfaWQYEiABKAkSLQoGY3VzdG9tGBMgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyqdAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQqogEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIlCiFTRVFVRU5DRV9PUEVSQVRPUl9BTExfT0ZfQ0hJTERSRU4QARIlCiFTRVFVRU5DRV9PUEVSQVRPUl9PTkVfT0ZfQ0hJTERSRU4QAhIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEAMqvgIKCFRhc2tUeXBlEhkKFVRBU0tfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRBU0tfVFlQRV9JTlNQRUNUEAESFAoQVEFTS19UWVBFX0ZBU1RFThACEhYKElRBU0tfVFlQRV9VTkZBU1RFThADEhMKD1RBU0tfVFlQRV9NT1VOVBAEEhUKEVRBU0tfVFlQRV9VTk1PVU5UEAUSEgoOVEFTS19UWVBFX01PVkUQBhIUChBUQVNLX1RZUEVfUkVNT1ZFEAcSEwoPVEFTS19UWVBFX0FQUExZEAgSEgoOVEFTS19UWVBFX1dJUEUQCRITCg9UQVNLX1RZUEVfQUxJR04QChIUChBUQVNLX1RZUEVfSU5TRVJUEAsSEgoOVEFTS19UWVBFX0hPTEQQDBIUChBUQVNLX1RZUEVfVkVSSUZZEA0qnQIKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIqCiZUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEAQSJQohVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfRUlUSEVSEAVCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvY2Vzc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_assembly_v1_product, file_assembly_v1_skill, file_geometry_v1_vector3]);
+  fileDesc("Chlhc3NlbWJseS92MS9wcm9jZXNzLnByb3RvEgthc3NlbWJseS52MSJ3ChNSZWNpcGVBcHBsaWNhYmlsaXR5Ei8KCHJlcXVpcmVkGAEgAygLMh0uYXNzZW1ibHkudjEuVmFyaWFudENvbmRpdGlvbhIvCghleGNsdWRlZBgCIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb24i3gMKDVByb2Nlc3NSZWNpcGUSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKBHR5cGUYBSABKA4yGC5hc3NlbWJseS52MS5Qcm9jZXNzVHlwZRIdChVwcm9kdWN0X2RlZmluaXRpb25faWQYBiABKAkSNwoNYXBwbGljYWJpbGl0eRgHIAEoCzIgLmFzc2VtYmx5LnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIyCglzZXF1ZW5jZXMYCSADKAsyHy5hc3NlbWJseS52MS5TZXF1ZW5jZURlZmluaXRpb24SKgoFdGFza3MYCiADKAsyGy5hc3NlbWJseS52MS5UYXNrRGVmaW5pdGlvbhIqCiJzdXBwb3J0ZWRfY29udGFpbmVyX2RlZmluaXRpb25faWRzGAsgAygJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYDCADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIvcCChJTZXF1ZW5jZURlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhcKD3NlcXVlbmNlX251bWJlchgFIAEoBRIaChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAkSLwoIb3BlcmF0b3IYByABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5jZU9wZXJhdG9yEhoKEmNoaWxkX3NlcXVlbmNlX2lkcxgIIAMoCRIWCg5jaGlsZF90YXNrX2lkcxgJIAMoCRIuCgxsb2NhbF90YXJnZXQYCiABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRhcmdldBIQCghvcHRpb25hbBgLIAEoCBIZChFjYW5fYnVsa19jb21wbGV0ZRgMIAEoCBItCgZjdXN0b20YDSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIpECCgpUYXNrVGFyZ2V0EhYKDnRhcmdldF9ub2RlX2lkGAEgASgJEiEKGXRhcmdldF9wYXJ0X2RlZmluaXRpb25faWQYAiABKAkSLgoMbG9jYWxfdGFyZ2V0GAMgASgLMhguYXNzZW1ibHkudjEuTG9jYWxUYXJnZXQSGQoRYXNzZXRfaW5zdGFuY2VfaWQYBCABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYBSABKAkSEgoKc3RhdGlvbl9pZBgGIAEoCRIdChVjb250YWluZXJfaW5zdGFuY2VfaWQYByABKAkSLwoIbG9jYXRpb24YCCABKAsyHS5hc3NlbWJseS52MS5Db250YWluZXJTbG90UmVmIu0BChVWYWxpZGF0aW9uUmVxdWlyZW1lbnQSHQoVcmVxdWlyZV90b29sX2ZlZWRiYWNrGAEgASgIEhwKFHJlcXVpcmVfdmlzaW9uX2NoZWNrGAIgASgIEiEKGWFsbG93X21hbnVhbF9jb25maXJtYXRpb24YAyABKAgSPgodbWFudWFsX2NvbmZpcm1hdGlvbl9taW5fbGV2ZWwYBCABKA4yFy5hc3NlbWJseS52MS5Ta2lsbExldmVsEjQKC2NvbnN0cmFpbnRzGAUgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IocCChNUYXNrRXhlY3V0aW9uUG9saWN5EkQKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgBIAEoDjIlLmFzc2VtYmx5LnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRI2ChBhY3Rvcl9jb25zdHJhaW50GAIgASgLMhwuYXNzZW1ibHkudjEuQWN0b3JDb25zdHJhaW50EhQKDGNhbl9yZWFzc2lnbhgDIAEoCBIOCgZjYW5fZG8YBCABKAgSEAoIY2FuX3VuZG8YBSABKAgSOgoSZXN0aW1hdGVkX2R1cmF0aW9uGAYgASgLMh4uYXNzZW1ibHkudjEuRXN0aW1hdGVkRHVyYXRpb24i9AUKDlRhc2tEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIYChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJEhcKD3NlcXVlbmNlX251bWJlchgGIAEoBRIoCgl0YXNrX3R5cGUYByABKA4yFS5hc3NlbWJseS52MS5UYXNrVHlwZRInCgZ0YXJnZXQYCCABKAsyFy5hc3NlbWJseS52MS5UYXNrVGFyZ2V0EiYKCGFwcHJvYWNoGAkgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI3ChF0b29sX3JlcXVpcmVtZW50cxgMIAMoCzIcLmFzc2VtYmx5LnYxLlRvb2xSZXF1aXJlbWVudBI5ChJza2lsbF9yZXF1aXJlbWVudHMYDSADKAsyHS5hc3NlbWJseS52MS5Ta2lsbFJlcXVpcmVtZW50EjYKCnZhbGlkYXRpb24YDiABKAsyIi5hc3NlbWJseS52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnQSOgoQZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIgLmFzc2VtYmx5LnYxLlRhc2tFeGVjdXRpb25Qb2xpY3kSNgoQc2FmZXR5X3JlbGV2YW5jZRgQIAEoDjIcLmFzc2VtYmx5LnYxLlNhZmV0eVJlbGV2YW5jZRIWCg5zb3VyY2Vfbm9kZV9pZBgRIAEoCRIbChNkZXN0aW5hdGlvbl9ub2RlX2lkGBIgASgJEjYKD3NvdXJjZV9sb2NhdGlvbhgTIAEoCzIdLmFzc2VtYmx5LnYxLkNvbnRhaW5lclNsb3RSZWYSOwoUZGVzdGluYXRpb25fbG9jYXRpb24YFCABKAsyHS5hc3NlbWJseS52MS5Db250YWluZXJTbG90UmVmEi0KBmN1c3RvbRgVIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMq1QEKC1Byb2Nlc3NUeXBlEhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAAEhkKFVBST0NFU1NfVFlQRV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9ESVNBU1NFTUJMWRACEhsKF1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMSGgoWUFJPQ0VTU19UWVBFX0NIRUNLTElTVBAEEhgKFFBST0NFU1NfVFlQRV9LSVRUSU5HEAUSHAoYUFJPQ0VTU19UWVBFX01BSU5URU5BTkNFEAYqogEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIlCiFTRVFVRU5DRV9PUEVSQVRPUl9BTExfT0ZfQ0hJTERSRU4QARIlCiFTRVFVRU5DRV9PUEVSQVRPUl9PTkVfT0ZfQ0hJTERSRU4QAhIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEAMqvwMKCFRhc2tUeXBlEhkKFVRBU0tfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRBU0tfVFlQRV9JTlNQRUNUEAESFAoQVEFTS19UWVBFX0ZBU1RFThACEhYKElRBU0tfVFlQRV9VTkZBU1RFThADEhMKD1RBU0tfVFlQRV9NT1VOVBAEEhUKEVRBU0tfVFlQRV9VTk1PVU5UEAUSEgoOVEFTS19UWVBFX01PVkUQBhIUChBUQVNLX1RZUEVfUkVNT1ZFEAcSEwoPVEFTS19UWVBFX0FQUExZEAgSEgoOVEFTS19UWVBFX1dJUEUQCRITCg9UQVNLX1RZUEVfQUxJR04QChIUChBUQVNLX1RZUEVfSU5TRVJUEAsSEgoOVEFTS19UWVBFX0hPTEQQDBIUChBUQVNLX1RZUEVfVkVSSUZZEA0SEgoOVEFTS19UWVBFX1BJQ0sQDhITCg9UQVNLX1RZUEVfUExBQ0UQDxISCg5UQVNLX1RZUEVfU0NBThAQEhIKDlRBU0tfVFlQRV9XQUlUEBESEwoPVEFTS19UWVBFX0NIRUNLEBISGQoVVEFTS19UWVBFX0FDS05PV0xFREdFEBMqnQIKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIqCiZUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEAQSJQohVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfRUlUSEVSEAVCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvY2Vzc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_assembly_v1_product, file_assembly_v1_resources, file_assembly_v1_skill, file_geometry_v1_vector3]);
 
 /**
  * @generated from message assembly.v1.RecipeApplicability
@@ -105,11 +107,11 @@ export type ProcessRecipe = Message<"assembly.v1.ProcessRecipe"> & {
   tasks: TaskDefinition[];
 
   /**
-   * Meaning: this recipe is intended to run with these fixtures
+   * Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
    *
-   * @generated from field: repeated string supported_fixture_definition_ids = 11;
+   * @generated from field: repeated string supported_container_definition_ids = 11;
    */
-  supportedFixtureDefinitionIds: string[];
+  supportedContainerDefinitionIds: string[];
 
   /**
    * @generated from field: repeated assembly.v1.ExternalReference external_references = 12;
@@ -211,23 +213,68 @@ export const SequenceDefinitionSchema: GenMessage<SequenceDefinition> = /*@__PUR
  */
 export type TaskTarget = Message<"assembly.v1.TaskTarget"> & {
   /**
-   * Assembly node occurrence
+   * Optional target assembly node when the task acts on a product structure occurrence.
    *
    * @generated from field: string target_node_id = 1;
    */
   targetNodeId: string;
 
   /**
-   * optional denormalized helper
+   * Optional denormalized helper for UIs, planning, and filtering.
    *
    * @generated from field: string target_part_definition_id = 2;
    */
   targetPartDefinitionId: string;
 
   /**
+   * Optional pose/anchor relative to the chosen target reference.
+   *
    * @generated from field: assembly.v1.LocalTarget local_target = 3;
    */
   localTarget?: LocalTarget;
+
+  /**
+   * Optional non-product targets.
+   * These are useful when a task is not primarily about an AssemblyNode.
+   * Examples:
+   * - asset_instance_id     -> check camera, read HMI, inspect feeder
+   * - robot_instance_id     -> move robot to home, inspect robot state
+   * - station_id            -> clear work surface, perform station startup step
+   * - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+   *
+   * Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
+   *
+   * @generated from field: string asset_instance_id = 4;
+   */
+  assetInstanceId: string;
+
+  /**
+   * Optional robot target for robot-specific actions.
+   *
+   * @generated from field: string robot_instance_id = 5;
+   */
+  robotInstanceId: string;
+
+  /**
+   * Optional station target for station-level or area-level actions.
+   *
+   * @generated from field: string station_id = 6;
+   */
+  stationId: string;
+
+  /**
+   * Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+   *
+   * @generated from field: string container_instance_id = 7;
+   */
+  containerInstanceId: string;
+
+  /**
+   * Optional slot-level target when a task acts on a specific addressable place in a container.
+   *
+   * @generated from field: assembly.v1.ContainerSlotRef location = 8;
+   */
+  location?: ContainerSlotRef;
 };
 
 /**
@@ -341,26 +388,36 @@ export type TaskDefinition = Message<"assembly.v1.TaskDefinition"> & {
   description: string;
 
   /**
+   * Human-readable instruction shown to the operator or author.
+   *
    * @generated from field: string instruction_text = 5;
    */
   instructionText: string;
 
   /**
+   * Ordering hint within the parent sequence.
+   *
    * @generated from field: int32 sequence_number = 6;
    */
   sequenceNumber: number;
 
   /**
+   * The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+   *
    * @generated from field: assembly.v1.TaskType task_type = 7;
    */
   taskType: TaskType;
 
   /**
+   * The primary thing/location/resource this task acts on.
+   *
    * @generated from field: assembly.v1.TaskTarget target = 8;
    */
   target?: TaskTarget;
 
   /**
+   * Optional approach direction for AR guidance, picking, insertion, or robot planning.
+   *
    * @generated from field: geometry.v1.Vector3 approach = 9;
    */
   approach?: Vector3;
@@ -369,46 +426,70 @@ export type TaskDefinition = Message<"assembly.v1.TaskDefinition"> & {
    * repeated string precondition_task_ids = 10;
    * repeated string dependant_task_ids = 11;
    *
+   * Tools or tool roles needed to perform the task.
+   *
    * @generated from field: repeated assembly.v1.ToolRequirement tool_requirements = 12;
    */
   toolRequirements: ToolRequirement[];
 
   /**
+   * Skills/qualifications needed by the acting human/robot.
+   *
    * @generated from field: repeated assembly.v1.SkillRequirement skill_requirements = 13;
    */
   skillRequirements: SkillRequirement[];
 
   /**
+   * How task completion should be confirmed or validated.
+   *
    * @generated from field: assembly.v1.ValidationRequirement validation = 14;
    */
   validation?: ValidationRequirement;
 
   /**
+   * Assignment preferences and execution permissions.
+   *
    * @generated from field: assembly.v1.TaskExecutionPolicy execution_policy = 15;
    */
   executionPolicy?: TaskExecutionPolicy;
 
   /**
+   * Safety significance of the task.
+   *
    * @generated from field: assembly.v1.SafetyRelevance safety_relevance = 16;
    */
   safetyRelevance: SafetyRelevance;
 
   /**
-   * optional: where part comes from for move/mount
+   * Optional source assembly node when something is moved/picked from a product structure.
    *
    * @generated from field: string source_node_id = 17;
    */
   sourceNodeId: string;
 
   /**
-   * optional
+   * Optional destination assembly node when something is moved/placed into a product structure.
    *
    * @generated from field: string destination_node_id = 18;
    */
   destinationNodeId: string;
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 19;
+   * Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+   *
+   * @generated from field: assembly.v1.ContainerSlotRef source_location = 19;
+   */
+  sourceLocation?: ContainerSlotRef;
+
+  /**
+   * Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+   *
+   * @generated from field: assembly.v1.ContainerSlotRef destination_location = 20;
+   */
+  destinationLocation?: ContainerSlotRef;
+
+  /**
+   * @generated from field: assembly.v1.CustomProperties custom = 21;
    */
   custom?: CustomProperties;
 };
@@ -430,24 +511,46 @@ export enum ProcessType {
   UNSPECIFIED = 0,
 
   /**
+   * Example: build gearbox
+   *
    * @generated from enum value: PROCESS_TYPE_ASSEMBLY = 1;
    */
   ASSEMBLY = 1,
 
   /**
+   * Example: take mould apart for maintenance
+   *
    * @generated from enum value: PROCESS_TYPE_DISASSEMBLY = 2;
    */
   DISASSEMBLY = 2,
 
   /**
+   * Example: QC Check
+   *
    * @generated from enum value: PROCESS_TYPE_INSPECTION = 3;
    */
   INSPECTION = 3,
 
   /**
+   * Example: line startup
+   *
    * @generated from enum value: PROCESS_TYPE_CHECKLIST = 4;
    */
   CHECKLIST = 4,
+
+  /**
+   * Example: prepare parts kit
+   *
+   * @generated from enum value: PROCESS_TYPE_KITTING = 5;
+   */
+  KITTING = 5,
+
+  /**
+   * Example: replace filter
+   *
+   * @generated from enum value: PROCESS_TYPE_MAINTENANCE = 6;
+   */
+  MAINTENANCE = 6,
 }
 
 /**
@@ -560,6 +663,38 @@ export enum TaskType {
    * @generated from enum value: TASK_TYPE_VERIFY = 13;
    */
   VERIFY = 13,
+
+  /**
+   * @generated from enum value: TASK_TYPE_PICK = 14;
+   */
+  PICK = 14,
+
+  /**
+   * @generated from enum value: TASK_TYPE_PLACE = 15;
+   */
+  PLACE = 15,
+
+  /**
+   * @generated from enum value: TASK_TYPE_SCAN = 16;
+   */
+  SCAN = 16,
+
+  /**
+   * @generated from enum value: TASK_TYPE_WAIT = 17;
+   */
+  WAIT = 17,
+
+  /**
+   * @generated from enum value: TASK_TYPE_CHECK = 18;
+   */
+  CHECK = 18,
+
+  /**
+   * Start, stop, reset, open, close,
+   *
+   * @generated from enum value: TASK_TYPE_ACKNOWLEDGE = 19;
+   */
+  ACKNOWLEDGE = 19,
 }
 
 /**

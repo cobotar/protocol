@@ -6,8 +6,10 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { ActorKind, CustomProperties, ExternalReference, KeyValueConstraint, ResourceStatus } from "./common_pb.ts";
 import { file_assembly_v1_common } from "./common_pb.ts";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import type { LocalizedPose, Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
+import { file_geometry_v1_vector3 } from "../../geometry/v1/vector3_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { Message } from "@bufbuild/protobuf";
@@ -16,7 +18,46 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/resources.proto.
  */
 export const file_assembly_v1_resources: GenFile = /*@__PURE__*/
-  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj0KD1Rvb2xEZWZpbml0aW9ucxIqCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZpbml0aW9uIukCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhoKEnRvb2xfZGVmaW5pdGlvbl9pZBgFIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEhIKCnN0YXRpb25faWQYByABKAkSKwoGc3RhdHVzGAggASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSEgoKY2FsaWJyYXRlZBgJIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKAoEcG9zZRgLIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAwgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI5Cg1Ub29sSW5zdGFuY2VzEigKBWl0ZW1zGAEgAygLMhkuYXNzZW1ibHkudjEuVG9vbEluc3RhbmNlIsUCChFGaXh0dXJlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJgoEdHlwZRgFIAEoDjIYLmFzc2VtYmx5LnYxLkZpeHR1cmVUeXBlEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAYgAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYByADKAkSEAoIbW9kZWxfaWQYCCABKAkSNAoLY29uc3RyYWludHMYCSADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQSLQoGY3VzdG9tGAogASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyJDChJGaXh0dXJlRGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5GaXh0dXJlRGVmaW5pdGlvbiKHAgoPRml4dHVyZUluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIdChVmaXh0dXJlX2RlZmluaXRpb25faWQYBSABKAkSEgoKc3RhdGlvbl9pZBgGIAEoCRIrCgZzdGF0dXMYByABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj8KEEZpeHR1cmVJbnN0YW5jZXMSKwoFaXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5GaXh0dXJlSW5zdGFuY2UinQMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJAoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLlJvYm90VHlwZRIxCgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLlJvYm90RHJpdmVyVHlwZRIQCghtb2RlbF9pZBgHIAEoCRIYChBjb3VwbGVyX21vZGVsX2lkGAggASgJEiUKHXN1cHBvcnRlZF90b29sX2RlZmluaXRpb25faWRzGAkgAygJEiIKGmRlZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAogASgJEhIKCnRvb2xfc2xvdHMYCyABKAUSOgoSY2FwYWJpbGl0eV9wcm9maWxlGAwgASgLMh4uYXNzZW1ibHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSLQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBSb2JvdERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuUm9ib3REZWZpbml0aW9uIu0CCg1Sb2JvdEluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIbChNyb2JvdF9kZWZpbml0aW9uX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSIAoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAcgASgJEiMKG2F2YWlsYWJsZV90b29sX2luc3RhbmNlX2lkcxgIIAMoCRIcChRzdXBwb3J0c190b29sX2NoYW5nZRgJIAEoCBIrCgZzdGF0dXMYCiABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxItCgliYXNlX3Bvc2UYCyABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEi0KBmN1c3RvbRgMIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOwoOUm9ib3RJbnN0YW5jZXMSKQoFaXRlbXMYASADKAsyGi5hc3NlbWJseS52MS5Sb2JvdEluc3RhbmNlIugBCg9Bc3NldERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiQKBHR5cGUYBSABKA4yFi5hc3NlbWJseS52MS5Bc3NldFR5cGUSMQoLZHJpdmVyX3R5cGUYBiABKA4yHC5hc3NlbWJseS52MS5Bc3NldERyaXZlclR5cGUSEAoIbW9kZWxfaWQYByABKAkSLQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI/ChBBc3NldERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwuYXNzZW1ibHkudjEuQXNzZXREZWZpbml0aW9uIoMCCg1Bc3NldEluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIbChNhc3NldF9kZWZpbml0aW9uX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSKwoGc3RhdHVzGAcgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAkgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI7Cg5Bc3NldEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYxLkFzc2V0SW5zdGFuY2UqzQMKCFRvb2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1RPT0xfVFlQRV9GQVNURU5JTkcQARIWChJUT09MX1RZUEVfR1JJUFBJTkcQAhIVChFUT09MX1RZUEVfQ1VUVElORxADEhcKE1RPT0xfVFlQRV9NRUFTVVJJTkcQBBIZChVUT09MX1RZUEVfUE9TSVRJT05JTkcQBRIYChRUT09MX1RZUEVfRElTUEVOU0lORxAGEhgKFFRPT0xfVFlQRV9JTlNQRUNUSU9OEAcSFAoQVE9PTF9UWVBFX1NBRkVUWRAIEhkKFVRPT0xfVFlQRV9FTEVDVFJPTklDUxAJEh8KG1RPT0xfVFlQRV9GSVhUVVJFX0FDQ0VTU09SWRAKEhUKEVRPT0xfVFlQRV9TSEFQSU5HEAsSFQoRVE9PTF9UWVBFX1RVUk5JTkcQDBIWChJUT09MX1RZUEVfU1RSSUtJTkcQDRIVChFUT09MX1RZUEVfTUFSS0lORxAOEhcKE1RPT0xfVFlQRV9GSU5JU0hJTkcQDxIWChJUT09MX1RZUEVfQUJSQVNJVkUQEBIWChJUT09MX1RZUEVfQ0xFQU5JTkcQESq4AwoIVG9vbFJvbGUSGQoVVE9PTF9ST0xFX1VOU1BFQ0lGSUVEEAASHAoYVE9PTF9ST0xFX0dSSVBfV09SS1BJRUNFEAESIAocVE9PTF9ST0xFX1BPU0lUSU9OX0NPTVBPTkVOVBACEh0KGVRPT0xfUk9MRV9BTElHTl9DT01QT05FTlQQAxIaChZUT09MX1JPTEVfQVBQTFlfVE9SUVVFEAQSIAocVE9PTF9ST0xFX0FQUExZX0xJTkVBUl9GT1JDRRAFEh8KG1RPT0xfUk9MRV9NRUFTVVJFX0RJTUVOU0lPThAGEh0KGVRPT0xfUk9MRV9ERVRFQ1RfUFJFU0VOQ0UQBxIfChtUT09MX1JPTEVfRElTUEVOU0VfTUFURVJJQUwQCBIcChhUT09MX1JPTEVfRVhFQ1VURV9NT1RJT04QCRIgChxUT09MX1JPTEVfU0FGRVRZX0lOVEVSQUNUSU9OEAoSGAoUVE9PTF9ST0xFX0hBTkRMRV9FU0QQCxIfChtUT09MX1JPTEVfVklTVUFMX0lOU1BFQ1RJT04QDBIYChRUT09MX1JPTEVfV0lQRV9DTEVBThANKu8BCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNVTEFURUQQAxIkCiBUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkVfU0FGRRAEEhwKGFRPT0xfUFJPUEVSVFlfQ0FMSUJSQVRFRBAFEh4KGlRPT0xfUFJPUEVSVFlfUVVJQ0tfQ0hBTkdFEAYqiQEKC0ZpeHR1cmVUeXBlEhwKGEZJWFRVUkVfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUZJWFRVUkVfVFlQRV9CQVNFEAESFgoSRklYVFVSRV9UWVBFX0NMQU1QEAISFAoQRklYVFVSRV9UWVBFX0pJRxADEhcKE0ZJWFRVUkVfVFlQRV9QQUxMRVQQBCqBAQoJUm9ib3RUeXBlEhoKFlJPQk9UX1RZUEVfVU5TUEVDSUZJRUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9ST0JPVF9UWVBFX1VSNUUQCxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9CT1RfVFlQRV9LVUtBX0lJV0EQFCptCg9Sb2JvdERyaXZlclR5cGUSIQodUk9CT1RfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIYChRST0JPVF9EUklWRVJfVFlQRV9VUhABEh0KGVJPQk9UX0RSSVZFUl9UWVBFX0dFTkVSSUMQAiqYAQoJQXNzZXRUeXBlEhoKFkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NFVF9UWVBFX0NBTUVSQRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NFVF9UWVBFX0NPTlZFWU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5BU1NFVF9UWVBFX0hNSRAFKlMKD0Fzc2V0RHJpdmVyVHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFTU0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAUK0AQoPY29tLmFzc2VtYmx5LnYxQg5SZXNvdXJjZXNQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z", [file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
+  fileDesc("Chthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8SC2Fzc2VtYmx5LnYxInAKEENvbnRhaW5lclNsb3RSZWYSHQoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJEg8KB3Nsb3RfaWQYAiABKAkSLAoEdHlwZRgDIAEoDjIeLmFzc2VtYmx5LnYxLkNvbnRhaW5lclNsb3RUeXBlIogCChFDYXBhYmlsaXR5UHJvZmlsZRITCgttaW5fZm9yY2VfbhgBIAEoARITCgttYXhfZm9yY2VfbhgCIAEoARIVCg1taW5fdG9ycXVlX25tGAMgASgBEhUKDW1heF90b3JxdWVfbm0YBCABKAESGAoQcmVwZWF0YWJpbGl0eV9tbRgFIAEoARIVCg1tYXhfcGF5bG9hZF9nGAYgASgBEhkKEW1pbl9ncmlwX3dpZHRoX21tGAcgASgBEhkKEW1heF9ncmlwX3dpZHRoX21tGAggASgBEjQKC2NvbnN0cmFpbnRzGAkgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50Iq0DCg5Ub29sRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlRvb2xUeXBlEioKCmFjdG9yX2tpbmQYBiABKA4yFi5hc3NlbWJseS52MS5BY3RvcktpbmQSJAoFcm9sZXMYByADKA4yFS5hc3NlbWJseS52MS5Ub29sUm9sZRItCgpwcm9wZXJ0aWVzGAggAygOMhkuYXNzZW1ibHkudjEuVG9vbFByb3BlcnR5EjoKEmNhcGFiaWxpdHlfcHJvZmlsZRgJIAEoCzIeLmFzc2VtYmx5LnYxLkNhcGFiaWxpdHlQcm9maWxlEhAKCG1vZGVsX2lkGAogASgJEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj0KD1Rvb2xEZWZpbml0aW9ucxIqCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlRvb2xEZWZpbml0aW9uIukCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhoKEnRvb2xfZGVmaW5pdGlvbl9pZBgFIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEhIKCnN0YXRpb25faWQYByABKAkSKwoGc3RhdHVzGAggASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSEgoKY2FsaWJyYXRlZBgJIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKAoEcG9zZRgLIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAwgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI5Cg1Ub29sSW5zdGFuY2VzEigKBWl0ZW1zGAEgAygLMhkuYXNzZW1ibHkudjEuVG9vbEluc3RhbmNlIqsDChdDb250YWluZXJTbG90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSHwoEcG9zZRgFIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USIgoEc2l6ZRgGIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSLAoEdHlwZRgHIAEoDjIeLmFzc2VtYmx5LnYxLkNvbnRhaW5lclNsb3RUeXBlEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAggAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYCSADKAkSJQodc3VwcG9ydGVkX3BhcnRfZGVmaW5pdGlvbl9pZHMYCiADKAkSNAoLY29uc3RyYWludHMYCyADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQSLQoGY3VzdG9tGAwgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyKoAgoTQ29udGFpbmVyRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoEdHlwZRgFIAEoDjIaLmFzc2VtYmx5LnYxLkNvbnRhaW5lclR5cGUSEAoIbW9kZWxfaWQYBiABKAkSMwoFc2xvdHMYByADKAsyJC5hc3NlbWJseS52MS5Db250YWluZXJTbG90RGVmaW5pdGlvbhI0Cgtjb25zdHJhaW50cxgIIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3RyYWludBItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIkcKFENvbnRhaW5lckRlZmluaXRpb25zEi8KBWl0ZW1zGAEgAygLMiAuYXNzZW1ibHkudjEuQ29udGFpbmVyRGVmaW5pdGlvbiKLAgoRQ29udGFpbmVySW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KF2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSKwoGc3RhdHVzGAcgASgOMhsuYXNzZW1ibHkudjEuUmVzb3VyY2VTdGF0dXMSKAoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAkgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyJDChJDb250YWluZXJJbnN0YW5jZXMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5Db250YWluZXJJbnN0YW5jZSKdAwoPUm9ib3REZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIkCgR0eXBlGAUgASgOMhYuYXNzZW1ibHkudjEuUm9ib3RUeXBlEjEKC2RyaXZlcl90eXBlGAYgASgOMhwuYXNzZW1ibHkudjEuUm9ib3REcml2ZXJUeXBlEhAKCG1vZGVsX2lkGAcgASgJEhgKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAkSJQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlvbl9pZHMYCSADKAkSIgoaZGVmYXVsdF90b29sX2RlZmluaXRpb25faWQYCiABKAkSEgoKdG9vbF9zbG90cxgLIAEoBRI6ChJjYXBhYmlsaXR5X3Byb2ZpbGUYDCABKAsyHi5hc3NlbWJseS52MS5DYXBhYmlsaXR5UHJvZmlsZRItCgZjdXN0b20YDSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj8KEFJvYm90RGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5Sb2JvdERlZmluaXRpb24i7QIKDVJvYm90SW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhsKE3JvYm90X2RlZmluaXRpb25faWQYBSABKAkSEgoKc3RhdGlvbl9pZBgGIAEoCRIgChhtb3VudGVkX3Rvb2xfaW5zdGFuY2VfaWQYByABKAkSIwobYXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAggAygJEhwKFHN1cHBvcnRzX3Rvb2xfY2hhbmdlGAkgASgIEisKBnN0YXR1cxgKIAEoDjIbLmFzc2VtYmx5LnYxLlJlc291cmNlU3RhdHVzEi0KCWJhc2VfcG9zZRgLIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USLQoGY3VzdG9tGAwgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI7Cg5Sb2JvdEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLmFzc2VtYmx5LnYxLlJvYm90SW5zdGFuY2Ui6AEKD0Fzc2V0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJAoEdHlwZRgFIAEoDjIWLmFzc2VtYmx5LnYxLkFzc2V0VHlwZRIxCgtkcml2ZXJfdHlwZRgGIAEoDjIcLmFzc2VtYmx5LnYxLkFzc2V0RHJpdmVyVHlwZRIQCghtb2RlbF9pZBgHIAEoCRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIj8KEEFzc2V0RGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5hc3NlbWJseS52MS5Bc3NldERlZmluaXRpb24igwIKDUFzc2V0SW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhsKE2Fzc2V0X2RlZmluaXRpb25faWQYBSABKAkSEgoKc3RhdGlvbl9pZBgGIAEoCRIrCgZzdGF0dXMYByABKA4yGy5hc3NlbWJseS52MS5SZXNvdXJjZVN0YXR1cxIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRItCgZjdXN0b20YCSABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjsKDkFzc2V0SW5zdGFuY2VzEikKBWl0ZW1zGAEgAygLMhouYXNzZW1ibHkudjEuQXNzZXRJbnN0YW5jZSqYAQoNQ29udGFpbmVyVHlwZRIeChpDT05UQUlORVJfVFlQRV9VTlNQRUNJRklFRBAAEhoKFkNPTlRBSU5FUl9UWVBFX1NUT1JBR0UQARIWChJDT05UQUlORVJfVFlQRV9LSVQQAhIXChNDT05UQUlORVJfVFlQRV9UUkFZEAMSGgoWQ09OVEFJTkVSX1RZUEVfRklYVFVSRRAEKsgBChFDb250YWluZXJTbG90VHlwZRIjCh9DT05UQUlORVJfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASIwofQ09OVEFJTkVSX1NMT1RfVFlQRV9TVE9SQUdFX0JJThABEiAKHENPTlRBSU5FUl9TTE9UX1RZUEVfS0lUX1NMT1QQAhIhCh1DT05UQUlORVJfU0xPVF9UWVBFX1RSQVlfQ0VMTBADEiQKIENPTlRBSU5FUl9TTE9UX1RZUEVfRklYVFVSRV9TTE9UEAQqzQMKCFRvb2xUeXBlEhkKFVRPT0xfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1RPT0xfVFlQRV9GQVNURU5JTkcQARIWChJUT09MX1RZUEVfR1JJUFBJTkcQAhIVChFUT09MX1RZUEVfQ1VUVElORxADEhcKE1RPT0xfVFlQRV9NRUFTVVJJTkcQBBIZChVUT09MX1RZUEVfUE9TSVRJT05JTkcQBRIYChRUT09MX1RZUEVfRElTUEVOU0lORxAGEhgKFFRPT0xfVFlQRV9JTlNQRUNUSU9OEAcSFAoQVE9PTF9UWVBFX1NBRkVUWRAIEhkKFVRPT0xfVFlQRV9FTEVDVFJPTklDUxAJEh8KG1RPT0xfVFlQRV9GSVhUVVJFX0FDQ0VTU09SWRAKEhUKEVRPT0xfVFlQRV9TSEFQSU5HEAsSFQoRVE9PTF9UWVBFX1RVUk5JTkcQDBIWChJUT09MX1RZUEVfU1RSSUtJTkcQDRIVChFUT09MX1RZUEVfTUFSS0lORxAOEhcKE1RPT0xfVFlQRV9GSU5JU0hJTkcQDxIWChJUT09MX1RZUEVfQUJSQVNJVkUQEBIWChJUT09MX1RZUEVfQ0xFQU5JTkcQESq4AwoIVG9vbFJvbGUSGQoVVE9PTF9ST0xFX1VOU1BFQ0lGSUVEEAASHAoYVE9PTF9ST0xFX0dSSVBfV09SS1BJRUNFEAESIAocVE9PTF9ST0xFX1BPU0lUSU9OX0NPTVBPTkVOVBACEh0KGVRPT0xfUk9MRV9BTElHTl9DT01QT05FTlQQAxIaChZUT09MX1JPTEVfQVBQTFlfVE9SUVVFEAQSIAocVE9PTF9ST0xFX0FQUExZX0xJTkVBUl9GT1JDRRAFEh8KG1RPT0xfUk9MRV9NRUFTVVJFX0RJTUVOU0lPThAGEh0KGVRPT0xfUk9MRV9ERVRFQ1RfUFJFU0VOQ0UQBxIfChtUT09MX1JPTEVfRElTUEVOU0VfTUFURVJJQUwQCBIcChhUT09MX1JPTEVfRVhFQ1VURV9NT1RJT04QCRIgChxUT09MX1JPTEVfU0FGRVRZX0lOVEVSQUNUSU9OEAoSGAoUVE9PTF9ST0xFX0hBTkRMRV9FU0QQCxIfChtUT09MX1JPTEVfVklTVUFMX0lOU1BFQ1RJT04QDBIYChRUT09MX1JPTEVfV0lQRV9DTEVBThANKu8BCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNVTEFURUQQAxIkCiBUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkVfU0FGRRAEEhwKGFRPT0xfUFJPUEVSVFlfQ0FMSUJSQVRFRBAFEh4KGlRPT0xfUFJPUEVSVFlfUVVJQ0tfQ0hBTkdFEAYqgQEKCVJvYm90VHlwZRIaChZST0JPVF9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPUk9CT1RfVFlQRV9VUjNFEAoSEwoPUk9CT1RfVFlQRV9VUjVFEAsSFAoQUk9CT1RfVFlQRV9VUjEwRRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqbQoPUm9ib3REcml2ZXJUeXBlEiEKHVJPQk9UX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUk9CT1RfRFJJVkVSX1RZUEVfVVIQARIdChlST0JPVF9EUklWRVJfVFlQRV9HRU5FUklDEAIqtAEKCUFzc2V0VHlwZRIaChZBU1NFVF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQRV9DQU1FUkEQARIUChBBU1NFVF9UWVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQRV9DT05WRVlPUhADEhUKEUFTU0VUX1RZUEVfU0VOU09SEAQSEgoOQVNTRVRfVFlQRV9ITUkQBRIaChZBU1NFVF9UWVBFX1BBUlRfRkVFREVSEAgqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQrQBCg9jb20uYXNzZW1ibHkudjFCDlJlc291cmNlc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3, file_google_protobuf_timestamp]);
+
+/**
+ * ContainerSlotRef points to a concrete slot on a concrete container instance.
+ *
+ * This is the preferred task-planning reference for storage, kitting, tray, and
+ * fixture interactions because it identifies both the physical carrier and the
+ * addressable place inside it.
+ *
+ * @generated from message assembly.v1.ContainerSlotRef
+ */
+export type ContainerSlotRef = Message<"assembly.v1.ContainerSlotRef"> & {
+  /**
+   * Identifier of the container instance that owns the referenced slot.
+   *
+   * @generated from field: string container_instance_id = 1;
+   */
+  containerInstanceId: string;
+
+  /**
+   * Identifier of the slot definition within that container.
+   *
+   * @generated from field: string slot_id = 2;
+   */
+  slotId: string;
+
+  /**
+   * Semantic kind of slot, used for interpretation, UI behavior, and routing.
+   *
+   * @generated from field: assembly.v1.ContainerSlotType type = 3;
+   */
+  type: ContainerSlotType;
+};
+
+/**
+ * Describes the message assembly.v1.ContainerSlotRef.
+ * Use `create(ContainerSlotRefSchema)` to create a new message.
+ */
+export const ContainerSlotRefSchema: GenMessage<ContainerSlotRef> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 0);
 
 /**
  * @generated from message assembly.v1.CapabilityProfile
@@ -73,7 +114,7 @@ export type CapabilityProfile = Message<"assembly.v1.CapabilityProfile"> & {
  * Use `create(CapabilityProfileSchema)` to create a new message.
  */
 export const CapabilityProfileSchema: GenMessage<CapabilityProfile> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 0);
+  messageDesc(file_assembly_v1_resources, 1);
 
 /**
  * @generated from message assembly.v1.ToolDefinition
@@ -145,7 +186,7 @@ export type ToolDefinition = Message<"assembly.v1.ToolDefinition"> & {
  * Use `create(ToolDefinitionSchema)` to create a new message.
  */
 export const ToolDefinitionSchema: GenMessage<ToolDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 1);
+  messageDesc(file_assembly_v1_resources, 2);
 
 /**
  * @generated from message assembly.v1.ToolDefinitions
@@ -162,7 +203,7 @@ export type ToolDefinitions = Message<"assembly.v1.ToolDefinitions"> & {
  * Use `create(ToolDefinitionsSchema)` to create a new message.
  */
 export const ToolDefinitionsSchema: GenMessage<ToolDefinitions> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 2);
+  messageDesc(file_assembly_v1_resources, 3);
 
 /**
  * @generated from message assembly.v1.ToolInstance
@@ -234,7 +275,7 @@ export type ToolInstance = Message<"assembly.v1.ToolInstance"> & {
  * Use `create(ToolInstanceSchema)` to create a new message.
  */
 export const ToolInstanceSchema: GenMessage<ToolInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 3);
+  messageDesc(file_assembly_v1_resources, 4);
 
 /**
  * @generated from message assembly.v1.ToolInstances
@@ -251,164 +292,313 @@ export type ToolInstances = Message<"assembly.v1.ToolInstances"> & {
  * Use `create(ToolInstancesSchema)` to create a new message.
  */
 export const ToolInstancesSchema: GenMessage<ToolInstances> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 4);
+  messageDesc(file_assembly_v1_resources, 5);
 
 /**
- * @generated from message assembly.v1.FixtureDefinition
+ * ContainerSlotDefinition describes one addressable place inside a container.
+ *
+ * A slot is the thing that operators, robots, and AR guidance normally target.
+ * Examples:
+ * - a shelf bin in storage
+ * - a logical slot in a kit
+ * - a tray pocket
+ * - a fixture nest / clamp position / pallet pocket
+ *
+ * @generated from message assembly.v1.ContainerSlotDefinition
  */
-export type FixtureDefinition = Message<"assembly.v1.FixtureDefinition"> & {
+export type ContainerSlotDefinition = Message<"assembly.v1.ContainerSlotDefinition"> & {
   /**
+   * Stable identifier unique within the parent container definition.
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * Human-readable slot name shown in UI and AR, e.g. "Slot A" or "Motor Nest".
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * Optional icon override for UIs. If empty, the container icon may be reused.
+   *
    * @generated from field: string icon = 3;
    */
   icon: string;
 
   /**
+   * Optional longer description of the slot's purpose or usage constraints.
+   *
    * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: assembly.v1.FixtureType type = 5;
+   * Pose of the slot relative to the container definition coordinate frame.
+   *
+   * @generated from field: geometry.v1.Pose pose = 5;
    */
-  type: FixtureType;
+  pose?: Pose;
 
   /**
-   * This is a capability/compatibility declaration, e.g. fixture-1 supports product A and B
+   * Optional approximate slot extents/bounds, useful for UI, AR, and planning.
    *
-   * @generated from field: repeated string supported_product_definition_ids = 6;
+   * @generated from field: geometry.v1.Vector3 size = 6;
+   */
+  size?: Vector3;
+
+  /**
+   * Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot.
+   *
+   * @generated from field: assembly.v1.ContainerSlotType type = 7;
+   */
+  type: ContainerSlotType;
+
+  /**
+   * Products that this slot explicitly supports holding/presenting.
+   *
+   * @generated from field: repeated string supported_product_definition_ids = 8;
    */
   supportedProductDefinitionIds: string[];
 
   /**
-   * This fixture support products whose root assembly is one of these root parts
+   * Root assemblies/root parts that this slot supports.
    *
-   * @generated from field: repeated string supported_root_part_definition_ids = 7;
+   * @generated from field: repeated string supported_root_part_definition_ids = 9;
    */
   supportedRootPartDefinitionIds: string[];
 
   /**
-   * @generated from field: string model_id = 8;
+   * Specific part definitions that this slot supports.
+   *
+   * @generated from field: repeated string supported_part_definition_ids = 10;
    */
-  modelId: string;
+  supportedPartDefinitionIds: string[];
 
   /**
-   * @generated from field: repeated assembly.v1.KeyValueConstraint constraints = 9;
+   * Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
+   *
+   * @generated from field: repeated assembly.v1.KeyValueConstraint constraints = 11;
    */
   constraints: KeyValueConstraint[];
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 10;
+   * Extension point for domain-specific slot data.
+   *
+   * @generated from field: assembly.v1.CustomProperties custom = 12;
    */
   custom?: CustomProperties;
 };
 
 /**
- * Describes the message assembly.v1.FixtureDefinition.
- * Use `create(FixtureDefinitionSchema)` to create a new message.
+ * Describes the message assembly.v1.ContainerSlotDefinition.
+ * Use `create(ContainerSlotDefinitionSchema)` to create a new message.
  */
-export const FixtureDefinitionSchema: GenMessage<FixtureDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 5);
-
-/**
- * @generated from message assembly.v1.FixtureDefinitions
- */
-export type FixtureDefinitions = Message<"assembly.v1.FixtureDefinitions"> & {
-  /**
-   * @generated from field: repeated assembly.v1.FixtureDefinition items = 1;
-   */
-  items: FixtureDefinition[];
-};
-
-/**
- * Describes the message assembly.v1.FixtureDefinitions.
- * Use `create(FixtureDefinitionsSchema)` to create a new message.
- */
-export const FixtureDefinitionsSchema: GenMessage<FixtureDefinitions> = /*@__PURE__*/
+export const ContainerSlotDefinitionSchema: GenMessage<ContainerSlotDefinition> = /*@__PURE__*/
   messageDesc(file_assembly_v1_resources, 6);
 
 /**
- * @generated from message assembly.v1.FixtureInstance
+ * ContainerDefinition describes a physical holder/carrier with one or more slots.
+ *
+ * This unifies what used to be modeled separately as fixtures, kit trays, storage
+ * bins, and trays/totes. The semantic differences are captured by ContainerType and
+ * ContainerSlotType rather than by separate top-level resources.
+ *
+ * @generated from message assembly.v1.ContainerDefinition
  */
-export type FixtureInstance = Message<"assembly.v1.FixtureInstance"> & {
+export type ContainerDefinition = Message<"assembly.v1.ContainerDefinition"> & {
   /**
+   * Stable identifier of the reusable container definition.
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * Display name, e.g. "Shelf Bin 01", "Starter Kit Tray", or "Motor Pallet".
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * UI icon representing the container.
+   *
    * @generated from field: string icon = 3;
    */
   icon: string;
 
   /**
+   * Human-readable description of the container's purpose.
+   *
    * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: string fixture_definition_id = 5;
+   * High-level category: storage, kit, tray, or fixture.
+   *
+   * @generated from field: assembly.v1.ContainerType type = 5;
    */
-  fixtureDefinitionId: string;
+  type: ContainerType;
 
   /**
-   * @generated from field: string station_id = 6;
+   * Optional 3D model used in simulation, AR, and UI rendering.
+   *
+   * @generated from field: string model_id = 6;
    */
-  stationId: string;
+  modelId: string;
 
   /**
-   * @generated from field: assembly.v1.ResourceStatus status = 7;
+   * Addressable places inside/on the container.
+   *
+   * @generated from field: repeated assembly.v1.ContainerSlotDefinition slots = 7;
    */
-  status: ResourceStatus;
+  slots: ContainerSlotDefinition[];
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 8;
+   * Container-level constraints applying to the whole carrier.
+   *
+   * @generated from field: repeated assembly.v1.KeyValueConstraint constraints = 8;
    */
-  pose?: LocalizedPose;
+  constraints: KeyValueConstraint[];
 
   /**
+   * Extension point for domain-specific container metadata.
+   *
    * @generated from field: assembly.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;
 };
 
 /**
- * Describes the message assembly.v1.FixtureInstance.
- * Use `create(FixtureInstanceSchema)` to create a new message.
+ * Describes the message assembly.v1.ContainerDefinition.
+ * Use `create(ContainerDefinitionSchema)` to create a new message.
  */
-export const FixtureInstanceSchema: GenMessage<FixtureInstance> = /*@__PURE__*/
+export const ContainerDefinitionSchema: GenMessage<ContainerDefinition> = /*@__PURE__*/
   messageDesc(file_assembly_v1_resources, 7);
 
 /**
- * @generated from message assembly.v1.FixtureInstances
+ * @generated from message assembly.v1.ContainerDefinitions
  */
-export type FixtureInstances = Message<"assembly.v1.FixtureInstances"> & {
+export type ContainerDefinitions = Message<"assembly.v1.ContainerDefinitions"> & {
   /**
-   * @generated from field: repeated assembly.v1.FixtureInstance items = 1;
+   * List wrapper used for transport/query responses.
+   *
+   * @generated from field: repeated assembly.v1.ContainerDefinition items = 1;
    */
-  items: FixtureInstance[];
+  items: ContainerDefinition[];
 };
 
 /**
- * Describes the message assembly.v1.FixtureInstances.
- * Use `create(FixtureInstancesSchema)` to create a new message.
+ * Describes the message assembly.v1.ContainerDefinitions.
+ * Use `create(ContainerDefinitionsSchema)` to create a new message.
  */
-export const FixtureInstancesSchema: GenMessage<FixtureInstances> = /*@__PURE__*/
+export const ContainerDefinitionsSchema: GenMessage<ContainerDefinitions> = /*@__PURE__*/
   messageDesc(file_assembly_v1_resources, 8);
+
+/**
+ * ContainerInstance represents a concrete container in a station/cell.
+ *
+ * Examples:
+ * - the actual shelf bin mounted in station A
+ * - the actual pallet currently loaded on an indexing table
+ * - the actual jig installed on a workbench
+ *
+ * @generated from message assembly.v1.ContainerInstance
+ */
+export type ContainerInstance = Message<"assembly.v1.ContainerInstance"> & {
+  /**
+   * Stable identifier of the concrete container instance.
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * Display name of the instance. Often copied from the definition, but may be station-specific.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * UI icon for the instance.
+   *
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * Human-readable description of this particular instance.
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * The reusable container definition that this instance realizes.
+   *
+   * @generated from field: string container_definition_id = 5;
+   */
+  containerDefinitionId: string;
+
+  /**
+   * Station/cell where this container currently belongs or is mounted.
+   *
+   * @generated from field: string station_id = 6;
+   */
+  stationId: string;
+
+  /**
+   * Operational status such as available, disabled, or faulted.
+   *
+   * @generated from field: assembly.v1.ResourceStatus status = 7;
+   */
+  status: ResourceStatus;
+
+  /**
+   * Pose of the container instance in the station/environment.
+   *
+   * @generated from field: geometry.v1.LocalizedPose pose = 8;
+   */
+  pose?: LocalizedPose;
+
+  /**
+   * Extension point for instance-specific data.
+   *
+   * @generated from field: assembly.v1.CustomProperties custom = 9;
+   */
+  custom?: CustomProperties;
+};
+
+/**
+ * Describes the message assembly.v1.ContainerInstance.
+ * Use `create(ContainerInstanceSchema)` to create a new message.
+ */
+export const ContainerInstanceSchema: GenMessage<ContainerInstance> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 9);
+
+/**
+ * @generated from message assembly.v1.ContainerInstances
+ */
+export type ContainerInstances = Message<"assembly.v1.ContainerInstances"> & {
+  /**
+   * List wrapper used for transport/query responses.
+   *
+   * @generated from field: repeated assembly.v1.ContainerInstance items = 1;
+   */
+  items: ContainerInstance[];
+};
+
+/**
+ * Describes the message assembly.v1.ContainerInstances.
+ * Use `create(ContainerInstancesSchema)` to create a new message.
+ */
+export const ContainerInstancesSchema: GenMessage<ContainerInstances> = /*@__PURE__*/
+  messageDesc(file_assembly_v1_resources, 10);
 
 /**
  * @generated from message assembly.v1.RobotDefinition
@@ -487,7 +677,7 @@ export type RobotDefinition = Message<"assembly.v1.RobotDefinition"> & {
  * Use `create(RobotDefinitionSchema)` to create a new message.
  */
 export const RobotDefinitionSchema: GenMessage<RobotDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 9);
+  messageDesc(file_assembly_v1_resources, 11);
 
 /**
  * @generated from message assembly.v1.RobotDefinitions
@@ -504,7 +694,7 @@ export type RobotDefinitions = Message<"assembly.v1.RobotDefinitions"> & {
  * Use `create(RobotDefinitionsSchema)` to create a new message.
  */
 export const RobotDefinitionsSchema: GenMessage<RobotDefinitions> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 10);
+  messageDesc(file_assembly_v1_resources, 12);
 
 /**
  * @generated from message assembly.v1.RobotInstance
@@ -541,21 +731,21 @@ export type RobotInstance = Message<"assembly.v1.RobotInstance"> & {
   stationId: string;
 
   /**
-   * what is attached right now
+   * The tool instance currently mounted on the robot, if any.
    *
    * @generated from field: string mounted_tool_instance_id = 7;
    */
   mountedToolInstanceId: string;
 
   /**
-   * what is in the cell/magazine/dock and usable
+   * Tool instances available to this robot in the cell/tool dock/tool magazine.
    *
    * @generated from field: repeated string available_tool_instance_ids = 8;
    */
   availableToolInstanceIds: string[];
 
   /**
-   * whether dynamic switching is allowed
+   * Whether this robot instance can dynamically change between available tools.
    *
    * @generated from field: bool supports_tool_change = 9;
    */
@@ -582,7 +772,7 @@ export type RobotInstance = Message<"assembly.v1.RobotInstance"> & {
  * Use `create(RobotInstanceSchema)` to create a new message.
  */
 export const RobotInstanceSchema: GenMessage<RobotInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 11);
+  messageDesc(file_assembly_v1_resources, 13);
 
 /**
  * @generated from message assembly.v1.RobotInstances
@@ -599,7 +789,7 @@ export type RobotInstances = Message<"assembly.v1.RobotInstances"> & {
  * Use `create(RobotInstancesSchema)` to create a new message.
  */
 export const RobotInstancesSchema: GenMessage<RobotInstances> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 12);
+  messageDesc(file_assembly_v1_resources, 14);
 
 /**
  * @generated from message assembly.v1.AssetDefinition
@@ -651,7 +841,7 @@ export type AssetDefinition = Message<"assembly.v1.AssetDefinition"> & {
  * Use `create(AssetDefinitionSchema)` to create a new message.
  */
 export const AssetDefinitionSchema: GenMessage<AssetDefinition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 13);
+  messageDesc(file_assembly_v1_resources, 15);
 
 /**
  * @generated from message assembly.v1.AssetDefinitions
@@ -668,7 +858,7 @@ export type AssetDefinitions = Message<"assembly.v1.AssetDefinitions"> & {
  * Use `create(AssetDefinitionsSchema)` to create a new message.
  */
 export const AssetDefinitionsSchema: GenMessage<AssetDefinitions> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 14);
+  messageDesc(file_assembly_v1_resources, 16);
 
 /**
  * @generated from message assembly.v1.AssetInstance
@@ -725,7 +915,7 @@ export type AssetInstance = Message<"assembly.v1.AssetInstance"> & {
  * Use `create(AssetInstanceSchema)` to create a new message.
  */
 export const AssetInstanceSchema: GenMessage<AssetInstance> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 15);
+  messageDesc(file_assembly_v1_resources, 17);
 
 /**
  * @generated from message assembly.v1.AssetInstances
@@ -742,7 +932,108 @@ export type AssetInstances = Message<"assembly.v1.AssetInstances"> & {
  * Use `create(AssetInstancesSchema)` to create a new message.
  */
 export const AssetInstancesSchema: GenMessage<AssetInstances> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_resources, 16);
+  messageDesc(file_assembly_v1_resources, 18);
+
+/**
+ * ContainerType classifies physical holders/carriers used to store, stage, present,
+ * or constrain products and parts in a station.
+ *
+ * This unifies concepts that previously lived as separate resources such as storage
+ * bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
+ * one or more addressable slots.
+ *
+ * @generated from enum assembly.v1.ContainerType
+ */
+export enum ContainerType {
+  /**
+   * @generated from enum value: CONTAINER_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin.
+   *
+   * @generated from enum value: CONTAINER_TYPE_STORAGE = 1;
+   */
+  STORAGE = 1,
+
+  /**
+   * A kit container used to collect the exact set of parts required for later work.
+   *
+   * @generated from enum value: CONTAINER_TYPE_KIT = 2;
+   */
+  KIT = 2,
+
+  /**
+   * A tray/tote/carrier with one or more regular cells or pockets.
+   *
+   * @generated from enum value: CONTAINER_TYPE_TRAY = 3;
+   */
+  TRAY = 3,
+
+  /**
+   * A workholding/presentation container such as a base, clamp, jig, or pallet.
+   *
+   * @generated from enum value: CONTAINER_TYPE_FIXTURE = 4;
+   */
+  FIXTURE = 4,
+}
+
+/**
+ * Describes the enum assembly.v1.ContainerType.
+ */
+export const ContainerTypeSchema: GenEnum<ContainerType> = /*@__PURE__*/
+  enumDesc(file_assembly_v1_resources, 0);
+
+/**
+ * ContainerSlotType classifies the semantic role of a slot within a container.
+ *
+ * The slot type is what task planning, UI rendering, and robot/AR logic typically
+ * interact with. For example, a tray and a fixture may both have slots, but their
+ * semantics differ.
+ *
+ * @generated from enum assembly.v1.ContainerSlotType
+ */
+export enum ContainerSlotType {
+  /**
+   * @generated from enum value: CONTAINER_SLOT_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * A storage slot/bin used primarily as a source/sink location for material.
+   *
+   * @generated from enum value: CONTAINER_SLOT_TYPE_STORAGE_BIN = 1;
+   */
+  STORAGE_BIN = 1,
+
+  /**
+   * A logical slot in a kit used to collect and verify required contents.
+   *
+   * @generated from enum value: CONTAINER_SLOT_TYPE_KIT_SLOT = 2;
+   */
+  KIT_SLOT = 2,
+
+  /**
+   * A regular cell/pocket in a tray, tote, or carrier.
+   *
+   * @generated from enum value: CONTAINER_SLOT_TYPE_TRAY_CELL = 3;
+   */
+  TRAY_CELL = 3,
+
+  /**
+   * A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product.
+   *
+   * @generated from enum value: CONTAINER_SLOT_TYPE_FIXTURE_SLOT = 4;
+   */
+  FIXTURE_SLOT = 4,
+}
+
+/**
+ * Describes the enum assembly.v1.ContainerSlotType.
+ */
+export const ContainerSlotTypeSchema: GenEnum<ContainerSlotType> = /*@__PURE__*/
+  enumDesc(file_assembly_v1_resources, 1);
 
 /**
  * @generated from enum assembly.v1.ToolType
@@ -843,7 +1134,7 @@ export enum ToolType {
  * Describes the enum assembly.v1.ToolType.
  */
 export const ToolTypeSchema: GenEnum<ToolType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 0);
+  enumDesc(file_assembly_v1_resources, 2);
 
 /**
  * @generated from enum assembly.v1.ToolRole
@@ -924,7 +1215,7 @@ export enum ToolRole {
  * Describes the enum assembly.v1.ToolRole.
  */
 export const ToolRoleSchema: GenEnum<ToolRole> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 1);
+  enumDesc(file_assembly_v1_resources, 3);
 
 /**
  * @generated from enum assembly.v1.ToolProperty
@@ -970,43 +1261,7 @@ export enum ToolProperty {
  * Describes the enum assembly.v1.ToolProperty.
  */
 export const ToolPropertySchema: GenEnum<ToolProperty> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 2);
-
-/**
- * @generated from enum assembly.v1.FixtureType
- */
-export enum FixtureType {
-  /**
-   * @generated from enum value: FIXTURE_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: FIXTURE_TYPE_BASE = 1;
-   */
-  BASE = 1,
-
-  /**
-   * @generated from enum value: FIXTURE_TYPE_CLAMP = 2;
-   */
-  CLAMP = 2,
-
-  /**
-   * @generated from enum value: FIXTURE_TYPE_JIG = 3;
-   */
-  JIG = 3,
-
-  /**
-   * @generated from enum value: FIXTURE_TYPE_PALLET = 4;
-   */
-  PALLET = 4,
-}
-
-/**
- * Describes the enum assembly.v1.FixtureType.
- */
-export const FixtureTypeSchema: GenEnum<FixtureType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 3);
+  enumDesc(file_assembly_v1_resources, 4);
 
 /**
  * @generated from enum assembly.v1.RobotType
@@ -1042,7 +1297,7 @@ export enum RobotType {
  * Describes the enum assembly.v1.RobotType.
  */
 export const RobotTypeSchema: GenEnum<RobotType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 4);
+  enumDesc(file_assembly_v1_resources, 5);
 
 /**
  * @generated from enum assembly.v1.RobotDriverType
@@ -1068,7 +1323,7 @@ export enum RobotDriverType {
  * Describes the enum assembly.v1.RobotDriverType.
  */
 export const RobotDriverTypeSchema: GenEnum<RobotDriverType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 5);
+  enumDesc(file_assembly_v1_resources, 6);
 
 /**
  * @generated from enum assembly.v1.AssetType
@@ -1080,36 +1335,53 @@ export enum AssetType {
   UNSPECIFIED = 0,
 
   /**
+   * Vision device used for inspection, guidance, or detection.
+   *
    * @generated from enum value: ASSET_TYPE_CAMERA = 1;
    */
   CAMERA = 1,
 
   /**
+   * Lighting device such as ring light, spot light, or backlight.
+   *
    * @generated from enum value: ASSET_TYPE_LIGHT = 2;
    */
   LIGHT = 2,
 
   /**
+   * Conveying device used to move workpieces or pallets between areas.
+   *
    * @generated from enum value: ASSET_TYPE_CONVEYOR = 3;
    */
   CONVEYOR = 3,
 
   /**
+   * Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor.
+   *
    * @generated from enum value: ASSET_TYPE_SENSOR = 4;
    */
   SENSOR = 4,
 
   /**
+   * Human-machine interface such as touch panel, button box, or stack-light UI endpoint.
+   *
    * @generated from enum value: ASSET_TYPE_HMI = 5;
    */
   HMI = 5,
+
+  /**
+   * Feeder/presentation device used to supply parts in a controlled way.
+   *
+   * @generated from enum value: ASSET_TYPE_PART_FEEDER = 8;
+   */
+  PART_FEEDER = 8,
 }
 
 /**
  * Describes the enum assembly.v1.AssetType.
  */
 export const AssetTypeSchema: GenEnum<AssetType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 6);
+  enumDesc(file_assembly_v1_resources, 7);
 
 /**
  * @generated from enum assembly.v1.AssetDriverType
@@ -1130,5 +1402,5 @@ export enum AssetDriverType {
  * Describes the enum assembly.v1.AssetDriverType.
  */
 export const AssetDriverTypeSchema: GenEnum<AssetDriverType> = /*@__PURE__*/
-  enumDesc(file_assembly_v1_resources, 7);
+  enumDesc(file_assembly_v1_resources, 8);
 

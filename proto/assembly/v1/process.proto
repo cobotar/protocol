@@ -3,9 +3,9 @@ package assembly.v1;
 
 import "assembly/v1/common.proto";
 import "assembly/v1/product.proto";
+import "assembly/v1/resources.proto";
 import "assembly/v1/skill.proto";
 import "geometry/v1/vector3.proto";
-import "assembly/v1/resources.proto";
 
 option csharp_namespace = "Messages.Assembly.V1";
 option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
@@ -16,8 +16,8 @@ enum ProcessType {
   PROCESS_TYPE_DISASSEMBLY = 2; // Example: take mould apart for maintenance
   PROCESS_TYPE_INSPECTION = 3; // Example: QC Check
   PROCESS_TYPE_CHECKLIST = 4; // Example: line startup
-    PROCESS_TYPE_KITTING = 5; // Example: prepare parts kit
-    PROCESS_TYPE_MAINTENANCE = 6; // Example: replace filter
+  PROCESS_TYPE_KITTING = 5; // Example: prepare parts kit
+  PROCESS_TYPE_MAINTENANCE = 6; // Example: replace filter
 }
 
 enum SequenceOperator {
@@ -42,13 +42,13 @@ enum TaskType {
   TASK_TYPE_INSERT = 11;
   TASK_TYPE_HOLD = 12;
   TASK_TYPE_VERIFY = 13;
-    TASK_TYPE_PICK = 14;
-    TASK_TYPE_PLACE = 15;
-    TASK_TYPE_SCAN = 16;
-    TASK_TYPE_WAIT = 17;
-    TASK_TYPE_CHECK = 18;
-    TASK_TYPE_ACKNOWLEDGE = 19;
-    // Start, stop, reset, open, close,
+  TASK_TYPE_PICK = 14;
+  TASK_TYPE_PLACE = 15;
+  TASK_TYPE_SCAN = 16;
+  TASK_TYPE_WAIT = 17;
+  TASK_TYPE_CHECK = 18;
+  TASK_TYPE_ACKNOWLEDGE = 19;
+  // Start, stop, reset, open, close,
 }
 
 enum TaskAssignmentPreference {

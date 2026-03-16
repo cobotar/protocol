@@ -23,15 +23,15 @@ const (
 )
 
 type StationDefinition struct {
-	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	ToolInstanceIds    []string               `protobuf:"bytes,5,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`
-	FixtureInstanceIds []string               `protobuf:"bytes,6,rep,name=fixture_instance_ids,json=fixtureInstanceIds,proto3" json:"fixture_instance_ids,omitempty"`
-	RobotInstanceIds   []string               `protobuf:"bytes,7,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`
-	AssetInstanceIds   []string               `protobuf:"bytes,8,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description          string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon                 string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	ToolInstanceIds      []string               `protobuf:"bytes,5,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`
+	ContainerInstanceIds []string               `protobuf:"bytes,6,rep,name=container_instance_ids,json=containerInstanceIds,proto3" json:"container_instance_ids,omitempty"`
+	RobotInstanceIds     []string               `protobuf:"bytes,7,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`
+	AssetInstanceIds     []string               `protobuf:"bytes,8,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`
 	// TODO: add makers here?
 	Frame         *v1.LocalizedPose `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
 	Custom        *CustomProperties `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
@@ -104,9 +104,9 @@ func (x *StationDefinition) GetToolInstanceIds() []string {
 	return nil
 }
 
-func (x *StationDefinition) GetFixtureInstanceIds() []string {
+func (x *StationDefinition) GetContainerInstanceIds() []string {
 	if x != nil {
-		return x.FixtureInstanceIds
+		return x.ContainerInstanceIds
 	}
 	return nil
 }
@@ -227,14 +227,14 @@ var File_assembly_v1_station_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_station_proto_rawDesc = "" +
 	"\n" +
-	"\x19assembly/v1/station.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x16geometry/v1/pose.proto\"\x90\x03\n" +
+	"\x19assembly/v1/station.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x16geometry/v1/pose.proto\"\x94\x03\n" +
 	"\x11StationDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12*\n" +
-	"\x11tool_instance_ids\x18\x05 \x03(\tR\x0ftoolInstanceIds\x120\n" +
-	"\x14fixture_instance_ids\x18\x06 \x03(\tR\x12fixtureInstanceIds\x12,\n" +
+	"\x11tool_instance_ids\x18\x05 \x03(\tR\x0ftoolInstanceIds\x124\n" +
+	"\x16container_instance_ids\x18\x06 \x03(\tR\x14containerInstanceIds\x12,\n" +
 	"\x12robot_instance_ids\x18\a \x03(\tR\x10robotInstanceIds\x12,\n" +
 	"\x12asset_instance_ids\x18\b \x03(\tR\x10assetInstanceIds\x120\n" +
 	"\x05frame\x18\t \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x125\n" +

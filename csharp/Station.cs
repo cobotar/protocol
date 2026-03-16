@@ -26,28 +26,28 @@ namespace Messages.Assembly.V1 {
           string.Concat(
             "Chlhc3NlbWJseS92MS9zdGF0aW9uLnByb3RvEgthc3NlbWJseS52MRoYYXNz",
             "ZW1ibHkvdjEvY29tbW9uLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3Rv",
-            "IpADChFTdGF0aW9uRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
+            "IpQDChFTdGF0aW9uRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
             "ZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRp",
             "b24SEgoEaWNvbhgEIAEoCVIEaWNvbhIqChF0b29sX2luc3RhbmNlX2lkcxgF",
-            "IAMoCVIPdG9vbEluc3RhbmNlSWRzEjAKFGZpeHR1cmVfaW5zdGFuY2VfaWRz",
-            "GAYgAygJUhJmaXh0dXJlSW5zdGFuY2VJZHMSLAoScm9ib3RfaW5zdGFuY2Vf",
-            "aWRzGAcgAygJUhByb2JvdEluc3RhbmNlSWRzEiwKEmFzc2V0X2luc3RhbmNl",
-            "X2lkcxgIIAMoCVIQYXNzZXRJbnN0YW5jZUlkcxIwCgVmcmFtZRgJIAEoCzIa",
-            "Lmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lEjUKBmN1c3RvbRgK",
-            "IAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSLC",
-            "AQoOQ2VsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiAB",
-            "KAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIK",
-            "BGljb24YBCABKAlSBGljb24SHwoLc3RhdGlvbl9pZHMYBSADKAlSCnN0YXRp",
-            "b25JZHMSNQoGY3VzdG9tGAYgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJv",
-            "cGVydGllc1IGY3VzdG9tQrIBCg9jb20uYXNzZW1ibHkudjFCDFN0YXRpb25Q",
-            "cm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
-            "YXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2Vt",
-            "Ymx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0",
-            "YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z"));
+            "IAMoCVIPdG9vbEluc3RhbmNlSWRzEjQKFmNvbnRhaW5lcl9pbnN0YW5jZV9p",
+            "ZHMYBiADKAlSFGNvbnRhaW5lckluc3RhbmNlSWRzEiwKEnJvYm90X2luc3Rh",
+            "bmNlX2lkcxgHIAMoCVIQcm9ib3RJbnN0YW5jZUlkcxIsChJhc3NldF9pbnN0",
+            "YW5jZV9pZHMYCCADKAlSEGFzc2V0SW5zdGFuY2VJZHMSMAoFZnJhbWUYCSAB",
+            "KAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgVmcmFtZRI1CgZjdXN0",
+            "b20YCiABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0",
+            "b20iwgEKDkNlbGxEZWZpbml0aW9uEg4KAmlkGAEgASgJUgJpZBISCgRuYW1l",
+            "GAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlv",
+            "bhISCgRpY29uGAQgASgJUgRpY29uEh8KC3N0YXRpb25faWRzGAUgAygJUgpz",
+            "dGF0aW9uSWRzEjUKBmN1c3RvbRgGIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3Rv",
+            "bVByb3BlcnRpZXNSBmN1c3RvbUKyAQoPY29tLmFzc2VtYmx5LnYxQgxTdGF0",
+            "aW9uUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5B",
+            "c3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0",
+            "YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.StationDefinition), global::Messages.Assembly.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "ToolInstanceIds", "FixtureInstanceIds", "RobotInstanceIds", "AssetInstanceIds", "Frame", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.StationDefinition), global::Messages.Assembly.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "ToolInstanceIds", "ContainerInstanceIds", "RobotInstanceIds", "AssetInstanceIds", "Frame", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.CellDefinition), global::Messages.Assembly.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "StationIds", "Custom" }, null, null, null, null)
           }));
     }
@@ -95,7 +95,7 @@ namespace Messages.Assembly.V1 {
       description_ = other.description_;
       icon_ = other.icon_;
       toolInstanceIds_ = other.toolInstanceIds_.Clone();
-      fixtureInstanceIds_ = other.fixtureInstanceIds_.Clone();
+      containerInstanceIds_ = other.containerInstanceIds_.Clone();
       robotInstanceIds_ = other.robotInstanceIds_.Clone();
       assetInstanceIds_ = other.assetInstanceIds_.Clone();
       frame_ = other.frame_ != null ? other.frame_.Clone() : null;
@@ -168,15 +168,15 @@ namespace Messages.Assembly.V1 {
       get { return toolInstanceIds_; }
     }
 
-    /// <summary>Field number for the "fixture_instance_ids" field.</summary>
-    public const int FixtureInstanceIdsFieldNumber = 6;
-    private static readonly pb::FieldCodec<string> _repeated_fixtureInstanceIds_codec
+    /// <summary>Field number for the "container_instance_ids" field.</summary>
+    public const int ContainerInstanceIdsFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_containerInstanceIds_codec
         = pb::FieldCodec.ForString(50);
-    private readonly pbc::RepeatedField<string> fixtureInstanceIds_ = new pbc::RepeatedField<string>();
+    private readonly pbc::RepeatedField<string> containerInstanceIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> FixtureInstanceIds {
-      get { return fixtureInstanceIds_; }
+    public pbc::RepeatedField<string> ContainerInstanceIds {
+      get { return containerInstanceIds_; }
     }
 
     /// <summary>Field number for the "robot_instance_ids" field.</summary>
@@ -248,7 +248,7 @@ namespace Messages.Assembly.V1 {
       if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
       if(!toolInstanceIds_.Equals(other.toolInstanceIds_)) return false;
-      if(!fixtureInstanceIds_.Equals(other.fixtureInstanceIds_)) return false;
+      if(!containerInstanceIds_.Equals(other.containerInstanceIds_)) return false;
       if(!robotInstanceIds_.Equals(other.robotInstanceIds_)) return false;
       if(!assetInstanceIds_.Equals(other.assetInstanceIds_)) return false;
       if (!object.Equals(Frame, other.Frame)) return false;
@@ -265,7 +265,7 @@ namespace Messages.Assembly.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       hash ^= toolInstanceIds_.GetHashCode();
-      hash ^= fixtureInstanceIds_.GetHashCode();
+      hash ^= containerInstanceIds_.GetHashCode();
       hash ^= robotInstanceIds_.GetHashCode();
       hash ^= assetInstanceIds_.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
@@ -305,7 +305,7 @@ namespace Messages.Assembly.V1 {
         output.WriteString(Icon);
       }
       toolInstanceIds_.WriteTo(output, _repeated_toolInstanceIds_codec);
-      fixtureInstanceIds_.WriteTo(output, _repeated_fixtureInstanceIds_codec);
+      containerInstanceIds_.WriteTo(output, _repeated_containerInstanceIds_codec);
       robotInstanceIds_.WriteTo(output, _repeated_robotInstanceIds_codec);
       assetInstanceIds_.WriteTo(output, _repeated_assetInstanceIds_codec);
       if (frame_ != null) {
@@ -343,7 +343,7 @@ namespace Messages.Assembly.V1 {
         output.WriteString(Icon);
       }
       toolInstanceIds_.WriteTo(ref output, _repeated_toolInstanceIds_codec);
-      fixtureInstanceIds_.WriteTo(ref output, _repeated_fixtureInstanceIds_codec);
+      containerInstanceIds_.WriteTo(ref output, _repeated_containerInstanceIds_codec);
       robotInstanceIds_.WriteTo(ref output, _repeated_robotInstanceIds_codec);
       assetInstanceIds_.WriteTo(ref output, _repeated_assetInstanceIds_codec);
       if (frame_ != null) {
@@ -377,7 +377,7 @@ namespace Messages.Assembly.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       size += toolInstanceIds_.CalculateSize(_repeated_toolInstanceIds_codec);
-      size += fixtureInstanceIds_.CalculateSize(_repeated_fixtureInstanceIds_codec);
+      size += containerInstanceIds_.CalculateSize(_repeated_containerInstanceIds_codec);
       size += robotInstanceIds_.CalculateSize(_repeated_robotInstanceIds_codec);
       size += assetInstanceIds_.CalculateSize(_repeated_assetInstanceIds_codec);
       if (frame_ != null) {
@@ -411,7 +411,7 @@ namespace Messages.Assembly.V1 {
         Icon = other.Icon;
       }
       toolInstanceIds_.Add(other.toolInstanceIds_);
-      fixtureInstanceIds_.Add(other.fixtureInstanceIds_);
+      containerInstanceIds_.Add(other.containerInstanceIds_);
       robotInstanceIds_.Add(other.robotInstanceIds_);
       assetInstanceIds_.Add(other.assetInstanceIds_);
       if (other.frame_ != null) {
@@ -466,7 +466,7 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 50: {
-            fixtureInstanceIds_.AddEntriesFrom(input, _repeated_fixtureInstanceIds_codec);
+            containerInstanceIds_.AddEntriesFrom(input, _repeated_containerInstanceIds_codec);
             break;
           }
           case 58: {
@@ -531,7 +531,7 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 50: {
-            fixtureInstanceIds_.AddEntriesFrom(ref input, _repeated_fixtureInstanceIds_codec);
+            containerInstanceIds_.AddEntriesFrom(ref input, _repeated_containerInstanceIds_codec);
             break;
           }
           case 58: {
