@@ -28,78 +28,87 @@ namespace Messages.Assembly.V1 {
             "ZW1ibHkvdjEvY29tbW9uLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3Rv",
             "GhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIkUKCkRpbWVuc2lvbnMSEQoE",
             "eF9tbRgBIAEoAVIDeE1tEhEKBHlfbW0YAiABKAFSA3lNbRIRCgR6X21tGAMg",
-            "ASgBUgN6TW0iOAoMTWF0ZXJpYWxTcGVjEhIKBG5hbWUYASABKAlSBG5hbWUS",
-            "FAoFZ3JhZGUYAiABKAlSBWdyYWRlItMCChNQYXJ0SGFuZGxpbmdQcm9maWxl",
-            "EhgKB2ZyYWdpbGUYASABKAhSB2ZyYWdpbGUSIwoNZXNkX3NlbnNpdGl2ZRgC",
-            "IAEoCFIMZXNkU2Vuc2l0aXZlEjMKFnJlcXVpcmVzX3R3b19oYW5kX2xpZnQY",
-            "AyABKAhSE3JlcXVpcmVzVHdvSGFuZExpZnQSOAoYcmVxdWlyZXNfZml4dHVy",
-            "ZV9zdXBwb3J0GAQgASgIUhZyZXF1aXJlc0ZpeHR1cmVTdXBwb3J0EicKEG1h",
-            "eF9ncmlwX2ZvcmNlX24YBSABKAFSDW1heEdyaXBGb3JjZU4SIgoNbWF4X3Rv",
-            "cnF1ZV9ubRgGIAEoAVILbWF4VG9ycXVlTm0SQQoLY29uc3RyYWludHMYByAD",
-            "KAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFp",
-            "bnRzIpAECg5QYXJ0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
-            "ZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
-            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpCgR0eXBlGAUgASgOMhUuYXNzZW1i",
-            "bHkudjEuUGFydFR5cGVSBHR5cGUSGQoId2VpZ2h0X2cYBiABKANSB3dlaWdo",
-            "dEcSNwoKZGltZW5zaW9ucxgHIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lv",
-            "bnNSCmRpbWVuc2lvbnMSNQoIbWF0ZXJpYWwYCCABKAsyGS5hc3NlbWJseS52",
-            "MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEigKEGRlZmF1bHRfbW9kZWxfaWQY",
-            "CSABKAlSDmRlZmF1bHRNb2RlbElkEjwKCGhhbmRsaW5nGAogASgLMiAuYXNz",
-            "ZW1ibHkudjEuUGFydEhhbmRsaW5nUHJvZmlsZVIIaGFuZGxpbmcSTwoTZXh0",
-            "ZXJuYWxfcmVmZXJlbmNlcxgLIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFs",
-            "UmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGAwgASgL",
-            "Mh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIsgCChFQ",
-            "cm9kdWN0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
-            "ASgJUgtkZXNjcmlwdGlvbhIgCgxyb290X25vZGVfaWQYBSABKAlSCnJvb3RO",
-            "b2RlSWQSLwoFbm9kZXMYBiADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5v",
-            "ZGVSBW5vZGVzEk8KE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3Nl",
-            "bWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2Vz",
-            "EjUKBmN1c3RvbRgIIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRp",
-            "ZXNSBmN1c3RvbSJIChBWYXJpYW50Q29uZGl0aW9uEhwKCWRpbWVuc2lvbhgB",
-            "IAEoCVIJZGltZW5zaW9uEhYKBnZhbHVlcxgCIAMoCVIGdmFsdWVzIvkFCgxB",
-            "c3NlbWJseU5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5h",
-            "bWUSJAoOcGFyZW50X25vZGVfaWQYAyABKAlSDHBhcmVudE5vZGVJZBIpCgRr",
-            "aW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmRSBGtpbmQSLAoScGFy",
-            "dF9kZWZpbml0aW9uX2lkGAUgASgJUhBwYXJ0RGVmaW5pdGlvbklkEioKEW92",
-            "ZXJyaWRlX21vZGVsX2lkGAYgASgJUg9vdmVycmlkZU1vZGVsSWQSMAoKbG9j",
-            "YWxfcG9zZRgHIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2VSCWxvY2FsUG9zZRIk",
-            "Cg5jaGlsZF9ub2RlX2lkcxgIIAMoCVIMY2hpbGROb2RlSWRzEiMKDXNlcXVl",
-            "bmNlX2hpbnQYCSABKAVSDHNlcXVlbmNlSGludBIuChNjYWRfb2NjdXJyZW5j",
-            "ZV9wYXRoGAogASgJUhFjYWRPY2N1cnJlbmNlUGF0aBJBChBqb2luX21ldGhv",
-            "ZF9oaW50GAsgASgOMhcuYXNzZW1ibHkudjEuSm9pbk1ldGhvZFIOam9pbk1l",
-            "dGhvZEhpbnQSRAoTaW5zZXJ0aW9uX2F4aXNfaGludBgMIAEoCzIULmdlb21l",
-            "dHJ5LnYxLlZlY3RvcjNSEWluc2VydGlvbkF4aXNIaW50EkwKF3ByZWZlcnJl",
-            "ZF9hcHByb2FjaF9oaW50GA0gASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IV",
-            "cHJlZmVycmVkQXBwcm9hY2hIaW50EhoKCG9wdGlvbmFsGA4gASgIUghvcHRp",
-            "b25hbBJDCg1hcHBsaWNhYmlsaXR5GA8gAygLMh0uYXNzZW1ibHkudjEuVmFy",
-            "aWFudENvbmRpdGlvblINYXBwbGljYWJpbGl0eRI1CgZjdXN0b20YECABKAsy",
-            "HS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iRAoPUGFy",
-            "dERlZmluaXRpb25zEjEKBWl0ZW1zGAEgAygLMhsuYXNzZW1ibHkudjEuUGFy",
-            "dERlZmluaXRpb25SBWl0ZW1zIkoKElByb2R1Y3REZWZpbml0aW9ucxI0CgVp",
-            "dGVtcxgBIAMoCzIeLmFzc2VtYmx5LnYxLlByb2R1Y3REZWZpbml0aW9uUgVp",
-            "dGVtcyq5AQoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
-            "FwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5F",
-            "UhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9D",
-            "T05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBF",
-            "X1BBQ0tBR0lORxAGKpYBCghOb2RlS2luZBIZChVOT0RFX0tJTkRfVU5TUEVD",
-            "SUZJRUQQABITCg9OT0RFX0tJTkRfR1JPVVAQARIdChlOT0RFX0tJTkRfUEFS",
-            "VF9PQ0NVUlJFTkNFEAISJAogTk9ERV9LSU5EX1NVQkFTU0VNQkxZX09DQ1VS",
-            "UkVOQ0UQAxIVChFOT0RFX0tJTkRfUEFUVEVSThAEKtMBCgpKb2luTWV0aG9k",
-            "EhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQSk9JTl9NRVRIT0Rf",
-            "Tk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkKFUpPSU5fTUVUSE9E",
-            "X1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBfRklUEAQSGAoUSk9J",
-            "Tl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhPRF9XRUxEEAYSFQoR",
-            "Sk9JTl9NRVRIT0RfUExBQ0UQB0KyAQoPY29tLmFzc2VtYmx5LnYxQgxQcm9k",
-            "dWN0UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
-            "Z2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5B",
-            "c3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0",
-            "YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw=="));
+            "ASgBUgN6TW0icwoMTWF0ZXJpYWxTcGVjEjkKCGNhdGVnb3J5GAEgASgOMh0u",
+            "YXNzZW1ibHkudjEuTWF0ZXJpYWxDYXRlZ29yeVIIY2F0ZWdvcnkSEgoEbmFt",
+            "ZRgCIAEoCVIEbmFtZRIUCgVncmFkZRgDIAEoCVIFZ3JhZGUi0wIKE1BhcnRI",
+            "YW5kbGluZ1Byb2ZpbGUSGAoHZnJhZ2lsZRgBIAEoCFIHZnJhZ2lsZRIjCg1l",
+            "c2Rfc2Vuc2l0aXZlGAIgASgIUgxlc2RTZW5zaXRpdmUSMwoWcmVxdWlyZXNf",
+            "dHdvX2hhbmRfbGlmdBgDIAEoCFITcmVxdWlyZXNUd29IYW5kTGlmdBI4Chhy",
+            "ZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAhSFnJlcXVpcmVzRml4dHVy",
+            "ZVN1cHBvcnQSJwoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoAVINbWF4R3JpcEZv",
+            "cmNlThIiCg1tYXhfdG9ycXVlX25tGAYgASgBUgttYXhUb3JxdWVObRJBCgtj",
+            "b25zdHJhaW50cxgHIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3Ry",
+            "YWludFILY29uc3RyYWludHMikAQKDlBhcnREZWZpbml0aW9uEg4KAmlkGAEg",
+            "ASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGlj",
+            "b24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKBHR5cGUY",
+            "BSABKA4yFS5hc3NlbWJseS52MS5QYXJ0VHlwZVIEdHlwZRIZCgh3ZWlnaHRf",
+            "ZxgGIAEoA1IHd2VpZ2h0RxI3CgpkaW1lbnNpb25zGAcgASgLMhcuYXNzZW1i",
+            "bHkudjEuRGltZW5zaW9uc1IKZGltZW5zaW9ucxI1CghtYXRlcmlhbBgIIAEo",
+            "CzIZLmFzc2VtYmx5LnYxLk1hdGVyaWFsU3BlY1IIbWF0ZXJpYWwSKAoQZGVm",
+            "YXVsdF9tb2RlbF9pZBgJIAEoCVIOZGVmYXVsdE1vZGVsSWQSPAoIaGFuZGxp",
+            "bmcYCiABKAsyIC5hc3NlbWJseS52MS5QYXJ0SGFuZGxpbmdQcm9maWxlUgho",
+            "YW5kbGluZxJPChNleHRlcm5hbF9yZWZlcmVuY2VzGAsgAygLMh4uYXNzZW1i",
+            "bHkudjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxI1",
+            "CgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVz",
+            "UgZjdXN0b20iyAIKEVByb2R1Y3REZWZpbml0aW9uEg4KAmlkGAEgASgJUgJp",
+            "ZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
+            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiAKDHJvb3Rfbm9kZV9p",
+            "ZBgFIAEoCVIKcm9vdE5vZGVJZBIvCgVub2RlcxgGIAMoCzIZLmFzc2VtYmx5",
+            "LnYxLkFzc2VtYmx5Tm9kZVIFbm9kZXMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNl",
+            "cxgHIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRl",
+            "cm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEu",
+            "Q3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkgKEFZhcmlhbnRDb25kaXRpb24S",
+            "HAoJZGltZW5zaW9uGAEgASgJUglkaW1lbnNpb24SFgoGdmFsdWVzGAIgAygJ",
+            "UgZ2YWx1ZXMi+QUKDEFzc2VtYmx5Tm9kZRIOCgJpZBgBIAEoCVICaWQSEgoE",
+            "bmFtZRgCIAEoCVIEbmFtZRIkCg5wYXJlbnRfbm9kZV9pZBgDIAEoCVIMcGFy",
+            "ZW50Tm9kZUlkEikKBGtpbmQYBCABKA4yFS5hc3NlbWJseS52MS5Ob2RlS2lu",
+            "ZFIEa2luZBIsChJwYXJ0X2RlZmluaXRpb25faWQYBSABKAlSEHBhcnREZWZp",
+            "bml0aW9uSWQSKgoRb3ZlcnJpZGVfbW9kZWxfaWQYBiABKAlSD292ZXJyaWRl",
+            "TW9kZWxJZBIwCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9z",
+            "ZVIJbG9jYWxQb3NlEiQKDmNoaWxkX25vZGVfaWRzGAggAygJUgxjaGlsZE5v",
+            "ZGVJZHMSIwoNc2VxdWVuY2VfaGludBgJIAEoBVIMc2VxdWVuY2VIaW50Ei4K",
+            "E2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAlSEWNhZE9jY3VycmVuY2VQYXRo",
+            "EkEKEGpvaW5fbWV0aG9kX2hpbnQYCyABKA4yFy5hc3NlbWJseS52MS5Kb2lu",
+            "TWV0aG9kUg5qb2luTWV0aG9kSGludBJEChNpbnNlcnRpb25fYXhpc19oaW50",
+            "GAwgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IRaW5zZXJ0aW9uQXhpc0hp",
+            "bnQSTAoXcHJlZmVycmVkX2FwcHJvYWNoX2hpbnQYDSABKAsyFC5nZW9tZXRy",
+            "eS52MS5WZWN0b3IzUhVwcmVmZXJyZWRBcHByb2FjaEhpbnQSGgoIb3B0aW9u",
+            "YWwYDiABKAhSCG9wdGlvbmFsEkMKDWFwcGxpY2FiaWxpdHkYDyADKAsyHS5h",
+            "c3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uUg1hcHBsaWNhYmlsaXR5EjUK",
+            "BmN1c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNS",
+            "BmN1c3RvbSJECg9QYXJ0RGVmaW5pdGlvbnMSMQoFaXRlbXMYASADKAsyGy5h",
+            "c3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvblIFaXRlbXMiSgoSUHJvZHVjdERl",
+            "ZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEuUHJvZHVj",
+            "dERlZmluaXRpb25SBWl0ZW1zKrkBCghQYXJ0VHlwZRIZChVQQVJUX1RZUEVf",
+            "VU5TUEVDSUZJRUQQABIXChNQQVJUX1RZUEVfQ09NUE9ORU5UEAESFgoSUEFS",
+            "VF9UWVBFX0ZBU1RFTkVSEAISGQoVUEFSVF9UWVBFX1NVQkFTU0VNQkxZEAMS",
+            "GAoUUEFSVF9UWVBFX0NPTlNVTUFCTEUQBBITCg9QQVJUX1RZUEVfTEFCRUwQ",
+            "BRIXChNQQVJUX1RZUEVfUEFDS0FHSU5HEAYqlgEKCE5vZGVLaW5kEhkKFU5P",
+            "REVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0K",
+            "GU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VC",
+            "QVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq",
+            "0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIU",
+            "ChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAIS",
+            "GQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05B",
+            "UF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVU",
+            "SE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKsQCChBNYXRlcmlh",
+            "bENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAAS",
+            "GwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRF",
+            "R09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVS",
+            "EAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJ",
+            "QUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dM",
+            "QVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFM",
+            "X0NBVEVHT1JZX0ZPQU0QCBIbChdNQVRFUklBTF9DQVRFR09SWV9PVEhFUhAJ",
+            "QrIBCg9jb20uYXNzZW1ibHkudjFCDFByb2R1Y3RQcm90b1ABWjtnaXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNz",
+            "ZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1i",
+            "bHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.PartType), typeof(global::Messages.Assembly.V1.NodeKind), typeof(global::Messages.Assembly.V1.JoinMethod), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.PartType), typeof(global::Messages.Assembly.V1.NodeKind), typeof(global::Messages.Assembly.V1.JoinMethod), typeof(global::Messages.Assembly.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.Dimensions), global::Messages.Assembly.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.MaterialSpec), global::Messages.Assembly.V1.MaterialSpec.Parser, new[]{ "Name", "Grade" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.MaterialSpec), global::Messages.Assembly.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartHandlingProfile), global::Messages.Assembly.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinition), global::Messages.Assembly.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
@@ -160,6 +169,46 @@ namespace Messages.Assembly.V1 {
     [pbr::OriginalName("JOIN_METHOD_ADHESIVE")] Adhesive = 5,
     [pbr::OriginalName("JOIN_METHOD_WELD")] Weld = 6,
     [pbr::OriginalName("JOIN_METHOD_PLACE")] Place = 7,
+  }
+
+  public enum MaterialCategory {
+    [pbr::OriginalName("MATERIAL_CATEGORY_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Metals and metal alloys
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_METAL")] Metal = 1,
+    /// <summary>
+    /// Thermoplastics / thermosets
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_POLYMER")] Polymer = 2,
+    /// <summary>
+    /// Flexible rubber-like materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_ELASTOMER")] Elastomer = 3,
+    /// <summary>
+    /// Fiber-reinforced / layered materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_COMPOSITE")] Composite = 4,
+    /// <summary>
+    /// Ceramics and similar brittle inorganic materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_CERAMIC")] Ceramic = 5,
+    /// <summary>
+    /// Glass and glass-like transparent materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_GLASS")] Glass = 6,
+    /// <summary>
+    /// Wood and wood-derived materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_WOOD")] Wood = 7,
+    /// <summary>
+    /// Cellular / expanded materials
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_FOAM")] Foam = 8,
+    /// <summary>
+    /// Anything not fitting the categories above
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_OTHER")] Other = 9,
   }
 
   #endregion
@@ -438,7 +487,7 @@ namespace Messages.Assembly.V1 {
   }
 
   /// <summary>
-  /// MaterialSpec is meant to capture the engineering material identity of a part
+  /// MaterialSpec is meant to capture the engineering material identity of a part.
   /// name → the material family / type
   /// grade → the standardized grade or specification
   /// Examples:
@@ -485,6 +534,7 @@ namespace Messages.Assembly.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MaterialSpec(MaterialSpec other) : this() {
+      category_ = other.category_;
       name_ = other.name_;
       grade_ = other.grade_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -496,11 +546,26 @@ namespace Messages.Assembly.V1 {
       return new MaterialSpec(this);
     }
 
+    /// <summary>Field number for the "category" field.</summary>
+    public const int CategoryFieldNumber = 1;
+    private global::Messages.Assembly.V1.MaterialCategory category_ = global::Messages.Assembly.V1.MaterialCategory.Unspecified;
+    /// <summary>
+    /// Broad material class, e.g. metal, polymer, elastomer
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Assembly.V1.MaterialCategory Category {
+      get { return category_; }
+      set {
+        category_ = value;
+      }
+    }
+
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
+    public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
-    /// Material family
+    /// Material family, e.g. aluminium, steel, ABS
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -512,10 +577,10 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "grade" field.</summary>
-    public const int GradeFieldNumber = 2;
+    public const int GradeFieldNumber = 3;
     private string grade_ = "";
     /// <summary>
-    /// Standard/Specification
+    /// Standard/specification, e.g. 6061-T6, S355JR, AISI 304
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -541,6 +606,7 @@ namespace Messages.Assembly.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Category != other.Category) return false;
       if (Name != other.Name) return false;
       if (Grade != other.Grade) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -550,6 +616,7 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Category != global::Messages.Assembly.V1.MaterialCategory.Unspecified) hash ^= Category.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Grade.Length != 0) hash ^= Grade.GetHashCode();
       if (_unknownFields != null) {
@@ -570,12 +637,16 @@ namespace Messages.Assembly.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Category != global::Messages.Assembly.V1.MaterialCategory.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Category);
+      }
       if (Name.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Grade.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Grade);
       }
       if (_unknownFields != null) {
@@ -588,12 +659,16 @@ namespace Messages.Assembly.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Category != global::Messages.Assembly.V1.MaterialCategory.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Category);
+      }
       if (Name.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Grade.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Grade);
       }
       if (_unknownFields != null) {
@@ -606,6 +681,9 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Category != global::Messages.Assembly.V1.MaterialCategory.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Category);
+      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
@@ -623,6 +701,9 @@ namespace Messages.Assembly.V1 {
     public void MergeFrom(MaterialSpec other) {
       if (other == null) {
         return;
+      }
+      if (other.Category != global::Messages.Assembly.V1.MaterialCategory.Unspecified) {
+        Category = other.Category;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -649,11 +730,15 @@ namespace Messages.Assembly.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Name = input.ReadString();
+          case 8: {
+            Category = (global::Messages.Assembly.V1.MaterialCategory) input.ReadEnum();
             break;
           }
           case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
             Grade = input.ReadString();
             break;
           }
@@ -676,11 +761,15 @@ namespace Messages.Assembly.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            Name = input.ReadString();
+          case 8: {
+            Category = (global::Messages.Assembly.V1.MaterialCategory) input.ReadEnum();
             break;
           }
           case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
             Grade = input.ReadString();
             break;
           }

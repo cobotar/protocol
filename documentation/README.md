@@ -230,6 +230,7 @@
     - [VariantCondition](#assembly-v1-VariantCondition)
   
     - [JoinMethod](#assembly-v1-JoinMethod)
+    - [MaterialCategory](#assembly-v1-MaterialCategory)
     - [NodeKind](#assembly-v1-NodeKind)
     - [PartType](#assembly-v1-PartType)
   
@@ -3373,7 +3374,7 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 <a name="assembly-v1-MaterialSpec"></a>
 
 ### MaterialSpec
-MaterialSpec is meant to capture the engineering material identity of a part
+MaterialSpec is meant to capture the engineering material identity of a part.
 name → the material family / type
 grade → the standardized grade or specification
 Examples:
@@ -3388,8 +3389,9 @@ name: TPU, grade: 70 Shore A
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Material family |
-| grade | [string](#string) |  | Standard/Specification |
+| category | [MaterialCategory](#assembly-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
+| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS |
+| grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
 
 
 
@@ -3528,6 +3530,26 @@ name: TPU, grade: 70 Shore A
 | JOIN_METHOD_ADHESIVE | 5 |  |
 | JOIN_METHOD_WELD | 6 |  |
 | JOIN_METHOD_PLACE | 7 |  |
+
+
+
+<a name="assembly-v1-MaterialCategory"></a>
+
+### MaterialCategory
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MATERIAL_CATEGORY_UNSPECIFIED | 0 |  |
+| MATERIAL_CATEGORY_METAL | 1 | Metals and metal alloys |
+| MATERIAL_CATEGORY_POLYMER | 2 | Thermoplastics / thermosets |
+| MATERIAL_CATEGORY_ELASTOMER | 3 | Flexible rubber-like materials |
+| MATERIAL_CATEGORY_COMPOSITE | 4 | Fiber-reinforced / layered materials |
+| MATERIAL_CATEGORY_CERAMIC | 5 | Ceramics and similar brittle inorganic materials |
+| MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
+| MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
+| MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
+| MATERIAL_CATEGORY_OTHER | 9 | Anything not fitting the categories above |
 
 
 

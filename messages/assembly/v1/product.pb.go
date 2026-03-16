@@ -208,6 +208,76 @@ func (JoinMethod) EnumDescriptor() ([]byte, []int) {
 	return file_assembly_v1_product_proto_rawDescGZIP(), []int{2}
 }
 
+type MaterialCategory int32
+
+const (
+	MaterialCategory_MATERIAL_CATEGORY_UNSPECIFIED MaterialCategory = 0
+	MaterialCategory_MATERIAL_CATEGORY_METAL       MaterialCategory = 1 // Metals and metal alloys
+	MaterialCategory_MATERIAL_CATEGORY_POLYMER     MaterialCategory = 2 // Thermoplastics / thermosets
+	MaterialCategory_MATERIAL_CATEGORY_ELASTOMER   MaterialCategory = 3 // Flexible rubber-like materials
+	MaterialCategory_MATERIAL_CATEGORY_COMPOSITE   MaterialCategory = 4 // Fiber-reinforced / layered materials
+	MaterialCategory_MATERIAL_CATEGORY_CERAMIC     MaterialCategory = 5 // Ceramics and similar brittle inorganic materials
+	MaterialCategory_MATERIAL_CATEGORY_GLASS       MaterialCategory = 6 // Glass and glass-like transparent materials
+	MaterialCategory_MATERIAL_CATEGORY_WOOD        MaterialCategory = 7 // Wood and wood-derived materials
+	MaterialCategory_MATERIAL_CATEGORY_FOAM        MaterialCategory = 8 // Cellular / expanded materials
+	MaterialCategory_MATERIAL_CATEGORY_OTHER       MaterialCategory = 9 // Anything not fitting the categories above
+)
+
+// Enum value maps for MaterialCategory.
+var (
+	MaterialCategory_name = map[int32]string{
+		0: "MATERIAL_CATEGORY_UNSPECIFIED",
+		1: "MATERIAL_CATEGORY_METAL",
+		2: "MATERIAL_CATEGORY_POLYMER",
+		3: "MATERIAL_CATEGORY_ELASTOMER",
+		4: "MATERIAL_CATEGORY_COMPOSITE",
+		5: "MATERIAL_CATEGORY_CERAMIC",
+		6: "MATERIAL_CATEGORY_GLASS",
+		7: "MATERIAL_CATEGORY_WOOD",
+		8: "MATERIAL_CATEGORY_FOAM",
+		9: "MATERIAL_CATEGORY_OTHER",
+	}
+	MaterialCategory_value = map[string]int32{
+		"MATERIAL_CATEGORY_UNSPECIFIED": 0,
+		"MATERIAL_CATEGORY_METAL":       1,
+		"MATERIAL_CATEGORY_POLYMER":     2,
+		"MATERIAL_CATEGORY_ELASTOMER":   3,
+		"MATERIAL_CATEGORY_COMPOSITE":   4,
+		"MATERIAL_CATEGORY_CERAMIC":     5,
+		"MATERIAL_CATEGORY_GLASS":       6,
+		"MATERIAL_CATEGORY_WOOD":        7,
+		"MATERIAL_CATEGORY_FOAM":        8,
+		"MATERIAL_CATEGORY_OTHER":       9,
+	}
+)
+
+func (x MaterialCategory) Enum() *MaterialCategory {
+	p := new(MaterialCategory)
+	*p = x
+	return p
+}
+
+func (x MaterialCategory) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (MaterialCategory) Descriptor() protoreflect.EnumDescriptor {
+	return file_assembly_v1_product_proto_enumTypes[3].Descriptor()
+}
+
+func (MaterialCategory) Type() protoreflect.EnumType {
+	return &file_assembly_v1_product_proto_enumTypes[3]
+}
+
+func (x MaterialCategory) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use MaterialCategory.Descriptor instead.
+func (MaterialCategory) EnumDescriptor() ([]byte, []int) {
+	return file_assembly_v1_product_proto_rawDescGZIP(), []int{3}
+}
+
 type Dimensions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	XMm           float64                `protobuf:"fixed64,1,opt,name=x_mm,json=xMm,proto3" json:"x_mm,omitempty"`
@@ -268,7 +338,7 @@ func (x *Dimensions) GetZMm() float64 {
 	return 0
 }
 
-// MaterialSpec is meant to capture the engineering material identity of a part
+// MaterialSpec is meant to capture the engineering material identity of a part.
 // name → the material family / type
 // grade → the standardized grade or specification
 // Examples:
@@ -281,8 +351,9 @@ func (x *Dimensions) GetZMm() float64 {
 // name: TPU, grade: 70 Shore A
 type MaterialSpec struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`   // Material family
-	Grade         string                 `protobuf:"bytes,2,opt,name=grade,proto3" json:"grade,omitempty"` // Standard/Specification
+	Category      MaterialCategory       `protobuf:"varint,1,opt,name=category,proto3,enum=assembly.v1.MaterialCategory" json:"category,omitempty"` // Broad material class, e.g. metal, polymer, elastomer
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                            // Material family, e.g. aluminium, steel, ABS
+	Grade         string                 `protobuf:"bytes,3,opt,name=grade,proto3" json:"grade,omitempty"`                                          // Standard/specification, e.g. 6061-T6, S355JR, AISI 304
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -315,6 +386,13 @@ func (x *MaterialSpec) ProtoReflect() protoreflect.Message {
 // Deprecated: Use MaterialSpec.ProtoReflect.Descriptor instead.
 func (*MaterialSpec) Descriptor() ([]byte, []int) {
 	return file_assembly_v1_product_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *MaterialSpec) GetCategory() MaterialCategory {
+	if x != nil {
+		return x.Category
+	}
+	return MaterialCategory_MATERIAL_CATEGORY_UNSPECIFIED
 }
 
 func (x *MaterialSpec) GetName() string {
@@ -968,10 +1046,11 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"Dimensions\x12\x11\n" +
 	"\x04x_mm\x18\x01 \x01(\x01R\x03xMm\x12\x11\n" +
 	"\x04y_mm\x18\x02 \x01(\x01R\x03yMm\x12\x11\n" +
-	"\x04z_mm\x18\x03 \x01(\x01R\x03zMm\"8\n" +
-	"\fMaterialSpec\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
-	"\x05grade\x18\x02 \x01(\tR\x05grade\"\xd3\x02\n" +
+	"\x04z_mm\x18\x03 \x01(\x01R\x03zMm\"s\n" +
+	"\fMaterialSpec\x129\n" +
+	"\bcategory\x18\x01 \x01(\x0e2\x1d.assembly.v1.MaterialCategoryR\bcategory\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
+	"\x05grade\x18\x03 \x01(\tR\x05grade\"\xd3\x02\n" +
 	"\x13PartHandlingProfile\x12\x18\n" +
 	"\afragile\x18\x01 \x01(\bR\afragile\x12#\n" +
 	"\resd_sensitive\x18\x02 \x01(\bR\fesdSensitive\x123\n" +
@@ -1055,7 +1134,18 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x14JOIN_METHOD_SNAP_FIT\x10\x04\x12\x18\n" +
 	"\x14JOIN_METHOD_ADHESIVE\x10\x05\x12\x14\n" +
 	"\x10JOIN_METHOD_WELD\x10\x06\x12\x15\n" +
-	"\x11JOIN_METHOD_PLACE\x10\aB\xb2\x01\n" +
+	"\x11JOIN_METHOD_PLACE\x10\a*\xc4\x02\n" +
+	"\x10MaterialCategory\x12!\n" +
+	"\x1dMATERIAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17MATERIAL_CATEGORY_METAL\x10\x01\x12\x1d\n" +
+	"\x19MATERIAL_CATEGORY_POLYMER\x10\x02\x12\x1f\n" +
+	"\x1bMATERIAL_CATEGORY_ELASTOMER\x10\x03\x12\x1f\n" +
+	"\x1bMATERIAL_CATEGORY_COMPOSITE\x10\x04\x12\x1d\n" +
+	"\x19MATERIAL_CATEGORY_CERAMIC\x10\x05\x12\x1b\n" +
+	"\x17MATERIAL_CATEGORY_GLASS\x10\x06\x12\x1a\n" +
+	"\x16MATERIAL_CATEGORY_WOOD\x10\a\x12\x1a\n" +
+	"\x16MATERIAL_CATEGORY_FOAM\x10\b\x12\x1b\n" +
+	"\x17MATERIAL_CATEGORY_OTHER\x10\tB\xb2\x01\n" +
 	"\x0fcom.assembly.v1B\fProductProtoP\x01Z;github.com/cobotar/protocol/messages/assembly/v1;assemblyv1\xa2\x02\x03AXX\xaa\x02\x14Messages.Assembly.V1\xca\x02\vAssembly\\V1\xe2\x02\x17Assembly\\V1\\GPBMetadata\xea\x02\fAssembly::V1b\x06proto3"
 
 var (
@@ -1070,52 +1160,54 @@ func file_assembly_v1_product_proto_rawDescGZIP() []byte {
 	return file_assembly_v1_product_proto_rawDescData
 }
 
-var file_assembly_v1_product_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_assembly_v1_product_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
 var file_assembly_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_assembly_v1_product_proto_goTypes = []any{
 	(PartType)(0),               // 0: assembly.v1.PartType
 	(NodeKind)(0),               // 1: assembly.v1.NodeKind
 	(JoinMethod)(0),             // 2: assembly.v1.JoinMethod
-	(*Dimensions)(nil),          // 3: assembly.v1.Dimensions
-	(*MaterialSpec)(nil),        // 4: assembly.v1.MaterialSpec
-	(*PartHandlingProfile)(nil), // 5: assembly.v1.PartHandlingProfile
-	(*PartDefinition)(nil),      // 6: assembly.v1.PartDefinition
-	(*ProductDefinition)(nil),   // 7: assembly.v1.ProductDefinition
-	(*VariantCondition)(nil),    // 8: assembly.v1.VariantCondition
-	(*AssemblyNode)(nil),        // 9: assembly.v1.AssemblyNode
-	(*PartDefinitions)(nil),     // 10: assembly.v1.PartDefinitions
-	(*ProductDefinitions)(nil),  // 11: assembly.v1.ProductDefinitions
-	(*KeyValueConstraint)(nil),  // 12: assembly.v1.KeyValueConstraint
-	(*ExternalReference)(nil),   // 13: assembly.v1.ExternalReference
-	(*CustomProperties)(nil),    // 14: assembly.v1.CustomProperties
-	(*v1.Pose)(nil),             // 15: geometry.v1.Pose
-	(*v1.Vector3)(nil),          // 16: geometry.v1.Vector3
+	(MaterialCategory)(0),       // 3: assembly.v1.MaterialCategory
+	(*Dimensions)(nil),          // 4: assembly.v1.Dimensions
+	(*MaterialSpec)(nil),        // 5: assembly.v1.MaterialSpec
+	(*PartHandlingProfile)(nil), // 6: assembly.v1.PartHandlingProfile
+	(*PartDefinition)(nil),      // 7: assembly.v1.PartDefinition
+	(*ProductDefinition)(nil),   // 8: assembly.v1.ProductDefinition
+	(*VariantCondition)(nil),    // 9: assembly.v1.VariantCondition
+	(*AssemblyNode)(nil),        // 10: assembly.v1.AssemblyNode
+	(*PartDefinitions)(nil),     // 11: assembly.v1.PartDefinitions
+	(*ProductDefinitions)(nil),  // 12: assembly.v1.ProductDefinitions
+	(*KeyValueConstraint)(nil),  // 13: assembly.v1.KeyValueConstraint
+	(*ExternalReference)(nil),   // 14: assembly.v1.ExternalReference
+	(*CustomProperties)(nil),    // 15: assembly.v1.CustomProperties
+	(*v1.Pose)(nil),             // 16: geometry.v1.Pose
+	(*v1.Vector3)(nil),          // 17: geometry.v1.Vector3
 }
 var file_assembly_v1_product_proto_depIdxs = []int32{
-	12, // 0: assembly.v1.PartHandlingProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
-	0,  // 1: assembly.v1.PartDefinition.type:type_name -> assembly.v1.PartType
-	3,  // 2: assembly.v1.PartDefinition.dimensions:type_name -> assembly.v1.Dimensions
-	4,  // 3: assembly.v1.PartDefinition.material:type_name -> assembly.v1.MaterialSpec
-	5,  // 4: assembly.v1.PartDefinition.handling:type_name -> assembly.v1.PartHandlingProfile
-	13, // 5: assembly.v1.PartDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	14, // 6: assembly.v1.PartDefinition.custom:type_name -> assembly.v1.CustomProperties
-	9,  // 7: assembly.v1.ProductDefinition.nodes:type_name -> assembly.v1.AssemblyNode
-	13, // 8: assembly.v1.ProductDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	14, // 9: assembly.v1.ProductDefinition.custom:type_name -> assembly.v1.CustomProperties
-	1,  // 10: assembly.v1.AssemblyNode.kind:type_name -> assembly.v1.NodeKind
-	15, // 11: assembly.v1.AssemblyNode.local_pose:type_name -> geometry.v1.Pose
-	2,  // 12: assembly.v1.AssemblyNode.join_method_hint:type_name -> assembly.v1.JoinMethod
-	16, // 13: assembly.v1.AssemblyNode.insertion_axis_hint:type_name -> geometry.v1.Vector3
-	16, // 14: assembly.v1.AssemblyNode.preferred_approach_hint:type_name -> geometry.v1.Vector3
-	8,  // 15: assembly.v1.AssemblyNode.applicability:type_name -> assembly.v1.VariantCondition
-	14, // 16: assembly.v1.AssemblyNode.custom:type_name -> assembly.v1.CustomProperties
-	6,  // 17: assembly.v1.PartDefinitions.items:type_name -> assembly.v1.PartDefinition
-	7,  // 18: assembly.v1.ProductDefinitions.items:type_name -> assembly.v1.ProductDefinition
-	19, // [19:19] is the sub-list for method output_type
-	19, // [19:19] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	3,  // 0: assembly.v1.MaterialSpec.category:type_name -> assembly.v1.MaterialCategory
+	13, // 1: assembly.v1.PartHandlingProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
+	0,  // 2: assembly.v1.PartDefinition.type:type_name -> assembly.v1.PartType
+	4,  // 3: assembly.v1.PartDefinition.dimensions:type_name -> assembly.v1.Dimensions
+	5,  // 4: assembly.v1.PartDefinition.material:type_name -> assembly.v1.MaterialSpec
+	6,  // 5: assembly.v1.PartDefinition.handling:type_name -> assembly.v1.PartHandlingProfile
+	14, // 6: assembly.v1.PartDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	15, // 7: assembly.v1.PartDefinition.custom:type_name -> assembly.v1.CustomProperties
+	10, // 8: assembly.v1.ProductDefinition.nodes:type_name -> assembly.v1.AssemblyNode
+	14, // 9: assembly.v1.ProductDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	15, // 10: assembly.v1.ProductDefinition.custom:type_name -> assembly.v1.CustomProperties
+	1,  // 11: assembly.v1.AssemblyNode.kind:type_name -> assembly.v1.NodeKind
+	16, // 12: assembly.v1.AssemblyNode.local_pose:type_name -> geometry.v1.Pose
+	2,  // 13: assembly.v1.AssemblyNode.join_method_hint:type_name -> assembly.v1.JoinMethod
+	17, // 14: assembly.v1.AssemblyNode.insertion_axis_hint:type_name -> geometry.v1.Vector3
+	17, // 15: assembly.v1.AssemblyNode.preferred_approach_hint:type_name -> geometry.v1.Vector3
+	9,  // 16: assembly.v1.AssemblyNode.applicability:type_name -> assembly.v1.VariantCondition
+	15, // 17: assembly.v1.AssemblyNode.custom:type_name -> assembly.v1.CustomProperties
+	7,  // 18: assembly.v1.PartDefinitions.items:type_name -> assembly.v1.PartDefinition
+	8,  // 19: assembly.v1.ProductDefinitions.items:type_name -> assembly.v1.ProductDefinition
+	20, // [20:20] is the sub-list for method output_type
+	20, // [20:20] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_product_proto_init() }
@@ -1129,7 +1221,7 @@ func file_assembly_v1_product_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_product_proto_rawDesc), len(file_assembly_v1_product_proto_rawDesc)),
-			NumEnums:      3,
+			NumEnums:      4,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,

@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/product.proto.
  */
 export const file_assembly_v1_product: GenFile = /*@__PURE__*/
-  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIisKDE1hdGVyaWFsU3BlYxIMCgRuYW1lGAEgASgJEg0KBWdyYWRlGAIgASgJIuYBChNQYXJ0SGFuZGxpbmdQcm9maWxlEg8KB2ZyYWdpbGUYASABKAgSFQoNZXNkX3NlbnNpdGl2ZRgCIAEoCBIeChZyZXF1aXJlc190d29faGFuZF9saWZ0GAMgASgIEiAKGHJlcXVpcmVzX2ZpeHR1cmVfc3VwcG9ydBgEIAEoCBIYChBtYXhfZ3JpcF9mb3JjZV9uGAUgASgBEhUKDW1heF90b3JxdWVfbm0YBiABKAESNAoLY29uc3RyYWludHMYByADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnQimAMKDlBhcnREZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIjCgR0eXBlGAUgASgOMhUuYXNzZW1ibHkudjEuUGFydFR5cGUSEAoId2VpZ2h0X2cYBiABKAMSKwoKZGltZW5zaW9ucxgHIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lvbnMSKwoIbWF0ZXJpYWwYCCABKAsyGS5hc3NlbWJseS52MS5NYXRlcmlhbFNwZWMSGAoQZGVmYXVsdF9tb2RlbF9pZBgJIAEoCRIyCghoYW5kbGluZxgKIAEoCzIgLmFzc2VtYmx5LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgLIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgMIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMi/AEKEVByb2R1Y3REZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIUCgxyb290X25vZGVfaWQYBSABKAkSKAoFbm9kZXMYBiADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5vZGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgHIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgIIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiNQoQVmFyaWFudENvbmRpdGlvbhIRCglkaW1lbnNpb24YASABKAkSDgoGdmFsdWVzGAIgAygJIqMECgxBc3NlbWJseU5vZGUSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIWCg5wYXJlbnRfbm9kZV9pZBgDIAEoCRIjCgRraW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmQSGgoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJEhkKEW92ZXJyaWRlX21vZGVsX2lkGAYgASgJEiUKCmxvY2FsX3Bvc2UYByABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhYKDmNoaWxkX25vZGVfaWRzGAggAygJEhUKDXNlcXVlbmNlX2hpbnQYCSABKAUSGwoTY2FkX29jY3VycmVuY2VfcGF0aBgKIAEoCRIxChBqb2luX21ldGhvZF9oaW50GAsgASgOMhcuYXNzZW1ibHkudjEuSm9pbk1ldGhvZBIxChNpbnNlcnRpb25fYXhpc19oaW50GAwgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI1ChdwcmVmZXJyZWRfYXBwcm9hY2hfaGludBgNIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSEAoIb3B0aW9uYWwYDiABKAgSNAoNYXBwbGljYWJpbGl0eRgPIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb24SLQoGY3VzdG9tGBAgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI9Cg9QYXJ0RGVmaW5pdGlvbnMSKgoFaXRlbXMYASADKAsyGy5hc3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvbiJDChJQcm9kdWN0RGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5Qcm9kdWN0RGVmaW5pdGlvbiq5AQoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGKpYBCghOb2RlS2luZBIZChVOT0RFX0tJTkRfVU5TUEVDSUZJRUQQABITCg9OT0RFX0tJTkRfR1JPVVAQARIdChlOT0RFX0tJTkRfUEFSVF9PQ0NVUlJFTkNFEAISJAogTk9ERV9LSU5EX1NVQkFTU0VNQkxZX09DQ1VSUkVOQ0UQAxIVChFOT0RFX0tJTkRfUEFUVEVSThAEKtMBCgpKb2luTWV0aG9kEhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQSk9JTl9NRVRIT0RfTk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkKFUpPSU5fTUVUSE9EX1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBfRklUEAQSGAoUSk9JTl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhPRF9XRUxEEAYSFQoRSk9JTl9NRVRIT0RfUExBQ0UQB0KyAQoPY29tLmFzc2VtYmx5LnYxQgxQcm9kdWN0UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3]);
+  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIlwKDE1hdGVyaWFsU3BlYxIvCghjYXRlZ29yeRgBIAEoDjIdLmFzc2VtYmx5LnYxLk1hdGVyaWFsQ2F0ZWdvcnkSDAoEbmFtZRgCIAEoCRINCgVncmFkZRgDIAEoCSLmAQoTUGFydEhhbmRsaW5nUHJvZmlsZRIPCgdmcmFnaWxlGAEgASgIEhUKDWVzZF9zZW5zaXRpdmUYAiABKAgSHgoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoARIVCg1tYXhfdG9ycXVlX25tGAYgASgBEjQKC2NvbnN0cmFpbnRzGAcgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IpgDCg5QYXJ0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlBhcnRUeXBlEhAKCHdlaWdodF9nGAYgASgDEisKCmRpbWVuc2lvbnMYByABKAsyFy5hc3NlbWJseS52MS5EaW1lbnNpb25zEisKCG1hdGVyaWFsGAggASgLMhkuYXNzZW1ibHkudjEuTWF0ZXJpYWxTcGVjEhgKEGRlZmF1bHRfbW9kZWxfaWQYCSABKAkSMgoIaGFuZGxpbmcYCiABKAsyIC5hc3NlbWJseS52MS5QYXJ0SGFuZGxpbmdQcm9maWxlEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIvwBChFQcm9kdWN0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFAoMcm9vdF9ub2RlX2lkGAUgASgJEigKBW5vZGVzGAYgAygLMhkuYXNzZW1ibHkudjEuQXNzZW1ibHlOb2RlEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjUKEFZhcmlhbnRDb25kaXRpb24SEQoJZGltZW5zaW9uGAEgASgJEg4KBnZhbHVlcxgCIAMoCSKjBAoMQXNzZW1ibHlOb2RlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSFgoOcGFyZW50X25vZGVfaWQYAyABKAkSIwoEa2luZBgEIAEoDjIVLmFzc2VtYmx5LnYxLk5vZGVLaW5kEhoKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEoCRIZChFvdmVycmlkZV9tb2RlbF9pZBgGIAEoCRIlCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIWCg5jaGlsZF9ub2RlX2lkcxgIIAMoCRIVCg1zZXF1ZW5jZV9oaW50GAkgASgFEhsKE2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAkSMQoQam9pbl9tZXRob2RfaGludBgLIAEoDjIXLmFzc2VtYmx5LnYxLkpvaW5NZXRob2QSMQoTaW5zZXJ0aW9uX2F4aXNfaGludBgMIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSNQoXcHJlZmVycmVkX2FwcHJvYWNoX2hpbnQYDSABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEhAKCG9wdGlvbmFsGA4gASgIEjQKDWFwcGxpY2FiaWxpdHkYDyADKAsyHS5hc3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uEi0KBmN1c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiPQoPUGFydERlZmluaXRpb25zEioKBWl0ZW1zGAEgAygLMhsuYXNzZW1ibHkudjEuUGFydERlZmluaXRpb24iQwoSUHJvZHVjdERlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEuUHJvZHVjdERlZmluaXRpb24quQEKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1CTFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBiqWAQoITm9kZUtpbmQSGQoVTk9ERV9LSU5EX1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5EX0dST1VQEAESHQoZTk9ERV9LSU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5PREVfS0lORF9TVUJBU1NFTUJMWV9PQ0NVUlJFTkNFEAMSFQoRTk9ERV9LSU5EX1BBVFRFUk4QBCrTAQoKSm9pbk1ldGhvZBIbChdKT0lOX01FVEhPRF9VTlNQRUNJRklFRBAAEhQKEEpPSU5fTUVUSE9EX05PTkUQARIWChJKT0lOX01FVEhPRF9GQVNURU4QAhIZChVKT0lOX01FVEhPRF9QUkVTU19GSVQQAxIYChRKT0lOX01FVEhPRF9TTkFQX0ZJVBAEEhgKFEpPSU5fTUVUSE9EX0FESEVTSVZFEAUSFAoQSk9JTl9NRVRIT0RfV0VMRBAGEhUKEUpPSU5fTUVUSE9EX1BMQUNFEAcqxAIKEE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFURVJJQUxfQ0FURUdPUllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklBTF9DQVRFR09SWV9NRVRBTBABEh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIfChtNQVRFUklBTF9DQVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRFUklBTF9DQVRFR09SWV9DT01QT1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09SWV9DRVJBTUlDEAUSGwoXTUFURVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZNQVRFUklBTF9DQVRFR09SWV9XT09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEAlCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3]);
 
 /**
  * @generated from message assembly.v1.Dimensions
@@ -46,7 +46,7 @@ export const DimensionsSchema: GenMessage<Dimensions> = /*@__PURE__*/
   messageDesc(file_assembly_v1_product, 0);
 
 /**
- * MaterialSpec is meant to capture the engineering material identity of a part
+ * MaterialSpec is meant to capture the engineering material identity of a part.
  * name → the material family / type
  * grade → the standardized grade or specification
  * Examples:
@@ -62,16 +62,23 @@ export const DimensionsSchema: GenMessage<Dimensions> = /*@__PURE__*/
  */
 export type MaterialSpec = Message<"assembly.v1.MaterialSpec"> & {
   /**
-   * Material family
+   * Broad material class, e.g. metal, polymer, elastomer
    *
-   * @generated from field: string name = 1;
+   * @generated from field: assembly.v1.MaterialCategory category = 1;
+   */
+  category: MaterialCategory;
+
+  /**
+   * Material family, e.g. aluminium, steel, ABS
+   *
+   * @generated from field: string name = 2;
    */
   name: string;
 
   /**
-   * Standard/Specification
+   * Standard/specification, e.g. 6061-T6, S355JR, AISI 304
    *
-   * @generated from field: string grade = 2;
+   * @generated from field: string grade = 3;
    */
   grade: string;
 };
@@ -567,4 +574,83 @@ export enum JoinMethod {
  */
 export const JoinMethodSchema: GenEnum<JoinMethod> = /*@__PURE__*/
   enumDesc(file_assembly_v1_product, 2);
+
+/**
+ * @generated from enum assembly.v1.MaterialCategory
+ */
+export enum MaterialCategory {
+  /**
+   * @generated from enum value: MATERIAL_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Metals and metal alloys
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_METAL = 1;
+   */
+  METAL = 1,
+
+  /**
+   * Thermoplastics / thermosets
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_POLYMER = 2;
+   */
+  POLYMER = 2,
+
+  /**
+   * Flexible rubber-like materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_ELASTOMER = 3;
+   */
+  ELASTOMER = 3,
+
+  /**
+   * Fiber-reinforced / layered materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_COMPOSITE = 4;
+   */
+  COMPOSITE = 4,
+
+  /**
+   * Ceramics and similar brittle inorganic materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_CERAMIC = 5;
+   */
+  CERAMIC = 5,
+
+  /**
+   * Glass and glass-like transparent materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_GLASS = 6;
+   */
+  GLASS = 6,
+
+  /**
+   * Wood and wood-derived materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_WOOD = 7;
+   */
+  WOOD = 7,
+
+  /**
+   * Cellular / expanded materials
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_FOAM = 8;
+   */
+  FOAM = 8,
+
+  /**
+   * Anything not fitting the categories above
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_OTHER = 9;
+   */
+  OTHER = 9,
+}
+
+/**
+ * Describes the enum assembly.v1.MaterialCategory.
+ */
+export const MaterialCategorySchema: GenEnum<MaterialCategory> = /*@__PURE__*/
+  enumDesc(file_assembly_v1_product, 3);
 

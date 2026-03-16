@@ -38,6 +38,19 @@ class JoinMethod(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     JOIN_METHOD_ADHESIVE: _ClassVar[JoinMethod]
     JOIN_METHOD_WELD: _ClassVar[JoinMethod]
     JOIN_METHOD_PLACE: _ClassVar[JoinMethod]
+
+class MaterialCategory(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    MATERIAL_CATEGORY_UNSPECIFIED: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_METAL: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_POLYMER: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_ELASTOMER: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_COMPOSITE: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_CERAMIC: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_GLASS: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_WOOD: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_FOAM: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_OTHER: _ClassVar[MaterialCategory]
 PART_TYPE_UNSPECIFIED: PartType
 PART_TYPE_COMPONENT: PartType
 PART_TYPE_FASTENER: PartType
@@ -58,6 +71,16 @@ JOIN_METHOD_SNAP_FIT: JoinMethod
 JOIN_METHOD_ADHESIVE: JoinMethod
 JOIN_METHOD_WELD: JoinMethod
 JOIN_METHOD_PLACE: JoinMethod
+MATERIAL_CATEGORY_UNSPECIFIED: MaterialCategory
+MATERIAL_CATEGORY_METAL: MaterialCategory
+MATERIAL_CATEGORY_POLYMER: MaterialCategory
+MATERIAL_CATEGORY_ELASTOMER: MaterialCategory
+MATERIAL_CATEGORY_COMPOSITE: MaterialCategory
+MATERIAL_CATEGORY_CERAMIC: MaterialCategory
+MATERIAL_CATEGORY_GLASS: MaterialCategory
+MATERIAL_CATEGORY_WOOD: MaterialCategory
+MATERIAL_CATEGORY_FOAM: MaterialCategory
+MATERIAL_CATEGORY_OTHER: MaterialCategory
 
 class Dimensions(_message.Message):
     __slots__ = ("x_mm", "y_mm", "z_mm")
@@ -70,12 +93,14 @@ class Dimensions(_message.Message):
     def __init__(self, x_mm: _Optional[float] = ..., y_mm: _Optional[float] = ..., z_mm: _Optional[float] = ...) -> None: ...
 
 class MaterialSpec(_message.Message):
-    __slots__ = ("name", "grade")
+    __slots__ = ("category", "name", "grade")
+    CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GRADE_FIELD_NUMBER: _ClassVar[int]
+    category: MaterialCategory
     name: str
     grade: str
-    def __init__(self, name: _Optional[str] = ..., grade: _Optional[str] = ...) -> None: ...
+    def __init__(self, category: _Optional[_Union[MaterialCategory, str]] = ..., name: _Optional[str] = ..., grade: _Optional[str] = ...) -> None: ...
 
 class PartHandlingProfile(_message.Message):
     __slots__ = ("fragile", "esd_sensitive", "requires_two_hand_lift", "requires_fixture_support", "max_grip_force_n", "max_torque_nm", "constraints")
