@@ -3390,7 +3390,7 @@ name: TPU, grade: 70 Shore A
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | category | [MaterialCategory](#assembly-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
-| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS |
+| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive |
 | grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
 
 
@@ -3410,7 +3410,8 @@ name: TPU, grade: 70 Shore A
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [PartType](#assembly-v1-PartType) |  |  |
+| type | [PartType](#assembly-v1-PartType) |  | Broad functional/BOM classification of the part |
+| subtype | [string](#string) |  | Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease |
 | weight_g | [int64](#int64) |  |  |
 | dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
 | material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
@@ -3549,7 +3550,9 @@ name: TPU, grade: 70 Shore A
 | MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
 | MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
 | MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
-| MATERIAL_CATEGORY_OTHER | 9 | Anything not fitting the categories above |
+| MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE | 9 | PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB |
+| MATERIAL_CATEGORY_CHEMICAL | 10 | Adhesive, grease, sealant, potting compound, coating, flux, etc. |
+| MATERIAL_CATEGORY_OTHER | 99 | Anything not fitting the categories above |
 
 
 
@@ -3581,12 +3584,17 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PART_TYPE_UNSPECIFIED | 0 |  |
-| PART_TYPE_COMPONENT | 1 |  |
-| PART_TYPE_FASTENER | 2 |  |
-| PART_TYPE_SUBASSEMBLY | 3 |  |
-| PART_TYPE_CONSUMABLE | 4 |  |
-| PART_TYPE_LABEL | 5 |  |
-| PART_TYPE_PACKAGING | 6 |  |
+| PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
+| PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
+| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
+| PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
+| PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
+| PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
+| PART_TYPE_PCB | 7 | Bare or populated printed circuit board |
+| PART_TYPE_ELECTRONIC_COMPONENT | 8 | LED, resistor, capacitor, IC, connector, relay, fuse, etc. |
+| PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
+| PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
+| PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
 
 
  

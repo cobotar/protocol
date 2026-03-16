@@ -19,6 +19,11 @@ class PartType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PART_TYPE_CONSUMABLE: _ClassVar[PartType]
     PART_TYPE_LABEL: _ClassVar[PartType]
     PART_TYPE_PACKAGING: _ClassVar[PartType]
+    PART_TYPE_PCB: _ClassVar[PartType]
+    PART_TYPE_ELECTRONIC_COMPONENT: _ClassVar[PartType]
+    PART_TYPE_ELECTRICAL_COMPONENT: _ClassVar[PartType]
+    PART_TYPE_CABLE: _ClassVar[PartType]
+    PART_TYPE_DISPENSED_MATERIAL: _ClassVar[PartType]
 
 class NodeKind(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -50,6 +55,8 @@ class MaterialCategory(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     MATERIAL_CATEGORY_GLASS: _ClassVar[MaterialCategory]
     MATERIAL_CATEGORY_WOOD: _ClassVar[MaterialCategory]
     MATERIAL_CATEGORY_FOAM: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE: _ClassVar[MaterialCategory]
+    MATERIAL_CATEGORY_CHEMICAL: _ClassVar[MaterialCategory]
     MATERIAL_CATEGORY_OTHER: _ClassVar[MaterialCategory]
 PART_TYPE_UNSPECIFIED: PartType
 PART_TYPE_COMPONENT: PartType
@@ -58,6 +65,11 @@ PART_TYPE_SUBASSEMBLY: PartType
 PART_TYPE_CONSUMABLE: PartType
 PART_TYPE_LABEL: PartType
 PART_TYPE_PACKAGING: PartType
+PART_TYPE_PCB: PartType
+PART_TYPE_ELECTRONIC_COMPONENT: PartType
+PART_TYPE_ELECTRICAL_COMPONENT: PartType
+PART_TYPE_CABLE: PartType
+PART_TYPE_DISPENSED_MATERIAL: PartType
 NODE_KIND_UNSPECIFIED: NodeKind
 NODE_KIND_GROUP: NodeKind
 NODE_KIND_PART_OCCURRENCE: NodeKind
@@ -80,6 +92,8 @@ MATERIAL_CATEGORY_CERAMIC: MaterialCategory
 MATERIAL_CATEGORY_GLASS: MaterialCategory
 MATERIAL_CATEGORY_WOOD: MaterialCategory
 MATERIAL_CATEGORY_FOAM: MaterialCategory
+MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE: MaterialCategory
+MATERIAL_CATEGORY_CHEMICAL: MaterialCategory
 MATERIAL_CATEGORY_OTHER: MaterialCategory
 
 class Dimensions(_message.Message):
@@ -121,12 +135,13 @@ class PartHandlingProfile(_message.Message):
     def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_fixture_support: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_common_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    SUBTYPE_FIELD_NUMBER: _ClassVar[int]
     WEIGHT_G_FIELD_NUMBER: _ClassVar[int]
     DIMENSIONS_FIELD_NUMBER: _ClassVar[int]
     MATERIAL_FIELD_NUMBER: _ClassVar[int]
@@ -139,6 +154,7 @@ class PartDefinition(_message.Message):
     icon: str
     description: str
     type: PartType
+    subtype: str
     weight_g: int
     dimensions: Dimensions
     material: MaterialSpec
@@ -146,7 +162,7 @@ class PartDefinition(_message.Message):
     handling: PartHandlingProfile
     external_references: _containers.RepeatedCompositeFieldContainer[_common_pb2.ExternalReference]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class ProductDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "root_node_id", "nodes", "external_references", "custom")

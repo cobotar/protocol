@@ -38,79 +38,84 @@ namespace Messages.Assembly.V1 {
             "ZVN1cHBvcnQSJwoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoAVINbWF4R3JpcEZv",
             "cmNlThIiCg1tYXhfdG9ycXVlX25tGAYgASgBUgttYXhUb3JxdWVObRJBCgtj",
             "b25zdHJhaW50cxgHIAMoCzIfLmFzc2VtYmx5LnYxLktleVZhbHVlQ29uc3Ry",
-            "YWludFILY29uc3RyYWludHMikAQKDlBhcnREZWZpbml0aW9uEg4KAmlkGAEg",
+            "YWludFILY29uc3RyYWludHMiqgQKDlBhcnREZWZpbml0aW9uEg4KAmlkGAEg",
             "ASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGlj",
             "b24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKBHR5cGUY",
-            "BSABKA4yFS5hc3NlbWJseS52MS5QYXJ0VHlwZVIEdHlwZRIZCgh3ZWlnaHRf",
-            "ZxgGIAEoA1IHd2VpZ2h0RxI3CgpkaW1lbnNpb25zGAcgASgLMhcuYXNzZW1i",
-            "bHkudjEuRGltZW5zaW9uc1IKZGltZW5zaW9ucxI1CghtYXRlcmlhbBgIIAEo",
-            "CzIZLmFzc2VtYmx5LnYxLk1hdGVyaWFsU3BlY1IIbWF0ZXJpYWwSKAoQZGVm",
-            "YXVsdF9tb2RlbF9pZBgJIAEoCVIOZGVmYXVsdE1vZGVsSWQSPAoIaGFuZGxp",
-            "bmcYCiABKAsyIC5hc3NlbWJseS52MS5QYXJ0SGFuZGxpbmdQcm9maWxlUgho",
-            "YW5kbGluZxJPChNleHRlcm5hbF9yZWZlcmVuY2VzGAsgAygLMh4uYXNzZW1i",
-            "bHkudjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxI1",
-            "CgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVz",
-            "UgZjdXN0b20iyAIKEVByb2R1Y3REZWZpbml0aW9uEg4KAmlkGAEgASgJUgJp",
-            "ZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
-            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEiAKDHJvb3Rfbm9kZV9p",
-            "ZBgFIAEoCVIKcm9vdE5vZGVJZBIvCgVub2RlcxgGIAMoCzIZLmFzc2VtYmx5",
-            "LnYxLkFzc2VtYmx5Tm9kZVIFbm9kZXMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNl",
-            "cxgHIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRl",
-            "cm5hbFJlZmVyZW5jZXMSNQoGY3VzdG9tGAggASgLMh0uYXNzZW1ibHkudjEu",
-            "Q3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkgKEFZhcmlhbnRDb25kaXRpb24S",
-            "HAoJZGltZW5zaW9uGAEgASgJUglkaW1lbnNpb24SFgoGdmFsdWVzGAIgAygJ",
-            "UgZ2YWx1ZXMi+QUKDEFzc2VtYmx5Tm9kZRIOCgJpZBgBIAEoCVICaWQSEgoE",
-            "bmFtZRgCIAEoCVIEbmFtZRIkCg5wYXJlbnRfbm9kZV9pZBgDIAEoCVIMcGFy",
-            "ZW50Tm9kZUlkEikKBGtpbmQYBCABKA4yFS5hc3NlbWJseS52MS5Ob2RlS2lu",
-            "ZFIEa2luZBIsChJwYXJ0X2RlZmluaXRpb25faWQYBSABKAlSEHBhcnREZWZp",
-            "bml0aW9uSWQSKgoRb3ZlcnJpZGVfbW9kZWxfaWQYBiABKAlSD292ZXJyaWRl",
-            "TW9kZWxJZBIwCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9z",
-            "ZVIJbG9jYWxQb3NlEiQKDmNoaWxkX25vZGVfaWRzGAggAygJUgxjaGlsZE5v",
-            "ZGVJZHMSIwoNc2VxdWVuY2VfaGludBgJIAEoBVIMc2VxdWVuY2VIaW50Ei4K",
-            "E2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAlSEWNhZE9jY3VycmVuY2VQYXRo",
-            "EkEKEGpvaW5fbWV0aG9kX2hpbnQYCyABKA4yFy5hc3NlbWJseS52MS5Kb2lu",
-            "TWV0aG9kUg5qb2luTWV0aG9kSGludBJEChNpbnNlcnRpb25fYXhpc19oaW50",
-            "GAwgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IRaW5zZXJ0aW9uQXhpc0hp",
-            "bnQSTAoXcHJlZmVycmVkX2FwcHJvYWNoX2hpbnQYDSABKAsyFC5nZW9tZXRy",
-            "eS52MS5WZWN0b3IzUhVwcmVmZXJyZWRBcHByb2FjaEhpbnQSGgoIb3B0aW9u",
-            "YWwYDiABKAhSCG9wdGlvbmFsEkMKDWFwcGxpY2FiaWxpdHkYDyADKAsyHS5h",
-            "c3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uUg1hcHBsaWNhYmlsaXR5EjUK",
-            "BmN1c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNS",
-            "BmN1c3RvbSJECg9QYXJ0RGVmaW5pdGlvbnMSMQoFaXRlbXMYASADKAsyGy5h",
-            "c3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvblIFaXRlbXMiSgoSUHJvZHVjdERl",
-            "ZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEuUHJvZHVj",
-            "dERlZmluaXRpb25SBWl0ZW1zKrkBCghQYXJ0VHlwZRIZChVQQVJUX1RZUEVf",
-            "VU5TUEVDSUZJRUQQABIXChNQQVJUX1RZUEVfQ09NUE9ORU5UEAESFgoSUEFS",
-            "VF9UWVBFX0ZBU1RFTkVSEAISGQoVUEFSVF9UWVBFX1NVQkFTU0VNQkxZEAMS",
-            "GAoUUEFSVF9UWVBFX0NPTlNVTUFCTEUQBBITCg9QQVJUX1RZUEVfTEFCRUwQ",
-            "BRIXChNQQVJUX1RZUEVfUEFDS0FHSU5HEAYqlgEKCE5vZGVLaW5kEhkKFU5P",
-            "REVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0K",
-            "GU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VC",
-            "QVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq",
-            "0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIU",
-            "ChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAIS",
-            "GQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05B",
-            "UF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVU",
-            "SE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKsQCChBNYXRlcmlh",
-            "bENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAAS",
-            "GwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRF",
-            "R09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVS",
-            "EAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJ",
-            "QUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dM",
-            "QVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFM",
-            "X0NBVEVHT1JZX0ZPQU0QCBIbChdNQVRFUklBTF9DQVRFR09SWV9PVEhFUhAJ",
-            "QrIBCg9jb20uYXNzZW1ibHkudjFCDFByb2R1Y3RQcm90b1ABWjtnaXRodWIu",
-            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNz",
-            "ZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1i",
-            "bHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpW",
-            "MWIGcHJvdG8z"));
+            "BSABKA4yFS5hc3NlbWJseS52MS5QYXJ0VHlwZVIEdHlwZRIYCgdzdWJ0eXBl",
+            "GAYgASgJUgdzdWJ0eXBlEhkKCHdlaWdodF9nGAcgASgDUgd3ZWlnaHRHEjcK",
+            "CmRpbWVuc2lvbnMYCCABKAsyFy5hc3NlbWJseS52MS5EaW1lbnNpb25zUgpk",
+            "aW1lbnNpb25zEjUKCG1hdGVyaWFsGAkgASgLMhkuYXNzZW1ibHkudjEuTWF0",
+            "ZXJpYWxTcGVjUghtYXRlcmlhbBIoChBkZWZhdWx0X21vZGVsX2lkGAogASgJ",
+            "Ug5kZWZhdWx0TW9kZWxJZBI8CghoYW5kbGluZxgLIAEoCzIgLmFzc2VtYmx5",
+            "LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGVSCGhhbmRsaW5nEk8KE2V4dGVybmFs",
+            "X3JlZmVyZW5jZXMYDCADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVy",
+            "ZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2VzEjUKBmN1c3RvbRgNIAEoCzIdLmFz",
+            "c2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSLIAgoRUHJvZHVj",
+            "dERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5h",
+            "bWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVIL",
+            "ZGVzY3JpcHRpb24SIAoMcm9vdF9ub2RlX2lkGAUgASgJUgpyb290Tm9kZUlk",
+            "Ei8KBW5vZGVzGAYgAygLMhkuYXNzZW1ibHkudjEuQXNzZW1ibHlOb2RlUgVu",
+            "b2RlcxJPChNleHRlcm5hbF9yZWZlcmVuY2VzGAcgAygLMh4uYXNzZW1ibHku",
+            "djEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxI1CgZj",
+            "dXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZj",
+            "dXN0b20iSAoQVmFyaWFudENvbmRpdGlvbhIcCglkaW1lbnNpb24YASABKAlS",
+            "CWRpbWVuc2lvbhIWCgZ2YWx1ZXMYAiADKAlSBnZhbHVlcyL5BQoMQXNzZW1i",
+            "bHlOb2RlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiQK",
+            "DnBhcmVudF9ub2RlX2lkGAMgASgJUgxwYXJlbnROb2RlSWQSKQoEa2luZBgE",
+            "IAEoDjIVLmFzc2VtYmx5LnYxLk5vZGVLaW5kUgRraW5kEiwKEnBhcnRfZGVm",
+            "aW5pdGlvbl9pZBgFIAEoCVIQcGFydERlZmluaXRpb25JZBIqChFvdmVycmlk",
+            "ZV9tb2RlbF9pZBgGIAEoCVIPb3ZlcnJpZGVNb2RlbElkEjAKCmxvY2FsX3Bv",
+            "c2UYByABKAsyES5nZW9tZXRyeS52MS5Qb3NlUglsb2NhbFBvc2USJAoOY2hp",
+            "bGRfbm9kZV9pZHMYCCADKAlSDGNoaWxkTm9kZUlkcxIjCg1zZXF1ZW5jZV9o",
+            "aW50GAkgASgFUgxzZXF1ZW5jZUhpbnQSLgoTY2FkX29jY3VycmVuY2VfcGF0",
+            "aBgKIAEoCVIRY2FkT2NjdXJyZW5jZVBhdGgSQQoQam9pbl9tZXRob2RfaGlu",
+            "dBgLIAEoDjIXLmFzc2VtYmx5LnYxLkpvaW5NZXRob2RSDmpvaW5NZXRob2RI",
+            "aW50EkQKE2luc2VydGlvbl9heGlzX2hpbnQYDCABKAsyFC5nZW9tZXRyeS52",
+            "MS5WZWN0b3IzUhFpbnNlcnRpb25BeGlzSGludBJMChdwcmVmZXJyZWRfYXBw",
+            "cm9hY2hfaGludBgNIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSFXByZWZl",
+            "cnJlZEFwcHJvYWNoSGludBIaCghvcHRpb25hbBgOIAEoCFIIb3B0aW9uYWwS",
+            "QwoNYXBwbGljYWJpbGl0eRgPIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRD",
+            "b25kaXRpb25SDWFwcGxpY2FiaWxpdHkSNQoGY3VzdG9tGBAgASgLMh0uYXNz",
+            "ZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkQKD1BhcnREZWZp",
+            "bml0aW9ucxIxCgVpdGVtcxgBIAMoCzIbLmFzc2VtYmx5LnYxLlBhcnREZWZp",
+            "bml0aW9uUgVpdGVtcyJKChJQcm9kdWN0RGVmaW5pdGlvbnMSNAoFaXRlbXMY",
+            "ASADKAsyHi5hc3NlbWJseS52MS5Qcm9kdWN0RGVmaW5pdGlvblIFaXRlbXMq",
+            "ywIKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1BB",
+            "UlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZ",
+            "ChVQQVJUX1RZUEVfU1VCQVNTRU1CTFkQAxIYChRQQVJUX1RZUEVfQ09OU1VN",
+            "QUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNL",
+            "QUdJTkcQBhIRCg1QQVJUX1RZUEVfUENCEAcSIgoeUEFSVF9UWVBFX0VMRUNU",
+            "Uk9OSUNfQ09NUE9ORU5UEAgSIgoeUEFSVF9UWVBFX0VMRUNUUklDQUxfQ09N",
+            "UE9ORU5UEAkSEwoPUEFSVF9UWVBFX0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJ",
+            "U1BFTlNFRF9NQVRFUklBTBALKpYBCghOb2RlS2luZBIZChVOT0RFX0tJTkRf",
+            "VU5TUEVDSUZJRUQQABITCg9OT0RFX0tJTkRfR1JPVVAQARIdChlOT0RFX0tJ",
+            "TkRfUEFSVF9PQ0NVUlJFTkNFEAISJAogTk9ERV9LSU5EX1NVQkFTU0VNQkxZ",
+            "X09DQ1VSUkVOQ0UQAxIVChFOT0RFX0tJTkRfUEFUVEVSThAEKtMBCgpKb2lu",
+            "TWV0aG9kEhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQSk9JTl9N",
+            "RVRIT0RfTk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkKFUpPSU5f",
+            "TUVUSE9EX1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBfRklUEAQS",
+            "GAoUSk9JTl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhPRF9XRUxE",
+            "EAYSFQoRSk9JTl9NRVRIT0RfUExBQ0UQByqRAwoQTWF0ZXJpYWxDYXRlZ29y",
+            "eRIhCh1NQVRFUklBTF9DQVRFR09SWV9VTlNQRUNJRklFRBAAEhsKF01BVEVS",
+            "SUFMX0NBVEVHT1JZX01FVEFMEAESHQoZTUFURVJJQUxfQ0FURUdPUllfUE9M",
+            "WU1FUhACEh8KG01BVEVSSUFMX0NBVEVHT1JZX0VMQVNUT01FUhADEh8KG01B",
+            "VEVSSUFMX0NBVEVHT1JZX0NPTVBPU0lURRAEEh0KGU1BVEVSSUFMX0NBVEVH",
+            "T1JZX0NFUkFNSUMQBRIbChdNQVRFUklBTF9DQVRFR09SWV9HTEFTUxAGEhoK",
+            "Fk1BVEVSSUFMX0NBVEVHT1JZX1dPT0QQBxIaChZNQVRFUklBTF9DQVRFR09S",
+            "WV9GT0FNEAgSKwonTUFURVJJQUxfQ0FURUdPUllfRUxFQ1RST05JQ1NfU1VC",
+            "U1RSQVRFEAkSHgoaTUFURVJJQUxfQ0FURUdPUllfQ0hFTUlDQUwQChIbChdN",
+            "QVRFUklBTF9DQVRFR09SWV9PVEhFUhBjQrIBCg9jb20uYXNzZW1ibHkudjFC",
+            "DFByb2R1Y3RQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
+            "bWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3Nh",
+            "Z2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxH",
+            "UEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.PartType), typeof(global::Messages.Assembly.V1.NodeKind), typeof(global::Messages.Assembly.V1.JoinMethod), typeof(global::Messages.Assembly.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.Dimensions), global::Messages.Assembly.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.MaterialSpec), global::Messages.Assembly.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartHandlingProfile), global::Messages.Assembly.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinition), global::Messages.Assembly.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.VariantCondition), global::Messages.Assembly.V1.VariantCondition.Parser, new[]{ "Dimension", "Values" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssemblyNode), global::Messages.Assembly.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "ChildNodeIds", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionAxisHint", "PreferredApproachHint", "Optional", "Applicability", "Custom" }, null, null, null, null),
@@ -124,12 +129,50 @@ namespace Messages.Assembly.V1 {
   #region Enums
   public enum PartType {
     [pbr::OriginalName("PART_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// General mechanical or non-specialized part/component
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_COMPONENT")] Component = 1,
+    /// <summary>
+    /// Screw, bolt, nut, washer, rivet, insert, clip, etc.
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_FASTENER")] Fastener = 2,
+    /// <summary>
+    /// A part that is itself composed of multiple child parts
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_SUBASSEMBLY")] Subassembly = 3,
+    /// <summary>
+    /// General consumable used up during assembly or maintenance
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_CONSUMABLE")] Consumable = 4,
+    /// <summary>
+    /// Sticker, rating plate, barcode label, warning label, etc.
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_LABEL")] Label = 5,
+    /// <summary>
+    /// Box, bag, foam insert, tray cover, spacer, etc.
+    /// </summary>
     [pbr::OriginalName("PART_TYPE_PACKAGING")] Packaging = 6,
+    /// <summary>
+    /// Bare or populated printed circuit board
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_PCB")] Pcb = 7,
+    /// <summary>
+    /// LED, resistor, capacitor, IC, connector, relay, fuse, etc.
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_ELECTRONIC_COMPONENT")] ElectronicComponent = 8,
+    /// <summary>
+    /// Breaker, terminal block, battery, switch, power supply, wire harness, etc.
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_ELECTRICAL_COMPONENT")] ElectricalComponent = 9,
+    /// <summary>
+    /// Wire, cable, wire set, cable assembly, harness
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_CABLE")] Cable = 10,
+    /// <summary>
+    /// Grease, glue, sealant, potting compound, solder paste, flux, etc.
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_DISPENSED_MATERIAL")] DispensedMaterial = 11,
   }
 
   /// <summary>
@@ -206,9 +249,17 @@ namespace Messages.Assembly.V1 {
     /// </summary>
     [pbr::OriginalName("MATERIAL_CATEGORY_FOAM")] Foam = 8,
     /// <summary>
+    /// PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE")] ElectronicsSubstrate = 9,
+    /// <summary>
+    /// Adhesive, grease, sealant, potting compound, coating, flux, etc.
+    /// </summary>
+    [pbr::OriginalName("MATERIAL_CATEGORY_CHEMICAL")] Chemical = 10,
+    /// <summary>
     /// Anything not fitting the categories above
     /// </summary>
-    [pbr::OriginalName("MATERIAL_CATEGORY_OTHER")] Other = 9,
+    [pbr::OriginalName("MATERIAL_CATEGORY_OTHER")] Other = 99,
   }
 
   #endregion
@@ -565,7 +616,7 @@ namespace Messages.Assembly.V1 {
     public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
-    /// Material family, e.g. aluminium, steel, ABS
+    /// Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1232,6 +1283,7 @@ namespace Messages.Assembly.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
+      subtype_ = other.subtype_;
       weightG_ = other.weightG_;
       dimensions_ = other.dimensions_ != null ? other.dimensions_.Clone() : null;
       material_ = other.material_ != null ? other.material_.Clone() : null;
@@ -1299,6 +1351,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
     private global::Messages.Assembly.V1.PartType type_ = global::Messages.Assembly.V1.PartType.Unspecified;
+    /// <summary>
+    /// Broad functional/BOM classification of the part
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Assembly.V1.PartType Type {
@@ -1308,8 +1363,23 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "subtype" field.</summary>
+    public const int SubtypeFieldNumber = 6;
+    private string subtype_ = "";
+    /// <summary>
+    /// Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Subtype {
+      get { return subtype_; }
+      set {
+        subtype_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "weight_g" field.</summary>
-    public const int WeightGFieldNumber = 6;
+    public const int WeightGFieldNumber = 7;
     private long weightG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1321,7 +1391,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "dimensions" field.</summary>
-    public const int DimensionsFieldNumber = 7;
+    public const int DimensionsFieldNumber = 8;
     private global::Messages.Assembly.V1.Dimensions dimensions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1333,7 +1403,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "material" field.</summary>
-    public const int MaterialFieldNumber = 8;
+    public const int MaterialFieldNumber = 9;
     private global::Messages.Assembly.V1.MaterialSpec material_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1345,7 +1415,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "default_model_id" field.</summary>
-    public const int DefaultModelIdFieldNumber = 9;
+    public const int DefaultModelIdFieldNumber = 10;
     private string defaultModelId_ = "";
     /// <summary>
     /// Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
@@ -1360,7 +1430,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "handling" field.</summary>
-    public const int HandlingFieldNumber = 10;
+    public const int HandlingFieldNumber = 11;
     private global::Messages.Assembly.V1.PartHandlingProfile handling_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1372,9 +1442,9 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "external_references" field.</summary>
-    public const int ExternalReferencesFieldNumber = 11;
+    public const int ExternalReferencesFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Messages.Assembly.V1.ExternalReference> _repeated_externalReferences_codec
-        = pb::FieldCodec.ForMessage(90, global::Messages.Assembly.V1.ExternalReference.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Messages.Assembly.V1.ExternalReference.Parser);
     private readonly pbc::RepeatedField<global::Messages.Assembly.V1.ExternalReference> externalReferences_ = new pbc::RepeatedField<global::Messages.Assembly.V1.ExternalReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1383,7 +1453,7 @@ namespace Messages.Assembly.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 12;
+    public const int CustomFieldNumber = 13;
     private global::Messages.Assembly.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1414,6 +1484,7 @@ namespace Messages.Assembly.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
+      if (Subtype != other.Subtype) return false;
       if (WeightG != other.WeightG) return false;
       if (!object.Equals(Dimensions, other.Dimensions)) return false;
       if (!object.Equals(Material, other.Material)) return false;
@@ -1433,6 +1504,7 @@ namespace Messages.Assembly.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) hash ^= Type.GetHashCode();
+      if (Subtype.Length != 0) hash ^= Subtype.GetHashCode();
       if (WeightG != 0L) hash ^= WeightG.GetHashCode();
       if (dimensions_ != null) hash ^= Dimensions.GetHashCode();
       if (material_ != null) hash ^= Material.GetHashCode();
@@ -1478,29 +1550,33 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (Subtype.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Subtype);
+      }
       if (WeightG != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt64(WeightG);
       }
       if (dimensions_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(Dimensions);
       }
       if (material_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(74);
         output.WriteMessage(Material);
       }
       if (DefaultModelId.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteString(DefaultModelId);
       }
       if (handling_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(90);
         output.WriteMessage(Handling);
       }
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -1533,29 +1609,33 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (Subtype.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Subtype);
+      }
       if (WeightG != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt64(WeightG);
       }
       if (dimensions_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(Dimensions);
       }
       if (material_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(74);
         output.WriteMessage(Material);
       }
       if (DefaultModelId.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteString(DefaultModelId);
       }
       if (handling_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(90);
         output.WriteMessage(Handling);
       }
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -1582,6 +1662,9 @@ namespace Messages.Assembly.V1 {
       }
       if (Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Subtype.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subtype);
       }
       if (WeightG != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(WeightG);
@@ -1628,6 +1711,9 @@ namespace Messages.Assembly.V1 {
       }
       if (other.Type != global::Messages.Assembly.V1.PartType.Unspecified) {
         Type = other.Type;
+      }
+      if (other.Subtype.Length != 0) {
+        Subtype = other.Subtype;
       }
       if (other.WeightG != 0L) {
         WeightG = other.WeightG;
@@ -1699,40 +1785,44 @@ namespace Messages.Assembly.V1 {
             Type = (global::Messages.Assembly.V1.PartType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 50: {
+            Subtype = input.ReadString();
+            break;
+          }
+          case 56: {
             WeightG = input.ReadInt64();
             break;
           }
-          case 58: {
+          case 66: {
             if (dimensions_ == null) {
               Dimensions = new global::Messages.Assembly.V1.Dimensions();
             }
             input.ReadMessage(Dimensions);
             break;
           }
-          case 66: {
+          case 74: {
             if (material_ == null) {
               Material = new global::Messages.Assembly.V1.MaterialSpec();
             }
             input.ReadMessage(Material);
             break;
           }
-          case 74: {
+          case 82: {
             DefaultModelId = input.ReadString();
             break;
           }
-          case 82: {
+          case 90: {
             if (handling_ == null) {
               Handling = new global::Messages.Assembly.V1.PartHandlingProfile();
             }
             input.ReadMessage(Handling);
             break;
           }
-          case 90: {
+          case 98: {
             externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
             break;
           }
-          case 98: {
+          case 106: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
@@ -1778,40 +1868,44 @@ namespace Messages.Assembly.V1 {
             Type = (global::Messages.Assembly.V1.PartType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 50: {
+            Subtype = input.ReadString();
+            break;
+          }
+          case 56: {
             WeightG = input.ReadInt64();
             break;
           }
-          case 58: {
+          case 66: {
             if (dimensions_ == null) {
               Dimensions = new global::Messages.Assembly.V1.Dimensions();
             }
             input.ReadMessage(Dimensions);
             break;
           }
-          case 66: {
+          case 74: {
             if (material_ == null) {
               Material = new global::Messages.Assembly.V1.MaterialSpec();
             }
             input.ReadMessage(Material);
             break;
           }
-          case 74: {
+          case 82: {
             DefaultModelId = input.ReadString();
             break;
           }
-          case 82: {
+          case 90: {
             if (handling_ == null) {
               Handling = new global::Messages.Assembly.V1.PartHandlingProfile();
             }
             input.ReadMessage(Handling);
             break;
           }
-          case 90: {
+          case 98: {
             externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
             break;
           }
-          case 98: {
+          case 106: {
             if (custom_ == null) {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }

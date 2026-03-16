@@ -10,12 +10,18 @@ option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
 
 enum PartType {
   PART_TYPE_UNSPECIFIED = 0;
-  PART_TYPE_COMPONENT = 1;
-  PART_TYPE_FASTENER = 2;
-  PART_TYPE_SUBASSEMBLY = 3;
-  PART_TYPE_CONSUMABLE = 4;
-  PART_TYPE_LABEL = 5;
-  PART_TYPE_PACKAGING = 6;
+
+  PART_TYPE_COMPONENT = 1; // General mechanical or non-specialized part/component
+  PART_TYPE_FASTENER = 2; // Screw, bolt, nut, washer, rivet, insert, clip, etc.
+  PART_TYPE_SUBASSEMBLY = 3; // A part that is itself composed of multiple child parts
+  PART_TYPE_CONSUMABLE = 4; // General consumable used up during assembly or maintenance
+  PART_TYPE_LABEL = 5; // Sticker, rating plate, barcode label, warning label, etc.
+  PART_TYPE_PACKAGING = 6; // Box, bag, foam insert, tray cover, spacer, etc.
+  PART_TYPE_PCB = 7; // Bare or populated printed circuit board
+  PART_TYPE_ELECTRONIC_COMPONENT = 8; // LED, resistor, capacitor, IC, connector, relay, fuse, etc.
+  PART_TYPE_ELECTRICAL_COMPONENT = 9; // Breaker, terminal block, battery, switch, power supply, wire harness, etc.
+  PART_TYPE_CABLE = 10; // Wire, cable, wire set, cable assembly, harness
+  PART_TYPE_DISPENSED_MATERIAL = 11; // Grease, glue, sealant, potting compound, solder paste, flux, etc.
 }
 
 // NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
@@ -60,7 +66,10 @@ enum MaterialCategory {
   MATERIAL_CATEGORY_GLASS = 6; // Glass and glass-like transparent materials
   MATERIAL_CATEGORY_WOOD = 7; // Wood and wood-derived materials
   MATERIAL_CATEGORY_FOAM = 8; // Cellular / expanded materials
-  MATERIAL_CATEGORY_OTHER = 9; // Anything not fitting the categories above
+  MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE = 9; // PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB
+  MATERIAL_CATEGORY_CHEMICAL = 10; // Adhesive, grease, sealant, potting compound, coating, flux, etc.
+
+  MATERIAL_CATEGORY_OTHER = 99; // Anything not fitting the categories above
 }
 
 // MaterialSpec is meant to capture the engineering material identity of a part.
@@ -76,7 +85,7 @@ enum MaterialCategory {
 // name: TPU, grade: 70 Shore A
 message MaterialSpec {
   MaterialCategory category = 1; // Broad material class, e.g. metal, polymer, elastomer
-  string name = 2; // Material family, e.g. aluminium, steel, ABS
+  string name = 2; // Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive
   string grade = 3; // Standard/specification, e.g. 6061-T6, S355JR, AISI 304
 }
 
@@ -95,14 +104,15 @@ message PartDefinition {
   string name = 2;
   string icon = 3;
   string description = 4;
-  PartType type = 5;
-  int64 weight_g = 6;
-  Dimensions dimensions = 7;
-  MaterialSpec material = 8;
-  string default_model_id = 9; // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
-  PartHandlingProfile handling = 10;
-  repeated ExternalReference external_references = 11;
-  CustomProperties custom = 12;
+  PartType type = 5; // Broad functional/BOM classification of the part
+  string subtype = 6; // Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease
+  int64 weight_g = 7;
+  Dimensions dimensions = 8;
+  MaterialSpec material = 9;
+  string default_model_id = 10; // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
+  PartHandlingProfile handling = 11;
+  repeated ExternalReference external_references = 12;
+  CustomProperties custom = 13;
 }
 
 message ProductDefinition {

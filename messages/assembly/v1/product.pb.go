@@ -25,34 +25,49 @@ const (
 type PartType int32
 
 const (
-	PartType_PART_TYPE_UNSPECIFIED PartType = 0
-	PartType_PART_TYPE_COMPONENT   PartType = 1
-	PartType_PART_TYPE_FASTENER    PartType = 2
-	PartType_PART_TYPE_SUBASSEMBLY PartType = 3
-	PartType_PART_TYPE_CONSUMABLE  PartType = 4
-	PartType_PART_TYPE_LABEL       PartType = 5
-	PartType_PART_TYPE_PACKAGING   PartType = 6
+	PartType_PART_TYPE_UNSPECIFIED          PartType = 0
+	PartType_PART_TYPE_COMPONENT            PartType = 1  // General mechanical or non-specialized part/component
+	PartType_PART_TYPE_FASTENER             PartType = 2  // Screw, bolt, nut, washer, rivet, insert, clip, etc.
+	PartType_PART_TYPE_SUBASSEMBLY          PartType = 3  // A part that is itself composed of multiple child parts
+	PartType_PART_TYPE_CONSUMABLE           PartType = 4  // General consumable used up during assembly or maintenance
+	PartType_PART_TYPE_LABEL                PartType = 5  // Sticker, rating plate, barcode label, warning label, etc.
+	PartType_PART_TYPE_PACKAGING            PartType = 6  // Box, bag, foam insert, tray cover, spacer, etc.
+	PartType_PART_TYPE_PCB                  PartType = 7  // Bare or populated printed circuit board
+	PartType_PART_TYPE_ELECTRONIC_COMPONENT PartType = 8  // LED, resistor, capacitor, IC, connector, relay, fuse, etc.
+	PartType_PART_TYPE_ELECTRICAL_COMPONENT PartType = 9  // Breaker, terminal block, battery, switch, power supply, wire harness, etc.
+	PartType_PART_TYPE_CABLE                PartType = 10 // Wire, cable, wire set, cable assembly, harness
+	PartType_PART_TYPE_DISPENSED_MATERIAL   PartType = 11 // Grease, glue, sealant, potting compound, solder paste, flux, etc.
 )
 
 // Enum value maps for PartType.
 var (
 	PartType_name = map[int32]string{
-		0: "PART_TYPE_UNSPECIFIED",
-		1: "PART_TYPE_COMPONENT",
-		2: "PART_TYPE_FASTENER",
-		3: "PART_TYPE_SUBASSEMBLY",
-		4: "PART_TYPE_CONSUMABLE",
-		5: "PART_TYPE_LABEL",
-		6: "PART_TYPE_PACKAGING",
+		0:  "PART_TYPE_UNSPECIFIED",
+		1:  "PART_TYPE_COMPONENT",
+		2:  "PART_TYPE_FASTENER",
+		3:  "PART_TYPE_SUBASSEMBLY",
+		4:  "PART_TYPE_CONSUMABLE",
+		5:  "PART_TYPE_LABEL",
+		6:  "PART_TYPE_PACKAGING",
+		7:  "PART_TYPE_PCB",
+		8:  "PART_TYPE_ELECTRONIC_COMPONENT",
+		9:  "PART_TYPE_ELECTRICAL_COMPONENT",
+		10: "PART_TYPE_CABLE",
+		11: "PART_TYPE_DISPENSED_MATERIAL",
 	}
 	PartType_value = map[string]int32{
-		"PART_TYPE_UNSPECIFIED": 0,
-		"PART_TYPE_COMPONENT":   1,
-		"PART_TYPE_FASTENER":    2,
-		"PART_TYPE_SUBASSEMBLY": 3,
-		"PART_TYPE_CONSUMABLE":  4,
-		"PART_TYPE_LABEL":       5,
-		"PART_TYPE_PACKAGING":   6,
+		"PART_TYPE_UNSPECIFIED":          0,
+		"PART_TYPE_COMPONENT":            1,
+		"PART_TYPE_FASTENER":             2,
+		"PART_TYPE_SUBASSEMBLY":          3,
+		"PART_TYPE_CONSUMABLE":           4,
+		"PART_TYPE_LABEL":                5,
+		"PART_TYPE_PACKAGING":            6,
+		"PART_TYPE_PCB":                  7,
+		"PART_TYPE_ELECTRONIC_COMPONENT": 8,
+		"PART_TYPE_ELECTRICAL_COMPONENT": 9,
+		"PART_TYPE_CABLE":                10,
+		"PART_TYPE_DISPENSED_MATERIAL":   11,
 	}
 )
 
@@ -211,43 +226,49 @@ func (JoinMethod) EnumDescriptor() ([]byte, []int) {
 type MaterialCategory int32
 
 const (
-	MaterialCategory_MATERIAL_CATEGORY_UNSPECIFIED MaterialCategory = 0
-	MaterialCategory_MATERIAL_CATEGORY_METAL       MaterialCategory = 1 // Metals and metal alloys
-	MaterialCategory_MATERIAL_CATEGORY_POLYMER     MaterialCategory = 2 // Thermoplastics / thermosets
-	MaterialCategory_MATERIAL_CATEGORY_ELASTOMER   MaterialCategory = 3 // Flexible rubber-like materials
-	MaterialCategory_MATERIAL_CATEGORY_COMPOSITE   MaterialCategory = 4 // Fiber-reinforced / layered materials
-	MaterialCategory_MATERIAL_CATEGORY_CERAMIC     MaterialCategory = 5 // Ceramics and similar brittle inorganic materials
-	MaterialCategory_MATERIAL_CATEGORY_GLASS       MaterialCategory = 6 // Glass and glass-like transparent materials
-	MaterialCategory_MATERIAL_CATEGORY_WOOD        MaterialCategory = 7 // Wood and wood-derived materials
-	MaterialCategory_MATERIAL_CATEGORY_FOAM        MaterialCategory = 8 // Cellular / expanded materials
-	MaterialCategory_MATERIAL_CATEGORY_OTHER       MaterialCategory = 9 // Anything not fitting the categories above
+	MaterialCategory_MATERIAL_CATEGORY_UNSPECIFIED           MaterialCategory = 0
+	MaterialCategory_MATERIAL_CATEGORY_METAL                 MaterialCategory = 1  // Metals and metal alloys
+	MaterialCategory_MATERIAL_CATEGORY_POLYMER               MaterialCategory = 2  // Thermoplastics / thermosets
+	MaterialCategory_MATERIAL_CATEGORY_ELASTOMER             MaterialCategory = 3  // Flexible rubber-like materials
+	MaterialCategory_MATERIAL_CATEGORY_COMPOSITE             MaterialCategory = 4  // Fiber-reinforced / layered materials
+	MaterialCategory_MATERIAL_CATEGORY_CERAMIC               MaterialCategory = 5  // Ceramics and similar brittle inorganic materials
+	MaterialCategory_MATERIAL_CATEGORY_GLASS                 MaterialCategory = 6  // Glass and glass-like transparent materials
+	MaterialCategory_MATERIAL_CATEGORY_WOOD                  MaterialCategory = 7  // Wood and wood-derived materials
+	MaterialCategory_MATERIAL_CATEGORY_FOAM                  MaterialCategory = 8  // Cellular / expanded materials
+	MaterialCategory_MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE MaterialCategory = 9  // PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB
+	MaterialCategory_MATERIAL_CATEGORY_CHEMICAL              MaterialCategory = 10 // Adhesive, grease, sealant, potting compound, coating, flux, etc.
+	MaterialCategory_MATERIAL_CATEGORY_OTHER                 MaterialCategory = 99 // Anything not fitting the categories above
 )
 
 // Enum value maps for MaterialCategory.
 var (
 	MaterialCategory_name = map[int32]string{
-		0: "MATERIAL_CATEGORY_UNSPECIFIED",
-		1: "MATERIAL_CATEGORY_METAL",
-		2: "MATERIAL_CATEGORY_POLYMER",
-		3: "MATERIAL_CATEGORY_ELASTOMER",
-		4: "MATERIAL_CATEGORY_COMPOSITE",
-		5: "MATERIAL_CATEGORY_CERAMIC",
-		6: "MATERIAL_CATEGORY_GLASS",
-		7: "MATERIAL_CATEGORY_WOOD",
-		8: "MATERIAL_CATEGORY_FOAM",
-		9: "MATERIAL_CATEGORY_OTHER",
+		0:  "MATERIAL_CATEGORY_UNSPECIFIED",
+		1:  "MATERIAL_CATEGORY_METAL",
+		2:  "MATERIAL_CATEGORY_POLYMER",
+		3:  "MATERIAL_CATEGORY_ELASTOMER",
+		4:  "MATERIAL_CATEGORY_COMPOSITE",
+		5:  "MATERIAL_CATEGORY_CERAMIC",
+		6:  "MATERIAL_CATEGORY_GLASS",
+		7:  "MATERIAL_CATEGORY_WOOD",
+		8:  "MATERIAL_CATEGORY_FOAM",
+		9:  "MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE",
+		10: "MATERIAL_CATEGORY_CHEMICAL",
+		99: "MATERIAL_CATEGORY_OTHER",
 	}
 	MaterialCategory_value = map[string]int32{
-		"MATERIAL_CATEGORY_UNSPECIFIED": 0,
-		"MATERIAL_CATEGORY_METAL":       1,
-		"MATERIAL_CATEGORY_POLYMER":     2,
-		"MATERIAL_CATEGORY_ELASTOMER":   3,
-		"MATERIAL_CATEGORY_COMPOSITE":   4,
-		"MATERIAL_CATEGORY_CERAMIC":     5,
-		"MATERIAL_CATEGORY_GLASS":       6,
-		"MATERIAL_CATEGORY_WOOD":        7,
-		"MATERIAL_CATEGORY_FOAM":        8,
-		"MATERIAL_CATEGORY_OTHER":       9,
+		"MATERIAL_CATEGORY_UNSPECIFIED":           0,
+		"MATERIAL_CATEGORY_METAL":                 1,
+		"MATERIAL_CATEGORY_POLYMER":               2,
+		"MATERIAL_CATEGORY_ELASTOMER":             3,
+		"MATERIAL_CATEGORY_COMPOSITE":             4,
+		"MATERIAL_CATEGORY_CERAMIC":               5,
+		"MATERIAL_CATEGORY_GLASS":                 6,
+		"MATERIAL_CATEGORY_WOOD":                  7,
+		"MATERIAL_CATEGORY_FOAM":                  8,
+		"MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE": 9,
+		"MATERIAL_CATEGORY_CHEMICAL":              10,
+		"MATERIAL_CATEGORY_OTHER":                 99,
 	}
 )
 
@@ -352,7 +373,7 @@ func (x *Dimensions) GetZMm() float64 {
 type MaterialSpec struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Category      MaterialCategory       `protobuf:"varint,1,opt,name=category,proto3,enum=assembly.v1.MaterialCategory" json:"category,omitempty"` // Broad material class, e.g. metal, polymer, elastomer
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                            // Material family, e.g. aluminium, steel, ABS
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                            // Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive
 	Grade         string                 `protobuf:"bytes,3,opt,name=grade,proto3" json:"grade,omitempty"`                                          // Standard/specification, e.g. 6061-T6, S355JR, AISI 304
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -507,14 +528,15 @@ type PartDefinition struct {
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type               PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.PartType" json:"type,omitempty"`
-	WeightG            int64                  `protobuf:"varint,6,opt,name=weight_g,json=weightG,proto3" json:"weight_g,omitempty"`
-	Dimensions         *Dimensions            `protobuf:"bytes,7,opt,name=dimensions,proto3" json:"dimensions,omitempty"`
-	Material           *MaterialSpec          `protobuf:"bytes,8,opt,name=material,proto3" json:"material,omitempty"`
-	DefaultModelId     string                 `protobuf:"bytes,9,opt,name=default_model_id,json=defaultModelId,proto3" json:"default_model_id,omitempty"` // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
-	Handling           *PartHandlingProfile   `protobuf:"bytes,10,opt,name=handling,proto3" json:"handling,omitempty"`
-	ExternalReferences []*ExternalReference   `protobuf:"bytes,11,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *CustomProperties      `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
+	Type               PartType               `protobuf:"varint,5,opt,name=type,proto3,enum=assembly.v1.PartType" json:"type,omitempty"` // Broad functional/BOM classification of the part
+	Subtype            string                 `protobuf:"bytes,6,opt,name=subtype,proto3" json:"subtype,omitempty"`                      // Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease
+	WeightG            int64                  `protobuf:"varint,7,opt,name=weight_g,json=weightG,proto3" json:"weight_g,omitempty"`
+	Dimensions         *Dimensions            `protobuf:"bytes,8,opt,name=dimensions,proto3" json:"dimensions,omitempty"`
+	Material           *MaterialSpec          `protobuf:"bytes,9,opt,name=material,proto3" json:"material,omitempty"`
+	DefaultModelId     string                 `protobuf:"bytes,10,opt,name=default_model_id,json=defaultModelId,proto3" json:"default_model_id,omitempty"` // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
+	Handling           *PartHandlingProfile   `protobuf:"bytes,11,opt,name=handling,proto3" json:"handling,omitempty"`
+	ExternalReferences []*ExternalReference   `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Custom             *CustomProperties      `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -582,6 +604,13 @@ func (x *PartDefinition) GetType() PartType {
 		return x.Type
 	}
 	return PartType_PART_TYPE_UNSPECIFIED
+}
+
+func (x *PartDefinition) GetSubtype() string {
+	if x != nil {
+		return x.Subtype
+	}
+	return ""
 }
 
 func (x *PartDefinition) GetWeightG() int64 {
@@ -1058,23 +1087,24 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x18requires_fixture_support\x18\x04 \x01(\bR\x16requiresFixtureSupport\x12'\n" +
 	"\x10max_grip_force_n\x18\x05 \x01(\x01R\rmaxGripForceN\x12\"\n" +
 	"\rmax_torque_nm\x18\x06 \x01(\x01R\vmaxTorqueNm\x12A\n" +
-	"\vconstraints\x18\a \x03(\v2\x1f.assembly.v1.KeyValueConstraintR\vconstraints\"\x90\x04\n" +
+	"\vconstraints\x18\a \x03(\v2\x1f.assembly.v1.KeyValueConstraintR\vconstraints\"\xaa\x04\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x15.assembly.v1.PartTypeR\x04type\x12\x19\n" +
-	"\bweight_g\x18\x06 \x01(\x03R\aweightG\x127\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x15.assembly.v1.PartTypeR\x04type\x12\x18\n" +
+	"\asubtype\x18\x06 \x01(\tR\asubtype\x12\x19\n" +
+	"\bweight_g\x18\a \x01(\x03R\aweightG\x127\n" +
 	"\n" +
-	"dimensions\x18\a \x01(\v2\x17.assembly.v1.DimensionsR\n" +
+	"dimensions\x18\b \x01(\v2\x17.assembly.v1.DimensionsR\n" +
 	"dimensions\x125\n" +
-	"\bmaterial\x18\b \x01(\v2\x19.assembly.v1.MaterialSpecR\bmaterial\x12(\n" +
-	"\x10default_model_id\x18\t \x01(\tR\x0edefaultModelId\x12<\n" +
-	"\bhandling\x18\n" +
-	" \x01(\v2 .assembly.v1.PartHandlingProfileR\bhandling\x12O\n" +
-	"\x13external_references\x18\v \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xc8\x02\n" +
+	"\bmaterial\x18\t \x01(\v2\x19.assembly.v1.MaterialSpecR\bmaterial\x12(\n" +
+	"\x10default_model_id\x18\n" +
+	" \x01(\tR\x0edefaultModelId\x12<\n" +
+	"\bhandling\x18\v \x01(\v2 .assembly.v1.PartHandlingProfileR\bhandling\x12O\n" +
+	"\x13external_references\x18\f \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xc8\x02\n" +
 	"\x11ProductDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1110,7 +1140,7 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x0fPartDefinitions\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.assembly.v1.PartDefinitionR\x05items\"J\n" +
 	"\x12ProductDefinitions\x124\n" +
-	"\x05items\x18\x01 \x03(\v2\x1e.assembly.v1.ProductDefinitionR\x05items*\xb9\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.assembly.v1.ProductDefinitionR\x05items*\xcb\x02\n" +
 	"\bPartType\x12\x19\n" +
 	"\x15PART_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13PART_TYPE_COMPONENT\x10\x01\x12\x16\n" +
@@ -1118,7 +1148,13 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x15PART_TYPE_SUBASSEMBLY\x10\x03\x12\x18\n" +
 	"\x14PART_TYPE_CONSUMABLE\x10\x04\x12\x13\n" +
 	"\x0fPART_TYPE_LABEL\x10\x05\x12\x17\n" +
-	"\x13PART_TYPE_PACKAGING\x10\x06*\x96\x01\n" +
+	"\x13PART_TYPE_PACKAGING\x10\x06\x12\x11\n" +
+	"\rPART_TYPE_PCB\x10\a\x12\"\n" +
+	"\x1ePART_TYPE_ELECTRONIC_COMPONENT\x10\b\x12\"\n" +
+	"\x1ePART_TYPE_ELECTRICAL_COMPONENT\x10\t\x12\x13\n" +
+	"\x0fPART_TYPE_CABLE\x10\n" +
+	"\x12 \n" +
+	"\x1cPART_TYPE_DISPENSED_MATERIAL\x10\v*\x96\x01\n" +
 	"\bNodeKind\x12\x19\n" +
 	"\x15NODE_KIND_UNSPECIFIED\x10\x00\x12\x13\n" +
 	"\x0fNODE_KIND_GROUP\x10\x01\x12\x1d\n" +
@@ -1134,7 +1170,7 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x14JOIN_METHOD_SNAP_FIT\x10\x04\x12\x18\n" +
 	"\x14JOIN_METHOD_ADHESIVE\x10\x05\x12\x14\n" +
 	"\x10JOIN_METHOD_WELD\x10\x06\x12\x15\n" +
-	"\x11JOIN_METHOD_PLACE\x10\a*\xc4\x02\n" +
+	"\x11JOIN_METHOD_PLACE\x10\a*\x91\x03\n" +
 	"\x10MaterialCategory\x12!\n" +
 	"\x1dMATERIAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17MATERIAL_CATEGORY_METAL\x10\x01\x12\x1d\n" +
@@ -1144,8 +1180,11 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x19MATERIAL_CATEGORY_CERAMIC\x10\x05\x12\x1b\n" +
 	"\x17MATERIAL_CATEGORY_GLASS\x10\x06\x12\x1a\n" +
 	"\x16MATERIAL_CATEGORY_WOOD\x10\a\x12\x1a\n" +
-	"\x16MATERIAL_CATEGORY_FOAM\x10\b\x12\x1b\n" +
-	"\x17MATERIAL_CATEGORY_OTHER\x10\tB\xb2\x01\n" +
+	"\x16MATERIAL_CATEGORY_FOAM\x10\b\x12+\n" +
+	"'MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE\x10\t\x12\x1e\n" +
+	"\x1aMATERIAL_CATEGORY_CHEMICAL\x10\n" +
+	"\x12\x1b\n" +
+	"\x17MATERIAL_CATEGORY_OTHER\x10cB\xb2\x01\n" +
 	"\x0fcom.assembly.v1B\fProductProtoP\x01Z;github.com/cobotar/protocol/messages/assembly/v1;assemblyv1\xa2\x02\x03AXX\xaa\x02\x14Messages.Assembly.V1\xca\x02\vAssembly\\V1\xe2\x02\x17Assembly\\V1\\GPBMetadata\xea\x02\fAssembly::V1b\x06proto3"
 
 var (

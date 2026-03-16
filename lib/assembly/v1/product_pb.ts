@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/product.proto.
  */
 export const file_assembly_v1_product: GenFile = /*@__PURE__*/
-  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIlwKDE1hdGVyaWFsU3BlYxIvCghjYXRlZ29yeRgBIAEoDjIdLmFzc2VtYmx5LnYxLk1hdGVyaWFsQ2F0ZWdvcnkSDAoEbmFtZRgCIAEoCRINCgVncmFkZRgDIAEoCSLmAQoTUGFydEhhbmRsaW5nUHJvZmlsZRIPCgdmcmFnaWxlGAEgASgIEhUKDWVzZF9zZW5zaXRpdmUYAiABKAgSHgoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoARIVCg1tYXhfdG9ycXVlX25tGAYgASgBEjQKC2NvbnN0cmFpbnRzGAcgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IpgDCg5QYXJ0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlBhcnRUeXBlEhAKCHdlaWdodF9nGAYgASgDEisKCmRpbWVuc2lvbnMYByABKAsyFy5hc3NlbWJseS52MS5EaW1lbnNpb25zEisKCG1hdGVyaWFsGAggASgLMhkuYXNzZW1ibHkudjEuTWF0ZXJpYWxTcGVjEhgKEGRlZmF1bHRfbW9kZWxfaWQYCSABKAkSMgoIaGFuZGxpbmcYCiABKAsyIC5hc3NlbWJseS52MS5QYXJ0SGFuZGxpbmdQcm9maWxlEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YDCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIvwBChFQcm9kdWN0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFAoMcm9vdF9ub2RlX2lkGAUgASgJEigKBW5vZGVzGAYgAygLMhkuYXNzZW1ibHkudjEuQXNzZW1ibHlOb2RlEjsKE2V4dGVybmFsX3JlZmVyZW5jZXMYByADKAsyHi5hc3NlbWJseS52MS5FeHRlcm5hbFJlZmVyZW5jZRItCgZjdXN0b20YCCABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjUKEFZhcmlhbnRDb25kaXRpb24SEQoJZGltZW5zaW9uGAEgASgJEg4KBnZhbHVlcxgCIAMoCSKjBAoMQXNzZW1ibHlOb2RlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSFgoOcGFyZW50X25vZGVfaWQYAyABKAkSIwoEa2luZBgEIAEoDjIVLmFzc2VtYmx5LnYxLk5vZGVLaW5kEhoKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEoCRIZChFvdmVycmlkZV9tb2RlbF9pZBgGIAEoCRIlCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIWCg5jaGlsZF9ub2RlX2lkcxgIIAMoCRIVCg1zZXF1ZW5jZV9oaW50GAkgASgFEhsKE2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAkSMQoQam9pbl9tZXRob2RfaGludBgLIAEoDjIXLmFzc2VtYmx5LnYxLkpvaW5NZXRob2QSMQoTaW5zZXJ0aW9uX2F4aXNfaGludBgMIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSNQoXcHJlZmVycmVkX2FwcHJvYWNoX2hpbnQYDSABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEhAKCG9wdGlvbmFsGA4gASgIEjQKDWFwcGxpY2FiaWxpdHkYDyADKAsyHS5hc3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uEi0KBmN1c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiPQoPUGFydERlZmluaXRpb25zEioKBWl0ZW1zGAEgAygLMhsuYXNzZW1ibHkudjEuUGFydERlZmluaXRpb24iQwoSUHJvZHVjdERlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEuUHJvZHVjdERlZmluaXRpb24quQEKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1CTFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBiqWAQoITm9kZUtpbmQSGQoVTk9ERV9LSU5EX1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5EX0dST1VQEAESHQoZTk9ERV9LSU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5PREVfS0lORF9TVUJBU1NFTUJMWV9PQ0NVUlJFTkNFEAMSFQoRTk9ERV9LSU5EX1BBVFRFUk4QBCrTAQoKSm9pbk1ldGhvZBIbChdKT0lOX01FVEhPRF9VTlNQRUNJRklFRBAAEhQKEEpPSU5fTUVUSE9EX05PTkUQARIWChJKT0lOX01FVEhPRF9GQVNURU4QAhIZChVKT0lOX01FVEhPRF9QUkVTU19GSVQQAxIYChRKT0lOX01FVEhPRF9TTkFQX0ZJVBAEEhgKFEpPSU5fTUVUSE9EX0FESEVTSVZFEAUSFAoQSk9JTl9NRVRIT0RfV0VMRBAGEhUKEUpPSU5fTUVUSE9EX1BMQUNFEAcqxAIKEE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFURVJJQUxfQ0FURUdPUllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklBTF9DQVRFR09SWV9NRVRBTBABEh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIfChtNQVRFUklBTF9DQVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRFUklBTF9DQVRFR09SWV9DT01QT1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09SWV9DRVJBTUlDEAUSGwoXTUFURVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZNQVRFUklBTF9DQVRFR09SWV9XT09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEAlCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3]);
+  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIlwKDE1hdGVyaWFsU3BlYxIvCghjYXRlZ29yeRgBIAEoDjIdLmFzc2VtYmx5LnYxLk1hdGVyaWFsQ2F0ZWdvcnkSDAoEbmFtZRgCIAEoCRINCgVncmFkZRgDIAEoCSLmAQoTUGFydEhhbmRsaW5nUHJvZmlsZRIPCgdmcmFnaWxlGAEgASgIEhUKDWVzZF9zZW5zaXRpdmUYAiABKAgSHgoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoARIVCg1tYXhfdG9ycXVlX25tGAYgASgBEjQKC2NvbnN0cmFpbnRzGAcgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IqkDCg5QYXJ0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlBhcnRUeXBlEg8KB3N1YnR5cGUYBiABKAkSEAoId2VpZ2h0X2cYByABKAMSKwoKZGltZW5zaW9ucxgIIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lvbnMSKwoIbWF0ZXJpYWwYCSABKAsyGS5hc3NlbWJseS52MS5NYXRlcmlhbFNwZWMSGAoQZGVmYXVsdF9tb2RlbF9pZBgKIAEoCRIyCghoYW5kbGluZxgLIAEoCzIgLmFzc2VtYmx5LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgNIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMi/AEKEVByb2R1Y3REZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIUCgxyb290X25vZGVfaWQYBSABKAkSKAoFbm9kZXMYBiADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5vZGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgHIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgIIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiNQoQVmFyaWFudENvbmRpdGlvbhIRCglkaW1lbnNpb24YASABKAkSDgoGdmFsdWVzGAIgAygJIqMECgxBc3NlbWJseU5vZGUSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIWCg5wYXJlbnRfbm9kZV9pZBgDIAEoCRIjCgRraW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmQSGgoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJEhkKEW92ZXJyaWRlX21vZGVsX2lkGAYgASgJEiUKCmxvY2FsX3Bvc2UYByABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhYKDmNoaWxkX25vZGVfaWRzGAggAygJEhUKDXNlcXVlbmNlX2hpbnQYCSABKAUSGwoTY2FkX29jY3VycmVuY2VfcGF0aBgKIAEoCRIxChBqb2luX21ldGhvZF9oaW50GAsgASgOMhcuYXNzZW1ibHkudjEuSm9pbk1ldGhvZBIxChNpbnNlcnRpb25fYXhpc19oaW50GAwgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI1ChdwcmVmZXJyZWRfYXBwcm9hY2hfaGludBgNIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSEAoIb3B0aW9uYWwYDiABKAgSNAoNYXBwbGljYWJpbGl0eRgPIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb24SLQoGY3VzdG9tGBAgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI9Cg9QYXJ0RGVmaW5pdGlvbnMSKgoFaXRlbXMYASADKAsyGy5hc3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvbiJDChJQcm9kdWN0RGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5Qcm9kdWN0RGVmaW5pdGlvbirLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VEX01BVEVSSUFMEAsqlgEKCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3]);
 
 /**
  * @generated from message assembly.v1.Dimensions
@@ -69,7 +69,7 @@ export type MaterialSpec = Message<"assembly.v1.MaterialSpec"> & {
   category: MaterialCategory;
 
   /**
-   * Material family, e.g. aluminium, steel, ABS
+   * Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive
    *
    * @generated from field: string name = 2;
    */
@@ -164,44 +164,53 @@ export type PartDefinition = Message<"assembly.v1.PartDefinition"> & {
   description: string;
 
   /**
+   * Broad functional/BOM classification of the part
+   *
    * @generated from field: assembly.v1.PartType type = 5;
    */
   type: PartType;
 
   /**
-   * @generated from field: int64 weight_g = 6;
+   * Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease
+   *
+   * @generated from field: string subtype = 6;
+   */
+  subtype: string;
+
+  /**
+   * @generated from field: int64 weight_g = 7;
    */
   weightG: bigint;
 
   /**
-   * @generated from field: assembly.v1.Dimensions dimensions = 7;
+   * @generated from field: assembly.v1.Dimensions dimensions = 8;
    */
   dimensions?: Dimensions;
 
   /**
-   * @generated from field: assembly.v1.MaterialSpec material = 8;
+   * @generated from field: assembly.v1.MaterialSpec material = 9;
    */
   material?: MaterialSpec;
 
   /**
    * Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
    *
-   * @generated from field: string default_model_id = 9;
+   * @generated from field: string default_model_id = 10;
    */
   defaultModelId: string;
 
   /**
-   * @generated from field: assembly.v1.PartHandlingProfile handling = 10;
+   * @generated from field: assembly.v1.PartHandlingProfile handling = 11;
    */
   handling?: PartHandlingProfile;
 
   /**
-   * @generated from field: repeated assembly.v1.ExternalReference external_references = 11;
+   * @generated from field: repeated assembly.v1.ExternalReference external_references = 12;
    */
   externalReferences: ExternalReference[];
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 12;
+   * @generated from field: assembly.v1.CustomProperties custom = 13;
    */
   custom?: CustomProperties;
 };
@@ -437,34 +446,81 @@ export enum PartType {
   UNSPECIFIED = 0,
 
   /**
+   * General mechanical or non-specialized part/component
+   *
    * @generated from enum value: PART_TYPE_COMPONENT = 1;
    */
   COMPONENT = 1,
 
   /**
+   * Screw, bolt, nut, washer, rivet, insert, clip, etc.
+   *
    * @generated from enum value: PART_TYPE_FASTENER = 2;
    */
   FASTENER = 2,
 
   /**
+   * A part that is itself composed of multiple child parts
+   *
    * @generated from enum value: PART_TYPE_SUBASSEMBLY = 3;
    */
   SUBASSEMBLY = 3,
 
   /**
+   * General consumable used up during assembly or maintenance
+   *
    * @generated from enum value: PART_TYPE_CONSUMABLE = 4;
    */
   CONSUMABLE = 4,
 
   /**
+   * Sticker, rating plate, barcode label, warning label, etc.
+   *
    * @generated from enum value: PART_TYPE_LABEL = 5;
    */
   LABEL = 5,
 
   /**
+   * Box, bag, foam insert, tray cover, spacer, etc.
+   *
    * @generated from enum value: PART_TYPE_PACKAGING = 6;
    */
   PACKAGING = 6,
+
+  /**
+   * Bare or populated printed circuit board
+   *
+   * @generated from enum value: PART_TYPE_PCB = 7;
+   */
+  PCB = 7,
+
+  /**
+   * LED, resistor, capacitor, IC, connector, relay, fuse, etc.
+   *
+   * @generated from enum value: PART_TYPE_ELECTRONIC_COMPONENT = 8;
+   */
+  ELECTRONIC_COMPONENT = 8,
+
+  /**
+   * Breaker, terminal block, battery, switch, power supply, wire harness, etc.
+   *
+   * @generated from enum value: PART_TYPE_ELECTRICAL_COMPONENT = 9;
+   */
+  ELECTRICAL_COMPONENT = 9,
+
+  /**
+   * Wire, cable, wire set, cable assembly, harness
+   *
+   * @generated from enum value: PART_TYPE_CABLE = 10;
+   */
+  CABLE = 10,
+
+  /**
+   * Grease, glue, sealant, potting compound, solder paste, flux, etc.
+   *
+   * @generated from enum value: PART_TYPE_DISPENSED_MATERIAL = 11;
+   */
+  DISPENSED_MATERIAL = 11,
 }
 
 /**
@@ -641,11 +697,25 @@ export enum MaterialCategory {
   FOAM = 8,
 
   /**
+   * PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE = 9;
+   */
+  ELECTRONICS_SUBSTRATE = 9,
+
+  /**
+   * Adhesive, grease, sealant, potting compound, coating, flux, etc.
+   *
+   * @generated from enum value: MATERIAL_CATEGORY_CHEMICAL = 10;
+   */
+  CHEMICAL = 10,
+
+  /**
    * Anything not fitting the categories above
    *
-   * @generated from enum value: MATERIAL_CATEGORY_OTHER = 9;
+   * @generated from enum value: MATERIAL_CATEGORY_OTHER = 99;
    */
-  OTHER = 9,
+  OTHER = 99,
 }
 
 /**
