@@ -8,6 +8,8 @@ import type { ActorAssignment, ActorRef } from "./actor_pb.ts";
 import { file_assembly_v1_actor } from "./actor_pb.ts";
 import type { CustomProperties, EstimatedDuration } from "./common_pb.ts";
 import { file_assembly_v1_common } from "./common_pb.ts";
+import type { VariantConfiguration } from "./variant_pb.ts";
+import { file_assembly_v1_variant } from "./variant_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
@@ -18,29 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/execution.proto.
  */
 export const file_assembly_v1_execution: GenFile = /*@__PURE__*/
-  fileDesc("Chthc3NlbWJseS92MS9leGVjdXRpb24ucHJvdG8SC2Fzc2VtYmx5LnYxIjQKEFZhcmlhbnRTZWxlY3Rpb24SEQoJZGltZW5zaW9uGAEgASgJEg0KBXZhbHVlGAIgASgJIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAki1gQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSEQoJcmVjaXBlX2lkGAIgASgJEhAKCG9yZGVyX2lkGAMgASgJEhIKCnN0YXRpb25faWQYBCABKAkSDwoHY2VsbF9pZBgFIAEoCRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USHAoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYByABKAkSKwoJc2VxdWVuY2VzGAggAygLMhguYXNzZW1ibHkudjEuU2VxdWVuY2VSdW4SIwoFdGFza3MYCSADKAsyFC5hc3NlbWJseS52MS5UYXNrUnVuEisKBXN0YXRlGAogASgOMhwuYXNzZW1ibHkudjEuUHJvY2Vzc1J1blN0YXRlEjAKDGluaXRpYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjEKC2Fzc2lnbm1lbnRzGA0gAygLMhwuYXNzZW1ibHkudjEuQWN0b3JBc3NpZ25tZW50Ei0KBmN1c3RvbRgOIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMSOQoScHJvZHVjdF9zZWxlY3Rpb25zGA8gAygLMh0uYXNzZW1ibHkudjEuVmFyaWFudFNlbGVjdGlvbhItCgpwYXJhbWV0ZXJzGBAgAygLMhkuYXNzZW1ibHkudjEuUnVuUGFyYW1ldGVyIqcCCgtTZXF1ZW5jZVJ1bhIKCgJpZBgBIAEoCRIeChZzZXF1ZW5jZV9kZWZpbml0aW9uX2lkGAIgASgJEh4KFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyABKAkSHgoWY2hpbGRfc2VxdWVuY2VfcnVuX2lkcxgEIAMoCRIaChJjaGlsZF90YXNrX3J1bl9pZHMYBSADKAkSLAoFc3RhdGUYBiABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5jZVJ1blN0YXRlEhcKD2NvbXBsZXRlZF90YXNrcxgHIAEoBRIZChFjYW5fYnVsa19jb21wbGV0ZRgIIAEoCBIuCg9hc3NpZ25lZF9hY3RvcnMYCSADKAsyFS5hc3NlbWJseS52MS5BY3RvclJlZiLBBAoHVGFza1J1bhIKCgJpZBgBIAEoCRIaChJ0YXNrX2RlZmluaXRpb25faWQYAiABKAkSHgoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgDIAEoCRIoCgVzdGF0ZRgEIAEoDjIZLmFzc2VtYmx5LnYxLlRhc2tSdW5TdGF0ZRIvChBjYW5kaWRhdGVfYWN0b3JzGAUgAygLMhUuYXNzZW1ibHkudjEuQWN0b3JSZWYSLQoOYXNzaWduZWRfYWN0b3IYBiABKAsyFS5hc3NlbWJseS52MS5BY3RvclJlZhIOCgZjYW5fZG8YByABKAgSEAoIY2FuX3VuZG8YCCABKAgSGAoQd29ya2FibGVfaG9yaXpvbhgJIAEoBRI6ChJlc3RpbWF0ZWRfZHVyYXRpb24YCiABKAsyHi5hc3NlbWJseS52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIwCghldmlkZW5jZRgPIAMoCzIeLmFzc2VtYmx5LnYxLkV4ZWN1dGlvbkV2aWRlbmNlEi0KBmN1c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiOAoMRXZpZGVuY2VGYWN0EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCRIMCgR1bml0GAMgASgJIrEBChFFeGVjdXRpb25FdmlkZW5jZRIKCgJpZBgBIAEoCRITCgt0YXNrX3J1bl9pZBgCIAEoCRIOCgZzb3VyY2UYAyABKAkSLwoLcmVjb3JkZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEigKBWZhY3RzGAUgAygLMhkuYXNzZW1ibHkudjEuRXZpZGVuY2VGYWN0EhAKCGJsb2JfdXJpGAYgASgJKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEAQq6QEKEFNlcXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX1dBSVRJTkcQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIgChxTRVFVRU5DRV9SVU5fU1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JURUQQBSrnAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASJwojVEFTS19SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIaChZUQVNLX1JVTl9TVEFURV9XQUlUSU5HEAISHgoaVEFTS19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIcChhUQVNLX1JVTl9TVEFURV9DT01QTEVURUQQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NUQVRFX0FCT1JURUQQBkK0AQoPY29tLmFzc2VtYmx5LnYxQg5FeGVjdXRpb25Qcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXNzZW1ibHkvdjE7YXNzZW1ibHl2MaICA0FYWKoCFE1lc3NhZ2VzLkFzc2VtYmx5LlYxygILQXNzZW1ibHlcVjHiAhdBc3NlbWJseVxWMVxHUEJNZXRhZGF0YeoCDEFzc2VtYmx5OjpWMWIGcHJvdG8z", [file_assembly_v1_actor, file_assembly_v1_common, file_geometry_v1_pose, file_google_protobuf_timestamp]);
-
-/**
- * @generated from message assembly.v1.VariantSelection
- */
-export type VariantSelection = Message<"assembly.v1.VariantSelection"> & {
-  /**
-   * @generated from field: string dimension = 1;
-   */
-  dimension: string;
-
-  /**
-   * @generated from field: string value = 2;
-   */
-  value: string;
-};
-
-/**
- * Describes the message assembly.v1.VariantSelection.
- * Use `create(VariantSelectionSchema)` to create a new message.
- */
-export const VariantSelectionSchema: GenMessage<VariantSelection> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 0);
+  fileDesc("Chthc3NlbWJseS92MS9leGVjdXRpb24ucHJvdG8SC2Fzc2VtYmx5LnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAki3QQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSEQoJcmVjaXBlX2lkGAIgASgJEhAKCG9yZGVyX2lkGAMgASgJEhIKCnN0YXRpb25faWQYBCABKAkSDwoHY2VsbF9pZBgFIAEoCRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USHAoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYByABKAkSKwoJc2VxdWVuY2VzGAggAygLMhguYXNzZW1ibHkudjEuU2VxdWVuY2VSdW4SIwoFdGFza3MYCSADKAsyFC5hc3NlbWJseS52MS5UYXNrUnVuEisKBXN0YXRlGAogASgOMhwuYXNzZW1ibHkudjEuUHJvY2Vzc1J1blN0YXRlEjAKDGluaXRpYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjEKC2Fzc2lnbm1lbnRzGA0gAygLMhwuYXNzZW1ibHkudjEuQWN0b3JBc3NpZ25tZW50Ei0KBmN1c3RvbRgOIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGA8gASgLMiEuYXNzZW1ibHkudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLQoKcGFyYW1ldGVycxgQIAMoCzIZLmFzc2VtYmx5LnYxLlJ1blBhcmFtZXRlciKnAgoLU2VxdWVuY2VSdW4SCgoCaWQYASABKAkSHgoWc2VxdWVuY2VfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEh4KFmNoaWxkX3NlcXVlbmNlX3J1bl9pZHMYBCADKAkSGgoSY2hpbGRfdGFza19ydW5faWRzGAUgAygJEiwKBXN0YXRlGAYgASgOMh0uYXNzZW1ibHkudjEuU2VxdWVuY2VSdW5TdGF0ZRIXCg9jb21wbGV0ZWRfdGFza3MYByABKAUSGQoRY2FuX2J1bGtfY29tcGxldGUYCCABKAgSLgoPYXNzaWduZWRfYWN0b3JzGAkgAygLMhUuYXNzZW1ibHkudjEuQWN0b3JSZWYiwQQKB1Rhc2tSdW4SCgoCaWQYASABKAkSGgoSdGFza19kZWZpbml0aW9uX2lkGAIgASgJEh4KFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyABKAkSKAoFc3RhdGUYBCABKA4yGS5hc3NlbWJseS52MS5UYXNrUnVuU3RhdGUSLwoQY2FuZGlkYXRlX2FjdG9ycxgFIAMoCzIVLmFzc2VtYmx5LnYxLkFjdG9yUmVmEi0KDmFzc2lnbmVkX2FjdG9yGAYgASgLMhUuYXNzZW1ibHkudjEuQWN0b3JSZWYSDgoGY2FuX2RvGAcgASgIEhAKCGNhbl91bmRvGAggASgIEhgKEHdvcmthYmxlX2hvcml6b24YCSABKAUSOgoSZXN0aW1hdGVkX2R1cmF0aW9uGAogASgLMh4uYXNzZW1ibHkudjEuRXN0aW1hdGVkRHVyYXRpb24SLgoKc3RhcnRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoMY29tcGxldGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBISCgplcnJvcl9jb2RlGA0gASgJEhUKDWVycm9yX21lc3NhZ2UYDiABKAkSMAoIZXZpZGVuY2UYDyADKAsyHi5hc3NlbWJseS52MS5FeGVjdXRpb25FdmlkZW5jZRItCgZjdXN0b20YECABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzIjgKDEV2aWRlbmNlRmFjdBILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkSDAoEdW5pdBgDIAEoCSKxAQoRRXhlY3V0aW9uRXZpZGVuY2USCgoCaWQYASABKAkSEwoLdGFza19ydW5faWQYAiABKAkSDgoGc291cmNlGAMgASgJEi8KC3JlY29yZGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgVmYWN0cxgFIAMoCzIZLmFzc2VtYmx5LnYxLkV2aWRlbmNlRmFjdBIQCghibG9iX3VyaRgGIAEoCSq2AQoPUHJvY2Vzc1J1blN0YXRlEiEKHVBST0NFU1NfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASHQoZUFJPQ0VTU19SVU5fU1RBVEVfV0FJVElORxABEiEKHVBST0NFU1NfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAISHwobUFJPQ0VTU19SVU5fU1RBVEVfQ09NUExFVEVEEAMSHQoZUFJPQ0VTU19SVU5fU1RBVEVfQUJPUlRFRBAEKukBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEisKJ1NFUVVFTkNFX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9XQUlUSU5HEAISIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSIAocU0VRVUVOQ0VfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9BQk9SVEVEEAUq5wEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoWVEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVEEAZCtAEKD2NvbS5hc3NlbWJseS52MUIORXhlY3V0aW9uUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw", [file_assembly_v1_actor, file_assembly_v1_common, file_assembly_v1_variant, file_geometry_v1_pose, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message assembly.v1.RunParameter
@@ -64,7 +44,7 @@ export type RunParameter = Message<"assembly.v1.RunParameter"> & {
  * Use `create(RunParameterSchema)` to create a new message.
  */
 export const RunParameterSchema: GenMessage<RunParameter> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 1);
+  messageDesc(file_assembly_v1_execution, 0);
 
 /**
  * ProcessRun is only created when a concrete cell can currently satisfy it.
@@ -144,9 +124,9 @@ export type ProcessRun = Message<"assembly.v1.ProcessRun"> & {
   custom?: CustomProperties;
 
   /**
-   * @generated from field: repeated assembly.v1.VariantSelection product_selections = 15;
+   * @generated from field: assembly.v1.VariantConfiguration variant_configuration = 15;
    */
-  productSelections: VariantSelection[];
+  variantConfiguration?: VariantConfiguration;
 
   /**
    * @generated from field: repeated assembly.v1.RunParameter parameters = 16;
@@ -159,7 +139,7 @@ export type ProcessRun = Message<"assembly.v1.ProcessRun"> & {
  * Use `create(ProcessRunSchema)` to create a new message.
  */
 export const ProcessRunSchema: GenMessage<ProcessRun> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 2);
+  messageDesc(file_assembly_v1_execution, 1);
 
 /**
  * @generated from message assembly.v1.SequenceRun
@@ -216,7 +196,7 @@ export type SequenceRun = Message<"assembly.v1.SequenceRun"> & {
  * Use `create(SequenceRunSchema)` to create a new message.
  */
 export const SequenceRunSchema: GenMessage<SequenceRun> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 3);
+  messageDesc(file_assembly_v1_execution, 2);
 
 /**
  * @generated from message assembly.v1.TaskRun
@@ -310,7 +290,7 @@ export type TaskRun = Message<"assembly.v1.TaskRun"> & {
  * Use `create(TaskRunSchema)` to create a new message.
  */
 export const TaskRunSchema: GenMessage<TaskRun> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 4);
+  messageDesc(file_assembly_v1_execution, 3);
 
 /**
  * @generated from message assembly.v1.EvidenceFact
@@ -337,7 +317,7 @@ export type EvidenceFact = Message<"assembly.v1.EvidenceFact"> & {
  * Use `create(EvidenceFactSchema)` to create a new message.
  */
 export const EvidenceFactSchema: GenMessage<EvidenceFact> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 5);
+  messageDesc(file_assembly_v1_execution, 4);
 
 /**
  * @generated from message assembly.v1.ExecutionEvidence
@@ -381,7 +361,7 @@ export type ExecutionEvidence = Message<"assembly.v1.ExecutionEvidence"> & {
  * Use `create(ExecutionEvidenceSchema)` to create a new message.
  */
 export const ExecutionEvidenceSchema: GenMessage<ExecutionEvidence> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_execution, 6);
+  messageDesc(file_assembly_v1_execution, 5);
 
 /**
  * @generated from enum assembly.v1.ProcessRunState

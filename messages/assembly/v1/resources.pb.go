@@ -1764,13 +1764,14 @@ type RobotInstance struct {
 	Icon                     string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description              string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	RobotDefinitionId        string                 `protobuf:"bytes,5,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
-	StationId                string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	MountedToolInstanceId    string                 `protobuf:"bytes,7,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // The tool instance currently mounted on the robot, if any.
-	AvailableToolInstanceIds []string               `protobuf:"bytes,8,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // Tool instances available to this robot in the cell/tool dock/tool magazine.
-	SupportsToolChange       bool                   `protobuf:"varint,9,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                    // Whether this robot instance can dynamically change between available tools.
-	Status                   ResourceStatus         `protobuf:"varint,10,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
-	BasePose                 *v1.LocalizedPose      `protobuf:"bytes,11,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
-	Custom                   *CustomProperties      `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
+	SerialNumber             string                 `protobuf:"bytes,6,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
+	StationId                string                 `protobuf:"bytes,7,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	MountedToolInstanceId    string                 `protobuf:"bytes,8,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // The tool instance currently mounted on the robot, if any.
+	AvailableToolInstanceIds []string               `protobuf:"bytes,9,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // Tool instances available to this robot in the cell/tool dock/tool magazine.
+	SupportsToolChange       bool                   `protobuf:"varint,10,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                   // Whether this robot instance can dynamically change between available tools.
+	Status                   ResourceStatus         `protobuf:"varint,11,opt,name=status,proto3,enum=assembly.v1.ResourceStatus" json:"status,omitempty"`
+	BasePose                 *v1.LocalizedPose      `protobuf:"bytes,12,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
+	Custom                   *CustomProperties      `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -1836,6 +1837,13 @@ func (x *RobotInstance) GetDescription() string {
 func (x *RobotInstance) GetRobotDefinitionId() string {
 	if x != nil {
 		return x.RobotDefinitionId
+	}
+	return ""
+}
+
+func (x *RobotInstance) GetSerialNumber() string {
+	if x != nil {
+		return x.SerialNumber
 	}
 	return ""
 }
@@ -2343,22 +2351,23 @@ const file_assembly_v1_resources_proto_rawDesc = "" +
 	"\x12capability_profile\x18\f \x01(\v2\x1e.assembly.v1.CapabilityProfileR\x11capabilityProfile\x125\n" +
 	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"F\n" +
 	"\x10RobotDefinitions\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.RobotDefinitionR\x05items\"\x87\x04\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.assembly.v1.RobotDefinitionR\x05items\"\xac\x04\n" +
 	"\rRobotInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12.\n" +
-	"\x13robot_definition_id\x18\x05 \x01(\tR\x11robotDefinitionId\x12\x1d\n" +
+	"\x13robot_definition_id\x18\x05 \x01(\tR\x11robotDefinitionId\x12#\n" +
+	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x06 \x01(\tR\tstationId\x127\n" +
-	"\x18mounted_tool_instance_id\x18\a \x01(\tR\x15mountedToolInstanceId\x12=\n" +
-	"\x1bavailable_tool_instance_ids\x18\b \x03(\tR\x18availableToolInstanceIds\x120\n" +
-	"\x14supports_tool_change\x18\t \x01(\bR\x12supportsToolChange\x123\n" +
-	"\x06status\x18\n" +
-	" \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
-	"\tbase_pose\x18\v \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
-	"\x06custom\x18\f \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
+	"station_id\x18\a \x01(\tR\tstationId\x127\n" +
+	"\x18mounted_tool_instance_id\x18\b \x01(\tR\x15mountedToolInstanceId\x12=\n" +
+	"\x1bavailable_tool_instance_ids\x18\t \x03(\tR\x18availableToolInstanceIds\x120\n" +
+	"\x14supports_tool_change\x18\n" +
+	" \x01(\bR\x12supportsToolChange\x123\n" +
+	"\x06status\x18\v \x01(\x0e2\x1b.assembly.v1.ResourceStatusR\x06status\x127\n" +
+	"\tbase_pose\x18\f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x125\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"B\n" +
 	"\x0eRobotInstances\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.assembly.v1.RobotInstanceR\x05items\"\xa8\x02\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +

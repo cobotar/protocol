@@ -342,12 +342,13 @@ func (ProcessLoadStatus) EnumDescriptor() ([]byte, []int) {
 // - active faults / disabled resources
 // - asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --> then verify those assets exist and are available.)
 type ProcessLoadRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	ProcessRecipeId string                 `protobuf:"bytes,1,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
-	TargetLineId    string                 `protobuf:"bytes,2,opt,name=target_line_id,json=targetLineId,proto3" json:"target_line_id,omitempty"`
-	DryRun          bool                   `protobuf:"varint,3,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"` // true = precheck only, false = precheck + instantiate
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	ProcessRecipeId      string                 `protobuf:"bytes,1,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
+	TargetLineId         string                 `protobuf:"bytes,2,opt,name=target_line_id,json=targetLineId,proto3" json:"target_line_id,omitempty"`
+	VariantConfiguration *VariantConfiguration  `protobuf:"bytes,3,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	DryRun               bool                   `protobuf:"varint,4,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"` // true = precheck only, false = precheck + instantiate
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *ProcessLoadRequest) Reset() {
@@ -392,6 +393,13 @@ func (x *ProcessLoadRequest) GetTargetLineId() string {
 		return x.TargetLineId
 	}
 	return ""
+}
+
+func (x *ProcessLoadRequest) GetVariantConfiguration() *VariantConfiguration {
+	if x != nil {
+		return x.VariantConfiguration
+	}
+	return nil
 }
 
 func (x *ProcessLoadRequest) GetDryRun() bool {
@@ -812,11 +820,12 @@ var File_assembly_v1_process_requests_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
-	"\"assembly/v1/process_requests.proto\x12\vassembly.v1\x1a\x1bassembly/v1/execution.proto\"\x7f\n" +
+	"\"assembly/v1/process_requests.proto\x12\vassembly.v1\x1a\x1bassembly/v1/execution.proto\x1a\x19assembly/v1/variant.proto\"\xd7\x01\n" +
 	"\x12ProcessLoadRequest\x12*\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tR\x0fprocessRecipeId\x12$\n" +
-	"\x0etarget_line_id\x18\x02 \x01(\tR\ftargetLineId\x12\x17\n" +
-	"\adry_run\x18\x03 \x01(\bR\x06dryRun\"\x87\x05\n" +
+	"\x0etarget_line_id\x18\x02 \x01(\tR\ftargetLineId\x12V\n" +
+	"\x15variant_configuration\x18\x03 \x01(\v2!.assembly.v1.VariantConfigurationR\x14variantConfiguration\x12\x17\n" +
+	"\adry_run\x18\x04 \x01(\bR\x06dryRun\"\x87\x05\n" +
 	"\x0fProcessRunIssue\x129\n" +
 	"\afailure\x18\x01 \x01(\x0e2\x1f.assembly.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12@\n" +
@@ -925,24 +934,26 @@ var file_assembly_v1_process_requests_proto_goTypes = []any{
 	(*TaskFeasibility)(nil),          // 7: assembly.v1.TaskFeasibility
 	(*ProcessRunPrecheckResult)(nil), // 8: assembly.v1.ProcessRunPrecheckResult
 	(*ProcessLoadResult)(nil),        // 9: assembly.v1.ProcessLoadResult
-	(*ProcessRun)(nil),               // 10: assembly.v1.ProcessRun
+	(*VariantConfiguration)(nil),     // 10: assembly.v1.VariantConfiguration
+	(*ProcessRun)(nil),               // 11: assembly.v1.ProcessRun
 }
 var file_assembly_v1_process_requests_proto_depIdxs = []int32{
-	0,  // 0: assembly.v1.ProcessRunIssue.failure:type_name -> assembly.v1.ProcessLoadFailure
-	1,  // 1: assembly.v1.ProcessRunIssue.severity:type_name -> assembly.v1.ProcessRunIssueSeverity
-	2,  // 2: assembly.v1.ProcessRunIssue.importance:type_name -> assembly.v1.RequirementImportance
-	6,  // 3: assembly.v1.TaskFeasibility.issues:type_name -> assembly.v1.ProcessRunIssue
-	6,  // 4: assembly.v1.ProcessRunPrecheckResult.issues:type_name -> assembly.v1.ProcessRunIssue
-	7,  // 5: assembly.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> assembly.v1.TaskFeasibility
-	3,  // 6: assembly.v1.ProcessRunPrecheckResult.status:type_name -> assembly.v1.ProcessRunPrecheckStatus
-	4,  // 7: assembly.v1.ProcessLoadResult.status:type_name -> assembly.v1.ProcessLoadStatus
-	8,  // 8: assembly.v1.ProcessLoadResult.precheck:type_name -> assembly.v1.ProcessRunPrecheckResult
-	10, // 9: assembly.v1.ProcessLoadResult.process_run:type_name -> assembly.v1.ProcessRun
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	10, // 0: assembly.v1.ProcessLoadRequest.variant_configuration:type_name -> assembly.v1.VariantConfiguration
+	0,  // 1: assembly.v1.ProcessRunIssue.failure:type_name -> assembly.v1.ProcessLoadFailure
+	1,  // 2: assembly.v1.ProcessRunIssue.severity:type_name -> assembly.v1.ProcessRunIssueSeverity
+	2,  // 3: assembly.v1.ProcessRunIssue.importance:type_name -> assembly.v1.RequirementImportance
+	6,  // 4: assembly.v1.TaskFeasibility.issues:type_name -> assembly.v1.ProcessRunIssue
+	6,  // 5: assembly.v1.ProcessRunPrecheckResult.issues:type_name -> assembly.v1.ProcessRunIssue
+	7,  // 6: assembly.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> assembly.v1.TaskFeasibility
+	3,  // 7: assembly.v1.ProcessRunPrecheckResult.status:type_name -> assembly.v1.ProcessRunPrecheckStatus
+	4,  // 8: assembly.v1.ProcessLoadResult.status:type_name -> assembly.v1.ProcessLoadStatus
+	8,  // 9: assembly.v1.ProcessLoadResult.precheck:type_name -> assembly.v1.ProcessRunPrecheckResult
+	11, // 10: assembly.v1.ProcessLoadResult.process_run:type_name -> assembly.v1.ProcessRun
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_process_requests_proto_init() }
@@ -951,6 +962,7 @@ func file_assembly_v1_process_requests_proto_init() {
 		return
 	}
 	file_assembly_v1_execution_proto_init()
+	file_assembly_v1_variant_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

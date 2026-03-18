@@ -265,13 +265,14 @@ message RobotInstance {
   string icon = 3;
   string description = 4;
   string robot_definition_id = 5;
-  string station_id = 6;
-  string mounted_tool_instance_id = 7; // The tool instance currently mounted on the robot, if any.
-  repeated string available_tool_instance_ids = 8; // Tool instances available to this robot in the cell/tool dock/tool magazine.
-  bool supports_tool_change = 9; // Whether this robot instance can dynamically change between available tools.
-  ResourceStatus status = 10;
-  geometry.v1.LocalizedPose base_pose = 11;
-  CustomProperties custom = 12;
+  string serial_number = 6;
+  string station_id = 7;
+  string mounted_tool_instance_id = 8; // The tool instance currently mounted on the robot, if any.
+  repeated string available_tool_instance_ids = 9; // Tool instances available to this robot in the cell/tool dock/tool magazine.
+  bool supports_tool_change = 10; // Whether this robot instance can dynamically change between available tools.
+  ResourceStatus status = 11;
+  geometry.v1.LocalizedPose base_pose = 12;
+  CustomProperties custom = 13;
 }
 
 message RobotInstances {

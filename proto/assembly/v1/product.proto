@@ -2,6 +2,7 @@ syntax = "proto3";
 package assembly.v1;
 
 import "assembly/v1/common.proto";
+import "assembly/v1/variant.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
 
@@ -120,15 +121,11 @@ message ProductDefinition {
   string name = 2;
   string icon = 3;
   string description = 4;
-  string root_node_id = 5;
-  repeated AssemblyNode nodes = 6;
-  repeated ExternalReference external_references = 7;
-  CustomProperties custom = 8;
-}
-
-message VariantCondition {
-  string dimension = 1; // e.g. "hinge_side"
-  repeated string values = 2; // e.g. ["left"]
+  repeated VariantAxis variant_axes = 5;
+  string root_node_id = 6;
+  repeated AssemblyNode nodes = 7;
+  repeated ExternalReference external_references = 8;
+  CustomProperties custom = 9;
 }
 
 message AssemblyNode {
@@ -139,14 +136,14 @@ message AssemblyNode {
   string part_definition_id = 5;
   string override_model_id = 6;
   geometry.v1.Pose local_pose = 7;
-  repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
+  // repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
   int32 sequence_hint = 9;
   string cad_occurrence_path = 10; // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
   JoinMethod join_method_hint = 11;
   geometry.v1.Vector3 insertion_axis_hint = 12;
   geometry.v1.Vector3 preferred_approach_hint = 13;
   bool optional = 14;
-  repeated VariantCondition applicability = 15;
+  repeated VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
   CustomProperties custom = 16;
   // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
 }

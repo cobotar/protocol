@@ -1,7 +1,7 @@
 from assembly.v1 import common_pb2 as _common_pb2
-from assembly.v1 import product_pb2 as _product_pb2
 from assembly.v1 import resources_pb2 as _resources_pb2
 from assembly.v1 import skill_pb2 as _skill_pb2
+from assembly.v1 import variant_pb2 as _variant_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -99,12 +99,12 @@ TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_EITHER: TaskAssignmentPreference
 
 class RecipeApplicability(_message.Message):
-    __slots__ = ("required", "excluded")
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
-    EXCLUDED_FIELD_NUMBER: _ClassVar[int]
-    required: _containers.RepeatedCompositeFieldContainer[_product_pb2.VariantCondition]
-    excluded: _containers.RepeatedCompositeFieldContainer[_product_pb2.VariantCondition]
-    def __init__(self, required: _Optional[_Iterable[_Union[_product_pb2.VariantCondition, _Mapping]]] = ..., excluded: _Optional[_Iterable[_Union[_product_pb2.VariantCondition, _Mapping]]] = ...) -> None: ...
+    __slots__ = ("include", "exclude")
+    INCLUDE_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_FIELD_NUMBER: _ClassVar[int]
+    include: _containers.RepeatedCompositeFieldContainer[_variant_pb2.VariantRule]
+    exclude: _containers.RepeatedCompositeFieldContainer[_variant_pb2.VariantRule]
+    def __init__(self, include: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ..., exclude: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ...) -> None: ...
 
 class ProcessRecipe(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequences", "tasks", "supported_container_definition_ids", "external_references", "custom")
@@ -216,8 +216,20 @@ class TaskExecutionPolicy(_message.Message):
     estimated_duration: _common_pb2.EstimatedDuration
     def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_skill_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ..., estimated_duration: _Optional[_Union[_common_pb2.EstimatedDuration, _Mapping]] = ...) -> None: ...
 
+class TaskOverride(_message.Message):
+    __slots__ = ("when", "instruction_text", "target_node_id", "approach")
+    WHEN_FIELD_NUMBER: _ClassVar[int]
+    INSTRUCTION_TEXT_FIELD_NUMBER: _ClassVar[int]
+    TARGET_NODE_ID_FIELD_NUMBER: _ClassVar[int]
+    APPROACH_FIELD_NUMBER: _ClassVar[int]
+    when: _containers.RepeatedCompositeFieldContainer[_variant_pb2.VariantRule]
+    instruction_text: str
+    target_node_id: str
+    approach: _vector3_pb2.Vector3
+    def __init__(self, when: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target_node_id: _Optional[str] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
+
 class TaskDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "approach", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source_node_id", "destination_node_id", "source_location", "destination_location", "custom")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "approach", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source_node_id", "destination_node_id", "source_location", "destination_location", "custom", "applicability", "overrides")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -237,6 +249,8 @@ class TaskDefinition(_message.Message):
     SOURCE_LOCATION_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_LOCATION_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
+    APPLICABILITY_FIELD_NUMBER: _ClassVar[int]
+    OVERRIDES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -256,4 +270,6 @@ class TaskDefinition(_message.Message):
     source_location: _resources_pb2.ContainerSlotRef
     destination_location: _resources_pb2.ContainerSlotRef
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_skill_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_common_pb2.SafetyRelevance, str]] = ..., source_node_id: _Optional[str] = ..., destination_node_id: _Optional[str] = ..., source_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., destination_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    applicability: _containers.RepeatedCompositeFieldContainer[_variant_pb2.VariantRule]
+    overrides: _containers.RepeatedCompositeFieldContainer[TaskOverride]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_skill_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_common_pb2.SafetyRelevance, str]] = ..., source_node_id: _Optional[str] = ..., destination_node_id: _Optional[str] = ..., source_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., destination_location: _Optional[_Union[_resources_pb2.ContainerSlotRef, _Mapping]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...

@@ -1,0 +1,38 @@
+syntax = "proto3";
+package assembly.v1;
+
+option csharp_namespace = "Messages.Assembly.V1";
+option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
+
+message VariantOption {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+}
+
+message VariantAxis {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  repeated VariantOption options = 4;
+}
+
+message VariantPredicate {
+  string axis_id = 1; // Variant axis identifier, e.g. "hinge_side"
+  repeated string allowed_option_ids = 2; // Allowed options on that axis, e.g. ["left"]
+  repeated string excluded_option_ids = 3; // Options on that axis that must not be selected.
+}
+
+// VariantRule: a rule matches if all predicates match
+message VariantRule {
+  repeated VariantPredicate all_of = 1; // All predicates must match for the rule to match.
+}
+
+message VariantSelection {
+  string axis_id = 1; // "hinge_side"
+  string option_id = 2; // "left"
+}
+
+message VariantConfiguration {
+  repeated VariantSelection selections = 1;
+}

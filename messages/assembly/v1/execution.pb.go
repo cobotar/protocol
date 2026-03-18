@@ -197,58 +197,6 @@ func (TaskRunState) EnumDescriptor() ([]byte, []int) {
 	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{2}
 }
 
-type VariantSelection struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Dimension     string                 `protobuf:"bytes,1,opt,name=dimension,proto3" json:"dimension,omitempty"`
-	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *VariantSelection) Reset() {
-	*x = VariantSelection{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *VariantSelection) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*VariantSelection) ProtoMessage() {}
-
-func (x *VariantSelection) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use VariantSelection.ProtoReflect.Descriptor instead.
-func (*VariantSelection) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *VariantSelection) GetDimension() string {
-	if x != nil {
-		return x.Dimension
-	}
-	return ""
-}
-
-func (x *VariantSelection) GetValue() string {
-	if x != nil {
-		return x.Value
-	}
-	return ""
-}
-
 type RunParameter struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"` // "color", "label_text", "customer_name"
@@ -259,7 +207,7 @@ type RunParameter struct {
 
 func (x *RunParameter) Reset() {
 	*x = RunParameter{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[1]
+	mi := &file_assembly_v1_execution_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -271,7 +219,7 @@ func (x *RunParameter) String() string {
 func (*RunParameter) ProtoMessage() {}
 
 func (x *RunParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[1]
+	mi := &file_assembly_v1_execution_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -284,7 +232,7 @@ func (x *RunParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunParameter.ProtoReflect.Descriptor instead.
 func (*RunParameter) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{1}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RunParameter) GetKey() string {
@@ -304,30 +252,30 @@ func (x *RunParameter) GetValue() string {
 // ProcessRun is only created when a concrete cell can currently satisfy it.
 // Is is based upon a ProcessRecipe which defines what must be possible.
 type ProcessRun struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	RecipeId          string                 `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
-	OrderId           string                 `protobuf:"bytes,3,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	StationId         string                 `protobuf:"bytes,4,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId            string                 `protobuf:"bytes,5,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	Frame             *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceRunId string                 `protobuf:"bytes,7,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
-	Sequences         []*SequenceRun         `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks             []*TaskRun             `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
-	State             ProcessRunState        `protobuf:"varint,10,opt,name=state,proto3,enum=assembly.v1.ProcessRunState" json:"state,omitempty"`
-	InitiatedAt       *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
-	EndedAt           *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
-	Assignments       []*ActorAssignment     `protobuf:"bytes,13,rep,name=assignments,proto3" json:"assignments,omitempty"`
-	Custom            *CustomProperties      `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
-	ProductSelections []*VariantSelection    `protobuf:"bytes,15,rep,name=product_selections,json=productSelections,proto3" json:"product_selections,omitempty"`
-	Parameters        []*RunParameter        `protobuf:"bytes,16,rep,name=parameters,proto3" json:"parameters,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RecipeId             string                 `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	OrderId              string                 `protobuf:"bytes,3,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	StationId            string                 `protobuf:"bytes,4,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	CellId               string                 `protobuf:"bytes,5,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	Frame                *v1.LocalizedPose      `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceRunId    string                 `protobuf:"bytes,7,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
+	Sequences            []*SequenceRun         `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks                []*TaskRun             `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	State                ProcessRunState        `protobuf:"varint,10,opt,name=state,proto3,enum=assembly.v1.ProcessRunState" json:"state,omitempty"`
+	InitiatedAt          *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
+	EndedAt              *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	Assignments          []*ActorAssignment     `protobuf:"bytes,13,rep,name=assignments,proto3" json:"assignments,omitempty"`
+	Custom               *CustomProperties      `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
+	VariantConfiguration *VariantConfiguration  `protobuf:"bytes,15,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	Parameters           []*RunParameter        `protobuf:"bytes,16,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *ProcessRun) Reset() {
 	*x = ProcessRun{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[2]
+	mi := &file_assembly_v1_execution_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -339,7 +287,7 @@ func (x *ProcessRun) String() string {
 func (*ProcessRun) ProtoMessage() {}
 
 func (x *ProcessRun) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[2]
+	mi := &file_assembly_v1_execution_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -352,7 +300,7 @@ func (x *ProcessRun) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRun.ProtoReflect.Descriptor instead.
 func (*ProcessRun) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{2}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ProcessRun) GetId() string {
@@ -453,9 +401,9 @@ func (x *ProcessRun) GetCustom() *CustomProperties {
 	return nil
 }
 
-func (x *ProcessRun) GetProductSelections() []*VariantSelection {
+func (x *ProcessRun) GetVariantConfiguration() *VariantConfiguration {
 	if x != nil {
-		return x.ProductSelections
+		return x.VariantConfiguration
 	}
 	return nil
 }
@@ -484,7 +432,7 @@ type SequenceRun struct {
 
 func (x *SequenceRun) Reset() {
 	*x = SequenceRun{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[3]
+	mi := &file_assembly_v1_execution_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -496,7 +444,7 @@ func (x *SequenceRun) String() string {
 func (*SequenceRun) ProtoMessage() {}
 
 func (x *SequenceRun) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[3]
+	mi := &file_assembly_v1_execution_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -509,7 +457,7 @@ func (x *SequenceRun) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SequenceRun.ProtoReflect.Descriptor instead.
 func (*SequenceRun) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{3}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SequenceRun) GetId() string {
@@ -599,7 +547,7 @@ type TaskRun struct {
 
 func (x *TaskRun) Reset() {
 	*x = TaskRun{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[4]
+	mi := &file_assembly_v1_execution_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -611,7 +559,7 @@ func (x *TaskRun) String() string {
 func (*TaskRun) ProtoMessage() {}
 
 func (x *TaskRun) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[4]
+	mi := &file_assembly_v1_execution_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -624,7 +572,7 @@ func (x *TaskRun) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskRun.ProtoReflect.Descriptor instead.
 func (*TaskRun) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{4}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TaskRun) GetId() string {
@@ -750,7 +698,7 @@ type EvidenceFact struct {
 
 func (x *EvidenceFact) Reset() {
 	*x = EvidenceFact{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[5]
+	mi := &file_assembly_v1_execution_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -762,7 +710,7 @@ func (x *EvidenceFact) String() string {
 func (*EvidenceFact) ProtoMessage() {}
 
 func (x *EvidenceFact) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[5]
+	mi := &file_assembly_v1_execution_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -775,7 +723,7 @@ func (x *EvidenceFact) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvidenceFact.ProtoReflect.Descriptor instead.
 func (*EvidenceFact) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{5}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *EvidenceFact) GetKey() string {
@@ -813,7 +761,7 @@ type ExecutionEvidence struct {
 
 func (x *ExecutionEvidence) Reset() {
 	*x = ExecutionEvidence{}
-	mi := &file_assembly_v1_execution_proto_msgTypes[6]
+	mi := &file_assembly_v1_execution_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -825,7 +773,7 @@ func (x *ExecutionEvidence) String() string {
 func (*ExecutionEvidence) ProtoMessage() {}
 
 func (x *ExecutionEvidence) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_execution_proto_msgTypes[6]
+	mi := &file_assembly_v1_execution_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -838,7 +786,7 @@ func (x *ExecutionEvidence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExecutionEvidence.ProtoReflect.Descriptor instead.
 func (*ExecutionEvidence) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{6}
+	return file_assembly_v1_execution_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ExecutionEvidence) GetId() string {
@@ -887,13 +835,10 @@ var File_assembly_v1_execution_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_execution_proto_rawDesc = "" +
 	"\n" +
-	"\x1bassembly/v1/execution.proto\x12\vassembly.v1\x1a\x17assembly/v1/actor.proto\x1a\x18assembly/v1/common.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"F\n" +
-	"\x10VariantSelection\x12\x1c\n" +
-	"\tdimension\x18\x01 \x01(\tR\tdimension\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"6\n" +
+	"\x1bassembly/v1/execution.proto\x12\vassembly.v1\x1a\x17assembly/v1/actor.proto\x1a\x18assembly/v1/common.proto\x1a\x19assembly/v1/variant.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xfd\x05\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\x87\x06\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
@@ -911,8 +856,8 @@ const file_assembly_v1_execution_proto_rawDesc = "" +
 	"\finitiated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
 	"\bended_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12>\n" +
 	"\vassignments\x18\r \x03(\v2\x1c.assembly.v1.ActorAssignmentR\vassignments\x125\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\x12L\n" +
-	"\x12product_selections\x18\x0f \x03(\v2\x1d.assembly.v1.VariantSelectionR\x11productSelections\x129\n" +
+	"\x06custom\x18\x0e \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\x12V\n" +
+	"\x15variant_configuration\x18\x0f \x01(\v2!.assembly.v1.VariantConfigurationR\x14variantConfiguration\x129\n" +
 	"\n" +
 	"parameters\x18\x10 \x03(\v2\x19.assembly.v1.RunParameterR\n" +
 	"parameters\"\xb4\x03\n" +
@@ -994,48 +939,48 @@ func file_assembly_v1_execution_proto_rawDescGZIP() []byte {
 }
 
 var file_assembly_v1_execution_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_assembly_v1_execution_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_assembly_v1_execution_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_assembly_v1_execution_proto_goTypes = []any{
 	(ProcessRunState)(0),          // 0: assembly.v1.ProcessRunState
 	(SequenceRunState)(0),         // 1: assembly.v1.SequenceRunState
 	(TaskRunState)(0),             // 2: assembly.v1.TaskRunState
-	(*VariantSelection)(nil),      // 3: assembly.v1.VariantSelection
-	(*RunParameter)(nil),          // 4: assembly.v1.RunParameter
-	(*ProcessRun)(nil),            // 5: assembly.v1.ProcessRun
-	(*SequenceRun)(nil),           // 6: assembly.v1.SequenceRun
-	(*TaskRun)(nil),               // 7: assembly.v1.TaskRun
-	(*EvidenceFact)(nil),          // 8: assembly.v1.EvidenceFact
-	(*ExecutionEvidence)(nil),     // 9: assembly.v1.ExecutionEvidence
-	(*v1.LocalizedPose)(nil),      // 10: geometry.v1.LocalizedPose
-	(*timestamppb.Timestamp)(nil), // 11: google.protobuf.Timestamp
-	(*ActorAssignment)(nil),       // 12: assembly.v1.ActorAssignment
-	(*CustomProperties)(nil),      // 13: assembly.v1.CustomProperties
+	(*RunParameter)(nil),          // 3: assembly.v1.RunParameter
+	(*ProcessRun)(nil),            // 4: assembly.v1.ProcessRun
+	(*SequenceRun)(nil),           // 5: assembly.v1.SequenceRun
+	(*TaskRun)(nil),               // 6: assembly.v1.TaskRun
+	(*EvidenceFact)(nil),          // 7: assembly.v1.EvidenceFact
+	(*ExecutionEvidence)(nil),     // 8: assembly.v1.ExecutionEvidence
+	(*v1.LocalizedPose)(nil),      // 9: geometry.v1.LocalizedPose
+	(*timestamppb.Timestamp)(nil), // 10: google.protobuf.Timestamp
+	(*ActorAssignment)(nil),       // 11: assembly.v1.ActorAssignment
+	(*CustomProperties)(nil),      // 12: assembly.v1.CustomProperties
+	(*VariantConfiguration)(nil),  // 13: assembly.v1.VariantConfiguration
 	(*ActorRef)(nil),              // 14: assembly.v1.ActorRef
 	(*EstimatedDuration)(nil),     // 15: assembly.v1.EstimatedDuration
 }
 var file_assembly_v1_execution_proto_depIdxs = []int32{
-	10, // 0: assembly.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
-	6,  // 1: assembly.v1.ProcessRun.sequences:type_name -> assembly.v1.SequenceRun
-	7,  // 2: assembly.v1.ProcessRun.tasks:type_name -> assembly.v1.TaskRun
+	9,  // 0: assembly.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
+	5,  // 1: assembly.v1.ProcessRun.sequences:type_name -> assembly.v1.SequenceRun
+	6,  // 2: assembly.v1.ProcessRun.tasks:type_name -> assembly.v1.TaskRun
 	0,  // 3: assembly.v1.ProcessRun.state:type_name -> assembly.v1.ProcessRunState
-	11, // 4: assembly.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
-	11, // 5: assembly.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
-	12, // 6: assembly.v1.ProcessRun.assignments:type_name -> assembly.v1.ActorAssignment
-	13, // 7: assembly.v1.ProcessRun.custom:type_name -> assembly.v1.CustomProperties
-	3,  // 8: assembly.v1.ProcessRun.product_selections:type_name -> assembly.v1.VariantSelection
-	4,  // 9: assembly.v1.ProcessRun.parameters:type_name -> assembly.v1.RunParameter
+	10, // 4: assembly.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
+	10, // 5: assembly.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
+	11, // 6: assembly.v1.ProcessRun.assignments:type_name -> assembly.v1.ActorAssignment
+	12, // 7: assembly.v1.ProcessRun.custom:type_name -> assembly.v1.CustomProperties
+	13, // 8: assembly.v1.ProcessRun.variant_configuration:type_name -> assembly.v1.VariantConfiguration
+	3,  // 9: assembly.v1.ProcessRun.parameters:type_name -> assembly.v1.RunParameter
 	1,  // 10: assembly.v1.SequenceRun.state:type_name -> assembly.v1.SequenceRunState
 	14, // 11: assembly.v1.SequenceRun.assigned_actors:type_name -> assembly.v1.ActorRef
 	2,  // 12: assembly.v1.TaskRun.state:type_name -> assembly.v1.TaskRunState
 	14, // 13: assembly.v1.TaskRun.candidate_actors:type_name -> assembly.v1.ActorRef
 	14, // 14: assembly.v1.TaskRun.assigned_actor:type_name -> assembly.v1.ActorRef
 	15, // 15: assembly.v1.TaskRun.estimated_duration:type_name -> assembly.v1.EstimatedDuration
-	11, // 16: assembly.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
-	11, // 17: assembly.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
-	9,  // 18: assembly.v1.TaskRun.evidence:type_name -> assembly.v1.ExecutionEvidence
-	13, // 19: assembly.v1.TaskRun.custom:type_name -> assembly.v1.CustomProperties
-	11, // 20: assembly.v1.ExecutionEvidence.recorded_at:type_name -> google.protobuf.Timestamp
-	8,  // 21: assembly.v1.ExecutionEvidence.facts:type_name -> assembly.v1.EvidenceFact
+	10, // 16: assembly.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
+	10, // 17: assembly.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
+	8,  // 18: assembly.v1.TaskRun.evidence:type_name -> assembly.v1.ExecutionEvidence
+	12, // 19: assembly.v1.TaskRun.custom:type_name -> assembly.v1.CustomProperties
+	10, // 20: assembly.v1.ExecutionEvidence.recorded_at:type_name -> google.protobuf.Timestamp
+	7,  // 21: assembly.v1.ExecutionEvidence.facts:type_name -> assembly.v1.EvidenceFact
 	22, // [22:22] is the sub-list for method output_type
 	22, // [22:22] is the sub-list for method input_type
 	22, // [22:22] is the sub-list for extension type_name
@@ -1050,13 +995,14 @@ func file_assembly_v1_execution_proto_init() {
 	}
 	file_assembly_v1_actor_proto_init()
 	file_assembly_v1_common_proto_init()
+	file_assembly_v1_variant_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_execution_proto_rawDesc), len(file_assembly_v1_execution_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   7,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

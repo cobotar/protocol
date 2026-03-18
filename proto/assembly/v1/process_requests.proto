@@ -2,6 +2,7 @@ syntax = "proto3";
 package assembly.v1;
 
 import "assembly/v1/execution.proto";
+import "assembly/v1/variant.proto";
 
 option csharp_namespace = "Messages.Assembly.V1";
 option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
@@ -22,7 +23,8 @@ option go_package = "github.com/cobotar/protocol/messages/assembly/v1";
 message ProcessLoadRequest {
   string process_recipe_id = 1;
   string target_line_id = 2;
-  bool dry_run = 3; // true = precheck only, false = precheck + instantiate
+  VariantConfiguration variant_configuration = 3;
+  bool dry_run = 4; // true = precheck only, false = precheck + instantiate
   // bool queue_if_occupied = 4;
 }
 

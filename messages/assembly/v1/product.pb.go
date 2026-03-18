@@ -668,10 +668,11 @@ type ProductDefinition struct {
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	RootNodeId         string                 `protobuf:"bytes,5,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
-	Nodes              []*AssemblyNode        `protobuf:"bytes,6,rep,name=nodes,proto3" json:"nodes,omitempty"`
-	ExternalReferences []*ExternalReference   `protobuf:"bytes,7,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *CustomProperties      `protobuf:"bytes,8,opt,name=custom,proto3" json:"custom,omitempty"`
+	VariantAxes        []*VariantAxis         `protobuf:"bytes,5,rep,name=variant_axes,json=variantAxes,proto3" json:"variant_axes,omitempty"`
+	RootNodeId         string                 `protobuf:"bytes,6,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
+	Nodes              []*AssemblyNode        `protobuf:"bytes,7,rep,name=nodes,proto3" json:"nodes,omitempty"`
+	ExternalReferences []*ExternalReference   `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Custom             *CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -734,6 +735,13 @@ func (x *ProductDefinition) GetDescription() string {
 	return ""
 }
 
+func (x *ProductDefinition) GetVariantAxes() []*VariantAxis {
+	if x != nil {
+		return x.VariantAxes
+	}
+	return nil
+}
+
 func (x *ProductDefinition) GetRootNodeId() string {
 	if x != nil {
 		return x.RootNodeId
@@ -762,83 +770,31 @@ func (x *ProductDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
-type VariantCondition struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Dimension     string                 `protobuf:"bytes,1,opt,name=dimension,proto3" json:"dimension,omitempty"` // e.g. "hinge_side"
-	Values        []string               `protobuf:"bytes,2,rep,name=values,proto3" json:"values,omitempty"`       // e.g. ["left"]
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *VariantCondition) Reset() {
-	*x = VariantCondition{}
-	mi := &file_assembly_v1_product_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *VariantCondition) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*VariantCondition) ProtoMessage() {}
-
-func (x *VariantCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_product_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use VariantCondition.ProtoReflect.Descriptor instead.
-func (*VariantCondition) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_product_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *VariantCondition) GetDimension() string {
-	if x != nil {
-		return x.Dimension
-	}
-	return ""
-}
-
-func (x *VariantCondition) GetValues() []string {
-	if x != nil {
-		return x.Values
-	}
-	return nil
-}
-
 type AssemblyNode struct {
-	state                 protoimpl.MessageState `protogen:"open.v1"`
-	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                       // Name of this assembly node
-	ParentNodeId          string                 `protobuf:"bytes,3,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"` // Empty if root, otherwise set to parent AssemblyNode id.
-	Kind                  NodeKind               `protobuf:"varint,4,opt,name=kind,proto3,enum=assembly.v1.NodeKind" json:"kind,omitempty"`
-	PartDefinitionId      string                 `protobuf:"bytes,5,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"`
-	OverrideModelId       string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
-	LocalPose             *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"`
-	ChildNodeIds          []string               `protobuf:"bytes,8,rep,name=child_node_ids,json=childNodeIds,proto3" json:"child_node_ids,omitempty"` // Children of this node, their parent_node_id must be set to this.id
-	SequenceHint          int32                  `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
-	CadOccurrencePath     string                 `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
-	JoinMethodHint        JoinMethod             `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=assembly.v1.JoinMethod" json:"join_method_hint,omitempty"`
-	InsertionAxisHint     *v1.Vector3            `protobuf:"bytes,12,opt,name=insertion_axis_hint,json=insertionAxisHint,proto3" json:"insertion_axis_hint,omitempty"`
-	PreferredApproachHint *v1.Vector3            `protobuf:"bytes,13,opt,name=preferred_approach_hint,json=preferredApproachHint,proto3" json:"preferred_approach_hint,omitempty"`
-	Optional              bool                   `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
-	Applicability         []*VariantCondition    `protobuf:"bytes,15,rep,name=applicability,proto3" json:"applicability,omitempty"`
-	Custom                *CustomProperties      `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"` // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                       // Name of this assembly node
+	ParentNodeId     string                 `protobuf:"bytes,3,opt,name=parent_node_id,json=parentNodeId,proto3" json:"parent_node_id,omitempty"` // Empty if root, otherwise set to parent AssemblyNode id.
+	Kind             NodeKind               `protobuf:"varint,4,opt,name=kind,proto3,enum=assembly.v1.NodeKind" json:"kind,omitempty"`
+	PartDefinitionId string                 `protobuf:"bytes,5,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"`
+	OverrideModelId  string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
+	LocalPose        *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"`
+	// repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
+	SequenceHint          int32             `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
+	CadOccurrencePath     string            `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
+	JoinMethodHint        JoinMethod        `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=assembly.v1.JoinMethod" json:"join_method_hint,omitempty"`
+	InsertionAxisHint     *v1.Vector3       `protobuf:"bytes,12,opt,name=insertion_axis_hint,json=insertionAxisHint,proto3" json:"insertion_axis_hint,omitempty"`
+	PreferredApproachHint *v1.Vector3       `protobuf:"bytes,13,opt,name=preferred_approach_hint,json=preferredApproachHint,proto3" json:"preferred_approach_hint,omitempty"`
+	Optional              bool              `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
+	Applicability         []*VariantRule    `protobuf:"bytes,15,rep,name=applicability,proto3" json:"applicability,omitempty"` // Applies if any rule matches. Empty means always applicable.
+	Custom                *CustomProperties `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`               // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
 
 func (x *AssemblyNode) Reset() {
 	*x = AssemblyNode{}
-	mi := &file_assembly_v1_product_proto_msgTypes[6]
+	mi := &file_assembly_v1_product_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -850,7 +806,7 @@ func (x *AssemblyNode) String() string {
 func (*AssemblyNode) ProtoMessage() {}
 
 func (x *AssemblyNode) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_product_proto_msgTypes[6]
+	mi := &file_assembly_v1_product_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -863,7 +819,7 @@ func (x *AssemblyNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssemblyNode.ProtoReflect.Descriptor instead.
 func (*AssemblyNode) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_product_proto_rawDescGZIP(), []int{6}
+	return file_assembly_v1_product_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AssemblyNode) GetId() string {
@@ -915,13 +871,6 @@ func (x *AssemblyNode) GetLocalPose() *v1.Pose {
 	return nil
 }
 
-func (x *AssemblyNode) GetChildNodeIds() []string {
-	if x != nil {
-		return x.ChildNodeIds
-	}
-	return nil
-}
-
 func (x *AssemblyNode) GetSequenceHint() int32 {
 	if x != nil {
 		return x.SequenceHint
@@ -964,7 +913,7 @@ func (x *AssemblyNode) GetOptional() bool {
 	return false
 }
 
-func (x *AssemblyNode) GetApplicability() []*VariantCondition {
+func (x *AssemblyNode) GetApplicability() []*VariantRule {
 	if x != nil {
 		return x.Applicability
 	}
@@ -987,7 +936,7 @@ type PartDefinitions struct {
 
 func (x *PartDefinitions) Reset() {
 	*x = PartDefinitions{}
-	mi := &file_assembly_v1_product_proto_msgTypes[7]
+	mi := &file_assembly_v1_product_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -999,7 +948,7 @@ func (x *PartDefinitions) String() string {
 func (*PartDefinitions) ProtoMessage() {}
 
 func (x *PartDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_product_proto_msgTypes[7]
+	mi := &file_assembly_v1_product_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1012,7 +961,7 @@ func (x *PartDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PartDefinitions.ProtoReflect.Descriptor instead.
 func (*PartDefinitions) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_product_proto_rawDescGZIP(), []int{7}
+	return file_assembly_v1_product_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PartDefinitions) GetItems() []*PartDefinition {
@@ -1031,7 +980,7 @@ type ProductDefinitions struct {
 
 func (x *ProductDefinitions) Reset() {
 	*x = ProductDefinitions{}
-	mi := &file_assembly_v1_product_proto_msgTypes[8]
+	mi := &file_assembly_v1_product_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1043,7 +992,7 @@ func (x *ProductDefinitions) String() string {
 func (*ProductDefinitions) ProtoMessage() {}
 
 func (x *ProductDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_product_proto_msgTypes[8]
+	mi := &file_assembly_v1_product_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1056,7 +1005,7 @@ func (x *ProductDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductDefinitions.ProtoReflect.Descriptor instead.
 func (*ProductDefinitions) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_product_proto_rawDescGZIP(), []int{8}
+	return file_assembly_v1_product_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ProductDefinitions) GetItems() []*ProductDefinition {
@@ -1070,7 +1019,7 @@ var File_assembly_v1_product_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_product_proto_rawDesc = "" +
 	"\n" +
-	"\x19assembly/v1/product.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"E\n" +
+	"\x19assembly/v1/product.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x19assembly/v1/variant.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\"E\n" +
 	"\n" +
 	"Dimensions\x12\x11\n" +
 	"\x04x_mm\x18\x01 \x01(\x01R\x03xMm\x12\x11\n" +
@@ -1104,20 +1053,18 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	" \x01(\tR\x0edefaultModelId\x12<\n" +
 	"\bhandling\x18\v \x01(\v2 .assembly.v1.PartHandlingProfileR\bhandling\x12O\n" +
 	"\x13external_references\x18\f \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xc8\x02\n" +
+	"\x06custom\x18\r \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\x85\x03\n" +
 	"\x11ProductDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12 \n" +
-	"\froot_node_id\x18\x05 \x01(\tR\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12;\n" +
+	"\fvariant_axes\x18\x05 \x03(\v2\x18.assembly.v1.VariantAxisR\vvariantAxes\x12 \n" +
+	"\froot_node_id\x18\x06 \x01(\tR\n" +
 	"rootNodeId\x12/\n" +
-	"\x05nodes\x18\x06 \x03(\v2\x19.assembly.v1.AssemblyNodeR\x05nodes\x12O\n" +
-	"\x13external_references\x18\a \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\b \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"H\n" +
-	"\x10VariantCondition\x12\x1c\n" +
-	"\tdimension\x18\x01 \x01(\tR\tdimension\x12\x16\n" +
-	"\x06values\x18\x02 \x03(\tR\x06values\"\xf9\x05\n" +
+	"\x05nodes\x18\a \x03(\v2\x19.assembly.v1.AssemblyNodeR\x05nodes\x12O\n" +
+	"\x13external_references\x18\b \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xce\x05\n" +
 	"\fAssemblyNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
@@ -1126,16 +1073,15 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\x12part_definition_id\x18\x05 \x01(\tR\x10partDefinitionId\x12*\n" +
 	"\x11override_model_id\x18\x06 \x01(\tR\x0foverrideModelId\x120\n" +
 	"\n" +
-	"local_pose\x18\a \x01(\v2\x11.geometry.v1.PoseR\tlocalPose\x12$\n" +
-	"\x0echild_node_ids\x18\b \x03(\tR\fchildNodeIds\x12#\n" +
+	"local_pose\x18\a \x01(\v2\x11.geometry.v1.PoseR\tlocalPose\x12#\n" +
 	"\rsequence_hint\x18\t \x01(\x05R\fsequenceHint\x12.\n" +
 	"\x13cad_occurrence_path\x18\n" +
 	" \x01(\tR\x11cadOccurrencePath\x12A\n" +
 	"\x10join_method_hint\x18\v \x01(\x0e2\x17.assembly.v1.JoinMethodR\x0ejoinMethodHint\x12D\n" +
 	"\x13insertion_axis_hint\x18\f \x01(\v2\x14.geometry.v1.Vector3R\x11insertionAxisHint\x12L\n" +
 	"\x17preferred_approach_hint\x18\r \x01(\v2\x14.geometry.v1.Vector3R\x15preferredApproachHint\x12\x1a\n" +
-	"\boptional\x18\x0e \x01(\bR\boptional\x12C\n" +
-	"\rapplicability\x18\x0f \x03(\v2\x1d.assembly.v1.VariantConditionR\rapplicability\x125\n" +
+	"\boptional\x18\x0e \x01(\bR\boptional\x12>\n" +
+	"\rapplicability\x18\x0f \x03(\v2\x18.assembly.v1.VariantRuleR\rapplicability\x125\n" +
 	"\x06custom\x18\x10 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"D\n" +
 	"\x0fPartDefinitions\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.assembly.v1.PartDefinitionR\x05items\"J\n" +
@@ -1200,7 +1146,7 @@ func file_assembly_v1_product_proto_rawDescGZIP() []byte {
 }
 
 var file_assembly_v1_product_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_assembly_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_assembly_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_assembly_v1_product_proto_goTypes = []any{
 	(PartType)(0),               // 0: assembly.v1.PartType
 	(NodeKind)(0),               // 1: assembly.v1.NodeKind
@@ -1211,42 +1157,44 @@ var file_assembly_v1_product_proto_goTypes = []any{
 	(*PartHandlingProfile)(nil), // 6: assembly.v1.PartHandlingProfile
 	(*PartDefinition)(nil),      // 7: assembly.v1.PartDefinition
 	(*ProductDefinition)(nil),   // 8: assembly.v1.ProductDefinition
-	(*VariantCondition)(nil),    // 9: assembly.v1.VariantCondition
-	(*AssemblyNode)(nil),        // 10: assembly.v1.AssemblyNode
-	(*PartDefinitions)(nil),     // 11: assembly.v1.PartDefinitions
-	(*ProductDefinitions)(nil),  // 12: assembly.v1.ProductDefinitions
-	(*KeyValueConstraint)(nil),  // 13: assembly.v1.KeyValueConstraint
-	(*ExternalReference)(nil),   // 14: assembly.v1.ExternalReference
-	(*CustomProperties)(nil),    // 15: assembly.v1.CustomProperties
+	(*AssemblyNode)(nil),        // 9: assembly.v1.AssemblyNode
+	(*PartDefinitions)(nil),     // 10: assembly.v1.PartDefinitions
+	(*ProductDefinitions)(nil),  // 11: assembly.v1.ProductDefinitions
+	(*KeyValueConstraint)(nil),  // 12: assembly.v1.KeyValueConstraint
+	(*ExternalReference)(nil),   // 13: assembly.v1.ExternalReference
+	(*CustomProperties)(nil),    // 14: assembly.v1.CustomProperties
+	(*VariantAxis)(nil),         // 15: assembly.v1.VariantAxis
 	(*v1.Pose)(nil),             // 16: geometry.v1.Pose
 	(*v1.Vector3)(nil),          // 17: geometry.v1.Vector3
+	(*VariantRule)(nil),         // 18: assembly.v1.VariantRule
 }
 var file_assembly_v1_product_proto_depIdxs = []int32{
 	3,  // 0: assembly.v1.MaterialSpec.category:type_name -> assembly.v1.MaterialCategory
-	13, // 1: assembly.v1.PartHandlingProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
+	12, // 1: assembly.v1.PartHandlingProfile.constraints:type_name -> assembly.v1.KeyValueConstraint
 	0,  // 2: assembly.v1.PartDefinition.type:type_name -> assembly.v1.PartType
 	4,  // 3: assembly.v1.PartDefinition.dimensions:type_name -> assembly.v1.Dimensions
 	5,  // 4: assembly.v1.PartDefinition.material:type_name -> assembly.v1.MaterialSpec
 	6,  // 5: assembly.v1.PartDefinition.handling:type_name -> assembly.v1.PartHandlingProfile
-	14, // 6: assembly.v1.PartDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	15, // 7: assembly.v1.PartDefinition.custom:type_name -> assembly.v1.CustomProperties
-	10, // 8: assembly.v1.ProductDefinition.nodes:type_name -> assembly.v1.AssemblyNode
-	14, // 9: assembly.v1.ProductDefinition.external_references:type_name -> assembly.v1.ExternalReference
-	15, // 10: assembly.v1.ProductDefinition.custom:type_name -> assembly.v1.CustomProperties
-	1,  // 11: assembly.v1.AssemblyNode.kind:type_name -> assembly.v1.NodeKind
-	16, // 12: assembly.v1.AssemblyNode.local_pose:type_name -> geometry.v1.Pose
-	2,  // 13: assembly.v1.AssemblyNode.join_method_hint:type_name -> assembly.v1.JoinMethod
-	17, // 14: assembly.v1.AssemblyNode.insertion_axis_hint:type_name -> geometry.v1.Vector3
-	17, // 15: assembly.v1.AssemblyNode.preferred_approach_hint:type_name -> geometry.v1.Vector3
-	9,  // 16: assembly.v1.AssemblyNode.applicability:type_name -> assembly.v1.VariantCondition
-	15, // 17: assembly.v1.AssemblyNode.custom:type_name -> assembly.v1.CustomProperties
-	7,  // 18: assembly.v1.PartDefinitions.items:type_name -> assembly.v1.PartDefinition
-	8,  // 19: assembly.v1.ProductDefinitions.items:type_name -> assembly.v1.ProductDefinition
-	20, // [20:20] is the sub-list for method output_type
-	20, // [20:20] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	13, // 6: assembly.v1.PartDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	14, // 7: assembly.v1.PartDefinition.custom:type_name -> assembly.v1.CustomProperties
+	15, // 8: assembly.v1.ProductDefinition.variant_axes:type_name -> assembly.v1.VariantAxis
+	9,  // 9: assembly.v1.ProductDefinition.nodes:type_name -> assembly.v1.AssemblyNode
+	13, // 10: assembly.v1.ProductDefinition.external_references:type_name -> assembly.v1.ExternalReference
+	14, // 11: assembly.v1.ProductDefinition.custom:type_name -> assembly.v1.CustomProperties
+	1,  // 12: assembly.v1.AssemblyNode.kind:type_name -> assembly.v1.NodeKind
+	16, // 13: assembly.v1.AssemblyNode.local_pose:type_name -> geometry.v1.Pose
+	2,  // 14: assembly.v1.AssemblyNode.join_method_hint:type_name -> assembly.v1.JoinMethod
+	17, // 15: assembly.v1.AssemblyNode.insertion_axis_hint:type_name -> geometry.v1.Vector3
+	17, // 16: assembly.v1.AssemblyNode.preferred_approach_hint:type_name -> geometry.v1.Vector3
+	18, // 17: assembly.v1.AssemblyNode.applicability:type_name -> assembly.v1.VariantRule
+	14, // 18: assembly.v1.AssemblyNode.custom:type_name -> assembly.v1.CustomProperties
+	7,  // 19: assembly.v1.PartDefinitions.items:type_name -> assembly.v1.PartDefinition
+	8,  // 20: assembly.v1.ProductDefinitions.items:type_name -> assembly.v1.ProductDefinition
+	21, // [21:21] is the sub-list for method output_type
+	21, // [21:21] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_product_proto_init() }
@@ -1255,13 +1203,14 @@ func file_assembly_v1_product_proto_init() {
 		return
 	}
 	file_assembly_v1_common_proto_init()
+	file_assembly_v1_variant_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_product_proto_rawDesc), len(file_assembly_v1_product_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   9,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

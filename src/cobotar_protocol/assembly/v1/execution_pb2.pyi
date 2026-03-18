@@ -2,6 +2,7 @@ import datetime
 
 from assembly.v1 import actor_pb2 as _actor_pb2
 from assembly.v1 import common_pb2 as _common_pb2
+from assembly.v1 import variant_pb2 as _variant_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
@@ -58,14 +59,6 @@ TASK_RUN_STATE_COMPLETED: TaskRunState
 TASK_RUN_STATE_ERROR: TaskRunState
 TASK_RUN_STATE_ABORTED: TaskRunState
 
-class VariantSelection(_message.Message):
-    __slots__ = ("dimension", "value")
-    DIMENSION_FIELD_NUMBER: _ClassVar[int]
-    VALUE_FIELD_NUMBER: _ClassVar[int]
-    dimension: str
-    value: str
-    def __init__(self, dimension: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-
 class RunParameter(_message.Message):
     __slots__ = ("key", "value")
     KEY_FIELD_NUMBER: _ClassVar[int]
@@ -75,7 +68,7 @@ class RunParameter(_message.Message):
     def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ProcessRun(_message.Message):
-    __slots__ = ("id", "recipe_id", "order_id", "station_id", "cell_id", "frame", "root_sequence_run_id", "sequences", "tasks", "state", "initiated_at", "ended_at", "assignments", "custom", "product_selections", "parameters")
+    __slots__ = ("id", "recipe_id", "order_id", "station_id", "cell_id", "frame", "root_sequence_run_id", "sequences", "tasks", "state", "initiated_at", "ended_at", "assignments", "custom", "variant_configuration", "parameters")
     ID_FIELD_NUMBER: _ClassVar[int]
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -90,7 +83,7 @@ class ProcessRun(_message.Message):
     ENDED_AT_FIELD_NUMBER: _ClassVar[int]
     ASSIGNMENTS_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_SELECTIONS_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     id: str
     recipe_id: str
@@ -106,9 +99,9 @@ class ProcessRun(_message.Message):
     ended_at: _timestamp_pb2.Timestamp
     assignments: _containers.RepeatedCompositeFieldContainer[_actor_pb2.ActorAssignment]
     custom: _common_pb2.CustomProperties
-    product_selections: _containers.RepeatedCompositeFieldContainer[VariantSelection]
+    variant_configuration: _variant_pb2.VariantConfiguration
     parameters: _containers.RepeatedCompositeFieldContainer[RunParameter]
-    def __init__(self, id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[SequenceRun, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[TaskRun, _Mapping]]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_pb2.ActorAssignment, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ..., product_selections: _Optional[_Iterable[_Union[VariantSelection, _Mapping]]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[SequenceRun, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[TaskRun, _Mapping]]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_pb2.ActorAssignment, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ..., variant_configuration: _Optional[_Union[_variant_pb2.VariantConfiguration, _Mapping]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ...) -> None: ...
 
 class SequenceRun(_message.Message):
     __slots__ = ("id", "sequence_definition_id", "parent_sequence_run_id", "child_sequence_run_ids", "child_task_run_ids", "state", "completed_tasks", "can_bulk_complete", "assigned_actors")

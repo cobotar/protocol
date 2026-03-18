@@ -295,8 +295,8 @@ func (TaskAssignmentPreference) EnumDescriptor() ([]byte, []int) {
 
 type RecipeApplicability struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Required      []*VariantCondition    `protobuf:"bytes,1,rep,name=required,proto3" json:"required,omitempty"`
-	Excluded      []*VariantCondition    `protobuf:"bytes,2,rep,name=excluded,proto3" json:"excluded,omitempty"`
+	Include       []*VariantRule         `protobuf:"bytes,1,rep,name=include,proto3" json:"include,omitempty"` // Recipe applies if any include rule matches. Empty means generally applicable.
+	Exclude       []*VariantRule         `protobuf:"bytes,2,rep,name=exclude,proto3" json:"exclude,omitempty"` // Recipe is rejected if any exclude rule matches.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -331,16 +331,16 @@ func (*RecipeApplicability) Descriptor() ([]byte, []int) {
 	return file_assembly_v1_process_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RecipeApplicability) GetRequired() []*VariantCondition {
+func (x *RecipeApplicability) GetInclude() []*VariantRule {
 	if x != nil {
-		return x.Required
+		return x.Include
 	}
 	return nil
 }
 
-func (x *RecipeApplicability) GetExcluded() []*VariantCondition {
+func (x *RecipeApplicability) GetExclude() []*VariantRule {
 	if x != nil {
-		return x.Excluded
+		return x.Exclude
 	}
 	return nil
 }
@@ -899,6 +899,74 @@ func (x *TaskExecutionPolicy) GetEstimatedDuration() *EstimatedDuration {
 	return nil
 }
 
+type TaskOverride struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	When            []*VariantRule         `protobuf:"bytes,1,rep,name=when,proto3" json:"when,omitempty"`
+	InstructionText string                 `protobuf:"bytes,2,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
+	TargetNodeId    string                 `protobuf:"bytes,3,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`
+	Approach        *v1.Vector3            `protobuf:"bytes,4,opt,name=approach,proto3" json:"approach,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TaskOverride) Reset() {
+	*x = TaskOverride{}
+	mi := &file_assembly_v1_process_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskOverride) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskOverride) ProtoMessage() {}
+
+func (x *TaskOverride) ProtoReflect() protoreflect.Message {
+	mi := &file_assembly_v1_process_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskOverride.ProtoReflect.Descriptor instead.
+func (*TaskOverride) Descriptor() ([]byte, []int) {
+	return file_assembly_v1_process_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *TaskOverride) GetWhen() []*VariantRule {
+	if x != nil {
+		return x.When
+	}
+	return nil
+}
+
+func (x *TaskOverride) GetInstructionText() string {
+	if x != nil {
+		return x.InstructionText
+	}
+	return ""
+}
+
+func (x *TaskOverride) GetTargetNodeId() string {
+	if x != nil {
+		return x.TargetNodeId
+	}
+	return ""
+}
+
+func (x *TaskOverride) GetApproach() *v1.Vector3 {
+	if x != nil {
+		return x.Approach
+	}
+	return nil
+}
+
 type TaskDefinition struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -922,13 +990,15 @@ type TaskDefinition struct {
 	SourceLocation      *ContainerSlotRef      `protobuf:"bytes,19,opt,name=source_location,json=sourceLocation,proto3" json:"source_location,omitempty"`                                      // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
 	DestinationLocation *ContainerSlotRef      `protobuf:"bytes,20,opt,name=destination_location,json=destinationLocation,proto3" json:"destination_location,omitempty"`                       // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
 	Custom              *CustomProperties      `protobuf:"bytes,21,opt,name=custom,proto3" json:"custom,omitempty"`
+	Applicability       []*VariantRule         `protobuf:"bytes,22,rep,name=applicability,proto3" json:"applicability,omitempty"` // Applies if any rule matches. Empty means always applicable.
+	Overrides           []*TaskOverride        `protobuf:"bytes,23,rep,name=overrides,proto3" json:"overrides,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TaskDefinition) Reset() {
 	*x = TaskDefinition{}
-	mi := &file_assembly_v1_process_proto_msgTypes[6]
+	mi := &file_assembly_v1_process_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -940,7 +1010,7 @@ func (x *TaskDefinition) String() string {
 func (*TaskDefinition) ProtoMessage() {}
 
 func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_assembly_v1_process_proto_msgTypes[6]
+	mi := &file_assembly_v1_process_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -953,7 +1023,7 @@ func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinition.ProtoReflect.Descriptor instead.
 func (*TaskDefinition) Descriptor() ([]byte, []int) {
-	return file_assembly_v1_process_proto_rawDescGZIP(), []int{6}
+	return file_assembly_v1_process_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *TaskDefinition) GetId() string {
@@ -1089,14 +1159,28 @@ func (x *TaskDefinition) GetCustom() *CustomProperties {
 	return nil
 }
 
+func (x *TaskDefinition) GetApplicability() []*VariantRule {
+	if x != nil {
+		return x.Applicability
+	}
+	return nil
+}
+
+func (x *TaskDefinition) GetOverrides() []*TaskOverride {
+	if x != nil {
+		return x.Overrides
+	}
+	return nil
+}
+
 var File_assembly_v1_process_proto protoreflect.FileDescriptor
 
 const file_assembly_v1_process_proto_rawDesc = "" +
 	"\n" +
-	"\x19assembly/v1/process.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x19assembly/v1/product.proto\x1a\x1bassembly/v1/resources.proto\x1a\x17assembly/v1/skill.proto\x1a\x19geometry/v1/vector3.proto\"\x8b\x01\n" +
-	"\x13RecipeApplicability\x129\n" +
-	"\brequired\x18\x01 \x03(\v2\x1d.assembly.v1.VariantConditionR\brequired\x129\n" +
-	"\bexcluded\x18\x02 \x03(\v2\x1d.assembly.v1.VariantConditionR\bexcluded\"\x84\x05\n" +
+	"\x19assembly/v1/process.proto\x12\vassembly.v1\x1a\x18assembly/v1/common.proto\x1a\x1bassembly/v1/resources.proto\x1a\x17assembly/v1/skill.proto\x1a\x19assembly/v1/variant.proto\x1a\x19geometry/v1/vector3.proto\"}\n" +
+	"\x13RecipeApplicability\x122\n" +
+	"\ainclude\x18\x01 \x03(\v2\x18.assembly.v1.VariantRuleR\ainclude\x122\n" +
+	"\aexclude\x18\x02 \x03(\v2\x18.assembly.v1.VariantRuleR\aexclude\"\x84\x05\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1150,7 +1234,12 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x15\n" +
 	"\x06can_do\x18\x04 \x01(\bR\x05canDo\x12\x19\n" +
 	"\bcan_undo\x18\x05 \x01(\bR\acanUndo\x12M\n" +
-	"\x12estimated_duration\x18\x06 \x01(\v2\x1e.assembly.v1.EstimatedDurationR\x11estimatedDuration\"\xef\a\n" +
+	"\x12estimated_duration\x18\x06 \x01(\v2\x1e.assembly.v1.EstimatedDurationR\x11estimatedDuration\"\xbf\x01\n" +
+	"\fTaskOverride\x12,\n" +
+	"\x04when\x18\x01 \x03(\v2\x18.assembly.v1.VariantRuleR\x04when\x12)\n" +
+	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
+	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
+	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\xe8\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1172,7 +1261,9 @@ const file_assembly_v1_process_proto_rawDesc = "" +
 	"\x13destination_node_id\x18\x12 \x01(\tR\x11destinationNodeId\x12F\n" +
 	"\x0fsource_location\x18\x13 \x01(\v2\x1d.assembly.v1.ContainerSlotRefR\x0esourceLocation\x12P\n" +
 	"\x14destination_location\x18\x14 \x01(\v2\x1d.assembly.v1.ContainerSlotRefR\x13destinationLocation\x125\n" +
-	"\x06custom\x18\x15 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom*\xd5\x01\n" +
+	"\x06custom\x18\x15 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\x12>\n" +
+	"\rapplicability\x18\x16 \x03(\v2\x18.assembly.v1.VariantRuleR\rapplicability\x127\n" +
+	"\toverrides\x18\x17 \x03(\v2\x19.assembly.v1.TaskOverrideR\toverrides*\xd5\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n" +
@@ -1230,7 +1321,7 @@ func file_assembly_v1_process_proto_rawDescGZIP() []byte {
 }
 
 var file_assembly_v1_process_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_assembly_v1_process_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_assembly_v1_process_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_assembly_v1_process_proto_goTypes = []any{
 	(ProcessType)(0),              // 0: assembly.v1.ProcessType
 	(SequenceOperator)(0),         // 1: assembly.v1.SequenceOperator
@@ -1242,56 +1333,61 @@ var file_assembly_v1_process_proto_goTypes = []any{
 	(*TaskTarget)(nil),            // 7: assembly.v1.TaskTarget
 	(*ValidationRequirement)(nil), // 8: assembly.v1.ValidationRequirement
 	(*TaskExecutionPolicy)(nil),   // 9: assembly.v1.TaskExecutionPolicy
-	(*TaskDefinition)(nil),        // 10: assembly.v1.TaskDefinition
-	(*VariantCondition)(nil),      // 11: assembly.v1.VariantCondition
-	(*ExternalReference)(nil),     // 12: assembly.v1.ExternalReference
-	(*CustomProperties)(nil),      // 13: assembly.v1.CustomProperties
-	(*LocalTarget)(nil),           // 14: assembly.v1.LocalTarget
-	(*ContainerSlotRef)(nil),      // 15: assembly.v1.ContainerSlotRef
-	(SkillLevel)(0),               // 16: assembly.v1.SkillLevel
-	(*KeyValueConstraint)(nil),    // 17: assembly.v1.KeyValueConstraint
-	(*ActorConstraint)(nil),       // 18: assembly.v1.ActorConstraint
-	(*EstimatedDuration)(nil),     // 19: assembly.v1.EstimatedDuration
-	(*v1.Vector3)(nil),            // 20: geometry.v1.Vector3
-	(*ToolRequirement)(nil),       // 21: assembly.v1.ToolRequirement
-	(*SkillRequirement)(nil),      // 22: assembly.v1.SkillRequirement
-	(SafetyRelevance)(0),          // 23: assembly.v1.SafetyRelevance
+	(*TaskOverride)(nil),          // 10: assembly.v1.TaskOverride
+	(*TaskDefinition)(nil),        // 11: assembly.v1.TaskDefinition
+	(*VariantRule)(nil),           // 12: assembly.v1.VariantRule
+	(*ExternalReference)(nil),     // 13: assembly.v1.ExternalReference
+	(*CustomProperties)(nil),      // 14: assembly.v1.CustomProperties
+	(*LocalTarget)(nil),           // 15: assembly.v1.LocalTarget
+	(*ContainerSlotRef)(nil),      // 16: assembly.v1.ContainerSlotRef
+	(SkillLevel)(0),               // 17: assembly.v1.SkillLevel
+	(*KeyValueConstraint)(nil),    // 18: assembly.v1.KeyValueConstraint
+	(*ActorConstraint)(nil),       // 19: assembly.v1.ActorConstraint
+	(*EstimatedDuration)(nil),     // 20: assembly.v1.EstimatedDuration
+	(*v1.Vector3)(nil),            // 21: geometry.v1.Vector3
+	(*ToolRequirement)(nil),       // 22: assembly.v1.ToolRequirement
+	(*SkillRequirement)(nil),      // 23: assembly.v1.SkillRequirement
+	(SafetyRelevance)(0),          // 24: assembly.v1.SafetyRelevance
 }
 var file_assembly_v1_process_proto_depIdxs = []int32{
-	11, // 0: assembly.v1.RecipeApplicability.required:type_name -> assembly.v1.VariantCondition
-	11, // 1: assembly.v1.RecipeApplicability.excluded:type_name -> assembly.v1.VariantCondition
+	12, // 0: assembly.v1.RecipeApplicability.include:type_name -> assembly.v1.VariantRule
+	12, // 1: assembly.v1.RecipeApplicability.exclude:type_name -> assembly.v1.VariantRule
 	0,  // 2: assembly.v1.ProcessRecipe.type:type_name -> assembly.v1.ProcessType
 	4,  // 3: assembly.v1.ProcessRecipe.applicability:type_name -> assembly.v1.RecipeApplicability
 	6,  // 4: assembly.v1.ProcessRecipe.sequences:type_name -> assembly.v1.SequenceDefinition
-	10, // 5: assembly.v1.ProcessRecipe.tasks:type_name -> assembly.v1.TaskDefinition
-	12, // 6: assembly.v1.ProcessRecipe.external_references:type_name -> assembly.v1.ExternalReference
-	13, // 7: assembly.v1.ProcessRecipe.custom:type_name -> assembly.v1.CustomProperties
+	11, // 5: assembly.v1.ProcessRecipe.tasks:type_name -> assembly.v1.TaskDefinition
+	13, // 6: assembly.v1.ProcessRecipe.external_references:type_name -> assembly.v1.ExternalReference
+	14, // 7: assembly.v1.ProcessRecipe.custom:type_name -> assembly.v1.CustomProperties
 	1,  // 8: assembly.v1.SequenceDefinition.operator:type_name -> assembly.v1.SequenceOperator
-	14, // 9: assembly.v1.SequenceDefinition.local_target:type_name -> assembly.v1.LocalTarget
-	13, // 10: assembly.v1.SequenceDefinition.custom:type_name -> assembly.v1.CustomProperties
-	14, // 11: assembly.v1.TaskTarget.local_target:type_name -> assembly.v1.LocalTarget
-	15, // 12: assembly.v1.TaskTarget.location:type_name -> assembly.v1.ContainerSlotRef
-	16, // 13: assembly.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> assembly.v1.SkillLevel
-	17, // 14: assembly.v1.ValidationRequirement.constraints:type_name -> assembly.v1.KeyValueConstraint
+	15, // 9: assembly.v1.SequenceDefinition.local_target:type_name -> assembly.v1.LocalTarget
+	14, // 10: assembly.v1.SequenceDefinition.custom:type_name -> assembly.v1.CustomProperties
+	15, // 11: assembly.v1.TaskTarget.local_target:type_name -> assembly.v1.LocalTarget
+	16, // 12: assembly.v1.TaskTarget.location:type_name -> assembly.v1.ContainerSlotRef
+	17, // 13: assembly.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> assembly.v1.SkillLevel
+	18, // 14: assembly.v1.ValidationRequirement.constraints:type_name -> assembly.v1.KeyValueConstraint
 	3,  // 15: assembly.v1.TaskExecutionPolicy.assignment_preference:type_name -> assembly.v1.TaskAssignmentPreference
-	18, // 16: assembly.v1.TaskExecutionPolicy.actor_constraint:type_name -> assembly.v1.ActorConstraint
-	19, // 17: assembly.v1.TaskExecutionPolicy.estimated_duration:type_name -> assembly.v1.EstimatedDuration
-	2,  // 18: assembly.v1.TaskDefinition.task_type:type_name -> assembly.v1.TaskType
-	7,  // 19: assembly.v1.TaskDefinition.target:type_name -> assembly.v1.TaskTarget
-	20, // 20: assembly.v1.TaskDefinition.approach:type_name -> geometry.v1.Vector3
-	21, // 21: assembly.v1.TaskDefinition.tool_requirements:type_name -> assembly.v1.ToolRequirement
-	22, // 22: assembly.v1.TaskDefinition.skill_requirements:type_name -> assembly.v1.SkillRequirement
-	8,  // 23: assembly.v1.TaskDefinition.validation:type_name -> assembly.v1.ValidationRequirement
-	9,  // 24: assembly.v1.TaskDefinition.execution_policy:type_name -> assembly.v1.TaskExecutionPolicy
-	23, // 25: assembly.v1.TaskDefinition.safety_relevance:type_name -> assembly.v1.SafetyRelevance
-	15, // 26: assembly.v1.TaskDefinition.source_location:type_name -> assembly.v1.ContainerSlotRef
-	15, // 27: assembly.v1.TaskDefinition.destination_location:type_name -> assembly.v1.ContainerSlotRef
-	13, // 28: assembly.v1.TaskDefinition.custom:type_name -> assembly.v1.CustomProperties
-	29, // [29:29] is the sub-list for method output_type
-	29, // [29:29] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	19, // 16: assembly.v1.TaskExecutionPolicy.actor_constraint:type_name -> assembly.v1.ActorConstraint
+	20, // 17: assembly.v1.TaskExecutionPolicy.estimated_duration:type_name -> assembly.v1.EstimatedDuration
+	12, // 18: assembly.v1.TaskOverride.when:type_name -> assembly.v1.VariantRule
+	21, // 19: assembly.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
+	2,  // 20: assembly.v1.TaskDefinition.task_type:type_name -> assembly.v1.TaskType
+	7,  // 21: assembly.v1.TaskDefinition.target:type_name -> assembly.v1.TaskTarget
+	21, // 22: assembly.v1.TaskDefinition.approach:type_name -> geometry.v1.Vector3
+	22, // 23: assembly.v1.TaskDefinition.tool_requirements:type_name -> assembly.v1.ToolRequirement
+	23, // 24: assembly.v1.TaskDefinition.skill_requirements:type_name -> assembly.v1.SkillRequirement
+	8,  // 25: assembly.v1.TaskDefinition.validation:type_name -> assembly.v1.ValidationRequirement
+	9,  // 26: assembly.v1.TaskDefinition.execution_policy:type_name -> assembly.v1.TaskExecutionPolicy
+	24, // 27: assembly.v1.TaskDefinition.safety_relevance:type_name -> assembly.v1.SafetyRelevance
+	16, // 28: assembly.v1.TaskDefinition.source_location:type_name -> assembly.v1.ContainerSlotRef
+	16, // 29: assembly.v1.TaskDefinition.destination_location:type_name -> assembly.v1.ContainerSlotRef
+	14, // 30: assembly.v1.TaskDefinition.custom:type_name -> assembly.v1.CustomProperties
+	12, // 31: assembly.v1.TaskDefinition.applicability:type_name -> assembly.v1.VariantRule
+	10, // 32: assembly.v1.TaskDefinition.overrides:type_name -> assembly.v1.TaskOverride
+	33, // [33:33] is the sub-list for method output_type
+	33, // [33:33] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_assembly_v1_process_proto_init() }
@@ -1300,16 +1396,16 @@ func file_assembly_v1_process_proto_init() {
 		return
 	}
 	file_assembly_v1_common_proto_init()
-	file_assembly_v1_product_proto_init()
 	file_assembly_v1_resources_proto_init()
 	file_assembly_v1_skill_proto_init()
+	file_assembly_v1_variant_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_assembly_v1_process_proto_rawDesc), len(file_assembly_v1_process_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -2,9 +2,9 @@ syntax = "proto3";
 package assembly.v1;
 
 import "assembly/v1/common.proto";
-import "assembly/v1/product.proto";
 import "assembly/v1/resources.proto";
 import "assembly/v1/skill.proto";
+import "assembly/v1/variant.proto";
 import "geometry/v1/vector3.proto";
 
 option csharp_namespace = "Messages.Assembly.V1";
@@ -61,8 +61,8 @@ enum TaskAssignmentPreference {
 }
 
 message RecipeApplicability {
-  repeated VariantCondition required = 1;
-  repeated VariantCondition excluded = 2;
+  repeated VariantRule include = 1; // Recipe applies if any include rule matches. Empty means generally applicable.
+  repeated VariantRule exclude = 2; // Recipe is rejected if any exclude rule matches.
 }
 
 // ProcessRecipe describes the following:
@@ -141,6 +141,13 @@ message TaskExecutionPolicy {
   EstimatedDuration estimated_duration = 6;
 }
 
+message TaskOverride {
+  repeated VariantRule when = 1;
+  string instruction_text = 2;
+  string target_node_id = 3;
+  geometry.v1.Vector3 approach = 4;
+}
+
 message TaskDefinition {
   string id = 1;
   string name = 2;
@@ -165,4 +172,6 @@ message TaskDefinition {
   ContainerSlotRef destination_location = 20; // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
 
   CustomProperties custom = 21;
+  repeated VariantRule applicability = 22; // Applies if any rule matches. Empty means always applicable.
+  repeated TaskOverride overrides = 23;
 }

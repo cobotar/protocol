@@ -6,6 +6,8 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { CustomProperties, ExternalReference, KeyValueConstraint } from "./common_pb.ts";
 import { file_assembly_v1_common } from "./common_pb.ts";
+import type { VariantAxis, VariantRule } from "./variant_pb.ts";
+import { file_assembly_v1_variant } from "./variant_pb.ts";
 import type { Pose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
@@ -16,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file assembly/v1/product.proto.
  */
 export const file_assembly_v1_product: GenFile = /*@__PURE__*/
-  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIlwKDE1hdGVyaWFsU3BlYxIvCghjYXRlZ29yeRgBIAEoDjIdLmFzc2VtYmx5LnYxLk1hdGVyaWFsQ2F0ZWdvcnkSDAoEbmFtZRgCIAEoCRINCgVncmFkZRgDIAEoCSLmAQoTUGFydEhhbmRsaW5nUHJvZmlsZRIPCgdmcmFnaWxlGAEgASgIEhUKDWVzZF9zZW5zaXRpdmUYAiABKAgSHgoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoARIVCg1tYXhfdG9ycXVlX25tGAYgASgBEjQKC2NvbnN0cmFpbnRzGAcgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IqkDCg5QYXJ0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlBhcnRUeXBlEg8KB3N1YnR5cGUYBiABKAkSEAoId2VpZ2h0X2cYByABKAMSKwoKZGltZW5zaW9ucxgIIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lvbnMSKwoIbWF0ZXJpYWwYCSABKAsyGS5hc3NlbWJseS52MS5NYXRlcmlhbFNwZWMSGAoQZGVmYXVsdF9tb2RlbF9pZBgKIAEoCRIyCghoYW5kbGluZxgLIAEoCzIgLmFzc2VtYmx5LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgNIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMi/AEKEVByb2R1Y3REZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIUCgxyb290X25vZGVfaWQYBSABKAkSKAoFbm9kZXMYBiADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5vZGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgHIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgIIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMiNQoQVmFyaWFudENvbmRpdGlvbhIRCglkaW1lbnNpb24YASABKAkSDgoGdmFsdWVzGAIgAygJIqMECgxBc3NlbWJseU5vZGUSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIWCg5wYXJlbnRfbm9kZV9pZBgDIAEoCRIjCgRraW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmQSGgoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJEhkKEW92ZXJyaWRlX21vZGVsX2lkGAYgASgJEiUKCmxvY2FsX3Bvc2UYByABKAsyES5nZW9tZXRyeS52MS5Qb3NlEhYKDmNoaWxkX25vZGVfaWRzGAggAygJEhUKDXNlcXVlbmNlX2hpbnQYCSABKAUSGwoTY2FkX29jY3VycmVuY2VfcGF0aBgKIAEoCRIxChBqb2luX21ldGhvZF9oaW50GAsgASgOMhcuYXNzZW1ibHkudjEuSm9pbk1ldGhvZBIxChNpbnNlcnRpb25fYXhpc19oaW50GAwgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI1ChdwcmVmZXJyZWRfYXBwcm9hY2hfaGludBgNIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSEAoIb3B0aW9uYWwYDiABKAgSNAoNYXBwbGljYWJpbGl0eRgPIAMoCzIdLmFzc2VtYmx5LnYxLlZhcmlhbnRDb25kaXRpb24SLQoGY3VzdG9tGBAgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI9Cg9QYXJ0RGVmaW5pdGlvbnMSKgoFaXRlbXMYASADKAsyGy5hc3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvbiJDChJQcm9kdWN0RGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5Qcm9kdWN0RGVmaW5pdGlvbirLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VEX01BVEVSSUFMEAsqlgEKCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_geometry_v1_pose, file_geometry_v1_vector3]);
+  fileDesc("Chlhc3NlbWJseS92MS9wcm9kdWN0LnByb3RvEgthc3NlbWJseS52MSI2CgpEaW1lbnNpb25zEgwKBHhfbW0YASABKAESDAoEeV9tbRgCIAEoARIMCgR6X21tGAMgASgBIlwKDE1hdGVyaWFsU3BlYxIvCghjYXRlZ29yeRgBIAEoDjIdLmFzc2VtYmx5LnYxLk1hdGVyaWFsQ2F0ZWdvcnkSDAoEbmFtZRgCIAEoCRINCgVncmFkZRgDIAEoCSLmAQoTUGFydEhhbmRsaW5nUHJvZmlsZRIPCgdmcmFnaWxlGAEgASgIEhUKDWVzZF9zZW5zaXRpdmUYAiABKAgSHgoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBCABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgFIAEoARIVCg1tYXhfdG9ycXVlX25tGAYgASgBEjQKC2NvbnN0cmFpbnRzGAcgAygLMh8uYXNzZW1ibHkudjEuS2V5VmFsdWVDb25zdHJhaW50IqkDCg5QYXJ0RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSIwoEdHlwZRgFIAEoDjIVLmFzc2VtYmx5LnYxLlBhcnRUeXBlEg8KB3N1YnR5cGUYBiABKAkSEAoId2VpZ2h0X2cYByABKAMSKwoKZGltZW5zaW9ucxgIIAEoCzIXLmFzc2VtYmx5LnYxLkRpbWVuc2lvbnMSKwoIbWF0ZXJpYWwYCSABKAsyGS5hc3NlbWJseS52MS5NYXRlcmlhbFNwZWMSGAoQZGVmYXVsdF9tb2RlbF9pZBgKIAEoCRIyCghoYW5kbGluZxgLIAEoCzIgLmFzc2VtYmx5LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgNIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMirAIKEVByb2R1Y3REZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgx2YXJpYW50X2F4ZXMYBSADKAsyGC5hc3NlbWJseS52MS5WYXJpYW50QXhpcxIUCgxyb290X25vZGVfaWQYBiABKAkSKAoFbm9kZXMYByADKAsyGS5hc3NlbWJseS52MS5Bc3NlbWJseU5vZGUSOwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgIIAMoCzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlEi0KBmN1c3RvbRgJIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXMihgQKDEFzc2VtYmx5Tm9kZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhYKDnBhcmVudF9ub2RlX2lkGAMgASgJEiMKBGtpbmQYBCABKA4yFS5hc3NlbWJseS52MS5Ob2RlS2luZBIaChJwYXJ0X2RlZmluaXRpb25faWQYBSABKAkSGQoRb3ZlcnJpZGVfbW9kZWxfaWQYBiABKAkSJQoKbG9jYWxfcG9zZRgHIAEoCzIRLmdlb21ldHJ5LnYxLlBvc2USFQoNc2VxdWVuY2VfaGludBgJIAEoBRIbChNjYWRfb2NjdXJyZW5jZV9wYXRoGAogASgJEjEKEGpvaW5fbWV0aG9kX2hpbnQYCyABKA4yFy5hc3NlbWJseS52MS5Kb2luTWV0aG9kEjEKE2luc2VydGlvbl9heGlzX2hpbnQYDCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjUKF3ByZWZlcnJlZF9hcHByb2FjaF9oaW50GA0gASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIQCghvcHRpb25hbBgOIAEoCBIvCg1hcHBsaWNhYmlsaXR5GA8gAygLMhguYXNzZW1ibHkudjEuVmFyaWFudFJ1bGUSLQoGY3VzdG9tGBAgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllcyI9Cg9QYXJ0RGVmaW5pdGlvbnMSKgoFaXRlbXMYASADKAsyGy5hc3NlbWJseS52MS5QYXJ0RGVmaW5pdGlvbiJDChJQcm9kdWN0RGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5hc3NlbWJseS52MS5Qcm9kdWN0RGVmaW5pdGlvbirLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VEX01BVEVSSUFMEAsqlgEKCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKD2NvbS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYxogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeICF0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90bzM", [file_assembly_v1_common, file_assembly_v1_variant, file_geometry_v1_pose, file_geometry_v1_vector3]);
 
 /**
  * @generated from message assembly.v1.Dimensions
@@ -247,22 +249,27 @@ export type ProductDefinition = Message<"assembly.v1.ProductDefinition"> & {
   description: string;
 
   /**
-   * @generated from field: string root_node_id = 5;
+   * @generated from field: repeated assembly.v1.VariantAxis variant_axes = 5;
+   */
+  variantAxes: VariantAxis[];
+
+  /**
+   * @generated from field: string root_node_id = 6;
    */
   rootNodeId: string;
 
   /**
-   * @generated from field: repeated assembly.v1.AssemblyNode nodes = 6;
+   * @generated from field: repeated assembly.v1.AssemblyNode nodes = 7;
    */
   nodes: AssemblyNode[];
 
   /**
-   * @generated from field: repeated assembly.v1.ExternalReference external_references = 7;
+   * @generated from field: repeated assembly.v1.ExternalReference external_references = 8;
    */
   externalReferences: ExternalReference[];
 
   /**
-   * @generated from field: assembly.v1.CustomProperties custom = 8;
+   * @generated from field: assembly.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;
 };
@@ -273,32 +280,6 @@ export type ProductDefinition = Message<"assembly.v1.ProductDefinition"> & {
  */
 export const ProductDefinitionSchema: GenMessage<ProductDefinition> = /*@__PURE__*/
   messageDesc(file_assembly_v1_product, 4);
-
-/**
- * @generated from message assembly.v1.VariantCondition
- */
-export type VariantCondition = Message<"assembly.v1.VariantCondition"> & {
-  /**
-   * e.g. "hinge_side"
-   *
-   * @generated from field: string dimension = 1;
-   */
-  dimension: string;
-
-  /**
-   * e.g. ["left"]
-   *
-   * @generated from field: repeated string values = 2;
-   */
-  values: string[];
-};
-
-/**
- * Describes the message assembly.v1.VariantCondition.
- * Use `create(VariantConditionSchema)` to create a new message.
- */
-export const VariantConditionSchema: GenMessage<VariantCondition> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_product, 5);
 
 /**
  * @generated from message assembly.v1.AssemblyNode
@@ -344,13 +325,8 @@ export type AssemblyNode = Message<"assembly.v1.AssemblyNode"> & {
   localPose?: Pose;
 
   /**
-   * Children of this node, their parent_node_id must be set to this.id
+   * repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
    *
-   * @generated from field: repeated string child_node_ids = 8;
-   */
-  childNodeIds: string[];
-
-  /**
    * @generated from field: int32 sequence_hint = 9;
    */
   sequenceHint: number;
@@ -383,9 +359,11 @@ export type AssemblyNode = Message<"assembly.v1.AssemblyNode"> & {
   optional: boolean;
 
   /**
-   * @generated from field: repeated assembly.v1.VariantCondition applicability = 15;
+   * Applies if any rule matches. Empty means always applicable.
+   *
+   * @generated from field: repeated assembly.v1.VariantRule applicability = 15;
    */
-  applicability: VariantCondition[];
+  applicability: VariantRule[];
 
   /**
    * TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
@@ -400,7 +378,7 @@ export type AssemblyNode = Message<"assembly.v1.AssemblyNode"> & {
  * Use `create(AssemblyNodeSchema)` to create a new message.
  */
 export const AssemblyNodeSchema: GenMessage<AssemblyNode> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_product, 6);
+  messageDesc(file_assembly_v1_product, 5);
 
 /**
  * @generated from message assembly.v1.PartDefinitions
@@ -417,7 +395,7 @@ export type PartDefinitions = Message<"assembly.v1.PartDefinitions"> & {
  * Use `create(PartDefinitionsSchema)` to create a new message.
  */
 export const PartDefinitionsSchema: GenMessage<PartDefinitions> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_product, 7);
+  messageDesc(file_assembly_v1_product, 6);
 
 /**
  * @generated from message assembly.v1.ProductDefinitions
@@ -434,7 +412,7 @@ export type ProductDefinitions = Message<"assembly.v1.ProductDefinitions"> & {
  * Use `create(ProductDefinitionsSchema)` to create a new message.
  */
 export const ProductDefinitionsSchema: GenMessage<ProductDefinitions> = /*@__PURE__*/
-  messageDesc(file_assembly_v1_product, 8);
+  messageDesc(file_assembly_v1_product, 7);
 
 /**
  * @generated from enum assembly.v1.PartType

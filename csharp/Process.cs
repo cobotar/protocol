@@ -25,125 +25,132 @@ namespace Messages.Assembly.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chlhc3NlbWJseS92MS9wcm9jZXNzLnByb3RvEgthc3NlbWJseS52MRoYYXNz",
-            "ZW1ibHkvdjEvY29tbW9uLnByb3RvGhlhc3NlbWJseS92MS9wcm9kdWN0LnBy",
-            "b3RvGhthc3NlbWJseS92MS9yZXNvdXJjZXMucHJvdG8aF2Fzc2VtYmx5L3Yx",
-            "L3NraWxsLnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIosBChNS",
-            "ZWNpcGVBcHBsaWNhYmlsaXR5EjkKCHJlcXVpcmVkGAEgAygLMh0uYXNzZW1i",
-            "bHkudjEuVmFyaWFudENvbmRpdGlvblIIcmVxdWlyZWQSOQoIZXhjbHVkZWQY",
-            "AiADKAsyHS5hc3NlbWJseS52MS5WYXJpYW50Q29uZGl0aW9uUghleGNsdWRl",
-            "ZCKEBQoNUHJvY2Vzc1JlY2lwZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgC",
-            "IAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
-            "GAQgASgJUgtkZXNjcmlwdGlvbhIsCgR0eXBlGAUgASgOMhguYXNzZW1ibHku",
-            "djEuUHJvY2Vzc1R5cGVSBHR5cGUSMgoVcHJvZHVjdF9kZWZpbml0aW9uX2lk",
-            "GAYgASgJUhNwcm9kdWN0RGVmaW5pdGlvbklkEkYKDWFwcGxpY2FiaWxpdHkY",
-            "ByABKAsyIC5hc3NlbWJseS52MS5SZWNpcGVBcHBsaWNhYmlsaXR5Ug1hcHBs",
-            "aWNhYmlsaXR5EigKEHJvb3Rfc2VxdWVuY2VfaWQYCCABKAlSDnJvb3RTZXF1",
-            "ZW5jZUlkEj0KCXNlcXVlbmNlcxgJIAMoCzIfLmFzc2VtYmx5LnYxLlNlcXVl",
-            "bmNlRGVmaW5pdGlvblIJc2VxdWVuY2VzEjEKBXRhc2tzGAogAygLMhsuYXNz",
-            "ZW1ibHkudjEuVGFza0RlZmluaXRpb25SBXRhc2tzEksKInN1cHBvcnRlZF9j",
-            "b250YWluZXJfZGVmaW5pdGlvbl9pZHMYCyADKAlSH3N1cHBvcnRlZENvbnRh",
-            "aW5lckRlZmluaXRpb25JZHMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMo",
-            "CzIeLmFzc2VtYmx5LnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJl",
-            "ZmVyZW5jZXMSNQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9t",
-            "UHJvcGVydGllc1IGY3VzdG9tIpAEChJTZXF1ZW5jZURlZmluaXRpb24SDgoC",
-            "aWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
-            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoP",
-            "c2VxdWVuY2VfbnVtYmVyGAUgASgFUg5zZXF1ZW5jZU51bWJlchIsChJwYXJl",
-            "bnRfc2VxdWVuY2VfaWQYBiABKAlSEHBhcmVudFNlcXVlbmNlSWQSOQoIb3Bl",
-            "cmF0b3IYByABKA4yHS5hc3NlbWJseS52MS5TZXF1ZW5jZU9wZXJhdG9yUghv",
-            "cGVyYXRvchIsChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAlSEGNoaWxkU2Vx",
-            "dWVuY2VJZHMSJAoOY2hpbGRfdGFza19pZHMYCSADKAlSDGNoaWxkVGFza0lk",
-            "cxI7Cgxsb2NhbF90YXJnZXQYCiABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRh",
-            "cmdldFILbG9jYWxUYXJnZXQSGgoIb3B0aW9uYWwYCyABKAhSCG9wdGlvbmFs",
-            "EioKEWNhbl9idWxrX2NvbXBsZXRlGAwgASgIUg9jYW5CdWxrQ29tcGxldGUS",
-            "NQoGY3VzdG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGll",
-            "c1IGY3VzdG9tIpADCgpUYXNrVGFyZ2V0EiQKDnRhcmdldF9ub2RlX2lkGAEg",
-            "ASgJUgx0YXJnZXROb2RlSWQSOQoZdGFyZ2V0X3BhcnRfZGVmaW5pdGlvbl9p",
-            "ZBgCIAEoCVIWdGFyZ2V0UGFydERlZmluaXRpb25JZBI7Cgxsb2NhbF90YXJn",
-            "ZXQYAyABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRhcmdldFILbG9jYWxUYXJn",
-            "ZXQSKgoRYXNzZXRfaW5zdGFuY2VfaWQYBCABKAlSD2Fzc2V0SW5zdGFuY2VJ",
-            "ZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgFIAEoCVIPcm9ib3RJbnN0YW5jZUlk",
-            "Eh0KCnN0YXRpb25faWQYBiABKAlSCXN0YXRpb25JZBIyChVjb250YWluZXJf",
-            "aW5zdGFuY2VfaWQYByABKAlSE2NvbnRhaW5lckluc3RhbmNlSWQSOQoIbG9j",
-            "YXRpb24YCCABKAsyHS5hc3NlbWJseS52MS5Db250YWluZXJTbG90UmVmUghs",
-            "b2NhdGlvbiLYAgoVVmFsaWRhdGlvblJlcXVpcmVtZW50EjIKFXJlcXVpcmVf",
-            "dG9vbF9mZWVkYmFjaxgBIAEoCFITcmVxdWlyZVRvb2xGZWVkYmFjaxIwChRy",
-            "ZXF1aXJlX3Zpc2lvbl9jaGVjaxgCIAEoCFIScmVxdWlyZVZpc2lvbkNoZWNr",
-            "EjoKGWFsbG93X21hbnVhbF9jb25maXJtYXRpb24YAyABKAhSF2FsbG93TWFu",
-            "dWFsQ29uZmlybWF0aW9uEloKHW1hbnVhbF9jb25maXJtYXRpb25fbWluX2xl",
-            "dmVsGAQgASgOMhcuYXNzZW1ibHkudjEuU2tpbGxMZXZlbFIabWFudWFsQ29u",
-            "ZmlybWF0aW9uTWluTGV2ZWwSQQoLY29uc3RyYWludHMYBSADKAsyHy5hc3Nl",
-            "bWJseS52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIt4CChNU",
-            "YXNrRXhlY3V0aW9uUG9saWN5EloKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgB",
-            "IAEoDjIlLmFzc2VtYmx5LnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZVIU",
-            "YXNzaWdubWVudFByZWZlcmVuY2USRwoQYWN0b3JfY29uc3RyYWludBgCIAEo",
-            "CzIcLmFzc2VtYmx5LnYxLkFjdG9yQ29uc3RyYWludFIPYWN0b3JDb25zdHJh",
-            "aW50EiEKDGNhbl9yZWFzc2lnbhgDIAEoCFILY2FuUmVhc3NpZ24SFQoGY2Fu",
-            "X2RvGAQgASgIUgVjYW5EbxIZCghjYW5fdW5kbxgFIAEoCFIHY2FuVW5kbxJN",
-            "ChJlc3RpbWF0ZWRfZHVyYXRpb24YBiABKAsyHi5hc3NlbWJseS52MS5Fc3Rp",
-            "bWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVyYXRpb24i7wcKDlRhc2tEZWZp",
-            "bml0aW9uEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
-            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
-            "aXB0aW9uEikKEGluc3RydWN0aW9uX3RleHQYBSABKAlSD2luc3RydWN0aW9u",
-            "VGV4dBInCg9zZXF1ZW5jZV9udW1iZXIYBiABKAVSDnNlcXVlbmNlTnVtYmVy",
-            "EjIKCXRhc2tfdHlwZRgHIAEoDjIVLmFzc2VtYmx5LnYxLlRhc2tUeXBlUgh0",
-            "YXNrVHlwZRIvCgZ0YXJnZXQYCCABKAsyFy5hc3NlbWJseS52MS5UYXNrVGFy",
-            "Z2V0UgZ0YXJnZXQSMAoIYXBwcm9hY2gYCSABKAsyFC5nZW9tZXRyeS52MS5W",
-            "ZWN0b3IzUghhcHByb2FjaBJJChF0b29sX3JlcXVpcmVtZW50cxgMIAMoCzIc",
-            "LmFzc2VtYmx5LnYxLlRvb2xSZXF1aXJlbWVudFIQdG9vbFJlcXVpcmVtZW50",
-            "cxJMChJza2lsbF9yZXF1aXJlbWVudHMYDSADKAsyHS5hc3NlbWJseS52MS5T",
-            "a2lsbFJlcXVpcmVtZW50UhFza2lsbFJlcXVpcmVtZW50cxJCCgp2YWxpZGF0",
-            "aW9uGA4gASgLMiIuYXNzZW1ibHkudjEuVmFsaWRhdGlvblJlcXVpcmVtZW50",
-            "Ugp2YWxpZGF0aW9uEksKEGV4ZWN1dGlvbl9wb2xpY3kYDyABKAsyIC5hc3Nl",
-            "bWJseS52MS5UYXNrRXhlY3V0aW9uUG9saWN5Ug9leGVjdXRpb25Qb2xpY3kS",
-            "RwoQc2FmZXR5X3JlbGV2YW5jZRgQIAEoDjIcLmFzc2VtYmx5LnYxLlNhZmV0",
-            "eVJlbGV2YW5jZVIPc2FmZXR5UmVsZXZhbmNlEiQKDnNvdXJjZV9ub2RlX2lk",
-            "GBEgASgJUgxzb3VyY2VOb2RlSWQSLgoTZGVzdGluYXRpb25fbm9kZV9pZBgS",
-            "IAEoCVIRZGVzdGluYXRpb25Ob2RlSWQSRgoPc291cmNlX2xvY2F0aW9uGBMg",
-            "ASgLMh0uYXNzZW1ibHkudjEuQ29udGFpbmVyU2xvdFJlZlIOc291cmNlTG9j",
-            "YXRpb24SUAoUZGVzdGluYXRpb25fbG9jYXRpb24YFCABKAsyHS5hc3NlbWJs",
-            "eS52MS5Db250YWluZXJTbG90UmVmUhNkZXN0aW5hdGlvbkxvY2F0aW9uEjUK",
-            "BmN1c3RvbRgVIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNS",
-            "BmN1c3RvbSrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BF",
-            "Q0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VT",
-            "U19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJ",
-            "T04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19U",
-            "WVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBiqi",
-            "AQoQU2VxdWVuY2VPcGVyYXRvchIhCh1TRVFVRU5DRV9PUEVSQVRPUl9VTlNQ",
-            "RUNJRklFRBAAEiUKIVNFUVVFTkNFX09QRVJBVE9SX0FMTF9PRl9DSElMRFJF",
-            "ThABEiUKIVNFUVVFTkNFX09QRVJBVE9SX09ORV9PRl9DSElMRFJFThACEh0K",
-            "GVNFUVVFTkNFX09QRVJBVE9SX09SREVSRUQQAyq/AwoIVGFza1R5cGUSGQoV",
-            "VEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQ",
-            "ARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFTS19UWVBFX1VORkFTVEVO",
-            "EAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQ",
-            "BRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tfVFlQRV9SRU1PVkUQBxIT",
-            "Cg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZUEVfV0lQRRAJEhMKD1RB",
-            "U0tfVFlQRV9BTElHThAKEhQKEFRBU0tfVFlQRV9JTlNFUlQQCxISCg5UQVNL",
-            "X1RZUEVfSE9MRBAMEhQKEFRBU0tfVFlQRV9WRVJJRlkQDRISCg5UQVNLX1RZ",
-            "UEVfUElDSxAOEhMKD1RBU0tfVFlQRV9QTEFDRRAPEhIKDlRBU0tfVFlQRV9T",
-            "Q0FOEBASEgoOVEFTS19UWVBFX1dBSVQQERITCg9UQVNLX1RZUEVfQ0hFQ0sQ",
-            "EhIZChVUQVNLX1RZUEVfQUNLTk9XTEVER0UQEyqdAgoYVGFza0Fzc2lnbm1l",
-            "bnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1VO",
-            "U1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJF",
-            "RkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05M",
-            "WV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZF",
-            "Ul9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlf",
-            "Uk9CT1QQBBIlCiFUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9FSVRIRVIQ",
-            "BUKyAQoPY29tLmFzc2VtYmx5LnYxQgxQcm9jZXNzUHJvdG9QAVo7Z2l0aHVi",
-            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fz",
-            "c2VtYmx5djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2Vt",
-            "Ymx5XFYx4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6",
-            "VjFiBnByb3RvMw=="));
+            "ZW1ibHkvdjEvY29tbW9uLnByb3RvGhthc3NlbWJseS92MS9yZXNvdXJjZXMu",
+            "cHJvdG8aF2Fzc2VtYmx5L3YxL3NraWxsLnByb3RvGhlhc3NlbWJseS92MS92",
+            "YXJpYW50LnByb3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvIn0KE1Jl",
+            "Y2lwZUFwcGxpY2FiaWxpdHkSMgoHaW5jbHVkZRgBIAMoCzIYLmFzc2VtYmx5",
+            "LnYxLlZhcmlhbnRSdWxlUgdpbmNsdWRlEjIKB2V4Y2x1ZGUYAiADKAsyGC5h",
+            "c3NlbWJseS52MS5WYXJpYW50UnVsZVIHZXhjbHVkZSKEBQoNUHJvY2Vzc1Jl",
+            "Y2lwZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
+            "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
+            "dGlvbhIsCgR0eXBlGAUgASgOMhguYXNzZW1ibHkudjEuUHJvY2Vzc1R5cGVS",
+            "BHR5cGUSMgoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJUhNwcm9kdWN0",
+            "RGVmaW5pdGlvbklkEkYKDWFwcGxpY2FiaWxpdHkYByABKAsyIC5hc3NlbWJs",
+            "eS52MS5SZWNpcGVBcHBsaWNhYmlsaXR5Ug1hcHBsaWNhYmlsaXR5EigKEHJv",
+            "b3Rfc2VxdWVuY2VfaWQYCCABKAlSDnJvb3RTZXF1ZW5jZUlkEj0KCXNlcXVl",
+            "bmNlcxgJIAMoCzIfLmFzc2VtYmx5LnYxLlNlcXVlbmNlRGVmaW5pdGlvblIJ",
+            "c2VxdWVuY2VzEjEKBXRhc2tzGAogAygLMhsuYXNzZW1ibHkudjEuVGFza0Rl",
+            "ZmluaXRpb25SBXRhc2tzEksKInN1cHBvcnRlZF9jb250YWluZXJfZGVmaW5p",
+            "dGlvbl9pZHMYCyADKAlSH3N1cHBvcnRlZENvbnRhaW5lckRlZmluaXRpb25J",
+            "ZHMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIeLmFzc2VtYmx5LnYx",
+            "LkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3Vz",
+            "dG9tGA0gASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3Vz",
+            "dG9tIpAEChJTZXF1ZW5jZURlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEhIK",
+            "BG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
+            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SJwoPc2VxdWVuY2VfbnVtYmVy",
+            "GAUgASgFUg5zZXF1ZW5jZU51bWJlchIsChJwYXJlbnRfc2VxdWVuY2VfaWQY",
+            "BiABKAlSEHBhcmVudFNlcXVlbmNlSWQSOQoIb3BlcmF0b3IYByABKA4yHS5h",
+            "c3NlbWJseS52MS5TZXF1ZW5jZU9wZXJhdG9yUghvcGVyYXRvchIsChJjaGls",
+            "ZF9zZXF1ZW5jZV9pZHMYCCADKAlSEGNoaWxkU2VxdWVuY2VJZHMSJAoOY2hp",
+            "bGRfdGFza19pZHMYCSADKAlSDGNoaWxkVGFza0lkcxI7Cgxsb2NhbF90YXJn",
+            "ZXQYCiABKAsyGC5hc3NlbWJseS52MS5Mb2NhbFRhcmdldFILbG9jYWxUYXJn",
+            "ZXQSGgoIb3B0aW9uYWwYCyABKAhSCG9wdGlvbmFsEioKEWNhbl9idWxrX2Nv",
+            "bXBsZXRlGAwgASgIUg9jYW5CdWxrQ29tcGxldGUSNQoGY3VzdG9tGA0gASgL",
+            "Mh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIpADCgpU",
+            "YXNrVGFyZ2V0EiQKDnRhcmdldF9ub2RlX2lkGAEgASgJUgx0YXJnZXROb2Rl",
+            "SWQSOQoZdGFyZ2V0X3BhcnRfZGVmaW5pdGlvbl9pZBgCIAEoCVIWdGFyZ2V0",
+            "UGFydERlZmluaXRpb25JZBI7Cgxsb2NhbF90YXJnZXQYAyABKAsyGC5hc3Nl",
+            "bWJseS52MS5Mb2NhbFRhcmdldFILbG9jYWxUYXJnZXQSKgoRYXNzZXRfaW5z",
+            "dGFuY2VfaWQYBCABKAlSD2Fzc2V0SW5zdGFuY2VJZBIqChFyb2JvdF9pbnN0",
+            "YW5jZV9pZBgFIAEoCVIPcm9ib3RJbnN0YW5jZUlkEh0KCnN0YXRpb25faWQY",
+            "BiABKAlSCXN0YXRpb25JZBIyChVjb250YWluZXJfaW5zdGFuY2VfaWQYByAB",
+            "KAlSE2NvbnRhaW5lckluc3RhbmNlSWQSOQoIbG9jYXRpb24YCCABKAsyHS5h",
+            "c3NlbWJseS52MS5Db250YWluZXJTbG90UmVmUghsb2NhdGlvbiLYAgoVVmFs",
+            "aWRhdGlvblJlcXVpcmVtZW50EjIKFXJlcXVpcmVfdG9vbF9mZWVkYmFjaxgB",
+            "IAEoCFITcmVxdWlyZVRvb2xGZWVkYmFjaxIwChRyZXF1aXJlX3Zpc2lvbl9j",
+            "aGVjaxgCIAEoCFIScmVxdWlyZVZpc2lvbkNoZWNrEjoKGWFsbG93X21hbnVh",
+            "bF9jb25maXJtYXRpb24YAyABKAhSF2FsbG93TWFudWFsQ29uZmlybWF0aW9u",
+            "EloKHW1hbnVhbF9jb25maXJtYXRpb25fbWluX2xldmVsGAQgASgOMhcuYXNz",
+            "ZW1ibHkudjEuU2tpbGxMZXZlbFIabWFudWFsQ29uZmlybWF0aW9uTWluTGV2",
+            "ZWwSQQoLY29uc3RyYWludHMYBSADKAsyHy5hc3NlbWJseS52MS5LZXlWYWx1",
+            "ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIt4CChNUYXNrRXhlY3V0aW9uUG9s",
+            "aWN5EloKFWFzc2lnbm1lbnRfcHJlZmVyZW5jZRgBIAEoDjIlLmFzc2VtYmx5",
+            "LnYxLlRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZVIUYXNzaWdubWVudFByZWZl",
+            "cmVuY2USRwoQYWN0b3JfY29uc3RyYWludBgCIAEoCzIcLmFzc2VtYmx5LnYx",
+            "LkFjdG9yQ29uc3RyYWludFIPYWN0b3JDb25zdHJhaW50EiEKDGNhbl9yZWFz",
+            "c2lnbhgDIAEoCFILY2FuUmVhc3NpZ24SFQoGY2FuX2RvGAQgASgIUgVjYW5E",
+            "bxIZCghjYW5fdW5kbxgFIAEoCFIHY2FuVW5kbxJNChJlc3RpbWF0ZWRfZHVy",
+            "YXRpb24YBiABKAsyHi5hc3NlbWJseS52MS5Fc3RpbWF0ZWREdXJhdGlvblIR",
+            "ZXN0aW1hdGVkRHVyYXRpb24ivwEKDFRhc2tPdmVycmlkZRIsCgR3aGVuGAEg",
+            "AygLMhguYXNzZW1ibHkudjEuVmFyaWFudFJ1bGVSBHdoZW4SKQoQaW5zdHJ1",
+            "Y3Rpb25fdGV4dBgCIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EiQKDnRhcmdldF9u",
+            "b2RlX2lkGAMgASgJUgx0YXJnZXROb2RlSWQSMAoIYXBwcm9hY2gYBCABKAsy",
+            "FC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2FjaCLoCAoOVGFza0RlZmlu",
+            "aXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
+            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
+            "cHRpb24SKQoQaW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCVIPaW5zdHJ1Y3Rpb25U",
+            "ZXh0EicKD3NlcXVlbmNlX251bWJlchgGIAEoBVIOc2VxdWVuY2VOdW1iZXIS",
+            "MgoJdGFza190eXBlGAcgASgOMhUuYXNzZW1ibHkudjEuVGFza1R5cGVSCHRh",
+            "c2tUeXBlEi8KBnRhcmdldBgIIAEoCzIXLmFzc2VtYmx5LnYxLlRhc2tUYXJn",
+            "ZXRSBnRhcmdldBIwCghhcHByb2FjaBgJIAEoCzIULmdlb21ldHJ5LnYxLlZl",
+            "Y3RvcjNSCGFwcHJvYWNoEkkKEXRvb2xfcmVxdWlyZW1lbnRzGAwgAygLMhwu",
+            "YXNzZW1ibHkudjEuVG9vbFJlcXVpcmVtZW50UhB0b29sUmVxdWlyZW1lbnRz",
+            "EkwKEnNraWxsX3JlcXVpcmVtZW50cxgNIAMoCzIdLmFzc2VtYmx5LnYxLlNr",
+            "aWxsUmVxdWlyZW1lbnRSEXNraWxsUmVxdWlyZW1lbnRzEkIKCnZhbGlkYXRp",
+            "b24YDiABKAsyIi5hc3NlbWJseS52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnRS",
+            "CnZhbGlkYXRpb24SSwoQZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIgLmFzc2Vt",
+            "Ymx5LnYxLlRhc2tFeGVjdXRpb25Qb2xpY3lSD2V4ZWN1dGlvblBvbGljeRJH",
+            "ChBzYWZldHlfcmVsZXZhbmNlGBAgASgOMhwuYXNzZW1ibHkudjEuU2FmZXR5",
+            "UmVsZXZhbmNlUg9zYWZldHlSZWxldmFuY2USJAoOc291cmNlX25vZGVfaWQY",
+            "ESABKAlSDHNvdXJjZU5vZGVJZBIuChNkZXN0aW5hdGlvbl9ub2RlX2lkGBIg",
+            "ASgJUhFkZXN0aW5hdGlvbk5vZGVJZBJGCg9zb3VyY2VfbG9jYXRpb24YEyAB",
+            "KAsyHS5hc3NlbWJseS52MS5Db250YWluZXJTbG90UmVmUg5zb3VyY2VMb2Nh",
+            "dGlvbhJQChRkZXN0aW5hdGlvbl9sb2NhdGlvbhgUIAEoCzIdLmFzc2VtYmx5",
+            "LnYxLkNvbnRhaW5lclNsb3RSZWZSE2Rlc3RpbmF0aW9uTG9jYXRpb24SNQoG",
+            "Y3VzdG9tGBUgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IG",
+            "Y3VzdG9tEj4KDWFwcGxpY2FiaWxpdHkYFiADKAsyGC5hc3NlbWJseS52MS5W",
+            "YXJpYW50UnVsZVINYXBwbGljYWJpbGl0eRI3CglvdmVycmlkZXMYFyADKAsy",
+            "GS5hc3NlbWJseS52MS5UYXNrT3ZlcnJpZGVSCW92ZXJyaWRlcyrVAQoLUHJv",
+            "Y2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJP",
+            "Q0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VN",
+            "QkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNT",
+            "X1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIc",
+            "ChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBiqiAQoQU2VxdWVuY2VPcGVy",
+            "YXRvchIhCh1TRVFVRU5DRV9PUEVSQVRPUl9VTlNQRUNJRklFRBAAEiUKIVNF",
+            "UVVFTkNFX09QRVJBVE9SX0FMTF9PRl9DSElMRFJFThABEiUKIVNFUVVFTkNF",
+            "X09QRVJBVE9SX09ORV9PRl9DSElMRFJFThACEh0KGVNFUVVFTkNFX09QRVJB",
+            "VE9SX09SREVSRUQQAyq/AwoIVGFza1R5cGUSGQoVVEFTS19UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQARIUChBUQVNLX1RZUEVf",
+            "RkFTVEVOEAISFgoSVEFTS19UWVBFX1VORkFTVEVOEAMSEwoPVEFTS19UWVBF",
+            "X01PVU5UEAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQBRISCg5UQVNLX1RZUEVf",
+            "TU9WRRAGEhQKEFRBU0tfVFlQRV9SRU1PVkUQBxITCg9UQVNLX1RZUEVfQVBQ",
+            "TFkQCBISCg5UQVNLX1RZUEVfV0lQRRAJEhMKD1RBU0tfVFlQRV9BTElHThAK",
+            "EhQKEFRBU0tfVFlQRV9JTlNFUlQQCxISCg5UQVNLX1RZUEVfSE9MRBAMEhQK",
+            "EFRBU0tfVFlQRV9WRVJJRlkQDRISCg5UQVNLX1RZUEVfUElDSxAOEhMKD1RB",
+            "U0tfVFlQRV9QTEFDRRAPEhIKDlRBU0tfVFlQRV9TQ0FOEBASEgoOVEFTS19U",
+            "WVBFX1dBSVQQERITCg9UQVNLX1RZUEVfQ0hFQ0sQEhIZChVUQVNLX1RZUEVf",
+            "QUNLTk9XTEVER0UQEyqdAgoYVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlEioK",
+            "JlRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1VOU1BFQ0lGSUVEEAASKwon",
+            "VEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX0hVTUFOEAESKQol",
+            "VEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9IVU1BThACEisKJ1RB",
+            "U0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9ST0JPVBADEikKJVRB",
+            "U0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfUk9CT1QQBBIlCiFUQVNL",
+            "X0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9FSVRIRVIQBUKyAQoPY29tLmFzc2Vt",
+            "Ymx5LnYxQgxQcm9jZXNzUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5djGiAgNBWFiq",
+            "AhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx4gIXQXNzZW1i",
+            "bHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.ProductReflection.Descriptor, global::Messages.Assembly.V1.ResourcesReflection.Descriptor, global::Messages.Assembly.V1.SkillReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.ResourcesReflection.Descriptor, global::Messages.Assembly.V1.SkillReflection.Descriptor, global::Messages.Assembly.V1.VariantReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.ProcessType), typeof(global::Messages.Assembly.V1.SequenceOperator), typeof(global::Messages.Assembly.V1.TaskType), typeof(global::Messages.Assembly.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RecipeApplicability), global::Messages.Assembly.V1.RecipeApplicability.Parser, new[]{ "Required", "Excluded" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.RecipeApplicability), global::Messages.Assembly.V1.RecipeApplicability.Parser, new[]{ "Include", "Exclude" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProcessRecipe), global::Messages.Assembly.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedContainerDefinitionIds", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.SequenceDefinition), global::Messages.Assembly.V1.SequenceDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "SequenceNumber", "ParentSequenceId", "Operator", "ChildSequenceIds", "ChildTaskIds", "LocalTarget", "Optional", "CanBulkComplete", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskTarget), global::Messages.Assembly.V1.TaskTarget.Parser, new[]{ "TargetNodeId", "TargetPartDefinitionId", "LocalTarget", "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerInstanceId", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ValidationRequirement), global::Messages.Assembly.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskExecutionPolicy), global::Messages.Assembly.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanDo", "CanUndo", "EstimatedDuration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "SourceLocation", "DestinationLocation", "Custom" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskOverride), global::Messages.Assembly.V1.TaskOverride.Parser, new[]{ "When", "InstructionText", "TargetNodeId", "Approach" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.TaskDefinition), global::Messages.Assembly.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "Approach", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "SourceNodeId", "DestinationNodeId", "SourceLocation", "DestinationLocation", "Custom", "Applicability", "Overrides" }, null, null, null, null)
           }));
     }
     #endregion
@@ -261,8 +268,8 @@ namespace Messages.Assembly.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RecipeApplicability(RecipeApplicability other) : this() {
-      required_ = other.required_.Clone();
-      excluded_ = other.excluded_.Clone();
+      include_ = other.include_.Clone();
+      exclude_ = other.exclude_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -272,26 +279,32 @@ namespace Messages.Assembly.V1 {
       return new RecipeApplicability(this);
     }
 
-    /// <summary>Field number for the "required" field.</summary>
-    public const int RequiredFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantCondition> _repeated_required_codec
-        = pb::FieldCodec.ForMessage(10, global::Messages.Assembly.V1.VariantCondition.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition> required_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition>();
+    /// <summary>Field number for the "include" field.</summary>
+    public const int IncludeFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantRule> _repeated_include_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Assembly.V1.VariantRule.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> include_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule>();
+    /// <summary>
+    /// Recipe applies if any include rule matches. Empty means generally applicable.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition> Required {
-      get { return required_; }
+    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> Include {
+      get { return include_; }
     }
 
-    /// <summary>Field number for the "excluded" field.</summary>
-    public const int ExcludedFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantCondition> _repeated_excluded_codec
-        = pb::FieldCodec.ForMessage(18, global::Messages.Assembly.V1.VariantCondition.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition> excluded_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition>();
+    /// <summary>Field number for the "exclude" field.</summary>
+    public const int ExcludeFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantRule> _repeated_exclude_codec
+        = pb::FieldCodec.ForMessage(18, global::Messages.Assembly.V1.VariantRule.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> exclude_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule>();
+    /// <summary>
+    /// Recipe is rejected if any exclude rule matches.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantCondition> Excluded {
-      get { return excluded_; }
+    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> Exclude {
+      get { return exclude_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -309,8 +322,8 @@ namespace Messages.Assembly.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!required_.Equals(other.required_)) return false;
-      if(!excluded_.Equals(other.excluded_)) return false;
+      if(!include_.Equals(other.include_)) return false;
+      if(!exclude_.Equals(other.exclude_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -318,8 +331,8 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= required_.GetHashCode();
-      hash ^= excluded_.GetHashCode();
+      hash ^= include_.GetHashCode();
+      hash ^= exclude_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -338,8 +351,8 @@ namespace Messages.Assembly.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      required_.WriteTo(output, _repeated_required_codec);
-      excluded_.WriteTo(output, _repeated_excluded_codec);
+      include_.WriteTo(output, _repeated_include_codec);
+      exclude_.WriteTo(output, _repeated_exclude_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -350,8 +363,8 @@ namespace Messages.Assembly.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      required_.WriteTo(ref output, _repeated_required_codec);
-      excluded_.WriteTo(ref output, _repeated_excluded_codec);
+      include_.WriteTo(ref output, _repeated_include_codec);
+      exclude_.WriteTo(ref output, _repeated_exclude_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -362,8 +375,8 @@ namespace Messages.Assembly.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += required_.CalculateSize(_repeated_required_codec);
-      size += excluded_.CalculateSize(_repeated_excluded_codec);
+      size += include_.CalculateSize(_repeated_include_codec);
+      size += exclude_.CalculateSize(_repeated_exclude_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -376,8 +389,8 @@ namespace Messages.Assembly.V1 {
       if (other == null) {
         return;
       }
-      required_.Add(other.required_);
-      excluded_.Add(other.excluded_);
+      include_.Add(other.include_);
+      exclude_.Add(other.exclude_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -398,11 +411,11 @@ namespace Messages.Assembly.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            required_.AddEntriesFrom(input, _repeated_required_codec);
+            include_.AddEntriesFrom(input, _repeated_include_codec);
             break;
           }
           case 18: {
-            excluded_.AddEntriesFrom(input, _repeated_excluded_codec);
+            exclude_.AddEntriesFrom(input, _repeated_exclude_codec);
             break;
           }
         }
@@ -425,11 +438,11 @@ namespace Messages.Assembly.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            required_.AddEntriesFrom(ref input, _repeated_required_codec);
+            include_.AddEntriesFrom(ref input, _repeated_include_codec);
             break;
           }
           case 18: {
-            excluded_.AddEntriesFrom(ref input, _repeated_excluded_codec);
+            exclude_.AddEntriesFrom(ref input, _repeated_exclude_codec);
             break;
           }
         }
@@ -2947,6 +2960,313 @@ namespace Messages.Assembly.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TaskOverride : pb::IMessage<TaskOverride>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskOverride> _parser = new pb::MessageParser<TaskOverride>(() => new TaskOverride());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TaskOverride> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Assembly.V1.ProcessReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskOverride() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskOverride(TaskOverride other) : this() {
+      when_ = other.when_.Clone();
+      instructionText_ = other.instructionText_;
+      targetNodeId_ = other.targetNodeId_;
+      approach_ = other.approach_ != null ? other.approach_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskOverride Clone() {
+      return new TaskOverride(this);
+    }
+
+    /// <summary>Field number for the "when" field.</summary>
+    public const int WhenFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantRule> _repeated_when_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Assembly.V1.VariantRule.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> when_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> When {
+      get { return when_; }
+    }
+
+    /// <summary>Field number for the "instruction_text" field.</summary>
+    public const int InstructionTextFieldNumber = 2;
+    private string instructionText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstructionText {
+      get { return instructionText_; }
+      set {
+        instructionText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_node_id" field.</summary>
+    public const int TargetNodeIdFieldNumber = 3;
+    private string targetNodeId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetNodeId {
+      get { return targetNodeId_; }
+      set {
+        targetNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "approach" field.</summary>
+    public const int ApproachFieldNumber = 4;
+    private global::Messages.Common.V1.Vector3 approach_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Vector3 Approach {
+      get { return approach_; }
+      set {
+        approach_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TaskOverride);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TaskOverride other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!when_.Equals(other.when_)) return false;
+      if (InstructionText != other.InstructionText) return false;
+      if (TargetNodeId != other.TargetNodeId) return false;
+      if (!object.Equals(Approach, other.Approach)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= when_.GetHashCode();
+      if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
+      if (TargetNodeId.Length != 0) hash ^= TargetNodeId.GetHashCode();
+      if (approach_ != null) hash ^= Approach.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      when_.WriteTo(output, _repeated_when_codec);
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(InstructionText);
+      }
+      if (TargetNodeId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TargetNodeId);
+      }
+      if (approach_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Approach);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      when_.WriteTo(ref output, _repeated_when_codec);
+      if (InstructionText.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(InstructionText);
+      }
+      if (TargetNodeId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TargetNodeId);
+      }
+      if (approach_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Approach);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += when_.CalculateSize(_repeated_when_codec);
+      if (InstructionText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
+      }
+      if (TargetNodeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetNodeId);
+      }
+      if (approach_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Approach);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TaskOverride other) {
+      if (other == null) {
+        return;
+      }
+      when_.Add(other.when_);
+      if (other.InstructionText.Length != 0) {
+        InstructionText = other.InstructionText;
+      }
+      if (other.TargetNodeId.Length != 0) {
+        TargetNodeId = other.TargetNodeId;
+      }
+      if (other.approach_ != null) {
+        if (approach_ == null) {
+          Approach = new global::Messages.Common.V1.Vector3();
+        }
+        Approach.MergeFrom(other.Approach);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            when_.AddEntriesFrom(input, _repeated_when_codec);
+            break;
+          }
+          case 18: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 26: {
+            TargetNodeId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (approach_ == null) {
+              Approach = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(Approach);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            when_.AddEntriesFrom(ref input, _repeated_when_codec);
+            break;
+          }
+          case 18: {
+            InstructionText = input.ReadString();
+            break;
+          }
+          case 26: {
+            TargetNodeId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (approach_ == null) {
+              Approach = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(Approach);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TaskDefinition : pb::IMessage<TaskDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2961,7 +3281,7 @@ namespace Messages.Assembly.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Assembly.V1.ProcessReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Messages.Assembly.V1.ProcessReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3000,6 +3320,8 @@ namespace Messages.Assembly.V1 {
       sourceLocation_ = other.sourceLocation_ != null ? other.sourceLocation_.Clone() : null;
       destinationLocation_ = other.destinationLocation_ != null ? other.destinationLocation_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
+      applicability_ = other.applicability_.Clone();
+      overrides_ = other.overrides_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3278,6 +3600,31 @@ namespace Messages.Assembly.V1 {
       }
     }
 
+    /// <summary>Field number for the "applicability" field.</summary>
+    public const int ApplicabilityFieldNumber = 22;
+    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.VariantRule> _repeated_applicability_codec
+        = pb::FieldCodec.ForMessage(178, global::Messages.Assembly.V1.VariantRule.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> applicability_ = new pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule>();
+    /// <summary>
+    /// Applies if any rule matches. Empty means always applicable.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Assembly.V1.VariantRule> Applicability {
+      get { return applicability_; }
+    }
+
+    /// <summary>Field number for the "overrides" field.</summary>
+    public const int OverridesFieldNumber = 23;
+    private static readonly pb::FieldCodec<global::Messages.Assembly.V1.TaskOverride> _repeated_overrides_codec
+        = pb::FieldCodec.ForMessage(186, global::Messages.Assembly.V1.TaskOverride.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Assembly.V1.TaskOverride> overrides_ = new pbc::RepeatedField<global::Messages.Assembly.V1.TaskOverride>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Assembly.V1.TaskOverride> Overrides {
+      get { return overrides_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -3312,6 +3659,8 @@ namespace Messages.Assembly.V1 {
       if (!object.Equals(SourceLocation, other.SourceLocation)) return false;
       if (!object.Equals(DestinationLocation, other.DestinationLocation)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
+      if(!applicability_.Equals(other.applicability_)) return false;
+      if(!overrides_.Equals(other.overrides_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3338,6 +3687,8 @@ namespace Messages.Assembly.V1 {
       if (sourceLocation_ != null) hash ^= SourceLocation.GetHashCode();
       if (destinationLocation_ != null) hash ^= DestinationLocation.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
+      hash ^= applicability_.GetHashCode();
+      hash ^= overrides_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3426,6 +3777,8 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(170, 1);
         output.WriteMessage(Custom);
       }
+      applicability_.WriteTo(output, _repeated_applicability_codec);
+      overrides_.WriteTo(output, _repeated_overrides_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3506,6 +3859,8 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(170, 1);
         output.WriteMessage(Custom);
       }
+      applicability_.WriteTo(ref output, _repeated_applicability_codec);
+      overrides_.WriteTo(ref output, _repeated_overrides_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3569,6 +3924,8 @@ namespace Messages.Assembly.V1 {
       if (custom_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
+      size += applicability_.CalculateSize(_repeated_applicability_codec);
+      size += overrides_.CalculateSize(_repeated_overrides_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3655,6 +4012,8 @@ namespace Messages.Assembly.V1 {
         }
         Custom.MergeFrom(other.Custom);
       }
+      applicability_.Add(other.applicability_);
+      overrides_.Add(other.overrides_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3771,6 +4130,14 @@ namespace Messages.Assembly.V1 {
             input.ReadMessage(Custom);
             break;
           }
+          case 178: {
+            applicability_.AddEntriesFrom(input, _repeated_applicability_codec);
+            break;
+          }
+          case 186: {
+            overrides_.AddEntriesFrom(input, _repeated_overrides_codec);
+            break;
+          }
         }
       }
     #endif
@@ -3885,6 +4252,14 @@ namespace Messages.Assembly.V1 {
               Custom = new global::Messages.Assembly.V1.CustomProperties();
             }
             input.ReadMessage(Custom);
+            break;
+          }
+          case 178: {
+            applicability_.AddEntriesFrom(ref input, _repeated_applicability_codec);
+            break;
+          }
+          case 186: {
+            overrides_.AddEntriesFrom(ref input, _repeated_overrides_codec);
             break;
           }
         }

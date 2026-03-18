@@ -197,6 +197,14 @@
     - [WorkerDefinition](#assembly-v1-WorkerDefinition)
     - [WorkerDefinitions](#assembly-v1-WorkerDefinitions)
   
+- [assembly/v1/variant.proto](#assembly_v1_variant-proto)
+    - [VariantAxis](#assembly-v1-VariantAxis)
+    - [VariantConfiguration](#assembly-v1-VariantConfiguration)
+    - [VariantOption](#assembly-v1-VariantOption)
+    - [VariantPredicate](#assembly-v1-VariantPredicate)
+    - [VariantRule](#assembly-v1-VariantRule)
+    - [VariantSelection](#assembly-v1-VariantSelection)
+  
 - [assembly/v1/execution.proto](#assembly_v1_execution-proto)
     - [EvidenceFact](#assembly-v1-EvidenceFact)
     - [ExecutionEvidence](#assembly-v1-ExecutionEvidence)
@@ -204,7 +212,6 @@
     - [RunParameter](#assembly-v1-RunParameter)
     - [SequenceRun](#assembly-v1-SequenceRun)
     - [TaskRun](#assembly-v1-TaskRun)
-    - [VariantSelection](#assembly-v1-VariantSelection)
   
     - [ProcessRunState](#assembly-v1-ProcessRunState)
     - [SequenceRunState](#assembly-v1-SequenceRunState)
@@ -217,22 +224,6 @@
     - [ModelFormat](#assembly-v1-ModelFormat)
     - [ModelGroup](#assembly-v1-ModelGroup)
     - [ModelOrigin](#assembly-v1-ModelOrigin)
-  
-- [assembly/v1/product.proto](#assembly_v1_product-proto)
-    - [AssemblyNode](#assembly-v1-AssemblyNode)
-    - [Dimensions](#assembly-v1-Dimensions)
-    - [MaterialSpec](#assembly-v1-MaterialSpec)
-    - [PartDefinition](#assembly-v1-PartDefinition)
-    - [PartDefinitions](#assembly-v1-PartDefinitions)
-    - [PartHandlingProfile](#assembly-v1-PartHandlingProfile)
-    - [ProductDefinition](#assembly-v1-ProductDefinition)
-    - [ProductDefinitions](#assembly-v1-ProductDefinitions)
-    - [VariantCondition](#assembly-v1-VariantCondition)
-  
-    - [JoinMethod](#assembly-v1-JoinMethod)
-    - [MaterialCategory](#assembly-v1-MaterialCategory)
-    - [NodeKind](#assembly-v1-NodeKind)
-    - [PartType](#assembly-v1-PartType)
   
 - [assembly/v1/resources.proto](#assembly_v1_resources-proto)
     - [AssetDefinition](#assembly-v1-AssetDefinition)
@@ -283,6 +274,7 @@
     - [SequenceDefinition](#assembly-v1-SequenceDefinition)
     - [TaskDefinition](#assembly-v1-TaskDefinition)
     - [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy)
+    - [TaskOverride](#assembly-v1-TaskOverride)
     - [TaskTarget](#assembly-v1-TaskTarget)
     - [ValidationRequirement](#assembly-v1-ValidationRequirement)
   
@@ -303,6 +295,21 @@
     - [ProcessRunIssueSeverity](#assembly-v1-ProcessRunIssueSeverity)
     - [ProcessRunPrecheckStatus](#assembly-v1-ProcessRunPrecheckStatus)
     - [RequirementImportance](#assembly-v1-RequirementImportance)
+  
+- [assembly/v1/product.proto](#assembly_v1_product-proto)
+    - [AssemblyNode](#assembly-v1-AssemblyNode)
+    - [Dimensions](#assembly-v1-Dimensions)
+    - [MaterialSpec](#assembly-v1-MaterialSpec)
+    - [PartDefinition](#assembly-v1-PartDefinition)
+    - [PartDefinitions](#assembly-v1-PartDefinitions)
+    - [PartHandlingProfile](#assembly-v1-PartHandlingProfile)
+    - [ProductDefinition](#assembly-v1-ProductDefinition)
+    - [ProductDefinitions](#assembly-v1-ProductDefinitions)
+  
+    - [JoinMethod](#assembly-v1-JoinMethod)
+    - [MaterialCategory](#assembly-v1-MaterialCategory)
+    - [NodeKind](#assembly-v1-NodeKind)
+    - [PartType](#assembly-v1-PartType)
   
 - [assembly/v1/station.proto](#assembly_v1_station-proto)
     - [CellDefinition](#assembly-v1-CellDefinition)
@@ -2992,6 +2999,120 @@ TODO: remove to PLM
 
 
 
+<a name="assembly_v1_variant-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/variant.proto
+
+
+
+<a name="assembly-v1-VariantAxis"></a>
+
+### VariantAxis
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| options | [VariantOption](#assembly-v1-VariantOption) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-VariantConfiguration"></a>
+
+### VariantConfiguration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selections | [VariantSelection](#assembly-v1-VariantSelection) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-VariantOption"></a>
+
+### VariantOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-VariantPredicate"></a>
+
+### VariantPredicate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
+| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
+| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
+
+
+
+
+
+
+<a name="assembly-v1-VariantRule"></a>
+
+### VariantRule
+VariantRule: a rule matches if all predicates match
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| all_of | [VariantPredicate](#assembly-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
+
+
+
+
+
+
+<a name="assembly-v1-VariantSelection"></a>
+
+### VariantSelection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
+| option_id | [string](#string) |  | &#34;left&#34; |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="assembly_v1_execution-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3059,7 +3180,7 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | assignments | [ActorAssignment](#assembly-v1-ActorAssignment) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-| product_selections | [VariantSelection](#assembly-v1-VariantSelection) | repeated |  |
+| variant_configuration | [VariantConfiguration](#assembly-v1-VariantConfiguration) |  |  |
 | parameters | [RunParameter](#assembly-v1-RunParameter) | repeated |  |
 
 
@@ -3130,22 +3251,6 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | error_message | [string](#string) |  |  |
 | evidence | [ExecutionEvidence](#assembly-v1-ExecutionEvidence) | repeated |  |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-VariantSelection"></a>
-
-### VariantSelection
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| dimension | [string](#string) |  |  |
-| value | [string](#string) |  |  |
 
 
 
@@ -3307,294 +3412,6 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | MODEL_ORIGIN_BUILT_IN | 1 |  |
 | MODEL_ORIGIN_UPLOADED | 2 |  |
 | MODEL_ORIGIN_EXTERNAL | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_product-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/product.proto
-
-
-
-<a name="assembly-v1-AssemblyNode"></a>
-
-### AssemblyNode
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of this assembly node |
-| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
-| kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
-| part_definition_id | [string](#string) |  |  |
-| override_model_id | [string](#string) |  |  |
-| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| child_node_ids | [string](#string) | repeated | Children of this node, their parent_node_id must be set to this.id |
-| sequence_hint | [int32](#int32) |  |  |
-| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
-| join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
-| insertion_axis_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| preferred_approach_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| optional | [bool](#bool) |  |  |
-| applicability | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
-
-
-
-
-
-
-<a name="assembly-v1-Dimensions"></a>
-
-### Dimensions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x_mm | [double](#double) |  |  |
-| y_mm | [double](#double) |  |  |
-| z_mm | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-MaterialSpec"></a>
-
-### MaterialSpec
-MaterialSpec is meant to capture the engineering material identity of a part.
-name → the material family / type
-grade → the standardized grade or specification
-Examples:
-name: aluminium, grade: 6061-T6
-name: Steel, grade: S355JR
-name: stainless steel, grade: AISI 304
-name: ABS, grade: general purpose
-name: Polycarbonate, grade: PC-110
-name: Nylon, grade: PA6 GF15
-name: TPU, grade: 70 Shore A
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| category | [MaterialCategory](#assembly-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
-| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive |
-| grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
-
-
-
-
-
-
-<a name="assembly-v1-PartDefinition"></a>
-
-### PartDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PartType](#assembly-v1-PartType) |  | Broad functional/BOM classification of the part |
-| subtype | [string](#string) |  | Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease |
-| weight_g | [int64](#int64) |  |  |
-| dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
-| material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
-| default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
-| handling | [PartHandlingProfile](#assembly-v1-PartHandlingProfile) |  |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-PartDefinitions"></a>
-
-### PartDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [PartDefinition](#assembly-v1-PartDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-PartHandlingProfile"></a>
-
-### PartHandlingProfile
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| fragile | [bool](#bool) |  |  |
-| esd_sensitive | [bool](#bool) |  |  |
-| requires_two_hand_lift | [bool](#bool) |  |  |
-| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
-| max_grip_force_n | [double](#double) |  |  |
-| max_torque_nm | [double](#double) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProductDefinition"></a>
-
-### ProductDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| root_node_id | [string](#string) |  |  |
-| nodes | [AssemblyNode](#assembly-v1-AssemblyNode) | repeated |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProductDefinitions"></a>
-
-### ProductDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ProductDefinition](#assembly-v1-ProductDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-VariantCondition"></a>
-
-### VariantCondition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| dimension | [string](#string) |  | e.g. &#34;hinge_side&#34; |
-| values | [string](#string) | repeated | e.g. [&#34;left&#34;] |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-JoinMethod"></a>
-
-### JoinMethod
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| JOIN_METHOD_UNSPECIFIED | 0 |  |
-| JOIN_METHOD_NONE | 1 |  |
-| JOIN_METHOD_FASTEN | 2 |  |
-| JOIN_METHOD_PRESS_FIT | 3 |  |
-| JOIN_METHOD_SNAP_FIT | 4 |  |
-| JOIN_METHOD_ADHESIVE | 5 |  |
-| JOIN_METHOD_WELD | 6 |  |
-| JOIN_METHOD_PLACE | 7 |  |
-
-
-
-<a name="assembly-v1-MaterialCategory"></a>
-
-### MaterialCategory
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MATERIAL_CATEGORY_UNSPECIFIED | 0 |  |
-| MATERIAL_CATEGORY_METAL | 1 | Metals and metal alloys |
-| MATERIAL_CATEGORY_POLYMER | 2 | Thermoplastics / thermosets |
-| MATERIAL_CATEGORY_ELASTOMER | 3 | Flexible rubber-like materials |
-| MATERIAL_CATEGORY_COMPOSITE | 4 | Fiber-reinforced / layered materials |
-| MATERIAL_CATEGORY_CERAMIC | 5 | Ceramics and similar brittle inorganic materials |
-| MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
-| MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
-| MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
-| MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE | 9 | PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB |
-| MATERIAL_CATEGORY_CHEMICAL | 10 | Adhesive, grease, sealant, potting compound, coating, flux, etc. |
-| MATERIAL_CATEGORY_OTHER | 99 | Anything not fitting the categories above |
-
-
-
-<a name="assembly-v1-NodeKind"></a>
-
-### NodeKind
-NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
-NodeKind               Represents                    Physical part?   Has children?
-GROUP                  logical grouping              ❌               yes
-PART_OCCURRENCE        single physical part instance ✅               usually no
-SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-PATTERN                repeated pattern structure    ❌ (structure)   yes
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NODE_KIND_UNSPECIFIED | 0 |  |
-| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
-| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
-| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
-| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
-
-
-
-<a name="assembly-v1-PartType"></a>
-
-### PartType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PART_TYPE_UNSPECIFIED | 0 |  |
-| PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
-| PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
-| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
-| PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
-| PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
-| PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
-| PART_TYPE_PCB | 7 | Bare or populated printed circuit board |
-| PART_TYPE_ELECTRONIC_COMPONENT | 8 | LED, resistor, capacitor, IC, connector, relay, fuse, etc. |
-| PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
-| PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
-| PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
 
 
  
@@ -3904,6 +3721,7 @@ addressable place inside it.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | robot_definition_id | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
 | available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
@@ -4415,8 +4233,8 @@ ProcessRecipe describes the following:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| required | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
-| excluded | [VariantCondition](#assembly-v1-VariantCondition) | repeated |  |
+| include | [VariantRule](#assembly-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
+| exclude | [VariantRule](#assembly-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
 
 
 
@@ -4479,6 +4297,8 @@ Tools or tool roles needed to perform the task. |
 | source_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
 | destination_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+| applicability | [VariantRule](#assembly-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+| overrides | [TaskOverride](#assembly-v1-TaskOverride) | repeated |  |
 
 
 
@@ -4499,6 +4319,24 @@ Tools or tool roles needed to perform the task. |
 | can_do | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
 | estimated_duration | [EstimatedDuration](#assembly-v1-EstimatedDuration) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-TaskOverride"></a>
+
+### TaskOverride
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| when | [VariantRule](#assembly-v1-VariantRule) | repeated |  |
+| instruction_text | [string](#string) |  |  |
+| target_node_id | [string](#string) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 
 
 
@@ -4663,6 +4501,7 @@ Thus the following must be evaluated:
 | ----- | ---- | ----- | ----------- |
 | process_recipe_id | [string](#string) |  |  |
 | target_line_id | [string](#string) |  |  |
+| variant_configuration | [VariantConfiguration](#assembly-v1-VariantConfiguration) |  |  |
 | dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
 
 
@@ -4840,6 +4679,278 @@ Thus the following must be evaluated:
 | REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
 | REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
 | REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="assembly_v1_product-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assembly/v1/product.proto
+
+
+
+<a name="assembly-v1-AssemblyNode"></a>
+
+### AssemblyNode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of this assembly node |
+| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
+| kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
+| part_definition_id | [string](#string) |  |  |
+| override_model_id | [string](#string) |  |  |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+| sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
+| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
+| join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
+| insertion_axis_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| preferred_approach_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| optional | [bool](#bool) |  |  |
+| applicability | [VariantRule](#assembly-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
+
+
+
+
+
+
+<a name="assembly-v1-Dimensions"></a>
+
+### Dimensions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x_mm | [double](#double) |  |  |
+| y_mm | [double](#double) |  |  |
+| z_mm | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-MaterialSpec"></a>
+
+### MaterialSpec
+MaterialSpec is meant to capture the engineering material identity of a part.
+name → the material family / type
+grade → the standardized grade or specification
+Examples:
+name: aluminium, grade: 6061-T6
+name: Steel, grade: S355JR
+name: stainless steel, grade: AISI 304
+name: ABS, grade: general purpose
+name: Polycarbonate, grade: PC-110
+name: Nylon, grade: PA6 GF15
+name: TPU, grade: 70 Shore A
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| category | [MaterialCategory](#assembly-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
+| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive |
+| grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
+
+
+
+
+
+
+<a name="assembly-v1-PartDefinition"></a>
+
+### PartDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PartType](#assembly-v1-PartType) |  | Broad functional/BOM classification of the part |
+| subtype | [string](#string) |  | Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease |
+| weight_g | [int64](#int64) |  |  |
+| dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
+| material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
+| default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
+| handling | [PartHandlingProfile](#assembly-v1-PartHandlingProfile) |  |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-PartDefinitions"></a>
+
+### PartDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PartDefinition](#assembly-v1-PartDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-PartHandlingProfile"></a>
+
+### PartHandlingProfile
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fragile | [bool](#bool) |  |  |
+| esd_sensitive | [bool](#bool) |  |  |
+| requires_two_hand_lift | [bool](#bool) |  |  |
+| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
+| max_grip_force_n | [double](#double) |  |  |
+| max_torque_nm | [double](#double) |  |  |
+| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProductDefinition"></a>
+
+### ProductDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| variant_axes | [VariantAxis](#assembly-v1-VariantAxis) | repeated |  |
+| root_node_id | [string](#string) |  |  |
+| nodes | [AssemblyNode](#assembly-v1-AssemblyNode) | repeated |  |
+| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
+| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="assembly-v1-ProductDefinitions"></a>
+
+### ProductDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProductDefinition](#assembly-v1-ProductDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="assembly-v1-JoinMethod"></a>
+
+### JoinMethod
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| JOIN_METHOD_UNSPECIFIED | 0 |  |
+| JOIN_METHOD_NONE | 1 |  |
+| JOIN_METHOD_FASTEN | 2 |  |
+| JOIN_METHOD_PRESS_FIT | 3 |  |
+| JOIN_METHOD_SNAP_FIT | 4 |  |
+| JOIN_METHOD_ADHESIVE | 5 |  |
+| JOIN_METHOD_WELD | 6 |  |
+| JOIN_METHOD_PLACE | 7 |  |
+
+
+
+<a name="assembly-v1-MaterialCategory"></a>
+
+### MaterialCategory
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MATERIAL_CATEGORY_UNSPECIFIED | 0 |  |
+| MATERIAL_CATEGORY_METAL | 1 | Metals and metal alloys |
+| MATERIAL_CATEGORY_POLYMER | 2 | Thermoplastics / thermosets |
+| MATERIAL_CATEGORY_ELASTOMER | 3 | Flexible rubber-like materials |
+| MATERIAL_CATEGORY_COMPOSITE | 4 | Fiber-reinforced / layered materials |
+| MATERIAL_CATEGORY_CERAMIC | 5 | Ceramics and similar brittle inorganic materials |
+| MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
+| MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
+| MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
+| MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE | 9 | PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB |
+| MATERIAL_CATEGORY_CHEMICAL | 10 | Adhesive, grease, sealant, potting compound, coating, flux, etc. |
+| MATERIAL_CATEGORY_OTHER | 99 | Anything not fitting the categories above |
+
+
+
+<a name="assembly-v1-NodeKind"></a>
+
+### NodeKind
+NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+NodeKind               Represents                    Physical part?   Has children?
+GROUP                  logical grouping              ❌               yes
+PART_OCCURRENCE        single physical part instance ✅               usually no
+SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+PATTERN                repeated pattern structure    ❌ (structure)   yes
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_KIND_UNSPECIFIED | 0 |  |
+| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
+| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
+| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
+
+
+
+<a name="assembly-v1-PartType"></a>
+
+### PartType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PART_TYPE_UNSPECIFIED | 0 |  |
+| PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
+| PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
+| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
+| PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
+| PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
+| PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
+| PART_TYPE_PCB | 7 | Bare or populated printed circuit board |
+| PART_TYPE_ELECTRONIC_COMPONENT | 8 | LED, resistor, capacitor, IC, connector, relay, fuse, etc. |
+| PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
+| PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
+| PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
 
 
  

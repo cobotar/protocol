@@ -1,4 +1,5 @@
 from assembly.v1 import execution_pb2 as _execution_pb2
+from assembly.v1 import variant_pb2 as _variant_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -90,14 +91,16 @@ PROCESS_LOAD_STATUS_READY: ProcessLoadStatus
 PROCESS_LOAD_STATUS_LOADED: ProcessLoadStatus
 
 class ProcessLoadRequest(_message.Message):
-    __slots__ = ("process_recipe_id", "target_line_id", "dry_run")
+    __slots__ = ("process_recipe_id", "target_line_id", "variant_configuration", "dry_run")
     PROCESS_RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_LINE_ID_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     process_recipe_id: str
     target_line_id: str
+    variant_configuration: _variant_pb2.VariantConfiguration
     dry_run: bool
-    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., dry_run: bool = ...) -> None: ...
+    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ...) -> None: ...
 
 class ProcessRunIssue(_message.Message):
     __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "station_id", "actor_id", "resource_id", "remediation", "importance")
