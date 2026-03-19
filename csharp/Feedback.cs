@@ -24,47 +24,47 @@ namespace Messages.AR.V1 {
     static FeedbackReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEaFGFyL3YxL3Byb3BlcnR5",
-            "LnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aGGdlb21ldHJ5",
-            "L3YxL2FuY2hvci5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0",
-            "cmluZ19ydWxlcy5wcm90byKFAgoPRmVlZGJhY2tNZXNzYWdlEg4KAmlkGAEg",
-            "ASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNv",
-            "bhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp",
-            "b24SNAoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggEC",
-            "EAHIAQFSBHR5cGUSLwoKcHJvcGVydGllcxgGIAMoCzIPLmFyLnYxLlByb3Bl",
-            "cnR5Ugpwcm9wZXJ0aWVzEiYKCWNvbmZpZ19pZBgHIAEoCUIJukgGcgSQ8QQB",
-            "Ughjb25maWdJZCJIChBGZWVkYmFja01lc3NhZ2VzEjQKCWZlZWRiYWNrcxgB",
-            "IAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZVIJZmVlZGJhY2tzIoQCChJG",
-            "ZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDx",
-            "BAFSCGNvbmZpZ0lkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
-            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SNAoE",
-            "dHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggECEAHIAQFS",
-            "BHR5cGUSGQoIcm9ib3RfaWQYBiABKAlSB3JvYm90SWQSKwoGYW5jaG9yGAcg",
-            "ASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9yUgZhbmNob3IifAoVRmVlZGJhY2tV",
-            "cGRhdGVNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6",
-            "SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlw",
-            "dGlvbhgEIAEoCVILZGVzY3JpcHRpb24igQEKFEZlZWRiYWNrQ2xvbmVNZXNz",
-            "YWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElkEhIKBG5hbWUY",
-            "AiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlv",
-            "bhgEIAEoCVILZGVzY3JpcHRpb24qxwQKDEZlZWRiYWNrVHlwZRIdChlGRUVE",
-            "QkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNL",
-            "X0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hM",
-            "SUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAM",
-            "Eh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNL",
-            "X1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFT",
-            "S19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIi",
-            "Ch5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFD",
-            "S19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9C",
-            "T1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkK",
-            "FUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNP",
-            "ThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVf",
-            "UExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaBIbChdGRUVE",
-            "QkFDS19UWVBFX0hJR0hMSUdIVBBpQokBCgljb20uYXIudjFCDUZlZWRiYWNr",
-            "UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIR",
-            "QXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEaG2J1Zi92YWxpZGF0ZS92",
+            "YWxpZGF0ZS5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnByb3RvGhhnZW9t",
+            "ZXRyeS92MS9hbmNob3IucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5l",
+            "ZF9zdHJpbmdfcnVsZXMucHJvdG8iiQIKD0ZlZWRiYWNrTWVzc2FnZRIOCgJp",
+            "ZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEjQKBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pI",
+            "CIIBAhAByAEBUgR0eXBlEjMKCnByb3BlcnRpZXMYBiADKAsyEy5jb21tb24u",
+            "djEuUHJvcGVydHlSCnByb3BlcnRpZXMSJgoJY29uZmlnX2lkGAcgASgJQgm6",
+            "SAZyBJDxBAFSCGNvbmZpZ0lkIkgKEEZlZWRiYWNrTWVzc2FnZXMSNAoJZmVl",
+            "ZGJhY2tzGAEgAygLMhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlUglmZWVkYmFj",
+            "a3MihAIKEkZlZWRiYWNrQWRkTWVzc2FnZRImCgljb25maWdfaWQYASABKAlC",
+            "CbpIBnIEkPEEAVIIY29uZmlnSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRp",
+            "Y29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlw",
+            "dGlvbhI0CgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAiC",
+            "AQIQAcgBAVIEdHlwZRIZCghyb2JvdF9pZBgGIAEoCVIHcm9ib3RJZBIrCgZh",
+            "bmNob3IYByABKAsyEy5nZW9tZXRyeS52MS5BbmNob3JSBmFuY2hvciJ8ChVG",
+            "ZWVkYmFja1VwZGF0ZU1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUY",
+            "AiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAK",
+            "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiKBAQoURmVlZGJhY2tD",
+            "bG9uZU1lc3NhZ2USHwoLb3JpZ2luYWxfaWQYASABKAlSCm9yaWdpbmFsSWQS",
+            "EgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbirHBAoMRmVlZGJhY2tUeXBl",
+            "Eh0KGUZFRURCQUNLX1RZUEVfVU5TUEVDSUZJRUQQABIgChxGRUVEQkFDS19U",
+            "WVBFX1RBU0tfSElHSExJR0hUEAoSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1BB",
+            "UlRfSElHSExJR0hUEAsSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1RPT0xfSElH",
+            "SExJR0hUEAwSHwobRkVFREJBQ0tfVFlQRV9UQVNLX09WRVJWSUVXEA0SIgoe",
+            "RkVFREJBQ0tfVFlQRV9UQVNLX0lOU1RSVUNUSU9OEA4SIAocRkVFREJBQ0tf",
+            "VFlQRV9UQVNLX0NIRUNLTElTVBAPEhwKGEZFRURCQUNLX1RZUEVfUk9CT1Rf",
+            "UEFUSBAyEiIKHkZFRURCQUNLX1RZUEVfUk9CT1RfU0lMSE9VRVRURRAzEiEK",
+            "HUZFRURCQUNLX1RZUEVfUk9CT1RfV0FZUE9JTlRTEDQSHgoaRkVFREJBQ0tf",
+            "VFlQRV9ST0JPVF9TVEFUVVMQNRIdChlGRUVEQkFDS19UWVBFX1JPQk9UX0xJ",
+            "R0hUEDYSGQoVRkVFREJBQ0tfVFlQRV9NRVNTQUdFEGQSFgoSRkVFREJBQ0tf",
+            "VFlQRV9JQ09OEGUSFgoSRkVFREJBQ0tfVFlQRV9aT05FEGYSHAoYRkVFREJB",
+            "Q0tfVFlQRV9QTEFZX1NPVU5EEGcSFwoTRkVFREJBQ0tfVFlQRV9SVUxFUhBo",
+            "EhsKF0ZFRURCQUNLX1RZUEVfSElHSExJR0hUEGlCiQEKCWNvbS5hci52MUIN",
+            "RmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
+            "bWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIF",
+            "QXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.PropertyReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Properties", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessages), global::Messages.AR.V1.FeedbackMessages.Parser, new[]{ "Feedbacks" }, null, null, null, null),
@@ -226,12 +226,12 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "properties" field.</summary>
     public const int PropertiesFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(50, global::Messages.AR.V1.Property.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.AR.V1.Property>();
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(50, global::Messages.Common.V1.Property.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.Property> properties_ = new pbc::RepeatedField<global::Messages.Common.V1.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.Property> Properties {
+    public pbc::RepeatedField<global::Messages.Common.V1.Property> Properties {
       get { return properties_; }
     }
 

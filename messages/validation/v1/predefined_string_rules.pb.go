@@ -110,6 +110,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10010,opt,name=fixture_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10011,
+		Name:          "validation.v1.station_id_component",
+		Tag:           "varint,10011,opt,name=station_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -136,6 +144,8 @@ var (
 	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
 	// optional bool fixture_id_component = 10010;
 	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[10]
+	// optional bool station_id_component = 10011;
+	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -175,7 +185,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1astring.marker_id_component\x12$this does not seem to be a marker id\x1a*(this == '' || this.startsWith('marker-'))R\x11markerIdComponent:\xc4\x01\n" +
 	"\x14fixture_id_component\x12\x19.buf.validate.StringRules\x18\x9aN \x01(\bBv\xc2Hs\n" +
 	"q\n" +
-	"\x1bstring.fixture_id_component\x12%this does not seem to be a fixture id\x1a+(this == '' || this.startsWith('fixture-'))R\x12fixtureIdComponentB\xb5\x01\n" +
+	"\x1bstring.fixture_id_component\x12%this does not seem to be a fixture id\x1a+(this == '' || this.startsWith('fixture-'))R\x12fixtureIdComponent:\xc4\x01\n" +
+	"\x14station_id_component\x12\x19.buf.validate.StringRules\x18\x9bN \x01(\bBv\xc2Hs\n" +
+	"q\n" +
+	"\x1bstring.station_id_component\x12%this does not seem to be a station id\x1a+(this == '' || this.startsWith('station-'))R\x12stationIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -193,10 +206,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 8: validation.v1.tool_id_component:extendee -> buf.validate.StringRules
 	0,  // 9: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
 	0,  // 10: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	0,  // [0:11] is the sub-list for extension extendee
+	0,  // 11: validation.v1.station_id_component:extendee -> buf.validate.StringRules
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	0,  // [0:12] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -212,7 +226,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 11,
+			NumExtensions: 12,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

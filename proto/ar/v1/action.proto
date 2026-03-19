@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ar.v1;
 
-import "ar/v1/property.proto";
 import "buf/validate/validate.proto";
+import "common/v1/property.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -32,7 +32,7 @@ message ActionMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  repeated ar.v1.Property properties = 6;
+  repeated common.v1.Property properties = 6;
   string config_id = 7 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 

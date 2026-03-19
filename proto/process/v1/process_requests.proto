@@ -1,0 +1,211 @@
+syntax = "proto3";
+package process.v1;
+
+import "runtime/v1/process_run.proto";
+import "variance/v1/variant_configuration.proto";
+
+option csharp_namespace = "Messages.Process.V1";
+option go_package = "github.com/cobotar/protocol/messages/process/v1";
+
+// ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
+// During this process, resources feasibility should be checked, i.e.
+//    "Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?"
+//
+// Thus the following must be evaluated:
+// - available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
+// - available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
+// - available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
+// - valid calibration
+// - fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
+// - safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
+// - active faults / disabled resources
+// - asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --> then verify those assets exist and are available.)
+message ProcessLoadRequest {
+  string process_recipe_id = 1;
+  string target_line_id = 2;
+  variance.v1.VariantConfiguration variant_configuration = 3;
+  bool dry_run = 4; // true = precheck only, false = precheck + instantiate
+  // bool queue_if_occupied = 4;
+}
+
+enum ProcessLoadFailure {
+  PROCESS_LOAD_FAILURE_UNSPECIFIED = 0;
+  // General failures
+  PROCESS_LOAD_FAILURE_LINE_NOT_FOUND = 1;
+  PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND = 2;
+  PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED = 3;
+  PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN = 4;
+
+  // Fixture related failures
+  PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE = 10;
+
+  // Tool related failures
+  PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE = 20;
+  PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED = 21;
+  PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT = 22;
+
+  // Robot related failures
+  PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE = 30;
+  PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH = 31;
+
+  // Agent/operator related failueres
+  PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR = 40;
+  PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED = 41;
+  PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR = 42;
+
+  // Safety / collaboration related failures
+  PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED = 50;
+  PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH = 51;
+
+  // Validation related failures
+  PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE = 60;
+  PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING = 61;
+  PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD = 62;
+}
+
+enum ProcessRunIssueSeverity {
+  PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED = 0;
+  PROCESS_RUN_ISSUE_SEVERITY_BLOCKING = 1; // Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task
+  PROCESS_RUN_ISSUE_SEVERITY_WARNING = 2; // Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed.
+}
+
+enum RequirementImportance {
+  REQUIREMENT_IMPORTANCE_UNSPECIFIED = 0;
+  REQUIREMENT_IMPORTANCE_REQUIRED = 1;
+  REQUIREMENT_IMPORTANCE_PREFERRED = 2;
+}
+
+message ProcessRunIssue {
+  ProcessLoadFailure failure = 1;
+  string message = 2;
+  ProcessRunIssueSeverity severity = 3;
+
+  // Scope
+  string process_recipe_id = 4;
+  string sequence_definition_id = 5;
+  string task_definition_id = 6;
+
+  // Related requirement/resource
+  string required_tool_role = 7;
+  string required_skill_id = 8;
+  string fixture_definition_id = 9;
+  string station_id = 10;
+  string actor_id = 11;
+  string resource_id = 12; // tool/robot/fixture/asset instance if known
+
+  // Optional remediation hint
+  string remediation = 13;
+
+  RequirementImportance importance = 14;
+}
+
+message TaskFeasibility {
+  string task_definition_id = 1;
+  bool feasible = 2;
+
+  repeated string candidate_actor_ids = 3;
+  repeated string candidate_tool_instance_ids = 4;
+  repeated string candidate_fixture_instance_ids = 5;
+  repeated string candidate_asset_instance_ids = 6;
+
+  repeated ProcessRunIssue issues = 7;
+}
+
+enum ProcessRunPrecheckStatus {
+  PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED = 0;
+  PROCESS_RUN_PRECHECK_STATUS_OK = 1; // Neither warning nor blocking issues
+  PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS = 2; // One or more warning issues, but no blocking
+  PROCESS_RUN_PRECHECK_STATUS_BLOCKED = 3; // One or more blocking issues
+}
+
+message ProcessRunPrecheckResult {
+  bool ok = 1;
+  repeated ProcessRunIssue issues = 2;
+
+  // Optional summary counts for UI / fast filtering
+  int32 blocking_issue_count = 3;
+  int32 warning_issue_count = 4;
+
+  // What was checked
+  string process_recipe_id = 5;
+  string target_line_id = 6;
+
+  // Optional: useful if precheck computes feasible assignments/resources
+  repeated TaskFeasibility task_feasibility = 7;
+
+  // Optional overall status
+  ProcessRunPrecheckStatus status = 8;
+}
+
+enum ProcessLoadStatus {
+  PROCESS_LOAD_STATUS_UNSPECIFIED = 0;
+  PROCESS_LOAD_STATUS_PRECHECK_FAILED = 1;
+  PROCESS_LOAD_STATUS_READY = 2; // feasible, but not instantiated (dry run)
+  PROCESS_LOAD_STATUS_LOADED = 3; // feasible and instantiated
+}
+
+message ProcessLoadResult {
+  ProcessLoadStatus status = 1;
+  ProcessRunPrecheckResult precheck = 2;
+  runtime.v1.ProcessRun process_run = 3;
+}
+
+/*
+   Examples:
+
+   ProcessRunPrecheckResult {
+     ok: false
+     blocking_issue_count: 2
+     warning_issue_count: 1
+     process_recipe_id: "recipe-door-left"
+     target_line_id: "line-assembly-1"
+     status: PROCESS_RUN_PRECHECK_STATUS_BLOCKED
+
+     issues: [
+       {
+         failure: PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE
+         severity: PROCESS_RUN_ISSUE_SEVERITY_BLOCKING
+         message: "No compatible fixture available for recipe"
+         process_recipe_id: "recipe-door-left"
+         remediation: "Install fixture fixture-door-left"
+       },
+       {
+         failure: PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE
+         severity: PROCESS_RUN_ISSUE_SEVERITY_BLOCKING
+         message: "Robot robot-ur10-1 is unavailable"
+         task_definition_id: "task-fasten-hinge"
+         actor_id: "robot-ur10-1"
+         remediation: "Restore robot or select another cell"
+       },
+       {
+         failure: PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE
+         severity: PROCESS_RUN_ISSUE_SEVERITY_WARNING
+         message: "Vision asset unavailable; manual confirmation is allowed"
+         task_definition_id: "task-verify-label"
+         remediation: "Use manual confirmation or restore camera"
+       }
+     ]
+   }
+
+   ProcessLoadResult {
+     status: PROCESS_LOAD_STATUS_LOADED
+     precheck: {
+       ok: true
+       blocking_issue_count: 0
+       warning_issue_count: 1
+       status: PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS
+       issues: [
+         {
+           failure: PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED
+           severity: PROCESS_RUN_ISSUE_SEVERITY_WARNING
+           message: "Torque tool calibration expires soon"
+         }
+       ]
+     }
+     process_run: {
+       id: "run-123"
+       recipe_id: "recipe-door-left"
+       ...
+     }
+   }
+*/

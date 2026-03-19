@@ -1,0 +1,26 @@
+syntax = "proto3";
+package product.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/external_references.proto";
+import "product/v1/assembly_node.proto";
+import "variance/v1/variant_axis.proto";
+
+option csharp_namespace = "Messages.Product.V1";
+option go_package = "github.com/cobotar/protocol/messages/product/v1";
+
+message ProductDefinition {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  repeated variance.v1.VariantAxis variant_axes = 5;
+  string root_node_id = 6;
+  repeated AssemblyNode nodes = 7;
+  repeated common.v1.ExternalReference external_references = 8;
+  common.v1.CustomProperties custom = 9;
+}
+
+message ProductDefinitions {
+  repeated ProductDefinition items = 1;
+}

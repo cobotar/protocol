@@ -1,0 +1,17 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+enum ActorKind {
+  ACTOR_KIND_UNSPECIFIED = 0;
+  ACTOR_KIND_HUMAN = 1;
+  ACTOR_KIND_ROBOT = 2;
+  ACTOR_KIND_HYBRID = 3;
+}
+
+message ActorRef {
+  ActorKind kind = 1;
+  string actor_id = 2; // worker_definition_id or robot_instance_id
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package common.v1;
+
+import "buf/validate/validate.proto";
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+message ExternalReference {
+  string system = 1;
+  string external_id = 2;
+  string url = 3 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.uri = true
+  ];
+}

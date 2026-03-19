@@ -1,0 +1,29 @@
+syntax = "proto3";
+package resources.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/enums.proto";
+import "geometry/v1/pose.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+message ToolInstance {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  string tool_definition_id = 5;
+  string serial_number = 6;
+  string station_id = 7;
+  common.v1.ResourceStatus status = 8;
+  bool calibrated = 9;
+  google.protobuf.Timestamp calibration_valid_until = 10;
+  geometry.v1.LocalizedPose pose = 11;
+  common.v1.CustomProperties custom = 12;
+}
+
+message ToolInstances {
+  repeated ToolInstance items = 1;
+}

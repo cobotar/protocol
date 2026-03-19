@@ -1,0 +1,29 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+enum ResourceStatus {
+  RESOURCE_STATUS_UNSPECIFIED = 0;
+  RESOURCE_STATUS_AVAILABLE = 1;
+  RESOURCE_STATUS_UNAVAILABLE = 2;
+  RESOURCE_STATUS_DISABLED = 3;
+  RESOURCE_STATUS_MAINTENANCE = 4;
+}
+
+enum SafetyRelevance {
+  SAFETY_RELEVANCE_UNSPECIFIED = 0;
+  SAFETY_RELEVANCE_LOW = 1;
+  SAFETY_RELEVANCE_MEDIUM = 2;
+  SAFETY_RELEVANCE_HIGH = 3;
+  SAFETY_RELEVANCE_CRITICAL = 4;
+}
+
+enum CollaborationMode {
+  COLLABORATION_MODE_UNSPECIFIED = 0;
+  COLLABORATION_MODE_HUMAN_ONLY = 1;
+  COLLABORATION_MODE_ROBOT_ONLY = 2;
+  COLLABORATION_MODE_SEQUENTIAL_HRC = 3;
+  COLLABORATION_MODE_SIMULTANEOUS_HRC = 4;
+}

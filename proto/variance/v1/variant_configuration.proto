@@ -1,0 +1,14 @@
+syntax = "proto3";
+package variance.v1;
+
+option csharp_namespace = "Messages.Variance.V1";
+option go_package = "github.com/cobotar/protocol/messages/variance/v1";
+
+message VariantSelection {
+  string axis_id = 1; // "hinge_side"
+  string option_id = 2; // "left"
+}
+
+message VariantConfiguration {
+  repeated VariantSelection selections = 1;
+}

@@ -1,0 +1,123 @@
+syntax = "proto3";
+package process.v1;
+
+import "capability/v1/actor_constraint.proto";
+import "capability/v1/actor_skill.proto";
+import "capability/v1/skill_requirement.proto";
+import "capability/v1/tool_requirement.proto";
+import "common/v1/custom_properties.proto";
+import "common/v1/enums.proto";
+import "common/v1/key_value_constraint.proto";
+import "common/v1/time.proto";
+import "geometry/v1/local_target.proto";
+import "geometry/v1/vector3.proto";
+import "resources/v1/container_definition.proto";
+import "variance/v1/variant_rule.proto";
+
+option csharp_namespace = "Messages.Process.V1";
+option go_package = "github.com/cobotar/protocol/messages/process/v1";
+
+enum TaskType {
+  TASK_TYPE_UNSPECIFIED = 0;
+  TASK_TYPE_INSPECT = 1;
+  TASK_TYPE_FASTEN = 2;
+  TASK_TYPE_UNFASTEN = 3;
+  TASK_TYPE_MOUNT = 4;
+  TASK_TYPE_UNMOUNT = 5;
+  TASK_TYPE_MOVE = 6;
+  TASK_TYPE_REMOVE = 7;
+  TASK_TYPE_APPLY = 8;
+  TASK_TYPE_WIPE = 9;
+  TASK_TYPE_ALIGN = 10;
+  TASK_TYPE_INSERT = 11;
+  TASK_TYPE_HOLD = 12;
+  TASK_TYPE_VERIFY = 13;
+  TASK_TYPE_PICK = 14;
+  TASK_TYPE_PLACE = 15;
+  TASK_TYPE_SCAN = 16;
+  TASK_TYPE_WAIT = 17;
+  TASK_TYPE_CHECK = 18;
+  TASK_TYPE_ACKNOWLEDGE = 19;
+  // Start, stop, reset, open, close,
+}
+
+enum TaskAssignmentPreference {
+  TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED = 0;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN = 1;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN = 2;
+  TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT = 3;
+  TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT = 4; // Only use this if it truly must be done by a robot. Otherwise use prefer-robot
+  TASK_ASSIGNMENT_PREFERENCE_EITHER = 5;
+}
+
+message TaskTarget {
+  string target_node_id = 1; // Optional target assembly node when the task acts on a product structure occurrence.
+  string target_part_definition_id = 2; // Optional denormalized helper for UIs, planning, and filtering.
+  geometry.v1.LocalTarget local_target = 3; // Optional pose/anchor relative to the chosen target reference.
+
+  // Optional non-product targets.
+  // These are useful when a task is not primarily about an AssemblyNode.
+  // Examples:
+  // - asset_instance_id     -> check camera, read HMI, inspect feeder
+  // - robot_instance_id     -> move robot to home, inspect robot state
+  // - station_id            -> clear work surface, perform station startup step
+  // - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+  string asset_instance_id = 4; // Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
+  string robot_instance_id = 5; // Optional robot target for robot-specific actions.
+  string station_id = 6; // Optional station target for station-level or area-level actions.
+  string container_instance_id = 7; // Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+
+  resources.v1.ContainerSlotRef location = 8; // Optional slot-level target when a task acts on a specific addressable place in a container.
+}
+
+message ValidationRequirement {
+  bool require_tool_feedback = 1;
+  bool require_vision_check = 2;
+  bool allow_manual_confirmation = 3;
+  capability.v1.SkillLevel manual_confirmation_min_level = 4;
+  repeated common.v1.KeyValueConstraint constraints = 5;
+}
+
+message TaskExecutionPolicy {
+  TaskAssignmentPreference assignment_preference = 1;
+  capability.v1.ActorConstraint actor_constraint = 2;
+  bool can_reassign = 3;
+  bool can_do = 4;
+  bool can_undo = 5;
+  common.v1.EstimatedDuration estimated_duration = 6;
+}
+
+message TaskOverride {
+  repeated variance.v1.VariantRule when = 1;
+  string instruction_text = 2;
+  string target_node_id = 3;
+  geometry.v1.Vector3 approach = 4;
+}
+
+message TaskDefinition {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  string instruction_text = 5; // Human-readable instruction shown to the operator or author.
+  int32 sequence_number = 6; // Ordering hint within the parent sequence.
+  TaskType task_type = 7; // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+  TaskTarget target = 8; // The primary thing/location/resource this task acts on.
+  geometry.v1.Vector3 approach = 9; // Optional approach direction for AR guidance, picking, insertion, or robot planning.
+  //repeated string precondition_task_ids = 10;
+  // repeated string dependant_task_ids = 11;
+  repeated capability.v1.ToolRequirement tool_requirements = 12; // Tools or tool roles needed to perform the task.
+  repeated capability.v1.SkillRequirement skill_requirements = 13; // Skills/qualifications needed by the acting human/robot.
+  ValidationRequirement validation = 14; // How task completion should be confirmed or validated.
+  TaskExecutionPolicy execution_policy = 15; // Assignment preferences and execution permissions.
+  common.v1.SafetyRelevance safety_relevance = 16; // Safety significance of the task.
+  string source_node_id = 17; // Optional source assembly node when something is moved/picked from a product structure.
+  string destination_node_id = 18; // Optional destination assembly node when something is moved/placed into a product structure.
+
+  resources.v1.ContainerSlotRef source_location = 19; // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+  resources.v1.ContainerSlotRef destination_location = 20; // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
+
+  common.v1.CustomProperties custom = 21;
+  repeated variance.v1.VariantRule applicability = 22; // Applies if any rule matches. Empty means always applicable.
+  repeated TaskOverride overrides = 23;
+}

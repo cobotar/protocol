@@ -1,0 +1,16 @@
+syntax = "proto3";
+package variance.v1;
+
+option csharp_namespace = "Messages.Variance.V1";
+option go_package = "github.com/cobotar/protocol/messages/variance/v1";
+
+message VariantPredicate {
+  string axis_id = 1; // Variant axis identifier, e.g. "hinge_side"
+  repeated string allowed_option_ids = 2; // Allowed options on that axis, e.g. ["left"]
+  repeated string excluded_option_ids = 3; // Options on that axis that must not be selected.
+}
+
+// VariantRule: a rule matches if all predicates match
+message VariantRule {
+  repeated VariantPredicate all_of = 1; // All predicates must match for the rule to match.
+}

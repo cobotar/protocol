@@ -1,0 +1,66 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "capability/v1/capability_profile.proto";
+import "capability/v1/skill_definition.proto";
+import "capability/v1/tool_requirement.proto";
+import "common/v1/actor.proto";
+import "common/v1/custom_properties.proto";
+import "common/v1/external_references.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum ToolType {
+  TOOL_TYPE_UNSPECIFIED = 0;
+  TOOL_TYPE_FASTENING = 1;
+  TOOL_TYPE_GRIPPING = 2;
+  TOOL_TYPE_CUTTING = 3;
+  TOOL_TYPE_MEASURING = 4;
+  TOOL_TYPE_POSITIONING = 5;
+  TOOL_TYPE_DISPENSING = 6;
+  TOOL_TYPE_INSPECTION = 7;
+  TOOL_TYPE_SAFETY = 8;
+  TOOL_TYPE_ELECTRONICS = 9;
+  TOOL_TYPE_FIXTURE_ACCESSORY = 10;
+  TOOL_TYPE_SHAPING = 11;
+  TOOL_TYPE_TURNING = 12;
+  TOOL_TYPE_STRIKING = 13;
+  TOOL_TYPE_MARKING = 14;
+  TOOL_TYPE_FINISHING = 15;
+  TOOL_TYPE_ABRASIVE = 16;
+  TOOL_TYPE_CLEANING = 17;
+}
+
+message ToolDefinition {
+  string id = 1;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  ToolType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum = {
+      defined_only: true
+      example: 3 // TOOL_TYPE_CUTTING
+    }
+  ];
+  common.v1.ActorKind actor_kind = 6 [(buf.validate.field).enum.defined_only = true];
+  repeated capability.v1.ToolRole roles = 7 [
+    (buf.validate.field).repeated.items.enum.defined_only = true,
+    (buf.validate.field).repeated.unique = true
+  ];
+  repeated capability.v1.ToolProperty properties = 8 [
+    (buf.validate.field).repeated.items.enum.defined_only = true,
+    (buf.validate.field).repeated.unique = true
+  ];
+  capability.v1.CapabilityProfile capability_profile = 9;
+  string model_id = 10 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
+  repeated common.v1.ExternalReference external_references = 11;
+  common.v1.CustomProperties custom = 12;
+}
+
+message ToolDefinitions {
+  repeated ToolDefinition items = 1;
+}

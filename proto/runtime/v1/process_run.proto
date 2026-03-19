@@ -1,0 +1,47 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "common/v1/custom_properties.proto";
+import "geometry/v1/pose.proto";
+import "google/protobuf/timestamp.proto";
+import "runtime/v1/actor_assignment.proto";
+import "runtime/v1/sequence_run.proto";
+import "runtime/v1/task_run.proto";
+import "variance/v1/variant_configuration.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+enum ProcessRunState {
+  PROCESS_RUN_STATE_UNSPECIFIED = 0;
+  PROCESS_RUN_STATE_WAITING = 1;
+  PROCESS_RUN_STATE_IN_PROGRESS = 2;
+  PROCESS_RUN_STATE_COMPLETED = 3;
+  PROCESS_RUN_STATE_ABORTED = 4;
+}
+
+message RunParameter {
+  string key = 1; // "color", "label_text", "customer_name"
+  string value = 2;
+}
+
+// ProcessRun is only created when a concrete cell can currently satisfy it.
+// Is is based upon a ProcessRecipe which defines what must be possible.
+message ProcessRun {
+  string id = 1;
+  string recipe_id = 2;
+  string order_id = 3;
+  string station_id = 4;
+  string cell_id = 5;
+  geometry.v1.LocalizedPose frame = 6;
+  string root_sequence_run_id = 7;
+  repeated SequenceRun sequences = 8;
+  repeated TaskRun tasks = 9;
+  ProcessRunState state = 10;
+  google.protobuf.Timestamp initiated_at = 11;
+  google.protobuf.Timestamp ended_at = 12;
+  repeated ActorAssignment assignments = 13;
+  common.v1.CustomProperties custom = 14;
+  variance.v1.VariantConfiguration variant_configuration = 15;
+  repeated RunParameter parameters = 16;
+}

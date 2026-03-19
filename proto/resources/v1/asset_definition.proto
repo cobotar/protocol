@@ -1,0 +1,48 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/custom_properties.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum AssetType {
+  ASSET_TYPE_UNSPECIFIED = 0;
+  ASSET_TYPE_CAMERA = 1; // Vision device used for inspection, guidance, or detection.
+  ASSET_TYPE_LIGHT = 2; // Lighting device such as ring light, spot light, or backlight.
+  ASSET_TYPE_CONVEYOR = 3; // Conveying device used to move workpieces or pallets between areas.
+  ASSET_TYPE_SENSOR = 4; // Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor.
+  ASSET_TYPE_HMI = 5; // Human-machine interface such as touch panel, button box, or stack-light UI endpoint.
+  ASSET_TYPE_PART_FEEDER = 8; // Feeder/presentation device used to supply parts in a controlled way.
+}
+
+enum AssetDriverType {
+  ASSET_DRIVER_TYPE_UNSPECIFIED = 0;
+  ASSET_DRIVER_TYPE_DEFAULT = 1;
+}
+
+message AssetDefinition {
+  string id = 1;
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }]; // Name of the asset
+  string icon = 3; // Optional icon representing the asset
+  string description = 4; // Optional description of the asset
+  AssetType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true,
+    (buf.validate.field).enum.example = 1 // ASSET_TYPE_CAMERA
+  ];
+  AssetDriverType driver_type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string model_id = 7;
+  common.v1.CustomProperties custom = 8;
+}
+
+message AssetDefinitions {
+  repeated AssetDefinition items = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+message DisplayText {
+  string title = 1;
+  string description = 2;
+  string operator_instruction = 3;
+}

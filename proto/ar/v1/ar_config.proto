@@ -4,8 +4,8 @@ package ar.v1;
 import "ar/v1/action.proto";
 import "ar/v1/feedback.proto";
 import "ar/v1/helper.proto";
-import "ar/v1/property.proto";
 import "buf/validate/validate.proto";
+import "common/v1/property.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -35,7 +35,7 @@ message ARConfigMessage {
   repeated ar.v1.FeedbackMessage feedback = 5; // TODO: just a list of Id's?
   repeated ar.v1.ActionMessage actions = 6;
   repeated ar.v1.HelperMessage helpers = 7;
-  repeated ar.v1.Property properties = 8;
+  repeated common.v1.Property properties = 8;
   int64 ar_disappear_distance = 9 [(buf.validate.field).int64 = {
     gte: 0
     example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.

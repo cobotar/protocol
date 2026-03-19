@@ -22,12 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from ar.v1 import property_pb2 as ar_dot_v1_dot_property__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from common.v1 import property_pb2 as common_dot_v1_dot_property__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/helper.proto\x12\x05\x61r.v1\x1a\x14\x61r/v1/property.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x01\n\rHelperMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12%\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.HelperTypeR\x04type\x12/\n\nproperties\x18\x06 \x03(\x0b\x32\x0f.ar.v1.PropertyR\nproperties\"@\n\x0eHelperMessages\x12.\n\x07helpers\x18\x01 \x03(\x0b\x32\x14.ar.v1.HelperMessageR\x07helpers\"\xb8\x01\n\x10HelperAddMessage\x12&\n\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.HelperTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\"z\n\x13HelperUpdateMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription*\xb5\x01\n\nHelperType\x12\x1b\n\x17HELPER_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15HELPER_TYPE_PROXIMITY\x10\n\x12\x1a\n\x16HELPER_TYPE_STATIONARY\x10\x0b\x12\x15\n\x11HELPER_TYPE_TIMER\x10\x15\x12\x13\n\x0fHELPER_TYPE_AND\x10\x64\x12\x12\n\x0eHELPER_TYPE_OR\x10\x65\x12\x13\n\x0fHELPER_TYPE_NOT\x10\x66\x42\x87\x01\n\tcom.ar.v1B\x0bHelperProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/helper.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x18\x63ommon/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd0\x01\n\rHelperMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12%\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.HelperTypeR\x04type\x12\x33\n\nproperties\x18\x06 \x03(\x0b\x32\x13.common.v1.PropertyR\nproperties\"@\n\x0eHelperMessages\x12.\n\x07helpers\x18\x01 \x03(\x0b\x32\x14.ar.v1.HelperMessageR\x07helpers\"\xb8\x01\n\x10HelperAddMessage\x12&\n\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.HelperTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\"z\n\x13HelperUpdateMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription*\xb5\x01\n\nHelperType\x12\x1b\n\x17HELPER_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15HELPER_TYPE_PROXIMITY\x10\n\x12\x1a\n\x16HELPER_TYPE_STATIONARY\x10\x0b\x12\x15\n\x11HELPER_TYPE_TIMER\x10\x15\x12\x13\n\x0fHELPER_TYPE_AND\x10\x64\x12\x12\n\x0eHELPER_TYPE_OR\x10\x65\x12\x13\n\x0fHELPER_TYPE_NOT\x10\x66\x42\x87\x01\n\tcom.ar.v1B\x0bHelperProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,14 +43,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HELPERADDMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_HELPERUPDATEMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_HELPERUPDATEMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_HELPERTYPE']._serialized_start=710
-  _globals['_HELPERTYPE']._serialized_end=891
-  _globals['_HELPERMESSAGE']._serialized_start=126
-  _globals['_HELPERMESSAGE']._serialized_end=330
-  _globals['_HELPERMESSAGES']._serialized_start=332
-  _globals['_HELPERMESSAGES']._serialized_end=396
-  _globals['_HELPERADDMESSAGE']._serialized_start=399
-  _globals['_HELPERADDMESSAGE']._serialized_end=583
-  _globals['_HELPERUPDATEMESSAGE']._serialized_start=585
-  _globals['_HELPERUPDATEMESSAGE']._serialized_end=707
+  _globals['_HELPERTYPE']._serialized_start=718
+  _globals['_HELPERTYPE']._serialized_end=899
+  _globals['_HELPERMESSAGE']._serialized_start=130
+  _globals['_HELPERMESSAGE']._serialized_end=338
+  _globals['_HELPERMESSAGES']._serialized_start=340
+  _globals['_HELPERMESSAGES']._serialized_end=404
+  _globals['_HELPERADDMESSAGE']._serialized_start=407
+  _globals['_HELPERADDMESSAGE']._serialized_end=591
+  _globals['_HELPERUPDATEMESSAGE']._serialized_start=593
+  _globals['_HELPERUPDATEMESSAGE']._serialized_end=715
 # @@protoc_insertion_point(module_scope)

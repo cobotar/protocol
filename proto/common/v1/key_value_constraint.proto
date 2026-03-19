@@ -1,0 +1,24 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+enum ConstraintOperator {
+  CONSTRAINT_OPERATOR_UNSPECIFIED = 0;
+  CONSTRAINT_OPERATOR_EQ = 1;
+  CONSTRAINT_OPERATOR_NEQ = 2;
+  CONSTRAINT_OPERATOR_GT = 3;
+  CONSTRAINT_OPERATOR_GTE = 4;
+  CONSTRAINT_OPERATOR_LT = 5;
+  CONSTRAINT_OPERATOR_LTE = 6;
+  CONSTRAINT_OPERATOR_IN = 7;
+  CONSTRAINT_OPERATOR_NOT_IN = 8;
+}
+
+message KeyValueConstraint {
+  string key = 1;
+  ConstraintOperator op = 2;
+  string value = 3;
+  repeated string values = 4;
+}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+package product.v1;
+
+import "common/v1/custom_properties.proto";
+import "geometry/v1/pose.proto";
+import "geometry/v1/vector3.proto";
+import "variance/v1/variant_rule.proto";
+
+option csharp_namespace = "Messages.Product.V1";
+option go_package = "github.com/cobotar/protocol/messages/product/v1";
+
+// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+// NodeKind               Represents                    Physical part?   Has children?
+// GROUP                  logical grouping              ❌               yes
+// PART_OCCURRENCE        single physical part instance ✅               usually no
+// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+// PATTERN                repeated pattern structure    ❌ (structure)   yes
+enum NodeKind {
+  NODE_KIND_UNSPECIFIED = 0;
+  NODE_KIND_GROUP = 1; // A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+  NODE_KIND_PART_OCCURRENCE = 2; // The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+  NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3; // A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+  NODE_KIND_PATTERN = 4; // A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
+}
+
+enum JoinMethod {
+  JOIN_METHOD_UNSPECIFIED = 0;
+  JOIN_METHOD_NONE = 1;
+  JOIN_METHOD_FASTEN = 2;
+  JOIN_METHOD_PRESS_FIT = 3;
+  JOIN_METHOD_SNAP_FIT = 4;
+  JOIN_METHOD_ADHESIVE = 5;
+  JOIN_METHOD_WELD = 6;
+  JOIN_METHOD_PLACE = 7;
+}
+
+message AssemblyNode {
+  string id = 1;
+  string name = 2; // Name of this assembly node
+  string parent_node_id = 3; // Empty if root, otherwise set to parent AssemblyNode id.
+  NodeKind kind = 4;
+  string part_definition_id = 5;
+  string override_model_id = 6;
+  geometry.v1.Pose local_pose = 7; // final pose, in mm
+  // repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
+  int32 sequence_hint = 9;
+  string cad_occurrence_path = 10; // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
+  JoinMethod join_method_hint = 11;
+  geometry.v1.Vector3 insertion_offset_hint = 12; // Offset from final pose to pre-insertion pose, in mm
+  geometry.v1.Vector3 approach_offset_hint = 13; // Offset from final pose to preferred approach pose, in mm
+  bool optional = 14;
+  repeated variance.v1.VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
+  common.v1.CustomProperties custom = 16;
+  // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+}

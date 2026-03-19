@@ -1,0 +1,32 @@
+syntax = "proto3";
+package resources.v1;
+
+import "common/v1/custom_properties.proto";
+import "geometry/v1/pose.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum StationType {
+  STATION_TYPE_UNSPECIFIED = 0;
+  STATION_TYPE_STORAGE = 1;
+  STATION_TYPE_MANUAL_STATION = 2;
+  STATION_TYPE_AUTOMATIC_STATION = 3;
+  STATION_TYPE_HYBRID_STATION = 4;
+}
+
+message StationDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  StationType type = 5;
+  repeated string tool_instance_ids = 6;
+  repeated string container_instance_ids = 7;
+  repeated string robot_instance_ids = 8;
+  repeated string asset_instance_ids = 9;
+  repeated string marker_instance_ids = 10; // move to cell?
+  repeated string worker_ids = 11; // move to cell?
+  geometry.v1.LocalizedPose frame = 12;
+  common.v1.CustomProperties custom = 13;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package common.v1;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+message TimeWindow {
+  google.protobuf.Timestamp start = 1;
+  google.protobuf.Timestamp end = 2;
+}
+
+message EstimatedDuration {
+  google.protobuf.Duration nominal = 1;
+  google.protobuf.Duration min = 2;
+  google.protobuf.Duration max = 3;
+}

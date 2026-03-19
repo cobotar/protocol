@@ -69,4 +69,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a fixture id"
     expression: "(this == '' || this.startsWith('fixture-'))"
   }];
+
+  optional bool station_id_component = 10011 [(buf.validate.predefined).cel = {
+    id: "string.station_id_component"
+    message: "this does not seem to be a station id"
+    expression: "(this == '' || this.startsWith('station-'))"
+  }];
 }

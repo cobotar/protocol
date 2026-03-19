@@ -1,0 +1,16 @@
+syntax = "proto3";
+package resources.v1;
+
+import "common/v1/custom_properties.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+message CellDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string icon = 4;
+  repeated string station_ids = 5;
+  common.v1.CustomProperties custom = 6;
+}

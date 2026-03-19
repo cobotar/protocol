@@ -1,0 +1,25 @@
+syntax = "proto3";
+package capability.v1;
+
+import "capability/v1/capability_profile.proto";
+import "capability/v1/skill_definition.proto";
+
+option csharp_namespace = "Messages.Capability.V1";
+option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+
+enum ToolProperty {
+  TOOL_PROPERTY_UNSPECIFIED = 0;
+  TOOL_PROPERTY_TORQUE_CONTROLLED = 1;
+  TOOL_PROPERTY_ESD_SAFE = 2;
+  TOOL_PROPERTY_INSULATED = 3;
+  TOOL_PROPERTY_COLLABORATIVE_SAFE = 4;
+  TOOL_PROPERTY_CALIBRATED = 5;
+  TOOL_PROPERTY_QUICK_CHANGE = 6;
+}
+
+message ToolRequirement {
+  ToolRole role = 1;
+  repeated ToolProperty required_properties = 2;
+  capability.v1.CapabilityProfile minimum_capability = 3;
+  repeated string allowed_tool_definition_ids = 4;
+}

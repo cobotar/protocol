@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -143,7 +144,7 @@ type ARConfigMessage struct {
 	Feedback            []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"` // TODO: just a list of Id's?
 	Actions             []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
 	Helpers             []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
-	Properties          []*Property            `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
+	Properties          []*v1.Property         `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
 	ArDisappearDistance int64                  `protobuf:"varint,9,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
@@ -228,7 +229,7 @@ func (x *ARConfigMessage) GetHelpers() []*HelperMessage {
 	return nil
 }
 
-func (x *ARConfigMessage) GetProperties() []*Property {
+func (x *ARConfigMessage) GetProperties() []*v1.Property {
 	if x != nil {
 		return x.Properties
 	}
@@ -290,14 +291,14 @@ var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\n" +
-	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x14ar/v1/property.proto\x1a\x1bbuf/validate/validate.proto\"z\n" +
+	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\"z\n" +
 	"\x13ARConfigInfoMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xfb\x02\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xff\x02\n" +
 	"\x0fARConfigMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
@@ -305,9 +306,9 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\bfeedback\x18\x05 \x03(\v2\x16.ar.v1.FeedbackMessageR\bfeedback\x12.\n" +
 	"\aactions\x18\x06 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\x12.\n" +
-	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x12/\n" +
+	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x123\n" +
 	"\n" +
-	"properties\x18\b \x03(\v2\x0f.ar.v1.PropertyR\n" +
+	"properties\x18\b \x03(\v2\x13.common.v1.PropertyR\n" +
 	"properties\x12>\n" +
 	"\x15ar_disappear_distance\x18\t \x01(\x03B\n" +
 	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\"D\n" +
@@ -336,14 +337,14 @@ var file_ar_v1_ar_config_proto_goTypes = []any{
 	(*FeedbackMessage)(nil),      // 4: ar.v1.FeedbackMessage
 	(*ActionMessage)(nil),        // 5: ar.v1.ActionMessage
 	(*HelperMessage)(nil),        // 6: ar.v1.HelperMessage
-	(*Property)(nil),             // 7: ar.v1.Property
+	(*v1.Property)(nil),          // 7: common.v1.Property
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
 	4, // 1: ar.v1.ARConfigMessage.feedback:type_name -> ar.v1.FeedbackMessage
 	5, // 2: ar.v1.ARConfigMessage.actions:type_name -> ar.v1.ActionMessage
 	6, // 3: ar.v1.ARConfigMessage.helpers:type_name -> ar.v1.HelperMessage
-	7, // 4: ar.v1.ARConfigMessage.properties:type_name -> ar.v1.Property
+	7, // 4: ar.v1.ARConfigMessage.properties:type_name -> common.v1.Property
 	2, // 5: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
@@ -360,7 +361,6 @@ func file_ar_v1_ar_config_proto_init() {
 	file_ar_v1_action_proto_init()
 	file_ar_v1_feedback_proto_init()
 	file_ar_v1_helper_proto_init()
-	file_ar_v1_property_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

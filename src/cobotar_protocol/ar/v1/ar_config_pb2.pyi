@@ -1,8 +1,8 @@
 from ar.v1 import action_pb2 as _action_pb2
 from ar.v1 import feedback_pb2 as _feedback_pb2
 from ar.v1 import helper_pb2 as _helper_pb2
-from ar.v1 import property_pb2 as _property_pb2
 from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import property_pb2 as _property_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

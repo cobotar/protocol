@@ -1,0 +1,40 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/time.proto";
+import "google/protobuf/timestamp.proto";
+import "runtime/v1/actor_assignment.proto";
+import "runtime/v1/execution_evidence.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+enum TaskRunState {
+  TASK_RUN_STATE_UNSPECIFIED = 0;
+  TASK_RUN_STATE_MISSING_PRECONDITION = 1;
+  TASK_RUN_STATE_WAITING = 2;
+  TASK_RUN_STATE_IN_PROGRESS = 3;
+  TASK_RUN_STATE_COMPLETED = 4;
+  TASK_RUN_STATE_ERROR = 5;
+  TASK_RUN_STATE_ABORTED = 6;
+}
+
+message TaskRun {
+  string id = 1;
+  string task_definition_id = 2;
+  string parent_sequence_run_id = 3;
+  TaskRunState state = 4;
+  repeated ActorRef candidate_actors = 5;
+  ActorRef assigned_actor = 6;
+  bool can_do = 7;
+  bool can_undo = 8;
+  int32 workable_horizon = 9; // steps needed to complete before this step is workable.
+  common.v1.EstimatedDuration estimated_duration = 10;
+  google.protobuf.Timestamp started_at = 11;
+  google.protobuf.Timestamp completed_at = 12;
+  string error_code = 13;
+  string error_message = 14;
+  repeated ExecutionEvidence evidence = 15;
+  common.v1.CustomProperties custom = 16;
+}

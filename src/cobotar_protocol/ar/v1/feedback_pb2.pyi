@@ -1,5 +1,5 @@
-from ar.v1 import property_pb2 as _property_pb2
 from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import property_pb2 as _property_pb2
 from geometry.v1 import anchor_pb2 as _anchor_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers

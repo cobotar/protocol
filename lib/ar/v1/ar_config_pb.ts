@@ -10,16 +10,16 @@ import type { FeedbackMessage } from "./feedback_pb.ts";
 import { file_ar_v1_feedback } from "./feedback_pb.ts";
 import type { HelperMessage } from "./helper_pb.ts";
 import { file_ar_v1_helper } from "./helper_pb.ts";
-import type { Property } from "./property_pb.ts";
-import { file_ar_v1_property } from "./property_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { Property } from "../../common/v1/property_pb.ts";
+import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIqECCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoIZmVlZGJhY2sYBSADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2USJQoHYWN0aW9ucxgGIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2USJQoHaGVscGVycxgHIAMoCzIULmFyLnYxLkhlbHBlck1lc3NhZ2USIwoKcHJvcGVydGllcxgIIAMoCzIPLmFyLnYxLlByb3BlcnR5EikKFWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgJIAEoA0IKukgHIgVI3gIoACI7ChBBUkNvbmZpZ01lc3NhZ2VzEicKB2NvbmZpZ3MYASADKAsyFi5hci52MS5BUkNvbmZpZ01lc3NhZ2VCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_ar_v1_property, file_buf_validate_validate]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIqUCCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoIZmVlZGJhY2sYBSADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2USJQoHYWN0aW9ucxgGIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2USJQoHaGVscGVycxgHIAMoCzIULmFyLnYxLkhlbHBlck1lc3NhZ2USJwoKcHJvcGVydGllcxgIIAMoCzITLmNvbW1vbi52MS5Qcm9wZXJ0eRIpChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYCSABKANCCrpIByIFSN4CKAAiOwoQQVJDb25maWdNZXNzYWdlcxInCgdjb25maWdzGAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_buf_validate_validate, file_common_v1_property]);
 
 /**
  * Just delete this?
@@ -114,7 +114,7 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
   helpers: HelperMessage[];
 
   /**
-   * @generated from field: repeated ar.v1.Property properties = 8;
+   * @generated from field: repeated common.v1.Property properties = 8;
    */
   properties: Property[];
 

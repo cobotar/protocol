@@ -1,0 +1,97 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+message EvidenceFact {
+  string key = 1;
+  string value = 2;
+  string unit = 3;
+}
+
+message ExecutionEvidence {
+  string id = 1;
+  string task_run_id = 2;
+  string source = 3; // tool, vision, operator, robot driver, etc.
+  google.protobuf.Timestamp recorded_at = 4;
+  repeated EvidenceFact facts = 5;
+  string blob_uri = 6;
+}
+
+/* ExecutionEvidence examples:
+
+   // Example - torque tool evidence
+   ExecutionEvidence {
+     id: "evidence-001"
+     task_run_id: "taskrun-fasten-screw-1"
+     source: "tool:torque-driver-7"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "torque"
+         value: "0.81"
+         unit: "nm"
+       },
+       {
+         key: "angle_deg"
+         value: "132"
+         unit: "deg"
+       },
+       {
+         key: "program"
+         value: "M4_COVER_08NM"
+       },
+       {
+         key: "result"
+         value: "pass"
+       }
+     ]
+   }
+
+   // Example - vision inspection evidence
+   ExecutionEvidence {
+     id: "evidence-002"
+     task_run_id: "taskrun-verify-cover"
+     source: "vision:cam-top-1"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "screw_count_detected"
+         value: "4"
+       },
+       {
+         key: "cover_present"
+         value: "true"
+       },
+       {
+         key: "confidence"
+         value: "0.95"
+       },
+       {
+         key: "result"
+         value: "pass"
+       }
+     ]
+   }
+
+   // Example - manual confirmation evidence
+   ExecutionEvidence {
+     id: "evidence-003"
+     task_run_id: "taskrun-place-cover"
+     source: "operator:worker-17"
+     recorded_at: { ... }
+     facts: [
+       {
+         key: "confirmation"
+         value: "completed"
+       },
+       {
+         key: "comment"
+         value: "cover aligned visually"
+       }
+     ]
+   }
+*/

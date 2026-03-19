@@ -1,0 +1,23 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "common/v1/actor.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+message ActorRef {
+  common.v1.ActorKind kind = 1;
+  string actor_id = 2; // worker_definition_id or robot_instance_id
+}
+
+message ActorAssignment {
+  string id = 1;
+  ActorRef actor = 2;
+  string process_run_id = 3;
+  string sequence_run_id = 4;
+  string task_run_id = 5;
+  google.protobuf.Timestamp assigned_at = 6;
+  google.protobuf.Timestamp released_at = 7;
+}

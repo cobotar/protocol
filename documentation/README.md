@@ -3,9 +3,6 @@
 
 ## Table of Contents
 
-- [ar/v1/permissions.proto](#ar_v1_permissions-proto)
-    - [WorkerPermission](#ar-v1-WorkerPermission)
-  
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
   
@@ -39,22 +36,24 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
-- [ar/v1/property.proto](#ar_v1_property-proto)
-    - [AnchorExtras](#ar-v1-AnchorExtras)
-    - [ColorExtras](#ar-v1-ColorExtras)
-    - [EnumExtras](#ar-v1-EnumExtras)
-    - [EnumOption](#ar-v1-EnumOption)
-    - [NumberExtras](#ar-v1-NumberExtras)
-    - [PoseExtras](#ar-v1-PoseExtras)
-    - [Property](#ar-v1-Property)
-    - [PropertyMessages](#ar-v1-PropertyMessages)
-    - [PropertyValueUpdate](#ar-v1-PropertyValueUpdate)
-    - [Vector3Extras](#ar-v1-Vector3Extras)
+- [common/v1/property.proto](#common_v1_property-proto)
+    - [AnchorExtras](#common-v1-AnchorExtras)
+    - [ColorExtras](#common-v1-ColorExtras)
+    - [EnumExtras](#common-v1-EnumExtras)
+    - [EnumOption](#common-v1-EnumOption)
+    - [NumberExtras](#common-v1-NumberExtras)
+    - [PoseExtras](#common-v1-PoseExtras)
+    - [Property](#common-v1-Property)
+    - [PropertyMessages](#common-v1-PropertyMessages)
+    - [PropertyValueUpdate](#common-v1-PropertyValueUpdate)
+    - [Vector3Extras](#common-v1-Vector3Extras)
   
-    - [PropertyGroup](#ar-v1-PropertyGroup)
-    - [PropertyOrigin](#ar-v1-PropertyOrigin)
-    - [PropertyType](#ar-v1-PropertyType)
+    - [PropertyGroup](#common-v1-PropertyGroup)
+    - [PropertyOrigin](#common-v1-PropertyOrigin)
+    - [PropertyPermission](#common-v1-PropertyPermission)
+    - [PropertyType](#common-v1-PropertyType)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
@@ -106,24 +105,8 @@
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
   
-- [ar/v1/assets.proto](#ar_v1_assets-proto)
-    - [AssetMessage](#ar-v1-AssetMessage)
-    - [AssetMessages](#ar-v1-AssetMessages)
-  
-    - [AssetDriverType](#ar-v1-AssetDriverType)
-    - [AssetType](#ar-v1-AssetType)
-  
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
-  
-- [ar/v1/device.proto](#ar_v1_device-proto)
-    - [DeviceHeartbeat](#ar-v1-DeviceHeartbeat)
-    - [DeviceMessage](#ar-v1-DeviceMessage)
-    - [DeviceMessages](#ar-v1-DeviceMessages)
-  
-    - [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus)
-    - [DeviceStatus](#ar-v1-DeviceStatus)
-    - [DeviceType](#ar-v1-DeviceType)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AssetLocation](#ar-v1-AssetLocation)
@@ -155,175 +138,78 @@
     - [MappingMessages](#ar-v1-MappingMessages)
     - [RobotMapping](#ar-v1-RobotMapping)
   
-- [ar/v1/robot.proto](#ar_v1_robot-proto)
-    - [RobotMessage](#ar-v1-RobotMessage)
-    - [RobotMessages](#ar-v1-RobotMessages)
+- [common/v1/actor.proto](#common_v1_actor-proto)
+    - [ActorRef](#common-v1-ActorRef)
   
-    - [RobotDriverType](#ar-v1-RobotDriverType)
-    - [RobotType](#ar-v1-RobotType)
+    - [ActorKind](#common-v1-ActorKind)
   
-- [ar/v1/worker.proto](#ar_v1_worker-proto)
-    - [WorkerMessage](#ar-v1-WorkerMessage)
-    - [WorkerMessages](#ar-v1-WorkerMessages)
+- [common/v1/enums.proto](#common_v1_enums-proto)
+    - [CollaborationMode](#common-v1-CollaborationMode)
+    - [ResourceStatus](#common-v1-ResourceStatus)
+    - [SafetyRelevance](#common-v1-SafetyRelevance)
   
-    - [WorkerType](#ar-v1-WorkerType)
+- [common/v1/key_value_constraint.proto](#common_v1_key_value_constraint-proto)
+    - [KeyValueConstraint](#common-v1-KeyValueConstraint)
   
-- [assembly/v1/common.proto](#assembly_v1_common-proto)
-    - [CustomProperties](#assembly-v1-CustomProperties)
-    - [DisplayText](#assembly-v1-DisplayText)
-    - [EstimatedDuration](#assembly-v1-EstimatedDuration)
-    - [ExternalReference](#assembly-v1-ExternalReference)
-    - [KeyValueConstraint](#assembly-v1-KeyValueConstraint)
-    - [LocalTarget](#assembly-v1-LocalTarget)
-    - [NamedRef](#assembly-v1-NamedRef)
-    - [Ref](#assembly-v1-Ref)
-    - [TimeWindow](#assembly-v1-TimeWindow)
+    - [ConstraintOperator](#common-v1-ConstraintOperator)
   
-    - [ActorKind](#assembly-v1-ActorKind)
-    - [CollaborationMode](#assembly-v1-CollaborationMode)
-    - [ConstraintOperator](#assembly-v1-ConstraintOperator)
-    - [ResourceStatus](#assembly-v1-ResourceStatus)
-    - [SafetyRelevance](#assembly-v1-SafetyRelevance)
+- [capability/v1/actor_constraint.proto](#capability_v1_actor_constraint-proto)
+    - [ActorConstraint](#capability-v1-ActorConstraint)
   
-- [assembly/v1/actor.proto](#assembly_v1_actor-proto)
-    - [ActorAssignment](#assembly-v1-ActorAssignment)
-    - [ActorRef](#assembly-v1-ActorRef)
-    - [WorkerDefinition](#assembly-v1-WorkerDefinition)
-    - [WorkerDefinitions](#assembly-v1-WorkerDefinitions)
+- [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
+    - [ActorSkill](#capability-v1-ActorSkill)
+    - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
   
-- [assembly/v1/variant.proto](#assembly_v1_variant-proto)
-    - [VariantAxis](#assembly-v1-VariantAxis)
-    - [VariantConfiguration](#assembly-v1-VariantConfiguration)
-    - [VariantOption](#assembly-v1-VariantOption)
-    - [VariantPredicate](#assembly-v1-VariantPredicate)
-    - [VariantRule](#assembly-v1-VariantRule)
-    - [VariantSelection](#assembly-v1-VariantSelection)
+    - [SkillLevel](#capability-v1-SkillLevel)
+    - [SkillStatus](#capability-v1-SkillStatus)
   
-- [assembly/v1/execution.proto](#assembly_v1_execution-proto)
-    - [EvidenceFact](#assembly-v1-EvidenceFact)
-    - [ExecutionEvidence](#assembly-v1-ExecutionEvidence)
-    - [ProcessRun](#assembly-v1-ProcessRun)
-    - [RunParameter](#assembly-v1-RunParameter)
-    - [SequenceRun](#assembly-v1-SequenceRun)
-    - [TaskRun](#assembly-v1-TaskRun)
+- [capability/v1/capability_profile.proto](#capability_v1_capability_profile-proto)
+    - [CapabilityProfile](#capability-v1-CapabilityProfile)
   
-    - [ProcessRunState](#assembly-v1-ProcessRunState)
-    - [SequenceRunState](#assembly-v1-SequenceRunState)
-    - [TaskRunState](#assembly-v1-TaskRunState)
+- [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
+    - [CustomProperties](#common-v1-CustomProperties)
   
-- [assembly/v1/model.proto](#assembly_v1_model-proto)
-    - [ModelArtifact](#assembly-v1-ModelArtifact)
-    - [ModelArtifacts](#assembly-v1-ModelArtifacts)
+- [capability/v1/skill_definition.proto](#capability_v1_skill_definition-proto)
+    - [SkillDefinition](#capability-v1-SkillDefinition)
   
-    - [ModelFormat](#assembly-v1-ModelFormat)
-    - [ModelGroup](#assembly-v1-ModelGroup)
-    - [ModelOrigin](#assembly-v1-ModelOrigin)
+    - [SkillDomain](#capability-v1-SkillDomain)
+    - [ToolRole](#capability-v1-ToolRole)
   
-- [assembly/v1/resources.proto](#assembly_v1_resources-proto)
-    - [AssetDefinition](#assembly-v1-AssetDefinition)
-    - [AssetDefinitions](#assembly-v1-AssetDefinitions)
-    - [AssetInstance](#assembly-v1-AssetInstance)
-    - [AssetInstances](#assembly-v1-AssetInstances)
-    - [CapabilityProfile](#assembly-v1-CapabilityProfile)
-    - [ContainerDefinition](#assembly-v1-ContainerDefinition)
-    - [ContainerDefinitions](#assembly-v1-ContainerDefinitions)
-    - [ContainerInstance](#assembly-v1-ContainerInstance)
-    - [ContainerInstances](#assembly-v1-ContainerInstances)
-    - [ContainerSlotDefinition](#assembly-v1-ContainerSlotDefinition)
-    - [ContainerSlotRef](#assembly-v1-ContainerSlotRef)
-    - [RobotDefinition](#assembly-v1-RobotDefinition)
-    - [RobotDefinitions](#assembly-v1-RobotDefinitions)
-    - [RobotInstance](#assembly-v1-RobotInstance)
-    - [RobotInstances](#assembly-v1-RobotInstances)
-    - [ToolDefinition](#assembly-v1-ToolDefinition)
-    - [ToolDefinitions](#assembly-v1-ToolDefinitions)
-    - [ToolInstance](#assembly-v1-ToolInstance)
-    - [ToolInstances](#assembly-v1-ToolInstances)
+- [capability/v1/skill_requirement.proto](#capability_v1_skill_requirement-proto)
+    - [SkillRequirement](#capability-v1-SkillRequirement)
   
-    - [AssetDriverType](#assembly-v1-AssetDriverType)
-    - [AssetType](#assembly-v1-AssetType)
-    - [ContainerSlotType](#assembly-v1-ContainerSlotType)
-    - [ContainerType](#assembly-v1-ContainerType)
-    - [RobotDriverType](#assembly-v1-RobotDriverType)
-    - [RobotType](#assembly-v1-RobotType)
-    - [ToolProperty](#assembly-v1-ToolProperty)
-    - [ToolRole](#assembly-v1-ToolRole)
-    - [ToolType](#assembly-v1-ToolType)
+- [capability/v1/tool_requirement.proto](#capability_v1_tool_requirement-proto)
+    - [ToolRequirement](#capability-v1-ToolRequirement)
   
-- [assembly/v1/skill.proto](#assembly_v1_skill-proto)
-    - [ActorConstraint](#assembly-v1-ActorConstraint)
-    - [ActorSkill](#assembly-v1-ActorSkill)
-    - [SkillDefinition](#assembly-v1-SkillDefinition)
-    - [SkillRequirement](#assembly-v1-SkillRequirement)
-    - [ToolRequirement](#assembly-v1-ToolRequirement)
-    - [ValidityPolicyRef](#assembly-v1-ValidityPolicyRef)
-  
-    - [SkillDomain](#assembly-v1-SkillDomain)
-    - [SkillLevel](#assembly-v1-SkillLevel)
-    - [SkillStatus](#assembly-v1-SkillStatus)
-  
-- [assembly/v1/process.proto](#assembly_v1_process-proto)
-    - [ProcessRecipe](#assembly-v1-ProcessRecipe)
-    - [RecipeApplicability](#assembly-v1-RecipeApplicability)
-    - [SequenceDefinition](#assembly-v1-SequenceDefinition)
-    - [TaskDefinition](#assembly-v1-TaskDefinition)
-    - [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy)
-    - [TaskOverride](#assembly-v1-TaskOverride)
-    - [TaskTarget](#assembly-v1-TaskTarget)
-    - [ValidationRequirement](#assembly-v1-ValidationRequirement)
-  
-    - [ProcessType](#assembly-v1-ProcessType)
-    - [SequenceOperator](#assembly-v1-SequenceOperator)
-    - [TaskAssignmentPreference](#assembly-v1-TaskAssignmentPreference)
-    - [TaskType](#assembly-v1-TaskType)
-  
-- [assembly/v1/process_requests.proto](#assembly_v1_process_requests-proto)
-    - [ProcessLoadRequest](#assembly-v1-ProcessLoadRequest)
-    - [ProcessLoadResult](#assembly-v1-ProcessLoadResult)
-    - [ProcessRunIssue](#assembly-v1-ProcessRunIssue)
-    - [ProcessRunPrecheckResult](#assembly-v1-ProcessRunPrecheckResult)
-    - [TaskFeasibility](#assembly-v1-TaskFeasibility)
-  
-    - [ProcessLoadFailure](#assembly-v1-ProcessLoadFailure)
-    - [ProcessLoadStatus](#assembly-v1-ProcessLoadStatus)
-    - [ProcessRunIssueSeverity](#assembly-v1-ProcessRunIssueSeverity)
-    - [ProcessRunPrecheckStatus](#assembly-v1-ProcessRunPrecheckStatus)
-    - [RequirementImportance](#assembly-v1-RequirementImportance)
-  
-- [assembly/v1/product.proto](#assembly_v1_product-proto)
-    - [AssemblyNode](#assembly-v1-AssemblyNode)
-    - [Dimensions](#assembly-v1-Dimensions)
-    - [MaterialSpec](#assembly-v1-MaterialSpec)
-    - [PartDefinition](#assembly-v1-PartDefinition)
-    - [PartDefinitions](#assembly-v1-PartDefinitions)
-    - [PartHandlingProfile](#assembly-v1-PartHandlingProfile)
-    - [ProductDefinition](#assembly-v1-ProductDefinition)
-    - [ProductDefinitions](#assembly-v1-ProductDefinitions)
-  
-    - [JoinMethod](#assembly-v1-JoinMethod)
-    - [MaterialCategory](#assembly-v1-MaterialCategory)
-    - [NodeKind](#assembly-v1-NodeKind)
-    - [PartType](#assembly-v1-PartType)
-  
-- [assembly/v1/station.proto](#assembly_v1_station-proto)
-    - [CellDefinition](#assembly-v1-CellDefinition)
-    - [StationDefinition](#assembly-v1-StationDefinition)
-  
-- [assembly/v1/validation.proto](#assembly_v1_validation-proto)
-    - [ValidationResult](#assembly-v1-ValidationResult)
-  
-    - [ValidationStatus](#assembly-v1-ValidationStatus)
+    - [ToolProperty](#capability-v1-ToolProperty)
   
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
   
+- [common/v1/display_text.proto](#common_v1_display_text-proto)
+    - [DisplayText](#common-v1-DisplayText)
+  
 - [common/v1/empty.proto](#common_v1_empty-proto)
     - [EmptyMessage](#common-v1-EmptyMessage)
+  
+- [common/v1/external_references.proto](#common_v1_external_references-proto)
+    - [ExternalReference](#common-v1-ExternalReference)
   
 - [common/v1/get.proto](#common_v1_get-proto)
     - [GetByFieldMessage](#common-v1-GetByFieldMessage)
     - [GetByIdMessage](#common-v1-GetByIdMessage)
     - [GetMessage](#common-v1-GetMessage)
+  
+- [common/v1/ref.proto](#common_v1_ref-proto)
+    - [NamedRef](#common-v1-NamedRef)
+    - [Ref](#common-v1-Ref)
+  
+- [common/v1/time.proto](#common_v1_time-proto)
+    - [EstimatedDuration](#common-v1-EstimatedDuration)
+    - [TimeWindow](#common-v1-TimeWindow)
+  
+- [geometry/v1/local_target.proto](#geometry_v1_local_target-proto)
+    - [LocalTarget](#geometry-v1-LocalTarget)
   
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
@@ -342,19 +228,6 @@
     - [LineMessage](#plm-v1-LineMessage)
   
     - [LineType](#plm-v1-LineType)
-  
-- [plm/v1/model_old.proto](#plm_v1_model_old-proto)
-    - [ModelMessage](#plm-v1-ModelMessage)
-    - [ModelMessages](#plm-v1-ModelMessages)
-  
-    - [ModelGroup](#plm-v1-ModelGroup)
-    - [ModelOrigin](#plm-v1-ModelOrigin)
-  
-- [plm/v1/part.proto](#plm_v1_part-proto)
-    - [PartMessage](#plm-v1-PartMessage)
-    - [PartMessages](#plm-v1-PartMessages)
-  
-    - [PartType](#plm-v1-PartType)
   
 - [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
     - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
@@ -430,19 +303,177 @@
     - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
     - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
   
-- [plm/v1/tool.proto](#plm_v1_tool-proto)
-    - [ToolMessage](#plm-v1-ToolMessage)
-    - [ToolMessages](#plm-v1-ToolMessages)
+- [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
+    - [SequenceDefinition](#process-v1-SequenceDefinition)
   
-    - [ToolActor](#plm-v1-ToolActor)
-    - [ToolProperty](#plm-v1-ToolProperty)
-    - [ToolType](#plm-v1-ToolType)
+    - [SequenceOperator](#process-v1-SequenceOperator)
   
-- [resources/v1/marker.proto](#resources_v1_marker-proto)
-    - [MarkerDefinition](#resources-v1-MarkerDefinition)
-    - [MarkerMessages](#resources-v1-MarkerMessages)
+- [resources/v1/container_definition.proto](#resources_v1_container_definition-proto)
+    - [ContainerDefinition](#resources-v1-ContainerDefinition)
+    - [ContainerDefinitions](#resources-v1-ContainerDefinitions)
+    - [ContainerSlotDefinition](#resources-v1-ContainerSlotDefinition)
+    - [ContainerSlotRef](#resources-v1-ContainerSlotRef)
+  
+    - [ContainerSlotType](#resources-v1-ContainerSlotType)
+    - [ContainerType](#resources-v1-ContainerType)
+  
+- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
+    - [VariantPredicate](#variance-v1-VariantPredicate)
+    - [VariantRule](#variance-v1-VariantRule)
+  
+- [process/v1/task_definition.proto](#process_v1_task_definition-proto)
+    - [TaskDefinition](#process-v1-TaskDefinition)
+    - [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy)
+    - [TaskOverride](#process-v1-TaskOverride)
+    - [TaskTarget](#process-v1-TaskTarget)
+    - [ValidationRequirement](#process-v1-ValidationRequirement)
+  
+    - [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference)
+    - [TaskType](#process-v1-TaskType)
+  
+- [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
+    - [ProcessRecipe](#process-v1-ProcessRecipe)
+    - [RecipeApplicability](#process-v1-RecipeApplicability)
+  
+    - [ProcessType](#process-v1-ProcessType)
+  
+- [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
+    - [ActorAssignment](#runtime-v1-ActorAssignment)
+    - [ActorRef](#runtime-v1-ActorRef)
+  
+- [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
+    - [SequenceRun](#runtime-v1-SequenceRun)
+  
+    - [SequenceRunState](#runtime-v1-SequenceRunState)
+  
+- [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
+    - [EvidenceFact](#runtime-v1-EvidenceFact)
+    - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
+  
+- [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
+    - [TaskRun](#runtime-v1-TaskRun)
+  
+    - [TaskRunState](#runtime-v1-TaskRunState)
+  
+- [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
+    - [VariantConfiguration](#variance-v1-VariantConfiguration)
+    - [VariantSelection](#variance-v1-VariantSelection)
+  
+- [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
+    - [ProcessRun](#runtime-v1-ProcessRun)
+    - [RunParameter](#runtime-v1-RunParameter)
+  
+    - [ProcessRunState](#runtime-v1-ProcessRunState)
+  
+- [process/v1/process_requests.proto](#process_v1_process_requests-proto)
+    - [ProcessLoadRequest](#process-v1-ProcessLoadRequest)
+    - [ProcessLoadResult](#process-v1-ProcessLoadResult)
+    - [ProcessRunIssue](#process-v1-ProcessRunIssue)
+    - [ProcessRunPrecheckResult](#process-v1-ProcessRunPrecheckResult)
+    - [TaskFeasibility](#process-v1-TaskFeasibility)
+  
+    - [ProcessLoadFailure](#process-v1-ProcessLoadFailure)
+    - [ProcessLoadStatus](#process-v1-ProcessLoadStatus)
+    - [ProcessRunIssueSeverity](#process-v1-ProcessRunIssueSeverity)
+    - [ProcessRunPrecheckStatus](#process-v1-ProcessRunPrecheckStatus)
+    - [RequirementImportance](#process-v1-RequirementImportance)
+  
+- [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
+    - [AssemblyNode](#product-v1-AssemblyNode)
+  
+    - [JoinMethod](#product-v1-JoinMethod)
+    - [NodeKind](#product-v1-NodeKind)
+  
+- [product/v1/part_definition.proto](#product_v1_part_definition-proto)
+    - [Dimensions](#product-v1-Dimensions)
+    - [MaterialSpec](#product-v1-MaterialSpec)
+    - [PartDefinition](#product-v1-PartDefinition)
+    - [PartDefinitions](#product-v1-PartDefinitions)
+    - [PartHandlingProfile](#product-v1-PartHandlingProfile)
+  
+    - [MaterialCategory](#product-v1-MaterialCategory)
+    - [PartType](#product-v1-PartType)
+  
+- [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
+    - [VariantAxis](#variance-v1-VariantAxis)
+    - [VariantOption](#variance-v1-VariantOption)
+  
+- [product/v1/product_definition.proto](#product_v1_product_definition-proto)
+    - [ProductDefinition](#product-v1-ProductDefinition)
+    - [ProductDefinitions](#product-v1-ProductDefinitions)
+  
+- [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
+    - [AssetDefinition](#resources-v1-AssetDefinition)
+    - [AssetDefinitions](#resources-v1-AssetDefinitions)
+  
+    - [AssetDriverType](#resources-v1-AssetDriverType)
+    - [AssetType](#resources-v1-AssetType)
+  
+- [resources/v1/asset_instance.proto](#resources_v1_asset_instance-proto)
+    - [AssetInstance](#resources-v1-AssetInstance)
+    - [AssetInstances](#resources-v1-AssetInstances)
+  
+- [resources/v1/cell_definition.proto](#resources_v1_cell_definition-proto)
+    - [CellDefinition](#resources-v1-CellDefinition)
+  
+- [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
+    - [ContainerInstance](#resources-v1-ContainerInstance)
+    - [ContainerInstances](#resources-v1-ContainerInstances)
+  
+- [resources/v1/device.proto](#resources_v1_device-proto)
+    - [DeviceHeartbeat](#resources-v1-DeviceHeartbeat)
+    - [DeviceMessage](#resources-v1-DeviceMessage)
+    - [DeviceMessages](#resources-v1-DeviceMessages)
+  
+    - [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus)
+    - [DeviceStatus](#resources-v1-DeviceStatus)
+    - [DeviceType](#resources-v1-DeviceType)
+  
+- [resources/v1/marker_instance.proto](#resources_v1_marker_instance-proto)
+    - [MarkerInstance](#resources-v1-MarkerInstance)
+    - [MarkerInstances](#resources-v1-MarkerInstances)
   
     - [MarkerType](#resources-v1-MarkerType)
+  
+- [resources/v1/model.proto](#resources_v1_model-proto)
+    - [ModelArtifact](#resources-v1-ModelArtifact)
+    - [ModelArtifacts](#resources-v1-ModelArtifacts)
+  
+    - [ModelFormat](#resources-v1-ModelFormat)
+    - [ModelGroup](#resources-v1-ModelGroup)
+    - [ModelOrigin](#resources-v1-ModelOrigin)
+  
+- [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
+    - [RobotDefinition](#resources-v1-RobotDefinition)
+    - [RobotDefinitions](#resources-v1-RobotDefinitions)
+  
+    - [RobotDriverType](#resources-v1-RobotDriverType)
+    - [RobotType](#resources-v1-RobotType)
+  
+- [resources/v1/robot_instance.proto](#resources_v1_robot_instance-proto)
+    - [RobotInstance](#resources-v1-RobotInstance)
+    - [RobotInstances](#resources-v1-RobotInstances)
+  
+- [resources/v1/station_definition.proto](#resources_v1_station_definition-proto)
+    - [StationDefinition](#resources-v1-StationDefinition)
+  
+    - [StationType](#resources-v1-StationType)
+  
+- [resources/v1/tool_definition.proto](#resources_v1_tool_definition-proto)
+    - [ToolDefinition](#resources-v1-ToolDefinition)
+    - [ToolDefinitions](#resources-v1-ToolDefinitions)
+  
+    - [ToolType](#resources-v1-ToolType)
+  
+- [resources/v1/tool_instance.proto](#resources_v1_tool_instance-proto)
+    - [ToolInstance](#resources-v1-ToolInstance)
+    - [ToolInstances](#resources-v1-ToolInstances)
+  
+- [resources/v1/worker_definition.proto](#resources_v1_worker_definition-proto)
+    - [WorkerDefinition](#resources-v1-WorkerDefinition)
+    - [WorkerDefinitions](#resources-v1-WorkerDefinitions)
+  
+    - [EditPermission](#resources-v1-EditPermission)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -483,6 +514,11 @@
 - [robot/v1/zone.proto](#robot_v1_zone-proto)
     - [ZoneMessage](#robot-v1-ZoneMessage)
   
+- [runtime/v1/validation_result.proto](#runtime_v1_validation_result-proto)
+    - [ValidationResult](#runtime-v1-ValidationResult)
+  
+    - [ValidationStatus](#runtime-v1-ValidationStatus)
+  
 - [service/v1/ar_client.proto](#service_v1_ar_client-proto)
     - [ARClientMessage](#service-v1-ARClientMessage)
   
@@ -504,52 +540,6 @@
     - [Status](#service-v1-Status)
   
 - [Scalar Value Types](#scalar-value-types)
-
-
-
-<a name="ar_v1_permissions-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/permissions.proto
-
-
- 
-
-
-<a name="ar-v1-WorkerPermission"></a>
-
-### WorkerPermission
-TODO: Rename to AREditPermission? - what about &#39;automatic&#39; systems?
-Consider the mapping, e.g: unspecified, none = nothing, cosmetic = some, full =
-User:
-- Unspecified: can&#39;t edit any properties
-- Basic: can edit {basic} properties
-- Cosmetic: can edit {basic, cosmetic} properties
-- Full: can edit all editable properties
-- None: &lt;not in use?&gt;
-Properties:
-- Unspecified: can be edited by all?
-- Basic: can be edited by users with some permission to edit
-- Cosmetic: can be edited by users with cosmetic&#43;full permission
-- Full: can be edited by users with full permission
-- None: can&#39;t be edited (e.g. outputs or stuff that requires a delete &#43; create new)
-
-TODO: consider the order. It should be possible to use &lt; or &gt; to determine if things are editable (not possible right now when COSMETIC is &#39;in the middle&#39;)
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| WORKER_PERMISSION_UNSPECIFIED | 0 |  |
-| WORKER_PERMISSION_BASIC | 1 |  |
-| WORKER_PERMISSION_COSMETIC | 2 |  |
-| WORKER_PERMISSION_FULL | 3 |  |
-| WORKER_PERMISSION_NONE | 4 |  |
-
-
- 
-
- 
-
- 
 
 
 
@@ -811,6 +801,7 @@ A simple pose consisting of a position and orientation
 | part_id_component | bool | .buf.validate.StringRules | 10007 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 | robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| station_id_component | bool | .buf.validate.StringRules | 10011 |  |
 | tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
 
  
@@ -819,14 +810,14 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar_v1_property-proto"></a>
+<a name="common_v1_property-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/property.proto
+## common/v1/property.proto
 
 
 
-<a name="ar-v1-AnchorExtras"></a>
+<a name="common-v1-AnchorExtras"></a>
 
 ### AnchorExtras
 
@@ -841,7 +832,7 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-ColorExtras"></a>
+<a name="common-v1-ColorExtras"></a>
 
 ### ColorExtras
 
@@ -850,14 +841,14 @@ A simple pose consisting of a position and orientation
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | step | [double](#double) |  |  |
-| default | [common.v1.Color](#common-v1-Color) |  | TODO: allow user-preference override |
+| default | [Color](#common-v1-Color) |  | TODO: allow user-preference override |
 
 
 
 
 
 
-<a name="ar-v1-EnumExtras"></a>
+<a name="common-v1-EnumExtras"></a>
 
 ### EnumExtras
 
@@ -870,14 +861,14 @@ A simple pose consisting of a position and orientation
 | grouped | [bool](#bool) |  | If options should be grouped |
 | show_icons | [bool](#bool) |  | If options have icons and these should be shown |
 | max_selected_labels | [uint32](#uint32) |  | Only relevant for MultiSelect: limits number of selected labels |
-| options | [EnumOption](#ar-v1-EnumOption) | repeated |  |
+| options | [EnumOption](#common-v1-EnumOption) | repeated |  |
 
 
 
 
 
 
-<a name="ar-v1-EnumOption"></a>
+<a name="common-v1-EnumOption"></a>
 
 ### EnumOption
 
@@ -896,7 +887,7 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-NumberExtras"></a>
+<a name="common-v1-NumberExtras"></a>
 
 ### NumberExtras
 
@@ -915,7 +906,7 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-PoseExtras"></a>
+<a name="common-v1-PoseExtras"></a>
 
 ### PoseExtras
 
@@ -931,7 +922,7 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="ar-v1-Property"></a>
+<a name="common-v1-Property"></a>
 
 ### Property
 Properties are used by various components to define them, such as: feedback, actions, and conditions.
@@ -943,12 +934,12 @@ Properties are used by various components to define them, such as: feedback, act
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [PropertyType](#ar-v1-PropertyType) |  |  |
-| minimum_required_permission | [WorkerPermission](#ar-v1-WorkerPermission) |  |  |
-| origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
-| origins | [PropertyOrigin](#ar-v1-PropertyOrigin) | repeated |  |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
+| origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
 | mirror_property_id | [string](#string) |  |  |
-| group | [PropertyGroup](#ar-v1-PropertyGroup) |  |  |
+| group | [PropertyGroup](#common-v1-PropertyGroup) |  |  |
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
 | parent_id | [string](#string) |  |  |
@@ -963,25 +954,25 @@ Properties are used by various components to define them, such as: feedback, act
 | vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
-| color_value | [common.v1.Color](#common-v1-Color) |  |  |
+| color_value | [Color](#common-v1-Color) |  |  |
 | robot_id_value | [string](#string) | optional |  |
 | enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
 | icon_value | [string](#string) | optional |  |
 | asset_id_value | [string](#string) | optional |  |
-| number_extras | [NumberExtras](#ar-v1-NumberExtras) |  |  |
-| enum_extras | [EnumExtras](#ar-v1-EnumExtras) |  |  |
-| vector3_extras | [Vector3Extras](#ar-v1-Vector3Extras) |  |  |
-| color_extras | [ColorExtras](#ar-v1-ColorExtras) |  |  |
-| pose_extras | [PoseExtras](#ar-v1-PoseExtras) |  |  |
-| anchor_extras | [AnchorExtras](#ar-v1-AnchorExtras) |  |  |
+| number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
+| enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
+| vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
+| color_extras | [ColorExtras](#common-v1-ColorExtras) |  |  |
+| pose_extras | [PoseExtras](#common-v1-PoseExtras) |  |  |
+| anchor_extras | [AnchorExtras](#common-v1-AnchorExtras) |  |  |
 
 
 
 
 
 
-<a name="ar-v1-PropertyMessages"></a>
+<a name="common-v1-PropertyMessages"></a>
 
 ### PropertyMessages
 
@@ -989,14 +980,14 @@ Properties are used by various components to define them, such as: feedback, act
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [Property](#common-v1-Property) | repeated |  |
 
 
 
 
 
 
-<a name="ar-v1-PropertyValueUpdate"></a>
+<a name="common-v1-PropertyValueUpdate"></a>
 
 ### PropertyValueUpdate
 
@@ -1005,8 +996,8 @@ Properties are used by various components to define them, such as: feedback, act
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| type | [PropertyType](#ar-v1-PropertyType) |  |  |
-| origin | [PropertyOrigin](#ar-v1-PropertyOrigin) |  |  |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
 | mirror_property_id | [string](#string) |  |  |
 | bool_value | [bool](#bool) | optional |  |
 | int_value | [sint64](#sint64) | optional |  |
@@ -1016,7 +1007,7 @@ Properties are used by various components to define them, such as: feedback, act
 | vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
 | pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
-| color_value | [common.v1.Color](#common-v1-Color) |  |  |
+| color_value | [Color](#common-v1-Color) |  |  |
 | robot_id_value | [string](#string) | optional |  |
 | enum_value | [string](#string) | optional |  |
 | enum_multi_value | [string](#string) | repeated |  |
@@ -1028,7 +1019,7 @@ Properties are used by various components to define them, such as: feedback, act
 
 
 
-<a name="ar-v1-Vector3Extras"></a>
+<a name="common-v1-Vector3Extras"></a>
 
 ### Vector3Extras
 
@@ -1051,7 +1042,7 @@ Properties are used by various components to define them, such as: feedback, act
  
 
 
-<a name="ar-v1-PropertyGroup"></a>
+<a name="common-v1-PropertyGroup"></a>
 
 ### PropertyGroup
 
@@ -1069,7 +1060,7 @@ Properties are used by various components to define them, such as: feedback, act
 
 
 
-<a name="ar-v1-PropertyOrigin"></a>
+<a name="common-v1-PropertyOrigin"></a>
 
 ### PropertyOrigin
 Specifies where the value of a property originates from.
@@ -1082,7 +1073,22 @@ Specifies where the value of a property originates from.
 
 
 
-<a name="ar-v1-PropertyType"></a>
+<a name="common-v1-PropertyPermission"></a>
+
+### PropertyPermission
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_PERMISSION_UNSPECIFIED | 0 | Unspecified: can be edited by all |
+| PROPERTY_PERMISSION_BASIC | 10 | Basic: can be edited by users with some permission to edit |
+| PROPERTY_PERMISSION_COSMETIC | 20 | Cosmetic: can be edited by users with cosmetic&#43;full permission |
+| PROPERTY_PERMISSION_FULL | 30 | Full: can be edited by users with full permission |
+| PROPERTY_PERMISSION_NONE | 40 | None: can&#39;t be edited (e.g. outputs or stuff that requires a delete &#43; create new) |
+
+
+
+<a name="common-v1-PropertyType"></a>
 
 ### PropertyType
 Used to specify the type of a property
@@ -1173,7 +1179,7 @@ Used to specify the type of a property
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | config_id | [string](#string) |  |  |
 
 
@@ -1554,7 +1560,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
 
 
@@ -1671,7 +1677,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [HelperType](#ar-v1-HelperType) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 
 
 
@@ -1792,7 +1798,7 @@ Just delete this?
 | feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated | TODO: just a list of Id&#39;s? |
 | actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
 
 
@@ -1815,84 +1821,6 @@ Just delete this?
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_assets-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/assets.proto
-
-
-
-<a name="ar-v1-AssetMessage"></a>
-
-### AssetMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of the asset |
-| icon | [string](#string) |  | Optional icon representing the asset |
-| description | [string](#string) |  | Optional description of the asset |
-| type | [AssetType](#ar-v1-AssetType) |  |  |
-| asset_driver_type | [AssetDriverType](#ar-v1-AssetDriverType) |  |  |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-AssetMessages"></a>
-
-### AssetMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| assets | [AssetMessage](#ar-v1-AssetMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-AssetDriverType"></a>
-
-### AssetDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
-
-
-
-<a name="ar-v1-AssetType"></a>
-
-### AssetType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_TYPE_CAMERA | 1 |  |
-| ASSET_TYPE_LIGHT | 2 |  |
-| ASSET_TYPE_CONVEYOR | 3 |  |
-
 
  
 
@@ -1926,120 +1854,6 @@ Just delete this?
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_device-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/device.proto
-
-
-
-<a name="ar-v1-DeviceHeartbeat"></a>
-
-### DeviceHeartbeat
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| device_id | [string](#string) |  |  |
-| battery_level | [int32](#int32) |  |  |
-| battery_status | [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-DeviceMessage"></a>
-
-### DeviceMessage
-DeviceMessage hold basic information about AR-devices, such as a HoloLens2
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [DeviceType](#ar-v1-DeviceType) |  |  |
-| device_id | [string](#string) |  |  |
-| status | [DeviceStatus](#ar-v1-DeviceStatus) |  |  |
-| battery_level | [int32](#int32) |  |  |
-| battery_status | [DeviceBatteryStatus](#ar-v1-DeviceBatteryStatus) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-DeviceMessages"></a>
-
-### DeviceMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| devices | [DeviceMessage](#ar-v1-DeviceMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-DeviceBatteryStatus"></a>
-
-### DeviceBatteryStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DEVICE_BATTERY_STATUS_UNSPECIFIED | 0 | The device&#39;s battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value. |
-| DEVICE_BATTERY_STATUS_CHARGING | 1 | Device is plugged in and charging. |
-| DEVICE_BATTERY_STATUS_DISCHARGING | 2 | Device is unplugged and discharging. |
-| DEVICE_BATTERY_STATUS_NOT_CHARGING | 3 | Device is plugged in, but is not charging. |
-| DEVICE_BATTERY_STATUS_FULL | 4 | Device is plugged in and the battery is full. |
-
-
-
-<a name="ar-v1-DeviceStatus"></a>
-
-### DeviceStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DEVICE_STATUS_UNSPECIFIED | 0 |  |
-| DEVICE_STATUS_ONLINE | 1 |  |
-| DEVICE_STATUS_OFFLINE | 2 |  |
-
-
-
-<a name="ar-v1-DeviceType"></a>
-
-### DeviceType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DEVICE_TYPE_UNSPECIFIED | 0 |  |
-| DEVICE_TYPE_HOLOLENS2 | 1 |  |
-| DEVICE_TYPE_PHONE | 2 |  |
-| DEVICE_TYPE_TABLET | 3 |  |
-| DEVICE_TYPE_PC | 4 |  |
-
 
  
 
@@ -2454,45 +2268,23 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
-<a name="ar_v1_robot-proto"></a>
+<a name="common_v1_actor-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/robot.proto
+## common/v1/actor.proto
 
 
 
-<a name="ar-v1-RobotMessage"></a>
+<a name="common-v1-ActorRef"></a>
 
-### RobotMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Autogenerated id |
-| name | [string](#string) |  | Name of the robot |
-| icon | [string](#string) |  | Optional icon representing the robot |
-| description | [string](#string) |  | Optional description of the robot |
-| type | [RobotType](#ar-v1-RobotType) |  | Required type of robot |
-| robot_driver_type | [RobotDriverType](#ar-v1-RobotDriverType) |  | Required driver type for robot |
-| coupler_model_id | [string](#string) |  | Optional coupler model |
-| end_effector_model_id | [string](#string) |  | Optional end-effector model |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-RobotMessages"></a>
-
-### RobotMessages
+### ActorRef
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| robots | [RobotMessage](#ar-v1-RobotMessage) | repeated |  |
+| kind | [ActorKind](#common-v1-ActorKind) |  |  |
+| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
 
 
 
@@ -2501,266 +2293,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
  
 
 
-<a name="ar-v1-RobotDriverType"></a>
-
-### RobotDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_DRIVER_TYPE_UR | 1 |  |
-
-
-
-<a name="ar-v1-RobotType"></a>
-
-### RobotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_TYPE_UR3E | 10 |  |
-| ROBOT_TYPE_UR5E | 11 |  |
-| ROBOT_TYPE_UR10E | 12 |  |
-| ROBOT_TYPE_KUKA_IIWA | 20 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_worker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/worker.proto
-
-
-
-<a name="ar-v1-WorkerMessage"></a>
-
-### WorkerMessage
-TODO: Add worker (including skill-matrix)?
-TODO: remove to PLM
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [WorkerType](#ar-v1-WorkerType) |  |  |
-| permission | [WorkerPermission](#ar-v1-WorkerPermission) |  | TODO: rename to edit permissions |
-| properties | [Property](#ar-v1-Property) | repeated |  |
-| disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
-| employee_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-WorkerMessages"></a>
-
-### WorkerMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| workers | [WorkerMessage](#ar-v1-WorkerMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-WorkerType"></a>
-
-### WorkerType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| WORKER_TYPE_UNSPECIFIED | 0 |  |
-| WORKER_TYPE_NOVICE | 1 |  |
-| WORKER_TYPE_INTERMEDIATE | 2 |  |
-| WORKER_TYPE_EXPERT | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_common-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/common.proto
-
-
-
-<a name="assembly-v1-CustomProperties"></a>
-
-### CustomProperties
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| properties | [ar.v1.Property](#ar-v1-Property) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-DisplayText"></a>
-
-### DisplayText
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| title | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| operator_instruction | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-EstimatedDuration"></a>
-
-### EstimatedDuration
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| nominal | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
-| min | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
-| max | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ExternalReference"></a>
-
-### ExternalReference
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| system | [string](#string) |  |  |
-| external_id | [string](#string) |  |  |
-| url | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-KeyValueConstraint"></a>
-
-### KeyValueConstraint
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| op | [ConstraintOperator](#assembly-v1-ConstraintOperator) |  |  |
-| value | [string](#string) |  |  |
-| values | [string](#string) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-LocalTarget"></a>
-
-### LocalTarget
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| anchor_id | [string](#string) |  |  |
-| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-NamedRef"></a>
-
-### NamedRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-Ref"></a>
-
-### Ref
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-TimeWindow"></a>
-
-### TimeWindow
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| start | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| end | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-ActorKind"></a>
+<a name="common-v1-ActorKind"></a>
 
 ### ActorKind
 
@@ -2773,8 +2306,24 @@ TODO: remove to PLM
 | ACTOR_KIND_HYBRID | 3 |  |
 
 
+ 
 
-<a name="assembly-v1-CollaborationMode"></a>
+ 
+
+ 
+
+
+
+<a name="common_v1_enums-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/enums.proto
+
+
+ 
+
+
+<a name="common-v1-CollaborationMode"></a>
 
 ### CollaborationMode
 
@@ -2789,26 +2338,7 @@ TODO: remove to PLM
 
 
 
-<a name="assembly-v1-ConstraintOperator"></a>
-
-### ConstraintOperator
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CONSTRAINT_OPERATOR_UNSPECIFIED | 0 |  |
-| CONSTRAINT_OPERATOR_EQ | 1 |  |
-| CONSTRAINT_OPERATOR_NEQ | 2 |  |
-| CONSTRAINT_OPERATOR_GT | 3 |  |
-| CONSTRAINT_OPERATOR_GTE | 4 |  |
-| CONSTRAINT_OPERATOR_LT | 5 |  |
-| CONSTRAINT_OPERATOR_LTE | 6 |  |
-| CONSTRAINT_OPERATOR_IN | 7 |  |
-| CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
-
-
-
-<a name="assembly-v1-ResourceStatus"></a>
+<a name="common-v1-ResourceStatus"></a>
 
 ### ResourceStatus
 
@@ -2823,7 +2353,7 @@ TODO: remove to PLM
 
 
 
-<a name="assembly-v1-SafetyRelevance"></a>
+<a name="common-v1-SafetyRelevance"></a>
 
 ### SafetyRelevance
 
@@ -2845,348 +2375,25 @@ TODO: remove to PLM
 
 
 
-<a name="assembly_v1_actor-proto"></a>
+<a name="common_v1_key_value_constraint-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## assembly/v1/actor.proto
+## common/v1/key_value_constraint.proto
 
 
 
-<a name="assembly-v1-ActorAssignment"></a>
+<a name="common-v1-KeyValueConstraint"></a>
 
-### ActorAssignment
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
-| process_run_id | [string](#string) |  |  |
-| sequence_run_id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
-| assigned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| released_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ActorRef"></a>
-
-### ActorRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| kind | [ActorKind](#assembly-v1-ActorKind) |  |  |
-| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
-
-
-
-
-
-
-<a name="assembly-v1-WorkerDefinition"></a>
-
-### WorkerDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
-| employee_id | [string](#string) |  |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-WorkerDefinitions"></a>
-
-### WorkerDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [WorkerDefinition](#assembly-v1-WorkerDefinition) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_variant-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/variant.proto
-
-
-
-<a name="assembly-v1-VariantAxis"></a>
-
-### VariantAxis
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| options | [VariantOption](#assembly-v1-VariantOption) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-VariantConfiguration"></a>
-
-### VariantConfiguration
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| selections | [VariantSelection](#assembly-v1-VariantSelection) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-VariantOption"></a>
-
-### VariantOption
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-VariantPredicate"></a>
-
-### VariantPredicate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
-| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
-| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
-
-
-
-
-
-
-<a name="assembly-v1-VariantRule"></a>
-
-### VariantRule
-VariantRule: a rule matches if all predicates match
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| all_of | [VariantPredicate](#assembly-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
-
-
-
-
-
-
-<a name="assembly-v1-VariantSelection"></a>
-
-### VariantSelection
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
-| option_id | [string](#string) |  | &#34;left&#34; |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_execution-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/execution.proto
-
-
-
-<a name="assembly-v1-EvidenceFact"></a>
-
-### EvidenceFact
+### KeyValueConstraint
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | key | [string](#string) |  |  |
+| op | [ConstraintOperator](#common-v1-ConstraintOperator) |  |  |
 | value | [string](#string) |  |  |
-| unit | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ExecutionEvidence"></a>
-
-### ExecutionEvidence
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
-| source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
-| recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| facts | [EvidenceFact](#assembly-v1-EvidenceFact) | repeated |  |
-| blob_uri | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProcessRun"></a>
-
-### ProcessRun
-ProcessRun is only created when a concrete cell can currently satisfy it.
-Is is based upon a ProcessRecipe which defines what must be possible.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| recipe_id | [string](#string) |  |  |
-| order_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| root_sequence_run_id | [string](#string) |  |  |
-| sequences | [SequenceRun](#assembly-v1-SequenceRun) | repeated |  |
-| tasks | [TaskRun](#assembly-v1-TaskRun) | repeated |  |
-| state | [ProcessRunState](#assembly-v1-ProcessRunState) |  |  |
-| initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| assignments | [ActorAssignment](#assembly-v1-ActorAssignment) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-| variant_configuration | [VariantConfiguration](#assembly-v1-VariantConfiguration) |  |  |
-| parameters | [RunParameter](#assembly-v1-RunParameter) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-RunParameter"></a>
-
-### RunParameter
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  | &#34;color&#34;, &#34;label_text&#34;, &#34;customer_name&#34; |
-| value | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-SequenceRun"></a>
-
-### SequenceRun
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| sequence_definition_id | [string](#string) |  |  |
-| parent_sequence_run_id | [string](#string) |  |  |
-| child_sequence_run_ids | [string](#string) | repeated |  |
-| child_task_run_ids | [string](#string) | repeated |  |
-| state | [SequenceRunState](#assembly-v1-SequenceRunState) |  |  |
-| completed_tasks | [int32](#int32) |  |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-| assigned_actors | [ActorRef](#assembly-v1-ActorRef) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-TaskRun"></a>
-
-### TaskRun
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| task_definition_id | [string](#string) |  |  |
-| parent_sequence_run_id | [string](#string) |  |  |
-| state | [TaskRunState](#assembly-v1-TaskRunState) |  |  |
-| candidate_actors | [ActorRef](#assembly-v1-ActorRef) | repeated |  |
-| assigned_actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
-| can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
-| workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
-| estimated_duration | [EstimatedDuration](#assembly-v1-EstimatedDuration) |  |  |
-| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| error_code | [string](#string) |  |  |
-| error_message | [string](#string) |  |  |
-| evidence | [ExecutionEvidence](#assembly-v1-ExecutionEvidence) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
+| values | [string](#string) | repeated |  |
 
 
 
@@ -3195,51 +2402,22 @@ Is is based upon a ProcessRecipe which defines what must be possible.
  
 
 
-<a name="assembly-v1-ProcessRunState"></a>
+<a name="common-v1-ConstraintOperator"></a>
 
-### ProcessRunState
+### ConstraintOperator
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_STATE_WAITING | 1 |  |
-| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
-| PROCESS_RUN_STATE_COMPLETED | 3 |  |
-| PROCESS_RUN_STATE_ABORTED | 4 |  |
-
-
-
-<a name="assembly-v1-SequenceRunState"></a>
-
-### SequenceRunState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
-| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| SEQUENCE_RUN_STATE_WAITING | 2 |  |
-| SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
-| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
-| SEQUENCE_RUN_STATE_ABORTED | 5 |  |
-
-
-
-<a name="assembly-v1-TaskRunState"></a>
-
-### TaskRunState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
-| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| TASK_RUN_STATE_WAITING | 2 |  |
-| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
-| TASK_RUN_STATE_COMPLETED | 4 |  |
-| TASK_RUN_STATE_ERROR | 5 |  |
-| TASK_RUN_STATE_ABORTED | 6 |  |
+| CONSTRAINT_OPERATOR_UNSPECIFIED | 0 |  |
+| CONSTRAINT_OPERATOR_EQ | 1 |  |
+| CONSTRAINT_OPERATOR_NEQ | 2 |  |
+| CONSTRAINT_OPERATOR_GT | 3 |  |
+| CONSTRAINT_OPERATOR_GTE | 4 |  |
+| CONSTRAINT_OPERATOR_LT | 5 |  |
+| CONSTRAINT_OPERATOR_LTE | 6 |  |
+| CONSTRAINT_OPERATOR_IN | 7 |  |
+| CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
 
 
  
@@ -3250,51 +2428,81 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 
 
 
-<a name="assembly_v1_model-proto"></a>
+<a name="capability_v1_actor_constraint-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## assembly/v1/model.proto
+## capability/v1/actor_constraint.proto
 
 
 
-<a name="assembly-v1-ModelArtifact"></a>
+<a name="capability-v1-ActorConstraint"></a>
 
-### ModelArtifact
+### ActorConstraint
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| group | [ModelGroup](#assembly-v1-ModelGroup) |  |  |
-| origin | [ModelOrigin](#assembly-v1-ModelOrigin) |  |  |
-| format | [ModelFormat](#assembly-v1-ModelFormat) |  |  |
-| filename | [string](#string) |  | Filename is required for BUILT_IN models, ignored otherwise |
-| uri | [string](#string) |  | Uri is required for uploaded and external models |
-| thumbnail_uri | [string](#string) |  |  |
+| allowed_actor_kinds | [common.v1.ActorKind](#common-v1-ActorKind) | repeated |  |
+| collaboration_mode | [common.v1.CollaborationMode](#common-v1-CollaborationMode) |  |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="capability_v1_actor_skill-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## capability/v1/actor_skill.proto
+
+
+
+<a name="capability-v1-ActorSkill"></a>
+
+### ActorSkill
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| skill_id | [string](#string) |  |  |
+| level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
+| status | [SkillStatus](#capability-v1-SkillStatus) |  |  |
+| confidence | [double](#double) |  | [0, 1] |
+| last_evidence_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | timestamp |
+| evidence_count | [int32](#int32) |  | since last training |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | (timestamp) or policy-derived |
+| validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | which rule set is used |
+| reasons | [string](#string) | repeated | [&#34;inactivity_&gt;30d&#34;] |
+| next_actions | [string](#string) | repeated | [&#34;micro_training&#34;, &#34;extra_verification_required&#34;] |
+
+
+
+
+
+
+<a name="capability-v1-ValidityPolicyRef"></a>
+
+### ValidityPolicyRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| policy_id | [string](#string) |  |  |
 | version | [string](#string) |  |  |
-| unit | [string](#string) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
-| up_axis | [string](#string) |  | &#34;X&#34;, &#34;Y&#34;, &#34;Z&#34; |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ModelArtifacts"></a>
-
-### ModelArtifacts
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ModelArtifact](#assembly-v1-ModelArtifact) | repeated |  |
 
 
 
@@ -3303,51 +2511,33 @@ Is is based upon a ProcessRecipe which defines what must be possible.
  
 
 
-<a name="assembly-v1-ModelFormat"></a>
+<a name="capability-v1-SkillLevel"></a>
 
-### ModelFormat
+### SkillLevel
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| MODEL_FORMAT_UNSPECIFIED | 0 |  |
-| MODEL_FORMAT_GLB | 1 |  |
-| MODEL_FORMAT_GLTF | 2 |  |
-| MODEL_FORMAT_OBJ | 3 |  |
-| MODEL_FORMAT_STEP | 4 |  |
-| MODEL_FORMAT_STL | 5 |  |
-| MODEL_FORMAT_USDZ | 6 |  |
+| SKILL_LEVEL_UNSPECIFIED | 0 |  |
+| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
+| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
+| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
+| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
+| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
 
 
 
-<a name="assembly-v1-ModelGroup"></a>
+<a name="capability-v1-SkillStatus"></a>
 
-### ModelGroup
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_GROUP_UNSPECIFIED | 0 |  |
-| MODEL_GROUP_PART | 1 |  |
-| MODEL_GROUP_PRODUCT | 2 |  |
-| MODEL_GROUP_TOOL | 3 |  |
-| MODEL_GROUP_ROBOT | 4 |  |
-| MODEL_GROUP_CONTAINER | 5 |  |
-| MODEL_GROUP_ASSET | 6 |  |
-
-
-
-<a name="assembly-v1-ModelOrigin"></a>
-
-### ModelOrigin
+### SkillStatus
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
-| MODEL_ORIGIN_BUILT_IN | 1 |  |
-| MODEL_ORIGIN_UPLOADED | 2 |  |
-| MODEL_ORIGIN_EXTERNAL | 3 |  |
+| SKILL_STATUS_UNSPECIFIED | 0 |  |
+| SKILL_STATUS_ACTIVE | 1 |  |
+| SKILL_STATUS_RESTRICTED | 2 |  |
+| SKILL_STATUS_EXPIRED | 3 |  |
 
 
  
@@ -3358,89 +2548,14 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 
 
 
-<a name="assembly_v1_resources-proto"></a>
+<a name="capability_v1_capability_profile-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## assembly/v1/resources.proto
+## capability/v1/capability_profile.proto
 
 
 
-<a name="assembly-v1-AssetDefinition"></a>
-
-### AssetDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [AssetType](#assembly-v1-AssetType) |  |  |
-| driver_type | [AssetDriverType](#assembly-v1-AssetDriverType) |  |  |
-| model_id | [string](#string) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-AssetDefinitions"></a>
-
-### AssetDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [AssetDefinition](#assembly-v1-AssetDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-AssetInstance"></a>
-
-### AssetInstance
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| asset_definition_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-AssetInstances"></a>
-
-### AssetInstances
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [AssetInstance](#assembly-v1-AssetInstance) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-CapabilityProfile"></a>
+<a name="capability-v1-CapabilityProfile"></a>
 
 ### CapabilityProfile
 
@@ -3456,155 +2571,63 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | max_payload_g | [double](#double) |  |  |
 | min_grip_width_mm | [double](#double) |  |  |
 | max_grip_width_mm | [double](#double) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
 
 
 
 
 
+ 
 
-<a name="assembly-v1-ContainerDefinition"></a>
+ 
 
-### ContainerDefinition
-ContainerDefinition describes a physical holder/carrier with one or more slots.
+ 
 
-This unifies what used to be modeled separately as fixtures, kit trays, storage
-bins, and trays/totes. The semantic differences are captured by ContainerType and
-ContainerSlotType rather than by separate top-level resources.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable identifier of the reusable container definition. |
-| name | [string](#string) |  | Display name, e.g. &#34;Shelf Bin 01&#34;, &#34;Starter Kit Tray&#34;, or &#34;Motor Pallet&#34;. |
-| icon | [string](#string) |  | UI icon representing the container. |
-| description | [string](#string) |  | Human-readable description of the container&#39;s purpose. |
-| type | [ContainerType](#assembly-v1-ContainerType) |  | High-level category: storage, kit, tray, or fixture. |
-| model_id | [string](#string) |  | Optional 3D model used in simulation, AR, and UI rendering. |
-| slots | [ContainerSlotDefinition](#assembly-v1-ContainerSlotDefinition) | repeated | Addressable places inside/on the container. |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated | Container-level constraints applying to the whole carrier. |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for domain-specific container metadata. |
+ 
 
 
 
+<a name="common_v1_custom_properties-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/custom_properties.proto
 
 
 
-<a name="assembly-v1-ContainerDefinitions"></a>
+<a name="common-v1-CustomProperties"></a>
 
-### ContainerDefinitions
+### CustomProperties
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [ContainerDefinition](#assembly-v1-ContainerDefinition) | repeated | List wrapper used for transport/query responses. |
+| properties | [Property](#common-v1-Property) | repeated |  |
 
 
 
 
 
+ 
 
-<a name="assembly-v1-ContainerInstance"></a>
+ 
 
-### ContainerInstance
-ContainerInstance represents a concrete container in a station/cell.
+ 
 
-Examples:
-- the actual shelf bin mounted in station A
-- the actual pallet currently loaded on an indexing table
-- the actual jig installed on a workbench
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable identifier of the concrete container instance. |
-| name | [string](#string) |  | Display name of the instance. Often copied from the definition, but may be station-specific. |
-| icon | [string](#string) |  | UI icon for the instance. |
-| description | [string](#string) |  | Human-readable description of this particular instance. |
-| container_definition_id | [string](#string) |  | The reusable container definition that this instance realizes. |
-| station_id | [string](#string) |  | Station/cell where this container currently belongs or is mounted. |
-| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  | Operational status such as available, disabled, or faulted. |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Pose of the container instance in the station/environment. |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for instance-specific data. |
+ 
 
 
 
+<a name="capability_v1_skill_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## capability/v1/skill_definition.proto
 
 
 
-<a name="assembly-v1-ContainerInstances"></a>
+<a name="capability-v1-SkillDefinition"></a>
 
-### ContainerInstances
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ContainerInstance](#assembly-v1-ContainerInstance) | repeated | List wrapper used for transport/query responses. |
-
-
-
-
-
-
-<a name="assembly-v1-ContainerSlotDefinition"></a>
-
-### ContainerSlotDefinition
-ContainerSlotDefinition describes one addressable place inside a container.
-
-A slot is the thing that operators, robots, and AR guidance normally target.
-Examples:
-- a shelf bin in storage
-- a logical slot in a kit
-- a tray pocket
-- a fixture nest / clamp position / pallet pocket
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable identifier unique within the parent container definition. |
-| name | [string](#string) |  | Human-readable slot name shown in UI and AR, e.g. &#34;Slot A&#34; or &#34;Motor Nest&#34;. |
-| icon | [string](#string) |  | Optional icon override for UIs. If empty, the container icon may be reused. |
-| description | [string](#string) |  | Optional longer description of the slot&#39;s purpose or usage constraints. |
-| pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | Pose of the slot relative to the container definition coordinate frame. |
-| size | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approximate slot extents/bounds, useful for UI, AR, and planning. |
-| type | [ContainerSlotType](#assembly-v1-ContainerSlotType) |  | Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot. |
-| supported_product_definition_ids | [string](#string) | repeated | Products that this slot explicitly supports holding/presenting. |
-| supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
-| supported_part_definition_ids | [string](#string) | repeated | Specific part definitions that this slot supports. |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated | Additional semantic/compatibility constraints such as orientation, handedness, or required variants. |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | Extension point for domain-specific slot data. |
-
-
-
-
-
-
-<a name="assembly-v1-ContainerSlotRef"></a>
-
-### ContainerSlotRef
-ContainerSlotRef points to a concrete slot on a concrete container instance.
-
-This is the preferred task-planning reference for storage, kitting, tray, and
-fixture interactions because it identifies both the physical carrier and the
-addressable place inside it.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| container_instance_id | [string](#string) |  | Identifier of the container instance that owns the referenced slot. |
-| slot_id | [string](#string) |  | Identifier of the slot definition within that container. |
-| type | [ContainerSlotType](#assembly-v1-ContainerSlotType) |  | Semantic kind of slot, used for interpretation, UI behavior, and routing. |
-
-
-
-
-
-
-<a name="assembly-v1-RobotDefinition"></a>
-
-### RobotDefinition
+### SkillDefinition
 
 
 
@@ -3612,156 +2635,11 @@ addressable place inside it.
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [RobotType](#assembly-v1-RobotType) |  |  |
-| driver_type | [RobotDriverType](#assembly-v1-RobotDriverType) |  |  |
-| model_id | [string](#string) |  |  |
-| coupler_model_id | [string](#string) |  | Tool mounting capability |
-| supported_tool_definition_ids | [string](#string) | repeated |  |
-| default_tool_definition_id | [string](#string) |  |  |
-| tool_slots | [int32](#int32) |  |  |
-| capability_profile | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-RobotDefinitions"></a>
-
-### RobotDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [RobotDefinition](#assembly-v1-RobotDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-RobotInstance"></a>
-
-### RobotInstance
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| robot_definition_id | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
-| available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
-| supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
-| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
-| base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-RobotInstances"></a>
-
-### RobotInstances
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [RobotInstance](#assembly-v1-RobotInstance) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-ToolDefinition"></a>
-
-### ToolDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ToolType](#assembly-v1-ToolType) |  |  |
-| actor_kind | [ActorKind](#assembly-v1-ActorKind) |  |  |
-| roles | [ToolRole](#assembly-v1-ToolRole) | repeated |  |
-| properties | [ToolProperty](#assembly-v1-ToolProperty) | repeated |  |
-| capability_profile | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
-| model_id | [string](#string) |  |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ToolDefinitions"></a>
-
-### ToolDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ToolDefinition](#assembly-v1-ToolDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-ToolInstance"></a>
-
-### ToolInstance
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| tool_definition_id | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| status | [ResourceStatus](#assembly-v1-ResourceStatus) |  |  |
-| calibrated | [bool](#bool) |  |  |
-| calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ToolInstances"></a>
-
-### ToolInstances
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ToolInstance](#assembly-v1-ToolInstance) | repeated |  |
+| domain | [SkillDomain](#capability-v1-SkillDomain) |  |  |
+| tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated |  |
+| safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -3770,120 +2648,26 @@ addressable place inside it.
  
 
 
-<a name="assembly-v1-AssetDriverType"></a>
+<a name="capability-v1-SkillDomain"></a>
 
-### AssetDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
-
-
-
-<a name="assembly-v1-AssetType"></a>
-
-### AssetType
+### SkillDomain
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ASSET_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
-| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
-| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
-| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
-| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
-| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
+| SKILL_DOMAIN_UNSPECIFIED | 0 |  |
+| SKILL_DOMAIN_HANDLING | 1 |  |
+| SKILL_DOMAIN_ASSEMBLY | 2 |  |
+| SKILL_DOMAIN_FASTENING | 3 |  |
+| SKILL_DOMAIN_INSPECTION | 4 |  |
+| SKILL_DOMAIN_ELECTRICAL | 5 |  |
+| SKILL_DOMAIN_COLLABORATION | 6 |  |
+| SKILL_DOMAIN_SAFETY | 7 |  |
+| SKILL_DOMAIN_ROBOT_OPERATION | 8 |  |
 
 
 
-<a name="assembly-v1-ContainerSlotType"></a>
-
-### ContainerSlotType
-ContainerSlotType classifies the semantic role of a slot within a container.
-
-The slot type is what task planning, UI rendering, and robot/AR logic typically
-interact with. For example, a tray and a fixture may both have slots, but their
-semantics differ.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CONTAINER_SLOT_TYPE_UNSPECIFIED | 0 |  |
-| CONTAINER_SLOT_TYPE_STORAGE_BIN | 1 | A storage slot/bin used primarily as a source/sink location for material. |
-| CONTAINER_SLOT_TYPE_KIT_SLOT | 2 | A logical slot in a kit used to collect and verify required contents. |
-| CONTAINER_SLOT_TYPE_TRAY_CELL | 3 | A regular cell/pocket in a tray, tote, or carrier. |
-| CONTAINER_SLOT_TYPE_FIXTURE_SLOT | 4 | A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product. |
-
-
-
-<a name="assembly-v1-ContainerType"></a>
-
-### ContainerType
-ContainerType classifies physical holders/carriers used to store, stage, present,
-or constrain products and parts in a station.
-
-This unifies concepts that previously lived as separate resources such as storage
-bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
-one or more addressable slots.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CONTAINER_TYPE_UNSPECIFIED | 0 |  |
-| CONTAINER_TYPE_STORAGE | 1 | A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin. |
-| CONTAINER_TYPE_KIT | 2 | A kit container used to collect the exact set of parts required for later work. |
-| CONTAINER_TYPE_TRAY | 3 | A tray/tote/carrier with one or more regular cells or pockets. |
-| CONTAINER_TYPE_FIXTURE | 4 | A workholding/presentation container such as a base, clamp, jig, or pallet. |
-
-
-
-<a name="assembly-v1-RobotDriverType"></a>
-
-### RobotDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_DRIVER_TYPE_UR | 1 |  |
-| ROBOT_DRIVER_TYPE_GENERIC | 2 |  |
-
-
-
-<a name="assembly-v1-RobotType"></a>
-
-### RobotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_TYPE_UR3E | 10 |  |
-| ROBOT_TYPE_UR5E | 11 |  |
-| ROBOT_TYPE_UR10E | 12 |  |
-| ROBOT_TYPE_KUKA_IIWA | 20 |  |
-
-
-
-<a name="assembly-v1-ToolProperty"></a>
-
-### ToolProperty
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TOOL_PROPERTY_UNSPECIFIED | 0 |  |
-| TOOL_PROPERTY_TORQUE_CONTROLLED | 1 |  |
-| TOOL_PROPERTY_ESD_SAFE | 2 |  |
-| TOOL_PROPERTY_INSULATED | 3 |  |
-| TOOL_PROPERTY_COLLABORATIVE_SAFE | 4 |  |
-| TOOL_PROPERTY_CALIBRATED | 5 |  |
-| TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
-
-
-
-<a name="assembly-v1-ToolRole"></a>
+<a name="capability-v1-ToolRole"></a>
 
 ### ToolRole
 
@@ -3906,34 +2690,6 @@ one or more addressable slots.
 | TOOL_ROLE_WIPE_CLEAN | 13 |  |
 
 
-
-<a name="assembly-v1-ToolType"></a>
-
-### ToolType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TOOL_TYPE_UNSPECIFIED | 0 |  |
-| TOOL_TYPE_FASTENING | 1 |  |
-| TOOL_TYPE_GRIPPING | 2 |  |
-| TOOL_TYPE_CUTTING | 3 |  |
-| TOOL_TYPE_MEASURING | 4 |  |
-| TOOL_TYPE_POSITIONING | 5 |  |
-| TOOL_TYPE_DISPENSING | 6 |  |
-| TOOL_TYPE_INSPECTION | 7 |  |
-| TOOL_TYPE_SAFETY | 8 |  |
-| TOOL_TYPE_ELECTRONICS | 9 |  |
-| TOOL_TYPE_FIXTURE_ACCESSORY | 10 |  |
-| TOOL_TYPE_SHAPING | 11 |  |
-| TOOL_TYPE_TURNING | 12 |  |
-| TOOL_TYPE_STRIKING | 13 |  |
-| TOOL_TYPE_MARKING | 14 |  |
-| TOOL_TYPE_FINISHING | 15 |  |
-| TOOL_TYPE_ABRASIVE | 16 |  |
-| TOOL_TYPE_CLEANING | 17 |  |
-
-
  
 
  
@@ -3942,77 +2698,14 @@ one or more addressable slots.
 
 
 
-<a name="assembly_v1_skill-proto"></a>
+<a name="capability_v1_skill_requirement-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## assembly/v1/skill.proto
+## capability/v1/skill_requirement.proto
 
 
 
-<a name="assembly-v1-ActorConstraint"></a>
-
-### ActorConstraint
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| allowed_actor_kinds | [ActorKind](#assembly-v1-ActorKind) | repeated |  |
-| collaboration_mode | [CollaborationMode](#assembly-v1-CollaborationMode) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-ActorSkill"></a>
-
-### ActorSkill
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| actor | [ActorRef](#assembly-v1-ActorRef) |  |  |
-| skill_id | [string](#string) |  |  |
-| level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
-| status | [SkillStatus](#assembly-v1-SkillStatus) |  |  |
-| confidence | [double](#double) |  | [0, 1] |
-| last_evidence_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | timestamp |
-| evidence_count | [int32](#int32) |  | since last training |
-| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | (timestamp) or policy-derived |
-| validity_policy | [ValidityPolicyRef](#assembly-v1-ValidityPolicyRef) |  | which rule set is used |
-| reasons | [string](#string) | repeated | [&#34;inactivity_&gt;30d&#34;] |
-| next_actions | [string](#string) | repeated | [&#34;micro_training&#34;, &#34;extra_verification_required&#34;] |
-
-
-
-
-
-
-<a name="assembly-v1-SkillDefinition"></a>
-
-### SkillDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| domain | [SkillDomain](#assembly-v1-SkillDomain) |  |  |
-| tool_roles | [ToolRole](#assembly-v1-ToolRole) | repeated |  |
-| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-SkillRequirement"></a>
+<a name="capability-v1-SkillRequirement"></a>
 
 ### SkillRequirement
 
@@ -4021,15 +2714,31 @@ one or more addressable slots.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | skill_id | [string](#string) |  |  |
-| minimum_level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
+| minimum_level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
 
 
 
 
 
+ 
 
-<a name="assembly-v1-ToolRequirement"></a>
+ 
+
+ 
+
+ 
+
+
+
+<a name="capability_v1_tool_requirement-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## capability/v1/tool_requirement.proto
+
+
+
+<a name="capability-v1-ToolRequirement"></a>
 
 ### ToolRequirement
 
@@ -4037,969 +2746,32 @@ one or more addressable slots.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| role | [ToolRole](#assembly-v1-ToolRole) |  |  |
-| required_properties | [ToolProperty](#assembly-v1-ToolProperty) | repeated |  |
-| minimum_capability | [CapabilityProfile](#assembly-v1-CapabilityProfile) |  |  |
+| role | [ToolRole](#capability-v1-ToolRole) |  |  |
+| required_properties | [ToolProperty](#capability-v1-ToolProperty) | repeated |  |
+| minimum_capability | [CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
 | allowed_tool_definition_ids | [string](#string) | repeated |  |
 
 
 
 
 
-
-<a name="assembly-v1-ValidityPolicyRef"></a>
-
-### ValidityPolicyRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| policy_id | [string](#string) |  |  |
-| version | [string](#string) |  |  |
-
-
-
-
-
  
 
 
-<a name="assembly-v1-SkillDomain"></a>
+<a name="capability-v1-ToolProperty"></a>
 
-### SkillDomain
+### ToolProperty
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SKILL_DOMAIN_UNSPECIFIED | 0 |  |
-| SKILL_DOMAIN_HANDLING | 1 |  |
-| SKILL_DOMAIN_ASSEMBLY | 2 |  |
-| SKILL_DOMAIN_FASTENING | 3 |  |
-| SKILL_DOMAIN_INSPECTION | 4 |  |
-| SKILL_DOMAIN_ELECTRICAL | 5 |  |
-| SKILL_DOMAIN_COLLABORATION | 6 |  |
-| SKILL_DOMAIN_SAFETY | 7 |  |
-| SKILL_DOMAIN_ROBOT_OPERATION | 8 |  |
-
-
-
-<a name="assembly-v1-SkillLevel"></a>
-
-### SkillLevel
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_LEVEL_UNSPECIFIED | 0 |  |
-| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
-| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
-| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
-| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
-| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
-
-
-
-<a name="assembly-v1-SkillStatus"></a>
-
-### SkillStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_STATUS_UNSPECIFIED | 0 |  |
-| SKILL_STATUS_ACTIVE | 1 |  |
-| SKILL_STATUS_RESTRICTED | 2 |  |
-| SKILL_STATUS_EXPIRED | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_process-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/process.proto
-
-
-
-<a name="assembly-v1-ProcessRecipe"></a>
-
-### ProcessRecipe
-ProcessRecipe describes the following:
-- What work must be done
-- What kinds of capabilities are required
-- What tool roles are required
-- What skills are required
-- What actor constrains exist
-- What validation is needed
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#assembly-v1-ProcessType) |  |  |
-| product_definition_id | [string](#string) |  |  |
-| applicability | [RecipeApplicability](#assembly-v1-RecipeApplicability) |  |  |
-| root_sequence_id | [string](#string) |  |  |
-| sequences | [SequenceDefinition](#assembly-v1-SequenceDefinition) | repeated |  |
-| tasks | [TaskDefinition](#assembly-v1-TaskDefinition) | repeated |  |
-| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-RecipeApplicability"></a>
-
-### RecipeApplicability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| include | [VariantRule](#assembly-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
-| exclude | [VariantRule](#assembly-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
-
-
-
-
-
-
-<a name="assembly-v1-SequenceDefinition"></a>
-
-### SequenceDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| parent_sequence_id | [string](#string) |  |  |
-| operator | [SequenceOperator](#assembly-v1-SequenceOperator) |  |  |
-| child_sequence_ids | [string](#string) | repeated |  |
-| child_task_ids | [string](#string) | repeated |  |
-| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  |  |
-| optional | [bool](#bool) |  |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-TaskDefinition"></a>
-
-### TaskDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| instruction_text | [string](#string) |  | Human-readable instruction shown to the operator or author. |
-| sequence_number | [int32](#int32) |  | Ordering hint within the parent sequence. |
-| task_type | [TaskType](#assembly-v1-TaskType) |  | The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY. |
-| target | [TaskTarget](#assembly-v1-TaskTarget) |  | The primary thing/location/resource this task acts on. |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approach direction for AR guidance, picking, insertion, or robot planning. |
-| tool_requirements | [ToolRequirement](#assembly-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11;
-
-Tools or tool roles needed to perform the task. |
-| skill_requirements | [SkillRequirement](#assembly-v1-SkillRequirement) | repeated | Skills/qualifications needed by the acting human/robot. |
-| validation | [ValidationRequirement](#assembly-v1-ValidationRequirement) |  | How task completion should be confirmed or validated. |
-| execution_policy | [TaskExecutionPolicy](#assembly-v1-TaskExecutionPolicy) |  | Assignment preferences and execution permissions. |
-| safety_relevance | [SafetyRelevance](#assembly-v1-SafetyRelevance) |  | Safety significance of the task. |
-| source_node_id | [string](#string) |  | Optional source assembly node when something is moved/picked from a product structure. |
-| destination_node_id | [string](#string) |  | Optional destination assembly node when something is moved/placed into a product structure. |
-| source_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
-| destination_location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-| applicability | [VariantRule](#assembly-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
-| overrides | [TaskOverride](#assembly-v1-TaskOverride) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-TaskExecutionPolicy"></a>
-
-### TaskExecutionPolicy
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| assignment_preference | [TaskAssignmentPreference](#assembly-v1-TaskAssignmentPreference) |  |  |
-| actor_constraint | [ActorConstraint](#assembly-v1-ActorConstraint) |  |  |
-| can_reassign | [bool](#bool) |  |  |
-| can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
-| estimated_duration | [EstimatedDuration](#assembly-v1-EstimatedDuration) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-TaskOverride"></a>
-
-### TaskOverride
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| when | [VariantRule](#assembly-v1-VariantRule) | repeated |  |
-| instruction_text | [string](#string) |  |  |
-| target_node_id | [string](#string) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-TaskTarget"></a>
-
-### TaskTarget
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| target_node_id | [string](#string) |  | Optional target assembly node when the task acts on a product structure occurrence. |
-| target_part_definition_id | [string](#string) |  | Optional denormalized helper for UIs, planning, and filtering. |
-| local_target | [LocalTarget](#assembly-v1-LocalTarget) |  | Optional pose/anchor relative to the chosen target reference. |
-| asset_instance_id | [string](#string) |  | Optional non-product targets. These are useful when a task is not primarily about an AssemblyNode. Examples: - asset_instance_id -&gt; check camera, read HMI, inspect feeder - robot_instance_id -&gt; move robot to home, inspect robot state - station_id -&gt; clear work surface, perform station startup step - container_instance_id -&gt; interact with a specific pallet, jig, tray, or storage bin
-
-Optional asset target such as camera, HMI, sensor, conveyor, or feeder. |
-| robot_instance_id | [string](#string) |  | Optional robot target for robot-specific actions. |
-| station_id | [string](#string) |  | Optional station target for station-level or area-level actions. |
-| container_instance_id | [string](#string) |  | Optional container target such as storage bin, kit, tray, pallet, clamp, or jig. |
-| location | [ContainerSlotRef](#assembly-v1-ContainerSlotRef) |  | Optional slot-level target when a task acts on a specific addressable place in a container. |
-
-
-
-
-
-
-<a name="assembly-v1-ValidationRequirement"></a>
-
-### ValidationRequirement
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| require_tool_feedback | [bool](#bool) |  |  |
-| require_vision_check | [bool](#bool) |  |  |
-| allow_manual_confirmation | [bool](#bool) |  |  |
-| manual_confirmation_min_level | [SkillLevel](#assembly-v1-SkillLevel) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-ProcessType"></a>
-
-### ProcessType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_TYPE_UNSPECIFIED | 0 |  |
-| PROCESS_TYPE_ASSEMBLY | 1 | Example: build gearbox |
-| PROCESS_TYPE_DISASSEMBLY | 2 | Example: take mould apart for maintenance |
-| PROCESS_TYPE_INSPECTION | 3 | Example: QC Check |
-| PROCESS_TYPE_CHECKLIST | 4 | Example: line startup |
-| PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
-| PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
-
-
-
-<a name="assembly-v1-SequenceOperator"></a>
-
-### SequenceOperator
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SEQUENCE_OPERATOR_UNSPECIFIED | 0 |  |
-| SEQUENCE_OPERATOR_ALL_OF_CHILDREN | 1 |  |
-| SEQUENCE_OPERATOR_ONE_OF_CHILDREN | 2 |  |
-| SEQUENCE_OPERATOR_ORDERED | 3 |  |
-
-
-
-<a name="assembly-v1-TaskAssignmentPreference"></a>
-
-### TaskAssignmentPreference
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED | 0 |  |
-| TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
-| TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
-| TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
-| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 | Only use this if it truly must be done by a robot. Otherwise use prefer-robot |
-| TASK_ASSIGNMENT_PREFERENCE_EITHER | 5 |  |
-
-
-
-<a name="assembly-v1-TaskType"></a>
-
-### TaskType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_TYPE_UNSPECIFIED | 0 |  |
-| TASK_TYPE_INSPECT | 1 |  |
-| TASK_TYPE_FASTEN | 2 |  |
-| TASK_TYPE_UNFASTEN | 3 |  |
-| TASK_TYPE_MOUNT | 4 |  |
-| TASK_TYPE_UNMOUNT | 5 |  |
-| TASK_TYPE_MOVE | 6 |  |
-| TASK_TYPE_REMOVE | 7 |  |
-| TASK_TYPE_APPLY | 8 |  |
-| TASK_TYPE_WIPE | 9 |  |
-| TASK_TYPE_ALIGN | 10 |  |
-| TASK_TYPE_INSERT | 11 |  |
-| TASK_TYPE_HOLD | 12 |  |
-| TASK_TYPE_VERIFY | 13 |  |
-| TASK_TYPE_PICK | 14 |  |
-| TASK_TYPE_PLACE | 15 |  |
-| TASK_TYPE_SCAN | 16 |  |
-| TASK_TYPE_WAIT | 17 |  |
-| TASK_TYPE_CHECK | 18 |  |
-| TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_process_requests-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/process_requests.proto
-
-
-
-<a name="assembly-v1-ProcessLoadRequest"></a>
-
-### ProcessLoadRequest
-ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
-During this process, resources feasibility should be checked, i.e.
-   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
-
-Thus the following must be evaluated:
-- available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
-- available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
-- available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
-- valid calibration
-- fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
-- safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
-- active faults / disabled resources
-- asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --&gt; then verify those assets exist and are available.)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| process_recipe_id | [string](#string) |  |  |
-| target_line_id | [string](#string) |  |  |
-| variant_configuration | [VariantConfiguration](#assembly-v1-VariantConfiguration) |  |  |
-| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
-
-
-
-
-
-
-<a name="assembly-v1-ProcessLoadResult"></a>
-
-### ProcessLoadResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| status | [ProcessLoadStatus](#assembly-v1-ProcessLoadStatus) |  |  |
-| precheck | [ProcessRunPrecheckResult](#assembly-v1-ProcessRunPrecheckResult) |  |  |
-| process_run | [ProcessRun](#assembly-v1-ProcessRun) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProcessRunIssue"></a>
-
-### ProcessRunIssue
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| failure | [ProcessLoadFailure](#assembly-v1-ProcessLoadFailure) |  |  |
-| message | [string](#string) |  |  |
-| severity | [ProcessRunIssueSeverity](#assembly-v1-ProcessRunIssueSeverity) |  |  |
-| process_recipe_id | [string](#string) |  | Scope |
-| sequence_definition_id | [string](#string) |  |  |
-| task_definition_id | [string](#string) |  |  |
-| required_tool_role | [string](#string) |  | Related requirement/resource |
-| required_skill_id | [string](#string) |  |  |
-| fixture_definition_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| actor_id | [string](#string) |  |  |
-| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
-| remediation | [string](#string) |  | Optional remediation hint |
-| importance | [RequirementImportance](#assembly-v1-RequirementImportance) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProcessRunPrecheckResult"></a>
-
-### ProcessRunPrecheckResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ok | [bool](#bool) |  |  |
-| issues | [ProcessRunIssue](#assembly-v1-ProcessRunIssue) | repeated |  |
-| blocking_issue_count | [int32](#int32) |  | Optional summary counts for UI / fast filtering |
-| warning_issue_count | [int32](#int32) |  |  |
-| process_recipe_id | [string](#string) |  | What was checked |
-| target_line_id | [string](#string) |  |  |
-| task_feasibility | [TaskFeasibility](#assembly-v1-TaskFeasibility) | repeated | Optional: useful if precheck computes feasible assignments/resources |
-| status | [ProcessRunPrecheckStatus](#assembly-v1-ProcessRunPrecheckStatus) |  | Optional overall status |
-
-
-
-
-
-
-<a name="assembly-v1-TaskFeasibility"></a>
-
-### TaskFeasibility
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| task_definition_id | [string](#string) |  |  |
-| feasible | [bool](#bool) |  |  |
-| candidate_actor_ids | [string](#string) | repeated |  |
-| candidate_tool_instance_ids | [string](#string) | repeated |  |
-| candidate_fixture_instance_ids | [string](#string) | repeated |  |
-| candidate_asset_instance_ids | [string](#string) | repeated |  |
-| issues | [ProcessRunIssue](#assembly-v1-ProcessRunIssue) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-ProcessLoadFailure"></a>
-
-### ProcessLoadFailure
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
-| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
-| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
-| PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
-| PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
-| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
-| PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
-| PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
-| PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
-| PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
-| PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
-| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
-| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
-| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
-| PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
-| PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
-| PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
-| PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
-| PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
-
-
-
-<a name="assembly-v1-ProcessLoadStatus"></a>
-
-### ProcessLoadStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_LOAD_STATUS_UNSPECIFIED | 0 |  |
-| PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
-| PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
-| PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
-
-
-
-<a name="assembly-v1-ProcessRunIssueSeverity"></a>
-
-### ProcessRunIssueSeverity
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_ISSUE_SEVERITY_BLOCKING | 1 | Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task |
-| PROCESS_RUN_ISSUE_SEVERITY_WARNING | 2 | Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed. |
-
-
-
-<a name="assembly-v1-ProcessRunPrecheckStatus"></a>
-
-### ProcessRunPrecheckStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_PRECHECK_STATUS_OK | 1 | Neither warning nor blocking issues |
-| PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS | 2 | One or more warning issues, but no blocking |
-| PROCESS_RUN_PRECHECK_STATUS_BLOCKED | 3 | One or more blocking issues |
-
-
-
-<a name="assembly-v1-RequirementImportance"></a>
-
-### RequirementImportance
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
-| REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
-| REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_product-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/product.proto
-
-
-
-<a name="assembly-v1-AssemblyNode"></a>
-
-### AssemblyNode
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of this assembly node |
-| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
-| kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
-| part_definition_id | [string](#string) |  |  |
-| override_model_id | [string](#string) |  |  |
-| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
-| sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
-| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
-| join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
-| insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
-| approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
-| optional | [bool](#bool) |  |  |
-| applicability | [VariantRule](#assembly-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
-
-
-
-
-
-
-<a name="assembly-v1-Dimensions"></a>
-
-### Dimensions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x_mm | [double](#double) |  |  |
-| y_mm | [double](#double) |  |  |
-| z_mm | [double](#double) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-MaterialSpec"></a>
-
-### MaterialSpec
-MaterialSpec is meant to capture the engineering material identity of a part.
-name → the material family / type
-grade → the standardized grade or specification
-Examples:
-name: aluminium, grade: 6061-T6
-name: Steel, grade: S355JR
-name: stainless steel, grade: AISI 304
-name: ABS, grade: general purpose
-name: Polycarbonate, grade: PC-110
-name: Nylon, grade: PA6 GF15
-name: TPU, grade: 70 Shore A
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| category | [MaterialCategory](#assembly-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
-| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive |
-| grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
-
-
-
-
-
-
-<a name="assembly-v1-PartDefinition"></a>
-
-### PartDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PartType](#assembly-v1-PartType) |  | Broad functional/BOM classification of the part |
-| subtype | [string](#string) |  | Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease |
-| weight_g | [int64](#int64) |  |  |
-| dimensions | [Dimensions](#assembly-v1-Dimensions) |  |  |
-| material | [MaterialSpec](#assembly-v1-MaterialSpec) |  |  |
-| default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
-| handling | [PartHandlingProfile](#assembly-v1-PartHandlingProfile) |  |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-PartDefinitions"></a>
-
-### PartDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [PartDefinition](#assembly-v1-PartDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-PartHandlingProfile"></a>
-
-### PartHandlingProfile
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| fragile | [bool](#bool) |  |  |
-| esd_sensitive | [bool](#bool) |  |  |
-| requires_two_hand_lift | [bool](#bool) |  |  |
-| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
-| max_grip_force_n | [double](#double) |  |  |
-| max_torque_nm | [double](#double) |  |  |
-| constraints | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProductDefinition"></a>
-
-### ProductDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| variant_axes | [VariantAxis](#assembly-v1-VariantAxis) | repeated |  |
-| root_node_id | [string](#string) |  |  |
-| nodes | [AssemblyNode](#assembly-v1-AssemblyNode) | repeated |  |
-| external_references | [ExternalReference](#assembly-v1-ExternalReference) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-ProductDefinitions"></a>
-
-### ProductDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ProductDefinition](#assembly-v1-ProductDefinition) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-JoinMethod"></a>
-
-### JoinMethod
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| JOIN_METHOD_UNSPECIFIED | 0 |  |
-| JOIN_METHOD_NONE | 1 |  |
-| JOIN_METHOD_FASTEN | 2 |  |
-| JOIN_METHOD_PRESS_FIT | 3 |  |
-| JOIN_METHOD_SNAP_FIT | 4 |  |
-| JOIN_METHOD_ADHESIVE | 5 |  |
-| JOIN_METHOD_WELD | 6 |  |
-| JOIN_METHOD_PLACE | 7 |  |
-
-
-
-<a name="assembly-v1-MaterialCategory"></a>
-
-### MaterialCategory
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MATERIAL_CATEGORY_UNSPECIFIED | 0 |  |
-| MATERIAL_CATEGORY_METAL | 1 | Metals and metal alloys |
-| MATERIAL_CATEGORY_POLYMER | 2 | Thermoplastics / thermosets |
-| MATERIAL_CATEGORY_ELASTOMER | 3 | Flexible rubber-like materials |
-| MATERIAL_CATEGORY_COMPOSITE | 4 | Fiber-reinforced / layered materials |
-| MATERIAL_CATEGORY_CERAMIC | 5 | Ceramics and similar brittle inorganic materials |
-| MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
-| MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
-| MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
-| MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE | 9 | PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB |
-| MATERIAL_CATEGORY_CHEMICAL | 10 | Adhesive, grease, sealant, potting compound, coating, flux, etc. |
-| MATERIAL_CATEGORY_OTHER | 99 | Anything not fitting the categories above |
-
-
-
-<a name="assembly-v1-NodeKind"></a>
-
-### NodeKind
-NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
-NodeKind               Represents                    Physical part?   Has children?
-GROUP                  logical grouping              ❌               yes
-PART_OCCURRENCE        single physical part instance ✅               usually no
-SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-PATTERN                repeated pattern structure    ❌ (structure)   yes
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NODE_KIND_UNSPECIFIED | 0 |  |
-| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
-| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
-| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
-| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
-
-
-
-<a name="assembly-v1-PartType"></a>
-
-### PartType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PART_TYPE_UNSPECIFIED | 0 |  |
-| PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
-| PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
-| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
-| PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
-| PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
-| PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
-| PART_TYPE_PCB | 7 | Bare or populated printed circuit board |
-| PART_TYPE_ELECTRONIC_COMPONENT | 8 | LED, resistor, capacitor, IC, connector, relay, fuse, etc. |
-| PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
-| PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
-| PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_station-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/station.proto
-
-
-
-<a name="assembly-v1-CellDefinition"></a>
-
-### CellDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| station_ids | [string](#string) | repeated |  |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="assembly-v1-StationDefinition"></a>
-
-### StationDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| tool_instance_ids | [string](#string) | repeated |  |
-| container_instance_ids | [string](#string) | repeated |  |
-| robot_instance_ids | [string](#string) | repeated |  |
-| asset_instance_ids | [string](#string) | repeated |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | TODO: add makers here? |
-| custom | [CustomProperties](#assembly-v1-CustomProperties) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="assembly_v1_validation-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assembly/v1/validation.proto
-
-
-
-<a name="assembly-v1-ValidationResult"></a>
-
-### ValidationResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
-| status | [ValidationStatus](#assembly-v1-ValidationStatus) |  |  |
-| method | [string](#string) |  | tool_feedback / vision / manual / external_qc |
-| validated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| measurements | [KeyValueConstraint](#assembly-v1-KeyValueConstraint) | repeated |  |
-| validated_by_actor_id | [string](#string) |  |  |
-| comment | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="assembly-v1-ValidationStatus"></a>
-
-### ValidationStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| VALIDATION_STATUS_UNSPECIFIED | 0 |  |
-| VALIDATION_STATUS_PENDING | 1 |  |
-| VALIDATION_STATUS_PASSED | 2 |  |
-| VALIDATION_STATUS_FAILED | 3 |  |
-| VALIDATION_STATUS_BYPASSED | 4 |  |
+| TOOL_PROPERTY_UNSPECIFIED | 0 |  |
+| TOOL_PROPERTY_TORQUE_CONTROLLED | 1 |  |
+| TOOL_PROPERTY_ESD_SAFE | 2 |  |
+| TOOL_PROPERTY_INSULATED | 3 |  |
+| TOOL_PROPERTY_COLLABORATIVE_SAFE | 4 |  |
+| TOOL_PROPERTY_CALIBRATED | 5 |  |
+| TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
 
 
  
@@ -5042,6 +2814,39 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 
 
 
+<a name="common_v1_display_text-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/display_text.proto
+
+
+
+<a name="common-v1-DisplayText"></a>
+
+### DisplayText
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| title | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| operator_instruction | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_empty-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5053,6 +2858,39 @@ PATTERN                repeated pattern structure    ❌ (structure)   yes
 
 ### EmptyMessage
 
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_external_references-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/external_references.proto
+
+
+
+<a name="common-v1-ExternalReference"></a>
+
+### ExternalReference
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| system | [string](#string) |  |  |
+| external_id | [string](#string) |  |  |
+| url | [string](#string) |  |  |
 
 
 
@@ -5114,6 +2952,134 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_ref-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/ref.proto
+
+
+
+<a name="common-v1-NamedRef"></a>
+
+### NamedRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="common-v1-Ref"></a>
+
+### Ref
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_time-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/time.proto
+
+
+
+<a name="common-v1-EstimatedDuration"></a>
+
+### EstimatedDuration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nominal | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+| min | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+| max | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+
+
+
+
+
+
+<a name="common-v1-TimeWindow"></a>
+
+### TimeWindow
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| start | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| end | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_local_target-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/local_target.proto
+
+
+
+<a name="geometry-v1-LocalTarget"></a>
+
+### LocalTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| anchor_id | [string](#string) |  |  |
+| offset | [Pose](#geometry-v1-Pose) |  |  |
 
 
 
@@ -5311,156 +3277,6 @@ TODO: allow multiple processes to make active at the same time?
 | LINE_TYPE_FASTENER | 2 |  |
 | LINE_TYPE_PLATE | 3 |  |
 | LINE_TYPE_LUBRICANT | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_model_old-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/model_old.proto
-
-
-
-<a name="plm-v1-ModelMessage"></a>
-
-### ModelMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| group | [ModelGroup](#plm-v1-ModelGroup) |  |  |
-| origin | [ModelOrigin](#plm-v1-ModelOrigin) |  |  |
-| filename | [string](#string) |  |  |
-| url | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-ModelMessages"></a>
-
-### ModelMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| models | [ModelMessage](#plm-v1-ModelMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-ModelGroup"></a>
-
-### ModelGroup
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_GROUP_UNSPECIFIED | 0 |  |
-| MODEL_GROUP_TOOLS | 1 |  |
-| MODEL_GROUP_PARTS | 2 |  |
-| MODEL_GROUP_ROBOTS | 3 |  |
-| MODEL_GROUP_ASSETS | 4 |  |
-
-
-
-<a name="plm-v1-ModelOrigin"></a>
-
-### ModelOrigin
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
-| MODEL_ORIGIN_BUILD_IN | 1 |  |
-| MODEL_ORIGIN_UPLOADED | 2 |  |
-| MODEL_ORIGIN_EXTERNAL | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_part-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/part.proto
-
-
-
-<a name="plm-v1-PartMessage"></a>
-
-### PartMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PartType](#plm-v1-PartType) |  |  |
-| weight | [int64](#int64) |  | weight in grams |
-| model_id | [string](#string) |  | TODO: add dimensions TODO: add material |
-| tool_ids | [string](#string) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-PartMessages"></a>
-
-### PartMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| parts | [PartMessage](#plm-v1-PartMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-PartType"></a>
-
-### PartType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PART_TYPE_UNSPECIFIED | 0 |  |
-| PART_TYPE_SUB_ASSEMBLY | 1 |  |
-| PART_TYPE_FASTENER | 2 |  |
-| PART_TYPE_PLATE | 3 |  |
-| PART_TYPE_LUBRICANT | 4 |  |
 
 
  
@@ -6438,16 +4254,16 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
 
-<a name="plm_v1_tool-proto"></a>
+<a name="process_v1_sequence_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## plm/v1/tool.proto
+## process/v1/sequence_definition.proto
 
 
 
-<a name="plm-v1-ToolMessage"></a>
+<a name="process-v1-SequenceDefinition"></a>
 
-### ToolMessage
+### SequenceDefinition
 
 
 
@@ -6457,25 +4273,141 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [ToolType](#plm-v1-ToolType) |  |  |
-| actor | [ToolActor](#plm-v1-ToolActor) |  |  |
-| properties | [ToolProperty](#plm-v1-ToolProperty) | repeated |  |
-| model_id | [string](#string) |  |  |
+| sequence_number | [int32](#int32) |  |  |
+| parent_sequence_id | [string](#string) |  |  |
+| operator | [SequenceOperator](#process-v1-SequenceOperator) |  |  |
+| child_sequence_ids | [string](#string) | repeated |  |
+| child_task_ids | [string](#string) | repeated |  |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  |  |
+| optional | [bool](#bool) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-SequenceOperator"></a>
+
+### SequenceOperator
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_OPERATOR_UNSPECIFIED | 0 |  |
+| SEQUENCE_OPERATOR_ALL_OF_CHILDREN | 1 |  |
+| SEQUENCE_OPERATOR_ONE_OF_CHILDREN | 2 |  |
+| SEQUENCE_OPERATOR_ORDERED | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_container_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/container_definition.proto
+
+
+
+<a name="resources-v1-ContainerDefinition"></a>
+
+### ContainerDefinition
+ContainerDefinition describes a physical holder/carrier with one or more slots.
+
+This unifies what used to be modeled separately as fixtures, kit trays, storage
+bins, and trays/totes. The semantic differences are captured by ContainerType and
+ContainerSlotType rather than by separate top-level resources.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier of the reusable container definition. |
+| name | [string](#string) |  | Display name, e.g. &#34;Shelf Bin 01&#34;, &#34;Starter Kit Tray&#34;, or &#34;Motor Pallet&#34;. |
+| icon | [string](#string) |  | UI icon representing the container. |
+| description | [string](#string) |  | Human-readable description of the container&#39;s purpose. |
+| type | [ContainerType](#resources-v1-ContainerType) |  | High-level category: storage, kit, tray, or fixture. |
+| model_id | [string](#string) |  | Optional 3D model used in simulation, AR, and UI rendering. |
+| slots | [ContainerSlotDefinition](#resources-v1-ContainerSlotDefinition) | repeated | Addressable places inside/on the container. |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Container-level constraints applying to the whole carrier. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for domain-specific container metadata. |
 
 
 
 
 
 
-<a name="plm-v1-ToolMessages"></a>
+<a name="resources-v1-ContainerDefinitions"></a>
 
-### ToolMessages
+### ContainerDefinitions
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| tools | [ToolMessage](#plm-v1-ToolMessage) | repeated |  |
+| items | [ContainerDefinition](#resources-v1-ContainerDefinition) | repeated | List wrapper used for transport/query responses. |
+
+
+
+
+
+
+<a name="resources-v1-ContainerSlotDefinition"></a>
+
+### ContainerSlotDefinition
+ContainerSlotDefinition describes one addressable place inside a container.
+
+A slot is the thing that operators, robots, and AR guidance normally target.
+Examples:
+- a shelf bin in storage
+- a logical slot in a kit
+- a tray pocket
+- a fixture nest / clamp position / pallet pocket
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier unique within the parent container definition. |
+| name | [string](#string) |  | Human-readable slot name shown in UI and AR, e.g. &#34;Slot A&#34; or &#34;Motor Nest&#34;. |
+| icon | [string](#string) |  | Optional icon override for UIs. If empty, the container icon may be reused. |
+| description | [string](#string) |  | Optional longer description of the slot&#39;s purpose or usage constraints. |
+| pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | Pose of the slot relative to the container definition coordinate frame. |
+| size | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approximate slot extents/bounds, useful for UI, AR, and planning. |
+| type | [ContainerSlotType](#resources-v1-ContainerSlotType) |  | Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot. |
+| supported_product_definition_ids | [string](#string) | repeated | Products that this slot explicitly supports holding/presenting. |
+| supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
+| supported_part_definition_ids | [string](#string) | repeated | Specific part definitions that this slot supports. |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional semantic/compatibility constraints such as orientation, handedness, or required variants. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for domain-specific slot data. |
+
+
+
+
+
+
+<a name="resources-v1-ContainerSlotRef"></a>
+
+### ContainerSlotRef
+ContainerSlotRef points to a concrete slot on a concrete container instance.
+
+This is the preferred task-planning reference for storage, kitting, tray, and
+fixture interactions because it identifies both the physical carrier and the
+addressable place inside it.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_instance_id | [string](#string) |  | Identifier of the container instance that owns the referenced slot. |
+| slot_id | [string](#string) |  | Identifier of the slot definition within that container. |
+| type | [ContainerSlotType](#resources-v1-ContainerSlotType) |  | Semantic kind of slot, used for interpretation, UI behavior, and routing. |
 
 
 
@@ -6484,55 +4416,42 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
  
 
 
-<a name="plm-v1-ToolActor"></a>
+<a name="resources-v1-ContainerSlotType"></a>
 
-### ToolActor
+### ContainerSlotType
+ContainerSlotType classifies the semantic role of a slot within a container.
 
+The slot type is what task planning, UI rendering, and robot/AR logic typically
+interact with. For example, a tray and a fixture may both have slots, but their
+semantics differ.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| TOOL_ACTOR_UNSPECIFIED | 0 |  |
-| TOOL_ACTOR_HUMAN | 1 |  |
-| TOOL_ACTOR_ROBOT | 2 |  |
-| TOOL_ACTOR_HYBRID | 3 |  |
+| CONTAINER_SLOT_TYPE_UNSPECIFIED | 0 |  |
+| CONTAINER_SLOT_TYPE_STORAGE_BIN | 1 | A storage slot/bin used primarily as a source/sink location for material. |
+| CONTAINER_SLOT_TYPE_KIT_SLOT | 2 | A logical slot in a kit used to collect and verify required contents. |
+| CONTAINER_SLOT_TYPE_TRAY_CELL | 3 | A regular cell/pocket in a tray, tote, or carrier. |
+| CONTAINER_SLOT_TYPE_FIXTURE_SLOT | 4 | A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product. |
 
 
 
-<a name="plm-v1-ToolProperty"></a>
+<a name="resources-v1-ContainerType"></a>
 
-### ToolProperty
+### ContainerType
+ContainerType classifies physical holders/carriers used to store, stage, present,
+or constrain products and parts in a station.
 
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TOOL_PROPERTY_UNSPECIFIED | 0 |  |
-| TOOL_PROPERTY_TORQUE_CONTROLLED | 1 |  |
-| TOOL_PROPERTY_ESD_SAFE | 2 |  |
-| TOOL_PROPERTY_INSULATED | 3 |  |
-| TOOL_PROPERTY_COLLABORATIVE | 4 |  |
-
-
-
-<a name="plm-v1-ToolType"></a>
-
-### ToolType
-
+This unifies concepts that previously lived as separate resources such as storage
+bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
+one or more addressable slots.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| TOOL_TYPE_UNSPECIFIED | 0 |  |
-| TOOL_TYPE_CUTTING | 10 |  |
-| TOOL_TYPE_SHAPING | 20 |  |
-| TOOL_TYPE_FASTENING | 30 |  |
-| TOOL_TYPE_GRIPPING | 40 |  |
-| TOOL_TYPE_TURNING | 50 |  |
-| TOOL_TYPE_STRIKING | 60 |  |
-| TOOL_TYPE_MEASURING | 70 |  |
-| TOOL_TYPE_MARKING | 80 |  |
-| TOOL_TYPE_FINISHING | 90 |  |
-| TOOL_TYPE_ABRASIVE | 100 |  |
-| TOOL_TYPE_SAFETY | 110 |  |
-| TOOL_TYPE_ELECTRONICS | 120 | TODO: Cleaning, lubricating? |
+| CONTAINER_TYPE_UNSPECIFIED | 0 |  |
+| CONTAINER_TYPE_STORAGE | 1 | A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin. |
+| CONTAINER_TYPE_KIT | 2 | A kit container used to collect the exact set of parts required for later work. |
+| CONTAINER_TYPE_TRAY | 3 | A tray/tote/carrier with one or more regular cells or pockets. |
+| CONTAINER_TYPE_FIXTURE | 4 | A workholding/presentation container such as a base, clamp, jig, or pallet. |
 
 
  
@@ -6543,16 +4462,1592 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
 
-<a name="resources_v1_marker-proto"></a>
+<a name="variance_v1_variant_rule-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## resources/v1/marker.proto
+## variance/v1/variant_rule.proto
 
 
 
-<a name="resources-v1-MarkerDefinition"></a>
+<a name="variance-v1-VariantPredicate"></a>
 
-### MarkerDefinition
+### VariantPredicate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
+| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
+| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
+
+
+
+
+
+
+<a name="variance-v1-VariantRule"></a>
+
+### VariantRule
+VariantRule: a rule matches if all predicates match
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_task_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/task_definition.proto
+
+
+
+<a name="process-v1-TaskDefinition"></a>
+
+### TaskDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| instruction_text | [string](#string) |  | Human-readable instruction shown to the operator or author. |
+| sequence_number | [int32](#int32) |  | Ordering hint within the parent sequence. |
+| task_type | [TaskType](#process-v1-TaskType) |  | The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY. |
+| target | [TaskTarget](#process-v1-TaskTarget) |  | The primary thing/location/resource this task acts on. |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approach direction for AR guidance, picking, insertion, or robot planning. |
+| tool_requirements | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11;
+
+Tools or tool roles needed to perform the task. |
+| skill_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated | Skills/qualifications needed by the acting human/robot. |
+| validation | [ValidationRequirement](#process-v1-ValidationRequirement) |  | How task completion should be confirmed or validated. |
+| execution_policy | [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy) |  | Assignment preferences and execution permissions. |
+| safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  | Safety significance of the task. |
+| source_node_id | [string](#string) |  | Optional source assembly node when something is moved/picked from a product structure. |
+| destination_node_id | [string](#string) |  | Optional destination assembly node when something is moved/placed into a product structure. |
+| source_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
+| destination_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+| overrides | [TaskOverride](#process-v1-TaskOverride) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-TaskExecutionPolicy"></a>
+
+### TaskExecutionPolicy
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assignment_preference | [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference) |  |  |
+| actor_constraint | [capability.v1.ActorConstraint](#capability-v1-ActorConstraint) |  |  |
+| can_reassign | [bool](#bool) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+| estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+
+
+
+
+
+
+<a name="process-v1-TaskOverride"></a>
+
+### TaskOverride
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| when | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated |  |
+| instruction_text | [string](#string) |  |  |
+| target_node_id | [string](#string) |  |  |
+| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+
+
+
+
+
+
+<a name="process-v1-TaskTarget"></a>
+
+### TaskTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_node_id | [string](#string) |  | Optional target assembly node when the task acts on a product structure occurrence. |
+| target_part_definition_id | [string](#string) |  | Optional denormalized helper for UIs, planning, and filtering. |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional pose/anchor relative to the chosen target reference. |
+| asset_instance_id | [string](#string) |  | Optional non-product targets. These are useful when a task is not primarily about an AssemblyNode. Examples: - asset_instance_id -&gt; check camera, read HMI, inspect feeder - robot_instance_id -&gt; move robot to home, inspect robot state - station_id -&gt; clear work surface, perform station startup step - container_instance_id -&gt; interact with a specific pallet, jig, tray, or storage bin
+
+Optional asset target such as camera, HMI, sensor, conveyor, or feeder. |
+| robot_instance_id | [string](#string) |  | Optional robot target for robot-specific actions. |
+| station_id | [string](#string) |  | Optional station target for station-level or area-level actions. |
+| container_instance_id | [string](#string) |  | Optional container target such as storage bin, kit, tray, pallet, clamp, or jig. |
+| location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional slot-level target when a task acts on a specific addressable place in a container. |
+
+
+
+
+
+
+<a name="process-v1-ValidationRequirement"></a>
+
+### ValidationRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| require_tool_feedback | [bool](#bool) |  |  |
+| require_vision_check | [bool](#bool) |  |  |
+| allow_manual_confirmation | [bool](#bool) |  |  |
+| manual_confirmation_min_level | [capability.v1.SkillLevel](#capability-v1-SkillLevel) |  |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-TaskAssignmentPreference"></a>
+
+### TaskAssignmentPreference
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED | 0 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
+| TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
+| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 | Only use this if it truly must be done by a robot. Otherwise use prefer-robot |
+| TASK_ASSIGNMENT_PREFERENCE_EITHER | 5 |  |
+
+
+
+<a name="process-v1-TaskType"></a>
+
+### TaskType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_TYPE_UNSPECIFIED | 0 |  |
+| TASK_TYPE_INSPECT | 1 |  |
+| TASK_TYPE_FASTEN | 2 |  |
+| TASK_TYPE_UNFASTEN | 3 |  |
+| TASK_TYPE_MOUNT | 4 |  |
+| TASK_TYPE_UNMOUNT | 5 |  |
+| TASK_TYPE_MOVE | 6 |  |
+| TASK_TYPE_REMOVE | 7 |  |
+| TASK_TYPE_APPLY | 8 |  |
+| TASK_TYPE_WIPE | 9 |  |
+| TASK_TYPE_ALIGN | 10 |  |
+| TASK_TYPE_INSERT | 11 |  |
+| TASK_TYPE_HOLD | 12 |  |
+| TASK_TYPE_VERIFY | 13 |  |
+| TASK_TYPE_PICK | 14 |  |
+| TASK_TYPE_PLACE | 15 |  |
+| TASK_TYPE_SCAN | 16 |  |
+| TASK_TYPE_WAIT | 17 |  |
+| TASK_TYPE_CHECK | 18 |  |
+| TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_process_recipe-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/process_recipe.proto
+
+
+
+<a name="process-v1-ProcessRecipe"></a>
+
+### ProcessRecipe
+ProcessRecipe describes the following:
+- What work must be done
+- What kinds of capabilities are required
+- What tool roles are required
+- What skills are required
+- What actor constrains exist
+- What validation is needed
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#process-v1-ProcessType) |  |  |
+| product_definition_id | [string](#string) |  |  |
+| applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  |  |
+| root_sequence_id | [string](#string) |  |  |
+| sequences | [SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
+| tasks | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="process-v1-RecipeApplicability"></a>
+
+### RecipeApplicability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| include | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
+| exclude | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-ProcessType"></a>
+
+### ProcessType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_TYPE_UNSPECIFIED | 0 |  |
+| PROCESS_TYPE_ASSEMBLY | 1 | Example: build gearbox |
+| PROCESS_TYPE_DISASSEMBLY | 2 | Example: take mould apart for maintenance |
+| PROCESS_TYPE_INSPECTION | 3 | Example: QC Check |
+| PROCESS_TYPE_CHECKLIST | 4 | Example: line startup |
+| PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
+| PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_actor_assignment-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/actor_assignment.proto
+
+
+
+<a name="runtime-v1-ActorAssignment"></a>
+
+### ActorAssignment
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| actor | [ActorRef](#runtime-v1-ActorRef) |  |  |
+| process_run_id | [string](#string) |  |  |
+| sequence_run_id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| assigned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| released_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ActorRef"></a>
+
+### ActorRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| kind | [common.v1.ActorKind](#common-v1-ActorKind) |  |  |
+| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_sequence_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/sequence_run.proto
+
+
+
+<a name="runtime-v1-SequenceRun"></a>
+
+### SequenceRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| sequence_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| child_sequence_run_ids | [string](#string) | repeated |  |
+| child_task_run_ids | [string](#string) | repeated |  |
+| state | [SequenceRunState](#runtime-v1-SequenceRunState) |  |  |
+| completed_tasks | [int32](#int32) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+| assigned_actors | [ActorRef](#runtime-v1-ActorRef) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-SequenceRunState"></a>
+
+### SequenceRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
+| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| SEQUENCE_RUN_STATE_WAITING | 2 |  |
+| SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
+| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
+| SEQUENCE_RUN_STATE_ABORTED | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_execution_evidence-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/execution_evidence.proto
+
+
+
+<a name="runtime-v1-EvidenceFact"></a>
+
+### EvidenceFact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| unit | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ExecutionEvidence"></a>
+
+### ExecutionEvidence
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
+| recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| facts | [EvidenceFact](#runtime-v1-EvidenceFact) | repeated |  |
+| blob_uri | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_task_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/task_run.proto
+
+
+
+<a name="runtime-v1-TaskRun"></a>
+
+### TaskRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| state | [TaskRunState](#runtime-v1-TaskRunState) |  |  |
+| candidate_actors | [ActorRef](#runtime-v1-ActorRef) | repeated |  |
+| assigned_actor | [ActorRef](#runtime-v1-ActorRef) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+| workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
+| estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| error_code | [string](#string) |  |  |
+| error_message | [string](#string) |  |  |
+| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-TaskRunState"></a>
+
+### TaskRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
+| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| TASK_RUN_STATE_WAITING | 2 |  |
+| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
+| TASK_RUN_STATE_COMPLETED | 4 |  |
+| TASK_RUN_STATE_ERROR | 5 |  |
+| TASK_RUN_STATE_ABORTED | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="variance_v1_variant_configuration-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_configuration.proto
+
+
+
+<a name="variance-v1-VariantConfiguration"></a>
+
+### VariantConfiguration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selections | [VariantSelection](#variance-v1-VariantSelection) | repeated |  |
+
+
+
+
+
+
+<a name="variance-v1-VariantSelection"></a>
+
+### VariantSelection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
+| option_id | [string](#string) |  | &#34;left&#34; |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_process_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/process_run.proto
+
+
+
+<a name="runtime-v1-ProcessRun"></a>
+
+### ProcessRun
+ProcessRun is only created when a concrete cell can currently satisfy it.
+Is is based upon a ProcessRecipe which defines what must be possible.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| recipe_id | [string](#string) |  |  |
+| order_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_run_id | [string](#string) |  |  |
+| sequences | [SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
+| tasks | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
+| state | [ProcessRunState](#runtime-v1-ProcessRunState) |  |  |
+| initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+| parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-RunParameter"></a>
+
+### RunParameter
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | &#34;color&#34;, &#34;label_text&#34;, &#34;customer_name&#34; |
+| value | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ProcessRunState"></a>
+
+### ProcessRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_STATE_WAITING | 1 |  |
+| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
+| PROCESS_RUN_STATE_COMPLETED | 3 |  |
+| PROCESS_RUN_STATE_ABORTED | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_process_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/process_requests.proto
+
+
+
+<a name="process-v1-ProcessLoadRequest"></a>
+
+### ProcessLoadRequest
+ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
+During this process, resources feasibility should be checked, i.e.
+   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
+
+Thus the following must be evaluated:
+- available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
+- available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
+- available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
+- valid calibration
+- fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
+- safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
+- active faults / disabled resources
+- asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --&gt; then verify those assets exist and are available.)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_recipe_id | [string](#string) |  |  |
+| target_line_id | [string](#string) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
+
+
+
+
+
+
+<a name="process-v1-ProcessLoadResult"></a>
+
+### ProcessLoadResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [ProcessLoadStatus](#process-v1-ProcessLoadStatus) |  |  |
+| precheck | [ProcessRunPrecheckResult](#process-v1-ProcessRunPrecheckResult) |  |  |
+| process_run | [runtime.v1.ProcessRun](#runtime-v1-ProcessRun) |  |  |
+
+
+
+
+
+
+<a name="process-v1-ProcessRunIssue"></a>
+
+### ProcessRunIssue
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| failure | [ProcessLoadFailure](#process-v1-ProcessLoadFailure) |  |  |
+| message | [string](#string) |  |  |
+| severity | [ProcessRunIssueSeverity](#process-v1-ProcessRunIssueSeverity) |  |  |
+| process_recipe_id | [string](#string) |  | Scope |
+| sequence_definition_id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| required_tool_role | [string](#string) |  | Related requirement/resource |
+| required_skill_id | [string](#string) |  |  |
+| fixture_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| actor_id | [string](#string) |  |  |
+| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
+| remediation | [string](#string) |  | Optional remediation hint |
+| importance | [RequirementImportance](#process-v1-RequirementImportance) |  |  |
+
+
+
+
+
+
+<a name="process-v1-ProcessRunPrecheckResult"></a>
+
+### ProcessRunPrecheckResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ok | [bool](#bool) |  |  |
+| issues | [ProcessRunIssue](#process-v1-ProcessRunIssue) | repeated |  |
+| blocking_issue_count | [int32](#int32) |  | Optional summary counts for UI / fast filtering |
+| warning_issue_count | [int32](#int32) |  |  |
+| process_recipe_id | [string](#string) |  | What was checked |
+| target_line_id | [string](#string) |  |  |
+| task_feasibility | [TaskFeasibility](#process-v1-TaskFeasibility) | repeated | Optional: useful if precheck computes feasible assignments/resources |
+| status | [ProcessRunPrecheckStatus](#process-v1-ProcessRunPrecheckStatus) |  | Optional overall status |
+
+
+
+
+
+
+<a name="process-v1-TaskFeasibility"></a>
+
+### TaskFeasibility
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_definition_id | [string](#string) |  |  |
+| feasible | [bool](#bool) |  |  |
+| candidate_actor_ids | [string](#string) | repeated |  |
+| candidate_tool_instance_ids | [string](#string) | repeated |  |
+| candidate_fixture_instance_ids | [string](#string) | repeated |  |
+| candidate_asset_instance_ids | [string](#string) | repeated |  |
+| issues | [ProcessRunIssue](#process-v1-ProcessRunIssue) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-ProcessLoadFailure"></a>
+
+### ProcessLoadFailure
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
+| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
+| PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
+| PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
+| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
+| PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
+| PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
+| PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
+| PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
+| PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
+| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
+| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
+| PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
+| PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
+| PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
+| PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
+
+
+
+<a name="process-v1-ProcessLoadStatus"></a>
+
+### ProcessLoadStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
+| PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
+| PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
+
+
+
+<a name="process-v1-ProcessRunIssueSeverity"></a>
+
+### ProcessRunIssueSeverity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_ISSUE_SEVERITY_BLOCKING | 1 | Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task |
+| PROCESS_RUN_ISSUE_SEVERITY_WARNING | 2 | Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed. |
+
+
+
+<a name="process-v1-ProcessRunPrecheckStatus"></a>
+
+### ProcessRunPrecheckStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_PRECHECK_STATUS_OK | 1 | Neither warning nor blocking issues |
+| PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS | 2 | One or more warning issues, but no blocking |
+| PROCESS_RUN_PRECHECK_STATUS_BLOCKED | 3 | One or more blocking issues |
+
+
+
+<a name="process-v1-RequirementImportance"></a>
+
+### RequirementImportance
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
+| REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
+| REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="product_v1_assembly_node-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/assembly_node.proto
+
+
+
+<a name="product-v1-AssemblyNode"></a>
+
+### AssemblyNode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of this assembly node |
+| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
+| kind | [NodeKind](#product-v1-NodeKind) |  |  |
+| part_definition_id | [string](#string) |  |  |
+| override_model_id | [string](#string) |  |  |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
+| sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
+| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
+| join_method_hint | [JoinMethod](#product-v1-JoinMethod) |  |  |
+| insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
+| approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
+| optional | [bool](#bool) |  |  |
+| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
+
+
+
+
+
+ 
+
+
+<a name="product-v1-JoinMethod"></a>
+
+### JoinMethod
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| JOIN_METHOD_UNSPECIFIED | 0 |  |
+| JOIN_METHOD_NONE | 1 |  |
+| JOIN_METHOD_FASTEN | 2 |  |
+| JOIN_METHOD_PRESS_FIT | 3 |  |
+| JOIN_METHOD_SNAP_FIT | 4 |  |
+| JOIN_METHOD_ADHESIVE | 5 |  |
+| JOIN_METHOD_WELD | 6 |  |
+| JOIN_METHOD_PLACE | 7 |  |
+
+
+
+<a name="product-v1-NodeKind"></a>
+
+### NodeKind
+NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+NodeKind               Represents                    Physical part?   Has children?
+GROUP                  logical grouping              ❌               yes
+PART_OCCURRENCE        single physical part instance ✅               usually no
+SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
+PATTERN                repeated pattern structure    ❌ (structure)   yes
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_KIND_UNSPECIFIED | 0 |  |
+| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
+| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
+| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="product_v1_part_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/part_definition.proto
+
+
+
+<a name="product-v1-Dimensions"></a>
+
+### Dimensions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x_mm | [double](#double) |  |  |
+| y_mm | [double](#double) |  |  |
+| z_mm | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="product-v1-MaterialSpec"></a>
+
+### MaterialSpec
+MaterialSpec is meant to capture the engineering material identity of a part.
+name → the material family / type
+grade → the standardized grade or specification
+Examples:
+name: aluminium, grade: 6061-T6
+name: Steel, grade: S355JR
+name: stainless steel, grade: AISI 304
+name: ABS, grade: general purpose
+name: Polycarbonate, grade: PC-110
+name: Nylon, grade: PA6 GF15
+name: TPU, grade: 70 Shore A
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| category | [MaterialCategory](#product-v1-MaterialCategory) |  | Broad material class, e.g. metal, polymer, elastomer |
+| name | [string](#string) |  | Material family, e.g. aluminium, steel, ABS, FR-4, epoxy adhesive |
+| grade | [string](#string) |  | Standard/specification, e.g. 6061-T6, S355JR, AISI 304 |
+
+
+
+
+
+
+<a name="product-v1-PartDefinition"></a>
+
+### PartDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PartType](#product-v1-PartType) |  | Broad functional/BOM classification of the part |
+| subtype | [string](#string) |  | Optional finer-grained classification, e.g. led, resistor, battery, circuit_breaker, wire_harness, grease |
+| weight_g | [int64](#int64) |  | weight in grams |
+| dimensions | [Dimensions](#product-v1-Dimensions) |  |  |
+| material | [MaterialSpec](#product-v1-MaterialSpec) |  |  |
+| default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
+| handling | [PartHandlingProfile](#product-v1-PartHandlingProfile) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="product-v1-PartDefinitions"></a>
+
+### PartDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PartDefinition](#product-v1-PartDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="product-v1-PartHandlingProfile"></a>
+
+### PartHandlingProfile
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fragile | [bool](#bool) |  |  |
+| esd_sensitive | [bool](#bool) |  |  |
+| requires_two_hand_lift | [bool](#bool) |  |  |
+| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
+| max_grip_force_n | [double](#double) |  |  |
+| max_torque_nm | [double](#double) |  |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="product-v1-MaterialCategory"></a>
+
+### MaterialCategory
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MATERIAL_CATEGORY_UNSPECIFIED | 0 |  |
+| MATERIAL_CATEGORY_METAL | 1 | Metals and metal alloys |
+| MATERIAL_CATEGORY_POLYMER | 2 | Thermoplastics / thermosets |
+| MATERIAL_CATEGORY_ELASTOMER | 3 | Flexible rubber-like materials |
+| MATERIAL_CATEGORY_COMPOSITE | 4 | Fiber-reinforced / layered materials |
+| MATERIAL_CATEGORY_CERAMIC | 5 | Ceramics and similar brittle inorganic materials |
+| MATERIAL_CATEGORY_GLASS | 6 | Glass and glass-like transparent materials |
+| MATERIAL_CATEGORY_WOOD | 7 | Wood and wood-derived materials |
+| MATERIAL_CATEGORY_FOAM | 8 | Cellular / expanded materials |
+| MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE | 9 | PCB substrate materials such as FR-4, polyimide, CEM-1, ceramic PCB |
+| MATERIAL_CATEGORY_CHEMICAL | 10 | Adhesive, grease, sealant, potting compound, coating, flux, etc. |
+| MATERIAL_CATEGORY_OTHER | 99 | Anything not fitting the categories above |
+
+
+
+<a name="product-v1-PartType"></a>
+
+### PartType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PART_TYPE_UNSPECIFIED | 0 |  |
+| PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
+| PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
+| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
+| PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
+| PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
+| PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
+| PART_TYPE_PCB | 7 | Bare or populated printed circuit board |
+| PART_TYPE_ELECTRONIC_COMPONENT | 8 | LED, resistor, capacitor, IC, connector, relay, fuse, etc. |
+| PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
+| PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
+| PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="variance_v1_variant_axis-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_axis.proto
+
+
+
+<a name="variance-v1-VariantAxis"></a>
+
+### VariantAxis
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| options | [VariantOption](#variance-v1-VariantOption) | repeated |  |
+
+
+
+
+
+
+<a name="variance-v1-VariantOption"></a>
+
+### VariantOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="product_v1_product_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/product_definition.proto
+
+
+
+<a name="product-v1-ProductDefinition"></a>
+
+### ProductDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| variant_axes | [variance.v1.VariantAxis](#variance-v1-VariantAxis) | repeated |  |
+| root_node_id | [string](#string) |  |  |
+| nodes | [AssemblyNode](#product-v1-AssemblyNode) | repeated |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="product-v1-ProductDefinitions"></a>
+
+### ProductDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProductDefinition](#product-v1-ProductDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_asset_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/asset_definition.proto
+
+
+
+<a name="resources-v1-AssetDefinition"></a>
+
+### AssetDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of the asset |
+| icon | [string](#string) |  | Optional icon representing the asset |
+| description | [string](#string) |  | Optional description of the asset |
+| type | [AssetType](#resources-v1-AssetType) |  |  |
+| driver_type | [AssetDriverType](#resources-v1-AssetDriverType) |  |  |
+| model_id | [string](#string) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-AssetDefinitions"></a>
+
+### AssetDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-AssetDriverType"></a>
+
+### AssetDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
+
+
+
+<a name="resources-v1-AssetType"></a>
+
+### AssetType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
+| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
+| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
+| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
+| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
+| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_asset_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/asset_instance.proto
+
+
+
+<a name="resources-v1-AssetInstance"></a>
+
+### AssetInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| asset_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-AssetInstances"></a>
+
+### AssetInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetInstance](#resources-v1-AssetInstance) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_cell_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/cell_definition.proto
+
+
+
+<a name="resources-v1-CellDefinition"></a>
+
+### CellDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| station_ids | [string](#string) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_container_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/container_instance.proto
+
+
+
+<a name="resources-v1-ContainerInstance"></a>
+
+### ContainerInstance
+ContainerInstance represents a concrete container in a station/cell.
+
+Examples:
+- the actual shelf bin mounted in station A
+- the actual pallet currently loaded on an indexing table
+- the actual jig installed on a workbench
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier of the concrete container instance. |
+| name | [string](#string) |  | Display name of the instance. Often copied from the definition, but may be station-specific. |
+| icon | [string](#string) |  | UI icon for the instance. |
+| description | [string](#string) |  | Human-readable description of this particular instance. |
+| container_definition_id | [string](#string) |  | The reusable container definition that this instance realizes. |
+| station_id | [string](#string) |  | Station/cell where this container currently belongs or is mounted. |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  | Operational status such as available, disabled, or faulted. |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Pose of the container instance in the station/environment. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for instance-specific data. |
+
+
+
+
+
+
+<a name="resources-v1-ContainerInstances"></a>
+
+### ContainerInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ContainerInstance](#resources-v1-ContainerInstance) | repeated | List wrapper used for transport/query responses. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_device-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/device.proto
+
+
+
+<a name="resources-v1-DeviceHeartbeat"></a>
+
+### DeviceHeartbeat
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device_id | [string](#string) |  |  |
+| battery_level | [int32](#int32) |  |  |
+| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-DeviceMessage"></a>
+
+### DeviceMessage
+DeviceMessage hold basic information about AR-devices, such as a HoloLens2
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [DeviceType](#resources-v1-DeviceType) |  |  |
+| device_id | [string](#string) |  |  |
+| status | [DeviceStatus](#resources-v1-DeviceStatus) |  |  |
+| battery_level | [int32](#int32) |  |  |
+| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-DeviceMessages"></a>
+
+### DeviceMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devices | [DeviceMessage](#resources-v1-DeviceMessage) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-DeviceBatteryStatus"></a>
+
+### DeviceBatteryStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_BATTERY_STATUS_UNSPECIFIED | 0 | The device&#39;s battery status cannot be determined. If battery status is not available on your target platform, SystemInfo.batteryStatus will return this value. |
+| DEVICE_BATTERY_STATUS_CHARGING | 1 | Device is plugged in and charging. |
+| DEVICE_BATTERY_STATUS_DISCHARGING | 2 | Device is unplugged and discharging. |
+| DEVICE_BATTERY_STATUS_NOT_CHARGING | 3 | Device is plugged in, but is not charging. |
+| DEVICE_BATTERY_STATUS_FULL | 4 | Device is plugged in and the battery is full. |
+
+
+
+<a name="resources-v1-DeviceStatus"></a>
+
+### DeviceStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_STATUS_UNSPECIFIED | 0 |  |
+| DEVICE_STATUS_ONLINE | 1 |  |
+| DEVICE_STATUS_OFFLINE | 2 |  |
+
+
+
+<a name="resources-v1-DeviceType"></a>
+
+### DeviceType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEVICE_TYPE_UNSPECIFIED | 0 |  |
+| DEVICE_TYPE_HOLOLENS2 | 1 |  |
+| DEVICE_TYPE_PHONE | 2 |  |
+| DEVICE_TYPE_TABLET | 3 |  |
+| DEVICE_TYPE_PC | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_marker_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/marker_instance.proto
+
+
+
+<a name="resources-v1-MarkerInstance"></a>
+
+### MarkerInstance
 
 
 
@@ -6565,21 +6060,23 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 | marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
 | type | [MarkerType](#resources-v1-MarkerType) |  |  |
 | confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
 
 
 
-<a name="resources-v1-MarkerMessages"></a>
+<a name="resources-v1-MarkerInstances"></a>
 
-### MarkerMessages
+### MarkerInstances
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| markers | [MarkerDefinition](#resources-v1-MarkerDefinition) | repeated |  |
+| markers | [MarkerInstance](#resources-v1-MarkerInstance) | repeated |  |
 
 
 
@@ -6597,6 +6094,526 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 | ---- | ------ | ----------- |
 | MARKER_TYPE_UNSPECIFIED | 0 |  |
 | MARKER_TYPE_QR_CODE | 1 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_model-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/model.proto
+
+
+
+<a name="resources-v1-ModelArtifact"></a>
+
+### ModelArtifact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
+| origin | [ModelOrigin](#resources-v1-ModelOrigin) |  |  |
+| format | [ModelFormat](#resources-v1-ModelFormat) |  |  |
+| filename | [string](#string) |  | Filename is required for BUILT_IN models, ignored otherwise |
+| uri | [string](#string) |  | Uri is required for uploaded and external models |
+| thumbnail_uri | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| unit | [string](#string) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
+| up_axis | [string](#string) |  | &#34;X&#34;, &#34;Y&#34;, &#34;Z&#34; |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ModelArtifacts"></a>
+
+### ModelArtifacts
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-ModelFormat"></a>
+
+### ModelFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_FORMAT_UNSPECIFIED | 0 |  |
+| MODEL_FORMAT_GLB | 1 |  |
+| MODEL_FORMAT_GLTF | 2 |  |
+| MODEL_FORMAT_OBJ | 3 |  |
+| MODEL_FORMAT_STEP | 4 |  |
+| MODEL_FORMAT_STL | 5 |  |
+| MODEL_FORMAT_USDZ | 6 |  |
+
+
+
+<a name="resources-v1-ModelGroup"></a>
+
+### ModelGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_GROUP_UNSPECIFIED | 0 |  |
+| MODEL_GROUP_PART | 1 |  |
+| MODEL_GROUP_PRODUCT | 2 |  |
+| MODEL_GROUP_TOOL | 3 |  |
+| MODEL_GROUP_ROBOT | 4 |  |
+| MODEL_GROUP_CONTAINER | 5 |  |
+| MODEL_GROUP_ASSET | 6 |  |
+
+
+
+<a name="resources-v1-ModelOrigin"></a>
+
+### ModelOrigin
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
+| MODEL_ORIGIN_BUILT_IN | 1 |  |
+| MODEL_ORIGIN_UPLOADED | 2 |  |
+| MODEL_ORIGIN_EXTERNAL | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_robot_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/robot_definition.proto
+
+
+
+<a name="resources-v1-RobotDefinition"></a>
+
+### RobotDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Autogenerated id |
+| name | [string](#string) |  | Name of the robot |
+| icon | [string](#string) |  | Optional icon representing the robot |
+| description | [string](#string) |  | Optional description of the robot |
+| type | [RobotType](#resources-v1-RobotType) |  | Required type of robot |
+| driver_type | [RobotDriverType](#resources-v1-RobotDriverType) |  | Required driver type for robot |
+| model_id | [string](#string) |  |  |
+| coupler_model_id | [string](#string) |  | Tool mounting capability |
+| supported_tool_definition_ids | [string](#string) | repeated |  |
+| default_tool_definition_id | [string](#string) |  |  |
+| tool_slots | [int32](#int32) |  |  |
+| capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-RobotDefinitions"></a>
+
+### RobotDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [RobotDefinition](#resources-v1-RobotDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-RobotDriverType"></a>
+
+### RobotDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_DRIVER_TYPE_UR | 1 |  |
+| ROBOT_DRIVER_TYPE_GENERIC | 2 |  |
+
+
+
+<a name="resources-v1-RobotType"></a>
+
+### RobotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_TYPE_UR3E | 10 |  |
+| ROBOT_TYPE_UR5E | 11 |  |
+| ROBOT_TYPE_UR10E | 12 |  |
+| ROBOT_TYPE_KUKA_IIWA | 20 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_robot_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/robot_instance.proto
+
+
+
+<a name="resources-v1-RobotInstance"></a>
+
+### RobotInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| robot_definition_id | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
+| available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
+| supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
+| base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-RobotInstances"></a>
+
+### RobotInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [RobotInstance](#resources-v1-RobotInstance) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_station_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/station_definition.proto
+
+
+
+<a name="resources-v1-StationDefinition"></a>
+
+### StationDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [StationType](#resources-v1-StationType) |  |  |
+| tool_instance_ids | [string](#string) | repeated |  |
+| container_instance_ids | [string](#string) | repeated |  |
+| robot_instance_ids | [string](#string) | repeated |  |
+| asset_instance_ids | [string](#string) | repeated |  |
+| marker_instance_ids | [string](#string) | repeated | move to cell? |
+| worker_ids | [string](#string) | repeated | move to cell? |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-StationType"></a>
+
+### StationType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| STATION_TYPE_UNSPECIFIED | 0 |  |
+| STATION_TYPE_STORAGE | 1 |  |
+| STATION_TYPE_MANUAL_STATION | 2 |  |
+| STATION_TYPE_AUTOMATIC_STATION | 3 |  |
+| STATION_TYPE_HYBRID_STATION | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_tool_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/tool_definition.proto
+
+
+
+<a name="resources-v1-ToolDefinition"></a>
+
+### ToolDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ToolType](#resources-v1-ToolType) |  |  |
+| actor_kind | [common.v1.ActorKind](#common-v1-ActorKind) |  |  |
+| roles | [capability.v1.ToolRole](#capability-v1-ToolRole) | repeated |  |
+| properties | [capability.v1.ToolProperty](#capability-v1-ToolProperty) | repeated |  |
+| capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
+| model_id | [string](#string) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ToolDefinitions"></a>
+
+### ToolDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ToolDefinition](#resources-v1-ToolDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-ToolType"></a>
+
+### ToolType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TOOL_TYPE_UNSPECIFIED | 0 |  |
+| TOOL_TYPE_FASTENING | 1 |  |
+| TOOL_TYPE_GRIPPING | 2 |  |
+| TOOL_TYPE_CUTTING | 3 |  |
+| TOOL_TYPE_MEASURING | 4 |  |
+| TOOL_TYPE_POSITIONING | 5 |  |
+| TOOL_TYPE_DISPENSING | 6 |  |
+| TOOL_TYPE_INSPECTION | 7 |  |
+| TOOL_TYPE_SAFETY | 8 |  |
+| TOOL_TYPE_ELECTRONICS | 9 |  |
+| TOOL_TYPE_FIXTURE_ACCESSORY | 10 |  |
+| TOOL_TYPE_SHAPING | 11 |  |
+| TOOL_TYPE_TURNING | 12 |  |
+| TOOL_TYPE_STRIKING | 13 |  |
+| TOOL_TYPE_MARKING | 14 |  |
+| TOOL_TYPE_FINISHING | 15 |  |
+| TOOL_TYPE_ABRASIVE | 16 |  |
+| TOOL_TYPE_CLEANING | 17 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_tool_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/tool_instance.proto
+
+
+
+<a name="resources-v1-ToolInstance"></a>
+
+### ToolInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| tool_definition_id | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
+| calibrated | [bool](#bool) |  |  |
+| calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ToolInstances"></a>
+
+### ToolInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ToolInstance](#resources-v1-ToolInstance) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_worker_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/worker_definition.proto
+
+
+
+<a name="resources-v1-WorkerDefinition"></a>
+
+### WorkerDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
+| employee_id | [string](#string) |  |  |
+| ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-WorkerDefinitions"></a>
+
+### WorkerDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [WorkerDefinition](#resources-v1-WorkerDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-EditPermission"></a>
+
+### EditPermission
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| EDIT_PERMISSION_UNSPECIFIED | 0 | Unspecified: can&#39;t edit any properties |
+| EDIT_PERMISSION_BASIC | 1 | Basic: can edit {basic} properties |
+| EDIT_PERMISSION_COSMETIC | 2 | Cosmetic: can edit {basic, cosmetic} properties |
+| EDIT_PERMISSION_FULL | 3 | Full: can edit all editable properties |
 
 
  
@@ -7034,6 +7051,59 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_validation_result-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/validation_result.proto
+
+
+
+<a name="runtime-v1-ValidationResult"></a>
+
+### ValidationResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| status | [ValidationStatus](#runtime-v1-ValidationStatus) |  |  |
+| method | [string](#string) |  | tool_feedback / vision / manual / external_qc |
+| validated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| measurements | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+| validated_by_actor_id | [string](#string) |  |  |
+| comment | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ValidationStatus"></a>
+
+### ValidationStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VALIDATION_STATUS_UNSPECIFIED | 0 |  |
+| VALIDATION_STATUS_PENDING | 1 |  |
+| VALIDATION_STATUS_PASSED | 2 |  |
+| VALIDATION_STATUS_FAILED | 3 |  |
+| VALIDATION_STATUS_BYPASSED | 4 |  |
+
 
  
 

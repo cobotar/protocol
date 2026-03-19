@@ -1,0 +1,15 @@
+syntax = "proto3";
+package capability.v1;
+
+import "common/v1/actor.proto";
+import "common/v1/enums.proto";
+import "common/v1/key_value_constraint.proto";
+
+option csharp_namespace = "Messages.Capability.V1";
+option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+
+message ActorConstraint {
+  repeated common.v1.ActorKind allowed_actor_kinds = 1;
+  common.v1.CollaborationMode collaboration_mode = 2;
+  repeated common.v1.KeyValueConstraint constraints = 3;
+}

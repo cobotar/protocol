@@ -1,0 +1,19 @@
+syntax = "proto3";
+package capability.v1;
+
+import "common/v1/key_value_constraint.proto";
+
+option csharp_namespace = "Messages.Capability.V1";
+option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+
+message CapabilityProfile {
+  double min_force_n = 1;
+  double max_force_n = 2;
+  double min_torque_nm = 3;
+  double max_torque_nm = 4;
+  double repeatability_mm = 5;
+  double max_payload_g = 6;
+  double min_grip_width_mm = 7;
+  double max_grip_width_mm = 8;
+  repeated common.v1.KeyValueConstraint constraints = 9;
+}

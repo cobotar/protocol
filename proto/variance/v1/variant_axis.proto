@@ -1,0 +1,18 @@
+syntax = "proto3";
+package variance.v1;
+
+option csharp_namespace = "Messages.Variance.V1";
+option go_package = "github.com/cobotar/protocol/messages/variance/v1";
+
+message VariantOption {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+}
+
+message VariantAxis {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  repeated VariantOption options = 4;
+}

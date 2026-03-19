@@ -1,0 +1,51 @@
+from common.v1 import custom_properties_pb2 as _custom_properties_pb2
+from geometry.v1 import local_target_pb2 as _local_target_pb2
+from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+from google.protobuf import descriptor as _descriptor
+from google.protobuf import message as _message
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
+
+DESCRIPTOR: _descriptor.FileDescriptor
+
+class SequenceOperator(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    SEQUENCE_OPERATOR_UNSPECIFIED: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_ALL_OF_CHILDREN: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_ONE_OF_CHILDREN: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_ORDERED: _ClassVar[SequenceOperator]
+SEQUENCE_OPERATOR_UNSPECIFIED: SequenceOperator
+SEQUENCE_OPERATOR_ALL_OF_CHILDREN: SequenceOperator
+SEQUENCE_OPERATOR_ONE_OF_CHILDREN: SequenceOperator
+SEQUENCE_OPERATOR_ORDERED: SequenceOperator
+
+class SequenceDefinition(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "sequence_number", "parent_sequence_id", "operator", "child_sequence_ids", "child_task_ids", "local_target", "optional", "can_bulk_complete", "custom")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
+    PARENT_SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    OPERATOR_FIELD_NUMBER: _ClassVar[int]
+    CHILD_SEQUENCE_IDS_FIELD_NUMBER: _ClassVar[int]
+    CHILD_TASK_IDS_FIELD_NUMBER: _ClassVar[int]
+    LOCAL_TARGET_FIELD_NUMBER: _ClassVar[int]
+    OPTIONAL_FIELD_NUMBER: _ClassVar[int]
+    CAN_BULK_COMPLETE_FIELD_NUMBER: _ClassVar[int]
+    CUSTOM_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    sequence_number: int
+    parent_sequence_id: str
+    operator: SequenceOperator
+    child_sequence_ids: _containers.RepeatedScalarFieldContainer[str]
+    child_task_ids: _containers.RepeatedScalarFieldContainer[str]
+    local_target: _local_target_pb2.LocalTarget
+    optional: bool
+    can_bulk_complete: bool
+    custom: _custom_properties_pb2.CustomProperties
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., parent_sequence_id: _Optional[str] = ..., operator: _Optional[_Union[SequenceOperator, str]] = ..., child_sequence_ids: _Optional[_Iterable[str]] = ..., child_task_ids: _Optional[_Iterable[str]] = ..., local_target: _Optional[_Union[_local_target_pb2.LocalTarget, _Mapping]] = ..., optional: bool = ..., can_bulk_complete: bool = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...

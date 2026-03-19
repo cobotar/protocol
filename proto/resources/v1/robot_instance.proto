@@ -1,0 +1,29 @@
+syntax = "proto3";
+package resources.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/enums.proto";
+import "geometry/v1/pose.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+message RobotInstance {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  string robot_definition_id = 5;
+  string serial_number = 6;
+  string station_id = 7;
+  string mounted_tool_instance_id = 8; // The tool instance currently mounted on the robot, if any.
+  repeated string available_tool_instance_ids = 9; // Tool instances available to this robot in the cell/tool dock/tool magazine.
+  bool supports_tool_change = 10; // Whether this robot instance can dynamically change between available tools.
+  common.v1.ResourceStatus status = 11;
+  geometry.v1.LocalizedPose base_pose = 12;
+  common.v1.CustomProperties custom = 13;
+}
+
+message RobotInstances {
+  repeated RobotInstance items = 1;
+}

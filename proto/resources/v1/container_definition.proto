@@ -1,0 +1,109 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/custom_properties.proto";
+import "common/v1/key_value_constraint.proto";
+import "geometry/v1/pose.proto";
+import "geometry/v1/vector3.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+// ContainerType classifies physical holders/carriers used to store, stage, present,
+// or constrain products and parts in a station.
+//
+// This unifies concepts that previously lived as separate resources such as storage
+// bins, kit trays, pallets, and fixtures. All of them are modeled as containers with
+// one or more addressable slots.
+enum ContainerType {
+  CONTAINER_TYPE_UNSPECIFIED = 0;
+
+  CONTAINER_TYPE_STORAGE = 1; // A storage container used as a source/sink of material, e.g. shelf bin, drawer bin, tote, or rack bin.
+  CONTAINER_TYPE_KIT = 2; // A kit container used to collect the exact set of parts required for later work.
+  CONTAINER_TYPE_TRAY = 3; // A tray/tote/carrier with one or more regular cells or pockets.
+  CONTAINER_TYPE_FIXTURE = 4; // A workholding/presentation container such as a base, clamp, jig, or pallet.
+}
+
+// ContainerSlotType classifies the semantic role of a slot within a container.
+//
+// The slot type is what task planning, UI rendering, and robot/AR logic typically
+// interact with. For example, a tray and a fixture may both have slots, but their
+// semantics differ.
+enum ContainerSlotType {
+  CONTAINER_SLOT_TYPE_UNSPECIFIED = 0;
+
+  CONTAINER_SLOT_TYPE_STORAGE_BIN = 1; // A storage slot/bin used primarily as a source/sink location for material.
+  CONTAINER_SLOT_TYPE_KIT_SLOT = 2; // A logical slot in a kit used to collect and verify required contents.
+  CONTAINER_SLOT_TYPE_TRAY_CELL = 3; // A regular cell/pocket in a tray, tote, or carrier.
+  CONTAINER_SLOT_TYPE_FIXTURE_SLOT = 4; // A nest/clamp/jig/pallet position used to hold, present, or constrain a part/product.
+}
+
+// ContainerSlotRef points to a concrete slot on a concrete container instance.
+//
+// This is the preferred task-planning reference for storage, kitting, tray, and
+// fixture interactions because it identifies both the physical carrier and the
+// addressable place inside it.
+message ContainerSlotRef {
+  string container_instance_id = 1; // Identifier of the container instance that owns the referenced slot.
+  string slot_id = 2; // Identifier of the slot definition within that container.
+  ContainerSlotType type = 3; // Semantic kind of slot, used for interpretation, UI behavior, and routing.
+}
+
+// ContainerSlotDefinition describes one addressable place inside a container.
+//
+// A slot is the thing that operators, robots, and AR guidance normally target.
+// Examples:
+// - a shelf bin in storage
+// - a logical slot in a kit
+// - a tray pocket
+// - a fixture nest / clamp position / pallet pocket
+message ContainerSlotDefinition {
+  string id = 1; // Stable identifier unique within the parent container definition.
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true]; // Human-readable slot name shown in UI and AR, e.g. "Slot A" or "Motor Nest".
+  string icon = 3; // Optional icon override for UIs. If empty, the container icon may be reused.
+  string description = 4; // Optional longer description of the slot's purpose or usage constraints.
+
+  geometry.v1.Pose pose = 5; // Pose of the slot relative to the container definition coordinate frame.
+  geometry.v1.Vector3 size = 6; // Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+
+  ContainerSlotType type = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ]; // Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot.
+
+  repeated string supported_product_definition_ids = 8; // Products that this slot explicitly supports holding/presenting.
+  repeated string supported_root_part_definition_ids = 9; // Root assemblies/root parts that this slot supports.
+  repeated string supported_part_definition_ids = 10; // Specific part definitions that this slot supports.
+
+  repeated common.v1.KeyValueConstraint constraints = 11; // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
+  common.v1.CustomProperties custom = 12; // Extension point for domain-specific slot data.
+}
+
+// ContainerDefinition describes a physical holder/carrier with one or more slots.
+//
+// This unifies what used to be modeled separately as fixtures, kit trays, storage
+// bins, and trays/totes. The semantic differences are captured by ContainerType and
+// ContainerSlotType rather than by separate top-level resources.
+message ContainerDefinition {
+  string id = 1; // Stable identifier of the reusable container definition.
+  string name = 2; // Display name, e.g. "Shelf Bin 01", "Starter Kit Tray", or "Motor Pallet".
+  string icon = 3; // UI icon representing the container.
+  string description = 4; // Human-readable description of the container's purpose.
+
+  ContainerType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ]; // High-level category: storage, kit, tray, or fixture.
+  string model_id = 6 [(buf.validate.field).string.(validation.v1.model_id_component) = true]; // Optional 3D model used in simulation, AR, and UI rendering.
+
+  repeated ContainerSlotDefinition slots = 7; // Addressable places inside/on the container.
+
+  repeated common.v1.KeyValueConstraint constraints = 8; // Container-level constraints applying to the whole carrier.
+  common.v1.CustomProperties custom = 9; // Extension point for domain-specific container metadata.
+}
+
+message ContainerDefinitions {
+  repeated ContainerDefinition items = 1; // List wrapper used for transport/query responses.
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+package process.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/external_references.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
+import "variance/v1/variant_rule.proto";
+
+option csharp_namespace = "Messages.Process.V1";
+option go_package = "github.com/cobotar/protocol/messages/process/v1";
+
+enum ProcessType {
+  PROCESS_TYPE_UNSPECIFIED = 0;
+  PROCESS_TYPE_ASSEMBLY = 1; // Example: build gearbox
+  PROCESS_TYPE_DISASSEMBLY = 2; // Example: take mould apart for maintenance
+  PROCESS_TYPE_INSPECTION = 3; // Example: QC Check
+  PROCESS_TYPE_CHECKLIST = 4; // Example: line startup
+  PROCESS_TYPE_KITTING = 5; // Example: prepare parts kit
+  PROCESS_TYPE_MAINTENANCE = 6; // Example: replace filter
+}
+
+message RecipeApplicability {
+  repeated variance.v1.VariantRule include = 1; // Recipe applies if any include rule matches. Empty means generally applicable.
+  repeated variance.v1.VariantRule exclude = 2; // Recipe is rejected if any exclude rule matches.
+}
+
+// ProcessRecipe describes the following:
+// - What work must be done
+// - What kinds of capabilities are required
+// - What tool roles are required
+// - What skills are required
+// - What actor constrains exist
+// - What validation is needed
+message ProcessRecipe {
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  ProcessType type = 5;
+  string product_definition_id = 6;
+  RecipeApplicability applicability = 7;
+  string root_sequence_id = 8;
+  repeated SequenceDefinition sequences = 9;
+  repeated TaskDefinition tasks = 10;
+  repeated string supported_container_definition_ids = 11; // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
+  repeated common.v1.ExternalReference external_references = 12;
+  common.v1.CustomProperties custom = 13;
+}

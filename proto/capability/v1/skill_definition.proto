@@ -1,0 +1,47 @@
+syntax = "proto3";
+package capability.v1;
+
+import "common/v1/custom_properties.proto";
+import "common/v1/enums.proto";
+
+option csharp_namespace = "Messages.Capability.V1";
+option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+
+enum SkillDomain {
+  SKILL_DOMAIN_UNSPECIFIED = 0;
+  SKILL_DOMAIN_HANDLING = 1;
+  SKILL_DOMAIN_ASSEMBLY = 2;
+  SKILL_DOMAIN_FASTENING = 3;
+  SKILL_DOMAIN_INSPECTION = 4;
+  SKILL_DOMAIN_ELECTRICAL = 5;
+  SKILL_DOMAIN_COLLABORATION = 6;
+  SKILL_DOMAIN_SAFETY = 7;
+  SKILL_DOMAIN_ROBOT_OPERATION = 8;
+}
+
+enum ToolRole {
+  TOOL_ROLE_UNSPECIFIED = 0;
+  TOOL_ROLE_GRIP_WORKPIECE = 1;
+  TOOL_ROLE_POSITION_COMPONENT = 2;
+  TOOL_ROLE_ALIGN_COMPONENT = 3;
+  TOOL_ROLE_APPLY_TORQUE = 4;
+  TOOL_ROLE_APPLY_LINEAR_FORCE = 5;
+  TOOL_ROLE_MEASURE_DIMENSION = 6;
+  TOOL_ROLE_DETECT_PRESENCE = 7;
+  TOOL_ROLE_DISPENSE_MATERIAL = 8;
+  TOOL_ROLE_EXECUTE_MOTION = 9;
+  TOOL_ROLE_SAFETY_INTERACTION = 10;
+  TOOL_ROLE_HANDLE_ESD = 11;
+  TOOL_ROLE_VISUAL_INSPECTION = 12;
+  TOOL_ROLE_WIPE_CLEAN = 13;
+}
+
+message SkillDefinition {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  SkillDomain domain = 4;
+  repeated ToolRole tool_roles = 5;
+  common.v1.SafetyRelevance safety_relevance = 6;
+  common.v1.CustomProperties custom = 7;
+}
