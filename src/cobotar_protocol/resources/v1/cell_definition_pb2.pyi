@@ -22,3 +22,9 @@ class CellDefinition(_message.Message):
     station_ids: _containers.RepeatedScalarFieldContainer[str]
     custom: _custom_properties_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., station_ids: _Optional[_Iterable[str]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class CellDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[CellDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[CellDefinition, _Mapping]]] = ...) -> None: ...

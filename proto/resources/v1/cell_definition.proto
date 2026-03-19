@@ -14,3 +14,7 @@ message CellDefinition {
   repeated string station_ids = 5;
   common.v1.CustomProperties custom = 6;
 }
+
+message CellDefinitions {
+  repeated CellDefinition items = 1;
+}

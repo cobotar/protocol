@@ -415,6 +415,7 @@
   
 - [resources/v1/cell_definition.proto](#resources_v1_cell_definition-proto)
     - [CellDefinition](#resources-v1-CellDefinition)
+    - [CellDefinitions](#resources-v1-CellDefinitions)
   
 - [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
     - [ContainerInstance](#resources-v1-ContainerInstance)
@@ -456,6 +457,7 @@
   
 - [resources/v1/station_definition.proto](#resources_v1_station_definition-proto)
     - [StationDefinition](#resources-v1-StationDefinition)
+    - [StationDefinitions](#resources-v1-StationDefinitions)
   
     - [StationType](#resources-v1-StationType)
   
@@ -5855,6 +5857,21 @@ name: TPU, grade: 70 Shore A
 
 
 
+
+<a name="resources-v1-CellDefinitions"></a>
+
+### CellDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [CellDefinition](#resources-v1-CellDefinition) | repeated |  |
+
+
+
+
+
  
 
  
@@ -6384,6 +6401,21 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | worker_ids | [string](#string) | repeated | move to cell? |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-StationDefinitions"></a>
+
+### StationDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [StationDefinition](#resources-v1-StationDefinition) | repeated |  |
 
 
 

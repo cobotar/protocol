@@ -218,6 +218,50 @@ func (x *StationDefinition) GetCustom() *v11.CustomProperties {
 	return nil
 }
 
+type StationDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*StationDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StationDefinitions) Reset() {
+	*x = StationDefinitions{}
+	mi := &file_resources_v1_station_definition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StationDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StationDefinitions) ProtoMessage() {}
+
+func (x *StationDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_station_definition_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StationDefinitions.ProtoReflect.Descriptor instead.
+func (*StationDefinitions) Descriptor() ([]byte, []int) {
+	return file_resources_v1_station_definition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *StationDefinitions) GetItems() []*StationDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_resources_v1_station_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_station_definition_proto_rawDesc = "" +
@@ -238,7 +282,9 @@ const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\n" +
 	"worker_ids\x18\v \x03(\tR\tworkerIds\x120\n" +
 	"\x05frame\x18\f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom*\xab\x01\n" +
+	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"K\n" +
+	"\x12StationDefinitions\x125\n" +
+	"\x05items\x18\x01 \x03(\v2\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n" +
 	"\vStationType\x12\x1c\n" +
 	"\x18STATION_TYPE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14STATION_TYPE_STORAGE\x10\x01\x12\x1f\n" +
@@ -260,22 +306,24 @@ func file_resources_v1_station_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_resources_v1_station_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_resources_v1_station_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_resources_v1_station_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_station_definition_proto_goTypes = []any{
 	(StationType)(0),             // 0: resources.v1.StationType
 	(*StationDefinition)(nil),    // 1: resources.v1.StationDefinition
-	(*v1.LocalizedPose)(nil),     // 2: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 3: common.v1.CustomProperties
+	(*StationDefinitions)(nil),   // 2: resources.v1.StationDefinitions
+	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
+	(*v11.CustomProperties)(nil), // 4: common.v1.CustomProperties
 }
 var file_resources_v1_station_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.StationDefinition.type:type_name -> resources.v1.StationType
-	2, // 1: resources.v1.StationDefinition.frame:type_name -> geometry.v1.LocalizedPose
-	3, // 2: resources.v1.StationDefinition.custom:type_name -> common.v1.CustomProperties
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 1: resources.v1.StationDefinition.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 2: resources.v1.StationDefinition.custom:type_name -> common.v1.CustomProperties
+	1, // 3: resources.v1.StationDefinitions.items:type_name -> resources.v1.StationDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_station_definition_proto_init() }
@@ -289,7 +337,7 @@ func file_resources_v1_station_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_station_definition_proto_rawDesc), len(file_resources_v1_station_definition_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

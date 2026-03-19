@@ -30,3 +30,7 @@ message StationDefinition {
   geometry.v1.LocalizedPose frame = 12;
   common.v1.CustomProperties custom = 13;
 }
+
+message StationDefinitions {
+  repeated StationDefinition items = 1;
+}

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"resources/v1/cell_definition.proto\x12\x0cresources.v1\x1a!common/v1/custom_properties.proto\"\xc0\x01\n\x0e\x43\x65llDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1f\n\x0bstation_ids\x18\x05 \x03(\tR\nstationIds\x12\x33\n\x06\x63ustom\x18\x06 \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustomB\xc0\x01\n\x10\x63om.resources.v1B\x13\x43\x65llDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"resources/v1/cell_definition.proto\x12\x0cresources.v1\x1a!common/v1/custom_properties.proto\"\xc0\x01\n\x0e\x43\x65llDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1f\n\x0bstation_ids\x18\x05 \x03(\tR\nstationIds\x12\x33\n\x06\x63ustom\x18\x06 \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"E\n\x0f\x43\x65llDefinitions\x12\x32\n\x05items\x18\x01 \x03(\x0b\x32\x1c.resources.v1.CellDefinitionR\x05itemsB\xc0\x01\n\x10\x63om.resources.v1B\x13\x43\x65llDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,4 +35,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\023CellDefinitionProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
   _globals['_CELLDEFINITION']._serialized_start=88
   _globals['_CELLDEFINITION']._serialized_end=280
+  _globals['_CELLDEFINITIONS']._serialized_start=282
+  _globals['_CELLDEFINITIONS']._serialized_end=351
 # @@protoc_insertion_point(module_scope)

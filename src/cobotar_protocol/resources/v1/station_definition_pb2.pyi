@@ -51,3 +51,9 @@ class StationDefinition(_message.Message):
     frame: _pose_pb2.LocalizedPose
     custom: _custom_properties_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[StationType, str]] = ..., tool_instance_ids: _Optional[_Iterable[str]] = ..., container_instance_ids: _Optional[_Iterable[str]] = ..., robot_instance_ids: _Optional[_Iterable[str]] = ..., asset_instance_ids: _Optional[_Iterable[str]] = ..., marker_instance_ids: _Optional[_Iterable[str]] = ..., worker_ids: _Optional[_Iterable[str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class StationDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[StationDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[StationDefinition, _Mapping]]] = ...) -> None: ...

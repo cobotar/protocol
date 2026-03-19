@@ -106,6 +106,50 @@ func (x *CellDefinition) GetCustom() *v1.CustomProperties {
 	return nil
 }
 
+type CellDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*CellDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CellDefinitions) Reset() {
+	*x = CellDefinitions{}
+	mi := &file_resources_v1_cell_definition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CellDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CellDefinitions) ProtoMessage() {}
+
+func (x *CellDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_cell_definition_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CellDefinitions.ProtoReflect.Descriptor instead.
+func (*CellDefinitions) Descriptor() ([]byte, []int) {
+	return file_resources_v1_cell_definition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CellDefinitions) GetItems() []*CellDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_resources_v1_cell_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_cell_definition_proto_rawDesc = "" +
@@ -118,7 +162,9 @@ const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1f\n" +
 	"\vstation_ids\x18\x05 \x03(\tR\n" +
 	"stationIds\x123\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06customB\xc0\x01\n" +
+	"\x06custom\x18\x06 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"\x0fCellDefinitions\x122\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05itemsB\xc0\x01\n" +
 	"\x10com.resources.v1B\x13CellDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
@@ -133,18 +179,20 @@ func file_resources_v1_cell_definition_proto_rawDescGZIP() []byte {
 	return file_resources_v1_cell_definition_proto_rawDescData
 }
 
-var file_resources_v1_cell_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_resources_v1_cell_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_cell_definition_proto_goTypes = []any{
 	(*CellDefinition)(nil),      // 0: resources.v1.CellDefinition
-	(*v1.CustomProperties)(nil), // 1: common.v1.CustomProperties
+	(*CellDefinitions)(nil),     // 1: resources.v1.CellDefinitions
+	(*v1.CustomProperties)(nil), // 2: common.v1.CustomProperties
 }
 var file_resources_v1_cell_definition_proto_depIdxs = []int32{
-	1, // 0: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
+	0, // 1: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_cell_definition_proto_init() }
@@ -158,7 +206,7 @@ func file_resources_v1_cell_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_cell_definition_proto_rawDesc), len(file_resources_v1_cell_definition_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

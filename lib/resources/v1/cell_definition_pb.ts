@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/cell_definition.proto.
  */
 export const file_resources_v1_cell_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEijwEKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRITCgtzdGF0aW9uX2lkcxgFIAMoCRIrCgZjdXN0b20YBiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc0LAAQoQY29tLnJlc291cmNlcy52MUITQ2VsbERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_common_v1_custom_properties]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEijwEKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRITCgtzdGF0aW9uX2lkcxgFIAMoCRIrCgZjdXN0b20YBiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI+Cg9DZWxsRGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5yZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb25CwAEKEGNvbS5yZXNvdXJjZXMudjFCE0NlbGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_common_v1_custom_properties]);
 
 /**
  * @generated from message resources.v1.CellDefinition
@@ -55,4 +55,21 @@ export type CellDefinition = Message<"resources.v1.CellDefinition"> & {
  */
 export const CellDefinitionSchema: GenMessage<CellDefinition> = /*@__PURE__*/
   messageDesc(file_resources_v1_cell_definition, 0);
+
+/**
+ * @generated from message resources.v1.CellDefinitions
+ */
+export type CellDefinitions = Message<"resources.v1.CellDefinitions"> & {
+  /**
+   * @generated from field: repeated resources.v1.CellDefinition items = 1;
+   */
+  items: CellDefinition[];
+};
+
+/**
+ * Describes the message resources.v1.CellDefinitions.
+ * Use `create(CellDefinitionsSchema)` to create a new message.
+ */
+export const CellDefinitionsSchema: GenMessage<CellDefinitions> = /*@__PURE__*/
+  messageDesc(file_resources_v1_cell_definition, 1);
 
