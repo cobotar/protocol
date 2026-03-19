@@ -60,7 +60,7 @@ namespace Messages.Assembly.V1 {
             "ZXMSTwoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgIIAMoCzIeLmFzc2VtYmx5LnYx",
             "LkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5jZXMSNQoGY3Vz",
             "dG9tGAkgASgLMh0uYXNzZW1ibHkudjEuQ3VzdG9tUHJvcGVydGllc1IGY3Vz",
-            "dG9tIs4FCgxBc3NlbWJseU5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUY",
+            "dG9tIswFCgxBc3NlbWJseU5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUY",
             "AiABKAlSBG5hbWUSJAoOcGFyZW50X25vZGVfaWQYAyABKAlSDHBhcmVudE5v",
             "ZGVJZBIpCgRraW5kGAQgASgOMhUuYXNzZW1ibHkudjEuTm9kZUtpbmRSBGtp",
             "bmQSLAoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJUhBwYXJ0RGVmaW5pdGlv",
@@ -69,46 +69,46 @@ namespace Messages.Assembly.V1 {
             "Y2FsUG9zZRIjCg1zZXF1ZW5jZV9oaW50GAkgASgFUgxzZXF1ZW5jZUhpbnQS",
             "LgoTY2FkX29jY3VycmVuY2VfcGF0aBgKIAEoCVIRY2FkT2NjdXJyZW5jZVBh",
             "dGgSQQoQam9pbl9tZXRob2RfaGludBgLIAEoDjIXLmFzc2VtYmx5LnYxLkpv",
-            "aW5NZXRob2RSDmpvaW5NZXRob2RIaW50EkQKE2luc2VydGlvbl9heGlzX2hp",
-            "bnQYDCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUhFpbnNlcnRpb25BeGlz",
-            "SGludBJMChdwcmVmZXJyZWRfYXBwcm9hY2hfaGludBgNIAEoCzIULmdlb21l",
-            "dHJ5LnYxLlZlY3RvcjNSFXByZWZlcnJlZEFwcHJvYWNoSGludBIaCghvcHRp",
-            "b25hbBgOIAEoCFIIb3B0aW9uYWwSPgoNYXBwbGljYWJpbGl0eRgPIAMoCzIY",
-            "LmFzc2VtYmx5LnYxLlZhcmlhbnRSdWxlUg1hcHBsaWNhYmlsaXR5EjUKBmN1",
-            "c3RvbRgQIAEoCzIdLmFzc2VtYmx5LnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1",
-            "c3RvbSJECg9QYXJ0RGVmaW5pdGlvbnMSMQoFaXRlbXMYASADKAsyGy5hc3Nl",
-            "bWJseS52MS5QYXJ0RGVmaW5pdGlvblIFaXRlbXMiSgoSUHJvZHVjdERlZmlu",
-            "aXRpb25zEjQKBWl0ZW1zGAEgAygLMh4uYXNzZW1ibHkudjEuUHJvZHVjdERl",
-            "ZmluaXRpb25SBWl0ZW1zKssCCghQYXJ0VHlwZRIZChVQQVJUX1RZUEVfVU5T",
-            "UEVDSUZJRUQQABIXChNQQVJUX1RZUEVfQ09NUE9ORU5UEAESFgoSUEFSVF9U",
-            "WVBFX0ZBU1RFTkVSEAISGQoVUEFSVF9UWVBFX1NVQkFTU0VNQkxZEAMSGAoU",
-            "UEFSVF9UWVBFX0NPTlNVTUFCTEUQBBITCg9QQVJUX1RZUEVfTEFCRUwQBRIX",
-            "ChNQQVJUX1RZUEVfUEFDS0FHSU5HEAYSEQoNUEFSVF9UWVBFX1BDQhAHEiIK",
-            "HlBBUlRfVFlQRV9FTEVDVFJPTklDX0NPTVBPTkVOVBAIEiIKHlBBUlRfVFlQ",
-            "RV9FTEVDVFJJQ0FMX0NPTVBPTkVOVBAJEhMKD1BBUlRfVFlQRV9DQUJMRRAK",
-            "EiAKHFBBUlRfVFlQRV9ESVNQRU5TRURfTUFURVJJQUwQCyqWAQoITm9kZUtp",
-            "bmQSGQoVTk9ERV9LSU5EX1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5EX0dS",
-            "T1VQEAESHQoZTk9ERV9LSU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5PREVf",
-            "S0lORF9TVUJBU1NFTUJMWV9PQ0NVUlJFTkNFEAMSFQoRTk9ERV9LSU5EX1BB",
-            "VFRFUk4QBCrTAQoKSm9pbk1ldGhvZBIbChdKT0lOX01FVEhPRF9VTlNQRUNJ",
-            "RklFRBAAEhQKEEpPSU5fTUVUSE9EX05PTkUQARIWChJKT0lOX01FVEhPRF9G",
-            "QVNURU4QAhIZChVKT0lOX01FVEhPRF9QUkVTU19GSVQQAxIYChRKT0lOX01F",
-            "VEhPRF9TTkFQX0ZJVBAEEhgKFEpPSU5fTUVUSE9EX0FESEVTSVZFEAUSFAoQ",
-            "Sk9JTl9NRVRIT0RfV0VMRBAGEhUKEUpPSU5fTUVUSE9EX1BMQUNFEAcqkQMK",
-            "EE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFURVJJQUxfQ0FURUdPUllfVU5TUEVD",
-            "SUZJRUQQABIbChdNQVRFUklBTF9DQVRFR09SWV9NRVRBTBABEh0KGU1BVEVS",
-            "SUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIfChtNQVRFUklBTF9DQVRFR09SWV9F",
-            "TEFTVE9NRVIQAxIfChtNQVRFUklBTF9DQVRFR09SWV9DT01QT1NJVEUQBBId",
-            "ChlNQVRFUklBTF9DQVRFR09SWV9DRVJBTUlDEAUSGwoXTUFURVJJQUxfQ0FU",
-            "RUdPUllfR0xBU1MQBhIaChZNQVRFUklBTF9DQVRFR09SWV9XT09EEAcSGgoW",
-            "TUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEisKJ01BVEVSSUFMX0NBVEVHT1JZ",
-            "X0VMRUNUUk9OSUNTX1NVQlNUUkFURRAJEh4KGk1BVEVSSUFMX0NBVEVHT1JZ",
-            "X0NIRU1JQ0FMEAoSGwoXTUFURVJJQUxfQ0FURUdPUllfT1RIRVIQY0KyAQoP",
-            "Y29tLmFzc2VtYmx5LnYxQgxQcm9kdWN0UHJvdG9QAVo7Z2l0aHViLmNvbS9j",
-            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fzc2VtYmx5L3YxO2Fzc2VtYmx5",
-            "djGiAgNBWFiqAhRNZXNzYWdlcy5Bc3NlbWJseS5WMcoCC0Fzc2VtYmx5XFYx",
-            "4gIXQXNzZW1ibHlcVjFcR1BCTWV0YWRhdGHqAgxBc3NlbWJseTo6VjFiBnBy",
-            "b3RvMw=="));
+            "aW5NZXRob2RSDmpvaW5NZXRob2RIaW50EkgKFWluc2VydGlvbl9vZmZzZXRf",
+            "aGludBgMIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSE2luc2VydGlvbk9m",
+            "ZnNldEhpbnQSRgoUYXBwcm9hY2hfb2Zmc2V0X2hpbnQYDSABKAsyFC5nZW9t",
+            "ZXRyeS52MS5WZWN0b3IzUhJhcHByb2FjaE9mZnNldEhpbnQSGgoIb3B0aW9u",
+            "YWwYDiABKAhSCG9wdGlvbmFsEj4KDWFwcGxpY2FiaWxpdHkYDyADKAsyGC5h",
+            "c3NlbWJseS52MS5WYXJpYW50UnVsZVINYXBwbGljYWJpbGl0eRI1CgZjdXN0",
+            "b20YECABKAsyHS5hc3NlbWJseS52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0",
+            "b20iRAoPUGFydERlZmluaXRpb25zEjEKBWl0ZW1zGAEgAygLMhsuYXNzZW1i",
+            "bHkudjEuUGFydERlZmluaXRpb25SBWl0ZW1zIkoKElByb2R1Y3REZWZpbml0",
+            "aW9ucxI0CgVpdGVtcxgBIAMoCzIeLmFzc2VtYmx5LnYxLlByb2R1Y3REZWZp",
+            "bml0aW9uUgVpdGVtcyrLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQ",
+            "RV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBB",
+            "UlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoT",
+            "UEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5Q",
+            "QVJUX1RZUEVfRUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVf",
+            "RUxFQ1RSSUNBTF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIg",
+            "ChxQQVJUX1RZUEVfRElTUEVOU0VEX01BVEVSSUFMEAsqlgEKCE5vZGVLaW5k",
+            "EhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9V",
+            "UBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJ",
+            "TkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRU",
+            "RVJOEAQq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJ",
+            "RUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFT",
+            "VEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRI",
+            "T0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpP",
+            "SU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHKpEDChBN",
+            "YXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lG",
+            "SUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklB",
+            "TF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxB",
+            "U1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZ",
+            "TUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVH",
+            "T1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1B",
+            "VEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9F",
+            "TEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9D",
+            "SEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKD2Nv",
+            "bS5hc3NlbWJseS52MUIMUHJvZHVjdFByb3RvUAFaO2dpdGh1Yi5jb20vY29i",
+            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hc3NlbWJseS92MTthc3NlbWJseXYx",
+            "ogIDQVhYqgIUTWVzc2FnZXMuQXNzZW1ibHkuVjHKAgtBc3NlbWJseVxWMeIC",
+            "F0Fzc2VtYmx5XFYxXEdQQk1ldGFkYXRh6gIMQXNzZW1ibHk6OlYxYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Assembly.V1.CommonReflection.Descriptor, global::Messages.Assembly.V1.VariantReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Assembly.V1.PartType), typeof(global::Messages.Assembly.V1.NodeKind), typeof(global::Messages.Assembly.V1.JoinMethod), typeof(global::Messages.Assembly.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -117,7 +117,7 @@ namespace Messages.Assembly.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartHandlingProfile), global::Messages.Assembly.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinition), global::Messages.Assembly.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinition), global::Messages.Assembly.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "VariantAxes", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssemblyNode), global::Messages.Assembly.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionAxisHint", "PreferredApproachHint", "Optional", "Applicability", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.AssemblyNode), global::Messages.Assembly.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionOffsetHint", "ApproachOffsetHint", "Optional", "Applicability", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.PartDefinitions), global::Messages.Assembly.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Assembly.V1.ProductDefinitions), global::Messages.Assembly.V1.ProductDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -2433,8 +2433,8 @@ namespace Messages.Assembly.V1 {
       sequenceHint_ = other.sequenceHint_;
       cadOccurrencePath_ = other.cadOccurrencePath_;
       joinMethodHint_ = other.joinMethodHint_;
-      insertionAxisHint_ = other.insertionAxisHint_ != null ? other.insertionAxisHint_.Clone() : null;
-      preferredApproachHint_ = other.preferredApproachHint_ != null ? other.preferredApproachHint_.Clone() : null;
+      insertionOffsetHint_ = other.insertionOffsetHint_ != null ? other.insertionOffsetHint_.Clone() : null;
+      approachOffsetHint_ = other.approachOffsetHint_ != null ? other.approachOffsetHint_.Clone() : null;
       optional_ = other.optional_;
       applicability_ = other.applicability_.Clone();
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
@@ -2528,6 +2528,9 @@ namespace Messages.Assembly.V1 {
     /// <summary>Field number for the "local_pose" field.</summary>
     public const int LocalPoseFieldNumber = 7;
     private global::Messages.Common.V1.Pose localPose_;
+    /// <summary>
+    /// final pose, in mm
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.Pose LocalPose {
@@ -2579,27 +2582,33 @@ namespace Messages.Assembly.V1 {
       }
     }
 
-    /// <summary>Field number for the "insertion_axis_hint" field.</summary>
-    public const int InsertionAxisHintFieldNumber = 12;
-    private global::Messages.Common.V1.Vector3 insertionAxisHint_;
+    /// <summary>Field number for the "insertion_offset_hint" field.</summary>
+    public const int InsertionOffsetHintFieldNumber = 12;
+    private global::Messages.Common.V1.Vector3 insertionOffsetHint_;
+    /// <summary>
+    /// Offset from final pose to pre-insertion pose, in mm
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 InsertionAxisHint {
-      get { return insertionAxisHint_; }
+    public global::Messages.Common.V1.Vector3 InsertionOffsetHint {
+      get { return insertionOffsetHint_; }
       set {
-        insertionAxisHint_ = value;
+        insertionOffsetHint_ = value;
       }
     }
 
-    /// <summary>Field number for the "preferred_approach_hint" field.</summary>
-    public const int PreferredApproachHintFieldNumber = 13;
-    private global::Messages.Common.V1.Vector3 preferredApproachHint_;
+    /// <summary>Field number for the "approach_offset_hint" field.</summary>
+    public const int ApproachOffsetHintFieldNumber = 13;
+    private global::Messages.Common.V1.Vector3 approachOffsetHint_;
+    /// <summary>
+    /// Offset from final pose to preferred approach pose, in mm
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 PreferredApproachHint {
-      get { return preferredApproachHint_; }
+    public global::Messages.Common.V1.Vector3 ApproachOffsetHint {
+      get { return approachOffsetHint_; }
       set {
-        preferredApproachHint_ = value;
+        approachOffsetHint_ = value;
       }
     }
 
@@ -2669,8 +2678,8 @@ namespace Messages.Assembly.V1 {
       if (SequenceHint != other.SequenceHint) return false;
       if (CadOccurrencePath != other.CadOccurrencePath) return false;
       if (JoinMethodHint != other.JoinMethodHint) return false;
-      if (!object.Equals(InsertionAxisHint, other.InsertionAxisHint)) return false;
-      if (!object.Equals(PreferredApproachHint, other.PreferredApproachHint)) return false;
+      if (!object.Equals(InsertionOffsetHint, other.InsertionOffsetHint)) return false;
+      if (!object.Equals(ApproachOffsetHint, other.ApproachOffsetHint)) return false;
       if (Optional != other.Optional) return false;
       if(!applicability_.Equals(other.applicability_)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
@@ -2691,8 +2700,8 @@ namespace Messages.Assembly.V1 {
       if (SequenceHint != 0) hash ^= SequenceHint.GetHashCode();
       if (CadOccurrencePath.Length != 0) hash ^= CadOccurrencePath.GetHashCode();
       if (JoinMethodHint != global::Messages.Assembly.V1.JoinMethod.Unspecified) hash ^= JoinMethodHint.GetHashCode();
-      if (insertionAxisHint_ != null) hash ^= InsertionAxisHint.GetHashCode();
-      if (preferredApproachHint_ != null) hash ^= PreferredApproachHint.GetHashCode();
+      if (insertionOffsetHint_ != null) hash ^= InsertionOffsetHint.GetHashCode();
+      if (approachOffsetHint_ != null) hash ^= ApproachOffsetHint.GetHashCode();
       if (Optional != false) hash ^= Optional.GetHashCode();
       hash ^= applicability_.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
@@ -2754,13 +2763,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) JoinMethodHint);
       }
-      if (insertionAxisHint_ != null) {
+      if (insertionOffsetHint_ != null) {
         output.WriteRawTag(98);
-        output.WriteMessage(InsertionAxisHint);
+        output.WriteMessage(InsertionOffsetHint);
       }
-      if (preferredApproachHint_ != null) {
+      if (approachOffsetHint_ != null) {
         output.WriteRawTag(106);
-        output.WriteMessage(PreferredApproachHint);
+        output.WriteMessage(ApproachOffsetHint);
       }
       if (Optional != false) {
         output.WriteRawTag(112);
@@ -2821,13 +2830,13 @@ namespace Messages.Assembly.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) JoinMethodHint);
       }
-      if (insertionAxisHint_ != null) {
+      if (insertionOffsetHint_ != null) {
         output.WriteRawTag(98);
-        output.WriteMessage(InsertionAxisHint);
+        output.WriteMessage(InsertionOffsetHint);
       }
-      if (preferredApproachHint_ != null) {
+      if (approachOffsetHint_ != null) {
         output.WriteRawTag(106);
-        output.WriteMessage(PreferredApproachHint);
+        output.WriteMessage(ApproachOffsetHint);
       }
       if (Optional != false) {
         output.WriteRawTag(112);
@@ -2878,11 +2887,11 @@ namespace Messages.Assembly.V1 {
       if (JoinMethodHint != global::Messages.Assembly.V1.JoinMethod.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) JoinMethodHint);
       }
-      if (insertionAxisHint_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InsertionAxisHint);
+      if (insertionOffsetHint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InsertionOffsetHint);
       }
-      if (preferredApproachHint_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PreferredApproachHint);
+      if (approachOffsetHint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ApproachOffsetHint);
       }
       if (Optional != false) {
         size += 1 + 1;
@@ -2936,17 +2945,17 @@ namespace Messages.Assembly.V1 {
       if (other.JoinMethodHint != global::Messages.Assembly.V1.JoinMethod.Unspecified) {
         JoinMethodHint = other.JoinMethodHint;
       }
-      if (other.insertionAxisHint_ != null) {
-        if (insertionAxisHint_ == null) {
-          InsertionAxisHint = new global::Messages.Common.V1.Vector3();
+      if (other.insertionOffsetHint_ != null) {
+        if (insertionOffsetHint_ == null) {
+          InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
         }
-        InsertionAxisHint.MergeFrom(other.InsertionAxisHint);
+        InsertionOffsetHint.MergeFrom(other.InsertionOffsetHint);
       }
-      if (other.preferredApproachHint_ != null) {
-        if (preferredApproachHint_ == null) {
-          PreferredApproachHint = new global::Messages.Common.V1.Vector3();
+      if (other.approachOffsetHint_ != null) {
+        if (approachOffsetHint_ == null) {
+          ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
         }
-        PreferredApproachHint.MergeFrom(other.PreferredApproachHint);
+        ApproachOffsetHint.MergeFrom(other.ApproachOffsetHint);
       }
       if (other.Optional != false) {
         Optional = other.Optional;
@@ -3021,17 +3030,17 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 98: {
-            if (insertionAxisHint_ == null) {
-              InsertionAxisHint = new global::Messages.Common.V1.Vector3();
+            if (insertionOffsetHint_ == null) {
+              InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(InsertionAxisHint);
+            input.ReadMessage(InsertionOffsetHint);
             break;
           }
           case 106: {
-            if (preferredApproachHint_ == null) {
-              PreferredApproachHint = new global::Messages.Common.V1.Vector3();
+            if (approachOffsetHint_ == null) {
+              ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(PreferredApproachHint);
+            input.ReadMessage(ApproachOffsetHint);
             break;
           }
           case 112: {
@@ -3112,17 +3121,17 @@ namespace Messages.Assembly.V1 {
             break;
           }
           case 98: {
-            if (insertionAxisHint_ == null) {
-              InsertionAxisHint = new global::Messages.Common.V1.Vector3();
+            if (insertionOffsetHint_ == null) {
+              InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(InsertionAxisHint);
+            input.ReadMessage(InsertionOffsetHint);
             break;
           }
           case 106: {
-            if (preferredApproachHint_ == null) {
-              PreferredApproachHint = new global::Messages.Common.V1.Vector3();
+            if (approachOffsetHint_ == null) {
+              ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(PreferredApproachHint);
+            input.ReadMessage(ApproachOffsetHint);
             break;
           }
           case 112: {

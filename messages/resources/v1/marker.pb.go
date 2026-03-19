@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: ar/v1/marker.proto
+// source: resources/v1/marker.proto
 
-package arv1
+package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
@@ -53,11 +53,11 @@ func (x MarkerType) String() string {
 }
 
 func (MarkerType) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_marker_proto_enumTypes[0].Descriptor()
+	return file_resources_v1_marker_proto_enumTypes[0].Descriptor()
 }
 
 func (MarkerType) Type() protoreflect.EnumType {
-	return &file_ar_v1_marker_proto_enumTypes[0]
+	return &file_resources_v1_marker_proto_enumTypes[0]
 }
 
 func (x MarkerType) Number() protoreflect.EnumNumber {
@@ -66,37 +66,37 @@ func (x MarkerType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MarkerType.Descriptor instead.
 func (MarkerType) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_marker_proto_rawDescGZIP(), []int{0}
+	return file_resources_v1_marker_proto_rawDescGZIP(), []int{0}
 }
 
-type MarkerMessage struct {
+type MarkerDefinition struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	MarkerText         string                 `protobuf:"bytes,5,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
-	Type               MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.MarkerType" json:"type,omitempty"`
+	Type               MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=resources.v1.MarkerType" json:"type,omitempty"`
 	ConfirmInstantiate bool                   `protobuf:"varint,7,opt,name=confirm_instantiate,json=confirmInstantiate,proto3" json:"confirm_instantiate,omitempty"` // If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
-func (x *MarkerMessage) Reset() {
-	*x = MarkerMessage{}
-	mi := &file_ar_v1_marker_proto_msgTypes[0]
+func (x *MarkerDefinition) Reset() {
+	*x = MarkerDefinition{}
+	mi := &file_resources_v1_marker_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *MarkerMessage) String() string {
+func (x *MarkerDefinition) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MarkerMessage) ProtoMessage() {}
+func (*MarkerDefinition) ProtoMessage() {}
 
-func (x *MarkerMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_marker_proto_msgTypes[0]
+func (x *MarkerDefinition) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_marker_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,54 +107,54 @@ func (x *MarkerMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MarkerMessage.ProtoReflect.Descriptor instead.
-func (*MarkerMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_marker_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use MarkerDefinition.ProtoReflect.Descriptor instead.
+func (*MarkerDefinition) Descriptor() ([]byte, []int) {
+	return file_resources_v1_marker_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MarkerMessage) GetId() string {
+func (x *MarkerDefinition) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *MarkerMessage) GetName() string {
+func (x *MarkerDefinition) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *MarkerMessage) GetIcon() string {
+func (x *MarkerDefinition) GetIcon() string {
 	if x != nil {
 		return x.Icon
 	}
 	return ""
 }
 
-func (x *MarkerMessage) GetDescription() string {
+func (x *MarkerDefinition) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *MarkerMessage) GetMarkerText() string {
+func (x *MarkerDefinition) GetMarkerText() string {
 	if x != nil {
 		return x.MarkerText
 	}
 	return ""
 }
 
-func (x *MarkerMessage) GetType() MarkerType {
+func (x *MarkerDefinition) GetType() MarkerType {
 	if x != nil {
 		return x.Type
 	}
 	return MarkerType_MARKER_TYPE_UNSPECIFIED
 }
 
-func (x *MarkerMessage) GetConfirmInstantiate() bool {
+func (x *MarkerDefinition) GetConfirmInstantiate() bool {
 	if x != nil {
 		return x.ConfirmInstantiate
 	}
@@ -163,14 +163,14 @@ func (x *MarkerMessage) GetConfirmInstantiate() bool {
 
 type MarkerMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Markers       []*MarkerMessage       `protobuf:"bytes,1,rep,name=markers,proto3" json:"markers,omitempty"`
+	Markers       []*MarkerDefinition    `protobuf:"bytes,1,rep,name=markers,proto3" json:"markers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *MarkerMessages) Reset() {
 	*x = MarkerMessages{}
-	mi := &file_ar_v1_marker_proto_msgTypes[1]
+	mi := &file_resources_v1_marker_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -182,7 +182,7 @@ func (x *MarkerMessages) String() string {
 func (*MarkerMessages) ProtoMessage() {}
 
 func (x *MarkerMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_marker_proto_msgTypes[1]
+	mi := &file_resources_v1_marker_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -195,61 +195,61 @@ func (x *MarkerMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkerMessages.ProtoReflect.Descriptor instead.
 func (*MarkerMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_marker_proto_rawDescGZIP(), []int{1}
+	return file_resources_v1_marker_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *MarkerMessages) GetMarkers() []*MarkerMessage {
+func (x *MarkerMessages) GetMarkers() []*MarkerDefinition {
 	if x != nil {
 		return x.Markers
 	}
 	return nil
 }
 
-var File_ar_v1_marker_proto protoreflect.FileDescriptor
+var File_resources_v1_marker_proto protoreflect.FileDescriptor
 
-const file_ar_v1_marker_proto_rawDesc = "" +
+const file_resources_v1_marker_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/marker.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8d\x02\n" +
-	"\rMarkerMessage\x12\x0e\n" +
+	"\x19resources/v1/marker.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x02\n" +
+	"\x10MarkerDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\vmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
-	"markerText\x122\n" +
-	"\x04type\x18\x06 \x01(\x0e2\x11.ar.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
-	"\x13confirm_instantiate\x18\a \x01(\bR\x12confirmInstantiate\"\xa8\x01\n" +
-	"\x0eMarkerMessages\x12\x95\x01\n" +
-	"\amarkers\x18\x01 \x03(\v2\x14.ar.v1.MarkerMessageBe\xbaHb\xba\x01_\n" +
+	"markerText\x129\n" +
+	"\x04type\x18\x06 \x01(\x0e2\x18.resources.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
+	"\x13confirm_instantiate\x18\a \x01(\bR\x12confirmInstantiate\"\xb2\x01\n" +
+	"\x0eMarkerMessages\x12\x9f\x01\n" +
+	"\amarkers\x18\x01 \x03(\v2\x1e.resources.v1.MarkerDefinitionBe\xbaHb\xba\x01_\n" +
 	"\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\amarkers*B\n" +
 	"\n" +
 	"MarkerType\x12\x1b\n" +
 	"\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
-	"\x13MARKER_TYPE_QR_CODE\x10\x01B\x87\x01\n" +
-	"\tcom.ar.v1B\vMarkerProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x13MARKER_TYPE_QR_CODE\x10\x01B\xb8\x01\n" +
+	"\x10com.resources.v1B\vMarkerProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
-	file_ar_v1_marker_proto_rawDescOnce sync.Once
-	file_ar_v1_marker_proto_rawDescData []byte
+	file_resources_v1_marker_proto_rawDescOnce sync.Once
+	file_resources_v1_marker_proto_rawDescData []byte
 )
 
-func file_ar_v1_marker_proto_rawDescGZIP() []byte {
-	file_ar_v1_marker_proto_rawDescOnce.Do(func() {
-		file_ar_v1_marker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_ar_v1_marker_proto_rawDesc), len(file_ar_v1_marker_proto_rawDesc)))
+func file_resources_v1_marker_proto_rawDescGZIP() []byte {
+	file_resources_v1_marker_proto_rawDescOnce.Do(func() {
+		file_resources_v1_marker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_resources_v1_marker_proto_rawDesc), len(file_resources_v1_marker_proto_rawDesc)))
 	})
-	return file_ar_v1_marker_proto_rawDescData
+	return file_resources_v1_marker_proto_rawDescData
 }
 
-var file_ar_v1_marker_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_marker_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_ar_v1_marker_proto_goTypes = []any{
-	(MarkerType)(0),        // 0: ar.v1.MarkerType
-	(*MarkerMessage)(nil),  // 1: ar.v1.MarkerMessage
-	(*MarkerMessages)(nil), // 2: ar.v1.MarkerMessages
+var file_resources_v1_marker_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_resources_v1_marker_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_resources_v1_marker_proto_goTypes = []any{
+	(MarkerType)(0),          // 0: resources.v1.MarkerType
+	(*MarkerDefinition)(nil), // 1: resources.v1.MarkerDefinition
+	(*MarkerMessages)(nil),   // 2: resources.v1.MarkerMessages
 }
-var file_ar_v1_marker_proto_depIdxs = []int32{
-	0, // 0: ar.v1.MarkerMessage.type:type_name -> ar.v1.MarkerType
-	1, // 1: ar.v1.MarkerMessages.markers:type_name -> ar.v1.MarkerMessage
+var file_resources_v1_marker_proto_depIdxs = []int32{
+	0, // 0: resources.v1.MarkerDefinition.type:type_name -> resources.v1.MarkerType
+	1, // 1: resources.v1.MarkerMessages.markers:type_name -> resources.v1.MarkerDefinition
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -257,27 +257,27 @@ var file_ar_v1_marker_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_ar_v1_marker_proto_init() }
-func file_ar_v1_marker_proto_init() {
-	if File_ar_v1_marker_proto != nil {
+func init() { file_resources_v1_marker_proto_init() }
+func file_resources_v1_marker_proto_init() {
+	if File_resources_v1_marker_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_marker_proto_rawDesc), len(file_ar_v1_marker_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_marker_proto_rawDesc), len(file_resources_v1_marker_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_ar_v1_marker_proto_goTypes,
-		DependencyIndexes: file_ar_v1_marker_proto_depIdxs,
-		EnumInfos:         file_ar_v1_marker_proto_enumTypes,
-		MessageInfos:      file_ar_v1_marker_proto_msgTypes,
+		GoTypes:           file_resources_v1_marker_proto_goTypes,
+		DependencyIndexes: file_resources_v1_marker_proto_depIdxs,
+		EnumInfos:         file_resources_v1_marker_proto_enumTypes,
+		MessageInfos:      file_resources_v1_marker_proto_msgTypes,
 	}.Build()
-	File_ar_v1_marker_proto = out.File
-	file_ar_v1_marker_proto_goTypes = nil
-	file_ar_v1_marker_proto_depIdxs = nil
+	File_resources_v1_marker_proto = out.File
+	file_resources_v1_marker_proto_goTypes = nil
+	file_resources_v1_marker_proto_depIdxs = nil
 }

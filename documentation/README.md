@@ -155,12 +155,6 @@
     - [MappingMessages](#ar-v1-MappingMessages)
     - [RobotMapping](#ar-v1-RobotMapping)
   
-- [ar/v1/marker.proto](#ar_v1_marker-proto)
-    - [MarkerMessage](#ar-v1-MarkerMessage)
-    - [MarkerMessages](#ar-v1-MarkerMessages)
-  
-    - [MarkerType](#ar-v1-MarkerType)
-  
 - [ar/v1/robot.proto](#ar_v1_robot-proto)
     - [RobotMessage](#ar-v1-RobotMessage)
     - [RobotMessages](#ar-v1-RobotMessages)
@@ -443,6 +437,12 @@
     - [ToolActor](#plm-v1-ToolActor)
     - [ToolProperty](#plm-v1-ToolProperty)
     - [ToolType](#plm-v1-ToolType)
+  
+- [resources/v1/marker.proto](#resources_v1_marker-proto)
+    - [MarkerDefinition](#resources-v1-MarkerDefinition)
+    - [MarkerMessages](#resources-v1-MarkerMessages)
+  
+    - [MarkerType](#resources-v1-MarkerType)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -2445,70 +2445,6 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_marker-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/marker.proto
-
-
-
-<a name="ar-v1-MarkerMessage"></a>
-
-### MarkerMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
-| type | [MarkerType](#ar-v1-MarkerType) |  |  |
-| confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
-
-
-
-
-
-
-<a name="ar-v1-MarkerMessages"></a>
-
-### MarkerMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| markers | [MarkerMessage](#ar-v1-MarkerMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-MarkerType"></a>
-
-### MarkerType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MARKER_TYPE_UNSPECIFIED | 0 |  |
-| MARKER_TYPE_QR_CODE | 1 |  |
-
 
  
 
@@ -4710,12 +4646,12 @@ Thus the following must be evaluated:
 | kind | [NodeKind](#assembly-v1-NodeKind) |  |  |
 | part_definition_id | [string](#string) |  |  |
 | override_model_id | [string](#string) |  |  |
-| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
 | sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
 | cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
 | join_method_hint | [JoinMethod](#assembly-v1-JoinMethod) |  |  |
-| insertion_axis_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| preferred_approach_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
+| approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
 | optional | [bool](#bool) |  |  |
 | applicability | [VariantRule](#assembly-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
 | custom | [CustomProperties](#assembly-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
@@ -6597,6 +6533,70 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 | TOOL_TYPE_ABRASIVE | 100 |  |
 | TOOL_TYPE_SAFETY | 110 |  |
 | TOOL_TYPE_ELECTRONICS | 120 | TODO: Cleaning, lubricating? |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_marker-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/marker.proto
+
+
+
+<a name="resources-v1-MarkerDefinition"></a>
+
+### MarkerDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
+| type | [MarkerType](#resources-v1-MarkerType) |  |  |
+| confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
+
+
+
+
+
+
+<a name="resources-v1-MarkerMessages"></a>
+
+### MarkerMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markers | [MarkerDefinition](#resources-v1-MarkerDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-MarkerType"></a>
+
+### MarkerType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MARKER_TYPE_UNSPECIFIED | 0 |  |
+| MARKER_TYPE_QR_CODE | 1 |  |
 
 
  

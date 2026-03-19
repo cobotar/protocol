@@ -778,18 +778,18 @@ type AssemblyNode struct {
 	Kind             NodeKind               `protobuf:"varint,4,opt,name=kind,proto3,enum=assembly.v1.NodeKind" json:"kind,omitempty"`
 	PartDefinitionId string                 `protobuf:"bytes,5,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"`
 	OverrideModelId  string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
-	LocalPose        *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"`
+	LocalPose        *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"` // final pose, in mm
 	// repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
-	SequenceHint          int32             `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
-	CadOccurrencePath     string            `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
-	JoinMethodHint        JoinMethod        `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=assembly.v1.JoinMethod" json:"join_method_hint,omitempty"`
-	InsertionAxisHint     *v1.Vector3       `protobuf:"bytes,12,opt,name=insertion_axis_hint,json=insertionAxisHint,proto3" json:"insertion_axis_hint,omitempty"`
-	PreferredApproachHint *v1.Vector3       `protobuf:"bytes,13,opt,name=preferred_approach_hint,json=preferredApproachHint,proto3" json:"preferred_approach_hint,omitempty"`
-	Optional              bool              `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
-	Applicability         []*VariantRule    `protobuf:"bytes,15,rep,name=applicability,proto3" json:"applicability,omitempty"` // Applies if any rule matches. Empty means always applicable.
-	Custom                *CustomProperties `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`               // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	SequenceHint        int32             `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
+	CadOccurrencePath   string            `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
+	JoinMethodHint      JoinMethod        `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=assembly.v1.JoinMethod" json:"join_method_hint,omitempty"`
+	InsertionOffsetHint *v1.Vector3       `protobuf:"bytes,12,opt,name=insertion_offset_hint,json=insertionOffsetHint,proto3" json:"insertion_offset_hint,omitempty"` // Offset from final pose to pre-insertion pose, in mm
+	ApproachOffsetHint  *v1.Vector3       `protobuf:"bytes,13,opt,name=approach_offset_hint,json=approachOffsetHint,proto3" json:"approach_offset_hint,omitempty"`    // Offset from final pose to preferred approach pose, in mm
+	Optional            bool              `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
+	Applicability       []*VariantRule    `protobuf:"bytes,15,rep,name=applicability,proto3" json:"applicability,omitempty"` // Applies if any rule matches. Empty means always applicable.
+	Custom              *CustomProperties `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`               // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *AssemblyNode) Reset() {
@@ -892,16 +892,16 @@ func (x *AssemblyNode) GetJoinMethodHint() JoinMethod {
 	return JoinMethod_JOIN_METHOD_UNSPECIFIED
 }
 
-func (x *AssemblyNode) GetInsertionAxisHint() *v1.Vector3 {
+func (x *AssemblyNode) GetInsertionOffsetHint() *v1.Vector3 {
 	if x != nil {
-		return x.InsertionAxisHint
+		return x.InsertionOffsetHint
 	}
 	return nil
 }
 
-func (x *AssemblyNode) GetPreferredApproachHint() *v1.Vector3 {
+func (x *AssemblyNode) GetApproachOffsetHint() *v1.Vector3 {
 	if x != nil {
-		return x.PreferredApproachHint
+		return x.ApproachOffsetHint
 	}
 	return nil
 }
@@ -1064,7 +1064,7 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"rootNodeId\x12/\n" +
 	"\x05nodes\x18\a \x03(\v2\x19.assembly.v1.AssemblyNodeR\x05nodes\x12O\n" +
 	"\x13external_references\x18\b \x03(\v2\x1e.assembly.v1.ExternalReferenceR\x12externalReferences\x125\n" +
-	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xce\x05\n" +
+	"\x06custom\x18\t \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"\xcc\x05\n" +
 	"\fAssemblyNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
@@ -1077,9 +1077,9 @@ const file_assembly_v1_product_proto_rawDesc = "" +
 	"\rsequence_hint\x18\t \x01(\x05R\fsequenceHint\x12.\n" +
 	"\x13cad_occurrence_path\x18\n" +
 	" \x01(\tR\x11cadOccurrencePath\x12A\n" +
-	"\x10join_method_hint\x18\v \x01(\x0e2\x17.assembly.v1.JoinMethodR\x0ejoinMethodHint\x12D\n" +
-	"\x13insertion_axis_hint\x18\f \x01(\v2\x14.geometry.v1.Vector3R\x11insertionAxisHint\x12L\n" +
-	"\x17preferred_approach_hint\x18\r \x01(\v2\x14.geometry.v1.Vector3R\x15preferredApproachHint\x12\x1a\n" +
+	"\x10join_method_hint\x18\v \x01(\x0e2\x17.assembly.v1.JoinMethodR\x0ejoinMethodHint\x12H\n" +
+	"\x15insertion_offset_hint\x18\f \x01(\v2\x14.geometry.v1.Vector3R\x13insertionOffsetHint\x12F\n" +
+	"\x14approach_offset_hint\x18\r \x01(\v2\x14.geometry.v1.Vector3R\x12approachOffsetHint\x12\x1a\n" +
 	"\boptional\x18\x0e \x01(\bR\boptional\x12>\n" +
 	"\rapplicability\x18\x0f \x03(\v2\x18.assembly.v1.VariantRuleR\rapplicability\x125\n" +
 	"\x06custom\x18\x10 \x01(\v2\x1d.assembly.v1.CustomPropertiesR\x06custom\"D\n" +
@@ -1184,8 +1184,8 @@ var file_assembly_v1_product_proto_depIdxs = []int32{
 	1,  // 12: assembly.v1.AssemblyNode.kind:type_name -> assembly.v1.NodeKind
 	16, // 13: assembly.v1.AssemblyNode.local_pose:type_name -> geometry.v1.Pose
 	2,  // 14: assembly.v1.AssemblyNode.join_method_hint:type_name -> assembly.v1.JoinMethod
-	17, // 15: assembly.v1.AssemblyNode.insertion_axis_hint:type_name -> geometry.v1.Vector3
-	17, // 16: assembly.v1.AssemblyNode.preferred_approach_hint:type_name -> geometry.v1.Vector3
+	17, // 15: assembly.v1.AssemblyNode.insertion_offset_hint:type_name -> geometry.v1.Vector3
+	17, // 16: assembly.v1.AssemblyNode.approach_offset_hint:type_name -> geometry.v1.Vector3
 	18, // 17: assembly.v1.AssemblyNode.applicability:type_name -> assembly.v1.VariantRule
 	14, // 18: assembly.v1.AssemblyNode.custom:type_name -> assembly.v1.CustomProperties
 	7,  // 19: assembly.v1.PartDefinitions.items:type_name -> assembly.v1.PartDefinition

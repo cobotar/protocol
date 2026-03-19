@@ -16,7 +16,7 @@ class MarkerType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 MARKER_TYPE_UNSPECIFIED: MarkerType
 MARKER_TYPE_QR_CODE: MarkerType
 
-class MarkerMessage(_message.Message):
+class MarkerDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "marker_text", "type", "confirm_instantiate")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -37,5 +37,5 @@ class MarkerMessage(_message.Message):
 class MarkerMessages(_message.Message):
     __slots__ = ("markers",)
     MARKERS_FIELD_NUMBER: _ClassVar[int]
-    markers: _containers.RepeatedCompositeFieldContainer[MarkerMessage]
-    def __init__(self, markers: _Optional[_Iterable[_Union[MarkerMessage, _Mapping]]] = ...) -> None: ...
+    markers: _containers.RepeatedCompositeFieldContainer[MarkerDefinition]
+    def __init__(self, markers: _Optional[_Iterable[_Union[MarkerDefinition, _Mapping]]] = ...) -> None: ...

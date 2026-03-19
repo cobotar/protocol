@@ -188,7 +188,7 @@ class ProductDefinition(_message.Message):
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., variant_axes: _Optional[_Iterable[_Union[_variant_pb2.VariantAxis, _Mapping]]] = ..., root_node_id: _Optional[str] = ..., nodes: _Optional[_Iterable[_Union[AssemblyNode, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_common_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class AssemblyNode(_message.Message):
-    __slots__ = ("id", "name", "parent_node_id", "kind", "part_definition_id", "override_model_id", "local_pose", "sequence_hint", "cad_occurrence_path", "join_method_hint", "insertion_axis_hint", "preferred_approach_hint", "optional", "applicability", "custom")
+    __slots__ = ("id", "name", "parent_node_id", "kind", "part_definition_id", "override_model_id", "local_pose", "sequence_hint", "cad_occurrence_path", "join_method_hint", "insertion_offset_hint", "approach_offset_hint", "optional", "applicability", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PARENT_NODE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -199,8 +199,8 @@ class AssemblyNode(_message.Message):
     SEQUENCE_HINT_FIELD_NUMBER: _ClassVar[int]
     CAD_OCCURRENCE_PATH_FIELD_NUMBER: _ClassVar[int]
     JOIN_METHOD_HINT_FIELD_NUMBER: _ClassVar[int]
-    INSERTION_AXIS_HINT_FIELD_NUMBER: _ClassVar[int]
-    PREFERRED_APPROACH_HINT_FIELD_NUMBER: _ClassVar[int]
+    INSERTION_OFFSET_HINT_FIELD_NUMBER: _ClassVar[int]
+    APPROACH_OFFSET_HINT_FIELD_NUMBER: _ClassVar[int]
     OPTIONAL_FIELD_NUMBER: _ClassVar[int]
     APPLICABILITY_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
@@ -214,12 +214,12 @@ class AssemblyNode(_message.Message):
     sequence_hint: int
     cad_occurrence_path: str
     join_method_hint: JoinMethod
-    insertion_axis_hint: _vector3_pb2.Vector3
-    preferred_approach_hint: _vector3_pb2.Vector3
+    insertion_offset_hint: _vector3_pb2.Vector3
+    approach_offset_hint: _vector3_pb2.Vector3
     optional: bool
     applicability: _containers.RepeatedCompositeFieldContainer[_variant_pb2.VariantRule]
     custom: _common_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_axis_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., preferred_approach_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Iterable[_Union[_variant_pb2.VariantRule, _Mapping]]] = ..., custom: _Optional[_Union[_common_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class PartDefinitions(_message.Message):
     __slots__ = ("items",)

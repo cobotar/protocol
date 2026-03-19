@@ -135,13 +135,13 @@ message AssemblyNode {
   NodeKind kind = 4;
   string part_definition_id = 5;
   string override_model_id = 6;
-  geometry.v1.Pose local_pose = 7;
+  geometry.v1.Pose local_pose = 7; // final pose, in mm
   // repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
   int32 sequence_hint = 9;
   string cad_occurrence_path = 10; // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
   JoinMethod join_method_hint = 11;
-  geometry.v1.Vector3 insertion_axis_hint = 12;
-  geometry.v1.Vector3 preferred_approach_hint = 13;
+  geometry.v1.Vector3 insertion_offset_hint = 12; // Offset from final pose to pre-insertion pose, in mm
+  geometry.v1.Vector3 approach_offset_hint = 13; // Offset from final pose to preferred approach pose, in mm
   bool optional = 14;
   repeated VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
   CustomProperties custom = 16;
