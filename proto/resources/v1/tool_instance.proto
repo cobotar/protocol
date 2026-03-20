@@ -1,23 +1,31 @@
 syntax = "proto3";
 package resources.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "geometry/v1/pose.proto";
 import "google/protobuf/timestamp.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 
 message ToolInstance {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  string tool_definition_id = 5;
+  string tool_definition_id = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.tool_id_component) = true
+  ];
   string serial_number = 6;
-  string station_id = 7;
-  common.v1.ResourceStatus status = 8;
+  string station_id = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.station_id_component) = true
+  ];
+  common.v1.ResourceStatus status = 8 [(buf.validate.field).enum.defined_only = true];
   bool calibrated = 9;
   google.protobuf.Timestamp calibration_valid_until = 10;
   geometry.v1.LocalizedPose pose = 11;

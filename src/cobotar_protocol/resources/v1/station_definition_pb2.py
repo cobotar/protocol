@@ -22,11 +22,13 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%resources/v1/station_definition.proto\x12\x0cresources.v1\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\"\x90\x04\n\x11StationDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12-\n\x04type\x18\x05 \x01(\x0e\x32\x19.resources.v1.StationTypeR\x04type\x12*\n\x11tool_instance_ids\x18\x06 \x03(\tR\x0ftoolInstanceIds\x12\x34\n\x16\x63ontainer_instance_ids\x18\x07 \x03(\tR\x14\x63ontainerInstanceIds\x12,\n\x12robot_instance_ids\x18\x08 \x03(\tR\x10robotInstanceIds\x12,\n\x12\x61sset_instance_ids\x18\t \x03(\tR\x10\x61ssetInstanceIds\x12.\n\x13marker_instance_ids\x18\n \x03(\tR\x11markerInstanceIds\x12\x1d\n\nworker_ids\x18\x0b \x03(\tR\tworkerIds\x12\x30\n\x05\x66rame\x18\x0c \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x05\x66rame\x12\x33\n\x06\x63ustom\x18\r \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"K\n\x12StationDefinitions\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n\x0bStationType\x12\x1c\n\x18STATION_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14STATION_TYPE_STORAGE\x10\x01\x12\x1f\n\x1bSTATION_TYPE_MANUAL_STATION\x10\x02\x12\"\n\x1eSTATION_TYPE_AUTOMATIC_STATION\x10\x03\x12\x1f\n\x1bSTATION_TYPE_HYBRID_STATION\x10\x04\x42\xc3\x01\n\x10\x63om.resources.v1B\x16StationDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%resources/v1/station_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa5\x04\n\x11StationDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x37\n\x04type\x18\x05 \x01(\x0e\x32\x19.resources.v1.StationTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x12*\n\x11tool_instance_ids\x18\x06 \x03(\tR\x0ftoolInstanceIds\x12\x34\n\x16\x63ontainer_instance_ids\x18\x07 \x03(\tR\x14\x63ontainerInstanceIds\x12,\n\x12robot_instance_ids\x18\x08 \x03(\tR\x10robotInstanceIds\x12,\n\x12\x61sset_instance_ids\x18\t \x03(\tR\x10\x61ssetInstanceIds\x12.\n\x13marker_instance_ids\x18\n \x03(\tR\x11markerInstanceIds\x12\x1d\n\nworker_ids\x18\x0b \x03(\tR\tworkerIds\x12\x30\n\x05\x66rame\x18\x0c \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x05\x66rame\x12\x33\n\x06\x63ustom\x18\r \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"K\n\x12StationDefinitions\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n\x0bStationType\x12\x1c\n\x18STATION_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14STATION_TYPE_STORAGE\x10\x01\x12\x1f\n\x1bSTATION_TYPE_MANUAL_STATION\x10\x02\x12\"\n\x1eSTATION_TYPE_AUTOMATIC_STATION\x10\x03\x12\x1f\n\x1bSTATION_TYPE_HYBRID_STATION\x10\x04\x42\xc3\x01\n\x10\x63om.resources.v1B\x16StationDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +36,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.station_defini
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\026StationDefinitionProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
-  _globals['_STATIONTYPE']._serialized_start=723
-  _globals['_STATIONTYPE']._serialized_end=894
-  _globals['_STATIONDEFINITION']._serialized_start=115
-  _globals['_STATIONDEFINITION']._serialized_end=643
-  _globals['_STATIONDEFINITIONS']._serialized_start=645
-  _globals['_STATIONDEFINITIONS']._serialized_end=720
+  _globals['_STATIONDEFINITION'].fields_by_name['name']._loaded_options = None
+  _globals['_STATIONDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_STATIONDEFINITION'].fields_by_name['type']._loaded_options = None
+  _globals['_STATIONDEFINITION'].fields_by_name['type']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_STATIONTYPE']._serialized_start=818
+  _globals['_STATIONTYPE']._serialized_end=989
+  _globals['_STATIONDEFINITION']._serialized_start=189
+  _globals['_STATIONDEFINITION']._serialized_end=738
+  _globals['_STATIONDEFINITIONS']._serialized_start=740
+  _globals['_STATIONDEFINITIONS']._serialized_end=815
 # @@protoc_insertion_point(module_scope)

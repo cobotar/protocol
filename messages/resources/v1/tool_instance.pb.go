@@ -7,8 +7,10 @@
 package resourcesv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
 	v11 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -204,17 +206,17 @@ var File_resources_v1_tool_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_tool_instance_proto_rawDesc = "" +
 	"\n" +
-	" resources/v1/tool_instance.proto\x12\fresources.v1\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\x03\n" +
+	" resources/v1/tool_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x04\n" +
 	"\fToolInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12,\n" +
-	"\x12tool_definition_id\x18\x05 \x01(\tR\x10toolDefinitionId\x12#\n" +
-	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12\x1d\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12:\n" +
+	"\x12tool_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf1\x04\x01R\x10toolDefinitionId\x12#\n" +
+	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12+\n" +
 	"\n" +
-	"station_id\x18\a \x01(\tR\tstationId\x121\n" +
-	"\x06status\x18\b \x01(\x0e2\x19.common.v1.ResourceStatusR\x06status\x12\x1e\n" +
+	"station_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\tstationId\x12;\n" +
+	"\x06status\x18\b \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x1e\n" +
 	"\n" +
 	"calibrated\x18\t \x01(\bR\n" +
 	"calibrated\x12R\n" +

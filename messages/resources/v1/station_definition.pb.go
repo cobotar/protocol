@@ -7,8 +7,10 @@
 package resourcesv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -266,13 +268,13 @@ var File_resources_v1_station_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\n" +
-	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\"\x90\x04\n" +
+	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa5\x04\n" +
 	"\x11StationDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12-\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x19.resources.v1.StationTypeR\x04type\x12*\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x127\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x19.resources.v1.StationTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x12*\n" +
 	"\x11tool_instance_ids\x18\x06 \x03(\tR\x0ftoolInstanceIds\x124\n" +
 	"\x16container_instance_ids\x18\a \x03(\tR\x14containerInstanceIds\x12,\n" +
 	"\x12robot_instance_ids\x18\b \x03(\tR\x10robotInstanceIds\x12,\n" +

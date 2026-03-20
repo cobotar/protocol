@@ -4,6 +4,7 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
@@ -12,13 +13,14 @@ import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file resources/v1/tool_instance.proto.
  */
 export const file_resources_v1_tool_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxIuUCCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhoKEnRvb2xfZGVmaW5pdGlvbl9pZBgFIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEhIKCnN0YXRpb25faWQYByABKAkSKQoGc3RhdHVzGAggASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzEhIKCmNhbGlicmF0ZWQYCSABKAgSOwoXY2FsaWJyYXRpb25fdmFsaWRfdW50aWwYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEigKBHBvc2UYCyABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEisKBmN1c3RvbRgMIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIjoKDVRvb2xJbnN0YW5jZXMSKQoFaXRlbXMYASADKAsyGi5yZXNvdXJjZXMudjEuVG9vbEluc3RhbmNlQr4BChBjb20ucmVzb3VyY2VzLnYxQhFUb29sSW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_google_protobuf_timestamp]);
+  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxIpYDCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoSdG9vbF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBMDxBAESFQoNc2VyaWFsX251bWJlchgGIAEoCRIgCgpzdGF0aW9uX2lkGAcgASgJQgy6SAnIAQFyBNjxBAESMwoGc3RhdHVzGAggASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARISCgpjYWxpYnJhdGVkGAkgASgIEjsKF2NhbGlicmF0aW9uX3ZhbGlkX3VudGlsGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRwb3NlGAsgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YDCABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI6Cg1Ub29sSW5zdGFuY2VzEikKBWl0ZW1zGAEgAygLMhoucmVzb3VyY2VzLnYxLlRvb2xJbnN0YW5jZUK+AQoQY29tLnJlc291cmNlcy52MUIRVG9vbEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.ToolInstance

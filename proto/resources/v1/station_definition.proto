@@ -1,8 +1,10 @@
 syntax = "proto3";
 package resources.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
@@ -17,10 +19,10 @@ enum StationType {
 
 message StationDefinition {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
-  StationType type = 5;
+  StationType type = 5 [(buf.validate.field).enum.defined_only = true];
   repeated string tool_instance_ids = 6;
   repeated string container_instance_ids = 7;
   repeated string robot_instance_ids = 8;
