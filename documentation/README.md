@@ -37,6 +37,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -805,6 +806,7 @@ A simple pose consisting of a position and orientation
 | robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
 | station_id_component | bool | .buf.validate.StringRules | 10011 |  |
 | tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
 
  
 

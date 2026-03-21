@@ -21,6 +21,8 @@ PART_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 part_id_component: _descriptor.FieldDescriptor
 TOOL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 tool_id_component: _descriptor.FieldDescriptor
+TOOL_INSTANCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+tool_instance_id_component: _descriptor.FieldDescriptor
 MARKER_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 marker_id_component: _descriptor.FieldDescriptor
 FIXTURE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]

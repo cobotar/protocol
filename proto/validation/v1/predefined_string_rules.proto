@@ -58,6 +58,12 @@ extend buf.validate.StringRules {
     expression: "(this == '' || this.startsWith('tool-'))"
   }];
 
+  optional bool tool_instance_id_component = 10012 [(buf.validate.predefined).cel = {
+    id: "string.tool_id_component"
+    message: "this does not seem to be a tool id"
+    expression: "(this == '' || this.startsWith('tool_instance-'))"
+  }];
+
   optional bool marker_id_component = 10009 [(buf.validate.predefined).cel = {
     id: "string.marker_id_component"
     message: "this does not seem to be a marker id"

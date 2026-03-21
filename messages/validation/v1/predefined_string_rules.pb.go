@@ -97,6 +97,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 	{
 		ExtendedType:  (*validate.StringRules)(nil),
 		ExtensionType: (*bool)(nil),
+		Field:         10012,
+		Name:          "validation.v1.tool_instance_id_component",
+		Tag:           "varint,10012,opt,name=tool_instance_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
 		Field:         10009,
 		Name:          "validation.v1.marker_id_component",
 		Tag:           "varint,10009,opt,name=marker_id_component",
@@ -140,12 +148,14 @@ var (
 	E_PartIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[7]
 	// optional bool tool_id_component = 10008;
 	E_ToolIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[8]
+	// optional bool tool_instance_id_component = 10012;
+	E_ToolInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
 	// optional bool marker_id_component = 10009;
-	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
+	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[10]
 	// optional bool fixture_id_component = 10010;
-	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[10]
+	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
 	// optional bool station_id_component = 10011;
-	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
+	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[12]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -179,7 +189,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x18string.part_id_component\x12\"this does not seem to be a part id\x1a((this == '' || this.startsWith('part-'))R\x0fpartIdComponent:\xb5\x01\n" +
 	"\x11tool_id_component\x12\x19.buf.validate.StringRules\x18\x98N \x01(\bBm\xc2Hj\n" +
 	"h\n" +
-	"\x18string.tool_id_component\x12\"this does not seem to be a tool id\x1a((this == '' || this.startsWith('tool-'))R\x0ftoolIdComponent:\xbf\x01\n" +
+	"\x18string.tool_id_component\x12\"this does not seem to be a tool id\x1a((this == '' || this.startsWith('tool-'))R\x0ftoolIdComponent:\xcf\x01\n" +
+	"\x1atool_instance_id_component\x12\x19.buf.validate.StringRules\x18\x9cN \x01(\bBv\xc2Hs\n" +
+	"q\n" +
+	"\x18string.tool_id_component\x12\"this does not seem to be a tool id\x1a1(this == '' || this.startsWith('tool_instance-'))R\x17toolInstanceIdComponent:\xbf\x01\n" +
 	"\x13marker_id_component\x12\x19.buf.validate.StringRules\x18\x99N \x01(\bBs\xc2Hp\n" +
 	"n\n" +
 	"\x1astring.marker_id_component\x12$this does not seem to be a marker id\x1a*(this == '' || this.startsWith('marker-'))R\x11markerIdComponent:\xc4\x01\n" +
@@ -204,13 +217,14 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 6: validation.v1.environment_id_component:extendee -> buf.validate.StringRules
 	0,  // 7: validation.v1.part_id_component:extendee -> buf.validate.StringRules
 	0,  // 8: validation.v1.tool_id_component:extendee -> buf.validate.StringRules
-	0,  // 9: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
-	0,  // 10: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
-	0,  // 11: validation.v1.station_id_component:extendee -> buf.validate.StringRules
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	0,  // [0:12] is the sub-list for extension extendee
+	0,  // 9: validation.v1.tool_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 10: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
+	0,  // 11: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
+	0,  // 12: validation.v1.station_id_component:extendee -> buf.validate.StringRules
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	0,  // [0:13] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -226,7 +240,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 12,
+			NumExtensions: 13,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

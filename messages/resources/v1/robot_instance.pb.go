@@ -223,7 +223,7 @@ const file_resources_v1_robot_instance_proto_rawDesc = "" +
 	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12+\n" +
 	"\n" +
 	"station_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\tstationId\x12B\n" +
-	"\x18mounted_tool_instance_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xc0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n" +
+	"\x18mounted_tool_instance_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n" +
 	"\x1bavailable_tool_instance_ids\x18\t \x03(\tR\x18availableToolInstanceIds\x120\n" +
 	"\x14supports_tool_change\x18\n" +
 	" \x01(\bR\x12supportsToolChange\x12;\n" +

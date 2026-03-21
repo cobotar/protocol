@@ -35,7 +35,7 @@ namespace Messages.Resources.V1 {
             "oPEEAcgBAVIRcm9ib3REZWZpbml0aW9uSWQSIwoNc2VyaWFsX251bWJlchgG",
             "IAEoCVIMc2VyaWFsTnVtYmVyEisKCnN0YXRpb25faWQYByABKAlCDLpICXIE",
             "2PEEAcgBAVIJc3RhdGlvbklkEkIKGG1vdW50ZWRfdG9vbF9pbnN0YW5jZV9p",
-            "ZBgIIAEoCUIJukgGcgTA8QQBUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQob",
+            "ZBgIIAEoCUIJukgGcgTg8QQBUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQob",
             "YXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJUhhhdmFpbGFibGVU",
             "b29sSW5zdGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYCiABKAhS",
             "EnN1cHBvcnRzVG9vbENoYW5nZRI7CgZzdGF0dXMYCyABKA4yGS5jb21tb24u",
