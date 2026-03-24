@@ -7,9 +7,8 @@
 package runtimev1
 
 import (
-	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
-	v12 "github.com/cobotar/protocol/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -149,9 +148,8 @@ type ProcessRun struct {
 	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,11,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
 	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,12,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
 	Assignments          []*ActorAssignment        `protobuf:"bytes,13,rep,name=assignments,proto3" json:"assignments,omitempty"`
-	Custom               *v11.CustomProperties     `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
-	VariantConfiguration *v12.VariantConfiguration `protobuf:"bytes,15,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
-	Parameters           []*RunParameter           `protobuf:"bytes,16,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,14,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	Parameters           []*RunParameter           `protobuf:"bytes,15,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -277,14 +275,7 @@ func (x *ProcessRun) GetAssignments() []*ActorAssignment {
 	return nil
 }
 
-func (x *ProcessRun) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
-func (x *ProcessRun) GetVariantConfiguration() *v12.VariantConfiguration {
+func (x *ProcessRun) GetVariantConfiguration() *v11.VariantConfiguration {
 	if x != nil {
 		return x.VariantConfiguration
 	}
@@ -298,15 +289,59 @@ func (x *ProcessRun) GetParameters() []*RunParameter {
 	return nil
 }
 
+type ProcessRuns struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ProcessRun          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProcessRuns) Reset() {
+	*x = ProcessRuns{}
+	mi := &file_runtime_v1_process_run_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProcessRuns) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProcessRuns) ProtoMessage() {}
+
+func (x *ProcessRuns) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_process_run_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProcessRuns.ProtoReflect.Descriptor instead.
+func (*ProcessRuns) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_process_run_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ProcessRuns) GetItems() []*ProcessRun {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_runtime_v1_process_run_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1cruntime/v1/process_run.proto\x12\n" +
-	"runtime.v1\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
+	"runtime.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\x80\x06\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xcb\x05\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
@@ -323,12 +358,13 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	" \x01(\x0e2\x1b.runtime.v1.ProcessRunStateR\x05state\x12=\n" +
 	"\finitiated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
 	"\bended_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
-	"\vassignments\x18\r \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x123\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\x12V\n" +
-	"\x15variant_configuration\x18\x0f \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
+	"\vassignments\x18\r \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
+	"\x15variant_configuration\x18\x0e \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
 	"\n" +
-	"parameters\x18\x10 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
-	"parameters*\xb6\x01\n" +
+	"parameters\x18\x0f \x03(\v2\x18.runtime.v1.RunParameterR\n" +
+	"parameters\";\n" +
+	"\vProcessRuns\x12,\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xb6\x01\n" +
 	"\x0fProcessRunState\x12!\n" +
 	"\x1dPROCESS_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19PROCESS_RUN_STATE_WAITING\x10\x01\x12!\n" +
@@ -351,30 +387,30 @@ func file_runtime_v1_process_run_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_process_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_process_run_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_runtime_v1_process_run_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_process_run_proto_goTypes = []any{
 	(ProcessRunState)(0),             // 0: runtime.v1.ProcessRunState
 	(*RunParameter)(nil),             // 1: runtime.v1.RunParameter
 	(*ProcessRun)(nil),               // 2: runtime.v1.ProcessRun
-	(*v1.LocalizedPose)(nil),         // 3: geometry.v1.LocalizedPose
-	(*SequenceRun)(nil),              // 4: runtime.v1.SequenceRun
-	(*TaskRun)(nil),                  // 5: runtime.v1.TaskRun
-	(*timestamppb.Timestamp)(nil),    // 6: google.protobuf.Timestamp
-	(*ActorAssignment)(nil),          // 7: runtime.v1.ActorAssignment
-	(*v11.CustomProperties)(nil),     // 8: common.v1.CustomProperties
-	(*v12.VariantConfiguration)(nil), // 9: variance.v1.VariantConfiguration
+	(*ProcessRuns)(nil),              // 3: runtime.v1.ProcessRuns
+	(*v1.LocalizedPose)(nil),         // 4: geometry.v1.LocalizedPose
+	(*SequenceRun)(nil),              // 5: runtime.v1.SequenceRun
+	(*TaskRun)(nil),                  // 6: runtime.v1.TaskRun
+	(*timestamppb.Timestamp)(nil),    // 7: google.protobuf.Timestamp
+	(*ActorAssignment)(nil),          // 8: runtime.v1.ActorAssignment
+	(*v11.VariantConfiguration)(nil), // 9: variance.v1.VariantConfiguration
 }
 var file_runtime_v1_process_run_proto_depIdxs = []int32{
-	3,  // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
-	4,  // 1: runtime.v1.ProcessRun.sequences:type_name -> runtime.v1.SequenceRun
-	5,  // 2: runtime.v1.ProcessRun.tasks:type_name -> runtime.v1.TaskRun
+	4,  // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
+	5,  // 1: runtime.v1.ProcessRun.sequences:type_name -> runtime.v1.SequenceRun
+	6,  // 2: runtime.v1.ProcessRun.tasks:type_name -> runtime.v1.TaskRun
 	0,  // 3: runtime.v1.ProcessRun.state:type_name -> runtime.v1.ProcessRunState
-	6,  // 4: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
-	6,  // 5: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
-	7,  // 6: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
-	8,  // 7: runtime.v1.ProcessRun.custom:type_name -> common.v1.CustomProperties
-	9,  // 8: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	1,  // 9: runtime.v1.ProcessRun.parameters:type_name -> runtime.v1.RunParameter
+	7,  // 4: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
+	7,  // 5: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
+	8,  // 6: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
+	9,  // 7: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	1,  // 8: runtime.v1.ProcessRun.parameters:type_name -> runtime.v1.RunParameter
+	2,  // 9: runtime.v1.ProcessRuns.items:type_name -> runtime.v1.ProcessRun
 	10, // [10:10] is the sub-list for method output_type
 	10, // [10:10] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
@@ -396,7 +432,7 @@ func file_runtime_v1_process_run_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_run_proto_rawDesc), len(file_runtime_v1_process_run_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

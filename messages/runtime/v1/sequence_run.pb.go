@@ -187,6 +187,50 @@ func (x *SequenceRun) GetAssignedActors() []*ActorRef {
 	return nil
 }
 
+type SequenceRuns struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*SequenceRun         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SequenceRuns) Reset() {
+	*x = SequenceRuns{}
+	mi := &file_runtime_v1_sequence_run_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SequenceRuns) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SequenceRuns) ProtoMessage() {}
+
+func (x *SequenceRuns) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_sequence_run_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SequenceRuns.ProtoReflect.Descriptor instead.
+func (*SequenceRuns) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_sequence_run_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *SequenceRuns) GetItems() []*SequenceRun {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_runtime_v1_sequence_run_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_sequence_run_proto_rawDesc = "" +
@@ -202,7 +246,9 @@ const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\x05state\x18\x06 \x01(\x0e2\x1c.runtime.v1.SequenceRunStateR\x05state\x12'\n" +
 	"\x0fcompleted_tasks\x18\a \x01(\x05R\x0ecompletedTasks\x12*\n" +
 	"\x11can_bulk_complete\x18\b \x01(\bR\x0fcanBulkComplete\x12=\n" +
-	"\x0fassigned_actors\x18\t \x03(\v2\x14.runtime.v1.ActorRefR\x0eassignedActors*\xe9\x01\n" +
+	"\x0fassigned_actors\x18\t \x03(\v2\x14.runtime.v1.ActorRefR\x0eassignedActors\"=\n" +
+	"\fSequenceRuns\x12-\n" +
+	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xe9\x01\n" +
 	"\x10SequenceRunState\x12\"\n" +
 	"\x1eSEQUENCE_RUN_STATE_UNSPECIFIED\x10\x00\x12+\n" +
 	"'SEQUENCE_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1e\n" +
@@ -226,20 +272,22 @@ func file_runtime_v1_sequence_run_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_sequence_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_sequence_run_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_runtime_v1_sequence_run_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_runtime_v1_sequence_run_proto_goTypes = []any{
 	(SequenceRunState)(0), // 0: runtime.v1.SequenceRunState
 	(*SequenceRun)(nil),   // 1: runtime.v1.SequenceRun
-	(*ActorRef)(nil),      // 2: runtime.v1.ActorRef
+	(*SequenceRuns)(nil),  // 2: runtime.v1.SequenceRuns
+	(*ActorRef)(nil),      // 3: runtime.v1.ActorRef
 }
 var file_runtime_v1_sequence_run_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.SequenceRun.state:type_name -> runtime.v1.SequenceRunState
-	2, // 1: runtime.v1.SequenceRun.assigned_actors:type_name -> runtime.v1.ActorRef
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 1: runtime.v1.SequenceRun.assigned_actors:type_name -> runtime.v1.ActorRef
+	1, // 2: runtime.v1.SequenceRuns.items:type_name -> runtime.v1.SequenceRun
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_sequence_run_proto_init() }
@@ -254,7 +302,7 @@ func file_runtime_v1_sequence_run_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_sequence_run_proto_rawDesc), len(file_runtime_v1_sequence_run_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

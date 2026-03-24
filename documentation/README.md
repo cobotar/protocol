@@ -306,6 +306,7 @@
   
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
+    - [SequenceDefinitions](#process-v1-SequenceDefinitions)
   
     - [SequenceOperator](#process-v1-SequenceOperator)
   
@@ -324,6 +325,7 @@
   
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
     - [TaskDefinition](#process-v1-TaskDefinition)
+    - [TaskDefinitions](#process-v1-TaskDefinitions)
     - [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy)
     - [TaskOverride](#process-v1-TaskOverride)
     - [TaskTarget](#process-v1-TaskTarget)
@@ -334,6 +336,7 @@
   
 - [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
     - [ProcessRecipe](#process-v1-ProcessRecipe)
+    - [ProcessRecipes](#process-v1-ProcessRecipes)
     - [RecipeApplicability](#process-v1-RecipeApplicability)
   
     - [ProcessType](#process-v1-ProcessType)
@@ -344,6 +347,7 @@
   
 - [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
     - [SequenceRun](#runtime-v1-SequenceRun)
+    - [SequenceRuns](#runtime-v1-SequenceRuns)
   
     - [SequenceRunState](#runtime-v1-SequenceRunState)
   
@@ -353,6 +357,7 @@
   
 - [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
     - [TaskRun](#runtime-v1-TaskRun)
+    - [TaskRuns](#runtime-v1-TaskRuns)
   
     - [TaskRunState](#runtime-v1-TaskRunState)
   
@@ -362,6 +367,7 @@
   
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
+    - [ProcessRuns](#runtime-v1-ProcessRuns)
     - [RunParameter](#runtime-v1-RunParameter)
   
     - [ProcessRunState](#runtime-v1-ProcessRunState)
@@ -4285,7 +4291,21 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 | local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  |  |
 | optional | [bool](#bool) |  |  |
 | can_bulk_complete | [bool](#bool) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="process-v1-SequenceDefinitions"></a>
+
+### SequenceDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
 
 
 
@@ -4549,9 +4569,23 @@ Tools or tool roles needed to perform the task. |
 | destination_node_id | [string](#string) |  | Optional destination assembly node when something is moved/placed into a product structure. |
 | source_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
 | destination_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 | applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
 | overrides | [TaskOverride](#process-v1-TaskOverride) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-TaskDefinitions"></a>
+
+### TaskDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
 
 
 
@@ -4727,7 +4761,21 @@ ProcessRecipe describes the following:
 | tasks | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
 | supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="process-v1-ProcessRecipes"></a>
+
+### ProcessRecipes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProcessRecipe](#process-v1-ProcessRecipe) | repeated |  |
 
 
 
@@ -4858,6 +4906,21 @@ ProcessRecipe describes the following:
 
 
 
+
+<a name="runtime-v1-SequenceRuns"></a>
+
+### SequenceRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
+
+
+
+
+
  
 
 
@@ -4967,7 +5030,21 @@ ProcessRecipe describes the following:
 | error_code | [string](#string) |  |  |
 | error_message | [string](#string) |  |  |
 | evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskRuns"></a>
+
+### TaskRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
 
 
 
@@ -5076,9 +5153,23 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 | variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
 | parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRuns"></a>
+
+### ProcessRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProcessRun](#runtime-v1-ProcessRun) | repeated |  |
 
 
 
@@ -6342,6 +6433,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
 | available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
 | supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
+| is_simulated | [bool](#bool) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
 | base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |

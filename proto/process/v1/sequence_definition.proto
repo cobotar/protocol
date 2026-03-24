@@ -1,7 +1,6 @@
 syntax = "proto3";
 package process.v1;
 
-import "common/v1/custom_properties.proto";
 import "geometry/v1/local_target.proto";
 
 option csharp_namespace = "Messages.Process.V1";
@@ -27,5 +26,8 @@ message SequenceDefinition {
   geometry.v1.LocalTarget local_target = 10;
   bool optional = 11;
   bool can_bulk_complete = 12;
-  common.v1.CustomProperties custom = 13;
+}
+
+message SequenceDefinitions {
+  repeated SequenceDefinition items = 1;
 }

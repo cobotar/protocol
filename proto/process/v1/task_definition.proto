@@ -5,7 +5,6 @@ import "capability/v1/actor_constraint.proto";
 import "capability/v1/actor_skill.proto";
 import "capability/v1/skill_requirement.proto";
 import "capability/v1/tool_requirement.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "common/v1/key_value_constraint.proto";
 import "common/v1/time.proto";
@@ -117,7 +116,10 @@ message TaskDefinition {
   resources.v1.ContainerSlotRef source_location = 19; // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
   resources.v1.ContainerSlotRef destination_location = 20; // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
 
-  common.v1.CustomProperties custom = 21;
-  repeated variance.v1.VariantRule applicability = 22; // Applies if any rule matches. Empty means always applicable.
-  repeated TaskOverride overrides = 23;
+  repeated variance.v1.VariantRule applicability = 21; // Applies if any rule matches. Empty means always applicable.
+  repeated TaskOverride overrides = 22;
+}
+
+message TaskDefinitions {
+  repeated TaskDefinition items = 1;
 }

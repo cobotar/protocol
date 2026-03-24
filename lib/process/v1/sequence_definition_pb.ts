@@ -4,8 +4,6 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { LocalTarget } from "../../geometry/v1/local_target_pb.ts";
 import { file_geometry_v1_local_target } from "../../geometry/v1/local_target_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -14,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/sequence_definition.proto.
  */
 export const file_process_v1_sequence_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEi9AIKElNlcXVlbmNlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFEhoKEnBhcmVudF9zZXF1ZW5jZV9pZBgGIAEoCRIuCghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3MudjEuU2VxdWVuY2VPcGVyYXRvchIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgSKwoGY3VzdG9tGA0gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMqogEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIlCiFTRVFVRU5DRV9PUEVSQVRPUl9BTExfT0ZfQ0hJTERSRU4QARIlCiFTRVFVRU5DRV9PUEVSQVRPUl9PTkVfT0ZfQ0hJTERSRU4QAhIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEANCtgEKDmNvbS5wcm9jZXNzLnYxQhdTZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_common_v1_custom_properties, file_geometry_v1_local_target]);
+  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEixwIKElNlcXVlbmNlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFwoPc2VxdWVuY2VfbnVtYmVyGAUgASgFEhoKEnBhcmVudF9zZXF1ZW5jZV9pZBgGIAEoCRIuCghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3MudjEuU2VxdWVuY2VPcGVyYXRvchIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgiRAoTU2VxdWVuY2VEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uKqIBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASJQohU0VRVUVOQ0VfT1BFUkFUT1JfQUxMX09GX0NISUxEUkVOEAESJQohU0VRVUVOQ0VfT1BFUkFUT1JfT05FX09GX0NISUxEUkVOEAISHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JERVJFRBADQrYBCg5jb20ucHJvY2Vzcy52MUIXU2VxdWVuY2VEZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw", [file_geometry_v1_local_target]);
 
 /**
  * @generated from message process.v1.SequenceDefinition
@@ -79,11 +77,6 @@ export type SequenceDefinition = Message<"process.v1.SequenceDefinition"> & {
    * @generated from field: bool can_bulk_complete = 12;
    */
   canBulkComplete: boolean;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 13;
-   */
-  custom?: CustomProperties;
 };
 
 /**
@@ -92,6 +85,23 @@ export type SequenceDefinition = Message<"process.v1.SequenceDefinition"> & {
  */
 export const SequenceDefinitionSchema: GenMessage<SequenceDefinition> = /*@__PURE__*/
   messageDesc(file_process_v1_sequence_definition, 0);
+
+/**
+ * @generated from message process.v1.SequenceDefinitions
+ */
+export type SequenceDefinitions = Message<"process.v1.SequenceDefinitions"> & {
+  /**
+   * @generated from field: repeated process.v1.SequenceDefinition items = 1;
+   */
+  items: SequenceDefinition[];
+};
+
+/**
+ * Describes the message process.v1.SequenceDefinitions.
+ * Use `create(SequenceDefinitionsSchema)` to create a new message.
+ */
+export const SequenceDefinitionsSchema: GenMessage<SequenceDefinitions> = /*@__PURE__*/
+  messageDesc(file_process_v1_sequence_definition, 1);
 
 /**
  * @generated from enum process.v1.SequenceOperator

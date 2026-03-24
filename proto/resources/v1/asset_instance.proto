@@ -15,8 +15,14 @@ message AssetInstance {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  string asset_definition_id = 5 [(buf.validate.field).string.(validation.v1.asset_id_component) = true];
-  string station_id = 6 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
+  string asset_definition_id = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_id_component) = true
+  ];
+  string station_id = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.station_id_component) = true
+  ];
   common.v1.ResourceStatus status = 7 [(buf.validate.field).enum.defined_only = true];
   geometry.v1.LocalizedPose pose = 8;
   common.v1.CustomProperties custom = 9;

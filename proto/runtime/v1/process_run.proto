@@ -1,7 +1,6 @@
 syntax = "proto3";
 package runtime.v1;
 
-import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
 import "google/protobuf/timestamp.proto";
 import "runtime/v1/actor_assignment.proto";
@@ -41,7 +40,10 @@ message ProcessRun {
   google.protobuf.Timestamp initiated_at = 11;
   google.protobuf.Timestamp ended_at = 12;
   repeated ActorAssignment assignments = 13;
-  common.v1.CustomProperties custom = 14;
-  variance.v1.VariantConfiguration variant_configuration = 15;
-  repeated RunParameter parameters = 16;
+  variance.v1.VariantConfiguration variant_configuration = 14;
+  repeated RunParameter parameters = 15;
+}
+
+message ProcessRuns {
+  repeated ProcessRun items = 1;
 }

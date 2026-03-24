@@ -35,20 +35,23 @@ namespace Messages.Runtime.V1 {
             "UgVzdGF0ZRInCg9jb21wbGV0ZWRfdGFza3MYByABKAVSDmNvbXBsZXRlZFRh",
             "c2tzEioKEWNhbl9idWxrX2NvbXBsZXRlGAggASgIUg9jYW5CdWxrQ29tcGxl",
             "dGUSPQoPYXNzaWduZWRfYWN0b3JzGAkgAygLMhQucnVudGltZS52MS5BY3Rv",
-            "clJlZlIOYXNzaWduZWRBY3RvcnMq6QEKEFNlcXVlbmNlUnVuU3RhdGUSIgoe",
-            "U0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASKwonU0VRVUVOQ0Vf",
-            "UlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESHgoaU0VRVUVOQ0Vf",
-            "UlVOX1NUQVRFX1dBSVRJTkcQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5f",
-            "UFJPR1JFU1MQAxIgChxTRVFVRU5DRV9SVU5fU1RBVEVfQ09NUExFVEVEEAQS",
-            "HgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JURUQQBUKvAQoOY29tLnJ1bnRp",
-            "bWUudjFCEFNlcXVlbmNlUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhY",
-            "qgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1l",
-            "XFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "clJlZlIOYXNzaWduZWRBY3RvcnMiPQoMU2VxdWVuY2VSdW5zEi0KBWl0ZW1z",
+            "GAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1blIFaXRlbXMq6QEKEFNl",
+            "cXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lG",
+            "SUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElU",
+            "SU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX1dBSVRJTkcQAhIiCh5TRVFV",
+            "RU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIgChxTRVFVRU5DRV9SVU5f",
+            "U1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JU",
+            "RUQQBUKvAQoOY29tLnJ1bnRpbWUudjFCEFNlcXVlbmNlUnVuUHJvdG9QAVo5",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
+            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
+            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.SequenceRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRuns), global::Messages.Runtime.V1.SequenceRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
     #endregion
@@ -519,6 +522,193 @@ namespace Messages.Runtime.V1 {
           }
           case 74: {
             assignedActors_.AddEntriesFrom(ref input, _repeated_assignedActors_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SequenceRuns : pb::IMessage<SequenceRuns>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SequenceRuns> _parser = new pb::MessageParser<SequenceRuns>(() => new SequenceRuns());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SequenceRuns> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Runtime.V1.SequenceRunReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SequenceRuns() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SequenceRuns(SequenceRuns other) : this() {
+      items_ = other.items_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SequenceRuns Clone() {
+      return new SequenceRuns(this);
+    }
+
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.SequenceRun> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Runtime.V1.SequenceRun.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.SequenceRun> items_ = new pbc::RepeatedField<global::Messages.Runtime.V1.SequenceRun>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Runtime.V1.SequenceRun> Items {
+      get { return items_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SequenceRuns);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SequenceRuns other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!items_.Equals(other.items_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= items_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      items_.WriteTo(output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      items_.WriteTo(ref output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += items_.CalculateSize(_repeated_items_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SequenceRuns other) {
+      if (other == null) {
+        return;
+      }
+      items_.Add(other.items_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
             break;
           }
         }

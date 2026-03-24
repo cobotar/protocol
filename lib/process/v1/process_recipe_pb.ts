@@ -4,8 +4,6 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import type { SequenceDefinition } from "./sequence_definition_pb.ts";
@@ -20,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/process_recipe.proto.
  */
 export const file_process_v1_process_recipe: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSLWAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJQoEdHlwZRgFIAEoDjIXLnByb2Nlc3MudjEuUHJvY2Vzc1R5cGUSHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIxCglzZXF1ZW5jZXMYCSADKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbhIpCgV0YXNrcxgKIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24SKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEisKBmN1c3RvbRgNIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzKtUBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBBIYChRQUk9DRVNTX1RZUEVfS0lUVElORxAFEhwKGFBST0NFU1NfVFlQRV9NQUlOVEVOQU5DRRAGQrEBCg5jb20ucHJvY2Vzcy52MUISUHJvY2Vzc1JlY2lwZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_common_v1_custom_properties, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_variance_v1_variant_rule]);
+  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKpAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJQoEdHlwZRgFIAEoDjIXLnByb2Nlc3MudjEuUHJvY2Vzc1R5cGUSHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIxCglzZXF1ZW5jZXMYCSADKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbhIpCgV0YXNrcxgKIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24SKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlKtUBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBBIYChRQUk9DRVNTX1RZUEVfS0lUVElORxAFEhwKGFBST0NFU1NfVFlQRV9NQUlOVEVOQU5DRRAGQrEBCg5jb20ucHJvY2Vzcy52MUISUHJvY2Vzc1JlY2lwZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message process.v1.RecipeApplicability
@@ -121,11 +119,6 @@ export type ProcessRecipe = Message<"process.v1.ProcessRecipe"> & {
    * @generated from field: repeated common.v1.ExternalReference external_references = 12;
    */
   externalReferences: ExternalReference[];
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 13;
-   */
-  custom?: CustomProperties;
 };
 
 /**
@@ -134,6 +127,23 @@ export type ProcessRecipe = Message<"process.v1.ProcessRecipe"> & {
  */
 export const ProcessRecipeSchema: GenMessage<ProcessRecipe> = /*@__PURE__*/
   messageDesc(file_process_v1_process_recipe, 1);
+
+/**
+ * @generated from message process.v1.ProcessRecipes
+ */
+export type ProcessRecipes = Message<"process.v1.ProcessRecipes"> & {
+  /**
+   * @generated from field: repeated process.v1.ProcessRecipe items = 1;
+   */
+  items: ProcessRecipe[];
+};
+
+/**
+ * Describes the message process.v1.ProcessRecipes.
+ * Use `create(ProcessRecipesSchema)` to create a new message.
+ */
+export const ProcessRecipesSchema: GenMessage<ProcessRecipes> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 2);
 
 /**
  * @generated from enum process.v1.ProcessType

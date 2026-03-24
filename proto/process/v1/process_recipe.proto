@@ -1,7 +1,6 @@
 syntax = "proto3";
 package process.v1;
 
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
@@ -45,5 +44,8 @@ message ProcessRecipe {
   repeated TaskDefinition tasks = 10;
   repeated string supported_container_definition_ids = 11; // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
   repeated common.v1.ExternalReference external_references = 12;
-  common.v1.CustomProperties custom = 13;
+}
+
+message ProcessRecipes {
+  repeated ProcessRecipe items = 1;
 }

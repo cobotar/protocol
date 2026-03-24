@@ -4,8 +4,6 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { EstimatedDuration } from "../../common/v1/time_pb.ts";
 import { file_common_v1_time } from "../../common/v1/time_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
@@ -20,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIrkECgdUYXNrUnVuEgoKAmlkGAEgASgJEhoKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEicKBXN0YXRlGAQgASgOMhgucnVudGltZS52MS5UYXNrUnVuU3RhdGUSLgoQY2FuZGlkYXRlX2FjdG9ycxgFIAMoCzIULnJ1bnRpbWUudjEuQWN0b3JSZWYSLAoOYXNzaWduZWRfYWN0b3IYBiABKAsyFC5ydW50aW1lLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgHIAEoCBIQCghjYW5fdW5kbxgIIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAkgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIvCghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2USKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMq5wEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoWVEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_custom_properties, file_common_v1_time, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_runtime_v1_execution_evidence]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIowECgdUYXNrUnVuEgoKAmlkGAEgASgJEhoKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEicKBXN0YXRlGAQgASgOMhgucnVudGltZS52MS5UYXNrUnVuU3RhdGUSLgoQY2FuZGlkYXRlX2FjdG9ycxgFIAMoCzIULnJ1bnRpbWUudjEuQWN0b3JSZWYSLAoOYXNzaWduZWRfYWN0b3IYBiABKAsyFC5ydW50aW1lLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgHIAEoCBIQCghjYW5fdW5kbxgIIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAkgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIvCghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2UiLgoIVGFza1J1bnMSIgoFaXRlbXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW4q5wEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoWVEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_time, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_runtime_v1_execution_evidence]);
 
 /**
  * @generated from message runtime.v1.TaskRun
@@ -102,11 +100,6 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
    * @generated from field: repeated runtime.v1.ExecutionEvidence evidence = 15;
    */
   evidence: ExecutionEvidence[];
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 16;
-   */
-  custom?: CustomProperties;
 };
 
 /**
@@ -115,6 +108,23 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
  */
 export const TaskRunSchema: GenMessage<TaskRun> = /*@__PURE__*/
   messageDesc(file_runtime_v1_task_run, 0);
+
+/**
+ * @generated from message runtime.v1.TaskRuns
+ */
+export type TaskRuns = Message<"runtime.v1.TaskRuns"> & {
+  /**
+   * @generated from field: repeated runtime.v1.TaskRun items = 1;
+   */
+  items: TaskRun[];
+};
+
+/**
+ * Describes the message runtime.v1.TaskRuns.
+ * Use `create(TaskRunsSchema)` to create a new message.
+ */
+export const TaskRunsSchema: GenMessage<TaskRuns> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_task_run, 1);
 
 /**
  * @generated from enum runtime.v1.TaskRunState

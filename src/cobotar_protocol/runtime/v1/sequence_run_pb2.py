@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from runtime.v1 import actor_assignment_pb2 as runtime_dot_v1_dot_actor__assignment__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1druntime/v1/sequence_run.proto\x12\nruntime.v1\x1a!runtime/v1/actor_assignment.proto\"\xb2\x03\n\x0bSequenceRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x34\n\x16sequence_definition_id\x18\x02 \x01(\tR\x14sequenceDefinitionId\x12\x33\n\x16parent_sequence_run_id\x18\x03 \x01(\tR\x13parentSequenceRunId\x12\x33\n\x16\x63hild_sequence_run_ids\x18\x04 \x03(\tR\x13\x63hildSequenceRunIds\x12+\n\x12\x63hild_task_run_ids\x18\x05 \x03(\tR\x0f\x63hildTaskRunIds\x12\x32\n\x05state\x18\x06 \x01(\x0e\x32\x1c.runtime.v1.SequenceRunStateR\x05state\x12\'\n\x0f\x63ompleted_tasks\x18\x07 \x01(\x05R\x0e\x63ompletedTasks\x12*\n\x11\x63\x61n_bulk_complete\x18\x08 \x01(\x08R\x0f\x63\x61nBulkComplete\x12=\n\x0f\x61ssigned_actors\x18\t \x03(\x0b\x32\x14.runtime.v1.ActorRefR\x0e\x61ssignedActors*\xe9\x01\n\x10SequenceRunState\x12\"\n\x1eSEQUENCE_RUN_STATE_UNSPECIFIED\x10\x00\x12+\n\'SEQUENCE_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1e\n\x1aSEQUENCE_RUN_STATE_WAITING\x10\x02\x12\"\n\x1eSEQUENCE_RUN_STATE_IN_PROGRESS\x10\x03\x12 \n\x1cSEQUENCE_RUN_STATE_COMPLETED\x10\x04\x12\x1e\n\x1aSEQUENCE_RUN_STATE_ABORTED\x10\x05\x42\xaf\x01\n\x0e\x63om.runtime.v1B\x10SequenceRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1druntime/v1/sequence_run.proto\x12\nruntime.v1\x1a!runtime/v1/actor_assignment.proto\"\xb2\x03\n\x0bSequenceRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x34\n\x16sequence_definition_id\x18\x02 \x01(\tR\x14sequenceDefinitionId\x12\x33\n\x16parent_sequence_run_id\x18\x03 \x01(\tR\x13parentSequenceRunId\x12\x33\n\x16\x63hild_sequence_run_ids\x18\x04 \x03(\tR\x13\x63hildSequenceRunIds\x12+\n\x12\x63hild_task_run_ids\x18\x05 \x03(\tR\x0f\x63hildTaskRunIds\x12\x32\n\x05state\x18\x06 \x01(\x0e\x32\x1c.runtime.v1.SequenceRunStateR\x05state\x12\'\n\x0f\x63ompleted_tasks\x18\x07 \x01(\x05R\x0e\x63ompletedTasks\x12*\n\x11\x63\x61n_bulk_complete\x18\x08 \x01(\x08R\x0f\x63\x61nBulkComplete\x12=\n\x0f\x61ssigned_actors\x18\t \x03(\x0b\x32\x14.runtime.v1.ActorRefR\x0e\x61ssignedActors\"=\n\x0cSequenceRuns\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x17.runtime.v1.SequenceRunR\x05items*\xe9\x01\n\x10SequenceRunState\x12\"\n\x1eSEQUENCE_RUN_STATE_UNSPECIFIED\x10\x00\x12+\n\'SEQUENCE_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1e\n\x1aSEQUENCE_RUN_STATE_WAITING\x10\x02\x12\"\n\x1eSEQUENCE_RUN_STATE_IN_PROGRESS\x10\x03\x12 \n\x1cSEQUENCE_RUN_STATE_COMPLETED\x10\x04\x12\x1e\n\x1aSEQUENCE_RUN_STATE_ABORTED\x10\x05\x42\xaf\x01\n\x0e\x63om.runtime.v1B\x10SequenceRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'runtime.v1.sequence_run_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.runtime.v1B\020SequenceRunProtoP\001Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\242\002\003RXX\252\002\023Messages.Runtime.V1\312\002\nRuntime\\V1\342\002\026Runtime\\V1\\GPBMetadata\352\002\013Runtime::V1'
-  _globals['_SEQUENCERUNSTATE']._serialized_start=518
-  _globals['_SEQUENCERUNSTATE']._serialized_end=751
+  _globals['_SEQUENCERUNSTATE']._serialized_start=581
+  _globals['_SEQUENCERUNSTATE']._serialized_end=814
   _globals['_SEQUENCERUN']._serialized_start=81
   _globals['_SEQUENCERUN']._serialized_end=515
+  _globals['_SEQUENCERUNS']._serialized_start=517
+  _globals['_SEQUENCERUNS']._serialized_end=578
 # @@protoc_insertion_point(module_scope)

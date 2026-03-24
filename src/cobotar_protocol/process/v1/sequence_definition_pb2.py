@@ -22,11 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from geometry.v1 import local_target_pb2 as geometry_dot_v1_dot_local__target__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$process/v1/sequence_definition.proto\x12\nprocess.v1\x1a!common/v1/custom_properties.proto\x1a\x1egeometry/v1/local_target.proto\"\x8d\x04\n\x12SequenceDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12,\n\x12parent_sequence_id\x18\x06 \x01(\tR\x10parentSequenceId\x12\x38\n\x08operator\x18\x07 \x01(\x0e\x32\x1c.process.v1.SequenceOperatorR\x08operator\x12,\n\x12\x63hild_sequence_ids\x18\x08 \x03(\tR\x10\x63hildSequenceIds\x12$\n\x0e\x63hild_task_ids\x18\t \x03(\tR\x0c\x63hildTaskIds\x12;\n\x0clocal_target\x18\n \x01(\x0b\x32\x18.geometry.v1.LocalTargetR\x0blocalTarget\x12\x1a\n\x08optional\x18\x0b \x01(\x08R\x08optional\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkComplete\x12\x33\n\x06\x63ustom\x18\r \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom*\xa2\x01\n\x10SequenceOperator\x12!\n\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12%\n!SEQUENCE_OPERATOR_ALL_OF_CHILDREN\x10\x01\x12%\n!SEQUENCE_OPERATOR_ONE_OF_CHILDREN\x10\x02\x12\x1d\n\x19SEQUENCE_OPERATOR_ORDERED\x10\x03\x42\xb6\x01\n\x0e\x63om.process.v1B\x17SequenceDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$process/v1/sequence_definition.proto\x12\nprocess.v1\x1a\x1egeometry/v1/local_target.proto\"\xd8\x03\n\x12SequenceDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12,\n\x12parent_sequence_id\x18\x06 \x01(\tR\x10parentSequenceId\x12\x38\n\x08operator\x18\x07 \x01(\x0e\x32\x1c.process.v1.SequenceOperatorR\x08operator\x12,\n\x12\x63hild_sequence_ids\x18\x08 \x03(\tR\x10\x63hildSequenceIds\x12$\n\x0e\x63hild_task_ids\x18\t \x03(\tR\x0c\x63hildTaskIds\x12;\n\x0clocal_target\x18\n \x01(\x0b\x32\x18.geometry.v1.LocalTargetR\x0blocalTarget\x12\x1a\n\x08optional\x18\x0b \x01(\x08R\x08optional\x12*\n\x11\x63\x61n_bulk_complete\x18\x0c \x01(\x08R\x0f\x63\x61nBulkComplete\"K\n\x13SequenceDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.process.v1.SequenceDefinitionR\x05items*\xa2\x01\n\x10SequenceOperator\x12!\n\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12%\n!SEQUENCE_OPERATOR_ALL_OF_CHILDREN\x10\x01\x12%\n!SEQUENCE_OPERATOR_ONE_OF_CHILDREN\x10\x02\x12\x1d\n\x19SEQUENCE_OPERATOR_ORDERED\x10\x03\x42\xb6\x01\n\x0e\x63om.process.v1B\x17SequenceDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'process.v1.sequence_definit
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.process.v1B\027SequenceDefinitionProtoP\001Z9github.com/cobotar/protocol/messages/process/v1;processv1\242\002\003PXX\252\002\023Messages.Process.V1\312\002\nProcess\\V1\342\002\026Process\\V1\\GPBMetadata\352\002\013Process::V1'
-  _globals['_SEQUENCEOPERATOR']._serialized_start=648
-  _globals['_SEQUENCEOPERATOR']._serialized_end=810
-  _globals['_SEQUENCEDEFINITION']._serialized_start=120
-  _globals['_SEQUENCEDEFINITION']._serialized_end=645
+  _globals['_SEQUENCEOPERATOR']._serialized_start=637
+  _globals['_SEQUENCEOPERATOR']._serialized_end=799
+  _globals['_SEQUENCEDEFINITION']._serialized_start=85
+  _globals['_SEQUENCEDEFINITION']._serialized_end=557
+  _globals['_SEQUENCEDEFINITIONS']._serialized_start=559
+  _globals['_SEQUENCEDEFINITIONS']._serialized_end=634
 # @@protoc_insertion_point(module_scope)

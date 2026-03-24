@@ -4,8 +4,6 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
@@ -24,7 +22,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/process_run.proto.
  */
 export const file_runtime_v1_process_run: GenFile = /*@__PURE__*/
-  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAki1gQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSEQoJcmVjaXBlX2lkGAIgASgJEhAKCG9yZGVyX2lkGAMgASgJEhIKCnN0YXRpb25faWQYBCABKAkSDwoHY2VsbF9pZBgFIAEoCRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USHAoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYByABKAkSKgoJc2VxdWVuY2VzGAggAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1bhIiCgV0YXNrcxgJIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1bhIqCgVzdGF0ZRgKIAEoDjIbLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blN0YXRlEjAKDGluaXRpYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKC2Fzc2lnbm1lbnRzGA0gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1lbnQSKwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGA8gASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLAoKcGFyYW1ldGVycxgQIAMoCzIYLnJ1bnRpbWUudjEuUnVuUGFyYW1ldGVyKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_custom_properties, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_runtime_v1_sequence_run, file_runtime_v1_task_run, file_variance_v1_variant_configuration]);
+  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkiqQQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSEQoJcmVjaXBlX2lkGAIgASgJEhAKCG9yZGVyX2lkGAMgASgJEhIKCnN0YXRpb25faWQYBCABKAkSDwoHY2VsbF9pZBgFIAEoCRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USHAoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYByABKAkSKgoJc2VxdWVuY2VzGAggAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1bhIiCgV0YXNrcxgJIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1bhIqCgVzdGF0ZRgKIAEoDjIbLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blN0YXRlEjAKDGluaXRpYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKC2Fzc2lnbm1lbnRzGA0gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1lbnQSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGA4gASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLAoKcGFyYW1ldGVycxgPIAMoCzIYLnJ1bnRpbWUudjEuUnVuUGFyYW1ldGVyIjQKC1Byb2Nlc3NSdW5zEiUKBWl0ZW1zGAEgAygLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_runtime_v1_sequence_run, file_runtime_v1_task_run, file_variance_v1_variant_configuration]);
 
 /**
  * @generated from message runtime.v1.RunParameter
@@ -123,17 +121,12 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
   assignments: ActorAssignment[];
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 14;
-   */
-  custom?: CustomProperties;
-
-  /**
-   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 15;
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 14;
    */
   variantConfiguration?: VariantConfiguration;
 
   /**
-   * @generated from field: repeated runtime.v1.RunParameter parameters = 16;
+   * @generated from field: repeated runtime.v1.RunParameter parameters = 15;
    */
   parameters: RunParameter[];
 };
@@ -144,6 +137,23 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
  */
 export const ProcessRunSchema: GenMessage<ProcessRun> = /*@__PURE__*/
   messageDesc(file_runtime_v1_process_run, 1);
+
+/**
+ * @generated from message runtime.v1.ProcessRuns
+ */
+export type ProcessRuns = Message<"runtime.v1.ProcessRuns"> & {
+  /**
+   * @generated from field: repeated runtime.v1.ProcessRun items = 1;
+   */
+  items: ProcessRun[];
+};
+
+/**
+ * Describes the message runtime.v1.ProcessRuns.
+ * Use `create(ProcessRunsSchema)` to create a new message.
+ */
+export const ProcessRunsSchema: GenMessage<ProcessRuns> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_process_run, 2);
 
 /**
  * @generated from enum runtime.v1.ProcessRunState

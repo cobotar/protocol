@@ -1,4 +1,3 @@
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
 from process.v1 import task_definition_pb2 as _task_definition_pb2
@@ -38,7 +37,7 @@ class RecipeApplicability(_message.Message):
     def __init__(self, include: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., exclude: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ...) -> None: ...
 
 class ProcessRecipe(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequences", "tasks", "supported_container_definition_ids", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequences", "tasks", "supported_container_definition_ids", "external_references")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -51,7 +50,6 @@ class ProcessRecipe(_message.Message):
     TASKS_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_CONTAINER_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -64,5 +62,10 @@ class ProcessRecipe(_message.Message):
     tasks: _containers.RepeatedCompositeFieldContainer[_task_definition_pb2.TaskDefinition]
     supported_container_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ..., supported_container_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ..., supported_container_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
+
+class ProcessRecipes(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ProcessRecipe]
+    def __init__(self, items: _Optional[_Iterable[_Union[ProcessRecipe, _Mapping]]] = ...) -> None: ...

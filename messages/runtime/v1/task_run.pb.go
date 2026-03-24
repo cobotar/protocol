@@ -101,7 +101,6 @@ type TaskRun struct {
 	ErrorCode           string                 `protobuf:"bytes,13,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
 	ErrorMessage        string                 `protobuf:"bytes,14,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
 	Evidence            []*ExecutionEvidence   `protobuf:"bytes,15,rep,name=evidence,proto3" json:"evidence,omitempty"`
-	Custom              *v1.CustomProperties   `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -241,9 +240,46 @@ func (x *TaskRun) GetEvidence() []*ExecutionEvidence {
 	return nil
 }
 
-func (x *TaskRun) GetCustom() *v1.CustomProperties {
+type TaskRuns struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*TaskRun             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskRuns) Reset() {
+	*x = TaskRuns{}
+	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskRuns) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskRuns) ProtoMessage() {}
+
+func (x *TaskRuns) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
 	if x != nil {
-		return x.Custom
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskRuns.ProtoReflect.Descriptor instead.
+func (*TaskRuns) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *TaskRuns) GetItems() []*TaskRun {
+	if x != nil {
+		return x.Items
 	}
 	return nil
 }
@@ -253,7 +289,7 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a!common/v1/custom_properties.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\x82\x06\n" +
+	"runtime.v1\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\xcd\x05\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
 	"\x12task_definition_id\x18\x02 \x01(\tR\x10taskDefinitionId\x123\n" +
@@ -272,8 +308,9 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"error_code\x18\r \x01(\tR\terrorCode\x12#\n" +
 	"\rerror_message\x18\x0e \x01(\tR\ferrorMessage\x129\n" +
-	"\bevidence\x18\x0f \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x123\n" +
-	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom*\xe7\x01\n" +
+	"\bevidence\x18\x0f \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\"5\n" +
+	"\bTaskRuns\x12)\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
 	"\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12'\n" +
 	"#TASK_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1a\n" +
@@ -298,25 +335,25 @@ func file_runtime_v1_task_run_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_task_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_runtime_v1_task_run_proto_goTypes = []any{
 	(TaskRunState)(0),             // 0: runtime.v1.TaskRunState
 	(*TaskRun)(nil),               // 1: runtime.v1.TaskRun
-	(*ActorRef)(nil),              // 2: runtime.v1.ActorRef
-	(*v1.EstimatedDuration)(nil),  // 3: common.v1.EstimatedDuration
-	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
-	(*ExecutionEvidence)(nil),     // 5: runtime.v1.ExecutionEvidence
-	(*v1.CustomProperties)(nil),   // 6: common.v1.CustomProperties
+	(*TaskRuns)(nil),              // 2: runtime.v1.TaskRuns
+	(*ActorRef)(nil),              // 3: runtime.v1.ActorRef
+	(*v1.EstimatedDuration)(nil),  // 4: common.v1.EstimatedDuration
+	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
+	(*ExecutionEvidence)(nil),     // 6: runtime.v1.ExecutionEvidence
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
-	2, // 1: runtime.v1.TaskRun.candidate_actors:type_name -> runtime.v1.ActorRef
-	2, // 2: runtime.v1.TaskRun.assigned_actor:type_name -> runtime.v1.ActorRef
-	3, // 3: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
-	4, // 4: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
-	4, // 5: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
-	5, // 6: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
-	6, // 7: runtime.v1.TaskRun.custom:type_name -> common.v1.CustomProperties
+	3, // 1: runtime.v1.TaskRun.candidate_actors:type_name -> runtime.v1.ActorRef
+	3, // 2: runtime.v1.TaskRun.assigned_actor:type_name -> runtime.v1.ActorRef
+	4, // 3: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
+	5, // 4: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
+	5, // 5: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
+	6, // 6: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
+	1, // 7: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
 	8, // [8:8] is the sub-list for method output_type
 	8, // [8:8] is the sub-list for method input_type
 	8, // [8:8] is the sub-list for extension type_name
@@ -337,7 +374,7 @@ func file_runtime_v1_task_run_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_task_run_proto_rawDesc), len(file_runtime_v1_task_run_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

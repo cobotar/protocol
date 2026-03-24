@@ -27,9 +27,10 @@ message RobotInstance {
   string mounted_tool_instance_id = 8 [(buf.validate.field).string.(validation.v1.tool_instance_id_component) = true]; // The tool instance currently mounted on the robot, if any.
   repeated string available_tool_instance_ids = 9; // Tool instances available to this robot in the cell/tool dock/tool magazine.
   bool supports_tool_change = 10; // Whether this robot instance can dynamically change between available tools.
-  common.v1.ResourceStatus status = 11 [(buf.validate.field).enum.defined_only = true];
-  geometry.v1.LocalizedPose base_pose = 12;
-  common.v1.CustomProperties custom = 13;
+  bool is_simulated = 11;
+  common.v1.ResourceStatus status = 12 [(buf.validate.field).enum.defined_only = true];
+  geometry.v1.LocalizedPose base_pose = 13;
+  common.v1.CustomProperties custom = 14;
 }
 
 message RobotInstances {

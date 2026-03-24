@@ -7,7 +7,6 @@
 package processv1
 
 import (
-	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -89,7 +88,6 @@ type SequenceDefinition struct {
 	LocalTarget      *v1.LocalTarget        `protobuf:"bytes,10,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
 	Optional         bool                   `protobuf:"varint,11,opt,name=optional,proto3" json:"optional,omitempty"`
 	CanBulkComplete  bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
-	Custom           *v11.CustomProperties  `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -208,9 +206,46 @@ func (x *SequenceDefinition) GetCanBulkComplete() bool {
 	return false
 }
 
-func (x *SequenceDefinition) GetCustom() *v11.CustomProperties {
+type SequenceDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*SequenceDefinition  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SequenceDefinitions) Reset() {
+	*x = SequenceDefinitions{}
+	mi := &file_process_v1_sequence_definition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SequenceDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SequenceDefinitions) ProtoMessage() {}
+
+func (x *SequenceDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_sequence_definition_proto_msgTypes[1]
 	if x != nil {
-		return x.Custom
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SequenceDefinitions.ProtoReflect.Descriptor instead.
+func (*SequenceDefinitions) Descriptor() ([]byte, []int) {
+	return file_process_v1_sequence_definition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *SequenceDefinitions) GetItems() []*SequenceDefinition {
+	if x != nil {
+		return x.Items
 	}
 	return nil
 }
@@ -220,7 +255,7 @@ var File_process_v1_sequence_definition_proto protoreflect.FileDescriptor
 const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/sequence_definition.proto\x12\n" +
-	"process.v1\x1a!common/v1/custom_properties.proto\x1a\x1egeometry/v1/local_target.proto\"\x8d\x04\n" +
+	"process.v1\x1a\x1egeometry/v1/local_target.proto\"\xd8\x03\n" +
 	"\x12SequenceDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -234,8 +269,9 @@ const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\flocal_target\x18\n" +
 	" \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\x12\x1a\n" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom*\xa2\x01\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"K\n" +
+	"\x13SequenceDefinitions\x124\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.process.v1.SequenceDefinitionR\x05items*\xa2\x01\n" +
 	"\x10SequenceOperator\x12!\n" +
 	"\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12%\n" +
 	"!SEQUENCE_OPERATOR_ALL_OF_CHILDREN\x10\x01\x12%\n" +
@@ -257,17 +293,17 @@ func file_process_v1_sequence_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_sequence_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_process_v1_sequence_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_process_v1_sequence_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_process_v1_sequence_definition_proto_goTypes = []any{
-	(SequenceOperator)(0),        // 0: process.v1.SequenceOperator
-	(*SequenceDefinition)(nil),   // 1: process.v1.SequenceDefinition
-	(*v1.LocalTarget)(nil),       // 2: geometry.v1.LocalTarget
-	(*v11.CustomProperties)(nil), // 3: common.v1.CustomProperties
+	(SequenceOperator)(0),       // 0: process.v1.SequenceOperator
+	(*SequenceDefinition)(nil),  // 1: process.v1.SequenceDefinition
+	(*SequenceDefinitions)(nil), // 2: process.v1.SequenceDefinitions
+	(*v1.LocalTarget)(nil),      // 3: geometry.v1.LocalTarget
 }
 var file_process_v1_sequence_definition_proto_depIdxs = []int32{
 	0, // 0: process.v1.SequenceDefinition.operator:type_name -> process.v1.SequenceOperator
-	2, // 1: process.v1.SequenceDefinition.local_target:type_name -> geometry.v1.LocalTarget
-	3, // 2: process.v1.SequenceDefinition.custom:type_name -> common.v1.CustomProperties
+	3, // 1: process.v1.SequenceDefinition.local_target:type_name -> geometry.v1.LocalTarget
+	1, // 2: process.v1.SequenceDefinitions.items:type_name -> process.v1.SequenceDefinition
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -286,7 +322,7 @@ func file_process_v1_sequence_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_sequence_definition_proto_rawDesc), len(file_process_v1_sequence_definition_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

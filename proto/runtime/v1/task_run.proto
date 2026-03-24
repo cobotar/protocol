@@ -1,7 +1,6 @@
 syntax = "proto3";
 package runtime.v1;
 
-import "common/v1/custom_properties.proto";
 import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
 import "runtime/v1/actor_assignment.proto";
@@ -36,5 +35,8 @@ message TaskRun {
   string error_code = 13;
   string error_message = 14;
   repeated ExecutionEvidence evidence = 15;
-  common.v1.CustomProperties custom = 16;
+}
+
+message TaskRuns {
+  repeated TaskRun items = 1;
 }

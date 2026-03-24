@@ -28,7 +28,7 @@ namespace Messages.Resources.V1 {
             "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEv",
             "Y3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aFWNvbW1vbi92MS9lbnVtcy5wcm90",
             "bxoWZ2VvbWV0cnkvdjEvcG9zZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
-            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLkBAoNUm9ib3RJbnN0YW5jZRIO",
+            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKHBQoNUm9ib3RJbnN0YW5jZRIO",
             "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
             "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
             "c2NyaXB0aW9uEjwKE3JvYm90X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIE",
@@ -38,21 +38,22 @@ namespace Messages.Resources.V1 {
             "ZBgIIAEoCUIJukgGcgTg8QQBUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQob",
             "YXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJUhhhdmFpbGFibGVU",
             "b29sSW5zdGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYCiABKAhS",
-            "EnN1cHBvcnRzVG9vbENoYW5nZRI7CgZzdGF0dXMYCyABKA4yGS5jb21tb24u",
-            "djEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABUgZzdGF0dXMSNwoJYmFzZV9w",
-            "b3NlGAwgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIIYmFzZVBv",
-            "c2USMwoGY3VzdG9tGA0gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRp",
-            "ZXNSBmN1c3RvbSJDCg5Sb2JvdEluc3RhbmNlcxIxCgVpdGVtcxgBIAMoCzIb",
-            "LnJlc291cmNlcy52MS5Sb2JvdEluc3RhbmNlUgVpdGVtc0K/AQoQY29tLnJl",
-            "c291cmNlcy52MUISUm9ib3RJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3Vy",
-            "Y2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJj",
-            "ZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6",
-            "OlYxYgZwcm90bzM="));
+            "EnN1cHBvcnRzVG9vbENoYW5nZRIhCgxpc19zaW11bGF0ZWQYCyABKAhSC2lz",
+            "U2ltdWxhdGVkEjsKBnN0YXR1cxgMIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJj",
+            "ZVN0YXR1c0IIukgFggECEAFSBnN0YXR1cxI3CgliYXNlX3Bvc2UYDSABKAsy",
+            "Gi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghiYXNlUG9zZRIzCgZjdXN0",
+            "b20YDiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9t",
+            "IkMKDlJvYm90SW5zdGFuY2VzEjEKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2Vz",
+            "LnYxLlJvYm90SW5zdGFuY2VSBWl0ZW1zQr8BChBjb20ucmVzb3VyY2VzLnYx",
+            "QhJSb2JvdEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JY",
+            "WKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJl",
+            "c291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "Status", "BasePose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "IsSimulated", "Status", "BasePose", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstances), global::Messages.Resources.V1.RobotInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -105,6 +106,7 @@ namespace Messages.Resources.V1 {
       mountedToolInstanceId_ = other.mountedToolInstanceId_;
       availableToolInstanceIds_ = other.availableToolInstanceIds_.Clone();
       supportsToolChange_ = other.supportsToolChange_;
+      isSimulated_ = other.isSimulated_;
       status_ = other.status_;
       basePose_ = other.basePose_ != null ? other.basePose_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
@@ -245,8 +247,20 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "is_simulated" field.</summary>
+    public const int IsSimulatedFieldNumber = 11;
+    private bool isSimulated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSimulated {
+      get { return isSimulated_; }
+      set {
+        isSimulated_ = value;
+      }
+    }
+
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 11;
+    public const int StatusFieldNumber = 12;
     private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -258,7 +272,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "base_pose" field.</summary>
-    public const int BasePoseFieldNumber = 12;
+    public const int BasePoseFieldNumber = 13;
     private global::Messages.Common.V1.LocalizedPose basePose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -270,7 +284,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 13;
+    public const int CustomFieldNumber = 14;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -306,6 +320,7 @@ namespace Messages.Resources.V1 {
       if (MountedToolInstanceId != other.MountedToolInstanceId) return false;
       if(!availableToolInstanceIds_.Equals(other.availableToolInstanceIds_)) return false;
       if (SupportsToolChange != other.SupportsToolChange) return false;
+      if (IsSimulated != other.IsSimulated) return false;
       if (Status != other.Status) return false;
       if (!object.Equals(BasePose, other.BasePose)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
@@ -326,6 +341,7 @@ namespace Messages.Resources.V1 {
       if (MountedToolInstanceId.Length != 0) hash ^= MountedToolInstanceId.GetHashCode();
       hash ^= availableToolInstanceIds_.GetHashCode();
       if (SupportsToolChange != false) hash ^= SupportsToolChange.GetHashCode();
+      if (IsSimulated != false) hash ^= IsSimulated.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (basePose_ != null) hash ^= BasePose.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
@@ -384,16 +400,20 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(80);
         output.WriteBool(SupportsToolChange);
       }
-      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+      if (IsSimulated != false) {
         output.WriteRawTag(88);
+        output.WriteBool(IsSimulated);
+      }
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        output.WriteRawTag(96);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(106);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -443,16 +463,20 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(80);
         output.WriteBool(SupportsToolChange);
       }
-      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+      if (IsSimulated != false) {
         output.WriteRawTag(88);
+        output.WriteBool(IsSimulated);
+      }
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        output.WriteRawTag(96);
         output.WriteEnum((int) Status);
       }
       if (basePose_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(106);
         output.WriteMessage(BasePose);
       }
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -491,6 +515,9 @@ namespace Messages.Resources.V1 {
       }
       size += availableToolInstanceIds_.CalculateSize(_repeated_availableToolInstanceIds_codec);
       if (SupportsToolChange != false) {
+        size += 1 + 1;
+      }
+      if (IsSimulated != false) {
         size += 1 + 1;
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
@@ -541,6 +568,9 @@ namespace Messages.Resources.V1 {
       availableToolInstanceIds_.Add(other.availableToolInstanceIds_);
       if (other.SupportsToolChange != false) {
         SupportsToolChange = other.SupportsToolChange;
+      }
+      if (other.IsSimulated != false) {
+        IsSimulated = other.IsSimulated;
       }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
@@ -617,17 +647,21 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 88: {
+            IsSimulated = input.ReadBool();
+            break;
+          }
+          case 96: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 98: {
+          case 106: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 106: {
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -694,17 +728,21 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 88: {
+            IsSimulated = input.ReadBool();
+            break;
+          }
+          case 96: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 98: {
+          case 106: {
             if (basePose_ == null) {
               BasePose = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(BasePose);
             break;
           }
-          case 106: {
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

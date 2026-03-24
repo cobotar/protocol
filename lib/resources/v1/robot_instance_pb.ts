@@ -18,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/robot_instance.proto.
  */
 export const file_resources_v1_robot_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSK8AwoNUm9ib3RJbnN0YW5jZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpChNyb2JvdF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBKDxBAESFQoNc2VyaWFsX251bWJlchgGIAEoCRIgCgpzdGF0aW9uX2lkGAcgASgJQgy6SAnIAQFyBNjxBAESKwoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAggASgJQgm6SAZyBODxBAESIwobYXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJEhwKFHN1cHBvcnRzX3Rvb2xfY2hhbmdlGAogASgIEjMKBnN0YXR1cxgLIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1c0IIukgFggECEAESLQoJYmFzZV9wb3NlGAwgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI8Cg5Sb2JvdEluc3RhbmNlcxIqCgVpdGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Sb2JvdEluc3RhbmNlQr8BChBjb20ucmVzb3VyY2VzLnYxQhJSb2JvdEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSLSAwoNUm9ib3RJbnN0YW5jZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpChNyb2JvdF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBKDxBAESFQoNc2VyaWFsX251bWJlchgGIAEoCRIgCgpzdGF0aW9uX2lkGAcgASgJQgy6SAnIAQFyBNjxBAESKwoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAggASgJQgm6SAZyBODxBAESIwobYXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJEhwKFHN1cHBvcnRzX3Rvb2xfY2hhbmdlGAogASgIEhQKDGlzX3NpbXVsYXRlZBgLIAEoCBIzCgZzdGF0dXMYDCABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABEi0KCWJhc2VfcG9zZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiPAoOUm9ib3RJbnN0YW5jZXMSKgoFaXRlbXMYASADKAsyGy5yZXNvdXJjZXMudjEuUm9ib3RJbnN0YW5jZUK/AQoQY29tLnJlc291cmNlcy52MUISUm9ib3RJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.RobotInstance
@@ -81,17 +81,22 @@ export type RobotInstance = Message<"resources.v1.RobotInstance"> & {
   supportsToolChange: boolean;
 
   /**
-   * @generated from field: common.v1.ResourceStatus status = 11;
+   * @generated from field: bool is_simulated = 11;
+   */
+  isSimulated: boolean;
+
+  /**
+   * @generated from field: common.v1.ResourceStatus status = 12;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose base_pose = 12;
+   * @generated from field: geometry.v1.LocalizedPose base_pose = 13;
    */
   basePose?: LocalizedPose;
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 13;
+   * @generated from field: common.v1.CustomProperties custom = 14;
    */
   custom?: CustomProperties;
 };

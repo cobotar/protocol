@@ -26,3 +26,7 @@ message SequenceRun {
   bool can_bulk_complete = 8;
   repeated ActorRef assigned_actors = 9;
 }
+
+message SequenceRuns {
+  repeated SequenceRun items = 1;
+}

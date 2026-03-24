@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/sequence_run.proto.
  */
 export const file_runtime_v1_sequence_run: GenFile = /*@__PURE__*/
-  fileDesc("Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MSKlAgoLU2VxdWVuY2VSdW4SCgoCaWQYASABKAkSHgoWc2VxdWVuY2VfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEh4KFmNoaWxkX3NlcXVlbmNlX3J1bl9pZHMYBCADKAkSGgoSY2hpbGRfdGFza19ydW5faWRzGAUgAygJEisKBXN0YXRlGAYgASgOMhwucnVudGltZS52MS5TZXF1ZW5jZVJ1blN0YXRlEhcKD2NvbXBsZXRlZF90YXNrcxgHIAEoBRIZChFjYW5fYnVsa19jb21wbGV0ZRgIIAEoCBItCg9hc3NpZ25lZF9hY3RvcnMYCSADKAsyFC5ydW50aW1lLnYxLkFjdG9yUmVmKukBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEisKJ1NFUVVFTkNFX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9XQUlUSU5HEAISIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSIAocU0VRVUVOQ0VfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9BQk9SVEVEEAVCrwEKDmNvbS5ydW50aW1lLnYxQhBTZXF1ZW5jZVJ1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_runtime_v1_actor_assignment]);
+  fileDesc("Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MSKlAgoLU2VxdWVuY2VSdW4SCgoCaWQYASABKAkSHgoWc2VxdWVuY2VfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEh4KFmNoaWxkX3NlcXVlbmNlX3J1bl9pZHMYBCADKAkSGgoSY2hpbGRfdGFza19ydW5faWRzGAUgAygJEisKBXN0YXRlGAYgASgOMhwucnVudGltZS52MS5TZXF1ZW5jZVJ1blN0YXRlEhcKD2NvbXBsZXRlZF90YXNrcxgHIAEoBRIZChFjYW5fYnVsa19jb21wbGV0ZRgIIAEoCBItCg9hc3NpZ25lZF9hY3RvcnMYCSADKAsyFC5ydW50aW1lLnYxLkFjdG9yUmVmIjYKDFNlcXVlbmNlUnVucxImCgVpdGVtcxgBIAMoCzIXLnJ1bnRpbWUudjEuU2VxdWVuY2VSdW4q6QEKEFNlcXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX1dBSVRJTkcQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIgChxTRVFVRU5DRV9SVU5fU1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JURUQQBUKvAQoOY29tLnJ1bnRpbWUudjFCEFNlcXVlbmNlUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_runtime_v1_actor_assignment]);
 
 /**
  * @generated from message runtime.v1.SequenceRun
@@ -70,6 +70,23 @@ export type SequenceRun = Message<"runtime.v1.SequenceRun"> & {
  */
 export const SequenceRunSchema: GenMessage<SequenceRun> = /*@__PURE__*/
   messageDesc(file_runtime_v1_sequence_run, 0);
+
+/**
+ * @generated from message runtime.v1.SequenceRuns
+ */
+export type SequenceRuns = Message<"runtime.v1.SequenceRuns"> & {
+  /**
+   * @generated from field: repeated runtime.v1.SequenceRun items = 1;
+   */
+  items: SequenceRun[];
+};
+
+/**
+ * Describes the message runtime.v1.SequenceRuns.
+ * Use `create(SequenceRunsSchema)` to create a new message.
+ */
+export const SequenceRunsSchema: GenMessage<SequenceRuns> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_sequence_run, 1);
 
 /**
  * @generated from enum runtime.v1.SequenceRunState

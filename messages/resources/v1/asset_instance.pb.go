@@ -181,15 +181,15 @@ var File_resources_v1_asset_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_instance_proto_rawDesc = "" +
 	"\n" +
-	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfb\x02\n" +
+	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\x81\x03\n" +
 	"\rAssetInstance\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x129\n" +
-	"\x13asset_definition_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x11assetDefinitionId\x12(\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12<\n" +
+	"\x13asset_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf1\x04\x01R\x11assetDefinitionId\x12+\n" +
 	"\n" +
-	"station_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12;\n" +
+	"station_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\tstationId\x12;\n" +
 	"\x06status\x18\a \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12.\n" +
 	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x123\n" +
 	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
