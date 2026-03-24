@@ -341,6 +341,15 @@
   
     - [ProcessType](#process-v1-ProcessType)
   
+- [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
+    - [VariantConfiguration](#variance-v1-VariantConfiguration)
+    - [VariantSelection](#variance-v1-VariantSelection)
+  
+- [process/v1/generation_requests.proto](#process_v1_generation_requests-proto)
+    - [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue)
+    - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
+    - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
+  
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
     - [ActorRef](#runtime-v1-ActorRef)
@@ -360,10 +369,6 @@
     - [TaskRuns](#runtime-v1-TaskRuns)
   
     - [TaskRunState](#runtime-v1-TaskRunState)
-  
-- [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
-    - [VariantConfiguration](#variance-v1-VariantConfiguration)
-    - [VariantSelection](#variance-v1-VariantSelection)
   
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
@@ -4824,6 +4829,130 @@ ProcessRecipe describes the following:
 
 
 
+<a name="variance_v1_variant_configuration-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_configuration.proto
+
+
+
+<a name="variance-v1-VariantConfiguration"></a>
+
+### VariantConfiguration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selections | [VariantSelection](#variance-v1-VariantSelection) | repeated |  |
+
+
+
+
+
+
+<a name="variance-v1-VariantSelection"></a>
+
+### VariantSelection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
+| option_id | [string](#string) |  | &#34;left&#34; |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_generation_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/generation_requests.proto
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateIssue"></a>
+
+### DraftProcessRecipeGenerateIssue
+DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
+encountered during recipe generation.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| message | [string](#string) |  |  |
+| node_id | [string](#string) |  |  |
+| part_definition_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateRequest"></a>
+
+### DraftProcessRecipeGenerateRequest
+DraftProcessRecipeGenerateRequest asks the backend to generate a draft
+ProcessRecipe from a ProductDefinition plus generation options.
+
+This is intended for authoring-time generation, not runtime execution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product_definition_id | [string](#string) |  | The product structure that should be transformed into a draft recipe. |
+| recipe_id | [string](#string) |  | Optional explicit recipe id for the generated recipe. If empty, the generator/backend may assign one. |
+| recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
+| recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
+| insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
+| group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-oriented sequence. |
+| group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
+| generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
+| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
+
+
+
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateResult"></a>
+
+### DraftProcessRecipeGenerateResult
+DraftProcessRecipeGenerateResult contains the generated draft recipe.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe | [ProcessRecipe](#process-v1-ProcessRecipe) |  |  |
+| issues | [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="runtime_v1_actor_assignment-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5068,53 +5197,6 @@ ProcessRecipe describes the following:
 | TASK_RUN_STATE_ERROR | 5 |  |
 | TASK_RUN_STATE_ABORTED | 6 |  |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="variance_v1_variant_configuration-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## variance/v1/variant_configuration.proto
-
-
-
-<a name="variance-v1-VariantConfiguration"></a>
-
-### VariantConfiguration
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| selections | [VariantSelection](#variance-v1-VariantSelection) | repeated |  |
-
-
-
-
-
-
-<a name="variance-v1-VariantSelection"></a>
-
-### VariantSelection
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
-| option_id | [string](#string) |  | &#34;left&#34; |
-
-
-
-
-
- 
 
  
 

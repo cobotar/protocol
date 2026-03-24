@@ -1,0 +1,64 @@
+syntax = "proto3";
+package process.v1;
+
+import "process/v1/process_recipe.proto";
+import "variance/v1/variant_configuration.proto";
+
+option csharp_namespace = "Messages.Process.V1";
+option go_package = "github.com/cobotar/protocol/messages/process/v1";
+
+// DraftProcessRecipeGenerateRequest asks the backend to generate a draft
+// ProcessRecipe from a ProductDefinition plus generation options.
+//
+// This is intended for authoring-time generation, not runtime execution.
+message DraftProcessRecipeGenerateRequest {
+  // The product structure that should be transformed into a draft recipe.
+  string product_definition_id = 1;
+
+  // Optional explicit recipe id for the generated recipe.
+  // If empty, the generator/backend may assign one.
+  string recipe_id = 2;
+
+  // Human-readable name for the generated recipe.
+  string recipe_name = 3;
+
+  // Optional human-readable description for the generated recipe.
+  string recipe_description = 4;
+
+  // Selected product variants used to filter applicability and annotate the
+  // generated recipe applicability.
+  variance.v1.VariantConfiguration variant_configuration = 5;
+
+  // If true, the generator may insert ALIGN tasks before grouped fastener work
+  // when that improves the generated task flow.
+  bool insert_align_before_fasten_group = 6;
+
+  // Minimum number of sibling fasteners required before grouping them into a
+  // shared fastener-oriented sequence.
+  int32 group_fasteners_threshold = 7;
+
+  // Minimum number of repeated sibling parts required before grouping them into
+  // a shared repeated-parts sequence.
+  int32 group_repeated_parts_threshold = 8;
+
+  // If true, the generator may insert VERIFY tasks where appropriate.
+  bool generate_verify_tasks = 9;
+
+  // If true, the generator may prefer MOVE tasks when the operation can be
+  // reasonably interpreted as repositioning rather than installation.
+  bool prefer_move_tasks_when_possible = 10;
+}
+
+// DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
+// encountered during recipe generation.
+message DraftProcessRecipeGenerateIssue {
+  string message = 1;
+  string node_id = 2;
+  string part_definition_id = 3;
+}
+
+// DraftProcessRecipeGenerateResult contains the generated draft recipe.
+message DraftProcessRecipeGenerateResult {
+  ProcessRecipe recipe = 1;
+  repeated DraftProcessRecipeGenerateIssue issues = 2;
+}
