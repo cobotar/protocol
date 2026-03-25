@@ -186,30 +186,204 @@ func (TaskAssignmentPreference) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{1}
 }
 
+type ProductTarget struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	NodeId           string                 `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`                                 // Assembly node occurrence the task acts on.
+	PartDefinitionId string                 `protobuf:"bytes,2,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"` // Optional denormalized helper.
+	LocalTarget      *v1.LocalTarget        `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`                  // Pose/anchor relative to the chosen product reference.
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ProductTarget) Reset() {
+	*x = ProductTarget{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductTarget) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductTarget) ProtoMessage() {}
+
+func (x *ProductTarget) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductTarget.ProtoReflect.Descriptor instead.
+func (*ProductTarget) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ProductTarget) GetNodeId() string {
+	if x != nil {
+		return x.NodeId
+	}
+	return ""
+}
+
+func (x *ProductTarget) GetPartDefinitionId() string {
+	if x != nil {
+		return x.PartDefinitionId
+	}
+	return ""
+}
+
+func (x *ProductTarget) GetLocalTarget() *v1.LocalTarget {
+	if x != nil {
+		return x.LocalTarget
+	}
+	return nil
+}
+
+type ContainerTarget struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	ContainerDefinitionId string                 `protobuf:"bytes,1,opt,name=container_definition_id,json=containerDefinitionId,proto3" json:"container_definition_id,omitempty"` // Generic container type, e.g. pallet, tray, jig, fixture, bin.
+	SlotId                string                 `protobuf:"bytes,2,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                                                // Optional slot definition within that container definition.
+	SlotType              v11.ContainerSlotType  `protobuf:"varint,3,opt,name=slot_type,json=slotType,proto3,enum=resources.v1.ContainerSlotType" json:"slot_type,omitempty"`     // Semantic slot kind if known.
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ContainerTarget) Reset() {
+	*x = ContainerTarget{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ContainerTarget) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ContainerTarget) ProtoMessage() {}
+
+func (x *ContainerTarget) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ContainerTarget.ProtoReflect.Descriptor instead.
+func (*ContainerTarget) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ContainerTarget) GetContainerDefinitionId() string {
+	if x != nil {
+		return x.ContainerDefinitionId
+	}
+	return ""
+}
+
+func (x *ContainerTarget) GetSlotId() string {
+	if x != nil {
+		return x.SlotId
+	}
+	return ""
+}
+
+func (x *ContainerTarget) GetSlotType() v11.ContainerSlotType {
+	if x != nil {
+		return x.SlotType
+	}
+	return v11.ContainerSlotType(0)
+}
+
+// Generic authoring-time resource references.
+type ResourceTarget struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	AssetDefinitionId     string                 `protobuf:"bytes,1,opt,name=asset_definition_id,json=assetDefinitionId,proto3" json:"asset_definition_id,omitempty"`             // Camera, feeder, HMI, sensor, conveyor, etc.
+	RobotDefinitionId     string                 `protobuf:"bytes,2,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`             // Robot type required or referenced by the task.
+	ContainerDefinitionId string                 `protobuf:"bytes,3,opt,name=container_definition_id,json=containerDefinitionId,proto3" json:"container_definition_id,omitempty"` // Optional generic container used outside explicit workpiece targeting.
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ResourceTarget) Reset() {
+	*x = ResourceTarget{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResourceTarget) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResourceTarget) ProtoMessage() {}
+
+func (x *ResourceTarget) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResourceTarget.ProtoReflect.Descriptor instead.
+func (*ResourceTarget) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ResourceTarget) GetAssetDefinitionId() string {
+	if x != nil {
+		return x.AssetDefinitionId
+	}
+	return ""
+}
+
+func (x *ResourceTarget) GetRobotDefinitionId() string {
+	if x != nil {
+		return x.RobotDefinitionId
+	}
+	return ""
+}
+
+func (x *ResourceTarget) GetContainerDefinitionId() string {
+	if x != nil {
+		return x.ContainerDefinitionId
+	}
+	return ""
+}
+
+// TaskTarget captures the static authoring-time target of a task.
+//
+// It intentionally avoids concrete runtime/deployment bindings such as
+// specific robot instances, camera instances, or pallet instances. Those should
+// instead be resolved into runtime.v1.TaskRun / TaskRuntimeBinding.
 type TaskTarget struct {
-	state                  protoimpl.MessageState `protogen:"open.v1"`
-	TargetNodeId           string                 `protobuf:"bytes,1,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`                                 // Optional target assembly node when the task acts on a product structure occurrence.
-	TargetPartDefinitionId string                 `protobuf:"bytes,2,opt,name=target_part_definition_id,json=targetPartDefinitionId,proto3" json:"target_part_definition_id,omitempty"` // Optional denormalized helper for UIs, planning, and filtering.
-	LocalTarget            *v1.LocalTarget        `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`                                      // Optional pose/anchor relative to the chosen target reference.
-	// Optional non-product targets.
-	// These are useful when a task is not primarily about an AssemblyNode.
-	// Examples:
-	// - asset_instance_id     -> check camera, read HMI, inspect feeder
-	// - robot_instance_id     -> move robot to home, inspect robot state
-	// - station_id            -> clear work surface, perform station startup step
-	// - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
-	AssetInstanceId     string                `protobuf:"bytes,4,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`             // Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
-	RobotInstanceId     string                `protobuf:"bytes,5,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`             // Optional robot target for robot-specific actions.
-	StationId           string                `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                                 // Optional station target for station-level or area-level actions.
-	ContainerInstanceId string                `protobuf:"bytes,7,opt,name=container_instance_id,json=containerInstanceId,proto3" json:"container_instance_id,omitempty"` // Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
-	Location            *v11.ContainerSlotRef `protobuf:"bytes,8,opt,name=location,proto3" json:"location,omitempty"`                                                    // Optional slot-level target when a task acts on a specific addressable place in a container.
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Product       *ProductTarget         `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`     // Optional product-structure target.
+	Container     *ContainerTarget       `protobuf:"bytes,2,opt,name=container,proto3" json:"container,omitempty"` // Optional container/slot target.
+	Resource      *ResourceTarget        `protobuf:"bytes,3,opt,name=resource,proto3" json:"resource,omitempty"`   // Optional generic resource target.
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TaskTarget) Reset() {
 	*x = TaskTarget{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[0]
+	mi := &file_process_v1_task_definition_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -221,7 +395,7 @@ func (x *TaskTarget) String() string {
 func (*TaskTarget) ProtoMessage() {}
 
 func (x *TaskTarget) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[0]
+	mi := &file_process_v1_task_definition_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,61 +408,83 @@ func (x *TaskTarget) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskTarget.ProtoReflect.Descriptor instead.
 func (*TaskTarget) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{0}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *TaskTarget) GetTargetNodeId() string {
+func (x *TaskTarget) GetProduct() *ProductTarget {
 	if x != nil {
-		return x.TargetNodeId
-	}
-	return ""
-}
-
-func (x *TaskTarget) GetTargetPartDefinitionId() string {
-	if x != nil {
-		return x.TargetPartDefinitionId
-	}
-	return ""
-}
-
-func (x *TaskTarget) GetLocalTarget() *v1.LocalTarget {
-	if x != nil {
-		return x.LocalTarget
+		return x.Product
 	}
 	return nil
 }
 
-func (x *TaskTarget) GetAssetInstanceId() string {
+func (x *TaskTarget) GetContainer() *ContainerTarget {
 	if x != nil {
-		return x.AssetInstanceId
+		return x.Container
 	}
-	return ""
+	return nil
 }
 
-func (x *TaskTarget) GetRobotInstanceId() string {
+func (x *TaskTarget) GetResource() *ResourceTarget {
 	if x != nil {
-		return x.RobotInstanceId
+		return x.Resource
 	}
-	return ""
+	return nil
 }
 
-func (x *TaskTarget) GetStationId() string {
-	if x != nil {
-		return x.StationId
-	}
-	return ""
+// TaskEndpoint is used for source/destination style references in tasks such
+// as pick/place, move, kitting, and transfer operations.
+//
+// Like TaskTarget, TaskEndpoint is static/generic and should remain reusable
+// across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
+type TaskEndpoint struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Product       *ProductTarget         `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`
+	Container     *ContainerTarget       `protobuf:"bytes,2,opt,name=container,proto3" json:"container,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
-func (x *TaskTarget) GetContainerInstanceId() string {
-	if x != nil {
-		return x.ContainerInstanceId
-	}
-	return ""
+func (x *TaskEndpoint) Reset() {
+	*x = TaskEndpoint{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
-func (x *TaskTarget) GetLocation() *v11.ContainerSlotRef {
+func (x *TaskEndpoint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskEndpoint) ProtoMessage() {}
+
+func (x *TaskEndpoint) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[4]
 	if x != nil {
-		return x.Location
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskEndpoint.ProtoReflect.Descriptor instead.
+func (*TaskEndpoint) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *TaskEndpoint) GetProduct() *ProductTarget {
+	if x != nil {
+		return x.Product
+	}
+	return nil
+}
+
+func (x *TaskEndpoint) GetContainer() *ContainerTarget {
+	if x != nil {
+		return x.Container
 	}
 	return nil
 }
@@ -306,7 +502,7 @@ type ValidationRequirement struct {
 
 func (x *ValidationRequirement) Reset() {
 	*x = ValidationRequirement{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[1]
+	mi := &file_process_v1_task_definition_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -318,7 +514,7 @@ func (x *ValidationRequirement) String() string {
 func (*ValidationRequirement) ProtoMessage() {}
 
 func (x *ValidationRequirement) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[1]
+	mi := &file_process_v1_task_definition_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +527,7 @@ func (x *ValidationRequirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidationRequirement.ProtoReflect.Descriptor instead.
 func (*ValidationRequirement) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{1}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ValidationRequirement) GetRequireToolFeedback() bool {
@@ -383,7 +579,7 @@ type TaskExecutionPolicy struct {
 
 func (x *TaskExecutionPolicy) Reset() {
 	*x = TaskExecutionPolicy{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[2]
+	mi := &file_process_v1_task_definition_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -395,7 +591,7 @@ func (x *TaskExecutionPolicy) String() string {
 func (*TaskExecutionPolicy) ProtoMessage() {}
 
 func (x *TaskExecutionPolicy) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[2]
+	mi := &file_process_v1_task_definition_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -408,7 +604,7 @@ func (x *TaskExecutionPolicy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskExecutionPolicy.ProtoReflect.Descriptor instead.
 func (*TaskExecutionPolicy) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{2}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *TaskExecutionPolicy) GetAssignmentPreference() TaskAssignmentPreference {
@@ -465,7 +661,7 @@ type TaskOverride struct {
 
 func (x *TaskOverride) Reset() {
 	*x = TaskOverride{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[3]
+	mi := &file_process_v1_task_definition_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -477,7 +673,7 @@ func (x *TaskOverride) String() string {
 func (*TaskOverride) ProtoMessage() {}
 
 func (x *TaskOverride) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[3]
+	mi := &file_process_v1_task_definition_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +686,7 @@ func (x *TaskOverride) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskOverride.ProtoReflect.Descriptor instead.
 func (*TaskOverride) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{3}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *TaskOverride) GetWhen() []*v14.VariantRule {
@@ -521,38 +717,39 @@ func (x *TaskOverride) GetApproach() *v1.Vector3 {
 	return nil
 }
 
+// TaskDefinition is the static/universal authoring-time description of a task.
+//
+// It should remain reusable across workcells, deployments, and specific
+// equipment instances. Runtime-specific information such as concrete robot,
+// asset, station, or container bindings belongs in runtime.v1.TaskRun.
 type TaskDefinition struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	InstructionText string                 `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`      // Human-readable instruction shown to the operator or author.
-	SequenceNumber  int32                  `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`        // Ordering hint within the parent sequence.
-	TaskType        TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=process.v1.TaskType" json:"task_type,omitempty"` // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
-	Target          *TaskTarget            `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`                                               // The primary thing/location/resource this task acts on.
-	InsertionOffset *v1.Vector3            `protobuf:"bytes,9,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"`      // Offset from final pose to pre-insertion pose, in mm
-	ApproachOffset  *v1.Vector3            `protobuf:"bytes,10,opt,name=approach_offset,json=approachOffset,proto3" json:"approach_offset,omitempty"`        // Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning.
-	// repeated string precondition_task_ids = 10;
-	// repeated string dependant_task_ids = 11;
-	ToolRequirements    []*v12.ToolRequirement  `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`                              // Tools or tool roles needed to perform the task.
-	SkillRequirements   []*v12.SkillRequirement `protobuf:"bytes,13,rep,name=skill_requirements,json=skillRequirements,proto3" json:"skill_requirements,omitempty"`                           // Skills/qualifications needed by the acting human/robot.
-	Validation          *ValidationRequirement  `protobuf:"bytes,14,opt,name=validation,proto3" json:"validation,omitempty"`                                                                  // How task completion should be confirmed or validated.
-	ExecutionPolicy     *TaskExecutionPolicy    `protobuf:"bytes,15,opt,name=execution_policy,json=executionPolicy,proto3" json:"execution_policy,omitempty"`                                 // Assignment preferences and execution permissions.
-	SafetyRelevance     v13.SafetyRelevance     `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"` // Safety significance of the task.
-	SourceNodeId        string                  `protobuf:"bytes,17,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`                                        // Optional source assembly node when something is moved/picked from a product structure.
-	DestinationNodeId   string                  `protobuf:"bytes,18,opt,name=destination_node_id,json=destinationNodeId,proto3" json:"destination_node_id,omitempty"`                         // Optional destination assembly node when something is moved/placed into a product structure.
-	SourceLocation      *v11.ContainerSlotRef   `protobuf:"bytes,19,opt,name=source_location,json=sourceLocation,proto3" json:"source_location,omitempty"`                                    // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-	DestinationLocation *v11.ContainerSlotRef   `protobuf:"bytes,20,opt,name=destination_location,json=destinationLocation,proto3" json:"destination_location,omitempty"`                     // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-	Applicability       []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Applies if any rule matches. Empty means always applicable.
-	Overrides           []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state             protoimpl.MessageState  `protogen:"open.v1"`
+	Id                string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name              string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon              string                  `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description       string                  `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	InstructionText   string                  `protobuf:"bytes,5,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`                                  // Human-readable instruction shown to the operator or author.
+	SequenceNumber    int32                   `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`                                    // Ordering hint within the parent sequence.
+	TaskType          TaskType                `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=process.v1.TaskType" json:"task_type,omitempty"`                             // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+	Target            *TaskTarget             `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`                                                                           // The primary static/generic thing/location/resource this task acts on.
+	InsertionOffset   *v1.Vector3             `protobuf:"bytes,9,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"`                                  // Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
+	ApproachOffset    *v1.Vector3             `protobuf:"bytes,10,opt,name=approach_offset,json=approachOffset,proto3" json:"approach_offset,omitempty"`                                    // Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
+	ToolRequirements  []*v12.ToolRequirement  `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`                              // Tools or tool roles needed to perform the task.
+	SkillRequirements []*v12.SkillRequirement `protobuf:"bytes,13,rep,name=skill_requirements,json=skillRequirements,proto3" json:"skill_requirements,omitempty"`                           // Skills/qualifications needed by the acting human/robot.
+	Validation        *ValidationRequirement  `protobuf:"bytes,14,opt,name=validation,proto3" json:"validation,omitempty"`                                                                  // How task completion should be confirmed or validated.
+	ExecutionPolicy   *TaskExecutionPolicy    `protobuf:"bytes,15,opt,name=execution_policy,json=executionPolicy,proto3" json:"execution_policy,omitempty"`                                 // Static execution policy, preferences, and permissions used by planning/runtime.
+	SafetyRelevance   v13.SafetyRelevance     `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"` // Safety significance of the task.
+	Source            *TaskEndpoint           `protobuf:"bytes,17,opt,name=source,proto3" json:"source,omitempty"`                                                                          // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
+	Destination       *TaskEndpoint           `protobuf:"bytes,18,opt,name=destination,proto3" json:"destination,omitempty"`                                                                // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
+	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Applies if any rule matches. Empty means always applicable.
+	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *TaskDefinition) Reset() {
 	*x = TaskDefinition{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	mi := &file_process_v1_task_definition_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -564,7 +761,7 @@ func (x *TaskDefinition) String() string {
 func (*TaskDefinition) ProtoMessage() {}
 
 func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	mi := &file_process_v1_task_definition_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -577,7 +774,7 @@ func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinition.ProtoReflect.Descriptor instead.
 func (*TaskDefinition) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{4}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *TaskDefinition) GetId() string {
@@ -685,30 +882,16 @@ func (x *TaskDefinition) GetSafetyRelevance() v13.SafetyRelevance {
 	return v13.SafetyRelevance(0)
 }
 
-func (x *TaskDefinition) GetSourceNodeId() string {
+func (x *TaskDefinition) GetSource() *TaskEndpoint {
 	if x != nil {
-		return x.SourceNodeId
-	}
-	return ""
-}
-
-func (x *TaskDefinition) GetDestinationNodeId() string {
-	if x != nil {
-		return x.DestinationNodeId
-	}
-	return ""
-}
-
-func (x *TaskDefinition) GetSourceLocation() *v11.ContainerSlotRef {
-	if x != nil {
-		return x.SourceLocation
+		return x.Source
 	}
 	return nil
 }
 
-func (x *TaskDefinition) GetDestinationLocation() *v11.ContainerSlotRef {
+func (x *TaskDefinition) GetDestination() *TaskEndpoint {
 	if x != nil {
-		return x.DestinationLocation
+		return x.Destination
 	}
 	return nil
 }
@@ -736,7 +919,7 @@ type TaskDefinitions struct {
 
 func (x *TaskDefinitions) Reset() {
 	*x = TaskDefinitions{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[5]
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -748,7 +931,7 @@ func (x *TaskDefinitions) String() string {
 func (*TaskDefinitions) ProtoMessage() {}
 
 func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[5]
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -761,7 +944,7 @@ func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinitions.ProtoReflect.Descriptor instead.
 func (*TaskDefinitions) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{5}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *TaskDefinitions) GetItems() []*TaskDefinition {
@@ -776,18 +959,27 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x91\x03\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x93\x01\n" +
+	"\rProductTarget\x12\x17\n" +
+	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x12,\n" +
+	"\x12part_definition_id\x18\x02 \x01(\tR\x10partDefinitionId\x12;\n" +
+	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\"\xa0\x01\n" +
+	"\x0fContainerTarget\x126\n" +
+	"\x17container_definition_id\x18\x01 \x01(\tR\x15containerDefinitionId\x12\x17\n" +
+	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x12<\n" +
+	"\tslot_type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\bslotType\"\xa8\x01\n" +
+	"\x0eResourceTarget\x12.\n" +
+	"\x13asset_definition_id\x18\x01 \x01(\tR\x11assetDefinitionId\x12.\n" +
+	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x126\n" +
+	"\x17container_definition_id\x18\x03 \x01(\tR\x15containerDefinitionId\"\xb4\x01\n" +
 	"\n" +
-	"TaskTarget\x12$\n" +
-	"\x0etarget_node_id\x18\x01 \x01(\tR\ftargetNodeId\x129\n" +
-	"\x19target_part_definition_id\x18\x02 \x01(\tR\x16targetPartDefinitionId\x12;\n" +
-	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\x12*\n" +
-	"\x11asset_instance_id\x18\x04 \x01(\tR\x0fassetInstanceId\x12*\n" +
-	"\x11robot_instance_id\x18\x05 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
-	"\n" +
-	"station_id\x18\x06 \x01(\tR\tstationId\x122\n" +
-	"\x15container_instance_id\x18\a \x01(\tR\x13containerInstanceId\x12:\n" +
-	"\blocation\x18\b \x01(\v2\x1e.resources.v1.ContainerSlotRefR\blocation\"\xd8\x02\n" +
+	"TaskTarget\x123\n" +
+	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
+	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\x126\n" +
+	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"~\n" +
+	"\fTaskEndpoint\x123\n" +
+	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
+	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\xd8\x02\n" +
 	"\x15ValidationRequirement\x122\n" +
 	"\x15require_tool_feedback\x18\x01 \x01(\bR\x13requireToolFeedback\x120\n" +
 	"\x14require_vision_check\x18\x02 \x01(\bR\x12requireVisionCheck\x12:\n" +
@@ -805,7 +997,7 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
 	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
-	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x96\t\n" +
+	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x92\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -824,11 +1016,9 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"validation\x18\x0e \x01(\v2!.process.v1.ValidationRequirementR\n" +
 	"validation\x12J\n" +
 	"\x10execution_policy\x18\x0f \x01(\v2\x1f.process.v1.TaskExecutionPolicyR\x0fexecutionPolicy\x12E\n" +
-	"\x10safety_relevance\x18\x10 \x01(\x0e2\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x12$\n" +
-	"\x0esource_node_id\x18\x11 \x01(\tR\fsourceNodeId\x12.\n" +
-	"\x13destination_node_id\x18\x12 \x01(\tR\x11destinationNodeId\x12G\n" +
-	"\x0fsource_location\x18\x13 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\x0esourceLocation\x12Q\n" +
-	"\x14destination_location\x18\x14 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\x13destinationLocation\x12>\n" +
+	"\x10safety_relevance\x18\x10 \x01(\x0e2\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x120\n" +
+	"\x06source\x18\x11 \x01(\v2\x18.process.v1.TaskEndpointR\x06source\x12:\n" +
+	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12>\n" +
 	"\rapplicability\x18\x15 \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x126\n" +
 	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\"C\n" +
 	"\x0fTaskDefinitions\x120\n" +
@@ -878,57 +1068,66 @@ func file_process_v1_task_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_task_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_process_v1_task_definition_proto_goTypes = []any{
 	(TaskType)(0),                  // 0: process.v1.TaskType
 	(TaskAssignmentPreference)(0),  // 1: process.v1.TaskAssignmentPreference
-	(*TaskTarget)(nil),             // 2: process.v1.TaskTarget
-	(*ValidationRequirement)(nil),  // 3: process.v1.ValidationRequirement
-	(*TaskExecutionPolicy)(nil),    // 4: process.v1.TaskExecutionPolicy
-	(*TaskOverride)(nil),           // 5: process.v1.TaskOverride
-	(*TaskDefinition)(nil),         // 6: process.v1.TaskDefinition
-	(*TaskDefinitions)(nil),        // 7: process.v1.TaskDefinitions
-	(*v1.LocalTarget)(nil),         // 8: geometry.v1.LocalTarget
-	(*v11.ContainerSlotRef)(nil),   // 9: resources.v1.ContainerSlotRef
-	(v12.SkillLevel)(0),            // 10: capability.v1.SkillLevel
-	(*v13.KeyValueConstraint)(nil), // 11: common.v1.KeyValueConstraint
-	(*v12.ActorConstraint)(nil),    // 12: capability.v1.ActorConstraint
-	(*v13.EstimatedDuration)(nil),  // 13: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 14: variance.v1.VariantRule
-	(*v1.Vector3)(nil),             // 15: geometry.v1.Vector3
-	(*v12.ToolRequirement)(nil),    // 16: capability.v1.ToolRequirement
-	(*v12.SkillRequirement)(nil),   // 17: capability.v1.SkillRequirement
-	(v13.SafetyRelevance)(0),       // 18: common.v1.SafetyRelevance
+	(*ProductTarget)(nil),          // 2: process.v1.ProductTarget
+	(*ContainerTarget)(nil),        // 3: process.v1.ContainerTarget
+	(*ResourceTarget)(nil),         // 4: process.v1.ResourceTarget
+	(*TaskTarget)(nil),             // 5: process.v1.TaskTarget
+	(*TaskEndpoint)(nil),           // 6: process.v1.TaskEndpoint
+	(*ValidationRequirement)(nil),  // 7: process.v1.ValidationRequirement
+	(*TaskExecutionPolicy)(nil),    // 8: process.v1.TaskExecutionPolicy
+	(*TaskOverride)(nil),           // 9: process.v1.TaskOverride
+	(*TaskDefinition)(nil),         // 10: process.v1.TaskDefinition
+	(*TaskDefinitions)(nil),        // 11: process.v1.TaskDefinitions
+	(*v1.LocalTarget)(nil),         // 12: geometry.v1.LocalTarget
+	(v11.ContainerSlotType)(0),     // 13: resources.v1.ContainerSlotType
+	(v12.SkillLevel)(0),            // 14: capability.v1.SkillLevel
+	(*v13.KeyValueConstraint)(nil), // 15: common.v1.KeyValueConstraint
+	(*v12.ActorConstraint)(nil),    // 16: capability.v1.ActorConstraint
+	(*v13.EstimatedDuration)(nil),  // 17: common.v1.EstimatedDuration
+	(*v14.VariantRule)(nil),        // 18: variance.v1.VariantRule
+	(*v1.Vector3)(nil),             // 19: geometry.v1.Vector3
+	(*v12.ToolRequirement)(nil),    // 20: capability.v1.ToolRequirement
+	(*v12.SkillRequirement)(nil),   // 21: capability.v1.SkillRequirement
+	(v13.SafetyRelevance)(0),       // 22: common.v1.SafetyRelevance
 }
 var file_process_v1_task_definition_proto_depIdxs = []int32{
-	8,  // 0: process.v1.TaskTarget.local_target:type_name -> geometry.v1.LocalTarget
-	9,  // 1: process.v1.TaskTarget.location:type_name -> resources.v1.ContainerSlotRef
-	10, // 2: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
-	11, // 3: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
-	1,  // 4: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
-	12, // 5: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
-	13, // 6: process.v1.TaskExecutionPolicy.estimated_duration:type_name -> common.v1.EstimatedDuration
-	14, // 7: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
-	15, // 8: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
-	0,  // 9: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
-	2,  // 10: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	15, // 11: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	15, // 12: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	16, // 13: process.v1.TaskDefinition.tool_requirements:type_name -> capability.v1.ToolRequirement
-	17, // 14: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	3,  // 15: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	4,  // 16: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	18, // 17: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	9,  // 18: process.v1.TaskDefinition.source_location:type_name -> resources.v1.ContainerSlotRef
-	9,  // 19: process.v1.TaskDefinition.destination_location:type_name -> resources.v1.ContainerSlotRef
-	14, // 20: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	5,  // 21: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	6,  // 22: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	23, // [23:23] is the sub-list for method output_type
-	23, // [23:23] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	12, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
+	13, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
+	2,  // 2: process.v1.TaskTarget.product:type_name -> process.v1.ProductTarget
+	3,  // 3: process.v1.TaskTarget.container:type_name -> process.v1.ContainerTarget
+	4,  // 4: process.v1.TaskTarget.resource:type_name -> process.v1.ResourceTarget
+	2,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
+	3,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
+	14, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
+	15, // 8: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
+	1,  // 9: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
+	16, // 10: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
+	17, // 11: process.v1.TaskExecutionPolicy.estimated_duration:type_name -> common.v1.EstimatedDuration
+	18, // 12: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	19, // 13: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
+	0,  // 14: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
+	5,  // 15: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
+	19, // 16: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	19, // 17: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	20, // 18: process.v1.TaskDefinition.tool_requirements:type_name -> capability.v1.ToolRequirement
+	21, // 19: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	7,  // 20: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	8,  // 21: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	22, // 22: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	6,  // 23: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	6,  // 24: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	18, // 25: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	9,  // 26: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	10, // 27: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	28, // [28:28] is the sub-list for method output_type
+	28, // [28:28] is the sub-list for method input_type
+	28, // [28:28] is the sub-list for extension type_name
+	28, // [28:28] is the sub-list for extension extendee
+	0,  // [0:28] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }
@@ -942,7 +1141,7 @@ func file_process_v1_task_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_task_definition_proto_rawDesc), len(file_process_v1_task_definition_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   6,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

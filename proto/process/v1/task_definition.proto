@@ -51,24 +51,57 @@ enum TaskAssignmentPreference {
   TASK_ASSIGNMENT_PREFERENCE_EITHER = 5;
 }
 
+message ProductTarget {
+  string node_id = 1; // Assembly node occurrence the task acts on.
+  string part_definition_id = 2; // Optional denormalized helper.
+  geometry.v1.LocalTarget local_target = 3; // Pose/anchor relative to the chosen product reference.
+}
+
+message ContainerTarget {
+  string container_definition_id = 1; // Generic container type, e.g. pallet, tray, jig, fixture, bin.
+  string slot_id = 2; // Optional slot definition within that container definition.
+  resources.v1.ContainerSlotType slot_type = 3; // Semantic slot kind if known.
+}
+
+// Generic authoring-time resource references.
+message ResourceTarget {
+  string asset_definition_id = 1; // Camera, feeder, HMI, sensor, conveyor, etc.
+  string robot_definition_id = 2; // Robot type required or referenced by the task.
+  string container_definition_id = 3; // Optional generic container used outside explicit workpiece targeting.
+}
+
+// TaskTarget captures the static authoring-time target of a task.
+//
+// It intentionally avoids concrete runtime/deployment bindings such as
+// specific robot instances, camera instances, or pallet instances. Those should
+// instead be resolved into runtime.v1.TaskRun / TaskRuntimeBinding.
 message TaskTarget {
-  string target_node_id = 1; // Optional target assembly node when the task acts on a product structure occurrence.
-  string target_part_definition_id = 2; // Optional denormalized helper for UIs, planning, and filtering.
-  geometry.v1.LocalTarget local_target = 3; // Optional pose/anchor relative to the chosen target reference.
+  // ---------------------------------------------------------------------------
+  // What the task acts on
+  // ---------------------------------------------------------------------------
+  // These fields describe the static/generic authoring intent of the task.
+  // They should stay reusable across workcells and deployments.
 
-  // Optional non-product targets.
-  // These are useful when a task is not primarily about an AssemblyNode.
-  // Examples:
-  // - asset_instance_id     -> check camera, read HMI, inspect feeder
-  // - robot_instance_id     -> move robot to home, inspect robot state
-  // - station_id            -> clear work surface, perform station startup step
-  // - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
-  string asset_instance_id = 4; // Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
-  string robot_instance_id = 5; // Optional robot target for robot-specific actions.
-  string station_id = 6; // Optional station target for station-level or area-level actions.
-  string container_instance_id = 7; // Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+  ProductTarget product = 1; // Optional product-structure target.
+  ContainerTarget container = 2; // Optional container/slot target.
 
-  resources.v1.ContainerSlotRef location = 8; // Optional slot-level target when a task acts on a specific addressable place in a container.
+  // ---------------------------------------------------------------------------
+  // What generic resource type is relevant to the task
+  // ---------------------------------------------------------------------------
+  // These references stay at definition/type level rather than concrete runtime
+  // instance level, so the recipe remains portable.
+
+  ResourceTarget resource = 3; // Optional generic resource target.
+}
+
+// TaskEndpoint is used for source/destination style references in tasks such
+// as pick/place, move, kitting, and transfer operations.
+//
+// Like TaskTarget, TaskEndpoint is static/generic and should remain reusable
+// across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
+message TaskEndpoint {
+  ProductTarget product = 1;
+  ContainerTarget container = 2;
 }
 
 message ValidationRequirement {
@@ -95,6 +128,11 @@ message TaskOverride {
   geometry.v1.Vector3 approach = 4;
 }
 
+// TaskDefinition is the static/universal authoring-time description of a task.
+//
+// It should remain reusable across workcells, deployments, and specific
+// equipment instances. Runtime-specific information such as concrete robot,
+// asset, station, or container bindings belongs in runtime.v1.TaskRun.
 message TaskDefinition {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
@@ -106,22 +144,16 @@ message TaskDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ]; // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
-  TaskTarget target = 8; // The primary thing/location/resource this task acts on.
-  geometry.v1.Vector3 insertion_offset = 9; // Offset from final pose to pre-insertion pose, in mm
-  geometry.v1.Vector3 approach_offset = 10; // Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning.
-  //repeated string precondition_task_ids = 10;
-  // repeated string dependant_task_ids = 11;
+  TaskTarget target = 8; // The primary static/generic thing/location/resource this task acts on.
+  geometry.v1.Vector3 insertion_offset = 9; // Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
+  geometry.v1.Vector3 approach_offset = 10; // Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
   repeated capability.v1.ToolRequirement tool_requirements = 12; // Tools or tool roles needed to perform the task.
   repeated capability.v1.SkillRequirement skill_requirements = 13; // Skills/qualifications needed by the acting human/robot.
   ValidationRequirement validation = 14; // How task completion should be confirmed or validated.
-  TaskExecutionPolicy execution_policy = 15; // Assignment preferences and execution permissions.
+  TaskExecutionPolicy execution_policy = 15; // Static execution policy, preferences, and permissions used by planning/runtime.
   common.v1.SafetyRelevance safety_relevance = 16; // Safety significance of the task.
-  string source_node_id = 17; // Optional source assembly node when something is moved/picked from a product structure.
-  string destination_node_id = 18; // Optional destination assembly node when something is moved/placed into a product structure.
-
-  resources.v1.ContainerSlotRef source_location = 19; // Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-  resources.v1.ContainerSlotRef destination_location = 20; // Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-
+  TaskEndpoint source = 17; // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
+  TaskEndpoint destination = 18; // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
   repeated variance.v1.VariantRule applicability = 21; // Applies if any rule matches. Empty means always applicable.
   repeated TaskOverride overrides = 22;
 }

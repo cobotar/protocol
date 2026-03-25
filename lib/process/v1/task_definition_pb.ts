@@ -23,7 +23,7 @@ import type { LocalTarget } from "../../geometry/v1/local_target_pb.ts";
 import { file_geometry_v1_local_target } from "../../geometry/v1/local_target_pb.ts";
 import type { Vector3 } from "../../geometry/v1/vector3_pb.ts";
 import { file_geometry_v1_vector3 } from "../../geometry/v1/vector3_pb.ts";
-import type { ContainerSlotRef } from "../../resources/v1/container_definition_pb.ts";
+import type { ContainerSlotType } from "../../resources/v1/container_definition_pb.ts";
 import { file_resources_v1_container_definition } from "../../resources/v1/container_definition_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantRule } from "../../variance/v1/variant_rule_pb.ts";
@@ -34,75 +34,145 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/task_definition.proto.
  */
 export const file_process_v1_task_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5wcm90bxIKcHJvY2Vzcy52MSKSAgoKVGFza1RhcmdldBIWCg50YXJnZXRfbm9kZV9pZBgBIAEoCRIhChl0YXJnZXRfcGFydF9kZWZpbml0aW9uX2lkGAIgASgJEi4KDGxvY2FsX3RhcmdldBgDIAEoCzIYLmdlb21ldHJ5LnYxLkxvY2FsVGFyZ2V0EhkKEWFzc2V0X2luc3RhbmNlX2lkGAQgASgJEhkKEXJvYm90X2luc3RhbmNlX2lkGAUgASgJEhIKCnN0YXRpb25faWQYBiABKAkSHQoVY29udGFpbmVyX2luc3RhbmNlX2lkGAcgASgJEjAKCGxvY2F0aW9uGAggASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYi7QEKFVZhbGlkYXRpb25SZXF1aXJlbWVudBIdChVyZXF1aXJlX3Rvb2xfZmVlZGJhY2sYASABKAgSHAoUcmVxdWlyZV92aXNpb25fY2hlY2sYAiABKAgSIQoZYWxsb3dfbWFudWFsX2NvbmZpcm1hdGlvbhgDIAEoCBJACh1tYW51YWxfY29uZmlybWF0aW9uX21pbl9sZXZlbBgEIAEoDjIZLmNhcGFiaWxpdHkudjEuU2tpbGxMZXZlbBIyCgtjb25zdHJhaW50cxgFIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnQihgIKE1Rhc2tFeGVjdXRpb25Qb2xpY3kSQwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAEgASgOMiQucHJvY2Vzcy52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2USOAoQYWN0b3JfY29uc3RyYWludBgCIAEoCzIeLmNhcGFiaWxpdHkudjEuQWN0b3JDb25zdHJhaW50EhQKDGNhbl9yZWFzc2lnbhgDIAEoCBIOCgZjYW5fZG8YBCABKAgSEAoIY2FuX3VuZG8YBSABKAgSOAoSZXN0aW1hdGVkX2R1cmF0aW9uGAYgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uIpABCgxUYXNrT3ZlcnJpZGUSJgoEd2hlbhgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEhgKEGluc3RydWN0aW9uX3RleHQYAiABKAkSFgoOdGFyZ2V0X25vZGVfaWQYAyABKAkSJgoIYXBwcm9hY2gYBCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzIvIGCg5UYXNrRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIYChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJEhcKD3NlcXVlbmNlX251bWJlchgGIAEoBRI0Cgl0YXNrX3R5cGUYByABKA4yFC5wcm9jZXNzLnYxLlRhc2tUeXBlQgu6SAjIAQGCAQIQARImCgZ0YXJnZXQYCCABKAsyFi5wcm9jZXNzLnYxLlRhc2tUYXJnZXQSLgoQaW5zZXJ0aW9uX29mZnNldBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSLQoPYXBwcm9hY2hfb2Zmc2V0GAogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI5ChF0b29sX3JlcXVpcmVtZW50cxgMIAMoCzIeLmNhcGFiaWxpdHkudjEuVG9vbFJlcXVpcmVtZW50EjsKEnNraWxsX3JlcXVpcmVtZW50cxgNIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudBI1Cgp2YWxpZGF0aW9uGA4gASgLMiEucHJvY2Vzcy52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnQSOQoQZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIfLnByb2Nlc3MudjEuVGFza0V4ZWN1dGlvblBvbGljeRI0ChBzYWZldHlfcmVsZXZhbmNlGBAgASgOMhouY29tbW9uLnYxLlNhZmV0eVJlbGV2YW5jZRIWCg5zb3VyY2Vfbm9kZV9pZBgRIAEoCRIbChNkZXN0aW5hdGlvbl9ub2RlX2lkGBIgASgJEjcKD3NvdXJjZV9sb2NhdGlvbhgTIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmEjwKFGRlc3RpbmF0aW9uX2xvY2F0aW9uGBQgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYSLwoNYXBwbGljYWJpbGl0eRgVIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEisKCW92ZXJyaWRlcxgWIAMoCzIYLnByb2Nlc3MudjEuVGFza092ZXJyaWRlIjwKD1Rhc2tEZWZpbml0aW9ucxIpCgVpdGVtcxgBIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24qvwMKCFRhc2tUeXBlEhkKFVRBU0tfVFlQRV9VTlNQRUNJRklFRBAAEhUKEVRBU0tfVFlQRV9JTlNQRUNUEAESFAoQVEFTS19UWVBFX0ZBU1RFThACEhYKElRBU0tfVFlQRV9VTkZBU1RFThADEhMKD1RBU0tfVFlQRV9NT1VOVBAEEhUKEVRBU0tfVFlQRV9VTk1PVU5UEAUSEgoOVEFTS19UWVBFX01PVkUQBhIUChBUQVNLX1RZUEVfUkVNT1ZFEAcSEwoPVEFTS19UWVBFX0FQUExZEAgSEgoOVEFTS19UWVBFX1dJUEUQCRITCg9UQVNLX1RZUEVfQUxJR04QChIUChBUQVNLX1RZUEVfSU5TRVJUEAsSEgoOVEFTS19UWVBFX0hPTEQQDBIUChBUQVNLX1RZUEVfVkVSSUZZEA0SEgoOVEFTS19UWVBFX1BJQ0sQDhITCg9UQVNLX1RZUEVfUExBQ0UQDxISCg5UQVNLX1RZUEVfU0NBThAQEhIKDlRBU0tfVFlQRV9XQUlUEBESEwoPVEFTS19UWVBFX0NIRUNLEBISGQoVVEFTS19UWVBFX0FDS05PV0xFREdFEBMqnQIKGFRhc2tBc3NpZ25tZW50UHJlZmVyZW5jZRIqCiZUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZFUl9IVU1BThABEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlfSFVNQU4QAhIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfUk9CT1QQAxIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX1JPQk9UEAQSJQohVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfRUlUSEVSEAVCsgEKDmNvbS5wcm9jZXNzLnYxQhNUYXNrRGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_capability_v1_actor_constraint, file_capability_v1_actor_skill, file_capability_v1_skill_requirement, file_capability_v1_tool_requirement, file_common_v1_enums, file_common_v1_key_value_constraint, file_common_v1_time, file_geometry_v1_local_target, file_geometry_v1_vector3, file_resources_v1_container_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("CiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5wcm90bxIKcHJvY2Vzcy52MSJsCg1Qcm9kdWN0VGFyZ2V0Eg8KB25vZGVfaWQYASABKAkSGgoScGFydF9kZWZpbml0aW9uX2lkGAIgASgJEi4KDGxvY2FsX3RhcmdldBgDIAEoCzIYLmdlb21ldHJ5LnYxLkxvY2FsVGFyZ2V0IncKD0NvbnRhaW5lclRhcmdldBIfChdjb250YWluZXJfZGVmaW5pdGlvbl9pZBgBIAEoCRIPCgdzbG90X2lkGAIgASgJEjIKCXNsb3RfdHlwZRgDIAEoDjIfLnJlc291cmNlcy52MS5Db250YWluZXJTbG90VHlwZSJrCg5SZXNvdXJjZVRhcmdldBIbChNhc3NldF9kZWZpbml0aW9uX2lkGAEgASgJEhsKE3JvYm90X2RlZmluaXRpb25faWQYAiABKAkSHwoXY29udGFpbmVyX2RlZmluaXRpb25faWQYAyABKAkilgEKClRhc2tUYXJnZXQSKgoHcHJvZHVjdBgBIAEoCzIZLnByb2Nlc3MudjEuUHJvZHVjdFRhcmdldBIuCgljb250YWluZXIYAiABKAsyGy5wcm9jZXNzLnYxLkNvbnRhaW5lclRhcmdldBIsCghyZXNvdXJjZRgDIAEoCzIaLnByb2Nlc3MudjEuUmVzb3VyY2VUYXJnZXQiagoMVGFza0VuZHBvaW50EioKB3Byb2R1Y3QYASABKAsyGS5wcm9jZXNzLnYxLlByb2R1Y3RUYXJnZXQSLgoJY29udGFpbmVyGAIgASgLMhsucHJvY2Vzcy52MS5Db250YWluZXJUYXJnZXQi7QEKFVZhbGlkYXRpb25SZXF1aXJlbWVudBIdChVyZXF1aXJlX3Rvb2xfZmVlZGJhY2sYASABKAgSHAoUcmVxdWlyZV92aXNpb25fY2hlY2sYAiABKAgSIQoZYWxsb3dfbWFudWFsX2NvbmZpcm1hdGlvbhgDIAEoCBJACh1tYW51YWxfY29uZmlybWF0aW9uX21pbl9sZXZlbBgEIAEoDjIZLmNhcGFiaWxpdHkudjEuU2tpbGxMZXZlbBIyCgtjb25zdHJhaW50cxgFIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnQihgIKE1Rhc2tFeGVjdXRpb25Qb2xpY3kSQwoVYXNzaWdubWVudF9wcmVmZXJlbmNlGAEgASgOMiQucHJvY2Vzcy52MS5UYXNrQXNzaWdubWVudFByZWZlcmVuY2USOAoQYWN0b3JfY29uc3RyYWludBgCIAEoCzIeLmNhcGFiaWxpdHkudjEuQWN0b3JDb25zdHJhaW50EhQKDGNhbl9yZWFzc2lnbhgDIAEoCBIOCgZjYW5fZG8YBCABKAgSEAoIY2FuX3VuZG8YBSABKAgSOAoSZXN0aW1hdGVkX2R1cmF0aW9uGAYgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uIpABCgxUYXNrT3ZlcnJpZGUSJgoEd2hlbhgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEhgKEGluc3RydWN0aW9uX3RleHQYAiABKAkSFgoOdGFyZ2V0X25vZGVfaWQYAyABKAkSJgoIYXBwcm9hY2gYBCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzIp8GCg5UYXNrRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIYChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJEhcKD3NlcXVlbmNlX251bWJlchgGIAEoBRI0Cgl0YXNrX3R5cGUYByABKA4yFC5wcm9jZXNzLnYxLlRhc2tUeXBlQgu6SAjIAQGCAQIQARImCgZ0YXJnZXQYCCABKAsyFi5wcm9jZXNzLnYxLlRhc2tUYXJnZXQSLgoQaW5zZXJ0aW9uX29mZnNldBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSLQoPYXBwcm9hY2hfb2Zmc2V0GAogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxI5ChF0b29sX3JlcXVpcmVtZW50cxgMIAMoCzIeLmNhcGFiaWxpdHkudjEuVG9vbFJlcXVpcmVtZW50EjsKEnNraWxsX3JlcXVpcmVtZW50cxgNIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudBI1Cgp2YWxpZGF0aW9uGA4gASgLMiEucHJvY2Vzcy52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnQSOQoQZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIfLnByb2Nlc3MudjEuVGFza0V4ZWN1dGlvblBvbGljeRI0ChBzYWZldHlfcmVsZXZhbmNlGBAgASgOMhouY29tbW9uLnYxLlNhZmV0eVJlbGV2YW5jZRIoCgZzb3VyY2UYESABKAsyGC5wcm9jZXNzLnYxLlRhc2tFbmRwb2ludBItCgtkZXN0aW5hdGlvbhgSIAEoCzIYLnByb2Nlc3MudjEuVGFza0VuZHBvaW50Ei8KDWFwcGxpY2FiaWxpdHkYFSADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZRIrCglvdmVycmlkZXMYFiADKAsyGC5wcm9jZXNzLnYxLlRhc2tPdmVycmlkZSI8Cg9UYXNrRGVmaW5pdGlvbnMSKQoFaXRlbXMYASADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uKr8DCghUYXNrVHlwZRIZChVUQVNLX1RZUEVfVU5TUEVDSUZJRUQQABIVChFUQVNLX1RZUEVfSU5TUEVDVBABEhQKEFRBU0tfVFlQRV9GQVNURU4QAhIWChJUQVNLX1RZUEVfVU5GQVNURU4QAxITCg9UQVNLX1RZUEVfTU9VTlQQBBIVChFUQVNLX1RZUEVfVU5NT1VOVBAFEhIKDlRBU0tfVFlQRV9NT1ZFEAYSFAoQVEFTS19UWVBFX1JFTU9WRRAHEhMKD1RBU0tfVFlQRV9BUFBMWRAIEhIKDlRBU0tfVFlQRV9XSVBFEAkSEwoPVEFTS19UWVBFX0FMSUdOEAoSFAoQVEFTS19UWVBFX0lOU0VSVBALEhIKDlRBU0tfVFlQRV9IT0xEEAwSFAoQVEFTS19UWVBFX1ZFUklGWRANEhIKDlRBU0tfVFlQRV9QSUNLEA4SEwoPVEFTS19UWVBFX1BMQUNFEA8SEgoOVEFTS19UWVBFX1NDQU4QEBISCg5UQVNLX1RZUEVfV0FJVBAREhMKD1RBU0tfVFlQRV9DSEVDSxASEhkKFVRBU0tfVFlQRV9BQ0tOT1dMRURHRRATKp0CChhUYXNrQXNzaWdubWVudFByZWZlcmVuY2USKgomVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQABIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4QARIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAISKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMSKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEEiUKIVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX0VJVEhFUhAFQrIBCg5jb20ucHJvY2Vzcy52MUITVGFza0RlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_actor_constraint, file_capability_v1_actor_skill, file_capability_v1_skill_requirement, file_capability_v1_tool_requirement, file_common_v1_enums, file_common_v1_key_value_constraint, file_common_v1_time, file_geometry_v1_local_target, file_geometry_v1_vector3, file_resources_v1_container_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
- * @generated from message process.v1.TaskTarget
+ * @generated from message process.v1.ProductTarget
  */
-export type TaskTarget = Message<"process.v1.TaskTarget"> & {
+export type ProductTarget = Message<"process.v1.ProductTarget"> & {
   /**
-   * Optional target assembly node when the task acts on a product structure occurrence.
+   * Assembly node occurrence the task acts on.
    *
-   * @generated from field: string target_node_id = 1;
+   * @generated from field: string node_id = 1;
    */
-  targetNodeId: string;
+  nodeId: string;
 
   /**
-   * Optional denormalized helper for UIs, planning, and filtering.
+   * Optional denormalized helper.
    *
-   * @generated from field: string target_part_definition_id = 2;
+   * @generated from field: string part_definition_id = 2;
    */
-  targetPartDefinitionId: string;
+  partDefinitionId: string;
 
   /**
-   * Optional pose/anchor relative to the chosen target reference.
+   * Pose/anchor relative to the chosen product reference.
    *
    * @generated from field: geometry.v1.LocalTarget local_target = 3;
    */
   localTarget?: LocalTarget;
+};
+
+/**
+ * Describes the message process.v1.ProductTarget.
+ * Use `create(ProductTargetSchema)` to create a new message.
+ */
+export const ProductTargetSchema: GenMessage<ProductTarget> = /*@__PURE__*/
+  messageDesc(file_process_v1_task_definition, 0);
+
+/**
+ * @generated from message process.v1.ContainerTarget
+ */
+export type ContainerTarget = Message<"process.v1.ContainerTarget"> & {
+  /**
+   * Generic container type, e.g. pallet, tray, jig, fixture, bin.
+   *
+   * @generated from field: string container_definition_id = 1;
+   */
+  containerDefinitionId: string;
 
   /**
-   * Optional non-product targets.
-   * These are useful when a task is not primarily about an AssemblyNode.
-   * Examples:
-   * - asset_instance_id     -> check camera, read HMI, inspect feeder
-   * - robot_instance_id     -> move robot to home, inspect robot state
-   * - station_id            -> clear work surface, perform station startup step
-   * - container_instance_id -> interact with a specific pallet, jig, tray, or storage bin
+   * Optional slot definition within that container definition.
    *
-   * Optional asset target such as camera, HMI, sensor, conveyor, or feeder.
-   *
-   * @generated from field: string asset_instance_id = 4;
+   * @generated from field: string slot_id = 2;
    */
-  assetInstanceId: string;
+  slotId: string;
 
   /**
-   * Optional robot target for robot-specific actions.
+   * Semantic slot kind if known.
    *
-   * @generated from field: string robot_instance_id = 5;
+   * @generated from field: resources.v1.ContainerSlotType slot_type = 3;
    */
-  robotInstanceId: string;
+  slotType: ContainerSlotType;
+};
+
+/**
+ * Describes the message process.v1.ContainerTarget.
+ * Use `create(ContainerTargetSchema)` to create a new message.
+ */
+export const ContainerTargetSchema: GenMessage<ContainerTarget> = /*@__PURE__*/
+  messageDesc(file_process_v1_task_definition, 1);
+
+/**
+ * Generic authoring-time resource references.
+ *
+ * @generated from message process.v1.ResourceTarget
+ */
+export type ResourceTarget = Message<"process.v1.ResourceTarget"> & {
+  /**
+   * Camera, feeder, HMI, sensor, conveyor, etc.
+   *
+   * @generated from field: string asset_definition_id = 1;
+   */
+  assetDefinitionId: string;
 
   /**
-   * Optional station target for station-level or area-level actions.
+   * Robot type required or referenced by the task.
    *
-   * @generated from field: string station_id = 6;
+   * @generated from field: string robot_definition_id = 2;
    */
-  stationId: string;
+  robotDefinitionId: string;
 
   /**
-   * Optional container target such as storage bin, kit, tray, pallet, clamp, or jig.
+   * Optional generic container used outside explicit workpiece targeting.
    *
-   * @generated from field: string container_instance_id = 7;
+   * @generated from field: string container_definition_id = 3;
    */
-  containerInstanceId: string;
+  containerDefinitionId: string;
+};
+
+/**
+ * Describes the message process.v1.ResourceTarget.
+ * Use `create(ResourceTargetSchema)` to create a new message.
+ */
+export const ResourceTargetSchema: GenMessage<ResourceTarget> = /*@__PURE__*/
+  messageDesc(file_process_v1_task_definition, 2);
+
+/**
+ * TaskTarget captures the static authoring-time target of a task.
+ *
+ * It intentionally avoids concrete runtime/deployment bindings such as
+ * specific robot instances, camera instances, or pallet instances. Those should
+ * instead be resolved into runtime.v1.TaskRun / TaskRuntimeBinding.
+ *
+ * ---------------------------------------------------------------------------
+ * What the task acts on
+ * ---------------------------------------------------------------------------
+ * These fields describe the static/generic authoring intent of the task.
+ * They should stay reusable across workcells and deployments.
+ *
+ * @generated from message process.v1.TaskTarget
+ */
+export type TaskTarget = Message<"process.v1.TaskTarget"> & {
+  /**
+   * Optional product-structure target.
+   *
+   * @generated from field: process.v1.ProductTarget product = 1;
+   */
+  product?: ProductTarget;
 
   /**
-   * Optional slot-level target when a task acts on a specific addressable place in a container.
+   * Optional container/slot target.
    *
-   * @generated from field: resources.v1.ContainerSlotRef location = 8;
+   * @generated from field: process.v1.ContainerTarget container = 2;
    */
-  location?: ContainerSlotRef;
+  container?: ContainerTarget;
+
+  /**
+   * Optional generic resource target.
+   *
+   * @generated from field: process.v1.ResourceTarget resource = 3;
+   */
+  resource?: ResourceTarget;
 };
 
 /**
@@ -110,7 +180,35 @@ export type TaskTarget = Message<"process.v1.TaskTarget"> & {
  * Use `create(TaskTargetSchema)` to create a new message.
  */
 export const TaskTargetSchema: GenMessage<TaskTarget> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 0);
+  messageDesc(file_process_v1_task_definition, 3);
+
+/**
+ * TaskEndpoint is used for source/destination style references in tasks such
+ * as pick/place, move, kitting, and transfer operations.
+ *
+ * Like TaskTarget, TaskEndpoint is static/generic and should remain reusable
+ * across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
+ *
+ * @generated from message process.v1.TaskEndpoint
+ */
+export type TaskEndpoint = Message<"process.v1.TaskEndpoint"> & {
+  /**
+   * @generated from field: process.v1.ProductTarget product = 1;
+   */
+  product?: ProductTarget;
+
+  /**
+   * @generated from field: process.v1.ContainerTarget container = 2;
+   */
+  container?: ContainerTarget;
+};
+
+/**
+ * Describes the message process.v1.TaskEndpoint.
+ * Use `create(TaskEndpointSchema)` to create a new message.
+ */
+export const TaskEndpointSchema: GenMessage<TaskEndpoint> = /*@__PURE__*/
+  messageDesc(file_process_v1_task_definition, 4);
 
 /**
  * @generated from message process.v1.ValidationRequirement
@@ -147,7 +245,7 @@ export type ValidationRequirement = Message<"process.v1.ValidationRequirement"> 
  * Use `create(ValidationRequirementSchema)` to create a new message.
  */
 export const ValidationRequirementSchema: GenMessage<ValidationRequirement> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 1);
+  messageDesc(file_process_v1_task_definition, 5);
 
 /**
  * @generated from message process.v1.TaskExecutionPolicy
@@ -189,7 +287,7 @@ export type TaskExecutionPolicy = Message<"process.v1.TaskExecutionPolicy"> & {
  * Use `create(TaskExecutionPolicySchema)` to create a new message.
  */
 export const TaskExecutionPolicySchema: GenMessage<TaskExecutionPolicy> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 2);
+  messageDesc(file_process_v1_task_definition, 6);
 
 /**
  * @generated from message process.v1.TaskOverride
@@ -221,9 +319,15 @@ export type TaskOverride = Message<"process.v1.TaskOverride"> & {
  * Use `create(TaskOverrideSchema)` to create a new message.
  */
 export const TaskOverrideSchema: GenMessage<TaskOverride> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 3);
+  messageDesc(file_process_v1_task_definition, 7);
 
 /**
+ * TaskDefinition is the static/universal authoring-time description of a task.
+ *
+ * It should remain reusable across workcells, deployments, and specific
+ * equipment instances. Runtime-specific information such as concrete robot,
+ * asset, station, or container bindings belongs in runtime.v1.TaskRun.
+ *
  * @generated from message process.v1.TaskDefinition
  */
 export type TaskDefinition = Message<"process.v1.TaskDefinition"> & {
@@ -269,30 +373,27 @@ export type TaskDefinition = Message<"process.v1.TaskDefinition"> & {
   taskType: TaskType;
 
   /**
-   * The primary thing/location/resource this task acts on.
+   * The primary static/generic thing/location/resource this task acts on.
    *
    * @generated from field: process.v1.TaskTarget target = 8;
    */
   target?: TaskTarget;
 
   /**
-   * Offset from final pose to pre-insertion pose, in mm
+   * Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
    *
    * @generated from field: geometry.v1.Vector3 insertion_offset = 9;
    */
   insertionOffset?: Vector3;
 
   /**
-   * Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning.
+   * Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
    *
    * @generated from field: geometry.v1.Vector3 approach_offset = 10;
    */
   approachOffset?: Vector3;
 
   /**
-   * repeated string precondition_task_ids = 10;
-   * repeated string dependant_task_ids = 11;
-   *
    * Tools or tool roles needed to perform the task.
    *
    * @generated from field: repeated capability.v1.ToolRequirement tool_requirements = 12;
@@ -314,7 +415,7 @@ export type TaskDefinition = Message<"process.v1.TaskDefinition"> & {
   validation?: ValidationRequirement;
 
   /**
-   * Assignment preferences and execution permissions.
+   * Static execution policy, preferences, and permissions used by planning/runtime.
    *
    * @generated from field: process.v1.TaskExecutionPolicy execution_policy = 15;
    */
@@ -328,32 +429,18 @@ export type TaskDefinition = Message<"process.v1.TaskDefinition"> & {
   safetyRelevance: SafetyRelevance;
 
   /**
-   * Optional source assembly node when something is moved/picked from a product structure.
+   * Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
    *
-   * @generated from field: string source_node_id = 17;
+   * @generated from field: process.v1.TaskEndpoint source = 17;
    */
-  sourceNodeId: string;
+  source?: TaskEndpoint;
 
   /**
-   * Optional destination assembly node when something is moved/placed into a product structure.
+   * Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
    *
-   * @generated from field: string destination_node_id = 18;
+   * @generated from field: process.v1.TaskEndpoint destination = 18;
    */
-  destinationNodeId: string;
-
-  /**
-   * Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-   *
-   * @generated from field: resources.v1.ContainerSlotRef source_location = 19;
-   */
-  sourceLocation?: ContainerSlotRef;
-
-  /**
-   * Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations.
-   *
-   * @generated from field: resources.v1.ContainerSlotRef destination_location = 20;
-   */
-  destinationLocation?: ContainerSlotRef;
+  destination?: TaskEndpoint;
 
   /**
    * Applies if any rule matches. Empty means always applicable.
@@ -373,7 +460,7 @@ export type TaskDefinition = Message<"process.v1.TaskDefinition"> & {
  * Use `create(TaskDefinitionSchema)` to create a new message.
  */
 export const TaskDefinitionSchema: GenMessage<TaskDefinition> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 4);
+  messageDesc(file_process_v1_task_definition, 8);
 
 /**
  * @generated from message process.v1.TaskDefinitions
@@ -390,7 +477,7 @@ export type TaskDefinitions = Message<"process.v1.TaskDefinitions"> & {
  * Use `create(TaskDefinitionsSchema)` to create a new message.
  */
 export const TaskDefinitionsSchema: GenMessage<TaskDefinitions> = /*@__PURE__*/
-  messageDesc(file_process_v1_task_definition, 5);
+  messageDesc(file_process_v1_task_definition, 9);
 
 /**
  * @generated from enum process.v1.TaskType

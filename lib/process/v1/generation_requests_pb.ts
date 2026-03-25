@@ -15,7 +15,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/generation_requests.proto.
  */
 export const file_process_v1_generation_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEitQMKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIlChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCBrpIA8gBARIZCglyZWNpcGVfaWQYAiABKAlCBrpIA8gBARITCgtyZWNpcGVfbmFtZRgDIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBCABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAUgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYBiABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgHIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCCABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAkgASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCiABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgLIAEoCCJvCh9EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEhcKB21lc3NhZ2UYASABKAlCBrpIA8gBARIXCgdub2RlX2lkGAIgASgJQga6SAPIAQESGgoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJIpIBCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlc3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBARI7CgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWVCtgEKDmNvbS5wcm9jZXNzLnYxQhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_process_v1_process_recipe, file_variance_v1_variant_configuration]);
+  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEiygMKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIlChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCBrpIA8gBARIZCglyZWNpcGVfaWQYAiABKAlCBrpIA8gBARITCgtyZWNpcGVfbmFtZRgDIAEoCRITCgtyZWNpcGVfaWNvbhgEIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBSABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCCJvCh9EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEhcKB21lc3NhZ2UYASABKAlCBrpIA8gBARIXCgdub2RlX2lkGAIgASgJQga6SAPIAQESGgoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJIpIBCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlc3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBARI7CgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWVCtgEKDmNvbS5wcm9jZXNzLnYxQhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_process_v1_process_recipe, file_variance_v1_variant_configuration]);
 
 /**
  * DraftProcessRecipeGenerateRequest asks the backend to generate a draft
@@ -49,9 +49,16 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
   recipeName: string;
 
   /**
+   * Optional icon for the generated recipe.
+   *
+   * @generated from field: string recipe_icon = 4;
+   */
+  recipeIcon: string;
+
+  /**
    * Optional human-readable description for the generated recipe.
    *
-   * @generated from field: string recipe_description = 4;
+   * @generated from field: string recipe_description = 5;
    */
   recipeDescription: string;
 
@@ -59,7 +66,7 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
    * Selected product variants used to filter applicability and annotate the
    * generated recipe applicability.
    *
-   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 5;
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 6;
    */
   variantConfiguration?: VariantConfiguration;
 
@@ -67,7 +74,7 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
    * If true, the generator may insert ALIGN tasks before grouped fastener work
    * when that improves the generated task flow.
    *
-   * @generated from field: bool insert_align_before_fasten_group = 6;
+   * @generated from field: bool insert_align_before_fasten_group = 7;
    */
   insertAlignBeforeFastenGroup: boolean;
 
@@ -75,7 +82,7 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
    * Minimum number of sibling fasteners required before grouping them into a
    * shared fastener-oriented sequence.
    *
-   * @generated from field: int32 group_fasteners_threshold = 7;
+   * @generated from field: int32 group_fasteners_threshold = 8;
    */
   groupFastenersThreshold: number;
 
@@ -83,14 +90,14 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
    * Minimum number of repeated sibling parts required before grouping them into
    * a shared repeated-parts sequence.
    *
-   * @generated from field: int32 group_repeated_parts_threshold = 8;
+   * @generated from field: int32 group_repeated_parts_threshold = 9;
    */
   groupRepeatedPartsThreshold: number;
 
   /**
    * If true, the generator may insert VERIFY tasks where appropriate.
    *
-   * @generated from field: bool generate_verify_tasks = 9;
+   * @generated from field: bool generate_verify_tasks = 10;
    */
   generateVerifyTasks: boolean;
 
@@ -98,14 +105,14 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
    * If true, the generator may prefer MOVE tasks when the operation can be
    * reasonably interpreted as repositioning rather than installation.
    *
-   * @generated from field: bool prefer_move_tasks_when_possible = 10;
+   * @generated from field: bool prefer_move_tasks_when_possible = 11;
    */
   preferMoveTasksWhenPossible: boolean;
 
   /**
    * If true, nodes marked as optional will be included
    *
-   * @generated from field: bool include_optional_nodes = 11;
+   * @generated from field: bool include_optional_nodes = 12;
    */
   includeOptionalNodes: boolean;
 };

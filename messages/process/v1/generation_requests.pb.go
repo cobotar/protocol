@@ -36,27 +36,29 @@ type DraftProcessRecipeGenerateRequest struct {
 	RecipeId string `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
 	// Human-readable name for the generated recipe.
 	RecipeName string `protobuf:"bytes,3,opt,name=recipe_name,json=recipeName,proto3" json:"recipe_name,omitempty"`
+	// Optional icon for the generated recipe.
+	RecipeIcon string `protobuf:"bytes,4,opt,name=recipe_icon,json=recipeIcon,proto3" json:"recipe_icon,omitempty"`
 	// Optional human-readable description for the generated recipe.
-	RecipeDescription string `protobuf:"bytes,4,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
+	RecipeDescription string `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
 	// Selected product variants used to filter applicability and annotate the
 	// generated recipe applicability.
-	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,5,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// If true, the generator may insert ALIGN tasks before grouped fastener work
 	// when that improves the generated task flow.
-	InsertAlignBeforeFastenGroup bool `protobuf:"varint,6,opt,name=insert_align_before_fasten_group,json=insertAlignBeforeFastenGroup,proto3" json:"insert_align_before_fasten_group,omitempty"`
+	InsertAlignBeforeFastenGroup bool `protobuf:"varint,7,opt,name=insert_align_before_fasten_group,json=insertAlignBeforeFastenGroup,proto3" json:"insert_align_before_fasten_group,omitempty"`
 	// Minimum number of sibling fasteners required before grouping them into a
 	// shared fastener-oriented sequence.
-	GroupFastenersThreshold int32 `protobuf:"varint,7,opt,name=group_fasteners_threshold,json=groupFastenersThreshold,proto3" json:"group_fasteners_threshold,omitempty"`
+	GroupFastenersThreshold int32 `protobuf:"varint,8,opt,name=group_fasteners_threshold,json=groupFastenersThreshold,proto3" json:"group_fasteners_threshold,omitempty"`
 	// Minimum number of repeated sibling parts required before grouping them into
 	// a shared repeated-parts sequence.
-	GroupRepeatedPartsThreshold int32 `protobuf:"varint,8,opt,name=group_repeated_parts_threshold,json=groupRepeatedPartsThreshold,proto3" json:"group_repeated_parts_threshold,omitempty"`
+	GroupRepeatedPartsThreshold int32 `protobuf:"varint,9,opt,name=group_repeated_parts_threshold,json=groupRepeatedPartsThreshold,proto3" json:"group_repeated_parts_threshold,omitempty"`
 	// If true, the generator may insert VERIFY tasks where appropriate.
-	GenerateVerifyTasks bool `protobuf:"varint,9,opt,name=generate_verify_tasks,json=generateVerifyTasks,proto3" json:"generate_verify_tasks,omitempty"`
+	GenerateVerifyTasks bool `protobuf:"varint,10,opt,name=generate_verify_tasks,json=generateVerifyTasks,proto3" json:"generate_verify_tasks,omitempty"`
 	// If true, the generator may prefer MOVE tasks when the operation can be
 	// reasonably interpreted as repositioning rather than installation.
-	PreferMoveTasksWhenPossible bool `protobuf:"varint,10,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
+	PreferMoveTasksWhenPossible bool `protobuf:"varint,11,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
 	// If true, nodes marked as optional will be included
-	IncludeOptionalNodes bool `protobuf:"varint,11,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
+	IncludeOptionalNodes bool `protobuf:"varint,12,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -108,6 +110,13 @@ func (x *DraftProcessRecipeGenerateRequest) GetRecipeId() string {
 func (x *DraftProcessRecipeGenerateRequest) GetRecipeName() string {
 	if x != nil {
 		return x.RecipeName
+	}
+	return ""
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetRecipeIcon() string {
+	if x != nil {
+		return x.RecipeIcon
 	}
 	return ""
 }
@@ -288,21 +297,23 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a'variance/v1/variant_configuration.proto\"\xa5\x05\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a'variance/v1/variant_configuration.proto\"\xc6\x05\n" +
 	"!DraftProcessRecipeGenerateRequest\x12:\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x13productDefinitionId\x12#\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\brecipeId\x12\x1f\n" +
 	"\vrecipe_name\x18\x03 \x01(\tR\n" +
-	"recipeName\x12-\n" +
-	"\x12recipe_description\x18\x04 \x01(\tR\x11recipeDescription\x12V\n" +
-	"\x15variant_configuration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12F\n" +
-	" insert_align_before_fasten_group\x18\x06 \x01(\bR\x1cinsertAlignBeforeFastenGroup\x12:\n" +
-	"\x19group_fasteners_threshold\x18\a \x01(\x05R\x17groupFastenersThreshold\x12C\n" +
-	"\x1egroup_repeated_parts_threshold\x18\b \x01(\x05R\x1bgroupRepeatedPartsThreshold\x122\n" +
-	"\x15generate_verify_tasks\x18\t \x01(\bR\x13generateVerifyTasks\x12D\n" +
-	"\x1fprefer_move_tasks_when_possible\x18\n" +
-	" \x01(\bR\x1bpreferMoveTasksWhenPossible\x124\n" +
-	"\x16include_optional_nodes\x18\v \x01(\bR\x14includeOptionalNodes\"\x92\x01\n" +
+	"recipeName\x12\x1f\n" +
+	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
+	"recipeIcon\x12-\n" +
+	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n" +
+	"\x15variant_configuration\x18\x06 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12F\n" +
+	" insert_align_before_fasten_group\x18\a \x01(\bR\x1cinsertAlignBeforeFastenGroup\x12:\n" +
+	"\x19group_fasteners_threshold\x18\b \x01(\x05R\x17groupFastenersThreshold\x12C\n" +
+	"\x1egroup_repeated_parts_threshold\x18\t \x01(\x05R\x1bgroupRepeatedPartsThreshold\x122\n" +
+	"\x15generate_verify_tasks\x18\n" +
+	" \x01(\bR\x13generateVerifyTasks\x12D\n" +
+	"\x1fprefer_move_tasks_when_possible\x18\v \x01(\bR\x1bpreferMoveTasksWhenPossible\x124\n" +
+	"\x16include_optional_nodes\x18\f \x01(\bR\x14includeOptionalNodes\"\x92\x01\n" +
 	"\x1fDraftProcessRecipeGenerateIssue\x12 \n" +
 	"\amessage\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\amessage\x12\x1f\n" +
 	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x12,\n" +

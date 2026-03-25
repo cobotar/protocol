@@ -3,6 +3,7 @@ package runtime.v1;
 
 import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
+import "resources/v1/container_definition.proto";
 import "runtime/v1/actor_assignment.proto";
 import "runtime/v1/execution_evidence.proto";
 
@@ -17,6 +18,14 @@ enum TaskRunState {
   TASK_RUN_STATE_COMPLETED = 4;
   TASK_RUN_STATE_ERROR = 5;
   TASK_RUN_STATE_ABORTED = 6;
+}
+
+// Concrete runtime/deployment bindings resolved for this task run.
+message TaskRuntimeBinding {
+  string asset_instance_id = 1;
+  string robot_instance_id = 2;
+  string station_id = 3;
+  resources.v1.ContainerSlotRef container_slot = 4;
 }
 
 message TaskRun {
@@ -35,6 +44,7 @@ message TaskRun {
   string error_code = 13;
   string error_message = 14;
   repeated ExecutionEvidence evidence = 15;
+  TaskRuntimeBinding binding = 16;
 }
 
 message TaskRuns {

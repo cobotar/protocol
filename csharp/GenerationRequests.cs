@@ -27,37 +27,38 @@ namespace Messages.Process.V1 {
             "CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nl",
             "c3MudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxofcHJvY2Vzcy92",
             "MS9wcm9jZXNzX3JlY2lwZS5wcm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9j",
-            "b25maWd1cmF0aW9uLnByb3RvIqUFCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5l",
+            "b25maWd1cmF0aW9uLnByb3RvIsYFCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5l",
             "cmF0ZVJlcXVlc3QSOgoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQga6",
             "SAPIAQFSE3Byb2R1Y3REZWZpbml0aW9uSWQSIwoJcmVjaXBlX2lkGAIgASgJ",
             "Qga6SAPIAQFSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNp",
-            "cGVOYW1lEi0KEnJlY2lwZV9kZXNjcmlwdGlvbhgEIAEoCVIRcmVjaXBlRGVz",
-            "Y3JpcHRpb24SVgoVdmFyaWFudF9jb25maWd1cmF0aW9uGAUgASgLMiEudmFy",
-            "aWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1",
-            "cmF0aW9uEkYKIGluc2VydF9hbGlnbl9iZWZvcmVfZmFzdGVuX2dyb3VwGAYg",
-            "ASgIUhxpbnNlcnRBbGlnbkJlZm9yZUZhc3Rlbkdyb3VwEjoKGWdyb3VwX2Zh",
-            "c3RlbmVyc190aHJlc2hvbGQYByABKAVSF2dyb3VwRmFzdGVuZXJzVGhyZXNo",
-            "b2xkEkMKHmdyb3VwX3JlcGVhdGVkX3BhcnRzX3RocmVzaG9sZBgIIAEoBVIb",
-            "Z3JvdXBSZXBlYXRlZFBhcnRzVGhyZXNob2xkEjIKFWdlbmVyYXRlX3Zlcmlm",
-            "eV90YXNrcxgJIAEoCFITZ2VuZXJhdGVWZXJpZnlUYXNrcxJECh9wcmVmZXJf",
-            "bW92ZV90YXNrc193aGVuX3Bvc3NpYmxlGAogASgIUhtwcmVmZXJNb3ZlVGFz",
-            "a3NXaGVuUG9zc2libGUSNAoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgLIAEo",
-            "CFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMikgEKH0RyYWZ0UHJvY2Vzc1JlY2lw",
-            "ZUdlbmVyYXRlSXNzdWUSIAoHbWVzc2FnZRgBIAEoCUIGukgDyAEBUgdtZXNz",
-            "YWdlEh8KB25vZGVfaWQYAiABKAlCBrpIA8gBAVIGbm9kZUlkEiwKEnBhcnRf",
-            "ZGVmaW5pdGlvbl9pZBgDIAEoCVIQcGFydERlZmluaXRpb25JZCKiAQogRHJh",
-            "ZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXN1bHQSOQoGcmVjaXBlGAEgASgL",
-            "MhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlQga6SAPIAQFSBnJlY2lwZRJD",
-            "CgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lw",
-            "ZUdlbmVyYXRlSXNzdWVSBmlzc3Vlc0K2AQoOY29tLnByb2Nlc3MudjFCF0dl",
-            "bmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoC",
-            "E01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xW",
-            "MVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
+            "cGVOYW1lEh8KC3JlY2lwZV9pY29uGAQgASgJUgpyZWNpcGVJY29uEi0KEnJl",
+            "Y2lwZV9kZXNjcmlwdGlvbhgFIAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SVgoV",
+            "dmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFy",
+            "aWFudENvbmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1cmF0aW9uEkYKIGlu",
+            "c2VydF9hbGlnbl9iZWZvcmVfZmFzdGVuX2dyb3VwGAcgASgIUhxpbnNlcnRB",
+            "bGlnbkJlZm9yZUZhc3Rlbkdyb3VwEjoKGWdyb3VwX2Zhc3RlbmVyc190aHJl",
+            "c2hvbGQYCCABKAVSF2dyb3VwRmFzdGVuZXJzVGhyZXNob2xkEkMKHmdyb3Vw",
+            "X3JlcGVhdGVkX3BhcnRzX3RocmVzaG9sZBgJIAEoBVIbZ3JvdXBSZXBlYXRl",
+            "ZFBhcnRzVGhyZXNob2xkEjIKFWdlbmVyYXRlX3ZlcmlmeV90YXNrcxgKIAEo",
+            "CFITZ2VuZXJhdGVWZXJpZnlUYXNrcxJECh9wcmVmZXJfbW92ZV90YXNrc193",
+            "aGVuX3Bvc3NpYmxlGAsgASgIUhtwcmVmZXJNb3ZlVGFza3NXaGVuUG9zc2li",
+            "bGUSNAoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9w",
+            "dGlvbmFsTm9kZXMikgEKH0RyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNz",
+            "dWUSIAoHbWVzc2FnZRgBIAEoCUIGukgDyAEBUgdtZXNzYWdlEh8KB25vZGVf",
+            "aWQYAiABKAlCBrpIA8gBAVIGbm9kZUlkEiwKEnBhcnRfZGVmaW5pdGlvbl9p",
+            "ZBgDIAEoCVIQcGFydERlZmluaXRpb25JZCKiAQogRHJhZnRQcm9jZXNzUmVj",
+            "aXBlR2VuZXJhdGVSZXN1bHQSOQoGcmVjaXBlGAEgASgLMhkucHJvY2Vzcy52",
+            "MS5Qcm9jZXNzUmVjaXBlQga6SAPIAQFSBnJlY2lwZRJDCgZpc3N1ZXMYAiAD",
+            "KAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNz",
+            "dWVSBmlzc3Vlc0K2AQoOY29tLnByb2Nlc3MudjFCF0dlbmVyYXRpb25SZXF1",
+            "ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlBy",
+            "b2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0",
+            "YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateIssue), global::Messages.Process.V1.DraftProcessRecipeGenerateIssue.Parser, new[]{ "Message", "NodeId", "PartDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateResult), global::Messages.Process.V1.DraftProcessRecipeGenerateResult.Parser, new[]{ "Recipe", "Issues" }, null, null, null, null)
           }));
@@ -110,6 +111,7 @@ namespace Messages.Process.V1 {
       productDefinitionId_ = other.productDefinitionId_;
       recipeId_ = other.recipeId_;
       recipeName_ = other.recipeName_;
+      recipeIcon_ = other.recipeIcon_;
       recipeDescription_ = other.recipeDescription_;
       variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       insertAlignBeforeFastenGroup_ = other.insertAlignBeforeFastenGroup_;
@@ -173,8 +175,23 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_icon" field.</summary>
+    public const int RecipeIconFieldNumber = 4;
+    private string recipeIcon_ = "";
+    /// <summary>
+    /// Optional icon for the generated recipe.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RecipeIcon {
+      get { return recipeIcon_; }
+      set {
+        recipeIcon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "recipe_description" field.</summary>
-    public const int RecipeDescriptionFieldNumber = 4;
+    public const int RecipeDescriptionFieldNumber = 5;
     private string recipeDescription_ = "";
     /// <summary>
     /// Optional human-readable description for the generated recipe.
@@ -189,7 +206,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "variant_configuration" field.</summary>
-    public const int VariantConfigurationFieldNumber = 5;
+    public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
     /// Selected product variants used to filter applicability and annotate the
@@ -205,7 +222,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "insert_align_before_fasten_group" field.</summary>
-    public const int InsertAlignBeforeFastenGroupFieldNumber = 6;
+    public const int InsertAlignBeforeFastenGroupFieldNumber = 7;
     private bool insertAlignBeforeFastenGroup_;
     /// <summary>
     /// If true, the generator may insert ALIGN tasks before grouped fastener work
@@ -221,7 +238,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "group_fasteners_threshold" field.</summary>
-    public const int GroupFastenersThresholdFieldNumber = 7;
+    public const int GroupFastenersThresholdFieldNumber = 8;
     private int groupFastenersThreshold_;
     /// <summary>
     /// Minimum number of sibling fasteners required before grouping them into a
@@ -237,7 +254,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "group_repeated_parts_threshold" field.</summary>
-    public const int GroupRepeatedPartsThresholdFieldNumber = 8;
+    public const int GroupRepeatedPartsThresholdFieldNumber = 9;
     private int groupRepeatedPartsThreshold_;
     /// <summary>
     /// Minimum number of repeated sibling parts required before grouping them into
@@ -253,7 +270,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "generate_verify_tasks" field.</summary>
-    public const int GenerateVerifyTasksFieldNumber = 9;
+    public const int GenerateVerifyTasksFieldNumber = 10;
     private bool generateVerifyTasks_;
     /// <summary>
     /// If true, the generator may insert VERIFY tasks where appropriate.
@@ -268,7 +285,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "prefer_move_tasks_when_possible" field.</summary>
-    public const int PreferMoveTasksWhenPossibleFieldNumber = 10;
+    public const int PreferMoveTasksWhenPossibleFieldNumber = 11;
     private bool preferMoveTasksWhenPossible_;
     /// <summary>
     /// If true, the generator may prefer MOVE tasks when the operation can be
@@ -284,7 +301,7 @@ namespace Messages.Process.V1 {
     }
 
     /// <summary>Field number for the "include_optional_nodes" field.</summary>
-    public const int IncludeOptionalNodesFieldNumber = 11;
+    public const int IncludeOptionalNodesFieldNumber = 12;
     private bool includeOptionalNodes_;
     /// <summary>
     /// If true, nodes marked as optional will be included
@@ -316,6 +333,7 @@ namespace Messages.Process.V1 {
       if (ProductDefinitionId != other.ProductDefinitionId) return false;
       if (RecipeId != other.RecipeId) return false;
       if (RecipeName != other.RecipeName) return false;
+      if (RecipeIcon != other.RecipeIcon) return false;
       if (RecipeDescription != other.RecipeDescription) return false;
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
       if (InsertAlignBeforeFastenGroup != other.InsertAlignBeforeFastenGroup) return false;
@@ -334,6 +352,7 @@ namespace Messages.Process.V1 {
       if (ProductDefinitionId.Length != 0) hash ^= ProductDefinitionId.GetHashCode();
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (RecipeName.Length != 0) hash ^= RecipeName.GetHashCode();
+      if (RecipeIcon.Length != 0) hash ^= RecipeIcon.GetHashCode();
       if (RecipeDescription.Length != 0) hash ^= RecipeDescription.GetHashCode();
       if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
       if (InsertAlignBeforeFastenGroup != false) hash ^= InsertAlignBeforeFastenGroup.GetHashCode();
@@ -372,36 +391,40 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(26);
         output.WriteString(RecipeName);
       }
-      if (RecipeDescription.Length != 0) {
+      if (RecipeIcon.Length != 0) {
         output.WriteRawTag(34);
+        output.WriteString(RecipeIcon);
+      }
+      if (RecipeDescription.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(RecipeDescription);
       }
       if (variantConfiguration_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteMessage(VariantConfiguration);
       }
       if (InsertAlignBeforeFastenGroup != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(InsertAlignBeforeFastenGroup);
       }
       if (GroupFastenersThreshold != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(GroupFastenersThreshold);
       }
       if (GroupRepeatedPartsThreshold != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt32(GroupRepeatedPartsThreshold);
       }
       if (GenerateVerifyTasks != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(GenerateVerifyTasks);
       }
       if (PreferMoveTasksWhenPossible != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(PreferMoveTasksWhenPossible);
       }
       if (IncludeOptionalNodes != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
       if (_unknownFields != null) {
@@ -426,36 +449,40 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(26);
         output.WriteString(RecipeName);
       }
-      if (RecipeDescription.Length != 0) {
+      if (RecipeIcon.Length != 0) {
         output.WriteRawTag(34);
+        output.WriteString(RecipeIcon);
+      }
+      if (RecipeDescription.Length != 0) {
+        output.WriteRawTag(42);
         output.WriteString(RecipeDescription);
       }
       if (variantConfiguration_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteMessage(VariantConfiguration);
       }
       if (InsertAlignBeforeFastenGroup != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(InsertAlignBeforeFastenGroup);
       }
       if (GroupFastenersThreshold != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(GroupFastenersThreshold);
       }
       if (GroupRepeatedPartsThreshold != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt32(GroupRepeatedPartsThreshold);
       }
       if (GenerateVerifyTasks != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(GenerateVerifyTasks);
       }
       if (PreferMoveTasksWhenPossible != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(PreferMoveTasksWhenPossible);
       }
       if (IncludeOptionalNodes != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
       if (_unknownFields != null) {
@@ -476,6 +503,9 @@ namespace Messages.Process.V1 {
       }
       if (RecipeName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeName);
+      }
+      if (RecipeIcon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeIcon);
       }
       if (RecipeDescription.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeDescription);
@@ -521,6 +551,9 @@ namespace Messages.Process.V1 {
       }
       if (other.RecipeName.Length != 0) {
         RecipeName = other.RecipeName;
+      }
+      if (other.RecipeIcon.Length != 0) {
+        RecipeIcon = other.RecipeIcon;
       }
       if (other.RecipeDescription.Length != 0) {
         RecipeDescription = other.RecipeDescription;
@@ -581,37 +614,41 @@ namespace Messages.Process.V1 {
             break;
           }
           case 34: {
-            RecipeDescription = input.ReadString();
+            RecipeIcon = input.ReadString();
             break;
           }
           case 42: {
+            RecipeDescription = input.ReadString();
+            break;
+          }
+          case 50: {
             if (variantConfiguration_ == null) {
               VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
             }
             input.ReadMessage(VariantConfiguration);
             break;
           }
-          case 48: {
+          case 56: {
             InsertAlignBeforeFastenGroup = input.ReadBool();
             break;
           }
-          case 56: {
+          case 64: {
             GroupFastenersThreshold = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 72: {
             GroupRepeatedPartsThreshold = input.ReadInt32();
             break;
           }
-          case 72: {
+          case 80: {
             GenerateVerifyTasks = input.ReadBool();
             break;
           }
-          case 80: {
+          case 88: {
             PreferMoveTasksWhenPossible = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             IncludeOptionalNodes = input.ReadBool();
             break;
           }
@@ -647,37 +684,41 @@ namespace Messages.Process.V1 {
             break;
           }
           case 34: {
-            RecipeDescription = input.ReadString();
+            RecipeIcon = input.ReadString();
             break;
           }
           case 42: {
+            RecipeDescription = input.ReadString();
+            break;
+          }
+          case 50: {
             if (variantConfiguration_ == null) {
               VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
             }
             input.ReadMessage(VariantConfiguration);
             break;
           }
-          case 48: {
+          case 56: {
             InsertAlignBeforeFastenGroup = input.ReadBool();
             break;
           }
-          case 56: {
+          case 64: {
             GroupFastenersThreshold = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 72: {
             GroupRepeatedPartsThreshold = input.ReadInt32();
             break;
           }
-          case 72: {
+          case 80: {
             GenerateVerifyTasks = input.ReadBool();
             break;
           }
-          case 80: {
+          case 88: {
             PreferMoveTasksWhenPossible = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             IncludeOptionalNodes = input.ReadBool();
             break;
           }

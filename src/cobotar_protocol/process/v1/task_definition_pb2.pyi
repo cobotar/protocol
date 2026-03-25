@@ -78,25 +78,53 @@ TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_EITHER: TaskAssignmentPreference
 
-class TaskTarget(_message.Message):
-    __slots__ = ("target_node_id", "target_part_definition_id", "local_target", "asset_instance_id", "robot_instance_id", "station_id", "container_instance_id", "location")
-    TARGET_NODE_ID_FIELD_NUMBER: _ClassVar[int]
-    TARGET_PART_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+class ProductTarget(_message.Message):
+    __slots__ = ("node_id", "part_definition_id", "local_target")
+    NODE_ID_FIELD_NUMBER: _ClassVar[int]
+    PART_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     LOCAL_TARGET_FIELD_NUMBER: _ClassVar[int]
-    ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    ROBOT_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    STATION_ID_FIELD_NUMBER: _ClassVar[int]
-    CONTAINER_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    LOCATION_FIELD_NUMBER: _ClassVar[int]
-    target_node_id: str
-    target_part_definition_id: str
+    node_id: str
+    part_definition_id: str
     local_target: _local_target_pb2.LocalTarget
-    asset_instance_id: str
-    robot_instance_id: str
-    station_id: str
-    container_instance_id: str
-    location: _container_definition_pb2.ContainerSlotRef
-    def __init__(self, target_node_id: _Optional[str] = ..., target_part_definition_id: _Optional[str] = ..., local_target: _Optional[_Union[_local_target_pb2.LocalTarget, _Mapping]] = ..., asset_instance_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., container_instance_id: _Optional[str] = ..., location: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ...) -> None: ...
+    def __init__(self, node_id: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., local_target: _Optional[_Union[_local_target_pb2.LocalTarget, _Mapping]] = ...) -> None: ...
+
+class ContainerTarget(_message.Message):
+    __slots__ = ("container_definition_id", "slot_id", "slot_type")
+    CONTAINER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    SLOT_ID_FIELD_NUMBER: _ClassVar[int]
+    SLOT_TYPE_FIELD_NUMBER: _ClassVar[int]
+    container_definition_id: str
+    slot_id: str
+    slot_type: _container_definition_pb2.ContainerSlotType
+    def __init__(self, container_definition_id: _Optional[str] = ..., slot_id: _Optional[str] = ..., slot_type: _Optional[_Union[_container_definition_pb2.ContainerSlotType, str]] = ...) -> None: ...
+
+class ResourceTarget(_message.Message):
+    __slots__ = ("asset_definition_id", "robot_definition_id", "container_definition_id")
+    ASSET_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    asset_definition_id: str
+    robot_definition_id: str
+    container_definition_id: str
+    def __init__(self, asset_definition_id: _Optional[str] = ..., robot_definition_id: _Optional[str] = ..., container_definition_id: _Optional[str] = ...) -> None: ...
+
+class TaskTarget(_message.Message):
+    __slots__ = ("product", "container", "resource")
+    PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    product: ProductTarget
+    container: ContainerTarget
+    resource: ResourceTarget
+    def __init__(self, product: _Optional[_Union[ProductTarget, _Mapping]] = ..., container: _Optional[_Union[ContainerTarget, _Mapping]] = ..., resource: _Optional[_Union[ResourceTarget, _Mapping]] = ...) -> None: ...
+
+class TaskEndpoint(_message.Message):
+    __slots__ = ("product", "container")
+    PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    CONTAINER_FIELD_NUMBER: _ClassVar[int]
+    product: ProductTarget
+    container: ContainerTarget
+    def __init__(self, product: _Optional[_Union[ProductTarget, _Mapping]] = ..., container: _Optional[_Union[ContainerTarget, _Mapping]] = ...) -> None: ...
 
 class ValidationRequirement(_message.Message):
     __slots__ = ("require_tool_feedback", "require_vision_check", "allow_manual_confirmation", "manual_confirmation_min_level", "constraints")
@@ -141,7 +169,7 @@ class TaskOverride(_message.Message):
     def __init__(self, when: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target_node_id: _Optional[str] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
 
 class TaskDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source_node_id", "destination_node_id", "source_location", "destination_location", "applicability", "overrides")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "applicability", "overrides")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -157,10 +185,8 @@ class TaskDefinition(_message.Message):
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_POLICY_FIELD_NUMBER: _ClassVar[int]
     SAFETY_RELEVANCE_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_NODE_ID_FIELD_NUMBER: _ClassVar[int]
-    DESTINATION_NODE_ID_FIELD_NUMBER: _ClassVar[int]
-    SOURCE_LOCATION_FIELD_NUMBER: _ClassVar[int]
-    DESTINATION_LOCATION_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    DESTINATION_FIELD_NUMBER: _ClassVar[int]
     APPLICABILITY_FIELD_NUMBER: _ClassVar[int]
     OVERRIDES_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -178,13 +204,11 @@ class TaskDefinition(_message.Message):
     validation: ValidationRequirement
     execution_policy: TaskExecutionPolicy
     safety_relevance: _enums_pb2.SafetyRelevance
-    source_node_id: str
-    destination_node_id: str
-    source_location: _container_definition_pb2.ContainerSlotRef
-    destination_location: _container_definition_pb2.ContainerSlotRef
+    source: TaskEndpoint
+    destination: TaskEndpoint
     applicability: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
     overrides: _containers.RepeatedCompositeFieldContainer[TaskOverride]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source_node_id: _Optional[str] = ..., destination_node_id: _Optional[str] = ..., source_location: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ..., destination_location: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., destination: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...
 
 class TaskDefinitions(_message.Message):
     __slots__ = ("items",)

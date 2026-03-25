@@ -26,39 +26,47 @@ namespace Messages.Runtime.V1 {
           string.Concat(
             "ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxGhRjb21t",
             "b24vdjEvdGltZS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
-            "cm90bxohcnVudGltZS92MS9hY3Rvcl9hc3NpZ25tZW50LnByb3RvGiNydW50",
-            "aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90byLNBQoHVGFza1J1bhIO",
-            "CgJpZBgBIAEoCVICaWQSLAoSdGFza19kZWZpbml0aW9uX2lkGAIgASgJUhB0",
-            "YXNrRGVmaW5pdGlvbklkEjMKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyAB",
-            "KAlSE3BhcmVudFNlcXVlbmNlUnVuSWQSLgoFc3RhdGUYBCABKA4yGC5ydW50",
-            "aW1lLnYxLlRhc2tSdW5TdGF0ZVIFc3RhdGUSPwoQY2FuZGlkYXRlX2FjdG9y",
-            "cxgFIAMoCzIULnJ1bnRpbWUudjEuQWN0b3JSZWZSD2NhbmRpZGF0ZUFjdG9y",
-            "cxI7Cg5hc3NpZ25lZF9hY3RvchgGIAEoCzIULnJ1bnRpbWUudjEuQWN0b3JS",
-            "ZWZSDWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAcgASgIUgVjYW5EbxIZCghj",
-            "YW5fdW5kbxgIIAEoCFIHY2FuVW5kbxIpChB3b3JrYWJsZV9ob3Jpem9uGAkg",
-            "ASgFUg93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1hdGVkX2R1cmF0aW9uGAog",
-            "ASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhFlc3RpbWF0ZWRE",
-            "dXJhdGlvbhI5CgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgMIAEoCzIa",
-            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0Eh0KCmVy",
-            "cm9yX2NvZGUYDSABKAlSCWVycm9yQ29kZRIjCg1lcnJvcl9tZXNzYWdlGA4g",
-            "ASgJUgxlcnJvck1lc3NhZ2USOQoIZXZpZGVuY2UYDyADKAsyHS5ydW50aW1l",
-            "LnYxLkV4ZWN1dGlvbkV2aWRlbmNlUghldmlkZW5jZSI1CghUYXNrUnVucxIp",
-            "CgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq5wEK",
-            "DFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAA",
-            "EicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoW",
-            "VEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lO",
-            "X1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoU",
-            "VEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9S",
-            "VEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0",
-            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7",
-            "cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRp",
-            "bWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFi",
-            "BnByb3RvMw=="));
+            "cm90bxoncmVzb3VyY2VzL3YxL2NvbnRhaW5lcl9kZWZpbml0aW9uLnByb3Rv",
+            "GiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8aI3J1bnRpbWUv",
+            "djEvZXhlY3V0aW9uX2V2aWRlbmNlLnByb3RvItIBChJUYXNrUnVudGltZUJp",
+            "bmRpbmcSKgoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlSD2Fzc2V0SW5zdGFu",
+            "Y2VJZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCVIPcm9ib3RJbnN0YW5j",
+            "ZUlkEh0KCnN0YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBJFCg5jb250YWlu",
+            "ZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVm",
+            "Ug1jb250YWluZXJTbG90IocGCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBIs",
+            "ChJ0YXNrX2RlZmluaXRpb25faWQYAiABKAlSEHRhc2tEZWZpbml0aW9uSWQS",
+            "MwoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgDIAEoCVITcGFyZW50U2VxdWVu",
+            "Y2VSdW5JZBIuCgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0",
+            "YXRlUgVzdGF0ZRI/ChBjYW5kaWRhdGVfYWN0b3JzGAUgAygLMhQucnVudGlt",
+            "ZS52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3JzEjsKDmFzc2lnbmVkX2Fj",
+            "dG9yGAYgASgLMhQucnVudGltZS52MS5BY3RvclJlZlINYXNzaWduZWRBY3Rv",
+            "chIVCgZjYW5fZG8YByABKAhSBWNhbkRvEhkKCGNhbl91bmRvGAggASgIUgdj",
+            "YW5VbmRvEikKEHdvcmthYmxlX2hvcml6b24YCSABKAVSD3dvcmthYmxlSG9y",
+            "aXpvbhJLChJlc3RpbWF0ZWRfZHVyYXRpb24YCiABKAsyHC5jb21tb24udjEu",
+            "RXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uEjkKCnN0YXJ0",
+            "ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglzdGFy",
+            "dGVkQXQSPQoMY29tcGxldGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcFILY29tcGxldGVkQXQSHQoKZXJyb3JfY29kZRgNIAEoCVIJ",
+            "ZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UYDiABKAlSDGVycm9yTWVzc2Fn",
+            "ZRI5CghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZp",
+            "ZGVuY2VSCGV2aWRlbmNlEjgKB2JpbmRpbmcYECABKAsyHi5ydW50aW1lLnYx",
+            "LlRhc2tSdW50aW1lQmluZGluZ1IHYmluZGluZyI1CghUYXNrUnVucxIpCgVp",
+            "dGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq5wEKDFRh",
+            "c2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEicK",
+            "I1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoWVEFT",
+            "S19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BS",
+            "T0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoUVEFT",
+            "S19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVE",
+            "EAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVu",
+            "dGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVc",
+            "VjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerSlot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -79,6 +87,327 @@ namespace Messages.Runtime.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// Concrete runtime/deployment bindings resolved for this task run.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TaskRuntimeBinding : pb::IMessage<TaskRuntimeBinding>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskRuntimeBinding> _parser = new pb::MessageParser<TaskRuntimeBinding>(() => new TaskRuntimeBinding());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TaskRuntimeBinding> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Runtime.V1.TaskRunReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskRuntimeBinding() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskRuntimeBinding(TaskRuntimeBinding other) : this() {
+      assetInstanceId_ = other.assetInstanceId_;
+      robotInstanceId_ = other.robotInstanceId_;
+      stationId_ = other.stationId_;
+      containerSlot_ = other.containerSlot_ != null ? other.containerSlot_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskRuntimeBinding Clone() {
+      return new TaskRuntimeBinding(this);
+    }
+
+    /// <summary>Field number for the "asset_instance_id" field.</summary>
+    public const int AssetInstanceIdFieldNumber = 1;
+    private string assetInstanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AssetInstanceId {
+      get { return assetInstanceId_; }
+      set {
+        assetInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "robot_instance_id" field.</summary>
+    public const int RobotInstanceIdFieldNumber = 2;
+    private string robotInstanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RobotInstanceId {
+      get { return robotInstanceId_; }
+      set {
+        robotInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "station_id" field.</summary>
+    public const int StationIdFieldNumber = 3;
+    private string stationId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StationId {
+      get { return stationId_; }
+      set {
+        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "container_slot" field.</summary>
+    public const int ContainerSlotFieldNumber = 4;
+    private global::Messages.Resources.V1.ContainerSlotRef containerSlot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ContainerSlotRef ContainerSlot {
+      get { return containerSlot_; }
+      set {
+        containerSlot_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TaskRuntimeBinding);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TaskRuntimeBinding other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AssetInstanceId != other.AssetInstanceId) return false;
+      if (RobotInstanceId != other.RobotInstanceId) return false;
+      if (StationId != other.StationId) return false;
+      if (!object.Equals(ContainerSlot, other.ContainerSlot)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
+      if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
+      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (containerSlot_ != null) hash ^= ContainerSlot.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AssetInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StationId);
+      }
+      if (containerSlot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ContainerSlot);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AssetInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StationId);
+      }
+      if (containerSlot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ContainerSlot);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AssetInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetInstanceId);
+      }
+      if (RobotInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotInstanceId);
+      }
+      if (StationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
+      }
+      if (containerSlot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ContainerSlot);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TaskRuntimeBinding other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AssetInstanceId.Length != 0) {
+        AssetInstanceId = other.AssetInstanceId;
+      }
+      if (other.RobotInstanceId.Length != 0) {
+        RobotInstanceId = other.RobotInstanceId;
+      }
+      if (other.StationId.Length != 0) {
+        StationId = other.StationId;
+      }
+      if (other.containerSlot_ != null) {
+        if (containerSlot_ == null) {
+          ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
+        }
+        ContainerSlot.MergeFrom(other.ContainerSlot);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            AssetInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            RobotInstanceId = input.ReadString();
+            break;
+          }
+          case 26: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (containerSlot_ == null) {
+              ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(ContainerSlot);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            AssetInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            RobotInstanceId = input.ReadString();
+            break;
+          }
+          case 26: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (containerSlot_ == null) {
+              ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
+            }
+            input.ReadMessage(ContainerSlot);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TaskRun : pb::IMessage<TaskRun>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -94,7 +423,7 @@ namespace Messages.Runtime.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Runtime.V1.TaskRunReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Runtime.V1.TaskRunReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,6 +458,7 @@ namespace Messages.Runtime.V1 {
       errorCode_ = other.errorCode_;
       errorMessage_ = other.errorMessage_;
       evidence_ = other.evidence_.Clone();
+      binding_ = other.binding_ != null ? other.binding_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -319,6 +649,18 @@ namespace Messages.Runtime.V1 {
       get { return evidence_; }
     }
 
+    /// <summary>Field number for the "binding" field.</summary>
+    public const int BindingFieldNumber = 16;
+    private global::Messages.Runtime.V1.TaskRuntimeBinding binding_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Runtime.V1.TaskRuntimeBinding Binding {
+      get { return binding_; }
+      set {
+        binding_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -349,6 +691,7 @@ namespace Messages.Runtime.V1 {
       if (ErrorCode != other.ErrorCode) return false;
       if (ErrorMessage != other.ErrorMessage) return false;
       if(!evidence_.Equals(other.evidence_)) return false;
+      if (!object.Equals(Binding, other.Binding)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -371,6 +714,7 @@ namespace Messages.Runtime.V1 {
       if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
       if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
       hash ^= evidence_.GetHashCode();
+      if (binding_ != null) hash ^= Binding.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -443,6 +787,10 @@ namespace Messages.Runtime.V1 {
         output.WriteString(ErrorMessage);
       }
       evidence_.WriteTo(output, _repeated_evidence_codec);
+      if (binding_ != null) {
+        output.WriteRawTag(130, 1);
+        output.WriteMessage(Binding);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -507,6 +855,10 @@ namespace Messages.Runtime.V1 {
         output.WriteString(ErrorMessage);
       }
       evidence_.WriteTo(ref output, _repeated_evidence_codec);
+      if (binding_ != null) {
+        output.WriteRawTag(130, 1);
+        output.WriteMessage(Binding);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -558,6 +910,9 @@ namespace Messages.Runtime.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
       }
       size += evidence_.CalculateSize(_repeated_evidence_codec);
+      if (binding_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Binding);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -623,6 +978,12 @@ namespace Messages.Runtime.V1 {
         ErrorMessage = other.ErrorMessage;
       }
       evidence_.Add(other.evidence_);
+      if (other.binding_ != null) {
+        if (binding_ == null) {
+          Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
+        }
+        Binding.MergeFrom(other.Binding);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -712,6 +1073,13 @@ namespace Messages.Runtime.V1 {
           }
           case 122: {
             evidence_.AddEntriesFrom(input, _repeated_evidence_codec);
+            break;
+          }
+          case 130: {
+            if (binding_ == null) {
+              Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
+            }
+            input.ReadMessage(Binding);
             break;
           }
         }
@@ -805,6 +1173,13 @@ namespace Messages.Runtime.V1 {
             evidence_.AddEntriesFrom(ref input, _repeated_evidence_codec);
             break;
           }
+          case 130: {
+            if (binding_ == null) {
+              Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
+            }
+            input.ReadMessage(Binding);
+            break;
+          }
         }
       }
     }
@@ -827,7 +1202,7 @@ namespace Messages.Runtime.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Runtime.V1.TaskRunReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Runtime.V1.TaskRunReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

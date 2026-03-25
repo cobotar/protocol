@@ -324,8 +324,12 @@
     - [VariantRule](#variance-v1-VariantRule)
   
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
+    - [ContainerTarget](#process-v1-ContainerTarget)
+    - [ProductTarget](#process-v1-ProductTarget)
+    - [ResourceTarget](#process-v1-ResourceTarget)
     - [TaskDefinition](#process-v1-TaskDefinition)
     - [TaskDefinitions](#process-v1-TaskDefinitions)
+    - [TaskEndpoint](#process-v1-TaskEndpoint)
     - [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy)
     - [TaskOverride](#process-v1-TaskOverride)
     - [TaskTarget](#process-v1-TaskTarget)
@@ -367,6 +371,7 @@
 - [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
     - [TaskRun](#runtime-v1-TaskRun)
     - [TaskRuns](#runtime-v1-TaskRuns)
+    - [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding)
   
     - [TaskRunState](#runtime-v1-TaskRunState)
   
@@ -4546,10 +4551,65 @@ VariantRule: a rule matches if all predicates match
 
 
 
+<a name="process-v1-ContainerTarget"></a>
+
+### ContainerTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_definition_id | [string](#string) |  | Generic container type, e.g. pallet, tray, jig, fixture, bin. |
+| slot_id | [string](#string) |  | Optional slot definition within that container definition. |
+| slot_type | [resources.v1.ContainerSlotType](#resources-v1-ContainerSlotType) |  | Semantic slot kind if known. |
+
+
+
+
+
+
+<a name="process-v1-ProductTarget"></a>
+
+### ProductTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| node_id | [string](#string) |  | Assembly node occurrence the task acts on. |
+| part_definition_id | [string](#string) |  | Optional denormalized helper. |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Pose/anchor relative to the chosen product reference. |
+
+
+
+
+
+
+<a name="process-v1-ResourceTarget"></a>
+
+### ResourceTarget
+Generic authoring-time resource references.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_definition_id | [string](#string) |  | Camera, feeder, HMI, sensor, conveyor, etc. |
+| robot_definition_id | [string](#string) |  | Robot type required or referenced by the task. |
+| container_definition_id | [string](#string) |  | Optional generic container used outside explicit workpiece targeting. |
+
+
+
+
+
+
 <a name="process-v1-TaskDefinition"></a>
 
 ### TaskDefinition
+TaskDefinition is the static/universal authoring-time description of a task.
 
+It should remain reusable across workcells, deployments, and specific
+equipment instances. Runtime-specific information such as concrete robot,
+asset, station, or container bindings belongs in runtime.v1.TaskRun.
 
 
 | Field | Type | Label | Description |
@@ -4561,20 +4621,16 @@ VariantRule: a rule matches if all predicates match
 | instruction_text | [string](#string) |  | Human-readable instruction shown to the operator or author. |
 | sequence_number | [int32](#int32) |  | Ordering hint within the parent sequence. |
 | task_type | [TaskType](#process-v1-TaskType) |  | The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY. |
-| target | [TaskTarget](#process-v1-TaskTarget) |  | The primary thing/location/resource this task acts on. |
-| insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
-| approach_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning. |
-| tool_requirements | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11;
-
-Tools or tool roles needed to perform the task. |
+| target | [TaskTarget](#process-v1-TaskTarget) |  | The primary static/generic thing/location/resource this task acts on. |
+| insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional static guidance/planning hint from final pose to pre-insertion pose, in mm. |
+| approach_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional static guidance/planning hint from final pose to preferred approach pose, in mm. |
+| tool_requirements | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) | repeated | Tools or tool roles needed to perform the task. |
 | skill_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated | Skills/qualifications needed by the acting human/robot. |
 | validation | [ValidationRequirement](#process-v1-ValidationRequirement) |  | How task completion should be confirmed or validated. |
-| execution_policy | [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy) |  | Assignment preferences and execution permissions. |
+| execution_policy | [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy) |  | Static execution policy, preferences, and permissions used by planning/runtime. |
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  | Safety significance of the task. |
-| source_node_id | [string](#string) |  | Optional source assembly node when something is moved/picked from a product structure. |
-| destination_node_id | [string](#string) |  | Optional destination assembly node when something is moved/placed into a product structure. |
-| source_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional source slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
-| destination_location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional destination slot for kitting, pick/place, storage, tray, pallet, or fixture operations. |
+| source | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
+| destination | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
 | applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
 | overrides | [TaskOverride](#process-v1-TaskOverride) | repeated |  |
 
@@ -4592,6 +4648,26 @@ Tools or tool roles needed to perform the task. |
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-TaskEndpoint"></a>
+
+### TaskEndpoint
+TaskEndpoint is used for source/destination style references in tasks such
+as pick/place, move, kitting, and transfer operations.
+
+Like TaskTarget, TaskEndpoint is static/generic and should remain reusable
+across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product | [ProductTarget](#process-v1-ProductTarget) |  |  |
+| container | [ContainerTarget](#process-v1-ContainerTarget) |  |  |
 
 
 
@@ -4639,21 +4715,24 @@ Tools or tool roles needed to perform the task. |
 <a name="process-v1-TaskTarget"></a>
 
 ### TaskTarget
+TaskTarget captures the static authoring-time target of a task.
 
+It intentionally avoids concrete runtime/deployment bindings such as
+specific robot instances, camera instances, or pallet instances. Those should
+instead be resolved into runtime.v1.TaskRun / TaskRuntimeBinding.
+
+---------------------------------------------------------------------------
+What the task acts on
+---------------------------------------------------------------------------
+These fields describe the static/generic authoring intent of the task.
+They should stay reusable across workcells and deployments.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target_node_id | [string](#string) |  | Optional target assembly node when the task acts on a product structure occurrence. |
-| target_part_definition_id | [string](#string) |  | Optional denormalized helper for UIs, planning, and filtering. |
-| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional pose/anchor relative to the chosen target reference. |
-| asset_instance_id | [string](#string) |  | Optional non-product targets. These are useful when a task is not primarily about an AssemblyNode. Examples: - asset_instance_id -&gt; check camera, read HMI, inspect feeder - robot_instance_id -&gt; move robot to home, inspect robot state - station_id -&gt; clear work surface, perform station startup step - container_instance_id -&gt; interact with a specific pallet, jig, tray, or storage bin
-
-Optional asset target such as camera, HMI, sensor, conveyor, or feeder. |
-| robot_instance_id | [string](#string) |  | Optional robot target for robot-specific actions. |
-| station_id | [string](#string) |  | Optional station target for station-level or area-level actions. |
-| container_instance_id | [string](#string) |  | Optional container target such as storage bin, kit, tray, pallet, clamp, or jig. |
-| location | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Optional slot-level target when a task acts on a specific addressable place in a container. |
+| product | [ProductTarget](#process-v1-ProductTarget) |  | Optional product-structure target. |
+| container | [ContainerTarget](#process-v1-ContainerTarget) |  | Optional container/slot target. |
+| resource | [ResourceTarget](#process-v1-ResourceTarget) |  | Optional generic resource target. |
 
 
 
@@ -4916,6 +4995,7 @@ This is intended for authoring-time generation, not runtime execution.
 | product_definition_id | [string](#string) |  | The product structure that should be transformed into a draft recipe. |
 | recipe_id | [string](#string) |  | Optional explicit recipe id for the generated recipe. If empty, the generator/backend may assign one. |
 | recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
+| recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
 | recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
 | variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
 | insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
@@ -5161,6 +5241,7 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | error_code | [string](#string) |  |  |
 | error_message | [string](#string) |  |  |
 | evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
+| binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
 
 
 
@@ -5176,6 +5257,24 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskRuntimeBinding"></a>
+
+### TaskRuntimeBinding
+Concrete runtime/deployment bindings resolved for this task run.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_instance_id | [string](#string) |  |  |
+| robot_instance_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
 
 
 

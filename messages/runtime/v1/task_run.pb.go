@@ -7,7 +7,8 @@
 package runtimev1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v11 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/resources/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -84,6 +85,75 @@ func (TaskRunState) EnumDescriptor() ([]byte, []int) {
 	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{0}
 }
 
+// Concrete runtime/deployment bindings resolved for this task run.
+type TaskRuntimeBinding struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`
+	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`
+	StationId       string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TaskRuntimeBinding) Reset() {
+	*x = TaskRuntimeBinding{}
+	mi := &file_runtime_v1_task_run_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskRuntimeBinding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskRuntimeBinding) ProtoMessage() {}
+
+func (x *TaskRuntimeBinding) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_task_run_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskRuntimeBinding.ProtoReflect.Descriptor instead.
+func (*TaskRuntimeBinding) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *TaskRuntimeBinding) GetAssetInstanceId() string {
+	if x != nil {
+		return x.AssetInstanceId
+	}
+	return ""
+}
+
+func (x *TaskRuntimeBinding) GetRobotInstanceId() string {
+	if x != nil {
+		return x.RobotInstanceId
+	}
+	return ""
+}
+
+func (x *TaskRuntimeBinding) GetStationId() string {
+	if x != nil {
+		return x.StationId
+	}
+	return ""
+}
+
+func (x *TaskRuntimeBinding) GetContainerSlot() *v1.ContainerSlotRef {
+	if x != nil {
+		return x.ContainerSlot
+	}
+	return nil
+}
+
 type TaskRun struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -95,19 +165,20 @@ type TaskRun struct {
 	CanDo               bool                   `protobuf:"varint,7,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
 	CanUndo             bool                   `protobuf:"varint,8,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
 	WorkableHorizon     int32                  `protobuf:"varint,9,opt,name=workable_horizon,json=workableHorizon,proto3" json:"workable_horizon,omitempty"` // steps needed to complete before this step is workable.
-	EstimatedDuration   *v1.EstimatedDuration  `protobuf:"bytes,10,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
+	EstimatedDuration   *v11.EstimatedDuration `protobuf:"bytes,10,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
 	StartedAt           *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
 	ErrorCode           string                 `protobuf:"bytes,13,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
 	ErrorMessage        string                 `protobuf:"bytes,14,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
 	Evidence            []*ExecutionEvidence   `protobuf:"bytes,15,rep,name=evidence,proto3" json:"evidence,omitempty"`
+	Binding             *TaskRuntimeBinding    `protobuf:"bytes,16,opt,name=binding,proto3" json:"binding,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TaskRun) Reset() {
 	*x = TaskRun{}
-	mi := &file_runtime_v1_task_run_proto_msgTypes[0]
+	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -119,7 +190,7 @@ func (x *TaskRun) String() string {
 func (*TaskRun) ProtoMessage() {}
 
 func (x *TaskRun) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_task_run_proto_msgTypes[0]
+	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -132,7 +203,7 @@ func (x *TaskRun) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskRun.ProtoReflect.Descriptor instead.
 func (*TaskRun) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{0}
+	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *TaskRun) GetId() string {
@@ -198,7 +269,7 @@ func (x *TaskRun) GetWorkableHorizon() int32 {
 	return 0
 }
 
-func (x *TaskRun) GetEstimatedDuration() *v1.EstimatedDuration {
+func (x *TaskRun) GetEstimatedDuration() *v11.EstimatedDuration {
 	if x != nil {
 		return x.EstimatedDuration
 	}
@@ -240,6 +311,13 @@ func (x *TaskRun) GetEvidence() []*ExecutionEvidence {
 	return nil
 }
 
+func (x *TaskRun) GetBinding() *TaskRuntimeBinding {
+	if x != nil {
+		return x.Binding
+	}
+	return nil
+}
+
 type TaskRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*TaskRun             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -249,7 +327,7 @@ type TaskRuns struct {
 
 func (x *TaskRuns) Reset() {
 	*x = TaskRuns{}
-	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
+	mi := &file_runtime_v1_task_run_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -261,7 +339,7 @@ func (x *TaskRuns) String() string {
 func (*TaskRuns) ProtoMessage() {}
 
 func (x *TaskRuns) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_task_run_proto_msgTypes[1]
+	mi := &file_runtime_v1_task_run_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -274,7 +352,7 @@ func (x *TaskRuns) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskRuns.ProtoReflect.Descriptor instead.
 func (*TaskRuns) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_task_run_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *TaskRuns) GetItems() []*TaskRun {
@@ -289,7 +367,13 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\xcd\x05\n" +
+	"runtime.v1\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\xd2\x01\n" +
+	"\x12TaskRuntimeBinding\x12*\n" +
+	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
+	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
+	"\n" +
+	"station_id\x18\x03 \x01(\tR\tstationId\x12E\n" +
+	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\x87\x06\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
 	"\x12task_definition_id\x18\x02 \x01(\tR\x10taskDefinitionId\x123\n" +
@@ -308,7 +392,8 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"error_code\x18\r \x01(\tR\terrorCode\x12#\n" +
 	"\rerror_message\x18\x0e \x01(\tR\ferrorMessage\x129\n" +
-	"\bevidence\x18\x0f \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\"5\n" +
+	"\bevidence\x18\x0f \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
+	"\abinding\x18\x10 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\"5\n" +
 	"\bTaskRuns\x12)\n" +
 	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
@@ -335,30 +420,34 @@ func file_runtime_v1_task_run_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_task_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_task_run_proto_goTypes = []any{
 	(TaskRunState)(0),             // 0: runtime.v1.TaskRunState
-	(*TaskRun)(nil),               // 1: runtime.v1.TaskRun
-	(*TaskRuns)(nil),              // 2: runtime.v1.TaskRuns
-	(*ActorRef)(nil),              // 3: runtime.v1.ActorRef
-	(*v1.EstimatedDuration)(nil),  // 4: common.v1.EstimatedDuration
-	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
-	(*ExecutionEvidence)(nil),     // 6: runtime.v1.ExecutionEvidence
+	(*TaskRuntimeBinding)(nil),    // 1: runtime.v1.TaskRuntimeBinding
+	(*TaskRun)(nil),               // 2: runtime.v1.TaskRun
+	(*TaskRuns)(nil),              // 3: runtime.v1.TaskRuns
+	(*v1.ContainerSlotRef)(nil),   // 4: resources.v1.ContainerSlotRef
+	(*ActorRef)(nil),              // 5: runtime.v1.ActorRef
+	(*v11.EstimatedDuration)(nil), // 6: common.v1.EstimatedDuration
+	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
+	(*ExecutionEvidence)(nil),     // 8: runtime.v1.ExecutionEvidence
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
-	0, // 0: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
-	3, // 1: runtime.v1.TaskRun.candidate_actors:type_name -> runtime.v1.ActorRef
-	3, // 2: runtime.v1.TaskRun.assigned_actor:type_name -> runtime.v1.ActorRef
-	4, // 3: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
-	5, // 4: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
-	5, // 5: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
-	6, // 6: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
-	1, // 7: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
+	0,  // 1: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
+	5,  // 2: runtime.v1.TaskRun.candidate_actors:type_name -> runtime.v1.ActorRef
+	5,  // 3: runtime.v1.TaskRun.assigned_actor:type_name -> runtime.v1.ActorRef
+	6,  // 4: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
+	7,  // 5: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
+	7,  // 6: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
+	8,  // 7: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
+	1,  // 8: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
+	2,  // 9: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_task_run_proto_init() }
@@ -374,7 +463,7 @@ func file_runtime_v1_task_run_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_task_run_proto_rawDesc), len(file_runtime_v1_task_run_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
