@@ -22,13 +22,15 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import external_references_pb2 as common_dot_v1_dot_external__references__pb2
 from process.v1 import sequence_definition_pb2 as process_dot_v1_dot_sequence__definition__pb2
 from process.v1 import task_definition_pb2 as process_dot_v1_dot_task__definition__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 from variance.v1 import variant_rule_pb2 as variance_dot_v1_dot_variant__rule__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fprocess/v1/process_recipe.proto\x12\nprocess.v1\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n\x13RecipeApplicability\x12\x32\n\x07include\x18\x01 \x03(\x0b\x32\x18.variance.v1.VariantRuleR\x07include\x12\x32\n\x07\x65xclude\x18\x02 \x03(\x0b\x32\x18.variance.v1.VariantRuleR\x07\x65xclude\"\xc7\x04\n\rProcessRecipe\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12+\n\x04type\x18\x05 \x01(\x0e\x32\x17.process.v1.ProcessTypeR\x04type\x12\x32\n\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12\x45\n\rapplicability\x18\x07 \x01(\x0b\x32\x1f.process.v1.RecipeApplicabilityR\rapplicability\x12(\n\x10root_sequence_id\x18\x08 \x01(\tR\x0erootSequenceId\x12<\n\tsequences\x18\t \x03(\x0b\x32\x1e.process.v1.SequenceDefinitionR\tsequences\x12\x30\n\x05tasks\x18\n \x03(\x0b\x32\x1a.process.v1.TaskDefinitionR\x05tasks\x12K\n\"supported_container_definition_ids\x18\x0b \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n\x13\x65xternal_references\x18\x0c \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\"A\n\x0eProcessRecipes\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.process.v1.ProcessRecipeR\x05items*\xd5\x01\n\x0bProcessType\x12\x1c\n\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n\x18PROCESS_TYPE_DISASSEMBLY\x10\x02\x12\x1b\n\x17PROCESS_TYPE_INSPECTION\x10\x03\x12\x1a\n\x16PROCESS_TYPE_CHECKLIST\x10\x04\x12\x18\n\x14PROCESS_TYPE_KITTING\x10\x05\x12\x1c\n\x18PROCESS_TYPE_MAINTENANCE\x10\x06\x42\xb1\x01\n\x0e\x63om.process.v1B\x12ProcessRecipeProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fprocess/v1/process_recipe.proto\x12\nprocess.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n\x13RecipeApplicability\x12\x32\n\x07include\x18\x01 \x03(\x0b\x32\x18.variance.v1.VariantRuleR\x07include\x12\x32\n\x07\x65xclude\x18\x02 \x03(\x0b\x32\x18.variance.v1.VariantRuleR\x07\x65xclude\"\xdf\x04\n\rProcessRecipe\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x38\n\x04type\x18\x05 \x01(\x0e\x32\x17.process.v1.ProcessTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x32\n\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12\x45\n\rapplicability\x18\x07 \x01(\x0b\x32\x1f.process.v1.RecipeApplicabilityR\rapplicability\x12(\n\x10root_sequence_id\x18\x08 \x01(\tR\x0erootSequenceId\x12<\n\tsequences\x18\t \x03(\x0b\x32\x1e.process.v1.SequenceDefinitionR\tsequences\x12\x30\n\x05tasks\x18\n \x03(\x0b\x32\x1a.process.v1.TaskDefinitionR\x05tasks\x12K\n\"supported_container_definition_ids\x18\x0b \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n\x13\x65xternal_references\x18\x0c \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\"A\n\x0eProcessRecipes\x12/\n\x05items\x18\x01 \x03(\x0b\x32\x19.process.v1.ProcessRecipeR\x05items*\xd5\x01\n\x0bProcessType\x12\x1c\n\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n\x18PROCESS_TYPE_DISASSEMBLY\x10\x02\x12\x1b\n\x17PROCESS_TYPE_INSPECTION\x10\x03\x12\x1a\n\x16PROCESS_TYPE_CHECKLIST\x10\x04\x12\x18\n\x14PROCESS_TYPE_KITTING\x10\x05\x12\x1c\n\x18PROCESS_TYPE_MAINTENANCE\x10\x06\x42\xb1\x01\n\x0e\x63om.process.v1B\x12ProcessRecipeProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,12 +38,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'process.v1.process_recipe_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.process.v1B\022ProcessRecipeProtoP\001Z9github.com/cobotar/protocol/messages/process/v1;processv1\242\002\003PXX\252\002\023Messages.Process.V1\312\002\nProcess\\V1\342\002\026Process\\V1\\GPBMetadata\352\002\013Process::V1'
-  _globals['_PROCESSTYPE']._serialized_start=969
-  _globals['_PROCESSTYPE']._serialized_end=1182
-  _globals['_RECIPEAPPLICABILITY']._serialized_start=188
-  _globals['_RECIPEAPPLICABILITY']._serialized_end=313
-  _globals['_PROCESSRECIPE']._serialized_start=316
-  _globals['_PROCESSRECIPE']._serialized_end=899
-  _globals['_PROCESSRECIPES']._serialized_start=901
-  _globals['_PROCESSRECIPES']._serialized_end=966
+  _globals['_PROCESSRECIPE'].fields_by_name['name']._loaded_options = None
+  _globals['_PROCESSRECIPE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_PROCESSRECIPE'].fields_by_name['type']._loaded_options = None
+  _globals['_PROCESSRECIPE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_PROCESSTYPE']._serialized_start=1067
+  _globals['_PROCESSTYPE']._serialized_end=1280
+  _globals['_RECIPEAPPLICABILITY']._serialized_start=262
+  _globals['_RECIPEAPPLICABILITY']._serialized_end=387
+  _globals['_PROCESSRECIPE']._serialized_start=390
+  _globals['_PROCESSRECIPE']._serialized_end=997
+  _globals['_PROCESSRECIPES']._serialized_start=999
+  _globals['_PROCESSRECIPES']._serialized_end=1064
 # @@protoc_insertion_point(module_scope)

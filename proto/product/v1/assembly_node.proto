@@ -1,9 +1,11 @@
 syntax = "proto3";
 package product.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Product.V1";
@@ -36,9 +38,12 @@ enum JoinMethod {
 
 message AssemblyNode {
   string id = 1;
-  string name = 2; // Name of this assembly node
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true]; // Name of this assembly node
   string parent_node_id = 3; // Empty if root, otherwise set to parent AssemblyNode id.
-  NodeKind kind = 4;
+  NodeKind kind = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   string part_definition_id = 5;
   string override_model_id = 6;
   geometry.v1.Pose local_pose = 7; // final pose, in mm

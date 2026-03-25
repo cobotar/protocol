@@ -7,7 +7,9 @@
 package processv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v11 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -324,16 +326,16 @@ var File_process_v1_process_recipe_proto protoreflect.FileDescriptor
 const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\n" +
 	"\x1fprocess/v1/process_recipe.proto\x12\n" +
-	"process.v1\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
 	"\x13RecipeApplicability\x122\n" +
 	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
-	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xc7\x04\n" +
+	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xdf\x04\n" +
 	"\rProcessRecipe\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12+\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x17.process.v1.ProcessTypeR\x04type\x122\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x17.process.v1.ProcessTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x122\n" +
 	"\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12E\n" +
 	"\rapplicability\x18\a \x01(\v2\x1f.process.v1.RecipeApplicabilityR\rapplicability\x12(\n" +
 	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12<\n" +

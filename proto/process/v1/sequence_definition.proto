@@ -1,7 +1,9 @@
 syntax = "proto3";
 package process.v1;
 
+import "buf/validate/validate.proto";
 import "geometry/v1/local_target.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/messages/process/v1";
@@ -15,12 +17,15 @@ enum SequenceOperator {
 
 message SequenceDefinition {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   int32 sequence_number = 5;
   string parent_sequence_id = 6;
-  SequenceOperator operator = 7;
+  SequenceOperator operator = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   repeated string child_sequence_ids = 8;
   repeated string child_task_ids = 9;
   geometry.v1.LocalTarget local_target = 10;

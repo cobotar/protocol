@@ -4562,7 +4562,8 @@ VariantRule: a rule matches if all predicates match
 | sequence_number | [int32](#int32) |  | Ordering hint within the parent sequence. |
 | task_type | [TaskType](#process-v1-TaskType) |  | The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY. |
 | target | [TaskTarget](#process-v1-TaskTarget) |  | The primary thing/location/resource this task acts on. |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approach direction for AR guidance, picking, insertion, or robot planning. |
+| insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
+| approach_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning. |
 | tool_requirements | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) | repeated | repeated string precondition_task_ids = 10; repeated string dependant_task_ids = 11;
 
 Tools or tool roles needed to perform the task. |
@@ -4922,6 +4923,7 @@ This is intended for authoring-time generation, not runtime execution.
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
 | generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
 | prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
+| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included |
 
 
 

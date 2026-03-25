@@ -7,6 +7,7 @@
 package processv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -54,8 +55,10 @@ type DraftProcessRecipeGenerateRequest struct {
 	// If true, the generator may prefer MOVE tasks when the operation can be
 	// reasonably interpreted as repositioning rather than installation.
 	PreferMoveTasksWhenPossible bool `protobuf:"varint,10,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
-	unknownFields               protoimpl.UnknownFields
-	sizeCache                   protoimpl.SizeCache
+	// If true, nodes marked as optional will be included
+	IncludeOptionalNodes bool `protobuf:"varint,11,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *DraftProcessRecipeGenerateRequest) Reset() {
@@ -154,6 +157,13 @@ func (x *DraftProcessRecipeGenerateRequest) GetGenerateVerifyTasks() bool {
 func (x *DraftProcessRecipeGenerateRequest) GetPreferMoveTasksWhenPossible() bool {
 	if x != nil {
 		return x.PreferMoveTasksWhenPossible
+	}
+	return false
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetIncludeOptionalNodes() bool {
+	if x != nil {
+		return x.IncludeOptionalNodes
 	}
 	return false
 }
@@ -278,10 +288,10 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1fprocess/v1/process_recipe.proto\x1a'variance/v1/variant_configuration.proto\"\xdf\x04\n" +
-	"!DraftProcessRecipeGenerateRequest\x122\n" +
-	"\x15product_definition_id\x18\x01 \x01(\tR\x13productDefinitionId\x12\x1b\n" +
-	"\trecipe_id\x18\x02 \x01(\tR\brecipeId\x12\x1f\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a'variance/v1/variant_configuration.proto\"\xa5\x05\n" +
+	"!DraftProcessRecipeGenerateRequest\x12:\n" +
+	"\x15product_definition_id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x13productDefinitionId\x12#\n" +
+	"\trecipe_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\brecipeId\x12\x1f\n" +
 	"\vrecipe_name\x18\x03 \x01(\tR\n" +
 	"recipeName\x12-\n" +
 	"\x12recipe_description\x18\x04 \x01(\tR\x11recipeDescription\x12V\n" +
@@ -291,13 +301,14 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\x1egroup_repeated_parts_threshold\x18\b \x01(\x05R\x1bgroupRepeatedPartsThreshold\x122\n" +
 	"\x15generate_verify_tasks\x18\t \x01(\bR\x13generateVerifyTasks\x12D\n" +
 	"\x1fprefer_move_tasks_when_possible\x18\n" +
-	" \x01(\bR\x1bpreferMoveTasksWhenPossible\"\x82\x01\n" +
-	"\x1fDraftProcessRecipeGenerateIssue\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\x12\x17\n" +
-	"\anode_id\x18\x02 \x01(\tR\x06nodeId\x12,\n" +
-	"\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\x9a\x01\n" +
-	" DraftProcessRecipeGenerateResult\x121\n" +
-	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeR\x06recipe\x12C\n" +
+	" \x01(\bR\x1bpreferMoveTasksWhenPossible\x124\n" +
+	"\x16include_optional_nodes\x18\v \x01(\bR\x14includeOptionalNodes\"\x92\x01\n" +
+	"\x1fDraftProcessRecipeGenerateIssue\x12 \n" +
+	"\amessage\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\amessage\x12\x1f\n" +
+	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x12,\n" +
+	"\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\xa2\x01\n" +
+	" DraftProcessRecipeGenerateResult\x129\n" +
+	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12C\n" +
 	"\x06issues\x18\x02 \x03(\v2+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n" +
 	"\x0ecom.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"

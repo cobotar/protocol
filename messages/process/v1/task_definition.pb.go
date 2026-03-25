@@ -7,10 +7,12 @@
 package processv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v12 "github.com/cobotar/protocol/messages/capability/v1"
 	v13 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	v11 "github.com/cobotar/protocol/messages/resources/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v14 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -529,7 +531,8 @@ type TaskDefinition struct {
 	SequenceNumber  int32                  `protobuf:"varint,6,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`        // Ordering hint within the parent sequence.
 	TaskType        TaskType               `protobuf:"varint,7,opt,name=task_type,json=taskType,proto3,enum=process.v1.TaskType" json:"task_type,omitempty"` // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
 	Target          *TaskTarget            `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`                                               // The primary thing/location/resource this task acts on.
-	Approach        *v1.Vector3            `protobuf:"bytes,9,opt,name=approach,proto3" json:"approach,omitempty"`                                           // Optional approach direction for AR guidance, picking, insertion, or robot planning.
+	InsertionOffset *v1.Vector3            `protobuf:"bytes,9,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"`      // Offset from final pose to pre-insertion pose, in mm
+	ApproachOffset  *v1.Vector3            `protobuf:"bytes,10,opt,name=approach_offset,json=approachOffset,proto3" json:"approach_offset,omitempty"`        // Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning.
 	// repeated string precondition_task_ids = 10;
 	// repeated string dependant_task_ids = 11;
 	ToolRequirements    []*v12.ToolRequirement  `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`                              // Tools or tool roles needed to perform the task.
@@ -633,9 +636,16 @@ func (x *TaskDefinition) GetTarget() *TaskTarget {
 	return nil
 }
 
-func (x *TaskDefinition) GetApproach() *v1.Vector3 {
+func (x *TaskDefinition) GetInsertionOffset() *v1.Vector3 {
 	if x != nil {
-		return x.Approach
+		return x.InsertionOffset
+	}
+	return nil
+}
+
+func (x *TaskDefinition) GetApproachOffset() *v1.Vector3 {
+	if x != nil {
+		return x.ApproachOffset
 	}
 	return nil
 }
@@ -766,7 +776,7 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a'resources/v1/container_definition.proto\x1a\x1evariance/v1/variant_rule.proto\"\x91\x03\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x91\x03\n" +
 	"\n" +
 	"TaskTarget\x12$\n" +
 	"\x0etarget_node_id\x18\x01 \x01(\tR\ftargetNodeId\x129\n" +
@@ -795,17 +805,19 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
 	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
-	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\xb0\b\n" +
+	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x96\t\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
 	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
-	"\x0fsequence_number\x18\x06 \x01(\x05R\x0esequenceNumber\x121\n" +
-	"\ttask_type\x18\a \x01(\x0e2\x14.process.v1.TaskTypeR\btaskType\x12.\n" +
-	"\x06target\x18\b \x01(\v2\x16.process.v1.TaskTargetR\x06target\x120\n" +
-	"\bapproach\x18\t \x01(\v2\x14.geometry.v1.Vector3R\bapproach\x12K\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x05R\x0esequenceNumber\x12>\n" +
+	"\ttask_type\x18\a \x01(\x0e2\x14.process.v1.TaskTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\btaskType\x12.\n" +
+	"\x06target\x18\b \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
+	"\x10insertion_offset\x18\t \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
+	"\x0fapproach_offset\x18\n" +
+	" \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\x12K\n" +
 	"\x11tool_requirements\x18\f \x03(\v2\x1e.capability.v1.ToolRequirementR\x10toolRequirements\x12N\n" +
 	"\x12skill_requirements\x18\r \x03(\v2\x1f.capability.v1.SkillRequirementR\x11skillRequirements\x12A\n" +
 	"\n" +
@@ -900,22 +912,23 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	15, // 8: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
 	0,  // 9: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
 	2,  // 10: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	15, // 11: process.v1.TaskDefinition.approach:type_name -> geometry.v1.Vector3
-	16, // 12: process.v1.TaskDefinition.tool_requirements:type_name -> capability.v1.ToolRequirement
-	17, // 13: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	3,  // 14: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	4,  // 15: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	18, // 16: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	9,  // 17: process.v1.TaskDefinition.source_location:type_name -> resources.v1.ContainerSlotRef
-	9,  // 18: process.v1.TaskDefinition.destination_location:type_name -> resources.v1.ContainerSlotRef
-	14, // 19: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	5,  // 20: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	6,  // 21: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	22, // [22:22] is the sub-list for method output_type
-	22, // [22:22] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	15, // 11: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	15, // 12: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	16, // 13: process.v1.TaskDefinition.tool_requirements:type_name -> capability.v1.ToolRequirement
+	17, // 14: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	3,  // 15: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	4,  // 16: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	18, // 17: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	9,  // 18: process.v1.TaskDefinition.source_location:type_name -> resources.v1.ContainerSlotRef
+	9,  // 19: process.v1.TaskDefinition.destination_location:type_name -> resources.v1.ContainerSlotRef
+	14, // 20: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	5,  // 21: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	6,  // 22: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	23, // [23:23] is the sub-list for method output_type
+	23, // [23:23] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }

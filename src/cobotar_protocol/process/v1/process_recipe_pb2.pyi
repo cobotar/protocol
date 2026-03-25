@@ -1,6 +1,8 @@
+from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
 from process.v1 import task_definition_pb2 as _task_definition_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper

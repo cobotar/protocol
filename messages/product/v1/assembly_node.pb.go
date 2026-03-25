@@ -7,8 +7,10 @@
 package productv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v12 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v11 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -311,12 +313,12 @@ var File_product_v1_assembly_node_proto protoreflect.FileDescriptor
 const file_product_v1_assembly_node_proto_rawDesc = "" +
 	"\n" +
 	"\x1eproduct/v1/assembly_node.proto\x12\n" +
-	"product.v1\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a\x1evariance/v1/variant_rule.proto\"\xc8\x05\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\xe0\x05\n" +
 	"\fAssemblyNode\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12$\n" +
-	"\x0eparent_node_id\x18\x03 \x01(\tR\fparentNodeId\x12(\n" +
-	"\x04kind\x18\x04 \x01(\x0e2\x14.product.v1.NodeKindR\x04kind\x12,\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12$\n" +
+	"\x0eparent_node_id\x18\x03 \x01(\tR\fparentNodeId\x125\n" +
+	"\x04kind\x18\x04 \x01(\x0e2\x14.product.v1.NodeKindB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04kind\x12,\n" +
 	"\x12part_definition_id\x18\x05 \x01(\tR\x10partDefinitionId\x12*\n" +
 	"\x11override_model_id\x18\x06 \x01(\tR\x0foverrideModelId\x120\n" +
 	"\n" +

@@ -1,6 +1,7 @@
 syntax = "proto3";
 package process.v1;
 
+import "buf/validate/validate.proto";
 import "process/v1/process_recipe.proto";
 import "variance/v1/variant_configuration.proto";
 
@@ -13,11 +14,11 @@ option go_package = "github.com/cobotar/protocol/messages/process/v1";
 // This is intended for authoring-time generation, not runtime execution.
 message DraftProcessRecipeGenerateRequest {
   // The product structure that should be transformed into a draft recipe.
-  string product_definition_id = 1;
+  string product_definition_id = 1 [(buf.validate.field).required = true];
 
   // Optional explicit recipe id for the generated recipe.
   // If empty, the generator/backend may assign one.
-  string recipe_id = 2;
+  string recipe_id = 2 [(buf.validate.field).required = true];
 
   // Human-readable name for the generated recipe.
   string recipe_name = 3;
@@ -47,18 +48,21 @@ message DraftProcessRecipeGenerateRequest {
   // If true, the generator may prefer MOVE tasks when the operation can be
   // reasonably interpreted as repositioning rather than installation.
   bool prefer_move_tasks_when_possible = 10;
+
+  // If true, nodes marked as optional will be included
+  bool include_optional_nodes = 11;
 }
 
 // DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
 // encountered during recipe generation.
 message DraftProcessRecipeGenerateIssue {
-  string message = 1;
-  string node_id = 2;
+  string message = 1 [(buf.validate.field).required = true];
+  string node_id = 2 [(buf.validate.field).required = true];
   string part_definition_id = 3;
 }
 
 // DraftProcessRecipeGenerateResult contains the generated draft recipe.
 message DraftProcessRecipeGenerateResult {
-  ProcessRecipe recipe = 1;
+  ProcessRecipe recipe = 1 [(buf.validate.field).required = true];
   repeated DraftProcessRecipeGenerateIssue issues = 2;
 }

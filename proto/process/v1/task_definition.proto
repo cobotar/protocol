@@ -1,6 +1,7 @@
 syntax = "proto3";
 package process.v1;
 
+import "buf/validate/validate.proto";
 import "capability/v1/actor_constraint.proto";
 import "capability/v1/actor_skill.proto";
 import "capability/v1/skill_requirement.proto";
@@ -11,6 +12,7 @@ import "common/v1/time.proto";
 import "geometry/v1/local_target.proto";
 import "geometry/v1/vector3.proto";
 import "resources/v1/container_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Process.V1";
@@ -95,14 +97,18 @@ message TaskOverride {
 
 message TaskDefinition {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   string instruction_text = 5; // Human-readable instruction shown to the operator or author.
   int32 sequence_number = 6; // Ordering hint within the parent sequence.
-  TaskType task_type = 7; // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
+  TaskType task_type = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ]; // The semantic action to perform, e.g. FASTEN, PICK, PLACE, VERIFY.
   TaskTarget target = 8; // The primary thing/location/resource this task acts on.
-  geometry.v1.Vector3 approach = 9; // Optional approach direction for AR guidance, picking, insertion, or robot planning.
+  geometry.v1.Vector3 insertion_offset = 9; // Offset from final pose to pre-insertion pose, in mm
+  geometry.v1.Vector3 approach_offset = 10; // Offset from final pose to preferred approach pose, in mm. Approach direction for AR guidance, picking, insertion, or robot planning.
   //repeated string precondition_task_ids = 10;
   // repeated string dependant_task_ids = 11;
   repeated capability.v1.ToolRequirement tool_requirements = 12; // Tools or tool roles needed to perform the task.

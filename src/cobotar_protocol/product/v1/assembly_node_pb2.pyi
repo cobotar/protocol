@@ -1,6 +1,8 @@
+from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper

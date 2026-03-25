@@ -1,9 +1,11 @@
 syntax = "proto3";
 package process.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/external_references.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Process.V1";
@@ -33,10 +35,13 @@ message RecipeApplicability {
 // - What validation is needed
 message ProcessRecipe {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ProcessType type = 5;
+  ProcessType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   string product_definition_id = 6;
   RecipeApplicability applicability = 7;
   string root_sequence_id = 8;

@@ -25,11 +25,12 @@ namespace Messages.Process.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nl",
-            "c3MudjEaH3Byb2Nlc3MvdjEvcHJvY2Vzc19yZWNpcGUucHJvdG8aJ3Zhcmlh",
-            "bmNlL3YxL3ZhcmlhbnRfY29uZmlndXJhdGlvbi5wcm90byLfBAohRHJhZnRQ",
-            "cm9jZXNzUmVjaXBlR2VuZXJhdGVSZXF1ZXN0EjIKFXByb2R1Y3RfZGVmaW5p",
-            "dGlvbl9pZBgBIAEoCVITcHJvZHVjdERlZmluaXRpb25JZBIbCglyZWNpcGVf",
-            "aWQYAiABKAlSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNp",
+            "c3MudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxofcHJvY2Vzcy92",
+            "MS9wcm9jZXNzX3JlY2lwZS5wcm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9j",
+            "b25maWd1cmF0aW9uLnByb3RvIqUFCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5l",
+            "cmF0ZVJlcXVlc3QSOgoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQga6",
+            "SAPIAQFSE3Byb2R1Y3REZWZpbml0aW9uSWQSIwoJcmVjaXBlX2lkGAIgASgJ",
+            "Qga6SAPIAQFSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNp",
             "cGVOYW1lEi0KEnJlY2lwZV9kZXNjcmlwdGlvbhgEIAEoCVIRcmVjaXBlRGVz",
             "Y3JpcHRpb24SVgoVdmFyaWFudF9jb25maWd1cmF0aW9uGAUgASgLMiEudmFy",
             "aWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1",
@@ -40,22 +41,23 @@ namespace Messages.Process.V1 {
             "Z3JvdXBSZXBlYXRlZFBhcnRzVGhyZXNob2xkEjIKFWdlbmVyYXRlX3Zlcmlm",
             "eV90YXNrcxgJIAEoCFITZ2VuZXJhdGVWZXJpZnlUYXNrcxJECh9wcmVmZXJf",
             "bW92ZV90YXNrc193aGVuX3Bvc3NpYmxlGAogASgIUhtwcmVmZXJNb3ZlVGFz",
-            "a3NXaGVuUG9zc2libGUiggEKH0RyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRl",
-            "SXNzdWUSGAoHbWVzc2FnZRgBIAEoCVIHbWVzc2FnZRIXCgdub2RlX2lkGAIg",
-            "ASgJUgZub2RlSWQSLAoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJUhBwYXJ0",
-            "RGVmaW5pdGlvbklkIpoBCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJl",
-            "c3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNp",
-            "cGVSBnJlY2lwZRJDCgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0",
-            "UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWVSBmlzc3Vlc0K2AQoOY29tLnBy",
-            "b2Nlc3MudjFCF0dlbmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nl",
-            "c3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx",
-            "4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90",
-            "bzM="));
+            "a3NXaGVuUG9zc2libGUSNAoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgLIAEo",
+            "CFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMikgEKH0RyYWZ0UHJvY2Vzc1JlY2lw",
+            "ZUdlbmVyYXRlSXNzdWUSIAoHbWVzc2FnZRgBIAEoCUIGukgDyAEBUgdtZXNz",
+            "YWdlEh8KB25vZGVfaWQYAiABKAlCBrpIA8gBAVIGbm9kZUlkEiwKEnBhcnRf",
+            "ZGVmaW5pdGlvbl9pZBgDIAEoCVIQcGFydERlZmluaXRpb25JZCKiAQogRHJh",
+            "ZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXN1bHQSOQoGcmVjaXBlGAEgASgL",
+            "MhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlQga6SAPIAQFSBnJlY2lwZRJD",
+            "CgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lw",
+            "ZUdlbmVyYXRlSXNzdWVSBmlzc3Vlc0K2AQoOY29tLnByb2Nlc3MudjFCF0dl",
+            "bmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoC",
+            "E01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xW",
+            "MVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateIssue), global::Messages.Process.V1.DraftProcessRecipeGenerateIssue.Parser, new[]{ "Message", "NodeId", "PartDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateResult), global::Messages.Process.V1.DraftProcessRecipeGenerateResult.Parser, new[]{ "Recipe", "Issues" }, null, null, null, null)
           }));
@@ -115,6 +117,7 @@ namespace Messages.Process.V1 {
       groupRepeatedPartsThreshold_ = other.groupRepeatedPartsThreshold_;
       generateVerifyTasks_ = other.generateVerifyTasks_;
       preferMoveTasksWhenPossible_ = other.preferMoveTasksWhenPossible_;
+      includeOptionalNodes_ = other.includeOptionalNodes_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -280,6 +283,21 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "include_optional_nodes" field.</summary>
+    public const int IncludeOptionalNodesFieldNumber = 11;
+    private bool includeOptionalNodes_;
+    /// <summary>
+    /// If true, nodes marked as optional will be included
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IncludeOptionalNodes {
+      get { return includeOptionalNodes_; }
+      set {
+        includeOptionalNodes_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -305,6 +323,7 @@ namespace Messages.Process.V1 {
       if (GroupRepeatedPartsThreshold != other.GroupRepeatedPartsThreshold) return false;
       if (GenerateVerifyTasks != other.GenerateVerifyTasks) return false;
       if (PreferMoveTasksWhenPossible != other.PreferMoveTasksWhenPossible) return false;
+      if (IncludeOptionalNodes != other.IncludeOptionalNodes) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -322,6 +341,7 @@ namespace Messages.Process.V1 {
       if (GroupRepeatedPartsThreshold != 0) hash ^= GroupRepeatedPartsThreshold.GetHashCode();
       if (GenerateVerifyTasks != false) hash ^= GenerateVerifyTasks.GetHashCode();
       if (PreferMoveTasksWhenPossible != false) hash ^= PreferMoveTasksWhenPossible.GetHashCode();
+      if (IncludeOptionalNodes != false) hash ^= IncludeOptionalNodes.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -380,6 +400,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(80);
         output.WriteBool(PreferMoveTasksWhenPossible);
       }
+      if (IncludeOptionalNodes != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IncludeOptionalNodes);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -430,6 +454,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(80);
         output.WriteBool(PreferMoveTasksWhenPossible);
       }
+      if (IncludeOptionalNodes != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IncludeOptionalNodes);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -468,6 +496,9 @@ namespace Messages.Process.V1 {
         size += 1 + 1;
       }
       if (PreferMoveTasksWhenPossible != false) {
+        size += 1 + 1;
+      }
+      if (IncludeOptionalNodes != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -514,6 +545,9 @@ namespace Messages.Process.V1 {
       }
       if (other.PreferMoveTasksWhenPossible != false) {
         PreferMoveTasksWhenPossible = other.PreferMoveTasksWhenPossible;
+      }
+      if (other.IncludeOptionalNodes != false) {
+        IncludeOptionalNodes = other.IncludeOptionalNodes;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -577,6 +611,10 @@ namespace Messages.Process.V1 {
             PreferMoveTasksWhenPossible = input.ReadBool();
             break;
           }
+          case 88: {
+            IncludeOptionalNodes = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -637,6 +675,10 @@ namespace Messages.Process.V1 {
           }
           case 80: {
             PreferMoveTasksWhenPossible = input.ReadBool();
+            break;
+          }
+          case 88: {
+            IncludeOptionalNodes = input.ReadBool();
             break;
           }
         }

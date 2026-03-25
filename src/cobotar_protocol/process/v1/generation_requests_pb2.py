@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from process.v1 import process_recipe_pb2 as process_dot_v1_dot_process__recipe__pb2
 from variance.v1 import variant_configuration_pb2 as variance_dot_v1_dot_variant__configuration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$process/v1/generation_requests.proto\x12\nprocess.v1\x1a\x1fprocess/v1/process_recipe.proto\x1a\'variance/v1/variant_configuration.proto\"\xdf\x04\n!DraftProcessRecipeGenerateRequest\x12\x32\n\x15product_definition_id\x18\x01 \x01(\tR\x13productDefinitionId\x12\x1b\n\trecipe_id\x18\x02 \x01(\tR\x08recipeId\x12\x1f\n\x0brecipe_name\x18\x03 \x01(\tR\nrecipeName\x12-\n\x12recipe_description\x18\x04 \x01(\tR\x11recipeDescription\x12V\n\x15variant_configuration\x18\x05 \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x46\n insert_align_before_fasten_group\x18\x06 \x01(\x08R\x1cinsertAlignBeforeFastenGroup\x12:\n\x19group_fasteners_threshold\x18\x07 \x01(\x05R\x17groupFastenersThreshold\x12\x43\n\x1egroup_repeated_parts_threshold\x18\x08 \x01(\x05R\x1bgroupRepeatedPartsThreshold\x12\x32\n\x15generate_verify_tasks\x18\t \x01(\x08R\x13generateVerifyTasks\x12\x44\n\x1fprefer_move_tasks_when_possible\x18\n \x01(\x08R\x1bpreferMoveTasksWhenPossible\"\x82\x01\n\x1f\x44raftProcessRecipeGenerateIssue\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\x12\x17\n\x07node_id\x18\x02 \x01(\tR\x06nodeId\x12,\n\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\x9a\x01\n DraftProcessRecipeGenerateResult\x12\x31\n\x06recipe\x18\x01 \x01(\x0b\x32\x19.process.v1.ProcessRecipeR\x06recipe\x12\x43\n\x06issues\x18\x02 \x03(\x0b\x32+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n\x0e\x63om.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$process/v1/generation_requests.proto\x12\nprocess.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a\'variance/v1/variant_configuration.proto\"\xa5\x05\n!DraftProcessRecipeGenerateRequest\x12:\n\x15product_definition_id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x13productDefinitionId\x12#\n\trecipe_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x08recipeId\x12\x1f\n\x0brecipe_name\x18\x03 \x01(\tR\nrecipeName\x12-\n\x12recipe_description\x18\x04 \x01(\tR\x11recipeDescription\x12V\n\x15variant_configuration\x18\x05 \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x46\n insert_align_before_fasten_group\x18\x06 \x01(\x08R\x1cinsertAlignBeforeFastenGroup\x12:\n\x19group_fasteners_threshold\x18\x07 \x01(\x05R\x17groupFastenersThreshold\x12\x43\n\x1egroup_repeated_parts_threshold\x18\x08 \x01(\x05R\x1bgroupRepeatedPartsThreshold\x12\x32\n\x15generate_verify_tasks\x18\t \x01(\x08R\x13generateVerifyTasks\x12\x44\n\x1fprefer_move_tasks_when_possible\x18\n \x01(\x08R\x1bpreferMoveTasksWhenPossible\x12\x34\n\x16include_optional_nodes\x18\x0b \x01(\x08R\x14includeOptionalNodes\"\x92\x01\n\x1f\x44raftProcessRecipeGenerateIssue\x12 \n\x07message\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x07message\x12\x1f\n\x07node_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x12,\n\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\xa2\x01\n DraftProcessRecipeGenerateResult\x12\x39\n\x06recipe\x18\x01 \x01(\x0b\x32\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12\x43\n\x06issues\x18\x02 \x03(\x0b\x32+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n\x0e\x63om.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +35,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'process.v1.generation_reque
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.process.v1B\027GenerationRequestsProtoP\001Z9github.com/cobotar/protocol/messages/process/v1;processv1\242\002\003PXX\252\002\023Messages.Process.V1\312\002\nProcess\\V1\342\002\026Process\\V1\\GPBMetadata\352\002\013Process::V1'
-  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST']._serialized_start=127
-  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST']._serialized_end=734
-  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE']._serialized_start=737
-  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE']._serialized_end=867
-  _globals['_DRAFTPROCESSRECIPEGENERATERESULT']._serialized_start=870
-  _globals['_DRAFTPROCESSRECIPEGENERATERESULT']._serialized_end=1024
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_definition_id']._loaded_options = None
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_definition_id']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST'].fields_by_name['recipe_id']._loaded_options = None
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST'].fields_by_name['recipe_id']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE'].fields_by_name['message']._loaded_options = None
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE'].fields_by_name['message']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE'].fields_by_name['node_id']._loaded_options = None
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE'].fields_by_name['node_id']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_DRAFTPROCESSRECIPEGENERATERESULT'].fields_by_name['recipe']._loaded_options = None
+  _globals['_DRAFTPROCESSRECIPEGENERATERESULT'].fields_by_name['recipe']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST']._serialized_start=156
+  _globals['_DRAFTPROCESSRECIPEGENERATEREQUEST']._serialized_end=833
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE']._serialized_start=836
+  _globals['_DRAFTPROCESSRECIPEGENERATEISSUE']._serialized_end=982
+  _globals['_DRAFTPROCESSRECIPEGENERATERESULT']._serialized_start=985
+  _globals['_DRAFTPROCESSRECIPEGENERATERESULT']._serialized_end=1147
 # @@protoc_insertion_point(module_scope)
