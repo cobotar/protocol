@@ -57,11 +57,88 @@ namespace Messages.Common.V1 {
     [pbr::OriginalName("RESOURCE_STATUS_MAINTENANCE")] Maintenance = 4,
   }
 
+  /// <summary>
+  /// SafetyRelevance indicates how safety-critical a task, action, or capability is.
+  ///
+  /// This value helps systems determine:
+  /// - whether additional validation or confirmation is required
+  /// - what actor permissions or certifications are needed
+  /// - whether supervision or restricted execution policies apply
+  /// - how prominently the task should be displayed or highlighted in UIs
+  ///
+  /// Safety relevance does NOT necessarily mean the task is dangerous,
+  /// but rather the potential consequences if the task is performed
+  /// incorrectly or skipped.
+  ///
+  /// The levels are intentionally coarse to keep authoring simple while
+  /// still allowing meaningful safety-aware behavior.
+  /// </summary>
   public enum SafetyRelevance {
+    /// <summary>
+    /// Default value when safety relevance has not yet been determined.
+    ///
+    /// Systems should typically treat this conservatively, often
+    /// equivalent to MEDIUM unless explicitly overridden.
+    /// </summary>
     [pbr::OriginalName("SAFETY_RELEVANCE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Minimal safety impact.
+    ///
+    /// Errors are unlikely to cause harm to people, equipment,
+    /// or product integrity.
+    ///
+    /// Examples:
+    /// - wiping a surface
+    /// - organizing components
+    /// - non-critical visual checks
+    ///
+    /// Typically requires no special permissions or confirmations.
+    /// </summary>
     [pbr::OriginalName("SAFETY_RELEVANCE_LOW")] Low = 1,
+    /// <summary>
+    /// Moderate safety impact.
+    ///
+    /// Mistakes may affect product quality or create minor risk
+    /// to equipment or operators.
+    ///
+    /// Examples:
+    /// - positioning components
+    /// - inserting non-critical parts
+    /// - non-torque-sensitive operations
+    ///
+    /// Systems may require basic validation or confirmation.
+    /// </summary>
     [pbr::OriginalName("SAFETY_RELEVANCE_MEDIUM")] Medium = 2,
+    /// <summary>
+    /// High safety impact.
+    ///
+    /// Incorrect execution may lead to equipment damage, significant
+    /// product defects, or operator risk.
+    ///
+    /// Examples:
+    /// - torque-controlled fastening
+    /// - applying significant force
+    /// - electrical assembly steps
+    ///
+    /// Systems may enforce stricter validation, tool feedback,
+    /// or actor capability checks.
+    /// </summary>
     [pbr::OriginalName("SAFETY_RELEVANCE_HIGH")] High = 3,
+    /// <summary>
+    /// Safety-critical operations.
+    ///
+    /// Incorrect execution may pose serious risk to human safety,
+    /// regulatory compliance, or system integrity.
+    ///
+    /// Examples:
+    /// - safety-critical fasteners
+    /// - interacting with safety systems
+    /// - hazardous energy isolation steps
+    /// - operations requiring certified personnel
+    ///
+    /// Systems should require strict validation, restricted actor
+    /// permissions, and explicit confirmation before completion.
+    /// </summary>
     [pbr::OriginalName("SAFETY_RELEVANCE_CRITICAL")] Critical = 4,
   }
 

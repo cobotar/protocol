@@ -19,10 +19,7 @@ enum ToolProperty {
 }
 
 message ToolRequirement {
-  ToolRole role = 1 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
+  ToolRole role = 1 [(buf.validate.field).enum.defined_only = true];
   repeated ToolProperty required_properties = 2 [(buf.validate.field).repeated.items.enum.defined_only = true];
   capability.v1.CapabilityProfile minimum_capability = 3;
   repeated string allowed_tool_definition_ids = 4;

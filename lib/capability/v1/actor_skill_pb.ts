@@ -122,6 +122,14 @@ export const ActorSkillSchema: GenMessage<ActorSkill> = /*@__PURE__*/
   messageDesc(file_capability_v1_actor_skill, 1);
 
 /**
+ *
+ * Alternative categories:
+ * AWARE: Understands concept
+ * ASSISTED: Can perform with guidance
+ * COMPETENT: Can perform independently
+ * EXPERT: Can troubleshoot and optimize
+ * CERTIFIED: Officially qualified
+ *
  * @generated from enum capability.v1.SkillLevel
  */
 export enum SkillLevel {

@@ -66,6 +66,15 @@ namespace Messages.Capability.V1 {
 
   }
   #region Enums
+  /// <summary>
+  ///
+  ///Alternative categories:
+  ///AWARE: Understands concept
+  ///ASSISTED: Can perform with guidance
+  ///COMPETENT: Can perform independently
+  ///EXPERT: Can troubleshoot and optimize
+  ///CERTIFIED: Officially qualified
+  /// </summary>
   public enum SkillLevel {
     [pbr::OriginalName("SKILL_LEVEL_UNSPECIFIED")] Unspecified = 0,
     /// <summary>

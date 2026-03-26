@@ -27,7 +27,7 @@ from capability.v1 import capability_profile_pb2 as capability_dot_v1_dot_capabi
 from capability.v1 import skill_definition_pb2 as capability_dot_v1_dot_skill__definition__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/tool_requirement.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\"\xb8\x02\n\x0fToolRequirement\x12\x38\n\x04role\x18\x01 \x01(\x0e\x32\x17.capability.v1.ToolRoleB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04role\x12[\n\x13required_properties\x18\x02 \x03(\x0e\x32\x1b.capability.v1.ToolPropertyB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\x12requiredProperties\x12O\n\x12minimum_capability\x18\x03 \x01(\x0b\x32 .capability.v1.CapabilityProfileR\x11minimumCapability\x12=\n\x1b\x61llowed_tool_definition_ids\x18\x04 \x03(\tR\x18\x61llowedToolDefinitionIds*\xef\x01\n\x0cToolProperty\x12\x1d\n\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n\x17TOOL_PROPERTY_INSULATED\x10\x03\x12$\n TOOL_PROPERTY_COLLABORATIVE_SAFE\x10\x04\x12\x1c\n\x18TOOL_PROPERTY_CALIBRATED\x10\x05\x12\x1e\n\x1aTOOL_PROPERTY_QUICK_CHANGE\x10\x06\x42\xc8\x01\n\x11\x63om.capability.v1B\x14ToolRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/tool_requirement.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\"\xb5\x02\n\x0fToolRequirement\x12\x35\n\x04role\x18\x01 \x01(\x0e\x32\x17.capability.v1.ToolRoleB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x04role\x12[\n\x13required_properties\x18\x02 \x03(\x0e\x32\x1b.capability.v1.ToolPropertyB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\x12requiredProperties\x12O\n\x12minimum_capability\x18\x03 \x01(\x0b\x32 .capability.v1.CapabilityProfileR\x11minimumCapability\x12=\n\x1b\x61llowed_tool_definition_ids\x18\x04 \x03(\tR\x18\x61llowedToolDefinitionIds*\xef\x01\n\x0cToolProperty\x12\x1d\n\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n\x17TOOL_PROPERTY_INSULATED\x10\x03\x12$\n TOOL_PROPERTY_COLLABORATIVE_SAFE\x10\x04\x12\x1c\n\x18TOOL_PROPERTY_CALIBRATED\x10\x05\x12\x1e\n\x1aTOOL_PROPERTY_QUICK_CHANGE\x10\x06\x42\xc8\x01\n\x11\x63om.capability.v1B\x14ToolRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,11 +36,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\021com.capability.v1B\024ToolRequirementProtoP\001Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\242\002\003CXX\252\002\026Messages.Capability.V1\312\002\rCapability\\V1\342\002\031Capability\\V1\\GPBMetadata\352\002\016Capability::V1'
   _globals['_TOOLREQUIREMENT'].fields_by_name['role']._loaded_options = None
-  _globals['_TOOLREQUIREMENT'].fields_by_name['role']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_TOOLREQUIREMENT'].fields_by_name['role']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_TOOLREQUIREMENT'].fields_by_name['required_properties']._loaded_options = None
   _globals['_TOOLREQUIREMENT'].fields_by_name['required_properties']._serialized_options = b'\272H\n\222\001\007\"\005\202\001\002\020\001'
-  _globals['_TOOLPROPERTY']._serialized_start=478
-  _globals['_TOOLPROPERTY']._serialized_end=717
+  _globals['_TOOLPROPERTY']._serialized_start=475
+  _globals['_TOOLPROPERTY']._serialized_end=714
   _globals['_TOOLREQUIREMENT']._serialized_start=163
-  _globals['_TOOLREQUIREMENT']._serialized_end=475
+  _globals['_TOOLREQUIREMENT']._serialized_end=472
 # @@protoc_insertion_point(module_scope)

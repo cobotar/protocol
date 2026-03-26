@@ -48,30 +48,101 @@ export const ResourceStatusSchema: GenEnum<ResourceStatus> = /*@__PURE__*/
   enumDesc(file_common_v1_enums, 0);
 
 /**
+ * SafetyRelevance indicates how safety-critical a task, action, or capability is.
+ *
+ * This value helps systems determine:
+ * - whether additional validation or confirmation is required
+ * - what actor permissions or certifications are needed
+ * - whether supervision or restricted execution policies apply
+ * - how prominently the task should be displayed or highlighted in UIs
+ *
+ * Safety relevance does NOT necessarily mean the task is dangerous,
+ * but rather the potential consequences if the task is performed
+ * incorrectly or skipped.
+ *
+ * The levels are intentionally coarse to keep authoring simple while
+ * still allowing meaningful safety-aware behavior.
+ *
  * @generated from enum common.v1.SafetyRelevance
  */
 export enum SafetyRelevance {
   /**
+   * Default value when safety relevance has not yet been determined.
+   *
+   * Systems should typically treat this conservatively, often
+   * equivalent to MEDIUM unless explicitly overridden.
+   *
    * @generated from enum value: SAFETY_RELEVANCE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * Minimal safety impact.
+   *
+   * Errors are unlikely to cause harm to people, equipment,
+   * or product integrity.
+   *
+   * Examples:
+   * - wiping a surface
+   * - organizing components
+   * - non-critical visual checks
+   *
+   * Typically requires no special permissions or confirmations.
+   *
    * @generated from enum value: SAFETY_RELEVANCE_LOW = 1;
    */
   LOW = 1,
 
   /**
+   * Moderate safety impact.
+   *
+   * Mistakes may affect product quality or create minor risk
+   * to equipment or operators.
+   *
+   * Examples:
+   * - positioning components
+   * - inserting non-critical parts
+   * - non-torque-sensitive operations
+   *
+   * Systems may require basic validation or confirmation.
+   *
    * @generated from enum value: SAFETY_RELEVANCE_MEDIUM = 2;
    */
   MEDIUM = 2,
 
   /**
+   * High safety impact.
+   *
+   * Incorrect execution may lead to equipment damage, significant
+   * product defects, or operator risk.
+   *
+   * Examples:
+   * - torque-controlled fastening
+   * - applying significant force
+   * - electrical assembly steps
+   *
+   * Systems may enforce stricter validation, tool feedback,
+   * or actor capability checks.
+   *
    * @generated from enum value: SAFETY_RELEVANCE_HIGH = 3;
    */
   HIGH = 3,
 
   /**
+   * Safety-critical operations.
+   *
+   * Incorrect execution may pose serious risk to human safety,
+   * regulatory compliance, or system integrity.
+   *
+   * Examples:
+   * - safety-critical fasteners
+   * - interacting with safety systems
+   * - hazardous energy isolation steps
+   * - operations requiring certified personnel
+   *
+   * Systems should require strict validation, restricted actor
+   * permissions, and explicit confirmation before completion.
+   *
    * @generated from enum value: SAFETY_RELEVANCE_CRITICAL = 4;
    */
   CRITICAL = 4,

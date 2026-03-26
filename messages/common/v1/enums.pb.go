@@ -76,14 +76,79 @@ func (ResourceStatus) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_enums_proto_rawDescGZIP(), []int{0}
 }
 
+// SafetyRelevance indicates how safety-critical a task, action, or capability is.
+//
+// This value helps systems determine:
+// - whether additional validation or confirmation is required
+// - what actor permissions or certifications are needed
+// - whether supervision or restricted execution policies apply
+// - how prominently the task should be displayed or highlighted in UIs
+//
+// Safety relevance does NOT necessarily mean the task is dangerous,
+// but rather the potential consequences if the task is performed
+// incorrectly or skipped.
+//
+// The levels are intentionally coarse to keep authoring simple while
+// still allowing meaningful safety-aware behavior.
 type SafetyRelevance int32
 
 const (
+	// Default value when safety relevance has not yet been determined.
+	//
+	// Systems should typically treat this conservatively, often
+	// equivalent to MEDIUM unless explicitly overridden.
 	SafetyRelevance_SAFETY_RELEVANCE_UNSPECIFIED SafetyRelevance = 0
-	SafetyRelevance_SAFETY_RELEVANCE_LOW         SafetyRelevance = 1
-	SafetyRelevance_SAFETY_RELEVANCE_MEDIUM      SafetyRelevance = 2
-	SafetyRelevance_SAFETY_RELEVANCE_HIGH        SafetyRelevance = 3
-	SafetyRelevance_SAFETY_RELEVANCE_CRITICAL    SafetyRelevance = 4
+	// Minimal safety impact.
+	//
+	// Errors are unlikely to cause harm to people, equipment,
+	// or product integrity.
+	//
+	// Examples:
+	// - wiping a surface
+	// - organizing components
+	// - non-critical visual checks
+	//
+	// Typically requires no special permissions or confirmations.
+	SafetyRelevance_SAFETY_RELEVANCE_LOW SafetyRelevance = 1
+	// Moderate safety impact.
+	//
+	// Mistakes may affect product quality or create minor risk
+	// to equipment or operators.
+	//
+	// Examples:
+	// - positioning components
+	// - inserting non-critical parts
+	// - non-torque-sensitive operations
+	//
+	// Systems may require basic validation or confirmation.
+	SafetyRelevance_SAFETY_RELEVANCE_MEDIUM SafetyRelevance = 2
+	// High safety impact.
+	//
+	// Incorrect execution may lead to equipment damage, significant
+	// product defects, or operator risk.
+	//
+	// Examples:
+	// - torque-controlled fastening
+	// - applying significant force
+	// - electrical assembly steps
+	//
+	// Systems may enforce stricter validation, tool feedback,
+	// or actor capability checks.
+	SafetyRelevance_SAFETY_RELEVANCE_HIGH SafetyRelevance = 3
+	// Safety-critical operations.
+	//
+	// Incorrect execution may pose serious risk to human safety,
+	// regulatory compliance, or system integrity.
+	//
+	// Examples:
+	// - safety-critical fasteners
+	// - interacting with safety systems
+	// - hazardous energy isolation steps
+	// - operations requiring certified personnel
+	//
+	// Systems should require strict validation, restricted actor
+	// permissions, and explicit confirmation before completion.
+	SafetyRelevance_SAFETY_RELEVANCE_CRITICAL SafetyRelevance = 4
 )
 
 // Enum value maps for SafetyRelevance.

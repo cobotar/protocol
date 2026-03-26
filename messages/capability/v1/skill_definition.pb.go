@@ -24,17 +24,99 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// SkillDomain classifies a skill according to the type of work it primarily
+// represents. Domains are used for:
+// - organizing skills in UIs and editors
+// - filtering skills during task authoring
+// - reasoning about capabilities during planning and assignment
+//
+// A domain does NOT define the exact operation itself (that is done by the
+// skill), but rather the general category of work the skill belongs to.
+//
+// Domains should remain stable and relatively few in number, since they
+// typically appear in filters, dashboards, and analytics.
 type SkillDomain int32
 
 const (
-	SkillDomain_SKILL_DOMAIN_UNSPECIFIED     SkillDomain = 0
-	SkillDomain_SKILL_DOMAIN_HANDLING        SkillDomain = 1
-	SkillDomain_SKILL_DOMAIN_ASSEMBLY        SkillDomain = 2
-	SkillDomain_SKILL_DOMAIN_FASTENING       SkillDomain = 3
-	SkillDomain_SKILL_DOMAIN_INSPECTION      SkillDomain = 4
-	SkillDomain_SKILL_DOMAIN_ELECTRICAL      SkillDomain = 5
-	SkillDomain_SKILL_DOMAIN_COLLABORATION   SkillDomain = 6
-	SkillDomain_SKILL_DOMAIN_SAFETY          SkillDomain = 7
+	// Default value when the domain is unknown or not yet assigned.
+	SkillDomain_SKILL_DOMAIN_UNSPECIFIED SkillDomain = 0
+	// General physical handling of parts, tools, or materials.
+	//
+	// Examples:
+	// - gripping or stabilizing a workpiece
+	// - positioning a component
+	// - moving or placing a part
+	// - cleaning or wiping surfaces
+	//
+	// This domain typically involves manipulation rather than modification.
+	SkillDomain_SKILL_DOMAIN_HANDLING SkillDomain = 1
+	// Mechanical assembly operations that combine components into an assembly.
+	//
+	// Examples:
+	// - inserting components
+	// - aligning parts
+	// - mounting subassemblies
+	// - press-fitting components
+	//
+	// Assembly usually precedes fastening or validation steps.
+	SkillDomain_SKILL_DOMAIN_ASSEMBLY SkillDomain = 2
+	// Operations involving threaded fasteners or torque-controlled joining.
+	//
+	// Examples:
+	// - tightening bolts or screws
+	// - loosening fasteners
+	// - torque verification
+	//
+	// This domain is separated from general assembly because fastening
+	// frequently requires specialized tools, torque control, and validation.
+	SkillDomain_SKILL_DOMAIN_FASTENING SkillDomain = 3
+	// Inspection, verification, and quality assurance activities.
+	//
+	// Examples:
+	// - visual inspection
+	// - detecting part presence
+	// - measuring dimensions
+	// - verifying assembly completion
+	//
+	// These skills are often used for validation steps within processes.
+	SkillDomain_SKILL_DOMAIN_INSPECTION SkillDomain = 4
+	// Tasks involving electrical or electronic components and systems.
+	//
+	// Examples:
+	// - connecting electrical components
+	// - handling ESD-sensitive parts
+	// - interacting with electrical assemblies or wiring
+	//
+	// This domain may impose additional safety or handling constraints.
+	SkillDomain_SKILL_DOMAIN_ELECTRICAL SkillDomain = 5
+	// Skills related to coordination between multiple actors.
+	//
+	// Examples:
+	// - human–robot collaboration
+	// - synchronized operations
+	// - shared workspace interactions
+	//
+	// These skills are important when tasks involve cooperation between
+	// humans, robots, or automated equipment.
+	SkillDomain_SKILL_DOMAIN_COLLABORATION SkillDomain = 6
+	// Safety-critical skills required to safely perform certain operations.
+	//
+	// Examples:
+	// - interacting with safety systems
+	// - operating within guarded environments
+	// - acknowledging safety procedures
+	//
+	// These skills may represent certifications or required training.
+	SkillDomain_SKILL_DOMAIN_SAFETY SkillDomain = 7
+	// Skills related to operating, supervising, or interacting with robots.
+	//
+	// Examples:
+	// - executing robot motion
+	// - supervising automated tasks
+	// - operating robot interfaces
+	//
+	// This domain is particularly relevant in human-robot collaboration
+	// environments.
 	SkillDomain_SKILL_DOMAIN_ROBOT_OPERATION SkillDomain = 8
 )
 

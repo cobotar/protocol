@@ -9,6 +9,14 @@ import "validation/v1/predefined_string_rules.proto";
 option csharp_namespace = "Messages.Capability.V1";
 option go_package = "github.com/cobotar/protocol/messages/capability/v1";
 
+/*
+   Alternative categories:
+   AWARE: Understands concept
+   ASSISTED: Can perform with guidance
+   COMPETENT: Can perform independently
+   EXPERT: Can troubleshoot and optimize
+   CERTIFIED: Officially qualified
+*/
 enum SkillLevel {
   SKILL_LEVEL_UNSPECIFIED = 0;
   SKILL_LEVEL_NOT_ALLOWED = 1; // Human: Untrained, Robot: Not programmed

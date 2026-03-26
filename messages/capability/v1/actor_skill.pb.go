@@ -25,6 +25,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Alternative categories:
+// AWARE: Understands concept
+// ASSISTED: Can perform with guidance
+// COMPETENT: Can perform independently
+// EXPERT: Can troubleshoot and optimize
+// CERTIFIED: Officially qualified
 type SkillLevel int32
 
 const (

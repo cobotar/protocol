@@ -2379,15 +2379,54 @@ Just delete this?
 <a name="common-v1-SafetyRelevance"></a>
 
 ### SafetyRelevance
+SafetyRelevance indicates how safety-critical a task, action, or capability is.
 
+This value helps systems determine:
+- whether additional validation or confirmation is required
+- what actor permissions or certifications are needed
+- whether supervision or restricted execution policies apply
+- how prominently the task should be displayed or highlighted in UIs
+
+Safety relevance does NOT necessarily mean the task is dangerous,
+but rather the potential consequences if the task is performed
+incorrectly or skipped.
+
+The levels are intentionally coarse to keep authoring simple while
+still allowing meaningful safety-aware behavior.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SAFETY_RELEVANCE_UNSPECIFIED | 0 |  |
-| SAFETY_RELEVANCE_LOW | 1 |  |
-| SAFETY_RELEVANCE_MEDIUM | 2 |  |
-| SAFETY_RELEVANCE_HIGH | 3 |  |
-| SAFETY_RELEVANCE_CRITICAL | 4 |  |
+| SAFETY_RELEVANCE_UNSPECIFIED | 0 | Default value when safety relevance has not yet been determined.
+
+Systems should typically treat this conservatively, often equivalent to MEDIUM unless explicitly overridden. |
+| SAFETY_RELEVANCE_LOW | 1 | Minimal safety impact.
+
+Errors are unlikely to cause harm to people, equipment, or product integrity.
+
+Examples: - wiping a surface - organizing components - non-critical visual checks
+
+Typically requires no special permissions or confirmations. |
+| SAFETY_RELEVANCE_MEDIUM | 2 | Moderate safety impact.
+
+Mistakes may affect product quality or create minor risk to equipment or operators.
+
+Examples: - positioning components - inserting non-critical parts - non-torque-sensitive operations
+
+Systems may require basic validation or confirmation. |
+| SAFETY_RELEVANCE_HIGH | 3 | High safety impact.
+
+Incorrect execution may lead to equipment damage, significant product defects, or operator risk.
+
+Examples: - torque-controlled fastening - applying significant force - electrical assembly steps
+
+Systems may enforce stricter validation, tool feedback, or actor capability checks. |
+| SAFETY_RELEVANCE_CRITICAL | 4 | Safety-critical operations.
+
+Incorrect execution may pose serious risk to human safety, regulatory compliance, or system integrity.
+
+Examples: - safety-critical fasteners - interacting with safety systems - hazardous energy isolation steps - operations requiring certified personnel
+
+Systems should require strict validation, restricted actor permissions, and explicit confirmation before completion. |
 
 
  
@@ -2537,7 +2576,12 @@ Just delete this?
 <a name="capability-v1-SkillLevel"></a>
 
 ### SkillLevel
-
+Alternative categories:
+AWARE: Understands concept
+ASSISTED: Can perform with guidance
+COMPETENT: Can perform independently
+EXPERT: Can troubleshoot and optimize
+CERTIFIED: Officially qualified
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -2658,19 +2702,61 @@ Just delete this?
 <a name="capability-v1-SkillDomain"></a>
 
 ### SkillDomain
+SkillDomain classifies a skill according to the type of work it primarily
+represents. Domains are used for:
+- organizing skills in UIs and editors
+- filtering skills during task authoring
+- reasoning about capabilities during planning and assignment
 
+A domain does NOT define the exact operation itself (that is done by the
+skill), but rather the general category of work the skill belongs to.
+
+Domains should remain stable and relatively few in number, since they
+typically appear in filters, dashboards, and analytics.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SKILL_DOMAIN_UNSPECIFIED | 0 |  |
-| SKILL_DOMAIN_HANDLING | 1 |  |
-| SKILL_DOMAIN_ASSEMBLY | 2 |  |
-| SKILL_DOMAIN_FASTENING | 3 |  |
-| SKILL_DOMAIN_INSPECTION | 4 |  |
-| SKILL_DOMAIN_ELECTRICAL | 5 |  |
-| SKILL_DOMAIN_COLLABORATION | 6 |  |
-| SKILL_DOMAIN_SAFETY | 7 |  |
-| SKILL_DOMAIN_ROBOT_OPERATION | 8 |  |
+| SKILL_DOMAIN_UNSPECIFIED | 0 | Default value when the domain is unknown or not yet assigned. |
+| SKILL_DOMAIN_HANDLING | 1 | General physical handling of parts, tools, or materials.
+
+Examples: - gripping or stabilizing a workpiece - positioning a component - moving or placing a part - cleaning or wiping surfaces
+
+This domain typically involves manipulation rather than modification. |
+| SKILL_DOMAIN_ASSEMBLY | 2 | Mechanical assembly operations that combine components into an assembly.
+
+Examples: - inserting components - aligning parts - mounting subassemblies - press-fitting components
+
+Assembly usually precedes fastening or validation steps. |
+| SKILL_DOMAIN_FASTENING | 3 | Operations involving threaded fasteners or torque-controlled joining.
+
+Examples: - tightening bolts or screws - loosening fasteners - torque verification
+
+This domain is separated from general assembly because fastening frequently requires specialized tools, torque control, and validation. |
+| SKILL_DOMAIN_INSPECTION | 4 | Inspection, verification, and quality assurance activities.
+
+Examples: - visual inspection - detecting part presence - measuring dimensions - verifying assembly completion
+
+These skills are often used for validation steps within processes. |
+| SKILL_DOMAIN_ELECTRICAL | 5 | Tasks involving electrical or electronic components and systems.
+
+Examples: - connecting electrical components - handling ESD-sensitive parts - interacting with electrical assemblies or wiring
+
+This domain may impose additional safety or handling constraints. |
+| SKILL_DOMAIN_COLLABORATION | 6 | Skills related to coordination between multiple actors.
+
+Examples: - human–robot collaboration - synchronized operations - shared workspace interactions
+
+These skills are important when tasks involve cooperation between humans, robots, or automated equipment. |
+| SKILL_DOMAIN_SAFETY | 7 | Safety-critical skills required to safely perform certain operations.
+
+Examples: - interacting with safety systems - operating within guarded environments - acknowledging safety procedures
+
+These skills may represent certifications or required training. |
+| SKILL_DOMAIN_ROBOT_OPERATION | 8 | Skills related to operating, supervising, or interacting with robots.
+
+Examples: - executing robot motion - supervising automated tasks - operating robot interfaces
+
+This domain is particularly relevant in human-robot collaboration environments. |
 
 
 

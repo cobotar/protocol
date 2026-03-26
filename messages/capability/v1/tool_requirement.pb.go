@@ -155,9 +155,9 @@ var File_capability_v1_tool_requirement_proto protoreflect.FileDescriptor
 
 const file_capability_v1_tool_requirement_proto_rawDesc = "" +
 	"\n" +
-	"$capability/v1/tool_requirement.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\"\xb8\x02\n" +
-	"\x0fToolRequirement\x128\n" +
-	"\x04role\x18\x01 \x01(\x0e2\x17.capability.v1.ToolRoleB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04role\x12[\n" +
+	"$capability/v1/tool_requirement.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\"\xb5\x02\n" +
+	"\x0fToolRequirement\x125\n" +
+	"\x04role\x18\x01 \x01(\x0e2\x17.capability.v1.ToolRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04role\x12[\n" +
 	"\x13required_properties\x18\x02 \x03(\x0e2\x1b.capability.v1.ToolPropertyB\r\xbaH\n" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x12requiredProperties\x12O\n" +
 	"\x12minimum_capability\x18\x03 \x01(\v2 .capability.v1.CapabilityProfileR\x11minimumCapability\x12=\n" +
