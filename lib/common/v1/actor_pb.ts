@@ -4,13 +4,14 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file common/v1/actor.proto.
  */
 export const file_common_v1_actor: GenFile = /*@__PURE__*/
-  fileDesc("ChVjb21tb24vdjEvYWN0b3IucHJvdG8SCWNvbW1vbi52MSJACghBY3RvclJlZhIiCgRraW5kGAEgASgOMhQuY29tbW9uLnYxLkFjdG9yS2luZBIQCghhY3Rvcl9pZBgCIAEoCSpqCglBY3RvcktpbmQSGgoWQUNUT1JfS0lORF9VTlNQRUNJRklFRBAAEhQKEEFDVE9SX0tJTkRfSFVNQU4QARIUChBBQ1RPUl9LSU5EX1JPQk9UEAISFQoRQUNUT1JfS0lORF9IWUJSSUQQA0KiAQoNY29tLmNvbW1vbi52MUIKQWN0b3JQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z");
+  fileDesc("ChVjb21tb24vdjEvYWN0b3IucHJvdG8SCWNvbW1vbi52MSJQCghBY3RvclJlZhIyCgRraW5kGAEgASgOMhQuY29tbW9uLnYxLkFjdG9yS2luZEIOukgLggEIGAEYAigBKAISEAoIYWN0b3JfaWQYAiABKAkqagoJQWN0b3JLaW5kEhoKFkFDVE9SX0tJTkRfVU5TUEVDSUZJRUQQABIUChBBQ1RPUl9LSU5EX0hVTUFOEAESFAoQQUNUT1JfS0lORF9ST0JPVBACEhUKEUFDVE9SX0tJTkRfSFlCUklEEANCogEKDWNvbS5jb21tb24udjFCCkFjdG9yUHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw", [file_buf_validate_validate]);
 
 /**
  * @generated from message common.v1.ActorRef

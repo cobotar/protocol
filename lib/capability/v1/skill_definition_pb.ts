@@ -4,17 +4,17 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { SafetyRelevance } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file capability/v1/skill_definition.proto.
  */
 export const file_capability_v1_skill_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRjYXBhYmlsaXR5L3YxL3NraWxsX2RlZmluaXRpb24ucHJvdG8SDWNhcGFiaWxpdHkudjEi/AEKD1NraWxsRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEioKBmRvbWFpbhgEIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxEb21haW4SKwoKdG9vbF9yb2xlcxgFIAMoDjIXLmNhcGFiaWxpdHkudjEuVG9vbFJvbGUSNAoQc2FmZXR5X3JlbGV2YW5jZRgGIAEoDjIaLmNvbW1vbi52MS5TYWZldHlSZWxldmFuY2USKwoGY3VzdG9tGAcgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMqkgIKC1NraWxsRG9tYWluEhwKGFNLSUxMX0RPTUFJTl9VTlNQRUNJRklFRBAAEhkKFVNLSUxMX0RPTUFJTl9IQU5ETElORxABEhkKFVNLSUxMX0RPTUFJTl9BU1NFTUJMWRACEhoKFlNLSUxMX0RPTUFJTl9GQVNURU5JTkcQAxIbChdTS0lMTF9ET01BSU5fSU5TUEVDVElPThAEEhsKF1NLSUxMX0RPTUFJTl9FTEVDVFJJQ0FMEAUSHgoaU0tJTExfRE9NQUlOX0NPTExBQk9SQVRJT04QBhIXChNTS0lMTF9ET01BSU5fU0FGRVRZEAcSIAocU0tJTExfRE9NQUlOX1JPQk9UX09QRVJBVElPThAIKrgDCghUb29sUm9sZRIZChVUT09MX1JPTEVfVU5TUEVDSUZJRUQQABIcChhUT09MX1JPTEVfR1JJUF9XT1JLUElFQ0UQARIgChxUT09MX1JPTEVfUE9TSVRJT05fQ09NUE9ORU5UEAISHQoZVE9PTF9ST0xFX0FMSUdOX0NPTVBPTkVOVBADEhoKFlRPT0xfUk9MRV9BUFBMWV9UT1JRVUUQBBIgChxUT09MX1JPTEVfQVBQTFlfTElORUFSX0ZPUkNFEAUSHwobVE9PTF9ST0xFX01FQVNVUkVfRElNRU5TSU9OEAYSHQoZVE9PTF9ST0xFX0RFVEVDVF9QUkVTRU5DRRAHEh8KG1RPT0xfUk9MRV9ESVNQRU5TRV9NQVRFUklBTBAIEhwKGFRPT0xfUk9MRV9FWEVDVVRFX01PVElPThAJEiAKHFRPT0xfUk9MRV9TQUZFVFlfSU5URVJBQ1RJT04QChIYChRUT09MX1JPTEVfSEFORExFX0VTRBALEh8KG1RPT0xfUk9MRV9WSVNVQUxfSU5TUEVDVElPThAMEhgKFFRPT0xfUk9MRV9XSVBFX0NMRUFOEA1CyAEKEWNvbS5jYXBhYmlsaXR5LnYxQhRTa2lsbERlZmluaXRpb25Qcm90b1ABWj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiqAhZNZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNhcGFiaWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJvdG8z", [file_common_v1_custom_properties, file_common_v1_enums]);
+  fileDesc("CiRjYXBhYmlsaXR5L3YxL3NraWxsX2RlZmluaXRpb24ucHJvdG8SDWNhcGFiaWxpdHkudjEiiwIKD1NraWxsRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRI0CgZkb21haW4YBSABKA4yGi5jYXBhYmlsaXR5LnYxLlNraWxsRG9tYWluQgi6SAWCAQIQARI6Cgp0b29sX3JvbGVzGAYgAygOMhcuY2FwYWJpbGl0eS52MS5Ub29sUm9sZUINukgKkgEHIgWCAQIQARI+ChBzYWZldHlfcmVsZXZhbmNlGAcgASgOMhouY29tbW9uLnYxLlNhZmV0eVJlbGV2YW5jZUIIukgFggECEAEiQQoQU2tpbGxEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLmNhcGFiaWxpdHkudjEuU2tpbGxEZWZpbml0aW9uKpICCgtTa2lsbERvbWFpbhIcChhTS0lMTF9ET01BSU5fVU5TUEVDSUZJRUQQABIZChVTS0lMTF9ET01BSU5fSEFORExJTkcQARIZChVTS0lMTF9ET01BSU5fQVNTRU1CTFkQAhIaChZTS0lMTF9ET01BSU5fRkFTVEVOSU5HEAMSGwoXU0tJTExfRE9NQUlOX0lOU1BFQ1RJT04QBBIbChdTS0lMTF9ET01BSU5fRUxFQ1RSSUNBTBAFEh4KGlNLSUxMX0RPTUFJTl9DT0xMQUJPUkFUSU9OEAYSFwoTU0tJTExfRE9NQUlOX1NBRkVUWRAHEiAKHFNLSUxMX0RPTUFJTl9ST0JPVF9PUEVSQVRJT04QCCq4AwoIVG9vbFJvbGUSGQoVVE9PTF9ST0xFX1VOU1BFQ0lGSUVEEAASHAoYVE9PTF9ST0xFX0dSSVBfV09SS1BJRUNFEAESIAocVE9PTF9ST0xFX1BPU0lUSU9OX0NPTVBPTkVOVBACEh0KGVRPT0xfUk9MRV9BTElHTl9DT01QT05FTlQQAxIaChZUT09MX1JPTEVfQVBQTFlfVE9SUVVFEAQSIAocVE9PTF9ST0xFX0FQUExZX0xJTkVBUl9GT1JDRRAFEh8KG1RPT0xfUk9MRV9NRUFTVVJFX0RJTUVOU0lPThAGEh0KGVRPT0xfUk9MRV9ERVRFQ1RfUFJFU0VOQ0UQBxIfChtUT09MX1JPTEVfRElTUEVOU0VfTUFURVJJQUwQCBIcChhUT09MX1JPTEVfRVhFQ1VURV9NT1RJT04QCRIgChxUT09MX1JPTEVfU0FGRVRZX0lOVEVSQUNUSU9OEAoSGAoUVE9PTF9ST0xFX0hBTkRMRV9FU0QQCxIfChtUT09MX1JPTEVfVklTVUFMX0lOU1BFQ1RJT04QDBIYChRUT09MX1JPTEVfV0lQRV9DTEVBThANQsgBChFjb20uY2FwYWJpbGl0eS52MUIUU2tpbGxEZWZpbml0aW9uUHJvdG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NhcGFiaWxpdHkvdjE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2FwYWJpbGl0eS5WMcoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQQk1ldGFkYXRh6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message capability.v1.SkillDefinition
@@ -31,29 +31,29 @@ export type SkillDefinition = Message<"capability.v1.SkillDefinition"> & {
   name: string;
 
   /**
-   * @generated from field: string description = 3;
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
    */
   description: string;
 
   /**
-   * @generated from field: capability.v1.SkillDomain domain = 4;
+   * @generated from field: capability.v1.SkillDomain domain = 5;
    */
   domain: SkillDomain;
 
   /**
-   * @generated from field: repeated capability.v1.ToolRole tool_roles = 5;
+   * @generated from field: repeated capability.v1.ToolRole tool_roles = 6;
    */
   toolRoles: ToolRole[];
 
   /**
-   * @generated from field: common.v1.SafetyRelevance safety_relevance = 6;
+   * @generated from field: common.v1.SafetyRelevance safety_relevance = 7;
    */
   safetyRelevance: SafetyRelevance;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 7;
-   */
-  custom?: CustomProperties;
 };
 
 /**
@@ -62,6 +62,23 @@ export type SkillDefinition = Message<"capability.v1.SkillDefinition"> & {
  */
 export const SkillDefinitionSchema: GenMessage<SkillDefinition> = /*@__PURE__*/
   messageDesc(file_capability_v1_skill_definition, 0);
+
+/**
+ * @generated from message capability.v1.SkillDefinitions
+ */
+export type SkillDefinitions = Message<"capability.v1.SkillDefinitions"> & {
+  /**
+   * @generated from field: repeated capability.v1.SkillDefinition items = 1;
+   */
+  items: SkillDefinition[];
+};
+
+/**
+ * Describes the message capability.v1.SkillDefinitions.
+ * Use `create(SkillDefinitionsSchema)` to create a new message.
+ */
+export const SkillDefinitionsSchema: GenMessage<SkillDefinitions> = /*@__PURE__*/
+  messageDesc(file_capability_v1_skill_definition, 1);
 
 /**
  * @generated from enum capability.v1.SkillDomain

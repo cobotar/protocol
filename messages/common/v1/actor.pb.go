@@ -7,6 +7,7 @@
 package commonv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -129,9 +130,9 @@ var File_common_v1_actor_proto protoreflect.FileDescriptor
 
 const file_common_v1_actor_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/actor.proto\x12\tcommon.v1\"O\n" +
-	"\bActorRef\x12(\n" +
-	"\x04kind\x18\x01 \x01(\x0e2\x14.common.v1.ActorKindR\x04kind\x12\x19\n" +
+	"\x15common/v1/actor.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"_\n" +
+	"\bActorRef\x128\n" +
+	"\x04kind\x18\x01 \x01(\x0e2\x14.common.v1.ActorKindB\x0e\xbaH\v\x82\x01\b\x18\x01\x18\x02(\x01(\x02R\x04kind\x12\x19\n" +
 	"\bactor_id\x18\x02 \x01(\tR\aactorId*j\n" +
 	"\tActorKind\x12\x1a\n" +
 	"\x16ACTOR_KIND_UNSPECIFIED\x10\x00\x12\x14\n" +

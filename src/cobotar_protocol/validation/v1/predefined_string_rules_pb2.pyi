@@ -29,3 +29,5 @@ FIXTURE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 fixture_id_component: _descriptor.FieldDescriptor
 STATION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 station_id_component: _descriptor.FieldDescriptor
+SKILL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+skill_id_component: _descriptor.FieldDescriptor

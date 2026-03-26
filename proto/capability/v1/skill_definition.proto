@@ -1,8 +1,9 @@
 syntax = "proto3";
 package capability.v1;
 
-import "common/v1/custom_properties.proto";
+import "buf/validate/validate.proto";
 import "common/v1/enums.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
 option go_package = "github.com/cobotar/protocol/messages/capability/v1";
@@ -38,10 +39,14 @@ enum ToolRole {
 
 message SkillDefinition {
   string id = 1;
-  string name = 2;
-  string description = 3;
-  SkillDomain domain = 4;
-  repeated ToolRole tool_roles = 5;
-  common.v1.SafetyRelevance safety_relevance = 6;
-  common.v1.CustomProperties custom = 7;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  SkillDomain domain = 5 [(buf.validate.field).enum.defined_only = true];
+  repeated ToolRole tool_roles = 6 [(buf.validate.field).repeated.items.enum.defined_only = true];
+  common.v1.SafetyRelevance safety_relevance = 7 [(buf.validate.field).enum.defined_only = true];
+}
+
+message SkillDefinitions {
+  repeated SkillDefinition items = 1;
 }

@@ -38,6 +38,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -167,11 +168,9 @@
 - [capability/v1/capability_profile.proto](#capability_v1_capability_profile-proto)
     - [CapabilityProfile](#capability-v1-CapabilityProfile)
   
-- [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
-    - [CustomProperties](#common-v1-CustomProperties)
-  
 - [capability/v1/skill_definition.proto](#capability_v1_skill_definition-proto)
     - [SkillDefinition](#capability-v1-SkillDefinition)
+    - [SkillDefinitions](#capability-v1-SkillDefinitions)
   
     - [SkillDomain](#capability-v1-SkillDomain)
     - [ToolRole](#capability-v1-ToolRole)
@@ -183,6 +182,9 @@
     - [ToolRequirement](#capability-v1-ToolRequirement)
   
     - [ToolProperty](#capability-v1-ToolProperty)
+  
+- [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
+    - [CustomProperties](#common-v1-CustomProperties)
   
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
@@ -820,6 +822,7 @@ A simple pose consisting of a position and orientation
 | part_id_component | bool | .buf.validate.StringRules | 10007 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 | robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| skill_id_component | bool | .buf.validate.StringRules | 10013 |  |
 | station_id_component | bool | .buf.validate.StringRules | 10011 |  |
 | tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
 | tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
@@ -2607,37 +2610,6 @@ Just delete this?
 
 
 
-<a name="common_v1_custom_properties-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/custom_properties.proto
-
-
-
-<a name="common-v1-CustomProperties"></a>
-
-### CustomProperties
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| properties | [Property](#common-v1-Property) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="capability_v1_skill_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2655,11 +2627,26 @@ Just delete this?
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | domain | [SkillDomain](#capability-v1-SkillDomain) |  |  |
 | tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated |  |
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="capability-v1-SkillDefinitions"></a>
+
+### SkillDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [SkillDefinition](#capability-v1-SkillDefinition) | repeated |  |
 
 
 
@@ -2793,6 +2780,37 @@ Just delete this?
 | TOOL_PROPERTY_CALIBRATED | 5 |  |
 | TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_custom_properties-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/custom_properties.proto
+
+
+
+<a name="common-v1-CustomProperties"></a>
+
+### CustomProperties
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| properties | [Property](#common-v1-Property) | repeated |  |
+
+
+
+
+
+ 
 
  
 

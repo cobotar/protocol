@@ -126,6 +126,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10011,opt,name=station_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10013,
+		Name:          "validation.v1.skill_id_component",
+		Tag:           "varint,10013,opt,name=skill_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -156,6 +164,8 @@ var (
 	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
 	// optional bool station_id_component = 10011;
 	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[12]
+	// optional bool skill_id_component = 10013;
+	E_SkillIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[13]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -201,7 +211,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1bstring.fixture_id_component\x12%this does not seem to be a fixture id\x1a+(this == '' || this.startsWith('fixture-'))R\x12fixtureIdComponent:\xc4\x01\n" +
 	"\x14station_id_component\x12\x19.buf.validate.StringRules\x18\x9bN \x01(\bBv\xc2Hs\n" +
 	"q\n" +
-	"\x1bstring.station_id_component\x12%this does not seem to be a station id\x1a+(this == '' || this.startsWith('station-'))R\x12stationIdComponentB\xb5\x01\n" +
+	"\x1bstring.station_id_component\x12%this does not seem to be a station id\x1a+(this == '' || this.startsWith('station-'))R\x12stationIdComponent:\xba\x01\n" +
+	"\x12skill_id_component\x12\x19.buf.validate.StringRules\x18\x9dN \x01(\bBp\xc2Hm\n" +
+	"k\n" +
+	"\x19string.skill_id_component\x12#this does not seem to be a skill id\x1a)(this == '' || this.startsWith('skill-'))R\x10skillIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -221,10 +234,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 10: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
 	0,  // 11: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
 	0,  // 12: validation.v1.station_id_component:extendee -> buf.validate.StringRules
-	13, // [13:13] is the sub-list for method output_type
-	13, // [13:13] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	0,  // [0:13] is the sub-list for extension extendee
+	0,  // 13: validation.v1.skill_id_component:extendee -> buf.validate.StringRules
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	0,  // [0:14] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -240,7 +254,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 13,
+			NumExtensions: 14,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

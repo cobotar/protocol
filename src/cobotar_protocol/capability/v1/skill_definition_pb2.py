@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\"\xbf\x02\n\x0fSkillDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x06\x64omain\x18\x04 \x01(\x0e\x32\x1a.capability.v1.SkillDomainR\x06\x64omain\x12\x36\n\ntool_roles\x18\x05 \x03(\x0e\x32\x17.capability.v1.ToolRoleR\ttoolRoles\x12\x45\n\x10safety_relevance\x18\x06 \x01(\x0e\x32\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x12\x33\n\x06\x63ustom\x18\x07 \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom*\x92\x02\n\x0bSkillDomain\x12\x1c\n\x18SKILL_DOMAIN_UNSPECIFIED\x10\x00\x12\x19\n\x15SKILL_DOMAIN_HANDLING\x10\x01\x12\x19\n\x15SKILL_DOMAIN_ASSEMBLY\x10\x02\x12\x1a\n\x16SKILL_DOMAIN_FASTENING\x10\x03\x12\x1b\n\x17SKILL_DOMAIN_INSPECTION\x10\x04\x12\x1b\n\x17SKILL_DOMAIN_ELECTRICAL\x10\x05\x12\x1e\n\x1aSKILL_DOMAIN_COLLABORATION\x10\x06\x12\x17\n\x13SKILL_DOMAIN_SAFETY\x10\x07\x12 \n\x1cSKILL_DOMAIN_ROBOT_OPERATION\x10\x08*\xb8\x03\n\x08ToolRole\x12\x19\n\x15TOOL_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n\x18TOOL_ROLE_GRIP_WORKPIECE\x10\x01\x12 \n\x1cTOOL_ROLE_POSITION_COMPONENT\x10\x02\x12\x1d\n\x19TOOL_ROLE_ALIGN_COMPONENT\x10\x03\x12\x1a\n\x16TOOL_ROLE_APPLY_TORQUE\x10\x04\x12 \n\x1cTOOL_ROLE_APPLY_LINEAR_FORCE\x10\x05\x12\x1f\n\x1bTOOL_ROLE_MEASURE_DIMENSION\x10\x06\x12\x1d\n\x19TOOL_ROLE_DETECT_PRESENCE\x10\x07\x12\x1f\n\x1bTOOL_ROLE_DISPENSE_MATERIAL\x10\x08\x12\x1c\n\x18TOOL_ROLE_EXECUTE_MOTION\x10\t\x12 \n\x1cTOOL_ROLE_SAFETY_INTERACTION\x10\n\x12\x18\n\x14TOOL_ROLE_HANDLE_ESD\x10\x0b\x12\x1f\n\x1bTOOL_ROLE_VISUAL_INSPECTION\x10\x0c\x12\x18\n\x14TOOL_ROLE_WIPE_CLEAN\x10\rB\xc8\x01\n\x11\x63om.capability.v1B\x14SkillDefinitionProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x02\n\x0fSkillDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12<\n\x06\x64omain\x18\x05 \x01(\x0e\x32\x1a.capability.v1.SkillDomainB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06\x64omain\x12\x45\n\ntool_roles\x18\x06 \x03(\x0e\x32\x17.capability.v1.ToolRoleB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\ttoolRoles\x12O\n\x10safety_relevance\x18\x07 \x01(\x0e\x32\x1a.common.v1.SafetyRelevanceB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\"H\n\x10SkillDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.capability.v1.SkillDefinitionR\x05items*\x92\x02\n\x0bSkillDomain\x12\x1c\n\x18SKILL_DOMAIN_UNSPECIFIED\x10\x00\x12\x19\n\x15SKILL_DOMAIN_HANDLING\x10\x01\x12\x19\n\x15SKILL_DOMAIN_ASSEMBLY\x10\x02\x12\x1a\n\x16SKILL_DOMAIN_FASTENING\x10\x03\x12\x1b\n\x17SKILL_DOMAIN_INSPECTION\x10\x04\x12\x1b\n\x17SKILL_DOMAIN_ELECTRICAL\x10\x05\x12\x1e\n\x1aSKILL_DOMAIN_COLLABORATION\x10\x06\x12\x17\n\x13SKILL_DOMAIN_SAFETY\x10\x07\x12 \n\x1cSKILL_DOMAIN_ROBOT_OPERATION\x10\x08*\xb8\x03\n\x08ToolRole\x12\x19\n\x15TOOL_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n\x18TOOL_ROLE_GRIP_WORKPIECE\x10\x01\x12 \n\x1cTOOL_ROLE_POSITION_COMPONENT\x10\x02\x12\x1d\n\x19TOOL_ROLE_ALIGN_COMPONENT\x10\x03\x12\x1a\n\x16TOOL_ROLE_APPLY_TORQUE\x10\x04\x12 \n\x1cTOOL_ROLE_APPLY_LINEAR_FORCE\x10\x05\x12\x1f\n\x1bTOOL_ROLE_MEASURE_DIMENSION\x10\x06\x12\x1d\n\x19TOOL_ROLE_DETECT_PRESENCE\x10\x07\x12\x1f\n\x1bTOOL_ROLE_DISPENSE_MATERIAL\x10\x08\x12\x1c\n\x18TOOL_ROLE_EXECUTE_MOTION\x10\t\x12 \n\x1cTOOL_ROLE_SAFETY_INTERACTION\x10\n\x12\x18\n\x14TOOL_ROLE_HANDLE_ESD\x10\x0b\x12\x1f\n\x1bTOOL_ROLE_VISUAL_INSPECTION\x10\x0c\x12\x18\n\x14TOOL_ROLE_WIPE_CLEAN\x10\rB\xc8\x01\n\x11\x63om.capability.v1B\x14SkillDefinitionProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +35,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'capability.v1.skill_definit
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\021com.capability.v1B\024SkillDefinitionProtoP\001Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\242\002\003CXX\252\002\026Messages.Capability.V1\312\002\rCapability\\V1\342\002\031Capability\\V1\\GPBMetadata\352\002\016Capability::V1'
-  _globals['_SKILLDOMAIN']._serialized_start=436
-  _globals['_SKILLDOMAIN']._serialized_end=710
-  _globals['_TOOLROLE']._serialized_start=713
-  _globals['_TOOLROLE']._serialized_end=1153
-  _globals['_SKILLDEFINITION']._serialized_start=114
-  _globals['_SKILLDEFINITION']._serialized_end=433
+  _globals['_SKILLDEFINITION'].fields_by_name['name']._loaded_options = None
+  _globals['_SKILLDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_SKILLDEFINITION'].fields_by_name['domain']._loaded_options = None
+  _globals['_SKILLDEFINITION'].fields_by_name['domain']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_SKILLDEFINITION'].fields_by_name['tool_roles']._loaded_options = None
+  _globals['_SKILLDEFINITION'].fields_by_name['tool_roles']._serialized_options = b'\272H\n\222\001\007\"\005\202\001\002\020\001'
+  _globals['_SKILLDEFINITION'].fields_by_name['safety_relevance']._loaded_options = None
+  _globals['_SKILLDEFINITION'].fields_by_name['safety_relevance']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_SKILLDOMAIN']._serialized_start=562
+  _globals['_SKILLDOMAIN']._serialized_end=836
+  _globals['_TOOLROLE']._serialized_start=839
+  _globals['_TOOLROLE']._serialized_end=1279
+  _globals['_SKILLDEFINITION']._serialized_start=153
+  _globals['_SKILLDEFINITION']._serialized_end=485
+  _globals['_SKILLDEFINITIONS']._serialized_start=487
+  _globals['_SKILLDEFINITIONS']._serialized_end=559
 # @@protoc_insertion_point(module_scope)

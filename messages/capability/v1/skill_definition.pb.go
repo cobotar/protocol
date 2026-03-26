@@ -7,7 +7,9 @@
 package capabilityv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -175,11 +177,11 @@ type SkillDefinition struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description     string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Domain          SkillDomain            `protobuf:"varint,4,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
-	ToolRoles       []ToolRole             `protobuf:"varint,5,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
-	SafetyRelevance v1.SafetyRelevance     `protobuf:"varint,6,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
-	Custom          *v1.CustomProperties   `protobuf:"bytes,7,opt,name=custom,proto3" json:"custom,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Domain          SkillDomain            `protobuf:"varint,5,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
+	ToolRoles       []ToolRole             `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
+	SafetyRelevance v1.SafetyRelevance     `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -228,6 +230,13 @@ func (x *SkillDefinition) GetName() string {
 	return ""
 }
 
+func (x *SkillDefinition) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
 func (x *SkillDefinition) GetDescription() string {
 	if x != nil {
 		return x.Description
@@ -256,9 +265,46 @@ func (x *SkillDefinition) GetSafetyRelevance() v1.SafetyRelevance {
 	return v1.SafetyRelevance(0)
 }
 
-func (x *SkillDefinition) GetCustom() *v1.CustomProperties {
+type SkillDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*SkillDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SkillDefinitions) Reset() {
+	*x = SkillDefinitions{}
+	mi := &file_capability_v1_skill_definition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkillDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkillDefinitions) ProtoMessage() {}
+
+func (x *SkillDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_capability_v1_skill_definition_proto_msgTypes[1]
 	if x != nil {
-		return x.Custom
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkillDefinitions.ProtoReflect.Descriptor instead.
+func (*SkillDefinitions) Descriptor() ([]byte, []int) {
+	return file_capability_v1_skill_definition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *SkillDefinitions) GetItems() []*SkillDefinition {
+	if x != nil {
+		return x.Items
 	}
 	return nil
 }
@@ -267,16 +313,19 @@ var File_capability_v1_skill_definition_proto protoreflect.FileDescriptor
 
 const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\n" +
-	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\"\xbf\x02\n" +
+	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x02\n" +
 	"\x0fSkillDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x122\n" +
-	"\x06domain\x18\x04 \x01(\x0e2\x1a.capability.v1.SkillDomainR\x06domain\x126\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12<\n" +
+	"\x06domain\x18\x05 \x01(\x0e2\x1a.capability.v1.SkillDomainB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06domain\x12E\n" +
 	"\n" +
-	"tool_roles\x18\x05 \x03(\x0e2\x17.capability.v1.ToolRoleR\ttoolRoles\x12E\n" +
-	"\x10safety_relevance\x18\x06 \x01(\x0e2\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x123\n" +
-	"\x06custom\x18\a \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom*\x92\x02\n" +
+	"tool_roles\x18\x06 \x03(\x0e2\x17.capability.v1.ToolRoleB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\ttoolRoles\x12O\n" +
+	"\x10safety_relevance\x18\a \x01(\x0e2\x1a.common.v1.SafetyRelevanceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\"H\n" +
+	"\x10SkillDefinitions\x124\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.capability.v1.SkillDefinitionR\x05items*\x92\x02\n" +
 	"\vSkillDomain\x12\x1c\n" +
 	"\x18SKILL_DOMAIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15SKILL_DOMAIN_HANDLING\x10\x01\x12\x19\n" +
@@ -318,19 +367,19 @@ func file_capability_v1_skill_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_capability_v1_skill_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_capability_v1_skill_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_capability_v1_skill_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_capability_v1_skill_definition_proto_goTypes = []any{
-	(SkillDomain)(0),            // 0: capability.v1.SkillDomain
-	(ToolRole)(0),               // 1: capability.v1.ToolRole
-	(*SkillDefinition)(nil),     // 2: capability.v1.SkillDefinition
-	(v1.SafetyRelevance)(0),     // 3: common.v1.SafetyRelevance
-	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(SkillDomain)(0),         // 0: capability.v1.SkillDomain
+	(ToolRole)(0),            // 1: capability.v1.ToolRole
+	(*SkillDefinition)(nil),  // 2: capability.v1.SkillDefinition
+	(*SkillDefinitions)(nil), // 3: capability.v1.SkillDefinitions
+	(v1.SafetyRelevance)(0),  // 4: common.v1.SafetyRelevance
 }
 var file_capability_v1_skill_definition_proto_depIdxs = []int32{
 	0, // 0: capability.v1.SkillDefinition.domain:type_name -> capability.v1.SkillDomain
 	1, // 1: capability.v1.SkillDefinition.tool_roles:type_name -> capability.v1.ToolRole
-	3, // 2: capability.v1.SkillDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	4, // 3: capability.v1.SkillDefinition.custom:type_name -> common.v1.CustomProperties
+	4, // 2: capability.v1.SkillDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	2, // 3: capability.v1.SkillDefinitions.items:type_name -> capability.v1.SkillDefinition
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -349,7 +398,7 @@ func file_capability_v1_skill_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_capability_v1_skill_definition_proto_rawDesc), len(file_capability_v1_skill_definition_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

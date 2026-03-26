@@ -24,8 +24,9 @@ namespace Messages.Common.V1 {
     static ActorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVjb21tb24vdjEvYWN0b3IucHJvdG8SCWNvbW1vbi52MSJPCghBY3RvclJl",
-            "ZhIoCgRraW5kGAEgASgOMhQuY29tbW9uLnYxLkFjdG9yS2luZFIEa2luZBIZ",
+            "ChVjb21tb24vdjEvYWN0b3IucHJvdG8SCWNvbW1vbi52MRobYnVmL3ZhbGlk",
+            "YXRlL3ZhbGlkYXRlLnByb3RvIl8KCEFjdG9yUmVmEjgKBGtpbmQYASABKA4y",
+            "FC5jb21tb24udjEuQWN0b3JLaW5kQg66SAuCAQgYARgCKAEoAlIEa2luZBIZ",
             "CghhY3Rvcl9pZBgCIAEoCVIHYWN0b3JJZCpqCglBY3RvcktpbmQSGgoWQUNU",
             "T1JfS0lORF9VTlNQRUNJRklFRBAAEhQKEEFDVE9SX0tJTkRfSFVNQU4QARIU",
             "ChBBQ1RPUl9LSU5EX1JPQk9UEAISFQoRQUNUT1JfS0lORF9IWUJSSUQQA0Ki",
@@ -34,7 +35,7 @@ namespace Messages.Common.V1 {
             "Q1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9u",
             "XFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.ActorKind), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ActorRef), global::Messages.Common.V1.ActorRef.Parser, new[]{ "Kind", "ActorId" }, null, null, null, null)
           }));

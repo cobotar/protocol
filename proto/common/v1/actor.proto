@@ -1,6 +1,8 @@
 syntax = "proto3";
 package common.v1;
 
+import "buf/validate/validate.proto";
+
 option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
@@ -12,6 +14,15 @@ enum ActorKind {
 }
 
 message ActorRef {
-  ActorKind kind = 1;
+  ActorKind kind = 1 [
+    (buf.validate.field).enum = {
+      in: [
+        1,
+        2
+      ]
+    },
+    (buf.validate.field).enum.example = 1, // ACTOR_KIND_HUMAN
+    (buf.validate.field).enum.example = 2 // ACTOR_KIND_ROBOT
+  ];
   string actor_id = 2; // worker_definition_id or robot_instance_id
 }

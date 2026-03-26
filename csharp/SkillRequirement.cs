@@ -25,19 +25,21 @@ namespace Messages.Capability.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVjYXBhYmlsaXR5L3YxL3NraWxsX3JlcXVpcmVtZW50LnByb3RvEg1jYXBh",
-            "YmlsaXR5LnYxGh9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvGiRj",
-            "b21tb24vdjEva2V5X3ZhbHVlX2NvbnN0cmFpbnQucHJvdG8irgEKEFNraWxs",
-            "UmVxdWlyZW1lbnQSGQoIc2tpbGxfaWQYASABKAlSB3NraWxsSWQSPgoNbWlu",
-            "aW11bV9sZXZlbBgCIAEoDjIZLmNhcGFiaWxpdHkudjEuU2tpbGxMZXZlbFIM",
-            "bWluaW11bUxldmVsEj8KC2NvbnN0cmFpbnRzGAMgAygLMh0uY29tbW9uLnYx",
-            "LktleVZhbHVlQ29uc3RyYWludFILY29uc3RyYWludHNCyQEKEWNvbS5jYXBh",
-            "YmlsaXR5LnYxQhVTa2lsbFJlcXVpcmVtZW50UHJvdG9QAVo/Z2l0aHViLmNv",
-            "bS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NhcGFiaWxpdHkvdjE7Y2Fw",
-            "YWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2FwYWJpbGl0eS5WMcoCDUNh",
-            "cGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQQk1ldGFkYXRh6gIOQ2Fw",
-            "YWJpbGl0eTo6VjFiBnByb3RvMw=="));
+            "YmlsaXR5LnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aH2NhcGFi",
+            "aWxpdHkvdjEvYWN0b3Jfc2tpbGwucHJvdG8aJGNvbW1vbi92MS9rZXlfdmFs",
+            "dWVfY29uc3RyYWludC5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVk",
+            "X3N0cmluZ19ydWxlcy5wcm90byLJAQoQU2tpbGxSZXF1aXJlbWVudBInCghz",
+            "a2lsbF9pZBgBIAEoCUIMukgJcgTo8QQByAEBUgdza2lsbElkEksKDW1pbmlt",
+            "dW1fbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pI",
+            "CIIBAhAByAEBUgxtaW5pbXVtTGV2ZWwSPwoLY29uc3RyYWludHMYAyADKAsy",
+            "HS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50c0LJ",
+            "AQoRY29tLmNhcGFiaWxpdHkudjFCFVNraWxsUmVxdWlyZW1lbnRQcm90b1AB",
+            "Wj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY2FwYWJp",
+            "bGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiqAhZNZXNzYWdlcy5DYXBhYmls",
+            "aXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNhcGFiaWxpdHlcVjFcR1BCTWV0",
+            "YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillRequirement), global::Messages.Capability.V1.SkillRequirement.Parser, new[]{ "SkillId", "MinimumLevel", "Constraints" }, null, null, null, null)
           }));

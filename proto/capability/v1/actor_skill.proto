@@ -1,8 +1,10 @@
 syntax = "proto3";
 package capability.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/actor.proto";
 import "google/protobuf/timestamp.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
 option go_package = "github.com/cobotar/protocol/messages/capability/v1";
@@ -29,13 +31,22 @@ message ValidityPolicyRef {
 }
 
 message ActorSkill {
-  common.v1.ActorRef actor = 1;
-  string skill_id = 2;
-  SkillLevel level = 3;
-  SkillStatus status = 4;
-  double confidence = 5; // [0, 1]
+  common.v1.ActorRef actor = 1 [(buf.validate.field).required = true];
+  string skill_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.skill_id_component) = true
+  ];
+  SkillLevel level = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  SkillStatus status = 4 [(buf.validate.field).enum.defined_only = true];
+  double confidence = 5 [
+    (buf.validate.field).double.gte = 0,
+    (buf.validate.field).double.lte = 1
+  ]; // [0, 1]
   google.protobuf.Timestamp last_evidence_at = 6; // timestamp
-  int32 evidence_count = 7; // since last training
+  int32 evidence_count = 7 [(buf.validate.field).int32.gte = 0]; // since last training
   google.protobuf.Timestamp valid_until = 8; // (timestamp) or policy-derived
   ValidityPolicyRef validity_policy = 9; // which rule set is used
   repeated string reasons = 10; // ["inactivity_>30d"]

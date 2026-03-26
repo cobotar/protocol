@@ -7,7 +7,9 @@
 package capabilityv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -86,10 +88,10 @@ var File_capability_v1_skill_requirement_proto protoreflect.FileDescriptor
 
 const file_capability_v1_skill_requirement_proto_rawDesc = "" +
 	"\n" +
-	"%capability/v1/skill_requirement.proto\x12\rcapability.v1\x1a\x1fcapability/v1/actor_skill.proto\x1a$common/v1/key_value_constraint.proto\"\xae\x01\n" +
-	"\x10SkillRequirement\x12\x19\n" +
-	"\bskill_id\x18\x01 \x01(\tR\askillId\x12>\n" +
-	"\rminimum_level\x18\x02 \x01(\x0e2\x19.capability.v1.SkillLevelR\fminimumLevel\x12?\n" +
+	"%capability/v1/skill_requirement.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc9\x01\n" +
+	"\x10SkillRequirement\x12'\n" +
+	"\bskill_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe8\xf1\x04\x01R\askillId\x12K\n" +
+	"\rminimum_level\x18\x02 \x01(\x0e2\x19.capability.v1.SkillLevelB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\fminimumLevel\x12?\n" +
 	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraintsB\xc9\x01\n" +
 	"\x11com.capability.v1B\x15SkillRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 

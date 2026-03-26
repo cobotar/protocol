@@ -81,4 +81,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a station id"
     expression: "(this == '' || this.startsWith('station-'))"
   }];
+
+  optional bool skill_id_component = 10013 [(buf.validate.predefined).cel = {
+    id: "string.skill_id_component"
+    message: "this does not seem to be a skill id"
+    expression: "(this == '' || this.startsWith('skill-'))"
+  }];
 }

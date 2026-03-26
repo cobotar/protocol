@@ -22,11 +22,13 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from capability.v1 import actor_skill_pb2 as capability_dot_v1_dot_actor__skill__pb2
 from common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%capability/v1/skill_requirement.proto\x12\rcapability.v1\x1a\x1f\x63\x61pability/v1/actor_skill.proto\x1a$common/v1/key_value_constraint.proto\"\xae\x01\n\x10SkillRequirement\x12\x19\n\x08skill_id\x18\x01 \x01(\tR\x07skillId\x12>\n\rminimum_level\x18\x02 \x01(\x0e\x32\x19.capability.v1.SkillLevelR\x0cminimumLevel\x12?\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0b\x63onstraintsB\xc9\x01\n\x11\x63om.capability.v1B\x15SkillRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%capability/v1/skill_requirement.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1f\x63\x61pability/v1/actor_skill.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc9\x01\n\x10SkillRequirement\x12\'\n\x08skill_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe8\xf1\x04\x01\xc8\x01\x01R\x07skillId\x12K\n\rminimum_level\x18\x02 \x01(\x0e\x32\x19.capability.v1.SkillLevelB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0cminimumLevel\x12?\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0b\x63onstraintsB\xc9\x01\n\x11\x63om.capability.v1B\x15SkillRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +36,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'capability.v1.skill_require
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\021com.capability.v1B\025SkillRequirementProtoP\001Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\242\002\003CXX\252\002\026Messages.Capability.V1\312\002\rCapability\\V1\342\002\031Capability\\V1\\GPBMetadata\352\002\016Capability::V1'
-  _globals['_SKILLREQUIREMENT']._serialized_start=128
-  _globals['_SKILLREQUIREMENT']._serialized_end=302
+  _globals['_SKILLREQUIREMENT'].fields_by_name['skill_id']._loaded_options = None
+  _globals['_SKILLREQUIREMENT'].fields_by_name['skill_id']._serialized_options = b'\272H\tr\004\350\361\004\001\310\001\001'
+  _globals['_SKILLREQUIREMENT'].fields_by_name['minimum_level']._loaded_options = None
+  _globals['_SKILLREQUIREMENT'].fields_by_name['minimum_level']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_SKILLREQUIREMENT']._serialized_start=202
+  _globals['_SKILLREQUIREMENT']._serialized_end=403
 # @@protoc_insertion_point(module_scope)

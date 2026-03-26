@@ -1,5 +1,6 @@
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
+from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import enums_pb2 as _enums_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -62,19 +63,25 @@ TOOL_ROLE_VISUAL_INSPECTION: ToolRole
 TOOL_ROLE_WIPE_CLEAN: ToolRole
 
 class SkillDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "domain", "tool_roles", "safety_relevance", "custom")
+    __slots__ = ("id", "name", "icon", "description", "domain", "tool_roles", "safety_relevance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     TOOL_ROLES_FIELD_NUMBER: _ClassVar[int]
     SAFETY_RELEVANCE_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
+    icon: str
     description: str
     domain: SkillDomain
     tool_roles: _containers.RepeatedScalarFieldContainer[ToolRole]
     safety_relevance: _enums_pb2.SafetyRelevance
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., domain: _Optional[_Union[SkillDomain, str]] = ..., tool_roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., domain: _Optional[_Union[SkillDomain, str]] = ..., tool_roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ...) -> None: ...
+
+class SkillDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[SkillDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[SkillDefinition, _Mapping]]] = ...) -> None: ...

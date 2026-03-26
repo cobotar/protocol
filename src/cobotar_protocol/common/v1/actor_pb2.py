@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/actor.proto\x12\tcommon.v1\"O\n\x08\x41\x63torRef\x12(\n\x04kind\x18\x01 \x01(\x0e\x32\x14.common.v1.ActorKindR\x04kind\x12\x19\n\x08\x61\x63tor_id\x18\x02 \x01(\tR\x07\x61\x63torId*j\n\tActorKind\x12\x1a\n\x16\x41\x43TOR_KIND_UNSPECIFIED\x10\x00\x12\x14\n\x10\x41\x43TOR_KIND_HUMAN\x10\x01\x12\x14\n\x10\x41\x43TOR_KIND_ROBOT\x10\x02\x12\x15\n\x11\x41\x43TOR_KIND_HYBRID\x10\x03\x42\xa2\x01\n\rcom.common.v1B\nActorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/actor.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"_\n\x08\x41\x63torRef\x12\x38\n\x04kind\x18\x01 \x01(\x0e\x32\x14.common.v1.ActorKindB\x0e\xbaH\x0b\x82\x01\x08\x18\x01\x18\x02(\x01(\x02R\x04kind\x12\x19\n\x08\x61\x63tor_id\x18\x02 \x01(\tR\x07\x61\x63torId*j\n\tActorKind\x12\x1a\n\x16\x41\x43TOR_KIND_UNSPECIFIED\x10\x00\x12\x14\n\x10\x41\x43TOR_KIND_HUMAN\x10\x01\x12\x14\n\x10\x41\x43TOR_KIND_ROBOT\x10\x02\x12\x15\n\x11\x41\x43TOR_KIND_HYBRID\x10\x03\x42\xa2\x01\n\rcom.common.v1B\nActorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.actor_pb2', _glob
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nActorProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
-  _globals['_ACTORKIND']._serialized_start=117
-  _globals['_ACTORKIND']._serialized_end=223
-  _globals['_ACTORREF']._serialized_start=36
-  _globals['_ACTORREF']._serialized_end=115
+  _globals['_ACTORREF'].fields_by_name['kind']._loaded_options = None
+  _globals['_ACTORREF'].fields_by_name['kind']._serialized_options = b'\272H\013\202\001\010\030\001\030\002(\001(\002'
+  _globals['_ACTORKIND']._serialized_start=162
+  _globals['_ACTORKIND']._serialized_end=268
+  _globals['_ACTORREF']._serialized_start=65
+  _globals['_ACTORREF']._serialized_end=160
 # @@protoc_insertion_point(module_scope)

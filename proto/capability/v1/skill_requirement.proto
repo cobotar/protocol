@@ -1,14 +1,22 @@
 syntax = "proto3";
 package capability.v1;
 
+import "buf/validate/validate.proto";
 import "capability/v1/actor_skill.proto";
 import "common/v1/key_value_constraint.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
 option go_package = "github.com/cobotar/protocol/messages/capability/v1";
 
 message SkillRequirement {
-  string skill_id = 1;
-  SkillLevel minimum_level = 2;
+  string skill_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.skill_id_component) = true
+  ];
+  SkillLevel minimum_level = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   repeated common.v1.KeyValueConstraint constraints = 3;
 }

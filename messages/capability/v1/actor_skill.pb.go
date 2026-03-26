@@ -7,7 +7,9 @@
 package capabilityv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -313,21 +315,21 @@ var File_capability_v1_actor_skill_proto protoreflect.FileDescriptor
 
 const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"\n" +
-	"\x1fcapability/v1/actor_skill.proto\x12\rcapability.v1\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"J\n" +
+	"\x1fcapability/v1/actor_skill.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
 	"\x11ValidityPolicyRef\x12\x1b\n" +
 	"\tpolicy_id\x18\x01 \x01(\tR\bpolicyId\x12\x18\n" +
-	"\aversion\x18\x02 \x01(\tR\aversion\"\x89\x04\n" +
+	"\aversion\x18\x02 \x01(\tR\aversion\"\xd8\x04\n" +
 	"\n" +
-	"ActorSkill\x12)\n" +
-	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x19\n" +
-	"\bskill_id\x18\x02 \x01(\tR\askillId\x12/\n" +
-	"\x05level\x18\x03 \x01(\x0e2\x19.capability.v1.SkillLevelR\x05level\x122\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x1a.capability.v1.SkillStatusR\x06status\x12\x1e\n" +
+	"ActorSkill\x121\n" +
+	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x12'\n" +
+	"\bskill_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe8\xf1\x04\x01R\askillId\x12<\n" +
+	"\x05level\x18\x03 \x01(\x0e2\x19.capability.v1.SkillLevelB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05level\x12<\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1a.capability.v1.SkillStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x127\n" +
 	"\n" +
-	"confidence\x18\x05 \x01(\x01R\n" +
+	"confidence\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00\xf0?)\x00\x00\x00\x00\x00\x00\x00\x00R\n" +
 	"confidence\x12D\n" +
-	"\x10last_evidence_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x0elastEvidenceAt\x12%\n" +
-	"\x0eevidence_count\x18\a \x01(\x05R\revidenceCount\x12;\n" +
+	"\x10last_evidence_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x0elastEvidenceAt\x12.\n" +
+	"\x0eevidence_count\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\revidenceCount\x12;\n" +
 	"\vvalid_until\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"validUntil\x12I\n" +
 	"\x0fvalidity_policy\x18\t \x01(\v2 .capability.v1.ValidityPolicyRefR\x0evalidityPolicy\x12\x18\n" +
