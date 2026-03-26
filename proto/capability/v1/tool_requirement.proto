@@ -1,6 +1,7 @@
 syntax = "proto3";
 package capability.v1;
 
+import "buf/validate/validate.proto";
 import "capability/v1/capability_profile.proto";
 import "capability/v1/skill_definition.proto";
 
@@ -18,8 +19,11 @@ enum ToolProperty {
 }
 
 message ToolRequirement {
-  ToolRole role = 1;
-  repeated ToolProperty required_properties = 2;
+  ToolRole role = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated ToolProperty required_properties = 2 [(buf.validate.field).repeated.items.enum.defined_only = true];
   capability.v1.CapabilityProfile minimum_capability = 3;
   repeated string allowed_tool_definition_ids = 4;
 }

@@ -734,7 +734,7 @@ type TaskDefinition struct {
 	Target            *TaskTarget             `protobuf:"bytes,8,opt,name=target,proto3" json:"target,omitempty"`                                                                           // The primary static/generic thing/location/resource this task acts on.
 	InsertionOffset   *v1.Vector3             `protobuf:"bytes,9,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"`                                  // Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
 	ApproachOffset    *v1.Vector3             `protobuf:"bytes,10,opt,name=approach_offset,json=approachOffset,proto3" json:"approach_offset,omitempty"`                                    // Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
-	ToolRequirements  []*v12.ToolRequirement  `protobuf:"bytes,12,rep,name=tool_requirements,json=toolRequirements,proto3" json:"tool_requirements,omitempty"`                              // Tools or tool roles needed to perform the task.
+	ToolRequirement   *v12.ToolRequirement    `protobuf:"bytes,12,opt,name=tool_requirement,json=toolRequirement,proto3" json:"tool_requirement,omitempty"`                                 // Tools or tool roles needed to perform the task.
 	SkillRequirements []*v12.SkillRequirement `protobuf:"bytes,13,rep,name=skill_requirements,json=skillRequirements,proto3" json:"skill_requirements,omitempty"`                           // Skills/qualifications needed by the acting human/robot.
 	Validation        *ValidationRequirement  `protobuf:"bytes,14,opt,name=validation,proto3" json:"validation,omitempty"`                                                                  // How task completion should be confirmed or validated.
 	ExecutionPolicy   *TaskExecutionPolicy    `protobuf:"bytes,15,opt,name=execution_policy,json=executionPolicy,proto3" json:"execution_policy,omitempty"`                                 // Static execution policy, preferences, and permissions used by planning/runtime.
@@ -847,9 +847,9 @@ func (x *TaskDefinition) GetApproachOffset() *v1.Vector3 {
 	return nil
 }
 
-func (x *TaskDefinition) GetToolRequirements() []*v12.ToolRequirement {
+func (x *TaskDefinition) GetToolRequirement() *v12.ToolRequirement {
 	if x != nil {
-		return x.ToolRequirements
+		return x.ToolRequirement
 	}
 	return nil
 }
@@ -997,7 +997,7 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
 	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
-	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x92\b\n" +
+	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x90\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1009,8 +1009,8 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x06target\x18\b \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
 	"\x10insertion_offset\x18\t \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
 	"\x0fapproach_offset\x18\n" +
-	" \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\x12K\n" +
-	"\x11tool_requirements\x18\f \x03(\v2\x1e.capability.v1.ToolRequirementR\x10toolRequirements\x12N\n" +
+	" \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\x12I\n" +
+	"\x10tool_requirement\x18\f \x01(\v2\x1e.capability.v1.ToolRequirementR\x0ftoolRequirement\x12N\n" +
 	"\x12skill_requirements\x18\r \x03(\v2\x1f.capability.v1.SkillRequirementR\x11skillRequirements\x12A\n" +
 	"\n" +
 	"validation\x18\x0e \x01(\v2!.process.v1.ValidationRequirementR\n" +
@@ -1113,7 +1113,7 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	5,  // 15: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
 	19, // 16: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
 	19, // 17: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	20, // 18: process.v1.TaskDefinition.tool_requirements:type_name -> capability.v1.ToolRequirement
+	20, // 18: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
 	21, // 19: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
 	7,  // 20: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
 	8,  // 21: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy

@@ -72,7 +72,7 @@ namespace Messages.Process.V1 {
             "cmlhbnRSdWxlUgR3aGVuEikKEGluc3RydWN0aW9uX3RleHQYAiABKAlSD2lu",
             "c3RydWN0aW9uVGV4dBIkCg50YXJnZXRfbm9kZV9pZBgDIAEoCVIMdGFyZ2V0",
             "Tm9kZUlkEjAKCGFwcHJvYWNoGAQgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9y",
-            "M1IIYXBwcm9hY2gikggKDlRhc2tEZWZpbml0aW9uEg4KAmlkGAEgASgJUgJp",
+            "M1IIYXBwcm9hY2gikAgKDlRhc2tEZWZpbml0aW9uEg4KAmlkGAEgASgJUgJp",
             "ZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEo",
             "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SKQoQ",
             "aW5zdHJ1Y3Rpb25fdGV4dBgFIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EicKD3Nl",
@@ -82,42 +82,42 @@ namespace Messages.Process.V1 {
             "cmdldFIGdGFyZ2V0Ej8KEGluc2VydGlvbl9vZmZzZXQYCSABKAsyFC5nZW9t",
             "ZXRyeS52MS5WZWN0b3IzUg9pbnNlcnRpb25PZmZzZXQSPQoPYXBwcm9hY2hf",
             "b2Zmc2V0GAogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IOYXBwcm9hY2hP",
-            "ZmZzZXQSSwoRdG9vbF9yZXF1aXJlbWVudHMYDCADKAsyHi5jYXBhYmlsaXR5",
-            "LnYxLlRvb2xSZXF1aXJlbWVudFIQdG9vbFJlcXVpcmVtZW50cxJOChJza2ls",
-            "bF9yZXF1aXJlbWVudHMYDSADKAsyHy5jYXBhYmlsaXR5LnYxLlNraWxsUmVx",
-            "dWlyZW1lbnRSEXNraWxsUmVxdWlyZW1lbnRzEkEKCnZhbGlkYXRpb24YDiAB",
-            "KAsyIS5wcm9jZXNzLnYxLlZhbGlkYXRpb25SZXF1aXJlbWVudFIKdmFsaWRh",
-            "dGlvbhJKChBleGVjdXRpb25fcG9saWN5GA8gASgLMh8ucHJvY2Vzcy52MS5U",
-            "YXNrRXhlY3V0aW9uUG9saWN5Ug9leGVjdXRpb25Qb2xpY3kSRQoQc2FmZXR5",
-            "X3JlbGV2YW5jZRgQIAEoDjIaLmNvbW1vbi52MS5TYWZldHlSZWxldmFuY2VS",
-            "D3NhZmV0eVJlbGV2YW5jZRIwCgZzb3VyY2UYESABKAsyGC5wcm9jZXNzLnYx",
-            "LlRhc2tFbmRwb2ludFIGc291cmNlEjoKC2Rlc3RpbmF0aW9uGBIgASgLMhgu",
-            "cHJvY2Vzcy52MS5UYXNrRW5kcG9pbnRSC2Rlc3RpbmF0aW9uEj4KDWFwcGxp",
-            "Y2FiaWxpdHkYFSADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZVINYXBw",
-            "bGljYWJpbGl0eRI2CglvdmVycmlkZXMYFiADKAsyGC5wcm9jZXNzLnYxLlRh",
-            "c2tPdmVycmlkZVIJb3ZlcnJpZGVzIkMKD1Rhc2tEZWZpbml0aW9ucxIwCgVp",
-            "dGVtcxgBIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb25SBWl0ZW1z",
-            "Kr8DCghUYXNrVHlwZRIZChVUQVNLX1RZUEVfVU5TUEVDSUZJRUQQABIVChFU",
-            "QVNLX1RZUEVfSU5TUEVDVBABEhQKEFRBU0tfVFlQRV9GQVNURU4QAhIWChJU",
-            "QVNLX1RZUEVfVU5GQVNURU4QAxITCg9UQVNLX1RZUEVfTU9VTlQQBBIVChFU",
-            "QVNLX1RZUEVfVU5NT1VOVBAFEhIKDlRBU0tfVFlQRV9NT1ZFEAYSFAoQVEFT",
-            "S19UWVBFX1JFTU9WRRAHEhMKD1RBU0tfVFlQRV9BUFBMWRAIEhIKDlRBU0tf",
-            "VFlQRV9XSVBFEAkSEwoPVEFTS19UWVBFX0FMSUdOEAoSFAoQVEFTS19UWVBF",
-            "X0lOU0VSVBALEhIKDlRBU0tfVFlQRV9IT0xEEAwSFAoQVEFTS19UWVBFX1ZF",
-            "UklGWRANEhIKDlRBU0tfVFlQRV9QSUNLEA4SEwoPVEFTS19UWVBFX1BMQUNF",
-            "EA8SEgoOVEFTS19UWVBFX1NDQU4QEBISCg5UQVNLX1RZUEVfV0FJVBAREhMK",
-            "D1RBU0tfVFlQRV9DSEVDSxASEhkKFVRBU0tfVFlQRV9BQ0tOT1dMRURHRRAT",
-            "Kp0CChhUYXNrQXNzaWdubWVudFByZWZlcmVuY2USKgomVEFTS19BU1NJR05N",
-            "RU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQABIrCidUQVNLX0FTU0lHTk1F",
-            "TlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4QARIpCiVUQVNLX0FTU0lHTk1F",
-            "TlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAISKwonVEFTS19BU1NJR05NRU5U",
-            "X1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMSKQolVEFTS19BU1NJR05NRU5U",
-            "X1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEEiUKIVRBU0tfQVNTSUdOTUVOVF9Q",
-            "UkVGRVJFTkNFX0VJVEhFUhAFQrIBCg5jb20ucHJvY2Vzcy52MUITVGFza0Rl",
-            "ZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "bWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdl",
-            "cy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0",
-            "YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
+            "ZmZzZXQSSQoQdG9vbF9yZXF1aXJlbWVudBgMIAEoCzIeLmNhcGFiaWxpdHku",
+            "djEuVG9vbFJlcXVpcmVtZW50Ug90b29sUmVxdWlyZW1lbnQSTgoSc2tpbGxf",
+            "cmVxdWlyZW1lbnRzGA0gAygLMh8uY2FwYWJpbGl0eS52MS5Ta2lsbFJlcXVp",
+            "cmVtZW50UhFza2lsbFJlcXVpcmVtZW50cxJBCgp2YWxpZGF0aW9uGA4gASgL",
+            "MiEucHJvY2Vzcy52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnRSCnZhbGlkYXRp",
+            "b24SSgoQZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIfLnByb2Nlc3MudjEuVGFz",
+            "a0V4ZWN1dGlvblBvbGljeVIPZXhlY3V0aW9uUG9saWN5EkUKEHNhZmV0eV9y",
+            "ZWxldmFuY2UYECABKA4yGi5jb21tb24udjEuU2FmZXR5UmVsZXZhbmNlUg9z",
+            "YWZldHlSZWxldmFuY2USMAoGc291cmNlGBEgASgLMhgucHJvY2Vzcy52MS5U",
+            "YXNrRW5kcG9pbnRSBnNvdXJjZRI6CgtkZXN0aW5hdGlvbhgSIAEoCzIYLnBy",
+            "b2Nlc3MudjEuVGFza0VuZHBvaW50UgtkZXN0aW5hdGlvbhI+Cg1hcHBsaWNh",
+            "YmlsaXR5GBUgAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVSDWFwcGxp",
+            "Y2FiaWxpdHkSNgoJb3ZlcnJpZGVzGBYgAygLMhgucHJvY2Vzcy52MS5UYXNr",
+            "T3ZlcnJpZGVSCW92ZXJyaWRlcyJDCg9UYXNrRGVmaW5pdGlvbnMSMAoFaXRl",
+            "bXMYASADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uUgVpdGVtcyq/",
+            "AwoIVGFza1R5cGUSGQoVVEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFT",
+            "S19UWVBFX0lOU1BFQ1QQARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFT",
+            "S19UWVBFX1VORkFTVEVOEAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFT",
+            "S19UWVBFX1VOTU9VTlQQBRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tf",
+            "VFlQRV9SRU1PVkUQBxITCg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZ",
+            "UEVfV0lQRRAJEhMKD1RBU0tfVFlQRV9BTElHThAKEhQKEFRBU0tfVFlQRV9J",
+            "TlNFUlQQCxISCg5UQVNLX1RZUEVfSE9MRBAMEhQKEFRBU0tfVFlQRV9WRVJJ",
+            "RlkQDRISCg5UQVNLX1RZUEVfUElDSxAOEhMKD1RBU0tfVFlQRV9QTEFDRRAP",
+            "EhIKDlRBU0tfVFlQRV9TQ0FOEBASEgoOVEFTS19UWVBFX1dBSVQQERITCg9U",
+            "QVNLX1RZUEVfQ0hFQ0sQEhIZChVUQVNLX1RZUEVfQUNLTk9XTEVER0UQEyqd",
+            "AgoYVGFza0Fzc2lnbm1lbnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVO",
+            "VF9QUkVGRVJFTkNFX1VOU1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5U",
+            "X1BSRUZFUkVOQ0VfUFJFRkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5U",
+            "X1BSRUZFUkVOQ0VfT05MWV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9Q",
+            "UkVGRVJFTkNFX1BSRUZFUl9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9Q",
+            "UkVGRVJFTkNFX09OTFlfUk9CT1QQBBIlCiFUQVNLX0FTU0lHTk1FTlRfUFJF",
+            "RkVSRU5DRV9FSVRIRVIQBUKyAQoOY29tLnByb2Nlc3MudjFCE1Rhc2tEZWZp",
+            "bml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMu",
+            "UHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFk",
+            "YXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.TaskType), typeof(global::Messages.Process.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -129,7 +129,7 @@ namespace Messages.Process.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ValidationRequirement), global::Messages.Process.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskExecutionPolicy), global::Messages.Process.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanDo", "CanUndo", "EstimatedDuration" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskOverride), global::Messages.Process.V1.TaskOverride.Parser, new[]{ "When", "InstructionText", "TargetNodeId", "Approach" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinition), global::Messages.Process.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "InsertionOffset", "ApproachOffset", "ToolRequirements", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "Source", "Destination", "Applicability", "Overrides" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinition), global::Messages.Process.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "InsertionOffset", "ApproachOffset", "ToolRequirement", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "Source", "Destination", "Applicability", "Overrides" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinitions), global::Messages.Process.V1.TaskDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -2703,7 +2703,7 @@ namespace Messages.Process.V1 {
       target_ = other.target_ != null ? other.target_.Clone() : null;
       insertionOffset_ = other.insertionOffset_ != null ? other.insertionOffset_.Clone() : null;
       approachOffset_ = other.approachOffset_ != null ? other.approachOffset_.Clone() : null;
-      toolRequirements_ = other.toolRequirements_.Clone();
+      toolRequirement_ = other.toolRequirement_ != null ? other.toolRequirement_.Clone() : null;
       skillRequirements_ = other.skillRequirements_.Clone();
       validation_ = other.validation_ != null ? other.validation_.Clone() : null;
       executionPolicy_ = other.executionPolicy_ != null ? other.executionPolicy_.Clone() : null;
@@ -2859,18 +2859,19 @@ namespace Messages.Process.V1 {
       }
     }
 
-    /// <summary>Field number for the "tool_requirements" field.</summary>
-    public const int ToolRequirementsFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Messages.Capability.V1.ToolRequirement> _repeated_toolRequirements_codec
-        = pb::FieldCodec.ForMessage(98, global::Messages.Capability.V1.ToolRequirement.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Capability.V1.ToolRequirement> toolRequirements_ = new pbc::RepeatedField<global::Messages.Capability.V1.ToolRequirement>();
+    /// <summary>Field number for the "tool_requirement" field.</summary>
+    public const int ToolRequirementFieldNumber = 12;
+    private global::Messages.Capability.V1.ToolRequirement toolRequirement_;
     /// <summary>
     /// Tools or tool roles needed to perform the task.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Capability.V1.ToolRequirement> ToolRequirements {
-      get { return toolRequirements_; }
+    public global::Messages.Capability.V1.ToolRequirement ToolRequirement {
+      get { return toolRequirement_; }
+      set {
+        toolRequirement_ = value;
+      }
     }
 
     /// <summary>Field number for the "skill_requirements" field.</summary>
@@ -3012,7 +3013,7 @@ namespace Messages.Process.V1 {
       if (!object.Equals(Target, other.Target)) return false;
       if (!object.Equals(InsertionOffset, other.InsertionOffset)) return false;
       if (!object.Equals(ApproachOffset, other.ApproachOffset)) return false;
-      if(!toolRequirements_.Equals(other.toolRequirements_)) return false;
+      if (!object.Equals(ToolRequirement, other.ToolRequirement)) return false;
       if(!skillRequirements_.Equals(other.skillRequirements_)) return false;
       if (!object.Equals(Validation, other.Validation)) return false;
       if (!object.Equals(ExecutionPolicy, other.ExecutionPolicy)) return false;
@@ -3038,7 +3039,7 @@ namespace Messages.Process.V1 {
       if (target_ != null) hash ^= Target.GetHashCode();
       if (insertionOffset_ != null) hash ^= InsertionOffset.GetHashCode();
       if (approachOffset_ != null) hash ^= ApproachOffset.GetHashCode();
-      hash ^= toolRequirements_.GetHashCode();
+      if (toolRequirement_ != null) hash ^= ToolRequirement.GetHashCode();
       hash ^= skillRequirements_.GetHashCode();
       if (validation_ != null) hash ^= Validation.GetHashCode();
       if (executionPolicy_ != null) hash ^= ExecutionPolicy.GetHashCode();
@@ -3105,7 +3106,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(ApproachOffset);
       }
-      toolRequirements_.WriteTo(output, _repeated_toolRequirements_codec);
+      if (toolRequirement_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(ToolRequirement);
+      }
       skillRequirements_.WriteTo(output, _repeated_skillRequirements_codec);
       if (validation_ != null) {
         output.WriteRawTag(114);
@@ -3179,7 +3183,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(ApproachOffset);
       }
-      toolRequirements_.WriteTo(ref output, _repeated_toolRequirements_codec);
+      if (toolRequirement_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(ToolRequirement);
+      }
       skillRequirements_.WriteTo(ref output, _repeated_skillRequirements_codec);
       if (validation_ != null) {
         output.WriteRawTag(114);
@@ -3243,7 +3250,9 @@ namespace Messages.Process.V1 {
       if (approachOffset_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ApproachOffset);
       }
-      size += toolRequirements_.CalculateSize(_repeated_toolRequirements_codec);
+      if (toolRequirement_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ToolRequirement);
+      }
       size += skillRequirements_.CalculateSize(_repeated_skillRequirements_codec);
       if (validation_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Validation);
@@ -3313,7 +3322,12 @@ namespace Messages.Process.V1 {
         }
         ApproachOffset.MergeFrom(other.ApproachOffset);
       }
-      toolRequirements_.Add(other.toolRequirements_);
+      if (other.toolRequirement_ != null) {
+        if (toolRequirement_ == null) {
+          ToolRequirement = new global::Messages.Capability.V1.ToolRequirement();
+        }
+        ToolRequirement.MergeFrom(other.ToolRequirement);
+      }
       skillRequirements_.Add(other.skillRequirements_);
       if (other.validation_ != null) {
         if (validation_ == null) {
@@ -3413,7 +3427,10 @@ namespace Messages.Process.V1 {
             break;
           }
           case 98: {
-            toolRequirements_.AddEntriesFrom(input, _repeated_toolRequirements_codec);
+            if (toolRequirement_ == null) {
+              ToolRequirement = new global::Messages.Capability.V1.ToolRequirement();
+            }
+            input.ReadMessage(ToolRequirement);
             break;
           }
           case 106: {
@@ -3529,7 +3546,10 @@ namespace Messages.Process.V1 {
             break;
           }
           case 98: {
-            toolRequirements_.AddEntriesFrom(ref input, _repeated_toolRequirements_codec);
+            if (toolRequirement_ == null) {
+              ToolRequirement = new global::Messages.Capability.V1.ToolRequirement();
+            }
+            input.ReadMessage(ToolRequirement);
             break;
           }
           case 106: {

@@ -169,7 +169,7 @@ class TaskOverride(_message.Message):
     def __init__(self, when: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target_node_id: _Optional[str] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
 
 class TaskDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirements", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "applicability", "overrides")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirement", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "applicability", "overrides")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -180,7 +180,7 @@ class TaskDefinition(_message.Message):
     TARGET_FIELD_NUMBER: _ClassVar[int]
     INSERTION_OFFSET_FIELD_NUMBER: _ClassVar[int]
     APPROACH_OFFSET_FIELD_NUMBER: _ClassVar[int]
-    TOOL_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
+    TOOL_REQUIREMENT_FIELD_NUMBER: _ClassVar[int]
     SKILL_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_POLICY_FIELD_NUMBER: _ClassVar[int]
@@ -199,7 +199,7 @@ class TaskDefinition(_message.Message):
     target: TaskTarget
     insertion_offset: _vector3_pb2.Vector3
     approach_offset: _vector3_pb2.Vector3
-    tool_requirements: _containers.RepeatedCompositeFieldContainer[_tool_requirement_pb2.ToolRequirement]
+    tool_requirement: _tool_requirement_pb2.ToolRequirement
     skill_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
     validation: ValidationRequirement
     execution_policy: TaskExecutionPolicy
@@ -208,7 +208,7 @@ class TaskDefinition(_message.Message):
     destination: TaskEndpoint
     applicability: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
     overrides: _containers.RepeatedCompositeFieldContainer[TaskOverride]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirements: _Optional[_Iterable[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., destination: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirement: _Optional[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., destination: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...
 
 class TaskDefinitions(_message.Message):
     __slots__ = ("items",)

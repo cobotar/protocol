@@ -4624,7 +4624,7 @@ asset, station, or container bindings belongs in runtime.v1.TaskRun.
 | target | [TaskTarget](#process-v1-TaskTarget) |  | The primary static/generic thing/location/resource this task acts on. |
 | insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional static guidance/planning hint from final pose to pre-insertion pose, in mm. |
 | approach_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional static guidance/planning hint from final pose to preferred approach pose, in mm. |
-| tool_requirements | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) | repeated | Tools or tool roles needed to perform the task. |
+| tool_requirement | [capability.v1.ToolRequirement](#capability-v1-ToolRequirement) |  | Tools or tool roles needed to perform the task. |
 | skill_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated | Skills/qualifications needed by the acting human/robot. |
 | validation | [ValidationRequirement](#process-v1-ValidationRequirement) |  | How task completion should be confirmed or validated. |
 | execution_policy | [TaskExecutionPolicy](#process-v1-TaskExecutionPolicy) |  | Static execution policy, preferences, and permissions used by planning/runtime. |

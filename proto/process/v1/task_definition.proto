@@ -147,7 +147,7 @@ message TaskDefinition {
   TaskTarget target = 8; // The primary static/generic thing/location/resource this task acts on.
   geometry.v1.Vector3 insertion_offset = 9; // Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
   geometry.v1.Vector3 approach_offset = 10; // Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
-  repeated capability.v1.ToolRequirement tool_requirements = 12; // Tools or tool roles needed to perform the task.
+  capability.v1.ToolRequirement tool_requirement = 12; // Tools or tool roles needed to perform the task.
   repeated capability.v1.SkillRequirement skill_requirements = 13; // Skills/qualifications needed by the acting human/robot.
   ValidationRequirement validation = 14; // How task completion should be confirmed or validated.
   TaskExecutionPolicy execution_policy = 15; // Static execution policy, preferences, and permissions used by planning/runtime.
