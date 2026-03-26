@@ -2539,6 +2539,9 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
 | skill_id | [string](#string) |  |  |
 | level | [SkillLevel](#capability-v1-SkillLevel) |  |  |

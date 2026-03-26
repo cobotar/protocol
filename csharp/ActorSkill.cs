@@ -29,38 +29,39 @@ namespace Messages.Capability.V1 {
             "Y3Rvci5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxor",
             "dmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byJK",
             "ChFWYWxpZGl0eVBvbGljeVJlZhIbCglwb2xpY3lfaWQYASABKAlSCHBvbGlj",
-            "eUlkEhgKB3ZlcnNpb24YAiABKAlSB3ZlcnNpb24i2AQKCkFjdG9yU2tpbGwS",
-            "MQoFYWN0b3IYASABKAsyEy5jb21tb24udjEuQWN0b3JSZWZCBrpIA8gBAVIF",
-            "YWN0b3ISJwoIc2tpbGxfaWQYAiABKAlCDLpICXIE6PEEAcgBAVIHc2tpbGxJ",
-            "ZBI8CgVsZXZlbBgDIAEoDjIZLmNhcGFiaWxpdHkudjEuU2tpbGxMZXZlbEIL",
-            "ukgIggECEAHIAQFSBWxldmVsEjwKBnN0YXR1cxgEIAEoDjIaLmNhcGFiaWxp",
-            "dHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABUgZzdGF0dXMSNwoKY29uZmlk",
-            "ZW5jZRgFIAEoAUIXukgUEhIZAAAAAAAA8D8pAAAAAAAAAABSCmNvbmZpZGVu",
-            "Y2USRAoQbGFzdF9ldmlkZW5jZV9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXBSDmxhc3RFdmlkZW5jZUF0Ei4KDmV2aWRlbmNlX2NvdW50",
-            "GAcgASgFQge6SAQaAigAUg1ldmlkZW5jZUNvdW50EjsKC3ZhbGlkX3VudGls",
-            "GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKdmFsaWRVbnRp",
-            "bBJJCg92YWxpZGl0eV9wb2xpY3kYCSABKAsyIC5jYXBhYmlsaXR5LnYxLlZh",
-            "bGlkaXR5UG9saWN5UmVmUg52YWxpZGl0eVBvbGljeRIYCgdyZWFzb25zGAog",
-            "AygJUgdyZWFzb25zEiEKDG5leHRfYWN0aW9ucxgLIAMoCVILbmV4dEFjdGlv",
-            "bnMiPgoLQWN0b3JTa2lsbHMSLwoFaXRlbXMYASADKAsyGS5jYXBhYmlsaXR5",
-            "LnYxLkFjdG9yU2tpbGxSBWl0ZW1zKq4BCgpTa2lsbExldmVsEhsKF1NLSUxM",
-            "X0xFVkVMX1VOU1BFQ0lGSUVEEAASGwoXU0tJTExfTEVWRUxfTk9UX0FMTE9X",
-            "RUQQARIYChRTS0lMTF9MRVZFTF9BU1NJU1RFRBACEhkKFVNLSUxMX0xFVkVM",
-            "X1FVQUxJRklFRBADEhYKElNLSUxMX0xFVkVMX0VYUEVSVBAEEhkKFVNLSUxM",
-            "X0xFVkVMX0FVVEhPUklUWRAFKnsKC1NraWxsU3RhdHVzEhwKGFNLSUxMX1NU",
-            "QVRVU19VTlNQRUNJRklFRBAAEhcKE1NLSUxMX1NUQVRVU19BQ1RJVkUQARIb",
-            "ChdTS0lMTF9TVEFUVVNfUkVTVFJJQ1RFRBACEhgKFFNLSUxMX1NUQVRVU19F",
-            "WFBJUkVEEANCwwEKEWNvbS5jYXBhYmlsaXR5LnYxQg9BY3RvclNraWxsUHJv",
-            "dG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Nh",
-            "cGFiaWxpdHkvdjE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2Fw",
-            "YWJpbGl0eS5WMcoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQ",
-            "Qk1ldGFkYXRh6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw=="));
+            "eUlkEhgKB3ZlcnNpb24YAiABKAlSB3ZlcnNpb24ikAUKCkFjdG9yU2tpbGwS",
+            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhIxCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJl",
+            "ZkIGukgDyAEBUgVhY3RvchInCghza2lsbF9pZBgFIAEoCUIMukgJcgTo8QQB",
+            "yAEBUgdza2lsbElkEjwKBWxldmVsGAYgASgOMhkuY2FwYWJpbGl0eS52MS5T",
+            "a2lsbExldmVsQgu6SAiCAQIQAcgBAVIFbGV2ZWwSPAoGc3RhdHVzGAcgASgO",
+            "MhouY2FwYWJpbGl0eS52MS5Ta2lsbFN0YXR1c0IIukgFggECEAFSBnN0YXR1",
+            "cxI3Cgpjb25maWRlbmNlGAggASgBQhe6SBQSEhkAAAAAAADwPykAAAAAAAAA",
+            "AFIKY29uZmlkZW5jZRJEChBsYXN0X2V2aWRlbmNlX2F0GAkgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFIObGFzdEV2aWRlbmNlQXQSLgoOZXZp",
+            "ZGVuY2VfY291bnQYCiABKAVCB7pIBBoCKABSDWV2aWRlbmNlQ291bnQSOwoL",
+            "dmFsaWRfdW50aWwYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
+            "Ugp2YWxpZFVudGlsEkkKD3ZhbGlkaXR5X3BvbGljeRgMIAEoCzIgLmNhcGFi",
+            "aWxpdHkudjEuVmFsaWRpdHlQb2xpY3lSZWZSDnZhbGlkaXR5UG9saWN5EhgK",
+            "B3JlYXNvbnMYDSADKAlSB3JlYXNvbnMSIQoMbmV4dF9hY3Rpb25zGA4gAygJ",
+            "UgtuZXh0QWN0aW9ucyI+CgtBY3RvclNraWxscxIvCgVpdGVtcxgBIAMoCzIZ",
+            "LmNhcGFiaWxpdHkudjEuQWN0b3JTa2lsbFIFaXRlbXMqrgEKClNraWxsTGV2",
+            "ZWwSGwoXU0tJTExfTEVWRUxfVU5TUEVDSUZJRUQQABIbChdTS0lMTF9MRVZF",
+            "TF9OT1RfQUxMT1dFRBABEhgKFFNLSUxMX0xFVkVMX0FTU0lTVEVEEAISGQoV",
+            "U0tJTExfTEVWRUxfUVVBTElGSUVEEAMSFgoSU0tJTExfTEVWRUxfRVhQRVJU",
+            "EAQSGQoVU0tJTExfTEVWRUxfQVVUSE9SSVRZEAUqewoLU2tpbGxTdGF0dXMS",
+            "HAoYU0tJTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTU0tJTExfU1RBVFVT",
+            "X0FDVElWRRABEhsKF1NLSUxMX1NUQVRVU19SRVNUUklDVEVEEAISGAoUU0tJ",
+            "TExfU1RBVFVTX0VYUElSRUQQA0LDAQoRY29tLmNhcGFiaWxpdHkudjFCD0Fj",
+            "dG9yU2tpbGxQcm90b1ABWj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
+            "bWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiqAhZN",
+            "ZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNhcGFi",
+            "aWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Capability.V1.SkillLevel), typeof(global::Messages.Capability.V1.SkillStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ValidityPolicyRef), global::Messages.Capability.V1.ValidityPolicyRef.Parser, new[]{ "PolicyId", "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ActorSkill), global::Messages.Capability.V1.ActorSkill.Parser, new[]{ "Actor", "SkillId", "Level", "Status", "Confidence", "LastEvidenceAt", "EvidenceCount", "ValidUntil", "ValidityPolicy", "Reasons", "NextActions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ActorSkill), global::Messages.Capability.V1.ActorSkill.Parser, new[]{ "Id", "Name", "Icon", "Actor", "SkillId", "Level", "Status", "Confidence", "LastEvidenceAt", "EvidenceCount", "ValidUntil", "ValidityPolicy", "Reasons", "NextActions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ActorSkills), global::Messages.Capability.V1.ActorSkills.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -381,6 +382,9 @@ namespace Messages.Capability.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActorSkill(ActorSkill other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
       actor_ = other.actor_ != null ? other.actor_.Clone() : null;
       skillId_ = other.skillId_;
       level_ = other.level_;
@@ -401,8 +405,44 @@ namespace Messages.Capability.V1 {
       return new ActorSkill(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "actor" field.</summary>
-    public const int ActorFieldNumber = 1;
+    public const int ActorFieldNumber = 4;
     private global::Messages.Common.V1.ActorRef actor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -414,7 +454,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 2;
+    public const int SkillIdFieldNumber = 5;
     private string skillId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -426,7 +466,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 3;
+    public const int LevelFieldNumber = 6;
     private global::Messages.Capability.V1.SkillLevel level_ = global::Messages.Capability.V1.SkillLevel.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -438,7 +478,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 4;
+    public const int StatusFieldNumber = 7;
     private global::Messages.Capability.V1.SkillStatus status_ = global::Messages.Capability.V1.SkillStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -450,7 +490,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "confidence" field.</summary>
-    public const int ConfidenceFieldNumber = 5;
+    public const int ConfidenceFieldNumber = 8;
     private double confidence_;
     /// <summary>
     /// [0, 1]
@@ -465,7 +505,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "last_evidence_at" field.</summary>
-    public const int LastEvidenceAtFieldNumber = 6;
+    public const int LastEvidenceAtFieldNumber = 9;
     private global::Google.Protobuf.WellKnownTypes.Timestamp lastEvidenceAt_;
     /// <summary>
     /// timestamp
@@ -480,7 +520,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "evidence_count" field.</summary>
-    public const int EvidenceCountFieldNumber = 7;
+    public const int EvidenceCountFieldNumber = 10;
     private int evidenceCount_;
     /// <summary>
     /// since last training
@@ -495,7 +535,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "valid_until" field.</summary>
-    public const int ValidUntilFieldNumber = 8;
+    public const int ValidUntilFieldNumber = 11;
     private global::Google.Protobuf.WellKnownTypes.Timestamp validUntil_;
     /// <summary>
     /// (timestamp) or policy-derived
@@ -510,7 +550,7 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "validity_policy" field.</summary>
-    public const int ValidityPolicyFieldNumber = 9;
+    public const int ValidityPolicyFieldNumber = 12;
     private global::Messages.Capability.V1.ValidityPolicyRef validityPolicy_;
     /// <summary>
     /// which rule set is used
@@ -525,9 +565,9 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "reasons" field.</summary>
-    public const int ReasonsFieldNumber = 10;
+    public const int ReasonsFieldNumber = 13;
     private static readonly pb::FieldCodec<string> _repeated_reasons_codec
-        = pb::FieldCodec.ForString(82);
+        = pb::FieldCodec.ForString(106);
     private readonly pbc::RepeatedField<string> reasons_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// ["inactivity_>30d"]
@@ -539,9 +579,9 @@ namespace Messages.Capability.V1 {
     }
 
     /// <summary>Field number for the "next_actions" field.</summary>
-    public const int NextActionsFieldNumber = 11;
+    public const int NextActionsFieldNumber = 14;
     private static readonly pb::FieldCodec<string> _repeated_nextActions_codec
-        = pb::FieldCodec.ForString(90);
+        = pb::FieldCodec.ForString(114);
     private readonly pbc::RepeatedField<string> nextActions_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// ["micro_training", "extra_verification_required"]
@@ -567,6 +607,9 @@ namespace Messages.Capability.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (!object.Equals(Actor, other.Actor)) return false;
       if (SkillId != other.SkillId) return false;
       if (Level != other.Level) return false;
@@ -585,6 +628,9 @@ namespace Messages.Capability.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (actor_ != null) hash ^= Actor.GetHashCode();
       if (SkillId.Length != 0) hash ^= SkillId.GetHashCode();
       if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) hash ^= Level.GetHashCode();
@@ -614,40 +660,52 @@ namespace Messages.Capability.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (actor_ != null) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (actor_ != null) {
+        output.WriteRawTag(34);
         output.WriteMessage(Actor);
       }
       if (SkillId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteString(SkillId);
       }
       if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Level);
       }
       if (Status != global::Messages.Capability.V1.SkillStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (Confidence != 0D) {
-        output.WriteRawTag(41);
+        output.WriteRawTag(65);
         output.WriteDouble(Confidence);
       }
       if (lastEvidenceAt_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(LastEvidenceAt);
       }
       if (EvidenceCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteInt32(EvidenceCount);
       }
       if (validUntil_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(ValidUntil);
       }
       if (validityPolicy_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(ValidityPolicy);
       }
       reasons_.WriteTo(output, _repeated_reasons_codec);
@@ -662,40 +720,52 @@ namespace Messages.Capability.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (actor_ != null) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (actor_ != null) {
+        output.WriteRawTag(34);
         output.WriteMessage(Actor);
       }
       if (SkillId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteString(SkillId);
       }
       if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Level);
       }
       if (Status != global::Messages.Capability.V1.SkillStatus.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (Confidence != 0D) {
-        output.WriteRawTag(41);
+        output.WriteRawTag(65);
         output.WriteDouble(Confidence);
       }
       if (lastEvidenceAt_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteMessage(LastEvidenceAt);
       }
       if (EvidenceCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteInt32(EvidenceCount);
       }
       if (validUntil_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(90);
         output.WriteMessage(ValidUntil);
       }
       if (validityPolicy_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteMessage(ValidityPolicy);
       }
       reasons_.WriteTo(ref output, _repeated_reasons_codec);
@@ -710,6 +780,15 @@ namespace Messages.Capability.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
       if (actor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Actor);
       }
@@ -750,6 +829,15 @@ namespace Messages.Capability.V1 {
     public void MergeFrom(ActorSkill other) {
       if (other == null) {
         return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.actor_ != null) {
         if (actor_ == null) {
@@ -812,58 +900,70 @@ namespace Messages.Capability.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             if (actor_ == null) {
               Actor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(Actor);
             break;
           }
-          case 18: {
+          case 42: {
             SkillId = input.ReadString();
             break;
           }
-          case 24: {
+          case 48: {
             Level = (global::Messages.Capability.V1.SkillLevel) input.ReadEnum();
             break;
           }
-          case 32: {
+          case 56: {
             Status = (global::Messages.Capability.V1.SkillStatus) input.ReadEnum();
             break;
           }
-          case 41: {
+          case 65: {
             Confidence = input.ReadDouble();
             break;
           }
-          case 50: {
+          case 74: {
             if (lastEvidenceAt_ == null) {
               LastEvidenceAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastEvidenceAt);
             break;
           }
-          case 56: {
+          case 80: {
             EvidenceCount = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 90: {
             if (validUntil_ == null) {
               ValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(ValidUntil);
             break;
           }
-          case 74: {
+          case 98: {
             if (validityPolicy_ == null) {
               ValidityPolicy = new global::Messages.Capability.V1.ValidityPolicyRef();
             }
             input.ReadMessage(ValidityPolicy);
             break;
           }
-          case 82: {
+          case 106: {
             reasons_.AddEntriesFrom(input, _repeated_reasons_codec);
             break;
           }
-          case 90: {
+          case 114: {
             nextActions_.AddEntriesFrom(input, _repeated_nextActions_codec);
             break;
           }
@@ -887,58 +987,70 @@ namespace Messages.Capability.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 34: {
             if (actor_ == null) {
               Actor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(Actor);
             break;
           }
-          case 18: {
+          case 42: {
             SkillId = input.ReadString();
             break;
           }
-          case 24: {
+          case 48: {
             Level = (global::Messages.Capability.V1.SkillLevel) input.ReadEnum();
             break;
           }
-          case 32: {
+          case 56: {
             Status = (global::Messages.Capability.V1.SkillStatus) input.ReadEnum();
             break;
           }
-          case 41: {
+          case 65: {
             Confidence = input.ReadDouble();
             break;
           }
-          case 50: {
+          case 74: {
             if (lastEvidenceAt_ == null) {
               LastEvidenceAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastEvidenceAt);
             break;
           }
-          case 56: {
+          case 80: {
             EvidenceCount = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 90: {
             if (validUntil_ == null) {
               ValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(ValidUntil);
             break;
           }
-          case 74: {
+          case 98: {
             if (validityPolicy_ == null) {
               ValidityPolicy = new global::Messages.Capability.V1.ValidityPolicyRef();
             }
             input.ReadMessage(ValidityPolicy);
             break;
           }
-          case 82: {
+          case 106: {
             reasons_.AddEntriesFrom(ref input, _repeated_reasons_codec);
             break;
           }
-          case 90: {
+          case 114: {
             nextActions_.AddEntriesFrom(ref input, _repeated_nextActions_codec);
             break;
           }

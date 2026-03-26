@@ -39,26 +39,29 @@ message ValidityPolicyRef {
 }
 
 message ActorSkill {
-  common.v1.ActorRef actor = 1 [(buf.validate.field).required = true];
-  string skill_id = 2 [
+  string id = 1;
+  string name = 2;
+  string icon = 3;
+  common.v1.ActorRef actor = 4 [(buf.validate.field).required = true];
+  string skill_id = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.skill_id_component) = true
   ];
-  SkillLevel level = 3 [
+  SkillLevel level = 6 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  SkillStatus status = 4 [(buf.validate.field).enum.defined_only = true];
-  double confidence = 5 [
+  SkillStatus status = 7 [(buf.validate.field).enum.defined_only = true];
+  double confidence = 8 [
     (buf.validate.field).double.gte = 0,
     (buf.validate.field).double.lte = 1
   ]; // [0, 1]
-  google.protobuf.Timestamp last_evidence_at = 6; // timestamp
-  int32 evidence_count = 7 [(buf.validate.field).int32.gte = 0]; // since last training
-  google.protobuf.Timestamp valid_until = 8; // (timestamp) or policy-derived
-  ValidityPolicyRef validity_policy = 9; // which rule set is used
-  repeated string reasons = 10; // ["inactivity_>30d"]
-  repeated string next_actions = 11; // ["micro_training", "extra_verification_required"]
+  google.protobuf.Timestamp last_evidence_at = 9; // timestamp
+  int32 evidence_count = 10 [(buf.validate.field).int32.gte = 0]; // since last training
+  google.protobuf.Timestamp valid_until = 11; // (timestamp) or policy-derived
+  ValidityPolicyRef validity_policy = 12; // which rule set is used
+  repeated string reasons = 13; // ["inactivity_>30d"]
+  repeated string next_actions = 14; // ["micro_training", "extra_verification_required"]
 }
 
 message ActorSkills {

@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file capability/v1/actor_skill.proto.
  */
 export const file_capability_v1_actor_skill: GenFile = /*@__PURE__*/
-  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJItwDCgpBY3RvclNraWxsEioKBWFjdG9yGAEgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQESHgoIc2tpbGxfaWQYAiABKAlCDLpICcgBAXIE6PEEARI1CgVsZXZlbBgDIAEoDjIZLmNhcGFiaWxpdHkudjEuU2tpbGxMZXZlbEILukgIyAEBggECEAESNAoGc3RhdHVzGAQgASgOMhouY2FwYWJpbGl0eS52MS5Ta2lsbFN0YXR1c0IIukgFggECEAESKwoKY29uZmlkZW5jZRgFIAEoAUIXukgUEhIZAAAAAAAA8D8pAAAAAAAAAAASNAoQbGFzdF9ldmlkZW5jZV9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASHwoOZXZpZGVuY2VfY291bnQYByABKAVCB7pIBBoCKAASLwoLdmFsaWRfdW50aWwYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjkKD3ZhbGlkaXR5X3BvbGljeRgJIAEoCzIgLmNhcGFiaWxpdHkudjEuVmFsaWRpdHlQb2xpY3lSZWYSDwoHcmVhc29ucxgKIAMoCRIUCgxuZXh0X2FjdGlvbnMYCyADKAkiNwoLQWN0b3JTa2lsbHMSKAoFaXRlbXMYASADKAsyGS5jYXBhYmlsaXR5LnYxLkFjdG9yU2tpbGwqrgEKClNraWxsTGV2ZWwSGwoXU0tJTExfTEVWRUxfVU5TUEVDSUZJRUQQABIbChdTS0lMTF9MRVZFTF9OT1RfQUxMT1dFRBABEhgKFFNLSUxMX0xFVkVMX0FTU0lTVEVEEAISGQoVU0tJTExfTEVWRUxfUVVBTElGSUVEEAMSFgoSU0tJTExfTEVWRUxfRVhQRVJUEAQSGQoVU0tJTExfTEVWRUxfQVVUSE9SSVRZEAUqewoLU2tpbGxTdGF0dXMSHAoYU0tJTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTU0tJTExfU1RBVFVTX0FDVElWRRABEhsKF1NLSUxMX1NUQVRVU19SRVNUUklDVEVEEAISGAoUU0tJTExfU1RBVFVTX0VYUElSRUQQA0LDAQoRY29tLmNhcGFiaWxpdHkudjFCD0FjdG9yU2tpbGxQcm90b1ABWj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiqAhZNZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNhcGFiaWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJIoQECgpBY3RvclNraWxsEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIqCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEh4KCHNraWxsX2lkGAUgASgJQgy6SAnIAQFyBOjxBAESNQoFbGV2ZWwYBiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pICMgBAYIBAhABEjQKBnN0YXR1cxgHIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABEisKCmNvbmZpZGVuY2UYCCABKAFCF7pIFBISGQAAAAAAAPA/KQAAAAAAAAAAEjQKEGxhc3RfZXZpZGVuY2VfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEh8KDmV2aWRlbmNlX2NvdW50GAogASgFQge6SAQaAigAEi8KC3ZhbGlkX3VudGlsGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI5Cg92YWxpZGl0eV9wb2xpY3kYDCABKAsyIC5jYXBhYmlsaXR5LnYxLlZhbGlkaXR5UG9saWN5UmVmEg8KB3JlYXNvbnMYDSADKAkSFAoMbmV4dF9hY3Rpb25zGA4gAygJIjcKC0FjdG9yU2tpbGxzEigKBWl0ZW1zGAEgAygLMhkuY2FwYWJpbGl0eS52MS5BY3RvclNraWxsKq4BCgpTa2lsbExldmVsEhsKF1NLSUxMX0xFVkVMX1VOU1BFQ0lGSUVEEAASGwoXU0tJTExfTEVWRUxfTk9UX0FMTE9XRUQQARIYChRTS0lMTF9MRVZFTF9BU1NJU1RFRBACEhkKFVNLSUxMX0xFVkVMX1FVQUxJRklFRBADEhYKElNLSUxMX0xFVkVMX0VYUEVSVBAEEhkKFVNLSUxMX0xFVkVMX0FVVEhPUklUWRAFKnsKC1NraWxsU3RhdHVzEhwKGFNLSUxMX1NUQVRVU19VTlNQRUNJRklFRBAAEhcKE1NLSUxMX1NUQVRVU19BQ1RJVkUQARIbChdTS0lMTF9TVEFUVVNfUkVTVFJJQ1RFRBACEhgKFFNLSUxMX1NUQVRVU19FWFBJUkVEEANCwwEKEWNvbS5jYXBhYmlsaXR5LnYxQg9BY3RvclNraWxsUHJvdG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NhcGFiaWxpdHkvdjE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2FwYWJpbGl0eS5WMcoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQQk1ldGFkYXRh6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message capability.v1.ValidityPolicyRef
@@ -45,71 +45,86 @@ export const ValidityPolicyRefSchema: GenMessage<ValidityPolicyRef> = /*@__PURE_
  */
 export type ActorSkill = Message<"capability.v1.ActorSkill"> & {
   /**
-   * @generated from field: common.v1.ActorRef actor = 1;
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: common.v1.ActorRef actor = 4;
    */
   actor?: ActorRef;
 
   /**
-   * @generated from field: string skill_id = 2;
+   * @generated from field: string skill_id = 5;
    */
   skillId: string;
 
   /**
-   * @generated from field: capability.v1.SkillLevel level = 3;
+   * @generated from field: capability.v1.SkillLevel level = 6;
    */
   level: SkillLevel;
 
   /**
-   * @generated from field: capability.v1.SkillStatus status = 4;
+   * @generated from field: capability.v1.SkillStatus status = 7;
    */
   status: SkillStatus;
 
   /**
    * [0, 1]
    *
-   * @generated from field: double confidence = 5;
+   * @generated from field: double confidence = 8;
    */
   confidence: number;
 
   /**
    * timestamp
    *
-   * @generated from field: google.protobuf.Timestamp last_evidence_at = 6;
+   * @generated from field: google.protobuf.Timestamp last_evidence_at = 9;
    */
   lastEvidenceAt?: Timestamp;
 
   /**
    * since last training
    *
-   * @generated from field: int32 evidence_count = 7;
+   * @generated from field: int32 evidence_count = 10;
    */
   evidenceCount: number;
 
   /**
    * (timestamp) or policy-derived
    *
-   * @generated from field: google.protobuf.Timestamp valid_until = 8;
+   * @generated from field: google.protobuf.Timestamp valid_until = 11;
    */
   validUntil?: Timestamp;
 
   /**
    * which rule set is used
    *
-   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 9;
+   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 12;
    */
   validityPolicy?: ValidityPolicyRef;
 
   /**
    * ["inactivity_>30d"]
    *
-   * @generated from field: repeated string reasons = 10;
+   * @generated from field: repeated string reasons = 13;
    */
   reasons: string[];
 
   /**
    * ["micro_training", "extra_verification_required"]
    *
-   * @generated from field: repeated string next_actions = 11;
+   * @generated from field: repeated string next_actions = 14;
    */
   nextActions: string[];
 };
