@@ -1,7 +1,7 @@
 syntax = "proto3";
 package common.v1;
 
-import "google/protobuf/duration.proto";
+import "buf/validate/validate.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Messages.Common.V1";
@@ -13,7 +13,7 @@ message TimeWindow {
 }
 
 message EstimatedDuration {
-  google.protobuf.Duration nominal = 1;
-  google.protobuf.Duration min = 2;
-  google.protobuf.Duration max = 3;
+  int32 nominal_seconds = 1 [(buf.validate.field).int32.gte = 0]; // Expected time in seconds
+  int32 min_seconds = 2 [(buf.validate.field).int32.gte = 0];
+  int32 max_seconds = 3 [(buf.validate.field).int32.gte = 0];
 }

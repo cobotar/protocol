@@ -3153,9 +3153,9 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nominal | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
-| min | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
-| max | [google.protobuf.Duration](#google-protobuf-Duration) |  |  |
+| nominal_seconds | [int32](#int32) |  | Expected time in seconds |
+| min_seconds | [int32](#int32) |  |  |
+| max_seconds | [int32](#int32) |  |  |
 
 
 

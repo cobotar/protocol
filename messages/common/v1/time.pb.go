@@ -7,9 +7,9 @@
 package commonv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	durationpb "google.golang.org/protobuf/types/known/durationpb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
@@ -76,12 +76,12 @@ func (x *TimeWindow) GetEnd() *timestamppb.Timestamp {
 }
 
 type EstimatedDuration struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Nominal       *durationpb.Duration   `protobuf:"bytes,1,opt,name=nominal,proto3" json:"nominal,omitempty"`
-	Min           *durationpb.Duration   `protobuf:"bytes,2,opt,name=min,proto3" json:"min,omitempty"`
-	Max           *durationpb.Duration   `protobuf:"bytes,3,opt,name=max,proto3" json:"max,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	NominalSeconds int32                  `protobuf:"varint,1,opt,name=nominal_seconds,json=nominalSeconds,proto3" json:"nominal_seconds,omitempty"` // Expected time in seconds
+	MinSeconds     int32                  `protobuf:"varint,2,opt,name=min_seconds,json=minSeconds,proto3" json:"min_seconds,omitempty"`
+	MaxSeconds     int32                  `protobuf:"varint,3,opt,name=max_seconds,json=maxSeconds,proto3" json:"max_seconds,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *EstimatedDuration) Reset() {
@@ -114,40 +114,42 @@ func (*EstimatedDuration) Descriptor() ([]byte, []int) {
 	return file_common_v1_time_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *EstimatedDuration) GetNominal() *durationpb.Duration {
+func (x *EstimatedDuration) GetNominalSeconds() int32 {
 	if x != nil {
-		return x.Nominal
+		return x.NominalSeconds
 	}
-	return nil
+	return 0
 }
 
-func (x *EstimatedDuration) GetMin() *durationpb.Duration {
+func (x *EstimatedDuration) GetMinSeconds() int32 {
 	if x != nil {
-		return x.Min
+		return x.MinSeconds
 	}
-	return nil
+	return 0
 }
 
-func (x *EstimatedDuration) GetMax() *durationpb.Duration {
+func (x *EstimatedDuration) GetMaxSeconds() int32 {
 	if x != nil {
-		return x.Max
+		return x.MaxSeconds
 	}
-	return nil
+	return 0
 }
 
 var File_common_v1_time_proto protoreflect.FileDescriptor
 
 const file_common_v1_time_proto_rawDesc = "" +
 	"\n" +
-	"\x14common/v1/time.proto\x12\tcommon.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n" +
+	"\x14common/v1/time.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n" +
 	"\n" +
 	"TimeWindow\x120\n" +
 	"\x05start\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05start\x12,\n" +
-	"\x03end\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x03end\"\xa2\x01\n" +
-	"\x11EstimatedDuration\x123\n" +
-	"\anominal\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\anominal\x12+\n" +
-	"\x03min\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\x03min\x12+\n" +
-	"\x03max\x18\x03 \x01(\v2\x19.google.protobuf.DurationR\x03maxB\xa1\x01\n" +
+	"\x03end\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x03end\"\x99\x01\n" +
+	"\x11EstimatedDuration\x120\n" +
+	"\x0fnominal_seconds\x18\x01 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0enominalSeconds\x12(\n" +
+	"\vmin_seconds\x18\x02 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
+	"minSeconds\x12(\n" +
+	"\vmax_seconds\x18\x03 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
+	"maxSecondsB\xa1\x01\n" +
 	"\rcom.common.v1B\tTimeProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
@@ -168,19 +170,15 @@ var file_common_v1_time_proto_goTypes = []any{
 	(*TimeWindow)(nil),            // 0: common.v1.TimeWindow
 	(*EstimatedDuration)(nil),     // 1: common.v1.EstimatedDuration
 	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
-	(*durationpb.Duration)(nil),   // 3: google.protobuf.Duration
 }
 var file_common_v1_time_proto_depIdxs = []int32{
 	2, // 0: common.v1.TimeWindow.start:type_name -> google.protobuf.Timestamp
 	2, // 1: common.v1.TimeWindow.end:type_name -> google.protobuf.Timestamp
-	3, // 2: common.v1.EstimatedDuration.nominal:type_name -> google.protobuf.Duration
-	3, // 3: common.v1.EstimatedDuration.min:type_name -> google.protobuf.Duration
-	3, // 4: common.v1.EstimatedDuration.max:type_name -> google.protobuf.Duration
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_time_proto_init() }

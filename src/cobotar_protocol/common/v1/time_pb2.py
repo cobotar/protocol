@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x63ommon/v1/time.proto\x12\tcommon.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n\nTimeWindow\x12\x30\n\x05start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x05start\x12,\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x03\x65nd\"\xa2\x01\n\x11\x45stimatedDuration\x12\x33\n\x07nominal\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x07nominal\x12+\n\x03min\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationR\x03min\x12+\n\x03max\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationR\x03maxB\xa1\x01\n\rcom.common.v1B\tTimeProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x63ommon/v1/time.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n\nTimeWindow\x12\x30\n\x05start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x05start\x12,\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x03\x65nd\"\x99\x01\n\x11\x45stimatedDuration\x12\x30\n\x0fnominal_seconds\x18\x01 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x0enominalSeconds\x12(\n\x0bmin_seconds\x18\x02 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\nminSeconds\x12(\n\x0bmax_seconds\x18\x03 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\nmaxSecondsB\xa1\x01\n\rcom.common.v1B\tTimeProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +34,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.time_pb2', _globa
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\tTimeProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
-  _globals['_TIMEWINDOW']._serialized_start=100
-  _globals['_TIMEWINDOW']._serialized_end=208
-  _globals['_ESTIMATEDDURATION']._serialized_start=211
-  _globals['_ESTIMATEDDURATION']._serialized_end=373
+  _globals['_ESTIMATEDDURATION'].fields_by_name['nominal_seconds']._loaded_options = None
+  _globals['_ESTIMATEDDURATION'].fields_by_name['nominal_seconds']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_ESTIMATEDDURATION'].fields_by_name['min_seconds']._loaded_options = None
+  _globals['_ESTIMATEDDURATION'].fields_by_name['min_seconds']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_ESTIMATEDDURATION'].fields_by_name['max_seconds']._loaded_options = None
+  _globals['_ESTIMATEDDURATION'].fields_by_name['max_seconds']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_TIMEWINDOW']._serialized_start=97
+  _globals['_TIMEWINDOW']._serialized_end=205
+  _globals['_ESTIMATEDDURATION']._serialized_start=208
+  _globals['_ESTIMATEDDURATION']._serialized_end=361
 # @@protoc_insertion_point(module_scope)

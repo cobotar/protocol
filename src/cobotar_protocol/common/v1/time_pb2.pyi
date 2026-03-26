@@ -1,6 +1,6 @@
 import datetime
 
-from google.protobuf import duration_pb2 as _duration_pb2
+from buf.validate import validate_pb2 as _validate_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -18,11 +18,11 @@ class TimeWindow(_message.Message):
     def __init__(self, start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class EstimatedDuration(_message.Message):
-    __slots__ = ("nominal", "min", "max")
-    NOMINAL_FIELD_NUMBER: _ClassVar[int]
-    MIN_FIELD_NUMBER: _ClassVar[int]
-    MAX_FIELD_NUMBER: _ClassVar[int]
-    nominal: _duration_pb2.Duration
-    min: _duration_pb2.Duration
-    max: _duration_pb2.Duration
-    def __init__(self, nominal: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ..., min: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ..., max: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    __slots__ = ("nominal_seconds", "min_seconds", "max_seconds")
+    NOMINAL_SECONDS_FIELD_NUMBER: _ClassVar[int]
+    MIN_SECONDS_FIELD_NUMBER: _ClassVar[int]
+    MAX_SECONDS_FIELD_NUMBER: _ClassVar[int]
+    nominal_seconds: int
+    min_seconds: int
+    max_seconds: int
+    def __init__(self, nominal_seconds: _Optional[int] = ..., min_seconds: _Optional[int] = ..., max_seconds: _Optional[int] = ...) -> None: ...

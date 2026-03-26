@@ -4,15 +4,16 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { Duration, Timestamp } from "@bufbuild/protobuf/wkt";
-import { file_google_protobuf_duration, file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file common/v1/time.proto.
  */
 export const file_common_v1_time: GenFile = /*@__PURE__*/
-  fileDesc("ChRjb21tb24vdjEvdGltZS5wcm90bxIJY29tbW9uLnYxImAKClRpbWVXaW5kb3cSKQoFc3RhcnQYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEicKA2VuZBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAijwEKEUVzdGltYXRlZER1cmF0aW9uEioKB25vbWluYWwYASABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24SJgoDbWluGAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uEiYKA21heBgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkKhAQoNY29tLmNvbW1vbi52MUIJVGltZVByb3RvUAFaN2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGiAgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21tb25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM", [file_google_protobuf_duration, file_google_protobuf_timestamp]);
+  fileDesc("ChRjb21tb24vdjEvdGltZS5wcm90bxIJY29tbW9uLnYxImAKClRpbWVXaW5kb3cSKQoFc3RhcnQYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEicKA2VuZBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAicQoRRXN0aW1hdGVkRHVyYXRpb24SIAoPbm9taW5hbF9zZWNvbmRzGAEgASgFQge6SAQaAigAEhwKC21pbl9zZWNvbmRzGAIgASgFQge6SAQaAigAEhwKC21heF9zZWNvbmRzGAMgASgFQge6SAQaAigAQqEBCg1jb20uY29tbW9uLnYxQglUaW1lUHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message common.v1.TimeWindow
@@ -41,19 +42,21 @@ export const TimeWindowSchema: GenMessage<TimeWindow> = /*@__PURE__*/
  */
 export type EstimatedDuration = Message<"common.v1.EstimatedDuration"> & {
   /**
-   * @generated from field: google.protobuf.Duration nominal = 1;
+   * Expected time in seconds
+   *
+   * @generated from field: int32 nominal_seconds = 1;
    */
-  nominal?: Duration;
+  nominalSeconds: number;
 
   /**
-   * @generated from field: google.protobuf.Duration min = 2;
+   * @generated from field: int32 min_seconds = 2;
    */
-  min?: Duration;
+  minSeconds: number;
 
   /**
-   * @generated from field: google.protobuf.Duration max = 3;
+   * @generated from field: int32 max_seconds = 3;
    */
-  max?: Duration;
+  maxSeconds: number;
 };
 
 /**

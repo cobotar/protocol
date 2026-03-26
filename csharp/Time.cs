@@ -24,24 +24,23 @@ namespace Messages.Common.V1 {
     static TimeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRjb21tb24vdjEvdGltZS5wcm90bxIJY29tbW9uLnYxGh5nb29nbGUvcHJv",
-            "dG9idWYvZHVyYXRpb24ucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8ibAoKVGltZVdpbmRvdxIwCgVzdGFydBgBIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBSBXN0YXJ0EiwKA2VuZBgCIAEoCzIaLmdv",
-            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VuZCKiAQoRRXN0aW1hdGVkRHVy",
-            "YXRpb24SMwoHbm9taW5hbBgBIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh",
-            "dGlvblIHbm9taW5hbBIrCgNtaW4YAiABKAsyGS5nb29nbGUucHJvdG9idWYu",
-            "RHVyYXRpb25SA21pbhIrCgNtYXgYAyABKAsyGS5nb29nbGUucHJvdG9idWYu",
-            "RHVyYXRpb25SA21heEKhAQoNY29tLmNvbW1vbi52MUIJVGltZVByb3RvUAFa",
-            "N2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24v",
-            "djE7Y29tbW9udjGiAgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21t",
-            "b25cVjHiAhVDb21tb25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZw",
-            "cm90bzM="));
+            "ChRjb21tb24vdjEvdGltZS5wcm90bxIJY29tbW9uLnYxGhtidWYvdmFsaWRh",
+            "dGUvdmFsaWRhdGUucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAu",
+            "cHJvdG8ibAoKVGltZVdpbmRvdxIwCgVzdGFydBgBIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXBSBXN0YXJ0EiwKA2VuZBgCIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VuZCKZAQoRRXN0aW1hdGVkRHVyYXRp",
+            "b24SMAoPbm9taW5hbF9zZWNvbmRzGAEgASgFQge6SAQaAigAUg5ub21pbmFs",
+            "U2Vjb25kcxIoCgttaW5fc2Vjb25kcxgCIAEoBUIHukgEGgIoAFIKbWluU2Vj",
+            "b25kcxIoCgttYXhfc2Vjb25kcxgDIAEoBUIHukgEGgIoAFIKbWF4U2Vjb25k",
+            "c0KhAQoNY29tLmNvbW1vbi52MUIJVGltZVByb3RvUAFaN2dpdGh1Yi5jb20v",
+            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGi",
+            "AgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21t",
+            "b25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.TimeWindow), global::Messages.Common.V1.TimeWindow.Parser, new[]{ "Start", "End" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.EstimatedDuration), global::Messages.Common.V1.EstimatedDuration.Parser, new[]{ "Nominal", "Min", "Max" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.EstimatedDuration), global::Messages.Common.V1.EstimatedDuration.Parser, new[]{ "NominalSeconds", "MinSeconds", "MaxSeconds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -336,9 +335,9 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EstimatedDuration(EstimatedDuration other) : this() {
-      nominal_ = other.nominal_ != null ? other.nominal_.Clone() : null;
-      min_ = other.min_ != null ? other.min_.Clone() : null;
-      max_ = other.max_ != null ? other.max_.Clone() : null;
+      nominalSeconds_ = other.nominalSeconds_;
+      minSeconds_ = other.minSeconds_;
+      maxSeconds_ = other.maxSeconds_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -348,39 +347,42 @@ namespace Messages.Common.V1 {
       return new EstimatedDuration(this);
     }
 
-    /// <summary>Field number for the "nominal" field.</summary>
-    public const int NominalFieldNumber = 1;
-    private global::Google.Protobuf.WellKnownTypes.Duration nominal_;
+    /// <summary>Field number for the "nominal_seconds" field.</summary>
+    public const int NominalSecondsFieldNumber = 1;
+    private int nominalSeconds_;
+    /// <summary>
+    /// Expected time in seconds
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Duration Nominal {
-      get { return nominal_; }
+    public int NominalSeconds {
+      get { return nominalSeconds_; }
       set {
-        nominal_ = value;
+        nominalSeconds_ = value;
       }
     }
 
-    /// <summary>Field number for the "min" field.</summary>
-    public const int MinFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Duration min_;
+    /// <summary>Field number for the "min_seconds" field.</summary>
+    public const int MinSecondsFieldNumber = 2;
+    private int minSeconds_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Duration Min {
-      get { return min_; }
+    public int MinSeconds {
+      get { return minSeconds_; }
       set {
-        min_ = value;
+        minSeconds_ = value;
       }
     }
 
-    /// <summary>Field number for the "max" field.</summary>
-    public const int MaxFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Duration max_;
+    /// <summary>Field number for the "max_seconds" field.</summary>
+    public const int MaxSecondsFieldNumber = 3;
+    private int maxSeconds_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Duration Max {
-      get { return max_; }
+    public int MaxSeconds {
+      get { return maxSeconds_; }
       set {
-        max_ = value;
+        maxSeconds_ = value;
       }
     }
 
@@ -399,9 +401,9 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Nominal, other.Nominal)) return false;
-      if (!object.Equals(Min, other.Min)) return false;
-      if (!object.Equals(Max, other.Max)) return false;
+      if (NominalSeconds != other.NominalSeconds) return false;
+      if (MinSeconds != other.MinSeconds) return false;
+      if (MaxSeconds != other.MaxSeconds) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -409,9 +411,9 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (nominal_ != null) hash ^= Nominal.GetHashCode();
-      if (min_ != null) hash ^= Min.GetHashCode();
-      if (max_ != null) hash ^= Max.GetHashCode();
+      if (NominalSeconds != 0) hash ^= NominalSeconds.GetHashCode();
+      if (MinSeconds != 0) hash ^= MinSeconds.GetHashCode();
+      if (MaxSeconds != 0) hash ^= MaxSeconds.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -430,17 +432,17 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (nominal_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Nominal);
+      if (NominalSeconds != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(NominalSeconds);
       }
-      if (min_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Min);
+      if (MinSeconds != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MinSeconds);
       }
-      if (max_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Max);
+      if (MaxSeconds != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(MaxSeconds);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -452,17 +454,17 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (nominal_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Nominal);
+      if (NominalSeconds != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(NominalSeconds);
       }
-      if (min_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Min);
+      if (MinSeconds != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MinSeconds);
       }
-      if (max_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Max);
+      if (MaxSeconds != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(MaxSeconds);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -474,14 +476,14 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (nominal_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Nominal);
+      if (NominalSeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NominalSeconds);
       }
-      if (min_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Min);
+      if (MinSeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MinSeconds);
       }
-      if (max_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Max);
+      if (MaxSeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxSeconds);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -495,23 +497,14 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.nominal_ != null) {
-        if (nominal_ == null) {
-          Nominal = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Nominal.MergeFrom(other.Nominal);
+      if (other.NominalSeconds != 0) {
+        NominalSeconds = other.NominalSeconds;
       }
-      if (other.min_ != null) {
-        if (min_ == null) {
-          Min = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Min.MergeFrom(other.Min);
+      if (other.MinSeconds != 0) {
+        MinSeconds = other.MinSeconds;
       }
-      if (other.max_ != null) {
-        if (max_ == null) {
-          Max = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Max.MergeFrom(other.Max);
+      if (other.MaxSeconds != 0) {
+        MaxSeconds = other.MaxSeconds;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -532,25 +525,16 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (nominal_ == null) {
-              Nominal = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Nominal);
+          case 8: {
+            NominalSeconds = input.ReadInt32();
             break;
           }
-          case 18: {
-            if (min_ == null) {
-              Min = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Min);
+          case 16: {
+            MinSeconds = input.ReadInt32();
             break;
           }
-          case 26: {
-            if (max_ == null) {
-              Max = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Max);
+          case 24: {
+            MaxSeconds = input.ReadInt32();
             break;
           }
         }
@@ -572,25 +556,16 @@ namespace Messages.Common.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            if (nominal_ == null) {
-              Nominal = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Nominal);
+          case 8: {
+            NominalSeconds = input.ReadInt32();
             break;
           }
-          case 18: {
-            if (min_ == null) {
-              Min = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Min);
+          case 16: {
+            MinSeconds = input.ReadInt32();
             break;
           }
-          case 26: {
-            if (max_ == null) {
-              Max = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Max);
+          case 24: {
+            MaxSeconds = input.ReadInt32();
             break;
           }
         }
