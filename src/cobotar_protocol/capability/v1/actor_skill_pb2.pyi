@@ -72,3 +72,9 @@ class ActorSkill(_message.Message):
     reasons: _containers.RepeatedScalarFieldContainer[str]
     next_actions: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., skill_id: _Optional[str] = ..., level: _Optional[_Union[SkillLevel, str]] = ..., status: _Optional[_Union[SkillStatus, str]] = ..., confidence: _Optional[float] = ..., last_evidence_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., evidence_count: _Optional[int] = ..., valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., validity_policy: _Optional[_Union[ValidityPolicyRef, _Mapping]] = ..., reasons: _Optional[_Iterable[str]] = ..., next_actions: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class ActorSkills(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ActorSkill]
+    def __init__(self, items: _Optional[_Iterable[_Union[ActorSkill, _Mapping]]] = ...) -> None: ...

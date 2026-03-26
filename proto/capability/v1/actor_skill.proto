@@ -61,6 +61,10 @@ message ActorSkill {
   repeated string next_actions = 11; // ["micro_training", "extra_verification_required"]
 }
 
+message ActorSkills {
+  repeated ActorSkill items = 1;
+}
+
 /*
        Policies:
        Use policy types per Skill Unit (and optionally per context/tool constraint)

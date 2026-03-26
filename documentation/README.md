@@ -160,6 +160,7 @@
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
+    - [ActorSkills](#capability-v1-ActorSkills)
     - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
   
     - [SkillLevel](#capability-v1-SkillLevel)
@@ -2549,6 +2550,21 @@ Systems should require strict validation, restricted actor permissions, and expl
 | validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | which rule set is used |
 | reasons | [string](#string) | repeated | [&#34;inactivity_&gt;30d&#34;] |
 | next_actions | [string](#string) | repeated | [&#34;micro_training&#34;, &#34;extra_verification_required&#34;] |
+
+
+
+
+
+
+<a name="capability-v1-ActorSkills"></a>
+
+### ActorSkills
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ActorSkill](#capability-v1-ActorSkill) | repeated |  |
 
 
 

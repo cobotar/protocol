@@ -317,6 +317,50 @@ func (x *ActorSkill) GetNextActions() []string {
 	return nil
 }
 
+type ActorSkills struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ActorSkill          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ActorSkills) Reset() {
+	*x = ActorSkills{}
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActorSkills) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActorSkills) ProtoMessage() {}
+
+func (x *ActorSkills) ProtoReflect() protoreflect.Message {
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActorSkills.ProtoReflect.Descriptor instead.
+func (*ActorSkills) Descriptor() ([]byte, []int) {
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ActorSkills) GetItems() []*ActorSkill {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_capability_v1_actor_skill_proto protoreflect.FileDescriptor
 
 const file_capability_v1_actor_skill_proto_rawDesc = "" +
@@ -341,7 +385,9 @@ const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"\x0fvalidity_policy\x18\t \x01(\v2 .capability.v1.ValidityPolicyRefR\x0evalidityPolicy\x12\x18\n" +
 	"\areasons\x18\n" +
 	" \x03(\tR\areasons\x12!\n" +
-	"\fnext_actions\x18\v \x03(\tR\vnextActions*\xae\x01\n" +
+	"\fnext_actions\x18\v \x03(\tR\vnextActions\">\n" +
+	"\vActorSkills\x12/\n" +
+	"\x05items\x18\x01 \x03(\v2\x19.capability.v1.ActorSkillR\x05items*\xae\x01\n" +
 	"\n" +
 	"SkillLevel\x12\x1b\n" +
 	"\x17SKILL_LEVEL_UNSPECIFIED\x10\x00\x12\x1b\n" +
@@ -370,27 +416,29 @@ func file_capability_v1_actor_skill_proto_rawDescGZIP() []byte {
 }
 
 var file_capability_v1_actor_skill_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_capability_v1_actor_skill_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_capability_v1_actor_skill_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_capability_v1_actor_skill_proto_goTypes = []any{
 	(SkillLevel)(0),               // 0: capability.v1.SkillLevel
 	(SkillStatus)(0),              // 1: capability.v1.SkillStatus
 	(*ValidityPolicyRef)(nil),     // 2: capability.v1.ValidityPolicyRef
 	(*ActorSkill)(nil),            // 3: capability.v1.ActorSkill
-	(*v1.ActorRef)(nil),           // 4: common.v1.ActorRef
-	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
+	(*ActorSkills)(nil),           // 4: capability.v1.ActorSkills
+	(*v1.ActorRef)(nil),           // 5: common.v1.ActorRef
+	(*timestamppb.Timestamp)(nil), // 6: google.protobuf.Timestamp
 }
 var file_capability_v1_actor_skill_proto_depIdxs = []int32{
-	4, // 0: capability.v1.ActorSkill.actor:type_name -> common.v1.ActorRef
+	5, // 0: capability.v1.ActorSkill.actor:type_name -> common.v1.ActorRef
 	0, // 1: capability.v1.ActorSkill.level:type_name -> capability.v1.SkillLevel
 	1, // 2: capability.v1.ActorSkill.status:type_name -> capability.v1.SkillStatus
-	5, // 3: capability.v1.ActorSkill.last_evidence_at:type_name -> google.protobuf.Timestamp
-	5, // 4: capability.v1.ActorSkill.valid_until:type_name -> google.protobuf.Timestamp
+	6, // 3: capability.v1.ActorSkill.last_evidence_at:type_name -> google.protobuf.Timestamp
+	6, // 4: capability.v1.ActorSkill.valid_until:type_name -> google.protobuf.Timestamp
 	2, // 5: capability.v1.ActorSkill.validity_policy:type_name -> capability.v1.ValidityPolicyRef
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	3, // 6: capability.v1.ActorSkills.items:type_name -> capability.v1.ActorSkill
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_capability_v1_actor_skill_proto_init() }
@@ -404,7 +452,7 @@ func file_capability_v1_actor_skill_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_capability_v1_actor_skill_proto_rawDesc), len(file_capability_v1_actor_skill_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
