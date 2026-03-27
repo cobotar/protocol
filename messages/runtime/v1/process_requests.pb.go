@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: process/v1/process_requests.proto
+// source: runtime/v1/process_requests.proto
 
-package processv1
+package runtimev1
 
 import (
-	v11 "github.com/cobotar/protocol/messages/runtime/v1"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -111,11 +110,11 @@ func (x ProcessLoadFailure) String() string {
 }
 
 func (ProcessLoadFailure) Descriptor() protoreflect.EnumDescriptor {
-	return file_process_v1_process_requests_proto_enumTypes[0].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[0].Descriptor()
 }
 
 func (ProcessLoadFailure) Type() protoreflect.EnumType {
-	return &file_process_v1_process_requests_proto_enumTypes[0]
+	return &file_runtime_v1_process_requests_proto_enumTypes[0]
 }
 
 func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
@@ -124,7 +123,7 @@ func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadFailure.Descriptor instead.
 func (ProcessLoadFailure) EnumDescriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{0}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{0}
 }
 
 type ProcessRunIssueSeverity int32
@@ -160,11 +159,11 @@ func (x ProcessRunIssueSeverity) String() string {
 }
 
 func (ProcessRunIssueSeverity) Descriptor() protoreflect.EnumDescriptor {
-	return file_process_v1_process_requests_proto_enumTypes[1].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[1].Descriptor()
 }
 
 func (ProcessRunIssueSeverity) Type() protoreflect.EnumType {
-	return &file_process_v1_process_requests_proto_enumTypes[1]
+	return &file_runtime_v1_process_requests_proto_enumTypes[1]
 }
 
 func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
@@ -173,7 +172,7 @@ func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunIssueSeverity.Descriptor instead.
 func (ProcessRunIssueSeverity) EnumDescriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
 }
 
 type RequirementImportance int32
@@ -209,11 +208,11 @@ func (x RequirementImportance) String() string {
 }
 
 func (RequirementImportance) Descriptor() protoreflect.EnumDescriptor {
-	return file_process_v1_process_requests_proto_enumTypes[2].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[2].Descriptor()
 }
 
 func (RequirementImportance) Type() protoreflect.EnumType {
-	return &file_process_v1_process_requests_proto_enumTypes[2]
+	return &file_runtime_v1_process_requests_proto_enumTypes[2]
 }
 
 func (x RequirementImportance) Number() protoreflect.EnumNumber {
@@ -222,7 +221,7 @@ func (x RequirementImportance) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RequirementImportance.Descriptor instead.
 func (RequirementImportance) EnumDescriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{2}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
 }
 
 type ProcessRunPrecheckStatus int32
@@ -261,11 +260,11 @@ func (x ProcessRunPrecheckStatus) String() string {
 }
 
 func (ProcessRunPrecheckStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_process_v1_process_requests_proto_enumTypes[3].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[3].Descriptor()
 }
 
 func (ProcessRunPrecheckStatus) Type() protoreflect.EnumType {
-	return &file_process_v1_process_requests_proto_enumTypes[3]
+	return &file_runtime_v1_process_requests_proto_enumTypes[3]
 }
 
 func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
@@ -274,7 +273,7 @@ func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunPrecheckStatus.Descriptor instead.
 func (ProcessRunPrecheckStatus) EnumDescriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
 }
 
 type ProcessLoadStatus int32
@@ -313,11 +312,11 @@ func (x ProcessLoadStatus) String() string {
 }
 
 func (ProcessLoadStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_process_v1_process_requests_proto_enumTypes[4].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[4].Descriptor()
 }
 
 func (ProcessLoadStatus) Type() protoreflect.EnumType {
-	return &file_process_v1_process_requests_proto_enumTypes[4]
+	return &file_runtime_v1_process_requests_proto_enumTypes[4]
 }
 
 func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
@@ -326,7 +325,7 @@ func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadStatus.Descriptor instead.
 func (ProcessLoadStatus) EnumDescriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 // ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
@@ -349,13 +348,14 @@ type ProcessLoadRequest struct {
 	TargetLineId         string                   `protobuf:"bytes,2,opt,name=target_line_id,json=targetLineId,proto3" json:"target_line_id,omitempty"`
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,3,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	DryRun               bool                     `protobuf:"varint,4,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"` // true = precheck only, false = precheck + instantiate
+	QueueIfOccupied      bool                     `protobuf:"varint,5,opt,name=queue_if_occupied,json=queueIfOccupied,proto3" json:"queue_if_occupied,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
 
 func (x *ProcessLoadRequest) Reset() {
 	*x = ProcessLoadRequest{}
-	mi := &file_process_v1_process_requests_proto_msgTypes[0]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -367,7 +367,7 @@ func (x *ProcessLoadRequest) String() string {
 func (*ProcessLoadRequest) ProtoMessage() {}
 
 func (x *ProcessLoadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_requests_proto_msgTypes[0]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *ProcessLoadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessLoadRequest.ProtoReflect.Descriptor instead.
 func (*ProcessLoadRequest) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{0}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ProcessLoadRequest) GetProcessRecipeId() string {
@@ -411,11 +411,18 @@ func (x *ProcessLoadRequest) GetDryRun() bool {
 	return false
 }
 
+func (x *ProcessLoadRequest) GetQueueIfOccupied() bool {
+	if x != nil {
+		return x.QueueIfOccupied
+	}
+	return false
+}
+
 type ProcessRunIssue struct {
 	state    protoimpl.MessageState  `protogen:"open.v1"`
-	Failure  ProcessLoadFailure      `protobuf:"varint,1,opt,name=failure,proto3,enum=process.v1.ProcessLoadFailure" json:"failure,omitempty"`
+	Failure  ProcessLoadFailure      `protobuf:"varint,1,opt,name=failure,proto3,enum=runtime.v1.ProcessLoadFailure" json:"failure,omitempty"`
 	Message  string                  `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	Severity ProcessRunIssueSeverity `protobuf:"varint,3,opt,name=severity,proto3,enum=process.v1.ProcessRunIssueSeverity" json:"severity,omitempty"`
+	Severity ProcessRunIssueSeverity `protobuf:"varint,3,opt,name=severity,proto3,enum=runtime.v1.ProcessRunIssueSeverity" json:"severity,omitempty"`
 	// Scope
 	ProcessRecipeId      string `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
 	SequenceDefinitionId string `protobuf:"bytes,5,opt,name=sequence_definition_id,json=sequenceDefinitionId,proto3" json:"sequence_definition_id,omitempty"`
@@ -429,14 +436,14 @@ type ProcessRunIssue struct {
 	ResourceId          string `protobuf:"bytes,12,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset instance if known
 	// Optional remediation hint
 	Remediation   string                `protobuf:"bytes,13,opt,name=remediation,proto3" json:"remediation,omitempty"`
-	Importance    RequirementImportance `protobuf:"varint,14,opt,name=importance,proto3,enum=process.v1.RequirementImportance" json:"importance,omitempty"`
+	Importance    RequirementImportance `protobuf:"varint,14,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessRunIssue) Reset() {
 	*x = ProcessRunIssue{}
-	mi := &file_process_v1_process_requests_proto_msgTypes[1]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -448,7 +455,7 @@ func (x *ProcessRunIssue) String() string {
 func (*ProcessRunIssue) ProtoMessage() {}
 
 func (x *ProcessRunIssue) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_requests_proto_msgTypes[1]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -461,7 +468,7 @@ func (x *ProcessRunIssue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRunIssue.ProtoReflect.Descriptor instead.
 func (*ProcessRunIssue) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ProcessRunIssue) GetFailure() ProcessLoadFailure {
@@ -577,7 +584,7 @@ type TaskFeasibility struct {
 
 func (x *TaskFeasibility) Reset() {
 	*x = TaskFeasibility{}
-	mi := &file_process_v1_process_requests_proto_msgTypes[2]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -589,7 +596,7 @@ func (x *TaskFeasibility) String() string {
 func (*TaskFeasibility) ProtoMessage() {}
 
 func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_requests_proto_msgTypes[2]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -602,7 +609,7 @@ func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskFeasibility.ProtoReflect.Descriptor instead.
 func (*TaskFeasibility) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{2}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *TaskFeasibility) GetTaskDefinitionId() string {
@@ -667,14 +674,14 @@ type ProcessRunPrecheckResult struct {
 	// Optional: useful if precheck computes feasible assignments/resources
 	TaskFeasibility []*TaskFeasibility `protobuf:"bytes,7,rep,name=task_feasibility,json=taskFeasibility,proto3" json:"task_feasibility,omitempty"`
 	// Optional overall status
-	Status        ProcessRunPrecheckStatus `protobuf:"varint,8,opt,name=status,proto3,enum=process.v1.ProcessRunPrecheckStatus" json:"status,omitempty"`
+	Status        ProcessRunPrecheckStatus `protobuf:"varint,8,opt,name=status,proto3,enum=runtime.v1.ProcessRunPrecheckStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessRunPrecheckResult) Reset() {
 	*x = ProcessRunPrecheckResult{}
-	mi := &file_process_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -686,7 +693,7 @@ func (x *ProcessRunPrecheckResult) String() string {
 func (*ProcessRunPrecheckResult) ProtoMessage() {}
 
 func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -699,7 +706,7 @@ func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRunPrecheckResult.ProtoReflect.Descriptor instead.
 func (*ProcessRunPrecheckResult) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ProcessRunPrecheckResult) GetOk() bool {
@@ -760,16 +767,16 @@ func (x *ProcessRunPrecheckResult) GetStatus() ProcessRunPrecheckStatus {
 
 type ProcessLoadResult struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Status        ProcessLoadStatus         `protobuf:"varint,1,opt,name=status,proto3,enum=process.v1.ProcessLoadStatus" json:"status,omitempty"`
+	Status        ProcessLoadStatus         `protobuf:"varint,1,opt,name=status,proto3,enum=runtime.v1.ProcessLoadStatus" json:"status,omitempty"`
 	Precheck      *ProcessRunPrecheckResult `protobuf:"bytes,2,opt,name=precheck,proto3" json:"precheck,omitempty"`
-	ProcessRun    *v11.ProcessRun           `protobuf:"bytes,3,opt,name=process_run,json=processRun,proto3" json:"process_run,omitempty"`
+	ProcessRun    *ProcessRun               `protobuf:"bytes,3,opt,name=process_run,json=processRun,proto3" json:"process_run,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessLoadResult) Reset() {
 	*x = ProcessLoadResult{}
-	mi := &file_process_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -781,7 +788,7 @@ func (x *ProcessLoadResult) String() string {
 func (*ProcessLoadResult) ProtoMessage() {}
 
 func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -794,7 +801,7 @@ func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessLoadResult.ProtoReflect.Descriptor instead.
 func (*ProcessLoadResult) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ProcessLoadResult) GetStatus() ProcessLoadStatus {
@@ -811,28 +818,29 @@ func (x *ProcessLoadResult) GetPrecheck() *ProcessRunPrecheckResult {
 	return nil
 }
 
-func (x *ProcessLoadResult) GetProcessRun() *v11.ProcessRun {
+func (x *ProcessLoadResult) GetProcessRun() *ProcessRun {
 	if x != nil {
 		return x.ProcessRun
 	}
 	return nil
 }
 
-var File_process_v1_process_requests_proto protoreflect.FileDescriptor
+var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 
-const file_process_v1_process_requests_proto_rawDesc = "" +
+const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
-	"!process/v1/process_requests.proto\x12\n" +
-	"process.v1\x1a\x1cruntime/v1/process_run.proto\x1a'variance/v1/variant_configuration.proto\"\xd7\x01\n" +
+	"!runtime/v1/process_requests.proto\x12\n" +
+	"runtime.v1\x1a\x1cruntime/v1/process_run.proto\x1a'variance/v1/variant_configuration.proto\"\x83\x02\n" +
 	"\x12ProcessLoadRequest\x12*\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tR\x0fprocessRecipeId\x12$\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tR\ftargetLineId\x12V\n" +
 	"\x15variant_configuration\x18\x03 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x17\n" +
-	"\adry_run\x18\x04 \x01(\bR\x06dryRun\"\x84\x05\n" +
+	"\adry_run\x18\x04 \x01(\bR\x06dryRun\x12*\n" +
+	"\x11queue_if_occupied\x18\x05 \x01(\bR\x0fqueueIfOccupied\"\x84\x05\n" +
 	"\x0fProcessRunIssue\x128\n" +
-	"\afailure\x18\x01 \x01(\x0e2\x1e.process.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
+	"\afailure\x18\x01 \x01(\x0e2\x1e.runtime.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12?\n" +
-	"\bseverity\x18\x03 \x01(\x0e2#.process.v1.ProcessRunIssueSeverityR\bseverity\x12*\n" +
+	"\bseverity\x18\x03 \x01(\x0e2#.runtime.v1.ProcessRunIssueSeverityR\bseverity\x12*\n" +
 	"\x11process_recipe_id\x18\x04 \x01(\tR\x0fprocessRecipeId\x124\n" +
 	"\x16sequence_definition_id\x18\x05 \x01(\tR\x14sequenceDefinitionId\x12,\n" +
 	"\x12task_definition_id\x18\x06 \x01(\tR\x10taskDefinitionId\x12,\n" +
@@ -847,7 +855,7 @@ const file_process_v1_process_requests_proto_rawDesc = "" +
 	"resourceId\x12 \n" +
 	"\vremediation\x18\r \x01(\tR\vremediation\x12A\n" +
 	"\n" +
-	"importance\x18\x0e \x01(\x0e2!.process.v1.RequirementImportanceR\n" +
+	"importance\x18\x0e \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
 	"importance\"\x85\x03\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
@@ -856,19 +864,19 @@ const file_process_v1_process_requests_proto_rawDesc = "" +
 	"\x1bcandidate_tool_instance_ids\x18\x04 \x03(\tR\x18candidateToolInstanceIds\x12C\n" +
 	"\x1ecandidate_fixture_instance_ids\x18\x05 \x03(\tR\x1bcandidateFixtureInstanceIds\x12?\n" +
 	"\x1ccandidate_asset_instance_ids\x18\x06 \x03(\tR\x19candidateAssetInstanceIds\x123\n" +
-	"\x06issues\x18\a \x03(\v2\x1b.process.v1.ProcessRunIssueR\x06issues\"\x99\x03\n" +
+	"\x06issues\x18\a \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\x99\x03\n" +
 	"\x18ProcessRunPrecheckResult\x12\x0e\n" +
 	"\x02ok\x18\x01 \x01(\bR\x02ok\x123\n" +
-	"\x06issues\x18\x02 \x03(\v2\x1b.process.v1.ProcessRunIssueR\x06issues\x120\n" +
+	"\x06issues\x18\x02 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x120\n" +
 	"\x14blocking_issue_count\x18\x03 \x01(\x05R\x12blockingIssueCount\x12.\n" +
 	"\x13warning_issue_count\x18\x04 \x01(\x05R\x11warningIssueCount\x12*\n" +
 	"\x11process_recipe_id\x18\x05 \x01(\tR\x0fprocessRecipeId\x12$\n" +
 	"\x0etarget_line_id\x18\x06 \x01(\tR\ftargetLineId\x12F\n" +
-	"\x10task_feasibility\x18\a \x03(\v2\x1b.process.v1.TaskFeasibilityR\x0ftaskFeasibility\x12<\n" +
-	"\x06status\x18\b \x01(\x0e2$.process.v1.ProcessRunPrecheckStatusR\x06status\"\xc5\x01\n" +
+	"\x10task_feasibility\x18\a \x03(\v2\x1b.runtime.v1.TaskFeasibilityR\x0ftaskFeasibility\x12<\n" +
+	"\x06status\x18\b \x01(\x0e2$.runtime.v1.ProcessRunPrecheckStatusR\x06status\"\xc5\x01\n" +
 	"\x11ProcessLoadResult\x125\n" +
-	"\x06status\x18\x01 \x01(\x0e2\x1d.process.v1.ProcessLoadStatusR\x06status\x12@\n" +
-	"\bprecheck\x18\x02 \x01(\v2$.process.v1.ProcessRunPrecheckResultR\bprecheck\x127\n" +
+	"\x06status\x18\x01 \x01(\x0e2\x1d.runtime.v1.ProcessLoadStatusR\x06status\x12@\n" +
+	"\bprecheck\x18\x02 \x01(\v2$.runtime.v1.ProcessRunPrecheckResultR\bprecheck\x127\n" +
 	"\vprocess_run\x18\x03 \x01(\v2\x16.runtime.v1.ProcessRunR\n" +
 	"processRun*\xa9\a\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
@@ -910,49 +918,49 @@ const file_process_v1_process_requests_proto_rawDesc = "" +
 	"#PROCESS_LOAD_STATUS_PRECHECK_FAILED\x10\x01\x12\x1d\n" +
 	"\x19PROCESS_LOAD_STATUS_READY\x10\x02\x12\x1e\n" +
 	"\x1aPROCESS_LOAD_STATUS_LOADED\x10\x03B\xb3\x01\n" +
-	"\x0ecom.process.v1B\x14ProcessRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
-	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
+	"\x0ecom.runtime.v1B\x14ProcessRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (
-	file_process_v1_process_requests_proto_rawDescOnce sync.Once
-	file_process_v1_process_requests_proto_rawDescData []byte
+	file_runtime_v1_process_requests_proto_rawDescOnce sync.Once
+	file_runtime_v1_process_requests_proto_rawDescData []byte
 )
 
-func file_process_v1_process_requests_proto_rawDescGZIP() []byte {
-	file_process_v1_process_requests_proto_rawDescOnce.Do(func() {
-		file_process_v1_process_requests_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_process_v1_process_requests_proto_rawDesc), len(file_process_v1_process_requests_proto_rawDesc)))
+func file_runtime_v1_process_requests_proto_rawDescGZIP() []byte {
+	file_runtime_v1_process_requests_proto_rawDescOnce.Do(func() {
+		file_runtime_v1_process_requests_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)))
 	})
-	return file_process_v1_process_requests_proto_rawDescData
+	return file_runtime_v1_process_requests_proto_rawDescData
 }
 
-var file_process_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_process_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_process_v1_process_requests_proto_goTypes = []any{
-	(ProcessLoadFailure)(0),          // 0: process.v1.ProcessLoadFailure
-	(ProcessRunIssueSeverity)(0),     // 1: process.v1.ProcessRunIssueSeverity
-	(RequirementImportance)(0),       // 2: process.v1.RequirementImportance
-	(ProcessRunPrecheckStatus)(0),    // 3: process.v1.ProcessRunPrecheckStatus
-	(ProcessLoadStatus)(0),           // 4: process.v1.ProcessLoadStatus
-	(*ProcessLoadRequest)(nil),       // 5: process.v1.ProcessLoadRequest
-	(*ProcessRunIssue)(nil),          // 6: process.v1.ProcessRunIssue
-	(*TaskFeasibility)(nil),          // 7: process.v1.TaskFeasibility
-	(*ProcessRunPrecheckResult)(nil), // 8: process.v1.ProcessRunPrecheckResult
-	(*ProcessLoadResult)(nil),        // 9: process.v1.ProcessLoadResult
+var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
+var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_runtime_v1_process_requests_proto_goTypes = []any{
+	(ProcessLoadFailure)(0),          // 0: runtime.v1.ProcessLoadFailure
+	(ProcessRunIssueSeverity)(0),     // 1: runtime.v1.ProcessRunIssueSeverity
+	(RequirementImportance)(0),       // 2: runtime.v1.RequirementImportance
+	(ProcessRunPrecheckStatus)(0),    // 3: runtime.v1.ProcessRunPrecheckStatus
+	(ProcessLoadStatus)(0),           // 4: runtime.v1.ProcessLoadStatus
+	(*ProcessLoadRequest)(nil),       // 5: runtime.v1.ProcessLoadRequest
+	(*ProcessRunIssue)(nil),          // 6: runtime.v1.ProcessRunIssue
+	(*TaskFeasibility)(nil),          // 7: runtime.v1.TaskFeasibility
+	(*ProcessRunPrecheckResult)(nil), // 8: runtime.v1.ProcessRunPrecheckResult
+	(*ProcessLoadResult)(nil),        // 9: runtime.v1.ProcessLoadResult
 	(*v1.VariantConfiguration)(nil),  // 10: variance.v1.VariantConfiguration
-	(*v11.ProcessRun)(nil),           // 11: runtime.v1.ProcessRun
+	(*ProcessRun)(nil),               // 11: runtime.v1.ProcessRun
 }
-var file_process_v1_process_requests_proto_depIdxs = []int32{
-	10, // 0: process.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	0,  // 1: process.v1.ProcessRunIssue.failure:type_name -> process.v1.ProcessLoadFailure
-	1,  // 2: process.v1.ProcessRunIssue.severity:type_name -> process.v1.ProcessRunIssueSeverity
-	2,  // 3: process.v1.ProcessRunIssue.importance:type_name -> process.v1.RequirementImportance
-	6,  // 4: process.v1.TaskFeasibility.issues:type_name -> process.v1.ProcessRunIssue
-	6,  // 5: process.v1.ProcessRunPrecheckResult.issues:type_name -> process.v1.ProcessRunIssue
-	7,  // 6: process.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> process.v1.TaskFeasibility
-	3,  // 7: process.v1.ProcessRunPrecheckResult.status:type_name -> process.v1.ProcessRunPrecheckStatus
-	4,  // 8: process.v1.ProcessLoadResult.status:type_name -> process.v1.ProcessLoadStatus
-	8,  // 9: process.v1.ProcessLoadResult.precheck:type_name -> process.v1.ProcessRunPrecheckResult
-	11, // 10: process.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+var file_runtime_v1_process_requests_proto_depIdxs = []int32{
+	10, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	0,  // 1: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
+	1,  // 2: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
+	2,  // 3: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
+	6,  // 4: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	6,  // 5: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	7,  // 6: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	3,  // 7: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	4,  // 8: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	8,  // 9: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	11, // 10: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
 	11, // [11:11] is the sub-list for method output_type
 	11, // [11:11] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -960,27 +968,28 @@ var file_process_v1_process_requests_proto_depIdxs = []int32{
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_process_v1_process_requests_proto_init() }
-func file_process_v1_process_requests_proto_init() {
-	if File_process_v1_process_requests_proto != nil {
+func init() { file_runtime_v1_process_requests_proto_init() }
+func file_runtime_v1_process_requests_proto_init() {
+	if File_runtime_v1_process_requests_proto != nil {
 		return
 	}
+	file_runtime_v1_process_run_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_process_requests_proto_rawDesc), len(file_process_v1_process_requests_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)),
 			NumEnums:      5,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_process_v1_process_requests_proto_goTypes,
-		DependencyIndexes: file_process_v1_process_requests_proto_depIdxs,
-		EnumInfos:         file_process_v1_process_requests_proto_enumTypes,
-		MessageInfos:      file_process_v1_process_requests_proto_msgTypes,
+		GoTypes:           file_runtime_v1_process_requests_proto_goTypes,
+		DependencyIndexes: file_runtime_v1_process_requests_proto_depIdxs,
+		EnumInfos:         file_runtime_v1_process_requests_proto_enumTypes,
+		MessageInfos:      file_runtime_v1_process_requests_proto_msgTypes,
 	}.Build()
-	File_process_v1_process_requests_proto = out.File
-	file_process_v1_process_requests_proto_goTypes = nil
-	file_process_v1_process_requests_proto_depIdxs = nil
+	File_runtime_v1_process_requests_proto = out.File
+	file_runtime_v1_process_requests_proto_goTypes = nil
+	file_runtime_v1_process_requests_proto_depIdxs = nil
 }

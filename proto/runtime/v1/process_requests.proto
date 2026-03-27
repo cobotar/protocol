@@ -1,11 +1,11 @@
 syntax = "proto3";
-package process.v1;
+package runtime.v1;
 
 import "runtime/v1/process_run.proto";
 import "variance/v1/variant_configuration.proto";
 
-option csharp_namespace = "Messages.Process.V1";
-option go_package = "github.com/cobotar/protocol/messages/process/v1";
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 // ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
 // During this process, resources feasibility should be checked, i.e.
@@ -25,7 +25,7 @@ message ProcessLoadRequest {
   string target_line_id = 2;
   variance.v1.VariantConfiguration variant_configuration = 3;
   bool dry_run = 4; // true = precheck only, false = precheck + instantiate
-  // bool queue_if_occupied = 4;
+  bool queue_if_occupied = 5;
 }
 
 enum ProcessLoadFailure {

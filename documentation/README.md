@@ -364,30 +364,6 @@
     - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
   
-- [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
-    - [ActorAssignment](#runtime-v1-ActorAssignment)
-    - [ActorAssignments](#runtime-v1-ActorAssignments)
-  
-- [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
-    - [ProcessRun](#runtime-v1-ProcessRun)
-    - [ProcessRuns](#runtime-v1-ProcessRuns)
-    - [RunParameter](#runtime-v1-RunParameter)
-  
-    - [ProcessRunState](#runtime-v1-ProcessRunState)
-  
-- [process/v1/process_requests.proto](#process_v1_process_requests-proto)
-    - [ProcessLoadRequest](#process-v1-ProcessLoadRequest)
-    - [ProcessLoadResult](#process-v1-ProcessLoadResult)
-    - [ProcessRunIssue](#process-v1-ProcessRunIssue)
-    - [ProcessRunPrecheckResult](#process-v1-ProcessRunPrecheckResult)
-    - [TaskFeasibility](#process-v1-TaskFeasibility)
-  
-    - [ProcessLoadFailure](#process-v1-ProcessLoadFailure)
-    - [ProcessLoadStatus](#process-v1-ProcessLoadStatus)
-    - [ProcessRunIssueSeverity](#process-v1-ProcessRunIssueSeverity)
-    - [ProcessRunPrecheckStatus](#process-v1-ProcessRunPrecheckStatus)
-    - [RequirementImportance](#process-v1-RequirementImportance)
-  
 - [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
     - [AssemblyNode](#product-v1-AssemblyNode)
   
@@ -526,9 +502,33 @@
 - [robot/v1/zone.proto](#robot_v1_zone-proto)
     - [ZoneMessage](#robot-v1-ZoneMessage)
   
+- [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
+    - [ActorAssignment](#runtime-v1-ActorAssignment)
+    - [ActorAssignments](#runtime-v1-ActorAssignments)
+  
 - [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
     - [EvidenceFact](#runtime-v1-EvidenceFact)
     - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
+  
+- [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
+    - [ProcessRun](#runtime-v1-ProcessRun)
+    - [ProcessRuns](#runtime-v1-ProcessRuns)
+    - [RunParameter](#runtime-v1-RunParameter)
+  
+    - [ProcessRunState](#runtime-v1-ProcessRunState)
+  
+- [runtime/v1/process_requests.proto](#runtime_v1_process_requests-proto)
+    - [ProcessLoadRequest](#runtime-v1-ProcessLoadRequest)
+    - [ProcessLoadResult](#runtime-v1-ProcessLoadResult)
+    - [ProcessRunIssue](#runtime-v1-ProcessRunIssue)
+    - [ProcessRunPrecheckResult](#runtime-v1-ProcessRunPrecheckResult)
+    - [TaskFeasibility](#runtime-v1-TaskFeasibility)
+  
+    - [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure)
+    - [ProcessLoadStatus](#runtime-v1-ProcessLoadStatus)
+    - [ProcessRunIssueSeverity](#runtime-v1-ProcessRunIssueSeverity)
+    - [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus)
+    - [RequirementImportance](#runtime-v1-RequirementImportance)
   
 - [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
     - [SequenceRun](#runtime-v1-SequenceRun)
@@ -5172,369 +5172,6 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 
 
-<a name="runtime_v1_actor_assignment-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## runtime/v1/actor_assignment.proto
-
-
-
-<a name="runtime-v1-ActorAssignment"></a>
-
-### ActorAssignment
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
-| process_run_id | [string](#string) |  |  |
-| sequence_run_id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
-| assigned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| released_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="runtime-v1-ActorAssignments"></a>
-
-### ActorAssignments
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="runtime_v1_process_run-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## runtime/v1/process_run.proto
-
-
-
-<a name="runtime-v1-ProcessRun"></a>
-
-### ProcessRun
-ProcessRun is only created when a concrete cell can currently satisfy it.
-Is is based upon a ProcessRecipe which defines what must be possible.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| process_recipe_id | [string](#string) |  |  |
-| order_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| root_sequence_run_id | [string](#string) |  |  |
-| sequence_run_ids | [string](#string) | repeated |  |
-| task_run_ids | [string](#string) | repeated |  |
-| state | [ProcessRunState](#runtime-v1-ProcessRunState) |  |  |
-| initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
-| parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
-
-
-
-
-
-
-<a name="runtime-v1-ProcessRuns"></a>
-
-### ProcessRuns
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ProcessRun](#runtime-v1-ProcessRun) | repeated |  |
-
-
-
-
-
-
-<a name="runtime-v1-RunParameter"></a>
-
-### RunParameter
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  | &#34;color&#34;, &#34;label_text&#34;, &#34;customer_name&#34; |
-| value | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="runtime-v1-ProcessRunState"></a>
-
-### ProcessRunState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_STATE_WAITING | 1 |  |
-| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
-| PROCESS_RUN_STATE_COMPLETED | 3 |  |
-| PROCESS_RUN_STATE_ABORTED | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="process_v1_process_requests-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## process/v1/process_requests.proto
-
-
-
-<a name="process-v1-ProcessLoadRequest"></a>
-
-### ProcessLoadRequest
-ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
-During this process, resources feasibility should be checked, i.e.
-   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
-
-Thus the following must be evaluated:
-- available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
-- available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
-- available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
-- valid calibration
-- fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
-- safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
-- active faults / disabled resources
-- asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --&gt; then verify those assets exist and are available.)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| process_recipe_id | [string](#string) |  |  |
-| target_line_id | [string](#string) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
-| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
-
-
-
-
-
-
-<a name="process-v1-ProcessLoadResult"></a>
-
-### ProcessLoadResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| status | [ProcessLoadStatus](#process-v1-ProcessLoadStatus) |  |  |
-| precheck | [ProcessRunPrecheckResult](#process-v1-ProcessRunPrecheckResult) |  |  |
-| process_run | [runtime.v1.ProcessRun](#runtime-v1-ProcessRun) |  |  |
-
-
-
-
-
-
-<a name="process-v1-ProcessRunIssue"></a>
-
-### ProcessRunIssue
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| failure | [ProcessLoadFailure](#process-v1-ProcessLoadFailure) |  |  |
-| message | [string](#string) |  |  |
-| severity | [ProcessRunIssueSeverity](#process-v1-ProcessRunIssueSeverity) |  |  |
-| process_recipe_id | [string](#string) |  | Scope |
-| sequence_definition_id | [string](#string) |  |  |
-| task_definition_id | [string](#string) |  |  |
-| required_tool_role | [string](#string) |  | Related requirement/resource |
-| required_skill_id | [string](#string) |  |  |
-| fixture_definition_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| actor_id | [string](#string) |  |  |
-| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
-| remediation | [string](#string) |  | Optional remediation hint |
-| importance | [RequirementImportance](#process-v1-RequirementImportance) |  |  |
-
-
-
-
-
-
-<a name="process-v1-ProcessRunPrecheckResult"></a>
-
-### ProcessRunPrecheckResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ok | [bool](#bool) |  |  |
-| issues | [ProcessRunIssue](#process-v1-ProcessRunIssue) | repeated |  |
-| blocking_issue_count | [int32](#int32) |  | Optional summary counts for UI / fast filtering |
-| warning_issue_count | [int32](#int32) |  |  |
-| process_recipe_id | [string](#string) |  | What was checked |
-| target_line_id | [string](#string) |  |  |
-| task_feasibility | [TaskFeasibility](#process-v1-TaskFeasibility) | repeated | Optional: useful if precheck computes feasible assignments/resources |
-| status | [ProcessRunPrecheckStatus](#process-v1-ProcessRunPrecheckStatus) |  | Optional overall status |
-
-
-
-
-
-
-<a name="process-v1-TaskFeasibility"></a>
-
-### TaskFeasibility
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| task_definition_id | [string](#string) |  |  |
-| feasible | [bool](#bool) |  |  |
-| candidate_actor_ids | [string](#string) | repeated |  |
-| candidate_tool_instance_ids | [string](#string) | repeated |  |
-| candidate_fixture_instance_ids | [string](#string) | repeated |  |
-| candidate_asset_instance_ids | [string](#string) | repeated |  |
-| issues | [ProcessRunIssue](#process-v1-ProcessRunIssue) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="process-v1-ProcessLoadFailure"></a>
-
-### ProcessLoadFailure
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
-| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
-| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
-| PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
-| PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
-| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
-| PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
-| PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
-| PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
-| PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
-| PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
-| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
-| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
-| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
-| PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
-| PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
-| PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
-| PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
-| PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
-
-
-
-<a name="process-v1-ProcessLoadStatus"></a>
-
-### ProcessLoadStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_LOAD_STATUS_UNSPECIFIED | 0 |  |
-| PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
-| PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
-| PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
-
-
-
-<a name="process-v1-ProcessRunIssueSeverity"></a>
-
-### ProcessRunIssueSeverity
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_ISSUE_SEVERITY_BLOCKING | 1 | Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task |
-| PROCESS_RUN_ISSUE_SEVERITY_WARNING | 2 | Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed. |
-
-
-
-<a name="process-v1-ProcessRunPrecheckStatus"></a>
-
-### ProcessRunPrecheckStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_PRECHECK_STATUS_OK | 1 | Neither warning nor blocking issues |
-| PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS | 2 | One or more warning issues, but no blocking |
-| PROCESS_RUN_PRECHECK_STATUS_BLOCKED | 3 | One or more blocking issues |
-
-
-
-<a name="process-v1-RequirementImportance"></a>
-
-### RequirementImportance
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
-| REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
-| REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="product_v1_assembly_node-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7288,6 +6925,58 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
+<a name="runtime_v1_actor_assignment-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/actor_assignment.proto
+
+
+
+<a name="runtime-v1-ActorAssignment"></a>
+
+### ActorAssignment
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| process_run_id | [string](#string) |  |  |
+| sequence_run_id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| assigned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| released_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ActorAssignments"></a>
+
+### ActorAssignments
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="runtime_v1_execution_evidence-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7332,6 +7021,318 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_process_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/process_run.proto
+
+
+
+<a name="runtime-v1-ProcessRun"></a>
+
+### ProcessRun
+ProcessRun is only created when a concrete cell can currently satisfy it.
+Is is based upon a ProcessRecipe which defines what must be possible.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| process_recipe_id | [string](#string) |  |  |
+| order_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| root_sequence_run_id | [string](#string) |  |  |
+| sequence_run_ids | [string](#string) | repeated |  |
+| task_run_ids | [string](#string) | repeated |  |
+| state | [ProcessRunState](#runtime-v1-ProcessRunState) |  |  |
+| initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+| parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRuns"></a>
+
+### ProcessRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProcessRun](#runtime-v1-ProcessRun) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-RunParameter"></a>
+
+### RunParameter
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | &#34;color&#34;, &#34;label_text&#34;, &#34;customer_name&#34; |
+| value | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ProcessRunState"></a>
+
+### ProcessRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_STATE_WAITING | 1 |  |
+| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
+| PROCESS_RUN_STATE_COMPLETED | 3 |  |
+| PROCESS_RUN_STATE_ABORTED | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_process_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/process_requests.proto
+
+
+
+<a name="runtime-v1-ProcessLoadRequest"></a>
+
+### ProcessLoadRequest
+ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
+During this process, resources feasibility should be checked, i.e.
+   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
+
+Thus the following must be evaluated:
+- available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
+- available workers (if tasks requires only-human or need certain skills, can that be satisfied? Either check immediately or defer until operator is assigned. Perhaps assigned based on skills and availability? Check that: assigned worker exist, worker enabled, required skills present and valid)
+- available tool instances (all ToolRequirements from all tasks, available ToolInstances is station/cell, tool status, calibration validity, required properties, minimum capability profile)
+- valid calibration
+- fixture availability/feasibility (recipe supported fixtures, available fixture instances, fixture status, product/recipe compatibility)
+- safety mode / collaboration mode (check: recipe task collaboration modes, station/cell safety mode, whether simultaneous HRC is allowed, whether human-only or robot-only is possible right now)
+- active faults / disabled resources
+- asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --&gt; then verify those assets exist and are available.)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_recipe_id | [string](#string) |  |  |
+| target_line_id | [string](#string) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
+| queue_if_occupied | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessLoadResult"></a>
+
+### ProcessLoadResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [ProcessLoadStatus](#runtime-v1-ProcessLoadStatus) |  |  |
+| precheck | [ProcessRunPrecheckResult](#runtime-v1-ProcessRunPrecheckResult) |  |  |
+| process_run | [ProcessRun](#runtime-v1-ProcessRun) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRunIssue"></a>
+
+### ProcessRunIssue
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| failure | [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure) |  |  |
+| message | [string](#string) |  |  |
+| severity | [ProcessRunIssueSeverity](#runtime-v1-ProcessRunIssueSeverity) |  |  |
+| process_recipe_id | [string](#string) |  | Scope |
+| sequence_definition_id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| required_tool_role | [string](#string) |  | Related requirement/resource |
+| required_skill_id | [string](#string) |  |  |
+| fixture_definition_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| actor_id | [string](#string) |  |  |
+| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
+| remediation | [string](#string) |  | Optional remediation hint |
+| importance | [RequirementImportance](#runtime-v1-RequirementImportance) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRunPrecheckResult"></a>
+
+### ProcessRunPrecheckResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ok | [bool](#bool) |  |  |
+| issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
+| blocking_issue_count | [int32](#int32) |  | Optional summary counts for UI / fast filtering |
+| warning_issue_count | [int32](#int32) |  |  |
+| process_recipe_id | [string](#string) |  | What was checked |
+| target_line_id | [string](#string) |  |  |
+| task_feasibility | [TaskFeasibility](#runtime-v1-TaskFeasibility) | repeated | Optional: useful if precheck computes feasible assignments/resources |
+| status | [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus) |  | Optional overall status |
+
+
+
+
+
+
+<a name="runtime-v1-TaskFeasibility"></a>
+
+### TaskFeasibility
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_definition_id | [string](#string) |  |  |
+| feasible | [bool](#bool) |  |  |
+| candidate_actor_ids | [string](#string) | repeated |  |
+| candidate_tool_instance_ids | [string](#string) | repeated |  |
+| candidate_fixture_instance_ids | [string](#string) | repeated |  |
+| candidate_asset_instance_ids | [string](#string) | repeated |  |
+| issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ProcessLoadFailure"></a>
+
+### ProcessLoadFailure
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
+| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
+| PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
+| PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
+| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
+| PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
+| PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
+| PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
+| PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
+| PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
+| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
+| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
+| PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
+| PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
+| PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
+| PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
+
+
+
+<a name="runtime-v1-ProcessLoadStatus"></a>
+
+### ProcessLoadStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
+| PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
+| PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
+
+
+
+<a name="runtime-v1-ProcessRunIssueSeverity"></a>
+
+### ProcessRunIssueSeverity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_ISSUE_SEVERITY_BLOCKING | 1 | Run cannot start. Some reasons: no compatible fixture, required tool missing, robot required but unavailable, safety mode incompatible, no feasible actor for only-human/only-robot task |
+| PROCESS_RUN_ISSUE_SEVERITY_WARNING | 2 | Run may start, but quality/performance may suffer. Examples: preferred robot unavailable (but human can do task), calibration expires soon, only one qualified actor available, vision unavailable but manual confirmation allowed. |
+
+
+
+<a name="runtime-v1-ProcessRunPrecheckStatus"></a>
+
+### ProcessRunPrecheckStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_PRECHECK_STATUS_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_PRECHECK_STATUS_OK | 1 | Neither warning nor blocking issues |
+| PROCESS_RUN_PRECHECK_STATUS_OK_WITH_WARNINGS | 2 | One or more warning issues, but no blocking |
+| PROCESS_RUN_PRECHECK_STATUS_BLOCKED | 3 | One or more blocking issues |
+
+
+
+<a name="runtime-v1-RequirementImportance"></a>
+
+### RequirementImportance
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
+| REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
+| REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
+
 
  
 
