@@ -19,20 +19,22 @@ enum SequenceRunState {
 
 message SequenceRun {
   string id = 1;
-  string sequence_definition_id = 2 [
+  string name = 2;
+  string icon = 3;
+  string sequence_definition_id = 4 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
-  string parent_sequence_run_id = 3 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true];
-  repeated string child_sequence_run_ids = 4;
-  repeated string child_task_run_ids = 5;
-  SequenceRunState state = 6 [
+  string parent_sequence_run_id = 5 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true];
+  repeated string child_sequence_run_ids = 6;
+  repeated string child_task_run_ids = 7;
+  SequenceRunState state = 8 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  int32 completed_tasks = 7 [(buf.validate.field).int32.gte = 0];
-  bool can_bulk_complete = 8;
-  repeated common.v1.ActorRef assigned_actors = 9;
+  int32 completed_tasks = 9 [(buf.validate.field).int32.gte = 0];
+  bool can_bulk_complete = 10;
+  repeated common.v1.ActorRef assigned_actors = 11;
 }
 
 message SequenceRuns {

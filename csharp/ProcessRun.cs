@@ -30,40 +30,41 @@ namespace Messages.Runtime.V1 {
             "bWUvdjEvYWN0b3JfYXNzaWdubWVudC5wcm90bxordmFsaWRhdGlvbi92MS9w",
             "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxondmFyaWFuY2UvdjEvdmFy",
             "aWFudF9jb25maWd1cmF0aW9uLnByb3RvIjYKDFJ1blBhcmFtZXRlchIQCgNr",
-            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUiowYKClByb2Nl",
-            "c3NSdW4SDgoCaWQYASABKAlSAmlkEjgKEXByb2Nlc3NfcmVjaXBlX2lkGAIg",
-            "ASgJQgy6SAlyBIjyBAHIAQFSD3Byb2Nlc3NSZWNpcGVJZBIZCghvcmRlcl9p",
-            "ZBgDIAEoCVIHb3JkZXJJZBIoCgpzdGF0aW9uX2lkGAQgASgJQgm6SAZyBNjx",
-            "BAFSCXN0YXRpb25JZBIiCgdjZWxsX2lkGAUgASgJQgm6SAZyBKDyBAFSBmNl",
-            "bGxJZBIwCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBv",
-            "c2VSBWZyYW1lEj0KFHJvb3Rfc2VxdWVuY2VfcnVuX2lkGAcgASgJQgy6SAly",
-            "BPjxBAHIAQFSEXJvb3RTZXF1ZW5jZVJ1bklkEjgKEHNlcXVlbmNlX3J1bl9p",
-            "ZHMYCCADKAlCDrpIC5IBCCIGcgT48QQBUg5zZXF1ZW5jZVJ1bklkcxIwCgx0",
-            "YXNrX3J1bl9pZHMYCSADKAlCDrpIC5IBCCIGcgSA8gQBUgp0YXNrUnVuSWRz",
-            "Ej4KBXN0YXRlGAogASgOMhsucnVudGltZS52MS5Qcm9jZXNzUnVuU3RhdGVC",
-            "C7pICIIBAhAByAEBUgVzdGF0ZRI9Cgxpbml0aWF0ZWRfYXQYCyABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtpbml0aWF0ZWRBdBI1CghlbmRl",
-            "ZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2VuZGVk",
-            "QXQSPQoLYXNzaWdubWVudHMYDSADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNz",
-            "aWdubWVudFILYXNzaWdubWVudHMSVgoVdmFyaWFudF9jb25maWd1cmF0aW9u",
-            "GA4gASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25SFHZh",
-            "cmlhbnRDb25maWd1cmF0aW9uEjgKCnBhcmFtZXRlcnMYDyADKAsyGC5ydW50",
-            "aW1lLnYxLlJ1blBhcmFtZXRlclIKcGFyYW1ldGVycyI7CgtQcm9jZXNzUnVu",
-            "cxIsCgVpdGVtcxgBIAMoCzIWLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blIFaXRl",
-            "bXMqtgEKD1Byb2Nlc3NSdW5TdGF0ZRIhCh1QUk9DRVNTX1JVTl9TVEFURV9V",
-            "TlNQRUNJRklFRBAAEh0KGVBST0NFU1NfUlVOX1NUQVRFX1dBSVRJTkcQARIh",
-            "Ch1QUk9DRVNTX1JVTl9TVEFURV9JTl9QUk9HUkVTUxACEh8KG1BST0NFU1Nf",
-            "UlVOX1NUQVRFX0NPTVBMRVRFRBADEh0KGVBST0NFU1NfUlVOX1NUQVRFX0FC",
-            "T1JURUQQBEKuAQoOY29tLnJ1bnRpbWUudjFCD1Byb2Nlc3NSdW5Qcm90b1AB",
-            "WjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGlt",
-            "ZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIK",
-            "UnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1l",
-            "OjpWMWIGcHJvdG8z"));
+            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUiywYKClByb2Nl",
+            "c3NSdW4SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
+            "aWNvbhgDIAEoCVIEaWNvbhI4ChFwcm9jZXNzX3JlY2lwZV9pZBgEIAEoCUIM",
+            "ukgJcgSI8gQByAEBUg9wcm9jZXNzUmVjaXBlSWQSGQoIb3JkZXJfaWQYBSAB",
+            "KAlSB29yZGVySWQSKAoKc3RhdGlvbl9pZBgGIAEoCUIJukgGcgTY8QQBUglz",
+            "dGF0aW9uSWQSIgoHY2VsbF9pZBgHIAEoCUIJukgGcgSg8gQBUgZjZWxsSWQS",
+            "MAoFZnJhbWUYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgVm",
+            "cmFtZRI9ChRyb290X3NlcXVlbmNlX3J1bl9pZBgJIAEoCUIMukgJcgT48QQB",
+            "yAEBUhFyb290U2VxdWVuY2VSdW5JZBI4ChBzZXF1ZW5jZV9ydW5faWRzGAog",
+            "AygJQg66SAuSAQgiBnIE+PEEAVIOc2VxdWVuY2VSdW5JZHMSMAoMdGFza19y",
+            "dW5faWRzGAsgAygJQg66SAuSAQgiBnIEgPIEAVIKdGFza1J1bklkcxI+CgVz",
+            "dGF0ZRgMIAEoDjIbLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blN0YXRlQgu6SAiC",
+            "AQIQAcgBAVIFc3RhdGUSPQoMaW5pdGlhdGVkX2F0GA0gASgLMhouZ29vZ2xl",
+            "LnByb3RvYnVmLlRpbWVzdGFtcFILaW5pdGlhdGVkQXQSNQoIZW5kZWRfYXQY",
+            "DiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdlbmRlZEF0Ej0K",
+            "C2Fzc2lnbm1lbnRzGA8gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1l",
+            "bnRSC2Fzc2lnbm1lbnRzElYKFXZhcmlhbnRfY29uZmlndXJhdGlvbhgQIAEo",
+            "CzIhLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uUhR2YXJpYW50",
+            "Q29uZmlndXJhdGlvbhI4CgpwYXJhbWV0ZXJzGBEgAygLMhgucnVudGltZS52",
+            "MS5SdW5QYXJhbWV0ZXJSCnBhcmFtZXRlcnMiOwoLUHJvY2Vzc1J1bnMSLAoF",
+            "aXRlbXMYASADKAsyFi5ydW50aW1lLnYxLlByb2Nlc3NSdW5SBWl0ZW1zKrYB",
+            "Cg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVD",
+            "SUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJP",
+            "Q0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9T",
+            "VEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVE",
+            "EARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0",
+            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7",
+            "cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRp",
+            "bWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.RunParameter), global::Messages.Runtime.V1.RunParameter.Parser, new[]{ "Key", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "ProcessRecipeId", "OrderId", "StationId", "CellId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRuns), global::Messages.Runtime.V1.ProcessRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -360,6 +361,8 @@ namespace Messages.Runtime.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProcessRun(ProcessRun other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
       processRecipeId_ = other.processRecipeId_;
       orderId_ = other.orderId_;
       stationId_ = other.stationId_;
@@ -395,8 +398,32 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "process_recipe_id" field.</summary>
-    public const int ProcessRecipeIdFieldNumber = 2;
+    public const int ProcessRecipeIdFieldNumber = 4;
     private string processRecipeId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -408,7 +435,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "order_id" field.</summary>
-    public const int OrderIdFieldNumber = 3;
+    public const int OrderIdFieldNumber = 5;
     private string orderId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -420,7 +447,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 4;
+    public const int StationIdFieldNumber = 6;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -432,7 +459,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "cell_id" field.</summary>
-    public const int CellIdFieldNumber = 5;
+    public const int CellIdFieldNumber = 7;
     private string cellId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -444,7 +471,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "frame" field.</summary>
-    public const int FrameFieldNumber = 6;
+    public const int FrameFieldNumber = 8;
     private global::Messages.Common.V1.LocalizedPose frame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -456,7 +483,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "root_sequence_run_id" field.</summary>
-    public const int RootSequenceRunIdFieldNumber = 7;
+    public const int RootSequenceRunIdFieldNumber = 9;
     private string rootSequenceRunId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -468,9 +495,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "sequence_run_ids" field.</summary>
-    public const int SequenceRunIdsFieldNumber = 8;
+    public const int SequenceRunIdsFieldNumber = 10;
     private static readonly pb::FieldCodec<string> _repeated_sequenceRunIds_codec
-        = pb::FieldCodec.ForString(66);
+        = pb::FieldCodec.ForString(82);
     private readonly pbc::RepeatedField<string> sequenceRunIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -479,9 +506,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "task_run_ids" field.</summary>
-    public const int TaskRunIdsFieldNumber = 9;
+    public const int TaskRunIdsFieldNumber = 11;
     private static readonly pb::FieldCodec<string> _repeated_taskRunIds_codec
-        = pb::FieldCodec.ForString(74);
+        = pb::FieldCodec.ForString(90);
     private readonly pbc::RepeatedField<string> taskRunIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -490,7 +517,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 10;
+    public const int StateFieldNumber = 12;
     private global::Messages.Runtime.V1.ProcessRunState state_ = global::Messages.Runtime.V1.ProcessRunState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -502,7 +529,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "initiated_at" field.</summary>
-    public const int InitiatedAtFieldNumber = 11;
+    public const int InitiatedAtFieldNumber = 13;
     private global::Google.Protobuf.WellKnownTypes.Timestamp initiatedAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -514,7 +541,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "ended_at" field.</summary>
-    public const int EndedAtFieldNumber = 12;
+    public const int EndedAtFieldNumber = 14;
     private global::Google.Protobuf.WellKnownTypes.Timestamp endedAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -526,9 +553,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "assignments" field.</summary>
-    public const int AssignmentsFieldNumber = 13;
+    public const int AssignmentsFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ActorAssignment> _repeated_assignments_codec
-        = pb::FieldCodec.ForMessage(106, global::Messages.Runtime.V1.ActorAssignment.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Messages.Runtime.V1.ActorAssignment.Parser);
     private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ActorAssignment> assignments_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ActorAssignment>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -537,7 +564,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "variant_configuration" field.</summary>
-    public const int VariantConfigurationFieldNumber = 14;
+    public const int VariantConfigurationFieldNumber = 16;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -549,9 +576,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "parameters" field.</summary>
-    public const int ParametersFieldNumber = 15;
+    public const int ParametersFieldNumber = 17;
     private static readonly pb::FieldCodec<global::Messages.Runtime.V1.RunParameter> _repeated_parameters_codec
-        = pb::FieldCodec.ForMessage(122, global::Messages.Runtime.V1.RunParameter.Parser);
+        = pb::FieldCodec.ForMessage(138, global::Messages.Runtime.V1.RunParameter.Parser);
     private readonly pbc::RepeatedField<global::Messages.Runtime.V1.RunParameter> parameters_ = new pbc::RepeatedField<global::Messages.Runtime.V1.RunParameter>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -575,6 +602,8 @@ namespace Messages.Runtime.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (ProcessRecipeId != other.ProcessRecipeId) return false;
       if (OrderId != other.OrderId) return false;
       if (StationId != other.StationId) return false;
@@ -597,6 +626,8 @@ namespace Messages.Runtime.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (ProcessRecipeId.Length != 0) hash ^= ProcessRecipeId.GetHashCode();
       if (OrderId.Length != 0) hash ^= OrderId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
@@ -633,47 +664,55 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ProcessRecipeId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (ProcessRecipeId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(ProcessRecipeId);
       }
       if (OrderId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(OrderId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (CellId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(CellId);
       }
       if (frame_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteMessage(Frame);
       }
       if (RootSequenceRunId.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(74);
         output.WriteString(RootSequenceRunId);
       }
       sequenceRunIds_.WriteTo(output, _repeated_sequenceRunIds_codec);
       taskRunIds_.WriteTo(output, _repeated_taskRunIds_codec);
       if (State != global::Messages.Runtime.V1.ProcessRunState.Unspecified) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteEnum((int) State);
       }
       if (initiatedAt_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(InitiatedAt);
       }
       if (endedAt_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteMessage(EndedAt);
       }
       assignments_.WriteTo(output, _repeated_assignments_codec);
       if (variantConfiguration_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(130, 1);
         output.WriteMessage(VariantConfiguration);
       }
       parameters_.WriteTo(output, _repeated_parameters_codec);
@@ -691,47 +730,55 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (ProcessRecipeId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (ProcessRecipeId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(ProcessRecipeId);
       }
       if (OrderId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(OrderId);
       }
       if (StationId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteString(StationId);
       }
       if (CellId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteString(CellId);
       }
       if (frame_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteMessage(Frame);
       }
       if (RootSequenceRunId.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(74);
         output.WriteString(RootSequenceRunId);
       }
       sequenceRunIds_.WriteTo(ref output, _repeated_sequenceRunIds_codec);
       taskRunIds_.WriteTo(ref output, _repeated_taskRunIds_codec);
       if (State != global::Messages.Runtime.V1.ProcessRunState.Unspecified) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteEnum((int) State);
       }
       if (initiatedAt_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(InitiatedAt);
       }
       if (endedAt_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteMessage(EndedAt);
       }
       assignments_.WriteTo(ref output, _repeated_assignments_codec);
       if (variantConfiguration_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(130, 1);
         output.WriteMessage(VariantConfiguration);
       }
       parameters_.WriteTo(ref output, _repeated_parameters_codec);
@@ -747,6 +794,12 @@ namespace Messages.Runtime.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       if (ProcessRecipeId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessRecipeId);
@@ -779,7 +832,7 @@ namespace Messages.Runtime.V1 {
       }
       size += assignments_.CalculateSize(_repeated_assignments_codec);
       if (variantConfiguration_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
       }
       size += parameters_.CalculateSize(_repeated_parameters_codec);
       if (_unknownFields != null) {
@@ -796,6 +849,12 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.ProcessRecipeId.Length != 0) {
         ProcessRecipeId = other.ProcessRecipeId;
@@ -867,70 +926,78 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            ProcessRecipeId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            OrderId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            StationId = input.ReadString();
+            ProcessRecipeId = input.ReadString();
             break;
           }
           case 42: {
-            CellId = input.ReadString();
+            OrderId = input.ReadString();
             break;
           }
           case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 58: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 66: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 58: {
+          case 74: {
             RootSequenceRunId = input.ReadString();
             break;
           }
-          case 66: {
+          case 82: {
             sequenceRunIds_.AddEntriesFrom(input, _repeated_sequenceRunIds_codec);
             break;
           }
-          case 74: {
+          case 90: {
             taskRunIds_.AddEntriesFrom(input, _repeated_taskRunIds_codec);
             break;
           }
-          case 80: {
+          case 96: {
             State = (global::Messages.Runtime.V1.ProcessRunState) input.ReadEnum();
             break;
           }
-          case 90: {
+          case 106: {
             if (initiatedAt_ == null) {
               InitiatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(InitiatedAt);
             break;
           }
-          case 98: {
+          case 114: {
             if (endedAt_ == null) {
               EndedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(EndedAt);
             break;
           }
-          case 106: {
+          case 122: {
             assignments_.AddEntriesFrom(input, _repeated_assignments_codec);
             break;
           }
-          case 114: {
+          case 130: {
             if (variantConfiguration_ == null) {
               VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
             }
             input.ReadMessage(VariantConfiguration);
             break;
           }
-          case 122: {
+          case 138: {
             parameters_.AddEntriesFrom(input, _repeated_parameters_codec);
             break;
           }
@@ -958,70 +1025,78 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            ProcessRecipeId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            OrderId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            StationId = input.ReadString();
+            ProcessRecipeId = input.ReadString();
             break;
           }
           case 42: {
-            CellId = input.ReadString();
+            OrderId = input.ReadString();
             break;
           }
           case 50: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 58: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 66: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 58: {
+          case 74: {
             RootSequenceRunId = input.ReadString();
             break;
           }
-          case 66: {
+          case 82: {
             sequenceRunIds_.AddEntriesFrom(ref input, _repeated_sequenceRunIds_codec);
             break;
           }
-          case 74: {
+          case 90: {
             taskRunIds_.AddEntriesFrom(ref input, _repeated_taskRunIds_codec);
             break;
           }
-          case 80: {
+          case 96: {
             State = (global::Messages.Runtime.V1.ProcessRunState) input.ReadEnum();
             break;
           }
-          case 90: {
+          case 106: {
             if (initiatedAt_ == null) {
               InitiatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(InitiatedAt);
             break;
           }
-          case 98: {
+          case 114: {
             if (endedAt_ == null) {
               EndedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(EndedAt);
             break;
           }
-          case 106: {
+          case 122: {
             assignments_.AddEntriesFrom(ref input, _repeated_assignments_codec);
             break;
           }
-          case 114: {
+          case 130: {
             if (variantConfiguration_ == null) {
               VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
             }
             input.ReadMessage(VariantConfiguration);
             break;
           }
-          case 122: {
+          case 138: {
             parameters_.AddEntriesFrom(ref input, _repeated_parameters_codec);
             break;
           }

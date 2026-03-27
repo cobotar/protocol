@@ -34,41 +34,42 @@ namespace Messages.Runtime.V1 {
             "IAEoCVIPYXNzZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIg",
             "ASgJUg9yb2JvdEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3Rh",
             "dGlvbklkEkUKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYx",
-            "LkNvbnRhaW5lclNsb3RSZWZSDWNvbnRhaW5lclNsb3QirgYKB1Rhc2tSdW4S",
-            "DgoCaWQYASABKAlSAmlkEjoKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCUIM",
-            "ukgJcgSY8gQByAEBUhB0YXNrRGVmaW5pdGlvbklkEkEKFnBhcmVudF9zZXF1",
-            "ZW5jZV9ydW5faWQYAyABKAlCDLpICXIE+PEEAcgBAVITcGFyZW50U2VxdWVu",
-            "Y2VSdW5JZBI7CgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0",
-            "YXRlQgu6SAiCAQIQAcgBAVIFc3RhdGUSPgoQY2FuZGlkYXRlX2FjdG9ycxgF",
-            "IAMoCzITLmNvbW1vbi52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3JzEjoK",
-            "DmFzc2lnbmVkX2FjdG9yGAYgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmUg1h",
-            "c3NpZ25lZEFjdG9yEhUKBmNhbl9kbxgHIAEoCFIFY2FuRG8SGQoIY2FuX3Vu",
-            "ZG8YCCABKAhSB2NhblVuZG8SKQoQd29ya2FibGVfaG9yaXpvbhgJIAEoBVIP",
-            "d29ya2FibGVIb3Jpem9uEksKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIc",
-            "LmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVyYXRp",
-            "b24SOQoKc3RhcnRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
-            "c3RhbXBSCXN0YXJ0ZWRBdBI9Cgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wUgtjb21wbGV0ZWRBdBIdCgplcnJvcl9j",
-            "b2RlGA0gASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgOIAEoCVIM",
-            "ZXJyb3JNZXNzYWdlEjkKCGV2aWRlbmNlGA8gAygLMh0ucnVudGltZS52MS5F",
-            "eGVjdXRpb25FdmlkZW5jZVIIZXZpZGVuY2USOAoHYmluZGluZxgQIAEoCzIe",
-            "LnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nIjUKCFRh",
-            "c2tSdW5zEikKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuUgVp",
-            "dGVtcyrnAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BF",
-            "Q0lGSUVEEAASJwojVEFTS19SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJ",
-            "T04QARIaChZUQVNLX1JVTl9TVEFURV9XQUlUSU5HEAISHgoaVEFTS19SVU5f",
-            "U1RBVEVfSU5fUFJPR1JFU1MQAxIcChhUQVNLX1JVTl9TVEFURV9DT01QTEVU",
-            "RUQQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NU",
-            "QVRFX0FCT1JURUQQBkKrAQoOY29tLnJ1bnRpbWUudjFCDFRhc2tSdW5Qcm90",
-            "b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVu",
-            "dGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYx",
-            "ygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50",
-            "aW1lOjpWMWIGcHJvdG8z"));
+            "LkNvbnRhaW5lclNsb3RSZWZSDWNvbnRhaW5lclNsb3Qi1gYKB1Rhc2tSdW4S",
+            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhI6ChJ0YXNrX2RlZmluaXRpb25faWQYBCABKAlCDLpICXIE",
+            "mPIEAcgBAVIQdGFza0RlZmluaXRpb25JZBJBChZwYXJlbnRfc2VxdWVuY2Vf",
+            "cnVuX2lkGAUgASgJQgy6SAlyBPjxBAHIAQFSE3BhcmVudFNlcXVlbmNlUnVu",
+            "SWQSOwoFc3RhdGUYBiABKA4yGC5ydW50aW1lLnYxLlRhc2tSdW5TdGF0ZUIL",
+            "ukgIggECEAHIAQFSBXN0YXRlEj4KEGNhbmRpZGF0ZV9hY3RvcnMYByADKAsy",
+            "Ey5jb21tb24udjEuQWN0b3JSZWZSD2NhbmRpZGF0ZUFjdG9ycxI6Cg5hc3Np",
+            "Z25lZF9hY3RvchgIIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZlINYXNzaWdu",
+            "ZWRBY3RvchIVCgZjYW5fZG8YCSABKAhSBWNhbkRvEhkKCGNhbl91bmRvGAog",
+            "ASgIUgdjYW5VbmRvEikKEHdvcmthYmxlX2hvcml6b24YCyABKAVSD3dvcmth",
+            "YmxlSG9yaXpvbhJLChJlc3RpbWF0ZWRfZHVyYXRpb24YDCABKAsyHC5jb21t",
+            "b24udjEuRXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uEjkK",
+            "CnN0YXJ0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
+            "UglzdGFydGVkQXQSPQoMY29tcGxldGVkX2F0GA4gASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcFILY29tcGxldGVkQXQSHQoKZXJyb3JfY29kZRgP",
+            "IAEoCVIJZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UYECABKAlSDGVycm9y",
+            "TWVzc2FnZRI5CghldmlkZW5jZRgRIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0",
+            "aW9uRXZpZGVuY2VSCGV2aWRlbmNlEjgKB2JpbmRpbmcYEiABKAsyHi5ydW50",
+            "aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZ1IHYmluZGluZyI1CghUYXNrUnVu",
+            "cxIpCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq",
+            "5wEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklF",
+            "RBAAEicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAES",
+            "GgoWVEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRF",
+            "X0lOX1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQS",
+            "GAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9B",
+            "Qk9SVEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
+            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
+            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerSlot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -446,6 +447,8 @@ namespace Messages.Runtime.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskRun(TaskRun other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
       taskDefinitionId_ = other.taskDefinitionId_;
       parentSequenceRunId_ = other.parentSequenceRunId_;
       state_ = other.state_;
@@ -482,8 +485,32 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "task_definition_id" field.</summary>
-    public const int TaskDefinitionIdFieldNumber = 2;
+    public const int TaskDefinitionIdFieldNumber = 4;
     private string taskDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -495,7 +522,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "parent_sequence_run_id" field.</summary>
-    public const int ParentSequenceRunIdFieldNumber = 3;
+    public const int ParentSequenceRunIdFieldNumber = 5;
     private string parentSequenceRunId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -507,7 +534,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 4;
+    public const int StateFieldNumber = 6;
     private global::Messages.Runtime.V1.TaskRunState state_ = global::Messages.Runtime.V1.TaskRunState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -519,9 +546,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "candidate_actors" field.</summary>
-    public const int CandidateActorsFieldNumber = 5;
+    public const int CandidateActorsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.ActorRef> _repeated_candidateActors_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.Common.V1.ActorRef.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Messages.Common.V1.ActorRef.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.ActorRef> candidateActors_ = new pbc::RepeatedField<global::Messages.Common.V1.ActorRef>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -530,7 +557,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "assigned_actor" field.</summary>
-    public const int AssignedActorFieldNumber = 6;
+    public const int AssignedActorFieldNumber = 8;
     private global::Messages.Common.V1.ActorRef assignedActor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -542,7 +569,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "can_do" field.</summary>
-    public const int CanDoFieldNumber = 7;
+    public const int CanDoFieldNumber = 9;
     private bool canDo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -554,7 +581,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "can_undo" field.</summary>
-    public const int CanUndoFieldNumber = 8;
+    public const int CanUndoFieldNumber = 10;
     private bool canUndo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -566,7 +593,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "workable_horizon" field.</summary>
-    public const int WorkableHorizonFieldNumber = 9;
+    public const int WorkableHorizonFieldNumber = 11;
     private int workableHorizon_;
     /// <summary>
     /// steps needed to complete before this step is workable.
@@ -581,7 +608,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "estimated_duration" field.</summary>
-    public const int EstimatedDurationFieldNumber = 10;
+    public const int EstimatedDurationFieldNumber = 12;
     private global::Messages.Common.V1.EstimatedDuration estimatedDuration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -593,7 +620,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "started_at" field.</summary>
-    public const int StartedAtFieldNumber = 11;
+    public const int StartedAtFieldNumber = 13;
     private global::Google.Protobuf.WellKnownTypes.Timestamp startedAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -605,7 +632,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "completed_at" field.</summary>
-    public const int CompletedAtFieldNumber = 12;
+    public const int CompletedAtFieldNumber = 14;
     private global::Google.Protobuf.WellKnownTypes.Timestamp completedAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -617,7 +644,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "error_code" field.</summary>
-    public const int ErrorCodeFieldNumber = 13;
+    public const int ErrorCodeFieldNumber = 15;
     private string errorCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -629,7 +656,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "error_message" field.</summary>
-    public const int ErrorMessageFieldNumber = 14;
+    public const int ErrorMessageFieldNumber = 16;
     private string errorMessage_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -641,9 +668,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "evidence" field.</summary>
-    public const int EvidenceFieldNumber = 15;
+    public const int EvidenceFieldNumber = 17;
     private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ExecutionEvidence> _repeated_evidence_codec
-        = pb::FieldCodec.ForMessage(122, global::Messages.Runtime.V1.ExecutionEvidence.Parser);
+        = pb::FieldCodec.ForMessage(138, global::Messages.Runtime.V1.ExecutionEvidence.Parser);
     private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence> evidence_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -652,7 +679,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "binding" field.</summary>
-    public const int BindingFieldNumber = 16;
+    public const int BindingFieldNumber = 18;
     private global::Messages.Runtime.V1.TaskRuntimeBinding binding_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -679,6 +706,8 @@ namespace Messages.Runtime.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (TaskDefinitionId != other.TaskDefinitionId) return false;
       if (ParentSequenceRunId != other.ParentSequenceRunId) return false;
       if (State != other.State) return false;
@@ -702,6 +731,8 @@ namespace Messages.Runtime.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (TaskDefinitionId.Length != 0) hash ^= TaskDefinitionId.GetHashCode();
       if (ParentSequenceRunId.Length != 0) hash ^= ParentSequenceRunId.GetHashCode();
       if (State != global::Messages.Runtime.V1.TaskRunState.Unspecified) hash ^= State.GetHashCode();
@@ -739,58 +770,66 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (TaskDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (TaskDefinitionId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(TaskDefinitionId);
       }
       if (ParentSequenceRunId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(ParentSequenceRunId);
       }
       if (State != global::Messages.Runtime.V1.TaskRunState.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteEnum((int) State);
       }
       candidateActors_.WriteTo(output, _repeated_candidateActors_codec);
       if (assignedActor_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteMessage(AssignedActor);
       }
       if (CanDo != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteBool(CanDo);
       }
       if (CanUndo != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(CanUndo);
       }
       if (WorkableHorizon != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteInt32(WorkableHorizon);
       }
       if (estimatedDuration_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(98);
         output.WriteMessage(EstimatedDuration);
       }
       if (startedAt_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(StartedAt);
       }
       if (completedAt_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteMessage(CompletedAt);
       }
       if (ErrorCode.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(122);
         output.WriteString(ErrorCode);
       }
       if (ErrorMessage.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(130, 1);
         output.WriteString(ErrorMessage);
       }
       evidence_.WriteTo(output, _repeated_evidence_codec);
       if (binding_ != null) {
-        output.WriteRawTag(130, 1);
+        output.WriteRawTag(146, 1);
         output.WriteMessage(Binding);
       }
       if (_unknownFields != null) {
@@ -807,58 +846,66 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (TaskDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (TaskDefinitionId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(TaskDefinitionId);
       }
       if (ParentSequenceRunId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(ParentSequenceRunId);
       }
       if (State != global::Messages.Runtime.V1.TaskRunState.Unspecified) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteEnum((int) State);
       }
       candidateActors_.WriteTo(ref output, _repeated_candidateActors_codec);
       if (assignedActor_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteMessage(AssignedActor);
       }
       if (CanDo != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteBool(CanDo);
       }
       if (CanUndo != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(CanUndo);
       }
       if (WorkableHorizon != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteInt32(WorkableHorizon);
       }
       if (estimatedDuration_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(98);
         output.WriteMessage(EstimatedDuration);
       }
       if (startedAt_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteMessage(StartedAt);
       }
       if (completedAt_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteMessage(CompletedAt);
       }
       if (ErrorCode.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(122);
         output.WriteString(ErrorCode);
       }
       if (ErrorMessage.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(130, 1);
         output.WriteString(ErrorMessage);
       }
       evidence_.WriteTo(ref output, _repeated_evidence_codec);
       if (binding_ != null) {
-        output.WriteRawTag(130, 1);
+        output.WriteRawTag(146, 1);
         output.WriteMessage(Binding);
       }
       if (_unknownFields != null) {
@@ -873,6 +920,12 @@ namespace Messages.Runtime.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       if (TaskDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskDefinitionId);
@@ -909,7 +962,7 @@ namespace Messages.Runtime.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorCode);
       }
       if (ErrorMessage.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
       }
       size += evidence_.CalculateSize(_repeated_evidence_codec);
       if (binding_ != null) {
@@ -929,6 +982,12 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.TaskDefinitionId.Length != 0) {
         TaskDefinitionId = other.TaskDefinitionId;
@@ -1010,74 +1069,82 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            TaskDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            ParentSequenceRunId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            State = (global::Messages.Runtime.V1.TaskRunState) input.ReadEnum();
+          case 34: {
+            TaskDefinitionId = input.ReadString();
             break;
           }
           case 42: {
+            ParentSequenceRunId = input.ReadString();
+            break;
+          }
+          case 48: {
+            State = (global::Messages.Runtime.V1.TaskRunState) input.ReadEnum();
+            break;
+          }
+          case 58: {
             candidateActors_.AddEntriesFrom(input, _repeated_candidateActors_codec);
             break;
           }
-          case 50: {
+          case 66: {
             if (assignedActor_ == null) {
               AssignedActor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(AssignedActor);
             break;
           }
-          case 56: {
+          case 72: {
             CanDo = input.ReadBool();
             break;
           }
-          case 64: {
+          case 80: {
             CanUndo = input.ReadBool();
             break;
           }
-          case 72: {
+          case 88: {
             WorkableHorizon = input.ReadInt32();
             break;
           }
-          case 82: {
+          case 98: {
             if (estimatedDuration_ == null) {
               EstimatedDuration = new global::Messages.Common.V1.EstimatedDuration();
             }
             input.ReadMessage(EstimatedDuration);
             break;
           }
-          case 90: {
+          case 106: {
             if (startedAt_ == null) {
               StartedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(StartedAt);
             break;
           }
-          case 98: {
+          case 114: {
             if (completedAt_ == null) {
               CompletedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CompletedAt);
             break;
           }
-          case 106: {
+          case 122: {
             ErrorCode = input.ReadString();
             break;
           }
-          case 114: {
+          case 130: {
             ErrorMessage = input.ReadString();
             break;
           }
-          case 122: {
+          case 138: {
             evidence_.AddEntriesFrom(input, _repeated_evidence_codec);
             break;
           }
-          case 130: {
+          case 146: {
             if (binding_ == null) {
               Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
             }
@@ -1108,74 +1175,82 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            TaskDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            ParentSequenceRunId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
-          case 32: {
-            State = (global::Messages.Runtime.V1.TaskRunState) input.ReadEnum();
+          case 34: {
+            TaskDefinitionId = input.ReadString();
             break;
           }
           case 42: {
+            ParentSequenceRunId = input.ReadString();
+            break;
+          }
+          case 48: {
+            State = (global::Messages.Runtime.V1.TaskRunState) input.ReadEnum();
+            break;
+          }
+          case 58: {
             candidateActors_.AddEntriesFrom(ref input, _repeated_candidateActors_codec);
             break;
           }
-          case 50: {
+          case 66: {
             if (assignedActor_ == null) {
               AssignedActor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(AssignedActor);
             break;
           }
-          case 56: {
+          case 72: {
             CanDo = input.ReadBool();
             break;
           }
-          case 64: {
+          case 80: {
             CanUndo = input.ReadBool();
             break;
           }
-          case 72: {
+          case 88: {
             WorkableHorizon = input.ReadInt32();
             break;
           }
-          case 82: {
+          case 98: {
             if (estimatedDuration_ == null) {
               EstimatedDuration = new global::Messages.Common.V1.EstimatedDuration();
             }
             input.ReadMessage(EstimatedDuration);
             break;
           }
-          case 90: {
+          case 106: {
             if (startedAt_ == null) {
               StartedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(StartedAt);
             break;
           }
-          case 98: {
+          case 114: {
             if (completedAt_ == null) {
               CompletedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CompletedAt);
             break;
           }
-          case 106: {
+          case 122: {
             ErrorCode = input.ReadString();
             break;
           }
-          case 114: {
+          case 130: {
             ErrorMessage = input.ReadString();
             break;
           }
-          case 122: {
+          case 138: {
             evidence_.AddEntriesFrom(ref input, _repeated_evidence_codec);
             break;
           }
-          case 130: {
+          case 146: {
             if (binding_ == null) {
               Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
             }

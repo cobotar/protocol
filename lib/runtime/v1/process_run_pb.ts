@@ -20,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/process_run.proto.
  */
 export const file_runtime_v1_process_run: GenFile = /*@__PURE__*/
-  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAki8AQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSJwoRcHJvY2Vzc19yZWNpcGVfaWQYAiABKAlCDLpICcgBAXIEiPIEARIQCghvcmRlcl9pZBgDIAEoCRIdCgpzdGF0aW9uX2lkGAQgASgJQgm6SAZyBNjxBAESGgoHY2VsbF9pZBgFIAEoCUIJukgGcgSg8gQBEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIqChRyb290X3NlcXVlbmNlX3J1bl9pZBgHIAEoCUIMukgJyAEBcgT48QQBEigKEHNlcXVlbmNlX3J1bl9pZHMYCCADKAlCDrpIC5IBCCIGcgT48QQBEiQKDHRhc2tfcnVuX2lkcxgJIAMoCUIOukgLkgEIIgZyBIDyBAESNwoFc3RhdGUYCiABKA4yGy5ydW50aW1lLnYxLlByb2Nlc3NSdW5TdGF0ZUILukgIyAEBggECEAESMAoMaW5pdGlhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoLYXNzaWdubWVudHMYDSADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNzaWdubWVudBJAChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YDiABKAsyIS52YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvbhIsCgpwYXJhbWV0ZXJzGA8gAygLMhgucnVudGltZS52MS5SdW5QYXJhbWV0ZXIiNAoLUHJvY2Vzc1J1bnMSJQoFaXRlbXMYASADKAsyFi5ydW50aW1lLnYxLlByb2Nlc3NSdW4qtgEKD1Byb2Nlc3NSdW5TdGF0ZRIhCh1QUk9DRVNTX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEh0KGVBST0NFU1NfUlVOX1NUQVRFX1dBSVRJTkcQARIhCh1QUk9DRVNTX1JVTl9TVEFURV9JTl9QUk9HUkVTUxACEh8KG1BST0NFU1NfUlVOX1NUQVRFX0NPTVBMRVRFRBADEh0KGVBST0NFU1NfUlVOX1NUQVRFX0FCT1JURUQQBEKuAQoOY29tLnJ1bnRpbWUudjFCD1Byb2Nlc3NSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
+  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkijAUKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEicKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJQgy6SAnIAQFyBIjyBAESEAoIb3JkZXJfaWQYBSABKAkSHQoKc3RhdGlvbl9pZBgGIAEoCUIJukgGcgTY8QQBEhoKB2NlbGxfaWQYByABKAlCCbpIBnIEoPIEARIpCgVmcmFtZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKgoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYCSABKAlCDLpICcgBAXIE+PEEARIoChBzZXF1ZW5jZV9ydW5faWRzGAogAygJQg66SAuSAQgiBnIE+PEEARIkCgx0YXNrX3J1bl9pZHMYCyADKAlCDrpIC5IBCCIGcgSA8gQBEjcKBXN0YXRlGAwgASgOMhsucnVudGltZS52MS5Qcm9jZXNzUnVuU3RhdGVCC7pICMgBAYIBAhABEjAKDGluaXRpYXRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKC2Fzc2lnbm1lbnRzGA8gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1lbnQSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGBAgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLAoKcGFyYW1ldGVycxgRIAMoCzIYLnJ1bnRpbWUudjEuUnVuUGFyYW1ldGVyIjQKC1Byb2Nlc3NSdW5zEiUKBWl0ZW1zGAEgAygLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
 
 /**
  * @generated from message runtime.v1.RunParameter
@@ -59,72 +59,82 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
   id: string;
 
   /**
-   * @generated from field: string process_recipe_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string process_recipe_id = 4;
    */
   processRecipeId: string;
 
   /**
-   * @generated from field: string order_id = 3;
+   * @generated from field: string order_id = 5;
    */
   orderId: string;
 
   /**
-   * @generated from field: string station_id = 4;
+   * @generated from field: string station_id = 6;
    */
   stationId: string;
 
   /**
-   * @generated from field: string cell_id = 5;
+   * @generated from field: string cell_id = 7;
    */
   cellId: string;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 6;
+   * @generated from field: geometry.v1.LocalizedPose frame = 8;
    */
   frame?: LocalizedPose;
 
   /**
-   * @generated from field: string root_sequence_run_id = 7;
+   * @generated from field: string root_sequence_run_id = 9;
    */
   rootSequenceRunId: string;
 
   /**
-   * @generated from field: repeated string sequence_run_ids = 8;
+   * @generated from field: repeated string sequence_run_ids = 10;
    */
   sequenceRunIds: string[];
 
   /**
-   * @generated from field: repeated string task_run_ids = 9;
+   * @generated from field: repeated string task_run_ids = 11;
    */
   taskRunIds: string[];
 
   /**
-   * @generated from field: runtime.v1.ProcessRunState state = 10;
+   * @generated from field: runtime.v1.ProcessRunState state = 12;
    */
   state: ProcessRunState;
 
   /**
-   * @generated from field: google.protobuf.Timestamp initiated_at = 11;
+   * @generated from field: google.protobuf.Timestamp initiated_at = 13;
    */
   initiatedAt?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp ended_at = 12;
+   * @generated from field: google.protobuf.Timestamp ended_at = 14;
    */
   endedAt?: Timestamp;
 
   /**
-   * @generated from field: repeated runtime.v1.ActorAssignment assignments = 13;
+   * @generated from field: repeated runtime.v1.ActorAssignment assignments = 15;
    */
   assignments: ActorAssignment[];
 
   /**
-   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 14;
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 16;
    */
   variantConfiguration?: VariantConfiguration;
 
   /**
-   * @generated from field: repeated runtime.v1.RunParameter parameters = 15;
+   * @generated from field: repeated runtime.v1.RunParameter parameters = 17;
    */
   parameters: RunParameter[];
 };

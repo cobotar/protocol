@@ -5241,6 +5241,8 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | process_recipe_id | [string](#string) |  |  |
 | order_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
@@ -7355,6 +7357,8 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | sequence_definition_id | [string](#string) |  |  |
 | parent_sequence_run_id | [string](#string) |  |  |
 | child_sequence_run_ids | [string](#string) | repeated |  |
@@ -7425,6 +7429,8 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
 | task_definition_id | [string](#string) |  |  |
 | parent_sequence_run_id | [string](#string) |  |  |
 | state | [TaskRunState](#runtime-v1-TaskRunState) |  |  |

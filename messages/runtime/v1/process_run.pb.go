@@ -138,20 +138,22 @@ func (x *RunParameter) GetValue() string {
 type ProcessRun struct {
 	state                protoimpl.MessageState    `protogen:"open.v1"`
 	Id                   string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ProcessRecipeId      string                    `protobuf:"bytes,2,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
-	OrderId              string                    `protobuf:"bytes,3,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	StationId            string                    `protobuf:"bytes,4,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId               string                    `protobuf:"bytes,5,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	Frame                *v1.LocalizedPose         `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceRunId    string                    `protobuf:"bytes,7,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
-	SequenceRunIds       []string                  `protobuf:"bytes,8,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
-	TaskRunIds           []string                  `protobuf:"bytes,9,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
-	State                ProcessRunState           `protobuf:"varint,10,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
-	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,11,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
-	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,12,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
-	Assignments          []*ActorAssignment        `protobuf:"bytes,13,rep,name=assignments,proto3" json:"assignments,omitempty"`
-	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,14,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
-	Parameters           []*RunParameter           `protobuf:"bytes,15,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	Name                 string                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                    `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	ProcessRecipeId      string                    `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
+	OrderId              string                    `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	StationId            string                    `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	CellId               string                    `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	Frame                *v1.LocalizedPose         `protobuf:"bytes,8,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceRunId    string                    `protobuf:"bytes,9,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
+	SequenceRunIds       []string                  `protobuf:"bytes,10,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
+	TaskRunIds           []string                  `protobuf:"bytes,11,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
+	State                ProcessRunState           `protobuf:"varint,12,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
+	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,13,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
+	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,14,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	Assignments          []*ActorAssignment        `protobuf:"bytes,15,rep,name=assignments,proto3" json:"assignments,omitempty"`
+	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,16,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	Parameters           []*RunParameter           `protobuf:"bytes,17,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -189,6 +191,20 @@ func (*ProcessRun) Descriptor() ([]byte, []int) {
 func (x *ProcessRun) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *ProcessRun) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ProcessRun) GetIcon() string {
+	if x != nil {
+		return x.Icon
 	}
 	return ""
 }
@@ -343,28 +359,30 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xa3\x06\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xcb\x06\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x128\n" +
-	"\x11process_recipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\x0fprocessRecipeId\x12\x19\n" +
-	"\border_id\x18\x03 \x01(\tR\aorderId\x12(\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x128\n" +
+	"\x11process_recipe_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\x0fprocessRecipeId\x12\x19\n" +
+	"\border_id\x18\x05 \x01(\tR\aorderId\x12(\n" +
 	"\n" +
-	"station_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12\"\n" +
-	"\acell_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06cellId\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12=\n" +
-	"\x14root_sequence_run_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x11rootSequenceRunId\x128\n" +
-	"\x10sequence_run_ids\x18\b \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x120\n" +
-	"\ftask_run_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x80\xf2\x04\x01R\n" +
+	"station_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12\"\n" +
+	"\acell_id\x18\a \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06cellId\x120\n" +
+	"\x05frame\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12=\n" +
+	"\x14root_sequence_run_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x11rootSequenceRunId\x128\n" +
+	"\x10sequence_run_ids\x18\n" +
+	" \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x120\n" +
+	"\ftask_run_ids\x18\v \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x80\xf2\x04\x01R\n" +
 	"taskRunIds\x12>\n" +
-	"\x05state\x18\n" +
-	" \x01(\x0e2\x1b.runtime.v1.ProcessRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12=\n" +
-	"\finitiated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
-	"\bended_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
-	"\vassignments\x18\r \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
-	"\x15variant_configuration\x18\x0e \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
+	"\x05state\x18\f \x01(\x0e2\x1b.runtime.v1.ProcessRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12=\n" +
+	"\finitiated_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
+	"\bended_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
+	"\vassignments\x18\x0f \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
+	"\x15variant_configuration\x18\x10 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
 	"\n" +
-	"parameters\x18\x0f \x03(\v2\x18.runtime.v1.RunParameterR\n" +
+	"parameters\x18\x11 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
 	"parameters\";\n" +
 	"\vProcessRuns\x12,\n" +
 	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xb6\x01\n" +

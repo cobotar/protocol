@@ -159,21 +159,23 @@ func (x *TaskRuntimeBinding) GetContainerSlot() *v1.ContainerSlotRef {
 type TaskRun struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	TaskDefinitionId    string                 `protobuf:"bytes,2,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
-	ParentSequenceRunId string                 `protobuf:"bytes,3,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
-	State               TaskRunState           `protobuf:"varint,4,opt,name=state,proto3,enum=runtime.v1.TaskRunState" json:"state,omitempty"`
-	CandidateActors     []*v11.ActorRef        `protobuf:"bytes,5,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
-	AssignedActor       *v11.ActorRef          `protobuf:"bytes,6,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"`
-	CanDo               bool                   `protobuf:"varint,7,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo             bool                   `protobuf:"varint,8,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
-	WorkableHorizon     int32                  `protobuf:"varint,9,opt,name=workable_horizon,json=workableHorizon,proto3" json:"workable_horizon,omitempty"` // steps needed to complete before this step is workable.
-	EstimatedDuration   *v11.EstimatedDuration `protobuf:"bytes,10,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
-	StartedAt           *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
-	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
-	ErrorCode           string                 `protobuf:"bytes,13,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
-	ErrorMessage        string                 `protobuf:"bytes,14,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
-	Evidence            []*ExecutionEvidence   `protobuf:"bytes,15,rep,name=evidence,proto3" json:"evidence,omitempty"`
-	Binding             *TaskRuntimeBinding    `protobuf:"bytes,16,opt,name=binding,proto3" json:"binding,omitempty"`
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	TaskDefinitionId    string                 `protobuf:"bytes,4,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
+	ParentSequenceRunId string                 `protobuf:"bytes,5,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
+	State               TaskRunState           `protobuf:"varint,6,opt,name=state,proto3,enum=runtime.v1.TaskRunState" json:"state,omitempty"`
+	CandidateActors     []*v11.ActorRef        `protobuf:"bytes,7,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
+	AssignedActor       *v11.ActorRef          `protobuf:"bytes,8,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"`
+	CanDo               bool                   `protobuf:"varint,9,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
+	CanUndo             bool                   `protobuf:"varint,10,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	WorkableHorizon     int32                  `protobuf:"varint,11,opt,name=workable_horizon,json=workableHorizon,proto3" json:"workable_horizon,omitempty"` // steps needed to complete before this step is workable.
+	EstimatedDuration   *v11.EstimatedDuration `protobuf:"bytes,12,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
+	StartedAt           *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
+	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
+	ErrorCode           string                 `protobuf:"bytes,15,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
+	ErrorMessage        string                 `protobuf:"bytes,16,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
+	Evidence            []*ExecutionEvidence   `protobuf:"bytes,17,rep,name=evidence,proto3" json:"evidence,omitempty"`
+	Binding             *TaskRuntimeBinding    `protobuf:"bytes,18,opt,name=binding,proto3" json:"binding,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -211,6 +213,20 @@ func (*TaskRun) Descriptor() ([]byte, []int) {
 func (x *TaskRun) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *TaskRun) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TaskRun) GetIcon() string {
+	if x != nil {
+		return x.Icon
 	}
 	return ""
 }
@@ -375,27 +391,29 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
 	"\n" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x12E\n" +
-	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xae\x06\n" +
+	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd6\x06\n" +
 	"\aTaskRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12:\n" +
-	"\x12task_definition_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\x10taskDefinitionId\x12A\n" +
-	"\x16parent_sequence_run_id\x18\x03 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x13parentSequenceRunId\x12;\n" +
-	"\x05state\x18\x04 \x01(\x0e2\x18.runtime.v1.TaskRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12>\n" +
-	"\x10candidate_actors\x18\x05 \x03(\v2\x13.common.v1.ActorRefR\x0fcandidateActors\x12:\n" +
-	"\x0eassigned_actor\x18\x06 \x01(\v2\x13.common.v1.ActorRefR\rassignedActor\x12\x15\n" +
-	"\x06can_do\x18\a \x01(\bR\x05canDo\x12\x19\n" +
-	"\bcan_undo\x18\b \x01(\bR\acanUndo\x12)\n" +
-	"\x10workable_horizon\x18\t \x01(\x05R\x0fworkableHorizon\x12K\n" +
-	"\x12estimated_duration\x18\n" +
-	" \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\x129\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12:\n" +
+	"\x12task_definition_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\x10taskDefinitionId\x12A\n" +
+	"\x16parent_sequence_run_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x13parentSequenceRunId\x12;\n" +
+	"\x05state\x18\x06 \x01(\x0e2\x18.runtime.v1.TaskRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12>\n" +
+	"\x10candidate_actors\x18\a \x03(\v2\x13.common.v1.ActorRefR\x0fcandidateActors\x12:\n" +
+	"\x0eassigned_actor\x18\b \x01(\v2\x13.common.v1.ActorRefR\rassignedActor\x12\x15\n" +
+	"\x06can_do\x18\t \x01(\bR\x05canDo\x12\x19\n" +
+	"\bcan_undo\x18\n" +
+	" \x01(\bR\acanUndo\x12)\n" +
+	"\x10workable_horizon\x18\v \x01(\x05R\x0fworkableHorizon\x12K\n" +
+	"\x12estimated_duration\x18\f \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\x129\n" +
 	"\n" +
-	"started_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tstartedAt\x12=\n" +
-	"\fcompleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x1d\n" +
+	"started_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tstartedAt\x12=\n" +
+	"\fcompleted_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x1d\n" +
 	"\n" +
-	"error_code\x18\r \x01(\tR\terrorCode\x12#\n" +
-	"\rerror_message\x18\x0e \x01(\tR\ferrorMessage\x129\n" +
-	"\bevidence\x18\x0f \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
-	"\abinding\x18\x10 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\"5\n" +
+	"error_code\x18\x0f \x01(\tR\terrorCode\x12#\n" +
+	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x129\n" +
+	"\bevidence\x18\x11 \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
+	"\abinding\x18\x12 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\"5\n" +
 	"\bTaskRuns\x12)\n" +
 	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +

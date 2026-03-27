@@ -32,30 +32,32 @@ message TaskRuntimeBinding {
 
 message TaskRun {
   string id = 1;
-  string task_definition_id = 2 [
+  string name = 2;
+  string icon = 3;
+  string task_definition_id = 4 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_definition_id_component) = true
   ];
-  string parent_sequence_run_id = 3 [
+  string parent_sequence_run_id = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
   ];
-  TaskRunState state = 4 [
+  TaskRunState state = 6 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  repeated common.v1.ActorRef candidate_actors = 5;
-  common.v1.ActorRef assigned_actor = 6;
-  bool can_do = 7;
-  bool can_undo = 8;
-  int32 workable_horizon = 9; // steps needed to complete before this step is workable.
-  common.v1.EstimatedDuration estimated_duration = 10;
-  google.protobuf.Timestamp started_at = 11;
-  google.protobuf.Timestamp completed_at = 12;
-  string error_code = 13;
-  string error_message = 14;
-  repeated ExecutionEvidence evidence = 15;
-  TaskRuntimeBinding binding = 16;
+  repeated common.v1.ActorRef candidate_actors = 7;
+  common.v1.ActorRef assigned_actor = 8;
+  bool can_do = 9;
+  bool can_undo = 10;
+  int32 workable_horizon = 11; // steps needed to complete before this step is workable.
+  common.v1.EstimatedDuration estimated_duration = 12;
+  google.protobuf.Timestamp started_at = 13;
+  google.protobuf.Timestamp completed_at = 14;
+  string error_code = 15;
+  string error_message = 16;
+  repeated ExecutionEvidence evidence = 17;
+  TaskRuntimeBinding binding = 18;
 }
 
 message TaskRuns {

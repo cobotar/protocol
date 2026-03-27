@@ -85,14 +85,16 @@ func (SequenceRunState) EnumDescriptor() ([]byte, []int) {
 type SequenceRun struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
 	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	SequenceDefinitionId string                 `protobuf:"bytes,2,opt,name=sequence_definition_id,json=sequenceDefinitionId,proto3" json:"sequence_definition_id,omitempty"`
-	ParentSequenceRunId  string                 `protobuf:"bytes,3,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
-	ChildSequenceRunIds  []string               `protobuf:"bytes,4,rep,name=child_sequence_run_ids,json=childSequenceRunIds,proto3" json:"child_sequence_run_ids,omitempty"`
-	ChildTaskRunIds      []string               `protobuf:"bytes,5,rep,name=child_task_run_ids,json=childTaskRunIds,proto3" json:"child_task_run_ids,omitempty"`
-	State                SequenceRunState       `protobuf:"varint,6,opt,name=state,proto3,enum=runtime.v1.SequenceRunState" json:"state,omitempty"`
-	CompletedTasks       int32                  `protobuf:"varint,7,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
-	CanBulkComplete      bool                   `protobuf:"varint,8,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
-	AssignedActors       []*v1.ActorRef         `protobuf:"bytes,9,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	SequenceDefinitionId string                 `protobuf:"bytes,4,opt,name=sequence_definition_id,json=sequenceDefinitionId,proto3" json:"sequence_definition_id,omitempty"`
+	ParentSequenceRunId  string                 `protobuf:"bytes,5,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
+	ChildSequenceRunIds  []string               `protobuf:"bytes,6,rep,name=child_sequence_run_ids,json=childSequenceRunIds,proto3" json:"child_sequence_run_ids,omitempty"`
+	ChildTaskRunIds      []string               `protobuf:"bytes,7,rep,name=child_task_run_ids,json=childTaskRunIds,proto3" json:"child_task_run_ids,omitempty"`
+	State                SequenceRunState       `protobuf:"varint,8,opt,name=state,proto3,enum=runtime.v1.SequenceRunState" json:"state,omitempty"`
+	CompletedTasks       int32                  `protobuf:"varint,9,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
+	CanBulkComplete      bool                   `protobuf:"varint,10,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
+	AssignedActors       []*v1.ActorRef         `protobuf:"bytes,11,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -130,6 +132,20 @@ func (*SequenceRun) Descriptor() ([]byte, []int) {
 func (x *SequenceRun) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *SequenceRun) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *SequenceRun) GetIcon() string {
+	if x != nil {
+		return x.Icon
 	}
 	return ""
 }
@@ -239,17 +255,20 @@ var File_runtime_v1_sequence_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1druntime/v1/sequence_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe0\x03\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x88\x04\n" +
 	"\vSequenceRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12B\n" +
-	"\x16sequence_definition_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\x14sequenceDefinitionId\x12>\n" +
-	"\x16parent_sequence_run_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\x13parentSequenceRunId\x123\n" +
-	"\x16child_sequence_run_ids\x18\x04 \x03(\tR\x13childSequenceRunIds\x12+\n" +
-	"\x12child_task_run_ids\x18\x05 \x03(\tR\x0fchildTaskRunIds\x12?\n" +
-	"\x05state\x18\x06 \x01(\x0e2\x1c.runtime.v1.SequenceRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x120\n" +
-	"\x0fcompleted_tasks\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0ecompletedTasks\x12*\n" +
-	"\x11can_bulk_complete\x18\b \x01(\bR\x0fcanBulkComplete\x12<\n" +
-	"\x0fassigned_actors\x18\t \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\"=\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12B\n" +
+	"\x16sequence_definition_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\x14sequenceDefinitionId\x12>\n" +
+	"\x16parent_sequence_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\x13parentSequenceRunId\x123\n" +
+	"\x16child_sequence_run_ids\x18\x06 \x03(\tR\x13childSequenceRunIds\x12+\n" +
+	"\x12child_task_run_ids\x18\a \x03(\tR\x0fchildTaskRunIds\x12?\n" +
+	"\x05state\x18\b \x01(\x0e2\x1c.runtime.v1.SequenceRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x120\n" +
+	"\x0fcompleted_tasks\x18\t \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0ecompletedTasks\x12*\n" +
+	"\x11can_bulk_complete\x18\n" +
+	" \x01(\bR\x0fcanBulkComplete\x12<\n" +
+	"\x0fassigned_actors\x18\v \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\"=\n" +
 	"\fSequenceRuns\x12-\n" +
 	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xe9\x01\n" +
 	"\x10SequenceRunState\x12\"\n" +

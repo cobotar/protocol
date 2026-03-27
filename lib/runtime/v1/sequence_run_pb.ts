@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/sequence_run.proto.
  */
 export const file_runtime_v1_sequence_run: GenFile = /*@__PURE__*/
-  fileDesc("Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MSLTAgoLU2VxdWVuY2VSdW4SCgoCaWQYASABKAkSLAoWc2VxdWVuY2VfZGVmaW5pdGlvbl9pZBgCIAEoCUIMukgJyAEBcgSQ8gQBEikKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyABKAlCCbpIBnIEgPIEARIeChZjaGlsZF9zZXF1ZW5jZV9ydW5faWRzGAQgAygJEhoKEmNoaWxkX3Rhc2tfcnVuX2lkcxgFIAMoCRI4CgVzdGF0ZRgGIAEoDjIcLnJ1bnRpbWUudjEuU2VxdWVuY2VSdW5TdGF0ZUILukgIyAEBggECEAESIAoPY29tcGxldGVkX3Rhc2tzGAcgASgFQge6SAQaAigAEhkKEWNhbl9idWxrX2NvbXBsZXRlGAggASgIEiwKD2Fzc2lnbmVkX2FjdG9ycxgJIAMoCzITLmNvbW1vbi52MS5BY3RvclJlZiI2CgxTZXF1ZW5jZVJ1bnMSJgoFaXRlbXMYASADKAsyFy5ydW50aW1lLnYxLlNlcXVlbmNlUnVuKukBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEisKJ1NFUVVFTkNFX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9XQUlUSU5HEAISIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSIAocU0VRVUVOQ0VfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9BQk9SVEVEEAVCrwEKDmNvbS5ydW50aW1lLnYxQhBTZXF1ZW5jZVJ1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MSLvAgoLU2VxdWVuY2VSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEiwKFnNlcXVlbmNlX2RlZmluaXRpb25faWQYBCABKAlCDLpICcgBAXIEkPIEARIpChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAUgASgJQgm6SAZyBIDyBAESHgoWY2hpbGRfc2VxdWVuY2VfcnVuX2lkcxgGIAMoCRIaChJjaGlsZF90YXNrX3J1bl9pZHMYByADKAkSOAoFc3RhdGUYCCABKA4yHC5ydW50aW1lLnYxLlNlcXVlbmNlUnVuU3RhdGVCC7pICMgBAYIBAhABEiAKD2NvbXBsZXRlZF90YXNrcxgJIAEoBUIHukgEGgIoABIZChFjYW5fYnVsa19jb21wbGV0ZRgKIAEoCBIsCg9hc3NpZ25lZF9hY3RvcnMYCyADKAsyEy5jb21tb24udjEuQWN0b3JSZWYiNgoMU2VxdWVuY2VSdW5zEiYKBWl0ZW1zGAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1birpAQoQU2VxdWVuY2VSdW5TdGF0ZRIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIrCidTRVFVRU5DRV9SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIeChpTRVFVRU5DRV9SVU5fU1RBVEVfV0FJVElORxACEiIKHlNFUVVFTkNFX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEiAKHFNFUVVFTkNFX1JVTl9TVEFURV9DT01QTEVURUQQBBIeChpTRVFVRU5DRV9SVU5fU1RBVEVfQUJPUlRFRBAFQq8BCg5jb20ucnVudGltZS52MUIQU2VxdWVuY2VSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.SequenceRun
@@ -26,42 +26,52 @@ export type SequenceRun = Message<"runtime.v1.SequenceRun"> & {
   id: string;
 
   /**
-   * @generated from field: string sequence_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string sequence_definition_id = 4;
    */
   sequenceDefinitionId: string;
 
   /**
-   * @generated from field: string parent_sequence_run_id = 3;
+   * @generated from field: string parent_sequence_run_id = 5;
    */
   parentSequenceRunId: string;
 
   /**
-   * @generated from field: repeated string child_sequence_run_ids = 4;
+   * @generated from field: repeated string child_sequence_run_ids = 6;
    */
   childSequenceRunIds: string[];
 
   /**
-   * @generated from field: repeated string child_task_run_ids = 5;
+   * @generated from field: repeated string child_task_run_ids = 7;
    */
   childTaskRunIds: string[];
 
   /**
-   * @generated from field: runtime.v1.SequenceRunState state = 6;
+   * @generated from field: runtime.v1.SequenceRunState state = 8;
    */
   state: SequenceRunState;
 
   /**
-   * @generated from field: int32 completed_tasks = 7;
+   * @generated from field: int32 completed_tasks = 9;
    */
   completedTasks: number;
 
   /**
-   * @generated from field: bool can_bulk_complete = 8;
+   * @generated from field: bool can_bulk_complete = 10;
    */
   canBulkComplete: boolean;
 
   /**
-   * @generated from field: repeated common.v1.ActorRef assigned_actors = 9;
+   * @generated from field: repeated common.v1.ActorRef assigned_actors = 11;
    */
   assignedActors: ActorRef[];
 };

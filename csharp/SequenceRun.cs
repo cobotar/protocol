@@ -27,32 +27,33 @@ namespace Messages.Runtime.V1 {
             "Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MRob",
             "YnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhVjb21tb24vdjEvYWN0b3Iu",
             "cHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMu",
-            "cHJvdG8i4AMKC1NlcXVlbmNlUnVuEg4KAmlkGAEgASgJUgJpZBJCChZzZXF1",
-            "ZW5jZV9kZWZpbml0aW9uX2lkGAIgASgJQgy6SAlyBJDyBAHIAQFSFHNlcXVl",
-            "bmNlRGVmaW5pdGlvbklkEj4KFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyAB",
-            "KAlCCbpIBnIEgPIEAVITcGFyZW50U2VxdWVuY2VSdW5JZBIzChZjaGlsZF9z",
-            "ZXF1ZW5jZV9ydW5faWRzGAQgAygJUhNjaGlsZFNlcXVlbmNlUnVuSWRzEisK",
-            "EmNoaWxkX3Rhc2tfcnVuX2lkcxgFIAMoCVIPY2hpbGRUYXNrUnVuSWRzEj8K",
-            "BXN0YXRlGAYgASgOMhwucnVudGltZS52MS5TZXF1ZW5jZVJ1blN0YXRlQgu6",
-            "SAiCAQIQAcgBAVIFc3RhdGUSMAoPY29tcGxldGVkX3Rhc2tzGAcgASgFQge6",
-            "SAQaAigAUg5jb21wbGV0ZWRUYXNrcxIqChFjYW5fYnVsa19jb21wbGV0ZRgI",
-            "IAEoCFIPY2FuQnVsa0NvbXBsZXRlEjwKD2Fzc2lnbmVkX2FjdG9ycxgJIAMo",
-            "CzITLmNvbW1vbi52MS5BY3RvclJlZlIOYXNzaWduZWRBY3RvcnMiPQoMU2Vx",
-            "dWVuY2VSdW5zEi0KBWl0ZW1zGAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5j",
-            "ZVJ1blIFaXRlbXMq6QEKEFNlcXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0Vf",
-            "UlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRF",
-            "X01JU1NJTkdfUFJFQ09ORElUSU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRF",
-            "X1dBSVRJTkcQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQ",
-            "AxIgChxTRVFVRU5DRV9SVU5fU1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVO",
-            "Q0VfUlVOX1NUQVRFX0FCT1JURUQQBUKvAQoOY29tLnJ1bnRpbWUudjFCEFNl",
-            "cXVlbmNlUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2Fn",
-            "ZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1l",
-            "dGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "cHJvdG8iiAQKC1NlcXVlbmNlUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1l",
+            "GAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SQgoWc2VxdWVuY2Vf",
+            "ZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJcgSQ8gQByAEBUhRzZXF1ZW5jZURl",
+            "ZmluaXRpb25JZBI+ChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAUgASgJQgm6",
+            "SAZyBIDyBAFSE3BhcmVudFNlcXVlbmNlUnVuSWQSMwoWY2hpbGRfc2VxdWVu",
+            "Y2VfcnVuX2lkcxgGIAMoCVITY2hpbGRTZXF1ZW5jZVJ1bklkcxIrChJjaGls",
+            "ZF90YXNrX3J1bl9pZHMYByADKAlSD2NoaWxkVGFza1J1bklkcxI/CgVzdGF0",
+            "ZRgIIAEoDjIcLnJ1bnRpbWUudjEuU2VxdWVuY2VSdW5TdGF0ZUILukgIggEC",
+            "EAHIAQFSBXN0YXRlEjAKD2NvbXBsZXRlZF90YXNrcxgJIAEoBUIHukgEGgIo",
+            "AFIOY29tcGxldGVkVGFza3MSKgoRY2FuX2J1bGtfY29tcGxldGUYCiABKAhS",
+            "D2NhbkJ1bGtDb21wbGV0ZRI8Cg9hc3NpZ25lZF9hY3RvcnMYCyADKAsyEy5j",
+            "b21tb24udjEuQWN0b3JSZWZSDmFzc2lnbmVkQWN0b3JzIj0KDFNlcXVlbmNl",
+            "UnVucxItCgVpdGVtcxgBIAMoCzIXLnJ1bnRpbWUudjEuU2VxdWVuY2VSdW5S",
+            "BWl0ZW1zKukBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9T",
+            "VEFURV9VTlNQRUNJRklFRBAAEisKJ1NFUVVFTkNFX1JVTl9TVEFURV9NSVNT",
+            "SU5HX1BSRUNPTkRJVElPThABEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9XQUlU",
+            "SU5HEAISIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSIAoc",
+            "U0VRVUVOQ0VfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEh4KGlNFUVVFTkNFX1JV",
+            "Tl9TVEFURV9BQk9SVEVEEAVCrwEKDmNvbS5ydW50aW1lLnYxQhBTZXF1ZW5j",
+            "ZVJ1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1",
+            "bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0",
+            "YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.SequenceRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "Name", "Icon", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRuns), global::Messages.Runtime.V1.SequenceRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -108,6 +109,8 @@ namespace Messages.Runtime.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SequenceRun(SequenceRun other) : this() {
       id_ = other.id_;
+      name_ = other.name_;
+      icon_ = other.icon_;
       sequenceDefinitionId_ = other.sequenceDefinitionId_;
       parentSequenceRunId_ = other.parentSequenceRunId_;
       childSequenceRunIds_ = other.childSequenceRunIds_.Clone();
@@ -137,8 +140,32 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 3;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sequence_definition_id" field.</summary>
-    public const int SequenceDefinitionIdFieldNumber = 2;
+    public const int SequenceDefinitionIdFieldNumber = 4;
     private string sequenceDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,7 +177,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "parent_sequence_run_id" field.</summary>
-    public const int ParentSequenceRunIdFieldNumber = 3;
+    public const int ParentSequenceRunIdFieldNumber = 5;
     private string parentSequenceRunId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,9 +189,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "child_sequence_run_ids" field.</summary>
-    public const int ChildSequenceRunIdsFieldNumber = 4;
+    public const int ChildSequenceRunIdsFieldNumber = 6;
     private static readonly pb::FieldCodec<string> _repeated_childSequenceRunIds_codec
-        = pb::FieldCodec.ForString(34);
+        = pb::FieldCodec.ForString(50);
     private readonly pbc::RepeatedField<string> childSequenceRunIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -173,9 +200,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "child_task_run_ids" field.</summary>
-    public const int ChildTaskRunIdsFieldNumber = 5;
+    public const int ChildTaskRunIdsFieldNumber = 7;
     private static readonly pb::FieldCodec<string> _repeated_childTaskRunIds_codec
-        = pb::FieldCodec.ForString(42);
+        = pb::FieldCodec.ForString(58);
     private readonly pbc::RepeatedField<string> childTaskRunIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -184,7 +211,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 6;
+    public const int StateFieldNumber = 8;
     private global::Messages.Runtime.V1.SequenceRunState state_ = global::Messages.Runtime.V1.SequenceRunState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -196,7 +223,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "completed_tasks" field.</summary>
-    public const int CompletedTasksFieldNumber = 7;
+    public const int CompletedTasksFieldNumber = 9;
     private int completedTasks_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -208,7 +235,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "can_bulk_complete" field.</summary>
-    public const int CanBulkCompleteFieldNumber = 8;
+    public const int CanBulkCompleteFieldNumber = 10;
     private bool canBulkComplete_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -220,9 +247,9 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "assigned_actors" field.</summary>
-    public const int AssignedActorsFieldNumber = 9;
+    public const int AssignedActorsFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.ActorRef> _repeated_assignedActors_codec
-        = pb::FieldCodec.ForMessage(74, global::Messages.Common.V1.ActorRef.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Messages.Common.V1.ActorRef.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.ActorRef> assignedActors_ = new pbc::RepeatedField<global::Messages.Common.V1.ActorRef>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -246,6 +273,8 @@ namespace Messages.Runtime.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
       if (SequenceDefinitionId != other.SequenceDefinitionId) return false;
       if (ParentSequenceRunId != other.ParentSequenceRunId) return false;
       if(!childSequenceRunIds_.Equals(other.childSequenceRunIds_)) return false;
@@ -262,6 +291,8 @@ namespace Messages.Runtime.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (SequenceDefinitionId.Length != 0) hash ^= SequenceDefinitionId.GetHashCode();
       if (ParentSequenceRunId.Length != 0) hash ^= ParentSequenceRunId.GetHashCode();
       hash ^= childSequenceRunIds_.GetHashCode();
@@ -292,26 +323,34 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (SequenceDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (SequenceDefinitionId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(SequenceDefinitionId);
       }
       if (ParentSequenceRunId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(ParentSequenceRunId);
       }
       childSequenceRunIds_.WriteTo(output, _repeated_childSequenceRunIds_codec);
       childTaskRunIds_.WriteTo(output, _repeated_childTaskRunIds_codec);
       if (State != global::Messages.Runtime.V1.SequenceRunState.Unspecified) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteEnum((int) State);
       }
       if (CompletedTasks != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteInt32(CompletedTasks);
       }
       if (CanBulkComplete != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(CanBulkComplete);
       }
       assignedActors_.WriteTo(output, _repeated_assignedActors_codec);
@@ -329,26 +368,34 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (SequenceDefinitionId.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Icon);
+      }
+      if (SequenceDefinitionId.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(SequenceDefinitionId);
       }
       if (ParentSequenceRunId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(42);
         output.WriteString(ParentSequenceRunId);
       }
       childSequenceRunIds_.WriteTo(ref output, _repeated_childSequenceRunIds_codec);
       childTaskRunIds_.WriteTo(ref output, _repeated_childTaskRunIds_codec);
       if (State != global::Messages.Runtime.V1.SequenceRunState.Unspecified) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteEnum((int) State);
       }
       if (CompletedTasks != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteInt32(CompletedTasks);
       }
       if (CanBulkComplete != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(CanBulkComplete);
       }
       assignedActors_.WriteTo(ref output, _repeated_assignedActors_codec);
@@ -364,6 +411,12 @@ namespace Messages.Runtime.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       if (SequenceDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SequenceDefinitionId);
@@ -397,6 +450,12 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.SequenceDefinitionId.Length != 0) {
         SequenceDefinitionId = other.SequenceDefinitionId;
@@ -440,34 +499,42 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            SequenceDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            ParentSequenceRunId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            childSequenceRunIds_.AddEntriesFrom(input, _repeated_childSequenceRunIds_codec);
+            SequenceDefinitionId = input.ReadString();
             break;
           }
           case 42: {
+            ParentSequenceRunId = input.ReadString();
+            break;
+          }
+          case 50: {
+            childSequenceRunIds_.AddEntriesFrom(input, _repeated_childSequenceRunIds_codec);
+            break;
+          }
+          case 58: {
             childTaskRunIds_.AddEntriesFrom(input, _repeated_childTaskRunIds_codec);
             break;
           }
-          case 48: {
+          case 64: {
             State = (global::Messages.Runtime.V1.SequenceRunState) input.ReadEnum();
             break;
           }
-          case 56: {
+          case 72: {
             CompletedTasks = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 80: {
             CanBulkComplete = input.ReadBool();
             break;
           }
-          case 74: {
+          case 90: {
             assignedActors_.AddEntriesFrom(input, _repeated_assignedActors_codec);
             break;
           }
@@ -495,34 +562,42 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            SequenceDefinitionId = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            ParentSequenceRunId = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 34: {
-            childSequenceRunIds_.AddEntriesFrom(ref input, _repeated_childSequenceRunIds_codec);
+            SequenceDefinitionId = input.ReadString();
             break;
           }
           case 42: {
+            ParentSequenceRunId = input.ReadString();
+            break;
+          }
+          case 50: {
+            childSequenceRunIds_.AddEntriesFrom(ref input, _repeated_childSequenceRunIds_codec);
+            break;
+          }
+          case 58: {
             childTaskRunIds_.AddEntriesFrom(ref input, _repeated_childTaskRunIds_codec);
             break;
           }
-          case 48: {
+          case 64: {
             State = (global::Messages.Runtime.V1.SequenceRunState) input.ReadEnum();
             break;
           }
-          case 56: {
+          case 72: {
             CompletedTasks = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 80: {
             CanBulkComplete = input.ReadBool();
             break;
           }
-          case 74: {
+          case 90: {
             assignedActors_.AddEntriesFrom(ref input, _repeated_assignedActors_codec);
             break;
           }

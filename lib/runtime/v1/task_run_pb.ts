@@ -22,7 +22,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIpYBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRI2Cg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmIuQECgdUYXNrUnVuEgoKAmlkGAEgASgJEigKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCUIMukgJyAEBcgSY8gQBEiwKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyABKAlCDLpICcgBAXIE+PEEARI0CgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0YXRlQgu6SAjIAQGCAQIQARItChBjYW5kaWRhdGVfYWN0b3JzGAUgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmEisKDmFzc2lnbmVkX2FjdG9yGAYgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgHIAEoCBIQCghjYW5fdW5kbxgIIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAkgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIvCghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2USLwoHYmluZGluZxgQIAEoCzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nIi4KCFRhc2tSdW5zEiIKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuKucBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABInCiNUQVNLX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlRBU0tfUlVOX1NUQVRFX1dBSVRJTkcQAhIeChpUQVNLX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFRBU0tfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_execution_evidence, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIpYBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRI2Cg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmIoAFCgdUYXNrUnVuEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIoChJ0YXNrX2RlZmluaXRpb25faWQYBCABKAlCDLpICcgBAXIEmPIEARIsChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAUgASgJQgy6SAnIAQFyBPjxBAESNAoFc3RhdGUYBiABKA4yGC5ydW50aW1lLnYxLlRhc2tSdW5TdGF0ZUILukgIyAEBggECEAESLQoQY2FuZGlkYXRlX2FjdG9ycxgHIAMoCzITLmNvbW1vbi52MS5BY3RvclJlZhIrCg5hc3NpZ25lZF9hY3RvchgIIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIOCgZjYW5fZG8YCSABKAgSEAoIY2FuX3VuZG8YCiABKAgSGAoQd29ya2FibGVfaG9yaXpvbhgLIAEoBRI4ChJlc3RpbWF0ZWRfZHVyYXRpb24YDCABKAsyHC5jb21tb24udjEuRXN0aW1hdGVkRHVyYXRpb24SLgoKc3RhcnRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoMY29tcGxldGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBISCgplcnJvcl9jb2RlGA8gASgJEhUKDWVycm9yX21lc3NhZ2UYECABKAkSLwoIZXZpZGVuY2UYESADKAsyHS5ydW50aW1lLnYxLkV4ZWN1dGlvbkV2aWRlbmNlEi8KB2JpbmRpbmcYEiABKAsyHi5ydW50aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZyIuCghUYXNrUnVucxIiCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1birnAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASJwojVEFTS19SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIaChZUQVNLX1JVTl9TVEFURV9XQUlUSU5HEAISHgoaVEFTS19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIcChhUQVNLX1JVTl9TVEFURV9DT01QTEVURUQQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NUQVRFX0FCT1JURUQQBkKrAQoOY29tLnJ1bnRpbWUudjFCDFRhc2tSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_execution_evidence, file_validation_v1_predefined_string_rules]);
 
 /**
  * Concrete runtime/deployment bindings resolved for this task run.
@@ -68,79 +68,89 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   id: string;
 
   /**
-   * @generated from field: string task_definition_id = 2;
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string task_definition_id = 4;
    */
   taskDefinitionId: string;
 
   /**
-   * @generated from field: string parent_sequence_run_id = 3;
+   * @generated from field: string parent_sequence_run_id = 5;
    */
   parentSequenceRunId: string;
 
   /**
-   * @generated from field: runtime.v1.TaskRunState state = 4;
+   * @generated from field: runtime.v1.TaskRunState state = 6;
    */
   state: TaskRunState;
 
   /**
-   * @generated from field: repeated common.v1.ActorRef candidate_actors = 5;
+   * @generated from field: repeated common.v1.ActorRef candidate_actors = 7;
    */
   candidateActors: ActorRef[];
 
   /**
-   * @generated from field: common.v1.ActorRef assigned_actor = 6;
+   * @generated from field: common.v1.ActorRef assigned_actor = 8;
    */
   assignedActor?: ActorRef;
 
   /**
-   * @generated from field: bool can_do = 7;
+   * @generated from field: bool can_do = 9;
    */
   canDo: boolean;
 
   /**
-   * @generated from field: bool can_undo = 8;
+   * @generated from field: bool can_undo = 10;
    */
   canUndo: boolean;
 
   /**
    * steps needed to complete before this step is workable.
    *
-   * @generated from field: int32 workable_horizon = 9;
+   * @generated from field: int32 workable_horizon = 11;
    */
   workableHorizon: number;
 
   /**
-   * @generated from field: common.v1.EstimatedDuration estimated_duration = 10;
+   * @generated from field: common.v1.EstimatedDuration estimated_duration = 12;
    */
   estimatedDuration?: EstimatedDuration;
 
   /**
-   * @generated from field: google.protobuf.Timestamp started_at = 11;
+   * @generated from field: google.protobuf.Timestamp started_at = 13;
    */
   startedAt?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp completed_at = 12;
+   * @generated from field: google.protobuf.Timestamp completed_at = 14;
    */
   completedAt?: Timestamp;
 
   /**
-   * @generated from field: string error_code = 13;
+   * @generated from field: string error_code = 15;
    */
   errorCode: string;
 
   /**
-   * @generated from field: string error_message = 14;
+   * @generated from field: string error_message = 16;
    */
   errorMessage: string;
 
   /**
-   * @generated from field: repeated runtime.v1.ExecutionEvidence evidence = 15;
+   * @generated from field: repeated runtime.v1.ExecutionEvidence evidence = 17;
    */
   evidence: ExecutionEvidence[];
 
   /**
-   * @generated from field: runtime.v1.TaskRuntimeBinding binding = 16;
+   * @generated from field: runtime.v1.TaskRuntimeBinding binding = 18;
    */
   binding?: TaskRuntimeBinding;
 };
