@@ -4,16 +4,14 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { ActorAssignment } from "./actor_assignment_pb.ts";
 import { file_runtime_v1_actor_assignment } from "./actor_assignment_pb.ts";
-import type { SequenceRun } from "./sequence_run_pb.ts";
-import { file_runtime_v1_sequence_run } from "./sequence_run_pb.ts";
-import type { TaskRun } from "./task_run_pb.ts";
-import { file_runtime_v1_task_run } from "./task_run_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantConfiguration } from "../../variance/v1/variant_configuration_pb.ts";
 import { file_variance_v1_variant_configuration } from "../../variance/v1/variant_configuration_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -22,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/process_run.proto.
  */
 export const file_runtime_v1_process_run: GenFile = /*@__PURE__*/
-  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkiqQQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSEQoJcmVjaXBlX2lkGAIgASgJEhAKCG9yZGVyX2lkGAMgASgJEhIKCnN0YXRpb25faWQYBCABKAkSDwoHY2VsbF9pZBgFIAEoCRIpCgVmcmFtZRgGIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USHAoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYByABKAkSKgoJc2VxdWVuY2VzGAggAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1bhIiCgV0YXNrcxgJIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1bhIqCgVzdGF0ZRgKIAEoDjIbLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blN0YXRlEjAKDGluaXRpYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKC2Fzc2lnbm1lbnRzGA0gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1lbnQSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGA4gASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLAoKcGFyYW1ldGVycxgPIAMoCzIYLnJ1bnRpbWUudjEuUnVuUGFyYW1ldGVyIjQKC1Byb2Nlc3NSdW5zEiUKBWl0ZW1zGAEgAygLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_runtime_v1_sequence_run, file_runtime_v1_task_run, file_variance_v1_variant_configuration]);
+  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAki8AQKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSJwoRcHJvY2Vzc19yZWNpcGVfaWQYAiABKAlCDLpICcgBAXIEiPIEARIQCghvcmRlcl9pZBgDIAEoCRIdCgpzdGF0aW9uX2lkGAQgASgJQgm6SAZyBNjxBAESGgoHY2VsbF9pZBgFIAEoCUIJukgGcgSg8gQBEikKBWZyYW1lGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIqChRyb290X3NlcXVlbmNlX3J1bl9pZBgHIAEoCUIMukgJyAEBcgT48QQBEigKEHNlcXVlbmNlX3J1bl9pZHMYCCADKAlCDrpIC5IBCCIGcgT48QQBEiQKDHRhc2tfcnVuX2lkcxgJIAMoCUIOukgLkgEIIgZyBIDyBAESNwoFc3RhdGUYCiABKA4yGy5ydW50aW1lLnYxLlByb2Nlc3NSdW5TdGF0ZUILukgIyAEBggECEAESMAoMaW5pdGlhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoLYXNzaWdubWVudHMYDSADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNzaWdubWVudBJAChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YDiABKAsyIS52YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvbhIsCgpwYXJhbWV0ZXJzGA8gAygLMhgucnVudGltZS52MS5SdW5QYXJhbWV0ZXIiNAoLUHJvY2Vzc1J1bnMSJQoFaXRlbXMYASADKAsyFi5ydW50aW1lLnYxLlByb2Nlc3NSdW4qtgEKD1Byb2Nlc3NSdW5TdGF0ZRIhCh1QUk9DRVNTX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEh0KGVBST0NFU1NfUlVOX1NUQVRFX1dBSVRJTkcQARIhCh1QUk9DRVNTX1JVTl9TVEFURV9JTl9QUk9HUkVTUxACEh8KG1BST0NFU1NfUlVOX1NUQVRFX0NPTVBMRVRFRBADEh0KGVBST0NFU1NfUlVOX1NUQVRFX0FCT1JURUQQBEKuAQoOY29tLnJ1bnRpbWUudjFCD1Byb2Nlc3NSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
 
 /**
  * @generated from message runtime.v1.RunParameter
@@ -61,9 +59,9 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
   id: string;
 
   /**
-   * @generated from field: string recipe_id = 2;
+   * @generated from field: string process_recipe_id = 2;
    */
-  recipeId: string;
+  processRecipeId: string;
 
   /**
    * @generated from field: string order_id = 3;
@@ -91,14 +89,14 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
   rootSequenceRunId: string;
 
   /**
-   * @generated from field: repeated runtime.v1.SequenceRun sequences = 8;
+   * @generated from field: repeated string sequence_run_ids = 8;
    */
-  sequences: SequenceRun[];
+  sequenceRunIds: string[];
 
   /**
-   * @generated from field: repeated runtime.v1.TaskRun tasks = 9;
+   * @generated from field: repeated string task_run_ids = 9;
    */
-  tasks: TaskRun[];
+  taskRunIds: string[];
 
   /**
    * @generated from field: runtime.v1.ProcessRunState state = 10;

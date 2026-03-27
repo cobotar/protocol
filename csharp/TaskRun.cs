@@ -24,46 +24,48 @@ namespace Messages.Runtime.V1 {
     static TaskRunReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxGhRjb21t",
-            "b24vdjEvdGltZS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
-            "cm90bxoncmVzb3VyY2VzL3YxL2NvbnRhaW5lcl9kZWZpbml0aW9uLnByb3Rv",
-            "GiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8aI3J1bnRpbWUv",
-            "djEvZXhlY3V0aW9uX2V2aWRlbmNlLnByb3RvItIBChJUYXNrUnVudGltZUJp",
-            "bmRpbmcSKgoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlSD2Fzc2V0SW5zdGFu",
-            "Y2VJZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCVIPcm9ib3RJbnN0YW5j",
-            "ZUlkEh0KCnN0YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBJFCg5jb250YWlu",
-            "ZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVm",
-            "Ug1jb250YWluZXJTbG90IocGCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBIs",
-            "ChJ0YXNrX2RlZmluaXRpb25faWQYAiABKAlSEHRhc2tEZWZpbml0aW9uSWQS",
-            "MwoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgDIAEoCVITcGFyZW50U2VxdWVu",
-            "Y2VSdW5JZBIuCgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0",
-            "YXRlUgVzdGF0ZRI/ChBjYW5kaWRhdGVfYWN0b3JzGAUgAygLMhQucnVudGlt",
-            "ZS52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3JzEjsKDmFzc2lnbmVkX2Fj",
-            "dG9yGAYgASgLMhQucnVudGltZS52MS5BY3RvclJlZlINYXNzaWduZWRBY3Rv",
-            "chIVCgZjYW5fZG8YByABKAhSBWNhbkRvEhkKCGNhbl91bmRvGAggASgIUgdj",
-            "YW5VbmRvEikKEHdvcmthYmxlX2hvcml6b24YCSABKAVSD3dvcmthYmxlSG9y",
-            "aXpvbhJLChJlc3RpbWF0ZWRfZHVyYXRpb24YCiABKAsyHC5jb21tb24udjEu",
-            "RXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uEjkKCnN0YXJ0",
-            "ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglzdGFy",
-            "dGVkQXQSPQoMY29tcGxldGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcFILY29tcGxldGVkQXQSHQoKZXJyb3JfY29kZRgNIAEoCVIJ",
-            "ZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UYDiABKAlSDGVycm9yTWVzc2Fn",
-            "ZRI5CghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZp",
-            "ZGVuY2VSCGV2aWRlbmNlEjgKB2JpbmRpbmcYECABKAsyHi5ydW50aW1lLnYx",
-            "LlRhc2tSdW50aW1lQmluZGluZ1IHYmluZGluZyI1CghUYXNrUnVucxIpCgVp",
-            "dGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq5wEKDFRh",
-            "c2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEicK",
-            "I1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAESGgoWVEFT",
-            "S19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BS",
-            "T0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQSGAoUVEFT",
-            "S19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVE",
-            "EAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHVi",
-            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVu",
-            "dGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVc",
-            "VjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnBy",
-            "b3RvMw=="));
+            "ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxGhtidWYv",
+            "dmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aFWNvbW1vbi92MS9hY3Rvci5wcm90",
+            "bxoUY29tbW9uL3YxL3RpbWUucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1l",
+            "c3RhbXAucHJvdG8aJ3Jlc291cmNlcy92MS9jb250YWluZXJfZGVmaW5pdGlv",
+            "bi5wcm90bxojcnVudGltZS92MS9leGVjdXRpb25fZXZpZGVuY2UucHJvdG8a",
+            "K3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i",
+            "0gEKElRhc2tSdW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgB",
+            "IAEoCVIPYXNzZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIg",
+            "ASgJUg9yb2JvdEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3Rh",
+            "dGlvbklkEkUKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYx",
+            "LkNvbnRhaW5lclNsb3RSZWZSDWNvbnRhaW5lclNsb3QirgYKB1Rhc2tSdW4S",
+            "DgoCaWQYASABKAlSAmlkEjoKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCUIM",
+            "ukgJcgSY8gQByAEBUhB0YXNrRGVmaW5pdGlvbklkEkEKFnBhcmVudF9zZXF1",
+            "ZW5jZV9ydW5faWQYAyABKAlCDLpICXIE+PEEAcgBAVITcGFyZW50U2VxdWVu",
+            "Y2VSdW5JZBI7CgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0",
+            "YXRlQgu6SAiCAQIQAcgBAVIFc3RhdGUSPgoQY2FuZGlkYXRlX2FjdG9ycxgF",
+            "IAMoCzITLmNvbW1vbi52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3JzEjoK",
+            "DmFzc2lnbmVkX2FjdG9yGAYgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmUg1h",
+            "c3NpZ25lZEFjdG9yEhUKBmNhbl9kbxgHIAEoCFIFY2FuRG8SGQoIY2FuX3Vu",
+            "ZG8YCCABKAhSB2NhblVuZG8SKQoQd29ya2FibGVfaG9yaXpvbhgJIAEoBVIP",
+            "d29ya2FibGVIb3Jpem9uEksKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIc",
+            "LmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVyYXRp",
+            "b24SOQoKc3RhcnRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXBSCXN0YXJ0ZWRBdBI9Cgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wUgtjb21wbGV0ZWRBdBIdCgplcnJvcl9j",
+            "b2RlGA0gASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgOIAEoCVIM",
+            "ZXJyb3JNZXNzYWdlEjkKCGV2aWRlbmNlGA8gAygLMh0ucnVudGltZS52MS5F",
+            "eGVjdXRpb25FdmlkZW5jZVIIZXZpZGVuY2USOAoHYmluZGluZxgQIAEoCzIe",
+            "LnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nIjUKCFRh",
+            "c2tSdW5zEikKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuUgVp",
+            "dGVtcyrnAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BF",
+            "Q0lGSUVEEAASJwojVEFTS19SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJ",
+            "T04QARIaChZUQVNLX1JVTl9TVEFURV9XQUlUSU5HEAISHgoaVEFTS19SVU5f",
+            "U1RBVEVfSU5fUFJPR1JFU1MQAxIcChhUQVNLX1JVTl9TVEFURV9DT01QTEVU",
+            "RUQQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NU",
+            "QVRFX0FCT1JURUQQBkKrAQoOY29tLnJ1bnRpbWUudjFCDFRhc2tSdW5Qcm90",
+            "b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVu",
+            "dGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYx",
+            "ygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50",
+            "aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerSlot" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
@@ -518,21 +520,21 @@ namespace Messages.Runtime.V1 {
 
     /// <summary>Field number for the "candidate_actors" field.</summary>
     public const int CandidateActorsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ActorRef> _repeated_candidateActors_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.Runtime.V1.ActorRef.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef> candidateActors_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef>();
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.ActorRef> _repeated_candidateActors_codec
+        = pb::FieldCodec.ForMessage(42, global::Messages.Common.V1.ActorRef.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.ActorRef> candidateActors_ = new pbc::RepeatedField<global::Messages.Common.V1.ActorRef>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef> CandidateActors {
+    public pbc::RepeatedField<global::Messages.Common.V1.ActorRef> CandidateActors {
       get { return candidateActors_; }
     }
 
     /// <summary>Field number for the "assigned_actor" field.</summary>
     public const int AssignedActorFieldNumber = 6;
-    private global::Messages.Runtime.V1.ActorRef assignedActor_;
+    private global::Messages.Common.V1.ActorRef assignedActor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Runtime.V1.ActorRef AssignedActor {
+    public global::Messages.Common.V1.ActorRef AssignedActor {
       get { return assignedActor_; }
       set {
         assignedActor_ = value;
@@ -940,7 +942,7 @@ namespace Messages.Runtime.V1 {
       candidateActors_.Add(other.candidateActors_);
       if (other.assignedActor_ != null) {
         if (assignedActor_ == null) {
-          AssignedActor = new global::Messages.Runtime.V1.ActorRef();
+          AssignedActor = new global::Messages.Common.V1.ActorRef();
         }
         AssignedActor.MergeFrom(other.AssignedActor);
       }
@@ -1025,7 +1027,7 @@ namespace Messages.Runtime.V1 {
           }
           case 50: {
             if (assignedActor_ == null) {
-              AssignedActor = new global::Messages.Runtime.V1.ActorRef();
+              AssignedActor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(AssignedActor);
             break;
@@ -1123,7 +1125,7 @@ namespace Messages.Runtime.V1 {
           }
           case 50: {
             if (assignedActor_ == null) {
-              AssignedActor = new global::Messages.Runtime.V1.ActorRef();
+              AssignedActor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(AssignedActor);
             break;

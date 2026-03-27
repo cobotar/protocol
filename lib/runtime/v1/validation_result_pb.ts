@@ -4,17 +4,21 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { ActorRef } from "../../common/v1/actor_pb.ts";
+import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
 import type { KeyValueConstraint } from "../../common/v1/key_value_constraint_pb.ts";
 import { file_common_v1_key_value_constraint } from "../../common/v1/key_value_constraint_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file runtime/v1/validation_result.proto.
  */
 export const file_runtime_v1_validation_result: GenFile = /*@__PURE__*/
-  fileDesc("CiJydW50aW1lL3YxL3ZhbGlkYXRpb25fcmVzdWx0LnByb3RvEgpydW50aW1lLnYxIogCChBWYWxpZGF0aW9uUmVzdWx0EgoKAmlkGAEgASgJEhMKC3Rhc2tfcnVuX2lkGAIgASgJEiwKBnN0YXR1cxgDIAEoDjIcLnJ1bnRpbWUudjEuVmFsaWRhdGlvblN0YXR1cxIOCgZtZXRob2QYBCABKAkSMAoMdmFsaWRhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIzCgxtZWFzdXJlbWVudHMYBiADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Eh0KFXZhbGlkYXRlZF9ieV9hY3Rvcl9pZBgHIAEoCRIPCgdjb21tZW50GAggASgJKrABChBWYWxpZGF0aW9uU3RhdHVzEiEKHVZBTElEQVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASHQoZVkFMSURBVElPTl9TVEFUVVNfUEVORElORxABEhwKGFZBTElEQVRJT05fU1RBVFVTX1BBU1NFRBACEhwKGFZBTElEQVRJT05fU1RBVFVTX0ZBSUxFRBADEh4KGlZBTElEQVRJT05fU1RBVFVTX0JZUEFTU0VEEARCtAEKDmNvbS5ydW50aW1lLnYxQhVWYWxpZGF0aW9uUmVzdWx0UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_key_value_constraint, file_google_protobuf_timestamp]);
+  fileDesc("CiJydW50aW1lL3YxL3ZhbGlkYXRpb25fcmVzdWx0LnByb3RvEgpydW50aW1lLnYxIrICChBWYWxpZGF0aW9uUmVzdWx0EgoKAmlkGAEgASgJEiEKC3Rhc2tfcnVuX2lkGAIgASgJQgy6SAnIAQFyBIDyBAESNgoGc3RhdHVzGAMgASgOMhwucnVudGltZS52MS5WYWxpZGF0aW9uU3RhdHVzQgi6SAWCAQIQARIOCgZtZXRob2QYBCABKAkSMAoMdmFsaWRhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIzCgxtZWFzdXJlbWVudHMYBiADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ei8KEnZhbGlkYXRlZF9ieV9hY3RvchgHIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIPCgdjb21tZW50GAggASgJKrABChBWYWxpZGF0aW9uU3RhdHVzEiEKHVZBTElEQVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASHQoZVkFMSURBVElPTl9TVEFUVVNfUEVORElORxABEhwKGFZBTElEQVRJT05fU1RBVFVTX1BBU1NFRBACEhwKGFZBTElEQVRJT05fU1RBVFVTX0ZBSUxFRBADEh4KGlZBTElEQVRJT05fU1RBVFVTX0JZUEFTU0VEEARCtAEKDmNvbS5ydW50aW1lLnYxQhVWYWxpZGF0aW9uUmVzdWx0UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_key_value_constraint, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.ValidationResult
@@ -53,9 +57,9 @@ export type ValidationResult = Message<"runtime.v1.ValidationResult"> & {
   measurements: KeyValueConstraint[];
 
   /**
-   * @generated from field: string validated_by_actor_id = 7;
+   * @generated from field: common.v1.ActorRef validated_by_actor = 7;
    */
-  validatedByActorId: string;
+  validatedByActor?: ActorRef;
 
   /**
    * @generated from field: string comment = 8;

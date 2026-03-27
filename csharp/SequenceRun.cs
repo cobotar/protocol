@@ -24,31 +24,33 @@ namespace Messages.Runtime.V1 {
     static SequenceRunReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MRoh",
-            "cnVudGltZS92MS9hY3Rvcl9hc3NpZ25tZW50LnByb3RvIrIDCgtTZXF1ZW5j",
-            "ZVJ1bhIOCgJpZBgBIAEoCVICaWQSNAoWc2VxdWVuY2VfZGVmaW5pdGlvbl9p",
-            "ZBgCIAEoCVIUc2VxdWVuY2VEZWZpbml0aW9uSWQSMwoWcGFyZW50X3NlcXVl",
-            "bmNlX3J1bl9pZBgDIAEoCVITcGFyZW50U2VxdWVuY2VSdW5JZBIzChZjaGls",
-            "ZF9zZXF1ZW5jZV9ydW5faWRzGAQgAygJUhNjaGlsZFNlcXVlbmNlUnVuSWRz",
-            "EisKEmNoaWxkX3Rhc2tfcnVuX2lkcxgFIAMoCVIPY2hpbGRUYXNrUnVuSWRz",
-            "EjIKBXN0YXRlGAYgASgOMhwucnVudGltZS52MS5TZXF1ZW5jZVJ1blN0YXRl",
-            "UgVzdGF0ZRInCg9jb21wbGV0ZWRfdGFza3MYByABKAVSDmNvbXBsZXRlZFRh",
-            "c2tzEioKEWNhbl9idWxrX2NvbXBsZXRlGAggASgIUg9jYW5CdWxrQ29tcGxl",
-            "dGUSPQoPYXNzaWduZWRfYWN0b3JzGAkgAygLMhQucnVudGltZS52MS5BY3Rv",
-            "clJlZlIOYXNzaWduZWRBY3RvcnMiPQoMU2VxdWVuY2VSdW5zEi0KBWl0ZW1z",
-            "GAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1blIFaXRlbXMq6QEKEFNl",
-            "cXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lG",
-            "SUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElU",
-            "SU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX1dBSVRJTkcQAhIiCh5TRVFV",
-            "RU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIgChxTRVFVRU5DRV9SVU5f",
-            "U1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JU",
-            "RUQQBUKvAQoOY29tLnJ1bnRpbWUudjFCEFNlcXVlbmNlUnVuUHJvdG9QAVo5",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
-            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
-            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
-            "VjFiBnByb3RvMw=="));
+            "Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MRob",
+            "YnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhVjb21tb24vdjEvYWN0b3Iu",
+            "cHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMu",
+            "cHJvdG8i4AMKC1NlcXVlbmNlUnVuEg4KAmlkGAEgASgJUgJpZBJCChZzZXF1",
+            "ZW5jZV9kZWZpbml0aW9uX2lkGAIgASgJQgy6SAlyBJDyBAHIAQFSFHNlcXVl",
+            "bmNlRGVmaW5pdGlvbklkEj4KFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyAB",
+            "KAlCCbpIBnIEgPIEAVITcGFyZW50U2VxdWVuY2VSdW5JZBIzChZjaGlsZF9z",
+            "ZXF1ZW5jZV9ydW5faWRzGAQgAygJUhNjaGlsZFNlcXVlbmNlUnVuSWRzEisK",
+            "EmNoaWxkX3Rhc2tfcnVuX2lkcxgFIAMoCVIPY2hpbGRUYXNrUnVuSWRzEj8K",
+            "BXN0YXRlGAYgASgOMhwucnVudGltZS52MS5TZXF1ZW5jZVJ1blN0YXRlQgu6",
+            "SAiCAQIQAcgBAVIFc3RhdGUSMAoPY29tcGxldGVkX3Rhc2tzGAcgASgFQge6",
+            "SAQaAigAUg5jb21wbGV0ZWRUYXNrcxIqChFjYW5fYnVsa19jb21wbGV0ZRgI",
+            "IAEoCFIPY2FuQnVsa0NvbXBsZXRlEjwKD2Fzc2lnbmVkX2FjdG9ycxgJIAMo",
+            "CzITLmNvbW1vbi52MS5BY3RvclJlZlIOYXNzaWduZWRBY3RvcnMiPQoMU2Vx",
+            "dWVuY2VSdW5zEi0KBWl0ZW1zGAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5j",
+            "ZVJ1blIFaXRlbXMq6QEKEFNlcXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0Vf",
+            "UlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASKwonU0VRVUVOQ0VfUlVOX1NUQVRF",
+            "X01JU1NJTkdfUFJFQ09ORElUSU9OEAESHgoaU0VRVUVOQ0VfUlVOX1NUQVRF",
+            "X1dBSVRJTkcQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQ",
+            "AxIgChxTRVFVRU5DRV9SVU5fU1RBVEVfQ09NUExFVEVEEAQSHgoaU0VRVUVO",
+            "Q0VfUlVOX1NUQVRFX0FCT1JURUQQBUKvAQoOY29tLnJ1bnRpbWUudjFCEFNl",
+            "cXVlbmNlUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
+            "L21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2Fn",
+            "ZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1l",
+            "dGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.SequenceRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRuns), global::Messages.Runtime.V1.SequenceRuns.Parser, new[]{ "Items" }, null, null, null, null)
@@ -219,12 +221,12 @@ namespace Messages.Runtime.V1 {
 
     /// <summary>Field number for the "assigned_actors" field.</summary>
     public const int AssignedActorsFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ActorRef> _repeated_assignedActors_codec
-        = pb::FieldCodec.ForMessage(74, global::Messages.Runtime.V1.ActorRef.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef> assignedActors_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef>();
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.ActorRef> _repeated_assignedActors_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.Common.V1.ActorRef.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.ActorRef> assignedActors_ = new pbc::RepeatedField<global::Messages.Common.V1.ActorRef>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Runtime.V1.ActorRef> AssignedActors {
+    public pbc::RepeatedField<global::Messages.Common.V1.ActorRef> AssignedActors {
       get { return assignedActors_; }
     }
 

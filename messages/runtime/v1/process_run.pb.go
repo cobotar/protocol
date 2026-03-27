@@ -7,7 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v11 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -136,14 +138,14 @@ func (x *RunParameter) GetValue() string {
 type ProcessRun struct {
 	state                protoimpl.MessageState    `protogen:"open.v1"`
 	Id                   string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	RecipeId             string                    `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	ProcessRecipeId      string                    `protobuf:"bytes,2,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
 	OrderId              string                    `protobuf:"bytes,3,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	StationId            string                    `protobuf:"bytes,4,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
 	CellId               string                    `protobuf:"bytes,5,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
 	Frame                *v1.LocalizedPose         `protobuf:"bytes,6,opt,name=frame,proto3" json:"frame,omitempty"`
 	RootSequenceRunId    string                    `protobuf:"bytes,7,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
-	Sequences            []*SequenceRun            `protobuf:"bytes,8,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks                []*TaskRun                `protobuf:"bytes,9,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	SequenceRunIds       []string                  `protobuf:"bytes,8,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
+	TaskRunIds           []string                  `protobuf:"bytes,9,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
 	State                ProcessRunState           `protobuf:"varint,10,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
 	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,11,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
 	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,12,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
@@ -191,9 +193,9 @@ func (x *ProcessRun) GetId() string {
 	return ""
 }
 
-func (x *ProcessRun) GetRecipeId() string {
+func (x *ProcessRun) GetProcessRecipeId() string {
 	if x != nil {
-		return x.RecipeId
+		return x.ProcessRecipeId
 	}
 	return ""
 }
@@ -233,16 +235,16 @@ func (x *ProcessRun) GetRootSequenceRunId() string {
 	return ""
 }
 
-func (x *ProcessRun) GetSequences() []*SequenceRun {
+func (x *ProcessRun) GetSequenceRunIds() []string {
 	if x != nil {
-		return x.Sequences
+		return x.SequenceRunIds
 	}
 	return nil
 }
 
-func (x *ProcessRun) GetTasks() []*TaskRun {
+func (x *ProcessRun) GetTaskRunIds() []string {
 	if x != nil {
-		return x.Tasks
+		return x.TaskRunIds
 	}
 	return nil
 }
@@ -338,24 +340,25 @@ var File_runtime_v1_process_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1cruntime/v1/process_run.proto\x12\n" +
-	"runtime.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xcb\x05\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xa3\x06\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
-	"\trecipe_id\x18\x02 \x01(\tR\brecipeId\x12\x19\n" +
-	"\border_id\x18\x03 \x01(\tR\aorderId\x12\x1d\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x128\n" +
+	"\x11process_recipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\x0fprocessRecipeId\x12\x19\n" +
+	"\border_id\x18\x03 \x01(\tR\aorderId\x12(\n" +
 	"\n" +
-	"station_id\x18\x04 \x01(\tR\tstationId\x12\x17\n" +
-	"\acell_id\x18\x05 \x01(\tR\x06cellId\x120\n" +
-	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12/\n" +
-	"\x14root_sequence_run_id\x18\a \x01(\tR\x11rootSequenceRunId\x125\n" +
-	"\tsequences\x18\b \x03(\v2\x17.runtime.v1.SequenceRunR\tsequences\x12)\n" +
-	"\x05tasks\x18\t \x03(\v2\x13.runtime.v1.TaskRunR\x05tasks\x121\n" +
+	"station_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12\"\n" +
+	"\acell_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06cellId\x120\n" +
+	"\x05frame\x18\x06 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12=\n" +
+	"\x14root_sequence_run_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x11rootSequenceRunId\x128\n" +
+	"\x10sequence_run_ids\x18\b \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x120\n" +
+	"\ftask_run_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x80\xf2\x04\x01R\n" +
+	"taskRunIds\x12>\n" +
 	"\x05state\x18\n" +
-	" \x01(\x0e2\x1b.runtime.v1.ProcessRunStateR\x05state\x12=\n" +
+	" \x01(\x0e2\x1b.runtime.v1.ProcessRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12=\n" +
 	"\finitiated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
 	"\bended_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
 	"\vassignments\x18\r \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
@@ -394,28 +397,24 @@ var file_runtime_v1_process_run_proto_goTypes = []any{
 	(*ProcessRun)(nil),               // 2: runtime.v1.ProcessRun
 	(*ProcessRuns)(nil),              // 3: runtime.v1.ProcessRuns
 	(*v1.LocalizedPose)(nil),         // 4: geometry.v1.LocalizedPose
-	(*SequenceRun)(nil),              // 5: runtime.v1.SequenceRun
-	(*TaskRun)(nil),                  // 6: runtime.v1.TaskRun
-	(*timestamppb.Timestamp)(nil),    // 7: google.protobuf.Timestamp
-	(*ActorAssignment)(nil),          // 8: runtime.v1.ActorAssignment
-	(*v11.VariantConfiguration)(nil), // 9: variance.v1.VariantConfiguration
+	(*timestamppb.Timestamp)(nil),    // 5: google.protobuf.Timestamp
+	(*ActorAssignment)(nil),          // 6: runtime.v1.ActorAssignment
+	(*v11.VariantConfiguration)(nil), // 7: variance.v1.VariantConfiguration
 }
 var file_runtime_v1_process_run_proto_depIdxs = []int32{
-	4,  // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
-	5,  // 1: runtime.v1.ProcessRun.sequences:type_name -> runtime.v1.SequenceRun
-	6,  // 2: runtime.v1.ProcessRun.tasks:type_name -> runtime.v1.TaskRun
-	0,  // 3: runtime.v1.ProcessRun.state:type_name -> runtime.v1.ProcessRunState
-	7,  // 4: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
-	7,  // 5: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
-	8,  // 6: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
-	9,  // 7: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	1,  // 8: runtime.v1.ProcessRun.parameters:type_name -> runtime.v1.RunParameter
-	2,  // 9: runtime.v1.ProcessRuns.items:type_name -> runtime.v1.ProcessRun
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	4, // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
+	0, // 1: runtime.v1.ProcessRun.state:type_name -> runtime.v1.ProcessRunState
+	5, // 2: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
+	5, // 3: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
+	6, // 4: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
+	7, // 5: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	1, // 6: runtime.v1.ProcessRun.parameters:type_name -> runtime.v1.RunParameter
+	2, // 7: runtime.v1.ProcessRuns.items:type_name -> runtime.v1.ProcessRun
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_run_proto_init() }
@@ -424,8 +423,6 @@ func file_runtime_v1_process_run_proto_init() {
 		return
 	}
 	file_runtime_v1_actor_assignment_proto_init()
-	file_runtime_v1_sequence_run_proto_init()
-	file_runtime_v1_task_run_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

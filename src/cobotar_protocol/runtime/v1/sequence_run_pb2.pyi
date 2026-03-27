@@ -1,4 +1,6 @@
-from runtime.v1 import actor_assignment_pb2 as _actor_assignment_pb2
+from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import actor_pb2 as _actor_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -42,8 +44,8 @@ class SequenceRun(_message.Message):
     state: SequenceRunState
     completed_tasks: int
     can_bulk_complete: bool
-    assigned_actors: _containers.RepeatedCompositeFieldContainer[_actor_assignment_pb2.ActorRef]
-    def __init__(self, id: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., child_sequence_run_ids: _Optional[_Iterable[str]] = ..., child_task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[SequenceRunState, str]] = ..., completed_tasks: _Optional[int] = ..., can_bulk_complete: bool = ..., assigned_actors: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorRef, _Mapping]]] = ...) -> None: ...
+    assigned_actors: _containers.RepeatedCompositeFieldContainer[_actor_pb2.ActorRef]
+    def __init__(self, id: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., child_sequence_run_ids: _Optional[_Iterable[str]] = ..., child_task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[SequenceRunState, str]] = ..., completed_tasks: _Optional[int] = ..., can_bulk_complete: bool = ..., assigned_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ...) -> None: ...
 
 class SequenceRuns(_message.Message):
     __slots__ = ("items",)

@@ -7,7 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -79,17 +81,17 @@ func (ValidationStatus) EnumDescriptor() ([]byte, []int) {
 }
 
 type ValidationResult struct {
-	state              protoimpl.MessageState   `protogen:"open.v1"`
-	Id                 string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	TaskRunId          string                   `protobuf:"bytes,2,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
-	Status             ValidationStatus         `protobuf:"varint,3,opt,name=status,proto3,enum=runtime.v1.ValidationStatus" json:"status,omitempty"`
-	Method             string                   `protobuf:"bytes,4,opt,name=method,proto3" json:"method,omitempty"` // tool_feedback / vision / manual / external_qc
-	ValidatedAt        *timestamppb.Timestamp   `protobuf:"bytes,5,opt,name=validated_at,json=validatedAt,proto3" json:"validated_at,omitempty"`
-	Measurements       []*v1.KeyValueConstraint `protobuf:"bytes,6,rep,name=measurements,proto3" json:"measurements,omitempty"`
-	ValidatedByActorId string                   `protobuf:"bytes,7,opt,name=validated_by_actor_id,json=validatedByActorId,proto3" json:"validated_by_actor_id,omitempty"`
-	Comment            string                   `protobuf:"bytes,8,opt,name=comment,proto3" json:"comment,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	state            protoimpl.MessageState   `protogen:"open.v1"`
+	Id               string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	TaskRunId        string                   `protobuf:"bytes,2,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
+	Status           ValidationStatus         `protobuf:"varint,3,opt,name=status,proto3,enum=runtime.v1.ValidationStatus" json:"status,omitempty"`
+	Method           string                   `protobuf:"bytes,4,opt,name=method,proto3" json:"method,omitempty"` // tool_feedback / vision / manual / external_qc
+	ValidatedAt      *timestamppb.Timestamp   `protobuf:"bytes,5,opt,name=validated_at,json=validatedAt,proto3" json:"validated_at,omitempty"`
+	Measurements     []*v1.KeyValueConstraint `protobuf:"bytes,6,rep,name=measurements,proto3" json:"measurements,omitempty"`
+	ValidatedByActor *v1.ActorRef             `protobuf:"bytes,7,opt,name=validated_by_actor,json=validatedByActor,proto3" json:"validated_by_actor,omitempty"`
+	Comment          string                   `protobuf:"bytes,8,opt,name=comment,proto3" json:"comment,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ValidationResult) Reset() {
@@ -164,11 +166,11 @@ func (x *ValidationResult) GetMeasurements() []*v1.KeyValueConstraint {
 	return nil
 }
 
-func (x *ValidationResult) GetValidatedByActorId() string {
+func (x *ValidationResult) GetValidatedByActor() *v1.ActorRef {
 	if x != nil {
-		return x.ValidatedByActorId
+		return x.ValidatedByActor
 	}
-	return ""
+	return nil
 }
 
 func (x *ValidationResult) GetComment() string {
@@ -183,15 +185,15 @@ var File_runtime_v1_validation_result_proto protoreflect.FileDescriptor
 const file_runtime_v1_validation_result_proto_rawDesc = "" +
 	"\n" +
 	"\"runtime/v1/validation_result.proto\x12\n" +
-	"runtime.v1\x1a$common/v1/key_value_constraint.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x02\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x03\n" +
 	"\x10ValidationResult\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
-	"\vtask_run_id\x18\x02 \x01(\tR\ttaskRunId\x124\n" +
-	"\x06status\x18\x03 \x01(\x0e2\x1c.runtime.v1.ValidationStatusR\x06status\x12\x16\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
+	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf2\x04\x01R\ttaskRunId\x12>\n" +
+	"\x06status\x18\x03 \x01(\x0e2\x1c.runtime.v1.ValidationStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x16\n" +
 	"\x06method\x18\x04 \x01(\tR\x06method\x12=\n" +
 	"\fvalidated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\vvalidatedAt\x12A\n" +
-	"\fmeasurements\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\fmeasurements\x121\n" +
-	"\x15validated_by_actor_id\x18\a \x01(\tR\x12validatedByActorId\x12\x18\n" +
+	"\fmeasurements\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\fmeasurements\x12A\n" +
+	"\x12validated_by_actor\x18\a \x01(\v2\x13.common.v1.ActorRefR\x10validatedByActor\x12\x18\n" +
 	"\acomment\x18\b \x01(\tR\acomment*\xb0\x01\n" +
 	"\x10ValidationStatus\x12!\n" +
 	"\x1dVALIDATION_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -221,16 +223,18 @@ var file_runtime_v1_validation_result_proto_goTypes = []any{
 	(*ValidationResult)(nil),      // 1: runtime.v1.ValidationResult
 	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 	(*v1.KeyValueConstraint)(nil), // 3: common.v1.KeyValueConstraint
+	(*v1.ActorRef)(nil),           // 4: common.v1.ActorRef
 }
 var file_runtime_v1_validation_result_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.ValidationResult.status:type_name -> runtime.v1.ValidationStatus
 	2, // 1: runtime.v1.ValidationResult.validated_at:type_name -> google.protobuf.Timestamp
 	3, // 2: runtime.v1.ValidationResult.measurements:type_name -> common.v1.KeyValueConstraint
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 3: runtime.v1.ValidationResult.validated_by_actor:type_name -> common.v1.ActorRef
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_validation_result_proto_init() }

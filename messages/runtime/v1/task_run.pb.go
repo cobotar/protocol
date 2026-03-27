@@ -7,8 +7,10 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/resources/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -160,8 +162,8 @@ type TaskRun struct {
 	TaskDefinitionId    string                 `protobuf:"bytes,2,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
 	ParentSequenceRunId string                 `protobuf:"bytes,3,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
 	State               TaskRunState           `protobuf:"varint,4,opt,name=state,proto3,enum=runtime.v1.TaskRunState" json:"state,omitempty"`
-	CandidateActors     []*ActorRef            `protobuf:"bytes,5,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
-	AssignedActor       *ActorRef              `protobuf:"bytes,6,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"`
+	CandidateActors     []*v11.ActorRef        `protobuf:"bytes,5,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
+	AssignedActor       *v11.ActorRef          `protobuf:"bytes,6,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"`
 	CanDo               bool                   `protobuf:"varint,7,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
 	CanUndo             bool                   `protobuf:"varint,8,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
 	WorkableHorizon     int32                  `protobuf:"varint,9,opt,name=workable_horizon,json=workableHorizon,proto3" json:"workable_horizon,omitempty"` // steps needed to complete before this step is workable.
@@ -234,14 +236,14 @@ func (x *TaskRun) GetState() TaskRunState {
 	return TaskRunState_TASK_RUN_STATE_UNSPECIFIED
 }
 
-func (x *TaskRun) GetCandidateActors() []*ActorRef {
+func (x *TaskRun) GetCandidateActors() []*v11.ActorRef {
 	if x != nil {
 		return x.CandidateActors
 	}
 	return nil
 }
 
-func (x *TaskRun) GetAssignedActor() *ActorRef {
+func (x *TaskRun) GetAssignedActor() *v11.ActorRef {
 	if x != nil {
 		return x.AssignedActor
 	}
@@ -367,20 +369,20 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\xd2\x01\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd2\x01\n" +
 	"\x12TaskRuntimeBinding\x12*\n" +
 	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
 	"\n" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x12E\n" +
-	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\x87\x06\n" +
+	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xae\x06\n" +
 	"\aTaskRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
-	"\x12task_definition_id\x18\x02 \x01(\tR\x10taskDefinitionId\x123\n" +
-	"\x16parent_sequence_run_id\x18\x03 \x01(\tR\x13parentSequenceRunId\x12.\n" +
-	"\x05state\x18\x04 \x01(\x0e2\x18.runtime.v1.TaskRunStateR\x05state\x12?\n" +
-	"\x10candidate_actors\x18\x05 \x03(\v2\x14.runtime.v1.ActorRefR\x0fcandidateActors\x12;\n" +
-	"\x0eassigned_actor\x18\x06 \x01(\v2\x14.runtime.v1.ActorRefR\rassignedActor\x12\x15\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12:\n" +
+	"\x12task_definition_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\x10taskDefinitionId\x12A\n" +
+	"\x16parent_sequence_run_id\x18\x03 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x13parentSequenceRunId\x12;\n" +
+	"\x05state\x18\x04 \x01(\x0e2\x18.runtime.v1.TaskRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12>\n" +
+	"\x10candidate_actors\x18\x05 \x03(\v2\x13.common.v1.ActorRefR\x0fcandidateActors\x12:\n" +
+	"\x0eassigned_actor\x18\x06 \x01(\v2\x13.common.v1.ActorRefR\rassignedActor\x12\x15\n" +
 	"\x06can_do\x18\a \x01(\bR\x05canDo\x12\x19\n" +
 	"\bcan_undo\x18\b \x01(\bR\acanUndo\x12)\n" +
 	"\x10workable_horizon\x18\t \x01(\x05R\x0fworkableHorizon\x12K\n" +
@@ -427,7 +429,7 @@ var file_runtime_v1_task_run_proto_goTypes = []any{
 	(*TaskRun)(nil),               // 2: runtime.v1.TaskRun
 	(*TaskRuns)(nil),              // 3: runtime.v1.TaskRuns
 	(*v1.ContainerSlotRef)(nil),   // 4: resources.v1.ContainerSlotRef
-	(*ActorRef)(nil),              // 5: runtime.v1.ActorRef
+	(*v11.ActorRef)(nil),          // 5: common.v1.ActorRef
 	(*v11.EstimatedDuration)(nil), // 6: common.v1.EstimatedDuration
 	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
 	(*ExecutionEvidence)(nil),     // 8: runtime.v1.ExecutionEvidence
@@ -435,8 +437,8 @@ var file_runtime_v1_task_run_proto_goTypes = []any{
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
 	0,  // 1: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
-	5,  // 2: runtime.v1.TaskRun.candidate_actors:type_name -> runtime.v1.ActorRef
-	5,  // 3: runtime.v1.TaskRun.assigned_actor:type_name -> runtime.v1.ActorRef
+	5,  // 2: runtime.v1.TaskRun.candidate_actors:type_name -> common.v1.ActorRef
+	5,  // 3: runtime.v1.TaskRun.assigned_actor:type_name -> common.v1.ActorRef
 	6,  // 4: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
 	7,  // 5: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
 	7,  // 6: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
@@ -455,7 +457,6 @@ func file_runtime_v1_task_run_proto_init() {
 	if File_runtime_v1_task_run_proto != nil {
 		return
 	}
-	file_runtime_v1_actor_assignment_proto_init()
 	file_runtime_v1_execution_evidence_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{

@@ -1,11 +1,13 @@
 syntax = "proto3";
 package runtime.v1;
 
+import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
 import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
 import "resources/v1/container_definition.proto";
-import "runtime/v1/actor_assignment.proto";
 import "runtime/v1/execution_evidence.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
@@ -30,11 +32,20 @@ message TaskRuntimeBinding {
 
 message TaskRun {
   string id = 1;
-  string task_definition_id = 2;
-  string parent_sequence_run_id = 3;
-  TaskRunState state = 4;
-  repeated ActorRef candidate_actors = 5;
-  ActorRef assigned_actor = 6;
+  string task_definition_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_definition_id_component) = true
+  ];
+  string parent_sequence_run_id = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
+  ];
+  TaskRunState state = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated common.v1.ActorRef candidate_actors = 5;
+  common.v1.ActorRef assigned_actor = 6;
   bool can_do = 7;
   bool can_undo = 8;
   int32 workable_horizon = 9; // steps needed to complete before this step is workable.

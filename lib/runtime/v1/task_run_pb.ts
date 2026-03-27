@@ -4,23 +4,25 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { ActorRef } from "../../common/v1/actor_pb.ts";
+import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
 import type { EstimatedDuration } from "../../common/v1/time_pb.ts";
 import { file_common_v1_time } from "../../common/v1/time_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { ContainerSlotRef } from "../../resources/v1/container_definition_pb.ts";
 import { file_resources_v1_container_definition } from "../../resources/v1/container_definition_pb.ts";
-import type { ActorRef } from "./actor_assignment_pb.ts";
-import { file_runtime_v1_actor_assignment } from "./actor_assignment_pb.ts";
 import type { ExecutionEvidence } from "./execution_evidence_pb.ts";
 import { file_runtime_v1_execution_evidence } from "./execution_evidence_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIpYBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRI2Cg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmIr0ECgdUYXNrUnVuEgoKAmlkGAEgASgJEhoKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCRIeChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAMgASgJEicKBXN0YXRlGAQgASgOMhgucnVudGltZS52MS5UYXNrUnVuU3RhdGUSLgoQY2FuZGlkYXRlX2FjdG9ycxgFIAMoCzIULnJ1bnRpbWUudjEuQWN0b3JSZWYSLAoOYXNzaWduZWRfYWN0b3IYBiABKAsyFC5ydW50aW1lLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgHIAEoCBIQCghjYW5fdW5kbxgIIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAkgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIvCghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2USLwoHYmluZGluZxgQIAEoCzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nIi4KCFRhc2tSdW5zEiIKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuKucBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABInCiNUQVNLX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlRBU0tfUlVOX1NUQVRFX1dBSVRJTkcQAhIeChpUQVNLX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFRBU0tfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_actor_assignment, file_runtime_v1_execution_evidence]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIpYBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRI2Cg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmIuQECgdUYXNrUnVuEgoKAmlkGAEgASgJEigKEnRhc2tfZGVmaW5pdGlvbl9pZBgCIAEoCUIMukgJyAEBcgSY8gQBEiwKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYAyABKAlCDLpICcgBAXIE+PEEARI0CgVzdGF0ZRgEIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0YXRlQgu6SAjIAQGCAQIQARItChBjYW5kaWRhdGVfYWN0b3JzGAUgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmEisKDmFzc2lnbmVkX2FjdG9yGAYgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgHIAEoCBIQCghjYW5fdW5kbxgIIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAkgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgKIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDSABKAkSFQoNZXJyb3JfbWVzc2FnZRgOIAEoCRIvCghldmlkZW5jZRgPIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2USLwoHYmluZGluZxgQIAEoCzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nIi4KCFRhc2tSdW5zEiIKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuKucBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABInCiNUQVNLX1JVTl9TVEFURV9NSVNTSU5HX1BSRUNPTkRJVElPThABEhoKFlRBU0tfUlVOX1NUQVRFX1dBSVRJTkcQAhIeChpUQVNLX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhwKGFRBU0tfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_execution_evidence, file_validation_v1_predefined_string_rules]);
 
 /**
  * Concrete runtime/deployment bindings resolved for this task run.
@@ -81,12 +83,12 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   state: TaskRunState;
 
   /**
-   * @generated from field: repeated runtime.v1.ActorRef candidate_actors = 5;
+   * @generated from field: repeated common.v1.ActorRef candidate_actors = 5;
    */
   candidateActors: ActorRef[];
 
   /**
-   * @generated from field: runtime.v1.ActorRef assigned_actor = 6;
+   * @generated from field: common.v1.ActorRef assigned_actor = 6;
    */
   assignedActor?: ActorRef;
 

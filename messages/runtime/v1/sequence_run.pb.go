@@ -7,6 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -89,7 +92,7 @@ type SequenceRun struct {
 	State                SequenceRunState       `protobuf:"varint,6,opt,name=state,proto3,enum=runtime.v1.SequenceRunState" json:"state,omitempty"`
 	CompletedTasks       int32                  `protobuf:"varint,7,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
 	CanBulkComplete      bool                   `protobuf:"varint,8,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
-	AssignedActors       []*ActorRef            `protobuf:"bytes,9,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"`
+	AssignedActors       []*v1.ActorRef         `protobuf:"bytes,9,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -180,7 +183,7 @@ func (x *SequenceRun) GetCanBulkComplete() bool {
 	return false
 }
 
-func (x *SequenceRun) GetAssignedActors() []*ActorRef {
+func (x *SequenceRun) GetAssignedActors() []*v1.ActorRef {
 	if x != nil {
 		return x.AssignedActors
 	}
@@ -236,17 +239,17 @@ var File_runtime_v1_sequence_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1druntime/v1/sequence_run.proto\x12\n" +
-	"runtime.v1\x1a!runtime/v1/actor_assignment.proto\"\xb2\x03\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe0\x03\n" +
 	"\vSequenceRun\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x124\n" +
-	"\x16sequence_definition_id\x18\x02 \x01(\tR\x14sequenceDefinitionId\x123\n" +
-	"\x16parent_sequence_run_id\x18\x03 \x01(\tR\x13parentSequenceRunId\x123\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12B\n" +
+	"\x16sequence_definition_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\x14sequenceDefinitionId\x12>\n" +
+	"\x16parent_sequence_run_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\x13parentSequenceRunId\x123\n" +
 	"\x16child_sequence_run_ids\x18\x04 \x03(\tR\x13childSequenceRunIds\x12+\n" +
-	"\x12child_task_run_ids\x18\x05 \x03(\tR\x0fchildTaskRunIds\x122\n" +
-	"\x05state\x18\x06 \x01(\x0e2\x1c.runtime.v1.SequenceRunStateR\x05state\x12'\n" +
-	"\x0fcompleted_tasks\x18\a \x01(\x05R\x0ecompletedTasks\x12*\n" +
-	"\x11can_bulk_complete\x18\b \x01(\bR\x0fcanBulkComplete\x12=\n" +
-	"\x0fassigned_actors\x18\t \x03(\v2\x14.runtime.v1.ActorRefR\x0eassignedActors\"=\n" +
+	"\x12child_task_run_ids\x18\x05 \x03(\tR\x0fchildTaskRunIds\x12?\n" +
+	"\x05state\x18\x06 \x01(\x0e2\x1c.runtime.v1.SequenceRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x120\n" +
+	"\x0fcompleted_tasks\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0ecompletedTasks\x12*\n" +
+	"\x11can_bulk_complete\x18\b \x01(\bR\x0fcanBulkComplete\x12<\n" +
+	"\x0fassigned_actors\x18\t \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\"=\n" +
 	"\fSequenceRuns\x12-\n" +
 	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xe9\x01\n" +
 	"\x10SequenceRunState\x12\"\n" +
@@ -277,11 +280,11 @@ var file_runtime_v1_sequence_run_proto_goTypes = []any{
 	(SequenceRunState)(0), // 0: runtime.v1.SequenceRunState
 	(*SequenceRun)(nil),   // 1: runtime.v1.SequenceRun
 	(*SequenceRuns)(nil),  // 2: runtime.v1.SequenceRuns
-	(*ActorRef)(nil),      // 3: runtime.v1.ActorRef
+	(*v1.ActorRef)(nil),   // 3: common.v1.ActorRef
 }
 var file_runtime_v1_sequence_run_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.SequenceRun.state:type_name -> runtime.v1.SequenceRunState
-	3, // 1: runtime.v1.SequenceRun.assigned_actors:type_name -> runtime.v1.ActorRef
+	3, // 1: runtime.v1.SequenceRun.assigned_actors:type_name -> common.v1.ActorRef
 	1, // 2: runtime.v1.SequenceRuns.items:type_name -> runtime.v1.SequenceRun
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
@@ -295,7 +298,6 @@ func file_runtime_v1_sequence_run_proto_init() {
 	if File_runtime_v1_sequence_run_proto != nil {
 		return
 	}
-	file_runtime_v1_actor_assignment_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

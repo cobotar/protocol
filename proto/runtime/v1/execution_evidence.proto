@@ -1,7 +1,9 @@
 syntax = "proto3";
 package runtime.v1;
 
+import "buf/validate/validate.proto";
 import "google/protobuf/timestamp.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
@@ -14,7 +16,10 @@ message EvidenceFact {
 
 message ExecutionEvidence {
   string id = 1;
-  string task_run_id = 2;
+  string task_run_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_run_id_component) = true
+  ];
   string source = 3; // tool, vision, operator, robot driver, etc.
   google.protobuf.Timestamp recorded_at = 4;
   repeated EvidenceFact facts = 5;

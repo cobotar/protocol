@@ -87,4 +87,46 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a skill id"
     expression: "(this == '' || this.startsWith('skill-'))"
   }];
+
+  optional bool process_run_id_component = 10014 [(buf.validate.predefined).cel = {
+    id: "string.process_run_id_component"
+    message: "this does not seem to be a process run id"
+    expression: "(this == '' || this.startsWith('process_run-'))"
+  }];
+
+  optional bool sequence_run_id_component = 10015 [(buf.validate.predefined).cel = {
+    id: "string.sequence_run_id_component"
+    message: "this does not seem to be a sequence run id"
+    expression: "(this == '' || this.startsWith('sequence_run-'))"
+  }];
+
+  optional bool task_run_id_component = 10016 [(buf.validate.predefined).cel = {
+    id: "string.task_run_id_component"
+    message: "this does not seem to be a task run id"
+    expression: "(this == '' || this.startsWith('task_run-'))"
+  }];
+
+  optional bool process_recipe_id_component = 10017 [(buf.validate.predefined).cel = {
+    id: "string.process_recipe_id_component"
+    message: "this does not seem to be a process recipe id"
+    expression: "(this == '' || this.startsWith('process_recipe-'))"
+  }];
+
+  optional bool sequence_definition_id_component = 10018 [(buf.validate.predefined).cel = {
+    id: "string.sequence_definition_id_component"
+    message: "this does not seem to be a sequence definition id"
+    expression: "(this == '' || this.startsWith('sequence_definition-'))"
+  }];
+
+  optional bool task_definition_id_component = 10019 [(buf.validate.predefined).cel = {
+    id: "string.task_definition_id_component"
+    message: "this does not seem to be a task definition id"
+    expression: "(this == '' || this.startsWith('task_definition-'))"
+  }];
+
+  optional bool cell_id_component = 10020 [(buf.validate.predefined).cel = {
+    id: "string.cell_id_component"
+    message: "this does not seem to be a cell id"
+    expression: "(this == '' || this.startsWith('cell-'))"
+  }];
 }

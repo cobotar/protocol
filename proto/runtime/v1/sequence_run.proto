@@ -1,7 +1,9 @@
 syntax = "proto3";
 package runtime.v1;
 
-import "runtime/v1/actor_assignment.proto";
+import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
@@ -17,14 +19,20 @@ enum SequenceRunState {
 
 message SequenceRun {
   string id = 1;
-  string sequence_definition_id = 2;
-  string parent_sequence_run_id = 3;
+  string sequence_definition_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
+  ];
+  string parent_sequence_run_id = 3 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true];
   repeated string child_sequence_run_ids = 4;
   repeated string child_task_run_ids = 5;
-  SequenceRunState state = 6;
-  int32 completed_tasks = 7;
+  SequenceRunState state = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 completed_tasks = 7 [(buf.validate.field).int32.gte = 0];
   bool can_bulk_complete = 8;
-  repeated ActorRef assigned_actors = 9;
+  repeated common.v1.ActorRef assigned_actors = 9;
 }
 
 message SequenceRuns {

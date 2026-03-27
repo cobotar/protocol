@@ -25,20 +25,22 @@ namespace Messages.Runtime.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNydW50aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90bxIKcnVudGlt",
-            "ZS52MRofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byJKCgxFdmlk",
-            "ZW5jZUZhY3QSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZh",
-            "bHVlEhIKBHVuaXQYAyABKAlSBHVuaXQi4wEKEUV4ZWN1dGlvbkV2aWRlbmNl",
-            "Eg4KAmlkGAEgASgJUgJpZBIeCgt0YXNrX3J1bl9pZBgCIAEoCVIJdGFza1J1",
-            "bklkEhYKBnNvdXJjZRgDIAEoCVIGc291cmNlEjsKC3JlY29yZGVkX2F0GAQg",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVjb3JkZWRBdBIu",
-            "CgVmYWN0cxgFIAMoCzIYLnJ1bnRpbWUudjEuRXZpZGVuY2VGYWN0UgVmYWN0",
-            "cxIZCghibG9iX3VyaRgGIAEoCVIHYmxvYlVyaUK1AQoOY29tLnJ1bnRpbWUu",
-            "djFCFkV4ZWN1dGlvbkV2aWRlbmNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2Jv",
-            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogID",
-            "UlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50",
-            "aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "ZS52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGh9nb29nbGUvcHJv",
+            "dG9idWYvdGltZXN0YW1wLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmlu",
+            "ZWRfc3RyaW5nX3J1bGVzLnByb3RvIkoKDEV2aWRlbmNlRmFjdBIQCgNrZXkY",
+            "ASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUSEgoEdW5pdBgDIAEo",
+            "CVIEdW5pdCLxAQoRRXhlY3V0aW9uRXZpZGVuY2USDgoCaWQYASABKAlSAmlk",
+            "EiwKC3Rhc2tfcnVuX2lkGAIgASgJQgy6SAlyBIDyBAHIAQFSCXRhc2tSdW5J",
+            "ZBIWCgZzb3VyY2UYAyABKAlSBnNvdXJjZRI7CgtyZWNvcmRlZF9hdBgEIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnJlY29yZGVkQXQSLgoF",
+            "ZmFjdHMYBSADKAsyGC5ydW50aW1lLnYxLkV2aWRlbmNlRmFjdFIFZmFjdHMS",
+            "GQoIYmxvYl91cmkYBiABKAlSB2Jsb2JVcmlCtQEKDmNvbS5ydW50aW1lLnYx",
+            "QhZFeGVjdXRpb25FdmlkZW5jZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JY",
+            "WKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGlt",
+            "ZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.EvidenceFact), global::Messages.Runtime.V1.EvidenceFact.Parser, new[]{ "Key", "Value", "Unit" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ExecutionEvidence), global::Messages.Runtime.V1.ExecutionEvidence.Parser, new[]{ "Id", "TaskRunId", "Source", "RecordedAt", "Facts", "BlobUri" }, null, null, null, null)

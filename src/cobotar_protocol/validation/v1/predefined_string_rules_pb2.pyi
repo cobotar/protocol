@@ -31,3 +31,17 @@ STATION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 station_id_component: _descriptor.FieldDescriptor
 SKILL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 skill_id_component: _descriptor.FieldDescriptor
+PROCESS_RUN_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+process_run_id_component: _descriptor.FieldDescriptor
+SEQUENCE_RUN_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+sequence_run_id_component: _descriptor.FieldDescriptor
+TASK_RUN_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+task_run_id_component: _descriptor.FieldDescriptor
+PROCESS_RECIPE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+process_recipe_id_component: _descriptor.FieldDescriptor
+SEQUENCE_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+sequence_definition_id_component: _descriptor.FieldDescriptor
+TASK_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+task_definition_id_component: _descriptor.FieldDescriptor
+CELL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+cell_id_component: _descriptor.FieldDescriptor

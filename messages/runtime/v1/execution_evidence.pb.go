@@ -7,6 +7,8 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -171,14 +173,14 @@ var File_runtime_v1_execution_evidence_proto protoreflect.FileDescriptor
 const file_runtime_v1_execution_evidence_proto_rawDesc = "" +
 	"\n" +
 	"#runtime/v1/execution_evidence.proto\x12\n" +
-	"runtime.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"J\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
 	"\fEvidenceFact\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value\x12\x12\n" +
-	"\x04unit\x18\x03 \x01(\tR\x04unit\"\xe3\x01\n" +
+	"\x04unit\x18\x03 \x01(\tR\x04unit\"\xf1\x01\n" +
 	"\x11ExecutionEvidence\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
-	"\vtask_run_id\x18\x02 \x01(\tR\ttaskRunId\x12\x16\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
+	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf2\x04\x01R\ttaskRunId\x12\x16\n" +
 	"\x06source\x18\x03 \x01(\tR\x06source\x12;\n" +
 	"\vrecorded_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"recordedAt\x12.\n" +

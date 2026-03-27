@@ -25,28 +25,31 @@ namespace Messages.Runtime.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJydW50aW1lL3YxL3ZhbGlkYXRpb25fcmVzdWx0LnByb3RvEgpydW50aW1l",
-            "LnYxGiRjb21tb24vdjEva2V5X3ZhbHVlX2NvbnN0cmFpbnQucHJvdG8aH2dv",
-            "b2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8i3wIKEFZhbGlkYXRpb25S",
-            "ZXN1bHQSDgoCaWQYASABKAlSAmlkEh4KC3Rhc2tfcnVuX2lkGAIgASgJUgl0",
-            "YXNrUnVuSWQSNAoGc3RhdHVzGAMgASgOMhwucnVudGltZS52MS5WYWxpZGF0",
-            "aW9uU3RhdHVzUgZzdGF0dXMSFgoGbWV0aG9kGAQgASgJUgZtZXRob2QSPQoM",
-            "dmFsaWRhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
-            "cFILdmFsaWRhdGVkQXQSQQoMbWVhc3VyZW1lbnRzGAYgAygLMh0uY29tbW9u",
-            "LnYxLktleVZhbHVlQ29uc3RyYWludFIMbWVhc3VyZW1lbnRzEjEKFXZhbGlk",
-            "YXRlZF9ieV9hY3Rvcl9pZBgHIAEoCVISdmFsaWRhdGVkQnlBY3RvcklkEhgK",
-            "B2NvbW1lbnQYCCABKAlSB2NvbW1lbnQqsAEKEFZhbGlkYXRpb25TdGF0dXMS",
-            "IQodVkFMSURBVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIdChlWQUxJREFU",
-            "SU9OX1NUQVRVU19QRU5ESU5HEAESHAoYVkFMSURBVElPTl9TVEFUVVNfUEFT",
-            "U0VEEAISHAoYVkFMSURBVElPTl9TVEFUVVNfRkFJTEVEEAMSHgoaVkFMSURB",
-            "VElPTl9TVEFUVVNfQllQQVNTRUQQBEK0AQoOY29tLnJ1bnRpbWUudjFCFVZh",
-            "bGlkYXRpb25SZXN1bHRQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJv",
-            "dG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNN",
-            "ZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFc",
-            "R1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
+            "LnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aFWNvbW1vbi92MS9h",
+            "Y3Rvci5wcm90bxokY29tbW9uL3YxL2tleV92YWx1ZV9jb25zdHJhaW50LnBy",
+            "b3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGit2YWxpZGF0",
+            "aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIocDChBWYWxp",
+            "ZGF0aW9uUmVzdWx0Eg4KAmlkGAEgASgJUgJpZBIsCgt0YXNrX3J1bl9pZBgC",
+            "IAEoCUIMukgJcgSA8gQByAEBUgl0YXNrUnVuSWQSPgoGc3RhdHVzGAMgASgO",
+            "MhwucnVudGltZS52MS5WYWxpZGF0aW9uU3RhdHVzQgi6SAWCAQIQAVIGc3Rh",
+            "dHVzEhYKBm1ldGhvZBgEIAEoCVIGbWV0aG9kEj0KDHZhbGlkYXRlZF9hdBgF",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3ZhbGlkYXRlZEF0",
+            "EkEKDG1lYXN1cmVtZW50cxgGIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNv",
+            "bnN0cmFpbnRSDG1lYXN1cmVtZW50cxJBChJ2YWxpZGF0ZWRfYnlfYWN0b3IY",
+            "ByABKAsyEy5jb21tb24udjEuQWN0b3JSZWZSEHZhbGlkYXRlZEJ5QWN0b3IS",
+            "GAoHY29tbWVudBgIIAEoCVIHY29tbWVudCqwAQoQVmFsaWRhdGlvblN0YXR1",
+            "cxIhCh1WQUxJREFUSU9OX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGVZBTElE",
+            "QVRJT05fU1RBVFVTX1BFTkRJTkcQARIcChhWQUxJREFUSU9OX1NUQVRVU19Q",
+            "QVNTRUQQAhIcChhWQUxJREFUSU9OX1NUQVRVU19GQUlMRUQQAxIeChpWQUxJ",
+            "REFUSU9OX1NUQVRVU19CWVBBU1NFRBAEQrQBCg5jb20ucnVudGltZS52MUIV",
+            "VmFsaWRhdGlvblJlc3VsdFByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoC",
+            "E01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxW",
+            "MVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ValidationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ValidationResult), global::Messages.Runtime.V1.ValidationResult.Parser, new[]{ "Id", "TaskRunId", "Status", "Method", "ValidatedAt", "Measurements", "ValidatedByActorId", "Comment" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ValidationResult), global::Messages.Runtime.V1.ValidationResult.Parser, new[]{ "Id", "TaskRunId", "Status", "Method", "ValidatedAt", "Measurements", "ValidatedByActor", "Comment" }, null, null, null, null)
           }));
     }
     #endregion
@@ -105,7 +108,7 @@ namespace Messages.Runtime.V1 {
       method_ = other.method_;
       validatedAt_ = other.validatedAt_ != null ? other.validatedAt_.Clone() : null;
       measurements_ = other.measurements_.Clone();
-      validatedByActorId_ = other.validatedByActorId_;
+      validatedByActor_ = other.validatedByActor_ != null ? other.validatedByActor_.Clone() : null;
       comment_ = other.comment_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -190,15 +193,15 @@ namespace Messages.Runtime.V1 {
       get { return measurements_; }
     }
 
-    /// <summary>Field number for the "validated_by_actor_id" field.</summary>
-    public const int ValidatedByActorIdFieldNumber = 7;
-    private string validatedByActorId_ = "";
+    /// <summary>Field number for the "validated_by_actor" field.</summary>
+    public const int ValidatedByActorFieldNumber = 7;
+    private global::Messages.Common.V1.ActorRef validatedByActor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ValidatedByActorId {
-      get { return validatedByActorId_; }
+    public global::Messages.Common.V1.ActorRef ValidatedByActor {
+      get { return validatedByActor_; }
       set {
-        validatedByActorId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        validatedByActor_ = value;
       }
     }
 
@@ -235,7 +238,7 @@ namespace Messages.Runtime.V1 {
       if (Method != other.Method) return false;
       if (!object.Equals(ValidatedAt, other.ValidatedAt)) return false;
       if(!measurements_.Equals(other.measurements_)) return false;
-      if (ValidatedByActorId != other.ValidatedByActorId) return false;
+      if (!object.Equals(ValidatedByActor, other.ValidatedByActor)) return false;
       if (Comment != other.Comment) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -250,7 +253,7 @@ namespace Messages.Runtime.V1 {
       if (Method.Length != 0) hash ^= Method.GetHashCode();
       if (validatedAt_ != null) hash ^= ValidatedAt.GetHashCode();
       hash ^= measurements_.GetHashCode();
-      if (ValidatedByActorId.Length != 0) hash ^= ValidatedByActorId.GetHashCode();
+      if (validatedByActor_ != null) hash ^= ValidatedByActor.GetHashCode();
       if (Comment.Length != 0) hash ^= Comment.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -291,9 +294,9 @@ namespace Messages.Runtime.V1 {
         output.WriteMessage(ValidatedAt);
       }
       measurements_.WriteTo(output, _repeated_measurements_codec);
-      if (ValidatedByActorId.Length != 0) {
+      if (validatedByActor_ != null) {
         output.WriteRawTag(58);
-        output.WriteString(ValidatedByActorId);
+        output.WriteMessage(ValidatedByActor);
       }
       if (Comment.Length != 0) {
         output.WriteRawTag(66);
@@ -330,9 +333,9 @@ namespace Messages.Runtime.V1 {
         output.WriteMessage(ValidatedAt);
       }
       measurements_.WriteTo(ref output, _repeated_measurements_codec);
-      if (ValidatedByActorId.Length != 0) {
+      if (validatedByActor_ != null) {
         output.WriteRawTag(58);
-        output.WriteString(ValidatedByActorId);
+        output.WriteMessage(ValidatedByActor);
       }
       if (Comment.Length != 0) {
         output.WriteRawTag(66);
@@ -364,8 +367,8 @@ namespace Messages.Runtime.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ValidatedAt);
       }
       size += measurements_.CalculateSize(_repeated_measurements_codec);
-      if (ValidatedByActorId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValidatedByActorId);
+      if (validatedByActor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ValidatedByActor);
       }
       if (Comment.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Comment);
@@ -401,8 +404,11 @@ namespace Messages.Runtime.V1 {
         ValidatedAt.MergeFrom(other.ValidatedAt);
       }
       measurements_.Add(other.measurements_);
-      if (other.ValidatedByActorId.Length != 0) {
-        ValidatedByActorId = other.ValidatedByActorId;
+      if (other.validatedByActor_ != null) {
+        if (validatedByActor_ == null) {
+          ValidatedByActor = new global::Messages.Common.V1.ActorRef();
+        }
+        ValidatedByActor.MergeFrom(other.ValidatedByActor);
       }
       if (other.Comment.Length != 0) {
         Comment = other.Comment;
@@ -454,7 +460,10 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 58: {
-            ValidatedByActorId = input.ReadString();
+            if (validatedByActor_ == null) {
+              ValidatedByActor = new global::Messages.Common.V1.ActorRef();
+            }
+            input.ReadMessage(ValidatedByActor);
             break;
           }
           case 66: {
@@ -508,7 +517,10 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 58: {
-            ValidatedByActorId = input.ReadString();
+            if (validatedByActor_ == null) {
+              ValidatedByActor = new global::Messages.Common.V1.ActorRef();
+            }
+            input.ReadMessage(ValidatedByActor);
             break;
           }
           case 66: {

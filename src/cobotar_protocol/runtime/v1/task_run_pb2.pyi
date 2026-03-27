@@ -1,10 +1,12 @@
 import datetime
 
+from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import actor_pb2 as _actor_pb2
 from common.v1 import time_pb2 as _time_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from resources.v1 import container_definition_pb2 as _container_definition_pb2
-from runtime.v1 import actor_assignment_pb2 as _actor_assignment_pb2
 from runtime.v1 import execution_evidence_pb2 as _execution_evidence_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -65,8 +67,8 @@ class TaskRun(_message.Message):
     task_definition_id: str
     parent_sequence_run_id: str
     state: TaskRunState
-    candidate_actors: _containers.RepeatedCompositeFieldContainer[_actor_assignment_pb2.ActorRef]
-    assigned_actor: _actor_assignment_pb2.ActorRef
+    candidate_actors: _containers.RepeatedCompositeFieldContainer[_actor_pb2.ActorRef]
+    assigned_actor: _actor_pb2.ActorRef
     can_do: bool
     can_undo: bool
     workable_horizon: int
@@ -77,7 +79,7 @@ class TaskRun(_message.Message):
     error_message: str
     evidence: _containers.RepeatedCompositeFieldContainer[_execution_evidence_pb2.ExecutionEvidence]
     binding: TaskRuntimeBinding
-    def __init__(self, id: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskRunState, str]] = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorRef, _Mapping]]] = ..., assigned_actor: _Optional[_Union[_actor_assignment_pb2.ActorRef, _Mapping]] = ..., can_do: bool = ..., can_undo: bool = ..., workable_horizon: _Optional[int] = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., error_code: _Optional[str] = ..., error_message: _Optional[str] = ..., evidence: _Optional[_Iterable[_Union[_execution_evidence_pb2.ExecutionEvidence, _Mapping]]] = ..., binding: _Optional[_Union[TaskRuntimeBinding, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskRunState, str]] = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., assigned_actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., can_do: bool = ..., can_undo: bool = ..., workable_horizon: _Optional[int] = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., error_code: _Optional[str] = ..., error_message: _Optional[str] = ..., evidence: _Optional[_Iterable[_Union[_execution_evidence_pb2.ExecutionEvidence, _Mapping]]] = ..., binding: _Optional[_Union[TaskRuntimeBinding, _Mapping]] = ...) -> None: ...
 
 class TaskRuns(_message.Message):
     __slots__ = ("items",)

@@ -22,14 +22,16 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
 from common.v1 import time_pb2 as common_dot_v1_dot_time__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from resources.v1 import container_definition_pb2 as resources_dot_v1_dot_container__definition__pb2
-from runtime.v1 import actor_assignment_pb2 as runtime_dot_v1_dot_actor__assignment__pb2
 from runtime.v1 import execution_evidence_pb2 as runtime_dot_v1_dot_execution__evidence__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19runtime/v1/task_run.proto\x12\nruntime.v1\x1a\x14\x63ommon/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a#runtime/v1/execution_evidence.proto\"\xd2\x01\n\x12TaskRuntimeBinding\x12*\n\x11\x61sset_instance_id\x18\x01 \x01(\tR\x0f\x61ssetInstanceId\x12*\n\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n\nstation_id\x18\x03 \x01(\tR\tstationId\x12\x45\n\x0e\x63ontainer_slot\x18\x04 \x01(\x0b\x32\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\x87\x06\n\x07TaskRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12,\n\x12task_definition_id\x18\x02 \x01(\tR\x10taskDefinitionId\x12\x33\n\x16parent_sequence_run_id\x18\x03 \x01(\tR\x13parentSequenceRunId\x12.\n\x05state\x18\x04 \x01(\x0e\x32\x18.runtime.v1.TaskRunStateR\x05state\x12?\n\x10\x63\x61ndidate_actors\x18\x05 \x03(\x0b\x32\x14.runtime.v1.ActorRefR\x0f\x63\x61ndidateActors\x12;\n\x0e\x61ssigned_actor\x18\x06 \x01(\x0b\x32\x14.runtime.v1.ActorRefR\rassignedActor\x12\x15\n\x06\x63\x61n_do\x18\x07 \x01(\x08R\x05\x63\x61nDo\x12\x19\n\x08\x63\x61n_undo\x18\x08 \x01(\x08R\x07\x63\x61nUndo\x12)\n\x10workable_horizon\x18\t \x01(\x05R\x0fworkableHorizon\x12K\n\x12\x65stimated_duration\x18\n \x01(\x0b\x32\x1c.common.v1.EstimatedDurationR\x11\x65stimatedDuration\x12\x39\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampR\tstartedAt\x12=\n\x0c\x63ompleted_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0b\x63ompletedAt\x12\x1d\n\nerror_code\x18\r \x01(\tR\terrorCode\x12#\n\rerror_message\x18\x0e \x01(\tR\x0c\x65rrorMessage\x12\x39\n\x08\x65vidence\x18\x0f \x03(\x0b\x32\x1d.runtime.v1.ExecutionEvidenceR\x08\x65vidence\x12\x38\n\x07\x62inding\x18\x10 \x01(\x0b\x32\x1e.runtime.v1.TaskRuntimeBindingR\x07\x62inding\"5\n\x08TaskRuns\x12)\n\x05items\x18\x01 \x03(\x0b\x32\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n\x0cTaskRunState\x12\x1e\n\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12\'\n#TASK_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1a\n\x16TASK_RUN_STATE_WAITING\x10\x02\x12\x1e\n\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1c\n\x18TASK_RUN_STATE_COMPLETED\x10\x04\x12\x18\n\x14TASK_RUN_STATE_ERROR\x10\x05\x12\x1a\n\x16TASK_RUN_STATE_ABORTED\x10\x06\x42\xab\x01\n\x0e\x63om.runtime.v1B\x0cTaskRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19runtime/v1/task_run.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a\x14\x63ommon/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd2\x01\n\x12TaskRuntimeBinding\x12*\n\x11\x61sset_instance_id\x18\x01 \x01(\tR\x0f\x61ssetInstanceId\x12*\n\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n\nstation_id\x18\x03 \x01(\tR\tstationId\x12\x45\n\x0e\x63ontainer_slot\x18\x04 \x01(\x0b\x32\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xae\x06\n\x07TaskRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12:\n\x12task_definition_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\x10taskDefinitionId\x12\x41\n\x16parent_sequence_run_id\x18\x03 \x01(\tB\x0c\xbaH\tr\x04\xf8\xf1\x04\x01\xc8\x01\x01R\x13parentSequenceRunId\x12;\n\x05state\x18\x04 \x01(\x0e\x32\x18.runtime.v1.TaskRunStateB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05state\x12>\n\x10\x63\x61ndidate_actors\x18\x05 \x03(\x0b\x32\x13.common.v1.ActorRefR\x0f\x63\x61ndidateActors\x12:\n\x0e\x61ssigned_actor\x18\x06 \x01(\x0b\x32\x13.common.v1.ActorRefR\rassignedActor\x12\x15\n\x06\x63\x61n_do\x18\x07 \x01(\x08R\x05\x63\x61nDo\x12\x19\n\x08\x63\x61n_undo\x18\x08 \x01(\x08R\x07\x63\x61nUndo\x12)\n\x10workable_horizon\x18\t \x01(\x05R\x0fworkableHorizon\x12K\n\x12\x65stimated_duration\x18\n \x01(\x0b\x32\x1c.common.v1.EstimatedDurationR\x11\x65stimatedDuration\x12\x39\n\nstarted_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampR\tstartedAt\x12=\n\x0c\x63ompleted_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0b\x63ompletedAt\x12\x1d\n\nerror_code\x18\r \x01(\tR\terrorCode\x12#\n\rerror_message\x18\x0e \x01(\tR\x0c\x65rrorMessage\x12\x39\n\x08\x65vidence\x18\x0f \x03(\x0b\x32\x1d.runtime.v1.ExecutionEvidenceR\x08\x65vidence\x12\x38\n\x07\x62inding\x18\x10 \x01(\x0b\x32\x1e.runtime.v1.TaskRuntimeBindingR\x07\x62inding\"5\n\x08TaskRuns\x12)\n\x05items\x18\x01 \x03(\x0b\x32\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n\x0cTaskRunState\x12\x1e\n\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12\'\n#TASK_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1a\n\x16TASK_RUN_STATE_WAITING\x10\x02\x12\x1e\n\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1c\n\x18TASK_RUN_STATE_COMPLETED\x10\x04\x12\x18\n\x14TASK_RUN_STATE_ERROR\x10\x05\x12\x1a\n\x16TASK_RUN_STATE_ABORTED\x10\x06\x42\xab\x01\n\x0e\x63om.runtime.v1B\x0cTaskRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,12 +39,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'runtime.v1.task_run_pb2', _
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.runtime.v1B\014TaskRunProtoP\001Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\242\002\003RXX\252\002\023Messages.Runtime.V1\312\002\nRuntime\\V1\342\002\026Runtime\\V1\\GPBMetadata\352\002\013Runtime::V1'
-  _globals['_TASKRUNSTATE']._serialized_start=1256
-  _globals['_TASKRUNSTATE']._serialized_end=1487
-  _globals['_TASKRUNTIMEBINDING']._serialized_start=210
-  _globals['_TASKRUNTIMEBINDING']._serialized_end=420
-  _globals['_TASKRUN']._serialized_start=423
-  _globals['_TASKRUN']._serialized_end=1198
-  _globals['_TASKRUNS']._serialized_start=1200
-  _globals['_TASKRUNS']._serialized_end=1253
+  _globals['_TASKRUN'].fields_by_name['task_definition_id']._loaded_options = None
+  _globals['_TASKRUN'].fields_by_name['task_definition_id']._serialized_options = b'\272H\tr\004\230\362\004\001\310\001\001'
+  _globals['_TASKRUN'].fields_by_name['parent_sequence_run_id']._loaded_options = None
+  _globals['_TASKRUN'].fields_by_name['parent_sequence_run_id']._serialized_options = b'\272H\tr\004\370\361\004\001\310\001\001'
+  _globals['_TASKRUN'].fields_by_name['state']._loaded_options = None
+  _globals['_TASKRUN'].fields_by_name['state']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_TASKRUNSTATE']._serialized_start=1357
+  _globals['_TASKRUNSTATE']._serialized_end=1588
+  _globals['_TASKRUNTIMEBINDING']._serialized_start=272
+  _globals['_TASKRUNTIMEBINDING']._serialized_end=482
+  _globals['_TASKRUN']._serialized_start=485
+  _globals['_TASKRUN']._serialized_end=1299
+  _globals['_TASKRUNS']._serialized_start=1301
+  _globals['_TASKRUNS']._serialized_end=1354
 # @@protoc_insertion_point(module_scope)

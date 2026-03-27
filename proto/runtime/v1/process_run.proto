@@ -1,11 +1,11 @@
 syntax = "proto3";
 package runtime.v1;
 
+import "buf/validate/validate.proto";
 import "geometry/v1/pose.proto";
 import "google/protobuf/timestamp.proto";
 import "runtime/v1/actor_assignment.proto";
-import "runtime/v1/sequence_run.proto";
-import "runtime/v1/task_run.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
@@ -28,15 +28,30 @@ message RunParameter {
 // Is is based upon a ProcessRecipe which defines what must be possible.
 message ProcessRun {
   string id = 1;
-  string recipe_id = 2;
+  string process_recipe_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
   string order_id = 3;
-  string station_id = 4;
-  string cell_id = 5;
+  string station_id = 4 [
+    // (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.station_id_component) = true
+  ];
+  string cell_id = 5 [
+    // (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.cell_id_component) = true
+  ];
   geometry.v1.LocalizedPose frame = 6;
-  string root_sequence_run_id = 7;
-  repeated SequenceRun sequences = 8;
-  repeated TaskRun tasks = 9;
-  ProcessRunState state = 10;
+  string root_sequence_run_id = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
+  ];
+  repeated string sequence_run_ids = 8 [(buf.validate.field).repeated.items.string.(validation.v1.sequence_run_id_component) = true];
+  repeated string task_run_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.task_run_id_component) = true];
+  ProcessRunState state = 10 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp initiated_at = 11;
   google.protobuf.Timestamp ended_at = 12;
   repeated ActorAssignment assignments = 13;

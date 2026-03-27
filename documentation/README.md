@@ -39,6 +39,13 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -359,24 +366,7 @@
   
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
-    - [ActorRef](#runtime-v1-ActorRef)
-  
-- [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
-    - [SequenceRun](#runtime-v1-SequenceRun)
-    - [SequenceRuns](#runtime-v1-SequenceRuns)
-  
-    - [SequenceRunState](#runtime-v1-SequenceRunState)
-  
-- [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
-    - [EvidenceFact](#runtime-v1-EvidenceFact)
-    - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
-  
-- [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
-    - [TaskRun](#runtime-v1-TaskRun)
-    - [TaskRuns](#runtime-v1-TaskRuns)
-    - [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding)
-  
-    - [TaskRunState](#runtime-v1-TaskRunState)
+    - [ActorAssignments](#runtime-v1-ActorAssignments)
   
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
@@ -535,6 +525,23 @@
   
 - [robot/v1/zone.proto](#robot_v1_zone-proto)
     - [ZoneMessage](#robot-v1-ZoneMessage)
+  
+- [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
+    - [EvidenceFact](#runtime-v1-EvidenceFact)
+    - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
+  
+- [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
+    - [SequenceRun](#runtime-v1-SequenceRun)
+    - [SequenceRuns](#runtime-v1-SequenceRuns)
+  
+    - [SequenceRunState](#runtime-v1-SequenceRunState)
+  
+- [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
+    - [TaskRun](#runtime-v1-TaskRun)
+    - [TaskRuns](#runtime-v1-TaskRuns)
+    - [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding)
+  
+    - [TaskRunState](#runtime-v1-TaskRunState)
   
 - [runtime/v1/validation_result.proto](#runtime_v1_validation_result-proto)
     - [ValidationResult](#runtime-v1-ValidationResult)
@@ -815,16 +822,23 @@ A simple pose consisting of a position and orientation
 | --------- | ---- | ---- | ------ | ----------- |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | asset_id_component | bool | .buf.validate.StringRules | 10005 |  |
+| cell_id_component | bool | .buf.validate.StringRules | 10020 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10006 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10010 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10009 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
 | part_id_component | bool | .buf.validate.StringRules | 10007 |  |
+| process_recipe_id_component | bool | .buf.validate.StringRules | 10017 |  |
+| process_run_id_component | bool | .buf.validate.StringRules | 10014 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 | robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| sequence_definition_id_component | bool | .buf.validate.StringRules | 10018 |  |
+| sequence_run_id_component | bool | .buf.validate.StringRules | 10015 |  |
 | skill_id_component | bool | .buf.validate.StringRules | 10013 |  |
 | station_id_component | bool | .buf.validate.StringRules | 10011 |  |
+| task_definition_id_component | bool | .buf.validate.StringRules | 10019 |  |
+| task_run_id_component | bool | .buf.validate.StringRules | 10016 |  |
 | tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
 | tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
 
@@ -5174,7 +5188,7 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| actor | [ActorRef](#runtime-v1-ActorRef) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
 | process_run_id | [string](#string) |  |  |
 | sequence_run_id | [string](#string) |  |  |
 | task_run_id | [string](#string) |  |  |
@@ -5186,241 +5200,21 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 
 
-<a name="runtime-v1-ActorRef"></a>
+<a name="runtime-v1-ActorAssignments"></a>
 
-### ActorRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| kind | [common.v1.ActorKind](#common-v1-ActorKind) |  |  |
-| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="runtime_v1_sequence_run-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## runtime/v1/sequence_run.proto
-
-
-
-<a name="runtime-v1-SequenceRun"></a>
-
-### SequenceRun
+### ActorAssignments
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| sequence_definition_id | [string](#string) |  |  |
-| parent_sequence_run_id | [string](#string) |  |  |
-| child_sequence_run_ids | [string](#string) | repeated |  |
-| child_task_run_ids | [string](#string) | repeated |  |
-| state | [SequenceRunState](#runtime-v1-SequenceRunState) |  |  |
-| completed_tasks | [int32](#int32) |  |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-| assigned_actors | [ActorRef](#runtime-v1-ActorRef) | repeated |  |
-
-
-
-
-
-
-<a name="runtime-v1-SequenceRuns"></a>
-
-### SequenceRuns
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
+| items | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
 
 
 
 
 
  
-
-
-<a name="runtime-v1-SequenceRunState"></a>
-
-### SequenceRunState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
-| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| SEQUENCE_RUN_STATE_WAITING | 2 |  |
-| SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
-| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
-| SEQUENCE_RUN_STATE_ABORTED | 5 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="runtime_v1_execution_evidence-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## runtime/v1/execution_evidence.proto
-
-
-
-<a name="runtime-v1-EvidenceFact"></a>
-
-### EvidenceFact
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [string](#string) |  |  |
-| unit | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="runtime-v1-ExecutionEvidence"></a>
-
-### ExecutionEvidence
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
-| source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
-| recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| facts | [EvidenceFact](#runtime-v1-EvidenceFact) | repeated |  |
-| blob_uri | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="runtime_v1_task_run-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## runtime/v1/task_run.proto
-
-
-
-<a name="runtime-v1-TaskRun"></a>
-
-### TaskRun
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| task_definition_id | [string](#string) |  |  |
-| parent_sequence_run_id | [string](#string) |  |  |
-| state | [TaskRunState](#runtime-v1-TaskRunState) |  |  |
-| candidate_actors | [ActorRef](#runtime-v1-ActorRef) | repeated |  |
-| assigned_actor | [ActorRef](#runtime-v1-ActorRef) |  |  |
-| can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
-| workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
-| estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
-| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| error_code | [string](#string) |  |  |
-| error_message | [string](#string) |  |  |
-| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
-| binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
-
-
-
-
-
-
-<a name="runtime-v1-TaskRuns"></a>
-
-### TaskRuns
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
-
-
-
-
-
-
-<a name="runtime-v1-TaskRuntimeBinding"></a>
-
-### TaskRuntimeBinding
-Concrete runtime/deployment bindings resolved for this task run.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_instance_id | [string](#string) |  |  |
-| robot_instance_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
-
-
-
-
-
- 
-
-
-<a name="runtime-v1-TaskRunState"></a>
-
-### TaskRunState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
-| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| TASK_RUN_STATE_WAITING | 2 |  |
-| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
-| TASK_RUN_STATE_COMPLETED | 4 |  |
-| TASK_RUN_STATE_ERROR | 5 |  |
-| TASK_RUN_STATE_ABORTED | 6 |  |
-
 
  
 
@@ -5447,14 +5241,14 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| recipe_id | [string](#string) |  |  |
+| process_recipe_id | [string](#string) |  |  |
 | order_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | cell_id | [string](#string) |  |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | root_sequence_run_id | [string](#string) |  |  |
-| sequences | [SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
-| tasks | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
+| sequence_run_ids | [string](#string) | repeated |  |
+| task_run_ids | [string](#string) | repeated |  |
 | state | [ProcessRunState](#runtime-v1-ProcessRunState) |  |  |
 | initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
@@ -7492,6 +7286,225 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
+<a name="runtime_v1_execution_evidence-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/execution_evidence.proto
+
+
+
+<a name="runtime-v1-EvidenceFact"></a>
+
+### EvidenceFact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| unit | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-ExecutionEvidence"></a>
+
+### ExecutionEvidence
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+| source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
+| recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| facts | [EvidenceFact](#runtime-v1-EvidenceFact) | repeated |  |
+| blob_uri | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_sequence_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/sequence_run.proto
+
+
+
+<a name="runtime-v1-SequenceRun"></a>
+
+### SequenceRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| sequence_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| child_sequence_run_ids | [string](#string) | repeated |  |
+| child_task_run_ids | [string](#string) | repeated |  |
+| state | [SequenceRunState](#runtime-v1-SequenceRunState) |  |  |
+| completed_tasks | [int32](#int32) |  |  |
+| can_bulk_complete | [bool](#bool) |  |  |
+| assigned_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-SequenceRuns"></a>
+
+### SequenceRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-SequenceRunState"></a>
+
+### SequenceRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
+| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| SEQUENCE_RUN_STATE_WAITING | 2 |  |
+| SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
+| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
+| SEQUENCE_RUN_STATE_ABORTED | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_task_run-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/task_run.proto
+
+
+
+<a name="runtime-v1-TaskRun"></a>
+
+### TaskRun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| task_definition_id | [string](#string) |  |  |
+| parent_sequence_run_id | [string](#string) |  |  |
+| state | [TaskRunState](#runtime-v1-TaskRunState) |  |  |
+| candidate_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated |  |
+| assigned_actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| can_do | [bool](#bool) |  |  |
+| can_undo | [bool](#bool) |  |  |
+| workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
+| estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| error_code | [string](#string) |  |  |
+| error_message | [string](#string) |  |  |
+| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
+| binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskRuns"></a>
+
+### TaskRuns
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [TaskRun](#runtime-v1-TaskRun) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskRuntimeBinding"></a>
+
+### TaskRuntimeBinding
+Concrete runtime/deployment bindings resolved for this task run.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_instance_id | [string](#string) |  |  |
+| robot_instance_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-TaskRunState"></a>
+
+### TaskRunState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
+| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
+| TASK_RUN_STATE_WAITING | 2 |  |
+| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
+| TASK_RUN_STATE_COMPLETED | 4 |  |
+| TASK_RUN_STATE_ERROR | 5 |  |
+| TASK_RUN_STATE_ABORTED | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="runtime_v1_validation_result-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7513,7 +7526,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | method | [string](#string) |  | tool_feedback / vision / manual / external_qc |
 | validated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | measurements | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
-| validated_by_actor_id | [string](#string) |  |  |
+| validated_by_actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
 | comment | [string](#string) |  |  |
 
 

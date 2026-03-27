@@ -22,15 +22,15 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from runtime.v1 import actor_assignment_pb2 as runtime_dot_v1_dot_actor__assignment__pb2
-from runtime.v1 import sequence_run_pb2 as runtime_dot_v1_dot_sequence__run__pb2
-from runtime.v1 import task_run_pb2 as runtime_dot_v1_dot_task__run__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 from variance.v1 import variant_configuration_pb2 as variance_dot_v1_dot_variant__configuration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cruntime/v1/process_run.proto\x12\nruntime.v1\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\x1a\'variance/v1/variant_configuration.proto\"6\n\x0cRunParameter\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"\xcb\x05\n\nProcessRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\trecipe_id\x18\x02 \x01(\tR\x08recipeId\x12\x19\n\x08order_id\x18\x03 \x01(\tR\x07orderId\x12\x1d\n\nstation_id\x18\x04 \x01(\tR\tstationId\x12\x17\n\x07\x63\x65ll_id\x18\x05 \x01(\tR\x06\x63\x65llId\x12\x30\n\x05\x66rame\x18\x06 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x05\x66rame\x12/\n\x14root_sequence_run_id\x18\x07 \x01(\tR\x11rootSequenceRunId\x12\x35\n\tsequences\x18\x08 \x03(\x0b\x32\x17.runtime.v1.SequenceRunR\tsequences\x12)\n\x05tasks\x18\t \x03(\x0b\x32\x13.runtime.v1.TaskRunR\x05tasks\x12\x31\n\x05state\x18\n \x01(\x0e\x32\x1b.runtime.v1.ProcessRunStateR\x05state\x12=\n\x0cinitiated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0binitiatedAt\x12\x35\n\x08\x65nded_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x07\x65ndedAt\x12=\n\x0b\x61ssignments\x18\r \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x0b\x61ssignments\x12V\n\x15variant_configuration\x18\x0e \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x38\n\nparameters\x18\x0f \x03(\x0b\x32\x18.runtime.v1.RunParameterR\nparameters\";\n\x0bProcessRuns\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x16.runtime.v1.ProcessRunR\x05items*\xb6\x01\n\x0fProcessRunState\x12!\n\x1dPROCESS_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1d\n\x19PROCESS_RUN_STATE_WAITING\x10\x01\x12!\n\x1dPROCESS_RUN_STATE_IN_PROGRESS\x10\x02\x12\x1f\n\x1bPROCESS_RUN_STATE_COMPLETED\x10\x03\x12\x1d\n\x19PROCESS_RUN_STATE_ABORTED\x10\x04\x42\xae\x01\n\x0e\x63om.runtime.v1B\x0fProcessRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cruntime/v1/process_run.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\'variance/v1/variant_configuration.proto\"6\n\x0cRunParameter\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"\xa3\x06\n\nProcessRun\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x38\n\x11process_recipe_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0fprocessRecipeId\x12\x19\n\x08order_id\x18\x03 \x01(\tR\x07orderId\x12(\n\nstation_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12\"\n\x07\x63\x65ll_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06\x63\x65llId\x12\x30\n\x05\x66rame\x18\x06 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x05\x66rame\x12=\n\x14root_sequence_run_id\x18\x07 \x01(\tB\x0c\xbaH\tr\x04\xf8\xf1\x04\x01\xc8\x01\x01R\x11rootSequenceRunId\x12\x38\n\x10sequence_run_ids\x18\x08 \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x12\x30\n\x0ctask_run_ids\x18\t \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\x80\xf2\x04\x01R\ntaskRunIds\x12>\n\x05state\x18\n \x01(\x0e\x32\x1b.runtime.v1.ProcessRunStateB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05state\x12=\n\x0cinitiated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0binitiatedAt\x12\x35\n\x08\x65nded_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x07\x65ndedAt\x12=\n\x0b\x61ssignments\x18\r \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x0b\x61ssignments\x12V\n\x15variant_configuration\x18\x0e \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x38\n\nparameters\x18\x0f \x03(\x0b\x32\x18.runtime.v1.RunParameterR\nparameters\";\n\x0bProcessRuns\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x16.runtime.v1.ProcessRunR\x05items*\xb6\x01\n\x0fProcessRunState\x12!\n\x1dPROCESS_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1d\n\x19PROCESS_RUN_STATE_WAITING\x10\x01\x12!\n\x1dPROCESS_RUN_STATE_IN_PROGRESS\x10\x02\x12\x1f\n\x1bPROCESS_RUN_STATE_COMPLETED\x10\x03\x12\x1d\n\x19PROCESS_RUN_STATE_ABORTED\x10\x04\x42\xae\x01\n\x0e\x63om.runtime.v1B\x0fProcessRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,12 +38,26 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'runtime.v1.process_run_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.runtime.v1B\017ProcessRunProtoP\001Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\242\002\003RXX\252\002\023Messages.Runtime.V1\312\002\nRuntime\\V1\342\002\026Runtime\\V1\\GPBMetadata\352\002\013Runtime::V1'
-  _globals['_PROCESSRUNSTATE']._serialized_start=1071
-  _globals['_PROCESSRUNSTATE']._serialized_end=1253
-  _globals['_RUNPARAMETER']._serialized_start=235
-  _globals['_RUNPARAMETER']._serialized_end=289
-  _globals['_PROCESSRUN']._serialized_start=292
-  _globals['_PROCESSRUN']._serialized_end=1007
-  _globals['_PROCESSRUNS']._serialized_start=1009
-  _globals['_PROCESSRUNS']._serialized_end=1068
+  _globals['_PROCESSRUN'].fields_by_name['process_recipe_id']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['process_recipe_id']._serialized_options = b'\272H\tr\004\210\362\004\001\310\001\001'
+  _globals['_PROCESSRUN'].fields_by_name['station_id']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['station_id']._serialized_options = b'\272H\006r\004\330\361\004\001'
+  _globals['_PROCESSRUN'].fields_by_name['cell_id']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['cell_id']._serialized_options = b'\272H\006r\004\240\362\004\001'
+  _globals['_PROCESSRUN'].fields_by_name['root_sequence_run_id']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['root_sequence_run_id']._serialized_options = b'\272H\tr\004\370\361\004\001\310\001\001'
+  _globals['_PROCESSRUN'].fields_by_name['sequence_run_ids']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['sequence_run_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\370\361\004\001'
+  _globals['_PROCESSRUN'].fields_by_name['task_run_ids']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['task_run_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\200\362\004\001'
+  _globals['_PROCESSRUN'].fields_by_name['state']._loaded_options = None
+  _globals['_PROCESSRUN'].fields_by_name['state']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_PROCESSRUNSTATE']._serialized_start=1175
+  _globals['_PROCESSRUNSTATE']._serialized_end=1357
+  _globals['_RUNPARAMETER']._serialized_start=251
+  _globals['_RUNPARAMETER']._serialized_end=305
+  _globals['_PROCESSRUN']._serialized_start=308
+  _globals['_PROCESSRUN']._serialized_end=1111
+  _globals['_PROCESSRUNS']._serialized_start=1113
+  _globals['_PROCESSRUNS']._serialized_end=1172
 # @@protoc_insertion_point(module_scope)

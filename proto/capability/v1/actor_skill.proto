@@ -76,12 +76,12 @@ message ActorSkills {
        Example policy (SK-03 Apply Controlled Torque):
        •	Active for 180 days after training or validated evidence
        •	Restricted after 180 days (allowed only with AR guidance + extra checks)
-   •	Expired after 365 days (not allowed)
+       •	Expired after 365 days (not allowed)
 
        - Usage-based decay (practice-style)
        Good for skills that fade when not used.
        Example:
-   •	If no executions in the last 30 days → confidence drops
+       •	If no executions in the last 30 days → confidence drops
        •	If no executions in 90 days → status becomes Restricted
        •	If no executions in 180 days → Expired
 

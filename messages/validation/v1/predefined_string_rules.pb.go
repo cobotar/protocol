@@ -134,6 +134,62 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10013,opt,name=skill_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10014,
+		Name:          "validation.v1.process_run_id_component",
+		Tag:           "varint,10014,opt,name=process_run_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10015,
+		Name:          "validation.v1.sequence_run_id_component",
+		Tag:           "varint,10015,opt,name=sequence_run_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10016,
+		Name:          "validation.v1.task_run_id_component",
+		Tag:           "varint,10016,opt,name=task_run_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10017,
+		Name:          "validation.v1.process_recipe_id_component",
+		Tag:           "varint,10017,opt,name=process_recipe_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10018,
+		Name:          "validation.v1.sequence_definition_id_component",
+		Tag:           "varint,10018,opt,name=sequence_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10019,
+		Name:          "validation.v1.task_definition_id_component",
+		Tag:           "varint,10019,opt,name=task_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10020,
+		Name:          "validation.v1.cell_id_component",
+		Tag:           "varint,10020,opt,name=cell_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -166,6 +222,20 @@ var (
 	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[12]
 	// optional bool skill_id_component = 10013;
 	E_SkillIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[13]
+	// optional bool process_run_id_component = 10014;
+	E_ProcessRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[14]
+	// optional bool sequence_run_id_component = 10015;
+	E_SequenceRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[15]
+	// optional bool task_run_id_component = 10016;
+	E_TaskRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[16]
+	// optional bool process_recipe_id_component = 10017;
+	E_ProcessRecipeIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[17]
+	// optional bool sequence_definition_id_component = 10018;
+	E_SequenceDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[18]
+	// optional bool task_definition_id_component = 10019;
+	E_TaskDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[19]
+	// optional bool cell_id_component = 10020;
+	E_CellIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[20]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -214,7 +284,28 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1bstring.station_id_component\x12%this does not seem to be a station id\x1a+(this == '' || this.startsWith('station-'))R\x12stationIdComponent:\xba\x01\n" +
 	"\x12skill_id_component\x12\x19.buf.validate.StringRules\x18\x9dN \x01(\bBp\xc2Hm\n" +
 	"k\n" +
-	"\x19string.skill_id_component\x12#this does not seem to be a skill id\x1a)(this == '' || this.startsWith('skill-'))R\x10skillIdComponentB\xb5\x01\n" +
+	"\x19string.skill_id_component\x12#this does not seem to be a skill id\x1a)(this == '' || this.startsWith('skill-'))R\x10skillIdComponent:\xd8\x01\n" +
+	"\x18process_run_id_component\x12\x19.buf.validate.StringRules\x18\x9eN \x01(\bB\x82\x01\xc2H\x7f\n" +
+	"}\n" +
+	"\x1fstring.process_run_id_component\x12)this does not seem to be a process run id\x1a/(this == '' || this.startsWith('process_run-'))R\x15processRunIdComponent:\xdf\x01\n" +
+	"\x19sequence_run_id_component\x12\x19.buf.validate.StringRules\x18\x9fN \x01(\bB\x87\x01\xc2H\x83\x01\n" +
+	"\x80\x01\n" +
+	" string.sequence_run_id_component\x12*this does not seem to be a sequence run id\x1a0(this == '' || this.startsWith('sequence_run-'))R\x16sequenceRunIdComponent:\xc8\x01\n" +
+	"\x15task_run_id_component\x12\x19.buf.validate.StringRules\x18\xa0N \x01(\bBy\xc2Hv\n" +
+	"t\n" +
+	"\x1cstring.task_run_id_component\x12&this does not seem to be a task run id\x1a,(this == '' || this.startsWith('task_run-'))R\x12taskRunIdComponent:\xe9\x01\n" +
+	"\x1bprocess_recipe_id_component\x12\x19.buf.validate.StringRules\x18\xa1N \x01(\bB\x8d\x01\xc2H\x89\x01\n" +
+	"\x86\x01\n" +
+	"\"string.process_recipe_id_component\x12,this does not seem to be a process recipe id\x1a2(this == '' || this.startsWith('process_recipe-'))R\x18processRecipeIdComponent:\x82\x02\n" +
+	" sequence_definition_id_component\x12\x19.buf.validate.StringRules\x18\xa2N \x01(\bB\x9c\x01\xc2H\x98\x01\n" +
+	"\x95\x01\n" +
+	"'string.sequence_definition_id_component\x121this does not seem to be a sequence definition id\x1a7(this == '' || this.startsWith('sequence_definition-'))R\x1dsequenceDefinitionIdComponent:\xee\x01\n" +
+	"\x1ctask_definition_id_component\x12\x19.buf.validate.StringRules\x18\xa3N \x01(\bB\x90\x01\xc2H\x8c\x01\n" +
+	"\x89\x01\n" +
+	"#string.task_definition_id_component\x12-this does not seem to be a task definition id\x1a3(this == '' || this.startsWith('task_definition-'))R\x19taskDefinitionIdComponent:\xb5\x01\n" +
+	"\x11cell_id_component\x12\x19.buf.validate.StringRules\x18\xa4N \x01(\bBm\xc2Hj\n" +
+	"h\n" +
+	"\x18string.cell_id_component\x12\"this does not seem to be a cell id\x1a((this == '' || this.startsWith('cell-'))R\x0fcellIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -235,10 +326,17 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 11: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
 	0,  // 12: validation.v1.station_id_component:extendee -> buf.validate.StringRules
 	0,  // 13: validation.v1.skill_id_component:extendee -> buf.validate.StringRules
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	0,  // [0:14] is the sub-list for extension extendee
+	0,  // 14: validation.v1.process_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 15: validation.v1.sequence_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 16: validation.v1.task_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 17: validation.v1.process_recipe_id_component:extendee -> buf.validate.StringRules
+	0,  // 18: validation.v1.sequence_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 19: validation.v1.task_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 20: validation.v1.cell_id_component:extendee -> buf.validate.StringRules
+	21, // [21:21] is the sub-list for method output_type
+	21, // [21:21] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	0,  // [0:21] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -254,7 +352,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 14,
+			NumExtensions: 21,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

@@ -4,41 +4,19 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { ActorKind } from "../../common/v1/actor_pb.ts";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { ActorRef } from "../../common/v1/actor_pb.ts";
 import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file runtime/v1/actor_assignment.proto.
  */
 export const file_runtime_v1_actor_assignment: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8SCnJ1bnRpbWUudjEiQAoIQWN0b3JSZWYSIgoEa2luZBgBIAEoDjIULmNvbW1vbi52MS5BY3RvcktpbmQSEAoIYWN0b3JfaWQYAiABKAki6gEKD0FjdG9yQXNzaWdubWVudBIKCgJpZBgBIAEoCRIjCgVhY3RvchgCIAEoCzIULnJ1bnRpbWUudjEuQWN0b3JSZWYSFgoOcHJvY2Vzc19ydW5faWQYAyABKAkSFwoPc2VxdWVuY2VfcnVuX2lkGAQgASgJEhMKC3Rhc2tfcnVuX2lkGAUgASgJEi8KC2Fzc2lnbmVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgtyZWxlYXNlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCswEKDmNvbS5ydW50aW1lLnYxQhRBY3RvckFzc2lnbm1lbnRQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_common_v1_actor, file_google_protobuf_timestamp]);
-
-/**
- * @generated from message runtime.v1.ActorRef
- */
-export type ActorRef = Message<"runtime.v1.ActorRef"> & {
-  /**
-   * @generated from field: common.v1.ActorKind kind = 1;
-   */
-  kind: ActorKind;
-
-  /**
-   * worker_definition_id or robot_instance_id
-   *
-   * @generated from field: string actor_id = 2;
-   */
-  actorId: string;
-};
-
-/**
- * Describes the message runtime.v1.ActorRef.
- * Use `create(ActorRefSchema)` to create a new message.
- */
-export const ActorRefSchema: GenMessage<ActorRef> = /*@__PURE__*/
-  messageDesc(file_runtime_v1_actor_assignment, 0);
+  fileDesc("CiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8SCnJ1bnRpbWUudjEimwIKD0FjdG9yQXNzaWdubWVudBIKCgJpZBgBIAEoCRIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiQKDnByb2Nlc3NfcnVuX2lkGAMgASgJQgy6SAnIAQFyBPDxBAESJQoPc2VxdWVuY2VfcnVuX2lkGAQgASgJQgy6SAnIAQFyBPjxBAESIQoLdGFza19ydW5faWQYBSABKAlCDLpICcgBAXIEgPIEARIvCgthc3NpZ25lZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLcmVsZWFzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIj4KEEFjdG9yQXNzaWdubWVudHMSKgoFaXRlbXMYASADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNzaWdubWVudEKzAQoOY29tLnJ1bnRpbWUudjFCFEFjdG9yQXNzaWdubWVudFByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.ActorAssignment
@@ -50,7 +28,7 @@ export type ActorAssignment = Message<"runtime.v1.ActorAssignment"> & {
   id: string;
 
   /**
-   * @generated from field: runtime.v1.ActorRef actor = 2;
+   * @generated from field: common.v1.ActorRef actor = 2;
    */
   actor?: ActorRef;
 
@@ -85,5 +63,22 @@ export type ActorAssignment = Message<"runtime.v1.ActorAssignment"> & {
  * Use `create(ActorAssignmentSchema)` to create a new message.
  */
 export const ActorAssignmentSchema: GenMessage<ActorAssignment> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_actor_assignment, 0);
+
+/**
+ * @generated from message runtime.v1.ActorAssignments
+ */
+export type ActorAssignments = Message<"runtime.v1.ActorAssignments"> & {
+  /**
+   * @generated from field: repeated runtime.v1.ActorAssignment items = 1;
+   */
+  items: ActorAssignment[];
+};
+
+/**
+ * Describes the message runtime.v1.ActorAssignments.
+ * Use `create(ActorAssignmentsSchema)` to create a new message.
+ */
+export const ActorAssignmentsSchema: GenMessage<ActorAssignments> = /*@__PURE__*/
   messageDesc(file_runtime_v1_actor_assignment, 1);
 

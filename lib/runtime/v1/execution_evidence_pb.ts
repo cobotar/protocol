@@ -4,15 +4,17 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file runtime/v1/execution_evidence.proto.
  */
 export const file_runtime_v1_execution_evidence: GenFile = /*@__PURE__*/
-  fileDesc("CiNydW50aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90bxIKcnVudGltZS52MSI4CgxFdmlkZW5jZUZhY3QSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJEgwKBHVuaXQYAyABKAkisAEKEUV4ZWN1dGlvbkV2aWRlbmNlEgoKAmlkGAEgASgJEhMKC3Rhc2tfcnVuX2lkGAIgASgJEg4KBnNvdXJjZRgDIAEoCRIvCgtyZWNvcmRlZF9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASJwoFZmFjdHMYBSADKAsyGC5ydW50aW1lLnYxLkV2aWRlbmNlRmFjdBIQCghibG9iX3VyaRgGIAEoCUK1AQoOY29tLnJ1bnRpbWUudjFCFkV4ZWN1dGlvbkV2aWRlbmNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_google_protobuf_timestamp]);
+  fileDesc("CiNydW50aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90bxIKcnVudGltZS52MSI4CgxFdmlkZW5jZUZhY3QSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJEgwKBHVuaXQYAyABKAkivgEKEUV4ZWN1dGlvbkV2aWRlbmNlEgoKAmlkGAEgASgJEiEKC3Rhc2tfcnVuX2lkGAIgASgJQgy6SAnIAQFyBIDyBAESDgoGc291cmNlGAMgASgJEi8KC3JlY29yZGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBInCgVmYWN0cxgFIAMoCzIYLnJ1bnRpbWUudjEuRXZpZGVuY2VGYWN0EhAKCGJsb2JfdXJpGAYgASgJQrUBCg5jb20ucnVudGltZS52MUIWRXhlY3V0aW9uRXZpZGVuY2VQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.EvidenceFact

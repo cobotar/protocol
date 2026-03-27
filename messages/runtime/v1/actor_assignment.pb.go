@@ -7,7 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -23,62 +25,10 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ActorRef struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Kind          v1.ActorKind           `protobuf:"varint,1,opt,name=kind,proto3,enum=common.v1.ActorKind" json:"kind,omitempty"`
-	ActorId       string                 `protobuf:"bytes,2,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"` // worker_definition_id or robot_instance_id
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ActorRef) Reset() {
-	*x = ActorRef{}
-	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ActorRef) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ActorRef) ProtoMessage() {}
-
-func (x *ActorRef) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ActorRef.ProtoReflect.Descriptor instead.
-func (*ActorRef) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *ActorRef) GetKind() v1.ActorKind {
-	if x != nil {
-		return x.Kind
-	}
-	return v1.ActorKind(0)
-}
-
-func (x *ActorRef) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
-
 type ActorAssignment struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Actor         *ActorRef              `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
+	Actor         *v1.ActorRef           `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
 	ProcessRunId  string                 `protobuf:"bytes,3,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`
 	SequenceRunId string                 `protobuf:"bytes,4,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
 	TaskRunId     string                 `protobuf:"bytes,5,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
@@ -90,7 +40,7 @@ type ActorAssignment struct {
 
 func (x *ActorAssignment) Reset() {
 	*x = ActorAssignment{}
-	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[1]
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -102,7 +52,7 @@ func (x *ActorAssignment) String() string {
 func (*ActorAssignment) ProtoMessage() {}
 
 func (x *ActorAssignment) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[1]
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +65,7 @@ func (x *ActorAssignment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActorAssignment.ProtoReflect.Descriptor instead.
 func (*ActorAssignment) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ActorAssignment) GetId() string {
@@ -125,7 +75,7 @@ func (x *ActorAssignment) GetId() string {
 	return ""
 }
 
-func (x *ActorAssignment) GetActor() *ActorRef {
+func (x *ActorAssignment) GetActor() *v1.ActorRef {
 	if x != nil {
 		return x.Actor
 	}
@@ -167,25 +117,68 @@ func (x *ActorAssignment) GetReleasedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type ActorAssignments struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ActorAssignment     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ActorAssignments) Reset() {
+	*x = ActorAssignments{}
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ActorAssignments) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ActorAssignments) ProtoMessage() {}
+
+func (x *ActorAssignments) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ActorAssignments.ProtoReflect.Descriptor instead.
+func (*ActorAssignments) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ActorAssignments) GetItems() []*ActorAssignment {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_runtime_v1_actor_assignment_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_actor_assignment_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/actor_assignment.proto\x12\n" +
-	"runtime.v1\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"O\n" +
-	"\bActorRef\x12(\n" +
-	"\x04kind\x18\x01 \x01(\x0e2\x14.common.v1.ActorKindR\x04kind\x12\x19\n" +
-	"\bactor_id\x18\x02 \x01(\tR\aactorId\"\xb5\x02\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n" +
 	"\x0fActorAssignment\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12*\n" +
-	"\x05actor\x18\x02 \x01(\v2\x14.runtime.v1.ActorRefR\x05actor\x12$\n" +
-	"\x0eprocess_run_id\x18\x03 \x01(\tR\fprocessRunId\x12&\n" +
-	"\x0fsequence_run_id\x18\x04 \x01(\tR\rsequenceRunId\x12\x1e\n" +
-	"\vtask_run_id\x18\x05 \x01(\tR\ttaskRunId\x12;\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x121\n" +
+	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x122\n" +
+	"\x0eprocess_run_id\x18\x03 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf1\x04\x01R\fprocessRunId\x124\n" +
+	"\x0fsequence_run_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\rsequenceRunId\x12,\n" +
+	"\vtask_run_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf2\x04\x01R\ttaskRunId\x12;\n" +
 	"\vassigned_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"assignedAt\x12;\n" +
 	"\vreleased_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"releasedAtB\xb3\x01\n" +
+	"releasedAt\"E\n" +
+	"\x10ActorAssignments\x121\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.runtime.v1.ActorAssignmentR\x05itemsB\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14ActorAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
@@ -203,16 +196,16 @@ func file_runtime_v1_actor_assignment_proto_rawDescGZIP() []byte {
 
 var file_runtime_v1_actor_assignment_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_runtime_v1_actor_assignment_proto_goTypes = []any{
-	(*ActorRef)(nil),              // 0: runtime.v1.ActorRef
-	(*ActorAssignment)(nil),       // 1: runtime.v1.ActorAssignment
-	(v1.ActorKind)(0),             // 2: common.v1.ActorKind
+	(*ActorAssignment)(nil),       // 0: runtime.v1.ActorAssignment
+	(*ActorAssignments)(nil),      // 1: runtime.v1.ActorAssignments
+	(*v1.ActorRef)(nil),           // 2: common.v1.ActorRef
 	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
 }
 var file_runtime_v1_actor_assignment_proto_depIdxs = []int32{
-	2, // 0: runtime.v1.ActorRef.kind:type_name -> common.v1.ActorKind
-	0, // 1: runtime.v1.ActorAssignment.actor:type_name -> runtime.v1.ActorRef
-	3, // 2: runtime.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
-	3, // 3: runtime.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
+	2, // 0: runtime.v1.ActorAssignment.actor:type_name -> common.v1.ActorRef
+	3, // 1: runtime.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
+	3, // 2: runtime.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
+	0, // 3: runtime.v1.ActorAssignments.items:type_name -> runtime.v1.ActorAssignment
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

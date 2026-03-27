@@ -22,11 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
 from common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"runtime/v1/validation_result.proto\x12\nruntime.v1\x1a$common/v1/key_value_constraint.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x02\n\x10ValidationResult\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n\x0btask_run_id\x18\x02 \x01(\tR\ttaskRunId\x12\x34\n\x06status\x18\x03 \x01(\x0e\x32\x1c.runtime.v1.ValidationStatusR\x06status\x12\x16\n\x06method\x18\x04 \x01(\tR\x06method\x12=\n\x0cvalidated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0bvalidatedAt\x12\x41\n\x0cmeasurements\x18\x06 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0cmeasurements\x12\x31\n\x15validated_by_actor_id\x18\x07 \x01(\tR\x12validatedByActorId\x12\x18\n\x07\x63omment\x18\x08 \x01(\tR\x07\x63omment*\xb0\x01\n\x10ValidationStatus\x12!\n\x1dVALIDATION_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19VALIDATION_STATUS_PENDING\x10\x01\x12\x1c\n\x18VALIDATION_STATUS_PASSED\x10\x02\x12\x1c\n\x18VALIDATION_STATUS_FAILED\x10\x03\x12\x1e\n\x1aVALIDATION_STATUS_BYPASSED\x10\x04\x42\xb4\x01\n\x0e\x63om.runtime.v1B\x15ValidationResultProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"runtime/v1/validation_result.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x03\n\x10ValidationResult\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12,\n\x0btask_run_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x80\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12>\n\x06status\x18\x03 \x01(\x0e\x32\x1c.runtime.v1.ValidationStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x16\n\x06method\x18\x04 \x01(\tR\x06method\x12=\n\x0cvalidated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0bvalidatedAt\x12\x41\n\x0cmeasurements\x18\x06 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0cmeasurements\x12\x41\n\x12validated_by_actor\x18\x07 \x01(\x0b\x32\x13.common.v1.ActorRefR\x10validatedByActor\x12\x18\n\x07\x63omment\x18\x08 \x01(\tR\x07\x63omment*\xb0\x01\n\x10ValidationStatus\x12!\n\x1dVALIDATION_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19VALIDATION_STATUS_PENDING\x10\x01\x12\x1c\n\x18VALIDATION_STATUS_PASSED\x10\x02\x12\x1c\n\x18VALIDATION_STATUS_FAILED\x10\x03\x12\x1e\n\x1aVALIDATION_STATUS_BYPASSED\x10\x04\x42\xb4\x01\n\x0e\x63om.runtime.v1B\x15ValidationResultProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +37,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'runtime.v1.validation_resul
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.runtime.v1B\025ValidationResultProtoP\001Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\242\002\003RXX\252\002\023Messages.Runtime.V1\312\002\nRuntime\\V1\342\002\026Runtime\\V1\\GPBMetadata\352\002\013Runtime::V1'
-  _globals['_VALIDATIONSTATUS']._serialized_start=476
-  _globals['_VALIDATIONSTATUS']._serialized_end=652
-  _globals['_VALIDATIONRESULT']._serialized_start=122
-  _globals['_VALIDATIONRESULT']._serialized_end=473
+  _globals['_VALIDATIONRESULT'].fields_by_name['task_run_id']._loaded_options = None
+  _globals['_VALIDATIONRESULT'].fields_by_name['task_run_id']._serialized_options = b'\272H\tr\004\200\362\004\001\310\001\001'
+  _globals['_VALIDATIONRESULT'].fields_by_name['status']._loaded_options = None
+  _globals['_VALIDATIONRESULT'].fields_by_name['status']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_VALIDATIONSTATUS']._serialized_start=613
+  _globals['_VALIDATIONSTATUS']._serialized_end=789
+  _globals['_VALIDATIONRESULT']._serialized_start=219
+  _globals['_VALIDATIONRESULT']._serialized_end=610
 # @@protoc_insertion_point(module_scope)
