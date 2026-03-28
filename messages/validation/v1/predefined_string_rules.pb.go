@@ -190,6 +190,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10020,opt,name=cell_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10021,
+		Name:          "validation.v1.line_id_component",
+		Tag:           "varint,10021,opt,name=line_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -236,6 +244,8 @@ var (
 	E_TaskDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[19]
 	// optional bool cell_id_component = 10020;
 	E_CellIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[20]
+	// optional bool line_id_component = 10021;
+	E_LineIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[21]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -305,7 +315,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"#string.task_definition_id_component\x12-this does not seem to be a task definition id\x1a3(this == '' || this.startsWith('task_definition-'))R\x19taskDefinitionIdComponent:\xb5\x01\n" +
 	"\x11cell_id_component\x12\x19.buf.validate.StringRules\x18\xa4N \x01(\bBm\xc2Hj\n" +
 	"h\n" +
-	"\x18string.cell_id_component\x12\"this does not seem to be a cell id\x1a((this == '' || this.startsWith('cell-'))R\x0fcellIdComponentB\xb5\x01\n" +
+	"\x18string.cell_id_component\x12\"this does not seem to be a cell id\x1a((this == '' || this.startsWith('cell-'))R\x0fcellIdComponent:\xb5\x01\n" +
+	"\x11line_id_component\x12\x19.buf.validate.StringRules\x18\xa5N \x01(\bBm\xc2Hj\n" +
+	"h\n" +
+	"\x18string.line_id_component\x12\"this does not seem to be a line id\x1a((this == '' || this.startsWith('line-'))R\x0flineIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -333,10 +346,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 18: validation.v1.sequence_definition_id_component:extendee -> buf.validate.StringRules
 	0,  // 19: validation.v1.task_definition_id_component:extendee -> buf.validate.StringRules
 	0,  // 20: validation.v1.cell_id_component:extendee -> buf.validate.StringRules
-	21, // [21:21] is the sub-list for method output_type
-	21, // [21:21] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	0,  // [0:21] is the sub-list for extension extendee
+	0,  // 21: validation.v1.line_id_component:extendee -> buf.validate.StringRules
+	22, // [22:22] is the sub-list for method output_type
+	22, // [22:22] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	0,  // [0:22] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -352,7 +366,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 21,
+			NumExtensions: 22,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

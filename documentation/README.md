@@ -46,6 +46,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -235,11 +236,6 @@
   
     - [FixtureType](#plm-v1-FixtureType)
   
-- [plm/v1/line.proto](#plm_v1_line-proto)
-    - [LineMessage](#plm-v1-LineMessage)
-  
-    - [LineType](#plm-v1-LineType)
-  
 - [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
     - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
   
@@ -415,6 +411,12 @@
     - [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus)
     - [DeviceStatus](#resources-v1-DeviceStatus)
     - [DeviceType](#resources-v1-DeviceType)
+  
+- [resources/v1/line.proto](#resources_v1_line-proto)
+    - [LineDefinition](#resources-v1-LineDefinition)
+    - [LineDefinitions](#resources-v1-LineDefinitions)
+  
+    - [LineType](#resources-v1-LineType)
   
 - [resources/v1/marker_instance.proto](#resources_v1_marker_instance-proto)
     - [MarkerInstance](#resources-v1-MarkerInstance)
@@ -825,6 +827,7 @@ A simple pose consisting of a position and orientation
 | cell_id_component | bool | .buf.validate.StringRules | 10020 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10006 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10010 |  |
+| line_id_component | bool | .buf.validate.StringRules | 10021 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10009 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
@@ -3394,56 +3397,6 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 
 
-<a name="plm_v1_line-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/line.proto
-
-
-
-<a name="plm-v1-LineMessage"></a>
-
-### LineMessage
-TODO: allow multiple processes to make active at the same time?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [LineType](#plm-v1-LineType) |  | TODO: agents TODO: capabilities |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-LineType"></a>
-
-### LineType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| LINE_TYPE_UNSPECIFIED | 0 |  |
-| LINE_TYPE_SUB_ASSEMBLY | 1 |  |
-| LINE_TYPE_FASTENER | 2 |  |
-| LINE_TYPE_PLATE | 3 |  |
-| LINE_TYPE_LUBRICANT | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="plm_v1_process_abort-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5877,6 +5830,70 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | DEVICE_TYPE_PHONE | 2 |  |
 | DEVICE_TYPE_TABLET | 3 |  |
 | DEVICE_TYPE_PC | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_line-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/line.proto
+
+
+
+<a name="resources-v1-LineDefinition"></a>
+
+### LineDefinition
+LineDefinition groups cells and/or stations into a higher-level production line.
+A line is the target context for loading a ProcessRecipe into a concrete ProcessRun.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| type | [LineType](#resources-v1-LineType) |  |  |
+| cell_ids | [string](#string) | repeated | Cells that belong to this line. |
+| station_ids | [string](#string) | repeated | Optional direct station membership if a line can reference stations directly. |
+
+
+
+
+
+
+<a name="resources-v1-LineDefinitions"></a>
+
+### LineDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [LineDefinition](#resources-v1-LineDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-LineType"></a>
+
+### LineType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LINE_TYPE_UNSPECIFIED | 0 |  |
 
 
  

@@ -1,0 +1,36 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum LineType {
+  LINE_TYPE_UNSPECIFIED = 0;
+}
+
+// LineDefinition groups cells and/or stations into a higher-level production line.
+// A line is the target context for loading a ProcessRecipe into a concrete ProcessRun.
+message LineDefinition {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.line_id_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string description = 3;
+  string icon = 4;
+
+  LineType type = 5;
+
+  // Cells that belong to this line.
+  repeated string cell_ids = 6;
+
+  // Optional direct station membership if a line can reference stations directly.
+  repeated string station_ids = 7;
+}
+
+message LineDefinitions {
+  repeated LineDefinition items = 1;
+}

@@ -45,3 +45,5 @@ TASK_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 task_definition_id_component: _descriptor.FieldDescriptor
 CELL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 cell_id_component: _descriptor.FieldDescriptor
+LINE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+line_id_component: _descriptor.FieldDescriptor
