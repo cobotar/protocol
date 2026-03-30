@@ -1,0 +1,69 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+enum RestrictionType {
+  RESTRICTION_TYPE_UNSPECIFIED = 0;
+
+  // The actor may perform the task only with AR guidance enabled.
+  RESTRICTION_TYPE_REQUIRE_AR_GUIDANCE = 1;
+
+  // The task must be manually confirmed before completion.
+  RESTRICTION_TYPE_REQUIRE_MANUAL_CONFIRMATION = 2;
+
+  // The task requires supervisor approval before execution or completion.
+  RESTRICTION_TYPE_REQUIRE_SUPERVISOR_APPROVAL = 3;
+
+  // The task requires an additional validation or second check.
+  RESTRICTION_TYPE_REQUIRE_SECOND_CHECK = 4;
+
+  // Vision-based validation must be used.
+  RESTRICTION_TYPE_REQUIRE_VISION_VALIDATION = 5;
+
+  // Tool feedback must be used.
+  RESTRICTION_TYPE_REQUIRE_TOOL_FEEDBACK = 6;
+
+  // The task may only be executed by a human actor.
+  RESTRICTION_TYPE_REQUIRE_HUMAN_ACTOR = 7;
+
+  // The task may only be executed by a robot actor.
+  RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR = 8;
+}
+
+// RuntimeRestriction describes an additional runtime condition that applies
+// to a task, typically due to actor capability state, policy evaluation,
+// resource limitations, or execution mode.
+//
+// Restrictions may be actor-specific. This is important because a task may be:
+// - unrestricted for one candidate actor
+// - restricted for another
+// - infeasible for a third
+//
+// During precheck / candidate evaluation, restrictions can be attached to
+// candidate actors. Once a task is assigned, the effective restrictions for
+// the assigned actor should be copied onto the TaskRun.
+message RuntimeRestriction {
+  RestrictionType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Human-readable explanation shown in UI/logs.
+  string reason = 2;
+
+  // Optional originating skill that caused the restriction.
+  string source_skill_id = 3 [(buf.validate.field).string.(validation.v1.skill_id_component) = true];
+
+  // Optional originating policy that caused the restriction.
+  string source_policy_id = 4;
+
+  // Optional actor this restriction applies to.
+  // If unset, the restriction is task-global rather than actor-specific.
+  common.v1.ActorRef actor = 5;
+}

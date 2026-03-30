@@ -102,10 +102,43 @@ namespace Messages.Capability.V1 {
     [pbr::OriginalName("SKILL_LEVEL_AUTHORITY")] Authority = 5,
   }
 
+  /// <summary>
+  /// SkillStatus describes the current usability of an actor's skill.
+  ///
+  /// The status is operational and should be interpreted together with the
+  /// associated policy, validity timestamps, and any derived restrictions.
+  ///
+  /// Typical semantics:
+  /// - ACTIVE      -> skill is fully usable
+  /// - RESTRICTED  -> skill is usable, but only under additional runtime
+  ///                  safeguards such as AR guidance, extra validation,
+  ///                  supervision, or other assistance
+  /// - EXPIRED     -> skill is no longer valid and must not be used
+  ///
+  /// Loaders and runtime planners should therefore treat:
+  /// - ACTIVE     -> feasible
+  /// - RESTRICTED -> feasible with restrictions
+  /// - EXPIRED    -> infeasible
+  /// </summary>
   public enum SkillStatus {
     [pbr::OriginalName("SKILL_STATUS_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Skill is valid and can be used normally.
+    /// </summary>
     [pbr::OriginalName("SKILL_STATUS_ACTIVE")] Active = 1,
+    /// <summary>
+    /// Skill is allowed but restricted. The actor may perform the task but additional safeguards
+    ///
+    /// Examples:
+    /// - AR guidance required
+    /// - manual confirmation required
+    /// - second check required
+    /// - supervisor approval required
+    /// </summary>
     [pbr::OriginalName("SKILL_STATUS_RESTRICTED")] Restricted = 2,
+    /// <summary>
+    /// Skill is no longer valid and cannot be used.
+    /// </summary>
     [pbr::OriginalName("SKILL_STATUS_EXPIRED")] Expired = 3,
   }
 

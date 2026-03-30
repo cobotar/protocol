@@ -7,6 +7,8 @@ import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
 import "resources/v1/container_definition.proto";
 import "runtime/v1/execution_evidence.proto";
+import "runtime/v1/process_requests.proto";
+import "runtime/v1/runtime_restriction.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
@@ -59,6 +61,20 @@ message TaskRun {
   string error_message = 16;
   repeated ExecutionEvidence evidence = 17;
   TaskRuntimeBinding binding = 18;
+
+  // Effective runtime restrictions that currently apply to this task.
+  //
+  // These restrictions should reflect the current assigned actor and execution
+  // context. They may be copied from candidate-level evaluation results during
+  // assignment or reassignment.
+  //
+  // Examples:
+  // - AR guidance required because the assigned actor's skill is restricted
+  // - supervisor approval required before completion
+  // - tool feedback required due to safety/quality constraints
+  repeated RuntimeRestriction restrictions = 19;
+
+  repeated CandidateActorEvaluation candidate_actor_evaluations = 20;
 }
 
 message TaskRuns {

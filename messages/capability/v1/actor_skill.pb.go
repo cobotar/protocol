@@ -89,13 +89,38 @@ func (SkillLevel) EnumDescriptor() ([]byte, []int) {
 	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{0}
 }
 
+// SkillStatus describes the current usability of an actor's skill.
+//
+// The status is operational and should be interpreted together with the
+// associated policy, validity timestamps, and any derived restrictions.
+//
+// Typical semantics:
+//   - ACTIVE      -> skill is fully usable
+//   - RESTRICTED  -> skill is usable, but only under additional runtime
+//     safeguards such as AR guidance, extra validation,
+//     supervision, or other assistance
+//   - EXPIRED     -> skill is no longer valid and must not be used
+//
+// Loaders and runtime planners should therefore treat:
+// - ACTIVE     -> feasible
+// - RESTRICTED -> feasible with restrictions
+// - EXPIRED    -> infeasible
 type SkillStatus int32
 
 const (
 	SkillStatus_SKILL_STATUS_UNSPECIFIED SkillStatus = 0
-	SkillStatus_SKILL_STATUS_ACTIVE      SkillStatus = 1
-	SkillStatus_SKILL_STATUS_RESTRICTED  SkillStatus = 2
-	SkillStatus_SKILL_STATUS_EXPIRED     SkillStatus = 3
+	// Skill is valid and can be used normally.
+	SkillStatus_SKILL_STATUS_ACTIVE SkillStatus = 1
+	// Skill is allowed but restricted. The actor may perform the task but additional safeguards
+	//
+	// Examples:
+	// - AR guidance required
+	// - manual confirmation required
+	// - second check required
+	// - supervisor approval required
+	SkillStatus_SKILL_STATUS_RESTRICTED SkillStatus = 2
+	// Skill is no longer valid and cannot be used.
+	SkillStatus_SKILL_STATUS_EXPIRED SkillStatus = 3
 )
 
 // Enum value maps for SkillStatus.

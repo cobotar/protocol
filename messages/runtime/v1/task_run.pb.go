@@ -184,8 +184,20 @@ type TaskRun struct {
 	ErrorMessage        string                 `protobuf:"bytes,16,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
 	Evidence            []*ExecutionEvidence   `protobuf:"bytes,17,rep,name=evidence,proto3" json:"evidence,omitempty"`
 	Binding             *TaskRuntimeBinding    `protobuf:"bytes,18,opt,name=binding,proto3" json:"binding,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// Effective runtime restrictions that currently apply to this task.
+	//
+	// These restrictions should reflect the current assigned actor and execution
+	// context. They may be copied from candidate-level evaluation results during
+	// assignment or reassignment.
+	//
+	// Examples:
+	// - AR guidance required because the assigned actor's skill is restricted
+	// - supervisor approval required before completion
+	// - tool feedback required due to safety/quality constraints
+	Restrictions              []*RuntimeRestriction       `protobuf:"bytes,19,rep,name=restrictions,proto3" json:"restrictions,omitempty"`
+	CandidateActorEvaluations []*CandidateActorEvaluation `protobuf:"bytes,20,rep,name=candidate_actor_evaluations,json=candidateActorEvaluations,proto3" json:"candidate_actor_evaluations,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
 }
 
 func (x *TaskRun) Reset() {
@@ -344,6 +356,20 @@ func (x *TaskRun) GetBinding() *TaskRuntimeBinding {
 	return nil
 }
 
+func (x *TaskRun) GetRestrictions() []*RuntimeRestriction {
+	if x != nil {
+		return x.Restrictions
+	}
+	return nil
+}
+
+func (x *TaskRun) GetCandidateActorEvaluations() []*CandidateActorEvaluation {
+	if x != nil {
+		return x.CandidateActorEvaluations
+	}
+	return nil
+}
+
 type TaskRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*TaskRun             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -393,14 +419,14 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
 	"\x12TaskRuntimeBinding\x12*\n" +
 	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
 	"\n" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x12\x17\n" +
 	"\acell_id\x18\x04 \x01(\tR\x06cellId\x12E\n" +
-	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd6\x06\n" +
+	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\x80\b\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -422,7 +448,9 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"error_code\x18\x0f \x01(\tR\terrorCode\x12#\n" +
 	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x129\n" +
 	"\bevidence\x18\x11 \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
-	"\abinding\x18\x12 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\"5\n" +
+	"\abinding\x18\x12 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\x12B\n" +
+	"\frestrictions\x18\x13 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x12d\n" +
+	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"5\n" +
 	"\bTaskRuns\x12)\n" +
 	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xd5\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
@@ -451,15 +479,17 @@ func file_runtime_v1_task_run_proto_rawDescGZIP() []byte {
 var file_runtime_v1_task_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_task_run_proto_goTypes = []any{
-	(TaskRunState)(0),             // 0: runtime.v1.TaskRunState
-	(*TaskRuntimeBinding)(nil),    // 1: runtime.v1.TaskRuntimeBinding
-	(*TaskRun)(nil),               // 2: runtime.v1.TaskRun
-	(*TaskRuns)(nil),              // 3: runtime.v1.TaskRuns
-	(*v1.ContainerSlotRef)(nil),   // 4: resources.v1.ContainerSlotRef
-	(*v11.ActorRef)(nil),          // 5: common.v1.ActorRef
-	(*v11.EstimatedDuration)(nil), // 6: common.v1.EstimatedDuration
-	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
-	(*ExecutionEvidence)(nil),     // 8: runtime.v1.ExecutionEvidence
+	(TaskRunState)(0),                // 0: runtime.v1.TaskRunState
+	(*TaskRuntimeBinding)(nil),       // 1: runtime.v1.TaskRuntimeBinding
+	(*TaskRun)(nil),                  // 2: runtime.v1.TaskRun
+	(*TaskRuns)(nil),                 // 3: runtime.v1.TaskRuns
+	(*v1.ContainerSlotRef)(nil),      // 4: resources.v1.ContainerSlotRef
+	(*v11.ActorRef)(nil),             // 5: common.v1.ActorRef
+	(*v11.EstimatedDuration)(nil),    // 6: common.v1.EstimatedDuration
+	(*timestamppb.Timestamp)(nil),    // 7: google.protobuf.Timestamp
+	(*ExecutionEvidence)(nil),        // 8: runtime.v1.ExecutionEvidence
+	(*RuntimeRestriction)(nil),       // 9: runtime.v1.RuntimeRestriction
+	(*CandidateActorEvaluation)(nil), // 10: runtime.v1.CandidateActorEvaluation
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
@@ -471,12 +501,14 @@ var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	7,  // 6: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
 	8,  // 7: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
 	1,  // 8: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
-	2,  // 9: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	9,  // 9: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	10, // 10: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	2,  // 11: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_task_run_proto_init() }
@@ -485,6 +517,8 @@ func file_runtime_v1_task_run_proto_init() {
 		return
 	}
 	file_runtime_v1_execution_evidence_proto_init()
+	file_runtime_v1_process_requests_proto_init()
+	file_runtime_v1_runtime_restriction_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -751,23 +751,95 @@ func (x *ProcessRunIssue) GetImportance() RequirementImportance {
 	return RequirementImportance_REQUIREMENT_IMPORTANCE_UNSPECIFIED
 }
 
+type CandidateActorEvaluation struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Actor *v11.ActorRef          `protobuf:"bytes,1,opt,name=actor,proto3" json:"actor,omitempty"`
+	// Whether this actor is currently feasible for the task.
+	Feasible bool `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
+	// Effective restrictions if this actor were assigned.
+	Restrictions []*RuntimeRestriction `protobuf:"bytes,3,rep,name=restrictions,proto3" json:"restrictions,omitempty"`
+	// Optional explanations or issues tied specifically to this actor.
+	Issues        []*ProcessRunIssue `protobuf:"bytes,4,rep,name=issues,proto3" json:"issues,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CandidateActorEvaluation) Reset() {
+	*x = CandidateActorEvaluation{}
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CandidateActorEvaluation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CandidateActorEvaluation) ProtoMessage() {}
+
+func (x *CandidateActorEvaluation) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CandidateActorEvaluation.ProtoReflect.Descriptor instead.
+func (*CandidateActorEvaluation) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CandidateActorEvaluation) GetActor() *v11.ActorRef {
+	if x != nil {
+		return x.Actor
+	}
+	return nil
+}
+
+func (x *CandidateActorEvaluation) GetFeasible() bool {
+	if x != nil {
+		return x.Feasible
+	}
+	return false
+}
+
+func (x *CandidateActorEvaluation) GetRestrictions() []*RuntimeRestriction {
+	if x != nil {
+		return x.Restrictions
+	}
+	return nil
+}
+
+func (x *CandidateActorEvaluation) GetIssues() []*ProcessRunIssue {
+	if x != nil {
+		return x.Issues
+	}
+	return nil
+}
+
 type TaskFeasibility struct {
-	state                         protoimpl.MessageState `protogen:"open.v1"`
-	TaskDefinitionId              string                 `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
-	Feasible                      bool                   `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
-	CandidateActorIds             []string               `protobuf:"bytes,3,rep,name=candidate_actor_ids,json=candidateActorIds,proto3" json:"candidate_actor_ids,omitempty"`
-	CandidateRobotInstanceIds     []string               `protobuf:"bytes,4,rep,name=candidate_robot_instance_ids,json=candidateRobotInstanceIds,proto3" json:"candidate_robot_instance_ids,omitempty"`
-	CandidateToolInstanceIds      []string               `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
-	CandidateContainerInstanceIds []string               `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
-	CandidateAssetInstanceIds     []string               `protobuf:"bytes,7,rep,name=candidate_asset_instance_ids,json=candidateAssetInstanceIds,proto3" json:"candidate_asset_instance_ids,omitempty"`
-	Issues                        []*ProcessRunIssue     `protobuf:"bytes,8,rep,name=issues,proto3" json:"issues,omitempty"`
+	state                         protoimpl.MessageState      `protogen:"open.v1"`
+	TaskDefinitionId              string                      `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
+	Feasible                      bool                        `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
+	CandidateActorIds             []string                    `protobuf:"bytes,3,rep,name=candidate_actor_ids,json=candidateActorIds,proto3" json:"candidate_actor_ids,omitempty"`
+	CandidateRobotInstanceIds     []string                    `protobuf:"bytes,4,rep,name=candidate_robot_instance_ids,json=candidateRobotInstanceIds,proto3" json:"candidate_robot_instance_ids,omitempty"`
+	CandidateToolInstanceIds      []string                    `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
+	CandidateContainerInstanceIds []string                    `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
+	CandidateAssetInstanceIds     []string                    `protobuf:"bytes,7,rep,name=candidate_asset_instance_ids,json=candidateAssetInstanceIds,proto3" json:"candidate_asset_instance_ids,omitempty"`
+	Issues                        []*ProcessRunIssue          `protobuf:"bytes,8,rep,name=issues,proto3" json:"issues,omitempty"`
+	CandidateActorEvaluations     []*CandidateActorEvaluation `protobuf:"bytes,9,rep,name=candidate_actor_evaluations,json=candidateActorEvaluations,proto3" json:"candidate_actor_evaluations,omitempty"`
 	unknownFields                 protoimpl.UnknownFields
 	sizeCache                     protoimpl.SizeCache
 }
 
 func (x *TaskFeasibility) Reset() {
 	*x = TaskFeasibility{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -779,7 +851,7 @@ func (x *TaskFeasibility) String() string {
 func (*TaskFeasibility) ProtoMessage() {}
 
 func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[2]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -792,7 +864,7 @@ func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskFeasibility.ProtoReflect.Descriptor instead.
 func (*TaskFeasibility) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TaskFeasibility) GetTaskDefinitionId() string {
@@ -851,6 +923,13 @@ func (x *TaskFeasibility) GetIssues() []*ProcessRunIssue {
 	return nil
 }
 
+func (x *TaskFeasibility) GetCandidateActorEvaluations() []*CandidateActorEvaluation {
+	if x != nil {
+		return x.CandidateActorEvaluations
+	}
+	return nil
+}
+
 type ProcessRunPrecheckResult struct {
 	state  protoimpl.MessageState `protogen:"open.v1"`
 	Ok     bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
@@ -871,7 +950,7 @@ type ProcessRunPrecheckResult struct {
 
 func (x *ProcessRunPrecheckResult) Reset() {
 	*x = ProcessRunPrecheckResult{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -883,7 +962,7 @@ func (x *ProcessRunPrecheckResult) String() string {
 func (*ProcessRunPrecheckResult) ProtoMessage() {}
 
 func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -896,7 +975,7 @@ func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRunPrecheckResult.ProtoReflect.Descriptor instead.
 func (*ProcessRunPrecheckResult) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ProcessRunPrecheckResult) GetOk() bool {
@@ -966,7 +1045,7 @@ type ProcessLoadResult struct {
 
 func (x *ProcessLoadResult) Reset() {
 	*x = ProcessLoadResult{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -978,7 +1057,7 @@ func (x *ProcessLoadResult) String() string {
 func (*ProcessLoadResult) ProtoMessage() {}
 
 func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -991,7 +1070,7 @@ func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessLoadResult.ProtoReflect.Descriptor instead.
 func (*ProcessLoadResult) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ProcessLoadResult) GetStatus() ProcessLoadStatus {
@@ -1020,7 +1099,7 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xae\x04\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xae\x04\n" +
 	"\x12ProcessLoadRequest\x128\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\ftargetLineId\x122\n" +
@@ -1055,7 +1134,12 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\vremediation\x18\x0e \x01(\tR\vremediation\x12A\n" +
 	"\n" +
 	"importance\x18\x0f \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
-	"importance\"\xca\x03\n" +
+	"importance\"\xda\x01\n" +
+	"\x18CandidateActorEvaluation\x12)\n" +
+	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x1a\n" +
+	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12B\n" +
+	"\frestrictions\x18\x03 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x123\n" +
+	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xb0\x04\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12.\n" +
@@ -1064,7 +1148,8 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x1bcandidate_tool_instance_ids\x18\x05 \x03(\tR\x18candidateToolInstanceIds\x12G\n" +
 	" candidate_container_instance_ids\x18\x06 \x03(\tR\x1dcandidateContainerInstanceIds\x12?\n" +
 	"\x1ccandidate_asset_instance_ids\x18\a \x03(\tR\x19candidateAssetInstanceIds\x123\n" +
-	"\x06issues\x18\b \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\x99\x03\n" +
+	"\x06issues\x18\b \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x12d\n" +
+	"\x1bcandidate_actor_evaluations\x18\t \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"\x99\x03\n" +
 	"\x18ProcessRunPrecheckResult\x12\x0e\n" +
 	"\x02ok\x18\x01 \x01(\bR\x02ok\x123\n" +
 	"\x06issues\x18\x02 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x120\n" +
@@ -1154,7 +1239,7 @@ func file_runtime_v1_process_requests_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
-var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(ProcessLoadStrategy)(0),         // 0: runtime.v1.ProcessLoadStrategy
 	(ProcessLoadFailure)(0),          // 1: runtime.v1.ProcessLoadFailure
@@ -1164,32 +1249,39 @@ var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(ProcessLoadStatus)(0),           // 5: runtime.v1.ProcessLoadStatus
 	(*ProcessLoadRequest)(nil),       // 6: runtime.v1.ProcessLoadRequest
 	(*ProcessRunIssue)(nil),          // 7: runtime.v1.ProcessRunIssue
-	(*TaskFeasibility)(nil),          // 8: runtime.v1.TaskFeasibility
-	(*ProcessRunPrecheckResult)(nil), // 9: runtime.v1.ProcessRunPrecheckResult
-	(*ProcessLoadResult)(nil),        // 10: runtime.v1.ProcessLoadResult
-	(*v1.VariantConfiguration)(nil),  // 11: variance.v1.VariantConfiguration
-	(*v11.KeyValueConstraint)(nil),   // 12: common.v1.KeyValueConstraint
-	(*ProcessRun)(nil),               // 13: runtime.v1.ProcessRun
+	(*CandidateActorEvaluation)(nil), // 8: runtime.v1.CandidateActorEvaluation
+	(*TaskFeasibility)(nil),          // 9: runtime.v1.TaskFeasibility
+	(*ProcessRunPrecheckResult)(nil), // 10: runtime.v1.ProcessRunPrecheckResult
+	(*ProcessLoadResult)(nil),        // 11: runtime.v1.ProcessLoadResult
+	(*v1.VariantConfiguration)(nil),  // 12: variance.v1.VariantConfiguration
+	(*v11.KeyValueConstraint)(nil),   // 13: common.v1.KeyValueConstraint
+	(*v11.ActorRef)(nil),             // 14: common.v1.ActorRef
+	(*RuntimeRestriction)(nil),       // 15: runtime.v1.RuntimeRestriction
+	(*ProcessRun)(nil),               // 16: runtime.v1.ProcessRun
 }
 var file_runtime_v1_process_requests_proto_depIdxs = []int32{
-	11, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	12, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
 	0,  // 1: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
-	12, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
+	13, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
 	1,  // 3: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
 	2,  // 4: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
 	3,  // 5: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
-	7,  // 6: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	7,  // 7: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	8,  // 8: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	4,  // 9: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	5,  // 10: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	9,  // 11: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	13, // 12: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	13, // [13:13] is the sub-list for method output_type
-	13, // [13:13] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	14, // 6: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
+	15, // 7: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	7,  // 8: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
+	7,  // 9: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	8,  // 10: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	7,  // 11: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	9,  // 12: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	4,  // 13: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	5,  // 14: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	10, // 15: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	16, // 16: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	17, // [17:17] is the sub-list for method output_type
+	17, // [17:17] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }
@@ -1198,13 +1290,14 @@ func file_runtime_v1_process_requests_proto_init() {
 		return
 	}
 	file_runtime_v1_process_run_proto_init()
+	file_runtime_v1_runtime_restriction_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)),
 			NumEnums:      6,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

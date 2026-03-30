@@ -29,47 +29,52 @@ namespace Messages.Runtime.V1 {
             "bxoUY29tbW9uL3YxL3RpbWUucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1l",
             "c3RhbXAucHJvdG8aJ3Jlc291cmNlcy92MS9jb250YWluZXJfZGVmaW5pdGlv",
             "bi5wcm90bxojcnVudGltZS92MS9leGVjdXRpb25fZXZpZGVuY2UucHJvdG8a",
-            "K3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i",
-            "6wEKElRhc2tSdW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgB",
-            "IAEoCVIPYXNzZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIg",
-            "ASgJUg9yb2JvdEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3Rh",
-            "dGlvbklkEhcKB2NlbGxfaWQYBCABKAlSBmNlbGxJZBJFCg5jb250YWluZXJf",
-            "c2xvdBgFIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmUg1j",
-            "b250YWluZXJTbG90ItYGCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBISCgRu",
-            "YW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SOgoSdGFza19k",
-            "ZWZpbml0aW9uX2lkGAQgASgJQgy6SAlyBJjyBAHIAQFSEHRhc2tEZWZpbml0",
-            "aW9uSWQSQQoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJcgT4",
-            "8QQByAEBUhNwYXJlbnRTZXF1ZW5jZVJ1bklkEjsKBXN0YXRlGAYgASgOMhgu",
-            "cnVudGltZS52MS5UYXNrUnVuU3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRI+",
-            "ChBjYW5kaWRhdGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVm",
-            "Ug9jYW5kaWRhdGVBY3RvcnMSOgoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5j",
-            "b21tb24udjEuQWN0b3JSZWZSDWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAkg",
-            "ASgIUgVjYW5EbxIZCghjYW5fdW5kbxgKIAEoCFIHY2FuVW5kbxIpChB3b3Jr",
-            "YWJsZV9ob3Jpem9uGAsgASgFUg93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1h",
-            "dGVkX2R1cmF0aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0",
-            "aW9uUhFlc3RpbWF0ZWREdXJhdGlvbhI5CgpzdGFydGVkX2F0GA0gASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBs",
-            "ZXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2Nv",
-            "bXBsZXRlZEF0Eh0KCmVycm9yX2NvZGUYDyABKAlSCWVycm9yQ29kZRIjCg1l",
-            "cnJvcl9tZXNzYWdlGBAgASgJUgxlcnJvck1lc3NhZ2USOQoIZXZpZGVuY2UY",
-            "ESADKAsyHS5ydW50aW1lLnYxLkV4ZWN1dGlvbkV2aWRlbmNlUghldmlkZW5j",
-            "ZRI4CgdiaW5kaW5nGBIgASgLMh4ucnVudGltZS52MS5UYXNrUnVudGltZUJp",
-            "bmRpbmdSB2JpbmRpbmciNQoIVGFza1J1bnMSKQoFaXRlbXMYASADKAsyEy5y",
-            "dW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUBCgxUYXNrUnVuU3RhdGUSHgoa",
-            "VEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhUQVNLX1JVTl9TVEFU",
-            "RV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9SRUFEWRACEh4KGlRB",
-            "U0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFTS19SVU5fU1RBVEVf",
-            "RE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5f",
-            "U1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blBy",
-            "b3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9y",
-            "dW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUu",
-            "VjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1",
-            "bnRpbWU6OlYxYgZwcm90bzM="));
+            "IXJ1bnRpbWUvdjEvcHJvY2Vzc19yZXF1ZXN0cy5wcm90bxokcnVudGltZS92",
+            "MS9ydW50aW1lX3Jlc3RyaWN0aW9uLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
+            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIusBChJUYXNrUnVudGltZUJp",
+            "bmRpbmcSKgoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlSD2Fzc2V0SW5zdGFu",
+            "Y2VJZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCVIPcm9ib3RJbnN0YW5j",
+            "ZUlkEh0KCnN0YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBIXCgdjZWxsX2lk",
+            "GAQgASgJUgZjZWxsSWQSRQoOY29udGFpbmVyX3Nsb3QYBSABKAsyHi5yZXNv",
+            "dXJjZXMudjEuQ29udGFpbmVyU2xvdFJlZlINY29udGFpbmVyU2xvdCKACAoH",
+            "VGFza1J1bhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIS",
+            "CgRpY29uGAMgASgJUgRpY29uEjoKEnRhc2tfZGVmaW5pdGlvbl9pZBgEIAEo",
+            "CUIMukgJcgSY8gQByAEBUhB0YXNrRGVmaW5pdGlvbklkEkEKFnBhcmVudF9z",
+            "ZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpICXIE+PEEAcgBAVITcGFyZW50U2Vx",
+            "dWVuY2VSdW5JZBI7CgVzdGF0ZRgGIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1",
+            "blN0YXRlQgu6SAiCAQIQAcgBAVIFc3RhdGUSPgoQY2FuZGlkYXRlX2FjdG9y",
+            "cxgHIAMoCzITLmNvbW1vbi52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3Jz",
+            "EjoKDmFzc2lnbmVkX2FjdG9yGAggASgLMhMuY29tbW9uLnYxLkFjdG9yUmVm",
+            "Ug1hc3NpZ25lZEFjdG9yEhUKBmNhbl9kbxgJIAEoCFIFY2FuRG8SGQoIY2Fu",
+            "X3VuZG8YCiABKAhSB2NhblVuZG8SKQoQd29ya2FibGVfaG9yaXpvbhgLIAEo",
+            "BVIPd29ya2FibGVIb3Jpem9uEksKEmVzdGltYXRlZF9kdXJhdGlvbhgMIAEo",
+            "CzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVy",
+            "YXRpb24SOQoKc3RhcnRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXBSCXN0YXJ0ZWRBdBI9Cgxjb21wbGV0ZWRfYXQYDiABKAsyGi5n",
+            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtjb21wbGV0ZWRBdBIdCgplcnJv",
+            "cl9jb2RlGA8gASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgQIAEo",
+            "CVIMZXJyb3JNZXNzYWdlEjkKCGV2aWRlbmNlGBEgAygLMh0ucnVudGltZS52",
+            "MS5FeGVjdXRpb25FdmlkZW5jZVIIZXZpZGVuY2USOAoHYmluZGluZxgSIAEo",
+            "CzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nEkIK",
+            "DHJlc3RyaWN0aW9ucxgTIAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3Ry",
+            "aWN0aW9uUgxyZXN0cmljdGlvbnMSZAobY2FuZGlkYXRlX2FjdG9yX2V2YWx1",
+            "YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1",
+            "YXRpb25SGWNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlvbnMiNQoIVGFza1J1bnMS",
+            "KQoFaXRlbXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUB",
+            "CgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQ",
+            "ABIcChhUQVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9T",
+            "VEFURV9SRUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMS",
+            "FwoTVEFTS19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VS",
+            "Uk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVu",
+            "dGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoC",
+            "E01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxW",
+            "MVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "CellId", "ContainerSlot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding", "Restrictions", "CandidateActorEvaluations" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -501,6 +506,8 @@ namespace Messages.Runtime.V1 {
       errorMessage_ = other.errorMessage_;
       evidence_ = other.evidence_.Clone();
       binding_ = other.binding_ != null ? other.binding_.Clone() : null;
+      restrictions_ = other.restrictions_.Clone();
+      candidateActorEvaluations_ = other.candidateActorEvaluations_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -727,6 +734,40 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "restrictions" field.</summary>
+    public const int RestrictionsFieldNumber = 19;
+    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.RuntimeRestriction> _repeated_restrictions_codec
+        = pb::FieldCodec.ForMessage(154, global::Messages.Runtime.V1.RuntimeRestriction.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.RuntimeRestriction> restrictions_ = new pbc::RepeatedField<global::Messages.Runtime.V1.RuntimeRestriction>();
+    /// <summary>
+    /// Effective runtime restrictions that currently apply to this task.
+    ///
+    /// These restrictions should reflect the current assigned actor and execution
+    /// context. They may be copied from candidate-level evaluation results during
+    /// assignment or reassignment.
+    ///
+    /// Examples:
+    /// - AR guidance required because the assigned actor's skill is restricted
+    /// - supervisor approval required before completion
+    /// - tool feedback required due to safety/quality constraints
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Runtime.V1.RuntimeRestriction> Restrictions {
+      get { return restrictions_; }
+    }
+
+    /// <summary>Field number for the "candidate_actor_evaluations" field.</summary>
+    public const int CandidateActorEvaluationsFieldNumber = 20;
+    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.CandidateActorEvaluation> _repeated_candidateActorEvaluations_codec
+        = pb::FieldCodec.ForMessage(162, global::Messages.Runtime.V1.CandidateActorEvaluation.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.CandidateActorEvaluation> candidateActorEvaluations_ = new pbc::RepeatedField<global::Messages.Runtime.V1.CandidateActorEvaluation>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Runtime.V1.CandidateActorEvaluation> CandidateActorEvaluations {
+      get { return candidateActorEvaluations_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -760,6 +801,8 @@ namespace Messages.Runtime.V1 {
       if (ErrorMessage != other.ErrorMessage) return false;
       if(!evidence_.Equals(other.evidence_)) return false;
       if (!object.Equals(Binding, other.Binding)) return false;
+      if(!restrictions_.Equals(other.restrictions_)) return false;
+      if(!candidateActorEvaluations_.Equals(other.candidateActorEvaluations_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -785,6 +828,8 @@ namespace Messages.Runtime.V1 {
       if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
       hash ^= evidence_.GetHashCode();
       if (binding_ != null) hash ^= Binding.GetHashCode();
+      hash ^= restrictions_.GetHashCode();
+      hash ^= candidateActorEvaluations_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -869,6 +914,8 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(146, 1);
         output.WriteMessage(Binding);
       }
+      restrictions_.WriteTo(output, _repeated_restrictions_codec);
+      candidateActorEvaluations_.WriteTo(output, _repeated_candidateActorEvaluations_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -945,6 +992,8 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(146, 1);
         output.WriteMessage(Binding);
       }
+      restrictions_.WriteTo(ref output, _repeated_restrictions_codec);
+      candidateActorEvaluations_.WriteTo(ref output, _repeated_candidateActorEvaluations_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1005,6 +1054,8 @@ namespace Messages.Runtime.V1 {
       if (binding_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Binding);
       }
+      size += restrictions_.CalculateSize(_repeated_restrictions_codec);
+      size += candidateActorEvaluations_.CalculateSize(_repeated_candidateActorEvaluations_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1082,6 +1133,8 @@ namespace Messages.Runtime.V1 {
         }
         Binding.MergeFrom(other.Binding);
       }
+      restrictions_.Add(other.restrictions_);
+      candidateActorEvaluations_.Add(other.candidateActorEvaluations_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1188,6 +1241,14 @@ namespace Messages.Runtime.V1 {
             input.ReadMessage(Binding);
             break;
           }
+          case 154: {
+            restrictions_.AddEntriesFrom(input, _repeated_restrictions_codec);
+            break;
+          }
+          case 162: {
+            candidateActorEvaluations_.AddEntriesFrom(input, _repeated_candidateActorEvaluations_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1292,6 +1353,14 @@ namespace Messages.Runtime.V1 {
               Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
             }
             input.ReadMessage(Binding);
+            break;
+          }
+          case 154: {
+            restrictions_.AddEntriesFrom(ref input, _repeated_restrictions_codec);
+            break;
+          }
+          case 162: {
+            candidateActorEvaluations_.AddEntriesFrom(ref input, _repeated_candidateActorEvaluations_codec);
             break;
           }
         }

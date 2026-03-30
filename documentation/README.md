@@ -523,7 +523,13 @@
   
     - [ProcessRunState](#runtime-v1-ProcessRunState)
   
+- [runtime/v1/runtime_restriction.proto](#runtime_v1_runtime_restriction-proto)
+    - [RuntimeRestriction](#runtime-v1-RuntimeRestriction)
+  
+    - [RestrictionType](#runtime-v1-RestrictionType)
+  
 - [runtime/v1/process_requests.proto](#runtime_v1_process_requests-proto)
+    - [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation)
     - [ProcessLoadRequest](#runtime-v1-ProcessLoadRequest)
     - [ProcessLoadResult](#runtime-v1-ProcessLoadResult)
     - [ProcessRunIssue](#runtime-v1-ProcessRunIssue)
@@ -2638,14 +2644,31 @@ CERTIFIED: Officially qualified
 <a name="capability-v1-SkillStatus"></a>
 
 ### SkillStatus
+SkillStatus describes the current usability of an actor&#39;s skill.
 
+The status is operational and should be interpreted together with the
+associated policy, validity timestamps, and any derived restrictions.
+
+Typical semantics:
+- ACTIVE      -&gt; skill is fully usable
+- RESTRICTED  -&gt; skill is usable, but only under additional runtime
+                 safeguards such as AR guidance, extra validation,
+                 supervision, or other assistance
+- EXPIRED     -&gt; skill is no longer valid and must not be used
+
+Loaders and runtime planners should therefore treat:
+- ACTIVE     -&gt; feasible
+- RESTRICTED -&gt; feasible with restrictions
+- EXPIRED    -&gt; infeasible
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SKILL_STATUS_UNSPECIFIED | 0 |  |
-| SKILL_STATUS_ACTIVE | 1 |  |
-| SKILL_STATUS_RESTRICTED | 2 |  |
-| SKILL_STATUS_EXPIRED | 3 |  |
+| SKILL_STATUS_ACTIVE | 1 | Skill is valid and can be used normally. |
+| SKILL_STATUS_RESTRICTED | 2 | Skill is allowed but restricted. The actor may perform the task but additional safeguards
+
+Examples: - AR guidance required - manual confirmation required - second check required - supervisor approval required |
+| SKILL_STATUS_EXPIRED | 3 | Skill is no longer valid and cannot be used. |
 
 
  
@@ -7282,10 +7305,93 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 
 
 
+<a name="runtime_v1_runtime_restriction-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/runtime_restriction.proto
+
+
+
+<a name="runtime-v1-RuntimeRestriction"></a>
+
+### RuntimeRestriction
+RuntimeRestriction describes an additional runtime condition that applies
+to a task, typically due to actor capability state, policy evaluation,
+resource limitations, or execution mode.
+
+Restrictions may be actor-specific. This is important because a task may be:
+- unrestricted for one candidate actor
+- restricted for another
+- infeasible for a third
+
+During precheck / candidate evaluation, restrictions can be attached to
+candidate actors. Once a task is assigned, the effective restrictions for
+the assigned actor should be copied onto the TaskRun.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RestrictionType](#runtime-v1-RestrictionType) |  |  |
+| reason | [string](#string) |  | Human-readable explanation shown in UI/logs. |
+| source_skill_id | [string](#string) |  | Optional originating skill that caused the restriction. |
+| source_policy_id | [string](#string) |  | Optional originating policy that caused the restriction. |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | Optional actor this restriction applies to. If unset, the restriction is task-global rather than actor-specific. |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-RestrictionType"></a>
+
+### RestrictionType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RESTRICTION_TYPE_UNSPECIFIED | 0 |  |
+| RESTRICTION_TYPE_REQUIRE_AR_GUIDANCE | 1 | The actor may perform the task only with AR guidance enabled. |
+| RESTRICTION_TYPE_REQUIRE_MANUAL_CONFIRMATION | 2 | The task must be manually confirmed before completion. |
+| RESTRICTION_TYPE_REQUIRE_SUPERVISOR_APPROVAL | 3 | The task requires supervisor approval before execution or completion. |
+| RESTRICTION_TYPE_REQUIRE_SECOND_CHECK | 4 | The task requires an additional validation or second check. |
+| RESTRICTION_TYPE_REQUIRE_VISION_VALIDATION | 5 | Vision-based validation must be used. |
+| RESTRICTION_TYPE_REQUIRE_TOOL_FEEDBACK | 6 | Tool feedback must be used. |
+| RESTRICTION_TYPE_REQUIRE_HUMAN_ACTOR | 7 | The task may only be executed by a human actor. |
+| RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR | 8 | The task may only be executed by a robot actor. |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="runtime_v1_process_requests-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## runtime/v1/process_requests.proto
+
+
+
+<a name="runtime-v1-CandidateActorEvaluation"></a>
+
+### CandidateActorEvaluation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| feasible | [bool](#bool) |  | Whether this actor is currently feasible for the task. |
+| restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective restrictions if this actor were assigned. |
+| issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated | Optional explanations or issues tied specifically to this actor. |
+
+
+
 
 
 
@@ -7427,6 +7533,7 @@ Thus the following must be evaluated:
 | candidate_container_instance_ids | [string](#string) | repeated |  |
 | candidate_asset_instance_ids | [string](#string) | repeated |  |
 | issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
+| candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
 
 
 
@@ -7661,6 +7768,12 @@ A human is required but no worker with valid skills exists. |
 | error_message | [string](#string) |  |  |
 | evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
 | binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
+| restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective runtime restrictions that currently apply to this task.
+
+These restrictions should reflect the current assigned actor and execution context. They may be copied from candidate-level evaluation results during assignment or reassignment.
+
+Examples: - AR guidance required because the assigned actor&#39;s skill is restricted - supervisor approval required before completion - tool feedback required due to safety/quality constraints |
+| candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
 
 
 

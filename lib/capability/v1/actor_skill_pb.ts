@@ -213,6 +213,23 @@ export const SkillLevelSchema: GenEnum<SkillLevel> = /*@__PURE__*/
   enumDesc(file_capability_v1_actor_skill, 0);
 
 /**
+ * SkillStatus describes the current usability of an actor's skill.
+ *
+ * The status is operational and should be interpreted together with the
+ * associated policy, validity timestamps, and any derived restrictions.
+ *
+ * Typical semantics:
+ * - ACTIVE      -> skill is fully usable
+ * - RESTRICTED  -> skill is usable, but only under additional runtime
+ *                  safeguards such as AR guidance, extra validation,
+ *                  supervision, or other assistance
+ * - EXPIRED     -> skill is no longer valid and must not be used
+ *
+ * Loaders and runtime planners should therefore treat:
+ * - ACTIVE     -> feasible
+ * - RESTRICTED -> feasible with restrictions
+ * - EXPIRED    -> infeasible
+ *
  * @generated from enum capability.v1.SkillStatus
  */
 export enum SkillStatus {
@@ -222,16 +239,28 @@ export enum SkillStatus {
   UNSPECIFIED = 0,
 
   /**
+   * Skill is valid and can be used normally.
+   *
    * @generated from enum value: SKILL_STATUS_ACTIVE = 1;
    */
   ACTIVE = 1,
 
   /**
+   * Skill is allowed but restricted. The actor may perform the task but additional safeguards
+   *
+   * Examples:
+   * - AR guidance required
+   * - manual confirmation required
+   * - second check required
+   * - supervisor approval required
+   *
    * @generated from enum value: SKILL_STATUS_RESTRICTED = 2;
    */
   RESTRICTED = 2,
 
   /**
+   * Skill is no longer valid and cannot be used.
+   *
    * @generated from enum value: SKILL_STATUS_EXPIRED = 3;
    */
   EXPIRED = 3,

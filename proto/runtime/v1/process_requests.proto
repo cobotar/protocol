@@ -2,8 +2,10 @@ syntax = "proto3";
 package runtime.v1;
 
 import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
 import "common/v1/key_value_constraint.proto";
 import "runtime/v1/process_run.proto";
+import "runtime/v1/runtime_restriction.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
@@ -191,6 +193,19 @@ message ProcessRunIssue {
   RequirementImportance importance = 15;
 }
 
+message CandidateActorEvaluation {
+  common.v1.ActorRef actor = 1;
+
+  // Whether this actor is currently feasible for the task.
+  bool feasible = 2;
+
+  // Effective restrictions if this actor were assigned.
+  repeated RuntimeRestriction restrictions = 3;
+
+  // Optional explanations or issues tied specifically to this actor.
+  repeated ProcessRunIssue issues = 4;
+}
+
 message TaskFeasibility {
   string task_definition_id = 1;
   bool feasible = 2;
@@ -202,6 +217,8 @@ message TaskFeasibility {
   repeated string candidate_asset_instance_ids = 7;
 
   repeated ProcessRunIssue issues = 8;
+
+  repeated CandidateActorEvaluation candidate_actor_evaluations = 9;
 }
 
 enum ProcessRunPrecheckStatus {
