@@ -826,7 +826,7 @@ type TaskFeasibility struct {
 	state                         protoimpl.MessageState      `protogen:"open.v1"`
 	TaskDefinitionId              string                      `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
 	Feasible                      bool                        `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
-	CandidateActorIds             []string                    `protobuf:"bytes,3,rep,name=candidate_actor_ids,json=candidateActorIds,proto3" json:"candidate_actor_ids,omitempty"`
+	CandidateActors               []*v11.ActorRef             `protobuf:"bytes,3,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
 	CandidateRobotInstanceIds     []string                    `protobuf:"bytes,4,rep,name=candidate_robot_instance_ids,json=candidateRobotInstanceIds,proto3" json:"candidate_robot_instance_ids,omitempty"`
 	CandidateToolInstanceIds      []string                    `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
 	CandidateContainerInstanceIds []string                    `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
@@ -881,9 +881,9 @@ func (x *TaskFeasibility) GetFeasible() bool {
 	return false
 }
 
-func (x *TaskFeasibility) GetCandidateActorIds() []string {
+func (x *TaskFeasibility) GetCandidateActors() []*v11.ActorRef {
 	if x != nil {
-		return x.CandidateActorIds
+		return x.CandidateActors
 	}
 	return nil
 }
@@ -1139,11 +1139,11 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12B\n" +
 	"\frestrictions\x18\x03 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x123\n" +
-	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xb0\x04\n" +
+	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xc0\x04\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
-	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12.\n" +
-	"\x13candidate_actor_ids\x18\x03 \x03(\tR\x11candidateActorIds\x12?\n" +
+	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12>\n" +
+	"\x10candidate_actors\x18\x03 \x03(\v2\x13.common.v1.ActorRefR\x0fcandidateActors\x12?\n" +
 	"\x1ccandidate_robot_instance_ids\x18\x04 \x03(\tR\x19candidateRobotInstanceIds\x12=\n" +
 	"\x1bcandidate_tool_instance_ids\x18\x05 \x03(\tR\x18candidateToolInstanceIds\x12G\n" +
 	" candidate_container_instance_ids\x18\x06 \x03(\tR\x1dcandidateContainerInstanceIds\x12?\n" +
@@ -1269,19 +1269,20 @@ var file_runtime_v1_process_requests_proto_depIdxs = []int32{
 	14, // 6: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
 	15, // 7: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
 	7,  // 8: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
-	7,  // 9: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	8,  // 10: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	7,  // 11: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	9,  // 12: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	4,  // 13: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	5,  // 14: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	10, // 15: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	16, // 16: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	17, // [17:17] is the sub-list for method output_type
-	17, // [17:17] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	14, // 9: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
+	7,  // 10: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	8,  // 11: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	7,  // 12: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	9,  // 13: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	4,  // 14: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	5,  // 15: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	10, // 16: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	16, // 17: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	18, // [18:18] is the sub-list for method output_type
+	18, // [18:18] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }

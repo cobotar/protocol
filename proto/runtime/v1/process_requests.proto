@@ -210,7 +210,7 @@ message TaskFeasibility {
   string task_definition_id = 1;
   bool feasible = 2;
 
-  repeated string candidate_actor_ids = 3;
+  repeated common.v1.ActorRef candidate_actors = 3;
   repeated string candidate_robot_instance_ids = 4;
   repeated string candidate_tool_instance_ids = 5;
   repeated string candidate_container_instance_ids = 6;

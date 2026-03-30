@@ -7527,7 +7527,7 @@ Thus the following must be evaluated:
 | ----- | ---- | ----- | ----------- |
 | task_definition_id | [string](#string) |  |  |
 | feasible | [bool](#bool) |  |  |
-| candidate_actor_ids | [string](#string) | repeated |  |
+| candidate_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated |  |
 | candidate_robot_instance_ids | [string](#string) | repeated |  |
 | candidate_tool_instance_ids | [string](#string) | repeated |  |
 | candidate_container_instance_ids | [string](#string) | repeated |  |
