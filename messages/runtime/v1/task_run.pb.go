@@ -29,34 +29,34 @@ const (
 type TaskRunState int32
 
 const (
-	TaskRunState_TASK_RUN_STATE_UNSPECIFIED          TaskRunState = 0
-	TaskRunState_TASK_RUN_STATE_MISSING_PRECONDITION TaskRunState = 1
-	TaskRunState_TASK_RUN_STATE_WAITING              TaskRunState = 2
-	TaskRunState_TASK_RUN_STATE_IN_PROGRESS          TaskRunState = 3
-	TaskRunState_TASK_RUN_STATE_COMPLETED            TaskRunState = 4
-	TaskRunState_TASK_RUN_STATE_ERROR                TaskRunState = 5
-	TaskRunState_TASK_RUN_STATE_ABORTED              TaskRunState = 6
+	TaskRunState_TASK_RUN_STATE_UNSPECIFIED TaskRunState = 0
+	TaskRunState_TASK_RUN_STATE_NOT_READY   TaskRunState = 1
+	TaskRunState_TASK_RUN_STATE_READY       TaskRunState = 2
+	TaskRunState_TASK_RUN_STATE_IN_PROGRESS TaskRunState = 3
+	TaskRunState_TASK_RUN_STATE_DONE        TaskRunState = 4
+	TaskRunState_TASK_RUN_STATE_ERROR       TaskRunState = 5
+	TaskRunState_TASK_RUN_STATE_ABORTED     TaskRunState = 6
 )
 
 // Enum value maps for TaskRunState.
 var (
 	TaskRunState_name = map[int32]string{
 		0: "TASK_RUN_STATE_UNSPECIFIED",
-		1: "TASK_RUN_STATE_MISSING_PRECONDITION",
-		2: "TASK_RUN_STATE_WAITING",
+		1: "TASK_RUN_STATE_NOT_READY",
+		2: "TASK_RUN_STATE_READY",
 		3: "TASK_RUN_STATE_IN_PROGRESS",
-		4: "TASK_RUN_STATE_COMPLETED",
+		4: "TASK_RUN_STATE_DONE",
 		5: "TASK_RUN_STATE_ERROR",
 		6: "TASK_RUN_STATE_ABORTED",
 	}
 	TaskRunState_value = map[string]int32{
-		"TASK_RUN_STATE_UNSPECIFIED":          0,
-		"TASK_RUN_STATE_MISSING_PRECONDITION": 1,
-		"TASK_RUN_STATE_WAITING":              2,
-		"TASK_RUN_STATE_IN_PROGRESS":          3,
-		"TASK_RUN_STATE_COMPLETED":            4,
-		"TASK_RUN_STATE_ERROR":                5,
-		"TASK_RUN_STATE_ABORTED":              6,
+		"TASK_RUN_STATE_UNSPECIFIED": 0,
+		"TASK_RUN_STATE_NOT_READY":   1,
+		"TASK_RUN_STATE_READY":       2,
+		"TASK_RUN_STATE_IN_PROGRESS": 3,
+		"TASK_RUN_STATE_DONE":        4,
+		"TASK_RUN_STATE_ERROR":       5,
+		"TASK_RUN_STATE_ABORTED":     6,
 	}
 )
 
@@ -93,7 +93,8 @@ type TaskRuntimeBinding struct {
 	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`
 	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`
 	StationId       string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
+	CellId          string                 `protobuf:"bytes,4,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,5,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -145,6 +146,13 @@ func (x *TaskRuntimeBinding) GetRobotInstanceId() string {
 func (x *TaskRuntimeBinding) GetStationId() string {
 	if x != nil {
 		return x.StationId
+	}
+	return ""
+}
+
+func (x *TaskRuntimeBinding) GetCellId() string {
+	if x != nil {
+		return x.CellId
 	}
 	return ""
 }
@@ -385,13 +393,14 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd2\x01\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
 	"\x12TaskRuntimeBinding\x12*\n" +
 	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x12E\n" +
-	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd6\x06\n" +
+	"station_id\x18\x03 \x01(\tR\tstationId\x12\x17\n" +
+	"\acell_id\x18\x04 \x01(\tR\x06cellId\x12E\n" +
+	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd6\x06\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -415,13 +424,13 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\bevidence\x18\x11 \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
 	"\abinding\x18\x12 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\"5\n" +
 	"\bTaskRuns\x12)\n" +
-	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xe7\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xd5\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
-	"\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12'\n" +
-	"#TASK_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1a\n" +
-	"\x16TASK_RUN_STATE_WAITING\x10\x02\x12\x1e\n" +
-	"\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1c\n" +
-	"\x18TASK_RUN_STATE_COMPLETED\x10\x04\x12\x18\n" +
+	"\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18TASK_RUN_STATE_NOT_READY\x10\x01\x12\x18\n" +
+	"\x14TASK_RUN_STATE_READY\x10\x02\x12\x1e\n" +
+	"\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x17\n" +
+	"\x13TASK_RUN_STATE_DONE\x10\x04\x12\x18\n" +
 	"\x14TASK_RUN_STATE_ERROR\x10\x05\x12\x1a\n" +
 	"\x16TASK_RUN_STATE_ABORTED\x10\x06B\xab\x01\n" +
 	"\x0ecom.runtime.v1B\fTaskRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +

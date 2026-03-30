@@ -28,13 +28,13 @@ TOOL_PROPERTY_CALIBRATED: ToolProperty
 TOOL_PROPERTY_QUICK_CHANGE: ToolProperty
 
 class ToolRequirement(_message.Message):
-    __slots__ = ("role", "required_properties", "minimum_capability", "allowed_tool_definition_ids")
-    ROLE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("roles", "required_properties", "minimum_capability", "allowed_tool_definition_ids")
+    ROLES_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     MINIMUM_CAPABILITY_FIELD_NUMBER: _ClassVar[int]
     ALLOWED_TOOL_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
-    role: _skill_definition_pb2.ToolRole
+    roles: _containers.RepeatedScalarFieldContainer[_skill_definition_pb2.ToolRole]
     required_properties: _containers.RepeatedScalarFieldContainer[ToolProperty]
     minimum_capability: _capability_profile_pb2.CapabilityProfile
     allowed_tool_definition_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, role: _Optional[_Union[_skill_definition_pb2.ToolRole, str]] = ..., required_properties: _Optional[_Iterable[_Union[ToolProperty, str]]] = ..., minimum_capability: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., allowed_tool_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, roles: _Optional[_Iterable[_Union[_skill_definition_pb2.ToolRole, str]]] = ..., required_properties: _Optional[_Iterable[_Union[ToolProperty, str]]] = ..., minimum_capability: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., allowed_tool_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...

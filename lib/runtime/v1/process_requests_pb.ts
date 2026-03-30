@@ -4,8 +4,12 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { KeyValueConstraint } from "../../common/v1/key_value_constraint_pb.ts";
+import { file_common_v1_key_value_constraint } from "../../common/v1/key_value_constraint_pb.ts";
 import type { ProcessRun } from "./process_run_pb.ts";
 import { file_runtime_v1_process_run } from "./process_run_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantConfiguration } from "../../variance/v1/variant_configuration_pb.ts";
 import { file_variance_v1_variant_configuration } from "../../variance/v1/variant_configuration_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -14,12 +18,30 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/process_requests.proto.
  */
 export const file_runtime_v1_process_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL3Byb2Nlc3NfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEitQEKElByb2Nlc3NMb2FkUmVxdWVzdBIZChFwcm9jZXNzX3JlY2lwZV9pZBgBIAEoCRIWCg50YXJnZXRfbGluZV9pZBgCIAEoCRJAChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YAyABKAsyIS52YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvbhIPCgdkcnlfcnVuGAQgASgIEhkKEXF1ZXVlX2lmX29jY3VwaWVkGAUgASgIIr4DCg9Qcm9jZXNzUnVuSXNzdWUSLwoHZmFpbHVyZRgBIAEoDjIeLnJ1bnRpbWUudjEuUHJvY2Vzc0xvYWRGYWlsdXJlEg8KB21lc3NhZ2UYAiABKAkSNQoIc2V2ZXJpdHkYAyABKA4yIy5ydW50aW1lLnYxLlByb2Nlc3NSdW5Jc3N1ZVNldmVyaXR5EhkKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJEh4KFnNlcXVlbmNlX2RlZmluaXRpb25faWQYBSABKAkSGgoSdGFza19kZWZpbml0aW9uX2lkGAYgASgJEhoKEnJlcXVpcmVkX3Rvb2xfcm9sZRgHIAEoCRIZChFyZXF1aXJlZF9za2lsbF9pZBgIIAEoCRIdChVmaXh0dXJlX2RlZmluaXRpb25faWQYCSABKAkSEgoKc3RhdGlvbl9pZBgKIAEoCRIQCghhY3Rvcl9pZBgLIAEoCRITCgtyZXNvdXJjZV9pZBgMIAEoCRITCgtyZW1lZGlhdGlvbhgNIAEoCRI1CgppbXBvcnRhbmNlGA4gASgOMiEucnVudGltZS52MS5SZXF1aXJlbWVudEltcG9ydGFuY2Ui/AEKD1Rhc2tGZWFzaWJpbGl0eRIaChJ0YXNrX2RlZmluaXRpb25faWQYASABKAkSEAoIZmVhc2libGUYAiABKAgSGwoTY2FuZGlkYXRlX2FjdG9yX2lkcxgDIAMoCRIjChtjYW5kaWRhdGVfdG9vbF9pbnN0YW5jZV9pZHMYBCADKAkSJgoeY2FuZGlkYXRlX2ZpeHR1cmVfaW5zdGFuY2VfaWRzGAUgAygJEiQKHGNhbmRpZGF0ZV9hc3NldF9pbnN0YW5jZV9pZHMYBiADKAkSKwoGaXNzdWVzGAcgAygLMhsucnVudGltZS52MS5Qcm9jZXNzUnVuSXNzdWUirgIKGFByb2Nlc3NSdW5QcmVjaGVja1Jlc3VsdBIKCgJvaxgBIAEoCBIrCgZpc3N1ZXMYAiADKAsyGy5ydW50aW1lLnYxLlByb2Nlc3NSdW5Jc3N1ZRIcChRibG9ja2luZ19pc3N1ZV9jb3VudBgDIAEoBRIbChN3YXJuaW5nX2lzc3VlX2NvdW50GAQgASgFEhkKEXByb2Nlc3NfcmVjaXBlX2lkGAUgASgJEhYKDnRhcmdldF9saW5lX2lkGAYgASgJEjUKEHRhc2tfZmVhc2liaWxpdHkYByADKAsyGy5ydW50aW1lLnYxLlRhc2tGZWFzaWJpbGl0eRI0CgZzdGF0dXMYCCABKA4yJC5ydW50aW1lLnYxLlByb2Nlc3NSdW5QcmVjaGVja1N0YXR1cyKnAQoRUHJvY2Vzc0xvYWRSZXN1bHQSLQoGc3RhdHVzGAEgASgOMh0ucnVudGltZS52MS5Qcm9jZXNzTG9hZFN0YXR1cxI2CghwcmVjaGVjaxgCIAEoCzIkLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blByZWNoZWNrUmVzdWx0EisKC3Byb2Nlc3NfcnVuGAMgASgLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKqkHChJQcm9jZXNzTG9hZEZhaWx1cmUSJAogUFJPQ0VTU19MT0FEX0ZBSUxVUkVfVU5TUEVDSUZJRUQQABInCiNQUk9DRVNTX0xPQURfRkFJTFVSRV9MSU5FX05PVF9GT1VORBABEjEKLVBST0NFU1NfTE9BRF9GQUlMVVJFX1BST0NFU1NfUkVDSVBFX05PVF9GT1VORBACEi4KKlBST0NFU1NfTE9BRF9GQUlMVVJFX1BST0RVQ1RfTk9UX1NVUFBPUlRFRBADEi8KK1BST0NFU1NfTE9BRF9GQUlMVVJFX1JFU09VUkNFX1NUQVRFX1VOS05PV04QBBIuCipQUk9DRVNTX0xPQURfRkFJTFVSRV9OT19DT01QQVRJQkxFX0ZJWFRVUkUQChIqCiZQUk9DRVNTX0xPQURfRkFJTFVSRV9NSVNTSU5HX1RPT0xfUk9MRRAUEiwKKFBST0NFU1NfTE9BRF9GQUlMVVJFX1RPT0xfTk9UX0NBTElCUkFURUQQFRI1CjFQUk9DRVNTX0xPQURfRkFJTFVSRV9UT09MX0NBUEFCSUxJVFlfSU5TVUZGSUNJRU5UEBYSKgomUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUk9CT1RfVU5BVkFJTEFCTEUQHhIvCitQUk9DRVNTX0xPQURfRkFJTFVSRV9ST0JPVF9UT09MSU5HX01JU01BVENIEB8SLgoqUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTk9fUVVBTElGSUVEX09QRVJBVE9SECgSLworUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUkVRVUlSRURfU0tJTExfRVhQSVJFRBApEioKJlBST0NFU1NfTE9BRF9GQUlMVVJFX05PX0ZFQVNJQkxFX0FDVE9SECoSNwozUFJPQ0VTU19MT0FEX0ZBSUxVUkVfQ09MTEFCT1JBVElPTl9NT0RFX1VOU1VQUE9SVEVEEDISLQopUFJPQ0VTU19MT0FEX0ZBSUxVUkVfU0FGRVRZX01PREVfTUlTTUFUQ0gQMxIxCi1QUk9DRVNTX0xPQURfRkFJTFVSRV9WSVNJT05fQVNTRVRfVU5BVkFJTEFCTEUQPBIyCi5QUk9DRVNTX0xPQURfRkFJTFVSRV9WQUxJREFUSU9OX1NPVVJDRV9NSVNTSU5HED0SNgoyUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTk9fRkVBU0lCTEVfVkFMSURBVElPTl9NRVRIT0QQPiqWAQoXUHJvY2Vzc1J1bklzc3VlU2V2ZXJpdHkSKgomUFJPQ0VTU19SVU5fSVNTVUVfU0VWRVJJVFlfVU5TUEVDSUZJRUQQABInCiNQUk9DRVNTX1JVTl9JU1NVRV9TRVZFUklUWV9CTE9DS0lORxABEiYKIlBST0NFU1NfUlVOX0lTU1VFX1NFVkVSSVRZX1dBUk5JTkcQAiqKAQoVUmVxdWlyZW1lbnRJbXBvcnRhbmNlEiYKIlJFUVVJUkVNRU5UX0lNUE9SVEFOQ0VfVU5TUEVDSUZJRUQQABIjCh9SRVFVSVJFTUVOVF9JTVBPUlRBTkNFX1JFUVVJUkVEEAESJAogUkVRVUlSRU1FTlRfSU1QT1JUQU5DRV9QUkVGRVJSRUQQAirGAQoYUHJvY2Vzc1J1blByZWNoZWNrU3RhdHVzEisKJ1BST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19VTlNQRUNJRklFRBAAEiIKHlBST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19PSxABEjAKLFBST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19PS19XSVRIX1dBUk5JTkdTEAISJwojUFJPQ0VTU19SVU5fUFJFQ0hFQ0tfU1RBVFVTX0JMT0NLRUQQAyqgAQoRUHJvY2Vzc0xvYWRTdGF0dXMSIwofUFJPQ0VTU19MT0FEX1NUQVRVU19VTlNQRUNJRklFRBAAEicKI1BST0NFU1NfTE9BRF9TVEFUVVNfUFJFQ0hFQ0tfRkFJTEVEEAESHQoZUFJPQ0VTU19MT0FEX1NUQVRVU19SRUFEWRACEh4KGlBST0NFU1NfTE9BRF9TVEFUVVNfTE9BREVEEANCswEKDmNvbS5ydW50aW1lLnYxQhRQcm9jZXNzUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_runtime_v1_process_run, file_variance_v1_variant_configuration]);
+  fileDesc("CiFydW50aW1lL3YxL3Byb2Nlc3NfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEiogMKElByb2Nlc3NMb2FkUmVxdWVzdBInChFwcm9jZXNzX3JlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSI8gQBEiQKDnRhcmdldF9saW5lX2lkGAIgASgJQgy6SAnIAQFyBKjyBAESJAoOdGFyZ2V0X2NlbGxfaWQYAyABKAlCDLpICcgBAXIEoPIEARInChF0YXJnZXRfc3RhdGlvbl9pZBgEIAEoCUIMukgJyAEBcgTY8QQBEkAKFXZhcmlhbnRfY29uZmlndXJhdGlvbhgFIAEoCzIhLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uEg8KB2RyeV9ydW4YBiABKAgSGQoRcXVldWVfaWZfb2NjdXBpZWQYByABKAgSOwoIc3RyYXRlZ3kYCCABKA4yHy5ydW50aW1lLnYxLlByb2Nlc3NMb2FkU3RyYXRlZ3lCCLpIBYIBAhABEhAKCG9yZGVyX2lkGAkgASgJEjEKCnBhcmFtZXRlcnMYCiADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Is8DCg9Qcm9jZXNzUnVuSXNzdWUSLwoHZmFpbHVyZRgBIAEoDjIeLnJ1bnRpbWUudjEuUHJvY2Vzc0xvYWRGYWlsdXJlEg8KB21lc3NhZ2UYAiABKAkSNQoIc2V2ZXJpdHkYAyABKA4yIy5ydW50aW1lLnYxLlByb2Nlc3NSdW5Jc3N1ZVNldmVyaXR5EhkKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJEh4KFnNlcXVlbmNlX2RlZmluaXRpb25faWQYBSABKAkSGgoSdGFza19kZWZpbml0aW9uX2lkGAYgASgJEhoKEnJlcXVpcmVkX3Rvb2xfcm9sZRgHIAEoCRIZChFyZXF1aXJlZF9za2lsbF9pZBgIIAEoCRIdChVmaXh0dXJlX2RlZmluaXRpb25faWQYCSABKAkSDwoHY2VsbF9pZBgKIAEoCRISCgpzdGF0aW9uX2lkGAsgASgJEhAKCGFjdG9yX2lkGAwgASgJEhMKC3Jlc291cmNlX2lkGA0gASgJEhMKC3JlbWVkaWF0aW9uGA4gASgJEjUKCmltcG9ydGFuY2UYDyABKA4yIS5ydW50aW1lLnYxLlJlcXVpcmVtZW50SW1wb3J0YW5jZSKkAgoPVGFza0ZlYXNpYmlsaXR5EhoKEnRhc2tfZGVmaW5pdGlvbl9pZBgBIAEoCRIQCghmZWFzaWJsZRgCIAEoCBIbChNjYW5kaWRhdGVfYWN0b3JfaWRzGAMgAygJEiQKHGNhbmRpZGF0ZV9yb2JvdF9pbnN0YW5jZV9pZHMYBCADKAkSIwobY2FuZGlkYXRlX3Rvb2xfaW5zdGFuY2VfaWRzGAUgAygJEigKIGNhbmRpZGF0ZV9jb250YWluZXJfaW5zdGFuY2VfaWRzGAYgAygJEiQKHGNhbmRpZGF0ZV9hc3NldF9pbnN0YW5jZV9pZHMYByADKAkSKwoGaXNzdWVzGAggAygLMhsucnVudGltZS52MS5Qcm9jZXNzUnVuSXNzdWUirgIKGFByb2Nlc3NSdW5QcmVjaGVja1Jlc3VsdBIKCgJvaxgBIAEoCBIrCgZpc3N1ZXMYAiADKAsyGy5ydW50aW1lLnYxLlByb2Nlc3NSdW5Jc3N1ZRIcChRibG9ja2luZ19pc3N1ZV9jb3VudBgDIAEoBRIbChN3YXJuaW5nX2lzc3VlX2NvdW50GAQgASgFEhkKEXByb2Nlc3NfcmVjaXBlX2lkGAUgASgJEhYKDnRhcmdldF9saW5lX2lkGAYgASgJEjUKEHRhc2tfZmVhc2liaWxpdHkYByADKAsyGy5ydW50aW1lLnYxLlRhc2tGZWFzaWJpbGl0eRI0CgZzdGF0dXMYCCABKA4yJC5ydW50aW1lLnYxLlByb2Nlc3NSdW5QcmVjaGVja1N0YXR1cyKnAQoRUHJvY2Vzc0xvYWRSZXN1bHQSLQoGc3RhdHVzGAEgASgOMh0ucnVudGltZS52MS5Qcm9jZXNzTG9hZFN0YXR1cxI2CghwcmVjaGVjaxgCIAEoCzIkLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blByZWNoZWNrUmVzdWx0EisKC3Byb2Nlc3NfcnVuGAMgASgLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKucBChNQcm9jZXNzTG9hZFN0cmF0ZWd5EiUKIVBST0NFU1NfTE9BRF9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEigKJFBST0NFU1NfTE9BRF9TVFJBVEVHWV9GSVJTVF9GRUFTSUJMRRABEioKJlBST0NFU1NfTE9BRF9TVFJBVEVHWV9QUkVGRVJfQVZBSUxBQkxFEAISLQopUFJPQ0VTU19MT0FEX1NUUkFURUdZX1BSRUZFUl9UQVJHRVRfU0NPUEUQAxIkCiBQUk9DRVNTX0xPQURfU1RSQVRFR1lfQkVTVF9NQVRDSBAEKvkLChJQcm9jZXNzTG9hZEZhaWx1cmUSJAogUFJPQ0VTU19MT0FEX0ZBSUxVUkVfVU5TUEVDSUZJRUQQABIxCi1QUk9DRVNTX0xPQURfRkFJTFVSRV9QUk9DRVNTX1JFQ0lQRV9OT1RfRk9VTkQQAhIuCipQUk9DRVNTX0xPQURfRkFJTFVSRV9QUk9EVUNUX05PVF9TVVBQT1JURUQQAxIvCitQUk9DRVNTX0xPQURfRkFJTFVSRV9SRVNPVVJDRV9TVEFURV9VTktOT1dOEAQSMAosUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTk9fQ09NUEFUSUJMRV9DT05UQUlORVIQChIwCixQUk9DRVNTX0xPQURfRkFJTFVSRV9SRVFVSVJFRF9TTE9UX05PVF9GT1VORBALEjUKMVBST0NFU1NfTE9BRF9GQUlMVVJFX1JFUVVJUkVEX1NMT1RfVFlQRV9OT1RfRk9VTkQQDBIqCiZQUk9DRVNTX0xPQURfRkFJTFVSRV9NSVNTSU5HX1RPT0xfUk9MRRAUEiwKKFBST0NFU1NfTE9BRF9GQUlMVVJFX1RPT0xfTk9UX0NBTElCUkFURUQQFRI1CjFQUk9DRVNTX0xPQURfRkFJTFVSRV9UT09MX0NBUEFCSUxJVFlfSU5TVUZGSUNJRU5UEBYSKgomUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUk9CT1RfVU5BVkFJTEFCTEUQHhIvCitQUk9DRVNTX0xPQURfRkFJTFVSRV9ST0JPVF9UT09MSU5HX01JU01BVENIEB8SLgoqUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTk9fUVVBTElGSUVEX09QRVJBVE9SECgSKgomUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTk9fRkVBU0lCTEVfQUNUT1IQKRIyCi5QUk9DRVNTX0xPQURfRkFJTFVSRV9SRVFVSVJFRF9TS0lMTF9SRVNUUklDVEVEECoSLworUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUkVRVUlSRURfU0tJTExfRVhQSVJFRBArEjcKM1BST0NFU1NfTE9BRF9GQUlMVVJFX0NPTExBQk9SQVRJT05fTU9ERV9VTlNVUFBPUlRFRBAyEi0KKVBST0NFU1NfTE9BRF9GQUlMVVJFX1NBRkVUWV9NT0RFX01JU01BVENIEDMSMQotUFJPQ0VTU19MT0FEX0ZBSUxVUkVfVklTSU9OX0FTU0VUX1VOQVZBSUxBQkxFEDwSMgouUFJPQ0VTU19MT0FEX0ZBSUxVUkVfVkFMSURBVElPTl9TT1VSQ0VfTUlTU0lORxA9EjYKMlBST0NFU1NfTE9BRF9GQUlMVVJFX05PX0ZFQVNJQkxFX1ZBTElEQVRJT05fTUVUSE9EED4SJwojUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTElORV9OT1RfRk9VTkQQRhIkCiBQUk9DRVNTX0xPQURfRkFJTFVSRV9MSU5FX0NMT1NFRBBHEiIKHlBST0NFU1NfTE9BRF9GQUlMVVJFX0xJTkVfQlVTWRBIEiUKIVBST0NFU1NfTE9BRF9GQUlMVVJFX0xJTkVfQkxPQ0tFRBBJEicKI1BST0NFU1NfTE9BRF9GQUlMVVJFX0NFTExfTk9UX0ZPVU5EEFASJAogUFJPQ0VTU19MT0FEX0ZBSUxVUkVfQ0VMTF9DTE9TRUQQURIiCh5QUk9DRVNTX0xPQURfRkFJTFVSRV9DRUxMX0JVU1kQUhIlCiFQUk9DRVNTX0xPQURfRkFJTFVSRV9DRUxMX0JMT0NLRUQQUxIqCiZQUk9DRVNTX0xPQURfRkFJTFVSRV9TVEFUSU9OX05PVF9GT1VORBBaEicKI1BST0NFU1NfTE9BRF9GQUlMVVJFX1NUQVRJT05fQ0xPU0VEEFsSJQohUFJPQ0VTU19MT0FEX0ZBSUxVUkVfU1RBVElPTl9CVVNZEFwSKAokUFJPQ0VTU19MT0FEX0ZBSUxVUkVfU1RBVElPTl9CTE9DS0VEEF0qlgEKF1Byb2Nlc3NSdW5Jc3N1ZVNldmVyaXR5EioKJlBST0NFU1NfUlVOX0lTU1VFX1NFVkVSSVRZX1VOU1BFQ0lGSUVEEAASJwojUFJPQ0VTU19SVU5fSVNTVUVfU0VWRVJJVFlfQkxPQ0tJTkcQARImCiJQUk9DRVNTX1JVTl9JU1NVRV9TRVZFUklUWV9XQVJOSU5HEAIqigEKFVJlcXVpcmVtZW50SW1wb3J0YW5jZRImCiJSRVFVSVJFTUVOVF9JTVBPUlRBTkNFX1VOU1BFQ0lGSUVEEAASIwofUkVRVUlSRU1FTlRfSU1QT1JUQU5DRV9SRVFVSVJFRBABEiQKIFJFUVVJUkVNRU5UX0lNUE9SVEFOQ0VfUFJFRkVSUkVEEAIqxgEKGFByb2Nlc3NSdW5QcmVjaGVja1N0YXR1cxIrCidQUk9DRVNTX1JVTl9QUkVDSEVDS19TVEFUVVNfVU5TUEVDSUZJRUQQABIiCh5QUk9DRVNTX1JVTl9QUkVDSEVDS19TVEFUVVNfT0sQARIwCixQUk9DRVNTX1JVTl9QUkVDSEVDS19TVEFUVVNfT0tfV0lUSF9XQVJOSU5HUxACEicKI1BST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19CTE9DS0VEEAMqoAEKEVByb2Nlc3NMb2FkU3RhdHVzEiMKH1BST0NFU1NfTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQABInCiNQUk9DRVNTX0xPQURfU1RBVFVTX1BSRUNIRUNLX0ZBSUxFRBABEh0KGVBST0NFU1NfTE9BRF9TVEFUVVNfUkVBRFkQAhIeChpQUk9DRVNTX0xPQURfU1RBVFVTX0xPQURFRBADQrMBCg5jb20ucnVudGltZS52MUIUUHJvY2Vzc1JlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_key_value_constraint, file_runtime_v1_process_run, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
 
 /**
- * ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
- * During this process, resources feasibility should be checked, i.e.
- *    "Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?"
+ * ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
+ *
+ * The loader should evaluate whether the recipe can be instantiated now within
+ * the requested operational scope, using currently available actors, tools,
+ * robots, containers, assets, and validation resources.
+ *
+ * Target scope resolution:
+ *
+ * - target_line_id is the top-level routing scope and is required.
+ * - if target_cell_id is set, the loader must validate and use that cell.
+ * - if target_station_id is set, the loader must validate and use that station.
+ * - if cell/station are not set, the loader should choose the best feasible
+ *   candidate within the selected line.
+ *
+ * Occupancy handling:
+ *
+ * - if a candidate station is BUSY and queue_if_occupied is true, the loader
+ *   may create a queued ProcessRun.
+ * - if queue_if_occupied is false, the loader should only queue when the chosen
+ *   target explicitly allows queued processes.
+ * - otherwise the load should fail with a blocking issue.
  *
  * Thus the following must be evaluated:
  * - available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
@@ -35,31 +57,75 @@ export const file_runtime_v1_process_requests: GenFile = /*@__PURE__*/
  */
 export type ProcessLoadRequest = Message<"runtime.v1.ProcessLoadRequest"> & {
   /**
+   * Required recipe to instantiate.
+   *
    * @generated from field: string process_recipe_id = 1;
    */
   processRecipeId: string;
 
   /**
+   * Required top-level routing scope.
+   *
    * @generated from field: string target_line_id = 2;
    */
   targetLineId: string;
 
   /**
-   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 3;
+   * Optional narrowing of the target scope.
+   * If set, the loader must validate and respect these targets.
+   *
+   * @generated from field: string target_cell_id = 3;
+   */
+  targetCellId: string;
+
+  /**
+   * @generated from field: string target_station_id = 4;
+   */
+  targetStationId: string;
+
+  /**
+   * Optional variant configuration used to evaluate recipe/task applicability.
+   *
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 5;
    */
   variantConfiguration?: VariantConfiguration;
 
   /**
-   * true = precheck only, false = precheck + instantiate
+   * true  -> perform precheck only
+   * false -> perform precheck and instantiate ProcessRun if feasible
    *
-   * @generated from field: bool dry_run = 4;
+   * @generated from field: bool dry_run = 6;
    */
   dryRun: boolean;
 
   /**
-   * @generated from field: bool queue_if_occupied = 5;
+   * If true, the loader may create a queued ProcessRun when the preferred
+   * execution target is currently BUSY but otherwise feasible.
+   *
+   * @generated from field: bool queue_if_occupied = 7;
    */
   queueIfOccupied: boolean;
+
+  /**
+   * Optional execution preferences for the loader.
+   *
+   * @generated from field: runtime.v1.ProcessLoadStrategy strategy = 8;
+   */
+  strategy: ProcessLoadStrategy;
+
+  /**
+   * Optional order/business reference to carry into the ProcessRun.
+   *
+   * @generated from field: string order_id = 9;
+   */
+  orderId: string;
+
+  /**
+   * Optional caller-provided parameters used during instantiation.
+   *
+   * @generated from field: repeated common.v1.KeyValueConstraint parameters = 10;
+   */
+  parameters: KeyValueConstraint[];
 };
 
 /**
@@ -123,31 +189,36 @@ export type ProcessRunIssue = Message<"runtime.v1.ProcessRunIssue"> & {
   fixtureDefinitionId: string;
 
   /**
-   * @generated from field: string station_id = 10;
+   * @generated from field: string cell_id = 10;
+   */
+  cellId: string;
+
+  /**
+   * @generated from field: string station_id = 11;
    */
   stationId: string;
 
   /**
-   * @generated from field: string actor_id = 11;
+   * @generated from field: string actor_id = 12;
    */
   actorId: string;
 
   /**
    * tool/robot/fixture/asset instance if known
    *
-   * @generated from field: string resource_id = 12;
+   * @generated from field: string resource_id = 13;
    */
   resourceId: string;
 
   /**
    * Optional remediation hint
    *
-   * @generated from field: string remediation = 13;
+   * @generated from field: string remediation = 14;
    */
   remediation: string;
 
   /**
-   * @generated from field: runtime.v1.RequirementImportance importance = 14;
+   * @generated from field: runtime.v1.RequirementImportance importance = 15;
    */
   importance: RequirementImportance;
 };
@@ -179,22 +250,27 @@ export type TaskFeasibility = Message<"runtime.v1.TaskFeasibility"> & {
   candidateActorIds: string[];
 
   /**
-   * @generated from field: repeated string candidate_tool_instance_ids = 4;
+   * @generated from field: repeated string candidate_robot_instance_ids = 4;
+   */
+  candidateRobotInstanceIds: string[];
+
+  /**
+   * @generated from field: repeated string candidate_tool_instance_ids = 5;
    */
   candidateToolInstanceIds: string[];
 
   /**
-   * @generated from field: repeated string candidate_fixture_instance_ids = 5;
+   * @generated from field: repeated string candidate_container_instance_ids = 6;
    */
-  candidateFixtureInstanceIds: string[];
+  candidateContainerInstanceIds: string[];
 
   /**
-   * @generated from field: repeated string candidate_asset_instance_ids = 6;
+   * @generated from field: repeated string candidate_asset_instance_ids = 7;
    */
   candidateAssetInstanceIds: string[];
 
   /**
-   * @generated from field: repeated runtime.v1.ProcessRunIssue issues = 7;
+   * @generated from field: repeated runtime.v1.ProcessRunIssue issues = 8;
    */
   issues: ProcessRunIssue[];
 };
@@ -294,6 +370,50 @@ export const ProcessLoadResultSchema: GenMessage<ProcessLoadResult> = /*@__PURE_
   messageDesc(file_runtime_v1_process_requests, 4);
 
 /**
+ * @generated from enum runtime.v1.ProcessLoadStrategy
+ */
+export enum ProcessLoadStrategy {
+  /**
+   * @generated from enum value: PROCESS_LOAD_STRATEGY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Prefer the first feasible candidate found.
+   *
+   * @generated from enum value: PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE = 1;
+   */
+  FIRST_FEASIBLE = 1,
+
+  /**
+   * Prefer OPEN stations over BUSY ones, and BUSY over queued ones.
+   *
+   * @generated from enum value: PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE = 2;
+   */
+  PREFER_AVAILABLE = 2,
+
+  /**
+   * Prefer keeping work inside the explicitly selected cell if one is set.
+   *
+   * @generated from enum value: PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE = 3;
+   */
+  PREFER_TARGET_SCOPE = 3,
+
+  /**
+   * Prefer the candidate with the strongest resource/actor match.
+   *
+   * @generated from enum value: PROCESS_LOAD_STRATEGY_BEST_MATCH = 4;
+   */
+  BEST_MATCH = 4,
+}
+
+/**
+ * Describes the enum runtime.v1.ProcessLoadStrategy.
+ */
+export const ProcessLoadStrategySchema: GenEnum<ProcessLoadStrategy> = /*@__PURE__*/
+  enumDesc(file_runtime_v1_process_requests, 0);
+
+/**
  * @generated from enum runtime.v1.ProcessLoadFailure
  */
 export enum ProcessLoadFailure {
@@ -305,11 +425,6 @@ export enum ProcessLoadFailure {
   /**
    * General failures
    *
-   * @generated from enum value: PROCESS_LOAD_FAILURE_LINE_NOT_FOUND = 1;
-   */
-  LINE_NOT_FOUND = 1,
-
-  /**
    * @generated from enum value: PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND = 2;
    */
   PROCESS_RECIPE_NOT_FOUND = 2,
@@ -325,11 +440,21 @@ export enum ProcessLoadFailure {
   RESOURCE_STATE_UNKNOWN = 4,
 
   /**
-   * Fixture related failures
+   * Container related failures
    *
-   * @generated from enum value: PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE = 10;
+   * @generated from enum value: PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER = 10;
    */
-  NO_COMPATIBLE_FIXTURE = 10,
+  NO_COMPATIBLE_CONTAINER = 10,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND = 11;
+   */
+  REQUIRED_SLOT_NOT_FOUND = 11,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND = 12;
+   */
+  REQUIRED_SLOT_TYPE_NOT_FOUND = 12,
 
   /**
    * Tool related failures
@@ -361,21 +486,30 @@ export enum ProcessLoadFailure {
   ROBOT_TOOLING_MISMATCH = 31,
 
   /**
-   * Agent/operator related failueres
+   * Agent/operator related failures
+   *
+   * A human is required but no worker with valid skills exists.
    *
    * @generated from enum value: PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR = 40;
    */
   NO_QUALIFIED_OPERATOR = 40,
 
   /**
-   * @generated from enum value: PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED = 41;
+   * No actor type can perform the task.
+   *
+   * @generated from enum value: PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR = 41;
    */
-  REQUIRED_SKILL_EXPIRED = 41,
+  NO_FEASIBLE_ACTOR = 41,
 
   /**
-   * @generated from enum value: PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR = 42;
+   * @generated from enum value: PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED = 42;
    */
-  NO_FEASIBLE_ACTOR = 42,
+  REQUIRED_SKILL_RESTRICTED = 42,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED = 43;
+   */
+  REQUIRED_SKILL_EXPIRED = 43,
 
   /**
    * Safety / collaboration related failures
@@ -405,13 +539,79 @@ export enum ProcessLoadFailure {
    * @generated from enum value: PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD = 62;
    */
   NO_FEASIBLE_VALIDATION_METHOD = 62,
+
+  /**
+   * Line related failures
+   *
+   * @generated from enum value: PROCESS_LOAD_FAILURE_LINE_NOT_FOUND = 70;
+   */
+  LINE_NOT_FOUND = 70,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_LINE_CLOSED = 71;
+   */
+  LINE_CLOSED = 71,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_LINE_BUSY = 72;
+   */
+  LINE_BUSY = 72,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_LINE_BLOCKED = 73;
+   */
+  LINE_BLOCKED = 73,
+
+  /**
+   * Cell related failures
+   *
+   * @generated from enum value: PROCESS_LOAD_FAILURE_CELL_NOT_FOUND = 80;
+   */
+  CELL_NOT_FOUND = 80,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_CELL_CLOSED = 81;
+   */
+  CELL_CLOSED = 81,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_CELL_BUSY = 82;
+   */
+  CELL_BUSY = 82,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_CELL_BLOCKED = 83;
+   */
+  CELL_BLOCKED = 83,
+
+  /**
+   * Station related failures
+   *
+   * @generated from enum value: PROCESS_LOAD_FAILURE_STATION_NOT_FOUND = 90;
+   */
+  STATION_NOT_FOUND = 90,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_STATION_CLOSED = 91;
+   */
+  STATION_CLOSED = 91,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_STATION_BUSY = 92;
+   */
+  STATION_BUSY = 92,
+
+  /**
+   * @generated from enum value: PROCESS_LOAD_FAILURE_STATION_BLOCKED = 93;
+   */
+  STATION_BLOCKED = 93,
 }
 
 /**
  * Describes the enum runtime.v1.ProcessLoadFailure.
  */
 export const ProcessLoadFailureSchema: GenEnum<ProcessLoadFailure> = /*@__PURE__*/
-  enumDesc(file_runtime_v1_process_requests, 0);
+  enumDesc(file_runtime_v1_process_requests, 1);
 
 /**
  * @generated from enum runtime.v1.ProcessRunIssueSeverity
@@ -441,7 +641,7 @@ export enum ProcessRunIssueSeverity {
  * Describes the enum runtime.v1.ProcessRunIssueSeverity.
  */
 export const ProcessRunIssueSeveritySchema: GenEnum<ProcessRunIssueSeverity> = /*@__PURE__*/
-  enumDesc(file_runtime_v1_process_requests, 1);
+  enumDesc(file_runtime_v1_process_requests, 2);
 
 /**
  * @generated from enum runtime.v1.RequirementImportance
@@ -467,7 +667,7 @@ export enum RequirementImportance {
  * Describes the enum runtime.v1.RequirementImportance.
  */
 export const RequirementImportanceSchema: GenEnum<RequirementImportance> = /*@__PURE__*/
-  enumDesc(file_runtime_v1_process_requests, 2);
+  enumDesc(file_runtime_v1_process_requests, 3);
 
 /**
  * @generated from enum runtime.v1.ProcessRunPrecheckStatus
@@ -504,7 +704,7 @@ export enum ProcessRunPrecheckStatus {
  * Describes the enum runtime.v1.ProcessRunPrecheckStatus.
  */
 export const ProcessRunPrecheckStatusSchema: GenEnum<ProcessRunPrecheckStatus> = /*@__PURE__*/
-  enumDesc(file_runtime_v1_process_requests, 3);
+  enumDesc(file_runtime_v1_process_requests, 4);
 
 /**
  * @generated from enum runtime.v1.ProcessLoadStatus
@@ -539,5 +739,5 @@ export enum ProcessLoadStatus {
  * Describes the enum runtime.v1.ProcessLoadStatus.
  */
 export const ProcessLoadStatusSchema: GenEnum<ProcessLoadStatus> = /*@__PURE__*/
-  enumDesc(file_runtime_v1_process_requests, 4);
+  enumDesc(file_runtime_v1_process_requests, 5);
 

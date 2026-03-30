@@ -7,7 +7,10 @@
 package resourcesv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v11 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,16 +25,114 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// CellStatus describes whether a cell can currently accept or host work.
+//
+// A cell is typically a grouping of stations and related resources. The loader
+// can use this status to quickly reject or prefer a cell before evaluating
+// individual stations.
+//
+// Status should be interpreted as:
+//   - OPEN    -> cell can accept new work now
+//   - BUSY    -> cell is occupied; queueing may still be possible
+//   - CLOSED  -> cell is intentionally unavailable
+//   - BLOCKED -> cell is unavailable due to fault, safety state, maintenance,
+//     or other blocking condition
+//
+// This field is operational and should be considered together with
+// max_concurrent_processes and the status of contained stations.
+type CellStatus int32
+
+const (
+	CellStatus_CELL_STATUS_UNSPECIFIED CellStatus = 0
+	// Cell can accept new work now.
+	CellStatus_CELL_STATUS_OPEN CellStatus = 1
+	// Cell is currently occupied by one or more active runs.
+	// Depending on policy, new runs may still be queued.
+	CellStatus_CELL_STATUS_BUSY CellStatus = 2
+	// Cell is intentionally unavailable for loading or running work.
+	CellStatus_CELL_STATUS_CLOSED CellStatus = 3
+	// Cell is temporarily unavailable due to fault, interlock,
+	// maintenance state, or similar blocking condition.
+	CellStatus_CELL_STATUS_BLOCKED CellStatus = 4
+)
+
+// Enum value maps for CellStatus.
+var (
+	CellStatus_name = map[int32]string{
+		0: "CELL_STATUS_UNSPECIFIED",
+		1: "CELL_STATUS_OPEN",
+		2: "CELL_STATUS_BUSY",
+		3: "CELL_STATUS_CLOSED",
+		4: "CELL_STATUS_BLOCKED",
+	}
+	CellStatus_value = map[string]int32{
+		"CELL_STATUS_UNSPECIFIED": 0,
+		"CELL_STATUS_OPEN":        1,
+		"CELL_STATUS_BUSY":        2,
+		"CELL_STATUS_CLOSED":      3,
+		"CELL_STATUS_BLOCKED":     4,
+	}
+)
+
+func (x CellStatus) Enum() *CellStatus {
+	p := new(CellStatus)
+	*p = x
+	return p
+}
+
+func (x CellStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CellStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_cell_definition_proto_enumTypes[0].Descriptor()
+}
+
+func (CellStatus) Type() protoreflect.EnumType {
+	return &file_resources_v1_cell_definition_proto_enumTypes[0]
+}
+
+func (x CellStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CellStatus.Descriptor instead.
+func (CellStatus) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_cell_definition_proto_rawDescGZIP(), []int{0}
+}
+
+// CellDefinition describes an operational grouping of stations and shared
+// resources inside a line.
+//
+// A cell is useful when multiple stations share workers, robots, assets,
+// safety boundaries, or scheduling constraints. It gives the model a clear
+// middle layer between line-level routing and station-level execution.
+//
+// Typical cell responsibilities:
+// - group stations into a shared execution/safety zone
+// - own resources that are shared across several stations
+// - expose operational state and capacity above individual stations
+// - act as an optional target/selector scope for loaders and planners
 type CellDefinition struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon          string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	StationIds    []string               `protobuf:"bytes,5,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`
-	Custom        *v1.CustomProperties   `protobuf:"bytes,6,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description            string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	StationIds             []string               `protobuf:"bytes,5,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Stations belonging to this cell.
+	Status                 CellStatus             `protobuf:"varint,6,opt,name=status,proto3,enum=resources.v1.CellStatus" json:"status,omitempty"`                                    // Current operational availability of the cell as a whole.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this cell should host concurrently.
+	AllowQueuedProcess     bool                   `protobuf:"varint,8,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the cell is BUSY.
+	ToolInstanceIds        []string               `protobuf:"bytes,9,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`                       // Shared tools mounted, parked, or otherwise directly available here.
+	ContainerInstanceIds   []string               `protobuf:"bytes,10,rep,name=container_instance_ids,json=containerInstanceIds,proto3" json:"container_instance_ids,omitempty"`       // Shared fixtures, trays, pallets, bins, or other concrete containers.
+	RobotInstanceIds       []string               `protobuf:"bytes,11,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`                   // Robots shared across multiple stations inside the cell.
+	AssetInstanceIds       []string               `protobuf:"bytes,12,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`                   // Shared assets such as cameras, HMIs, or feeders serving several stations.
+	MarkerInstanceIds      []string               `protobuf:"bytes,13,rep,name=marker_instance_ids,json=markerInstanceIds,proto3" json:"marker_instance_ids,omitempty"`                // Markers shared for this cell for localization, AR anchoring, or identification.
+	WorkerIds              []string               `protobuf:"bytes,14,rep,name=worker_ids,json=workerIds,proto3" json:"worker_ids,omitempty"`                                          // Shared worker pool for the cell when workers are not bound to a specific station.
+	Frame                  *v1.LocalizedPose      `protobuf:"bytes,15,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Cell-local reference frame or zone anchor.
+	Custom                 *v11.CustomProperties  `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *CellDefinition) Reset() {
@@ -99,7 +200,77 @@ func (x *CellDefinition) GetStationIds() []string {
 	return nil
 }
 
-func (x *CellDefinition) GetCustom() *v1.CustomProperties {
+func (x *CellDefinition) GetStatus() CellStatus {
+	if x != nil {
+		return x.Status
+	}
+	return CellStatus_CELL_STATUS_UNSPECIFIED
+}
+
+func (x *CellDefinition) GetMaxConcurrentProcesses() int32 {
+	if x != nil {
+		return x.MaxConcurrentProcesses
+	}
+	return 0
+}
+
+func (x *CellDefinition) GetAllowQueuedProcess() bool {
+	if x != nil {
+		return x.AllowQueuedProcess
+	}
+	return false
+}
+
+func (x *CellDefinition) GetToolInstanceIds() []string {
+	if x != nil {
+		return x.ToolInstanceIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetContainerInstanceIds() []string {
+	if x != nil {
+		return x.ContainerInstanceIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetRobotInstanceIds() []string {
+	if x != nil {
+		return x.RobotInstanceIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetAssetInstanceIds() []string {
+	if x != nil {
+		return x.AssetInstanceIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetMarkerInstanceIds() []string {
+	if x != nil {
+		return x.MarkerInstanceIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetWorkerIds() []string {
+	if x != nil {
+		return x.WorkerIds
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetFrame() *v1.LocalizedPose {
+	if x != nil {
+		return x.Frame
+	}
+	return nil
+}
+
+func (x *CellDefinition) GetCustom() *v11.CustomProperties {
 	if x != nil {
 		return x.Custom
 	}
@@ -154,17 +325,36 @@ var File_resources_v1_cell_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a!common/v1/custom_properties.proto\"\xc0\x01\n" +
+	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbb\x05\n" +
 	"\x0eCellDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1f\n" +
 	"\vstation_ids\x18\x05 \x03(\tR\n" +
-	"stationIds\x123\n" +
-	"\x06custom\x18\x06 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"stationIds\x12:\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x18.resources.v1.CellStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12A\n" +
+	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x120\n" +
+	"\x14allow_queued_process\x18\b \x01(\bR\x12allowQueuedProcess\x12*\n" +
+	"\x11tool_instance_ids\x18\t \x03(\tR\x0ftoolInstanceIds\x124\n" +
+	"\x16container_instance_ids\x18\n" +
+	" \x03(\tR\x14containerInstanceIds\x12,\n" +
+	"\x12robot_instance_ids\x18\v \x03(\tR\x10robotInstanceIds\x12,\n" +
+	"\x12asset_instance_ids\x18\f \x03(\tR\x10assetInstanceIds\x12.\n" +
+	"\x13marker_instance_ids\x18\r \x03(\tR\x11markerInstanceIds\x12\x1d\n" +
+	"\n" +
+	"worker_ids\x18\x0e \x03(\tR\tworkerIds\x120\n" +
+	"\x05frame\x18\x0f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
+	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
 	"\x0fCellDefinitions\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05itemsB\xc0\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05items*\x86\x01\n" +
+	"\n" +
+	"CellStatus\x12\x1b\n" +
+	"\x17CELL_STATUS_UNSPECIFIED\x10\x00\x12\x14\n" +
+	"\x10CELL_STATUS_OPEN\x10\x01\x12\x14\n" +
+	"\x10CELL_STATUS_BUSY\x10\x02\x12\x16\n" +
+	"\x12CELL_STATUS_CLOSED\x10\x03\x12\x17\n" +
+	"\x13CELL_STATUS_BLOCKED\x10\x04B\xc0\x01\n" +
 	"\x10com.resources.v1B\x13CellDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
@@ -179,20 +369,25 @@ func file_resources_v1_cell_definition_proto_rawDescGZIP() []byte {
 	return file_resources_v1_cell_definition_proto_rawDescData
 }
 
+var file_resources_v1_cell_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_resources_v1_cell_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_cell_definition_proto_goTypes = []any{
-	(*CellDefinition)(nil),      // 0: resources.v1.CellDefinition
-	(*CellDefinitions)(nil),     // 1: resources.v1.CellDefinitions
-	(*v1.CustomProperties)(nil), // 2: common.v1.CustomProperties
+	(CellStatus)(0),              // 0: resources.v1.CellStatus
+	(*CellDefinition)(nil),       // 1: resources.v1.CellDefinition
+	(*CellDefinitions)(nil),      // 2: resources.v1.CellDefinitions
+	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
+	(*v11.CustomProperties)(nil), // 4: common.v1.CustomProperties
 }
 var file_resources_v1_cell_definition_proto_depIdxs = []int32{
-	2, // 0: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
-	0, // 1: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // 0: resources.v1.CellDefinition.status:type_name -> resources.v1.CellStatus
+	3, // 1: resources.v1.CellDefinition.frame:type_name -> geometry.v1.LocalizedPose
+	4, // 2: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
+	1, // 3: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_cell_definition_proto_init() }
@@ -205,13 +400,14 @@ func file_resources_v1_cell_definition_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_cell_definition_proto_rawDesc), len(file_resources_v1_cell_definition_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_resources_v1_cell_definition_proto_goTypes,
 		DependencyIndexes: file_resources_v1_cell_definition_proto_depIdxs,
+		EnumInfos:         file_resources_v1_cell_definition_proto_enumTypes,
 		MessageInfos:      file_resources_v1_cell_definition_proto_msgTypes,
 	}.Build()
 	File_resources_v1_cell_definition_proto = out.File

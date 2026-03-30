@@ -28,33 +28,40 @@ namespace Messages.Resources.V1 {
             "dXJjZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9u",
             "L3YxL2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhZnZW9tZXRyeS92MS9wb3Nl",
             "LnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVz",
-            "LnByb3RvIqUEChFTdGF0aW9uRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQS",
+            "LnByb3RvItkFChFTdGF0aW9uRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQS",
             "HQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
             "GAMgASgJUgtkZXNjcmlwdGlvbhISCgRpY29uGAQgASgJUgRpY29uEjcKBHR5",
             "cGUYBSABKA4yGS5yZXNvdXJjZXMudjEuU3RhdGlvblR5cGVCCLpIBYIBAhAB",
-            "UgR0eXBlEioKEXRvb2xfaW5zdGFuY2VfaWRzGAYgAygJUg90b29sSW5zdGFu",
-            "Y2VJZHMSNAoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgHIAMoCVIUY29udGFp",
-            "bmVySW5zdGFuY2VJZHMSLAoScm9ib3RfaW5zdGFuY2VfaWRzGAggAygJUhBy",
-            "b2JvdEluc3RhbmNlSWRzEiwKEmFzc2V0X2luc3RhbmNlX2lkcxgJIAMoCVIQ",
-            "YXNzZXRJbnN0YW5jZUlkcxIuChNtYXJrZXJfaW5zdGFuY2VfaWRzGAogAygJ",
-            "UhFtYXJrZXJJbnN0YW5jZUlkcxIdCgp3b3JrZXJfaWRzGAsgAygJUgl3b3Jr",
-            "ZXJJZHMSMAoFZnJhbWUYDCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQ",
-            "b3NlUgVmcmFtZRIzCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9t",
+            "UgR0eXBlEj0KBnN0YXR1cxgGIAEoDjIbLnJlc291cmNlcy52MS5TdGF0aW9u",
+            "U3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEkEKGG1heF9jb25jdXJyZW50X3By",
+            "b2Nlc3NlcxgHIAEoBUIHukgEGgIoAFIWbWF4Q29uY3VycmVudFByb2Nlc3Nl",
+            "cxIwChRhbGxvd19xdWV1ZWRfcHJvY2VzcxgIIAEoCFISYWxsb3dRdWV1ZWRQ",
+            "cm9jZXNzEioKEXRvb2xfaW5zdGFuY2VfaWRzGAkgAygJUg90b29sSW5zdGFu",
+            "Y2VJZHMSNAoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgKIAMoCVIUY29udGFp",
+            "bmVySW5zdGFuY2VJZHMSLAoScm9ib3RfaW5zdGFuY2VfaWRzGAsgAygJUhBy",
+            "b2JvdEluc3RhbmNlSWRzEiwKEmFzc2V0X2luc3RhbmNlX2lkcxgMIAMoCVIQ",
+            "YXNzZXRJbnN0YW5jZUlkcxIuChNtYXJrZXJfaW5zdGFuY2VfaWRzGA0gAygJ",
+            "UhFtYXJrZXJJbnN0YW5jZUlkcxIdCgp3b3JrZXJfaWRzGA4gAygJUgl3b3Jr",
+            "ZXJJZHMSMAoFZnJhbWUYDyABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQ",
+            "b3NlUgVmcmFtZRIzCgZjdXN0b20YECABKAsyGy5jb21tb24udjEuQ3VzdG9t",
             "UHJvcGVydGllc1IGY3VzdG9tIksKElN0YXRpb25EZWZpbml0aW9ucxI1CgVp",
             "dGVtcxgBIAMoCzIfLnJlc291cmNlcy52MS5TdGF0aW9uRGVmaW5pdGlvblIF",
             "aXRlbXMqqwEKC1N0YXRpb25UeXBlEhwKGFNUQVRJT05fVFlQRV9VTlNQRUNJ",
             "RklFRBAAEhgKFFNUQVRJT05fVFlQRV9TVE9SQUdFEAESHwobU1RBVElPTl9U",
             "WVBFX01BTlVBTF9TVEFUSU9OEAISIgoeU1RBVElPTl9UWVBFX0FVVE9NQVRJ",
-            "Q19TVEFUSU9OEAMSHwobU1RBVElPTl9UWVBFX0hZQlJJRF9TVEFUSU9OEARC",
-            "wwEKEGNvbS5yZXNvdXJjZXMudjFCFlN0YXRpb25EZWZpbml0aW9uUHJvdG9Q",
-            "AVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291",
-            "cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNl",
-            "cy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0",
-            "YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
+            "Q19TVEFUSU9OEAMSHwobU1RBVElPTl9UWVBFX0hZQlJJRF9TVEFUSU9OEAQq",
+            "mAEKDVN0YXRpb25TdGF0dXMSHgoaU1RBVElPTl9TVEFUVVNfVU5TUEVDSUZJ",
+            "RUQQABIXChNTVEFUSU9OX1NUQVRVU19PUEVOEAESFwoTU1RBVElPTl9TVEFU",
+            "VVNfQlVTWRACEhkKFVNUQVRJT05fU1RBVFVTX0NMT1NFRBADEhoKFlNUQVRJ",
+            "T05fU1RBVFVTX0JMT0NLRUQQBELDAQoQY29tLnJlc291cmNlcy52MUIWU3Rh",
+            "dGlvbkRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJv",
+            "dG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhY",
+            "qgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVz",
+            "b3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.StationType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinition), global::Messages.Resources.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "ToolInstanceIds", "ContainerInstanceIds", "RobotInstanceIds", "AssetInstanceIds", "MarkerInstanceIds", "WorkerIds", "Frame", "Custom" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.StationType), typeof(global::Messages.Resources.V1.StationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinition), global::Messages.Resources.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "ToolInstanceIds", "ContainerInstanceIds", "RobotInstanceIds", "AssetInstanceIds", "MarkerInstanceIds", "WorkerIds", "Frame", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinitions), global::Messages.Resources.V1.StationDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -70,9 +77,60 @@ namespace Messages.Resources.V1 {
     [pbr::OriginalName("STATION_TYPE_HYBRID_STATION")] HybridStation = 4,
   }
 
+  /// <summary>
+  /// StationStatus describes whether a station can currently accept or execute work.
+  ///
+  /// This is an operational/runtime-oriented state used by loaders, planners,
+  /// dispatchers, and UIs when deciding whether a ProcessRun can be started here.
+  ///
+  /// Status should be interpreted as:
+  /// - OPEN    -> can accept new work now
+  /// - BUSY    -> currently occupied; may still allow queueing
+  /// - CLOSED  -> intentionally unavailable for new work
+  /// - BLOCKED -> unavailable due to a fault, interlock, maintenance lock, or
+  ///              other condition that should prevent execution
+  ///
+  /// A station may also expose capacity constraints through
+  /// max_concurrent_processes, which is separate from this status field.
+  /// </summary>
+  public enum StationStatus {
+    [pbr::OriginalName("STATION_STATUS_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Station can accept new work now.
+    /// </summary>
+    [pbr::OriginalName("STATION_STATUS_OPEN")] Open = 1,
+    /// <summary>
+    /// Station is currently occupied by one or more active runs.
+    /// Depending on loader policy and allow_queued_process, new runs may be queued.
+    /// </summary>
+    [pbr::OriginalName("STATION_STATUS_BUSY")] Busy = 2,
+    /// <summary>
+    /// Station is intentionally unavailable for loading or running work.
+    /// </summary>
+    [pbr::OriginalName("STATION_STATUS_CLOSED")] Closed = 3,
+    /// <summary>
+    /// Station is temporarily unavailable due to fault, safety interlock,
+    /// maintenance state, missing prerequisite, or similar blocking condition.
+    /// </summary>
+    [pbr::OriginalName("STATION_STATUS_BLOCKED")] Blocked = 4,
+  }
+
   #endregion
 
   #region Messages
+  /// <summary>
+  /// StationDefinition describes a concrete execution point inside a cell or line.
+  ///
+  /// A station is the most specific location where work is typically loaded,
+  /// queued, executed, and tracked at runtime. Stations are therefore the primary
+  /// target for task/resource matching in loader/planner logic.
+  ///
+  /// Typical station responsibilities:
+  /// - host concrete task execution
+  /// - own station-local tools, containers, robots, markers, and frame
+  /// - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
+  /// - optionally allow queueing when already occupied
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class StationDefinition : pb::IMessage<StationDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -113,6 +171,9 @@ namespace Messages.Resources.V1 {
       description_ = other.description_;
       icon_ = other.icon_;
       type_ = other.type_;
+      status_ = other.status_;
+      maxConcurrentProcesses_ = other.maxConcurrentProcesses_;
+      allowQueuedProcess_ = other.allowQueuedProcess_;
       toolInstanceIds_ = other.toolInstanceIds_.Clone();
       containerInstanceIds_ = other.containerInstanceIds_.Clone();
       robotInstanceIds_ = other.robotInstanceIds_.Clone();
@@ -181,6 +242,9 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
     private global::Messages.Resources.V1.StationType type_ = global::Messages.Resources.V1.StationType.Unspecified;
+    /// <summary>
+    /// Broad station classification, e.g. manual, automatic, or hybrid.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Resources.V1.StationType Type {
@@ -190,11 +254,59 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 6;
+    private global::Messages.Resources.V1.StationStatus status_ = global::Messages.Resources.V1.StationStatus.Unspecified;
+    /// <summary>
+    /// Current operational availability used by loaders, planners, and UIs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.StationStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_concurrent_processes" field.</summary>
+    public const int MaxConcurrentProcessesFieldNumber = 7;
+    private int maxConcurrentProcesses_;
+    /// <summary>
+    /// Maximum number of active/queued processes this station should host concurrently.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int MaxConcurrentProcesses {
+      get { return maxConcurrentProcesses_; }
+      set {
+        maxConcurrentProcesses_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "allow_queued_process" field.</summary>
+    public const int AllowQueuedProcessFieldNumber = 8;
+    private bool allowQueuedProcess_;
+    /// <summary>
+    /// If true, loaders may create queued ProcessRuns when the station is BUSY.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool AllowQueuedProcess {
+      get { return allowQueuedProcess_; }
+      set {
+        allowQueuedProcess_ = value;
+      }
+    }
+
     /// <summary>Field number for the "tool_instance_ids" field.</summary>
-    public const int ToolInstanceIdsFieldNumber = 6;
+    public const int ToolInstanceIdsFieldNumber = 9;
     private static readonly pb::FieldCodec<string> _repeated_toolInstanceIds_codec
-        = pb::FieldCodec.ForString(50);
+        = pb::FieldCodec.ForString(74);
     private readonly pbc::RepeatedField<string> toolInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Station-local tools mounted, parked, or otherwise directly available here.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ToolInstanceIds {
@@ -202,10 +314,13 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "container_instance_ids" field.</summary>
-    public const int ContainerInstanceIdsFieldNumber = 7;
+    public const int ContainerInstanceIdsFieldNumber = 10;
     private static readonly pb::FieldCodec<string> _repeated_containerInstanceIds_codec
-        = pb::FieldCodec.ForString(58);
+        = pb::FieldCodec.ForString(82);
     private readonly pbc::RepeatedField<string> containerInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Station-local fixtures, trays, pallets, bins, or other concrete containers.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ContainerInstanceIds {
@@ -213,10 +328,13 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "robot_instance_ids" field.</summary>
-    public const int RobotInstanceIdsFieldNumber = 8;
+    public const int RobotInstanceIdsFieldNumber = 11;
     private static readonly pb::FieldCodec<string> _repeated_robotInstanceIds_codec
-        = pb::FieldCodec.ForString(66);
+        = pb::FieldCodec.ForString(90);
     private readonly pbc::RepeatedField<string> robotInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Robots directly assigned to or executing within this station.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> RobotInstanceIds {
@@ -224,10 +342,13 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "asset_instance_ids" field.</summary>
-    public const int AssetInstanceIdsFieldNumber = 9;
+    public const int AssetInstanceIdsFieldNumber = 12;
     private static readonly pb::FieldCodec<string> _repeated_assetInstanceIds_codec
-        = pb::FieldCodec.ForString(74);
+        = pb::FieldCodec.ForString(98);
     private readonly pbc::RepeatedField<string> assetInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Station-local assets such as cameras, HMIs, feeders, or sensors.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> AssetInstanceIds {
@@ -235,12 +356,12 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "marker_instance_ids" field.</summary>
-    public const int MarkerInstanceIdsFieldNumber = 10;
+    public const int MarkerInstanceIdsFieldNumber = 13;
     private static readonly pb::FieldCodec<string> _repeated_markerInstanceIds_codec
-        = pb::FieldCodec.ForString(82);
+        = pb::FieldCodec.ForString(106);
     private readonly pbc::RepeatedField<string> markerInstanceIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// move to cell?
+    /// Markers used specifically at this station for localization, AR anchoring, or identification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -249,12 +370,12 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "worker_ids" field.</summary>
-    public const int WorkerIdsFieldNumber = 11;
+    public const int WorkerIdsFieldNumber = 14;
     private static readonly pb::FieldCodec<string> _repeated_workerIds_codec
-        = pb::FieldCodec.ForString(90);
+        = pb::FieldCodec.ForString(114);
     private readonly pbc::RepeatedField<string> workerIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// move to cell?
+    /// Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -263,8 +384,11 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "frame" field.</summary>
-    public const int FrameFieldNumber = 12;
+    public const int FrameFieldNumber = 15;
     private global::Messages.Common.V1.LocalizedPose frame_;
+    /// <summary>
+    /// Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.LocalizedPose Frame {
@@ -275,7 +399,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 13;
+    public const int CustomFieldNumber = 16;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -306,6 +430,9 @@ namespace Messages.Resources.V1 {
       if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
       if (Type != other.Type) return false;
+      if (Status != other.Status) return false;
+      if (MaxConcurrentProcesses != other.MaxConcurrentProcesses) return false;
+      if (AllowQueuedProcess != other.AllowQueuedProcess) return false;
       if(!toolInstanceIds_.Equals(other.toolInstanceIds_)) return false;
       if(!containerInstanceIds_.Equals(other.containerInstanceIds_)) return false;
       if(!robotInstanceIds_.Equals(other.robotInstanceIds_)) return false;
@@ -326,6 +453,9 @@ namespace Messages.Resources.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Type != global::Messages.Resources.V1.StationType.Unspecified) hash ^= Type.GetHashCode();
+      if (Status != global::Messages.Resources.V1.StationStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (MaxConcurrentProcesses != 0) hash ^= MaxConcurrentProcesses.GetHashCode();
+      if (AllowQueuedProcess != false) hash ^= AllowQueuedProcess.GetHashCode();
       hash ^= toolInstanceIds_.GetHashCode();
       hash ^= containerInstanceIds_.GetHashCode();
       hash ^= robotInstanceIds_.GetHashCode();
@@ -372,6 +502,18 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (Status != global::Messages.Resources.V1.StationStatus.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Status);
+      }
+      if (MaxConcurrentProcesses != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(MaxConcurrentProcesses);
+      }
+      if (AllowQueuedProcess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(AllowQueuedProcess);
+      }
       toolInstanceIds_.WriteTo(output, _repeated_toolInstanceIds_codec);
       containerInstanceIds_.WriteTo(output, _repeated_containerInstanceIds_codec);
       robotInstanceIds_.WriteTo(output, _repeated_robotInstanceIds_codec);
@@ -379,11 +521,11 @@ namespace Messages.Resources.V1 {
       markerInstanceIds_.WriteTo(output, _repeated_markerInstanceIds_codec);
       workerIds_.WriteTo(output, _repeated_workerIds_codec);
       if (frame_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(122);
         output.WriteMessage(Frame);
       }
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(130, 1);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -416,6 +558,18 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
+      if (Status != global::Messages.Resources.V1.StationStatus.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Status);
+      }
+      if (MaxConcurrentProcesses != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(MaxConcurrentProcesses);
+      }
+      if (AllowQueuedProcess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(AllowQueuedProcess);
+      }
       toolInstanceIds_.WriteTo(ref output, _repeated_toolInstanceIds_codec);
       containerInstanceIds_.WriteTo(ref output, _repeated_containerInstanceIds_codec);
       robotInstanceIds_.WriteTo(ref output, _repeated_robotInstanceIds_codec);
@@ -423,11 +577,11 @@ namespace Messages.Resources.V1 {
       markerInstanceIds_.WriteTo(ref output, _repeated_markerInstanceIds_codec);
       workerIds_.WriteTo(ref output, _repeated_workerIds_codec);
       if (frame_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(122);
         output.WriteMessage(Frame);
       }
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(130, 1);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -455,6 +609,15 @@ namespace Messages.Resources.V1 {
       if (Type != global::Messages.Resources.V1.StationType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
+      if (Status != global::Messages.Resources.V1.StationStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (MaxConcurrentProcesses != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxConcurrentProcesses);
+      }
+      if (AllowQueuedProcess != false) {
+        size += 1 + 1;
+      }
       size += toolInstanceIds_.CalculateSize(_repeated_toolInstanceIds_codec);
       size += containerInstanceIds_.CalculateSize(_repeated_containerInstanceIds_codec);
       size += robotInstanceIds_.CalculateSize(_repeated_robotInstanceIds_codec);
@@ -465,7 +628,7 @@ namespace Messages.Resources.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
       }
       if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -493,6 +656,15 @@ namespace Messages.Resources.V1 {
       }
       if (other.Type != global::Messages.Resources.V1.StationType.Unspecified) {
         Type = other.Type;
+      }
+      if (other.Status != global::Messages.Resources.V1.StationStatus.Unspecified) {
+        Status = other.Status;
+      }
+      if (other.MaxConcurrentProcesses != 0) {
+        MaxConcurrentProcesses = other.MaxConcurrentProcesses;
+      }
+      if (other.AllowQueuedProcess != false) {
+        AllowQueuedProcess = other.AllowQueuedProcess;
       }
       toolInstanceIds_.Add(other.toolInstanceIds_);
       containerInstanceIds_.Add(other.containerInstanceIds_);
@@ -551,38 +723,50 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.StationType) input.ReadEnum();
             break;
           }
-          case 50: {
-            toolInstanceIds_.AddEntriesFrom(input, _repeated_toolInstanceIds_codec);
+          case 48: {
+            Status = (global::Messages.Resources.V1.StationStatus) input.ReadEnum();
             break;
           }
-          case 58: {
-            containerInstanceIds_.AddEntriesFrom(input, _repeated_containerInstanceIds_codec);
+          case 56: {
+            MaxConcurrentProcesses = input.ReadInt32();
             break;
           }
-          case 66: {
-            robotInstanceIds_.AddEntriesFrom(input, _repeated_robotInstanceIds_codec);
+          case 64: {
+            AllowQueuedProcess = input.ReadBool();
             break;
           }
           case 74: {
-            assetInstanceIds_.AddEntriesFrom(input, _repeated_assetInstanceIds_codec);
+            toolInstanceIds_.AddEntriesFrom(input, _repeated_toolInstanceIds_codec);
             break;
           }
           case 82: {
-            markerInstanceIds_.AddEntriesFrom(input, _repeated_markerInstanceIds_codec);
+            containerInstanceIds_.AddEntriesFrom(input, _repeated_containerInstanceIds_codec);
             break;
           }
           case 90: {
-            workerIds_.AddEntriesFrom(input, _repeated_workerIds_codec);
+            robotInstanceIds_.AddEntriesFrom(input, _repeated_robotInstanceIds_codec);
             break;
           }
           case 98: {
+            assetInstanceIds_.AddEntriesFrom(input, _repeated_assetInstanceIds_codec);
+            break;
+          }
+          case 106: {
+            markerInstanceIds_.AddEntriesFrom(input, _repeated_markerInstanceIds_codec);
+            break;
+          }
+          case 114: {
+            workerIds_.AddEntriesFrom(input, _repeated_workerIds_codec);
+            break;
+          }
+          case 122: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 106: {
+          case 130: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -628,38 +812,50 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.StationType) input.ReadEnum();
             break;
           }
-          case 50: {
-            toolInstanceIds_.AddEntriesFrom(ref input, _repeated_toolInstanceIds_codec);
+          case 48: {
+            Status = (global::Messages.Resources.V1.StationStatus) input.ReadEnum();
             break;
           }
-          case 58: {
-            containerInstanceIds_.AddEntriesFrom(ref input, _repeated_containerInstanceIds_codec);
+          case 56: {
+            MaxConcurrentProcesses = input.ReadInt32();
             break;
           }
-          case 66: {
-            robotInstanceIds_.AddEntriesFrom(ref input, _repeated_robotInstanceIds_codec);
+          case 64: {
+            AllowQueuedProcess = input.ReadBool();
             break;
           }
           case 74: {
-            assetInstanceIds_.AddEntriesFrom(ref input, _repeated_assetInstanceIds_codec);
+            toolInstanceIds_.AddEntriesFrom(ref input, _repeated_toolInstanceIds_codec);
             break;
           }
           case 82: {
-            markerInstanceIds_.AddEntriesFrom(ref input, _repeated_markerInstanceIds_codec);
+            containerInstanceIds_.AddEntriesFrom(ref input, _repeated_containerInstanceIds_codec);
             break;
           }
           case 90: {
-            workerIds_.AddEntriesFrom(ref input, _repeated_workerIds_codec);
+            robotInstanceIds_.AddEntriesFrom(ref input, _repeated_robotInstanceIds_codec);
             break;
           }
           case 98: {
+            assetInstanceIds_.AddEntriesFrom(ref input, _repeated_assetInstanceIds_codec);
+            break;
+          }
+          case 106: {
+            markerInstanceIds_.AddEntriesFrom(ref input, _repeated_markerInstanceIds_codec);
+            break;
+          }
+          case 114: {
+            workerIds_.AddEntriesFrom(ref input, _repeated_workerIds_codec);
+            break;
+          }
+          case 122: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 106: {
+          case 130: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

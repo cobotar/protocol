@@ -27,31 +27,31 @@ const (
 type SequenceRunState int32
 
 const (
-	SequenceRunState_SEQUENCE_RUN_STATE_UNSPECIFIED          SequenceRunState = 0
-	SequenceRunState_SEQUENCE_RUN_STATE_MISSING_PRECONDITION SequenceRunState = 1
-	SequenceRunState_SEQUENCE_RUN_STATE_WAITING              SequenceRunState = 2
-	SequenceRunState_SEQUENCE_RUN_STATE_IN_PROGRESS          SequenceRunState = 3
-	SequenceRunState_SEQUENCE_RUN_STATE_COMPLETED            SequenceRunState = 4
-	SequenceRunState_SEQUENCE_RUN_STATE_ABORTED              SequenceRunState = 5
+	SequenceRunState_SEQUENCE_RUN_STATE_UNSPECIFIED SequenceRunState = 0
+	SequenceRunState_SEQUENCE_RUN_STATE_NOT_READY   SequenceRunState = 1
+	SequenceRunState_SEQUENCE_RUN_STATE_READY       SequenceRunState = 2
+	SequenceRunState_SEQUENCE_RUN_STATE_IN_PROGRESS SequenceRunState = 3
+	SequenceRunState_SEQUENCE_RUN_STATE_DONE        SequenceRunState = 4
+	SequenceRunState_SEQUENCE_RUN_STATE_ABORTED     SequenceRunState = 5
 )
 
 // Enum value maps for SequenceRunState.
 var (
 	SequenceRunState_name = map[int32]string{
 		0: "SEQUENCE_RUN_STATE_UNSPECIFIED",
-		1: "SEQUENCE_RUN_STATE_MISSING_PRECONDITION",
-		2: "SEQUENCE_RUN_STATE_WAITING",
+		1: "SEQUENCE_RUN_STATE_NOT_READY",
+		2: "SEQUENCE_RUN_STATE_READY",
 		3: "SEQUENCE_RUN_STATE_IN_PROGRESS",
-		4: "SEQUENCE_RUN_STATE_COMPLETED",
+		4: "SEQUENCE_RUN_STATE_DONE",
 		5: "SEQUENCE_RUN_STATE_ABORTED",
 	}
 	SequenceRunState_value = map[string]int32{
-		"SEQUENCE_RUN_STATE_UNSPECIFIED":          0,
-		"SEQUENCE_RUN_STATE_MISSING_PRECONDITION": 1,
-		"SEQUENCE_RUN_STATE_WAITING":              2,
-		"SEQUENCE_RUN_STATE_IN_PROGRESS":          3,
-		"SEQUENCE_RUN_STATE_COMPLETED":            4,
-		"SEQUENCE_RUN_STATE_ABORTED":              5,
+		"SEQUENCE_RUN_STATE_UNSPECIFIED": 0,
+		"SEQUENCE_RUN_STATE_NOT_READY":   1,
+		"SEQUENCE_RUN_STATE_READY":       2,
+		"SEQUENCE_RUN_STATE_IN_PROGRESS": 3,
+		"SEQUENCE_RUN_STATE_DONE":        4,
+		"SEQUENCE_RUN_STATE_ABORTED":     5,
 	}
 )
 
@@ -270,13 +270,13 @@ const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	" \x01(\bR\x0fcanBulkComplete\x12<\n" +
 	"\x0fassigned_actors\x18\v \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\"=\n" +
 	"\fSequenceRuns\x12-\n" +
-	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xe9\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xd7\x01\n" +
 	"\x10SequenceRunState\x12\"\n" +
-	"\x1eSEQUENCE_RUN_STATE_UNSPECIFIED\x10\x00\x12+\n" +
-	"'SEQUENCE_RUN_STATE_MISSING_PRECONDITION\x10\x01\x12\x1e\n" +
-	"\x1aSEQUENCE_RUN_STATE_WAITING\x10\x02\x12\"\n" +
-	"\x1eSEQUENCE_RUN_STATE_IN_PROGRESS\x10\x03\x12 \n" +
-	"\x1cSEQUENCE_RUN_STATE_COMPLETED\x10\x04\x12\x1e\n" +
+	"\x1eSEQUENCE_RUN_STATE_UNSPECIFIED\x10\x00\x12 \n" +
+	"\x1cSEQUENCE_RUN_STATE_NOT_READY\x10\x01\x12\x1c\n" +
+	"\x18SEQUENCE_RUN_STATE_READY\x10\x02\x12\"\n" +
+	"\x1eSEQUENCE_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1b\n" +
+	"\x17SEQUENCE_RUN_STATE_DONE\x10\x04\x12\x1e\n" +
 	"\x1aSEQUENCE_RUN_STATE_ABORTED\x10\x05B\xaf\x01\n" +
 	"\x0ecom.runtime.v1B\x10SequenceRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"

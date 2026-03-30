@@ -27,28 +27,28 @@ namespace Messages.Capability.V1 {
             "CiRjYXBhYmlsaXR5L3YxL3Rvb2xfcmVxdWlyZW1lbnQucHJvdG8SDWNhcGFi",
             "aWxpdHkudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxomY2FwYWJp",
             "bGl0eS92MS9jYXBhYmlsaXR5X3Byb2ZpbGUucHJvdG8aJGNhcGFiaWxpdHkv",
-            "djEvc2tpbGxfZGVmaW5pdGlvbi5wcm90byK1AgoPVG9vbFJlcXVpcmVtZW50",
-            "EjUKBHJvbGUYASABKA4yFy5jYXBhYmlsaXR5LnYxLlRvb2xSb2xlQgi6SAWC",
-            "AQIQAVIEcm9sZRJbChNyZXF1aXJlZF9wcm9wZXJ0aWVzGAIgAygOMhsuY2Fw",
-            "YWJpbGl0eS52MS5Ub29sUHJvcGVydHlCDbpICpIBByIFggECEAFSEnJlcXVp",
-            "cmVkUHJvcGVydGllcxJPChJtaW5pbXVtX2NhcGFiaWxpdHkYAyABKAsyIC5j",
-            "YXBhYmlsaXR5LnYxLkNhcGFiaWxpdHlQcm9maWxlUhFtaW5pbXVtQ2FwYWJp",
-            "bGl0eRI9ChthbGxvd2VkX3Rvb2xfZGVmaW5pdGlvbl9pZHMYBCADKAlSGGFs",
-            "bG93ZWRUb29sRGVmaW5pdGlvbklkcyrvAQoMVG9vbFByb3BlcnR5Eh0KGVRP",
-            "T0xfUFJPUEVSVFlfVU5TUEVDSUZJRUQQABIjCh9UT09MX1BST1BFUlRZX1RP",
-            "UlFVRV9DT05UUk9MTEVEEAESGgoWVE9PTF9QUk9QRVJUWV9FU0RfU0FGRRAC",
-            "EhsKF1RPT0xfUFJPUEVSVFlfSU5TVUxBVEVEEAMSJAogVE9PTF9QUk9QRVJU",
-            "WV9DT0xMQUJPUkFUSVZFX1NBRkUQBBIcChhUT09MX1BST1BFUlRZX0NBTElC",
-            "UkFURUQQBRIeChpUT09MX1BST1BFUlRZX1FVSUNLX0NIQU5HRRAGQsgBChFj",
-            "b20uY2FwYWJpbGl0eS52MUIUVG9vbFJlcXVpcmVtZW50UHJvdG9QAVo/Z2l0",
-            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NhcGFiaWxpdHkv",
-            "djE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2FwYWJpbGl0eS5W",
-            "McoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQQk1ldGFkYXRh",
-            "6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw=="));
+            "djEvc2tpbGxfZGVmaW5pdGlvbi5wcm90byK8AgoPVG9vbFJlcXVpcmVtZW50",
+            "EjwKBXJvbGVzGAEgAygOMhcuY2FwYWJpbGl0eS52MS5Ub29sUm9sZUINukgK",
+            "kgEHIgWCAQIQAVIFcm9sZXMSWwoTcmVxdWlyZWRfcHJvcGVydGllcxgCIAMo",
+            "DjIbLmNhcGFiaWxpdHkudjEuVG9vbFByb3BlcnR5Qg26SAqSAQciBYIBAhAB",
+            "UhJyZXF1aXJlZFByb3BlcnRpZXMSTwoSbWluaW11bV9jYXBhYmlsaXR5GAMg",
+            "ASgLMiAuY2FwYWJpbGl0eS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRbWluaW11",
+            "bUNhcGFiaWxpdHkSPQobYWxsb3dlZF90b29sX2RlZmluaXRpb25faWRzGAQg",
+            "AygJUhhhbGxvd2VkVG9vbERlZmluaXRpb25JZHMq7wEKDFRvb2xQcm9wZXJ0",
+            "eRIdChlUT09MX1BST1BFUlRZX1VOU1BFQ0lGSUVEEAASIwofVE9PTF9QUk9Q",
+            "RVJUWV9UT1JRVUVfQ09OVFJPTExFRBABEhoKFlRPT0xfUFJPUEVSVFlfRVNE",
+            "X1NBRkUQAhIbChdUT09MX1BST1BFUlRZX0lOU1VMQVRFRBADEiQKIFRPT0xf",
+            "UFJPUEVSVFlfQ09MTEFCT1JBVElWRV9TQUZFEAQSHAoYVE9PTF9QUk9QRVJU",
+            "WV9DQUxJQlJBVEVEEAUSHgoaVE9PTF9QUk9QRVJUWV9RVUlDS19DSEFOR0UQ",
+            "BkLIAQoRY29tLmNhcGFiaWxpdHkudjFCFFRvb2xSZXF1aXJlbWVudFByb3Rv",
+            "UAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jYXBh",
+            "YmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NYWKoCFk1lc3NhZ2VzLkNhcGFi",
+            "aWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZQ2FwYWJpbGl0eVxWMVxHUEJN",
+            "ZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.CapabilityProfileReflection.Descriptor, global::Messages.Capability.V1.SkillDefinitionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Capability.V1.ToolProperty), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ToolRequirement), global::Messages.Capability.V1.ToolRequirement.Parser, new[]{ "Role", "RequiredProperties", "MinimumCapability", "AllowedToolDefinitionIds" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.ToolRequirement), global::Messages.Capability.V1.ToolRequirement.Parser, new[]{ "Roles", "RequiredProperties", "MinimumCapability", "AllowedToolDefinitionIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -103,7 +103,7 @@ namespace Messages.Capability.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ToolRequirement(ToolRequirement other) : this() {
-      role_ = other.role_;
+      roles_ = other.roles_.Clone();
       requiredProperties_ = other.requiredProperties_.Clone();
       minimumCapability_ = other.minimumCapability_ != null ? other.minimumCapability_.Clone() : null;
       allowedToolDefinitionIds_ = other.allowedToolDefinitionIds_.Clone();
@@ -116,16 +116,15 @@ namespace Messages.Capability.V1 {
       return new ToolRequirement(this);
     }
 
-    /// <summary>Field number for the "role" field.</summary>
-    public const int RoleFieldNumber = 1;
-    private global::Messages.Capability.V1.ToolRole role_ = global::Messages.Capability.V1.ToolRole.Unspecified;
+    /// <summary>Field number for the "roles" field.</summary>
+    public const int RolesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Capability.V1.ToolRole> _repeated_roles_codec
+        = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::Messages.Capability.V1.ToolRole) x);
+    private readonly pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> roles_ = new pbc::RepeatedField<global::Messages.Capability.V1.ToolRole>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Capability.V1.ToolRole Role {
-      get { return role_; }
-      set {
-        role_ = value;
-      }
+    public pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> Roles {
+      get { return roles_; }
     }
 
     /// <summary>Field number for the "required_properties" field.</summary>
@@ -177,7 +176,7 @@ namespace Messages.Capability.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Role != other.Role) return false;
+      if(!roles_.Equals(other.roles_)) return false;
       if(!requiredProperties_.Equals(other.requiredProperties_)) return false;
       if (!object.Equals(MinimumCapability, other.MinimumCapability)) return false;
       if(!allowedToolDefinitionIds_.Equals(other.allowedToolDefinitionIds_)) return false;
@@ -188,7 +187,7 @@ namespace Messages.Capability.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Role != global::Messages.Capability.V1.ToolRole.Unspecified) hash ^= Role.GetHashCode();
+      hash ^= roles_.GetHashCode();
       hash ^= requiredProperties_.GetHashCode();
       if (minimumCapability_ != null) hash ^= MinimumCapability.GetHashCode();
       hash ^= allowedToolDefinitionIds_.GetHashCode();
@@ -210,10 +209,7 @@ namespace Messages.Capability.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Role != global::Messages.Capability.V1.ToolRole.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Role);
-      }
+      roles_.WriteTo(output, _repeated_roles_codec);
       requiredProperties_.WriteTo(output, _repeated_requiredProperties_codec);
       if (minimumCapability_ != null) {
         output.WriteRawTag(26);
@@ -230,10 +226,7 @@ namespace Messages.Capability.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Role != global::Messages.Capability.V1.ToolRole.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Role);
-      }
+      roles_.WriteTo(ref output, _repeated_roles_codec);
       requiredProperties_.WriteTo(ref output, _repeated_requiredProperties_codec);
       if (minimumCapability_ != null) {
         output.WriteRawTag(26);
@@ -250,9 +243,7 @@ namespace Messages.Capability.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Role != global::Messages.Capability.V1.ToolRole.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Role);
-      }
+      size += roles_.CalculateSize(_repeated_roles_codec);
       size += requiredProperties_.CalculateSize(_repeated_requiredProperties_codec);
       if (minimumCapability_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MinimumCapability);
@@ -270,9 +261,7 @@ namespace Messages.Capability.V1 {
       if (other == null) {
         return;
       }
-      if (other.Role != global::Messages.Capability.V1.ToolRole.Unspecified) {
-        Role = other.Role;
-      }
+      roles_.Add(other.roles_);
       requiredProperties_.Add(other.requiredProperties_);
       if (other.minimumCapability_ != null) {
         if (minimumCapability_ == null) {
@@ -300,8 +289,9 @@ namespace Messages.Capability.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10:
           case 8: {
-            Role = (global::Messages.Capability.V1.ToolRole) input.ReadEnum();
+            roles_.AddEntriesFrom(input, _repeated_roles_codec);
             break;
           }
           case 18:
@@ -339,8 +329,9 @@ namespace Messages.Capability.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10:
           case 8: {
-            Role = (global::Messages.Capability.V1.ToolRole) input.ReadEnum();
+            roles_.AddEntriesFrom(ref input, _repeated_roles_codec);
             break;
           }
           case 18:

@@ -22,7 +22,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIpYBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRI2Cg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmIoAFCgdUYXNrUnVuEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIoChJ0YXNrX2RlZmluaXRpb25faWQYBCABKAlCDLpICcgBAXIEmPIEARIsChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAUgASgJQgy6SAnIAQFyBPjxBAESNAoFc3RhdGUYBiABKA4yGC5ydW50aW1lLnYxLlRhc2tSdW5TdGF0ZUILukgIyAEBggECEAESLQoQY2FuZGlkYXRlX2FjdG9ycxgHIAMoCzITLmNvbW1vbi52MS5BY3RvclJlZhIrCg5hc3NpZ25lZF9hY3RvchgIIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIOCgZjYW5fZG8YCSABKAgSEAoIY2FuX3VuZG8YCiABKAgSGAoQd29ya2FibGVfaG9yaXpvbhgLIAEoBRI4ChJlc3RpbWF0ZWRfZHVyYXRpb24YDCABKAsyHC5jb21tb24udjEuRXN0aW1hdGVkRHVyYXRpb24SLgoKc3RhcnRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoMY29tcGxldGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBISCgplcnJvcl9jb2RlGA8gASgJEhUKDWVycm9yX21lc3NhZ2UYECABKAkSLwoIZXZpZGVuY2UYESADKAsyHS5ydW50aW1lLnYxLkV4ZWN1dGlvbkV2aWRlbmNlEi8KB2JpbmRpbmcYEiABKAsyHi5ydW50aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZyIuCghUYXNrUnVucxIiCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1birnAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASJwojVEFTS19SVU5fU1RBVEVfTUlTU0lOR19QUkVDT05ESVRJT04QARIaChZUQVNLX1JVTl9TVEFURV9XQUlUSU5HEAISHgoaVEFTS19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIcChhUQVNLX1JVTl9TVEFURV9DT01QTEVURUQQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NUQVRFX0FCT1JURUQQBkKrAQoOY29tLnJ1bnRpbWUudjFCDFRhc2tSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_execution_evidence, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIqcBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRIPCgdjZWxsX2lkGAQgASgJEjYKDmNvbnRhaW5lcl9zbG90GAUgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYigAUKB1Rhc2tSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEigKEnRhc2tfZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJyAEBcgSY8gQBEiwKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpICcgBAXIE+PEEARI0CgVzdGF0ZRgGIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0YXRlQgu6SAjIAQGCAQIQARItChBjYW5kaWRhdGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmEisKDmFzc2lnbmVkX2FjdG9yGAggASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgJIAEoCBIQCghjYW5fdW5kbxgKIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAsgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgMIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDyABKAkSFQoNZXJyb3JfbWVzc2FnZRgQIAEoCRIvCghldmlkZW5jZRgRIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0aW9uRXZpZGVuY2USLwoHYmluZGluZxgSIAEoCzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nIi4KCFRhc2tSdW5zEiIKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuKtUBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhUQVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9SRUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFTS19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_execution_evidence, file_validation_v1_predefined_string_rules]);
 
 /**
  * Concrete runtime/deployment bindings resolved for this task run.
@@ -46,7 +46,12 @@ export type TaskRuntimeBinding = Message<"runtime.v1.TaskRuntimeBinding"> & {
   stationId: string;
 
   /**
-   * @generated from field: resources.v1.ContainerSlotRef container_slot = 4;
+   * @generated from field: string cell_id = 4;
+   */
+  cellId: string;
+
+  /**
+   * @generated from field: resources.v1.ContainerSlotRef container_slot = 5;
    */
   containerSlot?: ContainerSlotRef;
 };
@@ -189,14 +194,14 @@ export enum TaskRunState {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: TASK_RUN_STATE_MISSING_PRECONDITION = 1;
+   * @generated from enum value: TASK_RUN_STATE_NOT_READY = 1;
    */
-  MISSING_PRECONDITION = 1,
+  NOT_READY = 1,
 
   /**
-   * @generated from enum value: TASK_RUN_STATE_WAITING = 2;
+   * @generated from enum value: TASK_RUN_STATE_READY = 2;
    */
-  WAITING = 2,
+  READY = 2,
 
   /**
    * @generated from enum value: TASK_RUN_STATE_IN_PROGRESS = 3;
@@ -204,9 +209,9 @@ export enum TaskRunState {
   IN_PROGRESS = 3,
 
   /**
-   * @generated from enum value: TASK_RUN_STATE_COMPLETED = 4;
+   * @generated from enum value: TASK_RUN_STATE_DONE = 4;
    */
-  COMPLETED = 4,
+  DONE = 4,
 
   /**
    * @generated from enum value: TASK_RUN_STATE_ERROR = 5;

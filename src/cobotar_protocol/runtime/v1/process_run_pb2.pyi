@@ -18,14 +18,16 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class ProcessRunState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     PROCESS_RUN_STATE_UNSPECIFIED: _ClassVar[ProcessRunState]
-    PROCESS_RUN_STATE_WAITING: _ClassVar[ProcessRunState]
+    PROCESS_RUN_STATE_QUEUED: _ClassVar[ProcessRunState]
+    PROCESS_RUN_STATE_READY: _ClassVar[ProcessRunState]
     PROCESS_RUN_STATE_IN_PROGRESS: _ClassVar[ProcessRunState]
-    PROCESS_RUN_STATE_COMPLETED: _ClassVar[ProcessRunState]
+    PROCESS_RUN_STATE_DONE: _ClassVar[ProcessRunState]
     PROCESS_RUN_STATE_ABORTED: _ClassVar[ProcessRunState]
 PROCESS_RUN_STATE_UNSPECIFIED: ProcessRunState
-PROCESS_RUN_STATE_WAITING: ProcessRunState
+PROCESS_RUN_STATE_QUEUED: ProcessRunState
+PROCESS_RUN_STATE_READY: ProcessRunState
 PROCESS_RUN_STATE_IN_PROGRESS: ProcessRunState
-PROCESS_RUN_STATE_COMPLETED: ProcessRunState
+PROCESS_RUN_STATE_DONE: ProcessRunState
 PROCESS_RUN_STATE_ABORTED: ProcessRunState
 
 class RunParameter(_message.Message):
@@ -37,7 +39,7 @@ class RunParameter(_message.Message):
     def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ProcessRun(_message.Message):
-    __slots__ = ("id", "name", "icon", "process_recipe_id", "order_id", "station_id", "cell_id", "frame", "root_sequence_run_id", "sequence_run_ids", "task_run_ids", "state", "initiated_at", "ended_at", "assignments", "variant_configuration", "parameters")
+    __slots__ = ("id", "name", "icon", "process_recipe_id", "order_id", "station_id", "cell_id", "line_id", "frame", "root_sequence_run_id", "sequence_run_ids", "task_run_ids", "state", "initiated_at", "ended_at", "assignments", "variant_configuration", "parameters")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -45,6 +47,7 @@ class ProcessRun(_message.Message):
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     CELL_ID_FIELD_NUMBER: _ClassVar[int]
+    LINE_ID_FIELD_NUMBER: _ClassVar[int]
     FRAME_FIELD_NUMBER: _ClassVar[int]
     ROOT_SEQUENCE_RUN_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_RUN_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -62,6 +65,7 @@ class ProcessRun(_message.Message):
     order_id: str
     station_id: str
     cell_id: str
+    line_id: str
     frame: _pose_pb2.LocalizedPose
     root_sequence_run_id: str
     sequence_run_ids: _containers.RepeatedScalarFieldContainer[str]
@@ -72,7 +76,7 @@ class ProcessRun(_message.Message):
     assignments: _containers.RepeatedCompositeFieldContainer[_actor_assignment_pb2.ActorAssignment]
     variant_configuration: _variant_configuration_pb2.VariantConfiguration
     parameters: _containers.RepeatedCompositeFieldContainer[RunParameter]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., process_recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequence_run_ids: _Optional[_Iterable[str]] = ..., task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorAssignment, _Mapping]]] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., process_recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., line_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequence_run_ids: _Optional[_Iterable[str]] = ..., task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorAssignment, _Mapping]]] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ...) -> None: ...
 
 class ProcessRuns(_message.Message):
     __slots__ = ("items",)

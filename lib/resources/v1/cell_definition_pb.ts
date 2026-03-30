@@ -2,19 +2,36 @@
 // @generated from file resources/v1/cell_definition.proto (package resources.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
+import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
+import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file resources/v1/cell_definition.proto.
  */
 export const file_resources_v1_cell_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEijwEKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRITCgtzdGF0aW9uX2lkcxgFIAMoCRIrCgZjdXN0b20YBiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI+Cg9DZWxsRGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5yZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb25CwAEKEGNvbS5yZXNvdXJjZXMudjFCE0NlbGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_common_v1_custom_properties]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEi5gMKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhMKC3N0YXRpb25faWRzGAUgAygJEjIKBnN0YXR1cxgGIAEoDjIYLnJlc291cmNlcy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYByABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYCCABKAgSGQoRdG9vbF9pbnN0YW5jZV9pZHMYCSADKAkSHgoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgKIAMoCRIaChJyb2JvdF9pbnN0YW5jZV9pZHMYCyADKAkSGgoSYXNzZXRfaW5zdGFuY2VfaWRzGAwgAygJEhsKE21hcmtlcl9pbnN0YW5jZV9pZHMYDSADKAkSEgoKd29ya2VyX2lkcxgOIAMoCRIpCgVmcmFtZRgPIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiPgoPQ2VsbERlZmluaXRpb25zEisKBWl0ZW1zGAEgAygLMhwucmVzb3VyY2VzLnYxLkNlbGxEZWZpbml0aW9uKoYBCgpDZWxsU3RhdHVzEhsKF0NFTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFAoQQ0VMTF9TVEFUVVNfT1BFThABEhQKEENFTExfU1RBVFVTX0JVU1kQAhIWChJDRUxMX1NUQVRVU19DTE9TRUQQAxIXChNDRUxMX1NUQVRVU19CTE9DS0VEEARCwAEKEGNvbS5yZXNvdXJjZXMudjFCE0NlbGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
+ * CellDefinition describes an operational grouping of stations and shared
+ * resources inside a line.
+ *
+ * A cell is useful when multiple stations share workers, robots, assets,
+ * safety boundaries, or scheduling constraints. It gives the model a clear
+ * middle layer between line-level routing and station-level execution.
+ *
+ * Typical cell responsibilities:
+ * - group stations into a shared execution/safety zone
+ * - own resources that are shared across several stations
+ * - expose operational state and capacity above individual stations
+ * - act as an optional target/selector scope for loaders and planners
+ *
  * @generated from message resources.v1.CellDefinition
  */
 export type CellDefinition = Message<"resources.v1.CellDefinition"> & {
@@ -39,12 +56,84 @@ export type CellDefinition = Message<"resources.v1.CellDefinition"> & {
   icon: string;
 
   /**
+   * Stations belonging to this cell.
+   *
    * @generated from field: repeated string station_ids = 5;
    */
   stationIds: string[];
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 6;
+   * Current operational availability of the cell as a whole.
+   *
+   * @generated from field: resources.v1.CellStatus status = 6;
+   */
+  status: CellStatus;
+
+  /**
+   * Maximum number of active/queued processes this cell should host concurrently.
+   *
+   * @generated from field: int32 max_concurrent_processes = 7;
+   */
+  maxConcurrentProcesses: number;
+
+  /**
+   * If true, loaders may create queued ProcessRuns when the cell is BUSY.
+   *
+   * @generated from field: bool allow_queued_process = 8;
+   */
+  allowQueuedProcess: boolean;
+
+  /**
+   * Shared tools mounted, parked, or otherwise directly available here.
+   *
+   * @generated from field: repeated string tool_instance_ids = 9;
+   */
+  toolInstanceIds: string[];
+
+  /**
+   * Shared fixtures, trays, pallets, bins, or other concrete containers.
+   *
+   * @generated from field: repeated string container_instance_ids = 10;
+   */
+  containerInstanceIds: string[];
+
+  /**
+   * Robots shared across multiple stations inside the cell.
+   *
+   * @generated from field: repeated string robot_instance_ids = 11;
+   */
+  robotInstanceIds: string[];
+
+  /**
+   * Shared assets such as cameras, HMIs, or feeders serving several stations.
+   *
+   * @generated from field: repeated string asset_instance_ids = 12;
+   */
+  assetInstanceIds: string[];
+
+  /**
+   * Markers shared for this cell for localization, AR anchoring, or identification.
+   *
+   * @generated from field: repeated string marker_instance_ids = 13;
+   */
+  markerInstanceIds: string[];
+
+  /**
+   * Shared worker pool for the cell when workers are not bound to a specific station.
+   *
+   * @generated from field: repeated string worker_ids = 14;
+   */
+  workerIds: string[];
+
+  /**
+   * Cell-local reference frame or zone anchor.
+   *
+   * @generated from field: geometry.v1.LocalizedPose frame = 15;
+   */
+  frame?: LocalizedPose;
+
+  /**
+   * @generated from field: common.v1.CustomProperties custom = 16;
    */
   custom?: CustomProperties;
 };
@@ -72,4 +161,66 @@ export type CellDefinitions = Message<"resources.v1.CellDefinitions"> & {
  */
 export const CellDefinitionsSchema: GenMessage<CellDefinitions> = /*@__PURE__*/
   messageDesc(file_resources_v1_cell_definition, 1);
+
+/**
+ * CellStatus describes whether a cell can currently accept or host work.
+ *
+ * A cell is typically a grouping of stations and related resources. The loader
+ * can use this status to quickly reject or prefer a cell before evaluating
+ * individual stations.
+ *
+ * Status should be interpreted as:
+ * - OPEN    -> cell can accept new work now
+ * - BUSY    -> cell is occupied; queueing may still be possible
+ * - CLOSED  -> cell is intentionally unavailable
+ * - BLOCKED -> cell is unavailable due to fault, safety state, maintenance,
+ *              or other blocking condition
+ *
+ * This field is operational and should be considered together with
+ * max_concurrent_processes and the status of contained stations.
+ *
+ * @generated from enum resources.v1.CellStatus
+ */
+export enum CellStatus {
+  /**
+   * @generated from enum value: CELL_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Cell can accept new work now.
+   *
+   * @generated from enum value: CELL_STATUS_OPEN = 1;
+   */
+  OPEN = 1,
+
+  /**
+   * Cell is currently occupied by one or more active runs.
+   * Depending on policy, new runs may still be queued.
+   *
+   * @generated from enum value: CELL_STATUS_BUSY = 2;
+   */
+  BUSY = 2,
+
+  /**
+   * Cell is intentionally unavailable for loading or running work.
+   *
+   * @generated from enum value: CELL_STATUS_CLOSED = 3;
+   */
+  CLOSED = 3,
+
+  /**
+   * Cell is temporarily unavailable due to fault, interlock,
+   * maintenance state, or similar blocking condition.
+   *
+   * @generated from enum value: CELL_STATUS_BLOCKED = 4;
+   */
+  BLOCKED = 4,
+}
+
+/**
+ * Describes the enum resources.v1.CellStatus.
+ */
+export const CellStatusSchema: GenEnum<CellStatus> = /*@__PURE__*/
+  enumDesc(file_resources_v1_cell_definition, 0);
 

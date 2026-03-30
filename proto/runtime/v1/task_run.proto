@@ -14,10 +14,10 @@ option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 enum TaskRunState {
   TASK_RUN_STATE_UNSPECIFIED = 0;
-  TASK_RUN_STATE_MISSING_PRECONDITION = 1;
-  TASK_RUN_STATE_WAITING = 2;
+  TASK_RUN_STATE_NOT_READY = 1;
+  TASK_RUN_STATE_READY = 2;
   TASK_RUN_STATE_IN_PROGRESS = 3;
-  TASK_RUN_STATE_COMPLETED = 4;
+  TASK_RUN_STATE_DONE = 4;
   TASK_RUN_STATE_ERROR = 5;
   TASK_RUN_STATE_ABORTED = 6;
 }
@@ -27,7 +27,8 @@ message TaskRuntimeBinding {
   string asset_instance_id = 1;
   string robot_instance_id = 2;
   string station_id = 3;
-  resources.v1.ContainerSlotRef container_slot = 4;
+  string cell_id = 4;
+  resources.v1.ContainerSlotRef container_slot = 5;
 }
 
 message TaskRun {

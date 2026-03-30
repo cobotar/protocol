@@ -399,6 +399,8 @@
     - [CellDefinition](#resources-v1-CellDefinition)
     - [CellDefinitions](#resources-v1-CellDefinitions)
   
+    - [CellStatus](#resources-v1-CellStatus)
+  
 - [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
     - [ContainerInstance](#resources-v1-ContainerInstance)
     - [ContainerInstances](#resources-v1-ContainerInstances)
@@ -412,10 +414,11 @@
     - [DeviceStatus](#resources-v1-DeviceStatus)
     - [DeviceType](#resources-v1-DeviceType)
   
-- [resources/v1/line.proto](#resources_v1_line-proto)
+- [resources/v1/line_definition.proto](#resources_v1_line_definition-proto)
     - [LineDefinition](#resources-v1-LineDefinition)
     - [LineDefinitions](#resources-v1-LineDefinitions)
   
+    - [LineStatus](#resources-v1-LineStatus)
     - [LineType](#resources-v1-LineType)
   
 - [resources/v1/marker_instance.proto](#resources_v1_marker_instance-proto)
@@ -447,6 +450,7 @@
     - [StationDefinition](#resources-v1-StationDefinition)
     - [StationDefinitions](#resources-v1-StationDefinitions)
   
+    - [StationStatus](#resources-v1-StationStatus)
     - [StationType](#resources-v1-StationType)
   
 - [resources/v1/tool_definition.proto](#resources_v1_tool_definition-proto)
@@ -528,6 +532,7 @@
   
     - [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure)
     - [ProcessLoadStatus](#runtime-v1-ProcessLoadStatus)
+    - [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy)
     - [ProcessRunIssueSeverity](#runtime-v1-ProcessRunIssueSeverity)
     - [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus)
     - [RequirementImportance](#runtime-v1-RequirementImportance)
@@ -2875,7 +2880,7 @@ This domain is particularly relevant in human-robot collaboration environments. 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| role | [ToolRole](#capability-v1-ToolRole) |  |  |
+| roles | [ToolRole](#capability-v1-ToolRole) | repeated |  |
 | required_properties | [ToolProperty](#capability-v1-ToolProperty) | repeated |  |
 | minimum_capability | [CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
 | allowed_tool_definition_ids | [string](#string) | repeated |  |
@@ -5626,7 +5631,18 @@ name: TPU, grade: 70 Shore A
 <a name="resources-v1-CellDefinition"></a>
 
 ### CellDefinition
+CellDefinition describes an operational grouping of stations and shared
+resources inside a line.
 
+A cell is useful when multiple stations share workers, robots, assets,
+safety boundaries, or scheduling constraints. It gives the model a clear
+middle layer between line-level routing and station-level execution.
+
+Typical cell responsibilities:
+- group stations into a shared execution/safety zone
+- own resources that are shared across several stations
+- expose operational state and capacity above individual stations
+- act as an optional target/selector scope for loaders and planners
 
 
 | Field | Type | Label | Description |
@@ -5635,7 +5651,17 @@ name: TPU, grade: 70 Shore A
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| station_ids | [string](#string) | repeated |  |
+| station_ids | [string](#string) | repeated | Stations belonging to this cell. |
+| status | [CellStatus](#resources-v1-CellStatus) |  | Current operational availability of the cell as a whole. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this cell should host concurrently. |
+| allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the cell is BUSY. |
+| tool_instance_ids | [string](#string) | repeated | Shared tools mounted, parked, or otherwise directly available here. |
+| container_instance_ids | [string](#string) | repeated | Shared fixtures, trays, pallets, bins, or other concrete containers. |
+| robot_instance_ids | [string](#string) | repeated | Robots shared across multiple stations inside the cell. |
+| asset_instance_ids | [string](#string) | repeated | Shared assets such as cameras, HMIs, or feeders serving several stations. |
+| marker_instance_ids | [string](#string) | repeated | Markers shared for this cell for localization, AR anchoring, or identification. |
+| worker_ids | [string](#string) | repeated | Shared worker pool for the cell when workers are not bound to a specific station. |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Cell-local reference frame or zone anchor. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -5658,6 +5684,35 @@ name: TPU, grade: 70 Shore A
 
 
  
+
+
+<a name="resources-v1-CellStatus"></a>
+
+### CellStatus
+CellStatus describes whether a cell can currently accept or host work.
+
+A cell is typically a grouping of stations and related resources. The loader
+can use this status to quickly reject or prefer a cell before evaluating
+individual stations.
+
+Status should be interpreted as:
+- OPEN    -&gt; cell can accept new work now
+- BUSY    -&gt; cell is occupied; queueing may still be possible
+- CLOSED  -&gt; cell is intentionally unavailable
+- BLOCKED -&gt; cell is unavailable due to fault, safety state, maintenance,
+             or other blocking condition
+
+This field is operational and should be considered together with
+max_concurrent_processes and the status of contained stations.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CELL_STATUS_UNSPECIFIED | 0 |  |
+| CELL_STATUS_OPEN | 1 | Cell can accept new work now. |
+| CELL_STATUS_BUSY | 2 | Cell is currently occupied by one or more active runs. Depending on policy, new runs may still be queued. |
+| CELL_STATUS_CLOSED | 3 | Cell is intentionally unavailable for loading or running work. |
+| CELL_STATUS_BLOCKED | 4 | Cell is temporarily unavailable due to fault, interlock, maintenance state, or similar blocking condition. |
+
 
  
 
@@ -5840,18 +5895,28 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
-<a name="resources_v1_line-proto"></a>
+<a name="resources_v1_line_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## resources/v1/line.proto
+## resources/v1/line_definition.proto
 
 
 
 <a name="resources-v1-LineDefinition"></a>
 
 ### LineDefinition
-LineDefinition groups cells and/or stations into a higher-level production line.
-A line is the target context for loading a ProcessRecipe into a concrete ProcessRun.
+LineDefinition describes the highest operational routing context for loading
+and dispatching work.
+
+A line groups cells and/or stations into a production area that can be
+targeted by ProcessLoadRequest. Loaders typically resolve a concrete cell and
+station within the selected line.
+
+Typical line responsibilities:
+- act as the top-level routing target for process loading
+- expose high-level operational status and capacity
+- contain one or more cells and/or directly attached stations
+- provide a coarse operational boundary for planning and dispatch
 
 
 | Field | Type | Label | Description |
@@ -5860,9 +5925,12 @@ A line is the target context for loading a ProcessRecipe into a concrete Process
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| type | [LineType](#resources-v1-LineType) |  |  |
-| cell_ids | [string](#string) | repeated | Cells that belong to this line. |
-| station_ids | [string](#string) | repeated | Optional direct station membership if a line can reference stations directly. |
+| type | [LineType](#resources-v1-LineType) |  | Broad line classification. Keep optional until concrete line types are introduced. |
+| status | [LineStatus](#resources-v1-LineStatus) |  | Current operational availability of the line as a whole. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this line should host concurrently. |
+| cell_ids | [string](#string) | repeated | Cells belonging to this line. |
+| station_ids | [string](#string) | repeated | Optional directly attached stations when a line references stations without an intermediate cell. |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -5884,6 +5952,36 @@ A line is the target context for loading a ProcessRecipe into a concrete Process
 
 
  
+
+
+<a name="resources-v1-LineStatus"></a>
+
+### LineStatus
+LineStatus describes whether a production line can currently accept work.
+
+A line is a higher-level operational grouping of cells and/or stations.
+The loader can use this status as an early gate before checking specific
+cells, stations, and resources.
+
+Status should be interpreted as:
+- OPEN    -&gt; line can accept new work now
+- BUSY    -&gt; line is operational but currently occupied; queueing may still
+             be allowed
+- CLOSED  -&gt; line is intentionally unavailable
+- BLOCKED -&gt; line is unavailable due to fault, safety state, maintenance,
+             or similar blocking condition
+
+This field is operational and should be considered together with
+max_concurrent_processes and the statuses of child cells/stations.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LINE_STATUS_UNSPECIFIED | 0 |  |
+| LINE_STATUS_OPEN | 1 | Line can accept new work now. |
+| LINE_STATUS_BUSY | 2 | Line is currently occupied by one or more active runs. Depending on policy, new runs may still be queued. |
+| LINE_STATUS_CLOSED | 3 | Line is intentionally unavailable for loading or running work. |
+| LINE_STATUS_BLOCKED | 4 | Line is temporarily unavailable due to fault, interlock, maintenance state, or similar blocking condition. |
+
 
 
 <a name="resources-v1-LineType"></a>
@@ -6233,7 +6331,17 @@ A line is the target context for loading a ProcessRecipe into a concrete Process
 <a name="resources-v1-StationDefinition"></a>
 
 ### StationDefinition
+StationDefinition describes a concrete execution point inside a cell or line.
 
+A station is the most specific location where work is typically loaded,
+queued, executed, and tracked at runtime. Stations are therefore the primary
+target for task/resource matching in loader/planner logic.
+
+Typical station responsibilities:
+- host concrete task execution
+- own station-local tools, containers, robots, markers, and frame
+- expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
+- optionally allow queueing when already occupied
 
 
 | Field | Type | Label | Description |
@@ -6242,14 +6350,17 @@ A line is the target context for loading a ProcessRecipe into a concrete Process
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| type | [StationType](#resources-v1-StationType) |  |  |
-| tool_instance_ids | [string](#string) | repeated |  |
-| container_instance_ids | [string](#string) | repeated |  |
-| robot_instance_ids | [string](#string) | repeated |  |
-| asset_instance_ids | [string](#string) | repeated |  |
-| marker_instance_ids | [string](#string) | repeated | move to cell? |
-| worker_ids | [string](#string) | repeated | move to cell? |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| type | [StationType](#resources-v1-StationType) |  | Broad station classification, e.g. manual, automatic, or hybrid. |
+| status | [StationStatus](#resources-v1-StationStatus) |  | Current operational availability used by loaders, planners, and UIs. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this station should host concurrently. |
+| allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the station is BUSY. |
+| tool_instance_ids | [string](#string) | repeated | Station-local tools mounted, parked, or otherwise directly available here. |
+| container_instance_ids | [string](#string) | repeated | Station-local fixtures, trays, pallets, bins, or other concrete containers. |
+| robot_instance_ids | [string](#string) | repeated | Robots directly assigned to or executing within this station. |
+| asset_instance_ids | [string](#string) | repeated | Station-local assets such as cameras, HMIs, feeders, or sensors. |
+| marker_instance_ids | [string](#string) | repeated | Markers used specifically at this station for localization, AR anchoring, or identification. |
+| worker_ids | [string](#string) | repeated | Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools. |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -6272,6 +6383,34 @@ A line is the target context for loading a ProcessRecipe into a concrete Process
 
 
  
+
+
+<a name="resources-v1-StationStatus"></a>
+
+### StationStatus
+StationStatus describes whether a station can currently accept or execute work.
+
+This is an operational/runtime-oriented state used by loaders, planners,
+dispatchers, and UIs when deciding whether a ProcessRun can be started here.
+
+Status should be interpreted as:
+- OPEN    -&gt; can accept new work now
+- BUSY    -&gt; currently occupied; may still allow queueing
+- CLOSED  -&gt; intentionally unavailable for new work
+- BLOCKED -&gt; unavailable due to a fault, interlock, maintenance lock, or
+             other condition that should prevent execution
+
+A station may also expose capacity constraints through
+max_concurrent_processes, which is separate from this status field.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| STATION_STATUS_UNSPECIFIED | 0 |  |
+| STATION_STATUS_OPEN | 1 | Station can accept new work now. |
+| STATION_STATUS_BUSY | 2 | Station is currently occupied by one or more active runs. Depending on loader policy and allow_queued_process, new runs may be queued. |
+| STATION_STATUS_CLOSED | 3 | Station is intentionally unavailable for loading or running work. |
+| STATION_STATUS_BLOCKED | 4 | Station is temporarily unavailable due to fault, safety interlock, maintenance state, missing prerequisite, or similar blocking condition. |
+
 
 
 <a name="resources-v1-StationType"></a>
@@ -7070,6 +7209,7 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | order_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | cell_id | [string](#string) |  |  |
+| line_id | [string](#string) |  |  |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | root_sequence_run_id | [string](#string) |  |  |
 | sequence_run_ids | [string](#string) | repeated |  |
@@ -7127,10 +7267,11 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PROCESS_RUN_STATE_UNSPECIFIED | 0 |  |
-| PROCESS_RUN_STATE_WAITING | 1 |  |
-| PROCESS_RUN_STATE_IN_PROGRESS | 2 |  |
-| PROCESS_RUN_STATE_COMPLETED | 3 |  |
-| PROCESS_RUN_STATE_ABORTED | 4 |  |
+| PROCESS_RUN_STATE_QUEUED | 1 | Queued, can not be started yet |
+| PROCESS_RUN_STATE_READY | 2 | Waiting to be started (ready) |
+| PROCESS_RUN_STATE_IN_PROGRESS | 3 | In progress |
+| PROCESS_RUN_STATE_DONE | 4 | Completed, all tasks are complete |
+| PROCESS_RUN_STATE_ABORTED | 5 |  |
 
 
  
@@ -7151,9 +7292,27 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 <a name="runtime-v1-ProcessLoadRequest"></a>
 
 ### ProcessLoadRequest
-ProcessLoadRequest is used to go from ProcessRecipe -&gt; ProcessRun
-During this process, resources feasibility should be checked, i.e.
-   &#34;Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?&#34;
+ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
+
+The loader should evaluate whether the recipe can be instantiated now within
+the requested operational scope, using currently available actors, tools,
+robots, containers, assets, and validation resources.
+
+Target scope resolution:
+
+- target_line_id is the top-level routing scope and is required.
+- if target_cell_id is set, the loader must validate and use that cell.
+- if target_station_id is set, the loader must validate and use that station.
+- if cell/station are not set, the loader should choose the best feasible
+  candidate within the selected line.
+
+Occupancy handling:
+
+- if a candidate station is BUSY and queue_if_occupied is true, the loader
+  may create a queued ProcessRun.
+- if queue_if_occupied is false, the loader should only queue when the chosen
+  target explicitly allows queued processes.
+- otherwise the load should fail with a blocking issue.
 
 Thus the following must be evaluated:
 - available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
@@ -7168,11 +7327,16 @@ Thus the following must be evaluated:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| process_recipe_id | [string](#string) |  |  |
-| target_line_id | [string](#string) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
-| dry_run | [bool](#bool) |  | true = precheck only, false = precheck &#43; instantiate |
-| queue_if_occupied | [bool](#bool) |  |  |
+| process_recipe_id | [string](#string) |  | Required recipe to instantiate. |
+| target_line_id | [string](#string) |  | Required top-level routing scope. |
+| target_cell_id | [string](#string) |  | Optional narrowing of the target scope. If set, the loader must validate and respect these targets. |
+| target_station_id | [string](#string) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Optional variant configuration used to evaluate recipe/task applicability. |
+| dry_run | [bool](#bool) |  | true -&gt; perform precheck only false -&gt; perform precheck and instantiate ProcessRun if feasible |
+| queue_if_occupied | [bool](#bool) |  | If true, the loader may create a queued ProcessRun when the preferred execution target is currently BUSY but otherwise feasible. |
+| strategy | [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy) |  | Optional execution preferences for the loader. |
+| order_id | [string](#string) |  | Optional order/business reference to carry into the ProcessRun. |
+| parameters | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Optional caller-provided parameters used during instantiation. |
 
 
 
@@ -7213,6 +7377,7 @@ Thus the following must be evaluated:
 | required_tool_role | [string](#string) |  | Related requirement/resource |
 | required_skill_id | [string](#string) |  |  |
 | fixture_definition_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | actor_id | [string](#string) |  |  |
 | resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
@@ -7257,8 +7422,9 @@ Thus the following must be evaluated:
 | task_definition_id | [string](#string) |  |  |
 | feasible | [bool](#bool) |  |  |
 | candidate_actor_ids | [string](#string) | repeated |  |
+| candidate_robot_instance_ids | [string](#string) | repeated |  |
 | candidate_tool_instance_ids | [string](#string) | repeated |  |
-| candidate_fixture_instance_ids | [string](#string) | repeated |  |
+| candidate_container_instance_ids | [string](#string) | repeated |  |
 | candidate_asset_instance_ids | [string](#string) | repeated |  |
 | issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
 
@@ -7277,24 +7443,40 @@ Thus the following must be evaluated:
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | PROCESS_LOAD_FAILURE_UNSPECIFIED | 0 |  |
-| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 1 | General failures |
-| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 |  |
+| PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 | General failures |
 | PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
 | PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
-| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE | 10 | Fixture related failures |
+| PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER | 10 | Container related failures |
+| PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND | 11 |  |
+| PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND | 12 |  |
 | PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE | 20 | Tool related failures |
 | PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED | 21 |  |
 | PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT | 22 |  |
 | PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE | 30 | Robot related failures |
 | PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH | 31 |  |
-| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failueres |
-| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 41 |  |
-| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 42 |  |
+| PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR | 40 | Agent/operator related failures
+
+A human is required but no worker with valid skills exists. |
+| PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR | 41 | No actor type can perform the task. |
+| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED | 42 |  |
+| PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED | 43 |  |
 | PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED | 50 | Safety / collaboration related failures |
 | PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH | 51 |  |
 | PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE | 60 | Validation related failures |
 | PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING | 61 |  |
 | PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD | 62 |  |
+| PROCESS_LOAD_FAILURE_LINE_NOT_FOUND | 70 | Line related failures |
+| PROCESS_LOAD_FAILURE_LINE_CLOSED | 71 |  |
+| PROCESS_LOAD_FAILURE_LINE_BUSY | 72 |  |
+| PROCESS_LOAD_FAILURE_LINE_BLOCKED | 73 |  |
+| PROCESS_LOAD_FAILURE_CELL_NOT_FOUND | 80 | Cell related failures |
+| PROCESS_LOAD_FAILURE_CELL_CLOSED | 81 |  |
+| PROCESS_LOAD_FAILURE_CELL_BUSY | 82 |  |
+| PROCESS_LOAD_FAILURE_CELL_BLOCKED | 83 |  |
+| PROCESS_LOAD_FAILURE_STATION_NOT_FOUND | 90 | Station related failures |
+| PROCESS_LOAD_FAILURE_STATION_CLOSED | 91 |  |
+| PROCESS_LOAD_FAILURE_STATION_BUSY | 92 |  |
+| PROCESS_LOAD_FAILURE_STATION_BLOCKED | 93 |  |
 
 
 
@@ -7309,6 +7491,21 @@ Thus the following must be evaluated:
 | PROCESS_LOAD_STATUS_PRECHECK_FAILED | 1 |  |
 | PROCESS_LOAD_STATUS_READY | 2 | feasible, but not instantiated (dry run) |
 | PROCESS_LOAD_STATUS_LOADED | 3 | feasible and instantiated |
+
+
+
+<a name="runtime-v1-ProcessLoadStrategy"></a>
+
+### ProcessLoadStrategy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_LOAD_STRATEGY_UNSPECIFIED | 0 |  |
+| PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE | 1 | Prefer the first feasible candidate found. |
+| PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE | 2 | Prefer OPEN stations over BUSY ones, and BUSY over queued ones. |
+| PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE | 3 | Prefer keeping work inside the explicitly selected cell if one is set. |
+| PROCESS_LOAD_STRATEGY_BEST_MATCH | 4 | Prefer the candidate with the strongest resource/actor match. |
 
 
 
@@ -7416,10 +7613,10 @@ Thus the following must be evaluated:
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SEQUENCE_RUN_STATE_UNSPECIFIED | 0 |  |
-| SEQUENCE_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| SEQUENCE_RUN_STATE_WAITING | 2 |  |
+| SEQUENCE_RUN_STATE_NOT_READY | 1 |  |
+| SEQUENCE_RUN_STATE_READY | 2 |  |
 | SEQUENCE_RUN_STATE_IN_PROGRESS | 3 |  |
-| SEQUENCE_RUN_STATE_COMPLETED | 4 |  |
+| SEQUENCE_RUN_STATE_DONE | 4 |  |
 | SEQUENCE_RUN_STATE_ABORTED | 5 |  |
 
 
@@ -7496,6 +7693,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | asset_instance_id | [string](#string) |  |  |
 | robot_instance_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
 | container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
 
 
@@ -7513,10 +7711,10 @@ Concrete runtime/deployment bindings resolved for this task run.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TASK_RUN_STATE_UNSPECIFIED | 0 |  |
-| TASK_RUN_STATE_MISSING_PRECONDITION | 1 |  |
-| TASK_RUN_STATE_WAITING | 2 |  |
+| TASK_RUN_STATE_NOT_READY | 1 |  |
+| TASK_RUN_STATE_READY | 2 |  |
 | TASK_RUN_STATE_IN_PROGRESS | 3 |  |
-| TASK_RUN_STATE_COMPLETED | 4 |  |
+| TASK_RUN_STATE_DONE | 4 |  |
 | TASK_RUN_STATE_ERROR | 5 |  |
 | TASK_RUN_STATE_ABORTED | 6 |  |
 

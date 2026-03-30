@@ -16,9 +16,21 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/station_definition.proto.
  */
 export const file_resources_v1_station_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiVyZXNvdXJjZXMvdjEvc3RhdGlvbl9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEiigMKEVN0YXRpb25EZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjEKBHR5cGUYBSABKA4yGS5yZXNvdXJjZXMudjEuU3RhdGlvblR5cGVCCLpIBYIBAhABEhkKEXRvb2xfaW5zdGFuY2VfaWRzGAYgAygJEh4KFmNvbnRhaW5lcl9pbnN0YW5jZV9pZHMYByADKAkSGgoScm9ib3RfaW5zdGFuY2VfaWRzGAggAygJEhoKEmFzc2V0X2luc3RhbmNlX2lkcxgJIAMoCRIbChNtYXJrZXJfaW5zdGFuY2VfaWRzGAogAygJEhIKCndvcmtlcl9pZHMYCyADKAkSKQoFZnJhbWUYDCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEisKBmN1c3RvbRgNIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIkQKElN0YXRpb25EZWZpbml0aW9ucxIuCgVpdGVtcxgBIAMoCzIfLnJlc291cmNlcy52MS5TdGF0aW9uRGVmaW5pdGlvbiqrAQoLU3RhdGlvblR5cGUSHAoYU1RBVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUU1RBVElPTl9UWVBFX1NUT1JBR0UQARIfChtTVEFUSU9OX1RZUEVfTUFOVUFMX1NUQVRJT04QAhIiCh5TVEFUSU9OX1RZUEVfQVVUT01BVElDX1NUQVRJT04QAxIfChtTVEFUSU9OX1RZUEVfSFlCUklEX1NUQVRJT04QBELDAQoQY29tLnJlc291cmNlcy52MUIWU3RhdGlvbkRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiVyZXNvdXJjZXMvdjEvc3RhdGlvbl9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEiigQKEVN0YXRpb25EZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjEKBHR5cGUYBSABKA4yGS5yZXNvdXJjZXMudjEuU3RhdGlvblR5cGVCCLpIBYIBAhABEjUKBnN0YXR1cxgGIAEoDjIbLnJlc291cmNlcy52MS5TdGF0aW9uU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYByABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYCCABKAgSGQoRdG9vbF9pbnN0YW5jZV9pZHMYCSADKAkSHgoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgKIAMoCRIaChJyb2JvdF9pbnN0YW5jZV9pZHMYCyADKAkSGgoSYXNzZXRfaW5zdGFuY2VfaWRzGAwgAygJEhsKE21hcmtlcl9pbnN0YW5jZV9pZHMYDSADKAkSEgoKd29ya2VyX2lkcxgOIAMoCRIpCgVmcmFtZRgPIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiRAoSU3RhdGlvbkRlZmluaXRpb25zEi4KBWl0ZW1zGAEgAygLMh8ucmVzb3VyY2VzLnYxLlN0YXRpb25EZWZpbml0aW9uKqsBCgtTdGF0aW9uVHlwZRIcChhTVEFUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIYChRTVEFUSU9OX1RZUEVfU1RPUkFHRRABEh8KG1NUQVRJT05fVFlQRV9NQU5VQUxfU1RBVElPThACEiIKHlNUQVRJT05fVFlQRV9BVVRPTUFUSUNfU1RBVElPThADEh8KG1NUQVRJT05fVFlQRV9IWUJSSURfU1RBVElPThAEKpgBCg1TdGF0aW9uU3RhdHVzEh4KGlNUQVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTU1RBVElPTl9TVEFUVVNfT1BFThABEhcKE1NUQVRJT05fU1RBVFVTX0JVU1kQAhIZChVTVEFUSU9OX1NUQVRVU19DTE9TRUQQAxIaChZTVEFUSU9OX1NUQVRVU19CTE9DS0VEEARCwwEKEGNvbS5yZXNvdXJjZXMudjFCFlN0YXRpb25EZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
+ * StationDefinition describes a concrete execution point inside a cell or line.
+ *
+ * A station is the most specific location where work is typically loaded,
+ * queued, executed, and tracked at runtime. Stations are therefore the primary
+ * target for task/resource matching in loader/planner logic.
+ *
+ * Typical station responsibilities:
+ * - host concrete task execution
+ * - own station-local tools, containers, robots, markers, and frame
+ * - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
+ * - optionally allow queueing when already occupied
+ *
  * @generated from message resources.v1.StationDefinition
  */
 export type StationDefinition = Message<"resources.v1.StationDefinition"> & {
@@ -43,51 +55,84 @@ export type StationDefinition = Message<"resources.v1.StationDefinition"> & {
   icon: string;
 
   /**
+   * Broad station classification, e.g. manual, automatic, or hybrid.
+   *
    * @generated from field: resources.v1.StationType type = 5;
    */
   type: StationType;
 
   /**
-   * @generated from field: repeated string tool_instance_ids = 6;
+   * Current operational availability used by loaders, planners, and UIs.
+   *
+   * @generated from field: resources.v1.StationStatus status = 6;
+   */
+  status: StationStatus;
+
+  /**
+   * Maximum number of active/queued processes this station should host concurrently.
+   *
+   * @generated from field: int32 max_concurrent_processes = 7;
+   */
+  maxConcurrentProcesses: number;
+
+  /**
+   * If true, loaders may create queued ProcessRuns when the station is BUSY.
+   *
+   * @generated from field: bool allow_queued_process = 8;
+   */
+  allowQueuedProcess: boolean;
+
+  /**
+   * Station-local tools mounted, parked, or otherwise directly available here.
+   *
+   * @generated from field: repeated string tool_instance_ids = 9;
    */
   toolInstanceIds: string[];
 
   /**
-   * @generated from field: repeated string container_instance_ids = 7;
+   * Station-local fixtures, trays, pallets, bins, or other concrete containers.
+   *
+   * @generated from field: repeated string container_instance_ids = 10;
    */
   containerInstanceIds: string[];
 
   /**
-   * @generated from field: repeated string robot_instance_ids = 8;
+   * Robots directly assigned to or executing within this station.
+   *
+   * @generated from field: repeated string robot_instance_ids = 11;
    */
   robotInstanceIds: string[];
 
   /**
-   * @generated from field: repeated string asset_instance_ids = 9;
+   * Station-local assets such as cameras, HMIs, feeders, or sensors.
+   *
+   * @generated from field: repeated string asset_instance_ids = 12;
    */
   assetInstanceIds: string[];
 
   /**
-   * move to cell?
+   * Markers used specifically at this station for localization, AR anchoring, or identification.
    *
-   * @generated from field: repeated string marker_instance_ids = 10;
+   * @generated from field: repeated string marker_instance_ids = 13;
    */
   markerInstanceIds: string[];
 
   /**
-   * move to cell?
+   * Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools.
    *
-   * @generated from field: repeated string worker_ids = 11;
+   * @generated from field: repeated string worker_ids = 14;
    */
   workerIds: string[];
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 12;
+   * Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
+   *
+   * @generated from field: geometry.v1.LocalizedPose frame = 15;
    */
   frame?: LocalizedPose;
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 13;
+   * @generated from field: common.v1.CustomProperties custom = 16;
    */
   custom?: CustomProperties;
 };
@@ -151,4 +196,65 @@ export enum StationType {
  */
 export const StationTypeSchema: GenEnum<StationType> = /*@__PURE__*/
   enumDesc(file_resources_v1_station_definition, 0);
+
+/**
+ * StationStatus describes whether a station can currently accept or execute work.
+ *
+ * This is an operational/runtime-oriented state used by loaders, planners,
+ * dispatchers, and UIs when deciding whether a ProcessRun can be started here.
+ *
+ * Status should be interpreted as:
+ * - OPEN    -> can accept new work now
+ * - BUSY    -> currently occupied; may still allow queueing
+ * - CLOSED  -> intentionally unavailable for new work
+ * - BLOCKED -> unavailable due to a fault, interlock, maintenance lock, or
+ *              other condition that should prevent execution
+ *
+ * A station may also expose capacity constraints through
+ * max_concurrent_processes, which is separate from this status field.
+ *
+ * @generated from enum resources.v1.StationStatus
+ */
+export enum StationStatus {
+  /**
+   * @generated from enum value: STATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Station can accept new work now.
+   *
+   * @generated from enum value: STATION_STATUS_OPEN = 1;
+   */
+  OPEN = 1,
+
+  /**
+   * Station is currently occupied by one or more active runs.
+   * Depending on loader policy and allow_queued_process, new runs may be queued.
+   *
+   * @generated from enum value: STATION_STATUS_BUSY = 2;
+   */
+  BUSY = 2,
+
+  /**
+   * Station is intentionally unavailable for loading or running work.
+   *
+   * @generated from enum value: STATION_STATUS_CLOSED = 3;
+   */
+  CLOSED = 3,
+
+  /**
+   * Station is temporarily unavailable due to fault, safety interlock,
+   * maintenance state, missing prerequisite, or similar blocking condition.
+   *
+   * @generated from enum value: STATION_STATUS_BLOCKED = 4;
+   */
+  BLOCKED = 4,
+}
+
+/**
+ * Describes the enum resources.v1.StationStatus.
+ */
+export const StationStatusSchema: GenEnum<StationStatus> = /*@__PURE__*/
+  enumDesc(file_resources_v1_station_definition, 1);
 

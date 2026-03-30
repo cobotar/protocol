@@ -1,0 +1,79 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/custom_properties.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum LineType {
+  LINE_TYPE_UNSPECIFIED = 0;
+}
+
+// LineStatus describes whether a production line can currently accept work.
+//
+// A line is a higher-level operational grouping of cells and/or stations.
+// The loader can use this status as an early gate before checking specific
+// cells, stations, and resources.
+//
+// Status should be interpreted as:
+// - OPEN    -> line can accept new work now
+// - BUSY    -> line is operational but currently occupied; queueing may still
+//              be allowed
+// - CLOSED  -> line is intentionally unavailable
+// - BLOCKED -> line is unavailable due to fault, safety state, maintenance,
+//              or similar blocking condition
+//
+// This field is operational and should be considered together with
+// max_concurrent_processes and the statuses of child cells/stations.
+enum LineStatus {
+  LINE_STATUS_UNSPECIFIED = 0;
+
+  // Line can accept new work now.
+  LINE_STATUS_OPEN = 1;
+
+  // Line is currently occupied by one or more active runs.
+  // Depending on policy, new runs may still be queued.
+  LINE_STATUS_BUSY = 2;
+
+  // Line is intentionally unavailable for loading or running work.
+  LINE_STATUS_CLOSED = 3;
+
+  // Line is temporarily unavailable due to fault, interlock,
+  // maintenance state, or similar blocking condition.
+  LINE_STATUS_BLOCKED = 4;
+}
+
+// LineDefinition describes the highest operational routing context for loading
+// and dispatching work.
+//
+// A line groups cells and/or stations into a production area that can be
+// targeted by ProcessLoadRequest. Loaders typically resolve a concrete cell and
+// station within the selected line.
+//
+// Typical line responsibilities:
+// - act as the top-level routing target for process loading
+// - expose high-level operational status and capacity
+// - contain one or more cells and/or directly attached stations
+// - provide a coarse operational boundary for planning and dispatch
+message LineDefinition {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.line_id_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string description = 3;
+  string icon = 4;
+  LineType type = 5; // Broad line classification. Keep optional until concrete line types are introduced.
+  LineStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability of the line as a whole.
+  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this line should host concurrently.
+  repeated string cell_ids = 8; // Cells belonging to this line.
+  repeated string station_ids = 9; // Optional directly attached stations when a line references stations without an intermediate cell.
+  common.v1.CustomProperties custom = 10;
+}
+
+message LineDefinitions {
+  repeated LineDefinition items = 1;
+}

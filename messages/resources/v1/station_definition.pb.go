@@ -80,23 +80,112 @@ func (StationType) EnumDescriptor() ([]byte, []int) {
 	return file_resources_v1_station_definition_proto_rawDescGZIP(), []int{0}
 }
 
+// StationStatus describes whether a station can currently accept or execute work.
+//
+// This is an operational/runtime-oriented state used by loaders, planners,
+// dispatchers, and UIs when deciding whether a ProcessRun can be started here.
+//
+// Status should be interpreted as:
+//   - OPEN    -> can accept new work now
+//   - BUSY    -> currently occupied; may still allow queueing
+//   - CLOSED  -> intentionally unavailable for new work
+//   - BLOCKED -> unavailable due to a fault, interlock, maintenance lock, or
+//     other condition that should prevent execution
+//
+// A station may also expose capacity constraints through
+// max_concurrent_processes, which is separate from this status field.
+type StationStatus int32
+
+const (
+	StationStatus_STATION_STATUS_UNSPECIFIED StationStatus = 0
+	// Station can accept new work now.
+	StationStatus_STATION_STATUS_OPEN StationStatus = 1
+	// Station is currently occupied by one or more active runs.
+	// Depending on loader policy and allow_queued_process, new runs may be queued.
+	StationStatus_STATION_STATUS_BUSY StationStatus = 2
+	// Station is intentionally unavailable for loading or running work.
+	StationStatus_STATION_STATUS_CLOSED StationStatus = 3
+	// Station is temporarily unavailable due to fault, safety interlock,
+	// maintenance state, missing prerequisite, or similar blocking condition.
+	StationStatus_STATION_STATUS_BLOCKED StationStatus = 4
+)
+
+// Enum value maps for StationStatus.
+var (
+	StationStatus_name = map[int32]string{
+		0: "STATION_STATUS_UNSPECIFIED",
+		1: "STATION_STATUS_OPEN",
+		2: "STATION_STATUS_BUSY",
+		3: "STATION_STATUS_CLOSED",
+		4: "STATION_STATUS_BLOCKED",
+	}
+	StationStatus_value = map[string]int32{
+		"STATION_STATUS_UNSPECIFIED": 0,
+		"STATION_STATUS_OPEN":        1,
+		"STATION_STATUS_BUSY":        2,
+		"STATION_STATUS_CLOSED":      3,
+		"STATION_STATUS_BLOCKED":     4,
+	}
+)
+
+func (x StationStatus) Enum() *StationStatus {
+	p := new(StationStatus)
+	*p = x
+	return p
+}
+
+func (x StationStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (StationStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_station_definition_proto_enumTypes[1].Descriptor()
+}
+
+func (StationStatus) Type() protoreflect.EnumType {
+	return &file_resources_v1_station_definition_proto_enumTypes[1]
+}
+
+func (x StationStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use StationStatus.Descriptor instead.
+func (StationStatus) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_station_definition_proto_rawDescGZIP(), []int{1}
+}
+
+// StationDefinition describes a concrete execution point inside a cell or line.
+//
+// A station is the most specific location where work is typically loaded,
+// queued, executed, and tracked at runtime. Stations are therefore the primary
+// target for task/resource matching in loader/planner logic.
+//
+// Typical station responsibilities:
+// - host concrete task execution
+// - own station-local tools, containers, robots, markers, and frame
+// - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
+// - optionally allow queueing when already occupied
 type StationDefinition struct {
-	state                protoimpl.MessageState `protogen:"open.v1"`
-	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description          string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon                 string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Type                 StationType            `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.StationType" json:"type,omitempty"`
-	ToolInstanceIds      []string               `protobuf:"bytes,6,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`
-	ContainerInstanceIds []string               `protobuf:"bytes,7,rep,name=container_instance_ids,json=containerInstanceIds,proto3" json:"container_instance_ids,omitempty"`
-	RobotInstanceIds     []string               `protobuf:"bytes,8,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`
-	AssetInstanceIds     []string               `protobuf:"bytes,9,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`
-	MarkerInstanceIds    []string               `protobuf:"bytes,10,rep,name=marker_instance_ids,json=markerInstanceIds,proto3" json:"marker_instance_ids,omitempty"` // move to cell?
-	WorkerIds            []string               `protobuf:"bytes,11,rep,name=worker_ids,json=workerIds,proto3" json:"worker_ids,omitempty"`                           // move to cell?
-	Frame                *v1.LocalizedPose      `protobuf:"bytes,12,opt,name=frame,proto3" json:"frame,omitempty"`
-	Custom               *v11.CustomProperties  `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description            string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Type                   StationType            `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.StationType" json:"type,omitempty"`                                       // Broad station classification, e.g. manual, automatic, or hybrid.
+	Status                 StationStatus          `protobuf:"varint,6,opt,name=status,proto3,enum=resources.v1.StationStatus" json:"status,omitempty"`                                 // Current operational availability used by loaders, planners, and UIs.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this station should host concurrently.
+	AllowQueuedProcess     bool                   `protobuf:"varint,8,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the station is BUSY.
+	ToolInstanceIds        []string               `protobuf:"bytes,9,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`                       // Station-local tools mounted, parked, or otherwise directly available here.
+	ContainerInstanceIds   []string               `protobuf:"bytes,10,rep,name=container_instance_ids,json=containerInstanceIds,proto3" json:"container_instance_ids,omitempty"`       // Station-local fixtures, trays, pallets, bins, or other concrete containers.
+	RobotInstanceIds       []string               `protobuf:"bytes,11,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`                   // Robots directly assigned to or executing within this station.
+	AssetInstanceIds       []string               `protobuf:"bytes,12,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`                   // Station-local assets such as cameras, HMIs, feeders, or sensors.
+	MarkerInstanceIds      []string               `protobuf:"bytes,13,rep,name=marker_instance_ids,json=markerInstanceIds,proto3" json:"marker_instance_ids,omitempty"`                // Markers used specifically at this station for localization, AR anchoring, or identification.
+	WorkerIds              []string               `protobuf:"bytes,14,rep,name=worker_ids,json=workerIds,proto3" json:"worker_ids,omitempty"`                                          // Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools.
+	Frame                  *v1.LocalizedPose      `protobuf:"bytes,15,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
+	Custom                 *v11.CustomProperties  `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *StationDefinition) Reset() {
@@ -162,6 +251,27 @@ func (x *StationDefinition) GetType() StationType {
 		return x.Type
 	}
 	return StationType_STATION_TYPE_UNSPECIFIED
+}
+
+func (x *StationDefinition) GetStatus() StationStatus {
+	if x != nil {
+		return x.Status
+	}
+	return StationStatus_STATION_STATUS_UNSPECIFIED
+}
+
+func (x *StationDefinition) GetMaxConcurrentProcesses() int32 {
+	if x != nil {
+		return x.MaxConcurrentProcesses
+	}
+	return 0
+}
+
+func (x *StationDefinition) GetAllowQueuedProcess() bool {
+	if x != nil {
+		return x.AllowQueuedProcess
+	}
+	return false
 }
 
 func (x *StationDefinition) GetToolInstanceIds() []string {
@@ -268,23 +378,26 @@ var File_resources_v1_station_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\n" +
-	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa5\x04\n" +
+	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd9\x05\n" +
 	"\x11StationDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x127\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x19.resources.v1.StationTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x12*\n" +
-	"\x11tool_instance_ids\x18\x06 \x03(\tR\x0ftoolInstanceIds\x124\n" +
-	"\x16container_instance_ids\x18\a \x03(\tR\x14containerInstanceIds\x12,\n" +
-	"\x12robot_instance_ids\x18\b \x03(\tR\x10robotInstanceIds\x12,\n" +
-	"\x12asset_instance_ids\x18\t \x03(\tR\x10assetInstanceIds\x12.\n" +
-	"\x13marker_instance_ids\x18\n" +
-	" \x03(\tR\x11markerInstanceIds\x12\x1d\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x19.resources.v1.StationTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x12=\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x1b.resources.v1.StationStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12A\n" +
+	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x120\n" +
+	"\x14allow_queued_process\x18\b \x01(\bR\x12allowQueuedProcess\x12*\n" +
+	"\x11tool_instance_ids\x18\t \x03(\tR\x0ftoolInstanceIds\x124\n" +
+	"\x16container_instance_ids\x18\n" +
+	" \x03(\tR\x14containerInstanceIds\x12,\n" +
+	"\x12robot_instance_ids\x18\v \x03(\tR\x10robotInstanceIds\x12,\n" +
+	"\x12asset_instance_ids\x18\f \x03(\tR\x10assetInstanceIds\x12.\n" +
+	"\x13marker_instance_ids\x18\r \x03(\tR\x11markerInstanceIds\x12\x1d\n" +
 	"\n" +
-	"worker_ids\x18\v \x03(\tR\tworkerIds\x120\n" +
-	"\x05frame\x18\f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"K\n" +
+	"worker_ids\x18\x0e \x03(\tR\tworkerIds\x120\n" +
+	"\x05frame\x18\x0f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
+	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"K\n" +
 	"\x12StationDefinitions\x125\n" +
 	"\x05items\x18\x01 \x03(\v2\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n" +
 	"\vStationType\x12\x1c\n" +
@@ -292,7 +405,13 @@ const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\x14STATION_TYPE_STORAGE\x10\x01\x12\x1f\n" +
 	"\x1bSTATION_TYPE_MANUAL_STATION\x10\x02\x12\"\n" +
 	"\x1eSTATION_TYPE_AUTOMATIC_STATION\x10\x03\x12\x1f\n" +
-	"\x1bSTATION_TYPE_HYBRID_STATION\x10\x04B\xc3\x01\n" +
+	"\x1bSTATION_TYPE_HYBRID_STATION\x10\x04*\x98\x01\n" +
+	"\rStationStatus\x12\x1e\n" +
+	"\x1aSTATION_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
+	"\x13STATION_STATUS_OPEN\x10\x01\x12\x17\n" +
+	"\x13STATION_STATUS_BUSY\x10\x02\x12\x19\n" +
+	"\x15STATION_STATUS_CLOSED\x10\x03\x12\x1a\n" +
+	"\x16STATION_STATUS_BLOCKED\x10\x04B\xc3\x01\n" +
 	"\x10com.resources.v1B\x16StationDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
@@ -307,25 +426,27 @@ func file_resources_v1_station_definition_proto_rawDescGZIP() []byte {
 	return file_resources_v1_station_definition_proto_rawDescData
 }
 
-var file_resources_v1_station_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_resources_v1_station_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_resources_v1_station_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_station_definition_proto_goTypes = []any{
 	(StationType)(0),             // 0: resources.v1.StationType
-	(*StationDefinition)(nil),    // 1: resources.v1.StationDefinition
-	(*StationDefinitions)(nil),   // 2: resources.v1.StationDefinitions
-	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(StationStatus)(0),           // 1: resources.v1.StationStatus
+	(*StationDefinition)(nil),    // 2: resources.v1.StationDefinition
+	(*StationDefinitions)(nil),   // 3: resources.v1.StationDefinitions
+	(*v1.LocalizedPose)(nil),     // 4: geometry.v1.LocalizedPose
+	(*v11.CustomProperties)(nil), // 5: common.v1.CustomProperties
 }
 var file_resources_v1_station_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.StationDefinition.type:type_name -> resources.v1.StationType
-	3, // 1: resources.v1.StationDefinition.frame:type_name -> geometry.v1.LocalizedPose
-	4, // 2: resources.v1.StationDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // 3: resources.v1.StationDefinitions.items:type_name -> resources.v1.StationDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	1, // 1: resources.v1.StationDefinition.status:type_name -> resources.v1.StationStatus
+	4, // 2: resources.v1.StationDefinition.frame:type_name -> geometry.v1.LocalizedPose
+	5, // 3: resources.v1.StationDefinition.custom:type_name -> common.v1.CustomProperties
+	2, // 4: resources.v1.StationDefinitions.items:type_name -> resources.v1.StationDefinition
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_station_definition_proto_init() }
@@ -338,7 +459,7 @@ func file_resources_v1_station_definition_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_station_definition_proto_rawDesc), len(file_resources_v1_station_definition_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,

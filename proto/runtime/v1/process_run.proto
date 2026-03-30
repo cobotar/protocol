@@ -13,10 +13,11 @@ option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 enum ProcessRunState {
   PROCESS_RUN_STATE_UNSPECIFIED = 0;
-  PROCESS_RUN_STATE_WAITING = 1;
-  PROCESS_RUN_STATE_IN_PROGRESS = 2;
-  PROCESS_RUN_STATE_COMPLETED = 3;
-  PROCESS_RUN_STATE_ABORTED = 4;
+  PROCESS_RUN_STATE_QUEUED = 1; // Queued, can not be started yet
+  PROCESS_RUN_STATE_READY = 2; // Waiting to be started (ready)
+  PROCESS_RUN_STATE_IN_PROGRESS = 3; // In progress
+  PROCESS_RUN_STATE_DONE = 4; // Completed, all tasks are complete
+  PROCESS_RUN_STATE_ABORTED = 5;
 }
 
 message RunParameter {
@@ -43,22 +44,26 @@ message ProcessRun {
     // (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.cell_id_component) = true
   ];
-  geometry.v1.LocalizedPose frame = 8;
-  string root_sequence_run_id = 9 [
+  string line_id = 8 [
+    // (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.line_id_component) = true
+  ];
+  geometry.v1.LocalizedPose frame = 9;
+  string root_sequence_run_id = 10 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
   ];
-  repeated string sequence_run_ids = 10 [(buf.validate.field).repeated.items.string.(validation.v1.sequence_run_id_component) = true];
-  repeated string task_run_ids = 11 [(buf.validate.field).repeated.items.string.(validation.v1.task_run_id_component) = true];
-  ProcessRunState state = 12 [
+  repeated string sequence_run_ids = 11 [(buf.validate.field).repeated.items.string.(validation.v1.sequence_run_id_component) = true];
+  repeated string task_run_ids = 12 [(buf.validate.field).repeated.items.string.(validation.v1.task_run_id_component) = true];
+  ProcessRunState state = 13 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  google.protobuf.Timestamp initiated_at = 13;
-  google.protobuf.Timestamp ended_at = 14;
-  repeated ActorAssignment assignments = 15;
-  variance.v1.VariantConfiguration variant_configuration = 16;
-  repeated RunParameter parameters = 17;
+  google.protobuf.Timestamp initiated_at = 14;
+  google.protobuf.Timestamp ended_at = 15;
+  repeated ActorAssignment assignments = 16;
+  variance.v1.VariantConfiguration variant_configuration = 17;
+  repeated RunParameter parameters = 18;
 }
 
 message ProcessRuns {

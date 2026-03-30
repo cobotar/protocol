@@ -1,15 +1,52 @@
 syntax = "proto3";
 package runtime.v1;
 
+import "buf/validate/validate.proto";
+import "common/v1/key_value_constraint.proto";
 import "runtime/v1/process_run.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
-// ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
-// During this process, resources feasibility should be checked, i.e.
-//    "Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?"
+enum ProcessLoadStrategy {
+  PROCESS_LOAD_STRATEGY_UNSPECIFIED = 0;
+
+  // Prefer the first feasible candidate found.
+  PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE = 1;
+
+  // Prefer OPEN stations over BUSY ones, and BUSY over queued ones.
+  PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE = 2;
+
+  // Prefer keeping work inside the explicitly selected cell if one is set.
+  PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE = 3;
+
+  // Prefer the candidate with the strongest resource/actor match.
+  PROCESS_LOAD_STRATEGY_BEST_MATCH = 4;
+}
+
+// ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
+//
+// The loader should evaluate whether the recipe can be instantiated now within
+// the requested operational scope, using currently available actors, tools,
+// robots, containers, assets, and validation resources.
+//
+// Target scope resolution:
+//
+// - target_line_id is the top-level routing scope and is required.
+// - if target_cell_id is set, the loader must validate and use that cell.
+// - if target_station_id is set, the loader must validate and use that station.
+// - if cell/station are not set, the loader should choose the best feasible
+//   candidate within the selected line.
+//
+// Occupancy handling:
+//
+// - if a candidate station is BUSY and queue_if_occupied is true, the loader
+//   may create a queued ProcessRun.
+// - if queue_if_occupied is false, the loader should only queue when the chosen
+//   target explicitly allows queued processes.
+// - otherwise the load should fail with a blocking issue.
 //
 // Thus the following must be evaluated:
 // - available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
@@ -21,23 +58,58 @@ option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 // - active faults / disabled resources
 // - asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --> then verify those assets exist and are available.)
 message ProcessLoadRequest {
-  string process_recipe_id = 1;
-  string target_line_id = 2;
-  variance.v1.VariantConfiguration variant_configuration = 3;
-  bool dry_run = 4; // true = precheck only, false = precheck + instantiate
-  bool queue_if_occupied = 5;
+  string process_recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ]; // Required recipe to instantiate.
+  string target_line_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.line_id_component) = true
+  ]; // Required top-level routing scope.
+
+  // Optional narrowing of the target scope.
+  // If set, the loader must validate and respect these targets.
+  string target_cell_id = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.cell_id_component) = true
+  ];
+  string target_station_id = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.station_id_component) = true
+  ];
+
+  // Optional variant configuration used to evaluate recipe/task applicability.
+  variance.v1.VariantConfiguration variant_configuration = 5;
+
+  // true  -> perform precheck only
+  // false -> perform precheck and instantiate ProcessRun if feasible
+  bool dry_run = 6;
+
+  // If true, the loader may create a queued ProcessRun when the preferred
+  // execution target is currently BUSY but otherwise feasible.
+  bool queue_if_occupied = 7;
+
+  // Optional execution preferences for the loader.
+  ProcessLoadStrategy strategy = 8 [(buf.validate.field).enum.defined_only = true];
+
+  // Optional order/business reference to carry into the ProcessRun.
+  string order_id = 9;
+
+  // Optional caller-provided parameters used during instantiation.
+  repeated common.v1.KeyValueConstraint parameters = 10;
 }
 
 enum ProcessLoadFailure {
   PROCESS_LOAD_FAILURE_UNSPECIFIED = 0;
   // General failures
-  PROCESS_LOAD_FAILURE_LINE_NOT_FOUND = 1;
   PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND = 2;
   PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED = 3;
   PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN = 4;
 
-  // Fixture related failures
-  PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE = 10;
+  // Container related failures
+  PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER = 10;
+  PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND = 11;
+  PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND = 12;
 
   // Tool related failures
   PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE = 20;
@@ -48,10 +120,11 @@ enum ProcessLoadFailure {
   PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE = 30;
   PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH = 31;
 
-  // Agent/operator related failueres
-  PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR = 40;
-  PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED = 41;
-  PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR = 42;
+  // Agent/operator related failures
+  PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR = 40; // A human is required but no worker with valid skills exists.
+  PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR = 41; // No actor type can perform the task.
+  PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED = 42;
+  PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED = 43;
 
   // Safety / collaboration related failures
   PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED = 50;
@@ -61,6 +134,24 @@ enum ProcessLoadFailure {
   PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE = 60;
   PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING = 61;
   PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD = 62;
+
+  // Line related failures
+  PROCESS_LOAD_FAILURE_LINE_NOT_FOUND = 70;
+  PROCESS_LOAD_FAILURE_LINE_CLOSED = 71;
+  PROCESS_LOAD_FAILURE_LINE_BUSY = 72;
+  PROCESS_LOAD_FAILURE_LINE_BLOCKED = 73;
+
+  // Cell related failures
+  PROCESS_LOAD_FAILURE_CELL_NOT_FOUND = 80;
+  PROCESS_LOAD_FAILURE_CELL_CLOSED = 81;
+  PROCESS_LOAD_FAILURE_CELL_BUSY = 82;
+  PROCESS_LOAD_FAILURE_CELL_BLOCKED = 83;
+
+  // Station related failures
+  PROCESS_LOAD_FAILURE_STATION_NOT_FOUND = 90;
+  PROCESS_LOAD_FAILURE_STATION_CLOSED = 91;
+  PROCESS_LOAD_FAILURE_STATION_BUSY = 92;
+  PROCESS_LOAD_FAILURE_STATION_BLOCKED = 93;
 }
 
 enum ProcessRunIssueSeverity {
@@ -89,14 +180,15 @@ message ProcessRunIssue {
   string required_tool_role = 7;
   string required_skill_id = 8;
   string fixture_definition_id = 9;
-  string station_id = 10;
-  string actor_id = 11;
-  string resource_id = 12; // tool/robot/fixture/asset instance if known
+  string cell_id = 10;
+  string station_id = 11;
+  string actor_id = 12;
+  string resource_id = 13; // tool/robot/fixture/asset instance if known
 
   // Optional remediation hint
-  string remediation = 13;
+  string remediation = 14;
 
-  RequirementImportance importance = 14;
+  RequirementImportance importance = 15;
 }
 
 message TaskFeasibility {
@@ -104,11 +196,12 @@ message TaskFeasibility {
   bool feasible = 2;
 
   repeated string candidate_actor_ids = 3;
-  repeated string candidate_tool_instance_ids = 4;
-  repeated string candidate_fixture_instance_ids = 5;
-  repeated string candidate_asset_instance_ids = 6;
+  repeated string candidate_robot_instance_ids = 4;
+  repeated string candidate_tool_instance_ids = 5;
+  repeated string candidate_container_instance_ids = 6;
+  repeated string candidate_asset_instance_ids = 7;
 
-  repeated ProcessRunIssue issues = 7;
+  repeated ProcessRunIssue issues = 8;
 }
 
 enum ProcessRunPrecheckStatus {

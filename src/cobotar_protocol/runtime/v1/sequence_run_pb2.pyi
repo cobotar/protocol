@@ -13,16 +13,16 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class SequenceRunState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     SEQUENCE_RUN_STATE_UNSPECIFIED: _ClassVar[SequenceRunState]
-    SEQUENCE_RUN_STATE_MISSING_PRECONDITION: _ClassVar[SequenceRunState]
-    SEQUENCE_RUN_STATE_WAITING: _ClassVar[SequenceRunState]
+    SEQUENCE_RUN_STATE_NOT_READY: _ClassVar[SequenceRunState]
+    SEQUENCE_RUN_STATE_READY: _ClassVar[SequenceRunState]
     SEQUENCE_RUN_STATE_IN_PROGRESS: _ClassVar[SequenceRunState]
-    SEQUENCE_RUN_STATE_COMPLETED: _ClassVar[SequenceRunState]
+    SEQUENCE_RUN_STATE_DONE: _ClassVar[SequenceRunState]
     SEQUENCE_RUN_STATE_ABORTED: _ClassVar[SequenceRunState]
 SEQUENCE_RUN_STATE_UNSPECIFIED: SequenceRunState
-SEQUENCE_RUN_STATE_MISSING_PRECONDITION: SequenceRunState
-SEQUENCE_RUN_STATE_WAITING: SequenceRunState
+SEQUENCE_RUN_STATE_NOT_READY: SequenceRunState
+SEQUENCE_RUN_STATE_READY: SequenceRunState
 SEQUENCE_RUN_STATE_IN_PROGRESS: SequenceRunState
-SEQUENCE_RUN_STATE_COMPLETED: SequenceRunState
+SEQUENCE_RUN_STATE_DONE: SequenceRunState
 SEQUENCE_RUN_STATE_ABORTED: SequenceRunState
 
 class SequenceRun(_message.Message):

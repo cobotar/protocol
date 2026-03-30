@@ -19,31 +19,33 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class TaskRunState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     TASK_RUN_STATE_UNSPECIFIED: _ClassVar[TaskRunState]
-    TASK_RUN_STATE_MISSING_PRECONDITION: _ClassVar[TaskRunState]
-    TASK_RUN_STATE_WAITING: _ClassVar[TaskRunState]
+    TASK_RUN_STATE_NOT_READY: _ClassVar[TaskRunState]
+    TASK_RUN_STATE_READY: _ClassVar[TaskRunState]
     TASK_RUN_STATE_IN_PROGRESS: _ClassVar[TaskRunState]
-    TASK_RUN_STATE_COMPLETED: _ClassVar[TaskRunState]
+    TASK_RUN_STATE_DONE: _ClassVar[TaskRunState]
     TASK_RUN_STATE_ERROR: _ClassVar[TaskRunState]
     TASK_RUN_STATE_ABORTED: _ClassVar[TaskRunState]
 TASK_RUN_STATE_UNSPECIFIED: TaskRunState
-TASK_RUN_STATE_MISSING_PRECONDITION: TaskRunState
-TASK_RUN_STATE_WAITING: TaskRunState
+TASK_RUN_STATE_NOT_READY: TaskRunState
+TASK_RUN_STATE_READY: TaskRunState
 TASK_RUN_STATE_IN_PROGRESS: TaskRunState
-TASK_RUN_STATE_COMPLETED: TaskRunState
+TASK_RUN_STATE_DONE: TaskRunState
 TASK_RUN_STATE_ERROR: TaskRunState
 TASK_RUN_STATE_ABORTED: TaskRunState
 
 class TaskRuntimeBinding(_message.Message):
-    __slots__ = ("asset_instance_id", "robot_instance_id", "station_id", "container_slot")
+    __slots__ = ("asset_instance_id", "robot_instance_id", "station_id", "cell_id", "container_slot")
     ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     ROBOT_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
+    CELL_ID_FIELD_NUMBER: _ClassVar[int]
     CONTAINER_SLOT_FIELD_NUMBER: _ClassVar[int]
     asset_instance_id: str
     robot_instance_id: str
     station_id: str
+    cell_id: str
     container_slot: _container_definition_pb2.ContainerSlotRef
-    def __init__(self, asset_instance_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., container_slot: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ...) -> None: ...
+    def __init__(self, asset_instance_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., container_slot: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ...) -> None: ...
 
 class TaskRun(_message.Message):
     __slots__ = ("id", "name", "icon", "task_definition_id", "parent_sequence_run_id", "state", "candidate_actors", "assigned_actor", "can_do", "can_undo", "workable_horizon", "estimated_duration", "started_at", "completed_at", "error_code", "error_message", "evidence", "binding")

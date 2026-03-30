@@ -20,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/process_run.proto.
  */
 export const file_runtime_v1_process_run: GenFile = /*@__PURE__*/
-  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkijAUKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEicKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJQgy6SAnIAQFyBIjyBAESEAoIb3JkZXJfaWQYBSABKAkSHQoKc3RhdGlvbl9pZBgGIAEoCUIJukgGcgTY8QQBEhoKB2NlbGxfaWQYByABKAlCCbpIBnIEoPIEARIpCgVmcmFtZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKgoUcm9vdF9zZXF1ZW5jZV9ydW5faWQYCSABKAlCDLpICcgBAXIE+PEEARIoChBzZXF1ZW5jZV9ydW5faWRzGAogAygJQg66SAuSAQgiBnIE+PEEARIkCgx0YXNrX3J1bl9pZHMYCyADKAlCDrpIC5IBCCIGcgSA8gQBEjcKBXN0YXRlGAwgASgOMhsucnVudGltZS52MS5Qcm9jZXNzUnVuU3RhdGVCC7pICMgBAYIBAhABEjAKDGluaXRpYXRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKC2Fzc2lnbm1lbnRzGA8gAygLMhsucnVudGltZS52MS5BY3RvckFzc2lnbm1lbnQSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGBAgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SLAoKcGFyYW1ldGVycxgRIAMoCzIYLnJ1bnRpbWUudjEuUnVuUGFyYW1ldGVyIjQKC1Byb2Nlc3NSdW5zEiUKBWl0ZW1zGAEgAygLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuKrYBCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIdChlQUk9DRVNTX1JVTl9TVEFURV9XQUlUSU5HEAESIQodUFJPQ0VTU19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAhIfChtQUk9DRVNTX1JVTl9TVEFURV9DT01QTEVURUQQAxIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEARCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
+  fileDesc("ChxydW50aW1lL3YxL3Byb2Nlc3NfcnVuLnByb3RvEgpydW50aW1lLnYxIioKDFJ1blBhcmFtZXRlchILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAkiqAUKClByb2Nlc3NSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEicKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJQgy6SAnIAQFyBIjyBAESEAoIb3JkZXJfaWQYBSABKAkSHQoKc3RhdGlvbl9pZBgGIAEoCUIJukgGcgTY8QQBEhoKB2NlbGxfaWQYByABKAlCCbpIBnIEoPIEARIaCgdsaW5lX2lkGAggASgJQgm6SAZyBKjyBAESKQoFZnJhbWUYCSABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlEioKFHJvb3Rfc2VxdWVuY2VfcnVuX2lkGAogASgJQgy6SAnIAQFyBPjxBAESKAoQc2VxdWVuY2VfcnVuX2lkcxgLIAMoCUIOukgLkgEIIgZyBPjxBAESJAoMdGFza19ydW5faWRzGAwgAygJQg66SAuSAQgiBnIEgPIEARI3CgVzdGF0ZRgNIAEoDjIbLnJ1bnRpbWUudjEuUHJvY2Vzc1J1blN0YXRlQgu6SAjIAQGCAQIQARIwCgxpbml0aWF0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZGVkX2F0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgthc3NpZ25tZW50cxgQIAMoCzIbLnJ1bnRpbWUudjEuQWN0b3JBc3NpZ25tZW50EkAKFXZhcmlhbnRfY29uZmlndXJhdGlvbhgRIAEoCzIhLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uEiwKCnBhcmFtZXRlcnMYEiADKAsyGC5ydW50aW1lLnYxLlJ1blBhcmFtZXRlciI0CgtQcm9jZXNzUnVucxIlCgVpdGVtcxgBIAMoCzIWLnJ1bnRpbWUudjEuUHJvY2Vzc1J1birNAQoPUHJvY2Vzc1J1blN0YXRlEiEKHVBST0NFU1NfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASHAoYUFJPQ0VTU19SVU5fU1RBVEVfUVVFVUVEEAESGwoXUFJPQ0VTU19SVU5fU1RBVEVfUkVBRFkQAhIhCh1QUk9DRVNTX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhoKFlBST0NFU1NfUlVOX1NUQVRFX0RPTkUQBBIdChlQUk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEAVCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_pose, file_google_protobuf_timestamp, file_runtime_v1_actor_assignment, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
 
 /**
  * @generated from message runtime.v1.RunParameter
@@ -89,52 +89,57 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
   cellId: string;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose frame = 8;
+   * @generated from field: string line_id = 8;
+   */
+  lineId: string;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose frame = 9;
    */
   frame?: LocalizedPose;
 
   /**
-   * @generated from field: string root_sequence_run_id = 9;
+   * @generated from field: string root_sequence_run_id = 10;
    */
   rootSequenceRunId: string;
 
   /**
-   * @generated from field: repeated string sequence_run_ids = 10;
+   * @generated from field: repeated string sequence_run_ids = 11;
    */
   sequenceRunIds: string[];
 
   /**
-   * @generated from field: repeated string task_run_ids = 11;
+   * @generated from field: repeated string task_run_ids = 12;
    */
   taskRunIds: string[];
 
   /**
-   * @generated from field: runtime.v1.ProcessRunState state = 12;
+   * @generated from field: runtime.v1.ProcessRunState state = 13;
    */
   state: ProcessRunState;
 
   /**
-   * @generated from field: google.protobuf.Timestamp initiated_at = 13;
+   * @generated from field: google.protobuf.Timestamp initiated_at = 14;
    */
   initiatedAt?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp ended_at = 14;
+   * @generated from field: google.protobuf.Timestamp ended_at = 15;
    */
   endedAt?: Timestamp;
 
   /**
-   * @generated from field: repeated runtime.v1.ActorAssignment assignments = 15;
+   * @generated from field: repeated runtime.v1.ActorAssignment assignments = 16;
    */
   assignments: ActorAssignment[];
 
   /**
-   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 16;
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 17;
    */
   variantConfiguration?: VariantConfiguration;
 
   /**
-   * @generated from field: repeated runtime.v1.RunParameter parameters = 17;
+   * @generated from field: repeated runtime.v1.RunParameter parameters = 18;
    */
   parameters: RunParameter[];
 };
@@ -173,24 +178,37 @@ export enum ProcessRunState {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: PROCESS_RUN_STATE_WAITING = 1;
+   * Queued, can not be started yet
+   *
+   * @generated from enum value: PROCESS_RUN_STATE_QUEUED = 1;
    */
-  WAITING = 1,
+  QUEUED = 1,
 
   /**
-   * @generated from enum value: PROCESS_RUN_STATE_IN_PROGRESS = 2;
+   * Waiting to be started (ready)
+   *
+   * @generated from enum value: PROCESS_RUN_STATE_READY = 2;
    */
-  IN_PROGRESS = 2,
+  READY = 2,
 
   /**
-   * @generated from enum value: PROCESS_RUN_STATE_COMPLETED = 3;
+   * In progress
+   *
+   * @generated from enum value: PROCESS_RUN_STATE_IN_PROGRESS = 3;
    */
-  COMPLETED = 3,
+  IN_PROGRESS = 3,
 
   /**
-   * @generated from enum value: PROCESS_RUN_STATE_ABORTED = 4;
+   * Completed, all tasks are complete
+   *
+   * @generated from enum value: PROCESS_RUN_STATE_DONE = 4;
    */
-  ABORTED = 4,
+  DONE = 4,
+
+  /**
+   * @generated from enum value: PROCESS_RUN_STATE_ABORTED = 5;
+   */
+  ABORTED = 5,
 }
 
 /**

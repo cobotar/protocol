@@ -30,45 +30,45 @@ namespace Messages.Runtime.V1 {
             "c3RhbXAucHJvdG8aJ3Jlc291cmNlcy92MS9jb250YWluZXJfZGVmaW5pdGlv",
             "bi5wcm90bxojcnVudGltZS92MS9leGVjdXRpb25fZXZpZGVuY2UucHJvdG8a",
             "K3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i",
-            "0gEKElRhc2tSdW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgB",
+            "6wEKElRhc2tSdW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgB",
             "IAEoCVIPYXNzZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIg",
             "ASgJUg9yb2JvdEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3Rh",
-            "dGlvbklkEkUKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYx",
-            "LkNvbnRhaW5lclNsb3RSZWZSDWNvbnRhaW5lclNsb3Qi1gYKB1Rhc2tSdW4S",
-            "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
-            "IAEoCVIEaWNvbhI6ChJ0YXNrX2RlZmluaXRpb25faWQYBCABKAlCDLpICXIE",
-            "mPIEAcgBAVIQdGFza0RlZmluaXRpb25JZBJBChZwYXJlbnRfc2VxdWVuY2Vf",
-            "cnVuX2lkGAUgASgJQgy6SAlyBPjxBAHIAQFSE3BhcmVudFNlcXVlbmNlUnVu",
-            "SWQSOwoFc3RhdGUYBiABKA4yGC5ydW50aW1lLnYxLlRhc2tSdW5TdGF0ZUIL",
-            "ukgIggECEAHIAQFSBXN0YXRlEj4KEGNhbmRpZGF0ZV9hY3RvcnMYByADKAsy",
-            "Ey5jb21tb24udjEuQWN0b3JSZWZSD2NhbmRpZGF0ZUFjdG9ycxI6Cg5hc3Np",
-            "Z25lZF9hY3RvchgIIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZlINYXNzaWdu",
-            "ZWRBY3RvchIVCgZjYW5fZG8YCSABKAhSBWNhbkRvEhkKCGNhbl91bmRvGAog",
-            "ASgIUgdjYW5VbmRvEikKEHdvcmthYmxlX2hvcml6b24YCyABKAVSD3dvcmth",
-            "YmxlSG9yaXpvbhJLChJlc3RpbWF0ZWRfZHVyYXRpb24YDCABKAsyHC5jb21t",
-            "b24udjEuRXN0aW1hdGVkRHVyYXRpb25SEWVzdGltYXRlZER1cmF0aW9uEjkK",
-            "CnN0YXJ0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "UglzdGFydGVkQXQSPQoMY29tcGxldGVkX2F0GA4gASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcFILY29tcGxldGVkQXQSHQoKZXJyb3JfY29kZRgP",
-            "IAEoCVIJZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UYECABKAlSDGVycm9y",
-            "TWVzc2FnZRI5CghldmlkZW5jZRgRIAMoCzIdLnJ1bnRpbWUudjEuRXhlY3V0",
-            "aW9uRXZpZGVuY2VSCGV2aWRlbmNlEjgKB2JpbmRpbmcYEiABKAsyHi5ydW50",
-            "aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZ1IHYmluZGluZyI1CghUYXNrUnVu",
-            "cxIpCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq",
-            "5wEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklF",
-            "RBAAEicKI1RBU0tfUlVOX1NUQVRFX01JU1NJTkdfUFJFQ09ORElUSU9OEAES",
-            "GgoWVEFTS19SVU5fU1RBVEVfV0FJVElORxACEh4KGlRBU0tfUlVOX1NUQVRF",
-            "X0lOX1BST0dSRVNTEAMSHAoYVEFTS19SVU5fU1RBVEVfQ09NUExFVEVEEAQS",
-            "GAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9B",
-            "Qk9SVEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
-            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
-            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
-            "VjFiBnByb3RvMw=="));
+            "dGlvbklkEhcKB2NlbGxfaWQYBCABKAlSBmNlbGxJZBJFCg5jb250YWluZXJf",
+            "c2xvdBgFIAEoCzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmUg1j",
+            "b250YWluZXJTbG90ItYGCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBISCgRu",
+            "YW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SOgoSdGFza19k",
+            "ZWZpbml0aW9uX2lkGAQgASgJQgy6SAlyBJjyBAHIAQFSEHRhc2tEZWZpbml0",
+            "aW9uSWQSQQoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJcgT4",
+            "8QQByAEBUhNwYXJlbnRTZXF1ZW5jZVJ1bklkEjsKBXN0YXRlGAYgASgOMhgu",
+            "cnVudGltZS52MS5UYXNrUnVuU3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRI+",
+            "ChBjYW5kaWRhdGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVm",
+            "Ug9jYW5kaWRhdGVBY3RvcnMSOgoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5j",
+            "b21tb24udjEuQWN0b3JSZWZSDWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAkg",
+            "ASgIUgVjYW5EbxIZCghjYW5fdW5kbxgKIAEoCFIHY2FuVW5kbxIpChB3b3Jr",
+            "YWJsZV9ob3Jpem9uGAsgASgFUg93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1h",
+            "dGVkX2R1cmF0aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0",
+            "aW9uUhFlc3RpbWF0ZWREdXJhdGlvbhI5CgpzdGFydGVkX2F0GA0gASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBs",
+            "ZXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2Nv",
+            "bXBsZXRlZEF0Eh0KCmVycm9yX2NvZGUYDyABKAlSCWVycm9yQ29kZRIjCg1l",
+            "cnJvcl9tZXNzYWdlGBAgASgJUgxlcnJvck1lc3NhZ2USOQoIZXZpZGVuY2UY",
+            "ESADKAsyHS5ydW50aW1lLnYxLkV4ZWN1dGlvbkV2aWRlbmNlUghldmlkZW5j",
+            "ZRI4CgdiaW5kaW5nGBIgASgLMh4ucnVudGltZS52MS5UYXNrUnVudGltZUJp",
+            "bmRpbmdSB2JpbmRpbmciNQoIVGFza1J1bnMSKQoFaXRlbXMYASADKAsyEy5y",
+            "dW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUBCgxUYXNrUnVuU3RhdGUSHgoa",
+            "VEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhUQVNLX1JVTl9TVEFU",
+            "RV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9SRUFEWRACEh4KGlRB",
+            "U0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFTS19SVU5fU1RBVEVf",
+            "RE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5f",
+            "U1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blBy",
+            "b3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9y",
+            "dW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUu",
+            "VjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1",
+            "bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "ContainerSlot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "CellId", "ContainerSlot" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -79,10 +79,10 @@ namespace Messages.Runtime.V1 {
   #region Enums
   public enum TaskRunState {
     [pbr::OriginalName("TASK_RUN_STATE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("TASK_RUN_STATE_MISSING_PRECONDITION")] MissingPrecondition = 1,
-    [pbr::OriginalName("TASK_RUN_STATE_WAITING")] Waiting = 2,
+    [pbr::OriginalName("TASK_RUN_STATE_NOT_READY")] NotReady = 1,
+    [pbr::OriginalName("TASK_RUN_STATE_READY")] Ready = 2,
     [pbr::OriginalName("TASK_RUN_STATE_IN_PROGRESS")] InProgress = 3,
-    [pbr::OriginalName("TASK_RUN_STATE_COMPLETED")] Completed = 4,
+    [pbr::OriginalName("TASK_RUN_STATE_DONE")] Done = 4,
     [pbr::OriginalName("TASK_RUN_STATE_ERROR")] Error = 5,
     [pbr::OriginalName("TASK_RUN_STATE_ABORTED")] Aborted = 6,
   }
@@ -131,6 +131,7 @@ namespace Messages.Runtime.V1 {
       assetInstanceId_ = other.assetInstanceId_;
       robotInstanceId_ = other.robotInstanceId_;
       stationId_ = other.stationId_;
+      cellId_ = other.cellId_;
       containerSlot_ = other.containerSlot_ != null ? other.containerSlot_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -177,8 +178,20 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "cell_id" field.</summary>
+    public const int CellIdFieldNumber = 4;
+    private string cellId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CellId {
+      get { return cellId_; }
+      set {
+        cellId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "container_slot" field.</summary>
-    public const int ContainerSlotFieldNumber = 4;
+    public const int ContainerSlotFieldNumber = 5;
     private global::Messages.Resources.V1.ContainerSlotRef containerSlot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -207,6 +220,7 @@ namespace Messages.Runtime.V1 {
       if (AssetInstanceId != other.AssetInstanceId) return false;
       if (RobotInstanceId != other.RobotInstanceId) return false;
       if (StationId != other.StationId) return false;
+      if (CellId != other.CellId) return false;
       if (!object.Equals(ContainerSlot, other.ContainerSlot)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -218,6 +232,7 @@ namespace Messages.Runtime.V1 {
       if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
       if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (CellId.Length != 0) hash ^= CellId.GetHashCode();
       if (containerSlot_ != null) hash ^= ContainerSlot.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -249,8 +264,12 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(26);
         output.WriteString(StationId);
       }
-      if (containerSlot_ != null) {
+      if (CellId.Length != 0) {
         output.WriteRawTag(34);
+        output.WriteString(CellId);
+      }
+      if (containerSlot_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(ContainerSlot);
       }
       if (_unknownFields != null) {
@@ -275,8 +294,12 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(26);
         output.WriteString(StationId);
       }
-      if (containerSlot_ != null) {
+      if (CellId.Length != 0) {
         output.WriteRawTag(34);
+        output.WriteString(CellId);
+      }
+      if (containerSlot_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(ContainerSlot);
       }
       if (_unknownFields != null) {
@@ -297,6 +320,9 @@ namespace Messages.Runtime.V1 {
       }
       if (StationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
+      }
+      if (CellId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CellId);
       }
       if (containerSlot_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ContainerSlot);
@@ -321,6 +347,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.StationId.Length != 0) {
         StationId = other.StationId;
+      }
+      if (other.CellId.Length != 0) {
+        CellId = other.CellId;
       }
       if (other.containerSlot_ != null) {
         if (containerSlot_ == null) {
@@ -360,6 +389,10 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 34: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 42: {
             if (containerSlot_ == null) {
               ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
             }
@@ -398,6 +431,10 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 34: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 42: {
             if (containerSlot_ == null) {
               ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
             }

@@ -7,6 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v11 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -22,17 +25,77 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ProcessLoadStrategy int32
+
+const (
+	ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_UNSPECIFIED ProcessLoadStrategy = 0
+	// Prefer the first feasible candidate found.
+	ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE ProcessLoadStrategy = 1
+	// Prefer OPEN stations over BUSY ones, and BUSY over queued ones.
+	ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE ProcessLoadStrategy = 2
+	// Prefer keeping work inside the explicitly selected cell if one is set.
+	ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE ProcessLoadStrategy = 3
+	// Prefer the candidate with the strongest resource/actor match.
+	ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_BEST_MATCH ProcessLoadStrategy = 4
+)
+
+// Enum value maps for ProcessLoadStrategy.
+var (
+	ProcessLoadStrategy_name = map[int32]string{
+		0: "PROCESS_LOAD_STRATEGY_UNSPECIFIED",
+		1: "PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE",
+		2: "PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE",
+		3: "PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE",
+		4: "PROCESS_LOAD_STRATEGY_BEST_MATCH",
+	}
+	ProcessLoadStrategy_value = map[string]int32{
+		"PROCESS_LOAD_STRATEGY_UNSPECIFIED":         0,
+		"PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE":      1,
+		"PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE":    2,
+		"PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE": 3,
+		"PROCESS_LOAD_STRATEGY_BEST_MATCH":          4,
+	}
+)
+
+func (x ProcessLoadStrategy) Enum() *ProcessLoadStrategy {
+	p := new(ProcessLoadStrategy)
+	*p = x
+	return p
+}
+
+func (x ProcessLoadStrategy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProcessLoadStrategy) Descriptor() protoreflect.EnumDescriptor {
+	return file_runtime_v1_process_requests_proto_enumTypes[0].Descriptor()
+}
+
+func (ProcessLoadStrategy) Type() protoreflect.EnumType {
+	return &file_runtime_v1_process_requests_proto_enumTypes[0]
+}
+
+func (x ProcessLoadStrategy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProcessLoadStrategy.Descriptor instead.
+func (ProcessLoadStrategy) EnumDescriptor() ([]byte, []int) {
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{0}
+}
+
 type ProcessLoadFailure int32
 
 const (
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_UNSPECIFIED ProcessLoadFailure = 0
 	// General failures
-	ProcessLoadFailure_PROCESS_LOAD_FAILURE_LINE_NOT_FOUND           ProcessLoadFailure = 1
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND ProcessLoadFailure = 2
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED    ProcessLoadFailure = 3
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN   ProcessLoadFailure = 4
-	// Fixture related failures
-	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE ProcessLoadFailure = 10
+	// Container related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER      ProcessLoadFailure = 10
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND      ProcessLoadFailure = 11
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND ProcessLoadFailure = 12
 	// Tool related failures
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE            ProcessLoadFailure = 20
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED          ProcessLoadFailure = 21
@@ -40,10 +103,11 @@ const (
 	// Robot related failures
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE      ProcessLoadFailure = 30
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH ProcessLoadFailure = 31
-	// Agent/operator related failueres
-	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR  ProcessLoadFailure = 40
-	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED ProcessLoadFailure = 41
-	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR      ProcessLoadFailure = 42
+	// Agent/operator related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR     ProcessLoadFailure = 40 // A human is required but no worker with valid skills exists.
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR         ProcessLoadFailure = 41 // No actor type can perform the task.
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED ProcessLoadFailure = 42
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED    ProcessLoadFailure = 43
 	// Safety / collaboration related failures
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED ProcessLoadFailure = 50
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH           ProcessLoadFailure = 51
@@ -51,51 +115,94 @@ const (
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE      ProcessLoadFailure = 60
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING     ProcessLoadFailure = 61
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD ProcessLoadFailure = 62
+	// Line related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_LINE_NOT_FOUND ProcessLoadFailure = 70
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_LINE_CLOSED    ProcessLoadFailure = 71
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_LINE_BUSY      ProcessLoadFailure = 72
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_LINE_BLOCKED   ProcessLoadFailure = 73
+	// Cell related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_CELL_NOT_FOUND ProcessLoadFailure = 80
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_CELL_CLOSED    ProcessLoadFailure = 81
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_CELL_BUSY      ProcessLoadFailure = 82
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_CELL_BLOCKED   ProcessLoadFailure = 83
+	// Station related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_NOT_FOUND ProcessLoadFailure = 90
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_CLOSED    ProcessLoadFailure = 91
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_BUSY      ProcessLoadFailure = 92
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_BLOCKED   ProcessLoadFailure = 93
 )
 
 // Enum value maps for ProcessLoadFailure.
 var (
 	ProcessLoadFailure_name = map[int32]string{
 		0:  "PROCESS_LOAD_FAILURE_UNSPECIFIED",
-		1:  "PROCESS_LOAD_FAILURE_LINE_NOT_FOUND",
 		2:  "PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND",
 		3:  "PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED",
 		4:  "PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN",
-		10: "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE",
+		10: "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER",
+		11: "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND",
+		12: "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND",
 		20: "PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE",
 		21: "PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED",
 		22: "PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT",
 		30: "PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE",
 		31: "PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH",
 		40: "PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR",
-		41: "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED",
-		42: "PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR",
+		41: "PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR",
+		42: "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED",
+		43: "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED",
 		50: "PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED",
 		51: "PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH",
 		60: "PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE",
 		61: "PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING",
 		62: "PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD",
+		70: "PROCESS_LOAD_FAILURE_LINE_NOT_FOUND",
+		71: "PROCESS_LOAD_FAILURE_LINE_CLOSED",
+		72: "PROCESS_LOAD_FAILURE_LINE_BUSY",
+		73: "PROCESS_LOAD_FAILURE_LINE_BLOCKED",
+		80: "PROCESS_LOAD_FAILURE_CELL_NOT_FOUND",
+		81: "PROCESS_LOAD_FAILURE_CELL_CLOSED",
+		82: "PROCESS_LOAD_FAILURE_CELL_BUSY",
+		83: "PROCESS_LOAD_FAILURE_CELL_BLOCKED",
+		90: "PROCESS_LOAD_FAILURE_STATION_NOT_FOUND",
+		91: "PROCESS_LOAD_FAILURE_STATION_CLOSED",
+		92: "PROCESS_LOAD_FAILURE_STATION_BUSY",
+		93: "PROCESS_LOAD_FAILURE_STATION_BLOCKED",
 	}
 	ProcessLoadFailure_value = map[string]int32{
 		"PROCESS_LOAD_FAILURE_UNSPECIFIED":                    0,
-		"PROCESS_LOAD_FAILURE_LINE_NOT_FOUND":                 1,
 		"PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND":       2,
 		"PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED":          3,
 		"PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN":         4,
-		"PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE":          10,
+		"PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER":        10,
+		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND":        11,
+		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND":   12,
 		"PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE":              20,
 		"PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED":            21,
 		"PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT":   22,
 		"PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE":              30,
 		"PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH":         31,
 		"PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR":          40,
-		"PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED":         41,
-		"PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR":              42,
+		"PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR":              41,
+		"PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED":      42,
+		"PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED":         43,
 		"PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED": 50,
 		"PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH":           51,
 		"PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE":       60,
 		"PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING":      61,
 		"PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD":  62,
+		"PROCESS_LOAD_FAILURE_LINE_NOT_FOUND":                 70,
+		"PROCESS_LOAD_FAILURE_LINE_CLOSED":                    71,
+		"PROCESS_LOAD_FAILURE_LINE_BUSY":                      72,
+		"PROCESS_LOAD_FAILURE_LINE_BLOCKED":                   73,
+		"PROCESS_LOAD_FAILURE_CELL_NOT_FOUND":                 80,
+		"PROCESS_LOAD_FAILURE_CELL_CLOSED":                    81,
+		"PROCESS_LOAD_FAILURE_CELL_BUSY":                      82,
+		"PROCESS_LOAD_FAILURE_CELL_BLOCKED":                   83,
+		"PROCESS_LOAD_FAILURE_STATION_NOT_FOUND":              90,
+		"PROCESS_LOAD_FAILURE_STATION_CLOSED":                 91,
+		"PROCESS_LOAD_FAILURE_STATION_BUSY":                   92,
+		"PROCESS_LOAD_FAILURE_STATION_BLOCKED":                93,
 	}
 )
 
@@ -110,11 +217,11 @@ func (x ProcessLoadFailure) String() string {
 }
 
 func (ProcessLoadFailure) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[0].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[1].Descriptor()
 }
 
 func (ProcessLoadFailure) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[0]
+	return &file_runtime_v1_process_requests_proto_enumTypes[1]
 }
 
 func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
@@ -123,7 +230,7 @@ func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadFailure.Descriptor instead.
 func (ProcessLoadFailure) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{0}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
 }
 
 type ProcessRunIssueSeverity int32
@@ -159,11 +266,11 @@ func (x ProcessRunIssueSeverity) String() string {
 }
 
 func (ProcessRunIssueSeverity) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[1].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[2].Descriptor()
 }
 
 func (ProcessRunIssueSeverity) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[1]
+	return &file_runtime_v1_process_requests_proto_enumTypes[2]
 }
 
 func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
@@ -172,7 +279,7 @@ func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunIssueSeverity.Descriptor instead.
 func (ProcessRunIssueSeverity) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
 }
 
 type RequirementImportance int32
@@ -208,11 +315,11 @@ func (x RequirementImportance) String() string {
 }
 
 func (RequirementImportance) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[2].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[3].Descriptor()
 }
 
 func (RequirementImportance) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[2]
+	return &file_runtime_v1_process_requests_proto_enumTypes[3]
 }
 
 func (x RequirementImportance) Number() protoreflect.EnumNumber {
@@ -221,7 +328,7 @@ func (x RequirementImportance) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RequirementImportance.Descriptor instead.
 func (RequirementImportance) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
 }
 
 type ProcessRunPrecheckStatus int32
@@ -260,11 +367,11 @@ func (x ProcessRunPrecheckStatus) String() string {
 }
 
 func (ProcessRunPrecheckStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[3].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[4].Descriptor()
 }
 
 func (ProcessRunPrecheckStatus) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[3]
+	return &file_runtime_v1_process_requests_proto_enumTypes[4]
 }
 
 func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
@@ -273,7 +380,7 @@ func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunPrecheckStatus.Descriptor instead.
 func (ProcessRunPrecheckStatus) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 type ProcessLoadStatus int32
@@ -312,11 +419,11 @@ func (x ProcessLoadStatus) String() string {
 }
 
 func (ProcessLoadStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[4].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[5].Descriptor()
 }
 
 func (ProcessLoadStatus) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[4]
+	return &file_runtime_v1_process_requests_proto_enumTypes[5]
 }
 
 func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
@@ -325,13 +432,30 @@ func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadStatus.Descriptor instead.
 func (ProcessLoadStatus) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
 }
 
-// ProcessLoadRequest is used to go from ProcessRecipe -> ProcessRun
-// During this process, resources feasibility should be checked, i.e.
+// ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
 //
-//	"Can this recipe be instantiated now, on this station/cell/line, with the currently available resources?"
+// The loader should evaluate whether the recipe can be instantiated now within
+// the requested operational scope, using currently available actors, tools,
+// robots, containers, assets, and validation resources.
+//
+// Target scope resolution:
+//
+//   - target_line_id is the top-level routing scope and is required.
+//   - if target_cell_id is set, the loader must validate and use that cell.
+//   - if target_station_id is set, the loader must validate and use that station.
+//   - if cell/station are not set, the loader should choose the best feasible
+//     candidate within the selected line.
+//
+// Occupancy handling:
+//
+//   - if a candidate station is BUSY and queue_if_occupied is true, the loader
+//     may create a queued ProcessRun.
+//   - if queue_if_occupied is false, the loader should only queue when the chosen
+//     target explicitly allows queued processes.
+//   - otherwise the load should fail with a blocking issue.
 //
 // Thus the following must be evaluated:
 // - available robots (if any task requires or strongly prefers a robot, can that be satisfied?)
@@ -343,14 +467,29 @@ func (ProcessLoadStatus) EnumDescriptor() ([]byte, []int) {
 // - active faults / disabled resources
 // - asset / inspection feasibility (if validation required: vision, torque feedback, external QC, sensors --> then verify those assets exist and are available.)
 type ProcessLoadRequest struct {
-	state                protoimpl.MessageState   `protogen:"open.v1"`
-	ProcessRecipeId      string                   `protobuf:"bytes,1,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
-	TargetLineId         string                   `protobuf:"bytes,2,opt,name=target_line_id,json=targetLineId,proto3" json:"target_line_id,omitempty"`
-	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,3,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
-	DryRun               bool                     `protobuf:"varint,4,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"` // true = precheck only, false = precheck + instantiate
-	QueueIfOccupied      bool                     `protobuf:"varint,5,opt,name=queue_if_occupied,json=queueIfOccupied,proto3" json:"queue_if_occupied,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ProcessRecipeId string                 `protobuf:"bytes,1,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"` // Required recipe to instantiate.
+	TargetLineId    string                 `protobuf:"bytes,2,opt,name=target_line_id,json=targetLineId,proto3" json:"target_line_id,omitempty"`          // Required top-level routing scope.
+	// Optional narrowing of the target scope.
+	// If set, the loader must validate and respect these targets.
+	TargetCellId    string `protobuf:"bytes,3,opt,name=target_cell_id,json=targetCellId,proto3" json:"target_cell_id,omitempty"`
+	TargetStationId string `protobuf:"bytes,4,opt,name=target_station_id,json=targetStationId,proto3" json:"target_station_id,omitempty"`
+	// Optional variant configuration used to evaluate recipe/task applicability.
+	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,5,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	// true  -> perform precheck only
+	// false -> perform precheck and instantiate ProcessRun if feasible
+	DryRun bool `protobuf:"varint,6,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"`
+	// If true, the loader may create a queued ProcessRun when the preferred
+	// execution target is currently BUSY but otherwise feasible.
+	QueueIfOccupied bool `protobuf:"varint,7,opt,name=queue_if_occupied,json=queueIfOccupied,proto3" json:"queue_if_occupied,omitempty"`
+	// Optional execution preferences for the loader.
+	Strategy ProcessLoadStrategy `protobuf:"varint,8,opt,name=strategy,proto3,enum=runtime.v1.ProcessLoadStrategy" json:"strategy,omitempty"`
+	// Optional order/business reference to carry into the ProcessRun.
+	OrderId string `protobuf:"bytes,9,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	// Optional caller-provided parameters used during instantiation.
+	Parameters    []*v11.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessLoadRequest) Reset() {
@@ -397,6 +536,20 @@ func (x *ProcessLoadRequest) GetTargetLineId() string {
 	return ""
 }
 
+func (x *ProcessLoadRequest) GetTargetCellId() string {
+	if x != nil {
+		return x.TargetCellId
+	}
+	return ""
+}
+
+func (x *ProcessLoadRequest) GetTargetStationId() string {
+	if x != nil {
+		return x.TargetStationId
+	}
+	return ""
+}
+
 func (x *ProcessLoadRequest) GetVariantConfiguration() *v1.VariantConfiguration {
 	if x != nil {
 		return x.VariantConfiguration
@@ -418,6 +571,27 @@ func (x *ProcessLoadRequest) GetQueueIfOccupied() bool {
 	return false
 }
 
+func (x *ProcessLoadRequest) GetStrategy() ProcessLoadStrategy {
+	if x != nil {
+		return x.Strategy
+	}
+	return ProcessLoadStrategy_PROCESS_LOAD_STRATEGY_UNSPECIFIED
+}
+
+func (x *ProcessLoadRequest) GetOrderId() string {
+	if x != nil {
+		return x.OrderId
+	}
+	return ""
+}
+
+func (x *ProcessLoadRequest) GetParameters() []*v11.KeyValueConstraint {
+	if x != nil {
+		return x.Parameters
+	}
+	return nil
+}
+
 type ProcessRunIssue struct {
 	state    protoimpl.MessageState  `protogen:"open.v1"`
 	Failure  ProcessLoadFailure      `protobuf:"varint,1,opt,name=failure,proto3,enum=runtime.v1.ProcessLoadFailure" json:"failure,omitempty"`
@@ -431,12 +605,13 @@ type ProcessRunIssue struct {
 	RequiredToolRole    string `protobuf:"bytes,7,opt,name=required_tool_role,json=requiredToolRole,proto3" json:"required_tool_role,omitempty"`
 	RequiredSkillId     string `protobuf:"bytes,8,opt,name=required_skill_id,json=requiredSkillId,proto3" json:"required_skill_id,omitempty"`
 	FixtureDefinitionId string `protobuf:"bytes,9,opt,name=fixture_definition_id,json=fixtureDefinitionId,proto3" json:"fixture_definition_id,omitempty"`
-	StationId           string `protobuf:"bytes,10,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	ActorId             string `protobuf:"bytes,11,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"`
-	ResourceId          string `protobuf:"bytes,12,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset instance if known
+	CellId              string `protobuf:"bytes,10,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	StationId           string `protobuf:"bytes,11,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	ActorId             string `protobuf:"bytes,12,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"`
+	ResourceId          string `protobuf:"bytes,13,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset instance if known
 	// Optional remediation hint
-	Remediation   string                `protobuf:"bytes,13,opt,name=remediation,proto3" json:"remediation,omitempty"`
-	Importance    RequirementImportance `protobuf:"varint,14,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
+	Remediation   string                `protobuf:"bytes,14,opt,name=remediation,proto3" json:"remediation,omitempty"`
+	Importance    RequirementImportance `protobuf:"varint,15,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -534,6 +709,13 @@ func (x *ProcessRunIssue) GetFixtureDefinitionId() string {
 	return ""
 }
 
+func (x *ProcessRunIssue) GetCellId() string {
+	if x != nil {
+		return x.CellId
+	}
+	return ""
+}
+
 func (x *ProcessRunIssue) GetStationId() string {
 	if x != nil {
 		return x.StationId
@@ -570,16 +752,17 @@ func (x *ProcessRunIssue) GetImportance() RequirementImportance {
 }
 
 type TaskFeasibility struct {
-	state                       protoimpl.MessageState `protogen:"open.v1"`
-	TaskDefinitionId            string                 `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
-	Feasible                    bool                   `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
-	CandidateActorIds           []string               `protobuf:"bytes,3,rep,name=candidate_actor_ids,json=candidateActorIds,proto3" json:"candidate_actor_ids,omitempty"`
-	CandidateToolInstanceIds    []string               `protobuf:"bytes,4,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
-	CandidateFixtureInstanceIds []string               `protobuf:"bytes,5,rep,name=candidate_fixture_instance_ids,json=candidateFixtureInstanceIds,proto3" json:"candidate_fixture_instance_ids,omitempty"`
-	CandidateAssetInstanceIds   []string               `protobuf:"bytes,6,rep,name=candidate_asset_instance_ids,json=candidateAssetInstanceIds,proto3" json:"candidate_asset_instance_ids,omitempty"`
-	Issues                      []*ProcessRunIssue     `protobuf:"bytes,7,rep,name=issues,proto3" json:"issues,omitempty"`
-	unknownFields               protoimpl.UnknownFields
-	sizeCache                   protoimpl.SizeCache
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	TaskDefinitionId              string                 `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
+	Feasible                      bool                   `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
+	CandidateActorIds             []string               `protobuf:"bytes,3,rep,name=candidate_actor_ids,json=candidateActorIds,proto3" json:"candidate_actor_ids,omitempty"`
+	CandidateRobotInstanceIds     []string               `protobuf:"bytes,4,rep,name=candidate_robot_instance_ids,json=candidateRobotInstanceIds,proto3" json:"candidate_robot_instance_ids,omitempty"`
+	CandidateToolInstanceIds      []string               `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
+	CandidateContainerInstanceIds []string               `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
+	CandidateAssetInstanceIds     []string               `protobuf:"bytes,7,rep,name=candidate_asset_instance_ids,json=candidateAssetInstanceIds,proto3" json:"candidate_asset_instance_ids,omitempty"`
+	Issues                        []*ProcessRunIssue     `protobuf:"bytes,8,rep,name=issues,proto3" json:"issues,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
 }
 
 func (x *TaskFeasibility) Reset() {
@@ -633,6 +816,13 @@ func (x *TaskFeasibility) GetCandidateActorIds() []string {
 	return nil
 }
 
+func (x *TaskFeasibility) GetCandidateRobotInstanceIds() []string {
+	if x != nil {
+		return x.CandidateRobotInstanceIds
+	}
+	return nil
+}
+
 func (x *TaskFeasibility) GetCandidateToolInstanceIds() []string {
 	if x != nil {
 		return x.CandidateToolInstanceIds
@@ -640,9 +830,9 @@ func (x *TaskFeasibility) GetCandidateToolInstanceIds() []string {
 	return nil
 }
 
-func (x *TaskFeasibility) GetCandidateFixtureInstanceIds() []string {
+func (x *TaskFeasibility) GetCandidateContainerInstanceIds() []string {
 	if x != nil {
-		return x.CandidateFixtureInstanceIds
+		return x.CandidateContainerInstanceIds
 	}
 	return nil
 }
@@ -830,13 +1020,21 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1cruntime/v1/process_run.proto\x1a'variance/v1/variant_configuration.proto\"\x83\x02\n" +
-	"\x12ProcessLoadRequest\x12*\n" +
-	"\x11process_recipe_id\x18\x01 \x01(\tR\x0fprocessRecipeId\x12$\n" +
-	"\x0etarget_line_id\x18\x02 \x01(\tR\ftargetLineId\x12V\n" +
-	"\x15variant_configuration\x18\x03 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x17\n" +
-	"\adry_run\x18\x04 \x01(\bR\x06dryRun\x12*\n" +
-	"\x11queue_if_occupied\x18\x05 \x01(\bR\x0fqueueIfOccupied\"\x84\x05\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xae\x04\n" +
+	"\x12ProcessLoadRequest\x128\n" +
+	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
+	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\ftargetLineId\x122\n" +
+	"\x0etarget_cell_id\x18\x03 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\ftargetCellId\x128\n" +
+	"\x11target_station_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\x0ftargetStationId\x12V\n" +
+	"\x15variant_configuration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x17\n" +
+	"\adry_run\x18\x06 \x01(\bR\x06dryRun\x12*\n" +
+	"\x11queue_if_occupied\x18\a \x01(\bR\x0fqueueIfOccupied\x12E\n" +
+	"\bstrategy\x18\b \x01(\x0e2\x1f.runtime.v1.ProcessLoadStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\bstrategy\x12\x19\n" +
+	"\border_id\x18\t \x01(\tR\aorderId\x12=\n" +
+	"\n" +
+	"parameters\x18\n" +
+	" \x03(\v2\x1d.common.v1.KeyValueConstraintR\n" +
+	"parameters\"\x9d\x05\n" +
 	"\x0fProcessRunIssue\x128\n" +
 	"\afailure\x18\x01 \x01(\x0e2\x1e.runtime.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12?\n" +
@@ -846,25 +1044,27 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x12task_definition_id\x18\x06 \x01(\tR\x10taskDefinitionId\x12,\n" +
 	"\x12required_tool_role\x18\a \x01(\tR\x10requiredToolRole\x12*\n" +
 	"\x11required_skill_id\x18\b \x01(\tR\x0frequiredSkillId\x122\n" +
-	"\x15fixture_definition_id\x18\t \x01(\tR\x13fixtureDefinitionId\x12\x1d\n" +
+	"\x15fixture_definition_id\x18\t \x01(\tR\x13fixtureDefinitionId\x12\x17\n" +
+	"\acell_id\x18\n" +
+	" \x01(\tR\x06cellId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\n" +
-	" \x01(\tR\tstationId\x12\x19\n" +
-	"\bactor_id\x18\v \x01(\tR\aactorId\x12\x1f\n" +
-	"\vresource_id\x18\f \x01(\tR\n" +
+	"station_id\x18\v \x01(\tR\tstationId\x12\x19\n" +
+	"\bactor_id\x18\f \x01(\tR\aactorId\x12\x1f\n" +
+	"\vresource_id\x18\r \x01(\tR\n" +
 	"resourceId\x12 \n" +
-	"\vremediation\x18\r \x01(\tR\vremediation\x12A\n" +
+	"\vremediation\x18\x0e \x01(\tR\vremediation\x12A\n" +
 	"\n" +
-	"importance\x18\x0e \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
-	"importance\"\x85\x03\n" +
+	"importance\x18\x0f \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
+	"importance\"\xca\x03\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12.\n" +
-	"\x13candidate_actor_ids\x18\x03 \x03(\tR\x11candidateActorIds\x12=\n" +
-	"\x1bcandidate_tool_instance_ids\x18\x04 \x03(\tR\x18candidateToolInstanceIds\x12C\n" +
-	"\x1ecandidate_fixture_instance_ids\x18\x05 \x03(\tR\x1bcandidateFixtureInstanceIds\x12?\n" +
-	"\x1ccandidate_asset_instance_ids\x18\x06 \x03(\tR\x19candidateAssetInstanceIds\x123\n" +
-	"\x06issues\x18\a \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\x99\x03\n" +
+	"\x13candidate_actor_ids\x18\x03 \x03(\tR\x11candidateActorIds\x12?\n" +
+	"\x1ccandidate_robot_instance_ids\x18\x04 \x03(\tR\x19candidateRobotInstanceIds\x12=\n" +
+	"\x1bcandidate_tool_instance_ids\x18\x05 \x03(\tR\x18candidateToolInstanceIds\x12G\n" +
+	" candidate_container_instance_ids\x18\x06 \x03(\tR\x1dcandidateContainerInstanceIds\x12?\n" +
+	"\x1ccandidate_asset_instance_ids\x18\a \x03(\tR\x19candidateAssetInstanceIds\x123\n" +
+	"\x06issues\x18\b \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\x99\x03\n" +
 	"\x18ProcessRunPrecheckResult\x12\x0e\n" +
 	"\x02ok\x18\x01 \x01(\bR\x02ok\x123\n" +
 	"\x06issues\x18\x02 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x120\n" +
@@ -878,28 +1078,48 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x06status\x18\x01 \x01(\x0e2\x1d.runtime.v1.ProcessLoadStatusR\x06status\x12@\n" +
 	"\bprecheck\x18\x02 \x01(\v2$.runtime.v1.ProcessRunPrecheckResultR\bprecheck\x127\n" +
 	"\vprocess_run\x18\x03 \x01(\v2\x16.runtime.v1.ProcessRunR\n" +
-	"processRun*\xa9\a\n" +
+	"processRun*\xe7\x01\n" +
+	"\x13ProcessLoadStrategy\x12%\n" +
+	"!PROCESS_LOAD_STRATEGY_UNSPECIFIED\x10\x00\x12(\n" +
+	"$PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE\x10\x01\x12*\n" +
+	"&PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE\x10\x02\x12-\n" +
+	")PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE\x10\x03\x12$\n" +
+	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*\xf9\v\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
-	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x12'\n" +
-	"#PROCESS_LOAD_FAILURE_LINE_NOT_FOUND\x10\x01\x121\n" +
+	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x121\n" +
 	"-PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND\x10\x02\x12.\n" +
 	"*PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED\x10\x03\x12/\n" +
-	"+PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN\x10\x04\x12.\n" +
-	"*PROCESS_LOAD_FAILURE_NO_COMPATIBLE_FIXTURE\x10\n" +
-	"\x12*\n" +
+	"+PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN\x10\x04\x120\n" +
+	",PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER\x10\n" +
+	"\x120\n" +
+	",PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND\x10\v\x125\n" +
+	"1PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND\x10\f\x12*\n" +
 	"&PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE\x10\x14\x12,\n" +
 	"(PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED\x10\x15\x125\n" +
 	"1PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT\x10\x16\x12*\n" +
 	"&PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE\x10\x1e\x12/\n" +
 	"+PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH\x10\x1f\x12.\n" +
-	"*PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR\x10(\x12/\n" +
-	"+PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED\x10)\x12*\n" +
-	"&PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR\x10*\x127\n" +
+	"*PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR\x10(\x12*\n" +
+	"&PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR\x10)\x122\n" +
+	".PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED\x10*\x12/\n" +
+	"+PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED\x10+\x127\n" +
 	"3PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED\x102\x12-\n" +
 	")PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH\x103\x121\n" +
 	"-PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE\x10<\x122\n" +
 	".PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING\x10=\x126\n" +
-	"2PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD\x10>*\x96\x01\n" +
+	"2PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD\x10>\x12'\n" +
+	"#PROCESS_LOAD_FAILURE_LINE_NOT_FOUND\x10F\x12$\n" +
+	" PROCESS_LOAD_FAILURE_LINE_CLOSED\x10G\x12\"\n" +
+	"\x1ePROCESS_LOAD_FAILURE_LINE_BUSY\x10H\x12%\n" +
+	"!PROCESS_LOAD_FAILURE_LINE_BLOCKED\x10I\x12'\n" +
+	"#PROCESS_LOAD_FAILURE_CELL_NOT_FOUND\x10P\x12$\n" +
+	" PROCESS_LOAD_FAILURE_CELL_CLOSED\x10Q\x12\"\n" +
+	"\x1ePROCESS_LOAD_FAILURE_CELL_BUSY\x10R\x12%\n" +
+	"!PROCESS_LOAD_FAILURE_CELL_BLOCKED\x10S\x12*\n" +
+	"&PROCESS_LOAD_FAILURE_STATION_NOT_FOUND\x10Z\x12'\n" +
+	"#PROCESS_LOAD_FAILURE_STATION_CLOSED\x10[\x12%\n" +
+	"!PROCESS_LOAD_FAILURE_STATION_BUSY\x10\\\x12(\n" +
+	"$PROCESS_LOAD_FAILURE_STATION_BLOCKED\x10]*\x96\x01\n" +
 	"\x17ProcessRunIssueSeverity\x12*\n" +
 	"&PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12'\n" +
 	"#PROCESS_RUN_ISSUE_SEVERITY_BLOCKING\x10\x01\x12&\n" +
@@ -933,39 +1153,43 @@ func file_runtime_v1_process_requests_proto_rawDescGZIP() []byte {
 	return file_runtime_v1_process_requests_proto_rawDescData
 }
 
-var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
+var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
 var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_runtime_v1_process_requests_proto_goTypes = []any{
-	(ProcessLoadFailure)(0),          // 0: runtime.v1.ProcessLoadFailure
-	(ProcessRunIssueSeverity)(0),     // 1: runtime.v1.ProcessRunIssueSeverity
-	(RequirementImportance)(0),       // 2: runtime.v1.RequirementImportance
-	(ProcessRunPrecheckStatus)(0),    // 3: runtime.v1.ProcessRunPrecheckStatus
-	(ProcessLoadStatus)(0),           // 4: runtime.v1.ProcessLoadStatus
-	(*ProcessLoadRequest)(nil),       // 5: runtime.v1.ProcessLoadRequest
-	(*ProcessRunIssue)(nil),          // 6: runtime.v1.ProcessRunIssue
-	(*TaskFeasibility)(nil),          // 7: runtime.v1.TaskFeasibility
-	(*ProcessRunPrecheckResult)(nil), // 8: runtime.v1.ProcessRunPrecheckResult
-	(*ProcessLoadResult)(nil),        // 9: runtime.v1.ProcessLoadResult
-	(*v1.VariantConfiguration)(nil),  // 10: variance.v1.VariantConfiguration
-	(*ProcessRun)(nil),               // 11: runtime.v1.ProcessRun
+	(ProcessLoadStrategy)(0),         // 0: runtime.v1.ProcessLoadStrategy
+	(ProcessLoadFailure)(0),          // 1: runtime.v1.ProcessLoadFailure
+	(ProcessRunIssueSeverity)(0),     // 2: runtime.v1.ProcessRunIssueSeverity
+	(RequirementImportance)(0),       // 3: runtime.v1.RequirementImportance
+	(ProcessRunPrecheckStatus)(0),    // 4: runtime.v1.ProcessRunPrecheckStatus
+	(ProcessLoadStatus)(0),           // 5: runtime.v1.ProcessLoadStatus
+	(*ProcessLoadRequest)(nil),       // 6: runtime.v1.ProcessLoadRequest
+	(*ProcessRunIssue)(nil),          // 7: runtime.v1.ProcessRunIssue
+	(*TaskFeasibility)(nil),          // 8: runtime.v1.TaskFeasibility
+	(*ProcessRunPrecheckResult)(nil), // 9: runtime.v1.ProcessRunPrecheckResult
+	(*ProcessLoadResult)(nil),        // 10: runtime.v1.ProcessLoadResult
+	(*v1.VariantConfiguration)(nil),  // 11: variance.v1.VariantConfiguration
+	(*v11.KeyValueConstraint)(nil),   // 12: common.v1.KeyValueConstraint
+	(*ProcessRun)(nil),               // 13: runtime.v1.ProcessRun
 }
 var file_runtime_v1_process_requests_proto_depIdxs = []int32{
-	10, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	0,  // 1: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
-	1,  // 2: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
-	2,  // 3: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
-	6,  // 4: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	6,  // 5: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	7,  // 6: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	3,  // 7: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	4,  // 8: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	8,  // 9: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	11, // 10: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	11, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	0,  // 1: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
+	12, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
+	1,  // 3: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
+	2,  // 4: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
+	3,  // 5: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
+	7,  // 6: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	7,  // 7: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	8,  // 8: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	4,  // 9: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	5,  // 10: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	9,  // 11: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	13, // 12: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }
@@ -979,7 +1203,7 @@ func file_runtime_v1_process_requests_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)),
-			NumEnums:      5,
+			NumEnums:      6,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,

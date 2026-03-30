@@ -40,16 +40,16 @@ namespace Messages.Runtime.V1 {
             "D2NhbkJ1bGtDb21wbGV0ZRI8Cg9hc3NpZ25lZF9hY3RvcnMYCyADKAsyEy5j",
             "b21tb24udjEuQWN0b3JSZWZSDmFzc2lnbmVkQWN0b3JzIj0KDFNlcXVlbmNl",
             "UnVucxItCgVpdGVtcxgBIAMoCzIXLnJ1bnRpbWUudjEuU2VxdWVuY2VSdW5S",
-            "BWl0ZW1zKukBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9T",
-            "VEFURV9VTlNQRUNJRklFRBAAEisKJ1NFUVVFTkNFX1JVTl9TVEFURV9NSVNT",
-            "SU5HX1BSRUNPTkRJVElPThABEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9XQUlU",
-            "SU5HEAISIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSIAoc",
-            "U0VRVUVOQ0VfUlVOX1NUQVRFX0NPTVBMRVRFRBAEEh4KGlNFUVVFTkNFX1JV",
-            "Tl9TVEFURV9BQk9SVEVEEAVCrwEKDmNvbS5ydW50aW1lLnYxQhBTZXF1ZW5j",
-            "ZVJ1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
-            "YWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1",
-            "bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0",
-            "YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "BWl0ZW1zKtcBChBTZXF1ZW5jZVJ1blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9T",
+            "VEFURV9VTlNQRUNJRklFRBAAEiAKHFNFUVVFTkNFX1JVTl9TVEFURV9OT1Rf",
+            "UkVBRFkQARIcChhTRVFVRU5DRV9SVU5fU1RBVEVfUkVBRFkQAhIiCh5TRVFV",
+            "RU5DRV9SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIbChdTRVFVRU5DRV9SVU5f",
+            "U1RBVEVfRE9ORRAEEh4KGlNFUVVFTkNFX1JVTl9TVEFURV9BQk9SVEVEEAVC",
+            "rwEKDmNvbS5ydW50aW1lLnYxQhBTZXF1ZW5jZVJ1blByb3RvUAFaOWdpdGh1",
+            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1",
+            "bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1l",
+            "XFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.SequenceRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -63,10 +63,10 @@ namespace Messages.Runtime.V1 {
   #region Enums
   public enum SequenceRunState {
     [pbr::OriginalName("SEQUENCE_RUN_STATE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("SEQUENCE_RUN_STATE_MISSING_PRECONDITION")] MissingPrecondition = 1,
-    [pbr::OriginalName("SEQUENCE_RUN_STATE_WAITING")] Waiting = 2,
+    [pbr::OriginalName("SEQUENCE_RUN_STATE_NOT_READY")] NotReady = 1,
+    [pbr::OriginalName("SEQUENCE_RUN_STATE_READY")] Ready = 2,
     [pbr::OriginalName("SEQUENCE_RUN_STATE_IN_PROGRESS")] InProgress = 3,
-    [pbr::OriginalName("SEQUENCE_RUN_STATE_COMPLETED")] Completed = 4,
+    [pbr::OriginalName("SEQUENCE_RUN_STATE_DONE")] Done = 4,
     [pbr::OriginalName("SEQUENCE_RUN_STATE_ABORTED")] Aborted = 5,
   }
 

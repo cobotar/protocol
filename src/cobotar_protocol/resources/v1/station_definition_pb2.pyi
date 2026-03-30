@@ -18,19 +18,35 @@ class StationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     STATION_TYPE_MANUAL_STATION: _ClassVar[StationType]
     STATION_TYPE_AUTOMATIC_STATION: _ClassVar[StationType]
     STATION_TYPE_HYBRID_STATION: _ClassVar[StationType]
+
+class StationStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    STATION_STATUS_UNSPECIFIED: _ClassVar[StationStatus]
+    STATION_STATUS_OPEN: _ClassVar[StationStatus]
+    STATION_STATUS_BUSY: _ClassVar[StationStatus]
+    STATION_STATUS_CLOSED: _ClassVar[StationStatus]
+    STATION_STATUS_BLOCKED: _ClassVar[StationStatus]
 STATION_TYPE_UNSPECIFIED: StationType
 STATION_TYPE_STORAGE: StationType
 STATION_TYPE_MANUAL_STATION: StationType
 STATION_TYPE_AUTOMATIC_STATION: StationType
 STATION_TYPE_HYBRID_STATION: StationType
+STATION_STATUS_UNSPECIFIED: StationStatus
+STATION_STATUS_OPEN: StationStatus
+STATION_STATUS_BUSY: StationStatus
+STATION_STATUS_CLOSED: StationStatus
+STATION_STATUS_BLOCKED: StationStatus
 
 class StationDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "tool_instance_ids", "container_instance_ids", "robot_instance_ids", "asset_instance_ids", "marker_instance_ids", "worker_ids", "frame", "custom")
+    __slots__ = ("id", "name", "description", "icon", "type", "status", "max_concurrent_processes", "allow_queued_process", "tool_instance_ids", "container_instance_ids", "robot_instance_ids", "asset_instance_ids", "marker_instance_ids", "worker_ids", "frame", "custom")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    MAX_CONCURRENT_PROCESSES_FIELD_NUMBER: _ClassVar[int]
+    ALLOW_QUEUED_PROCESS_FIELD_NUMBER: _ClassVar[int]
     TOOL_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     CONTAINER_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     ROBOT_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -44,6 +60,9 @@ class StationDefinition(_message.Message):
     description: str
     icon: str
     type: StationType
+    status: StationStatus
+    max_concurrent_processes: int
+    allow_queued_process: bool
     tool_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     container_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     robot_instance_ids: _containers.RepeatedScalarFieldContainer[str]
@@ -52,7 +71,7 @@ class StationDefinition(_message.Message):
     worker_ids: _containers.RepeatedScalarFieldContainer[str]
     frame: _pose_pb2.LocalizedPose
     custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[StationType, str]] = ..., tool_instance_ids: _Optional[_Iterable[str]] = ..., container_instance_ids: _Optional[_Iterable[str]] = ..., robot_instance_ids: _Optional[_Iterable[str]] = ..., asset_instance_ids: _Optional[_Iterable[str]] = ..., marker_instance_ids: _Optional[_Iterable[str]] = ..., worker_ids: _Optional[_Iterable[str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[StationType, str]] = ..., status: _Optional[_Union[StationStatus, str]] = ..., max_concurrent_processes: _Optional[int] = ..., allow_queued_process: bool = ..., tool_instance_ids: _Optional[_Iterable[str]] = ..., container_instance_ids: _Optional[_Iterable[str]] = ..., robot_instance_ids: _Optional[_Iterable[str]] = ..., asset_instance_ids: _Optional[_Iterable[str]] = ..., marker_instance_ids: _Optional[_Iterable[str]] = ..., worker_ids: _Optional[_Iterable[str]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
 
 class StationDefinitions(_message.Message):
     __slots__ = ("items",)

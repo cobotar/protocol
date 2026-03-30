@@ -1,18 +1,76 @@
 syntax = "proto3";
 package resources.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
+import "geometry/v1/pose.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 
+// CellStatus describes whether a cell can currently accept or host work.
+//
+// A cell is typically a grouping of stations and related resources. The loader
+// can use this status to quickly reject or prefer a cell before evaluating
+// individual stations.
+//
+// Status should be interpreted as:
+// - OPEN    -> cell can accept new work now
+// - BUSY    -> cell is occupied; queueing may still be possible
+// - CLOSED  -> cell is intentionally unavailable
+// - BLOCKED -> cell is unavailable due to fault, safety state, maintenance,
+//              or other blocking condition
+//
+// This field is operational and should be considered together with
+// max_concurrent_processes and the status of contained stations.
+enum CellStatus {
+  CELL_STATUS_UNSPECIFIED = 0;
+
+  // Cell can accept new work now.
+  CELL_STATUS_OPEN = 1;
+
+  // Cell is currently occupied by one or more active runs.
+  // Depending on policy, new runs may still be queued.
+  CELL_STATUS_BUSY = 2;
+
+  // Cell is intentionally unavailable for loading or running work.
+  CELL_STATUS_CLOSED = 3;
+
+  // Cell is temporarily unavailable due to fault, interlock,
+  // maintenance state, or similar blocking condition.
+  CELL_STATUS_BLOCKED = 4;
+}
+
+// CellDefinition describes an operational grouping of stations and shared
+// resources inside a line.
+//
+// A cell is useful when multiple stations share workers, robots, assets,
+// safety boundaries, or scheduling constraints. It gives the model a clear
+// middle layer between line-level routing and station-level execution.
+//
+// Typical cell responsibilities:
+// - group stations into a shared execution/safety zone
+// - own resources that are shared across several stations
+// - expose operational state and capacity above individual stations
+// - act as an optional target/selector scope for loaders and planners
 message CellDefinition {
   string id = 1;
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
-  repeated string station_ids = 5;
-  common.v1.CustomProperties custom = 6;
+  repeated string station_ids = 5; // Stations belonging to this cell.
+  CellStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability of the cell as a whole.
+  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this cell should host concurrently.
+  bool allow_queued_process = 8; // If true, loaders may create queued ProcessRuns when the cell is BUSY.
+  repeated string tool_instance_ids = 9; // Shared tools mounted, parked, or otherwise directly available here.
+  repeated string container_instance_ids = 10; // Shared fixtures, trays, pallets, bins, or other concrete containers.
+  repeated string robot_instance_ids = 11; // Robots shared across multiple stations inside the cell.
+  repeated string asset_instance_ids = 12; // Shared assets such as cameras, HMIs, or feeders serving several stations.
+  repeated string marker_instance_ids = 13; // Markers shared for this cell for localization, AR anchoring, or identification.
+  repeated string worker_ids = 14; // Shared worker pool for the cell when workers are not bound to a specific station.
+  geometry.v1.LocalizedPose frame = 15; // Cell-local reference frame or zone anchor.
+  common.v1.CustomProperties custom = 16;
 }
 
 message CellDefinitions {

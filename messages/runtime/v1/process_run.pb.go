@@ -30,27 +30,30 @@ type ProcessRunState int32
 
 const (
 	ProcessRunState_PROCESS_RUN_STATE_UNSPECIFIED ProcessRunState = 0
-	ProcessRunState_PROCESS_RUN_STATE_WAITING     ProcessRunState = 1
-	ProcessRunState_PROCESS_RUN_STATE_IN_PROGRESS ProcessRunState = 2
-	ProcessRunState_PROCESS_RUN_STATE_COMPLETED   ProcessRunState = 3
-	ProcessRunState_PROCESS_RUN_STATE_ABORTED     ProcessRunState = 4
+	ProcessRunState_PROCESS_RUN_STATE_QUEUED      ProcessRunState = 1 // Queued, can not be started yet
+	ProcessRunState_PROCESS_RUN_STATE_READY       ProcessRunState = 2 // Waiting to be started (ready)
+	ProcessRunState_PROCESS_RUN_STATE_IN_PROGRESS ProcessRunState = 3 // In progress
+	ProcessRunState_PROCESS_RUN_STATE_DONE        ProcessRunState = 4 // Completed, all tasks are complete
+	ProcessRunState_PROCESS_RUN_STATE_ABORTED     ProcessRunState = 5
 )
 
 // Enum value maps for ProcessRunState.
 var (
 	ProcessRunState_name = map[int32]string{
 		0: "PROCESS_RUN_STATE_UNSPECIFIED",
-		1: "PROCESS_RUN_STATE_WAITING",
-		2: "PROCESS_RUN_STATE_IN_PROGRESS",
-		3: "PROCESS_RUN_STATE_COMPLETED",
-		4: "PROCESS_RUN_STATE_ABORTED",
+		1: "PROCESS_RUN_STATE_QUEUED",
+		2: "PROCESS_RUN_STATE_READY",
+		3: "PROCESS_RUN_STATE_IN_PROGRESS",
+		4: "PROCESS_RUN_STATE_DONE",
+		5: "PROCESS_RUN_STATE_ABORTED",
 	}
 	ProcessRunState_value = map[string]int32{
 		"PROCESS_RUN_STATE_UNSPECIFIED": 0,
-		"PROCESS_RUN_STATE_WAITING":     1,
-		"PROCESS_RUN_STATE_IN_PROGRESS": 2,
-		"PROCESS_RUN_STATE_COMPLETED":   3,
-		"PROCESS_RUN_STATE_ABORTED":     4,
+		"PROCESS_RUN_STATE_QUEUED":      1,
+		"PROCESS_RUN_STATE_READY":       2,
+		"PROCESS_RUN_STATE_IN_PROGRESS": 3,
+		"PROCESS_RUN_STATE_DONE":        4,
+		"PROCESS_RUN_STATE_ABORTED":     5,
 	}
 )
 
@@ -144,16 +147,17 @@ type ProcessRun struct {
 	OrderId              string                    `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	StationId            string                    `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
 	CellId               string                    `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	Frame                *v1.LocalizedPose         `protobuf:"bytes,8,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceRunId    string                    `protobuf:"bytes,9,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
-	SequenceRunIds       []string                  `protobuf:"bytes,10,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
-	TaskRunIds           []string                  `protobuf:"bytes,11,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
-	State                ProcessRunState           `protobuf:"varint,12,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
-	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,13,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
-	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,14,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
-	Assignments          []*ActorAssignment        `protobuf:"bytes,15,rep,name=assignments,proto3" json:"assignments,omitempty"`
-	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,16,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
-	Parameters           []*RunParameter           `protobuf:"bytes,17,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	LineId               string                    `protobuf:"bytes,8,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	Frame                *v1.LocalizedPose         `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceRunId    string                    `protobuf:"bytes,10,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
+	SequenceRunIds       []string                  `protobuf:"bytes,11,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
+	TaskRunIds           []string                  `protobuf:"bytes,12,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
+	State                ProcessRunState           `protobuf:"varint,13,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
+	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,14,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
+	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,15,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	Assignments          []*ActorAssignment        `protobuf:"bytes,16,rep,name=assignments,proto3" json:"assignments,omitempty"`
+	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,17,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	Parameters           []*RunParameter           `protobuf:"bytes,18,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -233,6 +237,13 @@ func (x *ProcessRun) GetStationId() string {
 func (x *ProcessRun) GetCellId() string {
 	if x != nil {
 		return x.CellId
+	}
+	return ""
+}
+
+func (x *ProcessRun) GetLineId() string {
+	if x != nil {
+		return x.LineId
 	}
 	return ""
 }
@@ -359,7 +370,7 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xcb\x06\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xef\x06\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -369,29 +380,31 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\border_id\x18\x05 \x01(\tR\aorderId\x12(\n" +
 	"\n" +
 	"station_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xd8\xf1\x04\x01R\tstationId\x12\"\n" +
-	"\acell_id\x18\a \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06cellId\x120\n" +
-	"\x05frame\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12=\n" +
-	"\x14root_sequence_run_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x11rootSequenceRunId\x128\n" +
-	"\x10sequence_run_ids\x18\n" +
-	" \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x120\n" +
-	"\ftask_run_ids\x18\v \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x80\xf2\x04\x01R\n" +
+	"\acell_id\x18\a \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x06cellId\x12\"\n" +
+	"\aline_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x06lineId\x120\n" +
+	"\x05frame\x18\t \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12=\n" +
+	"\x14root_sequence_run_id\x18\n" +
+	" \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf1\x04\x01R\x11rootSequenceRunId\x128\n" +
+	"\x10sequence_run_ids\x18\v \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\x0esequenceRunIds\x120\n" +
+	"\ftask_run_ids\x18\f \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x80\xf2\x04\x01R\n" +
 	"taskRunIds\x12>\n" +
-	"\x05state\x18\f \x01(\x0e2\x1b.runtime.v1.ProcessRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12=\n" +
-	"\finitiated_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
-	"\bended_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
-	"\vassignments\x18\x0f \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
-	"\x15variant_configuration\x18\x10 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
+	"\x05state\x18\r \x01(\x0e2\x1b.runtime.v1.ProcessRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12=\n" +
+	"\finitiated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\vinitiatedAt\x125\n" +
+	"\bended_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\aendedAt\x12=\n" +
+	"\vassignments\x18\x10 \x03(\v2\x1b.runtime.v1.ActorAssignmentR\vassignments\x12V\n" +
+	"\x15variant_configuration\x18\x11 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
 	"\n" +
-	"parameters\x18\x11 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
+	"parameters\x18\x12 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
 	"parameters\";\n" +
 	"\vProcessRuns\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xb6\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xcd\x01\n" +
 	"\x0fProcessRunState\x12!\n" +
-	"\x1dPROCESS_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1d\n" +
-	"\x19PROCESS_RUN_STATE_WAITING\x10\x01\x12!\n" +
-	"\x1dPROCESS_RUN_STATE_IN_PROGRESS\x10\x02\x12\x1f\n" +
-	"\x1bPROCESS_RUN_STATE_COMPLETED\x10\x03\x12\x1d\n" +
-	"\x19PROCESS_RUN_STATE_ABORTED\x10\x04B\xae\x01\n" +
+	"\x1dPROCESS_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18PROCESS_RUN_STATE_QUEUED\x10\x01\x12\x1b\n" +
+	"\x17PROCESS_RUN_STATE_READY\x10\x02\x12!\n" +
+	"\x1dPROCESS_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1a\n" +
+	"\x16PROCESS_RUN_STATE_DONE\x10\x04\x12\x1d\n" +
+	"\x19PROCESS_RUN_STATE_ABORTED\x10\x05B\xae\x01\n" +
 	"\x0ecom.runtime.v1B\x0fProcessRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
