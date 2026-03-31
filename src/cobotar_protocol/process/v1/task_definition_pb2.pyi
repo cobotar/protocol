@@ -8,6 +8,7 @@ from common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
 from common.v1 import time_pb2 as _time_pb2
 from geometry.v1 import local_target_pb2 as _local_target_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
+from resources.v1 import asset_definition_pb2 as _asset_definition_pb2
 from resources.v1 import container_definition_pb2 as _container_definition_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
@@ -127,18 +128,20 @@ class TaskEndpoint(_message.Message):
     def __init__(self, product: _Optional[_Union[ProductTarget, _Mapping]] = ..., container: _Optional[_Union[ContainerTarget, _Mapping]] = ...) -> None: ...
 
 class ValidationRequirement(_message.Message):
-    __slots__ = ("require_tool_feedback", "require_vision_check", "allow_manual_confirmation", "manual_confirmation_min_level", "constraints")
+    __slots__ = ("require_tool_feedback", "require_vision_check", "allow_manual_confirmation", "manual_confirmation_min_level", "mode", "constraints")
     REQUIRE_TOOL_FEEDBACK_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_VISION_CHECK_FIELD_NUMBER: _ClassVar[int]
     ALLOW_MANUAL_CONFIRMATION_FIELD_NUMBER: _ClassVar[int]
     MANUAL_CONFIRMATION_MIN_LEVEL_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     require_tool_feedback: bool
     require_vision_check: bool
     allow_manual_confirmation: bool
     manual_confirmation_min_level: _actor_skill_pb2.SkillLevel
+    mode: _asset_definition_pb2.ValidationMode
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, require_tool_feedback: bool = ..., require_vision_check: bool = ..., allow_manual_confirmation: bool = ..., manual_confirmation_min_level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    def __init__(self, require_tool_feedback: bool = ..., require_vision_check: bool = ..., allow_manual_confirmation: bool = ..., manual_confirmation_min_level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ..., mode: _Optional[_Union[_asset_definition_pb2.ValidationMode, str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class TaskExecutionPolicy(_message.Message):
     __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_do", "can_undo", "estimated_duration")

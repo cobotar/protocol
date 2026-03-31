@@ -495,7 +495,8 @@ type ValidationRequirement struct {
 	RequireVisionCheck         bool                      `protobuf:"varint,2,opt,name=require_vision_check,json=requireVisionCheck,proto3" json:"require_vision_check,omitempty"`
 	AllowManualConfirmation    bool                      `protobuf:"varint,3,opt,name=allow_manual_confirmation,json=allowManualConfirmation,proto3" json:"allow_manual_confirmation,omitempty"`
 	ManualConfirmationMinLevel v12.SkillLevel            `protobuf:"varint,4,opt,name=manual_confirmation_min_level,json=manualConfirmationMinLevel,proto3,enum=capability.v1.SkillLevel" json:"manual_confirmation_min_level,omitempty"`
-	Constraints                []*v13.KeyValueConstraint `protobuf:"bytes,5,rep,name=constraints,proto3" json:"constraints,omitempty"`
+	Mode                       v11.ValidationMode        `protobuf:"varint,5,opt,name=mode,proto3,enum=resources.v1.ValidationMode" json:"mode,omitempty"`
+	Constraints                []*v13.KeyValueConstraint `protobuf:"bytes,6,rep,name=constraints,proto3" json:"constraints,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -556,6 +557,13 @@ func (x *ValidationRequirement) GetManualConfirmationMinLevel() v12.SkillLevel {
 		return x.ManualConfirmationMinLevel
 	}
 	return v12.SkillLevel(0)
+}
+
+func (x *ValidationRequirement) GetMode() v11.ValidationMode {
+	if x != nil {
+		return x.Mode
+	}
+	return v11.ValidationMode(0)
 }
 
 func (x *ValidationRequirement) GetConstraints() []*v13.KeyValueConstraint {
@@ -959,7 +967,7 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x93\x01\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x93\x01\n" +
 	"\rProductTarget\x12\x17\n" +
 	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x12,\n" +
 	"\x12part_definition_id\x18\x02 \x01(\tR\x10partDefinitionId\x12;\n" +
@@ -979,13 +987,14 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"~\n" +
 	"\fTaskEndpoint\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
-	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\xd8\x02\n" +
+	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\x8a\x03\n" +
 	"\x15ValidationRequirement\x122\n" +
 	"\x15require_tool_feedback\x18\x01 \x01(\bR\x13requireToolFeedback\x120\n" +
 	"\x14require_vision_check\x18\x02 \x01(\bR\x12requireVisionCheck\x12:\n" +
 	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12\\\n" +
-	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelR\x1amanualConfirmationMinLevel\x12?\n" +
-	"\vconstraints\x18\x05 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x02\n" +
+	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelR\x1amanualConfirmationMinLevel\x120\n" +
+	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeR\x04mode\x12?\n" +
+	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x02\n" +
 	"\x13TaskExecutionPolicy\x12Y\n" +
 	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +
 	"\x10actor_constraint\x18\x02 \x01(\v2\x1e.capability.v1.ActorConstraintR\x0factorConstraint\x12!\n" +
@@ -1085,14 +1094,15 @@ var file_process_v1_task_definition_proto_goTypes = []any{
 	(*v1.LocalTarget)(nil),         // 12: geometry.v1.LocalTarget
 	(v11.ContainerSlotType)(0),     // 13: resources.v1.ContainerSlotType
 	(v12.SkillLevel)(0),            // 14: capability.v1.SkillLevel
-	(*v13.KeyValueConstraint)(nil), // 15: common.v1.KeyValueConstraint
-	(*v12.ActorConstraint)(nil),    // 16: capability.v1.ActorConstraint
-	(*v13.EstimatedDuration)(nil),  // 17: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 18: variance.v1.VariantRule
-	(*v1.Vector3)(nil),             // 19: geometry.v1.Vector3
-	(*v12.ToolRequirement)(nil),    // 20: capability.v1.ToolRequirement
-	(*v12.SkillRequirement)(nil),   // 21: capability.v1.SkillRequirement
-	(v13.SafetyRelevance)(0),       // 22: common.v1.SafetyRelevance
+	(v11.ValidationMode)(0),        // 15: resources.v1.ValidationMode
+	(*v13.KeyValueConstraint)(nil), // 16: common.v1.KeyValueConstraint
+	(*v12.ActorConstraint)(nil),    // 17: capability.v1.ActorConstraint
+	(*v13.EstimatedDuration)(nil),  // 18: common.v1.EstimatedDuration
+	(*v14.VariantRule)(nil),        // 19: variance.v1.VariantRule
+	(*v1.Vector3)(nil),             // 20: geometry.v1.Vector3
+	(*v12.ToolRequirement)(nil),    // 21: capability.v1.ToolRequirement
+	(*v12.SkillRequirement)(nil),   // 22: capability.v1.SkillRequirement
+	(v13.SafetyRelevance)(0),       // 23: common.v1.SafetyRelevance
 }
 var file_process_v1_task_definition_proto_depIdxs = []int32{
 	12, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
@@ -1103,31 +1113,32 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	2,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
 	3,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
 	14, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
-	15, // 8: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
-	1,  // 9: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
-	16, // 10: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
-	17, // 11: process.v1.TaskExecutionPolicy.estimated_duration:type_name -> common.v1.EstimatedDuration
-	18, // 12: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
-	19, // 13: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
-	0,  // 14: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
-	5,  // 15: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	19, // 16: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	19, // 17: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	20, // 18: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
-	21, // 19: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	7,  // 20: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	8,  // 21: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	22, // 22: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	6,  // 23: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
-	6,  // 24: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
-	18, // 25: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	9,  // 26: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	10, // 27: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	28, // [28:28] is the sub-list for method output_type
-	28, // [28:28] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	15, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
+	16, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
+	1,  // 10: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
+	17, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
+	18, // 12: process.v1.TaskExecutionPolicy.estimated_duration:type_name -> common.v1.EstimatedDuration
+	19, // 13: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	20, // 14: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
+	0,  // 15: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
+	5,  // 16: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
+	20, // 17: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	20, // 18: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	21, // 19: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
+	22, // 20: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	7,  // 21: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	8,  // 22: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	23, // 23: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	6,  // 24: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	6,  // 25: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	19, // 26: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	9,  // 27: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	10, // 28: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	29, // [29:29] is the sub-list for method output_type
+	29, // [29:29] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }

@@ -23,6 +23,64 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ValidationMode int32
+
+const (
+	ValidationMode_VALIDATION_MODE_UNSPECIFIED    ValidationMode = 0
+	ValidationMode_VALIDATION_MODE_PRESENCE_CHECK ValidationMode = 1
+	ValidationMode_VALIDATION_MODE_POSE_CHECK     ValidationMode = 2
+	ValidationMode_VALIDATION_MODE_FASTENER_CHECK ValidationMode = 3
+	ValidationMode_VALIDATION_MODE_LABEL_CHECK    ValidationMode = 4
+	ValidationMode_VALIDATION_MODE_SURFACE_CHECK  ValidationMode = 5
+)
+
+// Enum value maps for ValidationMode.
+var (
+	ValidationMode_name = map[int32]string{
+		0: "VALIDATION_MODE_UNSPECIFIED",
+		1: "VALIDATION_MODE_PRESENCE_CHECK",
+		2: "VALIDATION_MODE_POSE_CHECK",
+		3: "VALIDATION_MODE_FASTENER_CHECK",
+		4: "VALIDATION_MODE_LABEL_CHECK",
+		5: "VALIDATION_MODE_SURFACE_CHECK",
+	}
+	ValidationMode_value = map[string]int32{
+		"VALIDATION_MODE_UNSPECIFIED":    0,
+		"VALIDATION_MODE_PRESENCE_CHECK": 1,
+		"VALIDATION_MODE_POSE_CHECK":     2,
+		"VALIDATION_MODE_FASTENER_CHECK": 3,
+		"VALIDATION_MODE_LABEL_CHECK":    4,
+		"VALIDATION_MODE_SURFACE_CHECK":  5,
+	}
+)
+
+func (x ValidationMode) Enum() *ValidationMode {
+	p := new(ValidationMode)
+	*p = x
+	return p
+}
+
+func (x ValidationMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ValidationMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_asset_definition_proto_enumTypes[0].Descriptor()
+}
+
+func (ValidationMode) Type() protoreflect.EnumType {
+	return &file_resources_v1_asset_definition_proto_enumTypes[0]
+}
+
+func (x ValidationMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ValidationMode.Descriptor instead.
+func (ValidationMode) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{0}
+}
+
 type AssetType int32
 
 const (
@@ -68,11 +126,11 @@ func (x AssetType) String() string {
 }
 
 func (AssetType) Descriptor() protoreflect.EnumDescriptor {
-	return file_resources_v1_asset_definition_proto_enumTypes[0].Descriptor()
+	return file_resources_v1_asset_definition_proto_enumTypes[1].Descriptor()
 }
 
 func (AssetType) Type() protoreflect.EnumType {
-	return &file_resources_v1_asset_definition_proto_enumTypes[0]
+	return &file_resources_v1_asset_definition_proto_enumTypes[1]
 }
 
 func (x AssetType) Number() protoreflect.EnumNumber {
@@ -81,7 +139,7 @@ func (x AssetType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AssetType.Descriptor instead.
 func (AssetType) EnumDescriptor() ([]byte, []int) {
-	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{0}
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{1}
 }
 
 type AssetDriverType int32
@@ -114,11 +172,11 @@ func (x AssetDriverType) String() string {
 }
 
 func (AssetDriverType) Descriptor() protoreflect.EnumDescriptor {
-	return file_resources_v1_asset_definition_proto_enumTypes[1].Descriptor()
+	return file_resources_v1_asset_definition_proto_enumTypes[2].Descriptor()
 }
 
 func (AssetDriverType) Type() protoreflect.EnumType {
-	return &file_resources_v1_asset_definition_proto_enumTypes[1]
+	return &file_resources_v1_asset_definition_proto_enumTypes[2]
 }
 
 func (x AssetDriverType) Number() protoreflect.EnumNumber {
@@ -127,7 +185,75 @@ func (x AssetDriverType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AssetDriverType.Descriptor instead.
 func (AssetDriverType) EnumDescriptor() ([]byte, []int) {
-	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{1}
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{2}
+}
+
+type VisionCapability struct {
+	state                      protoimpl.MessageState   `protogen:"open.v1"`
+	SupportedValidationModes   []ValidationMode         `protobuf:"varint,1,rep,packed,name=supported_validation_modes,json=supportedValidationModes,proto3,enum=resources.v1.ValidationMode" json:"supported_validation_modes,omitempty"`
+	SupportedPartDefinitionIds []string                 `protobuf:"bytes,2,rep,name=supported_part_definition_ids,json=supportedPartDefinitionIds,proto3" json:"supported_part_definition_ids,omitempty"`
+	SupportedTaskTypeIds       []string                 `protobuf:"bytes,3,rep,name=supported_task_type_ids,json=supportedTaskTypeIds,proto3" json:"supported_task_type_ids,omitempty"`
+	Constraints                []*v1.KeyValueConstraint `protobuf:"bytes,4,rep,name=constraints,proto3" json:"constraints,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *VisionCapability) Reset() {
+	*x = VisionCapability{}
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VisionCapability) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VisionCapability) ProtoMessage() {}
+
+func (x *VisionCapability) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VisionCapability.ProtoReflect.Descriptor instead.
+func (*VisionCapability) Descriptor() ([]byte, []int) {
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *VisionCapability) GetSupportedValidationModes() []ValidationMode {
+	if x != nil {
+		return x.SupportedValidationModes
+	}
+	return nil
+}
+
+func (x *VisionCapability) GetSupportedPartDefinitionIds() []string {
+	if x != nil {
+		return x.SupportedPartDefinitionIds
+	}
+	return nil
+}
+
+func (x *VisionCapability) GetSupportedTaskTypeIds() []string {
+	if x != nil {
+		return x.SupportedTaskTypeIds
+	}
+	return nil
+}
+
+func (x *VisionCapability) GetConstraints() []*v1.KeyValueConstraint {
+	if x != nil {
+		return x.Constraints
+	}
+	return nil
 }
 
 type AssetDefinition struct {
@@ -139,14 +265,15 @@ type AssetDefinition struct {
 	Type          AssetType              `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.AssetType" json:"type,omitempty"`
 	DriverType    AssetDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=resources.v1.AssetDriverType" json:"driver_type,omitempty"`
 	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	Custom        *v1.CustomProperties   `protobuf:"bytes,8,opt,name=custom,proto3" json:"custom,omitempty"`
+	Vision        *VisionCapability      `protobuf:"bytes,8,opt,name=vision,proto3" json:"vision,omitempty"`
+	Custom        *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *AssetDefinition) Reset() {
 	*x = AssetDefinition{}
-	mi := &file_resources_v1_asset_definition_proto_msgTypes[0]
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -158,7 +285,7 @@ func (x *AssetDefinition) String() string {
 func (*AssetDefinition) ProtoMessage() {}
 
 func (x *AssetDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_asset_definition_proto_msgTypes[0]
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +298,7 @@ func (x *AssetDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetDefinition.ProtoReflect.Descriptor instead.
 func (*AssetDefinition) Descriptor() ([]byte, []int) {
-	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{0}
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AssetDefinition) GetId() string {
@@ -223,6 +350,13 @@ func (x *AssetDefinition) GetModelId() string {
 	return ""
 }
 
+func (x *AssetDefinition) GetVision() *VisionCapability {
+	if x != nil {
+		return x.Vision
+	}
+	return nil
+}
+
 func (x *AssetDefinition) GetCustom() *v1.CustomProperties {
 	if x != nil {
 		return x.Custom
@@ -239,7 +373,7 @@ type AssetDefinitions struct {
 
 func (x *AssetDefinitions) Reset() {
 	*x = AssetDefinitions{}
-	mi := &file_resources_v1_asset_definition_proto_msgTypes[1]
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +385,7 @@ func (x *AssetDefinitions) String() string {
 func (*AssetDefinitions) ProtoMessage() {}
 
 func (x *AssetDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_asset_definition_proto_msgTypes[1]
+	mi := &file_resources_v1_asset_definition_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +398,7 @@ func (x *AssetDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetDefinitions.ProtoReflect.Descriptor instead.
 func (*AssetDefinitions) Descriptor() ([]byte, []int) {
-	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{1}
+	return file_resources_v1_asset_definition_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AssetDefinitions) GetItems() []*AssetDefinition {
@@ -278,7 +412,12 @@ var File_resources_v1_asset_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\n" +
-	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\"\xcf\x02\n" +
+	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\"\xa9\x02\n" +
+	"\x10VisionCapability\x12Z\n" +
+	"\x1asupported_validation_modes\x18\x01 \x03(\x0e2\x1c.resources.v1.ValidationModeR\x18supportedValidationModes\x12A\n" +
+	"\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x125\n" +
+	"\x17supported_task_type_ids\x18\x03 \x03(\tR\x14supportedTaskTypeIds\x12?\n" +
+	"\vconstraints\x18\x04 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x87\x03\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
@@ -288,10 +427,18 @@ const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\xc8\x01\x01\x82\x01\x04\x10\x01(\x01R\x04type\x12K\n" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1d.resources.v1.AssetDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\n" +
 	"driverType\x12\x19\n" +
-	"\bmodel_id\x18\a \x01(\tR\amodelId\x123\n" +
-	"\x06custom\x18\b \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"G\n" +
+	"\bmodel_id\x18\a \x01(\tR\amodelId\x126\n" +
+	"\x06vision\x18\b \x01(\v2\x1e.resources.v1.VisionCapabilityR\x06vision\x123\n" +
+	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"G\n" +
 	"\x10AssetDefinitions\x123\n" +
-	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.AssetDefinitionR\x05items*\xb4\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.AssetDefinitionR\x05items*\xdd\x01\n" +
+	"\x0eValidationMode\x12\x1f\n" +
+	"\x1bVALIDATION_MODE_UNSPECIFIED\x10\x00\x12\"\n" +
+	"\x1eVALIDATION_MODE_PRESENCE_CHECK\x10\x01\x12\x1e\n" +
+	"\x1aVALIDATION_MODE_POSE_CHECK\x10\x02\x12\"\n" +
+	"\x1eVALIDATION_MODE_FASTENER_CHECK\x10\x03\x12\x1f\n" +
+	"\x1bVALIDATION_MODE_LABEL_CHECK\x10\x04\x12!\n" +
+	"\x1dVALIDATION_MODE_SURFACE_CHECK\x10\x05*\xb4\x01\n" +
 	"\tAssetType\x12\x1a\n" +
 	"\x16ASSET_TYPE_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11ASSET_TYPE_CAMERA\x10\x01\x12\x14\n" +
@@ -317,25 +464,31 @@ func file_resources_v1_asset_definition_proto_rawDescGZIP() []byte {
 	return file_resources_v1_asset_definition_proto_rawDescData
 }
 
-var file_resources_v1_asset_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_resources_v1_asset_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_resources_v1_asset_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_resources_v1_asset_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_resources_v1_asset_definition_proto_goTypes = []any{
-	(AssetType)(0),              // 0: resources.v1.AssetType
-	(AssetDriverType)(0),        // 1: resources.v1.AssetDriverType
-	(*AssetDefinition)(nil),     // 2: resources.v1.AssetDefinition
-	(*AssetDefinitions)(nil),    // 3: resources.v1.AssetDefinitions
-	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(ValidationMode)(0),           // 0: resources.v1.ValidationMode
+	(AssetType)(0),                // 1: resources.v1.AssetType
+	(AssetDriverType)(0),          // 2: resources.v1.AssetDriverType
+	(*VisionCapability)(nil),      // 3: resources.v1.VisionCapability
+	(*AssetDefinition)(nil),       // 4: resources.v1.AssetDefinition
+	(*AssetDefinitions)(nil),      // 5: resources.v1.AssetDefinitions
+	(*v1.KeyValueConstraint)(nil), // 6: common.v1.KeyValueConstraint
+	(*v1.CustomProperties)(nil),   // 7: common.v1.CustomProperties
 }
 var file_resources_v1_asset_definition_proto_depIdxs = []int32{
-	0, // 0: resources.v1.AssetDefinition.type:type_name -> resources.v1.AssetType
-	1, // 1: resources.v1.AssetDefinition.driver_type:type_name -> resources.v1.AssetDriverType
-	4, // 2: resources.v1.AssetDefinition.custom:type_name -> common.v1.CustomProperties
-	2, // 3: resources.v1.AssetDefinitions.items:type_name -> resources.v1.AssetDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 0: resources.v1.VisionCapability.supported_validation_modes:type_name -> resources.v1.ValidationMode
+	6, // 1: resources.v1.VisionCapability.constraints:type_name -> common.v1.KeyValueConstraint
+	1, // 2: resources.v1.AssetDefinition.type:type_name -> resources.v1.AssetType
+	2, // 3: resources.v1.AssetDefinition.driver_type:type_name -> resources.v1.AssetDriverType
+	3, // 4: resources.v1.AssetDefinition.vision:type_name -> resources.v1.VisionCapability
+	7, // 5: resources.v1.AssetDefinition.custom:type_name -> common.v1.CustomProperties
+	4, // 6: resources.v1.AssetDefinitions.items:type_name -> resources.v1.AssetDefinition
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_asset_definition_proto_init() }
@@ -348,8 +501,8 @@ func file_resources_v1_asset_definition_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_asset_definition_proto_rawDesc), len(file_resources_v1_asset_definition_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   2,
+			NumEnums:      3,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

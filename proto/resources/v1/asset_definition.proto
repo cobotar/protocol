@@ -3,9 +3,26 @@ package resources.v1;
 
 import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
+import "common/v1/key_value_constraint.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum ValidationMode {
+  VALIDATION_MODE_UNSPECIFIED = 0;
+  VALIDATION_MODE_PRESENCE_CHECK = 1;
+  VALIDATION_MODE_POSE_CHECK = 2;
+  VALIDATION_MODE_FASTENER_CHECK = 3;
+  VALIDATION_MODE_LABEL_CHECK = 4;
+  VALIDATION_MODE_SURFACE_CHECK = 5;
+}
+
+message VisionCapability {
+  repeated ValidationMode supported_validation_modes = 1;
+  repeated string supported_part_definition_ids = 2;
+  repeated string supported_task_type_ids = 3;
+  repeated common.v1.KeyValueConstraint constraints = 4;
+}
 
 enum AssetType {
   ASSET_TYPE_UNSPECIFIED = 0;
@@ -40,7 +57,8 @@ message AssetDefinition {
     (buf.validate.field).enum.defined_only = true
   ];
   string model_id = 7;
-  common.v1.CustomProperties custom = 8;
+  VisionCapability vision = 8;
+  common.v1.CustomProperties custom = 9;
 }
 
 message AssetDefinitions {

@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
+from common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#resources/v1/asset_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\"\xcf\x02\n\x0f\x41ssetDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12:\n\x04type\x18\x05 \x01(\x0e\x32\x17.resources.v1.AssetTypeB\r\xbaH\n\x82\x01\x04\x10\x01(\x01\xc8\x01\x01R\x04type\x12K\n\x0b\x64river_type\x18\x06 \x01(\x0e\x32\x1d.resources.v1.AssetDriverTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\ndriverType\x12\x19\n\x08model_id\x18\x07 \x01(\tR\x07modelId\x12\x33\n\x06\x63ustom\x18\x08 \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"G\n\x10\x41ssetDefinitions\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.resources.v1.AssetDefinitionR\x05items*\xb4\x01\n\tAssetType\x12\x1a\n\x16\x41SSET_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x41SSET_TYPE_CAMERA\x10\x01\x12\x14\n\x10\x41SSET_TYPE_LIGHT\x10\x02\x12\x17\n\x13\x41SSET_TYPE_CONVEYOR\x10\x03\x12\x15\n\x11\x41SSET_TYPE_SENSOR\x10\x04\x12\x12\n\x0e\x41SSET_TYPE_HMI\x10\x05\x12\x1a\n\x16\x41SSET_TYPE_PART_FEEDER\x10\x08*S\n\x0f\x41ssetDriverType\x12!\n\x1d\x41SSET_DRIVER_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41SSET_DRIVER_TYPE_DEFAULT\x10\x01\x42\xc1\x01\n\x10\x63om.resources.v1B\x14\x41ssetDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#resources/v1/asset_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\"\xa9\x02\n\x10VisionCapability\x12Z\n\x1asupported_validation_modes\x18\x01 \x03(\x0e\x32\x1c.resources.v1.ValidationModeR\x18supportedValidationModes\x12\x41\n\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x12\x35\n\x17supported_task_type_ids\x18\x03 \x03(\tR\x14supportedTaskTypeIds\x12?\n\x0b\x63onstraints\x18\x04 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0b\x63onstraints\"\x87\x03\n\x0f\x41ssetDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12:\n\x04type\x18\x05 \x01(\x0e\x32\x17.resources.v1.AssetTypeB\r\xbaH\n\x82\x01\x04\x10\x01(\x01\xc8\x01\x01R\x04type\x12K\n\x0b\x64river_type\x18\x06 \x01(\x0e\x32\x1d.resources.v1.AssetDriverTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\ndriverType\x12\x19\n\x08model_id\x18\x07 \x01(\tR\x07modelId\x12\x36\n\x06vision\x18\x08 \x01(\x0b\x32\x1e.resources.v1.VisionCapabilityR\x06vision\x12\x33\n\x06\x63ustom\x18\t \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"G\n\x10\x41ssetDefinitions\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.resources.v1.AssetDefinitionR\x05items*\xdd\x01\n\x0eValidationMode\x12\x1f\n\x1bVALIDATION_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1eVALIDATION_MODE_PRESENCE_CHECK\x10\x01\x12\x1e\n\x1aVALIDATION_MODE_POSE_CHECK\x10\x02\x12\"\n\x1eVALIDATION_MODE_FASTENER_CHECK\x10\x03\x12\x1f\n\x1bVALIDATION_MODE_LABEL_CHECK\x10\x04\x12!\n\x1dVALIDATION_MODE_SURFACE_CHECK\x10\x05*\xb4\x01\n\tAssetType\x12\x1a\n\x16\x41SSET_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x41SSET_TYPE_CAMERA\x10\x01\x12\x14\n\x10\x41SSET_TYPE_LIGHT\x10\x02\x12\x17\n\x13\x41SSET_TYPE_CONVEYOR\x10\x03\x12\x15\n\x11\x41SSET_TYPE_SENSOR\x10\x04\x12\x12\n\x0e\x41SSET_TYPE_HMI\x10\x05\x12\x1a\n\x16\x41SSET_TYPE_PART_FEEDER\x10\x08*S\n\x0f\x41ssetDriverType\x12!\n\x1d\x41SSET_DRIVER_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41SSET_DRIVER_TYPE_DEFAULT\x10\x01\x42\xc1\x01\n\x10\x63om.resources.v1B\x14\x41ssetDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,12 +41,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ASSETDEFINITION'].fields_by_name['type']._serialized_options = b'\272H\n\202\001\004\020\001(\001\310\001\001'
   _globals['_ASSETDEFINITION'].fields_by_name['driver_type']._loaded_options = None
   _globals['_ASSETDEFINITION'].fields_by_name['driver_type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_ASSETTYPE']._serialized_start=529
-  _globals['_ASSETTYPE']._serialized_end=709
-  _globals['_ASSETDRIVERTYPE']._serialized_start=711
-  _globals['_ASSETDRIVERTYPE']._serialized_end=794
-  _globals['_ASSETDEFINITION']._serialized_start=118
-  _globals['_ASSETDEFINITION']._serialized_end=453
-  _globals['_ASSETDEFINITIONS']._serialized_start=455
-  _globals['_ASSETDEFINITIONS']._serialized_end=526
+  _globals['_VALIDATIONMODE']._serialized_start=923
+  _globals['_VALIDATIONMODE']._serialized_end=1144
+  _globals['_ASSETTYPE']._serialized_start=1147
+  _globals['_ASSETTYPE']._serialized_end=1327
+  _globals['_ASSETDRIVERTYPE']._serialized_start=1329
+  _globals['_ASSETDRIVERTYPE']._serialized_end=1412
+  _globals['_VISIONCAPABILITY']._serialized_start=156
+  _globals['_VISIONCAPABILITY']._serialized_end=453
+  _globals['_ASSETDEFINITION']._serialized_start=456
+  _globals['_ASSETDEFINITION']._serialized_end=847
+  _globals['_ASSETDEFINITIONS']._serialized_start=849
+  _globals['_ASSETDEFINITIONS']._serialized_end=920
 # @@protoc_insertion_point(module_scope)

@@ -11,6 +11,7 @@ import "common/v1/key_value_constraint.proto";
 import "common/v1/time.proto";
 import "geometry/v1/local_target.proto";
 import "geometry/v1/vector3.proto";
+import "resources/v1/asset_definition.proto";
 import "resources/v1/container_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
@@ -109,7 +110,8 @@ message ValidationRequirement {
   bool require_vision_check = 2;
   bool allow_manual_confirmation = 3;
   capability.v1.SkillLevel manual_confirmation_min_level = 4;
-  repeated common.v1.KeyValueConstraint constraints = 5;
+  resources.v1.ValidationMode mode = 5;
+  repeated common.v1.KeyValueConstraint constraints = 6;
 }
 
 message TaskExecutionPolicy {

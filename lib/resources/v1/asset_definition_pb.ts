@@ -7,13 +7,47 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
+import type { KeyValueConstraint } from "../../common/v1/key_value_constraint_pb.ts";
+import { file_common_v1_key_value_constraint } from "../../common/v1/key_value_constraint_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file resources/v1/asset_definition.proto.
  */
 export const file_resources_v1_asset_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNyZXNvdXJjZXMvdjEvYXNzZXRfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIo8CCg9Bc3NldERlZmluaXRpb24SCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSNAoEdHlwZRgFIAEoDjIXLnJlc291cmNlcy52MS5Bc3NldFR5cGVCDbpICsgBAYIBBBABKAESPwoLZHJpdmVyX3R5cGUYBiABKA4yHS5yZXNvdXJjZXMudjEuQXNzZXREcml2ZXJUeXBlQgu6SAjIAQGCAQIQARIQCghtb2RlbF9pZBgHIAEoCRIrCgZjdXN0b20YCCABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyJAChBBc3NldERlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0ucmVzb3VyY2VzLnYxLkFzc2V0RGVmaW5pdGlvbiq0AQoJQXNzZXRUeXBlEhoKFkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NFVF9UWVBFX0NBTUVSQRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NFVF9UWVBFX0NPTlZFWU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5BU1NFVF9UWVBFX0hNSRAFEhoKFkFTU0VUX1RZUEVfUEFSVF9GRUVERVIQCCpTCg9Bc3NldERyaXZlclR5cGUSIQodQVNTRVRfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIdChlBU1NFVF9EUklWRVJfVFlQRV9ERUZBVUxUEAFCwQEKEGNvbS5yZXNvdXJjZXMudjFCFEFzc2V0RGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties]);
+  fileDesc("CiNyZXNvdXJjZXMvdjEvYXNzZXRfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxItABChBWaXNpb25DYXBhYmlsaXR5EkAKGnN1cHBvcnRlZF92YWxpZGF0aW9uX21vZGVzGAEgAygOMhwucmVzb3VyY2VzLnYxLlZhbGlkYXRpb25Nb2RlEiUKHXN1cHBvcnRlZF9wYXJ0X2RlZmluaXRpb25faWRzGAIgAygJEh8KF3N1cHBvcnRlZF90YXNrX3R5cGVfaWRzGAMgAygJEjIKC2NvbnN0cmFpbnRzGAQgAygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludCK/AgoPQXNzZXREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjQKBHR5cGUYBSABKA4yFy5yZXNvdXJjZXMudjEuQXNzZXRUeXBlQg26SArIAQGCAQQQASgBEj8KC2RyaXZlcl90eXBlGAYgASgOMh0ucmVzb3VyY2VzLnYxLkFzc2V0RHJpdmVyVHlwZUILukgIyAEBggECEAESEAoIbW9kZWxfaWQYByABKAkSLgoGdmlzaW9uGAggASgLMh4ucmVzb3VyY2VzLnYxLlZpc2lvbkNhcGFiaWxpdHkSKwoGY3VzdG9tGAkgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiQAoQQXNzZXREZWZpbml0aW9ucxIsCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52MS5Bc3NldERlZmluaXRpb24q3QEKDlZhbGlkYXRpb25Nb2RlEh8KG1ZBTElEQVRJT05fTU9ERV9VTlNQRUNJRklFRBAAEiIKHlZBTElEQVRJT05fTU9ERV9QUkVTRU5DRV9DSEVDSxABEh4KGlZBTElEQVRJT05fTU9ERV9QT1NFX0NIRUNLEAISIgoeVkFMSURBVElPTl9NT0RFX0ZBU1RFTkVSX0NIRUNLEAMSHwobVkFMSURBVElPTl9NT0RFX0xBQkVMX0NIRUNLEAQSIQodVkFMSURBVElPTl9NT0RFX1NVUkZBQ0VfQ0hFQ0sQBSq0AQoJQXNzZXRUeXBlEhoKFkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NFVF9UWVBFX0NBTUVSQRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NFVF9UWVBFX0NPTlZFWU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5BU1NFVF9UWVBFX0hNSRAFEhoKFkFTU0VUX1RZUEVfUEFSVF9GRUVERVIQCCpTCg9Bc3NldERyaXZlclR5cGUSIQodQVNTRVRfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIdChlBU1NFVF9EUklWRVJfVFlQRV9ERUZBVUxUEAFCwQEKEGNvbS5yZXNvdXJjZXMudjFCFEFzc2V0RGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_key_value_constraint]);
+
+/**
+ * @generated from message resources.v1.VisionCapability
+ */
+export type VisionCapability = Message<"resources.v1.VisionCapability"> & {
+  /**
+   * @generated from field: repeated resources.v1.ValidationMode supported_validation_modes = 1;
+   */
+  supportedValidationModes: ValidationMode[];
+
+  /**
+   * @generated from field: repeated string supported_part_definition_ids = 2;
+   */
+  supportedPartDefinitionIds: string[];
+
+  /**
+   * @generated from field: repeated string supported_task_type_ids = 3;
+   */
+  supportedTaskTypeIds: string[];
+
+  /**
+   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 4;
+   */
+  constraints: KeyValueConstraint[];
+};
+
+/**
+ * Describes the message resources.v1.VisionCapability.
+ * Use `create(VisionCapabilitySchema)` to create a new message.
+ */
+export const VisionCapabilitySchema: GenMessage<VisionCapability> = /*@__PURE__*/
+  messageDesc(file_resources_v1_asset_definition, 0);
 
 /**
  * @generated from message resources.v1.AssetDefinition
@@ -61,7 +95,12 @@ export type AssetDefinition = Message<"resources.v1.AssetDefinition"> & {
   modelId: string;
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 8;
+   * @generated from field: resources.v1.VisionCapability vision = 8;
+   */
+  vision?: VisionCapability;
+
+  /**
+   * @generated from field: common.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;
 };
@@ -71,7 +110,7 @@ export type AssetDefinition = Message<"resources.v1.AssetDefinition"> & {
  * Use `create(AssetDefinitionSchema)` to create a new message.
  */
 export const AssetDefinitionSchema: GenMessage<AssetDefinition> = /*@__PURE__*/
-  messageDesc(file_resources_v1_asset_definition, 0);
+  messageDesc(file_resources_v1_asset_definition, 1);
 
 /**
  * @generated from message resources.v1.AssetDefinitions
@@ -88,7 +127,48 @@ export type AssetDefinitions = Message<"resources.v1.AssetDefinitions"> & {
  * Use `create(AssetDefinitionsSchema)` to create a new message.
  */
 export const AssetDefinitionsSchema: GenMessage<AssetDefinitions> = /*@__PURE__*/
-  messageDesc(file_resources_v1_asset_definition, 1);
+  messageDesc(file_resources_v1_asset_definition, 2);
+
+/**
+ * @generated from enum resources.v1.ValidationMode
+ */
+export enum ValidationMode {
+  /**
+   * @generated from enum value: VALIDATION_MODE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VALIDATION_MODE_PRESENCE_CHECK = 1;
+   */
+  PRESENCE_CHECK = 1,
+
+  /**
+   * @generated from enum value: VALIDATION_MODE_POSE_CHECK = 2;
+   */
+  POSE_CHECK = 2,
+
+  /**
+   * @generated from enum value: VALIDATION_MODE_FASTENER_CHECK = 3;
+   */
+  FASTENER_CHECK = 3,
+
+  /**
+   * @generated from enum value: VALIDATION_MODE_LABEL_CHECK = 4;
+   */
+  LABEL_CHECK = 4,
+
+  /**
+   * @generated from enum value: VALIDATION_MODE_SURFACE_CHECK = 5;
+   */
+  SURFACE_CHECK = 5,
+}
+
+/**
+ * Describes the enum resources.v1.ValidationMode.
+ */
+export const ValidationModeSchema: GenEnum<ValidationMode> = /*@__PURE__*/
+  enumDesc(file_resources_v1_asset_definition, 0);
 
 /**
  * @generated from enum resources.v1.AssetType
@@ -146,7 +226,7 @@ export enum AssetType {
  * Describes the enum resources.v1.AssetType.
  */
 export const AssetTypeSchema: GenEnum<AssetType> = /*@__PURE__*/
-  enumDesc(file_resources_v1_asset_definition, 0);
+  enumDesc(file_resources_v1_asset_definition, 1);
 
 /**
  * @generated from enum resources.v1.AssetDriverType
@@ -167,5 +247,5 @@ export enum AssetDriverType {
  * Describes the enum resources.v1.AssetDriverType.
  */
 export const AssetDriverTypeSchema: GenEnum<AssetDriverType> = /*@__PURE__*/
-  enumDesc(file_resources_v1_asset_definition, 1);
+  enumDesc(file_resources_v1_asset_definition, 2);
 

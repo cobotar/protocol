@@ -316,6 +316,15 @@
   
     - [SequenceOperator](#process-v1-SequenceOperator)
   
+- [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
+    - [AssetDefinition](#resources-v1-AssetDefinition)
+    - [AssetDefinitions](#resources-v1-AssetDefinitions)
+    - [VisionCapability](#resources-v1-VisionCapability)
+  
+    - [AssetDriverType](#resources-v1-AssetDriverType)
+    - [AssetType](#resources-v1-AssetType)
+    - [ValidationMode](#resources-v1-ValidationMode)
+  
 - [resources/v1/container_definition.proto](#resources_v1_container_definition-proto)
     - [ContainerDefinition](#resources-v1-ContainerDefinition)
     - [ContainerDefinitions](#resources-v1-ContainerDefinitions)
@@ -383,13 +392,6 @@
 - [product/v1/product_definition.proto](#product_v1_product_definition-proto)
     - [ProductDefinition](#product-v1-ProductDefinition)
     - [ProductDefinitions](#product-v1-ProductDefinitions)
-  
-- [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
-    - [AssetDefinition](#resources-v1-AssetDefinition)
-    - [AssetDefinitions](#resources-v1-AssetDefinitions)
-  
-    - [AssetDriverType](#resources-v1-AssetDriverType)
-    - [AssetType](#resources-v1-AssetType)
   
 - [resources/v1/asset_instance.proto](#resources_v1_asset_instance-proto)
     - [AssetInstance](#resources-v1-AssetInstance)
@@ -4463,6 +4465,123 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
 
+<a name="resources_v1_asset_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/asset_definition.proto
+
+
+
+<a name="resources-v1-AssetDefinition"></a>
+
+### AssetDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of the asset |
+| icon | [string](#string) |  | Optional icon representing the asset |
+| description | [string](#string) |  | Optional description of the asset |
+| type | [AssetType](#resources-v1-AssetType) |  |  |
+| driver_type | [AssetDriverType](#resources-v1-AssetDriverType) |  |  |
+| model_id | [string](#string) |  |  |
+| vision | [VisionCapability](#resources-v1-VisionCapability) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-AssetDefinitions"></a>
+
+### AssetDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-VisionCapability"></a>
+
+### VisionCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| supported_validation_modes | [ValidationMode](#resources-v1-ValidationMode) | repeated |  |
+| supported_part_definition_ids | [string](#string) | repeated |  |
+| supported_task_type_ids | [string](#string) | repeated |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-AssetDriverType"></a>
+
+### AssetDriverType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
+
+
+
+<a name="resources-v1-AssetType"></a>
+
+### AssetType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
+| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
+| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
+| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
+| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
+| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
+
+
+
+<a name="resources-v1-ValidationMode"></a>
+
+### ValidationMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VALIDATION_MODE_UNSPECIFIED | 0 |  |
+| VALIDATION_MODE_PRESENCE_CHECK | 1 |  |
+| VALIDATION_MODE_POSE_CHECK | 2 |  |
+| VALIDATION_MODE_FASTENER_CHECK | 3 |  |
+| VALIDATION_MODE_LABEL_CHECK | 4 |  |
+| VALIDATION_MODE_SURFACE_CHECK | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="resources_v1_container_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -4869,6 +4988,7 @@ They should stay reusable across workcells and deployments.
 | require_vision_check | [bool](#bool) |  |  |
 | allow_manual_confirmation | [bool](#bool) |  |  |
 | manual_confirmation_min_level | [capability.v1.SkillLevel](#capability-v1-SkillLevel) |  |  |
+| mode | [resources.v1.ValidationMode](#resources-v1-ValidationMode) |  |  |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
 
 
@@ -5499,88 +5619,6 @@ name: TPU, grade: 70 Shore A
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="resources_v1_asset_definition-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## resources/v1/asset_definition.proto
-
-
-
-<a name="resources-v1-AssetDefinition"></a>
-
-### AssetDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of the asset |
-| icon | [string](#string) |  | Optional icon representing the asset |
-| description | [string](#string) |  | Optional description of the asset |
-| type | [AssetType](#resources-v1-AssetType) |  |  |
-| driver_type | [AssetDriverType](#resources-v1-AssetDriverType) |  |  |
-| model_id | [string](#string) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
-
-
-
-
-
-
-<a name="resources-v1-AssetDefinitions"></a>
-
-### AssetDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="resources-v1-AssetDriverType"></a>
-
-### AssetDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_DRIVER_TYPE_DEFAULT | 1 |  |
-
-
-
-<a name="resources-v1-AssetType"></a>
-
-### AssetType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
-| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
-| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
-| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
-| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
-| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
-
 
  
 
