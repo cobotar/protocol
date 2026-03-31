@@ -59,18 +59,15 @@ enum LineStatus {
 // - contain one or more cells and/or directly attached stations
 // - provide a coarse operational boundary for planning and dispatch
 message LineDefinition {
-  string id = 1 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.line_id_component) = true
-  ];
+  string id = 1 [(buf.validate.field).string.(validation.v1.line_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
-  LineType type = 5; // Broad line classification. Keep optional until concrete line types are introduced.
+  LineType type = 5 [(buf.validate.field).enum.defined_only = true]; // Broad line classification. Keep optional until concrete line types are introduced.
   LineStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability of the line as a whole.
   int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this line should host concurrently.
-  repeated string cell_ids = 8; // Cells belonging to this line.
-  repeated string station_ids = 9; // Optional directly attached stations when a line references stations without an intermediate cell.
+  repeated string cell_ids = 8 [(buf.validate.field).repeated.items.string.(validation.v1.cell_id_component) = true]; // Cells belonging to this line.
+  repeated string station_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.station_id_component) = true]; // Optional directly attached stations when a line references stations without an intermediate cell.
   common.v1.CustomProperties custom = 10;
 }
 

@@ -320,17 +320,17 @@ var File_resources_v1_line_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_line_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/line_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9f\x03\n" +
-	"\x0eLineDefinition\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\x02id\x12\x1d\n" +
+	"\"resources/v1/line_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc6\x03\n" +
+	"\x0eLineDefinition\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12*\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x16.resources.v1.LineTypeR\x04type\x12:\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x124\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x16.resources.v1.LineTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04type\x12:\n" +
 	"\x06status\x18\x06 \x01(\x0e2\x18.resources.v1.LineStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12A\n" +
-	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x12\x19\n" +
-	"\bcell_ids\x18\b \x03(\tR\acellIds\x12\x1f\n" +
-	"\vstation_ids\x18\t \x03(\tR\n" +
+	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x12)\n" +
+	"\bcell_ids\x18\b \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xa0\xf2\x04\x01R\acellIds\x12/\n" +
+	"\vstation_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd8\xf1\x04\x01R\n" +
 	"stationIds\x123\n" +
 	"\x06custom\x18\n" +
 	" \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +

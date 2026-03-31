@@ -40,6 +40,12 @@ enum AssetDriverType {
 }
 
 message AssetDefinition {
+  option (buf.validate.message).cel = {
+    id: "asset_type_camera_requires_vision_capability"
+    message: "vision capability must be set when type is camera"
+    expression: "this.type != 1 || has(this.vision)"
+  };
+
   string id = 1;
   string name = 2 [(buf.validate.field).string = {
     min_len: 1

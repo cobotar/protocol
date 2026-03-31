@@ -417,7 +417,7 @@ const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\x1asupported_validation_modes\x18\x01 \x03(\x0e2\x1c.resources.v1.ValidationModeR\x18supportedValidationModes\x12A\n" +
 	"\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x125\n" +
 	"\x17supported_task_type_ids\x18\x03 \x03(\tR\x14supportedTaskTypeIds\x12?\n" +
-	"\vconstraints\x18\x04 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x87\x03\n" +
+	"\vconstraints\x18\x04 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x96\x04\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
@@ -429,7 +429,8 @@ const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"driverType\x12\x19\n" +
 	"\bmodel_id\x18\a \x01(\tR\amodelId\x126\n" +
 	"\x06vision\x18\b \x01(\v2\x1e.resources.v1.VisionCapabilityR\x06vision\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"G\n" +
+	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom:\x8c\x01\xbaH\x88\x01\x1a\x85\x01\n" +
+	",asset_type_camera_requires_vision_capability\x121vision capability must be set when type is camera\x1a\"this.type != 1 || has(this.vision)\"G\n" +
 	"\x10AssetDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.AssetDefinitionR\x05items*\xdd\x01\n" +
 	"\x0eValidationMode\x12\x1f\n" +
