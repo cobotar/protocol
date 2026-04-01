@@ -184,18 +184,19 @@ func (DeviceBatteryStatus) EnumDescriptor() ([]byte, []int) {
 
 // DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 type DeviceMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          DeviceType             `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.DeviceType" json:"type,omitempty"`
-	DeviceId      string                 `protobuf:"bytes,6,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
-	Status        DeviceStatus           `protobuf:"varint,7,opt,name=status,proto3,enum=resources.v1.DeviceStatus" json:"status,omitempty"`
-	BatteryLevel  int32                  `protobuf:"varint,8,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
-	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"` // TODO: add location
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type               DeviceType             `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.DeviceType" json:"type,omitempty"`
+	DeviceId           string                 `protobuf:"bytes,6,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	Status             DeviceStatus           `protobuf:"varint,7,opt,name=status,proto3,enum=resources.v1.DeviceStatus" json:"status,omitempty"`
+	BatteryLevel       int32                  `protobuf:"varint,8,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
+	BatteryStatus      DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
+	EquippedByWorkerId string                 `protobuf:"bytes,10,opt,name=equipped_by_worker_id,json=equippedByWorkerId,proto3" json:"equipped_by_worker_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *DeviceMessage) Reset() {
@@ -289,6 +290,13 @@ func (x *DeviceMessage) GetBatteryStatus() DeviceBatteryStatus {
 		return x.BatteryStatus
 	}
 	return DeviceBatteryStatus_DEVICE_BATTERY_STATUS_UNSPECIFIED
+}
+
+func (x *DeviceMessage) GetEquippedByWorkerId() string {
+	if x != nil {
+		return x.EquippedByWorkerId
+	}
+	return ""
 }
 
 type DeviceMessages struct {
@@ -399,7 +407,7 @@ var File_resources_v1_device_proto protoreflect.FileDescriptor
 
 const file_resources_v1_device_proto_rawDesc = "" +
 	"\n" +
-	"\x19resources/v1/device.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x03\n" +
+	"\x19resources/v1/device.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd5\x03\n" +
 	"\rDeviceMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -409,7 +417,9 @@ const file_resources_v1_device_proto_rawDesc = "" +
 	"\tdevice_id\x18\x06 \x01(\tR\bdeviceId\x12<\n" +
 	"\x06status\x18\a \x01(\x0e2\x1a.resources.v1.DeviceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x127\n" +
 	"\rbattery_level\x18\b \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12R\n" +
-	"\x0ebattery_status\x18\t \x01(\x0e2!.resources.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\"G\n" +
+	"\x0ebattery_status\x18\t \x01(\x0e2!.resources.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\x12<\n" +
+	"\x15equipped_by_worker_id\x18\n" +
+	" \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x12equippedByWorkerId\"G\n" +
 	"\x0eDeviceMessages\x125\n" +
 	"\adevices\x18\x01 \x03(\v2\x1b.resources.v1.DeviceMessageR\adevices\"\xb1\x01\n" +
 	"\x0fDeviceHeartbeat\x12\x1b\n" +

@@ -6102,7 +6102,8 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | device_id | [string](#string) |  |  |
 | status | [DeviceStatus](#resources-v1-DeviceStatus) |  |  |
 | battery_level | [int32](#int32) |  |  |
-| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  | TODO: add location |
+| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
+| equipped_by_worker_id | [string](#string) |  |  |
 
 
 

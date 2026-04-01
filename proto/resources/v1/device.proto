@@ -46,7 +46,8 @@ message DeviceMessage {
     lte: 100
   }];
   DeviceBatteryStatus battery_status = 9 [(buf.validate.field).enum.defined_only = true];
-  // TODO: add location
+
+  string equipped_by_worker_id = 10 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
 }
 
 message DeviceMessages {

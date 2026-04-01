@@ -45,7 +45,7 @@ DEVICE_BATTERY_STATUS_NOT_CHARGING: DeviceBatteryStatus
 DEVICE_BATTERY_STATUS_FULL: DeviceBatteryStatus
 
 class DeviceMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "device_id", "status", "battery_level", "battery_status")
+    __slots__ = ("id", "name", "icon", "description", "type", "device_id", "status", "battery_level", "battery_status", "equipped_by_worker_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -55,6 +55,7 @@ class DeviceMessage(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     BATTERY_LEVEL_FIELD_NUMBER: _ClassVar[int]
     BATTERY_STATUS_FIELD_NUMBER: _ClassVar[int]
+    EQUIPPED_BY_WORKER_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -64,7 +65,8 @@ class DeviceMessage(_message.Message):
     status: DeviceStatus
     battery_level: int
     battery_status: DeviceBatteryStatus
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[DeviceType, str]] = ..., device_id: _Optional[str] = ..., status: _Optional[_Union[DeviceStatus, str]] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ...) -> None: ...
+    equipped_by_worker_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[DeviceType, str]] = ..., device_id: _Optional[str] = ..., status: _Optional[_Union[DeviceStatus, str]] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ..., equipped_by_worker_id: _Optional[str] = ...) -> None: ...
 
 class DeviceMessages(_message.Message):
     __slots__ = ("devices",)
