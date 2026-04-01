@@ -294,6 +294,50 @@ func (x *PartInstance) GetCustom() *v11.CustomProperties {
 	return nil
 }
 
+type PartInstances struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*PartInstance        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PartInstances) Reset() {
+	*x = PartInstances{}
+	mi := &file_product_v1_part_instance_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PartInstances) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PartInstances) ProtoMessage() {}
+
+func (x *PartInstances) ProtoReflect() protoreflect.Message {
+	mi := &file_product_v1_part_instance_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PartInstances.ProtoReflect.Descriptor instead.
+func (*PartInstances) Descriptor() ([]byte, []int) {
+	return file_product_v1_part_instance_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PartInstances) GetItems() []*PartInstance {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_product_v1_part_instance_proto protoreflect.FileDescriptor
 
 const file_product_v1_part_instance_proto_rawDesc = "" +
@@ -321,7 +365,9 @@ const file_product_v1_part_instance_proto_rawDesc = "" +
 	"\x06status\x18\x06 \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12<\n" +
 	"\blocation\x18\a \x01(\v2 .product.v1.PartInstanceLocationR\blocation\x126\n" +
 	"\bquantity\x18\b \x01(\v2\x1a.product.v1.QuantityStatusR\bquantity\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06customB\xb0\x01\n" +
+	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"?\n" +
+	"\rPartInstances\x12.\n" +
+	"\x05items\x18\x01 \x03(\v2\x18.product.v1.PartInstanceR\x05itemsB\xb0\x01\n" +
 	"\x0ecom.product.v1B\x11PartInstanceProtoP\x01Z9github.com/cobotar/protocol/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
 	"Product\\V1\xe2\x02\x16Product\\V1\\GPBMetadata\xea\x02\vProduct::V1b\x06proto3"
 
@@ -337,26 +383,28 @@ func file_product_v1_part_instance_proto_rawDescGZIP() []byte {
 	return file_product_v1_part_instance_proto_rawDescData
 }
 
-var file_product_v1_part_instance_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_product_v1_part_instance_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_product_v1_part_instance_proto_goTypes = []any{
 	(*QuantityStatus)(nil),       // 0: product.v1.QuantityStatus
 	(*PartInstanceLocation)(nil), // 1: product.v1.PartInstanceLocation
 	(*PartInstance)(nil),         // 2: product.v1.PartInstance
-	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
-	(v11.ResourceStatus)(0),      // 4: common.v1.ResourceStatus
-	(*v11.CustomProperties)(nil), // 5: common.v1.CustomProperties
+	(*PartInstances)(nil),        // 3: product.v1.PartInstances
+	(*v1.LocalizedPose)(nil),     // 4: geometry.v1.LocalizedPose
+	(v11.ResourceStatus)(0),      // 5: common.v1.ResourceStatus
+	(*v11.CustomProperties)(nil), // 6: common.v1.CustomProperties
 }
 var file_product_v1_part_instance_proto_depIdxs = []int32{
-	3, // 0: product.v1.PartInstanceLocation.pose:type_name -> geometry.v1.LocalizedPose
-	4, // 1: product.v1.PartInstance.status:type_name -> common.v1.ResourceStatus
+	4, // 0: product.v1.PartInstanceLocation.pose:type_name -> geometry.v1.LocalizedPose
+	5, // 1: product.v1.PartInstance.status:type_name -> common.v1.ResourceStatus
 	1, // 2: product.v1.PartInstance.location:type_name -> product.v1.PartInstanceLocation
 	0, // 3: product.v1.PartInstance.quantity:type_name -> product.v1.QuantityStatus
-	5, // 4: product.v1.PartInstance.custom:type_name -> common.v1.CustomProperties
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	6, // 4: product.v1.PartInstance.custom:type_name -> common.v1.CustomProperties
+	2, // 5: product.v1.PartInstances.items:type_name -> product.v1.PartInstance
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_part_instance_proto_init() }
@@ -370,7 +418,7 @@ func file_product_v1_part_instance_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_product_v1_part_instance_proto_rawDesc), len(file_product_v1_part_instance_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

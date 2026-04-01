@@ -394,6 +394,7 @@
 - [product/v1/part_instance.proto](#product_v1_part_instance-proto)
     - [PartInstance](#product-v1-PartInstance)
     - [PartInstanceLocation](#product-v1-PartInstanceLocation)
+    - [PartInstances](#product-v1-PartInstances)
     - [QuantityStatus](#product-v1-QuantityStatus)
   
 - [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
@@ -5595,6 +5596,21 @@ area if not currently stored in a container.
 | cell_id | [string](#string) |  | Optional direct workspace location if not inside a container. |
 | station_id | [string](#string) |  | Optional direct workspace location if not inside a container. |
 | pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="product-v1-PartInstances"></a>
+
+### PartInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PartInstance](#product-v1-PartInstance) | repeated |  |
 
 
 

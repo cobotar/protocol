@@ -57,3 +57,7 @@ message PartInstance {
   QuantityStatus quantity = 8;
   common.v1.CustomProperties custom = 9;
 }
+
+message PartInstances {
+  repeated PartInstance items = 1;
+}

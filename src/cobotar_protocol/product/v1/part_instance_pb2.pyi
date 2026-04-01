@@ -3,9 +3,10 @@ from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import enums_pb2 as _enums_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -57,3 +58,9 @@ class PartInstance(_message.Message):
     quantity: QuantityStatus
     custom: _custom_properties_pb2.CustomProperties
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., status: _Optional[_Union[_enums_pb2.ResourceStatus, str]] = ..., location: _Optional[_Union[PartInstanceLocation, _Mapping]] = ..., quantity: _Optional[_Union[QuantityStatus, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+
+class PartInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[PartInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[PartInstance, _Mapping]]] = ...) -> None: ...
