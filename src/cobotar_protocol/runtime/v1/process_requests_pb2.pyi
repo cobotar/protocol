@@ -57,6 +57,7 @@ class ProcessLoadFailure(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_LOAD_FAILURE_STATION_CLOSED: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_STATION_BUSY: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_STATION_BLOCKED: _ClassVar[ProcessLoadFailure]
+    PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT: _ClassVar[ProcessLoadFailure]
 
 class ProcessRunIssueSeverity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -121,6 +122,7 @@ PROCESS_LOAD_FAILURE_STATION_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_STATION_CLOSED: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_STATION_BUSY: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_STATION_BLOCKED: ProcessLoadFailure
+PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT: ProcessLoadFailure
 PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED: ProcessRunIssueSeverity
 PROCESS_RUN_ISSUE_SEVERITY_BLOCKING: ProcessRunIssueSeverity
 PROCESS_RUN_ISSUE_SEVERITY_WARNING: ProcessRunIssueSeverity
@@ -207,7 +209,7 @@ class CandidateActorEvaluation(_message.Message):
     def __init__(self, actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., feasible: bool = ..., restrictions: _Optional[_Iterable[_Union[_runtime_restriction_pb2.RuntimeRestriction, _Mapping]]] = ..., issues: _Optional[_Iterable[_Union[ProcessRunIssue, _Mapping]]] = ...) -> None: ...
 
 class TaskFeasibility(_message.Message):
-    __slots__ = ("task_definition_id", "feasible", "candidate_actors", "candidate_robot_instance_ids", "candidate_tool_instance_ids", "candidate_container_instance_ids", "candidate_asset_instance_ids", "issues", "candidate_actor_evaluations")
+    __slots__ = ("task_definition_id", "feasible", "candidate_actors", "candidate_robot_instance_ids", "candidate_tool_instance_ids", "candidate_container_instance_ids", "candidate_asset_instance_ids", "candidate_part_instance_ids", "issues", "candidate_actor_evaluations")
     TASK_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     FEASIBLE_FIELD_NUMBER: _ClassVar[int]
     CANDIDATE_ACTORS_FIELD_NUMBER: _ClassVar[int]
@@ -215,6 +217,7 @@ class TaskFeasibility(_message.Message):
     CANDIDATE_TOOL_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     CANDIDATE_CONTAINER_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     CANDIDATE_ASSET_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
+    CANDIDATE_PART_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     ISSUES_FIELD_NUMBER: _ClassVar[int]
     CANDIDATE_ACTOR_EVALUATIONS_FIELD_NUMBER: _ClassVar[int]
     task_definition_id: str
@@ -224,9 +227,10 @@ class TaskFeasibility(_message.Message):
     candidate_tool_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     candidate_container_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     candidate_asset_instance_ids: _containers.RepeatedScalarFieldContainer[str]
+    candidate_part_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     issues: _containers.RepeatedCompositeFieldContainer[ProcessRunIssue]
     candidate_actor_evaluations: _containers.RepeatedCompositeFieldContainer[CandidateActorEvaluation]
-    def __init__(self, task_definition_id: _Optional[str] = ..., feasible: bool = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., candidate_robot_instance_ids: _Optional[_Iterable[str]] = ..., candidate_tool_instance_ids: _Optional[_Iterable[str]] = ..., candidate_container_instance_ids: _Optional[_Iterable[str]] = ..., candidate_asset_instance_ids: _Optional[_Iterable[str]] = ..., issues: _Optional[_Iterable[_Union[ProcessRunIssue, _Mapping]]] = ..., candidate_actor_evaluations: _Optional[_Iterable[_Union[CandidateActorEvaluation, _Mapping]]] = ...) -> None: ...
+    def __init__(self, task_definition_id: _Optional[str] = ..., feasible: bool = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., candidate_robot_instance_ids: _Optional[_Iterable[str]] = ..., candidate_tool_instance_ids: _Optional[_Iterable[str]] = ..., candidate_container_instance_ids: _Optional[_Iterable[str]] = ..., candidate_asset_instance_ids: _Optional[_Iterable[str]] = ..., candidate_part_instance_ids: _Optional[_Iterable[str]] = ..., issues: _Optional[_Iterable[_Union[ProcessRunIssue, _Mapping]]] = ..., candidate_actor_evaluations: _Optional[_Iterable[_Union[CandidateActorEvaluation, _Mapping]]] = ...) -> None: ...
 
 class ProcessRunPrecheckResult(_message.Message):
     __slots__ = ("ok", "issues", "blocking_issue_count", "warning_issue_count", "process_recipe_id", "target_line_id", "task_feasibility", "status")

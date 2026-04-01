@@ -154,6 +154,9 @@ enum ProcessLoadFailure {
   PROCESS_LOAD_FAILURE_STATION_CLOSED = 91;
   PROCESS_LOAD_FAILURE_STATION_BUSY = 92;
   PROCESS_LOAD_FAILURE_STATION_BLOCKED = 93;
+
+  // Part related failures
+  PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT = 100;
 }
 
 enum ProcessRunIssueSeverity {
@@ -185,7 +188,7 @@ message ProcessRunIssue {
   string cell_id = 10;
   string station_id = 11;
   string actor_id = 12;
-  string resource_id = 13; // tool/robot/fixture/asset instance if known
+  string resource_id = 13; // tool/robot/fixture/asset/part instance if known
 
   // Optional remediation hint
   string remediation = 14;
@@ -215,10 +218,11 @@ message TaskFeasibility {
   repeated string candidate_tool_instance_ids = 5;
   repeated string candidate_container_instance_ids = 6;
   repeated string candidate_asset_instance_ids = 7;
+  repeated string candidate_part_instance_ids = 8;
 
-  repeated ProcessRunIssue issues = 8;
+  repeated ProcessRunIssue issues = 9;
 
-  repeated CandidateActorEvaluation candidate_actor_evaluations = 9;
+  repeated CandidateActorEvaluation candidate_actor_evaluations = 10;
 }
 
 enum ProcessRunPrecheckStatus {

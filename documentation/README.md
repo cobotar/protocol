@@ -7784,7 +7784,7 @@ Thus the following must be evaluated:
 | cell_id | [string](#string) |  |  |
 | station_id | [string](#string) |  |  |
 | actor_id | [string](#string) |  |  |
-| resource_id | [string](#string) |  | tool/robot/fixture/asset instance if known |
+| resource_id | [string](#string) |  | tool/robot/fixture/asset/part instance if known |
 | remediation | [string](#string) |  | Optional remediation hint |
 | importance | [RequirementImportance](#runtime-v1-RequirementImportance) |  |  |
 
@@ -7830,6 +7830,7 @@ Thus the following must be evaluated:
 | candidate_tool_instance_ids | [string](#string) | repeated |  |
 | candidate_container_instance_ids | [string](#string) | repeated |  |
 | candidate_asset_instance_ids | [string](#string) | repeated |  |
+| candidate_part_instance_ids | [string](#string) | repeated |  |
 | issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
 | candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
 
@@ -7882,6 +7883,7 @@ A human is required but no worker with valid skills exists. |
 | PROCESS_LOAD_FAILURE_STATION_CLOSED | 91 |  |
 | PROCESS_LOAD_FAILURE_STATION_BUSY | 92 |  |
 | PROCESS_LOAD_FAILURE_STATION_BLOCKED | 93 |  |
+| PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT | 100 | Part related failures |
 
 
 

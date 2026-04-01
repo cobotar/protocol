@@ -130,44 +130,47 @@ const (
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_CLOSED    ProcessLoadFailure = 91
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_BUSY      ProcessLoadFailure = 92
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_STATION_BLOCKED   ProcessLoadFailure = 93
+	// Part related failures
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT ProcessLoadFailure = 100
 )
 
 // Enum value maps for ProcessLoadFailure.
 var (
 	ProcessLoadFailure_name = map[int32]string{
-		0:  "PROCESS_LOAD_FAILURE_UNSPECIFIED",
-		2:  "PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND",
-		3:  "PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED",
-		4:  "PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN",
-		10: "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER",
-		11: "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND",
-		12: "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND",
-		20: "PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE",
-		21: "PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED",
-		22: "PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT",
-		30: "PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE",
-		31: "PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH",
-		40: "PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR",
-		41: "PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR",
-		42: "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED",
-		43: "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED",
-		50: "PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED",
-		51: "PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH",
-		60: "PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE",
-		61: "PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING",
-		62: "PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD",
-		70: "PROCESS_LOAD_FAILURE_LINE_NOT_FOUND",
-		71: "PROCESS_LOAD_FAILURE_LINE_CLOSED",
-		72: "PROCESS_LOAD_FAILURE_LINE_BUSY",
-		73: "PROCESS_LOAD_FAILURE_LINE_BLOCKED",
-		80: "PROCESS_LOAD_FAILURE_CELL_NOT_FOUND",
-		81: "PROCESS_LOAD_FAILURE_CELL_CLOSED",
-		82: "PROCESS_LOAD_FAILURE_CELL_BUSY",
-		83: "PROCESS_LOAD_FAILURE_CELL_BLOCKED",
-		90: "PROCESS_LOAD_FAILURE_STATION_NOT_FOUND",
-		91: "PROCESS_LOAD_FAILURE_STATION_CLOSED",
-		92: "PROCESS_LOAD_FAILURE_STATION_BUSY",
-		93: "PROCESS_LOAD_FAILURE_STATION_BLOCKED",
+		0:   "PROCESS_LOAD_FAILURE_UNSPECIFIED",
+		2:   "PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND",
+		3:   "PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED",
+		4:   "PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN",
+		10:  "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER",
+		11:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND",
+		12:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND",
+		20:  "PROCESS_LOAD_FAILURE_MISSING_TOOL_ROLE",
+		21:  "PROCESS_LOAD_FAILURE_TOOL_NOT_CALIBRATED",
+		22:  "PROCESS_LOAD_FAILURE_TOOL_CAPABILITY_INSUFFICIENT",
+		30:  "PROCESS_LOAD_FAILURE_ROBOT_UNAVAILABLE",
+		31:  "PROCESS_LOAD_FAILURE_ROBOT_TOOLING_MISMATCH",
+		40:  "PROCESS_LOAD_FAILURE_NO_QUALIFIED_OPERATOR",
+		41:  "PROCESS_LOAD_FAILURE_NO_FEASIBLE_ACTOR",
+		42:  "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_RESTRICTED",
+		43:  "PROCESS_LOAD_FAILURE_REQUIRED_SKILL_EXPIRED",
+		50:  "PROCESS_LOAD_FAILURE_COLLABORATION_MODE_UNSUPPORTED",
+		51:  "PROCESS_LOAD_FAILURE_SAFETY_MODE_MISMATCH",
+		60:  "PROCESS_LOAD_FAILURE_VISION_ASSET_UNAVAILABLE",
+		61:  "PROCESS_LOAD_FAILURE_VALIDATION_SOURCE_MISSING",
+		62:  "PROCESS_LOAD_FAILURE_NO_FEASIBLE_VALIDATION_METHOD",
+		70:  "PROCESS_LOAD_FAILURE_LINE_NOT_FOUND",
+		71:  "PROCESS_LOAD_FAILURE_LINE_CLOSED",
+		72:  "PROCESS_LOAD_FAILURE_LINE_BUSY",
+		73:  "PROCESS_LOAD_FAILURE_LINE_BLOCKED",
+		80:  "PROCESS_LOAD_FAILURE_CELL_NOT_FOUND",
+		81:  "PROCESS_LOAD_FAILURE_CELL_CLOSED",
+		82:  "PROCESS_LOAD_FAILURE_CELL_BUSY",
+		83:  "PROCESS_LOAD_FAILURE_CELL_BLOCKED",
+		90:  "PROCESS_LOAD_FAILURE_STATION_NOT_FOUND",
+		91:  "PROCESS_LOAD_FAILURE_STATION_CLOSED",
+		92:  "PROCESS_LOAD_FAILURE_STATION_BUSY",
+		93:  "PROCESS_LOAD_FAILURE_STATION_BLOCKED",
+		100: "PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT",
 	}
 	ProcessLoadFailure_value = map[string]int32{
 		"PROCESS_LOAD_FAILURE_UNSPECIFIED":                    0,
@@ -203,6 +206,7 @@ var (
 		"PROCESS_LOAD_FAILURE_STATION_CLOSED":                 91,
 		"PROCESS_LOAD_FAILURE_STATION_BUSY":                   92,
 		"PROCESS_LOAD_FAILURE_STATION_BLOCKED":                93,
+		"PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT":      100,
 	}
 )
 
@@ -608,7 +612,7 @@ type ProcessRunIssue struct {
 	CellId              string `protobuf:"bytes,10,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
 	StationId           string `protobuf:"bytes,11,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
 	ActorId             string `protobuf:"bytes,12,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"`
-	ResourceId          string `protobuf:"bytes,13,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset instance if known
+	ResourceId          string `protobuf:"bytes,13,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset/part instance if known
 	// Optional remediation hint
 	Remediation   string                `protobuf:"bytes,14,opt,name=remediation,proto3" json:"remediation,omitempty"`
 	Importance    RequirementImportance `protobuf:"varint,15,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
@@ -831,8 +835,9 @@ type TaskFeasibility struct {
 	CandidateToolInstanceIds      []string                    `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
 	CandidateContainerInstanceIds []string                    `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
 	CandidateAssetInstanceIds     []string                    `protobuf:"bytes,7,rep,name=candidate_asset_instance_ids,json=candidateAssetInstanceIds,proto3" json:"candidate_asset_instance_ids,omitempty"`
-	Issues                        []*ProcessRunIssue          `protobuf:"bytes,8,rep,name=issues,proto3" json:"issues,omitempty"`
-	CandidateActorEvaluations     []*CandidateActorEvaluation `protobuf:"bytes,9,rep,name=candidate_actor_evaluations,json=candidateActorEvaluations,proto3" json:"candidate_actor_evaluations,omitempty"`
+	CandidatePartInstanceIds      []string                    `protobuf:"bytes,8,rep,name=candidate_part_instance_ids,json=candidatePartInstanceIds,proto3" json:"candidate_part_instance_ids,omitempty"`
+	Issues                        []*ProcessRunIssue          `protobuf:"bytes,9,rep,name=issues,proto3" json:"issues,omitempty"`
+	CandidateActorEvaluations     []*CandidateActorEvaluation `protobuf:"bytes,10,rep,name=candidate_actor_evaluations,json=candidateActorEvaluations,proto3" json:"candidate_actor_evaluations,omitempty"`
 	unknownFields                 protoimpl.UnknownFields
 	sizeCache                     protoimpl.SizeCache
 }
@@ -912,6 +917,13 @@ func (x *TaskFeasibility) GetCandidateContainerInstanceIds() []string {
 func (x *TaskFeasibility) GetCandidateAssetInstanceIds() []string {
 	if x != nil {
 		return x.CandidateAssetInstanceIds
+	}
+	return nil
+}
+
+func (x *TaskFeasibility) GetCandidatePartInstanceIds() []string {
+	if x != nil {
+		return x.CandidatePartInstanceIds
 	}
 	return nil
 }
@@ -1139,7 +1151,7 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12B\n" +
 	"\frestrictions\x18\x03 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x123\n" +
-	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xc0\x04\n" +
+	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xff\x04\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12>\n" +
@@ -1147,9 +1159,11 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x1ccandidate_robot_instance_ids\x18\x04 \x03(\tR\x19candidateRobotInstanceIds\x12=\n" +
 	"\x1bcandidate_tool_instance_ids\x18\x05 \x03(\tR\x18candidateToolInstanceIds\x12G\n" +
 	" candidate_container_instance_ids\x18\x06 \x03(\tR\x1dcandidateContainerInstanceIds\x12?\n" +
-	"\x1ccandidate_asset_instance_ids\x18\a \x03(\tR\x19candidateAssetInstanceIds\x123\n" +
-	"\x06issues\x18\b \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x12d\n" +
-	"\x1bcandidate_actor_evaluations\x18\t \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"\x99\x03\n" +
+	"\x1ccandidate_asset_instance_ids\x18\a \x03(\tR\x19candidateAssetInstanceIds\x12=\n" +
+	"\x1bcandidate_part_instance_ids\x18\b \x03(\tR\x18candidatePartInstanceIds\x123\n" +
+	"\x06issues\x18\t \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x12d\n" +
+	"\x1bcandidate_actor_evaluations\x18\n" +
+	" \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"\x99\x03\n" +
 	"\x18ProcessRunPrecheckResult\x12\x0e\n" +
 	"\x02ok\x18\x01 \x01(\bR\x02ok\x123\n" +
 	"\x06issues\x18\x02 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x120\n" +
@@ -1169,7 +1183,7 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"$PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE\x10\x01\x12*\n" +
 	"&PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE\x10\x02\x12-\n" +
 	")PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE\x10\x03\x12$\n" +
-	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*\xf9\v\n" +
+	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*\xad\f\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
 	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x121\n" +
 	"-PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND\x10\x02\x12.\n" +
@@ -1204,7 +1218,8 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"&PROCESS_LOAD_FAILURE_STATION_NOT_FOUND\x10Z\x12'\n" +
 	"#PROCESS_LOAD_FAILURE_STATION_CLOSED\x10[\x12%\n" +
 	"!PROCESS_LOAD_FAILURE_STATION_BUSY\x10\\\x12(\n" +
-	"$PROCESS_LOAD_FAILURE_STATION_BLOCKED\x10]*\x96\x01\n" +
+	"$PROCESS_LOAD_FAILURE_STATION_BLOCKED\x10]\x122\n" +
+	".PROCESS_LOAD_FAILURE_REQUIRED_PART_NOT_PRESENT\x10d*\x96\x01\n" +
 	"\x17ProcessRunIssueSeverity\x12*\n" +
 	"&PROCESS_RUN_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12'\n" +
 	"#PROCESS_RUN_ISSUE_SEVERITY_BLOCKING\x10\x01\x12&\n" +
