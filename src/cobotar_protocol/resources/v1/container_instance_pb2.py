@@ -22,12 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
 from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%resources/v1/container_instance.proto\x12\x0cresources.v1\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a\x16geometry/v1/pose.proto\"\xdc\x02\n\x11\x43ontainerInstance\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x17\x63ontainer_definition_id\x18\x05 \x01(\tR\x15\x63ontainerDefinitionId\x12\x1d\n\nstation_id\x18\x06 \x01(\tR\tstationId\x12\x31\n\x06status\x18\x07 \x01(\x0e\x32\x19.common.v1.ResourceStatusR\x06status\x12.\n\x04pose\x18\x08 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\x12\x33\n\x06\x63ustom\x18\t \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"K\n\x12\x43ontainerInstances\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32\x1f.resources.v1.ContainerInstanceR\x05itemsB\xc3\x01\n\x10\x63om.resources.v1B\x16\x43ontainerInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%resources/v1/container_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb5\x01\n\x11\x43ontainerLocation\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12.\n\x04pose\x18\x04 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\"\xf8\x02\n\x11\x43ontainerInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xeb\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x44\n\x17\x63ontainer_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xc8\xf2\x04\x01\xc8\x01\x01R\x15\x63ontainerDefinitionId\x12;\n\x06status\x18\x06 \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12;\n\x08location\x18\x07 \x01(\x0b\x32\x1f.resources.v1.ContainerLocationR\x08location\x12\x33\n\x06\x63ustom\x18\x08 \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"K\n\x12\x43ontainerInstances\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32\x1f.resources.v1.ContainerInstanceR\x05itemsB\xc3\x01\n\x10\x63om.resources.v1B\x16\x43ontainerInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,8 +37,24 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.container_inst
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\026ContainerInstanceProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
-  _globals['_CONTAINERINSTANCE']._serialized_start=138
-  _globals['_CONTAINERINSTANCE']._serialized_end=486
-  _globals['_CONTAINERINSTANCES']._serialized_start=488
-  _globals['_CONTAINERINSTANCES']._serialized_end=563
+  _globals['_CONTAINERLOCATION'].fields_by_name['line_id']._loaded_options = None
+  _globals['_CONTAINERLOCATION'].fields_by_name['line_id']._serialized_options = b'\272H\006r\004\300\362\004\001'
+  _globals['_CONTAINERLOCATION'].fields_by_name['cell_id']._loaded_options = None
+  _globals['_CONTAINERLOCATION'].fields_by_name['cell_id']._serialized_options = b'\272H\006r\004\270\362\004\001'
+  _globals['_CONTAINERLOCATION'].fields_by_name['station_id']._loaded_options = None
+  _globals['_CONTAINERLOCATION'].fields_by_name['station_id']._serialized_options = b'\272H\006r\004\370\361\004\001'
+  _globals['_CONTAINERINSTANCE'].fields_by_name['id']._loaded_options = None
+  _globals['_CONTAINERINSTANCE'].fields_by_name['id']._serialized_options = b'\272H\006r\004\320\3530\001'
+  _globals['_CONTAINERINSTANCE'].fields_by_name['name']._loaded_options = None
+  _globals['_CONTAINERINSTANCE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
+  _globals['_CONTAINERINSTANCE'].fields_by_name['container_definition_id']._loaded_options = None
+  _globals['_CONTAINERINSTANCE'].fields_by_name['container_definition_id']._serialized_options = b'\272H\tr\004\310\362\004\001\310\001\001'
+  _globals['_CONTAINERINSTANCE'].fields_by_name['status']._loaded_options = None
+  _globals['_CONTAINERINSTANCE'].fields_by_name['status']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_CONTAINERLOCATION']._serialized_start=212
+  _globals['_CONTAINERLOCATION']._serialized_end=393
+  _globals['_CONTAINERINSTANCE']._serialized_start=396
+  _globals['_CONTAINERINSTANCE']._serialized_end=772
+  _globals['_CONTAINERINSTANCES']._serialized_start=774
+  _globals['_CONTAINERINSTANCES']._serialized_end=849
 # @@protoc_insertion_point(module_scope)

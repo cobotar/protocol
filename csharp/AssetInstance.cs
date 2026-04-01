@@ -27,27 +27,24 @@ namespace Messages.Resources.V1 {
             "CiFyZXNvdXJjZXMvdjEvYXNzZXRfaW5zdGFuY2UucHJvdG8SDHJlc291cmNl",
             "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEv",
             "Y3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aFWNvbW1vbi92MS9lbnVtcy5wcm90",
-            "bxoWZ2VvbWV0cnkvdjEvcG9zZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
-            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKBAwoNQXNzZXRJbnN0YW5jZRIO",
-            "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
-            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
-            "c2NyaXB0aW9uEjwKE2Fzc2V0X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIE",
-            "qPEEAcgBAVIRYXNzZXREZWZpbml0aW9uSWQSKwoKc3RhdGlvbl9pZBgGIAEo",
-            "CUIMukgJcgTY8QQByAEBUglzdGF0aW9uSWQSOwoGc3RhdHVzGAcgASgOMhku",
-            "Y29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEi4K",
-            "BHBvc2UYCCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgRwb3Nl",
-            "EjMKBmN1c3RvbRgJIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVz",
-            "UgZjdXN0b20iQwoOQXNzZXRJbnN0YW5jZXMSMQoFaXRlbXMYASADKAsyGy5y",
-            "ZXNvdXJjZXMudjEuQXNzZXRJbnN0YW5jZVIFaXRlbXNCvwEKEGNvbS5yZXNv",
-            "dXJjZXMudjFCEkFzc2V0SW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2Nv",
-            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNl",
-            "c3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2Vz",
-            "XFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpW",
-            "MWIGcHJvdG8z"));
+            "bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90",
+            "byKvAgoNQXNzZXRJbnN0YW5jZRIZCgJpZBgBIAEoCUIJukgGcgS48QQBUgJp",
+            "ZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoT",
+            "YXNzZXRfZGVmaW5pdGlvbl9pZBgFIAEoCUIMukgJcgSw8QQByAEBUhFhc3Nl",
+            "dERlZmluaXRpb25JZBI7CgZzdGF0dXMYBiABKA4yGS5jb21tb24udjEuUmVz",
+            "b3VyY2VTdGF0dXNCCLpIBYIBAhABUgZzdGF0dXMSMwoGY3VzdG9tGAcgASgL",
+            "MhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJDCg5Bc3Nl",
+            "dEluc3RhbmNlcxIxCgVpdGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Bc3Nl",
+            "dEluc3RhbmNlUgVpdGVtc0K/AQoQY29tLnJlc291cmNlcy52MUISQXNzZXRJ",
+            "bnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
+            "ZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNz",
+            "YWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNc",
+            "VjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstance), global::Messages.Resources.V1.AssetInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "AssetDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstance), global::Messages.Resources.V1.AssetInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "AssetDefinitionId", "Status", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstances), global::Messages.Resources.V1.AssetInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -95,9 +92,7 @@ namespace Messages.Resources.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       assetDefinitionId_ = other.assetDefinitionId_;
-      stationId_ = other.stationId_;
       status_ = other.status_;
-      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -168,20 +163,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 6;
-    private string stationId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StationId {
-      get { return stationId_; }
-      set {
-        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 7;
+    public const int StatusFieldNumber = 6;
     private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,20 +175,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 8;
-    private global::Messages.Common.V1.LocalizedPose pose_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
-      get { return pose_; }
-      set {
-        pose_ = value;
-      }
-    }
-
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
+    public const int CustomFieldNumber = 7;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -236,9 +207,7 @@ namespace Messages.Resources.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (AssetDefinitionId != other.AssetDefinitionId) return false;
-      if (StationId != other.StationId) return false;
       if (Status != other.Status) return false;
-      if (!object.Equals(Pose, other.Pose)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -252,9 +221,7 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (AssetDefinitionId.Length != 0) hash ^= AssetDefinitionId.GetHashCode();
-      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (pose_ != null) hash ^= Pose.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -294,20 +261,12 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteString(AssetDefinitionId);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -340,20 +299,12 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteString(AssetDefinitionId);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -381,14 +332,8 @@ namespace Messages.Resources.V1 {
       if (AssetDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetDefinitionId);
       }
-      if (StationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-      }
-      if (pose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
       }
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -420,17 +365,8 @@ namespace Messages.Resources.V1 {
       if (other.AssetDefinitionId.Length != 0) {
         AssetDefinitionId = other.AssetDefinitionId;
       }
-      if (other.StationId.Length != 0) {
-        StationId = other.StationId;
-      }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
-      }
-      if (other.pose_ != null) {
-        if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
-        }
-        Pose.MergeFrom(other.Pose);
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -477,22 +413,11 @@ namespace Messages.Resources.V1 {
             AssetDefinitionId = input.ReadString();
             break;
           }
-          case 50: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 56: {
+          case 48: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
-            break;
-          }
-          case 74: {
+          case 58: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -538,22 +463,11 @@ namespace Messages.Resources.V1 {
             AssetDefinitionId = input.ReadString();
             break;
           }
-          case 50: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 56: {
+          case 48: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
-            break;
-          }
-          case 74: {
+          case 58: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

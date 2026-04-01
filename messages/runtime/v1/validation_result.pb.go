@@ -188,7 +188,7 @@ const file_runtime_v1_validation_result_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x03\n" +
 	"\x10ValidationResult\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
-	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf2\x04\x01R\ttaskRunId\x12>\n" +
+	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12>\n" +
 	"\x06status\x18\x03 \x01(\x0e2\x1c.runtime.v1.ValidationStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x16\n" +
 	"\x06method\x18\x04 \x01(\tR\x06method\x12=\n" +
 	"\fvalidated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\vvalidatedAt\x12A\n" +

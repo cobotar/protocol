@@ -193,7 +193,7 @@ type DeviceMessage struct {
 	DeviceId      string                 `protobuf:"bytes,6,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
 	Status        DeviceStatus           `protobuf:"varint,7,opt,name=status,proto3,enum=resources.v1.DeviceStatus" json:"status,omitempty"`
 	BatteryLevel  int32                  `protobuf:"varint,8,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
-	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
+	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"` // TODO: add location
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

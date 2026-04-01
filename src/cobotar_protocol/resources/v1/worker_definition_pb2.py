@@ -28,7 +28,7 @@ from common.v1 import external_references_pb2 as common_dot_v1_dot_external__ref
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$resources/v1/worker_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x84\x03\n\x10WorkerDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1a\n\x08\x64isabled\x18\x05 \x01(\x08R\x08\x64isabled\x12\x1f\n\x0b\x65mployee_id\x18\x06 \x01(\tR\nemployeeId\x12J\n\x12\x61r_edit_permission\x18\x07 \x01(\x0e\x32\x1c.resources.v1.EditPermissionR\x10\x61rEditPermission\x12M\n\x13\x65xternal_references\x18\x08 \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\x12\x33\n\x06\x63ustom\x18\t \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"I\n\x11WorkerDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n\x0e\x45\x64itPermission\x12\x1f\n\x1b\x45\x44IT_PERMISSION_UNSPECIFIED\x10\x00\x12\x19\n\x15\x45\x44IT_PERMISSION_BASIC\x10\x01\x12\x1c\n\x18\x45\x44IT_PERMISSION_COSMETIC\x10\x02\x12\x18\n\x14\x45\x44IT_PERMISSION_FULL\x10\x03\x42\xc2\x01\n\x10\x63om.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$resources/v1/worker_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n\x0eWorkerLocation\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\xc9\x03\n\x10WorkerDefinition\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1a\n\x08\x64isabled\x18\x05 \x01(\x08R\x08\x64isabled\x12\x1f\n\x0b\x65mployee_id\x18\x06 \x01(\tR\nemployeeId\x12J\n\x12\x61r_edit_permission\x18\x07 \x01(\x0e\x32\x1c.resources.v1.EditPermissionR\x10\x61rEditPermission\x12M\n\x13\x65xternal_references\x18\x08 \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\x12\x38\n\x08location\x18\t \x01(\x0b\x32\x1c.resources.v1.WorkerLocationR\x08location\x12\x33\n\x06\x63ustom\x18\n \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"I\n\x11WorkerDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n\x0e\x45\x64itPermission\x12\x1f\n\x1b\x45\x44IT_PERMISSION_UNSPECIFIED\x10\x00\x12\x19\n\x15\x45\x44IT_PERMISSION_BASIC\x10\x01\x12\x1c\n\x18\x45\x44IT_PERMISSION_COSMETIC\x10\x02\x12\x18\n\x14\x45\x44IT_PERMISSION_FULL\x10\x03\x42\xc2\x01\n\x10\x63om.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,12 +36,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.worker_definit
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\025WorkerDefinitionProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
+  _globals['_WORKERLOCATION'].fields_by_name['line_id']._loaded_options = None
+  _globals['_WORKERLOCATION'].fields_by_name['line_id']._serialized_options = b'\272H\006r\004\300\362\004\001'
+  _globals['_WORKERLOCATION'].fields_by_name['cell_id']._loaded_options = None
+  _globals['_WORKERLOCATION'].fields_by_name['cell_id']._serialized_options = b'\272H\006r\004\270\362\004\001'
+  _globals['_WORKERLOCATION'].fields_by_name['station_id']._loaded_options = None
+  _globals['_WORKERLOCATION'].fields_by_name['station_id']._serialized_options = b'\272H\006r\004\370\361\004\001'
+  _globals['_WORKERDEFINITION'].fields_by_name['id']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\330\3530\001'
   _globals['_WORKERDEFINITION'].fields_by_name['name']._loaded_options = None
   _globals['_WORKERDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_EDITPERMISSION']._serialized_start=667
-  _globals['_EDITPERMISSION']._serialized_end=799
-  _globals['_WORKERDEFINITION']._serialized_start=201
-  _globals['_WORKERDEFINITION']._serialized_end=589
-  _globals['_WORKERDEFINITIONS']._serialized_start=591
-  _globals['_WORKERDEFINITIONS']._serialized_end=664
+  _globals['_EDITPERMISSION']._serialized_start=869
+  _globals['_EDITPERMISSION']._serialized_end=1001
+  _globals['_WORKERLOCATION']._serialized_start=201
+  _globals['_WORKERLOCATION']._serialized_end=331
+  _globals['_WORKERDEFINITION']._serialized_start=334
+  _globals['_WORKERDEFINITION']._serialized_end=791
+  _globals['_WORKERDEFINITIONS']._serialized_start=793
+  _globals['_WORKERDEFINITIONS']._serialized_end=866
 # @@protoc_insertion_point(module_scope)

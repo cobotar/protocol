@@ -16,8 +16,18 @@ enum EditPermission {
   EDIT_PERMISSION_FULL = 3; // Full: can edit all editable properties
 }
 
+// WorkerLocation describes the current operating area of a worker.
+//
+// Dynamic resources such as workers own their current location because they
+// move independently through the system.
+message WorkerLocation {
+  string line_id = 1 [(buf.validate.field).string.(validation.v1.line_id_component) = true];
+  string cell_id = 2 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
+  string station_id = 3 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
+}
+
 message WorkerDefinition {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
@@ -25,7 +35,10 @@ message WorkerDefinition {
   string employee_id = 6;
   EditPermission ar_edit_permission = 7;
   repeated common.v1.ExternalReference external_references = 8;
-  common.v1.CustomProperties custom = 9;
+
+  WorkerLocation location = 9; // Optional current location / operating area.
+
+  common.v1.CustomProperties custom = 10;
 }
 
 message WorkerDefinitions {

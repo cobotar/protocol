@@ -47,6 +47,12 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -385,6 +391,11 @@
     - [MaterialCategory](#product-v1-MaterialCategory)
     - [PartType](#product-v1-PartType)
   
+- [product/v1/part_instance.proto](#product_v1_part_instance-proto)
+    - [PartInstance](#product-v1-PartInstance)
+    - [PartInstanceLocation](#product-v1-PartInstanceLocation)
+    - [QuantityStatus](#product-v1-QuantityStatus)
+  
 - [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
     - [VariantAxis](#variance-v1-VariantAxis)
     - [VariantOption](#variance-v1-VariantOption)
@@ -397,6 +408,12 @@
     - [AssetInstance](#resources-v1-AssetInstance)
     - [AssetInstances](#resources-v1-AssetInstances)
   
+- [resources/v1/placement.proto](#resources_v1_placement-proto)
+    - [AssetPlacement](#resources-v1-AssetPlacement)
+    - [MarkerPlacement](#resources-v1-MarkerPlacement)
+    - [RobotPlacement](#resources-v1-RobotPlacement)
+    - [ToolPlacement](#resources-v1-ToolPlacement)
+  
 - [resources/v1/cell_definition.proto](#resources_v1_cell_definition-proto)
     - [CellDefinition](#resources-v1-CellDefinition)
     - [CellDefinitions](#resources-v1-CellDefinitions)
@@ -406,6 +423,7 @@
 - [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
     - [ContainerInstance](#resources-v1-ContainerInstance)
     - [ContainerInstances](#resources-v1-ContainerInstances)
+    - [ContainerLocation](#resources-v1-ContainerLocation)
   
 - [resources/v1/device.proto](#resources_v1_device-proto)
     - [DeviceHeartbeat](#resources-v1-DeviceHeartbeat)
@@ -468,6 +486,7 @@
 - [resources/v1/worker_definition.proto](#resources_v1_worker_definition-proto)
     - [WorkerDefinition](#resources-v1-WorkerDefinition)
     - [WorkerDefinitions](#resources-v1-WorkerDefinitions)
+    - [WorkerLocation](#resources-v1-WorkerLocation)
   
     - [EditPermission](#resources-v1-EditPermission)
   
@@ -836,27 +855,33 @@ A simple pose consisting of a position and orientation
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
-| asset_id_component | bool | .buf.validate.StringRules | 10005 |  |
-| cell_id_component | bool | .buf.validate.StringRules | 10020 |  |
-| environment_id_component | bool | .buf.validate.StringRules | 10006 |  |
-| fixture_id_component | bool | .buf.validate.StringRules | 10010 |  |
-| line_id_component | bool | .buf.validate.StringRules | 10021 |  |
-| marker_id_component | bool | .buf.validate.StringRules | 10009 |  |
+| asset_definition_id_component | bool | .buf.validate.StringRules | 10006 |  |
+| asset_instance_id_component | bool | .buf.validate.StringRules | 10007 |  |
+| cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
+| container_definition_id_component | bool | .buf.validate.StringRules | 10025 |  |
+| container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
+| environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| line_id_component | bool | .buf.validate.StringRules | 10024 |  |
+| marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
-| part_id_component | bool | .buf.validate.StringRules | 10007 |  |
-| process_recipe_id_component | bool | .buf.validate.StringRules | 10017 |  |
-| process_run_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
+| part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
+| process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
+| process_run_id_component | bool | .buf.validate.StringRules | 10017 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
-| robot_id_component | bool | .buf.validate.StringRules | 10004 |  |
-| sequence_definition_id_component | bool | .buf.validate.StringRules | 10018 |  |
-| sequence_run_id_component | bool | .buf.validate.StringRules | 10015 |  |
-| skill_id_component | bool | .buf.validate.StringRules | 10013 |  |
-| station_id_component | bool | .buf.validate.StringRules | 10011 |  |
-| task_definition_id_component | bool | .buf.validate.StringRules | 10019 |  |
-| task_run_id_component | bool | .buf.validate.StringRules | 10016 |  |
-| tool_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
+| sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
+| sequence_run_id_component | bool | .buf.validate.StringRules | 10018 |  |
+| skill_id_component | bool | .buf.validate.StringRules | 10016 |  |
+| station_id_component | bool | .buf.validate.StringRules | 10015 |  |
+| task_definition_id_component | bool | .buf.validate.StringRules | 10022 |  |
+| task_run_id_component | bool | .buf.validate.StringRules | 10019 |  |
+| tool_definition_id_component | bool | .buf.validate.StringRules | 10011 |  |
 | tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
+| worker_id_component | bool | .buf.validate.StringRules | 100027 |  |
 
  
 
@@ -5523,6 +5548,96 @@ name: TPU, grade: 70 Shore A
 
 
 
+<a name="product_v1_part_instance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/part_instance.proto
+
+
+
+<a name="product-v1-PartInstance"></a>
+
+### PartInstance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| part_definition_id | [string](#string) |  |  |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
+| location | [PartInstanceLocation](#product-v1-PartInstanceLocation) |  |  |
+| quantity | [QuantityStatus](#product-v1-QuantityStatus) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+
+
+
+
+
+
+<a name="product-v1-PartInstanceLocation"></a>
+
+### PartInstanceLocation
+PartInstanceLocation describes the current location of a part instance.
+
+A part may be inside a container slot, or directly located in a station/work
+area if not currently stored in a container.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_instance_id | [string](#string) |  |  |
+| slot_id | [string](#string) |  | Optional slot inside the container. |
+| line_id | [string](#string) |  | Optional direct workspace location if not inside a container. |
+| cell_id | [string](#string) |  | Optional direct workspace location if not inside a container. |
+| station_id | [string](#string) |  | Optional direct workspace location if not inside a container. |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+
+
+
+
+
+
+<a name="product-v1-QuantityStatus"></a>
+
+### QuantityStatus
+QuantityStatus is a lightweight optional description of how much of a part
+instance remains.
+
+This is intentionally simple and optional. It is useful for consumables,
+partial reels, partial kits, dispensed materials, or bags/boxes that are not
+fully depleted yet.
+
+For indivisible discrete parts, this field can be omitted entirely.
+Examples:
+	amount=3, unit=&#34;pcs&#34;, nominal_amount=25
+	amount=125.0, unit=&#34;g&#34;, nominal_amount=500.0
+	amount=7.2, unit=&#34;m&#34;, nominal_amount=20.0
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| amount | [double](#double) |  | Current amount left. |
+| unit | [string](#string) |  | Optional unit such as &#34;pcs&#34;, &#34;g&#34;, &#34;ml&#34;, &#34;m&#34;, &#34;cm2&#34;. |
+| nominal_amount | [double](#double) |  | Optional reference/original amount. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="variance_v1_variant_axis-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5648,9 +5763,7 @@ name: TPU, grade: 70 Shore A
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | asset_definition_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -5667,6 +5780,90 @@ name: TPU, grade: 70 Shore A
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [AssetInstance](#resources-v1-AssetInstance) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_placement-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/placement.proto
+
+
+
+<a name="resources-v1-AssetPlacement"></a>
+
+### AssetPlacement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_instance_id | [string](#string) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Optional placement pose relative to station/cell frame. |
+| comment | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-MarkerPlacement"></a>
+
+### MarkerPlacement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| marker_instance_id | [string](#string) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Optional pose override if needed for station/cell-local placement. |
+| comment | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-RobotPlacement"></a>
+
+### RobotPlacement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_instance_id | [string](#string) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Optional robot base pose relative to station/cell frame. |
+| comment | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ToolPlacement"></a>
+
+### ToolPlacement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tool_instance_id | [string](#string) |  |  |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Optional placement pose relative to station/cell frame. |
+| comment | [string](#string) |  |  |
 
 
 
@@ -5705,6 +5902,14 @@ Typical cell responsibilities:
 - expose operational state and capacity above individual stations
 - act as an optional target/selector scope for loaders and planners
 
+Static resources such as tools, assets, robots, and markers are owned by
+the workspace (station/cell) rather than the instance itself.
+This makes workspace composition explicit and avoids duplicating placement
+ownership across both the resource instance and the workspace.
+
+Dynamic resources such as workers, containers, and part instances own their
+current location because they move independently through the system.
+
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
@@ -5712,16 +5917,14 @@ Typical cell responsibilities:
 | name | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| station_ids | [string](#string) | repeated | Stations belonging to this cell. |
 | status | [CellStatus](#resources-v1-CellStatus) |  | Current operational availability of the cell as a whole. |
 | max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this cell should host concurrently. |
 | allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the cell is BUSY. |
-| tool_instance_ids | [string](#string) | repeated | Shared tools mounted, parked, or otherwise directly available here. |
-| container_instance_ids | [string](#string) | repeated | Shared fixtures, trays, pallets, bins, or other concrete containers. |
-| robot_instance_ids | [string](#string) | repeated | Robots shared across multiple stations inside the cell. |
-| asset_instance_ids | [string](#string) | repeated | Shared assets such as cameras, HMIs, or feeders serving several stations. |
-| marker_instance_ids | [string](#string) | repeated | Markers shared for this cell for localization, AR anchoring, or identification. |
-| worker_ids | [string](#string) | repeated | Shared worker pool for the cell when workers are not bound to a specific station. |
+| station_ids | [string](#string) | repeated | Stations belonging to this cell. |
+| tools | [ToolPlacement](#resources-v1-ToolPlacement) | repeated | Shared tools mounted, parked, or otherwise directly available here. |
+| robots | [RobotPlacement](#resources-v1-RobotPlacement) | repeated | Robots shared across multiple stations inside the cell. |
+| assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Shared assets such as cameras, HMIs, or feeders serving several stations. |
+| markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers shared for this cell for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Cell-local reference frame or zone anchor. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
@@ -5808,9 +6011,8 @@ Examples:
 | icon | [string](#string) |  | UI icon for the instance. |
 | description | [string](#string) |  | Human-readable description of this particular instance. |
 | container_definition_id | [string](#string) |  | The reusable container definition that this instance realizes. |
-| station_id | [string](#string) |  | Station/cell where this container currently belongs or is mounted. |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  | Operational status such as available, disabled, or faulted. |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Pose of the container instance in the station/environment. |
+| location | [ContainerLocation](#resources-v1-ContainerLocation) |  | Dynamic location of the container instance. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for instance-specific data. |
 
 
@@ -5827,6 +6029,24 @@ Examples:
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [ContainerInstance](#resources-v1-ContainerInstance) | repeated | List wrapper used for transport/query responses. |
+
+
+
+
+
+
+<a name="resources-v1-ContainerLocation"></a>
+
+### ContainerLocation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| line_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| station_id | [string](#string) |  | Station/cell where this container currently belongs or is mounted. |
+| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 
 
 
@@ -5882,7 +6102,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | device_id | [string](#string) |  |  |
 | status | [DeviceStatus](#resources-v1-DeviceStatus) |  |  |
 | battery_level | [int32](#int32) |  |  |
-| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
+| battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  | TODO: add location |
 
 
 
@@ -6085,7 +6305,7 @@ max_concurrent_processes and the statuses of child cells/stations.
 | marker_text | [string](#string) |  | Text on the physical marker (QR-code) |
 | type | [MarkerType](#resources-v1-MarkerType) |  |  |
 | confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -6344,13 +6564,11 @@ max_concurrent_processes and the statuses of child cells/stations.
 | description | [string](#string) |  |  |
 | robot_definition_id | [string](#string) |  |  |
 | serial_number | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
 | mounted_tool_instance_id | [string](#string) |  | The tool instance currently mounted on the robot, if any. |
 | available_tool_instance_ids | [string](#string) | repeated | Tool instances available to this robot in the cell/tool dock/tool magazine. |
 | supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
 | is_simulated | [bool](#bool) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
-| base_pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -6404,6 +6622,14 @@ Typical station responsibilities:
 - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
 - optionally allow queueing when already occupied
 
+Static resources such as tools, assets, robots, and markers are owned by
+the workspace (station/cell) rather than the instance itself.
+This makes workspace composition explicit and avoids duplicating placement
+ownership across both the resource instance and the workspace.
+
+Dynamic resources such as workers, containers, and part instances own their
+current location because they move independently through the system.
+
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
@@ -6415,12 +6641,10 @@ Typical station responsibilities:
 | status | [StationStatus](#resources-v1-StationStatus) |  | Current operational availability used by loaders, planners, and UIs. |
 | max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this station should host concurrently. |
 | allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the station is BUSY. |
-| tool_instance_ids | [string](#string) | repeated | Station-local tools mounted, parked, or otherwise directly available here. |
-| container_instance_ids | [string](#string) | repeated | Station-local fixtures, trays, pallets, bins, or other concrete containers. |
-| robot_instance_ids | [string](#string) | repeated | Robots directly assigned to or executing within this station. |
-| asset_instance_ids | [string](#string) | repeated | Station-local assets such as cameras, HMIs, feeders, or sensors. |
-| marker_instance_ids | [string](#string) | repeated | Markers used specifically at this station for localization, AR anchoring, or identification. |
-| worker_ids | [string](#string) | repeated | Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools. |
+| tools | [ToolPlacement](#resources-v1-ToolPlacement) | repeated | Station-local tools mounted, parked, or otherwise directly available here. |
+| robots | [RobotPlacement](#resources-v1-RobotPlacement) | repeated | Robots directly assigned to or executing within this station. |
+| assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Station-local assets such as cameras, HMIs, feeders, or sensors. |
+| markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers used specifically at this station for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
@@ -6602,11 +6826,9 @@ max_concurrent_processes, which is separate from this status field.
 | description | [string](#string) |  |  |
 | tool_definition_id | [string](#string) |  |  |
 | serial_number | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
 | calibrated | [bool](#bool) |  |  |
 | calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| pose | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -6661,6 +6883,7 @@ max_concurrent_processes, which is separate from this status field.
 | employee_id | [string](#string) |  |  |
 | ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| location | [WorkerLocation](#resources-v1-WorkerLocation) |  | Optional current location / operating area. |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
@@ -6677,6 +6900,26 @@ max_concurrent_processes, which is separate from this status field.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [WorkerDefinition](#resources-v1-WorkerDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-WorkerLocation"></a>
+
+### WorkerLocation
+WorkerLocation describes the current operating area of a worker.
+
+Dynamic resources such as workers own their current location because they
+move independently through the system.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| line_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
 
 
 

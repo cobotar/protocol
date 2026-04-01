@@ -9,7 +9,6 @@ package resourcesv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
-	v11 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -33,14 +32,12 @@ type RobotInstance struct {
 	Description              string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	RobotDefinitionId        string                 `protobuf:"bytes,5,opt,name=robot_definition_id,json=robotDefinitionId,proto3" json:"robot_definition_id,omitempty"`
 	SerialNumber             string                 `protobuf:"bytes,6,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
-	StationId                string                 `protobuf:"bytes,7,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	MountedToolInstanceId    string                 `protobuf:"bytes,8,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // The tool instance currently mounted on the robot, if any.
-	AvailableToolInstanceIds []string               `protobuf:"bytes,9,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // Tool instances available to this robot in the cell/tool dock/tool magazine.
-	SupportsToolChange       bool                   `protobuf:"varint,10,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                   // Whether this robot instance can dynamically change between available tools.
-	IsSimulated              bool                   `protobuf:"varint,11,opt,name=is_simulated,json=isSimulated,proto3" json:"is_simulated,omitempty"`
-	Status                   v1.ResourceStatus      `protobuf:"varint,12,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
-	BasePose                 *v11.LocalizedPose     `protobuf:"bytes,13,opt,name=base_pose,json=basePose,proto3" json:"base_pose,omitempty"`
-	Custom                   *v1.CustomProperties   `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
+	MountedToolInstanceId    string                 `protobuf:"bytes,7,opt,name=mounted_tool_instance_id,json=mountedToolInstanceId,proto3" json:"mounted_tool_instance_id,omitempty"`          // The tool instance currently mounted on the robot, if any.
+	AvailableToolInstanceIds []string               `protobuf:"bytes,8,rep,name=available_tool_instance_ids,json=availableToolInstanceIds,proto3" json:"available_tool_instance_ids,omitempty"` // Tool instances available to this robot in the cell/tool dock/tool magazine.
+	SupportsToolChange       bool                   `protobuf:"varint,9,opt,name=supports_tool_change,json=supportsToolChange,proto3" json:"supports_tool_change,omitempty"`                    // Whether this robot instance can dynamically change between available tools.
+	IsSimulated              bool                   `protobuf:"varint,10,opt,name=is_simulated,json=isSimulated,proto3" json:"is_simulated,omitempty"`
+	Status                   v1.ResourceStatus      `protobuf:"varint,11,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
+	Custom                   *v1.CustomProperties   `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -117,13 +114,6 @@ func (x *RobotInstance) GetSerialNumber() string {
 	return ""
 }
 
-func (x *RobotInstance) GetStationId() string {
-	if x != nil {
-		return x.StationId
-	}
-	return ""
-}
-
 func (x *RobotInstance) GetMountedToolInstanceId() string {
 	if x != nil {
 		return x.MountedToolInstanceId
@@ -157,13 +147,6 @@ func (x *RobotInstance) GetStatus() v1.ResourceStatus {
 		return x.Status
 	}
 	return v1.ResourceStatus(0)
-}
-
-func (x *RobotInstance) GetBasePose() *v11.LocalizedPose {
-	if x != nil {
-		return x.BasePose
-	}
-	return nil
 }
 
 func (x *RobotInstance) GetCustom() *v1.CustomProperties {
@@ -221,24 +204,21 @@ var File_resources_v1_robot_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_robot_instance_proto_rawDesc = "" +
 	"\n" +
-	"!resources/v1/robot_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x05\n" +
-	"\rRobotInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"!resources/v1/robot_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x04\n" +
+	"\rRobotInstance\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12<\n" +
 	"\x13robot_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf1\x04\x01R\x11robotDefinitionId\x12#\n" +
-	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12+\n" +
-	"\n" +
-	"station_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\tstationId\x12B\n" +
-	"\x18mounted_tool_instance_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n" +
-	"\x1bavailable_tool_instance_ids\x18\t \x03(\tR\x18availableToolInstanceIds\x120\n" +
-	"\x14supports_tool_change\x18\n" +
-	" \x01(\bR\x12supportsToolChange\x12!\n" +
-	"\fis_simulated\x18\v \x01(\bR\visSimulated\x12;\n" +
-	"\x06status\x18\f \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x127\n" +
-	"\tbase_pose\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\bbasePose\x123\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
+	"\rserial_number\x18\x06 \x01(\tR\fserialNumber\x12B\n" +
+	"\x18mounted_tool_instance_id\x18\a \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n" +
+	"\x1bavailable_tool_instance_ids\x18\b \x03(\tR\x18availableToolInstanceIds\x120\n" +
+	"\x14supports_tool_change\x18\t \x01(\bR\x12supportsToolChange\x12!\n" +
+	"\fis_simulated\x18\n" +
+	" \x01(\bR\visSimulated\x12;\n" +
+	"\x06status\x18\v \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x123\n" +
+	"\x06custom\x18\f \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
 	"\x0eRobotInstances\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.RobotInstanceR\x05itemsB\xbf\x01\n" +
 	"\x10com.resources.v1B\x12RobotInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
@@ -260,19 +240,17 @@ var file_resources_v1_robot_instance_proto_goTypes = []any{
 	(*RobotInstance)(nil),       // 0: resources.v1.RobotInstance
 	(*RobotInstances)(nil),      // 1: resources.v1.RobotInstances
 	(v1.ResourceStatus)(0),      // 2: common.v1.ResourceStatus
-	(*v11.LocalizedPose)(nil),   // 3: geometry.v1.LocalizedPose
-	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(*v1.CustomProperties)(nil), // 3: common.v1.CustomProperties
 }
 var file_resources_v1_robot_instance_proto_depIdxs = []int32{
 	2, // 0: resources.v1.RobotInstance.status:type_name -> common.v1.ResourceStatus
-	3, // 1: resources.v1.RobotInstance.base_pose:type_name -> geometry.v1.LocalizedPose
-	4, // 2: resources.v1.RobotInstance.custom:type_name -> common.v1.CustomProperties
-	0, // 3: resources.v1.RobotInstances.items:type_name -> resources.v1.RobotInstance
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 1: resources.v1.RobotInstance.custom:type_name -> common.v1.CustomProperties
+	0, // 2: resources.v1.RobotInstances.items:type_name -> resources.v1.RobotInstance
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_robot_instance_proto_init() }

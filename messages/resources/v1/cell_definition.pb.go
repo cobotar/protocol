@@ -113,24 +113,30 @@ func (CellStatus) EnumDescriptor() ([]byte, []int) {
 // - own resources that are shared across several stations
 // - expose operational state and capacity above individual stations
 // - act as an optional target/selector scope for loaders and planners
+//
+// Static resources such as tools, assets, robots, and markers are owned by
+// the workspace (station/cell) rather than the instance itself.
+// This makes workspace composition explicit and avoids duplicating placement
+// ownership across both the resource instance and the workspace.
+//
+// Dynamic resources such as workers, containers, and part instances own their
+// current location because they move independently through the system.
 type CellDefinition struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
 	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description            string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	StationIds             []string               `protobuf:"bytes,5,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Stations belonging to this cell.
-	Status                 CellStatus             `protobuf:"varint,6,opt,name=status,proto3,enum=resources.v1.CellStatus" json:"status,omitempty"`                                    // Current operational availability of the cell as a whole.
-	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this cell should host concurrently.
-	AllowQueuedProcess     bool                   `protobuf:"varint,8,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the cell is BUSY.
-	ToolInstanceIds        []string               `protobuf:"bytes,9,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`                       // Shared tools mounted, parked, or otherwise directly available here.
-	ContainerInstanceIds   []string               `protobuf:"bytes,10,rep,name=container_instance_ids,json=containerInstanceIds,proto3" json:"container_instance_ids,omitempty"`       // Shared fixtures, trays, pallets, bins, or other concrete containers.
-	RobotInstanceIds       []string               `protobuf:"bytes,11,rep,name=robot_instance_ids,json=robotInstanceIds,proto3" json:"robot_instance_ids,omitempty"`                   // Robots shared across multiple stations inside the cell.
-	AssetInstanceIds       []string               `protobuf:"bytes,12,rep,name=asset_instance_ids,json=assetInstanceIds,proto3" json:"asset_instance_ids,omitempty"`                   // Shared assets such as cameras, HMIs, or feeders serving several stations.
-	MarkerInstanceIds      []string               `protobuf:"bytes,13,rep,name=marker_instance_ids,json=markerInstanceIds,proto3" json:"marker_instance_ids,omitempty"`                // Markers shared for this cell for localization, AR anchoring, or identification.
-	WorkerIds              []string               `protobuf:"bytes,14,rep,name=worker_ids,json=workerIds,proto3" json:"worker_ids,omitempty"`                                          // Shared worker pool for the cell when workers are not bound to a specific station.
-	Frame                  *v1.LocalizedPose      `protobuf:"bytes,15,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Cell-local reference frame or zone anchor.
-	Custom                 *v11.CustomProperties  `protobuf:"bytes,16,opt,name=custom,proto3" json:"custom,omitempty"`
+	Status                 CellStatus             `protobuf:"varint,5,opt,name=status,proto3,enum=resources.v1.CellStatus" json:"status,omitempty"`                                    // Current operational availability of the cell as a whole.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,6,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this cell should host concurrently.
+	AllowQueuedProcess     bool                   `protobuf:"varint,7,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the cell is BUSY.
+	StationIds             []string               `protobuf:"bytes,8,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Stations belonging to this cell.
+	Tools                  []*ToolPlacement       `protobuf:"bytes,9,rep,name=tools,proto3" json:"tools,omitempty"`                                                                    // Shared tools mounted, parked, or otherwise directly available here.
+	Robots                 []*RobotPlacement      `protobuf:"bytes,10,rep,name=robots,proto3" json:"robots,omitempty"`                                                                 // Robots shared across multiple stations inside the cell.
+	Assets                 []*AssetPlacement      `protobuf:"bytes,11,rep,name=assets,proto3" json:"assets,omitempty"`                                                                 // Shared assets such as cameras, HMIs, or feeders serving several stations.
+	Markers                []*MarkerPlacement     `protobuf:"bytes,12,rep,name=markers,proto3" json:"markers,omitempty"`                                                               // Markers shared for this cell for localization, AR anchoring, or identification.
+	Frame                  *v1.LocalizedPose      `protobuf:"bytes,13,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Cell-local reference frame or zone anchor.
+	Custom                 *v11.CustomProperties  `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -193,13 +199,6 @@ func (x *CellDefinition) GetIcon() string {
 	return ""
 }
 
-func (x *CellDefinition) GetStationIds() []string {
-	if x != nil {
-		return x.StationIds
-	}
-	return nil
-}
-
 func (x *CellDefinition) GetStatus() CellStatus {
 	if x != nil {
 		return x.Status
@@ -221,44 +220,37 @@ func (x *CellDefinition) GetAllowQueuedProcess() bool {
 	return false
 }
 
-func (x *CellDefinition) GetToolInstanceIds() []string {
+func (x *CellDefinition) GetStationIds() []string {
 	if x != nil {
-		return x.ToolInstanceIds
+		return x.StationIds
 	}
 	return nil
 }
 
-func (x *CellDefinition) GetContainerInstanceIds() []string {
+func (x *CellDefinition) GetTools() []*ToolPlacement {
 	if x != nil {
-		return x.ContainerInstanceIds
+		return x.Tools
 	}
 	return nil
 }
 
-func (x *CellDefinition) GetRobotInstanceIds() []string {
+func (x *CellDefinition) GetRobots() []*RobotPlacement {
 	if x != nil {
-		return x.RobotInstanceIds
+		return x.Robots
 	}
 	return nil
 }
 
-func (x *CellDefinition) GetAssetInstanceIds() []string {
+func (x *CellDefinition) GetAssets() []*AssetPlacement {
 	if x != nil {
-		return x.AssetInstanceIds
+		return x.Assets
 	}
 	return nil
 }
 
-func (x *CellDefinition) GetMarkerInstanceIds() []string {
+func (x *CellDefinition) GetMarkers() []*MarkerPlacement {
 	if x != nil {
-		return x.MarkerInstanceIds
-	}
-	return nil
-}
-
-func (x *CellDefinition) GetWorkerIds() []string {
-	if x != nil {
-		return x.WorkerIds
+		return x.Markers
 	}
 	return nil
 }
@@ -325,27 +317,24 @@ var File_resources_v1_cell_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbb\x05\n" +
+	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x86\x05\n" +
 	"\x0eCellDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1f\n" +
-	"\vstation_ids\x18\x05 \x03(\tR\n" +
-	"stationIds\x12:\n" +
-	"\x06status\x18\x06 \x01(\x0e2\x18.resources.v1.CellStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12A\n" +
-	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x120\n" +
-	"\x14allow_queued_process\x18\b \x01(\bR\x12allowQueuedProcess\x12*\n" +
-	"\x11tool_instance_ids\x18\t \x03(\tR\x0ftoolInstanceIds\x124\n" +
-	"\x16container_instance_ids\x18\n" +
-	" \x03(\tR\x14containerInstanceIds\x12,\n" +
-	"\x12robot_instance_ids\x18\v \x03(\tR\x10robotInstanceIds\x12,\n" +
-	"\x12asset_instance_ids\x18\f \x03(\tR\x10assetInstanceIds\x12.\n" +
-	"\x13marker_instance_ids\x18\r \x03(\tR\x11markerInstanceIds\x12\x1d\n" +
-	"\n" +
-	"worker_ids\x18\x0e \x03(\tR\tworkerIds\x120\n" +
-	"\x05frame\x18\x0f \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
-	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x12:\n" +
+	"\x06status\x18\x05 \x01(\x0e2\x18.resources.v1.CellStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12A\n" +
+	"\x18max_concurrent_processes\x18\x06 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x120\n" +
+	"\x14allow_queued_process\x18\a \x01(\bR\x12allowQueuedProcess\x12\x1f\n" +
+	"\vstation_ids\x18\b \x03(\tR\n" +
+	"stationIds\x121\n" +
+	"\x05tools\x18\t \x03(\v2\x1b.resources.v1.ToolPlacementR\x05tools\x124\n" +
+	"\x06robots\x18\n" +
+	" \x03(\v2\x1c.resources.v1.RobotPlacementR\x06robots\x124\n" +
+	"\x06assets\x18\v \x03(\v2\x1c.resources.v1.AssetPlacementR\x06assets\x127\n" +
+	"\amarkers\x18\f \x03(\v2\x1d.resources.v1.MarkerPlacementR\amarkers\x120\n" +
+	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
+	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
 	"\x0fCellDefinitions\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05items*\x86\x01\n" +
 	"\n" +
@@ -375,19 +364,27 @@ var file_resources_v1_cell_definition_proto_goTypes = []any{
 	(CellStatus)(0),              // 0: resources.v1.CellStatus
 	(*CellDefinition)(nil),       // 1: resources.v1.CellDefinition
 	(*CellDefinitions)(nil),      // 2: resources.v1.CellDefinitions
-	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(*ToolPlacement)(nil),        // 3: resources.v1.ToolPlacement
+	(*RobotPlacement)(nil),       // 4: resources.v1.RobotPlacement
+	(*AssetPlacement)(nil),       // 5: resources.v1.AssetPlacement
+	(*MarkerPlacement)(nil),      // 6: resources.v1.MarkerPlacement
+	(*v1.LocalizedPose)(nil),     // 7: geometry.v1.LocalizedPose
+	(*v11.CustomProperties)(nil), // 8: common.v1.CustomProperties
 }
 var file_resources_v1_cell_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.CellDefinition.status:type_name -> resources.v1.CellStatus
-	3, // 1: resources.v1.CellDefinition.frame:type_name -> geometry.v1.LocalizedPose
-	4, // 2: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // 3: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 1: resources.v1.CellDefinition.tools:type_name -> resources.v1.ToolPlacement
+	4, // 2: resources.v1.CellDefinition.robots:type_name -> resources.v1.RobotPlacement
+	5, // 3: resources.v1.CellDefinition.assets:type_name -> resources.v1.AssetPlacement
+	6, // 4: resources.v1.CellDefinition.markers:type_name -> resources.v1.MarkerPlacement
+	7, // 5: resources.v1.CellDefinition.frame:type_name -> geometry.v1.LocalizedPose
+	8, // 6: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
+	1, // 7: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_cell_definition_proto_init() }
@@ -395,6 +392,7 @@ func file_resources_v1_cell_definition_proto_init() {
 	if File_resources_v1_cell_definition_proto != nil {
 		return
 	}
+	file_resources_v1_placement_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

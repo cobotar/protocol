@@ -27,33 +27,30 @@ namespace Messages.Resources.V1 {
             "CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNl",
             "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEv",
             "Y3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aFWNvbW1vbi92MS9lbnVtcy5wcm90",
-            "bxoWZ2VvbWV0cnkvdjEvcG9zZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
-            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKHBQoNUm9ib3RJbnN0YW5jZRIO",
-            "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
-            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
-            "c2NyaXB0aW9uEjwKE3JvYm90X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIE",
-            "oPEEAcgBAVIRcm9ib3REZWZpbml0aW9uSWQSIwoNc2VyaWFsX251bWJlchgG",
-            "IAEoCVIMc2VyaWFsTnVtYmVyEisKCnN0YXRpb25faWQYByABKAlCDLpICXIE",
-            "2PEEAcgBAVIJc3RhdGlvbklkEkIKGG1vdW50ZWRfdG9vbF9pbnN0YW5jZV9p",
-            "ZBgIIAEoCUIJukgGcgTg8QQBUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQob",
-            "YXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJUhhhdmFpbGFibGVU",
-            "b29sSW5zdGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYCiABKAhS",
-            "EnN1cHBvcnRzVG9vbENoYW5nZRIhCgxpc19zaW11bGF0ZWQYCyABKAhSC2lz",
-            "U2ltdWxhdGVkEjsKBnN0YXR1cxgMIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJj",
-            "ZVN0YXR1c0IIukgFggECEAFSBnN0YXR1cxI3CgliYXNlX3Bvc2UYDSABKAsy",
-            "Gi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUghiYXNlUG9zZRIzCgZjdXN0",
-            "b20YDiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9t",
-            "IkMKDlJvYm90SW5zdGFuY2VzEjEKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2Vz",
-            "LnYxLlJvYm90SW5zdGFuY2VSBWl0ZW1zQr8BChBjb20ucmVzb3VyY2VzLnYx",
-            "QhJSb2JvdEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JY",
-            "WKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJl",
-            "c291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3Rv",
-            "Mw=="));
+            "bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90",
+            "byKsBAoNUm9ib3RJbnN0YW5jZRIZCgJpZBgBIAEoCUIJukgGcgSo8QQBUgJp",
+            "ZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoT",
+            "cm9ib3RfZGVmaW5pdGlvbl9pZBgFIAEoCUIMukgJcgSg8QQByAEBUhFyb2Jv",
+            "dERlZmluaXRpb25JZBIjCg1zZXJpYWxfbnVtYmVyGAYgASgJUgxzZXJpYWxO",
+            "dW1iZXISQgoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAcgASgJQgm6SAZy",
+            "BODxBAFSFW1vdW50ZWRUb29sSW5zdGFuY2VJZBI9ChthdmFpbGFibGVfdG9v",
+            "bF9pbnN0YW5jZV9pZHMYCCADKAlSGGF2YWlsYWJsZVRvb2xJbnN0YW5jZUlk",
+            "cxIwChRzdXBwb3J0c190b29sX2NoYW5nZRgJIAEoCFISc3VwcG9ydHNUb29s",
+            "Q2hhbmdlEiEKDGlzX3NpbXVsYXRlZBgKIAEoCFILaXNTaW11bGF0ZWQSOwoG",
+            "c3RhdHVzGAsgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWC",
+            "AQIQAVIGc3RhdHVzEjMKBmN1c3RvbRgMIAEoCzIbLmNvbW1vbi52MS5DdXN0",
+            "b21Qcm9wZXJ0aWVzUgZjdXN0b20iQwoOUm9ib3RJbnN0YW5jZXMSMQoFaXRl",
+            "bXMYASADKAsyGy5yZXNvdXJjZXMudjEuUm9ib3RJbnN0YW5jZVIFaXRlbXNC",
+            "vwEKEGNvbS5yZXNvdXJjZXMudjFCElJvYm90SW5zdGFuY2VQcm90b1ABWj1n",
+            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2Vz",
+            "L3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYx",
+            "ygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gIN",
+            "UmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "StationId", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "IsSimulated", "Status", "BasePose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "IsSimulated", "Status", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstances), global::Messages.Resources.V1.RobotInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -102,13 +99,11 @@ namespace Messages.Resources.V1 {
       description_ = other.description_;
       robotDefinitionId_ = other.robotDefinitionId_;
       serialNumber_ = other.serialNumber_;
-      stationId_ = other.stationId_;
       mountedToolInstanceId_ = other.mountedToolInstanceId_;
       availableToolInstanceIds_ = other.availableToolInstanceIds_.Clone();
       supportsToolChange_ = other.supportsToolChange_;
       isSimulated_ = other.isSimulated_;
       status_ = other.status_;
-      basePose_ = other.basePose_ != null ? other.basePose_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -191,20 +186,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 7;
-    private string stationId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StationId {
-      get { return stationId_; }
-      set {
-        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "mounted_tool_instance_id" field.</summary>
-    public const int MountedToolInstanceIdFieldNumber = 8;
+    public const int MountedToolInstanceIdFieldNumber = 7;
     private string mountedToolInstanceId_ = "";
     /// <summary>
     /// The tool instance currently mounted on the robot, if any.
@@ -219,9 +202,9 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "available_tool_instance_ids" field.</summary>
-    public const int AvailableToolInstanceIdsFieldNumber = 9;
+    public const int AvailableToolInstanceIdsFieldNumber = 8;
     private static readonly pb::FieldCodec<string> _repeated_availableToolInstanceIds_codec
-        = pb::FieldCodec.ForString(74);
+        = pb::FieldCodec.ForString(66);
     private readonly pbc::RepeatedField<string> availableToolInstanceIds_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// Tool instances available to this robot in the cell/tool dock/tool magazine.
@@ -233,7 +216,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "supports_tool_change" field.</summary>
-    public const int SupportsToolChangeFieldNumber = 10;
+    public const int SupportsToolChangeFieldNumber = 9;
     private bool supportsToolChange_;
     /// <summary>
     /// Whether this robot instance can dynamically change between available tools.
@@ -248,7 +231,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "is_simulated" field.</summary>
-    public const int IsSimulatedFieldNumber = 11;
+    public const int IsSimulatedFieldNumber = 10;
     private bool isSimulated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -260,7 +243,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 12;
+    public const int StatusFieldNumber = 11;
     private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -271,20 +254,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "base_pose" field.</summary>
-    public const int BasePoseFieldNumber = 13;
-    private global::Messages.Common.V1.LocalizedPose basePose_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose BasePose {
-      get { return basePose_; }
-      set {
-        basePose_ = value;
-      }
-    }
-
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 14;
+    public const int CustomFieldNumber = 12;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -316,13 +287,11 @@ namespace Messages.Resources.V1 {
       if (Description != other.Description) return false;
       if (RobotDefinitionId != other.RobotDefinitionId) return false;
       if (SerialNumber != other.SerialNumber) return false;
-      if (StationId != other.StationId) return false;
       if (MountedToolInstanceId != other.MountedToolInstanceId) return false;
       if(!availableToolInstanceIds_.Equals(other.availableToolInstanceIds_)) return false;
       if (SupportsToolChange != other.SupportsToolChange) return false;
       if (IsSimulated != other.IsSimulated) return false;
       if (Status != other.Status) return false;
-      if (!object.Equals(BasePose, other.BasePose)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -337,13 +306,11 @@ namespace Messages.Resources.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (RobotDefinitionId.Length != 0) hash ^= RobotDefinitionId.GetHashCode();
       if (SerialNumber.Length != 0) hash ^= SerialNumber.GetHashCode();
-      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (MountedToolInstanceId.Length != 0) hash ^= MountedToolInstanceId.GetHashCode();
       hash ^= availableToolInstanceIds_.GetHashCode();
       if (SupportsToolChange != false) hash ^= SupportsToolChange.GetHashCode();
       if (IsSimulated != false) hash ^= IsSimulated.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (basePose_ != null) hash ^= BasePose.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -387,33 +354,25 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(StationId);
-      }
       if (MountedToolInstanceId.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteString(MountedToolInstanceId);
       }
       availableToolInstanceIds_.WriteTo(output, _repeated_availableToolInstanceIds_codec);
       if (SupportsToolChange != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(SupportsToolChange);
       }
       if (IsSimulated != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteBool(IsSimulated);
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Status);
       }
-      if (basePose_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(BasePose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -450,33 +409,25 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(StationId);
-      }
       if (MountedToolInstanceId.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteString(MountedToolInstanceId);
       }
       availableToolInstanceIds_.WriteTo(ref output, _repeated_availableToolInstanceIds_codec);
       if (SupportsToolChange != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(SupportsToolChange);
       }
       if (IsSimulated != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteBool(IsSimulated);
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Status);
       }
-      if (basePose_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(BasePose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(98);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -507,9 +458,6 @@ namespace Messages.Resources.V1 {
       if (SerialNumber.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
-      }
       if (MountedToolInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MountedToolInstanceId);
       }
@@ -522,9 +470,6 @@ namespace Messages.Resources.V1 {
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-      }
-      if (basePose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BasePose);
       }
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -559,9 +504,6 @@ namespace Messages.Resources.V1 {
       if (other.SerialNumber.Length != 0) {
         SerialNumber = other.SerialNumber;
       }
-      if (other.StationId.Length != 0) {
-        StationId = other.StationId;
-      }
       if (other.MountedToolInstanceId.Length != 0) {
         MountedToolInstanceId = other.MountedToolInstanceId;
       }
@@ -574,12 +516,6 @@ namespace Messages.Resources.V1 {
       }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
-      }
-      if (other.basePose_ != null) {
-        if (basePose_ == null) {
-          BasePose = new global::Messages.Common.V1.LocalizedPose();
-        }
-        BasePose.MergeFrom(other.BasePose);
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -631,37 +567,26 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 58: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 66: {
             MountedToolInstanceId = input.ReadString();
             break;
           }
-          case 74: {
+          case 66: {
             availableToolInstanceIds_.AddEntriesFrom(input, _repeated_availableToolInstanceIds_codec);
             break;
           }
-          case 80: {
+          case 72: {
             SupportsToolChange = input.ReadBool();
             break;
           }
-          case 88: {
+          case 80: {
             IsSimulated = input.ReadBool();
             break;
           }
-          case 96: {
+          case 88: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 106: {
-            if (basePose_ == null) {
-              BasePose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(BasePose);
-            break;
-          }
-          case 114: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -712,37 +637,26 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 58: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 66: {
             MountedToolInstanceId = input.ReadString();
             break;
           }
-          case 74: {
+          case 66: {
             availableToolInstanceIds_.AddEntriesFrom(ref input, _repeated_availableToolInstanceIds_codec);
             break;
           }
-          case 80: {
+          case 72: {
             SupportsToolChange = input.ReadBool();
             break;
           }
-          case 88: {
+          case 80: {
             IsSimulated = input.ReadBool();
             break;
           }
-          case 96: {
+          case 88: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 106: {
-            if (basePose_ == null) {
-              BasePose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(BasePose);
-            break;
-          }
-          case 114: {
+          case 98: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

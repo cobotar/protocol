@@ -32,7 +32,7 @@ namespace Messages.Capability.V1 {
             "eUlkEhgKB3ZlcnNpb24YAiABKAlSB3ZlcnNpb24ikAUKCkFjdG9yU2tpbGwS",
             "DgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgD",
             "IAEoCVIEaWNvbhIxCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJl",
-            "ZkIGukgDyAEBUgVhY3RvchInCghza2lsbF9pZBgFIAEoCUIMukgJcgTo8QQB",
+            "ZkIGukgDyAEBUgVhY3RvchInCghza2lsbF9pZBgFIAEoCUIMukgJcgSA8gQB",
             "yAEBUgdza2lsbElkEjwKBWxldmVsGAYgASgOMhkuY2FwYWJpbGl0eS52MS5T",
             "a2lsbExldmVsQgu6SAiCAQIQAcgBAVIFbGV2ZWwSPAoGc3RhdHVzGAcgASgO",
             "MhouY2FwYWJpbGl0eS52MS5Ta2lsbFN0YXR1c0IIukgFggECEAFSBnN0YXR1",

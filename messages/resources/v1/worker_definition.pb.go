@@ -76,6 +76,70 @@ func (EditPermission) EnumDescriptor() ([]byte, []int) {
 	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{0}
 }
 
+// WorkerLocation describes the current operating area of a worker.
+//
+// Dynamic resources such as workers own their current location because they
+// move independently through the system.
+type WorkerLocation struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	LineId        string                 `protobuf:"bytes,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	CellId        string                 `protobuf:"bytes,2,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	StationId     string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *WorkerLocation) Reset() {
+	*x = WorkerLocation{}
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WorkerLocation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WorkerLocation) ProtoMessage() {}
+
+func (x *WorkerLocation) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WorkerLocation.ProtoReflect.Descriptor instead.
+func (*WorkerLocation) Descriptor() ([]byte, []int) {
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *WorkerLocation) GetLineId() string {
+	if x != nil {
+		return x.LineId
+	}
+	return ""
+}
+
+func (x *WorkerLocation) GetCellId() string {
+	if x != nil {
+		return x.CellId
+	}
+	return ""
+}
+
+func (x *WorkerLocation) GetStationId() string {
+	if x != nil {
+		return x.StationId
+	}
+	return ""
+}
+
 type WorkerDefinition struct {
 	state              protoimpl.MessageState  `protogen:"open.v1"`
 	Id                 string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -86,14 +150,15 @@ type WorkerDefinition struct {
 	EmployeeId         string                  `protobuf:"bytes,6,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
 	ArEditPermission   EditPermission          `protobuf:"varint,7,opt,name=ar_edit_permission,json=arEditPermission,proto3,enum=resources.v1.EditPermission" json:"ar_edit_permission,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *v1.CustomProperties    `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Location           *WorkerLocation         `protobuf:"bytes,9,opt,name=location,proto3" json:"location,omitempty"` // Optional current location / operating area.
+	Custom             *v1.CustomProperties    `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *WorkerDefinition) Reset() {
 	*x = WorkerDefinition{}
-	mi := &file_resources_v1_worker_definition_proto_msgTypes[0]
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -105,7 +170,7 @@ func (x *WorkerDefinition) String() string {
 func (*WorkerDefinition) ProtoMessage() {}
 
 func (x *WorkerDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_worker_definition_proto_msgTypes[0]
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -118,7 +183,7 @@ func (x *WorkerDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkerDefinition.ProtoReflect.Descriptor instead.
 func (*WorkerDefinition) Descriptor() ([]byte, []int) {
-	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{0}
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *WorkerDefinition) GetId() string {
@@ -177,6 +242,13 @@ func (x *WorkerDefinition) GetExternalReferences() []*v1.ExternalReference {
 	return nil
 }
 
+func (x *WorkerDefinition) GetLocation() *WorkerLocation {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
 func (x *WorkerDefinition) GetCustom() *v1.CustomProperties {
 	if x != nil {
 		return x.Custom
@@ -193,7 +265,7 @@ type WorkerDefinitions struct {
 
 func (x *WorkerDefinitions) Reset() {
 	*x = WorkerDefinitions{}
-	mi := &file_resources_v1_worker_definition_proto_msgTypes[1]
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -205,7 +277,7 @@ func (x *WorkerDefinitions) String() string {
 func (*WorkerDefinitions) ProtoMessage() {}
 
 func (x *WorkerDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_worker_definition_proto_msgTypes[1]
+	mi := &file_resources_v1_worker_definition_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -218,7 +290,7 @@ func (x *WorkerDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkerDefinitions.ProtoReflect.Descriptor instead.
 func (*WorkerDefinitions) Descriptor() ([]byte, []int) {
-	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{1}
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *WorkerDefinitions) GetItems() []*WorkerDefinition {
@@ -232,9 +304,14 @@ var File_resources_v1_worker_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"\n" +
-	"$resources/v1/worker_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x84\x03\n" +
-	"\x10WorkerDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"$resources/v1/worker_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n" +
+	"\x0eWorkerLocation\x12\"\n" +
+	"\aline_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n" +
+	"\acell_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12(\n" +
+	"\n" +
+	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\xc9\x03\n" +
+	"\x10WorkerDefinition\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x12\n" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1a\n" +
@@ -242,8 +319,10 @@ const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"\vemployee_id\x18\x06 \x01(\tR\n" +
 	"employeeId\x12J\n" +
 	"\x12ar_edit_permission\x18\a \x01(\x0e2\x1c.resources.v1.EditPermissionR\x10arEditPermission\x12M\n" +
-	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"I\n" +
+	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x128\n" +
+	"\blocation\x18\t \x01(\v2\x1c.resources.v1.WorkerLocationR\blocation\x123\n" +
+	"\x06custom\x18\n" +
+	" \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"I\n" +
 	"\x11WorkerDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n" +
 	"\x0eEditPermission\x12\x1f\n" +
@@ -266,24 +345,26 @@ func file_resources_v1_worker_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_resources_v1_worker_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_resources_v1_worker_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_resources_v1_worker_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_resources_v1_worker_definition_proto_goTypes = []any{
 	(EditPermission)(0),          // 0: resources.v1.EditPermission
-	(*WorkerDefinition)(nil),     // 1: resources.v1.WorkerDefinition
-	(*WorkerDefinitions)(nil),    // 2: resources.v1.WorkerDefinitions
-	(*v1.ExternalReference)(nil), // 3: common.v1.ExternalReference
-	(*v1.CustomProperties)(nil),  // 4: common.v1.CustomProperties
+	(*WorkerLocation)(nil),       // 1: resources.v1.WorkerLocation
+	(*WorkerDefinition)(nil),     // 2: resources.v1.WorkerDefinition
+	(*WorkerDefinitions)(nil),    // 3: resources.v1.WorkerDefinitions
+	(*v1.ExternalReference)(nil), // 4: common.v1.ExternalReference
+	(*v1.CustomProperties)(nil),  // 5: common.v1.CustomProperties
 }
 var file_resources_v1_worker_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.WorkerDefinition.ar_edit_permission:type_name -> resources.v1.EditPermission
-	3, // 1: resources.v1.WorkerDefinition.external_references:type_name -> common.v1.ExternalReference
-	4, // 2: resources.v1.WorkerDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // 3: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	4, // 1: resources.v1.WorkerDefinition.external_references:type_name -> common.v1.ExternalReference
+	1, // 2: resources.v1.WorkerDefinition.location:type_name -> resources.v1.WorkerLocation
+	5, // 3: resources.v1.WorkerDefinition.custom:type_name -> common.v1.CustomProperties
+	2, // 4: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_worker_definition_proto_init() }
@@ -297,7 +378,7 @@ func file_resources_v1_worker_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_worker_definition_proto_rawDesc), len(file_resources_v1_worker_definition_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

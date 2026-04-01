@@ -201,7 +201,7 @@ const file_runtime_v1_runtime_restriction_proto_rawDesc = "" +
 	"\x12RuntimeRestriction\x12<\n" +
 	"\x04type\x18\x01 \x01(\x0e2\x1b.runtime.v1.RestrictionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x16\n" +
 	"\x06reason\x18\x02 \x01(\tR\x06reason\x121\n" +
-	"\x0fsource_skill_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xe8\xf1\x04\x01R\rsourceSkillId\x12(\n" +
+	"\x0fsource_skill_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\rsourceSkillId\x12(\n" +
 	"\x10source_policy_id\x18\x04 \x01(\tR\x0esourcePolicyId\x12)\n" +
 	"\x05actor\x18\x05 \x01(\v2\x13.common.v1.ActorRefR\x05actor*\x9c\x03\n" +
 	"\x0fRestrictionType\x12 \n" +

@@ -9,6 +9,8 @@ import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import type { AssetPlacement, MarkerPlacement, RobotPlacement, ToolPlacement } from "./placement_pb.ts";
+import { file_resources_v1_placement } from "./placement_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -16,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/station_definition.proto.
  */
 export const file_resources_v1_station_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiVyZXNvdXJjZXMvdjEvc3RhdGlvbl9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEiigQKEVN0YXRpb25EZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjEKBHR5cGUYBSABKA4yGS5yZXNvdXJjZXMudjEuU3RhdGlvblR5cGVCCLpIBYIBAhABEjUKBnN0YXR1cxgGIAEoDjIbLnJlc291cmNlcy52MS5TdGF0aW9uU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYByABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYCCABKAgSGQoRdG9vbF9pbnN0YW5jZV9pZHMYCSADKAkSHgoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgKIAMoCRIaChJyb2JvdF9pbnN0YW5jZV9pZHMYCyADKAkSGgoSYXNzZXRfaW5zdGFuY2VfaWRzGAwgAygJEhsKE21hcmtlcl9pbnN0YW5jZV9pZHMYDSADKAkSEgoKd29ya2VyX2lkcxgOIAMoCRIpCgVmcmFtZRgPIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiRAoSU3RhdGlvbkRlZmluaXRpb25zEi4KBWl0ZW1zGAEgAygLMh8ucmVzb3VyY2VzLnYxLlN0YXRpb25EZWZpbml0aW9uKqsBCgtTdGF0aW9uVHlwZRIcChhTVEFUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIYChRTVEFUSU9OX1RZUEVfU1RPUkFHRRABEh8KG1NUQVRJT05fVFlQRV9NQU5VQUxfU1RBVElPThACEiIKHlNUQVRJT05fVFlQRV9BVVRPTUFUSUNfU1RBVElPThADEh8KG1NUQVRJT05fVFlQRV9IWUJSSURfU1RBVElPThAEKpgBCg1TdGF0aW9uU3RhdHVzEh4KGlNUQVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTU1RBVElPTl9TVEFUVVNfT1BFThABEhcKE1NUQVRJT05fU1RBVFVTX0JVU1kQAhIZChVTVEFUSU9OX1NUQVRVU19DTE9TRUQQAxIaChZTVEFUSU9OX1NUQVRVU19CTE9DS0VEEARCwwEKEGNvbS5yZXNvdXJjZXMudjFCFlN0YXRpb25EZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiVyZXNvdXJjZXMvdjEvc3RhdGlvbl9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEingQKEVN0YXRpb25EZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjEKBHR5cGUYBSABKA4yGS5yZXNvdXJjZXMudjEuU3RhdGlvblR5cGVCCLpIBYIBAhABEjUKBnN0YXR1cxgGIAEoDjIbLnJlc291cmNlcy52MS5TdGF0aW9uU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYByABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYCCABKAgSKgoFdG9vbHMYCSADKAsyGy5yZXNvdXJjZXMudjEuVG9vbFBsYWNlbWVudBIsCgZyb2JvdHMYCiADKAsyHC5yZXNvdXJjZXMudjEuUm9ib3RQbGFjZW1lbnQSLAoGYXNzZXRzGAsgAygLMhwucmVzb3VyY2VzLnYxLkFzc2V0UGxhY2VtZW50Ei4KB21hcmtlcnMYDCADKAsyHS5yZXNvdXJjZXMudjEuTWFya2VyUGxhY2VtZW50EikKBWZyYW1lGA0gASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YDiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyJEChJTdGF0aW9uRGVmaW5pdGlvbnMSLgoFaXRlbXMYASADKAsyHy5yZXNvdXJjZXMudjEuU3RhdGlvbkRlZmluaXRpb24qqwEKC1N0YXRpb25UeXBlEhwKGFNUQVRJT05fVFlQRV9VTlNQRUNJRklFRBAAEhgKFFNUQVRJT05fVFlQRV9TVE9SQUdFEAESHwobU1RBVElPTl9UWVBFX01BTlVBTF9TVEFUSU9OEAISIgoeU1RBVElPTl9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSHwobU1RBVElPTl9UWVBFX0hZQlJJRF9TVEFUSU9OEAQqmAEKDVN0YXRpb25TdGF0dXMSHgoaU1RBVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIXChNTVEFUSU9OX1NUQVRVU19PUEVOEAESFwoTU1RBVElPTl9TVEFUVVNfQlVTWRACEhkKFVNUQVRJT05fU1RBVFVTX0NMT1NFRBADEhoKFlNUQVRJT05fU1RBVFVTX0JMT0NLRUQQBELDAQoQY29tLnJlc291cmNlcy52MUIWU3RhdGlvbkRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_resources_v1_placement, file_validation_v1_predefined_string_rules]);
 
 /**
  * StationDefinition describes a concrete execution point inside a cell or line.
@@ -30,6 +32,14 @@ export const file_resources_v1_station_definition: GenFile = /*@__PURE__*/
  * - own station-local tools, containers, robots, markers, and frame
  * - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
  * - optionally allow queueing when already occupied
+ *
+ * Static resources such as tools, assets, robots, and markers are owned by
+ * the workspace (station/cell) rather than the instance itself.
+ * This makes workspace composition explicit and avoids duplicating placement
+ * ownership across both the resource instance and the workspace.
+ *
+ * Dynamic resources such as workers, containers, and part instances own their
+ * current location because they move independently through the system.
  *
  * @generated from message resources.v1.StationDefinition
  */
@@ -85,54 +95,40 @@ export type StationDefinition = Message<"resources.v1.StationDefinition"> & {
   /**
    * Station-local tools mounted, parked, or otherwise directly available here.
    *
-   * @generated from field: repeated string tool_instance_ids = 9;
+   * @generated from field: repeated resources.v1.ToolPlacement tools = 9;
    */
-  toolInstanceIds: string[];
-
-  /**
-   * Station-local fixtures, trays, pallets, bins, or other concrete containers.
-   *
-   * @generated from field: repeated string container_instance_ids = 10;
-   */
-  containerInstanceIds: string[];
+  tools: ToolPlacement[];
 
   /**
    * Robots directly assigned to or executing within this station.
    *
-   * @generated from field: repeated string robot_instance_ids = 11;
+   * @generated from field: repeated resources.v1.RobotPlacement robots = 10;
    */
-  robotInstanceIds: string[];
+  robots: RobotPlacement[];
 
   /**
    * Station-local assets such as cameras, HMIs, feeders, or sensors.
    *
-   * @generated from field: repeated string asset_instance_ids = 12;
+   * @generated from field: repeated resources.v1.AssetPlacement assets = 11;
    */
-  assetInstanceIds: string[];
+  assets: AssetPlacement[];
 
   /**
    * Markers used specifically at this station for localization, AR anchoring, or identification.
    *
-   * @generated from field: repeated string marker_instance_ids = 13;
+   * @generated from field: repeated resources.v1.MarkerPlacement markers = 12;
    */
-  markerInstanceIds: string[];
-
-  /**
-   * Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools.
-   *
-   * @generated from field: repeated string worker_ids = 14;
-   */
-  workerIds: string[];
+  markers: MarkerPlacement[];
 
   /**
    * Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
    *
-   * @generated from field: geometry.v1.LocalizedPose frame = 15;
+   * @generated from field: geometry.v1.LocalizedPose frame = 13;
    */
   frame?: LocalizedPose;
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 16;
+   * @generated from field: common.v1.CustomProperties custom = 14;
    */
   custom?: CustomProperties;
 };

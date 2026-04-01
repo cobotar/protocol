@@ -27,36 +27,36 @@ namespace Messages.Resources.V1 {
             "CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJj",
             "ZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9uL3Yx",
             "L2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnBy",
-            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvIrsFCg5DZWxsRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFt",
-            "ZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJ",
-            "UgtkZXNjcmlwdGlvbhISCgRpY29uGAQgASgJUgRpY29uEh8KC3N0YXRpb25f",
-            "aWRzGAUgAygJUgpzdGF0aW9uSWRzEjoKBnN0YXR1cxgGIAEoDjIYLnJlc291",
-            "cmNlcy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEkEKGG1heF9j",
-            "b25jdXJyZW50X3Byb2Nlc3NlcxgHIAEoBUIHukgEGgIoAFIWbWF4Q29uY3Vy",
-            "cmVudFByb2Nlc3NlcxIwChRhbGxvd19xdWV1ZWRfcHJvY2VzcxgIIAEoCFIS",
-            "YWxsb3dRdWV1ZWRQcm9jZXNzEioKEXRvb2xfaW5zdGFuY2VfaWRzGAkgAygJ",
-            "Ug90b29sSW5zdGFuY2VJZHMSNAoWY29udGFpbmVyX2luc3RhbmNlX2lkcxgK",
-            "IAMoCVIUY29udGFpbmVySW5zdGFuY2VJZHMSLAoScm9ib3RfaW5zdGFuY2Vf",
-            "aWRzGAsgAygJUhByb2JvdEluc3RhbmNlSWRzEiwKEmFzc2V0X2luc3RhbmNl",
-            "X2lkcxgMIAMoCVIQYXNzZXRJbnN0YW5jZUlkcxIuChNtYXJrZXJfaW5zdGFu",
-            "Y2VfaWRzGA0gAygJUhFtYXJrZXJJbnN0YW5jZUlkcxIdCgp3b3JrZXJfaWRz",
-            "GA4gAygJUgl3b3JrZXJJZHMSMAoFZnJhbWUYDyABKAsyGi5nZW9tZXRyeS52",
-            "MS5Mb2NhbGl6ZWRQb3NlUgVmcmFtZRIzCgZjdXN0b20YECABKAsyGy5jb21t",
-            "b24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkUKD0NlbGxEZWZpbml0",
-            "aW9ucxIyCgVpdGVtcxgBIAMoCzIcLnJlc291cmNlcy52MS5DZWxsRGVmaW5p",
-            "dGlvblIFaXRlbXMqhgEKCkNlbGxTdGF0dXMSGwoXQ0VMTF9TVEFUVVNfVU5T",
-            "UEVDSUZJRUQQABIUChBDRUxMX1NUQVRVU19PUEVOEAESFAoQQ0VMTF9TVEFU",
-            "VVNfQlVTWRACEhYKEkNFTExfU1RBVFVTX0NMT1NFRBADEhcKE0NFTExfU1RB",
-            "VFVTX0JMT0NLRUQQBELAAQoQY29tLnJlc291cmNlcy52MUITQ2VsbERlZmlu",
-            "aXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2Fn",
-            "ZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYx",
-            "XEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "b3RvGhxyZXNvdXJjZXMvdjEvcGxhY2VtZW50LnByb3RvGit2YWxpZGF0aW9u",
+            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoYFCg5DZWxsRGVm",
+            "aW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA",
+            "8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIS",
+            "CgRpY29uGAQgASgJUgRpY29uEjoKBnN0YXR1cxgFIAEoDjIYLnJlc291cmNl",
+            "cy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEkEKGG1heF9jb25j",
+            "dXJyZW50X3Byb2Nlc3NlcxgGIAEoBUIHukgEGgIoAFIWbWF4Q29uY3VycmVu",
+            "dFByb2Nlc3NlcxIwChRhbGxvd19xdWV1ZWRfcHJvY2VzcxgHIAEoCFISYWxs",
+            "b3dRdWV1ZWRQcm9jZXNzEh8KC3N0YXRpb25faWRzGAggAygJUgpzdGF0aW9u",
+            "SWRzEjEKBXRvb2xzGAkgAygLMhsucmVzb3VyY2VzLnYxLlRvb2xQbGFjZW1l",
+            "bnRSBXRvb2xzEjQKBnJvYm90cxgKIAMoCzIcLnJlc291cmNlcy52MS5Sb2Jv",
+            "dFBsYWNlbWVudFIGcm9ib3RzEjQKBmFzc2V0cxgLIAMoCzIcLnJlc291cmNl",
+            "cy52MS5Bc3NldFBsYWNlbWVudFIGYXNzZXRzEjcKB21hcmtlcnMYDCADKAsy",
+            "HS5yZXNvdXJjZXMudjEuTWFya2VyUGxhY2VtZW50UgdtYXJrZXJzEjAKBWZy",
+            "YW1lGA0gASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIFZnJhbWUS",
+            "MwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNS",
+            "BmN1c3RvbSJFCg9DZWxsRGVmaW5pdGlvbnMSMgoFaXRlbXMYASADKAsyHC5y",
+            "ZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb25SBWl0ZW1zKoYBCgpDZWxsU3Rh",
+            "dHVzEhsKF0NFTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFAoQQ0VMTF9TVEFU",
+            "VVNfT1BFThABEhQKEENFTExfU1RBVFVTX0JVU1kQAhIWChJDRUxMX1NUQVRV",
+            "U19DTE9TRUQQAxIXChNDRUxMX1NUQVRVU19CTE9DS0VEEARCwAEKEGNvbS5y",
+            "ZXNvdXJjZXMudjFCE0NlbGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNv",
+            "bS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNv",
+            "dXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291",
+            "cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNl",
+            "czo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.CellStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "StationIds", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "ToolInstanceIds", "ContainerInstanceIds", "RobotInstanceIds", "AssetInstanceIds", "MarkerInstanceIds", "WorkerIds", "Frame", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "StationIds", "Tools", "Robots", "Assets", "Markers", "Frame", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinitions), global::Messages.Resources.V1.CellDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -119,6 +119,14 @@ namespace Messages.Resources.V1 {
   /// - own resources that are shared across several stations
   /// - expose operational state and capacity above individual stations
   /// - act as an optional target/selector scope for loaders and planners
+  ///
+  /// Static resources such as tools, assets, robots, and markers are owned by
+  /// the workspace (station/cell) rather than the instance itself.
+  /// This makes workspace composition explicit and avoids duplicating placement
+  /// ownership across both the resource instance and the workspace.
+  ///
+  /// Dynamic resources such as workers, containers, and part instances own their
+  /// current location because they move independently through the system.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class CellDefinition : pb::IMessage<CellDefinition>
@@ -159,16 +167,14 @@ namespace Messages.Resources.V1 {
       name_ = other.name_;
       description_ = other.description_;
       icon_ = other.icon_;
-      stationIds_ = other.stationIds_.Clone();
       status_ = other.status_;
       maxConcurrentProcesses_ = other.maxConcurrentProcesses_;
       allowQueuedProcess_ = other.allowQueuedProcess_;
-      toolInstanceIds_ = other.toolInstanceIds_.Clone();
-      containerInstanceIds_ = other.containerInstanceIds_.Clone();
-      robotInstanceIds_ = other.robotInstanceIds_.Clone();
-      assetInstanceIds_ = other.assetInstanceIds_.Clone();
-      markerInstanceIds_ = other.markerInstanceIds_.Clone();
-      workerIds_ = other.workerIds_.Clone();
+      stationIds_ = other.stationIds_.Clone();
+      tools_ = other.tools_.Clone();
+      robots_ = other.robots_.Clone();
+      assets_ = other.assets_.Clone();
+      markers_ = other.markers_.Clone();
       frame_ = other.frame_ != null ? other.frame_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -228,22 +234,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "station_ids" field.</summary>
-    public const int StationIdsFieldNumber = 5;
-    private static readonly pb::FieldCodec<string> _repeated_stationIds_codec
-        = pb::FieldCodec.ForString(42);
-    private readonly pbc::RepeatedField<string> stationIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Stations belonging to this cell.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> StationIds {
-      get { return stationIds_; }
-    }
-
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 6;
+    public const int StatusFieldNumber = 5;
     private global::Messages.Resources.V1.CellStatus status_ = global::Messages.Resources.V1.CellStatus.Unspecified;
     /// <summary>
     /// Current operational availability of the cell as a whole.
@@ -258,7 +250,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "max_concurrent_processes" field.</summary>
-    public const int MaxConcurrentProcessesFieldNumber = 7;
+    public const int MaxConcurrentProcessesFieldNumber = 6;
     private int maxConcurrentProcesses_;
     /// <summary>
     /// Maximum number of active/queued processes this cell should host concurrently.
@@ -273,7 +265,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "allow_queued_process" field.</summary>
-    public const int AllowQueuedProcessFieldNumber = 8;
+    public const int AllowQueuedProcessFieldNumber = 7;
     private bool allowQueuedProcess_;
     /// <summary>
     /// If true, loaders may create queued ProcessRuns when the cell is BUSY.
@@ -287,92 +279,78 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "tool_instance_ids" field.</summary>
-    public const int ToolInstanceIdsFieldNumber = 9;
-    private static readonly pb::FieldCodec<string> _repeated_toolInstanceIds_codec
-        = pb::FieldCodec.ForString(74);
-    private readonly pbc::RepeatedField<string> toolInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "station_ids" field.</summary>
+    public const int StationIdsFieldNumber = 8;
+    private static readonly pb::FieldCodec<string> _repeated_stationIds_codec
+        = pb::FieldCodec.ForString(66);
+    private readonly pbc::RepeatedField<string> stationIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Stations belonging to this cell.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> StationIds {
+      get { return stationIds_; }
+    }
+
+    /// <summary>Field number for the "tools" field.</summary>
+    public const int ToolsFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.ToolPlacement> _repeated_tools_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.Resources.V1.ToolPlacement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.ToolPlacement> tools_ = new pbc::RepeatedField<global::Messages.Resources.V1.ToolPlacement>();
     /// <summary>
     /// Shared tools mounted, parked, or otherwise directly available here.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> ToolInstanceIds {
-      get { return toolInstanceIds_; }
+    public pbc::RepeatedField<global::Messages.Resources.V1.ToolPlacement> Tools {
+      get { return tools_; }
     }
 
-    /// <summary>Field number for the "container_instance_ids" field.</summary>
-    public const int ContainerInstanceIdsFieldNumber = 10;
-    private static readonly pb::FieldCodec<string> _repeated_containerInstanceIds_codec
-        = pb::FieldCodec.ForString(82);
-    private readonly pbc::RepeatedField<string> containerInstanceIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Shared fixtures, trays, pallets, bins, or other concrete containers.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> ContainerInstanceIds {
-      get { return containerInstanceIds_; }
-    }
-
-    /// <summary>Field number for the "robot_instance_ids" field.</summary>
-    public const int RobotInstanceIdsFieldNumber = 11;
-    private static readonly pb::FieldCodec<string> _repeated_robotInstanceIds_codec
-        = pb::FieldCodec.ForString(90);
-    private readonly pbc::RepeatedField<string> robotInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "robots" field.</summary>
+    public const int RobotsFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.RobotPlacement> _repeated_robots_codec
+        = pb::FieldCodec.ForMessage(82, global::Messages.Resources.V1.RobotPlacement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.RobotPlacement> robots_ = new pbc::RepeatedField<global::Messages.Resources.V1.RobotPlacement>();
     /// <summary>
     /// Robots shared across multiple stations inside the cell.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> RobotInstanceIds {
-      get { return robotInstanceIds_; }
+    public pbc::RepeatedField<global::Messages.Resources.V1.RobotPlacement> Robots {
+      get { return robots_; }
     }
 
-    /// <summary>Field number for the "asset_instance_ids" field.</summary>
-    public const int AssetInstanceIdsFieldNumber = 12;
-    private static readonly pb::FieldCodec<string> _repeated_assetInstanceIds_codec
-        = pb::FieldCodec.ForString(98);
-    private readonly pbc::RepeatedField<string> assetInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "assets" field.</summary>
+    public const int AssetsFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.AssetPlacement> _repeated_assets_codec
+        = pb::FieldCodec.ForMessage(90, global::Messages.Resources.V1.AssetPlacement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.AssetPlacement> assets_ = new pbc::RepeatedField<global::Messages.Resources.V1.AssetPlacement>();
     /// <summary>
     /// Shared assets such as cameras, HMIs, or feeders serving several stations.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> AssetInstanceIds {
-      get { return assetInstanceIds_; }
+    public pbc::RepeatedField<global::Messages.Resources.V1.AssetPlacement> Assets {
+      get { return assets_; }
     }
 
-    /// <summary>Field number for the "marker_instance_ids" field.</summary>
-    public const int MarkerInstanceIdsFieldNumber = 13;
-    private static readonly pb::FieldCodec<string> _repeated_markerInstanceIds_codec
-        = pb::FieldCodec.ForString(106);
-    private readonly pbc::RepeatedField<string> markerInstanceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "markers" field.</summary>
+    public const int MarkersFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.MarkerPlacement> _repeated_markers_codec
+        = pb::FieldCodec.ForMessage(98, global::Messages.Resources.V1.MarkerPlacement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.MarkerPlacement> markers_ = new pbc::RepeatedField<global::Messages.Resources.V1.MarkerPlacement>();
     /// <summary>
     /// Markers shared for this cell for localization, AR anchoring, or identification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> MarkerInstanceIds {
-      get { return markerInstanceIds_; }
-    }
-
-    /// <summary>Field number for the "worker_ids" field.</summary>
-    public const int WorkerIdsFieldNumber = 14;
-    private static readonly pb::FieldCodec<string> _repeated_workerIds_codec
-        = pb::FieldCodec.ForString(114);
-    private readonly pbc::RepeatedField<string> workerIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Shared worker pool for the cell when workers are not bound to a specific station.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> WorkerIds {
-      get { return workerIds_; }
+    public pbc::RepeatedField<global::Messages.Resources.V1.MarkerPlacement> Markers {
+      get { return markers_; }
     }
 
     /// <summary>Field number for the "frame" field.</summary>
-    public const int FrameFieldNumber = 15;
+    public const int FrameFieldNumber = 13;
     private global::Messages.Common.V1.LocalizedPose frame_;
     /// <summary>
     /// Cell-local reference frame or zone anchor.
@@ -387,7 +365,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 16;
+    public const int CustomFieldNumber = 14;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -417,16 +395,14 @@ namespace Messages.Resources.V1 {
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (Icon != other.Icon) return false;
-      if(!stationIds_.Equals(other.stationIds_)) return false;
       if (Status != other.Status) return false;
       if (MaxConcurrentProcesses != other.MaxConcurrentProcesses) return false;
       if (AllowQueuedProcess != other.AllowQueuedProcess) return false;
-      if(!toolInstanceIds_.Equals(other.toolInstanceIds_)) return false;
-      if(!containerInstanceIds_.Equals(other.containerInstanceIds_)) return false;
-      if(!robotInstanceIds_.Equals(other.robotInstanceIds_)) return false;
-      if(!assetInstanceIds_.Equals(other.assetInstanceIds_)) return false;
-      if(!markerInstanceIds_.Equals(other.markerInstanceIds_)) return false;
-      if(!workerIds_.Equals(other.workerIds_)) return false;
+      if(!stationIds_.Equals(other.stationIds_)) return false;
+      if(!tools_.Equals(other.tools_)) return false;
+      if(!robots_.Equals(other.robots_)) return false;
+      if(!assets_.Equals(other.assets_)) return false;
+      if(!markers_.Equals(other.markers_)) return false;
       if (!object.Equals(Frame, other.Frame)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -440,16 +416,14 @@ namespace Messages.Resources.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
-      hash ^= stationIds_.GetHashCode();
       if (Status != global::Messages.Resources.V1.CellStatus.Unspecified) hash ^= Status.GetHashCode();
       if (MaxConcurrentProcesses != 0) hash ^= MaxConcurrentProcesses.GetHashCode();
       if (AllowQueuedProcess != false) hash ^= AllowQueuedProcess.GetHashCode();
-      hash ^= toolInstanceIds_.GetHashCode();
-      hash ^= containerInstanceIds_.GetHashCode();
-      hash ^= robotInstanceIds_.GetHashCode();
-      hash ^= assetInstanceIds_.GetHashCode();
-      hash ^= markerInstanceIds_.GetHashCode();
-      hash ^= workerIds_.GetHashCode();
+      hash ^= stationIds_.GetHashCode();
+      hash ^= tools_.GetHashCode();
+      hash ^= robots_.GetHashCode();
+      hash ^= assets_.GetHashCode();
+      hash ^= markers_.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
@@ -486,31 +460,29 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(34);
         output.WriteString(Icon);
       }
-      stationIds_.WriteTo(output, _repeated_stationIds_codec);
       if (Status != global::Messages.Resources.V1.CellStatus.Unspecified) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
       if (MaxConcurrentProcesses != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt32(MaxConcurrentProcesses);
       }
       if (AllowQueuedProcess != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteBool(AllowQueuedProcess);
       }
-      toolInstanceIds_.WriteTo(output, _repeated_toolInstanceIds_codec);
-      containerInstanceIds_.WriteTo(output, _repeated_containerInstanceIds_codec);
-      robotInstanceIds_.WriteTo(output, _repeated_robotInstanceIds_codec);
-      assetInstanceIds_.WriteTo(output, _repeated_assetInstanceIds_codec);
-      markerInstanceIds_.WriteTo(output, _repeated_markerInstanceIds_codec);
-      workerIds_.WriteTo(output, _repeated_workerIds_codec);
+      stationIds_.WriteTo(output, _repeated_stationIds_codec);
+      tools_.WriteTo(output, _repeated_tools_codec);
+      robots_.WriteTo(output, _repeated_robots_codec);
+      assets_.WriteTo(output, _repeated_assets_codec);
+      markers_.WriteTo(output, _repeated_markers_codec);
       if (frame_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
       if (custom_ != null) {
-        output.WriteRawTag(130, 1);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -539,31 +511,29 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(34);
         output.WriteString(Icon);
       }
-      stationIds_.WriteTo(ref output, _repeated_stationIds_codec);
       if (Status != global::Messages.Resources.V1.CellStatus.Unspecified) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
       if (MaxConcurrentProcesses != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt32(MaxConcurrentProcesses);
       }
       if (AllowQueuedProcess != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteBool(AllowQueuedProcess);
       }
-      toolInstanceIds_.WriteTo(ref output, _repeated_toolInstanceIds_codec);
-      containerInstanceIds_.WriteTo(ref output, _repeated_containerInstanceIds_codec);
-      robotInstanceIds_.WriteTo(ref output, _repeated_robotInstanceIds_codec);
-      assetInstanceIds_.WriteTo(ref output, _repeated_assetInstanceIds_codec);
-      markerInstanceIds_.WriteTo(ref output, _repeated_markerInstanceIds_codec);
-      workerIds_.WriteTo(ref output, _repeated_workerIds_codec);
+      stationIds_.WriteTo(ref output, _repeated_stationIds_codec);
+      tools_.WriteTo(ref output, _repeated_tools_codec);
+      robots_.WriteTo(ref output, _repeated_robots_codec);
+      assets_.WriteTo(ref output, _repeated_assets_codec);
+      markers_.WriteTo(ref output, _repeated_markers_codec);
       if (frame_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
       if (custom_ != null) {
-        output.WriteRawTag(130, 1);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -588,7 +558,6 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
-      size += stationIds_.CalculateSize(_repeated_stationIds_codec);
       if (Status != global::Messages.Resources.V1.CellStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
@@ -598,17 +567,16 @@ namespace Messages.Resources.V1 {
       if (AllowQueuedProcess != false) {
         size += 1 + 1;
       }
-      size += toolInstanceIds_.CalculateSize(_repeated_toolInstanceIds_codec);
-      size += containerInstanceIds_.CalculateSize(_repeated_containerInstanceIds_codec);
-      size += robotInstanceIds_.CalculateSize(_repeated_robotInstanceIds_codec);
-      size += assetInstanceIds_.CalculateSize(_repeated_assetInstanceIds_codec);
-      size += markerInstanceIds_.CalculateSize(_repeated_markerInstanceIds_codec);
-      size += workerIds_.CalculateSize(_repeated_workerIds_codec);
+      size += stationIds_.CalculateSize(_repeated_stationIds_codec);
+      size += tools_.CalculateSize(_repeated_tools_codec);
+      size += robots_.CalculateSize(_repeated_robots_codec);
+      size += assets_.CalculateSize(_repeated_assets_codec);
+      size += markers_.CalculateSize(_repeated_markers_codec);
       if (frame_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
       }
       if (custom_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Custom);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -634,7 +602,6 @@ namespace Messages.Resources.V1 {
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
       }
-      stationIds_.Add(other.stationIds_);
       if (other.Status != global::Messages.Resources.V1.CellStatus.Unspecified) {
         Status = other.Status;
       }
@@ -644,12 +611,11 @@ namespace Messages.Resources.V1 {
       if (other.AllowQueuedProcess != false) {
         AllowQueuedProcess = other.AllowQueuedProcess;
       }
-      toolInstanceIds_.Add(other.toolInstanceIds_);
-      containerInstanceIds_.Add(other.containerInstanceIds_);
-      robotInstanceIds_.Add(other.robotInstanceIds_);
-      assetInstanceIds_.Add(other.assetInstanceIds_);
-      markerInstanceIds_.Add(other.markerInstanceIds_);
-      workerIds_.Add(other.workerIds_);
+      stationIds_.Add(other.stationIds_);
+      tools_.Add(other.tools_);
+      robots_.Add(other.robots_);
+      assets_.Add(other.assets_);
+      markers_.Add(other.markers_);
       if (other.frame_ != null) {
         if (frame_ == null) {
           Frame = new global::Messages.Common.V1.LocalizedPose();
@@ -697,54 +663,46 @@ namespace Messages.Resources.V1 {
             Icon = input.ReadString();
             break;
           }
-          case 42: {
-            stationIds_.AddEntriesFrom(input, _repeated_stationIds_codec);
-            break;
-          }
-          case 48: {
+          case 40: {
             Status = (global::Messages.Resources.V1.CellStatus) input.ReadEnum();
             break;
           }
-          case 56: {
+          case 48: {
             MaxConcurrentProcesses = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 56: {
             AllowQueuedProcess = input.ReadBool();
             break;
           }
+          case 66: {
+            stationIds_.AddEntriesFrom(input, _repeated_stationIds_codec);
+            break;
+          }
           case 74: {
-            toolInstanceIds_.AddEntriesFrom(input, _repeated_toolInstanceIds_codec);
+            tools_.AddEntriesFrom(input, _repeated_tools_codec);
             break;
           }
           case 82: {
-            containerInstanceIds_.AddEntriesFrom(input, _repeated_containerInstanceIds_codec);
+            robots_.AddEntriesFrom(input, _repeated_robots_codec);
             break;
           }
           case 90: {
-            robotInstanceIds_.AddEntriesFrom(input, _repeated_robotInstanceIds_codec);
+            assets_.AddEntriesFrom(input, _repeated_assets_codec);
             break;
           }
           case 98: {
-            assetInstanceIds_.AddEntriesFrom(input, _repeated_assetInstanceIds_codec);
+            markers_.AddEntriesFrom(input, _repeated_markers_codec);
             break;
           }
           case 106: {
-            markerInstanceIds_.AddEntriesFrom(input, _repeated_markerInstanceIds_codec);
-            break;
-          }
-          case 114: {
-            workerIds_.AddEntriesFrom(input, _repeated_workerIds_codec);
-            break;
-          }
-          case 122: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 130: {
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -786,54 +744,46 @@ namespace Messages.Resources.V1 {
             Icon = input.ReadString();
             break;
           }
-          case 42: {
-            stationIds_.AddEntriesFrom(ref input, _repeated_stationIds_codec);
-            break;
-          }
-          case 48: {
+          case 40: {
             Status = (global::Messages.Resources.V1.CellStatus) input.ReadEnum();
             break;
           }
-          case 56: {
+          case 48: {
             MaxConcurrentProcesses = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 56: {
             AllowQueuedProcess = input.ReadBool();
             break;
           }
+          case 66: {
+            stationIds_.AddEntriesFrom(ref input, _repeated_stationIds_codec);
+            break;
+          }
           case 74: {
-            toolInstanceIds_.AddEntriesFrom(ref input, _repeated_toolInstanceIds_codec);
+            tools_.AddEntriesFrom(ref input, _repeated_tools_codec);
             break;
           }
           case 82: {
-            containerInstanceIds_.AddEntriesFrom(ref input, _repeated_containerInstanceIds_codec);
+            robots_.AddEntriesFrom(ref input, _repeated_robots_codec);
             break;
           }
           case 90: {
-            robotInstanceIds_.AddEntriesFrom(ref input, _repeated_robotInstanceIds_codec);
+            assets_.AddEntriesFrom(ref input, _repeated_assets_codec);
             break;
           }
           case 98: {
-            assetInstanceIds_.AddEntriesFrom(ref input, _repeated_assetInstanceIds_codec);
+            markers_.AddEntriesFrom(ref input, _repeated_markers_codec);
             break;
           }
           case 106: {
-            markerInstanceIds_.AddEntriesFrom(ref input, _repeated_markerInstanceIds_codec);
-            break;
-          }
-          case 114: {
-            workerIds_.AddEntriesFrom(ref input, _repeated_workerIds_codec);
-            break;
-          }
-          case 122: {
             if (frame_ == null) {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
           }
-          case 130: {
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

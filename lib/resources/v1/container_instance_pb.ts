@@ -4,19 +4,55 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file resources/v1/container_instance.proto.
  */
 export const file_resources_v1_container_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiVyZXNvdXJjZXMvdjEvY29udGFpbmVyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEihwIKEUNvbnRhaW5lckluc3RhbmNlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIfChdjb250YWluZXJfZGVmaW5pdGlvbl9pZBgFIAEoCRISCgpzdGF0aW9uX2lkGAYgASgJEikKBnN0YXR1cxgHIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1cxIoCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YCSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyJEChJDb250YWluZXJJbnN0YW5jZXMSLgoFaXRlbXMYASADKAsyHy5yZXNvdXJjZXMudjEuQ29udGFpbmVySW5zdGFuY2VCwwEKEGNvbS5yZXNvdXJjZXMudjFCFkNvbnRhaW5lckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose]);
+  fileDesc("CiVyZXNvdXJjZXMvdjEvY29udGFpbmVyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEilAEKEUNvbnRhaW5lckxvY2F0aW9uEhoKB2xpbmVfaWQYASABKAlCCbpIBnIEwPIEARIaCgdjZWxsX2lkGAIgASgJQgm6SAZyBLjyBAESHQoKc3RhdGlvbl9pZBgDIAEoCUIJukgGcgT48QQBEigKBHBvc2UYBCABKAsyGi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlIqoCChFDb250YWluZXJJbnN0YW5jZRIVCgJpZBgBIAEoCUIJukgGcgTQ6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi0KF2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBMjyBAESMwoGc3RhdHVzGAYgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARIxCghsb2NhdGlvbhgHIAEoCzIfLnJlc291cmNlcy52MS5Db250YWluZXJMb2NhdGlvbhIrCgZjdXN0b20YCCABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyJEChJDb250YWluZXJJbnN0YW5jZXMSLgoFaXRlbXMYASADKAsyHy5yZXNvdXJjZXMudjEuQ29udGFpbmVySW5zdGFuY2VCwwEKEGNvbS5yZXNvdXJjZXMudjFCFkNvbnRhaW5lckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+
+/**
+ * @generated from message resources.v1.ContainerLocation
+ */
+export type ContainerLocation = Message<"resources.v1.ContainerLocation"> & {
+  /**
+   * @generated from field: string line_id = 1;
+   */
+  lineId: string;
+
+  /**
+   * @generated from field: string cell_id = 2;
+   */
+  cellId: string;
+
+  /**
+   * Station/cell where this container currently belongs or is mounted.
+   *
+   * @generated from field: string station_id = 3;
+   */
+  stationId: string;
+
+  /**
+   * @generated from field: geometry.v1.LocalizedPose pose = 4;
+   */
+  pose?: LocalizedPose;
+};
+
+/**
+ * Describes the message resources.v1.ContainerLocation.
+ * Use `create(ContainerLocationSchema)` to create a new message.
+ */
+export const ContainerLocationSchema: GenMessage<ContainerLocation> = /*@__PURE__*/
+  messageDesc(file_resources_v1_container_instance, 0);
 
 /**
  * ContainerInstance represents a concrete container in a station/cell.
@@ -65,30 +101,23 @@ export type ContainerInstance = Message<"resources.v1.ContainerInstance"> & {
   containerDefinitionId: string;
 
   /**
-   * Station/cell where this container currently belongs or is mounted.
-   *
-   * @generated from field: string station_id = 6;
-   */
-  stationId: string;
-
-  /**
    * Operational status such as available, disabled, or faulted.
    *
-   * @generated from field: common.v1.ResourceStatus status = 7;
+   * @generated from field: common.v1.ResourceStatus status = 6;
    */
   status: ResourceStatus;
 
   /**
-   * Pose of the container instance in the station/environment.
+   * Dynamic location of the container instance.
    *
-   * @generated from field: geometry.v1.LocalizedPose pose = 8;
+   * @generated from field: resources.v1.ContainerLocation location = 7;
    */
-  pose?: LocalizedPose;
+  location?: ContainerLocation;
 
   /**
    * Extension point for instance-specific data.
    *
-   * @generated from field: common.v1.CustomProperties custom = 9;
+   * @generated from field: common.v1.CustomProperties custom = 8;
    */
   custom?: CustomProperties;
 };
@@ -98,7 +127,7 @@ export type ContainerInstance = Message<"resources.v1.ContainerInstance"> & {
  * Use `create(ContainerInstanceSchema)` to create a new message.
  */
 export const ContainerInstanceSchema: GenMessage<ContainerInstance> = /*@__PURE__*/
-  messageDesc(file_resources_v1_container_instance, 0);
+  messageDesc(file_resources_v1_container_instance, 1);
 
 /**
  * @generated from message resources.v1.ContainerInstances
@@ -117,5 +146,5 @@ export type ContainerInstances = Message<"resources.v1.ContainerInstances"> & {
  * Use `create(ContainerInstancesSchema)` to create a new message.
  */
 export const ContainerInstancesSchema: GenMessage<ContainerInstances> = /*@__PURE__*/
-  messageDesc(file_resources_v1_container_instance, 1);
+  messageDesc(file_resources_v1_container_instance, 2);
 

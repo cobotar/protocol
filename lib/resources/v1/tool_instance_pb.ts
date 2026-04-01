@@ -9,8 +9,6 @@ import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
-import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -20,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/tool_instance.proto.
  */
 export const file_resources_v1_tool_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxIpYDCgxUb29sSW5zdGFuY2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoSdG9vbF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBMDxBAESFQoNc2VyaWFsX251bWJlchgGIAEoCRIgCgpzdGF0aW9uX2lkGAcgASgJQgy6SAnIAQFyBNjxBAESMwoGc3RhdHVzGAggASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARISCgpjYWxpYnJhdGVkGAkgASgIEjsKF2NhbGlicmF0aW9uX3ZhbGlkX3VudGlsGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIoCgRwb3NlGAsgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YDCABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI6Cg1Ub29sSW5zdGFuY2VzEikKBWl0ZW1zGAEgAygLMhoucmVzb3VyY2VzLnYxLlRvb2xJbnN0YW5jZUK+AQoQY29tLnJlc291cmNlcy52MUIRVG9vbEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxItUCCgxUb29sSW5zdGFuY2USFQoCaWQYASABKAlCCbpIBnIE4PEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIoChJ0b29sX2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIE2PEEARIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEjMKBnN0YXR1cxgHIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1c0IIukgFggECEAESEgoKY2FsaWJyYXRlZBgIIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKwoGY3VzdG9tGAogASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiOgoNVG9vbEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLnJlc291cmNlcy52MS5Ub29sSW5zdGFuY2VCvgEKEGNvbS5yZXNvdXJjZXMudjFCEVRvb2xJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.ToolInstance
@@ -57,32 +55,22 @@ export type ToolInstance = Message<"resources.v1.ToolInstance"> & {
   serialNumber: string;
 
   /**
-   * @generated from field: string station_id = 7;
-   */
-  stationId: string;
-
-  /**
-   * @generated from field: common.v1.ResourceStatus status = 8;
+   * @generated from field: common.v1.ResourceStatus status = 7;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: bool calibrated = 9;
+   * @generated from field: bool calibrated = 8;
    */
   calibrated: boolean;
 
   /**
-   * @generated from field: google.protobuf.Timestamp calibration_valid_until = 10;
+   * @generated from field: google.protobuf.Timestamp calibration_valid_until = 9;
    */
   calibrationValidUntil?: Timestamp;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 11;
-   */
-  pose?: LocalizedPose;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 12;
+   * @generated from field: common.v1.CustomProperties custom = 10;
    */
   custom?: CustomProperties;
 };

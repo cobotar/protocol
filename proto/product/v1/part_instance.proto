@@ -1,0 +1,59 @@
+syntax = "proto3";
+package product.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/custom_properties.proto";
+import "common/v1/enums.proto";
+import "geometry/v1/pose.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Product.V1";
+option go_package = "github.com/cobotar/protocol/messages/product/v1";
+
+// QuantityStatus is a lightweight optional description of how much of a part
+// instance remains.
+//
+// This is intentionally simple and optional. It is useful for consumables,
+// partial reels, partial kits, dispensed materials, or bags/boxes that are not
+// fully depleted yet.
+//
+// For indivisible discrete parts, this field can be omitted entirely.
+// Examples:
+//	amount=3, unit="pcs", nominal_amount=25
+//	amount=125.0, unit="g", nominal_amount=500.0
+//	amount=7.2, unit="m", nominal_amount=20.0
+message QuantityStatus {
+  double amount = 1 [(buf.validate.field).double.gte = 0]; // Current amount left.
+  string unit = 2; // Optional unit such as "pcs", "g", "ml", "m", "cm2".
+  double nominal_amount = 3 [(buf.validate.field).double.gte = 0]; // Optional reference/original amount.
+}
+
+// PartInstanceLocation describes the current location of a part instance.
+//
+// A part may be inside a container slot, or directly located in a station/work
+// area if not currently stored in a container.
+message PartInstanceLocation {
+  string container_instance_id = 1 [(buf.validate.field).string.(validation.v1.container_instance_id_component) = true];
+  string slot_id = 2; // Optional slot inside the container.
+  string line_id = 3 [(buf.validate.field).string.(validation.v1.line_id_component) = true]; // Optional direct workspace location if not inside a container.
+  string cell_id = 4 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Optional direct workspace location if not inside a container.
+  string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Optional direct workspace location if not inside a container.
+  geometry.v1.LocalizedPose pose = 6;
+}
+
+message PartInstance {
+  string id = 1 [(buf.validate.field).string.(validation.v1.part_instance_id_component) = true];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+
+  string part_definition_id = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.part_definition_id_component) = true
+  ];
+
+  common.v1.ResourceStatus status = 6 [(buf.validate.field).enum.defined_only = true];
+  PartInstanceLocation location = 7;
+  QuantityStatus quantity = 8;
+  common.v1.CustomProperties custom = 9;
+}

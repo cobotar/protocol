@@ -4,28 +4,23 @@ package resources.v1;
 import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
-import "geometry/v1/pose.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 
 message AssetInstance {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   string asset_definition_id = 5 [
     (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.asset_id_component) = true
+    (buf.validate.field).string.(validation.v1.asset_definition_id_component) = true
   ];
-  string station_id = 6 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.station_id_component) = true
-  ];
-  common.v1.ResourceStatus status = 7 [(buf.validate.field).enum.defined_only = true];
-  geometry.v1.LocalizedPose pose = 8;
-  common.v1.CustomProperties custom = 9;
+  common.v1.ResourceStatus status = 6 [(buf.validate.field).enum.defined_only = true];
+
+  common.v1.CustomProperties custom = 7;
 }
 
 message AssetInstances {

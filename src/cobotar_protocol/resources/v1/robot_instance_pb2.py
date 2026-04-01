@@ -25,11 +25,10 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
-from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!resources/v1/robot_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x05\n\rRobotInstance\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12<\n\x13robot_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xa0\xf1\x04\x01\xc8\x01\x01R\x11robotDefinitionId\x12#\n\rserial_number\x18\x06 \x01(\tR\x0cserialNumber\x12+\n\nstation_id\x18\x07 \x01(\tB\x0c\xbaH\tr\x04\xd8\xf1\x04\x01\xc8\x01\x01R\tstationId\x12\x42\n\x18mounted_tool_instance_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n\x1b\x61vailable_tool_instance_ids\x18\t \x03(\tR\x18\x61vailableToolInstanceIds\x12\x30\n\x14supports_tool_change\x18\n \x01(\x08R\x12supportsToolChange\x12!\n\x0cis_simulated\x18\x0b \x01(\x08R\x0bisSimulated\x12;\n\x06status\x18\x0c \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x37\n\tbase_pose\x18\r \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x08\x62\x61sePose\x12\x33\n\x06\x63ustom\x18\x0e \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"C\n\x0eRobotInstances\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.RobotInstanceR\x05itemsB\xbf\x01\n\x10\x63om.resources.v1B\x12RobotInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!resources/v1/robot_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x04\n\rRobotInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12<\n\x13robot_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xa0\xf1\x04\x01\xc8\x01\x01R\x11robotDefinitionId\x12#\n\rserial_number\x18\x06 \x01(\tR\x0cserialNumber\x12\x42\n\x18mounted_tool_instance_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x15mountedToolInstanceId\x12=\n\x1b\x61vailable_tool_instance_ids\x18\x08 \x03(\tR\x18\x61vailableToolInstanceIds\x12\x30\n\x14supports_tool_change\x18\t \x01(\x08R\x12supportsToolChange\x12!\n\x0cis_simulated\x18\n \x01(\x08R\x0bisSimulated\x12;\n\x06status\x18\x0b \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x33\n\x06\x63ustom\x18\x0c \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"C\n\x0eRobotInstances\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.RobotInstanceR\x05itemsB\xbf\x01\n\x10\x63om.resources.v1B\x12RobotInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,18 +36,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.robot_instance
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\022RobotInstanceProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
+  _globals['_ROBOTINSTANCE'].fields_by_name['id']._loaded_options = None
+  _globals['_ROBOTINSTANCE'].fields_by_name['id']._serialized_options = b'\272H\006r\004\250\361\004\001'
   _globals['_ROBOTINSTANCE'].fields_by_name['name']._loaded_options = None
   _globals['_ROBOTINSTANCE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ROBOTINSTANCE'].fields_by_name['robot_definition_id']._loaded_options = None
   _globals['_ROBOTINSTANCE'].fields_by_name['robot_definition_id']._serialized_options = b'\272H\tr\004\240\361\004\001\310\001\001'
-  _globals['_ROBOTINSTANCE'].fields_by_name['station_id']._loaded_options = None
-  _globals['_ROBOTINSTANCE'].fields_by_name['station_id']._serialized_options = b'\272H\tr\004\330\361\004\001\310\001\001'
   _globals['_ROBOTINSTANCE'].fields_by_name['mounted_tool_instance_id']._loaded_options = None
   _globals['_ROBOTINSTANCE'].fields_by_name['mounted_tool_instance_id']._serialized_options = b'\272H\006r\004\340\361\004\001'
   _globals['_ROBOTINSTANCE'].fields_by_name['status']._loaded_options = None
   _globals['_ROBOTINSTANCE'].fields_by_name['status']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_ROBOTINSTANCE']._serialized_start=208
-  _globals['_ROBOTINSTANCE']._serialized_end=855
-  _globals['_ROBOTINSTANCES']._serialized_start=857
-  _globals['_ROBOTINSTANCES']._serialized_end=924
+  _globals['_ROBOTINSTANCE']._serialized_start=184
+  _globals['_ROBOTINSTANCE']._serialized_end=740
+  _globals['_ROBOTINSTANCES']._serialized_start=742
+  _globals['_ROBOTINSTANCES']._serialized_end=809
 # @@protoc_insertion_point(module_scope)

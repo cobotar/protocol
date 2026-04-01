@@ -46,6 +46,7 @@ message DeviceMessage {
     lte: 100
   }];
   DeviceBatteryStatus battery_status = 9 [(buf.validate.field).enum.defined_only = true];
+  // TODO: add location
 }
 
 message DeviceMessages {

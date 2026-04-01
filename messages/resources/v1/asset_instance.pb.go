@@ -9,7 +9,6 @@ package resourcesv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
-	v11 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -32,10 +31,8 @@ type AssetInstance struct {
 	Icon              string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description       string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	AssetDefinitionId string                 `protobuf:"bytes,5,opt,name=asset_definition_id,json=assetDefinitionId,proto3" json:"asset_definition_id,omitempty"`
-	StationId         string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Status            v1.ResourceStatus      `protobuf:"varint,7,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
-	Pose              *v11.LocalizedPose     `protobuf:"bytes,8,opt,name=pose,proto3" json:"pose,omitempty"`
-	Custom            *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Status            v1.ResourceStatus      `protobuf:"varint,6,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
+	Custom            *v1.CustomProperties   `protobuf:"bytes,7,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -105,25 +102,11 @@ func (x *AssetInstance) GetAssetDefinitionId() string {
 	return ""
 }
 
-func (x *AssetInstance) GetStationId() string {
-	if x != nil {
-		return x.StationId
-	}
-	return ""
-}
-
 func (x *AssetInstance) GetStatus() v1.ResourceStatus {
 	if x != nil {
 		return x.Status
 	}
 	return v1.ResourceStatus(0)
-}
-
-func (x *AssetInstance) GetPose() *v11.LocalizedPose {
-	if x != nil {
-		return x.Pose
-	}
-	return nil
 }
 
 func (x *AssetInstance) GetCustom() *v1.CustomProperties {
@@ -181,18 +164,15 @@ var File_resources_v1_asset_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_instance_proto_rawDesc = "" +
 	"\n" +
-	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\x81\x03\n" +
-	"\rAssetInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xaf\x02\n" +
+	"\rAssetInstance\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12<\n" +
-	"\x13asset_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf1\x04\x01R\x11assetDefinitionId\x12+\n" +
-	"\n" +
-	"station_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd8\xf1\x04\x01R\tstationId\x12;\n" +
-	"\x06status\x18\a \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12.\n" +
-	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
+	"\x13asset_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xb0\xf1\x04\x01R\x11assetDefinitionId\x12;\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x123\n" +
+	"\x06custom\x18\a \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
 	"\x0eAssetInstances\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.AssetInstanceR\x05itemsB\xbf\x01\n" +
 	"\x10com.resources.v1B\x12AssetInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
@@ -214,19 +194,17 @@ var file_resources_v1_asset_instance_proto_goTypes = []any{
 	(*AssetInstance)(nil),       // 0: resources.v1.AssetInstance
 	(*AssetInstances)(nil),      // 1: resources.v1.AssetInstances
 	(v1.ResourceStatus)(0),      // 2: common.v1.ResourceStatus
-	(*v11.LocalizedPose)(nil),   // 3: geometry.v1.LocalizedPose
-	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(*v1.CustomProperties)(nil), // 3: common.v1.CustomProperties
 }
 var file_resources_v1_asset_instance_proto_depIdxs = []int32{
 	2, // 0: resources.v1.AssetInstance.status:type_name -> common.v1.ResourceStatus
-	3, // 1: resources.v1.AssetInstance.pose:type_name -> geometry.v1.LocalizedPose
-	4, // 2: resources.v1.AssetInstance.custom:type_name -> common.v1.CustomProperties
-	0, // 3: resources.v1.AssetInstances.items:type_name -> resources.v1.AssetInstance
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 1: resources.v1.AssetInstance.custom:type_name -> common.v1.CustomProperties
+	0, // 2: resources.v1.AssetInstances.items:type_name -> resources.v1.AssetInstance
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_asset_instance_proto_init() }

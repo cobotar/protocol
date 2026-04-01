@@ -28,7 +28,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/actor_assignment.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n\x0f\x41\x63torAssignment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x32\n\x0eprocess_run_id\x18\x03 \x01(\tB\x0c\xbaH\tr\x04\xf0\xf1\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x34\n\x0fsequence_run_id\x18\x04 \x01(\tB\x0c\xbaH\tr\x04\xf8\xf1\x04\x01\xc8\x01\x01R\rsequenceRunId\x12,\n\x0btask_run_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\x80\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12;\n\x0b\x61ssigned_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nassignedAt\x12;\n\x0breleased_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nreleasedAt\"E\n\x10\x41\x63torAssignments\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x05itemsB\xb3\x01\n\x0e\x63om.runtime.v1B\x14\x41\x63torAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/actor_assignment.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n\x0f\x41\x63torAssignment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x32\n\x0eprocess_run_id\x18\x03 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x34\n\x0fsequence_run_id\x18\x04 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12,\n\x0btask_run_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12;\n\x0b\x61ssigned_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nassignedAt\x12;\n\x0breleased_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nreleasedAt\"E\n\x10\x41\x63torAssignments\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x05itemsB\xb3\x01\n\x0e\x63om.runtime.v1B\x14\x41\x63torAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,11 +39,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACTORASSIGNMENT'].fields_by_name['actor']._loaded_options = None
   _globals['_ACTORASSIGNMENT'].fields_by_name['actor']._serialized_options = b'\272H\003\310\001\001'
   _globals['_ACTORASSIGNMENT'].fields_by_name['process_run_id']._loaded_options = None
-  _globals['_ACTORASSIGNMENT'].fields_by_name['process_run_id']._serialized_options = b'\272H\tr\004\360\361\004\001\310\001\001'
+  _globals['_ACTORASSIGNMENT'].fields_by_name['process_run_id']._serialized_options = b'\272H\tr\004\210\362\004\001\310\001\001'
   _globals['_ACTORASSIGNMENT'].fields_by_name['sequence_run_id']._loaded_options = None
-  _globals['_ACTORASSIGNMENT'].fields_by_name['sequence_run_id']._serialized_options = b'\272H\tr\004\370\361\004\001\310\001\001'
+  _globals['_ACTORASSIGNMENT'].fields_by_name['sequence_run_id']._serialized_options = b'\272H\tr\004\220\362\004\001\310\001\001'
   _globals['_ACTORASSIGNMENT'].fields_by_name['task_run_id']._loaded_options = None
-  _globals['_ACTORASSIGNMENT'].fields_by_name['task_run_id']._serialized_options = b'\272H\tr\004\200\362\004\001\310\001\001'
+  _globals['_ACTORASSIGNMENT'].fields_by_name['task_run_id']._serialized_options = b'\272H\tr\004\230\362\004\001\310\001\001'
   _globals['_ACTORASSIGNMENT']._serialized_start=180
   _globals['_ACTORASSIGNMENT']._serialized_end=538
   _globals['_ACTORASSIGNMENTS']._serialized_start=540

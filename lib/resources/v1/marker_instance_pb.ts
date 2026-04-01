@@ -7,8 +7,8 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
-import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
+import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
+import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/marker_instance.proto.
  */
 export const file_resources_v1_marker_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvbWFya2VyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEiqQIKDk1hcmtlckluc3RhbmNlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiYKC21hcmtlcl90ZXh0GAUgASgJQhG6SA5yDBACkgIHcm9iZXJ0YRIzCgR0eXBlGAYgASgOMhgucmVzb3VyY2VzLnYxLk1hcmtlclR5cGVCC7pICMgBAYIBAhABEhsKE2NvbmZpcm1faW5zdGFudGlhdGUYByABKAgSKAoEcG9zZRgIIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGAkgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiqAEKD01hcmtlckluc3RhbmNlcxKUAQoHbWFya2VycxgBIAMoCzIcLnJlc291cmNlcy52MS5NYXJrZXJJbnN0YW5jZUJlukhiugFfChJ1bmlxdWVfbWFya2VyX3RleHQSGm1hcmtlciB0ZXh0IG11c3QgYmUgdW5pcXVlGi10aGlzLm1hcChtYXJrZXIsIG1hcmtlci5tYXJrZXJfdGV4dCkudW5pcXVlKCkqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklFRBAAEhcKE01BUktFUl9UWVBFX1FSX0NPREUQAULAAQoQY29tLnJlc291cmNlcy52MUITTWFya2VySW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvbWFya2VyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEivwIKDk1hcmtlckluc3RhbmNlEhUKAmlkGAEgASgJQgm6SAZyBOjxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJgoLbWFya2VyX3RleHQYBSABKAlCEbpIDnIMEAKSAgdyb2JlcnRhEjMKBHR5cGUYBiABKA4yGC5yZXNvdXJjZXMudjEuTWFya2VyVHlwZUILukgIyAEBggECEAESGwoTY29uZmlybV9pbnN0YW50aWF0ZRgHIAEoCBIzCgZzdGF0dXMYCCABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABEisKBmN1c3RvbRgJIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIqgBCg9NYXJrZXJJbnN0YW5jZXMSlAEKB21hcmtlcnMYASADKAsyHC5yZXNvdXJjZXMudjEuTWFya2VySW5zdGFuY2VCZbpIYroBXwoSdW5pcXVlX21hcmtlcl90ZXh0EhptYXJrZXIgdGV4dCBtdXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAobWFya2VyLCBtYXJrZXIubWFya2VyX3RleHQpLnVuaXF1ZSgpKkIKCk1hcmtlclR5cGUSGwoXTUFSS0VSX1RZUEVfVU5TUEVDSUZJRUQQABIXChNNQVJLRVJfVFlQRV9RUl9DT0RFEAFCwAEKEGNvbS5yZXNvdXJjZXMudjFCE01hcmtlckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.MarkerInstance
@@ -62,9 +62,9 @@ export type MarkerInstance = Message<"resources.v1.MarkerInstance"> & {
   confirmInstantiate: boolean;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose pose = 8;
+   * @generated from field: common.v1.ResourceStatus status = 8;
    */
-  pose?: LocalizedPose;
+  status: ResourceStatus;
 
   /**
    * @generated from field: common.v1.CustomProperties custom = 9;

@@ -263,6 +263,9 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "battery_status" field.</summary>
     public const int BatteryStatusFieldNumber = 9;
     private global::Messages.Resources.V1.DeviceBatteryStatus batteryStatus_ = global::Messages.Resources.V1.DeviceBatteryStatus.Unspecified;
+    /// <summary>
+    /// TODO: add location
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Resources.V1.DeviceBatteryStatus BatteryStatus {

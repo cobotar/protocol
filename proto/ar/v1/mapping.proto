@@ -8,12 +8,12 @@ option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message RobotMapping {
-  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_id_component) = true];
+  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true];
   string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
 }
 
 message AssetMapping {
-  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_id_component) = true];
+  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true];
   string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
 }
 

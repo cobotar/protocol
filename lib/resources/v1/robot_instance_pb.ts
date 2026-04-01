@@ -9,8 +9,6 @@ import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
 import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
-import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
-import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -18,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/robot_instance.proto.
  */
 export const file_resources_v1_robot_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSLSAwoNUm9ib3RJbnN0YW5jZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpChNyb2JvdF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBKDxBAESFQoNc2VyaWFsX251bWJlchgGIAEoCRIgCgpzdGF0aW9uX2lkGAcgASgJQgy6SAnIAQFyBNjxBAESKwoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAggASgJQgm6SAZyBODxBAESIwobYXZhaWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAkgAygJEhwKFHN1cHBvcnRzX3Rvb2xfY2hhbmdlGAogASgIEhQKDGlzX3NpbXVsYXRlZBgLIAEoCBIzCgZzdGF0dXMYDCABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABEi0KCWJhc2VfcG9zZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiPAoOUm9ib3RJbnN0YW5jZXMSKgoFaXRlbXMYASADKAsyGy5yZXNvdXJjZXMudjEuUm9ib3RJbnN0YW5jZUK/AQoQY29tLnJlc291cmNlcy52MUISUm9ib3RJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSKMAwoNUm9ib3RJbnN0YW5jZRIVCgJpZBgBIAEoCUIJukgGcgSo8QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEikKE3JvYm90X2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIEoPEEARIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEisKGG1vdW50ZWRfdG9vbF9pbnN0YW5jZV9pZBgHIAEoCUIJukgGcgTg8QQBEiMKG2F2YWlsYWJsZV90b29sX2luc3RhbmNlX2lkcxgIIAMoCRIcChRzdXBwb3J0c190b29sX2NoYW5nZRgJIAEoCBIUCgxpc19zaW11bGF0ZWQYCiABKAgSMwoGc3RhdHVzGAsgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARIrCgZjdXN0b20YDCABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI8Cg5Sb2JvdEluc3RhbmNlcxIqCgVpdGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Sb2JvdEluc3RhbmNlQr8BChBjb20ucmVzb3VyY2VzLnYxQhJSb2JvdEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.RobotInstance
@@ -55,48 +53,38 @@ export type RobotInstance = Message<"resources.v1.RobotInstance"> & {
   serialNumber: string;
 
   /**
-   * @generated from field: string station_id = 7;
-   */
-  stationId: string;
-
-  /**
    * The tool instance currently mounted on the robot, if any.
    *
-   * @generated from field: string mounted_tool_instance_id = 8;
+   * @generated from field: string mounted_tool_instance_id = 7;
    */
   mountedToolInstanceId: string;
 
   /**
    * Tool instances available to this robot in the cell/tool dock/tool magazine.
    *
-   * @generated from field: repeated string available_tool_instance_ids = 9;
+   * @generated from field: repeated string available_tool_instance_ids = 8;
    */
   availableToolInstanceIds: string[];
 
   /**
    * Whether this robot instance can dynamically change between available tools.
    *
-   * @generated from field: bool supports_tool_change = 10;
+   * @generated from field: bool supports_tool_change = 9;
    */
   supportsToolChange: boolean;
 
   /**
-   * @generated from field: bool is_simulated = 11;
+   * @generated from field: bool is_simulated = 10;
    */
   isSimulated: boolean;
 
   /**
-   * @generated from field: common.v1.ResourceStatus status = 12;
+   * @generated from field: common.v1.ResourceStatus status = 11;
    */
   status: ResourceStatus;
 
   /**
-   * @generated from field: geometry.v1.LocalizedPose base_pose = 13;
-   */
-  basePose?: LocalizedPose;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 14;
+   * @generated from field: common.v1.CustomProperties custom = 12;
    */
   custom?: CustomProperties;
 };

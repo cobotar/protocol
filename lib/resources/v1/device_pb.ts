@@ -61,6 +61,8 @@ export type DeviceMessage = Message<"resources.v1.DeviceMessage"> & {
   batteryLevel: number;
 
   /**
+   * TODO: add location
+   *
    * @generated from field: resources.v1.DeviceBatteryStatus battery_status = 9;
    */
   batteryStatus: DeviceBatteryStatus;

@@ -25,27 +25,34 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVyZXNvdXJjZXMvdjEvY29udGFpbmVyX2luc3RhbmNlLnByb3RvEgxyZXNv",
-            "dXJjZXMudjEaIWNvbW1vbi92MS9jdXN0b21fcHJvcGVydGllcy5wcm90bxoV",
-            "Y29tbW9uL3YxL2VudW1zLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3Rv",
-            "ItwCChFDb250YWluZXJJbnN0YW5jZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFt",
-            "ZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
-            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI2Chdjb250YWluZXJfZGVmaW5pdGlv",
-            "bl9pZBgFIAEoCVIVY29udGFpbmVyRGVmaW5pdGlvbklkEh0KCnN0YXRpb25f",
-            "aWQYBiABKAlSCXN0YXRpb25JZBIxCgZzdGF0dXMYByABKA4yGS5jb21tb24u",
-            "djEuUmVzb3VyY2VTdGF0dXNSBnN0YXR1cxIuCgRwb3NlGAggASgLMhouZ2Vv",
-            "bWV0cnkudjEuTG9jYWxpemVkUG9zZVIEcG9zZRIzCgZjdXN0b20YCSABKAsy",
-            "Gy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIksKEkNvbnRh",
-            "aW5lckluc3RhbmNlcxI1CgVpdGVtcxgBIAMoCzIfLnJlc291cmNlcy52MS5D",
-            "b250YWluZXJJbnN0YW5jZVIFaXRlbXNCwwEKEGNvbS5yZXNvdXJjZXMudjFC",
-            "FkNvbnRhaW5lckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaIC",
-            "A1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeIC",
-            "GFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnBy",
-            "b3RvMw=="));
+            "dXJjZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9u",
+            "L3YxL2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhVjb21tb24vdjEvZW51bXMu",
+            "cHJvdG8aFmdlb21ldHJ5L3YxL3Bvc2UucHJvdG8aK3ZhbGlkYXRpb24vdjEv",
+            "cHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8itQEKEUNvbnRhaW5lckxv",
+            "Y2F0aW9uEiIKB2xpbmVfaWQYASABKAlCCbpIBnIEwPIEAVIGbGluZUlkEiIK",
+            "B2NlbGxfaWQYAiABKAlCCbpIBnIEuPIEAVIGY2VsbElkEigKCnN0YXRpb25f",
+            "aWQYAyABKAlCCbpIBnIE+PEEAVIJc3RhdGlvbklkEi4KBHBvc2UYBCABKAsy",
+            "Gi5nZW9tZXRyeS52MS5Mb2NhbGl6ZWRQb3NlUgRwb3NlIvgCChFDb250YWlu",
+            "ZXJJbnN0YW5jZRIZCgJpZBgBIAEoCUIJukgGcgTQ6zABUgJpZBIdCgRuYW1l",
+            "GAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIg",
+            "CgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SRAoXY29udGFpbmVy",
+            "X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIEyPIEAcgBAVIVY29udGFpbmVy",
+            "RGVmaW5pdGlvbklkEjsKBnN0YXR1cxgGIAEoDjIZLmNvbW1vbi52MS5SZXNv",
+            "dXJjZVN0YXR1c0IIukgFggECEAFSBnN0YXR1cxI7Cghsb2NhdGlvbhgHIAEo",
+            "CzIfLnJlc291cmNlcy52MS5Db250YWluZXJMb2NhdGlvblIIbG9jYXRpb24S",
+            "MwoGY3VzdG9tGAggASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNS",
+            "BmN1c3RvbSJLChJDb250YWluZXJJbnN0YW5jZXMSNQoFaXRlbXMYASADKAsy",
+            "Hy5yZXNvdXJjZXMudjEuQ29udGFpbmVySW5zdGFuY2VSBWl0ZW1zQsMBChBj",
+            "b20ucmVzb3VyY2VzLnYxQhZDb250YWluZXJJbnN0YW5jZVByb3RvUAFaPWdp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMv",
+            "djE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHK",
+            "AgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1S",
+            "ZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerInstance), global::Messages.Resources.V1.ContainerInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ContainerDefinitionId", "StationId", "Status", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerLocation), global::Messages.Resources.V1.ContainerLocation.Parser, new[]{ "LineId", "CellId", "StationId", "Pose" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerInstance), global::Messages.Resources.V1.ContainerInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ContainerDefinitionId", "Status", "Location", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerInstances), global::Messages.Resources.V1.ContainerInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -53,6 +60,327 @@ namespace Messages.Resources.V1 {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ContainerLocation : pb::IMessage<ContainerLocation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ContainerLocation> _parser = new pb::MessageParser<ContainerLocation>(() => new ContainerLocation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ContainerLocation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ContainerLocation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ContainerLocation(ContainerLocation other) : this() {
+      lineId_ = other.lineId_;
+      cellId_ = other.cellId_;
+      stationId_ = other.stationId_;
+      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ContainerLocation Clone() {
+      return new ContainerLocation(this);
+    }
+
+    /// <summary>Field number for the "line_id" field.</summary>
+    public const int LineIdFieldNumber = 1;
+    private string lineId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LineId {
+      get { return lineId_; }
+      set {
+        lineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cell_id" field.</summary>
+    public const int CellIdFieldNumber = 2;
+    private string cellId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CellId {
+      get { return cellId_; }
+      set {
+        cellId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "station_id" field.</summary>
+    public const int StationIdFieldNumber = 3;
+    private string stationId_ = "";
+    /// <summary>
+    /// Station/cell where this container currently belongs or is mounted.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StationId {
+      get { return stationId_; }
+      set {
+        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "pose" field.</summary>
+    public const int PoseFieldNumber = 4;
+    private global::Messages.Common.V1.LocalizedPose pose_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.LocalizedPose Pose {
+      get { return pose_; }
+      set {
+        pose_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ContainerLocation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ContainerLocation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LineId != other.LineId) return false;
+      if (CellId != other.CellId) return false;
+      if (StationId != other.StationId) return false;
+      if (!object.Equals(Pose, other.Pose)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LineId.Length != 0) hash ^= LineId.GetHashCode();
+      if (CellId.Length != 0) hash ^= CellId.GetHashCode();
+      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (pose_ != null) hash ^= Pose.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LineId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LineId);
+      }
+      if (CellId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CellId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StationId);
+      }
+      if (pose_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Pose);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LineId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LineId);
+      }
+      if (CellId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CellId);
+      }
+      if (StationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StationId);
+      }
+      if (pose_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Pose);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (LineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LineId);
+      }
+      if (CellId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CellId);
+      }
+      if (StationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
+      }
+      if (pose_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ContainerLocation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LineId.Length != 0) {
+        LineId = other.LineId;
+      }
+      if (other.CellId.Length != 0) {
+        CellId = other.CellId;
+      }
+      if (other.StationId.Length != 0) {
+        StationId = other.StationId;
+      }
+      if (other.pose_ != null) {
+        if (pose_ == null) {
+          Pose = new global::Messages.Common.V1.LocalizedPose();
+        }
+        Pose.MergeFrom(other.Pose);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            LineId = input.ReadString();
+            break;
+          }
+          case 18: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 26: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (pose_ == null) {
+              Pose = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Pose);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            LineId = input.ReadString();
+            break;
+          }
+          case 18: {
+            CellId = input.ReadString();
+            break;
+          }
+          case 26: {
+            StationId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (pose_ == null) {
+              Pose = new global::Messages.Common.V1.LocalizedPose();
+            }
+            input.ReadMessage(Pose);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// ContainerInstance represents a concrete container in a station/cell.
   ///
@@ -76,7 +404,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,9 +429,8 @@ namespace Messages.Resources.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       containerDefinitionId_ = other.containerDefinitionId_;
-      stationId_ = other.stationId_;
       status_ = other.status_;
-      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
+      location_ = other.location_ != null ? other.location_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -189,23 +516,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 6;
-    private string stationId_ = "";
-    /// <summary>
-    /// Station/cell where this container currently belongs or is mounted.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StationId {
-      get { return stationId_; }
-      set {
-        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 7;
+    public const int StatusFieldNumber = 6;
     private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     /// <summary>
     /// Operational status such as available, disabled, or faulted.
@@ -219,23 +531,23 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 8;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 7;
+    private global::Messages.Resources.V1.ContainerLocation location_;
     /// <summary>
-    /// Pose of the container instance in the station/environment.
+    /// Dynamic location of the container instance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
-      get { return pose_; }
+    public global::Messages.Resources.V1.ContainerLocation Location {
+      get { return location_; }
       set {
-        pose_ = value;
+        location_ = value;
       }
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
+    public const int CustomFieldNumber = 8;
     private global::Messages.Common.V1.CustomProperties custom_;
     /// <summary>
     /// Extension point for instance-specific data.
@@ -269,9 +581,8 @@ namespace Messages.Resources.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (ContainerDefinitionId != other.ContainerDefinitionId) return false;
-      if (StationId != other.StationId) return false;
       if (Status != other.Status) return false;
-      if (!object.Equals(Pose, other.Pose)) return false;
+      if (!object.Equals(Location, other.Location)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -285,9 +596,8 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ContainerDefinitionId.Length != 0) hash ^= ContainerDefinitionId.GetHashCode();
-      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (pose_ != null) hash ^= Pose.GetHashCode();
+      if (location_ != null) hash ^= Location.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -327,20 +637,16 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteString(ContainerDefinitionId);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
+      if (location_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Location);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(66);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -373,20 +679,16 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteString(ContainerDefinitionId);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
+      if (location_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Location);
       }
       if (custom_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(66);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -414,14 +716,11 @@ namespace Messages.Resources.V1 {
       if (ContainerDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ContainerDefinitionId);
       }
-      if (StationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
-      if (pose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      if (location_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
       }
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -453,17 +752,14 @@ namespace Messages.Resources.V1 {
       if (other.ContainerDefinitionId.Length != 0) {
         ContainerDefinitionId = other.ContainerDefinitionId;
       }
-      if (other.StationId.Length != 0) {
-        StationId = other.StationId;
-      }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
       }
-      if (other.pose_ != null) {
-        if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+      if (other.location_ != null) {
+        if (location_ == null) {
+          Location = new global::Messages.Resources.V1.ContainerLocation();
         }
-        Pose.MergeFrom(other.Pose);
+        Location.MergeFrom(other.Location);
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -510,22 +806,18 @@ namespace Messages.Resources.V1 {
             ContainerDefinitionId = input.ReadString();
             break;
           }
-          case 50: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 56: {
+          case 48: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+          case 58: {
+            if (location_ == null) {
+              Location = new global::Messages.Resources.V1.ContainerLocation();
             }
-            input.ReadMessage(Pose);
+            input.ReadMessage(Location);
             break;
           }
-          case 74: {
+          case 66: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -571,22 +863,18 @@ namespace Messages.Resources.V1 {
             ContainerDefinitionId = input.ReadString();
             break;
           }
-          case 50: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 56: {
+          case 48: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+          case 58: {
+            if (location_ == null) {
+              Location = new global::Messages.Resources.V1.ContainerLocation();
             }
-            input.ReadMessage(Pose);
+            input.ReadMessage(Location);
             break;
           }
-          case 74: {
+          case 66: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -615,7 +903,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -23,22 +23,22 @@ message MarkerLocation {
 }
 
 message RobotLocation {
-  string id = 1 [(buf.validate.field).string.(validation.v1.robot_id_component) = true];
+  string id = 1 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true];
   geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message AssetLocation {
-  string id = 1 [(buf.validate.field).string.(validation.v1.asset_id_component) = true];
+  string id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true];
   geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message PartLocation {
-  string id = 1 [(buf.validate.field).string.(validation.v1.part_id_component) = true];
+  string id = 1 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true];
   geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 
 message ToolLocation {
-  string id = 1 [(buf.validate.field).string.(validation.v1.tool_id_component) = true];
+  string id = 1 [(buf.validate.field).string.(validation.v1.tool_definition_id_component) = true];
   geometry.v1.LocalizedPose location = 2 [(buf.validate.field).required = true];
 }
 

@@ -28,34 +28,52 @@ extend buf.validate.StringRules {
     expression: "(this == '' || this.startsWith('property-'))"
   }];
 
-  optional bool robot_id_component = 10004 [(buf.validate.predefined).cel = {
-    id: "string.robot_id_component"
-    message: "this does not seem to be a robot id"
-    expression: "(this == '' || this.startsWith('robot-'))"
+  optional bool robot_definition_id_component = 10004 [(buf.validate.predefined).cel = {
+    id: "string.robot_definition_id_component"
+    message: "this does not seem to be a robot definition id"
+    expression: "(this == '' || this.startsWith('robot_definition-'))"
   }];
 
-  optional bool asset_id_component = 10005 [(buf.validate.predefined).cel = {
-    id: "string.asset_id_component"
-    message: "this does not seem to be a asset id"
-    expression: "(this == '' || this.startsWith('asset-'))"
+  optional bool robot_instance_id_component = 10005 [(buf.validate.predefined).cel = {
+    id: "string.robot_instance_id_component"
+    message: "this does not seem to be a robot instance id"
+    expression: "(this == '' || this.startsWith('robot_instance-'))"
   }];
 
-  optional bool environment_id_component = 10006 [(buf.validate.predefined).cel = {
+  optional bool asset_definition_id_component = 10006 [(buf.validate.predefined).cel = {
+    id: "string.asset_definition_id_component"
+    message: "this does not seem to be a asset definition id"
+    expression: "(this == '' || this.startsWith('asset_definition-'))"
+  }];
+
+  optional bool asset_instance_id_component = 10007 [(buf.validate.predefined).cel = {
+    id: "string.asset_instance_id_component"
+    message: "this does not seem to be a asset instance id"
+    expression: "(this == '' || this.startsWith('asset_instance-'))"
+  }];
+
+  optional bool environment_id_component = 10008 [(buf.validate.predefined).cel = {
     id: "string.environment_id_component"
     message: "this does not seem to be a environment id"
     expression: "(this == '' || this.startsWith('environment-'))"
   }];
 
-  optional bool part_id_component = 10007 [(buf.validate.predefined).cel = {
-    id: "string.part_id_component"
-    message: "this does not seem to be a part id"
-    expression: "(this == '' || this.startsWith('part-'))"
+  optional bool part_definition_id_component = 10009 [(buf.validate.predefined).cel = {
+    id: "string.part_definition_id_component"
+    message: "this does not seem to be a part definition id"
+    expression: "(this == '' || this.startsWith('part_definition-'))"
   }];
 
-  optional bool tool_id_component = 10008 [(buf.validate.predefined).cel = {
-    id: "string.tool_id_component"
-    message: "this does not seem to be a tool id"
-    expression: "(this == '' || this.startsWith('tool-'))"
+  optional bool part_instance_id_component = 10010 [(buf.validate.predefined).cel = {
+    id: "string.part_instance_id_component"
+    message: "this does not seem to be a part instance id"
+    expression: "(this == '' || this.startsWith('part_instance-'))"
+  }];
+
+  optional bool tool_definition_id_component = 10011 [(buf.validate.predefined).cel = {
+    id: "string.tool_definition_id_component"
+    message: "this does not seem to be a tool definition id"
+    expression: "(this == '' || this.startsWith('tool_definition-'))"
   }];
 
   optional bool tool_instance_id_component = 10012 [(buf.validate.predefined).cel = {
@@ -64,75 +82,93 @@ extend buf.validate.StringRules {
     expression: "(this == '' || this.startsWith('tool_instance-'))"
   }];
 
-  optional bool marker_id_component = 10009 [(buf.validate.predefined).cel = {
+  optional bool marker_id_component = 10013 [(buf.validate.predefined).cel = {
     id: "string.marker_id_component"
     message: "this does not seem to be a marker id"
     expression: "(this == '' || this.startsWith('marker-'))"
   }];
 
-  optional bool fixture_id_component = 10010 [(buf.validate.predefined).cel = {
+  optional bool fixture_id_component = 10014 [(buf.validate.predefined).cel = {
     id: "string.fixture_id_component"
     message: "this does not seem to be a fixture id"
     expression: "(this == '' || this.startsWith('fixture-'))"
   }];
 
-  optional bool station_id_component = 10011 [(buf.validate.predefined).cel = {
+  optional bool station_id_component = 10015 [(buf.validate.predefined).cel = {
     id: "string.station_id_component"
     message: "this does not seem to be a station id"
     expression: "(this == '' || this.startsWith('station-'))"
   }];
 
-  optional bool skill_id_component = 10013 [(buf.validate.predefined).cel = {
+  optional bool skill_id_component = 10016 [(buf.validate.predefined).cel = {
     id: "string.skill_id_component"
     message: "this does not seem to be a skill id"
     expression: "(this == '' || this.startsWith('skill-'))"
   }];
 
-  optional bool process_run_id_component = 10014 [(buf.validate.predefined).cel = {
+  optional bool process_run_id_component = 10017 [(buf.validate.predefined).cel = {
     id: "string.process_run_id_component"
     message: "this does not seem to be a process run id"
     expression: "(this == '' || this.startsWith('process_run-'))"
   }];
 
-  optional bool sequence_run_id_component = 10015 [(buf.validate.predefined).cel = {
+  optional bool sequence_run_id_component = 10018 [(buf.validate.predefined).cel = {
     id: "string.sequence_run_id_component"
     message: "this does not seem to be a sequence run id"
     expression: "(this == '' || this.startsWith('sequence_run-'))"
   }];
 
-  optional bool task_run_id_component = 10016 [(buf.validate.predefined).cel = {
+  optional bool task_run_id_component = 10019 [(buf.validate.predefined).cel = {
     id: "string.task_run_id_component"
     message: "this does not seem to be a task run id"
     expression: "(this == '' || this.startsWith('task_run-'))"
   }];
 
-  optional bool process_recipe_id_component = 10017 [(buf.validate.predefined).cel = {
+  optional bool process_recipe_id_component = 10020 [(buf.validate.predefined).cel = {
     id: "string.process_recipe_id_component"
     message: "this does not seem to be a process recipe id"
     expression: "(this == '' || this.startsWith('process_recipe-'))"
   }];
 
-  optional bool sequence_definition_id_component = 10018 [(buf.validate.predefined).cel = {
+  optional bool sequence_definition_id_component = 10021 [(buf.validate.predefined).cel = {
     id: "string.sequence_definition_id_component"
     message: "this does not seem to be a sequence definition id"
     expression: "(this == '' || this.startsWith('sequence_definition-'))"
   }];
 
-  optional bool task_definition_id_component = 10019 [(buf.validate.predefined).cel = {
+  optional bool task_definition_id_component = 10022 [(buf.validate.predefined).cel = {
     id: "string.task_definition_id_component"
     message: "this does not seem to be a task definition id"
     expression: "(this == '' || this.startsWith('task_definition-'))"
   }];
 
-  optional bool cell_id_component = 10020 [(buf.validate.predefined).cel = {
+  optional bool cell_id_component = 10023 [(buf.validate.predefined).cel = {
     id: "string.cell_id_component"
     message: "this does not seem to be a cell id"
     expression: "(this == '' || this.startsWith('cell-'))"
   }];
 
-  optional bool line_id_component = 10021 [(buf.validate.predefined).cel = {
+  optional bool line_id_component = 10024 [(buf.validate.predefined).cel = {
     id: "string.line_id_component"
     message: "this does not seem to be a line id"
     expression: "(this == '' || this.startsWith('line-'))"
+  }];
+
+  optional bool container_definition_id_component = 10025 [(buf.validate.predefined).cel = {
+    id: "string.container_definition_id_component"
+    message: "this does not seem to be a container definition id"
+    expression: "(this == '' || this.startsWith('container_definition-'))"
+  }];
+
+  optional bool container_instance_id_component = 100026 [(buf.validate.predefined).cel = {
+    id: "string.robot_instance_id_component"
+    message: "this does not seem to be a container instance id"
+    expression: "(this == '' || this.startsWith('container_instance-'))"
+  }];
+
+  optional bool worker_id_component = 100027 [(buf.validate.predefined).cel = {
+    id: "string.worker_id_component"
+    message: "this does not seem to be a worker id"
+    expression: "(this == '' || this.startsWith('worker-'))"
   }];
 }

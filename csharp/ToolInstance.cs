@@ -27,31 +27,28 @@ namespace Messages.Resources.V1 {
             "CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2Vz",
             "LnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aIWNvbW1vbi92MS9j",
             "dXN0b21fcHJvcGVydGllcy5wcm90bxoVY29tbW9uL3YxL2VudW1zLnByb3Rv",
-            "GhZnZW9tZXRyeS92MS9wb3NlLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGlt",
-            "ZXN0YW1wLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
-            "X3J1bGVzLnByb3RvIpcECgxUb29sSW5zdGFuY2USDgoCaWQYASABKAlSAmlk",
-            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
-            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI6ChJ0",
-            "b29sX2RlZmluaXRpb25faWQYBSABKAlCDLpICXIEwPEEAcgBAVIQdG9vbERl",
-            "ZmluaXRpb25JZBIjCg1zZXJpYWxfbnVtYmVyGAYgASgJUgxzZXJpYWxOdW1i",
-            "ZXISKwoKc3RhdGlvbl9pZBgHIAEoCUIMukgJcgTY8QQByAEBUglzdGF0aW9u",
-            "SWQSOwoGc3RhdHVzGAggASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVz",
-            "Qgi6SAWCAQIQAVIGc3RhdHVzEh4KCmNhbGlicmF0ZWQYCSABKAhSCmNhbGli",
-            "cmF0ZWQSUgoXY2FsaWJyYXRpb25fdmFsaWRfdW50aWwYCiABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wUhVjYWxpYnJhdGlvblZhbGlkVW50aWwS",
-            "LgoEcG9zZRgLIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBHBv",
-            "c2USMwoGY3VzdG9tGAwgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRp",
-            "ZXNSBmN1c3RvbSJBCg1Ub29sSW5zdGFuY2VzEjAKBWl0ZW1zGAEgAygLMhou",
-            "cmVzb3VyY2VzLnYxLlRvb2xJbnN0YW5jZVIFaXRlbXNCvgEKEGNvbS5yZXNv",
-            "dXJjZXMudjFCEVRvb2xJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29i",
-            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2Vz",
-            "djGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNc",
-            "VjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYx",
-            "YgZwcm90bzM="));
+            "Gh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGit2YWxpZGF0aW9u",
+            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIsUDCgxUb29sSW5z",
+            "dGFuY2USGQoCaWQYASABKAlCCbpIBnIE4PEEAVICaWQSHQoEbmFtZRgCIAEo",
+            "CUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
+            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjoKEnRvb2xfZGVmaW5pdGlv",
+            "bl9pZBgFIAEoCUIMukgJcgTY8QQByAEBUhB0b29sRGVmaW5pdGlvbklkEiMK",
+            "DXNlcmlhbF9udW1iZXIYBiABKAlSDHNlcmlhbE51bWJlchI7CgZzdGF0dXMY",
+            "ByABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABUgZz",
+            "dGF0dXMSHgoKY2FsaWJyYXRlZBgIIAEoCFIKY2FsaWJyYXRlZBJSChdjYWxp",
+            "YnJhdGlvbl92YWxpZF91bnRpbBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXBSFWNhbGlicmF0aW9uVmFsaWRVbnRpbBIzCgZjdXN0b20YCiAB",
+            "KAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIkEKDVRv",
+            "b2xJbnN0YW5jZXMSMAoFaXRlbXMYASADKAsyGi5yZXNvdXJjZXMudjEuVG9v",
+            "bEluc3RhbmNlUgVpdGVtc0K+AQoQY29tLnJlc291cmNlcy52MUIRVG9vbElu",
+            "c3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3Nh",
+            "Z2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xW",
+            "MVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ToolInstance), global::Messages.Resources.V1.ToolInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ToolDefinitionId", "SerialNumber", "StationId", "Status", "Calibrated", "CalibrationValidUntil", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ToolInstance), global::Messages.Resources.V1.ToolInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ToolDefinitionId", "SerialNumber", "Status", "Calibrated", "CalibrationValidUntil", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ToolInstances), global::Messages.Resources.V1.ToolInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -100,11 +97,9 @@ namespace Messages.Resources.V1 {
       description_ = other.description_;
       toolDefinitionId_ = other.toolDefinitionId_;
       serialNumber_ = other.serialNumber_;
-      stationId_ = other.stationId_;
       status_ = other.status_;
       calibrated_ = other.calibrated_;
       calibrationValidUntil_ = other.calibrationValidUntil_ != null ? other.calibrationValidUntil_.Clone() : null;
-      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -187,20 +182,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 7;
-    private string stationId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StationId {
-      get { return stationId_; }
-      set {
-        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 8;
+    public const int StatusFieldNumber = 7;
     private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -212,7 +195,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "calibrated" field.</summary>
-    public const int CalibratedFieldNumber = 9;
+    public const int CalibratedFieldNumber = 8;
     private bool calibrated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -224,7 +207,7 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "calibration_valid_until" field.</summary>
-    public const int CalibrationValidUntilFieldNumber = 10;
+    public const int CalibrationValidUntilFieldNumber = 9;
     private global::Google.Protobuf.WellKnownTypes.Timestamp calibrationValidUntil_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -235,20 +218,8 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 11;
-    private global::Messages.Common.V1.LocalizedPose pose_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
-      get { return pose_; }
-      set {
-        pose_ = value;
-      }
-    }
-
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 12;
+    public const int CustomFieldNumber = 10;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -280,11 +251,9 @@ namespace Messages.Resources.V1 {
       if (Description != other.Description) return false;
       if (ToolDefinitionId != other.ToolDefinitionId) return false;
       if (SerialNumber != other.SerialNumber) return false;
-      if (StationId != other.StationId) return false;
       if (Status != other.Status) return false;
       if (Calibrated != other.Calibrated) return false;
       if (!object.Equals(CalibrationValidUntil, other.CalibrationValidUntil)) return false;
-      if (!object.Equals(Pose, other.Pose)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -299,11 +268,9 @@ namespace Messages.Resources.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ToolDefinitionId.Length != 0) hash ^= ToolDefinitionId.GetHashCode();
       if (SerialNumber.Length != 0) hash ^= SerialNumber.GetHashCode();
-      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Calibrated != false) hash ^= Calibrated.GetHashCode();
       if (calibrationValidUntil_ != null) hash ^= CalibrationValidUntil.GetHashCode();
-      if (pose_ != null) hash ^= Pose.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -347,28 +314,20 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (Calibrated != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(Calibrated);
       }
       if (calibrationValidUntil_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(74);
         output.WriteMessage(CalibrationValidUntil);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(Pose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(82);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -405,28 +364,20 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(50);
         output.WriteString(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (Calibrated != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(Calibrated);
       }
       if (calibrationValidUntil_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(74);
         output.WriteMessage(CalibrationValidUntil);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(Pose);
-      }
       if (custom_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(82);
         output.WriteMessage(Custom);
       }
       if (_unknownFields != null) {
@@ -457,9 +408,6 @@ namespace Messages.Resources.V1 {
       if (SerialNumber.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SerialNumber);
       }
-      if (StationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
-      }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
@@ -468,9 +416,6 @@ namespace Messages.Resources.V1 {
       }
       if (calibrationValidUntil_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CalibrationValidUntil);
-      }
-      if (pose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
       }
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -505,9 +450,6 @@ namespace Messages.Resources.V1 {
       if (other.SerialNumber.Length != 0) {
         SerialNumber = other.SerialNumber;
       }
-      if (other.StationId.Length != 0) {
-        StationId = other.StationId;
-      }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
       }
@@ -519,12 +461,6 @@ namespace Messages.Resources.V1 {
           CalibrationValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         CalibrationValidUntil.MergeFrom(other.CalibrationValidUntil);
-      }
-      if (other.pose_ != null) {
-        if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
-        }
-        Pose.MergeFrom(other.Pose);
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -575,33 +511,22 @@ namespace Messages.Resources.V1 {
             SerialNumber = input.ReadString();
             break;
           }
-          case 58: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 64: {
+          case 56: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 64: {
             Calibrated = input.ReadBool();
             break;
           }
-          case 82: {
+          case 74: {
             if (calibrationValidUntil_ == null) {
               CalibrationValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CalibrationValidUntil);
             break;
           }
-          case 90: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
-            break;
-          }
-          case 98: {
+          case 82: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
@@ -651,33 +576,22 @@ namespace Messages.Resources.V1 {
             SerialNumber = input.ReadString();
             break;
           }
-          case 58: {
-            StationId = input.ReadString();
-            break;
-          }
-          case 64: {
+          case 56: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 64: {
             Calibrated = input.ReadBool();
             break;
           }
-          case 82: {
+          case 74: {
             if (calibrationValidUntil_ == null) {
               CalibrationValidUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CalibrationValidUntil);
             break;
           }
-          case 90: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
-            break;
-          }
-          case 98: {
+          case 82: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }

@@ -16,7 +16,39 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/worker_definition.proto.
  */
 export const file_resources_v1_worker_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSKjAgoQV29ya2VyRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRIQCghkaXNhYmxlZBgFIAEoCBITCgtlbXBsb3llZV9pZBgGIAEoCRI4ChJhcl9lZGl0X3Blcm1pc3Npb24YByABKA4yHC5yZXNvdXJjZXMudjEuRWRpdFBlcm1pc3Npb24SOQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgIIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZRIrCgZjdXN0b20YCSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyJCChFXb3JrZXJEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLnJlc291cmNlcy52MS5Xb3JrZXJEZWZpbml0aW9uKoQBCg5FZGl0UGVybWlzc2lvbhIfChtFRElUX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIZChVFRElUX1BFUk1JU1NJT05fQkFTSUMQARIcChhFRElUX1BFUk1JU1NJT05fQ09TTUVUSUMQAhIYChRFRElUX1BFUk1JU1NJT05fRlVMTBADQsIBChBjb20ucmVzb3VyY2VzLnYxQhVXb3JrZXJEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJnCg5Xb3JrZXJMb2NhdGlvbhIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEASLeAgoQV29ya2VyRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTY6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjgKEmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvbhI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEi4KCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2VzLnYxLldvcmtlckxvY2F0aW9uEisKBmN1c3RvbRgKIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIkIKEVdvcmtlckRlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb24qhAEKDkVkaXRQZXJtaXNzaW9uEh8KG0VESVRfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEhkKFUVESVRfUEVSTUlTU0lPTl9CQVNJQxABEhwKGEVESVRfUEVSTUlTU0lPTl9DT1NNRVRJQxACEhgKFEVESVRfUEVSTUlTU0lPTl9GVUxMEANCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+
+/**
+ * WorkerLocation describes the current operating area of a worker.
+ *
+ * Dynamic resources such as workers own their current location because they
+ * move independently through the system.
+ *
+ * @generated from message resources.v1.WorkerLocation
+ */
+export type WorkerLocation = Message<"resources.v1.WorkerLocation"> & {
+  /**
+   * @generated from field: string line_id = 1;
+   */
+  lineId: string;
+
+  /**
+   * @generated from field: string cell_id = 2;
+   */
+  cellId: string;
+
+  /**
+   * @generated from field: string station_id = 3;
+   */
+  stationId: string;
+};
+
+/**
+ * Describes the message resources.v1.WorkerLocation.
+ * Use `create(WorkerLocationSchema)` to create a new message.
+ */
+export const WorkerLocationSchema: GenMessage<WorkerLocation> = /*@__PURE__*/
+  messageDesc(file_resources_v1_worker_definition, 0);
 
 /**
  * @generated from message resources.v1.WorkerDefinition
@@ -65,7 +97,14 @@ export type WorkerDefinition = Message<"resources.v1.WorkerDefinition"> & {
   externalReferences: ExternalReference[];
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 9;
+   * Optional current location / operating area.
+   *
+   * @generated from field: resources.v1.WorkerLocation location = 9;
+   */
+  location?: WorkerLocation;
+
+  /**
+   * @generated from field: common.v1.CustomProperties custom = 10;
    */
   custom?: CustomProperties;
 };
@@ -75,7 +114,7 @@ export type WorkerDefinition = Message<"resources.v1.WorkerDefinition"> & {
  * Use `create(WorkerDefinitionSchema)` to create a new message.
  */
 export const WorkerDefinitionSchema: GenMessage<WorkerDefinition> = /*@__PURE__*/
-  messageDesc(file_resources_v1_worker_definition, 0);
+  messageDesc(file_resources_v1_worker_definition, 1);
 
 /**
  * @generated from message resources.v1.WorkerDefinitions
@@ -92,7 +131,7 @@ export type WorkerDefinitions = Message<"resources.v1.WorkerDefinitions"> & {
  * Use `create(WorkerDefinitionsSchema)` to create a new message.
  */
 export const WorkerDefinitionsSchema: GenMessage<WorkerDefinitions> = /*@__PURE__*/
-  messageDesc(file_resources_v1_worker_definition, 1);
+  messageDesc(file_resources_v1_worker_definition, 2);
 
 /**
  * @generated from enum resources.v1.EditPermission

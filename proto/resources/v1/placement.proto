@@ -1,0 +1,45 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "geometry/v1/pose.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+message ToolPlacement {
+  string tool_instance_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.tool_instance_id_component) = true
+  ];
+  geometry.v1.LocalizedPose pose = 2; // Optional placement pose relative to station/cell frame.
+  string comment = 3;
+}
+
+message AssetPlacement {
+  string asset_instance_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_instance_id_component) = true
+  ];
+  geometry.v1.LocalizedPose pose = 2; // Optional placement pose relative to station/cell frame.
+  string comment = 3;
+}
+
+message RobotPlacement {
+  string robot_instance_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.robot_instance_id_component) = true
+  ];
+  geometry.v1.LocalizedPose pose = 2; // Optional robot base pose relative to station/cell frame.
+  string comment = 3;
+}
+
+message MarkerPlacement {
+  string marker_instance_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.marker_id_component) = true
+  ];
+  geometry.v1.LocalizedPose pose = 2; // Optional pose override if needed for station/cell-local placement.
+  string comment = 3;
+}

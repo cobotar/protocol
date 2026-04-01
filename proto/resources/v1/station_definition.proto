@@ -4,6 +4,7 @@ package resources.v1;
 import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
+import "resources/v1/placement.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
@@ -60,6 +61,14 @@ enum StationStatus {
 // - own station-local tools, containers, robots, markers, and frame
 // - expose operational state such as OPEN/BUSY/CLOSED/BLOCKED
 // - optionally allow queueing when already occupied
+//
+// Static resources such as tools, assets, robots, and markers are owned by
+// the workspace (station/cell) rather than the instance itself.
+// This makes workspace composition explicit and avoids duplicating placement
+// ownership across both the resource instance and the workspace.
+//
+// Dynamic resources such as workers, containers, and part instances own their
+// current location because they move independently through the system.
 message StationDefinition {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
@@ -69,14 +78,14 @@ message StationDefinition {
   StationStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability used by loaders, planners, and UIs.
   int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this station should host concurrently.
   bool allow_queued_process = 8; // If true, loaders may create queued ProcessRuns when the station is BUSY.
-  repeated string tool_instance_ids = 9; // Station-local tools mounted, parked, or otherwise directly available here.
-  repeated string container_instance_ids = 10; // Station-local fixtures, trays, pallets, bins, or other concrete containers.
-  repeated string robot_instance_ids = 11; // Robots directly assigned to or executing within this station.
-  repeated string asset_instance_ids = 12; // Station-local assets such as cameras, HMIs, feeders, or sensors.
-  repeated string marker_instance_ids = 13; // Markers used specifically at this station for localization, AR anchoring, or identification.
-  repeated string worker_ids = 14; // Workers explicitly assigned to this station. Use cell-level worker_ids for shared pools.
-  geometry.v1.LocalizedPose frame = 15; // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
-  common.v1.CustomProperties custom = 16;
+
+  repeated ToolPlacement tools = 9; // Station-local tools mounted, parked, or otherwise directly available here.
+  repeated RobotPlacement robots = 10; // Robots directly assigned to or executing within this station.
+  repeated AssetPlacement assets = 11; // Station-local assets such as cameras, HMIs, feeders, or sensors.
+  repeated MarkerPlacement markers = 12; // Markers used specifically at this station for localization, AR anchoring, or identification.
+
+  geometry.v1.LocalizedPose frame = 13; // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
+  common.v1.CustomProperties custom = 14;
 }
 
 message StationDefinitions {

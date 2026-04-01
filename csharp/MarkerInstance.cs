@@ -26,31 +26,32 @@ namespace Messages.Resources.V1 {
           string.Concat(
             "CiJyZXNvdXJjZXMvdjEvbWFya2VyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJj",
             "ZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9uL3Yx",
-            "L2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnBy",
-            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvIvoCCg5NYXJrZXJJbnN0YW5jZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFt",
-            "ZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24S",
-            "IAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjIKC21hcmtlcl90",
-            "ZXh0GAUgASgJQhG6SA5yDBACkgIHcm9iZXJ0YVIKbWFya2VyVGV4dBI5CgR0",
-            "eXBlGAYgASgOMhgucmVzb3VyY2VzLnYxLk1hcmtlclR5cGVCC7pICIIBAhAB",
-            "yAEBUgR0eXBlEi8KE2NvbmZpcm1faW5zdGFudGlhdGUYByABKAhSEmNvbmZp",
-            "cm1JbnN0YW50aWF0ZRIuCgRwb3NlGAggASgLMhouZ2VvbWV0cnkudjEuTG9j",
-            "YWxpemVkUG9zZVIEcG9zZRIzCgZjdXN0b20YCSABKAsyGy5jb21tb24udjEu",
-            "Q3VzdG9tUHJvcGVydGllc1IGY3VzdG9tIrEBCg9NYXJrZXJJbnN0YW5jZXMS",
-            "nQEKB21hcmtlcnMYASADKAsyHC5yZXNvdXJjZXMudjEuTWFya2VySW5zdGFu",
-            "Y2VCZbpIYroBXwoSdW5pcXVlX21hcmtlcl90ZXh0EhptYXJrZXIgdGV4dCBt",
-            "dXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAobWFya2VyLCBtYXJrZXIubWFya2Vy",
-            "X3RleHQpLnVuaXF1ZSgpUgdtYXJrZXJzKkIKCk1hcmtlclR5cGUSGwoXTUFS",
-            "S0VSX1RZUEVfVU5TUEVDSUZJRUQQABIXChNNQVJLRVJfVFlQRV9RUl9DT0RF",
-            "EAFCwAEKEGNvbS5yZXNvdXJjZXMudjFCE01hcmtlckluc3RhbmNlUHJvdG9Q",
-            "AVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291",
-            "cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNl",
-            "cy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0",
-            "YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
+            "L2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhVjb21tb24vdjEvZW51bXMucHJv",
+            "dG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJv",
+            "dG8ikgMKDk1hcmtlckluc3RhbmNlEhkKAmlkGAEgASgJQgm6SAZyBOjxBAFS",
+            "AmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMg",
+            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIy",
+            "CgttYXJrZXJfdGV4dBgFIAEoCUIRukgOcgwQApICB3JvYmVydGFSCm1hcmtl",
+            "clRleHQSOQoEdHlwZRgGIAEoDjIYLnJlc291cmNlcy52MS5NYXJrZXJUeXBl",
+            "Qgu6SAiCAQIQAcgBAVIEdHlwZRIvChNjb25maXJtX2luc3RhbnRpYXRlGAcg",
+            "ASgIUhJjb25maXJtSW5zdGFudGlhdGUSOwoGc3RhdHVzGAggASgOMhkuY29t",
+            "bW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEjMKBmN1",
+            "c3RvbRgJIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0",
+            "b20isQEKD01hcmtlckluc3RhbmNlcxKdAQoHbWFya2VycxgBIAMoCzIcLnJl",
+            "c291cmNlcy52MS5NYXJrZXJJbnN0YW5jZUJlukhiugFfChJ1bmlxdWVfbWFy",
+            "a2VyX3RleHQSGm1hcmtlciB0ZXh0IG11c3QgYmUgdW5pcXVlGi10aGlzLm1h",
+            "cChtYXJrZXIsIG1hcmtlci5tYXJrZXJfdGV4dCkudW5pcXVlKClSB21hcmtl",
+            "cnMqQgoKTWFya2VyVHlwZRIbChdNQVJLRVJfVFlQRV9VTlNQRUNJRklFRBAA",
+            "EhcKE01BUktFUl9UWVBFX1FSX0NPREUQAULAAQoQY29tLnJlc291cmNlcy52",
+            "MUITTWFya2VySW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIv",
+            "cHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogID",
+            "UlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIY",
+            "UmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.MarkerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.MarkerInstance), global::Messages.Resources.V1.MarkerInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "MarkerText", "Type", "ConfirmInstantiate", "Pose", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.MarkerInstance), global::Messages.Resources.V1.MarkerInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "MarkerText", "Type", "ConfirmInstantiate", "Status", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.MarkerInstances), global::Messages.Resources.V1.MarkerInstances.Parser, new[]{ "Markers" }, null, null, null, null)
           }));
     }
@@ -108,7 +109,7 @@ namespace Messages.Resources.V1 {
       markerText_ = other.markerText_;
       type_ = other.type_;
       confirmInstantiate_ = other.confirmInstantiate_;
-      pose_ = other.pose_ != null ? other.pose_.Clone() : null;
+      status_ = other.status_;
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -209,15 +210,15 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 8;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 8;
+    private global::Messages.Common.V1.ResourceStatus status_ = global::Messages.Common.V1.ResourceStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
-      get { return pose_; }
+    public global::Messages.Common.V1.ResourceStatus Status {
+      get { return status_; }
       set {
-        pose_ = value;
+        status_ = value;
       }
     }
 
@@ -255,7 +256,7 @@ namespace Messages.Resources.V1 {
       if (MarkerText != other.MarkerText) return false;
       if (Type != other.Type) return false;
       if (ConfirmInstantiate != other.ConfirmInstantiate) return false;
-      if (!object.Equals(Pose, other.Pose)) return false;
+      if (Status != other.Status) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -271,7 +272,7 @@ namespace Messages.Resources.V1 {
       if (MarkerText.Length != 0) hash ^= MarkerText.GetHashCode();
       if (Type != global::Messages.Resources.V1.MarkerType.Unspecified) hash ^= Type.GetHashCode();
       if (ConfirmInstantiate != false) hash ^= ConfirmInstantiate.GetHashCode();
-      if (pose_ != null) hash ^= Pose.GetHashCode();
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -319,9 +320,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(56);
         output.WriteBool(ConfirmInstantiate);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) Status);
       }
       if (custom_ != null) {
         output.WriteRawTag(74);
@@ -365,9 +366,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(56);
         output.WriteBool(ConfirmInstantiate);
       }
-      if (pose_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Pose);
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) Status);
       }
       if (custom_ != null) {
         output.WriteRawTag(74);
@@ -404,8 +405,8 @@ namespace Messages.Resources.V1 {
       if (ConfirmInstantiate != false) {
         size += 1 + 1;
       }
-      if (pose_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
@@ -443,11 +444,8 @@ namespace Messages.Resources.V1 {
       if (other.ConfirmInstantiate != false) {
         ConfirmInstantiate = other.ConfirmInstantiate;
       }
-      if (other.pose_ != null) {
-        if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
-        }
-        Pose.MergeFrom(other.Pose);
+      if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
+        Status = other.Status;
       }
       if (other.custom_ != null) {
         if (custom_ == null) {
@@ -502,11 +500,8 @@ namespace Messages.Resources.V1 {
             ConfirmInstantiate = input.ReadBool();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
+          case 64: {
+            Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
           case 74: {
@@ -563,11 +558,8 @@ namespace Messages.Resources.V1 {
             ConfirmInstantiate = input.ReadBool();
             break;
           }
-          case 66: {
-            if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
-            }
-            input.ReadMessage(Pose);
+          case 64: {
+            Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
           case 74: {

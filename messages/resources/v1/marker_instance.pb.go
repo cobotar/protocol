@@ -8,8 +8,7 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -80,8 +79,8 @@ type MarkerInstance struct {
 	MarkerText         string                 `protobuf:"bytes,5,opt,name=marker_text,json=markerText,proto3" json:"marker_text,omitempty"` // Text on the physical marker (QR-code)
 	Type               MarkerType             `protobuf:"varint,6,opt,name=type,proto3,enum=resources.v1.MarkerType" json:"type,omitempty"`
 	ConfirmInstantiate bool                   `protobuf:"varint,7,opt,name=confirm_instantiate,json=confirmInstantiate,proto3" json:"confirm_instantiate,omitempty"` // If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
-	Pose               *v1.LocalizedPose      `protobuf:"bytes,8,opt,name=pose,proto3" json:"pose,omitempty"`
-	Custom             *v11.CustomProperties  `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Status             v1.ResourceStatus      `protobuf:"varint,8,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
+	Custom             *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -165,14 +164,14 @@ func (x *MarkerInstance) GetConfirmInstantiate() bool {
 	return false
 }
 
-func (x *MarkerInstance) GetPose() *v1.LocalizedPose {
+func (x *MarkerInstance) GetStatus() v1.ResourceStatus {
 	if x != nil {
-		return x.Pose
+		return x.Status
 	}
-	return nil
+	return v1.ResourceStatus(0)
 }
 
-func (x *MarkerInstance) GetCustom() *v11.CustomProperties {
+func (x *MarkerInstance) GetCustom() *v1.CustomProperties {
 	if x != nil {
 		return x.Custom
 	}
@@ -227,17 +226,17 @@ var File_resources_v1_marker_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_marker_instance_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/marker_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfa\x02\n" +
-	"\x0eMarkerInstance\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\"resources/v1/marker_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\x92\x03\n" +
+	"\x0eMarkerInstance\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\vmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\f\x10\x02\x92\x02\arobertaR\n" +
 	"markerText\x129\n" +
 	"\x04type\x18\x06 \x01(\x0e2\x18.resources.v1.MarkerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12/\n" +
-	"\x13confirm_instantiate\x18\a \x01(\bR\x12confirmInstantiate\x12.\n" +
-	"\x04pose\x18\b \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\x123\n" +
+	"\x13confirm_instantiate\x18\a \x01(\bR\x12confirmInstantiate\x12;\n" +
+	"\x06status\x18\b \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x123\n" +
 	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"\xb1\x01\n" +
 	"\x0fMarkerInstances\x12\x9d\x01\n" +
 	"\amarkers\x18\x01 \x03(\v2\x1c.resources.v1.MarkerInstanceBe\xbaHb\xba\x01_\n" +
@@ -263,15 +262,15 @@ func file_resources_v1_marker_instance_proto_rawDescGZIP() []byte {
 var file_resources_v1_marker_instance_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_resources_v1_marker_instance_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_marker_instance_proto_goTypes = []any{
-	(MarkerType)(0),              // 0: resources.v1.MarkerType
-	(*MarkerInstance)(nil),       // 1: resources.v1.MarkerInstance
-	(*MarkerInstances)(nil),      // 2: resources.v1.MarkerInstances
-	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(MarkerType)(0),             // 0: resources.v1.MarkerType
+	(*MarkerInstance)(nil),      // 1: resources.v1.MarkerInstance
+	(*MarkerInstances)(nil),     // 2: resources.v1.MarkerInstances
+	(v1.ResourceStatus)(0),      // 3: common.v1.ResourceStatus
+	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
 }
 var file_resources_v1_marker_instance_proto_depIdxs = []int32{
 	0, // 0: resources.v1.MarkerInstance.type:type_name -> resources.v1.MarkerType
-	3, // 1: resources.v1.MarkerInstance.pose:type_name -> geometry.v1.LocalizedPose
+	3, // 1: resources.v1.MarkerInstance.status:type_name -> common.v1.ResourceStatus
 	4, // 2: resources.v1.MarkerInstance.custom:type_name -> common.v1.CustomProperties
 	1, // 3: resources.v1.MarkerInstances.markers:type_name -> resources.v1.MarkerInstance
 	4, // [4:4] is the sub-list for method output_type
