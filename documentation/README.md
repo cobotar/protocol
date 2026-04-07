@@ -198,6 +198,10 @@
   
     - [ToolProperty](#capability-v1-ToolProperty)
   
+- [capability/v1/validity_policy.proto](#capability_v1_validity_policy-proto)
+    - [ValidityPolicies](#capability-v1-ValidityPolicies)
+    - [ValidityPolicy](#capability-v1-ValidityPolicy)
+  
 - [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
     - [CustomProperties](#common-v1-CustomProperties)
   
@@ -2959,6 +2963,56 @@ This domain is particularly relevant in human-robot collaboration environments. 
 | TOOL_PROPERTY_CALIBRATED | 5 |  |
 | TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="capability_v1_validity_policy-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## capability/v1/validity_policy.proto
+
+
+
+<a name="capability-v1-ValidityPolicies"></a>
+
+### ValidityPolicies
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ValidityPolicy](#capability-v1-ValidityPolicy) | repeated |  |
+
+
+
+
+
+
+<a name="capability-v1-ValidityPolicy"></a>
+
+### ValidityPolicy
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+
+
+
+
+
+ 
 
  
 
