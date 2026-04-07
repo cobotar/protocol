@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from capability.v1 import actor_skill_pb2 as _actor_skill_pb2
 from common.v1 import enums_pb2 as _enums_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -63,7 +64,7 @@ TOOL_ROLE_VISUAL_INSPECTION: ToolRole
 TOOL_ROLE_WIPE_CLEAN: ToolRole
 
 class SkillDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "domain", "tool_roles", "safety_relevance")
+    __slots__ = ("id", "name", "icon", "description", "domain", "tool_roles", "safety_relevance", "default_validity_policy")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -71,6 +72,7 @@ class SkillDefinition(_message.Message):
     DOMAIN_FIELD_NUMBER: _ClassVar[int]
     TOOL_ROLES_FIELD_NUMBER: _ClassVar[int]
     SAFETY_RELEVANCE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_VALIDITY_POLICY_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -78,7 +80,8 @@ class SkillDefinition(_message.Message):
     domain: SkillDomain
     tool_roles: _containers.RepeatedScalarFieldContainer[ToolRole]
     safety_relevance: _enums_pb2.SafetyRelevance
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., domain: _Optional[_Union[SkillDomain, str]] = ..., tool_roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ...) -> None: ...
+    default_validity_policy: _actor_skill_pb2.ValidityPolicyRef
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., domain: _Optional[_Union[SkillDomain, str]] = ..., tool_roles: _Optional[_Iterable[_Union[ToolRole, str]]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., default_validity_policy: _Optional[_Union[_actor_skill_pb2.ValidityPolicyRef, _Mapping]] = ...) -> None: ...
 
 class SkillDefinitions(_message.Message):
     __slots__ = ("items",)

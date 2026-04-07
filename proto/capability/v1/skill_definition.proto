@@ -2,6 +2,7 @@ syntax = "proto3";
 package capability.v1;
 
 import "buf/validate/validate.proto";
+import "capability/v1/actor_skill.proto";
 import "common/v1/enums.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -135,6 +136,7 @@ message SkillDefinition {
   SkillDomain domain = 5 [(buf.validate.field).enum.defined_only = true];
   repeated ToolRole tool_roles = 6 [(buf.validate.field).repeated.items.enum.defined_only = true];
   common.v1.SafetyRelevance safety_relevance = 7 [(buf.validate.field).enum.defined_only = true];
+  ValidityPolicyRef default_validity_policy = 8; // default validity policy
 }
 
 message SkillDefinitions {

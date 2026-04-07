@@ -25,43 +25,45 @@ namespace Messages.Capability.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRjYXBhYmlsaXR5L3YxL3NraWxsX2RlZmluaXRpb24ucHJvdG8SDWNhcGFi",
-            "aWxpdHkudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoVY29tbW9u",
-            "L3YxL2VudW1zLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3Ry",
-            "aW5nX3J1bGVzLnByb3RvIswCCg9Ta2lsbERlZmluaXRpb24SDgoCaWQYASAB",
-            "KAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29u",
-            "GAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlv",
-            "bhI8CgZkb21haW4YBSABKA4yGi5jYXBhYmlsaXR5LnYxLlNraWxsRG9tYWlu",
-            "Qgi6SAWCAQIQAVIGZG9tYWluEkUKCnRvb2xfcm9sZXMYBiADKA4yFy5jYXBh",
-            "YmlsaXR5LnYxLlRvb2xSb2xlQg26SAqSAQciBYIBAhABUgl0b29sUm9sZXMS",
-            "TwoQc2FmZXR5X3JlbGV2YW5jZRgHIAEoDjIaLmNvbW1vbi52MS5TYWZldHlS",
-            "ZWxldmFuY2VCCLpIBYIBAhABUg9zYWZldHlSZWxldmFuY2UiSAoQU2tpbGxE",
-            "ZWZpbml0aW9ucxI0CgVpdGVtcxgBIAMoCzIeLmNhcGFiaWxpdHkudjEuU2tp",
-            "bGxEZWZpbml0aW9uUgVpdGVtcyqSAgoLU2tpbGxEb21haW4SHAoYU0tJTExf",
-            "RE9NQUlOX1VOU1BFQ0lGSUVEEAASGQoVU0tJTExfRE9NQUlOX0hBTkRMSU5H",
-            "EAESGQoVU0tJTExfRE9NQUlOX0FTU0VNQkxZEAISGgoWU0tJTExfRE9NQUlO",
-            "X0ZBU1RFTklORxADEhsKF1NLSUxMX0RPTUFJTl9JTlNQRUNUSU9OEAQSGwoX",
-            "U0tJTExfRE9NQUlOX0VMRUNUUklDQUwQBRIeChpTS0lMTF9ET01BSU5fQ09M",
-            "TEFCT1JBVElPThAGEhcKE1NLSUxMX0RPTUFJTl9TQUZFVFkQBxIgChxTS0lM",
-            "TF9ET01BSU5fUk9CT1RfT1BFUkFUSU9OEAgquAMKCFRvb2xSb2xlEhkKFVRP",
-            "T0xfUk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQ",
-            "SUVDRRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlU",
-            "T09MX1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZ",
-            "X1RPUlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIf",
-            "ChtUT09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVf",
-            "REVURUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVS",
-            "SUFMEAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9S",
-            "T0xFX1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVf",
-            "RVNEEAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwSGAoUVE9P",
-            "TF9ST0xFX1dJUEVfQ0xFQU4QDULIAQoRY29tLmNhcGFiaWxpdHkudjFCFFNr",
-            "aWxsRGVmaW5pdGlvblByb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NY",
-            "WKoCFk1lc3NhZ2VzLkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZ",
-            "Q2FwYWJpbGl0eVxWMVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZw",
-            "cm90bzM="));
+            "aWxpdHkudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxofY2FwYWJp",
+            "bGl0eS92MS9hY3Rvcl9za2lsbC5wcm90bxoVY29tbW9uL3YxL2VudW1zLnBy",
+            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
+            "b3RvIqYDCg9Ta2lsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
+            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI8CgZkb21haW4Y",
+            "BSABKA4yGi5jYXBhYmlsaXR5LnYxLlNraWxsRG9tYWluQgi6SAWCAQIQAVIG",
+            "ZG9tYWluEkUKCnRvb2xfcm9sZXMYBiADKA4yFy5jYXBhYmlsaXR5LnYxLlRv",
+            "b2xSb2xlQg26SAqSAQciBYIBAhABUgl0b29sUm9sZXMSTwoQc2FmZXR5X3Jl",
+            "bGV2YW5jZRgHIAEoDjIaLmNvbW1vbi52MS5TYWZldHlSZWxldmFuY2VCCLpI",
+            "BYIBAhABUg9zYWZldHlSZWxldmFuY2USWAoXZGVmYXVsdF92YWxpZGl0eV9w",
+            "b2xpY3kYCCABKAsyIC5jYXBhYmlsaXR5LnYxLlZhbGlkaXR5UG9saWN5UmVm",
+            "UhVkZWZhdWx0VmFsaWRpdHlQb2xpY3kiSAoQU2tpbGxEZWZpbml0aW9ucxI0",
+            "CgVpdGVtcxgBIAMoCzIeLmNhcGFiaWxpdHkudjEuU2tpbGxEZWZpbml0aW9u",
+            "UgVpdGVtcyqSAgoLU2tpbGxEb21haW4SHAoYU0tJTExfRE9NQUlOX1VOU1BF",
+            "Q0lGSUVEEAASGQoVU0tJTExfRE9NQUlOX0hBTkRMSU5HEAESGQoVU0tJTExf",
+            "RE9NQUlOX0FTU0VNQkxZEAISGgoWU0tJTExfRE9NQUlOX0ZBU1RFTklORxAD",
+            "EhsKF1NLSUxMX0RPTUFJTl9JTlNQRUNUSU9OEAQSGwoXU0tJTExfRE9NQUlO",
+            "X0VMRUNUUklDQUwQBRIeChpTS0lMTF9ET01BSU5fQ09MTEFCT1JBVElPThAG",
+            "EhcKE1NLSUxMX0RPTUFJTl9TQUZFVFkQBxIgChxTS0lMTF9ET01BSU5fUk9C",
+            "T1RfT1BFUkFUSU9OEAgquAMKCFRvb2xSb2xlEhkKFVRPT0xfUk9MRV9VTlNQ",
+            "RUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQSUVDRRABEiAKHFRP",
+            "T0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlUT09MX1JPTEVfQUxJ",
+            "R05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZX1RPUlFVRRAEEiAK",
+            "HFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIfChtUT09MX1JPTEVf",
+            "TUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVfREVURUNUX1BSRVNF",
+            "TkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVSSUFMEAgSHAoYVE9P",
+            "TF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9ST0xFX1NBRkVUWV9J",
+            "TlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVfRVNEEAsSHwobVE9P",
+            "TF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwSGAoUVE9PTF9ST0xFX1dJUEVf",
+            "Q0xFQU4QDULIAQoRY29tLmNhcGFiaWxpdHkudjFCFFNraWxsRGVmaW5pdGlv",
+            "blByb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
+            "cy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NYWKoCFk1lc3NhZ2Vz",
+            "LkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZQ2FwYWJpbGl0eVxW",
+            "MVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Capability.V1.SkillDomain), typeof(global::Messages.Capability.V1.ToolRole), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinition), global::Messages.Capability.V1.SkillDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Domain", "ToolRoles", "SafetyRelevance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinition), global::Messages.Capability.V1.SkillDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Domain", "ToolRoles", "SafetyRelevance", "DefaultValidityPolicy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinitions), global::Messages.Capability.V1.SkillDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -245,6 +247,7 @@ namespace Messages.Capability.V1 {
       domain_ = other.domain_;
       toolRoles_ = other.toolRoles_.Clone();
       safetyRelevance_ = other.safetyRelevance_;
+      defaultValidityPolicy_ = other.defaultValidityPolicy_ != null ? other.defaultValidityPolicy_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -337,6 +340,21 @@ namespace Messages.Capability.V1 {
       }
     }
 
+    /// <summary>Field number for the "default_validity_policy" field.</summary>
+    public const int DefaultValidityPolicyFieldNumber = 8;
+    private global::Messages.Capability.V1.ValidityPolicyRef defaultValidityPolicy_;
+    /// <summary>
+    /// default validity policy
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Capability.V1.ValidityPolicyRef DefaultValidityPolicy {
+      get { return defaultValidityPolicy_; }
+      set {
+        defaultValidityPolicy_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -359,6 +377,7 @@ namespace Messages.Capability.V1 {
       if (Domain != other.Domain) return false;
       if(!toolRoles_.Equals(other.toolRoles_)) return false;
       if (SafetyRelevance != other.SafetyRelevance) return false;
+      if (!object.Equals(DefaultValidityPolicy, other.DefaultValidityPolicy)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -373,6 +392,7 @@ namespace Messages.Capability.V1 {
       if (Domain != global::Messages.Capability.V1.SkillDomain.Unspecified) hash ^= Domain.GetHashCode();
       hash ^= toolRoles_.GetHashCode();
       if (SafetyRelevance != global::Messages.Common.V1.SafetyRelevance.Unspecified) hash ^= SafetyRelevance.GetHashCode();
+      if (defaultValidityPolicy_ != null) hash ^= DefaultValidityPolicy.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -416,6 +436,10 @@ namespace Messages.Capability.V1 {
         output.WriteRawTag(56);
         output.WriteEnum((int) SafetyRelevance);
       }
+      if (defaultValidityPolicy_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DefaultValidityPolicy);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -451,6 +475,10 @@ namespace Messages.Capability.V1 {
         output.WriteRawTag(56);
         output.WriteEnum((int) SafetyRelevance);
       }
+      if (defaultValidityPolicy_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DefaultValidityPolicy);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -479,6 +507,9 @@ namespace Messages.Capability.V1 {
       size += toolRoles_.CalculateSize(_repeated_toolRoles_codec);
       if (SafetyRelevance != global::Messages.Common.V1.SafetyRelevance.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SafetyRelevance);
+      }
+      if (defaultValidityPolicy_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DefaultValidityPolicy);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -510,6 +541,12 @@ namespace Messages.Capability.V1 {
       toolRoles_.Add(other.toolRoles_);
       if (other.SafetyRelevance != global::Messages.Common.V1.SafetyRelevance.Unspecified) {
         SafetyRelevance = other.SafetyRelevance;
+      }
+      if (other.defaultValidityPolicy_ != null) {
+        if (defaultValidityPolicy_ == null) {
+          DefaultValidityPolicy = new global::Messages.Capability.V1.ValidityPolicyRef();
+        }
+        DefaultValidityPolicy.MergeFrom(other.DefaultValidityPolicy);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -559,6 +596,13 @@ namespace Messages.Capability.V1 {
             SafetyRelevance = (global::Messages.Common.V1.SafetyRelevance) input.ReadEnum();
             break;
           }
+          case 66: {
+            if (defaultValidityPolicy_ == null) {
+              DefaultValidityPolicy = new global::Messages.Capability.V1.ValidityPolicyRef();
+            }
+            input.ReadMessage(DefaultValidityPolicy);
+            break;
+          }
         }
       }
     #endif
@@ -605,6 +649,13 @@ namespace Messages.Capability.V1 {
           }
           case 56: {
             SafetyRelevance = (global::Messages.Common.V1.SafetyRelevance) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            if (defaultValidityPolicy_ == null) {
+              DefaultValidityPolicy = new global::Messages.Capability.V1.ValidityPolicyRef();
+            }
+            input.ReadMessage(DefaultValidityPolicy);
             break;
           }
         }

@@ -2768,6 +2768,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | domain | [SkillDomain](#capability-v1-SkillDomain) |  |  |
 | tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated |  |
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  |  |
+| default_validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | default validity policy |
 
 
 

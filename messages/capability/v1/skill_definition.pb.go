@@ -256,16 +256,17 @@ func (ToolRole) EnumDescriptor() ([]byte, []int) {
 }
 
 type SkillDefinition struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Domain          SkillDomain            `protobuf:"varint,5,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
-	ToolRoles       []ToolRole             `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
-	SafetyRelevance v1.SafetyRelevance     `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Domain                SkillDomain            `protobuf:"varint,5,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
+	ToolRoles             []ToolRole             `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
+	SafetyRelevance       v1.SafetyRelevance     `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
+	DefaultValidityPolicy *ValidityPolicyRef     `protobuf:"bytes,8,opt,name=default_validity_policy,json=defaultValidityPolicy,proto3" json:"default_validity_policy,omitempty"` // default validity policy
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *SkillDefinition) Reset() {
@@ -347,6 +348,13 @@ func (x *SkillDefinition) GetSafetyRelevance() v1.SafetyRelevance {
 	return v1.SafetyRelevance(0)
 }
 
+func (x *SkillDefinition) GetDefaultValidityPolicy() *ValidityPolicyRef {
+	if x != nil {
+		return x.DefaultValidityPolicy
+	}
+	return nil
+}
+
 type SkillDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*SkillDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -395,7 +403,7 @@ var File_capability_v1_skill_definition_proto protoreflect.FileDescriptor
 
 const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\n" +
-	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcc\x02\n" +
+	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa6\x03\n" +
 	"\x0fSkillDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -405,7 +413,8 @@ const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\n" +
 	"tool_roles\x18\x06 \x03(\x0e2\x17.capability.v1.ToolRoleB\r\xbaH\n" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\ttoolRoles\x12O\n" +
-	"\x10safety_relevance\x18\a \x01(\x0e2\x1a.common.v1.SafetyRelevanceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\"H\n" +
+	"\x10safety_relevance\x18\a \x01(\x0e2\x1a.common.v1.SafetyRelevanceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\x12X\n" +
+	"\x17default_validity_policy\x18\b \x01(\v2 .capability.v1.ValidityPolicyRefR\x15defaultValidityPolicy\"H\n" +
 	"\x10SkillDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.capability.v1.SkillDefinitionR\x05items*\x92\x02\n" +
 	"\vSkillDomain\x12\x1c\n" +
@@ -451,22 +460,24 @@ func file_capability_v1_skill_definition_proto_rawDescGZIP() []byte {
 var file_capability_v1_skill_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_capability_v1_skill_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_capability_v1_skill_definition_proto_goTypes = []any{
-	(SkillDomain)(0),         // 0: capability.v1.SkillDomain
-	(ToolRole)(0),            // 1: capability.v1.ToolRole
-	(*SkillDefinition)(nil),  // 2: capability.v1.SkillDefinition
-	(*SkillDefinitions)(nil), // 3: capability.v1.SkillDefinitions
-	(v1.SafetyRelevance)(0),  // 4: common.v1.SafetyRelevance
+	(SkillDomain)(0),          // 0: capability.v1.SkillDomain
+	(ToolRole)(0),             // 1: capability.v1.ToolRole
+	(*SkillDefinition)(nil),   // 2: capability.v1.SkillDefinition
+	(*SkillDefinitions)(nil),  // 3: capability.v1.SkillDefinitions
+	(v1.SafetyRelevance)(0),   // 4: common.v1.SafetyRelevance
+	(*ValidityPolicyRef)(nil), // 5: capability.v1.ValidityPolicyRef
 }
 var file_capability_v1_skill_definition_proto_depIdxs = []int32{
 	0, // 0: capability.v1.SkillDefinition.domain:type_name -> capability.v1.SkillDomain
 	1, // 1: capability.v1.SkillDefinition.tool_roles:type_name -> capability.v1.ToolRole
 	4, // 2: capability.v1.SkillDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	2, // 3: capability.v1.SkillDefinitions.items:type_name -> capability.v1.SkillDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 3: capability.v1.SkillDefinition.default_validity_policy:type_name -> capability.v1.ValidityPolicyRef
+	2, // 4: capability.v1.SkillDefinitions.items:type_name -> capability.v1.SkillDefinition
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_capability_v1_skill_definition_proto_init() }
@@ -474,6 +485,7 @@ func file_capability_v1_skill_definition_proto_init() {
 	if File_capability_v1_skill_definition_proto != nil {
 		return
 	}
+	file_capability_v1_actor_skill_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
