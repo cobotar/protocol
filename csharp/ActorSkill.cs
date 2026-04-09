@@ -65,23 +65,23 @@ namespace Messages.Capability.V1 {
             "RVZFTF9BVVRIT1JJVFkQBSp7CgtTa2lsbFN0YXR1cxIcChhTS0lMTF9TVEFU",
             "VVNfVU5TUEVDSUZJRUQQABIXChNTS0lMTF9TVEFUVVNfQUNUSVZFEAESGwoX",
             "U0tJTExfU1RBVFVTX1JFU1RSSUNURUQQAhIYChRTS0lMTF9TVEFUVVNfRVhQ",
-            "SVJFRBADKocCChVTa2lsbEludmFsaWRpdHlSZWFzb24SLAooU0tJTExfSU5W",
-            "QUxJRElUWV9SRUFTT05fQ09ERV9VTlNQRUNJRklFRBAAEisKJ1NLSUxMX0lO",
-            "VkFMSURJVFlfUkVBU09OX0NPREVfSU5BQ1RJVklUWRABEi0KKVNLSUxMX0lO",
-            "VkFMSURJVFlfUkVBU09OX0NPREVfRkFJTFVSRV9SQVRFEAISLworU0tJTExf",
-            "SU5WQUxJRElUWV9SRUFTT05fQ09ERV9QT0xJQ1lfRVhQSVJFRBADEjMKL1NL",
-            "SUxMX0lOVkFMSURJVFlfUkVBU09OX0NPREVfRU5HSU5FRVJJTkdfQ0hBTkdF",
-            "EAQqkQIKD1NraWxsTmV4dEFjdGlvbhIhCh1TS0lMTF9ORVhUX0FDVElPTl9V",
-            "TlNQRUNJRklFRBAAEiQKIFNLSUxMX05FWFRfQUNUSU9OX01JQ1JPX1RSQUlO",
-            "SU5HEAESKAokU0tJTExfTkVYVF9BQ1RJT05fUkVGUkVTSEVSX1RSQUlOSU5H",
-            "EAISJgoiU0tJTExfTkVYVF9BQ1RJT05fUkVfQ0VSVElGSUNBVElPThADEi8K",
-            "K1NLSUxMX05FWFRfQUNUSU9OX0VYVFJBX1ZBTElEQVRJT05fUkVRVUlSRUQQ",
-            "BBIyCi5TS0lMTF9ORVhUX0FDVElPTl9TVVBFUlZJU09SX0FQUFJPVkFMX1JF",
-            "UVVJUkVEEAVCwwEKEWNvbS5jYXBhYmlsaXR5LnYxQg9BY3RvclNraWxsUHJv",
-            "dG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Nh",
-            "cGFiaWxpdHkvdjE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2Fw",
-            "YWJpbGl0eS5WMcoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQ",
-            "Qk1ldGFkYXRh6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw=="));
+            "SVJFRBADKu4BChVTa2lsbEludmFsaWRpdHlSZWFzb24SJwojU0tJTExfSU5W",
+            "QUxJRElUWV9SRUFTT05fVU5TUEVDSUZJRUQQABImCiJTS0lMTF9JTlZBTElE",
+            "SVRZX1JFQVNPTl9JTkFDVElWSVRZEAESKAokU0tJTExfSU5WQUxJRElUWV9S",
+            "RUFTT05fRkFJTFVSRV9SQVRFEAISKgomU0tJTExfSU5WQUxJRElUWV9SRUFT",
+            "T05fUE9MSUNZX0VYUElSRUQQAxIuCipTS0lMTF9JTlZBTElESVRZX1JFQVNP",
+            "Tl9FTkdJTkVFUklOR19DSEFOR0UQBCqRAgoPU2tpbGxOZXh0QWN0aW9uEiEK",
+            "HVNLSUxMX05FWFRfQUNUSU9OX1VOU1BFQ0lGSUVEEAASJAogU0tJTExfTkVY",
+            "VF9BQ1RJT05fTUlDUk9fVFJBSU5JTkcQARIoCiRTS0lMTF9ORVhUX0FDVElP",
+            "Tl9SRUZSRVNIRVJfVFJBSU5JTkcQAhImCiJTS0lMTF9ORVhUX0FDVElPTl9S",
+            "RV9DRVJUSUZJQ0FUSU9OEAMSLworU0tJTExfTkVYVF9BQ1RJT05fRVhUUkFf",
+            "VkFMSURBVElPTl9SRVFVSVJFRBAEEjIKLlNLSUxMX05FWFRfQUNUSU9OX1NV",
+            "UEVSVklTT1JfQVBQUk9WQUxfUkVRVUlSRUQQBULDAQoRY29tLmNhcGFiaWxp",
+            "dHkudjFCD0FjdG9yU2tpbGxQcm90b1ABWj9naXRodWIuY29tL2NvYm90YXIv",
+            "cHJvdG9jb2wvbWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGi",
+            "AgNDWFiqAhZNZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxW",
+            "MeICGUNhcGFiaWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Capability.V1.SkillLevel), typeof(global::Messages.Capability.V1.SkillStatus), typeof(global::Messages.Capability.V1.SkillInvalidityReason), typeof(global::Messages.Capability.V1.SkillNextAction), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -169,11 +169,11 @@ namespace Messages.Capability.V1 {
   }
 
   public enum SkillInvalidityReason {
-    [pbr::OriginalName("SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED")] CodeUnspecified = 0,
-    [pbr::OriginalName("SKILL_INVALIDITY_REASON_CODE_INACTIVITY")] CodeInactivity = 1,
-    [pbr::OriginalName("SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE")] CodeFailureRate = 2,
-    [pbr::OriginalName("SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED")] CodePolicyExpired = 3,
-    [pbr::OriginalName("SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE")] CodeEngineeringChange = 4,
+    [pbr::OriginalName("SKILL_INVALIDITY_REASON_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("SKILL_INVALIDITY_REASON_INACTIVITY")] Inactivity = 1,
+    [pbr::OriginalName("SKILL_INVALIDITY_REASON_FAILURE_RATE")] FailureRate = 2,
+    [pbr::OriginalName("SKILL_INVALIDITY_REASON_POLICY_EXPIRED")] PolicyExpired = 3,
+    [pbr::OriginalName("SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE")] EngineeringChange = 4,
   }
 
   public enum SkillNextAction {

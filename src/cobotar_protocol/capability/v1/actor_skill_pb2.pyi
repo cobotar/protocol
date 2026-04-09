@@ -31,11 +31,11 @@ class SkillStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 
 class SkillInvalidityReason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED: _ClassVar[SkillInvalidityReason]
-    SKILL_INVALIDITY_REASON_CODE_INACTIVITY: _ClassVar[SkillInvalidityReason]
-    SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE: _ClassVar[SkillInvalidityReason]
-    SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED: _ClassVar[SkillInvalidityReason]
-    SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE: _ClassVar[SkillInvalidityReason]
+    SKILL_INVALIDITY_REASON_UNSPECIFIED: _ClassVar[SkillInvalidityReason]
+    SKILL_INVALIDITY_REASON_INACTIVITY: _ClassVar[SkillInvalidityReason]
+    SKILL_INVALIDITY_REASON_FAILURE_RATE: _ClassVar[SkillInvalidityReason]
+    SKILL_INVALIDITY_REASON_POLICY_EXPIRED: _ClassVar[SkillInvalidityReason]
+    SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE: _ClassVar[SkillInvalidityReason]
 
 class SkillNextAction(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -55,11 +55,11 @@ SKILL_STATUS_UNSPECIFIED: SkillStatus
 SKILL_STATUS_ACTIVE: SkillStatus
 SKILL_STATUS_RESTRICTED: SkillStatus
 SKILL_STATUS_EXPIRED: SkillStatus
-SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED: SkillInvalidityReason
-SKILL_INVALIDITY_REASON_CODE_INACTIVITY: SkillInvalidityReason
-SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE: SkillInvalidityReason
-SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED: SkillInvalidityReason
-SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE: SkillInvalidityReason
+SKILL_INVALIDITY_REASON_UNSPECIFIED: SkillInvalidityReason
+SKILL_INVALIDITY_REASON_INACTIVITY: SkillInvalidityReason
+SKILL_INVALIDITY_REASON_FAILURE_RATE: SkillInvalidityReason
+SKILL_INVALIDITY_REASON_POLICY_EXPIRED: SkillInvalidityReason
+SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE: SkillInvalidityReason
 SKILL_NEXT_ACTION_UNSPECIFIED: SkillNextAction
 SKILL_NEXT_ACTION_MICRO_TRAINING: SkillNextAction
 SKILL_NEXT_ACTION_REFRESHER_TRAINING: SkillNextAction
