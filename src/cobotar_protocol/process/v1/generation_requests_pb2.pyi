@@ -1,5 +1,7 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from process.v1 import process_recipe_pb2 as _process_recipe_pb2
+from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
+from process.v1 import task_definition_pb2 as _task_definition_pb2
 from variance.v1 import variant_configuration_pb2 as _variant_configuration_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -48,9 +50,13 @@ class DraftProcessRecipeGenerateIssue(_message.Message):
     def __init__(self, message: _Optional[str] = ..., node_id: _Optional[str] = ..., part_definition_id: _Optional[str] = ...) -> None: ...
 
 class DraftProcessRecipeGenerateResult(_message.Message):
-    __slots__ = ("recipe", "issues")
+    __slots__ = ("recipe", "sequences", "tasks", "issues")
     RECIPE_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCES_FIELD_NUMBER: _ClassVar[int]
+    TASKS_FIELD_NUMBER: _ClassVar[int]
     ISSUES_FIELD_NUMBER: _ClassVar[int]
     recipe: _process_recipe_pb2.ProcessRecipe
+    sequences: _containers.RepeatedCompositeFieldContainer[_sequence_definition_pb2.SequenceDefinition]
+    tasks: _containers.RepeatedCompositeFieldContainer[_task_definition_pb2.TaskDefinition]
     issues: _containers.RepeatedCompositeFieldContainer[DraftProcessRecipeGenerateIssue]
-    def __init__(self, recipe: _Optional[_Union[_process_recipe_pb2.ProcessRecipe, _Mapping]] = ..., issues: _Optional[_Iterable[_Union[DraftProcessRecipeGenerateIssue, _Mapping]]] = ...) -> None: ...
+    def __init__(self, recipe: _Optional[_Union[_process_recipe_pb2.ProcessRecipe, _Mapping]] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ..., issues: _Optional[_Iterable[_Union[DraftProcessRecipeGenerateIssue, _Mapping]]] = ...) -> None: ...

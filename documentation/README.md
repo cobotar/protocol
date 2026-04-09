@@ -175,9 +175,12 @@
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
     - [ActorSkills](#capability-v1-ActorSkills)
+    - [SkillEvidenceStats](#capability-v1-SkillEvidenceStats)
     - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
   
+    - [SkillInvalidityReason](#capability-v1-SkillInvalidityReason)
     - [SkillLevel](#capability-v1-SkillLevel)
+    - [SkillNextAction](#capability-v1-SkillNextAction)
     - [SkillStatus](#capability-v1-SkillStatus)
   
 - [capability/v1/capability_profile.proto](#capability_v1_capability_profile-proto)
@@ -331,15 +334,6 @@
   
     - [ProcessType](#process-v1-ProcessType)
   
-- [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
-    - [VariantConfiguration](#variance-v1-VariantConfiguration)
-    - [VariantSelection](#variance-v1-VariantSelection)
-  
-- [process/v1/generation_requests.proto](#process_v1_generation_requests-proto)
-    - [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue)
-    - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
-    - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
-  
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
@@ -378,6 +372,15 @@
   
     - [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference)
     - [TaskType](#process-v1-TaskType)
+  
+- [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
+    - [VariantConfiguration](#variance-v1-VariantConfiguration)
+    - [VariantSelection](#variance-v1-VariantSelection)
+  
+- [process/v1/generation_requests.proto](#process_v1_generation_requests-proto)
+    - [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue)
+    - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
+    - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
   
 - [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
     - [AssemblyNode](#product-v1-AssemblyNode)
@@ -541,6 +544,7 @@
 - [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
     - [EvidenceFact](#runtime-v1-EvidenceFact)
     - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
+    - [ExecutionEvidences](#runtime-v1-ExecutionEvidences)
   
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
@@ -2594,7 +2598,17 @@ Systems should require strict validation, restricted actor permissions, and expl
 <a name="capability-v1-ActorSkill"></a>
 
 ### ActorSkill
+ActorSkill stores the current operational summary of one skill for one actor.
 
+It is intentionally a fast, runtime-friendly summary layer rather than a full
+audit log. Runtime planners/loaders should use this message to determine
+whether an actor is:
+- allowed
+- restricted
+- expired
+
+ExecutionEvidence and training/certification events are expected to update
+this summary over time.
 
 
 | Field | Type | Label | Description |
@@ -2606,15 +2620,14 @@ Systems should require strict validation, restricted actor permissions, and expl
 | skill_id | [string](#string) |  |  |
 | level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
 | status | [SkillStatus](#capability-v1-SkillStatus) |  |  |
-| confidence | [double](#double) |  | [0, 1] |
-| evidence_count | [int32](#int32) |  | since last training |
-| failure_count | [int32](#int32) |  | since last training |
-| last_evidence_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| last_failure_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | (timestamp) or policy-derived |
-| validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | which rule set is used |
-| reasons | [string](#string) | repeated | [&#34;inactivity_&gt;30d&#34;] |
-| next_actions | [string](#string) | repeated | [&#34;micro_training&#34;, &#34;extra_verification_required&#34;] |
+| confidence_score | [float](#float) |  | Optional derived confidence/proficiency score in [0,1]. |
+| stats | [SkillEvidenceStats](#capability-v1-SkillEvidenceStats) |  | Aggregated evidence summary used for fast runtime decisions. |
+| last_training_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent training/refresher event relevant to this skill. |
+| last_certified_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent formal certification/re-certification event. |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Explicit validity limit if known, otherwise policy-derived. |
+| validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | Policy currently used to evaluate status/validity. |
+| reasons | [SkillInvalidityReason](#capability-v1-SkillInvalidityReason) | repeated |  |
+| next_actions | [SkillNextAction](#capability-v1-SkillNextAction) | repeated |  |
 
 
 
@@ -2636,10 +2649,40 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
 
+<a name="capability-v1-SkillEvidenceStats"></a>
+
+### SkillEvidenceStats
+SkillEvidenceStats is a lightweight aggregated summary of recent evidence
+relevant to one actor &#43; one skill.
+
+This is intended for fast runtime decisions and policy evaluation. It is
+typically derived from underlying execution evidence and training/certification
+events rather than being treated as the primary source of truth.
+
+The effective aggregation window is policy-dependent. For example, a policy
+may consider only the last N executions, the last N days, or all evidence
+since the most recent certification.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success_count | [int32](#int32) |  | Aggregated successful executions/evidence in the active evaluation window. |
+| failure_count | [int32](#int32) |  | Aggregated failed executions/evidence in the active evaluation window. |
+| last_success_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| last_failure_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| last_activity_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| rolling_success_rate | [float](#float) |  | Optional derived metric in [0,1]. |
+
+
+
+
+
+
 <a name="capability-v1-ValidityPolicyRef"></a>
 
 ### ValidityPolicyRef
-
+ValidityPolicyRef identifies the policy definition and version currently used
+to derive validity, degradation, and recovery behavior for this actor skill.
 
 
 | Field | Type | Label | Description |
@@ -2652,6 +2695,21 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
  
+
+
+<a name="capability-v1-SkillInvalidityReason"></a>
+
+### SkillInvalidityReason
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED | 0 |  |
+| SKILL_INVALIDITY_REASON_CODE_INACTIVITY | 1 |  |
+| SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE | 2 |  |
+| SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED | 3 |  |
+| SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE | 4 |  |
+
 
 
 <a name="capability-v1-SkillLevel"></a>
@@ -2672,6 +2730,22 @@ CERTIFIED: Officially qualified
 | SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
 | SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
 | SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
+
+
+
+<a name="capability-v1-SkillNextAction"></a>
+
+### SkillNextAction
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_NEXT_ACTION_UNSPECIFIED | 0 |  |
+| SKILL_NEXT_ACTION_MICRO_TRAINING | 1 |  |
+| SKILL_NEXT_ACTION_REFRESHER_TRAINING | 2 |  |
+| SKILL_NEXT_ACTION_RE_CERTIFICATION | 3 |  |
+| SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED | 4 |  |
+| SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED | 5 |  |
 
 
 
@@ -4556,9 +4630,9 @@ ProcessRecipe describes the following:
 | product_definition_id | [string](#string) |  |  |
 | applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  |  |
 | root_sequence_id | [string](#string) |  |  |
-| supported_container_definition_ids | [string](#string) | repeated | repeated SequenceDefinition sequences = 9; repeated TaskDefinition tasks = 10;
-
-Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 
 
@@ -4614,132 +4688,6 @@ Containers (typically fixture/pallet definitions) that this recipe is intended t
 | PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
 | PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="variance_v1_variant_configuration-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## variance/v1/variant_configuration.proto
-
-
-
-<a name="variance-v1-VariantConfiguration"></a>
-
-### VariantConfiguration
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| selections | [VariantSelection](#variance-v1-VariantSelection) | repeated |  |
-
-
-
-
-
-
-<a name="variance-v1-VariantSelection"></a>
-
-### VariantSelection
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
-| option_id | [string](#string) |  | &#34;left&#34; |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="process_v1_generation_requests-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## process/v1/generation_requests.proto
-
-
-
-<a name="process-v1-DraftProcessRecipeGenerateIssue"></a>
-
-### DraftProcessRecipeGenerateIssue
-DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
-encountered during recipe generation.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| message | [string](#string) |  |  |
-| node_id | [string](#string) |  |  |
-| part_definition_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="process-v1-DraftProcessRecipeGenerateRequest"></a>
-
-### DraftProcessRecipeGenerateRequest
-DraftProcessRecipeGenerateRequest asks the backend to generate a draft
-ProcessRecipe from a ProductDefinition plus generation options.
-
-This is intended for authoring-time generation, not runtime execution.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| product_definition_id | [string](#string) |  | The product structure that should be transformed into a draft recipe. |
-| recipe_id | [string](#string) |  | Optional explicit recipe id for the generated recipe. If empty, the generator/backend may assign one. |
-| recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
-| recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
-| recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
-| insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
-| group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-oriented sequence. |
-| group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
-| generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
-| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
-| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included |
-
-
-
-
-
-
-<a name="process-v1-DraftProcessRecipeGenerateResult"></a>
-
-### DraftProcessRecipeGenerateResult
-DraftProcessRecipeGenerateResult contains the generated draft recipe.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| recipe | [ProcessRecipe](#process-v1-ProcessRecipe) |  |  |
-| issues | [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue) | repeated |  |
-
-
-
-
-
- 
 
  
 
@@ -5349,6 +5297,134 @@ They should stay reusable across workcells and deployments.
 | TASK_TYPE_CHECK | 18 |  |
 | TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="variance_v1_variant_configuration-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_configuration.proto
+
+
+
+<a name="variance-v1-VariantConfiguration"></a>
+
+### VariantConfiguration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selections | [VariantSelection](#variance-v1-VariantSelection) | repeated |  |
+
+
+
+
+
+
+<a name="variance-v1-VariantSelection"></a>
+
+### VariantSelection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | &#34;hinge_side&#34; |
+| option_id | [string](#string) |  | &#34;left&#34; |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_generation_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/generation_requests.proto
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateIssue"></a>
+
+### DraftProcessRecipeGenerateIssue
+DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
+encountered during recipe generation.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| message | [string](#string) |  |  |
+| node_id | [string](#string) |  |  |
+| part_definition_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateRequest"></a>
+
+### DraftProcessRecipeGenerateRequest
+DraftProcessRecipeGenerateRequest asks the backend to generate a draft
+ProcessRecipe from a ProductDefinition plus generation options.
+
+This is intended for authoring-time generation, not runtime execution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product_definition_id | [string](#string) |  | The product structure that should be transformed into a draft recipe. |
+| recipe_id | [string](#string) |  | Optional explicit recipe id for the generated recipe. If empty, the generator/backend may assign one. |
+| recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
+| recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
+| recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
+| insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
+| group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-oriented sequence. |
+| group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
+| generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
+| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
+| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included |
+
+
+
+
+
+
+<a name="process-v1-DraftProcessRecipeGenerateResult"></a>
+
+### DraftProcessRecipeGenerateResult
+DraftProcessRecipeGenerateResult contains the generated draft recipe.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe | [ProcessRecipe](#process-v1-ProcessRecipe) |  |  |
+| sequences | [SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
+| tasks | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+| issues | [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue) | repeated |  |
+
+
+
+
+
+ 
 
  
 
@@ -7523,7 +7599,9 @@ move independently through the system.
 <a name="runtime-v1-EvidenceFact"></a>
 
 ### EvidenceFact
-
+EvidenceFact stores a flexible key/value fact recorded during execution.
+Use this for measurements, classifications, result details, operator notes,
+and other structured runtime output.
 
 
 | Field | Type | Label | Description |
@@ -7540,7 +7618,14 @@ move independently through the system.
 <a name="runtime-v1-ExecutionEvidence"></a>
 
 ### ExecutionEvidence
+ExecutionEvidence records runtime facts produced during task execution.
 
+It is task-run-centric and primarily supports traceability, validation,
+analytics, and downstream aggregation into actor skill state.
+
+The normalized fields such as actor, skill_id, and success are optional but
+strongly recommended when known, because they make later aggregation much
+simpler and more robust than parsing facts alone.
 
 
 | Field | Type | Label | Description |
@@ -7550,7 +7635,25 @@ move independently through the system.
 | source | [string](#string) |  | tool, vision, operator, robot driver, etc. |
 | recorded_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | facts | [EvidenceFact](#runtime-v1-EvidenceFact) | repeated |  |
-| blob_uri | [string](#string) |  |  |
+| blob_uri | [string](#string) |  | Optional external payload such as image, log, trace, or report. |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | Optional actor who produced or is primarily associated with this evidence. |
+| skill_id | [string](#string) |  | Optional skill primarily exercised or validated by this evidence. |
+| success | [bool](#bool) |  | normalized success signal when known |
+
+
+
+
+
+
+<a name="runtime-v1-ExecutionEvidences"></a>
+
+### ExecutionEvidences
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
 
 
 
@@ -8125,11 +8228,11 @@ A human is required but no worker with valid skills exists. |
 | completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | error_code | [string](#string) |  |  |
 | error_message | [string](#string) |  |  |
-| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated |  |
+| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated | TODO: consider delete, already &#39;linked to&#39; from ExecutionEvidence |
 | binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
 | restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective runtime restrictions that currently apply to this task.
 
-These restrictions should reflect the current assigned actor and execution context. They may be copied from candidate-level evaluation results during assignment or reassignment.
+These restrictions are the effective restrictions for the currently assigned actor and execution context. They may be copied from candidate-level evaluation results during assignment or reassignment.
 
 Examples: - AR guidance required because the assigned actor&#39;s skill is restricted - supervisor approval required before completion - tool feedback required due to safety/quality constraints |
 | candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |

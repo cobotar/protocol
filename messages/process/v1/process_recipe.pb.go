@@ -146,17 +146,17 @@ func (x *RecipeApplicability) GetExclude() []*v1.VariantRule {
 // - What actor constrains exist
 // - What validation is needed
 type ProcessRecipe struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=process.v1.ProcessType" json:"type,omitempty"`
-	ProductDefinitionId string                 `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
-	Applicability       *RecipeApplicability   `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
-	RootSequenceId      string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
-	// repeated SequenceDefinition sequences = 9;
-	// repeated TaskDefinition tasks = 10;
+	state                           protoimpl.MessageState   `protogen:"open.v1"`
+	Id                              string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                            string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                            string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description                     string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                            ProcessType              `protobuf:"varint,5,opt,name=type,proto3,enum=process.v1.ProcessType" json:"type,omitempty"`
+	ProductDefinitionId             string                   `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
+	Applicability                   *RecipeApplicability     `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
+	RootSequenceId                  string                   `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	SequenceIds                     []string                 `protobuf:"bytes,9,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
+	TaskIds                         []string                 `protobuf:"bytes,10,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	SupportedContainerDefinitionIds []string                 `protobuf:"bytes,11,rep,name=supported_container_definition_ids,json=supportedContainerDefinitionIds,proto3" json:"supported_container_definition_ids,omitempty"` // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
 	ExternalReferences              []*v11.ExternalReference `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
@@ -249,6 +249,20 @@ func (x *ProcessRecipe) GetRootSequenceId() string {
 	return ""
 }
 
+func (x *ProcessRecipe) GetSequenceIds() []string {
+	if x != nil {
+		return x.SequenceIds
+	}
+	return nil
+}
+
+func (x *ProcessRecipe) GetTaskIds() []string {
+	if x != nil {
+		return x.TaskIds
+	}
+	return nil
+}
+
 func (x *ProcessRecipe) GetSupportedContainerDefinitionIds() []string {
 	if x != nil {
 		return x.SupportedContainerDefinitionIds
@@ -315,7 +329,7 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
 	"\x13RecipeApplicability\x122\n" +
 	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
-	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xef\x03\n" +
+	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xad\x04\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -324,7 +338,10 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x17.process.v1.ProcessTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x122\n" +
 	"\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12E\n" +
 	"\rapplicability\x18\a \x01(\v2\x1f.process.v1.RecipeApplicabilityR\rapplicability\x12(\n" +
-	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12K\n" +
+	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12!\n" +
+	"\fsequence_ids\x18\t \x03(\tR\vsequenceIds\x12\x19\n" +
+	"\btask_ids\x18\n" +
+	" \x03(\tR\ataskIds\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
 	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"A\n" +
 	"\x0eProcessRecipes\x12/\n" +

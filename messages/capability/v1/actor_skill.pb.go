@@ -166,6 +166,215 @@ func (SkillStatus) EnumDescriptor() ([]byte, []int) {
 	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{1}
 }
 
+type SkillInvalidityReason int32
+
+const (
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED        SkillInvalidityReason = 0
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_CODE_INACTIVITY         SkillInvalidityReason = 1
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE       SkillInvalidityReason = 2
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED     SkillInvalidityReason = 3
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE SkillInvalidityReason = 4
+)
+
+// Enum value maps for SkillInvalidityReason.
+var (
+	SkillInvalidityReason_name = map[int32]string{
+		0: "SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED",
+		1: "SKILL_INVALIDITY_REASON_CODE_INACTIVITY",
+		2: "SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE",
+		3: "SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED",
+		4: "SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE",
+	}
+	SkillInvalidityReason_value = map[string]int32{
+		"SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED":        0,
+		"SKILL_INVALIDITY_REASON_CODE_INACTIVITY":         1,
+		"SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE":       2,
+		"SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED":     3,
+		"SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE": 4,
+	}
+)
+
+func (x SkillInvalidityReason) Enum() *SkillInvalidityReason {
+	p := new(SkillInvalidityReason)
+	*p = x
+	return p
+}
+
+func (x SkillInvalidityReason) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SkillInvalidityReason) Descriptor() protoreflect.EnumDescriptor {
+	return file_capability_v1_actor_skill_proto_enumTypes[2].Descriptor()
+}
+
+func (SkillInvalidityReason) Type() protoreflect.EnumType {
+	return &file_capability_v1_actor_skill_proto_enumTypes[2]
+}
+
+func (x SkillInvalidityReason) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SkillInvalidityReason.Descriptor instead.
+func (SkillInvalidityReason) EnumDescriptor() ([]byte, []int) {
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{2}
+}
+
+type SkillNextAction int32
+
+const (
+	SkillNextAction_SKILL_NEXT_ACTION_UNSPECIFIED                  SkillNextAction = 0
+	SkillNextAction_SKILL_NEXT_ACTION_MICRO_TRAINING               SkillNextAction = 1
+	SkillNextAction_SKILL_NEXT_ACTION_REFRESHER_TRAINING           SkillNextAction = 2
+	SkillNextAction_SKILL_NEXT_ACTION_RE_CERTIFICATION             SkillNextAction = 3
+	SkillNextAction_SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED    SkillNextAction = 4
+	SkillNextAction_SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED SkillNextAction = 5
+)
+
+// Enum value maps for SkillNextAction.
+var (
+	SkillNextAction_name = map[int32]string{
+		0: "SKILL_NEXT_ACTION_UNSPECIFIED",
+		1: "SKILL_NEXT_ACTION_MICRO_TRAINING",
+		2: "SKILL_NEXT_ACTION_REFRESHER_TRAINING",
+		3: "SKILL_NEXT_ACTION_RE_CERTIFICATION",
+		4: "SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED",
+		5: "SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED",
+	}
+	SkillNextAction_value = map[string]int32{
+		"SKILL_NEXT_ACTION_UNSPECIFIED":                  0,
+		"SKILL_NEXT_ACTION_MICRO_TRAINING":               1,
+		"SKILL_NEXT_ACTION_REFRESHER_TRAINING":           2,
+		"SKILL_NEXT_ACTION_RE_CERTIFICATION":             3,
+		"SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED":    4,
+		"SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED": 5,
+	}
+)
+
+func (x SkillNextAction) Enum() *SkillNextAction {
+	p := new(SkillNextAction)
+	*p = x
+	return p
+}
+
+func (x SkillNextAction) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SkillNextAction) Descriptor() protoreflect.EnumDescriptor {
+	return file_capability_v1_actor_skill_proto_enumTypes[3].Descriptor()
+}
+
+func (SkillNextAction) Type() protoreflect.EnumType {
+	return &file_capability_v1_actor_skill_proto_enumTypes[3]
+}
+
+func (x SkillNextAction) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SkillNextAction.Descriptor instead.
+func (SkillNextAction) EnumDescriptor() ([]byte, []int) {
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{3}
+}
+
+// SkillEvidenceStats is a lightweight aggregated summary of recent evidence
+// relevant to one actor + one skill.
+//
+// This is intended for fast runtime decisions and policy evaluation. It is
+// typically derived from underlying execution evidence and training/certification
+// events rather than being treated as the primary source of truth.
+//
+// The effective aggregation window is policy-dependent. For example, a policy
+// may consider only the last N executions, the last N days, or all evidence
+// since the most recent certification.
+type SkillEvidenceStats struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	SuccessCount       int32                  `protobuf:"varint,1,opt,name=success_count,json=successCount,proto3" json:"success_count,omitempty"` // Aggregated successful executions/evidence in the active evaluation window.
+	FailureCount       int32                  `protobuf:"varint,2,opt,name=failure_count,json=failureCount,proto3" json:"failure_count,omitempty"` // Aggregated failed executions/evidence in the active evaluation window.
+	LastSuccessAt      *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=last_success_at,json=lastSuccessAt,proto3" json:"last_success_at,omitempty"`
+	LastFailureAt      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=last_failure_at,json=lastFailureAt,proto3" json:"last_failure_at,omitempty"`
+	LastActivityAt     *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=last_activity_at,json=lastActivityAt,proto3" json:"last_activity_at,omitempty"`
+	RollingSuccessRate float32                `protobuf:"fixed32,6,opt,name=rolling_success_rate,json=rollingSuccessRate,proto3" json:"rolling_success_rate,omitempty"` // Optional derived metric in [0,1].
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *SkillEvidenceStats) Reset() {
+	*x = SkillEvidenceStats{}
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkillEvidenceStats) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkillEvidenceStats) ProtoMessage() {}
+
+func (x *SkillEvidenceStats) ProtoReflect() protoreflect.Message {
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkillEvidenceStats.ProtoReflect.Descriptor instead.
+func (*SkillEvidenceStats) Descriptor() ([]byte, []int) {
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *SkillEvidenceStats) GetSuccessCount() int32 {
+	if x != nil {
+		return x.SuccessCount
+	}
+	return 0
+}
+
+func (x *SkillEvidenceStats) GetFailureCount() int32 {
+	if x != nil {
+		return x.FailureCount
+	}
+	return 0
+}
+
+func (x *SkillEvidenceStats) GetLastSuccessAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastSuccessAt
+	}
+	return nil
+}
+
+func (x *SkillEvidenceStats) GetLastFailureAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastFailureAt
+	}
+	return nil
+}
+
+func (x *SkillEvidenceStats) GetLastActivityAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastActivityAt
+	}
+	return nil
+}
+
+func (x *SkillEvidenceStats) GetRollingSuccessRate() float32 {
+	if x != nil {
+		return x.RollingSuccessRate
+	}
+	return 0
+}
+
+// ValidityPolicyRef identifies the policy definition and version currently used
+// to derive validity, degradation, and recovery behavior for this actor skill.
 type ValidityPolicyRef struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	PolicyId      string                 `protobuf:"bytes,1,opt,name=policy_id,json=policyId,proto3" json:"policy_id,omitempty"`
@@ -176,7 +385,7 @@ type ValidityPolicyRef struct {
 
 func (x *ValidityPolicyRef) Reset() {
 	*x = ValidityPolicyRef{}
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[0]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -188,7 +397,7 @@ func (x *ValidityPolicyRef) String() string {
 func (*ValidityPolicyRef) ProtoMessage() {}
 
 func (x *ValidityPolicyRef) ProtoReflect() protoreflect.Message {
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[0]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -201,7 +410,7 @@ func (x *ValidityPolicyRef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidityPolicyRef.ProtoReflect.Descriptor instead.
 func (*ValidityPolicyRef) Descriptor() ([]byte, []int) {
-	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{0}
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ValidityPolicyRef) GetPolicyId() string {
@@ -218,31 +427,41 @@ func (x *ValidityPolicyRef) GetVersion() string {
 	return ""
 }
 
+// ActorSkill stores the current operational summary of one skill for one actor.
+//
+// It is intentionally a fast, runtime-friendly summary layer rather than a full
+// audit log. Runtime planners/loaders should use this message to determine
+// whether an actor is:
+// - allowed
+// - restricted
+// - expired
+//
+// ExecutionEvidence and training/certification events are expected to update
+// this summary over time.
 type ActorSkill struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon           string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Actor          *v1.ActorRef           `protobuf:"bytes,4,opt,name=actor,proto3" json:"actor,omitempty"`
-	SkillId        string                 `protobuf:"bytes,5,opt,name=skill_id,json=skillId,proto3" json:"skill_id,omitempty"`
-	Level          SkillLevel             `protobuf:"varint,6,opt,name=level,proto3,enum=capability.v1.SkillLevel" json:"level,omitempty"`
-	Status         SkillStatus            `protobuf:"varint,7,opt,name=status,proto3,enum=capability.v1.SkillStatus" json:"status,omitempty"`
-	Confidence     float64                `protobuf:"fixed64,8,opt,name=confidence,proto3" json:"confidence,omitempty"`                           // [0, 1]
-	EvidenceCount  int32                  `protobuf:"varint,9,opt,name=evidence_count,json=evidenceCount,proto3" json:"evidence_count,omitempty"` // since last training
-	FailureCount   int32                  `protobuf:"varint,10,opt,name=failure_count,json=failureCount,proto3" json:"failure_count,omitempty"`   // since last training
-	LastEvidenceAt *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=last_evidence_at,json=lastEvidenceAt,proto3" json:"last_evidence_at,omitempty"`
-	LastFailureAt  *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=last_failure_at,json=lastFailureAt,proto3" json:"last_failure_at,omitempty"`
-	ValidUntil     *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=valid_until,json=validUntil,proto3" json:"valid_until,omitempty"`             // (timestamp) or policy-derived
-	ValidityPolicy *ValidityPolicyRef     `protobuf:"bytes,14,opt,name=validity_policy,json=validityPolicy,proto3" json:"validity_policy,omitempty"` // which rule set is used
-	Reasons        []string               `protobuf:"bytes,15,rep,name=reasons,proto3" json:"reasons,omitempty"`                                     // ["inactivity_>30d"]
-	NextActions    []string               `protobuf:"bytes,16,rep,name=next_actions,json=nextActions,proto3" json:"next_actions,omitempty"`          // ["micro_training", "extra_verification_required"]
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state           protoimpl.MessageState  `protogen:"open.v1"`
+	Id              string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                  `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Actor           *v1.ActorRef            `protobuf:"bytes,4,opt,name=actor,proto3" json:"actor,omitempty"`
+	SkillId         string                  `protobuf:"bytes,5,opt,name=skill_id,json=skillId,proto3" json:"skill_id,omitempty"`
+	Level           SkillLevel              `protobuf:"varint,6,opt,name=level,proto3,enum=capability.v1.SkillLevel" json:"level,omitempty"`
+	Status          SkillStatus             `protobuf:"varint,7,opt,name=status,proto3,enum=capability.v1.SkillStatus" json:"status,omitempty"`
+	ConfidenceScore float32                 `protobuf:"fixed32,8,opt,name=confidence_score,json=confidenceScore,proto3" json:"confidence_score,omitempty"`  // Optional derived confidence/proficiency score in [0,1].
+	Stats           *SkillEvidenceStats     `protobuf:"bytes,9,opt,name=stats,proto3" json:"stats,omitempty"`                                               // Aggregated evidence summary used for fast runtime decisions.
+	LastTrainingAt  *timestamppb.Timestamp  `protobuf:"bytes,10,opt,name=last_training_at,json=lastTrainingAt,proto3" json:"last_training_at,omitempty"`    // Most recent training/refresher event relevant to this skill.
+	LastCertifiedAt *timestamppb.Timestamp  `protobuf:"bytes,11,opt,name=last_certified_at,json=lastCertifiedAt,proto3" json:"last_certified_at,omitempty"` // Most recent formal certification/re-certification event.
+	ValidUntil      *timestamppb.Timestamp  `protobuf:"bytes,12,opt,name=valid_until,json=validUntil,proto3" json:"valid_until,omitempty"`                  // Explicit validity limit if known, otherwise policy-derived.
+	ValidityPolicy  *ValidityPolicyRef      `protobuf:"bytes,13,opt,name=validity_policy,json=validityPolicy,proto3" json:"validity_policy,omitempty"`      // Policy currently used to evaluate status/validity.
+	Reasons         []SkillInvalidityReason `protobuf:"varint,14,rep,packed,name=reasons,proto3,enum=capability.v1.SkillInvalidityReason" json:"reasons,omitempty"`
+	NextActions     []SkillNextAction       `protobuf:"varint,15,rep,packed,name=next_actions,json=nextActions,proto3,enum=capability.v1.SkillNextAction" json:"next_actions,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *ActorSkill) Reset() {
 	*x = ActorSkill{}
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[1]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -254,7 +473,7 @@ func (x *ActorSkill) String() string {
 func (*ActorSkill) ProtoMessage() {}
 
 func (x *ActorSkill) ProtoReflect() protoreflect.Message {
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[1]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -267,7 +486,7 @@ func (x *ActorSkill) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActorSkill.ProtoReflect.Descriptor instead.
 func (*ActorSkill) Descriptor() ([]byte, []int) {
-	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{1}
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ActorSkill) GetId() string {
@@ -319,37 +538,30 @@ func (x *ActorSkill) GetStatus() SkillStatus {
 	return SkillStatus_SKILL_STATUS_UNSPECIFIED
 }
 
-func (x *ActorSkill) GetConfidence() float64 {
+func (x *ActorSkill) GetConfidenceScore() float32 {
 	if x != nil {
-		return x.Confidence
+		return x.ConfidenceScore
 	}
 	return 0
 }
 
-func (x *ActorSkill) GetEvidenceCount() int32 {
+func (x *ActorSkill) GetStats() *SkillEvidenceStats {
 	if x != nil {
-		return x.EvidenceCount
-	}
-	return 0
-}
-
-func (x *ActorSkill) GetFailureCount() int32 {
-	if x != nil {
-		return x.FailureCount
-	}
-	return 0
-}
-
-func (x *ActorSkill) GetLastEvidenceAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastEvidenceAt
+		return x.Stats
 	}
 	return nil
 }
 
-func (x *ActorSkill) GetLastFailureAt() *timestamppb.Timestamp {
+func (x *ActorSkill) GetLastTrainingAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.LastFailureAt
+		return x.LastTrainingAt
+	}
+	return nil
+}
+
+func (x *ActorSkill) GetLastCertifiedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastCertifiedAt
 	}
 	return nil
 }
@@ -368,14 +580,14 @@ func (x *ActorSkill) GetValidityPolicy() *ValidityPolicyRef {
 	return nil
 }
 
-func (x *ActorSkill) GetReasons() []string {
+func (x *ActorSkill) GetReasons() []SkillInvalidityReason {
 	if x != nil {
 		return x.Reasons
 	}
 	return nil
 }
 
-func (x *ActorSkill) GetNextActions() []string {
+func (x *ActorSkill) GetNextActions() []SkillNextAction {
 	if x != nil {
 		return x.NextActions
 	}
@@ -391,7 +603,7 @@ type ActorSkills struct {
 
 func (x *ActorSkills) Reset() {
 	*x = ActorSkills{}
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -403,7 +615,7 @@ func (x *ActorSkills) String() string {
 func (*ActorSkills) ProtoMessage() {}
 
 func (x *ActorSkills) ProtoReflect() protoreflect.Message {
-	mi := &file_capability_v1_actor_skill_proto_msgTypes[2]
+	mi := &file_capability_v1_actor_skill_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -416,7 +628,7 @@ func (x *ActorSkills) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActorSkills.ProtoReflect.Descriptor instead.
 func (*ActorSkills) Descriptor() ([]byte, []int) {
-	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{2}
+	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ActorSkills) GetItems() []*ActorSkill {
@@ -430,10 +642,19 @@ var File_capability_v1_actor_skill_proto protoreflect.FileDescriptor
 
 const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"\n" +
-	"\x1fcapability/v1/actor_skill.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
+	"\x1fcapability/v1/actor_skill.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x81\x03\n" +
+	"\x12SkillEvidenceStats\x12,\n" +
+	"\rsuccess_count\x18\x01 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\fsuccessCount\x12,\n" +
+	"\rfailure_count\x18\x02 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\ffailureCount\x12B\n" +
+	"\x0flast_success_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\rlastSuccessAt\x12B\n" +
+	"\x0flast_failure_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\rlastFailureAt\x12D\n" +
+	"\x10last_activity_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x0elastActivityAt\x12A\n" +
+	"\x14rolling_success_rate\x18\x06 \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x12rollingSuccessRate\"J\n" +
 	"\x11ValidityPolicyRef\x12\x1b\n" +
 	"\tpolicy_id\x18\x01 \x01(\tR\bpolicyId\x12\x18\n" +
-	"\aversion\x18\x02 \x01(\tR\aversion\"\x82\x06\n" +
+	"\aversion\x18\x02 \x01(\tR\aversion\"\xc8\x06\n" +
 	"\n" +
 	"ActorSkill\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -442,20 +663,21 @@ const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"\x05actor\x18\x04 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x12'\n" +
 	"\bskill_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf2\x04\x01R\askillId\x12<\n" +
 	"\x05level\x18\x06 \x01(\x0e2\x19.capability.v1.SkillLevelB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05level\x12<\n" +
-	"\x06status\x18\a \x01(\x0e2\x1a.capability.v1.SkillStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x127\n" +
+	"\x06status\x18\a \x01(\x0e2\x1a.capability.v1.SkillStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12:\n" +
+	"\x10confidence_score\x18\b \x01(\x02B\x0f\xbaH\f\n" +
 	"\n" +
-	"confidence\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00\xf0?)\x00\x00\x00\x00\x00\x00\x00\x00R\n" +
-	"confidence\x12.\n" +
-	"\x0eevidence_count\x18\t \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\revidenceCount\x12,\n" +
-	"\rfailure_count\x18\n" +
-	" \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\ffailureCount\x12D\n" +
-	"\x10last_evidence_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\x0elastEvidenceAt\x12B\n" +
-	"\x0flast_failure_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\rlastFailureAt\x12;\n" +
-	"\vvalid_until\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"\x1d\x00\x00\x80?-\x00\x00\x00\x00R\x0fconfidenceScore\x127\n" +
+	"\x05stats\x18\t \x01(\v2!.capability.v1.SkillEvidenceStatsR\x05stats\x12D\n" +
+	"\x10last_training_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\x0elastTrainingAt\x12F\n" +
+	"\x11last_certified_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\x0flastCertifiedAt\x12;\n" +
+	"\vvalid_until\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"validUntil\x12I\n" +
-	"\x0fvalidity_policy\x18\x0e \x01(\v2 .capability.v1.ValidityPolicyRefR\x0evalidityPolicy\x12\x18\n" +
-	"\areasons\x18\x0f \x03(\tR\areasons\x12!\n" +
-	"\fnext_actions\x18\x10 \x03(\tR\vnextActions\">\n" +
+	"\x0fvalidity_policy\x18\r \x01(\v2 .capability.v1.ValidityPolicyRefR\x0evalidityPolicy\x12M\n" +
+	"\areasons\x18\x0e \x03(\x0e2$.capability.v1.SkillInvalidityReasonB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\areasons\x12P\n" +
+	"\fnext_actions\x18\x0f \x03(\x0e2\x1e.capability.v1.SkillNextActionB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\vnextActions\">\n" +
 	"\vActorSkills\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.capability.v1.ActorSkillR\x05items*\xae\x01\n" +
 	"\n" +
@@ -470,7 +692,20 @@ const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"\x18SKILL_STATUS_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13SKILL_STATUS_ACTIVE\x10\x01\x12\x1b\n" +
 	"\x17SKILL_STATUS_RESTRICTED\x10\x02\x12\x18\n" +
-	"\x14SKILL_STATUS_EXPIRED\x10\x03B\xc3\x01\n" +
+	"\x14SKILL_STATUS_EXPIRED\x10\x03*\x87\x02\n" +
+	"\x15SkillInvalidityReason\x12,\n" +
+	"(SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED\x10\x00\x12+\n" +
+	"'SKILL_INVALIDITY_REASON_CODE_INACTIVITY\x10\x01\x12-\n" +
+	")SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE\x10\x02\x12/\n" +
+	"+SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED\x10\x03\x123\n" +
+	"/SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE\x10\x04*\x91\x02\n" +
+	"\x0fSkillNextAction\x12!\n" +
+	"\x1dSKILL_NEXT_ACTION_UNSPECIFIED\x10\x00\x12$\n" +
+	" SKILL_NEXT_ACTION_MICRO_TRAINING\x10\x01\x12(\n" +
+	"$SKILL_NEXT_ACTION_REFRESHER_TRAINING\x10\x02\x12&\n" +
+	"\"SKILL_NEXT_ACTION_RE_CERTIFICATION\x10\x03\x12/\n" +
+	"+SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED\x10\x04\x122\n" +
+	".SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED\x10\x05B\xc3\x01\n" +
 	"\x11com.capability.v1B\x0fActorSkillProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
@@ -485,31 +720,40 @@ func file_capability_v1_actor_skill_proto_rawDescGZIP() []byte {
 	return file_capability_v1_actor_skill_proto_rawDescData
 }
 
-var file_capability_v1_actor_skill_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_capability_v1_actor_skill_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_capability_v1_actor_skill_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_capability_v1_actor_skill_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_capability_v1_actor_skill_proto_goTypes = []any{
 	(SkillLevel)(0),               // 0: capability.v1.SkillLevel
 	(SkillStatus)(0),              // 1: capability.v1.SkillStatus
-	(*ValidityPolicyRef)(nil),     // 2: capability.v1.ValidityPolicyRef
-	(*ActorSkill)(nil),            // 3: capability.v1.ActorSkill
-	(*ActorSkills)(nil),           // 4: capability.v1.ActorSkills
-	(*v1.ActorRef)(nil),           // 5: common.v1.ActorRef
-	(*timestamppb.Timestamp)(nil), // 6: google.protobuf.Timestamp
+	(SkillInvalidityReason)(0),    // 2: capability.v1.SkillInvalidityReason
+	(SkillNextAction)(0),          // 3: capability.v1.SkillNextAction
+	(*SkillEvidenceStats)(nil),    // 4: capability.v1.SkillEvidenceStats
+	(*ValidityPolicyRef)(nil),     // 5: capability.v1.ValidityPolicyRef
+	(*ActorSkill)(nil),            // 6: capability.v1.ActorSkill
+	(*ActorSkills)(nil),           // 7: capability.v1.ActorSkills
+	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
+	(*v1.ActorRef)(nil),           // 9: common.v1.ActorRef
 }
 var file_capability_v1_actor_skill_proto_depIdxs = []int32{
-	5, // 0: capability.v1.ActorSkill.actor:type_name -> common.v1.ActorRef
-	0, // 1: capability.v1.ActorSkill.level:type_name -> capability.v1.SkillLevel
-	1, // 2: capability.v1.ActorSkill.status:type_name -> capability.v1.SkillStatus
-	6, // 3: capability.v1.ActorSkill.last_evidence_at:type_name -> google.protobuf.Timestamp
-	6, // 4: capability.v1.ActorSkill.last_failure_at:type_name -> google.protobuf.Timestamp
-	6, // 5: capability.v1.ActorSkill.valid_until:type_name -> google.protobuf.Timestamp
-	2, // 6: capability.v1.ActorSkill.validity_policy:type_name -> capability.v1.ValidityPolicyRef
-	3, // 7: capability.v1.ActorSkills.items:type_name -> capability.v1.ActorSkill
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	8,  // 0: capability.v1.SkillEvidenceStats.last_success_at:type_name -> google.protobuf.Timestamp
+	8,  // 1: capability.v1.SkillEvidenceStats.last_failure_at:type_name -> google.protobuf.Timestamp
+	8,  // 2: capability.v1.SkillEvidenceStats.last_activity_at:type_name -> google.protobuf.Timestamp
+	9,  // 3: capability.v1.ActorSkill.actor:type_name -> common.v1.ActorRef
+	0,  // 4: capability.v1.ActorSkill.level:type_name -> capability.v1.SkillLevel
+	1,  // 5: capability.v1.ActorSkill.status:type_name -> capability.v1.SkillStatus
+	4,  // 6: capability.v1.ActorSkill.stats:type_name -> capability.v1.SkillEvidenceStats
+	8,  // 7: capability.v1.ActorSkill.last_training_at:type_name -> google.protobuf.Timestamp
+	8,  // 8: capability.v1.ActorSkill.last_certified_at:type_name -> google.protobuf.Timestamp
+	8,  // 9: capability.v1.ActorSkill.valid_until:type_name -> google.protobuf.Timestamp
+	5,  // 10: capability.v1.ActorSkill.validity_policy:type_name -> capability.v1.ValidityPolicyRef
+	2,  // 11: capability.v1.ActorSkill.reasons:type_name -> capability.v1.SkillInvalidityReason
+	3,  // 12: capability.v1.ActorSkill.next_actions:type_name -> capability.v1.SkillNextAction
+	6,  // 13: capability.v1.ActorSkills.items:type_name -> capability.v1.ActorSkill
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_capability_v1_actor_skill_proto_init() }
@@ -522,8 +766,8 @@ func file_capability_v1_actor_skill_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_capability_v1_actor_skill_proto_rawDesc), len(file_capability_v1_actor_skill_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   3,
+			NumEnums:      4,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

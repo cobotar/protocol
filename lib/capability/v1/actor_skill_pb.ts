@@ -16,9 +16,71 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file capability/v1/actor_skill.proto.
  */
 export const file_capability_v1_actor_skill: GenFile = /*@__PURE__*/
-  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJItkECgpBY3RvclNraWxsEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIqCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEh4KCHNraWxsX2lkGAUgASgJQgy6SAnIAQFyBIDyBAESNQoFbGV2ZWwYBiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pICMgBAYIBAhABEjQKBnN0YXR1cxgHIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABEisKCmNvbmZpZGVuY2UYCCABKAFCF7pIFBISGQAAAAAAAPA/KQAAAAAAAAAAEh8KDmV2aWRlbmNlX2NvdW50GAkgASgFQge6SAQaAigAEh4KDWZhaWx1cmVfY291bnQYCiABKAVCB7pIBBoCKAASNAoQbGFzdF9ldmlkZW5jZV9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMwoPbGFzdF9mYWlsdXJlX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgt2YWxpZF91bnRpbBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASOQoPdmFsaWRpdHlfcG9saWN5GA4gASgLMiAuY2FwYWJpbGl0eS52MS5WYWxpZGl0eVBvbGljeVJlZhIPCgdyZWFzb25zGA8gAygJEhQKDG5leHRfYWN0aW9ucxgQIAMoCSI3CgtBY3RvclNraWxscxIoCgVpdGVtcxgBIAMoCzIZLmNhcGFiaWxpdHkudjEuQWN0b3JTa2lsbCquAQoKU2tpbGxMZXZlbBIbChdTS0lMTF9MRVZFTF9VTlNQRUNJRklFRBAAEhsKF1NLSUxMX0xFVkVMX05PVF9BTExPV0VEEAESGAoUU0tJTExfTEVWRUxfQVNTSVNURUQQAhIZChVTS0lMTF9MRVZFTF9RVUFMSUZJRUQQAxIWChJTS0lMTF9MRVZFTF9FWFBFUlQQBBIZChVTS0lMTF9MRVZFTF9BVVRIT1JJVFkQBSp7CgtTa2lsbFN0YXR1cxIcChhTS0lMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIXChNTS0lMTF9TVEFUVVNfQUNUSVZFEAESGwoXU0tJTExfU1RBVFVTX1JFU1RSSUNURUQQAhIYChRTS0lMTF9TVEFUVVNfRVhQSVJFRBADQsMBChFjb20uY2FwYWJpbGl0eS52MUIPQWN0b3JTa2lsbFByb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NYWKoCFk1lc3NhZ2VzLkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZQ2FwYWJpbGl0eVxWMVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIqMCChJTa2lsbEV2aWRlbmNlU3RhdHMSHgoNc3VjY2Vzc19jb3VudBgBIAEoBUIHukgEGgIoABIeCg1mYWlsdXJlX2NvdW50GAIgASgFQge6SAQaAigAEjMKD2xhc3Rfc3VjY2Vzc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMwoPbGFzdF9mYWlsdXJlX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI0ChBsYXN0X2FjdGl2aXR5X2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBItChRyb2xsaW5nX3N1Y2Nlc3NfcmF0ZRgGIAEoAkIPukgMCgodAACAPy0AAAAAIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJIq4FCgpBY3RvclNraWxsEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIqCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEh4KCHNraWxsX2lkGAUgASgJQgy6SAnIAQFyBIDyBAESNQoFbGV2ZWwYBiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pICMgBAYIBAhABEjQKBnN0YXR1cxgHIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABEikKEGNvbmZpZGVuY2Vfc2NvcmUYCCABKAJCD7pIDAoKHQAAgD8tAAAAABIwCgVzdGF0cxgJIAEoCzIhLmNhcGFiaWxpdHkudjEuU2tpbGxFdmlkZW5jZVN0YXRzEjQKEGxhc3RfdHJhaW5pbmdfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjUKEWxhc3RfY2VydGlmaWVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgt2YWxpZF91bnRpbBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASOQoPdmFsaWRpdHlfcG9saWN5GA0gASgLMiAuY2FwYWJpbGl0eS52MS5WYWxpZGl0eVBvbGljeVJlZhJECgdyZWFzb25zGA4gAygOMiQuY2FwYWJpbGl0eS52MS5Ta2lsbEludmFsaWRpdHlSZWFzb25CDbpICpIBByIFggECEAESQwoMbmV4dF9hY3Rpb25zGA8gAygOMh4uY2FwYWJpbGl0eS52MS5Ta2lsbE5leHRBY3Rpb25CDbpICpIBByIFggECEAEiNwoLQWN0b3JTa2lsbHMSKAoFaXRlbXMYASADKAsyGS5jYXBhYmlsaXR5LnYxLkFjdG9yU2tpbGwqrgEKClNraWxsTGV2ZWwSGwoXU0tJTExfTEVWRUxfVU5TUEVDSUZJRUQQABIbChdTS0lMTF9MRVZFTF9OT1RfQUxMT1dFRBABEhgKFFNLSUxMX0xFVkVMX0FTU0lTVEVEEAISGQoVU0tJTExfTEVWRUxfUVVBTElGSUVEEAMSFgoSU0tJTExfTEVWRUxfRVhQRVJUEAQSGQoVU0tJTExfTEVWRUxfQVVUSE9SSVRZEAUqewoLU2tpbGxTdGF0dXMSHAoYU0tJTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFwoTU0tJTExfU1RBVFVTX0FDVElWRRABEhsKF1NLSUxMX1NUQVRVU19SRVNUUklDVEVEEAISGAoUU0tJTExfU1RBVFVTX0VYUElSRUQQAyqHAgoVU2tpbGxJbnZhbGlkaXR5UmVhc29uEiwKKFNLSUxMX0lOVkFMSURJVFlfUkVBU09OX0NPREVfVU5TUEVDSUZJRUQQABIrCidTS0lMTF9JTlZBTElESVRZX1JFQVNPTl9DT0RFX0lOQUNUSVZJVFkQARItCilTS0lMTF9JTlZBTElESVRZX1JFQVNPTl9DT0RFX0ZBSUxVUkVfUkFURRACEi8KK1NLSUxMX0lOVkFMSURJVFlfUkVBU09OX0NPREVfUE9MSUNZX0VYUElSRUQQAxIzCi9TS0lMTF9JTlZBTElESVRZX1JFQVNPTl9DT0RFX0VOR0lORUVSSU5HX0NIQU5HRRAEKpECCg9Ta2lsbE5leHRBY3Rpb24SIQodU0tJTExfTkVYVF9BQ1RJT05fVU5TUEVDSUZJRUQQABIkCiBTS0lMTF9ORVhUX0FDVElPTl9NSUNST19UUkFJTklORxABEigKJFNLSUxMX05FWFRfQUNUSU9OX1JFRlJFU0hFUl9UUkFJTklORxACEiYKIlNLSUxMX05FWFRfQUNUSU9OX1JFX0NFUlRJRklDQVRJT04QAxIvCitTS0lMTF9ORVhUX0FDVElPTl9FWFRSQV9WQUxJREFUSU9OX1JFUVVJUkVEEAQSMgouU0tJTExfTkVYVF9BQ1RJT05fU1VQRVJWSVNPUl9BUFBST1ZBTF9SRVFVSVJFRBAFQsMBChFjb20uY2FwYWJpbGl0eS52MUIPQWN0b3JTa2lsbFByb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NYWKoCFk1lc3NhZ2VzLkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZQ2FwYWJpbGl0eVxWMVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
+ * SkillEvidenceStats is a lightweight aggregated summary of recent evidence
+ * relevant to one actor + one skill.
+ *
+ * This is intended for fast runtime decisions and policy evaluation. It is
+ * typically derived from underlying execution evidence and training/certification
+ * events rather than being treated as the primary source of truth.
+ *
+ * The effective aggregation window is policy-dependent. For example, a policy
+ * may consider only the last N executions, the last N days, or all evidence
+ * since the most recent certification.
+ *
+ * @generated from message capability.v1.SkillEvidenceStats
+ */
+export type SkillEvidenceStats = Message<"capability.v1.SkillEvidenceStats"> & {
+  /**
+   * Aggregated successful executions/evidence in the active evaluation window.
+   *
+   * @generated from field: int32 success_count = 1;
+   */
+  successCount: number;
+
+  /**
+   * Aggregated failed executions/evidence in the active evaluation window.
+   *
+   * @generated from field: int32 failure_count = 2;
+   */
+  failureCount: number;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_success_at = 3;
+   */
+  lastSuccessAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_failure_at = 4;
+   */
+  lastFailureAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_activity_at = 5;
+   */
+  lastActivityAt?: Timestamp;
+
+  /**
+   * Optional derived metric in [0,1].
+   *
+   * @generated from field: float rolling_success_rate = 6;
+   */
+  rollingSuccessRate: number;
+};
+
+/**
+ * Describes the message capability.v1.SkillEvidenceStats.
+ * Use `create(SkillEvidenceStatsSchema)` to create a new message.
+ */
+export const SkillEvidenceStatsSchema: GenMessage<SkillEvidenceStats> = /*@__PURE__*/
+  messageDesc(file_capability_v1_actor_skill, 0);
+
+/**
+ * ValidityPolicyRef identifies the policy definition and version currently used
+ * to derive validity, degradation, and recovery behavior for this actor skill.
+ *
  * @generated from message capability.v1.ValidityPolicyRef
  */
 export type ValidityPolicyRef = Message<"capability.v1.ValidityPolicyRef"> & {
@@ -38,9 +100,21 @@ export type ValidityPolicyRef = Message<"capability.v1.ValidityPolicyRef"> & {
  * Use `create(ValidityPolicyRefSchema)` to create a new message.
  */
 export const ValidityPolicyRefSchema: GenMessage<ValidityPolicyRef> = /*@__PURE__*/
-  messageDesc(file_capability_v1_actor_skill, 0);
+  messageDesc(file_capability_v1_actor_skill, 1);
 
 /**
+ * ActorSkill stores the current operational summary of one skill for one actor.
+ *
+ * It is intentionally a fast, runtime-friendly summary layer rather than a full
+ * audit log. Runtime planners/loaders should use this message to determine
+ * whether an actor is:
+ * - allowed
+ * - restricted
+ * - expired
+ *
+ * ExecutionEvidence and training/certification events are expected to update
+ * this summary over time.
+ *
  * @generated from message capability.v1.ActorSkill
  */
 export type ActorSkill = Message<"capability.v1.ActorSkill"> & {
@@ -80,63 +154,56 @@ export type ActorSkill = Message<"capability.v1.ActorSkill"> & {
   status: SkillStatus;
 
   /**
-   * [0, 1]
+   * Optional derived confidence/proficiency score in [0,1].
    *
-   * @generated from field: double confidence = 8;
+   * @generated from field: float confidence_score = 8;
    */
-  confidence: number;
+  confidenceScore: number;
 
   /**
-   * since last training
+   * Aggregated evidence summary used for fast runtime decisions.
    *
-   * @generated from field: int32 evidence_count = 9;
+   * @generated from field: capability.v1.SkillEvidenceStats stats = 9;
    */
-  evidenceCount: number;
+  stats?: SkillEvidenceStats;
 
   /**
-   * since last training
+   * Most recent training/refresher event relevant to this skill.
    *
-   * @generated from field: int32 failure_count = 10;
+   * @generated from field: google.protobuf.Timestamp last_training_at = 10;
    */
-  failureCount: number;
+  lastTrainingAt?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp last_evidence_at = 11;
-   */
-  lastEvidenceAt?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp last_failure_at = 12;
-   */
-  lastFailureAt?: Timestamp;
-
-  /**
-   * (timestamp) or policy-derived
+   * Most recent formal certification/re-certification event.
    *
-   * @generated from field: google.protobuf.Timestamp valid_until = 13;
+   * @generated from field: google.protobuf.Timestamp last_certified_at = 11;
+   */
+  lastCertifiedAt?: Timestamp;
+
+  /**
+   * Explicit validity limit if known, otherwise policy-derived.
+   *
+   * @generated from field: google.protobuf.Timestamp valid_until = 12;
    */
   validUntil?: Timestamp;
 
   /**
-   * which rule set is used
+   * Policy currently used to evaluate status/validity.
    *
-   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 14;
+   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 13;
    */
   validityPolicy?: ValidityPolicyRef;
 
   /**
-   * ["inactivity_>30d"]
-   *
-   * @generated from field: repeated string reasons = 15;
+   * @generated from field: repeated capability.v1.SkillInvalidityReason reasons = 14;
    */
-  reasons: string[];
+  reasons: SkillInvalidityReason[];
 
   /**
-   * ["micro_training", "extra_verification_required"]
-   *
-   * @generated from field: repeated string next_actions = 16;
+   * @generated from field: repeated capability.v1.SkillNextAction next_actions = 15;
    */
-  nextActions: string[];
+  nextActions: SkillNextAction[];
 };
 
 /**
@@ -144,7 +211,7 @@ export type ActorSkill = Message<"capability.v1.ActorSkill"> & {
  * Use `create(ActorSkillSchema)` to create a new message.
  */
 export const ActorSkillSchema: GenMessage<ActorSkill> = /*@__PURE__*/
-  messageDesc(file_capability_v1_actor_skill, 1);
+  messageDesc(file_capability_v1_actor_skill, 2);
 
 /**
  * @generated from message capability.v1.ActorSkills
@@ -161,7 +228,7 @@ export type ActorSkills = Message<"capability.v1.ActorSkills"> & {
  * Use `create(ActorSkillsSchema)` to create a new message.
  */
 export const ActorSkillsSchema: GenMessage<ActorSkills> = /*@__PURE__*/
-  messageDesc(file_capability_v1_actor_skill, 2);
+  messageDesc(file_capability_v1_actor_skill, 3);
 
 /**
  *
@@ -281,4 +348,81 @@ export enum SkillStatus {
  */
 export const SkillStatusSchema: GenEnum<SkillStatus> = /*@__PURE__*/
   enumDesc(file_capability_v1_actor_skill, 1);
+
+/**
+ * @generated from enum capability.v1.SkillInvalidityReason
+ */
+export enum SkillInvalidityReason {
+  /**
+   * @generated from enum value: SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED = 0;
+   */
+  CODE_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: SKILL_INVALIDITY_REASON_CODE_INACTIVITY = 1;
+   */
+  CODE_INACTIVITY = 1,
+
+  /**
+   * @generated from enum value: SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE = 2;
+   */
+  CODE_FAILURE_RATE = 2,
+
+  /**
+   * @generated from enum value: SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED = 3;
+   */
+  CODE_POLICY_EXPIRED = 3,
+
+  /**
+   * @generated from enum value: SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE = 4;
+   */
+  CODE_ENGINEERING_CHANGE = 4,
+}
+
+/**
+ * Describes the enum capability.v1.SkillInvalidityReason.
+ */
+export const SkillInvalidityReasonSchema: GenEnum<SkillInvalidityReason> = /*@__PURE__*/
+  enumDesc(file_capability_v1_actor_skill, 2);
+
+/**
+ * @generated from enum capability.v1.SkillNextAction
+ */
+export enum SkillNextAction {
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_MICRO_TRAINING = 1;
+   */
+  MICRO_TRAINING = 1,
+
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_REFRESHER_TRAINING = 2;
+   */
+  REFRESHER_TRAINING = 2,
+
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_RE_CERTIFICATION = 3;
+   */
+  RE_CERTIFICATION = 3,
+
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED = 4;
+   */
+  EXTRA_VALIDATION_REQUIRED = 4,
+
+  /**
+   * @generated from enum value: SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED = 5;
+   */
+  SUPERVISOR_APPROVAL_REQUIRED = 5,
+}
+
+/**
+ * Describes the enum capability.v1.SkillNextAction.
+ */
+export const SkillNextActionSchema: GenEnum<SkillNextAction> = /*@__PURE__*/
+  enumDesc(file_capability_v1_actor_skill, 3);
 

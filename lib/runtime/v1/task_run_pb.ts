@@ -154,6 +154,8 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   errorMessage: string;
 
   /**
+   * TODO: consider delete, already 'linked to' from ExecutionEvidence
+   *
    * @generated from field: repeated runtime.v1.ExecutionEvidence evidence = 17;
    */
   evidence: ExecutionEvidence[];
@@ -166,9 +168,9 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   /**
    * Effective runtime restrictions that currently apply to this task.
    *
-   * These restrictions should reflect the current assigned actor and execution
-   * context. They may be copied from candidate-level evaluation results during
-   * assignment or reassignment.
+   * These restrictions are the effective restrictions for the currently
+   * assigned actor and execution context. They may be copied from
+   * candidate-level evaluation results during assignment or reassignment.
    *
    * Examples:
    * - AR guidance required because the assigned actor's skill is restricted

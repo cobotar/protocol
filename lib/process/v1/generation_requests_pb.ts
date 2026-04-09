@@ -7,6 +7,10 @@ import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ProcessRecipe } from "./process_recipe_pb.ts";
 import { file_process_v1_process_recipe } from "./process_recipe_pb.ts";
+import type { SequenceDefinition } from "./sequence_definition_pb.ts";
+import { file_process_v1_sequence_definition } from "./sequence_definition_pb.ts";
+import type { TaskDefinition } from "./task_definition_pb.ts";
+import { file_process_v1_task_definition } from "./task_definition_pb.ts";
 import type { VariantConfiguration } from "../../variance/v1/variant_configuration_pb.ts";
 import { file_variance_v1_variant_configuration } from "../../variance/v1/variant_configuration_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -15,7 +19,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/generation_requests.proto.
  */
 export const file_process_v1_generation_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEiygMKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIlChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCBrpIA8gBARIZCglyZWNpcGVfaWQYAiABKAlCBrpIA8gBARITCgtyZWNpcGVfbmFtZRgDIAEoCRITCgtyZWNpcGVfaWNvbhgEIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBSABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCCJvCh9EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEhcKB21lc3NhZ2UYASABKAlCBrpIA8gBARIXCgdub2RlX2lkGAIgASgJQga6SAPIAQESGgoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJIpIBCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlc3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBARI7CgZpc3N1ZXMYAiADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWVCtgEKDmNvbS5wcm9jZXNzLnYxQhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_process_v1_process_recipe, file_variance_v1_variant_configuration]);
+  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEiygMKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIlChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCBrpIA8gBARIZCglyZWNpcGVfaWQYAiABKAlCBrpIA8gBARITCgtyZWNpcGVfbmFtZRgDIAEoCRITCgtyZWNpcGVfaWNvbhgEIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBSABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCCJvCh9EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEhcKB21lc3NhZ2UYASABKAlCBrpIA8gBARIXCgdub2RlX2lkGAIgASgJQga6SAPIAQESGgoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJIvABCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlc3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBARIxCglzZXF1ZW5jZXMYAiADKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbhIpCgV0YXNrcxgDIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24SOwoGaXNzdWVzGAQgAygLMisucHJvY2Vzcy52MS5EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlQrYBCg5jb20ucHJvY2Vzcy52MUIXR2VuZXJhdGlvblJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_process_v1_process_recipe, file_process_v1_sequence_definition, file_process_v1_task_definition, file_variance_v1_variant_configuration]);
 
 /**
  * DraftProcessRecipeGenerateRequest asks the backend to generate a draft
@@ -166,7 +170,17 @@ export type DraftProcessRecipeGenerateResult = Message<"process.v1.DraftProcessR
   recipe?: ProcessRecipe;
 
   /**
-   * @generated from field: repeated process.v1.DraftProcessRecipeGenerateIssue issues = 2;
+   * @generated from field: repeated process.v1.SequenceDefinition sequences = 2;
+   */
+  sequences: SequenceDefinition[];
+
+  /**
+   * @generated from field: repeated process.v1.TaskDefinition tasks = 3;
+   */
+  tasks: TaskDefinition[];
+
+  /**
+   * @generated from field: repeated process.v1.DraftProcessRecipeGenerateIssue issues = 4;
    */
   issues: DraftProcessRecipeGenerateIssue[];
 };

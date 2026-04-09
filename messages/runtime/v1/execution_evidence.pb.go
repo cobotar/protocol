@@ -8,6 +8,7 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -24,6 +25,9 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// EvidenceFact stores a flexible key/value fact recorded during execution.
+// Use this for measurements, classifications, result details, operator notes,
+// and other structured runtime output.
 type EvidenceFact struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
@@ -84,6 +88,14 @@ func (x *EvidenceFact) GetUnit() string {
 	return ""
 }
 
+// ExecutionEvidence records runtime facts produced during task execution.
+//
+// It is task-run-centric and primarily supports traceability, validation,
+// analytics, and downstream aggregation into actor skill state.
+//
+// The normalized fields such as actor, skill_id, and success are optional but
+// strongly recommended when known, because they make later aggregation much
+// simpler and more robust than parsing facts alone.
 type ExecutionEvidence struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -91,7 +103,10 @@ type ExecutionEvidence struct {
 	Source        string                 `protobuf:"bytes,3,opt,name=source,proto3" json:"source,omitempty"` // tool, vision, operator, robot driver, etc.
 	RecordedAt    *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=recorded_at,json=recordedAt,proto3" json:"recorded_at,omitempty"`
 	Facts         []*EvidenceFact        `protobuf:"bytes,5,rep,name=facts,proto3" json:"facts,omitempty"`
-	BlobUri       string                 `protobuf:"bytes,6,opt,name=blob_uri,json=blobUri,proto3" json:"blob_uri,omitempty"`
+	BlobUri       string                 `protobuf:"bytes,6,opt,name=blob_uri,json=blobUri,proto3" json:"blob_uri,omitempty"` // Optional external payload such as image, log, trace, or report.
+	Actor         *v1.ActorRef           `protobuf:"bytes,7,opt,name=actor,proto3" json:"actor,omitempty"`                    // Optional actor who produced or is primarily associated with this evidence.
+	SkillId       string                 `protobuf:"bytes,8,opt,name=skill_id,json=skillId,proto3" json:"skill_id,omitempty"` // Optional skill primarily exercised or validated by this evidence.
+	Success       bool                   `protobuf:"varint,9,opt,name=success,proto3" json:"success,omitempty"`               // normalized success signal when known
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -168,16 +183,81 @@ func (x *ExecutionEvidence) GetBlobUri() string {
 	return ""
 }
 
+func (x *ExecutionEvidence) GetActor() *v1.ActorRef {
+	if x != nil {
+		return x.Actor
+	}
+	return nil
+}
+
+func (x *ExecutionEvidence) GetSkillId() string {
+	if x != nil {
+		return x.SkillId
+	}
+	return ""
+}
+
+func (x *ExecutionEvidence) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+type ExecutionEvidences struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ExecutionEvidence   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExecutionEvidences) Reset() {
+	*x = ExecutionEvidences{}
+	mi := &file_runtime_v1_execution_evidence_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExecutionEvidences) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecutionEvidences) ProtoMessage() {}
+
+func (x *ExecutionEvidences) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_execution_evidence_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecutionEvidences.ProtoReflect.Descriptor instead.
+func (*ExecutionEvidences) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_execution_evidence_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ExecutionEvidences) GetItems() []*ExecutionEvidence {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_runtime_v1_execution_evidence_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_execution_evidence_proto_rawDesc = "" +
 	"\n" +
 	"#runtime/v1/execution_evidence.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
 	"\fEvidenceFact\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value\x12\x12\n" +
-	"\x04unit\x18\x03 \x01(\tR\x04unit\"\xf1\x01\n" +
+	"\x04unit\x18\x03 \x01(\tR\x04unit\"\xd1\x02\n" +
 	"\x11ExecutionEvidence\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
 	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12\x16\n" +
@@ -185,7 +265,12 @@ const file_runtime_v1_execution_evidence_proto_rawDesc = "" +
 	"\vrecorded_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"recordedAt\x12.\n" +
 	"\x05facts\x18\x05 \x03(\v2\x18.runtime.v1.EvidenceFactR\x05facts\x12\x19\n" +
-	"\bblob_uri\x18\x06 \x01(\tR\ablobUriB\xb5\x01\n" +
+	"\bblob_uri\x18\x06 \x01(\tR\ablobUri\x12)\n" +
+	"\x05actor\x18\a \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x19\n" +
+	"\bskill_id\x18\b \x01(\tR\askillId\x12\x18\n" +
+	"\asuccess\x18\t \x01(\bR\asuccess\"I\n" +
+	"\x12ExecutionEvidences\x123\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\x05itemsB\xb5\x01\n" +
 	"\x0ecom.runtime.v1B\x16ExecutionEvidenceProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
@@ -201,20 +286,24 @@ func file_runtime_v1_execution_evidence_proto_rawDescGZIP() []byte {
 	return file_runtime_v1_execution_evidence_proto_rawDescData
 }
 
-var file_runtime_v1_execution_evidence_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_runtime_v1_execution_evidence_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_execution_evidence_proto_goTypes = []any{
 	(*EvidenceFact)(nil),          // 0: runtime.v1.EvidenceFact
 	(*ExecutionEvidence)(nil),     // 1: runtime.v1.ExecutionEvidence
-	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
+	(*ExecutionEvidences)(nil),    // 2: runtime.v1.ExecutionEvidences
+	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
+	(*v1.ActorRef)(nil),           // 4: common.v1.ActorRef
 }
 var file_runtime_v1_execution_evidence_proto_depIdxs = []int32{
-	2, // 0: runtime.v1.ExecutionEvidence.recorded_at:type_name -> google.protobuf.Timestamp
+	3, // 0: runtime.v1.ExecutionEvidence.recorded_at:type_name -> google.protobuf.Timestamp
 	0, // 1: runtime.v1.ExecutionEvidence.facts:type_name -> runtime.v1.EvidenceFact
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	4, // 2: runtime.v1.ExecutionEvidence.actor:type_name -> common.v1.ActorRef
+	1, // 3: runtime.v1.ExecutionEvidences.items:type_name -> runtime.v1.ExecutionEvidence
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_execution_evidence_proto_init() }
@@ -228,7 +317,7 @@ func file_runtime_v1_execution_evidence_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_execution_evidence_proto_rawDesc), len(file_runtime_v1_execution_evidence_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -243,7 +243,9 @@ func (x *DraftProcessRecipeGenerateIssue) GetPartDefinitionId() string {
 type DraftProcessRecipeGenerateResult struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
 	Recipe        *ProcessRecipe                     `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
-	Issues        []*DraftProcessRecipeGenerateIssue `protobuf:"bytes,2,rep,name=issues,proto3" json:"issues,omitempty"`
+	Sequences     []*SequenceDefinition              `protobuf:"bytes,2,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks         []*TaskDefinition                  `protobuf:"bytes,3,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	Issues        []*DraftProcessRecipeGenerateIssue `protobuf:"bytes,4,rep,name=issues,proto3" json:"issues,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -285,6 +287,20 @@ func (x *DraftProcessRecipeGenerateResult) GetRecipe() *ProcessRecipe {
 	return nil
 }
 
+func (x *DraftProcessRecipeGenerateResult) GetSequences() []*SequenceDefinition {
+	if x != nil {
+		return x.Sequences
+	}
+	return nil
+}
+
+func (x *DraftProcessRecipeGenerateResult) GetTasks() []*TaskDefinition {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
 func (x *DraftProcessRecipeGenerateResult) GetIssues() []*DraftProcessRecipeGenerateIssue {
 	if x != nil {
 		return x.Issues
@@ -297,7 +313,7 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a'variance/v1/variant_configuration.proto\"\xc6\x05\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a'variance/v1/variant_configuration.proto\"\xc6\x05\n" +
 	"!DraftProcessRecipeGenerateRequest\x12:\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x13productDefinitionId\x12#\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\brecipeId\x12\x1f\n" +
@@ -317,10 +333,12 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\x1fDraftProcessRecipeGenerateIssue\x12 \n" +
 	"\amessage\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\amessage\x12\x1f\n" +
 	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x12,\n" +
-	"\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\xa2\x01\n" +
+	"\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\x92\x02\n" +
 	" DraftProcessRecipeGenerateResult\x129\n" +
-	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12C\n" +
-	"\x06issues\x18\x02 \x03(\v2+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n" +
+	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12<\n" +
+	"\tsequences\x18\x02 \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
+	"\x05tasks\x18\x03 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\x12C\n" +
+	"\x06issues\x18\x04 \x03(\v2+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n" +
 	"\x0ecom.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
@@ -343,16 +361,20 @@ var file_process_v1_generation_requests_proto_goTypes = []any{
 	(*DraftProcessRecipeGenerateResult)(nil),  // 2: process.v1.DraftProcessRecipeGenerateResult
 	(*v1.VariantConfiguration)(nil),           // 3: variance.v1.VariantConfiguration
 	(*ProcessRecipe)(nil),                     // 4: process.v1.ProcessRecipe
+	(*SequenceDefinition)(nil),                // 5: process.v1.SequenceDefinition
+	(*TaskDefinition)(nil),                    // 6: process.v1.TaskDefinition
 }
 var file_process_v1_generation_requests_proto_depIdxs = []int32{
 	3, // 0: process.v1.DraftProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
 	4, // 1: process.v1.DraftProcessRecipeGenerateResult.recipe:type_name -> process.v1.ProcessRecipe
-	1, // 2: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	5, // 2: process.v1.DraftProcessRecipeGenerateResult.sequences:type_name -> process.v1.SequenceDefinition
+	6, // 3: process.v1.DraftProcessRecipeGenerateResult.tasks:type_name -> process.v1.TaskDefinition
+	1, // 4: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_generation_requests_proto_init() }
@@ -361,6 +383,8 @@ func file_process_v1_generation_requests_proto_init() {
 		return
 	}
 	file_process_v1_process_recipe_proto_init()
+	file_process_v1_sequence_definition_proto_init()
+	file_process_v1_task_definition_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

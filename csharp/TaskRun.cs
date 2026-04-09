@@ -716,6 +716,9 @@ namespace Messages.Runtime.V1 {
     private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ExecutionEvidence> _repeated_evidence_codec
         = pb::FieldCodec.ForMessage(138, global::Messages.Runtime.V1.ExecutionEvidence.Parser);
     private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence> evidence_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence>();
+    /// <summary>
+    /// TODO: consider delete, already 'linked to' from ExecutionEvidence
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence> Evidence {
@@ -742,9 +745,9 @@ namespace Messages.Runtime.V1 {
     /// <summary>
     /// Effective runtime restrictions that currently apply to this task.
     ///
-    /// These restrictions should reflect the current assigned actor and execution
-    /// context. They may be copied from candidate-level evaluation results during
-    /// assignment or reassignment.
+    /// These restrictions are the effective restrictions for the currently
+    /// assigned actor and execution context. They may be copied from
+    /// candidate-level evaluation results during assignment or reassignment.
     ///
     /// Examples:
     /// - AR guidance required because the assigned actor's skill is restricted

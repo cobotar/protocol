@@ -182,13 +182,13 @@ type TaskRun struct {
 	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
 	ErrorCode           string                 `protobuf:"bytes,15,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
 	ErrorMessage        string                 `protobuf:"bytes,16,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
-	Evidence            []*ExecutionEvidence   `protobuf:"bytes,17,rep,name=evidence,proto3" json:"evidence,omitempty"`
+	Evidence            []*ExecutionEvidence   `protobuf:"bytes,17,rep,name=evidence,proto3" json:"evidence,omitempty"` // TODO: consider delete, already 'linked to' from ExecutionEvidence
 	Binding             *TaskRuntimeBinding    `protobuf:"bytes,18,opt,name=binding,proto3" json:"binding,omitempty"`
 	// Effective runtime restrictions that currently apply to this task.
 	//
-	// These restrictions should reflect the current assigned actor and execution
-	// context. They may be copied from candidate-level evaluation results during
-	// assignment or reassignment.
+	// These restrictions are the effective restrictions for the currently
+	// assigned actor and execution context. They may be copied from
+	// candidate-level evaluation results during assignment or reassignment.
 	//
 	// Examples:
 	// - AR guidance required because the assigned actor's skill is restricted

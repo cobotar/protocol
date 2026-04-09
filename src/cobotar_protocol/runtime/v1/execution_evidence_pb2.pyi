@@ -1,6 +1,7 @@
 import datetime
 
 from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import actor_pb2 as _actor_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -22,17 +23,29 @@ class EvidenceFact(_message.Message):
     def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ..., unit: _Optional[str] = ...) -> None: ...
 
 class ExecutionEvidence(_message.Message):
-    __slots__ = ("id", "task_run_id", "source", "recorded_at", "facts", "blob_uri")
+    __slots__ = ("id", "task_run_id", "source", "recorded_at", "facts", "blob_uri", "actor", "skill_id", "success")
     ID_FIELD_NUMBER: _ClassVar[int]
     TASK_RUN_ID_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     RECORDED_AT_FIELD_NUMBER: _ClassVar[int]
     FACTS_FIELD_NUMBER: _ClassVar[int]
     BLOB_URI_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
+    SKILL_ID_FIELD_NUMBER: _ClassVar[int]
+    SUCCESS_FIELD_NUMBER: _ClassVar[int]
     id: str
     task_run_id: str
     source: str
     recorded_at: _timestamp_pb2.Timestamp
     facts: _containers.RepeatedCompositeFieldContainer[EvidenceFact]
     blob_uri: str
-    def __init__(self, id: _Optional[str] = ..., task_run_id: _Optional[str] = ..., source: _Optional[str] = ..., recorded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., facts: _Optional[_Iterable[_Union[EvidenceFact, _Mapping]]] = ..., blob_uri: _Optional[str] = ...) -> None: ...
+    actor: _actor_pb2.ActorRef
+    skill_id: str
+    success: bool
+    def __init__(self, id: _Optional[str] = ..., task_run_id: _Optional[str] = ..., source: _Optional[str] = ..., recorded_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., facts: _Optional[_Iterable[_Union[EvidenceFact, _Mapping]]] = ..., blob_uri: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., skill_id: _Optional[str] = ..., success: bool = ...) -> None: ...
+
+class ExecutionEvidences(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ExecutionEvidence]
+    def __init__(self, items: _Optional[_Iterable[_Union[ExecutionEvidence, _Mapping]]] = ...) -> None: ...

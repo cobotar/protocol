@@ -5,6 +5,8 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { ActorRef } from "../../common/v1/actor_pb.ts";
+import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -14,9 +16,13 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/execution_evidence.proto.
  */
 export const file_runtime_v1_execution_evidence: GenFile = /*@__PURE__*/
-  fileDesc("CiNydW50aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90bxIKcnVudGltZS52MSI4CgxFdmlkZW5jZUZhY3QSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJEgwKBHVuaXQYAyABKAkivgEKEUV4ZWN1dGlvbkV2aWRlbmNlEgoKAmlkGAEgASgJEiEKC3Rhc2tfcnVuX2lkGAIgASgJQgy6SAnIAQFyBJjyBAESDgoGc291cmNlGAMgASgJEi8KC3JlY29yZGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBInCgVmYWN0cxgFIAMoCzIYLnJ1bnRpbWUudjEuRXZpZGVuY2VGYWN0EhAKCGJsb2JfdXJpGAYgASgJQrUBCg5jb20ucnVudGltZS52MUIWRXhlY3V0aW9uRXZpZGVuY2VQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiNydW50aW1lL3YxL2V4ZWN1dGlvbl9ldmlkZW5jZS5wcm90bxIKcnVudGltZS52MSI4CgxFdmlkZW5jZUZhY3QSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJEgwKBHVuaXQYAyABKAkihQIKEUV4ZWN1dGlvbkV2aWRlbmNlEgoKAmlkGAEgASgJEiEKC3Rhc2tfcnVuX2lkGAIgASgJQgy6SAnIAQFyBJjyBAESDgoGc291cmNlGAMgASgJEi8KC3JlY29yZGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBInCgVmYWN0cxgFIAMoCzIYLnJ1bnRpbWUudjEuRXZpZGVuY2VGYWN0EhAKCGJsb2JfdXJpGAYgASgJEiIKBWFjdG9yGAcgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEhAKCHNraWxsX2lkGAggASgJEg8KB3N1Y2Nlc3MYCSABKAgiQgoSRXhlY3V0aW9uRXZpZGVuY2VzEiwKBWl0ZW1zGAEgAygLMh0ucnVudGltZS52MS5FeGVjdXRpb25FdmlkZW5jZUK1AQoOY29tLnJ1bnRpbWUudjFCFkV4ZWN1dGlvbkV2aWRlbmNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
+ * EvidenceFact stores a flexible key/value fact recorded during execution.
+ * Use this for measurements, classifications, result details, operator notes,
+ * and other structured runtime output.
+ *
  * @generated from message runtime.v1.EvidenceFact
  */
 export type EvidenceFact = Message<"runtime.v1.EvidenceFact"> & {
@@ -44,6 +50,15 @@ export const EvidenceFactSchema: GenMessage<EvidenceFact> = /*@__PURE__*/
   messageDesc(file_runtime_v1_execution_evidence, 0);
 
 /**
+ * ExecutionEvidence records runtime facts produced during task execution.
+ *
+ * It is task-run-centric and primarily supports traceability, validation,
+ * analytics, and downstream aggregation into actor skill state.
+ *
+ * The normalized fields such as actor, skill_id, and success are optional but
+ * strongly recommended when known, because they make later aggregation much
+ * simpler and more robust than parsing facts alone.
+ *
  * @generated from message runtime.v1.ExecutionEvidence
  */
 export type ExecutionEvidence = Message<"runtime.v1.ExecutionEvidence"> & {
@@ -75,9 +90,32 @@ export type ExecutionEvidence = Message<"runtime.v1.ExecutionEvidence"> & {
   facts: EvidenceFact[];
 
   /**
+   * Optional external payload such as image, log, trace, or report.
+   *
    * @generated from field: string blob_uri = 6;
    */
   blobUri: string;
+
+  /**
+   * Optional actor who produced or is primarily associated with this evidence.
+   *
+   * @generated from field: common.v1.ActorRef actor = 7;
+   */
+  actor?: ActorRef;
+
+  /**
+   * Optional skill primarily exercised or validated by this evidence.
+   *
+   * @generated from field: string skill_id = 8;
+   */
+  skillId: string;
+
+  /**
+   * normalized success signal when known
+   *
+   * @generated from field: bool success = 9;
+   */
+  success: boolean;
 };
 
 /**
@@ -86,4 +124,21 @@ export type ExecutionEvidence = Message<"runtime.v1.ExecutionEvidence"> & {
  */
 export const ExecutionEvidenceSchema: GenMessage<ExecutionEvidence> = /*@__PURE__*/
   messageDesc(file_runtime_v1_execution_evidence, 1);
+
+/**
+ * @generated from message runtime.v1.ExecutionEvidences
+ */
+export type ExecutionEvidences = Message<"runtime.v1.ExecutionEvidences"> & {
+  /**
+   * @generated from field: repeated runtime.v1.ExecutionEvidence items = 1;
+   */
+  items: ExecutionEvidence[];
+};
+
+/**
+ * Describes the message runtime.v1.ExecutionEvidences.
+ * Use `create(ExecutionEvidencesSchema)` to create a new message.
+ */
+export const ExecutionEvidencesSchema: GenMessage<ExecutionEvidences> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_execution_evidence, 2);
 
