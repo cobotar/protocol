@@ -265,6 +265,8 @@ type SkillDefinition struct {
 	ToolRoles             []ToolRole             `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
 	SafetyRelevance       v1.SafetyRelevance     `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
 	DefaultValidityPolicy *ValidityPolicyRef     `protobuf:"bytes,8,opt,name=default_validity_policy,json=defaultValidityPolicy,proto3" json:"default_validity_policy,omitempty"` // default validity policy
+	StandardWorkerSkill   bool                   `protobuf:"varint,9,opt,name=standard_worker_skill,json=standardWorkerSkill,proto3" json:"standard_worker_skill,omitempty"`      // Automatically add this skill to a worker when the worker is created
+	StandardRobotSkill    bool                   `protobuf:"varint,10,opt,name=standard_robot_skill,json=standardRobotSkill,proto3" json:"standard_robot_skill,omitempty"`        // Automatically add this skill to a robot when the robot is created
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -355,6 +357,20 @@ func (x *SkillDefinition) GetDefaultValidityPolicy() *ValidityPolicyRef {
 	return nil
 }
 
+func (x *SkillDefinition) GetStandardWorkerSkill() bool {
+	if x != nil {
+		return x.StandardWorkerSkill
+	}
+	return false
+}
+
+func (x *SkillDefinition) GetStandardRobotSkill() bool {
+	if x != nil {
+		return x.StandardRobotSkill
+	}
+	return false
+}
+
 type SkillDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*SkillDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -403,7 +419,7 @@ var File_capability_v1_skill_definition_proto protoreflect.FileDescriptor
 
 const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\n" +
-	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa6\x03\n" +
+	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8c\x04\n" +
 	"\x0fSkillDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -414,7 +430,10 @@ const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"tool_roles\x18\x06 \x03(\x0e2\x17.capability.v1.ToolRoleB\r\xbaH\n" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\ttoolRoles\x12O\n" +
 	"\x10safety_relevance\x18\a \x01(\x0e2\x1a.common.v1.SafetyRelevanceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\x12X\n" +
-	"\x17default_validity_policy\x18\b \x01(\v2 .capability.v1.ValidityPolicyRefR\x15defaultValidityPolicy\"H\n" +
+	"\x17default_validity_policy\x18\b \x01(\v2 .capability.v1.ValidityPolicyRefR\x15defaultValidityPolicy\x122\n" +
+	"\x15standard_worker_skill\x18\t \x01(\bR\x13standardWorkerSkill\x120\n" +
+	"\x14standard_robot_skill\x18\n" +
+	" \x01(\bR\x12standardRobotSkill\"H\n" +
 	"\x10SkillDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.capability.v1.SkillDefinitionR\x05items*\x92\x02\n" +
 	"\vSkillDomain\x12\x1c\n" +

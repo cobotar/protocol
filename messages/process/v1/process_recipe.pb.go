@@ -146,17 +146,17 @@ func (x *RecipeApplicability) GetExclude() []*v1.VariantRule {
 // - What actor constrains exist
 // - What validation is needed
 type ProcessRecipe struct {
-	state                           protoimpl.MessageState   `protogen:"open.v1"`
-	Id                              string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                            string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                            string                   `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description                     string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                            ProcessType              `protobuf:"varint,5,opt,name=type,proto3,enum=process.v1.ProcessType" json:"type,omitempty"`
-	ProductDefinitionId             string                   `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
-	Applicability                   *RecipeApplicability     `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
-	RootSequenceId                  string                   `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
-	Sequences                       []*SequenceDefinition    `protobuf:"bytes,9,rep,name=sequences,proto3" json:"sequences,omitempty"`
-	Tasks                           []*TaskDefinition        `protobuf:"bytes,10,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                ProcessType            `protobuf:"varint,5,opt,name=type,proto3,enum=process.v1.ProcessType" json:"type,omitempty"`
+	ProductDefinitionId string                 `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
+	Applicability       *RecipeApplicability   `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
+	RootSequenceId      string                 `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
+	// repeated SequenceDefinition sequences = 9;
+	// repeated TaskDefinition tasks = 10;
 	SupportedContainerDefinitionIds []string                 `protobuf:"bytes,11,rep,name=supported_container_definition_ids,json=supportedContainerDefinitionIds,proto3" json:"supported_container_definition_ids,omitempty"` // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
 	ExternalReferences              []*v11.ExternalReference `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
@@ -249,20 +249,6 @@ func (x *ProcessRecipe) GetRootSequenceId() string {
 	return ""
 }
 
-func (x *ProcessRecipe) GetSequences() []*SequenceDefinition {
-	if x != nil {
-		return x.Sequences
-	}
-	return nil
-}
-
-func (x *ProcessRecipe) GetTasks() []*TaskDefinition {
-	if x != nil {
-		return x.Tasks
-	}
-	return nil
-}
-
 func (x *ProcessRecipe) GetSupportedContainerDefinitionIds() []string {
 	if x != nil {
 		return x.SupportedContainerDefinitionIds
@@ -326,10 +312,10 @@ var File_process_v1_process_recipe_proto protoreflect.FileDescriptor
 const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\n" +
 	"\x1fprocess/v1/process_recipe.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
 	"\x13RecipeApplicability\x122\n" +
 	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
-	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xdf\x04\n" +
+	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xef\x03\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -338,10 +324,7 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x17.process.v1.ProcessTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x122\n" +
 	"\x15product_definition_id\x18\x06 \x01(\tR\x13productDefinitionId\x12E\n" +
 	"\rapplicability\x18\a \x01(\v2\x1f.process.v1.RecipeApplicabilityR\rapplicability\x12(\n" +
-	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12<\n" +
-	"\tsequences\x18\t \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
-	"\x05tasks\x18\n" +
-	" \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\x12K\n" +
+	"\x10root_sequence_id\x18\b \x01(\tR\x0erootSequenceId\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
 	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"A\n" +
 	"\x0eProcessRecipes\x12/\n" +
@@ -377,24 +360,20 @@ var file_process_v1_process_recipe_proto_goTypes = []any{
 	(*ProcessRecipe)(nil),         // 2: process.v1.ProcessRecipe
 	(*ProcessRecipes)(nil),        // 3: process.v1.ProcessRecipes
 	(*v1.VariantRule)(nil),        // 4: variance.v1.VariantRule
-	(*SequenceDefinition)(nil),    // 5: process.v1.SequenceDefinition
-	(*TaskDefinition)(nil),        // 6: process.v1.TaskDefinition
-	(*v11.ExternalReference)(nil), // 7: common.v1.ExternalReference
+	(*v11.ExternalReference)(nil), // 5: common.v1.ExternalReference
 }
 var file_process_v1_process_recipe_proto_depIdxs = []int32{
 	4, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
 	4, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
 	0, // 2: process.v1.ProcessRecipe.type:type_name -> process.v1.ProcessType
 	1, // 3: process.v1.ProcessRecipe.applicability:type_name -> process.v1.RecipeApplicability
-	5, // 4: process.v1.ProcessRecipe.sequences:type_name -> process.v1.SequenceDefinition
-	6, // 5: process.v1.ProcessRecipe.tasks:type_name -> process.v1.TaskDefinition
-	7, // 6: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
-	2, // 7: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	5, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
+	2, // 5: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_process_recipe_proto_init() }
@@ -402,8 +381,6 @@ func file_process_v1_process_recipe_proto_init() {
 	if File_process_v1_process_recipe_proto != nil {
 		return
 	}
-	file_process_v1_sequence_definition_proto_init()
-	file_process_v1_task_definition_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

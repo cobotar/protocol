@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file capability/v1/actor_skill.proto.
  */
 export const file_capability_v1_actor_skill: GenFile = /*@__PURE__*/
-  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJIoQECgpBY3RvclNraWxsEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIqCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEh4KCHNraWxsX2lkGAUgASgJQgy6SAnIAQFyBIDyBAESNQoFbGV2ZWwYBiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pICMgBAYIBAhABEjQKBnN0YXR1cxgHIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABEisKCmNvbmZpZGVuY2UYCCABKAFCF7pIFBISGQAAAAAAAPA/KQAAAAAAAAAAEjQKEGxhc3RfZXZpZGVuY2VfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEh8KDmV2aWRlbmNlX2NvdW50GAogASgFQge6SAQaAigAEi8KC3ZhbGlkX3VudGlsGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI5Cg92YWxpZGl0eV9wb2xpY3kYDCABKAsyIC5jYXBhYmlsaXR5LnYxLlZhbGlkaXR5UG9saWN5UmVmEg8KB3JlYXNvbnMYDSADKAkSFAoMbmV4dF9hY3Rpb25zGA4gAygJIjcKC0FjdG9yU2tpbGxzEigKBWl0ZW1zGAEgAygLMhkuY2FwYWJpbGl0eS52MS5BY3RvclNraWxsKq4BCgpTa2lsbExldmVsEhsKF1NLSUxMX0xFVkVMX1VOU1BFQ0lGSUVEEAASGwoXU0tJTExfTEVWRUxfTk9UX0FMTE9XRUQQARIYChRTS0lMTF9MRVZFTF9BU1NJU1RFRBACEhkKFVNLSUxMX0xFVkVMX1FVQUxJRklFRBADEhYKElNLSUxMX0xFVkVMX0VYUEVSVBAEEhkKFVNLSUxMX0xFVkVMX0FVVEhPUklUWRAFKnsKC1NraWxsU3RhdHVzEhwKGFNLSUxMX1NUQVRVU19VTlNQRUNJRklFRBAAEhcKE1NLSUxMX1NUQVRVU19BQ1RJVkUQARIbChdTS0lMTF9TVEFUVVNfUkVTVFJJQ1RFRBACEhgKFFNLSUxMX1NUQVRVU19FWFBJUkVEEANCwwEKEWNvbS5jYXBhYmlsaXR5LnYxQg9BY3RvclNraWxsUHJvdG9QAVo/Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NhcGFiaWxpdHkvdjE7Y2FwYWJpbGl0eXYxogIDQ1hYqgIWTWVzc2FnZXMuQ2FwYWJpbGl0eS5WMcoCDUNhcGFiaWxpdHlcVjHiAhlDYXBhYmlsaXR5XFYxXEdQQk1ldGFkYXRh6gIOQ2FwYWJpbGl0eTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9jYXBhYmlsaXR5L3YxL2FjdG9yX3NraWxsLnByb3RvEg1jYXBhYmlsaXR5LnYxIjcKEVZhbGlkaXR5UG9saWN5UmVmEhEKCXBvbGljeV9pZBgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJItkECgpBY3RvclNraWxsEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIqCgVhY3RvchgEIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEh4KCHNraWxsX2lkGAUgASgJQgy6SAnIAQFyBIDyBAESNQoFbGV2ZWwYBiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxCC7pICMgBAYIBAhABEjQKBnN0YXR1cxgHIAEoDjIaLmNhcGFiaWxpdHkudjEuU2tpbGxTdGF0dXNCCLpIBYIBAhABEisKCmNvbmZpZGVuY2UYCCABKAFCF7pIFBISGQAAAAAAAPA/KQAAAAAAAAAAEh8KDmV2aWRlbmNlX2NvdW50GAkgASgFQge6SAQaAigAEh4KDWZhaWx1cmVfY291bnQYCiABKAVCB7pIBBoCKAASNAoQbGFzdF9ldmlkZW5jZV9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMwoPbGFzdF9mYWlsdXJlX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgt2YWxpZF91bnRpbBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASOQoPdmFsaWRpdHlfcG9saWN5GA4gASgLMiAuY2FwYWJpbGl0eS52MS5WYWxpZGl0eVBvbGljeVJlZhIPCgdyZWFzb25zGA8gAygJEhQKDG5leHRfYWN0aW9ucxgQIAMoCSI3CgtBY3RvclNraWxscxIoCgVpdGVtcxgBIAMoCzIZLmNhcGFiaWxpdHkudjEuQWN0b3JTa2lsbCquAQoKU2tpbGxMZXZlbBIbChdTS0lMTF9MRVZFTF9VTlNQRUNJRklFRBAAEhsKF1NLSUxMX0xFVkVMX05PVF9BTExPV0VEEAESGAoUU0tJTExfTEVWRUxfQVNTSVNURUQQAhIZChVTS0lMTF9MRVZFTF9RVUFMSUZJRUQQAxIWChJTS0lMTF9MRVZFTF9FWFBFUlQQBBIZChVTS0lMTF9MRVZFTF9BVVRIT1JJVFkQBSp7CgtTa2lsbFN0YXR1cxIcChhTS0lMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIXChNTS0lMTF9TVEFUVVNfQUNUSVZFEAESGwoXU0tJTExfU1RBVFVTX1JFU1RSSUNURUQQAhIYChRTS0lMTF9TVEFUVVNfRVhQSVJFRBADQsMBChFjb20uY2FwYWJpbGl0eS52MUIPQWN0b3JTa2lsbFByb3RvUAFaP2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NYWKoCFk1lc3NhZ2VzLkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZQ2FwYWJpbGl0eVxWMVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message capability.v1.ValidityPolicyRef
@@ -87,44 +87,54 @@ export type ActorSkill = Message<"capability.v1.ActorSkill"> & {
   confidence: number;
 
   /**
-   * timestamp
-   *
-   * @generated from field: google.protobuf.Timestamp last_evidence_at = 9;
-   */
-  lastEvidenceAt?: Timestamp;
-
-  /**
    * since last training
    *
-   * @generated from field: int32 evidence_count = 10;
+   * @generated from field: int32 evidence_count = 9;
    */
   evidenceCount: number;
 
   /**
+   * since last training
+   *
+   * @generated from field: int32 failure_count = 10;
+   */
+  failureCount: number;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_evidence_at = 11;
+   */
+  lastEvidenceAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_failure_at = 12;
+   */
+  lastFailureAt?: Timestamp;
+
+  /**
    * (timestamp) or policy-derived
    *
-   * @generated from field: google.protobuf.Timestamp valid_until = 11;
+   * @generated from field: google.protobuf.Timestamp valid_until = 13;
    */
   validUntil?: Timestamp;
 
   /**
    * which rule set is used
    *
-   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 12;
+   * @generated from field: capability.v1.ValidityPolicyRef validity_policy = 14;
    */
   validityPolicy?: ValidityPolicyRef;
 
   /**
    * ["inactivity_>30d"]
    *
-   * @generated from field: repeated string reasons = 13;
+   * @generated from field: repeated string reasons = 15;
    */
   reasons: string[];
 
   /**
    * ["micro_training", "extra_verification_required"]
    *
-   * @generated from field: repeated string next_actions = 14;
+   * @generated from field: repeated string next_actions = 16;
    */
   nextActions: string[];
 };

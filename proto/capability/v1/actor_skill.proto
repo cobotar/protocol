@@ -84,12 +84,14 @@ message ActorSkill {
     (buf.validate.field).double.gte = 0,
     (buf.validate.field).double.lte = 1
   ]; // [0, 1]
-  google.protobuf.Timestamp last_evidence_at = 9; // timestamp
-  int32 evidence_count = 10 [(buf.validate.field).int32.gte = 0]; // since last training
-  google.protobuf.Timestamp valid_until = 11; // (timestamp) or policy-derived
-  ValidityPolicyRef validity_policy = 12; // which rule set is used
-  repeated string reasons = 13; // ["inactivity_>30d"]
-  repeated string next_actions = 14; // ["micro_training", "extra_verification_required"]
+  int32 evidence_count = 9 [(buf.validate.field).int32.gte = 0]; // since last training
+  int32 failure_count = 10 [(buf.validate.field).int32.gte = 0]; // since last training
+  google.protobuf.Timestamp last_evidence_at = 11;
+  google.protobuf.Timestamp last_failure_at = 12;
+  google.protobuf.Timestamp valid_until = 13; // (timestamp) or policy-derived
+  ValidityPolicyRef validity_policy = 14; // which rule set is used
+  repeated string reasons = 15; // ["inactivity_>30d"]
+  repeated string next_actions = 16; // ["micro_training", "extra_verification_required"]
 }
 
 message ActorSkills {

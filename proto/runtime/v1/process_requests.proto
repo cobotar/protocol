@@ -64,6 +64,7 @@ message ProcessLoadRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
   ]; // Required recipe to instantiate.
+
   string target_line_id = 2 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.line_id_component) = true
@@ -71,14 +72,8 @@ message ProcessLoadRequest {
 
   // Optional narrowing of the target scope.
   // If set, the loader must validate and respect these targets.
-  string target_cell_id = 3 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.cell_id_component) = true
-  ];
-  string target_station_id = 4 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.station_id_component) = true
-  ];
+  string target_cell_id = 3 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
+  string target_station_id = 4 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
 
   // Optional variant configuration used to evaluate recipe/task applicability.
   variance.v1.VariantConfiguration variant_configuration = 5;

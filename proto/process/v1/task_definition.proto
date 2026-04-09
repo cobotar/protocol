@@ -141,7 +141,7 @@ message TaskDefinition {
   string icon = 3;
   string description = 4;
   string instruction_text = 5; // Human-readable instruction shown to the operator or author.
-  int32 sequence_number = 6; // Ordering hint within the parent sequence.
+  int32 sequence_number = 6 [(buf.validate.field).int32.gte = 0]; // Ordering hint within the parent sequence.
   TaskType task_type = 7 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true

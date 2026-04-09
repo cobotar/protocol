@@ -1006,14 +1006,14 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
 	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
-	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x90\b\n" +
+	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x99\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12)\n" +
-	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x12'\n" +
-	"\x0fsequence_number\x18\x06 \x01(\x05R\x0esequenceNumber\x12>\n" +
+	"\x10instruction_text\x18\x05 \x01(\tR\x0finstructionText\x120\n" +
+	"\x0fsequence_number\x18\x06 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0esequenceNumber\x12>\n" +
 	"\ttask_type\x18\a \x01(\x0e2\x14.process.v1.TaskTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\btaskType\x12.\n" +
 	"\x06target\x18\b \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
 	"\x10insertion_offset\x18\t \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +

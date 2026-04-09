@@ -26,42 +26,38 @@ namespace Messages.Process.V1 {
           string.Concat(
             "Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYx",
             "GhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aI2NvbW1vbi92MS9leHRl",
-            "cm5hbF9yZWZlcmVuY2VzLnByb3RvGiRwcm9jZXNzL3YxL3NlcXVlbmNlX2Rl",
-            "ZmluaXRpb24ucHJvdG8aIHByb2Nlc3MvdjEvdGFza19kZWZpbml0aW9uLnBy",
-            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvGh52YXJpYW5jZS92MS92YXJpYW50X3J1bGUucHJvdG8ifQoTUmVjaXBl",
-            "QXBwbGljYWJpbGl0eRIyCgdpbmNsdWRlGAEgAygLMhgudmFyaWFuY2UudjEu",
-            "VmFyaWFudFJ1bGVSB2luY2x1ZGUSMgoHZXhjbHVkZRgCIAMoCzIYLnZhcmlh",
-            "bmNlLnYxLlZhcmlhbnRSdWxlUgdleGNsdWRlIt8ECg1Qcm9jZXNzUmVjaXBl",
-            "Eg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5h",
-            "bWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVIL",
-            "ZGVzY3JpcHRpb24SOAoEdHlwZRgFIAEoDjIXLnByb2Nlc3MudjEuUHJvY2Vz",
-            "c1R5cGVCC7pICIIBAhAByAEBUgR0eXBlEjIKFXByb2R1Y3RfZGVmaW5pdGlv",
-            "bl9pZBgGIAEoCVITcHJvZHVjdERlZmluaXRpb25JZBJFCg1hcHBsaWNhYmls",
-            "aXR5GAcgASgLMh8ucHJvY2Vzcy52MS5SZWNpcGVBcHBsaWNhYmlsaXR5Ug1h",
-            "cHBsaWNhYmlsaXR5EigKEHJvb3Rfc2VxdWVuY2VfaWQYCCABKAlSDnJvb3RT",
-            "ZXF1ZW5jZUlkEjwKCXNlcXVlbmNlcxgJIAMoCzIeLnByb2Nlc3MudjEuU2Vx",
-            "dWVuY2VEZWZpbml0aW9uUglzZXF1ZW5jZXMSMAoFdGFza3MYCiADKAsyGi5w",
-            "cm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uUgV0YXNrcxJLCiJzdXBwb3J0ZWRf",
-            "Y29udGFpbmVyX2RlZmluaXRpb25faWRzGAsgAygJUh9zdXBwb3J0ZWRDb250",
-            "YWluZXJEZWZpbml0aW9uSWRzEk0KE2V4dGVybmFsX3JlZmVyZW5jZXMYDCAD",
-            "KAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVm",
-            "ZXJlbmNlcyJBCg5Qcm9jZXNzUmVjaXBlcxIvCgVpdGVtcxgBIAMoCzIZLnBy",
-            "b2Nlc3MudjEuUHJvY2Vzc1JlY2lwZVIFaXRlbXMq1QEKC1Byb2Nlc3NUeXBl",
-            "EhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAAEhkKFVBST0NFU1NfVFlQ",
-            "RV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9ESVNBU1NFTUJMWRACEhsK",
-            "F1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMSGgoWUFJPQ0VTU19UWVBFX0NI",
-            "RUNLTElTVBAEEhgKFFBST0NFU1NfVFlQRV9LSVRUSU5HEAUSHAoYUFJPQ0VT",
-            "U19UWVBFX01BSU5URU5BTkNFEAZCsQEKDmNvbS5wcm9jZXNzLnYxQhJQcm9j",
-            "ZXNzUmVjaXBlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2Fn",
-            "ZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1l",
-            "dGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw=="));
+            "cm5hbF9yZWZlcmVuY2VzLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmlu",
+            "ZWRfc3RyaW5nX3J1bGVzLnByb3RvGh52YXJpYW5jZS92MS92YXJpYW50X3J1",
+            "bGUucHJvdG8ifQoTUmVjaXBlQXBwbGljYWJpbGl0eRIyCgdpbmNsdWRlGAEg",
+            "AygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVSB2luY2x1ZGUSMgoHZXhj",
+            "bHVkZRgCIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlUgdleGNsdWRl",
+            "Iu8DCg1Qcm9jZXNzUmVjaXBlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIg",
+            "ASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
+            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SOAoEdHlwZRgFIAEoDjIX",
+            "LnByb2Nlc3MudjEuUHJvY2Vzc1R5cGVCC7pICIIBAhAByAEBUgR0eXBlEjIK",
+            "FXByb2R1Y3RfZGVmaW5pdGlvbl9pZBgGIAEoCVITcHJvZHVjdERlZmluaXRp",
+            "b25JZBJFCg1hcHBsaWNhYmlsaXR5GAcgASgLMh8ucHJvY2Vzcy52MS5SZWNp",
+            "cGVBcHBsaWNhYmlsaXR5Ug1hcHBsaWNhYmlsaXR5EigKEHJvb3Rfc2VxdWVu",
+            "Y2VfaWQYCCABKAlSDnJvb3RTZXF1ZW5jZUlkEksKInN1cHBvcnRlZF9jb250",
+            "YWluZXJfZGVmaW5pdGlvbl9pZHMYCyADKAlSH3N1cHBvcnRlZENvbnRhaW5l",
+            "ckRlZmluaXRpb25JZHMSTQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIc",
+            "LmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0ZXJuYWxSZWZlcmVu",
+            "Y2VzIkEKDlByb2Nlc3NSZWNpcGVzEi8KBWl0ZW1zGAEgAygLMhkucHJvY2Vz",
+            "cy52MS5Qcm9jZXNzUmVjaXBlUgVpdGVtcyrVAQoLUHJvY2Vzc1R5cGUSHAoY",
+            "UFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FT",
+            "U0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJP",
+            "Q0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tM",
+            "SVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZ",
+            "UEVfTUFJTlRFTkFOQ0UQBkKxAQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NS",
+            "ZWNpcGVQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Q",
+            "cm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRh",
+            "dGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.ProcessType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RecipeApplicability), global::Messages.Process.V1.RecipeApplicability.Parser, new[]{ "Include", "Exclude" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipe), global::Messages.Process.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "Sequences", "Tasks", "SupportedContainerDefinitionIds", "ExternalReferences" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipe), global::Messages.Process.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "SupportedContainerDefinitionIds", "ExternalReferences" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipes), global::Messages.Process.V1.ProcessRecipes.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -371,8 +367,6 @@ namespace Messages.Process.V1 {
       productDefinitionId_ = other.productDefinitionId_;
       applicability_ = other.applicability_ != null ? other.applicability_.Clone() : null;
       rootSequenceId_ = other.rootSequenceId_;
-      sequences_ = other.sequences_.Clone();
-      tasks_ = other.tasks_.Clone();
       supportedContainerDefinitionIds_ = other.supportedContainerDefinitionIds_.Clone();
       externalReferences_ = other.externalReferences_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -480,35 +474,14 @@ namespace Messages.Process.V1 {
       }
     }
 
-    /// <summary>Field number for the "sequences" field.</summary>
-    public const int SequencesFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Messages.Process.V1.SequenceDefinition> _repeated_sequences_codec
-        = pb::FieldCodec.ForMessage(74, global::Messages.Process.V1.SequenceDefinition.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Process.V1.SequenceDefinition> sequences_ = new pbc::RepeatedField<global::Messages.Process.V1.SequenceDefinition>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Process.V1.SequenceDefinition> Sequences {
-      get { return sequences_; }
-    }
-
-    /// <summary>Field number for the "tasks" field.</summary>
-    public const int TasksFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Messages.Process.V1.TaskDefinition> _repeated_tasks_codec
-        = pb::FieldCodec.ForMessage(82, global::Messages.Process.V1.TaskDefinition.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Process.V1.TaskDefinition> tasks_ = new pbc::RepeatedField<global::Messages.Process.V1.TaskDefinition>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Process.V1.TaskDefinition> Tasks {
-      get { return tasks_; }
-    }
-
     /// <summary>Field number for the "supported_container_definition_ids" field.</summary>
     public const int SupportedContainerDefinitionIdsFieldNumber = 11;
     private static readonly pb::FieldCodec<string> _repeated_supportedContainerDefinitionIds_codec
         = pb::FieldCodec.ForString(90);
     private readonly pbc::RepeatedField<string> supportedContainerDefinitionIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
+    /// repeated SequenceDefinition sequences = 9;
+    /// repeated TaskDefinition tasks = 10;
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -550,8 +523,6 @@ namespace Messages.Process.V1 {
       if (ProductDefinitionId != other.ProductDefinitionId) return false;
       if (!object.Equals(Applicability, other.Applicability)) return false;
       if (RootSequenceId != other.RootSequenceId) return false;
-      if(!sequences_.Equals(other.sequences_)) return false;
-      if(!tasks_.Equals(other.tasks_)) return false;
       if(!supportedContainerDefinitionIds_.Equals(other.supportedContainerDefinitionIds_)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -569,8 +540,6 @@ namespace Messages.Process.V1 {
       if (ProductDefinitionId.Length != 0) hash ^= ProductDefinitionId.GetHashCode();
       if (applicability_ != null) hash ^= Applicability.GetHashCode();
       if (RootSequenceId.Length != 0) hash ^= RootSequenceId.GetHashCode();
-      hash ^= sequences_.GetHashCode();
-      hash ^= tasks_.GetHashCode();
       hash ^= supportedContainerDefinitionIds_.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (_unknownFields != null) {
@@ -623,8 +592,6 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(66);
         output.WriteString(RootSequenceId);
       }
-      sequences_.WriteTo(output, _repeated_sequences_codec);
-      tasks_.WriteTo(output, _repeated_tasks_codec);
       supportedContainerDefinitionIds_.WriteTo(output, _repeated_supportedContainerDefinitionIds_codec);
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (_unknownFields != null) {
@@ -669,8 +636,6 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(66);
         output.WriteString(RootSequenceId);
       }
-      sequences_.WriteTo(ref output, _repeated_sequences_codec);
-      tasks_.WriteTo(ref output, _repeated_tasks_codec);
       supportedContainerDefinitionIds_.WriteTo(ref output, _repeated_supportedContainerDefinitionIds_codec);
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (_unknownFields != null) {
@@ -707,8 +672,6 @@ namespace Messages.Process.V1 {
       if (RootSequenceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RootSequenceId);
       }
-      size += sequences_.CalculateSize(_repeated_sequences_codec);
-      size += tasks_.CalculateSize(_repeated_tasks_codec);
       size += supportedContainerDefinitionIds_.CalculateSize(_repeated_supportedContainerDefinitionIds_codec);
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (_unknownFields != null) {
@@ -750,8 +713,6 @@ namespace Messages.Process.V1 {
       if (other.RootSequenceId.Length != 0) {
         RootSequenceId = other.RootSequenceId;
       }
-      sequences_.Add(other.sequences_);
-      tasks_.Add(other.tasks_);
       supportedContainerDefinitionIds_.Add(other.supportedContainerDefinitionIds_);
       externalReferences_.Add(other.externalReferences_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -806,14 +767,6 @@ namespace Messages.Process.V1 {
           }
           case 66: {
             RootSequenceId = input.ReadString();
-            break;
-          }
-          case 74: {
-            sequences_.AddEntriesFrom(input, _repeated_sequences_codec);
-            break;
-          }
-          case 82: {
-            tasks_.AddEntriesFrom(input, _repeated_tasks_codec);
             break;
           }
           case 90: {
@@ -876,14 +829,6 @@ namespace Messages.Process.V1 {
           }
           case 66: {
             RootSequenceId = input.ReadString();
-            break;
-          }
-          case 74: {
-            sequences_.AddEntriesFrom(ref input, _repeated_sequences_codec);
-            break;
-          }
-          case 82: {
-            tasks_.AddEntriesFrom(ref input, _repeated_tasks_codec);
             break;
           }
           case 90: {

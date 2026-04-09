@@ -7,10 +7,6 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
-import type { SequenceDefinition } from "./sequence_definition_pb.ts";
-import { file_process_v1_sequence_definition } from "./sequence_definition_pb.ts";
-import type { TaskDefinition } from "./task_definition_pb.ts";
-import { file_process_v1_task_definition } from "./task_definition_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantRule } from "../../variance/v1/variant_rule_pb.ts";
 import { file_variance_v1_variant_rule } from "../../variance/v1/variant_rule_pb.ts";
@@ -20,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/process_recipe.proto.
  */
 export const file_process_v1_process_recipe: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSLBAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIxCglzZXF1ZW5jZXMYCSADKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbhIpCgV0YXNrcxgKIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24SKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlKtUBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBBIYChRQUk9DRVNTX1RZUEVfS0lUVElORxAFEhwKGFBST0NFU1NfVFlQRV9NQUlOVEVOQU5DRRAGQrEBCg5jb20ucHJvY2Vzcy52MUISUHJvY2Vzc1JlY2lwZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSLjAgoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIqCiJzdXBwb3J0ZWRfY29udGFpbmVyX2RlZmluaXRpb25faWRzGAsgAygJEjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYDCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2UiOgoOUHJvY2Vzc1JlY2lwZXMSKAoFaXRlbXMYASADKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGUq1QEKC1Byb2Nlc3NUeXBlEhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAAEhkKFVBST0NFU1NfVFlQRV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9ESVNBU1NFTUJMWRACEhsKF1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMSGgoWUFJPQ0VTU19UWVBFX0NIRUNLTElTVBAEEhgKFFBST0NFU1NfVFlQRV9LSVRUSU5HEAUSHAoYUFJPQ0VTU19UWVBFX01BSU5URU5BTkNFEAZCsQEKDmNvbS5wcm9jZXNzLnYxQhJQcm9jZXNzUmVjaXBlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message process.v1.RecipeApplicability
@@ -101,16 +97,9 @@ export type ProcessRecipe = Message<"process.v1.ProcessRecipe"> & {
   rootSequenceId: string;
 
   /**
-   * @generated from field: repeated process.v1.SequenceDefinition sequences = 9;
-   */
-  sequences: SequenceDefinition[];
-
-  /**
-   * @generated from field: repeated process.v1.TaskDefinition tasks = 10;
-   */
-  tasks: TaskDefinition[];
-
-  /**
+   * repeated SequenceDefinition sequences = 9;
+   * repeated TaskDefinition tasks = 10;
+   *
    * Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
    *
    * @generated from field: repeated string supported_container_definition_ids = 11;

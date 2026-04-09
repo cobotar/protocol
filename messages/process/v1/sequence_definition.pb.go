@@ -257,13 +257,13 @@ var File_process_v1_sequence_definition_proto protoreflect.FileDescriptor
 const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/sequence_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf0\x03\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf9\x03\n" +
 	"\x12SequenceDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x05R\x0esequenceNumber\x12,\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x120\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0esequenceNumber\x12,\n" +
 	"\x12parent_sequence_id\x18\x06 \x01(\tR\x10parentSequenceId\x12E\n" +
 	"\boperator\x18\a \x01(\x0e2\x1c.process.v1.SequenceOperatorB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\boperator\x12,\n" +
 	"\x12child_sequence_ids\x18\b \x03(\tR\x10childSequenceIds\x12$\n" +
