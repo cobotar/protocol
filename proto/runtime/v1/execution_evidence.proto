@@ -2,18 +2,30 @@ syntax = "proto3";
 package runtime.v1;
 
 import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
 import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
+// EvidenceFact stores a flexible key/value fact recorded during execution.
+// Use this for measurements, classifications, result details, operator notes,
+// and other structured runtime output.
 message EvidenceFact {
   string key = 1;
   string value = 2;
   string unit = 3;
 }
 
+// ExecutionEvidence records runtime facts produced during task execution.
+//
+// It is task-run-centric and primarily supports traceability, validation,
+// analytics, and downstream aggregation into actor skill state.
+//
+// The normalized fields such as actor, skill_id, and success are optional but
+// strongly recommended when known, because they make later aggregation much
+// simpler and more robust than parsing facts alone.
 message ExecutionEvidence {
   string id = 1;
   string task_run_id = 2 [
@@ -23,7 +35,15 @@ message ExecutionEvidence {
   string source = 3; // tool, vision, operator, robot driver, etc.
   google.protobuf.Timestamp recorded_at = 4;
   repeated EvidenceFact facts = 5;
-  string blob_uri = 6;
+  string blob_uri = 6; // Optional external payload such as image, log, trace, or report.
+
+  common.v1.ActorRef actor = 7; // Optional actor who produced or is primarily associated with this evidence.
+  string skill_id = 8; // Optional skill primarily exercised or validated by this evidence.
+  bool success = 9; // normalized success signal when known
+}
+
+message ExecutionEvidences {
+  repeated ExecutionEvidence items = 1;
 }
 
 /* ExecutionEvidence examples:
@@ -34,6 +54,12 @@ message ExecutionEvidence {
      task_run_id: "taskrun-fasten-screw-1"
      source: "tool:torque-driver-7"
      recorded_at: { ... }
+     actor: {
+       actor_id: "worker-17"
+       kind: ACTOR_KIND_HUMAN
+     }
+     skill_id: "skill-fastening-apply-torque"
+     success: true
      facts: [
        {
          key: "torque"
@@ -62,6 +88,12 @@ message ExecutionEvidence {
      task_run_id: "taskrun-verify-cover"
      source: "vision:cam-top-1"
      recorded_at: { ... }
+     actor: {
+       actor_id: "robot-3"
+       kind: ACTOR_KIND_ROBOT
+     }
+     skill_id: "skill-inspection-visual-inspection"
+     success: false
      facts: [
        {
          key: "screw_count_detected"
@@ -69,15 +101,15 @@ message ExecutionEvidence {
        },
        {
          key: "cover_present"
-         value: "true"
+         value: "false"
        },
        {
          key: "confidence"
-         value: "0.95"
+         value: "0.61"
        },
        {
          key: "result"
-         value: "pass"
+         value: "fail"
        }
      ]
    }
@@ -88,6 +120,12 @@ message ExecutionEvidence {
      task_run_id: "taskrun-place-cover"
      source: "operator:worker-17"
      recorded_at: { ... }
+     actor: {
+       actor_id: "worker-17"
+       kind: ACTOR_KIND_HUMAN
+     }
+     skill_id: "skill-handling-grip-and-position-component"
+     success: true
      facts: [
        {
          key: "confirmation"

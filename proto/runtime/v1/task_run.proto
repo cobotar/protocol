@@ -59,14 +59,14 @@ message TaskRun {
   google.protobuf.Timestamp completed_at = 14;
   string error_code = 15;
   string error_message = 16;
-  repeated ExecutionEvidence evidence = 17;
+  repeated ExecutionEvidence evidence = 17; // TODO: consider delete, already 'linked to' from ExecutionEvidence
   TaskRuntimeBinding binding = 18;
 
   // Effective runtime restrictions that currently apply to this task.
   //
-  // These restrictions should reflect the current assigned actor and execution
-  // context. They may be copied from candidate-level evaluation results during
-  // assignment or reassignment.
+  // These restrictions are the effective restrictions for the currently
+  // assigned actor and execution context. They may be copied from
+  // candidate-level evaluation results during assignment or reassignment.
   //
   // Examples:
   // - AR guidance required because the assigned actor's skill is restricted

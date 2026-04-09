@@ -61,11 +61,62 @@ enum SkillStatus {
   SKILL_STATUS_EXPIRED = 3;
 }
 
+enum SkillInvalidityReason {
+  SKILL_INVALIDITY_REASON_CODE_UNSPECIFIED = 0;
+  SKILL_INVALIDITY_REASON_CODE_INACTIVITY = 1;
+  SKILL_INVALIDITY_REASON_CODE_FAILURE_RATE = 2;
+  SKILL_INVALIDITY_REASON_CODE_POLICY_EXPIRED = 3;
+  SKILL_INVALIDITY_REASON_CODE_ENGINEERING_CHANGE = 4;
+}
+
+enum SkillNextAction {
+  SKILL_NEXT_ACTION_UNSPECIFIED = 0;
+    SKILL_NEXT_ACTION_MICRO_TRAINING = 1;
+    SKILL_NEXT_ACTION_REFRESHER_TRAINING = 2;
+    SKILL_NEXT_ACTION_RE_CERTIFICATION = 3;
+    SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED = 4;
+    SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED = 5;
+}
+
+// SkillEvidenceStats is a lightweight aggregated summary of recent evidence
+// relevant to one actor + one skill.
+//
+// This is intended for fast runtime decisions and policy evaluation. It is
+// typically derived from underlying execution evidence and training/certification
+// events rather than being treated as the primary source of truth.
+//
+// The effective aggregation window is policy-dependent. For example, a policy
+// may consider only the last N executions, the last N days, or all evidence
+// since the most recent certification.
+message SkillEvidenceStats {
+  int32 success_count = 1 [(buf.validate.field).int32.gte = 0];  // Aggregated successful executions/evidence in the active evaluation window.
+  int32 failure_count = 2 [(buf.validate.field).int32.gte = 0]; // Aggregated failed executions/evidence in the active evaluation window.
+
+  google.protobuf.Timestamp last_success_at = 3;
+  google.protobuf.Timestamp last_failure_at = 4;
+  google.protobuf.Timestamp last_activity_at = 5;
+
+  float rolling_success_rate = 6 [(buf.validate.field).float = {gte: 0, lte: 1}]; // Optional derived metric in [0,1].
+}
+
+// ValidityPolicyRef identifies the policy definition and version currently used
+// to derive validity, degradation, and recovery behavior for this actor skill.
 message ValidityPolicyRef {
   string policy_id = 1;
   string version = 2;
 }
 
+// ActorSkill stores the current operational summary of one skill for one actor.
+//
+// It is intentionally a fast, runtime-friendly summary layer rather than a full
+// audit log. Runtime planners/loaders should use this message to determine
+// whether an actor is:
+// - allowed
+// - restricted
+// - expired
+//
+// ExecutionEvidence and training/certification events are expected to update
+// this summary over time.
 message ActorSkill {
   string id = 1;
   string name = 2;
@@ -80,18 +131,21 @@ message ActorSkill {
     (buf.validate.field).enum.defined_only = true
   ];
   SkillStatus status = 7 [(buf.validate.field).enum.defined_only = true];
-  double confidence = 8 [
-    (buf.validate.field).double.gte = 0,
-    (buf.validate.field).double.lte = 1
-  ]; // [0, 1]
-  int32 evidence_count = 9 [(buf.validate.field).int32.gte = 0]; // since last training
-  int32 failure_count = 10 [(buf.validate.field).int32.gte = 0]; // since last training
-  google.protobuf.Timestamp last_evidence_at = 11;
-  google.protobuf.Timestamp last_failure_at = 12;
-  google.protobuf.Timestamp valid_until = 13; // (timestamp) or policy-derived
-  ValidityPolicyRef validity_policy = 14; // which rule set is used
-  repeated string reasons = 15; // ["inactivity_>30d"]
-  repeated string next_actions = 16; // ["micro_training", "extra_verification_required"]
+  float confidence_score = 8 [(buf.validate.field).float = { gte: 0, lte: 1}]; // Optional derived confidence/proficiency score in [0,1].
+
+  SkillEvidenceStats stats = 9;  // Aggregated evidence summary used for fast runtime decisions.
+
+  google.protobuf.Timestamp last_training_at = 10; // Most recent training/refresher event relevant to this skill.
+  google.protobuf.Timestamp last_certified_at = 11; // Most recent formal certification/re-certification event.
+
+  google.protobuf.Timestamp valid_until = 12; // Explicit validity limit if known, otherwise policy-derived.
+  ValidityPolicyRef validity_policy = 13; // Policy currently used to evaluate status/validity.
+  repeated SkillInvalidityReason reasons = 14 [
+    (buf.validate.field).repeated.items.enum.defined_only = true
+  ];
+  repeated SkillNextAction next_actions = 15 [
+    (buf.validate.field).repeated.items.enum.defined_only = true
+  ];
 }
 
 message ActorSkills {

@@ -3,6 +3,8 @@ package process.v1;
 
 import "buf/validate/validate.proto";
 import "process/v1/process_recipe.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
 import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Process.V1";
@@ -67,5 +69,7 @@ message DraftProcessRecipeGenerateIssue {
 // DraftProcessRecipeGenerateResult contains the generated draft recipe.
 message DraftProcessRecipeGenerateResult {
   ProcessRecipe recipe = 1 [(buf.validate.field).required = true];
-  repeated DraftProcessRecipeGenerateIssue issues = 2;
+  repeated SequenceDefinition sequences = 2;
+  repeated TaskDefinition tasks = 3;
+  repeated DraftProcessRecipeGenerateIssue issues = 4;
 }
