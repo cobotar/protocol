@@ -166,13 +166,45 @@ func (SkillStatus) EnumDescriptor() ([]byte, []int) {
 	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{1}
 }
 
+// SkillInvalidityReason explains why an actor skill is currently restricted,
+// expired, or otherwise not fully valid.
+//
+// These reasons are intended to be stable, machine-readable summary codes that
+// can be shown in UI, used in loaders/runtime checks, and derived from evidence,
+// policy evaluation, or engineering-change events.
 type SkillInvalidityReason int32
 
 const (
-	SkillInvalidityReason_SKILL_INVALIDITY_REASON_UNSPECIFIED        SkillInvalidityReason = 0
-	SkillInvalidityReason_SKILL_INVALIDITY_REASON_INACTIVITY         SkillInvalidityReason = 1
-	SkillInvalidityReason_SKILL_INVALIDITY_REASON_FAILURE_RATE       SkillInvalidityReason = 2
-	SkillInvalidityReason_SKILL_INVALIDITY_REASON_POLICY_EXPIRED     SkillInvalidityReason = 3
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_UNSPECIFIED SkillInvalidityReason = 0
+	// The skill has degraded due to lack of recent practice or evidence of use.
+	//
+	// Typical examples:
+	// - no executions in the active policy window
+	// - no recent successful evidence for the skill
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_INACTIVITY SkillInvalidityReason = 1
+	// The skill is restricted or invalid because observed failure rate or quality
+	// performance exceeded the allowed threshold.
+	//
+	// Typical examples:
+	// - too many failed executions in the recent window
+	// - too many out-of-tolerance results
+	// - too many inspection failures or retries
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_FAILURE_RATE SkillInvalidityReason = 2
+	// The governing validity/certification policy has expired the skill based on
+	// time or other policy-defined rules.
+	//
+	// Typical examples:
+	// - certification period elapsed
+	// - revalidation deadline passed
+	SkillInvalidityReason_SKILL_INVALIDITY_REASON_POLICY_EXPIRED SkillInvalidityReason = 3
+	// The skill has been invalidated because a relevant engineering or process
+	// change means previous validation/training can no longer be trusted.
+	//
+	// Typical examples:
+	// - tool model or capability changed
+	// - torque/program parameters changed
+	// - product revision changed
+	// - robot program or fixture configuration changed
 	SkillInvalidityReason_SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE SkillInvalidityReason = 4
 )
 
@@ -221,14 +253,53 @@ func (SkillInvalidityReason) EnumDescriptor() ([]byte, []int) {
 	return file_capability_v1_actor_skill_proto_rawDescGZIP(), []int{2}
 }
 
+// SkillNextAction describes the recommended next action needed to restore,
+// strengthen, or safely compensate for a restricted/expired skill.
+//
+// These actions are intended to be stable, machine-readable guidance codes that
+// can be surfaced in UI and used by operational workflows.
 type SkillNextAction int32
 
 const (
-	SkillNextAction_SKILL_NEXT_ACTION_UNSPECIFIED                  SkillNextAction = 0
-	SkillNextAction_SKILL_NEXT_ACTION_MICRO_TRAINING               SkillNextAction = 1
-	SkillNextAction_SKILL_NEXT_ACTION_REFRESHER_TRAINING           SkillNextAction = 2
-	SkillNextAction_SKILL_NEXT_ACTION_RE_CERTIFICATION             SkillNextAction = 3
-	SkillNextAction_SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED    SkillNextAction = 4
+	SkillNextAction_SKILL_NEXT_ACTION_UNSPECIFIED SkillNextAction = 0
+	// A short targeted intervention is recommended before normal independent use.
+	//
+	// Typical examples:
+	// - brief AR-guided walkthrough
+	// - quick reminder of the critical steps
+	// - short digital refresher module
+	SkillNextAction_SKILL_NEXT_ACTION_MICRO_TRAINING SkillNextAction = 1
+	// A broader retraining session is recommended because the skill has degraded
+	// beyond what a short intervention should address.
+	//
+	// Typical examples:
+	// - instructor-led refresher
+	// - extended guided practice
+	// - retraining on updated process/tooling
+	SkillNextAction_SKILL_NEXT_ACTION_REFRESHER_TRAINING SkillNextAction = 2
+	// Formal re-certification or re-validation is required before the skill can
+	// return to normal unrestricted use.
+	//
+	// Typical examples:
+	// - certification renewal
+	// - formal competency check
+	// - validated robot/program re-approval
+	SkillNextAction_SKILL_NEXT_ACTION_RE_CERTIFICATION SkillNextAction = 3
+	// Additional runtime validation must be performed before or during task
+	// execution to safely use the skill in its current state.
+	//
+	// Typical examples:
+	// - second check required
+	// - vision/tool confirmation required
+	// - extra verification step before completion
+	SkillNextAction_SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED SkillNextAction = 4
+	// Supervisor or responsible authority approval is required before the actor
+	// may execute tasks relying on this skill.
+	//
+	// Typical examples:
+	// - technician sign-off
+	// - team lead approval
+	// - engineering approval for temporary restricted use
 	SkillNextAction_SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED SkillNextAction = 5
 )
 

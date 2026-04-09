@@ -323,17 +323,6 @@
     - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
     - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
   
-- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
-    - [VariantPredicate](#variance-v1-VariantPredicate)
-    - [VariantRule](#variance-v1-VariantRule)
-  
-- [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
-    - [ProcessRecipe](#process-v1-ProcessRecipe)
-    - [ProcessRecipes](#process-v1-ProcessRecipes)
-    - [RecipeApplicability](#process-v1-RecipeApplicability)
-  
-    - [ProcessType](#process-v1-ProcessType)
-  
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
@@ -358,6 +347,10 @@
     - [ContainerSlotType](#resources-v1-ContainerSlotType)
     - [ContainerType](#resources-v1-ContainerType)
   
+- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
+    - [VariantPredicate](#variance-v1-VariantPredicate)
+    - [VariantRule](#variance-v1-VariantRule)
+  
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
     - [ContainerTarget](#process-v1-ContainerTarget)
     - [ProductTarget](#process-v1-ProductTarget)
@@ -372,6 +365,14 @@
   
     - [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference)
     - [TaskType](#process-v1-TaskType)
+  
+- [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
+    - [CreateProcessRecipe](#process-v1-CreateProcessRecipe)
+    - [ProcessRecipe](#process-v1-ProcessRecipe)
+    - [ProcessRecipes](#process-v1-ProcessRecipes)
+    - [RecipeApplicability](#process-v1-RecipeApplicability)
+  
+    - [ProcessType](#process-v1-ProcessType)
   
 - [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
     - [VariantConfiguration](#variance-v1-VariantConfiguration)
@@ -2700,15 +2701,28 @@ to derive validity, degradation, and recovery behavior for this actor skill.
 <a name="capability-v1-SkillInvalidityReason"></a>
 
 ### SkillInvalidityReason
+SkillInvalidityReason explains why an actor skill is currently restricted,
+expired, or otherwise not fully valid.
 
+These reasons are intended to be stable, machine-readable summary codes that
+can be shown in UI, used in loaders/runtime checks, and derived from evidence,
+policy evaluation, or engineering-change events.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SKILL_INVALIDITY_REASON_UNSPECIFIED | 0 |  |
-| SKILL_INVALIDITY_REASON_INACTIVITY | 1 |  |
-| SKILL_INVALIDITY_REASON_FAILURE_RATE | 2 |  |
-| SKILL_INVALIDITY_REASON_POLICY_EXPIRED | 3 |  |
-| SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE | 4 |  |
+| SKILL_INVALIDITY_REASON_INACTIVITY | 1 | The skill has degraded due to lack of recent practice or evidence of use.
+
+Typical examples: - no executions in the active policy window - no recent successful evidence for the skill |
+| SKILL_INVALIDITY_REASON_FAILURE_RATE | 2 | The skill is restricted or invalid because observed failure rate or quality performance exceeded the allowed threshold.
+
+Typical examples: - too many failed executions in the recent window - too many out-of-tolerance results - too many inspection failures or retries |
+| SKILL_INVALIDITY_REASON_POLICY_EXPIRED | 3 | The governing validity/certification policy has expired the skill based on time or other policy-defined rules.
+
+Typical examples: - certification period elapsed - revalidation deadline passed |
+| SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE | 4 | The skill has been invalidated because a relevant engineering or process change means previous validation/training can no longer be trusted.
+
+Typical examples: - tool model or capability changed - torque/program parameters changed - product revision changed - robot program or fixture configuration changed |
 
 
 
@@ -2736,16 +2750,30 @@ CERTIFIED: Officially qualified
 <a name="capability-v1-SkillNextAction"></a>
 
 ### SkillNextAction
+SkillNextAction describes the recommended next action needed to restore,
+strengthen, or safely compensate for a restricted/expired skill.
 
+These actions are intended to be stable, machine-readable guidance codes that
+can be surfaced in UI and used by operational workflows.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SKILL_NEXT_ACTION_UNSPECIFIED | 0 |  |
-| SKILL_NEXT_ACTION_MICRO_TRAINING | 1 |  |
-| SKILL_NEXT_ACTION_REFRESHER_TRAINING | 2 |  |
-| SKILL_NEXT_ACTION_RE_CERTIFICATION | 3 |  |
-| SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED | 4 |  |
-| SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED | 5 |  |
+| SKILL_NEXT_ACTION_MICRO_TRAINING | 1 | A short targeted intervention is recommended before normal independent use.
+
+Typical examples: - brief AR-guided walkthrough - quick reminder of the critical steps - short digital refresher module |
+| SKILL_NEXT_ACTION_REFRESHER_TRAINING | 2 | A broader retraining session is recommended because the skill has degraded beyond what a short intervention should address.
+
+Typical examples: - instructor-led refresher - extended guided practice - retraining on updated process/tooling |
+| SKILL_NEXT_ACTION_RE_CERTIFICATION | 3 | Formal re-certification or re-validation is required before the skill can return to normal unrestricted use.
+
+Typical examples: - certification renewal - formal competency check - validated robot/program re-approval |
+| SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED | 4 | Additional runtime validation must be performed before or during task execution to safely use the skill in its current state.
+
+Typical examples: - second check required - vision/tool confirmation required - extra verification step before completion |
+| SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED | 5 | Supervisor or responsible authority approval is required before the actor may execute tasks relying on this skill.
+
+Typical examples: - technician sign-off - team lead approval - engineering approval for temporary restricted use |
 
 
 
@@ -4553,150 +4581,6 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
 
-<a name="variance_v1_variant_rule-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## variance/v1/variant_rule.proto
-
-
-
-<a name="variance-v1-VariantPredicate"></a>
-
-### VariantPredicate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
-| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
-| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
-
-
-
-
-
-
-<a name="variance-v1-VariantRule"></a>
-
-### VariantRule
-VariantRule: a rule matches if all predicates match
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="process_v1_process_recipe-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## process/v1/process_recipe.proto
-
-
-
-<a name="process-v1-ProcessRecipe"></a>
-
-### ProcessRecipe
-ProcessRecipe describes the following:
-- What work must be done
-- What kinds of capabilities are required
-- What tool roles are required
-- What skills are required
-- What actor constrains exist
-- What validation is needed
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#process-v1-ProcessType) |  |  |
-| product_definition_id | [string](#string) |  |  |
-| applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  |  |
-| root_sequence_id | [string](#string) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
-| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-
-
-
-
-
-
-<a name="process-v1-ProcessRecipes"></a>
-
-### ProcessRecipes
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ProcessRecipe](#process-v1-ProcessRecipe) | repeated |  |
-
-
-
-
-
-
-<a name="process-v1-RecipeApplicability"></a>
-
-### RecipeApplicability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| include | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
-| exclude | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
-
-
-
-
-
- 
-
-
-<a name="process-v1-ProcessType"></a>
-
-### ProcessType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_TYPE_UNSPECIFIED | 0 |  |
-| PROCESS_TYPE_ASSEMBLY | 1 | Example: build gearbox |
-| PROCESS_TYPE_DISASSEMBLY | 2 | Example: take mould apart for maintenance |
-| PROCESS_TYPE_INSPECTION | 3 | Example: QC Check |
-| PROCESS_TYPE_CHECKLIST | 4 | Example: line startup |
-| PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
-| PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="process_v1_sequence_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5036,6 +4920,54 @@ one or more addressable slots.
 
 
 
+<a name="variance_v1_variant_rule-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_rule.proto
+
+
+
+<a name="variance-v1-VariantPredicate"></a>
+
+### VariantPredicate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
+| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
+| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
+
+
+
+
+
+
+<a name="variance-v1-VariantRule"></a>
+
+### VariantRule
+VariantRule: a rule matches if all predicates match
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="process_v1_task_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5296,6 +5228,119 @@ They should stay reusable across workcells and deployments.
 | TASK_TYPE_WAIT | 17 |  |
 | TASK_TYPE_CHECK | 18 |  |
 | TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_process_recipe-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/process_recipe.proto
+
+
+
+<a name="process-v1-CreateProcessRecipe"></a>
+
+### CreateProcessRecipe
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe | [ProcessRecipe](#process-v1-ProcessRecipe) |  |  |
+| sequences | [SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
+| tasks | [TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-ProcessRecipe"></a>
+
+### ProcessRecipe
+ProcessRecipe describes the following:
+- What work must be done
+- What kinds of capabilities are required
+- What tool roles are required
+- What skills are required
+- What actor constrains exist
+- What validation is needed
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ProcessType](#process-v1-ProcessType) |  |  |
+| product_definition_id | [string](#string) |  |  |
+| applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  |  |
+| root_sequence_id | [string](#string) |  |  |
+| sequence_ids | [string](#string) | repeated |  |
+| task_ids | [string](#string) | repeated |  |
+| supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-ProcessRecipes"></a>
+
+### ProcessRecipes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ProcessRecipe](#process-v1-ProcessRecipe) | repeated |  |
+
+
+
+
+
+
+<a name="process-v1-RecipeApplicability"></a>
+
+### RecipeApplicability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| include | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
+| exclude | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-ProcessType"></a>
+
+### ProcessType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_TYPE_UNSPECIFIED | 0 |  |
+| PROCESS_TYPE_ASSEMBLY | 1 | Example: build gearbox |
+| PROCESS_TYPE_DISASSEMBLY | 2 | Example: take mould apart for maintenance |
+| PROCESS_TYPE_INSPECTION | 3 | Example: QC Check |
+| PROCESS_TYPE_CHECKLIST | 4 | Example: line startup |
+| PROCESS_TYPE_KITTING | 5 | Example: prepare parts kit |
+| PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
 
 
  

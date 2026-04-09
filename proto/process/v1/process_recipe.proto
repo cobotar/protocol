@@ -3,6 +3,8 @@ package process.v1;
 
 import "buf/validate/validate.proto";
 import "common/v1/external_references.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
@@ -47,6 +49,12 @@ message ProcessRecipe {
   repeated string task_ids = 10;
   repeated string supported_container_definition_ids = 11; // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
   repeated common.v1.ExternalReference external_references = 12;
+}
+
+message CreateProcessRecipe {
+  ProcessRecipe recipe = 1 [(buf.validate.field).required = true];
+  repeated SequenceDefinition sequences = 2;
+  repeated TaskDefinition tasks = 3;
 }
 
 message ProcessRecipes {

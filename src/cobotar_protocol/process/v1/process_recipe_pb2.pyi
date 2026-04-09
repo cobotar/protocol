@@ -1,5 +1,7 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
+from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
+from process.v1 import task_definition_pb2 as _task_definition_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
 from google.protobuf.internal import containers as _containers
@@ -63,6 +65,16 @@ class ProcessRecipe(_message.Message):
     supported_container_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequence_ids: _Optional[_Iterable[str]] = ..., task_ids: _Optional[_Iterable[str]] = ..., supported_container_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
+
+class CreateProcessRecipe(_message.Message):
+    __slots__ = ("recipe", "sequences", "tasks")
+    RECIPE_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCES_FIELD_NUMBER: _ClassVar[int]
+    TASKS_FIELD_NUMBER: _ClassVar[int]
+    recipe: ProcessRecipe
+    sequences: _containers.RepeatedCompositeFieldContainer[_sequence_definition_pb2.SequenceDefinition]
+    tasks: _containers.RepeatedCompositeFieldContainer[_task_definition_pb2.TaskDefinition]
+    def __init__(self, recipe: _Optional[_Union[ProcessRecipe, _Mapping]] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ...) -> None: ...
 
 class ProcessRecipes(_message.Message):
     __slots__ = ("items",)

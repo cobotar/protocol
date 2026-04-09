@@ -350,6 +350,13 @@ export const SkillStatusSchema: GenEnum<SkillStatus> = /*@__PURE__*/
   enumDesc(file_capability_v1_actor_skill, 1);
 
 /**
+ * SkillInvalidityReason explains why an actor skill is currently restricted,
+ * expired, or otherwise not fully valid.
+ *
+ * These reasons are intended to be stable, machine-readable summary codes that
+ * can be shown in UI, used in loaders/runtime checks, and derived from evidence,
+ * policy evaluation, or engineering-change events.
+ *
  * @generated from enum capability.v1.SkillInvalidityReason
  */
 export enum SkillInvalidityReason {
@@ -359,21 +366,51 @@ export enum SkillInvalidityReason {
   UNSPECIFIED = 0,
 
   /**
+   * The skill has degraded due to lack of recent practice or evidence of use.
+   *
+   * Typical examples:
+   * - no executions in the active policy window
+   * - no recent successful evidence for the skill
+   *
    * @generated from enum value: SKILL_INVALIDITY_REASON_INACTIVITY = 1;
    */
   INACTIVITY = 1,
 
   /**
+   * The skill is restricted or invalid because observed failure rate or quality
+   * performance exceeded the allowed threshold.
+   *
+   * Typical examples:
+   * - too many failed executions in the recent window
+   * - too many out-of-tolerance results
+   * - too many inspection failures or retries
+   *
    * @generated from enum value: SKILL_INVALIDITY_REASON_FAILURE_RATE = 2;
    */
   FAILURE_RATE = 2,
 
   /**
+   * The governing validity/certification policy has expired the skill based on
+   * time or other policy-defined rules.
+   *
+   * Typical examples:
+   * - certification period elapsed
+   * - revalidation deadline passed
+   *
    * @generated from enum value: SKILL_INVALIDITY_REASON_POLICY_EXPIRED = 3;
    */
   POLICY_EXPIRED = 3,
 
   /**
+   * The skill has been invalidated because a relevant engineering or process
+   * change means previous validation/training can no longer be trusted.
+   *
+   * Typical examples:
+   * - tool model or capability changed
+   * - torque/program parameters changed
+   * - product revision changed
+   * - robot program or fixture configuration changed
+   *
    * @generated from enum value: SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE = 4;
    */
   ENGINEERING_CHANGE = 4,
@@ -386,6 +423,12 @@ export const SkillInvalidityReasonSchema: GenEnum<SkillInvalidityReason> = /*@__
   enumDesc(file_capability_v1_actor_skill, 2);
 
 /**
+ * SkillNextAction describes the recommended next action needed to restore,
+ * strengthen, or safely compensate for a restricted/expired skill.
+ *
+ * These actions are intended to be stable, machine-readable guidance codes that
+ * can be surfaced in UI and used by operational workflows.
+ *
  * @generated from enum capability.v1.SkillNextAction
  */
 export enum SkillNextAction {
@@ -395,26 +438,65 @@ export enum SkillNextAction {
   UNSPECIFIED = 0,
 
   /**
+   * A short targeted intervention is recommended before normal independent use.
+   *
+   * Typical examples:
+   * - brief AR-guided walkthrough
+   * - quick reminder of the critical steps
+   * - short digital refresher module
+   *
    * @generated from enum value: SKILL_NEXT_ACTION_MICRO_TRAINING = 1;
    */
   MICRO_TRAINING = 1,
 
   /**
+   * A broader retraining session is recommended because the skill has degraded
+   * beyond what a short intervention should address.
+   *
+   * Typical examples:
+   * - instructor-led refresher
+   * - extended guided practice
+   * - retraining on updated process/tooling
+   *
    * @generated from enum value: SKILL_NEXT_ACTION_REFRESHER_TRAINING = 2;
    */
   REFRESHER_TRAINING = 2,
 
   /**
+   * Formal re-certification or re-validation is required before the skill can
+   * return to normal unrestricted use.
+   *
+   * Typical examples:
+   * - certification renewal
+   * - formal competency check
+   * - validated robot/program re-approval
+   *
    * @generated from enum value: SKILL_NEXT_ACTION_RE_CERTIFICATION = 3;
    */
   RE_CERTIFICATION = 3,
 
   /**
+   * Additional runtime validation must be performed before or during task
+   * execution to safely use the skill in its current state.
+   *
+   * Typical examples:
+   * - second check required
+   * - vision/tool confirmation required
+   * - extra verification step before completion
+   *
    * @generated from enum value: SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED = 4;
    */
   EXTRA_VALIDATION_REQUIRED = 4,
 
   /**
+   * Supervisor or responsible authority approval is required before the actor
+   * may execute tasks relying on this skill.
+   *
+   * Typical examples:
+   * - technician sign-off
+   * - team lead approval
+   * - engineering approval for temporary restricted use
+   *
    * @generated from enum value: SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED = 5;
    */
   SUPERVISOR_APPROVAL_REQUIRED = 5,

@@ -7,6 +7,10 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
+import type { SequenceDefinition } from "./sequence_definition_pb.ts";
+import { file_process_v1_sequence_definition } from "./sequence_definition_pb.ts";
+import type { TaskDefinition } from "./task_definition_pb.ts";
+import { file_process_v1_task_definition } from "./task_definition_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantRule } from "../../variance/v1/variant_rule_pb.ts";
 import { file_variance_v1_variant_rule } from "../../variance/v1/variant_rule_pb.ts";
@@ -16,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/process_recipe.proto.
  */
 export const file_process_v1_process_recipe: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKLAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlKtUBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBBIYChRQUk9DRVNTX1RZUEVfS0lUVElORxAFEhwKGFBST0NFU1NfVFlQRV9NQUlOVEVOQU5DRRAGQrEBCg5jb20ucHJvY2Vzcy52MUISUHJvY2Vzc1JlY2lwZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKLAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIqYBChNDcmVhdGVQcm9jZXNzUmVjaXBlEjEKBnJlY2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBEjEKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uEikKBXRhc2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbiI6Cg5Qcm9jZXNzUmVjaXBlcxIoCgVpdGVtcxgBIAMoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZSrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkKxAQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message process.v1.RecipeApplicability
@@ -127,6 +131,33 @@ export const ProcessRecipeSchema: GenMessage<ProcessRecipe> = /*@__PURE__*/
   messageDesc(file_process_v1_process_recipe, 1);
 
 /**
+ * @generated from message process.v1.CreateProcessRecipe
+ */
+export type CreateProcessRecipe = Message<"process.v1.CreateProcessRecipe"> & {
+  /**
+   * @generated from field: process.v1.ProcessRecipe recipe = 1;
+   */
+  recipe?: ProcessRecipe;
+
+  /**
+   * @generated from field: repeated process.v1.SequenceDefinition sequences = 2;
+   */
+  sequences: SequenceDefinition[];
+
+  /**
+   * @generated from field: repeated process.v1.TaskDefinition tasks = 3;
+   */
+  tasks: TaskDefinition[];
+};
+
+/**
+ * Describes the message process.v1.CreateProcessRecipe.
+ * Use `create(CreateProcessRecipeSchema)` to create a new message.
+ */
+export const CreateProcessRecipeSchema: GenMessage<CreateProcessRecipe> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 2);
+
+/**
  * @generated from message process.v1.ProcessRecipes
  */
 export type ProcessRecipes = Message<"process.v1.ProcessRecipes"> & {
@@ -141,7 +172,7 @@ export type ProcessRecipes = Message<"process.v1.ProcessRecipes"> & {
  * Use `create(ProcessRecipesSchema)` to create a new message.
  */
 export const ProcessRecipesSchema: GenMessage<ProcessRecipes> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 2);
+  messageDesc(file_process_v1_process_recipe, 3);
 
 /**
  * @generated from enum process.v1.ProcessType

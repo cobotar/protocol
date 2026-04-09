@@ -277,6 +277,66 @@ func (x *ProcessRecipe) GetExternalReferences() []*v11.ExternalReference {
 	return nil
 }
 
+type CreateProcessRecipe struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Recipe        *ProcessRecipe         `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
+	Sequences     []*SequenceDefinition  `protobuf:"bytes,2,rep,name=sequences,proto3" json:"sequences,omitempty"`
+	Tasks         []*TaskDefinition      `protobuf:"bytes,3,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateProcessRecipe) Reset() {
+	*x = CreateProcessRecipe{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateProcessRecipe) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateProcessRecipe) ProtoMessage() {}
+
+func (x *CreateProcessRecipe) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateProcessRecipe.ProtoReflect.Descriptor instead.
+func (*CreateProcessRecipe) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreateProcessRecipe) GetRecipe() *ProcessRecipe {
+	if x != nil {
+		return x.Recipe
+	}
+	return nil
+}
+
+func (x *CreateProcessRecipe) GetSequences() []*SequenceDefinition {
+	if x != nil {
+		return x.Sequences
+	}
+	return nil
+}
+
+func (x *CreateProcessRecipe) GetTasks() []*TaskDefinition {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
 type ProcessRecipes struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProcessRecipe       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -286,7 +346,7 @@ type ProcessRecipes struct {
 
 func (x *ProcessRecipes) Reset() {
 	*x = ProcessRecipes{}
-	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -298,7 +358,7 @@ func (x *ProcessRecipes) String() string {
 func (*ProcessRecipes) ProtoMessage() {}
 
 func (x *ProcessRecipes) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -311,7 +371,7 @@ func (x *ProcessRecipes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRecipes.ProtoReflect.Descriptor instead.
 func (*ProcessRecipes) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{2}
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ProcessRecipes) GetItems() []*ProcessRecipe {
@@ -326,7 +386,7 @@ var File_process_v1_process_recipe_proto protoreflect.FileDescriptor
 const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\n" +
 	"\x1fprocess/v1/process_recipe.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
 	"\x13RecipeApplicability\x122\n" +
 	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
 	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xad\x04\n" +
@@ -343,7 +403,11 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\btask_ids\x18\n" +
 	" \x03(\tR\ataskIds\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
-	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"A\n" +
+	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"\xc0\x01\n" +
+	"\x13CreateProcessRecipe\x129\n" +
+	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12<\n" +
+	"\tsequences\x18\x02 \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
+	"\x05tasks\x18\x03 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\"A\n" +
 	"\x0eProcessRecipes\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.process.v1.ProcessRecipeR\x05items*\xd5\x01\n" +
 	"\vProcessType\x12\x1c\n" +
@@ -370,27 +434,33 @@ func file_process_v1_process_recipe_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_process_recipe_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_process_v1_process_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_process_v1_process_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_process_v1_process_recipe_proto_goTypes = []any{
 	(ProcessType)(0),              // 0: process.v1.ProcessType
 	(*RecipeApplicability)(nil),   // 1: process.v1.RecipeApplicability
 	(*ProcessRecipe)(nil),         // 2: process.v1.ProcessRecipe
-	(*ProcessRecipes)(nil),        // 3: process.v1.ProcessRecipes
-	(*v1.VariantRule)(nil),        // 4: variance.v1.VariantRule
-	(*v11.ExternalReference)(nil), // 5: common.v1.ExternalReference
+	(*CreateProcessRecipe)(nil),   // 3: process.v1.CreateProcessRecipe
+	(*ProcessRecipes)(nil),        // 4: process.v1.ProcessRecipes
+	(*v1.VariantRule)(nil),        // 5: variance.v1.VariantRule
+	(*v11.ExternalReference)(nil), // 6: common.v1.ExternalReference
+	(*SequenceDefinition)(nil),    // 7: process.v1.SequenceDefinition
+	(*TaskDefinition)(nil),        // 8: process.v1.TaskDefinition
 }
 var file_process_v1_process_recipe_proto_depIdxs = []int32{
-	4, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
-	4, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
+	5, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
+	5, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
 	0, // 2: process.v1.ProcessRecipe.type:type_name -> process.v1.ProcessType
 	1, // 3: process.v1.ProcessRecipe.applicability:type_name -> process.v1.RecipeApplicability
-	5, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
-	2, // 5: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	6, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
+	2, // 5: process.v1.CreateProcessRecipe.recipe:type_name -> process.v1.ProcessRecipe
+	7, // 6: process.v1.CreateProcessRecipe.sequences:type_name -> process.v1.SequenceDefinition
+	8, // 7: process.v1.CreateProcessRecipe.tasks:type_name -> process.v1.TaskDefinition
+	2, // 8: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_process_recipe_proto_init() }
@@ -398,13 +468,15 @@ func file_process_v1_process_recipe_proto_init() {
 	if File_process_v1_process_recipe_proto != nil {
 		return
 	}
+	file_process_v1_sequence_definition_proto_init()
+	file_process_v1_task_definition_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_process_recipe_proto_rawDesc), len(file_process_v1_process_recipe_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
