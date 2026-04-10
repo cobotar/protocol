@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/sequence_definition.proto.
  */
 export const file_process_v1_sequence_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEi6AIKElNlcXVlbmNlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIgCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVCB7pIBBoCKAASGgoScGFyZW50X3NlcXVlbmNlX2lkGAYgASgJEjsKCG9wZXJhdG9yGAcgASgOMhwucHJvY2Vzcy52MS5TZXF1ZW5jZU9wZXJhdG9yQgu6SAjIAQGCAQIQARIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgiRAoTU2VxdWVuY2VEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uKqIBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASJQohU0VRVUVOQ0VfT1BFUkFUT1JfQUxMX09GX0NISUxEUkVOEAESJQohU0VRVUVOQ0VfT1BFUkFUT1JfT05FX09GX0NISUxEUkVOEAISHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JERVJFRBADQrYBCg5jb20ucHJvY2Vzcy52MUIXU2VxdWVuY2VEZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEi6AIKElNlcXVlbmNlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIgCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVCB7pIBBoCKAASGgoScGFyZW50X3NlcXVlbmNlX2lkGAYgASgJEjsKCG9wZXJhdG9yGAcgASgOMhwucHJvY2Vzcy52MS5TZXF1ZW5jZU9wZXJhdG9yQgu6SAjIAQGCAQIQARIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgiRAoTU2VxdWVuY2VEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uKrYBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JERVJFRBABEh4KGlNFUVVFTkNFX09QRVJBVE9SX1BBUkFMTEVMEAISHwobU0VRVUVOQ0VfT1BFUkFUT1JfRVhDTFVTSVZFEAMSHwobU0VRVUVOQ0VfT1BFUkFUT1JfSU5DTFVTSVZFEARCtgEKDmNvbS5wcm9jZXNzLnYxQhdTZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message process.v1.SequenceDefinition
@@ -106,28 +106,95 @@ export const SequenceDefinitionsSchema: GenMessage<SequenceDefinitions> = /*@__P
   messageDesc(file_process_v1_sequence_definition, 1);
 
 /**
+ * Defines how the children of a SequenceDefinition are executed and how the
+ * sequence determines completion.
+ *
+ * A sequence may contain both child sequences and tasks. The operator
+ * determines the control-flow semantics for those children.
+ *
  * @generated from enum process.v1.SequenceOperator
  */
 export enum SequenceOperator {
   /**
+   * Default / undefined behavior.
+   *
+   * Should normally not appear in valid process definitions. Runtimes may
+   * treat this as SEQUENCE for backward compatibility or reject the recipe
+   * during validation.
+   *
    * @generated from enum value: SEQUENCE_OPERATOR_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: SEQUENCE_OPERATOR_ALL_OF_CHILDREN = 1;
+   * Children execute sequentially in the order they are defined.
+   *
+   * Each child starts only after the previous child has completed.
+   * The sequence completes when the final child completes.
+   *
+   * Example:
+   *   Pick part → Align part → Fasten part → Inspect assembly
+   *
+   * @generated from enum value: SEQUENCE_OPERATOR_ORDERED = 1;
    */
-  ALL_OF_CHILDREN = 1,
+  ORDERED = 1,
 
   /**
-   * @generated from enum value: SEQUENCE_OPERATOR_ONE_OF_CHILDREN = 2;
+   * All children may execute concurrently.
+   *
+   * The runtime may start all children at the same time if resources allow.
+   * The sequence completes only when all children have completed.
+   *
+   * This operator is commonly used for human-robot collaboration or when
+   * multiple independent tasks can be performed in parallel.
+   *
+   * Example:
+   *   Robot holds component
+   *   Human installs screws
+   *   Vision system verifies alignment
+   *
+   * @generated from enum value: SEQUENCE_OPERATOR_PARALLEL = 2;
    */
-  ONE_OF_CHILDREN = 2,
+  PARALLEL = 2,
 
   /**
-   * @generated from enum value: SEQUENCE_OPERATOR_ORDERED = 3;
+   * Exactly one child is selected and executed.
+   *
+   * The runtime chooses a single branch based on conditions such as:
+   *   - variant configuration
+   *   - resource availability
+   *   - actor capabilities
+   *   - runtime decision logic
+   *
+   * The sequence completes when the selected child completes.
+   *
+   * Example:
+   *   Robot tightening procedure
+   *   OR
+   *   Human tightening procedure
+   *
+   * @generated from enum value: SEQUENCE_OPERATOR_EXCLUSIVE = 3;
    */
-  ORDERED = 3,
+  EXCLUSIVE = 3,
+
+  /**
+   * One or more children may execute.
+   *
+   * The runtime evaluates each child independently and may execute any
+   * subset of them based on conditions such as variant configuration,
+   * process parameters, or runtime state.
+   *
+   * The sequence completes when all selected children have completed.
+   *
+   * Example:
+   *   Optional inspections:
+   *     - Visual inspection
+   *     - Torque verification
+   *     - Leak test
+   *
+   * @generated from enum value: SEQUENCE_OPERATOR_INCLUSIVE = 4;
+   */
+  INCLUSIVE = 4,
 }
 
 /**

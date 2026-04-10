@@ -24,28 +24,91 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Defines how the children of a SequenceDefinition are executed and how the
+// sequence determines completion.
+//
+// A sequence may contain both child sequences and tasks. The operator
+// determines the control-flow semantics for those children.
 type SequenceOperator int32
 
 const (
-	SequenceOperator_SEQUENCE_OPERATOR_UNSPECIFIED     SequenceOperator = 0
-	SequenceOperator_SEQUENCE_OPERATOR_ALL_OF_CHILDREN SequenceOperator = 1
-	SequenceOperator_SEQUENCE_OPERATOR_ONE_OF_CHILDREN SequenceOperator = 2
-	SequenceOperator_SEQUENCE_OPERATOR_ORDERED         SequenceOperator = 3
+	// Default / undefined behavior.
+	//
+	// Should normally not appear in valid process definitions. Runtimes may
+	// treat this as SEQUENCE for backward compatibility or reject the recipe
+	// during validation.
+	SequenceOperator_SEQUENCE_OPERATOR_UNSPECIFIED SequenceOperator = 0
+	// Children execute sequentially in the order they are defined.
+	//
+	// Each child starts only after the previous child has completed.
+	// The sequence completes when the final child completes.
+	//
+	// Example:
+	//
+	//	Pick part → Align part → Fasten part → Inspect assembly
+	SequenceOperator_SEQUENCE_OPERATOR_ORDERED SequenceOperator = 1
+	// All children may execute concurrently.
+	//
+	// The runtime may start all children at the same time if resources allow.
+	// The sequence completes only when all children have completed.
+	//
+	// This operator is commonly used for human-robot collaboration or when
+	// multiple independent tasks can be performed in parallel.
+	//
+	// Example:
+	//
+	//	Robot holds component
+	//	Human installs screws
+	//	Vision system verifies alignment
+	SequenceOperator_SEQUENCE_OPERATOR_PARALLEL SequenceOperator = 2
+	// Exactly one child is selected and executed.
+	//
+	// The runtime chooses a single branch based on conditions such as:
+	//   - variant configuration
+	//   - resource availability
+	//   - actor capabilities
+	//   - runtime decision logic
+	//
+	// The sequence completes when the selected child completes.
+	//
+	// Example:
+	//
+	//	Robot tightening procedure
+	//	OR
+	//	Human tightening procedure
+	SequenceOperator_SEQUENCE_OPERATOR_EXCLUSIVE SequenceOperator = 3
+	// One or more children may execute.
+	//
+	// The runtime evaluates each child independently and may execute any
+	// subset of them based on conditions such as variant configuration,
+	// process parameters, or runtime state.
+	//
+	// The sequence completes when all selected children have completed.
+	//
+	// Example:
+	//
+	//	Optional inspections:
+	//	  - Visual inspection
+	//	  - Torque verification
+	//	  - Leak test
+	SequenceOperator_SEQUENCE_OPERATOR_INCLUSIVE SequenceOperator = 4
 )
 
 // Enum value maps for SequenceOperator.
 var (
 	SequenceOperator_name = map[int32]string{
 		0: "SEQUENCE_OPERATOR_UNSPECIFIED",
-		1: "SEQUENCE_OPERATOR_ALL_OF_CHILDREN",
-		2: "SEQUENCE_OPERATOR_ONE_OF_CHILDREN",
-		3: "SEQUENCE_OPERATOR_ORDERED",
+		1: "SEQUENCE_OPERATOR_ORDERED",
+		2: "SEQUENCE_OPERATOR_PARALLEL",
+		3: "SEQUENCE_OPERATOR_EXCLUSIVE",
+		4: "SEQUENCE_OPERATOR_INCLUSIVE",
 	}
 	SequenceOperator_value = map[string]int32{
-		"SEQUENCE_OPERATOR_UNSPECIFIED":     0,
-		"SEQUENCE_OPERATOR_ALL_OF_CHILDREN": 1,
-		"SEQUENCE_OPERATOR_ONE_OF_CHILDREN": 2,
-		"SEQUENCE_OPERATOR_ORDERED":         3,
+		"SEQUENCE_OPERATOR_UNSPECIFIED": 0,
+		"SEQUENCE_OPERATOR_ORDERED":     1,
+		"SEQUENCE_OPERATOR_PARALLEL":    2,
+		"SEQUENCE_OPERATOR_EXCLUSIVE":   3,
+		"SEQUENCE_OPERATOR_INCLUSIVE":   4,
 	}
 )
 
@@ -273,12 +336,13 @@ const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"K\n" +
 	"\x13SequenceDefinitions\x124\n" +
-	"\x05items\x18\x01 \x03(\v2\x1e.process.v1.SequenceDefinitionR\x05items*\xa2\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1e.process.v1.SequenceDefinitionR\x05items*\xb6\x01\n" +
 	"\x10SequenceOperator\x12!\n" +
-	"\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12%\n" +
-	"!SEQUENCE_OPERATOR_ALL_OF_CHILDREN\x10\x01\x12%\n" +
-	"!SEQUENCE_OPERATOR_ONE_OF_CHILDREN\x10\x02\x12\x1d\n" +
-	"\x19SEQUENCE_OPERATOR_ORDERED\x10\x03B\xb6\x01\n" +
+	"\x1dSEQUENCE_OPERATOR_UNSPECIFIED\x10\x00\x12\x1d\n" +
+	"\x19SEQUENCE_OPERATOR_ORDERED\x10\x01\x12\x1e\n" +
+	"\x1aSEQUENCE_OPERATOR_PARALLEL\x10\x02\x12\x1f\n" +
+	"\x1bSEQUENCE_OPERATOR_EXCLUSIVE\x10\x03\x12\x1f\n" +
+	"\x1bSEQUENCE_OPERATOR_INCLUSIVE\x10\x04B\xb6\x01\n" +
 	"\x0ecom.process.v1B\x17SequenceDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 

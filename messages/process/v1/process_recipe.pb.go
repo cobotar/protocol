@@ -478,11 +478,12 @@ func (x *AddChildSequenceRequest) GetSequenceId() string {
 }
 
 type RemoveSequenceRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
-	SequenceId    string                 `protobuf:"bytes,2,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	RecipeId        string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	SequenceId      string                 `protobuf:"bytes,2,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
+	TryKeepChildren bool                   `protobuf:"varint,3,opt,name=try_keep_children,json=tryKeepChildren,proto3" json:"try_keep_children,omitempty"` // If true, all children are assign to the parent of the sequence - if the sequence have a parent
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *RemoveSequenceRequest) Reset() {
@@ -527,6 +528,13 @@ func (x *RemoveSequenceRequest) GetSequenceId() string {
 		return x.SequenceId
 	}
 	return ""
+}
+
+func (x *RemoveSequenceRequest) GetTryKeepChildren() bool {
+	if x != nil {
+		return x.TryKeepChildren
+	}
+	return false
 }
 
 type AddChildTaskRequest struct {
@@ -667,11 +675,12 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\x17AddChildSequenceRequest\x12)\n" +
 	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
 	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +
-	"sequenceId\"q\n" +
+	"sequenceId\"\x9d\x01\n" +
 	"\x15RemoveSequenceRequest\x12)\n" +
 	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
 	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +
-	"sequenceId\"o\n" +
+	"sequenceId\x12*\n" +
+	"\x11try_keep_children\x18\x03 \x01(\bR\x0ftryKeepChildren\"o\n" +
 	"\x13AddChildTaskRequest\x12)\n" +
 	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
 	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +

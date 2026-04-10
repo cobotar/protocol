@@ -55,9 +55,10 @@ namespace Messages.Process.V1 {
             "BKDyBAHIAQFSCHJlY2lwZUlkInMKF0FkZENoaWxkU2VxdWVuY2VSZXF1ZXN0",
             "EikKCXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIt",
             "CgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJcgSo8gQByAEBUgpzZXF1ZW5jZUlk",
-            "InEKFVJlbW92ZVNlcXVlbmNlUmVxdWVzdBIpCglyZWNpcGVfaWQYASABKAlC",
-            "DLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2VxdWVuY2VfaWQYAiABKAlC",
-            "DLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZCJvChNBZGRDaGlsZFRhc2tSZXF1",
+            "Ip0BChVSZW1vdmVTZXF1ZW5jZVJlcXVlc3QSKQoJcmVjaXBlX2lkGAEgASgJ",
+            "Qgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEi0KC3NlcXVlbmNlX2lkGAIgASgJ",
+            "Qgy6SAlyBKjyBAHIAQFSCnNlcXVlbmNlSWQSKgoRdHJ5X2tlZXBfY2hpbGRy",
+            "ZW4YAyABKAhSD3RyeUtlZXBDaGlsZHJlbiJvChNBZGRDaGlsZFRhc2tSZXF1",
             "ZXN0EikKCXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJ",
             "ZBItCgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJcgSo8gQByAEBUgpzZXF1ZW5j",
             "ZUlkImUKEVJlbW92ZVRhc2tSZXF1ZXN0EikKCXJlY2lwZV9pZBgBIAEoCUIM",
@@ -81,7 +82,7 @@ namespace Messages.Process.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.CreateProcessRecipe), global::Messages.Process.V1.CreateProcessRecipe.Parser, new[]{ "Recipe", "Sequences", "Tasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddRootSequenceRequest), global::Messages.Process.V1.AddRootSequenceRequest.Parser, new[]{ "RecipeId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildSequenceRequest), global::Messages.Process.V1.AddChildSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveSequenceRequest), global::Messages.Process.V1.RemoveSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveSequenceRequest), global::Messages.Process.V1.RemoveSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId", "TryKeepChildren" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildTaskRequest), global::Messages.Process.V1.AddChildTaskRequest.Parser, new[]{ "RecipeId", "SequenceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveTaskRequest), global::Messages.Process.V1.RemoveTaskRequest.Parser, new[]{ "RecipeId", "TaskId" }, null, null, null, null)
           }));
@@ -1838,6 +1839,7 @@ namespace Messages.Process.V1 {
     public RemoveSequenceRequest(RemoveSequenceRequest other) : this() {
       recipeId_ = other.recipeId_;
       sequenceId_ = other.sequenceId_;
+      tryKeepChildren_ = other.tryKeepChildren_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1871,6 +1873,21 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "try_keep_children" field.</summary>
+    public const int TryKeepChildrenFieldNumber = 3;
+    private bool tryKeepChildren_;
+    /// <summary>
+    /// If true, all children are assign to the parent of the sequence - if the sequence have a parent
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool TryKeepChildren {
+      get { return tryKeepChildren_; }
+      set {
+        tryKeepChildren_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1888,6 +1905,7 @@ namespace Messages.Process.V1 {
       }
       if (RecipeId != other.RecipeId) return false;
       if (SequenceId != other.SequenceId) return false;
+      if (TryKeepChildren != other.TryKeepChildren) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1897,6 +1915,7 @@ namespace Messages.Process.V1 {
       int hash = 1;
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (SequenceId.Length != 0) hash ^= SequenceId.GetHashCode();
+      if (TryKeepChildren != false) hash ^= TryKeepChildren.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1923,6 +1942,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (TryKeepChildren != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(TryKeepChildren);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1941,6 +1964,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (TryKeepChildren != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(TryKeepChildren);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1956,6 +1983,9 @@ namespace Messages.Process.V1 {
       }
       if (SequenceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SequenceId);
+      }
+      if (TryKeepChildren != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1974,6 +2004,9 @@ namespace Messages.Process.V1 {
       }
       if (other.SequenceId.Length != 0) {
         SequenceId = other.SequenceId;
+      }
+      if (other.TryKeepChildren != false) {
+        TryKeepChildren = other.TryKeepChildren;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2002,6 +2035,10 @@ namespace Messages.Process.V1 {
             SequenceId = input.ReadString();
             break;
           }
+          case 24: {
+            TryKeepChildren = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -2027,6 +2064,10 @@ namespace Messages.Process.V1 {
           }
           case 18: {
             SequenceId = input.ReadString();
+            break;
+          }
+          case 24: {
+            TryKeepChildren = input.ReadBool();
             break;
           }
         }

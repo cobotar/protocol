@@ -13,13 +13,15 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class SequenceOperator(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     SEQUENCE_OPERATOR_UNSPECIFIED: _ClassVar[SequenceOperator]
-    SEQUENCE_OPERATOR_ALL_OF_CHILDREN: _ClassVar[SequenceOperator]
-    SEQUENCE_OPERATOR_ONE_OF_CHILDREN: _ClassVar[SequenceOperator]
     SEQUENCE_OPERATOR_ORDERED: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_PARALLEL: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_EXCLUSIVE: _ClassVar[SequenceOperator]
+    SEQUENCE_OPERATOR_INCLUSIVE: _ClassVar[SequenceOperator]
 SEQUENCE_OPERATOR_UNSPECIFIED: SequenceOperator
-SEQUENCE_OPERATOR_ALL_OF_CHILDREN: SequenceOperator
-SEQUENCE_OPERATOR_ONE_OF_CHILDREN: SequenceOperator
 SEQUENCE_OPERATOR_ORDERED: SequenceOperator
+SEQUENCE_OPERATOR_PARALLEL: SequenceOperator
+SEQUENCE_OPERATOR_EXCLUSIVE: SequenceOperator
+SEQUENCE_OPERATOR_INCLUSIVE: SequenceOperator
 
 class SequenceDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "sequence_number", "parent_sequence_id", "operator", "child_sequence_ids", "child_task_ids", "local_target", "optional", "can_bulk_complete")

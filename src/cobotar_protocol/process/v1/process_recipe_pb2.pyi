@@ -97,12 +97,14 @@ class AddChildSequenceRequest(_message.Message):
     def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
 
 class RemoveSequenceRequest(_message.Message):
-    __slots__ = ("recipe_id", "sequence_id")
+    __slots__ = ("recipe_id", "sequence_id", "try_keep_children")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    TRY_KEEP_CHILDREN_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
     sequence_id: str
-    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+    try_keep_children: bool
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ..., try_keep_children: bool = ...) -> None: ...
 
 class AddChildTaskRequest(_message.Message):
     __slots__ = ("recipe_id", "sequence_id")

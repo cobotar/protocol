@@ -40,15 +40,15 @@ namespace Messages.Process.V1 {
             "bFRhcmdldBIaCghvcHRpb25hbBgLIAEoCFIIb3B0aW9uYWwSKgoRY2FuX2J1",
             "bGtfY29tcGxldGUYDCABKAhSD2NhbkJ1bGtDb21wbGV0ZSJLChNTZXF1ZW5j",
             "ZURlZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1",
-            "ZW5jZURlZmluaXRpb25SBWl0ZW1zKqIBChBTZXF1ZW5jZU9wZXJhdG9yEiEK",
-            "HVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASJQohU0VRVUVOQ0Vf",
-            "T1BFUkFUT1JfQUxMX09GX0NISUxEUkVOEAESJQohU0VRVUVOQ0VfT1BFUkFU",
-            "T1JfT05FX09GX0NISUxEUkVOEAISHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JE",
-            "RVJFRBADQrYBCg5jb20ucHJvY2Vzcy52MUIXU2VxdWVuY2VEZWZpbml0aW9u",
-            "UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vz",
-            "cy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gIL",
-            "UHJvY2Vzczo6VjFiBnByb3RvMw=="));
+            "ZW5jZURlZmluaXRpb25SBWl0ZW1zKrYBChBTZXF1ZW5jZU9wZXJhdG9yEiEK",
+            "HVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZU0VRVUVOQ0Vf",
+            "T1BFUkFUT1JfT1JERVJFRBABEh4KGlNFUVVFTkNFX09QRVJBVE9SX1BBUkFM",
+            "TEVMEAISHwobU0VRVUVOQ0VfT1BFUkFUT1JfRVhDTFVTSVZFEAMSHwobU0VR",
+            "VUVOQ0VfT1BFUkFUT1JfSU5DTFVTSVZFEARCtgEKDmNvbS5wcm9jZXNzLnYx",
+            "QhdTZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90",
+            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQ",
+            "WFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nl",
+            "c3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.SequenceOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -60,11 +60,80 @@ namespace Messages.Process.V1 {
 
   }
   #region Enums
+  /// <summary>
+  /// Defines how the children of a SequenceDefinition are executed and how the
+  /// sequence determines completion.
+  ///
+  /// A sequence may contain both child sequences and tasks. The operator
+  /// determines the control-flow semantics for those children.
+  /// </summary>
   public enum SequenceOperator {
+    /// <summary>
+    /// Default / undefined behavior.
+    ///
+    /// Should normally not appear in valid process definitions. Runtimes may
+    /// treat this as SEQUENCE for backward compatibility or reject the recipe
+    /// during validation.
+    /// </summary>
     [pbr::OriginalName("SEQUENCE_OPERATOR_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("SEQUENCE_OPERATOR_ALL_OF_CHILDREN")] AllOfChildren = 1,
-    [pbr::OriginalName("SEQUENCE_OPERATOR_ONE_OF_CHILDREN")] OneOfChildren = 2,
-    [pbr::OriginalName("SEQUENCE_OPERATOR_ORDERED")] Ordered = 3,
+    /// <summary>
+    /// Children execute sequentially in the order they are defined.
+    ///
+    /// Each child starts only after the previous child has completed.
+    /// The sequence completes when the final child completes.
+    ///
+    /// Example:
+    ///   Pick part → Align part → Fasten part → Inspect assembly
+    /// </summary>
+    [pbr::OriginalName("SEQUENCE_OPERATOR_ORDERED")] Ordered = 1,
+    /// <summary>
+    /// All children may execute concurrently.
+    ///
+    /// The runtime may start all children at the same time if resources allow.
+    /// The sequence completes only when all children have completed.
+    ///
+    /// This operator is commonly used for human-robot collaboration or when
+    /// multiple independent tasks can be performed in parallel.
+    ///
+    /// Example:
+    ///   Robot holds component
+    ///   Human installs screws
+    ///   Vision system verifies alignment
+    /// </summary>
+    [pbr::OriginalName("SEQUENCE_OPERATOR_PARALLEL")] Parallel = 2,
+    /// <summary>
+    /// Exactly one child is selected and executed.
+    ///
+    /// The runtime chooses a single branch based on conditions such as:
+    ///   - variant configuration
+    ///   - resource availability
+    ///   - actor capabilities
+    ///   - runtime decision logic
+    ///
+    /// The sequence completes when the selected child completes.
+    ///
+    /// Example:
+    ///   Robot tightening procedure
+    ///   OR
+    ///   Human tightening procedure
+    /// </summary>
+    [pbr::OriginalName("SEQUENCE_OPERATOR_EXCLUSIVE")] Exclusive = 3,
+    /// <summary>
+    /// One or more children may execute.
+    ///
+    /// The runtime evaluates each child independently and may execute any
+    /// subset of them based on conditions such as variant configuration,
+    /// process parameters, or runtime state.
+    ///
+    /// The sequence completes when all selected children have completed.
+    ///
+    /// Example:
+    ///   Optional inspections:
+    ///     - Visual inspection
+    ///     - Torque verification
+    ///     - Leak test
+    /// </summary>
+    [pbr::OriginalName("SEQUENCE_OPERATOR_INCLUSIVE")] Inclusive = 4,
   }
 
   #endregion

@@ -88,6 +88,7 @@ message RemoveSequenceRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
+  bool try_keep_children = 3; // If true, all children are assign to the parent of the sequence - if the sequence have a parent
 }
 
 message AddChildTaskRequest {

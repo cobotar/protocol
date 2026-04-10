@@ -4639,14 +4639,43 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 <a name="process-v1-SequenceOperator"></a>
 
 ### SequenceOperator
+Defines how the children of a SequenceDefinition are executed and how the
+sequence determines completion.
 
+A sequence may contain both child sequences and tasks. The operator
+determines the control-flow semantics for those children.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SEQUENCE_OPERATOR_UNSPECIFIED | 0 |  |
-| SEQUENCE_OPERATOR_ALL_OF_CHILDREN | 1 |  |
-| SEQUENCE_OPERATOR_ONE_OF_CHILDREN | 2 |  |
-| SEQUENCE_OPERATOR_ORDERED | 3 |  |
+| SEQUENCE_OPERATOR_UNSPECIFIED | 0 | Default / undefined behavior.
+
+Should normally not appear in valid process definitions. Runtimes may treat this as SEQUENCE for backward compatibility or reject the recipe during validation. |
+| SEQUENCE_OPERATOR_ORDERED | 1 | Children execute sequentially in the order they are defined.
+
+Each child starts only after the previous child has completed. The sequence completes when the final child completes.
+
+Example: Pick part → Align part → Fasten part → Inspect assembly |
+| SEQUENCE_OPERATOR_PARALLEL | 2 | All children may execute concurrently.
+
+The runtime may start all children at the same time if resources allow. The sequence completes only when all children have completed.
+
+This operator is commonly used for human-robot collaboration or when multiple independent tasks can be performed in parallel.
+
+Example: Robot holds component Human installs screws Vision system verifies alignment |
+| SEQUENCE_OPERATOR_EXCLUSIVE | 3 | Exactly one child is selected and executed.
+
+The runtime chooses a single branch based on conditions such as: - variant configuration - resource availability - actor capabilities - runtime decision logic
+
+The sequence completes when the selected child completes.
+
+Example: Robot tightening procedure OR Human tightening procedure |
+| SEQUENCE_OPERATOR_INCLUSIVE | 4 | One or more children may execute.
+
+The runtime evaluates each child independently and may execute any subset of them based on conditions such as variant configuration, process parameters, or runtime state.
+
+The sequence completes when all selected children have completed.
+
+Example: Optional inspections: - Visual inspection - Torque verification - Leak test |
 
 
  
@@ -5387,6 +5416,7 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | recipe_id | [string](#string) |  |  |
 | sequence_id | [string](#string) |  |  |
+| try_keep_children | [bool](#bool) |  | If true, all children are assign to the parent of the sequence - if the sequence have a parent |
 
 
 
