@@ -83,10 +83,7 @@ message SequenceDefinition {
   string description = 4;
   int32 sequence_number = 5 [(buf.validate.field).int32.gte = 0];
   string parent_sequence_id = 6;
-  SequenceOperator operator = 7 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
+  SequenceOperator operator = 7 [(buf.validate.field).enum.defined_only = true];
   repeated string child_sequence_ids = 8;
   repeated string child_task_ids = 9;
   geometry.v1.LocalTarget local_target = 10;
