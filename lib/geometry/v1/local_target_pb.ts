@@ -4,29 +4,38 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { Pose } from "./pose_pb.ts";
-import { file_geometry_v1_pose } from "./pose_pb.ts";
+import type { Anchor } from "./anchor_pb.ts";
+import { file_geometry_v1_anchor } from "./anchor_pb.ts";
+import type { Point } from "./point_pb.ts";
+import { file_geometry_v1_point } from "./point_pb.ts";
+import type { Quad } from "./quad_pb.ts";
+import { file_geometry_v1_quad } from "./quad_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file geometry/v1/local_target.proto.
  */
 export const file_geometry_v1_local_target: GenFile = /*@__PURE__*/
-  fileDesc("Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYxIkMKC0xvY2FsVGFyZ2V0EhEKCWFuY2hvcl9pZBgBIAEoCRIhCgZvZmZzZXQYAiABKAsyES5nZW9tZXRyeS52MS5Qb3NlQrQBCg9jb20uZ2VvbWV0cnkudjFCEExvY2FsVGFyZ2V0UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh6gIMR2VvbWV0cnk6OlYxYgZwcm90bzM", [file_geometry_v1_pose]);
+  fileDesc("Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYxIoABCgtMb2NhbFRhcmdldBIjCgZhbmNob3IYASABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISJAoIcG9zaXRpb24YAiABKAsyEi5nZW9tZXRyeS52MS5Qb2ludBImCgtvcmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRCtAEKD2NvbS5nZW9tZXRyeS52MUIQTG9jYWxUYXJnZXRQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw", [file_geometry_v1_anchor, file_geometry_v1_point, file_geometry_v1_quad]);
 
 /**
  * @generated from message geometry.v1.LocalTarget
  */
 export type LocalTarget = Message<"geometry.v1.LocalTarget"> & {
   /**
-   * @generated from field: string anchor_id = 1;
+   * @generated from field: geometry.v1.Anchor anchor = 1;
    */
-  anchorId: string;
+  anchor?: Anchor;
 
   /**
-   * @generated from field: geometry.v1.Pose offset = 2;
+   * @generated from field: geometry.v1.Point position = 2;
    */
-  offset?: Pose;
+  position?: Point;
+
+  /**
+   * @generated from field: geometry.v1.Quad orientation = 3;
+   */
+  orientation?: Quad;
 };
 
 /**

@@ -25,17 +25,20 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYx",
-            "GhZnZW9tZXRyeS92MS9wb3NlLnByb3RvIlUKC0xvY2FsVGFyZ2V0EhsKCWFu",
-            "Y2hvcl9pZBgBIAEoCVIIYW5jaG9ySWQSKQoGb2Zmc2V0GAIgASgLMhEuZ2Vv",
-            "bWV0cnkudjEuUG9zZVIGb2Zmc2V0QrQBCg9jb20uZ2VvbWV0cnkudjFCEExv",
-            "Y2FsVGFyZ2V0UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhJNZXNz",
-            "YWdlcy5Db21tb24uVjHKAgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQ",
-            "Qk1ldGFkYXRh6gIMR2VvbWV0cnk6OlYxYgZwcm90bzM="));
+            "GhhnZW9tZXRyeS92MS9hbmNob3IucHJvdG8aF2dlb21ldHJ5L3YxL3BvaW50",
+            "LnByb3RvGhZnZW9tZXRyeS92MS9xdWFkLnByb3RvIp8BCgtMb2NhbFRhcmdl",
+            "dBIrCgZhbmNob3IYASABKAsyEy5nZW9tZXRyeS52MS5BbmNob3JSBmFuY2hv",
+            "chIuCghwb3NpdGlvbhgCIAEoCzISLmdlb21ldHJ5LnYxLlBvaW50Ughwb3Np",
+            "dGlvbhIzCgtvcmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRS",
+            "C29yaWVudGF0aW9uQrQBCg9jb20uZ2VvbWV0cnkudjFCEExvY2FsVGFyZ2V0",
+            "UHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhJNZXNzYWdlcy5Db21t",
+            "b24uVjHKAgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh",
+            "6gIMR2VvbWV0cnk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalTarget), global::Messages.Common.V1.LocalTarget.Parser, new[]{ "AnchorId", "Offset" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalTarget), global::Messages.Common.V1.LocalTarget.Parser, new[]{ "Anchor", "Position", "Orientation" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,8 +80,9 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LocalTarget(LocalTarget other) : this() {
-      anchorId_ = other.anchorId_;
-      offset_ = other.offset_ != null ? other.offset_.Clone() : null;
+      anchor_ = other.anchor_ != null ? other.anchor_.Clone() : null;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
+      orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,27 +92,39 @@ namespace Messages.Common.V1 {
       return new LocalTarget(this);
     }
 
-    /// <summary>Field number for the "anchor_id" field.</summary>
-    public const int AnchorIdFieldNumber = 1;
-    private string anchorId_ = "";
+    /// <summary>Field number for the "anchor" field.</summary>
+    public const int AnchorFieldNumber = 1;
+    private global::Messages.Common.V1.Anchor anchor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AnchorId {
-      get { return anchorId_; }
+    public global::Messages.Common.V1.Anchor Anchor {
+      get { return anchor_; }
       set {
-        anchorId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        anchor_ = value;
       }
     }
 
-    /// <summary>Field number for the "offset" field.</summary>
-    public const int OffsetFieldNumber = 2;
-    private global::Messages.Common.V1.Pose offset_;
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 2;
+    private global::Messages.Common.V1.Point position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose Offset {
-      get { return offset_; }
+    public global::Messages.Common.V1.Point Position {
+      get { return position_; }
       set {
-        offset_ = value;
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "orientation" field.</summary>
+    public const int OrientationFieldNumber = 3;
+    private global::Messages.Common.V1.Quad orientation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Quad Orientation {
+      get { return orientation_; }
+      set {
+        orientation_ = value;
       }
     }
 
@@ -127,8 +143,9 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AnchorId != other.AnchorId) return false;
-      if (!object.Equals(Offset, other.Offset)) return false;
+      if (!object.Equals(Anchor, other.Anchor)) return false;
+      if (!object.Equals(Position, other.Position)) return false;
+      if (!object.Equals(Orientation, other.Orientation)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +153,9 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AnchorId.Length != 0) hash ^= AnchorId.GetHashCode();
-      if (offset_ != null) hash ^= Offset.GetHashCode();
+      if (anchor_ != null) hash ^= Anchor.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
+      if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +174,17 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
-      if (offset_ != null) {
+      if (position_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Offset);
+        output.WriteMessage(Position);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Orientation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +196,17 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AnchorId.Length != 0) {
+      if (anchor_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(AnchorId);
+        output.WriteMessage(Anchor);
       }
-      if (offset_ != null) {
+      if (position_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Offset);
+        output.WriteMessage(Position);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Orientation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +218,14 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AnchorId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AnchorId);
+      if (anchor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
       }
-      if (offset_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Offset);
+      if (position_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (orientation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Orientation);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,14 +239,23 @@ namespace Messages.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.AnchorId.Length != 0) {
-        AnchorId = other.AnchorId;
-      }
-      if (other.offset_ != null) {
-        if (offset_ == null) {
-          Offset = new global::Messages.Common.V1.Pose();
+      if (other.anchor_ != null) {
+        if (anchor_ == null) {
+          Anchor = new global::Messages.Common.V1.Anchor();
         }
-        Offset.MergeFrom(other.Offset);
+        Anchor.MergeFrom(other.Anchor);
+      }
+      if (other.position_ != null) {
+        if (position_ == null) {
+          Position = new global::Messages.Common.V1.Point();
+        }
+        Position.MergeFrom(other.Position);
+      }
+      if (other.orientation_ != null) {
+        if (orientation_ == null) {
+          Orientation = new global::Messages.Common.V1.Quad();
+        }
+        Orientation.MergeFrom(other.Orientation);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -239,14 +277,24 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
           case 18: {
-            if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+            if (position_ == null) {
+              Position = new global::Messages.Common.V1.Point();
             }
-            input.ReadMessage(Offset);
+            input.ReadMessage(Position);
+            break;
+          }
+          case 26: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Common.V1.Quad();
+            }
+            input.ReadMessage(Orientation);
             break;
           }
         }
@@ -269,14 +317,24 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            AnchorId = input.ReadString();
+            if (anchor_ == null) {
+              Anchor = new global::Messages.Common.V1.Anchor();
+            }
+            input.ReadMessage(Anchor);
             break;
           }
           case 18: {
-            if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+            if (position_ == null) {
+              Position = new global::Messages.Common.V1.Point();
             }
-            input.ReadMessage(Offset);
+            input.ReadMessage(Position);
+            break;
+          }
+          case 26: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Common.V1.Quad();
+            }
+            input.ReadMessage(Orientation);
             break;
           }
         }

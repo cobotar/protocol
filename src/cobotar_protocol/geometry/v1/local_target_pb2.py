@@ -22,10 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
+from geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
+from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
+from geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1egeometry/v1/local_target.proto\x12\x0bgeometry.v1\x1a\x16geometry/v1/pose.proto\"U\n\x0bLocalTarget\x12\x1b\n\tanchor_id\x18\x01 \x01(\tR\x08\x61nchorId\x12)\n\x06offset\x18\x02 \x01(\x0b\x32\x11.geometry.v1.PoseR\x06offsetB\xb4\x01\n\x0f\x63om.geometry.v1B\x10LocalTargetProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1egeometry/v1/local_target.proto\x12\x0bgeometry.v1\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x9f\x01\n\x0bLocalTarget\x12+\n\x06\x61nchor\x18\x01 \x01(\x0b\x32\x13.geometry.v1.AnchorR\x06\x61nchor\x12.\n\x08position\x18\x02 \x01(\x0b\x32\x12.geometry.v1.PointR\x08position\x12\x33\n\x0borientation\x18\x03 \x01(\x0b\x32\x11.geometry.v1.QuadR\x0borientationB\xb4\x01\n\x0f\x63om.geometry.v1B\x10LocalTargetProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +35,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'geometry.v1.local_target_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\017com.geometry.v1B\020LocalTargetProtoP\001Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\242\002\003GXX\252\002\022Messages.Common.V1\312\002\013Geometry\\V1\342\002\027Geometry\\V1\\GPBMetadata\352\002\014Geometry::V1'
-  _globals['_LOCALTARGET']._serialized_start=71
-  _globals['_LOCALTARGET']._serialized_end=156
+  _globals['_LOCALTARGET']._serialized_start=123
+  _globals['_LOCALTARGET']._serialized_end=282
 # @@protoc_insertion_point(module_scope)

@@ -3460,8 +3460,9 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| anchor_id | [string](#string) |  |  |
-| offset | [Pose](#geometry-v1-Pose) |  |  |
+| anchor | [Anchor](#geometry-v1-Anchor) |  |  |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
 
 
 

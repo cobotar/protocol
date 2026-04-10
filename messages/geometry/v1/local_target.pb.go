@@ -23,8 +23,9 @@ const (
 
 type LocalTarget struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AnchorId      string                 `protobuf:"bytes,1,opt,name=anchor_id,json=anchorId,proto3" json:"anchor_id,omitempty"`
-	Offset        *Pose                  `protobuf:"bytes,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	Anchor        *Anchor                `protobuf:"bytes,1,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	Position      *Point                 `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty"`
+	Orientation   *Quad                  `protobuf:"bytes,3,opt,name=orientation,proto3" json:"orientation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,16 +60,23 @@ func (*LocalTarget) Descriptor() ([]byte, []int) {
 	return file_geometry_v1_local_target_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *LocalTarget) GetAnchorId() string {
+func (x *LocalTarget) GetAnchor() *Anchor {
 	if x != nil {
-		return x.AnchorId
+		return x.Anchor
 	}
-	return ""
+	return nil
 }
 
-func (x *LocalTarget) GetOffset() *Pose {
+func (x *LocalTarget) GetPosition() *Point {
 	if x != nil {
-		return x.Offset
+		return x.Position
+	}
+	return nil
+}
+
+func (x *LocalTarget) GetOrientation() *Quad {
+	if x != nil {
+		return x.Orientation
 	}
 	return nil
 }
@@ -77,10 +85,11 @@ var File_geometry_v1_local_target_proto protoreflect.FileDescriptor
 
 const file_geometry_v1_local_target_proto_rawDesc = "" +
 	"\n" +
-	"\x1egeometry/v1/local_target.proto\x12\vgeometry.v1\x1a\x16geometry/v1/pose.proto\"U\n" +
-	"\vLocalTarget\x12\x1b\n" +
-	"\tanchor_id\x18\x01 \x01(\tR\banchorId\x12)\n" +
-	"\x06offset\x18\x02 \x01(\v2\x11.geometry.v1.PoseR\x06offsetB\xb4\x01\n" +
+	"\x1egeometry/v1/local_target.proto\x12\vgeometry.v1\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x9f\x01\n" +
+	"\vLocalTarget\x12+\n" +
+	"\x06anchor\x18\x01 \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x12.\n" +
+	"\bposition\x18\x02 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
+	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\xb4\x01\n" +
 	"\x0fcom.geometry.v1B\x10LocalTargetProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
@@ -98,15 +107,19 @@ func file_geometry_v1_local_target_proto_rawDescGZIP() []byte {
 var file_geometry_v1_local_target_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_geometry_v1_local_target_proto_goTypes = []any{
 	(*LocalTarget)(nil), // 0: geometry.v1.LocalTarget
-	(*Pose)(nil),        // 1: geometry.v1.Pose
+	(*Anchor)(nil),      // 1: geometry.v1.Anchor
+	(*Point)(nil),       // 2: geometry.v1.Point
+	(*Quad)(nil),        // 3: geometry.v1.Quad
 }
 var file_geometry_v1_local_target_proto_depIdxs = []int32{
-	1, // 0: geometry.v1.LocalTarget.offset:type_name -> geometry.v1.Pose
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 0: geometry.v1.LocalTarget.anchor:type_name -> geometry.v1.Anchor
+	2, // 1: geometry.v1.LocalTarget.position:type_name -> geometry.v1.Point
+	3, // 2: geometry.v1.LocalTarget.orientation:type_name -> geometry.v1.Quad
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_geometry_v1_local_target_proto_init() }
@@ -114,7 +127,9 @@ func file_geometry_v1_local_target_proto_init() {
 	if File_geometry_v1_local_target_proto != nil {
 		return
 	}
-	file_geometry_v1_pose_proto_init()
+	file_geometry_v1_anchor_proto_init()
+	file_geometry_v1_point_proto_init()
+	file_geometry_v1_quad_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
