@@ -367,10 +367,15 @@
     - [TaskType](#process-v1-TaskType)
   
 - [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
+    - [AddChildSequenceRequest](#process-v1-AddChildSequenceRequest)
+    - [AddChildTaskRequest](#process-v1-AddChildTaskRequest)
+    - [AddRootSequenceRequest](#process-v1-AddRootSequenceRequest)
     - [CreateProcessRecipe](#process-v1-CreateProcessRecipe)
     - [ProcessRecipe](#process-v1-ProcessRecipe)
     - [ProcessRecipes](#process-v1-ProcessRecipes)
     - [RecipeApplicability](#process-v1-RecipeApplicability)
+    - [RemoveSequenceRequest](#process-v1-RemoveSequenceRequest)
+    - [RemoveTaskRequest](#process-v1-RemoveTaskRequest)
   
     - [ProcessType](#process-v1-ProcessType)
   
@@ -5245,6 +5250,53 @@ They should stay reusable across workcells and deployments.
 
 
 
+<a name="process-v1-AddChildSequenceRequest"></a>
+
+### AddChildSequenceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe_id | [string](#string) |  |  |
+| sequence_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="process-v1-AddChildTaskRequest"></a>
+
+### AddChildTaskRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe_id | [string](#string) |  |  |
+| sequence_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="process-v1-AddRootSequenceRequest"></a>
+
+### AddRootSequenceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe_id | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="process-v1-CreateProcessRecipe"></a>
 
 ### CreateProcessRecipe
@@ -5319,6 +5371,38 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | include | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
 | exclude | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
+
+
+
+
+
+
+<a name="process-v1-RemoveSequenceRequest"></a>
+
+### RemoveSequenceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe_id | [string](#string) |  |  |
+| sequence_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="process-v1-RemoveTaskRequest"></a>
+
+### RemoveTaskRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recipe_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
 
 
 

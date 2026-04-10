@@ -66,6 +66,12 @@ class ProcessRecipe(_message.Message):
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ProcessType, str]] = ..., product_definition_id: _Optional[str] = ..., applicability: _Optional[_Union[RecipeApplicability, _Mapping]] = ..., root_sequence_id: _Optional[str] = ..., sequence_ids: _Optional[_Iterable[str]] = ..., task_ids: _Optional[_Iterable[str]] = ..., supported_container_definition_ids: _Optional[_Iterable[str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
 
+class ProcessRecipes(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ProcessRecipe]
+    def __init__(self, items: _Optional[_Iterable[_Union[ProcessRecipe, _Mapping]]] = ...) -> None: ...
+
 class CreateProcessRecipe(_message.Message):
     __slots__ = ("recipe", "sequences", "tasks")
     RECIPE_FIELD_NUMBER: _ClassVar[int]
@@ -76,8 +82,40 @@ class CreateProcessRecipe(_message.Message):
     tasks: _containers.RepeatedCompositeFieldContainer[_task_definition_pb2.TaskDefinition]
     def __init__(self, recipe: _Optional[_Union[ProcessRecipe, _Mapping]] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ...) -> None: ...
 
-class ProcessRecipes(_message.Message):
-    __slots__ = ("items",)
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[ProcessRecipe]
-    def __init__(self, items: _Optional[_Iterable[_Union[ProcessRecipe, _Mapping]]] = ...) -> None: ...
+class AddRootSequenceRequest(_message.Message):
+    __slots__ = ("recipe_id",)
+    RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    recipe_id: str
+    def __init__(self, recipe_id: _Optional[str] = ...) -> None: ...
+
+class AddChildSequenceRequest(_message.Message):
+    __slots__ = ("recipe_id", "sequence_id")
+    RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    recipe_id: str
+    sequence_id: str
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+
+class RemoveSequenceRequest(_message.Message):
+    __slots__ = ("recipe_id", "sequence_id")
+    RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    recipe_id: str
+    sequence_id: str
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+
+class AddChildTaskRequest(_message.Message):
+    __slots__ = ("recipe_id", "sequence_id")
+    RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    recipe_id: str
+    sequence_id: str
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+
+class RemoveTaskRequest(_message.Message):
+    __slots__ = ("recipe_id", "task_id")
+    RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    recipe_id: str
+    task_id: str
+    def __init__(self, recipe_id: _Optional[str] = ..., task_id: _Optional[str] = ...) -> None: ...

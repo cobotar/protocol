@@ -51,12 +51,63 @@ message ProcessRecipe {
   repeated common.v1.ExternalReference external_references = 12;
 }
 
+message ProcessRecipes {
+  repeated ProcessRecipe items = 1;
+}
+
 message CreateProcessRecipe {
   ProcessRecipe recipe = 1 [(buf.validate.field).required = true];
   repeated SequenceDefinition sequences = 2;
   repeated TaskDefinition tasks = 3;
 }
 
-message ProcessRecipes {
-  repeated ProcessRecipe items = 1;
+message AddRootSequenceRequest {
+  string recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+}
+
+message AddChildSequenceRequest {
+  string recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+  string sequence_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
+  ];
+}
+
+message RemoveSequenceRequest {
+  string recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+  string sequence_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
+  ];
+}
+
+message AddChildTaskRequest {
+  string recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+  string sequence_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
+  ];
+}
+
+message RemoveTaskRequest {
+  string recipe_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+  string task_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_definition_id_component) = true
+  ];
 }

@@ -277,6 +277,50 @@ func (x *ProcessRecipe) GetExternalReferences() []*v11.ExternalReference {
 	return nil
 }
 
+type ProcessRecipes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ProcessRecipe       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProcessRecipes) Reset() {
+	*x = ProcessRecipes{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProcessRecipes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProcessRecipes) ProtoMessage() {}
+
+func (x *ProcessRecipes) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProcessRecipes.ProtoReflect.Descriptor instead.
+func (*ProcessRecipes) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ProcessRecipes) GetItems() []*ProcessRecipe {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type CreateProcessRecipe struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Recipe        *ProcessRecipe         `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
@@ -288,7 +332,7 @@ type CreateProcessRecipe struct {
 
 func (x *CreateProcessRecipe) Reset() {
 	*x = CreateProcessRecipe{}
-	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -300,7 +344,7 @@ func (x *CreateProcessRecipe) String() string {
 func (*CreateProcessRecipe) ProtoMessage() {}
 
 func (x *CreateProcessRecipe) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_recipe_proto_msgTypes[2]
+	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -313,7 +357,7 @@ func (x *CreateProcessRecipe) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateProcessRecipe.ProtoReflect.Descriptor instead.
 func (*CreateProcessRecipe) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{2}
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateProcessRecipe) GetRecipe() *ProcessRecipe {
@@ -337,28 +381,28 @@ func (x *CreateProcessRecipe) GetTasks() []*TaskDefinition {
 	return nil
 }
 
-type ProcessRecipes struct {
+type AddRootSequenceRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ProcessRecipe       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ProcessRecipes) Reset() {
-	*x = ProcessRecipes{}
-	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
+func (x *AddRootSequenceRequest) Reset() {
+	*x = AddRootSequenceRequest{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ProcessRecipes) String() string {
+func (x *AddRootSequenceRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProcessRecipes) ProtoMessage() {}
+func (*AddRootSequenceRequest) ProtoMessage() {}
 
-func (x *ProcessRecipes) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_process_recipe_proto_msgTypes[3]
+func (x *AddRootSequenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -369,16 +413,224 @@ func (x *ProcessRecipes) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProcessRecipes.ProtoReflect.Descriptor instead.
-func (*ProcessRecipes) Descriptor() ([]byte, []int) {
-	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{3}
+// Deprecated: Use AddRootSequenceRequest.ProtoReflect.Descriptor instead.
+func (*AddRootSequenceRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ProcessRecipes) GetItems() []*ProcessRecipe {
+func (x *AddRootSequenceRequest) GetRecipeId() string {
 	if x != nil {
-		return x.Items
+		return x.RecipeId
 	}
-	return nil
+	return ""
+}
+
+type AddChildSequenceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	SequenceId    string                 `protobuf:"bytes,2,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddChildSequenceRequest) Reset() {
+	*x = AddChildSequenceRequest{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddChildSequenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddChildSequenceRequest) ProtoMessage() {}
+
+func (x *AddChildSequenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddChildSequenceRequest.ProtoReflect.Descriptor instead.
+func (*AddChildSequenceRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *AddChildSequenceRequest) GetRecipeId() string {
+	if x != nil {
+		return x.RecipeId
+	}
+	return ""
+}
+
+func (x *AddChildSequenceRequest) GetSequenceId() string {
+	if x != nil {
+		return x.SequenceId
+	}
+	return ""
+}
+
+type RemoveSequenceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	SequenceId    string                 `protobuf:"bytes,2,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveSequenceRequest) Reset() {
+	*x = RemoveSequenceRequest{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveSequenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSequenceRequest) ProtoMessage() {}
+
+func (x *RemoveSequenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSequenceRequest.ProtoReflect.Descriptor instead.
+func (*RemoveSequenceRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *RemoveSequenceRequest) GetRecipeId() string {
+	if x != nil {
+		return x.RecipeId
+	}
+	return ""
+}
+
+func (x *RemoveSequenceRequest) GetSequenceId() string {
+	if x != nil {
+		return x.SequenceId
+	}
+	return ""
+}
+
+type AddChildTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	SequenceId    string                 `protobuf:"bytes,2,opt,name=sequence_id,json=sequenceId,proto3" json:"sequence_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddChildTaskRequest) Reset() {
+	*x = AddChildTaskRequest{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddChildTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddChildTaskRequest) ProtoMessage() {}
+
+func (x *AddChildTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddChildTaskRequest.ProtoReflect.Descriptor instead.
+func (*AddChildTaskRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *AddChildTaskRequest) GetRecipeId() string {
+	if x != nil {
+		return x.RecipeId
+	}
+	return ""
+}
+
+func (x *AddChildTaskRequest) GetSequenceId() string {
+	if x != nil {
+		return x.SequenceId
+	}
+	return ""
+}
+
+type RemoveTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecipeId      string                 `protobuf:"bytes,1,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	TaskId        string                 `protobuf:"bytes,2,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveTaskRequest) Reset() {
+	*x = RemoveTaskRequest{}
+	mi := &file_process_v1_process_recipe_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveTaskRequest) ProtoMessage() {}
+
+func (x *RemoveTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_process_recipe_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveTaskRequest.ProtoReflect.Descriptor instead.
+func (*RemoveTaskRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *RemoveTaskRequest) GetRecipeId() string {
+	if x != nil {
+		return x.RecipeId
+	}
+	return ""
+}
+
+func (x *RemoveTaskRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
 }
 
 var File_process_v1_process_recipe_proto protoreflect.FileDescriptor
@@ -403,13 +655,30 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\btask_ids\x18\n" +
 	" \x03(\tR\ataskIds\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
-	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"\xc0\x01\n" +
+	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"A\n" +
+	"\x0eProcessRecipes\x12/\n" +
+	"\x05items\x18\x01 \x03(\v2\x19.process.v1.ProcessRecipeR\x05items\"\xc0\x01\n" +
 	"\x13CreateProcessRecipe\x129\n" +
 	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12<\n" +
 	"\tsequences\x18\x02 \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
-	"\x05tasks\x18\x03 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\"A\n" +
-	"\x0eProcessRecipes\x12/\n" +
-	"\x05items\x18\x01 \x03(\v2\x19.process.v1.ProcessRecipeR\x05items*\xd5\x01\n" +
+	"\x05tasks\x18\x03 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\"C\n" +
+	"\x16AddRootSequenceRequest\x12)\n" +
+	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\"s\n" +
+	"\x17AddChildSequenceRequest\x12)\n" +
+	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
+	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +
+	"sequenceId\"q\n" +
+	"\x15RemoveSequenceRequest\x12)\n" +
+	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
+	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +
+	"sequenceId\"o\n" +
+	"\x13AddChildTaskRequest\x12)\n" +
+	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12-\n" +
+	"\vsequence_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\n" +
+	"sequenceId\"e\n" +
+	"\x11RemoveTaskRequest\x12)\n" +
+	"\trecipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12%\n" +
+	"\atask_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xb0\xf2\x04\x01R\x06taskId*\xd5\x01\n" +
 	"\vProcessType\x12\x1c\n" +
 	"\x18PROCESS_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROCESS_TYPE_ASSEMBLY\x10\x01\x12\x1c\n" +
@@ -434,33 +703,38 @@ func file_process_v1_process_recipe_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_process_recipe_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_process_v1_process_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_process_v1_process_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_process_v1_process_recipe_proto_goTypes = []any{
-	(ProcessType)(0),              // 0: process.v1.ProcessType
-	(*RecipeApplicability)(nil),   // 1: process.v1.RecipeApplicability
-	(*ProcessRecipe)(nil),         // 2: process.v1.ProcessRecipe
-	(*CreateProcessRecipe)(nil),   // 3: process.v1.CreateProcessRecipe
-	(*ProcessRecipes)(nil),        // 4: process.v1.ProcessRecipes
-	(*v1.VariantRule)(nil),        // 5: variance.v1.VariantRule
-	(*v11.ExternalReference)(nil), // 6: common.v1.ExternalReference
-	(*SequenceDefinition)(nil),    // 7: process.v1.SequenceDefinition
-	(*TaskDefinition)(nil),        // 8: process.v1.TaskDefinition
+	(ProcessType)(0),                // 0: process.v1.ProcessType
+	(*RecipeApplicability)(nil),     // 1: process.v1.RecipeApplicability
+	(*ProcessRecipe)(nil),           // 2: process.v1.ProcessRecipe
+	(*ProcessRecipes)(nil),          // 3: process.v1.ProcessRecipes
+	(*CreateProcessRecipe)(nil),     // 4: process.v1.CreateProcessRecipe
+	(*AddRootSequenceRequest)(nil),  // 5: process.v1.AddRootSequenceRequest
+	(*AddChildSequenceRequest)(nil), // 6: process.v1.AddChildSequenceRequest
+	(*RemoveSequenceRequest)(nil),   // 7: process.v1.RemoveSequenceRequest
+	(*AddChildTaskRequest)(nil),     // 8: process.v1.AddChildTaskRequest
+	(*RemoveTaskRequest)(nil),       // 9: process.v1.RemoveTaskRequest
+	(*v1.VariantRule)(nil),          // 10: variance.v1.VariantRule
+	(*v11.ExternalReference)(nil),   // 11: common.v1.ExternalReference
+	(*SequenceDefinition)(nil),      // 12: process.v1.SequenceDefinition
+	(*TaskDefinition)(nil),          // 13: process.v1.TaskDefinition
 }
 var file_process_v1_process_recipe_proto_depIdxs = []int32{
-	5, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
-	5, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
-	0, // 2: process.v1.ProcessRecipe.type:type_name -> process.v1.ProcessType
-	1, // 3: process.v1.ProcessRecipe.applicability:type_name -> process.v1.RecipeApplicability
-	6, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
-	2, // 5: process.v1.CreateProcessRecipe.recipe:type_name -> process.v1.ProcessRecipe
-	7, // 6: process.v1.CreateProcessRecipe.sequences:type_name -> process.v1.SequenceDefinition
-	8, // 7: process.v1.CreateProcessRecipe.tasks:type_name -> process.v1.TaskDefinition
-	2, // 8: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	10, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
+	10, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
+	0,  // 2: process.v1.ProcessRecipe.type:type_name -> process.v1.ProcessType
+	1,  // 3: process.v1.ProcessRecipe.applicability:type_name -> process.v1.RecipeApplicability
+	11, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference
+	2,  // 5: process.v1.ProcessRecipes.items:type_name -> process.v1.ProcessRecipe
+	2,  // 6: process.v1.CreateProcessRecipe.recipe:type_name -> process.v1.ProcessRecipe
+	12, // 7: process.v1.CreateProcessRecipe.sequences:type_name -> process.v1.SequenceDefinition
+	13, // 8: process.v1.CreateProcessRecipe.tasks:type_name -> process.v1.TaskDefinition
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_process_recipe_proto_init() }
@@ -476,7 +750,7 @@ func file_process_v1_process_recipe_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_process_recipe_proto_rawDesc), len(file_process_v1_process_recipe_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

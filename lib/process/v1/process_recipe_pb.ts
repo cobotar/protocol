@@ -20,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/process_recipe.proto.
  */
 export const file_process_v1_process_recipe: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKLAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIqYBChNDcmVhdGVQcm9jZXNzUmVjaXBlEjEKBnJlY2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBEjEKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uEikKBXRhc2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbiI6Cg5Qcm9jZXNzUmVjaXBlcxIoCgVpdGVtcxgBIAMoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZSrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkKxAQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKLAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlIqYBChNDcmVhdGVQcm9jZXNzUmVjaXBlEjEKBnJlY2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBEjEKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uEikKBXRhc2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbiI5ChZBZGRSb290U2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBIl0KF0FkZENoaWxkU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAEiWwoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAEiWQoTQWRkQ2hpbGRUYXNrUmVxdWVzdBIfCglyZWNpcGVfaWQYASABKAlCDLpICcgBAXIEoPIEARIhCgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJyAEBcgSo8gQBIlMKEVJlbW92ZVRhc2tSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEh0KB3Rhc2tfaWQYAiABKAlCDLpICcgBAXIEsPIEASrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkKxAQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message process.v1.RecipeApplicability
@@ -131,6 +131,23 @@ export const ProcessRecipeSchema: GenMessage<ProcessRecipe> = /*@__PURE__*/
   messageDesc(file_process_v1_process_recipe, 1);
 
 /**
+ * @generated from message process.v1.ProcessRecipes
+ */
+export type ProcessRecipes = Message<"process.v1.ProcessRecipes"> & {
+  /**
+   * @generated from field: repeated process.v1.ProcessRecipe items = 1;
+   */
+  items: ProcessRecipe[];
+};
+
+/**
+ * Describes the message process.v1.ProcessRecipes.
+ * Use `create(ProcessRecipesSchema)` to create a new message.
+ */
+export const ProcessRecipesSchema: GenMessage<ProcessRecipes> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 2);
+
+/**
  * @generated from message process.v1.CreateProcessRecipe
  */
 export type CreateProcessRecipe = Message<"process.v1.CreateProcessRecipe"> & {
@@ -155,24 +172,112 @@ export type CreateProcessRecipe = Message<"process.v1.CreateProcessRecipe"> & {
  * Use `create(CreateProcessRecipeSchema)` to create a new message.
  */
 export const CreateProcessRecipeSchema: GenMessage<CreateProcessRecipe> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 2);
+  messageDesc(file_process_v1_process_recipe, 3);
 
 /**
- * @generated from message process.v1.ProcessRecipes
+ * @generated from message process.v1.AddRootSequenceRequest
  */
-export type ProcessRecipes = Message<"process.v1.ProcessRecipes"> & {
+export type AddRootSequenceRequest = Message<"process.v1.AddRootSequenceRequest"> & {
   /**
-   * @generated from field: repeated process.v1.ProcessRecipe items = 1;
+   * @generated from field: string recipe_id = 1;
    */
-  items: ProcessRecipe[];
+  recipeId: string;
 };
 
 /**
- * Describes the message process.v1.ProcessRecipes.
- * Use `create(ProcessRecipesSchema)` to create a new message.
+ * Describes the message process.v1.AddRootSequenceRequest.
+ * Use `create(AddRootSequenceRequestSchema)` to create a new message.
  */
-export const ProcessRecipesSchema: GenMessage<ProcessRecipes> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 3);
+export const AddRootSequenceRequestSchema: GenMessage<AddRootSequenceRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 4);
+
+/**
+ * @generated from message process.v1.AddChildSequenceRequest
+ */
+export type AddChildSequenceRequest = Message<"process.v1.AddChildSequenceRequest"> & {
+  /**
+   * @generated from field: string recipe_id = 1;
+   */
+  recipeId: string;
+
+  /**
+   * @generated from field: string sequence_id = 2;
+   */
+  sequenceId: string;
+};
+
+/**
+ * Describes the message process.v1.AddChildSequenceRequest.
+ * Use `create(AddChildSequenceRequestSchema)` to create a new message.
+ */
+export const AddChildSequenceRequestSchema: GenMessage<AddChildSequenceRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 5);
+
+/**
+ * @generated from message process.v1.RemoveSequenceRequest
+ */
+export type RemoveSequenceRequest = Message<"process.v1.RemoveSequenceRequest"> & {
+  /**
+   * @generated from field: string recipe_id = 1;
+   */
+  recipeId: string;
+
+  /**
+   * @generated from field: string sequence_id = 2;
+   */
+  sequenceId: string;
+};
+
+/**
+ * Describes the message process.v1.RemoveSequenceRequest.
+ * Use `create(RemoveSequenceRequestSchema)` to create a new message.
+ */
+export const RemoveSequenceRequestSchema: GenMessage<RemoveSequenceRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 6);
+
+/**
+ * @generated from message process.v1.AddChildTaskRequest
+ */
+export type AddChildTaskRequest = Message<"process.v1.AddChildTaskRequest"> & {
+  /**
+   * @generated from field: string recipe_id = 1;
+   */
+  recipeId: string;
+
+  /**
+   * @generated from field: string sequence_id = 2;
+   */
+  sequenceId: string;
+};
+
+/**
+ * Describes the message process.v1.AddChildTaskRequest.
+ * Use `create(AddChildTaskRequestSchema)` to create a new message.
+ */
+export const AddChildTaskRequestSchema: GenMessage<AddChildTaskRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 7);
+
+/**
+ * @generated from message process.v1.RemoveTaskRequest
+ */
+export type RemoveTaskRequest = Message<"process.v1.RemoveTaskRequest"> & {
+  /**
+   * @generated from field: string recipe_id = 1;
+   */
+  recipeId: string;
+
+  /**
+   * @generated from field: string task_id = 2;
+   */
+  taskId: string;
+};
+
+/**
+ * Describes the message process.v1.RemoveTaskRequest.
+ * Use `create(RemoveTaskRequestSchema)` to create a new message.
+ */
+export const RemoveTaskRequestSchema: GenMessage<RemoveTaskRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 8);
 
 /**
  * @generated from enum process.v1.ProcessType
