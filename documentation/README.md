@@ -239,19 +239,6 @@
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
   
-- [plm/v1/capability.proto](#plm_v1_capability-proto)
-    - [Capabilities](#plm-v1-Capabilities)
-    - [Capability](#plm-v1-Capability)
-  
-- [plm/v1/fixture.proto](#plm_v1_fixture-proto)
-    - [FixtureMessage](#plm-v1-FixtureMessage)
-    - [FixtureMessages](#plm-v1-FixtureMessages)
-  
-    - [FixtureType](#plm-v1-FixtureType)
-  
-- [plm/v1/process_abort.proto](#plm_v1_process_abort-proto)
-    - [ProcessAbortMessage](#plm-v1-ProcessAbortMessage)
-  
 - [plm/v1/sequence.proto](#plm_v1_sequence-proto)
     - [SequenceMessage](#plm-v1-SequenceMessage)
     - [SequenceUpdatedMessage](#plm-v1-SequenceUpdatedMessage)
@@ -307,17 +294,6 @@
     - [StoredTaskMessage](#plm-v1-StoredTaskMessage)
     - [StoredTaskMessages](#plm-v1-StoredTaskMessages)
     - [UpdateTaskMessage](#plm-v1-UpdateTaskMessage)
-  
-- [plm/v1/task_progress.proto](#plm_v1_task_progress-proto)
-    - [TaskProgressMessage](#plm-v1-TaskProgressMessage)
-  
-- [plm/v1/task_reassign.proto](#plm_v1_task_reassign-proto)
-    - [TaskReassignMessage](#plm-v1-TaskReassignMessage)
-  
-- [plm/v1/task_state_change.proto](#plm_v1_task_state_change-proto)
-    - [TaskStateChangeMessage](#plm-v1-TaskStateChangeMessage)
-  
-    - [TaskStateRequest](#plm-v1-TaskStateRequest)
   
 - [plm/v1/tasks_list.proto](#plm_v1_tasks_list-proto)
     - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
@@ -578,6 +554,14 @@
     - [ProcessRunIssueSeverity](#runtime-v1-ProcessRunIssueSeverity)
     - [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus)
     - [RequirementImportance](#runtime-v1-RequirementImportance)
+  
+- [runtime/v1/runtime_requests.proto](#runtime_v1_runtime_requests-proto)
+    - [ProcessAbortRequest](#runtime-v1-ProcessAbortRequest)
+    - [TaskProgressUpdate](#runtime-v1-TaskProgressUpdate)
+    - [TaskReassignRequest](#runtime-v1-TaskReassignRequest)
+    - [TaskStateChangeRequest](#runtime-v1-TaskStateChangeRequest)
+  
+    - [TaskStateRequest](#runtime-v1-TaskStateRequest)
   
 - [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
     - [SequenceRun](#runtime-v1-SequenceRun)
@@ -3510,149 +3494,6 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 
 
-<a name="plm_v1_capability-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/capability.proto
-
-
-
-<a name="plm-v1-Capabilities"></a>
-
-### Capabilities
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| capabilities | [Capability](#plm-v1-Capability) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-Capability"></a>
-
-### Capability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agent_id | [string](#string) |  | Id of the agent (either an operator or robot) |
-| part_id | [string](#string) |  | Id of the part that the agent can handle |
-| estimated_time | [int64](#int64) |  | Estimated time to complete a task with that part |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_fixture-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/fixture.proto
-
-
-
-<a name="plm-v1-FixtureMessage"></a>
-
-### FixtureMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [FixtureType](#plm-v1-FixtureType) |  |  |
-| accepted_part_ids | [string](#string) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-FixtureMessages"></a>
-
-### FixtureMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| fixtures | [FixtureMessage](#plm-v1-FixtureMessage) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-FixtureType"></a>
-
-### FixtureType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| FIXTURE_TYPE_UNSPECIFIED | 0 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process_abort-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process_abort.proto
-
-
-
-<a name="plm-v1-ProcessAbortMessage"></a>
-
-### ProcessAbortMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| reason | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="plm_v1_sequence-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -4406,126 +4247,6 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task_progress-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task_progress.proto
-
-
-
-<a name="plm-v1-TaskProgressMessage"></a>
-
-### TaskProgressMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-| message | [string](#string) |  |  |
-| elapsed_time | [int32](#int32) |  | elapsed time in seconds |
-| estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task_reassign-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task_reassign.proto
-
-
-
-<a name="plm-v1-TaskReassignMessage"></a>
-
-### TaskReassignMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| assignee | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task_state_change-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task_state_change.proto
-
-
-
-<a name="plm-v1-TaskStateChangeMessage"></a>
-
-### TaskStateChangeMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| state | [TaskStateRequest](#plm-v1-TaskStateRequest) |  |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-TaskStateRequest"></a>
-
-### TaskStateRequest
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_STATE_REQUEST_UNSPECIFIED | 0 |  |
-| TASK_STATE_REQUEST_IN_PROGRESS | 3 |  |
-| TASK_STATE_REQUEST_COMPLETED | 4 |  |
-| TASK_STATE_REQUEST_UNDO | 5 |  |
-| TASK_STATE_REQUEST_ERROR | 6 |  |
-
 
  
 
@@ -8275,6 +7996,105 @@ A human is required but no worker with valid skills exists. |
 | REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
 | REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
 | REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_runtime_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/runtime_requests.proto
+
+
+
+<a name="runtime-v1-ProcessAbortRequest"></a>
+
+### ProcessAbortRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_run_id | [string](#string) |  |  |
+| reason | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskProgressUpdate"></a>
+
+### TaskProgressUpdate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_run_id | [string](#string) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| message | [string](#string) |  |  |
+| elapsed_time | [int32](#int32) |  | elapsed time in seconds |
+| estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
+
+
+
+
+
+
+<a name="runtime-v1-TaskReassignRequest"></a>
+
+### TaskReassignRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_run_id | [string](#string) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskStateChangeRequest"></a>
+
+### TaskStateChangeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_run_id | [string](#string) |  |  |
+| state | [TaskStateRequest](#runtime-v1-TaskStateRequest) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-TaskStateRequest"></a>
+
+### TaskStateRequest
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_STATE_REQUEST_UNSPECIFIED | 0 |  |
+| TASK_STATE_REQUEST_IN_PROGRESS | 1 |  |
+| TASK_STATE_REQUEST_DONE | 2 |  |
+| TASK_STATE_REQUEST_UNDO | 3 |  |
+| TASK_STATE_REQUEST_ERROR | 4 |  |
+| TASK_STATE_REQUEST_ABORT | 5 |  |
 
 
  

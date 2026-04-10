@@ -1,0 +1,39 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "common/v1/actor.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+message ProcessAbortRequest {
+  string process_run_id = 1;
+  string reason = 2;
+}
+
+enum TaskStateRequest {
+  TASK_STATE_REQUEST_UNSPECIFIED = 0;
+  TASK_STATE_REQUEST_IN_PROGRESS = 1;
+  TASK_STATE_REQUEST_DONE = 2;
+  TASK_STATE_REQUEST_UNDO = 3;
+  TASK_STATE_REQUEST_ERROR = 4;
+  TASK_STATE_REQUEST_ABORT = 5;
+}
+
+message TaskStateChangeRequest {
+  string task_run_id = 1;
+  TaskStateRequest state = 2;
+}
+
+message TaskReassignRequest {
+  string task_run_id = 1;
+  common.v1.ActorRef actor = 2;
+}
+
+message TaskProgressUpdate {
+  string task_run_id = 1;
+  common.v1.ActorRef actor = 2;
+  string message = 3;
+  int32 elapsed_time = 4; // elapsed time in seconds
+  int32 estimated_time_left = 5; // estimated time left in seconds
+}
