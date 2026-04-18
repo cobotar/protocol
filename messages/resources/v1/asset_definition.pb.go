@@ -266,7 +266,7 @@ type AssetDefinition struct {
 	DriverType    AssetDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=resources.v1.AssetDriverType" json:"driver_type,omitempty"`
 	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	Vision        *VisionCapability      `protobuf:"bytes,8,opt,name=vision,proto3" json:"vision,omitempty"`
-	Custom        *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
+	Custom        *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"` // TODO: add ToolRole or similar way to express capabilities?
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

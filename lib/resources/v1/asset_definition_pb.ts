@@ -100,6 +100,8 @@ export type AssetDefinition = Message<"resources.v1.AssetDefinition"> & {
   vision?: VisionCapability;
 
   /**
+   * TODO: add ToolRole or similar way to express capabilities?
+   *
    * @generated from field: common.v1.CustomProperties custom = 9;
    */
   custom?: CustomProperties;

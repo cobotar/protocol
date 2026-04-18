@@ -549,6 +549,9 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "custom" field.</summary>
     public const int CustomFieldNumber = 9;
     private global::Messages.Common.V1.CustomProperties custom_;
+    /// <summary>
+    /// TODO: add ToolRole or similar way to express capabilities?
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.CustomProperties Custom {

@@ -136,6 +136,8 @@ type TaskStateChangeRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	TaskRunId     string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
 	State         TaskStateRequest       `protobuf:"varint,2,opt,name=state,proto3,enum=runtime.v1.TaskStateRequest" json:"state,omitempty"`
+	ErrorCode     string                 `protobuf:"bytes,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
+	ErrorMessage  string                 `protobuf:"bytes,4,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -182,6 +184,20 @@ func (x *TaskStateChangeRequest) GetState() TaskStateRequest {
 		return x.State
 	}
 	return TaskStateRequest_TASK_STATE_REQUEST_UNSPECIFIED
+}
+
+func (x *TaskStateChangeRequest) GetErrorCode() string {
+	if x != nil {
+		return x.ErrorCode
+	}
+	return ""
+}
+
+func (x *TaskStateChangeRequest) GetErrorMessage() string {
+	if x != nil {
+		return x.ErrorMessage
+	}
+	return ""
 }
 
 type TaskReassignRequest struct {
@@ -320,10 +336,13 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"runtime.v1\x1a\x15common/v1/actor.proto\"S\n" +
 	"\x13ProcessAbortRequest\x12$\n" +
 	"\x0eprocess_run_id\x18\x01 \x01(\tR\fprocessRunId\x12\x16\n" +
-	"\x06reason\x18\x02 \x01(\tR\x06reason\"l\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"\xb0\x01\n" +
 	"\x16TaskStateChangeRequest\x12\x1e\n" +
 	"\vtask_run_id\x18\x01 \x01(\tR\ttaskRunId\x122\n" +
-	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestR\x05state\"`\n" +
+	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestR\x05state\x12\x1d\n" +
+	"\n" +
+	"error_code\x18\x03 \x01(\tR\terrorCode\x12#\n" +
+	"\rerror_message\x18\x04 \x01(\tR\ferrorMessage\"`\n" +
 	"\x13TaskReassignRequest\x12\x1e\n" +
 	"\vtask_run_id\x18\x01 \x01(\tR\ttaskRunId\x12)\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\"\xcc\x01\n" +

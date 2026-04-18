@@ -27,7 +27,7 @@ enum TaskRunState {
 // Concrete runtime/deployment bindings resolved for this task run.
 message TaskRuntimeBinding {
   string asset_instance_id = 1;
-  string robot_instance_id = 2;
+  string robot_instance_id = 2; // TODO: think this should be removed
   string station_id = 3;
   string cell_id = 4;
   resources.v1.ContainerSlotRef container_slot = 5;

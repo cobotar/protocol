@@ -31,12 +31,16 @@ class ProcessAbortRequest(_message.Message):
     def __init__(self, process_run_id: _Optional[str] = ..., reason: _Optional[str] = ...) -> None: ...
 
 class TaskStateChangeRequest(_message.Message):
-    __slots__ = ("task_run_id", "state")
+    __slots__ = ("task_run_id", "state", "error_code", "error_message")
     TASK_RUN_ID_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
+    ERROR_CODE_FIELD_NUMBER: _ClassVar[int]
+    ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     task_run_id: str
     state: TaskStateRequest
-    def __init__(self, task_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskStateRequest, str]] = ...) -> None: ...
+    error_code: str
+    error_message: str
+    def __init__(self, task_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskStateRequest, str]] = ..., error_code: _Optional[str] = ..., error_message: _Optional[str] = ...) -> None: ...
 
 class TaskReassignRequest(_message.Message):
     __slots__ = ("task_run_id", "actor")

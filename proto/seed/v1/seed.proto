@@ -1,0 +1,74 @@
+syntax = "proto3";
+package seed.v1;
+
+import "ar/v1/action.proto";
+import "ar/v1/feedback.proto";
+import "capability/v1/actor_skill.proto";
+import "capability/v1/skill_definition.proto";
+import "process/v1/process_recipe.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
+import "product/v1/part_definition.proto";
+import "product/v1/part_instance.proto";
+import "product/v1/product_definition.proto";
+import "resources/v1/asset_definition.proto";
+import "resources/v1/asset_instance.proto";
+import "resources/v1/cell_definition.proto";
+import "resources/v1/container_definition.proto";
+import "resources/v1/container_instance.proto";
+import "resources/v1/device.proto";
+import "resources/v1/line_definition.proto";
+import "resources/v1/marker_instance.proto";
+import "resources/v1/model.proto";
+import "resources/v1/robot_definition.proto";
+import "resources/v1/robot_instance.proto";
+import "resources/v1/station_definition.proto";
+import "resources/v1/tool_definition.proto";
+import "resources/v1/tool_instance.proto";
+import "resources/v1/worker_definition.proto";
+import "runtime/v1/process_run.proto";
+import "runtime/v1/sequence_run.proto";
+import "runtime/v1/task_run.proto";
+
+option csharp_namespace = "Messages.Seed.V1";
+option go_package = "github.com/cobotar/protocol/messages/seed/v1";
+
+message Seed {
+  repeated resources.v1.LineDefinition lines = 1;
+  repeated resources.v1.CellDefinition cells = 2;
+  repeated resources.v1.StationDefinition stations = 3;
+
+  repeated resources.v1.WorkerDefinition workers = 10;
+  repeated resources.v1.RobotDefinition robot_definitions = 11;
+  repeated resources.v1.RobotInstance robot_instances = 12;
+  repeated capability.v1.SkillDefinition skills = 13;
+  repeated capability.v1.ActorSkill actor_skills = 14;
+  repeated resources.v1.DeviceMessage devices = 15;
+
+  repeated resources.v1.ModelArtifact models = 20;
+
+  repeated resources.v1.AssetDefinition asset_definitions = 30;
+  repeated resources.v1.AssetInstance asset_instances = 31;
+
+  repeated resources.v1.ContainerDefinition container_definitions = 32;
+  repeated resources.v1.ContainerInstance container_instances = 33;
+
+  repeated resources.v1.ToolDefinition tool_definitions = 34;
+  repeated resources.v1.ToolInstance tool_instances = 35;
+
+  repeated resources.v1.MarkerInstance markers = 36;
+
+  repeated product.v1.PartDefinition part_definitions = 40;
+  repeated product.v1.PartInstance part_instances = 41;
+  repeated product.v1.ProductDefinition products = 42;
+  repeated process.v1.ProcessRecipe recipes = 43;
+  repeated process.v1.SequenceDefinition sequences = 44;
+  repeated process.v1.TaskDefinition tasks = 45;
+
+  repeated runtime.v1.ProcessRun processes = 50;
+  repeated runtime.v1.SequenceRun sequence_runs = 51;
+  repeated runtime.v1.TaskRun task_runs = 52;
+
+  repeated ar.v1.FeedbackMessage feedback = 60;
+  repeated ar.v1.ActionMessage actions = 61;
+}

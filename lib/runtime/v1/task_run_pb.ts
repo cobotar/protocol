@@ -40,6 +40,8 @@ export type TaskRuntimeBinding = Message<"runtime.v1.TaskRuntimeBinding"> & {
   assetInstanceId: string;
 
   /**
+   * TODO: think this should be removed
+   *
    * @generated from field: string robot_instance_id = 2;
    */
   robotInstanceId: string;

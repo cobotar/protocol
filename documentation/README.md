@@ -581,6 +581,9 @@
   
     - [ValidationStatus](#runtime-v1-ValidationStatus)
   
+- [seed/v1/seed.proto](#seed_v1_seed-proto)
+    - [Seed](#seed-v1-Seed)
+  
 - [service/v1/ar_client.proto](#service_v1_ar_client-proto)
     - [ARClientMessage](#service-v1-ARClientMessage)
   
@@ -4431,7 +4434,7 @@ Example: Optional inspections: - Visual inspection - Torque verification - Leak 
 | driver_type | [AssetDriverType](#resources-v1-AssetDriverType) |  |  |
 | model_id | [string](#string) |  |  |
 | vision | [VisionCapability](#resources-v1-VisionCapability) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | TODO: add ToolRole or similar way to express capabilities? |
 
 
 
@@ -8074,6 +8077,8 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | task_run_id | [string](#string) |  |  |
 | state | [TaskStateRequest](#runtime-v1-TaskStateRequest) |  |  |
+| error_code | [string](#string) |  |  |
+| error_message | [string](#string) |  |  |
 
 
 
@@ -8246,7 +8251,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | asset_instance_id | [string](#string) |  |  |
-| robot_instance_id | [string](#string) |  |  |
+| robot_instance_id | [string](#string) |  | TODO: think this should be removed |
 | station_id | [string](#string) |  |  |
 | cell_id | [string](#string) |  |  |
 | container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
@@ -8326,6 +8331,64 @@ Concrete runtime/deployment bindings resolved for this task run.
 | VALIDATION_STATUS_FAILED | 3 |  |
 | VALIDATION_STATUS_BYPASSED | 4 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="seed_v1_seed-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## seed/v1/seed.proto
+
+
+
+<a name="seed-v1-Seed"></a>
+
+### Seed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| lines | [resources.v1.LineDefinition](#resources-v1-LineDefinition) | repeated |  |
+| cells | [resources.v1.CellDefinition](#resources-v1-CellDefinition) | repeated |  |
+| stations | [resources.v1.StationDefinition](#resources-v1-StationDefinition) | repeated |  |
+| workers | [resources.v1.WorkerDefinition](#resources-v1-WorkerDefinition) | repeated |  |
+| robot_definitions | [resources.v1.RobotDefinition](#resources-v1-RobotDefinition) | repeated |  |
+| robot_instances | [resources.v1.RobotInstance](#resources-v1-RobotInstance) | repeated |  |
+| skills | [capability.v1.SkillDefinition](#capability-v1-SkillDefinition) | repeated |  |
+| actor_skills | [capability.v1.ActorSkill](#capability-v1-ActorSkill) | repeated |  |
+| devices | [resources.v1.DeviceMessage](#resources-v1-DeviceMessage) | repeated |  |
+| models | [resources.v1.ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
+| asset_definitions | [resources.v1.AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
+| asset_instances | [resources.v1.AssetInstance](#resources-v1-AssetInstance) | repeated |  |
+| container_definitions | [resources.v1.ContainerDefinition](#resources-v1-ContainerDefinition) | repeated |  |
+| container_instances | [resources.v1.ContainerInstance](#resources-v1-ContainerInstance) | repeated |  |
+| tool_definitions | [resources.v1.ToolDefinition](#resources-v1-ToolDefinition) | repeated |  |
+| tool_instances | [resources.v1.ToolInstance](#resources-v1-ToolInstance) | repeated |  |
+| markers | [resources.v1.MarkerInstance](#resources-v1-MarkerInstance) | repeated |  |
+| part_definitions | [product.v1.PartDefinition](#product-v1-PartDefinition) | repeated |  |
+| part_instances | [product.v1.PartInstance](#product-v1-PartInstance) | repeated |  |
+| products | [product.v1.ProductDefinition](#product-v1-ProductDefinition) | repeated |  |
+| recipes | [process.v1.ProcessRecipe](#process-v1-ProcessRecipe) | repeated |  |
+| sequences | [process.v1.SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
+| tasks | [process.v1.TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+| processes | [runtime.v1.ProcessRun](#runtime-v1-ProcessRun) | repeated |  |
+| sequence_runs | [runtime.v1.SequenceRun](#runtime-v1-SequenceRun) | repeated |  |
+| task_runs | [runtime.v1.TaskRun](#runtime-v1-TaskRun) | repeated |  |
+| feedback | [ar.v1.FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+| actions | [ar.v1.ActionMessage](#ar-v1-ActionMessage) | repeated |  |
+
+
+
+
+
+ 
 
  
 

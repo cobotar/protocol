@@ -91,7 +91,7 @@ func (TaskRunState) EnumDescriptor() ([]byte, []int) {
 type TaskRuntimeBinding struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`
-	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`
+	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"` // TODO: think this should be removed
 	StationId       string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
 	CellId          string                 `protobuf:"bytes,4,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
 	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,5,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`

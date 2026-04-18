@@ -27,30 +27,32 @@ namespace Messages.Runtime.V1 {
             "CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUu",
             "djEaFWNvbW1vbi92MS9hY3Rvci5wcm90byJTChNQcm9jZXNzQWJvcnRSZXF1",
             "ZXN0EiQKDnByb2Nlc3NfcnVuX2lkGAEgASgJUgxwcm9jZXNzUnVuSWQSFgoG",
-            "cmVhc29uGAIgASgJUgZyZWFzb24ibAoWVGFza1N0YXRlQ2hhbmdlUmVxdWVz",
-            "dBIeCgt0YXNrX3J1bl9pZBgBIAEoCVIJdGFza1J1bklkEjIKBXN0YXRlGAIg",
-            "ASgOMhwucnVudGltZS52MS5UYXNrU3RhdGVSZXF1ZXN0UgVzdGF0ZSJgChNU",
-            "YXNrUmVhc3NpZ25SZXF1ZXN0Eh4KC3Rhc2tfcnVuX2lkGAEgASgJUgl0YXNr",
-            "UnVuSWQSKQoFYWN0b3IYAiABKAsyEy5jb21tb24udjEuQWN0b3JSZWZSBWFj",
-            "dG9yIswBChJUYXNrUHJvZ3Jlc3NVcGRhdGUSHgoLdGFza19ydW5faWQYASAB",
-            "KAlSCXRhc2tSdW5JZBIpCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3Rv",
-            "clJlZlIFYWN0b3ISGAoHbWVzc2FnZRgDIAEoCVIHbWVzc2FnZRIhCgxlbGFw",
-            "c2VkX3RpbWUYBCABKAVSC2VsYXBzZWRUaW1lEi4KE2VzdGltYXRlZF90aW1l",
-            "X2xlZnQYBSABKAVSEWVzdGltYXRlZFRpbWVMZWZ0KtABChBUYXNrU3RhdGVS",
-            "ZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJRklFRBAAEiIK",
-            "HlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsKF1RBU0tfU1RB",
-            "VEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFVRVNUX1VORE8Q",
-            "AxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIcChhUQVNLX1NUQVRF",
-            "X1JFUVVFU1RfQUJPUlQQBUKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVS",
-            "ZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
-            "ZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2Vz",
-            "LlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRh",
-            "ZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "cmVhc29uGAIgASgJUgZyZWFzb24isAEKFlRhc2tTdGF0ZUNoYW5nZVJlcXVl",
+            "c3QSHgoLdGFza19ydW5faWQYASABKAlSCXRhc2tSdW5JZBIyCgVzdGF0ZRgC",
+            "IAEoDjIcLnJ1bnRpbWUudjEuVGFza1N0YXRlUmVxdWVzdFIFc3RhdGUSHQoK",
+            "ZXJyb3JfY29kZRgDIAEoCVIJZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UY",
+            "BCABKAlSDGVycm9yTWVzc2FnZSJgChNUYXNrUmVhc3NpZ25SZXF1ZXN0Eh4K",
+            "C3Rhc2tfcnVuX2lkGAEgASgJUgl0YXNrUnVuSWQSKQoFYWN0b3IYAiABKAsy",
+            "Ey5jb21tb24udjEuQWN0b3JSZWZSBWFjdG9yIswBChJUYXNrUHJvZ3Jlc3NV",
+            "cGRhdGUSHgoLdGFza19ydW5faWQYASABKAlSCXRhc2tSdW5JZBIpCgVhY3Rv",
+            "chgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZlIFYWN0b3ISGAoHbWVzc2Fn",
+            "ZRgDIAEoCVIHbWVzc2FnZRIhCgxlbGFwc2VkX3RpbWUYBCABKAVSC2VsYXBz",
+            "ZWRUaW1lEi4KE2VzdGltYXRlZF90aW1lX2xlZnQYBSABKAVSEWVzdGltYXRl",
+            "ZFRpbWVMZWZ0KtABChBUYXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVf",
+            "UkVRVUVTVF9VTlNQRUNJRklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9J",
+            "Tl9QUk9HUkVTUxABEhsKF1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoX",
+            "VEFTS19TVEFURV9SRVFVRVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVF",
+            "U1RfRVJST1IQBBIcChhUQVNLX1NUQVRFX1JFUVVFU1RfQUJPUlQQBUKzAQoO",
+            "Y29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3RvUAFaOWdpdGh1",
+            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1",
+            "bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1l",
+            "XFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Common.V1.ActorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft" }, null, null, null, null)
           }));
@@ -343,6 +345,8 @@ namespace Messages.Runtime.V1 {
     public TaskStateChangeRequest(TaskStateChangeRequest other) : this() {
       taskRunId_ = other.taskRunId_;
       state_ = other.state_;
+      errorCode_ = other.errorCode_;
+      errorMessage_ = other.errorMessage_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -376,6 +380,30 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "error_code" field.</summary>
+    public const int ErrorCodeFieldNumber = 3;
+    private string errorCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ErrorCode {
+      get { return errorCode_; }
+      set {
+        errorCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "error_message" field.</summary>
+    public const int ErrorMessageFieldNumber = 4;
+    private string errorMessage_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ErrorMessage {
+      get { return errorMessage_; }
+      set {
+        errorMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -393,6 +421,8 @@ namespace Messages.Runtime.V1 {
       }
       if (TaskRunId != other.TaskRunId) return false;
       if (State != other.State) return false;
+      if (ErrorCode != other.ErrorCode) return false;
+      if (ErrorMessage != other.ErrorMessage) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -402,6 +432,8 @@ namespace Messages.Runtime.V1 {
       int hash = 1;
       if (TaskRunId.Length != 0) hash ^= TaskRunId.GetHashCode();
       if (State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) hash ^= State.GetHashCode();
+      if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
+      if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -428,6 +460,14 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
+      if (ErrorCode.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ErrorCode);
+      }
+      if (ErrorMessage.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ErrorMessage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -446,6 +486,14 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
+      if (ErrorCode.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ErrorCode);
+      }
+      if (ErrorMessage.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ErrorMessage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -461,6 +509,12 @@ namespace Messages.Runtime.V1 {
       }
       if (State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (ErrorCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorCode);
+      }
+      if (ErrorMessage.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -479,6 +533,12 @@ namespace Messages.Runtime.V1 {
       }
       if (other.State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) {
         State = other.State;
+      }
+      if (other.ErrorCode.Length != 0) {
+        ErrorCode = other.ErrorCode;
+      }
+      if (other.ErrorMessage.Length != 0) {
+        ErrorMessage = other.ErrorMessage;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -507,6 +567,14 @@ namespace Messages.Runtime.V1 {
             State = (global::Messages.Runtime.V1.TaskStateRequest) input.ReadEnum();
             break;
           }
+          case 26: {
+            ErrorCode = input.ReadString();
+            break;
+          }
+          case 34: {
+            ErrorMessage = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -532,6 +600,14 @@ namespace Messages.Runtime.V1 {
           }
           case 16: {
             State = (global::Messages.Runtime.V1.TaskStateRequest) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            ErrorCode = input.ReadString();
+            break;
+          }
+          case 34: {
+            ErrorMessage = input.ReadString();
             break;
           }
         }

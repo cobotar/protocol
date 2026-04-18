@@ -65,6 +65,7 @@ message AssetDefinition {
   string model_id = 7;
   VisionCapability vision = 8;
   common.v1.CustomProperties custom = 9;
+  // TODO: add ToolRole or similar way to express capabilities?
 }
 
 message AssetDefinitions {

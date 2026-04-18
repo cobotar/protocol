@@ -162,6 +162,9 @@ namespace Messages.Runtime.V1 {
     /// <summary>Field number for the "robot_instance_id" field.</summary>
     public const int RobotInstanceIdFieldNumber = 2;
     private string robotInstanceId_ = "";
+    /// <summary>
+    /// TODO: think this should be removed
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RobotInstanceId {

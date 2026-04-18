@@ -23,6 +23,8 @@ enum TaskStateRequest {
 message TaskStateChangeRequest {
   string task_run_id = 1;
   TaskStateRequest state = 2;
+  string error_code = 3;
+  string error_message = 4;
 }
 
 message TaskReassignRequest {
