@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DraftProcessRecipeGenerateRequest(_message.Message):
-    __slots__ = ("product_definition_id", "recipe_id", "recipe_name", "recipe_icon", "recipe_description", "variant_configuration", "insert_align_before_fasten_group", "group_fasteners_threshold", "group_repeated_parts_threshold", "generate_verify_tasks", "prefer_move_tasks_when_possible", "include_optional_nodes")
+    __slots__ = ("product_definition_id", "recipe_id", "recipe_name", "recipe_icon", "recipe_description", "variant_configuration", "insert_align_before_fasten_group", "group_fasteners_threshold", "group_repeated_parts_threshold", "generate_verify_tasks", "prefer_move_tasks_when_possible", "include_optional_nodes", "generate_greasing_tasks")
     PRODUCT_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     RECIPE_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -25,6 +25,7 @@ class DraftProcessRecipeGenerateRequest(_message.Message):
     GENERATE_VERIFY_TASKS_FIELD_NUMBER: _ClassVar[int]
     PREFER_MOVE_TASKS_WHEN_POSSIBLE_FIELD_NUMBER: _ClassVar[int]
     INCLUDE_OPTIONAL_NODES_FIELD_NUMBER: _ClassVar[int]
+    GENERATE_GREASING_TASKS_FIELD_NUMBER: _ClassVar[int]
     product_definition_id: str
     recipe_id: str
     recipe_name: str
@@ -37,7 +38,8 @@ class DraftProcessRecipeGenerateRequest(_message.Message):
     generate_verify_tasks: bool
     prefer_move_tasks_when_possible: bool
     include_optional_nodes: bool
-    def __init__(self, product_definition_id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., recipe_name: _Optional[str] = ..., recipe_icon: _Optional[str] = ..., recipe_description: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., insert_align_before_fasten_group: bool = ..., group_fasteners_threshold: _Optional[int] = ..., group_repeated_parts_threshold: _Optional[int] = ..., generate_verify_tasks: bool = ..., prefer_move_tasks_when_possible: bool = ..., include_optional_nodes: bool = ...) -> None: ...
+    generate_greasing_tasks: bool
+    def __init__(self, product_definition_id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., recipe_name: _Optional[str] = ..., recipe_icon: _Optional[str] = ..., recipe_description: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., insert_align_before_fasten_group: bool = ..., group_fasteners_threshold: _Optional[int] = ..., group_repeated_parts_threshold: _Optional[int] = ..., generate_verify_tasks: bool = ..., prefer_move_tasks_when_possible: bool = ..., include_optional_nodes: bool = ..., generate_greasing_tasks: bool = ...) -> None: ...
 
 class DraftProcessRecipeGenerateIssue(_message.Message):
     __slots__ = ("message", "node_id", "part_definition_id")

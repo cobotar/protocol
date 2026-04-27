@@ -14,68 +14,109 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/sequence_definition.proto.
  */
 export const file_process_v1_sequence_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEi5QIKElNlcXVlbmNlRGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIgCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVCB7pIBBoCKAASGgoScGFyZW50X3NlcXVlbmNlX2lkGAYgASgJEjgKCG9wZXJhdG9yGAcgASgOMhwucHJvY2Vzcy52MS5TZXF1ZW5jZU9wZXJhdG9yQgi6SAWCAQIQARIaChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAkSFgoOY2hpbGRfdGFza19pZHMYCSADKAkSLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgiRAoTU2VxdWVuY2VEZWZpbml0aW9ucxItCgVpdGVtcxgBIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uKrYBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JERVJFRBABEh4KGlNFUVVFTkNFX09QRVJBVE9SX1BBUkFMTEVMEAISHwobU0VRVUVOQ0VfT1BFUkFUT1JfRVhDTFVTSVZFEAMSHwobU0VRVUVOQ0VfT1BFUkFUT1JfSU5DTFVTSVZFEARCtgEKDmNvbS5wcm9jZXNzLnYxQhdTZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEi0wwKElNlcXVlbmNlRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8gQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiAKD3NlcXVlbmNlX251bWJlchgFIAEoBUIHukgEGgIoABIlChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAlCCbpIBnIEqPIEARI4CghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3MudjEuU2VxdWVuY2VPcGVyYXRvckIIukgFggECEAESKgoSY2hpbGRfc2VxdWVuY2VfaWRzGAggAygJQg66SAuSAQgiBnIEqPIEARImCg5jaGlsZF90YXNrX2lkcxgJIAMoCUIOukgLkgEIIgZyBLDyBAESLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAg6tQm6SLEJGsIBCiZzZXF1ZW5jZV9kZWZpbml0aW9uLmNoaWxkcmVuX25vdF9taXhlZBJRYSBzZXF1ZW5jZSBtdXN0IGNvbnRhaW4gZWl0aGVyIGNoaWxkX3NlcXVlbmNlX2lkcyBvciBjaGlsZF90YXNrX2lkcywgYnV0IG5vdCBib3RoGkUhKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpID4gMCAmJiBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMCkazQEKOnNlcXVlbmNlX2RlZmluaXRpb24ub3BlcmF0b3Jfc3BlY2lmaWVkX3doZW5fY2hpbGRyZW5fZXhpc3QSN29wZXJhdG9yIG11c3QgYmUgc3BlY2lmaWVkIHdoZW4gYSBzZXF1ZW5jZSBoYXMgY2hpbGRyZW4aVihzaXplKHRoaXMuY2hpbGRfc2VxdWVuY2VfaWRzKSArIHNpemUodGhpcy5jaGlsZF90YXNrX2lkcykgPT0gMCkgfHwgdGhpcy5vcGVyYXRvciAhPSAwGscBCjdzZXF1ZW5jZV9kZWZpbml0aW9uLnBhcmFsbGVsX3JlcXVpcmVzX211bHRpcGxlX2NoaWxkcmVuEjRQQVJBTExFTCBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDIgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5leGNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUVYQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDMgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5pbmNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUlOQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDQgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRq3AQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5idWxrX2NvbXBsZXRlX3JlcXVpcmVzX3Rhc2tfY2hpbGRyZW4SQWNhbl9idWxrX2NvbXBsZXRlIGlzIG9ubHkgdmFsaWQgZm9yIHNlcXVlbmNlcyB3aXRoIGNoaWxkX3Rhc2tfaWRzGjghdGhpcy5jYW5fYnVsa19jb21wbGV0ZSB8fCBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMCJEChNTZXF1ZW5jZURlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRpb24qtgEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEAESHgoaU0VRVUVOQ0VfT1BFUkFUT1JfUEFSQUxMRUwQAhIfChtTRVFVRU5DRV9PUEVSQVRPUl9FWENMVVNJVkUQAxIfChtTRVFVRU5DRV9PUEVSQVRPUl9JTkNMVVNJVkUQBEK2AQoOY29tLnByb2Nlc3MudjFCF1NlcXVlbmNlRGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules]);
 
 /**
+ * SequenceDefinition represents a unit of control flow within a process recipe.
+ *
+ * A sequence groups either:
+ *   - child sequences (for orchestration / structure), or
+ *   - child tasks (for executable work)
+ *
+ * but not both at the same time.
+ *
+ * This separation ensures clear execution semantics and simplifies runtime
+ * scheduling, validation, and UI representation.
+ *
+ * Sequences form a hierarchical tree starting from a root sequence and are
+ * evaluated by the runtime according to the specified operator.
+ *
  * @generated from message process.v1.SequenceDefinition
  */
 export type SequenceDefinition = Message<"process.v1.SequenceDefinition"> & {
   /**
+   * Unique identifier for the sequence definition.
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * Human-readable name used in UI and authoring tools.
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * Optional icon representing the sequence in UI contexts.
+   *
    * @generated from field: string icon = 3;
    */
   icon: string;
 
   /**
+   * Optional textual description of the sequence purpose or behavior.
+   *
    * @generated from field: string description = 4;
    */
   description: string;
 
   /**
+   * Ordering hint used to sort sibling sequences during generation and execution.
+   * Lower values are executed earlier for ORDERED sequences.
+   *
    * @generated from field: int32 sequence_number = 5;
    */
   sequenceNumber: number;
 
   /**
+   * Identifier of the parent sequence in the hierarchy. Empty for root sequence.
+   *
    * @generated from field: string parent_sequence_id = 6;
    */
   parentSequenceId: string;
 
   /**
+   * Defines how child elements (sequences or tasks) are executed and combined.
+   *
    * @generated from field: process.v1.SequenceOperator operator = 7;
    */
   operator: SequenceOperator;
 
   /**
+   * Child sequence references used when this sequence acts as an orchestration node.
+   * Only one of child_sequence_ids or child_task_ids should be populated.
+   *
    * @generated from field: repeated string child_sequence_ids = 8;
    */
   childSequenceIds: string[];
 
   /**
+   * Child task references used when this sequence is a leaf execution node.
+   * Only one of child_sequence_ids or child_task_ids should be populated.
+   *
    * @generated from field: repeated string child_task_ids = 9;
    */
   childTaskIds: string[];
 
   /**
+   * Optional local target defining the spatial or logical context for this sequence.
+   *
    * @generated from field: geometry.v1.LocalTarget local_target = 10;
    */
   localTarget?: LocalTarget;
 
   /**
+   * Indicates whether this sequence is optional and may be skipped during execution.
+   *
    * @generated from field: bool optional = 11;
    */
   optional: boolean;
 
   /**
+   * Indicates whether all child tasks in this sequence can be completed in bulk.
+   *
    * @generated from field: bool can_bulk_complete = 12;
    */
   canBulkComplete: boolean;
@@ -109,8 +150,8 @@ export const SequenceDefinitionsSchema: GenMessage<SequenceDefinitions> = /*@__P
  * Defines how the children of a SequenceDefinition are executed and how the
  * sequence determines completion.
  *
- * A sequence may contain both child sequences and tasks. The operator
- * determines the control-flow semantics for those children.
+ * A sequence should contain either child sequences or child tasks, but not both.
+ * Use nested sequences to separate orchestration structure from executable task groups.
  *
  * @generated from enum process.v1.SequenceOperator
  */

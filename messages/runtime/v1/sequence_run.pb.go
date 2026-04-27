@@ -255,15 +255,15 @@ var File_runtime_v1_sequence_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1druntime/v1/sequence_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x88\x04\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa8\x04\n" +
 	"\vSequenceRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12B\n" +
 	"\x16sequence_definition_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf2\x04\x01R\x14sequenceDefinitionId\x12>\n" +
-	"\x16parent_sequence_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x98\xf2\x04\x01R\x13parentSequenceRunId\x123\n" +
-	"\x16child_sequence_run_ids\x18\x06 \x03(\tR\x13childSequenceRunIds\x12+\n" +
-	"\x12child_task_run_ids\x18\a \x03(\tR\x0fchildTaskRunIds\x12?\n" +
+	"\x16parent_sequence_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x90\xf2\x04\x01R\x13parentSequenceRunId\x12C\n" +
+	"\x16child_sequence_run_ids\x18\x06 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x90\xf2\x04\x01R\x13childSequenceRunIds\x12;\n" +
+	"\x12child_task_run_ids\x18\a \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x98\xf2\x04\x01R\x0fchildTaskRunIds\x12?\n" +
 	"\x05state\x18\b \x01(\x0e2\x1c.runtime.v1.SequenceRunStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x120\n" +
 	"\x0fcompleted_tasks\x18\t \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0ecompletedTasks\x12*\n" +
 	"\x11can_bulk_complete\x18\n" +

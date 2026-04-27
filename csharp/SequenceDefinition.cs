@@ -27,28 +27,56 @@ namespace Messages.Process.V1 {
             "CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nl",
             "c3MudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoeZ2VvbWV0cnkv",
             "djEvbG9jYWxfdGFyZ2V0LnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmlu",
-            "ZWRfc3RyaW5nX3J1bGVzLnByb3RvIvYDChJTZXF1ZW5jZURlZmluaXRpb24S",
-            "DgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
-            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
-            "ZXNjcmlwdGlvbhIwCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVCB7pIBBoCKABS",
-            "DnNlcXVlbmNlTnVtYmVyEiwKEnBhcmVudF9zZXF1ZW5jZV9pZBgGIAEoCVIQ",
-            "cGFyZW50U2VxdWVuY2VJZBJCCghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3Mu",
-            "djEuU2VxdWVuY2VPcGVyYXRvckIIukgFggECEAFSCG9wZXJhdG9yEiwKEmNo",
-            "aWxkX3NlcXVlbmNlX2lkcxgIIAMoCVIQY2hpbGRTZXF1ZW5jZUlkcxIkCg5j",
-            "aGlsZF90YXNrX2lkcxgJIAMoCVIMY2hpbGRUYXNrSWRzEjsKDGxvY2FsX3Rh",
-            "cmdldBgKIAEoCzIYLmdlb21ldHJ5LnYxLkxvY2FsVGFyZ2V0Ugtsb2NhbFRh",
-            "cmdldBIaCghvcHRpb25hbBgLIAEoCFIIb3B0aW9uYWwSKgoRY2FuX2J1bGtf",
-            "Y29tcGxldGUYDCABKAhSD2NhbkJ1bGtDb21wbGV0ZSJLChNTZXF1ZW5jZURl",
-            "ZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5j",
-            "ZURlZmluaXRpb25SBWl0ZW1zKrYBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNF",
-            "UVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZU0VRVUVOQ0VfT1BF",
-            "UkFUT1JfT1JERVJFRBABEh4KGlNFUVVFTkNFX09QRVJBVE9SX1BBUkFMTEVM",
-            "EAISHwobU0VRVUVOQ0VfT1BFUkFUT1JfRVhDTFVTSVZFEAMSHwobU0VRVUVO",
-            "Q0VfT1BFUkFUT1JfSU5DTFVTSVZFEARCtgEKDmNvbS5wcm9jZXNzLnYxQhdT",
-            "ZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIv",
-            "cHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiq",
-            "AhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3Nc",
-            "VjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
+            "ZWRfc3RyaW5nX3J1bGVzLnByb3RvIuQNChJTZXF1ZW5jZURlZmluaXRpb24S",
+            "GQoCaWQYASABKAlCCbpIBnIEqPIEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgG",
+            "cgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
+            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEjAKD3NlcXVlbmNlX251bWJlchgFIAEo",
+            "BUIHukgEGgIoAFIOc2VxdWVuY2VOdW1iZXISNwoScGFyZW50X3NlcXVlbmNl",
+            "X2lkGAYgASgJQgm6SAZyBKjyBAFSEHBhcmVudFNlcXVlbmNlSWQSQgoIb3Bl",
+            "cmF0b3IYByABKA4yHC5wcm9jZXNzLnYxLlNlcXVlbmNlT3BlcmF0b3JCCLpI",
+            "BYIBAhABUghvcGVyYXRvchI8ChJjaGlsZF9zZXF1ZW5jZV9pZHMYCCADKAlC",
+            "DrpIC5IBCCIGcgSo8gQBUhBjaGlsZFNlcXVlbmNlSWRzEjQKDmNoaWxkX3Rh",
+            "c2tfaWRzGAkgAygJQg66SAuSAQgiBnIEsPIEAVIMY2hpbGRUYXNrSWRzEjsK",
+            "DGxvY2FsX3RhcmdldBgKIAEoCzIYLmdlb21ldHJ5LnYxLkxvY2FsVGFyZ2V0",
+            "Ugtsb2NhbFRhcmdldBIaCghvcHRpb25hbBgLIAEoCFIIb3B0aW9uYWwSKgoR",
+            "Y2FuX2J1bGtfY29tcGxldGUYDCABKAhSD2NhbkJ1bGtDb21wbGV0ZTq1CbpI",
+            "sQkawgEKJnNlcXVlbmNlX2RlZmluaXRpb24uY2hpbGRyZW5fbm90X21peGVk",
+            "ElFhIHNlcXVlbmNlIG11c3QgY29udGFpbiBlaXRoZXIgY2hpbGRfc2VxdWVu",
+            "Y2VfaWRzIG9yIGNoaWxkX3Rhc2tfaWRzLCBidXQgbm90IGJvdGgaRSEoc2l6",
+            "ZSh0aGlzLmNoaWxkX3NlcXVlbmNlX2lkcykgPiAwICYmIHNpemUodGhpcy5j",
+            "aGlsZF90YXNrX2lkcykgPiAwKRrNAQo6c2VxdWVuY2VfZGVmaW5pdGlvbi5v",
+            "cGVyYXRvcl9zcGVjaWZpZWRfd2hlbl9jaGlsZHJlbl9leGlzdBI3b3BlcmF0",
+            "b3IgbXVzdCBiZSBzcGVjaWZpZWQgd2hlbiBhIHNlcXVlbmNlIGhhcyBjaGls",
+            "ZHJlbhpWKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0",
+            "aGlzLmNoaWxkX3Rhc2tfaWRzKSA9PSAwKSB8fCB0aGlzLm9wZXJhdG9yICE9",
+            "IDAaxwEKN3NlcXVlbmNlX2RlZmluaXRpb24ucGFyYWxsZWxfcmVxdWlyZXNf",
+            "bXVsdGlwbGVfY2hpbGRyZW4SNFBBUkFMTEVMIHNlcXVlbmNlcyBzaG91bGQg",
+            "aGF2ZSBhdCBsZWFzdCB0d28gY2hpbGRyZW4aVnRoaXMub3BlcmF0b3IgIT0g",
+            "MiB8fCAoc2l6ZSh0aGlzLmNoaWxkX3NlcXVlbmNlX2lkcykgKyBzaXplKHRo",
+            "aXMuY2hpbGRfdGFza19pZHMpID49IDIpGskBCjhzZXF1ZW5jZV9kZWZpbml0",
+            "aW9uLmV4Y2x1c2l2ZV9yZXF1aXJlc19tdWx0aXBsZV9jaGlsZHJlbhI1RVhD",
+            "TFVTSVZFIHNlcXVlbmNlcyBzaG91bGQgaGF2ZSBhdCBsZWFzdCB0d28gY2hp",
+            "bGRyZW4aVnRoaXMub3BlcmF0b3IgIT0gMyB8fCAoc2l6ZSh0aGlzLmNoaWxk",
+            "X3NlcXVlbmNlX2lkcykgKyBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID49",
+            "IDIpGskBCjhzZXF1ZW5jZV9kZWZpbml0aW9uLmluY2x1c2l2ZV9yZXF1aXJl",
+            "c19tdWx0aXBsZV9jaGlsZHJlbhI1SU5DTFVTSVZFIHNlcXVlbmNlcyBzaG91",
+            "bGQgaGF2ZSBhdCBsZWFzdCB0d28gY2hpbGRyZW4aVnRoaXMub3BlcmF0b3Ig",
+            "IT0gNCB8fCAoc2l6ZSh0aGlzLmNoaWxkX3NlcXVlbmNlX2lkcykgKyBzaXpl",
+            "KHRoaXMuY2hpbGRfdGFza19pZHMpID49IDIpGrcBCjhzZXF1ZW5jZV9kZWZp",
+            "bml0aW9uLmJ1bGtfY29tcGxldGVfcmVxdWlyZXNfdGFza19jaGlsZHJlbhJB",
+            "Y2FuX2J1bGtfY29tcGxldGUgaXMgb25seSB2YWxpZCBmb3Igc2VxdWVuY2Vz",
+            "IHdpdGggY2hpbGRfdGFza19pZHMaOCF0aGlzLmNhbl9idWxrX2NvbXBsZXRl",
+            "IHx8IHNpemUodGhpcy5jaGlsZF90YXNrX2lkcykgPiAwIksKE1NlcXVlbmNl",
+            "RGVmaW5pdGlvbnMSNAoFaXRlbXMYASADKAsyHi5wcm9jZXNzLnYxLlNlcXVl",
+            "bmNlRGVmaW5pdGlvblIFaXRlbXMqtgEKEFNlcXVlbmNlT3BlcmF0b3ISIQod",
+            "U0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIdChlTRVFVRU5DRV9P",
+            "UEVSQVRPUl9PUkRFUkVEEAESHgoaU0VRVUVOQ0VfT1BFUkFUT1JfUEFSQUxM",
+            "RUwQAhIfChtTRVFVRU5DRV9PUEVSQVRPUl9FWENMVVNJVkUQAxIfChtTRVFV",
+            "RU5DRV9PUEVSQVRPUl9JTkNMVVNJVkUQBEK2AQoOY29tLnByb2Nlc3MudjFC",
+            "F1NlcXVlbmNlRGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BY",
+            "WKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vz",
+            "c1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.SequenceOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -64,8 +92,8 @@ namespace Messages.Process.V1 {
   /// Defines how the children of a SequenceDefinition are executed and how the
   /// sequence determines completion.
   ///
-  /// A sequence may contain both child sequences and tasks. The operator
-  /// determines the control-flow semantics for those children.
+  /// A sequence should contain either child sequences or child tasks, but not both.
+  /// Use nested sequences to separate orchestration structure from executable task groups.
   /// </summary>
   public enum SequenceOperator {
     /// <summary>
@@ -139,6 +167,21 @@ namespace Messages.Process.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// SequenceDefinition represents a unit of control flow within a process recipe.
+  ///
+  /// A sequence groups either:
+  ///   - child sequences (for orchestration / structure), or
+  ///   - child tasks (for executable work)
+  ///
+  /// but not both at the same time.
+  ///
+  /// This separation ensures clear execution semantics and simplifies runtime
+  /// scheduling, validation, and UI representation.
+  ///
+  /// Sequences form a hierarchical tree starting from a root sequence and are
+  /// evaluated by the runtime according to the specified operator.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SequenceDefinition : pb::IMessage<SequenceDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -198,6 +241,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    /// Unique identifier for the sequence definition.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
@@ -210,6 +256,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
+    /// <summary>
+    /// Human-readable name used in UI and authoring tools.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
@@ -222,6 +271,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "icon" field.</summary>
     public const int IconFieldNumber = 3;
     private string icon_ = "";
+    /// <summary>
+    /// Optional icon representing the sequence in UI contexts.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Icon {
@@ -234,6 +286,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 4;
     private string description_ = "";
+    /// <summary>
+    /// Optional textual description of the sequence purpose or behavior.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
@@ -246,6 +301,10 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "sequence_number" field.</summary>
     public const int SequenceNumberFieldNumber = 5;
     private int sequenceNumber_;
+    /// <summary>
+    /// Ordering hint used to sort sibling sequences during generation and execution.
+    /// Lower values are executed earlier for ORDERED sequences.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int SequenceNumber {
@@ -258,6 +317,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "parent_sequence_id" field.</summary>
     public const int ParentSequenceIdFieldNumber = 6;
     private string parentSequenceId_ = "";
+    /// <summary>
+    /// Identifier of the parent sequence in the hierarchy. Empty for root sequence.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ParentSequenceId {
@@ -270,6 +332,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "operator" field.</summary>
     public const int OperatorFieldNumber = 7;
     private global::Messages.Process.V1.SequenceOperator operator_ = global::Messages.Process.V1.SequenceOperator.Unspecified;
+    /// <summary>
+    /// Defines how child elements (sequences or tasks) are executed and combined.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Process.V1.SequenceOperator Operator {
@@ -284,6 +349,10 @@ namespace Messages.Process.V1 {
     private static readonly pb::FieldCodec<string> _repeated_childSequenceIds_codec
         = pb::FieldCodec.ForString(66);
     private readonly pbc::RepeatedField<string> childSequenceIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Child sequence references used when this sequence acts as an orchestration node.
+    /// Only one of child_sequence_ids or child_task_ids should be populated.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ChildSequenceIds {
@@ -295,6 +364,10 @@ namespace Messages.Process.V1 {
     private static readonly pb::FieldCodec<string> _repeated_childTaskIds_codec
         = pb::FieldCodec.ForString(74);
     private readonly pbc::RepeatedField<string> childTaskIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Child task references used when this sequence is a leaf execution node.
+    /// Only one of child_sequence_ids or child_task_ids should be populated.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ChildTaskIds {
@@ -304,6 +377,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "local_target" field.</summary>
     public const int LocalTargetFieldNumber = 10;
     private global::Messages.Common.V1.LocalTarget localTarget_;
+    /// <summary>
+    /// Optional local target defining the spatial or logical context for this sequence.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.LocalTarget LocalTarget {
@@ -316,6 +392,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "optional" field.</summary>
     public const int OptionalFieldNumber = 11;
     private bool optional_;
+    /// <summary>
+    /// Indicates whether this sequence is optional and may be skipped during execution.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Optional {
@@ -328,6 +407,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "can_bulk_complete" field.</summary>
     public const int CanBulkCompleteFieldNumber = 12;
     private bool canBulkComplete_;
+    /// <summary>
+    /// Indicates whether all child tasks in this sequence can be completed in bulk.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool CanBulkComplete {

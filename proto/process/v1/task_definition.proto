@@ -118,9 +118,9 @@ message TaskExecutionPolicy {
   TaskAssignmentPreference assignment_preference = 1;
   capability.v1.ActorConstraint actor_constraint = 2;
   bool can_reassign = 3;
-  bool can_do = 4;
-  bool can_undo = 5;
-  common.v1.EstimatedDuration estimated_duration = 6;
+  bool can_undo = 4;
+  common.v1.EstimatedDuration estimated_duration = 5;
+  bool require_full_guidance = 6;
 }
 
 message TaskOverride {

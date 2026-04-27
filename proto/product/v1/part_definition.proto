@@ -71,9 +71,15 @@ message PartHandlingProfile {
   bool esd_sensitive = 2;
   bool requires_two_hand_lift = 3;
   bool requires_fixture_support = 4; // If true, this part cannot realistically be handled/assembled without some fixture support
-  double max_grip_force_n = 5;
-  double max_torque_nm = 6;
-  repeated common.v1.KeyValueConstraint constraints = 7;
+
+  // If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
+  string pre_lubrication_part_id = 5;
+  string post_lubrication_part_id = 6;
+  bool requires_wiping = 7;
+
+  double max_grip_force_n = 8;
+  double max_torque_nm = 9;
+  repeated common.v1.KeyValueConstraint constraints = 10;
 }
 
 message PartDefinition {

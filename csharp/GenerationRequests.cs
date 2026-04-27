@@ -29,7 +29,7 @@ namespace Messages.Process.V1 {
             "MS9wcm9jZXNzX3JlY2lwZS5wcm90bxokcHJvY2Vzcy92MS9zZXF1ZW5jZV9k",
             "ZWZpbml0aW9uLnByb3RvGiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5w",
             "cm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9jb25maWd1cmF0aW9uLnByb3Rv",
-            "IsYFCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSOgoVcHJv",
+            "Iv4FCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSOgoVcHJv",
             "ZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQga6SAPIAQFSE3Byb2R1Y3REZWZp",
             "bml0aW9uSWQSIwoJcmVjaXBlX2lkGAIgASgJQga6SAPIAQFSCHJlY2lwZUlk",
             "Eh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1lEh8KC3JlY2lwZV9p",
@@ -44,25 +44,26 @@ namespace Messages.Process.V1 {
             "FWdlbmVyYXRlX3ZlcmlmeV90YXNrcxgKIAEoCFITZ2VuZXJhdGVWZXJpZnlU",
             "YXNrcxJECh9wcmVmZXJfbW92ZV90YXNrc193aGVuX3Bvc3NpYmxlGAsgASgI",
             "UhtwcmVmZXJNb3ZlVGFza3NXaGVuUG9zc2libGUSNAoWaW5jbHVkZV9vcHRp",
-            "b25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMikgEKH0Ry",
-            "YWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWUSIAoHbWVzc2FnZRgBIAEo",
-            "CUIGukgDyAEBUgdtZXNzYWdlEh8KB25vZGVfaWQYAiABKAlCBrpIA8gBAVIG",
-            "bm9kZUlkEiwKEnBhcnRfZGVmaW5pdGlvbl9pZBgDIAEoCVIQcGFydERlZmlu",
-            "aXRpb25JZCKSAgogRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXN1bHQS",
-            "OQoGcmVjaXBlGAEgASgLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlQga6",
-            "SAPIAQFSBnJlY2lwZRI8CglzZXF1ZW5jZXMYAiADKAsyHi5wcm9jZXNzLnYx",
-            "LlNlcXVlbmNlRGVmaW5pdGlvblIJc2VxdWVuY2VzEjAKBXRhc2tzGAMgAygL",
-            "MhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvblIFdGFza3MSQwoGaXNzdWVz",
-            "GAQgAygLMisucHJvY2Vzcy52MS5EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0",
-            "ZUlzc3VlUgZpc3N1ZXNCtgEKDmNvbS5wcm9jZXNzLnYxQhdHZW5lcmF0aW9u",
-            "UmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "bWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdl",
-            "cy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0",
-            "YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
+            "b25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMSNgoXZ2Vu",
+            "ZXJhdGVfZ3JlYXNpbmdfdGFza3MYDSABKAhSFWdlbmVyYXRlR3JlYXNpbmdU",
+            "YXNrcyKSAQofRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1ZRIgCgdt",
+            "ZXNzYWdlGAEgASgJQga6SAPIAQFSB21lc3NhZ2USHwoHbm9kZV9pZBgCIAEo",
+            "CUIGukgDyAEBUgZub2RlSWQSLAoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJ",
+            "UhBwYXJ0RGVmaW5pdGlvbklkIpICCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5l",
+            "cmF0ZVJlc3VsdBI5CgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nl",
+            "c3NSZWNpcGVCBrpIA8gBAVIGcmVjaXBlEjwKCXNlcXVlbmNlcxgCIAMoCzIe",
+            "LnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uUglzZXF1ZW5jZXMSMAoF",
+            "dGFza3MYAyADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uUgV0YXNr",
+            "cxJDCgZpc3N1ZXMYBCADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1Jl",
+            "Y2lwZUdlbmVyYXRlSXNzdWVSBmlzc3Vlc0K2AQoOY29tLnByb2Nlc3MudjFC",
+            "F0dlbmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BY",
+            "WKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vz",
+            "c1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateGreasingTasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateIssue), global::Messages.Process.V1.DraftProcessRecipeGenerateIssue.Parser, new[]{ "Message", "NodeId", "PartDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateResult), global::Messages.Process.V1.DraftProcessRecipeGenerateResult.Parser, new[]{ "Recipe", "Sequences", "Tasks", "Issues" }, null, null, null, null)
           }));
@@ -124,6 +125,7 @@ namespace Messages.Process.V1 {
       generateVerifyTasks_ = other.generateVerifyTasks_;
       preferMoveTasksWhenPossible_ = other.preferMoveTasksWhenPossible_;
       includeOptionalNodes_ = other.includeOptionalNodes_;
+      generateGreasingTasks_ = other.generateGreasingTasks_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -319,6 +321,21 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "generate_greasing_tasks" field.</summary>
+    public const int GenerateGreasingTasksFieldNumber = 13;
+    private bool generateGreasingTasks_;
+    /// <summary>
+    /// If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GenerateGreasingTasks {
+      get { return generateGreasingTasks_; }
+      set {
+        generateGreasingTasks_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -346,6 +363,7 @@ namespace Messages.Process.V1 {
       if (GenerateVerifyTasks != other.GenerateVerifyTasks) return false;
       if (PreferMoveTasksWhenPossible != other.PreferMoveTasksWhenPossible) return false;
       if (IncludeOptionalNodes != other.IncludeOptionalNodes) return false;
+      if (GenerateGreasingTasks != other.GenerateGreasingTasks) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -365,6 +383,7 @@ namespace Messages.Process.V1 {
       if (GenerateVerifyTasks != false) hash ^= GenerateVerifyTasks.GetHashCode();
       if (PreferMoveTasksWhenPossible != false) hash ^= PreferMoveTasksWhenPossible.GetHashCode();
       if (IncludeOptionalNodes != false) hash ^= IncludeOptionalNodes.GetHashCode();
+      if (GenerateGreasingTasks != false) hash ^= GenerateGreasingTasks.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -431,6 +450,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
+      if (GenerateGreasingTasks != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(GenerateGreasingTasks);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -489,6 +512,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
+      if (GenerateGreasingTasks != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(GenerateGreasingTasks);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -533,6 +560,9 @@ namespace Messages.Process.V1 {
         size += 1 + 1;
       }
       if (IncludeOptionalNodes != false) {
+        size += 1 + 1;
+      }
+      if (GenerateGreasingTasks != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -585,6 +615,9 @@ namespace Messages.Process.V1 {
       }
       if (other.IncludeOptionalNodes != false) {
         IncludeOptionalNodes = other.IncludeOptionalNodes;
+      }
+      if (other.GenerateGreasingTasks != false) {
+        GenerateGreasingTasks = other.GenerateGreasingTasks;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -656,6 +689,10 @@ namespace Messages.Process.V1 {
             IncludeOptionalNodes = input.ReadBool();
             break;
           }
+          case 104: {
+            GenerateGreasingTasks = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -724,6 +761,10 @@ namespace Messages.Process.V1 {
           }
           case 96: {
             IncludeOptionalNodes = input.ReadBool();
+            break;
+          }
+          case 104: {
+            GenerateGreasingTasks = input.ReadBool();
             break;
           }
         }

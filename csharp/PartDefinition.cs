@@ -34,56 +34,59 @@ namespace Messages.Product.V1 {
             "IQoEel9tbRgDIAEoAUIOukgLEgkpAAAAAAAAAABSA3pNbSJyCgxNYXRlcmlh",
             "bFNwZWMSOAoIY2F0ZWdvcnkYASABKA4yHC5wcm9kdWN0LnYxLk1hdGVyaWFs",
             "Q2F0ZWdvcnlSCGNhdGVnb3J5EhIKBG5hbWUYAiABKAlSBG5hbWUSFAoFZ3Jh",
-            "ZGUYAyABKAlSBWdyYWRlItECChNQYXJ0SGFuZGxpbmdQcm9maWxlEhgKB2Zy",
+            "ZGUYAyABKAlSBWdyYWRlIuoDChNQYXJ0SGFuZGxpbmdQcm9maWxlEhgKB2Zy",
             "YWdpbGUYASABKAhSB2ZyYWdpbGUSIwoNZXNkX3NlbnNpdGl2ZRgCIAEoCFIM",
             "ZXNkU2Vuc2l0aXZlEjMKFnJlcXVpcmVzX3R3b19oYW5kX2xpZnQYAyABKAhS",
             "E3JlcXVpcmVzVHdvSGFuZExpZnQSOAoYcmVxdWlyZXNfZml4dHVyZV9zdXBw",
-            "b3J0GAQgASgIUhZyZXF1aXJlc0ZpeHR1cmVTdXBwb3J0EicKEG1heF9ncmlw",
-            "X2ZvcmNlX24YBSABKAFSDW1heEdyaXBGb3JjZU4SIgoNbWF4X3RvcnF1ZV9u",
-            "bRgGIAEoAVILbWF4VG9ycXVlTm0SPwoLY29uc3RyYWludHMYByADKAsyHS5j",
-            "b21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50cyLLBAoO",
-            "UGFydERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlC",
-            "CbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgOMhQucHJv",
-            "ZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFSBHR5cGUSGAoHc3VidHlwZRgG",
-            "IAEoCVIHc3VidHlwZRIiCgh3ZWlnaHRfZxgHIAEoA0IHukgEIgIoAFIHd2Vp",
-            "Z2h0RxI2CgpkaW1lbnNpb25zGAggASgLMhYucHJvZHVjdC52MS5EaW1lbnNp",
-            "b25zUgpkaW1lbnNpb25zEjQKCG1hdGVyaWFsGAkgASgLMhgucHJvZHVjdC52",
-            "MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEjMKEGRlZmF1bHRfbW9kZWxfaWQY",
-            "CiABKAlCCbpIBnIEiPEEAVIOZGVmYXVsdE1vZGVsSWQSOwoIaGFuZGxpbmcY",
-            "CyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGVSCGhhbmRs",
-            "aW5nEk0KE2V4dGVybmFsX3JlZmVyZW5jZXMYDCADKAsyHC5jb21tb24udjEu",
-            "RXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxIzCgZjdXN0",
-            "b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9t",
-            "IkMKD1BhcnREZWZpbml0aW9ucxIwCgVpdGVtcxgBIAMoCzIaLnByb2R1Y3Qu",
-            "djEuUGFydERlZmluaXRpb25SBWl0ZW1zKssCCghQYXJ0VHlwZRIZChVQQVJU",
-            "X1RZUEVfVU5TUEVDSUZJRUQQABIXChNQQVJUX1RZUEVfQ09NUE9ORU5UEAES",
-            "FgoSUEFSVF9UWVBFX0ZBU1RFTkVSEAISGQoVUEFSVF9UWVBFX1NVQkFTU0VN",
-            "QkxZEAMSGAoUUEFSVF9UWVBFX0NPTlNVTUFCTEUQBBITCg9QQVJUX1RZUEVf",
-            "TEFCRUwQBRIXChNQQVJUX1RZUEVfUEFDS0FHSU5HEAYSEQoNUEFSVF9UWVBF",
-            "X1BDQhAHEiIKHlBBUlRfVFlQRV9FTEVDVFJPTklDX0NPTVBPTkVOVBAIEiIK",
-            "HlBBUlRfVFlQRV9FTEVDVFJJQ0FMX0NPTVBPTkVOVBAJEhMKD1BBUlRfVFlQ",
-            "RV9DQUJMRRAKEiAKHFBBUlRfVFlQRV9ESVNQRU5TRURfTUFURVJJQUwQCyqR",
-            "AwoQTWF0ZXJpYWxDYXRlZ29yeRIhCh1NQVRFUklBTF9DQVRFR09SWV9VTlNQ",
-            "RUNJRklFRBAAEhsKF01BVEVSSUFMX0NBVEVHT1JZX01FVEFMEAESHQoZTUFU",
-            "RVJJQUxfQ0FURUdPUllfUE9MWU1FUhACEh8KG01BVEVSSUFMX0NBVEVHT1JZ",
-            "X0VMQVNUT01FUhADEh8KG01BVEVSSUFMX0NBVEVHT1JZX0NPTVBPU0lURRAE",
-            "Eh0KGU1BVEVSSUFMX0NBVEVHT1JZX0NFUkFNSUMQBRIbChdNQVRFUklBTF9D",
-            "QVRFR09SWV9HTEFTUxAGEhoKFk1BVEVSSUFMX0NBVEVHT1JZX1dPT0QQBxIa",
-            "ChZNQVRFUklBTF9DQVRFR09SWV9GT0FNEAgSKwonTUFURVJJQUxfQ0FURUdP",
-            "UllfRUxFQ1RST05JQ1NfU1VCU1RSQVRFEAkSHgoaTUFURVJJQUxfQ0FURUdP",
-            "UllfQ0hFTUlDQUwQChIbChdNQVRFUklBTF9DQVRFR09SWV9PVEhFUhBjQrIB",
-            "Cg5jb20ucHJvZHVjdC52MUITUGFydERlZmluaXRpb25Qcm90b1ABWjlnaXRo",
-            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvZHVjdC92MTtw",
-            "cm9kdWN0djGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9kdWN0LlYxygIKUHJvZHVj",
-            "dFxWMeICFlByb2R1Y3RcVjFcR1BCTWV0YWRhdGHqAgtQcm9kdWN0OjpWMWIG",
-            "cHJvdG8z"));
+            "b3J0GAQgASgIUhZyZXF1aXJlc0ZpeHR1cmVTdXBwb3J0EjUKF3ByZV9sdWJy",
+            "aWNhdGlvbl9wYXJ0X2lkGAUgASgJUhRwcmVMdWJyaWNhdGlvblBhcnRJZBI3",
+            "Chhwb3N0X2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAlSFXBvc3RMdWJyaWNh",
+            "dGlvblBhcnRJZBInCg9yZXF1aXJlc193aXBpbmcYByABKAhSDnJlcXVpcmVz",
+            "V2lwaW5nEicKEG1heF9ncmlwX2ZvcmNlX24YCCABKAFSDW1heEdyaXBGb3Jj",
+            "ZU4SIgoNbWF4X3RvcnF1ZV9ubRgJIAEoAVILbWF4VG9ycXVlTm0SPwoLY29u",
+            "c3RyYWludHMYCiADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50",
+            "Ugtjb25zdHJhaW50cyLLBAoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlS",
+            "AmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMg",
+            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIy",
+            "CgR0eXBlGAUgASgOMhQucHJvZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFS",
+            "BHR5cGUSGAoHc3VidHlwZRgGIAEoCVIHc3VidHlwZRIiCgh3ZWlnaHRfZxgH",
+            "IAEoA0IHukgEIgIoAFIHd2VpZ2h0RxI2CgpkaW1lbnNpb25zGAggASgLMhYu",
+            "cHJvZHVjdC52MS5EaW1lbnNpb25zUgpkaW1lbnNpb25zEjQKCG1hdGVyaWFs",
+            "GAkgASgLMhgucHJvZHVjdC52MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEjMK",
+            "EGRlZmF1bHRfbW9kZWxfaWQYCiABKAlCCbpIBnIEiPEEAVIOZGVmYXVsdE1v",
+            "ZGVsSWQSOwoIaGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5k",
+            "bGluZ1Byb2ZpbGVSCGhhbmRsaW5nEk0KE2V4dGVybmFsX3JlZmVyZW5jZXMY",
+            "DCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFs",
+            "UmVmZXJlbmNlcxIzCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9t",
+            "UHJvcGVydGllc1IGY3VzdG9tIkMKD1BhcnREZWZpbml0aW9ucxIwCgVpdGVt",
+            "cxgBIAMoCzIaLnByb2R1Y3QudjEuUGFydERlZmluaXRpb25SBWl0ZW1zKssC",
+            "CghQYXJ0VHlwZRIZChVQQVJUX1RZUEVfVU5TUEVDSUZJRUQQABIXChNQQVJU",
+            "X1RZUEVfQ09NUE9ORU5UEAESFgoSUEFSVF9UWVBFX0ZBU1RFTkVSEAISGQoV",
+            "UEFSVF9UWVBFX1NVQkFTU0VNQkxZEAMSGAoUUEFSVF9UWVBFX0NPTlNVTUFC",
+            "TEUQBBITCg9QQVJUX1RZUEVfTEFCRUwQBRIXChNQQVJUX1RZUEVfUEFDS0FH",
+            "SU5HEAYSEQoNUEFSVF9UWVBFX1BDQhAHEiIKHlBBUlRfVFlQRV9FTEVDVFJP",
+            "TklDX0NPTVBPTkVOVBAIEiIKHlBBUlRfVFlQRV9FTEVDVFJJQ0FMX0NPTVBP",
+            "TkVOVBAJEhMKD1BBUlRfVFlQRV9DQUJMRRAKEiAKHFBBUlRfVFlQRV9ESVNQ",
+            "RU5TRURfTUFURVJJQUwQCyqRAwoQTWF0ZXJpYWxDYXRlZ29yeRIhCh1NQVRF",
+            "UklBTF9DQVRFR09SWV9VTlNQRUNJRklFRBAAEhsKF01BVEVSSUFMX0NBVEVH",
+            "T1JZX01FVEFMEAESHQoZTUFURVJJQUxfQ0FURUdPUllfUE9MWU1FUhACEh8K",
+            "G01BVEVSSUFMX0NBVEVHT1JZX0VMQVNUT01FUhADEh8KG01BVEVSSUFMX0NB",
+            "VEVHT1JZX0NPTVBPU0lURRAEEh0KGU1BVEVSSUFMX0NBVEVHT1JZX0NFUkFN",
+            "SUMQBRIbChdNQVRFUklBTF9DQVRFR09SWV9HTEFTUxAGEhoKFk1BVEVSSUFM",
+            "X0NBVEVHT1JZX1dPT0QQBxIaChZNQVRFUklBTF9DQVRFR09SWV9GT0FNEAgS",
+            "KwonTUFURVJJQUxfQ0FURUdPUllfRUxFQ1RST05JQ1NfU1VCU1RSQVRFEAkS",
+            "HgoaTUFURVJJQUxfQ0FURUdPUllfQ0hFTUlDQUwQChIbChdNQVRFUklBTF9D",
+            "QVRFR09SWV9PVEhFUhBjQrIBCg5jb20ucHJvZHVjdC52MUITUGFydERlZmlu",
+            "aXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNzYWdlcy5Q",
+            "cm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BCTWV0YWRh",
+            "dGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.Dimensions), global::Messages.Product.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.MaterialSpec), global::Messages.Product.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinitions), global::Messages.Product.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -796,6 +799,9 @@ namespace Messages.Product.V1 {
       esdSensitive_ = other.esdSensitive_;
       requiresTwoHandLift_ = other.requiresTwoHandLift_;
       requiresFixtureSupport_ = other.requiresFixtureSupport_;
+      preLubricationPartId_ = other.preLubricationPartId_;
+      postLubricationPartId_ = other.postLubricationPartId_;
+      requiresWiping_ = other.requiresWiping_;
       maxGripForceN_ = other.maxGripForceN_;
       maxTorqueNm_ = other.maxTorqueNm_;
       constraints_ = other.constraints_.Clone();
@@ -859,8 +865,47 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "pre_lubrication_part_id" field.</summary>
+    public const int PreLubricationPartIdFieldNumber = 5;
+    private string preLubricationPartId_ = "";
+    /// <summary>
+    /// If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PreLubricationPartId {
+      get { return preLubricationPartId_; }
+      set {
+        preLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "post_lubrication_part_id" field.</summary>
+    public const int PostLubricationPartIdFieldNumber = 6;
+    private string postLubricationPartId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PostLubricationPartId {
+      get { return postLubricationPartId_; }
+      set {
+        postLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "requires_wiping" field.</summary>
+    public const int RequiresWipingFieldNumber = 7;
+    private bool requiresWiping_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RequiresWiping {
+      get { return requiresWiping_; }
+      set {
+        requiresWiping_ = value;
+      }
+    }
+
     /// <summary>Field number for the "max_grip_force_n" field.</summary>
-    public const int MaxGripForceNFieldNumber = 5;
+    public const int MaxGripForceNFieldNumber = 8;
     private double maxGripForceN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -872,7 +917,7 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "max_torque_nm" field.</summary>
-    public const int MaxTorqueNmFieldNumber = 6;
+    public const int MaxTorqueNmFieldNumber = 9;
     private double maxTorqueNm_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -884,9 +929,9 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "constraints" field.</summary>
-    public const int ConstraintsFieldNumber = 7;
+    public const int ConstraintsFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.KeyValueConstraint> _repeated_constraints_codec
-        = pb::FieldCodec.ForMessage(58, global::Messages.Common.V1.KeyValueConstraint.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Messages.Common.V1.KeyValueConstraint.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -913,6 +958,9 @@ namespace Messages.Product.V1 {
       if (EsdSensitive != other.EsdSensitive) return false;
       if (RequiresTwoHandLift != other.RequiresTwoHandLift) return false;
       if (RequiresFixtureSupport != other.RequiresFixtureSupport) return false;
+      if (PreLubricationPartId != other.PreLubricationPartId) return false;
+      if (PostLubricationPartId != other.PostLubricationPartId) return false;
+      if (RequiresWiping != other.RequiresWiping) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxGripForceN, other.MaxGripForceN)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxTorqueNm, other.MaxTorqueNm)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
@@ -927,6 +975,9 @@ namespace Messages.Product.V1 {
       if (EsdSensitive != false) hash ^= EsdSensitive.GetHashCode();
       if (RequiresTwoHandLift != false) hash ^= RequiresTwoHandLift.GetHashCode();
       if (RequiresFixtureSupport != false) hash ^= RequiresFixtureSupport.GetHashCode();
+      if (PreLubricationPartId.Length != 0) hash ^= PreLubricationPartId.GetHashCode();
+      if (PostLubricationPartId.Length != 0) hash ^= PostLubricationPartId.GetHashCode();
+      if (RequiresWiping != false) hash ^= RequiresWiping.GetHashCode();
       if (MaxGripForceN != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxGripForceN);
       if (MaxTorqueNm != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxTorqueNm);
       hash ^= constraints_.GetHashCode();
@@ -964,12 +1015,24 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(32);
         output.WriteBool(RequiresFixtureSupport);
       }
+      if (PreLubricationPartId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(RequiresWiping);
+      }
       if (MaxGripForceN != 0D) {
-        output.WriteRawTag(41);
+        output.WriteRawTag(65);
         output.WriteDouble(MaxGripForceN);
       }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(49);
+        output.WriteRawTag(73);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(output, _repeated_constraints_codec);
@@ -999,12 +1062,24 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(32);
         output.WriteBool(RequiresFixtureSupport);
       }
+      if (PreLubricationPartId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(RequiresWiping);
+      }
       if (MaxGripForceN != 0D) {
-        output.WriteRawTag(41);
+        output.WriteRawTag(65);
         output.WriteDouble(MaxGripForceN);
       }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(49);
+        output.WriteRawTag(73);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
@@ -1028,6 +1103,15 @@ namespace Messages.Product.V1 {
         size += 1 + 1;
       }
       if (RequiresFixtureSupport != false) {
+        size += 1 + 1;
+      }
+      if (PreLubricationPartId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
         size += 1 + 1;
       }
       if (MaxGripForceN != 0D) {
@@ -1060,6 +1144,15 @@ namespace Messages.Product.V1 {
       }
       if (other.RequiresFixtureSupport != false) {
         RequiresFixtureSupport = other.RequiresFixtureSupport;
+      }
+      if (other.PreLubricationPartId.Length != 0) {
+        PreLubricationPartId = other.PreLubricationPartId;
+      }
+      if (other.PostLubricationPartId.Length != 0) {
+        PostLubricationPartId = other.PostLubricationPartId;
+      }
+      if (other.RequiresWiping != false) {
+        RequiresWiping = other.RequiresWiping;
       }
       if (other.MaxGripForceN != 0D) {
         MaxGripForceN = other.MaxGripForceN;
@@ -1103,15 +1196,27 @@ namespace Messages.Product.V1 {
             RequiresFixtureSupport = input.ReadBool();
             break;
           }
-          case 41: {
+          case 42: {
+            PreLubricationPartId = input.ReadString();
+            break;
+          }
+          case 50: {
+            PostLubricationPartId = input.ReadString();
+            break;
+          }
+          case 56: {
+            RequiresWiping = input.ReadBool();
+            break;
+          }
+          case 65: {
             MaxGripForceN = input.ReadDouble();
             break;
           }
-          case 49: {
+          case 73: {
             MaxTorqueNm = input.ReadDouble();
             break;
           }
-          case 58: {
+          case 82: {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
@@ -1150,15 +1255,27 @@ namespace Messages.Product.V1 {
             RequiresFixtureSupport = input.ReadBool();
             break;
           }
-          case 41: {
+          case 42: {
+            PreLubricationPartId = input.ReadString();
+            break;
+          }
+          case 50: {
+            PostLubricationPartId = input.ReadString();
+            break;
+          }
+          case 56: {
+            RequiresWiping = input.ReadBool();
+            break;
+          }
+          case 65: {
             MaxGripForceN = input.ReadDouble();
             break;
           }
-          case 49: {
+          case 73: {
             MaxTorqueNm = input.ReadDouble();
             break;
           }
-          case 58: {
+          case 82: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
             break;
           }

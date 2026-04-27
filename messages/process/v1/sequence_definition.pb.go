@@ -27,8 +27,8 @@ const (
 // Defines how the children of a SequenceDefinition are executed and how the
 // sequence determines completion.
 //
-// A sequence may contain both child sequences and tasks. The operator
-// determines the control-flow semantics for those children.
+// A sequence should contain either child sequences or child tasks, but not both.
+// Use nested sequences to separate orchestration structure from executable task groups.
 type SequenceOperator int32
 
 const (
@@ -139,22 +139,50 @@ func (SequenceOperator) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_sequence_definition_proto_rawDescGZIP(), []int{0}
 }
 
+// SequenceDefinition represents a unit of control flow within a process recipe.
+//
+// A sequence groups either:
+//   - child sequences (for orchestration / structure), or
+//   - child tasks (for executable work)
+//
+// but not both at the same time.
+//
+// This separation ensures clear execution semantics and simplifies runtime
+// scheduling, validation, and UI representation.
+//
+// Sequences form a hierarchical tree starting from a root sequence and are
+// evaluated by the runtime according to the specified operator.
 type SequenceDefinition struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon             string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	SequenceNumber   int32                  `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
-	ParentSequenceId string                 `protobuf:"bytes,6,opt,name=parent_sequence_id,json=parentSequenceId,proto3" json:"parent_sequence_id,omitempty"`
-	Operator         SequenceOperator       `protobuf:"varint,7,opt,name=operator,proto3,enum=process.v1.SequenceOperator" json:"operator,omitempty"`
-	ChildSequenceIds []string               `protobuf:"bytes,8,rep,name=child_sequence_ids,json=childSequenceIds,proto3" json:"child_sequence_ids,omitempty"`
-	ChildTaskIds     []string               `protobuf:"bytes,9,rep,name=child_task_ids,json=childTaskIds,proto3" json:"child_task_ids,omitempty"`
-	LocalTarget      *v1.LocalTarget        `protobuf:"bytes,10,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
-	Optional         bool                   `protobuf:"varint,11,opt,name=optional,proto3" json:"optional,omitempty"`
-	CanBulkComplete  bool                   `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Unique identifier for the sequence definition.
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Human-readable name used in UI and authoring tools.
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	// Optional icon representing the sequence in UI contexts.
+	Icon string `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	// Optional textual description of the sequence purpose or behavior.
+	Description string `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	// Ordering hint used to sort sibling sequences during generation and execution.
+	// Lower values are executed earlier for ORDERED sequences.
+	SequenceNumber int32 `protobuf:"varint,5,opt,name=sequence_number,json=sequenceNumber,proto3" json:"sequence_number,omitempty"`
+	// Identifier of the parent sequence in the hierarchy. Empty for root sequence.
+	ParentSequenceId string `protobuf:"bytes,6,opt,name=parent_sequence_id,json=parentSequenceId,proto3" json:"parent_sequence_id,omitempty"`
+	// Defines how child elements (sequences or tasks) are executed and combined.
+	Operator SequenceOperator `protobuf:"varint,7,opt,name=operator,proto3,enum=process.v1.SequenceOperator" json:"operator,omitempty"`
+	// Child sequence references used when this sequence acts as an orchestration node.
+	// Only one of child_sequence_ids or child_task_ids should be populated.
+	ChildSequenceIds []string `protobuf:"bytes,8,rep,name=child_sequence_ids,json=childSequenceIds,proto3" json:"child_sequence_ids,omitempty"`
+	// Child task references used when this sequence is a leaf execution node.
+	// Only one of child_sequence_ids or child_task_ids should be populated.
+	ChildTaskIds []string `protobuf:"bytes,9,rep,name=child_task_ids,json=childTaskIds,proto3" json:"child_task_ids,omitempty"`
+	// Optional local target defining the spatial or logical context for this sequence.
+	LocalTarget *v1.LocalTarget `protobuf:"bytes,10,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
+	// Indicates whether this sequence is optional and may be skipped during execution.
+	Optional bool `protobuf:"varint,11,opt,name=optional,proto3" json:"optional,omitempty"`
+	// Indicates whether all child tasks in this sequence can be completed in bulk.
+	CanBulkComplete bool `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *SequenceDefinition) Reset() {
@@ -320,21 +348,27 @@ var File_process_v1_sequence_definition_proto protoreflect.FileDescriptor
 const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/sequence_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf6\x03\n" +
-	"\x12SequenceDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe4\r\n" +
+	"\x12SequenceDefinition\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x120\n" +
-	"\x0fsequence_number\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0esequenceNumber\x12,\n" +
-	"\x12parent_sequence_id\x18\x06 \x01(\tR\x10parentSequenceId\x12B\n" +
-	"\boperator\x18\a \x01(\x0e2\x1c.process.v1.SequenceOperatorB\b\xbaH\x05\x82\x01\x02\x10\x01R\boperator\x12,\n" +
-	"\x12child_sequence_ids\x18\b \x03(\tR\x10childSequenceIds\x12$\n" +
-	"\x0echild_task_ids\x18\t \x03(\tR\fchildTaskIds\x12;\n" +
+	"\x0fsequence_number\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0esequenceNumber\x127\n" +
+	"\x12parent_sequence_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x10parentSequenceId\x12B\n" +
+	"\boperator\x18\a \x01(\x0e2\x1c.process.v1.SequenceOperatorB\b\xbaH\x05\x82\x01\x02\x10\x01R\boperator\x12<\n" +
+	"\x12child_sequence_ids\x18\b \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xa8\xf2\x04\x01R\x10childSequenceIds\x124\n" +
+	"\x0echild_task_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xb0\xf2\x04\x01R\fchildTaskIds\x12;\n" +
 	"\flocal_target\x18\n" +
 	" \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\x12\x1a\n" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\"K\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete:\xb5\t\xbaH\xb1\t\x1a\xc2\x01\n" +
+	"&sequence_definition.children_not_mixed\x12Qa sequence must contain either child_sequence_ids or child_task_ids, but not both\x1aE!(size(this.child_sequence_ids) > 0 && size(this.child_task_ids) > 0)\x1a\xcd\x01\n" +
+	":sequence_definition.operator_specified_when_children_exist\x127operator must be specified when a sequence has children\x1aV(size(this.child_sequence_ids) + size(this.child_task_ids) == 0) || this.operator != 0\x1a\xc7\x01\n" +
+	"7sequence_definition.parallel_requires_multiple_children\x124PARALLEL sequences should have at least two children\x1aVthis.operator != 2 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xc9\x01\n" +
+	"8sequence_definition.exclusive_requires_multiple_children\x125EXCLUSIVE sequences should have at least two children\x1aVthis.operator != 3 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xc9\x01\n" +
+	"8sequence_definition.inclusive_requires_multiple_children\x125INCLUSIVE sequences should have at least two children\x1aVthis.operator != 4 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xb7\x01\n" +
+	"8sequence_definition.bulk_complete_requires_task_children\x12Acan_bulk_complete is only valid for sequences with child_task_ids\x1a8!this.can_bulk_complete || size(this.child_task_ids) > 0\"K\n" +
 	"\x13SequenceDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.process.v1.SequenceDefinitionR\x05items*\xb6\x01\n" +
 	"\x10SequenceOperator\x12!\n" +

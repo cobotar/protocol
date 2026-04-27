@@ -584,6 +584,16 @@
 - [seed/v1/seed.proto](#seed_v1_seed-proto)
     - [Seed](#seed-v1-Seed)
   
+- [seed/v1/seed_file.proto](#seed_v1_seed_file-proto)
+    - [SeedFile](#seed-v1-SeedFile)
+    - [SeedFiles](#seed-v1-SeedFiles)
+  
+- [seed/v1/seed_request.proto](#seed_v1_seed_request-proto)
+    - [LoadSeedRequest](#seed-v1-LoadSeedRequest)
+    - [SaveSeedRequest](#seed-v1-SaveSeedRequest)
+  
+    - [SaveSeedEntity](#seed-v1-SaveSeedEntity)
+  
 - [service/v1/ar_client.proto](#service_v1_ar_client-proto)
     - [ARClientMessage](#service-v1-ARClientMessage)
   
@@ -4321,23 +4331,35 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 <a name="process-v1-SequenceDefinition"></a>
 
 ### SequenceDefinition
+SequenceDefinition represents a unit of control flow within a process recipe.
 
+A sequence groups either:
+  - child sequences (for orchestration / structure), or
+  - child tasks (for executable work)
+
+but not both at the same time.
+
+This separation ensures clear execution semantics and simplifies runtime
+scheduling, validation, and UI representation.
+
+Sequences form a hierarchical tree starting from a root sequence and are
+evaluated by the runtime according to the specified operator.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| parent_sequence_id | [string](#string) |  |  |
-| operator | [SequenceOperator](#process-v1-SequenceOperator) |  |  |
-| child_sequence_ids | [string](#string) | repeated |  |
-| child_task_ids | [string](#string) | repeated |  |
-| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  |  |
-| optional | [bool](#bool) |  |  |
-| can_bulk_complete | [bool](#bool) |  |  |
+| id | [string](#string) |  | Unique identifier for the sequence definition. |
+| name | [string](#string) |  | Human-readable name used in UI and authoring tools. |
+| icon | [string](#string) |  | Optional icon representing the sequence in UI contexts. |
+| description | [string](#string) |  | Optional textual description of the sequence purpose or behavior. |
+| sequence_number | [int32](#int32) |  | Ordering hint used to sort sibling sequences during generation and execution. Lower values are executed earlier for ORDERED sequences. |
+| parent_sequence_id | [string](#string) |  | Identifier of the parent sequence in the hierarchy. Empty for root sequence. |
+| operator | [SequenceOperator](#process-v1-SequenceOperator) |  | Defines how child elements (sequences or tasks) are executed and combined. |
+| child_sequence_ids | [string](#string) | repeated | Child sequence references used when this sequence acts as an orchestration node. Only one of child_sequence_ids or child_task_ids should be populated. |
+| child_task_ids | [string](#string) | repeated | Child task references used when this sequence is a leaf execution node. Only one of child_sequence_ids or child_task_ids should be populated. |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional local target defining the spatial or logical context for this sequence. |
+| optional | [bool](#bool) |  | Indicates whether this sequence is optional and may be skipped during execution. |
+| can_bulk_complete | [bool](#bool) |  | Indicates whether all child tasks in this sequence can be completed in bulk. |
 
 
 
@@ -4367,8 +4389,8 @@ TODO: can this be made more generic, e.g. from a different pool of &#39;actions&
 Defines how the children of a SequenceDefinition are executed and how the
 sequence determines completion.
 
-A sequence may contain both child sequences and tasks. The operator
-determines the control-flow semantics for those children.
+A sequence should contain either child sequences or child tasks, but not both.
+Use nested sequences to separate orchestration structure from executable task groups.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -4868,9 +4890,9 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 | assignment_preference | [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference) |  |  |
 | actor_constraint | [capability.v1.ActorConstraint](#capability-v1-ActorConstraint) |  |  |
 | can_reassign | [bool](#bool) |  |  |
-| can_do | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
 | estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+| require_full_guidance | [bool](#bool) |  |  |
 
 
 
@@ -5285,6 +5307,7 @@ This is intended for authoring-time generation, not runtime execution.
 | generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
 | prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
 | include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included |
+| generate_greasing_tasks | [bool](#bool) |  | If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate |
 
 
 
@@ -5506,6 +5529,9 @@ name: TPU, grade: 70 Shore A
 | esd_sensitive | [bool](#bool) |  |  |
 | requires_two_hand_lift | [bool](#bool) |  |  |
 | requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
+| pre_lubrication_part_id | [string](#string) |  | If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly. |
+| post_lubrication_part_id | [string](#string) |  |  |
+| requires_wiping | [bool](#bool) |  |  |
 | max_grip_force_n | [double](#double) |  |  |
 | max_torque_nm | [double](#double) |  |  |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
@@ -8389,6 +8415,145 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="seed_v1_seed_file-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## seed/v1/seed_file.proto
+
+
+
+<a name="seed-v1-SeedFile"></a>
+
+### SeedFile
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| file | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="seed-v1-SeedFiles"></a>
+
+### SeedFiles
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [SeedFile](#seed-v1-SeedFile) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="seed_v1_seed_request-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## seed/v1/seed_request.proto
+
+
+
+<a name="seed-v1-LoadSeedRequest"></a>
+
+### LoadSeedRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="seed-v1-SaveSeedRequest"></a>
+
+### SaveSeedRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| include | [SaveSeedEntity](#seed-v1-SaveSeedEntity) | repeated |  |
+| exclude | [SaveSeedEntity](#seed-v1-SaveSeedEntity) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="seed-v1-SaveSeedEntity"></a>
+
+### SaveSeedEntity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SAVE_SEED_ENTITY_UNSPECIFIED | 0 |  |
+| SAVE_SEED_ENTITY_LINES | 1 |  |
+| SAVE_SEED_ENTITY_CELLS | 2 |  |
+| SAVE_SEED_ENTITY_STATIONS | 3 |  |
+| SAVE_SEED_ENTITY_WORKERS | 10 |  |
+| SAVE_SEED_ENTITY_ROBOT_DEFINITIONS | 11 |  |
+| SAVE_SEED_ENTITY_ROBOT_INSTANCES | 12 |  |
+| SAVE_SEED_ENTITY_SKILLS | 13 |  |
+| SAVE_SEED_ENTITY_ACTOR_SKILLS | 14 |  |
+| SAVE_SEED_ENTITY_DEVICES | 15 |  |
+| SAVE_SEED_ENTITY_MODELS | 20 |  |
+| SAVE_SEED_ENTITY_ASSET_DEFINITIONS | 30 |  |
+| SAVE_SEED_ENTITY_ASSET_INSTANCES | 31 |  |
+| SAVE_SEED_ENTITY_CONTAINER_DEFINITIONS | 32 |  |
+| SAVE_SEED_ENTITY_CONTAINER_INSTANCES | 33 |  |
+| SAVE_SEED_ENTITY_TOOL_DEFINITIONS | 34 |  |
+| SAVE_SEED_ENTITY_TOOL_INSTANCES | 35 |  |
+| SAVE_SEED_ENTITY_MARKERS | 36 |  |
+| SAVE_SEED_ENTITY_PART_DEFINITIONS | 40 |  |
+| SAVE_SEED_ENTITY_PART_INSTANCES | 41 |  |
+| SAVE_SEED_ENTITY_PRODUCTS | 42 |  |
+| SAVE_SEED_ENTITY_RECIPES | 43 |  |
+| SAVE_SEED_ENTITY_SEQUENCES | 44 |  |
+| SAVE_SEED_ENTITY_TASKS | 45 |  |
+| SAVE_SEED_ENTITY_PROCESSES | 50 |  |
+| SAVE_SEED_ENTITY_SEQUENCE_RUNS | 51 |  |
+| SAVE_SEED_ENTITY_TASK_RUNS | 52 |  |
+| SAVE_SEED_ENTITY_FEEDBACK | 60 |  |
+| SAVE_SEED_ENTITY_ACTIONS | 61 |  |
+
 
  
 

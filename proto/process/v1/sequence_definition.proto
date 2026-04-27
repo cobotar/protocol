@@ -11,8 +11,8 @@ option go_package = "github.com/cobotar/protocol/messages/process/v1";
 // Defines how the children of a SequenceDefinition are executed and how the
 // sequence determines completion.
 //
-// A sequence may contain both child sequences and tasks. The operator
-// determines the control-flow semantics for those children.
+// A sequence should contain either child sequences or child tasks, but not both.
+// Use nested sequences to separate orchestration structure from executable task groups.
 enum SequenceOperator {
   // Default / undefined behavior.
   //
@@ -76,18 +76,93 @@ enum SequenceOperator {
   SEQUENCE_OPERATOR_INCLUSIVE = 4;
 }
 
+// SequenceDefinition represents a unit of control flow within a process recipe.
+//
+// A sequence groups either:
+//   - child sequences (for orchestration / structure), or
+//   - child tasks (for executable work)
+//
+// but not both at the same time.
+//
+// This separation ensures clear execution semantics and simplifies runtime
+// scheduling, validation, and UI representation.
+//
+// Sequences form a hierarchical tree starting from a root sequence and are
+// evaluated by the runtime according to the specified operator.
 message SequenceDefinition {
-  string id = 1;
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.children_not_mixed"
+    message: "a sequence must contain either child_sequence_ids or child_task_ids, but not both"
+    expression: "!(size(this.child_sequence_ids) > 0 && size(this.child_task_ids) > 0)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.operator_specified_when_children_exist"
+    message: "operator must be specified when a sequence has children"
+    expression: "(size(this.child_sequence_ids) + size(this.child_task_ids) == 0) || this.operator != 0"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.parallel_requires_multiple_children"
+    message: "PARALLEL sequences should have at least two children"
+    expression: "this.operator != 2 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.exclusive_requires_multiple_children"
+    message: "EXCLUSIVE sequences should have at least two children"
+    expression: "this.operator != 3 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.inclusive_requires_multiple_children"
+    message: "INCLUSIVE sequences should have at least two children"
+    expression: "this.operator != 4 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.bulk_complete_requires_task_children"
+    message: "can_bulk_complete is only valid for sequences with child_task_ids"
+    expression: "!this.can_bulk_complete || size(this.child_task_ids) > 0"
+  };
+
+  // Unique identifier for the sequence definition.
+  string id = 1 [(buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true];
+
+  // Human-readable name used in UI and authoring tools.
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+
+  // Optional icon representing the sequence in UI contexts.
   string icon = 3;
+
+  // Optional textual description of the sequence purpose or behavior.
   string description = 4;
+
+  // Ordering hint used to sort sibling sequences during generation and execution.
+  // Lower values are executed earlier for ORDERED sequences.
   int32 sequence_number = 5 [(buf.validate.field).int32.gte = 0];
-  string parent_sequence_id = 6;
+
+  // Identifier of the parent sequence in the hierarchy. Empty for root sequence.
+  string parent_sequence_id = 6 [(buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true];
+
+  // Defines how child elements (sequences or tasks) are executed and combined.
   SequenceOperator operator = 7 [(buf.validate.field).enum.defined_only = true];
-  repeated string child_sequence_ids = 8;
-  repeated string child_task_ids = 9;
+
+  // Child sequence references used when this sequence acts as an orchestration node.
+  // Only one of child_sequence_ids or child_task_ids should be populated.
+  repeated string child_sequence_ids = 8 [(buf.validate.field).repeated.items.string.(validation.v1.sequence_definition_id_component) = true];
+
+  // Child task references used when this sequence is a leaf execution node.
+  // Only one of child_sequence_ids or child_task_ids should be populated.
+  repeated string child_task_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.task_definition_id_component) = true];
+
+  // Optional local target defining the spatial or logical context for this sequence.
   geometry.v1.LocalTarget local_target = 10;
+
+  // Indicates whether this sequence is optional and may be skipped during execution.
   bool optional = 11;
+
+  // Indicates whether all child tasks in this sequence can be completed in bulk.
   bool can_bulk_complete = 12;
 }
 

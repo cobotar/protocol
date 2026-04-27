@@ -308,16 +308,20 @@ func (x *MaterialSpec) GetGrade() string {
 }
 
 type PartHandlingProfile struct {
-	state                  protoimpl.MessageState   `protogen:"open.v1"`
-	Fragile                bool                     `protobuf:"varint,1,opt,name=fragile,proto3" json:"fragile,omitempty"`
-	EsdSensitive           bool                     `protobuf:"varint,2,opt,name=esd_sensitive,json=esdSensitive,proto3" json:"esd_sensitive,omitempty"`
-	RequiresTwoHandLift    bool                     `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`
-	RequiresFixtureSupport bool                     `protobuf:"varint,4,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"` // If true, this part cannot realistically be handled/assembled without some fixture support
-	MaxGripForceN          float64                  `protobuf:"fixed64,5,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`
-	MaxTorqueNm            float64                  `protobuf:"fixed64,6,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`
-	Constraints            []*v1.KeyValueConstraint `protobuf:"bytes,7,rep,name=constraints,proto3" json:"constraints,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Fragile                bool                   `protobuf:"varint,1,opt,name=fragile,proto3" json:"fragile,omitempty"`
+	EsdSensitive           bool                   `protobuf:"varint,2,opt,name=esd_sensitive,json=esdSensitive,proto3" json:"esd_sensitive,omitempty"`
+	RequiresTwoHandLift    bool                   `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`
+	RequiresFixtureSupport bool                   `protobuf:"varint,4,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"` // If true, this part cannot realistically be handled/assembled without some fixture support
+	// If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
+	PreLubricationPartId  string                   `protobuf:"bytes,5,opt,name=pre_lubrication_part_id,json=preLubricationPartId,proto3" json:"pre_lubrication_part_id,omitempty"`
+	PostLubricationPartId string                   `protobuf:"bytes,6,opt,name=post_lubrication_part_id,json=postLubricationPartId,proto3" json:"post_lubrication_part_id,omitempty"`
+	RequiresWiping        bool                     `protobuf:"varint,7,opt,name=requires_wiping,json=requiresWiping,proto3" json:"requires_wiping,omitempty"`
+	MaxGripForceN         float64                  `protobuf:"fixed64,8,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`
+	MaxTorqueNm           float64                  `protobuf:"fixed64,9,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`
+	Constraints           []*v1.KeyValueConstraint `protobuf:"bytes,10,rep,name=constraints,proto3" json:"constraints,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *PartHandlingProfile) Reset() {
@@ -374,6 +378,27 @@ func (x *PartHandlingProfile) GetRequiresTwoHandLift() bool {
 func (x *PartHandlingProfile) GetRequiresFixtureSupport() bool {
 	if x != nil {
 		return x.RequiresFixtureSupport
+	}
+	return false
+}
+
+func (x *PartHandlingProfile) GetPreLubricationPartId() string {
+	if x != nil {
+		return x.PreLubricationPartId
+	}
+	return ""
+}
+
+func (x *PartHandlingProfile) GetPostLubricationPartId() string {
+	if x != nil {
+		return x.PostLubricationPartId
+	}
+	return ""
+}
+
+func (x *PartHandlingProfile) GetRequiresWiping() bool {
+	if x != nil {
+		return x.RequiresWiping
 	}
 	return false
 }
@@ -597,15 +622,19 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\fMaterialSpec\x128\n" +
 	"\bcategory\x18\x01 \x01(\x0e2\x1c.product.v1.MaterialCategoryR\bcategory\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05grade\x18\x03 \x01(\tR\x05grade\"\xd1\x02\n" +
+	"\x05grade\x18\x03 \x01(\tR\x05grade\"\xea\x03\n" +
 	"\x13PartHandlingProfile\x12\x18\n" +
 	"\afragile\x18\x01 \x01(\bR\afragile\x12#\n" +
 	"\resd_sensitive\x18\x02 \x01(\bR\fesdSensitive\x123\n" +
 	"\x16requires_two_hand_lift\x18\x03 \x01(\bR\x13requiresTwoHandLift\x128\n" +
-	"\x18requires_fixture_support\x18\x04 \x01(\bR\x16requiresFixtureSupport\x12'\n" +
-	"\x10max_grip_force_n\x18\x05 \x01(\x01R\rmaxGripForceN\x12\"\n" +
-	"\rmax_torque_nm\x18\x06 \x01(\x01R\vmaxTorqueNm\x12?\n" +
-	"\vconstraints\x18\a \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xcb\x04\n" +
+	"\x18requires_fixture_support\x18\x04 \x01(\bR\x16requiresFixtureSupport\x125\n" +
+	"\x17pre_lubrication_part_id\x18\x05 \x01(\tR\x14preLubricationPartId\x127\n" +
+	"\x18post_lubrication_part_id\x18\x06 \x01(\tR\x15postLubricationPartId\x12'\n" +
+	"\x0frequires_wiping\x18\a \x01(\bR\x0erequiresWiping\x12'\n" +
+	"\x10max_grip_force_n\x18\b \x01(\x01R\rmaxGripForceN\x12\"\n" +
+	"\rmax_torque_nm\x18\t \x01(\x01R\vmaxTorqueNm\x12?\n" +
+	"\vconstraints\x18\n" +
+	" \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xcb\x04\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +

@@ -144,20 +144,20 @@ class ValidationRequirement(_message.Message):
     def __init__(self, require_tool_feedback: bool = ..., require_vision_check: bool = ..., allow_manual_confirmation: bool = ..., manual_confirmation_min_level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ..., mode: _Optional[_Union[_asset_definition_pb2.ValidationMode, str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class TaskExecutionPolicy(_message.Message):
-    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_do", "can_undo", "estimated_duration")
+    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_undo", "estimated_duration", "require_full_guidance")
     ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     ACTOR_CONSTRAINT_FIELD_NUMBER: _ClassVar[int]
     CAN_REASSIGN_FIELD_NUMBER: _ClassVar[int]
-    CAN_DO_FIELD_NUMBER: _ClassVar[int]
     CAN_UNDO_FIELD_NUMBER: _ClassVar[int]
     ESTIMATED_DURATION_FIELD_NUMBER: _ClassVar[int]
+    REQUIRE_FULL_GUIDANCE_FIELD_NUMBER: _ClassVar[int]
     assignment_preference: TaskAssignmentPreference
     actor_constraint: _actor_constraint_pb2.ActorConstraint
     can_reassign: bool
-    can_do: bool
     can_undo: bool
     estimated_duration: _time_pb2.EstimatedDuration
-    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_do: bool = ..., can_undo: bool = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ...) -> None: ...
+    require_full_guidance: bool
+    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_undo: bool = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ...) -> None: ...
 
 class TaskOverride(_message.Message):
     __slots__ = ("when", "instruction_text", "target_node_id", "approach")

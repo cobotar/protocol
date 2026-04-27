@@ -578,9 +578,9 @@ type TaskExecutionPolicy struct {
 	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,1,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=process.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
 	ActorConstraint      *v12.ActorConstraint     `protobuf:"bytes,2,opt,name=actor_constraint,json=actorConstraint,proto3" json:"actor_constraint,omitempty"`
 	CanReassign          bool                     `protobuf:"varint,3,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
-	CanDo                bool                     `protobuf:"varint,4,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
-	CanUndo              bool                     `protobuf:"varint,5,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
-	EstimatedDuration    *v13.EstimatedDuration   `protobuf:"bytes,6,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
+	CanUndo              bool                     `protobuf:"varint,4,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	EstimatedDuration    *v13.EstimatedDuration   `protobuf:"bytes,5,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
+	RequireFullGuidance  bool                     `protobuf:"varint,6,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -636,13 +636,6 @@ func (x *TaskExecutionPolicy) GetCanReassign() bool {
 	return false
 }
 
-func (x *TaskExecutionPolicy) GetCanDo() bool {
-	if x != nil {
-		return x.CanDo
-	}
-	return false
-}
-
 func (x *TaskExecutionPolicy) GetCanUndo() bool {
 	if x != nil {
 		return x.CanUndo
@@ -655,6 +648,13 @@ func (x *TaskExecutionPolicy) GetEstimatedDuration() *v13.EstimatedDuration {
 		return x.EstimatedDuration
 	}
 	return nil
+}
+
+func (x *TaskExecutionPolicy) GetRequireFullGuidance() bool {
+	if x != nil {
+		return x.RequireFullGuidance
+	}
+	return false
 }
 
 type TaskOverride struct {
@@ -994,14 +994,14 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12\\\n" +
 	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelR\x1amanualConfirmationMinLevel\x120\n" +
 	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeR\x04mode\x12?\n" +
-	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x02\n" +
+	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xfa\x02\n" +
 	"\x13TaskExecutionPolicy\x12Y\n" +
 	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +
 	"\x10actor_constraint\x18\x02 \x01(\v2\x1e.capability.v1.ActorConstraintR\x0factorConstraint\x12!\n" +
-	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x15\n" +
-	"\x06can_do\x18\x04 \x01(\bR\x05canDo\x12\x19\n" +
-	"\bcan_undo\x18\x05 \x01(\bR\acanUndo\x12K\n" +
-	"\x12estimated_duration\x18\x06 \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\"\xbf\x01\n" +
+	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x19\n" +
+	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12K\n" +
+	"\x12estimated_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\x122\n" +
+	"\x15require_full_guidance\x18\x06 \x01(\bR\x13requireFullGuidance\"\xbf\x01\n" +
 	"\fTaskOverride\x12,\n" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +

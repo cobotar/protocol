@@ -25,9 +25,9 @@ message SequenceRun {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
-  string parent_sequence_run_id = 5 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true];
-  repeated string child_sequence_run_ids = 6;
-  repeated string child_task_run_ids = 7;
+  string parent_sequence_run_id = 5 [(buf.validate.field).string.(validation.v1.sequence_run_id_component) = true];
+  repeated string child_sequence_run_ids = 6 [(buf.validate.field).repeated.items.string.(validation.v1.sequence_run_id_component) = true];
+  repeated string child_task_run_ids = 7 [(buf.validate.field).repeated.items.string.(validation.v1.task_run_id_component) = true];
   SequenceRunState state = 8 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true

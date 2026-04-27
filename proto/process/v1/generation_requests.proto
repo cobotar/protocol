@@ -56,6 +56,9 @@ message DraftProcessRecipeGenerateRequest {
 
   // If true, nodes marked as optional will be included
   bool include_optional_nodes = 12;
+
+  // If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
+  bool generate_greasing_tasks = 13;
 }
 
 // DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
