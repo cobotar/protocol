@@ -59,3 +59,5 @@ CONTAINER_INSTANCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 container_instance_id_component: _descriptor.FieldDescriptor
 WORKER_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 worker_id_component: _descriptor.FieldDescriptor
+PRODUCT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+product_id_component: _descriptor.FieldDescriptor

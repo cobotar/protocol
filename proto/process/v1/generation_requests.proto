@@ -5,6 +5,7 @@ import "buf/validate/validate.proto";
 import "process/v1/process_recipe.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Process.V1";
@@ -16,11 +17,17 @@ option go_package = "github.com/cobotar/protocol/messages/process/v1";
 // This is intended for authoring-time generation, not runtime execution.
 message DraftProcessRecipeGenerateRequest {
   // The product structure that should be transformed into a draft recipe.
-  string product_definition_id = 1 [(buf.validate.field).required = true];
+  string product_definition_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.product_id_component) = true
+  ];
 
   // Optional explicit recipe id for the generated recipe.
   // If empty, the generator/backend may assign one.
-  string recipe_id = 2 [(buf.validate.field).required = true];
+  string recipe_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
 
   // Human-readable name for the generated recipe.
   string recipe_name = 3;
@@ -54,11 +61,117 @@ message DraftProcessRecipeGenerateRequest {
   // reasonably interpreted as repositioning rather than installation.
   bool prefer_move_tasks_when_possible = 11;
 
-  // If true, nodes marked as optional will be included
+  // If true, nodes marked as optional will be included.
   bool include_optional_nodes = 12;
 
-  // If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
-  bool generate_greasing_tasks = 13;
+  // If true, the generator may insert APPLY tasks where appropriate.
+  bool generate_apply_tasks = 13;
+
+  // Optional assembly scope. If empty, the generator may consider the full
+  // product structure. If set, generation should focus on the specified
+  // assembly node and its relevant assembly paths/subtrees.
+  string root_node_id = 14;
+
+  // If true, the generator should prefer assembling subassemblies as intact
+  // units when feasible instead of always expanding them into all child parts.
+  bool assemble_subassemblies_as_units_when_possible = 15;
+
+  // If true, the generator may insert INSPECT tasks where appropriate, for
+  // example to assess fit, alignment, damage, or assembly condition.
+  bool generate_inspect_tasks = 16;
+
+  // Container definitions that may act as sources for parts during assembly,
+  // for example trays, kits, or storage containers.
+  repeated string source_container_definition_ids = 17 [(buf.validate.field).repeated.items.string.(validation.v1.container_definition_id_component) = true];
+
+  // Container definitions that may act as targets/workholding during assembly,
+  // for example fixtures or pallets used to hold the product being assembled.
+  repeated string target_container_definition_ids = 18 [(buf.validate.field).repeated.items.string.(validation.v1.container_definition_id_component) = true];
+}
+
+// DraftDisassemblyProcessRecipeGenerateRequest asks the backend to generate a
+// draft ProcessRecipe of type DISASSEMBLY from a ProductDefinition plus
+// generation options.
+//
+// This is intended for authoring-time generation, not runtime execution.
+message DraftDisassemblyProcessRecipeGenerateRequest {
+  // The product structure that should be transformed into a draft recipe.
+  string product_definition_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.product_id_component) = true
+  ];
+
+  // Optional explicit recipe id for the generated recipe.
+  // If empty, the generator/backend may assign one.
+  string recipe_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+
+  // Human-readable name for the generated recipe.
+  string recipe_name = 3;
+
+  // Optional icon for the generated recipe.
+  string recipe_icon = 4;
+
+  // Optional human-readable description for the generated recipe.
+  string recipe_description = 5;
+
+  // Selected product variants used to filter applicability and annotate the
+  // generated recipe applicability.
+  variance.v1.VariantConfiguration variant_configuration = 6;
+
+  // If true, the generator may insert HOLD tasks before grouped UNFASTEN work
+  // when that improves stability and task flow during disassembly.
+  bool insert_hold_before_unfasten_group = 7;
+
+  // Minimum number of sibling fasteners required before grouping them into a
+  // shared fastener-removal-oriented sequence.
+  int32 group_fasteners_threshold = 8;
+
+  // Minimum number of repeated sibling parts required before grouping them into
+  // a shared repeated-parts disassembly sequence.
+  int32 group_repeated_parts_threshold = 9;
+
+  // If true, the generator may insert VERIFY tasks where appropriate, for
+  // example to confirm that a part, fastener, or material has been removed.
+  bool generate_verify_tasks = 10;
+
+  // If true, the generator may prefer MOVE tasks when the operation can be
+  // reasonably interpreted as repositioning rather than removal.
+  bool prefer_move_tasks_when_possible = 11;
+
+  // If true, nodes marked as optional will be included.
+  bool include_optional_nodes = 12;
+
+  // If true, the generator may insert WIPE tasks where appropriate.
+  bool generate_wipe_tasks = 13;
+
+  // Container definitions that removed parts, fasteners, or subassemblies may
+  // be staged into during disassembly. These can be fixtures, trays, kits, or
+  // storage containers depending on the intended workflow.
+  repeated string target_container_definition_ids = 14 [(buf.validate.field).repeated.items.string.(validation.v1.container_definition_id_component) = true];
+
+  // Optional disassembly scope. If empty, the generator may consider the full
+  // product structure. If set, generation should focus on the specified
+  // assembly node and its relevant disassembly paths/subtrees.
+  string root_node_id = 15;
+
+  // If true, the generator should prefer removing subassemblies as intact units
+  // when feasible instead of always decomposing them into all child parts.
+  bool preserve_subassemblies_when_possible = 16;
+
+  // If true, the generator may prefer reversing child ordering hints from the
+  // product structure when deriving disassembly sequences.
+  bool reverse_child_sequence_order = 17;
+
+  // If true, the generator may insert INSPECT tasks where appropriate, for
+  // example to assess wear, damage, residue, or part condition after removal.
+  bool generate_inspect_tasks = 18;
+
+  // If true, the generator may insert cleanup-oriented tasks beyond WIPE where
+  // appropriate, such as residue removal or debris clearing.
+  // bool generate_cleanup_tasks = 19;
 }
 
 // DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
@@ -66,7 +179,7 @@ message DraftProcessRecipeGenerateRequest {
 message DraftProcessRecipeGenerateIssue {
   string message = 1 [(buf.validate.field).required = true];
   string node_id = 2 [(buf.validate.field).required = true];
-  string part_definition_id = 3;
+  string part_definition_id = 3 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true];
 }
 
 // DraftProcessRecipeGenerateResult contains the generated draft recipe.

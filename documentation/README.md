@@ -53,6 +53,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -360,6 +361,7 @@
     - [VariantSelection](#variance-v1-VariantSelection)
   
 - [process/v1/generation_requests.proto](#process_v1_generation_requests-proto)
+    - [DraftDisassemblyProcessRecipeGenerateRequest](#process-v1-DraftDisassemblyProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue)
     - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
@@ -882,6 +884,7 @@ A simple pose consisting of a position and orientation
 | part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
 | process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
 | process_run_id_component | bool | .buf.validate.StringRules | 10017 |  |
+| product_id_component | bool | .buf.validate.StringRules | 100028 |  |
 | property_id_component | bool | .buf.validate.StringRules | 10003 |  |
 | robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
 | robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
@@ -5266,6 +5269,42 @@ ProcessRecipe describes the following:
 
 
 
+<a name="process-v1-DraftDisassemblyProcessRecipeGenerateRequest"></a>
+
+### DraftDisassemblyProcessRecipeGenerateRequest
+DraftDisassemblyProcessRecipeGenerateRequest asks the backend to generate a
+draft ProcessRecipe of type DISASSEMBLY from a ProductDefinition plus
+generation options.
+
+This is intended for authoring-time generation, not runtime execution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product_definition_id | [string](#string) |  | The product structure that should be transformed into a draft recipe. |
+| recipe_id | [string](#string) |  | Optional explicit recipe id for the generated recipe. If empty, the generator/backend may assign one. |
+| recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
+| recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
+| recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
+| insert_hold_before_unfasten_group | [bool](#bool) |  | If true, the generator may insert HOLD tasks before grouped UNFASTEN work when that improves stability and task flow during disassembly. |
+| group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-removal-oriented sequence. |
+| group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts disassembly sequence. |
+| generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate, for example to confirm that a part, fastener, or material has been removed. |
+| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than removal. |
+| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included. |
+| generate_wipe_tasks | [bool](#bool) |  | If true, the generator may insert WIPE tasks where appropriate. |
+| target_container_definition_ids | [string](#string) | repeated | Container definitions that removed parts, fasteners, or subassemblies may be staged into during disassembly. These can be fixtures, trays, kits, or storage containers depending on the intended workflow. |
+| root_node_id | [string](#string) |  | Optional disassembly scope. If empty, the generator may consider the full product structure. If set, generation should focus on the specified assembly node and its relevant disassembly paths/subtrees. |
+| preserve_subassemblies_when_possible | [bool](#bool) |  | If true, the generator should prefer removing subassemblies as intact units when feasible instead of always decomposing them into all child parts. |
+| reverse_child_sequence_order | [bool](#bool) |  | If true, the generator may prefer reversing child ordering hints from the product structure when deriving disassembly sequences. |
+| generate_inspect_tasks | [bool](#bool) |  | If true, the generator may insert INSPECT tasks where appropriate, for example to assess wear, damage, residue, or part condition after removal. |
+
+
+
+
+
+
 <a name="process-v1-DraftProcessRecipeGenerateIssue"></a>
 
 ### DraftProcessRecipeGenerateIssue
@@ -5306,8 +5345,13 @@ This is intended for authoring-time generation, not runtime execution.
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
 | generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate. |
 | prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than installation. |
-| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included |
-| generate_greasing_tasks | [bool](#bool) |  | If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate |
+| include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included. |
+| generate_apply_tasks | [bool](#bool) |  | If true, the generator may insert APPLY tasks where appropriate. |
+| root_node_id | [string](#string) |  | Optional assembly scope. If empty, the generator may consider the full product structure. If set, generation should focus on the specified assembly node and its relevant assembly paths/subtrees. |
+| assemble_subassemblies_as_units_when_possible | [bool](#bool) |  | If true, the generator should prefer assembling subassemblies as intact units when feasible instead of always expanding them into all child parts. |
+| generate_inspect_tasks | [bool](#bool) |  | If true, the generator may insert INSPECT tasks where appropriate, for example to assess fit, alignment, damage, or assembly condition. |
+| source_container_definition_ids | [string](#string) | repeated | Container definitions that may act as sources for parts during assembly, for example trays, kits, or storage containers. |
+| target_container_definition_ids | [string](#string) | repeated | Container definitions that may act as targets/workholding during assembly, for example fixtures or pallets used to hold the product being assembled. |
 
 
 
@@ -5532,6 +5576,8 @@ name: TPU, grade: 70 Shore A
 | pre_lubrication_part_id | [string](#string) |  | If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly. |
 | post_lubrication_part_id | [string](#string) |  |  |
 | requires_wiping | [bool](#bool) |  |  |
+| inspect_before_assemble | [bool](#bool) |  |  |
+| inspect_after_disassemble | [bool](#bool) |  |  |
 | max_grip_force_n | [double](#double) |  |  |
 | max_torque_nm | [double](#double) |  |  |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |

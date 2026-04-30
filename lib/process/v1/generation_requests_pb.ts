@@ -11,6 +11,7 @@ import type { SequenceDefinition } from "./sequence_definition_pb.ts";
 import { file_process_v1_sequence_definition } from "./sequence_definition_pb.ts";
 import type { TaskDefinition } from "./task_definition_pb.ts";
 import { file_process_v1_task_definition } from "./task_definition_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantConfiguration } from "../../variance/v1/variant_configuration_pb.ts";
 import { file_variance_v1_variant_configuration } from "../../variance/v1/variant_configuration_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -19,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/generation_requests.proto.
  */
 export const file_process_v1_generation_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEi6wMKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIlChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCBrpIA8gBARIZCglyZWNpcGVfaWQYAiABKAlCBrpIA8gBARITCgtyZWNpcGVfbmFtZRgDIAEoCRITCgtyZWNpcGVfaWNvbhgEIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBSABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCBIfChdnZW5lcmF0ZV9ncmVhc2luZ190YXNrcxgNIAEoCCJvCh9EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEhcKB21lc3NhZ2UYASABKAlCBrpIA8gBARIXCgdub2RlX2lkGAIgASgJQga6SAPIAQESGgoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJIvABCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlc3VsdBIxCgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBARIxCglzZXF1ZW5jZXMYAiADKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbhIpCgV0YXNrcxgDIAMoCzIaLnByb2Nlc3MudjEuVGFza0RlZmluaXRpb24SOwoGaXNzdWVzGAQgAygLMisucHJvY2Vzcy52MS5EcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlQrYBCg5jb20ucHJvY2Vzcy52MUIXR2VuZXJhdGlvblJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_process_v1_process_recipe, file_process_v1_sequence_definition, file_process_v1_task_definition, file_variance_v1_variant_configuration]);
+  fileDesc("CiRwcm9jZXNzL3YxL2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8SCnByb2Nlc3MudjEi0wUKIURyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBIrChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCDLpICcgBAXIE4OswARIfCglyZWNpcGVfaWQYAiABKAlCDLpICcgBAXIEoPIEARITCgtyZWNpcGVfbmFtZRgDIAEoCRITCgtyZWNpcGVfaWNvbhgEIAEoCRIaChJyZWNpcGVfZGVzY3JpcHRpb24YBSABKAkSQAoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb24SKAogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCBIcChRnZW5lcmF0ZV9hcHBseV90YXNrcxgNIAEoCBIUCgxyb290X25vZGVfaWQYDiABKAkSNQotYXNzZW1ibGVfc3ViYXNzZW1ibGllc19hc191bml0c193aGVuX3Bvc3NpYmxlGA8gASgIEh4KFmdlbmVyYXRlX2luc3BlY3RfdGFza3MYECABKAgSNwofc291cmNlX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgRIAMoCUIOukgLkgEIIgZyBMjyBAESNwofdGFyZ2V0X2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgSIAMoCUIOukgLkgEIIgZyBMjyBAEiwgUKLERyYWZ0RGlzYXNzZW1ibHlQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXF1ZXN0EisKFXByb2R1Y3RfZGVmaW5pdGlvbl9pZBgBIAEoCUIMukgJyAEBcgTg6zABEh8KCXJlY2lwZV9pZBgCIAEoCUIMukgJyAEBcgSg8gQBEhMKC3JlY2lwZV9uYW1lGAMgASgJEhMKC3JlY2lwZV9pY29uGAQgASgJEhoKEnJlY2lwZV9kZXNjcmlwdGlvbhgFIAEoCRJAChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YBiABKAsyIS52YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvbhIpCiFpbnNlcnRfaG9sZF9iZWZvcmVfdW5mYXN0ZW5fZ3JvdXAYByABKAgSIQoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBRImCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSABKAUSHQoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIEicKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAgSHgoWaW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCBIbChNnZW5lcmF0ZV93aXBlX3Rhc2tzGA0gASgIEjcKH3RhcmdldF9jb250YWluZXJfZGVmaW5pdGlvbl9pZHMYDiADKAlCDrpIC5IBCCIGcgTI8gQBEhQKDHJvb3Rfbm9kZV9pZBgPIAEoCRIsCiRwcmVzZXJ2ZV9zdWJhc3NlbWJsaWVzX3doZW5fcG9zc2libGUYECABKAgSJAoccmV2ZXJzZV9jaGlsZF9zZXF1ZW5jZV9vcmRlchgRIAEoCBIeChZnZW5lcmF0ZV9pbnNwZWN0X3Rhc2tzGBIgASgIInoKH0RyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlSXNzdWUSFwoHbWVzc2FnZRgBIAEoCUIGukgDyAEBEhcKB25vZGVfaWQYAiABKAlCBrpIA8gBARIlChJwYXJ0X2RlZmluaXRpb25faWQYAyABKAlCCbpIBnIEyPEEASLwAQogRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXN1bHQSMQoGcmVjaXBlGAEgASgLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlQga6SAPIAQESMQoJc2VxdWVuY2VzGAIgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRpb24SKQoFdGFza3MYAyADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uEjsKBmlzc3VlcxgEIAMoCzIrLnByb2Nlc3MudjEuRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1ZUK2AQoOY29tLnByb2Nlc3MudjFCF0dlbmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_process_v1_process_recipe, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_configuration]);
 
 /**
  * DraftProcessRecipeGenerateRequest asks the backend to generate a draft
@@ -114,18 +115,59 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
   preferMoveTasksWhenPossible: boolean;
 
   /**
-   * If true, nodes marked as optional will be included
+   * If true, nodes marked as optional will be included.
    *
    * @generated from field: bool include_optional_nodes = 12;
    */
   includeOptionalNodes: boolean;
 
   /**
-   * If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
+   * If true, the generator may insert APPLY tasks where appropriate.
    *
-   * @generated from field: bool generate_greasing_tasks = 13;
+   * @generated from field: bool generate_apply_tasks = 13;
    */
-  generateGreasingTasks: boolean;
+  generateApplyTasks: boolean;
+
+  /**
+   * Optional assembly scope. If empty, the generator may consider the full
+   * product structure. If set, generation should focus on the specified
+   * assembly node and its relevant assembly paths/subtrees.
+   *
+   * @generated from field: string root_node_id = 14;
+   */
+  rootNodeId: string;
+
+  /**
+   * If true, the generator should prefer assembling subassemblies as intact
+   * units when feasible instead of always expanding them into all child parts.
+   *
+   * @generated from field: bool assemble_subassemblies_as_units_when_possible = 15;
+   */
+  assembleSubassembliesAsUnitsWhenPossible: boolean;
+
+  /**
+   * If true, the generator may insert INSPECT tasks where appropriate, for
+   * example to assess fit, alignment, damage, or assembly condition.
+   *
+   * @generated from field: bool generate_inspect_tasks = 16;
+   */
+  generateInspectTasks: boolean;
+
+  /**
+   * Container definitions that may act as sources for parts during assembly,
+   * for example trays, kits, or storage containers.
+   *
+   * @generated from field: repeated string source_container_definition_ids = 17;
+   */
+  sourceContainerDefinitionIds: string[];
+
+  /**
+   * Container definitions that may act as targets/workholding during assembly,
+   * for example fixtures or pallets used to hold the product being assembled.
+   *
+   * @generated from field: repeated string target_container_definition_ids = 18;
+   */
+  targetContainerDefinitionIds: string[];
 };
 
 /**
@@ -134,6 +176,164 @@ export type DraftProcessRecipeGenerateRequest = Message<"process.v1.DraftProcess
  */
 export const DraftProcessRecipeGenerateRequestSchema: GenMessage<DraftProcessRecipeGenerateRequest> = /*@__PURE__*/
   messageDesc(file_process_v1_generation_requests, 0);
+
+/**
+ * DraftDisassemblyProcessRecipeGenerateRequest asks the backend to generate a
+ * draft ProcessRecipe of type DISASSEMBLY from a ProductDefinition plus
+ * generation options.
+ *
+ * This is intended for authoring-time generation, not runtime execution.
+ *
+ * @generated from message process.v1.DraftDisassemblyProcessRecipeGenerateRequest
+ */
+export type DraftDisassemblyProcessRecipeGenerateRequest = Message<"process.v1.DraftDisassemblyProcessRecipeGenerateRequest"> & {
+  /**
+   * The product structure that should be transformed into a draft recipe.
+   *
+   * @generated from field: string product_definition_id = 1;
+   */
+  productDefinitionId: string;
+
+  /**
+   * Optional explicit recipe id for the generated recipe.
+   * If empty, the generator/backend may assign one.
+   *
+   * @generated from field: string recipe_id = 2;
+   */
+  recipeId: string;
+
+  /**
+   * Human-readable name for the generated recipe.
+   *
+   * @generated from field: string recipe_name = 3;
+   */
+  recipeName: string;
+
+  /**
+   * Optional icon for the generated recipe.
+   *
+   * @generated from field: string recipe_icon = 4;
+   */
+  recipeIcon: string;
+
+  /**
+   * Optional human-readable description for the generated recipe.
+   *
+   * @generated from field: string recipe_description = 5;
+   */
+  recipeDescription: string;
+
+  /**
+   * Selected product variants used to filter applicability and annotate the
+   * generated recipe applicability.
+   *
+   * @generated from field: variance.v1.VariantConfiguration variant_configuration = 6;
+   */
+  variantConfiguration?: VariantConfiguration;
+
+  /**
+   * If true, the generator may insert HOLD tasks before grouped UNFASTEN work
+   * when that improves stability and task flow during disassembly.
+   *
+   * @generated from field: bool insert_hold_before_unfasten_group = 7;
+   */
+  insertHoldBeforeUnfastenGroup: boolean;
+
+  /**
+   * Minimum number of sibling fasteners required before grouping them into a
+   * shared fastener-removal-oriented sequence.
+   *
+   * @generated from field: int32 group_fasteners_threshold = 8;
+   */
+  groupFastenersThreshold: number;
+
+  /**
+   * Minimum number of repeated sibling parts required before grouping them into
+   * a shared repeated-parts disassembly sequence.
+   *
+   * @generated from field: int32 group_repeated_parts_threshold = 9;
+   */
+  groupRepeatedPartsThreshold: number;
+
+  /**
+   * If true, the generator may insert VERIFY tasks where appropriate, for
+   * example to confirm that a part, fastener, or material has been removed.
+   *
+   * @generated from field: bool generate_verify_tasks = 10;
+   */
+  generateVerifyTasks: boolean;
+
+  /**
+   * If true, the generator may prefer MOVE tasks when the operation can be
+   * reasonably interpreted as repositioning rather than removal.
+   *
+   * @generated from field: bool prefer_move_tasks_when_possible = 11;
+   */
+  preferMoveTasksWhenPossible: boolean;
+
+  /**
+   * If true, nodes marked as optional will be included.
+   *
+   * @generated from field: bool include_optional_nodes = 12;
+   */
+  includeOptionalNodes: boolean;
+
+  /**
+   * If true, the generator may insert WIPE tasks where appropriate.
+   *
+   * @generated from field: bool generate_wipe_tasks = 13;
+   */
+  generateWipeTasks: boolean;
+
+  /**
+   * Container definitions that removed parts, fasteners, or subassemblies may
+   * be staged into during disassembly. These can be fixtures, trays, kits, or
+   * storage containers depending on the intended workflow.
+   *
+   * @generated from field: repeated string target_container_definition_ids = 14;
+   */
+  targetContainerDefinitionIds: string[];
+
+  /**
+   * Optional disassembly scope. If empty, the generator may consider the full
+   * product structure. If set, generation should focus on the specified
+   * assembly node and its relevant disassembly paths/subtrees.
+   *
+   * @generated from field: string root_node_id = 15;
+   */
+  rootNodeId: string;
+
+  /**
+   * If true, the generator should prefer removing subassemblies as intact units
+   * when feasible instead of always decomposing them into all child parts.
+   *
+   * @generated from field: bool preserve_subassemblies_when_possible = 16;
+   */
+  preserveSubassembliesWhenPossible: boolean;
+
+  /**
+   * If true, the generator may prefer reversing child ordering hints from the
+   * product structure when deriving disassembly sequences.
+   *
+   * @generated from field: bool reverse_child_sequence_order = 17;
+   */
+  reverseChildSequenceOrder: boolean;
+
+  /**
+   * If true, the generator may insert INSPECT tasks where appropriate, for
+   * example to assess wear, damage, residue, or part condition after removal.
+   *
+   * @generated from field: bool generate_inspect_tasks = 18;
+   */
+  generateInspectTasks: boolean;
+};
+
+/**
+ * Describes the message process.v1.DraftDisassemblyProcessRecipeGenerateRequest.
+ * Use `create(DraftDisassemblyProcessRecipeGenerateRequestSchema)` to create a new message.
+ */
+export const DraftDisassemblyProcessRecipeGenerateRequestSchema: GenMessage<DraftDisassemblyProcessRecipeGenerateRequest> = /*@__PURE__*/
+  messageDesc(file_process_v1_generation_requests, 1);
 
 /**
  * DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning
@@ -163,7 +363,7 @@ export type DraftProcessRecipeGenerateIssue = Message<"process.v1.DraftProcessRe
  * Use `create(DraftProcessRecipeGenerateIssueSchema)` to create a new message.
  */
 export const DraftProcessRecipeGenerateIssueSchema: GenMessage<DraftProcessRecipeGenerateIssue> = /*@__PURE__*/
-  messageDesc(file_process_v1_generation_requests, 1);
+  messageDesc(file_process_v1_generation_requests, 2);
 
 /**
  * DraftProcessRecipeGenerateResult contains the generated draft recipe.
@@ -197,5 +397,5 @@ export type DraftProcessRecipeGenerateResult = Message<"process.v1.DraftProcessR
  * Use `create(DraftProcessRecipeGenerateResultSchema)` to create a new message.
  */
 export const DraftProcessRecipeGenerateResultSchema: GenMessage<DraftProcessRecipeGenerateResult> = /*@__PURE__*/
-  messageDesc(file_process_v1_generation_requests, 2);
+  messageDesc(file_process_v1_generation_requests, 3);
 

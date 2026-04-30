@@ -28,42 +28,77 @@ namespace Messages.Process.V1 {
             "c3MudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxofcHJvY2Vzcy92",
             "MS9wcm9jZXNzX3JlY2lwZS5wcm90bxokcHJvY2Vzcy92MS9zZXF1ZW5jZV9k",
             "ZWZpbml0aW9uLnByb3RvGiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5w",
+            "cm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5w",
             "cm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9jb25maWd1cmF0aW9uLnByb3Rv",
-            "Iv4FCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSOgoVcHJv",
-            "ZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQga6SAPIAQFSE3Byb2R1Y3REZWZp",
-            "bml0aW9uSWQSIwoJcmVjaXBlX2lkGAIgASgJQga6SAPIAQFSCHJlY2lwZUlk",
-            "Eh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1lEh8KC3JlY2lwZV9p",
-            "Y29uGAQgASgJUgpyZWNpcGVJY29uEi0KEnJlY2lwZV9kZXNjcmlwdGlvbhgF",
-            "IAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SVgoVdmFyaWFudF9jb25maWd1cmF0",
-            "aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25S",
-            "FHZhcmlhbnRDb25maWd1cmF0aW9uEkYKIGluc2VydF9hbGlnbl9iZWZvcmVf",
-            "ZmFzdGVuX2dyb3VwGAcgASgIUhxpbnNlcnRBbGlnbkJlZm9yZUZhc3Rlbkdy",
-            "b3VwEjoKGWdyb3VwX2Zhc3RlbmVyc190aHJlc2hvbGQYCCABKAVSF2dyb3Vw",
-            "RmFzdGVuZXJzVGhyZXNob2xkEkMKHmdyb3VwX3JlcGVhdGVkX3BhcnRzX3Ro",
-            "cmVzaG9sZBgJIAEoBVIbZ3JvdXBSZXBlYXRlZFBhcnRzVGhyZXNob2xkEjIK",
-            "FWdlbmVyYXRlX3ZlcmlmeV90YXNrcxgKIAEoCFITZ2VuZXJhdGVWZXJpZnlU",
-            "YXNrcxJECh9wcmVmZXJfbW92ZV90YXNrc193aGVuX3Bvc3NpYmxlGAsgASgI",
-            "UhtwcmVmZXJNb3ZlVGFza3NXaGVuUG9zc2libGUSNAoWaW5jbHVkZV9vcHRp",
-            "b25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMSNgoXZ2Vu",
-            "ZXJhdGVfZ3JlYXNpbmdfdGFza3MYDSABKAhSFWdlbmVyYXRlR3JlYXNpbmdU",
-            "YXNrcyKSAQofRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1ZRIgCgdt",
-            "ZXNzYWdlGAEgASgJQga6SAPIAQFSB21lc3NhZ2USHwoHbm9kZV9pZBgCIAEo",
-            "CUIGukgDyAEBUgZub2RlSWQSLAoScGFydF9kZWZpbml0aW9uX2lkGAMgASgJ",
-            "UhBwYXJ0RGVmaW5pdGlvbklkIpICCiBEcmFmdFByb2Nlc3NSZWNpcGVHZW5l",
-            "cmF0ZVJlc3VsdBI5CgZyZWNpcGUYASABKAsyGS5wcm9jZXNzLnYxLlByb2Nl",
-            "c3NSZWNpcGVCBrpIA8gBAVIGcmVjaXBlEjwKCXNlcXVlbmNlcxgCIAMoCzIe",
-            "LnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uUglzZXF1ZW5jZXMSMAoF",
-            "dGFza3MYAyADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uUgV0YXNr",
-            "cxJDCgZpc3N1ZXMYBCADKAsyKy5wcm9jZXNzLnYxLkRyYWZ0UHJvY2Vzc1Jl",
-            "Y2lwZUdlbmVyYXRlSXNzdWVSBmlzc3Vlc0K2AQoOY29tLnByb2Nlc3MudjFC",
-            "F0dlbmVyYXRpb25SZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BY",
-            "WKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vz",
-            "c1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
+            "IusICiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJv",
+            "ZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQgy6SAlyBODrMAHIAQFSE3Byb2R1",
+            "Y3REZWZpbml0aW9uSWQSKQoJcmVjaXBlX2lkGAIgASgJQgy6SAlyBKDyBAHI",
+            "AQFSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1l",
+            "Eh8KC3JlY2lwZV9pY29uGAQgASgJUgpyZWNpcGVJY29uEi0KEnJlY2lwZV9k",
+            "ZXNjcmlwdGlvbhgFIAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SVgoVdmFyaWFu",
+            "dF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENv",
+            "bmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1cmF0aW9uEkYKIGluc2VydF9h",
+            "bGlnbl9iZWZvcmVfZmFzdGVuX2dyb3VwGAcgASgIUhxpbnNlcnRBbGlnbkJl",
+            "Zm9yZUZhc3Rlbkdyb3VwEjoKGWdyb3VwX2Zhc3RlbmVyc190aHJlc2hvbGQY",
+            "CCABKAVSF2dyb3VwRmFzdGVuZXJzVGhyZXNob2xkEkMKHmdyb3VwX3JlcGVh",
+            "dGVkX3BhcnRzX3RocmVzaG9sZBgJIAEoBVIbZ3JvdXBSZXBlYXRlZFBhcnRz",
+            "VGhyZXNob2xkEjIKFWdlbmVyYXRlX3ZlcmlmeV90YXNrcxgKIAEoCFITZ2Vu",
+            "ZXJhdGVWZXJpZnlUYXNrcxJECh9wcmVmZXJfbW92ZV90YXNrc193aGVuX3Bv",
+            "c3NpYmxlGAsgASgIUhtwcmVmZXJNb3ZlVGFza3NXaGVuUG9zc2libGUSNAoW",
+            "aW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9wdGlvbmFs",
+            "Tm9kZXMSMAoUZ2VuZXJhdGVfYXBwbHlfdGFza3MYDSABKAhSEmdlbmVyYXRl",
+            "QXBwbHlUYXNrcxIgCgxyb290X25vZGVfaWQYDiABKAlSCnJvb3ROb2RlSWQS",
+            "XwotYXNzZW1ibGVfc3ViYXNzZW1ibGllc19hc191bml0c193aGVuX3Bvc3Np",
+            "YmxlGA8gASgIUihhc3NlbWJsZVN1YmFzc2VtYmxpZXNBc1VuaXRzV2hlblBv",
+            "c3NpYmxlEjQKFmdlbmVyYXRlX2luc3BlY3RfdGFza3MYECABKAhSFGdlbmVy",
+            "YXRlSW5zcGVjdFRhc2tzElUKH3NvdXJjZV9jb250YWluZXJfZGVmaW5pdGlv",
+            "bl9pZHMYESADKAlCDrpIC5IBCCIGcgTI8gQBUhxzb3VyY2VDb250YWluZXJE",
+            "ZWZpbml0aW9uSWRzElUKH3RhcmdldF9jb250YWluZXJfZGVmaW5pdGlvbl9p",
+            "ZHMYEiADKAlCDrpIC5IBCCIGcgTI8gQBUhx0YXJnZXRDb250YWluZXJEZWZp",
+            "bml0aW9uSWRzItAICixEcmFmdERpc2Fzc2VtYmx5UHJvY2Vzc1JlY2lwZUdl",
+            "bmVyYXRlUmVxdWVzdBJAChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlC",
+            "DLpICXIE4OswAcgBAVITcHJvZHVjdERlZmluaXRpb25JZBIpCglyZWNpcGVf",
+            "aWQYAiABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSHwoLcmVjaXBlX25h",
+            "bWUYAyABKAlSCnJlY2lwZU5hbWUSHwoLcmVjaXBlX2ljb24YBCABKAlSCnJl",
+            "Y2lwZUljb24SLQoScmVjaXBlX2Rlc2NyaXB0aW9uGAUgASgJUhFyZWNpcGVE",
+            "ZXNjcmlwdGlvbhJWChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YBiABKAsyIS52",
+            "YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvblIUdmFyaWFudENvbmZp",
+            "Z3VyYXRpb24SSAohaW5zZXJ0X2hvbGRfYmVmb3JlX3VuZmFzdGVuX2dyb3Vw",
+            "GAcgASgIUh1pbnNlcnRIb2xkQmVmb3JlVW5mYXN0ZW5Hcm91cBI6Chlncm91",
+            "cF9mYXN0ZW5lcnNfdGhyZXNob2xkGAggASgFUhdncm91cEZhc3RlbmVyc1Ro",
+            "cmVzaG9sZBJDCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSAB",
+            "KAVSG2dyb3VwUmVwZWF0ZWRQYXJ0c1RocmVzaG9sZBIyChVnZW5lcmF0ZV92",
+            "ZXJpZnlfdGFza3MYCiABKAhSE2dlbmVyYXRlVmVyaWZ5VGFza3MSRAofcHJl",
+            "ZmVyX21vdmVfdGFza3Nfd2hlbl9wb3NzaWJsZRgLIAEoCFIbcHJlZmVyTW92",
+            "ZVRhc2tzV2hlblBvc3NpYmxlEjQKFmluY2x1ZGVfb3B0aW9uYWxfbm9kZXMY",
+            "DCABKAhSFGluY2x1ZGVPcHRpb25hbE5vZGVzEi4KE2dlbmVyYXRlX3dpcGVf",
+            "dGFza3MYDSABKAhSEWdlbmVyYXRlV2lwZVRhc2tzElUKH3RhcmdldF9jb250",
+            "YWluZXJfZGVmaW5pdGlvbl9pZHMYDiADKAlCDrpIC5IBCCIGcgTI8gQBUhx0",
+            "YXJnZXRDb250YWluZXJEZWZpbml0aW9uSWRzEiAKDHJvb3Rfbm9kZV9pZBgP",
+            "IAEoCVIKcm9vdE5vZGVJZBJPCiRwcmVzZXJ2ZV9zdWJhc3NlbWJsaWVzX3do",
+            "ZW5fcG9zc2libGUYECABKAhSIXByZXNlcnZlU3ViYXNzZW1ibGllc1doZW5Q",
+            "b3NzaWJsZRI/ChxyZXZlcnNlX2NoaWxkX3NlcXVlbmNlX29yZGVyGBEgASgI",
+            "UhlyZXZlcnNlQ2hpbGRTZXF1ZW5jZU9yZGVyEjQKFmdlbmVyYXRlX2luc3Bl",
+            "Y3RfdGFza3MYEiABKAhSFGdlbmVyYXRlSW5zcGVjdFRhc2tzIp0BCh9EcmFm",
+            "dFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEiAKB21lc3NhZ2UYASABKAlC",
+            "BrpIA8gBAVIHbWVzc2FnZRIfCgdub2RlX2lkGAIgASgJQga6SAPIAQFSBm5v",
+            "ZGVJZBI3ChJwYXJ0X2RlZmluaXRpb25faWQYAyABKAlCCbpIBnIEyPEEAVIQ",
+            "cGFydERlZmluaXRpb25JZCKSAgogRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJh",
+            "dGVSZXN1bHQSOQoGcmVjaXBlGAEgASgLMhkucHJvY2Vzcy52MS5Qcm9jZXNz",
+            "UmVjaXBlQga6SAPIAQFSBnJlY2lwZRI8CglzZXF1ZW5jZXMYAiADKAsyHi5w",
+            "cm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvblIJc2VxdWVuY2VzEjAKBXRh",
+            "c2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvblIFdGFza3MS",
+            "QwoGaXNzdWVzGAQgAygLMisucHJvY2Vzcy52MS5EcmFmdFByb2Nlc3NSZWNp",
+            "cGVHZW5lcmF0ZUlzc3VlUgZpc3N1ZXNCtgEKDmNvbS5wcm9jZXNzLnYxQhdH",
+            "ZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIv",
+            "cHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiq",
+            "AhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3Nc",
+            "VjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateGreasingTasks" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateApplyTasks", "RootNodeId", "AssembleSubassembliesAsUnitsWhenPossible", "GenerateInspectTasks", "SourceContainerDefinitionIds", "TargetContainerDefinitionIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertHoldBeforeUnfastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateWipeTasks", "TargetContainerDefinitionIds", "RootNodeId", "PreserveSubassembliesWhenPossible", "ReverseChildSequenceOrder", "GenerateInspectTasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateIssue), global::Messages.Process.V1.DraftProcessRecipeGenerateIssue.Parser, new[]{ "Message", "NodeId", "PartDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateResult), global::Messages.Process.V1.DraftProcessRecipeGenerateResult.Parser, new[]{ "Recipe", "Sequences", "Tasks", "Issues" }, null, null, null, null)
           }));
@@ -125,7 +160,12 @@ namespace Messages.Process.V1 {
       generateVerifyTasks_ = other.generateVerifyTasks_;
       preferMoveTasksWhenPossible_ = other.preferMoveTasksWhenPossible_;
       includeOptionalNodes_ = other.includeOptionalNodes_;
-      generateGreasingTasks_ = other.generateGreasingTasks_;
+      generateApplyTasks_ = other.generateApplyTasks_;
+      rootNodeId_ = other.rootNodeId_;
+      assembleSubassembliesAsUnitsWhenPossible_ = other.assembleSubassembliesAsUnitsWhenPossible_;
+      generateInspectTasks_ = other.generateInspectTasks_;
+      sourceContainerDefinitionIds_ = other.sourceContainerDefinitionIds_.Clone();
+      targetContainerDefinitionIds_ = other.targetContainerDefinitionIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -310,7 +350,7 @@ namespace Messages.Process.V1 {
     public const int IncludeOptionalNodesFieldNumber = 12;
     private bool includeOptionalNodes_;
     /// <summary>
-    /// If true, nodes marked as optional will be included
+    /// If true, nodes marked as optional will be included.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -321,19 +361,98 @@ namespace Messages.Process.V1 {
       }
     }
 
-    /// <summary>Field number for the "generate_greasing_tasks" field.</summary>
-    public const int GenerateGreasingTasksFieldNumber = 13;
-    private bool generateGreasingTasks_;
+    /// <summary>Field number for the "generate_apply_tasks" field.</summary>
+    public const int GenerateApplyTasksFieldNumber = 13;
+    private bool generateApplyTasks_;
     /// <summary>
-    /// If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
+    /// If true, the generator may insert APPLY tasks where appropriate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool GenerateGreasingTasks {
-      get { return generateGreasingTasks_; }
+    public bool GenerateApplyTasks {
+      get { return generateApplyTasks_; }
       set {
-        generateGreasingTasks_ = value;
+        generateApplyTasks_ = value;
       }
+    }
+
+    /// <summary>Field number for the "root_node_id" field.</summary>
+    public const int RootNodeIdFieldNumber = 14;
+    private string rootNodeId_ = "";
+    /// <summary>
+    /// Optional assembly scope. If empty, the generator may consider the full
+    /// product structure. If set, generation should focus on the specified
+    /// assembly node and its relevant assembly paths/subtrees.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RootNodeId {
+      get { return rootNodeId_; }
+      set {
+        rootNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "assemble_subassemblies_as_units_when_possible" field.</summary>
+    public const int AssembleSubassembliesAsUnitsWhenPossibleFieldNumber = 15;
+    private bool assembleSubassembliesAsUnitsWhenPossible_;
+    /// <summary>
+    /// If true, the generator should prefer assembling subassemblies as intact
+    /// units when feasible instead of always expanding them into all child parts.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool AssembleSubassembliesAsUnitsWhenPossible {
+      get { return assembleSubassembliesAsUnitsWhenPossible_; }
+      set {
+        assembleSubassembliesAsUnitsWhenPossible_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "generate_inspect_tasks" field.</summary>
+    public const int GenerateInspectTasksFieldNumber = 16;
+    private bool generateInspectTasks_;
+    /// <summary>
+    /// If true, the generator may insert INSPECT tasks where appropriate, for
+    /// example to assess fit, alignment, damage, or assembly condition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GenerateInspectTasks {
+      get { return generateInspectTasks_; }
+      set {
+        generateInspectTasks_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "source_container_definition_ids" field.</summary>
+    public const int SourceContainerDefinitionIdsFieldNumber = 17;
+    private static readonly pb::FieldCodec<string> _repeated_sourceContainerDefinitionIds_codec
+        = pb::FieldCodec.ForString(138);
+    private readonly pbc::RepeatedField<string> sourceContainerDefinitionIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Container definitions that may act as sources for parts during assembly,
+    /// for example trays, kits, or storage containers.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> SourceContainerDefinitionIds {
+      get { return sourceContainerDefinitionIds_; }
+    }
+
+    /// <summary>Field number for the "target_container_definition_ids" field.</summary>
+    public const int TargetContainerDefinitionIdsFieldNumber = 18;
+    private static readonly pb::FieldCodec<string> _repeated_targetContainerDefinitionIds_codec
+        = pb::FieldCodec.ForString(146);
+    private readonly pbc::RepeatedField<string> targetContainerDefinitionIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Container definitions that may act as targets/workholding during assembly,
+    /// for example fixtures or pallets used to hold the product being assembled.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> TargetContainerDefinitionIds {
+      get { return targetContainerDefinitionIds_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -363,7 +482,12 @@ namespace Messages.Process.V1 {
       if (GenerateVerifyTasks != other.GenerateVerifyTasks) return false;
       if (PreferMoveTasksWhenPossible != other.PreferMoveTasksWhenPossible) return false;
       if (IncludeOptionalNodes != other.IncludeOptionalNodes) return false;
-      if (GenerateGreasingTasks != other.GenerateGreasingTasks) return false;
+      if (GenerateApplyTasks != other.GenerateApplyTasks) return false;
+      if (RootNodeId != other.RootNodeId) return false;
+      if (AssembleSubassembliesAsUnitsWhenPossible != other.AssembleSubassembliesAsUnitsWhenPossible) return false;
+      if (GenerateInspectTasks != other.GenerateInspectTasks) return false;
+      if(!sourceContainerDefinitionIds_.Equals(other.sourceContainerDefinitionIds_)) return false;
+      if(!targetContainerDefinitionIds_.Equals(other.targetContainerDefinitionIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -383,7 +507,12 @@ namespace Messages.Process.V1 {
       if (GenerateVerifyTasks != false) hash ^= GenerateVerifyTasks.GetHashCode();
       if (PreferMoveTasksWhenPossible != false) hash ^= PreferMoveTasksWhenPossible.GetHashCode();
       if (IncludeOptionalNodes != false) hash ^= IncludeOptionalNodes.GetHashCode();
-      if (GenerateGreasingTasks != false) hash ^= GenerateGreasingTasks.GetHashCode();
+      if (GenerateApplyTasks != false) hash ^= GenerateApplyTasks.GetHashCode();
+      if (RootNodeId.Length != 0) hash ^= RootNodeId.GetHashCode();
+      if (AssembleSubassembliesAsUnitsWhenPossible != false) hash ^= AssembleSubassembliesAsUnitsWhenPossible.GetHashCode();
+      if (GenerateInspectTasks != false) hash ^= GenerateInspectTasks.GetHashCode();
+      hash ^= sourceContainerDefinitionIds_.GetHashCode();
+      hash ^= targetContainerDefinitionIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -450,10 +579,24 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
-      if (GenerateGreasingTasks != false) {
+      if (GenerateApplyTasks != false) {
         output.WriteRawTag(104);
-        output.WriteBool(GenerateGreasingTasks);
+        output.WriteBool(GenerateApplyTasks);
       }
+      if (RootNodeId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(RootNodeId);
+      }
+      if (AssembleSubassembliesAsUnitsWhenPossible != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(AssembleSubassembliesAsUnitsWhenPossible);
+      }
+      if (GenerateInspectTasks != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(GenerateInspectTasks);
+      }
+      sourceContainerDefinitionIds_.WriteTo(output, _repeated_sourceContainerDefinitionIds_codec);
+      targetContainerDefinitionIds_.WriteTo(output, _repeated_targetContainerDefinitionIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -512,10 +655,24 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(96);
         output.WriteBool(IncludeOptionalNodes);
       }
-      if (GenerateGreasingTasks != false) {
+      if (GenerateApplyTasks != false) {
         output.WriteRawTag(104);
-        output.WriteBool(GenerateGreasingTasks);
+        output.WriteBool(GenerateApplyTasks);
       }
+      if (RootNodeId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(RootNodeId);
+      }
+      if (AssembleSubassembliesAsUnitsWhenPossible != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(AssembleSubassembliesAsUnitsWhenPossible);
+      }
+      if (GenerateInspectTasks != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(GenerateInspectTasks);
+      }
+      sourceContainerDefinitionIds_.WriteTo(ref output, _repeated_sourceContainerDefinitionIds_codec);
+      targetContainerDefinitionIds_.WriteTo(ref output, _repeated_targetContainerDefinitionIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -562,9 +719,20 @@ namespace Messages.Process.V1 {
       if (IncludeOptionalNodes != false) {
         size += 1 + 1;
       }
-      if (GenerateGreasingTasks != false) {
+      if (GenerateApplyTasks != false) {
         size += 1 + 1;
       }
+      if (RootNodeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RootNodeId);
+      }
+      if (AssembleSubassembliesAsUnitsWhenPossible != false) {
+        size += 1 + 1;
+      }
+      if (GenerateInspectTasks != false) {
+        size += 2 + 1;
+      }
+      size += sourceContainerDefinitionIds_.CalculateSize(_repeated_sourceContainerDefinitionIds_codec);
+      size += targetContainerDefinitionIds_.CalculateSize(_repeated_targetContainerDefinitionIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -616,9 +784,20 @@ namespace Messages.Process.V1 {
       if (other.IncludeOptionalNodes != false) {
         IncludeOptionalNodes = other.IncludeOptionalNodes;
       }
-      if (other.GenerateGreasingTasks != false) {
-        GenerateGreasingTasks = other.GenerateGreasingTasks;
+      if (other.GenerateApplyTasks != false) {
+        GenerateApplyTasks = other.GenerateApplyTasks;
       }
+      if (other.RootNodeId.Length != 0) {
+        RootNodeId = other.RootNodeId;
+      }
+      if (other.AssembleSubassembliesAsUnitsWhenPossible != false) {
+        AssembleSubassembliesAsUnitsWhenPossible = other.AssembleSubassembliesAsUnitsWhenPossible;
+      }
+      if (other.GenerateInspectTasks != false) {
+        GenerateInspectTasks = other.GenerateInspectTasks;
+      }
+      sourceContainerDefinitionIds_.Add(other.sourceContainerDefinitionIds_);
+      targetContainerDefinitionIds_.Add(other.targetContainerDefinitionIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -690,7 +869,27 @@ namespace Messages.Process.V1 {
             break;
           }
           case 104: {
-            GenerateGreasingTasks = input.ReadBool();
+            GenerateApplyTasks = input.ReadBool();
+            break;
+          }
+          case 114: {
+            RootNodeId = input.ReadString();
+            break;
+          }
+          case 120: {
+            AssembleSubassembliesAsUnitsWhenPossible = input.ReadBool();
+            break;
+          }
+          case 128: {
+            GenerateInspectTasks = input.ReadBool();
+            break;
+          }
+          case 138: {
+            sourceContainerDefinitionIds_.AddEntriesFrom(input, _repeated_sourceContainerDefinitionIds_codec);
+            break;
+          }
+          case 146: {
+            targetContainerDefinitionIds_.AddEntriesFrom(input, _repeated_targetContainerDefinitionIds_codec);
             break;
           }
         }
@@ -764,7 +963,927 @@ namespace Messages.Process.V1 {
             break;
           }
           case 104: {
-            GenerateGreasingTasks = input.ReadBool();
+            GenerateApplyTasks = input.ReadBool();
+            break;
+          }
+          case 114: {
+            RootNodeId = input.ReadString();
+            break;
+          }
+          case 120: {
+            AssembleSubassembliesAsUnitsWhenPossible = input.ReadBool();
+            break;
+          }
+          case 128: {
+            GenerateInspectTasks = input.ReadBool();
+            break;
+          }
+          case 138: {
+            sourceContainerDefinitionIds_.AddEntriesFrom(ref input, _repeated_sourceContainerDefinitionIds_codec);
+            break;
+          }
+          case 146: {
+            targetContainerDefinitionIds_.AddEntriesFrom(ref input, _repeated_targetContainerDefinitionIds_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// DraftDisassemblyProcessRecipeGenerateRequest asks the backend to generate a
+  /// draft ProcessRecipe of type DISASSEMBLY from a ProductDefinition plus
+  /// generation options.
+  ///
+  /// This is intended for authoring-time generation, not runtime execution.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class DraftDisassemblyProcessRecipeGenerateRequest : pb::IMessage<DraftDisassemblyProcessRecipeGenerateRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DraftDisassemblyProcessRecipeGenerateRequest> _parser = new pb::MessageParser<DraftDisassemblyProcessRecipeGenerateRequest>(() => new DraftDisassemblyProcessRecipeGenerateRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DraftDisassemblyProcessRecipeGenerateRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Process.V1.GenerationRequestsReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftDisassemblyProcessRecipeGenerateRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftDisassemblyProcessRecipeGenerateRequest(DraftDisassemblyProcessRecipeGenerateRequest other) : this() {
+      productDefinitionId_ = other.productDefinitionId_;
+      recipeId_ = other.recipeId_;
+      recipeName_ = other.recipeName_;
+      recipeIcon_ = other.recipeIcon_;
+      recipeDescription_ = other.recipeDescription_;
+      variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
+      insertHoldBeforeUnfastenGroup_ = other.insertHoldBeforeUnfastenGroup_;
+      groupFastenersThreshold_ = other.groupFastenersThreshold_;
+      groupRepeatedPartsThreshold_ = other.groupRepeatedPartsThreshold_;
+      generateVerifyTasks_ = other.generateVerifyTasks_;
+      preferMoveTasksWhenPossible_ = other.preferMoveTasksWhenPossible_;
+      includeOptionalNodes_ = other.includeOptionalNodes_;
+      generateWipeTasks_ = other.generateWipeTasks_;
+      targetContainerDefinitionIds_ = other.targetContainerDefinitionIds_.Clone();
+      rootNodeId_ = other.rootNodeId_;
+      preserveSubassembliesWhenPossible_ = other.preserveSubassembliesWhenPossible_;
+      reverseChildSequenceOrder_ = other.reverseChildSequenceOrder_;
+      generateInspectTasks_ = other.generateInspectTasks_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftDisassemblyProcessRecipeGenerateRequest Clone() {
+      return new DraftDisassemblyProcessRecipeGenerateRequest(this);
+    }
+
+    /// <summary>Field number for the "product_definition_id" field.</summary>
+    public const int ProductDefinitionIdFieldNumber = 1;
+    private string productDefinitionId_ = "";
+    /// <summary>
+    /// The product structure that should be transformed into a draft recipe.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ProductDefinitionId {
+      get { return productDefinitionId_; }
+      set {
+        productDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recipe_id" field.</summary>
+    public const int RecipeIdFieldNumber = 2;
+    private string recipeId_ = "";
+    /// <summary>
+    /// Optional explicit recipe id for the generated recipe.
+    /// If empty, the generator/backend may assign one.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RecipeId {
+      get { return recipeId_; }
+      set {
+        recipeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recipe_name" field.</summary>
+    public const int RecipeNameFieldNumber = 3;
+    private string recipeName_ = "";
+    /// <summary>
+    /// Human-readable name for the generated recipe.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RecipeName {
+      get { return recipeName_; }
+      set {
+        recipeName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recipe_icon" field.</summary>
+    public const int RecipeIconFieldNumber = 4;
+    private string recipeIcon_ = "";
+    /// <summary>
+    /// Optional icon for the generated recipe.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RecipeIcon {
+      get { return recipeIcon_; }
+      set {
+        recipeIcon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recipe_description" field.</summary>
+    public const int RecipeDescriptionFieldNumber = 5;
+    private string recipeDescription_ = "";
+    /// <summary>
+    /// Optional human-readable description for the generated recipe.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RecipeDescription {
+      get { return recipeDescription_; }
+      set {
+        recipeDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "variant_configuration" field.</summary>
+    public const int VariantConfigurationFieldNumber = 6;
+    private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
+    /// <summary>
+    /// Selected product variants used to filter applicability and annotate the
+    /// generated recipe applicability.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Variance.V1.VariantConfiguration VariantConfiguration {
+      get { return variantConfiguration_; }
+      set {
+        variantConfiguration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "insert_hold_before_unfasten_group" field.</summary>
+    public const int InsertHoldBeforeUnfastenGroupFieldNumber = 7;
+    private bool insertHoldBeforeUnfastenGroup_;
+    /// <summary>
+    /// If true, the generator may insert HOLD tasks before grouped UNFASTEN work
+    /// when that improves stability and task flow during disassembly.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool InsertHoldBeforeUnfastenGroup {
+      get { return insertHoldBeforeUnfastenGroup_; }
+      set {
+        insertHoldBeforeUnfastenGroup_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_fasteners_threshold" field.</summary>
+    public const int GroupFastenersThresholdFieldNumber = 8;
+    private int groupFastenersThreshold_;
+    /// <summary>
+    /// Minimum number of sibling fasteners required before grouping them into a
+    /// shared fastener-removal-oriented sequence.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int GroupFastenersThreshold {
+      get { return groupFastenersThreshold_; }
+      set {
+        groupFastenersThreshold_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_repeated_parts_threshold" field.</summary>
+    public const int GroupRepeatedPartsThresholdFieldNumber = 9;
+    private int groupRepeatedPartsThreshold_;
+    /// <summary>
+    /// Minimum number of repeated sibling parts required before grouping them into
+    /// a shared repeated-parts disassembly sequence.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int GroupRepeatedPartsThreshold {
+      get { return groupRepeatedPartsThreshold_; }
+      set {
+        groupRepeatedPartsThreshold_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "generate_verify_tasks" field.</summary>
+    public const int GenerateVerifyTasksFieldNumber = 10;
+    private bool generateVerifyTasks_;
+    /// <summary>
+    /// If true, the generator may insert VERIFY tasks where appropriate, for
+    /// example to confirm that a part, fastener, or material has been removed.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GenerateVerifyTasks {
+      get { return generateVerifyTasks_; }
+      set {
+        generateVerifyTasks_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prefer_move_tasks_when_possible" field.</summary>
+    public const int PreferMoveTasksWhenPossibleFieldNumber = 11;
+    private bool preferMoveTasksWhenPossible_;
+    /// <summary>
+    /// If true, the generator may prefer MOVE tasks when the operation can be
+    /// reasonably interpreted as repositioning rather than removal.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PreferMoveTasksWhenPossible {
+      get { return preferMoveTasksWhenPossible_; }
+      set {
+        preferMoveTasksWhenPossible_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "include_optional_nodes" field.</summary>
+    public const int IncludeOptionalNodesFieldNumber = 12;
+    private bool includeOptionalNodes_;
+    /// <summary>
+    /// If true, nodes marked as optional will be included.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IncludeOptionalNodes {
+      get { return includeOptionalNodes_; }
+      set {
+        includeOptionalNodes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "generate_wipe_tasks" field.</summary>
+    public const int GenerateWipeTasksFieldNumber = 13;
+    private bool generateWipeTasks_;
+    /// <summary>
+    /// If true, the generator may insert WIPE tasks where appropriate.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GenerateWipeTasks {
+      get { return generateWipeTasks_; }
+      set {
+        generateWipeTasks_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_container_definition_ids" field.</summary>
+    public const int TargetContainerDefinitionIdsFieldNumber = 14;
+    private static readonly pb::FieldCodec<string> _repeated_targetContainerDefinitionIds_codec
+        = pb::FieldCodec.ForString(114);
+    private readonly pbc::RepeatedField<string> targetContainerDefinitionIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Container definitions that removed parts, fasteners, or subassemblies may
+    /// be staged into during disassembly. These can be fixtures, trays, kits, or
+    /// storage containers depending on the intended workflow.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> TargetContainerDefinitionIds {
+      get { return targetContainerDefinitionIds_; }
+    }
+
+    /// <summary>Field number for the "root_node_id" field.</summary>
+    public const int RootNodeIdFieldNumber = 15;
+    private string rootNodeId_ = "";
+    /// <summary>
+    /// Optional disassembly scope. If empty, the generator may consider the full
+    /// product structure. If set, generation should focus on the specified
+    /// assembly node and its relevant disassembly paths/subtrees.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RootNodeId {
+      get { return rootNodeId_; }
+      set {
+        rootNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "preserve_subassemblies_when_possible" field.</summary>
+    public const int PreserveSubassembliesWhenPossibleFieldNumber = 16;
+    private bool preserveSubassembliesWhenPossible_;
+    /// <summary>
+    /// If true, the generator should prefer removing subassemblies as intact units
+    /// when feasible instead of always decomposing them into all child parts.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PreserveSubassembliesWhenPossible {
+      get { return preserveSubassembliesWhenPossible_; }
+      set {
+        preserveSubassembliesWhenPossible_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reverse_child_sequence_order" field.</summary>
+    public const int ReverseChildSequenceOrderFieldNumber = 17;
+    private bool reverseChildSequenceOrder_;
+    /// <summary>
+    /// If true, the generator may prefer reversing child ordering hints from the
+    /// product structure when deriving disassembly sequences.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool ReverseChildSequenceOrder {
+      get { return reverseChildSequenceOrder_; }
+      set {
+        reverseChildSequenceOrder_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "generate_inspect_tasks" field.</summary>
+    public const int GenerateInspectTasksFieldNumber = 18;
+    private bool generateInspectTasks_;
+    /// <summary>
+    /// If true, the generator may insert INSPECT tasks where appropriate, for
+    /// example to assess wear, damage, residue, or part condition after removal.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GenerateInspectTasks {
+      get { return generateInspectTasks_; }
+      set {
+        generateInspectTasks_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DraftDisassemblyProcessRecipeGenerateRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DraftDisassemblyProcessRecipeGenerateRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ProductDefinitionId != other.ProductDefinitionId) return false;
+      if (RecipeId != other.RecipeId) return false;
+      if (RecipeName != other.RecipeName) return false;
+      if (RecipeIcon != other.RecipeIcon) return false;
+      if (RecipeDescription != other.RecipeDescription) return false;
+      if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
+      if (InsertHoldBeforeUnfastenGroup != other.InsertHoldBeforeUnfastenGroup) return false;
+      if (GroupFastenersThreshold != other.GroupFastenersThreshold) return false;
+      if (GroupRepeatedPartsThreshold != other.GroupRepeatedPartsThreshold) return false;
+      if (GenerateVerifyTasks != other.GenerateVerifyTasks) return false;
+      if (PreferMoveTasksWhenPossible != other.PreferMoveTasksWhenPossible) return false;
+      if (IncludeOptionalNodes != other.IncludeOptionalNodes) return false;
+      if (GenerateWipeTasks != other.GenerateWipeTasks) return false;
+      if(!targetContainerDefinitionIds_.Equals(other.targetContainerDefinitionIds_)) return false;
+      if (RootNodeId != other.RootNodeId) return false;
+      if (PreserveSubassembliesWhenPossible != other.PreserveSubassembliesWhenPossible) return false;
+      if (ReverseChildSequenceOrder != other.ReverseChildSequenceOrder) return false;
+      if (GenerateInspectTasks != other.GenerateInspectTasks) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ProductDefinitionId.Length != 0) hash ^= ProductDefinitionId.GetHashCode();
+      if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
+      if (RecipeName.Length != 0) hash ^= RecipeName.GetHashCode();
+      if (RecipeIcon.Length != 0) hash ^= RecipeIcon.GetHashCode();
+      if (RecipeDescription.Length != 0) hash ^= RecipeDescription.GetHashCode();
+      if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
+      if (InsertHoldBeforeUnfastenGroup != false) hash ^= InsertHoldBeforeUnfastenGroup.GetHashCode();
+      if (GroupFastenersThreshold != 0) hash ^= GroupFastenersThreshold.GetHashCode();
+      if (GroupRepeatedPartsThreshold != 0) hash ^= GroupRepeatedPartsThreshold.GetHashCode();
+      if (GenerateVerifyTasks != false) hash ^= GenerateVerifyTasks.GetHashCode();
+      if (PreferMoveTasksWhenPossible != false) hash ^= PreferMoveTasksWhenPossible.GetHashCode();
+      if (IncludeOptionalNodes != false) hash ^= IncludeOptionalNodes.GetHashCode();
+      if (GenerateWipeTasks != false) hash ^= GenerateWipeTasks.GetHashCode();
+      hash ^= targetContainerDefinitionIds_.GetHashCode();
+      if (RootNodeId.Length != 0) hash ^= RootNodeId.GetHashCode();
+      if (PreserveSubassembliesWhenPossible != false) hash ^= PreserveSubassembliesWhenPossible.GetHashCode();
+      if (ReverseChildSequenceOrder != false) hash ^= ReverseChildSequenceOrder.GetHashCode();
+      if (GenerateInspectTasks != false) hash ^= GenerateInspectTasks.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ProductDefinitionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ProductDefinitionId);
+      }
+      if (RecipeId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RecipeId);
+      }
+      if (RecipeName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RecipeName);
+      }
+      if (RecipeIcon.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(RecipeIcon);
+      }
+      if (RecipeDescription.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RecipeDescription);
+      }
+      if (variantConfiguration_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(VariantConfiguration);
+      }
+      if (InsertHoldBeforeUnfastenGroup != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(InsertHoldBeforeUnfastenGroup);
+      }
+      if (GroupFastenersThreshold != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(GroupFastenersThreshold);
+      }
+      if (GroupRepeatedPartsThreshold != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(GroupRepeatedPartsThreshold);
+      }
+      if (GenerateVerifyTasks != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(GenerateVerifyTasks);
+      }
+      if (PreferMoveTasksWhenPossible != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(PreferMoveTasksWhenPossible);
+      }
+      if (IncludeOptionalNodes != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IncludeOptionalNodes);
+      }
+      if (GenerateWipeTasks != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(GenerateWipeTasks);
+      }
+      targetContainerDefinitionIds_.WriteTo(output, _repeated_targetContainerDefinitionIds_codec);
+      if (RootNodeId.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(RootNodeId);
+      }
+      if (PreserveSubassembliesWhenPossible != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(PreserveSubassembliesWhenPossible);
+      }
+      if (ReverseChildSequenceOrder != false) {
+        output.WriteRawTag(136, 1);
+        output.WriteBool(ReverseChildSequenceOrder);
+      }
+      if (GenerateInspectTasks != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(GenerateInspectTasks);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ProductDefinitionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ProductDefinitionId);
+      }
+      if (RecipeId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RecipeId);
+      }
+      if (RecipeName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(RecipeName);
+      }
+      if (RecipeIcon.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(RecipeIcon);
+      }
+      if (RecipeDescription.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RecipeDescription);
+      }
+      if (variantConfiguration_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(VariantConfiguration);
+      }
+      if (InsertHoldBeforeUnfastenGroup != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(InsertHoldBeforeUnfastenGroup);
+      }
+      if (GroupFastenersThreshold != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(GroupFastenersThreshold);
+      }
+      if (GroupRepeatedPartsThreshold != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(GroupRepeatedPartsThreshold);
+      }
+      if (GenerateVerifyTasks != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(GenerateVerifyTasks);
+      }
+      if (PreferMoveTasksWhenPossible != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(PreferMoveTasksWhenPossible);
+      }
+      if (IncludeOptionalNodes != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IncludeOptionalNodes);
+      }
+      if (GenerateWipeTasks != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(GenerateWipeTasks);
+      }
+      targetContainerDefinitionIds_.WriteTo(ref output, _repeated_targetContainerDefinitionIds_codec);
+      if (RootNodeId.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(RootNodeId);
+      }
+      if (PreserveSubassembliesWhenPossible != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(PreserveSubassembliesWhenPossible);
+      }
+      if (ReverseChildSequenceOrder != false) {
+        output.WriteRawTag(136, 1);
+        output.WriteBool(ReverseChildSequenceOrder);
+      }
+      if (GenerateInspectTasks != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(GenerateInspectTasks);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ProductDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProductDefinitionId);
+      }
+      if (RecipeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeId);
+      }
+      if (RecipeName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeName);
+      }
+      if (RecipeIcon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeIcon);
+      }
+      if (RecipeDescription.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeDescription);
+      }
+      if (variantConfiguration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
+      }
+      if (InsertHoldBeforeUnfastenGroup != false) {
+        size += 1 + 1;
+      }
+      if (GroupFastenersThreshold != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GroupFastenersThreshold);
+      }
+      if (GroupRepeatedPartsThreshold != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GroupRepeatedPartsThreshold);
+      }
+      if (GenerateVerifyTasks != false) {
+        size += 1 + 1;
+      }
+      if (PreferMoveTasksWhenPossible != false) {
+        size += 1 + 1;
+      }
+      if (IncludeOptionalNodes != false) {
+        size += 1 + 1;
+      }
+      if (GenerateWipeTasks != false) {
+        size += 1 + 1;
+      }
+      size += targetContainerDefinitionIds_.CalculateSize(_repeated_targetContainerDefinitionIds_codec);
+      if (RootNodeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RootNodeId);
+      }
+      if (PreserveSubassembliesWhenPossible != false) {
+        size += 2 + 1;
+      }
+      if (ReverseChildSequenceOrder != false) {
+        size += 2 + 1;
+      }
+      if (GenerateInspectTasks != false) {
+        size += 2 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DraftDisassemblyProcessRecipeGenerateRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ProductDefinitionId.Length != 0) {
+        ProductDefinitionId = other.ProductDefinitionId;
+      }
+      if (other.RecipeId.Length != 0) {
+        RecipeId = other.RecipeId;
+      }
+      if (other.RecipeName.Length != 0) {
+        RecipeName = other.RecipeName;
+      }
+      if (other.RecipeIcon.Length != 0) {
+        RecipeIcon = other.RecipeIcon;
+      }
+      if (other.RecipeDescription.Length != 0) {
+        RecipeDescription = other.RecipeDescription;
+      }
+      if (other.variantConfiguration_ != null) {
+        if (variantConfiguration_ == null) {
+          VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+        }
+        VariantConfiguration.MergeFrom(other.VariantConfiguration);
+      }
+      if (other.InsertHoldBeforeUnfastenGroup != false) {
+        InsertHoldBeforeUnfastenGroup = other.InsertHoldBeforeUnfastenGroup;
+      }
+      if (other.GroupFastenersThreshold != 0) {
+        GroupFastenersThreshold = other.GroupFastenersThreshold;
+      }
+      if (other.GroupRepeatedPartsThreshold != 0) {
+        GroupRepeatedPartsThreshold = other.GroupRepeatedPartsThreshold;
+      }
+      if (other.GenerateVerifyTasks != false) {
+        GenerateVerifyTasks = other.GenerateVerifyTasks;
+      }
+      if (other.PreferMoveTasksWhenPossible != false) {
+        PreferMoveTasksWhenPossible = other.PreferMoveTasksWhenPossible;
+      }
+      if (other.IncludeOptionalNodes != false) {
+        IncludeOptionalNodes = other.IncludeOptionalNodes;
+      }
+      if (other.GenerateWipeTasks != false) {
+        GenerateWipeTasks = other.GenerateWipeTasks;
+      }
+      targetContainerDefinitionIds_.Add(other.targetContainerDefinitionIds_);
+      if (other.RootNodeId.Length != 0) {
+        RootNodeId = other.RootNodeId;
+      }
+      if (other.PreserveSubassembliesWhenPossible != false) {
+        PreserveSubassembliesWhenPossible = other.PreserveSubassembliesWhenPossible;
+      }
+      if (other.ReverseChildSequenceOrder != false) {
+        ReverseChildSequenceOrder = other.ReverseChildSequenceOrder;
+      }
+      if (other.GenerateInspectTasks != false) {
+        GenerateInspectTasks = other.GenerateInspectTasks;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ProductDefinitionId = input.ReadString();
+            break;
+          }
+          case 18: {
+            RecipeId = input.ReadString();
+            break;
+          }
+          case 26: {
+            RecipeName = input.ReadString();
+            break;
+          }
+          case 34: {
+            RecipeIcon = input.ReadString();
+            break;
+          }
+          case 42: {
+            RecipeDescription = input.ReadString();
+            break;
+          }
+          case 50: {
+            if (variantConfiguration_ == null) {
+              VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+            }
+            input.ReadMessage(VariantConfiguration);
+            break;
+          }
+          case 56: {
+            InsertHoldBeforeUnfastenGroup = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GroupFastenersThreshold = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            GroupRepeatedPartsThreshold = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            GenerateVerifyTasks = input.ReadBool();
+            break;
+          }
+          case 88: {
+            PreferMoveTasksWhenPossible = input.ReadBool();
+            break;
+          }
+          case 96: {
+            IncludeOptionalNodes = input.ReadBool();
+            break;
+          }
+          case 104: {
+            GenerateWipeTasks = input.ReadBool();
+            break;
+          }
+          case 114: {
+            targetContainerDefinitionIds_.AddEntriesFrom(input, _repeated_targetContainerDefinitionIds_codec);
+            break;
+          }
+          case 122: {
+            RootNodeId = input.ReadString();
+            break;
+          }
+          case 128: {
+            PreserveSubassembliesWhenPossible = input.ReadBool();
+            break;
+          }
+          case 136: {
+            ReverseChildSequenceOrder = input.ReadBool();
+            break;
+          }
+          case 144: {
+            GenerateInspectTasks = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ProductDefinitionId = input.ReadString();
+            break;
+          }
+          case 18: {
+            RecipeId = input.ReadString();
+            break;
+          }
+          case 26: {
+            RecipeName = input.ReadString();
+            break;
+          }
+          case 34: {
+            RecipeIcon = input.ReadString();
+            break;
+          }
+          case 42: {
+            RecipeDescription = input.ReadString();
+            break;
+          }
+          case 50: {
+            if (variantConfiguration_ == null) {
+              VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+            }
+            input.ReadMessage(VariantConfiguration);
+            break;
+          }
+          case 56: {
+            InsertHoldBeforeUnfastenGroup = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GroupFastenersThreshold = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            GroupRepeatedPartsThreshold = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            GenerateVerifyTasks = input.ReadBool();
+            break;
+          }
+          case 88: {
+            PreferMoveTasksWhenPossible = input.ReadBool();
+            break;
+          }
+          case 96: {
+            IncludeOptionalNodes = input.ReadBool();
+            break;
+          }
+          case 104: {
+            GenerateWipeTasks = input.ReadBool();
+            break;
+          }
+          case 114: {
+            targetContainerDefinitionIds_.AddEntriesFrom(ref input, _repeated_targetContainerDefinitionIds_codec);
+            break;
+          }
+          case 122: {
+            RootNodeId = input.ReadString();
+            break;
+          }
+          case 128: {
+            PreserveSubassembliesWhenPossible = input.ReadBool();
+            break;
+          }
+          case 136: {
+            ReverseChildSequenceOrder = input.ReadBool();
+            break;
+          }
+          case 144: {
+            GenerateInspectTasks = input.ReadBool();
             break;
           }
         }
@@ -793,7 +1912,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.GenerationRequestsReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Process.V1.GenerationRequestsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1068,7 +2187,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.GenerationRequestsReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.Process.V1.GenerationRequestsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -8,6 +8,7 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -57,12 +58,28 @@ type DraftProcessRecipeGenerateRequest struct {
 	// If true, the generator may prefer MOVE tasks when the operation can be
 	// reasonably interpreted as repositioning rather than installation.
 	PreferMoveTasksWhenPossible bool `protobuf:"varint,11,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
-	// If true, nodes marked as optional will be included
+	// If true, nodes marked as optional will be included.
 	IncludeOptionalNodes bool `protobuf:"varint,12,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
-	// If true, the generator may insert APPLY (assembly), WIPE (disassembly) tasks where appropriate
-	GenerateGreasingTasks bool `protobuf:"varint,13,opt,name=generate_greasing_tasks,json=generateGreasingTasks,proto3" json:"generate_greasing_tasks,omitempty"`
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	// If true, the generator may insert APPLY tasks where appropriate.
+	GenerateApplyTasks bool `protobuf:"varint,13,opt,name=generate_apply_tasks,json=generateApplyTasks,proto3" json:"generate_apply_tasks,omitempty"`
+	// Optional assembly scope. If empty, the generator may consider the full
+	// product structure. If set, generation should focus on the specified
+	// assembly node and its relevant assembly paths/subtrees.
+	RootNodeId string `protobuf:"bytes,14,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
+	// If true, the generator should prefer assembling subassemblies as intact
+	// units when feasible instead of always expanding them into all child parts.
+	AssembleSubassembliesAsUnitsWhenPossible bool `protobuf:"varint,15,opt,name=assemble_subassemblies_as_units_when_possible,json=assembleSubassembliesAsUnitsWhenPossible,proto3" json:"assemble_subassemblies_as_units_when_possible,omitempty"`
+	// If true, the generator may insert INSPECT tasks where appropriate, for
+	// example to assess fit, alignment, damage, or assembly condition.
+	GenerateInspectTasks bool `protobuf:"varint,16,opt,name=generate_inspect_tasks,json=generateInspectTasks,proto3" json:"generate_inspect_tasks,omitempty"`
+	// Container definitions that may act as sources for parts during assembly,
+	// for example trays, kits, or storage containers.
+	SourceContainerDefinitionIds []string `protobuf:"bytes,17,rep,name=source_container_definition_ids,json=sourceContainerDefinitionIds,proto3" json:"source_container_definition_ids,omitempty"`
+	// Container definitions that may act as targets/workholding during assembly,
+	// for example fixtures or pallets used to hold the product being assembled.
+	TargetContainerDefinitionIds []string `protobuf:"bytes,18,rep,name=target_container_definition_ids,json=targetContainerDefinitionIds,proto3" json:"target_container_definition_ids,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
 }
 
 func (x *DraftProcessRecipeGenerateRequest) Reset() {
@@ -179,9 +196,261 @@ func (x *DraftProcessRecipeGenerateRequest) GetIncludeOptionalNodes() bool {
 	return false
 }
 
-func (x *DraftProcessRecipeGenerateRequest) GetGenerateGreasingTasks() bool {
+func (x *DraftProcessRecipeGenerateRequest) GetGenerateApplyTasks() bool {
 	if x != nil {
-		return x.GenerateGreasingTasks
+		return x.GenerateApplyTasks
+	}
+	return false
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetRootNodeId() string {
+	if x != nil {
+		return x.RootNodeId
+	}
+	return ""
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetAssembleSubassembliesAsUnitsWhenPossible() bool {
+	if x != nil {
+		return x.AssembleSubassembliesAsUnitsWhenPossible
+	}
+	return false
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetGenerateInspectTasks() bool {
+	if x != nil {
+		return x.GenerateInspectTasks
+	}
+	return false
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetSourceContainerDefinitionIds() []string {
+	if x != nil {
+		return x.SourceContainerDefinitionIds
+	}
+	return nil
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetTargetContainerDefinitionIds() []string {
+	if x != nil {
+		return x.TargetContainerDefinitionIds
+	}
+	return nil
+}
+
+// DraftDisassemblyProcessRecipeGenerateRequest asks the backend to generate a
+// draft ProcessRecipe of type DISASSEMBLY from a ProductDefinition plus
+// generation options.
+//
+// This is intended for authoring-time generation, not runtime execution.
+type DraftDisassemblyProcessRecipeGenerateRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The product structure that should be transformed into a draft recipe.
+	ProductDefinitionId string `protobuf:"bytes,1,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
+	// Optional explicit recipe id for the generated recipe.
+	// If empty, the generator/backend may assign one.
+	RecipeId string `protobuf:"bytes,2,opt,name=recipe_id,json=recipeId,proto3" json:"recipe_id,omitempty"`
+	// Human-readable name for the generated recipe.
+	RecipeName string `protobuf:"bytes,3,opt,name=recipe_name,json=recipeName,proto3" json:"recipe_name,omitempty"`
+	// Optional icon for the generated recipe.
+	RecipeIcon string `protobuf:"bytes,4,opt,name=recipe_icon,json=recipeIcon,proto3" json:"recipe_icon,omitempty"`
+	// Optional human-readable description for the generated recipe.
+	RecipeDescription string `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
+	// Selected product variants used to filter applicability and annotate the
+	// generated recipe applicability.
+	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	// If true, the generator may insert HOLD tasks before grouped UNFASTEN work
+	// when that improves stability and task flow during disassembly.
+	InsertHoldBeforeUnfastenGroup bool `protobuf:"varint,7,opt,name=insert_hold_before_unfasten_group,json=insertHoldBeforeUnfastenGroup,proto3" json:"insert_hold_before_unfasten_group,omitempty"`
+	// Minimum number of sibling fasteners required before grouping them into a
+	// shared fastener-removal-oriented sequence.
+	GroupFastenersThreshold int32 `protobuf:"varint,8,opt,name=group_fasteners_threshold,json=groupFastenersThreshold,proto3" json:"group_fasteners_threshold,omitempty"`
+	// Minimum number of repeated sibling parts required before grouping them into
+	// a shared repeated-parts disassembly sequence.
+	GroupRepeatedPartsThreshold int32 `protobuf:"varint,9,opt,name=group_repeated_parts_threshold,json=groupRepeatedPartsThreshold,proto3" json:"group_repeated_parts_threshold,omitempty"`
+	// If true, the generator may insert VERIFY tasks where appropriate, for
+	// example to confirm that a part, fastener, or material has been removed.
+	GenerateVerifyTasks bool `protobuf:"varint,10,opt,name=generate_verify_tasks,json=generateVerifyTasks,proto3" json:"generate_verify_tasks,omitempty"`
+	// If true, the generator may prefer MOVE tasks when the operation can be
+	// reasonably interpreted as repositioning rather than removal.
+	PreferMoveTasksWhenPossible bool `protobuf:"varint,11,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
+	// If true, nodes marked as optional will be included.
+	IncludeOptionalNodes bool `protobuf:"varint,12,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
+	// If true, the generator may insert WIPE tasks where appropriate.
+	GenerateWipeTasks bool `protobuf:"varint,13,opt,name=generate_wipe_tasks,json=generateWipeTasks,proto3" json:"generate_wipe_tasks,omitempty"`
+	// Container definitions that removed parts, fasteners, or subassemblies may
+	// be staged into during disassembly. These can be fixtures, trays, kits, or
+	// storage containers depending on the intended workflow.
+	TargetContainerDefinitionIds []string `protobuf:"bytes,14,rep,name=target_container_definition_ids,json=targetContainerDefinitionIds,proto3" json:"target_container_definition_ids,omitempty"`
+	// Optional disassembly scope. If empty, the generator may consider the full
+	// product structure. If set, generation should focus on the specified
+	// assembly node and its relevant disassembly paths/subtrees.
+	RootNodeId string `protobuf:"bytes,15,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
+	// If true, the generator should prefer removing subassemblies as intact units
+	// when feasible instead of always decomposing them into all child parts.
+	PreserveSubassembliesWhenPossible bool `protobuf:"varint,16,opt,name=preserve_subassemblies_when_possible,json=preserveSubassembliesWhenPossible,proto3" json:"preserve_subassemblies_when_possible,omitempty"`
+	// If true, the generator may prefer reversing child ordering hints from the
+	// product structure when deriving disassembly sequences.
+	ReverseChildSequenceOrder bool `protobuf:"varint,17,opt,name=reverse_child_sequence_order,json=reverseChildSequenceOrder,proto3" json:"reverse_child_sequence_order,omitempty"`
+	// If true, the generator may insert INSPECT tasks where appropriate, for
+	// example to assess wear, damage, residue, or part condition after removal.
+	GenerateInspectTasks bool `protobuf:"varint,18,opt,name=generate_inspect_tasks,json=generateInspectTasks,proto3" json:"generate_inspect_tasks,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) Reset() {
+	*x = DraftDisassemblyProcessRecipeGenerateRequest{}
+	mi := &file_process_v1_generation_requests_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DraftDisassemblyProcessRecipeGenerateRequest) ProtoMessage() {}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_generation_requests_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DraftDisassemblyProcessRecipeGenerateRequest.ProtoReflect.Descriptor instead.
+func (*DraftDisassemblyProcessRecipeGenerateRequest) Descriptor() ([]byte, []int) {
+	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetProductDefinitionId() string {
+	if x != nil {
+		return x.ProductDefinitionId
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRecipeId() string {
+	if x != nil {
+		return x.RecipeId
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRecipeName() string {
+	if x != nil {
+		return x.RecipeName
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRecipeIcon() string {
+	if x != nil {
+		return x.RecipeIcon
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRecipeDescription() string {
+	if x != nil {
+		return x.RecipeDescription
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetVariantConfiguration() *v1.VariantConfiguration {
+	if x != nil {
+		return x.VariantConfiguration
+	}
+	return nil
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetInsertHoldBeforeUnfastenGroup() bool {
+	if x != nil {
+		return x.InsertHoldBeforeUnfastenGroup
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetGroupFastenersThreshold() int32 {
+	if x != nil {
+		return x.GroupFastenersThreshold
+	}
+	return 0
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetGroupRepeatedPartsThreshold() int32 {
+	if x != nil {
+		return x.GroupRepeatedPartsThreshold
+	}
+	return 0
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetGenerateVerifyTasks() bool {
+	if x != nil {
+		return x.GenerateVerifyTasks
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetPreferMoveTasksWhenPossible() bool {
+	if x != nil {
+		return x.PreferMoveTasksWhenPossible
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetIncludeOptionalNodes() bool {
+	if x != nil {
+		return x.IncludeOptionalNodes
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetGenerateWipeTasks() bool {
+	if x != nil {
+		return x.GenerateWipeTasks
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetTargetContainerDefinitionIds() []string {
+	if x != nil {
+		return x.TargetContainerDefinitionIds
+	}
+	return nil
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRootNodeId() string {
+	if x != nil {
+		return x.RootNodeId
+	}
+	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetPreserveSubassembliesWhenPossible() bool {
+	if x != nil {
+		return x.PreserveSubassembliesWhenPossible
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetReverseChildSequenceOrder() bool {
+	if x != nil {
+		return x.ReverseChildSequenceOrder
+	}
+	return false
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetGenerateInspectTasks() bool {
+	if x != nil {
+		return x.GenerateInspectTasks
 	}
 	return false
 }
@@ -199,7 +468,7 @@ type DraftProcessRecipeGenerateIssue struct {
 
 func (x *DraftProcessRecipeGenerateIssue) Reset() {
 	*x = DraftProcessRecipeGenerateIssue{}
-	mi := &file_process_v1_generation_requests_proto_msgTypes[1]
+	mi := &file_process_v1_generation_requests_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -211,7 +480,7 @@ func (x *DraftProcessRecipeGenerateIssue) String() string {
 func (*DraftProcessRecipeGenerateIssue) ProtoMessage() {}
 
 func (x *DraftProcessRecipeGenerateIssue) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_generation_requests_proto_msgTypes[1]
+	mi := &file_process_v1_generation_requests_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -224,7 +493,7 @@ func (x *DraftProcessRecipeGenerateIssue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftProcessRecipeGenerateIssue.ProtoReflect.Descriptor instead.
 func (*DraftProcessRecipeGenerateIssue) Descriptor() ([]byte, []int) {
-	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{1}
+	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DraftProcessRecipeGenerateIssue) GetMessage() string {
@@ -261,7 +530,7 @@ type DraftProcessRecipeGenerateResult struct {
 
 func (x *DraftProcessRecipeGenerateResult) Reset() {
 	*x = DraftProcessRecipeGenerateResult{}
-	mi := &file_process_v1_generation_requests_proto_msgTypes[2]
+	mi := &file_process_v1_generation_requests_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -273,7 +542,7 @@ func (x *DraftProcessRecipeGenerateResult) String() string {
 func (*DraftProcessRecipeGenerateResult) ProtoMessage() {}
 
 func (x *DraftProcessRecipeGenerateResult) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_generation_requests_proto_msgTypes[2]
+	mi := &file_process_v1_generation_requests_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -286,7 +555,7 @@ func (x *DraftProcessRecipeGenerateResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftProcessRecipeGenerateResult.ProtoReflect.Descriptor instead.
 func (*DraftProcessRecipeGenerateResult) Descriptor() ([]byte, []int) {
-	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{2}
+	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DraftProcessRecipeGenerateResult) GetRecipe() *ProcessRecipe {
@@ -322,10 +591,10 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a'variance/v1/variant_configuration.proto\"\xfe\x05\n" +
-	"!DraftProcessRecipeGenerateRequest\x12:\n" +
-	"\x15product_definition_id\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x13productDefinitionId\x12#\n" +
-	"\trecipe_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\brecipeId\x12\x1f\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xeb\b\n" +
+	"!DraftProcessRecipeGenerateRequest\x12@\n" +
+	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
+	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
 	"\vrecipe_name\x18\x03 \x01(\tR\n" +
 	"recipeName\x12\x1f\n" +
 	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
@@ -338,12 +607,41 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\x15generate_verify_tasks\x18\n" +
 	" \x01(\bR\x13generateVerifyTasks\x12D\n" +
 	"\x1fprefer_move_tasks_when_possible\x18\v \x01(\bR\x1bpreferMoveTasksWhenPossible\x124\n" +
-	"\x16include_optional_nodes\x18\f \x01(\bR\x14includeOptionalNodes\x126\n" +
-	"\x17generate_greasing_tasks\x18\r \x01(\bR\x15generateGreasingTasks\"\x92\x01\n" +
+	"\x16include_optional_nodes\x18\f \x01(\bR\x14includeOptionalNodes\x120\n" +
+	"\x14generate_apply_tasks\x18\r \x01(\bR\x12generateApplyTasks\x12 \n" +
+	"\froot_node_id\x18\x0e \x01(\tR\n" +
+	"rootNodeId\x12_\n" +
+	"-assemble_subassemblies_as_units_when_possible\x18\x0f \x01(\bR(assembleSubassembliesAsUnitsWhenPossible\x124\n" +
+	"\x16generate_inspect_tasks\x18\x10 \x01(\bR\x14generateInspectTasks\x12U\n" +
+	"\x1fsource_container_definition_ids\x18\x11 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1csourceContainerDefinitionIds\x12U\n" +
+	"\x1ftarget_container_definition_ids\x18\x12 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds\"\xd0\b\n" +
+	",DraftDisassemblyProcessRecipeGenerateRequest\x12@\n" +
+	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
+	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
+	"\vrecipe_name\x18\x03 \x01(\tR\n" +
+	"recipeName\x12\x1f\n" +
+	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
+	"recipeIcon\x12-\n" +
+	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n" +
+	"\x15variant_configuration\x18\x06 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12H\n" +
+	"!insert_hold_before_unfasten_group\x18\a \x01(\bR\x1dinsertHoldBeforeUnfastenGroup\x12:\n" +
+	"\x19group_fasteners_threshold\x18\b \x01(\x05R\x17groupFastenersThreshold\x12C\n" +
+	"\x1egroup_repeated_parts_threshold\x18\t \x01(\x05R\x1bgroupRepeatedPartsThreshold\x122\n" +
+	"\x15generate_verify_tasks\x18\n" +
+	" \x01(\bR\x13generateVerifyTasks\x12D\n" +
+	"\x1fprefer_move_tasks_when_possible\x18\v \x01(\bR\x1bpreferMoveTasksWhenPossible\x124\n" +
+	"\x16include_optional_nodes\x18\f \x01(\bR\x14includeOptionalNodes\x12.\n" +
+	"\x13generate_wipe_tasks\x18\r \x01(\bR\x11generateWipeTasks\x12U\n" +
+	"\x1ftarget_container_definition_ids\x18\x0e \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds\x12 \n" +
+	"\froot_node_id\x18\x0f \x01(\tR\n" +
+	"rootNodeId\x12O\n" +
+	"$preserve_subassemblies_when_possible\x18\x10 \x01(\bR!preserveSubassembliesWhenPossible\x12?\n" +
+	"\x1creverse_child_sequence_order\x18\x11 \x01(\bR\x19reverseChildSequenceOrder\x124\n" +
+	"\x16generate_inspect_tasks\x18\x12 \x01(\bR\x14generateInspectTasks\"\x9d\x01\n" +
 	"\x1fDraftProcessRecipeGenerateIssue\x12 \n" +
 	"\amessage\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\amessage\x12\x1f\n" +
-	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x12,\n" +
-	"\x12part_definition_id\x18\x03 \x01(\tR\x10partDefinitionId\"\x92\x02\n" +
+	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x127\n" +
+	"\x12part_definition_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\"\x92\x02\n" +
 	" DraftProcessRecipeGenerateResult\x129\n" +
 	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12<\n" +
 	"\tsequences\x18\x02 \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
@@ -364,27 +662,29 @@ func file_process_v1_generation_requests_proto_rawDescGZIP() []byte {
 	return file_process_v1_generation_requests_proto_rawDescData
 }
 
-var file_process_v1_generation_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_process_v1_generation_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_process_v1_generation_requests_proto_goTypes = []any{
-	(*DraftProcessRecipeGenerateRequest)(nil), // 0: process.v1.DraftProcessRecipeGenerateRequest
-	(*DraftProcessRecipeGenerateIssue)(nil),   // 1: process.v1.DraftProcessRecipeGenerateIssue
-	(*DraftProcessRecipeGenerateResult)(nil),  // 2: process.v1.DraftProcessRecipeGenerateResult
-	(*v1.VariantConfiguration)(nil),           // 3: variance.v1.VariantConfiguration
-	(*ProcessRecipe)(nil),                     // 4: process.v1.ProcessRecipe
-	(*SequenceDefinition)(nil),                // 5: process.v1.SequenceDefinition
-	(*TaskDefinition)(nil),                    // 6: process.v1.TaskDefinition
+	(*DraftProcessRecipeGenerateRequest)(nil),            // 0: process.v1.DraftProcessRecipeGenerateRequest
+	(*DraftDisassemblyProcessRecipeGenerateRequest)(nil), // 1: process.v1.DraftDisassemblyProcessRecipeGenerateRequest
+	(*DraftProcessRecipeGenerateIssue)(nil),              // 2: process.v1.DraftProcessRecipeGenerateIssue
+	(*DraftProcessRecipeGenerateResult)(nil),             // 3: process.v1.DraftProcessRecipeGenerateResult
+	(*v1.VariantConfiguration)(nil),                      // 4: variance.v1.VariantConfiguration
+	(*ProcessRecipe)(nil),                                // 5: process.v1.ProcessRecipe
+	(*SequenceDefinition)(nil),                           // 6: process.v1.SequenceDefinition
+	(*TaskDefinition)(nil),                               // 7: process.v1.TaskDefinition
 }
 var file_process_v1_generation_requests_proto_depIdxs = []int32{
-	3, // 0: process.v1.DraftProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	4, // 1: process.v1.DraftProcessRecipeGenerateResult.recipe:type_name -> process.v1.ProcessRecipe
-	5, // 2: process.v1.DraftProcessRecipeGenerateResult.sequences:type_name -> process.v1.SequenceDefinition
-	6, // 3: process.v1.DraftProcessRecipeGenerateResult.tasks:type_name -> process.v1.TaskDefinition
-	1, // 4: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	4, // 0: process.v1.DraftProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	4, // 1: process.v1.DraftDisassemblyProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	5, // 2: process.v1.DraftProcessRecipeGenerateResult.recipe:type_name -> process.v1.ProcessRecipe
+	6, // 3: process.v1.DraftProcessRecipeGenerateResult.sequences:type_name -> process.v1.SequenceDefinition
+	7, // 4: process.v1.DraftProcessRecipeGenerateResult.tasks:type_name -> process.v1.TaskDefinition
+	2, // 5: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_generation_requests_proto_init() }
@@ -401,7 +701,7 @@ func file_process_v1_generation_requests_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_generation_requests_proto_rawDesc), len(file_process_v1_generation_requests_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

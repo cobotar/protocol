@@ -246,6 +246,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100027,opt,name=worker_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100028,
+		Name:          "validation.v1.product_id_component",
+		Tag:           "varint,100028,opt,name=product_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -306,6 +314,8 @@ var (
 	E_ContainerInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[26]
 	// optional bool worker_id_component = 100027;
 	E_WorkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[27]
+	// optional bool product_id_component = 100028;
+	E_ProductIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[28]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -396,7 +406,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\"string.robot_instance_id_component\x120this does not seem to be a container instance id\x1a6(this == '' || this.startsWith('container_instance-'))R\x1ccontainerInstanceIdComponent:\xc0\x01\n" +
 	"\x13worker_id_component\x12\x19.buf.validate.StringRules\x18\xbb\x8d\x06 \x01(\bBs\xc2Hp\n" +
 	"n\n" +
-	"\x1astring.worker_id_component\x12$this does not seem to be a worker id\x1a*(this == '' || this.startsWith('worker-'))R\x11workerIdComponentB\xb5\x01\n" +
+	"\x1astring.worker_id_component\x12$this does not seem to be a worker id\x1a*(this == '' || this.startsWith('worker-'))R\x11workerIdComponent:\xc5\x01\n" +
+	"\x14product_id_component\x12\x19.buf.validate.StringRules\x18\xbc\x8d\x06 \x01(\bBv\xc2Hs\n" +
+	"q\n" +
+	"\x1bstring.product_id_component\x12%this does not seem to be a product id\x1a+(this == '' || this.startsWith('product-'))R\x12productIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -431,10 +444,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 25: validation.v1.container_definition_id_component:extendee -> buf.validate.StringRules
 	0,  // 26: validation.v1.container_instance_id_component:extendee -> buf.validate.StringRules
 	0,  // 27: validation.v1.worker_id_component:extendee -> buf.validate.StringRules
-	28, // [28:28] is the sub-list for method output_type
-	28, // [28:28] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	0,  // [0:28] is the sub-list for extension extendee
+	0,  // 28: validation.v1.product_id_component:extendee -> buf.validate.StringRules
+	29, // [29:29] is the sub-list for method output_type
+	29, // [29:29] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	0,  // [0:29] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -450,7 +464,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 28,
+			NumExtensions: 29,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

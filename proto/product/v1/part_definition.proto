@@ -77,9 +77,12 @@ message PartHandlingProfile {
   string post_lubrication_part_id = 6;
   bool requires_wiping = 7;
 
-  double max_grip_force_n = 8;
-  double max_torque_nm = 9;
-  repeated common.v1.KeyValueConstraint constraints = 10;
+  bool inspect_before_assemble = 8;
+  bool inspect_after_disassemble = 9;
+
+  double max_grip_force_n = 10;
+  double max_torque_nm = 11;
+  repeated common.v1.KeyValueConstraint constraints = 12;
 }
 
 message PartDefinition {
