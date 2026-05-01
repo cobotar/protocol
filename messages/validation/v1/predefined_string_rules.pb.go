@@ -254,6 +254,22 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100028,opt,name=product_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100029,
+		Name:          "validation.v1.ar_config_binding_id_component",
+		Tag:           "varint,100029,opt,name=ar_config_binding_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100030,
+		Name:          "validation.v1.ar_config_instance_id_component",
+		Tag:           "varint,100030,opt,name=ar_config_instance_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -316,6 +332,10 @@ var (
 	E_WorkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[27]
 	// optional bool product_id_component = 100028;
 	E_ProductIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[28]
+	// optional bool ar_config_binding_id_component = 100029;
+	E_ArConfigBindingIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[29]
+	// optional bool ar_config_instance_id_component = 100030;
+	E_ArConfigInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[30]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -409,7 +429,13 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1astring.worker_id_component\x12$this does not seem to be a worker id\x1a*(this == '' || this.startsWith('worker-'))R\x11workerIdComponent:\xc5\x01\n" +
 	"\x14product_id_component\x12\x19.buf.validate.StringRules\x18\xbc\x8d\x06 \x01(\bBv\xc2Hs\n" +
 	"q\n" +
-	"\x1bstring.product_id_component\x12%this does not seem to be a product id\x1a+(this == '' || this.startsWith('product-'))R\x12productIdComponentB\xb5\x01\n" +
+	"\x1bstring.product_id_component\x12%this does not seem to be a product id\x1a+(this == '' || this.startsWith('product-'))R\x12productIdComponent:\xf8\x01\n" +
+	"\x1ear_config_binding_id_component\x12\x19.buf.validate.StringRules\x18\xbd\x8d\x06 \x01(\bB\x96\x01\xc2H\x92\x01\n" +
+	"\x8f\x01\n" +
+	"%string.ar_config_binding_id_component\x12/this does not seem to be a AR config binding id\x1a5(this == '' || this.startsWith('ar_config_binding-'))R\x1aarConfigBindingIdComponent:\xfd\x01\n" +
+	"\x1far_config_instance_id_component\x12\x19.buf.validate.StringRules\x18\xbe\x8d\x06 \x01(\bB\x99\x01\xc2H\x95\x01\n" +
+	"\x92\x01\n" +
+	"&string.ar_config_instance_id_component\x120this does not seem to be a AR config instance id\x1a6(this == '' || this.startsWith('ar_config_instance-'))R\x1barConfigInstanceIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -445,10 +471,12 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 26: validation.v1.container_instance_id_component:extendee -> buf.validate.StringRules
 	0,  // 27: validation.v1.worker_id_component:extendee -> buf.validate.StringRules
 	0,  // 28: validation.v1.product_id_component:extendee -> buf.validate.StringRules
-	29, // [29:29] is the sub-list for method output_type
-	29, // [29:29] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	0,  // [0:29] is the sub-list for extension extendee
+	0,  // 29: validation.v1.ar_config_binding_id_component:extendee -> buf.validate.StringRules
+	0,  // 30: validation.v1.ar_config_instance_id_component:extendee -> buf.validate.StringRules
+	31, // [31:31] is the sub-list for method output_type
+	31, // [31:31] is the sub-list for method input_type
+	31, // [31:31] is the sub-list for extension type_name
+	0,  // [0:31] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -464,7 +492,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 29,
+			NumExtensions: 31,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

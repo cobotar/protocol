@@ -7,6 +7,8 @@
 package arv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -24,8 +26,9 @@ const (
 type ConfigurationLoadMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	ConfigId      string                 `protobuf:"bytes,2,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`       // Id of the configuration to be loaded
+	ConfigId      string                 `protobuf:"bytes,2,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`       // Id of the reusable config template to be loaded, mainly for authoring/editor flows.
 	InstanceId    string                 `protobuf:"bytes,3,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"` // Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration.
+	BindingId     string                 `protobuf:"bytes,4,opt,name=binding_id,json=bindingId,proto3" json:"binding_id,omitempty"`    // Preferred for runtime loads when a station/cell-specific binding should be resolved.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -81,17 +84,26 @@ func (x *ConfigurationLoadMessage) GetInstanceId() string {
 	return ""
 }
 
+func (x *ConfigurationLoadMessage) GetBindingId() string {
+	if x != nil {
+		return x.BindingId
+	}
+	return ""
+}
+
 var File_ar_v1_config_load_proto protoreflect.FileDescriptor
 
 const file_ar_v1_config_load_proto_rawDesc = "" +
 	"\n" +
-	"\x17ar/v1/config_load.proto\x12\x05ar.v1\"w\n" +
+	"\x17ar/v1/config_load.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa1\x01\n" +
 	"\x18ConfigurationLoadMessage\x12\x1d\n" +
 	"\n" +
 	"request_id\x18\x01 \x01(\tR\trequestId\x12\x1b\n" +
 	"\tconfig_id\x18\x02 \x01(\tR\bconfigId\x12\x1f\n" +
 	"\vinstance_id\x18\x03 \x01(\tR\n" +
-	"instanceIdB\x8b\x01\n" +
+	"instanceId\x12(\n" +
+	"\n" +
+	"binding_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\tbindingIdB\x8b\x01\n" +
 	"\tcom.ar.v1B\x0fConfigLoadProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

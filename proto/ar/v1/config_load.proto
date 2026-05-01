@@ -1,11 +1,15 @@
 syntax = "proto3";
 package ar.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message ConfigurationLoadMessage {
   string request_id = 1;
-  string config_id = 2; // Id of the configuration to be loaded
+  string config_id = 2; // Id of the reusable config template to be loaded, mainly for authoring/editor flows.
   string instance_id = 3; // Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration.
+  string binding_id = 4 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Preferred for runtime loads when a station/cell-specific binding should be resolved.
 }

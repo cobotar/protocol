@@ -5,6 +5,8 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { PropertyValueUpdate } from "../../common/v1/property_pb.ts";
+import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -12,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/mapping.proto.
  */
 export const file_ar_v1_mapping: GenFile = /*@__PURE__*/
-  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSJLCgxSb2JvdE1hcHBpbmcSGwoIcm9ib3RfaWQYASABKAlCCbpIBnIEoPEEARIeCgtwcm9wZXJ0eV9pZBgCIAEoCUIJukgGcgSY8QQBIksKDEFzc2V0TWFwcGluZxIbCghhc3NldF9pZBgBIAEoCUIJukgGcgSw8QQBEh4KC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAEisgIKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiQKDmVudmlyb25tZW50X2lkGAUgASgJQgy6SAnIAQFyBMDxBAESIgoMYXJfY29uZmlnX2lkGAYgASgJQgy6SAnIAQFyBJDxBAESEAoIZGlzYWJsZWQYByABKAgSKgoNcm9ib3RfbWFwcGluZxgIIAMoCzITLmFyLnYxLlJvYm90TWFwcGluZxIqCg1hc3NldF9tYXBwaW5nGAkgAygLMhMuYXIudjEuQXNzZXRNYXBwaW5nEhIKCnN0YW5kYWxvbmUYCiABKAgSEAoIcHJpb3JpdHkYCyABKAUiOgoPTWFwcGluZ01lc3NhZ2VzEicKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEuTWFwcGluZ01lc3NhZ2VCiAEKCWNvbS5hci52MUIMTWFwcGluZ1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChNhci92MS9tYXBwaW5nLnByb3RvEgVhci52MSJLCgxSb2JvdE1hcHBpbmcSGwoIcm9ib3RfaWQYASABKAlCCbpIBnIEoPEEARIeCgtwcm9wZXJ0eV9pZBgCIAEoCUIJukgGcgSY8QQBIksKDEFzc2V0TWFwcGluZxIbCghhc3NldF9pZBgBIAEoCUIJukgGcgSw8QQBEh4KC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAEi4AEKEUFSUmVzb3VyY2VCaW5kaW5nEhoKB3Nsb3RfaWQYASABKAlCCbpIBnIEEAEYQBIpChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJukgGcgSo8QQBSACIAQESKQoRYXNzZXRfaW5zdGFuY2VfaWQYAyABKAlCCbpIBnIEuPEEAUgBiAEBOi26SCoiKAoRcm9ib3RfaW5zdGFuY2VfaWQKEWFzc2V0X2luc3RhbmNlX2lkEAFCFAoSX3JvYm90X2luc3RhbmNlX2lkQhQKEl9hc3NldF9pbnN0YW5jZV9pZCK2AwoWQVJDb25maWdCaW5kaW5nTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTo6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiIKCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEAUgAiAEBEh8KB2NlbGxfaWQYBiABKAlCCbpIBnIEuPIEAUgBiAEBEiIKDGFyX2NvbmZpZ19pZBgHIAEoCUIMukgJyAEBcgSQ8QQBEhAKCGRpc2FibGVkGAggASgIEhIKCnN0YW5kYWxvbmUYCSABKAgSEAoIcHJpb3JpdHkYCiABKAUSMwoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5hci52MS5BUlJlc291cmNlQmluZGluZxI6ChJwcm9wZXJ0eV9vdmVycmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlWYWx1ZVVwZGF0ZTocukgZIhcKCnN0YXRpb25faWQKB2NlbGxfaWQQAUINCgtfc3RhdGlvbl9pZEIKCghfY2VsbF9pZCJKChdBUkNvbmZpZ0JpbmRpbmdNZXNzYWdlcxIvCghiaW5kaW5ncxgBIAMoCzIdLmFyLnYxLkFSQ29uZmlnQmluZGluZ01lc3NhZ2UisgIKDk1hcHBpbmdNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiQKDmVudmlyb25tZW50X2lkGAUgASgJQgy6SAnIAQFyBMDxBAESIgoMYXJfY29uZmlnX2lkGAYgASgJQgy6SAnIAQFyBJDxBAESEAoIZGlzYWJsZWQYByABKAgSKgoNcm9ib3RfbWFwcGluZxgIIAMoCzITLmFyLnYxLlJvYm90TWFwcGluZxIqCg1hc3NldF9tYXBwaW5nGAkgAygLMhMuYXIudjEuQXNzZXRNYXBwaW5nEhIKCnN0YW5kYWxvbmUYCiABKAgSEAoIcHJpb3JpdHkYCyABKAUiOgoPTWFwcGluZ01lc3NhZ2VzEicKCG1hcHBpbmdzGAEgAygLMhUuYXIudjEuTWFwcGluZ01lc3NhZ2VCiAEKCWNvbS5hci52MUIMTWFwcGluZ1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.RobotMapping
@@ -59,6 +61,146 @@ export const AssetMappingSchema: GenMessage<AssetMapping> = /*@__PURE__*/
   messageDesc(file_ar_v1_mapping, 1);
 
 /**
+ * ARResourceBinding binds a config-declared slot to a concrete resource
+ * instance owned by the target station or cell.
+ *
+ * @generated from message ar.v1.ARResourceBinding
+ */
+export type ARResourceBinding = Message<"ar.v1.ARResourceBinding"> & {
+  /**
+   * @generated from field: string slot_id = 1;
+   */
+  slotId: string;
+
+  /**
+   * @generated from field: optional string robot_instance_id = 2;
+   */
+  robotInstanceId?: string;
+
+  /**
+   * @generated from field: optional string asset_instance_id = 3;
+   */
+  assetInstanceId?: string;
+};
+
+/**
+ * Describes the message ar.v1.ARResourceBinding.
+ * Use `create(ARResourceBindingSchema)` to create a new message.
+ */
+export const ARResourceBindingSchema: GenMessage<ARResourceBinding> = /*@__PURE__*/
+  messageDesc(file_ar_v1_mapping, 2);
+
+/**
+ * ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
+ * workspace.
+ *
+ * Runtime resolution should typically work like this:
+ * - load bindings targeted directly at the active station
+ * - load bindings targeted at the parent cell
+ * - sort by standalone/priority
+ * - apply property_overrides after the config template is loaded
+ * - populate resource slot properties and runtime context values afterwards
+ *
+ * This keeps ARConfig authoring reusable while making station/cell-specific
+ * resource wiring explicit and safe.
+ *
+ * @generated from message ar.v1.ARConfigBindingMessage
+ */
+export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: optional string station_id = 5;
+   */
+  stationId?: string;
+
+  /**
+   * @generated from field: optional string cell_id = 6;
+   */
+  cellId?: string;
+
+  /**
+   * @generated from field: string ar_config_id = 7;
+   */
+  arConfigId: string;
+
+  /**
+   * @generated from field: bool disabled = 8;
+   */
+  disabled: boolean;
+
+  /**
+   * If true, only standalone bindings with the highest priority should be shown.
+   *
+   * @generated from field: bool standalone = 9;
+   */
+  standalone: boolean;
+
+  /**
+   * Higher values should be resolved before lower values.
+   *
+   * @generated from field: int32 priority = 10;
+   */
+  priority: number;
+
+  /**
+   * @generated from field: repeated ar.v1.ARResourceBinding resource_bindings = 11;
+   */
+  resourceBindings: ARResourceBinding[];
+
+  /**
+   * Station/cell-local values applied to config properties before runtime values.
+   *
+   * @generated from field: repeated common.v1.PropertyValueUpdate property_overrides = 12;
+   */
+  propertyOverrides: PropertyValueUpdate[];
+};
+
+/**
+ * Describes the message ar.v1.ARConfigBindingMessage.
+ * Use `create(ARConfigBindingMessageSchema)` to create a new message.
+ */
+export const ARConfigBindingMessageSchema: GenMessage<ARConfigBindingMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_mapping, 3);
+
+/**
+ * @generated from message ar.v1.ARConfigBindingMessages
+ */
+export type ARConfigBindingMessages = Message<"ar.v1.ARConfigBindingMessages"> & {
+  /**
+   * @generated from field: repeated ar.v1.ARConfigBindingMessage bindings = 1;
+   */
+  bindings: ARConfigBindingMessage[];
+};
+
+/**
+ * Describes the message ar.v1.ARConfigBindingMessages.
+ * Use `create(ARConfigBindingMessagesSchema)` to create a new message.
+ */
+export const ARConfigBindingMessagesSchema: GenMessage<ARConfigBindingMessages> = /*@__PURE__*/
+  messageDesc(file_ar_v1_mapping, 4);
+
+/**
+ * Deprecated legacy environment-based mapping.
+ *
  * @generated from message ar.v1.MappingMessage
  */
 export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
@@ -127,7 +269,7 @@ export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
  * Use `create(MappingMessageSchema)` to create a new message.
  */
 export const MappingMessageSchema: GenMessage<MappingMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_mapping, 2);
+  messageDesc(file_ar_v1_mapping, 5);
 
 /**
  * @generated from message ar.v1.MappingMessages
@@ -144,5 +286,5 @@ export type MappingMessages = Message<"ar.v1.MappingMessages"> & {
  * Use `create(MappingMessagesSchema)` to create a new message.
  */
 export const MappingMessagesSchema: GenMessage<MappingMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_mapping, 3);
+  messageDesc(file_ar_v1_mapping, 6);
 

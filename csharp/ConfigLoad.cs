@@ -24,17 +24,20 @@ namespace Messages.AR.V1 {
     static ConfigLoadReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chdhci92MS9jb25maWdfbG9hZC5wcm90bxIFYXIudjEidwoYQ29uZmlndXJh",
-            "dGlvbkxvYWRNZXNzYWdlEh0KCnJlcXVlc3RfaWQYASABKAlSCXJlcXVlc3RJ",
-            "ZBIbCgljb25maWdfaWQYAiABKAlSCGNvbmZpZ0lkEh8KC2luc3RhbmNlX2lk",
-            "GAMgASgJUgppbnN0YW5jZUlkQosBCgljb20uYXIudjFCD0NvbmZpZ0xvYWRQ",
-            "cm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
-            "YXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFB",
-            "clxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "Chdhci92MS9jb25maWdfbG9hZC5wcm90bxIFYXIudjEaG2J1Zi92YWxpZGF0",
+            "ZS92YWxpZGF0ZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0",
+            "cmluZ19ydWxlcy5wcm90byKhAQoYQ29uZmlndXJhdGlvbkxvYWRNZXNzYWdl",
+            "Eh0KCnJlcXVlc3RfaWQYASABKAlSCXJlcXVlc3RJZBIbCgljb25maWdfaWQY",
+            "AiABKAlSCGNvbmZpZ0lkEh8KC2luc3RhbmNlX2lkGAMgASgJUgppbnN0YW5j",
+            "ZUlkEigKCmJpbmRpbmdfaWQYBCABKAlCCbpIBnIE6OswAVIJYmluZGluZ0lk",
+            "QosBCgljb20uYXIudjFCD0NvbmZpZ0xvYWRQcm90b1ABWi9naXRodWIuY29t",
+            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoC",
+            "Dk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoC",
+            "BkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigurationLoadMessage), global::Messages.AR.V1.ConfigurationLoadMessage.Parser, new[]{ "RequestId", "ConfigId", "InstanceId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ConfigurationLoadMessage), global::Messages.AR.V1.ConfigurationLoadMessage.Parser, new[]{ "RequestId", "ConfigId", "InstanceId", "BindingId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -79,6 +82,7 @@ namespace Messages.AR.V1 {
       requestId_ = other.requestId_;
       configId_ = other.configId_;
       instanceId_ = other.instanceId_;
+      bindingId_ = other.bindingId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,7 +108,7 @@ namespace Messages.AR.V1 {
     public const int ConfigIdFieldNumber = 2;
     private string configId_ = "";
     /// <summary>
-    /// Id of the configuration to be loaded
+    /// Id of the reusable config template to be loaded, mainly for authoring/editor flows.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,6 +134,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "binding_id" field.</summary>
+    public const int BindingIdFieldNumber = 4;
+    private string bindingId_ = "";
+    /// <summary>
+    /// Preferred for runtime loads when a station/cell-specific binding should be resolved.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BindingId {
+      get { return bindingId_; }
+      set {
+        bindingId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -148,6 +167,7 @@ namespace Messages.AR.V1 {
       if (RequestId != other.RequestId) return false;
       if (ConfigId != other.ConfigId) return false;
       if (InstanceId != other.InstanceId) return false;
+      if (BindingId != other.BindingId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -158,6 +178,7 @@ namespace Messages.AR.V1 {
       if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
       if (ConfigId.Length != 0) hash ^= ConfigId.GetHashCode();
       if (InstanceId.Length != 0) hash ^= InstanceId.GetHashCode();
+      if (BindingId.Length != 0) hash ^= BindingId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,6 +209,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(26);
         output.WriteString(InstanceId);
       }
+      if (BindingId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(BindingId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -210,6 +235,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(26);
         output.WriteString(InstanceId);
       }
+      if (BindingId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(BindingId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -228,6 +257,9 @@ namespace Messages.AR.V1 {
       }
       if (InstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstanceId);
+      }
+      if (BindingId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BindingId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -249,6 +281,9 @@ namespace Messages.AR.V1 {
       }
       if (other.InstanceId.Length != 0) {
         InstanceId = other.InstanceId;
+      }
+      if (other.BindingId.Length != 0) {
+        BindingId = other.BindingId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -281,6 +316,10 @@ namespace Messages.AR.V1 {
             InstanceId = input.ReadString();
             break;
           }
+          case 34: {
+            BindingId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -310,6 +349,10 @@ namespace Messages.AR.V1 {
           }
           case 26: {
             InstanceId = input.ReadString();
+            break;
+          }
+          case 34: {
+            BindingId = input.ReadString();
             break;
           }
         }

@@ -54,6 +54,8 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -121,9 +123,26 @@
     - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
+    - [ARContextSlot](#ar-v1-ARContextSlot)
+    - [ARResourceSlot](#ar-v1-ARResourceSlot)
+  
+    - [ARContextSlotType](#ar-v1-ARContextSlotType)
+    - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
   
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
+  
+- [ar/v1/config_resolve.proto](#ar_v1_config_resolve-proto)
+    - [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext)
+    - [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue)
+    - [ConfigurationResolveRequest](#ar-v1-ConfigurationResolveRequest)
+    - [ConfigurationResolveResult](#ar-v1-ConfigurationResolveResult)
+    - [ResolvedConfiguration](#ar-v1-ResolvedConfiguration)
+    - [ResolvedContextBinding](#ar-v1-ResolvedContextBinding)
+    - [ResolvedResourceBinding](#ar-v1-ResolvedResourceBinding)
+  
+    - [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity)
+    - [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType)
   
 - [ar/v1/environment.proto](#ar_v1_environment-proto)
     - [AssetLocation](#ar-v1-AssetLocation)
@@ -150,6 +169,9 @@
     - [HelperGroup](#ar-v1-HelperGroup)
   
 - [ar/v1/mapping.proto](#ar_v1_mapping-proto)
+    - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
+    - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
+    - [ARResourceBinding](#ar-v1-ARResourceBinding)
     - [AssetMapping](#ar-v1-AssetMapping)
     - [MappingMessage](#ar-v1-MappingMessage)
     - [MappingMessages](#ar-v1-MappingMessages)
@@ -868,7 +890,9 @@ A simple pose consisting of a position and orientation
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
+| ar_config_instance_id_component | bool | .buf.validate.StringRules | 100030 |  |
 | asset_definition_id_component | bool | .buf.validate.StringRules | 10006 |  |
 | asset_instance_id_component | bool | .buf.validate.StringRules | 10007 |  |
 | cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
@@ -1894,6 +1918,8 @@ Just delete this?
 | helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
 | properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| resource_slots | [ARResourceSlot](#ar-v1-ARResourceSlot) | repeated | Typed station/cell resource slots that must be bound for runtime use. |
+| context_slots | [ARContextSlot](#ar-v1-ARContextSlot) | repeated | Typed runtime context inputs populated from the active execution/workspace scope. |
 
 
 
@@ -1914,7 +1940,90 @@ Just delete this?
 
 
 
+
+<a name="ar-v1-ARContextSlot"></a>
+
+### ARContextSlot
+ARContextSlot declares a typed runtime context input that the resolver may
+populate from the active line/cell/station/execution scope.
+
+Unlike resource slots, context slots are not bound manually per station or
+cell. Their values come from the runtime resolution request and are injected
+into the loaded config instance after binding resolution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  |  |
+| required | [bool](#bool) |  |  |
+| property_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceSlot"></a>
+
+### ARResourceSlot
+ARResourceSlot declares a typed resource hole that must be bound when an
+ARConfig is attached to a concrete station or cell.
+
+The slot keeps generic authoring inside the ARConfig while allowing each
+binding to provide the concrete robot or asset instance available in the
+target workspace.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  |  |
+| required | [bool](#bool) |  |  |
+| property_id | [string](#string) |  |  |
+
+
+
+
+
  
+
+
+<a name="ar-v1-ARContextSlotType"></a>
+
+### ARContextSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 |  |
+| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 |  |
+| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 |  |
+| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 |  |
+| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 |  |
+| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 |  |
+| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 |  |
+| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 |  |
+
+
+
+<a name="ar-v1-ARResourceSlotType"></a>
+
+### ARResourceSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 |  |
+| AR_RESOURCE_SLOT_TYPE_ROBOT | 1 |  |
+| AR_RESOURCE_SLOT_TYPE_ASSET | 2 |  |
+
 
  
 
@@ -1940,14 +2049,219 @@ Just delete this?
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | request_id | [string](#string) |  |  |
-| config_id | [string](#string) |  | Id of the configuration to be loaded |
+| config_id | [string](#string) |  | Id of the reusable config template to be loaded, mainly for authoring/editor flows. |
 | instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
+| binding_id | [string](#string) |  | Preferred for runtime loads when a station/cell-specific binding should be resolved. |
 
 
 
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_config_resolve-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/config_resolve.proto
+
+
+
+<a name="ar-v1-ConfigurationResolveContext"></a>
+
+### ConfigurationResolveContext
+ConfigurationResolveContext describes the active runtime scope from which AR
+bindings and context values should be resolved.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| line_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| worker_id | [string](#string) |  |  |
+| process_run_id | [string](#string) |  |  |
+| sequence_run_id | [string](#string) |  |  |
+| task_run_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ConfigurationResolveIssue"></a>
+
+### ConfigurationResolveIssue
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| severity | [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity) |  |  |
+| binding_id | [string](#string) |  |  |
+| config_id | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ConfigurationResolveRequest"></a>
+
+### ConfigurationResolveRequest
+ConfigurationResolveRequest asks the runtime/backend to resolve all AR
+configs that should currently be active for the supplied context.
+
+Recommended resolution flow:
+- find direct station bindings matching context.station_id
+- find parent/shared cell bindings matching context.cell_id
+- reject disabled bindings
+- reject bindings whose required resource slots or required context slots
+  cannot be satisfied
+- if any surviving binding is standalone, keep only standalone bindings with
+  the highest priority
+- otherwise keep all surviving bindings sorted by priority descending, with
+  station-scoped bindings preferred over cell-scoped bindings for equal
+  priority
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| context | [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext) |  |  |
+| loaded_instance_ids | [string](#string) | repeated | Instances already loaded by the caller, used to compute unloads/deltas. |
+
+
+
+
+
+
+<a name="ar-v1-ConfigurationResolveResult"></a>
+
+### ConfigurationResolveResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| configurations | [ResolvedConfiguration](#ar-v1-ResolvedConfiguration) | repeated |  |
+| unload_instance_ids | [string](#string) | repeated |  |
+| issues | [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-ResolvedConfiguration"></a>
+
+### ResolvedConfiguration
+ResolvedConfiguration is the fully selected config instance a runtime client
+should activate.
+
+effective_config should already include all binding-level property overrides.
+The runtime/client should then inject resolved_resource_bindings and
+resolved_context_bindings into the mapped properties before evaluating local
+property mirroring, helpers, actions, and feedback.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| instance_id | [string](#string) |  |  |
+| binding_id | [string](#string) |  |  |
+| config_id | [string](#string) |  |  |
+| scope | [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType) |  |  |
+| line_id | [string](#string) |  |  |
+| cell_id | [string](#string) |  |  |
+| station_id | [string](#string) |  |  |
+| standalone | [bool](#bool) |  |  |
+| priority | [int32](#int32) |  |  |
+| effective_config | [ARConfigMessage](#ar-v1-ARConfigMessage) |  |  |
+| resolved_resource_bindings | [ResolvedResourceBinding](#ar-v1-ResolvedResourceBinding) | repeated |  |
+| resolved_context_bindings | [ResolvedContextBinding](#ar-v1-ResolvedContextBinding) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-ResolvedContextBinding"></a>
+
+### ResolvedContextBinding
+ResolvedContextBinding captures the concrete runtime context value selected
+for a config context slot.
+
+Current context bindings resolve to string ids that are injected into the
+mapped property_id as PROPERTY_TYPE_STRING values.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  |  |
+| property_id | [string](#string) |  |  |
+| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  |  |
+| string_value | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ResolvedResourceBinding"></a>
+
+### ResolvedResourceBinding
+ResolvedResourceBinding captures the concrete resource value selected for a
+config resource slot.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  |  |
+| property_id | [string](#string) |  |  |
+| robot_instance_id | [string](#string) | optional |  |
+| asset_instance_id | [string](#string) | optional |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ConfigurationResolveIssueSeverity"></a>
+
+### ConfigurationResolveIssueSeverity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO | 1 |  |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING | 2 |  |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR | 3 |  |
+
+
+
+<a name="ar-v1-ResolvedConfigurationScopeType"></a>
+
+### ResolvedConfigurationScopeType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED | 0 |  |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION | 1 |  |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL | 2 |  |
+
 
  
 
@@ -2281,6 +2595,76 @@ Just delete this?
 
 
 
+<a name="ar-v1-ARConfigBindingMessage"></a>
+
+### ARConfigBindingMessage
+ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
+workspace.
+
+Runtime resolution should typically work like this:
+- load bindings targeted directly at the active station
+- load bindings targeted at the parent cell
+- sort by standalone/priority
+- apply property_overrides after the config template is loaded
+- populate resource slot properties and runtime context values afterwards
+
+This keeps ARConfig authoring reusable while making station/cell-specific
+resource wiring explicit and safe.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| station_id | [string](#string) | optional |  |
+| cell_id | [string](#string) | optional |  |
+| ar_config_id | [string](#string) |  |  |
+| disabled | [bool](#bool) |  |  |
+| standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
+| priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
+| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated |  |
+| property_overrides | [common.v1.PropertyValueUpdate](#common-v1-PropertyValueUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigBindingMessages"></a>
+
+### ARConfigBindingMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceBinding"></a>
+
+### ARResourceBinding
+ARResourceBinding binds a config-declared slot to a concrete resource
+instance owned by the target station or cell.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  |  |
+| robot_instance_id | [string](#string) | optional |  |
+| asset_instance_id | [string](#string) | optional |  |
+
+
+
+
+
+
 <a name="ar-v1-AssetMapping"></a>
 
 ### AssetMapping
@@ -2300,7 +2684,7 @@ Just delete this?
 <a name="ar-v1-MappingMessage"></a>
 
 ### MappingMessage
-
+Deprecated legacy environment-based mapping.
 
 
 | Field | Type | Label | Description |

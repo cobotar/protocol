@@ -6,6 +6,7 @@ import "ar/v1/feedback.proto";
 import "ar/v1/helper.proto";
 import "buf/validate/validate.proto";
 import "common/v1/property.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
@@ -24,6 +25,67 @@ message ARConfigInfoMessages {
   repeated ARConfigInfoMessage infos = 1;
 }
 
+enum ARResourceSlotType {
+  AR_RESOURCE_SLOT_TYPE_UNSPECIFIED = 0;
+  AR_RESOURCE_SLOT_TYPE_ROBOT = 1;
+  AR_RESOURCE_SLOT_TYPE_ASSET = 2;
+}
+
+enum ARContextSlotType {
+  AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0;
+  AR_CONTEXT_SLOT_TYPE_LINE_ID = 1;
+  AR_CONTEXT_SLOT_TYPE_CELL_ID = 2;
+  AR_CONTEXT_SLOT_TYPE_STATION_ID = 3;
+  AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4;
+  AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5;
+  AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6;
+  AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7;
+}
+
+// ARResourceSlot declares a typed resource hole that must be bound when an
+// ARConfig is attached to a concrete station or cell.
+//
+// The slot keeps generic authoring inside the ARConfig while allowing each
+// binding to provide the concrete robot or asset instance available in the
+// target workspace.
+message ARResourceSlot {
+  string id = 1 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  ARResourceSlotType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  bool required = 6;
+  string property_id = 7 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
+}
+
+// ARContextSlot declares a typed runtime context input that the resolver may
+// populate from the active line/cell/station/execution scope.
+//
+// Unlike resource slots, context slots are not bound manually per station or
+// cell. Their values come from the runtime resolution request and are injected
+// into the loaded config instance after binding resolution.
+message ARContextSlot {
+  string id = 1 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  ARContextSlotType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  bool required = 6;
+  string property_id = 7 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
+}
+
 message ARConfigMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string = {
@@ -40,6 +102,8 @@ message ARConfigMessage {
     gte: 0
     example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
   }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
+  repeated ARResourceSlot resource_slots = 10; // Typed station/cell resource slots that must be bound for runtime use.
+  repeated ARContextSlot context_slots = 11; // Typed runtime context inputs populated from the active execution/workspace scope.
 }
 
 message ARConfigMessages {

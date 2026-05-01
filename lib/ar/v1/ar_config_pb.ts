@@ -2,8 +2,8 @@
 // @generated from file ar/v1/ar_config.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { ActionMessage } from "./action_pb.ts";
 import { file_ar_v1_action } from "./action_pb.ts";
 import type { FeedbackMessage } from "./feedback_pb.ts";
@@ -13,13 +13,14 @@ import { file_ar_v1_helper } from "./helper_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Property } from "../../common/v1/property_pb.ts";
 import { file_common_v1_property } from "../../common/v1/property_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIqUCCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoIZmVlZGJhY2sYBSADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2USJQoHYWN0aW9ucxgGIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2USJQoHaGVscGVycxgHIAMoCzIULmFyLnYxLkhlbHBlck1lc3NhZ2USJwoKcHJvcGVydGllcxgIIAMoCzITLmNvbW1vbi52MS5Qcm9wZXJ0eRIpChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYCSABKANCCrpIByIFSN4CKAAiOwoQQVJDb25maWdNZXNzYWdlcxInCgdjb25maWdzGAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_buf_validate_validate, file_common_v1_property]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIssBCg5BUlJlc291cmNlU2xvdBIVCgJpZBgBIAEoCUIJukgGcgQQARhAEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjQKBHR5cGUYBSABKA4yGS5hci52MS5BUlJlc291cmNlU2xvdFR5cGVCC7pICMgBAYIBAhABEhAKCHJlcXVpcmVkGAYgASgIEh4KC3Byb3BlcnR5X2lkGAcgASgJQgm6SAZyBJjxBAEiyQEKDUFSQ29udGV4dFNsb3QSFQoCaWQYASABKAlCCbpIBnIEEAEYQBIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIzCgR0eXBlGAUgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCC7pICMgBAYIBAhABEhAKCHJlcXVpcmVkGAYgASgIEh4KC3Byb3BlcnR5X2lkGAcgASgJQgm6SAZyBJjxBAEigQMKD0FSQ29uZmlnTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIoCghmZWVkYmFjaxgFIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZRIlCgdhY3Rpb25zGAYgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZRIlCgdoZWxwZXJzGAcgAygLMhQuYXIudjEuSGVscGVyTWVzc2FnZRInCgpwcm9wZXJ0aWVzGAggAygLMhMuY29tbW9uLnYxLlByb3BlcnR5EikKFWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgJIAEoA0IKukgHIgVI3gIoABItCg5yZXNvdXJjZV9zbG90cxgKIAMoCzIVLmFyLnYxLkFSUmVzb3VyY2VTbG90EisKDWNvbnRleHRfc2xvdHMYCyADKAsyFC5hci52MS5BUkNvbnRleHRTbG90IjsKEEFSQ29uZmlnTWVzc2FnZXMSJwoHY29uZmlncxgBIAMoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZSp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1JPQk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FTU0VUEAIqvwIKEUFSQ29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVfTElORV9JRBABEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIjCh9BUl9DT05URVhUX1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09OVEVYVF9TTE9UX1RZUEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9UX1RZUEVfUFJPQ0VTU19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBAHQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_action, file_ar_v1_feedback, file_ar_v1_helper, file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * Just delete this?
@@ -73,6 +74,114 @@ export const ARConfigInfoMessagesSchema: GenMessage<ARConfigInfoMessages> = /*@_
   messageDesc(file_ar_v1_ar_config, 1);
 
 /**
+ * ARResourceSlot declares a typed resource hole that must be bound when an
+ * ARConfig is attached to a concrete station or cell.
+ *
+ * The slot keeps generic authoring inside the ARConfig while allowing each
+ * binding to provide the concrete robot or asset instance available in the
+ * target workspace.
+ *
+ * @generated from message ar.v1.ARResourceSlot
+ */
+export type ARResourceSlot = Message<"ar.v1.ARResourceSlot"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: ar.v1.ARResourceSlotType type = 5;
+   */
+  type: ARResourceSlotType;
+
+  /**
+   * @generated from field: bool required = 6;
+   */
+  required: boolean;
+
+  /**
+   * @generated from field: string property_id = 7;
+   */
+  propertyId: string;
+};
+
+/**
+ * Describes the message ar.v1.ARResourceSlot.
+ * Use `create(ARResourceSlotSchema)` to create a new message.
+ */
+export const ARResourceSlotSchema: GenMessage<ARResourceSlot> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 2);
+
+/**
+ * ARContextSlot declares a typed runtime context input that the resolver may
+ * populate from the active line/cell/station/execution scope.
+ *
+ * Unlike resource slots, context slots are not bound manually per station or
+ * cell. Their values come from the runtime resolution request and are injected
+ * into the loaded config instance after binding resolution.
+ *
+ * @generated from message ar.v1.ARContextSlot
+ */
+export type ARContextSlot = Message<"ar.v1.ARContextSlot"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: ar.v1.ARContextSlotType type = 5;
+   */
+  type: ARContextSlotType;
+
+  /**
+   * @generated from field: bool required = 6;
+   */
+  required: boolean;
+
+  /**
+   * @generated from field: string property_id = 7;
+   */
+  propertyId: string;
+};
+
+/**
+ * Describes the message ar.v1.ARContextSlot.
+ * Use `create(ARContextSlotSchema)` to create a new message.
+ */
+export const ARContextSlotSchema: GenMessage<ARContextSlot> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 3);
+
+/**
  * @generated from message ar.v1.ARConfigMessage
  */
 export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
@@ -124,6 +233,20 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
    * @generated from field: int64 ar_disappear_distance = 9;
    */
   arDisappearDistance: bigint;
+
+  /**
+   * Typed station/cell resource slots that must be bound for runtime use.
+   *
+   * @generated from field: repeated ar.v1.ARResourceSlot resource_slots = 10;
+   */
+  resourceSlots: ARResourceSlot[];
+
+  /**
+   * Typed runtime context inputs populated from the active execution/workspace scope.
+   *
+   * @generated from field: repeated ar.v1.ARContextSlot context_slots = 11;
+   */
+  contextSlots: ARContextSlot[];
 };
 
 /**
@@ -131,7 +254,7 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
  * Use `create(ARConfigMessageSchema)` to create a new message.
  */
 export const ARConfigMessageSchema: GenMessage<ARConfigMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config, 2);
+  messageDesc(file_ar_v1_ar_config, 4);
 
 /**
  * @generated from message ar.v1.ARConfigMessages
@@ -148,5 +271,82 @@ export type ARConfigMessages = Message<"ar.v1.ARConfigMessages"> & {
  * Use `create(ARConfigMessagesSchema)` to create a new message.
  */
 export const ARConfigMessagesSchema: GenMessage<ARConfigMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config, 3);
+  messageDesc(file_ar_v1_ar_config, 5);
+
+/**
+ * @generated from enum ar.v1.ARResourceSlotType
+ */
+export enum ARResourceSlotType {
+  /**
+   * @generated from enum value: AR_RESOURCE_SLOT_TYPE_UNSPECIFIED = 0;
+   */
+  AR_RESOURCE_SLOT_TYPE_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: AR_RESOURCE_SLOT_TYPE_ROBOT = 1;
+   */
+  AR_RESOURCE_SLOT_TYPE_ROBOT = 1,
+
+  /**
+   * @generated from enum value: AR_RESOURCE_SLOT_TYPE_ASSET = 2;
+   */
+  AR_RESOURCE_SLOT_TYPE_ASSET = 2,
+}
+
+/**
+ * Describes the enum ar.v1.ARResourceSlotType.
+ */
+export const ARResourceSlotTypeSchema: GenEnum<ARResourceSlotType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_ar_config, 0);
+
+/**
+ * @generated from enum ar.v1.ARContextSlotType
+ */
+export enum ARContextSlotType {
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0;
+   */
+  AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_LINE_ID = 1;
+   */
+  AR_CONTEXT_SLOT_TYPE_LINE_ID = 1,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_CELL_ID = 2;
+   */
+  AR_CONTEXT_SLOT_TYPE_CELL_ID = 2,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_STATION_ID = 3;
+   */
+  AR_CONTEXT_SLOT_TYPE_STATION_ID = 3,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4;
+   */
+  AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5;
+   */
+  AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6;
+   */
+  AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6,
+
+  /**
+   * @generated from enum value: AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7;
+   */
+  AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7,
+}
+
+/**
+ * Describes the enum ar.v1.ARContextSlotType.
+ */
+export const ARContextSlotTypeSchema: GenEnum<ARContextSlotType> = /*@__PURE__*/
+  enumDesc(file_ar_v1_ar_config, 1);
 

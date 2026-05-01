@@ -4,13 +4,15 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file ar/v1/config_load.proto.
  */
 export const file_ar_v1_config_load: GenFile = /*@__PURE__*/
-  fileDesc("Chdhci92MS9jb25maWdfbG9hZC5wcm90bxIFYXIudjEiVgoYQ29uZmlndXJhdGlvbkxvYWRNZXNzYWdlEhIKCnJlcXVlc3RfaWQYASABKAkSEQoJY29uZmlnX2lkGAIgASgJEhMKC2luc3RhbmNlX2lkGAMgASgJQosBCgljb20uYXIudjFCD0NvbmZpZ0xvYWRQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z");
+  fileDesc("Chdhci92MS9jb25maWdfbG9hZC5wcm90bxIFYXIudjEidQoYQ29uZmlndXJhdGlvbkxvYWRNZXNzYWdlEhIKCnJlcXVlc3RfaWQYASABKAkSEQoJY29uZmlnX2lkGAIgASgJEhMKC2luc3RhbmNlX2lkGAMgASgJEh0KCmJpbmRpbmdfaWQYBCABKAlCCbpIBnIE6OswAUKLAQoJY29tLmFyLnYxQg9Db25maWdMb2FkUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ConfigurationLoadMessage
@@ -22,7 +24,7 @@ export type ConfigurationLoadMessage = Message<"ar.v1.ConfigurationLoadMessage">
   requestId: string;
 
   /**
-   * Id of the configuration to be loaded
+   * Id of the reusable config template to be loaded, mainly for authoring/editor flows.
    *
    * @generated from field: string config_id = 2;
    */
@@ -34,6 +36,13 @@ export type ConfigurationLoadMessage = Message<"ar.v1.ConfigurationLoadMessage">
    * @generated from field: string instance_id = 3;
    */
   instanceId: string;
+
+  /**
+   * Preferred for runtime loads when a station/cell-specific binding should be resolved.
+   *
+   * @generated from field: string binding_id = 4;
+   */
+  bindingId: string;
 };
 
 /**

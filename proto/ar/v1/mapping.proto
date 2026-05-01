@@ -2,6 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 import "buf/validate/validate.proto";
+import "common/v1/property.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -17,6 +18,68 @@ message AssetMapping {
   string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
 }
 
+// ARResourceBinding binds a config-declared slot to a concrete resource
+// instance owned by the target station or cell.
+message ARResourceBinding {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "robot_instance_id",
+      "asset_instance_id"
+    ]
+    required: true
+  };
+
+  string slot_id = 1 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
+  optional string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true];
+  optional string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true];
+}
+
+// ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
+// workspace.
+//
+// Runtime resolution should typically work like this:
+// - load bindings targeted directly at the active station
+// - load bindings targeted at the parent cell
+// - sort by standalone/priority
+// - apply property_overrides after the config template is loaded
+// - populate resource slot properties and runtime context values afterwards
+//
+// This keeps ARConfig authoring reusable while making station/cell-specific
+// resource wiring explicit and safe.
+message ARConfigBindingMessage {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "station_id",
+      "cell_id"
+    ]
+    required: true
+  };
+
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  optional string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
+  optional string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
+  string ar_config_id = 7 [
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
+    (buf.validate.field).required = true
+  ];
+  bool disabled = 8;
+  bool standalone = 9; // If true, only standalone bindings with the highest priority should be shown.
+  int32 priority = 10; // Higher values should be resolved before lower values.
+  repeated ARResourceBinding resource_bindings = 11;
+  repeated common.v1.PropertyValueUpdate property_overrides = 12; // Station/cell-local values applied to config properties before runtime values.
+}
+
+message ARConfigBindingMessages {
+  repeated ARConfigBindingMessage bindings = 1;
+}
+
+// Deprecated legacy environment-based mapping.
 message MappingMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];

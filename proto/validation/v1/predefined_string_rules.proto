@@ -177,4 +177,16 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a product id"
     expression: "(this == '' || this.startsWith('product-'))"
   }];
+
+  optional bool ar_config_binding_id_component = 100029 [(buf.validate.predefined).cel = {
+    id: "string.ar_config_binding_id_component"
+    message: "this does not seem to be a AR config binding id"
+    expression: "(this == '' || this.startsWith('ar_config_binding-'))"
+  }];
+
+  optional bool ar_config_instance_id_component = 100030 [(buf.validate.predefined).cel = {
+    id: "string.ar_config_instance_id_component"
+    message: "this does not seem to be a AR config instance id"
+    expression: "(this == '' || this.startsWith('ar_config_instance-'))"
+  }];
 }
