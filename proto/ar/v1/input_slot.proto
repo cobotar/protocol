@@ -1,0 +1,112 @@
+syntax = "proto3";
+package ar.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum ARResourceSlotType {
+  // No resource kind selected. Invalid for stored or add-requested slots.
+  AR_RESOURCE_SLOT_TYPE_UNSPECIFIED = 0;
+  // Slot expects a concrete robot instance.
+  AR_RESOURCE_SLOT_TYPE_ROBOT = 1;
+  // Slot expects a concrete asset instance.
+  AR_RESOURCE_SLOT_TYPE_ASSET = 2;
+}
+
+enum ARContextSlotType {
+  // No runtime context selected. Invalid for stored or add-requested slots.
+  AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0;
+  // Slot resolves to the active line id.
+  AR_CONTEXT_SLOT_TYPE_LINE_ID = 1;
+  // Slot resolves to the active cell id.
+  AR_CONTEXT_SLOT_TYPE_CELL_ID = 2;
+  // Slot resolves to the active station id.
+  AR_CONTEXT_SLOT_TYPE_STATION_ID = 3;
+  // Slot resolves to the active worker/operator id.
+  AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4;
+  // Slot resolves to the active process run id.
+  AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5;
+  // Slot resolves to the active sequence run id.
+  AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6;
+  // Slot resolves to the active task run id.
+  AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7;
+}
+
+// ARInputSlotMessage is the authoritative config-owned input slot entity for
+// AR configs.
+//
+// The backend is expected to derive and manage generated_property_id from the
+// slot identity and source specification. Users should not author or edit the
+// generated property directly.
+message ARInputSlotMessage {
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.exactly_one_slot_kind"
+    message: "exactly one of resource_type or context_type must be specified and non-UNSPECIFIED"
+    expression: "(this.resource_type != 0) != (this.context_type != 0)"
+  };
+
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Stable slot identifier used by configs and runtime resolution.
+  string config_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ]; // Owning AR config.
+  string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 4;
+  string description = 5;
+  bool required = 6; // If true, bindings/resolution should fail when this slot cannot be satisfied.
+  string generated_property_id = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.property_id_component) = true
+  ]; // Server-managed property that should receive the resolved slot value at runtime.
+  ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a concrete resource binding.
+  ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a runtime context value.
+}
+
+message ARInputSlotMessages {
+  repeated ARInputSlotMessage slots = 1; // Config-owned input slots.
+}
+
+// ARInputSlotAddMessage creates a new config-owned input slot.
+//
+// Source specification is treated as identity-shaping for the generated
+// property. If the source kind must change later, prefer delete + recreate.
+message ARInputSlotAddMessage {
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot_add.exactly_one_slot_kind"
+    message: "exactly one of resource_type or context_type must be specified and non-UNSPECIFIED"
+    expression: "(this.resource_type != 0) != (this.context_type != 0)"
+  };
+
+  string config_id = 1 [
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
+    (buf.validate.field).required = true
+  ]; // Owning AR config to attach the new slot to.
+  string name = 2;
+  string icon = 3;
+  string description = 4;
+  bool required = 5; // If true, future bindings/resolution must satisfy the slot.
+  ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be bound to a resource instance.
+  ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be populated from runtime context.
+}
+
+// ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+//
+// The source specification and generated_property_id are intentionally not
+// updated here. Those should be treated as structural and changed via recreate.
+message ARInputSlotUpdateMessage {
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Slot to update.
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  optional bool required = 5; // Optional replacement for the slot's required flag.
+}
+
+message ARInputSlotDeleteMessage {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true
+  ]; // Slot to delete.
+}

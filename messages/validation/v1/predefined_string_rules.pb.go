@@ -270,6 +270,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100030,opt,name=ar_config_instance_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100031,
+		Name:          "validation.v1.ar_input_slot_id_component",
+		Tag:           "varint,100031,opt,name=ar_input_slot_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -336,6 +344,8 @@ var (
 	E_ArConfigBindingIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[29]
 	// optional bool ar_config_instance_id_component = 100030;
 	E_ArConfigInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[30]
+	// optional bool ar_input_slot_id_component = 100031;
+	E_ArInputSlotIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[31]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -435,7 +445,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"%string.ar_config_binding_id_component\x12/this does not seem to be a AR config binding id\x1a5(this == '' || this.startsWith('ar_config_binding-'))R\x1aarConfigBindingIdComponent:\xfd\x01\n" +
 	"\x1far_config_instance_id_component\x12\x19.buf.validate.StringRules\x18\xbe\x8d\x06 \x01(\bB\x99\x01\xc2H\x95\x01\n" +
 	"\x92\x01\n" +
-	"&string.ar_config_instance_id_component\x120this does not seem to be a AR config instance id\x1a6(this == '' || this.startsWith('ar_config_instance-'))R\x1barConfigInstanceIdComponentB\xb5\x01\n" +
+	"&string.ar_config_instance_id_component\x120this does not seem to be a AR config instance id\x1a6(this == '' || this.startsWith('ar_config_instance-'))R\x1barConfigInstanceIdComponent:\xe4\x01\n" +
+	"\x1aar_input_slot_id_component\x12\x19.buf.validate.StringRules\x18\xbf\x8d\x06 \x01(\bB\x8a\x01\xc2H\x86\x01\n" +
+	"\x83\x01\n" +
+	"!string.ar_input_slot_id_component\x12+this does not seem to be a AR input slot id\x1a1(this == '' || this.startsWith('ar_input_slot-'))R\x16arInputSlotIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -473,10 +486,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 28: validation.v1.product_id_component:extendee -> buf.validate.StringRules
 	0,  // 29: validation.v1.ar_config_binding_id_component:extendee -> buf.validate.StringRules
 	0,  // 30: validation.v1.ar_config_instance_id_component:extendee -> buf.validate.StringRules
-	31, // [31:31] is the sub-list for method output_type
-	31, // [31:31] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	0,  // [0:31] is the sub-list for extension extendee
+	0,  // 31: validation.v1.ar_input_slot_id_component:extendee -> buf.validate.StringRules
+	32, // [32:32] is the sub-list for method output_type
+	32, // [32:32] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	0,  // [0:32] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -492,7 +506,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 31,
+			NumExtensions: 32,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

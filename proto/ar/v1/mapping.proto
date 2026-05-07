@@ -9,13 +9,13 @@ option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 message RobotMapping {
-  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true];
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
+  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true]; // Legacy robot definition identifier.
+  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true]; // Legacy target property for the mapped robot.
 }
 
 message AssetMapping {
-  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true];
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
+  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true]; // Legacy asset definition identifier.
+  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true]; // Legacy target property for the mapped asset.
 }
 
 // ARResourceBinding binds a config-declared slot to a concrete resource
@@ -32,9 +32,9 @@ message ARResourceBinding {
   string slot_id = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 64
-  }];
-  optional string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true];
-  optional string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true];
+  }]; // Config-declared slot to satisfy.
+  optional string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true]; // Concrete robot instance selected for the slot.
+  optional string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Concrete asset instance selected for the slot.
 }
 
 // ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
@@ -58,48 +58,48 @@ message ARConfigBindingMessage {
     required: true
   };
 
-  string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true];
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Stable binding identifier.
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  optional string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
-  optional string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
+  optional string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Station this binding targets directly.
+  optional string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Cell this binding targets directly.
   string ar_config_id = 7 [
     (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
     (buf.validate.field).required = true
-  ];
-  bool disabled = 8;
+  ]; // Reusable AR config template to bind.
+  bool disabled = 8; // If true, the binding should be ignored by resolution.
   bool standalone = 9; // If true, only standalone bindings with the highest priority should be shown.
   int32 priority = 10; // Higher values should be resolved before lower values.
-  repeated ARResourceBinding resource_bindings = 11;
+  repeated ARResourceBinding resource_bindings = 11; // Concrete resource assignments for config-declared slots.
   repeated common.v1.PropertyValueUpdate property_overrides = 12; // Station/cell-local values applied to config properties before runtime values.
 }
 
 message ARConfigBindingMessages {
-  repeated ARConfigBindingMessage bindings = 1;
+  repeated ARConfigBindingMessage bindings = 1; // Station/cell bindings for reusable AR configs.
 }
 
 // Deprecated legacy environment-based mapping.
 message MappingMessage {
-  string id = 1;
+  string id = 1; // Legacy mapping identifier.
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   string environment_id = 5 [
     (buf.validate.field).string.(validation.v1.environment_id_component) = true,
     (buf.validate.field).required = true
-  ];
+  ]; // Legacy environment target.
   string ar_config_id = 6 [
     (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
     (buf.validate.field).required = true
-  ];
-  bool disabled = 7;
-  repeated RobotMapping robot_mapping = 8;
-  repeated AssetMapping asset_mapping = 9;
+  ]; // AR config template to load for the legacy environment.
+  bool disabled = 7; // If true, the mapping should be ignored.
+  repeated RobotMapping robot_mapping = 8; // Legacy robot-to-property assignments.
+  repeated AssetMapping asset_mapping = 9; // Legacy asset-to-property assignments.
   bool standalone = 10; // Only this AR-config should be shown (winner have highest priority)
   int32 priority = 11; // High value configs will be shown first
 }
 
 message MappingMessages {
-  repeated MappingMessage mappings = 1;
+  repeated MappingMessage mappings = 1; // Legacy environment-based mappings.
 }

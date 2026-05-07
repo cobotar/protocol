@@ -26,8 +26,8 @@ const (
 
 type RobotMapping struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
-	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`          // Legacy robot definition identifier.
+	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"` // Legacy target property for the mapped robot.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,8 +78,8 @@ func (x *RobotMapping) GetPropertyId() string {
 
 type AssetMapping struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
-	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
+	AssetId       string                 `protobuf:"bytes,1,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`          // Legacy asset definition identifier.
+	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"` // Legacy target property for the mapped asset.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -132,9 +132,9 @@ func (x *AssetMapping) GetPropertyId() string {
 // instance owned by the target station or cell.
 type ARResourceBinding struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`
-	RobotInstanceId *string                `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3,oneof" json:"robot_instance_id,omitempty"`
-	AssetInstanceId *string                `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3,oneof" json:"asset_instance_id,omitempty"`
+	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                                    // Config-declared slot to satisfy.
+	RobotInstanceId *string                `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3,oneof" json:"robot_instance_id,omitempty"` // Concrete robot instance selected for the slot.
+	AssetInstanceId *string                `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3,oneof" json:"asset_instance_id,omitempty"` // Concrete asset instance selected for the slot.
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -204,17 +204,17 @@ func (x *ARResourceBinding) GetAssetInstanceId() string {
 // resource wiring explicit and safe.
 type ARConfigBindingMessage struct {
 	state             protoimpl.MessageState    `protogen:"open.v1"`
-	Id                string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id                string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable binding identifier.
 	Name              string                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon              string                    `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description       string                    `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	StationId         *string                   `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3,oneof" json:"station_id,omitempty"`
-	CellId            *string                   `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3,oneof" json:"cell_id,omitempty"`
-	ArConfigId        string                    `protobuf:"bytes,7,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`
-	Disabled          bool                      `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"`
-	Standalone        bool                      `protobuf:"varint,9,opt,name=standalone,proto3" json:"standalone,omitempty"` // If true, only standalone bindings with the highest priority should be shown.
-	Priority          int32                     `protobuf:"varint,10,opt,name=priority,proto3" json:"priority,omitempty"`    // Higher values should be resolved before lower values.
-	ResourceBindings  []*ARResourceBinding      `protobuf:"bytes,11,rep,name=resource_bindings,json=resourceBindings,proto3" json:"resource_bindings,omitempty"`
+	StationId         *string                   `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3,oneof" json:"station_id,omitempty"`                    // Station this binding targets directly.
+	CellId            *string                   `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3,oneof" json:"cell_id,omitempty"`                             // Cell this binding targets directly.
+	ArConfigId        string                    `protobuf:"bytes,7,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`                     // Reusable AR config template to bind.
+	Disabled          bool                      `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"`                                            // If true, the binding should be ignored by resolution.
+	Standalone        bool                      `protobuf:"varint,9,opt,name=standalone,proto3" json:"standalone,omitempty"`                                        // If true, only standalone bindings with the highest priority should be shown.
+	Priority          int32                     `protobuf:"varint,10,opt,name=priority,proto3" json:"priority,omitempty"`                                           // Higher values should be resolved before lower values.
+	ResourceBindings  []*ARResourceBinding      `protobuf:"bytes,11,rep,name=resource_bindings,json=resourceBindings,proto3" json:"resource_bindings,omitempty"`    // Concrete resource assignments for config-declared slots.
 	PropertyOverrides []*v1.PropertyValueUpdate `protobuf:"bytes,12,rep,name=property_overrides,json=propertyOverrides,proto3" json:"property_overrides,omitempty"` // Station/cell-local values applied to config properties before runtime values.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -336,7 +336,7 @@ func (x *ARConfigBindingMessage) GetPropertyOverrides() []*v1.PropertyValueUpdat
 
 type ARConfigBindingMessages struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Bindings      []*ARConfigBindingMessage `protobuf:"bytes,1,rep,name=bindings,proto3" json:"bindings,omitempty"`
+	Bindings      []*ARConfigBindingMessage `protobuf:"bytes,1,rep,name=bindings,proto3" json:"bindings,omitempty"` // Station/cell bindings for reusable AR configs.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -381,17 +381,17 @@ func (x *ARConfigBindingMessages) GetBindings() []*ARConfigBindingMessage {
 // Deprecated legacy environment-based mapping.
 type MappingMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Legacy mapping identifier.
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	EnvironmentId string                 `protobuf:"bytes,5,opt,name=environment_id,json=environmentId,proto3" json:"environment_id,omitempty"`
-	ArConfigId    string                 `protobuf:"bytes,6,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`
-	Disabled      bool                   `protobuf:"varint,7,opt,name=disabled,proto3" json:"disabled,omitempty"`
-	RobotMapping  []*RobotMapping        `protobuf:"bytes,8,rep,name=robot_mapping,json=robotMapping,proto3" json:"robot_mapping,omitempty"`
-	AssetMapping  []*AssetMapping        `protobuf:"bytes,9,rep,name=asset_mapping,json=assetMapping,proto3" json:"asset_mapping,omitempty"`
-	Standalone    bool                   `protobuf:"varint,10,opt,name=standalone,proto3" json:"standalone,omitempty"` // Only this AR-config should be shown (winner have highest priority)
-	Priority      int32                  `protobuf:"varint,11,opt,name=priority,proto3" json:"priority,omitempty"`     // High value configs will be shown first
+	EnvironmentId string                 `protobuf:"bytes,5,opt,name=environment_id,json=environmentId,proto3" json:"environment_id,omitempty"` // Legacy environment target.
+	ArConfigId    string                 `protobuf:"bytes,6,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`        // AR config template to load for the legacy environment.
+	Disabled      bool                   `protobuf:"varint,7,opt,name=disabled,proto3" json:"disabled,omitempty"`                               // If true, the mapping should be ignored.
+	RobotMapping  []*RobotMapping        `protobuf:"bytes,8,rep,name=robot_mapping,json=robotMapping,proto3" json:"robot_mapping,omitempty"`    // Legacy robot-to-property assignments.
+	AssetMapping  []*AssetMapping        `protobuf:"bytes,9,rep,name=asset_mapping,json=assetMapping,proto3" json:"asset_mapping,omitempty"`    // Legacy asset-to-property assignments.
+	Standalone    bool                   `protobuf:"varint,10,opt,name=standalone,proto3" json:"standalone,omitempty"`                          // Only this AR-config should be shown (winner have highest priority)
+	Priority      int32                  `protobuf:"varint,11,opt,name=priority,proto3" json:"priority,omitempty"`                              // High value configs will be shown first
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -505,7 +505,7 @@ func (x *MappingMessage) GetPriority() int32 {
 
 type MappingMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Mappings      []*MappingMessage      `protobuf:"bytes,1,rep,name=mappings,proto3" json:"mappings,omitempty"`
+	Mappings      []*MappingMessage      `protobuf:"bytes,1,rep,name=mappings,proto3" json:"mappings,omitempty"` // Legacy environment-based mappings.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

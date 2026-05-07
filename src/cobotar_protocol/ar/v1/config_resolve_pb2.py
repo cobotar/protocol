@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from ar.v1 import ar_config_pb2 as ar_dot_v1_dot_ar__config__pb2
+from ar.v1 import input_slot_pb2 as ar_dot_v1_dot_input__slot__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x61r/v1/config_resolve.proto\x12\x05\x61r.v1\x1a\x15\x61r/v1/ar_config.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x03\n\x1b\x43onfigurationResolveContext\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12&\n\tworker_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb\x30\x01R\x08workerId\x12/\n\x0eprocess_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x88\xf2\x04\x01R\x0cprocessRunId\x12\x31\n\x0fsequence_run_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf2\x04\x01R\rsequenceRunId\x12)\n\x0btask_run_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x98\xf2\x04\x01R\ttaskRunId:\x9f\x01\xbaH\x9b\x01\x1a\x98\x01\n6configuration_resolve_context.requires_station_or_cell\x12\x31\x61t least one of station_id or cell_id must be set\x1a+this.station_id != \'\' || this.cell_id != \'\'\"\xc2\x01\n\x1b\x43onfigurationResolveRequest\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\x12\x44\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\".ar.v1.ConfigurationResolveContextB\x06\xbaH\x03\xc8\x01\x01R\x07\x63ontext\x12>\n\x13loaded_instance_ids\x18\x03 \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf0\xeb\x30\x01R\x11loadedInstanceIds\"\xbc\x02\n\x17ResolvedResourceBinding\x12\"\n\x07slot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06slotId\x12*\n\x0bproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\npropertyId\x12:\n\x11robot_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01H\x00R\x0frobotInstanceId\x88\x01\x01\x12:\n\x11\x61sset_instance_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01H\x01R\x0f\x61ssetInstanceId\x88\x01\x01:-\xbaH*\"(\n\x11robot_instance_id\n\x11\x61sset_instance_id\x10\x01\x42\x14\n\x12_robot_instance_idB\x14\n\x12_asset_instance_id\"\xc6\x01\n\x16ResolvedContextBinding\x12\"\n\x07slot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06slotId\x12*\n\x0bproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\npropertyId\x12\x39\n\x04type\x18\x03 \x01(\x0e\x32\x18.ar.v1.ARContextSlotTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12!\n\x0cstring_value\x18\x04 \x01(\tR\x0bstringValue\"\xd7\x01\n\x19\x43onfigurationResolveIssue\x12N\n\x08severity\x18\x01 \x01(\x0e\x32(.ar.v1.ConfigurationResolveIssueSeverityB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x08severity\x12(\n\nbinding_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb\x30\x01R\tbindingId\x12&\n\tconfig_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x18\n\x07message\x18\x04 \x01(\tR\x07message\"\x8e\x05\n\x15ResolvedConfiguration\x12*\n\x0binstance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf0\xeb\x30\x01R\ninstanceId\x12(\n\nbinding_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb\x30\x01R\tbindingId\x12&\n\tconfig_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x45\n\x05scope\x18\x04 \x01(\x0e\x32%.ar.v1.ResolvedConfigurationScopeTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05scope\x12\"\n\x07line_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\x1e\n\nstandalone\x18\x08 \x01(\x08R\nstandalone\x12\x1a\n\x08priority\x18\t \x01(\x05R\x08priority\x12I\n\x10\x65\x66\x66\x65\x63tive_config\x18\n \x01(\x0b\x32\x16.ar.v1.ARConfigMessageB\x06\xbaH\x03\xc8\x01\x01R\x0f\x65\x66\x66\x65\x63tiveConfig\x12\\\n\x1aresolved_resource_bindings\x18\x0b \x03(\x0b\x32\x1e.ar.v1.ResolvedResourceBindingR\x18resolvedResourceBindings\x12Y\n\x19resolved_context_bindings\x18\x0c \x03(\x0b\x32\x1d.ar.v1.ResolvedContextBindingR\x17resolvedContextBindings\"\xfb\x01\n\x1a\x43onfigurationResolveResult\x12\x1d\n\nrequest_id\x18\x01 \x01(\tR\trequestId\x12\x44\n\x0e\x63onfigurations\x18\x02 \x03(\x0b\x32\x1c.ar.v1.ResolvedConfigurationR\x0e\x63onfigurations\x12>\n\x13unload_instance_ids\x18\x03 \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf0\xeb\x30\x01R\x11unloadInstanceIds\x12\x38\n\x06issues\x18\x04 \x03(\x0b\x32 .ar.v1.ConfigurationResolveIssueR\x06issues*\xae\x01\n\x1eResolvedConfigurationScopeType\x12\x31\n-RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED\x10\x00\x12-\n)RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION\x10\x01\x12*\n&RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL\x10\x02*\xea\x01\n!ConfigurationResolveIssueSeverity\x12\x34\n0CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12-\n)CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO\x10\x01\x12\x30\n,CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING\x10\x02\x12.\n*CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR\x10\x03\x42\x8e\x01\n\tcom.ar.v1B\x12\x43onfigResolveProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x61r/v1/config_resolve.proto\x12\x05\x61r.v1\x1a\x15\x61r/v1/ar_config.proto\x1a\x16\x61r/v1/input_slot.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x03\n\x1b\x43onfigurationResolveContext\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12&\n\tworker_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb\x30\x01R\x08workerId\x12/\n\x0eprocess_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x88\xf2\x04\x01R\x0cprocessRunId\x12\x31\n\x0fsequence_run_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf2\x04\x01R\rsequenceRunId\x12)\n\x0btask_run_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x98\xf2\x04\x01R\ttaskRunId:\x9f\x01\xbaH\x9b\x01\x1a\x98\x01\n6configuration_resolve_context.requires_station_or_cell\x12\x31\x61t least one of station_id or cell_id must be set\x1a+this.station_id != \'\' || this.cell_id != \'\'\"\xa3\x01\n\x1b\x43onfigurationResolveRequest\x12\x44\n\x07\x63ontext\x18\x01 \x01(\x0b\x32\".ar.v1.ConfigurationResolveContextB\x06\xbaH\x03\xc8\x01\x01R\x07\x63ontext\x12>\n\x13loaded_instance_ids\x18\x02 \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf0\xeb\x30\x01R\x11loadedInstanceIds\"K\n\x12ResolvedRobotInput\x12\x35\n\x11robot_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\"K\n\x12ResolvedAssetInput\x12\x35\n\x11\x61sset_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0f\x61ssetInstanceId\"y\n\x19ResolvedContextInputValue\x12\x39\n\x04type\x18\x01 \x01(\x0e\x32\x18.ar.v1.ARContextSlotTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12!\n\x0cstring_value\x18\x02 \x01(\tR\x0bstringValue\"\xbd\x02\n\x14ResolvedInputBinding\x12%\n\x07slot_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xf8\xeb\x30\x01\xc8\x01\x01R\x06slotId\x12@\n\x15generated_property_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x98\xf1\x04\x01\xc8\x01\x01R\x13generatedPropertyId\x12/\n\x05robot\x18\n \x01(\x0b\x32\x19.ar.v1.ResolvedRobotInputR\x05robot\x12/\n\x05\x61sset\x18\x0b \x01(\x0b\x32\x19.ar.v1.ResolvedAssetInputR\x05\x61sset\x12:\n\x07\x63ontext\x18\x0c \x01(\x0b\x32 .ar.v1.ResolvedContextInputValueR\x07\x63ontext:\x1e\xbaH\x1b\"\x19\n\x05robot\n\x05\x61sset\n\x07\x63ontext\x10\x01\"\xd7\x01\n\x19\x43onfigurationResolveIssue\x12N\n\x08severity\x18\x01 \x01(\x0e\x32(.ar.v1.ConfigurationResolveIssueSeverityB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x08severity\x12(\n\nbinding_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb\x30\x01R\tbindingId\x12&\n\tconfig_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x18\n\x07message\x18\x04 \x01(\tR\x07message\"\xe6\x04\n\x15ResolvedConfiguration\x12*\n\x0binstance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf0\xeb\x30\x01R\ninstanceId\x12(\n\nbinding_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb\x30\x01R\tbindingId\x12&\n\tconfig_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x45\n\x05scope\x18\x04 \x01(\x0e\x32%.ar.v1.ResolvedConfigurationScopeTypeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05scope\x12\"\n\x07line_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\x1e\n\nstandalone\x18\x08 \x01(\x08R\nstandalone\x12\x1a\n\x08priority\x18\t \x01(\x05R\x08priority\x12I\n\x10\x65\x66\x66\x65\x63tive_config\x18\n \x01(\x0b\x32\x16.ar.v1.ARConfigMessageB\x06\xbaH\x03\xc8\x01\x01R\x0f\x65\x66\x66\x65\x63tiveConfig\x12:\n\x0binput_slots\x18\x0b \x03(\x0b\x32\x19.ar.v1.ARInputSlotMessageR\ninputSlots\x12S\n\x17resolved_input_bindings\x18\x0c \x03(\x0b\x32\x1b.ar.v1.ResolvedInputBindingR\x15resolvedInputBindings\"\xdc\x01\n\x1a\x43onfigurationResolveResult\x12\x44\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32\x1c.ar.v1.ResolvedConfigurationR\x0e\x63onfigurations\x12>\n\x13unload_instance_ids\x18\x02 \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf0\xeb\x30\x01R\x11unloadInstanceIds\x12\x38\n\x06issues\x18\x03 \x03(\x0b\x32 .ar.v1.ConfigurationResolveIssueR\x06issues*\xae\x01\n\x1eResolvedConfigurationScopeType\x12\x31\n-RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED\x10\x00\x12-\n)RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION\x10\x01\x12*\n&RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL\x10\x02*\xea\x01\n!ConfigurationResolveIssueSeverity\x12\x34\n0CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12-\n)CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO\x10\x01\x12\x30\n,CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING\x10\x02\x12.\n*CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR\x10\x03\x42\x8e\x01\n\tcom.ar.v1B\x12\x43onfigResolveProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -55,22 +56,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONFIGURATIONRESOLVEREQUEST'].fields_by_name['context']._serialized_options = b'\272H\003\310\001\001'
   _globals['_CONFIGURATIONRESOLVEREQUEST'].fields_by_name['loaded_instance_ids']._loaded_options = None
   _globals['_CONFIGURATIONRESOLVEREQUEST'].fields_by_name['loaded_instance_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\360\3530\001'
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['slot_id']._loaded_options = None
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['slot_id']._serialized_options = b'\272H\006r\004\020\001\030@'
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['property_id']._loaded_options = None
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['property_id']._serialized_options = b'\272H\006r\004\230\361\004\001'
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['robot_instance_id']._loaded_options = None
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['robot_instance_id']._serialized_options = b'\272H\006r\004\250\361\004\001'
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['asset_instance_id']._loaded_options = None
-  _globals['_RESOLVEDRESOURCEBINDING'].fields_by_name['asset_instance_id']._serialized_options = b'\272H\006r\004\270\361\004\001'
-  _globals['_RESOLVEDRESOURCEBINDING']._loaded_options = None
-  _globals['_RESOLVEDRESOURCEBINDING']._serialized_options = b'\272H*\"(\n\021robot_instance_id\n\021asset_instance_id\020\001'
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['slot_id']._loaded_options = None
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['slot_id']._serialized_options = b'\272H\006r\004\020\001\030@'
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['property_id']._loaded_options = None
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['property_id']._serialized_options = b'\272H\006r\004\230\361\004\001'
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['type']._loaded_options = None
-  _globals['_RESOLVEDCONTEXTBINDING'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_RESOLVEDROBOTINPUT'].fields_by_name['robot_instance_id']._loaded_options = None
+  _globals['_RESOLVEDROBOTINPUT'].fields_by_name['robot_instance_id']._serialized_options = b'\272H\006r\004\250\361\004\001'
+  _globals['_RESOLVEDASSETINPUT'].fields_by_name['asset_instance_id']._loaded_options = None
+  _globals['_RESOLVEDASSETINPUT'].fields_by_name['asset_instance_id']._serialized_options = b'\272H\006r\004\270\361\004\001'
+  _globals['_RESOLVEDCONTEXTINPUTVALUE'].fields_by_name['type']._loaded_options = None
+  _globals['_RESOLVEDCONTEXTINPUTVALUE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_RESOLVEDINPUTBINDING'].fields_by_name['slot_id']._loaded_options = None
+  _globals['_RESOLVEDINPUTBINDING'].fields_by_name['slot_id']._serialized_options = b'\272H\tr\004\370\3530\001\310\001\001'
+  _globals['_RESOLVEDINPUTBINDING'].fields_by_name['generated_property_id']._loaded_options = None
+  _globals['_RESOLVEDINPUTBINDING'].fields_by_name['generated_property_id']._serialized_options = b'\272H\tr\004\230\361\004\001\310\001\001'
+  _globals['_RESOLVEDINPUTBINDING']._loaded_options = None
+  _globals['_RESOLVEDINPUTBINDING']._serialized_options = b'\272H\033\"\031\n\005robot\n\005asset\n\007context\020\001'
   _globals['_CONFIGURATIONRESOLVEISSUE'].fields_by_name['severity']._loaded_options = None
   _globals['_CONFIGURATIONRESOLVEISSUE'].fields_by_name['severity']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_CONFIGURATIONRESOLVEISSUE'].fields_by_name['binding_id']._loaded_options = None
@@ -95,22 +92,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RESOLVEDCONFIGURATION'].fields_by_name['effective_config']._serialized_options = b'\272H\003\310\001\001'
   _globals['_CONFIGURATIONRESOLVERESULT'].fields_by_name['unload_instance_ids']._loaded_options = None
   _globals['_CONFIGURATIONRESOLVERESULT'].fields_by_name['unload_instance_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\360\3530\001'
-  _globals['_RESOLVEDCONFIGURATIONSCOPETYPE']._serialized_start=2472
-  _globals['_RESOLVEDCONFIGURATIONSCOPETYPE']._serialized_end=2646
-  _globals['_CONFIGURATIONRESOLVEISSUESEVERITY']._serialized_start=2649
-  _globals['_CONFIGURATIONRESOLVEISSUESEVERITY']._serialized_end=2883
-  _globals['_CONFIGURATIONRESOLVECONTEXT']._serialized_start=135
-  _globals['_CONFIGURATIONRESOLVECONTEXT']._serialized_end=623
-  _globals['_CONFIGURATIONRESOLVEREQUEST']._serialized_start=626
-  _globals['_CONFIGURATIONRESOLVEREQUEST']._serialized_end=820
-  _globals['_RESOLVEDRESOURCEBINDING']._serialized_start=823
-  _globals['_RESOLVEDRESOURCEBINDING']._serialized_end=1139
-  _globals['_RESOLVEDCONTEXTBINDING']._serialized_start=1142
-  _globals['_RESOLVEDCONTEXTBINDING']._serialized_end=1340
-  _globals['_CONFIGURATIONRESOLVEISSUE']._serialized_start=1343
-  _globals['_CONFIGURATIONRESOLVEISSUE']._serialized_end=1558
-  _globals['_RESOLVEDCONFIGURATION']._serialized_start=1561
-  _globals['_RESOLVEDCONFIGURATION']._serialized_end=2215
-  _globals['_CONFIGURATIONRESOLVERESULT']._serialized_start=2218
-  _globals['_CONFIGURATIONRESOLVERESULT']._serialized_end=2469
+  _globals['_RESOLVEDCONFIGURATIONSCOPETYPE']._serialized_start=2471
+  _globals['_RESOLVEDCONFIGURATIONSCOPETYPE']._serialized_end=2645
+  _globals['_CONFIGURATIONRESOLVEISSUESEVERITY']._serialized_start=2648
+  _globals['_CONFIGURATIONRESOLVEISSUESEVERITY']._serialized_end=2882
+  _globals['_CONFIGURATIONRESOLVECONTEXT']._serialized_start=159
+  _globals['_CONFIGURATIONRESOLVECONTEXT']._serialized_end=647
+  _globals['_CONFIGURATIONRESOLVEREQUEST']._serialized_start=650
+  _globals['_CONFIGURATIONRESOLVEREQUEST']._serialized_end=813
+  _globals['_RESOLVEDROBOTINPUT']._serialized_start=815
+  _globals['_RESOLVEDROBOTINPUT']._serialized_end=890
+  _globals['_RESOLVEDASSETINPUT']._serialized_start=892
+  _globals['_RESOLVEDASSETINPUT']._serialized_end=967
+  _globals['_RESOLVEDCONTEXTINPUTVALUE']._serialized_start=969
+  _globals['_RESOLVEDCONTEXTINPUTVALUE']._serialized_end=1090
+  _globals['_RESOLVEDINPUTBINDING']._serialized_start=1093
+  _globals['_RESOLVEDINPUTBINDING']._serialized_end=1410
+  _globals['_CONFIGURATIONRESOLVEISSUE']._serialized_start=1413
+  _globals['_CONFIGURATIONRESOLVEISSUE']._serialized_end=1628
+  _globals['_RESOLVEDCONFIGURATION']._serialized_start=1631
+  _globals['_RESOLVEDCONFIGURATION']._serialized_end=2245
+  _globals['_CONFIGURATIONRESOLVERESULT']._serialized_start=2248
+  _globals['_CONFIGURATIONRESOLVERESULT']._serialized_end=2468
 # @@protoc_insertion_point(module_scope)

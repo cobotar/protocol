@@ -2,6 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/ar_config.proto";
+import "ar/v1/input_slot.proto";
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -17,25 +18,32 @@ message ConfigurationResolveContext {
     expression: "this.station_id != '' || this.cell_id != ''"
   };
 
-  string line_id = 1 [(buf.validate.field).string.(validation.v1.line_id_component) = true];
-  string cell_id = 2 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
-  string station_id = 3 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
-  string worker_id = 4 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
-  string process_run_id = 5 [(buf.validate.field).string.(validation.v1.process_run_id_component) = true];
-  string sequence_run_id = 6 [(buf.validate.field).string.(validation.v1.sequence_run_id_component) = true];
-  string task_run_id = 7 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true];
+  string line_id = 1 [(buf.validate.field).string.(validation.v1.line_id_component) = true]; // Active line if known.
+  string cell_id = 2 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Active cell if known.
+  string station_id = 3 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Active station if known.
+  string worker_id = 4 [(buf.validate.field).string.(validation.v1.worker_id_component) = true]; // Active worker/operator if known.
+  string process_run_id = 5 [(buf.validate.field).string.(validation.v1.process_run_id_component) = true]; // Active process run if known.
+  string sequence_run_id = 6 [(buf.validate.field).string.(validation.v1.sequence_run_id_component) = true]; // Active sequence run if known.
+  string task_run_id = 7 [(buf.validate.field).string.(validation.v1.task_run_id_component) = true]; // Active task run if known.
 }
 
 enum ResolvedConfigurationScopeType {
+  // Resolver did not determine a concrete scope.
   RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED = 0;
+  // Config was selected through a station-scoped binding.
   RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION = 1;
+  // Config was selected through a cell-scoped binding.
   RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL = 2;
 }
 
 enum ConfigurationResolveIssueSeverity {
+  // Severity not classified.
   CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED = 0;
+  // Informational note that does not affect resolution.
   CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO = 1;
+  // Non-fatal problem or fallback encountered during resolution.
   CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING = 2;
+  // Fatal problem that prevented a binding/config from resolving.
   CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR = 3;
 }
 
@@ -46,88 +54,99 @@ enum ConfigurationResolveIssueSeverity {
 // - find direct station bindings matching context.station_id
 // - find parent/shared cell bindings matching context.cell_id
 // - reject disabled bindings
-// - reject bindings whose required resource slots or required context slots
-//   cannot be satisfied
+// - reject bindings whose required input slots cannot be satisfied
 // - if any surviving binding is standalone, keep only standalone bindings with
 //   the highest priority
 // - otherwise keep all surviving bindings sorted by priority descending, with
 //   station-scoped bindings preferred over cell-scoped bindings for equal
 //   priority
 message ConfigurationResolveRequest {
-  ConfigurationResolveContext context = 1 [(buf.validate.field).required = true];
+  ConfigurationResolveContext context = 1 [(buf.validate.field).required = true]; // Active runtime context to resolve against.
   repeated string loaded_instance_ids = 2 [(buf.validate.field).repeated.items.string.(validation.v1.ar_config_instance_id_component) = true]; // Instances already loaded by the caller, used to compute unloads/deltas.
 }
 
-// ResolvedResourceBinding captures the concrete resource value selected for a
-// config resource slot.
-message ResolvedResourceBinding {
+// ResolvedRobotInput carries the concrete robot instance chosen for a slot.
+message ResolvedRobotInput {
+  string robot_instance_id = 1 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true]; // Selected robot instance.
+}
+
+// ResolvedAssetInput carries the concrete asset instance chosen for a slot.
+message ResolvedAssetInput {
+  string asset_instance_id = 1 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Selected asset instance.
+}
+
+// ResolvedContextInputValue carries the runtime context value chosen for a slot.
+message ResolvedContextInputValue {
+  ARContextSlotType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ]; // Context category that produced the value.
+  string string_value = 2; // Resolved runtime identifier/value encoded as string.
+}
+
+// ResolvedInputBinding is the authoritative resolved value for a unified input
+// slot.
+//
+// generated_property_id identifies the server-managed property that should be
+// populated in the effective config instance.
+message ResolvedInputBinding {
   option (buf.validate.message).oneof = {
     fields: [
-      "robot_instance_id",
-      "asset_instance_id"
+      "robot",
+      "asset",
+      "context"
     ]
     required: true
   };
 
-  string slot_id = 1 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }];
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
-  optional string robot_instance_id = 3 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true];
-  optional string asset_instance_id = 4 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true];
-}
-
-// ResolvedContextBinding captures the concrete runtime context value selected
-// for a config context slot.
-//
-// Current context bindings resolve to string ids that are injected into the
-// mapped property_id as PROPERTY_TYPE_STRING values.
-message ResolvedContextBinding {
-  string slot_id = 1 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }];
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true];
-  ARContextSlotType type = 3 [
+  string slot_id = 1 [
     (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
-  string string_value = 4;
+    (buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true
+  ]; // Slot this resolved value belongs to.
+  string generated_property_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.property_id_component) = true
+  ]; // Generated property that should receive the resolved value.
+  ResolvedRobotInput robot = 10; // Set when the slot resolved to a robot instance.
+  ResolvedAssetInput asset = 11; // Set when the slot resolved to an asset instance.
+  ResolvedContextInputValue context = 12; // Set when the slot resolved from runtime context.
 }
 
+// ConfigurationResolveIssue describes a problem or note encountered while
+// evaluating bindings for the supplied context.
 message ConfigurationResolveIssue {
-  ConfigurationResolveIssueSeverity severity = 1 [(buf.validate.field).enum.defined_only = true];
-  string binding_id = 2 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true];
-  string config_id = 3 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string message = 4;
+  ConfigurationResolveIssueSeverity severity = 1 [(buf.validate.field).enum.defined_only = true]; // Classification of the issue.
+  string binding_id = 2 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Binding involved, if any.
+  string config_id = 3 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true]; // Config involved, if any.
+  string message = 4; // Human-readable description of the issue.
 }
 
 // ResolvedConfiguration is the fully selected config instance a runtime client
 // should activate.
 //
 // effective_config should already include all binding-level property overrides.
-// The runtime/client should then inject resolved_resource_bindings and
-// resolved_context_bindings into the mapped properties before evaluating local
-// property mirroring, helpers, actions, and feedback.
+// The runtime/client should then inject resolved_input_bindings into the
+// generated properties before evaluating local property mirroring, helpers,
+// actions, and feedback.
 message ResolvedConfiguration {
-  string instance_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_instance_id_component) = true];
-  string binding_id = 2 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true];
-  string config_id = 3 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  ResolvedConfigurationScopeType scope = 4 [(buf.validate.field).enum.defined_only = true];
-  string line_id = 5 [(buf.validate.field).string.(validation.v1.line_id_component) = true];
-  string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
-  string station_id = 7 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
-  bool standalone = 8;
-  int32 priority = 9;
-  ARConfigMessage effective_config = 10 [(buf.validate.field).required = true];
-  repeated ResolvedResourceBinding resolved_resource_bindings = 11;
-  repeated ResolvedContextBinding resolved_context_bindings = 12;
+  string instance_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_instance_id_component) = true]; // Runtime instance identifier for this resolved config.
+  string binding_id = 2 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Binding that selected the config.
+  string config_id = 3 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true]; // Underlying reusable config template.
+  ResolvedConfigurationScopeType scope = 4 [(buf.validate.field).enum.defined_only = true]; // Scope level that selected this config.
+  string line_id = 5 [(buf.validate.field).string.(validation.v1.line_id_component) = true]; // Active line attached to the resolved instance, if any.
+  string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Active cell attached to the resolved instance, if any.
+  string station_id = 7 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Active station attached to the resolved instance, if any.
+  bool standalone = 8; // Standalone decision carried over from the winning binding.
+  int32 priority = 9; // Priority carried over from the winning binding.
+  ARConfigMessage effective_config = 10 [(buf.validate.field).required = true]; // Config after binding-level overrides have been applied.
+  repeated ARInputSlotMessage input_slots = 11; // Materialized config-owned input slot entities referenced by effective_config.input_slot_ids.
+  repeated ResolvedInputBinding resolved_input_bindings = 12; // Authoritative resolved values for unified config input slots.
 }
 
+// ConfigurationResolveResult returns the configs that should be active for the
+// supplied runtime context plus any instances that should be unloaded.
 message ConfigurationResolveResult {
-  string request_id = 1;
-  repeated ResolvedConfiguration configurations = 2;
-  repeated string unload_instance_ids = 3 [(buf.validate.field).repeated.items.string.(validation.v1.ar_config_instance_id_component) = true];
-  repeated ConfigurationResolveIssue issues = 4;
+  repeated ResolvedConfiguration configurations = 1; // Config instances that should be active after resolution.
+  repeated string unload_instance_ids = 2 [(buf.validate.field).repeated.items.string.(validation.v1.ar_config_instance_id_component) = true]; // Previously loaded instances that should now be removed.
+  repeated ConfigurationResolveIssue issues = 3; // Informational, warning, or error issues observed during resolution.
 }

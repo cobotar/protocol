@@ -132,6 +132,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "robot_id" field.</summary>
     public const int RobotIdFieldNumber = 1;
     private string robotId_ = "";
+    /// <summary>
+    /// Legacy robot definition identifier.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RobotId {
@@ -144,6 +147,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "property_id" field.</summary>
     public const int PropertyIdFieldNumber = 2;
     private string propertyId_ = "";
+    /// <summary>
+    /// Legacy target property for the mapped robot.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PropertyId {
@@ -367,6 +373,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "asset_id" field.</summary>
     public const int AssetIdFieldNumber = 1;
     private string assetId_ = "";
+    /// <summary>
+    /// Legacy asset definition identifier.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AssetId {
@@ -379,6 +388,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "property_id" field.</summary>
     public const int PropertyIdFieldNumber = 2;
     private string propertyId_ = "";
+    /// <summary>
+    /// Legacy target property for the mapped asset.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PropertyId {
@@ -607,6 +619,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "slot_id" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private string slotId_ = "";
+    /// <summary>
+    /// Config-declared slot to satisfy.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SlotId {
@@ -621,6 +636,9 @@ namespace Messages.AR.V1 {
     private readonly static string RobotInstanceIdDefaultValue = "";
 
     private string robotInstanceId_;
+    /// <summary>
+    /// Concrete robot instance selected for the slot.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RobotInstanceId {
@@ -647,6 +665,9 @@ namespace Messages.AR.V1 {
     private readonly static string AssetInstanceIdDefaultValue = "";
 
     private string assetInstanceId_;
+    /// <summary>
+    /// Concrete asset instance selected for the slot.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AssetInstanceId {
@@ -930,6 +951,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    /// Stable binding identifier.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
@@ -980,6 +1004,9 @@ namespace Messages.AR.V1 {
     private readonly static string StationIdDefaultValue = "";
 
     private string stationId_;
+    /// <summary>
+    /// Station this binding targets directly.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StationId {
@@ -1006,6 +1033,9 @@ namespace Messages.AR.V1 {
     private readonly static string CellIdDefaultValue = "";
 
     private string cellId_;
+    /// <summary>
+    /// Cell this binding targets directly.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CellId {
@@ -1030,6 +1060,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "ar_config_id" field.</summary>
     public const int ArConfigIdFieldNumber = 7;
     private string arConfigId_ = "";
+    /// <summary>
+    /// Reusable AR config template to bind.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ArConfigId {
@@ -1042,6 +1075,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "disabled" field.</summary>
     public const int DisabledFieldNumber = 8;
     private bool disabled_;
+    /// <summary>
+    /// If true, the binding should be ignored by resolution.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Disabled {
@@ -1086,6 +1122,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ARResourceBinding> _repeated_resourceBindings_codec
         = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.ARResourceBinding.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ARResourceBinding> resourceBindings_ = new pbc::RepeatedField<global::Messages.AR.V1.ARResourceBinding>();
+    /// <summary>
+    /// Concrete resource assignments for config-declared slots.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.ARResourceBinding> ResourceBindings {
@@ -1541,6 +1580,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ARConfigBindingMessage> _repeated_bindings_codec
         = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.ARConfigBindingMessage.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ARConfigBindingMessage> bindings_ = new pbc::RepeatedField<global::Messages.AR.V1.ARConfigBindingMessage>();
+    /// <summary>
+    /// Station/cell bindings for reusable AR configs.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.ARConfigBindingMessage> Bindings {
@@ -1739,6 +1781,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    /// Legacy mapping identifier.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
@@ -1787,6 +1832,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "environment_id" field.</summary>
     public const int EnvironmentIdFieldNumber = 5;
     private string environmentId_ = "";
+    /// <summary>
+    /// Legacy environment target.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnvironmentId {
@@ -1799,6 +1847,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "ar_config_id" field.</summary>
     public const int ArConfigIdFieldNumber = 6;
     private string arConfigId_ = "";
+    /// <summary>
+    /// AR config template to load for the legacy environment.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ArConfigId {
@@ -1811,6 +1862,9 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "disabled" field.</summary>
     public const int DisabledFieldNumber = 7;
     private bool disabled_;
+    /// <summary>
+    /// If true, the mapping should be ignored.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Disabled {
@@ -1825,6 +1879,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.RobotMapping> _repeated_robotMapping_codec
         = pb::FieldCodec.ForMessage(66, global::Messages.AR.V1.RobotMapping.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> robotMapping_ = new pbc::RepeatedField<global::Messages.AR.V1.RobotMapping>();
+    /// <summary>
+    /// Legacy robot-to-property assignments.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.RobotMapping> RobotMapping {
@@ -1836,6 +1893,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.AssetMapping> _repeated_assetMapping_codec
         = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.AssetMapping.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.AssetMapping> assetMapping_ = new pbc::RepeatedField<global::Messages.AR.V1.AssetMapping>();
+    /// <summary>
+    /// Legacy asset-to-property assignments.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.AssetMapping> AssetMapping {
@@ -2283,6 +2343,9 @@ namespace Messages.AR.V1 {
     private static readonly pb::FieldCodec<global::Messages.AR.V1.MappingMessage> _repeated_mappings_codec
         = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.MappingMessage.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.MappingMessage> mappings_ = new pbc::RepeatedField<global::Messages.AR.V1.MappingMessage>();
+    /// <summary>
+    /// Legacy environment-based mappings.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.AR.V1.MappingMessage> Mappings {

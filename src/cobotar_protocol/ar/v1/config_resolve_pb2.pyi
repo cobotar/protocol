@@ -1,4 +1,5 @@
 from ar.v1 import ar_config_pb2 as _ar_config_pb2
+from ar.v1 import input_slot_pb2 as _input_slot_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -49,38 +50,46 @@ class ConfigurationResolveContext(_message.Message):
     def __init__(self, line_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., worker_id: _Optional[str] = ..., process_run_id: _Optional[str] = ..., sequence_run_id: _Optional[str] = ..., task_run_id: _Optional[str] = ...) -> None: ...
 
 class ConfigurationResolveRequest(_message.Message):
-    __slots__ = ("request_id", "context", "loaded_instance_ids")
-    REQUEST_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("context", "loaded_instance_ids")
     CONTEXT_FIELD_NUMBER: _ClassVar[int]
     LOADED_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
-    request_id: str
     context: ConfigurationResolveContext
     loaded_instance_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, request_id: _Optional[str] = ..., context: _Optional[_Union[ConfigurationResolveContext, _Mapping]] = ..., loaded_instance_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, context: _Optional[_Union[ConfigurationResolveContext, _Mapping]] = ..., loaded_instance_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class ResolvedResourceBinding(_message.Message):
-    __slots__ = ("slot_id", "property_id", "robot_instance_id", "asset_instance_id")
-    SLOT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+class ResolvedRobotInput(_message.Message):
+    __slots__ = ("robot_instance_id",)
     ROBOT_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
-    slot_id: str
-    property_id: str
     robot_instance_id: str
-    asset_instance_id: str
-    def __init__(self, slot_id: _Optional[str] = ..., property_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., asset_instance_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, robot_instance_id: _Optional[str] = ...) -> None: ...
 
-class ResolvedContextBinding(_message.Message):
-    __slots__ = ("slot_id", "property_id", "type", "string_value")
-    SLOT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+class ResolvedAssetInput(_message.Message):
+    __slots__ = ("asset_instance_id",)
+    ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    asset_instance_id: str
+    def __init__(self, asset_instance_id: _Optional[str] = ...) -> None: ...
+
+class ResolvedContextInputValue(_message.Message):
+    __slots__ = ("type", "string_value")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     STRING_VALUE_FIELD_NUMBER: _ClassVar[int]
-    slot_id: str
-    property_id: str
-    type: _ar_config_pb2.ARContextSlotType
+    type: _input_slot_pb2.ARContextSlotType
     string_value: str
-    def __init__(self, slot_id: _Optional[str] = ..., property_id: _Optional[str] = ..., type: _Optional[_Union[_ar_config_pb2.ARContextSlotType, str]] = ..., string_value: _Optional[str] = ...) -> None: ...
+    def __init__(self, type: _Optional[_Union[_input_slot_pb2.ARContextSlotType, str]] = ..., string_value: _Optional[str] = ...) -> None: ...
+
+class ResolvedInputBinding(_message.Message):
+    __slots__ = ("slot_id", "generated_property_id", "robot", "asset", "context")
+    SLOT_ID_FIELD_NUMBER: _ClassVar[int]
+    GENERATED_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_FIELD_NUMBER: _ClassVar[int]
+    ASSET_FIELD_NUMBER: _ClassVar[int]
+    CONTEXT_FIELD_NUMBER: _ClassVar[int]
+    slot_id: str
+    generated_property_id: str
+    robot: ResolvedRobotInput
+    asset: ResolvedAssetInput
+    context: ResolvedContextInputValue
+    def __init__(self, slot_id: _Optional[str] = ..., generated_property_id: _Optional[str] = ..., robot: _Optional[_Union[ResolvedRobotInput, _Mapping]] = ..., asset: _Optional[_Union[ResolvedAssetInput, _Mapping]] = ..., context: _Optional[_Union[ResolvedContextInputValue, _Mapping]] = ...) -> None: ...
 
 class ConfigurationResolveIssue(_message.Message):
     __slots__ = ("severity", "binding_id", "config_id", "message")
@@ -95,7 +104,7 @@ class ConfigurationResolveIssue(_message.Message):
     def __init__(self, severity: _Optional[_Union[ConfigurationResolveIssueSeverity, str]] = ..., binding_id: _Optional[str] = ..., config_id: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
 
 class ResolvedConfiguration(_message.Message):
-    __slots__ = ("instance_id", "binding_id", "config_id", "scope", "line_id", "cell_id", "station_id", "standalone", "priority", "effective_config", "resolved_resource_bindings", "resolved_context_bindings")
+    __slots__ = ("instance_id", "binding_id", "config_id", "scope", "line_id", "cell_id", "station_id", "standalone", "priority", "effective_config", "input_slots", "resolved_input_bindings")
     INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     BINDING_ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
@@ -106,8 +115,8 @@ class ResolvedConfiguration(_message.Message):
     STANDALONE_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
     EFFECTIVE_CONFIG_FIELD_NUMBER: _ClassVar[int]
-    RESOLVED_RESOURCE_BINDINGS_FIELD_NUMBER: _ClassVar[int]
-    RESOLVED_CONTEXT_BINDINGS_FIELD_NUMBER: _ClassVar[int]
+    INPUT_SLOTS_FIELD_NUMBER: _ClassVar[int]
+    RESOLVED_INPUT_BINDINGS_FIELD_NUMBER: _ClassVar[int]
     instance_id: str
     binding_id: str
     config_id: str
@@ -118,18 +127,16 @@ class ResolvedConfiguration(_message.Message):
     standalone: bool
     priority: int
     effective_config: _ar_config_pb2.ARConfigMessage
-    resolved_resource_bindings: _containers.RepeatedCompositeFieldContainer[ResolvedResourceBinding]
-    resolved_context_bindings: _containers.RepeatedCompositeFieldContainer[ResolvedContextBinding]
-    def __init__(self, instance_id: _Optional[str] = ..., binding_id: _Optional[str] = ..., config_id: _Optional[str] = ..., scope: _Optional[_Union[ResolvedConfigurationScopeType, str]] = ..., line_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., standalone: bool = ..., priority: _Optional[int] = ..., effective_config: _Optional[_Union[_ar_config_pb2.ARConfigMessage, _Mapping]] = ..., resolved_resource_bindings: _Optional[_Iterable[_Union[ResolvedResourceBinding, _Mapping]]] = ..., resolved_context_bindings: _Optional[_Iterable[_Union[ResolvedContextBinding, _Mapping]]] = ...) -> None: ...
+    input_slots: _containers.RepeatedCompositeFieldContainer[_input_slot_pb2.ARInputSlotMessage]
+    resolved_input_bindings: _containers.RepeatedCompositeFieldContainer[ResolvedInputBinding]
+    def __init__(self, instance_id: _Optional[str] = ..., binding_id: _Optional[str] = ..., config_id: _Optional[str] = ..., scope: _Optional[_Union[ResolvedConfigurationScopeType, str]] = ..., line_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., standalone: bool = ..., priority: _Optional[int] = ..., effective_config: _Optional[_Union[_ar_config_pb2.ARConfigMessage, _Mapping]] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ..., resolved_input_bindings: _Optional[_Iterable[_Union[ResolvedInputBinding, _Mapping]]] = ...) -> None: ...
 
 class ConfigurationResolveResult(_message.Message):
-    __slots__ = ("request_id", "configurations", "unload_instance_ids", "issues")
-    REQUEST_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("configurations", "unload_instance_ids", "issues")
     CONFIGURATIONS_FIELD_NUMBER: _ClassVar[int]
     UNLOAD_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     ISSUES_FIELD_NUMBER: _ClassVar[int]
-    request_id: str
     configurations: _containers.RepeatedCompositeFieldContainer[ResolvedConfiguration]
     unload_instance_ids: _containers.RepeatedScalarFieldContainer[str]
     issues: _containers.RepeatedCompositeFieldContainer[ConfigurationResolveIssue]
-    def __init__(self, request_id: _Optional[str] = ..., configurations: _Optional[_Iterable[_Union[ResolvedConfiguration, _Mapping]]] = ..., unload_instance_ids: _Optional[_Iterable[str]] = ..., issues: _Optional[_Iterable[_Union[ConfigurationResolveIssue, _Mapping]]] = ...) -> None: ...
+    def __init__(self, configurations: _Optional[_Iterable[_Union[ResolvedConfiguration, _Mapping]]] = ..., unload_instance_ids: _Optional[_Iterable[str]] = ..., issues: _Optional[_Iterable[_Union[ConfigurationResolveIssue, _Mapping]]] = ...) -> None: ...

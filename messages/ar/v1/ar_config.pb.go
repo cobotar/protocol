@@ -8,7 +8,6 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -24,122 +23,9 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ARResourceSlotType int32
-
-const (
-	ARResourceSlotType_AR_RESOURCE_SLOT_TYPE_UNSPECIFIED ARResourceSlotType = 0
-	ARResourceSlotType_AR_RESOURCE_SLOT_TYPE_ROBOT       ARResourceSlotType = 1
-	ARResourceSlotType_AR_RESOURCE_SLOT_TYPE_ASSET       ARResourceSlotType = 2
-)
-
-// Enum value maps for ARResourceSlotType.
-var (
-	ARResourceSlotType_name = map[int32]string{
-		0: "AR_RESOURCE_SLOT_TYPE_UNSPECIFIED",
-		1: "AR_RESOURCE_SLOT_TYPE_ROBOT",
-		2: "AR_RESOURCE_SLOT_TYPE_ASSET",
-	}
-	ARResourceSlotType_value = map[string]int32{
-		"AR_RESOURCE_SLOT_TYPE_UNSPECIFIED": 0,
-		"AR_RESOURCE_SLOT_TYPE_ROBOT":       1,
-		"AR_RESOURCE_SLOT_TYPE_ASSET":       2,
-	}
-)
-
-func (x ARResourceSlotType) Enum() *ARResourceSlotType {
-	p := new(ARResourceSlotType)
-	*p = x
-	return p
-}
-
-func (x ARResourceSlotType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ARResourceSlotType) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_ar_config_proto_enumTypes[0].Descriptor()
-}
-
-func (ARResourceSlotType) Type() protoreflect.EnumType {
-	return &file_ar_v1_ar_config_proto_enumTypes[0]
-}
-
-func (x ARResourceSlotType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ARResourceSlotType.Descriptor instead.
-func (ARResourceSlotType) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{0}
-}
-
-type ARContextSlotType int32
-
-const (
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_UNSPECIFIED     ARContextSlotType = 0
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_LINE_ID         ARContextSlotType = 1
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_CELL_ID         ARContextSlotType = 2
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_STATION_ID      ARContextSlotType = 3
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_WORKER_ID       ARContextSlotType = 4
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID  ARContextSlotType = 5
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID ARContextSlotType = 6
-	ARContextSlotType_AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID     ARContextSlotType = 7
-)
-
-// Enum value maps for ARContextSlotType.
-var (
-	ARContextSlotType_name = map[int32]string{
-		0: "AR_CONTEXT_SLOT_TYPE_UNSPECIFIED",
-		1: "AR_CONTEXT_SLOT_TYPE_LINE_ID",
-		2: "AR_CONTEXT_SLOT_TYPE_CELL_ID",
-		3: "AR_CONTEXT_SLOT_TYPE_STATION_ID",
-		4: "AR_CONTEXT_SLOT_TYPE_WORKER_ID",
-		5: "AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID",
-		6: "AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID",
-		7: "AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID",
-	}
-	ARContextSlotType_value = map[string]int32{
-		"AR_CONTEXT_SLOT_TYPE_UNSPECIFIED":     0,
-		"AR_CONTEXT_SLOT_TYPE_LINE_ID":         1,
-		"AR_CONTEXT_SLOT_TYPE_CELL_ID":         2,
-		"AR_CONTEXT_SLOT_TYPE_STATION_ID":      3,
-		"AR_CONTEXT_SLOT_TYPE_WORKER_ID":       4,
-		"AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID":  5,
-		"AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID": 6,
-		"AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID":     7,
-	}
-)
-
-func (x ARContextSlotType) Enum() *ARContextSlotType {
-	p := new(ARContextSlotType)
-	*p = x
-	return p
-}
-
-func (x ARContextSlotType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ARContextSlotType) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_ar_config_proto_enumTypes[1].Descriptor()
-}
-
-func (ARContextSlotType) Type() protoreflect.EnumType {
-	return &file_ar_v1_ar_config_proto_enumTypes[1]
-}
-
-func (x ARContextSlotType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ARContextSlotType.Descriptor instead.
-func (ARContextSlotType) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{1}
-}
-
 type ARConfigInfoMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
@@ -207,7 +93,7 @@ func (x *ARConfigInfoMessage) GetDescription() string {
 
 type ARConfigInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Infos         []*ARConfigInfoMessage `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+	Infos         []*ARConfigInfoMessage `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"` // Lightweight AR config metadata entries.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -249,222 +135,29 @@ func (x *ARConfigInfoMessages) GetInfos() []*ARConfigInfoMessage {
 	return nil
 }
 
-// ARResourceSlot declares a typed resource hole that must be bound when an
-// ARConfig is attached to a concrete station or cell.
+// ARConfigMessage is the reusable authoring-time template for an AR experience.
 //
-// The slot keeps generic authoring inside the ARConfig while allowing each
-// binding to provide the concrete robot or asset instance available in the
-// target workspace.
-type ARResourceSlot struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          ARResourceSlotType     `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ARResourceSlotType" json:"type,omitempty"`
-	Required      bool                   `protobuf:"varint,6,opt,name=required,proto3" json:"required,omitempty"`
-	PropertyId    string                 `protobuf:"bytes,7,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ARResourceSlot) Reset() {
-	*x = ARResourceSlot{}
-	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ARResourceSlot) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ARResourceSlot) ProtoMessage() {}
-
-func (x *ARResourceSlot) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ARResourceSlot.ProtoReflect.Descriptor instead.
-func (*ARResourceSlot) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *ARResourceSlot) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *ARResourceSlot) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *ARResourceSlot) GetIcon() string {
-	if x != nil {
-		return x.Icon
-	}
-	return ""
-}
-
-func (x *ARResourceSlot) GetDescription() string {
-	if x != nil {
-		return x.Description
-	}
-	return ""
-}
-
-func (x *ARResourceSlot) GetType() ARResourceSlotType {
-	if x != nil {
-		return x.Type
-	}
-	return ARResourceSlotType_AR_RESOURCE_SLOT_TYPE_UNSPECIFIED
-}
-
-func (x *ARResourceSlot) GetRequired() bool {
-	if x != nil {
-		return x.Required
-	}
-	return false
-}
-
-func (x *ARResourceSlot) GetPropertyId() string {
-	if x != nil {
-		return x.PropertyId
-	}
-	return ""
-}
-
-// ARContextSlot declares a typed runtime context input that the resolver may
-// populate from the active line/cell/station/execution scope.
-//
-// Unlike resource slots, context slots are not bound manually per station or
-// cell. Their values come from the runtime resolution request and are injected
-// into the loaded config instance after binding resolution.
-type ARContextSlot struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          ARContextSlotType      `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ARContextSlotType" json:"type,omitempty"`
-	Required      bool                   `protobuf:"varint,6,opt,name=required,proto3" json:"required,omitempty"`
-	PropertyId    string                 `protobuf:"bytes,7,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ARContextSlot) Reset() {
-	*x = ARContextSlot{}
-	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ARContextSlot) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ARContextSlot) ProtoMessage() {}
-
-func (x *ARContextSlot) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ARContextSlot.ProtoReflect.Descriptor instead.
-func (*ARContextSlot) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *ARContextSlot) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *ARContextSlot) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *ARContextSlot) GetIcon() string {
-	if x != nil {
-		return x.Icon
-	}
-	return ""
-}
-
-func (x *ARContextSlot) GetDescription() string {
-	if x != nil {
-		return x.Description
-	}
-	return ""
-}
-
-func (x *ARContextSlot) GetType() ARContextSlotType {
-	if x != nil {
-		return x.Type
-	}
-	return ARContextSlotType_AR_CONTEXT_SLOT_TYPE_UNSPECIFIED
-}
-
-func (x *ARContextSlot) GetRequired() bool {
-	if x != nil {
-		return x.Required
-	}
-	return false
-}
-
-func (x *ARContextSlot) GetPropertyId() string {
-	if x != nil {
-		return x.PropertyId
-	}
-	return ""
-}
-
+// It references feedback, actions, helpers, properties, and input slots that
+// are later materialized through ARConfigBindingMessage and runtime resolution.
 type ARConfigMessage struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
 	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Feedback            []*FeedbackMessage     `protobuf:"bytes,5,rep,name=feedback,proto3" json:"feedback,omitempty"` // TODO: just a list of Id's?
-	Actions             []*ActionMessage       `protobuf:"bytes,6,rep,name=actions,proto3" json:"actions,omitempty"`
-	Helpers             []*HelperMessage       `protobuf:"bytes,7,rep,name=helpers,proto3" json:"helpers,omitempty"`
-	Properties          []*v1.Property         `protobuf:"bytes,8,rep,name=properties,proto3" json:"properties,omitempty"`
-	ArDisappearDistance int64                  `protobuf:"varint,9,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	ResourceSlots       []*ARResourceSlot      `protobuf:"bytes,10,rep,name=resource_slots,json=resourceSlots,proto3" json:"resource_slots,omitempty"`                     // Typed station/cell resource slots that must be bound for runtime use.
-	ContextSlots        []*ARContextSlot       `protobuf:"bytes,11,rep,name=context_slots,json=contextSlots,proto3" json:"context_slots,omitempty"`                        // Typed runtime context inputs populated from the active execution/workspace scope.
+	ArDisappearDistance int64                  `protobuf:"varint,5,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	FeedbackIds         []string               `protobuf:"bytes,6,rep,name=feedback_ids,json=feedbackIds,proto3" json:"feedback_ids,omitempty"`                            // Feedback entities belonging to this config.
+	ActionIds           []string               `protobuf:"bytes,7,rep,name=action_ids,json=actionIds,proto3" json:"action_ids,omitempty"`                                  // Action entities belonging to this config.
+	HelperIds           []string               `protobuf:"bytes,8,rep,name=helper_ids,json=helperIds,proto3" json:"helper_ids,omitempty"`                                  // Helper entities belonging to this config.
+	PropertyIds         []string               `protobuf:"bytes,9,rep,name=property_ids,json=propertyIds,proto3" json:"property_ids,omitempty"`                            // Includes server-managed generated properties for referenced input slots.
+	InputSlotIds        []string               `protobuf:"bytes,10,rep,name=input_slot_ids,json=inputSlotIds,proto3" json:"input_slot_ids,omitempty"`                      // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *ARConfigMessage) Reset() {
 	*x = ARConfigMessage{}
-	mi := &file_ar_v1_ar_config_proto_msgTypes[4]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -476,7 +169,7 @@ func (x *ARConfigMessage) String() string {
 func (*ARConfigMessage) ProtoMessage() {}
 
 func (x *ARConfigMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_proto_msgTypes[4]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -489,7 +182,7 @@ func (x *ARConfigMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARConfigMessage.ProtoReflect.Descriptor instead.
 func (*ARConfigMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{4}
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ARConfigMessage) GetId() string {
@@ -520,34 +213,6 @@ func (x *ARConfigMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ARConfigMessage) GetFeedback() []*FeedbackMessage {
-	if x != nil {
-		return x.Feedback
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetActions() []*ActionMessage {
-	if x != nil {
-		return x.Actions
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetHelpers() []*HelperMessage {
-	if x != nil {
-		return x.Helpers
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetProperties() []*v1.Property {
-	if x != nil {
-		return x.Properties
-	}
-	return nil
-}
-
 func (x *ARConfigMessage) GetArDisappearDistance() int64 {
 	if x != nil {
 		return x.ArDisappearDistance
@@ -555,30 +220,51 @@ func (x *ARConfigMessage) GetArDisappearDistance() int64 {
 	return 0
 }
 
-func (x *ARConfigMessage) GetResourceSlots() []*ARResourceSlot {
+func (x *ARConfigMessage) GetFeedbackIds() []string {
 	if x != nil {
-		return x.ResourceSlots
+		return x.FeedbackIds
 	}
 	return nil
 }
 
-func (x *ARConfigMessage) GetContextSlots() []*ARContextSlot {
+func (x *ARConfigMessage) GetActionIds() []string {
 	if x != nil {
-		return x.ContextSlots
+		return x.ActionIds
+	}
+	return nil
+}
+
+func (x *ARConfigMessage) GetHelperIds() []string {
+	if x != nil {
+		return x.HelperIds
+	}
+	return nil
+}
+
+func (x *ARConfigMessage) GetPropertyIds() []string {
+	if x != nil {
+		return x.PropertyIds
+	}
+	return nil
+}
+
+func (x *ARConfigMessage) GetInputSlotIds() []string {
+	if x != nil {
+		return x.InputSlotIds
 	}
 	return nil
 }
 
 type ARConfigMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Configs       []*ARConfigMessage     `protobuf:"bytes,1,rep,name=configs,proto3" json:"configs,omitempty"`
+	Configs       []*ARConfigMessage     `protobuf:"bytes,1,rep,name=configs,proto3" json:"configs,omitempty"` // AR config templates.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ARConfigMessages) Reset() {
 	*x = ARConfigMessages{}
-	mi := &file_ar_v1_ar_config_proto_msgTypes[5]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -590,7 +276,7 @@ func (x *ARConfigMessages) String() string {
 func (*ARConfigMessages) ProtoMessage() {}
 
 func (x *ARConfigMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_proto_msgTypes[5]
+	mi := &file_ar_v1_ar_config_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -603,7 +289,7 @@ func (x *ARConfigMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARConfigMessages.ProtoReflect.Descriptor instead.
 func (*ARConfigMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{5}
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ARConfigMessages) GetConfigs() []*ARConfigMessage {
@@ -617,63 +303,31 @@ var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\n" +
-	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x12ar/v1/helper.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
+	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
 	"\x13ARConfigInfoMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x84\x02\n" +
-	"\x0eARResourceSlot\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12:\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x19.ar.v1.ARResourceSlotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1a\n" +
-	"\brequired\x18\x06 \x01(\bR\brequired\x12*\n" +
-	"\vproperty_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\"\x82\x02\n" +
-	"\rARContextSlot\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x129\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1a\n" +
-	"\brequired\x18\x06 \x01(\bR\brequired\x12*\n" +
-	"\vproperty_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\"\xf8\x03\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x80\x03\n" +
 	"\x0fARConfigMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
-	"\bfeedback\x18\x05 \x03(\v2\x16.ar.v1.FeedbackMessageR\bfeedback\x12.\n" +
-	"\aactions\x18\x06 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\x12.\n" +
-	"\ahelpers\x18\a \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\x123\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
+	"\x15ar_disappear_distance\x18\x05 \x01(\x03B\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12!\n" +
+	"\ffeedback_ids\x18\x06 \x03(\tR\vfeedbackIds\x12\x1d\n" +
 	"\n" +
-	"properties\x18\b \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x12>\n" +
-	"\x15ar_disappear_distance\x18\t \x01(\x03B\n" +
-	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12<\n" +
-	"\x0eresource_slots\x18\n" +
-	" \x03(\v2\x15.ar.v1.ARResourceSlotR\rresourceSlots\x129\n" +
-	"\rcontext_slots\x18\v \x03(\v2\x14.ar.v1.ARContextSlotR\fcontextSlots\"D\n" +
+	"action_ids\x18\a \x03(\tR\tactionIds\x12\x1d\n" +
+	"\n" +
+	"helper_ids\x18\b \x03(\tR\thelperIds\x121\n" +
+	"\fproperty_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x98\xf1\x04\x01R\vpropertyIds\x124\n" +
+	"\x0einput_slot_ids\x18\n" +
+	" \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xeb0\x01R\finputSlotIds\"D\n" +
 	"\x10ARConfigMessages\x120\n" +
-	"\aconfigs\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\aconfigs*}\n" +
-	"\x12ARResourceSlotType\x12%\n" +
-	"!AR_RESOURCE_SLOT_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n" +
-	"\x1bAR_RESOURCE_SLOT_TYPE_ROBOT\x10\x01\x12\x1f\n" +
-	"\x1bAR_RESOURCE_SLOT_TYPE_ASSET\x10\x02*\xbf\x02\n" +
-	"\x11ARContextSlotType\x12$\n" +
-	" AR_CONTEXT_SLOT_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
-	"\x1cAR_CONTEXT_SLOT_TYPE_LINE_ID\x10\x01\x12 \n" +
-	"\x1cAR_CONTEXT_SLOT_TYPE_CELL_ID\x10\x02\x12#\n" +
-	"\x1fAR_CONTEXT_SLOT_TYPE_STATION_ID\x10\x03\x12\"\n" +
-	"\x1eAR_CONTEXT_SLOT_TYPE_WORKER_ID\x10\x04\x12'\n" +
-	"#AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID\x10\x05\x12(\n" +
-	"$AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID\x10\x06\x12$\n" +
-	" AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x10\aB\x89\x01\n" +
+	"\aconfigs\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\aconfigsB\x89\x01\n" +
 	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -688,38 +342,21 @@ func file_ar_v1_ar_config_proto_rawDescGZIP() []byte {
 	return file_ar_v1_ar_config_proto_rawDescData
 }
 
-var file_ar_v1_ar_config_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_ar_config_proto_goTypes = []any{
-	(ARResourceSlotType)(0),      // 0: ar.v1.ARResourceSlotType
-	(ARContextSlotType)(0),       // 1: ar.v1.ARContextSlotType
-	(*ARConfigInfoMessage)(nil),  // 2: ar.v1.ARConfigInfoMessage
-	(*ARConfigInfoMessages)(nil), // 3: ar.v1.ARConfigInfoMessages
-	(*ARResourceSlot)(nil),       // 4: ar.v1.ARResourceSlot
-	(*ARContextSlot)(nil),        // 5: ar.v1.ARContextSlot
-	(*ARConfigMessage)(nil),      // 6: ar.v1.ARConfigMessage
-	(*ARConfigMessages)(nil),     // 7: ar.v1.ARConfigMessages
-	(*FeedbackMessage)(nil),      // 8: ar.v1.FeedbackMessage
-	(*ActionMessage)(nil),        // 9: ar.v1.ActionMessage
-	(*HelperMessage)(nil),        // 10: ar.v1.HelperMessage
-	(*v1.Property)(nil),          // 11: common.v1.Property
+	(*ARConfigInfoMessage)(nil),  // 0: ar.v1.ARConfigInfoMessage
+	(*ARConfigInfoMessages)(nil), // 1: ar.v1.ARConfigInfoMessages
+	(*ARConfigMessage)(nil),      // 2: ar.v1.ARConfigMessage
+	(*ARConfigMessages)(nil),     // 3: ar.v1.ARConfigMessages
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
-	2,  // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
-	0,  // 1: ar.v1.ARResourceSlot.type:type_name -> ar.v1.ARResourceSlotType
-	1,  // 2: ar.v1.ARContextSlot.type:type_name -> ar.v1.ARContextSlotType
-	8,  // 3: ar.v1.ARConfigMessage.feedback:type_name -> ar.v1.FeedbackMessage
-	9,  // 4: ar.v1.ARConfigMessage.actions:type_name -> ar.v1.ActionMessage
-	10, // 5: ar.v1.ARConfigMessage.helpers:type_name -> ar.v1.HelperMessage
-	11, // 6: ar.v1.ARConfigMessage.properties:type_name -> common.v1.Property
-	4,  // 7: ar.v1.ARConfigMessage.resource_slots:type_name -> ar.v1.ARResourceSlot
-	5,  // 8: ar.v1.ARConfigMessage.context_slots:type_name -> ar.v1.ARContextSlot
-	6,  // 9: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
+	2, // 1: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -727,22 +364,18 @@ func file_ar_v1_ar_config_proto_init() {
 	if File_ar_v1_ar_config_proto != nil {
 		return
 	}
-	file_ar_v1_action_proto_init()
-	file_ar_v1_feedback_proto_init()
-	file_ar_v1_helper_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_ar_config_proto_rawDesc), len(file_ar_v1_ar_config_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   6,
+			NumEnums:      0,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ar_v1_ar_config_proto_goTypes,
 		DependencyIndexes: file_ar_v1_ar_config_proto_depIdxs,
-		EnumInfos:         file_ar_v1_ar_config_proto_enumTypes,
 		MessageInfos:      file_ar_v1_ar_config_proto_msgTypes,
 	}.Build()
 	File_ar_v1_ar_config_proto = out.File

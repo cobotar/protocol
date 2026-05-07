@@ -26,9 +26,12 @@ const (
 type ResolvedConfigurationScopeType int32
 
 const (
+	// Resolver did not determine a concrete scope.
 	ResolvedConfigurationScopeType_RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED ResolvedConfigurationScopeType = 0
-	ResolvedConfigurationScopeType_RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION     ResolvedConfigurationScopeType = 1
-	ResolvedConfigurationScopeType_RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL        ResolvedConfigurationScopeType = 2
+	// Config was selected through a station-scoped binding.
+	ResolvedConfigurationScopeType_RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION ResolvedConfigurationScopeType = 1
+	// Config was selected through a cell-scoped binding.
+	ResolvedConfigurationScopeType_RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL ResolvedConfigurationScopeType = 2
 )
 
 // Enum value maps for ResolvedConfigurationScopeType.
@@ -75,10 +78,14 @@ func (ResolvedConfigurationScopeType) EnumDescriptor() ([]byte, []int) {
 type ConfigurationResolveIssueSeverity int32
 
 const (
+	// Severity not classified.
 	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED ConfigurationResolveIssueSeverity = 0
-	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO        ConfigurationResolveIssueSeverity = 1
-	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING     ConfigurationResolveIssueSeverity = 2
-	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR       ConfigurationResolveIssueSeverity = 3
+	// Informational note that does not affect resolution.
+	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO ConfigurationResolveIssueSeverity = 1
+	// Non-fatal problem or fallback encountered during resolution.
+	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING ConfigurationResolveIssueSeverity = 2
+	// Fatal problem that prevented a binding/config from resolving.
+	ConfigurationResolveIssueSeverity_CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR ConfigurationResolveIssueSeverity = 3
 )
 
 // Enum value maps for ConfigurationResolveIssueSeverity.
@@ -128,13 +135,13 @@ func (ConfigurationResolveIssueSeverity) EnumDescriptor() ([]byte, []int) {
 // bindings and context values should be resolved.
 type ConfigurationResolveContext struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	LineId        string                 `protobuf:"bytes,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
-	CellId        string                 `protobuf:"bytes,2,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	StationId     string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	WorkerId      string                 `protobuf:"bytes,4,opt,name=worker_id,json=workerId,proto3" json:"worker_id,omitempty"`
-	ProcessRunId  string                 `protobuf:"bytes,5,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`
-	SequenceRunId string                 `protobuf:"bytes,6,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
-	TaskRunId     string                 `protobuf:"bytes,7,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
+	LineId        string                 `protobuf:"bytes,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`                        // Active line if known.
+	CellId        string                 `protobuf:"bytes,2,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                        // Active cell if known.
+	StationId     string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`               // Active station if known.
+	WorkerId      string                 `protobuf:"bytes,4,opt,name=worker_id,json=workerId,proto3" json:"worker_id,omitempty"`                  // Active worker/operator if known.
+	ProcessRunId  string                 `protobuf:"bytes,5,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`    // Active process run if known.
+	SequenceRunId string                 `protobuf:"bytes,6,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"` // Active sequence run if known.
+	TaskRunId     string                 `protobuf:"bytes,7,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`             // Active task run if known.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -225,8 +232,7 @@ func (x *ConfigurationResolveContext) GetTaskRunId() string {
 //   - find direct station bindings matching context.station_id
 //   - find parent/shared cell bindings matching context.cell_id
 //   - reject disabled bindings
-//   - reject bindings whose required resource slots or required context slots
-//     cannot be satisfied
+//   - reject bindings whose required input slots cannot be satisfied
 //   - if any surviving binding is standalone, keep only standalone bindings with
 //     the highest priority
 //   - otherwise keep all surviving bindings sorted by priority descending, with
@@ -234,9 +240,8 @@ func (x *ConfigurationResolveContext) GetTaskRunId() string {
 //     priority
 type ConfigurationResolveRequest struct {
 	state             protoimpl.MessageState       `protogen:"open.v1"`
-	RequestId         string                       `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	Context           *ConfigurationResolveContext `protobuf:"bytes,2,opt,name=context,proto3" json:"context,omitempty"`
-	LoadedInstanceIds []string                     `protobuf:"bytes,3,rep,name=loaded_instance_ids,json=loadedInstanceIds,proto3" json:"loaded_instance_ids,omitempty"` // Instances already loaded by the caller, used to compute unloads/deltas.
+	Context           *ConfigurationResolveContext `protobuf:"bytes,1,opt,name=context,proto3" json:"context,omitempty"`                                                // Active runtime context to resolve against.
+	LoadedInstanceIds []string                     `protobuf:"bytes,2,rep,name=loaded_instance_ids,json=loadedInstanceIds,proto3" json:"loaded_instance_ids,omitempty"` // Instances already loaded by the caller, used to compute unloads/deltas.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -271,13 +276,6 @@ func (*ConfigurationResolveRequest) Descriptor() ([]byte, []int) {
 	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ConfigurationResolveRequest) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
-
 func (x *ConfigurationResolveRequest) GetContext() *ConfigurationResolveContext {
 	if x != nil {
 		return x.Context
@@ -292,32 +290,28 @@ func (x *ConfigurationResolveRequest) GetLoadedInstanceIds() []string {
 	return nil
 }
 
-// ResolvedResourceBinding captures the concrete resource value selected for a
-// config resource slot.
-type ResolvedResourceBinding struct {
+// ResolvedRobotInput carries the concrete robot instance chosen for a slot.
+type ResolvedRobotInput struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`
-	PropertyId      string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
-	RobotInstanceId *string                `protobuf:"bytes,3,opt,name=robot_instance_id,json=robotInstanceId,proto3,oneof" json:"robot_instance_id,omitempty"`
-	AssetInstanceId *string                `protobuf:"bytes,4,opt,name=asset_instance_id,json=assetInstanceId,proto3,oneof" json:"asset_instance_id,omitempty"`
+	RobotInstanceId string                 `protobuf:"bytes,1,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"` // Selected robot instance.
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *ResolvedResourceBinding) Reset() {
-	*x = ResolvedResourceBinding{}
+func (x *ResolvedRobotInput) Reset() {
+	*x = ResolvedRobotInput{}
 	mi := &file_ar_v1_config_resolve_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ResolvedResourceBinding) String() string {
+func (x *ResolvedRobotInput) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ResolvedResourceBinding) ProtoMessage() {}
+func (*ResolvedRobotInput) ProtoMessage() {}
 
-func (x *ResolvedResourceBinding) ProtoReflect() protoreflect.Message {
+func (x *ResolvedRobotInput) ProtoReflect() protoreflect.Message {
 	mi := &file_ar_v1_config_resolve_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -329,69 +323,87 @@ func (x *ResolvedResourceBinding) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ResolvedResourceBinding.ProtoReflect.Descriptor instead.
-func (*ResolvedResourceBinding) Descriptor() ([]byte, []int) {
+// Deprecated: Use ResolvedRobotInput.ProtoReflect.Descriptor instead.
+func (*ResolvedRobotInput) Descriptor() ([]byte, []int) {
 	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ResolvedResourceBinding) GetSlotId() string {
+func (x *ResolvedRobotInput) GetRobotInstanceId() string {
 	if x != nil {
-		return x.SlotId
+		return x.RobotInstanceId
 	}
 	return ""
 }
 
-func (x *ResolvedResourceBinding) GetPropertyId() string {
+// ResolvedAssetInput carries the concrete asset instance chosen for a slot.
+type ResolvedAssetInput struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"` // Selected asset instance.
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ResolvedAssetInput) Reset() {
+	*x = ResolvedAssetInput{}
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResolvedAssetInput) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResolvedAssetInput) ProtoMessage() {}
+
+func (x *ResolvedAssetInput) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[3]
 	if x != nil {
-		return x.PropertyId
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResolvedAssetInput.ProtoReflect.Descriptor instead.
+func (*ResolvedAssetInput) Descriptor() ([]byte, []int) {
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ResolvedAssetInput) GetAssetInstanceId() string {
+	if x != nil {
+		return x.AssetInstanceId
 	}
 	return ""
 }
 
-func (x *ResolvedResourceBinding) GetRobotInstanceId() string {
-	if x != nil && x.RobotInstanceId != nil {
-		return *x.RobotInstanceId
-	}
-	return ""
-}
-
-func (x *ResolvedResourceBinding) GetAssetInstanceId() string {
-	if x != nil && x.AssetInstanceId != nil {
-		return *x.AssetInstanceId
-	}
-	return ""
-}
-
-// ResolvedContextBinding captures the concrete runtime context value selected
-// for a config context slot.
-//
-// Current context bindings resolve to string ids that are injected into the
-// mapped property_id as PROPERTY_TYPE_STRING values.
-type ResolvedContextBinding struct {
+// ResolvedContextInputValue carries the runtime context value chosen for a slot.
+type ResolvedContextInputValue struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SlotId        string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`
-	PropertyId    string                 `protobuf:"bytes,2,opt,name=property_id,json=propertyId,proto3" json:"property_id,omitempty"`
-	Type          ARContextSlotType      `protobuf:"varint,3,opt,name=type,proto3,enum=ar.v1.ARContextSlotType" json:"type,omitempty"`
-	StringValue   string                 `protobuf:"bytes,4,opt,name=string_value,json=stringValue,proto3" json:"string_value,omitempty"`
+	Type          ARContextSlotType      `protobuf:"varint,1,opt,name=type,proto3,enum=ar.v1.ARContextSlotType" json:"type,omitempty"`    // Context category that produced the value.
+	StringValue   string                 `protobuf:"bytes,2,opt,name=string_value,json=stringValue,proto3" json:"string_value,omitempty"` // Resolved runtime identifier/value encoded as string.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ResolvedContextBinding) Reset() {
-	*x = ResolvedContextBinding{}
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[3]
+func (x *ResolvedContextInputValue) Reset() {
+	*x = ResolvedContextInputValue{}
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ResolvedContextBinding) String() string {
+func (x *ResolvedContextInputValue) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ResolvedContextBinding) ProtoMessage() {}
+func (*ResolvedContextInputValue) ProtoMessage() {}
 
-func (x *ResolvedContextBinding) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[3]
+func (x *ResolvedContextInputValue) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -402,52 +414,121 @@ func (x *ResolvedContextBinding) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ResolvedContextBinding.ProtoReflect.Descriptor instead.
-func (*ResolvedContextBinding) Descriptor() ([]byte, []int) {
-	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{3}
+// Deprecated: Use ResolvedContextInputValue.ProtoReflect.Descriptor instead.
+func (*ResolvedContextInputValue) Descriptor() ([]byte, []int) {
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ResolvedContextBinding) GetSlotId() string {
-	if x != nil {
-		return x.SlotId
-	}
-	return ""
-}
-
-func (x *ResolvedContextBinding) GetPropertyId() string {
-	if x != nil {
-		return x.PropertyId
-	}
-	return ""
-}
-
-func (x *ResolvedContextBinding) GetType() ARContextSlotType {
+func (x *ResolvedContextInputValue) GetType() ARContextSlotType {
 	if x != nil {
 		return x.Type
 	}
 	return ARContextSlotType_AR_CONTEXT_SLOT_TYPE_UNSPECIFIED
 }
 
-func (x *ResolvedContextBinding) GetStringValue() string {
+func (x *ResolvedContextInputValue) GetStringValue() string {
 	if x != nil {
 		return x.StringValue
 	}
 	return ""
 }
 
+// ResolvedInputBinding is the authoritative resolved value for a unified input
+// slot.
+//
+// generated_property_id identifies the server-managed property that should be
+// populated in the effective config instance.
+type ResolvedInputBinding struct {
+	state               protoimpl.MessageState     `protogen:"open.v1"`
+	SlotId              string                     `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                                          // Slot this resolved value belongs to.
+	GeneratedPropertyId string                     `protobuf:"bytes,2,opt,name=generated_property_id,json=generatedPropertyId,proto3" json:"generated_property_id,omitempty"` // Generated property that should receive the resolved value.
+	Robot               *ResolvedRobotInput        `protobuf:"bytes,10,opt,name=robot,proto3" json:"robot,omitempty"`                                                         // Set when the slot resolved to a robot instance.
+	Asset               *ResolvedAssetInput        `protobuf:"bytes,11,opt,name=asset,proto3" json:"asset,omitempty"`                                                         // Set when the slot resolved to an asset instance.
+	Context             *ResolvedContextInputValue `protobuf:"bytes,12,opt,name=context,proto3" json:"context,omitempty"`                                                     // Set when the slot resolved from runtime context.
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *ResolvedInputBinding) Reset() {
+	*x = ResolvedInputBinding{}
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResolvedInputBinding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResolvedInputBinding) ProtoMessage() {}
+
+func (x *ResolvedInputBinding) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResolvedInputBinding.ProtoReflect.Descriptor instead.
+func (*ResolvedInputBinding) Descriptor() ([]byte, []int) {
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ResolvedInputBinding) GetSlotId() string {
+	if x != nil {
+		return x.SlotId
+	}
+	return ""
+}
+
+func (x *ResolvedInputBinding) GetGeneratedPropertyId() string {
+	if x != nil {
+		return x.GeneratedPropertyId
+	}
+	return ""
+}
+
+func (x *ResolvedInputBinding) GetRobot() *ResolvedRobotInput {
+	if x != nil {
+		return x.Robot
+	}
+	return nil
+}
+
+func (x *ResolvedInputBinding) GetAsset() *ResolvedAssetInput {
+	if x != nil {
+		return x.Asset
+	}
+	return nil
+}
+
+func (x *ResolvedInputBinding) GetContext() *ResolvedContextInputValue {
+	if x != nil {
+		return x.Context
+	}
+	return nil
+}
+
+// ConfigurationResolveIssue describes a problem or note encountered while
+// evaluating bindings for the supplied context.
 type ConfigurationResolveIssue struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Severity      ConfigurationResolveIssueSeverity `protobuf:"varint,1,opt,name=severity,proto3,enum=ar.v1.ConfigurationResolveIssueSeverity" json:"severity,omitempty"`
-	BindingId     string                            `protobuf:"bytes,2,opt,name=binding_id,json=bindingId,proto3" json:"binding_id,omitempty"`
-	ConfigId      string                            `protobuf:"bytes,3,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Message       string                            `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
+	Severity      ConfigurationResolveIssueSeverity `protobuf:"varint,1,opt,name=severity,proto3,enum=ar.v1.ConfigurationResolveIssueSeverity" json:"severity,omitempty"` // Classification of the issue.
+	BindingId     string                            `protobuf:"bytes,2,opt,name=binding_id,json=bindingId,proto3" json:"binding_id,omitempty"`                            // Binding involved, if any.
+	ConfigId      string                            `protobuf:"bytes,3,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`                               // Config involved, if any.
+	Message       string                            `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`                                                 // Human-readable description of the issue.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConfigurationResolveIssue) Reset() {
 	*x = ConfigurationResolveIssue{}
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[4]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -459,7 +540,7 @@ func (x *ConfigurationResolveIssue) String() string {
 func (*ConfigurationResolveIssue) ProtoMessage() {}
 
 func (x *ConfigurationResolveIssue) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[4]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -472,7 +553,7 @@ func (x *ConfigurationResolveIssue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigurationResolveIssue.ProtoReflect.Descriptor instead.
 func (*ConfigurationResolveIssue) Descriptor() ([]byte, []int) {
-	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{4}
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ConfigurationResolveIssue) GetSeverity() ConfigurationResolveIssueSeverity {
@@ -507,30 +588,30 @@ func (x *ConfigurationResolveIssue) GetMessage() string {
 // should activate.
 //
 // effective_config should already include all binding-level property overrides.
-// The runtime/client should then inject resolved_resource_bindings and
-// resolved_context_bindings into the mapped properties before evaluating local
-// property mirroring, helpers, actions, and feedback.
+// The runtime/client should then inject resolved_input_bindings into the
+// generated properties before evaluating local property mirroring, helpers,
+// actions, and feedback.
 type ResolvedConfiguration struct {
-	state                    protoimpl.MessageState         `protogen:"open.v1"`
-	InstanceId               string                         `protobuf:"bytes,1,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"`
-	BindingId                string                         `protobuf:"bytes,2,opt,name=binding_id,json=bindingId,proto3" json:"binding_id,omitempty"`
-	ConfigId                 string                         `protobuf:"bytes,3,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Scope                    ResolvedConfigurationScopeType `protobuf:"varint,4,opt,name=scope,proto3,enum=ar.v1.ResolvedConfigurationScopeType" json:"scope,omitempty"`
-	LineId                   string                         `protobuf:"bytes,5,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
-	CellId                   string                         `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	StationId                string                         `protobuf:"bytes,7,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	Standalone               bool                           `protobuf:"varint,8,opt,name=standalone,proto3" json:"standalone,omitempty"`
-	Priority                 int32                          `protobuf:"varint,9,opt,name=priority,proto3" json:"priority,omitempty"`
-	EffectiveConfig          *ARConfigMessage               `protobuf:"bytes,10,opt,name=effective_config,json=effectiveConfig,proto3" json:"effective_config,omitempty"`
-	ResolvedResourceBindings []*ResolvedResourceBinding     `protobuf:"bytes,11,rep,name=resolved_resource_bindings,json=resolvedResourceBindings,proto3" json:"resolved_resource_bindings,omitempty"`
-	ResolvedContextBindings  []*ResolvedContextBinding      `protobuf:"bytes,12,rep,name=resolved_context_bindings,json=resolvedContextBindings,proto3" json:"resolved_context_bindings,omitempty"`
-	unknownFields            protoimpl.UnknownFields
-	sizeCache                protoimpl.SizeCache
+	state                 protoimpl.MessageState         `protogen:"open.v1"`
+	InstanceId            string                         `protobuf:"bytes,1,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"`                                     // Runtime instance identifier for this resolved config.
+	BindingId             string                         `protobuf:"bytes,2,opt,name=binding_id,json=bindingId,proto3" json:"binding_id,omitempty"`                                        // Binding that selected the config.
+	ConfigId              string                         `protobuf:"bytes,3,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`                                           // Underlying reusable config template.
+	Scope                 ResolvedConfigurationScopeType `protobuf:"varint,4,opt,name=scope,proto3,enum=ar.v1.ResolvedConfigurationScopeType" json:"scope,omitempty"`                      // Scope level that selected this config.
+	LineId                string                         `protobuf:"bytes,5,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`                                                 // Active line attached to the resolved instance, if any.
+	CellId                string                         `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                                 // Active cell attached to the resolved instance, if any.
+	StationId             string                         `protobuf:"bytes,7,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                                        // Active station attached to the resolved instance, if any.
+	Standalone            bool                           `protobuf:"varint,8,opt,name=standalone,proto3" json:"standalone,omitempty"`                                                      // Standalone decision carried over from the winning binding.
+	Priority              int32                          `protobuf:"varint,9,opt,name=priority,proto3" json:"priority,omitempty"`                                                          // Priority carried over from the winning binding.
+	EffectiveConfig       *ARConfigMessage               `protobuf:"bytes,10,opt,name=effective_config,json=effectiveConfig,proto3" json:"effective_config,omitempty"`                     // Config after binding-level overrides have been applied.
+	InputSlots            []*ARInputSlotMessage          `protobuf:"bytes,11,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                                    // Materialized config-owned input slot entities referenced by effective_config.input_slot_ids.
+	ResolvedInputBindings []*ResolvedInputBinding        `protobuf:"bytes,12,rep,name=resolved_input_bindings,json=resolvedInputBindings,proto3" json:"resolved_input_bindings,omitempty"` // Authoritative resolved values for unified config input slots.
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *ResolvedConfiguration) Reset() {
 	*x = ResolvedConfiguration{}
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[5]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -542,7 +623,7 @@ func (x *ResolvedConfiguration) String() string {
 func (*ResolvedConfiguration) ProtoMessage() {}
 
 func (x *ResolvedConfiguration) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[5]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -555,7 +636,7 @@ func (x *ResolvedConfiguration) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResolvedConfiguration.ProtoReflect.Descriptor instead.
 func (*ResolvedConfiguration) Descriptor() ([]byte, []int) {
-	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{5}
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ResolvedConfiguration) GetInstanceId() string {
@@ -628,33 +709,34 @@ func (x *ResolvedConfiguration) GetEffectiveConfig() *ARConfigMessage {
 	return nil
 }
 
-func (x *ResolvedConfiguration) GetResolvedResourceBindings() []*ResolvedResourceBinding {
+func (x *ResolvedConfiguration) GetInputSlots() []*ARInputSlotMessage {
 	if x != nil {
-		return x.ResolvedResourceBindings
+		return x.InputSlots
 	}
 	return nil
 }
 
-func (x *ResolvedConfiguration) GetResolvedContextBindings() []*ResolvedContextBinding {
+func (x *ResolvedConfiguration) GetResolvedInputBindings() []*ResolvedInputBinding {
 	if x != nil {
-		return x.ResolvedContextBindings
+		return x.ResolvedInputBindings
 	}
 	return nil
 }
 
+// ConfigurationResolveResult returns the configs that should be active for the
+// supplied runtime context plus any instances that should be unloaded.
 type ConfigurationResolveResult struct {
 	state             protoimpl.MessageState       `protogen:"open.v1"`
-	RequestId         string                       `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	Configurations    []*ResolvedConfiguration     `protobuf:"bytes,2,rep,name=configurations,proto3" json:"configurations,omitempty"`
-	UnloadInstanceIds []string                     `protobuf:"bytes,3,rep,name=unload_instance_ids,json=unloadInstanceIds,proto3" json:"unload_instance_ids,omitempty"`
-	Issues            []*ConfigurationResolveIssue `protobuf:"bytes,4,rep,name=issues,proto3" json:"issues,omitempty"`
+	Configurations    []*ResolvedConfiguration     `protobuf:"bytes,1,rep,name=configurations,proto3" json:"configurations,omitempty"`                                  // Config instances that should be active after resolution.
+	UnloadInstanceIds []string                     `protobuf:"bytes,2,rep,name=unload_instance_ids,json=unloadInstanceIds,proto3" json:"unload_instance_ids,omitempty"` // Previously loaded instances that should now be removed.
+	Issues            []*ConfigurationResolveIssue `protobuf:"bytes,3,rep,name=issues,proto3" json:"issues,omitempty"`                                                  // Informational, warning, or error issues observed during resolution.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ConfigurationResolveResult) Reset() {
 	*x = ConfigurationResolveResult{}
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[6]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -666,7 +748,7 @@ func (x *ConfigurationResolveResult) String() string {
 func (*ConfigurationResolveResult) ProtoMessage() {}
 
 func (x *ConfigurationResolveResult) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_config_resolve_proto_msgTypes[6]
+	mi := &file_ar_v1_config_resolve_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -679,14 +761,7 @@ func (x *ConfigurationResolveResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigurationResolveResult.ProtoReflect.Descriptor instead.
 func (*ConfigurationResolveResult) Descriptor() ([]byte, []int) {
-	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *ConfigurationResolveResult) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
+	return file_ar_v1_config_resolve_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConfigurationResolveResult) GetConfigurations() []*ResolvedConfiguration {
@@ -714,7 +789,7 @@ var File_ar_v1_config_resolve_proto protoreflect.FileDescriptor
 
 const file_ar_v1_config_resolve_proto_rawDesc = "" +
 	"\n" +
-	"\x1aar/v1/config_resolve.proto\x12\x05ar.v1\x1a\x15ar/v1/ar_config.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x03\n" +
+	"\x1aar/v1/config_resolve.proto\x12\x05ar.v1\x1a\x15ar/v1/ar_config.proto\x1a\x16ar/v1/input_slot.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x03\n" +
 	"\x1bConfigurationResolveContext\x12\"\n" +
 	"\aline_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n" +
 	"\acell_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12(\n" +
@@ -724,34 +799,33 @@ const file_ar_v1_config_resolve_proto_rawDesc = "" +
 	"\x0eprocess_run_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\x88\xf2\x04\x01R\fprocessRunId\x121\n" +
 	"\x0fsequence_run_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf2\x04\x01R\rsequenceRunId\x12)\n" +
 	"\vtask_run_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf2\x04\x01R\ttaskRunId:\x9f\x01\xbaH\x9b\x01\x1a\x98\x01\n" +
-	"6configuration_resolve_context.requires_station_or_cell\x121at least one of station_id or cell_id must be set\x1a+this.station_id != '' || this.cell_id != ''\"\xc2\x01\n" +
-	"\x1bConfigurationResolveRequest\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12D\n" +
-	"\acontext\x18\x02 \x01(\v2\".ar.v1.ConfigurationResolveContextB\x06\xbaH\x03\xc8\x01\x01R\acontext\x12>\n" +
-	"\x13loaded_instance_ids\x18\x03 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf0\xeb0\x01R\x11loadedInstanceIds\"\xbc\x02\n" +
-	"\x17ResolvedResourceBinding\x12\"\n" +
-	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06slotId\x12*\n" +
-	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\x12:\n" +
-	"\x11robot_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01H\x00R\x0frobotInstanceId\x88\x01\x01\x12:\n" +
-	"\x11asset_instance_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01H\x01R\x0fassetInstanceId\x88\x01\x01:-\xbaH*\"(\n" +
-	"\x11robot_instance_id\n" +
-	"\x11asset_instance_id\x10\x01B\x14\n" +
-	"\x12_robot_instance_idB\x14\n" +
-	"\x12_asset_instance_id\"\xc6\x01\n" +
-	"\x16ResolvedContextBinding\x12\"\n" +
-	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06slotId\x12*\n" +
-	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\x129\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12!\n" +
-	"\fstring_value\x18\x04 \x01(\tR\vstringValue\"\xd7\x01\n" +
+	"6configuration_resolve_context.requires_station_or_cell\x121at least one of station_id or cell_id must be set\x1a+this.station_id != '' || this.cell_id != ''\"\xa3\x01\n" +
+	"\x1bConfigurationResolveRequest\x12D\n" +
+	"\acontext\x18\x01 \x01(\v2\".ar.v1.ConfigurationResolveContextB\x06\xbaH\x03\xc8\x01\x01R\acontext\x12>\n" +
+	"\x13loaded_instance_ids\x18\x02 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf0\xeb0\x01R\x11loadedInstanceIds\"K\n" +
+	"\x12ResolvedRobotInput\x125\n" +
+	"\x11robot_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\"K\n" +
+	"\x12ResolvedAssetInput\x125\n" +
+	"\x11asset_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId\"y\n" +
+	"\x19ResolvedContextInputValue\x129\n" +
+	"\x04type\x18\x01 \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12!\n" +
+	"\fstring_value\x18\x02 \x01(\tR\vstringValue\"\xbd\x02\n" +
+	"\x14ResolvedInputBinding\x12%\n" +
+	"\aslot_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xeb0\x01R\x06slotId\x12@\n" +
+	"\x15generated_property_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf1\x04\x01R\x13generatedPropertyId\x12/\n" +
+	"\x05robot\x18\n" +
+	" \x01(\v2\x19.ar.v1.ResolvedRobotInputR\x05robot\x12/\n" +
+	"\x05asset\x18\v \x01(\v2\x19.ar.v1.ResolvedAssetInputR\x05asset\x12:\n" +
+	"\acontext\x18\f \x01(\v2 .ar.v1.ResolvedContextInputValueR\acontext:\x1e\xbaH\x1b\"\x19\n" +
+	"\x05robot\n" +
+	"\x05asset\n" +
+	"\acontext\x10\x01\"\xd7\x01\n" +
 	"\x19ConfigurationResolveIssue\x12N\n" +
 	"\bseverity\x18\x01 \x01(\x0e2(.ar.v1.ConfigurationResolveIssueSeverityB\b\xbaH\x05\x82\x01\x02\x10\x01R\bseverity\x12(\n" +
 	"\n" +
 	"binding_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\tbindingId\x12&\n" +
 	"\tconfig_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x18\n" +
-	"\amessage\x18\x04 \x01(\tR\amessage\"\x8e\x05\n" +
+	"\amessage\x18\x04 \x01(\tR\amessage\"\xe6\x04\n" +
 	"\x15ResolvedConfiguration\x12*\n" +
 	"\vinstance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf0\xeb0\x01R\n" +
 	"instanceId\x12(\n" +
@@ -768,15 +842,14 @@ const file_ar_v1_config_resolve_proto_rawDesc = "" +
 	"standalone\x12\x1a\n" +
 	"\bpriority\x18\t \x01(\x05R\bpriority\x12I\n" +
 	"\x10effective_config\x18\n" +
-	" \x01(\v2\x16.ar.v1.ARConfigMessageB\x06\xbaH\x03\xc8\x01\x01R\x0feffectiveConfig\x12\\\n" +
-	"\x1aresolved_resource_bindings\x18\v \x03(\v2\x1e.ar.v1.ResolvedResourceBindingR\x18resolvedResourceBindings\x12Y\n" +
-	"\x19resolved_context_bindings\x18\f \x03(\v2\x1d.ar.v1.ResolvedContextBindingR\x17resolvedContextBindings\"\xfb\x01\n" +
-	"\x1aConfigurationResolveResult\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12D\n" +
-	"\x0econfigurations\x18\x02 \x03(\v2\x1c.ar.v1.ResolvedConfigurationR\x0econfigurations\x12>\n" +
-	"\x13unload_instance_ids\x18\x03 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf0\xeb0\x01R\x11unloadInstanceIds\x128\n" +
-	"\x06issues\x18\x04 \x03(\v2 .ar.v1.ConfigurationResolveIssueR\x06issues*\xae\x01\n" +
+	" \x01(\v2\x16.ar.v1.ARConfigMessageB\x06\xbaH\x03\xc8\x01\x01R\x0feffectiveConfig\x12:\n" +
+	"\vinput_slots\x18\v \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
+	"inputSlots\x12S\n" +
+	"\x17resolved_input_bindings\x18\f \x03(\v2\x1b.ar.v1.ResolvedInputBindingR\x15resolvedInputBindings\"\xdc\x01\n" +
+	"\x1aConfigurationResolveResult\x12D\n" +
+	"\x0econfigurations\x18\x01 \x03(\v2\x1c.ar.v1.ResolvedConfigurationR\x0econfigurations\x12>\n" +
+	"\x13unload_instance_ids\x18\x02 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf0\xeb0\x01R\x11unloadInstanceIds\x128\n" +
+	"\x06issues\x18\x03 \x03(\v2 .ar.v1.ConfigurationResolveIssueR\x06issues*\xae\x01\n" +
 	"\x1eResolvedConfigurationScopeType\x121\n" +
 	"-RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED\x10\x00\x12-\n" +
 	")RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION\x10\x01\x12*\n" +
@@ -801,35 +874,41 @@ func file_ar_v1_config_resolve_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_config_resolve_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_ar_v1_config_resolve_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_ar_v1_config_resolve_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_ar_v1_config_resolve_proto_goTypes = []any{
 	(ResolvedConfigurationScopeType)(0),    // 0: ar.v1.ResolvedConfigurationScopeType
 	(ConfigurationResolveIssueSeverity)(0), // 1: ar.v1.ConfigurationResolveIssueSeverity
 	(*ConfigurationResolveContext)(nil),    // 2: ar.v1.ConfigurationResolveContext
 	(*ConfigurationResolveRequest)(nil),    // 3: ar.v1.ConfigurationResolveRequest
-	(*ResolvedResourceBinding)(nil),        // 4: ar.v1.ResolvedResourceBinding
-	(*ResolvedContextBinding)(nil),         // 5: ar.v1.ResolvedContextBinding
-	(*ConfigurationResolveIssue)(nil),      // 6: ar.v1.ConfigurationResolveIssue
-	(*ResolvedConfiguration)(nil),          // 7: ar.v1.ResolvedConfiguration
-	(*ConfigurationResolveResult)(nil),     // 8: ar.v1.ConfigurationResolveResult
-	(ARContextSlotType)(0),                 // 9: ar.v1.ARContextSlotType
-	(*ARConfigMessage)(nil),                // 10: ar.v1.ARConfigMessage
+	(*ResolvedRobotInput)(nil),             // 4: ar.v1.ResolvedRobotInput
+	(*ResolvedAssetInput)(nil),             // 5: ar.v1.ResolvedAssetInput
+	(*ResolvedContextInputValue)(nil),      // 6: ar.v1.ResolvedContextInputValue
+	(*ResolvedInputBinding)(nil),           // 7: ar.v1.ResolvedInputBinding
+	(*ConfigurationResolveIssue)(nil),      // 8: ar.v1.ConfigurationResolveIssue
+	(*ResolvedConfiguration)(nil),          // 9: ar.v1.ResolvedConfiguration
+	(*ConfigurationResolveResult)(nil),     // 10: ar.v1.ConfigurationResolveResult
+	(ARContextSlotType)(0),                 // 11: ar.v1.ARContextSlotType
+	(*ARConfigMessage)(nil),                // 12: ar.v1.ARConfigMessage
+	(*ARInputSlotMessage)(nil),             // 13: ar.v1.ARInputSlotMessage
 }
 var file_ar_v1_config_resolve_proto_depIdxs = []int32{
 	2,  // 0: ar.v1.ConfigurationResolveRequest.context:type_name -> ar.v1.ConfigurationResolveContext
-	9,  // 1: ar.v1.ResolvedContextBinding.type:type_name -> ar.v1.ARContextSlotType
-	1,  // 2: ar.v1.ConfigurationResolveIssue.severity:type_name -> ar.v1.ConfigurationResolveIssueSeverity
-	0,  // 3: ar.v1.ResolvedConfiguration.scope:type_name -> ar.v1.ResolvedConfigurationScopeType
-	10, // 4: ar.v1.ResolvedConfiguration.effective_config:type_name -> ar.v1.ARConfigMessage
-	4,  // 5: ar.v1.ResolvedConfiguration.resolved_resource_bindings:type_name -> ar.v1.ResolvedResourceBinding
-	5,  // 6: ar.v1.ResolvedConfiguration.resolved_context_bindings:type_name -> ar.v1.ResolvedContextBinding
-	7,  // 7: ar.v1.ConfigurationResolveResult.configurations:type_name -> ar.v1.ResolvedConfiguration
-	6,  // 8: ar.v1.ConfigurationResolveResult.issues:type_name -> ar.v1.ConfigurationResolveIssue
-	9,  // [9:9] is the sub-list for method output_type
-	9,  // [9:9] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	11, // 1: ar.v1.ResolvedContextInputValue.type:type_name -> ar.v1.ARContextSlotType
+	4,  // 2: ar.v1.ResolvedInputBinding.robot:type_name -> ar.v1.ResolvedRobotInput
+	5,  // 3: ar.v1.ResolvedInputBinding.asset:type_name -> ar.v1.ResolvedAssetInput
+	6,  // 4: ar.v1.ResolvedInputBinding.context:type_name -> ar.v1.ResolvedContextInputValue
+	1,  // 5: ar.v1.ConfigurationResolveIssue.severity:type_name -> ar.v1.ConfigurationResolveIssueSeverity
+	0,  // 6: ar.v1.ResolvedConfiguration.scope:type_name -> ar.v1.ResolvedConfigurationScopeType
+	12, // 7: ar.v1.ResolvedConfiguration.effective_config:type_name -> ar.v1.ARConfigMessage
+	13, // 8: ar.v1.ResolvedConfiguration.input_slots:type_name -> ar.v1.ARInputSlotMessage
+	7,  // 9: ar.v1.ResolvedConfiguration.resolved_input_bindings:type_name -> ar.v1.ResolvedInputBinding
+	9,  // 10: ar.v1.ConfigurationResolveResult.configurations:type_name -> ar.v1.ResolvedConfiguration
+	8,  // 11: ar.v1.ConfigurationResolveResult.issues:type_name -> ar.v1.ConfigurationResolveIssue
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_config_resolve_proto_init() }
@@ -838,14 +917,14 @@ func file_ar_v1_config_resolve_proto_init() {
 		return
 	}
 	file_ar_v1_ar_config_proto_init()
-	file_ar_v1_config_resolve_proto_msgTypes[2].OneofWrappers = []any{}
+	file_ar_v1_input_slot_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_config_resolve_proto_rawDesc), len(file_ar_v1_config_resolve_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

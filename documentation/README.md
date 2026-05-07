@@ -56,6 +56,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -101,45 +102,35 @@
   
     - [ActionGroup](#ar-v1-ActionGroup)
   
-- [ar/v1/feedback.proto](#ar_v1_feedback-proto)
-    - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
-    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
-    - [FeedbackMessage](#ar-v1-FeedbackMessage)
-    - [FeedbackMessages](#ar-v1-FeedbackMessages)
-    - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
-  
-    - [FeedbackType](#ar-v1-FeedbackType)
-  
-- [ar/v1/helper.proto](#ar_v1_helper-proto)
-    - [HelperAddMessage](#ar-v1-HelperAddMessage)
-    - [HelperMessage](#ar-v1-HelperMessage)
-    - [HelperMessages](#ar-v1-HelperMessages)
-    - [HelperUpdateMessage](#ar-v1-HelperUpdateMessage)
-  
-    - [HelperType](#ar-v1-HelperType)
-  
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
     - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
-    - [ARContextSlot](#ar-v1-ARContextSlot)
-    - [ARResourceSlot](#ar-v1-ARResourceSlot)
-  
-    - [ARContextSlotType](#ar-v1-ARContextSlotType)
-    - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
   
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
+  
+- [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
+    - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
+    - [ARInputSlotDeleteMessage](#ar-v1-ARInputSlotDeleteMessage)
+    - [ARInputSlotMessage](#ar-v1-ARInputSlotMessage)
+    - [ARInputSlotMessages](#ar-v1-ARInputSlotMessages)
+    - [ARInputSlotUpdateMessage](#ar-v1-ARInputSlotUpdateMessage)
+  
+    - [ARContextSlotType](#ar-v1-ARContextSlotType)
+    - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
   
 - [ar/v1/config_resolve.proto](#ar_v1_config_resolve-proto)
     - [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext)
     - [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue)
     - [ConfigurationResolveRequest](#ar-v1-ConfigurationResolveRequest)
     - [ConfigurationResolveResult](#ar-v1-ConfigurationResolveResult)
+    - [ResolvedAssetInput](#ar-v1-ResolvedAssetInput)
     - [ResolvedConfiguration](#ar-v1-ResolvedConfiguration)
-    - [ResolvedContextBinding](#ar-v1-ResolvedContextBinding)
-    - [ResolvedResourceBinding](#ar-v1-ResolvedResourceBinding)
+    - [ResolvedContextInputValue](#ar-v1-ResolvedContextInputValue)
+    - [ResolvedInputBinding](#ar-v1-ResolvedInputBinding)
+    - [ResolvedRobotInput](#ar-v1-ResolvedRobotInput)
   
     - [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity)
     - [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType)
@@ -156,11 +147,28 @@
   
     - [EnvironmentType](#ar-v1-EnvironmentType)
   
+- [ar/v1/feedback.proto](#ar_v1_feedback-proto)
+    - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
+    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
+    - [FeedbackMessage](#ar-v1-FeedbackMessage)
+    - [FeedbackMessages](#ar-v1-FeedbackMessages)
+    - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
+  
+    - [FeedbackType](#ar-v1-FeedbackType)
+  
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
     - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
   
     - [FeedbackGroup](#ar-v1-FeedbackGroup)
+  
+- [ar/v1/helper.proto](#ar_v1_helper-proto)
+    - [HelperAddMessage](#ar-v1-HelperAddMessage)
+    - [HelperMessage](#ar-v1-HelperMessage)
+    - [HelperMessages](#ar-v1-HelperMessages)
+    - [HelperUpdateMessage](#ar-v1-HelperUpdateMessage)
+  
+    - [HelperType](#ar-v1-HelperType)
   
 - [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
     - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
@@ -893,6 +901,7 @@ A simple pose consisting of a position and orientation
 | ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | ar_config_instance_id_component | bool | .buf.validate.StringRules | 100030 |  |
+| ar_input_slot_id_component | bool | .buf.validate.StringRules | 100031 |  |
 | asset_definition_id_component | bool | .buf.validate.StringRules | 10006 |  |
 | asset_instance_id_component | bool | .buf.validate.StringRules | 10007 |  |
 | cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
@@ -1619,248 +1628,6 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
-<a name="ar_v1_feedback-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/feedback.proto
-
-
-
-<a name="ar-v1-FeedbackAddMessage"></a>
-
-### FeedbackAddMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| robot_id | [string](#string) |  |  |
-| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackCloneMessage"></a>
-
-### FeedbackCloneMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| original_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackMessage"></a>
-
-### FeedbackMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
-| config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackMessages"></a>
-
-### FeedbackMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| feedbacks | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-FeedbackUpdateMessage"></a>
-
-### FeedbackUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-FeedbackType"></a>
-
-### FeedbackType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| FEEDBACK_TYPE_UNSPECIFIED | 0 |  |
-| FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
-| FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
-| FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
-| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | Provides an overview of all current tasks |
-| FEEDBACK_TYPE_TASK_INSTRUCTION | 14 | Provide instructions of the current task |
-| FEEDBACK_TYPE_TASK_CHECKLIST | 15 | Tailored towards tasks that are more checklist oriented than assembly |
-| FEEDBACK_TYPE_ROBOT_PATH | 50 | Show the expected path of the robot |
-| FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
-| FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
-| FEEDBACK_TYPE_ROBOT_STATUS | 53 |  |
-| FEEDBACK_TYPE_ROBOT_LIGHT | 54 |  |
-| FEEDBACK_TYPE_MESSAGE | 100 |  |
-| FEEDBACK_TYPE_ICON | 101 |  |
-| FEEDBACK_TYPE_ZONE | 102 |  |
-| FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
-| FEEDBACK_TYPE_RULER | 104 |  |
-| FEEDBACK_TYPE_HIGHLIGHT | 105 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_helper-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/helper.proto
-
-
-
-<a name="ar-v1-HelperAddMessage"></a>
-
-### HelperAddMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-HelperMessage"></a>
-
-### HelperMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-HelperMessages"></a>
-
-### HelperMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-HelperUpdateMessage"></a>
-
-### HelperUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-HelperType"></a>
-
-### HelperType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| HELPER_TYPE_UNSPECIFIED | 0 |  |
-| HELPER_TYPE_PROXIMITY | 10 |  |
-| HELPER_TYPE_STATIONARY | 11 |  |
-| HELPER_TYPE_TIMER | 21 |  |
-| HELPER_TYPE_AND | 100 |  |
-| HELPER_TYPE_OR | 101 |  |
-| HELPER_TYPE_NOT | 102 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="ar_v1_ar_config-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1876,7 +1643,7 @@ Just delete this?
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| id | [string](#string) |  | Stable config identifier. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
@@ -1894,7 +1661,7 @@ Just delete this?
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated |  |
+| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | Lightweight AR config metadata entries. |
 
 
 
@@ -1904,22 +1671,24 @@ Just delete this?
 <a name="ar-v1-ARConfigMessage"></a>
 
 ### ARConfigMessage
+ARConfigMessage is the reusable authoring-time template for an AR experience.
 
+It references feedback, actions, helpers, properties, and input slots that
+are later materialized through ARConfigBindingMessage and runtime resolution.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| id | [string](#string) |  | Stable config identifier. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| feedback | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated | TODO: just a list of Id&#39;s? |
-| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
-| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| resource_slots | [ARResourceSlot](#ar-v1-ARResourceSlot) | repeated | Typed station/cell resource slots that must be bound for runtime use. |
-| context_slots | [ARContextSlot](#ar-v1-ARContextSlot) | repeated | Typed runtime context inputs populated from the active execution/workspace scope. |
+| feedback_ids | [string](#string) | repeated | Feedback entities belonging to this config. |
+| action_ids | [string](#string) | repeated | Action entities belonging to this config. |
+| helper_ids | [string](#string) | repeated | Helper entities belonging to this config. |
+| property_ids | [string](#string) | repeated | Includes server-managed generated properties for referenced input slots. |
+| input_slot_ids | [string](#string) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
 
 
 
@@ -1934,96 +1703,13 @@ Just delete this?
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-ARContextSlot"></a>
-
-### ARContextSlot
-ARContextSlot declares a typed runtime context input that the resolver may
-populate from the active line/cell/station/execution scope.
-
-Unlike resource slots, context slots are not bound manually per station or
-cell. Their values come from the runtime resolution request and are injected
-into the loaded config instance after binding resolution.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  |  |
-| required | [bool](#bool) |  |  |
-| property_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARResourceSlot"></a>
-
-### ARResourceSlot
-ARResourceSlot declares a typed resource hole that must be bound when an
-ARConfig is attached to a concrete station or cell.
-
-The slot keeps generic authoring inside the ARConfig while allowing each
-binding to provide the concrete robot or asset instance available in the
-target workspace.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  |  |
-| required | [bool](#bool) |  |  |
-| property_id | [string](#string) |  |  |
+| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
 
 
 
 
 
  
-
-
-<a name="ar-v1-ARContextSlotType"></a>
-
-### ARContextSlotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 |  |
-| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 |  |
-| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 |  |
-| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 |  |
-| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 |  |
-| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 |  |
-| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 |  |
-| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 |  |
-
-
-
-<a name="ar-v1-ARResourceSlotType"></a>
-
-### ARResourceSlotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 |  |
-| AR_RESOURCE_SLOT_TYPE_ROBOT | 1 |  |
-| AR_RESOURCE_SLOT_TYPE_ASSET | 2 |  |
-
 
  
 
@@ -2067,6 +1753,157 @@ target workspace.
 
 
 
+<a name="ar_v1_input_slot-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/input_slot.proto
+
+
+
+<a name="ar-v1-ARInputSlotAddMessage"></a>
+
+### ARInputSlotAddMessage
+ARInputSlotAddMessage creates a new config-owned input slot.
+
+Source specification is treated as identity-shaping for the generated
+property. If the source kind must change later, prefer delete &#43; recreate.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  | Owning AR config to attach the new slot to. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| required | [bool](#bool) |  | If true, future bindings/resolution must satisfy the slot. |
+| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
+| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotDeleteMessage"></a>
+
+### ARInputSlotDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Slot to delete. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotMessage"></a>
+
+### ARInputSlotMessage
+ARInputSlotMessage is the authoritative config-owned input slot entity for
+AR configs.
+
+The backend is expected to derive and manage generated_property_id from the
+slot identity and source specification. Users should not author or edit the
+generated property directly.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable slot identifier used by configs and runtime resolution. |
+| config_id | [string](#string) |  | Owning AR config. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| required | [bool](#bool) |  | If true, bindings/resolution should fail when this slot cannot be satisfied. |
+| generated_property_id | [string](#string) |  | Server-managed property that should receive the resolved slot value at runtime. |
+| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
+| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotMessages"></a>
+
+### ARInputSlotMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Config-owned input slots. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotUpdateMessage"></a>
+
+### ARInputSlotUpdateMessage
+ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+
+The source specification and generated_property_id are intentionally not
+updated here. Those should be treated as structural and changed via recreate.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Slot to update. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| required | [bool](#bool) | optional | Optional replacement for the slot&#39;s required flag. |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ARContextSlotType"></a>
+
+### ARContextSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 | No runtime context selected. Invalid for stored or add-requested slots. |
+| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 | Slot resolves to the active line id. |
+| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 | Slot resolves to the active cell id. |
+| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 | Slot resolves to the active station id. |
+| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 | Slot resolves to the active worker/operator id. |
+| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 | Slot resolves to the active process run id. |
+| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 | Slot resolves to the active sequence run id. |
+| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 | Slot resolves to the active task run id. |
+
+
+
+<a name="ar-v1-ARResourceSlotType"></a>
+
+### ARResourceSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 | No resource kind selected. Invalid for stored or add-requested slots. |
+| AR_RESOURCE_SLOT_TYPE_ROBOT | 1 | Slot expects a concrete robot instance. |
+| AR_RESOURCE_SLOT_TYPE_ASSET | 2 | Slot expects a concrete asset instance. |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_config_resolve-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2083,13 +1920,13 @@ bindings and context values should be resolved.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| line_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| worker_id | [string](#string) |  |  |
-| process_run_id | [string](#string) |  |  |
-| sequence_run_id | [string](#string) |  |  |
-| task_run_id | [string](#string) |  |  |
+| line_id | [string](#string) |  | Active line if known. |
+| cell_id | [string](#string) |  | Active cell if known. |
+| station_id | [string](#string) |  | Active station if known. |
+| worker_id | [string](#string) |  | Active worker/operator if known. |
+| process_run_id | [string](#string) |  | Active process run if known. |
+| sequence_run_id | [string](#string) |  | Active sequence run if known. |
+| task_run_id | [string](#string) |  | Active task run if known. |
 
 
 
@@ -2099,15 +1936,16 @@ bindings and context values should be resolved.
 <a name="ar-v1-ConfigurationResolveIssue"></a>
 
 ### ConfigurationResolveIssue
-
+ConfigurationResolveIssue describes a problem or note encountered while
+evaluating bindings for the supplied context.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| severity | [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity) |  |  |
-| binding_id | [string](#string) |  |  |
-| config_id | [string](#string) |  |  |
-| message | [string](#string) |  |  |
+| severity | [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity) |  | Classification of the issue. |
+| binding_id | [string](#string) |  | Binding involved, if any. |
+| config_id | [string](#string) |  | Config involved, if any. |
+| message | [string](#string) |  | Human-readable description of the issue. |
 
 
 
@@ -2124,8 +1962,7 @@ Recommended resolution flow:
 - find direct station bindings matching context.station_id
 - find parent/shared cell bindings matching context.cell_id
 - reject disabled bindings
-- reject bindings whose required resource slots or required context slots
-  cannot be satisfied
+- reject bindings whose required input slots cannot be satisfied
 - if any surviving binding is standalone, keep only standalone bindings with
   the highest priority
 - otherwise keep all surviving bindings sorted by priority descending, with
@@ -2135,8 +1972,7 @@ Recommended resolution flow:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| context | [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext) |  |  |
+| context | [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext) |  | Active runtime context to resolve against. |
 | loaded_instance_ids | [string](#string) | repeated | Instances already loaded by the caller, used to compute unloads/deltas. |
 
 
@@ -2147,15 +1983,30 @@ Recommended resolution flow:
 <a name="ar-v1-ConfigurationResolveResult"></a>
 
 ### ConfigurationResolveResult
-
+ConfigurationResolveResult returns the configs that should be active for the
+supplied runtime context plus any instances that should be unloaded.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| configurations | [ResolvedConfiguration](#ar-v1-ResolvedConfiguration) | repeated |  |
-| unload_instance_ids | [string](#string) | repeated |  |
-| issues | [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue) | repeated |  |
+| configurations | [ResolvedConfiguration](#ar-v1-ResolvedConfiguration) | repeated | Config instances that should be active after resolution. |
+| unload_instance_ids | [string](#string) | repeated | Previously loaded instances that should now be removed. |
+| issues | [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue) | repeated | Informational, warning, or error issues observed during resolution. |
+
+
+
+
+
+
+<a name="ar-v1-ResolvedAssetInput"></a>
+
+### ResolvedAssetInput
+ResolvedAssetInput carries the concrete asset instance chosen for a slot.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_instance_id | [string](#string) |  | Selected asset instance. |
 
 
 
@@ -2169,66 +2020,79 @@ ResolvedConfiguration is the fully selected config instance a runtime client
 should activate.
 
 effective_config should already include all binding-level property overrides.
-The runtime/client should then inject resolved_resource_bindings and
-resolved_context_bindings into the mapped properties before evaluating local
-property mirroring, helpers, actions, and feedback.
+The runtime/client should then inject resolved_input_bindings into the
+generated properties before evaluating local property mirroring, helpers,
+actions, and feedback.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| instance_id | [string](#string) |  |  |
-| binding_id | [string](#string) |  |  |
-| config_id | [string](#string) |  |  |
-| scope | [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType) |  |  |
-| line_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| standalone | [bool](#bool) |  |  |
-| priority | [int32](#int32) |  |  |
-| effective_config | [ARConfigMessage](#ar-v1-ARConfigMessage) |  |  |
-| resolved_resource_bindings | [ResolvedResourceBinding](#ar-v1-ResolvedResourceBinding) | repeated |  |
-| resolved_context_bindings | [ResolvedContextBinding](#ar-v1-ResolvedContextBinding) | repeated |  |
+| instance_id | [string](#string) |  | Runtime instance identifier for this resolved config. |
+| binding_id | [string](#string) |  | Binding that selected the config. |
+| config_id | [string](#string) |  | Underlying reusable config template. |
+| scope | [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType) |  | Scope level that selected this config. |
+| line_id | [string](#string) |  | Active line attached to the resolved instance, if any. |
+| cell_id | [string](#string) |  | Active cell attached to the resolved instance, if any. |
+| station_id | [string](#string) |  | Active station attached to the resolved instance, if any. |
+| standalone | [bool](#bool) |  | Standalone decision carried over from the winning binding. |
+| priority | [int32](#int32) |  | Priority carried over from the winning binding. |
+| effective_config | [ARConfigMessage](#ar-v1-ARConfigMessage) |  | Config after binding-level overrides have been applied. |
+| input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Materialized config-owned input slot entities referenced by effective_config.input_slot_ids. |
+| resolved_input_bindings | [ResolvedInputBinding](#ar-v1-ResolvedInputBinding) | repeated | Authoritative resolved values for unified config input slots. |
 
 
 
 
 
 
-<a name="ar-v1-ResolvedContextBinding"></a>
+<a name="ar-v1-ResolvedContextInputValue"></a>
 
-### ResolvedContextBinding
-ResolvedContextBinding captures the concrete runtime context value selected
-for a config context slot.
-
-Current context bindings resolve to string ids that are injected into the
-mapped property_id as PROPERTY_TYPE_STRING values.
+### ResolvedContextInputValue
+ResolvedContextInputValue carries the runtime context value chosen for a slot.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  |  |
-| property_id | [string](#string) |  |  |
-| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  |  |
-| string_value | [string](#string) |  |  |
+| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Context category that produced the value. |
+| string_value | [string](#string) |  | Resolved runtime identifier/value encoded as string. |
 
 
 
 
 
 
-<a name="ar-v1-ResolvedResourceBinding"></a>
+<a name="ar-v1-ResolvedInputBinding"></a>
 
-### ResolvedResourceBinding
-ResolvedResourceBinding captures the concrete resource value selected for a
-config resource slot.
+### ResolvedInputBinding
+ResolvedInputBinding is the authoritative resolved value for a unified input
+slot.
+
+generated_property_id identifies the server-managed property that should be
+populated in the effective config instance.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  |  |
-| property_id | [string](#string) |  |  |
-| robot_instance_id | [string](#string) | optional |  |
-| asset_instance_id | [string](#string) | optional |  |
+| slot_id | [string](#string) |  | Slot this resolved value belongs to. |
+| generated_property_id | [string](#string) |  | Generated property that should receive the resolved value. |
+| robot | [ResolvedRobotInput](#ar-v1-ResolvedRobotInput) |  | Set when the slot resolved to a robot instance. |
+| asset | [ResolvedAssetInput](#ar-v1-ResolvedAssetInput) |  | Set when the slot resolved to an asset instance. |
+| context | [ResolvedContextInputValue](#ar-v1-ResolvedContextInputValue) |  | Set when the slot resolved from runtime context. |
+
+
+
+
+
+
+<a name="ar-v1-ResolvedRobotInput"></a>
+
+### ResolvedRobotInput
+ResolvedRobotInput carries the concrete robot instance chosen for a slot.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_instance_id | [string](#string) |  | Selected robot instance. |
 
 
 
@@ -2244,10 +2108,10 @@ config resource slot.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED | 0 |  |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO | 1 |  |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING | 2 |  |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR | 3 |  |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED | 0 | Severity not classified. |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO | 1 | Informational note that does not affect resolution. |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING | 2 | Non-fatal problem or fallback encountered during resolution. |
+| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR | 3 | Fatal problem that prevented a binding/config from resolving. |
 
 
 
@@ -2258,9 +2122,9 @@ config resource slot.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED | 0 |  |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION | 1 |  |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL | 2 |  |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED | 0 | Resolver did not determine a concrete scope. |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION | 1 | Config was selected through a station-scoped binding. |
+| RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL | 2 | Config was selected through a cell-scoped binding. |
 
 
  
@@ -2441,6 +2305,143 @@ config resource slot.
 
 
 
+<a name="ar_v1_feedback-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/feedback.proto
+
+
+
+<a name="ar-v1-FeedbackAddMessage"></a>
+
+### FeedbackAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| robot_id | [string](#string) |  |  |
+| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackCloneMessage"></a>
+
+### FeedbackCloneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| original_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackMessage"></a>
+
+### FeedbackMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackMessages"></a>
+
+### FeedbackMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| feedbacks | [FeedbackMessage](#ar-v1-FeedbackMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-FeedbackUpdateMessage"></a>
+
+### FeedbackUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-FeedbackType"></a>
+
+### FeedbackType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| FEEDBACK_TYPE_UNSPECIFIED | 0 |  |
+| FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
+| FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
+| FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
+| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | Provides an overview of all current tasks |
+| FEEDBACK_TYPE_TASK_INSTRUCTION | 14 | Provide instructions of the current task |
+| FEEDBACK_TYPE_TASK_CHECKLIST | 15 | Tailored towards tasks that are more checklist oriented than assembly |
+| FEEDBACK_TYPE_ROBOT_PATH | 50 | Show the expected path of the robot |
+| FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
+| FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
+| FEEDBACK_TYPE_ROBOT_STATUS | 53 |  |
+| FEEDBACK_TYPE_ROBOT_LIGHT | 54 |  |
+| FEEDBACK_TYPE_MESSAGE | 100 |  |
+| FEEDBACK_TYPE_ICON | 101 |  |
+| FEEDBACK_TYPE_ZONE | 102 |  |
+| FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
+| FEEDBACK_TYPE_RULER | 104 |  |
+| FEEDBACK_TYPE_HIGHLIGHT | 105 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_feedback_info-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2503,6 +2504,111 @@ config resource slot.
 | FEEDBACK_GROUP_ROBOT | 2 |  |
 | FEEDBACK_GROUP_TASK | 3 |  |
 | FEEDBACK_GROUP_ENVIRONMENT | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_helper-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/helper.proto
+
+
+
+<a name="ar-v1-HelperAddMessage"></a>
+
+### HelperAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperMessage"></a>
+
+### HelperMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [HelperType](#ar-v1-HelperType) |  |  |
+| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperMessages"></a>
+
+### HelperMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-HelperUpdateMessage"></a>
+
+### HelperUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-HelperType"></a>
+
+### HelperType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HELPER_TYPE_UNSPECIFIED | 0 |  |
+| HELPER_TYPE_PROXIMITY | 10 |  |
+| HELPER_TYPE_STATIONARY | 11 |  |
+| HELPER_TYPE_TIMER | 21 |  |
+| HELPER_TYPE_AND | 100 |  |
+| HELPER_TYPE_OR | 101 |  |
+| HELPER_TYPE_NOT | 102 |  |
 
 
  
@@ -2614,17 +2720,17 @@ resource wiring explicit and safe.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| id | [string](#string) |  | Stable binding identifier. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| station_id | [string](#string) | optional |  |
-| cell_id | [string](#string) | optional |  |
-| ar_config_id | [string](#string) |  |  |
-| disabled | [bool](#bool) |  |  |
+| station_id | [string](#string) | optional | Station this binding targets directly. |
+| cell_id | [string](#string) | optional | Cell this binding targets directly. |
+| ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
+| disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
 | standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
 | priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
-| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated |  |
+| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
 | property_overrides | [common.v1.PropertyValueUpdate](#common-v1-PropertyValueUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
 
 
@@ -2640,7 +2746,7 @@ resource wiring explicit and safe.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated |  |
+| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated | Station/cell bindings for reusable AR configs. |
 
 
 
@@ -2656,9 +2762,9 @@ instance owned by the target station or cell.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  |  |
-| robot_instance_id | [string](#string) | optional |  |
-| asset_instance_id | [string](#string) | optional |  |
+| slot_id | [string](#string) |  | Config-declared slot to satisfy. |
+| robot_instance_id | [string](#string) | optional | Concrete robot instance selected for the slot. |
+| asset_instance_id | [string](#string) | optional | Concrete asset instance selected for the slot. |
 
 
 
@@ -2673,8 +2779,8 @@ instance owned by the target station or cell.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| asset_id | [string](#string) |  |  |
-| property_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  | Legacy asset definition identifier. |
+| property_id | [string](#string) |  | Legacy target property for the mapped asset. |
 
 
 
@@ -2689,15 +2795,15 @@ Deprecated legacy environment-based mapping.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
+| id | [string](#string) |  | Legacy mapping identifier. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| environment_id | [string](#string) |  |  |
-| ar_config_id | [string](#string) |  |  |
-| disabled | [bool](#bool) |  |  |
-| robot_mapping | [RobotMapping](#ar-v1-RobotMapping) | repeated |  |
-| asset_mapping | [AssetMapping](#ar-v1-AssetMapping) | repeated |  |
+| environment_id | [string](#string) |  | Legacy environment target. |
+| ar_config_id | [string](#string) |  | AR config template to load for the legacy environment. |
+| disabled | [bool](#bool) |  | If true, the mapping should be ignored. |
+| robot_mapping | [RobotMapping](#ar-v1-RobotMapping) | repeated | Legacy robot-to-property assignments. |
+| asset_mapping | [AssetMapping](#ar-v1-AssetMapping) | repeated | Legacy asset-to-property assignments. |
 | standalone | [bool](#bool) |  | Only this AR-config should be shown (winner have highest priority) |
 | priority | [int32](#int32) |  | High value configs will be shown first |
 
@@ -2714,7 +2820,7 @@ Deprecated legacy environment-based mapping.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated |  |
+| mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated | Legacy environment-based mappings. |
 
 
 
@@ -2729,8 +2835,8 @@ Deprecated legacy environment-based mapping.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  |  |
-| property_id | [string](#string) |  |  |
+| robot_id | [string](#string) |  | Legacy robot definition identifier. |
+| property_id | [string](#string) |  | Legacy target property for the mapped robot. |
 
 
 

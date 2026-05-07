@@ -21,11 +21,15 @@ export const file_ar_v1_mapping: GenFile = /*@__PURE__*/
  */
 export type RobotMapping = Message<"ar.v1.RobotMapping"> & {
   /**
+   * Legacy robot definition identifier.
+   *
    * @generated from field: string robot_id = 1;
    */
   robotId: string;
 
   /**
+   * Legacy target property for the mapped robot.
+   *
    * @generated from field: string property_id = 2;
    */
   propertyId: string;
@@ -43,11 +47,15 @@ export const RobotMappingSchema: GenMessage<RobotMapping> = /*@__PURE__*/
  */
 export type AssetMapping = Message<"ar.v1.AssetMapping"> & {
   /**
+   * Legacy asset definition identifier.
+   *
    * @generated from field: string asset_id = 1;
    */
   assetId: string;
 
   /**
+   * Legacy target property for the mapped asset.
+   *
    * @generated from field: string property_id = 2;
    */
   propertyId: string;
@@ -68,16 +76,22 @@ export const AssetMappingSchema: GenMessage<AssetMapping> = /*@__PURE__*/
  */
 export type ARResourceBinding = Message<"ar.v1.ARResourceBinding"> & {
   /**
+   * Config-declared slot to satisfy.
+   *
    * @generated from field: string slot_id = 1;
    */
   slotId: string;
 
   /**
+   * Concrete robot instance selected for the slot.
+   *
    * @generated from field: optional string robot_instance_id = 2;
    */
   robotInstanceId?: string;
 
   /**
+   * Concrete asset instance selected for the slot.
+   *
    * @generated from field: optional string asset_instance_id = 3;
    */
   assetInstanceId?: string;
@@ -108,6 +122,8 @@ export const ARResourceBindingSchema: GenMessage<ARResourceBinding> = /*@__PURE_
  */
 export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
   /**
+   * Stable binding identifier.
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -128,21 +144,29 @@ export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
   description: string;
 
   /**
+   * Station this binding targets directly.
+   *
    * @generated from field: optional string station_id = 5;
    */
   stationId?: string;
 
   /**
+   * Cell this binding targets directly.
+   *
    * @generated from field: optional string cell_id = 6;
    */
   cellId?: string;
 
   /**
+   * Reusable AR config template to bind.
+   *
    * @generated from field: string ar_config_id = 7;
    */
   arConfigId: string;
 
   /**
+   * If true, the binding should be ignored by resolution.
+   *
    * @generated from field: bool disabled = 8;
    */
   disabled: boolean;
@@ -162,6 +186,8 @@ export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
   priority: number;
 
   /**
+   * Concrete resource assignments for config-declared slots.
+   *
    * @generated from field: repeated ar.v1.ARResourceBinding resource_bindings = 11;
    */
   resourceBindings: ARResourceBinding[];
@@ -186,6 +212,8 @@ export const ARConfigBindingMessageSchema: GenMessage<ARConfigBindingMessage> = 
  */
 export type ARConfigBindingMessages = Message<"ar.v1.ARConfigBindingMessages"> & {
   /**
+   * Station/cell bindings for reusable AR configs.
+   *
    * @generated from field: repeated ar.v1.ARConfigBindingMessage bindings = 1;
    */
   bindings: ARConfigBindingMessage[];
@@ -205,6 +233,8 @@ export const ARConfigBindingMessagesSchema: GenMessage<ARConfigBindingMessages> 
  */
 export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
   /**
+   * Legacy mapping identifier.
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -225,26 +255,36 @@ export type MappingMessage = Message<"ar.v1.MappingMessage"> & {
   description: string;
 
   /**
+   * Legacy environment target.
+   *
    * @generated from field: string environment_id = 5;
    */
   environmentId: string;
 
   /**
+   * AR config template to load for the legacy environment.
+   *
    * @generated from field: string ar_config_id = 6;
    */
   arConfigId: string;
 
   /**
+   * If true, the mapping should be ignored.
+   *
    * @generated from field: bool disabled = 7;
    */
   disabled: boolean;
 
   /**
+   * Legacy robot-to-property assignments.
+   *
    * @generated from field: repeated ar.v1.RobotMapping robot_mapping = 8;
    */
   robotMapping: RobotMapping[];
 
   /**
+   * Legacy asset-to-property assignments.
+   *
    * @generated from field: repeated ar.v1.AssetMapping asset_mapping = 9;
    */
   assetMapping: AssetMapping[];
@@ -276,6 +316,8 @@ export const MappingMessageSchema: GenMessage<MappingMessage> = /*@__PURE__*/
  */
 export type MappingMessages = Message<"ar.v1.MappingMessages"> & {
   /**
+   * Legacy environment-based mappings.
+   *
    * @generated from field: repeated ar.v1.MappingMessage mappings = 1;
    */
   mappings: MappingMessage[];

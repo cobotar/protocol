@@ -4,8 +4,10 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import type { ARConfigMessage, ARContextSlotType } from "./ar_config_pb.ts";
+import type { ARConfigMessage } from "./ar_config_pb.ts";
 import { file_ar_v1_ar_config } from "./ar_config_pb.ts";
+import type { ARContextSlotType, ARInputSlotMessage } from "./input_slot_pb.ts";
+import { file_ar_v1_input_slot } from "./input_slot_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -14,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/config_resolve.proto.
  */
 export const file_ar_v1_config_resolve: GenFile = /*@__PURE__*/
-  fileDesc("Chphci92MS9jb25maWdfcmVzb2x2ZS5wcm90bxIFYXIudjEimwMKG0NvbmZpZ3VyYXRpb25SZXNvbHZlQ29udGV4dBIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEARIcCgl3b3JrZXJfaWQYBCABKAlCCbpIBnIE2OswARIhCg5wcm9jZXNzX3J1bl9pZBgFIAEoCUIJukgGcgSI8gQBEiIKD3NlcXVlbmNlX3J1bl9pZBgGIAEoCUIJukgGcgSQ8gQBEh4KC3Rhc2tfcnVuX2lkGAcgASgJQgm6SAZyBJjyBAE6nwG6SJsBGpgBCjZjb25maWd1cmF0aW9uX3Jlc29sdmVfY29udGV4dC5yZXF1aXJlc19zdGF0aW9uX29yX2NlbGwSMWF0IGxlYXN0IG9uZSBvZiBzdGF0aW9uX2lkIG9yIGNlbGxfaWQgbXVzdCBiZSBzZXQaK3RoaXMuc3RhdGlvbl9pZCAhPSAnJyB8fCB0aGlzLmNlbGxfaWQgIT0gJycimwEKG0NvbmZpZ3VyYXRpb25SZXNvbHZlUmVxdWVzdBISCgpyZXF1ZXN0X2lkGAEgASgJEjsKB2NvbnRleHQYAiABKAsyIi5hci52MS5Db25maWd1cmF0aW9uUmVzb2x2ZUNvbnRleHRCBrpIA8gBARIrChNsb2FkZWRfaW5zdGFuY2VfaWRzGAMgAygJQg66SAuSAQgiBnIE8OswASKGAgoXUmVzb2x2ZWRSZXNvdXJjZUJpbmRpbmcSGgoHc2xvdF9pZBgBIAEoCUIJukgGcgQQARhAEh4KC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAESKQoRcm9ib3RfaW5zdGFuY2VfaWQYAyABKAlCCbpIBnIEqPEEAUgAiAEBEikKEWFzc2V0X2luc3RhbmNlX2lkGAQgASgJQgm6SAZyBLjxBAFIAYgBATotukgqIigKEXJvYm90X2luc3RhbmNlX2lkChFhc3NldF9pbnN0YW5jZV9pZBABQhQKEl9yb2JvdF9pbnN0YW5jZV9pZEIUChJfYXNzZXRfaW5zdGFuY2VfaWQinwEKFlJlc29sdmVkQ29udGV4dEJpbmRpbmcSGgoHc2xvdF9pZBgBIAEoCUIJukgGcgQQARhAEh4KC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAESMwoEdHlwZRgDIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNsb3RUeXBlQgu6SAjIAQGCAQIQARIUCgxzdHJpbmdfdmFsdWUYBCABKAkirwEKGUNvbmZpZ3VyYXRpb25SZXNvbHZlSXNzdWUSRAoIc2V2ZXJpdHkYASABKA4yKC5hci52MS5Db25maWd1cmF0aW9uUmVzb2x2ZUlzc3VlU2V2ZXJpdHlCCLpIBYIBAhABEh0KCmJpbmRpbmdfaWQYAiABKAlCCbpIBnIE6OswARIcCgljb25maWdfaWQYAyABKAlCCbpIBnIEkPEEARIPCgdtZXNzYWdlGAQgASgJIvEDChVSZXNvbHZlZENvbmZpZ3VyYXRpb24SHgoLaW5zdGFuY2VfaWQYASABKAlCCbpIBnIE8OswARIdCgpiaW5kaW5nX2lkGAIgASgJQgm6SAZyBOjrMAESHAoJY29uZmlnX2lkGAMgASgJQgm6SAZyBJDxBAESPgoFc2NvcGUYBCABKA4yJS5hci52MS5SZXNvbHZlZENvbmZpZ3VyYXRpb25TY29wZVR5cGVCCLpIBYIBAhABEhoKB2xpbmVfaWQYBSABKAlCCbpIBnIEwPIEARIaCgdjZWxsX2lkGAYgASgJQgm6SAZyBLjyBAESHQoKc3RhdGlvbl9pZBgHIAEoCUIJukgGcgT48QQBEhIKCnN0YW5kYWxvbmUYCCABKAgSEAoIcHJpb3JpdHkYCSABKAUSOAoQZWZmZWN0aXZlX2NvbmZpZxgKIAEoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZUIGukgDyAEBEkIKGnJlc29sdmVkX3Jlc291cmNlX2JpbmRpbmdzGAsgAygLMh4uYXIudjEuUmVzb2x2ZWRSZXNvdXJjZUJpbmRpbmcSQAoZcmVzb2x2ZWRfY29udGV4dF9iaW5kaW5ncxgMIAMoCzIdLmFyLnYxLlJlc29sdmVkQ29udGV4dEJpbmRpbmcixQEKGkNvbmZpZ3VyYXRpb25SZXNvbHZlUmVzdWx0EhIKCnJlcXVlc3RfaWQYASABKAkSNAoOY29uZmlndXJhdGlvbnMYAiADKAsyHC5hci52MS5SZXNvbHZlZENvbmZpZ3VyYXRpb24SKwoTdW5sb2FkX2luc3RhbmNlX2lkcxgDIAMoCUIOukgLkgEIIgZyBPDrMAESMAoGaXNzdWVzGAQgAygLMiAuYXIudjEuQ29uZmlndXJhdGlvblJlc29sdmVJc3N1ZSquAQoeUmVzb2x2ZWRDb25maWd1cmF0aW9uU2NvcGVUeXBlEjEKLVJFU09MVkVEX0NPTkZJR1VSQVRJT05fU0NPUEVfVFlQRV9VTlNQRUNJRklFRBAAEi0KKVJFU09MVkVEX0NPTkZJR1VSQVRJT05fU0NPUEVfVFlQRV9TVEFUSU9OEAESKgomUkVTT0xWRURfQ09ORklHVVJBVElPTl9TQ09QRV9UWVBFX0NFTEwQAirqAQohQ29uZmlndXJhdGlvblJlc29sdmVJc3N1ZVNldmVyaXR5EjQKMENPTkZJR1VSQVRJT05fUkVTT0xWRV9JU1NVRV9TRVZFUklUWV9VTlNQRUNJRklFRBAAEi0KKUNPTkZJR1VSQVRJT05fUkVTT0xWRV9JU1NVRV9TRVZFUklUWV9JTkZPEAESMAosQ09ORklHVVJBVElPTl9SRVNPTFZFX0lTU1VFX1NFVkVSSVRZX1dBUk5JTkcQAhIuCipDT05GSUdVUkFUSU9OX1JFU09MVkVfSVNTVUVfU0VWRVJJVFlfRVJST1IQA0KOAQoJY29tLmFyLnYxQhJDb25maWdSZXNvbHZlUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_ar_config, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chphci92MS9jb25maWdfcmVzb2x2ZS5wcm90bxIFYXIudjEimwMKG0NvbmZpZ3VyYXRpb25SZXNvbHZlQ29udGV4dBIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEARIcCgl3b3JrZXJfaWQYBCABKAlCCbpIBnIE2OswARIhCg5wcm9jZXNzX3J1bl9pZBgFIAEoCUIJukgGcgSI8gQBEiIKD3NlcXVlbmNlX3J1bl9pZBgGIAEoCUIJukgGcgSQ8gQBEh4KC3Rhc2tfcnVuX2lkGAcgASgJQgm6SAZyBJjyBAE6nwG6SJsBGpgBCjZjb25maWd1cmF0aW9uX3Jlc29sdmVfY29udGV4dC5yZXF1aXJlc19zdGF0aW9uX29yX2NlbGwSMWF0IGxlYXN0IG9uZSBvZiBzdGF0aW9uX2lkIG9yIGNlbGxfaWQgbXVzdCBiZSBzZXQaK3RoaXMuc3RhdGlvbl9pZCAhPSAnJyB8fCB0aGlzLmNlbGxfaWQgIT0gJycihwEKG0NvbmZpZ3VyYXRpb25SZXNvbHZlUmVxdWVzdBI7Cgdjb250ZXh0GAEgASgLMiIuYXIudjEuQ29uZmlndXJhdGlvblJlc29sdmVDb250ZXh0Qga6SAPIAQESKwoTbG9hZGVkX2luc3RhbmNlX2lkcxgCIAMoCUIOukgLkgEIIgZyBPDrMAEiOgoSUmVzb2x2ZWRSb2JvdElucHV0EiQKEXJvYm90X2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBKjxBAEiOgoSUmVzb2x2ZWRBc3NldElucHV0EiQKEWFzc2V0X2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBLjxBAEiZgoZUmVzb2x2ZWRDb250ZXh0SW5wdXRWYWx1ZRIzCgR0eXBlGAEgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCC7pICMgBAYIBAhABEhQKDHN0cmluZ192YWx1ZRgCIAEoCSKJAgoUUmVzb2x2ZWRJbnB1dEJpbmRpbmcSHQoHc2xvdF9pZBgBIAEoCUIMukgJyAEBcgT46zABEisKFWdlbmVyYXRlZF9wcm9wZXJ0eV9pZBgCIAEoCUIMukgJyAEBcgSY8QQBEigKBXJvYm90GAogASgLMhkuYXIudjEuUmVzb2x2ZWRSb2JvdElucHV0EigKBWFzc2V0GAsgASgLMhkuYXIudjEuUmVzb2x2ZWRBc3NldElucHV0EjEKB2NvbnRleHQYDCABKAsyIC5hci52MS5SZXNvbHZlZENvbnRleHRJbnB1dFZhbHVlOh66SBsiGQoFcm9ib3QKBWFzc2V0Cgdjb250ZXh0EAEirwEKGUNvbmZpZ3VyYXRpb25SZXNvbHZlSXNzdWUSRAoIc2V2ZXJpdHkYASABKA4yKC5hci52MS5Db25maWd1cmF0aW9uUmVzb2x2ZUlzc3VlU2V2ZXJpdHlCCLpIBYIBAhABEh0KCmJpbmRpbmdfaWQYAiABKAlCCbpIBnIE6OswARIcCgljb25maWdfaWQYAyABKAlCCbpIBnIEkPEEARIPCgdtZXNzYWdlGAQgASgJItkDChVSZXNvbHZlZENvbmZpZ3VyYXRpb24SHgoLaW5zdGFuY2VfaWQYASABKAlCCbpIBnIE8OswARIdCgpiaW5kaW5nX2lkGAIgASgJQgm6SAZyBOjrMAESHAoJY29uZmlnX2lkGAMgASgJQgm6SAZyBJDxBAESPgoFc2NvcGUYBCABKA4yJS5hci52MS5SZXNvbHZlZENvbmZpZ3VyYXRpb25TY29wZVR5cGVCCLpIBYIBAhABEhoKB2xpbmVfaWQYBSABKAlCCbpIBnIEwPIEARIaCgdjZWxsX2lkGAYgASgJQgm6SAZyBLjyBAESHQoKc3RhdGlvbl9pZBgHIAEoCUIJukgGcgT48QQBEhIKCnN0YW5kYWxvbmUYCCABKAgSEAoIcHJpb3JpdHkYCSABKAUSOAoQZWZmZWN0aXZlX2NvbmZpZxgKIAEoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZUIGukgDyAEBEi4KC2lucHV0X3Nsb3RzGAsgAygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlEjwKF3Jlc29sdmVkX2lucHV0X2JpbmRpbmdzGAwgAygLMhsuYXIudjEuUmVzb2x2ZWRJbnB1dEJpbmRpbmcisQEKGkNvbmZpZ3VyYXRpb25SZXNvbHZlUmVzdWx0EjQKDmNvbmZpZ3VyYXRpb25zGAEgAygLMhwuYXIudjEuUmVzb2x2ZWRDb25maWd1cmF0aW9uEisKE3VubG9hZF9pbnN0YW5jZV9pZHMYAiADKAlCDrpIC5IBCCIGcgTw6zABEjAKBmlzc3VlcxgDIAMoCzIgLmFyLnYxLkNvbmZpZ3VyYXRpb25SZXNvbHZlSXNzdWUqrgEKHlJlc29sdmVkQ29uZmlndXJhdGlvblNjb3BlVHlwZRIxCi1SRVNPTFZFRF9DT05GSUdVUkFUSU9OX1NDT1BFX1RZUEVfVU5TUEVDSUZJRUQQABItCilSRVNPTFZFRF9DT05GSUdVUkFUSU9OX1NDT1BFX1RZUEVfU1RBVElPThABEioKJlJFU09MVkVEX0NPTkZJR1VSQVRJT05fU0NPUEVfVFlQRV9DRUxMEAIq6gEKIUNvbmZpZ3VyYXRpb25SZXNvbHZlSXNzdWVTZXZlcml0eRI0CjBDT05GSUdVUkFUSU9OX1JFU09MVkVfSVNTVUVfU0VWRVJJVFlfVU5TUEVDSUZJRUQQABItCilDT05GSUdVUkFUSU9OX1JFU09MVkVfSVNTVUVfU0VWRVJJVFlfSU5GTxABEjAKLENPTkZJR1VSQVRJT05fUkVTT0xWRV9JU1NVRV9TRVZFUklUWV9XQVJOSU5HEAISLgoqQ09ORklHVVJBVElPTl9SRVNPTFZFX0lTU1VFX1NFVkVSSVRZX0VSUk9SEANCjgEKCWNvbS5hci52MUISQ29uZmlnUmVzb2x2ZVByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_ar_config, file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * ConfigurationResolveContext describes the active runtime scope from which AR
@@ -24,36 +26,50 @@ export const file_ar_v1_config_resolve: GenFile = /*@__PURE__*/
  */
 export type ConfigurationResolveContext = Message<"ar.v1.ConfigurationResolveContext"> & {
   /**
+   * Active line if known.
+   *
    * @generated from field: string line_id = 1;
    */
   lineId: string;
 
   /**
+   * Active cell if known.
+   *
    * @generated from field: string cell_id = 2;
    */
   cellId: string;
 
   /**
+   * Active station if known.
+   *
    * @generated from field: string station_id = 3;
    */
   stationId: string;
 
   /**
+   * Active worker/operator if known.
+   *
    * @generated from field: string worker_id = 4;
    */
   workerId: string;
 
   /**
+   * Active process run if known.
+   *
    * @generated from field: string process_run_id = 5;
    */
   processRunId: string;
 
   /**
+   * Active sequence run if known.
+   *
    * @generated from field: string sequence_run_id = 6;
    */
   sequenceRunId: string;
 
   /**
+   * Active task run if known.
+   *
    * @generated from field: string task_run_id = 7;
    */
   taskRunId: string;
@@ -74,8 +90,7 @@ export const ConfigurationResolveContextSchema: GenMessage<ConfigurationResolveC
  * - find direct station bindings matching context.station_id
  * - find parent/shared cell bindings matching context.cell_id
  * - reject disabled bindings
- * - reject bindings whose required resource slots or required context slots
- *   cannot be satisfied
+ * - reject bindings whose required input slots cannot be satisfied
  * - if any surviving binding is standalone, keep only standalone bindings with
  *   the highest priority
  * - otherwise keep all surviving bindings sorted by priority descending, with
@@ -86,19 +101,16 @@ export const ConfigurationResolveContextSchema: GenMessage<ConfigurationResolveC
  */
 export type ConfigurationResolveRequest = Message<"ar.v1.ConfigurationResolveRequest"> & {
   /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: ar.v1.ConfigurationResolveContext context = 2;
+   * Active runtime context to resolve against.
+   *
+   * @generated from field: ar.v1.ConfigurationResolveContext context = 1;
    */
   context?: ConfigurationResolveContext;
 
   /**
    * Instances already loaded by the caller, used to compute unloads/deltas.
    *
-   * @generated from field: repeated string loaded_instance_ids = 3;
+   * @generated from field: repeated string loaded_instance_ids = 2;
    */
   loadedInstanceIds: string[];
 };
@@ -111,98 +123,159 @@ export const ConfigurationResolveRequestSchema: GenMessage<ConfigurationResolveR
   messageDesc(file_ar_v1_config_resolve, 1);
 
 /**
- * ResolvedResourceBinding captures the concrete resource value selected for a
- * config resource slot.
+ * ResolvedRobotInput carries the concrete robot instance chosen for a slot.
  *
- * @generated from message ar.v1.ResolvedResourceBinding
+ * @generated from message ar.v1.ResolvedRobotInput
  */
-export type ResolvedResourceBinding = Message<"ar.v1.ResolvedResourceBinding"> & {
+export type ResolvedRobotInput = Message<"ar.v1.ResolvedRobotInput"> & {
   /**
-   * @generated from field: string slot_id = 1;
+   * Selected robot instance.
+   *
+   * @generated from field: string robot_instance_id = 1;
    */
-  slotId: string;
-
-  /**
-   * @generated from field: string property_id = 2;
-   */
-  propertyId: string;
-
-  /**
-   * @generated from field: optional string robot_instance_id = 3;
-   */
-  robotInstanceId?: string;
-
-  /**
-   * @generated from field: optional string asset_instance_id = 4;
-   */
-  assetInstanceId?: string;
+  robotInstanceId: string;
 };
 
 /**
- * Describes the message ar.v1.ResolvedResourceBinding.
- * Use `create(ResolvedResourceBindingSchema)` to create a new message.
+ * Describes the message ar.v1.ResolvedRobotInput.
+ * Use `create(ResolvedRobotInputSchema)` to create a new message.
  */
-export const ResolvedResourceBindingSchema: GenMessage<ResolvedResourceBinding> = /*@__PURE__*/
+export const ResolvedRobotInputSchema: GenMessage<ResolvedRobotInput> = /*@__PURE__*/
   messageDesc(file_ar_v1_config_resolve, 2);
 
 /**
- * ResolvedContextBinding captures the concrete runtime context value selected
- * for a config context slot.
+ * ResolvedAssetInput carries the concrete asset instance chosen for a slot.
  *
- * Current context bindings resolve to string ids that are injected into the
- * mapped property_id as PROPERTY_TYPE_STRING values.
- *
- * @generated from message ar.v1.ResolvedContextBinding
+ * @generated from message ar.v1.ResolvedAssetInput
  */
-export type ResolvedContextBinding = Message<"ar.v1.ResolvedContextBinding"> & {
+export type ResolvedAssetInput = Message<"ar.v1.ResolvedAssetInput"> & {
   /**
-   * @generated from field: string slot_id = 1;
+   * Selected asset instance.
+   *
+   * @generated from field: string asset_instance_id = 1;
    */
-  slotId: string;
+  assetInstanceId: string;
+};
 
-  /**
-   * @generated from field: string property_id = 2;
-   */
-  propertyId: string;
+/**
+ * Describes the message ar.v1.ResolvedAssetInput.
+ * Use `create(ResolvedAssetInputSchema)` to create a new message.
+ */
+export const ResolvedAssetInputSchema: GenMessage<ResolvedAssetInput> = /*@__PURE__*/
+  messageDesc(file_ar_v1_config_resolve, 3);
 
+/**
+ * ResolvedContextInputValue carries the runtime context value chosen for a slot.
+ *
+ * @generated from message ar.v1.ResolvedContextInputValue
+ */
+export type ResolvedContextInputValue = Message<"ar.v1.ResolvedContextInputValue"> & {
   /**
-   * @generated from field: ar.v1.ARContextSlotType type = 3;
+   * Context category that produced the value.
+   *
+   * @generated from field: ar.v1.ARContextSlotType type = 1;
    */
   type: ARContextSlotType;
 
   /**
-   * @generated from field: string string_value = 4;
+   * Resolved runtime identifier/value encoded as string.
+   *
+   * @generated from field: string string_value = 2;
    */
   stringValue: string;
 };
 
 /**
- * Describes the message ar.v1.ResolvedContextBinding.
- * Use `create(ResolvedContextBindingSchema)` to create a new message.
+ * Describes the message ar.v1.ResolvedContextInputValue.
+ * Use `create(ResolvedContextInputValueSchema)` to create a new message.
  */
-export const ResolvedContextBindingSchema: GenMessage<ResolvedContextBinding> = /*@__PURE__*/
-  messageDesc(file_ar_v1_config_resolve, 3);
+export const ResolvedContextInputValueSchema: GenMessage<ResolvedContextInputValue> = /*@__PURE__*/
+  messageDesc(file_ar_v1_config_resolve, 4);
 
 /**
+ * ResolvedInputBinding is the authoritative resolved value for a unified input
+ * slot.
+ *
+ * generated_property_id identifies the server-managed property that should be
+ * populated in the effective config instance.
+ *
+ * @generated from message ar.v1.ResolvedInputBinding
+ */
+export type ResolvedInputBinding = Message<"ar.v1.ResolvedInputBinding"> & {
+  /**
+   * Slot this resolved value belongs to.
+   *
+   * @generated from field: string slot_id = 1;
+   */
+  slotId: string;
+
+  /**
+   * Generated property that should receive the resolved value.
+   *
+   * @generated from field: string generated_property_id = 2;
+   */
+  generatedPropertyId: string;
+
+  /**
+   * Set when the slot resolved to a robot instance.
+   *
+   * @generated from field: ar.v1.ResolvedRobotInput robot = 10;
+   */
+  robot?: ResolvedRobotInput;
+
+  /**
+   * Set when the slot resolved to an asset instance.
+   *
+   * @generated from field: ar.v1.ResolvedAssetInput asset = 11;
+   */
+  asset?: ResolvedAssetInput;
+
+  /**
+   * Set when the slot resolved from runtime context.
+   *
+   * @generated from field: ar.v1.ResolvedContextInputValue context = 12;
+   */
+  context?: ResolvedContextInputValue;
+};
+
+/**
+ * Describes the message ar.v1.ResolvedInputBinding.
+ * Use `create(ResolvedInputBindingSchema)` to create a new message.
+ */
+export const ResolvedInputBindingSchema: GenMessage<ResolvedInputBinding> = /*@__PURE__*/
+  messageDesc(file_ar_v1_config_resolve, 5);
+
+/**
+ * ConfigurationResolveIssue describes a problem or note encountered while
+ * evaluating bindings for the supplied context.
+ *
  * @generated from message ar.v1.ConfigurationResolveIssue
  */
 export type ConfigurationResolveIssue = Message<"ar.v1.ConfigurationResolveIssue"> & {
   /**
+   * Classification of the issue.
+   *
    * @generated from field: ar.v1.ConfigurationResolveIssueSeverity severity = 1;
    */
   severity: ConfigurationResolveIssueSeverity;
 
   /**
+   * Binding involved, if any.
+   *
    * @generated from field: string binding_id = 2;
    */
   bindingId: string;
 
   /**
+   * Config involved, if any.
+   *
    * @generated from field: string config_id = 3;
    */
   configId: string;
 
   /**
+   * Human-readable description of the issue.
+   *
    * @generated from field: string message = 4;
    */
   message: string;
@@ -213,79 +286,103 @@ export type ConfigurationResolveIssue = Message<"ar.v1.ConfigurationResolveIssue
  * Use `create(ConfigurationResolveIssueSchema)` to create a new message.
  */
 export const ConfigurationResolveIssueSchema: GenMessage<ConfigurationResolveIssue> = /*@__PURE__*/
-  messageDesc(file_ar_v1_config_resolve, 4);
+  messageDesc(file_ar_v1_config_resolve, 6);
 
 /**
  * ResolvedConfiguration is the fully selected config instance a runtime client
  * should activate.
  *
  * effective_config should already include all binding-level property overrides.
- * The runtime/client should then inject resolved_resource_bindings and
- * resolved_context_bindings into the mapped properties before evaluating local
- * property mirroring, helpers, actions, and feedback.
+ * The runtime/client should then inject resolved_input_bindings into the
+ * generated properties before evaluating local property mirroring, helpers,
+ * actions, and feedback.
  *
  * @generated from message ar.v1.ResolvedConfiguration
  */
 export type ResolvedConfiguration = Message<"ar.v1.ResolvedConfiguration"> & {
   /**
+   * Runtime instance identifier for this resolved config.
+   *
    * @generated from field: string instance_id = 1;
    */
   instanceId: string;
 
   /**
+   * Binding that selected the config.
+   *
    * @generated from field: string binding_id = 2;
    */
   bindingId: string;
 
   /**
+   * Underlying reusable config template.
+   *
    * @generated from field: string config_id = 3;
    */
   configId: string;
 
   /**
+   * Scope level that selected this config.
+   *
    * @generated from field: ar.v1.ResolvedConfigurationScopeType scope = 4;
    */
   scope: ResolvedConfigurationScopeType;
 
   /**
+   * Active line attached to the resolved instance, if any.
+   *
    * @generated from field: string line_id = 5;
    */
   lineId: string;
 
   /**
+   * Active cell attached to the resolved instance, if any.
+   *
    * @generated from field: string cell_id = 6;
    */
   cellId: string;
 
   /**
+   * Active station attached to the resolved instance, if any.
+   *
    * @generated from field: string station_id = 7;
    */
   stationId: string;
 
   /**
+   * Standalone decision carried over from the winning binding.
+   *
    * @generated from field: bool standalone = 8;
    */
   standalone: boolean;
 
   /**
+   * Priority carried over from the winning binding.
+   *
    * @generated from field: int32 priority = 9;
    */
   priority: number;
 
   /**
+   * Config after binding-level overrides have been applied.
+   *
    * @generated from field: ar.v1.ARConfigMessage effective_config = 10;
    */
   effectiveConfig?: ARConfigMessage;
 
   /**
-   * @generated from field: repeated ar.v1.ResolvedResourceBinding resolved_resource_bindings = 11;
+   * Materialized config-owned input slot entities referenced by effective_config.input_slot_ids.
+   *
+   * @generated from field: repeated ar.v1.ARInputSlotMessage input_slots = 11;
    */
-  resolvedResourceBindings: ResolvedResourceBinding[];
+  inputSlots: ARInputSlotMessage[];
 
   /**
-   * @generated from field: repeated ar.v1.ResolvedContextBinding resolved_context_bindings = 12;
+   * Authoritative resolved values for unified config input slots.
+   *
+   * @generated from field: repeated ar.v1.ResolvedInputBinding resolved_input_bindings = 12;
    */
-  resolvedContextBindings: ResolvedContextBinding[];
+  resolvedInputBindings: ResolvedInputBinding[];
 };
 
 /**
@@ -293,29 +390,33 @@ export type ResolvedConfiguration = Message<"ar.v1.ResolvedConfiguration"> & {
  * Use `create(ResolvedConfigurationSchema)` to create a new message.
  */
 export const ResolvedConfigurationSchema: GenMessage<ResolvedConfiguration> = /*@__PURE__*/
-  messageDesc(file_ar_v1_config_resolve, 5);
+  messageDesc(file_ar_v1_config_resolve, 7);
 
 /**
+ * ConfigurationResolveResult returns the configs that should be active for the
+ * supplied runtime context plus any instances that should be unloaded.
+ *
  * @generated from message ar.v1.ConfigurationResolveResult
  */
 export type ConfigurationResolveResult = Message<"ar.v1.ConfigurationResolveResult"> & {
   /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: repeated ar.v1.ResolvedConfiguration configurations = 2;
+   * Config instances that should be active after resolution.
+   *
+   * @generated from field: repeated ar.v1.ResolvedConfiguration configurations = 1;
    */
   configurations: ResolvedConfiguration[];
 
   /**
-   * @generated from field: repeated string unload_instance_ids = 3;
+   * Previously loaded instances that should now be removed.
+   *
+   * @generated from field: repeated string unload_instance_ids = 2;
    */
   unloadInstanceIds: string[];
 
   /**
-   * @generated from field: repeated ar.v1.ConfigurationResolveIssue issues = 4;
+   * Informational, warning, or error issues observed during resolution.
+   *
+   * @generated from field: repeated ar.v1.ConfigurationResolveIssue issues = 3;
    */
   issues: ConfigurationResolveIssue[];
 };
@@ -325,23 +426,29 @@ export type ConfigurationResolveResult = Message<"ar.v1.ConfigurationResolveResu
  * Use `create(ConfigurationResolveResultSchema)` to create a new message.
  */
 export const ConfigurationResolveResultSchema: GenMessage<ConfigurationResolveResult> = /*@__PURE__*/
-  messageDesc(file_ar_v1_config_resolve, 6);
+  messageDesc(file_ar_v1_config_resolve, 8);
 
 /**
  * @generated from enum ar.v1.ResolvedConfigurationScopeType
  */
 export enum ResolvedConfigurationScopeType {
   /**
+   * Resolver did not determine a concrete scope.
+   *
    * @generated from enum value: RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * Config was selected through a station-scoped binding.
+   *
    * @generated from enum value: RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION = 1;
    */
   STATION = 1,
 
   /**
+   * Config was selected through a cell-scoped binding.
+   *
    * @generated from enum value: RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL = 2;
    */
   CELL = 2,
@@ -358,21 +465,29 @@ export const ResolvedConfigurationScopeTypeSchema: GenEnum<ResolvedConfiguration
  */
 export enum ConfigurationResolveIssueSeverity {
   /**
+   * Severity not classified.
+   *
    * @generated from enum value: CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * Informational note that does not affect resolution.
+   *
    * @generated from enum value: CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO = 1;
    */
   INFO = 1,
 
   /**
+   * Non-fatal problem or fallback encountered during resolution.
+   *
    * @generated from enum value: CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING = 2;
    */
   WARNING = 2,
 
   /**
+   * Fatal problem that prevented a binding/config from resolving.
+   *
    * @generated from enum value: CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR = 3;
    */
   ERROR = 3,

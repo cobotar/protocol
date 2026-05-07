@@ -65,3 +65,5 @@ AR_CONFIG_BINDING_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_config_binding_id_component: _descriptor.FieldDescriptor
 AR_CONFIG_INSTANCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_config_instance_id_component: _descriptor.FieldDescriptor
+AR_INPUT_SLOT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+ar_input_slot_id_component: _descriptor.FieldDescriptor
