@@ -54,9 +54,8 @@ enum ConfigurationResolveIssueSeverity {
 //   station-scoped bindings preferred over cell-scoped bindings for equal
 //   priority
 message ConfigurationResolveRequest {
-  string request_id = 1;
-  ConfigurationResolveContext context = 2 [(buf.validate.field).required = true];
-  repeated string loaded_instance_ids = 3 [(buf.validate.field).repeated.items.string.(validation.v1.ar_config_instance_id_component) = true]; // Instances already loaded by the caller, used to compute unloads/deltas.
+  ConfigurationResolveContext context = 1 [(buf.validate.field).required = true];
+  repeated string loaded_instance_ids = 2 [(buf.validate.field).repeated.items.string.(validation.v1.ar_config_instance_id_component) = true]; // Instances already loaded by the caller, used to compute unloads/deltas.
 }
 
 // ResolvedResourceBinding captures the concrete resource value selected for a
