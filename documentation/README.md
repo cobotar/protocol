@@ -102,15 +102,6 @@
   
     - [ActionGroup](#ar-v1-ActionGroup)
   
-- [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
-    - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
-    - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
-    - [ARConfigMessage](#ar-v1-ARConfigMessage)
-    - [ARConfigMessages](#ar-v1-ARConfigMessages)
-  
-- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
-    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
-  
 - [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
     - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
     - [ARInputSlotDeleteMessage](#ar-v1-ARInputSlotDeleteMessage)
@@ -120,6 +111,15 @@
   
     - [ARContextSlotType](#ar-v1-ARContextSlotType)
     - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
+  
+- [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
+    - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
+    - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
+    - [ARConfigMessage](#ar-v1-ARConfigMessage)
+    - [ARConfigMessages](#ar-v1-ARConfigMessages)
+  
+- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
+    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
 - [ar/v1/config_resolve.proto](#ar_v1_config_resolve-proto)
     - [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext)
@@ -1628,131 +1628,6 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
-<a name="ar_v1_ar_config-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/ar_config.proto
-
-
-
-<a name="ar-v1-ARConfigInfoMessage"></a>
-
-### ARConfigInfoMessage
-Just delete this?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable config identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigInfoMessages"></a>
-
-### ARConfigInfoMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | Lightweight AR config metadata entries. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigMessage"></a>
-
-### ARConfigMessage
-ARConfigMessage is the reusable authoring-time template for an AR experience.
-
-It references feedback, actions, helpers, properties, and input slots that
-are later materialized through ARConfigBindingMessage and runtime resolution.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable config identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| feedback_ids | [string](#string) | repeated | Feedback entities belonging to this config. |
-| action_ids | [string](#string) | repeated | Action entities belonging to this config. |
-| helper_ids | [string](#string) | repeated | Helper entities belonging to this config. |
-| property_ids | [string](#string) | repeated | Includes server-managed generated properties for referenced input slots. |
-| input_slot_ids | [string](#string) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigMessages"></a>
-
-### ARConfigMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_config_load-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/config_load.proto
-
-
-
-<a name="ar-v1-ConfigurationLoadMessage"></a>
-
-### ConfigurationLoadMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| config_id | [string](#string) |  | Id of the reusable config template to be loaded, mainly for authoring/editor flows. |
-| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
-| binding_id | [string](#string) |  | Preferred for runtime loads when a station/cell-specific binding should be resolved. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="ar_v1_input_slot-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1895,6 +1770,131 @@ updated here. Those should be treated as structural and changed via recreate.
 | AR_RESOURCE_SLOT_TYPE_ROBOT | 1 | Slot expects a concrete robot instance. |
 | AR_RESOURCE_SLOT_TYPE_ASSET | 2 | Slot expects a concrete asset instance. |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_ar_config-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/ar_config.proto
+
+
+
+<a name="ar-v1-ARConfigInfoMessage"></a>
+
+### ARConfigInfoMessage
+Just delete this?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigInfoMessages"></a>
+
+### ARConfigInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | Lightweight AR config metadata entries. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessage"></a>
+
+### ARConfigMessage
+ARConfigMessage is the reusable authoring-time template for an AR experience.
+
+It references feedback, actions, helpers, properties, and input slots that
+are later materialized through ARConfigBindingMessage and runtime resolution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| feedback_ids | [string](#string) | repeated | Feedback entities belonging to this config. |
+| action_ids | [string](#string) | repeated | Action entities belonging to this config. |
+| helper_ids | [string](#string) | repeated | Helper entities belonging to this config. |
+| property_ids | [string](#string) | repeated | Includes server-managed generated properties for referenced input slots. |
+| input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessages"></a>
+
+### ARConfigMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_config_load-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/config_load.proto
+
+
+
+<a name="ar-v1-ConfigurationLoadMessage"></a>
+
+### ConfigurationLoadMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| request_id | [string](#string) |  |  |
+| config_id | [string](#string) |  | Id of the reusable config template to be loaded, mainly for authoring/editor flows. |
+| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
+| binding_id | [string](#string) |  | Preferred for runtime loads when a station/cell-specific binding should be resolved. |
+
+
+
+
+
+ 
 
  
 

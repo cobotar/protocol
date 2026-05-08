@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from ar.v1 import input_slot_pb2 as ar_dot_v1_dot_input__slot__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61r/v1/ar_config.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n\x13\x41RConfigInfoMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"H\n\x14\x41RConfigInfoMessages\x12\x30\n\x05infos\x18\x01 \x03(\x0b\x32\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x80\x03\n\x0f\x41RConfigMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12>\n\x15\x61r_disappear_distance\x18\x05 \x01(\x03\x42\n\xbaH\x07\"\x05(\x00H\xde\x02R\x13\x61rDisappearDistance\x12!\n\x0c\x66\x65\x65\x64\x62\x61\x63k_ids\x18\x06 \x03(\tR\x0b\x66\x65\x65\x64\x62\x61\x63kIds\x12\x1d\n\naction_ids\x18\x07 \x03(\tR\tactionIds\x12\x1d\n\nhelper_ids\x18\x08 \x03(\tR\thelperIds\x12\x31\n\x0cproperty_ids\x18\t \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\x98\xf1\x04\x01R\x0bpropertyIds\x12\x34\n\x0einput_slot_ids\x18\n \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xf8\xeb\x30\x01R\x0cinputSlotIds\"D\n\x10\x41RConfigMessages\x12\x30\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32\x16.ar.v1.ARConfigMessageR\x07\x63onfigsB\x89\x01\n\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61r/v1/ar_config.proto\x12\x05\x61r.v1\x1a\x16\x61r/v1/input_slot.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n\x13\x41RConfigInfoMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"H\n\x14\x41RConfigInfoMessages\x12\x30\n\x05infos\x18\x01 \x03(\x0b\x32\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x86\x03\n\x0f\x41RConfigMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12>\n\x15\x61r_disappear_distance\x18\x05 \x01(\x03\x42\n\xbaH\x07\"\x05(\x00H\xde\x02R\x13\x61rDisappearDistance\x12!\n\x0c\x66\x65\x65\x64\x62\x61\x63k_ids\x18\x06 \x03(\tR\x0b\x66\x65\x65\x64\x62\x61\x63kIds\x12\x1d\n\naction_ids\x18\x07 \x03(\tR\tactionIds\x12\x1d\n\nhelper_ids\x18\x08 \x03(\tR\thelperIds\x12\x31\n\x0cproperty_ids\x18\t \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\x98\xf1\x04\x01R\x0bpropertyIds\x12:\n\x0binput_slots\x18\n \x03(\x0b\x32\x19.ar.v1.ARInputSlotMessageR\ninputSlots\"D\n\x10\x41RConfigMessages\x12\x30\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32\x16.ar.v1.ARConfigMessageR\x07\x63onfigsB\x89\x01\n\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,14 +43,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ARCONFIGMESSAGE'].fields_by_name['ar_disappear_distance']._serialized_options = b'\272H\007\"\005(\000H\336\002'
   _globals['_ARCONFIGMESSAGE'].fields_by_name['property_ids']._loaded_options = None
   _globals['_ARCONFIGMESSAGE'].fields_by_name['property_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\230\361\004\001'
-  _globals['_ARCONFIGMESSAGE'].fields_by_name['input_slot_ids']._loaded_options = None
-  _globals['_ARCONFIGMESSAGE'].fields_by_name['input_slot_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\370\3530\001'
-  _globals['_ARCONFIGINFOMESSAGE']._serialized_start=106
-  _globals['_ARCONFIGINFOMESSAGE']._serialized_end=228
-  _globals['_ARCONFIGINFOMESSAGES']._serialized_start=230
-  _globals['_ARCONFIGINFOMESSAGES']._serialized_end=302
-  _globals['_ARCONFIGMESSAGE']._serialized_start=305
-  _globals['_ARCONFIGMESSAGE']._serialized_end=689
-  _globals['_ARCONFIGMESSAGES']._serialized_start=691
-  _globals['_ARCONFIGMESSAGES']._serialized_end=759
+  _globals['_ARCONFIGINFOMESSAGE']._serialized_start=130
+  _globals['_ARCONFIGINFOMESSAGE']._serialized_end=252
+  _globals['_ARCONFIGINFOMESSAGES']._serialized_start=254
+  _globals['_ARCONFIGINFOMESSAGES']._serialized_end=326
+  _globals['_ARCONFIGMESSAGE']._serialized_start=329
+  _globals['_ARCONFIGMESSAGE']._serialized_end=719
+  _globals['_ARCONFIGMESSAGES']._serialized_start=721
+  _globals['_ARCONFIGMESSAGES']._serialized_end=789
 # @@protoc_insertion_point(module_scope)

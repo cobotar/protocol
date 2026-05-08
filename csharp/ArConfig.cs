@@ -24,33 +24,33 @@ namespace Messages.AR.V1 {
     static ArConfigReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUv",
-            "dmFsaWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJp",
-            "bmdfcnVsZXMucHJvdG8iegoTQVJDb25maWdJbmZvTWVzc2FnZRIOCgJpZBgB",
-            "IAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQARhAUgRuYW1lEhIKBGlj",
-            "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
-            "aW9uIkgKFEFSQ29uZmlnSW5mb01lc3NhZ2VzEjAKBWluZm9zGAEgAygLMhou",
-            "YXIudjEuQVJDb25maWdJbmZvTWVzc2FnZVIFaW5mb3MigAMKD0FSQ29uZmln",
-            "TWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQ",
-            "ARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24Y",
-            "BCABKAlSC2Rlc2NyaXB0aW9uEj4KFWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgF",
-            "IAEoA0IKukgHIgUoAEjeAlITYXJEaXNhcHBlYXJEaXN0YW5jZRIhCgxmZWVk",
-            "YmFja19pZHMYBiADKAlSC2ZlZWRiYWNrSWRzEh0KCmFjdGlvbl9pZHMYByAD",
-            "KAlSCWFjdGlvbklkcxIdCgpoZWxwZXJfaWRzGAggAygJUgloZWxwZXJJZHMS",
-            "MQoMcHJvcGVydHlfaWRzGAkgAygJQg66SAuSAQgiBnIEmPEEAVILcHJvcGVy",
-            "dHlJZHMSNAoOaW5wdXRfc2xvdF9pZHMYCiADKAlCDrpIC5IBCCIGcgT46zAB",
-            "UgxpbnB1dFNsb3RJZHMiRAoQQVJDb25maWdNZXNzYWdlcxIwCgdjb25maWdz",
-            "GAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlUgdjb25maWdzQokBCglj",
-            "b20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdl",
-            "cy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFi",
-            "BnByb3RvMw=="));
+            "ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxGhZhci92MS9pbnB1dF9z",
+            "bG90LnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlk",
+            "YXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8iegoTQVJD",
+            "b25maWdJbmZvTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEo",
+            "CUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
+            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIkgKFEFSQ29uZmlnSW5mb01l",
+            "c3NhZ2VzEjAKBWluZm9zGAEgAygLMhouYXIudjEuQVJDb25maWdJbmZvTWVz",
+            "c2FnZVIFaW5mb3MihgMKD0FSQ29uZmlnTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
+            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyAB",
+            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEj4K",
+            "FWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgFIAEoA0IKukgHIgUoAEjeAlITYXJE",
+            "aXNhcHBlYXJEaXN0YW5jZRIhCgxmZWVkYmFja19pZHMYBiADKAlSC2ZlZWRi",
+            "YWNrSWRzEh0KCmFjdGlvbl9pZHMYByADKAlSCWFjdGlvbklkcxIdCgpoZWxw",
+            "ZXJfaWRzGAggAygJUgloZWxwZXJJZHMSMQoMcHJvcGVydHlfaWRzGAkgAygJ",
+            "Qg66SAuSAQgiBnIEmPEEAVILcHJvcGVydHlJZHMSOgoLaW5wdXRfc2xvdHMY",
+            "CiADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2VSCmlucHV0U2xvdHMi",
+            "RAoQQVJDb25maWdNZXNzYWdlcxIwCgdjb25maWdzGAEgAygLMhYuYXIudjEu",
+            "QVJDb25maWdNZXNzYWdlUgdjb25maWdzQokBCgljb20uYXIudjFCDUFyQ29u",
+            "ZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx",
+            "4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.InputSlotReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessage), global::Messages.AR.V1.ARConfigInfoMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessages), global::Messages.AR.V1.ARConfigInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "FeedbackIds", "ActionIds", "HelperIds", "PropertyIds", "InputSlotIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "FeedbackIds", "ActionIds", "HelperIds", "PropertyIds", "InputSlots" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessages), global::Messages.AR.V1.ARConfigMessages.Parser, new[]{ "Configs" }, null, null, null, null)
           }));
     }
@@ -613,7 +613,7 @@ namespace Messages.AR.V1 {
       actionIds_ = other.actionIds_.Clone();
       helperIds_ = other.helperIds_.Clone();
       propertyIds_ = other.propertyIds_.Clone();
-      inputSlotIds_ = other.inputSlotIds_.Clone();
+      inputSlots_ = other.inputSlots_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -745,18 +745,18 @@ namespace Messages.AR.V1 {
       get { return propertyIds_; }
     }
 
-    /// <summary>Field number for the "input_slot_ids" field.</summary>
-    public const int InputSlotIdsFieldNumber = 10;
-    private static readonly pb::FieldCodec<string> _repeated_inputSlotIds_codec
-        = pb::FieldCodec.ForString(82);
-    private readonly pbc::RepeatedField<string> inputSlotIds_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "input_slots" field.</summary>
+    public const int InputSlotsFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARInputSlotMessage> _repeated_inputSlots_codec
+        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ARInputSlotMessage.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARInputSlotMessage> inputSlots_ = new pbc::RepeatedField<global::Messages.AR.V1.ARInputSlotMessage>();
     /// <summary>
     /// Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> InputSlotIds {
-      get { return inputSlotIds_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.ARInputSlotMessage> InputSlots {
+      get { return inputSlots_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -783,7 +783,7 @@ namespace Messages.AR.V1 {
       if(!actionIds_.Equals(other.actionIds_)) return false;
       if(!helperIds_.Equals(other.helperIds_)) return false;
       if(!propertyIds_.Equals(other.propertyIds_)) return false;
-      if(!inputSlotIds_.Equals(other.inputSlotIds_)) return false;
+      if(!inputSlots_.Equals(other.inputSlots_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -800,7 +800,7 @@ namespace Messages.AR.V1 {
       hash ^= actionIds_.GetHashCode();
       hash ^= helperIds_.GetHashCode();
       hash ^= propertyIds_.GetHashCode();
-      hash ^= inputSlotIds_.GetHashCode();
+      hash ^= inputSlots_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -843,7 +843,7 @@ namespace Messages.AR.V1 {
       actionIds_.WriteTo(output, _repeated_actionIds_codec);
       helperIds_.WriteTo(output, _repeated_helperIds_codec);
       propertyIds_.WriteTo(output, _repeated_propertyIds_codec);
-      inputSlotIds_.WriteTo(output, _repeated_inputSlotIds_codec);
+      inputSlots_.WriteTo(output, _repeated_inputSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -878,7 +878,7 @@ namespace Messages.AR.V1 {
       actionIds_.WriteTo(ref output, _repeated_actionIds_codec);
       helperIds_.WriteTo(ref output, _repeated_helperIds_codec);
       propertyIds_.WriteTo(ref output, _repeated_propertyIds_codec);
-      inputSlotIds_.WriteTo(ref output, _repeated_inputSlotIds_codec);
+      inputSlots_.WriteTo(ref output, _repeated_inputSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -908,7 +908,7 @@ namespace Messages.AR.V1 {
       size += actionIds_.CalculateSize(_repeated_actionIds_codec);
       size += helperIds_.CalculateSize(_repeated_helperIds_codec);
       size += propertyIds_.CalculateSize(_repeated_propertyIds_codec);
-      size += inputSlotIds_.CalculateSize(_repeated_inputSlotIds_codec);
+      size += inputSlots_.CalculateSize(_repeated_inputSlots_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -940,7 +940,7 @@ namespace Messages.AR.V1 {
       actionIds_.Add(other.actionIds_);
       helperIds_.Add(other.helperIds_);
       propertyIds_.Add(other.propertyIds_);
-      inputSlotIds_.Add(other.inputSlotIds_);
+      inputSlots_.Add(other.inputSlots_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -997,7 +997,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 82: {
-            inputSlotIds_.AddEntriesFrom(input, _repeated_inputSlotIds_codec);
+            inputSlots_.AddEntriesFrom(input, _repeated_inputSlots_codec);
             break;
           }
         }
@@ -1056,7 +1056,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 82: {
-            inputSlotIds_.AddEntriesFrom(ref input, _repeated_inputSlotIds_codec);
+            inputSlots_.AddEntriesFrom(ref input, _repeated_inputSlots_codec);
             break;
           }
         }

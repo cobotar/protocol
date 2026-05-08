@@ -1,3 +1,4 @@
+from ar.v1 import input_slot_pb2 as _input_slot_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -27,7 +28,7 @@ class ARConfigInfoMessages(_message.Message):
     def __init__(self, infos: _Optional[_Iterable[_Union[ARConfigInfoMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance", "feedback_ids", "action_ids", "helper_ids", "property_ids", "input_slot_ids")
+    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance", "feedback_ids", "action_ids", "helper_ids", "property_ids", "input_slots")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -37,7 +38,7 @@ class ARConfigMessage(_message.Message):
     ACTION_IDS_FIELD_NUMBER: _ClassVar[int]
     HELPER_IDS_FIELD_NUMBER: _ClassVar[int]
     PROPERTY_IDS_FIELD_NUMBER: _ClassVar[int]
-    INPUT_SLOT_IDS_FIELD_NUMBER: _ClassVar[int]
+    INPUT_SLOTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -47,8 +48,8 @@ class ARConfigMessage(_message.Message):
     action_ids: _containers.RepeatedScalarFieldContainer[str]
     helper_ids: _containers.RepeatedScalarFieldContainer[str]
     property_ids: _containers.RepeatedScalarFieldContainer[str]
-    input_slot_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ..., feedback_ids: _Optional[_Iterable[str]] = ..., action_ids: _Optional[_Iterable[str]] = ..., helper_ids: _Optional[_Iterable[str]] = ..., property_ids: _Optional[_Iterable[str]] = ..., input_slot_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    input_slots: _containers.RepeatedCompositeFieldContainer[_input_slot_pb2.ARInputSlotMessage]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ..., feedback_ids: _Optional[_Iterable[str]] = ..., action_ids: _Optional[_Iterable[str]] = ..., helper_ids: _Optional[_Iterable[str]] = ..., property_ids: _Optional[_Iterable[str]] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessages(_message.Message):
     __slots__ = ("configs",)

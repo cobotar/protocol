@@ -4,6 +4,8 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { ARInputSlotMessage } from "./input_slot_pb.ts";
+import { file_ar_v1_input_slot } from "./input_slot_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -12,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIpACCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKQoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAUgASgDQgq6SAciBUjeAigAEhQKDGZlZWRiYWNrX2lkcxgGIAMoCRISCgphY3Rpb25faWRzGAcgAygJEhIKCmhlbHBlcl9pZHMYCCADKAkSJAoMcHJvcGVydHlfaWRzGAkgAygJQg66SAuSAQgiBnIEmPEEARImCg5pbnB1dF9zbG90X2lkcxgKIAMoCUIOukgLkgEIIgZyBPjrMAEiOwoQQVJDb25maWdNZXNzYWdlcxInCgdjb25maWdzGAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIpgCCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKQoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAUgASgDQgq6SAciBUjeAigAEhQKDGZlZWRiYWNrX2lkcxgGIAMoCRISCgphY3Rpb25faWRzGAcgAygJEhIKCmhlbHBlcl9pZHMYCCADKAkSJAoMcHJvcGVydHlfaWRzGAkgAygJQg66SAuSAQgiBnIEmPEEARIuCgtpbnB1dF9zbG90cxgKIAMoCzIZLmFyLnYxLkFSSW5wdXRTbG90TWVzc2FnZSI7ChBBUkNvbmZpZ01lc3NhZ2VzEicKB2NvbmZpZ3MYASADKAsyFi5hci52MS5BUkNvbmZpZ01lc3NhZ2VCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * Just delete this?
@@ -138,9 +140,9 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
   /**
    * Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
    *
-   * @generated from field: repeated string input_slot_ids = 10;
+   * @generated from field: repeated ar.v1.ARInputSlotMessage input_slots = 10;
    */
-  inputSlotIds: string[];
+  inputSlots: ARInputSlotMessage[];
 };
 
 /**

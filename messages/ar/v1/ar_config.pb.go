@@ -150,7 +150,7 @@ type ARConfigMessage struct {
 	ActionIds           []string               `protobuf:"bytes,7,rep,name=action_ids,json=actionIds,proto3" json:"action_ids,omitempty"`                                  // Action entities belonging to this config.
 	HelperIds           []string               `protobuf:"bytes,8,rep,name=helper_ids,json=helperIds,proto3" json:"helper_ids,omitempty"`                                  // Helper entities belonging to this config.
 	PropertyIds         []string               `protobuf:"bytes,9,rep,name=property_ids,json=propertyIds,proto3" json:"property_ids,omitempty"`                            // Includes server-managed generated properties for referenced input slots.
-	InputSlotIds        []string               `protobuf:"bytes,10,rep,name=input_slot_ids,json=inputSlotIds,proto3" json:"input_slot_ids,omitempty"`                      // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
+	InputSlots          []*ARInputSlotMessage  `protobuf:"bytes,10,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                              // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -248,9 +248,9 @@ func (x *ARConfigMessage) GetPropertyIds() []string {
 	return nil
 }
 
-func (x *ARConfigMessage) GetInputSlotIds() []string {
+func (x *ARConfigMessage) GetInputSlots() []*ARInputSlotMessage {
 	if x != nil {
-		return x.InputSlotIds
+		return x.InputSlots
 	}
 	return nil
 }
@@ -303,14 +303,14 @@ var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\n" +
-	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
+	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x16ar/v1/input_slot.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
 	"\x13ARConfigInfoMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x80\x03\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x86\x03\n" +
 	"\x0fARConfigMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
@@ -323,9 +323,10 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"action_ids\x18\a \x03(\tR\tactionIds\x12\x1d\n" +
 	"\n" +
 	"helper_ids\x18\b \x03(\tR\thelperIds\x121\n" +
-	"\fproperty_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x98\xf1\x04\x01R\vpropertyIds\x124\n" +
-	"\x0einput_slot_ids\x18\n" +
-	" \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xeb0\x01R\finputSlotIds\"D\n" +
+	"\fproperty_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x98\xf1\x04\x01R\vpropertyIds\x12:\n" +
+	"\vinput_slots\x18\n" +
+	" \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
+	"inputSlots\"D\n" +
 	"\x10ARConfigMessages\x120\n" +
 	"\aconfigs\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\aconfigsB\x89\x01\n" +
 	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
@@ -348,15 +349,17 @@ var file_ar_v1_ar_config_proto_goTypes = []any{
 	(*ARConfigInfoMessages)(nil), // 1: ar.v1.ARConfigInfoMessages
 	(*ARConfigMessage)(nil),      // 2: ar.v1.ARConfigMessage
 	(*ARConfigMessages)(nil),     // 3: ar.v1.ARConfigMessages
+	(*ARInputSlotMessage)(nil),   // 4: ar.v1.ARInputSlotMessage
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
-	2, // 1: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	4, // 1: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
+	2, // 2: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -364,6 +367,7 @@ func file_ar_v1_ar_config_proto_init() {
 	if File_ar_v1_ar_config_proto != nil {
 		return
 	}
+	file_ar_v1_input_slot_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ar.v1;
 
+import "ar/v1/input_slot.proto";
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -41,7 +42,7 @@ message ARConfigMessage {
   repeated string action_ids = 7; // Action entities belonging to this config.
   repeated string helper_ids = 8; // Helper entities belonging to this config.
   repeated string property_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.property_id_component) = true]; // Includes server-managed generated properties for referenced input slots.
-  repeated string input_slot_ids = 10 [(buf.validate.field).repeated.items.string.(validation.v1.ar_input_slot_id_component) = true]; // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
+  repeated ARInputSlotMessage input_slots = 10; // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 }
 
 message ARConfigMessages {
