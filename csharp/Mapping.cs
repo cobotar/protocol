@@ -31,48 +31,50 @@ namespace Messages.AR.V1 {
             "SWQSKgoLcHJvcGVydHlfaWQYAiABKAlCCbpIBnIEmPEEAVIKcHJvcGVydHlJ",
             "ZCJgCgxBc3NldE1hcHBpbmcSJAoIYXNzZXRfaWQYASABKAlCCbpIBnIEsPEE",
             "AVIHYXNzZXRJZBIqCgtwcm9wZXJ0eV9pZBgCIAEoCUIJukgGcgSY8QQBUgpw",
-            "cm9wZXJ0eUlkIooCChFBUlJlc291cmNlQmluZGluZxIiCgdzbG90X2lkGAEg",
-            "ASgJQgm6SAZyBBABGEBSBnNsb3RJZBI6ChFyb2JvdF9pbnN0YW5jZV9pZBgC",
-            "IAEoCUIJukgGcgSo8QQBSABSD3JvYm90SW5zdGFuY2VJZIgBARI6ChFhc3Nl",
-            "dF9pbnN0YW5jZV9pZBgDIAEoCUIJukgGcgS48QQBSAFSD2Fzc2V0SW5zdGFu",
-            "Y2VJZIgBATotukgqIigKEXJvYm90X2luc3RhbmNlX2lkChFhc3NldF9pbnN0",
-            "YW5jZV9pZBABQhQKEl9yb2JvdF9pbnN0YW5jZV9pZEIUChJfYXNzZXRfaW5z",
-            "dGFuY2VfaWQitwQKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQYASAB",
-            "KAlCCbpIBnIE6OswAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRu",
-            "YW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlS",
-            "C2Rlc2NyaXB0aW9uEi0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEAUgA",
-            "UglzdGF0aW9uSWSIAQESJwoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQBSAFS",
-            "BmNlbGxJZIgBARIuCgxhcl9jb25maWdfaWQYByABKAlCDLpICXIEkPEEAcgB",
-            "AVIKYXJDb25maWdJZBIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQSHgoK",
-            "c3RhbmRhbG9uZRgJIAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgKIAEo",
-            "BVIIcHJpb3JpdHkSRQoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5hci52",
-            "MS5BUlJlc291cmNlQmluZGluZ1IQcmVzb3VyY2VCaW5kaW5ncxJNChJwcm9w",
-            "ZXJ0eV9vdmVycmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlWYWx1",
-            "ZVVwZGF0ZVIRcHJvcGVydHlPdmVycmlkZXM6HLpIGSIXCgpzdGF0aW9uX2lk",
-            "CgdjZWxsX2lkEAFCDQoLX3N0YXRpb25faWRCCgoIX2NlbGxfaWQiVAoXQVJD",
-            "b25maWdCaW5kaW5nTWVzc2FnZXMSOQoIYmluZGluZ3MYASADKAsyHS5hci52",
-            "MS5BUkNvbmZpZ0JpbmRpbmdNZXNzYWdlUghiaW5kaW5ncyKmAwoOTWFwcGlu",
-            "Z01lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIE",
-            "gPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
-            "GAQgASgJUgtkZXNjcmlwdGlvbhIzCg5lbnZpcm9ubWVudF9pZBgFIAEoCUIM",
-            "ukgJcgTA8QQByAEBUg1lbnZpcm9ubWVudElkEi4KDGFyX2NvbmZpZ19pZBgG",
-            "IAEoCUIMukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVkGAcg",
-            "ASgIUghkaXNhYmxlZBI4Cg1yb2JvdF9tYXBwaW5nGAggAygLMhMuYXIudjEu",
-            "Um9ib3RNYXBwaW5nUgxyb2JvdE1hcHBpbmcSOAoNYXNzZXRfbWFwcGluZxgJ",
-            "IAMoCzITLmFyLnYxLkFzc2V0TWFwcGluZ1IMYXNzZXRNYXBwaW5nEh4KCnN0",
-            "YW5kYWxvbmUYCiABKAhSCnN0YW5kYWxvbmUSGgoIcHJpb3JpdHkYCyABKAVS",
-            "CHByaW9yaXR5IkQKD01hcHBpbmdNZXNzYWdlcxIxCghtYXBwaW5ncxgBIAMo",
-            "CzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlUghtYXBwaW5nc0KIAQoJY29tLmFy",
-            "LnYxQgxNYXBwaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
-            "Y29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5W",
-            "McoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3Rv",
-            "Mw=="));
+            "cm9wZXJ0eUlkIucCChFBUlJlc291cmNlQmluZGluZxIiCgdzbG90X2lkGAEg",
+            "ASgJQgm6SAZyBPjrMAFSBnNsb3RJZBI1ChFyb2JvdF9pbnN0YW5jZV9pZBgC",
+            "IAEoCUIJukgGcgSo8QQBUg9yb2JvdEluc3RhbmNlSWQSNQoRYXNzZXRfaW5z",
+            "dGFuY2VfaWQYAyABKAlCCbpIBnIEuPEEAVIPYXNzZXRJbnN0YW5jZUlkOr8B",
+            "uki7ARq4AQorYXJfcmVzb3VyY2VfYmluZGluZy5leGFjdGx5X29uZV9yZXNv",
+            "dXJjZV9pZBJHZXhhY3RseSBvbmUgb2Ygcm9ib3RfaW5zdGFuY2VfaWQgb3Ig",
+            "YXNzZXRfaW5zdGFuY2VfaWQgbXVzdCBiZSBub24tZW1wdHkaQCh0aGlzLnJv",
+            "Ym90X2luc3RhbmNlX2lkICE9ICcnKSAhPSAodGhpcy5hc3NldF9pbnN0YW5j",
+            "ZV9pZCAhPSAnJykitwQKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQY",
+            "ASABKAlCCbpIBnIE6OswAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
+            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
+            "KAlSC2Rlc2NyaXB0aW9uEi0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEE",
+            "AUgAUglzdGF0aW9uSWSIAQESJwoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQB",
+            "SAFSBmNlbGxJZIgBARIuCgxhcl9jb25maWdfaWQYByABKAlCDLpICXIEkPEE",
+            "AcgBAVIKYXJDb25maWdJZBIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQS",
+            "HgoKc3RhbmRhbG9uZRgJIAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgK",
+            "IAEoBVIIcHJpb3JpdHkSRQoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5h",
+            "ci52MS5BUlJlc291cmNlQmluZGluZ1IQcmVzb3VyY2VCaW5kaW5ncxJNChJw",
+            "cm9wZXJ0eV9vdmVycmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlW",
+            "YWx1ZVVwZGF0ZVIRcHJvcGVydHlPdmVycmlkZXM6HLpIGSIXCgpzdGF0aW9u",
+            "X2lkCgdjZWxsX2lkEAFCDQoLX3N0YXRpb25faWRCCgoIX2NlbGxfaWQiVAoX",
+            "QVJDb25maWdCaW5kaW5nTWVzc2FnZXMSOQoIYmluZGluZ3MYASADKAsyHS5h",
+            "ci52MS5BUkNvbmZpZ0JpbmRpbmdNZXNzYWdlUghiaW5kaW5ncyKmAwoOTWFw",
+            "cGluZ01lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpI",
+            "BnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
+            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIzCg5lbnZpcm9ubWVudF9pZBgFIAEo",
+            "CUIMukgJcgTA8QQByAEBUg1lbnZpcm9ubWVudElkEi4KDGFyX2NvbmZpZ19p",
+            "ZBgGIAEoCUIMukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVk",
+            "GAcgASgIUghkaXNhYmxlZBI4Cg1yb2JvdF9tYXBwaW5nGAggAygLMhMuYXIu",
+            "djEuUm9ib3RNYXBwaW5nUgxyb2JvdE1hcHBpbmcSOAoNYXNzZXRfbWFwcGlu",
+            "ZxgJIAMoCzITLmFyLnYxLkFzc2V0TWFwcGluZ1IMYXNzZXRNYXBwaW5nEh4K",
+            "CnN0YW5kYWxvbmUYCiABKAhSCnN0YW5kYWxvbmUSGgoIcHJpb3JpdHkYCyAB",
+            "KAVSCHByaW9yaXR5IkQKD01hcHBpbmdNZXNzYWdlcxIxCghtYXBwaW5ncxgB",
+            "IAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlUghtYXBwaW5nc0KIAQoJY29t",
+            "LmFyLnYxQgxNYXBwaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5B",
+            "Ui5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMapping), global::Messages.AR.V1.RobotMapping.Parser, new[]{ "RobotId", "PropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMapping), global::Messages.AR.V1.AssetMapping.Parser, new[]{ "AssetId", "PropertyId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId" }, new[]{ "RobotInstanceId", "AssetInstanceId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessage), global::Messages.AR.V1.ARConfigBindingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "StationId", "CellId", "ArConfigId", "Disabled", "Standalone", "Priority", "ResourceBindings", "PropertyOverrides" }, new[]{ "StationId", "CellId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessages), global::Messages.AR.V1.ARConfigBindingMessages.Parser, new[]{ "Bindings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentId", "ArConfigId", "Disabled", "RobotMapping", "AssetMapping", "Standalone", "Priority" }, null, null, null, null),
@@ -633,60 +635,32 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "robot_instance_id" field.</summary>
     public const int RobotInstanceIdFieldNumber = 2;
-    private readonly static string RobotInstanceIdDefaultValue = "";
-
-    private string robotInstanceId_;
+    private string robotInstanceId_ = "";
     /// <summary>
     /// Concrete robot instance selected for the slot.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RobotInstanceId {
-      get { return robotInstanceId_ ?? RobotInstanceIdDefaultValue; }
+      get { return robotInstanceId_; }
       set {
         robotInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "robot_instance_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasRobotInstanceId {
-      get { return robotInstanceId_ != null; }
-    }
-    /// <summary>Clears the value of the "robot_instance_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearRobotInstanceId() {
-      robotInstanceId_ = null;
-    }
 
     /// <summary>Field number for the "asset_instance_id" field.</summary>
     public const int AssetInstanceIdFieldNumber = 3;
-    private readonly static string AssetInstanceIdDefaultValue = "";
-
-    private string assetInstanceId_;
+    private string assetInstanceId_ = "";
     /// <summary>
     /// Concrete asset instance selected for the slot.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AssetInstanceId {
-      get { return assetInstanceId_ ?? AssetInstanceIdDefaultValue; }
+      get { return assetInstanceId_; }
       set {
         assetInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "asset_instance_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasAssetInstanceId {
-      get { return assetInstanceId_ != null; }
-    }
-    /// <summary>Clears the value of the "asset_instance_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearAssetInstanceId() {
-      assetInstanceId_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -715,8 +689,8 @@ namespace Messages.AR.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (SlotId.Length != 0) hash ^= SlotId.GetHashCode();
-      if (HasRobotInstanceId) hash ^= RobotInstanceId.GetHashCode();
-      if (HasAssetInstanceId) hash ^= AssetInstanceId.GetHashCode();
+      if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
+      if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -739,11 +713,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(10);
         output.WriteString(SlotId);
       }
-      if (HasRobotInstanceId) {
+      if (RobotInstanceId.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(RobotInstanceId);
       }
-      if (HasAssetInstanceId) {
+      if (AssetInstanceId.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(AssetInstanceId);
       }
@@ -761,11 +735,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(10);
         output.WriteString(SlotId);
       }
-      if (HasRobotInstanceId) {
+      if (RobotInstanceId.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(RobotInstanceId);
       }
-      if (HasAssetInstanceId) {
+      if (AssetInstanceId.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(AssetInstanceId);
       }
@@ -782,10 +756,10 @@ namespace Messages.AR.V1 {
       if (SlotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SlotId);
       }
-      if (HasRobotInstanceId) {
+      if (RobotInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotInstanceId);
       }
-      if (HasAssetInstanceId) {
+      if (AssetInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetInstanceId);
       }
       if (_unknownFields != null) {
@@ -803,10 +777,10 @@ namespace Messages.AR.V1 {
       if (other.SlotId.Length != 0) {
         SlotId = other.SlotId;
       }
-      if (other.HasRobotInstanceId) {
+      if (other.RobotInstanceId.Length != 0) {
         RobotInstanceId = other.RobotInstanceId;
       }
-      if (other.HasAssetInstanceId) {
+      if (other.AssetInstanceId.Length != 0) {
         AssetInstanceId = other.AssetInstanceId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

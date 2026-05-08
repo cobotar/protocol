@@ -84,7 +84,7 @@ message ARInputSlotAddMessage {
     (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
     (buf.validate.field).required = true
   ]; // Owning AR config to attach the new slot to.
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   bool required = 5; // If true, future bindings/resolution must satisfy the slot.

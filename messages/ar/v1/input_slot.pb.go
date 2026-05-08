@@ -542,10 +542,10 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\fcontext_type\x18\t \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcontextType:\xb7\x01\xbaH\xb3\x01\x1a\xb0\x01\n" +
 	"#ar_input_slot.exactly_one_slot_kind\x12Rexactly one of resource_type or context_type must be specified and non-UNSPECIFIED\x1a5(this.resource_type != 0) != (this.context_type != 0)\"F\n" +
 	"\x13ARInputSlotMessages\x12/\n" +
-	"\x05slots\x18\x01 \x03(\v2\x19.ar.v1.ARInputSlotMessageR\x05slots\"\xf7\x03\n" +
+	"\x05slots\x18\x01 \x03(\v2\x19.ar.v1.ARInputSlotMessageR\x05slots\"\x82\x04\n" +
 	"\x15ARInputSlotAddMessage\x12)\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1a\n" +
 	"\brequired\x18\x05 \x01(\bR\brequired\x12H\n" +

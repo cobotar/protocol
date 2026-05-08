@@ -21,20 +21,15 @@ message AssetMapping {
 // ARResourceBinding binds a config-declared slot to a concrete resource
 // instance owned by the target station or cell.
 message ARResourceBinding {
-  option (buf.validate.message).oneof = {
-    fields: [
-      "robot_instance_id",
-      "asset_instance_id"
-    ]
-    required: true
+  option (buf.validate.message).cel = {
+    id: "ar_resource_binding.exactly_one_resource_id"
+    message: "exactly one of robot_instance_id or asset_instance_id must be non-empty"
+    expression: "(this.robot_instance_id != '') != (this.asset_instance_id != '')"
   };
 
-  string slot_id = 1 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }]; // Config-declared slot to satisfy.
-  optional string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true]; // Concrete robot instance selected for the slot.
-  optional string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Concrete asset instance selected for the slot.
+  string slot_id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Config-declared slot to satisfy.
+  string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true]; // Concrete robot instance selected for the slot.
+  string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Concrete asset instance selected for the slot.
 }
 
 // ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime

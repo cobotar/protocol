@@ -2763,8 +2763,8 @@ instance owned by the target station or cell.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | slot_id | [string](#string) |  | Config-declared slot to satisfy. |
-| robot_instance_id | [string](#string) | optional | Concrete robot instance selected for the slot. |
-| asset_instance_id | [string](#string) | optional | Concrete asset instance selected for the slot. |
+| robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
+| asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
 
 
 

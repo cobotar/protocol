@@ -132,9 +132,9 @@ func (x *AssetMapping) GetPropertyId() string {
 // instance owned by the target station or cell.
 type ARResourceBinding struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                                    // Config-declared slot to satisfy.
-	RobotInstanceId *string                `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3,oneof" json:"robot_instance_id,omitempty"` // Concrete robot instance selected for the slot.
-	AssetInstanceId *string                `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3,oneof" json:"asset_instance_id,omitempty"` // Concrete asset instance selected for the slot.
+	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                              // Config-declared slot to satisfy.
+	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"` // Concrete robot instance selected for the slot.
+	AssetInstanceId string                 `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"` // Concrete asset instance selected for the slot.
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -177,15 +177,15 @@ func (x *ARResourceBinding) GetSlotId() string {
 }
 
 func (x *ARResourceBinding) GetRobotInstanceId() string {
-	if x != nil && x.RobotInstanceId != nil {
-		return *x.RobotInstanceId
+	if x != nil {
+		return x.RobotInstanceId
 	}
 	return ""
 }
 
 func (x *ARResourceBinding) GetAssetInstanceId() string {
-	if x != nil && x.AssetInstanceId != nil {
-		return *x.AssetInstanceId
+	if x != nil {
+		return x.AssetInstanceId
 	}
 	return ""
 }
@@ -559,15 +559,12 @@ const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\fAssetMapping\x12$\n" +
 	"\basset_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\aassetId\x12*\n" +
 	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\"\x8a\x02\n" +
+	"propertyId\"\xe7\x02\n" +
 	"\x11ARResourceBinding\x12\"\n" +
-	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06slotId\x12:\n" +
-	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01H\x00R\x0frobotInstanceId\x88\x01\x01\x12:\n" +
-	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01H\x01R\x0fassetInstanceId\x88\x01\x01:-\xbaH*\"(\n" +
-	"\x11robot_instance_id\n" +
-	"\x11asset_instance_id\x10\x01B\x14\n" +
-	"\x12_robot_instance_idB\x14\n" +
-	"\x12_asset_instance_id\"\xb7\x04\n" +
+	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
+	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\x125\n" +
+	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId:\xbf\x01\xbaH\xbb\x01\x1a\xb8\x01\n" +
+	"+ar_resource_binding.exactly_one_resource_id\x12Gexactly one of robot_instance_id or asset_instance_id must be non-empty\x1a@(this.robot_instance_id != '') != (this.asset_instance_id != '')\"\xb7\x04\n" +
 	"\x16ARConfigBindingMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -656,7 +653,6 @@ func file_ar_v1_mapping_proto_init() {
 	if File_ar_v1_mapping_proto != nil {
 		return
 	}
-	file_ar_v1_mapping_proto_msgTypes[2].OneofWrappers = []any{}
 	file_ar_v1_mapping_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
