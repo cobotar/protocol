@@ -2724,8 +2724,8 @@ resource wiring explicit and safe.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| station_id | [string](#string) | optional | Station this binding targets directly. |
-| cell_id | [string](#string) | optional | Cell this binding targets directly. |
+| station_id | [string](#string) |  | Station this binding targets directly. |
+| cell_id | [string](#string) |  | Cell this binding targets directly. |
 | ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
 | disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
 | standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
@@ -4981,7 +4981,6 @@ Example: Optional inspections: - Visual inspection - Torque verification - Leak 
 | ----- | ---- | ----- | ----------- |
 | supported_validation_modes | [ValidationMode](#resources-v1-ValidationMode) | repeated |  |
 | supported_part_definition_ids | [string](#string) | repeated |  |
-| supported_task_type_ids | [string](#string) | repeated |  |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
 
 

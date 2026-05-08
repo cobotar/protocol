@@ -39,43 +39,44 @@ namespace Messages.AR.V1 {
             "dXJjZV9pZBJHZXhhY3RseSBvbmUgb2Ygcm9ib3RfaW5zdGFuY2VfaWQgb3Ig",
             "YXNzZXRfaW5zdGFuY2VfaWQgbXVzdCBiZSBub24tZW1wdHkaQCh0aGlzLnJv",
             "Ym90X2luc3RhbmNlX2lkICE9ICcnKSAhPSAodGhpcy5hc3NldF9pbnN0YW5j",
-            "ZV9pZCAhPSAnJykitwQKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQY",
+            "ZV9pZCAhPSAnJykijQUKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQY",
             "ASABKAlCCbpIBnIE6OswAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
             "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
-            "KAlSC2Rlc2NyaXB0aW9uEi0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEE",
-            "AUgAUglzdGF0aW9uSWSIAQESJwoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQB",
-            "SAFSBmNlbGxJZIgBARIuCgxhcl9jb25maWdfaWQYByABKAlCDLpICXIEkPEE",
-            "AcgBAVIKYXJDb25maWdJZBIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQS",
-            "HgoKc3RhbmRhbG9uZRgJIAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgK",
-            "IAEoBVIIcHJpb3JpdHkSRQoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5h",
-            "ci52MS5BUlJlc291cmNlQmluZGluZ1IQcmVzb3VyY2VCaW5kaW5ncxJNChJw",
-            "cm9wZXJ0eV9vdmVycmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlW",
-            "YWx1ZVVwZGF0ZVIRcHJvcGVydHlPdmVycmlkZXM6HLpIGSIXCgpzdGF0aW9u",
-            "X2lkCgdjZWxsX2lkEAFCDQoLX3N0YXRpb25faWRCCgoIX2NlbGxfaWQiVAoX",
-            "QVJDb25maWdCaW5kaW5nTWVzc2FnZXMSOQoIYmluZGluZ3MYASADKAsyHS5h",
-            "ci52MS5BUkNvbmZpZ0JpbmRpbmdNZXNzYWdlUghiaW5kaW5ncyKmAwoOTWFw",
-            "cGluZ01lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpI",
-            "BnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
-            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIzCg5lbnZpcm9ubWVudF9pZBgFIAEo",
-            "CUIMukgJcgTA8QQByAEBUg1lbnZpcm9ubWVudElkEi4KDGFyX2NvbmZpZ19p",
-            "ZBgGIAEoCUIMukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVk",
-            "GAcgASgIUghkaXNhYmxlZBI4Cg1yb2JvdF9tYXBwaW5nGAggAygLMhMuYXIu",
-            "djEuUm9ib3RNYXBwaW5nUgxyb2JvdE1hcHBpbmcSOAoNYXNzZXRfbWFwcGlu",
-            "ZxgJIAMoCzITLmFyLnYxLkFzc2V0TWFwcGluZ1IMYXNzZXRNYXBwaW5nEh4K",
-            "CnN0YW5kYWxvbmUYCiABKAhSCnN0YW5kYWxvbmUSGgoIcHJpb3JpdHkYCyAB",
-            "KAVSCHByaW9yaXR5IkQKD01hcHBpbmdNZXNzYWdlcxIxCghtYXBwaW5ncxgB",
-            "IAMoCzIVLmFyLnYxLk1hcHBpbmdNZXNzYWdlUghtYXBwaW5nc0KIAQoJY29t",
-            "LmFyLnYxQgxNYXBwaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5B",
-            "Ui5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnBy",
-            "b3RvMw=="));
+            "KAlSC2Rlc2NyaXB0aW9uEigKCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEE",
+            "AVIJc3RhdGlvbklkEiIKB2NlbGxfaWQYBiABKAlCCbpIBnIEuPIEAVIGY2Vs",
+            "bElkEi4KDGFyX2NvbmZpZ19pZBgHIAEoCUIMukgJcgSQ8QQByAEBUgphckNv",
+            "bmZpZ0lkEhoKCGRpc2FibGVkGAggASgIUghkaXNhYmxlZBIeCgpzdGFuZGFs",
+            "b25lGAkgASgIUgpzdGFuZGFsb25lEhoKCHByaW9yaXR5GAogASgFUghwcmlv",
+            "cml0eRJFChFyZXNvdXJjZV9iaW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVz",
+            "b3VyY2VCaW5kaW5nUhByZXNvdXJjZUJpbmRpbmdzEk0KEnByb3BlcnR5X292",
+            "ZXJyaWRlcxgMIAMoCzIeLmNvbW1vbi52MS5Qcm9wZXJ0eVZhbHVlVXBkYXRl",
+            "UhFwcm9wZXJ0eU92ZXJyaWRlczqWAbpIkgEajwEKJGFyX2NvbmZpZ19iaW5k",
+            "aW5nLmV4YWN0bHlfb25lX3RhcmdldBI2ZXhhY3RseSBvbmUgb2Ygc3RhdGlv",
+            "bl9pZCBvciBjZWxsX2lkIG11c3QgYmUgbm9uLWVtcHR5Gi8odGhpcy5zdGF0",
+            "aW9uX2lkICE9ICcnKSAhPSAodGhpcy5jZWxsX2lkICE9ICcnKSJUChdBUkNv",
+            "bmZpZ0JpbmRpbmdNZXNzYWdlcxI5CghiaW5kaW5ncxgBIAMoCzIdLmFyLnYx",
+            "LkFSQ29uZmlnQmluZGluZ01lc3NhZ2VSCGJpbmRpbmdzIqYDCg5NYXBwaW5n",
+            "TWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA",
+            "8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24Y",
+            "BCABKAlSC2Rlc2NyaXB0aW9uEjMKDmVudmlyb25tZW50X2lkGAUgASgJQgy6",
+            "SAlyBMDxBAHIAQFSDWVudmlyb25tZW50SWQSLgoMYXJfY29uZmlnX2lkGAYg",
+            "ASgJQgy6SAlyBJDxBAHIAQFSCmFyQ29uZmlnSWQSGgoIZGlzYWJsZWQYByAB",
+            "KAhSCGRpc2FibGVkEjgKDXJvYm90X21hcHBpbmcYCCADKAsyEy5hci52MS5S",
+            "b2JvdE1hcHBpbmdSDHJvYm90TWFwcGluZxI4Cg1hc3NldF9tYXBwaW5nGAkg",
+            "AygLMhMuYXIudjEuQXNzZXRNYXBwaW5nUgxhc3NldE1hcHBpbmcSHgoKc3Rh",
+            "bmRhbG9uZRgKIAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgLIAEoBVII",
+            "cHJpb3JpdHkiRAoPTWFwcGluZ01lc3NhZ2VzEjEKCG1hcHBpbmdzGAEgAygL",
+            "MhUuYXIudjEuTWFwcGluZ01lc3NhZ2VSCG1hcHBpbmdzQogBCgljb20uYXIu",
+            "djFCDE1hcHBpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYx",
+            "ygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMapping), global::Messages.AR.V1.RobotMapping.Parser, new[]{ "RobotId", "PropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMapping), global::Messages.AR.V1.AssetMapping.Parser, new[]{ "AssetId", "PropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessage), global::Messages.AR.V1.ARConfigBindingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "StationId", "CellId", "ArConfigId", "Disabled", "Standalone", "Priority", "ResourceBindings", "PropertyOverrides" }, new[]{ "StationId", "CellId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessage), global::Messages.AR.V1.ARConfigBindingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "StationId", "CellId", "ArConfigId", "Disabled", "Standalone", "Priority", "ResourceBindings", "PropertyOverrides" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessages), global::Messages.AR.V1.ARConfigBindingMessages.Parser, new[]{ "Bindings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessage), global::Messages.AR.V1.MappingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EnvironmentId", "ArConfigId", "Disabled", "RobotMapping", "AssetMapping", "Standalone", "Priority" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.MappingMessages), global::Messages.AR.V1.MappingMessages.Parser, new[]{ "Mappings" }, null, null, null, null)
@@ -975,60 +976,32 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "station_id" field.</summary>
     public const int StationIdFieldNumber = 5;
-    private readonly static string StationIdDefaultValue = "";
-
-    private string stationId_;
+    private string stationId_ = "";
     /// <summary>
     /// Station this binding targets directly.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StationId {
-      get { return stationId_ ?? StationIdDefaultValue; }
+      get { return stationId_; }
       set {
         stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "station_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasStationId {
-      get { return stationId_ != null; }
-    }
-    /// <summary>Clears the value of the "station_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearStationId() {
-      stationId_ = null;
-    }
 
     /// <summary>Field number for the "cell_id" field.</summary>
     public const int CellIdFieldNumber = 6;
-    private readonly static string CellIdDefaultValue = "";
-
-    private string cellId_;
+    private string cellId_ = "";
     /// <summary>
     /// Cell this binding targets directly.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CellId {
-      get { return cellId_ ?? CellIdDefaultValue; }
+      get { return cellId_; }
       set {
         cellId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "cell_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasCellId {
-      get { return cellId_ != null; }
-    }
-    /// <summary>Clears the value of the "cell_id" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearCellId() {
-      cellId_ = null;
     }
 
     /// <summary>Field number for the "ar_config_id" field.</summary>
@@ -1157,8 +1130,8 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (HasStationId) hash ^= StationId.GetHashCode();
-      if (HasCellId) hash ^= CellId.GetHashCode();
+      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
+      if (CellId.Length != 0) hash ^= CellId.GetHashCode();
       if (ArConfigId.Length != 0) hash ^= ArConfigId.GetHashCode();
       if (Disabled != false) hash ^= Disabled.GetHashCode();
       if (Standalone != false) hash ^= Standalone.GetHashCode();
@@ -1199,11 +1172,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (HasStationId) {
+      if (StationId.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(StationId);
       }
-      if (HasCellId) {
+      if (CellId.Length != 0) {
         output.WriteRawTag(50);
         output.WriteString(CellId);
       }
@@ -1251,11 +1224,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (HasStationId) {
+      if (StationId.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(StationId);
       }
-      if (HasCellId) {
+      if (CellId.Length != 0) {
         output.WriteRawTag(50);
         output.WriteString(CellId);
       }
@@ -1299,10 +1272,10 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (HasStationId) {
+      if (StationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
       }
-      if (HasCellId) {
+      if (CellId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CellId);
       }
       if (ArConfigId.Length != 0) {
@@ -1343,10 +1316,10 @@ namespace Messages.AR.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.HasStationId) {
+      if (other.StationId.Length != 0) {
         StationId = other.StationId;
       }
-      if (other.HasCellId) {
+      if (other.CellId.Length != 0) {
         CellId = other.CellId;
       }
       if (other.ArConfigId.Length != 0) {

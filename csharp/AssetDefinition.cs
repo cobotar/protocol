@@ -27,47 +27,47 @@ namespace Messages.Resources.V1 {
             "CiNyZXNvdXJjZXMvdjEvYXNzZXRfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3Vy",
             "Y2VzLnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aIWNvbW1vbi92",
             "MS9jdXN0b21fcHJvcGVydGllcy5wcm90bxokY29tbW9uL3YxL2tleV92YWx1",
-            "ZV9jb25zdHJhaW50LnByb3RvIqkCChBWaXNpb25DYXBhYmlsaXR5EloKGnN1",
+            "ZV9jb25zdHJhaW50LnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRf",
+            "c3RyaW5nX3J1bGVzLnByb3RvIvIBChBWaXNpb25DYXBhYmlsaXR5EloKGnN1",
             "cHBvcnRlZF92YWxpZGF0aW9uX21vZGVzGAEgAygOMhwucmVzb3VyY2VzLnYx",
             "LlZhbGlkYXRpb25Nb2RlUhhzdXBwb3J0ZWRWYWxpZGF0aW9uTW9kZXMSQQod",
             "c3VwcG9ydGVkX3BhcnRfZGVmaW5pdGlvbl9pZHMYAiADKAlSGnN1cHBvcnRl",
-            "ZFBhcnREZWZpbml0aW9uSWRzEjUKF3N1cHBvcnRlZF90YXNrX3R5cGVfaWRz",
-            "GAMgAygJUhRzdXBwb3J0ZWRUYXNrVHlwZUlkcxI/Cgtjb25zdHJhaW50cxgE",
-            "IAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFp",
-            "bnRzIpYECg9Bc3NldERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
-            "bWUYAiABKAlCCbpIBnIEEAEYQFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
-            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI6CgR0eXBlGAUg",
-            "ASgOMhcucmVzb3VyY2VzLnYxLkFzc2V0VHlwZUINukgKggEEEAEoAcgBAVIE",
-            "dHlwZRJLCgtkcml2ZXJfdHlwZRgGIAEoDjIdLnJlc291cmNlcy52MS5Bc3Nl",
-            "dERyaXZlclR5cGVCC7pICIIBAhAByAEBUgpkcml2ZXJUeXBlEhkKCG1vZGVs",
-            "X2lkGAcgASgJUgdtb2RlbElkEjYKBnZpc2lvbhgIIAEoCzIeLnJlc291cmNl",
-            "cy52MS5WaXNpb25DYXBhYmlsaXR5UgZ2aXNpb24SMwoGY3VzdG9tGAkgASgL",
-            "MhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbTqMAbpIiAEa",
-            "hQEKLGFzc2V0X3R5cGVfY2FtZXJhX3JlcXVpcmVzX3Zpc2lvbl9jYXBhYmls",
-            "aXR5EjF2aXNpb24gY2FwYWJpbGl0eSBtdXN0IGJlIHNldCB3aGVuIHR5cGUg",
-            "aXMgY2FtZXJhGiJ0aGlzLnR5cGUgIT0gMSB8fCBoYXModGhpcy52aXNpb24p",
-            "IkcKEEFzc2V0RGVmaW5pdGlvbnMSMwoFaXRlbXMYASADKAsyHS5yZXNvdXJj",
-            "ZXMudjEuQXNzZXREZWZpbml0aW9uUgVpdGVtcyrdAQoOVmFsaWRhdGlvbk1v",
-            "ZGUSHwobVkFMSURBVElPTl9NT0RFX1VOU1BFQ0lGSUVEEAASIgoeVkFMSURB",
-            "VElPTl9NT0RFX1BSRVNFTkNFX0NIRUNLEAESHgoaVkFMSURBVElPTl9NT0RF",
-            "X1BPU0VfQ0hFQ0sQAhIiCh5WQUxJREFUSU9OX01PREVfRkFTVEVORVJfQ0hF",
-            "Q0sQAxIfChtWQUxJREFUSU9OX01PREVfTEFCRUxfQ0hFQ0sQBBIhCh1WQUxJ",
-            "REFUSU9OX01PREVfU1VSRkFDRV9DSEVDSxAFKrQBCglBc3NldFR5cGUSGgoW",
-            "QVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJB",
-            "EAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZ",
-            "T1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1J",
-            "EAUSGgoWQVNTRVRfVFlQRV9QQVJUX0ZFRURFUhAIKlMKD0Fzc2V0RHJpdmVy",
-            "VHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFT",
-            "U0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAULBAQoQY29tLnJlc291cmNlcy52",
-            "MUIUQXNzZXREZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaIC",
-            "A1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeIC",
-            "GFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnBy",
-            "b3RvMw=="));
+            "ZFBhcnREZWZpbml0aW9uSWRzEj8KC2NvbnN0cmFpbnRzGAMgAygLMh0uY29t",
+            "bW9uLnYxLktleVZhbHVlQ29uc3RyYWludFILY29uc3RyYWludHMioQQKD0Fz",
+            "c2V0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJ",
+            "ukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3Jp",
+            "cHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjoKBHR5cGUYBSABKA4yFy5yZXNv",
+            "dXJjZXMudjEuQXNzZXRUeXBlQg26SAqCAQQQASgByAEBUgR0eXBlEksKC2Ry",
+            "aXZlcl90eXBlGAYgASgOMh0ucmVzb3VyY2VzLnYxLkFzc2V0RHJpdmVyVHlw",
+            "ZUILukgIggECEAHIAQFSCmRyaXZlclR5cGUSJAoIbW9kZWxfaWQYByABKAlC",
+            "CbpIBnIEiPEEAVIHbW9kZWxJZBI2CgZ2aXNpb24YCCABKAsyHi5yZXNvdXJj",
+            "ZXMudjEuVmlzaW9uQ2FwYWJpbGl0eVIGdmlzaW9uEjMKBmN1c3RvbRgJIAEo",
+            "CzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b206jAG6SIgB",
+            "GoUBCixhc3NldF90eXBlX2NhbWVyYV9yZXF1aXJlc192aXNpb25fY2FwYWJp",
+            "bGl0eRIxdmlzaW9uIGNhcGFiaWxpdHkgbXVzdCBiZSBzZXQgd2hlbiB0eXBl",
+            "IGlzIGNhbWVyYRoidGhpcy50eXBlICE9IDEgfHwgaGFzKHRoaXMudmlzaW9u",
+            "KSJHChBBc3NldERlZmluaXRpb25zEjMKBWl0ZW1zGAEgAygLMh0ucmVzb3Vy",
+            "Y2VzLnYxLkFzc2V0RGVmaW5pdGlvblIFaXRlbXMq3QEKDlZhbGlkYXRpb25N",
+            "b2RlEh8KG1ZBTElEQVRJT05fTU9ERV9VTlNQRUNJRklFRBAAEiIKHlZBTElE",
+            "QVRJT05fTU9ERV9QUkVTRU5DRV9DSEVDSxABEh4KGlZBTElEQVRJT05fTU9E",
+            "RV9QT1NFX0NIRUNLEAISIgoeVkFMSURBVElPTl9NT0RFX0ZBU1RFTkVSX0NI",
+            "RUNLEAMSHwobVkFMSURBVElPTl9NT0RFX0xBQkVMX0NIRUNLEAQSIQodVkFM",
+            "SURBVElPTl9NT0RFX1NVUkZBQ0VfQ0hFQ0sQBSq0AQoJQXNzZXRUeXBlEhoK",
+            "FkFTU0VUX1RZUEVfVU5TUEVDSUZJRUQQABIVChFBU1NFVF9UWVBFX0NBTUVS",
+            "QRABEhQKEEFTU0VUX1RZUEVfTElHSFQQAhIXChNBU1NFVF9UWVBFX0NPTlZF",
+            "WU9SEAMSFQoRQVNTRVRfVFlQRV9TRU5TT1IQBBISCg5BU1NFVF9UWVBFX0hN",
+            "SRAFEhoKFkFTU0VUX1RZUEVfUEFSVF9GRUVERVIQCCpTCg9Bc3NldERyaXZl",
+            "clR5cGUSIQodQVNTRVRfRFJJVkVSX1RZUEVfVU5TUEVDSUZJRUQQABIdChlB",
+            "U1NFVF9EUklWRVJfVFlQRV9ERUZBVUxUEAFCwQEKEGNvbS5yZXNvdXJjZXMu",
+            "djFCFEFzc2V0RGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGi",
+            "AgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHi",
+            "AhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ValidationMode), typeof(global::Messages.Resources.V1.AssetType), typeof(global::Messages.Resources.V1.AssetDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.VisionCapability), global::Messages.Resources.V1.VisionCapability.Parser, new[]{ "SupportedValidationModes", "SupportedPartDefinitionIds", "SupportedTaskTypeIds", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.VisionCapability), global::Messages.Resources.V1.VisionCapability.Parser, new[]{ "SupportedValidationModes", "SupportedPartDefinitionIds", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetDefinition), global::Messages.Resources.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "Vision", "Custom" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetDefinitions), global::Messages.Resources.V1.AssetDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -158,7 +158,6 @@ namespace Messages.Resources.V1 {
     public VisionCapability(VisionCapability other) : this() {
       supportedValidationModes_ = other.supportedValidationModes_.Clone();
       supportedPartDefinitionIds_ = other.supportedPartDefinitionIds_.Clone();
-      supportedTaskTypeIds_ = other.supportedTaskTypeIds_.Clone();
       constraints_ = other.constraints_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -191,21 +190,10 @@ namespace Messages.Resources.V1 {
       get { return supportedPartDefinitionIds_; }
     }
 
-    /// <summary>Field number for the "supported_task_type_ids" field.</summary>
-    public const int SupportedTaskTypeIdsFieldNumber = 3;
-    private static readonly pb::FieldCodec<string> _repeated_supportedTaskTypeIds_codec
-        = pb::FieldCodec.ForString(26);
-    private readonly pbc::RepeatedField<string> supportedTaskTypeIds_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> SupportedTaskTypeIds {
-      get { return supportedTaskTypeIds_; }
-    }
-
     /// <summary>Field number for the "constraints" field.</summary>
-    public const int ConstraintsFieldNumber = 4;
+    public const int ConstraintsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.KeyValueConstraint> _repeated_constraints_codec
-        = pb::FieldCodec.ForMessage(34, global::Messages.Common.V1.KeyValueConstraint.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Messages.Common.V1.KeyValueConstraint.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -230,7 +218,6 @@ namespace Messages.Resources.V1 {
       }
       if(!supportedValidationModes_.Equals(other.supportedValidationModes_)) return false;
       if(!supportedPartDefinitionIds_.Equals(other.supportedPartDefinitionIds_)) return false;
-      if(!supportedTaskTypeIds_.Equals(other.supportedTaskTypeIds_)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -241,7 +228,6 @@ namespace Messages.Resources.V1 {
       int hash = 1;
       hash ^= supportedValidationModes_.GetHashCode();
       hash ^= supportedPartDefinitionIds_.GetHashCode();
-      hash ^= supportedTaskTypeIds_.GetHashCode();
       hash ^= constraints_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -263,7 +249,6 @@ namespace Messages.Resources.V1 {
     #else
       supportedValidationModes_.WriteTo(output, _repeated_supportedValidationModes_codec);
       supportedPartDefinitionIds_.WriteTo(output, _repeated_supportedPartDefinitionIds_codec);
-      supportedTaskTypeIds_.WriteTo(output, _repeated_supportedTaskTypeIds_codec);
       constraints_.WriteTo(output, _repeated_constraints_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -277,7 +262,6 @@ namespace Messages.Resources.V1 {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       supportedValidationModes_.WriteTo(ref output, _repeated_supportedValidationModes_codec);
       supportedPartDefinitionIds_.WriteTo(ref output, _repeated_supportedPartDefinitionIds_codec);
-      supportedTaskTypeIds_.WriteTo(ref output, _repeated_supportedTaskTypeIds_codec);
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -291,7 +275,6 @@ namespace Messages.Resources.V1 {
       int size = 0;
       size += supportedValidationModes_.CalculateSize(_repeated_supportedValidationModes_codec);
       size += supportedPartDefinitionIds_.CalculateSize(_repeated_supportedPartDefinitionIds_codec);
-      size += supportedTaskTypeIds_.CalculateSize(_repeated_supportedTaskTypeIds_codec);
       size += constraints_.CalculateSize(_repeated_constraints_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -307,7 +290,6 @@ namespace Messages.Resources.V1 {
       }
       supportedValidationModes_.Add(other.supportedValidationModes_);
       supportedPartDefinitionIds_.Add(other.supportedPartDefinitionIds_);
-      supportedTaskTypeIds_.Add(other.supportedTaskTypeIds_);
       constraints_.Add(other.constraints_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -338,10 +320,6 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 26: {
-            supportedTaskTypeIds_.AddEntriesFrom(input, _repeated_supportedTaskTypeIds_codec);
-            break;
-          }
-          case 34: {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
@@ -374,10 +352,6 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 26: {
-            supportedTaskTypeIds_.AddEntriesFrom(ref input, _repeated_supportedTaskTypeIds_codec);
-            break;
-          }
-          case 34: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
             break;
           }

@@ -4,6 +4,7 @@ package resources.v1;
 import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "common/v1/key_value_constraint.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
@@ -20,8 +21,7 @@ enum ValidationMode {
 message VisionCapability {
   repeated ValidationMode supported_validation_modes = 1;
   repeated string supported_part_definition_ids = 2;
-  repeated string supported_task_type_ids = 3;
-  repeated common.v1.KeyValueConstraint constraints = 4;
+  repeated common.v1.KeyValueConstraint constraints = 3;
 }
 
 enum AssetType {
@@ -47,10 +47,7 @@ message AssetDefinition {
   };
 
   string id = 1;
-  string name = 2 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }]; // Name of the asset
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true]; // Name of the asset
   string icon = 3; // Optional icon representing the asset
   string description = 4; // Optional description of the asset
   AssetType type = 5 [
@@ -62,7 +59,7 @@ message AssetDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string model_id = 7;
+  string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
   VisionCapability vision = 8;
   common.v1.CustomProperties custom = 9;
   // TODO: add ToolRole or similar way to express capabilities?

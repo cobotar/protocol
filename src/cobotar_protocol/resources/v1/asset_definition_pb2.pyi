@@ -1,6 +1,7 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -50,16 +51,14 @@ ASSET_DRIVER_TYPE_UNSPECIFIED: AssetDriverType
 ASSET_DRIVER_TYPE_DEFAULT: AssetDriverType
 
 class VisionCapability(_message.Message):
-    __slots__ = ("supported_validation_modes", "supported_part_definition_ids", "supported_task_type_ids", "constraints")
+    __slots__ = ("supported_validation_modes", "supported_part_definition_ids", "constraints")
     SUPPORTED_VALIDATION_MODES_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
-    SUPPORTED_TASK_TYPE_IDS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     supported_validation_modes: _containers.RepeatedScalarFieldContainer[ValidationMode]
     supported_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
-    supported_task_type_ids: _containers.RepeatedScalarFieldContainer[str]
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, supported_validation_modes: _Optional[_Iterable[_Union[ValidationMode, str]]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., supported_task_type_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    def __init__(self, supported_validation_modes: _Optional[_Iterable[_Union[ValidationMode, str]]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class AssetDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "vision", "custom")

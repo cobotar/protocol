@@ -9,6 +9,7 @@ package resourcesv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -192,8 +193,7 @@ type VisionCapability struct {
 	state                      protoimpl.MessageState   `protogen:"open.v1"`
 	SupportedValidationModes   []ValidationMode         `protobuf:"varint,1,rep,packed,name=supported_validation_modes,json=supportedValidationModes,proto3,enum=resources.v1.ValidationMode" json:"supported_validation_modes,omitempty"`
 	SupportedPartDefinitionIds []string                 `protobuf:"bytes,2,rep,name=supported_part_definition_ids,json=supportedPartDefinitionIds,proto3" json:"supported_part_definition_ids,omitempty"`
-	SupportedTaskTypeIds       []string                 `protobuf:"bytes,3,rep,name=supported_task_type_ids,json=supportedTaskTypeIds,proto3" json:"supported_task_type_ids,omitempty"`
-	Constraints                []*v1.KeyValueConstraint `protobuf:"bytes,4,rep,name=constraints,proto3" json:"constraints,omitempty"`
+	Constraints                []*v1.KeyValueConstraint `protobuf:"bytes,3,rep,name=constraints,proto3" json:"constraints,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -238,13 +238,6 @@ func (x *VisionCapability) GetSupportedValidationModes() []ValidationMode {
 func (x *VisionCapability) GetSupportedPartDefinitionIds() []string {
 	if x != nil {
 		return x.SupportedPartDefinitionIds
-	}
-	return nil
-}
-
-func (x *VisionCapability) GetSupportedTaskTypeIds() []string {
-	if x != nil {
-		return x.SupportedTaskTypeIds
 	}
 	return nil
 }
@@ -412,22 +405,21 @@ var File_resources_v1_asset_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\n" +
-	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\"\xa9\x02\n" +
+	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf2\x01\n" +
 	"\x10VisionCapability\x12Z\n" +
 	"\x1asupported_validation_modes\x18\x01 \x03(\x0e2\x1c.resources.v1.ValidationModeR\x18supportedValidationModes\x12A\n" +
-	"\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x125\n" +
-	"\x17supported_task_type_ids\x18\x03 \x03(\tR\x14supportedTaskTypeIds\x12?\n" +
-	"\vconstraints\x18\x04 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x96\x04\n" +
+	"\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x12?\n" +
+	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xa1\x04\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12:\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x17.resources.v1.AssetTypeB\r\xbaH\n" +
 	"\xc8\x01\x01\x82\x01\x04\x10\x01(\x01R\x04type\x12K\n" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1d.resources.v1.AssetDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\n" +
-	"driverType\x12\x19\n" +
-	"\bmodel_id\x18\a \x01(\tR\amodelId\x126\n" +
+	"driverType\x12$\n" +
+	"\bmodel_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x126\n" +
 	"\x06vision\x18\b \x01(\v2\x1e.resources.v1.VisionCapabilityR\x06vision\x123\n" +
 	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom:\x8c\x01\xbaH\x88\x01\x1a\x85\x01\n" +
 	",asset_type_camera_requires_vision_capability\x121vision capability must be set when type is camera\x1a\"this.type != 1 || has(this.vision)\"G\n" +

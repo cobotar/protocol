@@ -208,8 +208,8 @@ type ARConfigBindingMessage struct {
 	Name              string                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon              string                    `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description       string                    `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	StationId         *string                   `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3,oneof" json:"station_id,omitempty"`                    // Station this binding targets directly.
-	CellId            *string                   `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3,oneof" json:"cell_id,omitempty"`                             // Cell this binding targets directly.
+	StationId         string                    `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                          // Station this binding targets directly.
+	CellId            string                    `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                   // Cell this binding targets directly.
 	ArConfigId        string                    `protobuf:"bytes,7,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`                     // Reusable AR config template to bind.
 	Disabled          bool                      `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"`                                            // If true, the binding should be ignored by resolution.
 	Standalone        bool                      `protobuf:"varint,9,opt,name=standalone,proto3" json:"standalone,omitempty"`                                        // If true, only standalone bindings with the highest priority should be shown.
@@ -279,15 +279,15 @@ func (x *ARConfigBindingMessage) GetDescription() string {
 }
 
 func (x *ARConfigBindingMessage) GetStationId() string {
-	if x != nil && x.StationId != nil {
-		return *x.StationId
+	if x != nil {
+		return x.StationId
 	}
 	return ""
 }
 
 func (x *ARConfigBindingMessage) GetCellId() string {
-	if x != nil && x.CellId != nil {
-		return *x.CellId
+	if x != nil {
+		return x.CellId
 	}
 	return ""
 }
@@ -564,15 +564,15 @@ const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\x125\n" +
 	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId:\xbf\x01\xbaH\xbb\x01\x1a\xb8\x01\n" +
-	"+ar_resource_binding.exactly_one_resource_id\x12Gexactly one of robot_instance_id or asset_instance_id must be non-empty\x1a@(this.robot_instance_id != '') != (this.asset_instance_id != '')\"\xb7\x04\n" +
+	"+ar_resource_binding.exactly_one_resource_id\x12Gexactly one of robot_instance_id or asset_instance_id must be non-empty\x1a@(this.robot_instance_id != '') != (this.asset_instance_id != '')\"\x8d\x05\n" +
 	"\x16ARConfigBindingMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12-\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12(\n" +
 	"\n" +
-	"station_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01H\x00R\tstationId\x88\x01\x01\x12'\n" +
-	"\acell_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01H\x01R\x06cellId\x88\x01\x01\x12.\n" +
+	"station_id\x18\x05 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\"\n" +
+	"\acell_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12.\n" +
 	"\far_config_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\n" +
 	"arConfigId\x12\x1a\n" +
 	"\bdisabled\x18\b \x01(\bR\bdisabled\x12\x1e\n" +
@@ -582,13 +582,8 @@ const file_ar_v1_mapping_proto_rawDesc = "" +
 	"\bpriority\x18\n" +
 	" \x01(\x05R\bpriority\x12E\n" +
 	"\x11resource_bindings\x18\v \x03(\v2\x18.ar.v1.ARResourceBindingR\x10resourceBindings\x12M\n" +
-	"\x12property_overrides\x18\f \x03(\v2\x1e.common.v1.PropertyValueUpdateR\x11propertyOverrides:\x1c\xbaH\x19\"\x17\n" +
-	"\n" +
-	"station_id\n" +
-	"\acell_id\x10\x01B\r\n" +
-	"\v_station_idB\n" +
-	"\n" +
-	"\b_cell_id\"T\n" +
+	"\x12property_overrides\x18\f \x03(\v2\x1e.common.v1.PropertyValueUpdateR\x11propertyOverrides:\x96\x01\xbaH\x92\x01\x1a\x8f\x01\n" +
+	"$ar_config_binding.exactly_one_target\x126exactly one of station_id or cell_id must be non-empty\x1a/(this.station_id != '') != (this.cell_id != '')\"T\n" +
 	"\x17ARConfigBindingMessages\x129\n" +
 	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindings\"\xa6\x03\n" +
 	"\x0eMappingMessage\x12\x0e\n" +
@@ -653,7 +648,6 @@ func file_ar_v1_mapping_proto_init() {
 	if File_ar_v1_mapping_proto != nil {
 		return
 	}
-	file_ar_v1_mapping_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

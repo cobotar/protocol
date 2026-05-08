@@ -45,20 +45,18 @@ message ARResourceBinding {
 // This keeps ARConfig authoring reusable while making station/cell-specific
 // resource wiring explicit and safe.
 message ARConfigBindingMessage {
-  option (buf.validate.message).oneof = {
-    fields: [
-      "station_id",
-      "cell_id"
-    ]
-    required: true
+  option (buf.validate.message).cel = {
+    id: "ar_config_binding.exactly_one_target"
+    message: "exactly one of station_id or cell_id must be non-empty"
+    expression: "(this.station_id != '') != (this.cell_id != '')"
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Stable binding identifier.
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  optional string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Station this binding targets directly.
-  optional string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Cell this binding targets directly.
+  string station_id = 5 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Station this binding targets directly.
+  string cell_id = 6 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Cell this binding targets directly.
   string ar_config_id = 7 [
     (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
     (buf.validate.field).required = true
