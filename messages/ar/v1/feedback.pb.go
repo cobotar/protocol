@@ -119,19 +119,75 @@ func (FeedbackType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{0}
 }
 
+type VisibilityScope int32
+
+const (
+	VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED     VisibilityScope = 0
+	VisibilityScope_VISIBILITY_SCOPE_ALWAYS          VisibilityScope = 1
+	VisibilityScope_VISIBILITY_SCOPE_LOW_GUIDANCE    VisibilityScope = 2
+	VisibilityScope_VISIBILITY_SCOPE_MEDIUM_GUIDANCE VisibilityScope = 3
+	VisibilityScope_VISIBILITY_SCOPE_FULL_GUIDANCE   VisibilityScope = 4
+)
+
+// Enum value maps for VisibilityScope.
+var (
+	VisibilityScope_name = map[int32]string{
+		0: "VISIBILITY_SCOPE_UNSPECIFIED",
+		1: "VISIBILITY_SCOPE_ALWAYS",
+		2: "VISIBILITY_SCOPE_LOW_GUIDANCE",
+		3: "VISIBILITY_SCOPE_MEDIUM_GUIDANCE",
+		4: "VISIBILITY_SCOPE_FULL_GUIDANCE",
+	}
+	VisibilityScope_value = map[string]int32{
+		"VISIBILITY_SCOPE_UNSPECIFIED":     0,
+		"VISIBILITY_SCOPE_ALWAYS":          1,
+		"VISIBILITY_SCOPE_LOW_GUIDANCE":    2,
+		"VISIBILITY_SCOPE_MEDIUM_GUIDANCE": 3,
+		"VISIBILITY_SCOPE_FULL_GUIDANCE":   4,
+	}
+)
+
+func (x VisibilityScope) Enum() *VisibilityScope {
+	p := new(VisibilityScope)
+	*p = x
+	return p
+}
+
+func (x VisibilityScope) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VisibilityScope) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_feedback_proto_enumTypes[1].Descriptor()
+}
+
+func (VisibilityScope) Type() protoreflect.EnumType {
+	return &file_ar_v1_feedback_proto_enumTypes[1]
+}
+
+func (x VisibilityScope) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VisibilityScope.Descriptor instead.
+func (VisibilityScope) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{1}
+}
+
 type FeedbackMessage struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type        FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	Properties  []*v1.Property         `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
+	Properties      []*v1.Property         `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
 	// repeated string property_ids = 6 [
 	// (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
 	// (buf.validate.field).repeated.unique = true
 	// ];
-	ConfigId      string `protobuf:"bytes,7,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	ConfigId      string `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -201,6 +257,13 @@ func (x *FeedbackMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
+func (x *FeedbackMessage) GetVisibilityScope() VisibilityScope {
+	if x != nil {
+		return x.VisibilityScope
+	}
+	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
+}
+
 func (x *FeedbackMessage) GetProperties() []*v1.Property {
 	if x != nil {
 		return x.Properties
@@ -260,16 +323,17 @@ func (x *FeedbackMessages) GetFeedbacks() []*FeedbackMessage {
 }
 
 type FeedbackAddMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ConfigId      string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	RobotId       string                 `protobuf:"bytes,6,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
-	Anchor        *v11.Anchor            `protobuf:"bytes,7,opt,name=anchor,proto3" json:"anchor,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId        string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
+	RobotId         string                 `protobuf:"bytes,7,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	Anchor          *v11.Anchor            `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *FeedbackAddMessage) Reset() {
@@ -337,6 +401,13 @@ func (x *FeedbackAddMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
+func (x *FeedbackAddMessage) GetVisibilityScope() VisibilityScope {
+	if x != nil {
+		return x.VisibilityScope
+	}
+	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
+}
+
 func (x *FeedbackAddMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
@@ -352,13 +423,14 @@ func (x *FeedbackAddMessage) GetAnchor() *v11.Anchor {
 }
 
 type FeedbackUpdateMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	VisibilityScope VisibilityScope        `protobuf:"varint,5,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *FeedbackUpdateMessage) Reset() {
@@ -419,14 +491,22 @@ func (x *FeedbackUpdateMessage) GetDescription() string {
 	return ""
 }
 
+func (x *FeedbackUpdateMessage) GetVisibilityScope() VisibilityScope {
+	if x != nil {
+		return x.VisibilityScope
+	}
+	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
+}
+
 type FeedbackCloneMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	OriginalId    string                 `protobuf:"bytes,1,opt,name=original_id,json=originalId,proto3" json:"original_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	OriginalId      string                 `protobuf:"bytes,1,opt,name=original_id,json=originalId,proto3" json:"original_id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	VisibilityScope VisibilityScope        `protobuf:"varint,5,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *FeedbackCloneMessage) Reset() {
@@ -487,42 +567,53 @@ func (x *FeedbackCloneMessage) GetDescription() string {
 	return ""
 }
 
+func (x *FeedbackCloneMessage) GetVisibilityScope() VisibilityScope {
+	if x != nil {
+		return x.VisibilityScope
+	}
+	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
+}
+
 var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x89\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd6\x02\n" +
 	"\x0fFeedbackMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x123\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
+	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x123\n" +
 	"\n" +
-	"properties\x18\x06 \x03(\v2\x13.common.v1.PropertyR\n" +
+	"properties\x18\a \x03(\v2\x13.common.v1.PropertyR\n" +
 	"properties\x12&\n" +
-	"\tconfig_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
+	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\x84\x02\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xd1\x02\n" +
 	"\x12FeedbackAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x19\n" +
-	"\brobot_id\x18\x06 \x01(\tR\arobotId\x12+\n" +
-	"\x06anchor\x18\a \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\"|\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
+	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12\x19\n" +
+	"\brobot_id\x18\a \x01(\tR\arobotId\x12+\n" +
+	"\x06anchor\x18\b \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\"\xc9\x01\n" +
 	"\x15FeedbackUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\"\x81\x01\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12K\n" +
+	"\x10visibility_scope\x18\x05 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\"\xce\x01\n" +
 	"\x14FeedbackCloneMessage\x12\x1f\n" +
 	"\voriginal_id\x18\x01 \x01(\tR\n" +
 	"originalId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xc7\x04\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12K\n" +
+	"\x10visibility_scope\x18\x05 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope*\xc7\x04\n" +
 	"\fFeedbackType\x12\x1d\n" +
 	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cFEEDBACK_TYPE_TASK_HIGHLIGHT\x10\n" +
@@ -542,7 +633,13 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x12FEEDBACK_TYPE_ZONE\x10f\x12\x1c\n" +
 	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10g\x12\x17\n" +
 	"\x13FEEDBACK_TYPE_RULER\x10h\x12\x1b\n" +
-	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10iB\x89\x01\n" +
+	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10i*\xbd\x01\n" +
+	"\x0fVisibilityScope\x12 \n" +
+	"\x1cVISIBILITY_SCOPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17VISIBILITY_SCOPE_ALWAYS\x10\x01\x12!\n" +
+	"\x1dVISIBILITY_SCOPE_LOW_GUIDANCE\x10\x02\x12$\n" +
+	" VISIBILITY_SCOPE_MEDIUM_GUIDANCE\x10\x03\x12\"\n" +
+	"\x1eVISIBILITY_SCOPE_FULL_GUIDANCE\x10\x04B\x89\x01\n" +
 	"\tcom.ar.v1B\rFeedbackProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -557,29 +654,34 @@ func file_ar_v1_feedback_proto_rawDescGZIP() []byte {
 	return file_ar_v1_feedback_proto_rawDescData
 }
 
-var file_ar_v1_feedback_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_ar_v1_feedback_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_ar_v1_feedback_proto_goTypes = []any{
 	(FeedbackType)(0),             // 0: ar.v1.FeedbackType
-	(*FeedbackMessage)(nil),       // 1: ar.v1.FeedbackMessage
-	(*FeedbackMessages)(nil),      // 2: ar.v1.FeedbackMessages
-	(*FeedbackAddMessage)(nil),    // 3: ar.v1.FeedbackAddMessage
-	(*FeedbackUpdateMessage)(nil), // 4: ar.v1.FeedbackUpdateMessage
-	(*FeedbackCloneMessage)(nil),  // 5: ar.v1.FeedbackCloneMessage
-	(*v1.Property)(nil),           // 6: common.v1.Property
-	(*v11.Anchor)(nil),            // 7: geometry.v1.Anchor
+	(VisibilityScope)(0),          // 1: ar.v1.VisibilityScope
+	(*FeedbackMessage)(nil),       // 2: ar.v1.FeedbackMessage
+	(*FeedbackMessages)(nil),      // 3: ar.v1.FeedbackMessages
+	(*FeedbackAddMessage)(nil),    // 4: ar.v1.FeedbackAddMessage
+	(*FeedbackUpdateMessage)(nil), // 5: ar.v1.FeedbackUpdateMessage
+	(*FeedbackCloneMessage)(nil),  // 6: ar.v1.FeedbackCloneMessage
+	(*v1.Property)(nil),           // 7: common.v1.Property
+	(*v11.Anchor)(nil),            // 8: geometry.v1.Anchor
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
-	6, // 1: ar.v1.FeedbackMessage.properties:type_name -> common.v1.Property
-	1, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
-	0, // 3: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
-	7, // 4: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 1: ar.v1.FeedbackMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	7, // 2: ar.v1.FeedbackMessage.properties:type_name -> common.v1.Property
+	2, // 3: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
+	0, // 4: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
+	1, // 5: ar.v1.FeedbackAddMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	8, // 6: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
+	1, // 7: ar.v1.FeedbackUpdateMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	1, // 8: ar.v1.FeedbackCloneMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }
@@ -592,7 +694,7 @@ func file_ar_v1_feedback_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_feedback_proto_rawDesc), len(file_ar_v1_feedback_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,

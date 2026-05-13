@@ -31,6 +31,14 @@ class FeedbackType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FEEDBACK_TYPE_PLAY_SOUND: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_RULER: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_HIGHLIGHT: _ClassVar[FeedbackType]
+
+class VisibilityScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    VISIBILITY_SCOPE_UNSPECIFIED: _ClassVar[VisibilityScope]
+    VISIBILITY_SCOPE_ALWAYS: _ClassVar[VisibilityScope]
+    VISIBILITY_SCOPE_LOW_GUIDANCE: _ClassVar[VisibilityScope]
+    VISIBILITY_SCOPE_MEDIUM_GUIDANCE: _ClassVar[VisibilityScope]
+    VISIBILITY_SCOPE_FULL_GUIDANCE: _ClassVar[VisibilityScope]
 FEEDBACK_TYPE_UNSPECIFIED: FeedbackType
 FEEDBACK_TYPE_TASK_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: FeedbackType
@@ -49,14 +57,20 @@ FEEDBACK_TYPE_ZONE: FeedbackType
 FEEDBACK_TYPE_PLAY_SOUND: FeedbackType
 FEEDBACK_TYPE_RULER: FeedbackType
 FEEDBACK_TYPE_HIGHLIGHT: FeedbackType
+VISIBILITY_SCOPE_UNSPECIFIED: VisibilityScope
+VISIBILITY_SCOPE_ALWAYS: VisibilityScope
+VISIBILITY_SCOPE_LOW_GUIDANCE: VisibilityScope
+VISIBILITY_SCOPE_MEDIUM_GUIDANCE: VisibilityScope
+VISIBILITY_SCOPE_FULL_GUIDANCE: VisibilityScope
 
 class FeedbackMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "properties", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "visibility_scope", "properties", "config_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -64,9 +78,10 @@ class FeedbackMessage(_message.Message):
     icon: str
     description: str
     type: FeedbackType
+    visibility_scope: VisibilityScope
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
 
 class FeedbackMessages(_message.Message):
     __slots__ = ("feedbacks",)
@@ -75,12 +90,13 @@ class FeedbackMessages(_message.Message):
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
 class FeedbackAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "robot_id", "anchor")
+    __slots__ = ("config_id", "name", "icon", "description", "type", "visibility_scope", "robot_id", "anchor")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_FIELD_NUMBER: _ClassVar[int]
     config_id: str
@@ -88,30 +104,35 @@ class FeedbackAddMessage(_message.Message):
     icon: str
     description: str
     type: FeedbackType
+    visibility_scope: VisibilityScope
     robot_id: str
     anchor: _anchor_pb2.Anchor
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., robot_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., robot_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
 
 class FeedbackUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description")
+    __slots__ = ("id", "name", "icon", "description", "visibility_scope")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    visibility_scope: VisibilityScope
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ...) -> None: ...
 
 class FeedbackCloneMessage(_message.Message):
-    __slots__ = ("original_id", "name", "icon", "description")
+    __slots__ = ("original_id", "name", "icon", "description", "visibility_scope")
     ORIGINAL_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
     original_id: str
     name: str
     icon: str
     description: str
-    def __init__(self, original_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    visibility_scope: VisibilityScope
+    def __init__(self, original_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ...) -> None: ...

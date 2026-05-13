@@ -118,6 +118,13 @@
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
   
+- [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
+    - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
+    - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
+    - [ARResourceBinding](#ar-v1-ARResourceBinding)
+    - [AssetMapping](#ar-v1-AssetMapping)
+    - [RobotMapping](#ar-v1-RobotMapping)
+  
 - [ar/v1/config_load.proto](#ar_v1_config_load-proto)
     - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
   
@@ -155,6 +162,7 @@
     - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
   
     - [FeedbackType](#ar-v1-FeedbackType)
+    - [VisibilityScope](#ar-v1-VisibilityScope)
   
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
@@ -175,15 +183,6 @@
     - [HelperInfoMessages](#ar-v1-HelperInfoMessages)
   
     - [HelperGroup](#ar-v1-HelperGroup)
-  
-- [ar/v1/mapping.proto](#ar_v1_mapping-proto)
-    - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
-    - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
-    - [ARResourceBinding](#ar-v1-ARResourceBinding)
-    - [AssetMapping](#ar-v1-AssetMapping)
-    - [MappingMessage](#ar-v1-MappingMessage)
-    - [MappingMessages](#ar-v1-MappingMessages)
-    - [RobotMapping](#ar-v1-RobotMapping)
   
 - [common/v1/actor.proto](#common_v1_actor-proto)
     - [ActorRef](#common-v1-ActorRef)
@@ -1870,6 +1869,124 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 
 
 
+<a name="ar_v1_ar_config_binding-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/ar_config_binding.proto
+
+
+
+<a name="ar-v1-ARConfigBindingMessage"></a>
+
+### ARConfigBindingMessage
+ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
+workspace.
+
+Runtime resolution should typically work like this:
+- load bindings targeted directly at the active station
+- load bindings targeted at the parent cell
+- sort by standalone/priority
+- apply property_overrides after the config template is loaded
+- populate resource slot properties and runtime context values afterwards
+
+This keeps ARConfig authoring reusable while making station/cell-specific
+resource wiring explicit and safe.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable binding identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| station_id | [string](#string) |  | Station this binding targets directly. |
+| cell_id | [string](#string) |  | Cell this binding targets directly. |
+| ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
+| disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
+| standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
+| priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
+| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
+| property_overrides | [common.v1.PropertyValueUpdate](#common-v1-PropertyValueUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigBindingMessages"></a>
+
+### ARConfigBindingMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated | Station/cell bindings for reusable AR configs. |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceBinding"></a>
+
+### ARResourceBinding
+ARResourceBinding binds a config-declared slot to a concrete resource
+instance owned by the target station or cell.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  | Config-declared slot to satisfy. |
+| robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
+| asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
+
+
+
+
+
+
+<a name="ar-v1-AssetMapping"></a>
+
+### AssetMapping
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_id | [string](#string) |  | Legacy asset definition identifier. |
+| property_id | [string](#string) |  | Legacy target property for the mapped asset. |
+
+
+
+
+
+
+<a name="ar-v1-RobotMapping"></a>
+
+### RobotMapping
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  | Legacy robot definition identifier. |
+| property_id | [string](#string) |  | Legacy target property for the mapped robot. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_config_load-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2325,6 +2442,7 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | robot_id | [string](#string) |  |  |
 | anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 
@@ -2345,6 +2463,7 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 
 
 
@@ -2364,6 +2483,7 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 | config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
 
@@ -2399,6 +2519,7 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 
 
 
@@ -2432,6 +2553,21 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
 | FEEDBACK_TYPE_RULER | 104 |  |
 | FEEDBACK_TYPE_HIGHLIGHT | 105 |  |
+
+
+
+<a name="ar-v1-VisibilityScope"></a>
+
+### VisibilityScope
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VISIBILITY_SCOPE_UNSPECIFIED | 0 |  |
+| VISIBILITY_SCOPE_ALWAYS | 1 |  |
+| VISIBILITY_SCOPE_LOW_GUIDANCE | 2 |  |
+| VISIBILITY_SCOPE_MEDIUM_GUIDANCE | 3 |  |
+| VISIBILITY_SCOPE_FULL_GUIDANCE | 4 |  |
 
 
  
@@ -2685,164 +2821,6 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | HELPER_GROUP_SPATIAL | 6 |  |
 | HELPER_GROUP_LOGIC | 7 |  |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_mapping-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/mapping.proto
-
-
-
-<a name="ar-v1-ARConfigBindingMessage"></a>
-
-### ARConfigBindingMessage
-ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
-workspace.
-
-Runtime resolution should typically work like this:
-- load bindings targeted directly at the active station
-- load bindings targeted at the parent cell
-- sort by standalone/priority
-- apply property_overrides after the config template is loaded
-- populate resource slot properties and runtime context values afterwards
-
-This keeps ARConfig authoring reusable while making station/cell-specific
-resource wiring explicit and safe.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable binding identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| station_id | [string](#string) |  | Station this binding targets directly. |
-| cell_id | [string](#string) |  | Cell this binding targets directly. |
-| ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
-| disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
-| standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
-| priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
-| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
-| property_overrides | [common.v1.PropertyValueUpdate](#common-v1-PropertyValueUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigBindingMessages"></a>
-
-### ARConfigBindingMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated | Station/cell bindings for reusable AR configs. |
-
-
-
-
-
-
-<a name="ar-v1-ARResourceBinding"></a>
-
-### ARResourceBinding
-ARResourceBinding binds a config-declared slot to a concrete resource
-instance owned by the target station or cell.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  | Config-declared slot to satisfy. |
-| robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
-| asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
-
-
-
-
-
-
-<a name="ar-v1-AssetMapping"></a>
-
-### AssetMapping
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_id | [string](#string) |  | Legacy asset definition identifier. |
-| property_id | [string](#string) |  | Legacy target property for the mapped asset. |
-
-
-
-
-
-
-<a name="ar-v1-MappingMessage"></a>
-
-### MappingMessage
-Deprecated legacy environment-based mapping.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Legacy mapping identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| environment_id | [string](#string) |  | Legacy environment target. |
-| ar_config_id | [string](#string) |  | AR config template to load for the legacy environment. |
-| disabled | [bool](#bool) |  | If true, the mapping should be ignored. |
-| robot_mapping | [RobotMapping](#ar-v1-RobotMapping) | repeated | Legacy robot-to-property assignments. |
-| asset_mapping | [AssetMapping](#ar-v1-AssetMapping) | repeated | Legacy asset-to-property assignments. |
-| standalone | [bool](#bool) |  | Only this AR-config should be shown (winner have highest priority) |
-| priority | [int32](#int32) |  | High value configs will be shown first |
-
-
-
-
-
-
-<a name="ar-v1-MappingMessages"></a>
-
-### MappingMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| mappings | [MappingMessage](#ar-v1-MappingMessage) | repeated | Legacy environment-based mappings. |
-
-
-
-
-
-
-<a name="ar-v1-RobotMapping"></a>
-
-### RobotMapping
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  | Legacy robot definition identifier. |
-| property_id | [string](#string) |  | Legacy target property for the mapped robot. |
-
-
-
-
-
- 
 
  
 

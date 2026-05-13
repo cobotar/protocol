@@ -24,7 +24,7 @@ message ARResourceBinding {
   option (buf.validate.message).cel = {
     id: "ar_resource_binding.exactly_one_resource_id"
     message: "exactly one of robot_instance_id or asset_instance_id must be non-empty"
-    expression: "(this.robot_instance_id != '') != (this.asset_instance_id != '')"
+    expression: "(this.robot_instance_id == '' && this.asset_instance_id != '') || (this.robot_instance_id != '' && this.asset_instance_id == '')"
   };
 
   string slot_id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Config-declared slot to satisfy.
@@ -47,8 +47,8 @@ message ARResourceBinding {
 message ARConfigBindingMessage {
   option (buf.validate.message).cel = {
     id: "ar_config_binding.exactly_one_target"
-    message: "exactly one of station_id or cell_id must be non-empty"
-    expression: "(this.station_id != '') != (this.cell_id != '')"
+    message: "exactly one of station_id or cell_id must be set"
+    expression: "(this.station_id == '' && this.cell_id != '') || (this.station_id != '' && this.cell_id == '')"
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_binding_id_component) = true]; // Stable binding identifier.
@@ -70,29 +70,4 @@ message ARConfigBindingMessage {
 
 message ARConfigBindingMessages {
   repeated ARConfigBindingMessage bindings = 1; // Station/cell bindings for reusable AR configs.
-}
-
-// Deprecated legacy environment-based mapping.
-message MappingMessage {
-  string id = 1; // Legacy mapping identifier.
-  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
-  string icon = 3;
-  string description = 4;
-  string environment_id = 5 [
-    (buf.validate.field).string.(validation.v1.environment_id_component) = true,
-    (buf.validate.field).required = true
-  ]; // Legacy environment target.
-  string ar_config_id = 6 [
-    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
-    (buf.validate.field).required = true
-  ]; // AR config template to load for the legacy environment.
-  bool disabled = 7; // If true, the mapping should be ignored.
-  repeated RobotMapping robot_mapping = 8; // Legacy robot-to-property assignments.
-  repeated AssetMapping asset_mapping = 9; // Legacy asset-to-property assignments.
-  bool standalone = 10; // Only this AR-config should be shown (winner have highest priority)
-  int32 priority = 11; // High value configs will be shown first
-}
-
-message MappingMessages {
-  repeated MappingMessage mappings = 1; // Legacy environment-based mappings.
 }

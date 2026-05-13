@@ -45,7 +45,7 @@ message ARInputSlotMessage {
   option (buf.validate.message).cel = {
     id: "ar_input_slot.exactly_one_slot_kind"
     message: "exactly one of resource_type or context_type must be specified and non-UNSPECIFIED"
-    expression: "(this.resource_type != 0) != (this.context_type != 0)"
+    expression: "(this.resource_type == 0 && this.context_type != 0) || (this.resource_type != 0 && this.context_type == 0)"
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Stable slot identifier used by configs and runtime resolution.
@@ -77,7 +77,7 @@ message ARInputSlotAddMessage {
   option (buf.validate.message).cel = {
     id: "ar_input_slot_add.exactly_one_slot_kind"
     message: "exactly one of resource_type or context_type must be specified and non-UNSPECIFIED"
-    expression: "(this.resource_type != 0) != (this.context_type != 0)"
+    expression: "(this.resource_type == 0 && this.context_type != 0) || (this.resource_type != 0 && this.context_type == 0)"
   };
 
   string config_id = 1 [

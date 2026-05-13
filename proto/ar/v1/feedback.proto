@@ -35,6 +35,14 @@ enum FeedbackType {
   FEEDBACK_TYPE_HIGHLIGHT = 105;
 }
 
+enum VisibilityScope {
+  VISIBILITY_SCOPE_UNSPECIFIED = 0;
+  VISIBILITY_SCOPE_ALWAYS = 1;
+  VISIBILITY_SCOPE_LOW_GUIDANCE = 2;
+  VISIBILITY_SCOPE_MEDIUM_GUIDANCE = 3;
+  VISIBILITY_SCOPE_FULL_GUIDANCE = 4;
+}
+
 message FeedbackMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
@@ -44,12 +52,13 @@ message FeedbackMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  repeated common.v1.Property properties = 6;
+  VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
+  repeated common.v1.Property properties = 7;
   /*repeated string property_ids = 6 [
        (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
        (buf.validate.field).repeated.unique = true
      ];*/
-  string config_id = 7 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
 message FeedbackMessages {
@@ -65,8 +74,9 @@ message FeedbackAddMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string robot_id = 6;
-  geometry.v1.Anchor anchor = 7;
+  VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
+  string robot_id = 7;
+  geometry.v1.Anchor anchor = 8;
 }
 
 message FeedbackUpdateMessage {
@@ -74,6 +84,7 @@ message FeedbackUpdateMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
+  VisibilityScope visibility_scope = 5 [(buf.validate.field).enum.defined_only = true];
 }
 
 message FeedbackCloneMessage {
@@ -81,4 +92,5 @@ message FeedbackCloneMessage {
   string name = 2;
   string icon = 3;
   string description = 4;
+  VisibilityScope visibility_scope = 5 [(buf.validate.field).enum.defined_only = true];
 }

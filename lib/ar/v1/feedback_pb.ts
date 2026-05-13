@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback.proto.
  */
 export const file_ar_v1_feedback: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi0AEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARInCgpwcm9wZXJ0aWVzGAYgAygLMhMuY29tbW9uLnYxLlByb3BlcnR5EhwKCWNvbmZpZ19pZBgHIAEoCUIJukgGcgSQ8QQBIj0KEEZlZWRiYWNrTWVzc2FnZXMSKQoJZmVlZGJhY2tzGAEgAygLMhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlIsoBChJGZWVkYmFja0FkZE1lc3NhZ2USHAoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDxBAESDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pICMgBAYIBAhABEhAKCHJvYm90X2lkGAYgASgJEiMKBmFuY2hvchgHIAEoCzITLmdlb21ldHJ5LnYxLkFuY2hvciJfChVGZWVkYmFja1VwZGF0ZU1lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiXAoURmVlZGJhY2tDbG9uZU1lc3NhZ2USEwoLb3JpZ2luYWxfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKscECgxGZWVkYmFja1R5cGUSHQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklFRBAAEiAKHEZFRURCQUNLX1RZUEVfVEFTS19ISUdITElHSFQQChIlCiFGRUVEQkFDS19UWVBFX1RBU0tfUEFSVF9ISUdITElHSFQQCxIlCiFGRUVEQkFDS19UWVBFX1RBU0tfVE9PTF9ISUdITElHSFQQDBIfChtGRUVEQkFDS19UWVBFX1RBU0tfT1ZFUlZJRVcQDRIiCh5GRUVEQkFDS19UWVBFX1RBU0tfSU5TVFJVQ1RJT04QDhIgChxGRUVEQkFDS19UWVBFX1RBU0tfQ0hFQ0tMSVNUEA8SHAoYRkVFREJBQ0tfVFlQRV9ST0JPVF9QQVRIEDISIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEDMSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVEQkFDS19UWVBFX1JPQk9UX1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQNhIZChVGRUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVEQkFDS19UWVBFX0lDT04QZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhGRUVEQkFDS19UWVBFX1BMQVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JVTEVSEGgSGwoXRkVFREJBQ0tfVFlQRV9ISUdITElHSFQQaUKJAQoJY29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_property, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEijAIKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARI6ChB2aXNpYmlsaXR5X3Njb3BlGAYgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3BlQgi6SAWCAQIQARInCgpwcm9wZXJ0aWVzGAcgAygLMhMuY29tbW9uLnYxLlByb3BlcnR5EhwKCWNvbmZpZ19pZBgIIAEoCUIJukgGcgSQ8QQBIj0KEEZlZWRiYWNrTWVzc2FnZXMSKQoJZmVlZGJhY2tzGAEgAygLMhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlIoYCChJGZWVkYmFja0FkZE1lc3NhZ2USHAoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDxBAESDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pICMgBAYIBAhABEjoKEHZpc2liaWxpdHlfc2NvcGUYBiABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABEhAKCHJvYm90X2lkGAcgASgJEiMKBmFuY2hvchgIIAEoCzITLmdlb21ldHJ5LnYxLkFuY2hvciKbAQoVRmVlZGJhY2tVcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjoKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABIpgBChRGZWVkYmFja0Nsb25lTWVzc2FnZRITCgtvcmlnaW5hbF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSOgoQdmlzaWJpbGl0eV9zY29wZRgFIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAEqxwQKDEZlZWRiYWNrVHlwZRIdChlGRUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNLX0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hMSUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAMEh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNLX1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFTS19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9CT1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNPThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVfUExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaBIbChdGRUVEQkFDS19UWVBFX0hJR0hMSUdIVBBpKr0BCg9WaXNpYmlsaXR5U2NvcGUSIAocVklTSUJJTElUWV9TQ09QRV9VTlNQRUNJRklFRBAAEhsKF1ZJU0lCSUxJVFlfU0NPUEVfQUxXQVlTEAESIQodVklTSUJJTElUWV9TQ09QRV9MT1dfR1VJREFOQ0UQAhIkCiBWSVNJQklMSVRZX1NDT1BFX01FRElVTV9HVUlEQU5DRRADEiIKHlZJU0lCSUxJVFlfU0NPUEVfRlVMTF9HVUlEQU5DRRAEQokBCgljb20uYXIudjFCDUZlZWRiYWNrUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_property, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackMessage
@@ -48,7 +48,12 @@ export type FeedbackMessage = Message<"ar.v1.FeedbackMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: repeated common.v1.Property properties = 6;
+   * @generated from field: ar.v1.VisibilityScope visibility_scope = 6;
+   */
+  visibilityScope: VisibilityScope;
+
+  /**
+   * @generated from field: repeated common.v1.Property properties = 7;
    */
   properties: Property[];
 
@@ -58,7 +63,7 @@ export type FeedbackMessage = Message<"ar.v1.FeedbackMessage"> & {
    * (buf.validate.field).repeated.unique = true
    * ];
    *
-   * @generated from field: string config_id = 7;
+   * @generated from field: string config_id = 8;
    */
   configId: string;
 };
@@ -117,12 +122,17 @@ export type FeedbackAddMessage = Message<"ar.v1.FeedbackAddMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: string robot_id = 6;
+   * @generated from field: ar.v1.VisibilityScope visibility_scope = 6;
+   */
+  visibilityScope: VisibilityScope;
+
+  /**
+   * @generated from field: string robot_id = 7;
    */
   robotId: string;
 
   /**
-   * @generated from field: geometry.v1.Anchor anchor = 7;
+   * @generated from field: geometry.v1.Anchor anchor = 8;
    */
   anchor?: Anchor;
 };
@@ -157,6 +167,11 @@ export type FeedbackUpdateMessage = Message<"ar.v1.FeedbackUpdateMessage"> & {
    * @generated from field: string description = 4;
    */
   description: string;
+
+  /**
+   * @generated from field: ar.v1.VisibilityScope visibility_scope = 5;
+   */
+  visibilityScope: VisibilityScope;
 };
 
 /**
@@ -189,6 +204,11 @@ export type FeedbackCloneMessage = Message<"ar.v1.FeedbackCloneMessage"> & {
    * @generated from field: string description = 4;
    */
   description: string;
+
+  /**
+   * @generated from field: ar.v1.VisibilityScope visibility_scope = 5;
+   */
+  visibilityScope: VisibilityScope;
 };
 
 /**
@@ -306,4 +326,40 @@ export enum FeedbackType {
  */
 export const FeedbackTypeSchema: GenEnum<FeedbackType> = /*@__PURE__*/
   enumDesc(file_ar_v1_feedback, 0);
+
+/**
+ * @generated from enum ar.v1.VisibilityScope
+ */
+export enum VisibilityScope {
+  /**
+   * @generated from enum value: VISIBILITY_SCOPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VISIBILITY_SCOPE_ALWAYS = 1;
+   */
+  ALWAYS = 1,
+
+  /**
+   * @generated from enum value: VISIBILITY_SCOPE_LOW_GUIDANCE = 2;
+   */
+  LOW_GUIDANCE = 2,
+
+  /**
+   * @generated from enum value: VISIBILITY_SCOPE_MEDIUM_GUIDANCE = 3;
+   */
+  MEDIUM_GUIDANCE = 3,
+
+  /**
+   * @generated from enum value: VISIBILITY_SCOPE_FULL_GUIDANCE = 4;
+   */
+  FULL_GUIDANCE = 4,
+}
+
+/**
+ * Describes the enum ar.v1.VisibilityScope.
+ */
+export const VisibilityScopeSchema: GenEnum<VisibilityScope> = /*@__PURE__*/
+  enumDesc(file_ar_v1_feedback, 1);
 
