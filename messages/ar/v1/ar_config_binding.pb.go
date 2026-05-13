@@ -390,12 +390,13 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"\fAssetMapping\x12$\n" +
 	"\basset_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\aassetId\x12*\n" +
 	"\vproperty_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\n" +
-	"propertyId\"\xa8\x03\n" +
+	"propertyId\"\xd4\x01\n" +
 	"\x11ARResourceBinding\x12\"\n" +
 	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\x125\n" +
-	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId:\x80\x02\xbaH\xfc\x01\x1a\xf9\x01\n" +
-	"+ar_resource_binding.exactly_one_resource_id\x12Gexactly one of robot_instance_id or asset_instance_id must be non-empty\x1a\x80\x01(this.robot_instance_id == '' && this.asset_instance_id != '') || (this.robot_instance_id != '' && this.asset_instance_id == '')\"\xb6\x05\n" +
+	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId:-\xbaH*\"(\n" +
+	"\x11robot_instance_id\n" +
+	"\x11asset_instance_id\x10\x01\"\x92\x04\n" +
 	"\x16ARConfigBindingMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -413,8 +414,10 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"\bpriority\x18\n" +
 	" \x01(\x05R\bpriority\x12E\n" +
 	"\x11resource_bindings\x18\v \x03(\v2\x18.ar.v1.ARResourceBindingR\x10resourceBindings\x12M\n" +
-	"\x12property_overrides\x18\f \x03(\v2\x1e.common.v1.PropertyValueUpdateR\x11propertyOverrides:\xbf\x01\xbaH\xbb\x01\x1a\xb8\x01\n" +
-	"$ar_config_binding.exactly_one_target\x120exactly one of station_id or cell_id must be set\x1a^(this.station_id == '' && this.cell_id != '') || (this.station_id != '' && this.cell_id == '')\"T\n" +
+	"\x12property_overrides\x18\f \x03(\v2\x1e.common.v1.PropertyValueUpdateR\x11propertyOverrides:\x1c\xbaH\x19\"\x17\n" +
+	"\n" +
+	"station_id\n" +
+	"\acell_id\x10\x01\"T\n" +
 	"\x17ARConfigBindingMessages\x129\n" +
 	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindingsB\x90\x01\n" +
 	"\tcom.ar.v1B\x14ArConfigBindingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"

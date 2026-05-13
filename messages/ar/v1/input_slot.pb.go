@@ -529,7 +529,7 @@ var File_ar_v1_input_slot_proto protoreflect.FileDescriptor
 
 const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\n" +
-	"\x16ar/v1/input_slot.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8d\x05\n" +
+	"\x16ar/v1/input_slot.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc4\x03\n" +
 	"\x12ARInputSlotMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x02id\x12)\n" +
 	"\tconfig_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
@@ -539,8 +539,9 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\brequired\x18\x06 \x01(\bR\brequired\x12@\n" +
 	"\x15generated_property_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf1\x04\x01R\x13generatedPropertyId\x12H\n" +
 	"\rresource_type\x18\b \x01(\x0e2\x19.ar.v1.ARResourceSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\fresourceType\x12E\n" +
-	"\fcontext_type\x18\t \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcontextType:\xec\x01\xbaH\xe8\x01\x1a\xe5\x01\n" +
-	"#ar_input_slot.exactly_one_slot_kind\x12Rexactly one of resource_type or context_type must be specified and non-UNSPECIFIED\x1aj(this.resource_type == 0 && this.context_type != 0) || (this.resource_type != 0 && this.context_type == 0)\"F\n" +
+	"\fcontext_type\x18\t \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcontextType:$\xbaH!\"\x1f\n" +
+	"\rresource_type\n" +
+	"\fcontext_type\x10\x01\"F\n" +
 	"\x13ARInputSlotMessages\x12/\n" +
 	"\x05slots\x18\x01 \x03(\v2\x19.ar.v1.ARInputSlotMessageR\x05slots\"\xb7\x04\n" +
 	"\x15ARInputSlotAddMessage\x12)\n" +
