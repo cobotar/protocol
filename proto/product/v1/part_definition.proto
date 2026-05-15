@@ -102,6 +102,7 @@ message PartDefinition {
   PartHandlingProfile handling = 11;
   repeated common.v1.ExternalReference external_references = 12;
   common.v1.CustomProperties custom = 13;
+  string version = 14;
 }
 
 message PartDefinitions {
