@@ -28,6 +28,7 @@ enum PropertyType {
   PROPERTY_TYPE_ENUM_MULTI = 12; // Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras)
   PROPERTY_TYPE_ICON = 13; // Icon property type - icon-name-something from https://pictogrammers.com/
   PROPERTY_TYPE_ASSET = 14; // Asset type property - asset_id as string
+  // PROPERTY_TYPE_WORKER = 15;
   //PROPERTY_TYPE_AGENT = 15; // Agent is a combination of workers, robots, and assets (who can perform tasks) TODO: should it point towards the worker or an AR-device?
 }
 
@@ -55,6 +56,18 @@ enum PropertyPermission {
   PROPERTY_PERMISSION_COSMETIC = 20; // Cosmetic: can be edited by users with cosmetic+full permission
   PROPERTY_PERMISSION_FULL = 30; // Full: can be edited by users with full permission
   PROPERTY_PERMISSION_NONE = 40; // None: can't be edited (e.g. outputs or stuff that requires a delete + create new)
+}
+
+enum PropertyValueScope {
+  PROPERTY_VALUE_SCOPE_UNSPECIFIED = 0;
+
+  // Value is stored on the owning entity and shared by all materializations.
+  // Updating it changes the authored/template value.
+  PROPERTY_VALUE_SCOPE_ENTITY = 1;
+
+  // Value is supplied per runtime/materialized instance and must not be
+  // persisted back to the owning entity.
+  PROPERTY_VALUE_SCOPE_INSTANCE = 2;
 }
 
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
@@ -145,7 +158,7 @@ message Property {
   bool advanced = 14; // Hide behind "Advanced" toogle
   string scope_id = 15;
   bool disable_mirroring = 16; // If true, this property is not allowed to be mirrored by other properties
-  // TODO: local or global property?
+  PropertyValueScope value_scope = 17; // Defines whether value updates mutate the owning entity or only a materialized runtime instance.
 
   optional bool bool_value = 21;
   optional sint64 int_value = 22;
