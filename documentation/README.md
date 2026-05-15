@@ -74,6 +74,7 @@
     - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyPermission](#common-v1-PropertyPermission)
     - [PropertyType](#common-v1-PropertyType)
+    - [PropertyValueScope](#common-v1-PropertyValueScope)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
@@ -1072,6 +1073,7 @@ Properties are used by various components to define them, such as: feedback, act
 | advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
 | scope_id | [string](#string) |  |  |
 | disable_mirroring | [bool](#bool) |  | If true, this property is not allowed to be mirrored by other properties |
+| value_scope | [PropertyValueScope](#common-v1-PropertyValueScope) |  | Defines whether value updates mutate the owning entity or only a materialized runtime instance. |
 | bool_value | [bool](#bool) | optional |  |
 | int_value | [sint64](#sint64) | optional |  |
 | float_value | [float](#float) | optional |  |
@@ -1236,6 +1238,19 @@ Used to specify the type of a property
 | PROPERTY_TYPE_ENUM_MULTI | 12 | Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras) |
 | PROPERTY_TYPE_ICON | 13 | Icon property type - icon-name-something from https://pictogrammers.com/ |
 | PROPERTY_TYPE_ASSET | 14 | Asset type property - asset_id as string |
+
+
+
+<a name="common-v1-PropertyValueScope"></a>
+
+### PropertyValueScope
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_VALUE_SCOPE_UNSPECIFIED | 0 |  |
+| PROPERTY_VALUE_SCOPE_ENTITY | 1 | Value is stored on the owning entity and shared by all materializations. Updating it changes the authored/template value. |
+| PROPERTY_VALUE_SCOPE_INSTANCE | 2 | Value is supplied per runtime/materialized instance and must not be persisted back to the owning entity. |
 
 
  

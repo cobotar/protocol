@@ -279,6 +279,59 @@ func (PropertyPermission) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_property_proto_rawDescGZIP(), []int{3}
 }
 
+type PropertyValueScope int32
+
+const (
+	PropertyValueScope_PROPERTY_VALUE_SCOPE_UNSPECIFIED PropertyValueScope = 0
+	// Value is stored on the owning entity and shared by all materializations.
+	// Updating it changes the authored/template value.
+	PropertyValueScope_PROPERTY_VALUE_SCOPE_ENTITY PropertyValueScope = 1
+	// Value is supplied per runtime/materialized instance and must not be
+	// persisted back to the owning entity.
+	PropertyValueScope_PROPERTY_VALUE_SCOPE_INSTANCE PropertyValueScope = 2
+)
+
+// Enum value maps for PropertyValueScope.
+var (
+	PropertyValueScope_name = map[int32]string{
+		0: "PROPERTY_VALUE_SCOPE_UNSPECIFIED",
+		1: "PROPERTY_VALUE_SCOPE_ENTITY",
+		2: "PROPERTY_VALUE_SCOPE_INSTANCE",
+	}
+	PropertyValueScope_value = map[string]int32{
+		"PROPERTY_VALUE_SCOPE_UNSPECIFIED": 0,
+		"PROPERTY_VALUE_SCOPE_ENTITY":      1,
+		"PROPERTY_VALUE_SCOPE_INSTANCE":    2,
+	}
+)
+
+func (x PropertyValueScope) Enum() *PropertyValueScope {
+	p := new(PropertyValueScope)
+	*p = x
+	return p
+}
+
+func (x PropertyValueScope) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PropertyValueScope) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_v1_property_proto_enumTypes[4].Descriptor()
+}
+
+func (PropertyValueScope) Type() protoreflect.EnumType {
+	return &file_common_v1_property_proto_enumTypes[4]
+}
+
+func (x PropertyValueScope) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PropertyValueScope.Descriptor instead.
+func (PropertyValueScope) EnumDescriptor() ([]byte, []int) {
+	return file_common_v1_property_proto_rawDescGZIP(), []int{4}
+}
+
 // Properties are used by various components to define them, such as: feedback, actions, and conditions.
 type Property struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
@@ -297,7 +350,8 @@ type Property struct {
 	ParentId                  string                 `protobuf:"bytes,13,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	Advanced                  bool                   `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"` // Hide behind "Advanced" toogle
 	ScopeId                   string                 `protobuf:"bytes,15,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"`
-	DisableMirroring          bool                   `protobuf:"varint,16,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"` // If true, this property is not allowed to be mirrored by other properties
+	DisableMirroring          bool                   `protobuf:"varint,16,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`                 // If true, this property is not allowed to be mirrored by other properties
+	ValueScope                PropertyValueScope     `protobuf:"varint,17,opt,name=value_scope,json=valueScope,proto3,enum=common.v1.PropertyValueScope" json:"value_scope,omitempty"` // Defines whether value updates mutate the owning entity or only a materialized runtime instance.
 	BoolValue                 *bool                  `protobuf:"varint,21,opt,name=bool_value,json=boolValue,proto3,oneof" json:"bool_value,omitempty"`
 	IntValue                  *int64                 `protobuf:"zigzag64,22,opt,name=int_value,json=intValue,proto3,oneof" json:"int_value,omitempty"`
 	FloatValue                *float32               `protobuf:"fixed32,23,opt,name=float_value,json=floatValue,proto3,oneof" json:"float_value,omitempty"`
@@ -462,6 +516,13 @@ func (x *Property) GetDisableMirroring() bool {
 		return x.DisableMirroring
 	}
 	return false
+}
+
+func (x *Property) GetValueScope() PropertyValueScope {
+	if x != nil {
+		return x.ValueScope
+	}
+	return PropertyValueScope_PROPERTY_VALUE_SCOPE_UNSPECIFIED
 }
 
 func (x *Property) GetBoolValue() bool {
@@ -1308,7 +1369,7 @@ var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa7\x1c\n" +
+	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe7\x1c\n" +
 	"\bProperty\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1328,7 +1389,9 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\tparent_id\x18\r \x01(\tR\bparentId\x12\x1a\n" +
 	"\badvanced\x18\x0e \x01(\bR\badvanced\x12\x19\n" +
 	"\bscope_id\x18\x0f \x01(\tR\ascopeId\x12+\n" +
-	"\x11disable_mirroring\x18\x10 \x01(\bR\x10disableMirroring\x12\"\n" +
+	"\x11disable_mirroring\x18\x10 \x01(\bR\x10disableMirroring\x12>\n" +
+	"\vvalue_scope\x18\x11 \x01(\x0e2\x1d.common.v1.PropertyValueScopeR\n" +
+	"valueScope\x12\"\n" +
 	"\n" +
 	"bool_value\x18\x15 \x01(\bH\x00R\tboolValue\x88\x01\x01\x12 \n" +
 	"\tint_value\x18\x16 \x01(\x12H\x01R\bintValue\x88\x01\x01\x12$\n" +
@@ -1539,7 +1602,11 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x12 \n" +
 	"\x1cPROPERTY_PERMISSION_COSMETIC\x10\x14\x12\x1c\n" +
 	"\x18PROPERTY_PERMISSION_FULL\x10\x1e\x12\x1c\n" +
-	"\x18PROPERTY_PERMISSION_NONE\x10(B\xa5\x01\n" +
+	"\x18PROPERTY_PERMISSION_NONE\x10(*~\n" +
+	"\x12PropertyValueScope\x12$\n" +
+	" PROPERTY_VALUE_SCOPE_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bPROPERTY_VALUE_SCOPE_ENTITY\x10\x01\x12!\n" +
+	"\x1dPROPERTY_VALUE_SCOPE_INSTANCE\x10\x02B\xa5\x01\n" +
 	"\rcom.common.v1B\rPropertyProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
@@ -1555,27 +1622,28 @@ func file_common_v1_property_proto_rawDescGZIP() []byte {
 	return file_common_v1_property_proto_rawDescData
 }
 
-var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
 var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_common_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),           // 0: common.v1.PropertyType
 	(PropertyOrigin)(0),         // 1: common.v1.PropertyOrigin
 	(PropertyGroup)(0),          // 2: common.v1.PropertyGroup
 	(PropertyPermission)(0),     // 3: common.v1.PropertyPermission
-	(*Property)(nil),            // 4: common.v1.Property
-	(*PropertyMessages)(nil),    // 5: common.v1.PropertyMessages
-	(*PropertyValueUpdate)(nil), // 6: common.v1.PropertyValueUpdate
-	(*NumberExtras)(nil),        // 7: common.v1.NumberExtras
-	(*EnumOption)(nil),          // 8: common.v1.EnumOption
-	(*EnumExtras)(nil),          // 9: common.v1.EnumExtras
-	(*Vector3Extras)(nil),       // 10: common.v1.Vector3Extras
-	(*ColorExtras)(nil),         // 11: common.v1.ColorExtras
-	(*AnchorExtras)(nil),        // 12: common.v1.AnchorExtras
-	(*PoseExtras)(nil),          // 13: common.v1.PoseExtras
-	(*v1.Vector3)(nil),          // 14: geometry.v1.Vector3
-	(*v1.LocalizedPose)(nil),    // 15: geometry.v1.LocalizedPose
-	(*v1.Anchor)(nil),           // 16: geometry.v1.Anchor
-	(*Color)(nil),               // 17: common.v1.Color
+	(PropertyValueScope)(0),     // 4: common.v1.PropertyValueScope
+	(*Property)(nil),            // 5: common.v1.Property
+	(*PropertyMessages)(nil),    // 6: common.v1.PropertyMessages
+	(*PropertyValueUpdate)(nil), // 7: common.v1.PropertyValueUpdate
+	(*NumberExtras)(nil),        // 8: common.v1.NumberExtras
+	(*EnumOption)(nil),          // 9: common.v1.EnumOption
+	(*EnumExtras)(nil),          // 10: common.v1.EnumExtras
+	(*Vector3Extras)(nil),       // 11: common.v1.Vector3Extras
+	(*ColorExtras)(nil),         // 12: common.v1.ColorExtras
+	(*AnchorExtras)(nil),        // 13: common.v1.AnchorExtras
+	(*PoseExtras)(nil),          // 14: common.v1.PoseExtras
+	(*v1.Vector3)(nil),          // 15: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),    // 16: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),           // 17: geometry.v1.Anchor
+	(*Color)(nil),               // 18: common.v1.Color
 }
 var file_common_v1_property_proto_depIdxs = []int32{
 	0,  // 0: common.v1.Property.type:type_name -> common.v1.PropertyType
@@ -1583,30 +1651,31 @@ var file_common_v1_property_proto_depIdxs = []int32{
 	1,  // 2: common.v1.Property.origin:type_name -> common.v1.PropertyOrigin
 	1,  // 3: common.v1.Property.origins:type_name -> common.v1.PropertyOrigin
 	2,  // 4: common.v1.Property.group:type_name -> common.v1.PropertyGroup
-	14, // 5: common.v1.Property.vector3_value:type_name -> geometry.v1.Vector3
-	15, // 6: common.v1.Property.pose_value:type_name -> geometry.v1.LocalizedPose
-	16, // 7: common.v1.Property.anchor_value:type_name -> geometry.v1.Anchor
-	17, // 8: common.v1.Property.color_value:type_name -> common.v1.Color
-	7,  // 9: common.v1.Property.number_extras:type_name -> common.v1.NumberExtras
-	9,  // 10: common.v1.Property.enum_extras:type_name -> common.v1.EnumExtras
-	10, // 11: common.v1.Property.vector3_extras:type_name -> common.v1.Vector3Extras
-	11, // 12: common.v1.Property.color_extras:type_name -> common.v1.ColorExtras
-	13, // 13: common.v1.Property.pose_extras:type_name -> common.v1.PoseExtras
-	12, // 14: common.v1.Property.anchor_extras:type_name -> common.v1.AnchorExtras
-	4,  // 15: common.v1.PropertyMessages.properties:type_name -> common.v1.Property
-	0,  // 16: common.v1.PropertyValueUpdate.type:type_name -> common.v1.PropertyType
-	1,  // 17: common.v1.PropertyValueUpdate.origin:type_name -> common.v1.PropertyOrigin
-	14, // 18: common.v1.PropertyValueUpdate.vector3_value:type_name -> geometry.v1.Vector3
-	15, // 19: common.v1.PropertyValueUpdate.pose_value:type_name -> geometry.v1.LocalizedPose
-	16, // 20: common.v1.PropertyValueUpdate.anchor_value:type_name -> geometry.v1.Anchor
-	17, // 21: common.v1.PropertyValueUpdate.color_value:type_name -> common.v1.Color
-	8,  // 22: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
-	17, // 23: common.v1.ColorExtras.default:type_name -> common.v1.Color
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	4,  // 5: common.v1.Property.value_scope:type_name -> common.v1.PropertyValueScope
+	15, // 6: common.v1.Property.vector3_value:type_name -> geometry.v1.Vector3
+	16, // 7: common.v1.Property.pose_value:type_name -> geometry.v1.LocalizedPose
+	17, // 8: common.v1.Property.anchor_value:type_name -> geometry.v1.Anchor
+	18, // 9: common.v1.Property.color_value:type_name -> common.v1.Color
+	8,  // 10: common.v1.Property.number_extras:type_name -> common.v1.NumberExtras
+	10, // 11: common.v1.Property.enum_extras:type_name -> common.v1.EnumExtras
+	11, // 12: common.v1.Property.vector3_extras:type_name -> common.v1.Vector3Extras
+	12, // 13: common.v1.Property.color_extras:type_name -> common.v1.ColorExtras
+	14, // 14: common.v1.Property.pose_extras:type_name -> common.v1.PoseExtras
+	13, // 15: common.v1.Property.anchor_extras:type_name -> common.v1.AnchorExtras
+	5,  // 16: common.v1.PropertyMessages.properties:type_name -> common.v1.Property
+	0,  // 17: common.v1.PropertyValueUpdate.type:type_name -> common.v1.PropertyType
+	1,  // 18: common.v1.PropertyValueUpdate.origin:type_name -> common.v1.PropertyOrigin
+	15, // 19: common.v1.PropertyValueUpdate.vector3_value:type_name -> geometry.v1.Vector3
+	16, // 20: common.v1.PropertyValueUpdate.pose_value:type_name -> geometry.v1.LocalizedPose
+	17, // 21: common.v1.PropertyValueUpdate.anchor_value:type_name -> geometry.v1.Anchor
+	18, // 22: common.v1.PropertyValueUpdate.color_value:type_name -> common.v1.Color
+	9,  // 23: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
+	18, // 24: common.v1.ColorExtras.default:type_name -> common.v1.Color
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_property_proto_init() }
@@ -1624,7 +1693,7 @@ func file_common_v1_property_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)),
-			NumEnums:      4,
+			NumEnums:      5,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
