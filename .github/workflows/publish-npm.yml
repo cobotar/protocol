@@ -11,6 +11,11 @@ permissions:
 
 jobs:
   publish:
+    if: > # only publish to npm on tag pushes
+      github.event.workflow_run.conclusion == 'success' &&
+      startsWith(github.event.workflow_run.head_branch, 'v')
+
+    name: Publish NPM package 📦
     runs-on: ubuntu-latest
 
     steps:
