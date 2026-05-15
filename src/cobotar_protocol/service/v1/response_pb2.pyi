@@ -5,9 +5,11 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Response(_message.Message):
-    __slots__ = ("success", "message")
+    __slots__ = ("success", "message", "main_modified_id")
     SUCCESS_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    MAIN_MODIFIED_ID_FIELD_NUMBER: _ClassVar[int]
     success: bool
     message: str
-    def __init__(self, success: bool = ..., message: _Optional[str] = ...) -> None: ...
+    main_modified_id: str
+    def __init__(self, success: bool = ..., message: _Optional[str] = ..., main_modified_id: _Optional[str] = ...) -> None: ...

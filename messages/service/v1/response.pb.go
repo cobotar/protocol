@@ -22,11 +22,12 @@ const (
 )
 
 type Response struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"` // True if the request was carried out, false if an error occured
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`  // Either a status/response message or an error message if the request wasn't a success
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Success        bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`                                      // True if the request was carried out, false if an error occurred
+	Message        string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                                       // Either a status/response message or an error message if the request wasn't a success
+	MainModifiedId string                 `protobuf:"bytes,3,opt,name=main_modified_id,json=mainModifiedId,proto3" json:"main_modified_id,omitempty"` // Might contain an ID of the entity that mainly was modified (added, updated, deleted)
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *Response) Reset() {
@@ -73,15 +74,23 @@ func (x *Response) GetMessage() string {
 	return ""
 }
 
+func (x *Response) GetMainModifiedId() string {
+	if x != nil {
+		return x.MainModifiedId
+	}
+	return ""
+}
+
 var File_service_v1_response_proto protoreflect.FileDescriptor
 
 const file_service_v1_response_proto_rawDesc = "" +
 	"\n" +
 	"\x19service/v1/response.proto\x12\n" +
-	"service.v1\">\n" +
+	"service.v1\"h\n" +
 	"\bResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessageB\xac\x01\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\x12(\n" +
+	"\x10main_modified_id\x18\x03 \x01(\tR\x0emainModifiedIdB\xac\x01\n" +
 	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 

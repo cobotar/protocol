@@ -455,6 +455,7 @@ type PartDefinition struct {
 	Handling           *PartHandlingProfile    `protobuf:"bytes,11,opt,name=handling,proto3" json:"handling,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Custom             *v1.CustomProperties    `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
+	Version            string                  `protobuf:"bytes,14,opt,name=version,proto3" json:"version,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -580,6 +581,13 @@ func (x *PartDefinition) GetCustom() *v1.CustomProperties {
 	return nil
 }
 
+func (x *PartDefinition) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
 type PartDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*PartDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -652,7 +660,7 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\x10max_grip_force_n\x18\n" +
 	" \x01(\x01R\rmaxGripForceN\x12\"\n" +
 	"\rmax_torque_nm\x18\v \x01(\x01R\vmaxTorqueNm\x12?\n" +
-	"\vconstraints\x18\f \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xcb\x04\n" +
+	"\vconstraints\x18\f \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xe5\x04\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -669,7 +677,8 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	" \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0edefaultModelId\x12;\n" +
 	"\bhandling\x18\v \x01(\v2\x1f.product.v1.PartHandlingProfileR\bhandling\x12M\n" +
 	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
+	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\x12\x18\n" +
+	"\aversion\x18\x0e \x01(\tR\aversion\"C\n" +
 	"\x0fPartDefinitions\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.product.v1.PartDefinitionR\x05items*\xcb\x02\n" +
 	"\bPartType\x12\x19\n" +

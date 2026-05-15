@@ -10,14 +10,14 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file service/v1/response.proto.
  */
 export const file_service_v1_response: GenFile = /*@__PURE__*/
-  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIiwKCFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCUKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw");
+  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIkYKCFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIYChBtYWluX21vZGlmaWVkX2lkGAMgASgJQqwBCg5jb20uc2VydmljZS52MUINUmVzcG9uc2VQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvc2VydmljZS92MTtzZXJ2aWNldjGiAgNTWFiqAhNNZXNzYWdlcy5TZXJ2aWNlLlYxygIKU2VydmljZVxWMeICFlNlcnZpY2VcVjFcR1BCTWV0YWRhdGHqAgtTZXJ2aWNlOjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message service.v1.Response
  */
 export type Response = Message<"service.v1.Response"> & {
   /**
-   * True if the request was carried out, false if an error occured
+   * True if the request was carried out, false if an error occurred
    *
    * @generated from field: bool success = 1;
    */
@@ -29,6 +29,13 @@ export type Response = Message<"service.v1.Response"> & {
    * @generated from field: string message = 2;
    */
   message: string;
+
+  /**
+   * Might contain an ID of the entity that mainly was modified (added, updated, deleted)
+   *
+   * @generated from field: string main_modified_id = 3;
+   */
+  mainModifiedId: string;
 };
 
 /**

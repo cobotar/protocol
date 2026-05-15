@@ -115,7 +115,7 @@ class PartHandlingProfile(_message.Message):
     def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_fixture_support: bool = ..., pre_lubrication_part_id: _Optional[str] = ..., post_lubrication_part_id: _Optional[str] = ..., requires_wiping: bool = ..., inspect_before_assemble: bool = ..., inspect_after_disassemble: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom", "version")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -129,6 +129,7 @@ class PartDefinition(_message.Message):
     HANDLING_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -142,7 +143,8 @@ class PartDefinition(_message.Message):
     handling: PartHandlingProfile
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    version: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ..., version: _Optional[str] = ...) -> None: ...
 
 class PartDefinitions(_message.Message):
     __slots__ = ("items",)

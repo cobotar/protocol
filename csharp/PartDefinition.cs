@@ -47,7 +47,7 @@ namespace Messages.Product.V1 {
             "ZRgJIAEoCFIXaW5zcGVjdEFmdGVyRGlzYXNzZW1ibGUSJwoQbWF4X2dyaXBf",
             "Zm9yY2VfbhgKIAEoAVINbWF4R3JpcEZvcmNlThIiCg1tYXhfdG9ycXVlX25t",
             "GAsgASgBUgttYXhUb3JxdWVObRI/Cgtjb25zdHJhaW50cxgMIAMoCzIdLmNv",
-            "bW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIssECg5Q",
+            "bW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIuUECg5Q",
             "YXJ0RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJ",
             "ukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3Jp",
             "cHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjIKBHR5cGUYBSABKA4yFC5wcm9k",
@@ -60,37 +60,37 @@ namespace Messages.Product.V1 {
             "IAEoCzIfLnByb2R1Y3QudjEuUGFydEhhbmRsaW5nUHJvZmlsZVIIaGFuZGxp",
             "bmcSTQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIcLmNvbW1vbi52MS5F",
             "eHRlcm5hbFJlZmVyZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2VzEjMKBmN1c3Rv",
-            "bRgNIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20i",
-            "QwoPUGFydERlZmluaXRpb25zEjAKBWl0ZW1zGAEgAygLMhoucHJvZHVjdC52",
-            "MS5QYXJ0RGVmaW5pdGlvblIFaXRlbXMqywIKCFBhcnRUeXBlEhkKFVBBUlRf",
-            "VFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIW",
-            "ChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1C",
-            "TFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9M",
-            "QUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1QQVJUX1RZUEVf",
-            "UENCEAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9ORU5UEAgSIgoe",
-            "UEFSVF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoPUEFSVF9UWVBF",
-            "X0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRFUklBTBALKpED",
-            "ChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BF",
-            "Q0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRF",
-            "UklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllf",
-            "RUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQS",
-            "HQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NB",
-            "VEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoK",
-            "Fk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09S",
-            "WV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09S",
-            "WV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEK",
-            "DmNvbS5wcm9kdWN0LnYxQhNQYXJ0RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1",
-            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3By",
-            "b2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0",
-            "XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZw",
-            "cm90bzM="));
+            "bRgNIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20S",
+            "GAoHdmVyc2lvbhgOIAEoCVIHdmVyc2lvbiJDCg9QYXJ0RGVmaW5pdGlvbnMS",
+            "MAoFaXRlbXMYASADKAsyGi5wcm9kdWN0LnYxLlBhcnREZWZpbml0aW9uUgVp",
+            "dGVtcyrLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "FwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5F",
+            "UhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9D",
+            "T05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBF",
+            "X1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVf",
+            "RUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNB",
+            "TF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZ",
+            "UEVfRElTUEVOU0VEX01BVEVSSUFMEAsqkQMKEE1hdGVyaWFsQ2F0ZWdvcnkS",
+            "IQodTUFURVJJQUxfQ0FURUdPUllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklB",
+            "TF9DQVRFR09SWV9NRVRBTBABEh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlN",
+            "RVIQAhIfChtNQVRFUklBTF9DQVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRF",
+            "UklBTF9DQVRFR09SWV9DT01QT1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09S",
+            "WV9DRVJBTUlDEAUSGwoXTUFURVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZN",
+            "QVRFUklBTF9DQVRFR09SWV9XT09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllf",
+            "Rk9BTRAIEisKJ01BVEVSSUFMX0NBVEVHT1JZX0VMRUNUUk9OSUNTX1NVQlNU",
+            "UkFURRAJEh4KGk1BVEVSSUFMX0NBVEVHT1JZX0NIRU1JQ0FMEAoSGwoXTUFU",
+            "RVJJQUxfQ0FURUdPUllfT1RIRVIQY0KyAQoOY29tLnByb2R1Y3QudjFCE1Bh",
+            "cnREZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVz",
+            "c2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQ",
+            "Qk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.Dimensions), global::Messages.Product.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.MaterialSpec), global::Messages.Product.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresFixtureSupport", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "InspectBeforeAssemble", "InspectAfterDisassemble", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinitions), global::Messages.Product.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -1411,6 +1411,7 @@ namespace Messages.Product.V1 {
       handling_ = other.handling_ != null ? other.handling_.Clone() : null;
       externalReferences_ = other.externalReferences_.Clone();
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
+      version_ = other.version_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1587,6 +1588,18 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 14;
+    private string version_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Version {
+      get { return version_; }
+      set {
+        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1615,6 +1628,7 @@ namespace Messages.Product.V1 {
       if (!object.Equals(Handling, other.Handling)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
+      if (Version != other.Version) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1635,6 +1649,7 @@ namespace Messages.Product.V1 {
       if (handling_ != null) hash ^= Handling.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
+      if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1702,6 +1717,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
+      if (Version.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(Version);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1761,6 +1780,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Custom);
       }
+      if (Version.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(Version);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1807,6 +1830,9 @@ namespace Messages.Product.V1 {
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (custom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
+      }
+      if (Version.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1868,6 +1894,9 @@ namespace Messages.Product.V1 {
           Custom = new global::Messages.Common.V1.CustomProperties();
         }
         Custom.MergeFrom(other.Custom);
+      }
+      if (other.Version.Length != 0) {
+        Version = other.Version;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1952,6 +1981,10 @@ namespace Messages.Product.V1 {
             input.ReadMessage(Custom);
             break;
           }
+          case 114: {
+            Version = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2033,6 +2066,10 @@ namespace Messages.Product.V1 {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
             input.ReadMessage(Custom);
+            break;
+          }
+          case 114: {
+            Version = input.ReadString();
             break;
           }
         }

@@ -24,17 +24,18 @@ namespace Messages.Service.V1 {
     static ResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIj4KCFJl",
+            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxImgKCFJl",
             "c3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3MSGAoHbWVzc2FnZRgC",
-            "IAEoCVIHbWVzc2FnZUKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJv",
-            "dG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Nl",
-            "cnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5W",
-            "McoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2Vy",
-            "dmljZTo6VjFiBnByb3RvMw=="));
+            "IAEoCVIHbWVzc2FnZRIoChBtYWluX21vZGlmaWVkX2lkGAMgASgJUg5tYWlu",
+            "TW9kaWZpZWRJZEKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9Q",
+            "AVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZp",
+            "Y2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoC",
+            "ClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2Vydmlj",
+            "ZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "Success", "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "Success", "Message", "MainModifiedId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +79,7 @@ namespace Messages.Service.V1 {
     public Response(Response other) : this() {
       success_ = other.success_;
       message_ = other.message_;
+      mainModifiedId_ = other.mainModifiedId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +93,7 @@ namespace Messages.Service.V1 {
     public const int SuccessFieldNumber = 1;
     private bool success_;
     /// <summary>
-    /// True if the request was carried out, false if an error occured
+    /// True if the request was carried out, false if an error occurred
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +119,21 @@ namespace Messages.Service.V1 {
       }
     }
 
+    /// <summary>Field number for the "main_modified_id" field.</summary>
+    public const int MainModifiedIdFieldNumber = 3;
+    private string mainModifiedId_ = "";
+    /// <summary>
+    /// Might contain an ID of the entity that mainly was modified (added, updated, deleted)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MainModifiedId {
+      get { return mainModifiedId_; }
+      set {
+        mainModifiedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -134,6 +151,7 @@ namespace Messages.Service.V1 {
       }
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
+      if (MainModifiedId != other.MainModifiedId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -143,6 +161,7 @@ namespace Messages.Service.V1 {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (MainModifiedId.Length != 0) hash ^= MainModifiedId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -169,6 +188,10 @@ namespace Messages.Service.V1 {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (MainModifiedId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(MainModifiedId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,6 +210,10 @@ namespace Messages.Service.V1 {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (MainModifiedId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(MainModifiedId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -202,6 +229,9 @@ namespace Messages.Service.V1 {
       }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (MainModifiedId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MainModifiedId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -220,6 +250,9 @@ namespace Messages.Service.V1 {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
+      }
+      if (other.MainModifiedId.Length != 0) {
+        MainModifiedId = other.MainModifiedId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -248,6 +281,10 @@ namespace Messages.Service.V1 {
             Message = input.ReadString();
             break;
           }
+          case 26: {
+            MainModifiedId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -273,6 +310,10 @@ namespace Messages.Service.V1 {
           }
           case 18: {
             Message = input.ReadString();
+            break;
+          }
+          case 26: {
+            MainModifiedId = input.ReadString();
             break;
           }
         }

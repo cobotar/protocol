@@ -6022,6 +6022,7 @@ name: TPU, grade: 70 Shore A
 | handling | [PartHandlingProfile](#product-v1-PartHandlingProfile) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
+| version | [string](#string) |  |  |
 
 
 
@@ -9152,8 +9153,9 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  | True if the request was carried out, false if an error occured |
+| success | [bool](#bool) |  | True if the request was carried out, false if an error occurred |
 | message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
+| main_modified_id | [string](#string) |  | Might contain an ID of the entity that mainly was modified (added, updated, deleted) |
 
 
 
