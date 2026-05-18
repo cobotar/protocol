@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -36,11 +35,96 @@ enum ModelFormat {
   MODEL_FORMAT_USDZ = 6;
 }
 
+enum ModelUnit {
+  MODEL_UNIT_UNSPECIFIED = 0;
+
+  // Metric
+  MODEL_UNIT_MILLIMETER = 1;
+  MODEL_UNIT_CENTIMETER = 2;
+  MODEL_UNIT_METER = 3;
+  MODEL_UNIT_KILOMETER = 4;
+
+  // Imperial
+  MODEL_UNIT_INCH = 10;
+  MODEL_UNIT_FOOT = 11;
+  MODEL_UNIT_YARD = 12;
+
+  // CAD / scientific
+  MODEL_UNIT_MICROMETER = 20;
+}
+
+enum ModelAxis {
+  MODEL_AXIS_UNSPECIFIED = 0;
+
+  MODEL_AXIS_POSITIVE_X = 1;
+  MODEL_AXIS_NEGATIVE_X = 2;
+
+  MODEL_AXIS_POSITIVE_Y = 3;
+  MODEL_AXIS_NEGATIVE_Y = 4;
+
+  MODEL_AXIS_POSITIVE_Z = 5;
+  MODEL_AXIS_NEGATIVE_Z = 6;
+}
+
+enum ModelStorageBackend {
+  MODEL_STORAGE_BACKEND_UNSPECIFIED = 0;
+  MODEL_STORAGE_BACKEND_BUILT_IN = 1;
+  MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE = 2;
+  MODEL_STORAGE_BACKEND_S3 = 3;
+  MODEL_STORAGE_BACKEND_MINIO = 4;
+  MODEL_STORAGE_BACKEND_LOCAL_FILE = 5;
+  MODEL_STORAGE_BACKEND_EXTERNAL_URL = 6;
+}
+
+/*
+Examples:
+asset {
+  backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+  bucket: "cobotar-assets"
+  object_key: "models/part-123.obj"
+  filename: "bracket.obj"
+  content_type: "model/obj"
+  size_bytes: 123456
+  sha256: "..."
+}
+thumbnail {
+  backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+  bucket: "cobotar-assets"
+  object_key: "thumbnails/part-123.png"
+  filename: "bracket.png"
+  content_type: "image/png"
+}
+
+asset {
+  backend: MODEL_STORAGE_BACKEND_BUILT_IN
+  filename: "models/robot_ur5e.glb"
+  content_type: "model/gltf-binary"
+}
+ */
+message StoredAssetRef {
+  ModelStorageBackend backend = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string bucket = 2;
+  string object_key = 3;
+  string uri = 4 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.uri = true
+  ];
+
+  string filename = 5;
+  string content_type = 6;
+  uint64 size_bytes = 7;
+  string sha256 = 8;
+}
+
 message ModelArtifact {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string description = 3;
   string icon = 4;
+
   ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
   ModelOrigin origin = 6 [
     (buf.validate.field).required = true,
@@ -51,29 +135,36 @@ message ModelArtifact {
     (buf.validate.field).enum.defined_only = true
   ];
 
-  // Filename is required for BUILT_IN models, ignored otherwise
-  string filename = 8;
+  // Primary loadable model asset.
+  StoredAssetRef asset = 8 [(buf.validate.field).required = true];
 
-  // Uri is required for uploaded and external models
-  string uri = 9 [
-    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
-    (buf.validate.field).string.uri = true
-  ];
+  // Optional preview image.
+  StoredAssetRef thumbnail = 9;
 
-  string thumbnail_uri = 10 [
-    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
-    (buf.validate.field).string.uri = true
-  ];
-
-  string version = 11;
+  string version = 10;
 
   // Unit used for the model geometry coordinates.
   // Typically "mm", "cm", "m", "in", etc.
   // Used to scale the model correctly when loading.
-  string unit = 12;
-  string up_axis = 13; // "X", "Y", "Z"
+  ModelUnit unit = 11 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Defines which axis is "up" in the source asset coordinate system.
+  // Examples: Unity: Y, Blender: Y, many CAD systems: Z
+  ModelAxis up_axis = 12 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // Defines which axis is "forward" in the source asset coordinate system.
+  // Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
+  ModelAxis forward_axis = 13 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
   repeated common.v1.ExternalReference external_references = 14;
-  common.v1.CustomProperties custom = 15;
 }
 
 message ModelArtifacts {

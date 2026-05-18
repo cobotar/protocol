@@ -69,20 +69,21 @@ message MaterialSpec {
 message PartHandlingProfile {
   bool fragile = 1;
   bool esd_sensitive = 2;
-  bool requires_two_hand_lift = 3;
-  bool requires_fixture_support = 4; // If true, this part cannot realistically be handled/assembled without some fixture support
+  bool requires_two_hand_lift = 3; // If true, the part is heavy, but possible to lift
+  bool requires_lifting_assistance = 4; // If true, the part is heavier than what an operator is allowed to lift.
+  bool requires_fixture_support = 5; // If true, this part cannot realistically be handled/assembled without some fixture support
 
   // If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
-  string pre_lubrication_part_id = 5;
-  string post_lubrication_part_id = 6;
-  bool requires_wiping = 7;
+  string pre_lubrication_part_id = 6;
+  string post_lubrication_part_id = 7;
+  bool requires_wiping = 8;
 
-  bool inspect_before_assemble = 8;
-  bool inspect_after_disassemble = 9;
+  bool inspect_before_assemble = 9;
+  bool inspect_after_disassemble = 10;
 
-  double max_grip_force_n = 10;
-  double max_torque_nm = 11;
-  repeated common.v1.KeyValueConstraint constraints = 12;
+  double max_grip_force_n = 11;
+  double max_torque_nm = 12;
+  repeated common.v1.KeyValueConstraint constraints = 13;
 }
 
 message PartDefinition {
