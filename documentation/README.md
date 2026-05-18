@@ -472,10 +472,14 @@
 - [resources/v1/model.proto](#resources_v1_model-proto)
     - [ModelArtifact](#resources-v1-ModelArtifact)
     - [ModelArtifacts](#resources-v1-ModelArtifacts)
+    - [StoredAssetRef](#resources-v1-StoredAssetRef)
   
+    - [ModelAxis](#resources-v1-ModelAxis)
     - [ModelFormat](#resources-v1-ModelFormat)
     - [ModelGroup](#resources-v1-ModelGroup)
     - [ModelOrigin](#resources-v1-ModelOrigin)
+    - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
+    - [ModelUnit](#resources-v1-ModelUnit)
   
 - [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
     - [RobotDefinition](#resources-v1-RobotDefinition)
@@ -6054,7 +6058,8 @@ name: TPU, grade: 70 Shore A
 | ----- | ---- | ----- | ----------- |
 | fragile | [bool](#bool) |  |  |
 | esd_sensitive | [bool](#bool) |  |  |
-| requires_two_hand_lift | [bool](#bool) |  |  |
+| requires_two_hand_lift | [bool](#bool) |  | If true, the part is heavy, but possible to lift |
+| requires_lifting_assistance | [bool](#bool) |  | If true, the part is heavier than what an operator is allowed to lift. |
 | requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
 | pre_lubrication_part_id | [string](#string) |  | If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly. |
 | post_lubrication_part_id | [string](#string) |  |  |
@@ -6962,14 +6967,13 @@ max_concurrent_processes and the statuses of child cells/stations.
 | group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
 | origin | [ModelOrigin](#resources-v1-ModelOrigin) |  |  |
 | format | [ModelFormat](#resources-v1-ModelFormat) |  |  |
-| filename | [string](#string) |  | Filename is required for BUILT_IN models, ignored otherwise |
-| uri | [string](#string) |  | Uri is required for uploaded and external models |
-| thumbnail_uri | [string](#string) |  |  |
+| asset | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Primary loadable model asset. |
+| thumbnail | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Optional preview image. |
 | version | [string](#string) |  |  |
-| unit | [string](#string) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
-| up_axis | [string](#string) |  | &#34;X&#34;, &#34;Y&#34;, &#34;Z&#34; |
+| unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
+| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Y, many CAD systems: Z |
+| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6990,7 +6994,68 @@ max_concurrent_processes and the statuses of child cells/stations.
 
 
 
+
+<a name="resources-v1-StoredAssetRef"></a>
+
+### StoredAssetRef
+Examples:
+asset {
+backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+bucket: &#34;cobotar-assets&#34;
+object_key: &#34;models/part-123.obj&#34;
+filename: &#34;bracket.obj&#34;
+content_type: &#34;model/obj&#34;
+size_bytes: 123456
+sha256: &#34;...&#34;
+}
+thumbnail {
+backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+bucket: &#34;cobotar-assets&#34;
+object_key: &#34;thumbnails/part-123.png&#34;
+filename: &#34;bracket.png&#34;
+content_type: &#34;image/png&#34;
+}
+
+asset {
+backend: MODEL_STORAGE_BACKEND_BUILT_IN
+filename: &#34;models/robot_ur5e.glb&#34;
+content_type: &#34;model/gltf-binary&#34;
+}
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| backend | [ModelStorageBackend](#resources-v1-ModelStorageBackend) |  |  |
+| bucket | [string](#string) |  |  |
+| object_key | [string](#string) |  |  |
+| uri | [string](#string) |  |  |
+| filename | [string](#string) |  |  |
+| content_type | [string](#string) |  |  |
+| size_bytes | [uint64](#uint64) |  |  |
+| sha256 | [string](#string) |  |  |
+
+
+
+
+
  
+
+
+<a name="resources-v1-ModelAxis"></a>
+
+### ModelAxis
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_AXIS_UNSPECIFIED | 0 |  |
+| MODEL_AXIS_POSITIVE_X | 1 |  |
+| MODEL_AXIS_NEGATIVE_X | 2 |  |
+| MODEL_AXIS_POSITIVE_Y | 3 |  |
+| MODEL_AXIS_NEGATIVE_Y | 4 |  |
+| MODEL_AXIS_POSITIVE_Z | 5 |  |
+| MODEL_AXIS_NEGATIVE_Z | 6 |  |
+
 
 
 <a name="resources-v1-ModelFormat"></a>
@@ -7038,6 +7103,42 @@ max_concurrent_processes and the statuses of child cells/stations.
 | MODEL_ORIGIN_BUILT_IN | 1 |  |
 | MODEL_ORIGIN_UPLOADED | 2 |  |
 | MODEL_ORIGIN_EXTERNAL | 3 |  |
+
+
+
+<a name="resources-v1-ModelStorageBackend"></a>
+
+### ModelStorageBackend
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_STORAGE_BACKEND_UNSPECIFIED | 0 |  |
+| MODEL_STORAGE_BACKEND_BUILT_IN | 1 |  |
+| MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE | 2 |  |
+| MODEL_STORAGE_BACKEND_S3 | 3 |  |
+| MODEL_STORAGE_BACKEND_MINIO | 4 |  |
+| MODEL_STORAGE_BACKEND_LOCAL_FILE | 5 |  |
+| MODEL_STORAGE_BACKEND_EXTERNAL_URL | 6 |  |
+
+
+
+<a name="resources-v1-ModelUnit"></a>
+
+### ModelUnit
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_UNIT_UNSPECIFIED | 0 |  |
+| MODEL_UNIT_MILLIMETER | 1 | Metric |
+| MODEL_UNIT_CENTIMETER | 2 |  |
+| MODEL_UNIT_METER | 3 |  |
+| MODEL_UNIT_KILOMETER | 4 |  |
+| MODEL_UNIT_INCH | 10 | Imperial |
+| MODEL_UNIT_FOOT | 11 |  |
+| MODEL_UNIT_YARD | 12 |  |
+| MODEL_UNIT_MICROMETER | 20 | CAD / scientific |
 
 
  

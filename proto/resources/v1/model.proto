@@ -77,30 +77,30 @@ enum ModelStorageBackend {
 }
 
 /*
-Examples:
-asset {
-  backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
-  bucket: "cobotar-assets"
-  object_key: "models/part-123.obj"
-  filename: "bracket.obj"
-  content_type: "model/obj"
-  size_bytes: 123456
-  sha256: "..."
-}
-thumbnail {
-  backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
-  bucket: "cobotar-assets"
-  object_key: "thumbnails/part-123.png"
-  filename: "bracket.png"
-  content_type: "image/png"
-}
+   Examples:
+   asset {
+     backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+     bucket: "cobotar-assets"
+     object_key: "models/part-123.obj"
+     filename: "bracket.obj"
+     content_type: "model/obj"
+     size_bytes: 123456
+     sha256: "..."
+   }
+   thumbnail {
+     backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+     bucket: "cobotar-assets"
+     object_key: "thumbnails/part-123.png"
+     filename: "bracket.png"
+     content_type: "image/png"
+   }
 
-asset {
-  backend: MODEL_STORAGE_BACKEND_BUILT_IN
-  filename: "models/robot_ur5e.glb"
-  content_type: "model/gltf-binary"
-}
- */
+   asset {
+     backend: MODEL_STORAGE_BACKEND_BUILT_IN
+     filename: "models/robot_ur5e.glb"
+     content_type: "model/gltf-binary"
+   }
+*/
 message StoredAssetRef {
   ModelStorageBackend backend = 1 [
     (buf.validate.field).required = true,

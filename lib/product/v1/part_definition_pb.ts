@@ -18,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/part_definition.proto.
  */
 export const file_product_v1_part_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiBwcm9kdWN0L3YxL3BhcnRfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSJmCgpEaW1lbnNpb25zEhwKBHhfbW0YASABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHlfbW0YAiABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHpfbW0YAyABKAFCDrpICxIJKQAAAAAAAAAAIlsKDE1hdGVyaWFsU3BlYxIuCghjYXRlZ29yeRgBIAEoDjIcLnByb2R1Y3QudjEuTWF0ZXJpYWxDYXRlZ29yeRIMCgRuYW1lGAIgASgJEg0KBWdyYWRlGAMgASgJIoQDChNQYXJ0SGFuZGxpbmdQcm9maWxlEg8KB2ZyYWdpbGUYASABKAgSFQoNZXNkX3NlbnNpdGl2ZRgCIAEoCBIeChZyZXF1aXJlc190d29faGFuZF9saWZ0GAMgASgIEiAKGHJlcXVpcmVzX2ZpeHR1cmVfc3VwcG9ydBgEIAEoCBIfChdwcmVfbHVicmljYXRpb25fcGFydF9pZBgFIAEoCRIgChhwb3N0X2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAkSFwoPcmVxdWlyZXNfd2lwaW5nGAcgASgIEh8KF2luc3BlY3RfYmVmb3JlX2Fzc2VtYmxlGAggASgIEiEKGWluc3BlY3RfYWZ0ZXJfZGlzYXNzZW1ibGUYCSABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgKIAEoARIVCg1tYXhfdG9ycXVlX25tGAsgASgBEjIKC2NvbnN0cmFpbnRzGAwgAygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludCLbAwoOUGFydERlZmluaXRpb24SCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIULnByb2R1Y3QudjEuUGFydFR5cGVCCLpIBYIBAhABEg8KB3N1YnR5cGUYBiABKAkSGQoId2VpZ2h0X2cYByABKANCB7pIBCICKAASKgoKZGltZW5zaW9ucxgIIAEoCzIWLnByb2R1Y3QudjEuRGltZW5zaW9ucxIqCghtYXRlcmlhbBgJIAEoCzIYLnByb2R1Y3QudjEuTWF0ZXJpYWxTcGVjEiMKEGRlZmF1bHRfbW9kZWxfaWQYCiABKAlCCbpIBnIEiPEEARIxCghoYW5kbGluZxgLIAEoCzIfLnByb2R1Y3QudjEuUGFydEhhbmRsaW5nUHJvZmlsZRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEisKBmN1c3RvbRgNIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzEg8KB3ZlcnNpb24YDiABKAkiPAoPUGFydERlZmluaXRpb25zEikKBWl0ZW1zGAEgAygLMhoucHJvZHVjdC52MS5QYXJ0RGVmaW5pdGlvbirLAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRfVFlQRV9GQVNURU5FUhACEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRADEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19DT01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQCRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VEX01BVEVSSUFMEAsqkQMKEE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFURVJJQUxfQ0FURUdPUllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklBTF9DQVRFR09SWV9NRVRBTBABEh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIfChtNQVRFUklBTF9DQVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRFUklBTF9DQVRFR09SWV9DT01QT1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09SWV9DRVJBTUlDEAUSGwoXTUFURVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZNQVRFUklBTF9DQVRFR09SWV9XT09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEisKJ01BVEVSSUFMX0NBVEVHT1JZX0VMRUNUUk9OSUNTX1NVQlNUUkFURRAJEh4KGk1BVEVSSUFMX0NBVEVHT1JZX0NIRU1JQ0FMEAoSGwoXTUFURVJJQUxfQ0FURUdPUllfT1RIRVIQY0KyAQoOY29tLnByb2R1Y3QudjFCE1BhcnREZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_common_v1_key_value_constraint, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiBwcm9kdWN0L3YxL3BhcnRfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSJmCgpEaW1lbnNpb25zEhwKBHhfbW0YASABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHlfbW0YAiABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHpfbW0YAyABKAFCDrpICxIJKQAAAAAAAAAAIlsKDE1hdGVyaWFsU3BlYxIuCghjYXRlZ29yeRgBIAEoDjIcLnByb2R1Y3QudjEuTWF0ZXJpYWxDYXRlZ29yeRIMCgRuYW1lGAIgASgJEg0KBWdyYWRlGAMgASgJIqkDChNQYXJ0SGFuZGxpbmdQcm9maWxlEg8KB2ZyYWdpbGUYASABKAgSFQoNZXNkX3NlbnNpdGl2ZRgCIAEoCBIeChZyZXF1aXJlc190d29faGFuZF9saWZ0GAMgASgIEiMKG3JlcXVpcmVzX2xpZnRpbmdfYXNzaXN0YW5jZRgEIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBSABKAgSHwoXcHJlX2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAkSIAoYcG9zdF9sdWJyaWNhdGlvbl9wYXJ0X2lkGAcgASgJEhcKD3JlcXVpcmVzX3dpcGluZxgIIAEoCBIfChdpbnNwZWN0X2JlZm9yZV9hc3NlbWJsZRgJIAEoCBIhChlpbnNwZWN0X2FmdGVyX2Rpc2Fzc2VtYmxlGAogASgIEhgKEG1heF9ncmlwX2ZvcmNlX24YCyABKAESFQoNbWF4X3RvcnF1ZV9ubRgMIAEoARIyCgtjb25zdHJhaW50cxgNIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnQi2wMKDlBhcnREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yFC5wcm9kdWN0LnYxLlBhcnRUeXBlQgi6SAWCAQIQARIPCgdzdWJ0eXBlGAYgASgJEhkKCHdlaWdodF9nGAcgASgDQge6SAQiAigAEioKCmRpbWVuc2lvbnMYCCABKAsyFi5wcm9kdWN0LnYxLkRpbWVuc2lvbnMSKgoIbWF0ZXJpYWwYCSABKAsyGC5wcm9kdWN0LnYxLk1hdGVyaWFsU3BlYxIjChBkZWZhdWx0X21vZGVsX2lkGAogASgJQgm6SAZyBIjxBAESMQoIaGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZRIrCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcxIPCgd2ZXJzaW9uGA4gASgJIjwKD1BhcnREZWZpbml0aW9ucxIpCgVpdGVtcxgBIAMoCzIaLnByb2R1Y3QudjEuUGFydERlZmluaXRpb24qywIKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1CTFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1QQVJUX1RZUEVfUENCEAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9ORU5UEAgSIgoeUEFSVF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoPUEFSVF9UWVBFX0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRFUklBTBALKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKDmNvbS5wcm9kdWN0LnYxQhNQYXJ0RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_common_v1_key_value_constraint, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message product.v1.Dimensions
@@ -107,56 +107,65 @@ export type PartHandlingProfile = Message<"product.v1.PartHandlingProfile"> & {
   esdSensitive: boolean;
 
   /**
+   * If true, the part is heavy, but possible to lift
+   *
    * @generated from field: bool requires_two_hand_lift = 3;
    */
   requiresTwoHandLift: boolean;
 
   /**
+   * If true, the part is heavier than what an operator is allowed to lift.
+   *
+   * @generated from field: bool requires_lifting_assistance = 4;
+   */
+  requiresLiftingAssistance: boolean;
+
+  /**
    * If true, this part cannot realistically be handled/assembled without some fixture support
    *
-   * @generated from field: bool requires_fixture_support = 4;
+   * @generated from field: bool requires_fixture_support = 5;
    */
   requiresFixtureSupport: boolean;
 
   /**
    * If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
    *
-   * @generated from field: string pre_lubrication_part_id = 5;
+   * @generated from field: string pre_lubrication_part_id = 6;
    */
   preLubricationPartId: string;
 
   /**
-   * @generated from field: string post_lubrication_part_id = 6;
+   * @generated from field: string post_lubrication_part_id = 7;
    */
   postLubricationPartId: string;
 
   /**
-   * @generated from field: bool requires_wiping = 7;
+   * @generated from field: bool requires_wiping = 8;
    */
   requiresWiping: boolean;
 
   /**
-   * @generated from field: bool inspect_before_assemble = 8;
+   * @generated from field: bool inspect_before_assemble = 9;
    */
   inspectBeforeAssemble: boolean;
 
   /**
-   * @generated from field: bool inspect_after_disassemble = 9;
+   * @generated from field: bool inspect_after_disassemble = 10;
    */
   inspectAfterDisassemble: boolean;
 
   /**
-   * @generated from field: double max_grip_force_n = 10;
+   * @generated from field: double max_grip_force_n = 11;
    */
   maxGripForceN: number;
 
   /**
-   * @generated from field: double max_torque_nm = 11;
+   * @generated from field: double max_torque_nm = 12;
    */
   maxTorqueNm: number;
 
   /**
-   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 12;
+   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 13;
    */
   constraints: KeyValueConstraint[];
 };

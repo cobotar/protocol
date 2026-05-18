@@ -25,44 +25,69 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhyZXNvdXJjZXMvdjEvbW9kZWwucHJvdG8SDHJlc291cmNlcy52MRobYnVm",
-            "L3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEvY3VzdG9tX3By",
-            "b3BlcnRpZXMucHJvdG8aI2NvbW1vbi92MS9leHRlcm5hbF9yZWZlcmVuY2Vz",
-            "LnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVz",
-            "LnByb3RvIuYECg1Nb2RlbEFydGlmYWN0Eg4KAmlkGAEgASgJUgJpZBIdCgRu",
-            "YW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyAB",
-            "KAlSC2Rlc2NyaXB0aW9uEhIKBGljb24YBCABKAlSBGljb24SOAoFZ3JvdXAY",
-            "BSABKA4yGC5yZXNvdXJjZXMudjEuTW9kZWxHcm91cEIIukgFggECEAFSBWdy",
-            "b3VwEj4KBm9yaWdpbhgGIAEoDjIZLnJlc291cmNlcy52MS5Nb2RlbE9yaWdp",
-            "bkILukgIggECEAHIAQFSBm9yaWdpbhI+CgZmb3JtYXQYByABKA4yGS5yZXNv",
-            "dXJjZXMudjEuTW9kZWxGb3JtYXRCC7pICIIBAhAByAEBUgZmb3JtYXQSGgoI",
-            "ZmlsZW5hbWUYCCABKAlSCGZpbGVuYW1lEh0KA3VyaRgJIAEoCUILukgIcgOI",
-            "AQHYAQFSA3VyaRIwCg10aHVtYm5haWxfdXJpGAogASgJQgu6SAhyA4gBAdgB",
-            "AVIMdGh1bWJuYWlsVXJpEhgKB3ZlcnNpb24YCyABKAlSB3ZlcnNpb24SEgoE",
-            "dW5pdBgMIAEoCVIEdW5pdBIXCgd1cF9heGlzGA0gASgJUgZ1cEF4aXMSTQoT",
-            "ZXh0ZXJuYWxfcmVmZXJlbmNlcxgOIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5h",
-            "bFJlZmVyZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2VzEjMKBmN1c3RvbRgPIAEo",
-            "CzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iQwoOTW9k",
-            "ZWxBcnRpZmFjdHMSMQoFaXRlbXMYASADKAsyGy5yZXNvdXJjZXMudjEuTW9k",
-            "ZWxBcnRpZmFjdFIFaXRlbXMqtwEKCk1vZGVsR3JvdXASGwoXTU9ERUxfR1JP",
-            "VVBfVU5TUEVDSUZJRUQQABIUChBNT0RFTF9HUk9VUF9QQVJUEAESFwoTTU9E",
-            "RUxfR1JPVVBfUFJPRFVDVBACEhQKEE1PREVMX0dST1VQX1RPT0wQAxIVChFN",
-            "T0RFTF9HUk9VUF9ST0JPVBAEEhkKFU1PREVMX0dST1VQX0NPTlRBSU5FUhAF",
-            "EhUKEU1PREVMX0dST1VQX0FTU0VUEAYqfAoLTW9kZWxPcmlnaW4SHAoYTU9E",
-            "RUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJR0lOX0JVSUxU",
-            "X0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoVTU9ERUxfT1JJ",
-            "R0lOX0VYVEVSTkFMEAMqsgEKC01vZGVsRm9ybWF0EhwKGE1PREVMX0ZPUk1B",
-            "VF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0ZPUk1BVF9HTEIQARIVChFNT0RF",
-            "TF9GT1JNQVRfR0xURhACEhQKEE1PREVMX0ZPUk1BVF9PQkoQAxIVChFNT0RF",
-            "TF9GT1JNQVRfU1RFUBAEEhQKEE1PREVMX0ZPUk1BVF9TVEwQBRIVChFNT0RF",
-            "TF9GT1JNQVRfVVNEWhAGQrcBChBjb20ucmVzb3VyY2VzLnYxQgpNb2RlbFBy",
-            "b3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9y",
-            "ZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNv",
-            "dXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0",
-            "YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
+            "L3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiNjb21tb24vdjEvZXh0ZXJuYWxf",
+            "cmVmZXJlbmNlcy5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0",
+            "cmluZ19ydWxlcy5wcm90byKmAgoOU3RvcmVkQXNzZXRSZWYSSAoHYmFja2Vu",
+            "ZBgBIAEoDjIhLnJlc291cmNlcy52MS5Nb2RlbFN0b3JhZ2VCYWNrZW5kQgu6",
+            "SAiCAQIQAcgBAVIHYmFja2VuZBIWCgZidWNrZXQYAiABKAlSBmJ1Y2tldBId",
+            "CgpvYmplY3Rfa2V5GAMgASgJUglvYmplY3RLZXkSHQoDdXJpGAQgASgJQgu6",
+            "SAhyA4gBAdgBAVIDdXJpEhoKCGZpbGVuYW1lGAUgASgJUghmaWxlbmFtZRIh",
+            "Cgxjb250ZW50X3R5cGUYBiABKAlSC2NvbnRlbnRUeXBlEh0KCnNpemVfYnl0",
+            "ZXMYByABKARSCXNpemVCeXRlcxIWCgZzaGEyNTYYCCABKAlSBnNoYTI1NiLR",
+            "BQoNTW9kZWxBcnRpZmFjdBIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEo",
+            "CUIJukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNj",
+            "cmlwdGlvbhISCgRpY29uGAQgASgJUgRpY29uEjgKBWdyb3VwGAUgASgOMhgu",
+            "cmVzb3VyY2VzLnYxLk1vZGVsR3JvdXBCCLpIBYIBAhABUgVncm91cBI+CgZv",
+            "cmlnaW4YBiABKA4yGS5yZXNvdXJjZXMudjEuTW9kZWxPcmlnaW5CC7pICIIB",
+            "AhAByAEBUgZvcmlnaW4SPgoGZm9ybWF0GAcgASgOMhkucmVzb3VyY2VzLnYx",
+            "Lk1vZGVsRm9ybWF0Qgu6SAiCAQIQAcgBAVIGZm9ybWF0EjoKBWFzc2V0GAgg",
+            "ASgLMhwucmVzb3VyY2VzLnYxLlN0b3JlZEFzc2V0UmVmQga6SAPIAQFSBWFz",
+            "c2V0EjoKCXRodW1ibmFpbBgJIAEoCzIcLnJlc291cmNlcy52MS5TdG9yZWRB",
+            "c3NldFJlZlIJdGh1bWJuYWlsEhgKB3ZlcnNpb24YCiABKAlSB3ZlcnNpb24S",
+            "OAoEdW5pdBgLIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbFVuaXRCC7pICIIB",
+            "AhAByAEBUgR1bml0Ej0KB3VwX2F4aXMYDCABKA4yFy5yZXNvdXJjZXMudjEu",
+            "TW9kZWxBeGlzQgu6SAiCAQIQAcgBAVIGdXBBeGlzEkcKDGZvcndhcmRfYXhp",
+            "cxgNIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbEF4aXNCC7pICIIBAhAByAEB",
+            "Ugtmb3J3YXJkQXhpcxJNChNleHRlcm5hbF9yZWZlcmVuY2VzGA4gAygLMhwu",
+            "Y29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5j",
+            "ZXMiQwoOTW9kZWxBcnRpZmFjdHMSMQoFaXRlbXMYASADKAsyGy5yZXNvdXJj",
+            "ZXMudjEuTW9kZWxBcnRpZmFjdFIFaXRlbXMqtwEKCk1vZGVsR3JvdXASGwoX",
+            "TU9ERUxfR1JPVVBfVU5TUEVDSUZJRUQQABIUChBNT0RFTF9HUk9VUF9QQVJU",
+            "EAESFwoTTU9ERUxfR1JPVVBfUFJPRFVDVBACEhQKEE1PREVMX0dST1VQX1RP",
+            "T0wQAxIVChFNT0RFTF9HUk9VUF9ST0JPVBAEEhkKFU1PREVMX0dST1VQX0NP",
+            "TlRBSU5FUhAFEhUKEU1PREVMX0dST1VQX0FTU0VUEAYqfAoLTW9kZWxPcmln",
+            "aW4SHAoYTU9ERUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJ",
+            "R0lOX0JVSUxUX0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoV",
+            "TU9ERUxfT1JJR0lOX0VYVEVSTkFMEAMqsgEKC01vZGVsRm9ybWF0EhwKGE1P",
+            "REVMX0ZPUk1BVF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0ZPUk1BVF9HTEIQ",
+            "ARIVChFNT0RFTF9GT1JNQVRfR0xURhACEhQKEE1PREVMX0ZPUk1BVF9PQkoQ",
+            "AxIVChFNT0RFTF9GT1JNQVRfU1RFUBAEEhQKEE1PREVMX0ZPUk1BVF9TVEwQ",
+            "BRIVChFNT0RFTF9GT1JNQVRfVVNEWhAGKucBCglNb2RlbFVuaXQSGgoWTU9E",
+            "RUxfVU5JVF9VTlNQRUNJRklFRBAAEhkKFU1PREVMX1VOSVRfTUlMTElNRVRF",
+            "UhABEhkKFU1PREVMX1VOSVRfQ0VOVElNRVRFUhACEhQKEE1PREVMX1VOSVRf",
+            "TUVURVIQAxIYChRNT0RFTF9VTklUX0tJTE9NRVRFUhAEEhMKD01PREVMX1VO",
+            "SVRfSU5DSBAKEhMKD01PREVMX1VOSVRfRk9PVBALEhMKD01PREVMX1VOSVRf",
+            "WUFSRBAMEhkKFU1PREVMX1VOSVRfTUlDUk9NRVRFUhAUKskBCglNb2RlbEF4",
+            "aXMSGgoWTU9ERUxfQVhJU19VTlNQRUNJRklFRBAAEhkKFU1PREVMX0FYSVNf",
+            "UE9TSVRJVkVfWBABEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWBACEhkKFU1P",
+            "REVMX0FYSVNfUE9TSVRJVkVfWRADEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVf",
+            "WRAEEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWhAFEhkKFU1PREVMX0FYSVNf",
+            "TkVHQVRJVkVfWhAGKpoCChNNb2RlbFN0b3JhZ2VCYWNrZW5kEiUKIU1PREVM",
+            "X1NUT1JBR0VfQkFDS0VORF9VTlNQRUNJRklFRBAAEiIKHk1PREVMX1NUT1JB",
+            "R0VfQkFDS0VORF9CVUlMVF9JThABEisKJ01PREVMX1NUT1JBR0VfQkFDS0VO",
+            "RF9OQVRTX09CSkVDVF9TVE9SRRACEhwKGE1PREVMX1NUT1JBR0VfQkFDS0VO",
+            "RF9TMxADEh8KG01PREVMX1NUT1JBR0VfQkFDS0VORF9NSU5JTxAEEiQKIE1P",
+            "REVMX1NUT1JBR0VfQkFDS0VORF9MT0NBTF9GSUxFEAUSJgoiTU9ERUxfU1RP",
+            "UkFHRV9CQUNLRU5EX0VYVEVSTkFMX1VSTBAGQrcBChBjb20ucmVzb3VyY2Vz",
+            "LnYxQgpNb2RlbFByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVN",
+            "ZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJj",
+            "ZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ModelGroup), typeof(global::Messages.Resources.V1.ModelOrigin), typeof(global::Messages.Resources.V1.ModelFormat), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelArtifact), global::Messages.Resources.V1.ModelArtifact.Parser, new[]{ "Id", "Name", "Description", "Icon", "Group", "Origin", "Format", "Filename", "Uri", "ThumbnailUri", "Version", "Unit", "UpAxis", "ExternalReferences", "Custom" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ModelGroup), typeof(global::Messages.Resources.V1.ModelOrigin), typeof(global::Messages.Resources.V1.ModelFormat), typeof(global::Messages.Resources.V1.ModelUnit), typeof(global::Messages.Resources.V1.ModelAxis), typeof(global::Messages.Resources.V1.ModelStorageBackend), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StoredAssetRef), global::Messages.Resources.V1.StoredAssetRef.Parser, new[]{ "Backend", "Bucket", "ObjectKey", "Uri", "Filename", "ContentType", "SizeBytes", "Sha256" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelArtifact), global::Messages.Resources.V1.ModelArtifact.Parser, new[]{ "Id", "Name", "Description", "Icon", "Group", "Origin", "Format", "Asset", "Thumbnail", "Version", "Unit", "UpAxis", "ForwardAxis", "ExternalReferences" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelArtifacts), global::Messages.Resources.V1.ModelArtifacts.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -97,9 +122,533 @@ namespace Messages.Resources.V1 {
     [pbr::OriginalName("MODEL_FORMAT_USDZ")] Usdz = 6,
   }
 
+  public enum ModelUnit {
+    [pbr::OriginalName("MODEL_UNIT_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Metric
+    /// </summary>
+    [pbr::OriginalName("MODEL_UNIT_MILLIMETER")] Millimeter = 1,
+    [pbr::OriginalName("MODEL_UNIT_CENTIMETER")] Centimeter = 2,
+    [pbr::OriginalName("MODEL_UNIT_METER")] Meter = 3,
+    [pbr::OriginalName("MODEL_UNIT_KILOMETER")] Kilometer = 4,
+    /// <summary>
+    /// Imperial
+    /// </summary>
+    [pbr::OriginalName("MODEL_UNIT_INCH")] Inch = 10,
+    [pbr::OriginalName("MODEL_UNIT_FOOT")] Foot = 11,
+    [pbr::OriginalName("MODEL_UNIT_YARD")] Yard = 12,
+    /// <summary>
+    /// CAD / scientific
+    /// </summary>
+    [pbr::OriginalName("MODEL_UNIT_MICROMETER")] Micrometer = 20,
+  }
+
+  public enum ModelAxis {
+    [pbr::OriginalName("MODEL_AXIS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("MODEL_AXIS_POSITIVE_X")] PositiveX = 1,
+    [pbr::OriginalName("MODEL_AXIS_NEGATIVE_X")] NegativeX = 2,
+    [pbr::OriginalName("MODEL_AXIS_POSITIVE_Y")] PositiveY = 3,
+    [pbr::OriginalName("MODEL_AXIS_NEGATIVE_Y")] NegativeY = 4,
+    [pbr::OriginalName("MODEL_AXIS_POSITIVE_Z")] PositiveZ = 5,
+    [pbr::OriginalName("MODEL_AXIS_NEGATIVE_Z")] NegativeZ = 6,
+  }
+
+  public enum ModelStorageBackend {
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_BUILT_IN")] BuiltIn = 1,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE")] NatsObjectStore = 2,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_S3")] S3 = 3,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_MINIO")] Minio = 4,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_LOCAL_FILE")] LocalFile = 5,
+    [pbr::OriginalName("MODEL_STORAGE_BACKEND_EXTERNAL_URL")] ExternalUrl = 6,
+  }
+
   #endregion
 
   #region Messages
+  /// <summary>
+  ///
+  ///Examples:
+  ///asset {
+  ///backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+  ///bucket: "cobotar-assets"
+  ///object_key: "models/part-123.obj"
+  ///filename: "bracket.obj"
+  ///content_type: "model/obj"
+  ///size_bytes: 123456
+  ///sha256: "..."
+  ///}
+  ///thumbnail {
+  ///backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+  ///bucket: "cobotar-assets"
+  ///object_key: "thumbnails/part-123.png"
+  ///filename: "bracket.png"
+  ///content_type: "image/png"
+  ///}
+  ///
+  ///asset {
+  ///backend: MODEL_STORAGE_BACKEND_BUILT_IN
+  ///filename: "models/robot_ur5e.glb"
+  ///content_type: "model/gltf-binary"
+  ///}
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class StoredAssetRef : pb::IMessage<StoredAssetRef>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<StoredAssetRef> _parser = new pb::MessageParser<StoredAssetRef>(() => new StoredAssetRef());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<StoredAssetRef> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Resources.V1.ModelReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredAssetRef() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredAssetRef(StoredAssetRef other) : this() {
+      backend_ = other.backend_;
+      bucket_ = other.bucket_;
+      objectKey_ = other.objectKey_;
+      uri_ = other.uri_;
+      filename_ = other.filename_;
+      contentType_ = other.contentType_;
+      sizeBytes_ = other.sizeBytes_;
+      sha256_ = other.sha256_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoredAssetRef Clone() {
+      return new StoredAssetRef(this);
+    }
+
+    /// <summary>Field number for the "backend" field.</summary>
+    public const int BackendFieldNumber = 1;
+    private global::Messages.Resources.V1.ModelStorageBackend backend_ = global::Messages.Resources.V1.ModelStorageBackend.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ModelStorageBackend Backend {
+      get { return backend_; }
+      set {
+        backend_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bucket" field.</summary>
+    public const int BucketFieldNumber = 2;
+    private string bucket_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Bucket {
+      get { return bucket_; }
+      set {
+        bucket_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "object_key" field.</summary>
+    public const int ObjectKeyFieldNumber = 3;
+    private string objectKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ObjectKey {
+      get { return objectKey_; }
+      set {
+        objectKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "uri" field.</summary>
+    public const int UriFieldNumber = 4;
+    private string uri_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uri {
+      get { return uri_; }
+      set {
+        uri_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "filename" field.</summary>
+    public const int FilenameFieldNumber = 5;
+    private string filename_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Filename {
+      get { return filename_; }
+      set {
+        filename_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "content_type" field.</summary>
+    public const int ContentTypeFieldNumber = 6;
+    private string contentType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ContentType {
+      get { return contentType_; }
+      set {
+        contentType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "size_bytes" field.</summary>
+    public const int SizeBytesFieldNumber = 7;
+    private ulong sizeBytes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong SizeBytes {
+      get { return sizeBytes_; }
+      set {
+        sizeBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sha256" field.</summary>
+    public const int Sha256FieldNumber = 8;
+    private string sha256_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Sha256 {
+      get { return sha256_; }
+      set {
+        sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as StoredAssetRef);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(StoredAssetRef other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Backend != other.Backend) return false;
+      if (Bucket != other.Bucket) return false;
+      if (ObjectKey != other.ObjectKey) return false;
+      if (Uri != other.Uri) return false;
+      if (Filename != other.Filename) return false;
+      if (ContentType != other.ContentType) return false;
+      if (SizeBytes != other.SizeBytes) return false;
+      if (Sha256 != other.Sha256) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Backend != global::Messages.Resources.V1.ModelStorageBackend.Unspecified) hash ^= Backend.GetHashCode();
+      if (Bucket.Length != 0) hash ^= Bucket.GetHashCode();
+      if (ObjectKey.Length != 0) hash ^= ObjectKey.GetHashCode();
+      if (Uri.Length != 0) hash ^= Uri.GetHashCode();
+      if (Filename.Length != 0) hash ^= Filename.GetHashCode();
+      if (ContentType.Length != 0) hash ^= ContentType.GetHashCode();
+      if (SizeBytes != 0UL) hash ^= SizeBytes.GetHashCode();
+      if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Backend != global::Messages.Resources.V1.ModelStorageBackend.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Backend);
+      }
+      if (Bucket.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Bucket);
+      }
+      if (ObjectKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ObjectKey);
+      }
+      if (Uri.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Uri);
+      }
+      if (Filename.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Filename);
+      }
+      if (ContentType.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ContentType);
+      }
+      if (SizeBytes != 0UL) {
+        output.WriteRawTag(56);
+        output.WriteUInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Sha256);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Backend != global::Messages.Resources.V1.ModelStorageBackend.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Backend);
+      }
+      if (Bucket.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Bucket);
+      }
+      if (ObjectKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ObjectKey);
+      }
+      if (Uri.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Uri);
+      }
+      if (Filename.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Filename);
+      }
+      if (ContentType.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ContentType);
+      }
+      if (SizeBytes != 0UL) {
+        output.WriteRawTag(56);
+        output.WriteUInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Sha256);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Backend != global::Messages.Resources.V1.ModelStorageBackend.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Backend);
+      }
+      if (Bucket.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Bucket);
+      }
+      if (ObjectKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ObjectKey);
+      }
+      if (Uri.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uri);
+      }
+      if (Filename.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filename);
+      }
+      if (ContentType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ContentType);
+      }
+      if (SizeBytes != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sha256);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(StoredAssetRef other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Backend != global::Messages.Resources.V1.ModelStorageBackend.Unspecified) {
+        Backend = other.Backend;
+      }
+      if (other.Bucket.Length != 0) {
+        Bucket = other.Bucket;
+      }
+      if (other.ObjectKey.Length != 0) {
+        ObjectKey = other.ObjectKey;
+      }
+      if (other.Uri.Length != 0) {
+        Uri = other.Uri;
+      }
+      if (other.Filename.Length != 0) {
+        Filename = other.Filename;
+      }
+      if (other.ContentType.Length != 0) {
+        ContentType = other.ContentType;
+      }
+      if (other.SizeBytes != 0UL) {
+        SizeBytes = other.SizeBytes;
+      }
+      if (other.Sha256.Length != 0) {
+        Sha256 = other.Sha256;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Backend = (global::Messages.Resources.V1.ModelStorageBackend) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Bucket = input.ReadString();
+            break;
+          }
+          case 26: {
+            ObjectKey = input.ReadString();
+            break;
+          }
+          case 34: {
+            Uri = input.ReadString();
+            break;
+          }
+          case 42: {
+            Filename = input.ReadString();
+            break;
+          }
+          case 50: {
+            ContentType = input.ReadString();
+            break;
+          }
+          case 56: {
+            SizeBytes = input.ReadUInt64();
+            break;
+          }
+          case 66: {
+            Sha256 = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Backend = (global::Messages.Resources.V1.ModelStorageBackend) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Bucket = input.ReadString();
+            break;
+          }
+          case 26: {
+            ObjectKey = input.ReadString();
+            break;
+          }
+          case 34: {
+            Uri = input.ReadString();
+            break;
+          }
+          case 42: {
+            Filename = input.ReadString();
+            break;
+          }
+          case 50: {
+            ContentType = input.ReadString();
+            break;
+          }
+          case 56: {
+            SizeBytes = input.ReadUInt64();
+            break;
+          }
+          case 66: {
+            Sha256 = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ModelArtifact : pb::IMessage<ModelArtifact>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -115,7 +664,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ModelReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Resources.V1.ModelReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,14 +691,13 @@ namespace Messages.Resources.V1 {
       group_ = other.group_;
       origin_ = other.origin_;
       format_ = other.format_;
-      filename_ = other.filename_;
-      uri_ = other.uri_;
-      thumbnailUri_ = other.thumbnailUri_;
+      asset_ = other.asset_ != null ? other.asset_.Clone() : null;
+      thumbnail_ = other.thumbnail_ != null ? other.thumbnail_.Clone() : null;
       version_ = other.version_;
       unit_ = other.unit_;
       upAxis_ = other.upAxis_;
+      forwardAxis_ = other.forwardAxis_;
       externalReferences_ = other.externalReferences_.Clone();
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -243,50 +791,38 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "filename" field.</summary>
-    public const int FilenameFieldNumber = 8;
-    private string filename_ = "";
+    /// <summary>Field number for the "asset" field.</summary>
+    public const int AssetFieldNumber = 8;
+    private global::Messages.Resources.V1.StoredAssetRef asset_;
     /// <summary>
-    /// Filename is required for BUILT_IN models, ignored otherwise
+    /// Primary loadable model asset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Filename {
-      get { return filename_; }
+    public global::Messages.Resources.V1.StoredAssetRef Asset {
+      get { return asset_; }
       set {
-        filename_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        asset_ = value;
       }
     }
 
-    /// <summary>Field number for the "uri" field.</summary>
-    public const int UriFieldNumber = 9;
-    private string uri_ = "";
+    /// <summary>Field number for the "thumbnail" field.</summary>
+    public const int ThumbnailFieldNumber = 9;
+    private global::Messages.Resources.V1.StoredAssetRef thumbnail_;
     /// <summary>
-    /// Uri is required for uploaded and external models
+    /// Optional preview image.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Uri {
-      get { return uri_; }
+    public global::Messages.Resources.V1.StoredAssetRef Thumbnail {
+      get { return thumbnail_; }
       set {
-        uri_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "thumbnail_uri" field.</summary>
-    public const int ThumbnailUriFieldNumber = 10;
-    private string thumbnailUri_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ThumbnailUri {
-      get { return thumbnailUri_; }
-      set {
-        thumbnailUri_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        thumbnail_ = value;
       }
     }
 
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 11;
+    public const int VersionFieldNumber = 10;
     private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -298,8 +834,8 @@ namespace Messages.Resources.V1 {
     }
 
     /// <summary>Field number for the "unit" field.</summary>
-    public const int UnitFieldNumber = 12;
-    private string unit_ = "";
+    public const int UnitFieldNumber = 11;
+    private global::Messages.Resources.V1.ModelUnit unit_ = global::Messages.Resources.V1.ModelUnit.Unspecified;
     /// <summary>
     /// Unit used for the model geometry coordinates.
     /// Typically "mm", "cm", "m", "in", etc.
@@ -307,25 +843,42 @@ namespace Messages.Resources.V1 {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Unit {
+    public global::Messages.Resources.V1.ModelUnit Unit {
       get { return unit_; }
       set {
-        unit_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unit_ = value;
       }
     }
 
     /// <summary>Field number for the "up_axis" field.</summary>
-    public const int UpAxisFieldNumber = 13;
-    private string upAxis_ = "";
+    public const int UpAxisFieldNumber = 12;
+    private global::Messages.Resources.V1.ModelAxis upAxis_ = global::Messages.Resources.V1.ModelAxis.Unspecified;
     /// <summary>
-    /// "X", "Y", "Z"
+    /// Defines which axis is "up" in the source asset coordinate system.
+    /// Examples: Unity: Y, Blender: Y, many CAD systems: Z
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UpAxis {
+    public global::Messages.Resources.V1.ModelAxis UpAxis {
       get { return upAxis_; }
       set {
-        upAxis_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        upAxis_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_axis" field.</summary>
+    public const int ForwardAxisFieldNumber = 13;
+    private global::Messages.Resources.V1.ModelAxis forwardAxis_ = global::Messages.Resources.V1.ModelAxis.Unspecified;
+    /// <summary>
+    /// Defines which axis is "forward" in the source asset coordinate system.
+    /// Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ModelAxis ForwardAxis {
+      get { return forwardAxis_; }
+      set {
+        forwardAxis_ = value;
       }
     }
 
@@ -338,18 +891,6 @@ namespace Messages.Resources.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Common.V1.ExternalReference> ExternalReferences {
       get { return externalReferences_; }
-    }
-
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 15;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -374,14 +915,13 @@ namespace Messages.Resources.V1 {
       if (Group != other.Group) return false;
       if (Origin != other.Origin) return false;
       if (Format != other.Format) return false;
-      if (Filename != other.Filename) return false;
-      if (Uri != other.Uri) return false;
-      if (ThumbnailUri != other.ThumbnailUri) return false;
+      if (!object.Equals(Asset, other.Asset)) return false;
+      if (!object.Equals(Thumbnail, other.Thumbnail)) return false;
       if (Version != other.Version) return false;
       if (Unit != other.Unit) return false;
       if (UpAxis != other.UpAxis) return false;
+      if (ForwardAxis != other.ForwardAxis) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -396,14 +936,13 @@ namespace Messages.Resources.V1 {
       if (Group != global::Messages.Resources.V1.ModelGroup.Unspecified) hash ^= Group.GetHashCode();
       if (Origin != global::Messages.Resources.V1.ModelOrigin.Unspecified) hash ^= Origin.GetHashCode();
       if (Format != global::Messages.Resources.V1.ModelFormat.Unspecified) hash ^= Format.GetHashCode();
-      if (Filename.Length != 0) hash ^= Filename.GetHashCode();
-      if (Uri.Length != 0) hash ^= Uri.GetHashCode();
-      if (ThumbnailUri.Length != 0) hash ^= ThumbnailUri.GetHashCode();
+      if (asset_ != null) hash ^= Asset.GetHashCode();
+      if (thumbnail_ != null) hash ^= Thumbnail.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
-      if (Unit.Length != 0) hash ^= Unit.GetHashCode();
-      if (UpAxis.Length != 0) hash ^= UpAxis.GetHashCode();
+      if (Unit != global::Messages.Resources.V1.ModelUnit.Unspecified) hash ^= Unit.GetHashCode();
+      if (UpAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) hash ^= UpAxis.GetHashCode();
+      if (ForwardAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) hash ^= ForwardAxis.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -450,35 +989,31 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(56);
         output.WriteEnum((int) Format);
       }
-      if (Filename.Length != 0) {
+      if (asset_ != null) {
         output.WriteRawTag(66);
-        output.WriteString(Filename);
+        output.WriteMessage(Asset);
       }
-      if (Uri.Length != 0) {
+      if (thumbnail_ != null) {
         output.WriteRawTag(74);
-        output.WriteString(Uri);
-      }
-      if (ThumbnailUri.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(ThumbnailUri);
+        output.WriteMessage(Thumbnail);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(82);
         output.WriteString(Version);
       }
-      if (Unit.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(Unit);
+      if (Unit != global::Messages.Resources.V1.ModelUnit.Unspecified) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Unit);
       }
-      if (UpAxis.Length != 0) {
-        output.WriteRawTag(106);
-        output.WriteString(UpAxis);
+      if (UpAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) UpAxis);
+      }
+      if (ForwardAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ForwardAxis);
       }
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
-      if (custom_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -517,35 +1052,31 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(56);
         output.WriteEnum((int) Format);
       }
-      if (Filename.Length != 0) {
+      if (asset_ != null) {
         output.WriteRawTag(66);
-        output.WriteString(Filename);
+        output.WriteMessage(Asset);
       }
-      if (Uri.Length != 0) {
+      if (thumbnail_ != null) {
         output.WriteRawTag(74);
-        output.WriteString(Uri);
-      }
-      if (ThumbnailUri.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(ThumbnailUri);
+        output.WriteMessage(Thumbnail);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(82);
         output.WriteString(Version);
       }
-      if (Unit.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(Unit);
+      if (Unit != global::Messages.Resources.V1.ModelUnit.Unspecified) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Unit);
       }
-      if (UpAxis.Length != 0) {
-        output.WriteRawTag(106);
-        output.WriteString(UpAxis);
+      if (UpAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) UpAxis);
+      }
+      if (ForwardAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ForwardAxis);
       }
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
-      if (custom_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -577,28 +1108,25 @@ namespace Messages.Resources.V1 {
       if (Format != global::Messages.Resources.V1.ModelFormat.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Format);
       }
-      if (Filename.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filename);
+      if (asset_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Asset);
       }
-      if (Uri.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uri);
-      }
-      if (ThumbnailUri.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ThumbnailUri);
+      if (thumbnail_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Thumbnail);
       }
       if (Version.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
       }
-      if (Unit.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unit);
+      if (Unit != global::Messages.Resources.V1.ModelUnit.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Unit);
       }
-      if (UpAxis.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UpAxis);
+      if (UpAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UpAxis);
+      }
+      if (ForwardAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardAxis);
       }
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -632,31 +1160,31 @@ namespace Messages.Resources.V1 {
       if (other.Format != global::Messages.Resources.V1.ModelFormat.Unspecified) {
         Format = other.Format;
       }
-      if (other.Filename.Length != 0) {
-        Filename = other.Filename;
+      if (other.asset_ != null) {
+        if (asset_ == null) {
+          Asset = new global::Messages.Resources.V1.StoredAssetRef();
+        }
+        Asset.MergeFrom(other.Asset);
       }
-      if (other.Uri.Length != 0) {
-        Uri = other.Uri;
-      }
-      if (other.ThumbnailUri.Length != 0) {
-        ThumbnailUri = other.ThumbnailUri;
+      if (other.thumbnail_ != null) {
+        if (thumbnail_ == null) {
+          Thumbnail = new global::Messages.Resources.V1.StoredAssetRef();
+        }
+        Thumbnail.MergeFrom(other.Thumbnail);
       }
       if (other.Version.Length != 0) {
         Version = other.Version;
       }
-      if (other.Unit.Length != 0) {
+      if (other.Unit != global::Messages.Resources.V1.ModelUnit.Unspecified) {
         Unit = other.Unit;
       }
-      if (other.UpAxis.Length != 0) {
+      if (other.UpAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
         UpAxis = other.UpAxis;
       }
-      externalReferences_.Add(other.externalReferences_);
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
+      if (other.ForwardAxis != global::Messages.Resources.V1.ModelAxis.Unspecified) {
+        ForwardAxis = other.ForwardAxis;
       }
+      externalReferences_.Add(other.externalReferences_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -705,38 +1233,37 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 66: {
-            Filename = input.ReadString();
+            if (asset_ == null) {
+              Asset = new global::Messages.Resources.V1.StoredAssetRef();
+            }
+            input.ReadMessage(Asset);
             break;
           }
           case 74: {
-            Uri = input.ReadString();
+            if (thumbnail_ == null) {
+              Thumbnail = new global::Messages.Resources.V1.StoredAssetRef();
+            }
+            input.ReadMessage(Thumbnail);
             break;
           }
           case 82: {
-            ThumbnailUri = input.ReadString();
-            break;
-          }
-          case 90: {
             Version = input.ReadString();
             break;
           }
-          case 98: {
-            Unit = input.ReadString();
+          case 88: {
+            Unit = (global::Messages.Resources.V1.ModelUnit) input.ReadEnum();
             break;
           }
-          case 106: {
-            UpAxis = input.ReadString();
+          case 96: {
+            UpAxis = (global::Messages.Resources.V1.ModelAxis) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            ForwardAxis = (global::Messages.Resources.V1.ModelAxis) input.ReadEnum();
             break;
           }
           case 114: {
             externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
-            break;
-          }
-          case 122: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }
@@ -787,38 +1314,37 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 66: {
-            Filename = input.ReadString();
+            if (asset_ == null) {
+              Asset = new global::Messages.Resources.V1.StoredAssetRef();
+            }
+            input.ReadMessage(Asset);
             break;
           }
           case 74: {
-            Uri = input.ReadString();
+            if (thumbnail_ == null) {
+              Thumbnail = new global::Messages.Resources.V1.StoredAssetRef();
+            }
+            input.ReadMessage(Thumbnail);
             break;
           }
           case 82: {
-            ThumbnailUri = input.ReadString();
-            break;
-          }
-          case 90: {
             Version = input.ReadString();
             break;
           }
-          case 98: {
-            Unit = input.ReadString();
+          case 88: {
+            Unit = (global::Messages.Resources.V1.ModelUnit) input.ReadEnum();
             break;
           }
-          case 106: {
-            UpAxis = input.ReadString();
+          case 96: {
+            UpAxis = (global::Messages.Resources.V1.ModelAxis) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            ForwardAxis = (global::Messages.Resources.V1.ModelAxis) input.ReadEnum();
             break;
           }
           case 114: {
             externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
-            break;
-          }
-          case 122: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }
@@ -843,7 +1369,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ModelReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Resources.V1.ModelReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

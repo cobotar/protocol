@@ -5,8 +5,6 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -16,7 +14,84 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/model.proto.
  */
 export const file_resources_v1_model: GenFile = /*@__PURE__*/
-  fileDesc("ChhyZXNvdXJjZXMvdjEvbW9kZWwucHJvdG8SDHJlc291cmNlcy52MSLiAwoNTW9kZWxBcnRpZmFjdBIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRIxCgVncm91cBgFIAEoDjIYLnJlc291cmNlcy52MS5Nb2RlbEdyb3VwQgi6SAWCAQIQARI2CgZvcmlnaW4YBiABKA4yGS5yZXNvdXJjZXMudjEuTW9kZWxPcmlnaW5CC7pICMgBAYIBAhABEjYKBmZvcm1hdBgHIAEoDjIZLnJlc291cmNlcy52MS5Nb2RlbEZvcm1hdEILukgIyAEBggECEAESEAoIZmlsZW5hbWUYCCABKAkSGAoDdXJpGAkgASgJQgu6SAjYAQFyA4gBARIiCg10aHVtYm5haWxfdXJpGAogASgJQgu6SAjYAQFyA4gBARIPCgd2ZXJzaW9uGAsgASgJEgwKBHVuaXQYDCABKAkSDwoHdXBfYXhpcxgNIAEoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGA4gAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEisKBmN1c3RvbRgPIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIjwKDk1vZGVsQXJ0aWZhY3RzEioKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2VzLnYxLk1vZGVsQXJ0aWZhY3QqtwEKCk1vZGVsR3JvdXASGwoXTU9ERUxfR1JPVVBfVU5TUEVDSUZJRUQQABIUChBNT0RFTF9HUk9VUF9QQVJUEAESFwoTTU9ERUxfR1JPVVBfUFJPRFVDVBACEhQKEE1PREVMX0dST1VQX1RPT0wQAxIVChFNT0RFTF9HUk9VUF9ST0JPVBAEEhkKFU1PREVMX0dST1VQX0NPTlRBSU5FUhAFEhUKEU1PREVMX0dST1VQX0FTU0VUEAYqfAoLTW9kZWxPcmlnaW4SHAoYTU9ERUxfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfT1JJR0lOX0JVSUxUX0lOEAESGQoVTU9ERUxfT1JJR0lOX1VQTE9BREVEEAISGQoVTU9ERUxfT1JJR0lOX0VYVEVSTkFMEAMqsgEKC01vZGVsRm9ybWF0EhwKGE1PREVMX0ZPUk1BVF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0ZPUk1BVF9HTEIQARIVChFNT0RFTF9GT1JNQVRfR0xURhACEhQKEE1PREVMX0ZPUk1BVF9PQkoQAxIVChFNT0RFTF9GT1JNQVRfU1RFUBAEEhQKEE1PREVMX0ZPUk1BVF9TVEwQBRIVChFNT0RFTF9GT1JNQVRfVVNEWhAGQrcBChBjb20ucmVzb3VyY2VzLnYxQgpNb2RlbFByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChhyZXNvdXJjZXMvdjEvbW9kZWwucHJvdG8SDHJlc291cmNlcy52MSLbAQoOU3RvcmVkQXNzZXRSZWYSPwoHYmFja2VuZBgBIAEoDjIhLnJlc291cmNlcy52MS5Nb2RlbFN0b3JhZ2VCYWNrZW5kQgu6SAjIAQGCAQIQARIOCgZidWNrZXQYAiABKAkSEgoKb2JqZWN0X2tleRgDIAEoCRIYCgN1cmkYBCABKAlCC7pICNgBAXIDiAEBEhAKCGZpbGVuYW1lGAUgASgJEhQKDGNvbnRlbnRfdHlwZRgGIAEoCRISCgpzaXplX2J5dGVzGAcgASgEEg4KBnNoYTI1NhgIIAEoCSLTBAoNTW9kZWxBcnRpZmFjdBIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESEwoLZGVzY3JpcHRpb24YAyABKAkSDAoEaWNvbhgEIAEoCRIxCgVncm91cBgFIAEoDjIYLnJlc291cmNlcy52MS5Nb2RlbEdyb3VwQgi6SAWCAQIQARI2CgZvcmlnaW4YBiABKA4yGS5yZXNvdXJjZXMudjEuTW9kZWxPcmlnaW5CC7pICMgBAYIBAhABEjYKBmZvcm1hdBgHIAEoDjIZLnJlc291cmNlcy52MS5Nb2RlbEZvcm1hdEILukgIyAEBggECEAESMwoFYXNzZXQYCCABKAsyHC5yZXNvdXJjZXMudjEuU3RvcmVkQXNzZXRSZWZCBrpIA8gBARIvCgl0aHVtYm5haWwYCSABKAsyHC5yZXNvdXJjZXMudjEuU3RvcmVkQXNzZXRSZWYSDwoHdmVyc2lvbhgKIAEoCRIyCgR1bml0GAsgASgOMhcucmVzb3VyY2VzLnYxLk1vZGVsVW5pdEILukgIyAEBggECEAESNQoHdXBfYXhpcxgMIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbEF4aXNCC7pICMgBAYIBAhABEjoKDGZvcndhcmRfYXhpcxgNIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbEF4aXNCC7pICMgBAYIBAhABEjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYDiADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2UiPAoOTW9kZWxBcnRpZmFjdHMSKgoFaXRlbXMYASADKAsyGy5yZXNvdXJjZXMudjEuTW9kZWxBcnRpZmFjdCq3AQoKTW9kZWxHcm91cBIbChdNT0RFTF9HUk9VUF9VTlNQRUNJRklFRBAAEhQKEE1PREVMX0dST1VQX1BBUlQQARIXChNNT0RFTF9HUk9VUF9QUk9EVUNUEAISFAoQTU9ERUxfR1JPVVBfVE9PTBADEhUKEU1PREVMX0dST1VQX1JPQk9UEAQSGQoVTU9ERUxfR1JPVVBfQ09OVEFJTkVSEAUSFQoRTU9ERUxfR1JPVVBfQVNTRVQQBip8CgtNb2RlbE9yaWdpbhIcChhNT0RFTF9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVNT0RFTF9PUklHSU5fQlVJTFRfSU4QARIZChVNT0RFTF9PUklHSU5fVVBMT0FERUQQAhIZChVNT0RFTF9PUklHSU5fRVhURVJOQUwQAyqyAQoLTW9kZWxGb3JtYXQSHAoYTU9ERUxfRk9STUFUX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfRk9STUFUX0dMQhABEhUKEU1PREVMX0ZPUk1BVF9HTFRGEAISFAoQTU9ERUxfRk9STUFUX09CShADEhUKEU1PREVMX0ZPUk1BVF9TVEVQEAQSFAoQTU9ERUxfRk9STUFUX1NUTBAFEhUKEU1PREVMX0ZPUk1BVF9VU0RaEAYq5wEKCU1vZGVsVW5pdBIaChZNT0RFTF9VTklUX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfVU5JVF9NSUxMSU1FVEVSEAESGQoVTU9ERUxfVU5JVF9DRU5USU1FVEVSEAISFAoQTU9ERUxfVU5JVF9NRVRFUhADEhgKFE1PREVMX1VOSVRfS0lMT01FVEVSEAQSEwoPTU9ERUxfVU5JVF9JTkNIEAoSEwoPTU9ERUxfVU5JVF9GT09UEAsSEwoPTU9ERUxfVU5JVF9ZQVJEEAwSGQoVTU9ERUxfVU5JVF9NSUNST01FVEVSEBQqyQEKCU1vZGVsQXhpcxIaChZNT0RFTF9BWElTX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfQVhJU19QT1NJVElWRV9YEAESGQoVTU9ERUxfQVhJU19ORUdBVElWRV9YEAISGQoVTU9ERUxfQVhJU19QT1NJVElWRV9ZEAMSGQoVTU9ERUxfQVhJU19ORUdBVElWRV9ZEAQSGQoVTU9ERUxfQVhJU19QT1NJVElWRV9aEAUSGQoVTU9ERUxfQVhJU19ORUdBVElWRV9aEAYqmgIKE01vZGVsU3RvcmFnZUJhY2tlbmQSJQohTU9ERUxfU1RPUkFHRV9CQUNLRU5EX1VOU1BFQ0lGSUVEEAASIgoeTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0JVSUxUX0lOEAESKwonTU9ERUxfU1RPUkFHRV9CQUNLRU5EX05BVFNfT0JKRUNUX1NUT1JFEAISHAoYTU9ERUxfU1RPUkFHRV9CQUNLRU5EX1MzEAMSHwobTU9ERUxfU1RPUkFHRV9CQUNLRU5EX01JTklPEAQSJAogTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0xPQ0FMX0ZJTEUQBRImCiJNT0RFTF9TVE9SQUdFX0JBQ0tFTkRfRVhURVJOQUxfVVJMEAZCtwEKEGNvbS5yZXNvdXJjZXMudjFCCk1vZGVsUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+
+/**
+ *
+ * Examples:
+ * asset {
+ * backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+ * bucket: "cobotar-assets"
+ * object_key: "models/part-123.obj"
+ * filename: "bracket.obj"
+ * content_type: "model/obj"
+ * size_bytes: 123456
+ * sha256: "..."
+ * }
+ * thumbnail {
+ * backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+ * bucket: "cobotar-assets"
+ * object_key: "thumbnails/part-123.png"
+ * filename: "bracket.png"
+ * content_type: "image/png"
+ * }
+ *
+ * asset {
+ * backend: MODEL_STORAGE_BACKEND_BUILT_IN
+ * filename: "models/robot_ur5e.glb"
+ * content_type: "model/gltf-binary"
+ * }
+ *
+ * @generated from message resources.v1.StoredAssetRef
+ */
+export type StoredAssetRef = Message<"resources.v1.StoredAssetRef"> & {
+  /**
+   * @generated from field: resources.v1.ModelStorageBackend backend = 1;
+   */
+  backend: ModelStorageBackend;
+
+  /**
+   * @generated from field: string bucket = 2;
+   */
+  bucket: string;
+
+  /**
+   * @generated from field: string object_key = 3;
+   */
+  objectKey: string;
+
+  /**
+   * @generated from field: string uri = 4;
+   */
+  uri: string;
+
+  /**
+   * @generated from field: string filename = 5;
+   */
+  filename: string;
+
+  /**
+   * @generated from field: string content_type = 6;
+   */
+  contentType: string;
+
+  /**
+   * @generated from field: uint64 size_bytes = 7;
+   */
+  sizeBytes: bigint;
+
+  /**
+   * @generated from field: string sha256 = 8;
+   */
+  sha256: string;
+};
+
+/**
+ * Describes the message resources.v1.StoredAssetRef.
+ * Use `create(StoredAssetRefSchema)` to create a new message.
+ */
+export const StoredAssetRefSchema: GenMessage<StoredAssetRef> = /*@__PURE__*/
+  messageDesc(file_resources_v1_model, 0);
 
 /**
  * @generated from message resources.v1.ModelArtifact
@@ -58,26 +133,21 @@ export type ModelArtifact = Message<"resources.v1.ModelArtifact"> & {
   format: ModelFormat;
 
   /**
-   * Filename is required for BUILT_IN models, ignored otherwise
+   * Primary loadable model asset.
    *
-   * @generated from field: string filename = 8;
+   * @generated from field: resources.v1.StoredAssetRef asset = 8;
    */
-  filename: string;
+  asset?: StoredAssetRef;
 
   /**
-   * Uri is required for uploaded and external models
+   * Optional preview image.
    *
-   * @generated from field: string uri = 9;
+   * @generated from field: resources.v1.StoredAssetRef thumbnail = 9;
    */
-  uri: string;
+  thumbnail?: StoredAssetRef;
 
   /**
-   * @generated from field: string thumbnail_uri = 10;
-   */
-  thumbnailUri: string;
-
-  /**
-   * @generated from field: string version = 11;
+   * @generated from field: string version = 10;
    */
   version: string;
 
@@ -86,26 +156,30 @@ export type ModelArtifact = Message<"resources.v1.ModelArtifact"> & {
    * Typically "mm", "cm", "m", "in", etc.
    * Used to scale the model correctly when loading.
    *
-   * @generated from field: string unit = 12;
+   * @generated from field: resources.v1.ModelUnit unit = 11;
    */
-  unit: string;
+  unit: ModelUnit;
 
   /**
-   * "X", "Y", "Z"
+   * Defines which axis is "up" in the source asset coordinate system.
+   * Examples: Unity: Y, Blender: Y, many CAD systems: Z
    *
-   * @generated from field: string up_axis = 13;
+   * @generated from field: resources.v1.ModelAxis up_axis = 12;
    */
-  upAxis: string;
+  upAxis: ModelAxis;
+
+  /**
+   * Defines which axis is "forward" in the source asset coordinate system.
+   * Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
+   *
+   * @generated from field: resources.v1.ModelAxis forward_axis = 13;
+   */
+  forwardAxis: ModelAxis;
 
   /**
    * @generated from field: repeated common.v1.ExternalReference external_references = 14;
    */
   externalReferences: ExternalReference[];
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 15;
-   */
-  custom?: CustomProperties;
 };
 
 /**
@@ -113,7 +187,7 @@ export type ModelArtifact = Message<"resources.v1.ModelArtifact"> & {
  * Use `create(ModelArtifactSchema)` to create a new message.
  */
 export const ModelArtifactSchema: GenMessage<ModelArtifact> = /*@__PURE__*/
-  messageDesc(file_resources_v1_model, 0);
+  messageDesc(file_resources_v1_model, 1);
 
 /**
  * @generated from message resources.v1.ModelArtifacts
@@ -130,7 +204,7 @@ export type ModelArtifacts = Message<"resources.v1.ModelArtifacts"> & {
  * Use `create(ModelArtifactsSchema)` to create a new message.
  */
 export const ModelArtifactsSchema: GenMessage<ModelArtifacts> = /*@__PURE__*/
-  messageDesc(file_resources_v1_model, 1);
+  messageDesc(file_resources_v1_model, 2);
 
 /**
  * @generated from enum resources.v1.ModelGroup
@@ -254,4 +328,158 @@ export enum ModelFormat {
  */
 export const ModelFormatSchema: GenEnum<ModelFormat> = /*@__PURE__*/
   enumDesc(file_resources_v1_model, 2);
+
+/**
+ * @generated from enum resources.v1.ModelUnit
+ */
+export enum ModelUnit {
+  /**
+   * @generated from enum value: MODEL_UNIT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Metric
+   *
+   * @generated from enum value: MODEL_UNIT_MILLIMETER = 1;
+   */
+  MILLIMETER = 1,
+
+  /**
+   * @generated from enum value: MODEL_UNIT_CENTIMETER = 2;
+   */
+  CENTIMETER = 2,
+
+  /**
+   * @generated from enum value: MODEL_UNIT_METER = 3;
+   */
+  METER = 3,
+
+  /**
+   * @generated from enum value: MODEL_UNIT_KILOMETER = 4;
+   */
+  KILOMETER = 4,
+
+  /**
+   * Imperial
+   *
+   * @generated from enum value: MODEL_UNIT_INCH = 10;
+   */
+  INCH = 10,
+
+  /**
+   * @generated from enum value: MODEL_UNIT_FOOT = 11;
+   */
+  FOOT = 11,
+
+  /**
+   * @generated from enum value: MODEL_UNIT_YARD = 12;
+   */
+  YARD = 12,
+
+  /**
+   * CAD / scientific
+   *
+   * @generated from enum value: MODEL_UNIT_MICROMETER = 20;
+   */
+  MICROMETER = 20,
+}
+
+/**
+ * Describes the enum resources.v1.ModelUnit.
+ */
+export const ModelUnitSchema: GenEnum<ModelUnit> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 3);
+
+/**
+ * @generated from enum resources.v1.ModelAxis
+ */
+export enum ModelAxis {
+  /**
+   * @generated from enum value: MODEL_AXIS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_POSITIVE_X = 1;
+   */
+  POSITIVE_X = 1,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_NEGATIVE_X = 2;
+   */
+  NEGATIVE_X = 2,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_POSITIVE_Y = 3;
+   */
+  POSITIVE_Y = 3,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_NEGATIVE_Y = 4;
+   */
+  NEGATIVE_Y = 4,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_POSITIVE_Z = 5;
+   */
+  POSITIVE_Z = 5,
+
+  /**
+   * @generated from enum value: MODEL_AXIS_NEGATIVE_Z = 6;
+   */
+  NEGATIVE_Z = 6,
+}
+
+/**
+ * Describes the enum resources.v1.ModelAxis.
+ */
+export const ModelAxisSchema: GenEnum<ModelAxis> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 4);
+
+/**
+ * @generated from enum resources.v1.ModelStorageBackend
+ */
+export enum ModelStorageBackend {
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_BUILT_IN = 1;
+   */
+  BUILT_IN = 1,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE = 2;
+   */
+  NATS_OBJECT_STORE = 2,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_S3 = 3;
+   */
+  S3 = 3,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_MINIO = 4;
+   */
+  MINIO = 4,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_LOCAL_FILE = 5;
+   */
+  LOCAL_FILE = 5,
+
+  /**
+   * @generated from enum value: MODEL_STORAGE_BACKEND_EXTERNAL_URL = 6;
+   */
+  EXTERNAL_URL = 6,
+}
+
+/**
+ * Describes the enum resources.v1.ModelStorageBackend.
+ */
+export const ModelStorageBackendSchema: GenEnum<ModelStorageBackend> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 5);
 
