@@ -20,22 +20,26 @@ class ModelGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     MODEL_GROUP_CONTAINER: _ClassVar[ModelGroup]
     MODEL_GROUP_ASSET: _ClassVar[ModelGroup]
 
-class ModelOrigin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+class AssetFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    MODEL_ORIGIN_UNSPECIFIED: _ClassVar[ModelOrigin]
-    MODEL_ORIGIN_BUILT_IN: _ClassVar[ModelOrigin]
-    MODEL_ORIGIN_UPLOADED: _ClassVar[ModelOrigin]
-    MODEL_ORIGIN_EXTERNAL: _ClassVar[ModelOrigin]
-
-class ModelFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    MODEL_FORMAT_UNSPECIFIED: _ClassVar[ModelFormat]
-    MODEL_FORMAT_GLB: _ClassVar[ModelFormat]
-    MODEL_FORMAT_GLTF: _ClassVar[ModelFormat]
-    MODEL_FORMAT_OBJ: _ClassVar[ModelFormat]
-    MODEL_FORMAT_STEP: _ClassVar[ModelFormat]
-    MODEL_FORMAT_STL: _ClassVar[ModelFormat]
-    MODEL_FORMAT_USDZ: _ClassVar[ModelFormat]
+    ASSET_FORMAT_UNSPECIFIED: _ClassVar[AssetFormat]
+    ASSET_FORMAT_GLB: _ClassVar[AssetFormat]
+    ASSET_FORMAT_GLTF: _ClassVar[AssetFormat]
+    ASSET_FORMAT_OBJ: _ClassVar[AssetFormat]
+    ASSET_FORMAT_FBX: _ClassVar[AssetFormat]
+    ASSET_FORMAT_STL: _ClassVar[AssetFormat]
+    ASSET_FORMAT_STEP: _ClassVar[AssetFormat]
+    ASSET_FORMAT_IGES: _ClassVar[AssetFormat]
+    ASSET_FORMAT_USD: _ClassVar[AssetFormat]
+    ASSET_FORMAT_USDZ: _ClassVar[AssetFormat]
+    ASSET_FORMAT_PNG: _ClassVar[AssetFormat]
+    ASSET_FORMAT_JPEG: _ClassVar[AssetFormat]
+    ASSET_FORMAT_WEBP: _ClassVar[AssetFormat]
+    ASSET_FORMAT_SVG: _ClassVar[AssetFormat]
+    ASSET_FORMAT_MTL: _ClassVar[AssetFormat]
+    ASSET_FORMAT_BASIS: _ClassVar[AssetFormat]
+    ASSET_FORMAT_KTX2: _ClassVar[AssetFormat]
+    ASSET_FORMAT_ZIP: _ClassVar[AssetFormat]
 
 class ModelUnit(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -75,17 +79,24 @@ MODEL_GROUP_TOOL: ModelGroup
 MODEL_GROUP_ROBOT: ModelGroup
 MODEL_GROUP_CONTAINER: ModelGroup
 MODEL_GROUP_ASSET: ModelGroup
-MODEL_ORIGIN_UNSPECIFIED: ModelOrigin
-MODEL_ORIGIN_BUILT_IN: ModelOrigin
-MODEL_ORIGIN_UPLOADED: ModelOrigin
-MODEL_ORIGIN_EXTERNAL: ModelOrigin
-MODEL_FORMAT_UNSPECIFIED: ModelFormat
-MODEL_FORMAT_GLB: ModelFormat
-MODEL_FORMAT_GLTF: ModelFormat
-MODEL_FORMAT_OBJ: ModelFormat
-MODEL_FORMAT_STEP: ModelFormat
-MODEL_FORMAT_STL: ModelFormat
-MODEL_FORMAT_USDZ: ModelFormat
+ASSET_FORMAT_UNSPECIFIED: AssetFormat
+ASSET_FORMAT_GLB: AssetFormat
+ASSET_FORMAT_GLTF: AssetFormat
+ASSET_FORMAT_OBJ: AssetFormat
+ASSET_FORMAT_FBX: AssetFormat
+ASSET_FORMAT_STL: AssetFormat
+ASSET_FORMAT_STEP: AssetFormat
+ASSET_FORMAT_IGES: AssetFormat
+ASSET_FORMAT_USD: AssetFormat
+ASSET_FORMAT_USDZ: AssetFormat
+ASSET_FORMAT_PNG: AssetFormat
+ASSET_FORMAT_JPEG: AssetFormat
+ASSET_FORMAT_WEBP: AssetFormat
+ASSET_FORMAT_SVG: AssetFormat
+ASSET_FORMAT_MTL: AssetFormat
+ASSET_FORMAT_BASIS: AssetFormat
+ASSET_FORMAT_KTX2: AssetFormat
+ASSET_FORMAT_ZIP: AssetFormat
 MODEL_UNIT_UNSPECIFIED: ModelUnit
 MODEL_UNIT_MILLIMETER: ModelUnit
 MODEL_UNIT_CENTIMETER: ModelUnit
@@ -111,8 +122,9 @@ MODEL_STORAGE_BACKEND_LOCAL_FILE: ModelStorageBackend
 MODEL_STORAGE_BACKEND_EXTERNAL_URL: ModelStorageBackend
 
 class StoredAssetRef(_message.Message):
-    __slots__ = ("backend", "bucket", "object_key", "uri", "filename", "content_type", "size_bytes", "sha256")
+    __slots__ = ("backend", "format", "bucket", "object_key", "uri", "filename", "content_type", "size_bytes", "sha256", "unit", "up_axis", "forward_axis")
     BACKEND_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
     OBJECT_KEY_FIELD_NUMBER: _ClassVar[int]
     URI_FIELD_NUMBER: _ClassVar[int]
@@ -120,7 +132,11 @@ class StoredAssetRef(_message.Message):
     CONTENT_TYPE_FIELD_NUMBER: _ClassVar[int]
     SIZE_BYTES_FIELD_NUMBER: _ClassVar[int]
     SHA256_FIELD_NUMBER: _ClassVar[int]
+    UNIT_FIELD_NUMBER: _ClassVar[int]
+    UP_AXIS_FIELD_NUMBER: _ClassVar[int]
+    FORWARD_AXIS_FIELD_NUMBER: _ClassVar[int]
     backend: ModelStorageBackend
+    format: AssetFormat
     bucket: str
     object_key: str
     uri: str
@@ -128,39 +144,34 @@ class StoredAssetRef(_message.Message):
     content_type: str
     size_bytes: int
     sha256: str
-    def __init__(self, backend: _Optional[_Union[ModelStorageBackend, str]] = ..., bucket: _Optional[str] = ..., object_key: _Optional[str] = ..., uri: _Optional[str] = ..., filename: _Optional[str] = ..., content_type: _Optional[str] = ..., size_bytes: _Optional[int] = ..., sha256: _Optional[str] = ...) -> None: ...
-
-class ModelArtifact(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "group", "origin", "format", "asset", "thumbnail", "version", "unit", "up_axis", "forward_axis", "external_references")
-    ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    ICON_FIELD_NUMBER: _ClassVar[int]
-    GROUP_FIELD_NUMBER: _ClassVar[int]
-    ORIGIN_FIELD_NUMBER: _ClassVar[int]
-    FORMAT_FIELD_NUMBER: _ClassVar[int]
-    ASSET_FIELD_NUMBER: _ClassVar[int]
-    THUMBNAIL_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    UNIT_FIELD_NUMBER: _ClassVar[int]
-    UP_AXIS_FIELD_NUMBER: _ClassVar[int]
-    FORWARD_AXIS_FIELD_NUMBER: _ClassVar[int]
-    EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    name: str
-    description: str
-    icon: str
-    group: ModelGroup
-    origin: ModelOrigin
-    format: ModelFormat
-    asset: StoredAssetRef
-    thumbnail: StoredAssetRef
-    version: str
     unit: ModelUnit
     up_axis: ModelAxis
     forward_axis: ModelAxis
+    def __init__(self, backend: _Optional[_Union[ModelStorageBackend, str]] = ..., format: _Optional[_Union[AssetFormat, str]] = ..., bucket: _Optional[str] = ..., object_key: _Optional[str] = ..., uri: _Optional[str] = ..., filename: _Optional[str] = ..., content_type: _Optional[str] = ..., size_bytes: _Optional[int] = ..., sha256: _Optional[str] = ..., unit: _Optional[_Union[ModelUnit, str]] = ..., up_axis: _Optional[_Union[ModelAxis, str]] = ..., forward_axis: _Optional[_Union[ModelAxis, str]] = ...) -> None: ...
+
+class ModelArtifact(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "group", "asset", "thumbnail", "alternatives", "version", "external_references")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    GROUP_FIELD_NUMBER: _ClassVar[int]
+    ASSET_FIELD_NUMBER: _ClassVar[int]
+    THUMBNAIL_FIELD_NUMBER: _ClassVar[int]
+    ALTERNATIVES_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    group: ModelGroup
+    asset: StoredAssetRef
+    thumbnail: StoredAssetRef
+    alternatives: _containers.RepeatedCompositeFieldContainer[StoredAssetRef]
+    version: str
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., origin: _Optional[_Union[ModelOrigin, str]] = ..., format: _Optional[_Union[ModelFormat, str]] = ..., asset: _Optional[_Union[StoredAssetRef, _Mapping]] = ..., thumbnail: _Optional[_Union[StoredAssetRef, _Mapping]] = ..., version: _Optional[str] = ..., unit: _Optional[_Union[ModelUnit, str]] = ..., up_axis: _Optional[_Union[ModelAxis, str]] = ..., forward_axis: _Optional[_Union[ModelAxis, str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., asset: _Optional[_Union[StoredAssetRef, _Mapping]] = ..., thumbnail: _Optional[_Union[StoredAssetRef, _Mapping]] = ..., alternatives: _Optional[_Iterable[_Union[StoredAssetRef, _Mapping]]] = ..., version: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
 
 class ModelArtifacts(_message.Message):
     __slots__ = ("items",)

@@ -18,21 +18,33 @@ enum ModelGroup {
   MODEL_GROUP_ASSET = 6;
 }
 
-enum ModelOrigin {
-  MODEL_ORIGIN_UNSPECIFIED = 0;
-  MODEL_ORIGIN_BUILT_IN = 1;
-  MODEL_ORIGIN_UPLOADED = 2;
-  MODEL_ORIGIN_EXTERNAL = 3;
-}
+enum AssetFormat {
+  ASSET_FORMAT_UNSPECIFIED = 0;
 
-enum ModelFormat {
-  MODEL_FORMAT_UNSPECIFIED = 0;
-  MODEL_FORMAT_GLB = 1;
-  MODEL_FORMAT_GLTF = 2;
-  MODEL_FORMAT_OBJ = 3;
-  MODEL_FORMAT_STEP = 4;
-  MODEL_FORMAT_STL = 5;
-  MODEL_FORMAT_USDZ = 6;
+  // 3D runtime / interchange formats
+  ASSET_FORMAT_GLB = 1;
+  ASSET_FORMAT_GLTF = 2;
+  ASSET_FORMAT_OBJ = 3;
+  ASSET_FORMAT_FBX = 4;
+  ASSET_FORMAT_STL = 5;
+  ASSET_FORMAT_STEP = 6;
+  ASSET_FORMAT_IGES = 7;
+  ASSET_FORMAT_USD = 8;
+  ASSET_FORMAT_USDZ = 9;
+
+  // Images / previews / thumbnails
+  ASSET_FORMAT_PNG = 30;
+  ASSET_FORMAT_JPEG = 31;
+  ASSET_FORMAT_WEBP = 32;
+  ASSET_FORMAT_SVG = 33;
+
+  // Material / texture sidecars
+  ASSET_FORMAT_MTL = 50;
+  ASSET_FORMAT_BASIS = 51;
+  ASSET_FORMAT_KTX2 = 52;
+
+  // Archives / bundles
+  ASSET_FORMAT_ZIP = 70;
 }
 
 enum ModelUnit {
@@ -106,65 +118,56 @@ message StoredAssetRef {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string bucket = 2;
-  string object_key = 3;
-  string uri = 4 [
+  AssetFormat format = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  string bucket = 3;
+  string object_key = 4;
+  string uri = 5 [
     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
     (buf.validate.field).string.uri = true
   ];
 
-  string filename = 5;
-  string content_type = 6;
-  uint64 size_bytes = 7;
-  string sha256 = 8;
-}
-
-message ModelArtifact {
-  string id = 1;
-  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
-  string description = 3;
-  string icon = 4;
-
-  ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
-  ModelOrigin origin = 6 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
-  ModelFormat format = 7 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
-
-  // Primary loadable model asset.
-  StoredAssetRef asset = 8 [(buf.validate.field).required = true];
-
-  // Optional preview image.
-  StoredAssetRef thumbnail = 9;
-
-  string version = 10;
+  string filename = 6;
+  string content_type = 7; // Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf+json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
+  uint64 size_bytes = 8;
+  string sha256 = 9;
 
   // Unit used for the model geometry coordinates.
   // Typically "mm", "cm", "m", "in", etc.
   // Used to scale the model correctly when loading.
-  ModelUnit unit = 11 [
+  ModelUnit unit = 10 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
 
   // Defines which axis is "up" in the source asset coordinate system.
-  // Examples: Unity: Y, Blender: Y, many CAD systems: Z
-  ModelAxis up_axis = 12 [
+  // Examples: Unity: Y, Blender: Z, many CAD systems: Z
+  ModelAxis up_axis = 11 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
   // Defines which axis is "forward" in the source asset coordinate system.
   // Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
-  ModelAxis forward_axis = 13 [
+  ModelAxis forward_axis = 12 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
+}
 
-  repeated common.v1.ExternalReference external_references = 14;
+message ModelArtifact {
+  string id = 1;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
+  StoredAssetRef asset = 6 [(buf.validate.field).required = true]; // Primary loadable model asset.
+  StoredAssetRef thumbnail = 7; // Optional preview image.
+  repeated StoredAssetRef alternatives = 8; // OBJ source, GLB runtime, STEP CAD, etc.
+  string version = 9;
+  repeated common.v1.ExternalReference external_references = 10;
 }
 
 message ModelArtifacts {

@@ -27,7 +27,7 @@ from common.v1 import external_references_pb2 as common_dot_v1_dot_external__ref
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18resources/v1/model.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa6\x02\n\x0eStoredAssetRef\x12H\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32!.resources.v1.ModelStorageBackendB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x07\x62\x61\x63kend\x12\x16\n\x06\x62ucket\x18\x02 \x01(\tR\x06\x62ucket\x12\x1d\n\nobject_key\x18\x03 \x01(\tR\tobjectKey\x12\x1d\n\x03uri\x18\x04 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03uri\x12\x1a\n\x08\x66ilename\x18\x05 \x01(\tR\x08\x66ilename\x12!\n\x0c\x63ontent_type\x18\x06 \x01(\tR\x0b\x63ontentType\x12\x1d\n\nsize_bytes\x18\x07 \x01(\x04R\tsizeBytes\x12\x16\n\x06sha256\x18\x08 \x01(\tR\x06sha256\"\xd1\x05\n\rModelArtifact\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x38\n\x05group\x18\x05 \x01(\x0e\x32\x18.resources.v1.ModelGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12>\n\x06origin\x18\x06 \x01(\x0e\x32\x19.resources.v1.ModelOriginB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06origin\x12>\n\x06\x66ormat\x18\x07 \x01(\x0e\x32\x19.resources.v1.ModelFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12:\n\x05\x61sset\x18\x08 \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61sset\x12:\n\tthumbnail\x18\t \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefR\tthumbnail\x12\x18\n\x07version\x18\n \x01(\tR\x07version\x12\x38\n\x04unit\x18\x0b \x01(\x0e\x32\x17.resources.v1.ModelUnitB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04unit\x12=\n\x07up_axis\x18\x0c \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06upAxis\x12G\n\x0c\x66orward_axis\x18\r \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0b\x66orwardAxis\x12M\n\x13\x65xternal_references\x18\x0e \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\"C\n\x0eModelArtifacts\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.ModelArtifactR\x05items*\xb7\x01\n\nModelGroup\x12\x1b\n\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x14\n\x10MODEL_GROUP_PART\x10\x01\x12\x17\n\x13MODEL_GROUP_PRODUCT\x10\x02\x12\x14\n\x10MODEL_GROUP_TOOL\x10\x03\x12\x15\n\x11MODEL_GROUP_ROBOT\x10\x04\x12\x19\n\x15MODEL_GROUP_CONTAINER\x10\x05\x12\x15\n\x11MODEL_GROUP_ASSET\x10\x06*|\n\x0bModelOrigin\x12\x1c\n\x18MODEL_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_ORIGIN_BUILT_IN\x10\x01\x12\x19\n\x15MODEL_ORIGIN_UPLOADED\x10\x02\x12\x19\n\x15MODEL_ORIGIN_EXTERNAL\x10\x03*\xb2\x01\n\x0bModelFormat\x12\x1c\n\x18MODEL_FORMAT_UNSPECIFIED\x10\x00\x12\x14\n\x10MODEL_FORMAT_GLB\x10\x01\x12\x15\n\x11MODEL_FORMAT_GLTF\x10\x02\x12\x14\n\x10MODEL_FORMAT_OBJ\x10\x03\x12\x15\n\x11MODEL_FORMAT_STEP\x10\x04\x12\x14\n\x10MODEL_FORMAT_STL\x10\x05\x12\x15\n\x11MODEL_FORMAT_USDZ\x10\x06*\xe7\x01\n\tModelUnit\x12\x1a\n\x16MODEL_UNIT_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_UNIT_MILLIMETER\x10\x01\x12\x19\n\x15MODEL_UNIT_CENTIMETER\x10\x02\x12\x14\n\x10MODEL_UNIT_METER\x10\x03\x12\x18\n\x14MODEL_UNIT_KILOMETER\x10\x04\x12\x13\n\x0fMODEL_UNIT_INCH\x10\n\x12\x13\n\x0fMODEL_UNIT_FOOT\x10\x0b\x12\x13\n\x0fMODEL_UNIT_YARD\x10\x0c\x12\x19\n\x15MODEL_UNIT_MICROMETER\x10\x14*\xc9\x01\n\tModelAxis\x12\x1a\n\x16MODEL_AXIS_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_AXIS_POSITIVE_X\x10\x01\x12\x19\n\x15MODEL_AXIS_NEGATIVE_X\x10\x02\x12\x19\n\x15MODEL_AXIS_POSITIVE_Y\x10\x03\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Y\x10\x04\x12\x19\n\x15MODEL_AXIS_POSITIVE_Z\x10\x05\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Z\x10\x06*\x9a\x02\n\x13ModelStorageBackend\x12%\n!MODEL_STORAGE_BACKEND_UNSPECIFIED\x10\x00\x12\"\n\x1eMODEL_STORAGE_BACKEND_BUILT_IN\x10\x01\x12+\n\'MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE\x10\x02\x12\x1c\n\x18MODEL_STORAGE_BACKEND_S3\x10\x03\x12\x1f\n\x1bMODEL_STORAGE_BACKEND_MINIO\x10\x04\x12$\n MODEL_STORAGE_BACKEND_LOCAL_FILE\x10\x05\x12&\n\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06\x42\xb7\x01\n\x10\x63om.resources.v1B\nModelProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18resources/v1/model.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa8\x04\n\x0eStoredAssetRef\x12H\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32!.resources.v1.ModelStorageBackendB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x07\x62\x61\x63kend\x12>\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x19.resources.v1.AssetFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12\x16\n\x06\x62ucket\x18\x03 \x01(\tR\x06\x62ucket\x12\x1d\n\nobject_key\x18\x04 \x01(\tR\tobjectKey\x12\x1d\n\x03uri\x18\x05 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03uri\x12\x1a\n\x08\x66ilename\x18\x06 \x01(\tR\x08\x66ilename\x12!\n\x0c\x63ontent_type\x18\x07 \x01(\tR\x0b\x63ontentType\x12\x1d\n\nsize_bytes\x18\x08 \x01(\x04R\tsizeBytes\x12\x16\n\x06sha256\x18\t \x01(\tR\x06sha256\x12\x38\n\x04unit\x18\n \x01(\x0e\x32\x17.resources.v1.ModelUnitB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04unit\x12=\n\x07up_axis\x18\x0b \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06upAxis\x12G\n\x0c\x66orward_axis\x18\x0c \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0b\x66orwardAxis\"\xd1\x03\n\rModelArtifact\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x38\n\x05group\x18\x05 \x01(\x0e\x32\x18.resources.v1.ModelGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12:\n\x05\x61sset\x18\x06 \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61sset\x12:\n\tthumbnail\x18\x07 \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefR\tthumbnail\x12@\n\x0c\x61lternatives\x18\x08 \x03(\x0b\x32\x1c.resources.v1.StoredAssetRefR\x0c\x61lternatives\x12\x18\n\x07version\x18\t \x01(\tR\x07version\x12M\n\x13\x65xternal_references\x18\n \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\"C\n\x0eModelArtifacts\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.ModelArtifactR\x05items*\xb7\x01\n\nModelGroup\x12\x1b\n\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x14\n\x10MODEL_GROUP_PART\x10\x01\x12\x17\n\x13MODEL_GROUP_PRODUCT\x10\x02\x12\x14\n\x10MODEL_GROUP_TOOL\x10\x03\x12\x15\n\x11MODEL_GROUP_ROBOT\x10\x04\x12\x19\n\x15MODEL_GROUP_CONTAINER\x10\x05\x12\x15\n\x11MODEL_GROUP_ASSET\x10\x06*\xaa\x03\n\x0b\x41ssetFormat\x12\x1c\n\x18\x41SSET_FORMAT_UNSPECIFIED\x10\x00\x12\x14\n\x10\x41SSET_FORMAT_GLB\x10\x01\x12\x15\n\x11\x41SSET_FORMAT_GLTF\x10\x02\x12\x14\n\x10\x41SSET_FORMAT_OBJ\x10\x03\x12\x14\n\x10\x41SSET_FORMAT_FBX\x10\x04\x12\x14\n\x10\x41SSET_FORMAT_STL\x10\x05\x12\x15\n\x11\x41SSET_FORMAT_STEP\x10\x06\x12\x15\n\x11\x41SSET_FORMAT_IGES\x10\x07\x12\x14\n\x10\x41SSET_FORMAT_USD\x10\x08\x12\x15\n\x11\x41SSET_FORMAT_USDZ\x10\t\x12\x14\n\x10\x41SSET_FORMAT_PNG\x10\x1e\x12\x15\n\x11\x41SSET_FORMAT_JPEG\x10\x1f\x12\x15\n\x11\x41SSET_FORMAT_WEBP\x10 \x12\x14\n\x10\x41SSET_FORMAT_SVG\x10!\x12\x14\n\x10\x41SSET_FORMAT_MTL\x10\x32\x12\x16\n\x12\x41SSET_FORMAT_BASIS\x10\x33\x12\x15\n\x11\x41SSET_FORMAT_KTX2\x10\x34\x12\x14\n\x10\x41SSET_FORMAT_ZIP\x10\x46*\xe7\x01\n\tModelUnit\x12\x1a\n\x16MODEL_UNIT_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_UNIT_MILLIMETER\x10\x01\x12\x19\n\x15MODEL_UNIT_CENTIMETER\x10\x02\x12\x14\n\x10MODEL_UNIT_METER\x10\x03\x12\x18\n\x14MODEL_UNIT_KILOMETER\x10\x04\x12\x13\n\x0fMODEL_UNIT_INCH\x10\n\x12\x13\n\x0fMODEL_UNIT_FOOT\x10\x0b\x12\x13\n\x0fMODEL_UNIT_YARD\x10\x0c\x12\x19\n\x15MODEL_UNIT_MICROMETER\x10\x14*\xc9\x01\n\tModelAxis\x12\x1a\n\x16MODEL_AXIS_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_AXIS_POSITIVE_X\x10\x01\x12\x19\n\x15MODEL_AXIS_NEGATIVE_X\x10\x02\x12\x19\n\x15MODEL_AXIS_POSITIVE_Y\x10\x03\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Y\x10\x04\x12\x19\n\x15MODEL_AXIS_POSITIVE_Z\x10\x05\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Z\x10\x06*\x9a\x02\n\x13ModelStorageBackend\x12%\n!MODEL_STORAGE_BACKEND_UNSPECIFIED\x10\x00\x12\"\n\x1eMODEL_STORAGE_BACKEND_BUILT_IN\x10\x01\x12+\n\'MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE\x10\x02\x12\x1c\n\x18MODEL_STORAGE_BACKEND_S3\x10\x03\x12\x1f\n\x1bMODEL_STORAGE_BACKEND_MINIO\x10\x04\x12$\n MODEL_STORAGE_BACKEND_LOCAL_FILE\x10\x05\x12&\n\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06\x42\xb7\x01\n\x10\x63om.resources.v1B\nModelProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,40 +37,36 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\nModelProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
   _globals['_STOREDASSETREF'].fields_by_name['backend']._loaded_options = None
   _globals['_STOREDASSETREF'].fields_by_name['backend']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_STOREDASSETREF'].fields_by_name['format']._loaded_options = None
+  _globals['_STOREDASSETREF'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_STOREDASSETREF'].fields_by_name['uri']._loaded_options = None
   _globals['_STOREDASSETREF'].fields_by_name['uri']._serialized_options = b'\272H\010r\003\210\001\001\330\001\001'
+  _globals['_STOREDASSETREF'].fields_by_name['unit']._loaded_options = None
+  _globals['_STOREDASSETREF'].fields_by_name['unit']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_STOREDASSETREF'].fields_by_name['up_axis']._loaded_options = None
+  _globals['_STOREDASSETREF'].fields_by_name['up_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_STOREDASSETREF'].fields_by_name['forward_axis']._loaded_options = None
+  _globals['_STOREDASSETREF'].fields_by_name['forward_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_MODELARTIFACT'].fields_by_name['name']._loaded_options = None
   _globals['_MODELARTIFACT'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_MODELARTIFACT'].fields_by_name['group']._loaded_options = None
   _globals['_MODELARTIFACT'].fields_by_name['group']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_MODELARTIFACT'].fields_by_name['origin']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['origin']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_MODELARTIFACT'].fields_by_name['format']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_MODELARTIFACT'].fields_by_name['asset']._loaded_options = None
   _globals['_MODELARTIFACT'].fields_by_name['asset']._serialized_options = b'\272H\003\310\001\001'
-  _globals['_MODELARTIFACT'].fields_by_name['unit']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['unit']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_MODELARTIFACT'].fields_by_name['up_axis']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['up_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_MODELARTIFACT'].fields_by_name['forward_axis']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['forward_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_MODELGROUP']._serialized_start=1244
-  _globals['_MODELGROUP']._serialized_end=1427
-  _globals['_MODELORIGIN']._serialized_start=1429
-  _globals['_MODELORIGIN']._serialized_end=1553
-  _globals['_MODELFORMAT']._serialized_start=1556
-  _globals['_MODELFORMAT']._serialized_end=1734
-  _globals['_MODELUNIT']._serialized_start=1737
-  _globals['_MODELUNIT']._serialized_end=1968
-  _globals['_MODELAXIS']._serialized_start=1971
-  _globals['_MODELAXIS']._serialized_end=2172
-  _globals['_MODELSTORAGEBACKEND']._serialized_start=2175
-  _globals['_MODELSTORAGEBACKEND']._serialized_end=2457
+  _globals['_MODELGROUP']._serialized_start=1246
+  _globals['_MODELGROUP']._serialized_end=1429
+  _globals['_ASSETFORMAT']._serialized_start=1432
+  _globals['_ASSETFORMAT']._serialized_end=1858
+  _globals['_MODELUNIT']._serialized_start=1861
+  _globals['_MODELUNIT']._serialized_end=2092
+  _globals['_MODELAXIS']._serialized_start=2095
+  _globals['_MODELAXIS']._serialized_end=2296
+  _globals['_MODELSTORAGEBACKEND']._serialized_start=2299
+  _globals['_MODELSTORAGEBACKEND']._serialized_end=2581
   _globals['_STOREDASSETREF']._serialized_start=154
-  _globals['_STOREDASSETREF']._serialized_end=448
-  _globals['_MODELARTIFACT']._serialized_start=451
-  _globals['_MODELARTIFACT']._serialized_end=1172
-  _globals['_MODELARTIFACTS']._serialized_start=1174
-  _globals['_MODELARTIFACTS']._serialized_end=1241
+  _globals['_STOREDASSETREF']._serialized_end=706
+  _globals['_MODELARTIFACT']._serialized_start=709
+  _globals['_MODELARTIFACT']._serialized_end=1174
+  _globals['_MODELARTIFACTS']._serialized_start=1176
+  _globals['_MODELARTIFACTS']._serialized_end=1243
 # @@protoc_insertion_point(module_scope)

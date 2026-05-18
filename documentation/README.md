@@ -474,10 +474,9 @@
     - [ModelArtifacts](#resources-v1-ModelArtifacts)
     - [StoredAssetRef](#resources-v1-StoredAssetRef)
   
+    - [AssetFormat](#resources-v1-AssetFormat)
     - [ModelAxis](#resources-v1-ModelAxis)
-    - [ModelFormat](#resources-v1-ModelFormat)
     - [ModelGroup](#resources-v1-ModelGroup)
-    - [ModelOrigin](#resources-v1-ModelOrigin)
     - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
     - [ModelUnit](#resources-v1-ModelUnit)
   
@@ -6962,17 +6961,13 @@ max_concurrent_processes and the statuses of child cells/stations.
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
-| origin | [ModelOrigin](#resources-v1-ModelOrigin) |  |  |
-| format | [ModelFormat](#resources-v1-ModelFormat) |  |  |
 | asset | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Primary loadable model asset. |
 | thumbnail | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Optional preview image. |
+| alternatives | [StoredAssetRef](#resources-v1-StoredAssetRef) | repeated | OBJ source, GLB runtime, STEP CAD, etc. |
 | version | [string](#string) |  |  |
-| unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
-| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Y, many CAD systems: Z |
-| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 
 
@@ -7026,19 +7021,51 @@ content_type: &#34;model/gltf-binary&#34;
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | backend | [ModelStorageBackend](#resources-v1-ModelStorageBackend) |  |  |
+| format | [AssetFormat](#resources-v1-AssetFormat) |  |  |
 | bucket | [string](#string) |  |  |
 | object_key | [string](#string) |  |  |
 | uri | [string](#string) |  |  |
 | filename | [string](#string) |  |  |
-| content_type | [string](#string) |  |  |
+| content_type | [string](#string) |  | Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf&#43;json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip, |
 | size_bytes | [uint64](#uint64) |  |  |
 | sha256 | [string](#string) |  |  |
+| unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
+| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Z, many CAD systems: Z |
+| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
 
 
 
 
 
  
+
+
+<a name="resources-v1-AssetFormat"></a>
+
+### AssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| ASSET_FORMAT_GLB | 1 | 3D runtime / interchange formats |
+| ASSET_FORMAT_GLTF | 2 |  |
+| ASSET_FORMAT_OBJ | 3 |  |
+| ASSET_FORMAT_FBX | 4 |  |
+| ASSET_FORMAT_STL | 5 |  |
+| ASSET_FORMAT_STEP | 6 |  |
+| ASSET_FORMAT_IGES | 7 |  |
+| ASSET_FORMAT_USD | 8 |  |
+| ASSET_FORMAT_USDZ | 9 |  |
+| ASSET_FORMAT_PNG | 30 | Images / previews / thumbnails |
+| ASSET_FORMAT_JPEG | 31 |  |
+| ASSET_FORMAT_WEBP | 32 |  |
+| ASSET_FORMAT_SVG | 33 |  |
+| ASSET_FORMAT_MTL | 50 | Material / texture sidecars |
+| ASSET_FORMAT_BASIS | 51 |  |
+| ASSET_FORMAT_KTX2 | 52 |  |
+| ASSET_FORMAT_ZIP | 70 | Archives / bundles |
+
 
 
 <a name="resources-v1-ModelAxis"></a>
@@ -7058,23 +7085,6 @@ content_type: &#34;model/gltf-binary&#34;
 
 
 
-<a name="resources-v1-ModelFormat"></a>
-
-### ModelFormat
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_FORMAT_UNSPECIFIED | 0 |  |
-| MODEL_FORMAT_GLB | 1 |  |
-| MODEL_FORMAT_GLTF | 2 |  |
-| MODEL_FORMAT_OBJ | 3 |  |
-| MODEL_FORMAT_STEP | 4 |  |
-| MODEL_FORMAT_STL | 5 |  |
-| MODEL_FORMAT_USDZ | 6 |  |
-
-
-
 <a name="resources-v1-ModelGroup"></a>
 
 ### ModelGroup
@@ -7089,20 +7099,6 @@ content_type: &#34;model/gltf-binary&#34;
 | MODEL_GROUP_ROBOT | 4 |  |
 | MODEL_GROUP_CONTAINER | 5 |  |
 | MODEL_GROUP_ASSET | 6 |  |
-
-
-
-<a name="resources-v1-ModelOrigin"></a>
-
-### ModelOrigin
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_ORIGIN_UNSPECIFIED | 0 |  |
-| MODEL_ORIGIN_BUILT_IN | 1 |  |
-| MODEL_ORIGIN_UPLOADED | 2 |  |
-| MODEL_ORIGIN_EXTERNAL | 3 |  |
 
 
 
