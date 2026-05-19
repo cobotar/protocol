@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/model.proto.
  */
 export const file_resources_v1_model: GenFile = /*@__PURE__*/
-  fileDesc("ChhyZXNvdXJjZXMvdjEvbW9kZWwucHJvdG8SDHJlc291cmNlcy52MSK6AwoOU3RvcmVkQXNzZXRSZWYSPwoHYmFja2VuZBgBIAEoDjIhLnJlc291cmNlcy52MS5Nb2RlbFN0b3JhZ2VCYWNrZW5kQgu6SAjIAQGCAQIQARI2CgZmb3JtYXQYAiABKA4yGS5yZXNvdXJjZXMudjEuQXNzZXRGb3JtYXRCC7pICMgBAYIBAhABEg4KBmJ1Y2tldBgDIAEoCRISCgpvYmplY3Rfa2V5GAQgASgJEhgKA3VyaRgFIAEoCUILukgI2AEBcgOIAQESEAoIZmlsZW5hbWUYBiABKAkSFAoMY29udGVudF90eXBlGAcgASgJEhIKCnNpemVfYnl0ZXMYCCABKAQSDgoGc2hhMjU2GAkgASgJEjIKBHVuaXQYCiABKA4yFy5yZXNvdXJjZXMudjEuTW9kZWxVbml0Qgu6SAjIAQGCAQIQARI1Cgd1cF9heGlzGAsgASgOMhcucmVzb3VyY2VzLnYxLk1vZGVsQXhpc0ILukgIyAEBggECEAESOgoMZm9yd2FyZF9heGlzGAwgASgOMhcucmVzb3VyY2VzLnYxLk1vZGVsQXhpc0ILukgIyAEBggECEAEi8AIKDU1vZGVsQXJ0aWZhY3QSCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMQoFZ3JvdXAYBSABKA4yGC5yZXNvdXJjZXMudjEuTW9kZWxHcm91cEIIukgFggECEAESMwoFYXNzZXQYBiABKAsyHC5yZXNvdXJjZXMudjEuU3RvcmVkQXNzZXRSZWZCBrpIA8gBARIvCgl0aHVtYm5haWwYByABKAsyHC5yZXNvdXJjZXMudjEuU3RvcmVkQXNzZXRSZWYSMgoMYWx0ZXJuYXRpdmVzGAggAygLMhwucmVzb3VyY2VzLnYxLlN0b3JlZEFzc2V0UmVmEg8KB3ZlcnNpb24YCSABKAkSOQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgKIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZSI8Cg5Nb2RlbEFydGlmYWN0cxIqCgVpdGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Nb2RlbEFydGlmYWN0KrcBCgpNb2RlbEdyb3VwEhsKF01PREVMX0dST1VQX1VOU1BFQ0lGSUVEEAASFAoQTU9ERUxfR1JPVVBfUEFSVBABEhcKE01PREVMX0dST1VQX1BST0RVQ1QQAhIUChBNT0RFTF9HUk9VUF9UT09MEAMSFQoRTU9ERUxfR1JPVVBfUk9CT1QQBBIZChVNT0RFTF9HUk9VUF9DT05UQUlORVIQBRIVChFNT0RFTF9HUk9VUF9BU1NFVBAGKqoDCgtBc3NldEZvcm1hdBIcChhBU1NFVF9GT1JNQVRfVU5TUEVDSUZJRUQQABIUChBBU1NFVF9GT1JNQVRfR0xCEAESFQoRQVNTRVRfRk9STUFUX0dMVEYQAhIUChBBU1NFVF9GT1JNQVRfT0JKEAMSFAoQQVNTRVRfRk9STUFUX0ZCWBAEEhQKEEFTU0VUX0ZPUk1BVF9TVEwQBRIVChFBU1NFVF9GT1JNQVRfU1RFUBAGEhUKEUFTU0VUX0ZPUk1BVF9JR0VTEAcSFAoQQVNTRVRfRk9STUFUX1VTRBAIEhUKEUFTU0VUX0ZPUk1BVF9VU0RaEAkSFAoQQVNTRVRfRk9STUFUX1BORxAeEhUKEUFTU0VUX0ZPUk1BVF9KUEVHEB8SFQoRQVNTRVRfRk9STUFUX1dFQlAQIBIUChBBU1NFVF9GT1JNQVRfU1ZHECESFAoQQVNTRVRfRk9STUFUX01UTBAyEhYKEkFTU0VUX0ZPUk1BVF9CQVNJUxAzEhUKEUFTU0VUX0ZPUk1BVF9LVFgyEDQSFAoQQVNTRVRfRk9STUFUX1pJUBBGKucBCglNb2RlbFVuaXQSGgoWTU9ERUxfVU5JVF9VTlNQRUNJRklFRBAAEhkKFU1PREVMX1VOSVRfTUlMTElNRVRFUhABEhkKFU1PREVMX1VOSVRfQ0VOVElNRVRFUhACEhQKEE1PREVMX1VOSVRfTUVURVIQAxIYChRNT0RFTF9VTklUX0tJTE9NRVRFUhAEEhMKD01PREVMX1VOSVRfSU5DSBAKEhMKD01PREVMX1VOSVRfRk9PVBALEhMKD01PREVMX1VOSVRfWUFSRBAMEhkKFU1PREVMX1VOSVRfTUlDUk9NRVRFUhAUKskBCglNb2RlbEF4aXMSGgoWTU9ERUxfQVhJU19VTlNQRUNJRklFRBAAEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWBABEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWBACEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWRADEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWRAEEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWhAFEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWhAGKpoCChNNb2RlbFN0b3JhZ2VCYWNrZW5kEiUKIU1PREVMX1NUT1JBR0VfQkFDS0VORF9VTlNQRUNJRklFRBAAEiIKHk1PREVMX1NUT1JBR0VfQkFDS0VORF9CVUlMVF9JThABEisKJ01PREVMX1NUT1JBR0VfQkFDS0VORF9OQVRTX09CSkVDVF9TVE9SRRACEhwKGE1PREVMX1NUT1JBR0VfQkFDS0VORF9TMxADEh8KG01PREVMX1NUT1JBR0VfQkFDS0VORF9NSU5JTxAEEiQKIE1PREVMX1NUT1JBR0VfQkFDS0VORF9MT0NBTF9GSUxFEAUSJgoiTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0VYVEVSTkFMX1VSTBAGQrcBChBjb20ucmVzb3VyY2VzLnYxQgpNb2RlbFByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChhyZXNvdXJjZXMvdjEvbW9kZWwucHJvdG8SDHJlc291cmNlcy52MSKeBAoNQXNzZXRMb2NhdGlvbhI/CgdiYWNrZW5kGAEgASgOMiEucmVzb3VyY2VzLnYxLk1vZGVsU3RvcmFnZUJhY2tlbmRCC7pICMgBAYIBAhABEg4KBmJ1Y2tldBgCIAEoCRISCgpvYmplY3Rfa2V5GAMgASgJEhgKA3VyaRgEIAEoCUILukgI2AEBcgOIAQESEAoIZmlsZW5hbWUYBSABKAkSFAoMY29udGVudF90eXBlGAYgASgJEhIKCnNpemVfYnl0ZXMYByABKAQSKwoGc2hhMjU2GAggASgJQhu6SBjYAQFyEzIRXlthLWZBLUYwLTldezY0fSQ6pAK6SKACGp0CCh9hc3NldF9sb2NhdGlvbi5iYWNrZW5kX2xvY2F0aW9uEilhc3NldCBsb2NhdGlvbiBtdXN0IG1hdGNoIHN0b3JhZ2UgYmFja2VuZBrOASh0aGlzLmJhY2tlbmQgPT0gMSAmJiB0aGlzLmZpbGVuYW1lICE9ICcnKSB8fCAodGhpcy5iYWNrZW5kIGluIFsyLCAzLCA0XSAmJiB0aGlzLmJ1Y2tldCAhPSAnJyAmJiB0aGlzLm9iamVjdF9rZXkgIT0gJycpIHx8ICh0aGlzLmJhY2tlbmQgPT0gNSAmJiB0aGlzLmZpbGVuYW1lICE9ICcnKSB8fCAodGhpcy5iYWNrZW5kID09IDYgJiYgdGhpcy51cmkgIT0gJycpIt8GCg1Nb2RlbEFzc2V0UmVmEhgKAmlkGAEgASgJQgy6SAnIAQFyBIDsMAESNQoIbG9jYXRpb24YAiABKAsyGy5yZXNvdXJjZXMudjEuQXNzZXRMb2NhdGlvbkIGukgDyAEBEjsKBmZvcm1hdBgDIAEoDjIeLnJlc291cmNlcy52MS5Nb2RlbEFzc2V0Rm9ybWF0Qgu6SAjIAQGCAQIQARIyCgR1bml0GAQgASgOMhcucmVzb3VyY2VzLnYxLk1vZGVsVW5pdEILukgIyAEBggECEAESNQoHdXBfYXhpcxgFIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbEF4aXNCC7pICMgBAYIBAhABEjoKDGZvcndhcmRfYXhpcxgGIAEoDjIXLnJlc291cmNlcy52MS5Nb2RlbEF4aXNCC7pICMgBAYIBAhABEjcKBHJvbGUYByABKA4yHC5yZXNvdXJjZXMudjEuTW9kZWxBc3NldFJvbGVCC7pICMgBAYIBAhABEigKFWRlcml2ZWRfZnJvbV9hc3NldF9pZBgIIAEoCUIJukgGcgSA7DABOrUDukixAxpvCh5tb2RlbF9hc3NldF9yZWYuYXhlc19kaWZmZXJlbnQSKnVwX2F4aXMgYW5kIGZvcndhcmRfYXhpcyBtdXN0IGJlIGRpZmZlcmVudBohdGhpcy51cF9heGlzICE9IHRoaXMuZm9yd2FyZF9heGlzGpABCiJtb2RlbF9hc3NldF9yZWYuZGVyaXZlZF9oYXNfc291cmNlEjZkZXJpdmVkIG1vZGVsIGFzc2V0cyBtdXN0IGRlZmluZSBkZXJpdmVkX2Zyb21fYXNzZXRfaWQaMnRoaXMucm9sZSAhPSAzIHx8IHRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkICE9ICcnGqoBCiJtb2RlbF9hc3NldF9yZWYubm9fc2VsZl9kZXJpdmF0aW9uEjlkZXJpdmVkX2Zyb21fYXNzZXRfaWQgbXVzdCBub3QgcmVmZXJlbmNlIHRoZSBhc3NldCBpdHNlbGYaSXRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkID09ICcnIHx8IHRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkICE9IHRoaXMuaWQi+gIKDUltYWdlQXNzZXRSZWYSGAoCaWQYASABKAlCDLpICcgBAXIEgOwwARI1Cghsb2NhdGlvbhgCIAEoCzIbLnJlc291cmNlcy52MS5Bc3NldExvY2F0aW9uQga6SAPIAQESOwoGZm9ybWF0GAMgASgOMh4ucmVzb3VyY2VzLnYxLkltYWdlQXNzZXRGb3JtYXRCC7pICMgBAYIBAhABEigKFWRlcml2ZWRfZnJvbV9hc3NldF9pZBgEIAEoCUIJukgGcgSA7DABOrABukisARqpAQohaW1hZ2VfYXNzZXRfcmVmLm5vX3NlbGZfcmVmZXJlbmNlEjlkZXJpdmVkX2Zyb21fYXNzZXRfaWQgbXVzdCBub3QgcmVmZXJlbmNlIHRoZSBhc3NldCBpdHNlbGYaSXRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkID09ICcnIHx8IHRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkICE9IHRoaXMuaWQi+QIKD1NpZGVjYXJBc3NldFJlZhIYCgJpZBgBIAEoCUIMukgJyAEBcgSA7DABEjUKCGxvY2F0aW9uGAIgASgLMhsucmVzb3VyY2VzLnYxLkFzc2V0TG9jYXRpb25CBrpIA8gBARI9CgZmb3JtYXQYAyABKA4yIC5yZXNvdXJjZXMudjEuU2lkZWNhckFzc2V0Rm9ybWF0Qgu6SAjIAQGCAQIQARImChNhc3NvY2lhdGVkX2Fzc2V0X2lkGAQgASgJQgm6SAZyBIDsMAE6rQG6SKkBGqYBCiRzaWRlY2FyX2Fzc2V0X3JlZi5ub19zZWxmX2Rlcml2YXRpb24SN2Fzc29jaWF0ZWRfYXNzZXRfaWQgbXVzdCBub3QgcmVmZXJlbmNlIHRoZSBhc3NldCBpdHNlbGYaRXRoaXMuYXNzb2NpYXRlZF9hc3NldF9pZCA9PSAnJyB8fCB0aGlzLmFzc29jaWF0ZWRfYXNzZXRfaWQgIT0gdGhpcy5pZCKXBAoNTW9kZWxBcnRpZmFjdBIVCgJpZBgBIAEoCUIJukgGcgSI8QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjQKBWdyb3VwGAUgASgOMhgucmVzb3VyY2VzLnYxLk1vZGVsR3JvdXBCC7pICMgBAYIBAhABEjIKBWFzc2V0GAYgASgLMhsucmVzb3VyY2VzLnYxLk1vZGVsQXNzZXRSZWZCBrpIA8gBARIuCgl0aHVtYm5haWwYByABKAsyGy5yZXNvdXJjZXMudjEuSW1hZ2VBc3NldFJlZhIxCgxhbHRlcm5hdGl2ZXMYCCADKAsyGy5yZXNvdXJjZXMudjEuTW9kZWxBc3NldFJlZhIvCghzaWRlY2FycxgJIAMoCzIdLnJlc291cmNlcy52MS5TaWRlY2FyQXNzZXRSZWYSDwoHdmVyc2lvbhgKIAEoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAsgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlOmm6SGYaZAohbW9kZWxfYXJ0aWZhY3QucHJpbWFyeV9hc3NldF9yb2xlEiRwcmltYXJ5IGFzc2V0IG11c3QgaGF2ZSBydW50aW1lIHJvbGUaGXRoaXMuYXNzZXQucm9sZSBpbiBbMSwgMl0iPAoOTW9kZWxBcnRpZmFjdHMSKgoFaXRlbXMYASADKAsyGy5yZXNvdXJjZXMudjEuTW9kZWxBcnRpZmFjdCrVAQoKTW9kZWxHcm91cBIbChdNT0RFTF9HUk9VUF9VTlNQRUNJRklFRBAAEhcKE01PREVMX0dST1VQX1BST0RVQ1QQChIcChhNT0RFTF9HUk9VUF9TVUJfQVNTRU1CTFkQCxIUChBNT0RFTF9HUk9VUF9QQVJUEAwSFAoQTU9ERUxfR1JPVVBfVE9PTBAUEhUKEU1PREVMX0dST1VQX1JPQk9UEB4SGQoVTU9ERUxfR1JPVVBfQ09OVEFJTkVSECgSFQoRTU9ERUxfR1JPVVBfQVNTRVQQMirJAQoOTW9kZWxBc3NldFJvbGUSIAocTU9ERUxfQVNTRVRfUk9MRV9VTlNQRUNJRklFRBAAEhwKGE1PREVMX0FTU0VUX1JPTEVfUlVOVElNRRABEhsKF01PREVMX0FTU0VUX1JPTEVfU09VUkNFEAISHAoYTU9ERUxfQVNTRVRfUk9MRV9ERVJJVkVEEAMSHAoYTU9ERUxfQVNTRVRfUk9MRV9QUkVWSUVXEAQSHgoaTU9ERUxfQVNTRVRfUk9MRV9DT0xMSVNJT04QBSq2AgoQTW9kZWxBc3NldEZvcm1hdBIiCh5NT0RFTF9BU1NFVF9GT1JNQVRfVU5TUEVDSUZJRUQQABIaChZNT0RFTF9BU1NFVF9GT1JNQVRfR0xCEAESGwoXTU9ERUxfQVNTRVRfRk9STUFUX0dMVEYQAhIaChZNT0RFTF9BU1NFVF9GT1JNQVRfT0JKEAMSGgoWTU9ERUxfQVNTRVRfRk9STUFUX0ZCWBAEEhoKFk1PREVMX0FTU0VUX0ZPUk1BVF9TVEwQBRIbChdNT0RFTF9BU1NFVF9GT1JNQVRfU1RFUBAGEhsKF01PREVMX0FTU0VUX0ZPUk1BVF9JR0VTEAcSGgoWTU9ERUxfQVNTRVRfRk9STUFUX1VTRBAIEhsKF01PREVMX0FTU0VUX0ZPUk1BVF9VU0RaEAkqtQEKElNpZGVjYXJBc3NldEZvcm1hdBIkCiBTSURFQ0FSX0FTU0VUX0ZPUk1BVF9VTlNQRUNJRklFRBAAEhwKGFNJREVDQVJfQVNTRVRfRk9STUFUX01UTBBREh4KGlNJREVDQVJfQVNTRVRfRk9STUFUX0JBU0lTEFISHQoZU0lERUNBUl9BU1NFVF9GT1JNQVRfS1RYMhBTEhwKGFNJREVDQVJfQVNTRVRfRk9STUFUX1pJUBBUKqgBChBJbWFnZUFzc2V0Rm9ybWF0EiIKHklNQUdFX0FTU0VUX0ZPUk1BVF9VTlNQRUNJRklFRBAAEhoKFklNQUdFX0FTU0VUX0ZPUk1BVF9QTkcQZBIbChdJTUFHRV9BU1NFVF9GT1JNQVRfSlBFRxBlEhsKF0lNQUdFX0FTU0VUX0ZPUk1BVF9XRUJQEGYSGgoWSU1BR0VfQVNTRVRfRk9STUFUX1NWRxBnKucBCglNb2RlbFVuaXQSGgoWTU9ERUxfVU5JVF9VTlNQRUNJRklFRBAAEhkKFU1PREVMX1VOSVRfTUlMTElNRVRFUhABEhkKFU1PREVMX1VOSVRfQ0VOVElNRVRFUhACEhQKEE1PREVMX1VOSVRfTUVURVIQAxIYChRNT0RFTF9VTklUX0tJTE9NRVRFUhAEEhMKD01PREVMX1VOSVRfSU5DSBAKEhMKD01PREVMX1VOSVRfRk9PVBALEhMKD01PREVMX1VOSVRfWUFSRBAMEhkKFU1PREVMX1VOSVRfTUlDUk9NRVRFUhAUKskBCglNb2RlbEF4aXMSGgoWTU9ERUxfQVhJU19VTlNQRUNJRklFRBAAEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWBABEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWBACEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWRADEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWRAEEhkKFU1PREVMX0FYSVNfUE9TSVRJVkVfWhAFEhkKFU1PREVMX0FYSVNfTkVHQVRJVkVfWhAGKpoCChNNb2RlbFN0b3JhZ2VCYWNrZW5kEiUKIU1PREVMX1NUT1JBR0VfQkFDS0VORF9VTlNQRUNJRklFRBAAEiIKHk1PREVMX1NUT1JBR0VfQkFDS0VORF9CVUlMVF9JThABEisKJ01PREVMX1NUT1JBR0VfQkFDS0VORF9OQVRTX09CSkVDVF9TVE9SRRACEhwKGE1PREVMX1NUT1JBR0VfQkFDS0VORF9TMxADEh8KG01PREVMX1NUT1JBR0VfQkFDS0VORF9NSU5JTxAEEiQKIE1PREVMX1NUT1JBR0VfQkFDS0VORF9MT0NBTF9GSUxFEAUSJgoiTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0VYVEVSTkFMX1VSTBAGQrcBChBjb20ucmVzb3VyY2VzLnYxQgpNb2RlbFByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
 
 /**
  *
@@ -42,62 +42,88 @@ export const file_resources_v1_model: GenFile = /*@__PURE__*/
  * content_type: "model/gltf-binary"
  * }
  *
- * @generated from message resources.v1.StoredAssetRef
+ * @generated from message resources.v1.AssetLocation
  */
-export type StoredAssetRef = Message<"resources.v1.StoredAssetRef"> & {
+export type AssetLocation = Message<"resources.v1.AssetLocation"> & {
   /**
    * @generated from field: resources.v1.ModelStorageBackend backend = 1;
    */
   backend: ModelStorageBackend;
 
   /**
-   * @generated from field: resources.v1.AssetFormat format = 2;
-   */
-  format: AssetFormat;
-
-  /**
-   * @generated from field: string bucket = 3;
+   * @generated from field: string bucket = 2;
    */
   bucket: string;
 
   /**
-   * @generated from field: string object_key = 4;
+   * storage identifier
+   *
+   * @generated from field: string object_key = 3;
    */
   objectKey: string;
 
   /**
-   * @generated from field: string uri = 5;
+   * @generated from field: string uri = 4;
    */
   uri: string;
 
   /**
-   * @generated from field: string filename = 6;
+   * original/display/download filename
+   *
+   * @generated from field: string filename = 5;
    */
   filename: string;
 
   /**
-   * Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf+json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
+   * Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf+json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
    *
-   * @generated from field: string content_type = 7;
+   * @generated from field: string content_type = 6;
    */
   contentType: string;
 
   /**
-   * @generated from field: uint64 size_bytes = 8;
+   * @generated from field: uint64 size_bytes = 7;
    */
   sizeBytes: bigint;
 
   /**
-   * @generated from field: string sha256 = 9;
+   * @generated from field: string sha256 = 8;
    */
   sha256: string;
+};
+
+/**
+ * Describes the message resources.v1.AssetLocation.
+ * Use `create(AssetLocationSchema)` to create a new message.
+ */
+export const AssetLocationSchema: GenMessage<AssetLocation> = /*@__PURE__*/
+  messageDesc(file_resources_v1_model, 0);
+
+/**
+ * @generated from message resources.v1.ModelAssetRef
+ */
+export type ModelAssetRef = Message<"resources.v1.ModelAssetRef"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: resources.v1.AssetLocation location = 2;
+   */
+  location?: AssetLocation;
+
+  /**
+   * @generated from field: resources.v1.ModelAssetFormat format = 3;
+   */
+  format: ModelAssetFormat;
 
   /**
    * Unit used for the model geometry coordinates.
    * Typically "mm", "cm", "m", "in", etc.
    * Used to scale the model correctly when loading.
    *
-   * @generated from field: resources.v1.ModelUnit unit = 10;
+   * @generated from field: resources.v1.ModelUnit unit = 4;
    */
   unit: ModelUnit;
 
@@ -105,7 +131,7 @@ export type StoredAssetRef = Message<"resources.v1.StoredAssetRef"> & {
    * Defines which axis is "up" in the source asset coordinate system.
    * Examples: Unity: Y, Blender: Z, many CAD systems: Z
    *
-   * @generated from field: resources.v1.ModelAxis up_axis = 11;
+   * @generated from field: resources.v1.ModelAxis up_axis = 5;
    */
   upAxis: ModelAxis;
 
@@ -113,17 +139,100 @@ export type StoredAssetRef = Message<"resources.v1.StoredAssetRef"> & {
    * Defines which axis is "forward" in the source asset coordinate system.
    * Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
    *
-   * @generated from field: resources.v1.ModelAxis forward_axis = 12;
+   * @generated from field: resources.v1.ModelAxis forward_axis = 6;
    */
   forwardAxis: ModelAxis;
+
+  /**
+   * @generated from field: resources.v1.ModelAssetRole role = 7;
+   */
+  role: ModelAssetRole;
+
+  /**
+   * Optional link to the source asset this asset was generated from.
+   * Example: a runtime GLB can point to the original imported OBJ/STEP asset.
+   *
+   * @generated from field: string derived_from_asset_id = 8;
+   */
+  derivedFromAssetId: string;
 };
 
 /**
- * Describes the message resources.v1.StoredAssetRef.
- * Use `create(StoredAssetRefSchema)` to create a new message.
+ * Describes the message resources.v1.ModelAssetRef.
+ * Use `create(ModelAssetRefSchema)` to create a new message.
  */
-export const StoredAssetRefSchema: GenMessage<StoredAssetRef> = /*@__PURE__*/
-  messageDesc(file_resources_v1_model, 0);
+export const ModelAssetRefSchema: GenMessage<ModelAssetRef> = /*@__PURE__*/
+  messageDesc(file_resources_v1_model, 1);
+
+/**
+ * @generated from message resources.v1.ImageAssetRef
+ */
+export type ImageAssetRef = Message<"resources.v1.ImageAssetRef"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: resources.v1.AssetLocation location = 2;
+   */
+  location?: AssetLocation;
+
+  /**
+   * @generated from field: resources.v1.ImageAssetFormat format = 3;
+   */
+  format: ImageAssetFormat;
+
+  /**
+   * Optional link to the model asset this image was generated from.
+   * Example: a PNG thumbnail can point to the GLB/OBJ it previews.
+   *
+   * @generated from field: string derived_from_asset_id = 4;
+   */
+  derivedFromAssetId: string;
+};
+
+/**
+ * Describes the message resources.v1.ImageAssetRef.
+ * Use `create(ImageAssetRefSchema)` to create a new message.
+ */
+export const ImageAssetRefSchema: GenMessage<ImageAssetRef> = /*@__PURE__*/
+  messageDesc(file_resources_v1_model, 2);
+
+/**
+ * @generated from message resources.v1.SidecarAssetRef
+ */
+export type SidecarAssetRef = Message<"resources.v1.SidecarAssetRef"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: resources.v1.AssetLocation location = 2;
+   */
+  location?: AssetLocation;
+
+  /**
+   * @generated from field: resources.v1.SidecarAssetFormat format = 3;
+   */
+  format: SidecarAssetFormat;
+
+  /**
+   * Optional link to the model asset this sidecar belongs to or was generated from.
+   * Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
+   *
+   * @generated from field: string associated_asset_id = 4;
+   */
+  associatedAssetId: string;
+};
+
+/**
+ * Describes the message resources.v1.SidecarAssetRef.
+ * Use `create(SidecarAssetRefSchema)` to create a new message.
+ */
+export const SidecarAssetRefSchema: GenMessage<SidecarAssetRef> = /*@__PURE__*/
+  messageDesc(file_resources_v1_model, 3);
 
 /**
  * @generated from message resources.v1.ModelArtifact
@@ -157,31 +266,36 @@ export type ModelArtifact = Message<"resources.v1.ModelArtifact"> & {
   /**
    * Primary loadable model asset.
    *
-   * @generated from field: resources.v1.StoredAssetRef asset = 6;
+   * @generated from field: resources.v1.ModelAssetRef asset = 6;
    */
-  asset?: StoredAssetRef;
+  asset?: ModelAssetRef;
 
   /**
    * Optional preview image.
    *
-   * @generated from field: resources.v1.StoredAssetRef thumbnail = 7;
+   * @generated from field: resources.v1.ImageAssetRef thumbnail = 7;
    */
-  thumbnail?: StoredAssetRef;
+  thumbnail?: ImageAssetRef;
 
   /**
-   * OBJ source, GLB runtime, STEP CAD, etc.
+   * Source, derived, preview, or collision model assets.
    *
-   * @generated from field: repeated resources.v1.StoredAssetRef alternatives = 8;
+   * @generated from field: repeated resources.v1.ModelAssetRef alternatives = 8;
    */
-  alternatives: StoredAssetRef[];
+  alternatives: ModelAssetRef[];
 
   /**
-   * @generated from field: string version = 9;
+   * @generated from field: repeated resources.v1.SidecarAssetRef sidecars = 9;
+   */
+  sidecars: SidecarAssetRef[];
+
+  /**
+   * @generated from field: string version = 10;
    */
   version: string;
 
   /**
-   * @generated from field: repeated common.v1.ExternalReference external_references = 10;
+   * @generated from field: repeated common.v1.ExternalReference external_references = 11;
    */
   externalReferences: ExternalReference[];
 };
@@ -191,7 +305,7 @@ export type ModelArtifact = Message<"resources.v1.ModelArtifact"> & {
  * Use `create(ModelArtifactSchema)` to create a new message.
  */
 export const ModelArtifactSchema: GenMessage<ModelArtifact> = /*@__PURE__*/
-  messageDesc(file_resources_v1_model, 1);
+  messageDesc(file_resources_v1_model, 4);
 
 /**
  * @generated from message resources.v1.ModelArtifacts
@@ -208,7 +322,7 @@ export type ModelArtifacts = Message<"resources.v1.ModelArtifacts"> & {
  * Use `create(ModelArtifactsSchema)` to create a new message.
  */
 export const ModelArtifactsSchema: GenMessage<ModelArtifacts> = /*@__PURE__*/
-  messageDesc(file_resources_v1_model, 2);
+  messageDesc(file_resources_v1_model, 5);
 
 /**
  * @generated from enum resources.v1.ModelGroup
@@ -220,34 +334,39 @@ export enum ModelGroup {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: MODEL_GROUP_PART = 1;
+   * @generated from enum value: MODEL_GROUP_PRODUCT = 10;
    */
-  PART = 1,
+  PRODUCT = 10,
 
   /**
-   * @generated from enum value: MODEL_GROUP_PRODUCT = 2;
+   * @generated from enum value: MODEL_GROUP_SUB_ASSEMBLY = 11;
    */
-  PRODUCT = 2,
+  SUB_ASSEMBLY = 11,
 
   /**
-   * @generated from enum value: MODEL_GROUP_TOOL = 3;
+   * @generated from enum value: MODEL_GROUP_PART = 12;
    */
-  TOOL = 3,
+  PART = 12,
 
   /**
-   * @generated from enum value: MODEL_GROUP_ROBOT = 4;
+   * @generated from enum value: MODEL_GROUP_TOOL = 20;
    */
-  ROBOT = 4,
+  TOOL = 20,
 
   /**
-   * @generated from enum value: MODEL_GROUP_CONTAINER = 5;
+   * @generated from enum value: MODEL_GROUP_ROBOT = 30;
    */
-  CONTAINER = 5,
+  ROBOT = 30,
 
   /**
-   * @generated from enum value: MODEL_GROUP_ASSET = 6;
+   * @generated from enum value: MODEL_GROUP_CONTAINER = 40;
    */
-  ASSET = 6,
+  CONTAINER = 40,
+
+  /**
+   * @generated from enum value: MODEL_GROUP_ASSET = 50;
+   */
+  ASSET = 50,
 }
 
 /**
@@ -257,113 +376,188 @@ export const ModelGroupSchema: GenEnum<ModelGroup> = /*@__PURE__*/
   enumDesc(file_resources_v1_model, 0);
 
 /**
- * @generated from enum resources.v1.AssetFormat
+ * @generated from enum resources.v1.ModelAssetRole
  */
-export enum AssetFormat {
+export enum ModelAssetRole {
   /**
-   * @generated from enum value: ASSET_FORMAT_UNSPECIFIED = 0;
+   * @generated from enum value: MODEL_ASSET_ROLE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * 3D runtime / interchange formats
+   * Preferred asset for runtime loading in clients such as Unity.
    *
-   * @generated from enum value: ASSET_FORMAT_GLB = 1;
+   * @generated from enum value: MODEL_ASSET_ROLE_RUNTIME = 1;
+   */
+  RUNTIME = 1,
+
+  /**
+   * Original/source CAD or mesh asset imported into the system.
+   *
+   * @generated from enum value: MODEL_ASSET_ROLE_SOURCE = 2;
+   */
+  SOURCE = 2,
+
+  /**
+   * Converted representation derived from another asset.
+   *
+   * @generated from enum value: MODEL_ASSET_ROLE_DERIVED = 3;
+   */
+  DERIVED = 3,
+
+  /**
+   * Lower-detail representation used for preview, web viewers, or performance.
+   *
+   * @generated from enum value: MODEL_ASSET_ROLE_PREVIEW = 4;
+   */
+  PREVIEW = 4,
+
+  /**
+   * Collision/physics proxy representation.
+   *
+   * @generated from enum value: MODEL_ASSET_ROLE_COLLISION = 5;
+   */
+  COLLISION = 5,
+}
+
+/**
+ * Describes the enum resources.v1.ModelAssetRole.
+ */
+export const ModelAssetRoleSchema: GenEnum<ModelAssetRole> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 1);
+
+/**
+ * @generated from enum resources.v1.ModelAssetFormat
+ */
+export enum ModelAssetFormat {
+  /**
+   * @generated from enum value: MODEL_ASSET_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MODEL_ASSET_FORMAT_GLB = 1;
    */
   GLB = 1,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_GLTF = 2;
+   * @generated from enum value: MODEL_ASSET_FORMAT_GLTF = 2;
    */
   GLTF = 2,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_OBJ = 3;
+   * @generated from enum value: MODEL_ASSET_FORMAT_OBJ = 3;
    */
   OBJ = 3,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_FBX = 4;
+   * @generated from enum value: MODEL_ASSET_FORMAT_FBX = 4;
    */
   FBX = 4,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_STL = 5;
+   * @generated from enum value: MODEL_ASSET_FORMAT_STL = 5;
    */
   STL = 5,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_STEP = 6;
+   * @generated from enum value: MODEL_ASSET_FORMAT_STEP = 6;
    */
   STEP = 6,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_IGES = 7;
+   * @generated from enum value: MODEL_ASSET_FORMAT_IGES = 7;
    */
   IGES = 7,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_USD = 8;
+   * @generated from enum value: MODEL_ASSET_FORMAT_USD = 8;
    */
   USD = 8,
 
   /**
-   * @generated from enum value: ASSET_FORMAT_USDZ = 9;
+   * @generated from enum value: MODEL_ASSET_FORMAT_USDZ = 9;
    */
   USDZ = 9,
-
-  /**
-   * Images / previews / thumbnails
-   *
-   * @generated from enum value: ASSET_FORMAT_PNG = 30;
-   */
-  PNG = 30,
-
-  /**
-   * @generated from enum value: ASSET_FORMAT_JPEG = 31;
-   */
-  JPEG = 31,
-
-  /**
-   * @generated from enum value: ASSET_FORMAT_WEBP = 32;
-   */
-  WEBP = 32,
-
-  /**
-   * @generated from enum value: ASSET_FORMAT_SVG = 33;
-   */
-  SVG = 33,
-
-  /**
-   * Material / texture sidecars
-   *
-   * @generated from enum value: ASSET_FORMAT_MTL = 50;
-   */
-  MTL = 50,
-
-  /**
-   * @generated from enum value: ASSET_FORMAT_BASIS = 51;
-   */
-  BASIS = 51,
-
-  /**
-   * @generated from enum value: ASSET_FORMAT_KTX2 = 52;
-   */
-  KTX2 = 52,
-
-  /**
-   * Archives / bundles
-   *
-   * @generated from enum value: ASSET_FORMAT_ZIP = 70;
-   */
-  ZIP = 70,
 }
 
 /**
- * Describes the enum resources.v1.AssetFormat.
+ * Describes the enum resources.v1.ModelAssetFormat.
  */
-export const AssetFormatSchema: GenEnum<AssetFormat> = /*@__PURE__*/
-  enumDesc(file_resources_v1_model, 1);
+export const ModelAssetFormatSchema: GenEnum<ModelAssetFormat> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 2);
+
+/**
+ * @generated from enum resources.v1.SidecarAssetFormat
+ */
+export enum SidecarAssetFormat {
+  /**
+   * @generated from enum value: SIDECAR_ASSET_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: SIDECAR_ASSET_FORMAT_MTL = 81;
+   */
+  MTL = 81,
+
+  /**
+   * @generated from enum value: SIDECAR_ASSET_FORMAT_BASIS = 82;
+   */
+  BASIS = 82,
+
+  /**
+   * @generated from enum value: SIDECAR_ASSET_FORMAT_KTX2 = 83;
+   */
+  KTX2 = 83,
+
+  /**
+   * @generated from enum value: SIDECAR_ASSET_FORMAT_ZIP = 84;
+   */
+  ZIP = 84,
+}
+
+/**
+ * Describes the enum resources.v1.SidecarAssetFormat.
+ */
+export const SidecarAssetFormatSchema: GenEnum<SidecarAssetFormat> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 3);
+
+/**
+ * @generated from enum resources.v1.ImageAssetFormat
+ */
+export enum ImageAssetFormat {
+  /**
+   * @generated from enum value: IMAGE_ASSET_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: IMAGE_ASSET_FORMAT_PNG = 100;
+   */
+  PNG = 100,
+
+  /**
+   * @generated from enum value: IMAGE_ASSET_FORMAT_JPEG = 101;
+   */
+  JPEG = 101,
+
+  /**
+   * @generated from enum value: IMAGE_ASSET_FORMAT_WEBP = 102;
+   */
+  WEBP = 102,
+
+  /**
+   * @generated from enum value: IMAGE_ASSET_FORMAT_SVG = 103;
+   */
+  SVG = 103,
+}
+
+/**
+ * Describes the enum resources.v1.ImageAssetFormat.
+ */
+export const ImageAssetFormatSchema: GenEnum<ImageAssetFormat> = /*@__PURE__*/
+  enumDesc(file_resources_v1_model, 4);
 
 /**
  * @generated from enum resources.v1.ModelUnit
@@ -425,7 +619,7 @@ export enum ModelUnit {
  * Describes the enum resources.v1.ModelUnit.
  */
 export const ModelUnitSchema: GenEnum<ModelUnit> = /*@__PURE__*/
-  enumDesc(file_resources_v1_model, 2);
+  enumDesc(file_resources_v1_model, 5);
 
 /**
  * @generated from enum resources.v1.ModelAxis
@@ -471,7 +665,7 @@ export enum ModelAxis {
  * Describes the enum resources.v1.ModelAxis.
  */
 export const ModelAxisSchema: GenEnum<ModelAxis> = /*@__PURE__*/
-  enumDesc(file_resources_v1_model, 3);
+  enumDesc(file_resources_v1_model, 6);
 
 /**
  * @generated from enum resources.v1.ModelStorageBackend
@@ -517,5 +711,5 @@ export enum ModelStorageBackend {
  * Describes the enum resources.v1.ModelStorageBackend.
  */
 export const ModelStorageBackendSchema: GenEnum<ModelStorageBackend> = /*@__PURE__*/
-  enumDesc(file_resources_v1_model, 4);
+  enumDesc(file_resources_v1_model, 7);
 

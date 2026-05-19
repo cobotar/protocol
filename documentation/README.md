@@ -57,6 +57,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -470,15 +471,21 @@
     - [MarkerType](#resources-v1-MarkerType)
   
 - [resources/v1/model.proto](#resources_v1_model-proto)
+    - [AssetLocation](#resources-v1-AssetLocation)
+    - [ImageAssetRef](#resources-v1-ImageAssetRef)
     - [ModelArtifact](#resources-v1-ModelArtifact)
     - [ModelArtifacts](#resources-v1-ModelArtifacts)
-    - [StoredAssetRef](#resources-v1-StoredAssetRef)
+    - [ModelAssetRef](#resources-v1-ModelAssetRef)
+    - [SidecarAssetRef](#resources-v1-SidecarAssetRef)
   
-    - [AssetFormat](#resources-v1-AssetFormat)
+    - [ImageAssetFormat](#resources-v1-ImageAssetFormat)
+    - [ModelAssetFormat](#resources-v1-ModelAssetFormat)
+    - [ModelAssetRole](#resources-v1-ModelAssetRole)
     - [ModelAxis](#resources-v1-ModelAxis)
     - [ModelGroup](#resources-v1-ModelGroup)
     - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
     - [ModelUnit](#resources-v1-ModelUnit)
+    - [SidecarAssetFormat](#resources-v1-SidecarAssetFormat)
   
 - [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
     - [RobotDefinition](#resources-v1-RobotDefinition)
@@ -914,6 +921,7 @@ A simple pose consisting of a position and orientation
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
 | line_id_component | bool | .buf.validate.StringRules | 10024 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
+| model_asset_id_component | bool | .buf.validate.StringRules | 100032 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
 | part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
@@ -6951,48 +6959,9 @@ max_concurrent_processes and the statuses of child cells/stations.
 
 
 
-<a name="resources-v1-ModelArtifact"></a>
+<a name="resources-v1-AssetLocation"></a>
 
-### ModelArtifact
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
-| asset | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Primary loadable model asset. |
-| thumbnail | [StoredAssetRef](#resources-v1-StoredAssetRef) |  | Optional preview image. |
-| alternatives | [StoredAssetRef](#resources-v1-StoredAssetRef) | repeated | OBJ source, GLB runtime, STEP CAD, etc. |
-| version | [string](#string) |  |  |
-| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-
-
-
-
-
-
-<a name="resources-v1-ModelArtifacts"></a>
-
-### ModelArtifacts
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
-
-
-
-
-
-
-<a name="resources-v1-StoredAssetRef"></a>
-
-### StoredAssetRef
+### AssetLocation
 Examples:
 asset {
 backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
@@ -7021,17 +6990,111 @@ content_type: &#34;model/gltf-binary&#34;
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | backend | [ModelStorageBackend](#resources-v1-ModelStorageBackend) |  |  |
-| format | [AssetFormat](#resources-v1-AssetFormat) |  |  |
 | bucket | [string](#string) |  |  |
-| object_key | [string](#string) |  |  |
+| object_key | [string](#string) |  | storage identifier |
 | uri | [string](#string) |  |  |
-| filename | [string](#string) |  |  |
-| content_type | [string](#string) |  | Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf&#43;json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip, |
+| filename | [string](#string) |  | original/display/download filename |
+| content_type | [string](#string) |  | Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf&#43;json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip, |
 | size_bytes | [uint64](#uint64) |  |  |
 | sha256 | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ImageAssetRef"></a>
+
+### ImageAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| format | [ImageAssetFormat](#resources-v1-ImageAssetFormat) |  |  |
+| derived_from_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
+
+
+
+
+
+
+<a name="resources-v1-ModelArtifact"></a>
+
+### ModelArtifact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
+| asset | [ModelAssetRef](#resources-v1-ModelAssetRef) |  | Primary loadable model asset. |
+| thumbnail | [ImageAssetRef](#resources-v1-ImageAssetRef) |  | Optional preview image. |
+| alternatives | [ModelAssetRef](#resources-v1-ModelAssetRef) | repeated | Source, derived, preview, or collision model assets. |
+| sidecars | [SidecarAssetRef](#resources-v1-SidecarAssetRef) | repeated |  |
+| version | [string](#string) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-ModelArtifacts"></a>
+
+### ModelArtifacts
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-ModelAssetRef"></a>
+
+### ModelAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| format | [ModelAssetFormat](#resources-v1-ModelAssetFormat) |  |  |
 | unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
 | up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Z, many CAD systems: Z |
 | forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
+| role | [ModelAssetRole](#resources-v1-ModelAssetRole) |  |  |
+| derived_from_asset_id | [string](#string) |  | Optional link to the source asset this asset was generated from. Example: a runtime GLB can point to the original imported OBJ/STEP asset. |
+
+
+
+
+
+
+<a name="resources-v1-SidecarAssetRef"></a>
+
+### SidecarAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| format | [SidecarAssetFormat](#resources-v1-SidecarAssetFormat) |  |  |
+| associated_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
 
 
 
@@ -7040,31 +7103,54 @@ content_type: &#34;model/gltf-binary&#34;
  
 
 
-<a name="resources-v1-AssetFormat"></a>
+<a name="resources-v1-ImageAssetFormat"></a>
 
-### AssetFormat
+### ImageAssetFormat
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ASSET_FORMAT_UNSPECIFIED | 0 |  |
-| ASSET_FORMAT_GLB | 1 | 3D runtime / interchange formats |
-| ASSET_FORMAT_GLTF | 2 |  |
-| ASSET_FORMAT_OBJ | 3 |  |
-| ASSET_FORMAT_FBX | 4 |  |
-| ASSET_FORMAT_STL | 5 |  |
-| ASSET_FORMAT_STEP | 6 |  |
-| ASSET_FORMAT_IGES | 7 |  |
-| ASSET_FORMAT_USD | 8 |  |
-| ASSET_FORMAT_USDZ | 9 |  |
-| ASSET_FORMAT_PNG | 30 | Images / previews / thumbnails |
-| ASSET_FORMAT_JPEG | 31 |  |
-| ASSET_FORMAT_WEBP | 32 |  |
-| ASSET_FORMAT_SVG | 33 |  |
-| ASSET_FORMAT_MTL | 50 | Material / texture sidecars |
-| ASSET_FORMAT_BASIS | 51 |  |
-| ASSET_FORMAT_KTX2 | 52 |  |
-| ASSET_FORMAT_ZIP | 70 | Archives / bundles |
+| IMAGE_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| IMAGE_ASSET_FORMAT_PNG | 100 |  |
+| IMAGE_ASSET_FORMAT_JPEG | 101 |  |
+| IMAGE_ASSET_FORMAT_WEBP | 102 |  |
+| IMAGE_ASSET_FORMAT_SVG | 103 |  |
+
+
+
+<a name="resources-v1-ModelAssetFormat"></a>
+
+### ModelAssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| MODEL_ASSET_FORMAT_GLB | 1 |  |
+| MODEL_ASSET_FORMAT_GLTF | 2 |  |
+| MODEL_ASSET_FORMAT_OBJ | 3 |  |
+| MODEL_ASSET_FORMAT_FBX | 4 |  |
+| MODEL_ASSET_FORMAT_STL | 5 |  |
+| MODEL_ASSET_FORMAT_STEP | 6 |  |
+| MODEL_ASSET_FORMAT_IGES | 7 |  |
+| MODEL_ASSET_FORMAT_USD | 8 |  |
+| MODEL_ASSET_FORMAT_USDZ | 9 |  |
+
+
+
+<a name="resources-v1-ModelAssetRole"></a>
+
+### ModelAssetRole
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ASSET_ROLE_UNSPECIFIED | 0 |  |
+| MODEL_ASSET_ROLE_RUNTIME | 1 | Preferred asset for runtime loading in clients such as Unity. |
+| MODEL_ASSET_ROLE_SOURCE | 2 | Original/source CAD or mesh asset imported into the system. |
+| MODEL_ASSET_ROLE_DERIVED | 3 | Converted representation derived from another asset. |
+| MODEL_ASSET_ROLE_PREVIEW | 4 | Lower-detail representation used for preview, web viewers, or performance. |
+| MODEL_ASSET_ROLE_COLLISION | 5 | Collision/physics proxy representation. |
 
 
 
@@ -7093,12 +7179,13 @@ content_type: &#34;model/gltf-binary&#34;
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | MODEL_GROUP_UNSPECIFIED | 0 |  |
-| MODEL_GROUP_PART | 1 |  |
-| MODEL_GROUP_PRODUCT | 2 |  |
-| MODEL_GROUP_TOOL | 3 |  |
-| MODEL_GROUP_ROBOT | 4 |  |
-| MODEL_GROUP_CONTAINER | 5 |  |
-| MODEL_GROUP_ASSET | 6 |  |
+| MODEL_GROUP_PRODUCT | 10 |  |
+| MODEL_GROUP_SUB_ASSEMBLY | 11 |  |
+| MODEL_GROUP_PART | 12 |  |
+| MODEL_GROUP_TOOL | 20 |  |
+| MODEL_GROUP_ROBOT | 30 |  |
+| MODEL_GROUP_CONTAINER | 40 |  |
+| MODEL_GROUP_ASSET | 50 |  |
 
 
 
@@ -7135,6 +7222,21 @@ content_type: &#34;model/gltf-binary&#34;
 | MODEL_UNIT_FOOT | 11 |  |
 | MODEL_UNIT_YARD | 12 |  |
 | MODEL_UNIT_MICROMETER | 20 | CAD / scientific |
+
+
+
+<a name="resources-v1-SidecarAssetFormat"></a>
+
+### SidecarAssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SIDECAR_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| SIDECAR_ASSET_FORMAT_MTL | 81 |  |
+| SIDECAR_ASSET_FORMAT_BASIS | 82 |  |
+| SIDECAR_ASSET_FORMAT_KTX2 | 83 |  |
+| SIDECAR_ASSET_FORMAT_ZIP | 84 |  |
 
 
  

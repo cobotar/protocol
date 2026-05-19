@@ -10,41 +10,61 @@ option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 
 enum ModelGroup {
   MODEL_GROUP_UNSPECIFIED = 0;
-  MODEL_GROUP_PART = 1;
-  MODEL_GROUP_PRODUCT = 2;
-  MODEL_GROUP_TOOL = 3;
-  MODEL_GROUP_ROBOT = 4;
-  MODEL_GROUP_CONTAINER = 5;
-  MODEL_GROUP_ASSET = 6;
+  MODEL_GROUP_PRODUCT = 10;
+  MODEL_GROUP_SUB_ASSEMBLY = 11;
+  MODEL_GROUP_PART = 12;
+  MODEL_GROUP_TOOL = 20;
+  MODEL_GROUP_ROBOT = 30;
+  MODEL_GROUP_CONTAINER = 40;
+  MODEL_GROUP_ASSET = 50;
 }
 
-enum AssetFormat {
-  ASSET_FORMAT_UNSPECIFIED = 0;
+enum ModelAssetRole {
+  MODEL_ASSET_ROLE_UNSPECIFIED = 0;
 
-  // 3D runtime / interchange formats
-  ASSET_FORMAT_GLB = 1;
-  ASSET_FORMAT_GLTF = 2;
-  ASSET_FORMAT_OBJ = 3;
-  ASSET_FORMAT_FBX = 4;
-  ASSET_FORMAT_STL = 5;
-  ASSET_FORMAT_STEP = 6;
-  ASSET_FORMAT_IGES = 7;
-  ASSET_FORMAT_USD = 8;
-  ASSET_FORMAT_USDZ = 9;
+  // Preferred asset for runtime loading in clients such as Unity.
+  MODEL_ASSET_ROLE_RUNTIME = 1;
 
-  // Images / previews / thumbnails
-  ASSET_FORMAT_PNG = 30;
-  ASSET_FORMAT_JPEG = 31;
-  ASSET_FORMAT_WEBP = 32;
-  ASSET_FORMAT_SVG = 33;
+  // Original/source CAD or mesh asset imported into the system.
+  MODEL_ASSET_ROLE_SOURCE = 2;
 
-  // Material / texture sidecars
-  ASSET_FORMAT_MTL = 50;
-  ASSET_FORMAT_BASIS = 51;
-  ASSET_FORMAT_KTX2 = 52;
+  // Converted representation derived from another asset.
+  MODEL_ASSET_ROLE_DERIVED = 3;
 
-  // Archives / bundles
-  ASSET_FORMAT_ZIP = 70;
+  // Lower-detail representation used for preview, web viewers, or performance.
+  MODEL_ASSET_ROLE_PREVIEW = 4;
+
+  // Collision/physics proxy representation.
+  MODEL_ASSET_ROLE_COLLISION = 5;
+}
+
+enum ModelAssetFormat {
+  MODEL_ASSET_FORMAT_UNSPECIFIED = 0;
+  MODEL_ASSET_FORMAT_GLB = 1;
+  MODEL_ASSET_FORMAT_GLTF = 2;
+  MODEL_ASSET_FORMAT_OBJ = 3;
+  MODEL_ASSET_FORMAT_FBX = 4;
+  MODEL_ASSET_FORMAT_STL = 5;
+  MODEL_ASSET_FORMAT_STEP = 6;
+  MODEL_ASSET_FORMAT_IGES = 7;
+  MODEL_ASSET_FORMAT_USD = 8;
+  MODEL_ASSET_FORMAT_USDZ = 9;
+}
+
+enum SidecarAssetFormat {
+  SIDECAR_ASSET_FORMAT_UNSPECIFIED = 0;
+  SIDECAR_ASSET_FORMAT_MTL = 81;
+  SIDECAR_ASSET_FORMAT_BASIS = 82;
+  SIDECAR_ASSET_FORMAT_KTX2 = 83;
+  SIDECAR_ASSET_FORMAT_ZIP = 84;
+}
+
+enum ImageAssetFormat {
+  IMAGE_ASSET_FORMAT_UNSPECIFIED = 0;
+  IMAGE_ASSET_FORMAT_PNG = 100;
+  IMAGE_ASSET_FORMAT_JPEG = 101;
+  IMAGE_ASSET_FORMAT_WEBP = 102;
+  IMAGE_ASSET_FORMAT_SVG = 103;
 }
 
 enum ModelUnit {
@@ -113,61 +133,165 @@ enum ModelStorageBackend {
      content_type: "model/gltf-binary"
    }
 */
-message StoredAssetRef {
+message AssetLocation {
+  option (buf.validate.message).cel = {
+    id: "asset_location.backend_location"
+    message: "asset location must match storage backend"
+    expression: "(this.backend == 1 && this.filename != '') || (this.backend in [2, 3, 4] && this.bucket != '' && this.object_key != '') || (this.backend == 5 && this.filename != '') || (this.backend == 6 && this.uri != '')"
+  };
+
   ModelStorageBackend backend = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  AssetFormat format = 2 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
 
-  string bucket = 3;
-  string object_key = 4;
-  string uri = 5 [
+  string bucket = 2;
+  string object_key = 3; // storage identifier
+
+  string uri = 4 [
     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
     (buf.validate.field).string.uri = true
   ];
 
-  string filename = 6;
-  string content_type = 7; // Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf+json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
-  uint64 size_bytes = 8;
-  string sha256 = 9;
+  string filename = 5; // original/display/download filename
+  string content_type = 6; // Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf+json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
+  uint64 size_bytes = 7;
+
+  string sha256 = 8 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.pattern = "^[a-fA-F0-9]{64}$"
+  ];
+}
+
+message ModelAssetRef {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
+  ];
+  AssetLocation location = 2 [(buf.validate.field).required = true];
+
+  ModelAssetFormat format = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
 
   // Unit used for the model geometry coordinates.
   // Typically "mm", "cm", "m", "in", etc.
   // Used to scale the model correctly when loading.
-  ModelUnit unit = 10 [
+  ModelUnit unit = 4 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
 
   // Defines which axis is "up" in the source asset coordinate system.
   // Examples: Unity: Y, Blender: Z, many CAD systems: Z
-  ModelAxis up_axis = 11 [
+  ModelAxis up_axis = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
+
   // Defines which axis is "forward" in the source asset coordinate system.
   // Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
-  ModelAxis forward_axis = 12 [
+  ModelAxis forward_axis = 6 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
+
+  ModelAssetRole role = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Optional link to the source asset this asset was generated from.
+  // Example: a runtime GLB can point to the original imported OBJ/STEP asset.
+  string derived_from_asset_id = 8 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
+
+  option (buf.validate.message).cel = {
+    id: "model_asset_ref.axes_different"
+    message: "up_axis and forward_axis must be different"
+    expression: "this.up_axis != this.forward_axis"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "model_asset_ref.derived_has_source"
+    message: "derived model assets must define derived_from_asset_id"
+    expression: "this.role != 3 || this.derived_from_asset_id != ''"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "model_asset_ref.no_self_derivation"
+    message: "derived_from_asset_id must not reference the asset itself"
+    expression: "this.derived_from_asset_id == '' || this.derived_from_asset_id != this.id"
+  };
+}
+
+message ImageAssetRef {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
+  ];
+  AssetLocation location = 2 [(buf.validate.field).required = true];
+
+  ImageAssetFormat format = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Optional link to the model asset this image was generated from.
+  // Example: a PNG thumbnail can point to the GLB/OBJ it previews.
+  string derived_from_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
+
+  option (buf.validate.message).cel = {
+    id: "image_asset_ref.no_self_reference"
+    message: "derived_from_asset_id must not reference the asset itself"
+    expression: "this.derived_from_asset_id == '' || this.derived_from_asset_id != this.id"
+  };
+}
+
+message SidecarAssetRef {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
+  ];
+  AssetLocation location = 2 [(buf.validate.field).required = true];
+
+  SidecarAssetFormat format = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Optional link to the model asset this sidecar belongs to or was generated from.
+  // Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
+  string associated_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
+
+  option (buf.validate.message).cel = {
+    id: "sidecar_asset_ref.no_self_derivation"
+    message: "associated_asset_id must not reference the asset itself"
+    expression: "this.associated_asset_id == '' || this.associated_asset_id != this.id"
+  };
 }
 
 message ModelArtifact {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ModelGroup group = 5 [(buf.validate.field).enum.defined_only = true];
-  StoredAssetRef asset = 6 [(buf.validate.field).required = true]; // Primary loadable model asset.
-  StoredAssetRef thumbnail = 7; // Optional preview image.
-  repeated StoredAssetRef alternatives = 8; // OBJ source, GLB runtime, STEP CAD, etc.
-  string version = 9;
-  repeated common.v1.ExternalReference external_references = 10;
+  ModelGroup group = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ModelAssetRef asset = 6 [(buf.validate.field).required = true]; // Primary loadable model asset.
+  ImageAssetRef thumbnail = 7; // Optional preview image.
+  repeated ModelAssetRef alternatives = 8; // Source, derived, preview, or collision model assets.
+  repeated SidecarAssetRef sidecars = 9;
+  string version = 10;
+  repeated common.v1.ExternalReference external_references = 11;
+
+  option (buf.validate.message).cel = {
+    id: "model_artifact.primary_asset_role"
+    message: "primary asset must have runtime role"
+    expression: "this.asset.role in [1, 2]" // Runtime or Source
+  };
 }
 
 message ModelArtifacts {

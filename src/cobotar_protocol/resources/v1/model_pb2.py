@@ -27,7 +27,7 @@ from common.v1 import external_references_pb2 as common_dot_v1_dot_external__ref
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18resources/v1/model.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa8\x04\n\x0eStoredAssetRef\x12H\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32!.resources.v1.ModelStorageBackendB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x07\x62\x61\x63kend\x12>\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x19.resources.v1.AssetFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12\x16\n\x06\x62ucket\x18\x03 \x01(\tR\x06\x62ucket\x12\x1d\n\nobject_key\x18\x04 \x01(\tR\tobjectKey\x12\x1d\n\x03uri\x18\x05 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03uri\x12\x1a\n\x08\x66ilename\x18\x06 \x01(\tR\x08\x66ilename\x12!\n\x0c\x63ontent_type\x18\x07 \x01(\tR\x0b\x63ontentType\x12\x1d\n\nsize_bytes\x18\x08 \x01(\x04R\tsizeBytes\x12\x16\n\x06sha256\x18\t \x01(\tR\x06sha256\x12\x38\n\x04unit\x18\n \x01(\x0e\x32\x17.resources.v1.ModelUnitB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04unit\x12=\n\x07up_axis\x18\x0b \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06upAxis\x12G\n\x0c\x66orward_axis\x18\x0c \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0b\x66orwardAxis\"\xd1\x03\n\rModelArtifact\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x38\n\x05group\x18\x05 \x01(\x0e\x32\x18.resources.v1.ModelGroupB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12:\n\x05\x61sset\x18\x06 \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61sset\x12:\n\tthumbnail\x18\x07 \x01(\x0b\x32\x1c.resources.v1.StoredAssetRefR\tthumbnail\x12@\n\x0c\x61lternatives\x18\x08 \x03(\x0b\x32\x1c.resources.v1.StoredAssetRefR\x0c\x61lternatives\x12\x18\n\x07version\x18\t \x01(\tR\x07version\x12M\n\x13\x65xternal_references\x18\n \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\"C\n\x0eModelArtifacts\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.ModelArtifactR\x05items*\xb7\x01\n\nModelGroup\x12\x1b\n\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x14\n\x10MODEL_GROUP_PART\x10\x01\x12\x17\n\x13MODEL_GROUP_PRODUCT\x10\x02\x12\x14\n\x10MODEL_GROUP_TOOL\x10\x03\x12\x15\n\x11MODEL_GROUP_ROBOT\x10\x04\x12\x19\n\x15MODEL_GROUP_CONTAINER\x10\x05\x12\x15\n\x11MODEL_GROUP_ASSET\x10\x06*\xaa\x03\n\x0b\x41ssetFormat\x12\x1c\n\x18\x41SSET_FORMAT_UNSPECIFIED\x10\x00\x12\x14\n\x10\x41SSET_FORMAT_GLB\x10\x01\x12\x15\n\x11\x41SSET_FORMAT_GLTF\x10\x02\x12\x14\n\x10\x41SSET_FORMAT_OBJ\x10\x03\x12\x14\n\x10\x41SSET_FORMAT_FBX\x10\x04\x12\x14\n\x10\x41SSET_FORMAT_STL\x10\x05\x12\x15\n\x11\x41SSET_FORMAT_STEP\x10\x06\x12\x15\n\x11\x41SSET_FORMAT_IGES\x10\x07\x12\x14\n\x10\x41SSET_FORMAT_USD\x10\x08\x12\x15\n\x11\x41SSET_FORMAT_USDZ\x10\t\x12\x14\n\x10\x41SSET_FORMAT_PNG\x10\x1e\x12\x15\n\x11\x41SSET_FORMAT_JPEG\x10\x1f\x12\x15\n\x11\x41SSET_FORMAT_WEBP\x10 \x12\x14\n\x10\x41SSET_FORMAT_SVG\x10!\x12\x14\n\x10\x41SSET_FORMAT_MTL\x10\x32\x12\x16\n\x12\x41SSET_FORMAT_BASIS\x10\x33\x12\x15\n\x11\x41SSET_FORMAT_KTX2\x10\x34\x12\x14\n\x10\x41SSET_FORMAT_ZIP\x10\x46*\xe7\x01\n\tModelUnit\x12\x1a\n\x16MODEL_UNIT_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_UNIT_MILLIMETER\x10\x01\x12\x19\n\x15MODEL_UNIT_CENTIMETER\x10\x02\x12\x14\n\x10MODEL_UNIT_METER\x10\x03\x12\x18\n\x14MODEL_UNIT_KILOMETER\x10\x04\x12\x13\n\x0fMODEL_UNIT_INCH\x10\n\x12\x13\n\x0fMODEL_UNIT_FOOT\x10\x0b\x12\x13\n\x0fMODEL_UNIT_YARD\x10\x0c\x12\x19\n\x15MODEL_UNIT_MICROMETER\x10\x14*\xc9\x01\n\tModelAxis\x12\x1a\n\x16MODEL_AXIS_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_AXIS_POSITIVE_X\x10\x01\x12\x19\n\x15MODEL_AXIS_NEGATIVE_X\x10\x02\x12\x19\n\x15MODEL_AXIS_POSITIVE_Y\x10\x03\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Y\x10\x04\x12\x19\n\x15MODEL_AXIS_POSITIVE_Z\x10\x05\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Z\x10\x06*\x9a\x02\n\x13ModelStorageBackend\x12%\n!MODEL_STORAGE_BACKEND_UNSPECIFIED\x10\x00\x12\"\n\x1eMODEL_STORAGE_BACKEND_BUILT_IN\x10\x01\x12+\n\'MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE\x10\x02\x12\x1c\n\x18MODEL_STORAGE_BACKEND_S3\x10\x03\x12\x1f\n\x1bMODEL_STORAGE_BACKEND_MINIO\x10\x04\x12$\n MODEL_STORAGE_BACKEND_LOCAL_FILE\x10\x05\x12&\n\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06\x42\xb7\x01\n\x10\x63om.resources.v1B\nModelProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18resources/v1/model.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe9\x04\n\rAssetLocation\x12H\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32!.resources.v1.ModelStorageBackendB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x07\x62\x61\x63kend\x12\x16\n\x06\x62ucket\x18\x02 \x01(\tR\x06\x62ucket\x12\x1d\n\nobject_key\x18\x03 \x01(\tR\tobjectKey\x12\x1d\n\x03uri\x18\x04 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03uri\x12\x1a\n\x08\x66ilename\x18\x05 \x01(\tR\x08\x66ilename\x12!\n\x0c\x63ontent_type\x18\x06 \x01(\tR\x0b\x63ontentType\x12\x1d\n\nsize_bytes\x18\x07 \x01(\x04R\tsizeBytes\x12\x33\n\x06sha256\x18\x08 \x01(\tB\x1b\xbaH\x18r\x13\x32\x11^[a-fA-F0-9]{64}$\xd8\x01\x01R\x06sha256:\xa4\x02\xbaH\xa0\x02\x1a\x9d\x02\n\x1f\x61sset_location.backend_location\x12)asset location must match storage backend\x1a\xce\x01(this.backend == 1 && this.filename != \'\') || (this.backend in [2, 3, 4] && this.bucket != \'\' && this.object_key != \'\') || (this.backend == 5 && this.filename != \'\') || (this.backend == 6 && this.uri != \'\')\"\xaa\x07\n\rModelAssetRef\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x80\xec\x30\x01\xc8\x01\x01R\x02id\x12?\n\x08location\x18\x02 \x01(\x0b\x32\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\x08location\x12\x43\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x1e.resources.v1.ModelAssetFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12\x38\n\x04unit\x18\x04 \x01(\x0e\x32\x17.resources.v1.ModelUnitB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04unit\x12=\n\x07up_axis\x18\x05 \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06upAxis\x12G\n\x0c\x66orward_axis\x18\x06 \x01(\x0e\x32\x17.resources.v1.ModelAxisB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0b\x66orwardAxis\x12=\n\x04role\x18\x07 \x01(\x0e\x32\x1c.resources.v1.ModelAssetRoleB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04role\x12<\n\x15\x64\x65rived_from_asset_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x80\xec\x30\x01R\x12\x64\x65rivedFromAssetId:\xb5\x03\xbaH\xb1\x03\x1ao\n\x1emodel_asset_ref.axes_different\x12*up_axis and forward_axis must be different\x1a!this.up_axis != this.forward_axis\x1a\x90\x01\n\"model_asset_ref.derived_has_source\x12\x36\x64\x65rived model assets must define derived_from_asset_id\x1a\x32this.role != 3 || this.derived_from_asset_id != \'\'\x1a\xaa\x01\n\"model_asset_ref.no_self_derivation\x12\x39\x64\x65rived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == \'\' || this.derived_from_asset_id != this.id\"\xa4\x03\n\rImageAssetRef\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x80\xec\x30\x01\xc8\x01\x01R\x02id\x12?\n\x08location\x18\x02 \x01(\x0b\x32\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\x08location\x12\x43\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x1e.resources.v1.ImageAssetFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12<\n\x15\x64\x65rived_from_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec\x30\x01R\x12\x64\x65rivedFromAssetId:\xb0\x01\xbaH\xac\x01\x1a\xa9\x01\n!image_asset_ref.no_self_reference\x12\x39\x64\x65rived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == \'\' || this.derived_from_asset_id != this.id\"\xa2\x03\n\x0fSidecarAssetRef\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x80\xec\x30\x01\xc8\x01\x01R\x02id\x12?\n\x08location\x18\x02 \x01(\x0b\x32\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\x08location\x12\x45\n\x06\x66ormat\x18\x03 \x01(\x0e\x32 .resources.v1.SidecarAssetFormatB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06\x66ormat\x12\x39\n\x13\x61ssociated_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec\x30\x01R\x11\x61ssociatedAssetId:\xad\x01\xbaH\xa9\x01\x1a\xa6\x01\n$sidecar_asset_ref.no_self_derivation\x12\x37\x61ssociated_asset_id must not reference the asset itself\x1a\x45this.associated_asset_id == \'\' || this.associated_asset_id != this.id\"\x82\x05\n\rModelArtifact\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12;\n\x05group\x18\x05 \x01(\x0e\x32\x18.resources.v1.ModelGroupB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05group\x12\x39\n\x05\x61sset\x18\x06 \x01(\x0b\x32\x1b.resources.v1.ModelAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61sset\x12\x39\n\tthumbnail\x18\x07 \x01(\x0b\x32\x1b.resources.v1.ImageAssetRefR\tthumbnail\x12?\n\x0c\x61lternatives\x18\x08 \x03(\x0b\x32\x1b.resources.v1.ModelAssetRefR\x0c\x61lternatives\x12\x39\n\x08sidecars\x18\t \x03(\x0b\x32\x1d.resources.v1.SidecarAssetRefR\x08sidecars\x12\x18\n\x07version\x18\n \x01(\tR\x07version\x12M\n\x13\x65xternal_references\x18\x0b \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences:i\xbaHf\x1a\x64\n!model_artifact.primary_asset_role\x12$primary asset must have runtime role\x1a\x19this.asset.role in [1, 2]\"C\n\x0eModelArtifacts\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.resources.v1.ModelArtifactR\x05items*\xd5\x01\n\nModelGroup\x12\x1b\n\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x17\n\x13MODEL_GROUP_PRODUCT\x10\n\x12\x1c\n\x18MODEL_GROUP_SUB_ASSEMBLY\x10\x0b\x12\x14\n\x10MODEL_GROUP_PART\x10\x0c\x12\x14\n\x10MODEL_GROUP_TOOL\x10\x14\x12\x15\n\x11MODEL_GROUP_ROBOT\x10\x1e\x12\x19\n\x15MODEL_GROUP_CONTAINER\x10(\x12\x15\n\x11MODEL_GROUP_ASSET\x10\x32*\xc9\x01\n\x0eModelAssetRole\x12 \n\x1cMODEL_ASSET_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n\x18MODEL_ASSET_ROLE_RUNTIME\x10\x01\x12\x1b\n\x17MODEL_ASSET_ROLE_SOURCE\x10\x02\x12\x1c\n\x18MODEL_ASSET_ROLE_DERIVED\x10\x03\x12\x1c\n\x18MODEL_ASSET_ROLE_PREVIEW\x10\x04\x12\x1e\n\x1aMODEL_ASSET_ROLE_COLLISION\x10\x05*\xb6\x02\n\x10ModelAssetFormat\x12\"\n\x1eMODEL_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1a\n\x16MODEL_ASSET_FORMAT_GLB\x10\x01\x12\x1b\n\x17MODEL_ASSET_FORMAT_GLTF\x10\x02\x12\x1a\n\x16MODEL_ASSET_FORMAT_OBJ\x10\x03\x12\x1a\n\x16MODEL_ASSET_FORMAT_FBX\x10\x04\x12\x1a\n\x16MODEL_ASSET_FORMAT_STL\x10\x05\x12\x1b\n\x17MODEL_ASSET_FORMAT_STEP\x10\x06\x12\x1b\n\x17MODEL_ASSET_FORMAT_IGES\x10\x07\x12\x1a\n\x16MODEL_ASSET_FORMAT_USD\x10\x08\x12\x1b\n\x17MODEL_ASSET_FORMAT_USDZ\x10\t*\xb5\x01\n\x12SidecarAssetFormat\x12$\n SIDECAR_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1c\n\x18SIDECAR_ASSET_FORMAT_MTL\x10Q\x12\x1e\n\x1aSIDECAR_ASSET_FORMAT_BASIS\x10R\x12\x1d\n\x19SIDECAR_ASSET_FORMAT_KTX2\x10S\x12\x1c\n\x18SIDECAR_ASSET_FORMAT_ZIP\x10T*\xa8\x01\n\x10ImageAssetFormat\x12\"\n\x1eIMAGE_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1a\n\x16IMAGE_ASSET_FORMAT_PNG\x10\x64\x12\x1b\n\x17IMAGE_ASSET_FORMAT_JPEG\x10\x65\x12\x1b\n\x17IMAGE_ASSET_FORMAT_WEBP\x10\x66\x12\x1a\n\x16IMAGE_ASSET_FORMAT_SVG\x10g*\xe7\x01\n\tModelUnit\x12\x1a\n\x16MODEL_UNIT_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_UNIT_MILLIMETER\x10\x01\x12\x19\n\x15MODEL_UNIT_CENTIMETER\x10\x02\x12\x14\n\x10MODEL_UNIT_METER\x10\x03\x12\x18\n\x14MODEL_UNIT_KILOMETER\x10\x04\x12\x13\n\x0fMODEL_UNIT_INCH\x10\n\x12\x13\n\x0fMODEL_UNIT_FOOT\x10\x0b\x12\x13\n\x0fMODEL_UNIT_YARD\x10\x0c\x12\x19\n\x15MODEL_UNIT_MICROMETER\x10\x14*\xc9\x01\n\tModelAxis\x12\x1a\n\x16MODEL_AXIS_UNSPECIFIED\x10\x00\x12\x19\n\x15MODEL_AXIS_POSITIVE_X\x10\x01\x12\x19\n\x15MODEL_AXIS_NEGATIVE_X\x10\x02\x12\x19\n\x15MODEL_AXIS_POSITIVE_Y\x10\x03\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Y\x10\x04\x12\x19\n\x15MODEL_AXIS_POSITIVE_Z\x10\x05\x12\x19\n\x15MODEL_AXIS_NEGATIVE_Z\x10\x06*\x9a\x02\n\x13ModelStorageBackend\x12%\n!MODEL_STORAGE_BACKEND_UNSPECIFIED\x10\x00\x12\"\n\x1eMODEL_STORAGE_BACKEND_BUILT_IN\x10\x01\x12+\n\'MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE\x10\x02\x12\x1c\n\x18MODEL_STORAGE_BACKEND_S3\x10\x03\x12\x1f\n\x1bMODEL_STORAGE_BACKEND_MINIO\x10\x04\x12$\n MODEL_STORAGE_BACKEND_LOCAL_FILE\x10\x05\x12&\n\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06\x42\xb7\x01\n\x10\x63om.resources.v1B\nModelProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,38 +35,88 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.model_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\nModelProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
-  _globals['_STOREDASSETREF'].fields_by_name['backend']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['backend']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_STOREDASSETREF'].fields_by_name['format']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_STOREDASSETREF'].fields_by_name['uri']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['uri']._serialized_options = b'\272H\010r\003\210\001\001\330\001\001'
-  _globals['_STOREDASSETREF'].fields_by_name['unit']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['unit']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_STOREDASSETREF'].fields_by_name['up_axis']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['up_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_STOREDASSETREF'].fields_by_name['forward_axis']._loaded_options = None
-  _globals['_STOREDASSETREF'].fields_by_name['forward_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_ASSETLOCATION'].fields_by_name['backend']._loaded_options = None
+  _globals['_ASSETLOCATION'].fields_by_name['backend']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_ASSETLOCATION'].fields_by_name['uri']._loaded_options = None
+  _globals['_ASSETLOCATION'].fields_by_name['uri']._serialized_options = b'\272H\010r\003\210\001\001\330\001\001'
+  _globals['_ASSETLOCATION'].fields_by_name['sha256']._loaded_options = None
+  _globals['_ASSETLOCATION'].fields_by_name['sha256']._serialized_options = b'\272H\030r\0232\021^[a-fA-F0-9]{64}$\330\001\001'
+  _globals['_ASSETLOCATION']._loaded_options = None
+  _globals['_ASSETLOCATION']._serialized_options = b'\272H\240\002\032\235\002\n\037asset_location.backend_location\022)asset location must match storage backend\032\316\001(this.backend == 1 && this.filename != \'\') || (this.backend in [2, 3, 4] && this.bucket != \'\' && this.object_key != \'\') || (this.backend == 5 && this.filename != \'\') || (this.backend == 6 && this.uri != \'\')'
+  _globals['_MODELASSETREF'].fields_by_name['id']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['id']._serialized_options = b'\272H\tr\004\200\3540\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['location']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['format']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['unit']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['unit']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['up_axis']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['up_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['forward_axis']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['forward_axis']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['role']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['role']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_MODELASSETREF'].fields_by_name['derived_from_asset_id']._loaded_options = None
+  _globals['_MODELASSETREF'].fields_by_name['derived_from_asset_id']._serialized_options = b'\272H\006r\004\200\3540\001'
+  _globals['_MODELASSETREF']._loaded_options = None
+  _globals['_MODELASSETREF']._serialized_options = b'\272H\261\003\032o\n\036model_asset_ref.axes_different\022*up_axis and forward_axis must be different\032!this.up_axis != this.forward_axis\032\220\001\n\"model_asset_ref.derived_has_source\0226derived model assets must define derived_from_asset_id\0322this.role != 3 || this.derived_from_asset_id != \'\'\032\252\001\n\"model_asset_ref.no_self_derivation\0229derived_from_asset_id must not reference the asset itself\032Ithis.derived_from_asset_id == \'\' || this.derived_from_asset_id != this.id'
+  _globals['_IMAGEASSETREF'].fields_by_name['id']._loaded_options = None
+  _globals['_IMAGEASSETREF'].fields_by_name['id']._serialized_options = b'\272H\tr\004\200\3540\001\310\001\001'
+  _globals['_IMAGEASSETREF'].fields_by_name['location']._loaded_options = None
+  _globals['_IMAGEASSETREF'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_IMAGEASSETREF'].fields_by_name['format']._loaded_options = None
+  _globals['_IMAGEASSETREF'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_IMAGEASSETREF'].fields_by_name['derived_from_asset_id']._loaded_options = None
+  _globals['_IMAGEASSETREF'].fields_by_name['derived_from_asset_id']._serialized_options = b'\272H\006r\004\200\3540\001'
+  _globals['_IMAGEASSETREF']._loaded_options = None
+  _globals['_IMAGEASSETREF']._serialized_options = b'\272H\254\001\032\251\001\n!image_asset_ref.no_self_reference\0229derived_from_asset_id must not reference the asset itself\032Ithis.derived_from_asset_id == \'\' || this.derived_from_asset_id != this.id'
+  _globals['_SIDECARASSETREF'].fields_by_name['id']._loaded_options = None
+  _globals['_SIDECARASSETREF'].fields_by_name['id']._serialized_options = b'\272H\tr\004\200\3540\001\310\001\001'
+  _globals['_SIDECARASSETREF'].fields_by_name['location']._loaded_options = None
+  _globals['_SIDECARASSETREF'].fields_by_name['location']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_SIDECARASSETREF'].fields_by_name['format']._loaded_options = None
+  _globals['_SIDECARASSETREF'].fields_by_name['format']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_SIDECARASSETREF'].fields_by_name['associated_asset_id']._loaded_options = None
+  _globals['_SIDECARASSETREF'].fields_by_name['associated_asset_id']._serialized_options = b'\272H\006r\004\200\3540\001'
+  _globals['_SIDECARASSETREF']._loaded_options = None
+  _globals['_SIDECARASSETREF']._serialized_options = b'\272H\251\001\032\246\001\n$sidecar_asset_ref.no_self_derivation\0227associated_asset_id must not reference the asset itself\032Ethis.associated_asset_id == \'\' || this.associated_asset_id != this.id'
+  _globals['_MODELARTIFACT'].fields_by_name['id']._loaded_options = None
+  _globals['_MODELARTIFACT'].fields_by_name['id']._serialized_options = b'\272H\006r\004\210\361\004\001'
   _globals['_MODELARTIFACT'].fields_by_name['name']._loaded_options = None
   _globals['_MODELARTIFACT'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_MODELARTIFACT'].fields_by_name['group']._loaded_options = None
-  _globals['_MODELARTIFACT'].fields_by_name['group']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_MODELARTIFACT'].fields_by_name['group']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_MODELARTIFACT'].fields_by_name['asset']._loaded_options = None
   _globals['_MODELARTIFACT'].fields_by_name['asset']._serialized_options = b'\272H\003\310\001\001'
-  _globals['_MODELGROUP']._serialized_start=1246
-  _globals['_MODELGROUP']._serialized_end=1429
-  _globals['_ASSETFORMAT']._serialized_start=1432
-  _globals['_ASSETFORMAT']._serialized_end=1858
-  _globals['_MODELUNIT']._serialized_start=1861
-  _globals['_MODELUNIT']._serialized_end=2092
-  _globals['_MODELAXIS']._serialized_start=2095
-  _globals['_MODELAXIS']._serialized_end=2296
-  _globals['_MODELSTORAGEBACKEND']._serialized_start=2299
-  _globals['_MODELSTORAGEBACKEND']._serialized_end=2581
-  _globals['_STOREDASSETREF']._serialized_start=154
-  _globals['_STOREDASSETREF']._serialized_end=706
-  _globals['_MODELARTIFACT']._serialized_start=709
-  _globals['_MODELARTIFACT']._serialized_end=1174
-  _globals['_MODELARTIFACTS']._serialized_start=1176
-  _globals['_MODELARTIFACTS']._serialized_end=1243
+  _globals['_MODELARTIFACT']._loaded_options = None
+  _globals['_MODELARTIFACT']._serialized_options = b'\272Hf\032d\n!model_artifact.primary_asset_role\022$primary asset must have runtime role\032\031this.asset.role in [1, 2]'
+  _globals['_MODELGROUP']._serialized_start=3273
+  _globals['_MODELGROUP']._serialized_end=3486
+  _globals['_MODELASSETROLE']._serialized_start=3489
+  _globals['_MODELASSETROLE']._serialized_end=3690
+  _globals['_MODELASSETFORMAT']._serialized_start=3693
+  _globals['_MODELASSETFORMAT']._serialized_end=4003
+  _globals['_SIDECARASSETFORMAT']._serialized_start=4006
+  _globals['_SIDECARASSETFORMAT']._serialized_end=4187
+  _globals['_IMAGEASSETFORMAT']._serialized_start=4190
+  _globals['_IMAGEASSETFORMAT']._serialized_end=4358
+  _globals['_MODELUNIT']._serialized_start=4361
+  _globals['_MODELUNIT']._serialized_end=4592
+  _globals['_MODELAXIS']._serialized_start=4595
+  _globals['_MODELAXIS']._serialized_end=4796
+  _globals['_MODELSTORAGEBACKEND']._serialized_start=4799
+  _globals['_MODELSTORAGEBACKEND']._serialized_end=5081
+  _globals['_ASSETLOCATION']._serialized_start=154
+  _globals['_ASSETLOCATION']._serialized_end=771
+  _globals['_MODELASSETREF']._serialized_start=774
+  _globals['_MODELASSETREF']._serialized_end=1712
+  _globals['_IMAGEASSETREF']._serialized_start=1715
+  _globals['_IMAGEASSETREF']._serialized_end=2135
+  _globals['_SIDECARASSETREF']._serialized_start=2138
+  _globals['_SIDECARASSETREF']._serialized_end=2556
+  _globals['_MODELARTIFACT']._serialized_start=2559
+  _globals['_MODELARTIFACT']._serialized_end=3201
+  _globals['_MODELARTIFACTS']._serialized_start=3203
+  _globals['_MODELARTIFACTS']._serialized_end=3270
 # @@protoc_insertion_point(module_scope)

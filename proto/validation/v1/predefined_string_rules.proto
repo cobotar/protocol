@@ -195,4 +195,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a AR input slot id"
     expression: "(this == '' || this.startsWith('ar_input_slot-'))"
   }];
+
+  optional bool model_asset_id_component = 100032 [(buf.validate.predefined).cel = {
+    id: "string.model_asset_id_component"
+    message: "this does not seem to be a model asset id"
+    expression: "(this == '' || this.startsWith('model_asset-'))"
+  }];
 }

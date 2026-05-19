@@ -27,34 +27,37 @@ const (
 type ModelGroup int32
 
 const (
-	ModelGroup_MODEL_GROUP_UNSPECIFIED ModelGroup = 0
-	ModelGroup_MODEL_GROUP_PART        ModelGroup = 1
-	ModelGroup_MODEL_GROUP_PRODUCT     ModelGroup = 2
-	ModelGroup_MODEL_GROUP_TOOL        ModelGroup = 3
-	ModelGroup_MODEL_GROUP_ROBOT       ModelGroup = 4
-	ModelGroup_MODEL_GROUP_CONTAINER   ModelGroup = 5
-	ModelGroup_MODEL_GROUP_ASSET       ModelGroup = 6
+	ModelGroup_MODEL_GROUP_UNSPECIFIED  ModelGroup = 0
+	ModelGroup_MODEL_GROUP_PRODUCT      ModelGroup = 10
+	ModelGroup_MODEL_GROUP_SUB_ASSEMBLY ModelGroup = 11
+	ModelGroup_MODEL_GROUP_PART         ModelGroup = 12
+	ModelGroup_MODEL_GROUP_TOOL         ModelGroup = 20
+	ModelGroup_MODEL_GROUP_ROBOT        ModelGroup = 30
+	ModelGroup_MODEL_GROUP_CONTAINER    ModelGroup = 40
+	ModelGroup_MODEL_GROUP_ASSET        ModelGroup = 50
 )
 
 // Enum value maps for ModelGroup.
 var (
 	ModelGroup_name = map[int32]string{
-		0: "MODEL_GROUP_UNSPECIFIED",
-		1: "MODEL_GROUP_PART",
-		2: "MODEL_GROUP_PRODUCT",
-		3: "MODEL_GROUP_TOOL",
-		4: "MODEL_GROUP_ROBOT",
-		5: "MODEL_GROUP_CONTAINER",
-		6: "MODEL_GROUP_ASSET",
+		0:  "MODEL_GROUP_UNSPECIFIED",
+		10: "MODEL_GROUP_PRODUCT",
+		11: "MODEL_GROUP_SUB_ASSEMBLY",
+		12: "MODEL_GROUP_PART",
+		20: "MODEL_GROUP_TOOL",
+		30: "MODEL_GROUP_ROBOT",
+		40: "MODEL_GROUP_CONTAINER",
+		50: "MODEL_GROUP_ASSET",
 	}
 	ModelGroup_value = map[string]int32{
-		"MODEL_GROUP_UNSPECIFIED": 0,
-		"MODEL_GROUP_PART":        1,
-		"MODEL_GROUP_PRODUCT":     2,
-		"MODEL_GROUP_TOOL":        3,
-		"MODEL_GROUP_ROBOT":       4,
-		"MODEL_GROUP_CONTAINER":   5,
-		"MODEL_GROUP_ASSET":       6,
+		"MODEL_GROUP_UNSPECIFIED":  0,
+		"MODEL_GROUP_PRODUCT":      10,
+		"MODEL_GROUP_SUB_ASSEMBLY": 11,
+		"MODEL_GROUP_PART":         12,
+		"MODEL_GROUP_TOOL":         20,
+		"MODEL_GROUP_ROBOT":        30,
+		"MODEL_GROUP_CONTAINER":    40,
+		"MODEL_GROUP_ASSET":        50,
 	}
 )
 
@@ -85,102 +88,247 @@ func (ModelGroup) EnumDescriptor() ([]byte, []int) {
 	return file_resources_v1_model_proto_rawDescGZIP(), []int{0}
 }
 
-type AssetFormat int32
+type ModelAssetRole int32
 
 const (
-	AssetFormat_ASSET_FORMAT_UNSPECIFIED AssetFormat = 0
-	// 3D runtime / interchange formats
-	AssetFormat_ASSET_FORMAT_GLB  AssetFormat = 1
-	AssetFormat_ASSET_FORMAT_GLTF AssetFormat = 2
-	AssetFormat_ASSET_FORMAT_OBJ  AssetFormat = 3
-	AssetFormat_ASSET_FORMAT_FBX  AssetFormat = 4
-	AssetFormat_ASSET_FORMAT_STL  AssetFormat = 5
-	AssetFormat_ASSET_FORMAT_STEP AssetFormat = 6
-	AssetFormat_ASSET_FORMAT_IGES AssetFormat = 7
-	AssetFormat_ASSET_FORMAT_USD  AssetFormat = 8
-	AssetFormat_ASSET_FORMAT_USDZ AssetFormat = 9
-	// Images / previews / thumbnails
-	AssetFormat_ASSET_FORMAT_PNG  AssetFormat = 30
-	AssetFormat_ASSET_FORMAT_JPEG AssetFormat = 31
-	AssetFormat_ASSET_FORMAT_WEBP AssetFormat = 32
-	AssetFormat_ASSET_FORMAT_SVG  AssetFormat = 33
-	// Material / texture sidecars
-	AssetFormat_ASSET_FORMAT_MTL   AssetFormat = 50
-	AssetFormat_ASSET_FORMAT_BASIS AssetFormat = 51
-	AssetFormat_ASSET_FORMAT_KTX2  AssetFormat = 52
-	// Archives / bundles
-	AssetFormat_ASSET_FORMAT_ZIP AssetFormat = 70
+	ModelAssetRole_MODEL_ASSET_ROLE_UNSPECIFIED ModelAssetRole = 0
+	// Preferred asset for runtime loading in clients such as Unity.
+	ModelAssetRole_MODEL_ASSET_ROLE_RUNTIME ModelAssetRole = 1
+	// Original/source CAD or mesh asset imported into the system.
+	ModelAssetRole_MODEL_ASSET_ROLE_SOURCE ModelAssetRole = 2
+	// Converted representation derived from another asset.
+	ModelAssetRole_MODEL_ASSET_ROLE_DERIVED ModelAssetRole = 3
+	// Lower-detail representation used for preview, web viewers, or performance.
+	ModelAssetRole_MODEL_ASSET_ROLE_PREVIEW ModelAssetRole = 4
+	// Collision/physics proxy representation.
+	ModelAssetRole_MODEL_ASSET_ROLE_COLLISION ModelAssetRole = 5
 )
 
-// Enum value maps for AssetFormat.
+// Enum value maps for ModelAssetRole.
 var (
-	AssetFormat_name = map[int32]string{
-		0:  "ASSET_FORMAT_UNSPECIFIED",
-		1:  "ASSET_FORMAT_GLB",
-		2:  "ASSET_FORMAT_GLTF",
-		3:  "ASSET_FORMAT_OBJ",
-		4:  "ASSET_FORMAT_FBX",
-		5:  "ASSET_FORMAT_STL",
-		6:  "ASSET_FORMAT_STEP",
-		7:  "ASSET_FORMAT_IGES",
-		8:  "ASSET_FORMAT_USD",
-		9:  "ASSET_FORMAT_USDZ",
-		30: "ASSET_FORMAT_PNG",
-		31: "ASSET_FORMAT_JPEG",
-		32: "ASSET_FORMAT_WEBP",
-		33: "ASSET_FORMAT_SVG",
-		50: "ASSET_FORMAT_MTL",
-		51: "ASSET_FORMAT_BASIS",
-		52: "ASSET_FORMAT_KTX2",
-		70: "ASSET_FORMAT_ZIP",
+	ModelAssetRole_name = map[int32]string{
+		0: "MODEL_ASSET_ROLE_UNSPECIFIED",
+		1: "MODEL_ASSET_ROLE_RUNTIME",
+		2: "MODEL_ASSET_ROLE_SOURCE",
+		3: "MODEL_ASSET_ROLE_DERIVED",
+		4: "MODEL_ASSET_ROLE_PREVIEW",
+		5: "MODEL_ASSET_ROLE_COLLISION",
 	}
-	AssetFormat_value = map[string]int32{
-		"ASSET_FORMAT_UNSPECIFIED": 0,
-		"ASSET_FORMAT_GLB":         1,
-		"ASSET_FORMAT_GLTF":        2,
-		"ASSET_FORMAT_OBJ":         3,
-		"ASSET_FORMAT_FBX":         4,
-		"ASSET_FORMAT_STL":         5,
-		"ASSET_FORMAT_STEP":        6,
-		"ASSET_FORMAT_IGES":        7,
-		"ASSET_FORMAT_USD":         8,
-		"ASSET_FORMAT_USDZ":        9,
-		"ASSET_FORMAT_PNG":         30,
-		"ASSET_FORMAT_JPEG":        31,
-		"ASSET_FORMAT_WEBP":        32,
-		"ASSET_FORMAT_SVG":         33,
-		"ASSET_FORMAT_MTL":         50,
-		"ASSET_FORMAT_BASIS":       51,
-		"ASSET_FORMAT_KTX2":        52,
-		"ASSET_FORMAT_ZIP":         70,
+	ModelAssetRole_value = map[string]int32{
+		"MODEL_ASSET_ROLE_UNSPECIFIED": 0,
+		"MODEL_ASSET_ROLE_RUNTIME":     1,
+		"MODEL_ASSET_ROLE_SOURCE":      2,
+		"MODEL_ASSET_ROLE_DERIVED":     3,
+		"MODEL_ASSET_ROLE_PREVIEW":     4,
+		"MODEL_ASSET_ROLE_COLLISION":   5,
 	}
 )
 
-func (x AssetFormat) Enum() *AssetFormat {
-	p := new(AssetFormat)
+func (x ModelAssetRole) Enum() *ModelAssetRole {
+	p := new(ModelAssetRole)
 	*p = x
 	return p
 }
 
-func (x AssetFormat) String() string {
+func (x ModelAssetRole) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (AssetFormat) Descriptor() protoreflect.EnumDescriptor {
+func (ModelAssetRole) Descriptor() protoreflect.EnumDescriptor {
 	return file_resources_v1_model_proto_enumTypes[1].Descriptor()
 }
 
-func (AssetFormat) Type() protoreflect.EnumType {
+func (ModelAssetRole) Type() protoreflect.EnumType {
 	return &file_resources_v1_model_proto_enumTypes[1]
 }
 
-func (x AssetFormat) Number() protoreflect.EnumNumber {
+func (x ModelAssetRole) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use AssetFormat.Descriptor instead.
-func (AssetFormat) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use ModelAssetRole.Descriptor instead.
+func (ModelAssetRole) EnumDescriptor() ([]byte, []int) {
 	return file_resources_v1_model_proto_rawDescGZIP(), []int{1}
+}
+
+type ModelAssetFormat int32
+
+const (
+	ModelAssetFormat_MODEL_ASSET_FORMAT_UNSPECIFIED ModelAssetFormat = 0
+	ModelAssetFormat_MODEL_ASSET_FORMAT_GLB         ModelAssetFormat = 1
+	ModelAssetFormat_MODEL_ASSET_FORMAT_GLTF        ModelAssetFormat = 2
+	ModelAssetFormat_MODEL_ASSET_FORMAT_OBJ         ModelAssetFormat = 3
+	ModelAssetFormat_MODEL_ASSET_FORMAT_FBX         ModelAssetFormat = 4
+	ModelAssetFormat_MODEL_ASSET_FORMAT_STL         ModelAssetFormat = 5
+	ModelAssetFormat_MODEL_ASSET_FORMAT_STEP        ModelAssetFormat = 6
+	ModelAssetFormat_MODEL_ASSET_FORMAT_IGES        ModelAssetFormat = 7
+	ModelAssetFormat_MODEL_ASSET_FORMAT_USD         ModelAssetFormat = 8
+	ModelAssetFormat_MODEL_ASSET_FORMAT_USDZ        ModelAssetFormat = 9
+)
+
+// Enum value maps for ModelAssetFormat.
+var (
+	ModelAssetFormat_name = map[int32]string{
+		0: "MODEL_ASSET_FORMAT_UNSPECIFIED",
+		1: "MODEL_ASSET_FORMAT_GLB",
+		2: "MODEL_ASSET_FORMAT_GLTF",
+		3: "MODEL_ASSET_FORMAT_OBJ",
+		4: "MODEL_ASSET_FORMAT_FBX",
+		5: "MODEL_ASSET_FORMAT_STL",
+		6: "MODEL_ASSET_FORMAT_STEP",
+		7: "MODEL_ASSET_FORMAT_IGES",
+		8: "MODEL_ASSET_FORMAT_USD",
+		9: "MODEL_ASSET_FORMAT_USDZ",
+	}
+	ModelAssetFormat_value = map[string]int32{
+		"MODEL_ASSET_FORMAT_UNSPECIFIED": 0,
+		"MODEL_ASSET_FORMAT_GLB":         1,
+		"MODEL_ASSET_FORMAT_GLTF":        2,
+		"MODEL_ASSET_FORMAT_OBJ":         3,
+		"MODEL_ASSET_FORMAT_FBX":         4,
+		"MODEL_ASSET_FORMAT_STL":         5,
+		"MODEL_ASSET_FORMAT_STEP":        6,
+		"MODEL_ASSET_FORMAT_IGES":        7,
+		"MODEL_ASSET_FORMAT_USD":         8,
+		"MODEL_ASSET_FORMAT_USDZ":        9,
+	}
+)
+
+func (x ModelAssetFormat) Enum() *ModelAssetFormat {
+	p := new(ModelAssetFormat)
+	*p = x
+	return p
+}
+
+func (x ModelAssetFormat) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ModelAssetFormat) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_model_proto_enumTypes[2].Descriptor()
+}
+
+func (ModelAssetFormat) Type() protoreflect.EnumType {
+	return &file_resources_v1_model_proto_enumTypes[2]
+}
+
+func (x ModelAssetFormat) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ModelAssetFormat.Descriptor instead.
+func (ModelAssetFormat) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{2}
+}
+
+type SidecarAssetFormat int32
+
+const (
+	SidecarAssetFormat_SIDECAR_ASSET_FORMAT_UNSPECIFIED SidecarAssetFormat = 0
+	SidecarAssetFormat_SIDECAR_ASSET_FORMAT_MTL         SidecarAssetFormat = 81
+	SidecarAssetFormat_SIDECAR_ASSET_FORMAT_BASIS       SidecarAssetFormat = 82
+	SidecarAssetFormat_SIDECAR_ASSET_FORMAT_KTX2        SidecarAssetFormat = 83
+	SidecarAssetFormat_SIDECAR_ASSET_FORMAT_ZIP         SidecarAssetFormat = 84
+)
+
+// Enum value maps for SidecarAssetFormat.
+var (
+	SidecarAssetFormat_name = map[int32]string{
+		0:  "SIDECAR_ASSET_FORMAT_UNSPECIFIED",
+		81: "SIDECAR_ASSET_FORMAT_MTL",
+		82: "SIDECAR_ASSET_FORMAT_BASIS",
+		83: "SIDECAR_ASSET_FORMAT_KTX2",
+		84: "SIDECAR_ASSET_FORMAT_ZIP",
+	}
+	SidecarAssetFormat_value = map[string]int32{
+		"SIDECAR_ASSET_FORMAT_UNSPECIFIED": 0,
+		"SIDECAR_ASSET_FORMAT_MTL":         81,
+		"SIDECAR_ASSET_FORMAT_BASIS":       82,
+		"SIDECAR_ASSET_FORMAT_KTX2":        83,
+		"SIDECAR_ASSET_FORMAT_ZIP":         84,
+	}
+)
+
+func (x SidecarAssetFormat) Enum() *SidecarAssetFormat {
+	p := new(SidecarAssetFormat)
+	*p = x
+	return p
+}
+
+func (x SidecarAssetFormat) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SidecarAssetFormat) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_model_proto_enumTypes[3].Descriptor()
+}
+
+func (SidecarAssetFormat) Type() protoreflect.EnumType {
+	return &file_resources_v1_model_proto_enumTypes[3]
+}
+
+func (x SidecarAssetFormat) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SidecarAssetFormat.Descriptor instead.
+func (SidecarAssetFormat) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{3}
+}
+
+type ImageAssetFormat int32
+
+const (
+	ImageAssetFormat_IMAGE_ASSET_FORMAT_UNSPECIFIED ImageAssetFormat = 0
+	ImageAssetFormat_IMAGE_ASSET_FORMAT_PNG         ImageAssetFormat = 100
+	ImageAssetFormat_IMAGE_ASSET_FORMAT_JPEG        ImageAssetFormat = 101
+	ImageAssetFormat_IMAGE_ASSET_FORMAT_WEBP        ImageAssetFormat = 102
+	ImageAssetFormat_IMAGE_ASSET_FORMAT_SVG         ImageAssetFormat = 103
+)
+
+// Enum value maps for ImageAssetFormat.
+var (
+	ImageAssetFormat_name = map[int32]string{
+		0:   "IMAGE_ASSET_FORMAT_UNSPECIFIED",
+		100: "IMAGE_ASSET_FORMAT_PNG",
+		101: "IMAGE_ASSET_FORMAT_JPEG",
+		102: "IMAGE_ASSET_FORMAT_WEBP",
+		103: "IMAGE_ASSET_FORMAT_SVG",
+	}
+	ImageAssetFormat_value = map[string]int32{
+		"IMAGE_ASSET_FORMAT_UNSPECIFIED": 0,
+		"IMAGE_ASSET_FORMAT_PNG":         100,
+		"IMAGE_ASSET_FORMAT_JPEG":        101,
+		"IMAGE_ASSET_FORMAT_WEBP":        102,
+		"IMAGE_ASSET_FORMAT_SVG":         103,
+	}
+)
+
+func (x ImageAssetFormat) Enum() *ImageAssetFormat {
+	p := new(ImageAssetFormat)
+	*p = x
+	return p
+}
+
+func (x ImageAssetFormat) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ImageAssetFormat) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_model_proto_enumTypes[4].Descriptor()
+}
+
+func (ImageAssetFormat) Type() protoreflect.EnumType {
+	return &file_resources_v1_model_proto_enumTypes[4]
+}
+
+func (x ImageAssetFormat) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ImageAssetFormat.Descriptor instead.
+func (ImageAssetFormat) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{4}
 }
 
 type ModelUnit int32
@@ -237,11 +385,11 @@ func (x ModelUnit) String() string {
 }
 
 func (ModelUnit) Descriptor() protoreflect.EnumDescriptor {
-	return file_resources_v1_model_proto_enumTypes[2].Descriptor()
+	return file_resources_v1_model_proto_enumTypes[5].Descriptor()
 }
 
 func (ModelUnit) Type() protoreflect.EnumType {
-	return &file_resources_v1_model_proto_enumTypes[2]
+	return &file_resources_v1_model_proto_enumTypes[5]
 }
 
 func (x ModelUnit) Number() protoreflect.EnumNumber {
@@ -250,7 +398,7 @@ func (x ModelUnit) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ModelUnit.Descriptor instead.
 func (ModelUnit) EnumDescriptor() ([]byte, []int) {
-	return file_resources_v1_model_proto_rawDescGZIP(), []int{2}
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{5}
 }
 
 type ModelAxis int32
@@ -298,11 +446,11 @@ func (x ModelAxis) String() string {
 }
 
 func (ModelAxis) Descriptor() protoreflect.EnumDescriptor {
-	return file_resources_v1_model_proto_enumTypes[3].Descriptor()
+	return file_resources_v1_model_proto_enumTypes[6].Descriptor()
 }
 
 func (ModelAxis) Type() protoreflect.EnumType {
-	return &file_resources_v1_model_proto_enumTypes[3]
+	return &file_resources_v1_model_proto_enumTypes[6]
 }
 
 func (x ModelAxis) Number() protoreflect.EnumNumber {
@@ -311,7 +459,7 @@ func (x ModelAxis) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ModelAxis.Descriptor instead.
 func (ModelAxis) EnumDescriptor() ([]byte, []int) {
-	return file_resources_v1_model_proto_rawDescGZIP(), []int{3}
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{6}
 }
 
 type ModelStorageBackend int32
@@ -359,11 +507,11 @@ func (x ModelStorageBackend) String() string {
 }
 
 func (ModelStorageBackend) Descriptor() protoreflect.EnumDescriptor {
-	return file_resources_v1_model_proto_enumTypes[4].Descriptor()
+	return file_resources_v1_model_proto_enumTypes[7].Descriptor()
 }
 
 func (ModelStorageBackend) Type() protoreflect.EnumType {
-	return &file_resources_v1_model_proto_enumTypes[4]
+	return &file_resources_v1_model_proto_enumTypes[7]
 }
 
 func (x ModelStorageBackend) Number() protoreflect.EnumNumber {
@@ -372,7 +520,7 @@ func (x ModelStorageBackend) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ModelStorageBackend.Descriptor instead.
 func (ModelStorageBackend) EnumDescriptor() ([]byte, []int) {
-	return file_resources_v1_model_proto_rawDescGZIP(), []int{4}
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{7}
 }
 
 // Examples:
@@ -398,45 +546,34 @@ func (ModelStorageBackend) EnumDescriptor() ([]byte, []int) {
 // filename: "models/robot_ur5e.glb"
 // content_type: "model/gltf-binary"
 // }
-type StoredAssetRef struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	Backend     ModelStorageBackend    `protobuf:"varint,1,opt,name=backend,proto3,enum=resources.v1.ModelStorageBackend" json:"backend,omitempty"`
-	Format      AssetFormat            `protobuf:"varint,2,opt,name=format,proto3,enum=resources.v1.AssetFormat" json:"format,omitempty"`
-	Bucket      string                 `protobuf:"bytes,3,opt,name=bucket,proto3" json:"bucket,omitempty"`
-	ObjectKey   string                 `protobuf:"bytes,4,opt,name=object_key,json=objectKey,proto3" json:"object_key,omitempty"`
-	Uri         string                 `protobuf:"bytes,5,opt,name=uri,proto3" json:"uri,omitempty"`
-	Filename    string                 `protobuf:"bytes,6,opt,name=filename,proto3" json:"filename,omitempty"`
-	ContentType string                 `protobuf:"bytes,7,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"` // Examples: ASSET_FORMAT_GLB → model/gltf-binary, ASSET_FORMAT_GLTF → model/gltf+json, ASSET_FORMAT_OBJ → model/obj or text/plain, ASSET_FORMAT_STL → model/stl, ASSET_FORMAT_STEP → model/step, ASSET_FORMAT_PNG → image/png, ASSET_FORMAT_JPEG → image/jpeg, ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
-	SizeBytes   uint64                 `protobuf:"varint,8,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
-	Sha256      string                 `protobuf:"bytes,9,opt,name=sha256,proto3" json:"sha256,omitempty"`
-	// Unit used for the model geometry coordinates.
-	// Typically "mm", "cm", "m", "in", etc.
-	// Used to scale the model correctly when loading.
-	Unit ModelUnit `protobuf:"varint,10,opt,name=unit,proto3,enum=resources.v1.ModelUnit" json:"unit,omitempty"`
-	// Defines which axis is "up" in the source asset coordinate system.
-	// Examples: Unity: Y, Blender: Z, many CAD systems: Z
-	UpAxis ModelAxis `protobuf:"varint,11,opt,name=up_axis,json=upAxis,proto3,enum=resources.v1.ModelAxis" json:"up_axis,omitempty"`
-	// Defines which axis is "forward" in the source asset coordinate system.
-	// Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
-	ForwardAxis   ModelAxis `protobuf:"varint,12,opt,name=forward_axis,json=forwardAxis,proto3,enum=resources.v1.ModelAxis" json:"forward_axis,omitempty"`
+type AssetLocation struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Backend       ModelStorageBackend    `protobuf:"varint,1,opt,name=backend,proto3,enum=resources.v1.ModelStorageBackend" json:"backend,omitempty"`
+	Bucket        string                 `protobuf:"bytes,2,opt,name=bucket,proto3" json:"bucket,omitempty"`
+	ObjectKey     string                 `protobuf:"bytes,3,opt,name=object_key,json=objectKey,proto3" json:"object_key,omitempty"` // storage identifier
+	Uri           string                 `protobuf:"bytes,4,opt,name=uri,proto3" json:"uri,omitempty"`
+	Filename      string                 `protobuf:"bytes,5,opt,name=filename,proto3" json:"filename,omitempty"`                          // original/display/download filename
+	ContentType   string                 `protobuf:"bytes,6,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"` // Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf+json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip,
+	SizeBytes     uint64                 `protobuf:"varint,7,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	Sha256        string                 `protobuf:"bytes,8,opt,name=sha256,proto3" json:"sha256,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *StoredAssetRef) Reset() {
-	*x = StoredAssetRef{}
+func (x *AssetLocation) Reset() {
+	*x = AssetLocation{}
 	mi := &file_resources_v1_model_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *StoredAssetRef) String() string {
+func (x *AssetLocation) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StoredAssetRef) ProtoMessage() {}
+func (*AssetLocation) ProtoMessage() {}
 
-func (x *StoredAssetRef) ProtoReflect() protoreflect.Message {
+func (x *AssetLocation) ProtoReflect() protoreflect.Message {
 	mi := &file_resources_v1_model_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -448,93 +585,314 @@ func (x *StoredAssetRef) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StoredAssetRef.ProtoReflect.Descriptor instead.
-func (*StoredAssetRef) Descriptor() ([]byte, []int) {
+// Deprecated: Use AssetLocation.ProtoReflect.Descriptor instead.
+func (*AssetLocation) Descriptor() ([]byte, []int) {
 	return file_resources_v1_model_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *StoredAssetRef) GetBackend() ModelStorageBackend {
+func (x *AssetLocation) GetBackend() ModelStorageBackend {
 	if x != nil {
 		return x.Backend
 	}
 	return ModelStorageBackend_MODEL_STORAGE_BACKEND_UNSPECIFIED
 }
 
-func (x *StoredAssetRef) GetFormat() AssetFormat {
-	if x != nil {
-		return x.Format
-	}
-	return AssetFormat_ASSET_FORMAT_UNSPECIFIED
-}
-
-func (x *StoredAssetRef) GetBucket() string {
+func (x *AssetLocation) GetBucket() string {
 	if x != nil {
 		return x.Bucket
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetObjectKey() string {
+func (x *AssetLocation) GetObjectKey() string {
 	if x != nil {
 		return x.ObjectKey
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetUri() string {
+func (x *AssetLocation) GetUri() string {
 	if x != nil {
 		return x.Uri
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetFilename() string {
+func (x *AssetLocation) GetFilename() string {
 	if x != nil {
 		return x.Filename
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetContentType() string {
+func (x *AssetLocation) GetContentType() string {
 	if x != nil {
 		return x.ContentType
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetSizeBytes() uint64 {
+func (x *AssetLocation) GetSizeBytes() uint64 {
 	if x != nil {
 		return x.SizeBytes
 	}
 	return 0
 }
 
-func (x *StoredAssetRef) GetSha256() string {
+func (x *AssetLocation) GetSha256() string {
 	if x != nil {
 		return x.Sha256
 	}
 	return ""
 }
 
-func (x *StoredAssetRef) GetUnit() ModelUnit {
+type ModelAssetRef struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Format   ModelAssetFormat       `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.ModelAssetFormat" json:"format,omitempty"`
+	// Unit used for the model geometry coordinates.
+	// Typically "mm", "cm", "m", "in", etc.
+	// Used to scale the model correctly when loading.
+	Unit ModelUnit `protobuf:"varint,4,opt,name=unit,proto3,enum=resources.v1.ModelUnit" json:"unit,omitempty"`
+	// Defines which axis is "up" in the source asset coordinate system.
+	// Examples: Unity: Y, Blender: Z, many CAD systems: Z
+	UpAxis ModelAxis `protobuf:"varint,5,opt,name=up_axis,json=upAxis,proto3,enum=resources.v1.ModelAxis" json:"up_axis,omitempty"`
+	// Defines which axis is "forward" in the source asset coordinate system.
+	// Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y
+	ForwardAxis ModelAxis      `protobuf:"varint,6,opt,name=forward_axis,json=forwardAxis,proto3,enum=resources.v1.ModelAxis" json:"forward_axis,omitempty"`
+	Role        ModelAssetRole `protobuf:"varint,7,opt,name=role,proto3,enum=resources.v1.ModelAssetRole" json:"role,omitempty"`
+	// Optional link to the source asset this asset was generated from.
+	// Example: a runtime GLB can point to the original imported OBJ/STEP asset.
+	DerivedFromAssetId string `protobuf:"bytes,8,opt,name=derived_from_asset_id,json=derivedFromAssetId,proto3" json:"derived_from_asset_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ModelAssetRef) Reset() {
+	*x = ModelAssetRef{}
+	mi := &file_resources_v1_model_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ModelAssetRef) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ModelAssetRef) ProtoMessage() {}
+
+func (x *ModelAssetRef) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_model_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ModelAssetRef.ProtoReflect.Descriptor instead.
+func (*ModelAssetRef) Descriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ModelAssetRef) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ModelAssetRef) GetLocation() *AssetLocation {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
+func (x *ModelAssetRef) GetFormat() ModelAssetFormat {
+	if x != nil {
+		return x.Format
+	}
+	return ModelAssetFormat_MODEL_ASSET_FORMAT_UNSPECIFIED
+}
+
+func (x *ModelAssetRef) GetUnit() ModelUnit {
 	if x != nil {
 		return x.Unit
 	}
 	return ModelUnit_MODEL_UNIT_UNSPECIFIED
 }
 
-func (x *StoredAssetRef) GetUpAxis() ModelAxis {
+func (x *ModelAssetRef) GetUpAxis() ModelAxis {
 	if x != nil {
 		return x.UpAxis
 	}
 	return ModelAxis_MODEL_AXIS_UNSPECIFIED
 }
 
-func (x *StoredAssetRef) GetForwardAxis() ModelAxis {
+func (x *ModelAssetRef) GetForwardAxis() ModelAxis {
 	if x != nil {
 		return x.ForwardAxis
 	}
 	return ModelAxis_MODEL_AXIS_UNSPECIFIED
+}
+
+func (x *ModelAssetRef) GetRole() ModelAssetRole {
+	if x != nil {
+		return x.Role
+	}
+	return ModelAssetRole_MODEL_ASSET_ROLE_UNSPECIFIED
+}
+
+func (x *ModelAssetRef) GetDerivedFromAssetId() string {
+	if x != nil {
+		return x.DerivedFromAssetId
+	}
+	return ""
+}
+
+type ImageAssetRef struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Format   ImageAssetFormat       `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.ImageAssetFormat" json:"format,omitempty"`
+	// Optional link to the model asset this image was generated from.
+	// Example: a PNG thumbnail can point to the GLB/OBJ it previews.
+	DerivedFromAssetId string `protobuf:"bytes,4,opt,name=derived_from_asset_id,json=derivedFromAssetId,proto3" json:"derived_from_asset_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ImageAssetRef) Reset() {
+	*x = ImageAssetRef{}
+	mi := &file_resources_v1_model_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImageAssetRef) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImageAssetRef) ProtoMessage() {}
+
+func (x *ImageAssetRef) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_model_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImageAssetRef.ProtoReflect.Descriptor instead.
+func (*ImageAssetRef) Descriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ImageAssetRef) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ImageAssetRef) GetLocation() *AssetLocation {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
+func (x *ImageAssetRef) GetFormat() ImageAssetFormat {
+	if x != nil {
+		return x.Format
+	}
+	return ImageAssetFormat_IMAGE_ASSET_FORMAT_UNSPECIFIED
+}
+
+func (x *ImageAssetRef) GetDerivedFromAssetId() string {
+	if x != nil {
+		return x.DerivedFromAssetId
+	}
+	return ""
+}
+
+type SidecarAssetRef struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Format   SidecarAssetFormat     `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.SidecarAssetFormat" json:"format,omitempty"`
+	// Optional link to the model asset this sidecar belongs to or was generated from.
+	// Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
+	AssociatedAssetId string `protobuf:"bytes,4,opt,name=associated_asset_id,json=associatedAssetId,proto3" json:"associated_asset_id,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *SidecarAssetRef) Reset() {
+	*x = SidecarAssetRef{}
+	mi := &file_resources_v1_model_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SidecarAssetRef) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SidecarAssetRef) ProtoMessage() {}
+
+func (x *SidecarAssetRef) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_model_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SidecarAssetRef.ProtoReflect.Descriptor instead.
+func (*SidecarAssetRef) Descriptor() ([]byte, []int) {
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SidecarAssetRef) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SidecarAssetRef) GetLocation() *AssetLocation {
+	if x != nil {
+		return x.Location
+	}
+	return nil
+}
+
+func (x *SidecarAssetRef) GetFormat() SidecarAssetFormat {
+	if x != nil {
+		return x.Format
+	}
+	return SidecarAssetFormat_SIDECAR_ASSET_FORMAT_UNSPECIFIED
+}
+
+func (x *SidecarAssetRef) GetAssociatedAssetId() string {
+	if x != nil {
+		return x.AssociatedAssetId
+	}
+	return ""
 }
 
 type ModelArtifact struct {
@@ -544,18 +902,19 @@ type ModelArtifact struct {
 	Icon               string                  `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                  `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Group              ModelGroup              `protobuf:"varint,5,opt,name=group,proto3,enum=resources.v1.ModelGroup" json:"group,omitempty"`
-	Asset              *StoredAssetRef         `protobuf:"bytes,6,opt,name=asset,proto3" json:"asset,omitempty"`               // Primary loadable model asset.
-	Thumbnail          *StoredAssetRef         `protobuf:"bytes,7,opt,name=thumbnail,proto3" json:"thumbnail,omitempty"`       // Optional preview image.
-	Alternatives       []*StoredAssetRef       `protobuf:"bytes,8,rep,name=alternatives,proto3" json:"alternatives,omitempty"` // OBJ source, GLB runtime, STEP CAD, etc.
-	Version            string                  `protobuf:"bytes,9,opt,name=version,proto3" json:"version,omitempty"`
-	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,10,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Asset              *ModelAssetRef          `protobuf:"bytes,6,opt,name=asset,proto3" json:"asset,omitempty"`               // Primary loadable model asset.
+	Thumbnail          *ImageAssetRef          `protobuf:"bytes,7,opt,name=thumbnail,proto3" json:"thumbnail,omitempty"`       // Optional preview image.
+	Alternatives       []*ModelAssetRef        `protobuf:"bytes,8,rep,name=alternatives,proto3" json:"alternatives,omitempty"` // Source, derived, preview, or collision model assets.
+	Sidecars           []*SidecarAssetRef      `protobuf:"bytes,9,rep,name=sidecars,proto3" json:"sidecars,omitempty"`
+	Version            string                  `protobuf:"bytes,10,opt,name=version,proto3" json:"version,omitempty"`
+	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,11,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *ModelArtifact) Reset() {
 	*x = ModelArtifact{}
-	mi := &file_resources_v1_model_proto_msgTypes[1]
+	mi := &file_resources_v1_model_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -567,7 +926,7 @@ func (x *ModelArtifact) String() string {
 func (*ModelArtifact) ProtoMessage() {}
 
 func (x *ModelArtifact) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_model_proto_msgTypes[1]
+	mi := &file_resources_v1_model_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -580,7 +939,7 @@ func (x *ModelArtifact) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelArtifact.ProtoReflect.Descriptor instead.
 func (*ModelArtifact) Descriptor() ([]byte, []int) {
-	return file_resources_v1_model_proto_rawDescGZIP(), []int{1}
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ModelArtifact) GetId() string {
@@ -618,23 +977,30 @@ func (x *ModelArtifact) GetGroup() ModelGroup {
 	return ModelGroup_MODEL_GROUP_UNSPECIFIED
 }
 
-func (x *ModelArtifact) GetAsset() *StoredAssetRef {
+func (x *ModelArtifact) GetAsset() *ModelAssetRef {
 	if x != nil {
 		return x.Asset
 	}
 	return nil
 }
 
-func (x *ModelArtifact) GetThumbnail() *StoredAssetRef {
+func (x *ModelArtifact) GetThumbnail() *ImageAssetRef {
 	if x != nil {
 		return x.Thumbnail
 	}
 	return nil
 }
 
-func (x *ModelArtifact) GetAlternatives() []*StoredAssetRef {
+func (x *ModelArtifact) GetAlternatives() []*ModelAssetRef {
 	if x != nil {
 		return x.Alternatives
+	}
+	return nil
+}
+
+func (x *ModelArtifact) GetSidecars() []*SidecarAssetRef {
+	if x != nil {
+		return x.Sidecars
 	}
 	return nil
 }
@@ -662,7 +1028,7 @@ type ModelArtifacts struct {
 
 func (x *ModelArtifacts) Reset() {
 	*x = ModelArtifacts{}
-	mi := &file_resources_v1_model_proto_msgTypes[2]
+	mi := &file_resources_v1_model_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -674,7 +1040,7 @@ func (x *ModelArtifacts) String() string {
 func (*ModelArtifacts) ProtoMessage() {}
 
 func (x *ModelArtifacts) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_model_proto_msgTypes[2]
+	mi := &file_resources_v1_model_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -687,7 +1053,7 @@ func (x *ModelArtifacts) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelArtifacts.ProtoReflect.Descriptor instead.
 func (*ModelArtifacts) Descriptor() ([]byte, []int) {
-	return file_resources_v1_model_proto_rawDescGZIP(), []int{2}
+	return file_resources_v1_model_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ModelArtifacts) GetItems() []*ModelArtifact {
@@ -701,65 +1067,100 @@ var File_resources_v1_model_proto protoreflect.FileDescriptor
 
 const file_resources_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa8\x04\n" +
-	"\x0eStoredAssetRef\x12H\n" +
-	"\abackend\x18\x01 \x01(\x0e2!.resources.v1.ModelStorageBackendB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\abackend\x12>\n" +
-	"\x06format\x18\x02 \x01(\x0e2\x19.resources.v1.AssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12\x16\n" +
-	"\x06bucket\x18\x03 \x01(\tR\x06bucket\x12\x1d\n" +
+	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe9\x04\n" +
+	"\rAssetLocation\x12H\n" +
+	"\abackend\x18\x01 \x01(\x0e2!.resources.v1.ModelStorageBackendB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\abackend\x12\x16\n" +
+	"\x06bucket\x18\x02 \x01(\tR\x06bucket\x12\x1d\n" +
 	"\n" +
-	"object_key\x18\x04 \x01(\tR\tobjectKey\x12\x1d\n" +
-	"\x03uri\x18\x05 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03uri\x12\x1a\n" +
-	"\bfilename\x18\x06 \x01(\tR\bfilename\x12!\n" +
-	"\fcontent_type\x18\a \x01(\tR\vcontentType\x12\x1d\n" +
+	"object_key\x18\x03 \x01(\tR\tobjectKey\x12\x1d\n" +
+	"\x03uri\x18\x04 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03uri\x12\x1a\n" +
+	"\bfilename\x18\x05 \x01(\tR\bfilename\x12!\n" +
+	"\fcontent_type\x18\x06 \x01(\tR\vcontentType\x12\x1d\n" +
 	"\n" +
-	"size_bytes\x18\b \x01(\x04R\tsizeBytes\x12\x16\n" +
-	"\x06sha256\x18\t \x01(\tR\x06sha256\x128\n" +
-	"\x04unit\x18\n" +
-	" \x01(\x0e2\x17.resources.v1.ModelUnitB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04unit\x12=\n" +
-	"\aup_axis\x18\v \x01(\x0e2\x17.resources.v1.ModelAxisB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06upAxis\x12G\n" +
-	"\fforward_axis\x18\f \x01(\x0e2\x17.resources.v1.ModelAxisB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\vforwardAxis\"\xd1\x03\n" +
-	"\rModelArtifact\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"size_bytes\x18\a \x01(\x04R\tsizeBytes\x123\n" +
+	"\x06sha256\x18\b \x01(\tB\x1b\xbaH\x18\xd8\x01\x01r\x132\x11^[a-fA-F0-9]{64}$R\x06sha256:\xa4\x02\xbaH\xa0\x02\x1a\x9d\x02\n" +
+	"\x1fasset_location.backend_location\x12)asset location must match storage backend\x1a\xce\x01(this.backend == 1 && this.filename != '') || (this.backend in [2, 3, 4] && this.bucket != '' && this.object_key != '') || (this.backend == 5 && this.filename != '') || (this.backend == 6 && this.uri != '')\"\xaa\a\n" +
+	"\rModelAssetRef\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
+	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
+	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ModelAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x128\n" +
+	"\x04unit\x18\x04 \x01(\x0e2\x17.resources.v1.ModelUnitB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04unit\x12=\n" +
+	"\aup_axis\x18\x05 \x01(\x0e2\x17.resources.v1.ModelAxisB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06upAxis\x12G\n" +
+	"\fforward_axis\x18\x06 \x01(\x0e2\x17.resources.v1.ModelAxisB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\vforwardAxis\x12=\n" +
+	"\x04role\x18\a \x01(\x0e2\x1c.resources.v1.ModelAssetRoleB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04role\x12<\n" +
+	"\x15derived_from_asset_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x12derivedFromAssetId:\xb5\x03\xbaH\xb1\x03\x1ao\n" +
+	"\x1emodel_asset_ref.axes_different\x12*up_axis and forward_axis must be different\x1a!this.up_axis != this.forward_axis\x1a\x90\x01\n" +
+	"\"model_asset_ref.derived_has_source\x126derived model assets must define derived_from_asset_id\x1a2this.role != 3 || this.derived_from_asset_id != ''\x1a\xaa\x01\n" +
+	"\"model_asset_ref.no_self_derivation\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xa4\x03\n" +
+	"\rImageAssetRef\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
+	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
+	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ImageAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12<\n" +
+	"\x15derived_from_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x12derivedFromAssetId:\xb0\x01\xbaH\xac\x01\x1a\xa9\x01\n" +
+	"!image_asset_ref.no_self_reference\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xa2\x03\n" +
+	"\x0fSidecarAssetRef\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
+	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12E\n" +
+	"\x06format\x18\x03 \x01(\x0e2 .resources.v1.SidecarAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x129\n" +
+	"\x13associated_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x11associatedAssetId:\xad\x01\xbaH\xa9\x01\x1a\xa6\x01\n" +
+	"$sidecar_asset_ref.no_self_derivation\x127associated_asset_id must not reference the asset itself\x1aEthis.associated_asset_id == '' || this.associated_asset_id != this.id\"\x82\x05\n" +
+	"\rModelArtifact\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
-	"\x05group\x18\x05 \x01(\x0e2\x18.resources.v1.ModelGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12:\n" +
-	"\x05asset\x18\x06 \x01(\v2\x1c.resources.v1.StoredAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05asset\x12:\n" +
-	"\tthumbnail\x18\a \x01(\v2\x1c.resources.v1.StoredAssetRefR\tthumbnail\x12@\n" +
-	"\falternatives\x18\b \x03(\v2\x1c.resources.v1.StoredAssetRefR\falternatives\x12\x18\n" +
-	"\aversion\x18\t \x01(\tR\aversion\x12M\n" +
-	"\x13external_references\x18\n" +
-	" \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"C\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12;\n" +
+	"\x05group\x18\x05 \x01(\x0e2\x18.resources.v1.ModelGroupB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05group\x129\n" +
+	"\x05asset\x18\x06 \x01(\v2\x1b.resources.v1.ModelAssetRefB\x06\xbaH\x03\xc8\x01\x01R\x05asset\x129\n" +
+	"\tthumbnail\x18\a \x01(\v2\x1b.resources.v1.ImageAssetRefR\tthumbnail\x12?\n" +
+	"\falternatives\x18\b \x03(\v2\x1b.resources.v1.ModelAssetRefR\falternatives\x129\n" +
+	"\bsidecars\x18\t \x03(\v2\x1d.resources.v1.SidecarAssetRefR\bsidecars\x12\x18\n" +
+	"\aversion\x18\n" +
+	" \x01(\tR\aversion\x12M\n" +
+	"\x13external_references\x18\v \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences:i\xbaHf\x1ad\n" +
+	"!model_artifact.primary_asset_role\x12$primary asset must have runtime role\x1a\x19this.asset.role in [1, 2]\"C\n" +
 	"\x0eModelArtifacts\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.ModelArtifactR\x05items*\xb7\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.ModelArtifactR\x05items*\xd5\x01\n" +
 	"\n" +
 	"ModelGroup\x12\x1b\n" +
-	"\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x14\n" +
-	"\x10MODEL_GROUP_PART\x10\x01\x12\x17\n" +
-	"\x13MODEL_GROUP_PRODUCT\x10\x02\x12\x14\n" +
-	"\x10MODEL_GROUP_TOOL\x10\x03\x12\x15\n" +
-	"\x11MODEL_GROUP_ROBOT\x10\x04\x12\x19\n" +
-	"\x15MODEL_GROUP_CONTAINER\x10\x05\x12\x15\n" +
-	"\x11MODEL_GROUP_ASSET\x10\x06*\xaa\x03\n" +
-	"\vAssetFormat\x12\x1c\n" +
-	"\x18ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x14\n" +
-	"\x10ASSET_FORMAT_GLB\x10\x01\x12\x15\n" +
-	"\x11ASSET_FORMAT_GLTF\x10\x02\x12\x14\n" +
-	"\x10ASSET_FORMAT_OBJ\x10\x03\x12\x14\n" +
-	"\x10ASSET_FORMAT_FBX\x10\x04\x12\x14\n" +
-	"\x10ASSET_FORMAT_STL\x10\x05\x12\x15\n" +
-	"\x11ASSET_FORMAT_STEP\x10\x06\x12\x15\n" +
-	"\x11ASSET_FORMAT_IGES\x10\a\x12\x14\n" +
-	"\x10ASSET_FORMAT_USD\x10\b\x12\x15\n" +
-	"\x11ASSET_FORMAT_USDZ\x10\t\x12\x14\n" +
-	"\x10ASSET_FORMAT_PNG\x10\x1e\x12\x15\n" +
-	"\x11ASSET_FORMAT_JPEG\x10\x1f\x12\x15\n" +
-	"\x11ASSET_FORMAT_WEBP\x10 \x12\x14\n" +
-	"\x10ASSET_FORMAT_SVG\x10!\x12\x14\n" +
-	"\x10ASSET_FORMAT_MTL\x102\x12\x16\n" +
-	"\x12ASSET_FORMAT_BASIS\x103\x12\x15\n" +
-	"\x11ASSET_FORMAT_KTX2\x104\x12\x14\n" +
-	"\x10ASSET_FORMAT_ZIP\x10F*\xe7\x01\n" +
+	"\x17MODEL_GROUP_UNSPECIFIED\x10\x00\x12\x17\n" +
+	"\x13MODEL_GROUP_PRODUCT\x10\n" +
+	"\x12\x1c\n" +
+	"\x18MODEL_GROUP_SUB_ASSEMBLY\x10\v\x12\x14\n" +
+	"\x10MODEL_GROUP_PART\x10\f\x12\x14\n" +
+	"\x10MODEL_GROUP_TOOL\x10\x14\x12\x15\n" +
+	"\x11MODEL_GROUP_ROBOT\x10\x1e\x12\x19\n" +
+	"\x15MODEL_GROUP_CONTAINER\x10(\x12\x15\n" +
+	"\x11MODEL_GROUP_ASSET\x102*\xc9\x01\n" +
+	"\x0eModelAssetRole\x12 \n" +
+	"\x1cMODEL_ASSET_ROLE_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18MODEL_ASSET_ROLE_RUNTIME\x10\x01\x12\x1b\n" +
+	"\x17MODEL_ASSET_ROLE_SOURCE\x10\x02\x12\x1c\n" +
+	"\x18MODEL_ASSET_ROLE_DERIVED\x10\x03\x12\x1c\n" +
+	"\x18MODEL_ASSET_ROLE_PREVIEW\x10\x04\x12\x1e\n" +
+	"\x1aMODEL_ASSET_ROLE_COLLISION\x10\x05*\xb6\x02\n" +
+	"\x10ModelAssetFormat\x12\"\n" +
+	"\x1eMODEL_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1a\n" +
+	"\x16MODEL_ASSET_FORMAT_GLB\x10\x01\x12\x1b\n" +
+	"\x17MODEL_ASSET_FORMAT_GLTF\x10\x02\x12\x1a\n" +
+	"\x16MODEL_ASSET_FORMAT_OBJ\x10\x03\x12\x1a\n" +
+	"\x16MODEL_ASSET_FORMAT_FBX\x10\x04\x12\x1a\n" +
+	"\x16MODEL_ASSET_FORMAT_STL\x10\x05\x12\x1b\n" +
+	"\x17MODEL_ASSET_FORMAT_STEP\x10\x06\x12\x1b\n" +
+	"\x17MODEL_ASSET_FORMAT_IGES\x10\a\x12\x1a\n" +
+	"\x16MODEL_ASSET_FORMAT_USD\x10\b\x12\x1b\n" +
+	"\x17MODEL_ASSET_FORMAT_USDZ\x10\t*\xb5\x01\n" +
+	"\x12SidecarAssetFormat\x12$\n" +
+	" SIDECAR_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1c\n" +
+	"\x18SIDECAR_ASSET_FORMAT_MTL\x10Q\x12\x1e\n" +
+	"\x1aSIDECAR_ASSET_FORMAT_BASIS\x10R\x12\x1d\n" +
+	"\x19SIDECAR_ASSET_FORMAT_KTX2\x10S\x12\x1c\n" +
+	"\x18SIDECAR_ASSET_FORMAT_ZIP\x10T*\xa8\x01\n" +
+	"\x10ImageAssetFormat\x12\"\n" +
+	"\x1eIMAGE_ASSET_FORMAT_UNSPECIFIED\x10\x00\x12\x1a\n" +
+	"\x16IMAGE_ASSET_FORMAT_PNG\x10d\x12\x1b\n" +
+	"\x17IMAGE_ASSET_FORMAT_JPEG\x10e\x12\x1b\n" +
+	"\x17IMAGE_ASSET_FORMAT_WEBP\x10f\x12\x1a\n" +
+	"\x16IMAGE_ASSET_FORMAT_SVG\x10g*\xe7\x01\n" +
 	"\tModelUnit\x12\x1a\n" +
 	"\x16MODEL_UNIT_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15MODEL_UNIT_MILLIMETER\x10\x01\x12\x19\n" +
@@ -802,36 +1203,49 @@ func file_resources_v1_model_proto_rawDescGZIP() []byte {
 	return file_resources_v1_model_proto_rawDescData
 }
 
-var file_resources_v1_model_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_resources_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_resources_v1_model_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_resources_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_resources_v1_model_proto_goTypes = []any{
 	(ModelGroup)(0),              // 0: resources.v1.ModelGroup
-	(AssetFormat)(0),             // 1: resources.v1.AssetFormat
-	(ModelUnit)(0),               // 2: resources.v1.ModelUnit
-	(ModelAxis)(0),               // 3: resources.v1.ModelAxis
-	(ModelStorageBackend)(0),     // 4: resources.v1.ModelStorageBackend
-	(*StoredAssetRef)(nil),       // 5: resources.v1.StoredAssetRef
-	(*ModelArtifact)(nil),        // 6: resources.v1.ModelArtifact
-	(*ModelArtifacts)(nil),       // 7: resources.v1.ModelArtifacts
-	(*v1.ExternalReference)(nil), // 8: common.v1.ExternalReference
+	(ModelAssetRole)(0),          // 1: resources.v1.ModelAssetRole
+	(ModelAssetFormat)(0),        // 2: resources.v1.ModelAssetFormat
+	(SidecarAssetFormat)(0),      // 3: resources.v1.SidecarAssetFormat
+	(ImageAssetFormat)(0),        // 4: resources.v1.ImageAssetFormat
+	(ModelUnit)(0),               // 5: resources.v1.ModelUnit
+	(ModelAxis)(0),               // 6: resources.v1.ModelAxis
+	(ModelStorageBackend)(0),     // 7: resources.v1.ModelStorageBackend
+	(*AssetLocation)(nil),        // 8: resources.v1.AssetLocation
+	(*ModelAssetRef)(nil),        // 9: resources.v1.ModelAssetRef
+	(*ImageAssetRef)(nil),        // 10: resources.v1.ImageAssetRef
+	(*SidecarAssetRef)(nil),      // 11: resources.v1.SidecarAssetRef
+	(*ModelArtifact)(nil),        // 12: resources.v1.ModelArtifact
+	(*ModelArtifacts)(nil),       // 13: resources.v1.ModelArtifacts
+	(*v1.ExternalReference)(nil), // 14: common.v1.ExternalReference
 }
 var file_resources_v1_model_proto_depIdxs = []int32{
-	4,  // 0: resources.v1.StoredAssetRef.backend:type_name -> resources.v1.ModelStorageBackend
-	1,  // 1: resources.v1.StoredAssetRef.format:type_name -> resources.v1.AssetFormat
-	2,  // 2: resources.v1.StoredAssetRef.unit:type_name -> resources.v1.ModelUnit
-	3,  // 3: resources.v1.StoredAssetRef.up_axis:type_name -> resources.v1.ModelAxis
-	3,  // 4: resources.v1.StoredAssetRef.forward_axis:type_name -> resources.v1.ModelAxis
-	0,  // 5: resources.v1.ModelArtifact.group:type_name -> resources.v1.ModelGroup
-	5,  // 6: resources.v1.ModelArtifact.asset:type_name -> resources.v1.StoredAssetRef
-	5,  // 7: resources.v1.ModelArtifact.thumbnail:type_name -> resources.v1.StoredAssetRef
-	5,  // 8: resources.v1.ModelArtifact.alternatives:type_name -> resources.v1.StoredAssetRef
-	8,  // 9: resources.v1.ModelArtifact.external_references:type_name -> common.v1.ExternalReference
-	6,  // 10: resources.v1.ModelArtifacts.items:type_name -> resources.v1.ModelArtifact
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	7,  // 0: resources.v1.AssetLocation.backend:type_name -> resources.v1.ModelStorageBackend
+	8,  // 1: resources.v1.ModelAssetRef.location:type_name -> resources.v1.AssetLocation
+	2,  // 2: resources.v1.ModelAssetRef.format:type_name -> resources.v1.ModelAssetFormat
+	5,  // 3: resources.v1.ModelAssetRef.unit:type_name -> resources.v1.ModelUnit
+	6,  // 4: resources.v1.ModelAssetRef.up_axis:type_name -> resources.v1.ModelAxis
+	6,  // 5: resources.v1.ModelAssetRef.forward_axis:type_name -> resources.v1.ModelAxis
+	1,  // 6: resources.v1.ModelAssetRef.role:type_name -> resources.v1.ModelAssetRole
+	8,  // 7: resources.v1.ImageAssetRef.location:type_name -> resources.v1.AssetLocation
+	4,  // 8: resources.v1.ImageAssetRef.format:type_name -> resources.v1.ImageAssetFormat
+	8,  // 9: resources.v1.SidecarAssetRef.location:type_name -> resources.v1.AssetLocation
+	3,  // 10: resources.v1.SidecarAssetRef.format:type_name -> resources.v1.SidecarAssetFormat
+	0,  // 11: resources.v1.ModelArtifact.group:type_name -> resources.v1.ModelGroup
+	9,  // 12: resources.v1.ModelArtifact.asset:type_name -> resources.v1.ModelAssetRef
+	10, // 13: resources.v1.ModelArtifact.thumbnail:type_name -> resources.v1.ImageAssetRef
+	9,  // 14: resources.v1.ModelArtifact.alternatives:type_name -> resources.v1.ModelAssetRef
+	11, // 15: resources.v1.ModelArtifact.sidecars:type_name -> resources.v1.SidecarAssetRef
+	14, // 16: resources.v1.ModelArtifact.external_references:type_name -> common.v1.ExternalReference
+	12, // 17: resources.v1.ModelArtifacts.items:type_name -> resources.v1.ModelArtifact
+	18, // [18:18] is the sub-list for method output_type
+	18, // [18:18] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_model_proto_init() }
@@ -844,8 +1258,8 @@ func file_resources_v1_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_model_proto_rawDesc), len(file_resources_v1_model_proto_rawDesc)),
-			NumEnums:      5,
-			NumMessages:   3,
+			NumEnums:      8,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
