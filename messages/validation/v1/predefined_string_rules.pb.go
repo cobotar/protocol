@@ -286,6 +286,22 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100032,opt,name=model_asset_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100033,
+		Name:          "validation.v1.sidecar_asset_id_component",
+		Tag:           "varint,100033,opt,name=sidecar_asset_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100034,
+		Name:          "validation.v1.image_asset_id_component",
+		Tag:           "varint,100034,opt,name=image_asset_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -356,6 +372,10 @@ var (
 	E_ArInputSlotIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[31]
 	// optional bool model_asset_id_component = 100032;
 	E_ModelAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[32]
+	// optional bool sidecar_asset_id_component = 100033;
+	E_SidecarAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[33]
+	// optional bool image_asset_id_component = 100034;
+	E_ImageAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[34]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -461,7 +481,13 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"!string.ar_input_slot_id_component\x12+this does not seem to be a AR input slot id\x1a1(this == '' || this.startsWith('ar_input_slot-'))R\x16arInputSlotIdComponent:\xd9\x01\n" +
 	"\x18model_asset_id_component\x12\x19.buf.validate.StringRules\x18\xc0\x8d\x06 \x01(\bB\x82\x01\xc2H\x7f\n" +
 	"}\n" +
-	"\x1fstring.model_asset_id_component\x12)this does not seem to be a model asset id\x1a/(this == '' || this.startsWith('model_asset-'))R\x15modelAssetIdComponentB\xb5\x01\n" +
+	"\x1fstring.model_asset_id_component\x12)this does not seem to be a model asset id\x1a/(this == '' || this.startsWith('model_asset-'))R\x15modelAssetIdComponent:\xe5\x01\n" +
+	"\x1asidecar_asset_id_component\x12\x19.buf.validate.StringRules\x18\xc1\x8d\x06 \x01(\bB\x8a\x01\xc2H\x86\x01\n" +
+	"\x83\x01\n" +
+	"!string.sidecar_asset_id_component\x12+this does not seem to be a sidecar asset id\x1a1(this == '' || this.startsWith('sidecar_asset-'))R\x17sidecarAssetIdComponent:\xd9\x01\n" +
+	"\x18image_asset_id_component\x12\x19.buf.validate.StringRules\x18\u008d\x06 \x01(\bB\x82\x01\xc2H\x7f\n" +
+	"}\n" +
+	"\x1fstring.image_asset_id_component\x12)this does not seem to be a image asset id\x1a/(this == '' || this.startsWith('image_asset-'))R\x15imageAssetIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -501,10 +527,12 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 30: validation.v1.ar_config_instance_id_component:extendee -> buf.validate.StringRules
 	0,  // 31: validation.v1.ar_input_slot_id_component:extendee -> buf.validate.StringRules
 	0,  // 32: validation.v1.model_asset_id_component:extendee -> buf.validate.StringRules
-	33, // [33:33] is the sub-list for method output_type
-	33, // [33:33] is the sub-list for method input_type
-	33, // [33:33] is the sub-list for extension type_name
-	0,  // [0:33] is the sub-list for extension extendee
+	0,  // 33: validation.v1.sidecar_asset_id_component:extendee -> buf.validate.StringRules
+	0,  // 34: validation.v1.image_asset_id_component:extendee -> buf.validate.StringRules
+	35, // [35:35] is the sub-list for method output_type
+	35, // [35:35] is the sub-list for method input_type
+	35, // [35:35] is the sub-list for extension type_name
+	0,  // [0:35] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -520,7 +548,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 33,
+			NumExtensions: 35,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

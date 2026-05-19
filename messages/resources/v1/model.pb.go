@@ -762,9 +762,9 @@ type ImageAssetRef struct {
 	Format   ImageAssetFormat       `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.ImageAssetFormat" json:"format,omitempty"`
 	// Optional link to the model asset this image was generated from.
 	// Example: a PNG thumbnail can point to the GLB/OBJ it previews.
-	DerivedFromAssetId string `protobuf:"bytes,4,opt,name=derived_from_asset_id,json=derivedFromAssetId,proto3" json:"derived_from_asset_id,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	DerivedFromModelAssetId string `protobuf:"bytes,4,opt,name=derived_from_model_asset_id,json=derivedFromModelAssetId,proto3" json:"derived_from_model_asset_id,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ImageAssetRef) Reset() {
@@ -818,9 +818,9 @@ func (x *ImageAssetRef) GetFormat() ImageAssetFormat {
 	return ImageAssetFormat_IMAGE_ASSET_FORMAT_UNSPECIFIED
 }
 
-func (x *ImageAssetRef) GetDerivedFromAssetId() string {
+func (x *ImageAssetRef) GetDerivedFromModelAssetId() string {
 	if x != nil {
-		return x.DerivedFromAssetId
+		return x.DerivedFromModelAssetId
 	}
 	return ""
 }
@@ -832,9 +832,9 @@ type SidecarAssetRef struct {
 	Format   SidecarAssetFormat     `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.SidecarAssetFormat" json:"format,omitempty"`
 	// Optional link to the model asset this sidecar belongs to or was generated from.
 	// Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
-	AssociatedAssetId string `protobuf:"bytes,4,opt,name=associated_asset_id,json=associatedAssetId,proto3" json:"associated_asset_id,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	AssociatedModelAssetId string `protobuf:"bytes,4,opt,name=associated_model_asset_id,json=associatedModelAssetId,proto3" json:"associated_model_asset_id,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *SidecarAssetRef) Reset() {
@@ -888,9 +888,9 @@ func (x *SidecarAssetRef) GetFormat() SidecarAssetFormat {
 	return SidecarAssetFormat_SIDECAR_ASSET_FORMAT_UNSPECIFIED
 }
 
-func (x *SidecarAssetRef) GetAssociatedAssetId() string {
+func (x *SidecarAssetRef) GetAssociatedModelAssetId() string {
 	if x != nil {
-		return x.AssociatedAssetId
+		return x.AssociatedModelAssetId
 	}
 	return ""
 }
@@ -1091,19 +1091,17 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\x15derived_from_asset_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x12derivedFromAssetId:\xb5\x03\xbaH\xb1\x03\x1ao\n" +
 	"\x1emodel_asset_ref.axes_different\x12*up_axis and forward_axis must be different\x1a!this.up_axis != this.forward_axis\x1a\x90\x01\n" +
 	"\"model_asset_ref.derived_has_source\x126derived model assets must define derived_from_asset_id\x1a2this.role != 3 || this.derived_from_asset_id != ''\x1a\xaa\x01\n" +
-	"\"model_asset_ref.no_self_derivation\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xa4\x03\n" +
+	"\"model_asset_ref.no_self_derivation\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xfc\x01\n" +
 	"\rImageAssetRef\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xec0\x01R\x02id\x12?\n" +
 	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
-	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ImageAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12<\n" +
-	"\x15derived_from_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x12derivedFromAssetId:\xb0\x01\xbaH\xac\x01\x1a\xa9\x01\n" +
-	"!image_asset_ref.no_self_reference\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xa2\x03\n" +
+	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ImageAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12G\n" +
+	"\x1bderived_from_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x17derivedFromModelAssetId\"\xfd\x01\n" +
 	"\x0fSidecarAssetRef\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xec0\x01R\x02id\x12?\n" +
 	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12E\n" +
-	"\x06format\x18\x03 \x01(\x0e2 .resources.v1.SidecarAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x129\n" +
-	"\x13associated_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x11associatedAssetId:\xad\x01\xbaH\xa9\x01\x1a\xa6\x01\n" +
-	"$sidecar_asset_ref.no_self_derivation\x127associated_asset_id must not reference the asset itself\x1aEthis.associated_asset_id == '' || this.associated_asset_id != this.id\"\x82\x05\n" +
+	"\x06format\x18\x03 \x01(\x0e2 .resources.v1.SidecarAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12D\n" +
+	"\x19associated_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x16associatedModelAssetId\"\x82\x05\n" +
 	"\rModelArtifact\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +

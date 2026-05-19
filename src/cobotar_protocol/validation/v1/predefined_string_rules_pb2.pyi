@@ -69,3 +69,7 @@ AR_INPUT_SLOT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_input_slot_id_component: _descriptor.FieldDescriptor
 MODEL_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 model_asset_id_component: _descriptor.FieldDescriptor
+SIDECAR_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+sidecar_asset_id_component: _descriptor.FieldDescriptor
+IMAGE_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+image_asset_id_component: _descriptor.FieldDescriptor

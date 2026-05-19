@@ -201,4 +201,16 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a model asset id"
     expression: "(this == '' || this.startsWith('model_asset-'))"
   }];
+
+  optional bool sidecar_asset_id_component = 100033 [(buf.validate.predefined).cel = {
+    id: "string.sidecar_asset_id_component"
+    message: "this does not seem to be a sidecar asset id"
+    expression: "(this == '' || this.startsWith('sidecar_asset-'))"
+  }];
+
+  optional bool image_asset_id_component = 100034 [(buf.validate.predefined).cel = {
+    id: "string.image_asset_id_component"
+    message: "this does not seem to be a image asset id"
+    expression: "(this == '' || this.startsWith('image_asset-'))"
+  }];
 }

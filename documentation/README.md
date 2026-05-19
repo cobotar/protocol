@@ -58,6 +58,8 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
@@ -919,6 +921,7 @@ A simple pose consisting of a position and orientation
 | container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
 | line_id_component | bool | .buf.validate.StringRules | 10024 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
 | model_asset_id_component | bool | .buf.validate.StringRules | 100032 |  |
@@ -934,6 +937,7 @@ A simple pose consisting of a position and orientation
 | robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
 | sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
 | sequence_run_id_component | bool | .buf.validate.StringRules | 10018 |  |
+| sidecar_asset_id_component | bool | .buf.validate.StringRules | 100033 |  |
 | skill_id_component | bool | .buf.validate.StringRules | 10016 |  |
 | station_id_component | bool | .buf.validate.StringRules | 10015 |  |
 | task_definition_id_component | bool | .buf.validate.StringRules | 10022 |  |
@@ -7014,7 +7018,7 @@ content_type: &#34;model/gltf-binary&#34;
 | id | [string](#string) |  |  |
 | location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
 | format | [ImageAssetFormat](#resources-v1-ImageAssetFormat) |  |  |
-| derived_from_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
+| derived_from_model_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
 
 
 
@@ -7094,7 +7098,7 @@ content_type: &#34;model/gltf-binary&#34;
 | id | [string](#string) |  |  |
 | location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
 | format | [SidecarAssetFormat](#resources-v1-SidecarAssetFormat) |  |  |
-| associated_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
+| associated_model_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
 
 
 

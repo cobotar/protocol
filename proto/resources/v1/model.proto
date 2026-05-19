@@ -228,7 +228,7 @@ message ModelAssetRef {
 message ImageAssetRef {
   string id = 1 [
     (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
+    (buf.validate.field).string.(validation.v1.image_asset_id_component) = true
   ];
   AssetLocation location = 2 [(buf.validate.field).required = true];
 
@@ -239,19 +239,13 @@ message ImageAssetRef {
 
   // Optional link to the model asset this image was generated from.
   // Example: a PNG thumbnail can point to the GLB/OBJ it previews.
-  string derived_from_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
-
-  option (buf.validate.message).cel = {
-    id: "image_asset_ref.no_self_reference"
-    message: "derived_from_asset_id must not reference the asset itself"
-    expression: "this.derived_from_asset_id == '' || this.derived_from_asset_id != this.id"
-  };
+  string derived_from_model_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
 }
 
 message SidecarAssetRef {
   string id = 1 [
     (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
+    (buf.validate.field).string.(validation.v1.sidecar_asset_id_component) = true
   ];
   AssetLocation location = 2 [(buf.validate.field).required = true];
 
@@ -262,13 +256,7 @@ message SidecarAssetRef {
 
   // Optional link to the model asset this sidecar belongs to or was generated from.
   // Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
-  string associated_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
-
-  option (buf.validate.message).cel = {
-    id: "sidecar_asset_ref.no_self_derivation"
-    message: "associated_asset_id must not reference the asset itself"
-    expression: "this.associated_asset_id == '' || this.associated_asset_id != this.id"
-  };
+  string associated_model_asset_id = 4 [(buf.validate.field).string.(validation.v1.model_asset_id_component) = true];
 }
 
 message ModelArtifact {

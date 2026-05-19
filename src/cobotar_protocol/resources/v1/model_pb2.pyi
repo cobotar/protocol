@@ -189,28 +189,28 @@ class ModelAssetRef(_message.Message):
     def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[ModelAssetFormat, str]] = ..., unit: _Optional[_Union[ModelUnit, str]] = ..., up_axis: _Optional[_Union[ModelAxis, str]] = ..., forward_axis: _Optional[_Union[ModelAxis, str]] = ..., role: _Optional[_Union[ModelAssetRole, str]] = ..., derived_from_asset_id: _Optional[str] = ...) -> None: ...
 
 class ImageAssetRef(_message.Message):
-    __slots__ = ("id", "location", "format", "derived_from_asset_id")
+    __slots__ = ("id", "location", "format", "derived_from_model_asset_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
-    DERIVED_FROM_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
+    DERIVED_FROM_MODEL_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     location: AssetLocation
     format: ImageAssetFormat
-    derived_from_asset_id: str
-    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[ImageAssetFormat, str]] = ..., derived_from_asset_id: _Optional[str] = ...) -> None: ...
+    derived_from_model_asset_id: str
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[ImageAssetFormat, str]] = ..., derived_from_model_asset_id: _Optional[str] = ...) -> None: ...
 
 class SidecarAssetRef(_message.Message):
-    __slots__ = ("id", "location", "format", "associated_asset_id")
+    __slots__ = ("id", "location", "format", "associated_model_asset_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
-    ASSOCIATED_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
+    ASSOCIATED_MODEL_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     location: AssetLocation
     format: SidecarAssetFormat
-    associated_asset_id: str
-    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[SidecarAssetFormat, str]] = ..., associated_asset_id: _Optional[str] = ...) -> None: ...
+    associated_model_asset_id: str
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[SidecarAssetFormat, str]] = ..., associated_model_asset_id: _Optional[str] = ...) -> None: ...
 
 class ModelArtifact(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "group", "asset", "thumbnail", "alternatives", "sidecars", "version", "external_references")

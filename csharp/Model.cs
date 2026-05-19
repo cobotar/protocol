@@ -62,93 +62,85 @@ namespace Messages.Resources.V1 {
             "aW9uEjlkZXJpdmVkX2Zyb21fYXNzZXRfaWQgbXVzdCBub3QgcmVmZXJlbmNl",
             "IHRoZSBhc3NldCBpdHNlbGYaSXRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lk",
             "ID09ICcnIHx8IHRoaXMuZGVyaXZlZF9mcm9tX2Fzc2V0X2lkICE9IHRoaXMu",
-            "aWQipAMKDUltYWdlQXNzZXRSZWYSHAoCaWQYASABKAlCDLpICXIEgOwwAcgB",
+            "aWQi/AEKDUltYWdlQXNzZXRSZWYSHAoCaWQYASABKAlCDLpICXIEkOwwAcgB",
             "AVICaWQSPwoIbG9jYXRpb24YAiABKAsyGy5yZXNvdXJjZXMudjEuQXNzZXRM",
             "b2NhdGlvbkIGukgDyAEBUghsb2NhdGlvbhJDCgZmb3JtYXQYAyABKA4yHi5y",
             "ZXNvdXJjZXMudjEuSW1hZ2VBc3NldEZvcm1hdEILukgIggECEAHIAQFSBmZv",
-            "cm1hdBI8ChVkZXJpdmVkX2Zyb21fYXNzZXRfaWQYBCABKAlCCbpIBnIEgOww",
-            "AVISZGVyaXZlZEZyb21Bc3NldElkOrABukisARqpAQohaW1hZ2VfYXNzZXRf",
-            "cmVmLm5vX3NlbGZfcmVmZXJlbmNlEjlkZXJpdmVkX2Zyb21fYXNzZXRfaWQg",
-            "bXVzdCBub3QgcmVmZXJlbmNlIHRoZSBhc3NldCBpdHNlbGYaSXRoaXMuZGVy",
-            "aXZlZF9mcm9tX2Fzc2V0X2lkID09ICcnIHx8IHRoaXMuZGVyaXZlZF9mcm9t",
-            "X2Fzc2V0X2lkICE9IHRoaXMuaWQiogMKD1NpZGVjYXJBc3NldFJlZhIcCgJp",
-            "ZBgBIAEoCUIMukgJcgSA7DAByAEBUgJpZBI/Cghsb2NhdGlvbhgCIAEoCzIb",
-            "LnJlc291cmNlcy52MS5Bc3NldExvY2F0aW9uQga6SAPIAQFSCGxvY2F0aW9u",
-            "EkUKBmZvcm1hdBgDIAEoDjIgLnJlc291cmNlcy52MS5TaWRlY2FyQXNzZXRG",
-            "b3JtYXRCC7pICIIBAhAByAEBUgZmb3JtYXQSOQoTYXNzb2NpYXRlZF9hc3Nl",
-            "dF9pZBgEIAEoCUIJukgGcgSA7DABUhFhc3NvY2lhdGVkQXNzZXRJZDqtAbpI",
-            "qQEapgEKJHNpZGVjYXJfYXNzZXRfcmVmLm5vX3NlbGZfZGVyaXZhdGlvbhI3",
-            "YXNzb2NpYXRlZF9hc3NldF9pZCBtdXN0IG5vdCByZWZlcmVuY2UgdGhlIGFz",
-            "c2V0IGl0c2VsZhpFdGhpcy5hc3NvY2lhdGVkX2Fzc2V0X2lkID09ICcnIHx8",
-            "IHRoaXMuYXNzb2NpYXRlZF9hc3NldF9pZCAhPSB0aGlzLmlkIoIFCg1Nb2Rl",
-            "bEFydGlmYWN0EhkKAmlkGAEgASgJQgm6SAZyBIjxBAFSAmlkEh0KBG5hbWUY",
-            "AiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAK",
-            "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI7CgVncm91cBgFIAEo",
-            "DjIYLnJlc291cmNlcy52MS5Nb2RlbEdyb3VwQgu6SAiCAQIQAcgBAVIFZ3Jv",
-            "dXASOQoFYXNzZXQYBiABKAsyGy5yZXNvdXJjZXMudjEuTW9kZWxBc3NldFJl",
-            "ZkIGukgDyAEBUgVhc3NldBI5Cgl0aHVtYm5haWwYByABKAsyGy5yZXNvdXJj",
-            "ZXMudjEuSW1hZ2VBc3NldFJlZlIJdGh1bWJuYWlsEj8KDGFsdGVybmF0aXZl",
-            "cxgIIAMoCzIbLnJlc291cmNlcy52MS5Nb2RlbEFzc2V0UmVmUgxhbHRlcm5h",
-            "dGl2ZXMSOQoIc2lkZWNhcnMYCSADKAsyHS5yZXNvdXJjZXMudjEuU2lkZWNh",
-            "ckFzc2V0UmVmUghzaWRlY2FycxIYCgd2ZXJzaW9uGAogASgJUgd2ZXJzaW9u",
-            "Ek0KE2V4dGVybmFsX3JlZmVyZW5jZXMYCyADKAsyHC5jb21tb24udjEuRXh0",
-            "ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlczppukhmGmQKIW1v",
-            "ZGVsX2FydGlmYWN0LnByaW1hcnlfYXNzZXRfcm9sZRIkcHJpbWFyeSBhc3Nl",
-            "dCBtdXN0IGhhdmUgcnVudGltZSByb2xlGhl0aGlzLmFzc2V0LnJvbGUgaW4g",
-            "WzEsIDJdIkMKDk1vZGVsQXJ0aWZhY3RzEjEKBWl0ZW1zGAEgAygLMhsucmVz",
-            "b3VyY2VzLnYxLk1vZGVsQXJ0aWZhY3RSBWl0ZW1zKtUBCgpNb2RlbEdyb3Vw",
-            "EhsKF01PREVMX0dST1VQX1VOU1BFQ0lGSUVEEAASFwoTTU9ERUxfR1JPVVBf",
-            "UFJPRFVDVBAKEhwKGE1PREVMX0dST1VQX1NVQl9BU1NFTUJMWRALEhQKEE1P",
-            "REVMX0dST1VQX1BBUlQQDBIUChBNT0RFTF9HUk9VUF9UT09MEBQSFQoRTU9E",
-            "RUxfR1JPVVBfUk9CT1QQHhIZChVNT0RFTF9HUk9VUF9DT05UQUlORVIQKBIV",
-            "ChFNT0RFTF9HUk9VUF9BU1NFVBAyKskBCg5Nb2RlbEFzc2V0Um9sZRIgChxN",
-            "T0RFTF9BU1NFVF9ST0xFX1VOU1BFQ0lGSUVEEAASHAoYTU9ERUxfQVNTRVRf",
-            "Uk9MRV9SVU5USU1FEAESGwoXTU9ERUxfQVNTRVRfUk9MRV9TT1VSQ0UQAhIc",
-            "ChhNT0RFTF9BU1NFVF9ST0xFX0RFUklWRUQQAxIcChhNT0RFTF9BU1NFVF9S",
-            "T0xFX1BSRVZJRVcQBBIeChpNT0RFTF9BU1NFVF9ST0xFX0NPTExJU0lPThAF",
-            "KrYCChBNb2RlbEFzc2V0Rm9ybWF0EiIKHk1PREVMX0FTU0VUX0ZPUk1BVF9V",
-            "TlNQRUNJRklFRBAAEhoKFk1PREVMX0FTU0VUX0ZPUk1BVF9HTEIQARIbChdN",
-            "T0RFTF9BU1NFVF9GT1JNQVRfR0xURhACEhoKFk1PREVMX0FTU0VUX0ZPUk1B",
-            "VF9PQkoQAxIaChZNT0RFTF9BU1NFVF9GT1JNQVRfRkJYEAQSGgoWTU9ERUxf",
-            "QVNTRVRfRk9STUFUX1NUTBAFEhsKF01PREVMX0FTU0VUX0ZPUk1BVF9TVEVQ",
-            "EAYSGwoXTU9ERUxfQVNTRVRfRk9STUFUX0lHRVMQBxIaChZNT0RFTF9BU1NF",
-            "VF9GT1JNQVRfVVNEEAgSGwoXTU9ERUxfQVNTRVRfRk9STUFUX1VTRFoQCSq1",
-            "AQoSU2lkZWNhckFzc2V0Rm9ybWF0EiQKIFNJREVDQVJfQVNTRVRfRk9STUFU",
-            "X1VOU1BFQ0lGSUVEEAASHAoYU0lERUNBUl9BU1NFVF9GT1JNQVRfTVRMEFES",
-            "HgoaU0lERUNBUl9BU1NFVF9GT1JNQVRfQkFTSVMQUhIdChlTSURFQ0FSX0FT",
-            "U0VUX0ZPUk1BVF9LVFgyEFMSHAoYU0lERUNBUl9BU1NFVF9GT1JNQVRfWklQ",
-            "EFQqqAEKEEltYWdlQXNzZXRGb3JtYXQSIgoeSU1BR0VfQVNTRVRfRk9STUFU",
-            "X1VOU1BFQ0lGSUVEEAASGgoWSU1BR0VfQVNTRVRfRk9STUFUX1BORxBkEhsK",
-            "F0lNQUdFX0FTU0VUX0ZPUk1BVF9KUEVHEGUSGwoXSU1BR0VfQVNTRVRfRk9S",
-            "TUFUX1dFQlAQZhIaChZJTUFHRV9BU1NFVF9GT1JNQVRfU1ZHEGcq5wEKCU1v",
-            "ZGVsVW5pdBIaChZNT0RFTF9VTklUX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxf",
-            "VU5JVF9NSUxMSU1FVEVSEAESGQoVTU9ERUxfVU5JVF9DRU5USU1FVEVSEAIS",
-            "FAoQTU9ERUxfVU5JVF9NRVRFUhADEhgKFE1PREVMX1VOSVRfS0lMT01FVEVS",
-            "EAQSEwoPTU9ERUxfVU5JVF9JTkNIEAoSEwoPTU9ERUxfVU5JVF9GT09UEAsS",
-            "EwoPTU9ERUxfVU5JVF9ZQVJEEAwSGQoVTU9ERUxfVU5JVF9NSUNST01FVEVS",
-            "EBQqyQEKCU1vZGVsQXhpcxIaChZNT0RFTF9BWElTX1VOU1BFQ0lGSUVEEAAS",
-            "GQoVTU9ERUxfQVhJU19QT1NJVElWRV9YEAESGQoVTU9ERUxfQVhJU19ORUdB",
-            "VElWRV9YEAISGQoVTU9ERUxfQVhJU19QT1NJVElWRV9ZEAMSGQoVTU9ERUxf",
-            "QVhJU19ORUdBVElWRV9ZEAQSGQoVTU9ERUxfQVhJU19QT1NJVElWRV9aEAUS",
-            "GQoVTU9ERUxfQVhJU19ORUdBVElWRV9aEAYqmgIKE01vZGVsU3RvcmFnZUJh",
-            "Y2tlbmQSJQohTU9ERUxfU1RPUkFHRV9CQUNLRU5EX1VOU1BFQ0lGSUVEEAAS",
-            "IgoeTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0JVSUxUX0lOEAESKwonTU9ERUxf",
-            "U1RPUkFHRV9CQUNLRU5EX05BVFNfT0JKRUNUX1NUT1JFEAISHAoYTU9ERUxf",
-            "U1RPUkFHRV9CQUNLRU5EX1MzEAMSHwobTU9ERUxfU1RPUkFHRV9CQUNLRU5E",
-            "X01JTklPEAQSJAogTU9ERUxfU1RPUkFHRV9CQUNLRU5EX0xPQ0FMX0ZJTEUQ",
-            "BRImCiJNT0RFTF9TVE9SQUdFX0JBQ0tFTkRfRVhURVJOQUxfVVJMEAZCtwEK",
-            "EGNvbS5yZXNvdXJjZXMudjFCCk1vZGVsUHJvdG9QAVo9Z2l0aHViLmNvbS9j",
-            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJj",
-            "ZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNl",
-            "c1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6",
-            "VjFiBnByb3RvMw=="));
+            "cm1hdBJHChtkZXJpdmVkX2Zyb21fbW9kZWxfYXNzZXRfaWQYBCABKAlCCbpI",
+            "BnIEgOwwAVIXZGVyaXZlZEZyb21Nb2RlbEFzc2V0SWQi/QEKD1NpZGVjYXJB",
+            "c3NldFJlZhIcCgJpZBgBIAEoCUIMukgJcgSI7DAByAEBUgJpZBI/Cghsb2Nh",
+            "dGlvbhgCIAEoCzIbLnJlc291cmNlcy52MS5Bc3NldExvY2F0aW9uQga6SAPI",
+            "AQFSCGxvY2F0aW9uEkUKBmZvcm1hdBgDIAEoDjIgLnJlc291cmNlcy52MS5T",
+            "aWRlY2FyQXNzZXRGb3JtYXRCC7pICIIBAhAByAEBUgZmb3JtYXQSRAoZYXNz",
+            "b2NpYXRlZF9tb2RlbF9hc3NldF9pZBgEIAEoCUIJukgGcgSA7DABUhZhc3Nv",
+            "Y2lhdGVkTW9kZWxBc3NldElkIoIFCg1Nb2RlbEFydGlmYWN0EhkKAmlkGAEg",
+            "ASgJQgm6SAZyBIjxBAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
+            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
+            "UgtkZXNjcmlwdGlvbhI7CgVncm91cBgFIAEoDjIYLnJlc291cmNlcy52MS5N",
+            "b2RlbEdyb3VwQgu6SAiCAQIQAcgBAVIFZ3JvdXASOQoFYXNzZXQYBiABKAsy",
+            "Gy5yZXNvdXJjZXMudjEuTW9kZWxBc3NldFJlZkIGukgDyAEBUgVhc3NldBI5",
+            "Cgl0aHVtYm5haWwYByABKAsyGy5yZXNvdXJjZXMudjEuSW1hZ2VBc3NldFJl",
+            "ZlIJdGh1bWJuYWlsEj8KDGFsdGVybmF0aXZlcxgIIAMoCzIbLnJlc291cmNl",
+            "cy52MS5Nb2RlbEFzc2V0UmVmUgxhbHRlcm5hdGl2ZXMSOQoIc2lkZWNhcnMY",
+            "CSADKAsyHS5yZXNvdXJjZXMudjEuU2lkZWNhckFzc2V0UmVmUghzaWRlY2Fy",
+            "cxIYCgd2ZXJzaW9uGAogASgJUgd2ZXJzaW9uEk0KE2V4dGVybmFsX3JlZmVy",
+            "ZW5jZXMYCyADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4",
+            "dGVybmFsUmVmZXJlbmNlczppukhmGmQKIW1vZGVsX2FydGlmYWN0LnByaW1h",
+            "cnlfYXNzZXRfcm9sZRIkcHJpbWFyeSBhc3NldCBtdXN0IGhhdmUgcnVudGlt",
+            "ZSByb2xlGhl0aGlzLmFzc2V0LnJvbGUgaW4gWzEsIDJdIkMKDk1vZGVsQXJ0",
+            "aWZhY3RzEjEKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2VzLnYxLk1vZGVsQXJ0",
+            "aWZhY3RSBWl0ZW1zKtUBCgpNb2RlbEdyb3VwEhsKF01PREVMX0dST1VQX1VO",
+            "U1BFQ0lGSUVEEAASFwoTTU9ERUxfR1JPVVBfUFJPRFVDVBAKEhwKGE1PREVM",
+            "X0dST1VQX1NVQl9BU1NFTUJMWRALEhQKEE1PREVMX0dST1VQX1BBUlQQDBIU",
+            "ChBNT0RFTF9HUk9VUF9UT09MEBQSFQoRTU9ERUxfR1JPVVBfUk9CT1QQHhIZ",
+            "ChVNT0RFTF9HUk9VUF9DT05UQUlORVIQKBIVChFNT0RFTF9HUk9VUF9BU1NF",
+            "VBAyKskBCg5Nb2RlbEFzc2V0Um9sZRIgChxNT0RFTF9BU1NFVF9ST0xFX1VO",
+            "U1BFQ0lGSUVEEAASHAoYTU9ERUxfQVNTRVRfUk9MRV9SVU5USU1FEAESGwoX",
+            "TU9ERUxfQVNTRVRfUk9MRV9TT1VSQ0UQAhIcChhNT0RFTF9BU1NFVF9ST0xF",
+            "X0RFUklWRUQQAxIcChhNT0RFTF9BU1NFVF9ST0xFX1BSRVZJRVcQBBIeChpN",
+            "T0RFTF9BU1NFVF9ST0xFX0NPTExJU0lPThAFKrYCChBNb2RlbEFzc2V0Rm9y",
+            "bWF0EiIKHk1PREVMX0FTU0VUX0ZPUk1BVF9VTlNQRUNJRklFRBAAEhoKFk1P",
+            "REVMX0FTU0VUX0ZPUk1BVF9HTEIQARIbChdNT0RFTF9BU1NFVF9GT1JNQVRf",
+            "R0xURhACEhoKFk1PREVMX0FTU0VUX0ZPUk1BVF9PQkoQAxIaChZNT0RFTF9B",
+            "U1NFVF9GT1JNQVRfRkJYEAQSGgoWTU9ERUxfQVNTRVRfRk9STUFUX1NUTBAF",
+            "EhsKF01PREVMX0FTU0VUX0ZPUk1BVF9TVEVQEAYSGwoXTU9ERUxfQVNTRVRf",
+            "Rk9STUFUX0lHRVMQBxIaChZNT0RFTF9BU1NFVF9GT1JNQVRfVVNEEAgSGwoX",
+            "TU9ERUxfQVNTRVRfRk9STUFUX1VTRFoQCSq1AQoSU2lkZWNhckFzc2V0Rm9y",
+            "bWF0EiQKIFNJREVDQVJfQVNTRVRfRk9STUFUX1VOU1BFQ0lGSUVEEAASHAoY",
+            "U0lERUNBUl9BU1NFVF9GT1JNQVRfTVRMEFESHgoaU0lERUNBUl9BU1NFVF9G",
+            "T1JNQVRfQkFTSVMQUhIdChlTSURFQ0FSX0FTU0VUX0ZPUk1BVF9LVFgyEFMS",
+            "HAoYU0lERUNBUl9BU1NFVF9GT1JNQVRfWklQEFQqqAEKEEltYWdlQXNzZXRG",
+            "b3JtYXQSIgoeSU1BR0VfQVNTRVRfRk9STUFUX1VOU1BFQ0lGSUVEEAASGgoW",
+            "SU1BR0VfQVNTRVRfRk9STUFUX1BORxBkEhsKF0lNQUdFX0FTU0VUX0ZPUk1B",
+            "VF9KUEVHEGUSGwoXSU1BR0VfQVNTRVRfRk9STUFUX1dFQlAQZhIaChZJTUFH",
+            "RV9BU1NFVF9GT1JNQVRfU1ZHEGcq5wEKCU1vZGVsVW5pdBIaChZNT0RFTF9V",
+            "TklUX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfVU5JVF9NSUxMSU1FVEVSEAES",
+            "GQoVTU9ERUxfVU5JVF9DRU5USU1FVEVSEAISFAoQTU9ERUxfVU5JVF9NRVRF",
+            "UhADEhgKFE1PREVMX1VOSVRfS0lMT01FVEVSEAQSEwoPTU9ERUxfVU5JVF9J",
+            "TkNIEAoSEwoPTU9ERUxfVU5JVF9GT09UEAsSEwoPTU9ERUxfVU5JVF9ZQVJE",
+            "EAwSGQoVTU9ERUxfVU5JVF9NSUNST01FVEVSEBQqyQEKCU1vZGVsQXhpcxIa",
+            "ChZNT0RFTF9BWElTX1VOU1BFQ0lGSUVEEAASGQoVTU9ERUxfQVhJU19QT1NJ",
+            "VElWRV9YEAESGQoVTU9ERUxfQVhJU19ORUdBVElWRV9YEAISGQoVTU9ERUxf",
+            "QVhJU19QT1NJVElWRV9ZEAMSGQoVTU9ERUxfQVhJU19ORUdBVElWRV9ZEAQS",
+            "GQoVTU9ERUxfQVhJU19QT1NJVElWRV9aEAUSGQoVTU9ERUxfQVhJU19ORUdB",
+            "VElWRV9aEAYqmgIKE01vZGVsU3RvcmFnZUJhY2tlbmQSJQohTU9ERUxfU1RP",
+            "UkFHRV9CQUNLRU5EX1VOU1BFQ0lGSUVEEAASIgoeTU9ERUxfU1RPUkFHRV9C",
+            "QUNLRU5EX0JVSUxUX0lOEAESKwonTU9ERUxfU1RPUkFHRV9CQUNLRU5EX05B",
+            "VFNfT0JKRUNUX1NUT1JFEAISHAoYTU9ERUxfU1RPUkFHRV9CQUNLRU5EX1Mz",
+            "EAMSHwobTU9ERUxfU1RPUkFHRV9CQUNLRU5EX01JTklPEAQSJAogTU9ERUxf",
+            "U1RPUkFHRV9CQUNLRU5EX0xPQ0FMX0ZJTEUQBRImCiJNT0RFTF9TVE9SQUdF",
+            "X0JBQ0tFTkRfRVhURVJOQUxfVVJMEAZCtwEKEGNvbS5yZXNvdXJjZXMudjFC",
+            "Ck1vZGVsUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3Nh",
+            "Z2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xW",
+            "MVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ModelGroup), typeof(global::Messages.Resources.V1.ModelAssetRole), typeof(global::Messages.Resources.V1.ModelAssetFormat), typeof(global::Messages.Resources.V1.SidecarAssetFormat), typeof(global::Messages.Resources.V1.ImageAssetFormat), typeof(global::Messages.Resources.V1.ModelUnit), typeof(global::Messages.Resources.V1.ModelAxis), typeof(global::Messages.Resources.V1.ModelStorageBackend), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetLocation), global::Messages.Resources.V1.AssetLocation.Parser, new[]{ "Backend", "Bucket", "ObjectKey", "Uri", "Filename", "ContentType", "SizeBytes", "Sha256" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelAssetRef), global::Messages.Resources.V1.ModelAssetRef.Parser, new[]{ "Id", "Location", "Format", "Unit", "UpAxis", "ForwardAxis", "Role", "DerivedFromAssetId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ImageAssetRef), global::Messages.Resources.V1.ImageAssetRef.Parser, new[]{ "Id", "Location", "Format", "DerivedFromAssetId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.SidecarAssetRef), global::Messages.Resources.V1.SidecarAssetRef.Parser, new[]{ "Id", "Location", "Format", "AssociatedAssetId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ImageAssetRef), global::Messages.Resources.V1.ImageAssetRef.Parser, new[]{ "Id", "Location", "Format", "DerivedFromModelAssetId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.SidecarAssetRef), global::Messages.Resources.V1.SidecarAssetRef.Parser, new[]{ "Id", "Location", "Format", "AssociatedModelAssetId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelArtifact), global::Messages.Resources.V1.ModelArtifact.Parser, new[]{ "Id", "Name", "Icon", "Description", "Group", "Asset", "Thumbnail", "Alternatives", "Sidecars", "Version", "ExternalReferences" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ModelArtifacts), global::Messages.Resources.V1.ModelArtifacts.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -1278,7 +1270,7 @@ namespace Messages.Resources.V1 {
       id_ = other.id_;
       location_ = other.location_ != null ? other.location_.Clone() : null;
       format_ = other.format_;
-      derivedFromAssetId_ = other.derivedFromAssetId_;
+      derivedFromModelAssetId_ = other.derivedFromModelAssetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1324,19 +1316,19 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "derived_from_asset_id" field.</summary>
-    public const int DerivedFromAssetIdFieldNumber = 4;
-    private string derivedFromAssetId_ = "";
+    /// <summary>Field number for the "derived_from_model_asset_id" field.</summary>
+    public const int DerivedFromModelAssetIdFieldNumber = 4;
+    private string derivedFromModelAssetId_ = "";
     /// <summary>
     /// Optional link to the model asset this image was generated from.
     /// Example: a PNG thumbnail can point to the GLB/OBJ it previews.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DerivedFromAssetId {
-      get { return derivedFromAssetId_; }
+    public string DerivedFromModelAssetId {
+      get { return derivedFromModelAssetId_; }
       set {
-        derivedFromAssetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        derivedFromModelAssetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1358,7 +1350,7 @@ namespace Messages.Resources.V1 {
       if (Id != other.Id) return false;
       if (!object.Equals(Location, other.Location)) return false;
       if (Format != other.Format) return false;
-      if (DerivedFromAssetId != other.DerivedFromAssetId) return false;
+      if (DerivedFromModelAssetId != other.DerivedFromModelAssetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1369,7 +1361,7 @@ namespace Messages.Resources.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
       if (Format != global::Messages.Resources.V1.ImageAssetFormat.Unspecified) hash ^= Format.GetHashCode();
-      if (DerivedFromAssetId.Length != 0) hash ^= DerivedFromAssetId.GetHashCode();
+      if (DerivedFromModelAssetId.Length != 0) hash ^= DerivedFromModelAssetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1400,9 +1392,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Format);
       }
-      if (DerivedFromAssetId.Length != 0) {
+      if (DerivedFromModelAssetId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(DerivedFromAssetId);
+        output.WriteString(DerivedFromModelAssetId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1426,9 +1418,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Format);
       }
-      if (DerivedFromAssetId.Length != 0) {
+      if (DerivedFromModelAssetId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(DerivedFromAssetId);
+        output.WriteString(DerivedFromModelAssetId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1449,8 +1441,8 @@ namespace Messages.Resources.V1 {
       if (Format != global::Messages.Resources.V1.ImageAssetFormat.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Format);
       }
-      if (DerivedFromAssetId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DerivedFromAssetId);
+      if (DerivedFromModelAssetId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DerivedFromModelAssetId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1476,8 +1468,8 @@ namespace Messages.Resources.V1 {
       if (other.Format != global::Messages.Resources.V1.ImageAssetFormat.Unspecified) {
         Format = other.Format;
       }
-      if (other.DerivedFromAssetId.Length != 0) {
-        DerivedFromAssetId = other.DerivedFromAssetId;
+      if (other.DerivedFromModelAssetId.Length != 0) {
+        DerivedFromModelAssetId = other.DerivedFromModelAssetId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1514,7 +1506,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 34: {
-            DerivedFromAssetId = input.ReadString();
+            DerivedFromModelAssetId = input.ReadString();
             break;
           }
         }
@@ -1552,7 +1544,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 34: {
-            DerivedFromAssetId = input.ReadString();
+            DerivedFromModelAssetId = input.ReadString();
             break;
           }
         }
@@ -1600,7 +1592,7 @@ namespace Messages.Resources.V1 {
       id_ = other.id_;
       location_ = other.location_ != null ? other.location_.Clone() : null;
       format_ = other.format_;
-      associatedAssetId_ = other.associatedAssetId_;
+      associatedModelAssetId_ = other.associatedModelAssetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1646,19 +1638,19 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "associated_asset_id" field.</summary>
-    public const int AssociatedAssetIdFieldNumber = 4;
-    private string associatedAssetId_ = "";
+    /// <summary>Field number for the "associated_model_asset_id" field.</summary>
+    public const int AssociatedModelAssetIdFieldNumber = 4;
+    private string associatedModelAssetId_ = "";
     /// <summary>
     /// Optional link to the model asset this sidecar belongs to or was generated from.
     /// Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AssociatedAssetId {
-      get { return associatedAssetId_; }
+    public string AssociatedModelAssetId {
+      get { return associatedModelAssetId_; }
       set {
-        associatedAssetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        associatedModelAssetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1680,7 +1672,7 @@ namespace Messages.Resources.V1 {
       if (Id != other.Id) return false;
       if (!object.Equals(Location, other.Location)) return false;
       if (Format != other.Format) return false;
-      if (AssociatedAssetId != other.AssociatedAssetId) return false;
+      if (AssociatedModelAssetId != other.AssociatedModelAssetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1691,7 +1683,7 @@ namespace Messages.Resources.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
       if (Format != global::Messages.Resources.V1.SidecarAssetFormat.Unspecified) hash ^= Format.GetHashCode();
-      if (AssociatedAssetId.Length != 0) hash ^= AssociatedAssetId.GetHashCode();
+      if (AssociatedModelAssetId.Length != 0) hash ^= AssociatedModelAssetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1722,9 +1714,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Format);
       }
-      if (AssociatedAssetId.Length != 0) {
+      if (AssociatedModelAssetId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(AssociatedAssetId);
+        output.WriteString(AssociatedModelAssetId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1748,9 +1740,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Format);
       }
-      if (AssociatedAssetId.Length != 0) {
+      if (AssociatedModelAssetId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(AssociatedAssetId);
+        output.WriteString(AssociatedModelAssetId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1771,8 +1763,8 @@ namespace Messages.Resources.V1 {
       if (Format != global::Messages.Resources.V1.SidecarAssetFormat.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Format);
       }
-      if (AssociatedAssetId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssociatedAssetId);
+      if (AssociatedModelAssetId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssociatedModelAssetId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1798,8 +1790,8 @@ namespace Messages.Resources.V1 {
       if (other.Format != global::Messages.Resources.V1.SidecarAssetFormat.Unspecified) {
         Format = other.Format;
       }
-      if (other.AssociatedAssetId.Length != 0) {
-        AssociatedAssetId = other.AssociatedAssetId;
+      if (other.AssociatedModelAssetId.Length != 0) {
+        AssociatedModelAssetId = other.AssociatedModelAssetId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1836,7 +1828,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 34: {
-            AssociatedAssetId = input.ReadString();
+            AssociatedModelAssetId = input.ReadString();
             break;
           }
         }
@@ -1874,7 +1866,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 34: {
-            AssociatedAssetId = input.ReadString();
+            AssociatedModelAssetId = input.ReadString();
             break;
           }
         }
