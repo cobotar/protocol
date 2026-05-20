@@ -546,7 +546,7 @@ func (ModelStorageBackend) EnumDescriptor() ([]byte, []int) {
 // filename: "models/robot_ur5e.glb"
 // content_type: "model/gltf-binary"
 // }
-type AssetLocation struct {
+type FileLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Backend       ModelStorageBackend    `protobuf:"varint,1,opt,name=backend,proto3,enum=resources.v1.ModelStorageBackend" json:"backend,omitempty"`
 	Bucket        string                 `protobuf:"bytes,2,opt,name=bucket,proto3" json:"bucket,omitempty"`
@@ -560,20 +560,20 @@ type AssetLocation struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *AssetLocation) Reset() {
-	*x = AssetLocation{}
+func (x *FileLocation) Reset() {
+	*x = FileLocation{}
 	mi := &file_resources_v1_model_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *AssetLocation) String() string {
+func (x *FileLocation) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AssetLocation) ProtoMessage() {}
+func (*FileLocation) ProtoMessage() {}
 
-func (x *AssetLocation) ProtoReflect() protoreflect.Message {
+func (x *FileLocation) ProtoReflect() protoreflect.Message {
 	mi := &file_resources_v1_model_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -585,61 +585,61 @@ func (x *AssetLocation) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AssetLocation.ProtoReflect.Descriptor instead.
-func (*AssetLocation) Descriptor() ([]byte, []int) {
+// Deprecated: Use FileLocation.ProtoReflect.Descriptor instead.
+func (*FileLocation) Descriptor() ([]byte, []int) {
 	return file_resources_v1_model_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *AssetLocation) GetBackend() ModelStorageBackend {
+func (x *FileLocation) GetBackend() ModelStorageBackend {
 	if x != nil {
 		return x.Backend
 	}
 	return ModelStorageBackend_MODEL_STORAGE_BACKEND_UNSPECIFIED
 }
 
-func (x *AssetLocation) GetBucket() string {
+func (x *FileLocation) GetBucket() string {
 	if x != nil {
 		return x.Bucket
 	}
 	return ""
 }
 
-func (x *AssetLocation) GetObjectKey() string {
+func (x *FileLocation) GetObjectKey() string {
 	if x != nil {
 		return x.ObjectKey
 	}
 	return ""
 }
 
-func (x *AssetLocation) GetUri() string {
+func (x *FileLocation) GetUri() string {
 	if x != nil {
 		return x.Uri
 	}
 	return ""
 }
 
-func (x *AssetLocation) GetFilename() string {
+func (x *FileLocation) GetFilename() string {
 	if x != nil {
 		return x.Filename
 	}
 	return ""
 }
 
-func (x *AssetLocation) GetContentType() string {
+func (x *FileLocation) GetContentType() string {
 	if x != nil {
 		return x.ContentType
 	}
 	return ""
 }
 
-func (x *AssetLocation) GetSizeBytes() uint64 {
+func (x *FileLocation) GetSizeBytes() uint64 {
 	if x != nil {
 		return x.SizeBytes
 	}
 	return 0
 }
 
-func (x *AssetLocation) GetSha256() string {
+func (x *FileLocation) GetSha256() string {
 	if x != nil {
 		return x.Sha256
 	}
@@ -649,7 +649,7 @@ func (x *AssetLocation) GetSha256() string {
 type ModelAssetRef struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
 	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Location *FileLocation          `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
 	Format   ModelAssetFormat       `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.ModelAssetFormat" json:"format,omitempty"`
 	// Unit used for the model geometry coordinates.
 	// Typically "mm", "cm", "m", "in", etc.
@@ -706,7 +706,7 @@ func (x *ModelAssetRef) GetId() string {
 	return ""
 }
 
-func (x *ModelAssetRef) GetLocation() *AssetLocation {
+func (x *ModelAssetRef) GetLocation() *FileLocation {
 	if x != nil {
 		return x.Location
 	}
@@ -758,7 +758,7 @@ func (x *ModelAssetRef) GetDerivedFromAssetId() string {
 type ImageAssetRef struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
 	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Location *FileLocation          `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
 	Format   ImageAssetFormat       `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.ImageAssetFormat" json:"format,omitempty"`
 	// Optional link to the model asset this image was generated from.
 	// Example: a PNG thumbnail can point to the GLB/OBJ it previews.
@@ -804,7 +804,7 @@ func (x *ImageAssetRef) GetId() string {
 	return ""
 }
 
-func (x *ImageAssetRef) GetLocation() *AssetLocation {
+func (x *ImageAssetRef) GetLocation() *FileLocation {
 	if x != nil {
 		return x.Location
 	}
@@ -828,7 +828,7 @@ func (x *ImageAssetRef) GetDerivedFromModelAssetId() string {
 type SidecarAssetRef struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
 	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Location *AssetLocation         `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Location *FileLocation          `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
 	Format   SidecarAssetFormat     `protobuf:"varint,3,opt,name=format,proto3,enum=resources.v1.SidecarAssetFormat" json:"format,omitempty"`
 	// Optional link to the model asset this sidecar belongs to or was generated from.
 	// Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB.
@@ -874,7 +874,7 @@ func (x *SidecarAssetRef) GetId() string {
 	return ""
 }
 
-func (x *SidecarAssetRef) GetLocation() *AssetLocation {
+func (x *SidecarAssetRef) GetLocation() *FileLocation {
 	if x != nil {
 		return x.Location
 	}
@@ -1067,8 +1067,8 @@ var File_resources_v1_model_proto protoreflect.FileDescriptor
 
 const file_resources_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe9\x04\n" +
-	"\rAssetLocation\x12H\n" +
+	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x04\n" +
+	"\fFileLocation\x12H\n" +
 	"\abackend\x18\x01 \x01(\x0e2!.resources.v1.ModelStorageBackendB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\abackend\x12\x16\n" +
 	"\x06bucket\x18\x02 \x01(\tR\x06bucket\x12\x1d\n" +
 	"\n" +
@@ -1079,10 +1079,10 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\n" +
 	"size_bytes\x18\a \x01(\x04R\tsizeBytes\x123\n" +
 	"\x06sha256\x18\b \x01(\tB\x1b\xbaH\x18\xd8\x01\x01r\x132\x11^[a-fA-F0-9]{64}$R\x06sha256:\xa4\x02\xbaH\xa0\x02\x1a\x9d\x02\n" +
-	"\x1fasset_location.backend_location\x12)asset location must match storage backend\x1a\xce\x01(this.backend == 1 && this.filename != '') || (this.backend in [2, 3, 4] && this.bucket != '' && this.object_key != '') || (this.backend == 5 && this.filename != '') || (this.backend == 6 && this.uri != '')\"\xaa\a\n" +
+	"\x1fasset_location.backend_location\x12)asset location must match storage backend\x1a\xce\x01(this.backend == 1 && this.filename != '') || (this.backend in [2, 3, 4] && this.bucket != '' && this.object_key != '') || (this.backend == 5 && this.filename != '') || (this.backend == 6 && this.uri != '')\"\xa9\a\n" +
 	"\rModelAssetRef\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12?\n" +
-	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.resources.v1.FileLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
 	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ModelAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x128\n" +
 	"\x04unit\x18\x04 \x01(\x0e2\x17.resources.v1.ModelUnitB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04unit\x12=\n" +
 	"\aup_axis\x18\x05 \x01(\x0e2\x17.resources.v1.ModelAxisB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06upAxis\x12G\n" +
@@ -1091,15 +1091,15 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\x15derived_from_asset_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x12derivedFromAssetId:\xb5\x03\xbaH\xb1\x03\x1ao\n" +
 	"\x1emodel_asset_ref.axes_different\x12*up_axis and forward_axis must be different\x1a!this.up_axis != this.forward_axis\x1a\x90\x01\n" +
 	"\"model_asset_ref.derived_has_source\x126derived model assets must define derived_from_asset_id\x1a2this.role != 3 || this.derived_from_asset_id != ''\x1a\xaa\x01\n" +
-	"\"model_asset_ref.no_self_derivation\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xfc\x01\n" +
+	"\"model_asset_ref.no_self_derivation\x129derived_from_asset_id must not reference the asset itself\x1aIthis.derived_from_asset_id == '' || this.derived_from_asset_id != this.id\"\xfb\x01\n" +
 	"\rImageAssetRef\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xec0\x01R\x02id\x12?\n" +
-	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xec0\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.resources.v1.FileLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12C\n" +
 	"\x06format\x18\x03 \x01(\x0e2\x1e.resources.v1.ImageAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12G\n" +
-	"\x1bderived_from_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x17derivedFromModelAssetId\"\xfd\x01\n" +
+	"\x1bderived_from_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x17derivedFromModelAssetId\"\xfc\x01\n" +
 	"\x0fSidecarAssetRef\x12\x1c\n" +
-	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xec0\x01R\x02id\x12?\n" +
-	"\blocation\x18\x02 \x01(\v2\x1b.resources.v1.AssetLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12E\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xec0\x01R\x02id\x12>\n" +
+	"\blocation\x18\x02 \x01(\v2\x1a.resources.v1.FileLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12E\n" +
 	"\x06format\x18\x03 \x01(\x0e2 .resources.v1.SidecarAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12D\n" +
 	"\x19associated_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x16associatedModelAssetId\"\x82\x05\n" +
 	"\rModelArtifact\x12\x19\n" +
@@ -1212,7 +1212,7 @@ var file_resources_v1_model_proto_goTypes = []any{
 	(ModelUnit)(0),               // 5: resources.v1.ModelUnit
 	(ModelAxis)(0),               // 6: resources.v1.ModelAxis
 	(ModelStorageBackend)(0),     // 7: resources.v1.ModelStorageBackend
-	(*AssetLocation)(nil),        // 8: resources.v1.AssetLocation
+	(*FileLocation)(nil),         // 8: resources.v1.FileLocation
 	(*ModelAssetRef)(nil),        // 9: resources.v1.ModelAssetRef
 	(*ImageAssetRef)(nil),        // 10: resources.v1.ImageAssetRef
 	(*SidecarAssetRef)(nil),      // 11: resources.v1.SidecarAssetRef
@@ -1221,16 +1221,16 @@ var file_resources_v1_model_proto_goTypes = []any{
 	(*v1.ExternalReference)(nil), // 14: common.v1.ExternalReference
 }
 var file_resources_v1_model_proto_depIdxs = []int32{
-	7,  // 0: resources.v1.AssetLocation.backend:type_name -> resources.v1.ModelStorageBackend
-	8,  // 1: resources.v1.ModelAssetRef.location:type_name -> resources.v1.AssetLocation
+	7,  // 0: resources.v1.FileLocation.backend:type_name -> resources.v1.ModelStorageBackend
+	8,  // 1: resources.v1.ModelAssetRef.location:type_name -> resources.v1.FileLocation
 	2,  // 2: resources.v1.ModelAssetRef.format:type_name -> resources.v1.ModelAssetFormat
 	5,  // 3: resources.v1.ModelAssetRef.unit:type_name -> resources.v1.ModelUnit
 	6,  // 4: resources.v1.ModelAssetRef.up_axis:type_name -> resources.v1.ModelAxis
 	6,  // 5: resources.v1.ModelAssetRef.forward_axis:type_name -> resources.v1.ModelAxis
 	1,  // 6: resources.v1.ModelAssetRef.role:type_name -> resources.v1.ModelAssetRole
-	8,  // 7: resources.v1.ImageAssetRef.location:type_name -> resources.v1.AssetLocation
+	8,  // 7: resources.v1.ImageAssetRef.location:type_name -> resources.v1.FileLocation
 	4,  // 8: resources.v1.ImageAssetRef.format:type_name -> resources.v1.ImageAssetFormat
-	8,  // 9: resources.v1.SidecarAssetRef.location:type_name -> resources.v1.AssetLocation
+	8,  // 9: resources.v1.SidecarAssetRef.location:type_name -> resources.v1.FileLocation
 	3,  // 10: resources.v1.SidecarAssetRef.format:type_name -> resources.v1.SidecarAssetFormat
 	0,  // 11: resources.v1.ModelArtifact.group:type_name -> resources.v1.ModelGroup
 	9,  // 12: resources.v1.ModelArtifact.asset:type_name -> resources.v1.ModelAssetRef

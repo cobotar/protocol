@@ -473,7 +473,7 @@
     - [MarkerType](#resources-v1-MarkerType)
   
 - [resources/v1/model.proto](#resources_v1_model-proto)
-    - [AssetLocation](#resources-v1-AssetLocation)
+    - [FileLocation](#resources-v1-FileLocation)
     - [ImageAssetRef](#resources-v1-ImageAssetRef)
     - [ModelArtifact](#resources-v1-ModelArtifact)
     - [ModelArtifacts](#resources-v1-ModelArtifacts)
@@ -6963,9 +6963,9 @@ max_concurrent_processes and the statuses of child cells/stations.
 
 
 
-<a name="resources-v1-AssetLocation"></a>
+<a name="resources-v1-FileLocation"></a>
 
-### AssetLocation
+### FileLocation
 Examples:
 asset {
 backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
@@ -7016,7 +7016,7 @@ content_type: &#34;model/gltf-binary&#34;
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
 | format | [ImageAssetFormat](#resources-v1-ImageAssetFormat) |  |  |
 | derived_from_model_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
 
@@ -7074,7 +7074,7 @@ content_type: &#34;model/gltf-binary&#34;
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
 | format | [ModelAssetFormat](#resources-v1-ModelAssetFormat) |  |  |
 | unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
 | up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Z, many CAD systems: Z |
@@ -7096,7 +7096,7 @@ content_type: &#34;model/gltf-binary&#34;
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| location | [AssetLocation](#resources-v1-AssetLocation) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
 | format | [SidecarAssetFormat](#resources-v1-SidecarAssetFormat) |  |  |
 | associated_model_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
 

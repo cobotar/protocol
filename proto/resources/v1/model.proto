@@ -133,7 +133,7 @@ enum ModelStorageBackend {
      content_type: "model/gltf-binary"
    }
 */
-message AssetLocation {
+message FileLocation {
   option (buf.validate.message).cel = {
     id: "asset_location.backend_location"
     message: "asset location must match storage backend"
@@ -168,7 +168,7 @@ message ModelAssetRef {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.model_asset_id_component) = true
   ];
-  AssetLocation location = 2 [(buf.validate.field).required = true];
+  FileLocation location = 2 [(buf.validate.field).required = true];
 
   ModelAssetFormat format = 3 [
     (buf.validate.field).required = true,
@@ -230,7 +230,7 @@ message ImageAssetRef {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.image_asset_id_component) = true
   ];
-  AssetLocation location = 2 [(buf.validate.field).required = true];
+  FileLocation location = 2 [(buf.validate.field).required = true];
 
   ImageAssetFormat format = 3 [
     (buf.validate.field).required = true,
@@ -247,7 +247,7 @@ message SidecarAssetRef {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sidecar_asset_id_component) = true
   ];
-  AssetLocation location = 2 [(buf.validate.field).required = true];
+  FileLocation location = 2 [(buf.validate.field).required = true];
 
   SidecarAssetFormat format = 3 [
     (buf.validate.field).required = true,

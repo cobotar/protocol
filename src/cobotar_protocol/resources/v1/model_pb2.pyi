@@ -148,7 +148,7 @@ MODEL_STORAGE_BACKEND_MINIO: ModelStorageBackend
 MODEL_STORAGE_BACKEND_LOCAL_FILE: ModelStorageBackend
 MODEL_STORAGE_BACKEND_EXTERNAL_URL: ModelStorageBackend
 
-class AssetLocation(_message.Message):
+class FileLocation(_message.Message):
     __slots__ = ("backend", "bucket", "object_key", "uri", "filename", "content_type", "size_bytes", "sha256")
     BACKEND_FIELD_NUMBER: _ClassVar[int]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
@@ -179,14 +179,14 @@ class ModelAssetRef(_message.Message):
     ROLE_FIELD_NUMBER: _ClassVar[int]
     DERIVED_FROM_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
-    location: AssetLocation
+    location: FileLocation
     format: ModelAssetFormat
     unit: ModelUnit
     up_axis: ModelAxis
     forward_axis: ModelAxis
     role: ModelAssetRole
     derived_from_asset_id: str
-    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[ModelAssetFormat, str]] = ..., unit: _Optional[_Union[ModelUnit, str]] = ..., up_axis: _Optional[_Union[ModelAxis, str]] = ..., forward_axis: _Optional[_Union[ModelAxis, str]] = ..., role: _Optional[_Union[ModelAssetRole, str]] = ..., derived_from_asset_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[FileLocation, _Mapping]] = ..., format: _Optional[_Union[ModelAssetFormat, str]] = ..., unit: _Optional[_Union[ModelUnit, str]] = ..., up_axis: _Optional[_Union[ModelAxis, str]] = ..., forward_axis: _Optional[_Union[ModelAxis, str]] = ..., role: _Optional[_Union[ModelAssetRole, str]] = ..., derived_from_asset_id: _Optional[str] = ...) -> None: ...
 
 class ImageAssetRef(_message.Message):
     __slots__ = ("id", "location", "format", "derived_from_model_asset_id")
@@ -195,10 +195,10 @@ class ImageAssetRef(_message.Message):
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     DERIVED_FROM_MODEL_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
-    location: AssetLocation
+    location: FileLocation
     format: ImageAssetFormat
     derived_from_model_asset_id: str
-    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[ImageAssetFormat, str]] = ..., derived_from_model_asset_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[FileLocation, _Mapping]] = ..., format: _Optional[_Union[ImageAssetFormat, str]] = ..., derived_from_model_asset_id: _Optional[str] = ...) -> None: ...
 
 class SidecarAssetRef(_message.Message):
     __slots__ = ("id", "location", "format", "associated_model_asset_id")
@@ -207,10 +207,10 @@ class SidecarAssetRef(_message.Message):
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     ASSOCIATED_MODEL_ASSET_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
-    location: AssetLocation
+    location: FileLocation
     format: SidecarAssetFormat
     associated_model_asset_id: str
-    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[AssetLocation, _Mapping]] = ..., format: _Optional[_Union[SidecarAssetFormat, str]] = ..., associated_model_asset_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[FileLocation, _Mapping]] = ..., format: _Optional[_Union[SidecarAssetFormat, str]] = ..., associated_model_asset_id: _Optional[str] = ...) -> None: ...
 
 class ModelArtifact(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "group", "asset", "thumbnail", "alternatives", "sidecars", "version", "external_references")
