@@ -62,65 +62,69 @@ namespace Messages.Process.V1 {
             "YWxDb25maXJtYXRpb25NaW5MZXZlbBIwCgRtb2RlGAUgASgOMhwucmVzb3Vy",
             "Y2VzLnYxLlZhbGlkYXRpb25Nb2RlUgRtb2RlEj8KC2NvbnN0cmFpbnRzGAYg",
             "AygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludFILY29uc3RyYWlu",
-            "dHMi+gIKE1Rhc2tFeGVjdXRpb25Qb2xpY3kSWQoVYXNzaWdubWVudF9wcmVm",
+            "dHMi3QMKE1Rhc2tFeGVjdXRpb25Qb2xpY3kSWQoVYXNzaWdubWVudF9wcmVm",
             "ZXJlbmNlGAEgASgOMiQucHJvY2Vzcy52MS5UYXNrQXNzaWdubWVudFByZWZl",
             "cmVuY2VSFGFzc2lnbm1lbnRQcmVmZXJlbmNlEkkKEGFjdG9yX2NvbnN0cmFp",
             "bnQYAiABKAsyHi5jYXBhYmlsaXR5LnYxLkFjdG9yQ29uc3RyYWludFIPYWN0",
             "b3JDb25zdHJhaW50EiEKDGNhbl9yZWFzc2lnbhgDIAEoCFILY2FuUmVhc3Np",
-            "Z24SGQoIY2FuX3VuZG8YBCABKAhSB2NhblVuZG8SSwoSZXN0aW1hdGVkX2R1",
-            "cmF0aW9uGAUgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhFl",
-            "c3RpbWF0ZWREdXJhdGlvbhIyChVyZXF1aXJlX2Z1bGxfZ3VpZGFuY2UYBiAB",
-            "KAhSE3JlcXVpcmVGdWxsR3VpZGFuY2UivwEKDFRhc2tPdmVycmlkZRIsCgR3",
-            "aGVuGAEgAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVSBHdoZW4SKQoQ",
-            "aW5zdHJ1Y3Rpb25fdGV4dBgCIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EiQKDnRh",
-            "cmdldF9ub2RlX2lkGAMgASgJUgx0YXJnZXROb2RlSWQSMAoIYXBwcm9hY2gY",
-            "BCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUghhcHByb2FjaCKWCAoOVGFz",
-            "a0RlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpI",
-            "BnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
-            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUg",
-            "ASgJUg9pbnN0cnVjdGlvblRleHQSMAoPc2VxdWVuY2VfbnVtYmVyGAYgASgF",
-            "Qge6SAQaAigAUg5zZXF1ZW5jZU51bWJlchI7Cgl0YXNrX3R5cGUYByABKA4y",
-            "FC5wcm9jZXNzLnYxLlRhc2tUeXBlQgi6SAWCAQIQAVIIdGFza1R5cGUSLgoG",
-            "dGFyZ2V0GAggASgLMhYucHJvY2Vzcy52MS5UYXNrVGFyZ2V0UgZ0YXJnZXQS",
-            "PwoQaW5zZXJ0aW9uX29mZnNldBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3Rv",
-            "cjNSD2luc2VydGlvbk9mZnNldBI9Cg9hcHByb2FjaF9vZmZzZXQYCiABKAsy",
-            "FC5nZW9tZXRyeS52MS5WZWN0b3IzUg5hcHByb2FjaE9mZnNldBJJChB0b29s",
-            "X3JlcXVpcmVtZW50GAwgASgLMh4uY2FwYWJpbGl0eS52MS5Ub29sUmVxdWly",
-            "ZW1lbnRSD3Rvb2xSZXF1aXJlbWVudBJOChJza2lsbF9yZXF1aXJlbWVudHMY",
-            "DSADKAsyHy5jYXBhYmlsaXR5LnYxLlNraWxsUmVxdWlyZW1lbnRSEXNraWxs",
-            "UmVxdWlyZW1lbnRzEkEKCnZhbGlkYXRpb24YDiABKAsyIS5wcm9jZXNzLnYx",
-            "LlZhbGlkYXRpb25SZXF1aXJlbWVudFIKdmFsaWRhdGlvbhJKChBleGVjdXRp",
-            "b25fcG9saWN5GA8gASgLMh8ucHJvY2Vzcy52MS5UYXNrRXhlY3V0aW9uUG9s",
-            "aWN5Ug9leGVjdXRpb25Qb2xpY3kSRQoQc2FmZXR5X3JlbGV2YW5jZRgQIAEo",
-            "DjIaLmNvbW1vbi52MS5TYWZldHlSZWxldmFuY2VSD3NhZmV0eVJlbGV2YW5j",
-            "ZRIwCgZzb3VyY2UYESABKAsyGC5wcm9jZXNzLnYxLlRhc2tFbmRwb2ludFIG",
-            "c291cmNlEjoKC2Rlc3RpbmF0aW9uGBIgASgLMhgucHJvY2Vzcy52MS5UYXNr",
-            "RW5kcG9pbnRSC2Rlc3RpbmF0aW9uEj4KDWFwcGxpY2FiaWxpdHkYFSADKAsy",
-            "GC52YXJpYW5jZS52MS5WYXJpYW50UnVsZVINYXBwbGljYWJpbGl0eRI2Cglv",
-            "dmVycmlkZXMYFiADKAsyGC5wcm9jZXNzLnYxLlRhc2tPdmVycmlkZVIJb3Zl",
-            "cnJpZGVzIkMKD1Rhc2tEZWZpbml0aW9ucxIwCgVpdGVtcxgBIAMoCzIaLnBy",
-            "b2Nlc3MudjEuVGFza0RlZmluaXRpb25SBWl0ZW1zKr8DCghUYXNrVHlwZRIZ",
-            "ChVUQVNLX1RZUEVfVU5TUEVDSUZJRUQQABIVChFUQVNLX1RZUEVfSU5TUEVD",
-            "VBABEhQKEFRBU0tfVFlQRV9GQVNURU4QAhIWChJUQVNLX1RZUEVfVU5GQVNU",
-            "RU4QAxITCg9UQVNLX1RZUEVfTU9VTlQQBBIVChFUQVNLX1RZUEVfVU5NT1VO",
-            "VBAFEhIKDlRBU0tfVFlQRV9NT1ZFEAYSFAoQVEFTS19UWVBFX1JFTU9WRRAH",
-            "EhMKD1RBU0tfVFlQRV9BUFBMWRAIEhIKDlRBU0tfVFlQRV9XSVBFEAkSEwoP",
-            "VEFTS19UWVBFX0FMSUdOEAoSFAoQVEFTS19UWVBFX0lOU0VSVBALEhIKDlRB",
-            "U0tfVFlQRV9IT0xEEAwSFAoQVEFTS19UWVBFX1ZFUklGWRANEhIKDlRBU0tf",
-            "VFlQRV9QSUNLEA4SEwoPVEFTS19UWVBFX1BMQUNFEA8SEgoOVEFTS19UWVBF",
-            "X1NDQU4QEBISCg5UQVNLX1RZUEVfV0FJVBAREhMKD1RBU0tfVFlQRV9DSEVD",
-            "SxASEhkKFVRBU0tfVFlQRV9BQ0tOT1dMRURHRRATKp0CChhUYXNrQXNzaWdu",
-            "bWVudFByZWZlcmVuY2USKgomVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0Vf",
-            "VU5TUEVDSUZJRUQQABIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9Q",
-            "UkVGRVJfSFVNQU4QARIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9P",
-            "TkxZX0hVTUFOEAISKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJF",
-            "RkVSX1JPQk9UEAMSKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05M",
-            "WV9ST0JPVBAEEiUKIVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX0VJVEhF",
-            "UhAFQrIBCg5jb20ucHJvY2Vzcy52MUITVGFza0RlZmluaXRpb25Qcm90b1AB",
-            "WjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vz",
-            "cy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIK",
-            "UHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNz",
-            "OjpWMWIGcHJvdG8z"));
+            "Z24SGQoIY2FuX3VuZG8YBCABKAhSB2NhblVuZG8SVgoYZXN0aW1hdGVkX2h1",
+            "bWFuX2R1cmF0aW9uGAUgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0",
+            "aW9uUhZlc3RpbWF0ZWRIdW1hbkR1cmF0aW9uElYKGGVzdGltYXRlZF9yb2Jv",
+            "dF9kdXJhdGlvbhgGIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlv",
+            "blIWZXN0aW1hdGVkUm9ib3REdXJhdGlvbhIyChVyZXF1aXJlX2Z1bGxfZ3Vp",
+            "ZGFuY2UYByABKAhSE3JlcXVpcmVGdWxsR3VpZGFuY2UilwIKDFRhc2tPdmVy",
+            "cmlkZRIsCgR3aGVuGAEgAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVS",
+            "BHdoZW4SKQoQaW5zdHJ1Y3Rpb25fdGV4dBgCIAEoCVIPaW5zdHJ1Y3Rpb25U",
+            "ZXh0Ei4KBnRhcmdldBgDIAEoCzIWLnByb2Nlc3MudjEuVGFza1RhcmdldFIG",
+            "dGFyZ2V0Ej8KEGluc2VydGlvbl9vZmZzZXQYBCABKAsyFC5nZW9tZXRyeS52",
+            "MS5WZWN0b3IzUg9pbnNlcnRpb25PZmZzZXQSPQoPYXBwcm9hY2hfb2Zmc2V0",
+            "GAUgASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IOYXBwcm9hY2hPZmZzZXQi",
+            "lggKDlRhc2tEZWZpbml0aW9uEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIg",
+            "ASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
+            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SKQoQaW5zdHJ1Y3Rpb25f",
+            "dGV4dBgFIAEoCVIPaW5zdHJ1Y3Rpb25UZXh0EjAKD3NlcXVlbmNlX251bWJl",
+            "chgGIAEoBUIHukgEGgIoAFIOc2VxdWVuY2VOdW1iZXISOwoJdGFza190eXBl",
+            "GAcgASgOMhQucHJvY2Vzcy52MS5UYXNrVHlwZUIIukgFggECEAFSCHRhc2tU",
+            "eXBlEi4KBnRhcmdldBgIIAEoCzIWLnByb2Nlc3MudjEuVGFza1RhcmdldFIG",
+            "dGFyZ2V0Ej8KEGluc2VydGlvbl9vZmZzZXQYCSABKAsyFC5nZW9tZXRyeS52",
+            "MS5WZWN0b3IzUg9pbnNlcnRpb25PZmZzZXQSPQoPYXBwcm9hY2hfb2Zmc2V0",
+            "GAogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IOYXBwcm9hY2hPZmZzZXQS",
+            "SQoQdG9vbF9yZXF1aXJlbWVudBgMIAEoCzIeLmNhcGFiaWxpdHkudjEuVG9v",
+            "bFJlcXVpcmVtZW50Ug90b29sUmVxdWlyZW1lbnQSTgoSc2tpbGxfcmVxdWly",
+            "ZW1lbnRzGA0gAygLMh8uY2FwYWJpbGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50",
+            "UhFza2lsbFJlcXVpcmVtZW50cxJBCgp2YWxpZGF0aW9uGA4gASgLMiEucHJv",
+            "Y2Vzcy52MS5WYWxpZGF0aW9uUmVxdWlyZW1lbnRSCnZhbGlkYXRpb24SSgoQ",
+            "ZXhlY3V0aW9uX3BvbGljeRgPIAEoCzIfLnByb2Nlc3MudjEuVGFza0V4ZWN1",
+            "dGlvblBvbGljeVIPZXhlY3V0aW9uUG9saWN5EkUKEHNhZmV0eV9yZWxldmFu",
+            "Y2UYECABKA4yGi5jb21tb24udjEuU2FmZXR5UmVsZXZhbmNlUg9zYWZldHlS",
+            "ZWxldmFuY2USMAoGc291cmNlGBEgASgLMhgucHJvY2Vzcy52MS5UYXNrRW5k",
+            "cG9pbnRSBnNvdXJjZRI6CgtkZXN0aW5hdGlvbhgSIAEoCzIYLnByb2Nlc3Mu",
+            "djEuVGFza0VuZHBvaW50UgtkZXN0aW5hdGlvbhI+Cg1hcHBsaWNhYmlsaXR5",
+            "GBUgAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVSDWFwcGxpY2FiaWxp",
+            "dHkSNgoJb3ZlcnJpZGVzGBYgAygLMhgucHJvY2Vzcy52MS5UYXNrT3ZlcnJp",
+            "ZGVSCW92ZXJyaWRlcyJDCg9UYXNrRGVmaW5pdGlvbnMSMAoFaXRlbXMYASAD",
+            "KAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZpbml0aW9uUgVpdGVtcyq/AwoIVGFz",
+            "a1R5cGUSGQoVVEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFTS19UWVBF",
+            "X0lOU1BFQ1QQARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFTS19UWVBF",
+            "X1VORkFTVEVOEAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFTS19UWVBF",
+            "X1VOTU9VTlQQBRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tfVFlQRV9S",
+            "RU1PVkUQBxITCg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZUEVfV0lQ",
+            "RRAJEhMKD1RBU0tfVFlQRV9BTElHThAKEhQKEFRBU0tfVFlQRV9JTlNFUlQQ",
+            "CxISCg5UQVNLX1RZUEVfSE9MRBAMEhQKEFRBU0tfVFlQRV9WRVJJRlkQDRIS",
+            "Cg5UQVNLX1RZUEVfUElDSxAOEhMKD1RBU0tfVFlQRV9QTEFDRRAPEhIKDlRB",
+            "U0tfVFlQRV9TQ0FOEBASEgoOVEFTS19UWVBFX1dBSVQQERITCg9UQVNLX1RZ",
+            "UEVfQ0hFQ0sQEhIZChVUQVNLX1RZUEVfQUNLTk9XTEVER0UQEyqdAgoYVGFz",
+            "a0Fzc2lnbm1lbnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVOVF9QUkVG",
+            "RVJFTkNFX1VOU1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5UX1BSRUZF",
+            "UkVOQ0VfUFJFRkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5UX1BSRUZF",
+            "UkVOQ0VfT05MWV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJF",
+            "TkNFX1BSRUZFUl9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJF",
+            "TkNFX09OTFlfUk9CT1QQBBIlCiFUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5D",
+            "RV9FSVRIRVIQBUKyAQoOY29tLnByb2Nlc3MudjFCE1Rhc2tEZWZpbml0aW9u",
+            "UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vz",
+            "cy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gIL",
+            "UHJvY2Vzczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.TaskType), typeof(global::Messages.Process.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,8 +134,8 @@ namespace Messages.Process.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskTarget), global::Messages.Process.V1.TaskTarget.Parser, new[]{ "Product", "Container", "Resource" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskEndpoint), global::Messages.Process.V1.TaskEndpoint.Parser, new[]{ "Product", "Container" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ValidationRequirement), global::Messages.Process.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Mode", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskExecutionPolicy), global::Messages.Process.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanUndo", "EstimatedDuration", "RequireFullGuidance" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskOverride), global::Messages.Process.V1.TaskOverride.Parser, new[]{ "When", "InstructionText", "TargetNodeId", "Approach" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskExecutionPolicy), global::Messages.Process.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanUndo", "EstimatedHumanDuration", "EstimatedRobotDuration", "RequireFullGuidance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskOverride), global::Messages.Process.V1.TaskOverride.Parser, new[]{ "When", "InstructionText", "Target", "InsertionOffset", "ApproachOffset" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinition), global::Messages.Process.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "InsertionOffset", "ApproachOffset", "ToolRequirement", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "Source", "Destination", "Applicability", "Overrides" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinitions), global::Messages.Process.V1.TaskDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -2022,7 +2026,8 @@ namespace Messages.Process.V1 {
       actorConstraint_ = other.actorConstraint_ != null ? other.actorConstraint_.Clone() : null;
       canReassign_ = other.canReassign_;
       canUndo_ = other.canUndo_;
-      estimatedDuration_ = other.estimatedDuration_ != null ? other.estimatedDuration_.Clone() : null;
+      estimatedHumanDuration_ = other.estimatedHumanDuration_ != null ? other.estimatedHumanDuration_.Clone() : null;
+      estimatedRobotDuration_ = other.estimatedRobotDuration_ != null ? other.estimatedRobotDuration_.Clone() : null;
       requireFullGuidance_ = other.requireFullGuidance_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2081,20 +2086,32 @@ namespace Messages.Process.V1 {
       }
     }
 
-    /// <summary>Field number for the "estimated_duration" field.</summary>
-    public const int EstimatedDurationFieldNumber = 5;
-    private global::Messages.Common.V1.EstimatedDuration estimatedDuration_;
+    /// <summary>Field number for the "estimated_human_duration" field.</summary>
+    public const int EstimatedHumanDurationFieldNumber = 5;
+    private global::Messages.Common.V1.EstimatedDuration estimatedHumanDuration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.EstimatedDuration EstimatedDuration {
-      get { return estimatedDuration_; }
+    public global::Messages.Common.V1.EstimatedDuration EstimatedHumanDuration {
+      get { return estimatedHumanDuration_; }
       set {
-        estimatedDuration_ = value;
+        estimatedHumanDuration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "estimated_robot_duration" field.</summary>
+    public const int EstimatedRobotDurationFieldNumber = 6;
+    private global::Messages.Common.V1.EstimatedDuration estimatedRobotDuration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.EstimatedDuration EstimatedRobotDuration {
+      get { return estimatedRobotDuration_; }
+      set {
+        estimatedRobotDuration_ = value;
       }
     }
 
     /// <summary>Field number for the "require_full_guidance" field.</summary>
-    public const int RequireFullGuidanceFieldNumber = 6;
+    public const int RequireFullGuidanceFieldNumber = 7;
     private bool requireFullGuidance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2124,7 +2141,8 @@ namespace Messages.Process.V1 {
       if (!object.Equals(ActorConstraint, other.ActorConstraint)) return false;
       if (CanReassign != other.CanReassign) return false;
       if (CanUndo != other.CanUndo) return false;
-      if (!object.Equals(EstimatedDuration, other.EstimatedDuration)) return false;
+      if (!object.Equals(EstimatedHumanDuration, other.EstimatedHumanDuration)) return false;
+      if (!object.Equals(EstimatedRobotDuration, other.EstimatedRobotDuration)) return false;
       if (RequireFullGuidance != other.RequireFullGuidance) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2137,7 +2155,8 @@ namespace Messages.Process.V1 {
       if (actorConstraint_ != null) hash ^= ActorConstraint.GetHashCode();
       if (CanReassign != false) hash ^= CanReassign.GetHashCode();
       if (CanUndo != false) hash ^= CanUndo.GetHashCode();
-      if (estimatedDuration_ != null) hash ^= EstimatedDuration.GetHashCode();
+      if (estimatedHumanDuration_ != null) hash ^= EstimatedHumanDuration.GetHashCode();
+      if (estimatedRobotDuration_ != null) hash ^= EstimatedRobotDuration.GetHashCode();
       if (RequireFullGuidance != false) hash ^= RequireFullGuidance.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2173,12 +2192,16 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(32);
         output.WriteBool(CanUndo);
       }
-      if (estimatedDuration_ != null) {
+      if (estimatedHumanDuration_ != null) {
         output.WriteRawTag(42);
-        output.WriteMessage(EstimatedDuration);
+        output.WriteMessage(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EstimatedRobotDuration);
       }
       if (RequireFullGuidance != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(RequireFullGuidance);
       }
       if (_unknownFields != null) {
@@ -2207,12 +2230,16 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(32);
         output.WriteBool(CanUndo);
       }
-      if (estimatedDuration_ != null) {
+      if (estimatedHumanDuration_ != null) {
         output.WriteRawTag(42);
-        output.WriteMessage(EstimatedDuration);
+        output.WriteMessage(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EstimatedRobotDuration);
       }
       if (RequireFullGuidance != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(RequireFullGuidance);
       }
       if (_unknownFields != null) {
@@ -2237,8 +2264,11 @@ namespace Messages.Process.V1 {
       if (CanUndo != false) {
         size += 1 + 1;
       }
-      if (estimatedDuration_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EstimatedDuration);
+      if (estimatedHumanDuration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EstimatedRobotDuration);
       }
       if (RequireFullGuidance != false) {
         size += 1 + 1;
@@ -2270,11 +2300,17 @@ namespace Messages.Process.V1 {
       if (other.CanUndo != false) {
         CanUndo = other.CanUndo;
       }
-      if (other.estimatedDuration_ != null) {
-        if (estimatedDuration_ == null) {
-          EstimatedDuration = new global::Messages.Common.V1.EstimatedDuration();
+      if (other.estimatedHumanDuration_ != null) {
+        if (estimatedHumanDuration_ == null) {
+          EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
         }
-        EstimatedDuration.MergeFrom(other.EstimatedDuration);
+        EstimatedHumanDuration.MergeFrom(other.EstimatedHumanDuration);
+      }
+      if (other.estimatedRobotDuration_ != null) {
+        if (estimatedRobotDuration_ == null) {
+          EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+        }
+        EstimatedRobotDuration.MergeFrom(other.EstimatedRobotDuration);
       }
       if (other.RequireFullGuidance != false) {
         RequireFullGuidance = other.RequireFullGuidance;
@@ -2318,13 +2354,20 @@ namespace Messages.Process.V1 {
             break;
           }
           case 42: {
-            if (estimatedDuration_ == null) {
-              EstimatedDuration = new global::Messages.Common.V1.EstimatedDuration();
+            if (estimatedHumanDuration_ == null) {
+              EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
             }
-            input.ReadMessage(EstimatedDuration);
+            input.ReadMessage(EstimatedHumanDuration);
             break;
           }
-          case 48: {
+          case 50: {
+            if (estimatedRobotDuration_ == null) {
+              EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedRobotDuration);
+            break;
+          }
+          case 56: {
             RequireFullGuidance = input.ReadBool();
             break;
           }
@@ -2367,13 +2410,20 @@ namespace Messages.Process.V1 {
             break;
           }
           case 42: {
-            if (estimatedDuration_ == null) {
-              EstimatedDuration = new global::Messages.Common.V1.EstimatedDuration();
+            if (estimatedHumanDuration_ == null) {
+              EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
             }
-            input.ReadMessage(EstimatedDuration);
+            input.ReadMessage(EstimatedHumanDuration);
             break;
           }
-          case 48: {
+          case 50: {
+            if (estimatedRobotDuration_ == null) {
+              EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedRobotDuration);
+            break;
+          }
+          case 56: {
             RequireFullGuidance = input.ReadBool();
             break;
           }
@@ -2384,6 +2434,12 @@ namespace Messages.Process.V1 {
 
   }
 
+  /// <summary>
+  /// TaskOverride applies small variant-specific adjustments to a task that remains
+  /// semantically the same operation. Use TaskDefinition.applicability and separate
+  /// task definitions when a variant requires a materially different operation,
+  /// tool, skill, safety classification, or sequence structure.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TaskOverride : pb::IMessage<TaskOverride>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2421,8 +2477,9 @@ namespace Messages.Process.V1 {
     public TaskOverride(TaskOverride other) : this() {
       when_ = other.when_.Clone();
       instructionText_ = other.instructionText_;
-      targetNodeId_ = other.targetNodeId_;
-      approach_ = other.approach_ != null ? other.approach_.Clone() : null;
+      target_ = other.target_ != null ? other.target_.Clone() : null;
+      insertionOffset_ = other.insertionOffset_ != null ? other.insertionOffset_.Clone() : null;
+      approachOffset_ = other.approachOffset_ != null ? other.approachOffset_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2446,6 +2503,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "instruction_text" field.</summary>
     public const int InstructionTextFieldNumber = 2;
     private string instructionText_ = "";
+    /// <summary>
+    /// Variant-specific instruction text.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string InstructionText {
@@ -2455,27 +2515,48 @@ namespace Messages.Process.V1 {
       }
     }
 
-    /// <summary>Field number for the "target_node_id" field.</summary>
-    public const int TargetNodeIdFieldNumber = 3;
-    private string targetNodeId_ = "";
+    /// <summary>Field number for the "target" field.</summary>
+    public const int TargetFieldNumber = 3;
+    private global::Messages.Process.V1.TaskTarget target_;
+    /// <summary>
+    /// Variant-specific target, e.g. a different colored part occurrence
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string TargetNodeId {
-      get { return targetNodeId_; }
+    public global::Messages.Process.V1.TaskTarget Target {
+      get { return target_; }
       set {
-        targetNodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        target_ = value;
       }
     }
 
-    /// <summary>Field number for the "approach" field.</summary>
-    public const int ApproachFieldNumber = 4;
-    private global::Messages.Common.V1.Vector3 approach_;
+    /// <summary>Field number for the "insertion_offset" field.</summary>
+    public const int InsertionOffsetFieldNumber = 4;
+    private global::Messages.Common.V1.Vector3 insertionOffset_;
+    /// <summary>
+    /// Variant-specific insertion offset.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Approach {
-      get { return approach_; }
+    public global::Messages.Common.V1.Vector3 InsertionOffset {
+      get { return insertionOffset_; }
       set {
-        approach_ = value;
+        insertionOffset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "approach_offset" field.</summary>
+    public const int ApproachOffsetFieldNumber = 5;
+    private global::Messages.Common.V1.Vector3 approachOffset_;
+    /// <summary>
+    /// Variant-specific approach offset.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Vector3 ApproachOffset {
+      get { return approachOffset_; }
+      set {
+        approachOffset_ = value;
       }
     }
 
@@ -2496,8 +2577,9 @@ namespace Messages.Process.V1 {
       }
       if(!when_.Equals(other.when_)) return false;
       if (InstructionText != other.InstructionText) return false;
-      if (TargetNodeId != other.TargetNodeId) return false;
-      if (!object.Equals(Approach, other.Approach)) return false;
+      if (!object.Equals(Target, other.Target)) return false;
+      if (!object.Equals(InsertionOffset, other.InsertionOffset)) return false;
+      if (!object.Equals(ApproachOffset, other.ApproachOffset)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2507,8 +2589,9 @@ namespace Messages.Process.V1 {
       int hash = 1;
       hash ^= when_.GetHashCode();
       if (InstructionText.Length != 0) hash ^= InstructionText.GetHashCode();
-      if (TargetNodeId.Length != 0) hash ^= TargetNodeId.GetHashCode();
-      if (approach_ != null) hash ^= Approach.GetHashCode();
+      if (target_ != null) hash ^= Target.GetHashCode();
+      if (insertionOffset_ != null) hash ^= InsertionOffset.GetHashCode();
+      if (approachOffset_ != null) hash ^= ApproachOffset.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2532,13 +2615,17 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(InstructionText);
       }
-      if (TargetNodeId.Length != 0) {
+      if (target_ != null) {
         output.WriteRawTag(26);
-        output.WriteString(TargetNodeId);
+        output.WriteMessage(Target);
       }
-      if (approach_ != null) {
+      if (insertionOffset_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(Approach);
+        output.WriteMessage(InsertionOffset);
+      }
+      if (approachOffset_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ApproachOffset);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2555,13 +2642,17 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(InstructionText);
       }
-      if (TargetNodeId.Length != 0) {
+      if (target_ != null) {
         output.WriteRawTag(26);
-        output.WriteString(TargetNodeId);
+        output.WriteMessage(Target);
       }
-      if (approach_ != null) {
+      if (insertionOffset_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(Approach);
+        output.WriteMessage(InsertionOffset);
+      }
+      if (approachOffset_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ApproachOffset);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2577,11 +2668,14 @@ namespace Messages.Process.V1 {
       if (InstructionText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InstructionText);
       }
-      if (TargetNodeId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetNodeId);
+      if (target_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Target);
       }
-      if (approach_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Approach);
+      if (insertionOffset_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InsertionOffset);
+      }
+      if (approachOffset_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ApproachOffset);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2599,14 +2693,23 @@ namespace Messages.Process.V1 {
       if (other.InstructionText.Length != 0) {
         InstructionText = other.InstructionText;
       }
-      if (other.TargetNodeId.Length != 0) {
-        TargetNodeId = other.TargetNodeId;
-      }
-      if (other.approach_ != null) {
-        if (approach_ == null) {
-          Approach = new global::Messages.Common.V1.Vector3();
+      if (other.target_ != null) {
+        if (target_ == null) {
+          Target = new global::Messages.Process.V1.TaskTarget();
         }
-        Approach.MergeFrom(other.Approach);
+        Target.MergeFrom(other.Target);
+      }
+      if (other.insertionOffset_ != null) {
+        if (insertionOffset_ == null) {
+          InsertionOffset = new global::Messages.Common.V1.Vector3();
+        }
+        InsertionOffset.MergeFrom(other.InsertionOffset);
+      }
+      if (other.approachOffset_ != null) {
+        if (approachOffset_ == null) {
+          ApproachOffset = new global::Messages.Common.V1.Vector3();
+        }
+        ApproachOffset.MergeFrom(other.ApproachOffset);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2636,14 +2739,24 @@ namespace Messages.Process.V1 {
             break;
           }
           case 26: {
-            TargetNodeId = input.ReadString();
+            if (target_ == null) {
+              Target = new global::Messages.Process.V1.TaskTarget();
+            }
+            input.ReadMessage(Target);
             break;
           }
           case 34: {
-            if (approach_ == null) {
-              Approach = new global::Messages.Common.V1.Vector3();
+            if (insertionOffset_ == null) {
+              InsertionOffset = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(Approach);
+            input.ReadMessage(InsertionOffset);
+            break;
+          }
+          case 42: {
+            if (approachOffset_ == null) {
+              ApproachOffset = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(ApproachOffset);
             break;
           }
         }
@@ -2674,14 +2787,24 @@ namespace Messages.Process.V1 {
             break;
           }
           case 26: {
-            TargetNodeId = input.ReadString();
+            if (target_ == null) {
+              Target = new global::Messages.Process.V1.TaskTarget();
+            }
+            input.ReadMessage(Target);
             break;
           }
           case 34: {
-            if (approach_ == null) {
-              Approach = new global::Messages.Common.V1.Vector3();
+            if (insertionOffset_ == null) {
+              InsertionOffset = new global::Messages.Common.V1.Vector3();
             }
-            input.ReadMessage(Approach);
+            input.ReadMessage(InsertionOffset);
+            break;
+          }
+          case 42: {
+            if (approachOffset_ == null) {
+              ApproachOffset = new global::Messages.Common.V1.Vector3();
+            }
+            input.ReadMessage(ApproachOffset);
             break;
           }
         }
@@ -3009,7 +3132,7 @@ namespace Messages.Process.V1 {
         = pb::FieldCodec.ForMessage(170, global::Messages.Variance.V1.VariantRule.Parser);
     private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> applicability_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantRule>();
     /// <summary>
-    /// Applies if any rule matches. Empty means always applicable.
+    /// Task applies if any rule matches. Empty means always applicable.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3022,6 +3145,9 @@ namespace Messages.Process.V1 {
     private static readonly pb::FieldCodec<global::Messages.Process.V1.TaskOverride> _repeated_overrides_codec
         = pb::FieldCodec.ForMessage(178, global::Messages.Process.V1.TaskOverride.Parser);
     private readonly pbc::RepeatedField<global::Messages.Process.V1.TaskOverride> overrides_ = new pbc::RepeatedField<global::Messages.Process.V1.TaskOverride>();
+    /// <summary>
+    /// adjust small authoring/runtime details when the task is otherwise the same task.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Process.V1.TaskOverride> Overrides {

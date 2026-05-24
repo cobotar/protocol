@@ -2,15 +2,15 @@
 // @generated from file service/v1/response.proto (package service.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file service/v1/response.proto.
  */
 export const file_service_v1_response: GenFile = /*@__PURE__*/
-  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIkYKCFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIYChBtYWluX21vZGlmaWVkX2lkGAMgASgJQqwBCg5jb20uc2VydmljZS52MUINUmVzcG9uc2VQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvc2VydmljZS92MTtzZXJ2aWNldjGiAgNTWFiqAhNNZXNzYWdlcy5TZXJ2aWNlLlYxygIKU2VydmljZVxWMeICFlNlcnZpY2VcVjFcR1BCTWV0YWRhdGHqAgtTZXJ2aWNlOjpWMWIGcHJvdG8z");
+  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxInIKCFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIYChBtYWluX21vZGlmaWVkX2lkGAMgASgJEioKBnN0YXR1cxgEIAEoDjIaLnNlcnZpY2UudjEuTXV0YXRpb25TdGF0dXMqpwEKDk11dGF0aW9uU3RhdHVzEh8KG01VVEFUSU9OX1NUQVRVU19VTlNQRUNJRklFRBAAEhsKF01VVEFUSU9OX1NUQVRVU19DUkVBVEVEEAESGwoXTVVUQVRJT05fU1RBVFVTX1VQREFURUQQAhIdChlNVVRBVElPTl9TVEFUVVNfVU5DSEFOR0VEEAMSGwoXTVVUQVRJT05fU1RBVFVTX0RFTEVURUQQBEKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw");
 
 /**
  * @generated from message service.v1.Response
@@ -36,6 +36,11 @@ export type Response = Message<"service.v1.Response"> & {
    * @generated from field: string main_modified_id = 3;
    */
   mainModifiedId: string;
+
+  /**
+   * @generated from field: service.v1.MutationStatus status = 4;
+   */
+  status: MutationStatus;
 };
 
 /**
@@ -44,4 +49,40 @@ export type Response = Message<"service.v1.Response"> & {
  */
 export const ResponseSchema: GenMessage<Response> = /*@__PURE__*/
   messageDesc(file_service_v1_response, 0);
+
+/**
+ * @generated from enum service.v1.MutationStatus
+ */
+export enum MutationStatus {
+  /**
+   * @generated from enum value: MUTATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MUTATION_STATUS_CREATED = 1;
+   */
+  CREATED = 1,
+
+  /**
+   * @generated from enum value: MUTATION_STATUS_UPDATED = 2;
+   */
+  UPDATED = 2,
+
+  /**
+   * @generated from enum value: MUTATION_STATUS_UNCHANGED = 3;
+   */
+  UNCHANGED = 3,
+
+  /**
+   * @generated from enum value: MUTATION_STATUS_DELETED = 4;
+   */
+  DELETED = 4,
+}
+
+/**
+ * Describes the enum service.v1.MutationStatus.
+ */
+export const MutationStatusSchema: GenEnum<MutationStatus> = /*@__PURE__*/
+  enumDesc(file_service_v1_response, 0);
 

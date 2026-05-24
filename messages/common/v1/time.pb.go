@@ -78,8 +78,8 @@ func (x *TimeWindow) GetEnd() *timestamppb.Timestamp {
 type EstimatedDuration struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	NominalSeconds int32                  `protobuf:"varint,1,opt,name=nominal_seconds,json=nominalSeconds,proto3" json:"nominal_seconds,omitempty"` // Expected time in seconds
-	MinSeconds     int32                  `protobuf:"varint,2,opt,name=min_seconds,json=minSeconds,proto3" json:"min_seconds,omitempty"`
-	MaxSeconds     int32                  `protobuf:"varint,3,opt,name=max_seconds,json=maxSeconds,proto3" json:"max_seconds,omitempty"`
+	MinSeconds     int32                  `protobuf:"varint,2,opt,name=min_seconds,json=minSeconds,proto3" json:"min_seconds,omitempty"`             // Expected lower bound in seconds
+	MaxSeconds     int32                  `protobuf:"varint,3,opt,name=max_seconds,json=maxSeconds,proto3" json:"max_seconds,omitempty"`             // Expected upper bound in seconds
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }

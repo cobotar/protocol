@@ -159,7 +159,7 @@ message FileLocation {
 
   string sha256 = 8 [
     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
-    (buf.validate.field).string.pattern = "^[a-fA-F0-9]{64}$"
+    (buf.validate.field).string.pattern = "^[a-f0-9]{64}$"
   ];
 }
 
@@ -274,6 +274,14 @@ message ModelArtifact {
   repeated SidecarAssetRef sidecars = 9;
   string version = 10;
   repeated common.v1.ExternalReference external_references = 11;
+
+  // Stable digest of the model artifact content graph, including primary asset,
+  // sidecars, asset.format, asset.unit, asset.up_axis, and asset.forward_axis.
+  // Used for cache invalidation and change detection.
+  string content_hash = 12 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.pattern = "^sha256:[a-f0-9]{64}$"
+  ];
 
   option (buf.validate.message).cel = {
     id: "model_artifact.primary_asset_role"

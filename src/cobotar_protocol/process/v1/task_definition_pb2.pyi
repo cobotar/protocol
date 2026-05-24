@@ -144,32 +144,36 @@ class ValidationRequirement(_message.Message):
     def __init__(self, require_tool_feedback: bool = ..., require_vision_check: bool = ..., allow_manual_confirmation: bool = ..., manual_confirmation_min_level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ..., mode: _Optional[_Union[_asset_definition_pb2.ValidationMode, str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class TaskExecutionPolicy(_message.Message):
-    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_undo", "estimated_duration", "require_full_guidance")
+    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_undo", "estimated_human_duration", "estimated_robot_duration", "require_full_guidance")
     ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     ACTOR_CONSTRAINT_FIELD_NUMBER: _ClassVar[int]
     CAN_REASSIGN_FIELD_NUMBER: _ClassVar[int]
     CAN_UNDO_FIELD_NUMBER: _ClassVar[int]
-    ESTIMATED_DURATION_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_HUMAN_DURATION_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_ROBOT_DURATION_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_FULL_GUIDANCE_FIELD_NUMBER: _ClassVar[int]
     assignment_preference: TaskAssignmentPreference
     actor_constraint: _actor_constraint_pb2.ActorConstraint
     can_reassign: bool
     can_undo: bool
-    estimated_duration: _time_pb2.EstimatedDuration
+    estimated_human_duration: _time_pb2.EstimatedDuration
+    estimated_robot_duration: _time_pb2.EstimatedDuration
     require_full_guidance: bool
-    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_undo: bool = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ...) -> None: ...
+    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_undo: bool = ..., estimated_human_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., estimated_robot_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ...) -> None: ...
 
 class TaskOverride(_message.Message):
-    __slots__ = ("when", "instruction_text", "target_node_id", "approach")
+    __slots__ = ("when", "instruction_text", "target", "insertion_offset", "approach_offset")
     WHEN_FIELD_NUMBER: _ClassVar[int]
     INSTRUCTION_TEXT_FIELD_NUMBER: _ClassVar[int]
-    TARGET_NODE_ID_FIELD_NUMBER: _ClassVar[int]
-    APPROACH_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    INSERTION_OFFSET_FIELD_NUMBER: _ClassVar[int]
+    APPROACH_OFFSET_FIELD_NUMBER: _ClassVar[int]
     when: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
     instruction_text: str
-    target_node_id: str
-    approach: _vector3_pb2.Vector3
-    def __init__(self, when: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target_node_id: _Optional[str] = ..., approach: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
+    target: TaskTarget
+    insertion_offset: _vector3_pb2.Vector3
+    approach_offset: _vector3_pb2.Vector3
+    def __init__(self, when: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
 
 class TaskDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirement", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "applicability", "overrides")

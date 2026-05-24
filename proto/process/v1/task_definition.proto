@@ -119,15 +119,29 @@ message TaskExecutionPolicy {
   capability.v1.ActorConstraint actor_constraint = 2;
   bool can_reassign = 3;
   bool can_undo = 4;
-  common.v1.EstimatedDuration estimated_duration = 5;
-  bool require_full_guidance = 6;
+  common.v1.EstimatedDuration estimated_human_duration = 5;
+  common.v1.EstimatedDuration estimated_robot_duration = 6;
+  bool require_full_guidance = 7;
 }
 
+// TaskOverride applies small variant-specific adjustments to a task that remains
+// semantically the same operation. Use TaskDefinition.applicability and separate
+// task definitions when a variant requires a materially different operation,
+// tool, skill, safety classification, or sequence structure.
 message TaskOverride {
   repeated variance.v1.VariantRule when = 1;
-  string instruction_text = 2;
-  string target_node_id = 3;
-  geometry.v1.Vector3 approach = 4;
+
+  string instruction_text = 2; // Variant-specific instruction text.
+
+  TaskTarget target = 3; // Variant-specific target, e.g. a different colored part occurrence
+  geometry.v1.Vector3 insertion_offset = 4; // Variant-specific insertion offset.
+  geometry.v1.Vector3 approach_offset = 5; // Variant-specific approach offset.
+
+  //TaskEndpoint source = 6;
+  //TaskEndpoint destination = 7;
+
+  //ValidationRequirement validation = 8; // Minor variant-specific validation changes.
+  //TaskExecutionPolicy execution_policy = 9; // Minor variant-specific execution guidance or estimates.
 }
 
 // TaskDefinition is the static/universal authoring-time description of a task.
@@ -153,8 +167,8 @@ message TaskDefinition {
   common.v1.SafetyRelevance safety_relevance = 16; // Safety significance of the task.
   TaskEndpoint source = 17; // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
   TaskEndpoint destination = 18; // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
-  repeated variance.v1.VariantRule applicability = 21; // Applies if any rule matches. Empty means always applicable.
-  repeated TaskOverride overrides = 22;
+  repeated variance.v1.VariantRule applicability = 21; // Task applies if any rule matches. Empty means always applicable.
+  repeated TaskOverride overrides = 22; // adjust small authoring/runtime details when the task is otherwise the same task.
 }
 
 message TaskDefinitions {

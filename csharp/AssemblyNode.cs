@@ -29,7 +29,7 @@ namespace Messages.Product.V1 {
             "bV9wcm9wZXJ0aWVzLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvGhln",
             "ZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRl",
             "ZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvGh52YXJpYW5jZS92MS92YXJpYW50",
-            "X3J1bGUucHJvdG8i4AUKDEFzc2VtYmx5Tm9kZRIOCgJpZBgBIAEoCVICaWQS",
+            "X3J1bGUucHJvdG8izggKDEFzc2VtYmx5Tm9kZRIOCgJpZBgBIAEoCVICaWQS",
             "HQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEiQKDnBhcmVudF9ub2Rl",
             "X2lkGAMgASgJUgxwYXJlbnROb2RlSWQSNQoEa2luZBgEIAEoDjIULnByb2R1",
             "Y3QudjEuTm9kZUtpbmRCC7pICIIBAhAByAEBUgRraW5kEiwKEnBhcnRfZGVm",
@@ -45,19 +45,27 @@ namespace Messages.Product.V1 {
             "UhJhcHByb2FjaE9mZnNldEhpbnQSGgoIb3B0aW9uYWwYDiABKAhSCG9wdGlv",
             "bmFsEj4KDWFwcGxpY2FiaWxpdHkYDyADKAsyGC52YXJpYW5jZS52MS5WYXJp",
             "YW50UnVsZVINYXBwbGljYWJpbGl0eRIzCgZjdXN0b20YECABKAsyGy5jb21t",
-            "b24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tKpYBCghOb2RlS2luZBIZ",
-            "ChVOT0RFX0tJTkRfVU5TUEVDSUZJRUQQABITCg9OT0RFX0tJTkRfR1JPVVAQ",
-            "ARIdChlOT0RFX0tJTkRfUEFSVF9PQ0NVUlJFTkNFEAISJAogTk9ERV9LSU5E",
-            "X1NVQkFTU0VNQkxZX09DQ1VSUkVOQ0UQAxIVChFOT0RFX0tJTkRfUEFUVEVS",
-            "ThAEKtMBCgpKb2luTWV0aG9kEhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVE",
-            "EAASFAoQSk9JTl9NRVRIT0RfTk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RF",
-            "ThACEhkKFUpPSU5fTUVUSE9EX1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9E",
-            "X1NOQVBfRklUEAQSGAoUSk9JTl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lO",
-            "X01FVEhPRF9XRUxEEAYSFQoRSk9JTl9NRVRIT0RfUExBQ0UQB0KwAQoOY29t",
-            "LnByb2R1Y3QudjFCEUFzc2VtYmx5Tm9kZVByb3RvUAFaOWdpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2",
-            "MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIW",
-            "UHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM="));
+            "b24udjEuQ3VzdG9tUHJvcGVydGllc1IGY3VzdG9tOusCukjnAhqRAQoxYXNz",
+            "ZW1ibHlfbm9kZS5ncm91cF9tdXN0X25vdF9oYXZlX3BhcnRfZGVmaW5pdGlv",
+            "bhIrR1JPVVAgbm9kZXMgbXVzdCBub3Qgc2V0IHBhcnRfZGVmaW5pdGlvbl9p",
+            "ZBovdGhpcy5raW5kICE9IDEgfHwgdGhpcy5wYXJ0X2RlZmluaXRpb25faWQg",
+            "PT0gJyca0AEKOmFzc2VtYmx5X25vZGUucGh5c2ljYWxfb2NjdXJyZW5jZV9y",
+            "ZXF1aXJlc19wYXJ0X2RlZmluaXRpb24STFBBUlRfT0NDVVJSRU5DRSBhbmQg",
+            "U1VCQVNTRU1CTFlfT0NDVVJSRU5DRSBub2RlcyBtdXN0IHNldCBwYXJ0X2Rl",
+            "ZmluaXRpb25faWQaRCEodGhpcy5raW5kID09IDIgfHwgdGhpcy5raW5kID09",
+            "IDMpIHx8IHRoaXMucGFydF9kZWZpbml0aW9uX2lkICE9ICcnKn8KCE5vZGVL",
+            "aW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9H",
+            "Uk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RF",
+            "X0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADKtMBCgpKb2luTWV0aG9k",
+            "EhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQSk9JTl9NRVRIT0Rf",
+            "Tk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkKFUpPSU5fTUVUSE9E",
+            "X1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBfRklUEAQSGAoUSk9J",
+            "Tl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhPRF9XRUxEEAYSFQoR",
+            "Sk9JTl9NRVRIT0RfUExBQ0UQB0KwAQoOY29tLnByb2R1Y3QudjFCEUFzc2Vt",
+            "Ymx5Tm9kZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
+            "ZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2Vz",
+            "LlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRh",
+            "ZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.NodeKind), typeof(global::Messages.Product.V1.JoinMethod), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -69,41 +77,68 @@ namespace Messages.Product.V1 {
   }
   #region Enums
   /// <summary>
-  /// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+  /// NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+  ///
+  /// CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+  /// GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+  /// protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+  /// occurrence template.
   /// NodeKind               Represents                    Physical part?   Has children?
-  /// GROUP                  logical grouping              ❌               yes
-  /// PART_OCCURRENCE        single physical part instance ✅               usually no
-  /// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-  /// PATTERN                repeated pattern structure    ❌ (structure)   yes
+  /// GROUP                  logical grouping              ❌               ✅
+  /// PART_OCCURRENCE        single physical part instance ✅               ❌
+  /// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
   /// </summary>
   public enum NodeKind {
+    /// <summary>
+    /// Valid messages must use a specific kind.
+    /// </summary>
     [pbr::OriginalName("NODE_KIND_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+    /// Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups.
     /// </summary>
     [pbr::OriginalName("NODE_KIND_GROUP")] Group = 1,
     /// <summary>
-    /// The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+    /// Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id.
     /// </summary>
     [pbr::OriginalName("NODE_KIND_PART_OCCURRENCE")] PartOccurrence = 2,
     /// <summary>
-    /// A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+    /// Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself.
     /// </summary>
     [pbr::OriginalName("NODE_KIND_SUBASSEMBLY_OCCURRENCE")] SubassemblyOccurrence = 3,
-    /// <summary>
-    /// A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
-    /// </summary>
-    [pbr::OriginalName("NODE_KIND_PATTERN")] Pattern = 4,
   }
 
   public enum JoinMethod {
+    /// <summary>
+    /// No join method hint is available. Generation/planning should infer the operation from other data if possible.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_NONE")] None = 1,
+    /// <summary>
+    /// Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_FASTEN")] Fasten = 2,
+    /// <summary>
+    /// Part is joined by interference/friction fit and usually requires controlled insertion force.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_PRESS_FIT")] PressFit = 3,
+    /// <summary>
+    /// Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_SNAP_FIT")] SnapFit = 4,
+    /// <summary>
+    /// Part is joined using glue, tape, sealant, or another bonding material.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_ADHESIVE")] Adhesive = 5,
+    /// <summary>
+    /// Part is joined by welding or another permanent thermal/material fusion process.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_WELD")] Weld = 6,
+    /// <summary>
+    /// Part is placed at its final pose without an explicit joining operation beyond positioning.
+    /// </summary>
     [pbr::OriginalName("JOIN_METHOD_PLACE")] Place = 7,
   }
 

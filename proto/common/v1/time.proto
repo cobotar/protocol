@@ -14,6 +14,6 @@ message TimeWindow {
 
 message EstimatedDuration {
   int32 nominal_seconds = 1 [(buf.validate.field).int32.gte = 0]; // Expected time in seconds
-  int32 min_seconds = 2 [(buf.validate.field).int32.gte = 0];
-  int32 max_seconds = 3 [(buf.validate.field).int32.gte = 0];
+  int32 min_seconds = 2 [(buf.validate.field).int32.gte = 0]; // Expected lower bound in seconds
+  int32 max_seconds = 3 [(buf.validate.field).int32.gte = 0]; // Expected upper bound in seconds
 }

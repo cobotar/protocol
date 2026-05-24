@@ -365,6 +365,9 @@ namespace Messages.Common.V1 {
     /// <summary>Field number for the "min_seconds" field.</summary>
     public const int MinSecondsFieldNumber = 2;
     private int minSeconds_;
+    /// <summary>
+    /// Expected lower bound in seconds
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MinSeconds {
@@ -377,6 +380,9 @@ namespace Messages.Common.V1 {
     /// <summary>Field number for the "max_seconds" field.</summary>
     public const int MaxSecondsFieldNumber = 3;
     private int maxSeconds_;
+    /// <summary>
+    /// Expected upper bound in seconds
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MaxSeconds {

@@ -49,11 +49,15 @@ export type EstimatedDuration = Message<"common.v1.EstimatedDuration"> & {
   nominalSeconds: number;
 
   /**
+   * Expected lower bound in seconds
+   *
    * @generated from field: int32 min_seconds = 2;
    */
   minSeconds: number;
 
   /**
+   * Expected upper bound in seconds
+   *
    * @generated from field: int32 max_seconds = 3;
    */
   maxSeconds: number;

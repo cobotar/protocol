@@ -239,6 +239,9 @@
     - [ValidityPolicies](#capability-v1-ValidityPolicies)
     - [ValidityPolicy](#capability-v1-ValidityPolicy)
   
+- [common/v1/clone.proto](#common_v1_clone-proto)
+    - [CloneMessage](#common-v1-CloneMessage)
+  
 - [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
     - [CustomProperties](#common-v1-CustomProperties)
   
@@ -411,6 +414,7 @@
     - [PartDefinition](#product-v1-PartDefinition)
     - [PartDefinitions](#product-v1-PartDefinitions)
     - [PartHandlingProfile](#product-v1-PartHandlingProfile)
+    - [PartProcessProfile](#product-v1-PartProcessProfile)
   
     - [MaterialCategory](#product-v1-MaterialCategory)
     - [PartType](#product-v1-PartType)
@@ -645,6 +649,8 @@
   
 - [service/v1/response.proto](#service_v1_response-proto)
     - [Response](#service-v1-Response)
+  
+    - [MutationStatus](#service-v1-MutationStatus)
   
 - [service/v1/robot_adapter.proto](#service_v1_robot_adapter-proto)
     - [RobotAdapterInfoMessage](#service-v1-RobotAdapterInfoMessage)
@@ -3631,6 +3637,41 @@ This domain is particularly relevant in human-robot collaboration environments. 
 
 
 
+<a name="common_v1_clone-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/clone.proto
+
+
+
+<a name="common-v1-CloneMessage"></a>
+
+### CloneMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| original_id | [string](#string) |  | Id of the entity to be deleted |
+| name | [string](#string) |  | Optional name override for the clone. |
+| icon | [string](#string) |  | Optional icon override for the clone. |
+| description | [string](#string) |  | Optional description override for the clone. |
+| idempotency_key | [string](#string) |  | Optional client-generated key to make retries safe. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_custom_properties-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3910,8 +3951,8 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | nominal_seconds | [int32](#int32) |  | Expected time in seconds |
-| min_seconds | [int32](#int32) |  |  |
-| max_seconds | [int32](#int32) |  |  |
+| min_seconds | [int32](#int32) |  | Expected lower bound in seconds |
+| max_seconds | [int32](#int32) |  | Expected upper bound in seconds |
 
 
 
@@ -5336,8 +5377,8 @@ asset, station, or container bindings belongs in runtime.v1.TaskRun.
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  | Safety significance of the task. |
 | source | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
 | destination | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
-| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
-| overrides | [TaskOverride](#process-v1-TaskOverride) | repeated |  |
+| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Task applies if any rule matches. Empty means always applicable. |
+| overrides | [TaskOverride](#process-v1-TaskOverride) | repeated | adjust small authoring/runtime details when the task is otherwise the same task. |
 
 
 
@@ -5391,7 +5432,8 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 | actor_constraint | [capability.v1.ActorConstraint](#capability-v1-ActorConstraint) |  |  |
 | can_reassign | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
-| estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+| estimated_human_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
+| estimated_robot_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
 | require_full_guidance | [bool](#bool) |  |  |
 
 
@@ -5402,15 +5444,19 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 <a name="process-v1-TaskOverride"></a>
 
 ### TaskOverride
-
+TaskOverride applies small variant-specific adjustments to a task that remains
+semantically the same operation. Use TaskDefinition.applicability and separate
+task definitions when a variant requires a materially different operation,
+tool, skill, safety classification, or sequence structure.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | when | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated |  |
-| instruction_text | [string](#string) |  |  |
-| target_node_id | [string](#string) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| instruction_text | [string](#string) |  | Variant-specific instruction text. |
+| target | [TaskTarget](#process-v1-TaskTarget) |  | Variant-specific target, e.g. a different colored part occurrence |
+| insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Variant-specific insertion offset. |
+| approach_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Variant-specific approach offset. |
 
 
 
@@ -5927,34 +5973,37 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| JOIN_METHOD_UNSPECIFIED | 0 |  |
-| JOIN_METHOD_NONE | 1 |  |
-| JOIN_METHOD_FASTEN | 2 |  |
-| JOIN_METHOD_PRESS_FIT | 3 |  |
-| JOIN_METHOD_SNAP_FIT | 4 |  |
-| JOIN_METHOD_ADHESIVE | 5 |  |
-| JOIN_METHOD_WELD | 6 |  |
-| JOIN_METHOD_PLACE | 7 |  |
+| JOIN_METHOD_UNSPECIFIED | 0 | No join method hint is available. Generation/planning should infer the operation from other data if possible. |
+| JOIN_METHOD_NONE | 1 | No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence. |
+| JOIN_METHOD_FASTEN | 2 | Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware. |
+| JOIN_METHOD_PRESS_FIT | 3 | Part is joined by interference/friction fit and usually requires controlled insertion force. |
+| JOIN_METHOD_SNAP_FIT | 4 | Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion. |
+| JOIN_METHOD_ADHESIVE | 5 | Part is joined using glue, tape, sealant, or another bonding material. |
+| JOIN_METHOD_WELD | 6 | Part is joined by welding or another permanent thermal/material fusion process. |
+| JOIN_METHOD_PLACE | 7 | Part is placed at its final pose without an explicit joining operation beyond positioning. |
 
 
 
 <a name="product-v1-NodeKind"></a>
 
 ### NodeKind
-NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+
+CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+occurrence template.
 NodeKind               Represents                    Physical part?   Has children?
-GROUP                  logical grouping              ❌               yes
-PART_OCCURRENCE        single physical part instance ✅               usually no
-SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-PATTERN                repeated pattern structure    ❌ (structure)   yes
+GROUP                  logical grouping              ❌               ✅
+PART_OCCURRENCE        single physical part instance ✅               ❌
+SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NODE_KIND_UNSPECIFIED | 0 |  |
-| NODE_KIND_GROUP | 1 | A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty. |
-| NODE_KIND_PART_OCCURRENCE | 2 | The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty. |
-| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition. |
-| NODE_KIND_PATTERN | 4 | A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group? |
+| NODE_KIND_UNSPECIFIED | 0 | Valid messages must use a specific kind. |
+| NODE_KIND_GROUP | 1 | Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups. |
+| NODE_KIND_PART_OCCURRENCE | 2 | Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id. |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself. |
 
 
  
@@ -6035,6 +6084,7 @@ name: TPU, grade: 70 Shore A
 | material | [MaterialSpec](#product-v1-MaterialSpec) |  |  |
 | default_model_id | [string](#string) |  | Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ) |
 | handling | [PartHandlingProfile](#product-v1-PartHandlingProfile) |  |  |
+| process | [PartProcessProfile](#product-v1-PartProcessProfile) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 | version | [string](#string) |  |  |
@@ -6062,24 +6112,44 @@ name: TPU, grade: 70 Shore A
 <a name="product-v1-PartHandlingProfile"></a>
 
 ### PartHandlingProfile
-
+PartHandlingProfile captures physical handling constraints that follow the
+part regardless of the process it appears in.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| fragile | [bool](#bool) |  |  |
-| esd_sensitive | [bool](#bool) |  |  |
-| requires_two_hand_lift | [bool](#bool) |  | If true, the part is heavy, but possible to lift |
-| requires_lifting_assistance | [bool](#bool) |  | If true, the part is heavier than what an operator is allowed to lift. |
-| requires_fixture_support | [bool](#bool) |  | If true, this part cannot realistically be handled/assembled without some fixture support |
-| pre_lubrication_part_id | [string](#string) |  | If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly. |
-| post_lubrication_part_id | [string](#string) |  |  |
-| requires_wiping | [bool](#bool) |  |  |
-| inspect_before_assemble | [bool](#bool) |  |  |
-| inspect_after_disassemble | [bool](#bool) |  |  |
-| max_grip_force_n | [double](#double) |  |  |
-| max_torque_nm | [double](#double) |  |  |
-| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+| fragile | [bool](#bool) |  | Part can be damaged by drops, shocks, bending, crushing, or rough handling. |
+| esd_sensitive | [bool](#bool) |  | Part requires electrostatic discharge precautions during handling. |
+| requires_two_hand_lift | [bool](#bool) |  | Part is heavy or awkward, but can still be lifted manually by an operator. |
+| requires_lifting_assistance | [bool](#bool) |  | Part is heavier than what an operator is allowed or expected to lift manually. |
+| requires_fixture_support | [bool](#bool) |  | Part cannot realistically be handled or assembled without fixture support. |
+| max_grip_force_n | [double](#double) |  | Maximum gripping/clamping force that may be applied without damaging the part. |
+| max_torque_nm | [double](#double) |  | Maximum torque that may be applied to the part or its fastening interface. |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional handling constraints not represented by dedicated fields. |
+
+
+
+
+
+
+<a name="product-v1-PartProcessProfile"></a>
+
+### PartProcessProfile
+PartProcessProfile captures defaults and hints used when generating processes
+involving this part.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| estimated_human_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  | Default duration estimate for tasks performed by a human. |
+| estimated_robot_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  | Default duration estimate for tasks performed by a robot. |
+| require_full_guidance | [bool](#bool) |  | Generated tasks should default to full step-by-step guidance for this part. |
+| inspect_before_assemble | [bool](#bool) |  | Generate or recommend inspection before this part is assembled. |
+| inspect_after_disassemble | [bool](#bool) |  | Generate or recommend inspection after this part is disassembled. |
+| pre_lubrication_part_id | [string](#string) |  | Consumable part to apply before inserting or assembling this part, e.g. grease or lubricant. |
+| post_lubrication_part_id | [string](#string) |  | Consumable part to apply after inserting or assembling this part, e.g. sealant or finishing lubricant. |
+| requires_wiping | [bool](#bool) |  | Generate or recommend wiping/cleaning tasks for this part. |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional process-generation constraints not represented by dedicated fields. |
 
 
 
@@ -6120,7 +6190,6 @@ name: TPU, grade: 70 Shore A
 | PART_TYPE_UNSPECIFIED | 0 |  |
 | PART_TYPE_COMPONENT | 1 | General mechanical or non-specialized part/component |
 | PART_TYPE_FASTENER | 2 | Screw, bolt, nut, washer, rivet, insert, clip, etc. |
-| PART_TYPE_SUBASSEMBLY | 3 | A part that is itself composed of multiple child parts |
 | PART_TYPE_CONSUMABLE | 4 | General consumable used up during assembly or maintenance |
 | PART_TYPE_LABEL | 5 | Sticker, rating plate, barcode label, warning label, etc. |
 | PART_TYPE_PACKAGING | 6 | Box, bag, foam insert, tray cover, spacer, etc. |
@@ -6129,6 +6198,8 @@ name: TPU, grade: 70 Shore A
 | PART_TYPE_ELECTRICAL_COMPONENT | 9 | Breaker, terminal block, battery, switch, power supply, wire harness, etc. |
 | PART_TYPE_CABLE | 10 | Wire, cable, wire set, cable assembly, harness |
 | PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
+| PART_TYPE_FINAL_PRODUCT | 20 | A part that is itself composed of multiple child parts, which together form a product |
+| PART_TYPE_SUBASSEMBLY | 21 | A part that is itself composed of multiple child parts, |
 
 
  
@@ -7044,6 +7115,7 @@ content_type: &#34;model/gltf-binary&#34;
 | sidecars | [SidecarAssetRef](#resources-v1-SidecarAssetRef) | repeated |  |
 | version | [string](#string) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| content_hash | [string](#string) |  | Stable digest of the model artifact content graph, including primary asset, sidecars, asset.format, asset.unit, asset.up_axis, and asset.forward_axis. Used for cache invalidation and change detection. |
 
 
 
@@ -9359,12 +9431,28 @@ Concrete runtime/deployment bindings resolved for this task run.
 | success | [bool](#bool) |  | True if the request was carried out, false if an error occurred |
 | message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
 | main_modified_id | [string](#string) |  | Might contain an ID of the entity that mainly was modified (added, updated, deleted) |
+| status | [MutationStatus](#service-v1-MutationStatus) |  |  |
 
 
 
 
 
  
+
+
+<a name="service-v1-MutationStatus"></a>
+
+### MutationStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MUTATION_STATUS_UNSPECIFIED | 0 |  |
+| MUTATION_STATUS_CREATED | 1 |  |
+| MUTATION_STATUS_UPDATED | 2 |  |
+| MUTATION_STATUS_UNCHANGED | 3 |  |
+| MUTATION_STATUS_DELETED | 4 |  |
+
 
  
 

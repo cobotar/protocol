@@ -2,6 +2,7 @@ from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
+from common.v1 import time_pb2 as _time_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -17,7 +18,6 @@ class PartType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PART_TYPE_UNSPECIFIED: _ClassVar[PartType]
     PART_TYPE_COMPONENT: _ClassVar[PartType]
     PART_TYPE_FASTENER: _ClassVar[PartType]
-    PART_TYPE_SUBASSEMBLY: _ClassVar[PartType]
     PART_TYPE_CONSUMABLE: _ClassVar[PartType]
     PART_TYPE_LABEL: _ClassVar[PartType]
     PART_TYPE_PACKAGING: _ClassVar[PartType]
@@ -26,6 +26,8 @@ class PartType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PART_TYPE_ELECTRICAL_COMPONENT: _ClassVar[PartType]
     PART_TYPE_CABLE: _ClassVar[PartType]
     PART_TYPE_DISPENSED_MATERIAL: _ClassVar[PartType]
+    PART_TYPE_FINAL_PRODUCT: _ClassVar[PartType]
+    PART_TYPE_SUBASSEMBLY: _ClassVar[PartType]
 
 class MaterialCategory(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -44,7 +46,6 @@ class MaterialCategory(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 PART_TYPE_UNSPECIFIED: PartType
 PART_TYPE_COMPONENT: PartType
 PART_TYPE_FASTENER: PartType
-PART_TYPE_SUBASSEMBLY: PartType
 PART_TYPE_CONSUMABLE: PartType
 PART_TYPE_LABEL: PartType
 PART_TYPE_PACKAGING: PartType
@@ -53,6 +54,8 @@ PART_TYPE_ELECTRONIC_COMPONENT: PartType
 PART_TYPE_ELECTRICAL_COMPONENT: PartType
 PART_TYPE_CABLE: PartType
 PART_TYPE_DISPENSED_MATERIAL: PartType
+PART_TYPE_FINAL_PRODUCT: PartType
+PART_TYPE_SUBASSEMBLY: PartType
 MATERIAL_CATEGORY_UNSPECIFIED: MaterialCategory
 MATERIAL_CATEGORY_METAL: MaterialCategory
 MATERIAL_CATEGORY_POLYMER: MaterialCategory
@@ -87,17 +90,12 @@ class MaterialSpec(_message.Message):
     def __init__(self, category: _Optional[_Union[MaterialCategory, str]] = ..., name: _Optional[str] = ..., grade: _Optional[str] = ...) -> None: ...
 
 class PartHandlingProfile(_message.Message):
-    __slots__ = ("fragile", "esd_sensitive", "requires_two_hand_lift", "requires_lifting_assistance", "requires_fixture_support", "pre_lubrication_part_id", "post_lubrication_part_id", "requires_wiping", "inspect_before_assemble", "inspect_after_disassemble", "max_grip_force_n", "max_torque_nm", "constraints")
+    __slots__ = ("fragile", "esd_sensitive", "requires_two_hand_lift", "requires_lifting_assistance", "requires_fixture_support", "max_grip_force_n", "max_torque_nm", "constraints")
     FRAGILE_FIELD_NUMBER: _ClassVar[int]
     ESD_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_TWO_HAND_LIFT_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_LIFTING_ASSISTANCE_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_FIXTURE_SUPPORT_FIELD_NUMBER: _ClassVar[int]
-    PRE_LUBRICATION_PART_ID_FIELD_NUMBER: _ClassVar[int]
-    POST_LUBRICATION_PART_ID_FIELD_NUMBER: _ClassVar[int]
-    REQUIRES_WIPING_FIELD_NUMBER: _ClassVar[int]
-    INSPECT_BEFORE_ASSEMBLE_FIELD_NUMBER: _ClassVar[int]
-    INSPECT_AFTER_DISASSEMBLE_FIELD_NUMBER: _ClassVar[int]
     MAX_GRIP_FORCE_N_FIELD_NUMBER: _ClassVar[int]
     MAX_TORQUE_NM_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
@@ -106,18 +104,35 @@ class PartHandlingProfile(_message.Message):
     requires_two_hand_lift: bool
     requires_lifting_assistance: bool
     requires_fixture_support: bool
-    pre_lubrication_part_id: str
-    post_lubrication_part_id: str
-    requires_wiping: bool
-    inspect_before_assemble: bool
-    inspect_after_disassemble: bool
     max_grip_force_n: float
     max_torque_nm: float
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_lifting_assistance: bool = ..., requires_fixture_support: bool = ..., pre_lubrication_part_id: _Optional[str] = ..., post_lubrication_part_id: _Optional[str] = ..., requires_wiping: bool = ..., inspect_before_assemble: bool = ..., inspect_after_disassemble: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_lifting_assistance: bool = ..., requires_fixture_support: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+
+class PartProcessProfile(_message.Message):
+    __slots__ = ("estimated_human_duration", "estimated_robot_duration", "require_full_guidance", "inspect_before_assemble", "inspect_after_disassemble", "pre_lubrication_part_id", "post_lubrication_part_id", "requires_wiping", "constraints")
+    ESTIMATED_HUMAN_DURATION_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_ROBOT_DURATION_FIELD_NUMBER: _ClassVar[int]
+    REQUIRE_FULL_GUIDANCE_FIELD_NUMBER: _ClassVar[int]
+    INSPECT_BEFORE_ASSEMBLE_FIELD_NUMBER: _ClassVar[int]
+    INSPECT_AFTER_DISASSEMBLE_FIELD_NUMBER: _ClassVar[int]
+    PRE_LUBRICATION_PART_ID_FIELD_NUMBER: _ClassVar[int]
+    POST_LUBRICATION_PART_ID_FIELD_NUMBER: _ClassVar[int]
+    REQUIRES_WIPING_FIELD_NUMBER: _ClassVar[int]
+    CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+    estimated_human_duration: _time_pb2.EstimatedDuration
+    estimated_robot_duration: _time_pb2.EstimatedDuration
+    require_full_guidance: bool
+    inspect_before_assemble: bool
+    inspect_after_disassemble: bool
+    pre_lubrication_part_id: str
+    post_lubrication_part_id: str
+    requires_wiping: bool
+    constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
+    def __init__(self, estimated_human_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., estimated_robot_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ..., inspect_before_assemble: bool = ..., inspect_after_disassemble: bool = ..., pre_lubrication_part_id: _Optional[str] = ..., post_lubrication_part_id: _Optional[str] = ..., requires_wiping: bool = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "external_references", "custom", "version")
+    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "process", "external_references", "custom", "version")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -129,6 +144,7 @@ class PartDefinition(_message.Message):
     MATERIAL_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     HANDLING_FIELD_NUMBER: _ClassVar[int]
+    PROCESS_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -143,10 +159,11 @@ class PartDefinition(_message.Message):
     material: MaterialSpec
     default_model_id: str
     handling: PartHandlingProfile
+    process: PartProcessProfile
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     custom: _custom_properties_pb2.CustomProperties
     version: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ..., version: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., process: _Optional[_Union[PartProcessProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ..., version: _Optional[str] = ...) -> None: ...
 
 class PartDefinitions(_message.Message):
     __slots__ = ("items",)

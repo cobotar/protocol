@@ -908,8 +908,12 @@ type ModelArtifact struct {
 	Sidecars           []*SidecarAssetRef      `protobuf:"bytes,9,rep,name=sidecars,proto3" json:"sidecars,omitempty"`
 	Version            string                  `protobuf:"bytes,10,opt,name=version,proto3" json:"version,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,11,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// Stable digest of the model artifact content graph, including primary asset,
+	// sidecars, asset.format, asset.unit, asset.up_axis, and asset.forward_axis.
+	// Used for cache invalidation and change detection.
+	ContentHash   string `protobuf:"bytes,12,opt,name=content_hash,json=contentHash,proto3" json:"content_hash,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ModelArtifact) Reset() {
@@ -1019,6 +1023,13 @@ func (x *ModelArtifact) GetExternalReferences() []*v1.ExternalReference {
 	return nil
 }
 
+func (x *ModelArtifact) GetContentHash() string {
+	if x != nil {
+		return x.ContentHash
+	}
+	return ""
+}
+
 type ModelArtifacts struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ModelArtifact       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -1067,7 +1078,7 @@ var File_resources_v1_model_proto protoreflect.FileDescriptor
 
 const file_resources_v1_model_proto_rawDesc = "" +
 	"\n" +
-	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\x04\n" +
+	"\x18resources/v1/model.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe5\x04\n" +
 	"\fFileLocation\x12H\n" +
 	"\abackend\x18\x01 \x01(\x0e2!.resources.v1.ModelStorageBackendB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\abackend\x12\x16\n" +
 	"\x06bucket\x18\x02 \x01(\tR\x06bucket\x12\x1d\n" +
@@ -1077,8 +1088,8 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\bfilename\x18\x05 \x01(\tR\bfilename\x12!\n" +
 	"\fcontent_type\x18\x06 \x01(\tR\vcontentType\x12\x1d\n" +
 	"\n" +
-	"size_bytes\x18\a \x01(\x04R\tsizeBytes\x123\n" +
-	"\x06sha256\x18\b \x01(\tB\x1b\xbaH\x18\xd8\x01\x01r\x132\x11^[a-fA-F0-9]{64}$R\x06sha256:\xa4\x02\xbaH\xa0\x02\x1a\x9d\x02\n" +
+	"size_bytes\x18\a \x01(\x04R\tsizeBytes\x120\n" +
+	"\x06sha256\x18\b \x01(\tB\x18\xbaH\x15\xd8\x01\x01r\x102\x0e^[a-f0-9]{64}$R\x06sha256:\xa4\x02\xbaH\xa0\x02\x1a\x9d\x02\n" +
 	"\x1fasset_location.backend_location\x12)asset location must match storage backend\x1a\xce\x01(this.backend == 1 && this.filename != '') || (this.backend in [2, 3, 4] && this.bucket != '' && this.object_key != '') || (this.backend == 5 && this.filename != '') || (this.backend == 6 && this.uri != '')\"\xa9\a\n" +
 	"\rModelAssetRef\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xec0\x01R\x02id\x12>\n" +
@@ -1101,7 +1112,7 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xec0\x01R\x02id\x12>\n" +
 	"\blocation\x18\x02 \x01(\v2\x1a.resources.v1.FileLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x12E\n" +
 	"\x06format\x18\x03 \x01(\x0e2 .resources.v1.SidecarAssetFormatB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06format\x12D\n" +
-	"\x19associated_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x16associatedModelAssetId\"\x82\x05\n" +
+	"\x19associated_model_asset_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x80\xec0\x01R\x16associatedModelAssetId\"\xc6\x05\n" +
 	"\rModelArtifact\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1114,7 +1125,8 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\bsidecars\x18\t \x03(\v2\x1d.resources.v1.SidecarAssetRefR\bsidecars\x12\x18\n" +
 	"\aversion\x18\n" +
 	" \x01(\tR\aversion\x12M\n" +
-	"\x13external_references\x18\v \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences:i\xbaHf\x1ad\n" +
+	"\x13external_references\x18\v \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12B\n" +
+	"\fcontent_hash\x18\f \x01(\tB\x1f\xbaH\x1c\xd8\x01\x01r\x172\x15^sha256:[a-f0-9]{64}$R\vcontentHash:i\xbaHf\x1ad\n" +
 	"!model_artifact.primary_asset_role\x12$primary asset must have runtime role\x1a\x19this.asset.role in [1, 2]\"C\n" +
 	"\x0eModelArtifacts\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.ModelArtifactR\x05items*\xd5\x01\n" +

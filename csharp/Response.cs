@@ -24,23 +24,39 @@ namespace Messages.Service.V1 {
     static ResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxImgKCFJl",
-            "c3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3MSGAoHbWVzc2FnZRgC",
-            "IAEoCVIHbWVzc2FnZRIoChBtYWluX21vZGlmaWVkX2lkGAMgASgJUg5tYWlu",
-            "TW9kaWZpZWRJZEKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9Q",
-            "AVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZp",
-            "Y2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoC",
-            "ClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2Vydmlj",
-            "ZTo6VjFiBnByb3RvMw=="));
+            "ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxIpwBCghS",
+            "ZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNzEhgKB21lc3NhZ2UY",
+            "AiABKAlSB21lc3NhZ2USKAoQbWFpbl9tb2RpZmllZF9pZBgDIAEoCVIObWFp",
+            "bk1vZGlmaWVkSWQSMgoGc3RhdHVzGAQgASgOMhouc2VydmljZS52MS5NdXRh",
+            "dGlvblN0YXR1c1IGc3RhdHVzKqcBCg5NdXRhdGlvblN0YXR1cxIfChtNVVRB",
+            "VElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIbChdNVVRBVElPTl9TVEFUVVNf",
+            "Q1JFQVRFRBABEhsKF01VVEFUSU9OX1NUQVRVU19VUERBVEVEEAISHQoZTVVU",
+            "QVRJT05fU1RBVFVTX1VOQ0hBTkdFRBADEhsKF01VVEFUSU9OX1NUQVRVU19E",
+            "RUxFVEVEEARCrAEKDmNvbS5zZXJ2aWNlLnYxQg1SZXNwb25zZVByb3RvUAFa",
+            "OWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9zZXJ2aWNl",
+            "L3YxO3NlcnZpY2V2MaICA1NYWKoCE01lc3NhZ2VzLlNlcnZpY2UuVjHKAgpT",
+            "ZXJ2aWNlXFYx4gIWU2VydmljZVxWMVxHUEJNZXRhZGF0YeoCC1NlcnZpY2U6",
+            "OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "Success", "Message", "MainModifiedId" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Service.V1.MutationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Service.V1.Response), global::Messages.Service.V1.Response.Parser, new[]{ "Success", "Message", "MainModifiedId", "Status" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum MutationStatus {
+    [pbr::OriginalName("MUTATION_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("MUTATION_STATUS_CREATED")] Created = 1,
+    [pbr::OriginalName("MUTATION_STATUS_UPDATED")] Updated = 2,
+    [pbr::OriginalName("MUTATION_STATUS_UNCHANGED")] Unchanged = 3,
+    [pbr::OriginalName("MUTATION_STATUS_DELETED")] Deleted = 4,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Response : pb::IMessage<Response>
@@ -80,6 +96,7 @@ namespace Messages.Service.V1 {
       success_ = other.success_;
       message_ = other.message_;
       mainModifiedId_ = other.mainModifiedId_;
+      status_ = other.status_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -134,6 +151,18 @@ namespace Messages.Service.V1 {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 4;
+    private global::Messages.Service.V1.MutationStatus status_ = global::Messages.Service.V1.MutationStatus.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Service.V1.MutationStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -152,6 +181,7 @@ namespace Messages.Service.V1 {
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
       if (MainModifiedId != other.MainModifiedId) return false;
+      if (Status != other.Status) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,6 +192,7 @@ namespace Messages.Service.V1 {
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (MainModifiedId.Length != 0) hash ^= MainModifiedId.GetHashCode();
+      if (Status != global::Messages.Service.V1.MutationStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -192,6 +223,10 @@ namespace Messages.Service.V1 {
         output.WriteRawTag(26);
         output.WriteString(MainModifiedId);
       }
+      if (Status != global::Messages.Service.V1.MutationStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -214,6 +249,10 @@ namespace Messages.Service.V1 {
         output.WriteRawTag(26);
         output.WriteString(MainModifiedId);
       }
+      if (Status != global::Messages.Service.V1.MutationStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -232,6 +271,9 @@ namespace Messages.Service.V1 {
       }
       if (MainModifiedId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MainModifiedId);
+      }
+      if (Status != global::Messages.Service.V1.MutationStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -253,6 +295,9 @@ namespace Messages.Service.V1 {
       }
       if (other.MainModifiedId.Length != 0) {
         MainModifiedId = other.MainModifiedId;
+      }
+      if (other.Status != global::Messages.Service.V1.MutationStatus.Unspecified) {
+        Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,6 +330,10 @@ namespace Messages.Service.V1 {
             MainModifiedId = input.ReadString();
             break;
           }
+          case 32: {
+            Status = (global::Messages.Service.V1.MutationStatus) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -314,6 +363,10 @@ namespace Messages.Service.V1 {
           }
           case 26: {
             MainModifiedId = input.ReadString();
+            break;
+          }
+          case 32: {
+            Status = (global::Messages.Service.V1.MutationStatus) input.ReadEnum();
             break;
           }
         }

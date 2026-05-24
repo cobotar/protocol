@@ -19,7 +19,6 @@ class NodeKind(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     NODE_KIND_GROUP: _ClassVar[NodeKind]
     NODE_KIND_PART_OCCURRENCE: _ClassVar[NodeKind]
     NODE_KIND_SUBASSEMBLY_OCCURRENCE: _ClassVar[NodeKind]
-    NODE_KIND_PATTERN: _ClassVar[NodeKind]
 
 class JoinMethod(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -35,7 +34,6 @@ NODE_KIND_UNSPECIFIED: NodeKind
 NODE_KIND_GROUP: NodeKind
 NODE_KIND_PART_OCCURRENCE: NodeKind
 NODE_KIND_SUBASSEMBLY_OCCURRENCE: NodeKind
-NODE_KIND_PATTERN: NodeKind
 JOIN_METHOD_UNSPECIFIED: JoinMethod
 JOIN_METHOD_NONE: JoinMethod
 JOIN_METHOD_FASTEN: JoinMethod

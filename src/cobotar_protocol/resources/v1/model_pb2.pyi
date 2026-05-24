@@ -213,7 +213,7 @@ class SidecarAssetRef(_message.Message):
     def __init__(self, id: _Optional[str] = ..., location: _Optional[_Union[FileLocation, _Mapping]] = ..., format: _Optional[_Union[SidecarAssetFormat, str]] = ..., associated_model_asset_id: _Optional[str] = ...) -> None: ...
 
 class ModelArtifact(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "group", "asset", "thumbnail", "alternatives", "sidecars", "version", "external_references")
+    __slots__ = ("id", "name", "icon", "description", "group", "asset", "thumbnail", "alternatives", "sidecars", "version", "external_references", "content_hash")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -225,6 +225,7 @@ class ModelArtifact(_message.Message):
     SIDECARS_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
+    CONTENT_HASH_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -236,7 +237,8 @@ class ModelArtifact(_message.Message):
     sidecars: _containers.RepeatedCompositeFieldContainer[SidecarAssetRef]
     version: str
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., asset: _Optional[_Union[ModelAssetRef, _Mapping]] = ..., thumbnail: _Optional[_Union[ImageAssetRef, _Mapping]] = ..., alternatives: _Optional[_Iterable[_Union[ModelAssetRef, _Mapping]]] = ..., sidecars: _Optional[_Iterable[_Union[SidecarAssetRef, _Mapping]]] = ..., version: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
+    content_hash: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., group: _Optional[_Union[ModelGroup, str]] = ..., asset: _Optional[_Union[ModelAssetRef, _Mapping]] = ..., thumbnail: _Optional[_Union[ImageAssetRef, _Mapping]] = ..., alternatives: _Optional[_Iterable[_Union[ModelAssetRef, _Mapping]]] = ..., sidecars: _Optional[_Iterable[_Union[SidecarAssetRef, _Mapping]]] = ..., version: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., content_hash: _Optional[str] = ...) -> None: ...
 
 class ModelArtifacts(_message.Message):
     __slots__ = ("items",)

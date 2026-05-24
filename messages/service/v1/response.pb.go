@@ -21,11 +21,67 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type MutationStatus int32
+
+const (
+	MutationStatus_MUTATION_STATUS_UNSPECIFIED MutationStatus = 0
+	MutationStatus_MUTATION_STATUS_CREATED     MutationStatus = 1
+	MutationStatus_MUTATION_STATUS_UPDATED     MutationStatus = 2
+	MutationStatus_MUTATION_STATUS_UNCHANGED   MutationStatus = 3
+	MutationStatus_MUTATION_STATUS_DELETED     MutationStatus = 4
+)
+
+// Enum value maps for MutationStatus.
+var (
+	MutationStatus_name = map[int32]string{
+		0: "MUTATION_STATUS_UNSPECIFIED",
+		1: "MUTATION_STATUS_CREATED",
+		2: "MUTATION_STATUS_UPDATED",
+		3: "MUTATION_STATUS_UNCHANGED",
+		4: "MUTATION_STATUS_DELETED",
+	}
+	MutationStatus_value = map[string]int32{
+		"MUTATION_STATUS_UNSPECIFIED": 0,
+		"MUTATION_STATUS_CREATED":     1,
+		"MUTATION_STATUS_UPDATED":     2,
+		"MUTATION_STATUS_UNCHANGED":   3,
+		"MUTATION_STATUS_DELETED":     4,
+	}
+)
+
+func (x MutationStatus) Enum() *MutationStatus {
+	p := new(MutationStatus)
+	*p = x
+	return p
+}
+
+func (x MutationStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (MutationStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_service_v1_response_proto_enumTypes[0].Descriptor()
+}
+
+func (MutationStatus) Type() protoreflect.EnumType {
+	return &file_service_v1_response_proto_enumTypes[0]
+}
+
+func (x MutationStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use MutationStatus.Descriptor instead.
+func (MutationStatus) EnumDescriptor() ([]byte, []int) {
+	return file_service_v1_response_proto_rawDescGZIP(), []int{0}
+}
+
 type Response struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Success        bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`                                      // True if the request was carried out, false if an error occurred
 	Message        string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                                       // Either a status/response message or an error message if the request wasn't a success
 	MainModifiedId string                 `protobuf:"bytes,3,opt,name=main_modified_id,json=mainModifiedId,proto3" json:"main_modified_id,omitempty"` // Might contain an ID of the entity that mainly was modified (added, updated, deleted)
+	Status         MutationStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=service.v1.MutationStatus" json:"status,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -81,16 +137,30 @@ func (x *Response) GetMainModifiedId() string {
 	return ""
 }
 
+func (x *Response) GetStatus() MutationStatus {
+	if x != nil {
+		return x.Status
+	}
+	return MutationStatus_MUTATION_STATUS_UNSPECIFIED
+}
+
 var File_service_v1_response_proto protoreflect.FileDescriptor
 
 const file_service_v1_response_proto_rawDesc = "" +
 	"\n" +
 	"\x19service/v1/response.proto\x12\n" +
-	"service.v1\"h\n" +
+	"service.v1\"\x9c\x01\n" +
 	"\bResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12(\n" +
-	"\x10main_modified_id\x18\x03 \x01(\tR\x0emainModifiedIdB\xac\x01\n" +
+	"\x10main_modified_id\x18\x03 \x01(\tR\x0emainModifiedId\x122\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1a.service.v1.MutationStatusR\x06status*\xa7\x01\n" +
+	"\x0eMutationStatus\x12\x1f\n" +
+	"\x1bMUTATION_STATUS_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17MUTATION_STATUS_CREATED\x10\x01\x12\x1b\n" +
+	"\x17MUTATION_STATUS_UPDATED\x10\x02\x12\x1d\n" +
+	"\x19MUTATION_STATUS_UNCHANGED\x10\x03\x12\x1b\n" +
+	"\x17MUTATION_STATUS_DELETED\x10\x04B\xac\x01\n" +
 	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
@@ -106,16 +176,19 @@ func file_service_v1_response_proto_rawDescGZIP() []byte {
 	return file_service_v1_response_proto_rawDescData
 }
 
+var file_service_v1_response_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_service_v1_response_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_service_v1_response_proto_goTypes = []any{
-	(*Response)(nil), // 0: service.v1.Response
+	(MutationStatus)(0), // 0: service.v1.MutationStatus
+	(*Response)(nil),    // 1: service.v1.Response
 }
 var file_service_v1_response_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: service.v1.Response.status:type_name -> service.v1.MutationStatus
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_service_v1_response_proto_init() }
@@ -128,13 +201,14 @@ func file_service_v1_response_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_v1_response_proto_rawDesc), len(file_service_v1_response_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_service_v1_response_proto_goTypes,
 		DependencyIndexes: file_service_v1_response_proto_depIdxs,
+		EnumInfos:         file_service_v1_response_proto_enumTypes,
 		MessageInfos:      file_service_v1_response_proto_msgTypes,
 	}.Build()
 	File_service_v1_response_proto = out.File

@@ -20,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/assembly_node.proto.
  */
 export const file_product_v1_assembly_node: GenFile = /*@__PURE__*/
-  fileDesc("Ch5wcm9kdWN0L3YxL2Fzc2VtYmx5X25vZGUucHJvdG8SCnByb2R1Y3QudjEimQQKDEFzc2VtYmx5Tm9kZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESFgoOcGFyZW50X25vZGVfaWQYAyABKAkSLwoEa2luZBgEIAEoDjIULnByb2R1Y3QudjEuTm9kZUtpbmRCC7pICMgBAYIBAhABEhoKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEoCRIZChFvdmVycmlkZV9tb2RlbF9pZBgGIAEoCRIlCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIVCg1zZXF1ZW5jZV9oaW50GAkgASgFEhsKE2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAkSMAoQam9pbl9tZXRob2RfaGludBgLIAEoDjIWLnByb2R1Y3QudjEuSm9pbk1ldGhvZBIzChVpbnNlcnRpb25fb2Zmc2V0X2hpbnQYDCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjIKFGFwcHJvYWNoX29mZnNldF9oaW50GA0gASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIQCghvcHRpb25hbBgOIAEoCBIvCg1hcHBsaWNhYmlsaXR5GA8gAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGUSKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMqlgEKCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMKD05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVOQ0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADEhUKEU5PREVfS0lORF9QQVRURVJOEAQq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHQrABCg5jb20ucHJvZHVjdC52MUIRQXNzZW1ibHlOb2RlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("Ch5wcm9kdWN0L3YxL2Fzc2VtYmx5X25vZGUucHJvdG8SCnByb2R1Y3QudjEihwcKDEFzc2VtYmx5Tm9kZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESFgoOcGFyZW50X25vZGVfaWQYAyABKAkSLwoEa2luZBgEIAEoDjIULnByb2R1Y3QudjEuTm9kZUtpbmRCC7pICMgBAYIBAhABEhoKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEoCRIZChFvdmVycmlkZV9tb2RlbF9pZBgGIAEoCRIlCgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9zZRIVCg1zZXF1ZW5jZV9oaW50GAkgASgFEhsKE2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAkSMAoQam9pbl9tZXRob2RfaGludBgLIAEoDjIWLnByb2R1Y3QudjEuSm9pbk1ldGhvZBIzChVpbnNlcnRpb25fb2Zmc2V0X2hpbnQYDCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjIKFGFwcHJvYWNoX29mZnNldF9oaW50GA0gASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIQCghvcHRpb25hbBgOIAEoCBIvCg1hcHBsaWNhYmlsaXR5GA8gAygLMhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGUSKwoGY3VzdG9tGBAgASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXM66wK6SOcCGpEBCjFhc3NlbWJseV9ub2RlLmdyb3VwX211c3Rfbm90X2hhdmVfcGFydF9kZWZpbml0aW9uEitHUk9VUCBub2RlcyBtdXN0IG5vdCBzZXQgcGFydF9kZWZpbml0aW9uX2lkGi90aGlzLmtpbmQgIT0gMSB8fCB0aGlzLnBhcnRfZGVmaW5pdGlvbl9pZCA9PSAnJxrQAQo6YXNzZW1ibHlfbm9kZS5waHlzaWNhbF9vY2N1cnJlbmNlX3JlcXVpcmVzX3BhcnRfZGVmaW5pdGlvbhJMUEFSVF9PQ0NVUlJFTkNFIGFuZCBTVUJBU1NFTUJMWV9PQ0NVUlJFTkNFIG5vZGVzIG11c3Qgc2V0IHBhcnRfZGVmaW5pdGlvbl9pZBpEISh0aGlzLmtpbmQgPT0gMiB8fCB0aGlzLmtpbmQgPT0gMykgfHwgdGhpcy5wYXJ0X2RlZmluaXRpb25faWQgIT0gJycqfwoITm9kZUtpbmQSGQoVTk9ERV9LSU5EX1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5EX0dST1VQEAESHQoZTk9ERV9LSU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5PREVfS0lORF9TVUJBU1NFTUJMWV9PQ0NVUlJFTkNFEAMq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFDRRAHQrABCg5jb20ucHJvZHVjdC52MUIRQXNzZW1ibHlOb2RlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message product.v1.AssemblyNode
@@ -128,48 +128,47 @@ export const AssemblyNodeSchema: GenMessage<AssemblyNode> = /*@__PURE__*/
   messageDesc(file_product_v1_assembly_node, 0);
 
 /**
- * NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+ * NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+ *
+ * CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+ * GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+ * protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+ * occurrence template.
  * NodeKind               Represents                    Physical part?   Has children?
- * GROUP                  logical grouping              ❌               yes
- * PART_OCCURRENCE        single physical part instance ✅               usually no
- * SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
- * PATTERN                repeated pattern structure    ❌ (structure)   yes
+ * GROUP                  logical grouping              ❌               ✅
+ * PART_OCCURRENCE        single physical part instance ✅               ❌
+ * SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
  *
  * @generated from enum product.v1.NodeKind
  */
 export enum NodeKind {
   /**
+   * Valid messages must use a specific kind.
+   *
    * @generated from enum value: NODE_KIND_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
+   * Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups.
    *
    * @generated from enum value: NODE_KIND_GROUP = 1;
    */
   GROUP = 1,
 
   /**
-   * The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
+   * Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id.
    *
    * @generated from enum value: NODE_KIND_PART_OCCURRENCE = 2;
    */
   PART_OCCURRENCE = 2,
 
   /**
-   * A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
+   * Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself.
    *
    * @generated from enum value: NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3;
    */
   SUBASSEMBLY_OCCURRENCE = 3,
-
-  /**
-   * A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
-   *
-   * @generated from enum value: NODE_KIND_PATTERN = 4;
-   */
-  PATTERN = 4,
 }
 
 /**
@@ -183,41 +182,57 @@ export const NodeKindSchema: GenEnum<NodeKind> = /*@__PURE__*/
  */
 export enum JoinMethod {
   /**
+   * No join method hint is available. Generation/planning should infer the operation from other data if possible.
+   *
    * @generated from enum value: JOIN_METHOD_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence.
+   *
    * @generated from enum value: JOIN_METHOD_NONE = 1;
    */
   NONE = 1,
 
   /**
+   * Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware.
+   *
    * @generated from enum value: JOIN_METHOD_FASTEN = 2;
    */
   FASTEN = 2,
 
   /**
+   * Part is joined by interference/friction fit and usually requires controlled insertion force.
+   *
    * @generated from enum value: JOIN_METHOD_PRESS_FIT = 3;
    */
   PRESS_FIT = 3,
 
   /**
+   * Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion.
+   *
    * @generated from enum value: JOIN_METHOD_SNAP_FIT = 4;
    */
   SNAP_FIT = 4,
 
   /**
+   * Part is joined using glue, tape, sealant, or another bonding material.
+   *
    * @generated from enum value: JOIN_METHOD_ADHESIVE = 5;
    */
   ADHESIVE = 5,
 
   /**
+   * Part is joined by welding or another permanent thermal/material fusion process.
+   *
    * @generated from enum value: JOIN_METHOD_WELD = 6;
    */
   WELD = 6,
 
   /**
+   * Part is placed at its final pose without an explicit joining operation beyond positioning.
+   *
    * @generated from enum value: JOIN_METHOD_PLACE = 7;
    */
   PLACE = 7,

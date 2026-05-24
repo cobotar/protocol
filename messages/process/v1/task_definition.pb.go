@@ -574,15 +574,16 @@ func (x *ValidationRequirement) GetConstraints() []*v13.KeyValueConstraint {
 }
 
 type TaskExecutionPolicy struct {
-	state                protoimpl.MessageState   `protogen:"open.v1"`
-	AssignmentPreference TaskAssignmentPreference `protobuf:"varint,1,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=process.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
-	ActorConstraint      *v12.ActorConstraint     `protobuf:"bytes,2,opt,name=actor_constraint,json=actorConstraint,proto3" json:"actor_constraint,omitempty"`
-	CanReassign          bool                     `protobuf:"varint,3,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
-	CanUndo              bool                     `protobuf:"varint,4,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
-	EstimatedDuration    *v13.EstimatedDuration   `protobuf:"bytes,5,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
-	RequireFullGuidance  bool                     `protobuf:"varint,6,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state                  protoimpl.MessageState   `protogen:"open.v1"`
+	AssignmentPreference   TaskAssignmentPreference `protobuf:"varint,1,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=process.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	ActorConstraint        *v12.ActorConstraint     `protobuf:"bytes,2,opt,name=actor_constraint,json=actorConstraint,proto3" json:"actor_constraint,omitempty"`
+	CanReassign            bool                     `protobuf:"varint,3,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
+	CanUndo                bool                     `protobuf:"varint,4,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	EstimatedHumanDuration *v13.EstimatedDuration   `protobuf:"bytes,5,opt,name=estimated_human_duration,json=estimatedHumanDuration,proto3" json:"estimated_human_duration,omitempty"`
+	EstimatedRobotDuration *v13.EstimatedDuration   `protobuf:"bytes,6,opt,name=estimated_robot_duration,json=estimatedRobotDuration,proto3" json:"estimated_robot_duration,omitempty"`
+	RequireFullGuidance    bool                     `protobuf:"varint,7,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *TaskExecutionPolicy) Reset() {
@@ -643,9 +644,16 @@ func (x *TaskExecutionPolicy) GetCanUndo() bool {
 	return false
 }
 
-func (x *TaskExecutionPolicy) GetEstimatedDuration() *v13.EstimatedDuration {
+func (x *TaskExecutionPolicy) GetEstimatedHumanDuration() *v13.EstimatedDuration {
 	if x != nil {
-		return x.EstimatedDuration
+		return x.EstimatedHumanDuration
+	}
+	return nil
+}
+
+func (x *TaskExecutionPolicy) GetEstimatedRobotDuration() *v13.EstimatedDuration {
+	if x != nil {
+		return x.EstimatedRobotDuration
 	}
 	return nil
 }
@@ -657,12 +665,17 @@ func (x *TaskExecutionPolicy) GetRequireFullGuidance() bool {
 	return false
 }
 
+// TaskOverride applies small variant-specific adjustments to a task that remains
+// semantically the same operation. Use TaskDefinition.applicability and separate
+// task definitions when a variant requires a materially different operation,
+// tool, skill, safety classification, or sequence structure.
 type TaskOverride struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	When            []*v14.VariantRule     `protobuf:"bytes,1,rep,name=when,proto3" json:"when,omitempty"`
-	InstructionText string                 `protobuf:"bytes,2,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"`
-	TargetNodeId    string                 `protobuf:"bytes,3,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`
-	Approach        *v1.Vector3            `protobuf:"bytes,4,opt,name=approach,proto3" json:"approach,omitempty"`
+	InstructionText string                 `protobuf:"bytes,2,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"` // Variant-specific instruction text.
+	Target          *TaskTarget            `protobuf:"bytes,3,opt,name=target,proto3" json:"target,omitempty"`                                          // Variant-specific target, e.g. a different colored part occurrence
+	InsertionOffset *v1.Vector3            `protobuf:"bytes,4,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"` // Variant-specific insertion offset.
+	ApproachOffset  *v1.Vector3            `protobuf:"bytes,5,opt,name=approach_offset,json=approachOffset,proto3" json:"approach_offset,omitempty"`    // Variant-specific approach offset.
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -711,16 +724,23 @@ func (x *TaskOverride) GetInstructionText() string {
 	return ""
 }
 
-func (x *TaskOverride) GetTargetNodeId() string {
+func (x *TaskOverride) GetTarget() *TaskTarget {
 	if x != nil {
-		return x.TargetNodeId
+		return x.Target
 	}
-	return ""
+	return nil
 }
 
-func (x *TaskOverride) GetApproach() *v1.Vector3 {
+func (x *TaskOverride) GetInsertionOffset() *v1.Vector3 {
 	if x != nil {
-		return x.Approach
+		return x.InsertionOffset
+	}
+	return nil
+}
+
+func (x *TaskOverride) GetApproachOffset() *v1.Vector3 {
+	if x != nil {
+		return x.ApproachOffset
 	}
 	return nil
 }
@@ -749,8 +769,8 @@ type TaskDefinition struct {
 	SafetyRelevance   v13.SafetyRelevance     `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"` // Safety significance of the task.
 	Source            *TaskEndpoint           `protobuf:"bytes,17,opt,name=source,proto3" json:"source,omitempty"`                                                                          // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
 	Destination       *TaskEndpoint           `protobuf:"bytes,18,opt,name=destination,proto3" json:"destination,omitempty"`                                                                // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
-	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Applies if any rule matches. Empty means always applicable.
-	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`
+	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Task applies if any rule matches. Empty means always applicable.
+	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`                                                                    // adjust small authoring/runtime details when the task is otherwise the same task.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -994,19 +1014,21 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12\\\n" +
 	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelR\x1amanualConfirmationMinLevel\x120\n" +
 	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeR\x04mode\x12?\n" +
-	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xfa\x02\n" +
+	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x03\n" +
 	"\x13TaskExecutionPolicy\x12Y\n" +
 	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +
 	"\x10actor_constraint\x18\x02 \x01(\v2\x1e.capability.v1.ActorConstraintR\x0factorConstraint\x12!\n" +
 	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x19\n" +
-	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12K\n" +
-	"\x12estimated_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\x122\n" +
-	"\x15require_full_guidance\x18\x06 \x01(\bR\x13requireFullGuidance\"\xbf\x01\n" +
+	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12V\n" +
+	"\x18estimated_human_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
+	"\x18estimated_robot_duration\x18\x06 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +
+	"\x15require_full_guidance\x18\a \x01(\bR\x13requireFullGuidance\"\x97\x02\n" +
 	"\fTaskOverride\x12,\n" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
-	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12$\n" +
-	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x120\n" +
-	"\bapproach\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\bapproach\"\x96\b\n" +
+	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12.\n" +
+	"\x06target\x18\x03 \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
+	"\x10insertion_offset\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
+	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\x96\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1117,28 +1139,31 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	16, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
 	1,  // 10: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
 	17, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
-	18, // 12: process.v1.TaskExecutionPolicy.estimated_duration:type_name -> common.v1.EstimatedDuration
-	19, // 13: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
-	20, // 14: process.v1.TaskOverride.approach:type_name -> geometry.v1.Vector3
-	0,  // 15: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
-	5,  // 16: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	20, // 17: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	20, // 18: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	21, // 19: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
-	22, // 20: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	7,  // 21: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	8,  // 22: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	23, // 23: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	6,  // 24: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
-	6,  // 25: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
-	19, // 26: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	9,  // 27: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	10, // 28: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	29, // [29:29] is the sub-list for method output_type
-	29, // [29:29] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	18, // 12: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
+	18, // 13: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
+	19, // 14: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	5,  // 15: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
+	20, // 16: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
+	20, // 17: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
+	0,  // 18: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
+	5,  // 19: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
+	20, // 20: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	20, // 21: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	21, // 22: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
+	22, // 23: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	7,  // 24: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	8,  // 25: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	23, // 26: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	6,  // 27: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	6,  // 28: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	19, // 29: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	9,  // 30: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	10, // 31: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	32, // [32:32] is the sub-list for method output_type
+	32, // [32:32] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	32, // [32:32] is the sub-list for extension extendee
+	0,  // [0:32] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }

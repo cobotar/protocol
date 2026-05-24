@@ -11,29 +11,32 @@ import "variance/v1/variant_rule.proto";
 option csharp_namespace = "Messages.Product.V1";
 option go_package = "github.com/cobotar/protocol/messages/product/v1";
 
-// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+// NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+//
+// CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+// GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+// protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+// occurrence template.
 // NodeKind               Represents                    Physical part?   Has children?
-// GROUP                  logical grouping              ❌               yes
-// PART_OCCURRENCE        single physical part instance ✅               usually no
-// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-// PATTERN                repeated pattern structure    ❌ (structure)   yes
+// GROUP                  logical grouping              ❌               ✅
+// PART_OCCURRENCE        single physical part instance ✅               ❌
+// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
 enum NodeKind {
-  NODE_KIND_UNSPECIFIED = 0;
-  NODE_KIND_GROUP = 1; // A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
-  NODE_KIND_PART_OCCURRENCE = 2; // The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
-  NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3; // A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
-  NODE_KIND_PATTERN = 4; // A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
+  NODE_KIND_UNSPECIFIED = 0; // Valid messages must use a specific kind.
+  NODE_KIND_GROUP = 1; // Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups.
+  NODE_KIND_PART_OCCURRENCE = 2; // Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id.
+  NODE_KIND_SUBASSEMBLY_OCCURRENCE = 3; // Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself.
 }
 
 enum JoinMethod {
-  JOIN_METHOD_UNSPECIFIED = 0;
-  JOIN_METHOD_NONE = 1;
-  JOIN_METHOD_FASTEN = 2;
-  JOIN_METHOD_PRESS_FIT = 3;
-  JOIN_METHOD_SNAP_FIT = 4;
-  JOIN_METHOD_ADHESIVE = 5;
-  JOIN_METHOD_WELD = 6;
-  JOIN_METHOD_PLACE = 7;
+  JOIN_METHOD_UNSPECIFIED = 0; // No join method hint is available. Generation/planning should infer the operation from other data if possible.
+  JOIN_METHOD_NONE = 1; // No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence.
+  JOIN_METHOD_FASTEN = 2; // Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware.
+  JOIN_METHOD_PRESS_FIT = 3; // Part is joined by interference/friction fit and usually requires controlled insertion force.
+  JOIN_METHOD_SNAP_FIT = 4; // Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion.
+  JOIN_METHOD_ADHESIVE = 5; // Part is joined using glue, tape, sealant, or another bonding material.
+  JOIN_METHOD_WELD = 6; // Part is joined by welding or another permanent thermal/material fusion process.
+  JOIN_METHOD_PLACE = 7; // Part is placed at its final pose without an explicit joining operation beyond positioning.
 }
 
 message AssemblyNode {
@@ -57,4 +60,16 @@ message AssemblyNode {
   repeated variance.v1.VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
   common.v1.CustomProperties custom = 16;
   // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+
+  option (buf.validate.message).cel = {
+    id: "assembly_node.group_must_not_have_part_definition"
+    message: "GROUP nodes must not set part_definition_id"
+    expression: "this.kind != 1 || this.part_definition_id == ''"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "assembly_node.physical_occurrence_requires_part_definition"
+    message: "PART_OCCURRENCE and SUBASSEMBLY_OCCURRENCE nodes must set part_definition_id"
+    expression: "!(this.kind == 2 || this.kind == 3) || this.part_definition_id != ''"
+  };
 }

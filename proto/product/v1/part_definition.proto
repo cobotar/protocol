@@ -5,6 +5,7 @@ import "buf/validate/validate.proto";
 import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "common/v1/key_value_constraint.proto";
+import "common/v1/time.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Product.V1";
@@ -15,7 +16,6 @@ enum PartType {
 
   PART_TYPE_COMPONENT = 1; // General mechanical or non-specialized part/component
   PART_TYPE_FASTENER = 2; // Screw, bolt, nut, washer, rivet, insert, clip, etc.
-  PART_TYPE_SUBASSEMBLY = 3; // A part that is itself composed of multiple child parts
   PART_TYPE_CONSUMABLE = 4; // General consumable used up during assembly or maintenance
   PART_TYPE_LABEL = 5; // Sticker, rating plate, barcode label, warning label, etc.
   PART_TYPE_PACKAGING = 6; // Box, bag, foam insert, tray cover, spacer, etc.
@@ -24,6 +24,9 @@ enum PartType {
   PART_TYPE_ELECTRICAL_COMPONENT = 9; // Breaker, terminal block, battery, switch, power supply, wire harness, etc.
   PART_TYPE_CABLE = 10; // Wire, cable, wire set, cable assembly, harness
   PART_TYPE_DISPENSED_MATERIAL = 11; // Grease, glue, sealant, potting compound, solder paste, flux, etc.
+
+  PART_TYPE_FINAL_PRODUCT = 20; // A part that is itself composed of multiple child parts, which together form a product
+  PART_TYPE_SUBASSEMBLY = 21; // A part that is itself composed of multiple child parts,
 }
 
 message Dimensions {
@@ -66,24 +69,38 @@ message MaterialSpec {
   string grade = 3; // Standard/specification, e.g. 6061-T6, S355JR, AISI 304
 }
 
+// PartHandlingProfile captures physical handling constraints that follow the
+// part regardless of the process it appears in.
 message PartHandlingProfile {
-  bool fragile = 1;
-  bool esd_sensitive = 2;
-  bool requires_two_hand_lift = 3; // If true, the part is heavy, but possible to lift
-  bool requires_lifting_assistance = 4; // If true, the part is heavier than what an operator is allowed to lift.
-  bool requires_fixture_support = 5; // If true, this part cannot realistically be handled/assembled without some fixture support
+  bool fragile = 1; // Part can be damaged by drops, shocks, bending, crushing, or rough handling.
+  bool esd_sensitive = 2; // Part requires electrostatic discharge precautions during handling.
+  bool requires_two_hand_lift = 3; // Part is heavy or awkward, but can still be lifted manually by an operator.
+  bool requires_lifting_assistance = 4; // Part is heavier than what an operator is allowed or expected to lift manually.
+  bool requires_fixture_support = 5; // Part cannot realistically be handled or assembled without fixture support.
 
-  // If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
+  double max_grip_force_n = 6; // Maximum gripping/clamping force that may be applied without damaging the part.
+  double max_torque_nm = 7; // Maximum torque that may be applied to the part or its fastening interface.
+
+  repeated common.v1.KeyValueConstraint constraints = 8; // Additional handling constraints not represented by dedicated fields.
+}
+
+// PartProcessProfile captures defaults and hints used when generating processes
+// involving this part.
+message PartProcessProfile {
+  common.v1.EstimatedDuration estimated_human_duration = 1; // Default duration estimate for tasks performed by a human.
+  common.v1.EstimatedDuration estimated_robot_duration = 2; // Default duration estimate for tasks performed by a robot.
+  bool require_full_guidance = 3; // Generated tasks should default to full step-by-step guidance for this part.
+
+  bool inspect_before_assemble = 4; // Generate or recommend inspection before this part is assembled.
+  bool inspect_after_disassemble = 5; // Generate or recommend inspection after this part is disassembled.
+
+  // Consumable part to apply before inserting or assembling this part, e.g. grease or lubricant.
   string pre_lubrication_part_id = 6;
+  // Consumable part to apply after inserting or assembling this part, e.g. sealant or finishing lubricant.
   string post_lubrication_part_id = 7;
-  bool requires_wiping = 8;
+  bool requires_wiping = 8; // Generate or recommend wiping/cleaning tasks for this part.
 
-  bool inspect_before_assemble = 9;
-  bool inspect_after_disassemble = 10;
-
-  double max_grip_force_n = 11;
-  double max_torque_nm = 12;
-  repeated common.v1.KeyValueConstraint constraints = 13;
+  repeated common.v1.KeyValueConstraint constraints = 9; // Additional process-generation constraints not represented by dedicated fields.
 }
 
 message PartDefinition {
@@ -101,9 +118,10 @@ message PartDefinition {
   MaterialSpec material = 9;
   string default_model_id = 10 [(buf.validate.field).string.(validation.v1.model_id_component) = true]; // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
   PartHandlingProfile handling = 11;
-  repeated common.v1.ExternalReference external_references = 12;
-  common.v1.CustomProperties custom = 13;
-  string version = 14;
+  PartProcessProfile process = 12;
+  repeated common.v1.ExternalReference external_references = 13;
+  common.v1.CustomProperties custom = 14;
+  string version = 15;
 }
 
 message PartDefinitions {

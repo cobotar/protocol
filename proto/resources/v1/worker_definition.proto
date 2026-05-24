@@ -39,6 +39,8 @@ message WorkerDefinition {
   WorkerLocation location = 9; // Optional current location / operating area.
 
   common.v1.CustomProperties custom = 10;
+
+  // TODO: add height, arms_length, ?? other physical properties that can be used to adjust robot-behavior, visualizations, ...
 }
 
 message WorkerDefinitions {

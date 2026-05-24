@@ -26,20 +26,23 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// NodeKind defines what kind of structural element the AssemblyNode is in the assembly hierarchy
+// NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+//
+// CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+// GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+// protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+// occurrence template.
 // NodeKind               Represents                    Physical part?   Has children?
-// GROUP                  logical grouping              ❌               yes
-// PART_OCCURRENCE        single physical part instance ✅               usually no
-// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               yes
-// PATTERN                repeated pattern structure    ❌ (structure)   yes
+// GROUP                  logical grouping              ❌               ✅
+// PART_OCCURRENCE        single physical part instance ✅               ❌
+// SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
 type NodeKind int32
 
 const (
-	NodeKind_NODE_KIND_UNSPECIFIED            NodeKind = 0
-	NodeKind_NODE_KIND_GROUP                  NodeKind = 1 // A logical group node that does not correspond to a real physical part or subassembly. It exist only to organize the structure. Typical uses: CAD folders, BOM groupings, organizing fasteners, grouping operations, AR guidance grouping. part_definition_id should usually be empty.
-	NodeKind_NODE_KIND_PART_OCCURRENCE        NodeKind = 2 // The most common node type which is a single instance of a physical part used in the product as it references a PartDefinition. part_definition_id = required, child_node-Ids = empty.
-	NodeKind_NODE_KIND_SUBASSEMBLY_OCCURRENCE NodeKind = 3 // A subassembly occurrence is a part that itself contains other parts. Thus a component that has its own internal structure. A subassembly is a real product structure (e.g. a Door assembly for a car) where group is a logical grouping. It usually appears in the BOM and often references a PartDefinition.
-	NodeKind_NODE_KIND_PATTERN                NodeKind = 4 // A repeated pattern of parts created by CAD pattern features. Examples: bolt circle, linear pattern, hole array, repeated clips, repeated LEDs. Instead of listing every occurrence individually, the CAD may represent them as a pattern. Thus a pattern is a special kind of group?
+	NodeKind_NODE_KIND_UNSPECIFIED            NodeKind = 0 // Valid messages must use a specific kind.
+	NodeKind_NODE_KIND_GROUP                  NodeKind = 1 // Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups.
+	NodeKind_NODE_KIND_PART_OCCURRENCE        NodeKind = 2 // Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id.
+	NodeKind_NODE_KIND_SUBASSEMBLY_OCCURRENCE NodeKind = 3 // Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself.
 )
 
 // Enum value maps for NodeKind.
@@ -49,14 +52,12 @@ var (
 		1: "NODE_KIND_GROUP",
 		2: "NODE_KIND_PART_OCCURRENCE",
 		3: "NODE_KIND_SUBASSEMBLY_OCCURRENCE",
-		4: "NODE_KIND_PATTERN",
 	}
 	NodeKind_value = map[string]int32{
 		"NODE_KIND_UNSPECIFIED":            0,
 		"NODE_KIND_GROUP":                  1,
 		"NODE_KIND_PART_OCCURRENCE":        2,
 		"NODE_KIND_SUBASSEMBLY_OCCURRENCE": 3,
-		"NODE_KIND_PATTERN":                4,
 	}
 )
 
@@ -90,14 +91,14 @@ func (NodeKind) EnumDescriptor() ([]byte, []int) {
 type JoinMethod int32
 
 const (
-	JoinMethod_JOIN_METHOD_UNSPECIFIED JoinMethod = 0
-	JoinMethod_JOIN_METHOD_NONE        JoinMethod = 1
-	JoinMethod_JOIN_METHOD_FASTEN      JoinMethod = 2
-	JoinMethod_JOIN_METHOD_PRESS_FIT   JoinMethod = 3
-	JoinMethod_JOIN_METHOD_SNAP_FIT    JoinMethod = 4
-	JoinMethod_JOIN_METHOD_ADHESIVE    JoinMethod = 5
-	JoinMethod_JOIN_METHOD_WELD        JoinMethod = 6
-	JoinMethod_JOIN_METHOD_PLACE       JoinMethod = 7
+	JoinMethod_JOIN_METHOD_UNSPECIFIED JoinMethod = 0 // No join method hint is available. Generation/planning should infer the operation from other data if possible.
+	JoinMethod_JOIN_METHOD_NONE        JoinMethod = 1 // No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence.
+	JoinMethod_JOIN_METHOD_FASTEN      JoinMethod = 2 // Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware.
+	JoinMethod_JOIN_METHOD_PRESS_FIT   JoinMethod = 3 // Part is joined by interference/friction fit and usually requires controlled insertion force.
+	JoinMethod_JOIN_METHOD_SNAP_FIT    JoinMethod = 4 // Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion.
+	JoinMethod_JOIN_METHOD_ADHESIVE    JoinMethod = 5 // Part is joined using glue, tape, sealant, or another bonding material.
+	JoinMethod_JOIN_METHOD_WELD        JoinMethod = 6 // Part is joined by welding or another permanent thermal/material fusion process.
+	JoinMethod_JOIN_METHOD_PLACE       JoinMethod = 7 // Part is placed at its final pose without an explicit joining operation beyond positioning.
 )
 
 // Enum value maps for JoinMethod.
@@ -313,7 +314,7 @@ var File_product_v1_assembly_node_proto protoreflect.FileDescriptor
 const file_product_v1_assembly_node_proto_rawDesc = "" +
 	"\n" +
 	"\x1eproduct/v1/assembly_node.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\xe0\x05\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\xce\b\n" +
 	"\fAssemblyNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12$\n" +
@@ -331,13 +332,14 @@ const file_product_v1_assembly_node_proto_rawDesc = "" +
 	"\x14approach_offset_hint\x18\r \x01(\v2\x14.geometry.v1.Vector3R\x12approachOffsetHint\x12\x1a\n" +
 	"\boptional\x18\x0e \x01(\bR\boptional\x12>\n" +
 	"\rapplicability\x18\x0f \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x123\n" +
-	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom*\x96\x01\n" +
+	"\x06custom\x18\x10 \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom:\xeb\x02\xbaH\xe7\x02\x1a\x91\x01\n" +
+	"1assembly_node.group_must_not_have_part_definition\x12+GROUP nodes must not set part_definition_id\x1a/this.kind != 1 || this.part_definition_id == ''\x1a\xd0\x01\n" +
+	":assembly_node.physical_occurrence_requires_part_definition\x12LPART_OCCURRENCE and SUBASSEMBLY_OCCURRENCE nodes must set part_definition_id\x1aD!(this.kind == 2 || this.kind == 3) || this.part_definition_id != ''*\x7f\n" +
 	"\bNodeKind\x12\x19\n" +
 	"\x15NODE_KIND_UNSPECIFIED\x10\x00\x12\x13\n" +
 	"\x0fNODE_KIND_GROUP\x10\x01\x12\x1d\n" +
 	"\x19NODE_KIND_PART_OCCURRENCE\x10\x02\x12$\n" +
-	" NODE_KIND_SUBASSEMBLY_OCCURRENCE\x10\x03\x12\x15\n" +
-	"\x11NODE_KIND_PATTERN\x10\x04*\xd3\x01\n" +
+	" NODE_KIND_SUBASSEMBLY_OCCURRENCE\x10\x03*\xd3\x01\n" +
 	"\n" +
 	"JoinMethod\x12\x1b\n" +
 	"\x17JOIN_METHOD_UNSPECIFIED\x10\x00\x12\x14\n" +

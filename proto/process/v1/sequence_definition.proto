@@ -164,6 +164,8 @@ message SequenceDefinition {
 
   // Indicates whether all child tasks in this sequence can be completed in bulk.
   bool can_bulk_complete = 12;
+
+  // TODO: add applicability to sequence to turn it on/off?
 }
 
 message SequenceDefinitions {

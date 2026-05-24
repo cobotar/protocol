@@ -30,7 +30,6 @@ const (
 	PartType_PART_TYPE_UNSPECIFIED          PartType = 0
 	PartType_PART_TYPE_COMPONENT            PartType = 1  // General mechanical or non-specialized part/component
 	PartType_PART_TYPE_FASTENER             PartType = 2  // Screw, bolt, nut, washer, rivet, insert, clip, etc.
-	PartType_PART_TYPE_SUBASSEMBLY          PartType = 3  // A part that is itself composed of multiple child parts
 	PartType_PART_TYPE_CONSUMABLE           PartType = 4  // General consumable used up during assembly or maintenance
 	PartType_PART_TYPE_LABEL                PartType = 5  // Sticker, rating plate, barcode label, warning label, etc.
 	PartType_PART_TYPE_PACKAGING            PartType = 6  // Box, bag, foam insert, tray cover, spacer, etc.
@@ -39,6 +38,8 @@ const (
 	PartType_PART_TYPE_ELECTRICAL_COMPONENT PartType = 9  // Breaker, terminal block, battery, switch, power supply, wire harness, etc.
 	PartType_PART_TYPE_CABLE                PartType = 10 // Wire, cable, wire set, cable assembly, harness
 	PartType_PART_TYPE_DISPENSED_MATERIAL   PartType = 11 // Grease, glue, sealant, potting compound, solder paste, flux, etc.
+	PartType_PART_TYPE_FINAL_PRODUCT        PartType = 20 // A part that is itself composed of multiple child parts, which together form a product
+	PartType_PART_TYPE_SUBASSEMBLY          PartType = 21 // A part that is itself composed of multiple child parts,
 )
 
 // Enum value maps for PartType.
@@ -47,7 +48,6 @@ var (
 		0:  "PART_TYPE_UNSPECIFIED",
 		1:  "PART_TYPE_COMPONENT",
 		2:  "PART_TYPE_FASTENER",
-		3:  "PART_TYPE_SUBASSEMBLY",
 		4:  "PART_TYPE_CONSUMABLE",
 		5:  "PART_TYPE_LABEL",
 		6:  "PART_TYPE_PACKAGING",
@@ -56,12 +56,13 @@ var (
 		9:  "PART_TYPE_ELECTRICAL_COMPONENT",
 		10: "PART_TYPE_CABLE",
 		11: "PART_TYPE_DISPENSED_MATERIAL",
+		20: "PART_TYPE_FINAL_PRODUCT",
+		21: "PART_TYPE_SUBASSEMBLY",
 	}
 	PartType_value = map[string]int32{
 		"PART_TYPE_UNSPECIFIED":          0,
 		"PART_TYPE_COMPONENT":            1,
 		"PART_TYPE_FASTENER":             2,
-		"PART_TYPE_SUBASSEMBLY":          3,
 		"PART_TYPE_CONSUMABLE":           4,
 		"PART_TYPE_LABEL":                5,
 		"PART_TYPE_PACKAGING":            6,
@@ -70,6 +71,8 @@ var (
 		"PART_TYPE_ELECTRICAL_COMPONENT": 9,
 		"PART_TYPE_CABLE":                10,
 		"PART_TYPE_DISPENSED_MATERIAL":   11,
+		"PART_TYPE_FINAL_PRODUCT":        20,
+		"PART_TYPE_SUBASSEMBLY":          21,
 	}
 )
 
@@ -307,24 +310,20 @@ func (x *MaterialSpec) GetGrade() string {
 	return ""
 }
 
+// PartHandlingProfile captures physical handling constraints that follow the
+// part regardless of the process it appears in.
 type PartHandlingProfile struct {
-	state                     protoimpl.MessageState `protogen:"open.v1"`
-	Fragile                   bool                   `protobuf:"varint,1,opt,name=fragile,proto3" json:"fragile,omitempty"`
-	EsdSensitive              bool                   `protobuf:"varint,2,opt,name=esd_sensitive,json=esdSensitive,proto3" json:"esd_sensitive,omitempty"`
-	RequiresTwoHandLift       bool                   `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`                 // If true, the part is heavy, but possible to lift
-	RequiresLiftingAssistance bool                   `protobuf:"varint,4,opt,name=requires_lifting_assistance,json=requiresLiftingAssistance,proto3" json:"requires_lifting_assistance,omitempty"` // If true, the part is heavier than what an operator is allowed to lift.
-	RequiresFixtureSupport    bool                   `protobuf:"varint,5,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"`          // If true, this part cannot realistically be handled/assembled without some fixture support
-	// If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
-	PreLubricationPartId    string                   `protobuf:"bytes,6,opt,name=pre_lubrication_part_id,json=preLubricationPartId,proto3" json:"pre_lubrication_part_id,omitempty"`
-	PostLubricationPartId   string                   `protobuf:"bytes,7,opt,name=post_lubrication_part_id,json=postLubricationPartId,proto3" json:"post_lubrication_part_id,omitempty"`
-	RequiresWiping          bool                     `protobuf:"varint,8,opt,name=requires_wiping,json=requiresWiping,proto3" json:"requires_wiping,omitempty"`
-	InspectBeforeAssemble   bool                     `protobuf:"varint,9,opt,name=inspect_before_assemble,json=inspectBeforeAssemble,proto3" json:"inspect_before_assemble,omitempty"`
-	InspectAfterDisassemble bool                     `protobuf:"varint,10,opt,name=inspect_after_disassemble,json=inspectAfterDisassemble,proto3" json:"inspect_after_disassemble,omitempty"`
-	MaxGripForceN           float64                  `protobuf:"fixed64,11,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`
-	MaxTorqueNm             float64                  `protobuf:"fixed64,12,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`
-	Constraints             []*v1.KeyValueConstraint `protobuf:"bytes,13,rep,name=constraints,proto3" json:"constraints,omitempty"`
-	unknownFields           protoimpl.UnknownFields
-	sizeCache               protoimpl.SizeCache
+	state                     protoimpl.MessageState   `protogen:"open.v1"`
+	Fragile                   bool                     `protobuf:"varint,1,opt,name=fragile,proto3" json:"fragile,omitempty"`                                                                        // Part can be damaged by drops, shocks, bending, crushing, or rough handling.
+	EsdSensitive              bool                     `protobuf:"varint,2,opt,name=esd_sensitive,json=esdSensitive,proto3" json:"esd_sensitive,omitempty"`                                          // Part requires electrostatic discharge precautions during handling.
+	RequiresTwoHandLift       bool                     `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`                 // Part is heavy or awkward, but can still be lifted manually by an operator.
+	RequiresLiftingAssistance bool                     `protobuf:"varint,4,opt,name=requires_lifting_assistance,json=requiresLiftingAssistance,proto3" json:"requires_lifting_assistance,omitempty"` // Part is heavier than what an operator is allowed or expected to lift manually.
+	RequiresFixtureSupport    bool                     `protobuf:"varint,5,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"`          // Part cannot realistically be handled or assembled without fixture support.
+	MaxGripForceN             float64                  `protobuf:"fixed64,6,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`                                  // Maximum gripping/clamping force that may be applied without damaging the part.
+	MaxTorqueNm               float64                  `protobuf:"fixed64,7,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`                                          // Maximum torque that may be applied to the part or its fastening interface.
+	Constraints               []*v1.KeyValueConstraint `protobuf:"bytes,8,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                 // Additional handling constraints not represented by dedicated fields.
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
 }
 
 func (x *PartHandlingProfile) Reset() {
@@ -392,41 +391,6 @@ func (x *PartHandlingProfile) GetRequiresFixtureSupport() bool {
 	return false
 }
 
-func (x *PartHandlingProfile) GetPreLubricationPartId() string {
-	if x != nil {
-		return x.PreLubricationPartId
-	}
-	return ""
-}
-
-func (x *PartHandlingProfile) GetPostLubricationPartId() string {
-	if x != nil {
-		return x.PostLubricationPartId
-	}
-	return ""
-}
-
-func (x *PartHandlingProfile) GetRequiresWiping() bool {
-	if x != nil {
-		return x.RequiresWiping
-	}
-	return false
-}
-
-func (x *PartHandlingProfile) GetInspectBeforeAssemble() bool {
-	if x != nil {
-		return x.InspectBeforeAssemble
-	}
-	return false
-}
-
-func (x *PartHandlingProfile) GetInspectAfterDisassemble() bool {
-	if x != nil {
-		return x.InspectAfterDisassemble
-	}
-	return false
-}
-
 func (x *PartHandlingProfile) GetMaxGripForceN() float64 {
 	if x != nil {
 		return x.MaxGripForceN
@@ -448,6 +412,118 @@ func (x *PartHandlingProfile) GetConstraints() []*v1.KeyValueConstraint {
 	return nil
 }
 
+// PartProcessProfile captures defaults and hints used when generating processes
+// involving this part.
+type PartProcessProfile struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	EstimatedHumanDuration  *v1.EstimatedDuration  `protobuf:"bytes,1,opt,name=estimated_human_duration,json=estimatedHumanDuration,proto3" json:"estimated_human_duration,omitempty"`     // Default duration estimate for tasks performed by a human.
+	EstimatedRobotDuration  *v1.EstimatedDuration  `protobuf:"bytes,2,opt,name=estimated_robot_duration,json=estimatedRobotDuration,proto3" json:"estimated_robot_duration,omitempty"`     // Default duration estimate for tasks performed by a robot.
+	RequireFullGuidance     bool                   `protobuf:"varint,3,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`             // Generated tasks should default to full step-by-step guidance for this part.
+	InspectBeforeAssemble   bool                   `protobuf:"varint,4,opt,name=inspect_before_assemble,json=inspectBeforeAssemble,proto3" json:"inspect_before_assemble,omitempty"`       // Generate or recommend inspection before this part is assembled.
+	InspectAfterDisassemble bool                   `protobuf:"varint,5,opt,name=inspect_after_disassemble,json=inspectAfterDisassemble,proto3" json:"inspect_after_disassemble,omitempty"` // Generate or recommend inspection after this part is disassembled.
+	// Consumable part to apply before inserting or assembling this part, e.g. grease or lubricant.
+	PreLubricationPartId string `protobuf:"bytes,6,opt,name=pre_lubrication_part_id,json=preLubricationPartId,proto3" json:"pre_lubrication_part_id,omitempty"`
+	// Consumable part to apply after inserting or assembling this part, e.g. sealant or finishing lubricant.
+	PostLubricationPartId string                   `protobuf:"bytes,7,opt,name=post_lubrication_part_id,json=postLubricationPartId,proto3" json:"post_lubrication_part_id,omitempty"`
+	RequiresWiping        bool                     `protobuf:"varint,8,opt,name=requires_wiping,json=requiresWiping,proto3" json:"requires_wiping,omitempty"` // Generate or recommend wiping/cleaning tasks for this part.
+	Constraints           []*v1.KeyValueConstraint `protobuf:"bytes,9,rep,name=constraints,proto3" json:"constraints,omitempty"`                              // Additional process-generation constraints not represented by dedicated fields.
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *PartProcessProfile) Reset() {
+	*x = PartProcessProfile{}
+	mi := &file_product_v1_part_definition_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PartProcessProfile) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PartProcessProfile) ProtoMessage() {}
+
+func (x *PartProcessProfile) ProtoReflect() protoreflect.Message {
+	mi := &file_product_v1_part_definition_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PartProcessProfile.ProtoReflect.Descriptor instead.
+func (*PartProcessProfile) Descriptor() ([]byte, []int) {
+	return file_product_v1_part_definition_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PartProcessProfile) GetEstimatedHumanDuration() *v1.EstimatedDuration {
+	if x != nil {
+		return x.EstimatedHumanDuration
+	}
+	return nil
+}
+
+func (x *PartProcessProfile) GetEstimatedRobotDuration() *v1.EstimatedDuration {
+	if x != nil {
+		return x.EstimatedRobotDuration
+	}
+	return nil
+}
+
+func (x *PartProcessProfile) GetRequireFullGuidance() bool {
+	if x != nil {
+		return x.RequireFullGuidance
+	}
+	return false
+}
+
+func (x *PartProcessProfile) GetInspectBeforeAssemble() bool {
+	if x != nil {
+		return x.InspectBeforeAssemble
+	}
+	return false
+}
+
+func (x *PartProcessProfile) GetInspectAfterDisassemble() bool {
+	if x != nil {
+		return x.InspectAfterDisassemble
+	}
+	return false
+}
+
+func (x *PartProcessProfile) GetPreLubricationPartId() string {
+	if x != nil {
+		return x.PreLubricationPartId
+	}
+	return ""
+}
+
+func (x *PartProcessProfile) GetPostLubricationPartId() string {
+	if x != nil {
+		return x.PostLubricationPartId
+	}
+	return ""
+}
+
+func (x *PartProcessProfile) GetRequiresWiping() bool {
+	if x != nil {
+		return x.RequiresWiping
+	}
+	return false
+}
+
+func (x *PartProcessProfile) GetConstraints() []*v1.KeyValueConstraint {
+	if x != nil {
+		return x.Constraints
+	}
+	return nil
+}
+
 type PartDefinition struct {
 	state              protoimpl.MessageState  `protogen:"open.v1"`
 	Id                 string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -461,16 +537,17 @@ type PartDefinition struct {
 	Material           *MaterialSpec           `protobuf:"bytes,9,opt,name=material,proto3" json:"material,omitempty"`
 	DefaultModelId     string                  `protobuf:"bytes,10,opt,name=default_model_id,json=defaultModelId,proto3" json:"default_model_id,omitempty"` // Can later be extended to: CAD model (STEP), AR model (FBX), and lightweight mesh (OBJ)
 	Handling           *PartHandlingProfile    `protobuf:"bytes,11,opt,name=handling,proto3" json:"handling,omitempty"`
-	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *v1.CustomProperties    `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
-	Version            string                  `protobuf:"bytes,14,opt,name=version,proto3" json:"version,omitempty"`
+	Process            *PartProcessProfile     `protobuf:"bytes,12,opt,name=process,proto3" json:"process,omitempty"`
+	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,13,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Custom             *v1.CustomProperties    `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
+	Version            string                  `protobuf:"bytes,15,opt,name=version,proto3" json:"version,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *PartDefinition) Reset() {
 	*x = PartDefinition{}
-	mi := &file_product_v1_part_definition_proto_msgTypes[3]
+	mi := &file_product_v1_part_definition_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -482,7 +559,7 @@ func (x *PartDefinition) String() string {
 func (*PartDefinition) ProtoMessage() {}
 
 func (x *PartDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_product_v1_part_definition_proto_msgTypes[3]
+	mi := &file_product_v1_part_definition_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -495,7 +572,7 @@ func (x *PartDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PartDefinition.ProtoReflect.Descriptor instead.
 func (*PartDefinition) Descriptor() ([]byte, []int) {
-	return file_product_v1_part_definition_proto_rawDescGZIP(), []int{3}
+	return file_product_v1_part_definition_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *PartDefinition) GetId() string {
@@ -575,6 +652,13 @@ func (x *PartDefinition) GetHandling() *PartHandlingProfile {
 	return nil
 }
 
+func (x *PartDefinition) GetProcess() *PartProcessProfile {
+	if x != nil {
+		return x.Process
+	}
+	return nil
+}
+
 func (x *PartDefinition) GetExternalReferences() []*v1.ExternalReference {
 	if x != nil {
 		return x.ExternalReferences
@@ -605,7 +689,7 @@ type PartDefinitions struct {
 
 func (x *PartDefinitions) Reset() {
 	*x = PartDefinitions{}
-	mi := &file_product_v1_part_definition_proto_msgTypes[4]
+	mi := &file_product_v1_part_definition_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -617,7 +701,7 @@ func (x *PartDefinitions) String() string {
 func (*PartDefinitions) ProtoMessage() {}
 
 func (x *PartDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_product_v1_part_definition_proto_msgTypes[4]
+	mi := &file_product_v1_part_definition_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +714,7 @@ func (x *PartDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PartDefinitions.ProtoReflect.Descriptor instead.
 func (*PartDefinitions) Descriptor() ([]byte, []int) {
-	return file_product_v1_part_definition_proto_rawDescGZIP(), []int{4}
+	return file_product_v1_part_definition_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PartDefinitions) GetItems() []*PartDefinition {
@@ -645,7 +729,7 @@ var File_product_v1_part_definition_proto protoreflect.FileDescriptor
 const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\n" +
 	" product/v1/part_definition.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"u\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a+validation/v1/predefined_string_rules.proto\"u\n" +
 	"\n" +
 	"Dimensions\x12!\n" +
 	"\x04x_mm\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x03xMm\x12!\n" +
@@ -654,22 +738,26 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\fMaterialSpec\x128\n" +
 	"\bcategory\x18\x01 \x01(\x0e2\x1c.product.v1.MaterialCategoryR\bcategory\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05grade\x18\x03 \x01(\tR\x05grade\"\x9e\x05\n" +
+	"\x05grade\x18\x03 \x01(\tR\x05grade\"\x91\x03\n" +
 	"\x13PartHandlingProfile\x12\x18\n" +
 	"\afragile\x18\x01 \x01(\bR\afragile\x12#\n" +
 	"\resd_sensitive\x18\x02 \x01(\bR\fesdSensitive\x123\n" +
 	"\x16requires_two_hand_lift\x18\x03 \x01(\bR\x13requiresTwoHandLift\x12>\n" +
 	"\x1brequires_lifting_assistance\x18\x04 \x01(\bR\x19requiresLiftingAssistance\x128\n" +
-	"\x18requires_fixture_support\x18\x05 \x01(\bR\x16requiresFixtureSupport\x125\n" +
+	"\x18requires_fixture_support\x18\x05 \x01(\bR\x16requiresFixtureSupport\x12'\n" +
+	"\x10max_grip_force_n\x18\x06 \x01(\x01R\rmaxGripForceN\x12\"\n" +
+	"\rmax_torque_nm\x18\a \x01(\x01R\vmaxTorqueNm\x12?\n" +
+	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc6\x04\n" +
+	"\x12PartProcessProfile\x12V\n" +
+	"\x18estimated_human_duration\x18\x01 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
+	"\x18estimated_robot_duration\x18\x02 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +
+	"\x15require_full_guidance\x18\x03 \x01(\bR\x13requireFullGuidance\x126\n" +
+	"\x17inspect_before_assemble\x18\x04 \x01(\bR\x15inspectBeforeAssemble\x12:\n" +
+	"\x19inspect_after_disassemble\x18\x05 \x01(\bR\x17inspectAfterDisassemble\x125\n" +
 	"\x17pre_lubrication_part_id\x18\x06 \x01(\tR\x14preLubricationPartId\x127\n" +
 	"\x18post_lubrication_part_id\x18\a \x01(\tR\x15postLubricationPartId\x12'\n" +
-	"\x0frequires_wiping\x18\b \x01(\bR\x0erequiresWiping\x126\n" +
-	"\x17inspect_before_assemble\x18\t \x01(\bR\x15inspectBeforeAssemble\x12:\n" +
-	"\x19inspect_after_disassemble\x18\n" +
-	" \x01(\bR\x17inspectAfterDisassemble\x12'\n" +
-	"\x10max_grip_force_n\x18\v \x01(\x01R\rmaxGripForceN\x12\"\n" +
-	"\rmax_torque_nm\x18\f \x01(\x01R\vmaxTorqueNm\x12?\n" +
-	"\vconstraints\x18\r \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xe5\x04\n" +
+	"\x0frequires_wiping\x18\b \x01(\bR\x0erequiresWiping\x12?\n" +
+	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x9f\x05\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -684,17 +772,17 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\bmaterial\x18\t \x01(\v2\x18.product.v1.MaterialSpecR\bmaterial\x123\n" +
 	"\x10default_model_id\x18\n" +
 	" \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0edefaultModelId\x12;\n" +
-	"\bhandling\x18\v \x01(\v2\x1f.product.v1.PartHandlingProfileR\bhandling\x12M\n" +
-	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\x12\x18\n" +
-	"\aversion\x18\x0e \x01(\tR\aversion\"C\n" +
+	"\bhandling\x18\v \x01(\v2\x1f.product.v1.PartHandlingProfileR\bhandling\x128\n" +
+	"\aprocess\x18\f \x01(\v2\x1e.product.v1.PartProcessProfileR\aprocess\x12M\n" +
+	"\x13external_references\x18\r \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
+	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\x12\x18\n" +
+	"\aversion\x18\x0f \x01(\tR\aversion\"C\n" +
 	"\x0fPartDefinitions\x120\n" +
-	"\x05items\x18\x01 \x03(\v2\x1a.product.v1.PartDefinitionR\x05items*\xcb\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.product.v1.PartDefinitionR\x05items*\xe8\x02\n" +
 	"\bPartType\x12\x19\n" +
 	"\x15PART_TYPE_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13PART_TYPE_COMPONENT\x10\x01\x12\x16\n" +
-	"\x12PART_TYPE_FASTENER\x10\x02\x12\x19\n" +
-	"\x15PART_TYPE_SUBASSEMBLY\x10\x03\x12\x18\n" +
+	"\x12PART_TYPE_FASTENER\x10\x02\x12\x18\n" +
 	"\x14PART_TYPE_CONSUMABLE\x10\x04\x12\x13\n" +
 	"\x0fPART_TYPE_LABEL\x10\x05\x12\x17\n" +
 	"\x13PART_TYPE_PACKAGING\x10\x06\x12\x11\n" +
@@ -703,7 +791,9 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\x1ePART_TYPE_ELECTRICAL_COMPONENT\x10\t\x12\x13\n" +
 	"\x0fPART_TYPE_CABLE\x10\n" +
 	"\x12 \n" +
-	"\x1cPART_TYPE_DISPENSED_MATERIAL\x10\v*\x91\x03\n" +
+	"\x1cPART_TYPE_DISPENSED_MATERIAL\x10\v\x12\x1b\n" +
+	"\x17PART_TYPE_FINAL_PRODUCT\x10\x14\x12\x19\n" +
+	"\x15PART_TYPE_SUBASSEMBLY\x10\x15*\x91\x03\n" +
 	"\x10MaterialCategory\x12!\n" +
 	"\x1dMATERIAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17MATERIAL_CATEGORY_METAL\x10\x01\x12\x1d\n" +
@@ -734,34 +824,40 @@ func file_product_v1_part_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_product_v1_part_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_product_v1_part_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_product_v1_part_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_product_v1_part_definition_proto_goTypes = []any{
 	(PartType)(0),                 // 0: product.v1.PartType
 	(MaterialCategory)(0),         // 1: product.v1.MaterialCategory
 	(*Dimensions)(nil),            // 2: product.v1.Dimensions
 	(*MaterialSpec)(nil),          // 3: product.v1.MaterialSpec
 	(*PartHandlingProfile)(nil),   // 4: product.v1.PartHandlingProfile
-	(*PartDefinition)(nil),        // 5: product.v1.PartDefinition
-	(*PartDefinitions)(nil),       // 6: product.v1.PartDefinitions
-	(*v1.KeyValueConstraint)(nil), // 7: common.v1.KeyValueConstraint
-	(*v1.ExternalReference)(nil),  // 8: common.v1.ExternalReference
-	(*v1.CustomProperties)(nil),   // 9: common.v1.CustomProperties
+	(*PartProcessProfile)(nil),    // 5: product.v1.PartProcessProfile
+	(*PartDefinition)(nil),        // 6: product.v1.PartDefinition
+	(*PartDefinitions)(nil),       // 7: product.v1.PartDefinitions
+	(*v1.KeyValueConstraint)(nil), // 8: common.v1.KeyValueConstraint
+	(*v1.EstimatedDuration)(nil),  // 9: common.v1.EstimatedDuration
+	(*v1.ExternalReference)(nil),  // 10: common.v1.ExternalReference
+	(*v1.CustomProperties)(nil),   // 11: common.v1.CustomProperties
 }
 var file_product_v1_part_definition_proto_depIdxs = []int32{
-	1, // 0: product.v1.MaterialSpec.category:type_name -> product.v1.MaterialCategory
-	7, // 1: product.v1.PartHandlingProfile.constraints:type_name -> common.v1.KeyValueConstraint
-	0, // 2: product.v1.PartDefinition.type:type_name -> product.v1.PartType
-	2, // 3: product.v1.PartDefinition.dimensions:type_name -> product.v1.Dimensions
-	3, // 4: product.v1.PartDefinition.material:type_name -> product.v1.MaterialSpec
-	4, // 5: product.v1.PartDefinition.handling:type_name -> product.v1.PartHandlingProfile
-	8, // 6: product.v1.PartDefinition.external_references:type_name -> common.v1.ExternalReference
-	9, // 7: product.v1.PartDefinition.custom:type_name -> common.v1.CustomProperties
-	5, // 8: product.v1.PartDefinitions.items:type_name -> product.v1.PartDefinition
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	1,  // 0: product.v1.MaterialSpec.category:type_name -> product.v1.MaterialCategory
+	8,  // 1: product.v1.PartHandlingProfile.constraints:type_name -> common.v1.KeyValueConstraint
+	9,  // 2: product.v1.PartProcessProfile.estimated_human_duration:type_name -> common.v1.EstimatedDuration
+	9,  // 3: product.v1.PartProcessProfile.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
+	8,  // 4: product.v1.PartProcessProfile.constraints:type_name -> common.v1.KeyValueConstraint
+	0,  // 5: product.v1.PartDefinition.type:type_name -> product.v1.PartType
+	2,  // 6: product.v1.PartDefinition.dimensions:type_name -> product.v1.Dimensions
+	3,  // 7: product.v1.PartDefinition.material:type_name -> product.v1.MaterialSpec
+	4,  // 8: product.v1.PartDefinition.handling:type_name -> product.v1.PartHandlingProfile
+	5,  // 9: product.v1.PartDefinition.process:type_name -> product.v1.PartProcessProfile
+	10, // 10: product.v1.PartDefinition.external_references:type_name -> common.v1.ExternalReference
+	11, // 11: product.v1.PartDefinition.custom:type_name -> common.v1.CustomProperties
+	6,  // 12: product.v1.PartDefinitions.items:type_name -> product.v1.PartDefinition
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_part_definition_proto_init() }
@@ -775,7 +871,7 @@ func file_product_v1_part_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_product_v1_part_definition_proto_rawDesc), len(file_product_v1_part_definition_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

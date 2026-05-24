@@ -28,71 +28,81 @@ namespace Messages.Product.V1 {
             "MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEvY3Vz",
             "dG9tX3Byb3BlcnRpZXMucHJvdG8aI2NvbW1vbi92MS9leHRlcm5hbF9yZWZl",
             "cmVuY2VzLnByb3RvGiRjb21tb24vdjEva2V5X3ZhbHVlX2NvbnN0cmFpbnQu",
-            "cHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMu",
-            "cHJvdG8idQoKRGltZW5zaW9ucxIhCgR4X21tGAEgASgBQg66SAsSCSkAAAAA",
-            "AAAAAFIDeE1tEiEKBHlfbW0YAiABKAFCDrpICxIJKQAAAAAAAAAAUgN5TW0S",
-            "IQoEel9tbRgDIAEoAUIOukgLEgkpAAAAAAAAAABSA3pNbSJyCgxNYXRlcmlh",
-            "bFNwZWMSOAoIY2F0ZWdvcnkYASABKA4yHC5wcm9kdWN0LnYxLk1hdGVyaWFs",
-            "Q2F0ZWdvcnlSCGNhdGVnb3J5EhIKBG5hbWUYAiABKAlSBG5hbWUSFAoFZ3Jh",
-            "ZGUYAyABKAlSBWdyYWRlIp4FChNQYXJ0SGFuZGxpbmdQcm9maWxlEhgKB2Zy",
-            "YWdpbGUYASABKAhSB2ZyYWdpbGUSIwoNZXNkX3NlbnNpdGl2ZRgCIAEoCFIM",
-            "ZXNkU2Vuc2l0aXZlEjMKFnJlcXVpcmVzX3R3b19oYW5kX2xpZnQYAyABKAhS",
-            "E3JlcXVpcmVzVHdvSGFuZExpZnQSPgobcmVxdWlyZXNfbGlmdGluZ19hc3Np",
-            "c3RhbmNlGAQgASgIUhlyZXF1aXJlc0xpZnRpbmdBc3Npc3RhbmNlEjgKGHJl",
-            "cXVpcmVzX2ZpeHR1cmVfc3VwcG9ydBgFIAEoCFIWcmVxdWlyZXNGaXh0dXJl",
-            "U3VwcG9ydBI1ChdwcmVfbHVicmljYXRpb25fcGFydF9pZBgGIAEoCVIUcHJl",
-            "THVicmljYXRpb25QYXJ0SWQSNwoYcG9zdF9sdWJyaWNhdGlvbl9wYXJ0X2lk",
-            "GAcgASgJUhVwb3N0THVicmljYXRpb25QYXJ0SWQSJwoPcmVxdWlyZXNfd2lw",
-            "aW5nGAggASgIUg5yZXF1aXJlc1dpcGluZxI2ChdpbnNwZWN0X2JlZm9yZV9h",
-            "c3NlbWJsZRgJIAEoCFIVaW5zcGVjdEJlZm9yZUFzc2VtYmxlEjoKGWluc3Bl",
-            "Y3RfYWZ0ZXJfZGlzYXNzZW1ibGUYCiABKAhSF2luc3BlY3RBZnRlckRpc2Fz",
-            "c2VtYmxlEicKEG1heF9ncmlwX2ZvcmNlX24YCyABKAFSDW1heEdyaXBGb3Jj",
-            "ZU4SIgoNbWF4X3RvcnF1ZV9ubRgMIAEoAVILbWF4VG9ycXVlTm0SPwoLY29u",
-            "c3RyYWludHMYDSADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50",
-            "Ugtjb25zdHJhaW50cyLlBAoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlS",
-            "AmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMg",
-            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIy",
-            "CgR0eXBlGAUgASgOMhQucHJvZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFS",
-            "BHR5cGUSGAoHc3VidHlwZRgGIAEoCVIHc3VidHlwZRIiCgh3ZWlnaHRfZxgH",
-            "IAEoA0IHukgEIgIoAFIHd2VpZ2h0RxI2CgpkaW1lbnNpb25zGAggASgLMhYu",
-            "cHJvZHVjdC52MS5EaW1lbnNpb25zUgpkaW1lbnNpb25zEjQKCG1hdGVyaWFs",
-            "GAkgASgLMhgucHJvZHVjdC52MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEjMK",
-            "EGRlZmF1bHRfbW9kZWxfaWQYCiABKAlCCbpIBnIEiPEEAVIOZGVmYXVsdE1v",
-            "ZGVsSWQSOwoIaGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5k",
-            "bGluZ1Byb2ZpbGVSCGhhbmRsaW5nEk0KE2V4dGVybmFsX3JlZmVyZW5jZXMY",
-            "DCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFs",
-            "UmVmZXJlbmNlcxIzCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9t",
-            "UHJvcGVydGllc1IGY3VzdG9tEhgKB3ZlcnNpb24YDiABKAlSB3ZlcnNpb24i",
-            "QwoPUGFydERlZmluaXRpb25zEjAKBWl0ZW1zGAEgAygLMhoucHJvZHVjdC52",
-            "MS5QYXJ0RGVmaW5pdGlvblIFaXRlbXMqywIKCFBhcnRUeXBlEhkKFVBBUlRf",
-            "VFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIW",
-            "ChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1C",
-            "TFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9M",
-            "QUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1QQVJUX1RZUEVf",
-            "UENCEAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9ORU5UEAgSIgoe",
-            "UEFSVF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoPUEFSVF9UWVBF",
-            "X0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRFUklBTBALKpED",
-            "ChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BF",
-            "Q0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRF",
-            "UklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllf",
-            "RUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQS",
-            "HQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NB",
-            "VEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoK",
-            "Fk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09S",
-            "WV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09S",
-            "WV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEK",
-            "DmNvbS5wcm9kdWN0LnYxQhNQYXJ0RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1",
-            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3By",
-            "b2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0",
-            "XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZw",
-            "cm90bzM="));
+            "cHJvdG8aFGNvbW1vbi92MS90aW1lLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
+            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvInUKCkRpbWVuc2lvbnMSIQoE",
+            "eF9tbRgBIAEoAUIOukgLEgkpAAAAAAAAAABSA3hNbRIhCgR5X21tGAIgASgB",
+            "Qg66SAsSCSkAAAAAAAAAAFIDeU1tEiEKBHpfbW0YAyABKAFCDrpICxIJKQAA",
+            "AAAAAAAAUgN6TW0icgoMTWF0ZXJpYWxTcGVjEjgKCGNhdGVnb3J5GAEgASgO",
+            "MhwucHJvZHVjdC52MS5NYXRlcmlhbENhdGVnb3J5UghjYXRlZ29yeRISCgRu",
+            "YW1lGAIgASgJUgRuYW1lEhQKBWdyYWRlGAMgASgJUgVncmFkZSKRAwoTUGFy",
+            "dEhhbmRsaW5nUHJvZmlsZRIYCgdmcmFnaWxlGAEgASgIUgdmcmFnaWxlEiMK",
+            "DWVzZF9zZW5zaXRpdmUYAiABKAhSDGVzZFNlbnNpdGl2ZRIzChZyZXF1aXJl",
+            "c190d29faGFuZF9saWZ0GAMgASgIUhNyZXF1aXJlc1R3b0hhbmRMaWZ0Ej4K",
+            "G3JlcXVpcmVzX2xpZnRpbmdfYXNzaXN0YW5jZRgEIAEoCFIZcmVxdWlyZXNM",
+            "aWZ0aW5nQXNzaXN0YW5jZRI4ChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQY",
+            "BSABKAhSFnJlcXVpcmVzRml4dHVyZVN1cHBvcnQSJwoQbWF4X2dyaXBfZm9y",
+            "Y2VfbhgGIAEoAVINbWF4R3JpcEZvcmNlThIiCg1tYXhfdG9ycXVlX25tGAcg",
+            "ASgBUgttYXhUb3JxdWVObRI/Cgtjb25zdHJhaW50cxgIIAMoCzIdLmNvbW1v",
+            "bi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIsYEChJQYXJ0",
+            "UHJvY2Vzc1Byb2ZpbGUSVgoYZXN0aW1hdGVkX2h1bWFuX2R1cmF0aW9uGAEg",
+            "ASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhZlc3RpbWF0ZWRI",
+            "dW1hbkR1cmF0aW9uElYKGGVzdGltYXRlZF9yb2JvdF9kdXJhdGlvbhgCIAEo",
+            "CzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIWZXN0aW1hdGVkUm9i",
+            "b3REdXJhdGlvbhIyChVyZXF1aXJlX2Z1bGxfZ3VpZGFuY2UYAyABKAhSE3Jl",
+            "cXVpcmVGdWxsR3VpZGFuY2USNgoXaW5zcGVjdF9iZWZvcmVfYXNzZW1ibGUY",
+            "BCABKAhSFWluc3BlY3RCZWZvcmVBc3NlbWJsZRI6ChlpbnNwZWN0X2FmdGVy",
+            "X2Rpc2Fzc2VtYmxlGAUgASgIUhdpbnNwZWN0QWZ0ZXJEaXNhc3NlbWJsZRI1",
+            "ChdwcmVfbHVicmljYXRpb25fcGFydF9pZBgGIAEoCVIUcHJlTHVicmljYXRp",
+            "b25QYXJ0SWQSNwoYcG9zdF9sdWJyaWNhdGlvbl9wYXJ0X2lkGAcgASgJUhVw",
+            "b3N0THVicmljYXRpb25QYXJ0SWQSJwoPcmVxdWlyZXNfd2lwaW5nGAggASgI",
+            "Ug5yZXF1aXJlc1dpcGluZxI/Cgtjb25zdHJhaW50cxgJIAMoCzIdLmNvbW1v",
+            "bi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIp8FCg5QYXJ0",
+            "RGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgG",
+            "cgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
+            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEjIKBHR5cGUYBSABKA4yFC5wcm9kdWN0",
+            "LnYxLlBhcnRUeXBlQgi6SAWCAQIQAVIEdHlwZRIYCgdzdWJ0eXBlGAYgASgJ",
+            "UgdzdWJ0eXBlEiIKCHdlaWdodF9nGAcgASgDQge6SAQiAigAUgd3ZWlnaHRH",
+            "EjYKCmRpbWVuc2lvbnMYCCABKAsyFi5wcm9kdWN0LnYxLkRpbWVuc2lvbnNS",
+            "CmRpbWVuc2lvbnMSNAoIbWF0ZXJpYWwYCSABKAsyGC5wcm9kdWN0LnYxLk1h",
+            "dGVyaWFsU3BlY1IIbWF0ZXJpYWwSMwoQZGVmYXVsdF9tb2RlbF9pZBgKIAEo",
+            "CUIJukgGcgSI8QQBUg5kZWZhdWx0TW9kZWxJZBI7CghoYW5kbGluZxgLIAEo",
+            "CzIfLnByb2R1Y3QudjEuUGFydEhhbmRsaW5nUHJvZmlsZVIIaGFuZGxpbmcS",
+            "OAoHcHJvY2VzcxgMIAEoCzIeLnByb2R1Y3QudjEuUGFydFByb2Nlc3NQcm9m",
+            "aWxlUgdwcm9jZXNzEk0KE2V4dGVybmFsX3JlZmVyZW5jZXMYDSADKAsyHC5j",
+            "b21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNl",
+            "cxIzCgZjdXN0b20YDiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGll",
+            "c1IGY3VzdG9tEhgKB3ZlcnNpb24YDyABKAlSB3ZlcnNpb24iQwoPUGFydERl",
+            "ZmluaXRpb25zEjAKBWl0ZW1zGAEgAygLMhoucHJvZHVjdC52MS5QYXJ0RGVm",
+            "aW5pdGlvblIFaXRlbXMq6AIKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQ",
+            "RUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZ",
+            "UEVfRkFTVEVORVIQAhIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BB",
+            "UlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1Q",
+            "QVJUX1RZUEVfUENCEAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9O",
+            "RU5UEAgSIgoeUEFSVF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoP",
+            "UEFSVF9UWVBFX0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRF",
+            "UklBTBALEhsKF1BBUlRfVFlQRV9GSU5BTF9QUk9EVUNUEBQSGQoVUEFSVF9U",
+            "WVBFX1NVQkFTU0VNQkxZEBUqkQMKEE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFU",
+            "RVJJQUxfQ0FURUdPUllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklBTF9DQVRF",
+            "R09SWV9NRVRBTBABEh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIf",
+            "ChtNQVRFUklBTF9DQVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRFUklBTF9D",
+            "QVRFR09SWV9DT01QT1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09SWV9DRVJB",
+            "TUlDEAUSGwoXTUFURVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZNQVRFUklB",
+            "TF9DQVRFR09SWV9XT09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAI",
+            "EisKJ01BVEVSSUFMX0NBVEVHT1JZX0VMRUNUUk9OSUNTX1NVQlNUUkFURRAJ",
+            "Eh4KGk1BVEVSSUFMX0NBVEVHT1JZX0NIRU1JQ0FMEAoSGwoXTUFURVJJQUxf",
+            "Q0FURUdPUllfT1RIRVIQY0KyAQoOY29tLnByb2R1Y3QudjFCE1BhcnREZWZp",
+            "bml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMu",
+            "UHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFk",
+            "YXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.Dimensions), global::Messages.Product.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.MaterialSpec), global::Messages.Product.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresLiftingAssistance", "RequiresFixtureSupport", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "InspectBeforeAssemble", "InspectAfterDisassemble", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "ExternalReferences", "Custom", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresLiftingAssistance", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartProcessProfile), global::Messages.Product.V1.PartProcessProfile.Parser, new[]{ "EstimatedHumanDuration", "EstimatedRobotDuration", "RequireFullGuidance", "InspectBeforeAssemble", "InspectAfterDisassemble", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "Process", "ExternalReferences", "Custom", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinitions), global::Messages.Product.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -110,10 +120,6 @@ namespace Messages.Product.V1 {
     /// Screw, bolt, nut, washer, rivet, insert, clip, etc.
     /// </summary>
     [pbr::OriginalName("PART_TYPE_FASTENER")] Fastener = 2,
-    /// <summary>
-    /// A part that is itself composed of multiple child parts
-    /// </summary>
-    [pbr::OriginalName("PART_TYPE_SUBASSEMBLY")] Subassembly = 3,
     /// <summary>
     /// General consumable used up during assembly or maintenance
     /// </summary>
@@ -146,6 +152,14 @@ namespace Messages.Product.V1 {
     /// Grease, glue, sealant, potting compound, solder paste, flux, etc.
     /// </summary>
     [pbr::OriginalName("PART_TYPE_DISPENSED_MATERIAL")] DispensedMaterial = 11,
+    /// <summary>
+    /// A part that is itself composed of multiple child parts, which together form a product
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_FINAL_PRODUCT")] FinalProduct = 20,
+    /// <summary>
+    /// A part that is itself composed of multiple child parts,
+    /// </summary>
+    [pbr::OriginalName("PART_TYPE_SUBASSEMBLY")] Subassembly = 21,
   }
 
   public enum MaterialCategory {
@@ -765,6 +779,10 @@ namespace Messages.Product.V1 {
 
   }
 
+  /// <summary>
+  /// PartHandlingProfile captures physical handling constraints that follow the
+  /// part regardless of the process it appears in.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class PartHandlingProfile : pb::IMessage<PartHandlingProfile>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -805,11 +823,6 @@ namespace Messages.Product.V1 {
       requiresTwoHandLift_ = other.requiresTwoHandLift_;
       requiresLiftingAssistance_ = other.requiresLiftingAssistance_;
       requiresFixtureSupport_ = other.requiresFixtureSupport_;
-      preLubricationPartId_ = other.preLubricationPartId_;
-      postLubricationPartId_ = other.postLubricationPartId_;
-      requiresWiping_ = other.requiresWiping_;
-      inspectBeforeAssemble_ = other.inspectBeforeAssemble_;
-      inspectAfterDisassemble_ = other.inspectAfterDisassemble_;
       maxGripForceN_ = other.maxGripForceN_;
       maxTorqueNm_ = other.maxTorqueNm_;
       constraints_ = other.constraints_.Clone();
@@ -825,6 +838,9 @@ namespace Messages.Product.V1 {
     /// <summary>Field number for the "fragile" field.</summary>
     public const int FragileFieldNumber = 1;
     private bool fragile_;
+    /// <summary>
+    /// Part can be damaged by drops, shocks, bending, crushing, or rough handling.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Fragile {
@@ -837,6 +853,9 @@ namespace Messages.Product.V1 {
     /// <summary>Field number for the "esd_sensitive" field.</summary>
     public const int EsdSensitiveFieldNumber = 2;
     private bool esdSensitive_;
+    /// <summary>
+    /// Part requires electrostatic discharge precautions during handling.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool EsdSensitive {
@@ -850,7 +869,7 @@ namespace Messages.Product.V1 {
     public const int RequiresTwoHandLiftFieldNumber = 3;
     private bool requiresTwoHandLift_;
     /// <summary>
-    /// If true, the part is heavy, but possible to lift
+    /// Part is heavy or awkward, but can still be lifted manually by an operator.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -865,7 +884,7 @@ namespace Messages.Product.V1 {
     public const int RequiresLiftingAssistanceFieldNumber = 4;
     private bool requiresLiftingAssistance_;
     /// <summary>
-    /// If true, the part is heavier than what an operator is allowed to lift.
+    /// Part is heavier than what an operator is allowed or expected to lift manually.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -880,7 +899,7 @@ namespace Messages.Product.V1 {
     public const int RequiresFixtureSupportFieldNumber = 5;
     private bool requiresFixtureSupport_;
     /// <summary>
-    /// If true, this part cannot realistically be handled/assembled without some fixture support
+    /// Part cannot realistically be handled or assembled without fixture support.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -891,72 +910,12 @@ namespace Messages.Product.V1 {
       }
     }
 
-    /// <summary>Field number for the "pre_lubrication_part_id" field.</summary>
-    public const int PreLubricationPartIdFieldNumber = 6;
-    private string preLubricationPartId_ = "";
-    /// <summary>
-    /// If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PreLubricationPartId {
-      get { return preLubricationPartId_; }
-      set {
-        preLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "post_lubrication_part_id" field.</summary>
-    public const int PostLubricationPartIdFieldNumber = 7;
-    private string postLubricationPartId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PostLubricationPartId {
-      get { return postLubricationPartId_; }
-      set {
-        postLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "requires_wiping" field.</summary>
-    public const int RequiresWipingFieldNumber = 8;
-    private bool requiresWiping_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool RequiresWiping {
-      get { return requiresWiping_; }
-      set {
-        requiresWiping_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "inspect_before_assemble" field.</summary>
-    public const int InspectBeforeAssembleFieldNumber = 9;
-    private bool inspectBeforeAssemble_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool InspectBeforeAssemble {
-      get { return inspectBeforeAssemble_; }
-      set {
-        inspectBeforeAssemble_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "inspect_after_disassemble" field.</summary>
-    public const int InspectAfterDisassembleFieldNumber = 10;
-    private bool inspectAfterDisassemble_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool InspectAfterDisassemble {
-      get { return inspectAfterDisassemble_; }
-      set {
-        inspectAfterDisassemble_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max_grip_force_n" field.</summary>
-    public const int MaxGripForceNFieldNumber = 11;
+    public const int MaxGripForceNFieldNumber = 6;
     private double maxGripForceN_;
+    /// <summary>
+    /// Maximum gripping/clamping force that may be applied without damaging the part.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double MaxGripForceN {
@@ -967,8 +926,11 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "max_torque_nm" field.</summary>
-    public const int MaxTorqueNmFieldNumber = 12;
+    public const int MaxTorqueNmFieldNumber = 7;
     private double maxTorqueNm_;
+    /// <summary>
+    /// Maximum torque that may be applied to the part or its fastening interface.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double MaxTorqueNm {
@@ -979,10 +941,13 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "constraints" field.</summary>
-    public const int ConstraintsFieldNumber = 13;
+    public const int ConstraintsFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.KeyValueConstraint> _repeated_constraints_codec
-        = pb::FieldCodec.ForMessage(106, global::Messages.Common.V1.KeyValueConstraint.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Messages.Common.V1.KeyValueConstraint.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint>();
+    /// <summary>
+    /// Additional handling constraints not represented by dedicated fields.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> Constraints {
@@ -1009,11 +974,6 @@ namespace Messages.Product.V1 {
       if (RequiresTwoHandLift != other.RequiresTwoHandLift) return false;
       if (RequiresLiftingAssistance != other.RequiresLiftingAssistance) return false;
       if (RequiresFixtureSupport != other.RequiresFixtureSupport) return false;
-      if (PreLubricationPartId != other.PreLubricationPartId) return false;
-      if (PostLubricationPartId != other.PostLubricationPartId) return false;
-      if (RequiresWiping != other.RequiresWiping) return false;
-      if (InspectBeforeAssemble != other.InspectBeforeAssemble) return false;
-      if (InspectAfterDisassemble != other.InspectAfterDisassemble) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxGripForceN, other.MaxGripForceN)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxTorqueNm, other.MaxTorqueNm)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
@@ -1029,11 +989,6 @@ namespace Messages.Product.V1 {
       if (RequiresTwoHandLift != false) hash ^= RequiresTwoHandLift.GetHashCode();
       if (RequiresLiftingAssistance != false) hash ^= RequiresLiftingAssistance.GetHashCode();
       if (RequiresFixtureSupport != false) hash ^= RequiresFixtureSupport.GetHashCode();
-      if (PreLubricationPartId.Length != 0) hash ^= PreLubricationPartId.GetHashCode();
-      if (PostLubricationPartId.Length != 0) hash ^= PostLubricationPartId.GetHashCode();
-      if (RequiresWiping != false) hash ^= RequiresWiping.GetHashCode();
-      if (InspectBeforeAssemble != false) hash ^= InspectBeforeAssemble.GetHashCode();
-      if (InspectAfterDisassemble != false) hash ^= InspectAfterDisassemble.GetHashCode();
       if (MaxGripForceN != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxGripForceN);
       if (MaxTorqueNm != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxTorqueNm);
       hash ^= constraints_.GetHashCode();
@@ -1075,32 +1030,12 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequiresFixtureSupport);
       }
-      if (PreLubricationPartId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(PreLubricationPartId);
-      }
-      if (PostLubricationPartId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(PostLubricationPartId);
-      }
-      if (RequiresWiping != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(RequiresWiping);
-      }
-      if (InspectBeforeAssemble != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(InspectBeforeAssemble);
-      }
-      if (InspectAfterDisassemble != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(InspectAfterDisassemble);
-      }
       if (MaxGripForceN != 0D) {
-        output.WriteRawTag(89);
+        output.WriteRawTag(49);
         output.WriteDouble(MaxGripForceN);
       }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(97);
+        output.WriteRawTag(57);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(output, _repeated_constraints_codec);
@@ -1134,32 +1069,12 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequiresFixtureSupport);
       }
-      if (PreLubricationPartId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(PreLubricationPartId);
-      }
-      if (PostLubricationPartId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(PostLubricationPartId);
-      }
-      if (RequiresWiping != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(RequiresWiping);
-      }
-      if (InspectBeforeAssemble != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(InspectBeforeAssemble);
-      }
-      if (InspectAfterDisassemble != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(InspectAfterDisassemble);
-      }
       if (MaxGripForceN != 0D) {
-        output.WriteRawTag(89);
+        output.WriteRawTag(49);
         output.WriteDouble(MaxGripForceN);
       }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(97);
+        output.WriteRawTag(57);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
@@ -1186,21 +1101,6 @@ namespace Messages.Product.V1 {
         size += 1 + 1;
       }
       if (RequiresFixtureSupport != false) {
-        size += 1 + 1;
-      }
-      if (PreLubricationPartId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PreLubricationPartId);
-      }
-      if (PostLubricationPartId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostLubricationPartId);
-      }
-      if (RequiresWiping != false) {
-        size += 1 + 1;
-      }
-      if (InspectBeforeAssemble != false) {
-        size += 1 + 1;
-      }
-      if (InspectAfterDisassemble != false) {
         size += 1 + 1;
       }
       if (MaxGripForceN != 0D) {
@@ -1236,21 +1136,6 @@ namespace Messages.Product.V1 {
       }
       if (other.RequiresFixtureSupport != false) {
         RequiresFixtureSupport = other.RequiresFixtureSupport;
-      }
-      if (other.PreLubricationPartId.Length != 0) {
-        PreLubricationPartId = other.PreLubricationPartId;
-      }
-      if (other.PostLubricationPartId.Length != 0) {
-        PostLubricationPartId = other.PostLubricationPartId;
-      }
-      if (other.RequiresWiping != false) {
-        RequiresWiping = other.RequiresWiping;
-      }
-      if (other.InspectBeforeAssemble != false) {
-        InspectBeforeAssemble = other.InspectBeforeAssemble;
-      }
-      if (other.InspectAfterDisassemble != false) {
-        InspectAfterDisassemble = other.InspectAfterDisassemble;
       }
       if (other.MaxGripForceN != 0D) {
         MaxGripForceN = other.MaxGripForceN;
@@ -1298,35 +1183,15 @@ namespace Messages.Product.V1 {
             RequiresFixtureSupport = input.ReadBool();
             break;
           }
-          case 50: {
-            PreLubricationPartId = input.ReadString();
-            break;
-          }
-          case 58: {
-            PostLubricationPartId = input.ReadString();
-            break;
-          }
-          case 64: {
-            RequiresWiping = input.ReadBool();
-            break;
-          }
-          case 72: {
-            InspectBeforeAssemble = input.ReadBool();
-            break;
-          }
-          case 80: {
-            InspectAfterDisassemble = input.ReadBool();
-            break;
-          }
-          case 89: {
+          case 49: {
             MaxGripForceN = input.ReadDouble();
             break;
           }
-          case 97: {
+          case 57: {
             MaxTorqueNm = input.ReadDouble();
             break;
           }
-          case 106: {
+          case 66: {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
@@ -1369,6 +1234,473 @@ namespace Messages.Product.V1 {
             RequiresFixtureSupport = input.ReadBool();
             break;
           }
+          case 49: {
+            MaxGripForceN = input.ReadDouble();
+            break;
+          }
+          case 57: {
+            MaxTorqueNm = input.ReadDouble();
+            break;
+          }
+          case 66: {
+            constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// PartProcessProfile captures defaults and hints used when generating processes
+  /// involving this part.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PartProcessProfile : pb::IMessage<PartProcessProfile>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PartProcessProfile> _parser = new pb::MessageParser<PartProcessProfile>(() => new PartProcessProfile());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PartProcessProfile> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Product.V1.PartDefinitionReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PartProcessProfile() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PartProcessProfile(PartProcessProfile other) : this() {
+      estimatedHumanDuration_ = other.estimatedHumanDuration_ != null ? other.estimatedHumanDuration_.Clone() : null;
+      estimatedRobotDuration_ = other.estimatedRobotDuration_ != null ? other.estimatedRobotDuration_.Clone() : null;
+      requireFullGuidance_ = other.requireFullGuidance_;
+      inspectBeforeAssemble_ = other.inspectBeforeAssemble_;
+      inspectAfterDisassemble_ = other.inspectAfterDisassemble_;
+      preLubricationPartId_ = other.preLubricationPartId_;
+      postLubricationPartId_ = other.postLubricationPartId_;
+      requiresWiping_ = other.requiresWiping_;
+      constraints_ = other.constraints_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PartProcessProfile Clone() {
+      return new PartProcessProfile(this);
+    }
+
+    /// <summary>Field number for the "estimated_human_duration" field.</summary>
+    public const int EstimatedHumanDurationFieldNumber = 1;
+    private global::Messages.Common.V1.EstimatedDuration estimatedHumanDuration_;
+    /// <summary>
+    /// Default duration estimate for tasks performed by a human.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.EstimatedDuration EstimatedHumanDuration {
+      get { return estimatedHumanDuration_; }
+      set {
+        estimatedHumanDuration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "estimated_robot_duration" field.</summary>
+    public const int EstimatedRobotDurationFieldNumber = 2;
+    private global::Messages.Common.V1.EstimatedDuration estimatedRobotDuration_;
+    /// <summary>
+    /// Default duration estimate for tasks performed by a robot.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.EstimatedDuration EstimatedRobotDuration {
+      get { return estimatedRobotDuration_; }
+      set {
+        estimatedRobotDuration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "require_full_guidance" field.</summary>
+    public const int RequireFullGuidanceFieldNumber = 3;
+    private bool requireFullGuidance_;
+    /// <summary>
+    /// Generated tasks should default to full step-by-step guidance for this part.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RequireFullGuidance {
+      get { return requireFullGuidance_; }
+      set {
+        requireFullGuidance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "inspect_before_assemble" field.</summary>
+    public const int InspectBeforeAssembleFieldNumber = 4;
+    private bool inspectBeforeAssemble_;
+    /// <summary>
+    /// Generate or recommend inspection before this part is assembled.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool InspectBeforeAssemble {
+      get { return inspectBeforeAssemble_; }
+      set {
+        inspectBeforeAssemble_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "inspect_after_disassemble" field.</summary>
+    public const int InspectAfterDisassembleFieldNumber = 5;
+    private bool inspectAfterDisassemble_;
+    /// <summary>
+    /// Generate or recommend inspection after this part is disassembled.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool InspectAfterDisassemble {
+      get { return inspectAfterDisassemble_; }
+      set {
+        inspectAfterDisassemble_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pre_lubrication_part_id" field.</summary>
+    public const int PreLubricationPartIdFieldNumber = 6;
+    private string preLubricationPartId_ = "";
+    /// <summary>
+    /// Consumable part to apply before inserting or assembling this part, e.g. grease or lubricant.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PreLubricationPartId {
+      get { return preLubricationPartId_; }
+      set {
+        preLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "post_lubrication_part_id" field.</summary>
+    public const int PostLubricationPartIdFieldNumber = 7;
+    private string postLubricationPartId_ = "";
+    /// <summary>
+    /// Consumable part to apply after inserting or assembling this part, e.g. sealant or finishing lubricant.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PostLubricationPartId {
+      get { return postLubricationPartId_; }
+      set {
+        postLubricationPartId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "requires_wiping" field.</summary>
+    public const int RequiresWipingFieldNumber = 8;
+    private bool requiresWiping_;
+    /// <summary>
+    /// Generate or recommend wiping/cleaning tasks for this part.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RequiresWiping {
+      get { return requiresWiping_; }
+      set {
+        requiresWiping_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "constraints" field.</summary>
+    public const int ConstraintsFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.KeyValueConstraint> _repeated_constraints_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.Common.V1.KeyValueConstraint.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint>();
+    /// <summary>
+    /// Additional process-generation constraints not represented by dedicated fields.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> Constraints {
+      get { return constraints_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PartProcessProfile);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PartProcessProfile other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(EstimatedHumanDuration, other.EstimatedHumanDuration)) return false;
+      if (!object.Equals(EstimatedRobotDuration, other.EstimatedRobotDuration)) return false;
+      if (RequireFullGuidance != other.RequireFullGuidance) return false;
+      if (InspectBeforeAssemble != other.InspectBeforeAssemble) return false;
+      if (InspectAfterDisassemble != other.InspectAfterDisassemble) return false;
+      if (PreLubricationPartId != other.PreLubricationPartId) return false;
+      if (PostLubricationPartId != other.PostLubricationPartId) return false;
+      if (RequiresWiping != other.RequiresWiping) return false;
+      if(!constraints_.Equals(other.constraints_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (estimatedHumanDuration_ != null) hash ^= EstimatedHumanDuration.GetHashCode();
+      if (estimatedRobotDuration_ != null) hash ^= EstimatedRobotDuration.GetHashCode();
+      if (RequireFullGuidance != false) hash ^= RequireFullGuidance.GetHashCode();
+      if (InspectBeforeAssemble != false) hash ^= InspectBeforeAssemble.GetHashCode();
+      if (InspectAfterDisassemble != false) hash ^= InspectAfterDisassemble.GetHashCode();
+      if (PreLubricationPartId.Length != 0) hash ^= PreLubricationPartId.GetHashCode();
+      if (PostLubricationPartId.Length != 0) hash ^= PostLubricationPartId.GetHashCode();
+      if (RequiresWiping != false) hash ^= RequiresWiping.GetHashCode();
+      hash ^= constraints_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (estimatedHumanDuration_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(EstimatedRobotDuration);
+      }
+      if (RequireFullGuidance != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(RequireFullGuidance);
+      }
+      if (InspectBeforeAssemble != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(InspectBeforeAssemble);
+      }
+      if (InspectAfterDisassemble != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(InspectAfterDisassemble);
+      }
+      if (PreLubricationPartId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(RequiresWiping);
+      }
+      constraints_.WriteTo(output, _repeated_constraints_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (estimatedHumanDuration_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(EstimatedRobotDuration);
+      }
+      if (RequireFullGuidance != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(RequireFullGuidance);
+      }
+      if (InspectBeforeAssemble != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(InspectBeforeAssemble);
+      }
+      if (InspectAfterDisassemble != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(InspectAfterDisassemble);
+      }
+      if (PreLubricationPartId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(RequiresWiping);
+      }
+      constraints_.WriteTo(ref output, _repeated_constraints_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (estimatedHumanDuration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EstimatedHumanDuration);
+      }
+      if (estimatedRobotDuration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EstimatedRobotDuration);
+      }
+      if (RequireFullGuidance != false) {
+        size += 1 + 1;
+      }
+      if (InspectBeforeAssemble != false) {
+        size += 1 + 1;
+      }
+      if (InspectAfterDisassemble != false) {
+        size += 1 + 1;
+      }
+      if (PreLubricationPartId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PreLubricationPartId);
+      }
+      if (PostLubricationPartId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PostLubricationPartId);
+      }
+      if (RequiresWiping != false) {
+        size += 1 + 1;
+      }
+      size += constraints_.CalculateSize(_repeated_constraints_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PartProcessProfile other) {
+      if (other == null) {
+        return;
+      }
+      if (other.estimatedHumanDuration_ != null) {
+        if (estimatedHumanDuration_ == null) {
+          EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
+        }
+        EstimatedHumanDuration.MergeFrom(other.EstimatedHumanDuration);
+      }
+      if (other.estimatedRobotDuration_ != null) {
+        if (estimatedRobotDuration_ == null) {
+          EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+        }
+        EstimatedRobotDuration.MergeFrom(other.EstimatedRobotDuration);
+      }
+      if (other.RequireFullGuidance != false) {
+        RequireFullGuidance = other.RequireFullGuidance;
+      }
+      if (other.InspectBeforeAssemble != false) {
+        InspectBeforeAssemble = other.InspectBeforeAssemble;
+      }
+      if (other.InspectAfterDisassemble != false) {
+        InspectAfterDisassemble = other.InspectAfterDisassemble;
+      }
+      if (other.PreLubricationPartId.Length != 0) {
+        PreLubricationPartId = other.PreLubricationPartId;
+      }
+      if (other.PostLubricationPartId.Length != 0) {
+        PostLubricationPartId = other.PostLubricationPartId;
+      }
+      if (other.RequiresWiping != false) {
+        RequiresWiping = other.RequiresWiping;
+      }
+      constraints_.Add(other.constraints_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (estimatedHumanDuration_ == null) {
+              EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedHumanDuration);
+            break;
+          }
+          case 18: {
+            if (estimatedRobotDuration_ == null) {
+              EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedRobotDuration);
+            break;
+          }
+          case 24: {
+            RequireFullGuidance = input.ReadBool();
+            break;
+          }
+          case 32: {
+            InspectBeforeAssemble = input.ReadBool();
+            break;
+          }
+          case 40: {
+            InspectAfterDisassemble = input.ReadBool();
+            break;
+          }
           case 50: {
             PreLubricationPartId = input.ReadString();
             break;
@@ -1381,23 +1713,68 @@ namespace Messages.Product.V1 {
             RequiresWiping = input.ReadBool();
             break;
           }
-          case 72: {
+          case 74: {
+            constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (estimatedHumanDuration_ == null) {
+              EstimatedHumanDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedHumanDuration);
+            break;
+          }
+          case 18: {
+            if (estimatedRobotDuration_ == null) {
+              EstimatedRobotDuration = new global::Messages.Common.V1.EstimatedDuration();
+            }
+            input.ReadMessage(EstimatedRobotDuration);
+            break;
+          }
+          case 24: {
+            RequireFullGuidance = input.ReadBool();
+            break;
+          }
+          case 32: {
             InspectBeforeAssemble = input.ReadBool();
             break;
           }
-          case 80: {
+          case 40: {
             InspectAfterDisassemble = input.ReadBool();
             break;
           }
-          case 89: {
-            MaxGripForceN = input.ReadDouble();
+          case 50: {
+            PreLubricationPartId = input.ReadString();
             break;
           }
-          case 97: {
-            MaxTorqueNm = input.ReadDouble();
+          case 58: {
+            PostLubricationPartId = input.ReadString();
             break;
           }
-          case 106: {
+          case 64: {
+            RequiresWiping = input.ReadBool();
+            break;
+          }
+          case 74: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
             break;
           }
@@ -1423,7 +1800,7 @@ namespace Messages.Product.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Product.V1.PartDefinitionReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.Product.V1.PartDefinitionReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1454,6 +1831,7 @@ namespace Messages.Product.V1 {
       material_ = other.material_ != null ? other.material_.Clone() : null;
       defaultModelId_ = other.defaultModelId_;
       handling_ = other.handling_ != null ? other.handling_.Clone() : null;
+      process_ = other.process_ != null ? other.process_.Clone() : null;
       externalReferences_ = other.externalReferences_.Clone();
       custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       version_ = other.version_;
@@ -1610,10 +1988,22 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "process" field.</summary>
+    public const int ProcessFieldNumber = 12;
+    private global::Messages.Product.V1.PartProcessProfile process_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Product.V1.PartProcessProfile Process {
+      get { return process_; }
+      set {
+        process_ = value;
+      }
+    }
+
     /// <summary>Field number for the "external_references" field.</summary>
-    public const int ExternalReferencesFieldNumber = 12;
+    public const int ExternalReferencesFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.ExternalReference> _repeated_externalReferences_codec
-        = pb::FieldCodec.ForMessage(98, global::Messages.Common.V1.ExternalReference.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Messages.Common.V1.ExternalReference.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.ExternalReference> externalReferences_ = new pbc::RepeatedField<global::Messages.Common.V1.ExternalReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1622,7 +2012,7 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 13;
+    public const int CustomFieldNumber = 14;
     private global::Messages.Common.V1.CustomProperties custom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1634,7 +2024,7 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 14;
+    public const int VersionFieldNumber = 15;
     private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1671,6 +2061,7 @@ namespace Messages.Product.V1 {
       if (!object.Equals(Material, other.Material)) return false;
       if (DefaultModelId != other.DefaultModelId) return false;
       if (!object.Equals(Handling, other.Handling)) return false;
+      if (!object.Equals(Process, other.Process)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Custom, other.Custom)) return false;
       if (Version != other.Version) return false;
@@ -1692,6 +2083,7 @@ namespace Messages.Product.V1 {
       if (material_ != null) hash ^= Material.GetHashCode();
       if (DefaultModelId.Length != 0) hash ^= DefaultModelId.GetHashCode();
       if (handling_ != null) hash ^= Handling.GetHashCode();
+      if (process_ != null) hash ^= Process.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (custom_ != null) hash ^= Custom.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
@@ -1757,13 +2149,17 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(90);
         output.WriteMessage(Handling);
       }
+      if (process_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Process);
+      }
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteString(Version);
       }
       if (_unknownFields != null) {
@@ -1820,13 +2216,17 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(90);
         output.WriteMessage(Handling);
       }
+      if (process_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Process);
+      }
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (custom_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(114);
         output.WriteMessage(Custom);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteString(Version);
       }
       if (_unknownFields != null) {
@@ -1871,6 +2271,9 @@ namespace Messages.Product.V1 {
       }
       if (handling_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Handling);
+      }
+      if (process_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Process);
       }
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (custom_ != null) {
@@ -1932,6 +2335,12 @@ namespace Messages.Product.V1 {
           Handling = new global::Messages.Product.V1.PartHandlingProfile();
         }
         Handling.MergeFrom(other.Handling);
+      }
+      if (other.process_ != null) {
+        if (process_ == null) {
+          Process = new global::Messages.Product.V1.PartProcessProfile();
+        }
+        Process.MergeFrom(other.Process);
       }
       externalReferences_.Add(other.externalReferences_);
       if (other.custom_ != null) {
@@ -2016,17 +2425,24 @@ namespace Messages.Product.V1 {
             break;
           }
           case 98: {
-            externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
+            if (process_ == null) {
+              Process = new global::Messages.Product.V1.PartProcessProfile();
+            }
+            input.ReadMessage(Process);
             break;
           }
           case 106: {
+            externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
+            break;
+          }
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
             input.ReadMessage(Custom);
             break;
           }
-          case 114: {
+          case 122: {
             Version = input.ReadString();
             break;
           }
@@ -2103,17 +2519,24 @@ namespace Messages.Product.V1 {
             break;
           }
           case 98: {
-            externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
+            if (process_ == null) {
+              Process = new global::Messages.Product.V1.PartProcessProfile();
+            }
+            input.ReadMessage(Process);
             break;
           }
           case 106: {
+            externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
+            break;
+          }
+          case 114: {
             if (custom_ == null) {
               Custom = new global::Messages.Common.V1.CustomProperties();
             }
             input.ReadMessage(Custom);
             break;
           }
-          case 114: {
+          case 122: {
             Version = input.ReadString();
             break;
           }
@@ -2139,7 +2562,7 @@ namespace Messages.Product.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Product.V1.PartDefinitionReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.Product.V1.PartDefinitionReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

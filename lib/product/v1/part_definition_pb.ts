@@ -11,6 +11,8 @@ import type { ExternalReference } from "../../common/v1/external_references_pb.t
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import type { KeyValueConstraint } from "../../common/v1/key_value_constraint_pb.ts";
 import { file_common_v1_key_value_constraint } from "../../common/v1/key_value_constraint_pb.ts";
+import type { EstimatedDuration } from "../../common/v1/time_pb.ts";
+import { file_common_v1_time } from "../../common/v1/time_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -18,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/part_definition.proto.
  */
 export const file_product_v1_part_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiBwcm9kdWN0L3YxL3BhcnRfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSJmCgpEaW1lbnNpb25zEhwKBHhfbW0YASABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHlfbW0YAiABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHpfbW0YAyABKAFCDrpICxIJKQAAAAAAAAAAIlsKDE1hdGVyaWFsU3BlYxIuCghjYXRlZ29yeRgBIAEoDjIcLnByb2R1Y3QudjEuTWF0ZXJpYWxDYXRlZ29yeRIMCgRuYW1lGAIgASgJEg0KBWdyYWRlGAMgASgJIqkDChNQYXJ0SGFuZGxpbmdQcm9maWxlEg8KB2ZyYWdpbGUYASABKAgSFQoNZXNkX3NlbnNpdGl2ZRgCIAEoCBIeChZyZXF1aXJlc190d29faGFuZF9saWZ0GAMgASgIEiMKG3JlcXVpcmVzX2xpZnRpbmdfYXNzaXN0YW5jZRgEIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBSABKAgSHwoXcHJlX2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAkSIAoYcG9zdF9sdWJyaWNhdGlvbl9wYXJ0X2lkGAcgASgJEhcKD3JlcXVpcmVzX3dpcGluZxgIIAEoCBIfChdpbnNwZWN0X2JlZm9yZV9hc3NlbWJsZRgJIAEoCBIhChlpbnNwZWN0X2FmdGVyX2Rpc2Fzc2VtYmxlGAogASgIEhgKEG1heF9ncmlwX2ZvcmNlX24YCyABKAESFQoNbWF4X3RvcnF1ZV9ubRgMIAEoARIyCgtjb25zdHJhaW50cxgNIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnQi2wMKDlBhcnREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yFC5wcm9kdWN0LnYxLlBhcnRUeXBlQgi6SAWCAQIQARIPCgdzdWJ0eXBlGAYgASgJEhkKCHdlaWdodF9nGAcgASgDQge6SAQiAigAEioKCmRpbWVuc2lvbnMYCCABKAsyFi5wcm9kdWN0LnYxLkRpbWVuc2lvbnMSKgoIbWF0ZXJpYWwYCSABKAsyGC5wcm9kdWN0LnYxLk1hdGVyaWFsU3BlYxIjChBkZWZhdWx0X21vZGVsX2lkGAogASgJQgm6SAZyBIjxBAESMQoIaGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSOQoTZXh0ZXJuYWxfcmVmZXJlbmNlcxgMIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZRIrCgZjdXN0b20YDSABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcxIPCgd2ZXJzaW9uGA4gASgJIjwKD1BhcnREZWZpbml0aW9ucxIpCgVpdGVtcxgBIAMoCzIaLnByb2R1Y3QudjEuUGFydERlZmluaXRpb24qywIKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQAhIZChVQQVJUX1RZUEVfU1VCQVNTRU1CTFkQAxIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJFTBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1QQVJUX1RZUEVfUENCEAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9ORU5UEAgSIgoeUEFSVF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoPUEFSVF9UWVBFX0NBQkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRFUklBTBALKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKDmNvbS5wcm9kdWN0LnYxQhNQYXJ0RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_common_v1_key_value_constraint, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiBwcm9kdWN0L3YxL3BhcnRfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSJmCgpEaW1lbnNpb25zEhwKBHhfbW0YASABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHlfbW0YAiABKAFCDrpICxIJKQAAAAAAAAAAEhwKBHpfbW0YAyABKAFCDrpICxIJKQAAAAAAAAAAIlsKDE1hdGVyaWFsU3BlYxIuCghjYXRlZ29yeRgBIAEoDjIcLnByb2R1Y3QudjEuTWF0ZXJpYWxDYXRlZ29yeRIMCgRuYW1lGAIgASgJEg0KBWdyYWRlGAMgASgJIokCChNQYXJ0SGFuZGxpbmdQcm9maWxlEg8KB2ZyYWdpbGUYASABKAgSFQoNZXNkX3NlbnNpdGl2ZRgCIAEoCBIeChZyZXF1aXJlc190d29faGFuZF9saWZ0GAMgASgIEiMKG3JlcXVpcmVzX2xpZnRpbmdfYXNzaXN0YW5jZRgEIAEoCBIgChhyZXF1aXJlc19maXh0dXJlX3N1cHBvcnQYBSABKAgSGAoQbWF4X2dyaXBfZm9yY2VfbhgGIAEoARIVCg1tYXhfdG9ycXVlX25tGAcgASgBEjIKC2NvbnN0cmFpbnRzGAggAygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludCKHAwoSUGFydFByb2Nlc3NQcm9maWxlEj4KGGVzdGltYXRlZF9odW1hbl9kdXJhdGlvbhgBIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhI+Chhlc3RpbWF0ZWRfcm9ib3RfZHVyYXRpb24YAiABKAsyHC5jb21tb24udjEuRXN0aW1hdGVkRHVyYXRpb24SHQoVcmVxdWlyZV9mdWxsX2d1aWRhbmNlGAMgASgIEh8KF2luc3BlY3RfYmVmb3JlX2Fzc2VtYmxlGAQgASgIEiEKGWluc3BlY3RfYWZ0ZXJfZGlzYXNzZW1ibGUYBSABKAgSHwoXcHJlX2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAkSIAoYcG9zdF9sdWJyaWNhdGlvbl9wYXJ0X2lkGAcgASgJEhcKD3JlcXVpcmVzX3dpcGluZxgIIAEoCBIyCgtjb25zdHJhaW50cxgJIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnQijAQKDlBhcnREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yFC5wcm9kdWN0LnYxLlBhcnRUeXBlQgi6SAWCAQIQARIPCgdzdWJ0eXBlGAYgASgJEhkKCHdlaWdodF9nGAcgASgDQge6SAQiAigAEioKCmRpbWVuc2lvbnMYCCABKAsyFi5wcm9kdWN0LnYxLkRpbWVuc2lvbnMSKgoIbWF0ZXJpYWwYCSABKAsyGC5wcm9kdWN0LnYxLk1hdGVyaWFsU3BlYxIjChBkZWZhdWx0X21vZGVsX2lkGAogASgJQgm6SAZyBIjxBAESMQoIaGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGUSLwoHcHJvY2VzcxgMIAEoCzIeLnByb2R1Y3QudjEuUGFydFByb2Nlc3NQcm9maWxlEjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYDSADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2USKwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMSDwoHdmVyc2lvbhgPIAEoCSI8Cg9QYXJ0RGVmaW5pdGlvbnMSKQoFaXRlbXMYASADKAsyGi5wcm9kdWN0LnYxLlBhcnREZWZpbml0aW9uKugCCghQYXJ0VHlwZRIZChVQQVJUX1RZUEVfVU5TUEVDSUZJRUQQABIXChNQQVJUX1RZUEVfQ09NUE9ORU5UEAESFgoSUEFSVF9UWVBFX0ZBU1RFTkVSEAISGAoUUEFSVF9UWVBFX0NPTlNVTUFCTEUQBBITCg9QQVJUX1RZUEVfTEFCRUwQBRIXChNQQVJUX1RZUEVfUEFDS0FHSU5HEAYSEQoNUEFSVF9UWVBFX1BDQhAHEiIKHlBBUlRfVFlQRV9FTEVDVFJPTklDX0NPTVBPTkVOVBAIEiIKHlBBUlRfVFlQRV9FTEVDVFJJQ0FMX0NPTVBPTkVOVBAJEhMKD1BBUlRfVFlQRV9DQUJMRRAKEiAKHFBBUlRfVFlQRV9ESVNQRU5TRURfTUFURVJJQUwQCxIbChdQQVJUX1RZUEVfRklOQUxfUFJPRFVDVBAUEhkKFVBBUlRfVFlQRV9TVUJBU1NFTUJMWRAVKpEDChBNYXRlcmlhbENhdGVnb3J5EiEKHU1BVEVSSUFMX0NBVEVHT1JZX1VOU1BFQ0lGSUVEEAASGwoXTUFURVJJQUxfQ0FURUdPUllfTUVUQUwQARIdChlNQVRFUklBTF9DQVRFR09SWV9QT0xZTUVSEAISHwobTUFURVJJQUxfQ0FURUdPUllfRUxBU1RPTUVSEAMSHwobTUFURVJJQUxfQ0FURUdPUllfQ09NUE9TSVRFEAQSHQoZTUFURVJJQUxfQ0FURUdPUllfQ0VSQU1JQxAFEhsKF01BVEVSSUFMX0NBVEVHT1JZX0dMQVNTEAYSGgoWTUFURVJJQUxfQ0FURUdPUllfV09PRBAHEhoKFk1BVEVSSUFMX0NBVEVHT1JZX0ZPQU0QCBIrCidNQVRFUklBTF9DQVRFR09SWV9FTEVDVFJPTklDU19TVUJTVFJBVEUQCRIeChpNQVRFUklBTF9DQVRFR09SWV9DSEVNSUNBTBAKEhsKF01BVEVSSUFMX0NBVEVHT1JZX09USEVSEGNCsgEKDmNvbS5wcm9kdWN0LnYxQhNQYXJ0RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_common_v1_key_value_constraint, file_common_v1_time, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message product.v1.Dimensions
@@ -93,79 +95,65 @@ export const MaterialSpecSchema: GenMessage<MaterialSpec> = /*@__PURE__*/
   messageDesc(file_product_v1_part_definition, 1);
 
 /**
+ * PartHandlingProfile captures physical handling constraints that follow the
+ * part regardless of the process it appears in.
+ *
  * @generated from message product.v1.PartHandlingProfile
  */
 export type PartHandlingProfile = Message<"product.v1.PartHandlingProfile"> & {
   /**
+   * Part can be damaged by drops, shocks, bending, crushing, or rough handling.
+   *
    * @generated from field: bool fragile = 1;
    */
   fragile: boolean;
 
   /**
+   * Part requires electrostatic discharge precautions during handling.
+   *
    * @generated from field: bool esd_sensitive = 2;
    */
   esdSensitive: boolean;
 
   /**
-   * If true, the part is heavy, but possible to lift
+   * Part is heavy or awkward, but can still be lifted manually by an operator.
    *
    * @generated from field: bool requires_two_hand_lift = 3;
    */
   requiresTwoHandLift: boolean;
 
   /**
-   * If true, the part is heavier than what an operator is allowed to lift.
+   * Part is heavier than what an operator is allowed or expected to lift manually.
    *
    * @generated from field: bool requires_lifting_assistance = 4;
    */
   requiresLiftingAssistance: boolean;
 
   /**
-   * If true, this part cannot realistically be handled/assembled without some fixture support
+   * Part cannot realistically be handled or assembled without fixture support.
    *
    * @generated from field: bool requires_fixture_support = 5;
    */
   requiresFixtureSupport: boolean;
 
   /**
-   * If set, if this part requires lubrication/greasing before/after being inserted. This can be used to automatically insert greasing step before/after insertion and cleaning during disassembly.
+   * Maximum gripping/clamping force that may be applied without damaging the part.
    *
-   * @generated from field: string pre_lubrication_part_id = 6;
-   */
-  preLubricationPartId: string;
-
-  /**
-   * @generated from field: string post_lubrication_part_id = 7;
-   */
-  postLubricationPartId: string;
-
-  /**
-   * @generated from field: bool requires_wiping = 8;
-   */
-  requiresWiping: boolean;
-
-  /**
-   * @generated from field: bool inspect_before_assemble = 9;
-   */
-  inspectBeforeAssemble: boolean;
-
-  /**
-   * @generated from field: bool inspect_after_disassemble = 10;
-   */
-  inspectAfterDisassemble: boolean;
-
-  /**
-   * @generated from field: double max_grip_force_n = 11;
+   * @generated from field: double max_grip_force_n = 6;
    */
   maxGripForceN: number;
 
   /**
-   * @generated from field: double max_torque_nm = 12;
+   * Maximum torque that may be applied to the part or its fastening interface.
+   *
+   * @generated from field: double max_torque_nm = 7;
    */
   maxTorqueNm: number;
 
   /**
-   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 13;
+   * Additional handling constraints not represented by dedicated fields.
+   *
+   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 8;
    */
   constraints: KeyValueConstraint[];
 };
@@ -176,6 +164,84 @@ export type PartHandlingProfile = Message<"product.v1.PartHandlingProfile"> & {
  */
 export const PartHandlingProfileSchema: GenMessage<PartHandlingProfile> = /*@__PURE__*/
   messageDesc(file_product_v1_part_definition, 2);
+
+/**
+ * PartProcessProfile captures defaults and hints used when generating processes
+ * involving this part.
+ *
+ * @generated from message product.v1.PartProcessProfile
+ */
+export type PartProcessProfile = Message<"product.v1.PartProcessProfile"> & {
+  /**
+   * Default duration estimate for tasks performed by a human.
+   *
+   * @generated from field: common.v1.EstimatedDuration estimated_human_duration = 1;
+   */
+  estimatedHumanDuration?: EstimatedDuration;
+
+  /**
+   * Default duration estimate for tasks performed by a robot.
+   *
+   * @generated from field: common.v1.EstimatedDuration estimated_robot_duration = 2;
+   */
+  estimatedRobotDuration?: EstimatedDuration;
+
+  /**
+   * Generated tasks should default to full step-by-step guidance for this part.
+   *
+   * @generated from field: bool require_full_guidance = 3;
+   */
+  requireFullGuidance: boolean;
+
+  /**
+   * Generate or recommend inspection before this part is assembled.
+   *
+   * @generated from field: bool inspect_before_assemble = 4;
+   */
+  inspectBeforeAssemble: boolean;
+
+  /**
+   * Generate or recommend inspection after this part is disassembled.
+   *
+   * @generated from field: bool inspect_after_disassemble = 5;
+   */
+  inspectAfterDisassemble: boolean;
+
+  /**
+   * Consumable part to apply before inserting or assembling this part, e.g. grease or lubricant.
+   *
+   * @generated from field: string pre_lubrication_part_id = 6;
+   */
+  preLubricationPartId: string;
+
+  /**
+   * Consumable part to apply after inserting or assembling this part, e.g. sealant or finishing lubricant.
+   *
+   * @generated from field: string post_lubrication_part_id = 7;
+   */
+  postLubricationPartId: string;
+
+  /**
+   * Generate or recommend wiping/cleaning tasks for this part.
+   *
+   * @generated from field: bool requires_wiping = 8;
+   */
+  requiresWiping: boolean;
+
+  /**
+   * Additional process-generation constraints not represented by dedicated fields.
+   *
+   * @generated from field: repeated common.v1.KeyValueConstraint constraints = 9;
+   */
+  constraints: KeyValueConstraint[];
+};
+
+/**
+ * Describes the message product.v1.PartProcessProfile.
+ * Use `create(PartProcessProfileSchema)` to create a new message.
+ */
+export const PartProcessProfileSchema: GenMessage<PartProcessProfile> = /*@__PURE__*/
+  messageDesc(file_product_v1_part_definition, 3);
 
 /**
  * @generated from message product.v1.PartDefinition
@@ -245,17 +311,22 @@ export type PartDefinition = Message<"product.v1.PartDefinition"> & {
   handling?: PartHandlingProfile;
 
   /**
-   * @generated from field: repeated common.v1.ExternalReference external_references = 12;
+   * @generated from field: product.v1.PartProcessProfile process = 12;
+   */
+  process?: PartProcessProfile;
+
+  /**
+   * @generated from field: repeated common.v1.ExternalReference external_references = 13;
    */
   externalReferences: ExternalReference[];
 
   /**
-   * @generated from field: common.v1.CustomProperties custom = 13;
+   * @generated from field: common.v1.CustomProperties custom = 14;
    */
   custom?: CustomProperties;
 
   /**
-   * @generated from field: string version = 14;
+   * @generated from field: string version = 15;
    */
   version: string;
 };
@@ -265,7 +336,7 @@ export type PartDefinition = Message<"product.v1.PartDefinition"> & {
  * Use `create(PartDefinitionSchema)` to create a new message.
  */
 export const PartDefinitionSchema: GenMessage<PartDefinition> = /*@__PURE__*/
-  messageDesc(file_product_v1_part_definition, 3);
+  messageDesc(file_product_v1_part_definition, 4);
 
 /**
  * @generated from message product.v1.PartDefinitions
@@ -282,7 +353,7 @@ export type PartDefinitions = Message<"product.v1.PartDefinitions"> & {
  * Use `create(PartDefinitionsSchema)` to create a new message.
  */
 export const PartDefinitionsSchema: GenMessage<PartDefinitions> = /*@__PURE__*/
-  messageDesc(file_product_v1_part_definition, 4);
+  messageDesc(file_product_v1_part_definition, 5);
 
 /**
  * @generated from enum product.v1.PartType
@@ -306,13 +377,6 @@ export enum PartType {
    * @generated from enum value: PART_TYPE_FASTENER = 2;
    */
   FASTENER = 2,
-
-  /**
-   * A part that is itself composed of multiple child parts
-   *
-   * @generated from enum value: PART_TYPE_SUBASSEMBLY = 3;
-   */
-  SUBASSEMBLY = 3,
 
   /**
    * General consumable used up during assembly or maintenance
@@ -369,6 +433,20 @@ export enum PartType {
    * @generated from enum value: PART_TYPE_DISPENSED_MATERIAL = 11;
    */
   DISPENSED_MATERIAL = 11,
+
+  /**
+   * A part that is itself composed of multiple child parts, which together form a product
+   *
+   * @generated from enum value: PART_TYPE_FINAL_PRODUCT = 20;
+   */
+  FINAL_PRODUCT = 20,
+
+  /**
+   * A part that is itself composed of multiple child parts,
+   *
+   * @generated from enum value: PART_TYPE_SUBASSEMBLY = 21;
+   */
+  SUBASSEMBLY = 21,
 }
 
 /**

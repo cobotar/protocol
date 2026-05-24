@@ -1,0 +1,17 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+message CloneMessage {
+  string original_id = 1; // Id of the entity to be deleted
+
+  // string new_id = 2; // Optional id for the cloned entity. If empty, the server generates one.
+
+  string name = 3; // Optional name override for the clone.
+  string icon = 4; // Optional icon override for the clone.
+  string description = 5; // Optional description override for the clone.
+
+  string idempotency_key = 10; // Optional client-generated key to make retries safe.
+}
