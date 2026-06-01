@@ -9,7 +9,6 @@ package resourcesv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/capability/v1"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -144,7 +143,6 @@ type RobotDefinition struct {
 	DefaultToolDefinitionId    string                `protobuf:"bytes,10,opt,name=default_tool_definition_id,json=defaultToolDefinitionId,proto3" json:"default_tool_definition_id,omitempty"`
 	ToolSlots                  int32                 `protobuf:"varint,11,opt,name=tool_slots,json=toolSlots,proto3" json:"tool_slots,omitempty"`
 	CapabilityProfile          *v1.CapabilityProfile `protobuf:"bytes,12,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
-	Custom                     *v11.CustomProperties `protobuf:"bytes,13,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -263,13 +261,6 @@ func (x *RobotDefinition) GetCapabilityProfile() *v1.CapabilityProfile {
 	return nil
 }
 
-func (x *RobotDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type RobotDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*RobotDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -318,7 +309,7 @@ var File_resources_v1_robot_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_robot_definition_proto_rawDesc = "" +
 	"\n" +
-	"#resources/v1/robot_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a!common/v1/custom_properties.proto\x1a+validation/v1/predefined_string_rules.proto\"\x86\x05\n" +
+	"#resources/v1/robot_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd1\x04\n" +
 	"\x0fRobotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -334,8 +325,7 @@ const file_resources_v1_robot_definition_proto_rawDesc = "" +
 	" \x01(\tR\x17defaultToolDefinitionId\x12&\n" +
 	"\n" +
 	"tool_slots\x18\v \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\ttoolSlots\x12O\n" +
-	"\x12capability_profile\x18\f \x01(\v2 .capability.v1.CapabilityProfileR\x11capabilityProfile\x123\n" +
-	"\x06custom\x18\r \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"G\n" +
+	"\x12capability_profile\x18\f \x01(\v2 .capability.v1.CapabilityProfileR\x11capabilityProfile\"G\n" +
 	"\x10RobotDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.RobotDefinitionR\x05items*\x81\x01\n" +
 	"\tRobotType\x12\x1a\n" +
@@ -371,19 +361,17 @@ var file_resources_v1_robot_definition_proto_goTypes = []any{
 	(*RobotDefinition)(nil),      // 2: resources.v1.RobotDefinition
 	(*RobotDefinitions)(nil),     // 3: resources.v1.RobotDefinitions
 	(*v1.CapabilityProfile)(nil), // 4: capability.v1.CapabilityProfile
-	(*v11.CustomProperties)(nil), // 5: common.v1.CustomProperties
 }
 var file_resources_v1_robot_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.RobotDefinition.type:type_name -> resources.v1.RobotType
 	1, // 1: resources.v1.RobotDefinition.driver_type:type_name -> resources.v1.RobotDriverType
 	4, // 2: resources.v1.RobotDefinition.capability_profile:type_name -> capability.v1.CapabilityProfile
-	5, // 3: resources.v1.RobotDefinition.custom:type_name -> common.v1.CustomProperties
-	2, // 4: resources.v1.RobotDefinitions.items:type_name -> resources.v1.RobotDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	2, // 3: resources.v1.RobotDefinitions.items:type_name -> resources.v1.RobotDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_robot_definition_proto_init() }

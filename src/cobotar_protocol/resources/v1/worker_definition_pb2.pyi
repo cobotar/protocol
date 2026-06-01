@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -33,7 +32,7 @@ class WorkerLocation(_message.Message):
     def __init__(self, line_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ...) -> None: ...
 
 class WorkerDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "disabled", "employee_id", "ar_edit_permission", "external_references", "location", "custom")
+    __slots__ = ("id", "name", "description", "icon", "disabled", "employee_id", "ar_edit_permission", "external_references", "location")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -43,7 +42,6 @@ class WorkerDefinition(_message.Message):
     AR_EDIT_PERMISSION_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
@@ -53,8 +51,7 @@ class WorkerDefinition(_message.Message):
     ar_edit_permission: EditPermission
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     location: WorkerLocation
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., disabled: bool = ..., employee_id: _Optional[str] = ..., ar_edit_permission: _Optional[_Union[EditPermission, str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., location: _Optional[_Union[WorkerLocation, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., disabled: bool = ..., employee_id: _Optional[str] = ..., ar_edit_permission: _Optional[_Union[EditPermission, str]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., location: _Optional[_Union[WorkerLocation, _Mapping]] = ...) -> None: ...
 
 class WorkerDefinitions(_message.Message):
     __slots__ = ("items",)

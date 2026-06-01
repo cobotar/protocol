@@ -8,7 +8,6 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -92,7 +91,6 @@ type HelperMessage struct {
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          HelperType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.HelperType" json:"type,omitempty"`
-	Properties    []*v1.Property         `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -160,13 +158,6 @@ func (x *HelperMessage) GetType() HelperType {
 		return x.Type
 	}
 	return HelperType_HELPER_TYPE_UNSPECIFIED
-}
-
-func (x *HelperMessage) GetProperties() []*v1.Property {
-	if x != nil {
-		return x.Properties
-	}
-	return nil
 }
 
 type HelperMessages struct {
@@ -361,16 +352,13 @@ var File_ar_v1_helper_proto protoreflect.FileDescriptor
 
 const file_ar_v1_helper_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/helper.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd0\x01\n" +
+	"\x12ar/v1/helper.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9b\x01\n" +
 	"\rHelperMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12%\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.HelperTypeR\x04type\x123\n" +
-	"\n" +
-	"properties\x18\x06 \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\"@\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.HelperTypeR\x04type\"@\n" +
 	"\x0eHelperMessages\x12.\n" +
 	"\ahelpers\x18\x01 \x03(\v2\x14.ar.v1.HelperMessageR\ahelpers\"\xb8\x01\n" +
 	"\x10HelperAddMessage\x12&\n" +
@@ -416,18 +404,16 @@ var file_ar_v1_helper_proto_goTypes = []any{
 	(*HelperMessages)(nil),      // 2: ar.v1.HelperMessages
 	(*HelperAddMessage)(nil),    // 3: ar.v1.HelperAddMessage
 	(*HelperUpdateMessage)(nil), // 4: ar.v1.HelperUpdateMessage
-	(*v1.Property)(nil),         // 5: common.v1.Property
 }
 var file_ar_v1_helper_proto_depIdxs = []int32{
 	0, // 0: ar.v1.HelperMessage.type:type_name -> ar.v1.HelperType
-	5, // 1: ar.v1.HelperMessage.properties:type_name -> common.v1.Property
-	1, // 2: ar.v1.HelperMessages.helpers:type_name -> ar.v1.HelperMessage
-	0, // 3: ar.v1.HelperAddMessage.type:type_name -> ar.v1.HelperType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	1, // 1: ar.v1.HelperMessages.helpers:type_name -> ar.v1.HelperMessage
+	0, // 2: ar.v1.HelperAddMessage.type:type_name -> ar.v1.HelperType
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_helper_proto_init() }

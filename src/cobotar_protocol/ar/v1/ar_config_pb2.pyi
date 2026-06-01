@@ -28,31 +28,23 @@ class ARConfigInfoMessages(_message.Message):
     def __init__(self, infos: _Optional[_Iterable[_Union[ARConfigInfoMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance", "feedback_ids", "action_ids", "helper_ids", "property_ids", "input_slots")
+    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance", "input_slots")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
-    FEEDBACK_IDS_FIELD_NUMBER: _ClassVar[int]
-    ACTION_IDS_FIELD_NUMBER: _ClassVar[int]
-    HELPER_IDS_FIELD_NUMBER: _ClassVar[int]
-    PROPERTY_IDS_FIELD_NUMBER: _ClassVar[int]
     INPUT_SLOTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     ar_disappear_distance: int
-    feedback_ids: _containers.RepeatedScalarFieldContainer[str]
-    action_ids: _containers.RepeatedScalarFieldContainer[str]
-    helper_ids: _containers.RepeatedScalarFieldContainer[str]
-    property_ids: _containers.RepeatedScalarFieldContainer[str]
     input_slots: _containers.RepeatedCompositeFieldContainer[_input_slot_pb2.ARInputSlotMessage]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ..., feedback_ids: _Optional[_Iterable[str]] = ..., action_ids: _Optional[_Iterable[str]] = ..., helper_ids: _Optional[_Iterable[str]] = ..., property_ids: _Optional[_Iterable[str]] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessages(_message.Message):
-    __slots__ = ("configs",)
-    CONFIGS_FIELD_NUMBER: _ClassVar[int]
-    configs: _containers.RepeatedCompositeFieldContainer[ARConfigMessage]
-    def __init__(self, configs: _Optional[_Iterable[_Union[ARConfigMessage, _Mapping]]] = ...) -> None: ...
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ARConfigMessage]
+    def __init__(self, items: _Optional[_Iterable[_Union[ARConfigMessage, _Mapping]]] = ...) -> None: ...

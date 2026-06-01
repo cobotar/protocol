@@ -8,8 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	v11 "github.com/cobotar/protocol/messages/geometry/v1"
+	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -182,14 +181,9 @@ type FeedbackMessage struct {
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	Properties      []*v1.Property         `protobuf:"bytes,7,rep,name=properties,proto3" json:"properties,omitempty"`
-	// repeated string property_ids = 6 [
-	// (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
-	// (buf.validate.field).repeated.unique = true
-	// ];
-	ConfigId      string `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	ConfigId        string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *FeedbackMessage) Reset() {
@@ -264,13 +258,6 @@ func (x *FeedbackMessage) GetVisibilityScope() VisibilityScope {
 	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
 }
 
-func (x *FeedbackMessage) GetProperties() []*v1.Property {
-	if x != nil {
-		return x.Properties
-	}
-	return nil
-}
-
 func (x *FeedbackMessage) GetConfigId() string {
 	if x != nil {
 		return x.ConfigId
@@ -331,7 +318,7 @@ type FeedbackAddMessage struct {
 	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
 	RobotId         string                 `protobuf:"bytes,7,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
-	Anchor          *v11.Anchor            `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	Anchor          *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -415,7 +402,7 @@ func (x *FeedbackAddMessage) GetRobotId() string {
 	return ""
 }
 
-func (x *FeedbackAddMessage) GetAnchor() *v11.Anchor {
+func (x *FeedbackAddMessage) GetAnchor() *v1.Anchor {
 	if x != nil {
 		return x.Anchor
 	}
@@ -578,17 +565,14 @@ var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd6\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa1\x02\n" +
 	"\x0fFeedbackMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
-	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x123\n" +
-	"\n" +
-	"properties\x18\a \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x12&\n" +
+	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12&\n" +
 	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
 	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xd1\x02\n" +
@@ -664,24 +648,22 @@ var file_ar_v1_feedback_proto_goTypes = []any{
 	(*FeedbackAddMessage)(nil),    // 4: ar.v1.FeedbackAddMessage
 	(*FeedbackUpdateMessage)(nil), // 5: ar.v1.FeedbackUpdateMessage
 	(*FeedbackCloneMessage)(nil),  // 6: ar.v1.FeedbackCloneMessage
-	(*v1.Property)(nil),           // 7: common.v1.Property
-	(*v11.Anchor)(nil),            // 8: geometry.v1.Anchor
+	(*v1.Anchor)(nil),             // 7: geometry.v1.Anchor
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
 	1, // 1: ar.v1.FeedbackMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	7, // 2: ar.v1.FeedbackMessage.properties:type_name -> common.v1.Property
-	2, // 3: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
-	0, // 4: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
-	1, // 5: ar.v1.FeedbackAddMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	8, // 6: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
-	1, // 7: ar.v1.FeedbackUpdateMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	1, // 8: ar.v1.FeedbackCloneMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	2, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
+	0, // 3: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
+	1, // 4: ar.v1.FeedbackAddMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	7, // 5: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
+	1, // 6: ar.v1.FeedbackUpdateMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	1, // 7: ar.v1.FeedbackCloneMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }

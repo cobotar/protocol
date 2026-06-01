@@ -5,8 +5,6 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -16,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/marker_instance.proto.
  */
 export const file_resources_v1_marker_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvbWFya2VyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEivwIKDk1hcmtlckluc3RhbmNlEhUKAmlkGAEgASgJQgm6SAZyBOjxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJgoLbWFya2VyX3RleHQYBSABKAlCEbpIDnIMEAKSAgdyb2JlcnRhEjMKBHR5cGUYBiABKA4yGC5yZXNvdXJjZXMudjEuTWFya2VyVHlwZUILukgIyAEBggECEAESGwoTY29uZmlybV9pbnN0YW50aWF0ZRgHIAEoCBIzCgZzdGF0dXMYCCABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABEisKBmN1c3RvbRgJIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIqgBCg9NYXJrZXJJbnN0YW5jZXMSlAEKB21hcmtlcnMYASADKAsyHC5yZXNvdXJjZXMudjEuTWFya2VySW5zdGFuY2VCZbpIYroBXwoSdW5pcXVlX21hcmtlcl90ZXh0EhptYXJrZXIgdGV4dCBtdXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAobWFya2VyLCBtYXJrZXIubWFya2VyX3RleHQpLnVuaXF1ZSgpKkIKCk1hcmtlclR5cGUSGwoXTUFSS0VSX1RZUEVfVU5TUEVDSUZJRUQQABIXChNNQVJLRVJfVFlQRV9RUl9DT0RFEAFCwAEKEGNvbS5yZXNvdXJjZXMudjFCE01hcmtlckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvbWFya2VyX2luc3RhbmNlLnByb3RvEgxyZXNvdXJjZXMudjEikgIKDk1hcmtlckluc3RhbmNlEhUKAmlkGAEgASgJQgm6SAZyBOjxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSJgoLbWFya2VyX3RleHQYBSABKAlCEbpIDnIMEAKSAgdyb2JlcnRhEjMKBHR5cGUYBiABKA4yGC5yZXNvdXJjZXMudjEuTWFya2VyVHlwZUILukgIyAEBggECEAESGwoTY29uZmlybV9pbnN0YW50aWF0ZRgHIAEoCBIzCgZzdGF0dXMYCCABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABIqgBCg9NYXJrZXJJbnN0YW5jZXMSlAEKB21hcmtlcnMYASADKAsyHC5yZXNvdXJjZXMudjEuTWFya2VySW5zdGFuY2VCZbpIYroBXwoSdW5pcXVlX21hcmtlcl90ZXh0EhptYXJrZXIgdGV4dCBtdXN0IGJlIHVuaXF1ZRotdGhpcy5tYXAobWFya2VyLCBtYXJrZXIubWFya2VyX3RleHQpLnVuaXF1ZSgpKkIKCk1hcmtlclR5cGUSGwoXTUFSS0VSX1RZUEVfVU5TUEVDSUZJRUQQABIXChNNQVJLRVJfVFlQRV9RUl9DT0RFEAFCwAEKEGNvbS5yZXNvdXJjZXMudjFCE01hcmtlckluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.MarkerInstance
@@ -65,11 +63,6 @@ export type MarkerInstance = Message<"resources.v1.MarkerInstance"> & {
    * @generated from field: common.v1.ResourceStatus status = 8;
    */
   status: ResourceStatus;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 9;
-   */
-  custom?: CustomProperties;
 };
 
 /**

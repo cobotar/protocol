@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/capability/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -95,16 +95,16 @@ func (ActionType) EnumDescriptor() ([]byte, []int) {
 }
 
 type ActionMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
-	Properties    []*v1.Property         `protobuf:"bytes,6,rep,name=properties,proto3" json:"properties,omitempty"`
-	ConfigId      string                 `protobuf:"bytes,7,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                    string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                    ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,7,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
+	ConfigId                string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ActionMessage) Reset() {
@@ -172,9 +172,9 @@ func (x *ActionMessage) GetType() ActionType {
 	return ActionType_ACTION_TYPE_UNSPECIFIED
 }
 
-func (x *ActionMessage) GetProperties() []*v1.Property {
+func (x *ActionMessage) GetEligibilityRequirements() []*v1.SkillRequirement {
 	if x != nil {
-		return x.Properties
+		return x.EligibilityRequirements
 	}
 	return nil
 }
@@ -188,7 +188,7 @@ func (x *ActionMessage) GetConfigId() string {
 
 type ActionMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Actions       []*ActionMessage       `protobuf:"bytes,1,rep,name=actions,proto3" json:"actions,omitempty"`
+	Items         []*ActionMessage       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -223,9 +223,9 @@ func (*ActionMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_action_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ActionMessages) GetActions() []*ActionMessage {
+func (x *ActionMessages) GetItems() []*ActionMessage {
 	if x != nil {
-		return x.Actions
+		return x.Items
 	}
 	return nil
 }
@@ -462,19 +462,17 @@ var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x02\n" +
 	"\rActionMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x123\n" +
-	"\n" +
-	"properties\x18\x06 \x03(\v2\x13.common.v1.PropertyR\n" +
-	"properties\x12&\n" +
-	"\tconfig_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
-	"\x0eActionMessages\x12.\n" +
-	"\aactions\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\aactions\"\x89\x02\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12Z\n" +
+	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12&\n" +
+	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"<\n" +
+	"\x0eActionMessages\x12*\n" +
+	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x89\x02\n" +
 	"\x10ActionAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -530,12 +528,12 @@ var file_ar_v1_action_proto_goTypes = []any{
 	(*ActionAddMessage)(nil),    // 3: ar.v1.ActionAddMessage
 	(*ActionUpdateMessage)(nil), // 4: ar.v1.ActionUpdateMessage
 	(*ActionCloneMessage)(nil),  // 5: ar.v1.ActionCloneMessage
-	(*v1.Property)(nil),         // 6: common.v1.Property
+	(*v1.SkillRequirement)(nil), // 6: capability.v1.SkillRequirement
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	6, // 1: ar.v1.ActionMessage.properties:type_name -> common.v1.Property
-	1, // 2: ar.v1.ActionMessages.actions:type_name -> ar.v1.ActionMessage
+	6, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
 	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type

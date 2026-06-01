@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/key_value_constraint.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -61,7 +60,6 @@ message AssetDefinition {
   ];
   string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
   VisionCapability vision = 8;
-  common.v1.CustomProperties custom = 9;
   // TODO: add ToolRole or similar way to express capabilities?
 }
 

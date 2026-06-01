@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -23,8 +22,6 @@ message ToolInstance {
   common.v1.ResourceStatus status = 7 [(buf.validate.field).enum.defined_only = true];
   bool calibrated = 8;
   google.protobuf.Timestamp calibration_valid_until = 9;
-
-  common.v1.CustomProperties custom = 10;
 }
 
 message ToolInstances {

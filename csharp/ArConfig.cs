@@ -31,27 +31,24 @@ namespace Messages.AR.V1 {
             "CUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
             "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIkgKFEFSQ29uZmlnSW5mb01l",
             "c3NhZ2VzEjAKBWluZm9zGAEgAygLMhouYXIudjEuQVJDb25maWdJbmZvTWVz",
-            "c2FnZVIFaW5mb3MihgMKD0FSQ29uZmlnTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
-            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEj4K",
-            "FWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgFIAEoA0IKukgHIgUoAEjeAlITYXJE",
-            "aXNhcHBlYXJEaXN0YW5jZRIhCgxmZWVkYmFja19pZHMYBiADKAlSC2ZlZWRi",
-            "YWNrSWRzEh0KCmFjdGlvbl9pZHMYByADKAlSCWFjdGlvbklkcxIdCgpoZWxw",
-            "ZXJfaWRzGAggAygJUgloZWxwZXJJZHMSMQoMcHJvcGVydHlfaWRzGAkgAygJ",
-            "Qg66SAuSAQgiBnIEmPEEAVILcHJvcGVydHlJZHMSOgoLaW5wdXRfc2xvdHMY",
-            "CiADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2VSCmlucHV0U2xvdHMi",
-            "RAoQQVJDb25maWdNZXNzYWdlcxIwCgdjb25maWdzGAEgAygLMhYuYXIudjEu",
-            "QVJDb25maWdNZXNzYWdlUgdjb25maWdzQokBCgljb20uYXIudjFCDUFyQ29u",
-            "ZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
-            "Z2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx",
-            "4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "c2FnZVIFaW5mb3Mi/QEKD0FSQ29uZmlnTWVzc2FnZRIZCgJpZBgBIAEoCUIJ",
+            "ukgGcgSQ8QQBUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBBABGEBSBG5hbWUS",
+            "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
+            "Y3JpcHRpb24SPgoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAUgASgDQgq6SAci",
+            "BSgASN4CUhNhckRpc2FwcGVhckRpc3RhbmNlEjoKC2lucHV0X3Nsb3RzGAog",
+            "AygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlUgppbnB1dFNsb3RzIkAK",
+            "EEFSQ29uZmlnTWVzc2FnZXMSLAoFaXRlbXMYASADKAsyFi5hci52MS5BUkNv",
+            "bmZpZ01lc3NhZ2VSBWl0ZW1zQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJv",
+            "dG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fy",
+            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
+            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.InputSlotReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessage), global::Messages.AR.V1.ARConfigInfoMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessages), global::Messages.AR.V1.ARConfigInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "FeedbackIds", "ActionIds", "HelperIds", "PropertyIds", "InputSlots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessages), global::Messages.AR.V1.ARConfigMessages.Parser, new[]{ "Configs" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "InputSlots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessages), global::Messages.AR.V1.ARConfigMessages.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
     #endregion
@@ -609,10 +606,6 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       arDisappearDistance_ = other.arDisappearDistance_;
-      feedbackIds_ = other.feedbackIds_.Clone();
-      actionIds_ = other.actionIds_.Clone();
-      helperIds_ = other.helperIds_.Clone();
-      propertyIds_ = other.propertyIds_.Clone();
       inputSlots_ = other.inputSlots_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -689,62 +682,6 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "feedback_ids" field.</summary>
-    public const int FeedbackIdsFieldNumber = 6;
-    private static readonly pb::FieldCodec<string> _repeated_feedbackIds_codec
-        = pb::FieldCodec.ForString(50);
-    private readonly pbc::RepeatedField<string> feedbackIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Feedback entities belonging to this config.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> FeedbackIds {
-      get { return feedbackIds_; }
-    }
-
-    /// <summary>Field number for the "action_ids" field.</summary>
-    public const int ActionIdsFieldNumber = 7;
-    private static readonly pb::FieldCodec<string> _repeated_actionIds_codec
-        = pb::FieldCodec.ForString(58);
-    private readonly pbc::RepeatedField<string> actionIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Action entities belonging to this config.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> ActionIds {
-      get { return actionIds_; }
-    }
-
-    /// <summary>Field number for the "helper_ids" field.</summary>
-    public const int HelperIdsFieldNumber = 8;
-    private static readonly pb::FieldCodec<string> _repeated_helperIds_codec
-        = pb::FieldCodec.ForString(66);
-    private readonly pbc::RepeatedField<string> helperIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Helper entities belonging to this config.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> HelperIds {
-      get { return helperIds_; }
-    }
-
-    /// <summary>Field number for the "property_ids" field.</summary>
-    public const int PropertyIdsFieldNumber = 9;
-    private static readonly pb::FieldCodec<string> _repeated_propertyIds_codec
-        = pb::FieldCodec.ForString(74);
-    private readonly pbc::RepeatedField<string> propertyIds_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// Includes server-managed generated properties for referenced input slots.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> PropertyIds {
-      get { return propertyIds_; }
-    }
-
     /// <summary>Field number for the "input_slots" field.</summary>
     public const int InputSlotsFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ARInputSlotMessage> _repeated_inputSlots_codec
@@ -779,10 +716,6 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (ArDisappearDistance != other.ArDisappearDistance) return false;
-      if(!feedbackIds_.Equals(other.feedbackIds_)) return false;
-      if(!actionIds_.Equals(other.actionIds_)) return false;
-      if(!helperIds_.Equals(other.helperIds_)) return false;
-      if(!propertyIds_.Equals(other.propertyIds_)) return false;
       if(!inputSlots_.Equals(other.inputSlots_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -796,10 +729,6 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
-      hash ^= feedbackIds_.GetHashCode();
-      hash ^= actionIds_.GetHashCode();
-      hash ^= helperIds_.GetHashCode();
-      hash ^= propertyIds_.GetHashCode();
       hash ^= inputSlots_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -839,10 +768,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteInt64(ArDisappearDistance);
       }
-      feedbackIds_.WriteTo(output, _repeated_feedbackIds_codec);
-      actionIds_.WriteTo(output, _repeated_actionIds_codec);
-      helperIds_.WriteTo(output, _repeated_helperIds_codec);
-      propertyIds_.WriteTo(output, _repeated_propertyIds_codec);
       inputSlots_.WriteTo(output, _repeated_inputSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -874,10 +799,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteInt64(ArDisappearDistance);
       }
-      feedbackIds_.WriteTo(ref output, _repeated_feedbackIds_codec);
-      actionIds_.WriteTo(ref output, _repeated_actionIds_codec);
-      helperIds_.WriteTo(ref output, _repeated_helperIds_codec);
-      propertyIds_.WriteTo(ref output, _repeated_propertyIds_codec);
       inputSlots_.WriteTo(ref output, _repeated_inputSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -904,10 +825,6 @@ namespace Messages.AR.V1 {
       if (ArDisappearDistance != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
       }
-      size += feedbackIds_.CalculateSize(_repeated_feedbackIds_codec);
-      size += actionIds_.CalculateSize(_repeated_actionIds_codec);
-      size += helperIds_.CalculateSize(_repeated_helperIds_codec);
-      size += propertyIds_.CalculateSize(_repeated_propertyIds_codec);
       size += inputSlots_.CalculateSize(_repeated_inputSlots_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -936,10 +853,6 @@ namespace Messages.AR.V1 {
       if (other.ArDisappearDistance != 0L) {
         ArDisappearDistance = other.ArDisappearDistance;
       }
-      feedbackIds_.Add(other.feedbackIds_);
-      actionIds_.Add(other.actionIds_);
-      helperIds_.Add(other.helperIds_);
-      propertyIds_.Add(other.propertyIds_);
       inputSlots_.Add(other.inputSlots_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -978,22 +891,6 @@ namespace Messages.AR.V1 {
           }
           case 40: {
             ArDisappearDistance = input.ReadInt64();
-            break;
-          }
-          case 50: {
-            feedbackIds_.AddEntriesFrom(input, _repeated_feedbackIds_codec);
-            break;
-          }
-          case 58: {
-            actionIds_.AddEntriesFrom(input, _repeated_actionIds_codec);
-            break;
-          }
-          case 66: {
-            helperIds_.AddEntriesFrom(input, _repeated_helperIds_codec);
-            break;
-          }
-          case 74: {
-            propertyIds_.AddEntriesFrom(input, _repeated_propertyIds_codec);
             break;
           }
           case 82: {
@@ -1037,22 +934,6 @@ namespace Messages.AR.V1 {
           }
           case 40: {
             ArDisappearDistance = input.ReadInt64();
-            break;
-          }
-          case 50: {
-            feedbackIds_.AddEntriesFrom(ref input, _repeated_feedbackIds_codec);
-            break;
-          }
-          case 58: {
-            actionIds_.AddEntriesFrom(ref input, _repeated_actionIds_codec);
-            break;
-          }
-          case 66: {
-            helperIds_.AddEntriesFrom(ref input, _repeated_helperIds_codec);
-            break;
-          }
-          case 74: {
-            propertyIds_.AddEntriesFrom(ref input, _repeated_propertyIds_codec);
             break;
           }
           case 82: {
@@ -1101,7 +982,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ARConfigMessages(ARConfigMessages other) : this() {
-      configs_ = other.configs_.Clone();
+      items_ = other.items_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1111,18 +992,18 @@ namespace Messages.AR.V1 {
       return new ARConfigMessages(this);
     }
 
-    /// <summary>Field number for the "configs" field.</summary>
-    public const int ConfigsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARConfigMessage> _repeated_configs_codec
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARConfigMessage> _repeated_items_codec
         = pb::FieldCodec.ForMessage(10, global::Messages.AR.V1.ARConfigMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage> configs_ = new pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage>();
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage> items_ = new pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage>();
     /// <summary>
     /// AR config templates.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage> Configs {
-      get { return configs_; }
+    public pbc::RepeatedField<global::Messages.AR.V1.ARConfigMessage> Items {
+      get { return items_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1140,7 +1021,7 @@ namespace Messages.AR.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!configs_.Equals(other.configs_)) return false;
+      if(!items_.Equals(other.items_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1148,7 +1029,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= configs_.GetHashCode();
+      hash ^= items_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1167,7 +1048,7 @@ namespace Messages.AR.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      configs_.WriteTo(output, _repeated_configs_codec);
+      items_.WriteTo(output, _repeated_items_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1178,7 +1059,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      configs_.WriteTo(ref output, _repeated_configs_codec);
+      items_.WriteTo(ref output, _repeated_items_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1189,7 +1070,7 @@ namespace Messages.AR.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += configs_.CalculateSize(_repeated_configs_codec);
+      size += items_.CalculateSize(_repeated_items_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1202,7 +1083,7 @@ namespace Messages.AR.V1 {
       if (other == null) {
         return;
       }
-      configs_.Add(other.configs_);
+      items_.Add(other.items_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1223,7 +1104,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            configs_.AddEntriesFrom(input, _repeated_configs_codec);
+            items_.AddEntriesFrom(input, _repeated_items_codec);
             break;
           }
         }
@@ -1246,7 +1127,7 @@ namespace Messages.AR.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            configs_.AddEntriesFrom(ref input, _repeated_configs_codec);
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
             break;
           }
         }

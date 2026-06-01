@@ -9,8 +9,10 @@ MODEL_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 model_id_component: _descriptor.FieldDescriptor
 AR_CONFIG_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 ar_config_id_component: _descriptor.FieldDescriptor
-PROPERTY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
-property_id_component: _descriptor.FieldDescriptor
+PROPERTY_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+property_definition_id_component: _descriptor.FieldDescriptor
+PROPERTY_INSTANCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+property_instance_id_component: _descriptor.FieldDescriptor
 ROBOT_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 robot_definition_id_component: _descriptor.FieldDescriptor
 ROBOT_INSTANCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
@@ -73,3 +75,5 @@ SIDECAR_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 sidecar_asset_id_component: _descriptor.FieldDescriptor
 IMAGE_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 image_asset_id_component: _descriptor.FieldDescriptor
+DEVICE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+device_id_component: _descriptor.FieldDescriptor

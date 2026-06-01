@@ -5,8 +5,6 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -16,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/asset_instance.proto.
  */
 export const file_resources_v1_asset_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiFyZXNvdXJjZXMvdjEvYXNzZXRfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSLvAQoNQXNzZXRJbnN0YW5jZRIVCgJpZBgBIAEoCUIJukgGcgS48QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEikKE2Fzc2V0X2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIEsPEEARIzCgZzdGF0dXMYBiABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABEisKBmN1c3RvbRgHIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIjwKDkFzc2V0SW5zdGFuY2VzEioKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2VzLnYxLkFzc2V0SW5zdGFuY2VCvwEKEGNvbS5yZXNvdXJjZXMudjFCEkFzc2V0SW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiFyZXNvdXJjZXMvdjEvYXNzZXRfaW5zdGFuY2UucHJvdG8SDHJlc291cmNlcy52MSLCAQoNQXNzZXRJbnN0YW5jZRIVCgJpZBgBIAEoCUIJukgGcgS48QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEikKE2Fzc2V0X2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIEsPEEARIzCgZzdGF0dXMYBiABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpIBYIBAhABIjwKDkFzc2V0SW5zdGFuY2VzEioKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2VzLnYxLkFzc2V0SW5zdGFuY2VCvwEKEGNvbS5yZXNvdXJjZXMudjFCEkFzc2V0SW5zdGFuY2VQcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_enums, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.AssetInstance
@@ -51,11 +49,6 @@ export type AssetInstance = Message<"resources.v1.AssetInstance"> & {
    * @generated from field: common.v1.ResourceStatus status = 6;
    */
   status: ResourceStatus;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 7;
-   */
-  custom?: CustomProperties;
 };
 
 /**

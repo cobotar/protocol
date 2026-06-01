@@ -132,7 +132,6 @@ type ToolDefinition struct {
 	CapabilityProfile  *v11.CapabilityProfile  `protobuf:"bytes,9,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
 	ModelId            string                  `protobuf:"bytes,10,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,11,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *v1.CustomProperties    `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -244,13 +243,6 @@ func (x *ToolDefinition) GetExternalReferences() []*v1.ExternalReference {
 	return nil
 }
 
-func (x *ToolDefinition) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type ToolDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ToolDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -299,7 +291,7 @@ var File_resources_v1_tool_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_tool_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/tool_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/actor.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf8\x04\n" +
+	"\"resources/v1/tool_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/actor.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc3\x04\n" +
 	"\x0eToolDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -316,8 +308,7 @@ const file_resources_v1_tool_definition_proto_rawDesc = "" +
 	"\x12capability_profile\x18\t \x01(\v2 .capability.v1.CapabilityProfileR\x11capabilityProfile\x12$\n" +
 	"\bmodel_id\x18\n" +
 	" \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x12M\n" +
-	"\x13external_references\x18\v \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
-	"\x06custom\x18\f \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"\x13external_references\x18\v \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"E\n" +
 	"\x0fToolDefinitions\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.ToolDefinitionR\x05items*\xcd\x03\n" +
 	"\bToolType\x12\x19\n" +
@@ -365,7 +356,6 @@ var file_resources_v1_tool_definition_proto_goTypes = []any{
 	(v11.ToolProperty)(0),         // 5: capability.v1.ToolProperty
 	(*v11.CapabilityProfile)(nil), // 6: capability.v1.CapabilityProfile
 	(*v1.ExternalReference)(nil),  // 7: common.v1.ExternalReference
-	(*v1.CustomProperties)(nil),   // 8: common.v1.CustomProperties
 }
 var file_resources_v1_tool_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.ToolDefinition.type:type_name -> resources.v1.ToolType
@@ -374,13 +364,12 @@ var file_resources_v1_tool_definition_proto_depIdxs = []int32{
 	5, // 3: resources.v1.ToolDefinition.properties:type_name -> capability.v1.ToolProperty
 	6, // 4: resources.v1.ToolDefinition.capability_profile:type_name -> capability.v1.CapabilityProfile
 	7, // 5: resources.v1.ToolDefinition.external_references:type_name -> common.v1.ExternalReference
-	8, // 6: resources.v1.ToolDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // 7: resources.v1.ToolDefinitions.items:type_name -> resources.v1.ToolDefinition
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	1, // 6: resources.v1.ToolDefinitions.items:type_name -> resources.v1.ToolDefinition
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_tool_definition_proto_init() }

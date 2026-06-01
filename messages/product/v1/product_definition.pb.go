@@ -33,7 +33,6 @@ type ProductDefinition struct {
 	RootNodeId         string                   `protobuf:"bytes,6,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
 	Nodes              []*AssemblyNode          `protobuf:"bytes,7,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	ExternalReferences []*v11.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Custom             *v11.CustomProperties    `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -124,13 +123,6 @@ func (x *ProductDefinition) GetExternalReferences() []*v11.ExternalReference {
 	return nil
 }
 
-func (x *ProductDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type ProductDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProductDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -180,7 +172,7 @@ var File_product_v1_product_definition_proto protoreflect.FileDescriptor
 const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\n" +
 	"#product/v1/product_definition.proto\x12\n" +
-	"product.v1\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a\x1evariance/v1/variant_axis.proto\"\x80\x03\n" +
+	"product.v1\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a\x1evariance/v1/variant_axis.proto\"\xcb\x02\n" +
 	"\x11ProductDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -190,8 +182,7 @@ const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\froot_node_id\x18\x06 \x01(\tR\n" +
 	"rootNodeId\x12.\n" +
 	"\x05nodes\x18\a \x03(\v2\x18.product.v1.AssemblyNodeR\x05nodes\x12M\n" +
-	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"I\n" +
+	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"I\n" +
 	"\x12ProductDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.product.v1.ProductDefinitionR\x05itemsB\xb5\x01\n" +
 	"\x0ecom.product.v1B\x16ProductDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
@@ -216,19 +207,17 @@ var file_product_v1_product_definition_proto_goTypes = []any{
 	(*v1.VariantAxis)(nil),        // 2: variance.v1.VariantAxis
 	(*AssemblyNode)(nil),          // 3: product.v1.AssemblyNode
 	(*v11.ExternalReference)(nil), // 4: common.v1.ExternalReference
-	(*v11.CustomProperties)(nil),  // 5: common.v1.CustomProperties
 }
 var file_product_v1_product_definition_proto_depIdxs = []int32{
 	2, // 0: product.v1.ProductDefinition.variant_axes:type_name -> variance.v1.VariantAxis
 	3, // 1: product.v1.ProductDefinition.nodes:type_name -> product.v1.AssemblyNode
 	4, // 2: product.v1.ProductDefinition.external_references:type_name -> common.v1.ExternalReference
-	5, // 3: product.v1.ProductDefinition.custom:type_name -> common.v1.CustomProperties
-	0, // 4: product.v1.ProductDefinitions.items:type_name -> product.v1.ProductDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	0, // 3: product.v1.ProductDefinitions.items:type_name -> product.v1.ProductDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_product_definition_proto_init() }

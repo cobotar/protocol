@@ -25,26 +25,24 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFyZXNvdXJjZXMvdjEvYXNzZXRfaW5zdGFuY2UucHJvdG8SDHJlc291cmNl",
-            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEv",
-            "Y3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aFWNvbW1vbi92MS9lbnVtcy5wcm90",
-            "bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90",
-            "byKvAgoNQXNzZXRJbnN0YW5jZRIZCgJpZBgBIAEoCUIJukgGcgS48QQBUgJp",
-            "ZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEo",
-            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoT",
-            "YXNzZXRfZGVmaW5pdGlvbl9pZBgFIAEoCUIMukgJcgSw8QQByAEBUhFhc3Nl",
-            "dERlZmluaXRpb25JZBI7CgZzdGF0dXMYBiABKA4yGS5jb21tb24udjEuUmVz",
-            "b3VyY2VTdGF0dXNCCLpIBYIBAhABUgZzdGF0dXMSMwoGY3VzdG9tGAcgASgL",
-            "MhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSJDCg5Bc3Nl",
-            "dEluc3RhbmNlcxIxCgVpdGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Bc3Nl",
-            "dEluc3RhbmNlUgVpdGVtc0K/AQoQY29tLnJlc291cmNlcy52MUISQXNzZXRJ",
-            "bnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
-            "ZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNz",
-            "YWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNc",
-            "VjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
+            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhVjb21tb24vdjEv",
+            "ZW51bXMucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
+            "cnVsZXMucHJvdG8i+gEKDUFzc2V0SW5zdGFuY2USGQoCaWQYASABKAlCCbpI",
+            "BnIEuPEEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEjwKE2Fzc2V0X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIEsPEE",
+            "AcgBAVIRYXNzZXREZWZpbml0aW9uSWQSOwoGc3RhdHVzGAYgASgOMhkuY29t",
+            "bW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzIkMKDkFz",
+            "c2V0SW5zdGFuY2VzEjEKBWl0ZW1zGAEgAygLMhsucmVzb3VyY2VzLnYxLkFz",
+            "c2V0SW5zdGFuY2VSBWl0ZW1zQr8BChBjb20ucmVzb3VyY2VzLnYxQhJBc3Nl",
+            "dEluc3RhbmNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
+            "L21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1l",
+            "c3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNl",
+            "c1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstance), global::Messages.Resources.V1.AssetInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "AssetDefinitionId", "Status", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstance), global::Messages.Resources.V1.AssetInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "AssetDefinitionId", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetInstances), global::Messages.Resources.V1.AssetInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -93,7 +91,6 @@ namespace Messages.Resources.V1 {
       description_ = other.description_;
       assetDefinitionId_ = other.assetDefinitionId_;
       status_ = other.status_;
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -175,18 +172,6 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 7;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -208,7 +193,6 @@ namespace Messages.Resources.V1 {
       if (Description != other.Description) return false;
       if (AssetDefinitionId != other.AssetDefinitionId) return false;
       if (Status != other.Status) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -222,7 +206,6 @@ namespace Messages.Resources.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (AssetDefinitionId.Length != 0) hash ^= AssetDefinitionId.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -265,10 +248,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -303,10 +282,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -334,9 +309,6 @@ namespace Messages.Resources.V1 {
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-      }
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -367,12 +339,6 @@ namespace Messages.Resources.V1 {
       }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
-      }
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -417,13 +383,6 @@ namespace Messages.Resources.V1 {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 58: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -465,13 +424,6 @@ namespace Messages.Resources.V1 {
           }
           case 48: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
-            break;
-          }
-          case 58: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

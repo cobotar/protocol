@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from resources.v1 import placement_pb2 as _placement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -39,7 +38,7 @@ STATION_STATUS_CLOSED: StationStatus
 STATION_STATUS_BLOCKED: StationStatus
 
 class StationDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "type", "status", "max_concurrent_processes", "allow_queued_process", "tools", "robots", "assets", "markers", "frame", "custom")
+    __slots__ = ("id", "name", "description", "icon", "type", "status", "max_concurrent_processes", "allow_queued_process", "tools", "robots", "assets", "markers", "frame")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -53,7 +52,6 @@ class StationDefinition(_message.Message):
     ASSETS_FIELD_NUMBER: _ClassVar[int]
     MARKERS_FIELD_NUMBER: _ClassVar[int]
     FRAME_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
@@ -67,8 +65,7 @@ class StationDefinition(_message.Message):
     assets: _containers.RepeatedCompositeFieldContainer[_placement_pb2.AssetPlacement]
     markers: _containers.RepeatedCompositeFieldContainer[_placement_pb2.MarkerPlacement]
     frame: _pose_pb2.LocalizedPose
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[StationType, str]] = ..., status: _Optional[_Union[StationStatus, str]] = ..., max_concurrent_processes: _Optional[int] = ..., allow_queued_process: bool = ..., tools: _Optional[_Iterable[_Union[_placement_pb2.ToolPlacement, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[_placement_pb2.RobotPlacement, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[_placement_pb2.AssetPlacement, _Mapping]]] = ..., markers: _Optional[_Iterable[_Union[_placement_pb2.MarkerPlacement, _Mapping]]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., type: _Optional[_Union[StationType, str]] = ..., status: _Optional[_Union[StationStatus, str]] = ..., max_concurrent_processes: _Optional[int] = ..., allow_queued_process: bool = ..., tools: _Optional[_Iterable[_Union[_placement_pb2.ToolPlacement, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[_placement_pb2.RobotPlacement, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[_placement_pb2.AssetPlacement, _Mapping]]] = ..., markers: _Optional[_Iterable[_Union[_placement_pb2.MarkerPlacement, _Mapping]]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
 
 class StationDefinitions(_message.Message):
     __slots__ = ("items",)

@@ -1,7 +1,6 @@
 syntax = "proto3";
 package product.v1;
 
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "product/v1/assembly_node.proto";
 import "variance/v1/variant_axis.proto";
@@ -18,7 +17,6 @@ message ProductDefinition {
   string root_node_id = 6;
   repeated AssemblyNode nodes = 7;
   repeated common.v1.ExternalReference external_references = 8;
-  common.v1.CustomProperties custom = 9;
 }
 
 message ProductDefinitions {

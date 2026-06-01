@@ -25,37 +25,35 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291",
-            "cmNlcy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24v",
-            "djEvY3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aI2NvbW1vbi92MS9leHRlcm5h",
-            "bF9yZWZlcmVuY2VzLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRf",
-            "c3RyaW5nX3J1bGVzLnByb3RvIoIBCg5Xb3JrZXJMb2NhdGlvbhIiCgdsaW5l",
-            "X2lkGAEgASgJQgm6SAZyBMDyBAFSBmxpbmVJZBIiCgdjZWxsX2lkGAIgASgJ",
-            "Qgm6SAZyBLjyBAFSBmNlbGxJZBIoCgpzdGF0aW9uX2lkGAMgASgJQgm6SAZy",
-            "BPjxBAFSCXN0YXRpb25JZCLJAwoQV29ya2VyRGVmaW5pdGlvbhIZCgJpZBgB",
-            "IAEoCUIJukgGcgTY6zABUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
-            "BG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBGlj",
-            "b24YBCABKAlSBGljb24SGgoIZGlzYWJsZWQYBSABKAhSCGRpc2FibGVkEh8K",
-            "C2VtcGxveWVlX2lkGAYgASgJUgplbXBsb3llZUlkEkoKEmFyX2VkaXRfcGVy",
-            "bWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvblIQ",
-            "YXJFZGl0UGVybWlzc2lvbhJNChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygL",
-            "MhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJlZmVy",
-            "ZW5jZXMSOAoIbG9jYXRpb24YCSABKAsyHC5yZXNvdXJjZXMudjEuV29ya2Vy",
-            "TG9jYXRpb25SCGxvY2F0aW9uEjMKBmN1c3RvbRgKIAEoCzIbLmNvbW1vbi52",
-            "MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iSQoRV29ya2VyRGVmaW5pdGlv",
-            "bnMSNAoFaXRlbXMYASADKAsyHi5yZXNvdXJjZXMudjEuV29ya2VyRGVmaW5p",
-            "dGlvblIFaXRlbXMqhAEKDkVkaXRQZXJtaXNzaW9uEh8KG0VESVRfUEVSTUlT",
-            "U0lPTl9VTlNQRUNJRklFRBAAEhkKFUVESVRfUEVSTUlTU0lPTl9CQVNJQxAB",
-            "EhwKGEVESVRfUEVSTUlTU0lPTl9DT1NNRVRJQxACEhgKFEVESVRfUEVSTUlT",
-            "U0lPTl9GVUxMEANCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmlu",
-            "aXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2Fn",
-            "ZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYx",
-            "XEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "cmNlcy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiNjb21tb24v",
+            "djEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxordmFsaWRhdGlvbi92MS9w",
+            "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKCAQoOV29ya2VyTG9jYXRp",
+            "b24SIgoHbGluZV9pZBgBIAEoCUIJukgGcgTA8gQBUgZsaW5lSWQSIgoHY2Vs",
+            "bF9pZBgCIAEoCUIJukgGcgS48gQBUgZjZWxsSWQSKAoKc3RhdGlvbl9pZBgD",
+            "IAEoCUIJukgGcgT48QQBUglzdGF0aW9uSWQilAMKEFdvcmtlckRlZmluaXRp",
+            "b24SGQoCaWQYASABKAlCCbpIBnIE2OswAVICaWQSHQoEbmFtZRgCIAEoCUIJ",
+            "ukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
+            "dGlvbhISCgRpY29uGAQgASgJUgRpY29uEhoKCGRpc2FibGVkGAUgASgIUghk",
+            "aXNhYmxlZBIfCgtlbXBsb3llZV9pZBgGIAEoCVIKZW1wbG95ZWVJZBJKChJh",
+            "cl9lZGl0X3Blcm1pc3Npb24YByABKA4yHC5yZXNvdXJjZXMudjEuRWRpdFBl",
+            "cm1pc3Npb25SEGFyRWRpdFBlcm1pc3Npb24STQoTZXh0ZXJuYWxfcmVmZXJl",
+            "bmNlcxgIIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0",
+            "ZXJuYWxSZWZlcmVuY2VzEjgKCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2Vz",
+            "LnYxLldvcmtlckxvY2F0aW9uUghsb2NhdGlvbiJJChFXb3JrZXJEZWZpbml0",
+            "aW9ucxI0CgVpdGVtcxgBIAMoCzIeLnJlc291cmNlcy52MS5Xb3JrZXJEZWZp",
+            "bml0aW9uUgVpdGVtcyqEAQoORWRpdFBlcm1pc3Npb24SHwobRURJVF9QRVJN",
+            "SVNTSU9OX1VOU1BFQ0lGSUVEEAASGQoVRURJVF9QRVJNSVNTSU9OX0JBU0lD",
+            "EAESHAoYRURJVF9QRVJNSVNTSU9OX0NPU01FVElDEAISGAoURURJVF9QRVJN",
+            "SVNTSU9OX0ZVTEwQA0LCAQoQY29tLnJlc291cmNlcy52MUIVV29ya2VyRGVm",
+            "aW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
+            "ZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNz",
+            "YWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNc",
+            "VjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.EditPermission), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerLocation), global::Messages.Resources.V1.WorkerLocation.Parser, new[]{ "LineId", "CellId", "StationId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Location", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Location" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinitions), global::Messages.Resources.V1.WorkerDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -407,7 +405,6 @@ namespace Messages.Resources.V1 {
       arEditPermission_ = other.arEditPermission_;
       externalReferences_ = other.externalReferences_.Clone();
       location_ = other.location_ != null ? other.location_.Clone() : null;
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -530,18 +527,6 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 10;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -566,7 +551,6 @@ namespace Messages.Resources.V1 {
       if (ArEditPermission != other.ArEditPermission) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Location, other.Location)) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -583,7 +567,6 @@ namespace Messages.Resources.V1 {
       if (ArEditPermission != global::Messages.Resources.V1.EditPermission.Unspecified) hash ^= ArEditPermission.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -635,10 +618,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(74);
         output.WriteMessage(Location);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -682,10 +661,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(74);
         output.WriteMessage(Location);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -720,9 +695,6 @@ namespace Messages.Resources.V1 {
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (location_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
-      }
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -763,12 +735,6 @@ namespace Messages.Resources.V1 {
           Location = new global::Messages.Resources.V1.WorkerLocation();
         }
         Location.MergeFrom(other.Location);
-      }
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -828,13 +794,6 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(Location);
             break;
           }
-          case 82: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -891,13 +850,6 @@ namespace Messages.Resources.V1 {
               Location = new global::Messages.Resources.V1.WorkerLocation();
             }
             input.ReadMessage(Location);
-            break;
-          }
-          case 82: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

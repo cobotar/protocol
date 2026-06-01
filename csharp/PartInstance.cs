@@ -25,40 +25,38 @@ namespace Messages.Product.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5wcm9kdWN0L3YxL3BhcnRfaW5zdGFuY2UucHJvdG8SCnByb2R1Y3QudjEa",
-            "G2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9uL3YxL2N1c3Rv",
-            "bV9wcm9wZXJ0aWVzLnByb3RvGhVjb21tb24vdjEvZW51bXMucHJvdG8aFmdl",
-            "b21ldHJ5L3YxL3Bvc2UucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5l",
-            "ZF9zdHJpbmdfcnVsZXMucHJvdG8igwEKDlF1YW50aXR5U3RhdHVzEiYKBmFt",
-            "b3VudBgBIAEoAUIOukgLEgkpAAAAAAAAAABSBmFtb3VudBISCgR1bml0GAIg",
-            "ASgJUgR1bml0EjUKDm5vbWluYWxfYW1vdW50GAMgASgBQg66SAsSCSkAAAAA",
-            "AAAAAFINbm9taW5hbEFtb3VudCKQAgoUUGFydEluc3RhbmNlTG9jYXRpb24S",
-            "PQoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBNDrMAFSE2Nv",
-            "bnRhaW5lckluc3RhbmNlSWQSFwoHc2xvdF9pZBgCIAEoCVIGc2xvdElkEiIK",
-            "B2xpbmVfaWQYAyABKAlCCbpIBnIEwPIEAVIGbGluZUlkEiIKB2NlbGxfaWQY",
-            "BCABKAlCCbpIBnIEuPIEAVIGY2VsbElkEigKCnN0YXRpb25faWQYBSABKAlC",
-            "CbpIBnIE+PEEAVIJc3RhdGlvbklkEi4KBHBvc2UYBiABKAsyGi5nZW9tZXRy",
-            "eS52MS5Mb2NhbGl6ZWRQb3NlUgRwb3NlIqIDCgxQYXJ0SW5zdGFuY2USGQoC",
-            "aWQYASABKAlCCbpIBnIE0PEEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA",
-            "8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24Y",
-            "BCABKAlSC2Rlc2NyaXB0aW9uEjoKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEo",
-            "CUIMukgJcgTI8QQByAEBUhBwYXJ0RGVmaW5pdGlvbklkEjsKBnN0YXR1cxgG",
-            "IAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1c0IIukgFggECEAFSBnN0",
-            "YXR1cxI8Cghsb2NhdGlvbhgHIAEoCzIgLnByb2R1Y3QudjEuUGFydEluc3Rh",
-            "bmNlTG9jYXRpb25SCGxvY2F0aW9uEjYKCHF1YW50aXR5GAggASgLMhoucHJv",
-            "ZHVjdC52MS5RdWFudGl0eVN0YXR1c1IIcXVhbnRpdHkSMwoGY3VzdG9tGAkg",
-            "ASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNSBmN1c3RvbSI/Cg1Q",
-            "YXJ0SW5zdGFuY2VzEi4KBWl0ZW1zGAEgAygLMhgucHJvZHVjdC52MS5QYXJ0",
-            "SW5zdGFuY2VSBWl0ZW1zQrABCg5jb20ucHJvZHVjdC52MUIRUGFydEluc3Rh",
-            "bmNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
-            "Z2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJv",
-            "ZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh",
-            "6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
+            "G2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoVY29tbW9uL3YxL2VudW1z",
+            "LnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnByb3RvGit2YWxpZGF0aW9uL3Yx",
+            "L3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoMBCg5RdWFudGl0eVN0",
+            "YXR1cxImCgZhbW91bnQYASABKAFCDrpICxIJKQAAAAAAAAAAUgZhbW91bnQS",
+            "EgoEdW5pdBgCIAEoCVIEdW5pdBI1Cg5ub21pbmFsX2Ftb3VudBgDIAEoAUIO",
+            "ukgLEgkpAAAAAAAAAABSDW5vbWluYWxBbW91bnQikAIKFFBhcnRJbnN0YW5j",
+            "ZUxvY2F0aW9uEj0KFWNvbnRhaW5lcl9pbnN0YW5jZV9pZBgBIAEoCUIJukgG",
+            "cgTQ6zABUhNjb250YWluZXJJbnN0YW5jZUlkEhcKB3Nsb3RfaWQYAiABKAlS",
+            "BnNsb3RJZBIiCgdsaW5lX2lkGAMgASgJQgm6SAZyBMDyBAFSBmxpbmVJZBIi",
+            "CgdjZWxsX2lkGAQgASgJQgm6SAZyBLjyBAFSBmNlbGxJZBIoCgpzdGF0aW9u",
+            "X2lkGAUgASgJQgm6SAZyBPjxBAFSCXN0YXRpb25JZBIuCgRwb3NlGAYgASgL",
+            "MhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIEcG9zZSLtAgoMUGFydElu",
+            "c3RhbmNlEhkKAmlkGAEgASgJQgm6SAZyBNDxBAFSAmlkEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI6ChJwYXJ0X2RlZmluaXRp",
+            "b25faWQYBSABKAlCDLpICXIEyPEEAcgBAVIQcGFydERlZmluaXRpb25JZBI7",
+            "CgZzdGF0dXMYBiABKA4yGS5jb21tb24udjEuUmVzb3VyY2VTdGF0dXNCCLpI",
+            "BYIBAhABUgZzdGF0dXMSPAoIbG9jYXRpb24YByABKAsyIC5wcm9kdWN0LnYx",
+            "LlBhcnRJbnN0YW5jZUxvY2F0aW9uUghsb2NhdGlvbhI2CghxdWFudGl0eRgI",
+            "IAEoCzIaLnByb2R1Y3QudjEuUXVhbnRpdHlTdGF0dXNSCHF1YW50aXR5Ij8K",
+            "DVBhcnRJbnN0YW5jZXMSLgoFaXRlbXMYASADKAsyGC5wcm9kdWN0LnYxLlBh",
+            "cnRJbnN0YW5jZVIFaXRlbXNCsAEKDmNvbS5wcm9kdWN0LnYxQhFQYXJ0SW5z",
+            "dGFuY2VQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
+            "c2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNzYWdlcy5Q",
+            "cm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BCTWV0YWRh",
+            "dGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.QuantityStatus), global::Messages.Product.V1.QuantityStatus.Parser, new[]{ "Amount", "Unit", "NominalAmount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartInstanceLocation), global::Messages.Product.V1.PartInstanceLocation.Parser, new[]{ "ContainerInstanceId", "SlotId", "LineId", "CellId", "StationId", "Pose" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartInstance), global::Messages.Product.V1.PartInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "PartDefinitionId", "Status", "Location", "Quantity", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartInstance), global::Messages.Product.V1.PartInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "PartDefinitionId", "Status", "Location", "Quantity" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartInstances), global::Messages.Product.V1.PartInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -814,7 +812,6 @@ namespace Messages.Product.V1 {
       status_ = other.status_;
       location_ = other.location_ != null ? other.location_.Clone() : null;
       quantity_ = other.quantity_ != null ? other.quantity_.Clone() : null;
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -920,18 +917,6 @@ namespace Messages.Product.V1 {
       }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -955,7 +940,6 @@ namespace Messages.Product.V1 {
       if (Status != other.Status) return false;
       if (!object.Equals(Location, other.Location)) return false;
       if (!object.Equals(Quantity, other.Quantity)) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -971,7 +955,6 @@ namespace Messages.Product.V1 {
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
       if (quantity_ != null) hash ^= Quantity.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1022,10 +1005,6 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(66);
         output.WriteMessage(Quantity);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1068,10 +1047,6 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(66);
         output.WriteMessage(Quantity);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1105,9 +1080,6 @@ namespace Messages.Product.V1 {
       }
       if (quantity_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Quantity);
-      }
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1150,12 +1122,6 @@ namespace Messages.Product.V1 {
           Quantity = new global::Messages.Product.V1.QuantityStatus();
         }
         Quantity.MergeFrom(other.Quantity);
-      }
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1214,13 +1180,6 @@ namespace Messages.Product.V1 {
             input.ReadMessage(Quantity);
             break;
           }
-          case 74: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -1276,13 +1235,6 @@ namespace Messages.Product.V1 {
               Quantity = new global::Messages.Product.V1.QuantityStatus();
             }
             input.ReadMessage(Quantity);
-            break;
-          }
-          case 74: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

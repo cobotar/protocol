@@ -22,10 +22,16 @@ extend buf.validate.StringRules {
     expression: "(this == '' || this.startsWith('ar_config-'))"
   }];
 
-  optional bool property_id_component = 10003 [(buf.validate.predefined).cel = {
-    id: "string.property_id_component"
-    message: "this does not seem to be a property id"
-    expression: "(this == '' || this.startsWith('property-'))"
+  optional bool property_definition_id_component = 10003 [(buf.validate.predefined).cel = {
+    id: "string.property_definition_id_component"
+    message: "this does not seem to be a property definition id"
+    expression: "(this == '' || this.startsWith('property_definition-'))"
+  }];
+
+  optional bool property_instance_id_component = 10035 [(buf.validate.predefined).cel = {
+    id: "string.property_instance_id_component"
+    message: "this does not seem to be a property instance id"
+    expression: "(this == '' || this.startsWith('property_instance-'))"
   }];
 
   optional bool robot_definition_id_component = 10004 [(buf.validate.predefined).cel = {
@@ -212,5 +218,11 @@ extend buf.validate.StringRules {
     id: "string.image_asset_id_component"
     message: "this does not seem to be a image asset id"
     expression: "(this == '' || this.startsWith('image_asset-'))"
+  }];
+
+  optional bool device_id_component = 100036 [(buf.validate.predefined).cel = {
+    id: "string.device_id_component"
+    message: "this does not seem to be a device id"
+    expression: "(this == '' || this.startsWith('device-'))"
   }];
 }

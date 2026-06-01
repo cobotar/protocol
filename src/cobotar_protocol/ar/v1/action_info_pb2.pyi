@@ -49,7 +49,7 @@ class ActionInfoMessage(_message.Message):
     def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_action_pb2.ActionType, str]] = ..., group: _Optional[_Union[ActionGroup, str]] = ..., require_agent: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., disabled: bool = ...) -> None: ...
 
 class ActionInfoMessages(_message.Message):
-    __slots__ = ("infos",)
-    INFOS_FIELD_NUMBER: _ClassVar[int]
-    infos: _containers.RepeatedCompositeFieldContainer[ActionInfoMessage]
-    def __init__(self, infos: _Optional[_Iterable[_Union[ActionInfoMessage, _Mapping]]] = ...) -> None: ...
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ActionInfoMessage]
+    def __init__(self, items: _Optional[_Iterable[_Union[ActionInfoMessage, _Mapping]]] = ...) -> None: ...

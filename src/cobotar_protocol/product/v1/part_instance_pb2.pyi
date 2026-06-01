@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import enums_pb2 as _enums_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -38,7 +37,7 @@ class PartInstanceLocation(_message.Message):
     def __init__(self, container_instance_id: _Optional[str] = ..., slot_id: _Optional[str] = ..., line_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., pose: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
 
 class PartInstance(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "part_definition_id", "status", "location", "quantity", "custom")
+    __slots__ = ("id", "name", "icon", "description", "part_definition_id", "status", "location", "quantity")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -47,7 +46,6 @@ class PartInstance(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     QUANTITY_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -56,8 +54,7 @@ class PartInstance(_message.Message):
     status: _enums_pb2.ResourceStatus
     location: PartInstanceLocation
     quantity: QuantityStatus
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., status: _Optional[_Union[_enums_pb2.ResourceStatus, str]] = ..., location: _Optional[_Union[PartInstanceLocation, _Mapping]] = ..., quantity: _Optional[_Union[QuantityStatus, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., status: _Optional[_Union[_enums_pb2.ResourceStatus, str]] = ..., location: _Optional[_Union[PartInstanceLocation, _Mapping]] = ..., quantity: _Optional[_Union[QuantityStatus, _Mapping]] = ...) -> None: ...
 
 class PartInstances(_message.Message):
     __slots__ = ("items",)

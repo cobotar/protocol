@@ -1,7 +1,6 @@
 import datetime
 
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import enums_pb2 as _enums_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -14,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ToolInstance(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "tool_definition_id", "serial_number", "status", "calibrated", "calibration_valid_until", "custom")
+    __slots__ = ("id", "name", "icon", "description", "tool_definition_id", "serial_number", "status", "calibrated", "calibration_valid_until")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -24,7 +23,6 @@ class ToolInstance(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     CALIBRATED_FIELD_NUMBER: _ClassVar[int]
     CALIBRATION_VALID_UNTIL_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -34,8 +32,7 @@ class ToolInstance(_message.Message):
     status: _enums_pb2.ResourceStatus
     calibrated: bool
     calibration_valid_until: _timestamp_pb2.Timestamp
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., tool_definition_id: _Optional[str] = ..., serial_number: _Optional[str] = ..., status: _Optional[_Union[_enums_pb2.ResourceStatus, str]] = ..., calibrated: bool = ..., calibration_valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., tool_definition_id: _Optional[str] = ..., serial_number: _Optional[str] = ..., status: _Optional[_Union[_enums_pb2.ResourceStatus, str]] = ..., calibrated: bool = ..., calibration_valid_until: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ToolInstances(_message.Message):
     __slots__ = ("items",)

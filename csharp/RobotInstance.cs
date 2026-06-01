@@ -25,32 +25,30 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFyZXNvdXJjZXMvdjEvcm9ib3RfaW5zdGFuY2UucHJvdG8SDHJlc291cmNl",
-            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiFjb21tb24vdjEv",
-            "Y3VzdG9tX3Byb3BlcnRpZXMucHJvdG8aFWNvbW1vbi92MS9lbnVtcy5wcm90",
-            "bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90",
-            "byKsBAoNUm9ib3RJbnN0YW5jZRIZCgJpZBgBIAEoCUIJukgGcgSo8QQBUgJp",
-            "ZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEo",
-            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoT",
-            "cm9ib3RfZGVmaW5pdGlvbl9pZBgFIAEoCUIMukgJcgSg8QQByAEBUhFyb2Jv",
-            "dERlZmluaXRpb25JZBIjCg1zZXJpYWxfbnVtYmVyGAYgASgJUgxzZXJpYWxO",
-            "dW1iZXISQgoYbW91bnRlZF90b29sX2luc3RhbmNlX2lkGAcgASgJQgm6SAZy",
-            "BODxBAFSFW1vdW50ZWRUb29sSW5zdGFuY2VJZBI9ChthdmFpbGFibGVfdG9v",
-            "bF9pbnN0YW5jZV9pZHMYCCADKAlSGGF2YWlsYWJsZVRvb2xJbnN0YW5jZUlk",
-            "cxIwChRzdXBwb3J0c190b29sX2NoYW5nZRgJIAEoCFISc3VwcG9ydHNUb29s",
-            "Q2hhbmdlEiEKDGlzX3NpbXVsYXRlZBgKIAEoCFILaXNTaW11bGF0ZWQSOwoG",
-            "c3RhdHVzGAsgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWC",
-            "AQIQAVIGc3RhdHVzEjMKBmN1c3RvbRgMIAEoCzIbLmNvbW1vbi52MS5DdXN0",
-            "b21Qcm9wZXJ0aWVzUgZjdXN0b20iQwoOUm9ib3RJbnN0YW5jZXMSMQoFaXRl",
-            "bXMYASADKAsyGy5yZXNvdXJjZXMudjEuUm9ib3RJbnN0YW5jZVIFaXRlbXNC",
-            "vwEKEGNvbS5yZXNvdXJjZXMudjFCElJvYm90SW5zdGFuY2VQcm90b1ABWj1n",
-            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2Vz",
-            "L3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYx",
-            "ygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gIN",
-            "UmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhVjb21tb24vdjEv",
+            "ZW51bXMucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
+            "cnVsZXMucHJvdG8i9wMKDVJvYm90SW5zdGFuY2USGQoCaWQYASABKAlCCbpI",
+            "BnIEqPEEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEjwKE3JvYm90X2RlZmluaXRpb25faWQYBSABKAlCDLpICXIEoPEE",
+            "AcgBAVIRcm9ib3REZWZpbml0aW9uSWQSIwoNc2VyaWFsX251bWJlchgGIAEo",
+            "CVIMc2VyaWFsTnVtYmVyEkIKGG1vdW50ZWRfdG9vbF9pbnN0YW5jZV9pZBgH",
+            "IAEoCUIJukgGcgTg8QQBUhVtb3VudGVkVG9vbEluc3RhbmNlSWQSPQobYXZh",
+            "aWxhYmxlX3Rvb2xfaW5zdGFuY2VfaWRzGAggAygJUhhhdmFpbGFibGVUb29s",
+            "SW5zdGFuY2VJZHMSMAoUc3VwcG9ydHNfdG9vbF9jaGFuZ2UYCSABKAhSEnN1",
+            "cHBvcnRzVG9vbENoYW5nZRIhCgxpc19zaW11bGF0ZWQYCiABKAhSC2lzU2lt",
+            "dWxhdGVkEjsKBnN0YXR1cxgLIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0",
+            "YXR1c0IIukgFggECEAFSBnN0YXR1cyJDCg5Sb2JvdEluc3RhbmNlcxIxCgVp",
+            "dGVtcxgBIAMoCzIbLnJlc291cmNlcy52MS5Sb2JvdEluc3RhbmNlUgVpdGVt",
+            "c0K/AQoQY29tLnJlc291cmNlcy52MUISUm9ib3RJbnN0YW5jZVByb3RvUAFa",
+            "PWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJj",
+            "ZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMu",
+            "VjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHq",
+            "Ag1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "IsSimulated", "Status", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstance), global::Messages.Resources.V1.RobotInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "RobotDefinitionId", "SerialNumber", "MountedToolInstanceId", "AvailableToolInstanceIds", "SupportsToolChange", "IsSimulated", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotInstances), global::Messages.Resources.V1.RobotInstances.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -104,7 +102,6 @@ namespace Messages.Resources.V1 {
       supportsToolChange_ = other.supportsToolChange_;
       isSimulated_ = other.isSimulated_;
       status_ = other.status_;
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -254,18 +251,6 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 12;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -292,7 +277,6 @@ namespace Messages.Resources.V1 {
       if (SupportsToolChange != other.SupportsToolChange) return false;
       if (IsSimulated != other.IsSimulated) return false;
       if (Status != other.Status) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -311,7 +295,6 @@ namespace Messages.Resources.V1 {
       if (SupportsToolChange != false) hash ^= SupportsToolChange.GetHashCode();
       if (IsSimulated != false) hash ^= IsSimulated.GetHashCode();
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -371,10 +354,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) Status);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -426,10 +405,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(88);
         output.WriteEnum((int) Status);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -470,9 +445,6 @@ namespace Messages.Resources.V1 {
       }
       if (Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-      }
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -516,12 +488,6 @@ namespace Messages.Resources.V1 {
       }
       if (other.Status != global::Messages.Common.V1.ResourceStatus.Unspecified) {
         Status = other.Status;
-      }
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -586,13 +552,6 @@ namespace Messages.Resources.V1 {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
             break;
           }
-          case 98: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -654,13 +613,6 @@ namespace Messages.Resources.V1 {
           }
           case 88: {
             Status = (global::Messages.Common.V1.ResourceStatus) input.ReadEnum();
-            break;
-          }
-          case 98: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

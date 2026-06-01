@@ -2,7 +2,6 @@ syntax = "proto3";
 package product.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "geometry/v1/pose.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -55,7 +54,6 @@ message PartInstance {
   common.v1.ResourceStatus status = 6 [(buf.validate.field).enum.defined_only = true];
   PartInstanceLocation location = 7;
   QuantityStatus quantity = 8;
-  common.v1.CustomProperties custom = 9;
 }
 
 message PartInstances {

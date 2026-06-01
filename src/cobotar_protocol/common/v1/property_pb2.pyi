@@ -30,6 +30,7 @@ class PropertyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_TYPE_ENUM_MULTI: _ClassVar[PropertyType]
     PROPERTY_TYPE_ICON: _ClassVar[PropertyType]
     PROPERTY_TYPE_ASSET: _ClassVar[PropertyType]
+    PROPERTY_TYPE_WORKER: _ClassVar[PropertyType]
 
 class PropertyOrigin(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -56,11 +57,11 @@ class PropertyPermission(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_PERMISSION_FULL: _ClassVar[PropertyPermission]
     PROPERTY_PERMISSION_NONE: _ClassVar[PropertyPermission]
 
-class PropertyValueScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+class PropertyScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    PROPERTY_VALUE_SCOPE_UNSPECIFIED: _ClassVar[PropertyValueScope]
-    PROPERTY_VALUE_SCOPE_ENTITY: _ClassVar[PropertyValueScope]
-    PROPERTY_VALUE_SCOPE_INSTANCE: _ClassVar[PropertyValueScope]
+    PROPERTY_SCOPE_UNSPECIFIED: _ClassVar[PropertyScope]
+    PROPERTY_SCOPE_ENTITY: _ClassVar[PropertyScope]
+    PROPERTY_SCOPE_RUNTIME: _ClassVar[PropertyScope]
 PROPERTY_TYPE_UNSPECIFIED: PropertyType
 PROPERTY_TYPE_BOOL: PropertyType
 PROPERTY_TYPE_INT: PropertyType
@@ -76,6 +77,7 @@ PROPERTY_TYPE_ENUM: PropertyType
 PROPERTY_TYPE_ENUM_MULTI: PropertyType
 PROPERTY_TYPE_ICON: PropertyType
 PROPERTY_TYPE_ASSET: PropertyType
+PROPERTY_TYPE_WORKER: PropertyType
 PROPERTY_ORIGIN_UNSPECIFIED: PropertyOrigin
 PROPERTY_ORIGIN_FIXED: PropertyOrigin
 PROPERTY_ORIGIN_MIRROR: PropertyOrigin
@@ -92,43 +94,26 @@ PROPERTY_PERMISSION_BASIC: PropertyPermission
 PROPERTY_PERMISSION_COSMETIC: PropertyPermission
 PROPERTY_PERMISSION_FULL: PropertyPermission
 PROPERTY_PERMISSION_NONE: PropertyPermission
-PROPERTY_VALUE_SCOPE_UNSPECIFIED: PropertyValueScope
-PROPERTY_VALUE_SCOPE_ENTITY: PropertyValueScope
-PROPERTY_VALUE_SCOPE_INSTANCE: PropertyValueScope
+PROPERTY_SCOPE_UNSPECIFIED: PropertyScope
+PROPERTY_SCOPE_ENTITY: PropertyScope
+PROPERTY_SCOPE_RUNTIME: PropertyScope
 
-class Property(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "minimum_required_permission", "origin", "origins", "mirror_property_id", "group", "ordering", "hide_group", "parent_id", "advanced", "scope_id", "disable_mirroring", "value_scope", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "asset_id_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+class PropertyDefinition(_message.Message):
+    __slots__ = ("id", "parent_id", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "disable_mirroring", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     ID_FIELD_NUMBER: _ClassVar[int]
+    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
     MINIMUM_REQUIRED_PERMISSION_FIELD_NUMBER: _ClassVar[int]
-    ORIGIN_FIELD_NUMBER: _ClassVar[int]
-    ORIGINS_FIELD_NUMBER: _ClassVar[int]
-    MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+    ALLOWED_ORIGINS_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
     ORDERING_FIELD_NUMBER: _ClassVar[int]
     HIDE_GROUP_FIELD_NUMBER: _ClassVar[int]
-    PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     ADVANCED_FIELD_NUMBER: _ClassVar[int]
-    SCOPE_ID_FIELD_NUMBER: _ClassVar[int]
     DISABLE_MIRRORING_FIELD_NUMBER: _ClassVar[int]
-    VALUE_SCOPE_FIELD_NUMBER: _ClassVar[int]
-    BOOL_VALUE_FIELD_NUMBER: _ClassVar[int]
-    INT_VALUE_FIELD_NUMBER: _ClassVar[int]
-    FLOAT_VALUE_FIELD_NUMBER: _ClassVar[int]
-    DOUBLE_VALUE_FIELD_NUMBER: _ClassVar[int]
-    STRING_VALUE_FIELD_NUMBER: _ClassVar[int]
-    VECTOR3_VALUE_FIELD_NUMBER: _ClassVar[int]
-    POSE_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ANCHOR_VALUE_FIELD_NUMBER: _ClassVar[int]
-    COLOR_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ROBOT_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ENUM_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
-    ASSET_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     NUMBER_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     ENUM_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     VECTOR3_EXTRAS_FIELD_NUMBER: _ClassVar[int]
@@ -136,56 +121,48 @@ class Property(_message.Message):
     POSE_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     id: str
+    parent_id: str
     name: str
     icon: str
     description: str
     type: PropertyType
+    scope: PropertyScope
     minimum_required_permission: PropertyPermission
-    origin: PropertyOrigin
-    origins: _containers.RepeatedScalarFieldContainer[PropertyOrigin]
-    mirror_property_id: str
+    allowed_origins: _containers.RepeatedScalarFieldContainer[PropertyOrigin]
     group: PropertyGroup
     ordering: int
     hide_group: bool
-    parent_id: str
     advanced: bool
-    scope_id: str
     disable_mirroring: bool
-    value_scope: PropertyValueScope
-    bool_value: bool
-    int_value: int
-    float_value: float
-    double_value: float
-    string_value: str
-    vector3_value: _vector3_pb2.Vector3
-    pose_value: _pose_pb2.LocalizedPose
-    anchor_value: _anchor_pb2.Anchor
-    color_value: _color_pb2.Color
-    robot_id_value: str
-    enum_value: str
-    enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
-    icon_value: str
-    asset_id_value: str
     number_extras: NumberExtras
     enum_extras: EnumExtras
     vector3_extras: Vector3Extras
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., mirror_property_id: _Optional[str] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., parent_id: _Optional[str] = ..., advanced: bool = ..., scope_id: _Optional[str] = ..., disable_mirroring: bool = ..., value_scope: _Optional[_Union[PropertyValueScope, str]] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., asset_id_value: _Optional[str] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., parent_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., disable_mirroring: bool = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
 
-class PropertyMessages(_message.Message):
-    __slots__ = ("properties",)
-    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
-    properties: _containers.RepeatedCompositeFieldContainer[Property]
-    def __init__(self, properties: _Optional[_Iterable[_Union[Property, _Mapping]]] = ...) -> None: ...
-
-class PropertyValueUpdate(_message.Message):
-    __slots__ = ("id", "type", "origin", "mirror_property_id", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "asset_id_value")
+class PropertyInstance(_message.Message):
+    __slots__ = ("id", "property_definition_id", "scope", "scope_id", "origin", "mirror_property_definition_id", "value")
     ID_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    PROPERTY_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_ID_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
-    MIRROR_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
+    MIRROR_PROPERTY_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    property_definition_id: str
+    scope: PropertyScope
+    scope_id: str
+    origin: PropertyOrigin
+    mirror_property_definition_id: str
+    value: PropertyValue
+    def __init__(self, id: _Optional[str] = ..., property_definition_id: _Optional[str] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., scope_id: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_definition_id: _Optional[str] = ..., value: _Optional[_Union[PropertyValue, _Mapping]] = ...) -> None: ...
+
+class PropertyValue(_message.Message):
+    __slots__ = ("type", "bool_value", "int_value", "float_value", "double_value", "string_value", "vector3_value", "pose_value", "anchor_value", "color_value", "robot_id_value", "enum_value", "enum_multi_value", "icon_value", "asset_id_value", "worker_id_value")
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     BOOL_VALUE_FIELD_NUMBER: _ClassVar[int]
     INT_VALUE_FIELD_NUMBER: _ClassVar[int]
     FLOAT_VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -200,10 +177,8 @@ class PropertyValueUpdate(_message.Message):
     ENUM_MULTI_VALUE_FIELD_NUMBER: _ClassVar[int]
     ICON_VALUE_FIELD_NUMBER: _ClassVar[int]
     ASSET_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
-    id: str
+    WORKER_ID_VALUE_FIELD_NUMBER: _ClassVar[int]
     type: PropertyType
-    origin: PropertyOrigin
-    mirror_property_id: str
     bool_value: bool
     int_value: int
     float_value: float
@@ -218,7 +193,32 @@ class PropertyValueUpdate(_message.Message):
     enum_multi_value: _containers.RepeatedScalarFieldContainer[str]
     icon_value: str
     asset_id_value: str
-    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_id: _Optional[str] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., asset_id_value: _Optional[str] = ...) -> None: ...
+    worker_id_value: str
+    def __init__(self, type: _Optional[_Union[PropertyType, str]] = ..., bool_value: bool = ..., int_value: _Optional[int] = ..., float_value: _Optional[float] = ..., double_value: _Optional[float] = ..., string_value: _Optional[str] = ..., vector3_value: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., pose_value: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., anchor_value: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., color_value: _Optional[_Union[_color_pb2.Color, _Mapping]] = ..., robot_id_value: _Optional[str] = ..., enum_value: _Optional[str] = ..., enum_multi_value: _Optional[_Iterable[str]] = ..., icon_value: _Optional[str] = ..., asset_id_value: _Optional[str] = ..., worker_id_value: _Optional[str] = ...) -> None: ...
+
+class PropertyInstanceUpdate(_message.Message):
+    __slots__ = ("property_instance_id", "origin", "mirror_property_definition_id", "value")
+    PROPERTY_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    ORIGIN_FIELD_NUMBER: _ClassVar[int]
+    MIRROR_PROPERTY_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    VALUE_FIELD_NUMBER: _ClassVar[int]
+    property_instance_id: str
+    origin: PropertyOrigin
+    mirror_property_definition_id: str
+    value: PropertyValue
+    def __init__(self, property_instance_id: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., mirror_property_definition_id: _Optional[str] = ..., value: _Optional[_Union[PropertyValue, _Mapping]] = ...) -> None: ...
+
+class PropertyDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[PropertyDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[PropertyDefinition, _Mapping]]] = ...) -> None: ...
+
+class PropertyInstances(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[PropertyInstance]
+    def __init__(self, items: _Optional[_Iterable[_Union[PropertyInstance, _Mapping]]] = ...) -> None: ...
 
 class NumberExtras(_message.Message):
     __slots__ = ("min", "max", "step", "unit", "precision")

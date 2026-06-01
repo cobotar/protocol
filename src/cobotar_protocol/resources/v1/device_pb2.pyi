@@ -45,13 +45,13 @@ DEVICE_BATTERY_STATUS_NOT_CHARGING: DeviceBatteryStatus
 DEVICE_BATTERY_STATUS_FULL: DeviceBatteryStatus
 
 class DeviceMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "device_id", "status", "battery_level", "battery_status", "equipped_by_worker_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "device_uuid", "status", "battery_level", "battery_status", "equipped_by_worker_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_UUID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     BATTERY_LEVEL_FIELD_NUMBER: _ClassVar[int]
     BATTERY_STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -61,12 +61,12 @@ class DeviceMessage(_message.Message):
     icon: str
     description: str
     type: DeviceType
-    device_id: str
+    device_uuid: str
     status: DeviceStatus
     battery_level: int
     battery_status: DeviceBatteryStatus
     equipped_by_worker_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[DeviceType, str]] = ..., device_id: _Optional[str] = ..., status: _Optional[_Union[DeviceStatus, str]] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ..., equipped_by_worker_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[DeviceType, str]] = ..., device_uuid: _Optional[str] = ..., status: _Optional[_Union[DeviceStatus, str]] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ..., equipped_by_worker_id: _Optional[str] = ...) -> None: ...
 
 class DeviceMessages(_message.Message):
     __slots__ = ("devices",)
@@ -75,11 +75,11 @@ class DeviceMessages(_message.Message):
     def __init__(self, devices: _Optional[_Iterable[_Union[DeviceMessage, _Mapping]]] = ...) -> None: ...
 
 class DeviceHeartbeat(_message.Message):
-    __slots__ = ("device_id", "battery_level", "battery_status")
-    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("device_uuid", "battery_level", "battery_status")
+    DEVICE_UUID_FIELD_NUMBER: _ClassVar[int]
     BATTERY_LEVEL_FIELD_NUMBER: _ClassVar[int]
     BATTERY_STATUS_FIELD_NUMBER: _ClassVar[int]
-    device_id: str
+    device_uuid: str
     battery_level: int
     battery_status: DeviceBatteryStatus
-    def __init__(self, device_id: _Optional[str] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ...) -> None: ...
+    def __init__(self, device_uuid: _Optional[str] = ..., battery_level: _Optional[int] = ..., battery_status: _Optional[_Union[DeviceBatteryStatus, str]] = ...) -> None: ...

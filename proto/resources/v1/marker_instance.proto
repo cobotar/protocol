@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -29,8 +28,6 @@ message MarkerInstance {
   ];
   bool confirm_instantiate = 7; // If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker.
   common.v1.ResourceStatus status = 8 [(buf.validate.field).enum.defined_only = true];
-
-  common.v1.CustomProperties custom = 9;
 }
 
 message MarkerInstances {

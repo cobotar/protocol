@@ -5,8 +5,6 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
@@ -18,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/part_instance.proto.
  */
 export const file_product_v1_part_instance: GenFile = /*@__PURE__*/
-  fileDesc("Ch5wcm9kdWN0L3YxL3BhcnRfaW5zdGFuY2UucHJvdG8SCnByb2R1Y3QudjEiZgoOUXVhbnRpdHlTdGF0dXMSHgoGYW1vdW50GAEgASgBQg66SAsSCSkAAAAAAAAAABIMCgR1bml0GAIgASgJEiYKDm5vbWluYWxfYW1vdW50GAMgASgBQg66SAsSCSkAAAAAAAAAACLSAQoUUGFydEluc3RhbmNlTG9jYXRpb24SKAoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBNDrMAESDwoHc2xvdF9pZBgCIAEoCRIaCgdsaW5lX2lkGAMgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgEIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEARIoCgRwb3NlGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSLPAgoMUGFydEluc3RhbmNlEhUKAmlkGAEgASgJQgm6SAZyBNDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBMjxBAESMwoGc3RhdHVzGAYgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARIyCghsb2NhdGlvbhgHIAEoCzIgLnByb2R1Y3QudjEuUGFydEluc3RhbmNlTG9jYXRpb24SLAoIcXVhbnRpdHkYCCABKAsyGi5wcm9kdWN0LnYxLlF1YW50aXR5U3RhdHVzEisKBmN1c3RvbRgJIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIjgKDVBhcnRJbnN0YW5jZXMSJwoFaXRlbXMYASADKAsyGC5wcm9kdWN0LnYxLlBhcnRJbnN0YW5jZUKwAQoOY29tLnByb2R1Y3QudjFCEVBhcnRJbnN0YW5jZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch5wcm9kdWN0L3YxL3BhcnRfaW5zdGFuY2UucHJvdG8SCnByb2R1Y3QudjEiZgoOUXVhbnRpdHlTdGF0dXMSHgoGYW1vdW50GAEgASgBQg66SAsSCSkAAAAAAAAAABIMCgR1bml0GAIgASgJEiYKDm5vbWluYWxfYW1vdW50GAMgASgBQg66SAsSCSkAAAAAAAAAACLSAQoUUGFydEluc3RhbmNlTG9jYXRpb24SKAoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBNDrMAESDwoHc2xvdF9pZBgCIAEoCRIaCgdsaW5lX2lkGAMgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgEIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEARIoCgRwb3NlGAYgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSKiAgoMUGFydEluc3RhbmNlEhUKAmlkGAEgASgJQgm6SAZyBNDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKAoScGFydF9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAnIAQFyBMjxBAESMwoGc3RhdHVzGAYgASgOMhkuY29tbW9uLnYxLlJlc291cmNlU3RhdHVzQgi6SAWCAQIQARIyCghsb2NhdGlvbhgHIAEoCzIgLnByb2R1Y3QudjEuUGFydEluc3RhbmNlTG9jYXRpb24SLAoIcXVhbnRpdHkYCCABKAsyGi5wcm9kdWN0LnYxLlF1YW50aXR5U3RhdHVzIjgKDVBhcnRJbnN0YW5jZXMSJwoFaXRlbXMYASADKAsyGC5wcm9kdWN0LnYxLlBhcnRJbnN0YW5jZUKwAQoOY29tLnByb2R1Y3QudjFCEVBhcnRJbnN0YW5jZVByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_enums, file_geometry_v1_pose, file_validation_v1_predefined_string_rules]);
 
 /**
  * QuantityStatus is a lightweight optional description of how much of a part
@@ -164,11 +162,6 @@ export type PartInstance = Message<"product.v1.PartInstance"> & {
    * @generated from field: product.v1.QuantityStatus quantity = 8;
    */
   quantity?: QuantityStatus;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 9;
-   */
-  custom?: CustomProperties;
 };
 
 /**

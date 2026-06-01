@@ -34,5 +34,5 @@ message ActionInfoMessage {
 }
 
 message ActionInfoMessages {
-  repeated ActionInfoMessage infos = 1;
+  repeated ActionInfoMessage items = 1;
 }

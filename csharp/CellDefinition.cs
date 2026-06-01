@@ -25,38 +25,36 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJj",
-            "ZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxohY29tbW9uL3Yx",
-            "L2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnBy",
-            "b3RvGhxyZXNvdXJjZXMvdjEvcGxhY2VtZW50LnByb3RvGit2YWxpZGF0aW9u",
-            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoYFCg5DZWxsRGVm",
-            "aW5pdGlvbhIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA",
-            "8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIS",
-            "CgRpY29uGAQgASgJUgRpY29uEjoKBnN0YXR1cxgFIAEoDjIYLnJlc291cmNl",
-            "cy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEkEKGG1heF9jb25j",
-            "dXJyZW50X3Byb2Nlc3NlcxgGIAEoBUIHukgEGgIoAFIWbWF4Q29uY3VycmVu",
-            "dFByb2Nlc3NlcxIwChRhbGxvd19xdWV1ZWRfcHJvY2VzcxgHIAEoCFISYWxs",
-            "b3dRdWV1ZWRQcm9jZXNzEh8KC3N0YXRpb25faWRzGAggAygJUgpzdGF0aW9u",
-            "SWRzEjEKBXRvb2xzGAkgAygLMhsucmVzb3VyY2VzLnYxLlRvb2xQbGFjZW1l",
-            "bnRSBXRvb2xzEjQKBnJvYm90cxgKIAMoCzIcLnJlc291cmNlcy52MS5Sb2Jv",
-            "dFBsYWNlbWVudFIGcm9ib3RzEjQKBmFzc2V0cxgLIAMoCzIcLnJlc291cmNl",
-            "cy52MS5Bc3NldFBsYWNlbWVudFIGYXNzZXRzEjcKB21hcmtlcnMYDCADKAsy",
-            "HS5yZXNvdXJjZXMudjEuTWFya2VyUGxhY2VtZW50UgdtYXJrZXJzEjAKBWZy",
-            "YW1lGA0gASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZVIFZnJhbWUS",
-            "MwoGY3VzdG9tGA4gASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXNS",
-            "BmN1c3RvbSJFCg9DZWxsRGVmaW5pdGlvbnMSMgoFaXRlbXMYASADKAsyHC5y",
-            "ZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb25SBWl0ZW1zKoYBCgpDZWxsU3Rh",
-            "dHVzEhsKF0NFTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFAoQQ0VMTF9TVEFU",
-            "VVNfT1BFThABEhQKEENFTExfU1RBVFVTX0JVU1kQAhIWChJDRUxMX1NUQVRV",
-            "U19DTE9TRUQQAxIXChNDRUxMX1NUQVRVU19CTE9DS0VEEARCwAEKEGNvbS5y",
-            "ZXNvdXJjZXMudjFCE0NlbGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNv",
-            "bS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNv",
-            "dXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291",
-            "cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNl",
-            "czo6VjFiBnByb3RvMw=="));
+            "ZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0cnkv",
+            "djEvcG9zZS5wcm90bxoccmVzb3VyY2VzL3YxL3BsYWNlbWVudC5wcm90bxor",
+            "dmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLR",
+            "BAoOQ2VsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEgPEEAVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVz",
+            "Y3JpcHRpb24SEgoEaWNvbhgEIAEoCVIEaWNvbhI6CgZzdGF0dXMYBSABKA4y",
+            "GC5yZXNvdXJjZXMudjEuQ2VsbFN0YXR1c0IIukgFggECEAFSBnN0YXR1cxJB",
+            "ChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYBiABKAVCB7pIBBoCKABSFm1h",
+            "eENvbmN1cnJlbnRQcm9jZXNzZXMSMAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MY",
+            "ByABKAhSEmFsbG93UXVldWVkUHJvY2VzcxIfCgtzdGF0aW9uX2lkcxgIIAMo",
+            "CVIKc3RhdGlvbklkcxIxCgV0b29scxgJIAMoCzIbLnJlc291cmNlcy52MS5U",
+            "b29sUGxhY2VtZW50UgV0b29scxI0CgZyb2JvdHMYCiADKAsyHC5yZXNvdXJj",
+            "ZXMudjEuUm9ib3RQbGFjZW1lbnRSBnJvYm90cxI0CgZhc3NldHMYCyADKAsy",
+            "HC5yZXNvdXJjZXMudjEuQXNzZXRQbGFjZW1lbnRSBmFzc2V0cxI3CgdtYXJr",
+            "ZXJzGAwgAygLMh0ucmVzb3VyY2VzLnYxLk1hcmtlclBsYWNlbWVudFIHbWFy",
+            "a2VycxIwCgVmcmFtZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBv",
+            "c2VSBWZyYW1lIkUKD0NlbGxEZWZpbml0aW9ucxIyCgVpdGVtcxgBIAMoCzIc",
+            "LnJlc291cmNlcy52MS5DZWxsRGVmaW5pdGlvblIFaXRlbXMqhgEKCkNlbGxT",
+            "dGF0dXMSGwoXQ0VMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIUChBDRUxMX1NU",
+            "QVRVU19PUEVOEAESFAoQQ0VMTF9TVEFUVVNfQlVTWRACEhYKEkNFTExfU1RB",
+            "VFVTX0NMT1NFRBADEhcKE0NFTExfU1RBVFVTX0JMT0NLRUQQBELAAQoQY29t",
+            "LnJlc291cmNlcy52MUITQ2VsbERlZmluaXRpb25Qcm90b1ABWj1naXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jl",
+            "c291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVz",
+            "b3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3Vy",
+            "Y2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.CellStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "StationIds", "Tools", "Robots", "Assets", "Markers", "Frame", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "StationIds", "Tools", "Robots", "Assets", "Markers", "Frame" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinitions), global::Messages.Resources.V1.CellDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -176,7 +174,6 @@ namespace Messages.Resources.V1 {
       assets_ = other.assets_.Clone();
       markers_ = other.markers_.Clone();
       frame_ = other.frame_ != null ? other.frame_.Clone() : null;
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -364,18 +361,6 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 14;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -404,7 +389,6 @@ namespace Messages.Resources.V1 {
       if(!assets_.Equals(other.assets_)) return false;
       if(!markers_.Equals(other.markers_)) return false;
       if (!object.Equals(Frame, other.Frame)) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -425,7 +409,6 @@ namespace Messages.Resources.V1 {
       hash ^= assets_.GetHashCode();
       hash ^= markers_.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -481,10 +464,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -532,10 +511,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
-      if (custom_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -574,9 +549,6 @@ namespace Messages.Resources.V1 {
       size += markers_.CalculateSize(_repeated_markers_codec);
       if (frame_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
-      }
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -621,12 +593,6 @@ namespace Messages.Resources.V1 {
           Frame = new global::Messages.Common.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
-      }
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -702,13 +668,6 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(Frame);
             break;
           }
-          case 114: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -781,13 +740,6 @@ namespace Messages.Resources.V1 {
               Frame = new global::Messages.Common.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
-            break;
-          }
-          case 114: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

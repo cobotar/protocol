@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import property_pb2 as _property_pb2
 from geometry.v1 import anchor_pb2 as _anchor_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -64,14 +63,13 @@ VISIBILITY_SCOPE_MEDIUM_GUIDANCE: VisibilityScope
 VISIBILITY_SCOPE_FULL_GUIDANCE: VisibilityScope
 
 class FeedbackMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "visibility_scope", "properties", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "visibility_scope", "config_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
-    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
@@ -79,9 +77,8 @@ class FeedbackMessage(_message.Message):
     description: str
     type: FeedbackType
     visibility_scope: VisibilityScope
-    properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., config_id: _Optional[str] = ...) -> None: ...
 
 class FeedbackMessages(_message.Message):
     __slots__ = ("feedbacks",)

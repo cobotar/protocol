@@ -146,10 +146,6 @@ type ARConfigMessage struct {
 	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	ArDisappearDistance int64                  `protobuf:"varint,5,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	FeedbackIds         []string               `protobuf:"bytes,6,rep,name=feedback_ids,json=feedbackIds,proto3" json:"feedback_ids,omitempty"`                            // Feedback entities belonging to this config.
-	ActionIds           []string               `protobuf:"bytes,7,rep,name=action_ids,json=actionIds,proto3" json:"action_ids,omitempty"`                                  // Action entities belonging to this config.
-	HelperIds           []string               `protobuf:"bytes,8,rep,name=helper_ids,json=helperIds,proto3" json:"helper_ids,omitempty"`                                  // Helper entities belonging to this config.
-	PropertyIds         []string               `protobuf:"bytes,9,rep,name=property_ids,json=propertyIds,proto3" json:"property_ids,omitempty"`                            // Includes server-managed generated properties for referenced input slots.
 	InputSlots          []*ARInputSlotMessage  `protobuf:"bytes,10,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                              // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
@@ -220,34 +216,6 @@ func (x *ARConfigMessage) GetArDisappearDistance() int64 {
 	return 0
 }
 
-func (x *ARConfigMessage) GetFeedbackIds() []string {
-	if x != nil {
-		return x.FeedbackIds
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetActionIds() []string {
-	if x != nil {
-		return x.ActionIds
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetHelperIds() []string {
-	if x != nil {
-		return x.HelperIds
-	}
-	return nil
-}
-
-func (x *ARConfigMessage) GetPropertyIds() []string {
-	if x != nil {
-		return x.PropertyIds
-	}
-	return nil
-}
-
 func (x *ARConfigMessage) GetInputSlots() []*ARInputSlotMessage {
 	if x != nil {
 		return x.InputSlots
@@ -257,7 +225,7 @@ func (x *ARConfigMessage) GetInputSlots() []*ARInputSlotMessage {
 
 type ARConfigMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Configs       []*ARConfigMessage     `protobuf:"bytes,1,rep,name=configs,proto3" json:"configs,omitempty"` // AR config templates.
+	Items         []*ARConfigMessage     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // AR config templates.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -292,9 +260,9 @@ func (*ARConfigMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ARConfigMessages) GetConfigs() []*ARConfigMessage {
+func (x *ARConfigMessages) GetItems() []*ARConfigMessage {
 	if x != nil {
-		return x.Configs
+		return x.Items
 	}
 	return nil
 }
@@ -310,25 +278,19 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\x86\x03\n" +
-	"\x0fARConfigMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xfd\x01\n" +
+	"\x0fARConfigMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
 	"\x15ar_disappear_distance\x18\x05 \x01(\x03B\n" +
-	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12!\n" +
-	"\ffeedback_ids\x18\x06 \x03(\tR\vfeedbackIds\x12\x1d\n" +
-	"\n" +
-	"action_ids\x18\a \x03(\tR\tactionIds\x12\x1d\n" +
-	"\n" +
-	"helper_ids\x18\b \x03(\tR\thelperIds\x121\n" +
-	"\fproperty_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\x98\xf1\x04\x01R\vpropertyIds\x12:\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12:\n" +
 	"\vinput_slots\x18\n" +
 	" \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
-	"inputSlots\"D\n" +
-	"\x10ARConfigMessages\x120\n" +
-	"\aconfigs\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\aconfigsB\x89\x01\n" +
+	"inputSlots\"@\n" +
+	"\x10ARConfigMessages\x12,\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05itemsB\x89\x01\n" +
 	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -354,7 +316,7 @@ var file_ar_v1_ar_config_proto_goTypes = []any{
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
 	4, // 1: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
-	2, // 2: ar.v1.ARConfigMessages.configs:type_name -> ar.v1.ARConfigMessage
+	2, // 2: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

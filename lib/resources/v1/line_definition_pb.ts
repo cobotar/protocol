@@ -5,8 +5,6 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -14,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/line_definition.proto.
  */
 export const file_resources_v1_line_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvbGluZV9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEi5gIKDkxpbmVEZWZpbml0aW9uEhUKAmlkGAEgASgJQgm6SAZyBMDyBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSLgoEdHlwZRgFIAEoDjIWLnJlc291cmNlcy52MS5MaW5lVHlwZUIIukgFggECEAESMgoGc3RhdHVzGAYgASgOMhgucmVzb3VyY2VzLnYxLkxpbmVTdGF0dXNCCLpIBYIBAhABEikKGG1heF9jb25jdXJyZW50X3Byb2Nlc3NlcxgHIAEoBUIHukgEGgIoABIgCghjZWxsX2lkcxgIIAMoCUIOukgLkgEIIgZyBLjyBAESIwoLc3RhdGlvbl9pZHMYCSADKAlCDrpIC5IBCCIGcgT48QQBEisKBmN1c3RvbRgKIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIj4KD0xpbmVEZWZpbml0aW9ucxIrCgVpdGVtcxgBIAMoCzIcLnJlc291cmNlcy52MS5MaW5lRGVmaW5pdGlvbiolCghMaW5lVHlwZRIZChVMSU5FX1RZUEVfVU5TUEVDSUZJRUQQACqGAQoKTGluZVN0YXR1cxIbChdMSU5FX1NUQVRVU19VTlNQRUNJRklFRBAAEhQKEExJTkVfU1RBVFVTX09QRU4QARIUChBMSU5FX1NUQVRVU19CVVNZEAISFgoSTElORV9TVEFUVVNfQ0xPU0VEEAMSFwoTTElORV9TVEFUVVNfQkxPQ0tFRBAEQsABChBjb20ucmVzb3VyY2VzLnYxQhNMaW5lRGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvbGluZV9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEiuQIKDkxpbmVEZWZpbml0aW9uEhUKAmlkGAEgASgJQgm6SAZyBMDyBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEhMKC2Rlc2NyaXB0aW9uGAMgASgJEgwKBGljb24YBCABKAkSLgoEdHlwZRgFIAEoDjIWLnJlc291cmNlcy52MS5MaW5lVHlwZUIIukgFggECEAESMgoGc3RhdHVzGAYgASgOMhgucmVzb3VyY2VzLnYxLkxpbmVTdGF0dXNCCLpIBYIBAhABEikKGG1heF9jb25jdXJyZW50X3Byb2Nlc3NlcxgHIAEoBUIHukgEGgIoABIgCghjZWxsX2lkcxgIIAMoCUIOukgLkgEIIgZyBLjyBAESIwoLc3RhdGlvbl9pZHMYCSADKAlCDrpIC5IBCCIGcgT48QQBIj4KD0xpbmVEZWZpbml0aW9ucxIrCgVpdGVtcxgBIAMoCzIcLnJlc291cmNlcy52MS5MaW5lRGVmaW5pdGlvbiolCghMaW5lVHlwZRIZChVMSU5FX1RZUEVfVU5TUEVDSUZJRUQQACqGAQoKTGluZVN0YXR1cxIbChdMSU5FX1NUQVRVU19VTlNQRUNJRklFRBAAEhQKEExJTkVfU1RBVFVTX09QRU4QARIUChBMSU5FX1NUQVRVU19CVVNZEAISFgoSTElORV9TVEFUVVNfQ0xPU0VEEAMSFwoTTElORV9TVEFUVVNfQkxPQ0tFRBAEQsABChBjb20ucmVzb3VyY2VzLnYxQhNMaW5lRGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * LineDefinition describes the highest operational routing context for loading
@@ -87,11 +85,6 @@ export type LineDefinition = Message<"resources.v1.LineDefinition"> & {
    * @generated from field: repeated string station_ids = 9;
    */
   stationIds: string[];
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 10;
-   */
-  custom?: CustomProperties;
 };
 
 /**

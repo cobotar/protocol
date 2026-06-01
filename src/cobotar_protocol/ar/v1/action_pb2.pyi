@@ -1,5 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import property_pb2 as _property_pb2
+from capability.v1 import skill_requirement_pb2 as _skill_requirement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -34,28 +34,28 @@ ACTION_TYPE_ROBOT_FREE_DRIVE: ActionType
 ACTION_TYPE_ROBOT_COLLABORATE: ActionType
 
 class ActionMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "properties", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "eligibility_requirements", "config_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
+    ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: ActionType
-    properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
+    eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
 
 class ActionMessages(_message.Message):
-    __slots__ = ("actions",)
-    ACTIONS_FIELD_NUMBER: _ClassVar[int]
-    actions: _containers.RepeatedCompositeFieldContainer[ActionMessage]
-    def __init__(self, actions: _Optional[_Iterable[_Union[ActionMessage, _Mapping]]] = ...) -> None: ...
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ActionMessage]
+    def __init__(self, items: _Optional[_Iterable[_Union[ActionMessage, _Mapping]]] = ...) -> None: ...
 
 class ActionAddMessage(_message.Message):
     __slots__ = ("config_id", "name", "icon", "description", "type", "agent_id", "activating_property_id")

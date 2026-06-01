@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
 import "resources/v1/placement.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -81,7 +80,6 @@ message CellDefinition {
   repeated MarkerPlacement markers = 12; // Markers shared for this cell for localization, AR anchoring, or identification.
 
   geometry.v1.LocalizedPose frame = 13; // Cell-local reference frame or zone anchor.
-  common.v1.CustomProperties custom = 14;
 }
 
 message CellDefinitions {

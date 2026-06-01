@@ -8,7 +8,6 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -189,7 +188,6 @@ type StationDefinition struct {
 	Assets                 []*AssetPlacement      `protobuf:"bytes,11,rep,name=assets,proto3" json:"assets,omitempty"`                                                                 // Station-local assets such as cameras, HMIs, feeders, or sensors.
 	Markers                []*MarkerPlacement     `protobuf:"bytes,12,rep,name=markers,proto3" json:"markers,omitempty"`                                                               // Markers used specifically at this station for localization, AR anchoring, or identification.
 	Frame                  *v1.LocalizedPose      `protobuf:"bytes,13,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
-	Custom                 *v11.CustomProperties  `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -315,13 +313,6 @@ func (x *StationDefinition) GetFrame() *v1.LocalizedPose {
 	return nil
 }
 
-func (x *StationDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type StationDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*StationDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -370,7 +361,7 @@ var File_resources_v1_station_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\n" +
-	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa4\x05\n" +
+	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xef\x04\n" +
 	"\x11StationDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -385,8 +376,7 @@ const file_resources_v1_station_definition_proto_rawDesc = "" +
 	" \x03(\v2\x1c.resources.v1.RobotPlacementR\x06robots\x124\n" +
 	"\x06assets\x18\v \x03(\v2\x1c.resources.v1.AssetPlacementR\x06assets\x127\n" +
 	"\amarkers\x18\f \x03(\v2\x1d.resources.v1.MarkerPlacementR\amarkers\x120\n" +
-	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"K\n" +
+	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\"K\n" +
 	"\x12StationDefinitions\x125\n" +
 	"\x05items\x18\x01 \x03(\v2\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n" +
 	"\vStationType\x12\x1c\n" +
@@ -418,16 +408,15 @@ func file_resources_v1_station_definition_proto_rawDescGZIP() []byte {
 var file_resources_v1_station_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_resources_v1_station_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_station_definition_proto_goTypes = []any{
-	(StationType)(0),             // 0: resources.v1.StationType
-	(StationStatus)(0),           // 1: resources.v1.StationStatus
-	(*StationDefinition)(nil),    // 2: resources.v1.StationDefinition
-	(*StationDefinitions)(nil),   // 3: resources.v1.StationDefinitions
-	(*ToolPlacement)(nil),        // 4: resources.v1.ToolPlacement
-	(*RobotPlacement)(nil),       // 5: resources.v1.RobotPlacement
-	(*AssetPlacement)(nil),       // 6: resources.v1.AssetPlacement
-	(*MarkerPlacement)(nil),      // 7: resources.v1.MarkerPlacement
-	(*v1.LocalizedPose)(nil),     // 8: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 9: common.v1.CustomProperties
+	(StationType)(0),           // 0: resources.v1.StationType
+	(StationStatus)(0),         // 1: resources.v1.StationStatus
+	(*StationDefinition)(nil),  // 2: resources.v1.StationDefinition
+	(*StationDefinitions)(nil), // 3: resources.v1.StationDefinitions
+	(*ToolPlacement)(nil),      // 4: resources.v1.ToolPlacement
+	(*RobotPlacement)(nil),     // 5: resources.v1.RobotPlacement
+	(*AssetPlacement)(nil),     // 6: resources.v1.AssetPlacement
+	(*MarkerPlacement)(nil),    // 7: resources.v1.MarkerPlacement
+	(*v1.LocalizedPose)(nil),   // 8: geometry.v1.LocalizedPose
 }
 var file_resources_v1_station_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.StationDefinition.type:type_name -> resources.v1.StationType
@@ -437,13 +426,12 @@ var file_resources_v1_station_definition_proto_depIdxs = []int32{
 	6, // 4: resources.v1.StationDefinition.assets:type_name -> resources.v1.AssetPlacement
 	7, // 5: resources.v1.StationDefinition.markers:type_name -> resources.v1.MarkerPlacement
 	8, // 6: resources.v1.StationDefinition.frame:type_name -> geometry.v1.LocalizedPose
-	9, // 7: resources.v1.StationDefinition.custom:type_name -> common.v1.CustomProperties
-	2, // 8: resources.v1.StationDefinitions.items:type_name -> resources.v1.StationDefinition
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	2, // 7: resources.v1.StationDefinitions.items:type_name -> resources.v1.StationDefinition
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_station_definition_proto_init() }

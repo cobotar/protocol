@@ -3,26 +3,10 @@
 
 ## Table of Contents
 
-- [common/v1/color.proto](#common_v1_color-proto)
-    - [Color](#common-v1-Color)
+- [common/v1/actor.proto](#common_v1_actor-proto)
+    - [ActorRef](#common-v1-ActorRef)
   
-- [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
-    - [Anchor](#geometry-v1-Anchor)
-  
-- [geometry/v1/point.proto](#geometry_v1_point-proto)
-    - [Point](#geometry-v1-Point)
-  
-- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
-    - [Quad](#geometry-v1-Quad)
-  
-- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
-    - [LocalizedPose](#geometry-v1-LocalizedPose)
-    - [Pose](#geometry-v1-Pose)
-  
-    - [LocalizedState](#geometry-v1-LocalizedState)
-  
-- [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
-    - [Vector3](#geometry-v1-Vector3)
+    - [ActorKind](#common-v1-ActorKind)
   
 - [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
@@ -60,24 +44,27 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
-- [common/v1/property.proto](#common_v1_property-proto)
-    - [AnchorExtras](#common-v1-AnchorExtras)
-    - [ColorExtras](#common-v1-ColorExtras)
-    - [EnumExtras](#common-v1-EnumExtras)
-    - [EnumOption](#common-v1-EnumOption)
-    - [NumberExtras](#common-v1-NumberExtras)
-    - [PoseExtras](#common-v1-PoseExtras)
-    - [Property](#common-v1-Property)
-    - [PropertyMessages](#common-v1-PropertyMessages)
-    - [PropertyValueUpdate](#common-v1-PropertyValueUpdate)
-    - [Vector3Extras](#common-v1-Vector3Extras)
+- [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
+    - [ActorSkill](#capability-v1-ActorSkill)
+    - [ActorSkills](#capability-v1-ActorSkills)
+    - [SkillEvidenceStats](#capability-v1-SkillEvidenceStats)
+    - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
   
-    - [PropertyGroup](#common-v1-PropertyGroup)
-    - [PropertyOrigin](#common-v1-PropertyOrigin)
-    - [PropertyPermission](#common-v1-PropertyPermission)
-    - [PropertyType](#common-v1-PropertyType)
-    - [PropertyValueScope](#common-v1-PropertyValueScope)
+    - [SkillInvalidityReason](#capability-v1-SkillInvalidityReason)
+    - [SkillLevel](#capability-v1-SkillLevel)
+    - [SkillNextAction](#capability-v1-SkillNextAction)
+    - [SkillStatus](#capability-v1-SkillStatus)
+  
+- [common/v1/key_value_constraint.proto](#common_v1_key_value_constraint-proto)
+    - [KeyValueConstraint](#common-v1-KeyValueConstraint)
+  
+    - [ConstraintOperator](#common-v1-ConstraintOperator)
+  
+- [capability/v1/skill_requirement.proto](#capability_v1_skill_requirement-proto)
+    - [SkillRequirement](#capability-v1-SkillRequirement)
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
@@ -122,41 +109,52 @@
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
   
+- [common/v1/color.proto](#common_v1_color-proto)
+    - [Color](#common-v1-Color)
+  
+- [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
+    - [Anchor](#geometry-v1-Anchor)
+  
+- [geometry/v1/point.proto](#geometry_v1_point-proto)
+    - [Point](#geometry-v1-Point)
+  
+- [geometry/v1/quad.proto](#geometry_v1_quad-proto)
+    - [Quad](#geometry-v1-Quad)
+  
+- [geometry/v1/pose.proto](#geometry_v1_pose-proto)
+    - [LocalizedPose](#geometry-v1-LocalizedPose)
+    - [Pose](#geometry-v1-Pose)
+  
+    - [LocalizedState](#geometry-v1-LocalizedState)
+  
+- [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
+    - [Vector3](#geometry-v1-Vector3)
+  
+- [common/v1/property.proto](#common_v1_property-proto)
+    - [AnchorExtras](#common-v1-AnchorExtras)
+    - [ColorExtras](#common-v1-ColorExtras)
+    - [EnumExtras](#common-v1-EnumExtras)
+    - [EnumOption](#common-v1-EnumOption)
+    - [NumberExtras](#common-v1-NumberExtras)
+    - [PoseExtras](#common-v1-PoseExtras)
+    - [PropertyDefinition](#common-v1-PropertyDefinition)
+    - [PropertyDefinitions](#common-v1-PropertyDefinitions)
+    - [PropertyInstance](#common-v1-PropertyInstance)
+    - [PropertyInstanceUpdate](#common-v1-PropertyInstanceUpdate)
+    - [PropertyInstances](#common-v1-PropertyInstances)
+    - [PropertyValue](#common-v1-PropertyValue)
+    - [Vector3Extras](#common-v1-Vector3Extras)
+  
+    - [PropertyGroup](#common-v1-PropertyGroup)
+    - [PropertyOrigin](#common-v1-PropertyOrigin)
+    - [PropertyPermission](#common-v1-PropertyPermission)
+    - [PropertyScope](#common-v1-PropertyScope)
+    - [PropertyType](#common-v1-PropertyType)
+  
 - [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
     - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
     - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
     - [ARResourceBinding](#ar-v1-ARResourceBinding)
-    - [AssetMapping](#ar-v1-AssetMapping)
-    - [RobotMapping](#ar-v1-RobotMapping)
-  
-- [ar/v1/config_load.proto](#ar_v1_config_load-proto)
-    - [ConfigurationLoadMessage](#ar-v1-ConfigurationLoadMessage)
-  
-- [ar/v1/config_resolve.proto](#ar_v1_config_resolve-proto)
-    - [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext)
-    - [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue)
-    - [ConfigurationResolveRequest](#ar-v1-ConfigurationResolveRequest)
-    - [ConfigurationResolveResult](#ar-v1-ConfigurationResolveResult)
-    - [ResolvedAssetInput](#ar-v1-ResolvedAssetInput)
-    - [ResolvedConfiguration](#ar-v1-ResolvedConfiguration)
-    - [ResolvedContextInputValue](#ar-v1-ResolvedContextInputValue)
-    - [ResolvedInputBinding](#ar-v1-ResolvedInputBinding)
-    - [ResolvedRobotInput](#ar-v1-ResolvedRobotInput)
-  
-    - [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity)
-    - [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType)
-  
-- [ar/v1/environment.proto](#ar_v1_environment-proto)
-    - [AssetLocation](#ar-v1-AssetLocation)
-    - [EnvironmentMessage](#ar-v1-EnvironmentMessage)
-    - [EnvironmentMessages](#ar-v1-EnvironmentMessages)
-    - [FixtureLocation](#ar-v1-FixtureLocation)
-    - [MarkerLocation](#ar-v1-MarkerLocation)
-    - [PartLocation](#ar-v1-PartLocation)
-    - [RobotLocation](#ar-v1-RobotLocation)
-    - [ToolLocation](#ar-v1-ToolLocation)
-  
-    - [EnvironmentType](#ar-v1-EnvironmentType)
   
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
@@ -188,34 +186,13 @@
   
     - [HelperGroup](#ar-v1-HelperGroup)
   
-- [common/v1/actor.proto](#common_v1_actor-proto)
-    - [ActorRef](#common-v1-ActorRef)
-  
-    - [ActorKind](#common-v1-ActorKind)
-  
 - [common/v1/enums.proto](#common_v1_enums-proto)
     - [CollaborationMode](#common-v1-CollaborationMode)
     - [ResourceStatus](#common-v1-ResourceStatus)
     - [SafetyRelevance](#common-v1-SafetyRelevance)
   
-- [common/v1/key_value_constraint.proto](#common_v1_key_value_constraint-proto)
-    - [KeyValueConstraint](#common-v1-KeyValueConstraint)
-  
-    - [ConstraintOperator](#common-v1-ConstraintOperator)
-  
 - [capability/v1/actor_constraint.proto](#capability_v1_actor_constraint-proto)
     - [ActorConstraint](#capability-v1-ActorConstraint)
-  
-- [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
-    - [ActorSkill](#capability-v1-ActorSkill)
-    - [ActorSkills](#capability-v1-ActorSkills)
-    - [SkillEvidenceStats](#capability-v1-SkillEvidenceStats)
-    - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
-  
-    - [SkillInvalidityReason](#capability-v1-SkillInvalidityReason)
-    - [SkillLevel](#capability-v1-SkillLevel)
-    - [SkillNextAction](#capability-v1-SkillNextAction)
-    - [SkillStatus](#capability-v1-SkillStatus)
   
 - [capability/v1/capability_profile.proto](#capability_v1_capability_profile-proto)
     - [CapabilityProfile](#capability-v1-CapabilityProfile)
@@ -226,9 +203,6 @@
   
     - [SkillDomain](#capability-v1-SkillDomain)
     - [ToolRole](#capability-v1-ToolRole)
-  
-- [capability/v1/skill_requirement.proto](#capability_v1_skill_requirement-proto)
-    - [SkillRequirement](#capability-v1-SkillRequirement)
   
 - [capability/v1/tool_requirement.proto](#capability_v1_tool_requirement-proto)
     - [ToolRequirement](#capability-v1-ToolRequirement)
@@ -241,9 +215,6 @@
   
 - [common/v1/clone.proto](#common_v1_clone-proto)
     - [CloneMessage](#common-v1-CloneMessage)
-  
-- [common/v1/custom_properties.proto](#common_v1_custom_properties-proto)
-    - [CustomProperties](#common-v1-CustomProperties)
   
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
@@ -547,6 +518,7 @@
     - [ProgramState](#robot-v1-ProgramState)
   
 - [robot/v1/program_state_request.proto](#robot_v1_program_state_request-proto)
+    - [AcknowledgeRobot](#robot-v1-AcknowledgeRobot)
     - [ProgramStateRequest](#robot-v1-ProgramStateRequest)
   
 - [robot/v1/robot_state.proto](#robot_v1_robot_state-proto)
@@ -668,57 +640,23 @@
 
 
 
-<a name="common_v1_color-proto"></a>
+<a name="common_v1_actor-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## common/v1/color.proto
+## common/v1/actor.proto
 
 
 
-<a name="common-v1-Color"></a>
+<a name="common-v1-ActorRef"></a>
 
-### Color
-Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| red | [uint32](#uint32) |  | Ranging from [0:255] |
-| green | [uint32](#uint32) |  | Ranging from [0:255] |
-| blue | [uint32](#uint32) |  | Ranging from [0:255] |
-| alpha | [uint32](#uint32) |  | Ranging from [0:255] --&gt; [transparent : opaque] |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_anchor-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/anchor.proto
-
-
-
-<a name="geometry-v1-Anchor"></a>
-
-### Anchor
+### ActorRef
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| reference | [string](#string) |  | Reference point towards an object or a thing, e.g. the environment, a robot, the user, ... |
-| frame | [string](#string) |  | Frame is something in relation to the reference, e.g. wrist, tcp, left-hand, ... |
+| kind | [ActorKind](#common-v1-ActorKind) |  |  |
+| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
 
 
 
@@ -726,171 +664,19 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
  
 
- 
 
- 
+<a name="common-v1-ActorKind"></a>
 
- 
-
-
-
-<a name="geometry_v1_point-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/point.proto
-
-
-
-<a name="geometry-v1-Point"></a>
-
-### Point
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_quad-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/quad.proto
-
-
-
-<a name="geometry-v1-Quad"></a>
-
-### Quad
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-| w | [float](#float) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_pose-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/pose.proto
-
-
-
-<a name="geometry-v1-LocalizedPose"></a>
-
-### LocalizedPose
-A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| position | [Point](#geometry-v1-Point) |  |  |
-| orientation | [Quad](#geometry-v1-Quad) |  |  |
-| anchor | [Anchor](#geometry-v1-Anchor) |  |  |
-| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
-| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
-
-<a name="geometry-v1-Pose"></a>
-
-### Pose
-A simple pose consisting of a position and orientation
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| position | [Point](#geometry-v1-Point) |  |  |
-| orientation | [Quad](#geometry-v1-Quad) |  |  |
-
-
-
-
-
- 
-
-
-<a name="geometry-v1-LocalizedState"></a>
-
-### LocalizedState
+### ActorKind
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
-| LOCALIZED_STATE_FOUND | 1 |  |
-| LOCALIZED_STATE_LOST | 2 |  |
-| LOCALIZED_STATE_STATIC | 3 |  |
+| ACTOR_KIND_UNSPECIFIED | 0 |  |
+| ACTOR_KIND_HUMAN | 1 |  |
+| ACTOR_KIND_ROBOT | 2 |  |
+| ACTOR_KIND_HYBRID | 3 |  |
 
-
- 
-
- 
-
- 
-
-
-
-<a name="geometry_v1_vector3-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## geometry/v1/vector3.proto
-
-
-
-<a name="geometry-v1-Vector3"></a>
-
-### Vector3
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [float](#float) |  |  |
-| y | [float](#float) |  |  |
-| z | [float](#float) |  |  |
-
-
-
-
-
- 
 
  
 
@@ -925,6 +711,7 @@ A simple pose consisting of a position and orientation
 | cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
 | container_definition_id_component | bool | .buf.validate.StringRules | 10025 |  |
 | container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
+| device_id_component | bool | .buf.validate.StringRules | 100036 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
 | image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
@@ -938,7 +725,8 @@ A simple pose consisting of a position and orientation
 | process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
 | process_run_id_component | bool | .buf.validate.StringRules | 10017 |  |
 | product_id_component | bool | .buf.validate.StringRules | 100028 |  |
-| property_id_component | bool | .buf.validate.StringRules | 10003 |  |
+| property_definition_id_component | bool | .buf.validate.StringRules | 10003 |  |
+| property_instance_id_component | bool | .buf.validate.StringRules | 10035 |  |
 | robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
 | robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
 | sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
@@ -958,122 +746,27 @@ A simple pose consisting of a position and orientation
 
 
 
-<a name="common_v1_property-proto"></a>
+<a name="capability_v1_actor_skill-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## common/v1/property.proto
+## capability/v1/actor_skill.proto
 
 
 
-<a name="common-v1-AnchorExtras"></a>
+<a name="capability-v1-ActorSkill"></a>
 
-### AnchorExtras
+### ActorSkill
+ActorSkill stores the current operational summary of one skill for one actor.
 
+It is intentionally a fast, runtime-friendly summary layer rather than a full
+audit log. Runtime planners/loaders should use this message to determine
+whether an actor is:
+- allowed
+- restricted
+- expired
 
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| only_markers | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="common-v1-ColorExtras"></a>
-
-### ColorExtras
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| step | [double](#double) |  |  |
-| default | [Color](#common-v1-Color) |  | TODO: allow user-preference override |
-
-
-
-
-
-
-<a name="common-v1-EnumExtras"></a>
-
-### EnumExtras
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| placeholder | [string](#string) |  | Placeholder value shown in UI when no enum is selected |
-| filter | [bool](#bool) |  | Show filter input |
-| grouped | [bool](#bool) |  | If options should be grouped |
-| show_icons | [bool](#bool) |  | If options have icons and these should be shown |
-| max_selected_labels | [uint32](#uint32) |  | Only relevant for MultiSelect: limits number of selected labels |
-| options | [EnumOption](#common-v1-EnumOption) | repeated |  |
-
-
-
-
-
-
-<a name="common-v1-EnumOption"></a>
-
-### EnumOption
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  |  |
-| label | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| group | [string](#string) |  |  |
-| disabled | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="common-v1-NumberExtras"></a>
-
-### NumberExtras
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| min | [double](#double) | optional |  |
-| max | [double](#double) | optional |  |
-| step | [double](#double) | optional |  |
-| unit | [string](#string) |  | &#34;mm&#34;, &#34;deg&#34;, &#34;N&#34; |
-| precision | [uint32](#uint32) |  | Decimal places for display |
-
-
-
-
-
-
-<a name="common-v1-PoseExtras"></a>
-
-### PoseExtras
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| anchor_editable | [bool](#bool) |  |  |
-| pose_editable | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="common-v1-Property"></a>
-
-### Property
-Properties are used by various components to define them, such as: feedback, actions, and conditions.
+ExecutionEvidence and training/certification events are expected to update
+this summary over time.
 
 
 | Field | Type | Label | Description |
@@ -1081,108 +774,79 @@ Properties are used by various components to define them, such as: feedback, act
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [PropertyType](#common-v1-PropertyType) |  |  |
-| minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  |  |
-| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
-| origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
-| mirror_property_id | [string](#string) |  |  |
-| group | [PropertyGroup](#common-v1-PropertyGroup) |  |  |
-| ordering | [int32](#int32) |  |  |
-| hide_group | [bool](#bool) |  |  |
-| parent_id | [string](#string) |  |  |
-| advanced | [bool](#bool) |  | Hide behind &#34;Advanced&#34; toogle |
-| scope_id | [string](#string) |  |  |
-| disable_mirroring | [bool](#bool) |  | If true, this property is not allowed to be mirrored by other properties |
-| value_scope | [PropertyValueScope](#common-v1-PropertyValueScope) |  | Defines whether value updates mutate the owning entity or only a materialized runtime instance. |
-| bool_value | [bool](#bool) | optional |  |
-| int_value | [sint64](#sint64) | optional |  |
-| float_value | [float](#float) | optional |  |
-| double_value | [double](#double) | optional |  |
-| string_value | [string](#string) | optional |  |
-| vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
-| color_value | [Color](#common-v1-Color) |  |  |
-| robot_id_value | [string](#string) | optional |  |
-| enum_value | [string](#string) | optional |  |
-| enum_multi_value | [string](#string) | repeated |  |
-| icon_value | [string](#string) | optional |  |
-| asset_id_value | [string](#string) | optional |  |
-| number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
-| enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
-| vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
-| color_extras | [ColorExtras](#common-v1-ColorExtras) |  |  |
-| pose_extras | [PoseExtras](#common-v1-PoseExtras) |  |  |
-| anchor_extras | [AnchorExtras](#common-v1-AnchorExtras) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| skill_id | [string](#string) |  |  |
+| level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
+| status | [SkillStatus](#capability-v1-SkillStatus) |  |  |
+| confidence_score | [float](#float) |  | Optional derived confidence/proficiency score in [0,1]. |
+| stats | [SkillEvidenceStats](#capability-v1-SkillEvidenceStats) |  | Aggregated evidence summary used for fast runtime decisions. |
+| last_training_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent training/refresher event relevant to this skill. |
+| last_certified_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent formal certification/re-certification event. |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Explicit validity limit if known, otherwise policy-derived. |
+| validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | Policy currently used to evaluate status/validity. |
+| reasons | [SkillInvalidityReason](#capability-v1-SkillInvalidityReason) | repeated |  |
+| next_actions | [SkillNextAction](#capability-v1-SkillNextAction) | repeated |  |
 
 
 
 
 
 
-<a name="common-v1-PropertyMessages"></a>
+<a name="capability-v1-ActorSkills"></a>
 
-### PropertyMessages
+### ActorSkills
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| properties | [Property](#common-v1-Property) | repeated |  |
+| items | [ActorSkill](#capability-v1-ActorSkill) | repeated |  |
 
 
 
 
 
 
-<a name="common-v1-PropertyValueUpdate"></a>
+<a name="capability-v1-SkillEvidenceStats"></a>
 
-### PropertyValueUpdate
+### SkillEvidenceStats
+SkillEvidenceStats is a lightweight aggregated summary of recent evidence
+relevant to one actor &#43; one skill.
 
+This is intended for fast runtime decisions and policy evaluation. It is
+typically derived from underlying execution evidence and training/certification
+events rather than being treated as the primary source of truth.
 
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| type | [PropertyType](#common-v1-PropertyType) |  |  |
-| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
-| mirror_property_id | [string](#string) |  |  |
-| bool_value | [bool](#bool) | optional |  |
-| int_value | [sint64](#sint64) | optional |  |
-| float_value | [float](#float) | optional |  |
-| double_value | [double](#double) | optional |  |
-| string_value | [string](#string) | optional |  |
-| vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
-| color_value | [Color](#common-v1-Color) |  |  |
-| robot_id_value | [string](#string) | optional |  |
-| enum_value | [string](#string) | optional |  |
-| enum_multi_value | [string](#string) | repeated |  |
-| icon_value | [string](#string) | optional |  |
-| asset_id_value | [string](#string) | optional |  |
-
-
-
-
-
-
-<a name="common-v1-Vector3Extras"></a>
-
-### Vector3Extras
-
+The effective aggregation window is policy-dependent. For example, a policy
+may consider only the last N executions, the last N days, or all evidence
+since the most recent certification.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| min | [double](#double) | optional |  |
-| max | [double](#double) | optional |  |
-| step | [double](#double) | optional |  |
-| label_x | [string](#string) |  |  |
-| label_y | [string](#string) |  |  |
-| label_z | [string](#string) |  |  |
-| unit | [string](#string) |  |  |
+| success_count | [int32](#int32) |  | Aggregated successful executions/evidence in the active evaluation window. |
+| failure_count | [int32](#int32) |  | Aggregated failed executions/evidence in the active evaluation window. |
+| last_success_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| last_failure_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| last_activity_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| rolling_success_rate | [float](#float) |  | Optional derived metric in [0,1]. |
+
+
+
+
+
+
+<a name="capability-v1-ValidityPolicyRef"></a>
+
+### ValidityPolicyRef
+ValidityPolicyRef identifies the policy definition and version currently used
+to derive validity, degradation, and recovery behavior for this actor skill.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| policy_id | [string](#string) |  |  |
+| version | [string](#string) |  |  |
 
 
 
@@ -1191,88 +855,200 @@ Properties are used by various components to define them, such as: feedback, act
  
 
 
-<a name="common-v1-PropertyGroup"></a>
+<a name="capability-v1-SkillInvalidityReason"></a>
 
-### PropertyGroup
+### SkillInvalidityReason
+SkillInvalidityReason explains why an actor skill is currently restricted,
+expired, or otherwise not fully valid.
+
+These reasons are intended to be stable, machine-readable summary codes that
+can be shown in UI, used in loaders/runtime checks, and derived from evidence,
+policy evaluation, or engineering-change events.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_INVALIDITY_REASON_UNSPECIFIED | 0 |  |
+| SKILL_INVALIDITY_REASON_INACTIVITY | 1 | The skill has degraded due to lack of recent practice or evidence of use.
+
+Typical examples: - no executions in the active policy window - no recent successful evidence for the skill |
+| SKILL_INVALIDITY_REASON_FAILURE_RATE | 2 | The skill is restricted or invalid because observed failure rate or quality performance exceeded the allowed threshold.
+
+Typical examples: - too many failed executions in the recent window - too many out-of-tolerance results - too many inspection failures or retries |
+| SKILL_INVALIDITY_REASON_POLICY_EXPIRED | 3 | The governing validity/certification policy has expired the skill based on time or other policy-defined rules.
+
+Typical examples: - certification period elapsed - revalidation deadline passed |
+| SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE | 4 | The skill has been invalidated because a relevant engineering or process change means previous validation/training can no longer be trusted.
+
+Typical examples: - tool model or capability changed - torque/program parameters changed - product revision changed - robot program or fixture configuration changed |
+
+
+
+<a name="capability-v1-SkillLevel"></a>
+
+### SkillLevel
+Alternative categories:
+AWARE: Understands concept
+ASSISTED: Can perform with guidance
+COMPETENT: Can perform independently
+EXPERT: Can troubleshoot and optimize
+CERTIFIED: Officially qualified
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_LEVEL_UNSPECIFIED | 0 |  |
+| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
+| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
+| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
+| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
+| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
+
+
+
+<a name="capability-v1-SkillNextAction"></a>
+
+### SkillNextAction
+SkillNextAction describes the recommended next action needed to restore,
+strengthen, or safely compensate for a restricted/expired skill.
+
+These actions are intended to be stable, machine-readable guidance codes that
+can be surfaced in UI and used by operational workflows.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_NEXT_ACTION_UNSPECIFIED | 0 |  |
+| SKILL_NEXT_ACTION_MICRO_TRAINING | 1 | A short targeted intervention is recommended before normal independent use.
+
+Typical examples: - brief AR-guided walkthrough - quick reminder of the critical steps - short digital refresher module |
+| SKILL_NEXT_ACTION_REFRESHER_TRAINING | 2 | A broader retraining session is recommended because the skill has degraded beyond what a short intervention should address.
+
+Typical examples: - instructor-led refresher - extended guided practice - retraining on updated process/tooling |
+| SKILL_NEXT_ACTION_RE_CERTIFICATION | 3 | Formal re-certification or re-validation is required before the skill can return to normal unrestricted use.
+
+Typical examples: - certification renewal - formal competency check - validated robot/program re-approval |
+| SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED | 4 | Additional runtime validation must be performed before or during task execution to safely use the skill in its current state.
+
+Typical examples: - second check required - vision/tool confirmation required - extra verification step before completion |
+| SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED | 5 | Supervisor or responsible authority approval is required before the actor may execute tasks relying on this skill.
+
+Typical examples: - technician sign-off - team lead approval - engineering approval for temporary restricted use |
+
+
+
+<a name="capability-v1-SkillStatus"></a>
+
+### SkillStatus
+SkillStatus describes the current usability of an actor&#39;s skill.
+
+The status is operational and should be interpreted together with the
+associated policy, validity timestamps, and any derived restrictions.
+
+Typical semantics:
+- ACTIVE      -&gt; skill is fully usable
+- RESTRICTED  -&gt; skill is usable, but only under additional runtime
+                 safeguards such as AR guidance, extra validation,
+                 supervision, or other assistance
+- EXPIRED     -&gt; skill is no longer valid and must not be used
+
+Loaders and runtime planners should therefore treat:
+- ACTIVE     -&gt; feasible
+- RESTRICTED -&gt; feasible with restrictions
+- EXPIRED    -&gt; infeasible
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SKILL_STATUS_UNSPECIFIED | 0 |  |
+| SKILL_STATUS_ACTIVE | 1 | Skill is valid and can be used normally. |
+| SKILL_STATUS_RESTRICTED | 2 | Skill is allowed but restricted. The actor may perform the task but additional safeguards
+
+Examples: - AR guidance required - manual confirmation required - second check required - supervisor approval required |
+| SKILL_STATUS_EXPIRED | 3 | Skill is no longer valid and cannot be used. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_key_value_constraint-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/key_value_constraint.proto
+
+
+
+<a name="common-v1-KeyValueConstraint"></a>
+
+### KeyValueConstraint
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| op | [ConstraintOperator](#common-v1-ConstraintOperator) |  |  |
+| value | [string](#string) |  |  |
+| values | [string](#string) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="common-v1-ConstraintOperator"></a>
+
+### ConstraintOperator
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PROPERTY_GROUP_UNSPECIFIED | 0 |  |
-| PROPERTY_GROUP_OUTPUT | 1 |  |
-| PROPERTY_GROUP_NON_EDITABLE | 2 |  |
-| PROPERTY_GROUP_STYLING | 3 |  |
-| PROPERTY_GROUP_LOCATION | 4 |  |
-| PROPERTY_GROUP_ICON | 5 |  |
-| PROPERTY_GROUP_CONFIGURATION | 6 |  |
-| PROPERTY_GROUP_HIDDEN | 7 |  |
+| CONSTRAINT_OPERATOR_UNSPECIFIED | 0 |  |
+| CONSTRAINT_OPERATOR_EQ | 1 |  |
+| CONSTRAINT_OPERATOR_NEQ | 2 |  |
+| CONSTRAINT_OPERATOR_GT | 3 |  |
+| CONSTRAINT_OPERATOR_GTE | 4 |  |
+| CONSTRAINT_OPERATOR_LT | 5 |  |
+| CONSTRAINT_OPERATOR_LTE | 6 |  |
+| CONSTRAINT_OPERATOR_IN | 7 |  |
+| CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
+
+
+ 
+
+ 
+
+ 
 
 
 
-<a name="common-v1-PropertyOrigin"></a>
+<a name="capability_v1_skill_requirement-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
 
-### PropertyOrigin
-Specifies where the value of a property originates from.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROPERTY_ORIGIN_UNSPECIFIED | 0 |  |
-| PROPERTY_ORIGIN_FIXED | 1 | The value of the property is fixed and must be changed manually |
-| PROPERTY_ORIGIN_MIRROR | 2 | The value of the property mirrors the value of another property |
+## capability/v1/skill_requirement.proto
 
 
 
-<a name="common-v1-PropertyPermission"></a>
+<a name="capability-v1-SkillRequirement"></a>
 
-### PropertyPermission
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROPERTY_PERMISSION_UNSPECIFIED | 0 | Unspecified: can be edited by all |
-| PROPERTY_PERMISSION_BASIC | 10 | Basic: can be edited by users with some permission to edit |
-| PROPERTY_PERMISSION_COSMETIC | 20 | Cosmetic: can be edited by users with cosmetic&#43;full permission |
-| PROPERTY_PERMISSION_FULL | 30 | Full: can be edited by users with full permission |
-| PROPERTY_PERMISSION_NONE | 40 | None: can&#39;t be edited (e.g. outputs or stuff that requires a delete &#43; create new) |
+### SkillRequirement
 
 
 
-<a name="common-v1-PropertyType"></a>
-
-### PropertyType
-Used to specify the type of a property
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROPERTY_TYPE_UNSPECIFIED | 0 |  |
-| PROPERTY_TYPE_BOOL | 1 | Bool type property (true/false) |
-| PROPERTY_TYPE_INT | 2 | Int type property |
-| PROPERTY_TYPE_FLOAT | 3 | Float type property |
-| PROPERTY_TYPE_DOUBLE | 4 | Double type property |
-| PROPERTY_TYPE_STRING | 5 | String type property |
-| PROPERTY_TYPE_VECTOR3 | 6 | Vector3 type property - {x, y, z} |
-| PROPERTY_TYPE_POSE | 7 | Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...) |
-| PROPERTY_TYPE_ANCHOR | 8 | Anchor type property - Anchor(reference, frame) |
-| PROPERTY_TYPE_COLOR | 9 | Color type property - Color(r,g,b,a) |
-| PROPERTY_TYPE_ROBOT | 10 | Robot type property - robot_id as string |
-| PROPERTY_TYPE_ENUM | 11 | Enum type property - string from list of strings (defined in EnumExtras) |
-| PROPERTY_TYPE_ENUM_MULTI | 12 | Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras) |
-| PROPERTY_TYPE_ICON | 13 | Icon property type - icon-name-something from https://pictogrammers.com/ |
-| PROPERTY_TYPE_ASSET | 14 | Asset type property - asset_id as string |
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| skill_id | [string](#string) |  |  |
+| minimum_level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
 
 
 
-<a name="common-v1-PropertyValueScope"></a>
-
-### PropertyValueScope
 
 
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROPERTY_VALUE_SCOPE_UNSPECIFIED | 0 |  |
-| PROPERTY_VALUE_SCOPE_ENTITY | 1 | Value is stored on the owning entity and shared by all materializations. Updating it changes the authored/template value. |
-| PROPERTY_VALUE_SCOPE_INSTANCE | 2 | Value is supplied per runtime/materialized instance and must not be persisted back to the owning entity. |
-
+ 
 
  
 
@@ -1341,7 +1117,7 @@ Used to specify the type of a property
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
+| eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
 | config_id | [string](#string) |  |  |
 
 
@@ -1357,7 +1133,7 @@ Used to specify the type of a property
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| actions | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
+| items | [ActionMessage](#ar-v1-ActionMessage) | repeated |  |
 
 
 
@@ -1633,7 +1409,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
+| items | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
 
 
 
@@ -1870,10 +1646,6 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| feedback_ids | [string](#string) | repeated | Feedback entities belonging to this config. |
-| action_ids | [string](#string) | repeated | Action entities belonging to this config. |
-| helper_ids | [string](#string) | repeated | Helper entities belonging to this config. |
-| property_ids | [string](#string) | repeated | Includes server-managed generated properties for referenced input slots. |
 | input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
 
 
@@ -1889,13 +1661,648 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| configs | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
+| items | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
 
 
 
 
 
  
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_color-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/color.proto
+
+
+
+<a name="common-v1-Color"></a>
+
+### Color
+Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| red | [uint32](#uint32) |  | Ranging from [0:255] |
+| green | [uint32](#uint32) |  | Ranging from [0:255] |
+| blue | [uint32](#uint32) |  | Ranging from [0:255] |
+| alpha | [uint32](#uint32) |  | Ranging from [0:255] --&gt; [transparent : opaque] |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_anchor-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/anchor.proto
+
+
+
+<a name="geometry-v1-Anchor"></a>
+
+### Anchor
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| reference | [string](#string) |  | Reference point towards an object or a thing, e.g. the environment, a robot, the user, ... |
+| frame | [string](#string) |  | Frame is something in relation to the reference, e.g. wrist, tcp, left-hand, ... |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_point-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/point.proto
+
+
+
+<a name="geometry-v1-Point"></a>
+
+### Point
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_quad-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/quad.proto
+
+
+
+<a name="geometry-v1-Quad"></a>
+
+### Quad
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+| w | [float](#float) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_pose-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/pose.proto
+
+
+
+<a name="geometry-v1-LocalizedPose"></a>
+
+### LocalizedPose
+A localized pose with reference to an anchorId. The state and last updated time of the pose can be specified.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
+| anchor | [Anchor](#geometry-v1-Anchor) |  |  |
+| state | [LocalizedState](#geometry-v1-LocalizedState) |  |  |
+| last_updated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="geometry-v1-Pose"></a>
+
+### Pose
+A simple pose consisting of a position and orientation
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| position | [Point](#geometry-v1-Point) |  |  |
+| orientation | [Quad](#geometry-v1-Quad) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="geometry-v1-LocalizedState"></a>
+
+### LocalizedState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LOCALIZED_STATE_UNSPECIFIED | 0 |  |
+| LOCALIZED_STATE_FOUND | 1 |  |
+| LOCALIZED_STATE_LOST | 2 |  |
+| LOCALIZED_STATE_STATIC | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_vector3-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/vector3.proto
+
+
+
+<a name="geometry-v1-Vector3"></a>
+
+### Vector3
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| x | [float](#float) |  |  |
+| y | [float](#float) |  |  |
+| z | [float](#float) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="common_v1_property-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/property.proto
+
+
+
+<a name="common-v1-AnchorExtras"></a>
+
+### AnchorExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| only_markers | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="common-v1-ColorExtras"></a>
+
+### ColorExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| step | [double](#double) |  |  |
+| default | [Color](#common-v1-Color) |  | TODO: allow user-preference override |
+
+
+
+
+
+
+<a name="common-v1-EnumExtras"></a>
+
+### EnumExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| placeholder | [string](#string) |  | Placeholder value shown in UI when no enum is selected |
+| filter | [bool](#bool) |  | Show filter input |
+| grouped | [bool](#bool) |  | If options should be grouped |
+| show_icons | [bool](#bool) |  | If options have icons and these should be shown |
+| max_selected_labels | [uint32](#uint32) |  | Only relevant for MultiSelect: limits number of selected labels |
+| options | [EnumOption](#common-v1-EnumOption) | repeated |  |
+
+
+
+
+
+
+<a name="common-v1-EnumOption"></a>
+
+### EnumOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| group | [string](#string) |  |  |
+| disabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="common-v1-NumberExtras"></a>
+
+### NumberExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min | [double](#double) | optional |  |
+| max | [double](#double) | optional |  |
+| step | [double](#double) | optional |  |
+| unit | [string](#string) |  | &#34;mm&#34;, &#34;deg&#34;, &#34;N&#34; |
+| precision | [uint32](#uint32) |  | Decimal places for display |
+
+
+
+
+
+
+<a name="common-v1-PoseExtras"></a>
+
+### PoseExtras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| anchor_editable | [bool](#bool) |  |  |
+| pose_editable | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyDefinition"></a>
+
+### PropertyDefinition
+PropertyDefinition
+  metadata/schema
+
+Every PropertyDefinition must have exactly one template PropertyInstance stored.
+
+Overall, we have these categories of properties:
+  Static authored input
+   - scope: ENTITY
+   - origin: FIXED
+   - example: MessageFeedback.title
+
+ Injected runtime input
+   - scope: RUNTIME
+   - origin: FIXED
+   - value supplied/overridden from ARResourceBinding during materialization
+   - example: robot slot, asset slot
+
+ Dynamic runtime input
+   - scope: RUNTIME
+   - origin: MIRROR
+   - mirror_property_definition_id points to another runtime property definition
+   - example: Action.active mirrors MessageFeedback.outputGaze
+
+ Runtime output
+   - scope: RUNTIME
+   - origin: FIXED
+   - runtime system mutates value
+   - example: MessageFeedback.outputGaze
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| parent_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
+| minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  | UI/authoring metadata |
+| allowed_origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
+| group | [PropertyGroup](#common-v1-PropertyGroup) |  |  |
+| ordering | [int32](#int32) |  |  |
+| hide_group | [bool](#bool) |  |  |
+| advanced | [bool](#bool) |  |  |
+| disable_mirroring | [bool](#bool) |  |  |
+| number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
+| enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
+| vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
+| color_extras | [ColorExtras](#common-v1-ColorExtras) |  |  |
+| pose_extras | [PoseExtras](#common-v1-PoseExtras) |  |  |
+| anchor_extras | [AnchorExtras](#common-v1-AnchorExtras) |  |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyDefinitions"></a>
+
+### PropertyDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PropertyDefinition](#common-v1-PropertyDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyInstance"></a>
+
+### PropertyInstance
+PropertyInstance
+  value/resolution in a scope
+
+Some notes:
+Authoring edits PropertyInstances whose scope_id belongs to the template/config/binding.
+Runtime creates PropertyInstances whose scope_id belongs to the materialized runtime context.
+Mirrors always point to PropertyDefinitions and are resolved inside the active context.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| property_definition_id | [string](#string) |  |  |
+| scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
+| scope_id | [string](#string) |  | For ENTITY, identifies the owning template/entity scope. For RUNTIME, identifies the materialized runtime context. Template runtime instances can use the owning template/entity id. |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
+| mirror_property_definition_id | [string](#string) |  |  |
+| value | [PropertyValue](#common-v1-PropertyValue) |  |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyInstanceUpdate"></a>
+
+### PropertyInstanceUpdate
+PropertyInstanceUpdate
+  mutate one concrete instance
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| property_instance_id | [string](#string) |  |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
+| mirror_property_definition_id | [string](#string) |  |  |
+| value | [PropertyValue](#common-v1-PropertyValue) |  |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyInstances"></a>
+
+### PropertyInstances
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PropertyInstance](#common-v1-PropertyInstance) | repeated |  |
+
+
+
+
+
+
+<a name="common-v1-PropertyValue"></a>
+
+### PropertyValue
+PropertyValue
+  typed payload
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| bool_value | [bool](#bool) | optional |  |
+| int_value | [sint64](#sint64) | optional |  |
+| float_value | [float](#float) | optional |  |
+| double_value | [double](#double) | optional |  |
+| string_value | [string](#string) | optional |  |
+| vector3_value | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
+| pose_value | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| anchor_value | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
+| color_value | [Color](#common-v1-Color) |  |  |
+| robot_id_value | [string](#string) | optional |  |
+| enum_value | [string](#string) | optional |  |
+| enum_multi_value | [string](#string) | repeated |  |
+| icon_value | [string](#string) | optional |  |
+| asset_id_value | [string](#string) | optional |  |
+| worker_id_value | [string](#string) | optional |  |
+
+
+
+
+
+
+<a name="common-v1-Vector3Extras"></a>
+
+### Vector3Extras
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| min | [double](#double) | optional |  |
+| max | [double](#double) | optional |  |
+| step | [double](#double) | optional |  |
+| label_x | [string](#string) |  |  |
+| label_y | [string](#string) |  |  |
+| label_z | [string](#string) |  |  |
+| unit | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="common-v1-PropertyGroup"></a>
+
+### PropertyGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_GROUP_UNSPECIFIED | 0 |  |
+| PROPERTY_GROUP_OUTPUT | 1 |  |
+| PROPERTY_GROUP_NON_EDITABLE | 2 |  |
+| PROPERTY_GROUP_STYLING | 3 |  |
+| PROPERTY_GROUP_LOCATION | 4 |  |
+| PROPERTY_GROUP_ICON | 5 |  |
+| PROPERTY_GROUP_CONFIGURATION | 6 |  |
+| PROPERTY_GROUP_HIDDEN | 7 |  |
+
+
+
+<a name="common-v1-PropertyOrigin"></a>
+
+### PropertyOrigin
+Specifies where the value of a property originates from.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_ORIGIN_UNSPECIFIED | 0 |  |
+| PROPERTY_ORIGIN_FIXED | 1 | Value is stored directly on the PropertyInstance. For RUNTIME properties, the template value may be overridden during materialization. Hence, in general: the value of the property is fixed and must be changed manually |
+| PROPERTY_ORIGIN_MIRROR | 2 | Value is resolved by mirroring another property definition in the same runtime context. |
+
+
+
+<a name="common-v1-PropertyPermission"></a>
+
+### PropertyPermission
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_PERMISSION_UNSPECIFIED | 0 | Unspecified: can be edited by all |
+| PROPERTY_PERMISSION_BASIC | 10 | Basic: can be edited by users with some permission to edit |
+| PROPERTY_PERMISSION_COSMETIC | 20 | Cosmetic: can be edited by users with cosmetic&#43;full permission |
+| PROPERTY_PERMISSION_FULL | 30 | Full: can be edited by users with full permission |
+| PROPERTY_PERMISSION_NONE | 40 | None: can&#39;t be edited (e.g. outputs or stuff that requires a delete &#43; create new) |
+
+
+
+<a name="common-v1-PropertyScope"></a>
+
+### PropertyScope
+PropertyScope
+
+For authoring:
+  ENTITY scope:
+   UI edits the entity/template PropertyInstance
+
+  RUNTIME scope:
+    UI can show the definition and maybe a default initial value,
+    but runtime creates ephemeral instances per materialization
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_SCOPE_UNSPECIFIED | 0 |  |
+| PROPERTY_SCOPE_ENTITY | 1 | One authored instance shared by all materializations of the owning entity. Example: MessageFeedback.title. |
+| PROPERTY_SCOPE_RUNTIME | 2 | One instance per materialized runtime context. Used for runtime outputs, injected inputs, and dynamic mirrored inputs. Examples: outputGaze, robot slot, Action.active. |
+
+
+
+<a name="common-v1-PropertyType"></a>
+
+### PropertyType
+Used to specify the type of a property
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_TYPE_UNSPECIFIED | 0 |  |
+| PROPERTY_TYPE_BOOL | 1 | Bool type property (true/false) |
+| PROPERTY_TYPE_INT | 2 | Int type property |
+| PROPERTY_TYPE_FLOAT | 3 | Float type property |
+| PROPERTY_TYPE_DOUBLE | 4 | Double type property |
+| PROPERTY_TYPE_STRING | 5 | String type property |
+| PROPERTY_TYPE_VECTOR3 | 6 | Vector3 type property - {x, y, z} |
+| PROPERTY_TYPE_POSE | 7 | Pose type property - LocalizedPose(id, anchor, position, orientation, state, ...) |
+| PROPERTY_TYPE_ANCHOR | 8 | Anchor type property - Anchor(reference, frame) |
+| PROPERTY_TYPE_COLOR | 9 | Color type property - Color(r,g,b,a) |
+| PROPERTY_TYPE_ROBOT | 10 | Robot type property - robot_id as string |
+| PROPERTY_TYPE_ENUM | 11 | Enum type property - string from list of strings (defined in EnumExtras) |
+| PROPERTY_TYPE_ENUM_MULTI | 12 | Enum-multi type property - select multiple strings from list of strings (defined in EnumExtras) |
+| PROPERTY_TYPE_ICON | 13 | Icon property type - icon-name-something from https://pictogrammers.com/ |
+| PROPERTY_TYPE_ASSET | 14 | Asset type property - asset_id as string |
+| PROPERTY_TYPE_WORKER | 15 | Worker type property - worker_id as string |
+
 
  
 
@@ -1942,7 +2349,7 @@ resource wiring explicit and safe.
 | standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
 | priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
 | resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
-| property_overrides | [common.v1.PropertyValueUpdate](#common-v1-PropertyValueUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
+| property_overrides | [common.v1.PropertyInstanceUpdate](#common-v1-PropertyInstanceUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
 
 
 
@@ -1981,474 +2388,7 @@ instance owned by the target station or cell.
 
 
 
-
-<a name="ar-v1-AssetMapping"></a>
-
-### AssetMapping
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_id | [string](#string) |  | Legacy asset definition identifier. |
-| property_id | [string](#string) |  | Legacy target property for the mapped asset. |
-
-
-
-
-
-
-<a name="ar-v1-RobotMapping"></a>
-
-### RobotMapping
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  | Legacy robot definition identifier. |
-| property_id | [string](#string) |  | Legacy target property for the mapped robot. |
-
-
-
-
-
  
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_config_load-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/config_load.proto
-
-
-
-<a name="ar-v1-ConfigurationLoadMessage"></a>
-
-### ConfigurationLoadMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| config_id | [string](#string) |  | Id of the reusable config template to be loaded, mainly for authoring/editor flows. |
-| instance_id | [string](#string) |  | Instance id of the current loaded configuration - from the requestors perspective - used to avoid reloading a configuration. |
-| binding_id | [string](#string) |  | Preferred for runtime loads when a station/cell-specific binding should be resolved. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_config_resolve-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/config_resolve.proto
-
-
-
-<a name="ar-v1-ConfigurationResolveContext"></a>
-
-### ConfigurationResolveContext
-ConfigurationResolveContext describes the active runtime scope from which AR
-bindings and context values should be resolved.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| line_id | [string](#string) |  | Active line if known. |
-| cell_id | [string](#string) |  | Active cell if known. |
-| station_id | [string](#string) |  | Active station if known. |
-| worker_id | [string](#string) |  | Active worker/operator if known. |
-| process_run_id | [string](#string) |  | Active process run if known. |
-| sequence_run_id | [string](#string) |  | Active sequence run if known. |
-| task_run_id | [string](#string) |  | Active task run if known. |
-
-
-
-
-
-
-<a name="ar-v1-ConfigurationResolveIssue"></a>
-
-### ConfigurationResolveIssue
-ConfigurationResolveIssue describes a problem or note encountered while
-evaluating bindings for the supplied context.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| severity | [ConfigurationResolveIssueSeverity](#ar-v1-ConfigurationResolveIssueSeverity) |  | Classification of the issue. |
-| binding_id | [string](#string) |  | Binding involved, if any. |
-| config_id | [string](#string) |  | Config involved, if any. |
-| message | [string](#string) |  | Human-readable description of the issue. |
-
-
-
-
-
-
-<a name="ar-v1-ConfigurationResolveRequest"></a>
-
-### ConfigurationResolveRequest
-ConfigurationResolveRequest asks the runtime/backend to resolve all AR
-configs that should currently be active for the supplied context.
-
-Recommended resolution flow:
-- find direct station bindings matching context.station_id
-- find parent/shared cell bindings matching context.cell_id
-- reject disabled bindings
-- reject bindings whose required input slots cannot be satisfied
-- if any surviving binding is standalone, keep only standalone bindings with
-  the highest priority
-- otherwise keep all surviving bindings sorted by priority descending, with
-  station-scoped bindings preferred over cell-scoped bindings for equal
-  priority
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| context | [ConfigurationResolveContext](#ar-v1-ConfigurationResolveContext) |  | Active runtime context to resolve against. |
-| loaded_instance_ids | [string](#string) | repeated | Instances already loaded by the caller, used to compute unloads/deltas. |
-
-
-
-
-
-
-<a name="ar-v1-ConfigurationResolveResult"></a>
-
-### ConfigurationResolveResult
-ConfigurationResolveResult returns the configs that should be active for the
-supplied runtime context plus any instances that should be unloaded.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| configurations | [ResolvedConfiguration](#ar-v1-ResolvedConfiguration) | repeated | Config instances that should be active after resolution. |
-| unload_instance_ids | [string](#string) | repeated | Previously loaded instances that should now be removed. |
-| issues | [ConfigurationResolveIssue](#ar-v1-ConfigurationResolveIssue) | repeated | Informational, warning, or error issues observed during resolution. |
-
-
-
-
-
-
-<a name="ar-v1-ResolvedAssetInput"></a>
-
-### ResolvedAssetInput
-ResolvedAssetInput carries the concrete asset instance chosen for a slot.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_instance_id | [string](#string) |  | Selected asset instance. |
-
-
-
-
-
-
-<a name="ar-v1-ResolvedConfiguration"></a>
-
-### ResolvedConfiguration
-ResolvedConfiguration is the fully selected config instance a runtime client
-should activate.
-
-effective_config should already include all binding-level property overrides.
-The runtime/client should then inject resolved_input_bindings into the
-generated properties before evaluating local property mirroring, helpers,
-actions, and feedback.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| instance_id | [string](#string) |  | Runtime instance identifier for this resolved config. |
-| binding_id | [string](#string) |  | Binding that selected the config. |
-| config_id | [string](#string) |  | Underlying reusable config template. |
-| scope | [ResolvedConfigurationScopeType](#ar-v1-ResolvedConfigurationScopeType) |  | Scope level that selected this config. |
-| line_id | [string](#string) |  | Active line attached to the resolved instance, if any. |
-| cell_id | [string](#string) |  | Active cell attached to the resolved instance, if any. |
-| station_id | [string](#string) |  | Active station attached to the resolved instance, if any. |
-| standalone | [bool](#bool) |  | Standalone decision carried over from the winning binding. |
-| priority | [int32](#int32) |  | Priority carried over from the winning binding. |
-| effective_config | [ARConfigMessage](#ar-v1-ARConfigMessage) |  | Config after binding-level overrides have been applied. |
-| input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Materialized config-owned input slot entities referenced by effective_config.input_slot_ids. |
-| resolved_input_bindings | [ResolvedInputBinding](#ar-v1-ResolvedInputBinding) | repeated | Authoritative resolved values for unified config input slots. |
-
-
-
-
-
-
-<a name="ar-v1-ResolvedContextInputValue"></a>
-
-### ResolvedContextInputValue
-ResolvedContextInputValue carries the runtime context value chosen for a slot.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Context category that produced the value. |
-| string_value | [string](#string) |  | Resolved runtime identifier/value encoded as string. |
-
-
-
-
-
-
-<a name="ar-v1-ResolvedInputBinding"></a>
-
-### ResolvedInputBinding
-ResolvedInputBinding is the authoritative resolved value for a unified input
-slot.
-
-generated_property_id identifies the server-managed property that should be
-populated in the effective config instance.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  | Slot this resolved value belongs to. |
-| generated_property_id | [string](#string) |  | Generated property that should receive the resolved value. |
-| robot | [ResolvedRobotInput](#ar-v1-ResolvedRobotInput) |  | Set when the slot resolved to a robot instance. |
-| asset | [ResolvedAssetInput](#ar-v1-ResolvedAssetInput) |  | Set when the slot resolved to an asset instance. |
-| context | [ResolvedContextInputValue](#ar-v1-ResolvedContextInputValue) |  | Set when the slot resolved from runtime context. |
-
-
-
-
-
-
-<a name="ar-v1-ResolvedRobotInput"></a>
-
-### ResolvedRobotInput
-ResolvedRobotInput carries the concrete robot instance chosen for a slot.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_instance_id | [string](#string) |  | Selected robot instance. |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-ConfigurationResolveIssueSeverity"></a>
-
-### ConfigurationResolveIssueSeverity
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_UNSPECIFIED | 0 | Severity not classified. |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_INFO | 1 | Informational note that does not affect resolution. |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_WARNING | 2 | Non-fatal problem or fallback encountered during resolution. |
-| CONFIGURATION_RESOLVE_ISSUE_SEVERITY_ERROR | 3 | Fatal problem that prevented a binding/config from resolving. |
-
-
-
-<a name="ar-v1-ResolvedConfigurationScopeType"></a>
-
-### ResolvedConfigurationScopeType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_UNSPECIFIED | 0 | Resolver did not determine a concrete scope. |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_STATION | 1 | Config was selected through a station-scoped binding. |
-| RESOLVED_CONFIGURATION_SCOPE_TYPE_CELL | 2 | Config was selected through a cell-scoped binding. |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_environment-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/environment.proto
-
-
-
-<a name="ar-v1-AssetLocation"></a>
-
-### AssetLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-EnvironmentMessage"></a>
-
-### EnvironmentMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [EnvironmentType](#ar-v1-EnvironmentType) |  | Type of environment |
-| markers | [MarkerLocation](#ar-v1-MarkerLocation) | repeated | Markers associated with this environment. |
-| robots | [RobotLocation](#ar-v1-RobotLocation) | repeated | Robot located in this environment |
-| assets | [AssetLocation](#ar-v1-AssetLocation) | repeated | Assets located in this environment |
-| parts | [PartLocation](#ar-v1-PartLocation) | repeated | Parts located in this environment |
-| tools | [ToolLocation](#ar-v1-ToolLocation) | repeated | Tools located in this environment |
-| fixtures | [FixtureLocation](#ar-v1-FixtureLocation) | repeated | Fixtures located in this environment |
-
-
-
-
-
-
-<a name="ar-v1-EnvironmentMessages"></a>
-
-### EnvironmentMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| environments | [EnvironmentMessage](#ar-v1-EnvironmentMessage) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-FixtureLocation"></a>
-
-### FixtureLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-MarkerLocation"></a>
-
-### MarkerLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-PartLocation"></a>
-
-### PartLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-RobotLocation"></a>
-
-### RobotLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ToolLocation"></a>
-
-### ToolLocation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-EnvironmentType"></a>
-
-### EnvironmentType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ENVIRONMENT_TYPE_UNSPECIFIED | 0 |  |
-| ENVIRONMENT_TYPE_STORAGE | 1 |  |
-| ENVIRONMENT_TYPE_MANUAL_STATION | 2 |  |
-| ENVIRONMENT_TYPE_AUTOMATIC_STATION | 3 |  |
-| ENVIRONMENT_TYPE_HYBRID_STATION | 4 |  |
-| ENVIRONMENT_TYPE_MANUAL_LINE | 5 |  |
-| ENVIRONMENT_TYPE_AUTOMATIC_LINE | 6 |  |
-| ENVIRONMENT_TYPE_HYBRID_LINE | 7 |  |
-
 
  
 
@@ -2520,8 +2460,7 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
-| config_id | [string](#string) |  | repeated string property_ids = 6 [ (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true, (buf.validate.field).repeated.unique = true ]; |
+| config_id | [string](#string) |  |  |
 
 
 
@@ -2725,7 +2664,6 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [HelperType](#ar-v1-HelperType) |  |  |
-| properties | [common.v1.Property](#common-v1-Property) | repeated |  |
 
 
 
@@ -2866,52 +2804,6 @@ ResolvedRobotInput carries the concrete robot instance chosen for a slot.
 
 
 
-<a name="common_v1_actor-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/actor.proto
-
-
-
-<a name="common-v1-ActorRef"></a>
-
-### ActorRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| kind | [ActorKind](#common-v1-ActorKind) |  |  |
-| actor_id | [string](#string) |  | worker_definition_id or robot_instance_id |
-
-
-
-
-
- 
-
-
-<a name="common-v1-ActorKind"></a>
-
-### ActorKind
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ACTOR_KIND_UNSPECIFIED | 0 |  |
-| ACTOR_KIND_HUMAN | 1 |  |
-| ACTOR_KIND_ROBOT | 2 |  |
-| ACTOR_KIND_HYBRID | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="common_v1_enums-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3012,59 +2904,6 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
 
-<a name="common_v1_key_value_constraint-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/key_value_constraint.proto
-
-
-
-<a name="common-v1-KeyValueConstraint"></a>
-
-### KeyValueConstraint
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| op | [ConstraintOperator](#common-v1-ConstraintOperator) |  |  |
-| value | [string](#string) |  |  |
-| values | [string](#string) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="common-v1-ConstraintOperator"></a>
-
-### ConstraintOperator
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| CONSTRAINT_OPERATOR_UNSPECIFIED | 0 |  |
-| CONSTRAINT_OPERATOR_EQ | 1 |  |
-| CONSTRAINT_OPERATOR_NEQ | 2 |  |
-| CONSTRAINT_OPERATOR_GT | 3 |  |
-| CONSTRAINT_OPERATOR_GTE | 4 |  |
-| CONSTRAINT_OPERATOR_LT | 5 |  |
-| CONSTRAINT_OPERATOR_LTE | 6 |  |
-| CONSTRAINT_OPERATOR_IN | 7 |  |
-| CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="capability_v1_actor_constraint-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3089,232 +2928,6 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="capability_v1_actor_skill-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## capability/v1/actor_skill.proto
-
-
-
-<a name="capability-v1-ActorSkill"></a>
-
-### ActorSkill
-ActorSkill stores the current operational summary of one skill for one actor.
-
-It is intentionally a fast, runtime-friendly summary layer rather than a full
-audit log. Runtime planners/loaders should use this message to determine
-whether an actor is:
-- allowed
-- restricted
-- expired
-
-ExecutionEvidence and training/certification events are expected to update
-this summary over time.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
-| skill_id | [string](#string) |  |  |
-| level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
-| status | [SkillStatus](#capability-v1-SkillStatus) |  |  |
-| confidence_score | [float](#float) |  | Optional derived confidence/proficiency score in [0,1]. |
-| stats | [SkillEvidenceStats](#capability-v1-SkillEvidenceStats) |  | Aggregated evidence summary used for fast runtime decisions. |
-| last_training_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent training/refresher event relevant to this skill. |
-| last_certified_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Most recent formal certification/re-certification event. |
-| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Explicit validity limit if known, otherwise policy-derived. |
-| validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | Policy currently used to evaluate status/validity. |
-| reasons | [SkillInvalidityReason](#capability-v1-SkillInvalidityReason) | repeated |  |
-| next_actions | [SkillNextAction](#capability-v1-SkillNextAction) | repeated |  |
-
-
-
-
-
-
-<a name="capability-v1-ActorSkills"></a>
-
-### ActorSkills
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ActorSkill](#capability-v1-ActorSkill) | repeated |  |
-
-
-
-
-
-
-<a name="capability-v1-SkillEvidenceStats"></a>
-
-### SkillEvidenceStats
-SkillEvidenceStats is a lightweight aggregated summary of recent evidence
-relevant to one actor &#43; one skill.
-
-This is intended for fast runtime decisions and policy evaluation. It is
-typically derived from underlying execution evidence and training/certification
-events rather than being treated as the primary source of truth.
-
-The effective aggregation window is policy-dependent. For example, a policy
-may consider only the last N executions, the last N days, or all evidence
-since the most recent certification.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| success_count | [int32](#int32) |  | Aggregated successful executions/evidence in the active evaluation window. |
-| failure_count | [int32](#int32) |  | Aggregated failed executions/evidence in the active evaluation window. |
-| last_success_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| last_failure_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| last_activity_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| rolling_success_rate | [float](#float) |  | Optional derived metric in [0,1]. |
-
-
-
-
-
-
-<a name="capability-v1-ValidityPolicyRef"></a>
-
-### ValidityPolicyRef
-ValidityPolicyRef identifies the policy definition and version currently used
-to derive validity, degradation, and recovery behavior for this actor skill.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| policy_id | [string](#string) |  |  |
-| version | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="capability-v1-SkillInvalidityReason"></a>
-
-### SkillInvalidityReason
-SkillInvalidityReason explains why an actor skill is currently restricted,
-expired, or otherwise not fully valid.
-
-These reasons are intended to be stable, machine-readable summary codes that
-can be shown in UI, used in loaders/runtime checks, and derived from evidence,
-policy evaluation, or engineering-change events.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_INVALIDITY_REASON_UNSPECIFIED | 0 |  |
-| SKILL_INVALIDITY_REASON_INACTIVITY | 1 | The skill has degraded due to lack of recent practice or evidence of use.
-
-Typical examples: - no executions in the active policy window - no recent successful evidence for the skill |
-| SKILL_INVALIDITY_REASON_FAILURE_RATE | 2 | The skill is restricted or invalid because observed failure rate or quality performance exceeded the allowed threshold.
-
-Typical examples: - too many failed executions in the recent window - too many out-of-tolerance results - too many inspection failures or retries |
-| SKILL_INVALIDITY_REASON_POLICY_EXPIRED | 3 | The governing validity/certification policy has expired the skill based on time or other policy-defined rules.
-
-Typical examples: - certification period elapsed - revalidation deadline passed |
-| SKILL_INVALIDITY_REASON_ENGINEERING_CHANGE | 4 | The skill has been invalidated because a relevant engineering or process change means previous validation/training can no longer be trusted.
-
-Typical examples: - tool model or capability changed - torque/program parameters changed - product revision changed - robot program or fixture configuration changed |
-
-
-
-<a name="capability-v1-SkillLevel"></a>
-
-### SkillLevel
-Alternative categories:
-AWARE: Understands concept
-ASSISTED: Can perform with guidance
-COMPETENT: Can perform independently
-EXPERT: Can troubleshoot and optimize
-CERTIFIED: Officially qualified
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_LEVEL_UNSPECIFIED | 0 |  |
-| SKILL_LEVEL_NOT_ALLOWED | 1 | Human: Untrained, Robot: Not programmed |
-| SKILL_LEVEL_ASSISTED | 2 | Human: AR-guided, Robot: Supervised execution |
-| SKILL_LEVEL_QUALIFIED | 3 | Human: Certified operator, Robot: validated program |
-| SKILL_LEVEL_EXPERT | 4 | Human: Technician, Robot: Optimized &amp; adaptive |
-| SKILL_LEVEL_AUTHORITY | 5 | Human: Trainer, Robot: Self-adjusting |
-
-
-
-<a name="capability-v1-SkillNextAction"></a>
-
-### SkillNextAction
-SkillNextAction describes the recommended next action needed to restore,
-strengthen, or safely compensate for a restricted/expired skill.
-
-These actions are intended to be stable, machine-readable guidance codes that
-can be surfaced in UI and used by operational workflows.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_NEXT_ACTION_UNSPECIFIED | 0 |  |
-| SKILL_NEXT_ACTION_MICRO_TRAINING | 1 | A short targeted intervention is recommended before normal independent use.
-
-Typical examples: - brief AR-guided walkthrough - quick reminder of the critical steps - short digital refresher module |
-| SKILL_NEXT_ACTION_REFRESHER_TRAINING | 2 | A broader retraining session is recommended because the skill has degraded beyond what a short intervention should address.
-
-Typical examples: - instructor-led refresher - extended guided practice - retraining on updated process/tooling |
-| SKILL_NEXT_ACTION_RE_CERTIFICATION | 3 | Formal re-certification or re-validation is required before the skill can return to normal unrestricted use.
-
-Typical examples: - certification renewal - formal competency check - validated robot/program re-approval |
-| SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED | 4 | Additional runtime validation must be performed before or during task execution to safely use the skill in its current state.
-
-Typical examples: - second check required - vision/tool confirmation required - extra verification step before completion |
-| SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED | 5 | Supervisor or responsible authority approval is required before the actor may execute tasks relying on this skill.
-
-Typical examples: - technician sign-off - team lead approval - engineering approval for temporary restricted use |
-
-
-
-<a name="capability-v1-SkillStatus"></a>
-
-### SkillStatus
-SkillStatus describes the current usability of an actor&#39;s skill.
-
-The status is operational and should be interpreted together with the
-associated policy, validity timestamps, and any derived restrictions.
-
-Typical semantics:
-- ACTIVE      -&gt; skill is fully usable
-- RESTRICTED  -&gt; skill is usable, but only under additional runtime
-                 safeguards such as AR guidance, extra validation,
-                 supervision, or other assistance
-- EXPIRED     -&gt; skill is no longer valid and must not be used
-
-Loaders and runtime planners should therefore treat:
-- ACTIVE     -&gt; feasible
-- RESTRICTED -&gt; feasible with restrictions
-- EXPIRED    -&gt; infeasible
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SKILL_STATUS_UNSPECIFIED | 0 |  |
-| SKILL_STATUS_ACTIVE | 1 | Skill is valid and can be used normally. |
-| SKILL_STATUS_RESTRICTED | 2 | Skill is allowed but restricted. The actor may perform the task but additional safeguards
-
-Examples: - AR guidance required - manual confirmation required - second check required - supervisor approval required |
-| SKILL_STATUS_EXPIRED | 3 | Skill is no longer valid and cannot be used. |
-
 
  
 
@@ -3503,39 +3116,6 @@ This domain is particularly relevant in human-robot collaboration environments. 
 
 
 
-<a name="capability_v1_skill_requirement-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## capability/v1/skill_requirement.proto
-
-
-
-<a name="capability-v1-SkillRequirement"></a>
-
-### SkillRequirement
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| skill_id | [string](#string) |  |  |
-| minimum_level | [SkillLevel](#capability-v1-SkillLevel) |  |  |
-| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="capability_v1_tool_requirement-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3657,37 +3237,6 @@ This domain is particularly relevant in human-robot collaboration environments. 
 | icon | [string](#string) |  | Optional icon override for the clone. |
 | description | [string](#string) |  | Optional description override for the clone. |
 | idempotency_key | [string](#string) |  | Optional client-generated key to make retries safe. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="common_v1_custom_properties-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/custom_properties.proto
-
-
-
-<a name="common-v1-CustomProperties"></a>
-
-### CustomProperties
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| properties | [Property](#common-v1-Property) | repeated |  |
 
 
 
@@ -4997,8 +4546,7 @@ Example: Optional inspections: - Visual inspection - Torque verification - Leak 
 | type | [AssetType](#resources-v1-AssetType) |  |  |
 | driver_type | [AssetDriverType](#resources-v1-AssetDriverType) |  |  |
 | model_id | [string](#string) |  |  |
-| vision | [VisionCapability](#resources-v1-VisionCapability) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | TODO: add ToolRole or similar way to express capabilities? |
+| vision | [VisionCapability](#resources-v1-VisionCapability) |  | TODO: add ToolRole or similar way to express capabilities? |
 
 
 
@@ -5118,7 +4666,6 @@ ContainerSlotType rather than by separate top-level resources.
 | model_id | [string](#string) |  | Optional 3D model used in simulation, AR, and UI rendering. |
 | slots | [ContainerSlotDefinition](#resources-v1-ContainerSlotDefinition) | repeated | Addressable places inside/on the container. |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Container-level constraints applying to the whole carrier. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for domain-specific container metadata. |
 
 
 
@@ -5166,7 +4713,6 @@ Examples:
 | supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
 | supported_part_definition_ids | [string](#string) | repeated | Specific part definitions that this slot supports. |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional semantic/compatibility constraints such as orientation, handedness, or required variants. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for domain-specific slot data. |
 
 
 
@@ -5957,7 +5503,6 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
 | optional | [bool](#bool) |  |  |
 | applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
 
 
 
@@ -6086,7 +5631,6 @@ name: TPU, grade: 70 Shore A
 | handling | [PartHandlingProfile](#product-v1-PartHandlingProfile) |  |  |
 | process | [PartProcessProfile](#product-v1-PartProcessProfile) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 | version | [string](#string) |  |  |
 
 
@@ -6233,7 +5777,6 @@ involving this part.
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
 | location | [PartInstanceLocation](#product-v1-PartInstanceLocation) |  |  |
 | quantity | [QuantityStatus](#product-v1-QuantityStatus) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6389,7 +5932,6 @@ Examples:
 | root_node_id | [string](#string) |  |  |
 | nodes | [AssemblyNode](#product-v1-AssemblyNode) | repeated |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6441,7 +5983,6 @@ Examples:
 | description | [string](#string) |  |  |
 | asset_definition_id | [string](#string) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6603,7 +6144,6 @@ current location because they move independently through the system.
 | assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Shared assets such as cameras, HMIs, or feeders serving several stations. |
 | markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers shared for this cell for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Cell-local reference frame or zone anchor. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6690,7 +6230,6 @@ Examples:
 | container_definition_id | [string](#string) |  | The reusable container definition that this instance realizes. |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  | Operational status such as available, disabled, or faulted. |
 | location | [ContainerLocation](#resources-v1-ContainerLocation) |  | Dynamic location of the container instance. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  | Extension point for instance-specific data. |
 
 
 
@@ -6754,7 +6293,7 @@ Examples:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device_id | [string](#string) |  |  |
+| device_uuid | [string](#string) |  |  |
 | battery_level | [int32](#int32) |  |  |
 | battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
 
@@ -6776,7 +6315,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [DeviceType](#resources-v1-DeviceType) |  |  |
-| device_id | [string](#string) |  |  |
+| device_uuid | [string](#string) |  |  |
 | status | [DeviceStatus](#resources-v1-DeviceStatus) |  |  |
 | battery_level | [int32](#int32) |  |  |
 | battery_status | [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus) |  |  |
@@ -6889,7 +6428,6 @@ Typical line responsibilities:
 | max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this line should host concurrently. |
 | cell_ids | [string](#string) | repeated | Cells belonging to this line. |
 | station_ids | [string](#string) | repeated | Optional directly attached stations when a line references stations without an intermediate cell. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -6984,7 +6522,6 @@ max_concurrent_processes and the statuses of child cells/stations.
 | type | [MarkerType](#resources-v1-MarkerType) |  |  |
 | confirm_instantiate | [bool](#bool) |  | If true, the user must confirm that he/she want to instantiate the environment(s) associated with this marker. |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7350,7 +6887,6 @@ content_type: &#34;model/gltf-binary&#34;
 | default_tool_definition_id | [string](#string) |  |  |
 | tool_slots | [int32](#int32) |  |  |
 | capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7435,7 +6971,6 @@ content_type: &#34;model/gltf-binary&#34;
 | supports_tool_change | [bool](#bool) |  | Whether this robot instance can dynamically change between available tools. |
 | is_simulated | [bool](#bool) |  |  |
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7512,7 +7047,6 @@ current location because they move independently through the system.
 | assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Station-local assets such as cameras, HMIs, feeders, or sensors. |
 | markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers used specifically at this station for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7612,7 +7146,6 @@ max_concurrent_processes, which is separate from this status field.
 | capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
 | model_id | [string](#string) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7695,7 +7228,6 @@ max_concurrent_processes, which is separate from this status field.
 | status | [common.v1.ResourceStatus](#common-v1-ResourceStatus) |  |  |
 | calibrated | [bool](#bool) |  |  |
 | calibration_valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -7750,7 +7282,6 @@ max_concurrent_processes, which is separate from this status field.
 | ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | location | [WorkerLocation](#resources-v1-WorkerLocation) |  | Optional current location / operating area. |
-| custom | [common.v1.CustomProperties](#common-v1-CustomProperties) |  |  |
 
 
 
@@ -8019,6 +7550,21 @@ move independently through the system.
 
 
 
+<a name="robot-v1-AcknowledgeRobot"></a>
+
+### AcknowledgeRobot
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="robot-v1-ProgramStateRequest"></a>
 
 ### ProgramStateRequest
@@ -8027,7 +7573,6 @@ move independently through the system.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
 | robot_id | [string](#string) |  |  |
 | state | [ProgramState](#robot-v1-ProgramState) |  |  |
 

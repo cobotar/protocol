@@ -20,58 +20,87 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file common/v1/property.proto.
  */
 export const file_common_v1_property: GenFile = /*@__PURE__*/
-  fileDesc("Chhjb21tb24vdjEvcHJvcGVydHkucHJvdG8SCWNvbW1vbi52MSKwGQoIUHJvcGVydHkSCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMgoEdHlwZRgFIAEoDjIXLmNvbW1vbi52MS5Qcm9wZXJ0eVR5cGVCC7pICMgBAYIBAhABEkwKG21pbmltdW1fcmVxdWlyZWRfcGVybWlzc2lvbhgGIAEoDjIdLmNvbW1vbi52MS5Qcm9wZXJ0eVBlcm1pc3Npb25CCLpIBYIBAhABEjMKBm9yaWdpbhgHIAEoDjIZLmNvbW1vbi52MS5Qcm9wZXJ0eU9yaWdpbkIIukgFggECEAESOQoHb3JpZ2lucxgIIAMoDjIZLmNvbW1vbi52MS5Qcm9wZXJ0eU9yaWdpbkINukgKkgEHIgWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCSABKAkSJwoFZ3JvdXAYCiABKA4yGC5jb21tb24udjEuUHJvcGVydHlHcm91cBIQCghvcmRlcmluZxgLIAEoBRISCgpoaWRlX2dyb3VwGAwgASgIEhEKCXBhcmVudF9pZBgNIAEoCRIQCghhZHZhbmNlZBgOIAEoCBIQCghzY29wZV9pZBgPIAEoCRIZChFkaXNhYmxlX21pcnJvcmluZxgQIAEoCBIyCgt2YWx1ZV9zY29wZRgRIAEoDjIdLmNvbW1vbi52MS5Qcm9wZXJ0eVZhbHVlU2NvcGUSFwoKYm9vbF92YWx1ZRgVIAEoCEgAiAEBEhYKCWludF92YWx1ZRgWIAEoEkgBiAEBEhgKC2Zsb2F0X3ZhbHVlGBcgASgCSAKIAQESGQoMZG91YmxlX3ZhbHVlGBggASgBSAOIAQESGQoMc3RyaW5nX3ZhbHVlGBkgASgJSASIAQESKwoNdmVjdG9yM192YWx1ZRgaIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSLgoKcG9zZV92YWx1ZRgbIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKQoMYW5jaG9yX3ZhbHVlGBwgASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9yEiUKC2NvbG9yX3ZhbHVlGB0gASgLMhAuY29tbW9uLnYxLkNvbG9yEhsKDnJvYm90X2lkX3ZhbHVlGB4gASgJSAWIAQESIAoKZW51bV92YWx1ZRgfIAEoCUIHukgEcgIQAUgGiAEBEigKEGVudW1fbXVsdGlfdmFsdWUYICADKAlCDrpIC5IBCAgBIgRyAhABEhcKCmljb25fdmFsdWUYISABKAlIB4gBARIbCg5hc3NldF9pZF92YWx1ZRgiIAEoCUgIiAEBEi4KDW51bWJlcl9leHRyYXMYKSABKAsyFy5jb21tb24udjEuTnVtYmVyRXh0cmFzEioKC2VudW1fZXh0cmFzGCogASgLMhUuY29tbW9uLnYxLkVudW1FeHRyYXMSMAoOdmVjdG9yM19leHRyYXMYKyABKAsyGC5jb21tb24udjEuVmVjdG9yM0V4dHJhcxIsCgxjb2xvcl9leHRyYXMYLCABKAsyFi5jb21tb24udjEuQ29sb3JFeHRyYXMSKgoLcG9zZV9leHRyYXMYLSABKAsyFS5jb21tb24udjEuUG9zZUV4dHJhcxIuCg1hbmNob3JfZXh0cmFzGC4gASgLMhcuY29tbW9uLnYxLkFuY2hvckV4dHJhczr+DbpI+g0a1AUKIHByb3BlcnR5X3R5cGVfbWF0Y2hlc192YWx1ZV9raW5kEid0eXBlIG11c3QgbWF0Y2ggdGhlIGtpbmQgb2YgdmFsdWUgZmllbGQahgUoKHRoaXMudHlwZSA9PSAxICYmIGhhcyh0aGlzLmJvb2xfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDIgJiYgaGFzKHRoaXMuaW50X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAzICYmIGhhcyh0aGlzLmZsb2F0X3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA0ICYmIGhhcyh0aGlzLmRvdWJsZV92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNSAmJiBoYXModGhpcy5zdHJpbmdfdmFsdWUpKSB8fCh0aGlzLnR5cGUgPT0gNiAmJiBoYXModGhpcy52ZWN0b3IzX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA3ICYmIGhhcyh0aGlzLnBvc2VfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDggJiYgaGFzKHRoaXMuYW5jaG9yX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA5ICYmIGhhcyh0aGlzLmNvbG9yX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAxMCAmJiBoYXModGhpcy5yb2JvdF9pZF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTEgJiYgaGFzKHRoaXMuZW51bV92YWx1ZSkpIHx8KHRoaXMudHlwZSA9PSAxMiAmJiBzaXplKHRoaXMuZW51bV9tdWx0aV92YWx1ZSkgPiAwKSB8fCAodGhpcy50eXBlID09IDEzICYmIGhhcyh0aGlzLmljb25fdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDE0ICYmIGhhcyh0aGlzLmFzc2V0X2lkX3ZhbHVlKSkpGo0BCiJtaXJyb3JfcmVxdWlyZXNfbWlycm9yX3Byb3BlcnR5X2lkEjRtaXJyb3JfcHJvcGVydHlfaWQgbXVzdCBiZSBzZXQgd2hlbiBvcmlnaW4gaXMgTUlSUk9SGjF0aGlzLm9yaWdpbiAhPSAyIHx8IHRoaXMubWlycm9yX3Byb3BlcnR5X2lkICE9ICcnGmUKFG91dHB1dF9tdXN0X2JlX2ZpeGVkEihvdXRwdXQgcHJvcGVydGllcyBtdXN0IGhhdmUgb3JpZ2luIEZJWEVEGiN0aGlzLmdyb3VwICE9IDEgfHwgdGhpcy5vcmlnaW4gPT0gMRqUAQoZZW51bV9yZXF1aXJlc19lbnVtX2V4dHJhcxI3ZW51bV9leHRyYXMgbXVzdCBiZSBzZXQgd2hlbiB0eXBlIGlzIEVOVU0gb3IgRU5VTV9NVUxUSRo+ISh0aGlzLnR5cGUgPT0gMTEgfHwgdGhpcy50eXBlID09IDEyKSB8fCBoYXModGhpcy5lbnVtX2V4dHJhcykaqQEKHWVudW1fdmFsdWVfbXVzdF9iZV9pbl9vcHRpb25zEjVlbnVtX3ZhbHVlIG11c3QgYmUgb25lIG9mIGVudW1fZXh0cmFzLm9wdGlvbnNbXS52YWx1ZRpRdGhpcy50eXBlICE9IDExIHx8IHRoaXMuZW51bV9leHRyYXMub3B0aW9ucy5leGlzdHMobywgby52YWx1ZSA9PSB0aGlzLmVudW1fdmFsdWUpGskBCiRlbnVtX211bHRpX3ZhbHVlc19tdXN0X2JlX2luX29wdGlvbnMSPmVudW1fbXVsdGlfdmFsdWUgdmFsdWVzIG11c3QgYmUgaW4gZW51bV9leHRyYXMub3B0aW9uc1tdLnZhbHVlGmF0aGlzLnR5cGUgIT0gMTIgfHwgdGhpcy5lbnVtX211bHRpX3ZhbHVlLmFsbCh2LCB0aGlzLmVudW1fZXh0cmFzLm9wdGlvbnMuZXhpc3RzKG8sIG8udmFsdWUgPT0gdikpIsIBCgpib29sX3ZhbHVlCglpbnRfdmFsdWUKC2Zsb2F0X3ZhbHVlCgxkb3VibGVfdmFsdWUKDHN0cmluZ192YWx1ZQoNdmVjdG9yM192YWx1ZQoKcG9zZV92YWx1ZQoMYW5jaG9yX3ZhbHVlCgtjb2xvcl92YWx1ZQoOcm9ib3RfaWRfdmFsdWUKCmVudW1fdmFsdWUKEGVudW1fbXVsdGlfdmFsdWUKCmljb25fdmFsdWUKDmFzc2V0X2lkX3ZhbHVlEAEiVgoNbnVtYmVyX2V4dHJhcwoLZW51bV9leHRyYXMKDnZlY3RvcjNfZXh0cmFzCgxjb2xvcl9leHRyYXMKC3Bvc2VfZXh0cmFzCg1hbmNob3JfZXh0cmFzQg0KC19ib29sX3ZhbHVlQgwKCl9pbnRfdmFsdWVCDgoMX2Zsb2F0X3ZhbHVlQg8KDV9kb3VibGVfdmFsdWVCDwoNX3N0cmluZ192YWx1ZUIRCg9fcm9ib3RfaWRfdmFsdWVCDQoLX2VudW1fdmFsdWVCDQoLX2ljb25fdmFsdWVCEQoPX2Fzc2V0X2lkX3ZhbHVlIjsKEFByb3BlcnR5TWVzc2FnZXMSJwoKcHJvcGVydGllcxgBIAMoCzITLmNvbW1vbi52MS5Qcm9wZXJ0eSK7DgoTUHJvcGVydHlWYWx1ZVVwZGF0ZRIKCgJpZBgBIAEoCRIyCgR0eXBlGAUgASgOMhcuY29tbW9uLnYxLlByb3BlcnR5VHlwZUILukgIyAEBggECEAESMwoGb3JpZ2luGAcgASgOMhkuY29tbW9uLnYxLlByb3BlcnR5T3JpZ2luQgi6SAWCAQIQARIaChJtaXJyb3JfcHJvcGVydHlfaWQYCSABKAkSFwoKYm9vbF92YWx1ZRgVIAEoCEgAiAEBEhYKCWludF92YWx1ZRgWIAEoEkgBiAEBEhgKC2Zsb2F0X3ZhbHVlGBcgASgCSAKIAQESGQoMZG91YmxlX3ZhbHVlGBggASgBSAOIAQESGQoMc3RyaW5nX3ZhbHVlGBkgASgJSASIAQESKwoNdmVjdG9yM192YWx1ZRgaIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjMSLgoKcG9zZV92YWx1ZRgbIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2USKQoMYW5jaG9yX3ZhbHVlGBwgASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9yEiUKC2NvbG9yX3ZhbHVlGB0gASgLMhAuY29tbW9uLnYxLkNvbG9yEhsKDnJvYm90X2lkX3ZhbHVlGB4gASgJSAWIAQESIAoKZW51bV92YWx1ZRgfIAEoCUIHukgEcgIQAUgGiAEBEigKEGVudW1fbXVsdGlfdmFsdWUYICADKAlCDrpIC5IBCAgBIgRyAhABEhcKCmljb25fdmFsdWUYISABKAlIB4gBARIbCg5hc3NldF9pZF92YWx1ZRgiIAEoCUgIiAEBOrAIukisCBrUBQogcHJvcGVydHlfdHlwZV9tYXRjaGVzX3ZhbHVlX2tpbmQSJ3R5cGUgbXVzdCBtYXRjaCB0aGUga2luZCBvZiB2YWx1ZSBmaWVsZBqGBSgodGhpcy50eXBlID09IDEgJiYgaGFzKHRoaXMuYm9vbF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMiAmJiBoYXModGhpcy5pbnRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDMgJiYgaGFzKHRoaXMuZmxvYXRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDQgJiYgaGFzKHRoaXMuZG91YmxlX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA1ICYmIGhhcyh0aGlzLnN0cmluZ192YWx1ZSkpIHx8KHRoaXMudHlwZSA9PSA2ICYmIGhhcyh0aGlzLnZlY3RvcjNfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDcgJiYgaGFzKHRoaXMucG9zZV92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gOCAmJiBoYXModGhpcy5hbmNob3JfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDkgJiYgaGFzKHRoaXMuY29sb3JfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDEwICYmIGhhcyh0aGlzLnJvYm90X2lkX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAxMSAmJiBoYXModGhpcy5lbnVtX3ZhbHVlKSkgfHwodGhpcy50eXBlID09IDEyICYmIHNpemUodGhpcy5lbnVtX211bHRpX3ZhbHVlKSA+IDApIHx8ICh0aGlzLnR5cGUgPT0gMTMgJiYgaGFzKHRoaXMuaWNvbl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTQgJiYgaGFzKHRoaXMuYXNzZXRfaWRfdmFsdWUpKSkajQEKIm1pcnJvcl9yZXF1aXJlc19taXJyb3JfcHJvcGVydHlfaWQSNG1pcnJvcl9wcm9wZXJ0eV9pZCBtdXN0IGJlIHNldCB3aGVuIG9yaWdpbiBpcyBNSVJST1IaMXRoaXMub3JpZ2luICE9IDIgfHwgdGhpcy5taXJyb3JfcHJvcGVydHlfaWQgIT0gJyciwgEKCmJvb2xfdmFsdWUKCWludF92YWx1ZQoLZmxvYXRfdmFsdWUKDGRvdWJsZV92YWx1ZQoMc3RyaW5nX3ZhbHVlCg12ZWN0b3IzX3ZhbHVlCgpwb3NlX3ZhbHVlCgxhbmNob3JfdmFsdWUKC2NvbG9yX3ZhbHVlCg5yb2JvdF9pZF92YWx1ZQoKZW51bV92YWx1ZQoQZW51bV9tdWx0aV92YWx1ZQoKaWNvbl92YWx1ZQoOYXNzZXRfaWRfdmFsdWUQAUINCgtfYm9vbF92YWx1ZUIMCgpfaW50X3ZhbHVlQg4KDF9mbG9hdF92YWx1ZUIPCg1fZG91YmxlX3ZhbHVlQg8KDV9zdHJpbmdfdmFsdWVCEQoPX3JvYm90X2lkX3ZhbHVlQg0KC19lbnVtX3ZhbHVlQg0KC19pY29uX3ZhbHVlQhEKD19hc3NldF9pZF92YWx1ZSLGAwoMTnVtYmVyRXh0cmFzEhAKA21pbhgBIAEoAUgAiAEBEhAKA21heBgCIAEoAUgBiAEBEiEKBHN0ZXAYAyABKAFCDrpICxIJIQAAAAAAAAAASAKIAQESFQoEdW5pdBgEIAEoCUIHukgEcgIYAxIaCglwcmVjaXNpb24YBSABKA1CB7pIBCoCKAA6ogK6SJ4CGpsCChhudW1iZXJfZXh0cmFzX2NvbnNpc3RlbnQSVElmIGFueSBvZiBtaW4vbWF4L3N0ZXAgaXMgc2V0LCBhbGwgbXVzdCBiZSBzZXQ7IGFuZCBtaW4gPCBtYXg7IGFuZCBzdGVwIDw9IChtYXgtbWluKRqoASghaGFzKHRoaXMubWluKSAmJiAhaGFzKHRoaXMubWF4KSAmJiAhaGFzKHRoaXMuc3RlcCkpIHx8IChoYXModGhpcy5taW4pICYmIGhhcyh0aGlzLm1heCkgJiYgaGFzKHRoaXMuc3RlcCkgJiYgdGhpcy5taW4gPCB0aGlzLm1heCAmJiB0aGlzLnN0ZXAgPD0gKHRoaXMubWF4IC0gdGhpcy5taW4pKUIGCgRfbWluQgYKBF9tYXhCBwoFX3N0ZXAiawoKRW51bU9wdGlvbhIWCgV2YWx1ZRgBIAEoCUIHukgEcgIQARIWCgVsYWJlbBgCIAEoCUIHukgEcgIQARIMCgRpY29uGAMgASgJEg0KBWdyb3VwGAQgASgJEhAKCGRpc2FibGVkGAUgASgIIqUBCgpFbnVtRXh0cmFzEhMKC3BsYWNlaG9sZGVyGAEgASgJEg4KBmZpbHRlchgCIAEoCBIPCgdncm91cGVkGAMgASgIEhIKCnNob3dfaWNvbnMYBCABKAgSGwoTbWF4X3NlbGVjdGVkX2xhYmVscxgFIAEoDRIwCgdvcHRpb25zGAYgAygLMhUuY29tbW9uLnYxLkVudW1PcHRpb25CCLpIBZIBAggBIvkDCg1WZWN0b3IzRXh0cmFzEhAKA21pbhgBIAEoAUgAiAEBEhAKA21heBgCIAEoAUgBiAEBEiEKBHN0ZXAYAyABKAFCDrpICxIJIQAAAAAAAAAASAKIAQESGAoHbGFiZWxfeBgEIAEoCUIHukgEcgIYBRIYCgdsYWJlbF95GAUgASgJQge6SARyAhgFEhgKB2xhYmVsX3oYBiABKAlCB7pIBHICGAUSFQoEdW5pdBgHIAEoCUIHukgEcgIYAzqiArpIngIamwIKGG51bWJlcl9leHRyYXNfY29uc2lzdGVudBJUSWYgYW55IG9mIG1pbi9tYXgvc3RlcCBpcyBzZXQsIGFsbCBtdXN0IGJlIHNldDsgYW5kIG1pbiA8IG1heDsgYW5kIHN0ZXAgPD0gKG1heC1taW4pGqgBKCFoYXModGhpcy5taW4pICYmICFoYXModGhpcy5tYXgpICYmICFoYXModGhpcy5zdGVwKSkgfHwgKGhhcyh0aGlzLm1pbikgJiYgaGFzKHRoaXMubWF4KSAmJiBoYXModGhpcy5zdGVwKSAmJiB0aGlzLm1pbiA8IHRoaXMubWF4ICYmIHRoaXMuc3RlcCA8PSAodGhpcy5tYXggLSB0aGlzLm1pbikpQgYKBF9taW5CBgoEX21heEIHCgVfc3RlcCJOCgtDb2xvckV4dHJhcxIcCgRzdGVwGAEgASgBQg66SAsSCSkAAAAAAAAAABIhCgdkZWZhdWx0GAIgASgLMhAuY29tbW9uLnYxLkNvbG9yIiQKDEFuY2hvckV4dHJhcxIUCgxvbmx5X21hcmtlcnMYASABKAgiPAoKUG9zZUV4dHJhcxIXCg9hbmNob3JfZWRpdGFibGUYASABKAgSFQoNcG9zZV9lZGl0YWJsZRgCIAEoCCqPAwoMUHJvcGVydHlUeXBlEh0KGVBST1BFUlRZX1RZUEVfVU5TUEVDSUZJRUQQABIWChJQUk9QRVJUWV9UWVBFX0JPT0wQARIVChFQUk9QRVJUWV9UWVBFX0lOVBACEhcKE1BST1BFUlRZX1RZUEVfRkxPQVQQAxIYChRQUk9QRVJUWV9UWVBFX0RPVUJMRRAEEhgKFFBST1BFUlRZX1RZUEVfU1RSSU5HEAUSGQoVUFJPUEVSVFlfVFlQRV9WRUNUT1IzEAYSFgoSUFJPUEVSVFlfVFlQRV9QT1NFEAcSGAoUUFJPUEVSVFlfVFlQRV9BTkNIT1IQCBIXChNQUk9QRVJUWV9UWVBFX0NPTE9SEAkSFwoTUFJPUEVSVFlfVFlQRV9ST0JPVBAKEhYKElBST1BFUlRZX1RZUEVfRU5VTRALEhwKGFBST1BFUlRZX1RZUEVfRU5VTV9NVUxUSRAMEhYKElBST1BFUlRZX1RZUEVfSUNPThANEhcKE1BST1BFUlRZX1RZUEVfQVNTRVQQDipoCg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9PUklHSU5fTUlSUk9SEAIq+gEKDVByb3BlcnR5R3JvdXASHgoaUFJPUEVSVFlfR1JPVVBfVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9HUk9VUF9PVVRQVVQQARIfChtQUk9QRVJUWV9HUk9VUF9OT05fRURJVEFCTEUQAhIaChZQUk9QRVJUWV9HUk9VUF9TVFlMSU5HEAMSGwoXUFJPUEVSVFlfR1JPVVBfTE9DQVRJT04QBBIXChNQUk9QRVJUWV9HUk9VUF9JQ09OEAUSIAocUFJPUEVSVFlfR1JPVVBfQ09ORklHVVJBVElPThAGEhkKFVBST1BFUlRZX0dST1VQX0hJRERFThAHKrYBChJQcm9wZXJ0eVBlcm1pc3Npb24SIwofUFJPUEVSVFlfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEh0KGVBST1BFUlRZX1BFUk1JU1NJT05fQkFTSUMQChIgChxQUk9QRVJUWV9QRVJNSVNTSU9OX0NPU01FVElDEBQSHAoYUFJPUEVSVFlfUEVSTUlTU0lPTl9GVUxMEB4SHAoYUFJPUEVSVFlfUEVSTUlTU0lPTl9OT05FECgqfgoSUHJvcGVydHlWYWx1ZVNjb3BlEiQKIFBST1BFUlRZX1ZBTFVFX1NDT1BFX1VOU1BFQ0lGSUVEEAASHwobUFJPUEVSVFlfVkFMVUVfU0NPUEVfRU5USVRZEAESIQodUFJPUEVSVFlfVkFMVUVfU0NPUEVfSU5TVEFOQ0UQAkKlAQoNY29tLmNvbW1vbi52MUINUHJvcGVydHlQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_color, file_geometry_v1_anchor, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chhjb21tb24vdjEvcHJvcGVydHkucHJvdG8SCWNvbW1vbi52MSKGCAoSUHJvcGVydHlEZWZpbml0aW9uEhUKAmlkGAEgASgJQgm6SAZyBJjxBAESEQoJcGFyZW50X2lkGAIgASgJEhcKBG5hbWUYAyABKAlCCbpIBnIEgPEEARIMCgRpY29uGAQgASgJEhMKC2Rlc2NyaXB0aW9uGAUgASgJEjIKBHR5cGUYBiABKA4yFy5jb21tb24udjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARIxCgVzY29wZRgHIAEoDjIYLmNvbW1vbi52MS5Qcm9wZXJ0eVNjb3BlQgi6SAWCAQIQARJMChttaW5pbXVtX3JlcXVpcmVkX3Blcm1pc3Npb24YCCABKA4yHS5jb21tb24udjEuUHJvcGVydHlQZXJtaXNzaW9uQgi6SAWCAQIQARJBCg9hbGxvd2VkX29yaWdpbnMYCSADKA4yGS5jb21tb24udjEuUHJvcGVydHlPcmlnaW5CDbpICpIBByIFggECEAESMQoFZ3JvdXAYCiABKA4yGC5jb21tb24udjEuUHJvcGVydHlHcm91cEIIukgFggECEAESEAoIb3JkZXJpbmcYCyABKAUSEgoKaGlkZV9ncm91cBgMIAEoCBIQCghhZHZhbmNlZBgNIAEoCBIZChFkaXNhYmxlX21pcnJvcmluZxgOIAEoCBIuCg1udW1iZXJfZXh0cmFzGCkgASgLMhcuY29tbW9uLnYxLk51bWJlckV4dHJhcxIqCgtlbnVtX2V4dHJhcxgqIAEoCzIVLmNvbW1vbi52MS5FbnVtRXh0cmFzEjAKDnZlY3RvcjNfZXh0cmFzGCsgASgLMhguY29tbW9uLnYxLlZlY3RvcjNFeHRyYXMSLAoMY29sb3JfZXh0cmFzGCwgASgLMhYuY29tbW9uLnYxLkNvbG9yRXh0cmFzEioKC3Bvc2VfZXh0cmFzGC0gASgLMhUuY29tbW9uLnYxLlBvc2VFeHRyYXMSLgoNYW5jaG9yX2V4dHJhcxguIAEoCzIXLmNvbW1vbi52MS5BbmNob3JFeHRyYXM68wG6SO8BGpQBChllbnVtX3JlcXVpcmVzX2VudW1fZXh0cmFzEjdlbnVtX2V4dHJhcyBtdXN0IGJlIHNldCB3aGVuIHR5cGUgaXMgRU5VTSBvciBFTlVNX01VTFRJGj4hKHRoaXMudHlwZSA9PSAxMSB8fCB0aGlzLnR5cGUgPT0gMTIpIHx8IGhhcyh0aGlzLmVudW1fZXh0cmFzKSJWCg1udW1iZXJfZXh0cmFzCgtlbnVtX2V4dHJhcwoOdmVjdG9yM19leHRyYXMKDGNvbG9yX2V4dHJhcwoLcG9zZV9leHRyYXMKDWFuY2hvcl9leHRyYXMiyQMKEFByb3BlcnR5SW5zdGFuY2USFQoCaWQYASABKAlCCbpIBnIEmPMEARIpChZwcm9wZXJ0eV9kZWZpbml0aW9uX2lkGAIgASgJQgm6SAZyBJjxBAESJwoFc2NvcGUYAyABKA4yGC5jb21tb24udjEuUHJvcGVydHlTY29wZRIQCghzY29wZV9pZBgEIAEoCRIzCgZvcmlnaW4YBSABKA4yGS5jb21tb24udjEuUHJvcGVydHlPcmlnaW5CCLpIBYIBAhABEjAKHW1pcnJvcl9wcm9wZXJ0eV9kZWZpbml0aW9uX2lkGAYgASgJQgm6SAZyBJjxBAESLwoFdmFsdWUYByABKAsyGC5jb21tb24udjEuUHJvcGVydHlWYWx1ZUIGukgDyAEBOp8BukibARqYAQoibWlycm9yX3JlcXVpcmVzX21pcnJvcl9wcm9wZXJ0eV9pZBI0bWlycm9yX3Byb3BlcnR5X2lkIG11c3QgYmUgc2V0IHdoZW4gb3JpZ2luIGlzIE1JUlJPUho8dGhpcy5vcmlnaW4gIT0gMiB8fCB0aGlzLm1pcnJvcl9wcm9wZXJ0eV9kZWZpbml0aW9uX2lkICE9ICcnIr0NCg1Qcm9wZXJ0eVZhbHVlEjIKBHR5cGUYASABKA4yFy5jb21tb24udjEuUHJvcGVydHlUeXBlQgu6SAjIAQGCAQIQARIXCgpib29sX3ZhbHVlGBUgASgISACIAQESFgoJaW50X3ZhbHVlGBYgASgSSAGIAQESGAoLZmxvYXRfdmFsdWUYFyABKAJIAogBARIZCgxkb3VibGVfdmFsdWUYGCABKAFIA4gBARIZCgxzdHJpbmdfdmFsdWUYGSABKAlIBIgBARIrCg12ZWN0b3IzX3ZhbHVlGBogASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yMxIuCgpwb3NlX3ZhbHVlGBsgASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIpCgxhbmNob3JfdmFsdWUYHCABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISJQoLY29sb3JfdmFsdWUYHSABKAsyEC5jb21tb24udjEuQ29sb3ISGwoOcm9ib3RfaWRfdmFsdWUYHiABKAlIBYgBARIgCgplbnVtX3ZhbHVlGB8gASgJQge6SARyAhABSAaIAQESKAoQZW51bV9tdWx0aV92YWx1ZRggIAMoCUIOukgLkgEICAEiBHICEAESFwoKaWNvbl92YWx1ZRghIAEoCUgHiAEBEhsKDmFzc2V0X2lkX3ZhbHVlGCIgASgJSAiIAQESHAoPd29ya2VyX2lkX3ZhbHVlGCMgASgJSAmIAQE64we6SN8HGoYGCiBwcm9wZXJ0eV90eXBlX21hdGNoZXNfdmFsdWVfa2luZBIndHlwZSBtdXN0IG1hdGNoIHRoZSBraW5kIG9mIHZhbHVlIGZpZWxkGrgFKCh0aGlzLnR5cGUgPT0gMSAmJiBoYXModGhpcy5ib29sX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAyICYmIGhhcyh0aGlzLmludF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMyAmJiBoYXModGhpcy5mbG9hdF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNCAmJiBoYXModGhpcy5kb3VibGVfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDUgJiYgaGFzKHRoaXMuc3RyaW5nX3ZhbHVlKSkgfHwodGhpcy50eXBlID09IDYgJiYgaGFzKHRoaXMudmVjdG9yM192YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gNyAmJiBoYXModGhpcy5wb3NlX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSA4ICYmIGhhcyh0aGlzLmFuY2hvcl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gOSAmJiBoYXModGhpcy5jb2xvcl92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTAgJiYgaGFzKHRoaXMucm9ib3RfaWRfdmFsdWUpKSB8fCAodGhpcy50eXBlID09IDExICYmIGhhcyh0aGlzLmVudW1fdmFsdWUpKSB8fCh0aGlzLnR5cGUgPT0gMTIgJiYgc2l6ZSh0aGlzLmVudW1fbXVsdGlfdmFsdWUpID4gMCkgfHwgKHRoaXMudHlwZSA9PSAxMyAmJiBoYXModGhpcy5pY29uX3ZhbHVlKSkgfHwgKHRoaXMudHlwZSA9PSAxNCAmJiBoYXModGhpcy5hc3NldF9pZF92YWx1ZSkpIHx8ICh0aGlzLnR5cGUgPT0gMTUgJiYgaGFzKHRoaXMud29ya2VyX2lkX3ZhbHVlKSkpItMBCgpib29sX3ZhbHVlCglpbnRfdmFsdWUKC2Zsb2F0X3ZhbHVlCgxkb3VibGVfdmFsdWUKDHN0cmluZ192YWx1ZQoNdmVjdG9yM192YWx1ZQoKcG9zZV92YWx1ZQoMYW5jaG9yX3ZhbHVlCgtjb2xvcl92YWx1ZQoOcm9ib3RfaWRfdmFsdWUKCmVudW1fdmFsdWUKEGVudW1fbXVsdGlfdmFsdWUKCmljb25fdmFsdWUKDmFzc2V0X2lkX3ZhbHVlCg93b3JrZXJfaWRfdmFsdWUQAUINCgtfYm9vbF92YWx1ZUIMCgpfaW50X3ZhbHVlQg4KDF9mbG9hdF92YWx1ZUIPCg1fZG91YmxlX3ZhbHVlQg8KDV9zdHJpbmdfdmFsdWVCEQoPX3JvYm90X2lkX3ZhbHVlQg0KC19lbnVtX3ZhbHVlQg0KC19pY29uX3ZhbHVlQhEKD19hc3NldF9pZF92YWx1ZUISChBfd29ya2VyX2lkX3ZhbHVlIucDChZQcm9wZXJ0eUluc3RhbmNlVXBkYXRlEicKFHByb3BlcnR5X2luc3RhbmNlX2lkGAEgASgJQgm6SAZyBJjzBAESMwoGb3JpZ2luGAIgASgOMhkuY29tbW9uLnYxLlByb3BlcnR5T3JpZ2luQgi6SAWCAQIQARIwCh1taXJyb3JfcHJvcGVydHlfZGVmaW5pdGlvbl9pZBgDIAEoCUIJukgGcgSY8QQBEi8KBXZhbHVlGAQgASgLMhguY29tbW9uLnYxLlByb3BlcnR5VmFsdWVCBrpIA8gBATqLArpIhwIaagobZml4ZWRfb3JpZ2luX3JlcXVpcmVzX3ZhbHVlEiZ2YWx1ZSBtdXN0IGJlIHNldCB3aGVuIG9yaWdpbiBpcyBGSVhFRBojdGhpcy5vcmlnaW4gIT0gMSB8fCBoYXModGhpcy52YWx1ZSkamAEKIm1pcnJvcl9yZXF1aXJlc19taXJyb3JfcHJvcGVydHlfaWQSNG1pcnJvcl9wcm9wZXJ0eV9pZCBtdXN0IGJlIHNldCB3aGVuIG9yaWdpbiBpcyBNSVJST1IaPHRoaXMub3JpZ2luICE9IDIgfHwgdGhpcy5taXJyb3JfcHJvcGVydHlfZGVmaW5pdGlvbl9pZCAhPSAnJyJDChNQcm9wZXJ0eURlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0uY29tbW9uLnYxLlByb3BlcnR5RGVmaW5pdGlvbiI/ChFQcm9wZXJ0eUluc3RhbmNlcxIqCgVpdGVtcxgBIAMoCzIbLmNvbW1vbi52MS5Qcm9wZXJ0eUluc3RhbmNlIsYDCgxOdW1iZXJFeHRyYXMSEAoDbWluGAEgASgBSACIAQESEAoDbWF4GAIgASgBSAGIAQESIQoEc3RlcBgDIAEoAUIOukgLEgkhAAAAAAAAAABIAogBARIVCgR1bml0GAQgASgJQge6SARyAhgDEhoKCXByZWNpc2lvbhgFIAEoDUIHukgEKgIoADqiArpIngIamwIKGG51bWJlcl9leHRyYXNfY29uc2lzdGVudBJUSWYgYW55IG9mIG1pbi9tYXgvc3RlcCBpcyBzZXQsIGFsbCBtdXN0IGJlIHNldDsgYW5kIG1pbiA8IG1heDsgYW5kIHN0ZXAgPD0gKG1heC1taW4pGqgBKCFoYXModGhpcy5taW4pICYmICFoYXModGhpcy5tYXgpICYmICFoYXModGhpcy5zdGVwKSkgfHwgKGhhcyh0aGlzLm1pbikgJiYgaGFzKHRoaXMubWF4KSAmJiBoYXModGhpcy5zdGVwKSAmJiB0aGlzLm1pbiA8IHRoaXMubWF4ICYmIHRoaXMuc3RlcCA8PSAodGhpcy5tYXggLSB0aGlzLm1pbikpQgYKBF9taW5CBgoEX21heEIHCgVfc3RlcCJrCgpFbnVtT3B0aW9uEhYKBXZhbHVlGAEgASgJQge6SARyAhABEhYKBWxhYmVsGAIgASgJQge6SARyAhABEgwKBGljb24YAyABKAkSDQoFZ3JvdXAYBCABKAkSEAoIZGlzYWJsZWQYBSABKAgipQEKCkVudW1FeHRyYXMSEwoLcGxhY2Vob2xkZXIYASABKAkSDgoGZmlsdGVyGAIgASgIEg8KB2dyb3VwZWQYAyABKAgSEgoKc2hvd19pY29ucxgEIAEoCBIbChNtYXhfc2VsZWN0ZWRfbGFiZWxzGAUgASgNEjAKB29wdGlvbnMYBiADKAsyFS5jb21tb24udjEuRW51bU9wdGlvbkIIukgFkgECCAEi+QMKDVZlY3RvcjNFeHRyYXMSEAoDbWluGAEgASgBSACIAQESEAoDbWF4GAIgASgBSAGIAQESIQoEc3RlcBgDIAEoAUIOukgLEgkhAAAAAAAAAABIAogBARIYCgdsYWJlbF94GAQgASgJQge6SARyAhgFEhgKB2xhYmVsX3kYBSABKAlCB7pIBHICGAUSGAoHbGFiZWxfehgGIAEoCUIHukgEcgIYBRIVCgR1bml0GAcgASgJQge6SARyAhgDOqICukieAhqbAgoYbnVtYmVyX2V4dHJhc19jb25zaXN0ZW50ElRJZiBhbnkgb2YgbWluL21heC9zdGVwIGlzIHNldCwgYWxsIG11c3QgYmUgc2V0OyBhbmQgbWluIDwgbWF4OyBhbmQgc3RlcCA8PSAobWF4LW1pbikaqAEoIWhhcyh0aGlzLm1pbikgJiYgIWhhcyh0aGlzLm1heCkgJiYgIWhhcyh0aGlzLnN0ZXApKSB8fCAoaGFzKHRoaXMubWluKSAmJiBoYXModGhpcy5tYXgpICYmIGhhcyh0aGlzLnN0ZXApICYmIHRoaXMubWluIDwgdGhpcy5tYXggJiYgdGhpcy5zdGVwIDw9ICh0aGlzLm1heCAtIHRoaXMubWluKSlCBgoEX21pbkIGCgRfbWF4QgcKBV9zdGVwIk4KC0NvbG9yRXh0cmFzEhwKBHN0ZXAYASABKAFCDrpICxIJKQAAAAAAAAAAEiEKB2RlZmF1bHQYAiABKAsyEC5jb21tb24udjEuQ29sb3IiJAoMQW5jaG9yRXh0cmFzEhQKDG9ubHlfbWFya2VycxgBIAEoCCI8CgpQb3NlRXh0cmFzEhcKD2FuY2hvcl9lZGl0YWJsZRgBIAEoCBIVCg1wb3NlX2VkaXRhYmxlGAIgASgIKqkDCgxQcm9wZXJ0eVR5cGUSHQoZUFJPUEVSVFlfVFlQRV9VTlNQRUNJRklFRBAAEhYKElBST1BFUlRZX1RZUEVfQk9PTBABEhUKEVBST1BFUlRZX1RZUEVfSU5UEAISFwoTUFJPUEVSVFlfVFlQRV9GTE9BVBADEhgKFFBST1BFUlRZX1RZUEVfRE9VQkxFEAQSGAoUUFJPUEVSVFlfVFlQRV9TVFJJTkcQBRIZChVQUk9QRVJUWV9UWVBFX1ZFQ1RPUjMQBhIWChJQUk9QRVJUWV9UWVBFX1BPU0UQBxIYChRQUk9QRVJUWV9UWVBFX0FOQ0hPUhAIEhcKE1BST1BFUlRZX1RZUEVfQ09MT1IQCRIXChNQUk9QRVJUWV9UWVBFX1JPQk9UEAoSFgoSUFJPUEVSVFlfVFlQRV9FTlVNEAsSHAoYUFJPUEVSVFlfVFlQRV9FTlVNX01VTFRJEAwSFgoSUFJPUEVSVFlfVFlQRV9JQ09OEA0SFwoTUFJPUEVSVFlfVFlQRV9BU1NFVBAOEhgKFFBST1BFUlRZX1RZUEVfV09SS0VSEA8qaAoOUHJvcGVydHlPcmlnaW4SHwobUFJPUEVSVFlfT1JJR0lOX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfT1JJR0lOX0ZJWEVEEAESGgoWUFJPUEVSVFlfT1JJR0lOX01JUlJPUhACKvoBCg1Qcm9wZXJ0eUdyb3VwEh4KGlBST1BFUlRZX0dST1VQX1VOU1BFQ0lGSUVEEAASGQoVUFJPUEVSVFlfR1JPVVBfT1VUUFVUEAESHwobUFJPUEVSVFlfR1JPVVBfTk9OX0VESVRBQkxFEAISGgoWUFJPUEVSVFlfR1JPVVBfU1RZTElORxADEhsKF1BST1BFUlRZX0dST1VQX0xPQ0FUSU9OEAQSFwoTUFJPUEVSVFlfR1JPVVBfSUNPThAFEiAKHFBST1BFUlRZX0dST1VQX0NPTkZJR1VSQVRJT04QBhIZChVQUk9QRVJUWV9HUk9VUF9ISURERU4QByq2AQoSUHJvcGVydHlQZXJtaXNzaW9uEiMKH1BST1BFUlRZX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABIdChlQUk9QRVJUWV9QRVJNSVNTSU9OX0JBU0lDEAoSIAocUFJPUEVSVFlfUEVSTUlTU0lPTl9DT1NNRVRJQxAUEhwKGFBST1BFUlRZX1BFUk1JU1NJT05fRlVMTBAeEhwKGFBST1BFUlRZX1BFUk1JU1NJT05fTk9ORRAoKmYKDVByb3BlcnR5U2NvcGUSHgoaUFJPUEVSVFlfU0NPUEVfVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9TQ09QRV9FTlRJVFkQARIaChZQUk9QRVJUWV9TQ09QRV9SVU5USU1FEAJCpQEKDWNvbS5jb21tb24udjFCDVByb3BlcnR5UHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_color, file_geometry_v1_anchor, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules]);
 
 /**
- * Properties are used by various components to define them, such as: feedback, actions, and conditions.
+ * PropertyDefinition
+ *   metadata/schema
  *
- * @generated from message common.v1.Property
+ * Every PropertyDefinition must have exactly one template PropertyInstance stored.
+ *
+ * Overall, we have these categories of properties:
+ *   Static authored input
+ *    - scope: ENTITY
+ *    - origin: FIXED
+ *    - example: MessageFeedback.title
+ *
+ *  Injected runtime input
+ *    - scope: RUNTIME
+ *    - origin: FIXED
+ *    - value supplied/overridden from ARResourceBinding during materialization
+ *    - example: robot slot, asset slot
+ *
+ *  Dynamic runtime input
+ *    - scope: RUNTIME
+ *    - origin: MIRROR
+ *    - mirror_property_definition_id points to another runtime property definition
+ *    - example: Action.active mirrors MessageFeedback.outputGaze
+ *
+ *  Runtime output
+ *    - scope: RUNTIME
+ *    - origin: FIXED
+ *    - runtime system mutates value
+ *    - example: MessageFeedback.outputGaze
+ *
+ * @generated from message common.v1.PropertyDefinition
  */
-export type Property = Message<"common.v1.Property"> & {
+export type PropertyDefinition = Message<"common.v1.PropertyDefinition"> & {
   /**
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
-   * @generated from field: string name = 2;
+   * @generated from field: string parent_id = 2;
+   */
+  parentId: string;
+
+  /**
+   * @generated from field: string name = 3;
    */
   name: string;
 
   /**
-   * @generated from field: string icon = 3;
+   * @generated from field: string icon = 4;
    */
   icon: string;
 
   /**
-   * @generated from field: string description = 4;
+   * @generated from field: string description = 5;
    */
   description: string;
 
   /**
-   * @generated from field: common.v1.PropertyType type = 5;
+   * @generated from field: common.v1.PropertyType type = 6;
    */
   type: PropertyType;
 
   /**
-   * @generated from field: common.v1.PropertyPermission minimum_required_permission = 6;
+   * @generated from field: common.v1.PropertyScope scope = 7;
+   */
+  scope: PropertyScope;
+
+  /**
+   * UI/authoring metadata
+   *
+   * @generated from field: common.v1.PropertyPermission minimum_required_permission = 8;
    */
   minimumRequiredPermission: PropertyPermission;
 
   /**
-   * @generated from field: common.v1.PropertyOrigin origin = 7;
+   * @generated from field: repeated common.v1.PropertyOrigin allowed_origins = 9;
    */
-  origin: PropertyOrigin;
-
-  /**
-   * @generated from field: repeated common.v1.PropertyOrigin origins = 8;
-   */
-  origins: PropertyOrigin[];
-
-  /**
-   * @generated from field: string mirror_property_id = 9;
-   */
-  mirrorPropertyId: string;
+  allowedOrigins: PropertyOrigin[];
 
   /**
    * @generated from field: common.v1.PropertyGroup group = 10;
@@ -89,105 +118,14 @@ export type Property = Message<"common.v1.Property"> & {
   hideGroup: boolean;
 
   /**
-   * @generated from field: string parent_id = 13;
-   */
-  parentId: string;
-
-  /**
-   * Hide behind "Advanced" toogle
-   *
-   * @generated from field: bool advanced = 14;
+   * @generated from field: bool advanced = 13;
    */
   advanced: boolean;
 
   /**
-   * @generated from field: string scope_id = 15;
-   */
-  scopeId: string;
-
-  /**
-   * If true, this property is not allowed to be mirrored by other properties
-   *
-   * @generated from field: bool disable_mirroring = 16;
+   * @generated from field: bool disable_mirroring = 14;
    */
   disableMirroring: boolean;
-
-  /**
-   * Defines whether value updates mutate the owning entity or only a materialized runtime instance.
-   *
-   * @generated from field: common.v1.PropertyValueScope value_scope = 17;
-   */
-  valueScope: PropertyValueScope;
-
-  /**
-   * @generated from field: optional bool bool_value = 21;
-   */
-  boolValue?: boolean;
-
-  /**
-   * @generated from field: optional sint64 int_value = 22;
-   */
-  intValue?: bigint;
-
-  /**
-   * @generated from field: optional float float_value = 23;
-   */
-  floatValue?: number;
-
-  /**
-   * @generated from field: optional double double_value = 24;
-   */
-  doubleValue?: number;
-
-  /**
-   * @generated from field: optional string string_value = 25;
-   */
-  stringValue?: string;
-
-  /**
-   * @generated from field: geometry.v1.Vector3 vector3_value = 26;
-   */
-  vector3Value?: Vector3;
-
-  /**
-   * @generated from field: geometry.v1.LocalizedPose pose_value = 27;
-   */
-  poseValue?: LocalizedPose;
-
-  /**
-   * @generated from field: geometry.v1.Anchor anchor_value = 28;
-   */
-  anchorValue?: Anchor;
-
-  /**
-   * @generated from field: common.v1.Color color_value = 29;
-   */
-  colorValue?: Color;
-
-  /**
-   * @generated from field: optional string robot_id_value = 30;
-   */
-  robotIdValue?: string;
-
-  /**
-   * @generated from field: optional string enum_value = 31;
-   */
-  enumValue?: string;
-
-  /**
-   * @generated from field: repeated string enum_multi_value = 32;
-   */
-  enumMultiValue: string[];
-
-  /**
-   * @generated from field: optional string icon_value = 33;
-   */
-  iconValue?: string;
-
-  /**
-   * @generated from field: optional string asset_id_value = 34;
-   */
-  assetIdValue?: string;
 
   /**
    * @generated from field: common.v1.NumberExtras number_extras = 41;
@@ -221,52 +159,82 @@ export type Property = Message<"common.v1.Property"> & {
 };
 
 /**
- * Describes the message common.v1.Property.
- * Use `create(PropertySchema)` to create a new message.
+ * Describes the message common.v1.PropertyDefinition.
+ * Use `create(PropertyDefinitionSchema)` to create a new message.
  */
-export const PropertySchema: GenMessage<Property> = /*@__PURE__*/
+export const PropertyDefinitionSchema: GenMessage<PropertyDefinition> = /*@__PURE__*/
   messageDesc(file_common_v1_property, 0);
 
 /**
- * @generated from message common.v1.PropertyMessages
+ * PropertyInstance
+ *   value/resolution in a scope
+ *
+ * Some notes:
+ * Authoring edits PropertyInstances whose scope_id belongs to the template/config/binding.
+ * Runtime creates PropertyInstances whose scope_id belongs to the materialized runtime context.
+ * Mirrors always point to PropertyDefinitions and are resolved inside the active context.
+ *
+ * @generated from message common.v1.PropertyInstance
  */
-export type PropertyMessages = Message<"common.v1.PropertyMessages"> & {
-  /**
-   * @generated from field: repeated common.v1.Property properties = 1;
-   */
-  properties: Property[];
-};
-
-/**
- * Describes the message common.v1.PropertyMessages.
- * Use `create(PropertyMessagesSchema)` to create a new message.
- */
-export const PropertyMessagesSchema: GenMessage<PropertyMessages> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 1);
-
-/**
- * @generated from message common.v1.PropertyValueUpdate
- */
-export type PropertyValueUpdate = Message<"common.v1.PropertyValueUpdate"> & {
+export type PropertyInstance = Message<"common.v1.PropertyInstance"> & {
   /**
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
-   * @generated from field: common.v1.PropertyType type = 5;
+   * @generated from field: string property_definition_id = 2;
    */
-  type: PropertyType;
+  propertyDefinitionId: string;
 
   /**
-   * @generated from field: common.v1.PropertyOrigin origin = 7;
+   * @generated from field: common.v1.PropertyScope scope = 3;
+   */
+  scope: PropertyScope;
+
+  /**
+   * For ENTITY, identifies the owning template/entity scope.
+   * For RUNTIME, identifies the materialized runtime context.
+   * Template runtime instances can use the owning template/entity id.
+   *
+   * @generated from field: string scope_id = 4;
+   */
+  scopeId: string;
+
+  /**
+   * @generated from field: common.v1.PropertyOrigin origin = 5;
    */
   origin: PropertyOrigin;
 
   /**
-   * @generated from field: string mirror_property_id = 9;
+   * @generated from field: string mirror_property_definition_id = 6;
    */
-  mirrorPropertyId: string;
+  mirrorPropertyDefinitionId: string;
+
+  /**
+   * @generated from field: common.v1.PropertyValue value = 7;
+   */
+  value?: PropertyValue;
+};
+
+/**
+ * Describes the message common.v1.PropertyInstance.
+ * Use `create(PropertyInstanceSchema)` to create a new message.
+ */
+export const PropertyInstanceSchema: GenMessage<PropertyInstance> = /*@__PURE__*/
+  messageDesc(file_common_v1_property, 1);
+
+/**
+ * PropertyValue
+ *   typed payload
+ *
+ * @generated from message common.v1.PropertyValue
+ */
+export type PropertyValue = Message<"common.v1.PropertyValue"> & {
+  /**
+   * @generated from field: common.v1.PropertyType type = 1;
+   */
+  type: PropertyType;
 
   /**
    * @generated from field: optional bool bool_value = 21;
@@ -337,14 +305,88 @@ export type PropertyValueUpdate = Message<"common.v1.PropertyValueUpdate"> & {
    * @generated from field: optional string asset_id_value = 34;
    */
   assetIdValue?: string;
+
+  /**
+   * @generated from field: optional string worker_id_value = 35;
+   */
+  workerIdValue?: string;
 };
 
 /**
- * Describes the message common.v1.PropertyValueUpdate.
- * Use `create(PropertyValueUpdateSchema)` to create a new message.
+ * Describes the message common.v1.PropertyValue.
+ * Use `create(PropertyValueSchema)` to create a new message.
  */
-export const PropertyValueUpdateSchema: GenMessage<PropertyValueUpdate> = /*@__PURE__*/
+export const PropertyValueSchema: GenMessage<PropertyValue> = /*@__PURE__*/
   messageDesc(file_common_v1_property, 2);
+
+/**
+ * PropertyInstanceUpdate
+ *   mutate one concrete instance
+ *
+ * @generated from message common.v1.PropertyInstanceUpdate
+ */
+export type PropertyInstanceUpdate = Message<"common.v1.PropertyInstanceUpdate"> & {
+  /**
+   * @generated from field: string property_instance_id = 1;
+   */
+  propertyInstanceId: string;
+
+  /**
+   * @generated from field: common.v1.PropertyOrigin origin = 2;
+   */
+  origin: PropertyOrigin;
+
+  /**
+   * @generated from field: string mirror_property_definition_id = 3;
+   */
+  mirrorPropertyDefinitionId: string;
+
+  /**
+   * @generated from field: common.v1.PropertyValue value = 4;
+   */
+  value?: PropertyValue;
+};
+
+/**
+ * Describes the message common.v1.PropertyInstanceUpdate.
+ * Use `create(PropertyInstanceUpdateSchema)` to create a new message.
+ */
+export const PropertyInstanceUpdateSchema: GenMessage<PropertyInstanceUpdate> = /*@__PURE__*/
+  messageDesc(file_common_v1_property, 3);
+
+/**
+ * @generated from message common.v1.PropertyDefinitions
+ */
+export type PropertyDefinitions = Message<"common.v1.PropertyDefinitions"> & {
+  /**
+   * @generated from field: repeated common.v1.PropertyDefinition items = 1;
+   */
+  items: PropertyDefinition[];
+};
+
+/**
+ * Describes the message common.v1.PropertyDefinitions.
+ * Use `create(PropertyDefinitionsSchema)` to create a new message.
+ */
+export const PropertyDefinitionsSchema: GenMessage<PropertyDefinitions> = /*@__PURE__*/
+  messageDesc(file_common_v1_property, 4);
+
+/**
+ * @generated from message common.v1.PropertyInstances
+ */
+export type PropertyInstances = Message<"common.v1.PropertyInstances"> & {
+  /**
+   * @generated from field: repeated common.v1.PropertyInstance items = 1;
+   */
+  items: PropertyInstance[];
+};
+
+/**
+ * Describes the message common.v1.PropertyInstances.
+ * Use `create(PropertyInstancesSchema)` to create a new message.
+ */
+export const PropertyInstancesSchema: GenMessage<PropertyInstances> = /*@__PURE__*/
+  messageDesc(file_common_v1_property, 5);
 
 /**
  * @generated from message common.v1.NumberExtras
@@ -385,7 +427,7 @@ export type NumberExtras = Message<"common.v1.NumberExtras"> & {
  * Use `create(NumberExtrasSchema)` to create a new message.
  */
 export const NumberExtrasSchema: GenMessage<NumberExtras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 3);
+  messageDesc(file_common_v1_property, 6);
 
 /**
  * @generated from message common.v1.EnumOption
@@ -422,7 +464,7 @@ export type EnumOption = Message<"common.v1.EnumOption"> & {
  * Use `create(EnumOptionSchema)` to create a new message.
  */
 export const EnumOptionSchema: GenMessage<EnumOption> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 4);
+  messageDesc(file_common_v1_property, 7);
 
 /**
  * @generated from message common.v1.EnumExtras
@@ -474,7 +516,7 @@ export type EnumExtras = Message<"common.v1.EnumExtras"> & {
  * Use `create(EnumExtrasSchema)` to create a new message.
  */
 export const EnumExtrasSchema: GenMessage<EnumExtras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 5);
+  messageDesc(file_common_v1_property, 8);
 
 /**
  * @generated from message common.v1.Vector3Extras
@@ -521,7 +563,7 @@ export type Vector3Extras = Message<"common.v1.Vector3Extras"> & {
  * Use `create(Vector3ExtrasSchema)` to create a new message.
  */
 export const Vector3ExtrasSchema: GenMessage<Vector3Extras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 6);
+  messageDesc(file_common_v1_property, 9);
 
 /**
  * @generated from message common.v1.ColorExtras
@@ -545,7 +587,7 @@ export type ColorExtras = Message<"common.v1.ColorExtras"> & {
  * Use `create(ColorExtrasSchema)` to create a new message.
  */
 export const ColorExtrasSchema: GenMessage<ColorExtras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 7);
+  messageDesc(file_common_v1_property, 10);
 
 /**
  * @generated from message common.v1.AnchorExtras
@@ -562,7 +604,7 @@ export type AnchorExtras = Message<"common.v1.AnchorExtras"> & {
  * Use `create(AnchorExtrasSchema)` to create a new message.
  */
 export const AnchorExtrasSchema: GenMessage<AnchorExtras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 8);
+  messageDesc(file_common_v1_property, 11);
 
 /**
  * @generated from message common.v1.PoseExtras
@@ -584,7 +626,7 @@ export type PoseExtras = Message<"common.v1.PoseExtras"> & {
  * Use `create(PoseExtrasSchema)` to create a new message.
  */
 export const PoseExtrasSchema: GenMessage<PoseExtras> = /*@__PURE__*/
-  messageDesc(file_common_v1_property, 9);
+  messageDesc(file_common_v1_property, 12);
 
 /**
  * Used to specify the type of a property
@@ -694,6 +736,13 @@ export enum PropertyType {
    * @generated from enum value: PROPERTY_TYPE_ASSET = 14;
    */
   ASSET = 14,
+
+  /**
+   * Worker type property - worker_id as string
+   *
+   * @generated from enum value: PROPERTY_TYPE_WORKER = 15;
+   */
+  WORKER = 15,
 }
 
 /**
@@ -714,14 +763,16 @@ export enum PropertyOrigin {
   UNSPECIFIED = 0,
 
   /**
-   * The value of the property is fixed and must be changed manually
+   * Value is stored directly on the PropertyInstance.
+   * For RUNTIME properties, the template value may be overridden during materialization.
+   * Hence, in general: the value of the property is fixed and must be changed manually
    *
    * @generated from enum value: PROPERTY_ORIGIN_FIXED = 1;
    */
   FIXED = 1,
 
   /**
-   * The value of the property mirrors the value of another property
+   * Value is resolved by mirroring another property definition in the same runtime context.
    *
    * @generated from enum value: PROPERTY_ORIGIN_MIRROR = 2;
    */
@@ -832,34 +883,46 @@ export const PropertyPermissionSchema: GenEnum<PropertyPermission> = /*@__PURE__
   enumDesc(file_common_v1_property, 3);
 
 /**
- * @generated from enum common.v1.PropertyValueScope
+ * PropertyScope
+ *
+ * For authoring:
+ *   ENTITY scope:
+ *    UI edits the entity/template PropertyInstance
+ *
+ *   RUNTIME scope:
+ *     UI can show the definition and maybe a default initial value,
+ *     but runtime creates ephemeral instances per materialization
+ *
+ *
+ * @generated from enum common.v1.PropertyScope
  */
-export enum PropertyValueScope {
+export enum PropertyScope {
   /**
-   * @generated from enum value: PROPERTY_VALUE_SCOPE_UNSPECIFIED = 0;
+   * @generated from enum value: PROPERTY_SCOPE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * Value is stored on the owning entity and shared by all materializations.
-   * Updating it changes the authored/template value.
+   * One authored instance shared by all materializations of the owning entity.
+   * Example: MessageFeedback.title.
    *
-   * @generated from enum value: PROPERTY_VALUE_SCOPE_ENTITY = 1;
+   * @generated from enum value: PROPERTY_SCOPE_ENTITY = 1;
    */
   ENTITY = 1,
 
   /**
-   * Value is supplied per runtime/materialized instance and must not be
-   * persisted back to the owning entity.
+   * One instance per materialized runtime context.
+   * Used for runtime outputs, injected inputs, and dynamic mirrored inputs.
+   * Examples: outputGaze, robot slot, Action.active.
    *
-   * @generated from enum value: PROPERTY_VALUE_SCOPE_INSTANCE = 2;
+   * @generated from enum value: PROPERTY_SCOPE_RUNTIME = 2;
    */
-  INSTANCE = 2,
+  RUNTIME = 2,
 }
 
 /**
- * Describes the enum common.v1.PropertyValueScope.
+ * Describes the enum common.v1.PropertyScope.
  */
-export const PropertyValueScopeSchema: GenEnum<PropertyValueScope> = /*@__PURE__*/
+export const PropertyScopeSchema: GenEnum<PropertyScope> = /*@__PURE__*/
   enumDesc(file_common_v1_property, 4);
 

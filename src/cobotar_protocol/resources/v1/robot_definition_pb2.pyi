@@ -1,6 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from capability.v1 import capability_profile_pb2 as _capability_profile_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -34,7 +33,7 @@ ROBOT_DRIVER_TYPE_UR: RobotDriverType
 ROBOT_DRIVER_TYPE_GENERIC: RobotDriverType
 
 class RobotDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -47,7 +46,6 @@ class RobotDefinition(_message.Message):
     DEFAULT_TOOL_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     TOOL_SLOTS_FIELD_NUMBER: _ClassVar[int]
     CAPABILITY_PROFILE_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -60,8 +58,7 @@ class RobotDefinition(_message.Message):
     default_tool_definition_id: str
     tool_slots: int
     capability_profile: _capability_profile_pb2.CapabilityProfile
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ...) -> None: ...
 
 class RobotDefinitions(_message.Message):
     __slots__ = ("items",)

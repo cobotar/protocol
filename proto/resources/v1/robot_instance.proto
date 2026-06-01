@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/enums.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -24,8 +23,6 @@ message RobotInstance {
   bool supports_tool_change = 9; // Whether this robot instance can dynamically change between available tools.
   bool is_simulated = 10;
   common.v1.ResourceStatus status = 11 [(buf.validate.field).enum.defined_only = true];
-
-  common.v1.CustomProperties custom = 12;
 }
 
 message RobotInstances {

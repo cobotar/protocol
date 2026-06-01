@@ -5,7 +5,7 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { PropertyValueUpdate } from "../../common/v1/property_pb.ts";
+import type { PropertyInstanceUpdate } from "../../common/v1/property_pb.ts";
 import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -14,59 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/ar_config_binding.proto.
  */
 export const file_ar_v1_ar_config_binding: GenFile = /*@__PURE__*/
-  fileDesc("Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEiSwoMUm9ib3RNYXBwaW5nEhsKCHJvYm90X2lkGAEgASgJQgm6SAZyBKDxBAESHgoLcHJvcGVydHlfaWQYAiABKAlCCbpIBnIEmPEEASJLCgxBc3NldE1hcHBpbmcSGwoIYXNzZXRfaWQYASABKAlCCbpIBnIEsPEEARIeCgtwcm9wZXJ0eV9pZBgCIAEoCUIJukgGcgSY8QQBIqoBChFBUlJlc291cmNlQmluZGluZxIaCgdzbG90X2lkGAEgASgJQgm6SAZyBPjrMAESJAoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAlCCbpIBnIEqPEEARIkChFhc3NldF9pbnN0YW5jZV9pZBgDIAEoCUIJukgGcgS48QQBOi26SCoiKAoRcm9ib3RfaW5zdGFuY2VfaWQKEWFzc2V0X2luc3RhbmNlX2lkEAEikQMKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIE6OswARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIdCgpzdGF0aW9uX2lkGAUgASgJQgm6SAZyBPjxBAESGgoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQBEiIKDGFyX2NvbmZpZ19pZBgHIAEoCUIMukgJyAEBcgSQ8QQBEhAKCGRpc2FibGVkGAggASgIEhIKCnN0YW5kYWxvbmUYCSABKAgSEAoIcHJpb3JpdHkYCiABKAUSMwoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5hci52MS5BUlJlc291cmNlQmluZGluZxI6ChJwcm9wZXJ0eV9vdmVycmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlWYWx1ZVVwZGF0ZTocukgZIhcKCnN0YXRpb25faWQKB2NlbGxfaWQQASJKChdBUkNvbmZpZ0JpbmRpbmdNZXNzYWdlcxIvCghiaW5kaW5ncxgBIAMoCzIdLmFyLnYxLkFSQ29uZmlnQmluZGluZ01lc3NhZ2VCkAEKCWNvbS5hci52MUIUQXJDb25maWdCaW5kaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
-
-/**
- * @generated from message ar.v1.RobotMapping
- */
-export type RobotMapping = Message<"ar.v1.RobotMapping"> & {
-  /**
-   * Legacy robot definition identifier.
-   *
-   * @generated from field: string robot_id = 1;
-   */
-  robotId: string;
-
-  /**
-   * Legacy target property for the mapped robot.
-   *
-   * @generated from field: string property_id = 2;
-   */
-  propertyId: string;
-};
-
-/**
- * Describes the message ar.v1.RobotMapping.
- * Use `create(RobotMappingSchema)` to create a new message.
- */
-export const RobotMappingSchema: GenMessage<RobotMapping> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 0);
-
-/**
- * @generated from message ar.v1.AssetMapping
- */
-export type AssetMapping = Message<"ar.v1.AssetMapping"> & {
-  /**
-   * Legacy asset definition identifier.
-   *
-   * @generated from field: string asset_id = 1;
-   */
-  assetId: string;
-
-  /**
-   * Legacy target property for the mapped asset.
-   *
-   * @generated from field: string property_id = 2;
-   */
-  propertyId: string;
-};
-
-/**
- * Describes the message ar.v1.AssetMapping.
- * Use `create(AssetMappingSchema)` to create a new message.
- */
-export const AssetMappingSchema: GenMessage<AssetMapping> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 1);
+  fileDesc("Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEiqgEKEUFSUmVzb3VyY2VCaW5kaW5nEhoKB3Nsb3RfaWQYASABKAlCCbpIBnIE+OswARIkChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJukgGcgSo8QQBEiQKEWFzc2V0X2luc3RhbmNlX2lkGAMgASgJQgm6SAZyBLjxBAE6LbpIKiIoChFyb2JvdF9pbnN0YW5jZV9pZAoRYXNzZXRfaW5zdGFuY2VfaWQQASKUAwoWQVJDb25maWdCaW5kaW5nTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTo6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEARIaCgdjZWxsX2lkGAYgASgJQgm6SAZyBLjyBAESIgoMYXJfY29uZmlnX2lkGAcgASgJQgy6SAnIAQFyBJDxBAESEAoIZGlzYWJsZWQYCCABKAgSEgoKc3RhbmRhbG9uZRgJIAEoCBIQCghwcmlvcml0eRgKIAEoBRIzChFyZXNvdXJjZV9iaW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVzb3VyY2VCaW5kaW5nEj0KEnByb3BlcnR5X292ZXJyaWRlcxgMIAMoCzIhLmNvbW1vbi52MS5Qcm9wZXJ0eUluc3RhbmNlVXBkYXRlOhy6SBkiFwoKc3RhdGlvbl9pZAoHY2VsbF9pZBABIkoKF0FSQ29uZmlnQmluZGluZ01lc3NhZ2VzEi8KCGJpbmRpbmdzGAEgAygLMh0uYXIudjEuQVJDb25maWdCaW5kaW5nTWVzc2FnZUKQAQoJY29tLmFyLnYxQhRBckNvbmZpZ0JpbmRpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * ARResourceBinding binds a config-declared slot to a concrete resource
@@ -102,7 +50,7 @@ export type ARResourceBinding = Message<"ar.v1.ARResourceBinding"> & {
  * Use `create(ARResourceBindingSchema)` to create a new message.
  */
 export const ARResourceBindingSchema: GenMessage<ARResourceBinding> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 2);
+  messageDesc(file_ar_v1_ar_config_binding, 0);
 
 /**
  * ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
@@ -195,9 +143,9 @@ export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
   /**
    * Station/cell-local values applied to config properties before runtime values.
    *
-   * @generated from field: repeated common.v1.PropertyValueUpdate property_overrides = 12;
+   * @generated from field: repeated common.v1.PropertyInstanceUpdate property_overrides = 12;
    */
-  propertyOverrides: PropertyValueUpdate[];
+  propertyOverrides: PropertyInstanceUpdate[];
 };
 
 /**
@@ -205,7 +153,7 @@ export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
  * Use `create(ARConfigBindingMessageSchema)` to create a new message.
  */
 export const ARConfigBindingMessageSchema: GenMessage<ARConfigBindingMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 3);
+  messageDesc(file_ar_v1_ar_config_binding, 1);
 
 /**
  * @generated from message ar.v1.ARConfigBindingMessages
@@ -224,5 +172,5 @@ export type ARConfigBindingMessages = Message<"ar.v1.ARConfigBindingMessages"> &
  * Use `create(ARConfigBindingMessagesSchema)` to create a new message.
  */
 export const ARConfigBindingMessagesSchema: GenMessage<ARConfigBindingMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 4);
+  messageDesc(file_ar_v1_ar_config_binding, 2);
 

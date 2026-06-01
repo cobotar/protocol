@@ -201,7 +201,7 @@ func (x *ActionInfoMessage) GetDisabled() bool {
 
 type ActionInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Infos         []*ActionInfoMessage   `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+	Items         []*ActionInfoMessage   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,9 +236,9 @@ func (*ActionInfoMessages) Descriptor() ([]byte, []int) {
 	return file_ar_v1_action_info_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ActionInfoMessages) GetInfos() []*ActionInfoMessage {
+func (x *ActionInfoMessages) GetItems() []*ActionInfoMessage {
 	if x != nil {
-		return x.Infos
+		return x.Items
 	}
 	return nil
 }
@@ -262,7 +262,7 @@ const file_ar_v1_action_info_proto_rawDesc = "" +
 	"\x05emits\x18\v \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\x1a\n" +
 	"\bdisabled\x18\f \x01(\bR\bdisabled\"D\n" +
 	"\x12ActionInfoMessages\x12.\n" +
-	"\x05infos\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\x05infos*t\n" +
+	"\x05items\x18\x01 \x03(\v2\x18.ar.v1.ActionInfoMessageR\x05items*t\n" +
 	"\vActionGroup\x12\x1c\n" +
 	"\x18ACTION_GROUP_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14ACTION_GROUP_GENERAL\x10\x01\x12\x16\n" +
@@ -299,7 +299,7 @@ var file_ar_v1_action_info_proto_depIdxs = []int32{
 	4, // 3: ar.v1.ActionInfoMessage.consumers_optional:type_name -> ar.v1.ExchangeType
 	5, // 4: ar.v1.ActionInfoMessage.required_handlers:type_name -> ar.v1.HandlerRequirement
 	4, // 5: ar.v1.ActionInfoMessage.emits:type_name -> ar.v1.ExchangeType
-	1, // 6: ar.v1.ActionInfoMessages.infos:type_name -> ar.v1.ActionInfoMessage
+	1, // 6: ar.v1.ActionInfoMessages.items:type_name -> ar.v1.ActionInfoMessage
 	7, // [7:7] is the sub-list for method output_type
 	7, // [7:7] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name

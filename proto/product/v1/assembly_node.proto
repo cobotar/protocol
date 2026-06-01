@@ -2,7 +2,6 @@ syntax = "proto3";
 package product.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -58,7 +57,6 @@ message AssemblyNode {
   geometry.v1.Vector3 approach_offset_hint = 13; // Offset from final pose to preferred approach pose, in mm
   bool optional = 14;
   repeated variance.v1.VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
-  common.v1.CustomProperties custom = 16;
   // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
 
   option (buf.validate.message).cel = {

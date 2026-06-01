@@ -8,7 +8,6 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -136,7 +135,6 @@ type CellDefinition struct {
 	Assets                 []*AssetPlacement      `protobuf:"bytes,11,rep,name=assets,proto3" json:"assets,omitempty"`                                                                 // Shared assets such as cameras, HMIs, or feeders serving several stations.
 	Markers                []*MarkerPlacement     `protobuf:"bytes,12,rep,name=markers,proto3" json:"markers,omitempty"`                                                               // Markers shared for this cell for localization, AR anchoring, or identification.
 	Frame                  *v1.LocalizedPose      `protobuf:"bytes,13,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Cell-local reference frame or zone anchor.
-	Custom                 *v11.CustomProperties  `protobuf:"bytes,14,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -262,13 +260,6 @@ func (x *CellDefinition) GetFrame() *v1.LocalizedPose {
 	return nil
 }
 
-func (x *CellDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type CellDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*CellDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -317,7 +308,7 @@ var File_resources_v1_cell_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x86\x05\n" +
+	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd1\x04\n" +
 	"\x0eCellDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -333,8 +324,7 @@ const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	" \x03(\v2\x1c.resources.v1.RobotPlacementR\x06robots\x124\n" +
 	"\x06assets\x18\v \x03(\v2\x1c.resources.v1.AssetPlacementR\x06assets\x127\n" +
 	"\amarkers\x18\f \x03(\v2\x1d.resources.v1.MarkerPlacementR\amarkers\x120\n" +
-	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x123\n" +
-	"\x06custom\x18\x0e \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\"E\n" +
 	"\x0fCellDefinitions\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05items*\x86\x01\n" +
 	"\n" +
@@ -361,15 +351,14 @@ func file_resources_v1_cell_definition_proto_rawDescGZIP() []byte {
 var file_resources_v1_cell_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_resources_v1_cell_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_cell_definition_proto_goTypes = []any{
-	(CellStatus)(0),              // 0: resources.v1.CellStatus
-	(*CellDefinition)(nil),       // 1: resources.v1.CellDefinition
-	(*CellDefinitions)(nil),      // 2: resources.v1.CellDefinitions
-	(*ToolPlacement)(nil),        // 3: resources.v1.ToolPlacement
-	(*RobotPlacement)(nil),       // 4: resources.v1.RobotPlacement
-	(*AssetPlacement)(nil),       // 5: resources.v1.AssetPlacement
-	(*MarkerPlacement)(nil),      // 6: resources.v1.MarkerPlacement
-	(*v1.LocalizedPose)(nil),     // 7: geometry.v1.LocalizedPose
-	(*v11.CustomProperties)(nil), // 8: common.v1.CustomProperties
+	(CellStatus)(0),          // 0: resources.v1.CellStatus
+	(*CellDefinition)(nil),   // 1: resources.v1.CellDefinition
+	(*CellDefinitions)(nil),  // 2: resources.v1.CellDefinitions
+	(*ToolPlacement)(nil),    // 3: resources.v1.ToolPlacement
+	(*RobotPlacement)(nil),   // 4: resources.v1.RobotPlacement
+	(*AssetPlacement)(nil),   // 5: resources.v1.AssetPlacement
+	(*MarkerPlacement)(nil),  // 6: resources.v1.MarkerPlacement
+	(*v1.LocalizedPose)(nil), // 7: geometry.v1.LocalizedPose
 }
 var file_resources_v1_cell_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.CellDefinition.status:type_name -> resources.v1.CellStatus
@@ -378,13 +367,12 @@ var file_resources_v1_cell_definition_proto_depIdxs = []int32{
 	5, // 3: resources.v1.CellDefinition.assets:type_name -> resources.v1.AssetPlacement
 	6, // 4: resources.v1.CellDefinition.markers:type_name -> resources.v1.MarkerPlacement
 	7, // 5: resources.v1.CellDefinition.frame:type_name -> geometry.v1.LocalizedPose
-	8, // 6: resources.v1.CellDefinition.custom:type_name -> common.v1.CustomProperties
-	1, // 7: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	1, // 6: resources.v1.CellDefinitions.items:type_name -> resources.v1.CellDefinition
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_cell_definition_proto_init() }

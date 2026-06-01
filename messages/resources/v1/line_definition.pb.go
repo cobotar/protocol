@@ -8,7 +8,6 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -167,7 +166,6 @@ type LineDefinition struct {
 	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this line should host concurrently.
 	CellIds                []string               `protobuf:"bytes,8,rep,name=cell_ids,json=cellIds,proto3" json:"cell_ids,omitempty"`                                                 // Cells belonging to this line.
 	StationIds             []string               `protobuf:"bytes,9,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Optional directly attached stations when a line references stations without an intermediate cell.
-	Custom                 *v1.CustomProperties   `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -265,13 +263,6 @@ func (x *LineDefinition) GetStationIds() []string {
 	return nil
 }
 
-func (x *LineDefinition) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type LineDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*LineDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -320,7 +311,7 @@ var File_resources_v1_line_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_line_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/line_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc6\x03\n" +
+	"\"resources/v1/line_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x91\x03\n" +
 	"\x0eLineDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -331,9 +322,7 @@ const file_resources_v1_line_definition_proto_rawDesc = "" +
 	"\x18max_concurrent_processes\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x16maxConcurrentProcesses\x12)\n" +
 	"\bcell_ids\x18\b \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xb8\xf2\x04\x01R\acellIds\x12/\n" +
 	"\vstation_ids\x18\t \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xf8\xf1\x04\x01R\n" +
-	"stationIds\x123\n" +
-	"\x06custom\x18\n" +
-	" \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"E\n" +
+	"stationIds\"E\n" +
 	"\x0fLineDefinitions\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.LineDefinitionR\x05items*%\n" +
 	"\bLineType\x12\x19\n" +
@@ -362,22 +351,20 @@ func file_resources_v1_line_definition_proto_rawDescGZIP() []byte {
 var file_resources_v1_line_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_resources_v1_line_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_line_definition_proto_goTypes = []any{
-	(LineType)(0),               // 0: resources.v1.LineType
-	(LineStatus)(0),             // 1: resources.v1.LineStatus
-	(*LineDefinition)(nil),      // 2: resources.v1.LineDefinition
-	(*LineDefinitions)(nil),     // 3: resources.v1.LineDefinitions
-	(*v1.CustomProperties)(nil), // 4: common.v1.CustomProperties
+	(LineType)(0),           // 0: resources.v1.LineType
+	(LineStatus)(0),         // 1: resources.v1.LineStatus
+	(*LineDefinition)(nil),  // 2: resources.v1.LineDefinition
+	(*LineDefinitions)(nil), // 3: resources.v1.LineDefinitions
 }
 var file_resources_v1_line_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.LineDefinition.type:type_name -> resources.v1.LineType
 	1, // 1: resources.v1.LineDefinition.status:type_name -> resources.v1.LineStatus
-	4, // 2: resources.v1.LineDefinition.custom:type_name -> common.v1.CustomProperties
-	2, // 3: resources.v1.LineDefinitions.items:type_name -> resources.v1.LineDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2, // 2: resources.v1.LineDefinitions.items:type_name -> resources.v1.LineDefinition
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_line_definition_proto_init() }

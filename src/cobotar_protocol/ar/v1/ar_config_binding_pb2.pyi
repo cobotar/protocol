@@ -9,22 +9,6 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class RobotMapping(_message.Message):
-    __slots__ = ("robot_id", "property_id")
-    ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
-    PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
-    robot_id: str
-    property_id: str
-    def __init__(self, robot_id: _Optional[str] = ..., property_id: _Optional[str] = ...) -> None: ...
-
-class AssetMapping(_message.Message):
-    __slots__ = ("asset_id", "property_id")
-    ASSET_ID_FIELD_NUMBER: _ClassVar[int]
-    PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
-    asset_id: str
-    property_id: str
-    def __init__(self, asset_id: _Optional[str] = ..., property_id: _Optional[str] = ...) -> None: ...
-
 class ARResourceBinding(_message.Message):
     __slots__ = ("slot_id", "robot_instance_id", "asset_instance_id")
     SLOT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -60,8 +44,8 @@ class ARConfigBindingMessage(_message.Message):
     standalone: bool
     priority: int
     resource_bindings: _containers.RepeatedCompositeFieldContainer[ARResourceBinding]
-    property_overrides: _containers.RepeatedCompositeFieldContainer[_property_pb2.PropertyValueUpdate]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., ar_config_id: _Optional[str] = ..., disabled: bool = ..., standalone: bool = ..., priority: _Optional[int] = ..., resource_bindings: _Optional[_Iterable[_Union[ARResourceBinding, _Mapping]]] = ..., property_overrides: _Optional[_Iterable[_Union[_property_pb2.PropertyValueUpdate, _Mapping]]] = ...) -> None: ...
+    property_overrides: _containers.RepeatedCompositeFieldContainer[_property_pb2.PropertyInstanceUpdate]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., ar_config_id: _Optional[str] = ..., disabled: bool = ..., standalone: bool = ..., priority: _Optional[int] = ..., resource_bindings: _Optional[_Iterable[_Union[ARResourceBinding, _Mapping]]] = ..., property_overrides: _Optional[_Iterable[_Union[_property_pb2.PropertyInstanceUpdate, _Mapping]]] = ...) -> None: ...
 
 class ARConfigBindingMessages(_message.Message):
     __slots__ = ("bindings",)

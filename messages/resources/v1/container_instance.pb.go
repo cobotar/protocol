@@ -108,7 +108,6 @@ type ContainerInstance struct {
 	ContainerDefinitionId string                 `protobuf:"bytes,5,opt,name=container_definition_id,json=containerDefinitionId,proto3" json:"container_definition_id,omitempty"` // The reusable container definition that this instance realizes.
 	Status                v11.ResourceStatus     `protobuf:"varint,6,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`                               // Operational status such as available, disabled, or faulted.
 	Location              *ContainerLocation     `protobuf:"bytes,7,opt,name=location,proto3" json:"location,omitempty"`                                                          // Dynamic location of the container instance.
-	Custom                *v11.CustomProperties  `protobuf:"bytes,8,opt,name=custom,proto3" json:"custom,omitempty"`                                                              // Extension point for instance-specific data.
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -192,13 +191,6 @@ func (x *ContainerInstance) GetLocation() *ContainerLocation {
 	return nil
 }
 
-func (x *ContainerInstance) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type ContainerInstances struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ContainerInstance   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // List wrapper used for transport/query responses.
@@ -247,13 +239,13 @@ var File_resources_v1_container_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_container_instance_proto_rawDesc = "" +
 	"\n" +
-	"%resources/v1/container_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb5\x01\n" +
+	"%resources/v1/container_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/enums.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb5\x01\n" +
 	"\x11ContainerLocation\x12\"\n" +
 	"\aline_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n" +
 	"\acell_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12(\n" +
 	"\n" +
 	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12.\n" +
-	"\x04pose\x18\x04 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\"\xf8\x02\n" +
+	"\x04pose\x18\x04 \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x04pose\"\xc3\x02\n" +
 	"\x11ContainerInstance\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -261,8 +253,7 @@ const file_resources_v1_container_instance_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12D\n" +
 	"\x17container_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc8\xf2\x04\x01R\x15containerDefinitionId\x12;\n" +
 	"\x06status\x18\x06 \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12;\n" +
-	"\blocation\x18\a \x01(\v2\x1f.resources.v1.ContainerLocationR\blocation\x123\n" +
-	"\x06custom\x18\b \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"K\n" +
+	"\blocation\x18\a \x01(\v2\x1f.resources.v1.ContainerLocationR\blocation\"K\n" +
 	"\x12ContainerInstances\x125\n" +
 	"\x05items\x18\x01 \x03(\v2\x1f.resources.v1.ContainerInstanceR\x05itemsB\xc3\x01\n" +
 	"\x10com.resources.v1B\x16ContainerInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
@@ -281,24 +272,22 @@ func file_resources_v1_container_instance_proto_rawDescGZIP() []byte {
 
 var file_resources_v1_container_instance_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_resources_v1_container_instance_proto_goTypes = []any{
-	(*ContainerLocation)(nil),    // 0: resources.v1.ContainerLocation
-	(*ContainerInstance)(nil),    // 1: resources.v1.ContainerInstance
-	(*ContainerInstances)(nil),   // 2: resources.v1.ContainerInstances
-	(*v1.LocalizedPose)(nil),     // 3: geometry.v1.LocalizedPose
-	(v11.ResourceStatus)(0),      // 4: common.v1.ResourceStatus
-	(*v11.CustomProperties)(nil), // 5: common.v1.CustomProperties
+	(*ContainerLocation)(nil),  // 0: resources.v1.ContainerLocation
+	(*ContainerInstance)(nil),  // 1: resources.v1.ContainerInstance
+	(*ContainerInstances)(nil), // 2: resources.v1.ContainerInstances
+	(*v1.LocalizedPose)(nil),   // 3: geometry.v1.LocalizedPose
+	(v11.ResourceStatus)(0),    // 4: common.v1.ResourceStatus
 }
 var file_resources_v1_container_instance_proto_depIdxs = []int32{
 	3, // 0: resources.v1.ContainerLocation.pose:type_name -> geometry.v1.LocalizedPose
 	4, // 1: resources.v1.ContainerInstance.status:type_name -> common.v1.ResourceStatus
 	0, // 2: resources.v1.ContainerInstance.location:type_name -> resources.v1.ContainerLocation
-	5, // 3: resources.v1.ContainerInstance.custom:type_name -> common.v1.CustomProperties
-	1, // 4: resources.v1.ContainerInstances.items:type_name -> resources.v1.ContainerInstance
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 3: resources.v1.ContainerInstances.items:type_name -> resources.v1.ContainerInstance
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_container_instance_proto_init() }

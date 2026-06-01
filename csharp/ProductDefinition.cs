@@ -25,28 +25,26 @@ namespace Messages.Product.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNwcm9kdWN0L3YxL3Byb2R1Y3RfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVj",
-            "dC52MRohY29tbW9uL3YxL2N1c3RvbV9wcm9wZXJ0aWVzLnByb3RvGiNjb21t",
-            "b24vdjEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxoecHJvZHVjdC92MS9h",
-            "c3NlbWJseV9ub2RlLnByb3RvGh52YXJpYW5jZS92MS92YXJpYW50X2F4aXMu",
-            "cHJvdG8igAMKEVByb2R1Y3REZWZpbml0aW9uEg4KAmlkGAEgASgJUgJpZBIS",
-            "CgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
-            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjsKDHZhcmlhbnRfYXhlcxgF",
-            "IAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRBeGlzUgt2YXJpYW50QXhlcxIg",
-            "Cgxyb290X25vZGVfaWQYBiABKAlSCnJvb3ROb2RlSWQSLgoFbm9kZXMYByAD",
-            "KAsyGC5wcm9kdWN0LnYxLkFzc2VtYmx5Tm9kZVIFbm9kZXMSTQoTZXh0ZXJu",
-            "YWxfcmVmZXJlbmNlcxgIIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVy",
-            "ZW5jZVISZXh0ZXJuYWxSZWZlcmVuY2VzEjMKBmN1c3RvbRgJIAEoCzIbLmNv",
-            "bW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzUgZjdXN0b20iSQoSUHJvZHVjdERl",
-            "ZmluaXRpb25zEjMKBWl0ZW1zGAEgAygLMh0ucHJvZHVjdC52MS5Qcm9kdWN0",
-            "RGVmaW5pdGlvblIFaXRlbXNCtQEKDmNvbS5wcm9kdWN0LnYxQhZQcm9kdWN0",
-            "RGVmaW5pdGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
-            "bC9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3Nh",
-            "Z2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJN",
-            "ZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM="));
+            "dC52MRojY29tbW9uL3YxL2V4dGVybmFsX3JlZmVyZW5jZXMucHJvdG8aHnBy",
+            "b2R1Y3QvdjEvYXNzZW1ibHlfbm9kZS5wcm90bxoedmFyaWFuY2UvdjEvdmFy",
+            "aWFudF9heGlzLnByb3RvIssCChFQcm9kdWN0RGVmaW5pdGlvbhIOCgJpZBgB",
+            "IAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRp",
+            "Y29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI7Cgx2YXJp",
+            "YW50X2F4ZXMYBSADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50QXhpc1ILdmFy",
+            "aWFudEF4ZXMSIAoMcm9vdF9ub2RlX2lkGAYgASgJUgpyb290Tm9kZUlkEi4K",
+            "BW5vZGVzGAcgAygLMhgucHJvZHVjdC52MS5Bc3NlbWJseU5vZGVSBW5vZGVz",
+            "Ek0KE2V4dGVybmFsX3JlZmVyZW5jZXMYCCADKAsyHC5jb21tb24udjEuRXh0",
+            "ZXJuYWxSZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcyJJChJQcm9kdWN0",
+            "RGVmaW5pdGlvbnMSMwoFaXRlbXMYASADKAsyHS5wcm9kdWN0LnYxLlByb2R1",
+            "Y3REZWZpbml0aW9uUgVpdGVtc0K1AQoOY29tLnByb2R1Y3QudjFCFlByb2R1",
+            "Y3REZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVz",
+            "c2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQ",
+            "Qk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.CustomPropertiesReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Product.V1.AssemblyNodeReflection.Descriptor, global::Messages.Variance.V1.VariantAxisReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Product.V1.AssemblyNodeReflection.Descriptor, global::Messages.Variance.V1.VariantAxisReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ProductDefinition), global::Messages.Product.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "VariantAxes", "RootNodeId", "Nodes", "ExternalReferences", "Custom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ProductDefinition), global::Messages.Product.V1.ProductDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "VariantAxes", "RootNodeId", "Nodes", "ExternalReferences" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ProductDefinitions), global::Messages.Product.V1.ProductDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -97,7 +95,6 @@ namespace Messages.Product.V1 {
       rootNodeId_ = other.rootNodeId_;
       nodes_ = other.nodes_.Clone();
       externalReferences_ = other.externalReferences_.Clone();
-      custom_ = other.custom_ != null ? other.custom_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -200,18 +197,6 @@ namespace Messages.Product.V1 {
       get { return externalReferences_; }
     }
 
-    /// <summary>Field number for the "custom" field.</summary>
-    public const int CustomFieldNumber = 9;
-    private global::Messages.Common.V1.CustomProperties custom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.CustomProperties Custom {
-      get { return custom_; }
-      set {
-        custom_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -235,7 +220,6 @@ namespace Messages.Product.V1 {
       if (RootNodeId != other.RootNodeId) return false;
       if(!nodes_.Equals(other.nodes_)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
-      if (!object.Equals(Custom, other.Custom)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -251,7 +235,6 @@ namespace Messages.Product.V1 {
       if (RootNodeId.Length != 0) hash ^= RootNodeId.GetHashCode();
       hash ^= nodes_.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
-      if (custom_ != null) hash ^= Custom.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -293,10 +276,6 @@ namespace Messages.Product.V1 {
       }
       nodes_.WriteTo(output, _repeated_nodes_codec);
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
-      if (custom_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -330,10 +309,6 @@ namespace Messages.Product.V1 {
       }
       nodes_.WriteTo(ref output, _repeated_nodes_codec);
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
-      if (custom_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Custom);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -362,9 +337,6 @@ namespace Messages.Product.V1 {
       }
       size += nodes_.CalculateSize(_repeated_nodes_codec);
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
-      if (custom_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Custom);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -395,12 +367,6 @@ namespace Messages.Product.V1 {
       }
       nodes_.Add(other.nodes_);
       externalReferences_.Add(other.externalReferences_);
-      if (other.custom_ != null) {
-        if (custom_ == null) {
-          Custom = new global::Messages.Common.V1.CustomProperties();
-        }
-        Custom.MergeFrom(other.Custom);
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -452,13 +418,6 @@ namespace Messages.Product.V1 {
             externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
             break;
           }
-          case 74: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
-            break;
-          }
         }
       }
     #endif
@@ -508,13 +467,6 @@ namespace Messages.Product.V1 {
           }
           case 66: {
             externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
-            break;
-          }
-          case 74: {
-            if (custom_ == null) {
-              Custom = new global::Messages.Common.V1.CustomProperties();
-            }
-            input.ReadMessage(Custom);
             break;
           }
         }

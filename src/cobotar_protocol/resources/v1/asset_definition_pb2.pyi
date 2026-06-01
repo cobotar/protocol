@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -61,7 +60,7 @@ class VisionCapability(_message.Message):
     def __init__(self, supported_validation_modes: _Optional[_Iterable[_Union[ValidationMode, str]]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class AssetDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "vision", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "vision")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -70,7 +69,6 @@ class AssetDefinition(_message.Message):
     DRIVER_TYPE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     VISION_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -79,8 +77,7 @@ class AssetDefinition(_message.Message):
     driver_type: AssetDriverType
     model_id: str
     vision: VisionCapability
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., vision: _Optional[_Union[VisionCapability, _Mapping]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., vision: _Optional[_Union[VisionCapability, _Mapping]] = ...) -> None: ...
 
 class AssetDefinitions(_message.Message):
     __slots__ = ("items",)

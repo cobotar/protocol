@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
 from common.v1 import time_pb2 as _time_pb2
@@ -132,7 +131,7 @@ class PartProcessProfile(_message.Message):
     def __init__(self, estimated_human_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., estimated_robot_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ..., inspect_before_assemble: bool = ..., inspect_after_disassemble: bool = ..., pre_lubrication_part_id: _Optional[str] = ..., post_lubrication_part_id: _Optional[str] = ..., requires_wiping: bool = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "process", "external_references", "custom", "version")
+    __slots__ = ("id", "name", "icon", "description", "type", "subtype", "weight_g", "dimensions", "material", "default_model_id", "handling", "process", "external_references", "version")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -146,7 +145,6 @@ class PartDefinition(_message.Message):
     HANDLING_FIELD_NUMBER: _ClassVar[int]
     PROCESS_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
@@ -161,9 +159,8 @@ class PartDefinition(_message.Message):
     handling: PartHandlingProfile
     process: PartProcessProfile
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
-    custom: _custom_properties_pb2.CustomProperties
     version: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., process: _Optional[_Union[PartProcessProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ..., version: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PartType, str]] = ..., subtype: _Optional[str] = ..., weight_g: _Optional[int] = ..., dimensions: _Optional[_Union[Dimensions, _Mapping]] = ..., material: _Optional[_Union[MaterialSpec, _Mapping]] = ..., default_model_id: _Optional[str] = ..., handling: _Optional[_Union[PartHandlingProfile, _Mapping]] = ..., process: _Optional[_Union[PartProcessProfile, _Mapping]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., version: _Optional[str] = ...) -> None: ...
 
 class PartDefinitions(_message.Message):
     __slots__ = ("items",)

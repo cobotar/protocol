@@ -12,24 +12,19 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file robot/v1/program_state_request.proto.
  */
 export const file_robot_v1_program_state_request: GenFile = /*@__PURE__*/
-  fileDesc("CiRyb2JvdC92MS9wcm9ncmFtX3N0YXRlX3JlcXVlc3QucHJvdG8SCHJvYm90LnYxImIKE1Byb2dyYW1TdGF0ZVJlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCRIQCghyb2JvdF9pZBgCIAEoCRIlCgVzdGF0ZRgDIAEoDjIWLnJvYm90LnYxLlByb2dyYW1TdGF0ZUKqAQoMY29tLnJvYm90LnYxQhhQcm9ncmFtU3RhdGVSZXF1ZXN0UHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM", [file_robot_v1_program_state]);
+  fileDesc("CiRyb2JvdC92MS9wcm9ncmFtX3N0YXRlX3JlcXVlc3QucHJvdG8SCHJvYm90LnYxIk4KE1Byb2dyYW1TdGF0ZVJlcXVlc3QSEAoIcm9ib3RfaWQYASABKAkSJQoFc3RhdGUYAiABKA4yFi5yb2JvdC52MS5Qcm9ncmFtU3RhdGUiJAoQQWNrbm93bGVkZ2VSb2JvdBIQCghyb2JvdF9pZBgBIAEoCUKqAQoMY29tLnJvYm90LnYxQhhQcm9ncmFtU3RhdGVSZXF1ZXN0UHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM", [file_robot_v1_program_state]);
 
 /**
  * @generated from message robot.v1.ProgramStateRequest
  */
 export type ProgramStateRequest = Message<"robot.v1.ProgramStateRequest"> & {
   /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: string robot_id = 2;
+   * @generated from field: string robot_id = 1;
    */
   robotId: string;
 
   /**
-   * @generated from field: robot.v1.ProgramState state = 3;
+   * @generated from field: robot.v1.ProgramState state = 2;
    */
   state: ProgramState;
 };
@@ -40,4 +35,21 @@ export type ProgramStateRequest = Message<"robot.v1.ProgramStateRequest"> & {
  */
 export const ProgramStateRequestSchema: GenMessage<ProgramStateRequest> = /*@__PURE__*/
   messageDesc(file_robot_v1_program_state_request, 0);
+
+/**
+ * @generated from message robot.v1.AcknowledgeRobot
+ */
+export type AcknowledgeRobot = Message<"robot.v1.AcknowledgeRobot"> & {
+  /**
+   * @generated from field: string robot_id = 1;
+   */
+  robotId: string;
+};
+
+/**
+ * Describes the message robot.v1.AcknowledgeRobot.
+ * Use `create(AcknowledgeRobotSchema)` to create a new message.
+ */
+export const AcknowledgeRobotSchema: GenMessage<AcknowledgeRobot> = /*@__PURE__*/
+  messageDesc(file_robot_v1_program_state_request, 1);
 

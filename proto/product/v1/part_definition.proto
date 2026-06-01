@@ -2,7 +2,6 @@ syntax = "proto3";
 package product.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "common/v1/key_value_constraint.proto";
 import "common/v1/time.proto";
@@ -120,7 +119,6 @@ message PartDefinition {
   PartHandlingProfile handling = 11;
   PartProcessProfile process = 12;
   repeated common.v1.ExternalReference external_references = 13;
-  common.v1.CustomProperties custom = 14;
   string version = 15;
 }
 

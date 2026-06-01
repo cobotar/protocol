@@ -36,7 +36,6 @@ type ToolInstance struct {
 	Status                v1.ResourceStatus      `protobuf:"varint,7,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
 	Calibrated            bool                   `protobuf:"varint,8,opt,name=calibrated,proto3" json:"calibrated,omitempty"`
 	CalibrationValidUntil *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=calibration_valid_until,json=calibrationValidUntil,proto3" json:"calibration_valid_until,omitempty"`
-	Custom                *v1.CustomProperties   `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -134,13 +133,6 @@ func (x *ToolInstance) GetCalibrationValidUntil() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *ToolInstance) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type ToolInstances struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ToolInstance        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -189,7 +181,7 @@ var File_resources_v1_tool_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_tool_instance_proto_rawDesc = "" +
 	"\n" +
-	" resources/v1/tool_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc5\x03\n" +
+	" resources/v1/tool_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/enums.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x90\x03\n" +
 	"\fToolInstance\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -201,9 +193,7 @@ const file_resources_v1_tool_instance_proto_rawDesc = "" +
 	"\n" +
 	"calibrated\x18\b \x01(\bR\n" +
 	"calibrated\x12R\n" +
-	"\x17calibration_valid_until\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\x123\n" +
-	"\x06custom\x18\n" +
-	" \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"A\n" +
+	"\x17calibration_valid_until\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\"A\n" +
 	"\rToolInstances\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.resources.v1.ToolInstanceR\x05itemsB\xbe\x01\n" +
 	"\x10com.resources.v1B\x11ToolInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
@@ -226,18 +216,16 @@ var file_resources_v1_tool_instance_proto_goTypes = []any{
 	(*ToolInstances)(nil),         // 1: resources.v1.ToolInstances
 	(v1.ResourceStatus)(0),        // 2: common.v1.ResourceStatus
 	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
-	(*v1.CustomProperties)(nil),   // 4: common.v1.CustomProperties
 }
 var file_resources_v1_tool_instance_proto_depIdxs = []int32{
 	2, // 0: resources.v1.ToolInstance.status:type_name -> common.v1.ResourceStatus
 	3, // 1: resources.v1.ToolInstance.calibration_valid_until:type_name -> google.protobuf.Timestamp
-	4, // 2: resources.v1.ToolInstance.custom:type_name -> common.v1.CustomProperties
-	0, // 3: resources.v1.ToolInstances.items:type_name -> resources.v1.ToolInstance
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 2: resources.v1.ToolInstances.items:type_name -> resources.v1.ToolInstance
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_tool_instance_proto_init() }

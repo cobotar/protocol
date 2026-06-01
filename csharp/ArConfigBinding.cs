@@ -27,38 +27,32 @@ namespace Messages.AR.V1 {
             "Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEaG2J1Zi92",
             "YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnBy",
             "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvImAKDFJvYm90TWFwcGluZxIkCghyb2JvdF9pZBgBIAEoCUIJukgGcgSg",
-            "8QQBUgdyb2JvdElkEioKC3Byb3BlcnR5X2lkGAIgASgJQgm6SAZyBJjxBAFS",
-            "CnByb3BlcnR5SWQiYAoMQXNzZXRNYXBwaW5nEiQKCGFzc2V0X2lkGAEgASgJ",
-            "Qgm6SAZyBLDxBAFSB2Fzc2V0SWQSKgoLcHJvcGVydHlfaWQYAiABKAlCCbpI",
-            "BnIEmPEEAVIKcHJvcGVydHlJZCLUAQoRQVJSZXNvdXJjZUJpbmRpbmcSIgoH",
-            "c2xvdF9pZBgBIAEoCUIJukgGcgT46zABUgZzbG90SWQSNQoRcm9ib3RfaW5z",
-            "dGFuY2VfaWQYAiABKAlCCbpIBnIEqPEEAVIPcm9ib3RJbnN0YW5jZUlkEjUK",
-            "EWFzc2V0X2luc3RhbmNlX2lkGAMgASgJQgm6SAZyBLjxBAFSD2Fzc2V0SW5z",
-            "dGFuY2VJZDotukgqIigKEXJvYm90X2luc3RhbmNlX2lkChFhc3NldF9pbnN0",
-            "YW5jZV9pZBABIpIEChZBUkNvbmZpZ0JpbmRpbmdNZXNzYWdlEhkKAmlkGAEg",
-            "ASgJQgm6SAZyBOjrMAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
-            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
-            "UgtkZXNjcmlwdGlvbhIoCgpzdGF0aW9uX2lkGAUgASgJQgm6SAZyBPjxBAFS",
-            "CXN0YXRpb25JZBIiCgdjZWxsX2lkGAYgASgJQgm6SAZyBLjyBAFSBmNlbGxJ",
-            "ZBIuCgxhcl9jb25maWdfaWQYByABKAlCDLpICXIEkPEEAcgBAVIKYXJDb25m",
-            "aWdJZBIaCghkaXNhYmxlZBgIIAEoCFIIZGlzYWJsZWQSHgoKc3RhbmRhbG9u",
-            "ZRgJIAEoCFIKc3RhbmRhbG9uZRIaCghwcmlvcml0eRgKIAEoBVIIcHJpb3Jp",
-            "dHkSRQoRcmVzb3VyY2VfYmluZGluZ3MYCyADKAsyGC5hci52MS5BUlJlc291",
-            "cmNlQmluZGluZ1IQcmVzb3VyY2VCaW5kaW5ncxJNChJwcm9wZXJ0eV9vdmVy",
-            "cmlkZXMYDCADKAsyHi5jb21tb24udjEuUHJvcGVydHlWYWx1ZVVwZGF0ZVIR",
-            "cHJvcGVydHlPdmVycmlkZXM6HLpIGSIXCgpzdGF0aW9uX2lkCgdjZWxsX2lk",
-            "EAEiVAoXQVJDb25maWdCaW5kaW5nTWVzc2FnZXMSOQoIYmluZGluZ3MYASAD",
-            "KAsyHS5hci52MS5BUkNvbmZpZ0JpbmRpbmdNZXNzYWdlUghiaW5kaW5nc0KQ",
-            "AQoJY29tLmFyLnYxQhRBckNvbmZpZ0JpbmRpbmdQcm90b1ABWi9naXRodWIu",
-            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FY",
-            "WKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0",
-            "YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "b3RvItQBChFBUlJlc291cmNlQmluZGluZxIiCgdzbG90X2lkGAEgASgJQgm6",
+            "SAZyBPjrMAFSBnNsb3RJZBI1ChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJ",
+            "ukgGcgSo8QQBUg9yb2JvdEluc3RhbmNlSWQSNQoRYXNzZXRfaW5zdGFuY2Vf",
+            "aWQYAyABKAlCCbpIBnIEuPEEAVIPYXNzZXRJbnN0YW5jZUlkOi26SCoiKAoR",
+            "cm9ib3RfaW5zdGFuY2VfaWQKEWFzc2V0X2luc3RhbmNlX2lkEAEilQQKFkFS",
+            "Q29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE6OswAVIC",
+            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
+            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEigK",
+            "CnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEAVIJc3RhdGlvbklkEiIKB2Nl",
+            "bGxfaWQYBiABKAlCCbpIBnIEuPIEAVIGY2VsbElkEi4KDGFyX2NvbmZpZ19p",
+            "ZBgHIAEoCUIMukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVk",
+            "GAggASgIUghkaXNhYmxlZBIeCgpzdGFuZGFsb25lGAkgASgIUgpzdGFuZGFs",
+            "b25lEhoKCHByaW9yaXR5GAogASgFUghwcmlvcml0eRJFChFyZXNvdXJjZV9i",
+            "aW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVzb3VyY2VCaW5kaW5nUhByZXNv",
+            "dXJjZUJpbmRpbmdzElAKEnByb3BlcnR5X292ZXJyaWRlcxgMIAMoCzIhLmNv",
+            "bW1vbi52MS5Qcm9wZXJ0eUluc3RhbmNlVXBkYXRlUhFwcm9wZXJ0eU92ZXJy",
+            "aWRlczocukgZIhcKCnN0YXRpb25faWQKB2NlbGxfaWQQASJUChdBUkNvbmZp",
+            "Z0JpbmRpbmdNZXNzYWdlcxI5CghiaW5kaW5ncxgBIAMoCzIdLmFyLnYxLkFS",
+            "Q29uZmlnQmluZGluZ01lc3NhZ2VSCGJpbmRpbmdzQpABCgljb20uYXIudjFC",
+            "FEFyQ29uZmlnQmluZGluZ1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9w",
+            "cm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMu",
+            "QVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.RobotMapping), global::Messages.AR.V1.RobotMapping.Parser, new[]{ "RobotId", "PropertyId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssetMapping), global::Messages.AR.V1.AssetMapping.Parser, new[]{ "AssetId", "PropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessage), global::Messages.AR.V1.ARConfigBindingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "StationId", "CellId", "ArConfigId", "Disabled", "Standalone", "Priority", "ResourceBindings", "PropertyOverrides" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessages), global::Messages.AR.V1.ARConfigBindingMessages.Parser, new[]{ "Bindings" }, null, null, null, null)
@@ -68,488 +62,6 @@ namespace Messages.AR.V1 {
 
   }
   #region Messages
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class RobotMapping : pb::IMessage<RobotMapping>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<RobotMapping> _parser = new pb::MessageParser<RobotMapping>(() => new RobotMapping());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<RobotMapping> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[0]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotMapping() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotMapping(RobotMapping other) : this() {
-      robotId_ = other.robotId_;
-      propertyId_ = other.propertyId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotMapping Clone() {
-      return new RobotMapping(this);
-    }
-
-    /// <summary>Field number for the "robot_id" field.</summary>
-    public const int RobotIdFieldNumber = 1;
-    private string robotId_ = "";
-    /// <summary>
-    /// Legacy robot definition identifier.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RobotId {
-      get { return robotId_; }
-      set {
-        robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "property_id" field.</summary>
-    public const int PropertyIdFieldNumber = 2;
-    private string propertyId_ = "";
-    /// <summary>
-    /// Legacy target property for the mapped robot.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PropertyId {
-      get { return propertyId_; }
-      set {
-        propertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as RobotMapping);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RobotMapping other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (RobotId != other.RobotId) return false;
-      if (PropertyId != other.PropertyId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
-      if (PropertyId.Length != 0) hash ^= PropertyId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (RobotId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RobotId);
-      }
-      if (PropertyId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PropertyId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RobotId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RobotId);
-      }
-      if (PropertyId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PropertyId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (RobotId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
-      }
-      if (PropertyId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RobotMapping other) {
-      if (other == null) {
-        return;
-      }
-      if (other.RobotId.Length != 0) {
-        RobotId = other.RobotId;
-      }
-      if (other.PropertyId.Length != 0) {
-        PropertyId = other.PropertyId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            RobotId = input.ReadString();
-            break;
-          }
-          case 18: {
-            PropertyId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            RobotId = input.ReadString();
-            break;
-          }
-          case 18: {
-            PropertyId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class AssetMapping : pb::IMessage<AssetMapping>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<AssetMapping> _parser = new pb::MessageParser<AssetMapping>(() => new AssetMapping());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<AssetMapping> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AssetMapping() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AssetMapping(AssetMapping other) : this() {
-      assetId_ = other.assetId_;
-      propertyId_ = other.propertyId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AssetMapping Clone() {
-      return new AssetMapping(this);
-    }
-
-    /// <summary>Field number for the "asset_id" field.</summary>
-    public const int AssetIdFieldNumber = 1;
-    private string assetId_ = "";
-    /// <summary>
-    /// Legacy asset definition identifier.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AssetId {
-      get { return assetId_; }
-      set {
-        assetId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "property_id" field.</summary>
-    public const int PropertyIdFieldNumber = 2;
-    private string propertyId_ = "";
-    /// <summary>
-    /// Legacy target property for the mapped asset.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PropertyId {
-      get { return propertyId_; }
-      set {
-        propertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as AssetMapping);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(AssetMapping other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (AssetId != other.AssetId) return false;
-      if (PropertyId != other.PropertyId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (AssetId.Length != 0) hash ^= AssetId.GetHashCode();
-      if (PropertyId.Length != 0) hash ^= PropertyId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (AssetId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(AssetId);
-      }
-      if (PropertyId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PropertyId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AssetId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(AssetId);
-      }
-      if (PropertyId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PropertyId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (AssetId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetId);
-      }
-      if (PropertyId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(AssetMapping other) {
-      if (other == null) {
-        return;
-      }
-      if (other.AssetId.Length != 0) {
-        AssetId = other.AssetId;
-      }
-      if (other.PropertyId.Length != 0) {
-        PropertyId = other.PropertyId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            AssetId = input.ReadString();
-            break;
-          }
-          case 18: {
-            PropertyId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            AssetId = input.ReadString();
-            break;
-          }
-          case 18: {
-            PropertyId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
   /// <summary>
   /// ARResourceBinding binds a config-declared slot to a concrete resource
   /// instance owned by the target station or cell.
@@ -569,7 +81,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -864,7 +376,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1062,15 +574,15 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "property_overrides" field.</summary>
     public const int PropertyOverridesFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.PropertyValueUpdate> _repeated_propertyOverrides_codec
-        = pb::FieldCodec.ForMessage(98, global::Messages.Common.V1.PropertyValueUpdate.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.PropertyValueUpdate> propertyOverrides_ = new pbc::RepeatedField<global::Messages.Common.V1.PropertyValueUpdate>();
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.PropertyInstanceUpdate> _repeated_propertyOverrides_codec
+        = pb::FieldCodec.ForMessage(98, global::Messages.Common.V1.PropertyInstanceUpdate.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.PropertyInstanceUpdate> propertyOverrides_ = new pbc::RepeatedField<global::Messages.Common.V1.PropertyInstanceUpdate>();
     /// <summary>
     /// Station/cell-local values applied to config properties before runtime values.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.PropertyValueUpdate> PropertyOverrides {
+    public pbc::RepeatedField<global::Messages.Common.V1.PropertyInstanceUpdate> PropertyOverrides {
       get { return propertyOverrides_; }
     }
 
@@ -1474,7 +986,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

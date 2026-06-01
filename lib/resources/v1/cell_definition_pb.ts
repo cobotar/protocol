@@ -5,8 +5,6 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { LocalizedPose } from "../../geometry/v1/pose_pb.ts";
 import { file_geometry_v1_pose } from "../../geometry/v1/pose_pb.ts";
 import type { AssetPlacement, MarkerPlacement, RobotPlacement, ToolPlacement } from "./placement_pb.ts";
@@ -18,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/cell_definition.proto.
  */
 export const file_resources_v1_cell_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEi+gMKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjIKBnN0YXR1cxgFIAEoDjIYLnJlc291cmNlcy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYBiABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYByABKAgSEwoLc3RhdGlvbl9pZHMYCCADKAkSKgoFdG9vbHMYCSADKAsyGy5yZXNvdXJjZXMudjEuVG9vbFBsYWNlbWVudBIsCgZyb2JvdHMYCiADKAsyHC5yZXNvdXJjZXMudjEuUm9ib3RQbGFjZW1lbnQSLAoGYXNzZXRzGAsgAygLMhwucmVzb3VyY2VzLnYxLkFzc2V0UGxhY2VtZW50Ei4KB21hcmtlcnMYDCADKAsyHS5yZXNvdXJjZXMudjEuTWFya2VyUGxhY2VtZW50EikKBWZyYW1lGA0gASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZRIrCgZjdXN0b20YDiABKAsyGy5jb21tb24udjEuQ3VzdG9tUHJvcGVydGllcyI+Cg9DZWxsRGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5yZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb24qhgEKCkNlbGxTdGF0dXMSGwoXQ0VMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIUChBDRUxMX1NUQVRVU19PUEVOEAESFAoQQ0VMTF9TVEFUVVNfQlVTWRACEhYKEkNFTExfU1RBVFVTX0NMT1NFRBADEhcKE0NFTExfU1RBVFVTX0JMT0NLRUQQBELAAQoQY29tLnJlc291cmNlcy52MUITQ2VsbERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_geometry_v1_pose, file_resources_v1_placement, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJjZXMudjEizQMKDkNlbGxEZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEjIKBnN0YXR1cxgFIAEoDjIYLnJlc291cmNlcy52MS5DZWxsU3RhdHVzQgi6SAWCAQIQARIpChhtYXhfY29uY3VycmVudF9wcm9jZXNzZXMYBiABKAVCB7pIBBoCKAASHAoUYWxsb3dfcXVldWVkX3Byb2Nlc3MYByABKAgSEwoLc3RhdGlvbl9pZHMYCCADKAkSKgoFdG9vbHMYCSADKAsyGy5yZXNvdXJjZXMudjEuVG9vbFBsYWNlbWVudBIsCgZyb2JvdHMYCiADKAsyHC5yZXNvdXJjZXMudjEuUm9ib3RQbGFjZW1lbnQSLAoGYXNzZXRzGAsgAygLMhwucmVzb3VyY2VzLnYxLkFzc2V0UGxhY2VtZW50Ei4KB21hcmtlcnMYDCADKAsyHS5yZXNvdXJjZXMudjEuTWFya2VyUGxhY2VtZW50EikKBWZyYW1lGA0gASgLMhouZ2VvbWV0cnkudjEuTG9jYWxpemVkUG9zZSI+Cg9DZWxsRGVmaW5pdGlvbnMSKwoFaXRlbXMYASADKAsyHC5yZXNvdXJjZXMudjEuQ2VsbERlZmluaXRpb24qhgEKCkNlbGxTdGF0dXMSGwoXQ0VMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIUChBDRUxMX1NUQVRVU19PUEVOEAESFAoQQ0VMTF9TVEFUVVNfQlVTWRACEhYKEkNFTExfU1RBVFVTX0NMT1NFRBADEhcKE0NFTExfU1RBVFVTX0JMT0NLRUQQBELAAQoQY29tLnJlc291cmNlcy52MUITQ2VsbERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_pose, file_resources_v1_placement, file_validation_v1_predefined_string_rules]);
 
 /**
  * CellDefinition describes an operational grouping of stations and shared
@@ -127,11 +125,6 @@ export type CellDefinition = Message<"resources.v1.CellDefinition"> & {
    * @generated from field: geometry.v1.LocalizedPose frame = 13;
    */
   frame?: LocalizedPose;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 14;
-   */
-  custom?: CustomProperties;
 };
 
 /**

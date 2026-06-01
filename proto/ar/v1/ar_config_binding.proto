@@ -8,16 +8,6 @@ import "validation/v1/predefined_string_rules.proto";
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-message RobotMapping {
-  string robot_id = 1 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true]; // Legacy robot definition identifier.
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true]; // Legacy target property for the mapped robot.
-}
-
-message AssetMapping {
-  string asset_id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true]; // Legacy asset definition identifier.
-  string property_id = 2 [(buf.validate.field).string.(validation.v1.property_id_component) = true]; // Legacy target property for the mapped asset.
-}
-
 // ARResourceBinding binds a config-declared slot to a concrete resource
 // instance owned by the target station or cell.
 message ARResourceBinding {
@@ -69,7 +59,7 @@ message ARConfigBindingMessage {
   bool standalone = 9; // If true, only standalone bindings with the highest priority should be shown.
   int32 priority = 10; // Higher values should be resolved before lower values.
   repeated ARResourceBinding resource_bindings = 11; // Concrete resource assignments for config-declared slots.
-  repeated common.v1.PropertyValueUpdate property_overrides = 12; // Station/cell-local values applied to config properties before runtime values.
+  repeated common.v1.PropertyInstanceUpdate property_overrides = 12; // Station/cell-local values applied to config properties before runtime values.
 }
 
 message ARConfigBindingMessages {

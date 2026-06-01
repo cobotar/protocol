@@ -2,7 +2,6 @@ syntax = "proto3";
 package ar.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/property.proto";
 import "geometry/v1/anchor.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -53,11 +52,6 @@ message FeedbackMessage {
     (buf.validate.field).enum.defined_only = true
   ];
   VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
-  repeated common.v1.Property properties = 7;
-  /*repeated string property_ids = 6 [
-       (buf.validate.field).repeated.items.string.(.validation.v1.property_id_component) = true,
-       (buf.validate.field).repeated.unique = true
-     ];*/
   string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 

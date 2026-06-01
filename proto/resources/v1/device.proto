@@ -31,7 +31,7 @@ enum DeviceBatteryStatus {
 
 // DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 message DeviceMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.device_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
@@ -39,7 +39,7 @@ message DeviceMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string device_id = 6;
+  string device_uuid = 6;
   DeviceStatus status = 7 [(buf.validate.field).enum.defined_only = true];
   int32 battery_level = 8 [(buf.validate.field).int32 = {
     gte: -1
@@ -55,10 +55,10 @@ message DeviceMessages {
 }
 
 message DeviceHeartbeat {
-  string device_id = 1;
+  string device_uuid = 1;
   int32 battery_level = 2 [(buf.validate.field).int32 = {
     gte: -1
     lte: 100
   }];
-  DeviceBatteryStatus battery_status = 3;
+  DeviceBatteryStatus battery_status = 3 [(buf.validate.field).enum.defined_only = true];
 }

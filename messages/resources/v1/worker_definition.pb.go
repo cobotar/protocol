@@ -151,7 +151,6 @@ type WorkerDefinition struct {
 	ArEditPermission   EditPermission          `protobuf:"varint,7,opt,name=ar_edit_permission,json=arEditPermission,proto3,enum=resources.v1.EditPermission" json:"ar_edit_permission,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Location           *WorkerLocation         `protobuf:"bytes,9,opt,name=location,proto3" json:"location,omitempty"` // Optional current location / operating area.
-	Custom             *v1.CustomProperties    `protobuf:"bytes,10,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -249,13 +248,6 @@ func (x *WorkerDefinition) GetLocation() *WorkerLocation {
 	return nil
 }
 
-func (x *WorkerDefinition) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type WorkerDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*WorkerDefinition    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -304,12 +296,12 @@ var File_resources_v1_worker_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"\n" +
-	"$resources/v1/worker_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n" +
+	"$resources/v1/worker_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n" +
 	"\x0eWorkerLocation\x12\"\n" +
 	"\aline_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n" +
 	"\acell_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12(\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\xc9\x03\n" +
+	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\x94\x03\n" +
 	"\x10WorkerDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -320,9 +312,7 @@ const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"employeeId\x12J\n" +
 	"\x12ar_edit_permission\x18\a \x01(\x0e2\x1c.resources.v1.EditPermissionR\x10arEditPermission\x12M\n" +
 	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x128\n" +
-	"\blocation\x18\t \x01(\v2\x1c.resources.v1.WorkerLocationR\blocation\x123\n" +
-	"\x06custom\x18\n" +
-	" \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"I\n" +
+	"\blocation\x18\t \x01(\v2\x1c.resources.v1.WorkerLocationR\blocation\"I\n" +
 	"\x11WorkerDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n" +
 	"\x0eEditPermission\x12\x1f\n" +
@@ -352,19 +342,17 @@ var file_resources_v1_worker_definition_proto_goTypes = []any{
 	(*WorkerDefinition)(nil),     // 2: resources.v1.WorkerDefinition
 	(*WorkerDefinitions)(nil),    // 3: resources.v1.WorkerDefinitions
 	(*v1.ExternalReference)(nil), // 4: common.v1.ExternalReference
-	(*v1.CustomProperties)(nil),  // 5: common.v1.CustomProperties
 }
 var file_resources_v1_worker_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.WorkerDefinition.ar_edit_permission:type_name -> resources.v1.EditPermission
 	4, // 1: resources.v1.WorkerDefinition.external_references:type_name -> common.v1.ExternalReference
 	1, // 2: resources.v1.WorkerDefinition.location:type_name -> resources.v1.WorkerLocation
-	5, // 3: resources.v1.WorkerDefinition.custom:type_name -> common.v1.CustomProperties
-	2, // 4: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	2, // 3: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_worker_definition_proto_init() }

@@ -3,7 +3,6 @@ from capability.v1 import capability_profile_pb2 as _capability_profile_pb2
 from capability.v1 import skill_definition_pb2 as _skill_definition_pb2
 from capability.v1 import tool_requirement_pb2 as _tool_requirement_pb2
 from common.v1 import actor_pb2 as _actor_pb2
-from common.v1 import custom_properties_pb2 as _custom_properties_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -55,7 +54,7 @@ TOOL_TYPE_ABRASIVE: ToolType
 TOOL_TYPE_CLEANING: ToolType
 
 class ToolDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "actor_kind", "roles", "properties", "capability_profile", "model_id", "external_references", "custom")
+    __slots__ = ("id", "name", "icon", "description", "type", "actor_kind", "roles", "properties", "capability_profile", "model_id", "external_references")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -67,7 +66,6 @@ class ToolDefinition(_message.Message):
     CAPABILITY_PROFILE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
-    CUSTOM_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -79,8 +77,7 @@ class ToolDefinition(_message.Message):
     capability_profile: _capability_profile_pb2.CapabilityProfile
     model_id: str
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
-    custom: _custom_properties_pb2.CustomProperties
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ToolType, str]] = ..., actor_kind: _Optional[_Union[_actor_pb2.ActorKind, str]] = ..., roles: _Optional[_Iterable[_Union[_skill_definition_pb2.ToolRole, str]]] = ..., properties: _Optional[_Iterable[_Union[_tool_requirement_pb2.ToolProperty, str]]] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., model_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., custom: _Optional[_Union[_custom_properties_pb2.CustomProperties, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ToolType, str]] = ..., actor_kind: _Optional[_Union[_actor_pb2.ActorKind, str]] = ..., roles: _Optional[_Iterable[_Union[_skill_definition_pb2.ToolRole, str]]] = ..., properties: _Optional[_Iterable[_Union[_tool_requirement_pb2.ToolProperty, str]]] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., model_id: _Optional[str] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
 
 class ToolDefinitions(_message.Message):
     __slots__ = ("items",)

@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIpgCCg9BUkNvbmZpZ01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKQoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAUgASgDQgq6SAciBUjeAigAEhQKDGZlZWRiYWNrX2lkcxgGIAMoCRISCgphY3Rpb25faWRzGAcgAygJEhIKCmhlbHBlcl9pZHMYCCADKAkSJAoMcHJvcGVydHlfaWRzGAkgAygJQg66SAuSAQgiBnIEmPEEARIuCgtpbnB1dF9zbG90cxgKIAMoCzIZLmFyLnYxLkFSSW5wdXRTbG90TWVzc2FnZSI7ChBBUkNvbmZpZ01lc3NhZ2VzEicKB2NvbmZpZ3MYASADKAsyFi5hci52MS5BUkNvbmZpZ01lc3NhZ2VCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIr8BCg9BUkNvbmZpZ01lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIpChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYBSABKANCCrpIByIFSN4CKAASLgoLaW5wdXRfc2xvdHMYCiADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2UiOQoQQVJDb25maWdNZXNzYWdlcxIlCgVpdGVtcxgBIAMoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZUKJAQoJY29tLmFyLnYxQg1BckNvbmZpZ1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * Just delete this?
@@ -110,34 +110,6 @@ export type ARConfigMessage = Message<"ar.v1.ARConfigMessage"> & {
   arDisappearDistance: bigint;
 
   /**
-   * Feedback entities belonging to this config.
-   *
-   * @generated from field: repeated string feedback_ids = 6;
-   */
-  feedbackIds: string[];
-
-  /**
-   * Action entities belonging to this config.
-   *
-   * @generated from field: repeated string action_ids = 7;
-   */
-  actionIds: string[];
-
-  /**
-   * Helper entities belonging to this config.
-   *
-   * @generated from field: repeated string helper_ids = 8;
-   */
-  helperIds: string[];
-
-  /**
-   * Includes server-managed generated properties for referenced input slots.
-   *
-   * @generated from field: repeated string property_ids = 9;
-   */
-  propertyIds: string[];
-
-  /**
    * Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
    *
    * @generated from field: repeated ar.v1.ARInputSlotMessage input_slots = 10;
@@ -159,9 +131,9 @@ export type ARConfigMessages = Message<"ar.v1.ARConfigMessages"> & {
   /**
    * AR config templates.
    *
-   * @generated from field: repeated ar.v1.ARConfigMessage configs = 1;
+   * @generated from field: repeated ar.v1.ARConfigMessage items = 1;
    */
-  configs: ARConfigMessage[];
+  items: ARConfigMessage[];
 };
 
 /**

@@ -23,12 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"resources/v1/marker_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\x92\x03\n\x0eMarkerInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x0bmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\x0c\x10\x02\x92\x02\x07robertaR\nmarkerText\x12\x39\n\x04type\x18\x06 \x01(\x0e\x32\x18.resources.v1.MarkerTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12/\n\x13\x63onfirm_instantiate\x18\x07 \x01(\x08R\x12\x63onfirmInstantiate\x12;\n\x06status\x18\x08 \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x33\n\x06\x63ustom\x18\t \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"\xb1\x01\n\x0fMarkerInstances\x12\x9d\x01\n\x07markers\x18\x01 \x03(\x0b\x32\x1c.resources.v1.MarkerInstanceBe\xbaHb\xba\x01_\n\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\x07markers*B\n\nMarkerType\x12\x1b\n\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MARKER_TYPE_QR_CODE\x10\x01\x42\xc0\x01\n\x10\x63om.resources.v1B\x13MarkerInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"resources/v1/marker_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdd\x02\n\x0eMarkerInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x0bmarker_text\x18\x05 \x01(\tB\x11\xbaH\x0er\x0c\x10\x02\x92\x02\x07robertaR\nmarkerText\x12\x39\n\x04type\x18\x06 \x01(\x0e\x32\x18.resources.v1.MarkerTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12/\n\x13\x63onfirm_instantiate\x18\x07 \x01(\x08R\x12\x63onfirmInstantiate\x12;\n\x06status\x18\x08 \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\"\xb1\x01\n\x0fMarkerInstances\x12\x9d\x01\n\x07markers\x18\x01 \x03(\x0b\x32\x1c.resources.v1.MarkerInstanceBe\xbaHb\xba\x01_\n\x12unique_marker_text\x12\x1amarker text must be unique\x1a-this.map(marker, marker.marker_text).unique()R\x07markers*B\n\nMarkerType\x12\x1b\n\x17MARKER_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MARKER_TYPE_QR_CODE\x10\x01\x42\xc0\x01\n\x10\x63om.resources.v1B\x13MarkerInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,10 +47,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MARKERINSTANCE'].fields_by_name['status']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_MARKERINSTANCES'].fields_by_name['markers']._loaded_options = None
   _globals['_MARKERINSTANCES'].fields_by_name['markers']._serialized_options = b'\272Hb\272\001_\n\022unique_marker_text\022\032marker text must be unique\032-this.map(marker, marker.marker_text).unique()'
-  _globals['_MARKERTYPE']._serialized_start=769
-  _globals['_MARKERTYPE']._serialized_end=835
-  _globals['_MARKERINSTANCE']._serialized_start=185
-  _globals['_MARKERINSTANCE']._serialized_end=587
-  _globals['_MARKERINSTANCES']._serialized_start=590
-  _globals['_MARKERINSTANCES']._serialized_end=767
+  _globals['_MARKERTYPE']._serialized_start=681
+  _globals['_MARKERTYPE']._serialized_end=747
+  _globals['_MARKERINSTANCE']._serialized_start=150
+  _globals['_MARKERINSTANCE']._serialized_end=499
+  _globals['_MARKERINSTANCES']._serialized_start=502
+  _globals['_MARKERINSTANCES']._serialized_end=679
 # @@protoc_insertion_point(module_scope)

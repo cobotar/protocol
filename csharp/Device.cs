@@ -26,43 +26,44 @@ namespace Messages.Resources.V1 {
           string.Concat(
             "ChlyZXNvdXJjZXMvdjEvZGV2aWNlLnByb3RvEgxyZXNvdXJjZXMudjEaG2J1",
             "Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
-            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLVAwoNRGV2aWNlTWVzc2FnZRIO",
-            "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
-            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
-            "c2NyaXB0aW9uEjkKBHR5cGUYBSABKA4yGC5yZXNvdXJjZXMudjEuRGV2aWNl",
-            "VHlwZUILukgIggECEAHIAQFSBHR5cGUSGwoJZGV2aWNlX2lkGAYgASgJUghk",
-            "ZXZpY2VJZBI8CgZzdGF0dXMYByABKA4yGi5yZXNvdXJjZXMudjEuRGV2aWNl",
-            "U3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEjcKDWJhdHRlcnlfbGV2ZWwYCCAB",
-            "KAVCErpIDxoNGGQo////////////AVIMYmF0dGVyeUxldmVsElIKDmJhdHRl",
-            "cnlfc3RhdHVzGAkgASgOMiEucmVzb3VyY2VzLnYxLkRldmljZUJhdHRlcnlT",
-            "dGF0dXNCCLpIBYIBAhABUg1iYXR0ZXJ5U3RhdHVzEjwKFWVxdWlwcGVkX2J5",
-            "X3dvcmtlcl9pZBgKIAEoCUIJukgGcgTY6zABUhJlcXVpcHBlZEJ5V29ya2Vy",
-            "SWQiRwoORGV2aWNlTWVzc2FnZXMSNQoHZGV2aWNlcxgBIAMoCzIbLnJlc291",
-            "cmNlcy52MS5EZXZpY2VNZXNzYWdlUgdkZXZpY2VzIrEBCg9EZXZpY2VIZWFy",
-            "dGJlYXQSGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2VJZBI3Cg1iYXR0ZXJ5",
-            "X2xldmVsGAIgASgFQhK6SA8aDRhkKP///////////wFSDGJhdHRlcnlMZXZl",
-            "bBJICg5iYXR0ZXJ5X3N0YXR1cxgDIAEoDjIhLnJlc291cmNlcy52MS5EZXZp",
-            "Y2VCYXR0ZXJ5U3RhdHVzUg1iYXR0ZXJ5U3RhdHVzKocBCgpEZXZpY2VUeXBl",
-            "EhsKF0RFVklDRV9UWVBFX1VOU1BFQ0lGSUVEEAASGQoVREVWSUNFX1RZUEVf",
-            "SE9MT0xFTlMyEAESFQoRREVWSUNFX1RZUEVfUEhPTkUQAhIWChJERVZJQ0Vf",
-            "VFlQRV9UQUJMRVQQAxISCg5ERVZJQ0VfVFlQRV9QQxAEKmIKDERldmljZVN0",
-            "YXR1cxIdChlERVZJQ0VfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGAoUREVWSUNF",
-            "X1NUQVRVU19PTkxJTkUQARIZChVERVZJQ0VfU1RBVFVTX09GRkxJTkUQAirP",
-            "AQoTRGV2aWNlQmF0dGVyeVN0YXR1cxIlCiFERVZJQ0VfQkFUVEVSWV9TVEFU",
-            "VVNfVU5TUEVDSUZJRUQQABIiCh5ERVZJQ0VfQkFUVEVSWV9TVEFUVVNfQ0hB",
-            "UkdJTkcQARIlCiFERVZJQ0VfQkFUVEVSWV9TVEFUVVNfRElTQ0hBUkdJTkcQ",
-            "AhImCiJERVZJQ0VfQkFUVEVSWV9TVEFUVVNfTk9UX0NIQVJHSU5HEAMSHgoa",
-            "REVWSUNFX0JBVFRFUllfU1RBVFVTX0ZVTEwQBEK4AQoQY29tLnJlc291cmNl",
-            "cy52MUILRGV2aWNlUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
-            "Y29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoC",
-            "FU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291",
-            "cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
+            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLkAwoNRGV2aWNlTWVzc2FnZRIZ",
+            "CgJpZBgBIAEoCUIJukgGcgSg7DABUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZy",
+            "BIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlv",
+            "bhgEIAEoCVILZGVzY3JpcHRpb24SOQoEdHlwZRgFIAEoDjIYLnJlc291cmNl",
+            "cy52MS5EZXZpY2VUeXBlQgu6SAiCAQIQAcgBAVIEdHlwZRIfCgtkZXZpY2Vf",
+            "dXVpZBgGIAEoCVIKZGV2aWNlVXVpZBI8CgZzdGF0dXMYByABKA4yGi5yZXNv",
+            "dXJjZXMudjEuRGV2aWNlU3RhdHVzQgi6SAWCAQIQAVIGc3RhdHVzEjcKDWJh",
+            "dHRlcnlfbGV2ZWwYCCABKAVCErpIDxoNGGQo////////////AVIMYmF0dGVy",
+            "eUxldmVsElIKDmJhdHRlcnlfc3RhdHVzGAkgASgOMiEucmVzb3VyY2VzLnYx",
+            "LkRldmljZUJhdHRlcnlTdGF0dXNCCLpIBYIBAhABUg1iYXR0ZXJ5U3RhdHVz",
+            "EjwKFWVxdWlwcGVkX2J5X3dvcmtlcl9pZBgKIAEoCUIJukgGcgTY6zABUhJl",
+            "cXVpcHBlZEJ5V29ya2VySWQiRwoORGV2aWNlTWVzc2FnZXMSNQoHZGV2aWNl",
+            "cxgBIAMoCzIbLnJlc291cmNlcy52MS5EZXZpY2VNZXNzYWdlUgdkZXZpY2Vz",
+            "Ir8BCg9EZXZpY2VIZWFydGJlYXQSHwoLZGV2aWNlX3V1aWQYASABKAlSCmRl",
+            "dmljZVV1aWQSNwoNYmF0dGVyeV9sZXZlbBgCIAEoBUISukgPGg0YZCj/////",
+            "//////8BUgxiYXR0ZXJ5TGV2ZWwSUgoOYmF0dGVyeV9zdGF0dXMYAyABKA4y",
+            "IS5yZXNvdXJjZXMudjEuRGV2aWNlQmF0dGVyeVN0YXR1c0IIukgFggECEAFS",
+            "DWJhdHRlcnlTdGF0dXMqhwEKCkRldmljZVR5cGUSGwoXREVWSUNFX1RZUEVf",
+            "VU5TUEVDSUZJRUQQABIZChVERVZJQ0VfVFlQRV9IT0xPTEVOUzIQARIVChFE",
+            "RVZJQ0VfVFlQRV9QSE9ORRACEhYKEkRFVklDRV9UWVBFX1RBQkxFVBADEhIK",
+            "DkRFVklDRV9UWVBFX1BDEAQqYgoMRGV2aWNlU3RhdHVzEh0KGURFVklDRV9T",
+            "VEFUVVNfVU5TUEVDSUZJRUQQABIYChRERVZJQ0VfU1RBVFVTX09OTElORRAB",
+            "EhkKFURFVklDRV9TVEFUVVNfT0ZGTElORRACKs8BChNEZXZpY2VCYXR0ZXJ5",
+            "U3RhdHVzEiUKIURFVklDRV9CQVRURVJZX1NUQVRVU19VTlNQRUNJRklFRBAA",
+            "EiIKHkRFVklDRV9CQVRURVJZX1NUQVRVU19DSEFSR0lORxABEiUKIURFVklD",
+            "RV9CQVRURVJZX1NUQVRVU19ESVNDSEFSR0lORxACEiYKIkRFVklDRV9CQVRU",
+            "RVJZX1NUQVRVU19OT1RfQ0hBUkdJTkcQAxIeChpERVZJQ0VfQkFUVEVSWV9T",
+            "VEFUVVNfRlVMTBAEQrgBChBjb20ucmVzb3VyY2VzLnYxQgtEZXZpY2VQcm90",
+            "b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVz",
+            "b3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3Vy",
+            "Y2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFk",
+            "YXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.DeviceType), typeof(global::Messages.Resources.V1.DeviceStatus), typeof(global::Messages.Resources.V1.DeviceBatteryStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DeviceMessage), global::Messages.Resources.V1.DeviceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DeviceId", "Status", "BatteryLevel", "BatteryStatus", "EquippedByWorkerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DeviceMessage), global::Messages.Resources.V1.DeviceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DeviceUuid", "Status", "BatteryLevel", "BatteryStatus", "EquippedByWorkerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DeviceMessages), global::Messages.Resources.V1.DeviceMessages.Parser, new[]{ "Devices" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DeviceHeartbeat), global::Messages.Resources.V1.DeviceHeartbeat.Parser, new[]{ "DeviceId", "BatteryLevel", "BatteryStatus" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DeviceHeartbeat), global::Messages.Resources.V1.DeviceHeartbeat.Parser, new[]{ "DeviceUuid", "BatteryLevel", "BatteryStatus" }, null, null, null, null)
           }));
     }
     #endregion
@@ -152,7 +153,7 @@ namespace Messages.Resources.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
-      deviceId_ = other.deviceId_;
+      deviceUuid_ = other.deviceUuid_;
       status_ = other.status_;
       batteryLevel_ = other.batteryLevel_;
       batteryStatus_ = other.batteryStatus_;
@@ -226,15 +227,15 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "device_id" field.</summary>
-    public const int DeviceIdFieldNumber = 6;
-    private string deviceId_ = "";
+    /// <summary>Field number for the "device_uuid" field.</summary>
+    public const int DeviceUuidFieldNumber = 6;
+    private string deviceUuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DeviceId {
-      get { return deviceId_; }
+    public string DeviceUuid {
+      get { return deviceUuid_; }
       set {
-        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        deviceUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -306,7 +307,7 @@ namespace Messages.Resources.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
-      if (DeviceId != other.DeviceId) return false;
+      if (DeviceUuid != other.DeviceUuid) return false;
       if (Status != other.Status) return false;
       if (BatteryLevel != other.BatteryLevel) return false;
       if (BatteryStatus != other.BatteryStatus) return false;
@@ -323,7 +324,7 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Resources.V1.DeviceType.Unspecified) hash ^= Type.GetHashCode();
-      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
+      if (DeviceUuid.Length != 0) hash ^= DeviceUuid.GetHashCode();
       if (Status != global::Messages.Resources.V1.DeviceStatus.Unspecified) hash ^= Status.GetHashCode();
       if (BatteryLevel != 0) hash ^= BatteryLevel.GetHashCode();
       if (BatteryStatus != global::Messages.Resources.V1.DeviceBatteryStatus.Unspecified) hash ^= BatteryStatus.GetHashCode();
@@ -366,9 +367,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DeviceId.Length != 0) {
+      if (DeviceUuid.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(DeviceId);
+        output.WriteString(DeviceUuid);
       }
       if (Status != global::Messages.Resources.V1.DeviceStatus.Unspecified) {
         output.WriteRawTag(56);
@@ -416,9 +417,9 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DeviceId.Length != 0) {
+      if (DeviceUuid.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(DeviceId);
+        output.WriteString(DeviceUuid);
       }
       if (Status != global::Messages.Resources.V1.DeviceStatus.Unspecified) {
         output.WriteRawTag(56);
@@ -461,8 +462,8 @@ namespace Messages.Resources.V1 {
       if (Type != global::Messages.Resources.V1.DeviceType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (DeviceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
+      if (DeviceUuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUuid);
       }
       if (Status != global::Messages.Resources.V1.DeviceStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
@@ -503,8 +504,8 @@ namespace Messages.Resources.V1 {
       if (other.Type != global::Messages.Resources.V1.DeviceType.Unspecified) {
         Type = other.Type;
       }
-      if (other.DeviceId.Length != 0) {
-        DeviceId = other.DeviceId;
+      if (other.DeviceUuid.Length != 0) {
+        DeviceUuid = other.DeviceUuid;
       }
       if (other.Status != global::Messages.Resources.V1.DeviceStatus.Unspecified) {
         Status = other.Status;
@@ -558,7 +559,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 50: {
-            DeviceId = input.ReadString();
+            DeviceUuid = input.ReadString();
             break;
           }
           case 56: {
@@ -617,7 +618,7 @@ namespace Messages.Resources.V1 {
             break;
           }
           case 50: {
-            DeviceId = input.ReadString();
+            DeviceUuid = input.ReadString();
             break;
           }
           case 56: {
@@ -865,7 +866,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceHeartbeat(DeviceHeartbeat other) : this() {
-      deviceId_ = other.deviceId_;
+      deviceUuid_ = other.deviceUuid_;
       batteryLevel_ = other.batteryLevel_;
       batteryStatus_ = other.batteryStatus_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -877,15 +878,15 @@ namespace Messages.Resources.V1 {
       return new DeviceHeartbeat(this);
     }
 
-    /// <summary>Field number for the "device_id" field.</summary>
-    public const int DeviceIdFieldNumber = 1;
-    private string deviceId_ = "";
+    /// <summary>Field number for the "device_uuid" field.</summary>
+    public const int DeviceUuidFieldNumber = 1;
+    private string deviceUuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DeviceId {
-      get { return deviceId_; }
+    public string DeviceUuid {
+      get { return deviceUuid_; }
       set {
-        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        deviceUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -928,7 +929,7 @@ namespace Messages.Resources.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DeviceId != other.DeviceId) return false;
+      if (DeviceUuid != other.DeviceUuid) return false;
       if (BatteryLevel != other.BatteryLevel) return false;
       if (BatteryStatus != other.BatteryStatus) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -938,7 +939,7 @@ namespace Messages.Resources.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
+      if (DeviceUuid.Length != 0) hash ^= DeviceUuid.GetHashCode();
       if (BatteryLevel != 0) hash ^= BatteryLevel.GetHashCode();
       if (BatteryStatus != global::Messages.Resources.V1.DeviceBatteryStatus.Unspecified) hash ^= BatteryStatus.GetHashCode();
       if (_unknownFields != null) {
@@ -959,9 +960,9 @@ namespace Messages.Resources.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DeviceId.Length != 0) {
+      if (DeviceUuid.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(DeviceId);
+        output.WriteString(DeviceUuid);
       }
       if (BatteryLevel != 0) {
         output.WriteRawTag(16);
@@ -981,9 +982,9 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DeviceId.Length != 0) {
+      if (DeviceUuid.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(DeviceId);
+        output.WriteString(DeviceUuid);
       }
       if (BatteryLevel != 0) {
         output.WriteRawTag(16);
@@ -1003,8 +1004,8 @@ namespace Messages.Resources.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DeviceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
+      if (DeviceUuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUuid);
       }
       if (BatteryLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(BatteryLevel);
@@ -1024,8 +1025,8 @@ namespace Messages.Resources.V1 {
       if (other == null) {
         return;
       }
-      if (other.DeviceId.Length != 0) {
-        DeviceId = other.DeviceId;
+      if (other.DeviceUuid.Length != 0) {
+        DeviceUuid = other.DeviceUuid;
       }
       if (other.BatteryLevel != 0) {
         BatteryLevel = other.BatteryLevel;
@@ -1053,7 +1054,7 @@ namespace Messages.Resources.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            DeviceId = input.ReadString();
+            DeviceUuid = input.ReadString();
             break;
           }
           case 16: {
@@ -1084,7 +1085,7 @@ namespace Messages.Resources.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            DeviceId = input.ReadString();
+            DeviceUuid = input.ReadString();
             break;
           }
           case 16: {

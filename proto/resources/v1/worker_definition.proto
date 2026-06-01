@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -37,8 +36,6 @@ message WorkerDefinition {
   repeated common.v1.ExternalReference external_references = 8;
 
   WorkerLocation location = 9; // Optional current location / operating area.
-
-  common.v1.CustomProperties custom = 10;
 
   // TODO: add height, arms_length, ?? other physical properties that can be used to adjust robot-behavior, visualizations, ...
 }

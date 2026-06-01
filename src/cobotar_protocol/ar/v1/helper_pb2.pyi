@@ -1,5 +1,4 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import property_pb2 as _property_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -28,20 +27,18 @@ HELPER_TYPE_OR: HelperType
 HELPER_TYPE_NOT: HelperType
 
 class HelperMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "properties")
+    __slots__ = ("id", "name", "icon", "description", "type")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: HelperType
-    properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.Property]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[HelperType, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.Property, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[HelperType, str]] = ...) -> None: ...
 
 class HelperMessages(_message.Message):
     __slots__ = ("helpers",)

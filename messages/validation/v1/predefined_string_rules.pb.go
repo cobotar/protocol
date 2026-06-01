@@ -50,8 +50,16 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		ExtendedType:  (*validate.StringRules)(nil),
 		ExtensionType: (*bool)(nil),
 		Field:         10003,
-		Name:          "validation.v1.property_id_component",
-		Tag:           "varint,10003,opt,name=property_id_component",
+		Name:          "validation.v1.property_definition_id_component",
+		Tag:           "varint,10003,opt,name=property_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10035,
+		Name:          "validation.v1.property_instance_id_component",
+		Tag:           "varint,10035,opt,name=property_instance_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
 	{
@@ -302,6 +310,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100034,opt,name=image_asset_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100036,
+		Name:          "validation.v1.device_id_component",
+		Tag:           "varint,100036,opt,name=device_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -312,70 +328,74 @@ var (
 	E_ModelIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[1]
 	// optional bool ar_config_id_component = 10002;
 	E_ArConfigIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[2]
-	// optional bool property_id_component = 10003;
-	E_PropertyIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[3]
+	// optional bool property_definition_id_component = 10003;
+	E_PropertyDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[3]
+	// optional bool property_instance_id_component = 10035;
+	E_PropertyInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[4]
 	// optional bool robot_definition_id_component = 10004;
-	E_RobotDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[4]
+	E_RobotDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[5]
 	// optional bool robot_instance_id_component = 10005;
-	E_RobotInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[5]
+	E_RobotInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[6]
 	// optional bool asset_definition_id_component = 10006;
-	E_AssetDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[6]
+	E_AssetDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[7]
 	// optional bool asset_instance_id_component = 10007;
-	E_AssetInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[7]
+	E_AssetInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[8]
 	// optional bool environment_id_component = 10008;
-	E_EnvironmentIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[8]
+	E_EnvironmentIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
 	// optional bool part_definition_id_component = 10009;
-	E_PartDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[9]
+	E_PartDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[10]
 	// optional bool part_instance_id_component = 10010;
-	E_PartInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[10]
+	E_PartInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
 	// optional bool tool_definition_id_component = 10011;
-	E_ToolDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[11]
+	E_ToolDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[12]
 	// optional bool tool_instance_id_component = 10012;
-	E_ToolInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[12]
+	E_ToolInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[13]
 	// optional bool marker_id_component = 10013;
-	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[13]
+	E_MarkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[14]
 	// optional bool fixture_id_component = 10014;
-	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[14]
+	E_FixtureIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[15]
 	// optional bool station_id_component = 10015;
-	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[15]
+	E_StationIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[16]
 	// optional bool skill_id_component = 10016;
-	E_SkillIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[16]
+	E_SkillIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[17]
 	// optional bool process_run_id_component = 10017;
-	E_ProcessRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[17]
+	E_ProcessRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[18]
 	// optional bool sequence_run_id_component = 10018;
-	E_SequenceRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[18]
+	E_SequenceRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[19]
 	// optional bool task_run_id_component = 10019;
-	E_TaskRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[19]
+	E_TaskRunIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[20]
 	// optional bool process_recipe_id_component = 10020;
-	E_ProcessRecipeIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[20]
+	E_ProcessRecipeIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[21]
 	// optional bool sequence_definition_id_component = 10021;
-	E_SequenceDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[21]
+	E_SequenceDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[22]
 	// optional bool task_definition_id_component = 10022;
-	E_TaskDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[22]
+	E_TaskDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[23]
 	// optional bool cell_id_component = 10023;
-	E_CellIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[23]
+	E_CellIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[24]
 	// optional bool line_id_component = 10024;
-	E_LineIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[24]
+	E_LineIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[25]
 	// optional bool container_definition_id_component = 10025;
-	E_ContainerDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[25]
+	E_ContainerDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[26]
 	// optional bool container_instance_id_component = 100026;
-	E_ContainerInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[26]
+	E_ContainerInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[27]
 	// optional bool worker_id_component = 100027;
-	E_WorkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[27]
+	E_WorkerIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[28]
 	// optional bool product_id_component = 100028;
-	E_ProductIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[28]
+	E_ProductIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[29]
 	// optional bool ar_config_binding_id_component = 100029;
-	E_ArConfigBindingIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[29]
+	E_ArConfigBindingIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[30]
 	// optional bool ar_config_instance_id_component = 100030;
-	E_ArConfigInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[30]
+	E_ArConfigInstanceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[31]
 	// optional bool ar_input_slot_id_component = 100031;
-	E_ArInputSlotIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[31]
+	E_ArInputSlotIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[32]
 	// optional bool model_asset_id_component = 100032;
-	E_ModelAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[32]
+	E_ModelAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[33]
 	// optional bool sidecar_asset_id_component = 100033;
-	E_SidecarAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[33]
+	E_SidecarAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[34]
 	// optional bool image_asset_id_component = 100034;
-	E_ImageAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[34]
+	E_ImageAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[35]
+	// optional bool device_id_component = 100036;
+	E_DeviceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[36]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -391,10 +411,13 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a)(this == '' || this.startsWith('model-'))R\x10modelIdComponent:\xcc\x01\n" +
 	"\x16ar_config_id_component\x12\x19.buf.validate.StringRules\x18\x92N \x01(\bB{\xc2Hx\n" +
 	"v\n" +
-	"\x1dstring.ar_config_id_component\x12&this does not seem to be a ARConfig id\x1a-(this == '' || this.startsWith('ar_config-'))R\x13arConfigIdComponent:\xc9\x01\n" +
-	"\x15property_id_component\x12\x19.buf.validate.StringRules\x18\x93N \x01(\bBy\xc2Hv\n" +
-	"t\n" +
-	"\x1cstring.property_id_component\x12&this does not seem to be a property id\x1a,(this == '' || this.startsWith('property-'))R\x13propertyIdComponent:\xf3\x01\n" +
+	"\x1dstring.ar_config_id_component\x12&this does not seem to be a ARConfig id\x1a-(this == '' || this.startsWith('ar_config-'))R\x13arConfigIdComponent:\x82\x02\n" +
+	" property_definition_id_component\x12\x19.buf.validate.StringRules\x18\x93N \x01(\bB\x9c\x01\xc2H\x98\x01\n" +
+	"\x95\x01\n" +
+	"'string.property_definition_id_component\x121this does not seem to be a property definition id\x1a7(this == '' || this.startsWith('property_definition-'))R\x1dpropertyDefinitionIdComponent:\xf8\x01\n" +
+	"\x1eproperty_instance_id_component\x12\x19.buf.validate.StringRules\x18\xb3N \x01(\bB\x96\x01\xc2H\x92\x01\n" +
+	"\x8f\x01\n" +
+	"%string.property_instance_id_component\x12/this does not seem to be a property instance id\x1a5(this == '' || this.startsWith('property_instance-'))R\x1bpropertyInstanceIdComponent:\xf3\x01\n" +
 	"\x1drobot_definition_id_component\x12\x19.buf.validate.StringRules\x18\x94N \x01(\bB\x93\x01\xc2H\x8f\x01\n" +
 	"\x8c\x01\n" +
 	"$string.robot_definition_id_component\x12.this does not seem to be a robot definition id\x1a4(this == '' || this.startsWith('robot_definition-'))R\x1arobotDefinitionIdComponent:\xe9\x01\n" +
@@ -487,7 +510,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"!string.sidecar_asset_id_component\x12+this does not seem to be a sidecar asset id\x1a1(this == '' || this.startsWith('sidecar_asset-'))R\x17sidecarAssetIdComponent:\xd9\x01\n" +
 	"\x18image_asset_id_component\x12\x19.buf.validate.StringRules\x18\u008d\x06 \x01(\bB\x82\x01\xc2H\x7f\n" +
 	"}\n" +
-	"\x1fstring.image_asset_id_component\x12)this does not seem to be a image asset id\x1a/(this == '' || this.startsWith('image_asset-'))R\x15imageAssetIdComponentB\xb5\x01\n" +
+	"\x1fstring.image_asset_id_component\x12)this does not seem to be a image asset id\x1a/(this == '' || this.startsWith('image_asset-'))R\x15imageAssetIdComponent:\xc0\x01\n" +
+	"\x13device_id_component\x12\x19.buf.validate.StringRules\x18č\x06 \x01(\bBs\xc2Hp\n" +
+	"n\n" +
+	"\x1astring.device_id_component\x12$this does not seem to be a device id\x1a*(this == '' || this.startsWith('device-'))R\x11deviceIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -497,42 +523,44 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 0: validation.v1.name_component:extendee -> buf.validate.StringRules
 	0,  // 1: validation.v1.model_id_component:extendee -> buf.validate.StringRules
 	0,  // 2: validation.v1.ar_config_id_component:extendee -> buf.validate.StringRules
-	0,  // 3: validation.v1.property_id_component:extendee -> buf.validate.StringRules
-	0,  // 4: validation.v1.robot_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 5: validation.v1.robot_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 6: validation.v1.asset_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 7: validation.v1.asset_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 8: validation.v1.environment_id_component:extendee -> buf.validate.StringRules
-	0,  // 9: validation.v1.part_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 10: validation.v1.part_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 11: validation.v1.tool_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 12: validation.v1.tool_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 13: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
-	0,  // 14: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
-	0,  // 15: validation.v1.station_id_component:extendee -> buf.validate.StringRules
-	0,  // 16: validation.v1.skill_id_component:extendee -> buf.validate.StringRules
-	0,  // 17: validation.v1.process_run_id_component:extendee -> buf.validate.StringRules
-	0,  // 18: validation.v1.sequence_run_id_component:extendee -> buf.validate.StringRules
-	0,  // 19: validation.v1.task_run_id_component:extendee -> buf.validate.StringRules
-	0,  // 20: validation.v1.process_recipe_id_component:extendee -> buf.validate.StringRules
-	0,  // 21: validation.v1.sequence_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 22: validation.v1.task_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 23: validation.v1.cell_id_component:extendee -> buf.validate.StringRules
-	0,  // 24: validation.v1.line_id_component:extendee -> buf.validate.StringRules
-	0,  // 25: validation.v1.container_definition_id_component:extendee -> buf.validate.StringRules
-	0,  // 26: validation.v1.container_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 27: validation.v1.worker_id_component:extendee -> buf.validate.StringRules
-	0,  // 28: validation.v1.product_id_component:extendee -> buf.validate.StringRules
-	0,  // 29: validation.v1.ar_config_binding_id_component:extendee -> buf.validate.StringRules
-	0,  // 30: validation.v1.ar_config_instance_id_component:extendee -> buf.validate.StringRules
-	0,  // 31: validation.v1.ar_input_slot_id_component:extendee -> buf.validate.StringRules
-	0,  // 32: validation.v1.model_asset_id_component:extendee -> buf.validate.StringRules
-	0,  // 33: validation.v1.sidecar_asset_id_component:extendee -> buf.validate.StringRules
-	0,  // 34: validation.v1.image_asset_id_component:extendee -> buf.validate.StringRules
-	35, // [35:35] is the sub-list for method output_type
-	35, // [35:35] is the sub-list for method input_type
-	35, // [35:35] is the sub-list for extension type_name
-	0,  // [0:35] is the sub-list for extension extendee
+	0,  // 3: validation.v1.property_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 4: validation.v1.property_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 5: validation.v1.robot_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 6: validation.v1.robot_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 7: validation.v1.asset_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 8: validation.v1.asset_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 9: validation.v1.environment_id_component:extendee -> buf.validate.StringRules
+	0,  // 10: validation.v1.part_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 11: validation.v1.part_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 12: validation.v1.tool_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 13: validation.v1.tool_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 14: validation.v1.marker_id_component:extendee -> buf.validate.StringRules
+	0,  // 15: validation.v1.fixture_id_component:extendee -> buf.validate.StringRules
+	0,  // 16: validation.v1.station_id_component:extendee -> buf.validate.StringRules
+	0,  // 17: validation.v1.skill_id_component:extendee -> buf.validate.StringRules
+	0,  // 18: validation.v1.process_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 19: validation.v1.sequence_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 20: validation.v1.task_run_id_component:extendee -> buf.validate.StringRules
+	0,  // 21: validation.v1.process_recipe_id_component:extendee -> buf.validate.StringRules
+	0,  // 22: validation.v1.sequence_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 23: validation.v1.task_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 24: validation.v1.cell_id_component:extendee -> buf.validate.StringRules
+	0,  // 25: validation.v1.line_id_component:extendee -> buf.validate.StringRules
+	0,  // 26: validation.v1.container_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 27: validation.v1.container_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 28: validation.v1.worker_id_component:extendee -> buf.validate.StringRules
+	0,  // 29: validation.v1.product_id_component:extendee -> buf.validate.StringRules
+	0,  // 30: validation.v1.ar_config_binding_id_component:extendee -> buf.validate.StringRules
+	0,  // 31: validation.v1.ar_config_instance_id_component:extendee -> buf.validate.StringRules
+	0,  // 32: validation.v1.ar_input_slot_id_component:extendee -> buf.validate.StringRules
+	0,  // 33: validation.v1.model_asset_id_component:extendee -> buf.validate.StringRules
+	0,  // 34: validation.v1.sidecar_asset_id_component:extendee -> buf.validate.StringRules
+	0,  // 35: validation.v1.image_asset_id_component:extendee -> buf.validate.StringRules
+	0,  // 36: validation.v1.device_id_component:extendee -> buf.validate.StringRules
+	37, // [37:37] is the sub-list for method output_type
+	37, // [37:37] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	0,  // [0:37] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -548,7 +576,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 35,
+			NumExtensions: 37,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

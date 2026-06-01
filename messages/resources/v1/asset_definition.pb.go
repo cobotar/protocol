@@ -258,8 +258,7 @@ type AssetDefinition struct {
 	Type          AssetType              `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.AssetType" json:"type,omitempty"`
 	DriverType    AssetDriverType        `protobuf:"varint,6,opt,name=driver_type,json=driverType,proto3,enum=resources.v1.AssetDriverType" json:"driver_type,omitempty"`
 	ModelId       string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
-	Vision        *VisionCapability      `protobuf:"bytes,8,opt,name=vision,proto3" json:"vision,omitempty"`
-	Custom        *v1.CustomProperties   `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"` // TODO: add ToolRole or similar way to express capabilities?
+	Vision        *VisionCapability      `protobuf:"bytes,8,opt,name=vision,proto3" json:"vision,omitempty"` // TODO: add ToolRole or similar way to express capabilities?
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -350,13 +349,6 @@ func (x *AssetDefinition) GetVision() *VisionCapability {
 	return nil
 }
 
-func (x *AssetDefinition) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type AssetDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*AssetDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -405,11 +397,11 @@ var File_resources_v1_asset_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\n" +
-	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf2\x01\n" +
+	"#resources/v1/asset_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf2\x01\n" +
 	"\x10VisionCapability\x12Z\n" +
 	"\x1asupported_validation_modes\x18\x01 \x03(\x0e2\x1c.resources.v1.ValidationModeR\x18supportedValidationModes\x12A\n" +
 	"\x1dsupported_part_definition_ids\x18\x02 \x03(\tR\x1asupportedPartDefinitionIds\x12?\n" +
-	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xa1\x04\n" +
+	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xec\x03\n" +
 	"\x0fAssetDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -420,8 +412,7 @@ const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\vdriver_type\x18\x06 \x01(\x0e2\x1d.resources.v1.AssetDriverTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\n" +
 	"driverType\x12$\n" +
 	"\bmodel_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x126\n" +
-	"\x06vision\x18\b \x01(\v2\x1e.resources.v1.VisionCapabilityR\x06vision\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom:\x8c\x01\xbaH\x88\x01\x1a\x85\x01\n" +
+	"\x06vision\x18\b \x01(\v2\x1e.resources.v1.VisionCapabilityR\x06vision:\x8c\x01\xbaH\x88\x01\x1a\x85\x01\n" +
 	",asset_type_camera_requires_vision_capability\x121vision capability must be set when type is camera\x1a\"this.type != 1 || has(this.vision)\"G\n" +
 	"\x10AssetDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.AssetDefinitionR\x05items*\xdd\x01\n" +
@@ -467,7 +458,6 @@ var file_resources_v1_asset_definition_proto_goTypes = []any{
 	(*AssetDefinition)(nil),       // 4: resources.v1.AssetDefinition
 	(*AssetDefinitions)(nil),      // 5: resources.v1.AssetDefinitions
 	(*v1.KeyValueConstraint)(nil), // 6: common.v1.KeyValueConstraint
-	(*v1.CustomProperties)(nil),   // 7: common.v1.CustomProperties
 }
 var file_resources_v1_asset_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.VisionCapability.supported_validation_modes:type_name -> resources.v1.ValidationMode
@@ -475,13 +465,12 @@ var file_resources_v1_asset_definition_proto_depIdxs = []int32{
 	1, // 2: resources.v1.AssetDefinition.type:type_name -> resources.v1.AssetType
 	2, // 3: resources.v1.AssetDefinition.driver_type:type_name -> resources.v1.AssetDriverType
 	3, // 4: resources.v1.AssetDefinition.vision:type_name -> resources.v1.VisionCapability
-	7, // 5: resources.v1.AssetDefinition.custom:type_name -> common.v1.CustomProperties
-	4, // 6: resources.v1.AssetDefinitions.items:type_name -> resources.v1.AssetDefinition
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	4, // 5: resources.v1.AssetDefinitions.items:type_name -> resources.v1.AssetDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_asset_definition_proto_init() }

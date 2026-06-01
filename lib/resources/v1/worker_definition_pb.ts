@@ -5,8 +5,6 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -16,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/worker_definition.proto.
  */
 export const file_resources_v1_worker_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJnCg5Xb3JrZXJMb2NhdGlvbhIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEASLeAgoQV29ya2VyRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTY6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjgKEmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvbhI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEi4KCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2VzLnYxLldvcmtlckxvY2F0aW9uEisKBmN1c3RvbRgKIAEoCzIbLmNvbW1vbi52MS5DdXN0b21Qcm9wZXJ0aWVzIkIKEVdvcmtlckRlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb24qhAEKDkVkaXRQZXJtaXNzaW9uEh8KG0VESVRfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEhkKFUVESVRfUEVSTUlTU0lPTl9CQVNJQxABEhwKGEVESVRfUEVSTUlTU0lPTl9DT1NNRVRJQxACEhgKFEVESVRfUEVSTUlTU0lPTl9GVUxMEANCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJnCg5Xb3JrZXJMb2NhdGlvbhIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEASKxAgoQV29ya2VyRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTY6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjgKEmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvbhI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEi4KCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2VzLnYxLldvcmtlckxvY2F0aW9uIkIKEVdvcmtlckRlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb24qhAEKDkVkaXRQZXJtaXNzaW9uEh8KG0VESVRfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEhkKFUVESVRfUEVSTUlTU0lPTl9CQVNJQxABEhwKGEVESVRfUEVSTUlTU0lPTl9DT1NNRVRJQxACEhgKFEVESVRfUEVSTUlTU0lPTl9GVUxMEANCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
 
 /**
  * WorkerLocation describes the current operating area of a worker.
@@ -102,11 +100,6 @@ export type WorkerDefinition = Message<"resources.v1.WorkerDefinition"> & {
    * @generated from field: resources.v1.WorkerLocation location = 9;
    */
   location?: WorkerLocation;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 10;
-   */
-  custom?: CustomProperties;
 };
 
 /**

@@ -232,7 +232,6 @@ type ContainerSlotDefinition struct {
 	SupportedRootPartDefinitionIds []string                  `protobuf:"bytes,9,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"` // Root assemblies/root parts that this slot supports.
 	SupportedPartDefinitionIds     []string                  `protobuf:"bytes,10,rep,name=supported_part_definition_ids,json=supportedPartDefinitionIds,proto3" json:"supported_part_definition_ids,omitempty"`              // Specific part definitions that this slot supports.
 	Constraints                    []*v11.KeyValueConstraint `protobuf:"bytes,11,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                                  // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
-	Custom                         *v11.CustomProperties     `protobuf:"bytes,12,opt,name=custom,proto3" json:"custom,omitempty"`                                                                                            // Extension point for domain-specific slot data.
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -344,13 +343,6 @@ func (x *ContainerSlotDefinition) GetConstraints() []*v11.KeyValueConstraint {
 	return nil
 }
 
-func (x *ContainerSlotDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 // ContainerDefinition describes a physical holder/carrier with one or more slots.
 //
 // This unifies what used to be modeled separately as fixtures, kit trays, storage
@@ -366,7 +358,6 @@ type ContainerDefinition struct {
 	ModelId       string                     `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`             // Optional 3D model used in simulation, AR, and UI rendering.
 	Slots         []*ContainerSlotDefinition `protobuf:"bytes,7,rep,name=slots,proto3" json:"slots,omitempty"`                                // Addressable places inside/on the container.
 	Constraints   []*v11.KeyValueConstraint  `protobuf:"bytes,8,rep,name=constraints,proto3" json:"constraints,omitempty"`                    // Container-level constraints applying to the whole carrier.
-	Custom        *v11.CustomProperties      `protobuf:"bytes,9,opt,name=custom,proto3" json:"custom,omitempty"`                              // Extension point for domain-specific container metadata.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -457,13 +448,6 @@ func (x *ContainerDefinition) GetConstraints() []*v11.KeyValueConstraint {
 	return nil
 }
 
-func (x *ContainerDefinition) GetCustom() *v11.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type ContainerDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ContainerDefinition `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // List wrapper used for transport/query responses.
@@ -512,11 +496,11 @@ var File_resources_v1_container_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\n" +
-	"'resources/v1/container_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a$common/v1/key_value_constraint.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x94\x01\n" +
+	"'resources/v1/container_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a$common/v1/key_value_constraint.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x94\x01\n" +
 	"\x10ContainerSlotRef\x122\n" +
 	"\x15container_instance_id\x18\x01 \x01(\tR\x13containerInstanceId\x12\x17\n" +
 	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x123\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\x04type\"\xdf\x04\n" +
+	"\x04type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\x04type\"\xaa\x04\n" +
 	"\x17ContainerSlotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -529,8 +513,7 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\"supported_root_part_definition_ids\x18\t \x03(\tR\x1esupportedRootPartDefinitionIds\x12A\n" +
 	"\x1dsupported_part_definition_ids\x18\n" +
 	" \x03(\tR\x1asupportedPartDefinitionIds\x12?\n" +
-	"\vconstraints\x18\v \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\x123\n" +
-	"\x06custom\x18\f \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"\x86\x03\n" +
+	"\vconstraints\x18\v \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xd1\x02\n" +
 	"\x13ContainerDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -539,8 +522,7 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x1b.resources.v1.ContainerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12$\n" +
 	"\bmodel_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x12;\n" +
 	"\x05slots\x18\a \x03(\v2%.resources.v1.ContainerSlotDefinitionR\x05slots\x12?\n" +
-	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\x123\n" +
-	"\x06custom\x18\t \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"O\n" +
+	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"O\n" +
 	"\x14ContainerDefinitions\x127\n" +
 	"\x05items\x18\x01 \x03(\v2!.resources.v1.ContainerDefinitionR\x05items*\x98\x01\n" +
 	"\rContainerType\x12\x1e\n" +
@@ -581,25 +563,22 @@ var file_resources_v1_container_definition_proto_goTypes = []any{
 	(*v1.Pose)(nil),                 // 6: geometry.v1.Pose
 	(*v1.Vector3)(nil),              // 7: geometry.v1.Vector3
 	(*v11.KeyValueConstraint)(nil),  // 8: common.v1.KeyValueConstraint
-	(*v11.CustomProperties)(nil),    // 9: common.v1.CustomProperties
 }
 var file_resources_v1_container_definition_proto_depIdxs = []int32{
-	1,  // 0: resources.v1.ContainerSlotRef.type:type_name -> resources.v1.ContainerSlotType
-	6,  // 1: resources.v1.ContainerSlotDefinition.pose:type_name -> geometry.v1.Pose
-	7,  // 2: resources.v1.ContainerSlotDefinition.size:type_name -> geometry.v1.Vector3
-	1,  // 3: resources.v1.ContainerSlotDefinition.type:type_name -> resources.v1.ContainerSlotType
-	8,  // 4: resources.v1.ContainerSlotDefinition.constraints:type_name -> common.v1.KeyValueConstraint
-	9,  // 5: resources.v1.ContainerSlotDefinition.custom:type_name -> common.v1.CustomProperties
-	0,  // 6: resources.v1.ContainerDefinition.type:type_name -> resources.v1.ContainerType
-	3,  // 7: resources.v1.ContainerDefinition.slots:type_name -> resources.v1.ContainerSlotDefinition
-	8,  // 8: resources.v1.ContainerDefinition.constraints:type_name -> common.v1.KeyValueConstraint
-	9,  // 9: resources.v1.ContainerDefinition.custom:type_name -> common.v1.CustomProperties
-	4,  // 10: resources.v1.ContainerDefinitions.items:type_name -> resources.v1.ContainerDefinition
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	1, // 0: resources.v1.ContainerSlotRef.type:type_name -> resources.v1.ContainerSlotType
+	6, // 1: resources.v1.ContainerSlotDefinition.pose:type_name -> geometry.v1.Pose
+	7, // 2: resources.v1.ContainerSlotDefinition.size:type_name -> geometry.v1.Vector3
+	1, // 3: resources.v1.ContainerSlotDefinition.type:type_name -> resources.v1.ContainerSlotType
+	8, // 4: resources.v1.ContainerSlotDefinition.constraints:type_name -> common.v1.KeyValueConstraint
+	0, // 5: resources.v1.ContainerDefinition.type:type_name -> resources.v1.ContainerType
+	3, // 6: resources.v1.ContainerDefinition.slots:type_name -> resources.v1.ContainerSlotDefinition
+	8, // 7: resources.v1.ContainerDefinition.constraints:type_name -> common.v1.KeyValueConstraint
+	4, // 8: resources.v1.ContainerDefinitions.items:type_name -> resources.v1.ContainerDefinition
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_container_definition_proto_init() }

@@ -6,7 +6,6 @@ import "capability/v1/capability_profile.proto";
 import "capability/v1/skill_definition.proto";
 import "capability/v1/tool_requirement.proto";
 import "common/v1/actor.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/external_references.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -58,7 +57,6 @@ message ToolDefinition {
   capability.v1.CapabilityProfile capability_profile = 9;
   string model_id = 10 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
   repeated common.v1.ExternalReference external_references = 11;
-  common.v1.CustomProperties custom = 12;
 }
 
 message ToolDefinitions {

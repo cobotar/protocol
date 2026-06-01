@@ -23,13 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from common.v1 import custom_properties_pb2 as common_dot_v1_dot_custom__properties__pb2
 from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n resources/v1/tool_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15\x63ommon/v1/enums.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc5\x03\n\x0cToolInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12:\n\x12tool_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xd8\xf1\x04\x01\xc8\x01\x01R\x10toolDefinitionId\x12#\n\rserial_number\x18\x06 \x01(\tR\x0cserialNumber\x12;\n\x06status\x18\x07 \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x1e\n\ncalibrated\x18\x08 \x01(\x08R\ncalibrated\x12R\n\x17\x63\x61libration_valid_until\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x15\x63\x61librationValidUntil\x12\x33\n\x06\x63ustom\x18\n \x01(\x0b\x32\x1b.common.v1.CustomPropertiesR\x06\x63ustom\"A\n\rToolInstances\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32\x1a.resources.v1.ToolInstanceR\x05itemsB\xbe\x01\n\x10\x63om.resources.v1B\x11ToolInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n resources/v1/tool_instance.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/enums.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x90\x03\n\x0cToolInstance\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf1\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12:\n\x12tool_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xd8\xf1\x04\x01\xc8\x01\x01R\x10toolDefinitionId\x12#\n\rserial_number\x18\x06 \x01(\tR\x0cserialNumber\x12;\n\x06status\x18\x07 \x01(\x0e\x32\x19.common.v1.ResourceStatusB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12\x1e\n\ncalibrated\x18\x08 \x01(\x08R\ncalibrated\x12R\n\x17\x63\x61libration_valid_until\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x15\x63\x61librationValidUntil\"A\n\rToolInstances\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32\x1a.resources.v1.ToolInstanceR\x05itemsB\xbe\x01\n\x10\x63om.resources.v1B\x11ToolInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,8 +44,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TOOLINSTANCE'].fields_by_name['tool_definition_id']._serialized_options = b'\272H\tr\004\330\361\004\001\310\001\001'
   _globals['_TOOLINSTANCE'].fields_by_name['status']._loaded_options = None
   _globals['_TOOLINSTANCE'].fields_by_name['status']._serialized_options = b'\272H\005\202\001\002\020\001'
-  _globals['_TOOLINSTANCE']._serialized_start=216
-  _globals['_TOOLINSTANCE']._serialized_end=669
-  _globals['_TOOLINSTANCES']._serialized_start=671
-  _globals['_TOOLINSTANCES']._serialized_end=736
+  _globals['_TOOLINSTANCE']._serialized_start=181
+  _globals['_TOOLINSTANCE']._serialized_end=581
+  _globals['_TOOLINSTANCES']._serialized_start=583
+  _globals['_TOOLINSTANCES']._serialized_end=648
 # @@protoc_insertion_point(module_scope)

@@ -7,7 +7,10 @@ option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/messages/robot/v1";
 
 message ProgramStateRequest {
-  string request_id = 1;
-  string robot_id = 2;
-  ProgramState state = 3;
+  string robot_id = 1;
+  ProgramState state = 2;
+}
+
+message AcknowledgeRobot {
+  string robot_id = 1;
 }

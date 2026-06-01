@@ -3,7 +3,6 @@ package resources.v1;
 
 import "buf/validate/validate.proto";
 import "capability/v1/capability_profile.proto";
-import "common/v1/custom_properties.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
@@ -45,7 +44,6 @@ message RobotDefinition {
   int32 tool_slots = 11 [(buf.validate.field).int32.gte = 0];
 
   capability.v1.CapabilityProfile capability_profile = 12;
-  common.v1.CustomProperties custom = 13;
 }
 
 message RobotDefinitions {

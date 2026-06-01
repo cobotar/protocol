@@ -32,7 +32,6 @@ type AssetInstance struct {
 	Description       string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	AssetDefinitionId string                 `protobuf:"bytes,5,opt,name=asset_definition_id,json=assetDefinitionId,proto3" json:"asset_definition_id,omitempty"`
 	Status            v1.ResourceStatus      `protobuf:"varint,6,opt,name=status,proto3,enum=common.v1.ResourceStatus" json:"status,omitempty"`
-	Custom            *v1.CustomProperties   `protobuf:"bytes,7,opt,name=custom,proto3" json:"custom,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -109,13 +108,6 @@ func (x *AssetInstance) GetStatus() v1.ResourceStatus {
 	return v1.ResourceStatus(0)
 }
 
-func (x *AssetInstance) GetCustom() *v1.CustomProperties {
-	if x != nil {
-		return x.Custom
-	}
-	return nil
-}
-
 type AssetInstances struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*AssetInstance       `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -164,15 +156,14 @@ var File_resources_v1_asset_instance_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_instance_proto_rawDesc = "" +
 	"\n" +
-	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a!common/v1/custom_properties.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xaf\x02\n" +
+	"!resources/v1/asset_instance.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfa\x01\n" +
 	"\rAssetInstance\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12<\n" +
 	"\x13asset_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xb0\xf1\x04\x01R\x11assetDefinitionId\x12;\n" +
-	"\x06status\x18\x06 \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x123\n" +
-	"\x06custom\x18\a \x01(\v2\x1b.common.v1.CustomPropertiesR\x06custom\"C\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\"C\n" +
 	"\x0eAssetInstances\x121\n" +
 	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.AssetInstanceR\x05itemsB\xbf\x01\n" +
 	"\x10com.resources.v1B\x12AssetInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
@@ -191,20 +182,18 @@ func file_resources_v1_asset_instance_proto_rawDescGZIP() []byte {
 
 var file_resources_v1_asset_instance_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_resources_v1_asset_instance_proto_goTypes = []any{
-	(*AssetInstance)(nil),       // 0: resources.v1.AssetInstance
-	(*AssetInstances)(nil),      // 1: resources.v1.AssetInstances
-	(v1.ResourceStatus)(0),      // 2: common.v1.ResourceStatus
-	(*v1.CustomProperties)(nil), // 3: common.v1.CustomProperties
+	(*AssetInstance)(nil),  // 0: resources.v1.AssetInstance
+	(*AssetInstances)(nil), // 1: resources.v1.AssetInstances
+	(v1.ResourceStatus)(0), // 2: common.v1.ResourceStatus
 }
 var file_resources_v1_asset_instance_proto_depIdxs = []int32{
 	2, // 0: resources.v1.AssetInstance.status:type_name -> common.v1.ResourceStatus
-	3, // 1: resources.v1.AssetInstance.custom:type_name -> common.v1.CustomProperties
-	0, // 2: resources.v1.AssetInstances.items:type_name -> resources.v1.AssetInstance
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0, // 1: resources.v1.AssetInstances.items:type_name -> resources.v1.AssetInstance
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_asset_instance_proto_init() }

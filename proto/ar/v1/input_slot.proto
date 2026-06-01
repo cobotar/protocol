@@ -61,7 +61,7 @@ message ARInputSlotMessage {
   bool required = 6; // If true, bindings/resolution should fail when this slot cannot be satisfied.
   string generated_property_id = 7 [
     (buf.validate.field).required = true,
-    (buf.validate.field).string.(validation.v1.property_id_component) = true
+    (buf.validate.field).string.(validation.v1.property_definition_id_component) = true
   ]; // Server-managed property that should receive the resolved slot value at runtime.
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a concrete resource binding.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a runtime context value.

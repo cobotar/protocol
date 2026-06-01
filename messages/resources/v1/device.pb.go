@@ -190,7 +190,7 @@ type DeviceMessage struct {
 	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type               DeviceType             `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.DeviceType" json:"type,omitempty"`
-	DeviceId           string                 `protobuf:"bytes,6,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	DeviceUuid         string                 `protobuf:"bytes,6,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
 	Status             DeviceStatus           `protobuf:"varint,7,opt,name=status,proto3,enum=resources.v1.DeviceStatus" json:"status,omitempty"`
 	BatteryLevel       int32                  `protobuf:"varint,8,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
 	BatteryStatus      DeviceBatteryStatus    `protobuf:"varint,9,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
@@ -264,9 +264,9 @@ func (x *DeviceMessage) GetType() DeviceType {
 	return DeviceType_DEVICE_TYPE_UNSPECIFIED
 }
 
-func (x *DeviceMessage) GetDeviceId() string {
+func (x *DeviceMessage) GetDeviceUuid() string {
 	if x != nil {
-		return x.DeviceId
+		return x.DeviceUuid
 	}
 	return ""
 }
@@ -345,7 +345,7 @@ func (x *DeviceMessages) GetDevices() []*DeviceMessage {
 
 type DeviceHeartbeat struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DeviceId      string                 `protobuf:"bytes,1,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	DeviceUuid    string                 `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
 	BatteryLevel  int32                  `protobuf:"varint,2,opt,name=battery_level,json=batteryLevel,proto3" json:"battery_level,omitempty"`
 	BatteryStatus DeviceBatteryStatus    `protobuf:"varint,3,opt,name=battery_status,json=batteryStatus,proto3,enum=resources.v1.DeviceBatteryStatus" json:"battery_status,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -382,9 +382,9 @@ func (*DeviceHeartbeat) Descriptor() ([]byte, []int) {
 	return file_resources_v1_device_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *DeviceHeartbeat) GetDeviceId() string {
+func (x *DeviceHeartbeat) GetDeviceUuid() string {
 	if x != nil {
-		return x.DeviceId
+		return x.DeviceUuid
 	}
 	return ""
 }
@@ -407,25 +407,27 @@ var File_resources_v1_device_proto protoreflect.FileDescriptor
 
 const file_resources_v1_device_proto_rawDesc = "" +
 	"\n" +
-	"\x19resources/v1/device.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd5\x03\n" +
-	"\rDeviceMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x19resources/v1/device.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe4\x03\n" +
+	"\rDeviceMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa0\xec0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x129\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x18.resources.v1.DeviceTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1b\n" +
-	"\tdevice_id\x18\x06 \x01(\tR\bdeviceId\x12<\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x18.resources.v1.DeviceTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1f\n" +
+	"\vdevice_uuid\x18\x06 \x01(\tR\n" +
+	"deviceUuid\x12<\n" +
 	"\x06status\x18\a \x01(\x0e2\x1a.resources.v1.DeviceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x127\n" +
 	"\rbattery_level\x18\b \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12R\n" +
 	"\x0ebattery_status\x18\t \x01(\x0e2!.resources.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus\x12<\n" +
 	"\x15equipped_by_worker_id\x18\n" +
 	" \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x12equippedByWorkerId\"G\n" +
 	"\x0eDeviceMessages\x125\n" +
-	"\adevices\x18\x01 \x03(\v2\x1b.resources.v1.DeviceMessageR\adevices\"\xb1\x01\n" +
-	"\x0fDeviceHeartbeat\x12\x1b\n" +
-	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x127\n" +
-	"\rbattery_level\x18\x02 \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12H\n" +
-	"\x0ebattery_status\x18\x03 \x01(\x0e2!.resources.v1.DeviceBatteryStatusR\rbatteryStatus*\x87\x01\n" +
+	"\adevices\x18\x01 \x03(\v2\x1b.resources.v1.DeviceMessageR\adevices\"\xbf\x01\n" +
+	"\x0fDeviceHeartbeat\x12\x1f\n" +
+	"\vdevice_uuid\x18\x01 \x01(\tR\n" +
+	"deviceUuid\x127\n" +
+	"\rbattery_level\x18\x02 \x01(\x05B\x12\xbaH\x0f\x1a\r\x18d(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01R\fbatteryLevel\x12R\n" +
+	"\x0ebattery_status\x18\x03 \x01(\x0e2!.resources.v1.DeviceBatteryStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\rbatteryStatus*\x87\x01\n" +
 	"\n" +
 	"DeviceType\x12\x1b\n" +
 	"\x17DEVICE_TYPE_UNSPECIFIED\x10\x00\x12\x19\n" +

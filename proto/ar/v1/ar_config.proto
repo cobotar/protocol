@@ -27,7 +27,7 @@ message ARConfigInfoMessages {
 // It references feedback, actions, helpers, properties, and input slots that
 // are later materialized through ARConfigBindingMessage and runtime resolution.
 message ARConfigMessage {
-  string id = 1; // Stable config identifier.
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true]; // Stable config identifier.
   string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 64
@@ -38,13 +38,9 @@ message ARConfigMessage {
     gte: 0
     example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
   }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
-  repeated string feedback_ids = 6; // Feedback entities belonging to this config.
-  repeated string action_ids = 7; // Action entities belonging to this config.
-  repeated string helper_ids = 8; // Helper entities belonging to this config.
-  repeated string property_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.property_id_component) = true]; // Includes server-managed generated properties for referenced input slots.
   repeated ARInputSlotMessage input_slots = 10; // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 }
 
 message ARConfigMessages {
-  repeated ARConfigMessage configs = 1; // AR config templates.
+  repeated ARConfigMessage items = 1; // AR config templates.
 }

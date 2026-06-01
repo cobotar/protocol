@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "common/v1/key_value_constraint.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
@@ -78,7 +77,6 @@ message ContainerSlotDefinition {
   repeated string supported_part_definition_ids = 10; // Specific part definitions that this slot supports.
 
   repeated common.v1.KeyValueConstraint constraints = 11; // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
-  common.v1.CustomProperties custom = 12; // Extension point for domain-specific slot data.
 }
 
 // ContainerDefinition describes a physical holder/carrier with one or more slots.
@@ -101,7 +99,6 @@ message ContainerDefinition {
   repeated ContainerSlotDefinition slots = 7; // Addressable places inside/on the container.
 
   repeated common.v1.KeyValueConstraint constraints = 8; // Container-level constraints applying to the whole carrier.
-  common.v1.CustomProperties custom = 9; // Extension point for domain-specific container metadata.
 }
 
 message ContainerDefinitions {

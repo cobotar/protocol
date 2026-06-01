@@ -2,7 +2,6 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
-import "common/v1/custom_properties.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
@@ -68,7 +67,6 @@ message LineDefinition {
   int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this line should host concurrently.
   repeated string cell_ids = 8 [(buf.validate.field).repeated.items.string.(validation.v1.cell_id_component) = true]; // Cells belonging to this line.
   repeated string station_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.station_id_component) = true]; // Optional directly attached stations when a line references stations without an intermediate cell.
-  common.v1.CustomProperties custom = 10;
 }
 
 message LineDefinitions {

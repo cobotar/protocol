@@ -5,8 +5,6 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { CustomProperties } from "../../common/v1/custom_properties_pb.ts";
-import { file_common_v1_custom_properties } from "../../common/v1/custom_properties_pb.ts";
 import type { ResourceStatus } from "../../common/v1/enums_pb.ts";
 import { file_common_v1_enums } from "../../common/v1/enums_pb.ts";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
@@ -18,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/tool_instance.proto.
  */
 export const file_resources_v1_tool_instance: GenFile = /*@__PURE__*/
-  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxItUCCgxUb29sSW5zdGFuY2USFQoCaWQYASABKAlCCbpIBnIE4PEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIoChJ0b29sX2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIE2PEEARIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEjMKBnN0YXR1cxgHIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1c0IIukgFggECEAESEgoKY2FsaWJyYXRlZBgIIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKwoGY3VzdG9tGAogASgLMhsuY29tbW9uLnYxLkN1c3RvbVByb3BlcnRpZXMiOgoNVG9vbEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLnJlc291cmNlcy52MS5Ub29sSW5zdGFuY2VCvgEKEGNvbS5yZXNvdXJjZXMudjFCEVRvb2xJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_custom_properties, file_common_v1_enums, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiByZXNvdXJjZXMvdjEvdG9vbF9pbnN0YW5jZS5wcm90bxIMcmVzb3VyY2VzLnYxIqgCCgxUb29sSW5zdGFuY2USFQoCaWQYASABKAlCCbpIBnIE4PEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIoChJ0b29sX2RlZmluaXRpb25faWQYBSABKAlCDLpICcgBAXIE2PEEARIVCg1zZXJpYWxfbnVtYmVyGAYgASgJEjMKBnN0YXR1cxgHIAEoDjIZLmNvbW1vbi52MS5SZXNvdXJjZVN0YXR1c0IIukgFggECEAESEgoKY2FsaWJyYXRlZBgIIAEoCBI7ChdjYWxpYnJhdGlvbl92YWxpZF91bnRpbBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiOgoNVG9vbEluc3RhbmNlcxIpCgVpdGVtcxgBIAMoCzIaLnJlc291cmNlcy52MS5Ub29sSW5zdGFuY2VCvgEKEGNvbS5yZXNvdXJjZXMudjFCEVRvb2xJbnN0YW5jZVByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_enums, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.ToolInstance
@@ -68,11 +66,6 @@ export type ToolInstance = Message<"resources.v1.ToolInstance"> & {
    * @generated from field: google.protobuf.Timestamp calibration_valid_until = 9;
    */
   calibrationValidUntil?: Timestamp;
-
-  /**
-   * @generated from field: common.v1.CustomProperties custom = 10;
-   */
-  custom?: CustomProperties;
 };
 
 /**
