@@ -1153,6 +1153,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
 
 
 

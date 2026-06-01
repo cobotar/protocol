@@ -78,16 +78,18 @@ class ActionAddMessage(_message.Message):
     def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., robot_property_id: _Optional[str] = ..., activating_property_id: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
 
 class ActionUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description")
+    __slots__ = ("id", "name", "icon", "description", "eligibility_requirements")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
 
 class ActionCloneMessage(_message.Message):
     __slots__ = ("original_id", "name", "icon", "description")

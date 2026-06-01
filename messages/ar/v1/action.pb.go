@@ -331,13 +331,14 @@ func (x *ActionAddMessage) GetEligibilityRequirements() []*v1.SkillRequirement {
 }
 
 type ActionUpdateMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                    string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,5,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ActionUpdateMessage) Reset() {
@@ -396,6 +397,13 @@ func (x *ActionUpdateMessage) GetDescription() string {
 		return x.Description
 	}
 	return ""
+}
+
+func (x *ActionUpdateMessage) GetEligibilityRequirements() []*v1.SkillRequirement {
+	if x != nil {
+		return x.EligibilityRequirements
+	}
+	return nil
 }
 
 type ActionCloneMessage struct {
@@ -489,12 +497,13 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
 	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n" +
 	"\x16activating_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14activatingPropertyId\x12Z\n" +
-	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"z\n" +
+	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xd6\x01\n" +
 	"\x13ActionUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\"\x7f\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12Z\n" +
+	"\x18eligibility_requirements\x18\x05 \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\x7f\n" +
 	"\x12ActionCloneMessage\x12\x1f\n" +
 	"\voriginal_id\x18\x01 \x01(\tR\n" +
 	"originalId\x12\x12\n" +
@@ -545,11 +554,12 @@ var file_ar_v1_action_proto_depIdxs = []int32{
 	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
 	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
 	6, // 4: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	6, // 5: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }

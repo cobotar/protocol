@@ -59,6 +59,7 @@ message ActionUpdateMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
+  repeated capability.v1.SkillRequirement eligibility_requirements = 5;
 }
 
 message ActionCloneMessage {
