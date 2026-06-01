@@ -87,14 +87,14 @@ class FeedbackMessages(_message.Message):
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
 class FeedbackAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "visibility_scope", "robot_id", "anchor")
+    __slots__ = ("config_id", "name", "icon", "description", "type", "visibility_scope", "robot_property_id", "anchor")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
-    ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
@@ -102,9 +102,9 @@ class FeedbackAddMessage(_message.Message):
     description: str
     type: FeedbackType
     visibility_scope: VisibilityScope
-    robot_id: str
+    robot_property_id: str
     anchor: _anchor_pb2.Anchor
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., robot_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., robot_property_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
 
 class FeedbackUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "visibility_scope")

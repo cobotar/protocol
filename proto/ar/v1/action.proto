@@ -49,8 +49,8 @@ message ActionAddMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string robot_id = 6;
-  string activating_property_id = 7;
+  string robot_property_id = 6 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
+  string activating_property_id = 7 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // Optional (but highly recommended), this should point to a property definition of type BOOL
   repeated capability.v1.SkillRequirement eligibility_requirements = 8;
 }
 

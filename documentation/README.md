@@ -1078,8 +1078,9 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
-| agent_id | [string](#string) |  |  |
-| activating_property_id | [string](#string) |  |  |
+| robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
+| activating_property_id | [string](#string) |  | Optional (but highly recommended), this should point to a property definition of type BOOL |
+| eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
 
 
 
@@ -2227,6 +2228,7 @@ PropertyValue
 | PROPERTY_GROUP_ICON | 5 |  |
 | PROPERTY_GROUP_CONFIGURATION | 6 |  |
 | PROPERTY_GROUP_HIDDEN | 7 |  |
+| PROPERTY_GROUP_INPUT_SLOT | 8 |  |
 
 
 
@@ -2419,7 +2421,7 @@ instance owned by the target station or cell.
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
-| robot_id | [string](#string) |  |  |
+| robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
 | anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 
 

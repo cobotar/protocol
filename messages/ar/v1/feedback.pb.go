@@ -317,7 +317,7 @@ type FeedbackAddMessage struct {
 	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	RobotId         string                 `protobuf:"bytes,7,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	RobotPropertyId string                 `protobuf:"bytes,7,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
 	Anchor          *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -395,9 +395,9 @@ func (x *FeedbackAddMessage) GetVisibilityScope() VisibilityScope {
 	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
 }
 
-func (x *FeedbackAddMessage) GetRobotId() string {
+func (x *FeedbackAddMessage) GetRobotPropertyId() string {
 	if x != nil {
-		return x.RobotId
+		return x.RobotPropertyId
 	}
 	return ""
 }
@@ -575,15 +575,15 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12&\n" +
 	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xd1\x02\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xed\x02\n" +
 	"\x12FeedbackAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
-	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12\x19\n" +
-	"\brobot_id\x18\a \x01(\tR\arobotId\x12+\n" +
+	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x125\n" +
+	"\x11robot_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12+\n" +
 	"\x06anchor\x18\b \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\"\xc9\x01\n" +
 	"\x15FeedbackUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +

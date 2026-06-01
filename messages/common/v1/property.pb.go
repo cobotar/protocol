@@ -178,6 +178,7 @@ const (
 	PropertyGroup_PROPERTY_GROUP_ICON          PropertyGroup = 5
 	PropertyGroup_PROPERTY_GROUP_CONFIGURATION PropertyGroup = 6
 	PropertyGroup_PROPERTY_GROUP_HIDDEN        PropertyGroup = 7
+	PropertyGroup_PROPERTY_GROUP_INPUT_SLOT    PropertyGroup = 8
 )
 
 // Enum value maps for PropertyGroup.
@@ -191,6 +192,7 @@ var (
 		5: "PROPERTY_GROUP_ICON",
 		6: "PROPERTY_GROUP_CONFIGURATION",
 		7: "PROPERTY_GROUP_HIDDEN",
+		8: "PROPERTY_GROUP_INPUT_SLOT",
 	}
 	PropertyGroup_value = map[string]int32{
 		"PROPERTY_GROUP_UNSPECIFIED":   0,
@@ -201,6 +203,7 @@ var (
 		"PROPERTY_GROUP_ICON":          5,
 		"PROPERTY_GROUP_CONFIGURATION": 6,
 		"PROPERTY_GROUP_HIDDEN":        7,
+		"PROPERTY_GROUP_INPUT_SLOT":    8,
 	}
 )
 
@@ -1662,7 +1665,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\xfa\x01\n" +
+	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\x99\x02\n" +
 	"\rPropertyGroup\x12\x1e\n" +
 	"\x1aPROPERTY_GROUP_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_GROUP_OUTPUT\x10\x01\x12\x1f\n" +
@@ -1671,7 +1674,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x17PROPERTY_GROUP_LOCATION\x10\x04\x12\x17\n" +
 	"\x13PROPERTY_GROUP_ICON\x10\x05\x12 \n" +
 	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06\x12\x19\n" +
-	"\x15PROPERTY_GROUP_HIDDEN\x10\a*\xb6\x01\n" +
+	"\x15PROPERTY_GROUP_HIDDEN\x10\a\x12\x1d\n" +
+	"\x19PROPERTY_GROUP_INPUT_SLOT\x10\b*\xb6\x01\n" +
 	"\x12PropertyPermission\x12#\n" +
 	"\x1fPROPERTY_PERMISSION_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19PROPERTY_PERMISSION_BASIC\x10\n" +

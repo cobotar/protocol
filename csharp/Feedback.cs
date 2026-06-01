@@ -35,50 +35,50 @@ namespace Messages.AR.V1 {
             "AQIQAVIPdmlzaWJpbGl0eVNjb3BlEiYKCWNvbmZpZ19pZBgIIAEoCUIJukgG",
             "cgSQ8QQBUghjb25maWdJZCJIChBGZWVkYmFja01lc3NhZ2VzEjQKCWZlZWRi",
             "YWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZVIJZmVlZGJhY2tz",
-            "ItECChJGZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6",
+            "Iu0CChJGZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6",
             "SAZyBJDxBAFSCGNvbmZpZ0lkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNv",
             "bhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp",
             "b24SNAoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggEC",
             "EAHIAQFSBHR5cGUSSwoQdmlzaWJpbGl0eV9zY29wZRgGIAEoDjIWLmFyLnYx",
-            "LlZpc2liaWxpdHlTY29wZUIIukgFggECEAFSD3Zpc2liaWxpdHlTY29wZRIZ",
-            "Cghyb2JvdF9pZBgHIAEoCVIHcm9ib3RJZBIrCgZhbmNob3IYCCABKAsyEy5n",
-            "ZW9tZXRyeS52MS5BbmNob3JSBmFuY2hvciLJAQoVRmVlZGJhY2tVcGRhdGVN",
-            "ZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDx",
-            "BAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgE",
-            "IAEoCVILZGVzY3JpcHRpb24SSwoQdmlzaWJpbGl0eV9zY29wZRgFIAEoDjIW",
-            "LmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAFSD3Zpc2liaWxpdHlT",
-            "Y29wZSLOAQoURmVlZGJhY2tDbG9uZU1lc3NhZ2USHwoLb3JpZ2luYWxfaWQY",
-            "ASABKAlSCm9yaWdpbmFsSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29u",
-            "GAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlv",
-            "bhJLChB2aXNpYmlsaXR5X3Njb3BlGAUgASgOMhYuYXIudjEuVmlzaWJpbGl0",
-            "eVNjb3BlQgi6SAWCAQIQAVIPdmlzaWJpbGl0eVNjb3BlKscECgxGZWVkYmFj",
-            "a1R5cGUSHQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklFRBAAEiAKHEZFRURC",
-            "QUNLX1RZUEVfVEFTS19ISUdITElHSFQQChIlCiFGRUVEQkFDS19UWVBFX1RB",
-            "U0tfUEFSVF9ISUdITElHSFQQCxIlCiFGRUVEQkFDS19UWVBFX1RBU0tfVE9P",
-            "TF9ISUdITElHSFQQDBIfChtGRUVEQkFDS19UWVBFX1RBU0tfT1ZFUlZJRVcQ",
-            "DRIiCh5GRUVEQkFDS19UWVBFX1RBU0tfSU5TVFJVQ1RJT04QDhIgChxGRUVE",
-            "QkFDS19UWVBFX1RBU0tfQ0hFQ0tMSVNUEA8SHAoYRkVFREJBQ0tfVFlQRV9S",
-            "T0JPVF9QQVRIEDISIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRF",
-            "EDMSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQNBIeChpGRUVE",
-            "QkFDS19UWVBFX1JPQk9UX1NUQVRVUxA1Eh0KGUZFRURCQUNLX1RZUEVfUk9C",
-            "T1RfTElHSFQQNhIZChVGRUVEQkFDS19UWVBFX01FU1NBR0UQZBIWChJGRUVE",
-            "QkFDS19UWVBFX0lDT04QZRIWChJGRUVEQkFDS19UWVBFX1pPTkUQZhIcChhG",
-            "RUVEQkFDS19UWVBFX1BMQVlfU09VTkQQZxIXChNGRUVEQkFDS19UWVBFX1JV",
-            "TEVSEGgSGwoXRkVFREJBQ0tfVFlQRV9ISUdITElHSFQQaSq9AQoPVmlzaWJp",
-            "bGl0eVNjb3BlEiAKHFZJU0lCSUxJVFlfU0NPUEVfVU5TUEVDSUZJRUQQABIb",
-            "ChdWSVNJQklMSVRZX1NDT1BFX0FMV0FZUxABEiEKHVZJU0lCSUxJVFlfU0NP",
-            "UEVfTE9XX0dVSURBTkNFEAISJAogVklTSUJJTElUWV9TQ09QRV9NRURJVU1f",
-            "R1VJREFOQ0UQAxIiCh5WSVNJQklMSVRZX1NDT1BFX0ZVTExfR1VJREFOQ0UQ",
-            "BEKJAQoJY29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
-            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
-            "QXI6OlYxYgZwcm90bzM="));
+            "LlZpc2liaWxpdHlTY29wZUIIukgFggECEAFSD3Zpc2liaWxpdHlTY29wZRI1",
+            "ChFyb2JvdF9wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBUg9yb2JvdFBy",
+            "b3BlcnR5SWQSKwoGYW5jaG9yGAggASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9y",
+            "UgZhbmNob3IiyQEKFUZlZWRiYWNrVXBkYXRlTWVzc2FnZRIOCgJpZBgBIAEo",
+            "CVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24Y",
+            "AyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u",
+            "EksKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5",
+            "U2NvcGVCCLpIBYIBAhABUg92aXNpYmlsaXR5U2NvcGUizgEKFEZlZWRiYWNr",
+            "Q2xvbmVNZXNzYWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElk",
+            "EhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
+            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SSwoQdmlzaWJpbGl0eV9z",
+            "Y29wZRgFIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAFS",
+            "D3Zpc2liaWxpdHlTY29wZSrHBAoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNL",
+            "X1RZUEVfVU5TUEVDSUZJRUQQABIgChxGRUVEQkFDS19UWVBFX1RBU0tfSElH",
+            "SExJR0hUEAoSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1BBUlRfSElHSExJR0hU",
+            "EAsSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1RPT0xfSElHSExJR0hUEAwSHwob",
+            "RkVFREJBQ0tfVFlQRV9UQVNLX09WRVJWSUVXEA0SIgoeRkVFREJBQ0tfVFlQ",
+            "RV9UQVNLX0lOU1RSVUNUSU9OEA4SIAocRkVFREJBQ0tfVFlQRV9UQVNLX0NI",
+            "RUNLTElTVBAPEhwKGEZFRURCQUNLX1RZUEVfUk9CT1RfUEFUSBAyEiIKHkZF",
+            "RURCQUNLX1RZUEVfUk9CT1RfU0lMSE9VRVRURRAzEiEKHUZFRURCQUNLX1RZ",
+            "UEVfUk9CT1RfV0FZUE9JTlRTEDQSHgoaRkVFREJBQ0tfVFlQRV9ST0JPVF9T",
+            "VEFUVVMQNRIdChlGRUVEQkFDS19UWVBFX1JPQk9UX0xJR0hUEDYSGQoVRkVF",
+            "REJBQ0tfVFlQRV9NRVNTQUdFEGQSFgoSRkVFREJBQ0tfVFlQRV9JQ09OEGUS",
+            "FgoSRkVFREJBQ0tfVFlQRV9aT05FEGYSHAoYRkVFREJBQ0tfVFlQRV9QTEFZ",
+            "X1NPVU5EEGcSFwoTRkVFREJBQ0tfVFlQRV9SVUxFUhBoEhsKF0ZFRURCQUNL",
+            "X1RZUEVfSElHSExJR0hUEGkqvQEKD1Zpc2liaWxpdHlTY29wZRIgChxWSVNJ",
+            "QklMSVRZX1NDT1BFX1VOU1BFQ0lGSUVEEAASGwoXVklTSUJJTElUWV9TQ09Q",
+            "RV9BTFdBWVMQARIhCh1WSVNJQklMSVRZX1NDT1BFX0xPV19HVUlEQU5DRRAC",
+            "EiQKIFZJU0lCSUxJVFlfU0NPUEVfTUVESVVNX0dVSURBTkNFEAMSIgoeVklT",
+            "SUJJTElUWV9TQ09QRV9GVUxMX0dVSURBTkNFEARCiQEKCWNvbS5hci52MUIN",
+            "RmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
+            "bWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIF",
+            "QXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), typeof(global::Messages.AR.V1.VisibilityScope), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "VisibilityScope", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessages), global::Messages.AR.V1.FeedbackMessages.Parser, new[]{ "Feedbacks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "VisibilityScope", "RobotId", "Anchor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "VisibilityScope", "RobotPropertyId", "Anchor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackUpdateMessage), global::Messages.AR.V1.FeedbackUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "VisibilityScope" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackCloneMessage), global::Messages.AR.V1.FeedbackCloneMessage.Parser, new[]{ "OriginalId", "Name", "Icon", "Description", "VisibilityScope" }, null, null, null, null)
           }));
@@ -779,7 +779,7 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       type_ = other.type_;
       visibilityScope_ = other.visibilityScope_;
-      robotId_ = other.robotId_;
+      robotPropertyId_ = other.robotPropertyId_;
       anchor_ = other.anchor_ != null ? other.anchor_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -862,15 +862,18 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "robot_id" field.</summary>
-    public const int RobotIdFieldNumber = 7;
-    private string robotId_ = "";
+    /// <summary>Field number for the "robot_property_id" field.</summary>
+    public const int RobotPropertyIdFieldNumber = 7;
+    private string robotPropertyId_ = "";
+    /// <summary>
+    /// If required, this should point to a property definition of type ROBOT
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RobotId {
-      get { return robotId_; }
+    public string RobotPropertyId {
+      get { return robotPropertyId_; }
       set {
-        robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        robotPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -907,7 +910,7 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
       if (VisibilityScope != other.VisibilityScope) return false;
-      if (RobotId != other.RobotId) return false;
+      if (RobotPropertyId != other.RobotPropertyId) return false;
       if (!object.Equals(Anchor, other.Anchor)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -922,7 +925,7 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.FeedbackType.Unspecified) hash ^= Type.GetHashCode();
       if (VisibilityScope != global::Messages.AR.V1.VisibilityScope.Unspecified) hash ^= VisibilityScope.GetHashCode();
-      if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
+      if (RobotPropertyId.Length != 0) hash ^= RobotPropertyId.GetHashCode();
       if (anchor_ != null) hash ^= Anchor.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -966,9 +969,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) VisibilityScope);
       }
-      if (RobotId.Length != 0) {
+      if (RobotPropertyId.Length != 0) {
         output.WriteRawTag(58);
-        output.WriteString(RobotId);
+        output.WriteString(RobotPropertyId);
       }
       if (anchor_ != null) {
         output.WriteRawTag(66);
@@ -1008,9 +1011,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) VisibilityScope);
       }
-      if (RobotId.Length != 0) {
+      if (RobotPropertyId.Length != 0) {
         output.WriteRawTag(58);
-        output.WriteString(RobotId);
+        output.WriteString(RobotPropertyId);
       }
       if (anchor_ != null) {
         output.WriteRawTag(66);
@@ -1044,8 +1047,8 @@ namespace Messages.AR.V1 {
       if (VisibilityScope != global::Messages.AR.V1.VisibilityScope.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) VisibilityScope);
       }
-      if (RobotId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
+      if (RobotPropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotPropertyId);
       }
       if (anchor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
@@ -1080,8 +1083,8 @@ namespace Messages.AR.V1 {
       if (other.VisibilityScope != global::Messages.AR.V1.VisibilityScope.Unspecified) {
         VisibilityScope = other.VisibilityScope;
       }
-      if (other.RobotId.Length != 0) {
-        RobotId = other.RobotId;
+      if (other.RobotPropertyId.Length != 0) {
+        RobotPropertyId = other.RobotPropertyId;
       }
       if (other.anchor_ != null) {
         if (anchor_ == null) {
@@ -1133,7 +1136,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            RobotId = input.ReadString();
+            RobotPropertyId = input.ReadString();
             break;
           }
           case 66: {
@@ -1187,7 +1190,7 @@ namespace Messages.AR.V1 {
             break;
           }
           case 58: {
-            RobotId = input.ReadString();
+            RobotPropertyId = input.ReadString();
             break;
           }
           case 66: {

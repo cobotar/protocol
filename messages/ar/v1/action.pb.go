@@ -231,16 +231,17 @@ func (x *ActionMessages) GetItems() []*ActionMessage {
 }
 
 type ActionAddMessage struct {
-	state                protoimpl.MessageState `protogen:"open.v1"`
-	ConfigId             string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                 ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
-	AgentId              string                 `protobuf:"bytes,6,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
-	ActivatingPropertyId string                 `protobuf:"bytes,7,opt,name=activating_property_id,json=activatingPropertyId,proto3" json:"activating_property_id,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId                string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name                    string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                    ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	RobotPropertyId         string                 `protobuf:"bytes,6,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"`                // If required, this should point to a property definition of type ROBOT
+	ActivatingPropertyId    string                 `protobuf:"bytes,7,opt,name=activating_property_id,json=activatingPropertyId,proto3" json:"activating_property_id,omitempty"` // Optional (but highly recommended), this should point to a property definition of type BOOL
+	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,8,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ActionAddMessage) Reset() {
@@ -308,9 +309,9 @@ func (x *ActionAddMessage) GetType() ActionType {
 	return ActionType_ACTION_TYPE_UNSPECIFIED
 }
 
-func (x *ActionAddMessage) GetAgentId() string {
+func (x *ActionAddMessage) GetRobotPropertyId() string {
 	if x != nil {
-		return x.AgentId
+		return x.RobotPropertyId
 	}
 	return ""
 }
@@ -320,6 +321,13 @@ func (x *ActionAddMessage) GetActivatingPropertyId() string {
 		return x.ActivatingPropertyId
 	}
 	return ""
+}
+
+func (x *ActionAddMessage) GetEligibilityRequirements() []*v1.SkillRequirement {
+	if x != nil {
+		return x.EligibilityRequirements
+	}
+	return nil
 }
 
 type ActionUpdateMessage struct {
@@ -472,15 +480,16 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12&\n" +
 	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"<\n" +
 	"\x0eActionMessages\x12*\n" +
-	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x89\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x8c\x03\n" +
 	"\x10ActionAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x19\n" +
-	"\bagent_id\x18\x06 \x01(\tR\aagentId\x124\n" +
-	"\x16activating_property_id\x18\a \x01(\tR\x14activatingPropertyId\"z\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
+	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n" +
+	"\x16activating_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14activatingPropertyId\x12Z\n" +
+	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"z\n" +
 	"\x13ActionUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -535,11 +544,12 @@ var file_ar_v1_action_proto_depIdxs = []int32{
 	6, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
 	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
 	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	6, // 4: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }

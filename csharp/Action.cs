@@ -35,35 +35,38 @@ namespace Messages.AR.V1 {
             "MS5Ta2lsbFJlcXVpcmVtZW50UhdlbGlnaWJpbGl0eVJlcXVpcmVtZW50cxIm",
             "Cgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQiPAoOQWN0",
             "aW9uTWVzc2FnZXMSKgoFaXRlbXMYASADKAsyFC5hci52MS5BY3Rpb25NZXNz",
-            "YWdlUgVpdGVtcyKJAgoQQWN0aW9uQWRkTWVzc2FnZRImCgljb25maWdfaWQY",
+            "YWdlUgVpdGVtcyKMAwoQQWN0aW9uQWRkTWVzc2FnZRImCgljb25maWdfaWQY",
             "ASABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQSEgoEbmFtZRgCIAEoCVIEbmFt",
             "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
             "ZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUIL",
-            "ukgIggECEAHIAQFSBHR5cGUSGQoIYWdlbnRfaWQYBiABKAlSB2FnZW50SWQS",
-            "NAoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCVIUYWN0aXZhdGluZ1By",
-            "b3BlcnR5SWQiegoTQWN0aW9uVXBkYXRlTWVzc2FnZRIOCgJpZBgBIAEoCVIC",
-            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIn8K",
-            "EkFjdGlvbkNsb25lTWVzc2FnZRIfCgtvcmlnaW5hbF9pZBgBIAEoCVIKb3Jp",
-            "Z2luYWxJZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGlj",
-            "b24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uKsUCCgpBY3Rp",
-            "b25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9O",
-            "X1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5E",
-            "TxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNUSU9OX1RZ",
-            "UEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQ",
-            "DhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9O",
-            "X1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JP",
-            "VF9GUkVFX0RSSVZFEDQSIQodQUNUSU9OX1RZUEVfUk9CT1RfQ09MTEFCT1JB",
-            "VEUQNUKHAQoJY29tLmFyLnYxQgtBY3Rpb25Qcm90b1ABWi9naXRodWIuY29t",
-            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoC",
-            "Dk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoC",
-            "BkFyOjpWMWIGcHJvdG8z"));
+            "ukgIggECEAHIAQFSBHR5cGUSNQoRcm9ib3RfcHJvcGVydHlfaWQYBiABKAlC",
+            "CbpIBnIEmPEEAVIPcm9ib3RQcm9wZXJ0eUlkEj8KFmFjdGl2YXRpbmdfcHJv",
+            "cGVydHlfaWQYByABKAlCCbpIBnIEmPEEAVIUYWN0aXZhdGluZ1Byb3BlcnR5",
+            "SWQSWgoYZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAggAygLMh8uY2FwYWJp",
+            "bGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50UhdlbGlnaWJpbGl0eVJlcXVpcmVt",
+            "ZW50cyJ6ChNBY3Rpb25VcGRhdGVNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBId",
+            "CgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIE",
+            "aWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24ifwoSQWN0",
+            "aW9uQ2xvbmVNZXNzYWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5h",
+            "bElkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIg",
+            "CgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24qxQIKCkFjdGlvblR5",
+            "cGUSGwoXQUNUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIdChlBQ1RJT05fVFlQ",
+            "RV9UQVNLX0NPTVBMRVRFEAoSGQoVQUNUSU9OX1RZUEVfVEFTS19VTkRPEAsS",
+            "GwoXQUNUSU9OX1RZUEVfVEFTS19BU1NJR04QDBIeChpBQ1RJT05fVFlQRV9U",
+            "QVNLX0hJR0hMSUdIVBANEhkKFUFDVElPTl9UWVBFX1RBU0tfSEVMUBAOEiAK",
+            "HEFDVElPTl9UWVBFX1JPQk9UX1BMQVlfUEFVU0UQMhIhCh1BQ1RJT05fVFlQ",
+            "RV9ST0JPVF9BQ0tOT1dMRURHRRAzEiAKHEFDVElPTl9UWVBFX1JPQk9UX0ZS",
+            "RUVfRFJJVkUQNBIhCh1BQ1RJT05fVFlQRV9ST0JPVF9DT0xMQUJPUkFURRA1",
+            "QocBCgljb20uYXIudjFCC0FjdGlvblByb3RvUAFaL2dpdGh1Yi5jb20vY29i",
+            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVz",
+            "c2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6",
+            "OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ActionType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessage), global::Messages.AR.V1.ActionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "EligibilityRequirements", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessages), global::Messages.AR.V1.ActionMessages.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionAddMessage), global::Messages.AR.V1.ActionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "AgentId", "ActivatingPropertyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionAddMessage), global::Messages.AR.V1.ActionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "RobotPropertyId", "ActivatingPropertyId", "EligibilityRequirements" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionUpdateMessage), global::Messages.AR.V1.ActionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionCloneMessage), global::Messages.AR.V1.ActionCloneMessage.Parser, new[]{ "OriginalId", "Name", "Icon", "Description" }, null, null, null, null)
           }));
@@ -724,8 +727,9 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
-      agentId_ = other.agentId_;
+      robotPropertyId_ = other.robotPropertyId_;
       activatingPropertyId_ = other.activatingPropertyId_;
+      eligibilityRequirements_ = other.eligibilityRequirements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -795,21 +799,27 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "agent_id" field.</summary>
-    public const int AgentIdFieldNumber = 6;
-    private string agentId_ = "";
+    /// <summary>Field number for the "robot_property_id" field.</summary>
+    public const int RobotPropertyIdFieldNumber = 6;
+    private string robotPropertyId_ = "";
+    /// <summary>
+    /// If required, this should point to a property definition of type ROBOT
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AgentId {
-      get { return agentId_; }
+    public string RobotPropertyId {
+      get { return robotPropertyId_; }
       set {
-        agentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        robotPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "activating_property_id" field.</summary>
     public const int ActivatingPropertyIdFieldNumber = 7;
     private string activatingPropertyId_ = "";
+    /// <summary>
+    /// Optional (but highly recommended), this should point to a property definition of type BOOL
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ActivatingPropertyId {
@@ -817,6 +827,17 @@ namespace Messages.AR.V1 {
       set {
         activatingPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+
+    /// <summary>Field number for the "eligibility_requirements" field.</summary>
+    public const int EligibilityRequirementsFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Messages.Capability.V1.SkillRequirement> _repeated_eligibilityRequirements_codec
+        = pb::FieldCodec.ForMessage(66, global::Messages.Capability.V1.SkillRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Capability.V1.SkillRequirement> eligibilityRequirements_ = new pbc::RepeatedField<global::Messages.Capability.V1.SkillRequirement>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Capability.V1.SkillRequirement> EligibilityRequirements {
+      get { return eligibilityRequirements_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -839,8 +860,9 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
-      if (AgentId != other.AgentId) return false;
+      if (RobotPropertyId != other.RobotPropertyId) return false;
       if (ActivatingPropertyId != other.ActivatingPropertyId) return false;
+      if(!eligibilityRequirements_.Equals(other.eligibilityRequirements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -853,8 +875,9 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.AR.V1.ActionType.Unspecified) hash ^= Type.GetHashCode();
-      if (AgentId.Length != 0) hash ^= AgentId.GetHashCode();
+      if (RobotPropertyId.Length != 0) hash ^= RobotPropertyId.GetHashCode();
       if (ActivatingPropertyId.Length != 0) hash ^= ActivatingPropertyId.GetHashCode();
+      hash ^= eligibilityRequirements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -893,14 +916,15 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (AgentId.Length != 0) {
+      if (RobotPropertyId.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(AgentId);
+        output.WriteString(RobotPropertyId);
       }
       if (ActivatingPropertyId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ActivatingPropertyId);
       }
+      eligibilityRequirements_.WriteTo(output, _repeated_eligibilityRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -931,14 +955,15 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (AgentId.Length != 0) {
+      if (RobotPropertyId.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(AgentId);
+        output.WriteString(RobotPropertyId);
       }
       if (ActivatingPropertyId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ActivatingPropertyId);
       }
+      eligibilityRequirements_.WriteTo(ref output, _repeated_eligibilityRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -964,12 +989,13 @@ namespace Messages.AR.V1 {
       if (Type != global::Messages.AR.V1.ActionType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (AgentId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AgentId);
+      if (RobotPropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotPropertyId);
       }
       if (ActivatingPropertyId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ActivatingPropertyId);
       }
+      size += eligibilityRequirements_.CalculateSize(_repeated_eligibilityRequirements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -997,12 +1023,13 @@ namespace Messages.AR.V1 {
       if (other.Type != global::Messages.AR.V1.ActionType.Unspecified) {
         Type = other.Type;
       }
-      if (other.AgentId.Length != 0) {
-        AgentId = other.AgentId;
+      if (other.RobotPropertyId.Length != 0) {
+        RobotPropertyId = other.RobotPropertyId;
       }
       if (other.ActivatingPropertyId.Length != 0) {
         ActivatingPropertyId = other.ActivatingPropertyId;
       }
+      eligibilityRequirements_.Add(other.eligibilityRequirements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1043,11 +1070,15 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            AgentId = input.ReadString();
+            RobotPropertyId = input.ReadString();
             break;
           }
           case 58: {
             ActivatingPropertyId = input.ReadString();
+            break;
+          }
+          case 66: {
+            eligibilityRequirements_.AddEntriesFrom(input, _repeated_eligibilityRequirements_codec);
             break;
           }
         }
@@ -1090,11 +1121,15 @@ namespace Messages.AR.V1 {
             break;
           }
           case 50: {
-            AgentId = input.ReadString();
+            RobotPropertyId = input.ReadString();
             break;
           }
           case 58: {
             ActivatingPropertyId = input.ReadString();
+            break;
+          }
+          case 66: {
+            eligibilityRequirements_.AddEntriesFrom(ref input, _repeated_eligibilityRequirements_codec);
             break;
           }
         }
