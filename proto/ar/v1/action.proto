@@ -49,8 +49,9 @@ message ActionAddMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string agent_id = 6;
+  string robot_id = 6;
   string activating_property_id = 7;
+  repeated capability.v1.SkillRequirement eligibility_requirements = 8;
 }
 
 message ActionUpdateMessage {
