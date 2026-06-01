@@ -54,6 +54,7 @@ enum PropertyGroup {
   PROPERTY_GROUP_ICON = 5;
   PROPERTY_GROUP_CONFIGURATION = 6;
   PROPERTY_GROUP_HIDDEN = 7;
+  PROPERTY_GROUP_INPUT_SLOT = 8;
 }
 
 enum PropertyPermission {
