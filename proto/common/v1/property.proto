@@ -135,24 +135,25 @@ message PropertyDefinition {
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true];
-  string parent_id = 2;
-  string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
-  string icon = 4;
-  string description = 5;
-  PropertyType type = 6 [
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  PropertyType type = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  PropertyScope scope = 7 [(buf.validate.field).enum.defined_only = true];
+  string parent_id = 6; // direct owner: feedback id, action id, ar_config id, etc.
+  string authoring_context_id = 7; // grouping/root context: ar_config id
+  PropertyScope scope = 8 [(buf.validate.field).enum.defined_only = true];
 
   // UI/authoring metadata
-  PropertyPermission minimum_required_permission = 8 [(buf.validate.field).enum.defined_only = true];
-  repeated PropertyOrigin allowed_origins = 9 [(buf.validate.field).repeated.items.enum.defined_only = true];
-  PropertyGroup group = 10 [(buf.validate.field).enum.defined_only = true];
-  int32 ordering = 11;
-  bool hide_group = 12;
-  bool advanced = 13;
-  bool disable_mirroring = 14;
+  PropertyPermission minimum_required_permission = 9 [(buf.validate.field).enum.defined_only = true];
+  repeated PropertyOrigin allowed_origins = 10 [(buf.validate.field).repeated.items.enum.defined_only = true];
+  PropertyGroup group = 11 [(buf.validate.field).enum.defined_only = true];
+  int32 ordering = 12;
+  bool hide_group = 13;
+  bool advanced = 14;
+  bool disable_mirroring = 15;
 
   NumberExtras number_extras = 41;
   EnumExtras enum_extras = 42;
@@ -179,7 +180,7 @@ message PropertyInstance {
   string id = 1 [(buf.validate.field).string.(validation.v1.property_instance_id_component) = true];
   string property_definition_id = 2 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true];
 
-  PropertyScope scope = 3;
+  PropertyScope scope = 3; // Copied value from PropertyDefinition
 
   // For ENTITY, identifies the owning template/entity scope.
   // For RUNTIME, identifies the materialized runtime context.

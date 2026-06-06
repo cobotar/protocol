@@ -384,22 +384,23 @@ func (PropertyScope) EnumDescriptor() ([]byte, []int) {
 //	  - runtime system mutates value
 //	  - example: MessageFeedback.outputGaze
 type PropertyDefinition struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ParentId    string                 `protobuf:"bytes,2,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	Name        string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Icon        string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
-	Type        PropertyType           `protobuf:"varint,6,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
-	Scope       PropertyScope          `protobuf:"varint,7,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type               PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
+	ParentId           string                 `protobuf:"bytes,6,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`                                 // direct owner: feedback id, action id, ar_config id, etc.
+	AuthoringContextId string                 `protobuf:"bytes,7,opt,name=authoring_context_id,json=authoringContextId,proto3" json:"authoring_context_id,omitempty"` // grouping/root context: ar_config id
+	Scope              PropertyScope          `protobuf:"varint,8,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
 	// UI/authoring metadata
-	MinimumRequiredPermission PropertyPermission `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
-	AllowedOrigins            []PropertyOrigin   `protobuf:"varint,9,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
-	Group                     PropertyGroup      `protobuf:"varint,10,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
-	Ordering                  int32              `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
-	HideGroup                 bool               `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
-	Advanced                  bool               `protobuf:"varint,13,opt,name=advanced,proto3" json:"advanced,omitempty"`
-	DisableMirroring          bool               `protobuf:"varint,14,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`
+	MinimumRequiredPermission PropertyPermission `protobuf:"varint,9,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
+	AllowedOrigins            []PropertyOrigin   `protobuf:"varint,10,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
+	Group                     PropertyGroup      `protobuf:"varint,11,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32              `protobuf:"varint,12,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool               `protobuf:"varint,13,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	Advanced                  bool               `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`
+	DisableMirroring          bool               `protobuf:"varint,15,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`
 	NumberExtras              *NumberExtras      `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
 	EnumExtras                *EnumExtras        `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
 	Vector3Extras             *Vector3Extras     `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
@@ -447,13 +448,6 @@ func (x *PropertyDefinition) GetId() string {
 	return ""
 }
 
-func (x *PropertyDefinition) GetParentId() string {
-	if x != nil {
-		return x.ParentId
-	}
-	return ""
-}
-
 func (x *PropertyDefinition) GetName() string {
 	if x != nil {
 		return x.Name
@@ -480,6 +474,20 @@ func (x *PropertyDefinition) GetType() PropertyType {
 		return x.Type
 	}
 	return PropertyType_PROPERTY_TYPE_UNSPECIFIED
+}
+
+func (x *PropertyDefinition) GetParentId() string {
+	if x != nil {
+		return x.ParentId
+	}
+	return ""
+}
+
+func (x *PropertyDefinition) GetAuthoringContextId() string {
+	if x != nil {
+		return x.AuthoringContextId
+	}
+	return ""
 }
 
 func (x *PropertyDefinition) GetScope() PropertyScope {
@@ -592,7 +600,7 @@ type PropertyInstance struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
 	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	PropertyDefinitionId string                 `protobuf:"bytes,2,opt,name=property_definition_id,json=propertyDefinitionId,proto3" json:"property_definition_id,omitempty"`
-	Scope                PropertyScope          `protobuf:"varint,3,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
+	Scope                PropertyScope          `protobuf:"varint,3,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"` // Copied value from PropertyDefinition
 	// For ENTITY, identifies the owning template/entity scope.
 	// For RUNTIME, identifies the materialized runtime context.
 	// Template runtime instances can use the owning template/entity id.
@@ -1489,25 +1497,27 @@ var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xed\t\n" +
-	"\x12PropertyDefinition\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12\x1b\n" +
-	"\tparent_id\x18\x02 \x01(\tR\bparentId\x12\x1d\n" +
-	"\x04name\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
-	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x05 \x01(\tR\vdescription\x128\n" +
-	"\x04type\x18\x06 \x01(\x0e2\x17.common.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x128\n" +
-	"\x05scope\x18\a \x01(\x0e2\x18.common.v1.PropertyScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05scope\x12g\n" +
-	"\x1bminimum_required_permission\x18\b \x01(\x0e2\x1d.common.v1.PropertyPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x12Q\n" +
-	"\x0fallowed_origins\x18\t \x03(\x0e2\x19.common.v1.PropertyOriginB\r\xbaH\n" +
-	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x0eallowedOrigins\x128\n" +
-	"\x05group\x18\n" +
-	" \x01(\x0e2\x18.common.v1.PropertyGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12\x1a\n" +
-	"\bordering\x18\v \x01(\x05R\bordering\x12\x1d\n" +
+	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9f\n" +
 	"\n" +
-	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1a\n" +
-	"\badvanced\x18\r \x01(\bR\badvanced\x12+\n" +
-	"\x11disable_mirroring\x18\x0e \x01(\bR\x10disableMirroring\x12<\n" +
+	"\x12PropertyDefinition\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x17.common.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12\x1b\n" +
+	"\tparent_id\x18\x06 \x01(\tR\bparentId\x120\n" +
+	"\x14authoring_context_id\x18\a \x01(\tR\x12authoringContextId\x128\n" +
+	"\x05scope\x18\b \x01(\x0e2\x18.common.v1.PropertyScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05scope\x12g\n" +
+	"\x1bminimum_required_permission\x18\t \x01(\x0e2\x1d.common.v1.PropertyPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x12Q\n" +
+	"\x0fallowed_origins\x18\n" +
+	" \x03(\x0e2\x19.common.v1.PropertyOriginB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x0eallowedOrigins\x128\n" +
+	"\x05group\x18\v \x01(\x0e2\x18.common.v1.PropertyGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12\x1a\n" +
+	"\bordering\x18\f \x01(\x05R\bordering\x12\x1d\n" +
+	"\n" +
+	"hide_group\x18\r \x01(\bR\thideGroup\x12\x1a\n" +
+	"\badvanced\x18\x0e \x01(\bR\badvanced\x12+\n" +
+	"\x11disable_mirroring\x18\x0f \x01(\bR\x10disableMirroring\x12<\n" +
 	"\rnumber_extras\x18) \x01(\v2\x17.common.v1.NumberExtrasR\fnumberExtras\x126\n" +
 	"\venum_extras\x18* \x01(\v2\x15.common.v1.EnumExtrasR\n" +
 	"enumExtras\x12?\n" +

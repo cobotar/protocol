@@ -2059,11 +2059,12 @@ Overall, we have these categories of properties:
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
-| parent_id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [PropertyType](#common-v1-PropertyType) |  |  |
+| parent_id | [string](#string) |  | direct owner: feedback id, action id, ar_config id, etc. |
+| authoring_context_id | [string](#string) |  | grouping/root context: ar_config id |
 | scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
 | minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  | UI/authoring metadata |
 | allowed_origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
@@ -2115,7 +2116,7 @@ Mirrors always point to PropertyDefinitions and are resolved inside the active c
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | property_definition_id | [string](#string) |  |  |
-| scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
+| scope | [PropertyScope](#common-v1-PropertyScope) |  | Copied value from PropertyDefinition |
 | scope_id | [string](#string) |  | For ENTITY, identifies the owning template/entity scope. For RUNTIME, identifies the materialized runtime context. Template runtime instances can use the owning template/entity id. |
 | origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  |  |
 | mirror_property_definition_id | [string](#string) |  |  |
