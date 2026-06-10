@@ -89,13 +89,15 @@ class MaterialSpec(_message.Message):
     def __init__(self, category: _Optional[_Union[MaterialCategory, str]] = ..., name: _Optional[str] = ..., grade: _Optional[str] = ...) -> None: ...
 
 class PartHandlingProfile(_message.Message):
-    __slots__ = ("fragile", "esd_sensitive", "requires_two_hand_lift", "requires_lifting_assistance", "requires_fixture_support", "max_grip_force_n", "max_torque_nm", "constraints")
+    __slots__ = ("fragile", "esd_sensitive", "requires_two_hand_lift", "requires_lifting_assistance", "requires_fixture_support", "default_grip_force_n", "max_grip_force_n", "default_torque_nm", "max_torque_nm", "constraints")
     FRAGILE_FIELD_NUMBER: _ClassVar[int]
     ESD_SENSITIVE_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_TWO_HAND_LIFT_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_LIFTING_ASSISTANCE_FIELD_NUMBER: _ClassVar[int]
     REQUIRES_FIXTURE_SUPPORT_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_GRIP_FORCE_N_FIELD_NUMBER: _ClassVar[int]
     MAX_GRIP_FORCE_N_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_TORQUE_NM_FIELD_NUMBER: _ClassVar[int]
     MAX_TORQUE_NM_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     fragile: bool
@@ -103,10 +105,12 @@ class PartHandlingProfile(_message.Message):
     requires_two_hand_lift: bool
     requires_lifting_assistance: bool
     requires_fixture_support: bool
+    default_grip_force_n: float
     max_grip_force_n: float
+    default_torque_nm: float
     max_torque_nm: float
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_lifting_assistance: bool = ..., requires_fixture_support: bool = ..., max_grip_force_n: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    def __init__(self, fragile: bool = ..., esd_sensitive: bool = ..., requires_two_hand_lift: bool = ..., requires_lifting_assistance: bool = ..., requires_fixture_support: bool = ..., default_grip_force_n: _Optional[float] = ..., max_grip_force_n: _Optional[float] = ..., default_torque_nm: _Optional[float] = ..., max_torque_nm: _Optional[float] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class PartProcessProfile(_message.Message):
     __slots__ = ("estimated_human_duration", "estimated_robot_duration", "require_full_guidance", "inspect_before_assemble", "inspect_after_disassemble", "pre_lubrication_part_id", "post_lubrication_part_id", "requires_wiping", "constraints")

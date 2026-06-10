@@ -26,57 +26,101 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChZhci92MS9pbnB1dF9zbG90LnByb3RvEgVhci52MRobYnVmL3ZhbGlkYXRl",
             "L3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3Ry",
-            "aW5nX3J1bGVzLnByb3RvIsQDChJBUklucHV0U2xvdE1lc3NhZ2USGQoCaWQY",
-            "ASABKAlCCbpIBnIE+OswAVICaWQSKQoJY29uZmlnX2lkGAIgASgJQgy6SAly",
-            "BJDxBAHIAQFSCGNvbmZpZ0lkEh0KBG5hbWUYAyABKAlCCbpIBnIEgPEEAVIE",
-            "bmFtZRISCgRpY29uGAQgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAUgASgJ",
-            "UgtkZXNjcmlwdGlvbhIaCghyZXF1aXJlZBgGIAEoCFIIcmVxdWlyZWQSQAoV",
-            "Z2VuZXJhdGVkX3Byb3BlcnR5X2lkGAcgASgJQgy6SAlyBJjxBAHIAQFSE2dl",
-            "bmVyYXRlZFByb3BlcnR5SWQSSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFy",
-            "LnYxLkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlw",
-            "ZRJFCgxjb250ZXh0X3R5cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90",
-            "VHlwZUIIukgFggECEAFSC2NvbnRleHRUeXBlOiS6SCEiHwoNcmVzb3VyY2Vf",
-            "dHlwZQoMY29udGV4dF90eXBlEAEiRgoTQVJJbnB1dFNsb3RNZXNzYWdlcxIv",
-            "CgVzbG90cxgBIAMoCzIZLmFyLnYxLkFSSW5wdXRTbG90TWVzc2FnZVIFc2xv",
-            "dHMitwQKFUFSSW5wdXRTbG90QWRkTWVzc2FnZRIpCgljb25maWdfaWQYASAB",
-            "KAlCDLpICXIEkPEEAcgBAVIIY29uZmlnSWQSHQoEbmFtZRgCIAEoCUIJukgG",
-            "cgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
-            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEhoKCHJlcXVpcmVkGAUgASgIUghyZXF1",
-            "aXJlZBJICg1yZXNvdXJjZV90eXBlGAggASgOMhkuYXIudjEuQVJSZXNvdXJj",
-            "ZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVzb3VyY2VUeXBlEkUKDGNvbnRleHRf",
-            "dHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNsb3RUeXBlQgi6SAWCAQIQ",
-            "AVILY29udGV4dFR5cGU68AG6SOwBGukBCidhcl9pbnB1dF9zbG90X2FkZC5l",
-            "eGFjdGx5X29uZV9zbG90X2tpbmQSUmV4YWN0bHkgb25lIG9mIHJlc291cmNl",
-            "X3R5cGUgb3IgY29udGV4dF90eXBlIG11c3QgYmUgc3BlY2lmaWVkIGFuZCBu",
-            "b24tVU5TUEVDSUZJRUQaaih0aGlzLnJlc291cmNlX3R5cGUgPT0gMCAmJiB0",
-            "aGlzLmNvbnRleHRfdHlwZSAhPSAwKSB8fCAodGhpcy5yZXNvdXJjZV90eXBl",
-            "ICE9IDAgJiYgdGhpcy5jb250ZXh0X3R5cGUgPT0gMCkiuAEKGEFSSW5wdXRT",
-            "bG90VXBkYXRlTWVzc2FnZRIZCgJpZBgBIAEoCUIJukgGcgT46zABUgJpZBId",
-            "CgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIE",
-            "aWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SHwoIcmVx",
-            "dWlyZWQYBSABKAhIAFIIcmVxdWlyZWSIAQFCCwoJX3JlcXVpcmVkIjgKGEFS",
-            "SW5wdXRTbG90RGVsZXRlTWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJcgT46zAB",
-            "yAEBUgJpZCp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVTT1VSQ0Vf",
-            "U0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0VfU0xPVF9U",
-            "WVBFX1JPQk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FTU0VUEAIq",
-            "vwIKEUFSQ29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xPVF9UWVBF",
-            "X1VOU1BFQ0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVfTElORV9J",
-            "RBABEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIjCh9BUl9D",
-            "T05URVhUX1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09OVEVYVF9T",
-            "TE9UX1RZUEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9UX1RZUEVf",
-            "UFJPQ0VTU19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQRV9TRVFV",
-            "RU5DRV9SVU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JV",
-            "Tl9JRBAHQooBCgljb20uYXIudjFCDklucHV0U2xvdFByb3RvUAFaL2dpdGh1",
-            "Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogID",
-            "QVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFk",
-            "YXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "aW5nX3J1bGVzLnByb3RvIpgBCg9BUkFjdG9yU2VsZWN0b3ISJQoOY3VycmVu",
+            "dF93b3JrZXIYASABKAhSDWN1cnJlbnRXb3JrZXISMwoQcmVzb3VyY2Vfc2xv",
+            "dF9pZBgCIAEoCUIJukgGcgT46zABUg5yZXNvdXJjZVNsb3RJZDopukgmIiQK",
+            "DmN1cnJlbnRfd29ya2VyChByZXNvdXJjZV9zbG90X2lkEAEijgEKFEFSUnVu",
+            "Q29udGV4dFNlbGVjdG9yEkAKCXNlbGVjdGlvbhgBIAEoDjIVLmFyLnYxLkFS",
+            "UnVuU2VsZWN0aW9uQgu6SAiCAQIQAcgBAVIJc2VsZWN0aW9uEjQKBWFjdG9y",
+            "GAIgASgLMhYuYXIudjEuQVJBY3RvclNlbGVjdG9yQga6SAPIAQFSBWFjdG9y",
+            "IrgJChJBUklucHV0U2xvdE1lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE+Osw",
+            "AVICaWQSKQoJY29uZmlnX2lkGAIgASgJQgy6SAlyBJDxBAHIAQFSCGNvbmZp",
+            "Z0lkEh0KBG5hbWUYAyABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAQg",
+            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbhIa",
+            "CghyZXF1aXJlZBgGIAEoCFIIcmVxdWlyZWQSQAoVZ2VuZXJhdGVkX3Byb3Bl",
+            "cnR5X2lkGAcgASgJQgy6SAlyBJjxBAHIAQFSE2dlbmVyYXRlZFByb3BlcnR5",
+            "SWQSSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFSUmVzb3VyY2VT",
+            "bG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlwZRJFCgxjb250ZXh0X3R5",
+            "cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90VHlwZUIIukgFggECEAFS",
+            "C2NvbnRleHRUeXBlEj4KDHJ1bl9zZWxlY3RvchgKIAEoCzIbLmFyLnYxLkFS",
+            "UnVuQ29udGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvcjrXBbpI0wUanQIKK2Fy",
+            "X2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVpcmVzX3Rhc2sSLEZJ",
+            "UlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRBU0tfUlVOX0lEGr8B",
+            "IWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5ydW5fc2VsZWN0b3Iu",
+            "c2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9uLkFSX1JVTl9TRUxF",
+            "Q1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250ZXh0X3R5cGUgPT0g",
+            "YXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVf",
+            "VEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVuX3NlbGVjdG9yX21h",
+            "dGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3IgaXMgcmVxdWlyZWQg",
+            "Zm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJpdGVkIG90aGVyd2lz",
+            "ZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
+            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNTX1JVTl9JRCB8fCB0",
+            "aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5B",
+            "Ul9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQgfHwgdGhpcy5j",
+            "b250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09O",
+            "VEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhhcyh0aGlzLnJ1bl9z",
+            "ZWxlY3RvcikiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4dF90eXBlEAEiRgoT",
+            "QVJJbnB1dFNsb3RNZXNzYWdlcxIvCgVzbG90cxgBIAMoCzIZLmFyLnYxLkFS",
+            "SW5wdXRTbG90TWVzc2FnZVIFc2xvdHMi3ggKFUFSSW5wdXRTbG90QWRkTWVz",
+            "c2FnZRIpCgljb25maWdfaWQYASABKAlCDLpICXIEkPEEAcgBAVIIY29uZmln",
+            "SWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
+            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEhoK",
+            "CHJlcXVpcmVkGAUgASgIUghyZXF1aXJlZBJICg1yZXNvdXJjZV90eXBlGAgg",
+            "ASgOMhkuYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVz",
+            "b3VyY2VUeXBlEkUKDGNvbnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29u",
+            "dGV4dFNsb3RUeXBlQgi6SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3Nl",
+            "bGVjdG9yGAogASgLMhsuYXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1",
+            "blNlbGVjdG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxl",
+            "Y3Rpb25fcmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2",
+            "YWxpZCBmb3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9y",
+            "KSB8fCB0aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJS",
+            "dW5TZWxlY3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8",
+            "fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlw",
+            "ZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5w",
+            "dXRfc2xvdC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1",
+            "bl9zZWxlY3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMg",
+            "YW5kIHByb2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBl",
+            "ID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9U",
+            "WVBFX1BST0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFy",
+            "LnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NF",
+            "UVVFTkNFX1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5B",
+            "UkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JV",
+            "Tl9JRCkgPT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90",
+            "eXBlCgxjb250ZXh0X3R5cGUQASL4AQoYQVJJbnB1dFNsb3RVcGRhdGVNZXNz",
+            "YWdlEhkKAmlkGAEgASgJQgm6SAZyBPjrMAFSAmlkEh0KBG5hbWUYAiABKAlC",
+            "CbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
+            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIfCghyZXF1aXJlZBgFIAEoCEgA",
+            "UghyZXF1aXJlZIgBARI+CgxydW5fc2VsZWN0b3IYBiABKAsyGy5hci52MS5B",
+            "UlJ1bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3JCCwoJX3JlcXVpcmVk",
+            "IjgKGEFSSW5wdXRTbG90RGVsZXRlTWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJ",
+            "cgT46zAByAEBUgJpZCp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVT",
+            "T1VSQ0VfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0Vf",
+            "U0xPVF9UWVBFX1JPQk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FT",
+            "U0VUEAIqvwIKEUFSQ29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xP",
+            "VF9UWVBFX1VOU1BFQ0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVf",
+            "TElORV9JRBABEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIj",
+            "Ch9BUl9DT05URVhUX1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09O",
+            "VEVYVF9TTE9UX1RZUEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9U",
+            "X1RZUEVfUFJPQ0VTU19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQ",
+            "RV9TRVFVRU5DRV9SVU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9U",
+            "QVNLX1JVTl9JRBAHKucBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VM",
+            "RUNUSU9OX1VOU1BFQ0lGSUVEEAASIwofQVJfUlVOX1NFTEVDVElPTl9GSVJT",
+            "VF9XT1JLQUJMRRABEiAKHEFSX1JVTl9TRUxFQ1RJT05fSU5fUFJPR1JFU1MQ",
+            "AhIiCh5BUl9SVU5fU0VMRUNUSU9OX05FWFRfRVhQRUNURUQQAxIjCh9BUl9S",
+            "VU5fU0VMRUNUSU9OX0xBU1RfQ09NUExFVEVEEAQSIwofQVJfUlVOX1NFTEVD",
+            "VElPTl9GSVJTVF9JTl9FUlJPUhAFQooBCgljb20uYXIudjFCDklucHV0U2xv",
+            "dFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
+            "cy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeIC",
+            "EUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "Required", "GeneratedPropertyId", "ResourceType", "ContextType" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARActorSelector), global::Messages.AR.V1.ARActorSelector.Parser, new[]{ "CurrentWorker", "ResourceSlotId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARRunContextSelector), global::Messages.AR.V1.ARRunContextSelector.Parser, new[]{ "Selection", "Actor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "Required", "GeneratedPropertyId", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessages), global::Messages.AR.V1.ARInputSlotMessages.Parser, new[]{ "Slots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Required", "ResourceType", "ContextType" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Required" }, new[]{ "Required" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Required", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Required", "RunSelector" }, new[]{ "Required" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotDeleteMessage), global::Messages.AR.V1.ARInputSlotDeleteMessage.Parser, new[]{ "Id" }, null, null, null, null)
           }));
     }
@@ -105,45 +149,626 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// Slot resolves to the active line id.
+    /// Slot resolves to the line containing the binding target, if known.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_LINE_ID")] LineId = 1,
     /// <summary>
-    /// Slot resolves to the active cell id.
+    /// Slot resolves to the targeted cell or the parent cell of the targeted station.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_CELL_ID")] CellId = 2,
     /// <summary>
-    /// Slot resolves to the active station id.
+    /// Slot resolves to the targeted station. This may be empty for a cell-level
+    /// binding when no station has been established by the runtime session.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_STATION_ID")] StationId = 3,
     /// <summary>
-    /// Slot resolves to the active worker/operator id.
+    /// Slot resolves to the worker authenticated in the AR application session.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_WORKER_ID")] WorkerId = 4,
     /// <summary>
-    /// Slot resolves to the active process run id.
+    /// Slot resolves to a process run id selected by run_selector.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID")] ProcessRunId = 5,
     /// <summary>
-    /// Slot resolves to the active sequence run id.
+    /// Slot resolves to a sequence run id selected by run_selector.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID")] SequenceRunId = 6,
     /// <summary>
-    /// Slot resolves to the active task run id.
+    /// Slot resolves to a task run id selected by run_selector.
     /// </summary>
     [pbr::OriginalName("AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID")] TaskRunId = 7,
+  }
+
+  /// <summary>
+  /// ARRunSelection defines how an actor-related task candidate is chosen.
+  ///
+  /// Candidate tasks are limited to ProcessRuns associated with the station or
+  /// cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
+  /// assigned to or performed by the selected actor are excluded unless a policy
+  /// explicitly selects historical or errored work.
+  ///
+  /// Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
+  /// 1. state precedence: IN_PROGRESS, READY, QUEUED
+  /// 2. initiated_at ascending
+  /// 3. id ascending
+  ///
+  /// Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
+  /// runtime must populate that list in canonical execution order. IDs provide a
+  /// deterministic tie-breaker when a policy otherwise considers candidates
+  /// equivalent.
+  ///
+  /// To summarize
+  /// • FIRST_WORKABLE: actionable now.
+  /// • IN_PROGRESS: being performed now.
+  /// • NEXT_EXPECTED: likely relevant next, but potentially blocked.
+  /// • LAST_COMPLETED: most recently completed.
+  /// • FIRST_IN_ERROR: errored task requiring attention.
+  /// </summary>
+  public enum ARRunSelection {
+    /// <summary>
+    /// No selection policy specified. Invalid for a stored run selector.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Select the first ordered task that is currently workable for the actor.
+    /// Workability is determined by runtime assignment, actor feasibility, task
+    /// state, dependencies, and other effective execution restrictions.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_FIRST_WORKABLE")] FirstWorkable = 1,
+    /// <summary>
+    /// Select the first ordered IN_PROGRESS task assigned to the actor.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_IN_PROGRESS")] InProgress = 2,
+    /// <summary>
+    /// Select the next non-terminal task expected to become relevant to the actor.
+    ///
+    /// Resolution:
+    /// 1. Build the actor's ordered candidate task list.
+    /// 2. If FIRST_WORKABLE resolves, select the first later non-terminal
+    ///    candidate.
+    /// 3. Otherwise, select the first candidate expected to become workable after
+    ///    its currently unmet dependencies are completed.
+    ///
+    /// The selected task need not currently be workable. Tasks that cannot be
+    /// assigned to or performed by the actor are excluded.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_NEXT_EXPECTED")] NextExpected = 3,
+    /// <summary>
+    /// Select the actor's completed task with the latest completed_at timestamp.
+    /// Canonical execution order and then id are used as tie-breakers.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_LAST_COMPLETED")] LastCompleted = 4,
+    /// <summary>
+    /// Select the first ordered ERROR task associated with the actor.
+    /// This policy is valid only for TASK_RUN_ID.
+    /// </summary>
+    [pbr::OriginalName("AR_RUN_SELECTION_FIRST_IN_ERROR")] FirstInError = 5,
   }
 
   #endregion
 
   #region Messages
   /// <summary>
+  /// ARActorSelector identifies the actor whose tasks are considered by a run
+  /// selector.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ARActorSelector : pb::IMessage<ARActorSelector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ARActorSelector> _parser = new pb::MessageParser<ARActorSelector>(() => new ARActorSelector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ARActorSelector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARActorSelector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARActorSelector(ARActorSelector other) : this() {
+      currentWorker_ = other.currentWorker_;
+      resourceSlotId_ = other.resourceSlotId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARActorSelector Clone() {
+      return new ARActorSelector(this);
+    }
+
+    /// <summary>Field number for the "current_worker" field.</summary>
+    public const int CurrentWorkerFieldNumber = 1;
+    private bool currentWorker_;
+    /// <summary>
+    /// Use the worker authenticated in the current AR application session.
+    /// Because scalar presence is represented by a non-default value here, this
+    /// field must be true when selected.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CurrentWorker {
+      get { return currentWorker_; }
+      set {
+        currentWorker_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "resource_slot_id" field.</summary>
+    public const int ResourceSlotIdFieldNumber = 2;
+    private string resourceSlotId_ = "";
+    /// <summary>
+    /// Use the robot bound to another ROBOT input slot in the same AR config.
+    /// The referenced slot must exist and have resource_type ROBOT; this
+    /// cross-entity constraint must be checked by the application/backend.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ResourceSlotId {
+      get { return resourceSlotId_; }
+      set {
+        resourceSlotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ARActorSelector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ARActorSelector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CurrentWorker != other.CurrentWorker) return false;
+      if (ResourceSlotId != other.ResourceSlotId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurrentWorker != false) hash ^= CurrentWorker.GetHashCode();
+      if (ResourceSlotId.Length != 0) hash ^= ResourceSlotId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CurrentWorker != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(CurrentWorker);
+      }
+      if (ResourceSlotId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ResourceSlotId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CurrentWorker != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(CurrentWorker);
+      }
+      if (ResourceSlotId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ResourceSlotId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurrentWorker != false) {
+        size += 1 + 1;
+      }
+      if (ResourceSlotId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ResourceSlotId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ARActorSelector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurrentWorker != false) {
+        CurrentWorker = other.CurrentWorker;
+      }
+      if (other.ResourceSlotId.Length != 0) {
+        ResourceSlotId = other.ResourceSlotId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CurrentWorker = input.ReadBool();
+            break;
+          }
+          case 18: {
+            ResourceSlotId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CurrentWorker = input.ReadBool();
+            break;
+          }
+          case 18: {
+            ResourceSlotId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// ARRunContextSelector selects an actor-related task and projects it to the run
+  /// ID requested by the owning input slot:
+  ///
+  /// - TASK_RUN_ID returns the selected task.
+  /// - SEQUENCE_RUN_ID returns the selected task's immediate parent sequence.
+  /// - PROCESS_RUN_ID returns the process containing the selected task.
+  ///
+  /// FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
+  /// to a parent sequence or process.
+  ///
+  /// If no task satisfies the policy, resolution produces no value. An optional
+  /// input slot receives an empty generated property value; a required input slot
+  /// makes materialization fail.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ARRunContextSelector : pb::IMessage<ARRunContextSelector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ARRunContextSelector> _parser = new pb::MessageParser<ARRunContextSelector>(() => new ARRunContextSelector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ARRunContextSelector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARRunContextSelector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARRunContextSelector(ARRunContextSelector other) : this() {
+      selection_ = other.selection_;
+      actor_ = other.actor_ != null ? other.actor_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARRunContextSelector Clone() {
+      return new ARRunContextSelector(this);
+    }
+
+    /// <summary>Field number for the "selection" field.</summary>
+    public const int SelectionFieldNumber = 1;
+    private global::Messages.AR.V1.ARRunSelection selection_ = global::Messages.AR.V1.ARRunSelection.Unspecified;
+    /// <summary>
+    /// Policy used to choose a task before projecting it to the requested run ID.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARRunSelection Selection {
+      get { return selection_; }
+      set {
+        selection_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "actor" field.</summary>
+    public const int ActorFieldNumber = 2;
+    private global::Messages.AR.V1.ARActorSelector actor_;
+    /// <summary>
+    /// Actor whose tasks are considered.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARActorSelector Actor {
+      get { return actor_; }
+      set {
+        actor_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ARRunContextSelector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ARRunContextSelector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Selection != other.Selection) return false;
+      if (!object.Equals(Actor, other.Actor)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Selection != global::Messages.AR.V1.ARRunSelection.Unspecified) hash ^= Selection.GetHashCode();
+      if (actor_ != null) hash ^= Actor.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Selection != global::Messages.AR.V1.ARRunSelection.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Selection);
+      }
+      if (actor_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Actor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Selection != global::Messages.AR.V1.ARRunSelection.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Selection);
+      }
+      if (actor_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Actor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Selection != global::Messages.AR.V1.ARRunSelection.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Selection);
+      }
+      if (actor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Actor);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ARRunContextSelector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Selection != global::Messages.AR.V1.ARRunSelection.Unspecified) {
+        Selection = other.Selection;
+      }
+      if (other.actor_ != null) {
+        if (actor_ == null) {
+          Actor = new global::Messages.AR.V1.ARActorSelector();
+        }
+        Actor.MergeFrom(other.Actor);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Selection = (global::Messages.AR.V1.ARRunSelection) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (actor_ == null) {
+              Actor = new global::Messages.AR.V1.ARActorSelector();
+            }
+            input.ReadMessage(Actor);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Selection = (global::Messages.AR.V1.ARRunSelection) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (actor_ == null) {
+              Actor = new global::Messages.AR.V1.ARActorSelector();
+            }
+            input.ReadMessage(Actor);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// ARInputSlotMessage is the authoritative config-owned input slot entity for
   /// AR configs.
   ///
   /// The backend is expected to derive and manage generated_property_id from the
-  /// slot identity and source specification. Users should not author or edit the
-  /// generated property directly.
+  /// slot identity and value kind. Users should not author or edit the generated
+  /// property directly.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARInputSlotMessage : pb::IMessage<ARInputSlotMessage>
@@ -160,7 +785,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -189,6 +814,7 @@ namespace Messages.AR.V1 {
       generatedPropertyId_ = other.generatedPropertyId_;
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
+      runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -324,6 +950,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "run_selector" field.</summary>
+    public const int RunSelectorFieldNumber = 10;
+    private global::Messages.AR.V1.ARRunContextSelector runSelector_;
+    /// <summary>
+    /// Required resolution policy for process, sequence, and task run context slots.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARRunContextSelector RunSelector {
+      get { return runSelector_; }
+      set {
+        runSelector_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -348,6 +989,7 @@ namespace Messages.AR.V1 {
       if (GeneratedPropertyId != other.GeneratedPropertyId) return false;
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
+      if (!object.Equals(RunSelector, other.RunSelector)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -364,6 +1006,7 @@ namespace Messages.AR.V1 {
       if (GeneratedPropertyId.Length != 0) hash ^= GeneratedPropertyId.GetHashCode();
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
+      if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -418,6 +1061,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) ContextType);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -464,6 +1111,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) ContextType);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -500,6 +1151,9 @@ namespace Messages.AR.V1 {
       }
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ContextType);
+      }
+      if (runSelector_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -539,6 +1193,12 @@ namespace Messages.AR.V1 {
       }
       if (other.ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) {
         ContextType = other.ContextType;
+      }
+      if (other.runSelector_ != null) {
+        if (runSelector_ == null) {
+          RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+        }
+        RunSelector.MergeFrom(other.RunSelector);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -593,6 +1253,13 @@ namespace Messages.AR.V1 {
           }
           case 72: {
             ContextType = (global::Messages.AR.V1.ARContextSlotType) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
             break;
           }
         }
@@ -650,6 +1317,13 @@ namespace Messages.AR.V1 {
             ContextType = (global::Messages.AR.V1.ARContextSlotType) input.ReadEnum();
             break;
           }
+          case 82: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
+            break;
+          }
         }
       }
     }
@@ -672,7 +1346,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -850,8 +1524,9 @@ namespace Messages.AR.V1 {
   /// <summary>
   /// ARInputSlotAddMessage creates a new config-owned input slot.
   ///
-  /// Source specification is treated as identity-shaping for the generated
-  /// property. If the source kind must change later, prefer delete + recreate.
+  /// The source kind determines the generated property's value kind. If the source
+  /// kind must change later, prefer delete + recreate. A run selector is a mutable
+  /// resolution policy and may be changed with ARInputSlotUpdateMessage.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARInputSlotAddMessage : pb::IMessage<ARInputSlotAddMessage>
@@ -868,7 +1543,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -895,6 +1570,7 @@ namespace Messages.AR.V1 {
       required_ = other.required_;
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
+      runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1000,6 +1676,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "run_selector" field.</summary>
+    public const int RunSelectorFieldNumber = 10;
+    private global::Messages.AR.V1.ARRunContextSelector runSelector_;
+    /// <summary>
+    /// Required resolution policy for process, sequence, and task run context slots.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARRunContextSelector RunSelector {
+      get { return runSelector_; }
+      set {
+        runSelector_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1022,6 +1713,7 @@ namespace Messages.AR.V1 {
       if (Required != other.Required) return false;
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
+      if (!object.Equals(RunSelector, other.RunSelector)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1036,6 +1728,7 @@ namespace Messages.AR.V1 {
       if (Required != false) hash ^= Required.GetHashCode();
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
+      if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1082,6 +1775,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) ContextType);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1120,6 +1817,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) ContextType);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1150,6 +1851,9 @@ namespace Messages.AR.V1 {
       }
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ContextType);
+      }
+      if (runSelector_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1183,6 +1887,12 @@ namespace Messages.AR.V1 {
       }
       if (other.ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) {
         ContextType = other.ContextType;
+      }
+      if (other.runSelector_ != null) {
+        if (runSelector_ == null) {
+          RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+        }
+        RunSelector.MergeFrom(other.RunSelector);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1229,6 +1939,13 @@ namespace Messages.AR.V1 {
           }
           case 72: {
             ContextType = (global::Messages.AR.V1.ARContextSlotType) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
             break;
           }
         }
@@ -1278,6 +1995,13 @@ namespace Messages.AR.V1 {
             ContextType = (global::Messages.AR.V1.ARContextSlotType) input.ReadEnum();
             break;
           }
+          case 82: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
+            break;
+          }
         }
       }
     }
@@ -1286,10 +2010,12 @@ namespace Messages.AR.V1 {
   }
 
   /// <summary>
-  /// ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+  /// ARInputSlotUpdateMessage updates the editable fields and resolution policy of
+  /// an existing slot.
   ///
-  /// The source specification and generated_property_id are intentionally not
-  /// updated here. Those should be treated as structural and changed via recreate.
+  /// The source kind and generated_property_id are intentionally not updated here.
+  /// Those are structural and should be changed via recreate. The run selector may
+  /// be updated because it changes resolution policy without changing value type.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARInputSlotUpdateMessage : pb::IMessage<ARInputSlotUpdateMessage>
@@ -1307,7 +2033,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1333,6 +2059,7 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       required_ = other.required_;
+      runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1423,6 +2150,21 @@ namespace Messages.AR.V1 {
       _hasBits0 &= ~1;
     }
 
+    /// <summary>Field number for the "run_selector" field.</summary>
+    public const int RunSelectorFieldNumber = 6;
+    private global::Messages.AR.V1.ARRunContextSelector runSelector_;
+    /// <summary>
+    /// Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARRunContextSelector RunSelector {
+      get { return runSelector_; }
+      set {
+        runSelector_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1443,6 +2185,7 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Required != other.Required) return false;
+      if (!object.Equals(RunSelector, other.RunSelector)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1455,6 +2198,7 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (HasRequired) hash ^= Required.GetHashCode();
+      if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1493,6 +2237,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteBool(Required);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1523,6 +2271,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(40);
         output.WriteBool(Required);
       }
+      if (runSelector_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(RunSelector);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1547,6 +2299,9 @@ namespace Messages.AR.V1 {
       }
       if (HasRequired) {
         size += 1 + 1;
+      }
+      if (runSelector_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1574,6 +2329,12 @@ namespace Messages.AR.V1 {
       }
       if (other.HasRequired) {
         Required = other.Required;
+      }
+      if (other.runSelector_ != null) {
+        if (runSelector_ == null) {
+          RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+        }
+        RunSelector.MergeFrom(other.RunSelector);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1612,6 +2373,13 @@ namespace Messages.AR.V1 {
           }
           case 40: {
             Required = input.ReadBool();
+            break;
+          }
+          case 50: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
             break;
           }
         }
@@ -1653,6 +2421,13 @@ namespace Messages.AR.V1 {
             Required = input.ReadBool();
             break;
           }
+          case 50: {
+            if (runSelector_ == null) {
+              RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
+            }
+            input.ReadMessage(RunSelector);
+            break;
+          }
         }
       }
     }
@@ -1675,7 +2450,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.AR.V1.InputSlotReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

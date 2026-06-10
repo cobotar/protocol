@@ -19,28 +19,131 @@ enum ARResourceSlotType {
 enum ARContextSlotType {
   // No runtime context selected. Invalid for stored or add-requested slots.
   AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0;
-  // Slot resolves to the active line id.
+  // Slot resolves to the line containing the binding target, if known.
   AR_CONTEXT_SLOT_TYPE_LINE_ID = 1;
-  // Slot resolves to the active cell id.
+  // Slot resolves to the targeted cell or the parent cell of the targeted station.
   AR_CONTEXT_SLOT_TYPE_CELL_ID = 2;
-  // Slot resolves to the active station id.
+  // Slot resolves to the targeted station. This may be empty for a cell-level
+  // binding when no station has been established by the runtime session.
   AR_CONTEXT_SLOT_TYPE_STATION_ID = 3;
-  // Slot resolves to the active worker/operator id.
+  // Slot resolves to the worker authenticated in the AR application session.
   AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4;
-  // Slot resolves to the active process run id.
+  // Slot resolves to a process run id selected by run_selector.
   AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5;
-  // Slot resolves to the active sequence run id.
+  // Slot resolves to a sequence run id selected by run_selector.
   AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6;
-  // Slot resolves to the active task run id.
+  // Slot resolves to a task run id selected by run_selector.
   AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7;
+}
+
+// ARRunSelection defines how an actor-related task candidate is chosen.
+//
+// Candidate tasks are limited to ProcessRuns associated with the station or
+// cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
+// assigned to or performed by the selected actor are excluded unless a policy
+// explicitly selects historical or errored work.
+//
+// Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
+// 1. state precedence: IN_PROGRESS, READY, QUEUED
+// 2. initiated_at ascending
+// 3. id ascending
+//
+// Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
+// runtime must populate that list in canonical execution order. IDs provide a
+// deterministic tie-breaker when a policy otherwise considers candidates
+// equivalent.
+//
+// To summarize
+// • FIRST_WORKABLE: actionable now.
+// • IN_PROGRESS: being performed now.
+// • NEXT_EXPECTED: likely relevant next, but potentially blocked.
+// • LAST_COMPLETED: most recently completed.
+// • FIRST_IN_ERROR: errored task requiring attention.
+enum ARRunSelection {
+  // No selection policy specified. Invalid for a stored run selector.
+  AR_RUN_SELECTION_UNSPECIFIED = 0;
+
+  // Select the first ordered task that is currently workable for the actor.
+  // Workability is determined by runtime assignment, actor feasibility, task
+  // state, dependencies, and other effective execution restrictions.
+  AR_RUN_SELECTION_FIRST_WORKABLE = 1;
+
+  // Select the first ordered IN_PROGRESS task assigned to the actor.
+  AR_RUN_SELECTION_IN_PROGRESS = 2;
+
+  // Select the next non-terminal task expected to become relevant to the actor.
+  //
+  // Resolution:
+  // 1. Build the actor's ordered candidate task list.
+  // 2. If FIRST_WORKABLE resolves, select the first later non-terminal
+  //    candidate.
+  // 3. Otherwise, select the first candidate expected to become workable after
+  //    its currently unmet dependencies are completed.
+  //
+  // The selected task need not currently be workable. Tasks that cannot be
+  // assigned to or performed by the actor are excluded.
+  AR_RUN_SELECTION_NEXT_EXPECTED = 3;
+
+  // Select the actor's completed task with the latest completed_at timestamp.
+  // Canonical execution order and then id are used as tie-breakers.
+  AR_RUN_SELECTION_LAST_COMPLETED = 4;
+
+  // Select the first ordered ERROR task associated with the actor.
+  // This policy is valid only for TASK_RUN_ID.
+  AR_RUN_SELECTION_FIRST_IN_ERROR = 5;
+}
+
+// ARActorSelector identifies the actor whose tasks are considered by a run
+// selector.
+message ARActorSelector {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "current_worker",
+      "resource_slot_id"
+    ]
+    required: true
+  };
+
+  // Use the worker authenticated in the current AR application session.
+  // Because scalar presence is represented by a non-default value here, this
+  // field must be true when selected.
+  bool current_worker = 1;
+
+  // Use the robot bound to another ROBOT input slot in the same AR config.
+  // The referenced slot must exist and have resource_type ROBOT; this
+  // cross-entity constraint must be checked by the application/backend.
+  string resource_slot_id = 2 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true];
+}
+
+// ARRunContextSelector selects an actor-related task and projects it to the run
+// ID requested by the owning input slot:
+//
+// - TASK_RUN_ID returns the selected task.
+// - SEQUENCE_RUN_ID returns the selected task's immediate parent sequence.
+// - PROCESS_RUN_ID returns the process containing the selected task.
+//
+// FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
+// to a parent sequence or process.
+//
+// If no task satisfies the policy, resolution produces no value. An optional
+// input slot receives an empty generated property value; a required input slot
+// makes materialization fail.
+message ARRunContextSelector {
+  // Policy used to choose a task before projecting it to the requested run ID.
+  ARRunSelection selection = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  ARActorSelector actor = 2 [(buf.validate.field).required = true]; // Actor whose tasks are considered.
 }
 
 // ARInputSlotMessage is the authoritative config-owned input slot entity for
 // AR configs.
 //
 // The backend is expected to derive and manage generated_property_id from the
-// slot identity and source specification. Users should not author or edit the
-// generated property directly.
+// slot identity and value kind. Users should not author or edit the generated
+// property directly.
 message ARInputSlotMessage {
   option (buf.validate.message).oneof = {
     fields: [
@@ -48,6 +151,18 @@ message ARInputSlotMessage {
       "context_type"
     ]
     required: true
+  };
+
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.error_selection_requires_task"
+    message: "FIRST_IN_ERROR is only valid for TASK_RUN_ID"
+    expression: "!has(this.run_selector) || this.run_selector.selection != ar.v1.ARRunSelection.AR_RUN_SELECTION_FIRST_IN_ERROR || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.run_selector_matches_context_type"
+    message: "run_selector is required for run context slots and prohibited otherwise"
+    expression: "(this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID) == has(this.run_selector)"
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Stable slot identifier used by configs and runtime resolution.
@@ -65,6 +180,7 @@ message ARInputSlotMessage {
   ]; // Server-managed property that should receive the resolved slot value at runtime.
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a concrete resource binding.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a runtime context value.
+  ARRunContextSelector run_selector = 10; // Required resolution policy for process, sequence, and task run context slots.
 }
 
 message ARInputSlotMessages {
@@ -73,13 +189,28 @@ message ARInputSlotMessages {
 
 // ARInputSlotAddMessage creates a new config-owned input slot.
 //
-// Source specification is treated as identity-shaping for the generated
-// property. If the source kind must change later, prefer delete + recreate.
+// The source kind determines the generated property's value kind. If the source
+// kind must change later, prefer delete + recreate. A run selector is a mutable
+// resolution policy and may be changed with ARInputSlotUpdateMessage.
 message ARInputSlotAddMessage {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "resource_type",
+      "context_type"
+    ]
+    required: true
+  };
+
   option (buf.validate.message).cel = {
-    id: "ar_input_slot_add.exactly_one_slot_kind"
-    message: "exactly one of resource_type or context_type must be specified and non-UNSPECIFIED"
-    expression: "(this.resource_type == 0 && this.context_type != 0) || (this.resource_type != 0 && this.context_type == 0)"
+    id: "ar_input_slot.error_selection_requires_task"
+    message: "FIRST_IN_ERROR is only valid for TASK_RUN_ID"
+    expression: "!has(this.run_selector) || this.run_selector.selection != ar.v1.ARRunSelection.AR_RUN_SELECTION_FIRST_IN_ERROR || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.run_selector_matches_context_type"
+    message: "run_selector is required for run context slots and prohibited otherwise"
+    expression: "(this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID) == has(this.run_selector)"
   };
 
   string config_id = 1 [
@@ -92,18 +223,22 @@ message ARInputSlotAddMessage {
   bool required = 5; // If true, future bindings/resolution must satisfy the slot.
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be bound to a resource instance.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be populated from runtime context.
+  ARRunContextSelector run_selector = 10; // Required resolution policy for process, sequence, and task run context slots.
 }
 
-// ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+// ARInputSlotUpdateMessage updates the editable fields and resolution policy of
+// an existing slot.
 //
-// The source specification and generated_property_id are intentionally not
-// updated here. Those should be treated as structural and changed via recreate.
+// The source kind and generated_property_id are intentionally not updated here.
+// Those are structural and should be changed via recreate. The run selector may
+// be updated because it changes resolution policy without changing value type.
 message ARInputSlotUpdateMessage {
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Slot to update.
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   optional bool required = 5; // Optional replacement for the slot's required flag.
+  ARRunContextSelector run_selector = 6; // Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
 }
 
 message ARInputSlotDeleteMessage {

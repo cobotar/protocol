@@ -94,14 +94,17 @@
     - [ActionGroup](#ar-v1-ActionGroup)
   
 - [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
+    - [ARActorSelector](#ar-v1-ARActorSelector)
     - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
     - [ARInputSlotDeleteMessage](#ar-v1-ARInputSlotDeleteMessage)
     - [ARInputSlotMessage](#ar-v1-ARInputSlotMessage)
     - [ARInputSlotMessages](#ar-v1-ARInputSlotMessages)
     - [ARInputSlotUpdateMessage](#ar-v1-ARInputSlotUpdateMessage)
+    - [ARRunContextSelector](#ar-v1-ARRunContextSelector)
   
     - [ARContextSlotType](#ar-v1-ARContextSlotType)
     - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
+    - [ARRunSelection](#ar-v1-ARRunSelection)
   
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
@@ -133,6 +136,7 @@
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
     - [ColorExtras](#common-v1-ColorExtras)
+    - [CreatePropertyMessage](#common-v1-CreatePropertyMessage)
     - [EnumExtras](#common-v1-EnumExtras)
     - [EnumOption](#common-v1-EnumOption)
     - [NumberExtras](#common-v1-NumberExtras)
@@ -1448,13 +1452,31 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
+<a name="ar-v1-ARActorSelector"></a>
+
+### ARActorSelector
+ARActorSelector identifies the actor whose tasks are considered by a run
+selector.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| current_worker | [bool](#bool) |  | Use the worker authenticated in the current AR application session. Because scalar presence is represented by a non-default value here, this field must be true when selected. |
+| resource_slot_id | [string](#string) |  | Use the robot bound to another ROBOT input slot in the same AR config. The referenced slot must exist and have resource_type ROBOT; this cross-entity constraint must be checked by the application/backend. |
+
+
+
+
+
+
 <a name="ar-v1-ARInputSlotAddMessage"></a>
 
 ### ARInputSlotAddMessage
 ARInputSlotAddMessage creates a new config-owned input slot.
 
-Source specification is treated as identity-shaping for the generated
-property. If the source kind must change later, prefer delete &#43; recreate.
+The source kind determines the generated property&#39;s value kind. If the source
+kind must change later, prefer delete &#43; recreate. A run selector is a mutable
+resolution policy and may be changed with ARInputSlotUpdateMessage.
 
 
 | Field | Type | Label | Description |
@@ -1466,6 +1488,7 @@ property. If the source kind must change later, prefer delete &#43; recreate.
 | required | [bool](#bool) |  | If true, future bindings/resolution must satisfy the slot. |
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
 
 
 
@@ -1494,8 +1517,8 @@ ARInputSlotMessage is the authoritative config-owned input slot entity for
 AR configs.
 
 The backend is expected to derive and manage generated_property_id from the
-slot identity and source specification. Users should not author or edit the
-generated property directly.
+slot identity and value kind. Users should not author or edit the generated
+property directly.
 
 
 | Field | Type | Label | Description |
@@ -1509,6 +1532,7 @@ generated property directly.
 | generated_property_id | [string](#string) |  | Server-managed property that should receive the resolved slot value at runtime. |
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
 
 
 
@@ -1533,10 +1557,12 @@ generated property directly.
 <a name="ar-v1-ARInputSlotUpdateMessage"></a>
 
 ### ARInputSlotUpdateMessage
-ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+ARInputSlotUpdateMessage updates the editable fields and resolution policy of
+an existing slot.
 
-The source specification and generated_property_id are intentionally not
-updated here. Those should be treated as structural and changed via recreate.
+The source kind and generated_property_id are intentionally not updated here.
+Those are structural and should be changed via recreate. The run selector may
+be updated because it changes resolution policy without changing value type.
 
 
 | Field | Type | Label | Description |
@@ -1546,6 +1572,35 @@ updated here. Those should be treated as structural and changed via recreate.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | required | [bool](#bool) | optional | Optional replacement for the slot&#39;s required flag. |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type. |
+
+
+
+
+
+
+<a name="ar-v1-ARRunContextSelector"></a>
+
+### ARRunContextSelector
+ARRunContextSelector selects an actor-related task and projects it to the run
+ID requested by the owning input slot:
+
+- TASK_RUN_ID returns the selected task.
+- SEQUENCE_RUN_ID returns the selected task&#39;s immediate parent sequence.
+- PROCESS_RUN_ID returns the process containing the selected task.
+
+FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
+to a parent sequence or process.
+
+If no task satisfies the policy, resolution produces no value. An optional
+input slot receives an empty generated property value; a required input slot
+makes materialization fail.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selection | [ARRunSelection](#ar-v1-ARRunSelection) |  | Policy used to choose a task before projecting it to the requested run ID. |
+| actor | [ARActorSelector](#ar-v1-ARActorSelector) |  | Actor whose tasks are considered. |
 
 
 
@@ -1562,13 +1617,13 @@ updated here. Those should be treated as structural and changed via recreate.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 | No runtime context selected. Invalid for stored or add-requested slots. |
-| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 | Slot resolves to the active line id. |
-| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 | Slot resolves to the active cell id. |
-| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 | Slot resolves to the active station id. |
-| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 | Slot resolves to the active worker/operator id. |
-| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 | Slot resolves to the active process run id. |
-| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 | Slot resolves to the active sequence run id. |
-| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 | Slot resolves to the active task run id. |
+| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 | Slot resolves to the line containing the binding target, if known. |
+| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 | Slot resolves to the targeted cell or the parent cell of the targeted station. |
+| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 | Slot resolves to the targeted station. This may be empty for a cell-level binding when no station has been established by the runtime session. |
+| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 | Slot resolves to the worker authenticated in the AR application session. |
+| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 | Slot resolves to a process run id selected by run_selector. |
+| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 | Slot resolves to a sequence run id selected by run_selector. |
+| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 | Slot resolves to a task run id selected by run_selector. |
 
 
 
@@ -1582,6 +1637,48 @@ updated here. Those should be treated as structural and changed via recreate.
 | AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 | No resource kind selected. Invalid for stored or add-requested slots. |
 | AR_RESOURCE_SLOT_TYPE_ROBOT | 1 | Slot expects a concrete robot instance. |
 | AR_RESOURCE_SLOT_TYPE_ASSET | 2 | Slot expects a concrete asset instance. |
+
+
+
+<a name="ar-v1-ARRunSelection"></a>
+
+### ARRunSelection
+ARRunSelection defines how an actor-related task candidate is chosen.
+
+Candidate tasks are limited to ProcessRuns associated with the station or
+cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
+assigned to or performed by the selected actor are excluded unless a policy
+explicitly selects historical or errored work.
+
+Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
+1. state precedence: IN_PROGRESS, READY, QUEUED
+2. initiated_at ascending
+3. id ascending
+
+Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
+runtime must populate that list in canonical execution order. IDs provide a
+deterministic tie-breaker when a policy otherwise considers candidates
+equivalent.
+
+To summarize
+• FIRST_WORKABLE: actionable now.
+• IN_PROGRESS: being performed now.
+• NEXT_EXPECTED: likely relevant next, but potentially blocked.
+• LAST_COMPLETED: most recently completed.
+• FIRST_IN_ERROR: errored task requiring attention.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RUN_SELECTION_UNSPECIFIED | 0 | No selection policy specified. Invalid for a stored run selector. |
+| AR_RUN_SELECTION_FIRST_WORKABLE | 1 | Select the first ordered task that is currently workable for the actor. Workability is determined by runtime assignment, actor feasibility, task state, dependencies, and other effective execution restrictions. |
+| AR_RUN_SELECTION_IN_PROGRESS | 2 | Select the first ordered IN_PROGRESS task assigned to the actor. |
+| AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the next non-terminal task expected to become relevant to the actor.
+
+Resolution: 1. Build the actor&#39;s ordered candidate task list. 2. If FIRST_WORKABLE resolves, select the first later non-terminal candidate. 3. Otherwise, select the first candidate expected to become workable after its currently unmet dependencies are completed.
+
+The selected task need not currently be workable. Tasks that cannot be assigned to or performed by the actor are excluded. |
+| AR_RUN_SELECTION_LAST_COMPLETED | 4 | Select the actor&#39;s completed task with the latest completed_at timestamp. Canonical execution order and then id are used as tie-breakers. |
+| AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered ERROR task associated with the actor. This policy is valid only for TASK_RUN_ID. |
 
 
  
@@ -1943,6 +2040,44 @@ A simple pose consisting of a position and orientation
 | ----- | ---- | ----- | ----------- |
 | step | [double](#double) |  |  |
 | default | [Color](#common-v1-Color) |  | TODO: allow user-preference override |
+
+
+
+
+
+
+<a name="common-v1-CreatePropertyMessage"></a>
+
+### CreatePropertyMessage
+Creates a PropertyDefinition and its required template PropertyInstance.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent_id | [string](#string) |  | Ownership |
+| authoring_context_id | [string](#string) |  |  |
+| name | [string](#string) |  | Definition |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
+| minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  |  |
+| allowed_origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
+| group | [PropertyGroup](#common-v1-PropertyGroup) |  |  |
+| ordering | [int32](#int32) |  |  |
+| hide_group | [bool](#bool) |  |  |
+| advanced | [bool](#bool) |  |  |
+| disable_mirroring | [bool](#bool) |  |  |
+| origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  | Template instance |
+| scope_id | [string](#string) |  | Defaults to parent_id when empty. Needed for input-slot scopes. |
+| mirror_property_definition_id | [string](#string) |  |  |
+| initial_value | [PropertyValue](#common-v1-PropertyValue) |  |  |
+| number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
+| enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
+| vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
+| color_extras | [ColorExtras](#common-v1-ColorExtras) |  |  |
+| pose_extras | [PoseExtras](#common-v1-PoseExtras) |  |  |
+| anchor_extras | [AnchorExtras](#common-v1-AnchorExtras) |  |  |
 
 
 
@@ -5671,7 +5806,9 @@ part regardless of the process it appears in.
 | requires_two_hand_lift | [bool](#bool) |  | Part is heavy or awkward, but can still be lifted manually by an operator. |
 | requires_lifting_assistance | [bool](#bool) |  | Part is heavier than what an operator is allowed or expected to lift manually. |
 | requires_fixture_support | [bool](#bool) |  | Part cannot realistically be handled or assembled without fixture support. |
+| default_grip_force_n | [double](#double) |  | Default gripping/clamping force that should be applied to grip the part. |
 | max_grip_force_n | [double](#double) |  | Maximum gripping/clamping force that may be applied without damaging the part. |
+| default_torque_nm | [double](#double) |  | Default torque that should be applied to the part or its fastening interface. |
 | max_torque_nm | [double](#double) |  | Maximum torque that may be applied to the part or its fastening interface. |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional handling constraints not represented by dedicated fields. |
 

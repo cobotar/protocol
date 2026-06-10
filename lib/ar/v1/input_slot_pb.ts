@@ -12,15 +12,88 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/input_slot.proto.
  */
 export const file_ar_v1_input_slot: GenFile = /*@__PURE__*/
-  fileDesc("ChZhci92MS9pbnB1dF9zbG90LnByb3RvEgVhci52MSLjAgoSQVJJbnB1dFNsb3RNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBPjrMAESHwoJY29uZmlnX2lkGAIgASgJQgy6SAnIAQFyBJDxBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSEAoIcmVxdWlyZWQYBiABKAgSKwoVZ2VuZXJhdGVkX3Byb3BlcnR5X2lkGAcgASgJQgy6SAnIAQFyBJjxBAESOgoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAESOAoMY29udGV4dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCCLpIBYIBAhABOiS6SCEiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4dF90eXBlEAEiPwoTQVJJbnB1dFNsb3RNZXNzYWdlcxIoCgVzbG90cxgBIAMoCzIZLmFyLnYxLkFSSW5wdXRTbG90TWVzc2FnZSLvAwoVQVJJbnB1dFNsb3RBZGRNZXNzYWdlEh8KCWNvbmZpZ19pZBgBIAEoCUIMukgJyAEBcgSQ8QQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAKCHJlcXVpcmVkGAUgASgIEjoKDXJlc291cmNlX3R5cGUYCCABKA4yGS5hci52MS5BUlJlc291cmNlU2xvdFR5cGVCCLpIBYIBAhABEjgKDGNvbnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNsb3RUeXBlQgi6SAWCAQIQATrwAbpI7AEa6QEKJ2FyX2lucHV0X3Nsb3RfYWRkLmV4YWN0bHlfb25lX3Nsb3Rfa2luZBJSZXhhY3RseSBvbmUgb2YgcmVzb3VyY2VfdHlwZSBvciBjb250ZXh0X3R5cGUgbXVzdCBiZSBzcGVjaWZpZWQgYW5kIG5vbi1VTlNQRUNJRklFRBpqKHRoaXMucmVzb3VyY2VfdHlwZSA9PSAwICYmIHRoaXMuY29udGV4dF90eXBlICE9IDApIHx8ICh0aGlzLnJlc291cmNlX3R5cGUgIT0gMCAmJiB0aGlzLmNvbnRleHRfdHlwZSA9PSAwKSKRAQoYQVJJbnB1dFNsb3RVcGRhdGVNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBPjrMAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFQoIcmVxdWlyZWQYBSABKAhIAIgBAUILCglfcmVxdWlyZWQiNAoYQVJJbnB1dFNsb3REZWxldGVNZXNzYWdlEhgKAmlkGAEgASgJQgy6SAnIAQFyBPjrMAEqfQoSQVJSZXNvdXJjZVNsb3RUeXBlEiUKIUFSX1JFU09VUkNFX1NMT1RfVFlQRV9VTlNQRUNJRklFRBAAEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9ST0JPVBABEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9BU1NFVBACKr8CChFBUkNvbnRleHRTbG90VHlwZRIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9VTlNQRUNJRklFRBAAEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0xJTkVfSUQQARIgChxBUl9DT05URVhUX1NMT1RfVFlQRV9DRUxMX0lEEAISIwofQVJfQ09OVEVYVF9TTE9UX1RZUEVfU1RBVElPTl9JRBADEiIKHkFSX0NPTlRFWFRfU0xPVF9UWVBFX1dPUktFUl9JRBAEEicKI0FSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVOX0lEEAUSKAokQVJfQ09OVEVYVF9TTE9UX1RZUEVfU0VRVUVOQ0VfUlVOX0lEEAYSJAogQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQQB0KKAQoJY29tLmFyLnYxQg5JbnB1dFNsb3RQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChZhci92MS9pbnB1dF9zbG90LnByb3RvEgVhci52MSJ5Cg9BUkFjdG9yU2VsZWN0b3ISFgoOY3VycmVudF93b3JrZXIYASABKAgSIwoQcmVzb3VyY2Vfc2xvdF9pZBgCIAEoCUIJukgGcgT46zABOim6SCYiJAoOY3VycmVudF93b3JrZXIKEHJlc291cmNlX3Nsb3RfaWQQASJ8ChRBUlJ1bkNvbnRleHRTZWxlY3RvchI1CglzZWxlY3Rpb24YASABKA4yFS5hci52MS5BUlJ1blNlbGVjdGlvbkILukgIyAEBggECEAESLQoFYWN0b3IYAiABKAsyFi5hci52MS5BUkFjdG9yU2VsZWN0b3JCBrpIA8gBASLKCAoSQVJJbnB1dFNsb3RNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBPjrMAESHwoJY29uZmlnX2lkGAIgASgJQgy6SAnIAQFyBJDxBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSEAoIcmVxdWlyZWQYBiABKAgSKwoVZ2VuZXJhdGVkX3Byb3BlcnR5X2lkGAcgASgJQgy6SAnIAQFyBJjxBAESOgoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAESOAoMY29udGV4dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCCLpIBYIBAhABEjEKDHJ1bl9zZWxlY3RvchgKIAEoCzIbLmFyLnYxLkFSUnVuQ29udGV4dFNlbGVjdG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25fcmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBmb3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxlY3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xvdC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxlY3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHByb2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNFX1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkgPT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90eXBlCgxjb250ZXh0X3R5cGUQASI/ChNBUklucHV0U2xvdE1lc3NhZ2VzEigKBXNsb3RzGAEgAygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlIokIChVBUklucHV0U2xvdEFkZE1lc3NhZ2USHwoJY29uZmlnX2lkGAEgASgJQgy6SAnIAQFyBJDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSEAoIcmVxdWlyZWQYBSABKAgSOgoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAESOAoMY29udGV4dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCCLpIBYIBAhABEjEKDHJ1bl9zZWxlY3RvchgKIAEoCzIbLmFyLnYxLkFSUnVuQ29udGV4dFNlbGVjdG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25fcmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBmb3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxlY3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xvdC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxlY3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHByb2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNFX1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkgPT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90eXBlCgxjb250ZXh0X3R5cGUQASLEAQoYQVJJbnB1dFNsb3RVcGRhdGVNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBPjrMAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSFQoIcmVxdWlyZWQYBSABKAhIAIgBARIxCgxydW5fc2VsZWN0b3IYBiABKAsyGy5hci52MS5BUlJ1bkNvbnRleHRTZWxlY3RvckILCglfcmVxdWlyZWQiNAoYQVJJbnB1dFNsb3REZWxldGVNZXNzYWdlEhgKAmlkGAEgASgJQgy6SAnIAQFyBPjrMAEqfQoSQVJSZXNvdXJjZVNsb3RUeXBlEiUKIUFSX1JFU09VUkNFX1NMT1RfVFlQRV9VTlNQRUNJRklFRBAAEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9ST0JPVBABEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9BU1NFVBACKr8CChFBUkNvbnRleHRTbG90VHlwZRIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9VTlNQRUNJRklFRBAAEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0xJTkVfSUQQARIgChxBUl9DT05URVhUX1NMT1RfVFlQRV9DRUxMX0lEEAISIwofQVJfQ09OVEVYVF9TTE9UX1RZUEVfU1RBVElPTl9JRBADEiIKHkFSX0NPTlRFWFRfU0xPVF9UWVBFX1dPUktFUl9JRBAEEicKI0FSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVOX0lEEAUSKAokQVJfQ09OVEVYVF9TTE9UX1RZUEVfU0VRVUVOQ0VfUlVOX0lEEAYSJAogQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQQByrnAQoOQVJSdW5TZWxlY3Rpb24SIAocQVJfUlVOX1NFTEVDVElPTl9VTlNQRUNJRklFRBAAEiMKH0FSX1JVTl9TRUxFQ1RJT05fRklSU1RfV09SS0FCTEUQARIgChxBUl9SVU5fU0VMRUNUSU9OX0lOX1BST0dSRVNTEAISIgoeQVJfUlVOX1NFTEVDVElPTl9ORVhUX0VYUEVDVEVEEAMSIwofQVJfUlVOX1NFTEVDVElPTl9MQVNUX0NPTVBMRVRFRBAEEiMKH0FSX1JVTl9TRUxFQ1RJT05fRklSU1RfSU5fRVJST1IQBUKKAQoJY29tLmFyLnYxQg5JbnB1dFNsb3RQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+
+/**
+ * ARActorSelector identifies the actor whose tasks are considered by a run
+ * selector.
+ *
+ * @generated from message ar.v1.ARActorSelector
+ */
+export type ARActorSelector = Message<"ar.v1.ARActorSelector"> & {
+  /**
+   * Use the worker authenticated in the current AR application session.
+   * Because scalar presence is represented by a non-default value here, this
+   * field must be true when selected.
+   *
+   * @generated from field: bool current_worker = 1;
+   */
+  currentWorker: boolean;
+
+  /**
+   * Use the robot bound to another ROBOT input slot in the same AR config.
+   * The referenced slot must exist and have resource_type ROBOT; this
+   * cross-entity constraint must be checked by the application/backend.
+   *
+   * @generated from field: string resource_slot_id = 2;
+   */
+  resourceSlotId: string;
+};
+
+/**
+ * Describes the message ar.v1.ARActorSelector.
+ * Use `create(ARActorSelectorSchema)` to create a new message.
+ */
+export const ARActorSelectorSchema: GenMessage<ARActorSelector> = /*@__PURE__*/
+  messageDesc(file_ar_v1_input_slot, 0);
+
+/**
+ * ARRunContextSelector selects an actor-related task and projects it to the run
+ * ID requested by the owning input slot:
+ *
+ * - TASK_RUN_ID returns the selected task.
+ * - SEQUENCE_RUN_ID returns the selected task's immediate parent sequence.
+ * - PROCESS_RUN_ID returns the process containing the selected task.
+ *
+ * FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
+ * to a parent sequence or process.
+ *
+ * If no task satisfies the policy, resolution produces no value. An optional
+ * input slot receives an empty generated property value; a required input slot
+ * makes materialization fail.
+ *
+ * @generated from message ar.v1.ARRunContextSelector
+ */
+export type ARRunContextSelector = Message<"ar.v1.ARRunContextSelector"> & {
+  /**
+   * Policy used to choose a task before projecting it to the requested run ID.
+   *
+   * @generated from field: ar.v1.ARRunSelection selection = 1;
+   */
+  selection: ARRunSelection;
+
+  /**
+   * Actor whose tasks are considered.
+   *
+   * @generated from field: ar.v1.ARActorSelector actor = 2;
+   */
+  actor?: ARActorSelector;
+};
+
+/**
+ * Describes the message ar.v1.ARRunContextSelector.
+ * Use `create(ARRunContextSelectorSchema)` to create a new message.
+ */
+export const ARRunContextSelectorSchema: GenMessage<ARRunContextSelector> = /*@__PURE__*/
+  messageDesc(file_ar_v1_input_slot, 1);
 
 /**
  * ARInputSlotMessage is the authoritative config-owned input slot entity for
  * AR configs.
  *
  * The backend is expected to derive and manage generated_property_id from the
- * slot identity and source specification. Users should not author or edit the
- * generated property directly.
+ * slot identity and value kind. Users should not author or edit the generated
+ * property directly.
  *
  * @generated from message ar.v1.ARInputSlotMessage
  */
@@ -81,6 +154,13 @@ export type ARInputSlotMessage = Message<"ar.v1.ARInputSlotMessage"> & {
    * @generated from field: ar.v1.ARContextSlotType context_type = 9;
    */
   contextType: ARContextSlotType;
+
+  /**
+   * Required resolution policy for process, sequence, and task run context slots.
+   *
+   * @generated from field: ar.v1.ARRunContextSelector run_selector = 10;
+   */
+  runSelector?: ARRunContextSelector;
 };
 
 /**
@@ -88,7 +168,7 @@ export type ARInputSlotMessage = Message<"ar.v1.ARInputSlotMessage"> & {
  * Use `create(ARInputSlotMessageSchema)` to create a new message.
  */
 export const ARInputSlotMessageSchema: GenMessage<ARInputSlotMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_input_slot, 0);
+  messageDesc(file_ar_v1_input_slot, 2);
 
 /**
  * @generated from message ar.v1.ARInputSlotMessages
@@ -107,13 +187,14 @@ export type ARInputSlotMessages = Message<"ar.v1.ARInputSlotMessages"> & {
  * Use `create(ARInputSlotMessagesSchema)` to create a new message.
  */
 export const ARInputSlotMessagesSchema: GenMessage<ARInputSlotMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_input_slot, 1);
+  messageDesc(file_ar_v1_input_slot, 3);
 
 /**
  * ARInputSlotAddMessage creates a new config-owned input slot.
  *
- * Source specification is treated as identity-shaping for the generated
- * property. If the source kind must change later, prefer delete + recreate.
+ * The source kind determines the generated property's value kind. If the source
+ * kind must change later, prefer delete + recreate. A run selector is a mutable
+ * resolution policy and may be changed with ARInputSlotUpdateMessage.
  *
  * @generated from message ar.v1.ARInputSlotAddMessage
  */
@@ -160,6 +241,13 @@ export type ARInputSlotAddMessage = Message<"ar.v1.ARInputSlotAddMessage"> & {
    * @generated from field: ar.v1.ARContextSlotType context_type = 9;
    */
   contextType: ARContextSlotType;
+
+  /**
+   * Required resolution policy for process, sequence, and task run context slots.
+   *
+   * @generated from field: ar.v1.ARRunContextSelector run_selector = 10;
+   */
+  runSelector?: ARRunContextSelector;
 };
 
 /**
@@ -167,13 +255,15 @@ export type ARInputSlotAddMessage = Message<"ar.v1.ARInputSlotAddMessage"> & {
  * Use `create(ARInputSlotAddMessageSchema)` to create a new message.
  */
 export const ARInputSlotAddMessageSchema: GenMessage<ARInputSlotAddMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_input_slot, 2);
+  messageDesc(file_ar_v1_input_slot, 4);
 
 /**
- * ARInputSlotUpdateMessage updates the editable metadata of an existing slot.
+ * ARInputSlotUpdateMessage updates the editable fields and resolution policy of
+ * an existing slot.
  *
- * The source specification and generated_property_id are intentionally not
- * updated here. Those should be treated as structural and changed via recreate.
+ * The source kind and generated_property_id are intentionally not updated here.
+ * Those are structural and should be changed via recreate. The run selector may
+ * be updated because it changes resolution policy without changing value type.
  *
  * @generated from message ar.v1.ARInputSlotUpdateMessage
  */
@@ -206,6 +296,13 @@ export type ARInputSlotUpdateMessage = Message<"ar.v1.ARInputSlotUpdateMessage">
    * @generated from field: optional bool required = 5;
    */
   required?: boolean;
+
+  /**
+   * Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
+   *
+   * @generated from field: ar.v1.ARRunContextSelector run_selector = 6;
+   */
+  runSelector?: ARRunContextSelector;
 };
 
 /**
@@ -213,7 +310,7 @@ export type ARInputSlotUpdateMessage = Message<"ar.v1.ARInputSlotUpdateMessage">
  * Use `create(ARInputSlotUpdateMessageSchema)` to create a new message.
  */
 export const ARInputSlotUpdateMessageSchema: GenMessage<ARInputSlotUpdateMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_input_slot, 3);
+  messageDesc(file_ar_v1_input_slot, 5);
 
 /**
  * @generated from message ar.v1.ARInputSlotDeleteMessage
@@ -232,7 +329,7 @@ export type ARInputSlotDeleteMessage = Message<"ar.v1.ARInputSlotDeleteMessage">
  * Use `create(ARInputSlotDeleteMessageSchema)` to create a new message.
  */
 export const ARInputSlotDeleteMessageSchema: GenMessage<ARInputSlotDeleteMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_input_slot, 4);
+  messageDesc(file_ar_v1_input_slot, 6);
 
 /**
  * @generated from enum ar.v1.ARResourceSlotType
@@ -278,49 +375,50 @@ export enum ARContextSlotType {
   AR_CONTEXT_SLOT_TYPE_UNSPECIFIED = 0,
 
   /**
-   * Slot resolves to the active line id.
+   * Slot resolves to the line containing the binding target, if known.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_LINE_ID = 1;
    */
   AR_CONTEXT_SLOT_TYPE_LINE_ID = 1,
 
   /**
-   * Slot resolves to the active cell id.
+   * Slot resolves to the targeted cell or the parent cell of the targeted station.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_CELL_ID = 2;
    */
   AR_CONTEXT_SLOT_TYPE_CELL_ID = 2,
 
   /**
-   * Slot resolves to the active station id.
+   * Slot resolves to the targeted station. This may be empty for a cell-level
+   * binding when no station has been established by the runtime session.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_STATION_ID = 3;
    */
   AR_CONTEXT_SLOT_TYPE_STATION_ID = 3,
 
   /**
-   * Slot resolves to the active worker/operator id.
+   * Slot resolves to the worker authenticated in the AR application session.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4;
    */
   AR_CONTEXT_SLOT_TYPE_WORKER_ID = 4,
 
   /**
-   * Slot resolves to the active process run id.
+   * Slot resolves to a process run id selected by run_selector.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5;
    */
   AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID = 5,
 
   /**
-   * Slot resolves to the active sequence run id.
+   * Slot resolves to a sequence run id selected by run_selector.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6;
    */
   AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID = 6,
 
   /**
-   * Slot resolves to the active task run id.
+   * Slot resolves to a task run id selected by run_selector.
    *
    * @generated from enum value: AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID = 7;
    */
@@ -332,4 +430,95 @@ export enum ARContextSlotType {
  */
 export const ARContextSlotTypeSchema: GenEnum<ARContextSlotType> = /*@__PURE__*/
   enumDesc(file_ar_v1_input_slot, 1);
+
+/**
+ * ARRunSelection defines how an actor-related task candidate is chosen.
+ *
+ * Candidate tasks are limited to ProcessRuns associated with the station or
+ * cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
+ * assigned to or performed by the selected actor are excluded unless a policy
+ * explicitly selects historical or errored work.
+ *
+ * Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
+ * 1. state precedence: IN_PROGRESS, READY, QUEUED
+ * 2. initiated_at ascending
+ * 3. id ascending
+ *
+ * Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
+ * runtime must populate that list in canonical execution order. IDs provide a
+ * deterministic tie-breaker when a policy otherwise considers candidates
+ * equivalent.
+ *
+ * To summarize
+ * • FIRST_WORKABLE: actionable now.
+ * • IN_PROGRESS: being performed now.
+ * • NEXT_EXPECTED: likely relevant next, but potentially blocked.
+ * • LAST_COMPLETED: most recently completed.
+ * • FIRST_IN_ERROR: errored task requiring attention.
+ *
+ * @generated from enum ar.v1.ARRunSelection
+ */
+export enum ARRunSelection {
+  /**
+   * No selection policy specified. Invalid for a stored run selector.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_UNSPECIFIED = 0;
+   */
+  AR_RUN_SELECTION_UNSPECIFIED = 0,
+
+  /**
+   * Select the first ordered task that is currently workable for the actor.
+   * Workability is determined by runtime assignment, actor feasibility, task
+   * state, dependencies, and other effective execution restrictions.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_FIRST_WORKABLE = 1;
+   */
+  AR_RUN_SELECTION_FIRST_WORKABLE = 1,
+
+  /**
+   * Select the first ordered IN_PROGRESS task assigned to the actor.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_IN_PROGRESS = 2;
+   */
+  AR_RUN_SELECTION_IN_PROGRESS = 2,
+
+  /**
+   * Select the next non-terminal task expected to become relevant to the actor.
+   *
+   * Resolution:
+   * 1. Build the actor's ordered candidate task list.
+   * 2. If FIRST_WORKABLE resolves, select the first later non-terminal
+   *    candidate.
+   * 3. Otherwise, select the first candidate expected to become workable after
+   *    its currently unmet dependencies are completed.
+   *
+   * The selected task need not currently be workable. Tasks that cannot be
+   * assigned to or performed by the actor are excluded.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_NEXT_EXPECTED = 3;
+   */
+  AR_RUN_SELECTION_NEXT_EXPECTED = 3,
+
+  /**
+   * Select the actor's completed task with the latest completed_at timestamp.
+   * Canonical execution order and then id are used as tie-breakers.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_LAST_COMPLETED = 4;
+   */
+  AR_RUN_SELECTION_LAST_COMPLETED = 4,
+
+  /**
+   * Select the first ordered ERROR task associated with the actor.
+   * This policy is valid only for TASK_RUN_ID.
+   *
+   * @generated from enum value: AR_RUN_SELECTION_FIRST_IN_ERROR = 5;
+   */
+  AR_RUN_SELECTION_FIRST_IN_ERROR = 5,
+}
+
+/**
+ * Describes the enum ar.v1.ARRunSelection.
+ */
+export const ARRunSelectionSchema: GenEnum<ARRunSelection> = /*@__PURE__*/
+  enumDesc(file_ar_v1_input_slot, 2);
 

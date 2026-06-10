@@ -77,10 +77,12 @@ message PartHandlingProfile {
   bool requires_lifting_assistance = 4; // Part is heavier than what an operator is allowed or expected to lift manually.
   bool requires_fixture_support = 5; // Part cannot realistically be handled or assembled without fixture support.
 
-  double max_grip_force_n = 6; // Maximum gripping/clamping force that may be applied without damaging the part.
-  double max_torque_nm = 7; // Maximum torque that may be applied to the part or its fastening interface.
+  double default_grip_force_n = 6; // Default gripping/clamping force that should be applied to grip the part.
+  double max_grip_force_n = 7; // Maximum gripping/clamping force that may be applied without damaging the part.
+  double default_torque_nm = 8; // Default torque that should be applied to the part or its fastening interface.
+  double max_torque_nm = 9; // Maximum torque that may be applied to the part or its fastening interface.
 
-  repeated common.v1.KeyValueConstraint constraints = 8; // Additional handling constraints not represented by dedicated fields.
+  repeated common.v1.KeyValueConstraint constraints = 10; // Additional handling constraints not represented by dedicated fields.
 }
 
 // PartProcessProfile captures defaults and hints used when generating processes

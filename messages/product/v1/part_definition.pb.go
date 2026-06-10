@@ -319,9 +319,11 @@ type PartHandlingProfile struct {
 	RequiresTwoHandLift       bool                     `protobuf:"varint,3,opt,name=requires_two_hand_lift,json=requiresTwoHandLift,proto3" json:"requires_two_hand_lift,omitempty"`                 // Part is heavy or awkward, but can still be lifted manually by an operator.
 	RequiresLiftingAssistance bool                     `protobuf:"varint,4,opt,name=requires_lifting_assistance,json=requiresLiftingAssistance,proto3" json:"requires_lifting_assistance,omitempty"` // Part is heavier than what an operator is allowed or expected to lift manually.
 	RequiresFixtureSupport    bool                     `protobuf:"varint,5,opt,name=requires_fixture_support,json=requiresFixtureSupport,proto3" json:"requires_fixture_support,omitempty"`          // Part cannot realistically be handled or assembled without fixture support.
-	MaxGripForceN             float64                  `protobuf:"fixed64,6,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`                                  // Maximum gripping/clamping force that may be applied without damaging the part.
-	MaxTorqueNm               float64                  `protobuf:"fixed64,7,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`                                          // Maximum torque that may be applied to the part or its fastening interface.
-	Constraints               []*v1.KeyValueConstraint `protobuf:"bytes,8,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                 // Additional handling constraints not represented by dedicated fields.
+	DefaultGripForceN         float64                  `protobuf:"fixed64,6,opt,name=default_grip_force_n,json=defaultGripForceN,proto3" json:"default_grip_force_n,omitempty"`                      // Default gripping/clamping force that should be applied to grip the part.
+	MaxGripForceN             float64                  `protobuf:"fixed64,7,opt,name=max_grip_force_n,json=maxGripForceN,proto3" json:"max_grip_force_n,omitempty"`                                  // Maximum gripping/clamping force that may be applied without damaging the part.
+	DefaultTorqueNm           float64                  `protobuf:"fixed64,8,opt,name=default_torque_nm,json=defaultTorqueNm,proto3" json:"default_torque_nm,omitempty"`                              // Default torque that should be applied to the part or its fastening interface.
+	MaxTorqueNm               float64                  `protobuf:"fixed64,9,opt,name=max_torque_nm,json=maxTorqueNm,proto3" json:"max_torque_nm,omitempty"`                                          // Maximum torque that may be applied to the part or its fastening interface.
+	Constraints               []*v1.KeyValueConstraint `protobuf:"bytes,10,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                // Additional handling constraints not represented by dedicated fields.
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -391,9 +393,23 @@ func (x *PartHandlingProfile) GetRequiresFixtureSupport() bool {
 	return false
 }
 
+func (x *PartHandlingProfile) GetDefaultGripForceN() float64 {
+	if x != nil {
+		return x.DefaultGripForceN
+	}
+	return 0
+}
+
 func (x *PartHandlingProfile) GetMaxGripForceN() float64 {
 	if x != nil {
 		return x.MaxGripForceN
+	}
+	return 0
+}
+
+func (x *PartHandlingProfile) GetDefaultTorqueNm() float64 {
+	if x != nil {
+		return x.DefaultTorqueNm
 	}
 	return 0
 }
@@ -730,16 +746,19 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\fMaterialSpec\x128\n" +
 	"\bcategory\x18\x01 \x01(\x0e2\x1c.product.v1.MaterialCategoryR\bcategory\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05grade\x18\x03 \x01(\tR\x05grade\"\x91\x03\n" +
+	"\x05grade\x18\x03 \x01(\tR\x05grade\"\xee\x03\n" +
 	"\x13PartHandlingProfile\x12\x18\n" +
 	"\afragile\x18\x01 \x01(\bR\afragile\x12#\n" +
 	"\resd_sensitive\x18\x02 \x01(\bR\fesdSensitive\x123\n" +
 	"\x16requires_two_hand_lift\x18\x03 \x01(\bR\x13requiresTwoHandLift\x12>\n" +
 	"\x1brequires_lifting_assistance\x18\x04 \x01(\bR\x19requiresLiftingAssistance\x128\n" +
-	"\x18requires_fixture_support\x18\x05 \x01(\bR\x16requiresFixtureSupport\x12'\n" +
-	"\x10max_grip_force_n\x18\x06 \x01(\x01R\rmaxGripForceN\x12\"\n" +
-	"\rmax_torque_nm\x18\a \x01(\x01R\vmaxTorqueNm\x12?\n" +
-	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc6\x04\n" +
+	"\x18requires_fixture_support\x18\x05 \x01(\bR\x16requiresFixtureSupport\x12/\n" +
+	"\x14default_grip_force_n\x18\x06 \x01(\x01R\x11defaultGripForceN\x12'\n" +
+	"\x10max_grip_force_n\x18\a \x01(\x01R\rmaxGripForceN\x12*\n" +
+	"\x11default_torque_nm\x18\b \x01(\x01R\x0fdefaultTorqueNm\x12\"\n" +
+	"\rmax_torque_nm\x18\t \x01(\x01R\vmaxTorqueNm\x12?\n" +
+	"\vconstraints\x18\n" +
+	" \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc6\x04\n" +
 	"\x12PartProcessProfile\x12V\n" +
 	"\x18estimated_human_duration\x18\x01 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
 	"\x18estimated_robot_duration\x18\x02 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +

@@ -1493,6 +1493,303 @@ func (x *PoseExtras) GetPoseEditable() bool {
 	return false
 }
 
+// Creates a PropertyDefinition and its required template PropertyInstance.
+type CreatePropertyMessage struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Ownership
+	ParentId           string `protobuf:"bytes,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	AuthoringContextId string `protobuf:"bytes,2,opt,name=authoring_context_id,json=authoringContextId,proto3" json:"authoring_context_id,omitempty"`
+	// Definition
+	Name                      string             `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                      string             `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description               string             `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	Type                      PropertyType       `protobuf:"varint,6,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
+	Scope                     PropertyScope      `protobuf:"varint,7,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
+	MinimumRequiredPermission PropertyPermission `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
+	AllowedOrigins            []PropertyOrigin   `protobuf:"varint,9,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
+	Group                     PropertyGroup      `protobuf:"varint,10,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32              `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool               `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	Advanced                  bool               `protobuf:"varint,13,opt,name=advanced,proto3" json:"advanced,omitempty"`
+	DisableMirroring          bool               `protobuf:"varint,14,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`
+	// Template instance
+	Origin PropertyOrigin `protobuf:"varint,20,opt,name=origin,proto3,enum=common.v1.PropertyOrigin" json:"origin,omitempty"`
+	// Defaults to parent_id when empty. Needed for input-slot scopes.
+	ScopeId                    string         `protobuf:"bytes,21,opt,name=scope_id,json=scopeId,proto3" json:"scope_id,omitempty"`
+	MirrorPropertyDefinitionId string         `protobuf:"bytes,22,opt,name=mirror_property_definition_id,json=mirrorPropertyDefinitionId,proto3" json:"mirror_property_definition_id,omitempty"`
+	InitialValue               *PropertyValue `protobuf:"bytes,23,opt,name=initial_value,json=initialValue,proto3" json:"initial_value,omitempty"`
+	// Type-specific definition metadata
+	//
+	// Types that are valid to be assigned to Extras:
+	//
+	//	*CreatePropertyMessage_NumberExtras
+	//	*CreatePropertyMessage_EnumExtras
+	//	*CreatePropertyMessage_Vector3Extras
+	//	*CreatePropertyMessage_ColorExtras
+	//	*CreatePropertyMessage_PoseExtras
+	//	*CreatePropertyMessage_AnchorExtras
+	Extras        isCreatePropertyMessage_Extras `protobuf_oneof:"extras"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreatePropertyMessage) Reset() {
+	*x = CreatePropertyMessage{}
+	mi := &file_common_v1_property_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreatePropertyMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreatePropertyMessage) ProtoMessage() {}
+
+func (x *CreatePropertyMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_property_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreatePropertyMessage.ProtoReflect.Descriptor instead.
+func (*CreatePropertyMessage) Descriptor() ([]byte, []int) {
+	return file_common_v1_property_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *CreatePropertyMessage) GetParentId() string {
+	if x != nil {
+		return x.ParentId
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetAuthoringContextId() string {
+	if x != nil {
+		return x.AuthoringContextId
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetType() PropertyType {
+	if x != nil {
+		return x.Type
+	}
+	return PropertyType_PROPERTY_TYPE_UNSPECIFIED
+}
+
+func (x *CreatePropertyMessage) GetScope() PropertyScope {
+	if x != nil {
+		return x.Scope
+	}
+	return PropertyScope_PROPERTY_SCOPE_UNSPECIFIED
+}
+
+func (x *CreatePropertyMessage) GetMinimumRequiredPermission() PropertyPermission {
+	if x != nil {
+		return x.MinimumRequiredPermission
+	}
+	return PropertyPermission_PROPERTY_PERMISSION_UNSPECIFIED
+}
+
+func (x *CreatePropertyMessage) GetAllowedOrigins() []PropertyOrigin {
+	if x != nil {
+		return x.AllowedOrigins
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetGroup() PropertyGroup {
+	if x != nil {
+		return x.Group
+	}
+	return PropertyGroup_PROPERTY_GROUP_UNSPECIFIED
+}
+
+func (x *CreatePropertyMessage) GetOrdering() int32 {
+	if x != nil {
+		return x.Ordering
+	}
+	return 0
+}
+
+func (x *CreatePropertyMessage) GetHideGroup() bool {
+	if x != nil {
+		return x.HideGroup
+	}
+	return false
+}
+
+func (x *CreatePropertyMessage) GetAdvanced() bool {
+	if x != nil {
+		return x.Advanced
+	}
+	return false
+}
+
+func (x *CreatePropertyMessage) GetDisableMirroring() bool {
+	if x != nil {
+		return x.DisableMirroring
+	}
+	return false
+}
+
+func (x *CreatePropertyMessage) GetOrigin() PropertyOrigin {
+	if x != nil {
+		return x.Origin
+	}
+	return PropertyOrigin_PROPERTY_ORIGIN_UNSPECIFIED
+}
+
+func (x *CreatePropertyMessage) GetScopeId() string {
+	if x != nil {
+		return x.ScopeId
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetMirrorPropertyDefinitionId() string {
+	if x != nil {
+		return x.MirrorPropertyDefinitionId
+	}
+	return ""
+}
+
+func (x *CreatePropertyMessage) GetInitialValue() *PropertyValue {
+	if x != nil {
+		return x.InitialValue
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetExtras() isCreatePropertyMessage_Extras {
+	if x != nil {
+		return x.Extras
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetNumberExtras() *NumberExtras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_NumberExtras); ok {
+			return x.NumberExtras
+		}
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetEnumExtras() *EnumExtras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_EnumExtras); ok {
+			return x.EnumExtras
+		}
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetVector3Extras() *Vector3Extras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_Vector3Extras); ok {
+			return x.Vector3Extras
+		}
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetColorExtras() *ColorExtras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_ColorExtras); ok {
+			return x.ColorExtras
+		}
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetPoseExtras() *PoseExtras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_PoseExtras); ok {
+			return x.PoseExtras
+		}
+	}
+	return nil
+}
+
+func (x *CreatePropertyMessage) GetAnchorExtras() *AnchorExtras {
+	if x != nil {
+		if x, ok := x.Extras.(*CreatePropertyMessage_AnchorExtras); ok {
+			return x.AnchorExtras
+		}
+	}
+	return nil
+}
+
+type isCreatePropertyMessage_Extras interface {
+	isCreatePropertyMessage_Extras()
+}
+
+type CreatePropertyMessage_NumberExtras struct {
+	NumberExtras *NumberExtras `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3,oneof"`
+}
+
+type CreatePropertyMessage_EnumExtras struct {
+	EnumExtras *EnumExtras `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3,oneof"`
+}
+
+type CreatePropertyMessage_Vector3Extras struct {
+	Vector3Extras *Vector3Extras `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3,oneof"`
+}
+
+type CreatePropertyMessage_ColorExtras struct {
+	ColorExtras *ColorExtras `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3,oneof"`
+}
+
+type CreatePropertyMessage_PoseExtras struct {
+	PoseExtras *PoseExtras `protobuf:"bytes,45,opt,name=pose_extras,json=poseExtras,proto3,oneof"`
+}
+
+type CreatePropertyMessage_AnchorExtras struct {
+	AnchorExtras *AnchorExtras `protobuf:"bytes,46,opt,name=anchor_extras,json=anchorExtras,proto3,oneof"`
+}
+
+func (*CreatePropertyMessage_NumberExtras) isCreatePropertyMessage_Extras() {}
+
+func (*CreatePropertyMessage_EnumExtras) isCreatePropertyMessage_Extras() {}
+
+func (*CreatePropertyMessage_Vector3Extras) isCreatePropertyMessage_Extras() {}
+
+func (*CreatePropertyMessage_ColorExtras) isCreatePropertyMessage_Extras() {}
+
+func (*CreatePropertyMessage_PoseExtras) isCreatePropertyMessage_Extras() {}
+
+func (*CreatePropertyMessage_AnchorExtras) isCreatePropertyMessage_Extras() {}
+
 var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
@@ -1653,7 +1950,39 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable*\xa9\x03\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\xfb\v\n" +
+	"\x15CreatePropertyMessage\x12\x1b\n" +
+	"\tparent_id\x18\x01 \x01(\tR\bparentId\x120\n" +
+	"\x14authoring_context_id\x18\x02 \x01(\tR\x12authoringContextId\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x128\n" +
+	"\x04type\x18\x06 \x01(\x0e2\x17.common.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12;\n" +
+	"\x05scope\x18\a \x01(\x0e2\x18.common.v1.PropertyScopeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05scope\x12]\n" +
+	"\x1bminimum_required_permission\x18\b \x01(\x0e2\x1d.common.v1.PropertyPermissionR\x19minimumRequiredPermission\x12B\n" +
+	"\x0fallowed_origins\x18\t \x03(\x0e2\x19.common.v1.PropertyOriginR\x0eallowedOrigins\x12.\n" +
+	"\x05group\x18\n" +
+	" \x01(\x0e2\x18.common.v1.PropertyGroupR\x05group\x12\x1a\n" +
+	"\bordering\x18\v \x01(\x05R\bordering\x12\x1d\n" +
+	"\n" +
+	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1a\n" +
+	"\badvanced\x18\r \x01(\bR\badvanced\x12+\n" +
+	"\x11disable_mirroring\x18\x0e \x01(\bR\x10disableMirroring\x12>\n" +
+	"\x06origin\x18\x14 \x01(\x0e2\x19.common.v1.PropertyOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x19\n" +
+	"\bscope_id\x18\x15 \x01(\tR\ascopeId\x12L\n" +
+	"\x1dmirror_property_definition_id\x18\x16 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x1amirrorPropertyDefinitionId\x12E\n" +
+	"\rinitial_value\x18\x17 \x01(\v2\x18.common.v1.PropertyValueB\x06\xbaH\x03\xc8\x01\x01R\finitialValue\x12>\n" +
+	"\rnumber_extras\x18) \x01(\v2\x17.common.v1.NumberExtrasH\x00R\fnumberExtras\x128\n" +
+	"\venum_extras\x18* \x01(\v2\x15.common.v1.EnumExtrasH\x00R\n" +
+	"enumExtras\x12A\n" +
+	"\x0evector3_extras\x18+ \x01(\v2\x18.common.v1.Vector3ExtrasH\x00R\rvector3Extras\x12;\n" +
+	"\fcolor_extras\x18, \x01(\v2\x16.common.v1.ColorExtrasH\x00R\vcolorExtras\x128\n" +
+	"\vpose_extras\x18- \x01(\v2\x15.common.v1.PoseExtrasH\x00R\n" +
+	"poseExtras\x12>\n" +
+	"\ranchor_extras\x18. \x01(\v2\x17.common.v1.AnchorExtrasH\x00R\fanchorExtras:\x8c\x02\xbaH\x88\x02\x1al\n" +
+	" definition_and_value_types_match\x12\"type must match initial_value.type\x1a$this.type == this.initial_value.type\x1a\x97\x01\n" +
+	"\x1amirror_requires_definition\x12;mirror_property_definition_id is required for MIRROR origin\x1a<this.origin != 2 || this.mirror_property_definition_id != ''B\b\n" +
+	"\x06extras*\xa9\x03\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -1713,7 +2042,7 @@ func file_common_v1_property_proto_rawDescGZIP() []byte {
 }
 
 var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_common_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),              // 0: common.v1.PropertyType
 	(PropertyOrigin)(0),            // 1: common.v1.PropertyOrigin
@@ -1733,10 +2062,11 @@ var file_common_v1_property_proto_goTypes = []any{
 	(*ColorExtras)(nil),            // 15: common.v1.ColorExtras
 	(*AnchorExtras)(nil),           // 16: common.v1.AnchorExtras
 	(*PoseExtras)(nil),             // 17: common.v1.PoseExtras
-	(*v1.Vector3)(nil),             // 18: geometry.v1.Vector3
-	(*v1.LocalizedPose)(nil),       // 19: geometry.v1.LocalizedPose
-	(*v1.Anchor)(nil),              // 20: geometry.v1.Anchor
-	(*Color)(nil),                  // 21: common.v1.Color
+	(*CreatePropertyMessage)(nil),  // 18: common.v1.CreatePropertyMessage
+	(*v1.Vector3)(nil),             // 19: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),       // 20: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),              // 21: geometry.v1.Anchor
+	(*Color)(nil),                  // 22: common.v1.Color
 }
 var file_common_v1_property_proto_depIdxs = []int32{
 	0,  // 0: common.v1.PropertyDefinition.type:type_name -> common.v1.PropertyType
@@ -1754,21 +2084,34 @@ var file_common_v1_property_proto_depIdxs = []int32{
 	1,  // 12: common.v1.PropertyInstance.origin:type_name -> common.v1.PropertyOrigin
 	7,  // 13: common.v1.PropertyInstance.value:type_name -> common.v1.PropertyValue
 	0,  // 14: common.v1.PropertyValue.type:type_name -> common.v1.PropertyType
-	18, // 15: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
-	19, // 16: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
-	20, // 17: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
-	21, // 18: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
+	19, // 15: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
+	20, // 16: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
+	21, // 17: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
+	22, // 18: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
 	1,  // 19: common.v1.PropertyInstanceUpdate.origin:type_name -> common.v1.PropertyOrigin
 	7,  // 20: common.v1.PropertyInstanceUpdate.value:type_name -> common.v1.PropertyValue
 	5,  // 21: common.v1.PropertyDefinitions.items:type_name -> common.v1.PropertyDefinition
 	6,  // 22: common.v1.PropertyInstances.items:type_name -> common.v1.PropertyInstance
 	12, // 23: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
-	21, // 24: common.v1.ColorExtras.default:type_name -> common.v1.Color
-	25, // [25:25] is the sub-list for method output_type
-	25, // [25:25] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	22, // 24: common.v1.ColorExtras.default:type_name -> common.v1.Color
+	0,  // 25: common.v1.CreatePropertyMessage.type:type_name -> common.v1.PropertyType
+	4,  // 26: common.v1.CreatePropertyMessage.scope:type_name -> common.v1.PropertyScope
+	3,  // 27: common.v1.CreatePropertyMessage.minimum_required_permission:type_name -> common.v1.PropertyPermission
+	1,  // 28: common.v1.CreatePropertyMessage.allowed_origins:type_name -> common.v1.PropertyOrigin
+	2,  // 29: common.v1.CreatePropertyMessage.group:type_name -> common.v1.PropertyGroup
+	1,  // 30: common.v1.CreatePropertyMessage.origin:type_name -> common.v1.PropertyOrigin
+	7,  // 31: common.v1.CreatePropertyMessage.initial_value:type_name -> common.v1.PropertyValue
+	11, // 32: common.v1.CreatePropertyMessage.number_extras:type_name -> common.v1.NumberExtras
+	13, // 33: common.v1.CreatePropertyMessage.enum_extras:type_name -> common.v1.EnumExtras
+	14, // 34: common.v1.CreatePropertyMessage.vector3_extras:type_name -> common.v1.Vector3Extras
+	15, // 35: common.v1.CreatePropertyMessage.color_extras:type_name -> common.v1.ColorExtras
+	17, // 36: common.v1.CreatePropertyMessage.pose_extras:type_name -> common.v1.PoseExtras
+	16, // 37: common.v1.CreatePropertyMessage.anchor_extras:type_name -> common.v1.AnchorExtras
+	38, // [38:38] is the sub-list for method output_type
+	38, // [38:38] is the sub-list for method input_type
+	38, // [38:38] is the sub-list for extension type_name
+	38, // [38:38] is the sub-list for extension extendee
+	0,  // [0:38] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_property_proto_init() }
@@ -1780,13 +2123,21 @@ func file_common_v1_property_proto_init() {
 	file_common_v1_property_proto_msgTypes[2].OneofWrappers = []any{}
 	file_common_v1_property_proto_msgTypes[6].OneofWrappers = []any{}
 	file_common_v1_property_proto_msgTypes[9].OneofWrappers = []any{}
+	file_common_v1_property_proto_msgTypes[13].OneofWrappers = []any{
+		(*CreatePropertyMessage_NumberExtras)(nil),
+		(*CreatePropertyMessage_EnumExtras)(nil),
+		(*CreatePropertyMessage_Vector3Extras)(nil),
+		(*CreatePropertyMessage_ColorExtras)(nil),
+		(*CreatePropertyMessage_PoseExtras)(nil),
+		(*CreatePropertyMessage_AnchorExtras)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)),
 			NumEnums:      5,
-			NumMessages:   13,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

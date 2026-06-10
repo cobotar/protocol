@@ -343,3 +343,68 @@ message PoseExtras {
   bool anchor_editable = 1;
   bool pose_editable = 2;
 }
+
+// Creates a PropertyDefinition and its required template PropertyInstance.
+message CreatePropertyMessage {
+  option (buf.validate.message).cel = {
+    id: "definition_and_value_types_match"
+    message: "type must match initial_value.type"
+    expression: "this.type == this.initial_value.type"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "mirror_requires_definition"
+    message: "mirror_property_definition_id is required for MIRROR origin"
+    expression: "this.origin != 2 || this.mirror_property_definition_id != ''"
+  };
+
+  // Ownership
+  string parent_id = 1;
+  string authoring_context_id = 2;
+
+  // Definition
+  string name = 3;
+  string icon = 4;
+  string description = 5;
+
+  PropertyType type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  PropertyScope scope = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  PropertyPermission minimum_required_permission = 8;
+  repeated PropertyOrigin allowed_origins = 9;
+  PropertyGroup group = 10;
+  int32 ordering = 11;
+  bool hide_group = 12;
+  bool advanced = 13;
+  bool disable_mirroring = 14;
+
+  // Template instance
+  PropertyOrigin origin = 20 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Defaults to parent_id when empty. Needed for input-slot scopes.
+  string scope_id = 21;
+
+  string mirror_property_definition_id = 22 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true];
+
+  PropertyValue initial_value = 23 [(buf.validate.field).required = true];
+
+  // Type-specific definition metadata
+  oneof extras {
+    NumberExtras number_extras = 41;
+    EnumExtras enum_extras = 42;
+    Vector3Extras vector3_extras = 43;
+    ColorExtras color_extras = 44;
+    PoseExtras pose_extras = 45;
+    AnchorExtras anchor_extras = 46;
+  }
+}

@@ -34,71 +34,73 @@ namespace Messages.Product.V1 {
             "Qg66SAsSCSkAAAAAAAAAAFIDek1tInIKDE1hdGVyaWFsU3BlYxI4CghjYXRl",
             "Z29yeRgBIAEoDjIcLnByb2R1Y3QudjEuTWF0ZXJpYWxDYXRlZ29yeVIIY2F0",
             "ZWdvcnkSEgoEbmFtZRgCIAEoCVIEbmFtZRIUCgVncmFkZRgDIAEoCVIFZ3Jh",
-            "ZGUikQMKE1BhcnRIYW5kbGluZ1Byb2ZpbGUSGAoHZnJhZ2lsZRgBIAEoCFIH",
+            "ZGUi7gMKE1BhcnRIYW5kbGluZ1Byb2ZpbGUSGAoHZnJhZ2lsZRgBIAEoCFIH",
             "ZnJhZ2lsZRIjCg1lc2Rfc2Vuc2l0aXZlGAIgASgIUgxlc2RTZW5zaXRpdmUS",
             "MwoWcmVxdWlyZXNfdHdvX2hhbmRfbGlmdBgDIAEoCFITcmVxdWlyZXNUd29I",
             "YW5kTGlmdBI+ChtyZXF1aXJlc19saWZ0aW5nX2Fzc2lzdGFuY2UYBCABKAhS",
             "GXJlcXVpcmVzTGlmdGluZ0Fzc2lzdGFuY2USOAoYcmVxdWlyZXNfZml4dHVy",
-            "ZV9zdXBwb3J0GAUgASgIUhZyZXF1aXJlc0ZpeHR1cmVTdXBwb3J0EicKEG1h",
-            "eF9ncmlwX2ZvcmNlX24YBiABKAFSDW1heEdyaXBGb3JjZU4SIgoNbWF4X3Rv",
-            "cnF1ZV9ubRgHIAEoAVILbWF4VG9ycXVlTm0SPwoLY29uc3RyYWludHMYCCAD",
-            "KAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50",
-            "cyLGBAoSUGFydFByb2Nlc3NQcm9maWxlElYKGGVzdGltYXRlZF9odW1hbl9k",
-            "dXJhdGlvbhgBIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIW",
-            "ZXN0aW1hdGVkSHVtYW5EdXJhdGlvbhJWChhlc3RpbWF0ZWRfcm9ib3RfZHVy",
-            "YXRpb24YAiABKAsyHC5jb21tb24udjEuRXN0aW1hdGVkRHVyYXRpb25SFmVz",
-            "dGltYXRlZFJvYm90RHVyYXRpb24SMgoVcmVxdWlyZV9mdWxsX2d1aWRhbmNl",
-            "GAMgASgIUhNyZXF1aXJlRnVsbEd1aWRhbmNlEjYKF2luc3BlY3RfYmVmb3Jl",
-            "X2Fzc2VtYmxlGAQgASgIUhVpbnNwZWN0QmVmb3JlQXNzZW1ibGUSOgoZaW5z",
-            "cGVjdF9hZnRlcl9kaXNhc3NlbWJsZRgFIAEoCFIXaW5zcGVjdEFmdGVyRGlz",
-            "YXNzZW1ibGUSNQoXcHJlX2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAlSFHBy",
-            "ZUx1YnJpY2F0aW9uUGFydElkEjcKGHBvc3RfbHVicmljYXRpb25fcGFydF9p",
-            "ZBgHIAEoCVIVcG9zdEx1YnJpY2F0aW9uUGFydElkEicKD3JlcXVpcmVzX3dp",
-            "cGluZxgIIAEoCFIOcmVxdWlyZXNXaXBpbmcSPwoLY29uc3RyYWludHMYCSAD",
-            "KAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50",
-            "cyLqBAoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUY",
-            "AiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAK",
-            "C2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgO",
-            "MhQucHJvZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFSBHR5cGUSGAoHc3Vi",
-            "dHlwZRgGIAEoCVIHc3VidHlwZRIiCgh3ZWlnaHRfZxgHIAEoA0IHukgEIgIo",
-            "AFIHd2VpZ2h0RxI2CgpkaW1lbnNpb25zGAggASgLMhYucHJvZHVjdC52MS5E",
-            "aW1lbnNpb25zUgpkaW1lbnNpb25zEjQKCG1hdGVyaWFsGAkgASgLMhgucHJv",
-            "ZHVjdC52MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEjMKEGRlZmF1bHRfbW9k",
-            "ZWxfaWQYCiABKAlCCbpIBnIEiPEEAVIOZGVmYXVsdE1vZGVsSWQSOwoIaGFu",
-            "ZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2ZpbGVS",
-            "CGhhbmRsaW5nEjgKB3Byb2Nlc3MYDCABKAsyHi5wcm9kdWN0LnYxLlBhcnRQ",
-            "cm9jZXNzUHJvZmlsZVIHcHJvY2VzcxJNChNleHRlcm5hbF9yZWZlcmVuY2Vz",
-            "GA0gAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5h",
-            "bFJlZmVyZW5jZXMSGAoHdmVyc2lvbhgPIAEoCVIHdmVyc2lvbiJDCg9QYXJ0",
-            "RGVmaW5pdGlvbnMSMAoFaXRlbXMYASADKAsyGi5wcm9kdWN0LnYxLlBhcnRE",
-            "ZWZpbml0aW9uUgVpdGVtcyroAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBFX1VO",
-            "U1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBBUlRf",
-            "VFlQRV9GQVNURU5FUhACEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQSEwoP",
-            "UEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAGEhEK",
-            "DVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19DT01Q",
-            "T05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQCRIT",
-            "Cg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VEX01B",
-            "VEVSSUFMEAsSGwoXUEFSVF9UWVBFX0ZJTkFMX1BST0RVQ1QQFBIZChVQQVJU",
-            "X1RZUEVfU1VCQVNTRU1CTFkQFSqRAwoQTWF0ZXJpYWxDYXRlZ29yeRIhCh1N",
-            "QVRFUklBTF9DQVRFR09SWV9VTlNQRUNJRklFRBAAEhsKF01BVEVSSUFMX0NB",
-            "VEVHT1JZX01FVEFMEAESHQoZTUFURVJJQUxfQ0FURUdPUllfUE9MWU1FUhAC",
-            "Eh8KG01BVEVSSUFMX0NBVEVHT1JZX0VMQVNUT01FUhADEh8KG01BVEVSSUFM",
-            "X0NBVEVHT1JZX0NPTVBPU0lURRAEEh0KGU1BVEVSSUFMX0NBVEVHT1JZX0NF",
-            "UkFNSUMQBRIbChdNQVRFUklBTF9DQVRFR09SWV9HTEFTUxAGEhoKFk1BVEVS",
-            "SUFMX0NBVEVHT1JZX1dPT0QQBxIaChZNQVRFUklBTF9DQVRFR09SWV9GT0FN",
-            "EAgSKwonTUFURVJJQUxfQ0FURUdPUllfRUxFQ1RST05JQ1NfU1VCU1RSQVRF",
-            "EAkSHgoaTUFURVJJQUxfQ0FURUdPUllfQ0hFTUlDQUwQChIbChdNQVRFUklB",
-            "TF9DQVRFR09SWV9PVEhFUhBjQrIBCg5jb20ucHJvZHVjdC52MUITUGFydERl",
-            "ZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "bWVzc2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNzYWdl",
-            "cy5Qcm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BCTWV0",
-            "YWRhdGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
+            "ZV9zdXBwb3J0GAUgASgIUhZyZXF1aXJlc0ZpeHR1cmVTdXBwb3J0Ei8KFGRl",
+            "ZmF1bHRfZ3JpcF9mb3JjZV9uGAYgASgBUhFkZWZhdWx0R3JpcEZvcmNlThIn",
+            "ChBtYXhfZ3JpcF9mb3JjZV9uGAcgASgBUg1tYXhHcmlwRm9yY2VOEioKEWRl",
+            "ZmF1bHRfdG9ycXVlX25tGAggASgBUg9kZWZhdWx0VG9ycXVlTm0SIgoNbWF4",
+            "X3RvcnF1ZV9ubRgJIAEoAVILbWF4VG9ycXVlTm0SPwoLY29uc3RyYWludHMY",
+            "CiADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJh",
+            "aW50cyLGBAoSUGFydFByb2Nlc3NQcm9maWxlElYKGGVzdGltYXRlZF9odW1h",
+            "bl9kdXJhdGlvbhgBIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlv",
+            "blIWZXN0aW1hdGVkSHVtYW5EdXJhdGlvbhJWChhlc3RpbWF0ZWRfcm9ib3Rf",
+            "ZHVyYXRpb24YAiABKAsyHC5jb21tb24udjEuRXN0aW1hdGVkRHVyYXRpb25S",
+            "FmVzdGltYXRlZFJvYm90RHVyYXRpb24SMgoVcmVxdWlyZV9mdWxsX2d1aWRh",
+            "bmNlGAMgASgIUhNyZXF1aXJlRnVsbEd1aWRhbmNlEjYKF2luc3BlY3RfYmVm",
+            "b3JlX2Fzc2VtYmxlGAQgASgIUhVpbnNwZWN0QmVmb3JlQXNzZW1ibGUSOgoZ",
+            "aW5zcGVjdF9hZnRlcl9kaXNhc3NlbWJsZRgFIAEoCFIXaW5zcGVjdEFmdGVy",
+            "RGlzYXNzZW1ibGUSNQoXcHJlX2x1YnJpY2F0aW9uX3BhcnRfaWQYBiABKAlS",
+            "FHByZUx1YnJpY2F0aW9uUGFydElkEjcKGHBvc3RfbHVicmljYXRpb25fcGFy",
+            "dF9pZBgHIAEoCVIVcG9zdEx1YnJpY2F0aW9uUGFydElkEicKD3JlcXVpcmVz",
+            "X3dpcGluZxgIIAEoCFIOcmVxdWlyZXNXaXBpbmcSPwoLY29uc3RyYWludHMY",
+            "CSADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJh",
+            "aW50cyLqBAoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
+            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUg",
+            "ASgOMhQucHJvZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFSBHR5cGUSGAoH",
+            "c3VidHlwZRgGIAEoCVIHc3VidHlwZRIiCgh3ZWlnaHRfZxgHIAEoA0IHukgE",
+            "IgIoAFIHd2VpZ2h0RxI2CgpkaW1lbnNpb25zGAggASgLMhYucHJvZHVjdC52",
+            "MS5EaW1lbnNpb25zUgpkaW1lbnNpb25zEjQKCG1hdGVyaWFsGAkgASgLMhgu",
+            "cHJvZHVjdC52MS5NYXRlcmlhbFNwZWNSCG1hdGVyaWFsEjMKEGRlZmF1bHRf",
+            "bW9kZWxfaWQYCiABKAlCCbpIBnIEiPEEAVIOZGVmYXVsdE1vZGVsSWQSOwoI",
+            "aGFuZGxpbmcYCyABKAsyHy5wcm9kdWN0LnYxLlBhcnRIYW5kbGluZ1Byb2Zp",
+            "bGVSCGhhbmRsaW5nEjgKB3Byb2Nlc3MYDCABKAsyHi5wcm9kdWN0LnYxLlBh",
+            "cnRQcm9jZXNzUHJvZmlsZVIHcHJvY2VzcxJNChNleHRlcm5hbF9yZWZlcmVu",
+            "Y2VzGA0gAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRl",
+            "cm5hbFJlZmVyZW5jZXMSGAoHdmVyc2lvbhgPIAEoCVIHdmVyc2lvbiJDCg9Q",
+            "YXJ0RGVmaW5pdGlvbnMSMAoFaXRlbXMYASADKAsyGi5wcm9kdWN0LnYxLlBh",
+            "cnREZWZpbml0aW9uUgVpdGVtcyroAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBF",
+            "X1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBB",
+            "UlRfVFlQRV9GQVNURU5FUhACEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQS",
+            "EwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAG",
+            "EhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19D",
+            "T01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQ",
+            "CRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VE",
+            "X01BVEVSSUFMEAsSGwoXUEFSVF9UWVBFX0ZJTkFMX1BST0RVQ1QQFBIZChVQ",
+            "QVJUX1RZUEVfU1VCQVNTRU1CTFkQFSqRAwoQTWF0ZXJpYWxDYXRlZ29yeRIh",
+            "Ch1NQVRFUklBTF9DQVRFR09SWV9VTlNQRUNJRklFRBAAEhsKF01BVEVSSUFM",
+            "X0NBVEVHT1JZX01FVEFMEAESHQoZTUFURVJJQUxfQ0FURUdPUllfUE9MWU1F",
+            "UhACEh8KG01BVEVSSUFMX0NBVEVHT1JZX0VMQVNUT01FUhADEh8KG01BVEVS",
+            "SUFMX0NBVEVHT1JZX0NPTVBPU0lURRAEEh0KGU1BVEVSSUFMX0NBVEVHT1JZ",
+            "X0NFUkFNSUMQBRIbChdNQVRFUklBTF9DQVRFR09SWV9HTEFTUxAGEhoKFk1B",
+            "VEVSSUFMX0NBVEVHT1JZX1dPT0QQBxIaChZNQVRFUklBTF9DQVRFR09SWV9G",
+            "T0FNEAgSKwonTUFURVJJQUxfQ0FURUdPUllfRUxFQ1RST05JQ1NfU1VCU1RS",
+            "QVRFEAkSHgoaTUFURVJJQUxfQ0FURUdPUllfQ0hFTUlDQUwQChIbChdNQVRF",
+            "UklBTF9DQVRFR09SWV9PVEhFUhBjQrIBCg5jb20ucHJvZHVjdC52MUITUGFy",
+            "dERlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNz",
+            "YWdlcy5Qcm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BC",
+            "TWV0YWRhdGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.Dimensions), global::Messages.Product.V1.Dimensions.Parser, new[]{ "XMm", "YMm", "ZMm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.MaterialSpec), global::Messages.Product.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresLiftingAssistance", "RequiresFixtureSupport", "MaxGripForceN", "MaxTorqueNm", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresLiftingAssistance", "RequiresFixtureSupport", "DefaultGripForceN", "MaxGripForceN", "DefaultTorqueNm", "MaxTorqueNm", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartProcessProfile), global::Messages.Product.V1.PartProcessProfile.Parser, new[]{ "EstimatedHumanDuration", "EstimatedRobotDuration", "RequireFullGuidance", "InspectBeforeAssemble", "InspectAfterDisassemble", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "Process", "ExternalReferences", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinitions), global::Messages.Product.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
@@ -821,7 +823,9 @@ namespace Messages.Product.V1 {
       requiresTwoHandLift_ = other.requiresTwoHandLift_;
       requiresLiftingAssistance_ = other.requiresLiftingAssistance_;
       requiresFixtureSupport_ = other.requiresFixtureSupport_;
+      defaultGripForceN_ = other.defaultGripForceN_;
       maxGripForceN_ = other.maxGripForceN_;
+      defaultTorqueNm_ = other.defaultTorqueNm_;
       maxTorqueNm_ = other.maxTorqueNm_;
       constraints_ = other.constraints_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -908,8 +912,23 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "default_grip_force_n" field.</summary>
+    public const int DefaultGripForceNFieldNumber = 6;
+    private double defaultGripForceN_;
+    /// <summary>
+    /// Default gripping/clamping force that should be applied to grip the part.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double DefaultGripForceN {
+      get { return defaultGripForceN_; }
+      set {
+        defaultGripForceN_ = value;
+      }
+    }
+
     /// <summary>Field number for the "max_grip_force_n" field.</summary>
-    public const int MaxGripForceNFieldNumber = 6;
+    public const int MaxGripForceNFieldNumber = 7;
     private double maxGripForceN_;
     /// <summary>
     /// Maximum gripping/clamping force that may be applied without damaging the part.
@@ -923,8 +942,23 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "default_torque_nm" field.</summary>
+    public const int DefaultTorqueNmFieldNumber = 8;
+    private double defaultTorqueNm_;
+    /// <summary>
+    /// Default torque that should be applied to the part or its fastening interface.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double DefaultTorqueNm {
+      get { return defaultTorqueNm_; }
+      set {
+        defaultTorqueNm_ = value;
+      }
+    }
+
     /// <summary>Field number for the "max_torque_nm" field.</summary>
-    public const int MaxTorqueNmFieldNumber = 7;
+    public const int MaxTorqueNmFieldNumber = 9;
     private double maxTorqueNm_;
     /// <summary>
     /// Maximum torque that may be applied to the part or its fastening interface.
@@ -939,9 +973,9 @@ namespace Messages.Product.V1 {
     }
 
     /// <summary>Field number for the "constraints" field.</summary>
-    public const int ConstraintsFieldNumber = 8;
+    public const int ConstraintsFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Messages.Common.V1.KeyValueConstraint> _repeated_constraints_codec
-        = pb::FieldCodec.ForMessage(66, global::Messages.Common.V1.KeyValueConstraint.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Messages.Common.V1.KeyValueConstraint.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Common.V1.KeyValueConstraint>();
     /// <summary>
     /// Additional handling constraints not represented by dedicated fields.
@@ -972,7 +1006,9 @@ namespace Messages.Product.V1 {
       if (RequiresTwoHandLift != other.RequiresTwoHandLift) return false;
       if (RequiresLiftingAssistance != other.RequiresLiftingAssistance) return false;
       if (RequiresFixtureSupport != other.RequiresFixtureSupport) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DefaultGripForceN, other.DefaultGripForceN)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxGripForceN, other.MaxGripForceN)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DefaultTorqueNm, other.DefaultTorqueNm)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(MaxTorqueNm, other.MaxTorqueNm)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -987,7 +1023,9 @@ namespace Messages.Product.V1 {
       if (RequiresTwoHandLift != false) hash ^= RequiresTwoHandLift.GetHashCode();
       if (RequiresLiftingAssistance != false) hash ^= RequiresLiftingAssistance.GetHashCode();
       if (RequiresFixtureSupport != false) hash ^= RequiresFixtureSupport.GetHashCode();
+      if (DefaultGripForceN != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DefaultGripForceN);
       if (MaxGripForceN != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxGripForceN);
+      if (DefaultTorqueNm != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DefaultTorqueNm);
       if (MaxTorqueNm != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(MaxTorqueNm);
       hash ^= constraints_.GetHashCode();
       if (_unknownFields != null) {
@@ -1028,12 +1066,20 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequiresFixtureSupport);
       }
-      if (MaxGripForceN != 0D) {
+      if (DefaultGripForceN != 0D) {
         output.WriteRawTag(49);
+        output.WriteDouble(DefaultGripForceN);
+      }
+      if (MaxGripForceN != 0D) {
+        output.WriteRawTag(57);
         output.WriteDouble(MaxGripForceN);
       }
+      if (DefaultTorqueNm != 0D) {
+        output.WriteRawTag(65);
+        output.WriteDouble(DefaultTorqueNm);
+      }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(57);
+        output.WriteRawTag(73);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(output, _repeated_constraints_codec);
@@ -1067,12 +1113,20 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequiresFixtureSupport);
       }
-      if (MaxGripForceN != 0D) {
+      if (DefaultGripForceN != 0D) {
         output.WriteRawTag(49);
+        output.WriteDouble(DefaultGripForceN);
+      }
+      if (MaxGripForceN != 0D) {
+        output.WriteRawTag(57);
         output.WriteDouble(MaxGripForceN);
       }
+      if (DefaultTorqueNm != 0D) {
+        output.WriteRawTag(65);
+        output.WriteDouble(DefaultTorqueNm);
+      }
       if (MaxTorqueNm != 0D) {
-        output.WriteRawTag(57);
+        output.WriteRawTag(73);
         output.WriteDouble(MaxTorqueNm);
       }
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
@@ -1101,7 +1155,13 @@ namespace Messages.Product.V1 {
       if (RequiresFixtureSupport != false) {
         size += 1 + 1;
       }
+      if (DefaultGripForceN != 0D) {
+        size += 1 + 8;
+      }
       if (MaxGripForceN != 0D) {
+        size += 1 + 8;
+      }
+      if (DefaultTorqueNm != 0D) {
         size += 1 + 8;
       }
       if (MaxTorqueNm != 0D) {
@@ -1135,8 +1195,14 @@ namespace Messages.Product.V1 {
       if (other.RequiresFixtureSupport != false) {
         RequiresFixtureSupport = other.RequiresFixtureSupport;
       }
+      if (other.DefaultGripForceN != 0D) {
+        DefaultGripForceN = other.DefaultGripForceN;
+      }
       if (other.MaxGripForceN != 0D) {
         MaxGripForceN = other.MaxGripForceN;
+      }
+      if (other.DefaultTorqueNm != 0D) {
+        DefaultTorqueNm = other.DefaultTorqueNm;
       }
       if (other.MaxTorqueNm != 0D) {
         MaxTorqueNm = other.MaxTorqueNm;
@@ -1182,14 +1248,22 @@ namespace Messages.Product.V1 {
             break;
           }
           case 49: {
-            MaxGripForceN = input.ReadDouble();
+            DefaultGripForceN = input.ReadDouble();
             break;
           }
           case 57: {
+            MaxGripForceN = input.ReadDouble();
+            break;
+          }
+          case 65: {
+            DefaultTorqueNm = input.ReadDouble();
+            break;
+          }
+          case 73: {
             MaxTorqueNm = input.ReadDouble();
             break;
           }
-          case 66: {
+          case 82: {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
@@ -1233,14 +1307,22 @@ namespace Messages.Product.V1 {
             break;
           }
           case 49: {
-            MaxGripForceN = input.ReadDouble();
+            DefaultGripForceN = input.ReadDouble();
             break;
           }
           case 57: {
+            MaxGripForceN = input.ReadDouble();
+            break;
+          }
+          case 65: {
+            DefaultTorqueNm = input.ReadDouble();
+            break;
+          }
+          case 73: {
             MaxTorqueNm = input.ReadDouble();
             break;
           }
-          case 66: {
+          case 82: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
             break;
           }

@@ -165,35 +165,69 @@ namespace Messages.Common.V1 {
             "B2RlZmF1bHQiMQoMQW5jaG9yRXh0cmFzEiEKDG9ubHlfbWFya2VycxgBIAEo",
             "CFILb25seU1hcmtlcnMiWgoKUG9zZUV4dHJhcxInCg9hbmNob3JfZWRpdGFi",
             "bGUYASABKAhSDmFuY2hvckVkaXRhYmxlEiMKDXBvc2VfZWRpdGFibGUYAiAB",
-            "KAhSDHBvc2VFZGl0YWJsZSqpAwoMUHJvcGVydHlUeXBlEh0KGVBST1BFUlRZ",
-            "X1RZUEVfVU5TUEVDSUZJRUQQABIWChJQUk9QRVJUWV9UWVBFX0JPT0wQARIV",
-            "ChFQUk9QRVJUWV9UWVBFX0lOVBACEhcKE1BST1BFUlRZX1RZUEVfRkxPQVQQ",
-            "AxIYChRQUk9QRVJUWV9UWVBFX0RPVUJMRRAEEhgKFFBST1BFUlRZX1RZUEVf",
-            "U1RSSU5HEAUSGQoVUFJPUEVSVFlfVFlQRV9WRUNUT1IzEAYSFgoSUFJPUEVS",
-            "VFlfVFlQRV9QT1NFEAcSGAoUUFJPUEVSVFlfVFlQRV9BTkNIT1IQCBIXChNQ",
-            "Uk9QRVJUWV9UWVBFX0NPTE9SEAkSFwoTUFJPUEVSVFlfVFlQRV9ST0JPVBAK",
-            "EhYKElBST1BFUlRZX1RZUEVfRU5VTRALEhwKGFBST1BFUlRZX1RZUEVfRU5V",
-            "TV9NVUxUSRAMEhYKElBST1BFUlRZX1RZUEVfSUNPThANEhcKE1BST1BFUlRZ",
-            "X1RZUEVfQVNTRVQQDhIYChRQUk9QRVJUWV9UWVBFX1dPUktFUhAPKmgKDlBy",
-            "b3BlcnR5T3JpZ2luEh8KG1BST1BFUlRZX09SSUdJTl9VTlNQRUNJRklFRBAA",
-            "EhkKFVBST1BFUlRZX09SSUdJTl9GSVhFRBABEhoKFlBST1BFUlRZX09SSUdJ",
-            "Tl9NSVJST1IQAiqZAgoNUHJvcGVydHlHcm91cBIeChpQUk9QRVJUWV9HUk9V",
-            "UF9VTlNQRUNJRklFRBAAEhkKFVBST1BFUlRZX0dST1VQX09VVFBVVBABEh8K",
-            "G1BST1BFUlRZX0dST1VQX05PTl9FRElUQUJMRRACEhoKFlBST1BFUlRZX0dS",
-            "T1VQX1NUWUxJTkcQAxIbChdQUk9QRVJUWV9HUk9VUF9MT0NBVElPThAEEhcK",
-            "E1BST1BFUlRZX0dST1VQX0lDT04QBRIgChxQUk9QRVJUWV9HUk9VUF9DT05G",
-            "SUdVUkFUSU9OEAYSGQoVUFJPUEVSVFlfR1JPVVBfSElEREVOEAcSHQoZUFJP",
-            "UEVSVFlfR1JPVVBfSU5QVVRfU0xPVBAIKrYBChJQcm9wZXJ0eVBlcm1pc3Np",
-            "b24SIwofUFJPUEVSVFlfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEh0KGVBS",
-            "T1BFUlRZX1BFUk1JU1NJT05fQkFTSUMQChIgChxQUk9QRVJUWV9QRVJNSVNT",
-            "SU9OX0NPU01FVElDEBQSHAoYUFJPUEVSVFlfUEVSTUlTU0lPTl9GVUxMEB4S",
-            "HAoYUFJPUEVSVFlfUEVSTUlTU0lPTl9OT05FECgqZgoNUHJvcGVydHlTY29w",
-            "ZRIeChpQUk9QRVJUWV9TQ09QRV9VTlNQRUNJRklFRBAAEhkKFVBST1BFUlRZ",
-            "X1NDT1BFX0VOVElUWRABEhoKFlBST1BFUlRZX1NDT1BFX1JVTlRJTUUQAkKl",
-            "AQoNY29tLmNvbW1vbi52MUINUHJvcGVydHlQcm90b1ABWjdnaXRodWIuY29t",
-            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYx",
-            "ogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29t",
-            "bW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
+            "KAhSDHBvc2VFZGl0YWJsZSL7CwoVQ3JlYXRlUHJvcGVydHlNZXNzYWdlEhsK",
+            "CXBhcmVudF9pZBgBIAEoCVIIcGFyZW50SWQSMAoUYXV0aG9yaW5nX2NvbnRl",
+            "eHRfaWQYAiABKAlSEmF1dGhvcmluZ0NvbnRleHRJZBISCgRuYW1lGAMgASgJ",
+            "UgRuYW1lEhIKBGljb24YBCABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBSAB",
+            "KAlSC2Rlc2NyaXB0aW9uEjgKBHR5cGUYBiABKA4yFy5jb21tb24udjEuUHJv",
+            "cGVydHlUeXBlQgu6SAiCAQIQAcgBAVIEdHlwZRI7CgVzY29wZRgHIAEoDjIY",
+            "LmNvbW1vbi52MS5Qcm9wZXJ0eVNjb3BlQgu6SAiCAQIQAcgBAVIFc2NvcGUS",
+            "XQobbWluaW11bV9yZXF1aXJlZF9wZXJtaXNzaW9uGAggASgOMh0uY29tbW9u",
+            "LnYxLlByb3BlcnR5UGVybWlzc2lvblIZbWluaW11bVJlcXVpcmVkUGVybWlz",
+            "c2lvbhJCCg9hbGxvd2VkX29yaWdpbnMYCSADKA4yGS5jb21tb24udjEuUHJv",
+            "cGVydHlPcmlnaW5SDmFsbG93ZWRPcmlnaW5zEi4KBWdyb3VwGAogASgOMhgu",
+            "Y29tbW9uLnYxLlByb3BlcnR5R3JvdXBSBWdyb3VwEhoKCG9yZGVyaW5nGAsg",
+            "ASgFUghvcmRlcmluZxIdCgpoaWRlX2dyb3VwGAwgASgIUgloaWRlR3JvdXAS",
+            "GgoIYWR2YW5jZWQYDSABKAhSCGFkdmFuY2VkEisKEWRpc2FibGVfbWlycm9y",
+            "aW5nGA4gASgIUhBkaXNhYmxlTWlycm9yaW5nEj4KBm9yaWdpbhgUIAEoDjIZ",
+            "LmNvbW1vbi52MS5Qcm9wZXJ0eU9yaWdpbkILukgIggECEAHIAQFSBm9yaWdp",
+            "bhIZCghzY29wZV9pZBgVIAEoCVIHc2NvcGVJZBJMCh1taXJyb3JfcHJvcGVy",
+            "dHlfZGVmaW5pdGlvbl9pZBgWIAEoCUIJukgGcgSY8QQBUhptaXJyb3JQcm9w",
+            "ZXJ0eURlZmluaXRpb25JZBJFCg1pbml0aWFsX3ZhbHVlGBcgASgLMhguY29t",
+            "bW9uLnYxLlByb3BlcnR5VmFsdWVCBrpIA8gBAVIMaW5pdGlhbFZhbHVlEj4K",
+            "DW51bWJlcl9leHRyYXMYKSABKAsyFy5jb21tb24udjEuTnVtYmVyRXh0cmFz",
+            "SABSDG51bWJlckV4dHJhcxI4CgtlbnVtX2V4dHJhcxgqIAEoCzIVLmNvbW1v",
+            "bi52MS5FbnVtRXh0cmFzSABSCmVudW1FeHRyYXMSQQoOdmVjdG9yM19leHRy",
+            "YXMYKyABKAsyGC5jb21tb24udjEuVmVjdG9yM0V4dHJhc0gAUg12ZWN0b3Iz",
+            "RXh0cmFzEjsKDGNvbG9yX2V4dHJhcxgsIAEoCzIWLmNvbW1vbi52MS5Db2xv",
+            "ckV4dHJhc0gAUgtjb2xvckV4dHJhcxI4Cgtwb3NlX2V4dHJhcxgtIAEoCzIV",
+            "LmNvbW1vbi52MS5Qb3NlRXh0cmFzSABSCnBvc2VFeHRyYXMSPgoNYW5jaG9y",
+            "X2V4dHJhcxguIAEoCzIXLmNvbW1vbi52MS5BbmNob3JFeHRyYXNIAFIMYW5j",
+            "aG9yRXh0cmFzOowCukiIAhpsCiBkZWZpbml0aW9uX2FuZF92YWx1ZV90eXBl",
+            "c19tYXRjaBIidHlwZSBtdXN0IG1hdGNoIGluaXRpYWxfdmFsdWUudHlwZRok",
+            "dGhpcy50eXBlID09IHRoaXMuaW5pdGlhbF92YWx1ZS50eXBlGpcBChptaXJy",
+            "b3JfcmVxdWlyZXNfZGVmaW5pdGlvbhI7bWlycm9yX3Byb3BlcnR5X2RlZmlu",
+            "aXRpb25faWQgaXMgcmVxdWlyZWQgZm9yIE1JUlJPUiBvcmlnaW4aPHRoaXMu",
+            "b3JpZ2luICE9IDIgfHwgdGhpcy5taXJyb3JfcHJvcGVydHlfZGVmaW5pdGlv",
+            "bl9pZCAhPSAnJ0IICgZleHRyYXMqqQMKDFByb3BlcnR5VHlwZRIdChlQUk9Q",
+            "RVJUWV9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSUFJPUEVSVFlfVFlQRV9CT09M",
+            "EAESFQoRUFJPUEVSVFlfVFlQRV9JTlQQAhIXChNQUk9QRVJUWV9UWVBFX0ZM",
+            "T0FUEAMSGAoUUFJPUEVSVFlfVFlQRV9ET1VCTEUQBBIYChRQUk9QRVJUWV9U",
+            "WVBFX1NUUklORxAFEhkKFVBST1BFUlRZX1RZUEVfVkVDVE9SMxAGEhYKElBS",
+            "T1BFUlRZX1RZUEVfUE9TRRAHEhgKFFBST1BFUlRZX1RZUEVfQU5DSE9SEAgS",
+            "FwoTUFJPUEVSVFlfVFlQRV9DT0xPUhAJEhcKE1BST1BFUlRZX1RZUEVfUk9C",
+            "T1QQChIWChJQUk9QRVJUWV9UWVBFX0VOVU0QCxIcChhQUk9QRVJUWV9UWVBF",
+            "X0VOVU1fTVVMVEkQDBIWChJQUk9QRVJUWV9UWVBFX0lDT04QDRIXChNQUk9Q",
+            "RVJUWV9UWVBFX0FTU0VUEA4SGAoUUFJPUEVSVFlfVFlQRV9XT1JLRVIQDypo",
+            "Cg5Qcm9wZXJ0eU9yaWdpbhIfChtQUk9QRVJUWV9PUklHSU5fVU5TUEVDSUZJ",
+            "RUQQABIZChVQUk9QRVJUWV9PUklHSU5fRklYRUQQARIaChZQUk9QRVJUWV9P",
+            "UklHSU5fTUlSUk9SEAIqmQIKDVByb3BlcnR5R3JvdXASHgoaUFJPUEVSVFlf",
+            "R1JPVVBfVU5TUEVDSUZJRUQQABIZChVQUk9QRVJUWV9HUk9VUF9PVVRQVVQQ",
+            "ARIfChtQUk9QRVJUWV9HUk9VUF9OT05fRURJVEFCTEUQAhIaChZQUk9QRVJU",
+            "WV9HUk9VUF9TVFlMSU5HEAMSGwoXUFJPUEVSVFlfR1JPVVBfTE9DQVRJT04Q",
+            "BBIXChNQUk9QRVJUWV9HUk9VUF9JQ09OEAUSIAocUFJPUEVSVFlfR1JPVVBf",
+            "Q09ORklHVVJBVElPThAGEhkKFVBST1BFUlRZX0dST1VQX0hJRERFThAHEh0K",
+            "GVBST1BFUlRZX0dST1VQX0lOUFVUX1NMT1QQCCq2AQoSUHJvcGVydHlQZXJt",
+            "aXNzaW9uEiMKH1BST1BFUlRZX1BFUk1JU1NJT05fVU5TUEVDSUZJRUQQABId",
+            "ChlQUk9QRVJUWV9QRVJNSVNTSU9OX0JBU0lDEAoSIAocUFJPUEVSVFlfUEVS",
+            "TUlTU0lPTl9DT1NNRVRJQxAUEhwKGFBST1BFUlRZX1BFUk1JU1NJT05fRlVM",
+            "TBAeEhwKGFBST1BFUlRZX1BFUk1JU1NJT05fTk9ORRAoKmYKDVByb3BlcnR5",
+            "U2NvcGUSHgoaUFJPUEVSVFlfU0NPUEVfVU5TUEVDSUZJRUQQABIZChVQUk9Q",
+            "RVJUWV9TQ09QRV9FTlRJVFkQARIaChZQUk9QRVJUWV9TQ09QRV9SVU5USU1F",
+            "EAJCpQEKDWNvbS5jb21tb24udjFCDVByb3BlcnR5UHJvdG9QAVo3Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21t",
+            "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
+            "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.PropertyType), typeof(global::Messages.Common.V1.PropertyOrigin), typeof(global::Messages.Common.V1.PropertyGroup), typeof(global::Messages.Common.V1.PropertyPermission), typeof(global::Messages.Common.V1.PropertyScope), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -209,7 +243,8 @@ namespace Messages.Common.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Vector3Extras), global::Messages.Common.V1.Vector3Extras.Parser, new[]{ "Min", "Max", "Step", "LabelX", "LabelY", "LabelZ", "Unit" }, new[]{ "Min", "Max", "Step" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ColorExtras), global::Messages.Common.V1.ColorExtras.Parser, new[]{ "Step", "Default" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.AnchorExtras), global::Messages.Common.V1.AnchorExtras.Parser, new[]{ "OnlyMarkers" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.PoseExtras), global::Messages.Common.V1.PoseExtras.Parser, new[]{ "AnchorEditable", "PoseEditable" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.PoseExtras), global::Messages.Common.V1.PoseExtras.Parser, new[]{ "AnchorEditable", "PoseEditable" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.CreatePropertyMessage), global::Messages.Common.V1.CreatePropertyMessage.Parser, new[]{ "ParentId", "AuthoringContextId", "Name", "Icon", "Description", "Type", "Scope", "MinimumRequiredPermission", "AllowedOrigins", "Group", "Ordering", "HideGroup", "Advanced", "DisableMirroring", "Origin", "ScopeId", "MirrorPropertyDefinitionId", "InitialValue", "NumberExtras", "EnumExtras", "Vector3Extras", "ColorExtras", "PoseExtras", "AnchorExtras" }, new[]{ "Extras" }, null, null, null)
           }));
     }
     #endregion
@@ -5726,6 +5761,1193 @@ namespace Messages.Common.V1 {
           }
           case 16: {
             PoseEditable = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Creates a PropertyDefinition and its required template PropertyInstance.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class CreatePropertyMessage : pb::IMessage<CreatePropertyMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CreatePropertyMessage> _parser = new pb::MessageParser<CreatePropertyMessage>(() => new CreatePropertyMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CreatePropertyMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Common.V1.PropertyReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreatePropertyMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreatePropertyMessage(CreatePropertyMessage other) : this() {
+      parentId_ = other.parentId_;
+      authoringContextId_ = other.authoringContextId_;
+      name_ = other.name_;
+      icon_ = other.icon_;
+      description_ = other.description_;
+      type_ = other.type_;
+      scope_ = other.scope_;
+      minimumRequiredPermission_ = other.minimumRequiredPermission_;
+      allowedOrigins_ = other.allowedOrigins_.Clone();
+      group_ = other.group_;
+      ordering_ = other.ordering_;
+      hideGroup_ = other.hideGroup_;
+      advanced_ = other.advanced_;
+      disableMirroring_ = other.disableMirroring_;
+      origin_ = other.origin_;
+      scopeId_ = other.scopeId_;
+      mirrorPropertyDefinitionId_ = other.mirrorPropertyDefinitionId_;
+      initialValue_ = other.initialValue_ != null ? other.initialValue_.Clone() : null;
+      switch (other.ExtrasCase) {
+        case ExtrasOneofCase.NumberExtras:
+          NumberExtras = other.NumberExtras.Clone();
+          break;
+        case ExtrasOneofCase.EnumExtras:
+          EnumExtras = other.EnumExtras.Clone();
+          break;
+        case ExtrasOneofCase.Vector3Extras:
+          Vector3Extras = other.Vector3Extras.Clone();
+          break;
+        case ExtrasOneofCase.ColorExtras:
+          ColorExtras = other.ColorExtras.Clone();
+          break;
+        case ExtrasOneofCase.PoseExtras:
+          PoseExtras = other.PoseExtras.Clone();
+          break;
+        case ExtrasOneofCase.AnchorExtras:
+          AnchorExtras = other.AnchorExtras.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreatePropertyMessage Clone() {
+      return new CreatePropertyMessage(this);
+    }
+
+    /// <summary>Field number for the "parent_id" field.</summary>
+    public const int ParentIdFieldNumber = 1;
+    private string parentId_ = "";
+    /// <summary>
+    /// Ownership
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ParentId {
+      get { return parentId_; }
+      set {
+        parentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "authoring_context_id" field.</summary>
+    public const int AuthoringContextIdFieldNumber = 2;
+    private string authoringContextId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AuthoringContextId {
+      get { return authoringContextId_; }
+      set {
+        authoringContextId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    /// <summary>
+    /// Definition
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 4;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 5;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 6;
+    private global::Messages.Common.V1.PropertyType type_ = global::Messages.Common.V1.PropertyType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scope" field.</summary>
+    public const int ScopeFieldNumber = 7;
+    private global::Messages.Common.V1.PropertyScope scope_ = global::Messages.Common.V1.PropertyScope.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyScope Scope {
+      get { return scope_; }
+      set {
+        scope_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "minimum_required_permission" field.</summary>
+    public const int MinimumRequiredPermissionFieldNumber = 8;
+    private global::Messages.Common.V1.PropertyPermission minimumRequiredPermission_ = global::Messages.Common.V1.PropertyPermission.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyPermission MinimumRequiredPermission {
+      get { return minimumRequiredPermission_; }
+      set {
+        minimumRequiredPermission_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "allowed_origins" field.</summary>
+    public const int AllowedOriginsFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.PropertyOrigin> _repeated_allowedOrigins_codec
+        = pb::FieldCodec.ForEnum(74, x => (int) x, x => (global::Messages.Common.V1.PropertyOrigin) x);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.PropertyOrigin> allowedOrigins_ = new pbc::RepeatedField<global::Messages.Common.V1.PropertyOrigin>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Common.V1.PropertyOrigin> AllowedOrigins {
+      get { return allowedOrigins_; }
+    }
+
+    /// <summary>Field number for the "group" field.</summary>
+    public const int GroupFieldNumber = 10;
+    private global::Messages.Common.V1.PropertyGroup group_ = global::Messages.Common.V1.PropertyGroup.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyGroup Group {
+      get { return group_; }
+      set {
+        group_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ordering" field.</summary>
+    public const int OrderingFieldNumber = 11;
+    private int ordering_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Ordering {
+      get { return ordering_; }
+      set {
+        ordering_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hide_group" field.</summary>
+    public const int HideGroupFieldNumber = 12;
+    private bool hideGroup_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HideGroup {
+      get { return hideGroup_; }
+      set {
+        hideGroup_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "advanced" field.</summary>
+    public const int AdvancedFieldNumber = 13;
+    private bool advanced_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Advanced {
+      get { return advanced_; }
+      set {
+        advanced_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "disable_mirroring" field.</summary>
+    public const int DisableMirroringFieldNumber = 14;
+    private bool disableMirroring_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool DisableMirroring {
+      get { return disableMirroring_; }
+      set {
+        disableMirroring_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "origin" field.</summary>
+    public const int OriginFieldNumber = 20;
+    private global::Messages.Common.V1.PropertyOrigin origin_ = global::Messages.Common.V1.PropertyOrigin.Unspecified;
+    /// <summary>
+    /// Template instance
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyOrigin Origin {
+      get { return origin_; }
+      set {
+        origin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scope_id" field.</summary>
+    public const int ScopeIdFieldNumber = 21;
+    private string scopeId_ = "";
+    /// <summary>
+    /// Defaults to parent_id when empty. Needed for input-slot scopes.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ScopeId {
+      get { return scopeId_; }
+      set {
+        scopeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mirror_property_definition_id" field.</summary>
+    public const int MirrorPropertyDefinitionIdFieldNumber = 22;
+    private string mirrorPropertyDefinitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MirrorPropertyDefinitionId {
+      get { return mirrorPropertyDefinitionId_; }
+      set {
+        mirrorPropertyDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "initial_value" field.</summary>
+    public const int InitialValueFieldNumber = 23;
+    private global::Messages.Common.V1.PropertyValue initialValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PropertyValue InitialValue {
+      get { return initialValue_; }
+      set {
+        initialValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "number_extras" field.</summary>
+    public const int NumberExtrasFieldNumber = 41;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.NumberExtras NumberExtras {
+      get { return extrasCase_ == ExtrasOneofCase.NumberExtras ? (global::Messages.Common.V1.NumberExtras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.NumberExtras;
+      }
+    }
+
+    /// <summary>Field number for the "enum_extras" field.</summary>
+    public const int EnumExtrasFieldNumber = 42;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.EnumExtras EnumExtras {
+      get { return extrasCase_ == ExtrasOneofCase.EnumExtras ? (global::Messages.Common.V1.EnumExtras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.EnumExtras;
+      }
+    }
+
+    /// <summary>Field number for the "vector3_extras" field.</summary>
+    public const int Vector3ExtrasFieldNumber = 43;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.Vector3Extras Vector3Extras {
+      get { return extrasCase_ == ExtrasOneofCase.Vector3Extras ? (global::Messages.Common.V1.Vector3Extras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.Vector3Extras;
+      }
+    }
+
+    /// <summary>Field number for the "color_extras" field.</summary>
+    public const int ColorExtrasFieldNumber = 44;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.ColorExtras ColorExtras {
+      get { return extrasCase_ == ExtrasOneofCase.ColorExtras ? (global::Messages.Common.V1.ColorExtras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.ColorExtras;
+      }
+    }
+
+    /// <summary>Field number for the "pose_extras" field.</summary>
+    public const int PoseExtrasFieldNumber = 45;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.PoseExtras PoseExtras {
+      get { return extrasCase_ == ExtrasOneofCase.PoseExtras ? (global::Messages.Common.V1.PoseExtras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.PoseExtras;
+      }
+    }
+
+    /// <summary>Field number for the "anchor_extras" field.</summary>
+    public const int AnchorExtrasFieldNumber = 46;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.AnchorExtras AnchorExtras {
+      get { return extrasCase_ == ExtrasOneofCase.AnchorExtras ? (global::Messages.Common.V1.AnchorExtras) extras_ : null; }
+      set {
+        extras_ = value;
+        extrasCase_ = value == null ? ExtrasOneofCase.None : ExtrasOneofCase.AnchorExtras;
+      }
+    }
+
+    private object extras_;
+    /// <summary>Enum of possible cases for the "extras" oneof.</summary>
+    public enum ExtrasOneofCase {
+      None = 0,
+      NumberExtras = 41,
+      EnumExtras = 42,
+      Vector3Extras = 43,
+      ColorExtras = 44,
+      PoseExtras = 45,
+      AnchorExtras = 46,
+    }
+    private ExtrasOneofCase extrasCase_ = ExtrasOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExtrasOneofCase ExtrasCase {
+      get { return extrasCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearExtras() {
+      extrasCase_ = ExtrasOneofCase.None;
+      extras_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CreatePropertyMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CreatePropertyMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ParentId != other.ParentId) return false;
+      if (AuthoringContextId != other.AuthoringContextId) return false;
+      if (Name != other.Name) return false;
+      if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
+      if (Type != other.Type) return false;
+      if (Scope != other.Scope) return false;
+      if (MinimumRequiredPermission != other.MinimumRequiredPermission) return false;
+      if(!allowedOrigins_.Equals(other.allowedOrigins_)) return false;
+      if (Group != other.Group) return false;
+      if (Ordering != other.Ordering) return false;
+      if (HideGroup != other.HideGroup) return false;
+      if (Advanced != other.Advanced) return false;
+      if (DisableMirroring != other.DisableMirroring) return false;
+      if (Origin != other.Origin) return false;
+      if (ScopeId != other.ScopeId) return false;
+      if (MirrorPropertyDefinitionId != other.MirrorPropertyDefinitionId) return false;
+      if (!object.Equals(InitialValue, other.InitialValue)) return false;
+      if (!object.Equals(NumberExtras, other.NumberExtras)) return false;
+      if (!object.Equals(EnumExtras, other.EnumExtras)) return false;
+      if (!object.Equals(Vector3Extras, other.Vector3Extras)) return false;
+      if (!object.Equals(ColorExtras, other.ColorExtras)) return false;
+      if (!object.Equals(PoseExtras, other.PoseExtras)) return false;
+      if (!object.Equals(AnchorExtras, other.AnchorExtras)) return false;
+      if (ExtrasCase != other.ExtrasCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ParentId.Length != 0) hash ^= ParentId.GetHashCode();
+      if (AuthoringContextId.Length != 0) hash ^= AuthoringContextId.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Type != global::Messages.Common.V1.PropertyType.Unspecified) hash ^= Type.GetHashCode();
+      if (Scope != global::Messages.Common.V1.PropertyScope.Unspecified) hash ^= Scope.GetHashCode();
+      if (MinimumRequiredPermission != global::Messages.Common.V1.PropertyPermission.Unspecified) hash ^= MinimumRequiredPermission.GetHashCode();
+      hash ^= allowedOrigins_.GetHashCode();
+      if (Group != global::Messages.Common.V1.PropertyGroup.Unspecified) hash ^= Group.GetHashCode();
+      if (Ordering != 0) hash ^= Ordering.GetHashCode();
+      if (HideGroup != false) hash ^= HideGroup.GetHashCode();
+      if (Advanced != false) hash ^= Advanced.GetHashCode();
+      if (DisableMirroring != false) hash ^= DisableMirroring.GetHashCode();
+      if (Origin != global::Messages.Common.V1.PropertyOrigin.Unspecified) hash ^= Origin.GetHashCode();
+      if (ScopeId.Length != 0) hash ^= ScopeId.GetHashCode();
+      if (MirrorPropertyDefinitionId.Length != 0) hash ^= MirrorPropertyDefinitionId.GetHashCode();
+      if (initialValue_ != null) hash ^= InitialValue.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.NumberExtras) hash ^= NumberExtras.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.EnumExtras) hash ^= EnumExtras.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.Vector3Extras) hash ^= Vector3Extras.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.ColorExtras) hash ^= ColorExtras.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.PoseExtras) hash ^= PoseExtras.GetHashCode();
+      if (extrasCase_ == ExtrasOneofCase.AnchorExtras) hash ^= AnchorExtras.GetHashCode();
+      hash ^= (int) extrasCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ParentId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ParentId);
+      }
+      if (AuthoringContextId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(AuthoringContextId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Description);
+      }
+      if (Type != global::Messages.Common.V1.PropertyType.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Type);
+      }
+      if (Scope != global::Messages.Common.V1.PropertyScope.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Scope);
+      }
+      if (MinimumRequiredPermission != global::Messages.Common.V1.PropertyPermission.Unspecified) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) MinimumRequiredPermission);
+      }
+      allowedOrigins_.WriteTo(output, _repeated_allowedOrigins_codec);
+      if (Group != global::Messages.Common.V1.PropertyGroup.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Group);
+      }
+      if (Ordering != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Ordering);
+      }
+      if (HideGroup != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(HideGroup);
+      }
+      if (Advanced != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Advanced);
+      }
+      if (DisableMirroring != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(DisableMirroring);
+      }
+      if (Origin != global::Messages.Common.V1.PropertyOrigin.Unspecified) {
+        output.WriteRawTag(160, 1);
+        output.WriteEnum((int) Origin);
+      }
+      if (ScopeId.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(ScopeId);
+      }
+      if (MirrorPropertyDefinitionId.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(MirrorPropertyDefinitionId);
+      }
+      if (initialValue_ != null) {
+        output.WriteRawTag(186, 1);
+        output.WriteMessage(InitialValue);
+      }
+      if (extrasCase_ == ExtrasOneofCase.NumberExtras) {
+        output.WriteRawTag(202, 2);
+        output.WriteMessage(NumberExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.EnumExtras) {
+        output.WriteRawTag(210, 2);
+        output.WriteMessage(EnumExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.Vector3Extras) {
+        output.WriteRawTag(218, 2);
+        output.WriteMessage(Vector3Extras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.ColorExtras) {
+        output.WriteRawTag(226, 2);
+        output.WriteMessage(ColorExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.PoseExtras) {
+        output.WriteRawTag(234, 2);
+        output.WriteMessage(PoseExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.AnchorExtras) {
+        output.WriteRawTag(242, 2);
+        output.WriteMessage(AnchorExtras);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ParentId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ParentId);
+      }
+      if (AuthoringContextId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(AuthoringContextId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Icon);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Description);
+      }
+      if (Type != global::Messages.Common.V1.PropertyType.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Type);
+      }
+      if (Scope != global::Messages.Common.V1.PropertyScope.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Scope);
+      }
+      if (MinimumRequiredPermission != global::Messages.Common.V1.PropertyPermission.Unspecified) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) MinimumRequiredPermission);
+      }
+      allowedOrigins_.WriteTo(ref output, _repeated_allowedOrigins_codec);
+      if (Group != global::Messages.Common.V1.PropertyGroup.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Group);
+      }
+      if (Ordering != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Ordering);
+      }
+      if (HideGroup != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(HideGroup);
+      }
+      if (Advanced != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Advanced);
+      }
+      if (DisableMirroring != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(DisableMirroring);
+      }
+      if (Origin != global::Messages.Common.V1.PropertyOrigin.Unspecified) {
+        output.WriteRawTag(160, 1);
+        output.WriteEnum((int) Origin);
+      }
+      if (ScopeId.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(ScopeId);
+      }
+      if (MirrorPropertyDefinitionId.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(MirrorPropertyDefinitionId);
+      }
+      if (initialValue_ != null) {
+        output.WriteRawTag(186, 1);
+        output.WriteMessage(InitialValue);
+      }
+      if (extrasCase_ == ExtrasOneofCase.NumberExtras) {
+        output.WriteRawTag(202, 2);
+        output.WriteMessage(NumberExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.EnumExtras) {
+        output.WriteRawTag(210, 2);
+        output.WriteMessage(EnumExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.Vector3Extras) {
+        output.WriteRawTag(218, 2);
+        output.WriteMessage(Vector3Extras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.ColorExtras) {
+        output.WriteRawTag(226, 2);
+        output.WriteMessage(ColorExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.PoseExtras) {
+        output.WriteRawTag(234, 2);
+        output.WriteMessage(PoseExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.AnchorExtras) {
+        output.WriteRawTag(242, 2);
+        output.WriteMessage(AnchorExtras);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ParentId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentId);
+      }
+      if (AuthoringContextId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AuthoringContextId);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (Type != global::Messages.Common.V1.PropertyType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Scope != global::Messages.Common.V1.PropertyScope.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Scope);
+      }
+      if (MinimumRequiredPermission != global::Messages.Common.V1.PropertyPermission.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MinimumRequiredPermission);
+      }
+      size += allowedOrigins_.CalculateSize(_repeated_allowedOrigins_codec);
+      if (Group != global::Messages.Common.V1.PropertyGroup.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Group);
+      }
+      if (Ordering != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ordering);
+      }
+      if (HideGroup != false) {
+        size += 1 + 1;
+      }
+      if (Advanced != false) {
+        size += 1 + 1;
+      }
+      if (DisableMirroring != false) {
+        size += 1 + 1;
+      }
+      if (Origin != global::Messages.Common.V1.PropertyOrigin.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Origin);
+      }
+      if (ScopeId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ScopeId);
+      }
+      if (MirrorPropertyDefinitionId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(MirrorPropertyDefinitionId);
+      }
+      if (initialValue_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(InitialValue);
+      }
+      if (extrasCase_ == ExtrasOneofCase.NumberExtras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NumberExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.EnumExtras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EnumExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.Vector3Extras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Vector3Extras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.ColorExtras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ColorExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.PoseExtras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PoseExtras);
+      }
+      if (extrasCase_ == ExtrasOneofCase.AnchorExtras) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AnchorExtras);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CreatePropertyMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ParentId.Length != 0) {
+        ParentId = other.ParentId;
+      }
+      if (other.AuthoringContextId.Length != 0) {
+        AuthoringContextId = other.AuthoringContextId;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.Type != global::Messages.Common.V1.PropertyType.Unspecified) {
+        Type = other.Type;
+      }
+      if (other.Scope != global::Messages.Common.V1.PropertyScope.Unspecified) {
+        Scope = other.Scope;
+      }
+      if (other.MinimumRequiredPermission != global::Messages.Common.V1.PropertyPermission.Unspecified) {
+        MinimumRequiredPermission = other.MinimumRequiredPermission;
+      }
+      allowedOrigins_.Add(other.allowedOrigins_);
+      if (other.Group != global::Messages.Common.V1.PropertyGroup.Unspecified) {
+        Group = other.Group;
+      }
+      if (other.Ordering != 0) {
+        Ordering = other.Ordering;
+      }
+      if (other.HideGroup != false) {
+        HideGroup = other.HideGroup;
+      }
+      if (other.Advanced != false) {
+        Advanced = other.Advanced;
+      }
+      if (other.DisableMirroring != false) {
+        DisableMirroring = other.DisableMirroring;
+      }
+      if (other.Origin != global::Messages.Common.V1.PropertyOrigin.Unspecified) {
+        Origin = other.Origin;
+      }
+      if (other.ScopeId.Length != 0) {
+        ScopeId = other.ScopeId;
+      }
+      if (other.MirrorPropertyDefinitionId.Length != 0) {
+        MirrorPropertyDefinitionId = other.MirrorPropertyDefinitionId;
+      }
+      if (other.initialValue_ != null) {
+        if (initialValue_ == null) {
+          InitialValue = new global::Messages.Common.V1.PropertyValue();
+        }
+        InitialValue.MergeFrom(other.InitialValue);
+      }
+      switch (other.ExtrasCase) {
+        case ExtrasOneofCase.NumberExtras:
+          if (NumberExtras == null) {
+            NumberExtras = new global::Messages.Common.V1.NumberExtras();
+          }
+          NumberExtras.MergeFrom(other.NumberExtras);
+          break;
+        case ExtrasOneofCase.EnumExtras:
+          if (EnumExtras == null) {
+            EnumExtras = new global::Messages.Common.V1.EnumExtras();
+          }
+          EnumExtras.MergeFrom(other.EnumExtras);
+          break;
+        case ExtrasOneofCase.Vector3Extras:
+          if (Vector3Extras == null) {
+            Vector3Extras = new global::Messages.Common.V1.Vector3Extras();
+          }
+          Vector3Extras.MergeFrom(other.Vector3Extras);
+          break;
+        case ExtrasOneofCase.ColorExtras:
+          if (ColorExtras == null) {
+            ColorExtras = new global::Messages.Common.V1.ColorExtras();
+          }
+          ColorExtras.MergeFrom(other.ColorExtras);
+          break;
+        case ExtrasOneofCase.PoseExtras:
+          if (PoseExtras == null) {
+            PoseExtras = new global::Messages.Common.V1.PoseExtras();
+          }
+          PoseExtras.MergeFrom(other.PoseExtras);
+          break;
+        case ExtrasOneofCase.AnchorExtras:
+          if (AnchorExtras == null) {
+            AnchorExtras = new global::Messages.Common.V1.AnchorExtras();
+          }
+          AnchorExtras.MergeFrom(other.AnchorExtras);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ParentId = input.ReadString();
+            break;
+          }
+          case 18: {
+            AuthoringContextId = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 42: {
+            Description = input.ReadString();
+            break;
+          }
+          case 48: {
+            Type = (global::Messages.Common.V1.PropertyType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Scope = (global::Messages.Common.V1.PropertyScope) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            MinimumRequiredPermission = (global::Messages.Common.V1.PropertyPermission) input.ReadEnum();
+            break;
+          }
+          case 74:
+          case 72: {
+            allowedOrigins_.AddEntriesFrom(input, _repeated_allowedOrigins_codec);
+            break;
+          }
+          case 80: {
+            Group = (global::Messages.Common.V1.PropertyGroup) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            Ordering = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            HideGroup = input.ReadBool();
+            break;
+          }
+          case 104: {
+            Advanced = input.ReadBool();
+            break;
+          }
+          case 112: {
+            DisableMirroring = input.ReadBool();
+            break;
+          }
+          case 160: {
+            Origin = (global::Messages.Common.V1.PropertyOrigin) input.ReadEnum();
+            break;
+          }
+          case 170: {
+            ScopeId = input.ReadString();
+            break;
+          }
+          case 178: {
+            MirrorPropertyDefinitionId = input.ReadString();
+            break;
+          }
+          case 186: {
+            if (initialValue_ == null) {
+              InitialValue = new global::Messages.Common.V1.PropertyValue();
+            }
+            input.ReadMessage(InitialValue);
+            break;
+          }
+          case 330: {
+            global::Messages.Common.V1.NumberExtras subBuilder = new global::Messages.Common.V1.NumberExtras();
+            if (extrasCase_ == ExtrasOneofCase.NumberExtras) {
+              subBuilder.MergeFrom(NumberExtras);
+            }
+            input.ReadMessage(subBuilder);
+            NumberExtras = subBuilder;
+            break;
+          }
+          case 338: {
+            global::Messages.Common.V1.EnumExtras subBuilder = new global::Messages.Common.V1.EnumExtras();
+            if (extrasCase_ == ExtrasOneofCase.EnumExtras) {
+              subBuilder.MergeFrom(EnumExtras);
+            }
+            input.ReadMessage(subBuilder);
+            EnumExtras = subBuilder;
+            break;
+          }
+          case 346: {
+            global::Messages.Common.V1.Vector3Extras subBuilder = new global::Messages.Common.V1.Vector3Extras();
+            if (extrasCase_ == ExtrasOneofCase.Vector3Extras) {
+              subBuilder.MergeFrom(Vector3Extras);
+            }
+            input.ReadMessage(subBuilder);
+            Vector3Extras = subBuilder;
+            break;
+          }
+          case 354: {
+            global::Messages.Common.V1.ColorExtras subBuilder = new global::Messages.Common.V1.ColorExtras();
+            if (extrasCase_ == ExtrasOneofCase.ColorExtras) {
+              subBuilder.MergeFrom(ColorExtras);
+            }
+            input.ReadMessage(subBuilder);
+            ColorExtras = subBuilder;
+            break;
+          }
+          case 362: {
+            global::Messages.Common.V1.PoseExtras subBuilder = new global::Messages.Common.V1.PoseExtras();
+            if (extrasCase_ == ExtrasOneofCase.PoseExtras) {
+              subBuilder.MergeFrom(PoseExtras);
+            }
+            input.ReadMessage(subBuilder);
+            PoseExtras = subBuilder;
+            break;
+          }
+          case 370: {
+            global::Messages.Common.V1.AnchorExtras subBuilder = new global::Messages.Common.V1.AnchorExtras();
+            if (extrasCase_ == ExtrasOneofCase.AnchorExtras) {
+              subBuilder.MergeFrom(AnchorExtras);
+            }
+            input.ReadMessage(subBuilder);
+            AnchorExtras = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ParentId = input.ReadString();
+            break;
+          }
+          case 18: {
+            AuthoringContextId = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            Icon = input.ReadString();
+            break;
+          }
+          case 42: {
+            Description = input.ReadString();
+            break;
+          }
+          case 48: {
+            Type = (global::Messages.Common.V1.PropertyType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Scope = (global::Messages.Common.V1.PropertyScope) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            MinimumRequiredPermission = (global::Messages.Common.V1.PropertyPermission) input.ReadEnum();
+            break;
+          }
+          case 74:
+          case 72: {
+            allowedOrigins_.AddEntriesFrom(ref input, _repeated_allowedOrigins_codec);
+            break;
+          }
+          case 80: {
+            Group = (global::Messages.Common.V1.PropertyGroup) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            Ordering = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            HideGroup = input.ReadBool();
+            break;
+          }
+          case 104: {
+            Advanced = input.ReadBool();
+            break;
+          }
+          case 112: {
+            DisableMirroring = input.ReadBool();
+            break;
+          }
+          case 160: {
+            Origin = (global::Messages.Common.V1.PropertyOrigin) input.ReadEnum();
+            break;
+          }
+          case 170: {
+            ScopeId = input.ReadString();
+            break;
+          }
+          case 178: {
+            MirrorPropertyDefinitionId = input.ReadString();
+            break;
+          }
+          case 186: {
+            if (initialValue_ == null) {
+              InitialValue = new global::Messages.Common.V1.PropertyValue();
+            }
+            input.ReadMessage(InitialValue);
+            break;
+          }
+          case 330: {
+            global::Messages.Common.V1.NumberExtras subBuilder = new global::Messages.Common.V1.NumberExtras();
+            if (extrasCase_ == ExtrasOneofCase.NumberExtras) {
+              subBuilder.MergeFrom(NumberExtras);
+            }
+            input.ReadMessage(subBuilder);
+            NumberExtras = subBuilder;
+            break;
+          }
+          case 338: {
+            global::Messages.Common.V1.EnumExtras subBuilder = new global::Messages.Common.V1.EnumExtras();
+            if (extrasCase_ == ExtrasOneofCase.EnumExtras) {
+              subBuilder.MergeFrom(EnumExtras);
+            }
+            input.ReadMessage(subBuilder);
+            EnumExtras = subBuilder;
+            break;
+          }
+          case 346: {
+            global::Messages.Common.V1.Vector3Extras subBuilder = new global::Messages.Common.V1.Vector3Extras();
+            if (extrasCase_ == ExtrasOneofCase.Vector3Extras) {
+              subBuilder.MergeFrom(Vector3Extras);
+            }
+            input.ReadMessage(subBuilder);
+            Vector3Extras = subBuilder;
+            break;
+          }
+          case 354: {
+            global::Messages.Common.V1.ColorExtras subBuilder = new global::Messages.Common.V1.ColorExtras();
+            if (extrasCase_ == ExtrasOneofCase.ColorExtras) {
+              subBuilder.MergeFrom(ColorExtras);
+            }
+            input.ReadMessage(subBuilder);
+            ColorExtras = subBuilder;
+            break;
+          }
+          case 362: {
+            global::Messages.Common.V1.PoseExtras subBuilder = new global::Messages.Common.V1.PoseExtras();
+            if (extrasCase_ == ExtrasOneofCase.PoseExtras) {
+              subBuilder.MergeFrom(PoseExtras);
+            }
+            input.ReadMessage(subBuilder);
+            PoseExtras = subBuilder;
+            break;
+          }
+          case 370: {
+            global::Messages.Common.V1.AnchorExtras subBuilder = new global::Messages.Common.V1.AnchorExtras();
+            if (extrasCase_ == ExtrasOneofCase.AnchorExtras) {
+              subBuilder.MergeFrom(AnchorExtras);
+            }
+            input.ReadMessage(subBuilder);
+            AnchorExtras = subBuilder;
             break;
           }
         }
