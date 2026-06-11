@@ -33,7 +33,7 @@ namespace Messages.Common.V1 {
             "ygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpW",
             "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PointReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.PathMessage), global::Messages.Common.V1.PathMessage.Parser, new[]{ "Id", "RobotId", "Points" }, null, null, null, null)
           }));
@@ -115,12 +115,12 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "points" field.</summary>
     public const int PointsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.Point> _repeated_points_codec
-        = pb::FieldCodec.ForMessage(26, global::Messages.Common.V1.Point.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.Point> points_ = new pbc::RepeatedField<global::Messages.Common.V1.Point>();
+    private static readonly pb::FieldCodec<global::Messages.Geometry.V1.Point> _repeated_points_codec
+        = pb::FieldCodec.ForMessage(26, global::Messages.Geometry.V1.Point.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Geometry.V1.Point> points_ = new pbc::RepeatedField<global::Messages.Geometry.V1.Point>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.Point> Points {
+    public pbc::RepeatedField<global::Messages.Geometry.V1.Point> Points {
       get { return points_; }
     }
 

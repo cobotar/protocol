@@ -52,7 +52,7 @@ namespace Messages.Plm.V1 {
             "Z2VzLlBsbS5WMcoCBlBsbVxWMeICElBsbVxWMVxHUEJNZXRhZGF0YeoCB1Bs",
             "bTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PoseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.SequenceType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredSequenceMessage), global::Messages.Plm.V1.StoredSequenceMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "SequenceNumber", "Offset", "SequenceIds", "TaskIds", "CanBulkComplete" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredSequenceMessages), global::Messages.Plm.V1.StoredSequenceMessages.Parser, new[]{ "Sequences" }, null, null, null, null),
@@ -188,10 +188,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "offset" field.</summary>
     public const int OffsetFieldNumber = 6;
-    private global::Messages.Common.V1.Pose offset_;
+    private global::Messages.Geometry.V1.Pose offset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose Offset {
+    public global::Messages.Geometry.V1.Pose Offset {
       get { return offset_; }
       set {
         offset_ = value;
@@ -425,7 +425,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.offset_ != null) {
         if (offset_ == null) {
-          Offset = new global::Messages.Common.V1.Pose();
+          Offset = new global::Messages.Geometry.V1.Pose();
         }
         Offset.MergeFrom(other.Offset);
       }
@@ -475,7 +475,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+              Offset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Offset);
             break;
@@ -533,7 +533,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+              Offset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Offset);
             break;
@@ -1168,10 +1168,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "offset" field.</summary>
     public const int OffsetFieldNumber = 6;
-    private global::Messages.Common.V1.Pose offset_;
+    private global::Messages.Geometry.V1.Pose offset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose Offset {
+    public global::Messages.Geometry.V1.Pose Offset {
       get { return offset_; }
       set {
         offset_ = value;
@@ -1402,7 +1402,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.offset_ != null) {
         if (offset_ == null) {
-          Offset = new global::Messages.Common.V1.Pose();
+          Offset = new global::Messages.Geometry.V1.Pose();
         }
         Offset.MergeFrom(other.Offset);
       }
@@ -1452,7 +1452,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+              Offset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Offset);
             break;
@@ -1510,7 +1510,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (offset_ == null) {
-              Offset = new global::Messages.Common.V1.Pose();
+              Offset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Offset);
             break;

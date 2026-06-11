@@ -57,7 +57,7 @@ namespace Messages.Resources.V1 {
             "LlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh",
             "6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.StationType), typeof(global::Messages.Resources.V1.StationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinition), global::Messages.Resources.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "Tools", "Robots", "Assets", "Markers", "Frame" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinitions), global::Messages.Resources.V1.StationDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
@@ -360,13 +360,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "frame" field.</summary>
     public const int FrameFieldNumber = 13;
-    private global::Messages.Common.V1.LocalizedPose frame_;
+    private global::Messages.Geometry.V1.LocalizedPose frame_;
     /// <summary>
     /// Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Frame {
+    public global::Messages.Geometry.V1.LocalizedPose Frame {
       get { return frame_; }
       set {
         frame_ = value;
@@ -612,7 +612,7 @@ namespace Messages.Resources.V1 {
       markers_.Add(other.markers_);
       if (other.frame_ != null) {
         if (frame_ == null) {
-          Frame = new global::Messages.Common.V1.LocalizedPose();
+          Frame = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
       }
@@ -685,7 +685,7 @@ namespace Messages.Resources.V1 {
           }
           case 106: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
@@ -759,7 +759,7 @@ namespace Messages.Resources.V1 {
           }
           case 106: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;

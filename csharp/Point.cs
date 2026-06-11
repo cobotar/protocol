@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Geometry.V1 {
 
   /// <summary>Holder for reflection information generated from geometry/v1/point.proto</summary>
   public static partial class PointReflection {
@@ -26,15 +26,15 @@ namespace Messages.Common.V1 {
           string.Concat(
             "ChdnZW9tZXRyeS92MS9wb2ludC5wcm90bxILZ2VvbWV0cnkudjEiMQoFUG9p",
             "bnQSDAoBeBgBIAEoAlIBeBIMCgF5GAIgASgCUgF5EgwKAXoYAyABKAJSAXpC",
-            "rgEKD2NvbS5nZW9tZXRyeS52MUIKUG9pbnRQcm90b1ABWjtnaXRodWIuY29t",
+            "sAEKD2NvbS5nZW9tZXRyeS52MUIKUG9pbnRQcm90b1ABWjtnaXRodWIuY29t",
             "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0",
-            "cnl2MaICA0dYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx",
-            "4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnBy",
-            "b3RvMw=="));
+            "cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlc",
+            "VjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Point), global::Messages.Common.V1.Point.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.Point), global::Messages.Geometry.V1.Point.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null)
           }));
     }
     #endregion
@@ -56,7 +56,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.PointReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Geometry.V1.PointReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

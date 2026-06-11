@@ -318,6 +318,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100036,opt,name=device_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         100037,
+		Name:          "validation.v1.zone_id_component",
+		Tag:           "varint,100037,opt,name=zone_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -396,6 +404,8 @@ var (
 	E_ImageAssetIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[35]
 	// optional bool device_id_component = 100036;
 	E_DeviceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[36]
+	// optional bool zone_id_component = 100037;
+	E_ZoneIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[37]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -513,7 +523,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1fstring.image_asset_id_component\x12)this does not seem to be a image asset id\x1a/(this == '' || this.startsWith('image_asset-'))R\x15imageAssetIdComponent:\xc0\x01\n" +
 	"\x13device_id_component\x12\x19.buf.validate.StringRules\x18č\x06 \x01(\bBs\xc2Hp\n" +
 	"n\n" +
-	"\x1astring.device_id_component\x12$this does not seem to be a device id\x1a*(this == '' || this.startsWith('device-'))R\x11deviceIdComponentB\xb5\x01\n" +
+	"\x1astring.device_id_component\x12$this does not seem to be a device id\x1a*(this == '' || this.startsWith('device-'))R\x11deviceIdComponent:\xb6\x01\n" +
+	"\x11zone_id_component\x12\x19.buf.validate.StringRules\x18ō\x06 \x01(\bBm\xc2Hj\n" +
+	"h\n" +
+	"\x18string.zone_id_component\x12\"this does not seem to be a zone id\x1a((this == '' || this.startsWith('zone-'))R\x0fzoneIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -557,10 +570,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 34: validation.v1.sidecar_asset_id_component:extendee -> buf.validate.StringRules
 	0,  // 35: validation.v1.image_asset_id_component:extendee -> buf.validate.StringRules
 	0,  // 36: validation.v1.device_id_component:extendee -> buf.validate.StringRules
-	37, // [37:37] is the sub-list for method output_type
-	37, // [37:37] is the sub-list for method input_type
-	37, // [37:37] is the sub-list for extension type_name
-	0,  // [0:37] is the sub-list for extension extendee
+	0,  // 37: validation.v1.zone_id_component:extendee -> buf.validate.StringRules
+	38, // [38:38] is the sub-list for method output_type
+	38, // [38:38] is the sub-list for method input_type
+	38, // [38:38] is the sub-list for extension type_name
+	0,  // [0:38] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -576,7 +590,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 37,
+			NumExtensions: 38,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

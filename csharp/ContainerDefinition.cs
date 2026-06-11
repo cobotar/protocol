@@ -68,7 +68,7 @@ namespace Messages.Resources.V1 {
             "VjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHq",
             "Ag1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ContainerType), typeof(global::Messages.Resources.V1.ContainerSlotType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotRef), global::Messages.Resources.V1.ContainerSlotRef.Parser, new[]{ "ContainerInstanceId", "SlotId", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotDefinition), global::Messages.Resources.V1.ContainerSlotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Pose", "Size", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "SupportedPartDefinitionIds", "Constraints" }, null, null, null, null),
@@ -553,13 +553,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 5;
-    private global::Messages.Common.V1.Pose pose_;
+    private global::Messages.Geometry.V1.Pose pose_;
     /// <summary>
     /// Pose of the slot relative to the container definition coordinate frame.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose Pose {
+    public global::Messages.Geometry.V1.Pose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -568,13 +568,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "size" field.</summary>
     public const int SizeFieldNumber = 6;
-    private global::Messages.Common.V1.Vector3 size_;
+    private global::Messages.Geometry.V1.Vector3 size_;
     /// <summary>
     /// Optional approximate slot extents/bounds, useful for UI, AR, and planning.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Size {
+    public global::Messages.Geometry.V1.Vector3 Size {
       get { return size_; }
       set {
         size_ = value;
@@ -849,13 +849,13 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.Pose();
+          Pose = new global::Messages.Geometry.V1.Pose();
         }
         Pose.MergeFrom(other.Pose);
       }
       if (other.size_ != null) {
         if (size_ == null) {
-          Size = new global::Messages.Common.V1.Vector3();
+          Size = new global::Messages.Geometry.V1.Vector3();
         }
         Size.MergeFrom(other.Size);
       }
@@ -903,14 +903,14 @@ namespace Messages.Resources.V1 {
           }
           case 42: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.Pose();
+              Pose = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Pose);
             break;
           }
           case 50: {
             if (size_ == null) {
-              Size = new global::Messages.Common.V1.Vector3();
+              Size = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Size);
             break;
@@ -972,14 +972,14 @@ namespace Messages.Resources.V1 {
           }
           case 42: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.Pose();
+              Pose = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(Pose);
             break;
           }
           case 50: {
             if (size_ == null) {
-              Size = new global::Messages.Common.V1.Vector3();
+              Size = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Size);
             break;

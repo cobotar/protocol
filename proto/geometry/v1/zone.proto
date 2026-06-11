@@ -1,0 +1,17 @@
+syntax = "proto3";
+package geometry.v1;
+
+import "buf/validate/validate.proto";
+import "geometry/v1/point.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Geometry.V1";
+option go_package = "github.com/cobotar/protocol/messages/geometry/v1";
+
+message ZoneDefinition {
+  string id = 1 [(buf.validate.field).string.(validation.v1.zone_id_component) = true];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  repeated geometry.v1.Point points = 5;
+}

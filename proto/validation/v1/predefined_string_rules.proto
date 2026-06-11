@@ -225,4 +225,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a device id"
     expression: "(this == '' || this.startsWith('device-'))"
   }];
+
+  optional bool zone_id_component = 100037 [(buf.validate.predefined).cel = {
+    id: "string.zone_id_component"
+    message: "this does not seem to be a zone id"
+    expression: "(this == '' || this.startsWith('zone-'))"
+  }];
 }

@@ -37,7 +37,7 @@ namespace Messages.Common.V1 {
             "b3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJv",
             "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PointReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.WaypointMessage), global::Messages.Common.V1.WaypointMessage.Parser, new[]{ "Name", "Point" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.WaypointsMessage), global::Messages.Common.V1.WaypointsMessage.Parser, new[]{ "Id", "RobotId", "FrameId", "HighlightIdx", "Waypoints" }, null, null, null, null)
@@ -107,10 +107,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "point" field.</summary>
     public const int PointFieldNumber = 2;
-    private global::Messages.Common.V1.Point point_;
+    private global::Messages.Geometry.V1.Point point_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Point Point {
+    public global::Messages.Geometry.V1.Point Point {
       get { return point_; }
       set {
         point_ = value;
@@ -220,7 +220,7 @@ namespace Messages.Common.V1 {
       }
       if (other.point_ != null) {
         if (point_ == null) {
-          Point = new global::Messages.Common.V1.Point();
+          Point = new global::Messages.Geometry.V1.Point();
         }
         Point.MergeFrom(other.Point);
       }
@@ -249,7 +249,7 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (point_ == null) {
-              Point = new global::Messages.Common.V1.Point();
+              Point = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Point);
             break;
@@ -279,7 +279,7 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (point_ == null) {
-              Point = new global::Messages.Common.V1.Point();
+              Point = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Point);
             break;

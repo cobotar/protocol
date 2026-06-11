@@ -62,7 +62,7 @@ namespace Messages.Runtime.V1 {
             "aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHq",
             "AgtSdW50aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.RunParameter), global::Messages.Runtime.V1.RunParameter.Parser, new[]{ "Key", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "LineId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters" }, null, null, null, null),
@@ -499,10 +499,10 @@ namespace Messages.Runtime.V1 {
 
     /// <summary>Field number for the "frame" field.</summary>
     public const int FrameFieldNumber = 9;
-    private global::Messages.Common.V1.LocalizedPose frame_;
+    private global::Messages.Geometry.V1.LocalizedPose frame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Frame {
+    public global::Messages.Geometry.V1.LocalizedPose Frame {
       get { return frame_; }
       set {
         frame_ = value;
@@ -913,7 +913,7 @@ namespace Messages.Runtime.V1 {
       }
       if (other.frame_ != null) {
         if (frame_ == null) {
-          Frame = new global::Messages.Common.V1.LocalizedPose();
+          Frame = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
       }
@@ -998,7 +998,7 @@ namespace Messages.Runtime.V1 {
           }
           case 74: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
@@ -1101,7 +1101,7 @@ namespace Messages.Runtime.V1 {
           }
           case 74: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;

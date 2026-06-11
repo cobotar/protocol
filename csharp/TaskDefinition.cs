@@ -126,7 +126,7 @@ namespace Messages.Process.V1 {
             "cy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gIL",
             "UHJvY2Vzczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Geometry.V1.LocalTargetReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.TaskType), typeof(global::Messages.Process.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProductTarget), global::Messages.Process.V1.ProductTarget.Parser, new[]{ "NodeId", "PartDefinitionId", "LocalTarget" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ContainerTarget), global::Messages.Process.V1.ContainerTarget.Parser, new[]{ "ContainerDefinitionId", "SlotId", "SlotType" }, null, null, null, null),
@@ -264,13 +264,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "local_target" field.</summary>
     public const int LocalTargetFieldNumber = 3;
-    private global::Messages.Common.V1.LocalTarget localTarget_;
+    private global::Messages.Geometry.V1.LocalTarget localTarget_;
     /// <summary>
     /// Pose/anchor relative to the chosen product reference.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalTarget LocalTarget {
+    public global::Messages.Geometry.V1.LocalTarget LocalTarget {
       get { return localTarget_; }
       set {
         localTarget_ = value;
@@ -396,7 +396,7 @@ namespace Messages.Process.V1 {
       }
       if (other.localTarget_ != null) {
         if (localTarget_ == null) {
-          LocalTarget = new global::Messages.Common.V1.LocalTarget();
+          LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
         }
         LocalTarget.MergeFrom(other.LocalTarget);
       }
@@ -429,7 +429,7 @@ namespace Messages.Process.V1 {
           }
           case 26: {
             if (localTarget_ == null) {
-              LocalTarget = new global::Messages.Common.V1.LocalTarget();
+              LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
             }
             input.ReadMessage(LocalTarget);
             break;
@@ -463,7 +463,7 @@ namespace Messages.Process.V1 {
           }
           case 26: {
             if (localTarget_ == null) {
-              LocalTarget = new global::Messages.Common.V1.LocalTarget();
+              LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
             }
             input.ReadMessage(LocalTarget);
             break;
@@ -2532,13 +2532,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "insertion_offset" field.</summary>
     public const int InsertionOffsetFieldNumber = 4;
-    private global::Messages.Common.V1.Vector3 insertionOffset_;
+    private global::Messages.Geometry.V1.Vector3 insertionOffset_;
     /// <summary>
     /// Variant-specific insertion offset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 InsertionOffset {
+    public global::Messages.Geometry.V1.Vector3 InsertionOffset {
       get { return insertionOffset_; }
       set {
         insertionOffset_ = value;
@@ -2547,13 +2547,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "approach_offset" field.</summary>
     public const int ApproachOffsetFieldNumber = 5;
-    private global::Messages.Common.V1.Vector3 approachOffset_;
+    private global::Messages.Geometry.V1.Vector3 approachOffset_;
     /// <summary>
     /// Variant-specific approach offset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 ApproachOffset {
+    public global::Messages.Geometry.V1.Vector3 ApproachOffset {
       get { return approachOffset_; }
       set {
         approachOffset_ = value;
@@ -2701,13 +2701,13 @@ namespace Messages.Process.V1 {
       }
       if (other.insertionOffset_ != null) {
         if (insertionOffset_ == null) {
-          InsertionOffset = new global::Messages.Common.V1.Vector3();
+          InsertionOffset = new global::Messages.Geometry.V1.Vector3();
         }
         InsertionOffset.MergeFrom(other.InsertionOffset);
       }
       if (other.approachOffset_ != null) {
         if (approachOffset_ == null) {
-          ApproachOffset = new global::Messages.Common.V1.Vector3();
+          ApproachOffset = new global::Messages.Geometry.V1.Vector3();
         }
         ApproachOffset.MergeFrom(other.ApproachOffset);
       }
@@ -2747,14 +2747,14 @@ namespace Messages.Process.V1 {
           }
           case 34: {
             if (insertionOffset_ == null) {
-              InsertionOffset = new global::Messages.Common.V1.Vector3();
+              InsertionOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffset);
             break;
           }
           case 42: {
             if (approachOffset_ == null) {
-              ApproachOffset = new global::Messages.Common.V1.Vector3();
+              ApproachOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffset);
             break;
@@ -2795,14 +2795,14 @@ namespace Messages.Process.V1 {
           }
           case 34: {
             if (insertionOffset_ == null) {
-              InsertionOffset = new global::Messages.Common.V1.Vector3();
+              InsertionOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffset);
             break;
           }
           case 42: {
             if (approachOffset_ == null) {
-              ApproachOffset = new global::Messages.Common.V1.Vector3();
+              ApproachOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffset);
             break;
@@ -2994,13 +2994,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "insertion_offset" field.</summary>
     public const int InsertionOffsetFieldNumber = 9;
-    private global::Messages.Common.V1.Vector3 insertionOffset_;
+    private global::Messages.Geometry.V1.Vector3 insertionOffset_;
     /// <summary>
     /// Optional static guidance/planning hint from final pose to pre-insertion pose, in mm.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 InsertionOffset {
+    public global::Messages.Geometry.V1.Vector3 InsertionOffset {
       get { return insertionOffset_; }
       set {
         insertionOffset_ = value;
@@ -3009,13 +3009,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "approach_offset" field.</summary>
     public const int ApproachOffsetFieldNumber = 10;
-    private global::Messages.Common.V1.Vector3 approachOffset_;
+    private global::Messages.Geometry.V1.Vector3 approachOffset_;
     /// <summary>
     /// Optional static guidance/planning hint from final pose to preferred approach pose, in mm.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 ApproachOffset {
+    public global::Messages.Geometry.V1.Vector3 ApproachOffset {
       get { return approachOffset_; }
       set {
         approachOffset_ = value;
@@ -3478,13 +3478,13 @@ namespace Messages.Process.V1 {
       }
       if (other.insertionOffset_ != null) {
         if (insertionOffset_ == null) {
-          InsertionOffset = new global::Messages.Common.V1.Vector3();
+          InsertionOffset = new global::Messages.Geometry.V1.Vector3();
         }
         InsertionOffset.MergeFrom(other.InsertionOffset);
       }
       if (other.approachOffset_ != null) {
         if (approachOffset_ == null) {
-          ApproachOffset = new global::Messages.Common.V1.Vector3();
+          ApproachOffset = new global::Messages.Geometry.V1.Vector3();
         }
         ApproachOffset.MergeFrom(other.ApproachOffset);
       }
@@ -3580,14 +3580,14 @@ namespace Messages.Process.V1 {
           }
           case 74: {
             if (insertionOffset_ == null) {
-              InsertionOffset = new global::Messages.Common.V1.Vector3();
+              InsertionOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffset);
             break;
           }
           case 82: {
             if (approachOffset_ == null) {
-              ApproachOffset = new global::Messages.Common.V1.Vector3();
+              ApproachOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffset);
             break;
@@ -3699,14 +3699,14 @@ namespace Messages.Process.V1 {
           }
           case 74: {
             if (insertionOffset_ == null) {
-              InsertionOffset = new global::Messages.Common.V1.Vector3();
+              InsertionOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffset);
             break;
           }
           case 82: {
             if (approachOffset_ == null) {
-              ApproachOffset = new global::Messages.Common.V1.Vector3();
+              ApproachOffset = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffset);
             break;

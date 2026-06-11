@@ -46,6 +46,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
@@ -250,6 +251,9 @@
   
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
+  
+- [geometry/v1/zone.proto](#geometry_v1_zone-proto)
+    - [ZoneDefinition](#geometry-v1-ZoneDefinition)
   
 - [plm/v1/sequence.proto](#plm_v1_sequence-proto)
     - [SequenceMessage](#plm-v1-SequenceMessage)
@@ -540,9 +544,6 @@
     - [WaypointMessage](#robot-v1-WaypointMessage)
     - [WaypointsMessage](#robot-v1-WaypointsMessage)
   
-- [robot/v1/zone.proto](#robot_v1_zone-proto)
-    - [ZoneMessage](#robot-v1-ZoneMessage)
-  
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
     - [ActorAssignments](#runtime-v1-ActorAssignments)
@@ -743,6 +744,7 @@
 | tool_definition_id_component | bool | .buf.validate.StringRules | 10011 |  |
 | tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
 | worker_id_component | bool | .buf.validate.StringRules | 100027 |  |
+| zone_id_component | bool | .buf.validate.StringRules | 100037 |  |
 
  
 
@@ -2559,7 +2561,7 @@ instance owned by the target station or cell.
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
-| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
+| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  | TODO: at something like: bool mirror_configuration_colors = 9; |
 
 
 
@@ -3722,6 +3724,41 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | ----- | ---- | ----- | ----------- |
 | force | [Vector3](#geometry-v1-Vector3) |  |  |
 | torque | [Vector3](#geometry-v1-Vector3) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="geometry_v1_zone-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## geometry/v1/zone.proto
+
+
+
+<a name="geometry-v1-ZoneDefinition"></a>
+
+### ZoneDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| points | [Point](#geometry-v1-Point) | repeated |  |
 
 
 
@@ -7889,39 +7926,6 @@ move independently through the system.
 | frame_id | [string](#string) |  |  |
 | highlight_idx | [int32](#int32) |  |  |
 | waypoints | [WaypointMessage](#robot-v1-WaypointMessage) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="robot_v1_zone-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## robot/v1/zone.proto
-
-
-
-<a name="robot-v1-ZoneMessage"></a>
-
-### ZoneMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| frame_id | [string](#string) |  |  |
-| points | [geometry.v1.Point](#geometry-v1-Point) | repeated |  |
 
 
 

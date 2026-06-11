@@ -78,7 +78,7 @@ namespace Messages.Process.V1 {
             "WKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vz",
             "c1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.LocalTargetReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.LocalTargetReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.SequenceOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.SequenceDefinition), global::Messages.Process.V1.SequenceDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "SequenceNumber", "ParentSequenceId", "Operator", "ChildSequenceIds", "ChildTaskIds", "LocalTarget", "Optional", "CanBulkComplete" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.SequenceDefinitions), global::Messages.Process.V1.SequenceDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
@@ -376,13 +376,13 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "local_target" field.</summary>
     public const int LocalTargetFieldNumber = 10;
-    private global::Messages.Common.V1.LocalTarget localTarget_;
+    private global::Messages.Geometry.V1.LocalTarget localTarget_;
     /// <summary>
     /// Optional local target defining the spatial or logical context for this sequence.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalTarget LocalTarget {
+    public global::Messages.Geometry.V1.LocalTarget LocalTarget {
       get { return localTarget_; }
       set {
         localTarget_ = value;
@@ -656,7 +656,7 @@ namespace Messages.Process.V1 {
       childTaskIds_.Add(other.childTaskIds_);
       if (other.localTarget_ != null) {
         if (localTarget_ == null) {
-          LocalTarget = new global::Messages.Common.V1.LocalTarget();
+          LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
         }
         LocalTarget.MergeFrom(other.LocalTarget);
       }
@@ -723,7 +723,7 @@ namespace Messages.Process.V1 {
           }
           case 82: {
             if (localTarget_ == null) {
-              LocalTarget = new global::Messages.Common.V1.LocalTarget();
+              LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
             }
             input.ReadMessage(LocalTarget);
             break;
@@ -793,7 +793,7 @@ namespace Messages.Process.V1 {
           }
           case 82: {
             if (localTarget_ == null) {
-              LocalTarget = new global::Messages.Common.V1.LocalTarget();
+              LocalTarget = new global::Messages.Geometry.V1.LocalTarget();
             }
             input.ReadMessage(LocalTarget);
             break;

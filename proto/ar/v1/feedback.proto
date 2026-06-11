@@ -71,6 +71,7 @@ message FeedbackAddMessage {
   VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
   string robot_property_id = 7 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
   geometry.v1.Anchor anchor = 8;
+  // TODO: at something like: bool mirror_configuration_colors = 9;
 }
 
 message FeedbackUpdateMessage {

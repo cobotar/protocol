@@ -47,7 +47,7 @@ namespace Messages.Plm.V1 {
             "ZXMvcGxtL3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxt",
             "XFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Plm.V1.ProcessOldReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Plm.V1.ProcessOldReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredProcessMessage), global::Messages.Plm.V1.StoredProcessMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "FixtureOffset", "RootSequenceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.StoredProcessMessages), global::Messages.Plm.V1.StoredProcessMessages.Parser, new[]{ "Processes" }, null, null, null, null),
@@ -175,10 +175,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "fixture_offset" field.</summary>
     public const int FixtureOffsetFieldNumber = 6;
-    private global::Messages.Common.V1.Pose fixtureOffset_;
+    private global::Messages.Geometry.V1.Pose fixtureOffset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose FixtureOffset {
+    public global::Messages.Geometry.V1.Pose FixtureOffset {
       get { return fixtureOffset_; }
       set {
         fixtureOffset_ = value;
@@ -381,7 +381,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.fixtureOffset_ != null) {
         if (fixtureOffset_ == null) {
-          FixtureOffset = new global::Messages.Common.V1.Pose();
+          FixtureOffset = new global::Messages.Geometry.V1.Pose();
         }
         FixtureOffset.MergeFrom(other.FixtureOffset);
       }
@@ -429,7 +429,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (fixtureOffset_ == null) {
-              FixtureOffset = new global::Messages.Common.V1.Pose();
+              FixtureOffset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(FixtureOffset);
             break;
@@ -479,7 +479,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (fixtureOffset_ == null) {
-              FixtureOffset = new global::Messages.Common.V1.Pose();
+              FixtureOffset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(FixtureOffset);
             break;
@@ -1104,10 +1104,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "fixture_offset" field.</summary>
     public const int FixtureOffsetFieldNumber = 6;
-    private global::Messages.Common.V1.Pose fixtureOffset_;
+    private global::Messages.Geometry.V1.Pose fixtureOffset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose FixtureOffset {
+    public global::Messages.Geometry.V1.Pose FixtureOffset {
       get { return fixtureOffset_; }
       set {
         fixtureOffset_ = value;
@@ -1306,7 +1306,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.fixtureOffset_ != null) {
         if (fixtureOffset_ == null) {
-          FixtureOffset = new global::Messages.Common.V1.Pose();
+          FixtureOffset = new global::Messages.Geometry.V1.Pose();
         }
         FixtureOffset.MergeFrom(other.FixtureOffset);
       }
@@ -1354,7 +1354,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (fixtureOffset_ == null) {
-              FixtureOffset = new global::Messages.Common.V1.Pose();
+              FixtureOffset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(FixtureOffset);
             break;
@@ -1404,7 +1404,7 @@ namespace Messages.Plm.V1 {
           }
           case 50: {
             if (fixtureOffset_ == null) {
-              FixtureOffset = new global::Messages.Common.V1.Pose();
+              FixtureOffset = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(FixtureOffset);
             break;

@@ -229,7 +229,7 @@ namespace Messages.Common.V1 {
             "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
             "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ColorReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.PropertyType), typeof(global::Messages.Common.V1.PropertyOrigin), typeof(global::Messages.Common.V1.PropertyGroup), typeof(global::Messages.Common.V1.PropertyPermission), typeof(global::Messages.Common.V1.PropertyScope), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.PropertyDefinition), global::Messages.Common.V1.PropertyDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ParentId", "AuthoringContextId", "Scope", "MinimumRequiredPermission", "AllowedOrigins", "Group", "Ordering", "HideGroup", "Advanced", "DisableMirroring", "NumberExtras", "EnumExtras", "Vector3Extras", "ColorExtras", "PoseExtras", "AnchorExtras" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.PropertyInstance), global::Messages.Common.V1.PropertyInstance.Parser, new[]{ "Id", "PropertyDefinitionId", "Scope", "ScopeId", "Origin", "MirrorPropertyDefinitionId", "Value" }, null, null, null, null),
@@ -2081,10 +2081,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "vector3_value" field.</summary>
     public const int Vector3ValueFieldNumber = 26;
-    private global::Messages.Common.V1.Vector3 vector3Value_;
+    private global::Messages.Geometry.V1.Vector3 vector3Value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Vector3Value {
+    public global::Messages.Geometry.V1.Vector3 Vector3Value {
       get { return vector3Value_; }
       set {
         vector3Value_ = value;
@@ -2093,10 +2093,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "pose_value" field.</summary>
     public const int PoseValueFieldNumber = 27;
-    private global::Messages.Common.V1.LocalizedPose poseValue_;
+    private global::Messages.Geometry.V1.LocalizedPose poseValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose PoseValue {
+    public global::Messages.Geometry.V1.LocalizedPose PoseValue {
       get { return poseValue_; }
       set {
         poseValue_ = value;
@@ -2105,10 +2105,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "anchor_value" field.</summary>
     public const int AnchorValueFieldNumber = 28;
-    private global::Messages.Common.V1.Anchor anchorValue_;
+    private global::Messages.Geometry.V1.Anchor anchorValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Anchor AnchorValue {
+    public global::Messages.Geometry.V1.Anchor AnchorValue {
       get { return anchorValue_; }
       set {
         anchorValue_ = value;
@@ -2560,19 +2560,19 @@ namespace Messages.Common.V1 {
       }
       if (other.vector3Value_ != null) {
         if (vector3Value_ == null) {
-          Vector3Value = new global::Messages.Common.V1.Vector3();
+          Vector3Value = new global::Messages.Geometry.V1.Vector3();
         }
         Vector3Value.MergeFrom(other.Vector3Value);
       }
       if (other.poseValue_ != null) {
         if (poseValue_ == null) {
-          PoseValue = new global::Messages.Common.V1.LocalizedPose();
+          PoseValue = new global::Messages.Geometry.V1.LocalizedPose();
         }
         PoseValue.MergeFrom(other.PoseValue);
       }
       if (other.anchorValue_ != null) {
         if (anchorValue_ == null) {
-          AnchorValue = new global::Messages.Common.V1.Anchor();
+          AnchorValue = new global::Messages.Geometry.V1.Anchor();
         }
         AnchorValue.MergeFrom(other.AnchorValue);
       }
@@ -2643,21 +2643,21 @@ namespace Messages.Common.V1 {
           }
           case 210: {
             if (vector3Value_ == null) {
-              Vector3Value = new global::Messages.Common.V1.Vector3();
+              Vector3Value = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Vector3Value);
             break;
           }
           case 218: {
             if (poseValue_ == null) {
-              PoseValue = new global::Messages.Common.V1.LocalizedPose();
+              PoseValue = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(PoseValue);
             break;
           }
           case 226: {
             if (anchorValue_ == null) {
-              AnchorValue = new global::Messages.Common.V1.Anchor();
+              AnchorValue = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(AnchorValue);
             break;
@@ -2738,21 +2738,21 @@ namespace Messages.Common.V1 {
           }
           case 210: {
             if (vector3Value_ == null) {
-              Vector3Value = new global::Messages.Common.V1.Vector3();
+              Vector3Value = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Vector3Value);
             break;
           }
           case 218: {
             if (poseValue_ == null) {
-              PoseValue = new global::Messages.Common.V1.LocalizedPose();
+              PoseValue = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(PoseValue);
             break;
           }
           case 226: {
             if (anchorValue_ == null) {
-              AnchorValue = new global::Messages.Common.V1.Anchor();
+              AnchorValue = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(AnchorValue);
             break;

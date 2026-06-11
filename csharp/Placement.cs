@@ -46,7 +46,7 @@ namespace Messages.Resources.V1 {
             "AhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNv",
             "dXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ToolPlacement), global::Messages.Resources.V1.ToolPlacement.Parser, new[]{ "ToolInstanceId", "Pose", "Comment" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetPlacement), global::Messages.Resources.V1.AssetPlacement.Parser, new[]{ "AssetInstanceId", "Pose", "Comment" }, null, null, null, null),
@@ -119,13 +119,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 2;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    private global::Messages.Geometry.V1.LocalizedPose pose_;
     /// <summary>
     /// Optional placement pose relative to station/cell frame.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
+    public global::Messages.Geometry.V1.LocalizedPose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -260,7 +260,7 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+          Pose = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Pose.MergeFrom(other.Pose);
       }
@@ -292,7 +292,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -326,7 +326,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -403,13 +403,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 2;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    private global::Messages.Geometry.V1.LocalizedPose pose_;
     /// <summary>
     /// Optional placement pose relative to station/cell frame.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
+    public global::Messages.Geometry.V1.LocalizedPose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -544,7 +544,7 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+          Pose = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Pose.MergeFrom(other.Pose);
       }
@@ -576,7 +576,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -610,7 +610,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -687,13 +687,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 2;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    private global::Messages.Geometry.V1.LocalizedPose pose_;
     /// <summary>
     /// Optional robot base pose relative to station/cell frame.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
+    public global::Messages.Geometry.V1.LocalizedPose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -828,7 +828,7 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+          Pose = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Pose.MergeFrom(other.Pose);
       }
@@ -860,7 +860,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -894,7 +894,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -971,13 +971,13 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 2;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    private global::Messages.Geometry.V1.LocalizedPose pose_;
     /// <summary>
     /// Optional pose override if needed for station/cell-local placement.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
+    public global::Messages.Geometry.V1.LocalizedPose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -1112,7 +1112,7 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+          Pose = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Pose.MergeFrom(other.Pose);
       }
@@ -1144,7 +1144,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -1178,7 +1178,7 @@ namespace Messages.Resources.V1 {
           }
           case 18: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;

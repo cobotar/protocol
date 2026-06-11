@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Geometry.V1 {
 
   /// <summary>Holder for reflection information generated from geometry/v1/pose.proto</summary>
   public static partial class PoseReflection {
@@ -40,16 +40,16 @@ namespace Messages.Common.V1 {
             "YnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQqggEKDkxvY2FsaXplZFN0YXRl",
             "Eh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkKFUxPQ0FMSVpF",
             "RF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9MT1NUEAISGgoW",
-            "TE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq0BCg9jb20uZ2VvbWV0cnkudjFC",
+            "TE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq8BCg9jb20uZ2VvbWV0cnkudjFC",
             "CVBvc2VQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCEk1lc3NhZ2Vz",
-            "LkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0",
-            "YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
+            "c2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2Vz",
+            "Lkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJN",
+            "ZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.LocalizedState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Pose), global::Messages.Common.V1.Pose.Parser, new[]{ "Position", "Orientation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LocalizedPose), global::Messages.Common.V1.LocalizedPose.Parser, new[]{ "Id", "Position", "Orientation", "Anchor", "State", "LastUpdated" }, null, null, null, null)
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Geometry.V1.LocalizedState), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.Pose), global::Messages.Geometry.V1.Pose.Parser, new[]{ "Position", "Orientation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.LocalizedPose), global::Messages.Geometry.V1.LocalizedPose.Parser, new[]{ "Id", "Position", "Orientation", "Anchor", "State", "LastUpdated" }, null, null, null, null)
           }));
     }
     #endregion
@@ -84,7 +84,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.PoseReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Geometry.V1.PoseReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,10 +117,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 1;
-    private global::Messages.Common.V1.Point position_;
+    private global::Messages.Geometry.V1.Point position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Point Position {
+    public global::Messages.Geometry.V1.Point Position {
       get { return position_; }
       set {
         position_ = value;
@@ -129,10 +129,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "orientation" field.</summary>
     public const int OrientationFieldNumber = 2;
-    private global::Messages.Common.V1.Quad orientation_;
+    private global::Messages.Geometry.V1.Quad orientation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Quad Orientation {
+    public global::Messages.Geometry.V1.Quad Orientation {
       get { return orientation_; }
       set {
         orientation_ = value;
@@ -239,13 +239,13 @@ namespace Messages.Common.V1 {
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::Messages.Common.V1.Point();
+          Position = new global::Messages.Geometry.V1.Point();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.orientation_ != null) {
         if (orientation_ == null) {
-          Orientation = new global::Messages.Common.V1.Quad();
+          Orientation = new global::Messages.Geometry.V1.Quad();
         }
         Orientation.MergeFrom(other.Orientation);
       }
@@ -270,14 +270,14 @@ namespace Messages.Common.V1 {
             break;
           case 10: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 18: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;
@@ -303,14 +303,14 @@ namespace Messages.Common.V1 {
             break;
           case 10: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 18: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;
@@ -340,7 +340,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.PoseReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Geometry.V1.PoseReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -389,10 +389,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 2;
-    private global::Messages.Common.V1.Point position_;
+    private global::Messages.Geometry.V1.Point position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Point Position {
+    public global::Messages.Geometry.V1.Point Position {
       get { return position_; }
       set {
         position_ = value;
@@ -401,10 +401,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "orientation" field.</summary>
     public const int OrientationFieldNumber = 3;
-    private global::Messages.Common.V1.Quad orientation_;
+    private global::Messages.Geometry.V1.Quad orientation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Quad Orientation {
+    public global::Messages.Geometry.V1.Quad Orientation {
       get { return orientation_; }
       set {
         orientation_ = value;
@@ -413,10 +413,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "anchor" field.</summary>
     public const int AnchorFieldNumber = 4;
-    private global::Messages.Common.V1.Anchor anchor_;
+    private global::Messages.Geometry.V1.Anchor anchor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Anchor Anchor {
+    public global::Messages.Geometry.V1.Anchor Anchor {
       get { return anchor_; }
       set {
         anchor_ = value;
@@ -425,10 +425,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 5;
-    private global::Messages.Common.V1.LocalizedState state_ = global::Messages.Common.V1.LocalizedState.Unspecified;
+    private global::Messages.Geometry.V1.LocalizedState state_ = global::Messages.Geometry.V1.LocalizedState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedState State {
+    public global::Messages.Geometry.V1.LocalizedState State {
       get { return state_; }
       set {
         state_ = value;
@@ -479,7 +479,7 @@ namespace Messages.Common.V1 {
       if (position_ != null) hash ^= Position.GetHashCode();
       if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (anchor_ != null) hash ^= Anchor.GetHashCode();
-      if (State != global::Messages.Common.V1.LocalizedState.Unspecified) hash ^= State.GetHashCode();
+      if (State != global::Messages.Geometry.V1.LocalizedState.Unspecified) hash ^= State.GetHashCode();
       if (lastUpdated_ != null) hash ^= LastUpdated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -515,7 +515,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Anchor);
       }
-      if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
+      if (State != global::Messages.Geometry.V1.LocalizedState.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) State);
       }
@@ -549,7 +549,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Anchor);
       }
-      if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
+      if (State != global::Messages.Geometry.V1.LocalizedState.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) State);
       }
@@ -579,7 +579,7 @@ namespace Messages.Common.V1 {
       if (anchor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
       }
-      if (State != global::Messages.Common.V1.LocalizedState.Unspecified) {
+      if (State != global::Messages.Geometry.V1.LocalizedState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (lastUpdated_ != null) {
@@ -602,23 +602,23 @@ namespace Messages.Common.V1 {
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::Messages.Common.V1.Point();
+          Position = new global::Messages.Geometry.V1.Point();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.orientation_ != null) {
         if (orientation_ == null) {
-          Orientation = new global::Messages.Common.V1.Quad();
+          Orientation = new global::Messages.Geometry.V1.Quad();
         }
         Orientation.MergeFrom(other.Orientation);
       }
       if (other.anchor_ != null) {
         if (anchor_ == null) {
-          Anchor = new global::Messages.Common.V1.Anchor();
+          Anchor = new global::Messages.Geometry.V1.Anchor();
         }
         Anchor.MergeFrom(other.Anchor);
       }
-      if (other.State != global::Messages.Common.V1.LocalizedState.Unspecified) {
+      if (other.State != global::Messages.Geometry.V1.LocalizedState.Unspecified) {
         State = other.State;
       }
       if (other.lastUpdated_ != null) {
@@ -652,27 +652,27 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 26: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;
           }
           case 34: {
             if (anchor_ == null) {
-              Anchor = new global::Messages.Common.V1.Anchor();
+              Anchor = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(Anchor);
             break;
           }
           case 40: {
-            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+            State = (global::Messages.Geometry.V1.LocalizedState) input.ReadEnum();
             break;
           }
           case 50: {
@@ -707,27 +707,27 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 26: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;
           }
           case 34: {
             if (anchor_ == null) {
-              Anchor = new global::Messages.Common.V1.Anchor();
+              Anchor = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(Anchor);
             break;
           }
           case 40: {
-            State = (global::Messages.Common.V1.LocalizedState) input.ReadEnum();
+            State = (global::Messages.Geometry.V1.LocalizedState) input.ReadEnum();
             break;
           }
           case 50: {

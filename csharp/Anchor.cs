@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Geometry.V1 {
 
   /// <summary>Holder for reflection information generated from geometry/v1/anchor.proto</summary>
   public static partial class AnchorReflection {
@@ -26,15 +26,15 @@ namespace Messages.Common.V1 {
           string.Concat(
             "ChhnZW9tZXRyeS92MS9hbmNob3IucHJvdG8SC2dlb21ldHJ5LnYxIjwKBkFu",
             "Y2hvchIcCglyZWZlcmVuY2UYASABKAlSCXJlZmVyZW5jZRIUCgVmcmFtZRgC",
-            "IAEoCVIFZnJhbWVCrwEKD2NvbS5nZW9tZXRyeS52MUILQW5jaG9yUHJvdG9Q",
+            "IAEoCVIFZnJhbWVCsQEKD2NvbS5nZW9tZXRyeS52MUILQW5jaG9yUHJvdG9Q",
             "AVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2dlb21l",
-            "dHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhJNZXNzYWdlcy5Db21tb24uVjHK",
-            "AgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh6gIMR2Vv",
-            "bWV0cnk6OlYxYgZwcm90bzM="));
+            "dHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhRNZXNzYWdlcy5HZW9tZXRyeS5W",
+            "McoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxH",
+            "ZW9tZXRyeTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Anchor), global::Messages.Common.V1.Anchor.Parser, new[]{ "Reference", "Frame" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.Anchor), global::Messages.Geometry.V1.Anchor.Parser, new[]{ "Reference", "Frame" }, null, null, null, null)
           }));
     }
     #endregion
@@ -56,7 +56,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.AnchorReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Geometry.V1.AnchorReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -89,8 +89,8 @@ const file_geometry_v1_local_target_proto_rawDesc = "" +
 	"\vLocalTarget\x12+\n" +
 	"\x06anchor\x18\x01 \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x12.\n" +
 	"\bposition\x18\x02 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
-	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\xb4\x01\n" +
-	"\x0fcom.geometry.v1B\x10LocalTargetProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\xb6\x01\n" +
+	"\x0fcom.geometry.v1B\x10LocalTargetProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_local_target_proto_rawDescOnce sync.Once

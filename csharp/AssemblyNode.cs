@@ -65,7 +65,7 @@ namespace Messages.Product.V1 {
             "ZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1l",
             "dGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.NodeKind), typeof(global::Messages.Product.V1.JoinMethod), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.AssemblyNode), global::Messages.Product.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionOffsetHint", "ApproachOffsetHint", "Optional", "Applicability" }, null, null, null, null)
           }));
@@ -281,13 +281,13 @@ namespace Messages.Product.V1 {
 
     /// <summary>Field number for the "local_pose" field.</summary>
     public const int LocalPoseFieldNumber = 7;
-    private global::Messages.Common.V1.Pose localPose_;
+    private global::Messages.Geometry.V1.Pose localPose_;
     /// <summary>
     /// final pose, in mm
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Pose LocalPose {
+    public global::Messages.Geometry.V1.Pose LocalPose {
       get { return localPose_; }
       set {
         localPose_ = value;
@@ -338,13 +338,13 @@ namespace Messages.Product.V1 {
 
     /// <summary>Field number for the "insertion_offset_hint" field.</summary>
     public const int InsertionOffsetHintFieldNumber = 12;
-    private global::Messages.Common.V1.Vector3 insertionOffsetHint_;
+    private global::Messages.Geometry.V1.Vector3 insertionOffsetHint_;
     /// <summary>
     /// Offset from final pose to pre-insertion pose, in mm
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 InsertionOffsetHint {
+    public global::Messages.Geometry.V1.Vector3 InsertionOffsetHint {
       get { return insertionOffsetHint_; }
       set {
         insertionOffsetHint_ = value;
@@ -353,13 +353,13 @@ namespace Messages.Product.V1 {
 
     /// <summary>Field number for the "approach_offset_hint" field.</summary>
     public const int ApproachOffsetHintFieldNumber = 13;
-    private global::Messages.Common.V1.Vector3 approachOffsetHint_;
+    private global::Messages.Geometry.V1.Vector3 approachOffsetHint_;
     /// <summary>
     /// Offset from final pose to preferred approach pose, in mm
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 ApproachOffsetHint {
+    public global::Messages.Geometry.V1.Vector3 ApproachOffsetHint {
       get { return approachOffsetHint_; }
       set {
         approachOffsetHint_ = value;
@@ -658,7 +658,7 @@ namespace Messages.Product.V1 {
       }
       if (other.localPose_ != null) {
         if (localPose_ == null) {
-          LocalPose = new global::Messages.Common.V1.Pose();
+          LocalPose = new global::Messages.Geometry.V1.Pose();
         }
         LocalPose.MergeFrom(other.LocalPose);
       }
@@ -673,13 +673,13 @@ namespace Messages.Product.V1 {
       }
       if (other.insertionOffsetHint_ != null) {
         if (insertionOffsetHint_ == null) {
-          InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
+          InsertionOffsetHint = new global::Messages.Geometry.V1.Vector3();
         }
         InsertionOffsetHint.MergeFrom(other.InsertionOffsetHint);
       }
       if (other.approachOffsetHint_ != null) {
         if (approachOffsetHint_ == null) {
-          ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
+          ApproachOffsetHint = new global::Messages.Geometry.V1.Vector3();
         }
         ApproachOffsetHint.MergeFrom(other.ApproachOffsetHint);
       }
@@ -732,7 +732,7 @@ namespace Messages.Product.V1 {
           }
           case 58: {
             if (localPose_ == null) {
-              LocalPose = new global::Messages.Common.V1.Pose();
+              LocalPose = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(LocalPose);
             break;
@@ -751,14 +751,14 @@ namespace Messages.Product.V1 {
           }
           case 98: {
             if (insertionOffsetHint_ == null) {
-              InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
+              InsertionOffsetHint = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffsetHint);
             break;
           }
           case 106: {
             if (approachOffsetHint_ == null) {
-              ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
+              ApproachOffsetHint = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffsetHint);
             break;
@@ -816,7 +816,7 @@ namespace Messages.Product.V1 {
           }
           case 58: {
             if (localPose_ == null) {
-              LocalPose = new global::Messages.Common.V1.Pose();
+              LocalPose = new global::Messages.Geometry.V1.Pose();
             }
             input.ReadMessage(LocalPose);
             break;
@@ -835,14 +835,14 @@ namespace Messages.Product.V1 {
           }
           case 98: {
             if (insertionOffsetHint_ == null) {
-              InsertionOffsetHint = new global::Messages.Common.V1.Vector3();
+              InsertionOffsetHint = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(InsertionOffsetHint);
             break;
           }
           case 106: {
             if (approachOffsetHint_ == null) {
-              ApproachOffsetHint = new global::Messages.Common.V1.Vector3();
+              ApproachOffsetHint = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(ApproachOffsetHint);
             break;

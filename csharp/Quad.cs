@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Geometry.V1 {
 
   /// <summary>Holder for reflection information generated from geometry/v1/quad.proto</summary>
   public static partial class QuadReflection {
@@ -26,15 +26,15 @@ namespace Messages.Common.V1 {
           string.Concat(
             "ChZnZW9tZXRyeS92MS9xdWFkLnByb3RvEgtnZW9tZXRyeS52MSI+CgRRdWFk",
             "EgwKAXgYASABKAJSAXgSDAoBeRgCIAEoAlIBeRIMCgF6GAMgASgCUgF6EgwK",
-            "AXcYBCABKAJSAXdCrQEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFa",
+            "AXcYBCABKAJSAXdCrwEKD2NvbS5nZW9tZXRyeS52MUIJUXVhZFByb3RvUAFa",
             "O2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRy",
-            "eS92MTtnZW9tZXRyeXYxogIDR1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIL",
-            "R2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21l",
-            "dHJ5OjpWMWIGcHJvdG8z"));
+            "eS92MTtnZW9tZXRyeXYxogIDR1hYqgIUTWVzc2FnZXMuR2VvbWV0cnkuVjHK",
+            "AgtHZW9tZXRyeVxWMeICF0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh6gIMR2Vv",
+            "bWV0cnk6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Quad), global::Messages.Common.V1.Quad.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.Quad), global::Messages.Geometry.V1.Quad.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null)
           }));
     }
     #endregion
@@ -56,7 +56,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.QuadReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Geometry.V1.QuadReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -57,7 +57,7 @@ namespace Messages.Plm.V1 {
             "L3YxO3BsbXYxogIDUFhYqgIPTWVzc2FnZXMuUGxtLlYxygIGUGxtXFYx4gIS",
             "UGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Plm.V1.SequenceReflection.Descriptor, global::Messages.Plm.V1.TaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.ProcessType), typeof(global::Messages.Plm.V1.ProcessState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessMessage), global::Messages.Plm.V1.ProcessMessage.Parser, new[]{ "InstanceId", "Id", "Name", "Icon", "Description", "Type", "Frame", "RootSequenceId", "Sequences", "Tasks", "State", "Initiated", "Ended", "OrderId", "LineId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.ProcessUpdatedMessage), global::Messages.Plm.V1.ProcessUpdatedMessage.Parser, new[]{ "InstanceId", "Id", "State", "Ended" }, null, null, null, null),
@@ -230,10 +230,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "frame" field.</summary>
     public const int FrameFieldNumber = 7;
-    private global::Messages.Common.V1.LocalizedPose frame_;
+    private global::Messages.Geometry.V1.LocalizedPose frame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Frame {
+    public global::Messages.Geometry.V1.LocalizedPose Frame {
       get { return frame_; }
       set {
         frame_ = value;
@@ -605,7 +605,7 @@ namespace Messages.Plm.V1 {
       }
       if (other.frame_ != null) {
         if (frame_ == null) {
-          Frame = new global::Messages.Common.V1.LocalizedPose();
+          Frame = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
       }
@@ -680,7 +680,7 @@ namespace Messages.Plm.V1 {
           }
           case 58: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;
@@ -768,7 +768,7 @@ namespace Messages.Plm.V1 {
           }
           case 58: {
             if (frame_ == null) {
-              Frame = new global::Messages.Common.V1.LocalizedPose();
+              Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
             break;

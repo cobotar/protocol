@@ -74,7 +74,7 @@ namespace Messages.AR.V1 {
             "bWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIF",
             "QXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), typeof(global::Messages.AR.V1.VisibilityScope), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "VisibilityScope", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessages), global::Messages.AR.V1.FeedbackMessages.Parser, new[]{ "Feedbacks" }, null, null, null, null),
@@ -879,10 +879,13 @@ namespace Messages.AR.V1 {
 
     /// <summary>Field number for the "anchor" field.</summary>
     public const int AnchorFieldNumber = 8;
-    private global::Messages.Common.V1.Anchor anchor_;
+    private global::Messages.Geometry.V1.Anchor anchor_;
+    /// <summary>
+    /// TODO: at something like: bool mirror_configuration_colors = 9;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Anchor Anchor {
+    public global::Messages.Geometry.V1.Anchor Anchor {
       get { return anchor_; }
       set {
         anchor_ = value;
@@ -1088,7 +1091,7 @@ namespace Messages.AR.V1 {
       }
       if (other.anchor_ != null) {
         if (anchor_ == null) {
-          Anchor = new global::Messages.Common.V1.Anchor();
+          Anchor = new global::Messages.Geometry.V1.Anchor();
         }
         Anchor.MergeFrom(other.Anchor);
       }
@@ -1141,7 +1144,7 @@ namespace Messages.AR.V1 {
           }
           case 66: {
             if (anchor_ == null) {
-              Anchor = new global::Messages.Common.V1.Anchor();
+              Anchor = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(Anchor);
             break;
@@ -1195,7 +1198,7 @@ namespace Messages.AR.V1 {
           }
           case 66: {
             if (anchor_ == null) {
-              Anchor = new global::Messages.Common.V1.Anchor();
+              Anchor = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(Anchor);
             break;

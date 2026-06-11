@@ -122,6 +122,8 @@ export type FeedbackAddMessage = Message<"ar.v1.FeedbackAddMessage"> & {
   robotPropertyId: string;
 
   /**
+   * TODO: at something like: bool mirror_configuration_colors = 9;
+   *
    * @generated from field: geometry.v1.Anchor anchor = 8;
    */
   anchor?: Anchor;

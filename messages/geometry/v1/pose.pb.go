@@ -232,8 +232,8 @@ const file_geometry_v1_pose_proto_rawDesc = "" +
 	"\x1bLOCALIZED_STATE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15LOCALIZED_STATE_FOUND\x10\x01\x12\x18\n" +
 	"\x14LOCALIZED_STATE_LOST\x10\x02\x12\x1a\n" +
-	"\x16LOCALIZED_STATE_STATIC\x10\x03B\xad\x01\n" +
-	"\x0fcom.geometry.v1B\tPoseProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x12Messages.Common.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\x16LOCALIZED_STATE_STATIC\x10\x03B\xaf\x01\n" +
+	"\x0fcom.geometry.v1B\tPoseProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_pose_proto_rawDescOnce sync.Once

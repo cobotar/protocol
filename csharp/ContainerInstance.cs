@@ -47,7 +47,7 @@ namespace Messages.Resources.V1 {
             "McoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoC",
             "DVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerLocation), global::Messages.Resources.V1.ContainerLocation.Parser, new[]{ "LineId", "CellId", "StationId", "Pose" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerInstance), global::Messages.Resources.V1.ContainerInstance.Parser, new[]{ "Id", "Name", "Icon", "Description", "ContainerDefinitionId", "Status", "Location" }, null, null, null, null),
@@ -147,10 +147,10 @@ namespace Messages.Resources.V1 {
 
     /// <summary>Field number for the "pose" field.</summary>
     public const int PoseFieldNumber = 4;
-    private global::Messages.Common.V1.LocalizedPose pose_;
+    private global::Messages.Geometry.V1.LocalizedPose pose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Pose {
+    public global::Messages.Geometry.V1.LocalizedPose Pose {
       get { return pose_; }
       set {
         pose_ = value;
@@ -292,7 +292,7 @@ namespace Messages.Resources.V1 {
       }
       if (other.pose_ != null) {
         if (pose_ == null) {
-          Pose = new global::Messages.Common.V1.LocalizedPose();
+          Pose = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Pose.MergeFrom(other.Pose);
       }
@@ -329,7 +329,7 @@ namespace Messages.Resources.V1 {
           }
           case 34: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;
@@ -367,7 +367,7 @@ namespace Messages.Resources.V1 {
           }
           case 34: {
             if (pose_ == null) {
-              Pose = new global::Messages.Common.V1.LocalizedPose();
+              Pose = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Pose);
             break;

@@ -318,7 +318,7 @@ type FeedbackAddMessage struct {
 	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
 	RobotPropertyId string                 `protobuf:"bytes,7,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
-	Anchor          *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	Anchor          *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`                                            // TODO: at something like: bool mirror_configuration_colors = 9;
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }

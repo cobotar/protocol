@@ -77,3 +77,5 @@ IMAGE_ASSET_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 image_asset_id_component: _descriptor.FieldDescriptor
 DEVICE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 device_id_component: _descriptor.FieldDescriptor
+ZONE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+zone_id_component: _descriptor.FieldDescriptor

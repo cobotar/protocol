@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Geometry.V1 {
 
   /// <summary>Holder for reflection information generated from geometry/v1/wrench.proto</summary>
   public static partial class WrenchReflection {
@@ -27,15 +27,15 @@ namespace Messages.Common.V1 {
             "ChhnZW9tZXRyeS92MS93cmVuY2gucHJvdG8SC2dlb21ldHJ5LnYxGhlnZW9t",
             "ZXRyeS92MS92ZWN0b3IzLnByb3RvImIKBldyZW5jaBIqCgVmb3JjZRgBIAEo",
             "CzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSBWZvcmNlEiwKBnRvcnF1ZRgCIAEo",
-            "CzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSBnRvcnF1ZUKvAQoPY29tLmdlb21l",
+            "CzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSBnRvcnF1ZUKxAQoPY29tLmdlb21l",
             "dHJ5LnYxQgtXcmVuY2hQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJv",
             "dG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoC",
-            "Ek1lc3NhZ2VzLkNvbW1vbi5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlc",
-            "VjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
+            "FE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRy",
+            "eVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.Vector3Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.Wrench), global::Messages.Common.V1.Wrench.Parser, new[]{ "Force", "Torque" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.Wrench), global::Messages.Geometry.V1.Wrench.Parser, new[]{ "Force", "Torque" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +57,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.WrenchReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Geometry.V1.WrenchReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90,10 +90,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "force" field.</summary>
     public const int ForceFieldNumber = 1;
-    private global::Messages.Common.V1.Vector3 force_;
+    private global::Messages.Geometry.V1.Vector3 force_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Force {
+    public global::Messages.Geometry.V1.Vector3 Force {
       get { return force_; }
       set {
         force_ = value;
@@ -102,10 +102,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "torque" field.</summary>
     public const int TorqueFieldNumber = 2;
-    private global::Messages.Common.V1.Vector3 torque_;
+    private global::Messages.Geometry.V1.Vector3 torque_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Torque {
+    public global::Messages.Geometry.V1.Vector3 Torque {
       get { return torque_; }
       set {
         torque_ = value;
@@ -212,13 +212,13 @@ namespace Messages.Common.V1 {
       }
       if (other.force_ != null) {
         if (force_ == null) {
-          Force = new global::Messages.Common.V1.Vector3();
+          Force = new global::Messages.Geometry.V1.Vector3();
         }
         Force.MergeFrom(other.Force);
       }
       if (other.torque_ != null) {
         if (torque_ == null) {
-          Torque = new global::Messages.Common.V1.Vector3();
+          Torque = new global::Messages.Geometry.V1.Vector3();
         }
         Torque.MergeFrom(other.Torque);
       }
@@ -243,14 +243,14 @@ namespace Messages.Common.V1 {
             break;
           case 10: {
             if (force_ == null) {
-              Force = new global::Messages.Common.V1.Vector3();
+              Force = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Force);
             break;
           }
           case 18: {
             if (torque_ == null) {
-              Torque = new global::Messages.Common.V1.Vector3();
+              Torque = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Torque);
             break;
@@ -276,14 +276,14 @@ namespace Messages.Common.V1 {
             break;
           case 10: {
             if (force_ == null) {
-              Force = new global::Messages.Common.V1.Vector3();
+              Force = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Force);
             break;
           }
           case 18: {
             if (torque_ == null) {
-              Torque = new global::Messages.Common.V1.Vector3();
+              Torque = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Torque);
             break;

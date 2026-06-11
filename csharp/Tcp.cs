@@ -34,7 +34,7 @@ namespace Messages.Common.V1 {
             "TWVzc2FnZXMuQ29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJN",
             "ZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PointReflection.Descriptor, global::Messages.Common.V1.QuadReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.TcpMessage), global::Messages.Common.V1.TcpMessage.Parser, new[]{ "RobotId", "Position", "Orientation" }, null, null, null, null)
           }));
@@ -104,10 +104,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 2;
-    private global::Messages.Common.V1.Point position_;
+    private global::Messages.Geometry.V1.Point position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Point Position {
+    public global::Messages.Geometry.V1.Point Position {
       get { return position_; }
       set {
         position_ = value;
@@ -116,10 +116,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "orientation" field.</summary>
     public const int OrientationFieldNumber = 3;
-    private global::Messages.Common.V1.Quad orientation_;
+    private global::Messages.Geometry.V1.Quad orientation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Quad Orientation {
+    public global::Messages.Geometry.V1.Quad Orientation {
       get { return orientation_; }
       set {
         orientation_ = value;
@@ -242,13 +242,13 @@ namespace Messages.Common.V1 {
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::Messages.Common.V1.Point();
+          Position = new global::Messages.Geometry.V1.Point();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.orientation_ != null) {
         if (orientation_ == null) {
-          Orientation = new global::Messages.Common.V1.Quad();
+          Orientation = new global::Messages.Geometry.V1.Quad();
         }
         Orientation.MergeFrom(other.Orientation);
       }
@@ -277,14 +277,14 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 26: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;
@@ -314,14 +314,14 @@ namespace Messages.Common.V1 {
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::Messages.Common.V1.Point();
+              Position = new global::Messages.Geometry.V1.Point();
             }
             input.ReadMessage(Position);
             break;
           }
           case 26: {
             if (orientation_ == null) {
-              Orientation = new global::Messages.Common.V1.Quad();
+              Orientation = new global::Messages.Geometry.V1.Quad();
             }
             input.ReadMessage(Orientation);
             break;

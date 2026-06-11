@@ -69,7 +69,7 @@ namespace Messages.Plm.V1 {
             "UGxtLlYxygIGUGxtXFYx4gISUGxtXFYxXEdQQk1ldGFkYXRh6gIHUGxtOjpW",
             "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.PoseReflection.Descriptor, global::Messages.Common.V1.Vector3Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Plm.V1.TaskState), typeof(global::Messages.Plm.V1.TaskType), typeof(global::Messages.Plm.V1.TaskAssignmentPreference), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskMessage), global::Messages.Plm.V1.TaskMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "PartId", "ModelId", "TaskType", "Target", "Approach", "ParentId", "AgentsIds", "AssignedTo", "State", "Preconditions", "Dependants", "AssignmentPreference", "CanReassign", "CanDo", "CanUndo", "Horizon", "EstimatedCompletionTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Plm.V1.TaskUpdatedMessage), global::Messages.Plm.V1.TaskUpdatedMessage.Parser, new[]{ "Id", "AssignedTo", "State", "CanReassign", "CanDo", "CanUndo" }, null, null, null, null)
@@ -295,10 +295,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "target" field.</summary>
     public const int TargetFieldNumber = 10;
-    private global::Messages.Common.V1.LocalizedPose target_;
+    private global::Messages.Geometry.V1.LocalizedPose target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.LocalizedPose Target {
+    public global::Messages.Geometry.V1.LocalizedPose Target {
       get { return target_; }
       set {
         target_ = value;
@@ -307,10 +307,10 @@ namespace Messages.Plm.V1 {
 
     /// <summary>Field number for the "approach" field.</summary>
     public const int ApproachFieldNumber = 11;
-    private global::Messages.Common.V1.Vector3 approach_;
+    private global::Messages.Geometry.V1.Vector3 approach_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.Vector3 Approach {
+    public global::Messages.Geometry.V1.Vector3 Approach {
       get { return approach_; }
       set {
         approach_ = value;
@@ -840,13 +840,13 @@ namespace Messages.Plm.V1 {
       }
       if (other.target_ != null) {
         if (target_ == null) {
-          Target = new global::Messages.Common.V1.LocalizedPose();
+          Target = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Target.MergeFrom(other.Target);
       }
       if (other.approach_ != null) {
         if (approach_ == null) {
-          Approach = new global::Messages.Common.V1.Vector3();
+          Approach = new global::Messages.Geometry.V1.Vector3();
         }
         Approach.MergeFrom(other.Approach);
       }
@@ -937,14 +937,14 @@ namespace Messages.Plm.V1 {
           }
           case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Target);
             break;
           }
           case 90: {
             if (approach_ == null) {
-              Approach = new global::Messages.Common.V1.Vector3();
+              Approach = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
@@ -1054,14 +1054,14 @@ namespace Messages.Plm.V1 {
           }
           case 82: {
             if (target_ == null) {
-              Target = new global::Messages.Common.V1.LocalizedPose();
+              Target = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Target);
             break;
           }
           case 90: {
             if (approach_ == null) {
-              Approach = new global::Messages.Common.V1.Vector3();
+              Approach = new global::Messages.Geometry.V1.Vector3();
             }
             input.ReadMessage(Approach);
             break;
