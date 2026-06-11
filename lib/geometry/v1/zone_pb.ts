@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file geometry/v1/zone.proto.
  */
 export const file_geometry_v1_zone: GenFile = /*@__PURE__*/
-  fileDesc("ChZnZW9tZXRyeS92MS96b25lLnByb3RvEgtnZW9tZXRyeS52MSKHAQoOWm9uZURlZmluaXRpb24SFQoCaWQYASABKAlCCbpIBnIEqOwwARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIiCgZwb2ludHMYBSADKAsyEi5nZW9tZXRyeS52MS5Qb2ludEKvAQoPY29tLmdlb21ldHJ5LnYxQglab25lUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhRNZXNzYWdlcy5HZW9tZXRyeS5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_point, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChZnZW9tZXRyeS92MS96b25lLnByb3RvEgtnZW9tZXRyeS52MSKHAQoOWm9uZURlZmluaXRpb24SFQoCaWQYASABKAlCCbpIBnIEqOwwARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIiCgZwb2ludHMYBSADKAsyEi5nZW9tZXRyeS52MS5Qb2ludCI9Cg9ab25lRGVmaW5pdGlvbnMSKgoFaXRlbXMYASADKAsyGy5nZW9tZXRyeS52MS5ab25lRGVmaW5pdGlvbkKvAQoPY29tLmdlb21ldHJ5LnYxQglab25lUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhRNZXNzYWdlcy5HZW9tZXRyeS5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_point, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message geometry.v1.ZoneDefinition
@@ -52,4 +52,21 @@ export type ZoneDefinition = Message<"geometry.v1.ZoneDefinition"> & {
  */
 export const ZoneDefinitionSchema: GenMessage<ZoneDefinition> = /*@__PURE__*/
   messageDesc(file_geometry_v1_zone, 0);
+
+/**
+ * @generated from message geometry.v1.ZoneDefinitions
+ */
+export type ZoneDefinitions = Message<"geometry.v1.ZoneDefinitions"> & {
+  /**
+   * @generated from field: repeated geometry.v1.ZoneDefinition items = 1;
+   */
+  items: ZoneDefinition[];
+};
+
+/**
+ * Describes the message geometry.v1.ZoneDefinitions.
+ * Use `create(ZoneDefinitionsSchema)` to create a new message.
+ */
+export const ZoneDefinitionsSchema: GenMessage<ZoneDefinitions> = /*@__PURE__*/
+  messageDesc(file_geometry_v1_zone, 1);
 

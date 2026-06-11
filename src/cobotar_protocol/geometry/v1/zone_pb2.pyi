@@ -22,3 +22,9 @@ class ZoneDefinition(_message.Message):
     description: str
     points: _containers.RepeatedCompositeFieldContainer[_point_pb2.Point]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., points: _Optional[_Iterable[_Union[_point_pb2.Point, _Mapping]]] = ...) -> None: ...
+
+class ZoneDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[ZoneDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[ZoneDefinition, _Mapping]]] = ...) -> None: ...

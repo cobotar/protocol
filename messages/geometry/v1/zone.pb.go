@@ -99,6 +99,50 @@ func (x *ZoneDefinition) GetPoints() []*Point {
 	return nil
 }
 
+type ZoneDefinitions struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ZoneDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZoneDefinitions) Reset() {
+	*x = ZoneDefinitions{}
+	mi := &file_geometry_v1_zone_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZoneDefinitions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZoneDefinitions) ProtoMessage() {}
+
+func (x *ZoneDefinitions) ProtoReflect() protoreflect.Message {
+	mi := &file_geometry_v1_zone_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZoneDefinitions.ProtoReflect.Descriptor instead.
+func (*ZoneDefinitions) Descriptor() ([]byte, []int) {
+	return file_geometry_v1_zone_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ZoneDefinitions) GetItems() []*ZoneDefinition {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_geometry_v1_zone_proto protoreflect.FileDescriptor
 
 const file_geometry_v1_zone_proto_rawDesc = "" +
@@ -109,7 +153,9 @@ const file_geometry_v1_zone_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
-	"\x06points\x18\x05 \x03(\v2\x12.geometry.v1.PointR\x06pointsB\xaf\x01\n" +
+	"\x06points\x18\x05 \x03(\v2\x12.geometry.v1.PointR\x06points\"D\n" +
+	"\x0fZoneDefinitions\x121\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.geometry.v1.ZoneDefinitionR\x05itemsB\xaf\x01\n" +
 	"\x0fcom.geometry.v1B\tZoneProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
@@ -124,18 +170,20 @@ func file_geometry_v1_zone_proto_rawDescGZIP() []byte {
 	return file_geometry_v1_zone_proto_rawDescData
 }
 
-var file_geometry_v1_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_geometry_v1_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_geometry_v1_zone_proto_goTypes = []any{
-	(*ZoneDefinition)(nil), // 0: geometry.v1.ZoneDefinition
-	(*Point)(nil),          // 1: geometry.v1.Point
+	(*ZoneDefinition)(nil),  // 0: geometry.v1.ZoneDefinition
+	(*ZoneDefinitions)(nil), // 1: geometry.v1.ZoneDefinitions
+	(*Point)(nil),           // 2: geometry.v1.Point
 }
 var file_geometry_v1_zone_proto_depIdxs = []int32{
-	1, // 0: geometry.v1.ZoneDefinition.points:type_name -> geometry.v1.Point
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: geometry.v1.ZoneDefinition.points:type_name -> geometry.v1.Point
+	0, // 1: geometry.v1.ZoneDefinitions.items:type_name -> geometry.v1.ZoneDefinition
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_geometry_v1_zone_proto_init() }
@@ -150,7 +198,7 @@ func file_geometry_v1_zone_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geometry_v1_zone_proto_rawDesc), len(file_geometry_v1_zone_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

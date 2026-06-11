@@ -27,7 +27,7 @@ from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/zone.proto\x12\x0bgeometry.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x17geometry/v1/point.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x01\n\x0eZoneDefinition\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xec\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12*\n\x06points\x18\x05 \x03(\x0b\x32\x12.geometry.v1.PointR\x06pointsB\xaf\x01\n\x0f\x63om.geometry.v1B\tZoneProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16geometry/v1/zone.proto\x12\x0bgeometry.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x17geometry/v1/point.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x01\n\x0eZoneDefinition\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xec\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12*\n\x06points\x18\x05 \x03(\x0b\x32\x12.geometry.v1.PointR\x06points\"D\n\x0fZoneDefinitions\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.geometry.v1.ZoneDefinitionR\x05itemsB\xaf\x01\n\x0f\x63om.geometry.v1B\tZoneProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,4 +41,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ZONEDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ZONEDEFINITION']._serialized_start=139
   _globals['_ZONEDEFINITION']._serialized_end=311
+  _globals['_ZONEDEFINITIONS']._serialized_start=313
+  _globals['_ZONEDEFINITIONS']._serialized_end=381
 # @@protoc_insertion_point(module_scope)

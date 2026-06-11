@@ -254,6 +254,7 @@
   
 - [geometry/v1/zone.proto](#geometry_v1_zone-proto)
     - [ZoneDefinition](#geometry-v1-ZoneDefinition)
+    - [ZoneDefinitions](#geometry-v1-ZoneDefinitions)
   
 - [plm/v1/sequence.proto](#plm_v1_sequence-proto)
     - [SequenceMessage](#plm-v1-SequenceMessage)
@@ -3759,6 +3760,21 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | points | [Point](#geometry-v1-Point) | repeated |  |
+
+
+
+
+
+
+<a name="geometry-v1-ZoneDefinitions"></a>
+
+### ZoneDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ZoneDefinition](#geometry-v1-ZoneDefinition) | repeated |  |
 
 
 

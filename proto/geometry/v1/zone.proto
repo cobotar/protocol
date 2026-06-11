@@ -15,3 +15,7 @@ message ZoneDefinition {
   string description = 4;
   repeated geometry.v1.Point points = 5;
 }
+
+message ZoneDefinitions {
+  repeated ZoneDefinition items = 1;
+}

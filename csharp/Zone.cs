@@ -30,16 +30,18 @@ namespace Messages.Geometry.V1 {
             "byKsAQoOWm9uZURlZmluaXRpb24SGQoCaWQYASABKAlCCbpIBnIEqOwwAVIC",
             "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
             "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEioK",
-            "BnBvaW50cxgFIAMoCzISLmdlb21ldHJ5LnYxLlBvaW50UgZwb2ludHNCrwEK",
-            "D2NvbS5nZW9tZXRyeS52MUIJWm9uZVByb3RvUAFaO2dpdGh1Yi5jb20vY29i",
-            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9nZW9tZXRyeS92MTtnZW9tZXRyeXYx",
-            "ogIDR1hYqgIUTWVzc2FnZXMuR2VvbWV0cnkuVjHKAgtHZW9tZXRyeVxWMeIC",
-            "F0dlb21ldHJ5XFYxXEdQQk1ldGFkYXRh6gIMR2VvbWV0cnk6OlYxYgZwcm90",
-            "bzM="));
+            "BnBvaW50cxgFIAMoCzISLmdlb21ldHJ5LnYxLlBvaW50UgZwb2ludHMiRAoP",
+            "Wm9uZURlZmluaXRpb25zEjEKBWl0ZW1zGAEgAygLMhsuZ2VvbWV0cnkudjEu",
+            "Wm9uZURlZmluaXRpb25SBWl0ZW1zQq8BCg9jb20uZ2VvbWV0cnkudjFCCVpv",
+            "bmVQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdl",
+            "b21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRh",
+            "ZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PointReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.ZoneDefinition), global::Messages.Geometry.V1.ZoneDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Points" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.ZoneDefinition), global::Messages.Geometry.V1.ZoneDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Points" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.ZoneDefinitions), global::Messages.Geometry.V1.ZoneDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
     #endregion
@@ -372,6 +374,193 @@ namespace Messages.Geometry.V1 {
           }
           case 42: {
             points_.AddEntriesFrom(ref input, _repeated_points_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ZoneDefinitions : pb::IMessage<ZoneDefinitions>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ZoneDefinitions> _parser = new pb::MessageParser<ZoneDefinitions>(() => new ZoneDefinitions());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ZoneDefinitions> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Geometry.V1.ZoneReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ZoneDefinitions() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ZoneDefinitions(ZoneDefinitions other) : this() {
+      items_ = other.items_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ZoneDefinitions Clone() {
+      return new ZoneDefinitions(this);
+    }
+
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Geometry.V1.ZoneDefinition> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Geometry.V1.ZoneDefinition.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Geometry.V1.ZoneDefinition> items_ = new pbc::RepeatedField<global::Messages.Geometry.V1.ZoneDefinition>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Geometry.V1.ZoneDefinition> Items {
+      get { return items_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ZoneDefinitions);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ZoneDefinitions other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!items_.Equals(other.items_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= items_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      items_.WriteTo(output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      items_.WriteTo(ref output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += items_.CalculateSize(_repeated_items_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ZoneDefinitions other) {
+      if (other == null) {
+        return;
+      }
+      items_.Add(other.items_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
             break;
           }
         }
