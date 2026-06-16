@@ -673,6 +673,9 @@ namespace Messages.Common.V1 {
     /// <summary>Field number for the "disable_mirroring" field.</summary>
     public const int DisableMirroringFieldNumber = 15;
     private bool disableMirroring_;
+    /// <summary>
+    /// TODO: is this parameter really needed? allowed_origins should already cover this
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool DisableMirroring {

@@ -132,6 +132,8 @@ export type PropertyDefinition = Message<"common.v1.PropertyDefinition"> & {
   advanced: boolean;
 
   /**
+   * TODO: is this parameter really needed? allowed_origins should already cover this
+   *
    * @generated from field: bool disable_mirroring = 15;
    */
   disableMirroring: boolean;

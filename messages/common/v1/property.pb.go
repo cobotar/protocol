@@ -400,7 +400,7 @@ type PropertyDefinition struct {
 	Ordering                  int32              `protobuf:"varint,12,opt,name=ordering,proto3" json:"ordering,omitempty"`
 	HideGroup                 bool               `protobuf:"varint,13,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
 	Advanced                  bool               `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`
-	DisableMirroring          bool               `protobuf:"varint,15,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`
+	DisableMirroring          bool               `protobuf:"varint,15,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"` // TODO: is this parameter really needed? allowed_origins should already cover this
 	NumberExtras              *NumberExtras      `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
 	EnumExtras                *EnumExtras        `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
 	Vector3Extras             *Vector3Extras     `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`

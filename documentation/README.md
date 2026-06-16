@@ -177,19 +177,19 @@
   
     - [FeedbackGroup](#ar-v1-FeedbackGroup)
   
-- [ar/v1/helper.proto](#ar_v1_helper-proto)
-    - [HelperAddMessage](#ar-v1-HelperAddMessage)
-    - [HelperMessage](#ar-v1-HelperMessage)
-    - [HelperMessages](#ar-v1-HelperMessages)
-    - [HelperUpdateMessage](#ar-v1-HelperUpdateMessage)
+- [ar/v1/function.proto](#ar_v1_function-proto)
+    - [FunctionAddMessage](#ar-v1-FunctionAddMessage)
+    - [FunctionMessage](#ar-v1-FunctionMessage)
+    - [FunctionMessages](#ar-v1-FunctionMessages)
+    - [FunctionUpdateMessage](#ar-v1-FunctionUpdateMessage)
   
-    - [HelperType](#ar-v1-HelperType)
+    - [FunctionType](#ar-v1-FunctionType)
   
-- [ar/v1/helper_info.proto](#ar_v1_helper_info-proto)
-    - [HelperInfoMessage](#ar-v1-HelperInfoMessage)
-    - [HelperInfoMessages](#ar-v1-HelperInfoMessages)
+- [ar/v1/function_info.proto](#ar_v1_function_info-proto)
+    - [FunctionInfoMessage](#ar-v1-FunctionInfoMessage)
+    - [FunctionInfoMessages](#ar-v1-FunctionInfoMessages)
   
-    - [HelperGroup](#ar-v1-HelperGroup)
+    - [FunctionGroup](#ar-v1-FunctionGroup)
   
 - [common/v1/enums.proto](#common_v1_enums-proto)
     - [CollaborationMode](#common-v1-CollaborationMode)
@@ -2210,7 +2210,7 @@ Overall, we have these categories of properties:
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
 | advanced | [bool](#bool) |  |  |
-| disable_mirroring | [bool](#bool) |  |  |
+| disable_mirroring | [bool](#bool) |  | TODO: is this parameter really needed? allowed_origins should already cover this |
 | number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
 | enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
 | vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
@@ -2767,16 +2767,16 @@ instance owned by the target station or cell.
 
 
 
-<a name="ar_v1_helper-proto"></a>
+<a name="ar_v1_function-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/helper.proto
+## ar/v1/function.proto
 
 
 
-<a name="ar-v1-HelperAddMessage"></a>
+<a name="ar-v1-FunctionAddMessage"></a>
 
-### HelperAddMessage
+### FunctionAddMessage
 
 
 
@@ -2786,16 +2786,16 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
+| type | [FunctionType](#ar-v1-FunctionType) |  |  |
 
 
 
 
 
 
-<a name="ar-v1-HelperMessage"></a>
+<a name="ar-v1-FunctionMessage"></a>
 
-### HelperMessage
+### FunctionMessage
 
 
 
@@ -2805,31 +2805,32 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
+| type | [FunctionType](#ar-v1-FunctionType) |  |  |
+| config_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="ar-v1-HelperMessages"></a>
+<a name="ar-v1-FunctionMessages"></a>
 
-### HelperMessages
+### FunctionMessages
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| helpers | [HelperMessage](#ar-v1-HelperMessage) | repeated |  |
+| items | [FunctionMessage](#ar-v1-FunctionMessage) | repeated |  |
 
 
 
 
 
 
-<a name="ar-v1-HelperUpdateMessage"></a>
+<a name="ar-v1-FunctionUpdateMessage"></a>
 
-### HelperUpdateMessage
+### FunctionUpdateMessage
 
 
 
@@ -2847,20 +2848,24 @@ instance owned by the target station or cell.
  
 
 
-<a name="ar-v1-HelperType"></a>
+<a name="ar-v1-FunctionType"></a>
 
-### HelperType
+### FunctionType
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| HELPER_TYPE_UNSPECIFIED | 0 |  |
-| HELPER_TYPE_PROXIMITY | 10 |  |
-| HELPER_TYPE_STATIONARY | 11 |  |
-| HELPER_TYPE_TIMER | 21 |  |
-| HELPER_TYPE_AND | 100 |  |
-| HELPER_TYPE_OR | 101 |  |
-| HELPER_TYPE_NOT | 102 |  |
+| FUNCTION_TYPE_UNSPECIFIED | 0 |  |
+| FUNCTION_TYPE_PROXIMITY | 10 |  |
+| FUNCTION_TYPE_STATIONARY | 11 |  |
+| FUNCTION_TYPE_TIMER | 21 |  |
+| FUNCTION_TYPE_PART_FOR_TASK | 40 |  |
+| FUNCTION_TYPE_IS_PART_OF_TYPE | 50 |  |
+| FUNCTION_TYPE_STRING_FORMAT_1 | 60 |  |
+| FUNCTION_TYPE_STRING_FORMAT_2 | 61 |  |
+| FUNCTION_TYPE_AND | 100 |  |
+| FUNCTION_TYPE_OR | 101 |  |
+| FUNCTION_TYPE_NOT | 102 |  |
 
 
  
@@ -2871,16 +2876,16 @@ instance owned by the target station or cell.
 
 
 
-<a name="ar_v1_helper_info-proto"></a>
+<a name="ar_v1_function_info-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/helper_info.proto
+## ar/v1/function_info.proto
 
 
 
-<a name="ar-v1-HelperInfoMessage"></a>
+<a name="ar-v1-FunctionInfoMessage"></a>
 
-### HelperInfoMessage
+### FunctionInfoMessage
 
 
 
@@ -2889,10 +2894,8 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [HelperType](#ar-v1-HelperType) |  |  |
-| group | [HelperGroup](#ar-v1-HelperGroup) |  |  |
-| require_agent | [bool](#bool) |  |  |
-| require_frame | [bool](#bool) |  |  |
+| type | [FunctionType](#ar-v1-FunctionType) |  |  |
+| group | [FunctionGroup](#ar-v1-FunctionGroup) |  |  |
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
 | consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
@@ -2904,15 +2907,15 @@ instance owned by the target station or cell.
 
 
 
-<a name="ar-v1-HelperInfoMessages"></a>
+<a name="ar-v1-FunctionInfoMessages"></a>
 
-### HelperInfoMessages
+### FunctionInfoMessages
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [HelperInfoMessage](#ar-v1-HelperInfoMessage) | repeated |  |
+| infos | [FunctionInfoMessage](#ar-v1-FunctionInfoMessage) | repeated |  |
 
 
 
@@ -2921,21 +2924,21 @@ instance owned by the target station or cell.
  
 
 
-<a name="ar-v1-HelperGroup"></a>
+<a name="ar-v1-FunctionGroup"></a>
 
-### HelperGroup
+### FunctionGroup
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| HELPER_GROUP_UNSPECIFIED | 0 |  |
-| HELPER_GROUP_GENERAL | 1 |  |
-| HELPER_GROUP_ROBOT | 2 |  |
-| HELPER_GROUP_TASK | 3 |  |
-| HELPER_GROUP_ENVIRONMENT | 4 |  |
-| HELPER_GROUP_OPERATOR | 5 |  |
-| HELPER_GROUP_SPATIAL | 6 |  |
-| HELPER_GROUP_LOGIC | 7 |  |
+| FUNCTION_GROUP_UNSPECIFIED | 0 |  |
+| FUNCTION_GROUP_GENERAL | 1 |  |
+| FUNCTION_GROUP_ROBOT | 2 |  |
+| FUNCTION_GROUP_TASK | 3 |  |
+| FUNCTION_GROUP_ENVIRONMENT | 4 |  |
+| FUNCTION_GROUP_OPERATOR | 5 |  |
+| FUNCTION_GROUP_SPATIAL | 6 |  |
+| FUNCTION_GROUP_LOGIC | 7 |  |
 
 
  
