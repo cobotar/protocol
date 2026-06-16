@@ -2,35 +2,33 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/events.proto";
-import "ar/v1/helper.proto";
+import "ar/v1/function.proto";
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-enum HelperGroup {
-  HELPER_GROUP_UNSPECIFIED = 0;
-  HELPER_GROUP_GENERAL = 1;
-  HELPER_GROUP_ROBOT = 2;
-  HELPER_GROUP_TASK = 3;
-  HELPER_GROUP_ENVIRONMENT = 4;
-  HELPER_GROUP_OPERATOR = 5;
-  HELPER_GROUP_SPATIAL = 6;
-  HELPER_GROUP_LOGIC = 7;
+enum FunctionGroup {
+  FUNCTION_GROUP_UNSPECIFIED = 0;
+  FUNCTION_GROUP_GENERAL = 1;
+  FUNCTION_GROUP_ROBOT = 2;
+  FUNCTION_GROUP_TASK = 3;
+  FUNCTION_GROUP_ENVIRONMENT = 4;
+  FUNCTION_GROUP_OPERATOR = 5;
+  FUNCTION_GROUP_SPATIAL = 6;
+  FUNCTION_GROUP_LOGIC = 7;
 }
 
-message HelperInfoMessage {
+message FunctionInfoMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  HelperType type = 5 [
+  FunctionType type = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  HelperGroup group = 6 [(buf.validate.field).enum.defined_only = true];
-  bool require_agent = 7;
-  bool require_frame = 8;
+  FunctionGroup group = 6 [(buf.validate.field).enum.defined_only = true];
   repeated ExchangeType consumers_required = 9; // Inputs the action expects to receive
   repeated ExchangeType consumers_optional = 10; // Inputs that will enhance the action, but not needed to function
   repeated HandlerRequirement required_handlers = 11; // Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react)
@@ -38,6 +36,6 @@ message HelperInfoMessage {
   bool disabled = 13;
 }
 
-message HelperInfoMessages {
-  repeated HelperInfoMessage infos = 1;
+message FunctionInfoMessages {
+  repeated FunctionInfoMessage infos = 1;
 }

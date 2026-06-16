@@ -153,7 +153,8 @@ message PropertyDefinition {
   int32 ordering = 12;
   bool hide_group = 13;
   bool advanced = 14;
-  bool disable_mirroring = 15;
+  bool disable_mirroring = 15; // TODO: is this parameter really needed? allowed_origins should already cover this
+  // TODO: make something like 'DefaultPropType default_property_for = 16', that allow to flag properties as the default value for certain things (text color, background color, ...)
 
   NumberExtras number_extras = 41;
   EnumExtras enum_extras = 42;

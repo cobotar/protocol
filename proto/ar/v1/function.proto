@@ -7,40 +7,45 @@ import "validation/v1/predefined_string_rules.proto";
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
-enum HelperType {
-  HELPER_TYPE_UNSPECIFIED = 0;
-  HELPER_TYPE_PROXIMITY = 10;
-  HELPER_TYPE_STATIONARY = 11;
-  HELPER_TYPE_TIMER = 21;
-  HELPER_TYPE_AND = 100;
-  HELPER_TYPE_OR = 101;
-  HELPER_TYPE_NOT = 102;
+enum FunctionType {
+  FUNCTION_TYPE_UNSPECIFIED = 0;
+  FUNCTION_TYPE_PROXIMITY = 10;
+  FUNCTION_TYPE_STATIONARY = 11;
+  FUNCTION_TYPE_TIMER = 21;
+  FUNCTION_TYPE_PART_FOR_TASK = 40;
+  FUNCTION_TYPE_IS_PART_OF_TYPE = 50;
+  FUNCTION_TYPE_STRING_FORMAT_1 = 60;
+  FUNCTION_TYPE_STRING_FORMAT_2 = 61;
+  FUNCTION_TYPE_AND = 100;
+  FUNCTION_TYPE_OR = 101;
+  FUNCTION_TYPE_NOT = 102;
 }
 
-message HelperMessage {
+message FunctionMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  HelperType type = 5;
+  FunctionType type = 5;
+  string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
-message HelperMessages {
-  repeated HelperMessage helpers = 1;
+message FunctionMessages {
+  repeated FunctionMessage items = 1;
 }
 
-message HelperAddMessage {
+message FunctionAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
   string name = 2;
   string icon = 3;
   string description = 4;
-  HelperType type = 5 [
+  FunctionType type = 5 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
 }
 
-message HelperUpdateMessage {
+message FunctionUpdateMessage {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
