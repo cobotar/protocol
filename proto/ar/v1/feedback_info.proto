@@ -11,10 +11,27 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 enum FeedbackGroup {
   FEEDBACK_GROUP_UNSPECIFIED = 0;
+
+  // Generic UI and feedback elements not tied to a specific semantic domain.
   FEEDBACK_GROUP_GENERAL = 1;
-  FEEDBACK_GROUP_ROBOT = 2;
-  FEEDBACK_GROUP_TASK = 3;
-  FEEDBACK_GROUP_ENVIRONMENT = 4;
+
+  // Spatial guidance and task-localized visualizations.
+  FEEDBACK_GROUP_SPATIAL = 2;
+
+  // Resource guidance (parts, tools, consumables, assets).
+  FEEDBACK_GROUP_RESOURCE = 3;
+
+  // Process flow, task lists, instructions, dependencies, and status.
+  FEEDBACK_GROUP_PROCESS = 4;
+
+  // Validation and verification guidance.
+  FEEDBACK_GROUP_VALIDATION = 5;
+
+  // Robot awareness and robot intent visualizations.
+  FEEDBACK_GROUP_ROBOT = 6;
+
+  // Human-robot collaboration semantics.
+  FEEDBACK_GROUP_COLLABORATION = 7;
 }
 
 message FeedbackInfoMessage {

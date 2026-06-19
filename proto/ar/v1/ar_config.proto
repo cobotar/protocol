@@ -22,6 +22,68 @@ message ARConfigInfoMessages {
   repeated ARConfigInfoMessage infos = 1; // Lightweight AR config metadata entries.
 }
 
+// ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
+//
+// The primary type can be used by the backend or authoring UI to create the most
+// relevant default properties, feedback elements, and visual styling tokens for
+// a newly created AR configuration.
+//
+// It is intentionally a high-level category rather than a complete list of all
+// feedback types. A configuration may still contain any combination of feedback,
+// actions, properties, and input slots.
+enum ARConfigPrimaryType {
+  AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED = 0;
+
+  // General-purpose AR configuration with only basic defaults.
+  AR_CONFIG_PRIMARY_TYPE_GENERAL = 1;
+
+  // Step-by-step AR guidance for assembly tasks.
+  // Typical defaults: instruction panel, target ghost, part/tool highlights,
+  // checklist, current/completed task colors.
+  AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE = 2;
+
+  // Procedure/checklist-oriented guidance such as startup, shutdown,
+  // maintenance, cleaning, or recovery procedures.
+  // Typical defaults: checklist panel, confirmation controls, warning/success
+  // colors, compact status indicators.
+  AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST = 3;
+
+  // Robot-awareness configuration focused on communicating robot intent.
+  // Typical defaults: robot path color, robot silhouette color, robot status,
+  // robot warning/occupancy styling.
+  AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE = 4;
+
+  // Human-robot collaboration configuration focused on shared tasks,
+  // handovers, synchronization, and actor assignments.
+  // Typical defaults: operator color, robot color, shared task color, handover
+  // zone styling, synchronization indicators.
+  AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE = 5;
+
+  // Validation/inspection-oriented configuration focused on confirming whether
+  // work was completed correctly.
+  // Typical defaults: validation panel, ruler/measurement styling, vision
+  // confirmation indicators, warning/error/success colors.
+  AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION = 6;
+
+  // Overview/dashboard-style configuration for process status, task queues,
+  // assignments, and runtime control.
+  // Typical defaults: overview panel, progress indicators, task status colors,
+  // reassignment and completion controls.
+  AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW = 7;
+
+  // Training/onboarding configuration with stronger guidance, explanations,
+  // examples, and optional help content.
+  // Typical defaults: larger instruction panels, help icons, tutorial prompts,
+  // slower animations, and extra confirmation feedback.
+  AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE = 8;
+
+  // Safety-focused configuration used to communicate hazards, restricted zones,
+  // required approvals, or critical warnings.
+  // Typical defaults: warning/error colors, safety zones, alert sounds, approval
+  // prompts, and high-visibility icons.
+  AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE = 9;
+}
+
 // ARConfigMessage is the reusable authoring-time template for an AR experience.
 //
 // It references feedback, actions, helpers, properties, and input slots that
@@ -34,11 +96,12 @@ message ARConfigMessage {
   }];
   string icon = 3;
   string description = 4;
-  int64 ar_disappear_distance = 5 [(buf.validate.field).int64 = {
+  ARConfigPrimaryType primary_type = 5 [(buf.validate.field).enum.defined_only = true]; // Main purpose used to seed default properties and feedback presets.
+  int64 ar_disappear_distance = 6 [(buf.validate.field).int64 = {
     gte: 0
     example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
   }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
-  repeated ARInputSlotMessage input_slots = 10; // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
+  repeated ARInputSlotMessage input_slots = 7; // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 }
 
 message ARConfigMessages {

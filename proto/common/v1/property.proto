@@ -65,6 +65,74 @@ enum PropertyPermission {
   PROPERTY_PERMISSION_NONE = 40; // None: can't be edited (e.g. outputs or stuff that requires a delete + create new)
 }
 
+enum PropertySemanticRole {
+  PROPERTY_SEMANTIC_ROLE_UNSPECIFIED = 0;
+
+  // Layout / panels
+  PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR = 1;
+  PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR = 2;
+  PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR = 3;
+  PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY = 4;
+  PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS = 5;
+
+  // Typography
+  PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR = 20;
+  PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR = 21;
+  PROPERTY_SEMANTIC_ROLE_TEXT_SIZE = 22;
+  PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE = 23;
+
+  // General state colors
+  PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR = 40;
+  PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR = 41;
+  PROPERTY_SEMANTIC_ROLE_WARNING_COLOR = 42;
+  PROPERTY_SEMANTIC_ROLE_ERROR_COLOR = 43;
+  PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR = 44;
+
+  // Task state
+  PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR = 60;
+  PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR = 61;
+  PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR = 62;
+  PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR = 63;
+  PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR = 64;
+
+  // Actors
+  PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR = 80;
+  PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR = 81;
+  PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR = 82;
+  PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR = 83;
+
+  // Resources
+  PROPERTY_SEMANTIC_ROLE_PART_COLOR = 100;
+  PROPERTY_SEMANTIC_ROLE_TOOL_COLOR = 101;
+  PROPERTY_SEMANTIC_ROLE_ASSET_COLOR = 102;
+  PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR = 103;
+
+  // Spatial AR visuals
+  PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR = 120;
+  PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR = 121;
+  PROPERTY_SEMANTIC_ROLE_PATH_COLOR = 122;
+  PROPERTY_SEMANTIC_ROLE_ZONE_COLOR = 123;
+  PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR = 124;
+
+  // Robot intent
+  PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR = 140;
+  PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR = 141;
+  PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR = 142;
+  PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR = 143;
+
+  // Audio / haptics / notification defaults
+  PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND = 160;
+  PROPERTY_SEMANTIC_ROLE_WARNING_SOUND = 161;
+  PROPERTY_SEMANTIC_ROLE_ERROR_SOUND = 162;
+  PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON = 163;
+
+  // Timing / animation
+  PROPERTY_SEMANTIC_ROLE_PULSE_DURATION = 180;
+  PROPERTY_SEMANTIC_ROLE_FADE_DURATION = 181;
+  PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED = 182;
+  PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS = 183;
+}
+
 // PropertyScope
 //
 // For authoring:
@@ -153,8 +221,8 @@ message PropertyDefinition {
   int32 ordering = 12;
   bool hide_group = 13;
   bool advanced = 14;
-  bool disable_mirroring = 15; // TODO: is this parameter really needed? allowed_origins should already cover this
-  // TODO: make something like 'DefaultPropType default_property_for = 16', that allow to flag properties as the default value for certain things (text color, background color, ...)
+  bool allow_to_be_mirrored = 15;
+  PropertySemanticRole semantic_role = 16 [(buf.validate.field).enum.defined_only = true];
 
   NumberExtras number_extras = 41;
   EnumExtras enum_extras = 42;
@@ -384,7 +452,8 @@ message CreatePropertyMessage {
   int32 ordering = 11;
   bool hide_group = 12;
   bool advanced = 13;
-  bool disable_mirroring = 14;
+  bool allow_to_be_mirrored = 14;
+  PropertySemanticRole semantic_role = 16 [(buf.validate.field).enum.defined_only = true];
 
   // Template instance
   PropertyOrigin origin = 20 [
