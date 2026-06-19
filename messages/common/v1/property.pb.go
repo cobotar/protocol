@@ -289,6 +289,191 @@ func (PropertyPermission) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_property_proto_rawDescGZIP(), []int{3}
 }
 
+type PropertySemanticRole int32
+
+const (
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UNSPECIFIED PropertySemanticRole = 0
+	// Layout / panels
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR PropertySemanticRole = 1
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR       PropertySemanticRole = 2
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR     PropertySemanticRole = 3
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY          PropertySemanticRole = 4
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS    PropertySemanticRole = 5
+	// Typography
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR   PropertySemanticRole = 20
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR PropertySemanticRole = 21
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_TEXT_SIZE            PropertySemanticRole = 22
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE      PropertySemanticRole = 23
+	// General state colors
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR   PropertySemanticRole = 40
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR  PropertySemanticRole = 41
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_WARNING_COLOR  PropertySemanticRole = 42
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ERROR_COLOR    PropertySemanticRole = 43
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR PropertySemanticRole = 44
+	// Task state
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR   PropertySemanticRole = 60
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR  PropertySemanticRole = 61
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR PropertySemanticRole = 62
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR   PropertySemanticRole = 63
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR  PropertySemanticRole = 64
+	// Actors
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR    PropertySemanticRole = 80
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR       PropertySemanticRole = 81
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR PropertySemanticRole = 82
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR  PropertySemanticRole = 83
+	// Resources
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PART_COLOR      PropertySemanticRole = 100
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_TOOL_COLOR      PropertySemanticRole = 101
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ASSET_COLOR     PropertySemanticRole = 102
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR PropertySemanticRole = 103
+	// Spatial AR visuals
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR     PropertySemanticRole = 120
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR PropertySemanticRole = 121
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PATH_COLOR             PropertySemanticRole = 122
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ZONE_COLOR             PropertySemanticRole = 123
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR           PropertySemanticRole = 124
+	// Robot intent
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR       PropertySemanticRole = 140
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR PropertySemanticRole = 141
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR     PropertySemanticRole = 142
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR  PropertySemanticRole = 143
+	// Audio / haptics / notification defaults
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND     PropertySemanticRole = 160
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_WARNING_SOUND     PropertySemanticRole = 161
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ERROR_SOUND       PropertySemanticRole = 162
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON PropertySemanticRole = 163
+	// Timing / animation
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_PULSE_DURATION      PropertySemanticRole = 180
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_FADE_DURATION       PropertySemanticRole = 181
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED     PropertySemanticRole = 182
+	PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS PropertySemanticRole = 183
+)
+
+// Enum value maps for PropertySemanticRole.
+var (
+	PropertySemanticRole_name = map[int32]string{
+		0:   "PROPERTY_SEMANTIC_ROLE_UNSPECIFIED",
+		1:   "PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR",
+		2:   "PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR",
+		3:   "PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR",
+		4:   "PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY",
+		5:   "PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS",
+		20:  "PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR",
+		21:  "PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR",
+		22:  "PROPERTY_SEMANTIC_ROLE_TEXT_SIZE",
+		23:  "PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE",
+		40:  "PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR",
+		41:  "PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR",
+		42:  "PROPERTY_SEMANTIC_ROLE_WARNING_COLOR",
+		43:  "PROPERTY_SEMANTIC_ROLE_ERROR_COLOR",
+		44:  "PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR",
+		60:  "PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR",
+		61:  "PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR",
+		62:  "PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR",
+		63:  "PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR",
+		64:  "PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR",
+		80:  "PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR",
+		81:  "PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR",
+		82:  "PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR",
+		83:  "PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR",
+		100: "PROPERTY_SEMANTIC_ROLE_PART_COLOR",
+		101: "PROPERTY_SEMANTIC_ROLE_TOOL_COLOR",
+		102: "PROPERTY_SEMANTIC_ROLE_ASSET_COLOR",
+		103: "PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR",
+		120: "PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR",
+		121: "PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR",
+		122: "PROPERTY_SEMANTIC_ROLE_PATH_COLOR",
+		123: "PROPERTY_SEMANTIC_ROLE_ZONE_COLOR",
+		124: "PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR",
+		140: "PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR",
+		141: "PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR",
+		142: "PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR",
+		143: "PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR",
+		160: "PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND",
+		161: "PROPERTY_SEMANTIC_ROLE_WARNING_SOUND",
+		162: "PROPERTY_SEMANTIC_ROLE_ERROR_SOUND",
+		163: "PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON",
+		180: "PROPERTY_SEMANTIC_ROLE_PULSE_DURATION",
+		181: "PROPERTY_SEMANTIC_ROLE_FADE_DURATION",
+		182: "PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED",
+		183: "PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS",
+	}
+	PropertySemanticRole_value = map[string]int32{
+		"PROPERTY_SEMANTIC_ROLE_UNSPECIFIED":            0,
+		"PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR": 1,
+		"PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR":       2,
+		"PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR":     3,
+		"PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY":          4,
+		"PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS":    5,
+		"PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR":     20,
+		"PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR":   21,
+		"PROPERTY_SEMANTIC_ROLE_TEXT_SIZE":              22,
+		"PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE":        23,
+		"PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR":           40,
+		"PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR":          41,
+		"PROPERTY_SEMANTIC_ROLE_WARNING_COLOR":          42,
+		"PROPERTY_SEMANTIC_ROLE_ERROR_COLOR":            43,
+		"PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR":         44,
+		"PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR":     60,
+		"PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR":    61,
+		"PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR":   62,
+		"PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR":     63,
+		"PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR":    64,
+		"PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR":         80,
+		"PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR":            81,
+		"PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR":      82,
+		"PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR":       83,
+		"PROPERTY_SEMANTIC_ROLE_PART_COLOR":             100,
+		"PROPERTY_SEMANTIC_ROLE_TOOL_COLOR":             101,
+		"PROPERTY_SEMANTIC_ROLE_ASSET_COLOR":            102,
+		"PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR":        103,
+		"PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR":     120,
+		"PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR": 121,
+		"PROPERTY_SEMANTIC_ROLE_PATH_COLOR":             122,
+		"PROPERTY_SEMANTIC_ROLE_ZONE_COLOR":             123,
+		"PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR":           124,
+		"PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR":       140,
+		"PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR": 141,
+		"PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR":     142,
+		"PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR":  143,
+		"PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND":          160,
+		"PROPERTY_SEMANTIC_ROLE_WARNING_SOUND":          161,
+		"PROPERTY_SEMANTIC_ROLE_ERROR_SOUND":            162,
+		"PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON":      163,
+		"PROPERTY_SEMANTIC_ROLE_PULSE_DURATION":         180,
+		"PROPERTY_SEMANTIC_ROLE_FADE_DURATION":          181,
+		"PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED":        182,
+		"PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS":    183,
+	}
+)
+
+func (x PropertySemanticRole) Enum() *PropertySemanticRole {
+	p := new(PropertySemanticRole)
+	*p = x
+	return p
+}
+
+func (x PropertySemanticRole) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PropertySemanticRole) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_v1_property_proto_enumTypes[4].Descriptor()
+}
+
+func (PropertySemanticRole) Type() protoreflect.EnumType {
+	return &file_common_v1_property_proto_enumTypes[4]
+}
+
+func (x PropertySemanticRole) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PropertySemanticRole.Descriptor instead.
+func (PropertySemanticRole) EnumDescriptor() ([]byte, []int) {
+	return file_common_v1_property_proto_rawDescGZIP(), []int{4}
+}
+
 // PropertyScope
 //
 // For authoring:
@@ -337,11 +522,11 @@ func (x PropertyScope) String() string {
 }
 
 func (PropertyScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_property_proto_enumTypes[4].Descriptor()
+	return file_common_v1_property_proto_enumTypes[5].Descriptor()
 }
 
 func (PropertyScope) Type() protoreflect.EnumType {
-	return &file_common_v1_property_proto_enumTypes[4]
+	return &file_common_v1_property_proto_enumTypes[5]
 }
 
 func (x PropertyScope) Number() protoreflect.EnumNumber {
@@ -350,7 +535,7 @@ func (x PropertyScope) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PropertyScope.Descriptor instead.
 func (PropertyScope) EnumDescriptor() ([]byte, []int) {
-	return file_common_v1_property_proto_rawDescGZIP(), []int{4}
+	return file_common_v1_property_proto_rawDescGZIP(), []int{5}
 }
 
 // PropertyDefinition
@@ -394,19 +579,20 @@ type PropertyDefinition struct {
 	AuthoringContextId string                 `protobuf:"bytes,7,opt,name=authoring_context_id,json=authoringContextId,proto3" json:"authoring_context_id,omitempty"` // grouping/root context: ar_config id
 	Scope              PropertyScope          `protobuf:"varint,8,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
 	// UI/authoring metadata
-	MinimumRequiredPermission PropertyPermission `protobuf:"varint,9,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
-	AllowedOrigins            []PropertyOrigin   `protobuf:"varint,10,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
-	Group                     PropertyGroup      `protobuf:"varint,11,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
-	Ordering                  int32              `protobuf:"varint,12,opt,name=ordering,proto3" json:"ordering,omitempty"`
-	HideGroup                 bool               `protobuf:"varint,13,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
-	Advanced                  bool               `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`
-	DisableMirroring          bool               `protobuf:"varint,15,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"` // TODO: is this parameter really needed? allowed_origins should already cover this
-	NumberExtras              *NumberExtras      `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
-	EnumExtras                *EnumExtras        `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
-	Vector3Extras             *Vector3Extras     `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
-	ColorExtras               *ColorExtras       `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
-	PoseExtras                *PoseExtras        `protobuf:"bytes,45,opt,name=pose_extras,json=poseExtras,proto3" json:"pose_extras,omitempty"`
-	AnchorExtras              *AnchorExtras      `protobuf:"bytes,46,opt,name=anchor_extras,json=anchorExtras,proto3" json:"anchor_extras,omitempty"`
+	MinimumRequiredPermission PropertyPermission   `protobuf:"varint,9,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
+	AllowedOrigins            []PropertyOrigin     `protobuf:"varint,10,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
+	Group                     PropertyGroup        `protobuf:"varint,11,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32                `protobuf:"varint,12,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool                 `protobuf:"varint,13,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	Advanced                  bool                 `protobuf:"varint,14,opt,name=advanced,proto3" json:"advanced,omitempty"`
+	AllowToBeMirrored         bool                 `protobuf:"varint,15,opt,name=allow_to_be_mirrored,json=allowToBeMirrored,proto3" json:"allow_to_be_mirrored,omitempty"`
+	SemanticRole              PropertySemanticRole `protobuf:"varint,16,opt,name=semantic_role,json=semanticRole,proto3,enum=common.v1.PropertySemanticRole" json:"semantic_role,omitempty"`
+	NumberExtras              *NumberExtras        `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
+	EnumExtras                *EnumExtras          `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
+	Vector3Extras             *Vector3Extras       `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
+	ColorExtras               *ColorExtras         `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
+	PoseExtras                *PoseExtras          `protobuf:"bytes,45,opt,name=pose_extras,json=poseExtras,proto3" json:"pose_extras,omitempty"`
+	AnchorExtras              *AnchorExtras        `protobuf:"bytes,46,opt,name=anchor_extras,json=anchorExtras,proto3" json:"anchor_extras,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -539,11 +725,18 @@ func (x *PropertyDefinition) GetAdvanced() bool {
 	return false
 }
 
-func (x *PropertyDefinition) GetDisableMirroring() bool {
+func (x *PropertyDefinition) GetAllowToBeMirrored() bool {
 	if x != nil {
-		return x.DisableMirroring
+		return x.AllowToBeMirrored
 	}
 	return false
+}
+
+func (x *PropertyDefinition) GetSemanticRole() PropertySemanticRole {
+	if x != nil {
+		return x.SemanticRole
+	}
+	return PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UNSPECIFIED
 }
 
 func (x *PropertyDefinition) GetNumberExtras() *NumberExtras {
@@ -1500,18 +1693,19 @@ type CreatePropertyMessage struct {
 	ParentId           string `protobuf:"bytes,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	AuthoringContextId string `protobuf:"bytes,2,opt,name=authoring_context_id,json=authoringContextId,proto3" json:"authoring_context_id,omitempty"`
 	// Definition
-	Name                      string             `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                      string             `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description               string             `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
-	Type                      PropertyType       `protobuf:"varint,6,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
-	Scope                     PropertyScope      `protobuf:"varint,7,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
-	MinimumRequiredPermission PropertyPermission `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
-	AllowedOrigins            []PropertyOrigin   `protobuf:"varint,9,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
-	Group                     PropertyGroup      `protobuf:"varint,10,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
-	Ordering                  int32              `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
-	HideGroup                 bool               `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
-	Advanced                  bool               `protobuf:"varint,13,opt,name=advanced,proto3" json:"advanced,omitempty"`
-	DisableMirroring          bool               `protobuf:"varint,14,opt,name=disable_mirroring,json=disableMirroring,proto3" json:"disable_mirroring,omitempty"`
+	Name                      string               `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                      string               `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description               string               `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	Type                      PropertyType         `protobuf:"varint,6,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
+	Scope                     PropertyScope        `protobuf:"varint,7,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
+	MinimumRequiredPermission PropertyPermission   `protobuf:"varint,8,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
+	AllowedOrigins            []PropertyOrigin     `protobuf:"varint,9,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
+	Group                     PropertyGroup        `protobuf:"varint,10,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32                `protobuf:"varint,11,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool                 `protobuf:"varint,12,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	Advanced                  bool                 `protobuf:"varint,13,opt,name=advanced,proto3" json:"advanced,omitempty"`
+	AllowToBeMirrored         bool                 `protobuf:"varint,14,opt,name=allow_to_be_mirrored,json=allowToBeMirrored,proto3" json:"allow_to_be_mirrored,omitempty"`
+	SemanticRole              PropertySemanticRole `protobuf:"varint,16,opt,name=semantic_role,json=semanticRole,proto3,enum=common.v1.PropertySemanticRole" json:"semantic_role,omitempty"`
 	// Template instance
 	Origin PropertyOrigin `protobuf:"varint,20,opt,name=origin,proto3,enum=common.v1.PropertyOrigin" json:"origin,omitempty"`
 	// Defaults to parent_id when empty. Needed for input-slot scopes.
@@ -1654,11 +1848,18 @@ func (x *CreatePropertyMessage) GetAdvanced() bool {
 	return false
 }
 
-func (x *CreatePropertyMessage) GetDisableMirroring() bool {
+func (x *CreatePropertyMessage) GetAllowToBeMirrored() bool {
 	if x != nil {
-		return x.DisableMirroring
+		return x.AllowToBeMirrored
 	}
 	return false
+}
+
+func (x *CreatePropertyMessage) GetSemanticRole() PropertySemanticRole {
+	if x != nil {
+		return x.SemanticRole
+	}
+	return PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UNSPECIFIED
 }
 
 func (x *CreatePropertyMessage) GetOrigin() PropertyOrigin {
@@ -1794,7 +1995,7 @@ var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x9f\n" +
+	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf3\n" +
 	"\n" +
 	"\x12PropertyDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12\x1d\n" +
@@ -1813,8 +2014,9 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\bordering\x18\f \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
 	"hide_group\x18\r \x01(\bR\thideGroup\x12\x1a\n" +
-	"\badvanced\x18\x0e \x01(\bR\badvanced\x12+\n" +
-	"\x11disable_mirroring\x18\x0f \x01(\bR\x10disableMirroring\x12<\n" +
+	"\badvanced\x18\x0e \x01(\bR\badvanced\x12/\n" +
+	"\x14allow_to_be_mirrored\x18\x0f \x01(\bR\x11allowToBeMirrored\x12N\n" +
+	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12<\n" +
 	"\rnumber_extras\x18) \x01(\v2\x17.common.v1.NumberExtrasR\fnumberExtras\x126\n" +
 	"\venum_extras\x18* \x01(\v2\x15.common.v1.EnumExtrasR\n" +
 	"enumExtras\x12?\n" +
@@ -1950,7 +2152,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\xfb\v\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\xcf\f\n" +
 	"\x15CreatePropertyMessage\x12\x1b\n" +
 	"\tparent_id\x18\x01 \x01(\tR\bparentId\x120\n" +
 	"\x14authoring_context_id\x18\x02 \x01(\tR\x12authoringContextId\x12\x12\n" +
@@ -1966,8 +2168,9 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\bordering\x18\v \x01(\x05R\bordering\x12\x1d\n" +
 	"\n" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1a\n" +
-	"\badvanced\x18\r \x01(\bR\badvanced\x12+\n" +
-	"\x11disable_mirroring\x18\x0e \x01(\bR\x10disableMirroring\x12>\n" +
+	"\badvanced\x18\r \x01(\bR\badvanced\x12/\n" +
+	"\x14allow_to_be_mirrored\x18\x0e \x01(\bR\x11allowToBeMirrored\x12N\n" +
+	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12>\n" +
 	"\x06origin\x18\x14 \x01(\x0e2\x19.common.v1.PropertyOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x19\n" +
 	"\bscope_id\x18\x15 \x01(\tR\ascopeId\x12L\n" +
 	"\x1dmirror_property_definition_id\x18\x16 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x1amirrorPropertyDefinitionId\x12E\n" +
@@ -2021,7 +2224,53 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x12 \n" +
 	"\x1cPROPERTY_PERMISSION_COSMETIC\x10\x14\x12\x1c\n" +
 	"\x18PROPERTY_PERMISSION_FULL\x10\x1e\x12\x1c\n" +
-	"\x18PROPERTY_PERMISSION_NONE\x10(*f\n" +
+	"\x18PROPERTY_PERMISSION_NONE\x10(*\xe9\x0f\n" +
+	"\x14PropertySemanticRole\x12&\n" +
+	"\"PROPERTY_SEMANTIC_ROLE_UNSPECIFIED\x10\x00\x121\n" +
+	"-PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR\x10\x01\x12+\n" +
+	"'PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR\x10\x02\x12-\n" +
+	")PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR\x10\x03\x12(\n" +
+	"$PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY\x10\x04\x12.\n" +
+	"*PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS\x10\x05\x12-\n" +
+	")PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR\x10\x14\x12/\n" +
+	"+PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR\x10\x15\x12$\n" +
+	" PROPERTY_SEMANTIC_ROLE_TEXT_SIZE\x10\x16\x12*\n" +
+	"&PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE\x10\x17\x12'\n" +
+	"#PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR\x10(\x12(\n" +
+	"$PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR\x10)\x12(\n" +
+	"$PROPERTY_SEMANTIC_ROLE_WARNING_COLOR\x10*\x12&\n" +
+	"\"PROPERTY_SEMANTIC_ROLE_ERROR_COLOR\x10+\x12)\n" +
+	"%PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR\x10,\x12-\n" +
+	")PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR\x10<\x12.\n" +
+	"*PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR\x10=\x12/\n" +
+	"+PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR\x10>\x12-\n" +
+	")PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR\x10?\x12.\n" +
+	"*PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR\x10@\x12)\n" +
+	"%PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR\x10P\x12&\n" +
+	"\"PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR\x10Q\x12,\n" +
+	"(PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR\x10R\x12+\n" +
+	"'PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR\x10S\x12%\n" +
+	"!PROPERTY_SEMANTIC_ROLE_PART_COLOR\x10d\x12%\n" +
+	"!PROPERTY_SEMANTIC_ROLE_TOOL_COLOR\x10e\x12&\n" +
+	"\"PROPERTY_SEMANTIC_ROLE_ASSET_COLOR\x10f\x12*\n" +
+	"&PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR\x10g\x12-\n" +
+	")PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR\x10x\x121\n" +
+	"-PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR\x10y\x12%\n" +
+	"!PROPERTY_SEMANTIC_ROLE_PATH_COLOR\x10z\x12%\n" +
+	"!PROPERTY_SEMANTIC_ROLE_ZONE_COLOR\x10{\x12'\n" +
+	"#PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR\x10|\x12,\n" +
+	"'PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR\x10\x8c\x01\x122\n" +
+	"-PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR\x10\x8d\x01\x12.\n" +
+	")PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR\x10\x8e\x01\x121\n" +
+	",PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR\x10\x8f\x01\x12)\n" +
+	"$PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND\x10\xa0\x01\x12)\n" +
+	"$PROPERTY_SEMANTIC_ROLE_WARNING_SOUND\x10\xa1\x01\x12'\n" +
+	"\"PROPERTY_SEMANTIC_ROLE_ERROR_SOUND\x10\xa2\x01\x12-\n" +
+	"(PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON\x10\xa3\x01\x12*\n" +
+	"%PROPERTY_SEMANTIC_ROLE_PULSE_DURATION\x10\xb4\x01\x12)\n" +
+	"$PROPERTY_SEMANTIC_ROLE_FADE_DURATION\x10\xb5\x01\x12+\n" +
+	"&PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED\x10\xb6\x01\x12/\n" +
+	"*PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS\x10\xb7\x01*f\n" +
 	"\rPropertyScope\x12\x1e\n" +
 	"\x1aPROPERTY_SCOPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_SCOPE_ENTITY\x10\x01\x12\x1a\n" +
@@ -2041,77 +2290,80 @@ func file_common_v1_property_proto_rawDescGZIP() []byte {
 	return file_common_v1_property_proto_rawDescData
 }
 
-var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
+var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
 var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_common_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),              // 0: common.v1.PropertyType
 	(PropertyOrigin)(0),            // 1: common.v1.PropertyOrigin
 	(PropertyGroup)(0),             // 2: common.v1.PropertyGroup
 	(PropertyPermission)(0),        // 3: common.v1.PropertyPermission
-	(PropertyScope)(0),             // 4: common.v1.PropertyScope
-	(*PropertyDefinition)(nil),     // 5: common.v1.PropertyDefinition
-	(*PropertyInstance)(nil),       // 6: common.v1.PropertyInstance
-	(*PropertyValue)(nil),          // 7: common.v1.PropertyValue
-	(*PropertyInstanceUpdate)(nil), // 8: common.v1.PropertyInstanceUpdate
-	(*PropertyDefinitions)(nil),    // 9: common.v1.PropertyDefinitions
-	(*PropertyInstances)(nil),      // 10: common.v1.PropertyInstances
-	(*NumberExtras)(nil),           // 11: common.v1.NumberExtras
-	(*EnumOption)(nil),             // 12: common.v1.EnumOption
-	(*EnumExtras)(nil),             // 13: common.v1.EnumExtras
-	(*Vector3Extras)(nil),          // 14: common.v1.Vector3Extras
-	(*ColorExtras)(nil),            // 15: common.v1.ColorExtras
-	(*AnchorExtras)(nil),           // 16: common.v1.AnchorExtras
-	(*PoseExtras)(nil),             // 17: common.v1.PoseExtras
-	(*CreatePropertyMessage)(nil),  // 18: common.v1.CreatePropertyMessage
-	(*v1.Vector3)(nil),             // 19: geometry.v1.Vector3
-	(*v1.LocalizedPose)(nil),       // 20: geometry.v1.LocalizedPose
-	(*v1.Anchor)(nil),              // 21: geometry.v1.Anchor
-	(*Color)(nil),                  // 22: common.v1.Color
+	(PropertySemanticRole)(0),      // 4: common.v1.PropertySemanticRole
+	(PropertyScope)(0),             // 5: common.v1.PropertyScope
+	(*PropertyDefinition)(nil),     // 6: common.v1.PropertyDefinition
+	(*PropertyInstance)(nil),       // 7: common.v1.PropertyInstance
+	(*PropertyValue)(nil),          // 8: common.v1.PropertyValue
+	(*PropertyInstanceUpdate)(nil), // 9: common.v1.PropertyInstanceUpdate
+	(*PropertyDefinitions)(nil),    // 10: common.v1.PropertyDefinitions
+	(*PropertyInstances)(nil),      // 11: common.v1.PropertyInstances
+	(*NumberExtras)(nil),           // 12: common.v1.NumberExtras
+	(*EnumOption)(nil),             // 13: common.v1.EnumOption
+	(*EnumExtras)(nil),             // 14: common.v1.EnumExtras
+	(*Vector3Extras)(nil),          // 15: common.v1.Vector3Extras
+	(*ColorExtras)(nil),            // 16: common.v1.ColorExtras
+	(*AnchorExtras)(nil),           // 17: common.v1.AnchorExtras
+	(*PoseExtras)(nil),             // 18: common.v1.PoseExtras
+	(*CreatePropertyMessage)(nil),  // 19: common.v1.CreatePropertyMessage
+	(*v1.Vector3)(nil),             // 20: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),       // 21: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),              // 22: geometry.v1.Anchor
+	(*Color)(nil),                  // 23: common.v1.Color
 }
 var file_common_v1_property_proto_depIdxs = []int32{
 	0,  // 0: common.v1.PropertyDefinition.type:type_name -> common.v1.PropertyType
-	4,  // 1: common.v1.PropertyDefinition.scope:type_name -> common.v1.PropertyScope
+	5,  // 1: common.v1.PropertyDefinition.scope:type_name -> common.v1.PropertyScope
 	3,  // 2: common.v1.PropertyDefinition.minimum_required_permission:type_name -> common.v1.PropertyPermission
 	1,  // 3: common.v1.PropertyDefinition.allowed_origins:type_name -> common.v1.PropertyOrigin
 	2,  // 4: common.v1.PropertyDefinition.group:type_name -> common.v1.PropertyGroup
-	11, // 5: common.v1.PropertyDefinition.number_extras:type_name -> common.v1.NumberExtras
-	13, // 6: common.v1.PropertyDefinition.enum_extras:type_name -> common.v1.EnumExtras
-	14, // 7: common.v1.PropertyDefinition.vector3_extras:type_name -> common.v1.Vector3Extras
-	15, // 8: common.v1.PropertyDefinition.color_extras:type_name -> common.v1.ColorExtras
-	17, // 9: common.v1.PropertyDefinition.pose_extras:type_name -> common.v1.PoseExtras
-	16, // 10: common.v1.PropertyDefinition.anchor_extras:type_name -> common.v1.AnchorExtras
-	4,  // 11: common.v1.PropertyInstance.scope:type_name -> common.v1.PropertyScope
-	1,  // 12: common.v1.PropertyInstance.origin:type_name -> common.v1.PropertyOrigin
-	7,  // 13: common.v1.PropertyInstance.value:type_name -> common.v1.PropertyValue
-	0,  // 14: common.v1.PropertyValue.type:type_name -> common.v1.PropertyType
-	19, // 15: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
-	20, // 16: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
-	21, // 17: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
-	22, // 18: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
-	1,  // 19: common.v1.PropertyInstanceUpdate.origin:type_name -> common.v1.PropertyOrigin
-	7,  // 20: common.v1.PropertyInstanceUpdate.value:type_name -> common.v1.PropertyValue
-	5,  // 21: common.v1.PropertyDefinitions.items:type_name -> common.v1.PropertyDefinition
-	6,  // 22: common.v1.PropertyInstances.items:type_name -> common.v1.PropertyInstance
-	12, // 23: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
-	22, // 24: common.v1.ColorExtras.default:type_name -> common.v1.Color
-	0,  // 25: common.v1.CreatePropertyMessage.type:type_name -> common.v1.PropertyType
-	4,  // 26: common.v1.CreatePropertyMessage.scope:type_name -> common.v1.PropertyScope
-	3,  // 27: common.v1.CreatePropertyMessage.minimum_required_permission:type_name -> common.v1.PropertyPermission
-	1,  // 28: common.v1.CreatePropertyMessage.allowed_origins:type_name -> common.v1.PropertyOrigin
-	2,  // 29: common.v1.CreatePropertyMessage.group:type_name -> common.v1.PropertyGroup
-	1,  // 30: common.v1.CreatePropertyMessage.origin:type_name -> common.v1.PropertyOrigin
-	7,  // 31: common.v1.CreatePropertyMessage.initial_value:type_name -> common.v1.PropertyValue
-	11, // 32: common.v1.CreatePropertyMessage.number_extras:type_name -> common.v1.NumberExtras
-	13, // 33: common.v1.CreatePropertyMessage.enum_extras:type_name -> common.v1.EnumExtras
-	14, // 34: common.v1.CreatePropertyMessage.vector3_extras:type_name -> common.v1.Vector3Extras
-	15, // 35: common.v1.CreatePropertyMessage.color_extras:type_name -> common.v1.ColorExtras
-	17, // 36: common.v1.CreatePropertyMessage.pose_extras:type_name -> common.v1.PoseExtras
-	16, // 37: common.v1.CreatePropertyMessage.anchor_extras:type_name -> common.v1.AnchorExtras
-	38, // [38:38] is the sub-list for method output_type
-	38, // [38:38] is the sub-list for method input_type
-	38, // [38:38] is the sub-list for extension type_name
-	38, // [38:38] is the sub-list for extension extendee
-	0,  // [0:38] is the sub-list for field type_name
+	4,  // 5: common.v1.PropertyDefinition.semantic_role:type_name -> common.v1.PropertySemanticRole
+	12, // 6: common.v1.PropertyDefinition.number_extras:type_name -> common.v1.NumberExtras
+	14, // 7: common.v1.PropertyDefinition.enum_extras:type_name -> common.v1.EnumExtras
+	15, // 8: common.v1.PropertyDefinition.vector3_extras:type_name -> common.v1.Vector3Extras
+	16, // 9: common.v1.PropertyDefinition.color_extras:type_name -> common.v1.ColorExtras
+	18, // 10: common.v1.PropertyDefinition.pose_extras:type_name -> common.v1.PoseExtras
+	17, // 11: common.v1.PropertyDefinition.anchor_extras:type_name -> common.v1.AnchorExtras
+	5,  // 12: common.v1.PropertyInstance.scope:type_name -> common.v1.PropertyScope
+	1,  // 13: common.v1.PropertyInstance.origin:type_name -> common.v1.PropertyOrigin
+	8,  // 14: common.v1.PropertyInstance.value:type_name -> common.v1.PropertyValue
+	0,  // 15: common.v1.PropertyValue.type:type_name -> common.v1.PropertyType
+	20, // 16: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
+	21, // 17: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
+	22, // 18: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
+	23, // 19: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
+	1,  // 20: common.v1.PropertyInstanceUpdate.origin:type_name -> common.v1.PropertyOrigin
+	8,  // 21: common.v1.PropertyInstanceUpdate.value:type_name -> common.v1.PropertyValue
+	6,  // 22: common.v1.PropertyDefinitions.items:type_name -> common.v1.PropertyDefinition
+	7,  // 23: common.v1.PropertyInstances.items:type_name -> common.v1.PropertyInstance
+	13, // 24: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
+	23, // 25: common.v1.ColorExtras.default:type_name -> common.v1.Color
+	0,  // 26: common.v1.CreatePropertyMessage.type:type_name -> common.v1.PropertyType
+	5,  // 27: common.v1.CreatePropertyMessage.scope:type_name -> common.v1.PropertyScope
+	3,  // 28: common.v1.CreatePropertyMessage.minimum_required_permission:type_name -> common.v1.PropertyPermission
+	1,  // 29: common.v1.CreatePropertyMessage.allowed_origins:type_name -> common.v1.PropertyOrigin
+	2,  // 30: common.v1.CreatePropertyMessage.group:type_name -> common.v1.PropertyGroup
+	4,  // 31: common.v1.CreatePropertyMessage.semantic_role:type_name -> common.v1.PropertySemanticRole
+	1,  // 32: common.v1.CreatePropertyMessage.origin:type_name -> common.v1.PropertyOrigin
+	8,  // 33: common.v1.CreatePropertyMessage.initial_value:type_name -> common.v1.PropertyValue
+	12, // 34: common.v1.CreatePropertyMessage.number_extras:type_name -> common.v1.NumberExtras
+	14, // 35: common.v1.CreatePropertyMessage.enum_extras:type_name -> common.v1.EnumExtras
+	15, // 36: common.v1.CreatePropertyMessage.vector3_extras:type_name -> common.v1.Vector3Extras
+	16, // 37: common.v1.CreatePropertyMessage.color_extras:type_name -> common.v1.ColorExtras
+	18, // 38: common.v1.CreatePropertyMessage.pose_extras:type_name -> common.v1.PoseExtras
+	17, // 39: common.v1.CreatePropertyMessage.anchor_extras:type_name -> common.v1.AnchorExtras
+	40, // [40:40] is the sub-list for method output_type
+	40, // [40:40] is the sub-list for method input_type
+	40, // [40:40] is the sub-list for extension type_name
+	40, // [40:40] is the sub-list for extension extendee
+	0,  // [0:40] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_property_proto_init() }
@@ -2136,7 +2388,7 @@ func file_common_v1_property_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)),
-			NumEnums:      5,
+			NumEnums:      6,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,

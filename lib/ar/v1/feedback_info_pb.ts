@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback_info.proto.
  */
 export const file_ar_v1_feedback_info: GenFile = /*@__PURE__*/
-  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKsAwoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZlZWRiYWNrR3JvdXBCCLpIBYIBAhABEhUKDXJlcXVpcmVfYWdlbnQYByABKAgSFQoNcmVxdWlyZV9mcmFtZRgIIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAogAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEhAKCGRpc2FibGVkGA0gASgIIkEKFEZlZWRiYWNrSW5mb01lc3NhZ2VzEikKBWluZm9zGAEgAygLMhouYXIudjEuRmVlZGJhY2tJbmZvTWVzc2FnZSqeAQoNRmVlZGJhY2tHcm91cBIeChpGRUVEQkFDS19HUk9VUF9VTlNQRUNJRklFRBAAEhoKFkZFRURCQUNLX0dST1VQX0dFTkVSQUwQARIYChRGRUVEQkFDS19HUk9VUF9ST0JPVBACEhcKE0ZFRURCQUNLX0dST1VQX1RBU0sQAxIeChpGRUVEQkFDS19HUk9VUF9FTlZJUk9OTUVOVBAEQo0BCgljb20uYXIudjFCEUZlZWRiYWNrSW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKsAwoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZlZWRiYWNrR3JvdXBCCLpIBYIBAhABEhUKDXJlcXVpcmVfYWdlbnQYByABKAgSFQoNcmVxdWlyZV9mcmFtZRgIIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAogAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEhAKCGRpc2FibGVkGA0gASgIIkEKFEZlZWRiYWNrSW5mb01lc3NhZ2VzEikKBWluZm9zGAEgAygLMhouYXIudjEuRmVlZGJhY2tJbmZvTWVzc2FnZSr7AQoNRmVlZGJhY2tHcm91cBIeChpGRUVEQkFDS19HUk9VUF9VTlNQRUNJRklFRBAAEhoKFkZFRURCQUNLX0dST1VQX0dFTkVSQUwQARIaChZGRUVEQkFDS19HUk9VUF9TUEFUSUFMEAISGwoXRkVFREJBQ0tfR1JPVVBfUkVTT1VSQ0UQAxIaChZGRUVEQkFDS19HUk9VUF9QUk9DRVNTEAQSHQoZRkVFREJBQ0tfR1JPVVBfVkFMSURBVElPThAFEhgKFEZFRURCQUNLX0dST1VQX1JPQk9UEAYSIAocRkVFREJBQ0tfR1JPVVBfQ09MTEFCT1JBVElPThAHQo0BCgljb20uYXIudjFCEUZlZWRiYWNrSW5mb1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackInfoMessage
@@ -125,24 +125,53 @@ export enum FeedbackGroup {
   UNSPECIFIED = 0,
 
   /**
+   * Generic UI and feedback elements not tied to a specific semantic domain.
+   *
    * @generated from enum value: FEEDBACK_GROUP_GENERAL = 1;
    */
   GENERAL = 1,
 
   /**
-   * @generated from enum value: FEEDBACK_GROUP_ROBOT = 2;
+   * Spatial guidance and task-localized visualizations.
+   *
+   * @generated from enum value: FEEDBACK_GROUP_SPATIAL = 2;
    */
-  ROBOT = 2,
+  SPATIAL = 2,
 
   /**
-   * @generated from enum value: FEEDBACK_GROUP_TASK = 3;
+   * Resource guidance (parts, tools, consumables, assets).
+   *
+   * @generated from enum value: FEEDBACK_GROUP_RESOURCE = 3;
    */
-  TASK = 3,
+  RESOURCE = 3,
 
   /**
-   * @generated from enum value: FEEDBACK_GROUP_ENVIRONMENT = 4;
+   * Process flow, task lists, instructions, dependencies, and status.
+   *
+   * @generated from enum value: FEEDBACK_GROUP_PROCESS = 4;
    */
-  ENVIRONMENT = 4,
+  PROCESS = 4,
+
+  /**
+   * Validation and verification guidance.
+   *
+   * @generated from enum value: FEEDBACK_GROUP_VALIDATION = 5;
+   */
+  VALIDATION = 5,
+
+  /**
+   * Robot awareness and robot intent visualizations.
+   *
+   * @generated from enum value: FEEDBACK_GROUP_ROBOT = 6;
+   */
+  ROBOT = 6,
+
+  /**
+   * Human-robot collaboration semantics.
+   *
+   * @generated from enum value: FEEDBACK_GROUP_COLLABORATION = 7;
+   */
+  COLLABORATION = 7,
 }
 
 /**

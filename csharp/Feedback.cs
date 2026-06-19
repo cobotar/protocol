@@ -35,7 +35,7 @@ namespace Messages.AR.V1 {
             "AQIQAVIPdmlzaWJpbGl0eVNjb3BlEiYKCWNvbmZpZ19pZBgIIAEoCUIJukgG",
             "cgSQ8QQBUghjb25maWdJZCJIChBGZWVkYmFja01lc3NhZ2VzEjQKCWZlZWRi",
             "YWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZVIJZmVlZGJhY2tz",
-            "Iu0CChJGZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6",
+            "IqUDChJGZWVkYmFja0FkZE1lc3NhZ2USJgoJY29uZmlnX2lkGAEgASgJQgm6",
             "SAZyBJDxBAFSCGNvbmZpZ0lkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNv",
             "bhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp",
             "b24SNAoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIggEC",
@@ -43,42 +43,57 @@ namespace Messages.AR.V1 {
             "LlZpc2liaWxpdHlTY29wZUIIukgFggECEAFSD3Zpc2liaWxpdHlTY29wZRI1",
             "ChFyb2JvdF9wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBUg9yb2JvdFBy",
             "b3BlcnR5SWQSKwoGYW5jaG9yGAggASgLMhMuZ2VvbWV0cnkudjEuQW5jaG9y",
-            "UgZhbmNob3IiyQEKFUZlZWRiYWNrVXBkYXRlTWVzc2FnZRIOCgJpZBgBIAEo",
-            "CVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24Y",
-            "AyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u",
-            "EksKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5",
-            "U2NvcGVCCLpIBYIBAhABUg92aXNpYmlsaXR5U2NvcGUizgEKFEZlZWRiYWNr",
-            "Q2xvbmVNZXNzYWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmlnaW5hbElk",
-            "EhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
-            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SSwoQdmlzaWJpbGl0eV9z",
-            "Y29wZRgFIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAFS",
-            "D3Zpc2liaWxpdHlTY29wZSrHBAoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNL",
-            "X1RZUEVfVU5TUEVDSUZJRUQQABIgChxGRUVEQkFDS19UWVBFX1RBU0tfSElH",
-            "SExJR0hUEAoSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1BBUlRfSElHSExJR0hU",
-            "EAsSJQohRkVFREJBQ0tfVFlQRV9UQVNLX1RPT0xfSElHSExJR0hUEAwSHwob",
-            "RkVFREJBQ0tfVFlQRV9UQVNLX09WRVJWSUVXEA0SIgoeRkVFREJBQ0tfVFlQ",
-            "RV9UQVNLX0lOU1RSVUNUSU9OEA4SIAocRkVFREJBQ0tfVFlQRV9UQVNLX0NI",
-            "RUNLTElTVBAPEhwKGEZFRURCQUNLX1RZUEVfUk9CT1RfUEFUSBAyEiIKHkZF",
-            "RURCQUNLX1RZUEVfUk9CT1RfU0lMSE9VRVRURRAzEiEKHUZFRURCQUNLX1RZ",
-            "UEVfUk9CT1RfV0FZUE9JTlRTEDQSHgoaRkVFREJBQ0tfVFlQRV9ST0JPVF9T",
-            "VEFUVVMQNRIdChlGRUVEQkFDS19UWVBFX1JPQk9UX0xJR0hUEDYSGQoVRkVF",
-            "REJBQ0tfVFlQRV9NRVNTQUdFEGQSFgoSRkVFREJBQ0tfVFlQRV9JQ09OEGUS",
-            "FgoSRkVFREJBQ0tfVFlQRV9aT05FEGYSHAoYRkVFREJBQ0tfVFlQRV9QTEFZ",
-            "X1NPVU5EEGcSFwoTRkVFREJBQ0tfVFlQRV9SVUxFUhBoEhsKF0ZFRURCQUNL",
-            "X1RZUEVfSElHSExJR0hUEGkqvQEKD1Zpc2liaWxpdHlTY29wZRIgChxWSVNJ",
-            "QklMSVRZX1NDT1BFX1VOU1BFQ0lGSUVEEAASGwoXVklTSUJJTElUWV9TQ09Q",
-            "RV9BTFdBWVMQARIhCh1WSVNJQklMSVRZX1NDT1BFX0xPV19HVUlEQU5DRRAC",
-            "EiQKIFZJU0lCSUxJVFlfU0NPUEVfTUVESVVNX0dVSURBTkNFEAMSIgoeVklT",
-            "SUJJTElUWV9TQ09QRV9GVUxMX0dVSURBTkNFEARCiQEKCWNvbS5hci52MUIN",
-            "RmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "bWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIF",
-            "QXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "UgZhbmNob3ISNgoXbGlua19kZWZhdWx0X3Byb3BlcnRpZXMYCSABKAhSFWxp",
+            "bmtEZWZhdWx0UHJvcGVydGllcyLJAQoVRmVlZGJhY2tVcGRhdGVNZXNzYWdl",
+            "Eg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5h",
+            "bWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVIL",
+            "ZGVzY3JpcHRpb24SSwoQdmlzaWJpbGl0eV9zY29wZRgFIAEoDjIWLmFyLnYx",
+            "LlZpc2liaWxpdHlTY29wZUIIukgFggECEAFSD3Zpc2liaWxpdHlTY29wZSLO",
+            "AQoURmVlZGJhY2tDbG9uZU1lc3NhZ2USHwoLb3JpZ2luYWxfaWQYASABKAlS",
+            "Cm9yaWdpbmFsSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJ",
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhJLChB2",
+            "aXNpYmlsaXR5X3Njb3BlGAUgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3Bl",
+            "Qgi6SAWCAQIQAVIPdmlzaWJpbGl0eVNjb3BlKq4JCgxGZWVkYmFja1R5cGUS",
+            "HQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklFRBAAEh4KGkZFRURCQUNLX1RZ",
+            "UEVfVEFSR0VUX0dIT1NUEAoSIgoeRkVFREJBQ0tfVFlQRV9UQVJHRVRfSElH",
+            "SExJR0hUEAsSHQoZRkVFREJBQ0tfVFlQRV9TTkFQX0dVSURFUxAMEisKJ0ZF",
+            "RURCQUNLX1RZUEVfQ09OVEFDVF9TVVJGQUNFX0hJR0hMSUdIVBANEiAKHEZF",
+            "RURCQUNLX1RZUEVfVE9MRVJBTkNFX1pPTkUQDhIfChtGRUVEQkFDS19UWVBF",
+            "X0VYUExPREVEX1ZJRVcQDxIgChxGRUVEQkFDS19UWVBFX1BBUlRfSElHSExJ",
+            "R0hUEB4SIAocRkVFREJBQ0tfVFlQRV9UT09MX0hJR0hMSUdIVBAfEiYKIkZF",
+            "RURCQUNLX1RZUEVfQ09OU1VNQUJMRV9JTkRJQ0FUT1IQIBIdChlGRUVEQkFD",
+            "S19UWVBFX0lOU1RSVUNUSU9OEDISGwoXRkVFREJBQ0tfVFlQRV9DSEVDS0xJ",
+            "U1QQMxIgChxGRUVEQkFDS19UWVBFX1BST0dSRVNTX1BBTkVMEDQSIgoeRkVF",
+            "REJBQ0tfVFlQRV9ERVBFTkRFTkNZX0dSQVBIEDUSHwobRkVFREJBQ0tfVFlQ",
+            "RV9USU1FX0VTVElNQVRFEDYSFwoTRkVFREJBQ0tfVFlQRV9SVUxFUhBGEiAK",
+            "HEZFRURCQUNLX1RZUEVfUE9TRV9WQUxJREFUT1IQRxIlCiFGRUVEQkFDS19U",
+            "WVBFX1ZJU0lPTl9DT05GSVJNQVRJT04QSBIlCiFGRUVEQkFDS19UWVBFX1RP",
+            "UlFVRV9DT05GSVJNQVRJT04QSRIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BB",
+            "VEgQWhIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxBbEiIKHkZF",
+            "RURCQUNLX1RZUEVfUk9CT1RfU0lMSE9VRVRURRBcEiMKH0ZFRURCQUNLX1RZ",
+            "UEVfUk9CT1RfSU5URU5UX0NPTkUQXRIoCiRGRUVEQkFDS19UWVBFX1JPQk9U",
+            "X09DQ1VQQU5DWV9WT0xVTUUQXhIeChpGRUVEQkFDS19UWVBFX1JPQk9UX1NU",
+            "QVRVUxBfEh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQYBIfChtGRUVE",
+            "QkFDS19UWVBFX0hBTkRPVkVSX1pPTkUQeBIpCiVGRUVEQkFDS19UWVBFX1NZ",
+            "TkNIUk9OSVpBVElPTl9CQVJSSUVSEHkSJwojRkVFREJBQ0tfVFlQRV9TSEFS",
+            "RURfVEFTS19JTkRJQ0FUT1IQehIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX0FU",
+            "VEVOVElPThB7EhoKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRDIARIXChJGRUVE",
+            "QkFDS19UWVBFX0lDT04QyQESHAoXRkVFREJBQ0tfVFlQRV9ISUdITElHSFQQ",
+            "ygESFwoSRkVFREJBQ0tfVFlQRV9aT05FEMsBEh0KGEZFRURCQUNLX1RZUEVf",
+            "UExBWV9TT1VORBDMASq9AQoPVmlzaWJpbGl0eVNjb3BlEiAKHFZJU0lCSUxJ",
+            "VFlfU0NPUEVfVU5TUEVDSUZJRUQQABIbChdWSVNJQklMSVRZX1NDT1BFX0FM",
+            "V0FZUxABEiEKHVZJU0lCSUxJVFlfU0NPUEVfTE9XX0dVSURBTkNFEAISJAog",
+            "VklTSUJJTElUWV9TQ09QRV9NRURJVU1fR1VJREFOQ0UQAxIiCh5WSVNJQklM",
+            "SVRZX1NDT1BFX0ZVTExfR1VJREFOQ0UQBEKJAQoJY29tLmFyLnYxQg1GZWVk",
+            "YmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxW",
+            "MeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackType), typeof(global::Messages.AR.V1.VisibilityScope), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessage), global::Messages.AR.V1.FeedbackMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "VisibilityScope", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackMessages), global::Messages.AR.V1.FeedbackMessages.Parser, new[]{ "Feedbacks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "VisibilityScope", "RobotPropertyId", "Anchor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackAddMessage), global::Messages.AR.V1.FeedbackAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "VisibilityScope", "RobotPropertyId", "Anchor", "LinkDefaultProperties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackUpdateMessage), global::Messages.AR.V1.FeedbackUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "VisibilityScope" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FeedbackCloneMessage), global::Messages.AR.V1.FeedbackCloneMessage.Parser, new[]{ "OriginalId", "Name", "Icon", "Description", "VisibilityScope" }, null, null, null, null)
           }));
@@ -87,37 +102,174 @@ namespace Messages.AR.V1 {
 
   }
   #region Enums
+  /// <summary>
+  ///
+  ///TODO:
+  ///These types of feedback might not be possible to auto-generate without additional information
+  ///FEEDBACK_TYPE_SNAP_GUIDES
+  ///FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
+  ///FEEDBACK_TYPE_TOLERANCE_ZONE
+  ///FEEDBACK_TYPE_POSE_VALIDATOR
+  ///Hence we might have to either skip them or figure out whether it is possible.
+  ///
+  ///Potentially add this in the future:
+  ///enum FeedbackGenerationMode {
+  ///FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
+  ///
+  ///&#x2F;/ Level 1: auto-generatable from existing model
+  ///FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
+  ///
+  ///&#x2F;/ Level 2: auto-generatable with lightweight semantic hints
+  ///FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
+  ///
+  ///&#x2F;/ Level 3: requires CAD feature analysis / not first version
+  ///FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
+  ///}
+  ///Examples can be seen below:
+  ///Feedback type               Recommended mode
+  ///Target ghost                ALWAYS_AUTO
+  ///Taget highlight             ALWAYS_AUTO
+  ///Part highlight              ALWAYS_AUTO
+  ///Tool highlight              ALWAYS_AUTO
+  ///Instruction card            ALWAYS_AUTO
+  ///Checklist                   ALWAYS_AUTO
+  ///Overview/progress panel     ALWAYS_AUTO
+  ///Exploded view               ALWAYS_AUTO
+  ///Robot path                  ALWAYS_AUTO
+  ///Robot silhouette            ALWAYS_AUTO
+  ///message / icon / sound      ALWAYS_AUTO
+  ///Snap guides                 AUTO_IF_SUPPORTED
+  ///Tolerance zone              AUTO_IF_SUPPORTED
+  ///Pose validator              AUTO_IF_SUPPORTED
+  ///Contact surface highlight   AUTO_IF_SUPPORTED
+  ///Torque confirmation         AUTO_IF_SUPPORTED
+  ///Vision confirmation         AUTO_IF_SUPPORTED
+  ///Custom image overlay        MANUAL_ONLY
+  ///Custom training video       MANUAL_ONLY
+  /// </summary>
   public enum FeedbackType {
     [pbr::OriginalName("FEEDBACK_TYPE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_HIGHLIGHT")] TaskHighlight = 10,
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_PART_HIGHLIGHT")] TaskPartHighlight = 11,
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT")] TaskToolHighlight = 12,
     /// <summary>
-    /// Provides an overview of all current tasks
+    /// Shows a ghost/translucent preview of the final placement.
     /// </summary>
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_OVERVIEW")] TaskOverview = 13,
+    [pbr::OriginalName("FEEDBACK_TYPE_TARGET_GHOST")] TargetGhost = 10,
     /// <summary>
-    /// Provide instructions of the current task
+    /// Highlights the precise interaction point (e.g. hole, connector).
     /// </summary>
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_INSTRUCTION")] TaskInstruction = 14,
+    [pbr::OriginalName("FEEDBACK_TYPE_TARGET_HIGHLIGHT")] TargetHighlight = 11,
     /// <summary>
-    /// Tailored towards tasks that are more checklist oriented than assembly
+    /// Shows insertion direction, rotation, or alignment guides.
     /// </summary>
-    [pbr::OriginalName("FEEDBACK_TYPE_TASK_CHECKLIST")] TaskChecklist = 15,
+    [pbr::OriginalName("FEEDBACK_TYPE_SNAP_GUIDES")] SnapGuides = 12,
     /// <summary>
-    /// Show the expected path of the robot
+    /// Highlights surfaces that should meet or align.
     /// </summary>
-    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_PATH")] RobotPath = 50,
-    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_SILHOUETTE")] RobotSilhouette = 51,
-    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 52,
-    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_STATUS")] RobotStatus = 53,
-    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_LIGHT")] RobotLight = 54,
-    [pbr::OriginalName("FEEDBACK_TYPE_MESSAGE")] Message = 100,
-    [pbr::OriginalName("FEEDBACK_TYPE_ICON")] Icon = 101,
-    [pbr::OriginalName("FEEDBACK_TYPE_ZONE")] Zone = 102,
-    [pbr::OriginalName("FEEDBACK_TYPE_PLAY_SOUND")] PlaySound = 103,
-    [pbr::OriginalName("FEEDBACK_TYPE_RULER")] Ruler = 104,
-    [pbr::OriginalName("FEEDBACK_TYPE_HIGHLIGHT")] Highlight = 105,
+    [pbr::OriginalName("FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT")] ContactSurfaceHighlight = 13,
+    /// <summary>
+    /// Shows acceptable placement zone / tolerance envelope.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_TOLERANCE_ZONE")] ToleranceZone = 14,
+    /// <summary>
+    /// Shows an exploded assembly view (optionally animated).
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_EXPLODED_VIEW")] ExplodedView = 15,
+    /// <summary>
+    /// Highlights the part used in the current task.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_PART_HIGHLIGHT")] PartHighlight = 30,
+    /// <summary>
+    /// Highlights the tool used in the current task.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_TOOL_HIGHLIGHT")] ToolHighlight = 31,
+    /// <summary>
+    /// Shows consumable level or remaining amount.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_CONSUMABLE_INDICATOR")] ConsumableIndicator = 32,
+    /// <summary>
+    /// Shows the current task instruction.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_INSTRUCTION")] Instruction = 50,
+    /// <summary>
+    /// Shows current/previous/upcoming tasks.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_CHECKLIST")] Checklist = 51,
+    /// <summary>
+    /// Shows broader process/sequence overview.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_PROGRESS_PANEL")] ProgressPanel = 52,
+    /// <summary>
+    /// Shows task dependencies or branching structure.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_DEPENDENCY_GRAPH")] DependencyGraph = 53,
+    /// <summary>
+    /// Shows task/sequence timing estimates.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_TIME_ESTIMATE")] TimeEstimate = 54,
+    /// <summary>
+    /// Shows measurement guides (length, gap, angle, etc.).
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_RULER")] Ruler = 70,
+    /// <summary>
+    /// Shows pose difference compared to target.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_POSE_VALIDATOR")] PoseValidator = 71,
+    /// <summary>
+    /// Shows camera/system-based verification result.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_VISION_CONFIRMATION")] VisionConfirmation = 72,
+    /// <summary>
+    /// Shows measured torque compared to expected.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_TORQUE_CONFIRMATION")] TorqueConfirmation = 73,
+    /// <summary>
+    /// Shows the expected robot motion path.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_PATH")] RobotPath = 90,
+    /// <summary>
+    /// Shows robot waypoints.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_WAYPOINTS")] RobotWaypoints = 91,
+    /// <summary>
+    /// Shows a future robot pose/silhouette.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_SILHOUETTE")] RobotSilhouette = 92,
+    /// <summary>
+    /// Shows robot intended interaction zone.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_INTENT_CONE")] RobotIntentCone = 93,
+    /// <summary>
+    /// Shows robot occupied future volume.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME")] RobotOccupancyVolume = 94,
+    /// <summary>
+    /// Shows robot status.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_STATUS")] RobotStatus = 95,
+    /// <summary>
+    /// Physical robot light state.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_LIGHT")] RobotLight = 96,
+    /// <summary>
+    /// Shows human-robot handover zone.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_HANDOVER_ZONE")] HandoverZone = 120,
+    /// <summary>
+    /// Shows synchronization barrier / waiting state.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER")] SynchronizationBarrier = 121,
+    /// <summary>
+    /// Shows task shared between actors.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_SHARED_TASK_INDICATOR")] SharedTaskIndicator = 122,
+    /// <summary>
+    /// Shows robot attention/focus object.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_TYPE_ROBOT_ATTENTION")] RobotAttention = 123,
+    [pbr::OriginalName("FEEDBACK_TYPE_MESSAGE")] Message = 200,
+    [pbr::OriginalName("FEEDBACK_TYPE_ICON")] Icon = 201,
+    [pbr::OriginalName("FEEDBACK_TYPE_HIGHLIGHT")] Highlight = 202,
+    [pbr::OriginalName("FEEDBACK_TYPE_ZONE")] Zone = 203,
+    [pbr::OriginalName("FEEDBACK_TYPE_PLAY_SOUND")] PlaySound = 204,
   }
 
   public enum VisibilityScope {
@@ -781,6 +933,7 @@ namespace Messages.AR.V1 {
       visibilityScope_ = other.visibilityScope_;
       robotPropertyId_ = other.robotPropertyId_;
       anchor_ = other.anchor_ != null ? other.anchor_.Clone() : null;
+      linkDefaultProperties_ = other.linkDefaultProperties_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -880,15 +1033,24 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "anchor" field.</summary>
     public const int AnchorFieldNumber = 8;
     private global::Messages.Geometry.V1.Anchor anchor_;
-    /// <summary>
-    /// TODO: at something like: bool mirror_configuration_colors = 9;
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Geometry.V1.Anchor Anchor {
       get { return anchor_; }
       set {
         anchor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "link_default_properties" field.</summary>
+    public const int LinkDefaultPropertiesFieldNumber = 9;
+    private bool linkDefaultProperties_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool LinkDefaultProperties {
+      get { return linkDefaultProperties_; }
+      set {
+        linkDefaultProperties_ = value;
       }
     }
 
@@ -915,6 +1077,7 @@ namespace Messages.AR.V1 {
       if (VisibilityScope != other.VisibilityScope) return false;
       if (RobotPropertyId != other.RobotPropertyId) return false;
       if (!object.Equals(Anchor, other.Anchor)) return false;
+      if (LinkDefaultProperties != other.LinkDefaultProperties) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -930,6 +1093,7 @@ namespace Messages.AR.V1 {
       if (VisibilityScope != global::Messages.AR.V1.VisibilityScope.Unspecified) hash ^= VisibilityScope.GetHashCode();
       if (RobotPropertyId.Length != 0) hash ^= RobotPropertyId.GetHashCode();
       if (anchor_ != null) hash ^= Anchor.GetHashCode();
+      if (LinkDefaultProperties != false) hash ^= LinkDefaultProperties.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -980,6 +1144,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(66);
         output.WriteMessage(Anchor);
       }
+      if (LinkDefaultProperties != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(LinkDefaultProperties);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1022,6 +1190,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(66);
         output.WriteMessage(Anchor);
       }
+      if (LinkDefaultProperties != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(LinkDefaultProperties);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1055,6 +1227,9 @@ namespace Messages.AR.V1 {
       }
       if (anchor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Anchor);
+      }
+      if (LinkDefaultProperties != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1094,6 +1269,9 @@ namespace Messages.AR.V1 {
           Anchor = new global::Messages.Geometry.V1.Anchor();
         }
         Anchor.MergeFrom(other.Anchor);
+      }
+      if (other.LinkDefaultProperties != false) {
+        LinkDefaultProperties = other.LinkDefaultProperties;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1149,6 +1327,10 @@ namespace Messages.AR.V1 {
             input.ReadMessage(Anchor);
             break;
           }
+          case 72: {
+            LinkDefaultProperties = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -1201,6 +1383,10 @@ namespace Messages.AR.V1 {
               Anchor = new global::Messages.Geometry.V1.Anchor();
             }
             input.ReadMessage(Anchor);
+            break;
+          }
+          case 72: {
+            LinkDefaultProperties = input.ReadBool();
             break;
           }
         }

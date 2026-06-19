@@ -15,14 +15,20 @@ class FeedbackGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     FEEDBACK_GROUP_UNSPECIFIED: _ClassVar[FeedbackGroup]
     FEEDBACK_GROUP_GENERAL: _ClassVar[FeedbackGroup]
+    FEEDBACK_GROUP_SPATIAL: _ClassVar[FeedbackGroup]
+    FEEDBACK_GROUP_RESOURCE: _ClassVar[FeedbackGroup]
+    FEEDBACK_GROUP_PROCESS: _ClassVar[FeedbackGroup]
+    FEEDBACK_GROUP_VALIDATION: _ClassVar[FeedbackGroup]
     FEEDBACK_GROUP_ROBOT: _ClassVar[FeedbackGroup]
-    FEEDBACK_GROUP_TASK: _ClassVar[FeedbackGroup]
-    FEEDBACK_GROUP_ENVIRONMENT: _ClassVar[FeedbackGroup]
+    FEEDBACK_GROUP_COLLABORATION: _ClassVar[FeedbackGroup]
 FEEDBACK_GROUP_UNSPECIFIED: FeedbackGroup
 FEEDBACK_GROUP_GENERAL: FeedbackGroup
+FEEDBACK_GROUP_SPATIAL: FeedbackGroup
+FEEDBACK_GROUP_RESOURCE: FeedbackGroup
+FEEDBACK_GROUP_PROCESS: FeedbackGroup
+FEEDBACK_GROUP_VALIDATION: FeedbackGroup
 FEEDBACK_GROUP_ROBOT: FeedbackGroup
-FEEDBACK_GROUP_TASK: FeedbackGroup
-FEEDBACK_GROUP_ENVIRONMENT: FeedbackGroup
+FEEDBACK_GROUP_COLLABORATION: FeedbackGroup
 
 class FeedbackInfoMessage(_message.Message):
     __slots__ = ("name", "icon", "description", "type", "group", "require_agent", "require_frame", "consumers_required", "consumers_optional", "required_handlers", "emits", "disabled")

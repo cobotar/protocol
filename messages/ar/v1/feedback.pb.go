@@ -24,70 +24,192 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// TODO:
+// These types of feedback might not be possible to auto-generate without additional information
+// FEEDBACK_TYPE_SNAP_GUIDES
+// FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
+// FEEDBACK_TYPE_TOLERANCE_ZONE
+// FEEDBACK_TYPE_POSE_VALIDATOR
+// Hence we might have to either skip them or figure out whether it is possible.
+//
+// Potentially add this in the future:
+// enum FeedbackGenerationMode {
+// FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
+//
+// // Level 1: auto-generatable from existing model
+// FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
+//
+// // Level 2: auto-generatable with lightweight semantic hints
+// FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
+//
+// // Level 3: requires CAD feature analysis / not first version
+// FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
+// }
+// Examples can be seen below:
+// Feedback type               Recommended mode
+// Target ghost                ALWAYS_AUTO
+// Taget highlight             ALWAYS_AUTO
+// Part highlight              ALWAYS_AUTO
+// Tool highlight              ALWAYS_AUTO
+// Instruction card            ALWAYS_AUTO
+// Checklist                   ALWAYS_AUTO
+// Overview/progress panel     ALWAYS_AUTO
+// Exploded view               ALWAYS_AUTO
+// Robot path                  ALWAYS_AUTO
+// Robot silhouette            ALWAYS_AUTO
+// message / icon / sound      ALWAYS_AUTO
+// Snap guides                 AUTO_IF_SUPPORTED
+// Tolerance zone              AUTO_IF_SUPPORTED
+// Pose validator              AUTO_IF_SUPPORTED
+// Contact surface highlight   AUTO_IF_SUPPORTED
+// Torque confirmation         AUTO_IF_SUPPORTED
+// Vision confirmation         AUTO_IF_SUPPORTED
+// Custom image overlay        MANUAL_ONLY
+// Custom training video       MANUAL_ONLY
 type FeedbackType int32
 
 const (
-	FeedbackType_FEEDBACK_TYPE_UNSPECIFIED         FeedbackType = 0
-	FeedbackType_FEEDBACK_TYPE_TASK_HIGHLIGHT      FeedbackType = 10
-	FeedbackType_FEEDBACK_TYPE_TASK_PART_HIGHLIGHT FeedbackType = 11
-	FeedbackType_FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT FeedbackType = 12
-	FeedbackType_FEEDBACK_TYPE_TASK_OVERVIEW       FeedbackType = 13 // Provides an overview of all current tasks
-	FeedbackType_FEEDBACK_TYPE_TASK_INSTRUCTION    FeedbackType = 14 // Provide instructions of the current task
-	FeedbackType_FEEDBACK_TYPE_TASK_CHECKLIST      FeedbackType = 15 // Tailored towards tasks that are more checklist oriented than assembly
-	FeedbackType_FEEDBACK_TYPE_ROBOT_PATH          FeedbackType = 50 // Show the expected path of the robot
-	FeedbackType_FEEDBACK_TYPE_ROBOT_SILHOUETTE    FeedbackType = 51
-	FeedbackType_FEEDBACK_TYPE_ROBOT_WAYPOINTS     FeedbackType = 52
-	FeedbackType_FEEDBACK_TYPE_ROBOT_STATUS        FeedbackType = 53
-	FeedbackType_FEEDBACK_TYPE_ROBOT_LIGHT         FeedbackType = 54
-	FeedbackType_FEEDBACK_TYPE_MESSAGE             FeedbackType = 100
-	FeedbackType_FEEDBACK_TYPE_ICON                FeedbackType = 101
-	FeedbackType_FEEDBACK_TYPE_ZONE                FeedbackType = 102
-	FeedbackType_FEEDBACK_TYPE_PLAY_SOUND          FeedbackType = 103
-	FeedbackType_FEEDBACK_TYPE_RULER               FeedbackType = 104
-	FeedbackType_FEEDBACK_TYPE_HIGHLIGHT           FeedbackType = 105
+	FeedbackType_FEEDBACK_TYPE_UNSPECIFIED FeedbackType = 0
+	// Shows a ghost/translucent preview of the final placement.
+	FeedbackType_FEEDBACK_TYPE_TARGET_GHOST FeedbackType = 10
+	// Highlights the precise interaction point (e.g. hole, connector).
+	FeedbackType_FEEDBACK_TYPE_TARGET_HIGHLIGHT FeedbackType = 11
+	// Shows insertion direction, rotation, or alignment guides.
+	FeedbackType_FEEDBACK_TYPE_SNAP_GUIDES FeedbackType = 12
+	// Highlights surfaces that should meet or align.
+	FeedbackType_FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT FeedbackType = 13
+	// Shows acceptable placement zone / tolerance envelope.
+	FeedbackType_FEEDBACK_TYPE_TOLERANCE_ZONE FeedbackType = 14
+	// Shows an exploded assembly view (optionally animated).
+	FeedbackType_FEEDBACK_TYPE_EXPLODED_VIEW FeedbackType = 15
+	// Highlights the part used in the current task.
+	FeedbackType_FEEDBACK_TYPE_PART_HIGHLIGHT FeedbackType = 30
+	// Highlights the tool used in the current task.
+	FeedbackType_FEEDBACK_TYPE_TOOL_HIGHLIGHT FeedbackType = 31
+	// Shows consumable level or remaining amount.
+	FeedbackType_FEEDBACK_TYPE_CONSUMABLE_INDICATOR FeedbackType = 32
+	// Shows the current task instruction.
+	FeedbackType_FEEDBACK_TYPE_INSTRUCTION FeedbackType = 50
+	// Shows current/previous/upcoming tasks.
+	FeedbackType_FEEDBACK_TYPE_CHECKLIST FeedbackType = 51
+	// Shows broader process/sequence overview.
+	FeedbackType_FEEDBACK_TYPE_PROGRESS_PANEL FeedbackType = 52
+	// Shows task dependencies or branching structure.
+	FeedbackType_FEEDBACK_TYPE_DEPENDENCY_GRAPH FeedbackType = 53
+	// Shows task/sequence timing estimates.
+	FeedbackType_FEEDBACK_TYPE_TIME_ESTIMATE FeedbackType = 54
+	// Shows measurement guides (length, gap, angle, etc.).
+	FeedbackType_FEEDBACK_TYPE_RULER FeedbackType = 70
+	// Shows pose difference compared to target.
+	FeedbackType_FEEDBACK_TYPE_POSE_VALIDATOR FeedbackType = 71
+	// Shows camera/system-based verification result.
+	FeedbackType_FEEDBACK_TYPE_VISION_CONFIRMATION FeedbackType = 72
+	// Shows measured torque compared to expected.
+	FeedbackType_FEEDBACK_TYPE_TORQUE_CONFIRMATION FeedbackType = 73
+	// Shows the expected robot motion path.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_PATH FeedbackType = 90
+	// Shows robot waypoints.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_WAYPOINTS FeedbackType = 91
+	// Shows a future robot pose/silhouette.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_SILHOUETTE FeedbackType = 92
+	// Shows robot intended interaction zone.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_INTENT_CONE FeedbackType = 93
+	// Shows robot occupied future volume.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME FeedbackType = 94
+	// Shows robot status.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_STATUS FeedbackType = 95
+	// Physical robot light state.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_LIGHT FeedbackType = 96
+	// Shows human-robot handover zone.
+	FeedbackType_FEEDBACK_TYPE_HANDOVER_ZONE FeedbackType = 120
+	// Shows synchronization barrier / waiting state.
+	FeedbackType_FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER FeedbackType = 121
+	// Shows task shared between actors.
+	FeedbackType_FEEDBACK_TYPE_SHARED_TASK_INDICATOR FeedbackType = 122
+	// Shows robot attention/focus object.
+	FeedbackType_FEEDBACK_TYPE_ROBOT_ATTENTION FeedbackType = 123
+	FeedbackType_FEEDBACK_TYPE_MESSAGE         FeedbackType = 200
+	FeedbackType_FEEDBACK_TYPE_ICON            FeedbackType = 201
+	FeedbackType_FEEDBACK_TYPE_HIGHLIGHT       FeedbackType = 202
+	FeedbackType_FEEDBACK_TYPE_ZONE            FeedbackType = 203
+	FeedbackType_FEEDBACK_TYPE_PLAY_SOUND      FeedbackType = 204
 )
 
 // Enum value maps for FeedbackType.
 var (
 	FeedbackType_name = map[int32]string{
 		0:   "FEEDBACK_TYPE_UNSPECIFIED",
-		10:  "FEEDBACK_TYPE_TASK_HIGHLIGHT",
-		11:  "FEEDBACK_TYPE_TASK_PART_HIGHLIGHT",
-		12:  "FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT",
-		13:  "FEEDBACK_TYPE_TASK_OVERVIEW",
-		14:  "FEEDBACK_TYPE_TASK_INSTRUCTION",
-		15:  "FEEDBACK_TYPE_TASK_CHECKLIST",
-		50:  "FEEDBACK_TYPE_ROBOT_PATH",
-		51:  "FEEDBACK_TYPE_ROBOT_SILHOUETTE",
-		52:  "FEEDBACK_TYPE_ROBOT_WAYPOINTS",
-		53:  "FEEDBACK_TYPE_ROBOT_STATUS",
-		54:  "FEEDBACK_TYPE_ROBOT_LIGHT",
-		100: "FEEDBACK_TYPE_MESSAGE",
-		101: "FEEDBACK_TYPE_ICON",
-		102: "FEEDBACK_TYPE_ZONE",
-		103: "FEEDBACK_TYPE_PLAY_SOUND",
-		104: "FEEDBACK_TYPE_RULER",
-		105: "FEEDBACK_TYPE_HIGHLIGHT",
+		10:  "FEEDBACK_TYPE_TARGET_GHOST",
+		11:  "FEEDBACK_TYPE_TARGET_HIGHLIGHT",
+		12:  "FEEDBACK_TYPE_SNAP_GUIDES",
+		13:  "FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT",
+		14:  "FEEDBACK_TYPE_TOLERANCE_ZONE",
+		15:  "FEEDBACK_TYPE_EXPLODED_VIEW",
+		30:  "FEEDBACK_TYPE_PART_HIGHLIGHT",
+		31:  "FEEDBACK_TYPE_TOOL_HIGHLIGHT",
+		32:  "FEEDBACK_TYPE_CONSUMABLE_INDICATOR",
+		50:  "FEEDBACK_TYPE_INSTRUCTION",
+		51:  "FEEDBACK_TYPE_CHECKLIST",
+		52:  "FEEDBACK_TYPE_PROGRESS_PANEL",
+		53:  "FEEDBACK_TYPE_DEPENDENCY_GRAPH",
+		54:  "FEEDBACK_TYPE_TIME_ESTIMATE",
+		70:  "FEEDBACK_TYPE_RULER",
+		71:  "FEEDBACK_TYPE_POSE_VALIDATOR",
+		72:  "FEEDBACK_TYPE_VISION_CONFIRMATION",
+		73:  "FEEDBACK_TYPE_TORQUE_CONFIRMATION",
+		90:  "FEEDBACK_TYPE_ROBOT_PATH",
+		91:  "FEEDBACK_TYPE_ROBOT_WAYPOINTS",
+		92:  "FEEDBACK_TYPE_ROBOT_SILHOUETTE",
+		93:  "FEEDBACK_TYPE_ROBOT_INTENT_CONE",
+		94:  "FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME",
+		95:  "FEEDBACK_TYPE_ROBOT_STATUS",
+		96:  "FEEDBACK_TYPE_ROBOT_LIGHT",
+		120: "FEEDBACK_TYPE_HANDOVER_ZONE",
+		121: "FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER",
+		122: "FEEDBACK_TYPE_SHARED_TASK_INDICATOR",
+		123: "FEEDBACK_TYPE_ROBOT_ATTENTION",
+		200: "FEEDBACK_TYPE_MESSAGE",
+		201: "FEEDBACK_TYPE_ICON",
+		202: "FEEDBACK_TYPE_HIGHLIGHT",
+		203: "FEEDBACK_TYPE_ZONE",
+		204: "FEEDBACK_TYPE_PLAY_SOUND",
 	}
 	FeedbackType_value = map[string]int32{
-		"FEEDBACK_TYPE_UNSPECIFIED":         0,
-		"FEEDBACK_TYPE_TASK_HIGHLIGHT":      10,
-		"FEEDBACK_TYPE_TASK_PART_HIGHLIGHT": 11,
-		"FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT": 12,
-		"FEEDBACK_TYPE_TASK_OVERVIEW":       13,
-		"FEEDBACK_TYPE_TASK_INSTRUCTION":    14,
-		"FEEDBACK_TYPE_TASK_CHECKLIST":      15,
-		"FEEDBACK_TYPE_ROBOT_PATH":          50,
-		"FEEDBACK_TYPE_ROBOT_SILHOUETTE":    51,
-		"FEEDBACK_TYPE_ROBOT_WAYPOINTS":     52,
-		"FEEDBACK_TYPE_ROBOT_STATUS":        53,
-		"FEEDBACK_TYPE_ROBOT_LIGHT":         54,
-		"FEEDBACK_TYPE_MESSAGE":             100,
-		"FEEDBACK_TYPE_ICON":                101,
-		"FEEDBACK_TYPE_ZONE":                102,
-		"FEEDBACK_TYPE_PLAY_SOUND":          103,
-		"FEEDBACK_TYPE_RULER":               104,
-		"FEEDBACK_TYPE_HIGHLIGHT":           105,
+		"FEEDBACK_TYPE_UNSPECIFIED":               0,
+		"FEEDBACK_TYPE_TARGET_GHOST":              10,
+		"FEEDBACK_TYPE_TARGET_HIGHLIGHT":          11,
+		"FEEDBACK_TYPE_SNAP_GUIDES":               12,
+		"FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT": 13,
+		"FEEDBACK_TYPE_TOLERANCE_ZONE":            14,
+		"FEEDBACK_TYPE_EXPLODED_VIEW":             15,
+		"FEEDBACK_TYPE_PART_HIGHLIGHT":            30,
+		"FEEDBACK_TYPE_TOOL_HIGHLIGHT":            31,
+		"FEEDBACK_TYPE_CONSUMABLE_INDICATOR":      32,
+		"FEEDBACK_TYPE_INSTRUCTION":               50,
+		"FEEDBACK_TYPE_CHECKLIST":                 51,
+		"FEEDBACK_TYPE_PROGRESS_PANEL":            52,
+		"FEEDBACK_TYPE_DEPENDENCY_GRAPH":          53,
+		"FEEDBACK_TYPE_TIME_ESTIMATE":             54,
+		"FEEDBACK_TYPE_RULER":                     70,
+		"FEEDBACK_TYPE_POSE_VALIDATOR":            71,
+		"FEEDBACK_TYPE_VISION_CONFIRMATION":       72,
+		"FEEDBACK_TYPE_TORQUE_CONFIRMATION":       73,
+		"FEEDBACK_TYPE_ROBOT_PATH":                90,
+		"FEEDBACK_TYPE_ROBOT_WAYPOINTS":           91,
+		"FEEDBACK_TYPE_ROBOT_SILHOUETTE":          92,
+		"FEEDBACK_TYPE_ROBOT_INTENT_CONE":         93,
+		"FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME":    94,
+		"FEEDBACK_TYPE_ROBOT_STATUS":              95,
+		"FEEDBACK_TYPE_ROBOT_LIGHT":               96,
+		"FEEDBACK_TYPE_HANDOVER_ZONE":             120,
+		"FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER":   121,
+		"FEEDBACK_TYPE_SHARED_TASK_INDICATOR":     122,
+		"FEEDBACK_TYPE_ROBOT_ATTENTION":           123,
+		"FEEDBACK_TYPE_MESSAGE":                   200,
+		"FEEDBACK_TYPE_ICON":                      201,
+		"FEEDBACK_TYPE_HIGHLIGHT":                 202,
+		"FEEDBACK_TYPE_ZONE":                      203,
+		"FEEDBACK_TYPE_PLAY_SOUND":                204,
 	}
 )
 
@@ -310,17 +432,18 @@ func (x *FeedbackMessages) GetFeedbacks() []*FeedbackMessage {
 }
 
 type FeedbackAddMessage struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	ConfigId        string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	RobotPropertyId string                 `protobuf:"bytes,7,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
-	Anchor          *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`                                            // TODO: at something like: bool mirror_configuration_colors = 9;
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId              string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                  FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	VisibilityScope       VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
+	RobotPropertyId       string                 `protobuf:"bytes,7,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
+	Anchor                *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	LinkDefaultProperties bool                   `protobuf:"varint,9,opt,name=link_default_properties,json=linkDefaultProperties,proto3" json:"link_default_properties,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *FeedbackAddMessage) Reset() {
@@ -407,6 +530,13 @@ func (x *FeedbackAddMessage) GetAnchor() *v1.Anchor {
 		return x.Anchor
 	}
 	return nil
+}
+
+func (x *FeedbackAddMessage) GetLinkDefaultProperties() bool {
+	if x != nil {
+		return x.LinkDefaultProperties
+	}
+	return false
 }
 
 type FeedbackUpdateMessage struct {
@@ -575,7 +705,7 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12&\n" +
 	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xed\x02\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xa5\x03\n" +
 	"\x12FeedbackAddMessage\x12&\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -584,7 +714,8 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
 	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x125\n" +
 	"\x11robot_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12+\n" +
-	"\x06anchor\x18\b \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\"\xc9\x01\n" +
+	"\x06anchor\x18\b \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x126\n" +
+	"\x17link_default_properties\x18\t \x01(\bR\x15linkDefaultProperties\"\xc9\x01\n" +
 	"\x15FeedbackUpdateMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -597,27 +728,44 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12K\n" +
-	"\x10visibility_scope\x18\x05 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope*\xc7\x04\n" +
+	"\x10visibility_scope\x18\x05 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope*\xae\t\n" +
 	"\fFeedbackType\x12\x1d\n" +
-	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
-	"\x1cFEEDBACK_TYPE_TASK_HIGHLIGHT\x10\n" +
-	"\x12%\n" +
-	"!FEEDBACK_TYPE_TASK_PART_HIGHLIGHT\x10\v\x12%\n" +
-	"!FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT\x10\f\x12\x1f\n" +
-	"\x1bFEEDBACK_TYPE_TASK_OVERVIEW\x10\r\x12\"\n" +
-	"\x1eFEEDBACK_TYPE_TASK_INSTRUCTION\x10\x0e\x12 \n" +
-	"\x1cFEEDBACK_TYPE_TASK_CHECKLIST\x10\x0f\x12\x1c\n" +
-	"\x18FEEDBACK_TYPE_ROBOT_PATH\x102\x12\"\n" +
-	"\x1eFEEDBACK_TYPE_ROBOT_SILHOUETTE\x103\x12!\n" +
-	"\x1dFEEDBACK_TYPE_ROBOT_WAYPOINTS\x104\x12\x1e\n" +
-	"\x1aFEEDBACK_TYPE_ROBOT_STATUS\x105\x12\x1d\n" +
-	"\x19FEEDBACK_TYPE_ROBOT_LIGHT\x106\x12\x19\n" +
-	"\x15FEEDBACK_TYPE_MESSAGE\x10d\x12\x16\n" +
-	"\x12FEEDBACK_TYPE_ICON\x10e\x12\x16\n" +
-	"\x12FEEDBACK_TYPE_ZONE\x10f\x12\x1c\n" +
-	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10g\x12\x17\n" +
-	"\x13FEEDBACK_TYPE_RULER\x10h\x12\x1b\n" +
-	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10i*\xbd\x01\n" +
+	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
+	"\x1aFEEDBACK_TYPE_TARGET_GHOST\x10\n" +
+	"\x12\"\n" +
+	"\x1eFEEDBACK_TYPE_TARGET_HIGHLIGHT\x10\v\x12\x1d\n" +
+	"\x19FEEDBACK_TYPE_SNAP_GUIDES\x10\f\x12+\n" +
+	"'FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT\x10\r\x12 \n" +
+	"\x1cFEEDBACK_TYPE_TOLERANCE_ZONE\x10\x0e\x12\x1f\n" +
+	"\x1bFEEDBACK_TYPE_EXPLODED_VIEW\x10\x0f\x12 \n" +
+	"\x1cFEEDBACK_TYPE_PART_HIGHLIGHT\x10\x1e\x12 \n" +
+	"\x1cFEEDBACK_TYPE_TOOL_HIGHLIGHT\x10\x1f\x12&\n" +
+	"\"FEEDBACK_TYPE_CONSUMABLE_INDICATOR\x10 \x12\x1d\n" +
+	"\x19FEEDBACK_TYPE_INSTRUCTION\x102\x12\x1b\n" +
+	"\x17FEEDBACK_TYPE_CHECKLIST\x103\x12 \n" +
+	"\x1cFEEDBACK_TYPE_PROGRESS_PANEL\x104\x12\"\n" +
+	"\x1eFEEDBACK_TYPE_DEPENDENCY_GRAPH\x105\x12\x1f\n" +
+	"\x1bFEEDBACK_TYPE_TIME_ESTIMATE\x106\x12\x17\n" +
+	"\x13FEEDBACK_TYPE_RULER\x10F\x12 \n" +
+	"\x1cFEEDBACK_TYPE_POSE_VALIDATOR\x10G\x12%\n" +
+	"!FEEDBACK_TYPE_VISION_CONFIRMATION\x10H\x12%\n" +
+	"!FEEDBACK_TYPE_TORQUE_CONFIRMATION\x10I\x12\x1c\n" +
+	"\x18FEEDBACK_TYPE_ROBOT_PATH\x10Z\x12!\n" +
+	"\x1dFEEDBACK_TYPE_ROBOT_WAYPOINTS\x10[\x12\"\n" +
+	"\x1eFEEDBACK_TYPE_ROBOT_SILHOUETTE\x10\\\x12#\n" +
+	"\x1fFEEDBACK_TYPE_ROBOT_INTENT_CONE\x10]\x12(\n" +
+	"$FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME\x10^\x12\x1e\n" +
+	"\x1aFEEDBACK_TYPE_ROBOT_STATUS\x10_\x12\x1d\n" +
+	"\x19FEEDBACK_TYPE_ROBOT_LIGHT\x10`\x12\x1f\n" +
+	"\x1bFEEDBACK_TYPE_HANDOVER_ZONE\x10x\x12)\n" +
+	"%FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER\x10y\x12'\n" +
+	"#FEEDBACK_TYPE_SHARED_TASK_INDICATOR\x10z\x12!\n" +
+	"\x1dFEEDBACK_TYPE_ROBOT_ATTENTION\x10{\x12\x1a\n" +
+	"\x15FEEDBACK_TYPE_MESSAGE\x10\xc8\x01\x12\x17\n" +
+	"\x12FEEDBACK_TYPE_ICON\x10\xc9\x01\x12\x1c\n" +
+	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10\xca\x01\x12\x17\n" +
+	"\x12FEEDBACK_TYPE_ZONE\x10\xcb\x01\x12\x1d\n" +
+	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10\xcc\x01*\xbd\x01\n" +
 	"\x0fVisibilityScope\x12 \n" +
 	"\x1cVISIBILITY_SCOPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17VISIBILITY_SCOPE_ALWAYS\x10\x01\x12!\n" +

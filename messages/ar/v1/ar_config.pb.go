@@ -23,6 +23,116 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
+//
+// The primary type can be used by the backend or authoring UI to create the most
+// relevant default properties, feedback elements, and visual styling tokens for
+// a newly created AR configuration.
+//
+// It is intentionally a high-level category rather than a complete list of all
+// feedback types. A configuration may still contain any combination of feedback,
+// actions, properties, and input slots.
+type ARConfigPrimaryType int32
+
+const (
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED ARConfigPrimaryType = 0
+	// General-purpose AR configuration with only basic defaults.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_GENERAL ARConfigPrimaryType = 1
+	// Step-by-step AR guidance for assembly tasks.
+	// Typical defaults: instruction panel, target ghost, part/tool highlights,
+	// checklist, current/completed task colors.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE ARConfigPrimaryType = 2
+	// Procedure/checklist-oriented guidance such as startup, shutdown,
+	// maintenance, cleaning, or recovery procedures.
+	// Typical defaults: checklist panel, confirmation controls, warning/success
+	// colors, compact status indicators.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST ARConfigPrimaryType = 3
+	// Robot-awareness configuration focused on communicating robot intent.
+	// Typical defaults: robot path color, robot silhouette color, robot status,
+	// robot warning/occupancy styling.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE ARConfigPrimaryType = 4
+	// Human-robot collaboration configuration focused on shared tasks,
+	// handovers, synchronization, and actor assignments.
+	// Typical defaults: operator color, robot color, shared task color, handover
+	// zone styling, synchronization indicators.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE ARConfigPrimaryType = 5
+	// Validation/inspection-oriented configuration focused on confirming whether
+	// work was completed correctly.
+	// Typical defaults: validation panel, ruler/measurement styling, vision
+	// confirmation indicators, warning/error/success colors.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION ARConfigPrimaryType = 6
+	// Overview/dashboard-style configuration for process status, task queues,
+	// assignments, and runtime control.
+	// Typical defaults: overview panel, progress indicators, task status colors,
+	// reassignment and completion controls.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW ARConfigPrimaryType = 7
+	// Training/onboarding configuration with stronger guidance, explanations,
+	// examples, and optional help content.
+	// Typical defaults: larger instruction panels, help icons, tutorial prompts,
+	// slower animations, and extra confirmation feedback.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE ARConfigPrimaryType = 8
+	// Safety-focused configuration used to communicate hazards, restricted zones,
+	// required approvals, or critical warnings.
+	// Typical defaults: warning/error colors, safety zones, alert sounds, approval
+	// prompts, and high-visibility icons.
+	ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE ARConfigPrimaryType = 9
+)
+
+// Enum value maps for ARConfigPrimaryType.
+var (
+	ARConfigPrimaryType_name = map[int32]string{
+		0: "AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED",
+		1: "AR_CONFIG_PRIMARY_TYPE_GENERAL",
+		2: "AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE",
+		3: "AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST",
+		4: "AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE",
+		5: "AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE",
+		6: "AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION",
+		7: "AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW",
+		8: "AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE",
+		9: "AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE",
+	}
+	ARConfigPrimaryType_value = map[string]int32{
+		"AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED":            0,
+		"AR_CONFIG_PRIMARY_TYPE_GENERAL":                1,
+		"AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE":      2,
+		"AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST":    3,
+		"AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE":         4,
+		"AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE": 5,
+		"AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION":  6,
+		"AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW":       7,
+		"AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE":      8,
+		"AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE":        9,
+	}
+)
+
+func (x ARConfigPrimaryType) Enum() *ARConfigPrimaryType {
+	p := new(ARConfigPrimaryType)
+	*p = x
+	return p
+}
+
+func (x ARConfigPrimaryType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ARConfigPrimaryType) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_ar_config_proto_enumTypes[0].Descriptor()
+}
+
+func (ARConfigPrimaryType) Type() protoreflect.EnumType {
+	return &file_ar_v1_ar_config_proto_enumTypes[0]
+}
+
+func (x ARConfigPrimaryType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ARConfigPrimaryType.Descriptor instead.
+func (ARConfigPrimaryType) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{0}
+}
+
 type ARConfigInfoMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
@@ -145,8 +255,9 @@ type ARConfigMessage struct {
 	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	ArDisappearDistance int64                  `protobuf:"varint,5,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	InputSlots          []*ARInputSlotMessage  `protobuf:"bytes,10,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                              // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
+	PrimaryType         ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"` // Main purpose used to seed default properties and feedback presets.
+	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`      // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	InputSlots          []*ARInputSlotMessage  `protobuf:"bytes,7,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                                    // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -207,6 +318,13 @@ func (x *ARConfigMessage) GetDescription() string {
 		return x.Description
 	}
 	return ""
+}
+
+func (x *ARConfigMessage) GetPrimaryType() ARConfigPrimaryType {
+	if x != nil {
+		return x.PrimaryType
+	}
+	return ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED
 }
 
 func (x *ARConfigMessage) GetArDisappearDistance() int64 {
@@ -278,19 +396,30 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xfd\x01\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xc6\x02\n" +
 	"\x0fARConfigMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
-	"\x15ar_disappear_distance\x18\x05 \x01(\x03B\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12G\n" +
+	"\fprimary_type\x18\x05 \x01(\x0e2\x1a.ar.v1.ARConfigPrimaryTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vprimaryType\x12>\n" +
+	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
 	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12:\n" +
-	"\vinput_slots\x18\n" +
-	" \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
+	"\vinput_slots\x18\a \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
 	"inputSlots\"@\n" +
 	"\x10ARConfigMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05itemsB\x89\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05items*\xd6\x03\n" +
+	"\x13ARConfigPrimaryType\x12&\n" +
+	"\"AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED\x10\x00\x12\"\n" +
+	"\x1eAR_CONFIG_PRIMARY_TYPE_GENERAL\x10\x01\x12,\n" +
+	"(AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE\x10\x02\x12.\n" +
+	"*AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST\x10\x03\x12)\n" +
+	"%AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE\x10\x04\x121\n" +
+	"-AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE\x10\x05\x120\n" +
+	",AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION\x10\x06\x12+\n" +
+	"'AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW\x10\a\x12,\n" +
+	"(AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE\x10\b\x12*\n" +
+	"&AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE\x10\tB\x89\x01\n" +
 	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -305,23 +434,26 @@ func file_ar_v1_ar_config_proto_rawDescGZIP() []byte {
 	return file_ar_v1_ar_config_proto_rawDescData
 }
 
+var file_ar_v1_ar_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_ar_config_proto_goTypes = []any{
-	(*ARConfigInfoMessage)(nil),  // 0: ar.v1.ARConfigInfoMessage
-	(*ARConfigInfoMessages)(nil), // 1: ar.v1.ARConfigInfoMessages
-	(*ARConfigMessage)(nil),      // 2: ar.v1.ARConfigMessage
-	(*ARConfigMessages)(nil),     // 3: ar.v1.ARConfigMessages
-	(*ARInputSlotMessage)(nil),   // 4: ar.v1.ARInputSlotMessage
+	(ARConfigPrimaryType)(0),     // 0: ar.v1.ARConfigPrimaryType
+	(*ARConfigInfoMessage)(nil),  // 1: ar.v1.ARConfigInfoMessage
+	(*ARConfigInfoMessages)(nil), // 2: ar.v1.ARConfigInfoMessages
+	(*ARConfigMessage)(nil),      // 3: ar.v1.ARConfigMessage
+	(*ARConfigMessages)(nil),     // 4: ar.v1.ARConfigMessages
+	(*ARInputSlotMessage)(nil),   // 5: ar.v1.ARInputSlotMessage
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
-	0, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
-	4, // 1: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
-	2, // 2: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	1, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
+	0, // 1: ar.v1.ARConfigMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
+	5, // 2: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
+	3, // 3: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -335,13 +467,14 @@ func file_ar_v1_ar_config_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_ar_config_proto_rawDesc), len(file_ar_v1_ar_config_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ar_v1_ar_config_proto_goTypes,
 		DependencyIndexes: file_ar_v1_ar_config_proto_depIdxs,
+		EnumInfos:         file_ar_v1_ar_config_proto_enumTypes,
 		MessageInfos:      file_ar_v1_ar_config_proto_msgTypes,
 	}.Build()
 	File_ar_v1_ar_config_proto = out.File

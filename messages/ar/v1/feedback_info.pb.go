@@ -27,10 +27,20 @@ type FeedbackGroup int32
 
 const (
 	FeedbackGroup_FEEDBACK_GROUP_UNSPECIFIED FeedbackGroup = 0
-	FeedbackGroup_FEEDBACK_GROUP_GENERAL     FeedbackGroup = 1
-	FeedbackGroup_FEEDBACK_GROUP_ROBOT       FeedbackGroup = 2
-	FeedbackGroup_FEEDBACK_GROUP_TASK        FeedbackGroup = 3
-	FeedbackGroup_FEEDBACK_GROUP_ENVIRONMENT FeedbackGroup = 4
+	// Generic UI and feedback elements not tied to a specific semantic domain.
+	FeedbackGroup_FEEDBACK_GROUP_GENERAL FeedbackGroup = 1
+	// Spatial guidance and task-localized visualizations.
+	FeedbackGroup_FEEDBACK_GROUP_SPATIAL FeedbackGroup = 2
+	// Resource guidance (parts, tools, consumables, assets).
+	FeedbackGroup_FEEDBACK_GROUP_RESOURCE FeedbackGroup = 3
+	// Process flow, task lists, instructions, dependencies, and status.
+	FeedbackGroup_FEEDBACK_GROUP_PROCESS FeedbackGroup = 4
+	// Validation and verification guidance.
+	FeedbackGroup_FEEDBACK_GROUP_VALIDATION FeedbackGroup = 5
+	// Robot awareness and robot intent visualizations.
+	FeedbackGroup_FEEDBACK_GROUP_ROBOT FeedbackGroup = 6
+	// Human-robot collaboration semantics.
+	FeedbackGroup_FEEDBACK_GROUP_COLLABORATION FeedbackGroup = 7
 )
 
 // Enum value maps for FeedbackGroup.
@@ -38,16 +48,22 @@ var (
 	FeedbackGroup_name = map[int32]string{
 		0: "FEEDBACK_GROUP_UNSPECIFIED",
 		1: "FEEDBACK_GROUP_GENERAL",
-		2: "FEEDBACK_GROUP_ROBOT",
-		3: "FEEDBACK_GROUP_TASK",
-		4: "FEEDBACK_GROUP_ENVIRONMENT",
+		2: "FEEDBACK_GROUP_SPATIAL",
+		3: "FEEDBACK_GROUP_RESOURCE",
+		4: "FEEDBACK_GROUP_PROCESS",
+		5: "FEEDBACK_GROUP_VALIDATION",
+		6: "FEEDBACK_GROUP_ROBOT",
+		7: "FEEDBACK_GROUP_COLLABORATION",
 	}
 	FeedbackGroup_value = map[string]int32{
-		"FEEDBACK_GROUP_UNSPECIFIED": 0,
-		"FEEDBACK_GROUP_GENERAL":     1,
-		"FEEDBACK_GROUP_ROBOT":       2,
-		"FEEDBACK_GROUP_TASK":        3,
-		"FEEDBACK_GROUP_ENVIRONMENT": 4,
+		"FEEDBACK_GROUP_UNSPECIFIED":   0,
+		"FEEDBACK_GROUP_GENERAL":       1,
+		"FEEDBACK_GROUP_SPATIAL":       2,
+		"FEEDBACK_GROUP_RESOURCE":      3,
+		"FEEDBACK_GROUP_PROCESS":       4,
+		"FEEDBACK_GROUP_VALIDATION":    5,
+		"FEEDBACK_GROUP_ROBOT":         6,
+		"FEEDBACK_GROUP_COLLABORATION": 7,
 	}
 )
 
@@ -274,13 +290,16 @@ const file_ar_v1_feedback_info_proto_rawDesc = "" +
 	"\x05emits\x18\f \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\x1a\n" +
 	"\bdisabled\x18\r \x01(\bR\bdisabled\"H\n" +
 	"\x14FeedbackInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FeedbackInfoMessageR\x05infos*\x9e\x01\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FeedbackInfoMessageR\x05infos*\xfb\x01\n" +
 	"\rFeedbackGroup\x12\x1e\n" +
 	"\x1aFEEDBACK_GROUP_UNSPECIFIED\x10\x00\x12\x1a\n" +
-	"\x16FEEDBACK_GROUP_GENERAL\x10\x01\x12\x18\n" +
-	"\x14FEEDBACK_GROUP_ROBOT\x10\x02\x12\x17\n" +
-	"\x13FEEDBACK_GROUP_TASK\x10\x03\x12\x1e\n" +
-	"\x1aFEEDBACK_GROUP_ENVIRONMENT\x10\x04B\x8d\x01\n" +
+	"\x16FEEDBACK_GROUP_GENERAL\x10\x01\x12\x1a\n" +
+	"\x16FEEDBACK_GROUP_SPATIAL\x10\x02\x12\x1b\n" +
+	"\x17FEEDBACK_GROUP_RESOURCE\x10\x03\x12\x1a\n" +
+	"\x16FEEDBACK_GROUP_PROCESS\x10\x04\x12\x1d\n" +
+	"\x19FEEDBACK_GROUP_VALIDATION\x10\x05\x12\x18\n" +
+	"\x14FEEDBACK_GROUP_ROBOT\x10\x06\x12 \n" +
+	"\x1cFEEDBACK_GROUP_COLLABORATION\x10\aB\x8d\x01\n" +
 	"\tcom.ar.v1B\x11FeedbackInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

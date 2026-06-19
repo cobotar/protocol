@@ -9,50 +9,50 @@ option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 /*
-  TODO:
-  These types of feedback might not be possible to auto-generate without additional information
-    FEEDBACK_TYPE_SNAP_GUIDES
-    FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
-    FEEDBACK_TYPE_TOLERANCE_ZONE
-    FEEDBACK_TYPE_POSE_VALIDATOR
-  Hence we might have to either skip them or figure out whether it is possible.
+   TODO:
+   These types of feedback might not be possible to auto-generate without additional information
+     FEEDBACK_TYPE_SNAP_GUIDES
+     FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
+     FEEDBACK_TYPE_TOLERANCE_ZONE
+     FEEDBACK_TYPE_POSE_VALIDATOR
+   Hence we might have to either skip them or figure out whether it is possible.
 
-  Potentially add this in the future:
-  enum FeedbackGenerationMode {
-    FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
+   Potentially add this in the future:
+   enum FeedbackGenerationMode {
+     FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
 
-    // Level 1: auto-generatable from existing model
-    FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
+     // Level 1: auto-generatable from existing model
+     FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
 
-    // Level 2: auto-generatable with lightweight semantic hints
-    FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
+     // Level 2: auto-generatable with lightweight semantic hints
+     FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
 
-    // Level 3: requires CAD feature analysis / not first version
-    FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
-  }
-  Examples can be seen below:
-  Feedback type               Recommended mode
-  Target ghost                ALWAYS_AUTO
-  Taget highlight             ALWAYS_AUTO
-  Part highlight              ALWAYS_AUTO
-  Tool highlight              ALWAYS_AUTO
-  Instruction card            ALWAYS_AUTO
-  Checklist                   ALWAYS_AUTO
-  Overview/progress panel     ALWAYS_AUTO
-  Exploded view               ALWAYS_AUTO
-  Robot path                  ALWAYS_AUTO
-  Robot silhouette            ALWAYS_AUTO
-  message / icon / sound      ALWAYS_AUTO
-  Snap guides                 AUTO_IF_SUPPORTED
-  Tolerance zone              AUTO_IF_SUPPORTED
-  Pose validator              AUTO_IF_SUPPORTED
-  Contact surface highlight   AUTO_IF_SUPPORTED
-  Torque confirmation         AUTO_IF_SUPPORTED
-  Vision confirmation         AUTO_IF_SUPPORTED
-  Custom image overlay        MANUAL_ONLY
-  Custom training video       MANUAL_ONLY
+     // Level 3: requires CAD feature analysis / not first version
+     FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
+   }
+   Examples can be seen below:
+   Feedback type               Recommended mode
+   Target ghost                ALWAYS_AUTO
+   Taget highlight             ALWAYS_AUTO
+   Part highlight              ALWAYS_AUTO
+   Tool highlight              ALWAYS_AUTO
+   Instruction card            ALWAYS_AUTO
+   Checklist                   ALWAYS_AUTO
+   Overview/progress panel     ALWAYS_AUTO
+   Exploded view               ALWAYS_AUTO
+   Robot path                  ALWAYS_AUTO
+   Robot silhouette            ALWAYS_AUTO
+   message / icon / sound      ALWAYS_AUTO
+   Snap guides                 AUTO_IF_SUPPORTED
+   Tolerance zone              AUTO_IF_SUPPORTED
+   Pose validator              AUTO_IF_SUPPORTED
+   Contact surface highlight   AUTO_IF_SUPPORTED
+   Torque confirmation         AUTO_IF_SUPPORTED
+   Vision confirmation         AUTO_IF_SUPPORTED
+   Custom image overlay        MANUAL_ONLY
+   Custom training video       MANUAL_ONLY
 
- */
+*/
 enum FeedbackType {
   FEEDBACK_TYPE_UNSPECIFIED = 0;
 

@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback.proto.
  */
 export const file_ar_v1_feedback: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi4wEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARI6ChB2aXNpYmlsaXR5X3Njb3BlGAYgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3BlQgi6SAWCAQIQARIcCgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEASI9ChBGZWVkYmFja01lc3NhZ2VzEikKCWZlZWRiYWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZSKaAgoSRmVlZGJhY2tBZGRNZXNzYWdlEhwKCWNvbmZpZ19pZBgBIAEoCUIJukgGcgSQ8QQBEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARI6ChB2aXNpYmlsaXR5X3Njb3BlGAYgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3BlQgi6SAWCAQIQARIkChFyb2JvdF9wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBEiMKBmFuY2hvchgIIAEoCzITLmdlb21ldHJ5LnYxLkFuY2hvciKbAQoVRmVlZGJhY2tVcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjoKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABIpgBChRGZWVkYmFja0Nsb25lTWVzc2FnZRITCgtvcmlnaW5hbF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSOgoQdmlzaWJpbGl0eV9zY29wZRgFIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAEqxwQKDEZlZWRiYWNrVHlwZRIdChlGRUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASIAocRkVFREJBQ0tfVFlQRV9UQVNLX0hJR0hMSUdIVBAKEiUKIUZFRURCQUNLX1RZUEVfVEFTS19QQVJUX0hJR0hMSUdIVBALEiUKIUZFRURCQUNLX1RZUEVfVEFTS19UT09MX0hJR0hMSUdIVBAMEh8KG0ZFRURCQUNLX1RZUEVfVEFTS19PVkVSVklFVxANEiIKHkZFRURCQUNLX1RZUEVfVEFTS19JTlNUUlVDVElPThAOEiAKHEZFRURCQUNLX1RZUEVfVEFTS19DSEVDS0xJU1QQDxIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQMhIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQMxIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxA0Eh4KGkZFRURCQUNLX1RZUEVfUk9CT1RfU1RBVFVTEDUSHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBA2EhkKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRBkEhYKEkZFRURCQUNLX1RZUEVfSUNPThBlEhYKEkZFRURCQUNLX1RZUEVfWk9ORRBmEhwKGEZFRURCQUNLX1RZUEVfUExBWV9TT1VORBBnEhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQaBIbChdGRUVEQkFDS19UWVBFX0hJR0hMSUdIVBBpKr0BCg9WaXNpYmlsaXR5U2NvcGUSIAocVklTSUJJTElUWV9TQ09QRV9VTlNQRUNJRklFRBAAEhsKF1ZJU0lCSUxJVFlfU0NPUEVfQUxXQVlTEAESIQodVklTSUJJTElUWV9TQ09QRV9MT1dfR1VJREFOQ0UQAhIkCiBWSVNJQklMSVRZX1NDT1BFX01FRElVTV9HVUlEQU5DRRADEiIKHlZJU0lCSUxJVFlfU0NPUEVfRlVMTF9HVUlEQU5DRRAEQokBCgljb20uYXIudjFCDUZlZWRiYWNrUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi4wEKD0ZlZWRiYWNrTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARI6ChB2aXNpYmlsaXR5X3Njb3BlGAYgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3BlQgi6SAWCAQIQARIcCgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEASI9ChBGZWVkYmFja01lc3NhZ2VzEikKCWZlZWRiYWNrcxgBIAMoCzIWLmFyLnYxLkZlZWRiYWNrTWVzc2FnZSK7AgoSRmVlZGJhY2tBZGRNZXNzYWdlEhwKCWNvbmZpZ19pZBgBIAEoCUIJukgGcgSQ8QQBEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARI6ChB2aXNpYmlsaXR5X3Njb3BlGAYgASgOMhYuYXIudjEuVmlzaWJpbGl0eVNjb3BlQgi6SAWCAQIQARIkChFyb2JvdF9wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBEiMKBmFuY2hvchgIIAEoCzITLmdlb21ldHJ5LnYxLkFuY2hvchIfChdsaW5rX2RlZmF1bHRfcHJvcGVydGllcxgJIAEoCCKbAQoVRmVlZGJhY2tVcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjoKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABIpgBChRGZWVkYmFja0Nsb25lTWVzc2FnZRITCgtvcmlnaW5hbF9pZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSOgoQdmlzaWJpbGl0eV9zY29wZRgFIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAEqrgkKDEZlZWRiYWNrVHlwZRIdChlGRUVEQkFDS19UWVBFX1VOU1BFQ0lGSUVEEAASHgoaRkVFREJBQ0tfVFlQRV9UQVJHRVRfR0hPU1QQChIiCh5GRUVEQkFDS19UWVBFX1RBUkdFVF9ISUdITElHSFQQCxIdChlGRUVEQkFDS19UWVBFX1NOQVBfR1VJREVTEAwSKwonRkVFREJBQ0tfVFlQRV9DT05UQUNUX1NVUkZBQ0VfSElHSExJR0hUEA0SIAocRkVFREJBQ0tfVFlQRV9UT0xFUkFOQ0VfWk9ORRAOEh8KG0ZFRURCQUNLX1RZUEVfRVhQTE9ERURfVklFVxAPEiAKHEZFRURCQUNLX1RZUEVfUEFSVF9ISUdITElHSFQQHhIgChxGRUVEQkFDS19UWVBFX1RPT0xfSElHSExJR0hUEB8SJgoiRkVFREJBQ0tfVFlQRV9DT05TVU1BQkxFX0lORElDQVRPUhAgEh0KGUZFRURCQUNLX1RZUEVfSU5TVFJVQ1RJT04QMhIbChdGRUVEQkFDS19UWVBFX0NIRUNLTElTVBAzEiAKHEZFRURCQUNLX1RZUEVfUFJPR1JFU1NfUEFORUwQNBIiCh5GRUVEQkFDS19UWVBFX0RFUEVOREVOQ1lfR1JBUEgQNRIfChtGRUVEQkFDS19UWVBFX1RJTUVfRVNUSU1BVEUQNhIXChNGRUVEQkFDS19UWVBFX1JVTEVSEEYSIAocRkVFREJBQ0tfVFlQRV9QT1NFX1ZBTElEQVRPUhBHEiUKIUZFRURCQUNLX1RZUEVfVklTSU9OX0NPTkZJUk1BVElPThBIEiUKIUZFRURCQUNLX1RZUEVfVE9SUVVFX0NPTkZJUk1BVElPThBJEhwKGEZFRURCQUNLX1RZUEVfUk9CT1RfUEFUSBBaEiEKHUZFRURCQUNLX1RZUEVfUk9CT1RfV0FZUE9JTlRTEFsSIgoeRkVFREJBQ0tfVFlQRV9ST0JPVF9TSUxIT1VFVFRFEFwSIwofRkVFREJBQ0tfVFlQRV9ST0JPVF9JTlRFTlRfQ09ORRBdEigKJEZFRURCQUNLX1RZUEVfUk9CT1RfT0NDVVBBTkNZX1ZPTFVNRRBeEh4KGkZFRURCQUNLX1RZUEVfUk9CT1RfU1RBVFVTEF8SHQoZRkVFREJBQ0tfVFlQRV9ST0JPVF9MSUdIVBBgEh8KG0ZFRURCQUNLX1RZUEVfSEFORE9WRVJfWk9ORRB4EikKJUZFRURCQUNLX1RZUEVfU1lOQ0hST05JWkFUSU9OX0JBUlJJRVIQeRInCiNGRUVEQkFDS19UWVBFX1NIQVJFRF9UQVNLX0lORElDQVRPUhB6EiEKHUZFRURCQUNLX1RZUEVfUk9CT1RfQVRURU5USU9OEHsSGgoVRkVFREJBQ0tfVFlQRV9NRVNTQUdFEMgBEhcKEkZFRURCQUNLX1RZUEVfSUNPThDJARIcChdGRUVEQkFDS19UWVBFX0hJR0hMSUdIVBDKARIXChJGRUVEQkFDS19UWVBFX1pPTkUQywESHQoYRkVFREJBQ0tfVFlQRV9QTEFZX1NPVU5EEMwBKr0BCg9WaXNpYmlsaXR5U2NvcGUSIAocVklTSUJJTElUWV9TQ09QRV9VTlNQRUNJRklFRBAAEhsKF1ZJU0lCSUxJVFlfU0NPUEVfQUxXQVlTEAESIQodVklTSUJJTElUWV9TQ09QRV9MT1dfR1VJREFOQ0UQAhIkCiBWSVNJQklMSVRZX1NDT1BFX01FRElVTV9HVUlEQU5DRRADEiIKHlZJU0lCSUxJVFlfU0NPUEVfRlVMTF9HVUlEQU5DRRAEQokBCgljb20uYXIudjFCDUZlZWRiYWNrUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackMessage
@@ -122,11 +122,14 @@ export type FeedbackAddMessage = Message<"ar.v1.FeedbackAddMessage"> & {
   robotPropertyId: string;
 
   /**
-   * TODO: at something like: bool mirror_configuration_colors = 9;
-   *
    * @generated from field: geometry.v1.Anchor anchor = 8;
    */
   anchor?: Anchor;
+
+  /**
+   * @generated from field: bool link_default_properties = 9;
+   */
+  linkDefaultProperties: boolean;
 };
 
 /**
@@ -211,6 +214,51 @@ export const FeedbackCloneMessageSchema: GenMessage<FeedbackCloneMessage> = /*@_
   messageDesc(file_ar_v1_feedback, 4);
 
 /**
+ *
+ * TODO:
+ * These types of feedback might not be possible to auto-generate without additional information
+ * FEEDBACK_TYPE_SNAP_GUIDES
+ * FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
+ * FEEDBACK_TYPE_TOLERANCE_ZONE
+ * FEEDBACK_TYPE_POSE_VALIDATOR
+ * Hence we might have to either skip them or figure out whether it is possible.
+ *
+ * Potentially add this in the future:
+ * enum FeedbackGenerationMode {
+ * FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
+ *
+ * // Level 1: auto-generatable from existing model
+ * FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
+ *
+ * // Level 2: auto-generatable with lightweight semantic hints
+ * FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
+ *
+ * // Level 3: requires CAD feature analysis / not first version
+ * FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
+ * }
+ * Examples can be seen below:
+ * Feedback type               Recommended mode
+ * Target ghost                ALWAYS_AUTO
+ * Taget highlight             ALWAYS_AUTO
+ * Part highlight              ALWAYS_AUTO
+ * Tool highlight              ALWAYS_AUTO
+ * Instruction card            ALWAYS_AUTO
+ * Checklist                   ALWAYS_AUTO
+ * Overview/progress panel     ALWAYS_AUTO
+ * Exploded view               ALWAYS_AUTO
+ * Robot path                  ALWAYS_AUTO
+ * Robot silhouette            ALWAYS_AUTO
+ * message / icon / sound      ALWAYS_AUTO
+ * Snap guides                 AUTO_IF_SUPPORTED
+ * Tolerance zone              AUTO_IF_SUPPORTED
+ * Pose validator              AUTO_IF_SUPPORTED
+ * Contact surface highlight   AUTO_IF_SUPPORTED
+ * Torque confirmation         AUTO_IF_SUPPORTED
+ * Vision confirmation         AUTO_IF_SUPPORTED
+ * Custom image overlay        MANUAL_ONLY
+ * Custom training video       MANUAL_ONLY
+ *
+ *
  * @generated from enum ar.v1.FeedbackType
  */
 export enum FeedbackType {
@@ -220,97 +268,232 @@ export enum FeedbackType {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_TASK_HIGHLIGHT = 10;
-   */
-  TASK_HIGHLIGHT = 10,
-
-  /**
-   * @generated from enum value: FEEDBACK_TYPE_TASK_PART_HIGHLIGHT = 11;
-   */
-  TASK_PART_HIGHLIGHT = 11,
-
-  /**
-   * @generated from enum value: FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT = 12;
-   */
-  TASK_TOOL_HIGHLIGHT = 12,
-
-  /**
-   * Provides an overview of all current tasks
+   * Shows a ghost/translucent preview of the final placement.
    *
-   * @generated from enum value: FEEDBACK_TYPE_TASK_OVERVIEW = 13;
+   * @generated from enum value: FEEDBACK_TYPE_TARGET_GHOST = 10;
    */
-  TASK_OVERVIEW = 13,
+  TARGET_GHOST = 10,
 
   /**
-   * Provide instructions of the current task
+   * Highlights the precise interaction point (e.g. hole, connector).
    *
-   * @generated from enum value: FEEDBACK_TYPE_TASK_INSTRUCTION = 14;
+   * @generated from enum value: FEEDBACK_TYPE_TARGET_HIGHLIGHT = 11;
    */
-  TASK_INSTRUCTION = 14,
+  TARGET_HIGHLIGHT = 11,
 
   /**
-   * Tailored towards tasks that are more checklist oriented than assembly
+   * Shows insertion direction, rotation, or alignment guides.
    *
-   * @generated from enum value: FEEDBACK_TYPE_TASK_CHECKLIST = 15;
+   * @generated from enum value: FEEDBACK_TYPE_SNAP_GUIDES = 12;
    */
-  TASK_CHECKLIST = 15,
+  SNAP_GUIDES = 12,
 
   /**
-   * Show the expected path of the robot
+   * Highlights surfaces that should meet or align.
    *
-   * @generated from enum value: FEEDBACK_TYPE_ROBOT_PATH = 50;
+   * @generated from enum value: FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT = 13;
    */
-  ROBOT_PATH = 50,
+  CONTACT_SURFACE_HIGHLIGHT = 13,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ROBOT_SILHOUETTE = 51;
+   * Shows acceptable placement zone / tolerance envelope.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TOLERANCE_ZONE = 14;
    */
-  ROBOT_SILHOUETTE = 51,
+  TOLERANCE_ZONE = 14,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ROBOT_WAYPOINTS = 52;
+   * Shows an exploded assembly view (optionally animated).
+   *
+   * @generated from enum value: FEEDBACK_TYPE_EXPLODED_VIEW = 15;
    */
-  ROBOT_WAYPOINTS = 52,
+  EXPLODED_VIEW = 15,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ROBOT_STATUS = 53;
+   * Highlights the part used in the current task.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_PART_HIGHLIGHT = 30;
    */
-  ROBOT_STATUS = 53,
+  PART_HIGHLIGHT = 30,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ROBOT_LIGHT = 54;
+   * Highlights the tool used in the current task.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TOOL_HIGHLIGHT = 31;
    */
-  ROBOT_LIGHT = 54,
+  TOOL_HIGHLIGHT = 31,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_MESSAGE = 100;
+   * Shows consumable level or remaining amount.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_CONSUMABLE_INDICATOR = 32;
    */
-  MESSAGE = 100,
+  CONSUMABLE_INDICATOR = 32,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ICON = 101;
+   * Shows the current task instruction.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_INSTRUCTION = 50;
    */
-  ICON = 101,
+  INSTRUCTION = 50,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_ZONE = 102;
+   * Shows current/previous/upcoming tasks.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_CHECKLIST = 51;
    */
-  ZONE = 102,
+  CHECKLIST = 51,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_PLAY_SOUND = 103;
+   * Shows broader process/sequence overview.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_PROGRESS_PANEL = 52;
    */
-  PLAY_SOUND = 103,
+  PROGRESS_PANEL = 52,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_RULER = 104;
+   * Shows task dependencies or branching structure.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_DEPENDENCY_GRAPH = 53;
    */
-  RULER = 104,
+  DEPENDENCY_GRAPH = 53,
 
   /**
-   * @generated from enum value: FEEDBACK_TYPE_HIGHLIGHT = 105;
+   * Shows task/sequence timing estimates.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TIME_ESTIMATE = 54;
    */
-  HIGHLIGHT = 105,
+  TIME_ESTIMATE = 54,
+
+  /**
+   * Shows measurement guides (length, gap, angle, etc.).
+   *
+   * @generated from enum value: FEEDBACK_TYPE_RULER = 70;
+   */
+  RULER = 70,
+
+  /**
+   * Shows pose difference compared to target.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_POSE_VALIDATOR = 71;
+   */
+  POSE_VALIDATOR = 71,
+
+  /**
+   * Shows camera/system-based verification result.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_VISION_CONFIRMATION = 72;
+   */
+  VISION_CONFIRMATION = 72,
+
+  /**
+   * Shows measured torque compared to expected.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_TORQUE_CONFIRMATION = 73;
+   */
+  TORQUE_CONFIRMATION = 73,
+
+  /**
+   * Shows the expected robot motion path.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_PATH = 90;
+   */
+  ROBOT_PATH = 90,
+
+  /**
+   * Shows robot waypoints.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_WAYPOINTS = 91;
+   */
+  ROBOT_WAYPOINTS = 91,
+
+  /**
+   * Shows a future robot pose/silhouette.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_SILHOUETTE = 92;
+   */
+  ROBOT_SILHOUETTE = 92,
+
+  /**
+   * Shows robot intended interaction zone.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_INTENT_CONE = 93;
+   */
+  ROBOT_INTENT_CONE = 93,
+
+  /**
+   * Shows robot occupied future volume.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME = 94;
+   */
+  ROBOT_OCCUPANCY_VOLUME = 94,
+
+  /**
+   * Shows robot status.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_STATUS = 95;
+   */
+  ROBOT_STATUS = 95,
+
+  /**
+   * Physical robot light state.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_LIGHT = 96;
+   */
+  ROBOT_LIGHT = 96,
+
+  /**
+   * Shows human-robot handover zone.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_HANDOVER_ZONE = 120;
+   */
+  HANDOVER_ZONE = 120,
+
+  /**
+   * Shows synchronization barrier / waiting state.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER = 121;
+   */
+  SYNCHRONIZATION_BARRIER = 121,
+
+  /**
+   * Shows task shared between actors.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_SHARED_TASK_INDICATOR = 122;
+   */
+  SHARED_TASK_INDICATOR = 122,
+
+  /**
+   * Shows robot attention/focus object.
+   *
+   * @generated from enum value: FEEDBACK_TYPE_ROBOT_ATTENTION = 123;
+   */
+  ROBOT_ATTENTION = 123,
+
+  /**
+   * @generated from enum value: FEEDBACK_TYPE_MESSAGE = 200;
+   */
+  MESSAGE = 200,
+
+  /**
+   * @generated from enum value: FEEDBACK_TYPE_ICON = 201;
+   */
+  ICON = 201,
+
+  /**
+   * @generated from enum value: FEEDBACK_TYPE_HIGHLIGHT = 202;
+   */
+  HIGHLIGHT = 202,
+
+  /**
+   * @generated from enum value: FEEDBACK_TYPE_ZONE = 203;
+   */
+  ZONE = 203,
+
+  /**
+   * @generated from enum value: FEEDBACK_TYPE_PLAY_SOUND = 204;
+   */
+  PLAY_SOUND = 204,
 }
 
 /**

@@ -58,6 +58,54 @@ class PropertyPermission(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_PERMISSION_FULL: _ClassVar[PropertyPermission]
     PROPERTY_PERMISSION_NONE: _ClassVar[PropertyPermission]
 
+class PropertySemanticRole(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    PROPERTY_SEMANTIC_ROLE_UNSPECIFIED: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_TEXT_SIZE: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_WARNING_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ERROR_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PART_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_TOOL_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ASSET_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PATH_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ZONE_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_WARNING_SOUND: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ERROR_SOUND: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_PULSE_DURATION: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_FADE_DURATION: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED: _ClassVar[PropertySemanticRole]
+    PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS: _ClassVar[PropertySemanticRole]
+
 class PropertyScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     PROPERTY_SCOPE_UNSPECIFIED: _ClassVar[PropertyScope]
@@ -96,12 +144,57 @@ PROPERTY_PERMISSION_BASIC: PropertyPermission
 PROPERTY_PERMISSION_COSMETIC: PropertyPermission
 PROPERTY_PERMISSION_FULL: PropertyPermission
 PROPERTY_PERMISSION_NONE: PropertyPermission
+PROPERTY_SEMANTIC_ROLE_UNSPECIFIED: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_TEXT_SIZE: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_WARNING_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ERROR_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PART_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_TOOL_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ASSET_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PATH_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ZONE_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_WARNING_SOUND: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ERROR_SOUND: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_PULSE_DURATION: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_FADE_DURATION: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED: PropertySemanticRole
+PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS: PropertySemanticRole
 PROPERTY_SCOPE_UNSPECIFIED: PropertyScope
 PROPERTY_SCOPE_ENTITY: PropertyScope
 PROPERTY_SCOPE_RUNTIME: PropertyScope
 
 class PropertyDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "parent_id", "authoring_context_id", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "disable_mirroring", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    __slots__ = ("id", "name", "icon", "description", "type", "parent_id", "authoring_context_id", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -116,7 +209,8 @@ class PropertyDefinition(_message.Message):
     ORDERING_FIELD_NUMBER: _ClassVar[int]
     HIDE_GROUP_FIELD_NUMBER: _ClassVar[int]
     ADVANCED_FIELD_NUMBER: _ClassVar[int]
-    DISABLE_MIRRORING_FIELD_NUMBER: _ClassVar[int]
+    ALLOW_TO_BE_MIRRORED_FIELD_NUMBER: _ClassVar[int]
+    SEMANTIC_ROLE_FIELD_NUMBER: _ClassVar[int]
     NUMBER_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     ENUM_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     VECTOR3_EXTRAS_FIELD_NUMBER: _ClassVar[int]
@@ -137,14 +231,15 @@ class PropertyDefinition(_message.Message):
     ordering: int
     hide_group: bool
     advanced: bool
-    disable_mirroring: bool
+    allow_to_be_mirrored: bool
+    semantic_role: PropertySemanticRole
     number_extras: NumberExtras
     enum_extras: EnumExtras
     vector3_extras: Vector3Extras
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., disable_mirroring: bool = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
 
 class PropertyInstance(_message.Message):
     __slots__ = ("id", "property_definition_id", "scope", "scope_id", "origin", "mirror_property_definition_id", "value")
@@ -309,7 +404,7 @@ class PoseExtras(_message.Message):
     def __init__(self, anchor_editable: bool = ..., pose_editable: bool = ...) -> None: ...
 
 class CreatePropertyMessage(_message.Message):
-    __slots__ = ("parent_id", "authoring_context_id", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "disable_mirroring", "origin", "scope_id", "mirror_property_definition_id", "initial_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    __slots__ = ("parent_id", "authoring_context_id", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "origin", "scope_id", "mirror_property_definition_id", "initial_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     AUTHORING_CONTEXT_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -323,7 +418,8 @@ class CreatePropertyMessage(_message.Message):
     ORDERING_FIELD_NUMBER: _ClassVar[int]
     HIDE_GROUP_FIELD_NUMBER: _ClassVar[int]
     ADVANCED_FIELD_NUMBER: _ClassVar[int]
-    DISABLE_MIRRORING_FIELD_NUMBER: _ClassVar[int]
+    ALLOW_TO_BE_MIRRORED_FIELD_NUMBER: _ClassVar[int]
+    SEMANTIC_ROLE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     SCOPE_ID_FIELD_NUMBER: _ClassVar[int]
     MIRROR_PROPERTY_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -347,7 +443,8 @@ class CreatePropertyMessage(_message.Message):
     ordering: int
     hide_group: bool
     advanced: bool
-    disable_mirroring: bool
+    allow_to_be_mirrored: bool
+    semantic_role: PropertySemanticRole
     origin: PropertyOrigin
     scope_id: str
     mirror_property_definition_id: str
@@ -358,4 +455,4 @@ class CreatePropertyMessage(_message.Message):
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., disable_mirroring: bool = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., scope_id: _Optional[str] = ..., mirror_property_definition_id: _Optional[str] = ..., initial_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., scope_id: _Optional[str] = ..., mirror_property_definition_id: _Optional[str] = ..., initial_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...

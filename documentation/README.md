@@ -113,6 +113,8 @@
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
   
+    - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
+  
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
   
@@ -154,6 +156,7 @@
     - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyPermission](#common-v1-PropertyPermission)
     - [PropertyScope](#common-v1-PropertyScope)
+    - [PropertySemanticRole](#common-v1-PropertySemanticRole)
     - [PropertyType](#common-v1-PropertyType)
   
 - [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
@@ -1747,6 +1750,7 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
 | input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
 
@@ -1770,6 +1774,34 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 
 
  
+
+
+<a name="ar-v1-ARConfigPrimaryType"></a>
+
+### ARConfigPrimaryType
+ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
+
+The primary type can be used by the backend or authoring UI to create the most
+relevant default properties, feedback elements, and visual styling tokens for
+a newly created AR configuration.
+
+It is intentionally a high-level category rather than a complete list of all
+feedback types. A configuration may still contain any combination of feedback,
+actions, properties, and input slots.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED | 0 |  |
+| AR_CONFIG_PRIMARY_TYPE_GENERAL | 1 | General-purpose AR configuration with only basic defaults. |
+| AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE | 2 | Step-by-step AR guidance for assembly tasks. Typical defaults: instruction panel, target ghost, part/tool highlights, checklist, current/completed task colors. |
+| AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST | 3 | Procedure/checklist-oriented guidance such as startup, shutdown, maintenance, cleaning, or recovery procedures. Typical defaults: checklist panel, confirmation controls, warning/success colors, compact status indicators. |
+| AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE | 4 | Robot-awareness configuration focused on communicating robot intent. Typical defaults: robot path color, robot silhouette color, robot status, robot warning/occupancy styling. |
+| AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE | 5 | Human-robot collaboration configuration focused on shared tasks, handovers, synchronization, and actor assignments. Typical defaults: operator color, robot color, shared task color, handover zone styling, synchronization indicators. |
+| AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION | 6 | Validation/inspection-oriented configuration focused on confirming whether work was completed correctly. Typical defaults: validation panel, ruler/measurement styling, vision confirmation indicators, warning/error/success colors. |
+| AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW | 7 | Overview/dashboard-style configuration for process status, task queues, assignments, and runtime control. Typical defaults: overview panel, progress indicators, task status colors, reassignment and completion controls. |
+| AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE | 8 | Training/onboarding configuration with stronger guidance, explanations, examples, and optional help content. Typical defaults: larger instruction panels, help icons, tutorial prompts, slower animations, and extra confirmation feedback. |
+| AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE | 9 | Safety-focused configuration used to communicate hazards, restricted zones, required approvals, or critical warnings. Typical defaults: warning/error colors, safety zones, alert sounds, approval prompts, and high-visibility icons. |
+
 
  
 
@@ -2070,7 +2102,8 @@ Creates a PropertyDefinition and its required template PropertyInstance.
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
 | advanced | [bool](#bool) |  |  |
-| disable_mirroring | [bool](#bool) |  |  |
+| allow_to_be_mirrored | [bool](#bool) |  |  |
+| semantic_role | [PropertySemanticRole](#common-v1-PropertySemanticRole) |  |  |
 | origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  | Template instance |
 | scope_id | [string](#string) |  | Defaults to parent_id when empty. Needed for input-slot scopes. |
 | mirror_property_definition_id | [string](#string) |  |  |
@@ -2210,7 +2243,8 @@ Overall, we have these categories of properties:
 | ordering | [int32](#int32) |  |  |
 | hide_group | [bool](#bool) |  |  |
 | advanced | [bool](#bool) |  |  |
-| disable_mirroring | [bool](#bool) |  | TODO: is this parameter really needed? allowed_origins should already cover this |
+| allow_to_be_mirrored | [bool](#bool) |  |  |
+| semantic_role | [PropertySemanticRole](#common-v1-PropertySemanticRole) |  |  |
 | number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
 | enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
 | vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
@@ -2421,6 +2455,61 @@ For authoring:
 
 
 
+<a name="common-v1-PropertySemanticRole"></a>
+
+### PropertySemanticRole
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_SEMANTIC_ROLE_UNSPECIFIED | 0 |  |
+| PROPERTY_SEMANTIC_ROLE_PANEL_BACKGROUND_COLOR | 1 | Layout / panels |
+| PROPERTY_SEMANTIC_ROLE_PANEL_TEXT_COLOR | 2 |  |
+| PROPERTY_SEMANTIC_ROLE_PANEL_BORDER_COLOR | 3 |  |
+| PROPERTY_SEMANTIC_ROLE_PANEL_OPACITY | 4 |  |
+| PROPERTY_SEMANTIC_ROLE_PANEL_CORNER_RADIUS | 5 |  |
+| PROPERTY_SEMANTIC_ROLE_PRIMARY_TEXT_COLOR | 20 | Typography |
+| PROPERTY_SEMANTIC_ROLE_SECONDARY_TEXT_COLOR | 21 |  |
+| PROPERTY_SEMANTIC_ROLE_TEXT_SIZE | 22 |  |
+| PROPERTY_SEMANTIC_ROLE_TITLE_TEXT_SIZE | 23 |  |
+| PROPERTY_SEMANTIC_ROLE_ACCENT_COLOR | 40 | General state colors |
+| PROPERTY_SEMANTIC_ROLE_SUCCESS_COLOR | 41 |  |
+| PROPERTY_SEMANTIC_ROLE_WARNING_COLOR | 42 |  |
+| PROPERTY_SEMANTIC_ROLE_ERROR_COLOR | 43 |  |
+| PROPERTY_SEMANTIC_ROLE_DISABLED_COLOR | 44 |  |
+| PROPERTY_SEMANTIC_ROLE_CURRENT_TASK_COLOR | 60 | Task state |
+| PROPERTY_SEMANTIC_ROLE_UPCOMING_TASK_COLOR | 61 |  |
+| PROPERTY_SEMANTIC_ROLE_COMPLETED_TASK_COLOR | 62 |  |
+| PROPERTY_SEMANTIC_ROLE_BLOCKED_TASK_COLOR | 63 |  |
+| PROPERTY_SEMANTIC_ROLE_OPTIONAL_TASK_COLOR | 64 |  |
+| PROPERTY_SEMANTIC_ROLE_OPERATOR_COLOR | 80 | Actors |
+| PROPERTY_SEMANTIC_ROLE_ROBOT_COLOR | 81 |  |
+| PROPERTY_SEMANTIC_ROLE_SHARED_TASK_COLOR | 82 |  |
+| PROPERTY_SEMANTIC_ROLE_SUPERVISOR_COLOR | 83 |  |
+| PROPERTY_SEMANTIC_ROLE_PART_COLOR | 100 | Resources |
+| PROPERTY_SEMANTIC_ROLE_TOOL_COLOR | 101 |  |
+| PROPERTY_SEMANTIC_ROLE_ASSET_COLOR | 102 |  |
+| PROPERTY_SEMANTIC_ROLE_CONTAINER_COLOR | 103 |  |
+| PROPERTY_SEMANTIC_ROLE_TARGET_GHOST_COLOR | 120 | Spatial AR visuals |
+| PROPERTY_SEMANTIC_ROLE_TARGET_HIGHLIGHT_COLOR | 121 |  |
+| PROPERTY_SEMANTIC_ROLE_PATH_COLOR | 122 |  |
+| PROPERTY_SEMANTIC_ROLE_ZONE_COLOR | 123 |  |
+| PROPERTY_SEMANTIC_ROLE_ANCHOR_COLOR | 124 |  |
+| PROPERTY_SEMANTIC_ROLE_ROBOT_PATH_COLOR | 140 | Robot intent |
+| PROPERTY_SEMANTIC_ROLE_ROBOT_SILHOUETTE_COLOR | 141 |  |
+| PROPERTY_SEMANTIC_ROLE_ROBOT_INTENT_COLOR | 142 |  |
+| PROPERTY_SEMANTIC_ROLE_ROBOT_OCCUPANCY_COLOR | 143 |  |
+| PROPERTY_SEMANTIC_ROLE_SUCCESS_SOUND | 160 | Audio / haptics / notification defaults |
+| PROPERTY_SEMANTIC_ROLE_WARNING_SOUND | 161 |  |
+| PROPERTY_SEMANTIC_ROLE_ERROR_SOUND | 162 |  |
+| PROPERTY_SEMANTIC_ROLE_NOTIFICATION_ICON | 163 |  |
+| PROPERTY_SEMANTIC_ROLE_PULSE_DURATION | 180 | Timing / animation |
+| PROPERTY_SEMANTIC_ROLE_FADE_DURATION | 181 |  |
+| PROPERTY_SEMANTIC_ROLE_ANIMATION_SPEED | 182 |  |
+| PROPERTY_SEMANTIC_ROLE_HIGHLIGHT_THICKNESS | 183 |  |
+
+
+
 <a name="common-v1-PropertyType"></a>
 
 ### PropertyType
@@ -2562,7 +2651,8 @@ instance owned by the target station or cell.
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
-| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  | TODO: at something like: bool mirror_configuration_colors = 9; |
+| anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
+| link_default_properties | [bool](#bool) |  |  |
 
 
 
@@ -2648,28 +2738,86 @@ instance owned by the target station or cell.
 <a name="ar-v1-FeedbackType"></a>
 
 ### FeedbackType
+TODO:
+These types of feedback might not be possible to auto-generate without additional information
+FEEDBACK_TYPE_SNAP_GUIDES
+FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT
+FEEDBACK_TYPE_TOLERANCE_ZONE
+FEEDBACK_TYPE_POSE_VALIDATOR
+Hence we might have to either skip them or figure out whether it is possible.
 
+Potentially add this in the future:
+enum FeedbackGenerationMode {
+FEEDBACK_GENERATION_MODE_UNSPECIFIED = 0;
+
+// Level 1: auto-generatable from existing model
+FEEDBACK_GENERATION_MODE_ALWAYS_AUTO = 1;
+
+// Level 2: auto-generatable with lightweight semantic hints
+FEEDBACK_GENERATION_MODE_AUTO_IF_SUPPORTED = 2;
+
+// Level 3: requires CAD feature analysis / not first version
+FEEDBACK_GENERATION_MODE_MANUAL_ONLY = 3;
+}
+Examples can be seen below:
+Feedback type               Recommended mode
+Target ghost                ALWAYS_AUTO
+Taget highlight             ALWAYS_AUTO
+Part highlight              ALWAYS_AUTO
+Tool highlight              ALWAYS_AUTO
+Instruction card            ALWAYS_AUTO
+Checklist                   ALWAYS_AUTO
+Overview/progress panel     ALWAYS_AUTO
+Exploded view               ALWAYS_AUTO
+Robot path                  ALWAYS_AUTO
+Robot silhouette            ALWAYS_AUTO
+message / icon / sound      ALWAYS_AUTO
+Snap guides                 AUTO_IF_SUPPORTED
+Tolerance zone              AUTO_IF_SUPPORTED
+Pose validator              AUTO_IF_SUPPORTED
+Contact surface highlight   AUTO_IF_SUPPORTED
+Torque confirmation         AUTO_IF_SUPPORTED
+Vision confirmation         AUTO_IF_SUPPORTED
+Custom image overlay        MANUAL_ONLY
+Custom training video       MANUAL_ONLY
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | FEEDBACK_TYPE_UNSPECIFIED | 0 |  |
-| FEEDBACK_TYPE_TASK_HIGHLIGHT | 10 |  |
-| FEEDBACK_TYPE_TASK_PART_HIGHLIGHT | 11 |  |
-| FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT | 12 |  |
-| FEEDBACK_TYPE_TASK_OVERVIEW | 13 | Provides an overview of all current tasks |
-| FEEDBACK_TYPE_TASK_INSTRUCTION | 14 | Provide instructions of the current task |
-| FEEDBACK_TYPE_TASK_CHECKLIST | 15 | Tailored towards tasks that are more checklist oriented than assembly |
-| FEEDBACK_TYPE_ROBOT_PATH | 50 | Show the expected path of the robot |
-| FEEDBACK_TYPE_ROBOT_SILHOUETTE | 51 |  |
-| FEEDBACK_TYPE_ROBOT_WAYPOINTS | 52 |  |
-| FEEDBACK_TYPE_ROBOT_STATUS | 53 |  |
-| FEEDBACK_TYPE_ROBOT_LIGHT | 54 |  |
-| FEEDBACK_TYPE_MESSAGE | 100 |  |
-| FEEDBACK_TYPE_ICON | 101 |  |
-| FEEDBACK_TYPE_ZONE | 102 |  |
-| FEEDBACK_TYPE_PLAY_SOUND | 103 |  |
-| FEEDBACK_TYPE_RULER | 104 |  |
-| FEEDBACK_TYPE_HIGHLIGHT | 105 |  |
+| FEEDBACK_TYPE_TARGET_GHOST | 10 | Shows a ghost/translucent preview of the final placement. |
+| FEEDBACK_TYPE_TARGET_HIGHLIGHT | 11 | Highlights the precise interaction point (e.g. hole, connector). |
+| FEEDBACK_TYPE_SNAP_GUIDES | 12 | Shows insertion direction, rotation, or alignment guides. |
+| FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT | 13 | Highlights surfaces that should meet or align. |
+| FEEDBACK_TYPE_TOLERANCE_ZONE | 14 | Shows acceptable placement zone / tolerance envelope. |
+| FEEDBACK_TYPE_EXPLODED_VIEW | 15 | Shows an exploded assembly view (optionally animated). |
+| FEEDBACK_TYPE_PART_HIGHLIGHT | 30 | Highlights the part used in the current task. |
+| FEEDBACK_TYPE_TOOL_HIGHLIGHT | 31 | Highlights the tool used in the current task. |
+| FEEDBACK_TYPE_CONSUMABLE_INDICATOR | 32 | Shows consumable level or remaining amount. |
+| FEEDBACK_TYPE_INSTRUCTION | 50 | Shows the current task instruction. |
+| FEEDBACK_TYPE_CHECKLIST | 51 | Shows current/previous/upcoming tasks. |
+| FEEDBACK_TYPE_PROGRESS_PANEL | 52 | Shows broader process/sequence overview. |
+| FEEDBACK_TYPE_DEPENDENCY_GRAPH | 53 | Shows task dependencies or branching structure. |
+| FEEDBACK_TYPE_TIME_ESTIMATE | 54 | Shows task/sequence timing estimates. |
+| FEEDBACK_TYPE_RULER | 70 | Shows measurement guides (length, gap, angle, etc.). |
+| FEEDBACK_TYPE_POSE_VALIDATOR | 71 | Shows pose difference compared to target. |
+| FEEDBACK_TYPE_VISION_CONFIRMATION | 72 | Shows camera/system-based verification result. |
+| FEEDBACK_TYPE_TORQUE_CONFIRMATION | 73 | Shows measured torque compared to expected. |
+| FEEDBACK_TYPE_ROBOT_PATH | 90 | Shows the expected robot motion path. |
+| FEEDBACK_TYPE_ROBOT_WAYPOINTS | 91 | Shows robot waypoints. |
+| FEEDBACK_TYPE_ROBOT_SILHOUETTE | 92 | Shows a future robot pose/silhouette. |
+| FEEDBACK_TYPE_ROBOT_INTENT_CONE | 93 | Shows robot intended interaction zone. |
+| FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME | 94 | Shows robot occupied future volume. |
+| FEEDBACK_TYPE_ROBOT_STATUS | 95 | Shows robot status. |
+| FEEDBACK_TYPE_ROBOT_LIGHT | 96 | Physical robot light state. |
+| FEEDBACK_TYPE_HANDOVER_ZONE | 120 | Shows human-robot handover zone. |
+| FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER | 121 | Shows synchronization barrier / waiting state. |
+| FEEDBACK_TYPE_SHARED_TASK_INDICATOR | 122 | Shows task shared between actors. |
+| FEEDBACK_TYPE_ROBOT_ATTENTION | 123 | Shows robot attention/focus object. |
+| FEEDBACK_TYPE_MESSAGE | 200 |  |
+| FEEDBACK_TYPE_ICON | 201 |  |
+| FEEDBACK_TYPE_HIGHLIGHT | 202 |  |
+| FEEDBACK_TYPE_ZONE | 203 |  |
+| FEEDBACK_TYPE_PLAY_SOUND | 204 |  |
 
 
 
@@ -2753,10 +2901,13 @@ instance owned by the target station or cell.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | FEEDBACK_GROUP_UNSPECIFIED | 0 |  |
-| FEEDBACK_GROUP_GENERAL | 1 |  |
-| FEEDBACK_GROUP_ROBOT | 2 |  |
-| FEEDBACK_GROUP_TASK | 3 |  |
-| FEEDBACK_GROUP_ENVIRONMENT | 4 |  |
+| FEEDBACK_GROUP_GENERAL | 1 | Generic UI and feedback elements not tied to a specific semantic domain. |
+| FEEDBACK_GROUP_SPATIAL | 2 | Spatial guidance and task-localized visualizations. |
+| FEEDBACK_GROUP_RESOURCE | 3 | Resource guidance (parts, tools, consumables, assets). |
+| FEEDBACK_GROUP_PROCESS | 4 | Process flow, task lists, instructions, dependencies, and status. |
+| FEEDBACK_GROUP_VALIDATION | 5 | Validation and verification guidance. |
+| FEEDBACK_GROUP_ROBOT | 6 | Robot awareness and robot intent visualizations. |
+| FEEDBACK_GROUP_COLLABORATION | 7 | Human-robot collaboration semantics. |
 
 
  

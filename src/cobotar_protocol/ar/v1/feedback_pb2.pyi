@@ -13,23 +13,40 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class FeedbackType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     FEEDBACK_TYPE_UNSPECIFIED: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_HIGHLIGHT: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_OVERVIEW: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_INSTRUCTION: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_TASK_CHECKLIST: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TARGET_GHOST: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TARGET_HIGHLIGHT: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_SNAP_GUIDES: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TOLERANCE_ZONE: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_EXPLODED_VIEW: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_PART_HIGHLIGHT: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TOOL_HIGHLIGHT: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_CONSUMABLE_INDICATOR: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_INSTRUCTION: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_CHECKLIST: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_PROGRESS_PANEL: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_DEPENDENCY_GRAPH: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TIME_ESTIMATE: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_RULER: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_POSE_VALIDATOR: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_VISION_CONFIRMATION: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_TORQUE_CONFIRMATION: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_PATH: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_ROBOT_SILHOUETTE: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_WAYPOINTS: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_ROBOT_SILHOUETTE: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_ROBOT_INTENT_CONE: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_STATUS: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ROBOT_LIGHT: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_HANDOVER_ZONE: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_SHARED_TASK_INDICATOR: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_ROBOT_ATTENTION: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_MESSAGE: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ICON: _ClassVar[FeedbackType]
+    FEEDBACK_TYPE_HIGHLIGHT: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_ZONE: _ClassVar[FeedbackType]
     FEEDBACK_TYPE_PLAY_SOUND: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_RULER: _ClassVar[FeedbackType]
-    FEEDBACK_TYPE_HIGHLIGHT: _ClassVar[FeedbackType]
 
 class VisibilityScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -39,23 +56,40 @@ class VisibilityScope(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     VISIBILITY_SCOPE_MEDIUM_GUIDANCE: _ClassVar[VisibilityScope]
     VISIBILITY_SCOPE_FULL_GUIDANCE: _ClassVar[VisibilityScope]
 FEEDBACK_TYPE_UNSPECIFIED: FeedbackType
-FEEDBACK_TYPE_TASK_HIGHLIGHT: FeedbackType
-FEEDBACK_TYPE_TASK_PART_HIGHLIGHT: FeedbackType
-FEEDBACK_TYPE_TASK_TOOL_HIGHLIGHT: FeedbackType
-FEEDBACK_TYPE_TASK_OVERVIEW: FeedbackType
-FEEDBACK_TYPE_TASK_INSTRUCTION: FeedbackType
-FEEDBACK_TYPE_TASK_CHECKLIST: FeedbackType
+FEEDBACK_TYPE_TARGET_GHOST: FeedbackType
+FEEDBACK_TYPE_TARGET_HIGHLIGHT: FeedbackType
+FEEDBACK_TYPE_SNAP_GUIDES: FeedbackType
+FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT: FeedbackType
+FEEDBACK_TYPE_TOLERANCE_ZONE: FeedbackType
+FEEDBACK_TYPE_EXPLODED_VIEW: FeedbackType
+FEEDBACK_TYPE_PART_HIGHLIGHT: FeedbackType
+FEEDBACK_TYPE_TOOL_HIGHLIGHT: FeedbackType
+FEEDBACK_TYPE_CONSUMABLE_INDICATOR: FeedbackType
+FEEDBACK_TYPE_INSTRUCTION: FeedbackType
+FEEDBACK_TYPE_CHECKLIST: FeedbackType
+FEEDBACK_TYPE_PROGRESS_PANEL: FeedbackType
+FEEDBACK_TYPE_DEPENDENCY_GRAPH: FeedbackType
+FEEDBACK_TYPE_TIME_ESTIMATE: FeedbackType
+FEEDBACK_TYPE_RULER: FeedbackType
+FEEDBACK_TYPE_POSE_VALIDATOR: FeedbackType
+FEEDBACK_TYPE_VISION_CONFIRMATION: FeedbackType
+FEEDBACK_TYPE_TORQUE_CONFIRMATION: FeedbackType
 FEEDBACK_TYPE_ROBOT_PATH: FeedbackType
-FEEDBACK_TYPE_ROBOT_SILHOUETTE: FeedbackType
 FEEDBACK_TYPE_ROBOT_WAYPOINTS: FeedbackType
+FEEDBACK_TYPE_ROBOT_SILHOUETTE: FeedbackType
+FEEDBACK_TYPE_ROBOT_INTENT_CONE: FeedbackType
+FEEDBACK_TYPE_ROBOT_OCCUPANCY_VOLUME: FeedbackType
 FEEDBACK_TYPE_ROBOT_STATUS: FeedbackType
 FEEDBACK_TYPE_ROBOT_LIGHT: FeedbackType
+FEEDBACK_TYPE_HANDOVER_ZONE: FeedbackType
+FEEDBACK_TYPE_SYNCHRONIZATION_BARRIER: FeedbackType
+FEEDBACK_TYPE_SHARED_TASK_INDICATOR: FeedbackType
+FEEDBACK_TYPE_ROBOT_ATTENTION: FeedbackType
 FEEDBACK_TYPE_MESSAGE: FeedbackType
 FEEDBACK_TYPE_ICON: FeedbackType
+FEEDBACK_TYPE_HIGHLIGHT: FeedbackType
 FEEDBACK_TYPE_ZONE: FeedbackType
 FEEDBACK_TYPE_PLAY_SOUND: FeedbackType
-FEEDBACK_TYPE_RULER: FeedbackType
-FEEDBACK_TYPE_HIGHLIGHT: FeedbackType
 VISIBILITY_SCOPE_UNSPECIFIED: VisibilityScope
 VISIBILITY_SCOPE_ALWAYS: VisibilityScope
 VISIBILITY_SCOPE_LOW_GUIDANCE: VisibilityScope
@@ -87,7 +121,7 @@ class FeedbackMessages(_message.Message):
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
 class FeedbackAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "visibility_scope", "robot_property_id", "anchor")
+    __slots__ = ("config_id", "name", "icon", "description", "type", "visibility_scope", "robot_property_id", "anchor", "link_default_properties")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -96,6 +130,7 @@ class FeedbackAddMessage(_message.Message):
     VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
     ROBOT_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_FIELD_NUMBER: _ClassVar[int]
+    LINK_DEFAULT_PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
     icon: str
@@ -104,7 +139,8 @@ class FeedbackAddMessage(_message.Message):
     visibility_scope: VisibilityScope
     robot_property_id: str
     anchor: _anchor_pb2.Anchor
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., robot_property_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ...) -> None: ...
+    link_default_properties: bool
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ..., robot_property_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., link_default_properties: bool = ...) -> None: ...
 
 class FeedbackUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "visibility_scope")

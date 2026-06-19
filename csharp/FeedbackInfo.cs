@@ -41,14 +41,16 @@ namespace Messages.AR.V1 {
             "dFIQcmVxdWlyZWRIYW5kbGVycxIpCgVlbWl0cxgMIAMoCzITLmFyLnYxLkV4",
             "Y2hhbmdlVHlwZVIFZW1pdHMSGgoIZGlzYWJsZWQYDSABKAhSCGRpc2FibGVk",
             "IkgKFEZlZWRiYWNrSW5mb01lc3NhZ2VzEjAKBWluZm9zGAEgAygLMhouYXIu",
-            "djEuRmVlZGJhY2tJbmZvTWVzc2FnZVIFaW5mb3MqngEKDUZlZWRiYWNrR3Jv",
+            "djEuRmVlZGJhY2tJbmZvTWVzc2FnZVIFaW5mb3Mq+wEKDUZlZWRiYWNrR3Jv",
             "dXASHgoaRkVFREJBQ0tfR1JPVVBfVU5TUEVDSUZJRUQQABIaChZGRUVEQkFD",
-            "S19HUk9VUF9HRU5FUkFMEAESGAoURkVFREJBQ0tfR1JPVVBfUk9CT1QQAhIX",
-            "ChNGRUVEQkFDS19HUk9VUF9UQVNLEAMSHgoaRkVFREJBQ0tfR1JPVVBfRU5W",
-            "SVJPTk1FTlQQBEKNAQoJY29tLmFyLnYxQhFGZWVkYmFja0luZm9Qcm90b1AB",
-            "Wi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7",
-            "YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxH",
-            "UEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "S19HUk9VUF9HRU5FUkFMEAESGgoWRkVFREJBQ0tfR1JPVVBfU1BBVElBTBAC",
+            "EhsKF0ZFRURCQUNLX0dST1VQX1JFU09VUkNFEAMSGgoWRkVFREJBQ0tfR1JP",
+            "VVBfUFJPQ0VTUxAEEh0KGUZFRURCQUNLX0dST1VQX1ZBTElEQVRJT04QBRIY",
+            "ChRGRUVEQkFDS19HUk9VUF9ST0JPVBAGEiAKHEZFRURCQUNLX0dST1VQX0NP",
+            "TExBQk9SQVRJT04QB0KNAQoJY29tLmFyLnYxQhFGZWVkYmFja0luZm9Qcm90",
+            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
+            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
+            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FeedbackGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -62,10 +64,34 @@ namespace Messages.AR.V1 {
   #region Enums
   public enum FeedbackGroup {
     [pbr::OriginalName("FEEDBACK_GROUP_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Generic UI and feedback elements not tied to a specific semantic domain.
+    /// </summary>
     [pbr::OriginalName("FEEDBACK_GROUP_GENERAL")] General = 1,
-    [pbr::OriginalName("FEEDBACK_GROUP_ROBOT")] Robot = 2,
-    [pbr::OriginalName("FEEDBACK_GROUP_TASK")] Task = 3,
-    [pbr::OriginalName("FEEDBACK_GROUP_ENVIRONMENT")] Environment = 4,
+    /// <summary>
+    /// Spatial guidance and task-localized visualizations.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_SPATIAL")] Spatial = 2,
+    /// <summary>
+    /// Resource guidance (parts, tools, consumables, assets).
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_RESOURCE")] Resource = 3,
+    /// <summary>
+    /// Process flow, task lists, instructions, dependencies, and status.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_PROCESS")] Process = 4,
+    /// <summary>
+    /// Validation and verification guidance.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_VALIDATION")] Validation = 5,
+    /// <summary>
+    /// Robot awareness and robot intent visualizations.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_ROBOT")] Robot = 6,
+    /// <summary>
+    /// Human-robot collaboration semantics.
+    /// </summary>
+    [pbr::OriginalName("FEEDBACK_GROUP_COLLABORATION")] Collaboration = 7,
   }
 
   #endregion

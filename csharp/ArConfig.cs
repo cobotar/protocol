@@ -31,29 +31,117 @@ namespace Messages.AR.V1 {
             "CUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
             "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIkgKFEFSQ29uZmlnSW5mb01l",
             "c3NhZ2VzEjAKBWluZm9zGAEgAygLMhouYXIudjEuQVJDb25maWdJbmZvTWVz",
-            "c2FnZVIFaW5mb3Mi/QEKD0FSQ29uZmlnTWVzc2FnZRIZCgJpZBgBIAEoCUIJ",
+            "c2FnZVIFaW5mb3MixgIKD0FSQ29uZmlnTWVzc2FnZRIZCgJpZBgBIAEoCUIJ",
             "ukgGcgSQ8QQBUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBBABGEBSBG5hbWUS",
             "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
-            "Y3JpcHRpb24SPgoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAUgASgDQgq6SAci",
-            "BSgASN4CUhNhckRpc2FwcGVhckRpc3RhbmNlEjoKC2lucHV0X3Nsb3RzGAog",
-            "AygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlUgppbnB1dFNsb3RzIkAK",
-            "EEFSQ29uZmlnTWVzc2FnZXMSLAoFaXRlbXMYASADKAsyFi5hci52MS5BUkNv",
-            "bmZpZ01lc3NhZ2VSBWl0ZW1zQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJv",
-            "dG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2Fy",
-            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
-            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "Y3JpcHRpb24SRwoMcHJpbWFyeV90eXBlGAUgASgOMhouYXIudjEuQVJDb25m",
+            "aWdQcmltYXJ5VHlwZUIIukgFggECEAFSC3ByaW1hcnlUeXBlEj4KFWFyX2Rp",
+            "c2FwcGVhcl9kaXN0YW5jZRgGIAEoA0IKukgHIgUoAEjeAlITYXJEaXNhcHBl",
+            "YXJEaXN0YW5jZRI6CgtpbnB1dF9zbG90cxgHIAMoCzIZLmFyLnYxLkFSSW5w",
+            "dXRTbG90TWVzc2FnZVIKaW5wdXRTbG90cyJAChBBUkNvbmZpZ01lc3NhZ2Vz",
+            "EiwKBWl0ZW1zGAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlUgVpdGVt",
+            "cyrWAwoTQVJDb25maWdQcmltYXJ5VHlwZRImCiJBUl9DT05GSUdfUFJJTUFS",
+            "WV9UWVBFX1VOU1BFQ0lGSUVEEAASIgoeQVJfQ09ORklHX1BSSU1BUllfVFlQ",
+            "RV9HRU5FUkFMEAESLAooQVJfQ09ORklHX1BSSU1BUllfVFlQRV9BU1NFTUJM",
+            "WV9HVUlEQU5DRRACEi4KKkFSX0NPTkZJR19QUklNQVJZX1RZUEVfUFJPQ0VE",
+            "VVJFX0NIRUNLTElTVBADEikKJUFSX0NPTkZJR19QUklNQVJZX1RZUEVfUk9C",
+            "T1RfR1VJREFOQ0UQBBIxCi1BUl9DT05GSUdfUFJJTUFSWV9UWVBFX0NPTExB",
+            "Qk9SQVRJT05fR1VJREFOQ0UQBRIwCixBUl9DT05GSUdfUFJJTUFSWV9UWVBF",
+            "X1ZBTElEQVRJT05fSU5TUEVDVElPThAGEisKJ0FSX0NPTkZJR19QUklNQVJZ",
+            "X1RZUEVfUFJPQ0VTU19PVkVSVklFVxAHEiwKKEFSX0NPTkZJR19QUklNQVJZ",
+            "X1RZUEVfVFJBSU5JTkdfR1VJREFOQ0UQCBIqCiZBUl9DT05GSUdfUFJJTUFS",
+            "WV9UWVBFX1NBRkVUWV9HVUlEQU5DRRAJQokBCgljb20uYXIudjFCDUFyQ29u",
+            "ZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3Nh",
+            "Z2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx",
+            "4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.InputSlotReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARConfigPrimaryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessage), global::Messages.AR.V1.ARConfigInfoMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessages), global::Messages.AR.V1.ARConfigInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "InputSlots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "PrimaryType", "ArDisappearDistance", "InputSlots" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessages), global::Messages.AR.V1.ARConfigMessages.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  /// <summary>
+  /// ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
+  ///
+  /// The primary type can be used by the backend or authoring UI to create the most
+  /// relevant default properties, feedback elements, and visual styling tokens for
+  /// a newly created AR configuration.
+  ///
+  /// It is intentionally a high-level category rather than a complete list of all
+  /// feedback types. A configuration may still contain any combination of feedback,
+  /// actions, properties, and input slots.
+  /// </summary>
+  public enum ARConfigPrimaryType {
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// General-purpose AR configuration with only basic defaults.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_GENERAL")] General = 1,
+    /// <summary>
+    /// Step-by-step AR guidance for assembly tasks.
+    /// Typical defaults: instruction panel, target ghost, part/tool highlights,
+    /// checklist, current/completed task colors.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE")] AssemblyGuidance = 2,
+    /// <summary>
+    /// Procedure/checklist-oriented guidance such as startup, shutdown,
+    /// maintenance, cleaning, or recovery procedures.
+    /// Typical defaults: checklist panel, confirmation controls, warning/success
+    /// colors, compact status indicators.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST")] ProcedureChecklist = 3,
+    /// <summary>
+    /// Robot-awareness configuration focused on communicating robot intent.
+    /// Typical defaults: robot path color, robot silhouette color, robot status,
+    /// robot warning/occupancy styling.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE")] RobotGuidance = 4,
+    /// <summary>
+    /// Human-robot collaboration configuration focused on shared tasks,
+    /// handovers, synchronization, and actor assignments.
+    /// Typical defaults: operator color, robot color, shared task color, handover
+    /// zone styling, synchronization indicators.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE")] CollaborationGuidance = 5,
+    /// <summary>
+    /// Validation/inspection-oriented configuration focused on confirming whether
+    /// work was completed correctly.
+    /// Typical defaults: validation panel, ruler/measurement styling, vision
+    /// confirmation indicators, warning/error/success colors.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION")] ValidationInspection = 6,
+    /// <summary>
+    /// Overview/dashboard-style configuration for process status, task queues,
+    /// assignments, and runtime control.
+    /// Typical defaults: overview panel, progress indicators, task status colors,
+    /// reassignment and completion controls.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW")] ProcessOverview = 7,
+    /// <summary>
+    /// Training/onboarding configuration with stronger guidance, explanations,
+    /// examples, and optional help content.
+    /// Typical defaults: larger instruction panels, help icons, tutorial prompts,
+    /// slower animations, and extra confirmation feedback.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE")] TrainingGuidance = 8,
+    /// <summary>
+    /// Safety-focused configuration used to communicate hazards, restricted zones,
+    /// required approvals, or critical warnings.
+    /// Typical defaults: warning/error colors, safety zones, alert sounds, approval
+    /// prompts, and high-visibility icons.
+    /// </summary>
+    [pbr::OriginalName("AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE")] SafetyGuidance = 9,
+  }
+
+  #endregion
+
   #region Messages
   /// <summary>
   /// Just delete this?
@@ -605,6 +693,7 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
+      primaryType_ = other.primaryType_;
       arDisappearDistance_ = other.arDisappearDistance_;
       inputSlots_ = other.inputSlots_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -667,8 +756,23 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "primary_type" field.</summary>
+    public const int PrimaryTypeFieldNumber = 5;
+    private global::Messages.AR.V1.ARConfigPrimaryType primaryType_ = global::Messages.AR.V1.ARConfigPrimaryType.Unspecified;
+    /// <summary>
+    /// Main purpose used to seed default properties and feedback presets.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARConfigPrimaryType PrimaryType {
+      get { return primaryType_; }
+      set {
+        primaryType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "ar_disappear_distance" field.</summary>
-    public const int ArDisappearDistanceFieldNumber = 5;
+    public const int ArDisappearDistanceFieldNumber = 6;
     private long arDisappearDistance_;
     /// <summary>
     /// Threshold distance in cm all AR elements should disappear. 0 = ignored
@@ -683,9 +787,9 @@ namespace Messages.AR.V1 {
     }
 
     /// <summary>Field number for the "input_slots" field.</summary>
-    public const int InputSlotsFieldNumber = 10;
+    public const int InputSlotsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Messages.AR.V1.ARInputSlotMessage> _repeated_inputSlots_codec
-        = pb::FieldCodec.ForMessage(82, global::Messages.AR.V1.ARInputSlotMessage.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Messages.AR.V1.ARInputSlotMessage.Parser);
     private readonly pbc::RepeatedField<global::Messages.AR.V1.ARInputSlotMessage> inputSlots_ = new pbc::RepeatedField<global::Messages.AR.V1.ARInputSlotMessage>();
     /// <summary>
     /// Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
@@ -715,6 +819,7 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
+      if (PrimaryType != other.PrimaryType) return false;
       if (ArDisappearDistance != other.ArDisappearDistance) return false;
       if(!inputSlots_.Equals(other.inputSlots_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -728,6 +833,7 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) hash ^= PrimaryType.GetHashCode();
       if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
       hash ^= inputSlots_.GetHashCode();
       if (_unknownFields != null) {
@@ -764,8 +870,12 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (ArDisappearDistance != 0L) {
+      if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) {
         output.WriteRawTag(40);
+        output.WriteEnum((int) PrimaryType);
+      }
+      if (ArDisappearDistance != 0L) {
+        output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
       inputSlots_.WriteTo(output, _repeated_inputSlots_codec);
@@ -795,8 +905,12 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (ArDisappearDistance != 0L) {
+      if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) {
         output.WriteRawTag(40);
+        output.WriteEnum((int) PrimaryType);
+      }
+      if (ArDisappearDistance != 0L) {
+        output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
       inputSlots_.WriteTo(ref output, _repeated_inputSlots_codec);
@@ -821,6 +935,9 @@ namespace Messages.AR.V1 {
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PrimaryType);
       }
       if (ArDisappearDistance != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
@@ -849,6 +966,9 @@ namespace Messages.AR.V1 {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) {
+        PrimaryType = other.PrimaryType;
       }
       if (other.ArDisappearDistance != 0L) {
         ArDisappearDistance = other.ArDisappearDistance;
@@ -890,10 +1010,14 @@ namespace Messages.AR.V1 {
             break;
           }
           case 40: {
+            PrimaryType = (global::Messages.AR.V1.ARConfigPrimaryType) input.ReadEnum();
+            break;
+          }
+          case 48: {
             ArDisappearDistance = input.ReadInt64();
             break;
           }
-          case 82: {
+          case 58: {
             inputSlots_.AddEntriesFrom(input, _repeated_inputSlots_codec);
             break;
           }
@@ -933,10 +1057,14 @@ namespace Messages.AR.V1 {
             break;
           }
           case 40: {
+            PrimaryType = (global::Messages.AR.V1.ARConfigPrimaryType) input.ReadEnum();
+            break;
+          }
+          case 48: {
             ArDisappearDistance = input.ReadInt64();
             break;
           }
-          case 82: {
+          case 58: {
             inputSlots_.AddEntriesFrom(ref input, _repeated_inputSlots_codec);
             break;
           }
