@@ -9,10 +9,57 @@ option csharp_namespace = "Messages.Resources.V1";
 option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 
 enum EditPermission {
+  // Edit permissions intentionally mirror common.v1.PropertyPermission levels.
+  // They describe which authored AR/property settings a worker may edit.
   EDIT_PERMISSION_UNSPECIFIED = 0; // Unspecified: can't edit any properties
   EDIT_PERMISSION_BASIC = 1; // Basic: can edit {basic} properties
   EDIT_PERMISSION_COSMETIC = 2; // Cosmetic: can edit {basic, cosmetic} properties
   EDIT_PERMISSION_FULL = 3; // Full: can edit all editable properties
+}
+
+// Handedness is a physical/operator trait and should only be used as a
+// fallback when no explicit interaction-side preference is available.
+enum Handedness {
+  HANDEDNESS_UNSPECIFIED = 0;
+  HANDEDNESS_LEFT_HAND = 1;
+  HANDEDNESS_RIGHT_HAND = 2;
+}
+
+// WorkerRole describes the worker's operational role.
+//
+// Role should be used to select relevant views, workflows, and default
+// capabilities. Authorization for editing properties is still controlled by
+// ar_edit_permission.
+enum WorkerRole {
+  WORKER_ROLE_UNSPECIFIED = 0;
+  WORKER_ROLE_OPERATOR = 1;
+  WORKER_ROLE_SUPERVISOR = 2;
+  WORKER_ROLE_TECHNICIAN = 3;
+  WORKER_ROLE_ENGINEER = 4;
+  WORKER_ROLE_ADMIN = 5;
+}
+
+// InteractionSide describes the side from which the worker prefers interaction.
+//
+// This is a preference for UI placement, robot approach, and handoff planning.
+// It may differ from handedness because of station layout, task constraints,
+// temporary injury, or personal preference.
+enum InteractionSide {
+  INTERACTION_SIDE_UNSPECIFIED = 0;
+  INTERACTION_SIDE_LEFT = 1;
+  INTERACTION_SIDE_RIGHT = 2;
+  INTERACTION_SIDE_FRONT = 3;
+  INTERACTION_SIDE_NO_PREFERENCE = 4;
+}
+
+// TextSizePreference is intentionally coarse.
+//
+// AR clients should map these values to device- and application-specific font
+// scales instead of treating them as raw pixel sizes.
+enum TextSizePreference {
+  TEXT_SIZE_PREFERENCE_UNSPECIFIED = 0;
+  TEXT_SIZE_PREFERENCE_NORMAL = 1;
+  TEXT_SIZE_PREFERENCE_LARGE = 2;
 }
 
 // WorkerLocation describes the current operating area of a worker.
@@ -32,12 +79,24 @@ message WorkerDefinition {
   string icon = 4;
   bool disabled = 5; // If disabled, the worker can't be selected
   string employee_id = 6;
-  EditPermission ar_edit_permission = 7;
+  EditPermission ar_edit_permission = 7; // Authorization level for editing authored AR/property settings.
   repeated common.v1.ExternalReference external_references = 8;
 
   WorkerLocation location = 9; // Optional current location / operating area.
 
-  // TODO: add height, arms_length, ?? other physical properties that can be used to adjust robot-behavior, visualizations, ...
+  int32 height = 10 [(buf.validate.field).int32.gte = 0]; // Approximate worker height in centimeters. 0 if not defined.
+  int32 arms_length = 11 [(buf.validate.field).int32.gte = 0]; // Approximate comfortable arm reach in centimeters. 0 if not defined.
+  Handedness handedness = 12 [(buf.validate.field).enum.defined_only = true]; // Physical handedness; use preferred_interaction_side first for layout decisions.
+  WorkerRole role = 13 [(buf.validate.field).enum.defined_only = true]; // Operational role used to select relevant views, workflows, and defaults.
+  InteractionSide preferred_interaction_side = 14 [(buf.validate.field).enum.defined_only = true]; // Preferred side for AR controls, prompts, and robot approach.
+  TextSizePreference text_size_preference = 15 [(buf.validate.field).enum.defined_only = true]; // Preferred AR text scale bucket.
+  int32 personal_space_radius = 16 [(buf.validate.field).int32.gte = 0]; // Preferred minimum robot distance from the worker in centimeters. 0 if not defined.
+  int32 handoff_height_preference = 17 [(buf.validate.field).int32.gte = 0]; // Preferred object handoff height in centimeters from the floor. 0 if not defined.
+  InteractionSide handoff_side_preference = 18 [(buf.validate.field).enum.defined_only = true]; // Preferred side for robot-to-worker object handoffs.
+
+  // PPE requirements such as gloves, hard hats, and hearing protection are not
+  // modeled here yet. They are likely task-, process-, or station-level
+  // requirements rather than stable worker properties.
 }
 
 message WorkerDefinitions {
