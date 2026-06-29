@@ -27,7 +27,7 @@ from common.v1 import external_references_pb2 as common_dot_v1_dot_external__ref
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$resources/v1/worker_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n\x0eWorkerLocation\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\x94\x03\n\x10WorkerDefinition\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1a\n\x08\x64isabled\x18\x05 \x01(\x08R\x08\x64isabled\x12\x1f\n\x0b\x65mployee_id\x18\x06 \x01(\tR\nemployeeId\x12J\n\x12\x61r_edit_permission\x18\x07 \x01(\x0e\x32\x1c.resources.v1.EditPermissionR\x10\x61rEditPermission\x12M\n\x13\x65xternal_references\x18\x08 \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\x12\x38\n\x08location\x18\t \x01(\x0b\x32\x1c.resources.v1.WorkerLocationR\x08location\"I\n\x11WorkerDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n\x0e\x45\x64itPermission\x12\x1f\n\x1b\x45\x44IT_PERMISSION_UNSPECIFIED\x10\x00\x12\x19\n\x15\x45\x44IT_PERMISSION_BASIC\x10\x01\x12\x1c\n\x18\x45\x44IT_PERMISSION_COSMETIC\x10\x02\x12\x18\n\x14\x45\x44IT_PERMISSION_FULL\x10\x03\x42\xc2\x01\n\x10\x63om.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$resources/v1/worker_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n\x0eWorkerLocation\x12\"\n\x07line_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06\x63\x65llId\x12(\n\nstation_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\x83\x08\n\x10WorkerDefinition\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb\x30\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12\x1a\n\x08\x64isabled\x18\x05 \x01(\x08R\x08\x64isabled\x12\x1f\n\x0b\x65mployee_id\x18\x06 \x01(\tR\nemployeeId\x12J\n\x12\x61r_edit_permission\x18\x07 \x01(\x0e\x32\x1c.resources.v1.EditPermissionR\x10\x61rEditPermission\x12M\n\x13\x65xternal_references\x18\x08 \x03(\x0b\x32\x1c.common.v1.ExternalReferenceR\x12\x65xternalReferences\x12\x38\n\x08location\x18\t \x01(\x0b\x32\x1c.resources.v1.WorkerLocationR\x08location\x12\x1f\n\x06height\x18\n \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x06height\x12(\n\x0b\x61rms_length\x18\x0b \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\narmsLength\x12\x42\n\nhandedness\x18\x0c \x01(\x0e\x32\x18.resources.v1.HandednessB\x08\xbaH\x05\x82\x01\x02\x10\x01R\nhandedness\x12\x36\n\x04role\x18\r \x01(\x0e\x32\x18.resources.v1.WorkerRoleB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x04role\x12\x65\n\x1apreferred_interaction_side\x18\x0e \x01(\x0e\x32\x1d.resources.v1.InteractionSideB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x18preferredInteractionSide\x12\\\n\x14text_size_preference\x18\x0f \x01(\x0e\x32 .resources.v1.TextSizePreferenceB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x12textSizePreference\x12;\n\x15personal_space_radius\x18\x10 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x13personalSpaceRadius\x12\x43\n\x19handoff_height_preference\x18\x11 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x17handoffHeightPreference\x12_\n\x17handoff_side_preference\x18\x12 \x01(\x0e\x32\x1d.resources.v1.InteractionSideB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x15handoffSidePreference\"I\n\x11WorkerDefinitions\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n\x0e\x45\x64itPermission\x12\x1f\n\x1b\x45\x44IT_PERMISSION_UNSPECIFIED\x10\x00\x12\x19\n\x15\x45\x44IT_PERMISSION_BASIC\x10\x01\x12\x1c\n\x18\x45\x44IT_PERMISSION_COSMETIC\x10\x02\x12\x18\n\x14\x45\x44IT_PERMISSION_FULL\x10\x03*]\n\nHandedness\x12\x1a\n\x16HANDEDNESS_UNSPECIFIED\x10\x00\x12\x18\n\x14HANDEDNESS_LEFT_HAND\x10\x01\x12\x19\n\x15HANDEDNESS_RIGHT_HAND\x10\x02*\xac\x01\n\nWorkerRole\x12\x1b\n\x17WORKER_ROLE_UNSPECIFIED\x10\x00\x12\x18\n\x14WORKER_ROLE_OPERATOR\x10\x01\x12\x1a\n\x16WORKER_ROLE_SUPERVISOR\x10\x02\x12\x1a\n\x16WORKER_ROLE_TECHNICIAN\x10\x03\x12\x18\n\x14WORKER_ROLE_ENGINEER\x10\x04\x12\x15\n\x11WORKER_ROLE_ADMIN\x10\x05*\xaa\x01\n\x0fInteractionSide\x12 \n\x1cINTERACTION_SIDE_UNSPECIFIED\x10\x00\x12\x19\n\x15INTERACTION_SIDE_LEFT\x10\x01\x12\x1a\n\x16INTERACTION_SIDE_RIGHT\x10\x02\x12\x1a\n\x16INTERACTION_SIDE_FRONT\x10\x03\x12\"\n\x1eINTERACTION_SIDE_NO_PREFERENCE\x10\x04*{\n\x12TextSizePreference\x12$\n TEXT_SIZE_PREFERENCE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bTEXT_SIZE_PREFERENCE_NORMAL\x10\x01\x12\x1e\n\x1aTEXT_SIZE_PREFERENCE_LARGE\x10\x02\x42\xc2\x01\n\x10\x63om.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,12 +45,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WORKERDEFINITION'].fields_by_name['id']._serialized_options = b'\272H\006r\004\330\3530\001'
   _globals['_WORKERDEFINITION'].fields_by_name['name']._loaded_options = None
   _globals['_WORKERDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_EDITPERMISSION']._serialized_start=781
-  _globals['_EDITPERMISSION']._serialized_end=913
+  _globals['_WORKERDEFINITION'].fields_by_name['height']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['height']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_WORKERDEFINITION'].fields_by_name['arms_length']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['arms_length']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_WORKERDEFINITION'].fields_by_name['handedness']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['handedness']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_WORKERDEFINITION'].fields_by_name['role']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['role']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_WORKERDEFINITION'].fields_by_name['preferred_interaction_side']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['preferred_interaction_side']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_WORKERDEFINITION'].fields_by_name['text_size_preference']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['text_size_preference']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_WORKERDEFINITION'].fields_by_name['personal_space_radius']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['personal_space_radius']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_WORKERDEFINITION'].fields_by_name['handoff_height_preference']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['handoff_height_preference']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_WORKERDEFINITION'].fields_by_name['handoff_side_preference']._loaded_options = None
+  _globals['_WORKERDEFINITION'].fields_by_name['handoff_side_preference']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_EDITPERMISSION']._serialized_start=1404
+  _globals['_EDITPERMISSION']._serialized_end=1536
+  _globals['_HANDEDNESS']._serialized_start=1538
+  _globals['_HANDEDNESS']._serialized_end=1631
+  _globals['_WORKERROLE']._serialized_start=1634
+  _globals['_WORKERROLE']._serialized_end=1806
+  _globals['_INTERACTIONSIDE']._serialized_start=1809
+  _globals['_INTERACTIONSIDE']._serialized_end=1979
+  _globals['_TEXTSIZEPREFERENCE']._serialized_start=1981
+  _globals['_TEXTSIZEPREFERENCE']._serialized_end=2104
   _globals['_WORKERLOCATION']._serialized_start=166
   _globals['_WORKERLOCATION']._serialized_end=296
   _globals['_WORKERDEFINITION']._serialized_start=299
-  _globals['_WORKERDEFINITION']._serialized_end=703
-  _globals['_WORKERDEFINITIONS']._serialized_start=705
-  _globals['_WORKERDEFINITIONS']._serialized_end=778
+  _globals['_WORKERDEFINITION']._serialized_end=1326
+  _globals['_WORKERDEFINITIONS']._serialized_start=1328
+  _globals['_WORKERDEFINITIONS']._serialized_end=1401
 # @@protoc_insertion_point(module_scope)

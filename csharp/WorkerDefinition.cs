@@ -30,7 +30,7 @@ namespace Messages.Resources.V1 {
             "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKCAQoOV29ya2VyTG9jYXRp",
             "b24SIgoHbGluZV9pZBgBIAEoCUIJukgGcgTA8gQBUgZsaW5lSWQSIgoHY2Vs",
             "bF9pZBgCIAEoCUIJukgGcgS48gQBUgZjZWxsSWQSKAoKc3RhdGlvbl9pZBgD",
-            "IAEoCUIJukgGcgT48QQBUglzdGF0aW9uSWQilAMKEFdvcmtlckRlZmluaXRp",
+            "IAEoCUIJukgGcgT48QQBUglzdGF0aW9uSWQigwgKEFdvcmtlckRlZmluaXRp",
             "b24SGQoCaWQYASABKAlCCbpIBnIE2OswAVICaWQSHQoEbmFtZRgCIAEoCUIJ",
             "ukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
             "dGlvbhISCgRpY29uGAQgASgJUgRpY29uEhoKCGRpc2FibGVkGAUgASgIUghk",
@@ -39,21 +39,48 @@ namespace Messages.Resources.V1 {
             "cm1pc3Npb25SEGFyRWRpdFBlcm1pc3Npb24STQoTZXh0ZXJuYWxfcmVmZXJl",
             "bmNlcxgIIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0",
             "ZXJuYWxSZWZlcmVuY2VzEjgKCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2Vz",
-            "LnYxLldvcmtlckxvY2F0aW9uUghsb2NhdGlvbiJJChFXb3JrZXJEZWZpbml0",
-            "aW9ucxI0CgVpdGVtcxgBIAMoCzIeLnJlc291cmNlcy52MS5Xb3JrZXJEZWZp",
-            "bml0aW9uUgVpdGVtcyqEAQoORWRpdFBlcm1pc3Npb24SHwobRURJVF9QRVJN",
-            "SVNTSU9OX1VOU1BFQ0lGSUVEEAASGQoVRURJVF9QRVJNSVNTSU9OX0JBU0lD",
-            "EAESHAoYRURJVF9QRVJNSVNTSU9OX0NPU01FVElDEAISGAoURURJVF9QRVJN",
-            "SVNTSU9OX0ZVTEwQA0LCAQoQY29tLnJlc291cmNlcy52MUIVV29ya2VyRGVm",
-            "aW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9t",
-            "ZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNz",
-            "YWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNc",
-            "VjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
+            "LnYxLldvcmtlckxvY2F0aW9uUghsb2NhdGlvbhIfCgZoZWlnaHQYCiABKAVC",
+            "B7pIBBoCKABSBmhlaWdodBIoCgthcm1zX2xlbmd0aBgLIAEoBUIHukgEGgIo",
+            "AFIKYXJtc0xlbmd0aBJCCgpoYW5kZWRuZXNzGAwgASgOMhgucmVzb3VyY2Vz",
+            "LnYxLkhhbmRlZG5lc3NCCLpIBYIBAhABUgpoYW5kZWRuZXNzEjYKBHJvbGUY",
+            "DSABKA4yGC5yZXNvdXJjZXMudjEuV29ya2VyUm9sZUIIukgFggECEAFSBHJv",
+            "bGUSZQoacHJlZmVycmVkX2ludGVyYWN0aW9uX3NpZGUYDiABKA4yHS5yZXNv",
+            "dXJjZXMudjEuSW50ZXJhY3Rpb25TaWRlQgi6SAWCAQIQAVIYcHJlZmVycmVk",
+            "SW50ZXJhY3Rpb25TaWRlElwKFHRleHRfc2l6ZV9wcmVmZXJlbmNlGA8gASgO",
+            "MiAucmVzb3VyY2VzLnYxLlRleHRTaXplUHJlZmVyZW5jZUIIukgFggECEAFS",
+            "EnRleHRTaXplUHJlZmVyZW5jZRI7ChVwZXJzb25hbF9zcGFjZV9yYWRpdXMY",
+            "ECABKAVCB7pIBBoCKABSE3BlcnNvbmFsU3BhY2VSYWRpdXMSQwoZaGFuZG9m",
+            "Zl9oZWlnaHRfcHJlZmVyZW5jZRgRIAEoBUIHukgEGgIoAFIXaGFuZG9mZkhl",
+            "aWdodFByZWZlcmVuY2USXwoXaGFuZG9mZl9zaWRlX3ByZWZlcmVuY2UYEiAB",
+            "KA4yHS5yZXNvdXJjZXMudjEuSW50ZXJhY3Rpb25TaWRlQgi6SAWCAQIQAVIV",
+            "aGFuZG9mZlNpZGVQcmVmZXJlbmNlIkkKEVdvcmtlckRlZmluaXRpb25zEjQK",
+            "BWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb25S",
+            "BWl0ZW1zKoQBCg5FZGl0UGVybWlzc2lvbhIfChtFRElUX1BFUk1JU1NJT05f",
+            "VU5TUEVDSUZJRUQQABIZChVFRElUX1BFUk1JU1NJT05fQkFTSUMQARIcChhF",
+            "RElUX1BFUk1JU1NJT05fQ09TTUVUSUMQAhIYChRFRElUX1BFUk1JU1NJT05f",
+            "RlVMTBADKl0KCkhhbmRlZG5lc3MSGgoWSEFOREVETkVTU19VTlNQRUNJRklF",
+            "RBAAEhgKFEhBTkRFRE5FU1NfTEVGVF9IQU5EEAESGQoVSEFOREVETkVTU19S",
+            "SUdIVF9IQU5EEAIqrAEKCldvcmtlclJvbGUSGwoXV09SS0VSX1JPTEVfVU5T",
+            "UEVDSUZJRUQQABIYChRXT1JLRVJfUk9MRV9PUEVSQVRPUhABEhoKFldPUktF",
+            "Ul9ST0xFX1NVUEVSVklTT1IQAhIaChZXT1JLRVJfUk9MRV9URUNITklDSUFO",
+            "EAMSGAoUV09SS0VSX1JPTEVfRU5HSU5FRVIQBBIVChFXT1JLRVJfUk9MRV9B",
+            "RE1JThAFKqoBCg9JbnRlcmFjdGlvblNpZGUSIAocSU5URVJBQ1RJT05fU0lE",
+            "RV9VTlNQRUNJRklFRBAAEhkKFUlOVEVSQUNUSU9OX1NJREVfTEVGVBABEhoK",
+            "FklOVEVSQUNUSU9OX1NJREVfUklHSFQQAhIaChZJTlRFUkFDVElPTl9TSURF",
+            "X0ZST05UEAMSIgoeSU5URVJBQ1RJT05fU0lERV9OT19QUkVGRVJFTkNFEAQq",
+            "ewoSVGV4dFNpemVQcmVmZXJlbmNlEiQKIFRFWFRfU0laRV9QUkVGRVJFTkNF",
+            "X1VOU1BFQ0lGSUVEEAASHwobVEVYVF9TSVpFX1BSRUZFUkVOQ0VfTk9STUFM",
+            "EAESHgoaVEVYVF9TSVpFX1BSRUZFUkVOQ0VfTEFSR0UQAkLCAQoQY29tLnJl",
+            "c291cmNlcy52MUIVV29ya2VyRGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5j",
+            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVz",
+            "b3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNv",
+            "dXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJj",
+            "ZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.EditPermission), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.EditPermission), typeof(global::Messages.Resources.V1.Handedness), typeof(global::Messages.Resources.V1.WorkerRole), typeof(global::Messages.Resources.V1.InteractionSide), typeof(global::Messages.Resources.V1.TextSizePreference), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerLocation), global::Messages.Resources.V1.WorkerLocation.Parser, new[]{ "LineId", "CellId", "StationId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Location", "Height", "ArmsLength", "Handedness", "Role", "PreferredInteractionSide", "TextSizePreference", "PersonalSpaceRadius", "HandoffHeightPreference", "HandoffSidePreference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinitions), global::Messages.Resources.V1.WorkerDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -63,7 +90,8 @@ namespace Messages.Resources.V1 {
   #region Enums
   public enum EditPermission {
     /// <summary>
-    /// Unspecified: can't edit any properties
+    /// Edit permissions intentionally mirror common.v1.PropertyPermission levels.
+    /// They describe which authored AR/property settings a worker may edit.
     /// </summary>
     [pbr::OriginalName("EDIT_PERMISSION_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
@@ -78,6 +106,59 @@ namespace Messages.Resources.V1 {
     /// Full: can edit all editable properties
     /// </summary>
     [pbr::OriginalName("EDIT_PERMISSION_FULL")] Full = 3,
+  }
+
+  /// <summary>
+  /// Handedness is a physical/operator trait and should only be used as a
+  /// fallback when no explicit interaction-side preference is available.
+  /// </summary>
+  public enum Handedness {
+    [pbr::OriginalName("HANDEDNESS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("HANDEDNESS_LEFT_HAND")] LeftHand = 1,
+    [pbr::OriginalName("HANDEDNESS_RIGHT_HAND")] RightHand = 2,
+  }
+
+  /// <summary>
+  /// WorkerRole describes the worker's operational role.
+  ///
+  /// Role should be used to select relevant views, workflows, and default
+  /// capabilities. Authorization for editing properties is still controlled by
+  /// ar_edit_permission.
+  /// </summary>
+  public enum WorkerRole {
+    [pbr::OriginalName("WORKER_ROLE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("WORKER_ROLE_OPERATOR")] Operator = 1,
+    [pbr::OriginalName("WORKER_ROLE_SUPERVISOR")] Supervisor = 2,
+    [pbr::OriginalName("WORKER_ROLE_TECHNICIAN")] Technician = 3,
+    [pbr::OriginalName("WORKER_ROLE_ENGINEER")] Engineer = 4,
+    [pbr::OriginalName("WORKER_ROLE_ADMIN")] Admin = 5,
+  }
+
+  /// <summary>
+  /// InteractionSide describes the side from which the worker prefers interaction.
+  ///
+  /// This is a preference for UI placement, robot approach, and handoff planning.
+  /// It may differ from handedness because of station layout, task constraints,
+  /// temporary injury, or personal preference.
+  /// </summary>
+  public enum InteractionSide {
+    [pbr::OriginalName("INTERACTION_SIDE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("INTERACTION_SIDE_LEFT")] Left = 1,
+    [pbr::OriginalName("INTERACTION_SIDE_RIGHT")] Right = 2,
+    [pbr::OriginalName("INTERACTION_SIDE_FRONT")] Front = 3,
+    [pbr::OriginalName("INTERACTION_SIDE_NO_PREFERENCE")] NoPreference = 4,
+  }
+
+  /// <summary>
+  /// TextSizePreference is intentionally coarse.
+  ///
+  /// AR clients should map these values to device- and application-specific font
+  /// scales instead of treating them as raw pixel sizes.
+  /// </summary>
+  public enum TextSizePreference {
+    [pbr::OriginalName("TEXT_SIZE_PREFERENCE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("TEXT_SIZE_PREFERENCE_NORMAL")] Normal = 1,
+    [pbr::OriginalName("TEXT_SIZE_PREFERENCE_LARGE")] Large = 2,
   }
 
   #endregion
@@ -405,6 +486,15 @@ namespace Messages.Resources.V1 {
       arEditPermission_ = other.arEditPermission_;
       externalReferences_ = other.externalReferences_.Clone();
       location_ = other.location_ != null ? other.location_.Clone() : null;
+      height_ = other.height_;
+      armsLength_ = other.armsLength_;
+      handedness_ = other.handedness_;
+      role_ = other.role_;
+      preferredInteractionSide_ = other.preferredInteractionSide_;
+      textSizePreference_ = other.textSizePreference_;
+      personalSpaceRadius_ = other.personalSpaceRadius_;
+      handoffHeightPreference_ = other.handoffHeightPreference_;
+      handoffSidePreference_ = other.handoffSidePreference_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -492,6 +582,9 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "ar_edit_permission" field.</summary>
     public const int ArEditPermissionFieldNumber = 7;
     private global::Messages.Resources.V1.EditPermission arEditPermission_ = global::Messages.Resources.V1.EditPermission.Unspecified;
+    /// <summary>
+    /// Authorization level for editing authored AR/property settings.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Resources.V1.EditPermission ArEditPermission {
@@ -527,6 +620,141 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "height" field.</summary>
+    public const int HeightFieldNumber = 10;
+    private int height_;
+    /// <summary>
+    /// Approximate worker height in centimeters. 0 if not defined.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Height {
+      get { return height_; }
+      set {
+        height_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "arms_length" field.</summary>
+    public const int ArmsLengthFieldNumber = 11;
+    private int armsLength_;
+    /// <summary>
+    /// Approximate comfortable arm reach in centimeters. 0 if not defined.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ArmsLength {
+      get { return armsLength_; }
+      set {
+        armsLength_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "handedness" field.</summary>
+    public const int HandednessFieldNumber = 12;
+    private global::Messages.Resources.V1.Handedness handedness_ = global::Messages.Resources.V1.Handedness.Unspecified;
+    /// <summary>
+    /// Physical handedness; use preferred_interaction_side first for layout decisions.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.Handedness Handedness {
+      get { return handedness_; }
+      set {
+        handedness_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "role" field.</summary>
+    public const int RoleFieldNumber = 13;
+    private global::Messages.Resources.V1.WorkerRole role_ = global::Messages.Resources.V1.WorkerRole.Unspecified;
+    /// <summary>
+    /// Operational role used to select relevant views, workflows, and defaults.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.WorkerRole Role {
+      get { return role_; }
+      set {
+        role_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "preferred_interaction_side" field.</summary>
+    public const int PreferredInteractionSideFieldNumber = 14;
+    private global::Messages.Resources.V1.InteractionSide preferredInteractionSide_ = global::Messages.Resources.V1.InteractionSide.Unspecified;
+    /// <summary>
+    /// Preferred side for AR controls, prompts, and robot approach.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.InteractionSide PreferredInteractionSide {
+      get { return preferredInteractionSide_; }
+      set {
+        preferredInteractionSide_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "text_size_preference" field.</summary>
+    public const int TextSizePreferenceFieldNumber = 15;
+    private global::Messages.Resources.V1.TextSizePreference textSizePreference_ = global::Messages.Resources.V1.TextSizePreference.Unspecified;
+    /// <summary>
+    /// Preferred AR text scale bucket.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.TextSizePreference TextSizePreference {
+      get { return textSizePreference_; }
+      set {
+        textSizePreference_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "personal_space_radius" field.</summary>
+    public const int PersonalSpaceRadiusFieldNumber = 16;
+    private int personalSpaceRadius_;
+    /// <summary>
+    /// Preferred minimum robot distance from the worker in centimeters. 0 if not defined.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PersonalSpaceRadius {
+      get { return personalSpaceRadius_; }
+      set {
+        personalSpaceRadius_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "handoff_height_preference" field.</summary>
+    public const int HandoffHeightPreferenceFieldNumber = 17;
+    private int handoffHeightPreference_;
+    /// <summary>
+    /// Preferred object handoff height in centimeters from the floor. 0 if not defined.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int HandoffHeightPreference {
+      get { return handoffHeightPreference_; }
+      set {
+        handoffHeightPreference_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "handoff_side_preference" field.</summary>
+    public const int HandoffSidePreferenceFieldNumber = 18;
+    private global::Messages.Resources.V1.InteractionSide handoffSidePreference_ = global::Messages.Resources.V1.InteractionSide.Unspecified;
+    /// <summary>
+    /// Preferred side for robot-to-worker object handoffs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.InteractionSide HandoffSidePreference {
+      get { return handoffSidePreference_; }
+      set {
+        handoffSidePreference_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -551,6 +779,15 @@ namespace Messages.Resources.V1 {
       if (ArEditPermission != other.ArEditPermission) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (!object.Equals(Location, other.Location)) return false;
+      if (Height != other.Height) return false;
+      if (ArmsLength != other.ArmsLength) return false;
+      if (Handedness != other.Handedness) return false;
+      if (Role != other.Role) return false;
+      if (PreferredInteractionSide != other.PreferredInteractionSide) return false;
+      if (TextSizePreference != other.TextSizePreference) return false;
+      if (PersonalSpaceRadius != other.PersonalSpaceRadius) return false;
+      if (HandoffHeightPreference != other.HandoffHeightPreference) return false;
+      if (HandoffSidePreference != other.HandoffSidePreference) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -567,6 +804,15 @@ namespace Messages.Resources.V1 {
       if (ArEditPermission != global::Messages.Resources.V1.EditPermission.Unspecified) hash ^= ArEditPermission.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
+      if (ArmsLength != 0) hash ^= ArmsLength.GetHashCode();
+      if (Handedness != global::Messages.Resources.V1.Handedness.Unspecified) hash ^= Handedness.GetHashCode();
+      if (Role != global::Messages.Resources.V1.WorkerRole.Unspecified) hash ^= Role.GetHashCode();
+      if (PreferredInteractionSide != global::Messages.Resources.V1.InteractionSide.Unspecified) hash ^= PreferredInteractionSide.GetHashCode();
+      if (TextSizePreference != global::Messages.Resources.V1.TextSizePreference.Unspecified) hash ^= TextSizePreference.GetHashCode();
+      if (PersonalSpaceRadius != 0) hash ^= PersonalSpaceRadius.GetHashCode();
+      if (HandoffHeightPreference != 0) hash ^= HandoffHeightPreference.GetHashCode();
+      if (HandoffSidePreference != global::Messages.Resources.V1.InteractionSide.Unspecified) hash ^= HandoffSidePreference.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -618,6 +864,42 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(74);
         output.WriteMessage(Location);
       }
+      if (Height != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Height);
+      }
+      if (ArmsLength != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(ArmsLength);
+      }
+      if (Handedness != global::Messages.Resources.V1.Handedness.Unspecified) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Handedness);
+      }
+      if (Role != global::Messages.Resources.V1.WorkerRole.Unspecified) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Role);
+      }
+      if (PreferredInteractionSide != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) PreferredInteractionSide);
+      }
+      if (TextSizePreference != global::Messages.Resources.V1.TextSizePreference.Unspecified) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) TextSizePreference);
+      }
+      if (PersonalSpaceRadius != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(PersonalSpaceRadius);
+      }
+      if (HandoffHeightPreference != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(HandoffHeightPreference);
+      }
+      if (HandoffSidePreference != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        output.WriteRawTag(144, 1);
+        output.WriteEnum((int) HandoffSidePreference);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -661,6 +943,42 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(74);
         output.WriteMessage(Location);
       }
+      if (Height != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Height);
+      }
+      if (ArmsLength != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(ArmsLength);
+      }
+      if (Handedness != global::Messages.Resources.V1.Handedness.Unspecified) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Handedness);
+      }
+      if (Role != global::Messages.Resources.V1.WorkerRole.Unspecified) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Role);
+      }
+      if (PreferredInteractionSide != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) PreferredInteractionSide);
+      }
+      if (TextSizePreference != global::Messages.Resources.V1.TextSizePreference.Unspecified) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) TextSizePreference);
+      }
+      if (PersonalSpaceRadius != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(PersonalSpaceRadius);
+      }
+      if (HandoffHeightPreference != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(HandoffHeightPreference);
+      }
+      if (HandoffSidePreference != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        output.WriteRawTag(144, 1);
+        output.WriteEnum((int) HandoffSidePreference);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -695,6 +1013,33 @@ namespace Messages.Resources.V1 {
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (location_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
+      }
+      if (ArmsLength != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ArmsLength);
+      }
+      if (Handedness != global::Messages.Resources.V1.Handedness.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Handedness);
+      }
+      if (Role != global::Messages.Resources.V1.WorkerRole.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Role);
+      }
+      if (PreferredInteractionSide != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PreferredInteractionSide);
+      }
+      if (TextSizePreference != global::Messages.Resources.V1.TextSizePreference.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TextSizePreference);
+      }
+      if (PersonalSpaceRadius != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PersonalSpaceRadius);
+      }
+      if (HandoffHeightPreference != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HandoffHeightPreference);
+      }
+      if (HandoffSidePreference != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) HandoffSidePreference);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -735,6 +1080,33 @@ namespace Messages.Resources.V1 {
           Location = new global::Messages.Resources.V1.WorkerLocation();
         }
         Location.MergeFrom(other.Location);
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
+      }
+      if (other.ArmsLength != 0) {
+        ArmsLength = other.ArmsLength;
+      }
+      if (other.Handedness != global::Messages.Resources.V1.Handedness.Unspecified) {
+        Handedness = other.Handedness;
+      }
+      if (other.Role != global::Messages.Resources.V1.WorkerRole.Unspecified) {
+        Role = other.Role;
+      }
+      if (other.PreferredInteractionSide != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        PreferredInteractionSide = other.PreferredInteractionSide;
+      }
+      if (other.TextSizePreference != global::Messages.Resources.V1.TextSizePreference.Unspecified) {
+        TextSizePreference = other.TextSizePreference;
+      }
+      if (other.PersonalSpaceRadius != 0) {
+        PersonalSpaceRadius = other.PersonalSpaceRadius;
+      }
+      if (other.HandoffHeightPreference != 0) {
+        HandoffHeightPreference = other.HandoffHeightPreference;
+      }
+      if (other.HandoffSidePreference != global::Messages.Resources.V1.InteractionSide.Unspecified) {
+        HandoffSidePreference = other.HandoffSidePreference;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -794,6 +1166,42 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(Location);
             break;
           }
+          case 80: {
+            Height = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            ArmsLength = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Handedness = (global::Messages.Resources.V1.Handedness) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            Role = (global::Messages.Resources.V1.WorkerRole) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            PreferredInteractionSide = (global::Messages.Resources.V1.InteractionSide) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            TextSizePreference = (global::Messages.Resources.V1.TextSizePreference) input.ReadEnum();
+            break;
+          }
+          case 128: {
+            PersonalSpaceRadius = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            HandoffHeightPreference = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            HandoffSidePreference = (global::Messages.Resources.V1.InteractionSide) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -850,6 +1258,42 @@ namespace Messages.Resources.V1 {
               Location = new global::Messages.Resources.V1.WorkerLocation();
             }
             input.ReadMessage(Location);
+            break;
+          }
+          case 80: {
+            Height = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            ArmsLength = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Handedness = (global::Messages.Resources.V1.Handedness) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            Role = (global::Messages.Resources.V1.WorkerRole) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            PreferredInteractionSide = (global::Messages.Resources.V1.InteractionSide) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            TextSizePreference = (global::Messages.Resources.V1.TextSizePreference) input.ReadEnum();
+            break;
+          }
+          case 128: {
+            PersonalSpaceRadius = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            HandoffHeightPreference = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            HandoffSidePreference = (global::Messages.Resources.V1.InteractionSide) input.ReadEnum();
             break;
           }
         }

@@ -259,66 +259,6 @@
     - [ZoneDefinition](#geometry-v1-ZoneDefinition)
     - [ZoneDefinitions](#geometry-v1-ZoneDefinitions)
   
-- [plm/v1/sequence.proto](#plm_v1_sequence-proto)
-    - [SequenceMessage](#plm-v1-SequenceMessage)
-    - [SequenceUpdatedMessage](#plm-v1-SequenceUpdatedMessage)
-  
-    - [SequenceState](#plm-v1-SequenceState)
-  
-- [plm/v1/task.proto](#plm_v1_task-proto)
-    - [TaskMessage](#plm-v1-TaskMessage)
-    - [TaskUpdatedMessage](#plm-v1-TaskUpdatedMessage)
-  
-    - [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference)
-    - [TaskState](#plm-v1-TaskState)
-    - [TaskType](#plm-v1-TaskType)
-  
-- [plm/v1/process_old.proto](#plm_v1_process_old-proto)
-    - [ProcessMessage](#plm-v1-ProcessMessage)
-    - [ProcessMessages](#plm-v1-ProcessMessages)
-    - [ProcessUpdatedMessage](#plm-v1-ProcessUpdatedMessage)
-  
-    - [ProcessState](#plm-v1-ProcessState)
-    - [ProcessType](#plm-v1-ProcessType)
-  
-- [plm/v1/process_authoring.proto](#plm_v1_process_authoring-proto)
-    - [NewProcessMessage](#plm-v1-NewProcessMessage)
-    - [StoredProcessMessage](#plm-v1-StoredProcessMessage)
-    - [StoredProcessMessages](#plm-v1-StoredProcessMessages)
-    - [UpdateProcessMessage](#plm-v1-UpdateProcessMessage)
-  
-- [plm/v1/process_load.proto](#plm_v1_process_load-proto)
-    - [ProcessLoadMessage](#plm-v1-ProcessLoadMessage)
-  
-    - [AllocationStrategy](#plm-v1-AllocationStrategy)
-  
-- [plm/v1/requests.proto](#plm_v1_requests-proto)
-    - [ProcessAtLocationMessage](#plm-v1-ProcessAtLocationMessage)
-  
-- [plm/v1/sequence_authoring.proto](#plm_v1_sequence_authoring-proto)
-    - [NewSequenceMessage](#plm-v1-NewSequenceMessage)
-    - [StoredSequenceMessage](#plm-v1-StoredSequenceMessage)
-    - [StoredSequenceMessages](#plm-v1-StoredSequenceMessages)
-    - [UpdateSequenceMessage](#plm-v1-UpdateSequenceMessage)
-  
-    - [SequenceType](#plm-v1-SequenceType)
-  
-- [plm/v1/sequence_complete.proto](#plm_v1_sequence_complete-proto)
-    - [SequenceBulkCompleteMessage](#plm-v1-SequenceBulkCompleteMessage)
-  
-- [plm/v1/sequence_reassign.proto](#plm_v1_sequence_reassign-proto)
-    - [SequenceReassignMessage](#plm-v1-SequenceReassignMessage)
-  
-- [plm/v1/task_authoring.proto](#plm_v1_task_authoring-proto)
-    - [NewTaskMessage](#plm-v1-NewTaskMessage)
-    - [StoredTaskMessage](#plm-v1-StoredTaskMessage)
-    - [StoredTaskMessages](#plm-v1-StoredTaskMessages)
-    - [UpdateTaskMessage](#plm-v1-UpdateTaskMessage)
-  
-- [plm/v1/tasks_list.proto](#plm_v1_tasks_list-proto)
-    - [TasksForAgentRequest](#plm-v1-TasksForAgentRequest)
-    - [TasksForAgentResponse](#plm-v1-TasksForAgentResponse)
-  
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
@@ -510,6 +450,10 @@
     - [WorkerLocation](#resources-v1-WorkerLocation)
   
     - [EditPermission](#resources-v1-EditPermission)
+    - [Handedness](#resources-v1-Handedness)
+    - [InteractionSide](#resources-v1-InteractionSide)
+    - [TextSizePreference](#resources-v1-TextSizePreference)
+    - [WorkerRole](#resources-v1-WorkerRole)
   
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
@@ -577,6 +521,7 @@
     - [ProcessRunPrecheckResult](#runtime-v1-ProcessRunPrecheckResult)
     - [TaskFeasibility](#runtime-v1-TaskFeasibility)
   
+    - [AllocationStrategy](#runtime-v1-AllocationStrategy)
     - [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure)
     - [ProcessLoadStatus](#runtime-v1-ProcessLoadStatus)
     - [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy)
@@ -586,6 +531,8 @@
   
 - [runtime/v1/runtime_requests.proto](#runtime_v1_runtime_requests-proto)
     - [ProcessAbortRequest](#runtime-v1-ProcessAbortRequest)
+    - [SequenceCompleteRequest](#runtime-v1-SequenceCompleteRequest)
+    - [SequenceReassignRequest](#runtime-v1-SequenceReassignRequest)
     - [TaskProgressUpdate](#runtime-v1-TaskProgressUpdate)
     - [TaskReassignRequest](#runtime-v1-TaskReassignRequest)
     - [TaskStateChangeRequest](#runtime-v1-TaskStateChangeRequest)
@@ -1668,7 +1615,7 @@ equivalent.
 
 To summarize
 • FIRST_WORKABLE: actionable now.
-• IN_PROGRESS: being performed now.
+• CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
 • NEXT_EXPECTED: likely relevant next, but potentially blocked.
 • LAST_COMPLETED: most recently completed.
 • FIRST_IN_ERROR: errored task requiring attention.
@@ -1677,7 +1624,9 @@ To summarize
 | ---- | ------ | ----------- |
 | AR_RUN_SELECTION_UNSPECIFIED | 0 | No selection policy specified. Invalid for a stored run selector. |
 | AR_RUN_SELECTION_FIRST_WORKABLE | 1 | Select the first ordered task that is currently workable for the actor. Workability is determined by runtime assignment, actor feasibility, task state, dependencies, and other effective execution restrictions. |
-| AR_RUN_SELECTION_IN_PROGRESS | 2 | Select the first ordered IN_PROGRESS task assigned to the actor. |
+| AR_RUN_SELECTION_CURRENT_ASSIGNED | 2 | Select the first ordered task assigned to the actor where state is READY or IN_PROGRESS. This answers &#34;what is this actor&#39;s current task?&#34;.
+
+Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work; the task must already be assigned to the actor. |
 | AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the next non-terminal task expected to become relevant to the actor.
 
 Resolution: 1. Build the actor&#39;s ordered candidate task list. 2. If FIRST_WORKABLE resolves, select the first later non-terminal candidate. 3. Otherwise, select the first candidate expected to become workable after its currently unmet dependencies are completed.
@@ -3929,820 +3878,6 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [ZoneDefinition](#geometry-v1-ZoneDefinition) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_sequence-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/sequence.proto
-
-
-
-<a name="plm-v1-SequenceMessage"></a>
-
-### SequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| parent_id | [string](#string) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| assigned_to | [string](#string) | repeated |  |
-| state | [SequenceState](#plm-v1-SequenceState) |  |  |
-| completed_tasks | [int32](#int32) |  |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-SequenceUpdatedMessage"></a>
-
-### SequenceUpdatedMessage
-Update published when the state of a sequence have changed
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sequence_id | [string](#string) |  |  |
-| assigned_to | [string](#string) | repeated |  |
-| state | [SequenceState](#plm-v1-SequenceState) |  |  |
-| completed_tasks | [int32](#int32) |  |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-SequenceState"></a>
-
-### SequenceState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SEQUENCE_STATE_UNSPECIFIED | 0 |  |
-| SEQUENCE_STATE_MISSING_PRECONDITION | 1 |  |
-| SEQUENCE_STATE_WAITING | 2 |  |
-| SEQUENCE_STATE_IN_PROGRESS | 3 |  |
-| SEQUENCE_STATE_COMPLETED | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task.proto
-
-
-
-<a name="plm-v1-TaskMessage"></a>
-
-### TaskMessage
-TODO: add required skill?
-TODO: add tool_role?
-TODO: add validation
-TODO: add allowed_actors
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| instruction_text | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| part_id | [string](#string) |  |  |
-| model_id | [string](#string) |  |  |
-| task_type | [TaskType](#plm-v1-TaskType) |  |  |
-| target | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| parent_id | [string](#string) |  |  |
-| agents_ids | [string](#string) | repeated |  |
-| assigned_to | [string](#string) |  |  |
-| state | [TaskState](#plm-v1-TaskState) |  |  |
-| preconditions | [string](#string) | repeated |  |
-| dependants | [string](#string) | repeated |  |
-| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
-| can_reassign | [bool](#bool) |  |  |
-| can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
-| horizon | [int32](#int32) |  | TODO: &#39;complete-importance&#39;: could be different levels of &#34;this must be explicitly completed&#34; or tie it together with user level, such that expertise level (expert, intermediate, novice) equal and above intermediate can {bulk, automatic, ... } complete and below must explicitly complete. This should potentially also be tied to the part and this field(s) can then be a custom override for this specific task.
-
-steps needed to complete before this step is workable. Could be use to better calculate what task to do next, especially if paired with time estimate for each task. |
-| estimated_completion_time | [int32](#int32) |  | estimated time to complete (in seconds) |
-
-
-
-
-
-
-<a name="plm-v1-TaskUpdatedMessage"></a>
-
-### TaskUpdatedMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| assigned_to | [string](#string) |  |  |
-| state | [TaskState](#plm-v1-TaskState) |  |  |
-| can_reassign | [bool](#bool) |  |  |
-| can_do | [bool](#bool) |  |  |
-| can_undo | [bool](#bool) |  |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-TaskAssignmentPreference"></a>
-
-### TaskAssignmentPreference
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_ASSIGNMENT_PREFERENCE_UNSPECIFIED | 0 |  |
-| TASK_ASSIGNMENT_PREFERENCE_PREFER_HUMAN | 1 |  |
-| TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN | 2 |  |
-| TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT | 3 |  |
-| TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT | 4 |  |
-
-
-
-<a name="plm-v1-TaskState"></a>
-
-### TaskState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_STATE_UNSPECIFIED | 0 |  |
-| TASK_STATE_MISSING_PRECONDITION | 1 |  |
-| TASK_STATE_WAITING | 2 |  |
-| TASK_STATE_IN_PROGRESS | 3 |  |
-| TASK_STATE_COMPLETED | 4 |  |
-| TASK_STATE_ERROR | 6 |  |
-
-
-
-<a name="plm-v1-TaskType"></a>
-
-### TaskType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TASK_TYPE_UNSPECIFIED | 0 |  |
-| TASK_TYPE_INSPECT | 1 |  |
-| TASK_TYPE_FASTEN | 2 |  |
-| TASK_TYPE_UNFASTEN | 3 |  |
-| TASK_TYPE_MOUNT | 4 |  |
-| TASK_TYPE_UNMOUNT | 5 |  |
-| TASK_TYPE_MOVE | 6 |  |
-| TASK_TYPE_REMOVE | 7 |  |
-| TASK_TYPE_APPLY | 8 |  |
-| TASK_TYPE_WIPE | 9 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process_old-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process_old.proto
-
-
-
-<a name="plm-v1-ProcessMessage"></a>
-
-### ProcessMessage
-TODO: should &#39;running&#39; be called process and &#39;static&#39; recipe?
-TODO: Add/assign the agent(s) at runtime, instead of allocating them to the environment. THen there could also be a situation where each agent is asked to take a task during execution.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| instance_id | [string](#string) |  |  |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#plm-v1-ProcessType) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
-| root_sequence_id | [string](#string) |  |  |
-| sequences | [SequenceMessage](#plm-v1-SequenceMessage) | repeated |  |
-| tasks | [TaskMessage](#plm-v1-TaskMessage) | repeated |  |
-| state | [ProcessState](#plm-v1-ProcessState) |  |  |
-| initiated | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| ended | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| order_id | [string](#string) |  |  |
-| line_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-ProcessMessages"></a>
-
-### ProcessMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| processes | [ProcessMessage](#plm-v1-ProcessMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-ProcessUpdatedMessage"></a>
-
-### ProcessUpdatedMessage
-Update published when the state of a process have changed
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| instance_id | [string](#string) |  |  |
-| id | [string](#string) |  |  |
-| state | [ProcessState](#plm-v1-ProcessState) |  |  |
-| ended | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-ProcessState"></a>
-
-### ProcessState
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_STATE_UNSPECIFIED | 0 |  |
-| PROCESS_STATE_WAITING | 1 |  |
-| PROCESS_STATE_IN_PROGRESS | 2 |  |
-| PROCESS_STATE_COMPLETED | 3 |  |
-| PROCESS_STATE_ABORTED | 4 |  |
-
-
-
-<a name="plm-v1-ProcessType"></a>
-
-### ProcessType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PROCESS_TYPE_UNSPECIFIED | 0 |  |
-| PROCESS_TYPE_ASSEMBLY | 1 |  |
-| PROCESS_TYPE_DISASSEMBLY | 2 |  |
-| PROCESS_TYPE_INSPECTION | 3 | TODO: what should this be? |
-| PROCESS_TYPE_CHECKLIST | 4 | TODO: this could be startup procedures, fault fixing, ... |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process_authoring-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process_authoring.proto
-
-
-
-<a name="plm-v1-NewProcessMessage"></a>
-
-### NewProcessMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#plm-v1-ProcessType) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredProcessMessage"></a>
-
-### StoredProcessMessage
-TODO: rename to recipe?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#plm-v1-ProcessType) |  |  |
-| fixture_offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| root_sequence_id | [string](#string) |  | TODO: add calculated customization possibilities (or something like that) Then when loadProcess is called, a list with selected IDS must be selected/send with |
-
-
-
-
-
-
-<a name="plm-v1-StoredProcessMessages"></a>
-
-### StoredProcessMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| processes | [StoredProcessMessage](#plm-v1-StoredProcessMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-UpdateProcessMessage"></a>
-
-### UpdateProcessMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ProcessType](#plm-v1-ProcessType) |  |  |
-| fixture_offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| root_sequence_id | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_process_load-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/process_load.proto
-
-
-
-<a name="plm-v1-ProcessLoadMessage"></a>
-
-### ProcessLoadMessage
-TODO: Assign agents at runtime?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| process_id | [string](#string) |  |  |
-| line_id | [string](#string) |  |  |
-| order_id | [string](#string) |  |  |
-| allocation_strategy | [AllocationStrategy](#plm-v1-AllocationStrategy) |  | TODO: list participating actors? |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-AllocationStrategy"></a>
-
-### AllocationStrategy
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ALLOCATION_STRATEGY_UNSPECIFIED | 0 |  |
-| ALLOCATION_STRATEGY_STATIC | 1 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_requests-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/requests.proto
-
-
-
-<a name="plm-v1-ProcessAtLocationMessage"></a>
-
-### ProcessAtLocationMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| location_id | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_sequence_authoring-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/sequence_authoring.proto
-
-
-
-<a name="plm-v1-NewSequenceMessage"></a>
-
-### NewSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredSequenceMessage"></a>
-
-### StoredSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| can_bulk_complete | [bool](#bool) |  | TODO: if variant (or something) to allow for customizeable products |
-
-
-
-
-
-
-<a name="plm-v1-StoredSequenceMessages"></a>
-
-### StoredSequenceMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sequences | [StoredSequenceMessage](#plm-v1-StoredSequenceMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-UpdateSequenceMessage"></a>
-
-### UpdateSequenceMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| offset | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| sequence_ids | [string](#string) | repeated |  |
-| task_ids | [string](#string) | repeated |  |
-| can_bulk_complete | [bool](#bool) |  |  |
-
-
-
-
-
- 
-
-
-<a name="plm-v1-SequenceType"></a>
-
-### SequenceType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SEQUENCE_TYPE_UNSPECIFIED | 0 |  |
-| SEQUENCE_TYPE_ALL_OF_CHILDREN | 1 |  |
-| SEQUENCE_TYPE_ONE_OF_CHILDREN | 2 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_sequence_complete-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/sequence_complete.proto
-
-
-
-<a name="plm-v1-SequenceBulkCompleteMessage"></a>
-
-### SequenceBulkCompleteMessage
-Complete all tasks or or sub-sequences (TODO: should that be possible?)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| sequence_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_sequence_reassign-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/sequence_reassign.proto
-
-
-
-<a name="plm-v1-SequenceReassignMessage"></a>
-
-### SequenceReassignMessage
-Reassign all sub-tasks to the assignee (if possible)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| sequence_id | [string](#string) |  |  |
-| assignee | [string](#string) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_task_authoring-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/task_authoring.proto
-
-
-
-<a name="plm-v1-NewTaskMessage"></a>
-
-### NewTaskMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| parent_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredTaskMessage"></a>
-
-### StoredTaskMessage
-TODO: can this be made more generic, e.g. from a different pool of &#39;actions&#39; (screw, mount, ….), instead of creating a new stored step for each actual step.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| instruction_text | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| part_id | [string](#string) |  |  |
-| model_id | [string](#string) |  |  |
-| task_type | [TaskType](#plm-v1-TaskType) |  |  |
-| target | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
-
-
-
-
-
-
-<a name="plm-v1-StoredTaskMessages"></a>
-
-### StoredTaskMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tasks | [StoredTaskMessage](#plm-v1-StoredTaskMessage) | repeated |  |
-
-
-
-
-
-
-<a name="plm-v1-UpdateTaskMessage"></a>
-
-### UpdateTaskMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| instruction_text | [string](#string) |  |  |
-| sequence_number | [int32](#int32) |  |  |
-| part_id | [string](#string) |  | TODO: what is the difference between part_id and model_id? doesn&#39;t all parts have a model? |
-| model_id | [string](#string) |  |  |
-| task_type | [TaskType](#plm-v1-TaskType) |  |  |
-| target | [geometry.v1.Pose](#geometry-v1-Pose) |  |  |
-| approach | [geometry.v1.Vector3](#geometry-v1-Vector3) |  |  |
-| assignment_preference | [TaskAssignmentPreference](#plm-v1-TaskAssignmentPreference) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="plm_v1_tasks_list-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## plm/v1/tasks_list.proto
-
-
-
-<a name="plm-v1-TasksForAgentRequest"></a>
-
-### TasksForAgentRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-| state | [TaskState](#plm-v1-TaskState) |  | Filter based on state. 0 (unspecified) returns all |
-
-
-
-
-
-
-<a name="plm-v1-TasksForAgentResponse"></a>
-
-### TasksForAgentResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
-| instance_id | [string](#string) |  |  |
-| agent_id | [string](#string) |  |  |
-| task_ids | [string](#string) | repeated |  |
 
 
 
@@ -7627,9 +6762,18 @@ max_concurrent_processes, which is separate from this status field.
 | icon | [string](#string) |  |  |
 | disabled | [bool](#bool) |  | If disabled, the worker can&#39;t be selected |
 | employee_id | [string](#string) |  |  |
-| ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  |  |
+| ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  | Authorization level for editing authored AR/property settings. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | location | [WorkerLocation](#resources-v1-WorkerLocation) |  | Optional current location / operating area. |
+| height | [int32](#int32) |  | Approximate worker height in centimeters. 0 if not defined. |
+| arms_length | [int32](#int32) |  | Approximate comfortable arm reach in centimeters. 0 if not defined. |
+| handedness | [Handedness](#resources-v1-Handedness) |  | Physical handedness; use preferred_interaction_side first for layout decisions. |
+| role | [WorkerRole](#resources-v1-WorkerRole) |  | Operational role used to select relevant views, workflows, and defaults. |
+| preferred_interaction_side | [InteractionSide](#resources-v1-InteractionSide) |  | Preferred side for AR controls, prompts, and robot approach. |
+| text_size_preference | [TextSizePreference](#resources-v1-TextSizePreference) |  | Preferred AR text scale bucket. |
+| personal_space_radius | [int32](#int32) |  | Preferred minimum robot distance from the worker in centimeters. 0 if not defined. |
+| handoff_height_preference | [int32](#int32) |  | Preferred object handoff height in centimeters from the floor. 0 if not defined. |
+| handoff_side_preference | [InteractionSide](#resources-v1-InteractionSide) |  | Preferred side for robot-to-worker object handoffs. |
 
 
 
@@ -7680,10 +6824,81 @@ move independently through the system.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| EDIT_PERMISSION_UNSPECIFIED | 0 | Unspecified: can&#39;t edit any properties |
+| EDIT_PERMISSION_UNSPECIFIED | 0 | Edit permissions intentionally mirror common.v1.PropertyPermission levels. They describe which authored AR/property settings a worker may edit.
+
+Unspecified: can&#39;t edit any properties |
 | EDIT_PERMISSION_BASIC | 1 | Basic: can edit {basic} properties |
 | EDIT_PERMISSION_COSMETIC | 2 | Cosmetic: can edit {basic, cosmetic} properties |
 | EDIT_PERMISSION_FULL | 3 | Full: can edit all editable properties |
+
+
+
+<a name="resources-v1-Handedness"></a>
+
+### Handedness
+Handedness is a physical/operator trait and should only be used as a
+fallback when no explicit interaction-side preference is available.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HANDEDNESS_UNSPECIFIED | 0 |  |
+| HANDEDNESS_LEFT_HAND | 1 |  |
+| HANDEDNESS_RIGHT_HAND | 2 |  |
+
+
+
+<a name="resources-v1-InteractionSide"></a>
+
+### InteractionSide
+InteractionSide describes the side from which the worker prefers interaction.
+
+This is a preference for UI placement, robot approach, and handoff planning.
+It may differ from handedness because of station layout, task constraints,
+temporary injury, or personal preference.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| INTERACTION_SIDE_UNSPECIFIED | 0 |  |
+| INTERACTION_SIDE_LEFT | 1 |  |
+| INTERACTION_SIDE_RIGHT | 2 |  |
+| INTERACTION_SIDE_FRONT | 3 |  |
+| INTERACTION_SIDE_NO_PREFERENCE | 4 |  |
+
+
+
+<a name="resources-v1-TextSizePreference"></a>
+
+### TextSizePreference
+TextSizePreference is intentionally coarse.
+
+AR clients should map these values to device- and application-specific font
+scales instead of treating them as raw pixel sizes.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TEXT_SIZE_PREFERENCE_UNSPECIFIED | 0 |  |
+| TEXT_SIZE_PREFERENCE_NORMAL | 1 |  |
+| TEXT_SIZE_PREFERENCE_LARGE | 2 |  |
+
+
+
+<a name="resources-v1-WorkerRole"></a>
+
+### WorkerRole
+WorkerRole describes the worker&#39;s operational role.
+
+Role should be used to select relevant views, workflows, and default
+capabilities. Authorization for editing properties is still controlled by
+ar_edit_permission.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| WORKER_ROLE_UNSPECIFIED | 0 |  |
+| WORKER_ROLE_OPERATOR | 1 |  |
+| WORKER_ROLE_SUPERVISOR | 2 |  |
+| WORKER_ROLE_TECHNICIAN | 3 |  |
+| WORKER_ROLE_ENGINEER | 4 |  |
+| WORKER_ROLE_ADMIN | 5 |  |
 
 
  
@@ -8477,6 +7692,8 @@ Thus the following must be evaluated:
 | strategy | [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy) |  | Optional execution preferences for the loader. |
 | order_id | [string](#string) |  | Optional order/business reference to carry into the ProcessRun. |
 | parameters | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Optional caller-provided parameters used during instantiation. |
+| allocation_strategy | [AllocationStrategy](#runtime-v1-AllocationStrategy) |  |  |
+| target_employee | [string](#string) |  |  |
 
 
 
@@ -8575,6 +7792,18 @@ Thus the following must be evaluated:
 
 
  
+
+
+<a name="runtime-v1-AllocationStrategy"></a>
+
+### AllocationStrategy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ALLOCATION_STRATEGY_UNSPECIFIED | 0 |  |
+| ALLOCATION_STRATEGY_STATIC | 1 |  |
+
 
 
 <a name="runtime-v1-ProcessLoadFailure"></a>
@@ -8716,6 +7945,37 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | process_run_id | [string](#string) |  |  |
 | reason | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-SequenceCompleteRequest"></a>
+
+### SequenceCompleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence_run_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="runtime-v1-SequenceReassignRequest"></a>
+
+### SequenceReassignRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence_run_id | [string](#string) |  |  |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
 
 
 
@@ -8903,7 +8163,6 @@ A human is required but no worker with valid skills exists. |
 | completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | error_code | [string](#string) |  |  |
 | error_message | [string](#string) |  |  |
-| evidence | [ExecutionEvidence](#runtime-v1-ExecutionEvidence) | repeated | TODO: consider delete, already &#39;linked to&#39; from ExecutionEvidence |
 | binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
 | restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective runtime restrictions that currently apply to this task.
 

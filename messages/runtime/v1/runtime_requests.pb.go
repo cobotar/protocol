@@ -328,6 +328,102 @@ func (x *TaskProgressUpdate) GetEstimatedTimeLeft() int32 {
 	return 0
 }
 
+type SequenceReassignRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SequenceRunId string                 `protobuf:"bytes,1,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
+	Actor         *v1.ActorRef           `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SequenceReassignRequest) Reset() {
+	*x = SequenceReassignRequest{}
+	mi := &file_runtime_v1_runtime_requests_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SequenceReassignRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SequenceReassignRequest) ProtoMessage() {}
+
+func (x *SequenceReassignRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_runtime_requests_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SequenceReassignRequest.ProtoReflect.Descriptor instead.
+func (*SequenceReassignRequest) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_runtime_requests_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *SequenceReassignRequest) GetSequenceRunId() string {
+	if x != nil {
+		return x.SequenceRunId
+	}
+	return ""
+}
+
+func (x *SequenceReassignRequest) GetActor() *v1.ActorRef {
+	if x != nil {
+		return x.Actor
+	}
+	return nil
+}
+
+type SequenceCompleteRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SequenceRunId string                 `protobuf:"bytes,1,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SequenceCompleteRequest) Reset() {
+	*x = SequenceCompleteRequest{}
+	mi := &file_runtime_v1_runtime_requests_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SequenceCompleteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SequenceCompleteRequest) ProtoMessage() {}
+
+func (x *SequenceCompleteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_runtime_requests_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SequenceCompleteRequest.ProtoReflect.Descriptor instead.
+func (*SequenceCompleteRequest) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_runtime_requests_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *SequenceCompleteRequest) GetSequenceRunId() string {
+	if x != nil {
+		return x.SequenceRunId
+	}
+	return ""
+}
+
 var File_runtime_v1_runtime_requests_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
@@ -351,7 +447,12 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x12!\n" +
 	"\felapsed_time\x18\x04 \x01(\x05R\velapsedTime\x12.\n" +
-	"\x13estimated_time_left\x18\x05 \x01(\x05R\x11estimatedTimeLeft*\xd0\x01\n" +
+	"\x13estimated_time_left\x18\x05 \x01(\x05R\x11estimatedTimeLeft\"l\n" +
+	"\x17SequenceReassignRequest\x12&\n" +
+	"\x0fsequence_run_id\x18\x01 \x01(\tR\rsequenceRunId\x12)\n" +
+	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\"A\n" +
+	"\x17SequenceCompleteRequest\x12&\n" +
+	"\x0fsequence_run_id\x18\x01 \x01(\tR\rsequenceRunId*\xd0\x01\n" +
 	"\x10TaskStateRequest\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n" +
@@ -375,24 +476,27 @@ func file_runtime_v1_runtime_requests_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_runtime_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_runtime_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_runtime_v1_runtime_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_runtime_v1_runtime_requests_proto_goTypes = []any{
-	(TaskStateRequest)(0),          // 0: runtime.v1.TaskStateRequest
-	(*ProcessAbortRequest)(nil),    // 1: runtime.v1.ProcessAbortRequest
-	(*TaskStateChangeRequest)(nil), // 2: runtime.v1.TaskStateChangeRequest
-	(*TaskReassignRequest)(nil),    // 3: runtime.v1.TaskReassignRequest
-	(*TaskProgressUpdate)(nil),     // 4: runtime.v1.TaskProgressUpdate
-	(*v1.ActorRef)(nil),            // 5: common.v1.ActorRef
+	(TaskStateRequest)(0),           // 0: runtime.v1.TaskStateRequest
+	(*ProcessAbortRequest)(nil),     // 1: runtime.v1.ProcessAbortRequest
+	(*TaskStateChangeRequest)(nil),  // 2: runtime.v1.TaskStateChangeRequest
+	(*TaskReassignRequest)(nil),     // 3: runtime.v1.TaskReassignRequest
+	(*TaskProgressUpdate)(nil),      // 4: runtime.v1.TaskProgressUpdate
+	(*SequenceReassignRequest)(nil), // 5: runtime.v1.SequenceReassignRequest
+	(*SequenceCompleteRequest)(nil), // 6: runtime.v1.SequenceCompleteRequest
+	(*v1.ActorRef)(nil),             // 7: common.v1.ActorRef
 }
 var file_runtime_v1_runtime_requests_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.TaskStateChangeRequest.state:type_name -> runtime.v1.TaskStateRequest
-	5, // 1: runtime.v1.TaskReassignRequest.actor:type_name -> common.v1.ActorRef
-	5, // 2: runtime.v1.TaskProgressUpdate.actor:type_name -> common.v1.ActorRef
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	7, // 1: runtime.v1.TaskReassignRequest.actor:type_name -> common.v1.ActorRef
+	7, // 2: runtime.v1.TaskProgressUpdate.actor:type_name -> common.v1.ActorRef
+	7, // 3: runtime.v1.SequenceReassignRequest.actor:type_name -> common.v1.ActorRef
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_runtime_requests_proto_init() }
@@ -406,7 +510,7 @@ func file_runtime_v1_runtime_requests_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_runtime_requests_proto_rawDesc), len(file_runtime_v1_runtime_requests_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -167,7 +167,7 @@ func (ARContextSlotType) EnumDescriptor() ([]byte, []int) {
 //
 // To summarize
 // • FIRST_WORKABLE: actionable now.
-// • IN_PROGRESS: being performed now.
+// • CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
 // • NEXT_EXPECTED: likely relevant next, but potentially blocked.
 // • LAST_COMPLETED: most recently completed.
 // • FIRST_IN_ERROR: errored task requiring attention.
@@ -180,8 +180,12 @@ const (
 	// Workability is determined by runtime assignment, actor feasibility, task
 	// state, dependencies, and other effective execution restrictions.
 	ARRunSelection_AR_RUN_SELECTION_FIRST_WORKABLE ARRunSelection = 1
-	// Select the first ordered IN_PROGRESS task assigned to the actor.
-	ARRunSelection_AR_RUN_SELECTION_IN_PROGRESS ARRunSelection = 2
+	// Select the first ordered task assigned to the actor where state is READY or
+	// IN_PROGRESS. This answers "what is this actor's current task?".
+	//
+	// Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work;
+	// the task must already be assigned to the actor.
+	ARRunSelection_AR_RUN_SELECTION_CURRENT_ASSIGNED ARRunSelection = 2
 	// Select the next non-terminal task expected to become relevant to the actor.
 	//
 	// Resolution:
@@ -207,18 +211,18 @@ var (
 	ARRunSelection_name = map[int32]string{
 		0: "AR_RUN_SELECTION_UNSPECIFIED",
 		1: "AR_RUN_SELECTION_FIRST_WORKABLE",
-		2: "AR_RUN_SELECTION_IN_PROGRESS",
+		2: "AR_RUN_SELECTION_CURRENT_ASSIGNED",
 		3: "AR_RUN_SELECTION_NEXT_EXPECTED",
 		4: "AR_RUN_SELECTION_LAST_COMPLETED",
 		5: "AR_RUN_SELECTION_FIRST_IN_ERROR",
 	}
 	ARRunSelection_value = map[string]int32{
-		"AR_RUN_SELECTION_UNSPECIFIED":    0,
-		"AR_RUN_SELECTION_FIRST_WORKABLE": 1,
-		"AR_RUN_SELECTION_IN_PROGRESS":    2,
-		"AR_RUN_SELECTION_NEXT_EXPECTED":  3,
-		"AR_RUN_SELECTION_LAST_COMPLETED": 4,
-		"AR_RUN_SELECTION_FIRST_IN_ERROR": 5,
+		"AR_RUN_SELECTION_UNSPECIFIED":      0,
+		"AR_RUN_SELECTION_FIRST_WORKABLE":   1,
+		"AR_RUN_SELECTION_CURRENT_ASSIGNED": 2,
+		"AR_RUN_SELECTION_NEXT_EXPECTED":    3,
+		"AR_RUN_SELECTION_LAST_COMPLETED":   4,
+		"AR_RUN_SELECTION_FIRST_IN_ERROR":   5,
 	}
 )
 
@@ -847,11 +851,11 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\x1eAR_CONTEXT_SLOT_TYPE_WORKER_ID\x10\x04\x12'\n" +
 	"#AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID\x10\x05\x12(\n" +
 	"$AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID\x10\x06\x12$\n" +
-	" AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x10\a*\xe7\x01\n" +
+	" AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x10\a*\xec\x01\n" +
 	"\x0eARRunSelection\x12 \n" +
 	"\x1cAR_RUN_SELECTION_UNSPECIFIED\x10\x00\x12#\n" +
-	"\x1fAR_RUN_SELECTION_FIRST_WORKABLE\x10\x01\x12 \n" +
-	"\x1cAR_RUN_SELECTION_IN_PROGRESS\x10\x02\x12\"\n" +
+	"\x1fAR_RUN_SELECTION_FIRST_WORKABLE\x10\x01\x12%\n" +
+	"!AR_RUN_SELECTION_CURRENT_ASSIGNED\x10\x02\x12\"\n" +
 	"\x1eAR_RUN_SELECTION_NEXT_EXPECTED\x10\x03\x12#\n" +
 	"\x1fAR_RUN_SELECTION_LAST_COMPLETED\x10\x04\x12#\n" +
 	"\x1fAR_RUN_SELECTION_FIRST_IN_ERROR\x10\x05B\x8a\x01\n" +

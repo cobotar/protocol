@@ -84,6 +84,52 @@ func (ProcessLoadStrategy) EnumDescriptor() ([]byte, []int) {
 	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{0}
 }
 
+type AllocationStrategy int32
+
+const (
+	AllocationStrategy_ALLOCATION_STRATEGY_UNSPECIFIED AllocationStrategy = 0
+	AllocationStrategy_ALLOCATION_STRATEGY_STATIC      AllocationStrategy = 1
+)
+
+// Enum value maps for AllocationStrategy.
+var (
+	AllocationStrategy_name = map[int32]string{
+		0: "ALLOCATION_STRATEGY_UNSPECIFIED",
+		1: "ALLOCATION_STRATEGY_STATIC",
+	}
+	AllocationStrategy_value = map[string]int32{
+		"ALLOCATION_STRATEGY_UNSPECIFIED": 0,
+		"ALLOCATION_STRATEGY_STATIC":      1,
+	}
+)
+
+func (x AllocationStrategy) Enum() *AllocationStrategy {
+	p := new(AllocationStrategy)
+	*p = x
+	return p
+}
+
+func (x AllocationStrategy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AllocationStrategy) Descriptor() protoreflect.EnumDescriptor {
+	return file_runtime_v1_process_requests_proto_enumTypes[1].Descriptor()
+}
+
+func (AllocationStrategy) Type() protoreflect.EnumType {
+	return &file_runtime_v1_process_requests_proto_enumTypes[1]
+}
+
+func (x AllocationStrategy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AllocationStrategy.Descriptor instead.
+func (AllocationStrategy) EnumDescriptor() ([]byte, []int) {
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
+}
+
 type ProcessLoadFailure int32
 
 const (
@@ -221,11 +267,11 @@ func (x ProcessLoadFailure) String() string {
 }
 
 func (ProcessLoadFailure) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[1].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[2].Descriptor()
 }
 
 func (ProcessLoadFailure) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[1]
+	return &file_runtime_v1_process_requests_proto_enumTypes[2]
 }
 
 func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
@@ -234,7 +280,7 @@ func (x ProcessLoadFailure) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadFailure.Descriptor instead.
 func (ProcessLoadFailure) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{1}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
 }
 
 type ProcessRunIssueSeverity int32
@@ -270,11 +316,11 @@ func (x ProcessRunIssueSeverity) String() string {
 }
 
 func (ProcessRunIssueSeverity) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[2].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[3].Descriptor()
 }
 
 func (ProcessRunIssueSeverity) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[2]
+	return &file_runtime_v1_process_requests_proto_enumTypes[3]
 }
 
 func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
@@ -283,7 +329,7 @@ func (x ProcessRunIssueSeverity) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunIssueSeverity.Descriptor instead.
 func (ProcessRunIssueSeverity) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
 }
 
 type RequirementImportance int32
@@ -319,11 +365,11 @@ func (x RequirementImportance) String() string {
 }
 
 func (RequirementImportance) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[3].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[4].Descriptor()
 }
 
 func (RequirementImportance) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[3]
+	return &file_runtime_v1_process_requests_proto_enumTypes[4]
 }
 
 func (x RequirementImportance) Number() protoreflect.EnumNumber {
@@ -332,7 +378,7 @@ func (x RequirementImportance) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RequirementImportance.Descriptor instead.
 func (RequirementImportance) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 type ProcessRunPrecheckStatus int32
@@ -371,11 +417,11 @@ func (x ProcessRunPrecheckStatus) String() string {
 }
 
 func (ProcessRunPrecheckStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[4].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[5].Descriptor()
 }
 
 func (ProcessRunPrecheckStatus) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[4]
+	return &file_runtime_v1_process_requests_proto_enumTypes[5]
 }
 
 func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
@@ -384,7 +430,7 @@ func (x ProcessRunPrecheckStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessRunPrecheckStatus.Descriptor instead.
 func (ProcessRunPrecheckStatus) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
 }
 
 type ProcessLoadStatus int32
@@ -423,11 +469,11 @@ func (x ProcessLoadStatus) String() string {
 }
 
 func (ProcessLoadStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_runtime_v1_process_requests_proto_enumTypes[5].Descriptor()
+	return file_runtime_v1_process_requests_proto_enumTypes[6].Descriptor()
 }
 
 func (ProcessLoadStatus) Type() protoreflect.EnumType {
-	return &file_runtime_v1_process_requests_proto_enumTypes[5]
+	return &file_runtime_v1_process_requests_proto_enumTypes[6]
 }
 
 func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
@@ -436,7 +482,7 @@ func (x ProcessLoadStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProcessLoadStatus.Descriptor instead.
 func (ProcessLoadStatus) EnumDescriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{6}
 }
 
 // ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
@@ -491,9 +537,11 @@ type ProcessLoadRequest struct {
 	// Optional order/business reference to carry into the ProcessRun.
 	OrderId string `protobuf:"bytes,9,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	// Optional caller-provided parameters used during instantiation.
-	Parameters    []*v11.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Parameters         []*v11.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	AllocationStrategy AllocationStrategy        `protobuf:"varint,11,opt,name=allocation_strategy,json=allocationStrategy,proto3,enum=runtime.v1.AllocationStrategy" json:"allocation_strategy,omitempty"`
+	TargetEmployee     string                    `protobuf:"bytes,12,opt,name=target_employee,json=targetEmployee,proto3" json:"target_employee,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *ProcessLoadRequest) Reset() {
@@ -594,6 +642,20 @@ func (x *ProcessLoadRequest) GetParameters() []*v11.KeyValueConstraint {
 		return x.Parameters
 	}
 	return nil
+}
+
+func (x *ProcessLoadRequest) GetAllocationStrategy() AllocationStrategy {
+	if x != nil {
+		return x.AllocationStrategy
+	}
+	return AllocationStrategy_ALLOCATION_STRATEGY_UNSPECIFIED
+}
+
+func (x *ProcessLoadRequest) GetTargetEmployee() string {
+	if x != nil {
+		return x.TargetEmployee
+	}
+	return ""
 }
 
 type ProcessRunIssue struct {
@@ -1111,7 +1173,7 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xa8\x04\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xb7\x05\n" +
 	"\x12ProcessLoadRequest\x128\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf2\x04\x01R\ftargetLineId\x12/\n" +
@@ -1125,7 +1187,9 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"parameters\x18\n" +
 	" \x03(\v2\x1d.common.v1.KeyValueConstraintR\n" +
-	"parameters\"\x9d\x05\n" +
+	"parameters\x12Y\n" +
+	"\x13allocation_strategy\x18\v \x01(\x0e2\x1e.runtime.v1.AllocationStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\x12allocationStrategy\x122\n" +
+	"\x0ftarget_employee\x18\f \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x0etargetEmployee\"\x9d\x05\n" +
 	"\x0fProcessRunIssue\x128\n" +
 	"\afailure\x18\x01 \x01(\x0e2\x1e.runtime.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12?\n" +
@@ -1183,7 +1247,10 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"$PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE\x10\x01\x12*\n" +
 	"&PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE\x10\x02\x12-\n" +
 	")PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE\x10\x03\x12$\n" +
-	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*\xad\f\n" +
+	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*Y\n" +
+	"\x12AllocationStrategy\x12#\n" +
+	"\x1fALLOCATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x1e\n" +
+	"\x1aALLOCATION_STRATEGY_STATIC\x10\x01*\xad\f\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
 	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x121\n" +
 	"-PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND\x10\x02\x12.\n" +
@@ -1253,51 +1320,53 @@ func file_runtime_v1_process_requests_proto_rawDescGZIP() []byte {
 	return file_runtime_v1_process_requests_proto_rawDescData
 }
 
-var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
+var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
 var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(ProcessLoadStrategy)(0),         // 0: runtime.v1.ProcessLoadStrategy
-	(ProcessLoadFailure)(0),          // 1: runtime.v1.ProcessLoadFailure
-	(ProcessRunIssueSeverity)(0),     // 2: runtime.v1.ProcessRunIssueSeverity
-	(RequirementImportance)(0),       // 3: runtime.v1.RequirementImportance
-	(ProcessRunPrecheckStatus)(0),    // 4: runtime.v1.ProcessRunPrecheckStatus
-	(ProcessLoadStatus)(0),           // 5: runtime.v1.ProcessLoadStatus
-	(*ProcessLoadRequest)(nil),       // 6: runtime.v1.ProcessLoadRequest
-	(*ProcessRunIssue)(nil),          // 7: runtime.v1.ProcessRunIssue
-	(*CandidateActorEvaluation)(nil), // 8: runtime.v1.CandidateActorEvaluation
-	(*TaskFeasibility)(nil),          // 9: runtime.v1.TaskFeasibility
-	(*ProcessRunPrecheckResult)(nil), // 10: runtime.v1.ProcessRunPrecheckResult
-	(*ProcessLoadResult)(nil),        // 11: runtime.v1.ProcessLoadResult
-	(*v1.VariantConfiguration)(nil),  // 12: variance.v1.VariantConfiguration
-	(*v11.KeyValueConstraint)(nil),   // 13: common.v1.KeyValueConstraint
-	(*v11.ActorRef)(nil),             // 14: common.v1.ActorRef
-	(*RuntimeRestriction)(nil),       // 15: runtime.v1.RuntimeRestriction
-	(*ProcessRun)(nil),               // 16: runtime.v1.ProcessRun
+	(AllocationStrategy)(0),          // 1: runtime.v1.AllocationStrategy
+	(ProcessLoadFailure)(0),          // 2: runtime.v1.ProcessLoadFailure
+	(ProcessRunIssueSeverity)(0),     // 3: runtime.v1.ProcessRunIssueSeverity
+	(RequirementImportance)(0),       // 4: runtime.v1.RequirementImportance
+	(ProcessRunPrecheckStatus)(0),    // 5: runtime.v1.ProcessRunPrecheckStatus
+	(ProcessLoadStatus)(0),           // 6: runtime.v1.ProcessLoadStatus
+	(*ProcessLoadRequest)(nil),       // 7: runtime.v1.ProcessLoadRequest
+	(*ProcessRunIssue)(nil),          // 8: runtime.v1.ProcessRunIssue
+	(*CandidateActorEvaluation)(nil), // 9: runtime.v1.CandidateActorEvaluation
+	(*TaskFeasibility)(nil),          // 10: runtime.v1.TaskFeasibility
+	(*ProcessRunPrecheckResult)(nil), // 11: runtime.v1.ProcessRunPrecheckResult
+	(*ProcessLoadResult)(nil),        // 12: runtime.v1.ProcessLoadResult
+	(*v1.VariantConfiguration)(nil),  // 13: variance.v1.VariantConfiguration
+	(*v11.KeyValueConstraint)(nil),   // 14: common.v1.KeyValueConstraint
+	(*v11.ActorRef)(nil),             // 15: common.v1.ActorRef
+	(*RuntimeRestriction)(nil),       // 16: runtime.v1.RuntimeRestriction
+	(*ProcessRun)(nil),               // 17: runtime.v1.ProcessRun
 }
 var file_runtime_v1_process_requests_proto_depIdxs = []int32{
-	12, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	13, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
 	0,  // 1: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
-	13, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
-	1,  // 3: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
-	2,  // 4: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
-	3,  // 5: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
-	14, // 6: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
-	15, // 7: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
-	7,  // 8: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
-	14, // 9: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
-	7,  // 10: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	8,  // 11: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	7,  // 12: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	9,  // 13: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	4,  // 14: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	5,  // 15: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	10, // 16: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	16, // 17: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	18, // [18:18] is the sub-list for method output_type
-	18, // [18:18] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	14, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
+	1,  // 3: runtime.v1.ProcessLoadRequest.allocation_strategy:type_name -> runtime.v1.AllocationStrategy
+	2,  // 4: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
+	3,  // 5: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
+	4,  // 6: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
+	15, // 7: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
+	16, // 8: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	8,  // 9: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
+	15, // 10: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
+	8,  // 11: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	9,  // 12: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	8,  // 13: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	10, // 14: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	5,  // 15: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	6,  // 16: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	11, // 17: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	17, // 18: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	19, // [19:19] is the sub-list for method output_type
+	19, // [19:19] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }
@@ -1312,7 +1381,7 @@ func file_runtime_v1_process_requests_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)),
-			NumEnums:      6,
+			NumEnums:      7,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,

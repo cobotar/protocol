@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/runtime_requests.proto.
  */
 export const file_runtime_v1_runtime_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEiPQoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIWCg5wcm9jZXNzX3J1bl9pZBgBIAEoCRIOCgZyZWFzb24YAiABKAkihQEKFlRhc2tTdGF0ZUNoYW5nZVJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSKwoFc3RhdGUYAiABKA4yHC5ydW50aW1lLnYxLlRhc2tTdGF0ZVJlcXVlc3QSEgoKZXJyb3JfY29kZRgDIAEoCRIVCg1lcnJvcl9tZXNzYWdlGAQgASgJIk4KE1Rhc2tSZWFzc2lnblJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSIgoFYWN0b3IYAiABKAsyEy5jb21tb24udjEuQWN0b3JSZWYikQEKElRhc2tQcm9ncmVzc1VwZGF0ZRITCgt0YXNrX3J1bl9pZBgBIAEoCRIiCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIPCgdtZXNzYWdlGAMgASgJEhQKDGVsYXBzZWRfdGltZRgEIAEoBRIbChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAUgASgFKtABChBUYXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJRklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsKF1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFVRVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIcChhUQVNLX1NUQVRFX1JFUVVFU1RfQUJPUlQQBUKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_common_v1_actor]);
+  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEiPQoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIWCg5wcm9jZXNzX3J1bl9pZBgBIAEoCRIOCgZyZWFzb24YAiABKAkihQEKFlRhc2tTdGF0ZUNoYW5nZVJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSKwoFc3RhdGUYAiABKA4yHC5ydW50aW1lLnYxLlRhc2tTdGF0ZVJlcXVlc3QSEgoKZXJyb3JfY29kZRgDIAEoCRIVCg1lcnJvcl9tZXNzYWdlGAQgASgJIk4KE1Rhc2tSZWFzc2lnblJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSIgoFYWN0b3IYAiABKAsyEy5jb21tb24udjEuQWN0b3JSZWYikQEKElRhc2tQcm9ncmVzc1VwZGF0ZRITCgt0YXNrX3J1bl9pZBgBIAEoCRIiCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIPCgdtZXNzYWdlGAMgASgJEhQKDGVsYXBzZWRfdGltZRgEIAEoBRIbChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAUgASgFIlYKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EhcKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCRIiCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZiIyChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBIXCg9zZXF1ZW5jZV9ydW5faWQYASABKAkq0AEKEFRhc2tTdGF0ZVJlcXVlc3QSIgoeVEFTS19TVEFURV9SRVFVRVNUX1VOU1BFQ0lGSUVEEAASIgoeVEFTS19TVEFURV9SRVFVRVNUX0lOX1BST0dSRVNTEAESGwoXVEFTS19TVEFURV9SRVFVRVNUX0RPTkUQAhIbChdUQVNLX1NUQVRFX1JFUVVFU1RfVU5ETxADEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9FUlJPUhAEEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9BQk9SVBAFQrMBCg5jb20ucnVudGltZS52MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_actor]);
 
 /**
  * @generated from message runtime.v1.ProcessAbortRequest
@@ -130,6 +130,45 @@ export type TaskProgressUpdate = Message<"runtime.v1.TaskProgressUpdate"> & {
  */
 export const TaskProgressUpdateSchema: GenMessage<TaskProgressUpdate> = /*@__PURE__*/
   messageDesc(file_runtime_v1_runtime_requests, 3);
+
+/**
+ * @generated from message runtime.v1.SequenceReassignRequest
+ */
+export type SequenceReassignRequest = Message<"runtime.v1.SequenceReassignRequest"> & {
+  /**
+   * @generated from field: string sequence_run_id = 1;
+   */
+  sequenceRunId: string;
+
+  /**
+   * @generated from field: common.v1.ActorRef actor = 2;
+   */
+  actor?: ActorRef;
+};
+
+/**
+ * Describes the message runtime.v1.SequenceReassignRequest.
+ * Use `create(SequenceReassignRequestSchema)` to create a new message.
+ */
+export const SequenceReassignRequestSchema: GenMessage<SequenceReassignRequest> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_runtime_requests, 4);
+
+/**
+ * @generated from message runtime.v1.SequenceCompleteRequest
+ */
+export type SequenceCompleteRequest = Message<"runtime.v1.SequenceCompleteRequest"> & {
+  /**
+   * @generated from field: string sequence_run_id = 1;
+   */
+  sequenceRunId: string;
+};
+
+/**
+ * Describes the message runtime.v1.SequenceCompleteRequest.
+ * Use `create(SequenceCompleteRequestSchema)` to create a new message.
+ */
+export const SequenceCompleteRequestSchema: GenMessage<SequenceCompleteRequest> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_runtime_requests, 5);
 
 /**
  * @generated from enum runtime.v1.TaskStateRequest

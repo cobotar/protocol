@@ -182,8 +182,7 @@ type TaskRun struct {
 	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
 	ErrorCode           string                 `protobuf:"bytes,15,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
 	ErrorMessage        string                 `protobuf:"bytes,16,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
-	Evidence            []*ExecutionEvidence   `protobuf:"bytes,17,rep,name=evidence,proto3" json:"evidence,omitempty"` // TODO: consider delete, already 'linked to' from ExecutionEvidence
-	Binding             *TaskRuntimeBinding    `protobuf:"bytes,18,opt,name=binding,proto3" json:"binding,omitempty"`
+	Binding             *TaskRuntimeBinding    `protobuf:"bytes,17,opt,name=binding,proto3" json:"binding,omitempty"`
 	// Effective runtime restrictions that currently apply to this task.
 	//
 	// These restrictions are the effective restrictions for the currently
@@ -342,13 +341,6 @@ func (x *TaskRun) GetErrorMessage() string {
 	return ""
 }
 
-func (x *TaskRun) GetEvidence() []*ExecutionEvidence {
-	if x != nil {
-		return x.Evidence
-	}
-	return nil
-}
-
 func (x *TaskRun) GetBinding() *TaskRuntimeBinding {
 	if x != nil {
 		return x.Binding
@@ -419,14 +411,14 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a#runtime/v1/execution_evidence.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
 	"\x12TaskRuntimeBinding\x12*\n" +
 	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
 	"\n" +
 	"station_id\x18\x03 \x01(\tR\tstationId\x12\x17\n" +
 	"\acell_id\x18\x04 \x01(\tR\x06cellId\x12E\n" +
-	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\x80\b\n" +
+	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xc5\a\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -446,9 +438,8 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\fcompleted_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x1d\n" +
 	"\n" +
 	"error_code\x18\x0f \x01(\tR\terrorCode\x12#\n" +
-	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x129\n" +
-	"\bevidence\x18\x11 \x03(\v2\x1d.runtime.v1.ExecutionEvidenceR\bevidence\x128\n" +
-	"\abinding\x18\x12 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\x12B\n" +
+	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x128\n" +
+	"\abinding\x18\x11 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\x12B\n" +
 	"\frestrictions\x18\x13 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x12d\n" +
 	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"5\n" +
 	"\bTaskRuns\x12)\n" +
@@ -487,9 +478,8 @@ var file_runtime_v1_task_run_proto_goTypes = []any{
 	(*v11.ActorRef)(nil),             // 5: common.v1.ActorRef
 	(*v11.EstimatedDuration)(nil),    // 6: common.v1.EstimatedDuration
 	(*timestamppb.Timestamp)(nil),    // 7: google.protobuf.Timestamp
-	(*ExecutionEvidence)(nil),        // 8: runtime.v1.ExecutionEvidence
-	(*RuntimeRestriction)(nil),       // 9: runtime.v1.RuntimeRestriction
-	(*CandidateActorEvaluation)(nil), // 10: runtime.v1.CandidateActorEvaluation
+	(*RuntimeRestriction)(nil),       // 8: runtime.v1.RuntimeRestriction
+	(*CandidateActorEvaluation)(nil), // 9: runtime.v1.CandidateActorEvaluation
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
@@ -499,16 +489,15 @@ var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	6,  // 4: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
 	7,  // 5: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
 	7,  // 6: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
-	8,  // 7: runtime.v1.TaskRun.evidence:type_name -> runtime.v1.ExecutionEvidence
-	1,  // 8: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
-	9,  // 9: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
-	10, // 10: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	2,  // 11: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	1,  // 7: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
+	8,  // 8: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	9,  // 9: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	2,  // 10: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_task_run_proto_init() }
@@ -516,7 +505,6 @@ func file_runtime_v1_task_run_proto_init() {
 	if File_runtime_v1_task_run_proto != nil {
 		return
 	}
-	file_runtime_v1_execution_evidence_proto_init()
 	file_runtime_v1_process_requests_proto_init()
 	file_runtime_v1_runtime_restriction_proto_init()
 	type x struct{}

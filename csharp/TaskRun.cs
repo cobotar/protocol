@@ -28,53 +28,51 @@ namespace Messages.Runtime.V1 {
             "dmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aFWNvbW1vbi92MS9hY3Rvci5wcm90",
             "bxoUY29tbW9uL3YxL3RpbWUucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1l",
             "c3RhbXAucHJvdG8aJ3Jlc291cmNlcy92MS9jb250YWluZXJfZGVmaW5pdGlv",
-            "bi5wcm90bxojcnVudGltZS92MS9leGVjdXRpb25fZXZpZGVuY2UucHJvdG8a",
-            "IXJ1bnRpbWUvdjEvcHJvY2Vzc19yZXF1ZXN0cy5wcm90bxokcnVudGltZS92",
-            "MS9ydW50aW1lX3Jlc3RyaWN0aW9uLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
-            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIusBChJUYXNrUnVudGltZUJp",
-            "bmRpbmcSKgoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlSD2Fzc2V0SW5zdGFu",
-            "Y2VJZBIqChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCVIPcm9ib3RJbnN0YW5j",
-            "ZUlkEh0KCnN0YXRpb25faWQYAyABKAlSCXN0YXRpb25JZBIXCgdjZWxsX2lk",
-            "GAQgASgJUgZjZWxsSWQSRQoOY29udGFpbmVyX3Nsb3QYBSABKAsyHi5yZXNv",
-            "dXJjZXMudjEuQ29udGFpbmVyU2xvdFJlZlINY29udGFpbmVyU2xvdCKACAoH",
-            "VGFza1J1bhIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIS",
-            "CgRpY29uGAMgASgJUgRpY29uEjoKEnRhc2tfZGVmaW5pdGlvbl9pZBgEIAEo",
-            "CUIMukgJcgSw8gQByAEBUhB0YXNrRGVmaW5pdGlvbklkEkEKFnBhcmVudF9z",
-            "ZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpICXIEkPIEAcgBAVITcGFyZW50U2Vx",
-            "dWVuY2VSdW5JZBI7CgVzdGF0ZRgGIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1",
-            "blN0YXRlQgu6SAiCAQIQAcgBAVIFc3RhdGUSPgoQY2FuZGlkYXRlX2FjdG9y",
-            "cxgHIAMoCzITLmNvbW1vbi52MS5BY3RvclJlZlIPY2FuZGlkYXRlQWN0b3Jz",
-            "EjoKDmFzc2lnbmVkX2FjdG9yGAggASgLMhMuY29tbW9uLnYxLkFjdG9yUmVm",
-            "Ug1hc3NpZ25lZEFjdG9yEhUKBmNhbl9kbxgJIAEoCFIFY2FuRG8SGQoIY2Fu",
-            "X3VuZG8YCiABKAhSB2NhblVuZG8SKQoQd29ya2FibGVfaG9yaXpvbhgLIAEo",
-            "BVIPd29ya2FibGVIb3Jpem9uEksKEmVzdGltYXRlZF9kdXJhdGlvbhgMIAEo",
-            "CzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvblIRZXN0aW1hdGVkRHVy",
-            "YXRpb24SOQoKc3RhcnRlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
-            "aW1lc3RhbXBSCXN0YXJ0ZWRBdBI9Cgxjb21wbGV0ZWRfYXQYDiABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtjb21wbGV0ZWRBdBIdCgplcnJv",
-            "cl9jb2RlGA8gASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgQIAEo",
-            "CVIMZXJyb3JNZXNzYWdlEjkKCGV2aWRlbmNlGBEgAygLMh0ucnVudGltZS52",
-            "MS5FeGVjdXRpb25FdmlkZW5jZVIIZXZpZGVuY2USOAoHYmluZGluZxgSIAEo",
-            "CzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nEkIK",
-            "DHJlc3RyaWN0aW9ucxgTIAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3Ry",
-            "aWN0aW9uUgxyZXN0cmljdGlvbnMSZAobY2FuZGlkYXRlX2FjdG9yX2V2YWx1",
-            "YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1",
-            "YXRpb25SGWNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlvbnMiNQoIVGFza1J1bnMS",
-            "KQoFaXRlbXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUB",
-            "CgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQ",
-            "ABIcChhUQVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9T",
-            "VEFURV9SRUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMS",
-            "FwoTVEFTS19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VS",
-            "Uk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVu",
-            "dGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoC",
-            "E01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxW",
-            "MVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "bi5wcm90bxohcnVudGltZS92MS9wcm9jZXNzX3JlcXVlc3RzLnByb3RvGiRy",
+            "dW50aW1lL3YxL3J1bnRpbWVfcmVzdHJpY3Rpb24ucHJvdG8aK3ZhbGlkYXRp",
+            "b24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i6wEKElRhc2tS",
+            "dW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgBIAEoCVIPYXNz",
+            "ZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIgASgJUg9yb2Jv",
+            "dEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3RhdGlvbklkEhcK",
+            "B2NlbGxfaWQYBCABKAlSBmNlbGxJZBJFCg5jb250YWluZXJfc2xvdBgFIAEo",
+            "CzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmUg1jb250YWluZXJT",
+            "bG90IsUHCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJ",
+            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SOgoSdGFza19kZWZpbml0aW9u",
+            "X2lkGAQgASgJQgy6SAlyBLDyBAHIAQFSEHRhc2tEZWZpbml0aW9uSWQSQQoW",
+            "cGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJcgSQ8gQByAEBUhNw",
+            "YXJlbnRTZXF1ZW5jZVJ1bklkEjsKBXN0YXRlGAYgASgOMhgucnVudGltZS52",
+            "MS5UYXNrUnVuU3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRI+ChBjYW5kaWRh",
+            "dGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmUg9jYW5kaWRh",
+            "dGVBY3RvcnMSOgoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5jb21tb24udjEu",
+            "QWN0b3JSZWZSDWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAkgASgIUgVjYW5E",
+            "bxIZCghjYW5fdW5kbxgKIAEoCFIHY2FuVW5kbxIpChB3b3JrYWJsZV9ob3Jp",
+            "em9uGAsgASgFUg93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1hdGVkX2R1cmF0",
+            "aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhFlc3Rp",
+            "bWF0ZWREdXJhdGlvbhI5CgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgO",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0",
+            "Eh0KCmVycm9yX2NvZGUYDyABKAlSCWVycm9yQ29kZRIjCg1lcnJvcl9tZXNz",
+            "YWdlGBAgASgJUgxlcnJvck1lc3NhZ2USOAoHYmluZGluZxgRIAEoCzIeLnJ1",
+            "bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nEkIKDHJlc3Ry",
+            "aWN0aW9ucxgTIAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3RyaWN0aW9u",
+            "UgxyZXN0cmljdGlvbnMSZAobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25z",
+            "GBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb25S",
+            "GWNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlvbnMiNQoIVGFza1J1bnMSKQoFaXRl",
+            "bXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUBCgxUYXNr",
+            "UnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhU",
+            "QVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9S",
+            "RUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFT",
+            "S19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUS",
+            "GgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52",
+            "MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3Nh",
+            "Z2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJN",
+            "ZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ExecutionEvidenceReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "CellId", "ContainerSlot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Evidence", "Binding", "Restrictions", "CandidateActorEvaluations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Binding", "Restrictions", "CandidateActorEvaluations" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -507,7 +505,6 @@ namespace Messages.Runtime.V1 {
       completedAt_ = other.completedAt_ != null ? other.completedAt_.Clone() : null;
       errorCode_ = other.errorCode_;
       errorMessage_ = other.errorMessage_;
-      evidence_ = other.evidence_.Clone();
       binding_ = other.binding_ != null ? other.binding_.Clone() : null;
       restrictions_ = other.restrictions_.Clone();
       candidateActorEvaluations_ = other.candidateActorEvaluations_.Clone();
@@ -714,22 +711,8 @@ namespace Messages.Runtime.V1 {
       }
     }
 
-    /// <summary>Field number for the "evidence" field.</summary>
-    public const int EvidenceFieldNumber = 17;
-    private static readonly pb::FieldCodec<global::Messages.Runtime.V1.ExecutionEvidence> _repeated_evidence_codec
-        = pb::FieldCodec.ForMessage(138, global::Messages.Runtime.V1.ExecutionEvidence.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence> evidence_ = new pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence>();
-    /// <summary>
-    /// TODO: consider delete, already 'linked to' from ExecutionEvidence
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Runtime.V1.ExecutionEvidence> Evidence {
-      get { return evidence_; }
-    }
-
     /// <summary>Field number for the "binding" field.</summary>
-    public const int BindingFieldNumber = 18;
+    public const int BindingFieldNumber = 17;
     private global::Messages.Runtime.V1.TaskRuntimeBinding binding_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -805,7 +788,6 @@ namespace Messages.Runtime.V1 {
       if (!object.Equals(CompletedAt, other.CompletedAt)) return false;
       if (ErrorCode != other.ErrorCode) return false;
       if (ErrorMessage != other.ErrorMessage) return false;
-      if(!evidence_.Equals(other.evidence_)) return false;
       if (!object.Equals(Binding, other.Binding)) return false;
       if(!restrictions_.Equals(other.restrictions_)) return false;
       if(!candidateActorEvaluations_.Equals(other.candidateActorEvaluations_)) return false;
@@ -832,7 +814,6 @@ namespace Messages.Runtime.V1 {
       if (completedAt_ != null) hash ^= CompletedAt.GetHashCode();
       if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
       if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
-      hash ^= evidence_.GetHashCode();
       if (binding_ != null) hash ^= Binding.GetHashCode();
       hash ^= restrictions_.GetHashCode();
       hash ^= candidateActorEvaluations_.GetHashCode();
@@ -915,9 +896,8 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(130, 1);
         output.WriteString(ErrorMessage);
       }
-      evidence_.WriteTo(output, _repeated_evidence_codec);
       if (binding_ != null) {
-        output.WriteRawTag(146, 1);
+        output.WriteRawTag(138, 1);
         output.WriteMessage(Binding);
       }
       restrictions_.WriteTo(output, _repeated_restrictions_codec);
@@ -993,9 +973,8 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(130, 1);
         output.WriteString(ErrorMessage);
       }
-      evidence_.WriteTo(ref output, _repeated_evidence_codec);
       if (binding_ != null) {
-        output.WriteRawTag(146, 1);
+        output.WriteRawTag(138, 1);
         output.WriteMessage(Binding);
       }
       restrictions_.WriteTo(ref output, _repeated_restrictions_codec);
@@ -1056,7 +1035,6 @@ namespace Messages.Runtime.V1 {
       if (ErrorMessage.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
       }
-      size += evidence_.CalculateSize(_repeated_evidence_codec);
       if (binding_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Binding);
       }
@@ -1132,7 +1110,6 @@ namespace Messages.Runtime.V1 {
       if (other.ErrorMessage.Length != 0) {
         ErrorMessage = other.ErrorMessage;
       }
-      evidence_.Add(other.evidence_);
       if (other.binding_ != null) {
         if (binding_ == null) {
           Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
@@ -1237,10 +1214,6 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 138: {
-            evidence_.AddEntriesFrom(input, _repeated_evidence_codec);
-            break;
-          }
-          case 146: {
             if (binding_ == null) {
               Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
             }
@@ -1351,10 +1324,6 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 138: {
-            evidence_.AddEntriesFrom(ref input, _repeated_evidence_codec);
-            break;
-          }
-          case 146: {
             if (binding_ == null) {
               Binding = new global::Messages.Runtime.V1.TaskRuntimeBinding();
             }

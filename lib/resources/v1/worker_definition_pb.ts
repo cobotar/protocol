@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/worker_definition.proto.
  */
 export const file_resources_v1_worker_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJnCg5Xb3JrZXJMb2NhdGlvbhIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEASKxAgoQV29ya2VyRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTY6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjgKEmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvbhI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEi4KCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2VzLnYxLldvcmtlckxvY2F0aW9uIkIKEVdvcmtlckRlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb24qhAEKDkVkaXRQZXJtaXNzaW9uEh8KG0VESVRfUEVSTUlTU0lPTl9VTlNQRUNJRklFRBAAEhkKFUVESVRfUEVSTUlTU0lPTl9CQVNJQxABEhwKGEVESVRfUEVSTUlTU0lPTl9DT1NNRVRJQxACEhgKFEVESVRfUEVSTUlTU0lPTl9GVUxMEANCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJnCg5Xb3JrZXJMb2NhdGlvbhIaCgdsaW5lX2lkGAEgASgJQgm6SAZyBMDyBAESGgoHY2VsbF9pZBgCIAEoCUIJukgGcgS48gQBEh0KCnN0YXRpb25faWQYAyABKAlCCbpIBnIE+PEEASKHBgoQV29ya2VyRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgTY6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRpY29uGAQgASgJEhAKCGRpc2FibGVkGAUgASgIEhMKC2VtcGxveWVlX2lkGAYgASgJEjgKEmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0UGVybWlzc2lvbhI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEi4KCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2VzLnYxLldvcmtlckxvY2F0aW9uEhcKBmhlaWdodBgKIAEoBUIHukgEGgIoABIcCgthcm1zX2xlbmd0aBgLIAEoBUIHukgEGgIoABI2CgpoYW5kZWRuZXNzGAwgASgOMhgucmVzb3VyY2VzLnYxLkhhbmRlZG5lc3NCCLpIBYIBAhABEjAKBHJvbGUYDSABKA4yGC5yZXNvdXJjZXMudjEuV29ya2VyUm9sZUIIukgFggECEAESSwoacHJlZmVycmVkX2ludGVyYWN0aW9uX3NpZGUYDiABKA4yHS5yZXNvdXJjZXMudjEuSW50ZXJhY3Rpb25TaWRlQgi6SAWCAQIQARJIChR0ZXh0X3NpemVfcHJlZmVyZW5jZRgPIAEoDjIgLnJlc291cmNlcy52MS5UZXh0U2l6ZVByZWZlcmVuY2VCCLpIBYIBAhABEiYKFXBlcnNvbmFsX3NwYWNlX3JhZGl1cxgQIAEoBUIHukgEGgIoABIqChloYW5kb2ZmX2hlaWdodF9wcmVmZXJlbmNlGBEgASgFQge6SAQaAigAEkgKF2hhbmRvZmZfc2lkZV9wcmVmZXJlbmNlGBIgASgOMh0ucmVzb3VyY2VzLnYxLkludGVyYWN0aW9uU2lkZUIIukgFggECEAEiQgoRV29ya2VyRGVmaW5pdGlvbnMSLQoFaXRlbXMYASADKAsyHi5yZXNvdXJjZXMudjEuV29ya2VyRGVmaW5pdGlvbiqEAQoORWRpdFBlcm1pc3Npb24SHwobRURJVF9QRVJNSVNTSU9OX1VOU1BFQ0lGSUVEEAASGQoVRURJVF9QRVJNSVNTSU9OX0JBU0lDEAESHAoYRURJVF9QRVJNSVNTSU9OX0NPU01FVElDEAISGAoURURJVF9QRVJNSVNTSU9OX0ZVTEwQAypdCgpIYW5kZWRuZXNzEhoKFkhBTkRFRE5FU1NfVU5TUEVDSUZJRUQQABIYChRIQU5ERURORVNTX0xFRlRfSEFORBABEhkKFUhBTkRFRE5FU1NfUklHSFRfSEFORBACKqwBCgpXb3JrZXJSb2xlEhsKF1dPUktFUl9ST0xFX1VOU1BFQ0lGSUVEEAASGAoUV09SS0VSX1JPTEVfT1BFUkFUT1IQARIaChZXT1JLRVJfUk9MRV9TVVBFUlZJU09SEAISGgoWV09SS0VSX1JPTEVfVEVDSE5JQ0lBThADEhgKFFdPUktFUl9ST0xFX0VOR0lORUVSEAQSFQoRV09SS0VSX1JPTEVfQURNSU4QBSqqAQoPSW50ZXJhY3Rpb25TaWRlEiAKHElOVEVSQUNUSU9OX1NJREVfVU5TUEVDSUZJRUQQABIZChVJTlRFUkFDVElPTl9TSURFX0xFRlQQARIaChZJTlRFUkFDVElPTl9TSURFX1JJR0hUEAISGgoWSU5URVJBQ1RJT05fU0lERV9GUk9OVBADEiIKHklOVEVSQUNUSU9OX1NJREVfTk9fUFJFRkVSRU5DRRAEKnsKElRleHRTaXplUHJlZmVyZW5jZRIkCiBURVhUX1NJWkVfUFJFRkVSRU5DRV9VTlNQRUNJRklFRBAAEh8KG1RFWFRfU0laRV9QUkVGRVJFTkNFX05PUk1BTBABEh4KGlRFWFRfU0laRV9QUkVGRVJFTkNFX0xBUkdFEAJCwgEKEGNvbS5yZXNvdXJjZXMudjFCFVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_validation_v1_predefined_string_rules]);
 
 /**
  * WorkerLocation describes the current operating area of a worker.
@@ -85,6 +85,8 @@ export type WorkerDefinition = Message<"resources.v1.WorkerDefinition"> & {
   employeeId: string;
 
   /**
+   * Authorization level for editing authored AR/property settings.
+   *
    * @generated from field: resources.v1.EditPermission ar_edit_permission = 7;
    */
   arEditPermission: EditPermission;
@@ -100,6 +102,69 @@ export type WorkerDefinition = Message<"resources.v1.WorkerDefinition"> & {
    * @generated from field: resources.v1.WorkerLocation location = 9;
    */
   location?: WorkerLocation;
+
+  /**
+   * Approximate worker height in centimeters. 0 if not defined.
+   *
+   * @generated from field: int32 height = 10;
+   */
+  height: number;
+
+  /**
+   * Approximate comfortable arm reach in centimeters. 0 if not defined.
+   *
+   * @generated from field: int32 arms_length = 11;
+   */
+  armsLength: number;
+
+  /**
+   * Physical handedness; use preferred_interaction_side first for layout decisions.
+   *
+   * @generated from field: resources.v1.Handedness handedness = 12;
+   */
+  handedness: Handedness;
+
+  /**
+   * Operational role used to select relevant views, workflows, and defaults.
+   *
+   * @generated from field: resources.v1.WorkerRole role = 13;
+   */
+  role: WorkerRole;
+
+  /**
+   * Preferred side for AR controls, prompts, and robot approach.
+   *
+   * @generated from field: resources.v1.InteractionSide preferred_interaction_side = 14;
+   */
+  preferredInteractionSide: InteractionSide;
+
+  /**
+   * Preferred AR text scale bucket.
+   *
+   * @generated from field: resources.v1.TextSizePreference text_size_preference = 15;
+   */
+  textSizePreference: TextSizePreference;
+
+  /**
+   * Preferred minimum robot distance from the worker in centimeters. 0 if not defined.
+   *
+   * @generated from field: int32 personal_space_radius = 16;
+   */
+  personalSpaceRadius: number;
+
+  /**
+   * Preferred object handoff height in centimeters from the floor. 0 if not defined.
+   *
+   * @generated from field: int32 handoff_height_preference = 17;
+   */
+  handoffHeightPreference: number;
+
+  /**
+   * Preferred side for robot-to-worker object handoffs.
+   *
+   * @generated from field: resources.v1.InteractionSide handoff_side_preference = 18;
+   */
+  handoffSidePreference: InteractionSide;
 };
 
 /**
@@ -131,6 +196,9 @@ export const WorkerDefinitionsSchema: GenMessage<WorkerDefinitions> = /*@__PURE_
  */
 export enum EditPermission {
   /**
+   * Edit permissions intentionally mirror common.v1.PropertyPermission levels.
+   * They describe which authored AR/property settings a worker may edit.
+   *
    * Unspecified: can't edit any properties
    *
    * @generated from enum value: EDIT_PERMISSION_UNSPECIFIED = 0;
@@ -164,4 +232,153 @@ export enum EditPermission {
  */
 export const EditPermissionSchema: GenEnum<EditPermission> = /*@__PURE__*/
   enumDesc(file_resources_v1_worker_definition, 0);
+
+/**
+ * Handedness is a physical/operator trait and should only be used as a
+ * fallback when no explicit interaction-side preference is available.
+ *
+ * @generated from enum resources.v1.Handedness
+ */
+export enum Handedness {
+  /**
+   * @generated from enum value: HANDEDNESS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: HANDEDNESS_LEFT_HAND = 1;
+   */
+  LEFT_HAND = 1,
+
+  /**
+   * @generated from enum value: HANDEDNESS_RIGHT_HAND = 2;
+   */
+  RIGHT_HAND = 2,
+}
+
+/**
+ * Describes the enum resources.v1.Handedness.
+ */
+export const HandednessSchema: GenEnum<Handedness> = /*@__PURE__*/
+  enumDesc(file_resources_v1_worker_definition, 1);
+
+/**
+ * WorkerRole describes the worker's operational role.
+ *
+ * Role should be used to select relevant views, workflows, and default
+ * capabilities. Authorization for editing properties is still controlled by
+ * ar_edit_permission.
+ *
+ * @generated from enum resources.v1.WorkerRole
+ */
+export enum WorkerRole {
+  /**
+   * @generated from enum value: WORKER_ROLE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: WORKER_ROLE_OPERATOR = 1;
+   */
+  OPERATOR = 1,
+
+  /**
+   * @generated from enum value: WORKER_ROLE_SUPERVISOR = 2;
+   */
+  SUPERVISOR = 2,
+
+  /**
+   * @generated from enum value: WORKER_ROLE_TECHNICIAN = 3;
+   */
+  TECHNICIAN = 3,
+
+  /**
+   * @generated from enum value: WORKER_ROLE_ENGINEER = 4;
+   */
+  ENGINEER = 4,
+
+  /**
+   * @generated from enum value: WORKER_ROLE_ADMIN = 5;
+   */
+  ADMIN = 5,
+}
+
+/**
+ * Describes the enum resources.v1.WorkerRole.
+ */
+export const WorkerRoleSchema: GenEnum<WorkerRole> = /*@__PURE__*/
+  enumDesc(file_resources_v1_worker_definition, 2);
+
+/**
+ * InteractionSide describes the side from which the worker prefers interaction.
+ *
+ * This is a preference for UI placement, robot approach, and handoff planning.
+ * It may differ from handedness because of station layout, task constraints,
+ * temporary injury, or personal preference.
+ *
+ * @generated from enum resources.v1.InteractionSide
+ */
+export enum InteractionSide {
+  /**
+   * @generated from enum value: INTERACTION_SIDE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: INTERACTION_SIDE_LEFT = 1;
+   */
+  LEFT = 1,
+
+  /**
+   * @generated from enum value: INTERACTION_SIDE_RIGHT = 2;
+   */
+  RIGHT = 2,
+
+  /**
+   * @generated from enum value: INTERACTION_SIDE_FRONT = 3;
+   */
+  FRONT = 3,
+
+  /**
+   * @generated from enum value: INTERACTION_SIDE_NO_PREFERENCE = 4;
+   */
+  NO_PREFERENCE = 4,
+}
+
+/**
+ * Describes the enum resources.v1.InteractionSide.
+ */
+export const InteractionSideSchema: GenEnum<InteractionSide> = /*@__PURE__*/
+  enumDesc(file_resources_v1_worker_definition, 3);
+
+/**
+ * TextSizePreference is intentionally coarse.
+ *
+ * AR clients should map these values to device- and application-specific font
+ * scales instead of treating them as raw pixel sizes.
+ *
+ * @generated from enum resources.v1.TextSizePreference
+ */
+export enum TextSizePreference {
+  /**
+   * @generated from enum value: TEXT_SIZE_PREFERENCE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: TEXT_SIZE_PREFERENCE_NORMAL = 1;
+   */
+  NORMAL = 1,
+
+  /**
+   * @generated from enum value: TEXT_SIZE_PREFERENCE_LARGE = 2;
+   */
+  LARGE = 2,
+}
+
+/**
+ * Describes the enum resources.v1.TextSizePreference.
+ */
+export const TextSizePreferenceSchema: GenEnum<TextSizePreference> = /*@__PURE__*/
+  enumDesc(file_resources_v1_worker_definition, 4);
 

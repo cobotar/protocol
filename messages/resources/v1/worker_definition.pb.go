@@ -27,6 +27,8 @@ const (
 type EditPermission int32
 
 const (
+	// Edit permissions intentionally mirror common.v1.PropertyPermission levels.
+	// They describe which authored AR/property settings a worker may edit.
 	EditPermission_EDIT_PERMISSION_UNSPECIFIED EditPermission = 0 // Unspecified: can't edit any properties
 	EditPermission_EDIT_PERMISSION_BASIC       EditPermission = 1 // Basic: can edit {basic} properties
 	EditPermission_EDIT_PERMISSION_COSMETIC    EditPermission = 2 // Cosmetic: can edit {basic, cosmetic} properties
@@ -74,6 +76,233 @@ func (x EditPermission) Number() protoreflect.EnumNumber {
 // Deprecated: Use EditPermission.Descriptor instead.
 func (EditPermission) EnumDescriptor() ([]byte, []int) {
 	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{0}
+}
+
+// Handedness is a physical/operator trait and should only be used as a
+// fallback when no explicit interaction-side preference is available.
+type Handedness int32
+
+const (
+	Handedness_HANDEDNESS_UNSPECIFIED Handedness = 0
+	Handedness_HANDEDNESS_LEFT_HAND   Handedness = 1
+	Handedness_HANDEDNESS_RIGHT_HAND  Handedness = 2
+)
+
+// Enum value maps for Handedness.
+var (
+	Handedness_name = map[int32]string{
+		0: "HANDEDNESS_UNSPECIFIED",
+		1: "HANDEDNESS_LEFT_HAND",
+		2: "HANDEDNESS_RIGHT_HAND",
+	}
+	Handedness_value = map[string]int32{
+		"HANDEDNESS_UNSPECIFIED": 0,
+		"HANDEDNESS_LEFT_HAND":   1,
+		"HANDEDNESS_RIGHT_HAND":  2,
+	}
+)
+
+func (x Handedness) Enum() *Handedness {
+	p := new(Handedness)
+	*p = x
+	return p
+}
+
+func (x Handedness) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Handedness) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_worker_definition_proto_enumTypes[1].Descriptor()
+}
+
+func (Handedness) Type() protoreflect.EnumType {
+	return &file_resources_v1_worker_definition_proto_enumTypes[1]
+}
+
+func (x Handedness) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Handedness.Descriptor instead.
+func (Handedness) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{1}
+}
+
+// WorkerRole describes the worker's operational role.
+//
+// Role should be used to select relevant views, workflows, and default
+// capabilities. Authorization for editing properties is still controlled by
+// ar_edit_permission.
+type WorkerRole int32
+
+const (
+	WorkerRole_WORKER_ROLE_UNSPECIFIED WorkerRole = 0
+	WorkerRole_WORKER_ROLE_OPERATOR    WorkerRole = 1
+	WorkerRole_WORKER_ROLE_SUPERVISOR  WorkerRole = 2
+	WorkerRole_WORKER_ROLE_TECHNICIAN  WorkerRole = 3
+	WorkerRole_WORKER_ROLE_ENGINEER    WorkerRole = 4
+	WorkerRole_WORKER_ROLE_ADMIN       WorkerRole = 5
+)
+
+// Enum value maps for WorkerRole.
+var (
+	WorkerRole_name = map[int32]string{
+		0: "WORKER_ROLE_UNSPECIFIED",
+		1: "WORKER_ROLE_OPERATOR",
+		2: "WORKER_ROLE_SUPERVISOR",
+		3: "WORKER_ROLE_TECHNICIAN",
+		4: "WORKER_ROLE_ENGINEER",
+		5: "WORKER_ROLE_ADMIN",
+	}
+	WorkerRole_value = map[string]int32{
+		"WORKER_ROLE_UNSPECIFIED": 0,
+		"WORKER_ROLE_OPERATOR":    1,
+		"WORKER_ROLE_SUPERVISOR":  2,
+		"WORKER_ROLE_TECHNICIAN":  3,
+		"WORKER_ROLE_ENGINEER":    4,
+		"WORKER_ROLE_ADMIN":       5,
+	}
+)
+
+func (x WorkerRole) Enum() *WorkerRole {
+	p := new(WorkerRole)
+	*p = x
+	return p
+}
+
+func (x WorkerRole) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (WorkerRole) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_worker_definition_proto_enumTypes[2].Descriptor()
+}
+
+func (WorkerRole) Type() protoreflect.EnumType {
+	return &file_resources_v1_worker_definition_proto_enumTypes[2]
+}
+
+func (x WorkerRole) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use WorkerRole.Descriptor instead.
+func (WorkerRole) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{2}
+}
+
+// InteractionSide describes the side from which the worker prefers interaction.
+//
+// This is a preference for UI placement, robot approach, and handoff planning.
+// It may differ from handedness because of station layout, task constraints,
+// temporary injury, or personal preference.
+type InteractionSide int32
+
+const (
+	InteractionSide_INTERACTION_SIDE_UNSPECIFIED   InteractionSide = 0
+	InteractionSide_INTERACTION_SIDE_LEFT          InteractionSide = 1
+	InteractionSide_INTERACTION_SIDE_RIGHT         InteractionSide = 2
+	InteractionSide_INTERACTION_SIDE_FRONT         InteractionSide = 3
+	InteractionSide_INTERACTION_SIDE_NO_PREFERENCE InteractionSide = 4
+)
+
+// Enum value maps for InteractionSide.
+var (
+	InteractionSide_name = map[int32]string{
+		0: "INTERACTION_SIDE_UNSPECIFIED",
+		1: "INTERACTION_SIDE_LEFT",
+		2: "INTERACTION_SIDE_RIGHT",
+		3: "INTERACTION_SIDE_FRONT",
+		4: "INTERACTION_SIDE_NO_PREFERENCE",
+	}
+	InteractionSide_value = map[string]int32{
+		"INTERACTION_SIDE_UNSPECIFIED":   0,
+		"INTERACTION_SIDE_LEFT":          1,
+		"INTERACTION_SIDE_RIGHT":         2,
+		"INTERACTION_SIDE_FRONT":         3,
+		"INTERACTION_SIDE_NO_PREFERENCE": 4,
+	}
+)
+
+func (x InteractionSide) Enum() *InteractionSide {
+	p := new(InteractionSide)
+	*p = x
+	return p
+}
+
+func (x InteractionSide) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (InteractionSide) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_worker_definition_proto_enumTypes[3].Descriptor()
+}
+
+func (InteractionSide) Type() protoreflect.EnumType {
+	return &file_resources_v1_worker_definition_proto_enumTypes[3]
+}
+
+func (x InteractionSide) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use InteractionSide.Descriptor instead.
+func (InteractionSide) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{3}
+}
+
+// TextSizePreference is intentionally coarse.
+//
+// AR clients should map these values to device- and application-specific font
+// scales instead of treating them as raw pixel sizes.
+type TextSizePreference int32
+
+const (
+	TextSizePreference_TEXT_SIZE_PREFERENCE_UNSPECIFIED TextSizePreference = 0
+	TextSizePreference_TEXT_SIZE_PREFERENCE_NORMAL      TextSizePreference = 1
+	TextSizePreference_TEXT_SIZE_PREFERENCE_LARGE       TextSizePreference = 2
+)
+
+// Enum value maps for TextSizePreference.
+var (
+	TextSizePreference_name = map[int32]string{
+		0: "TEXT_SIZE_PREFERENCE_UNSPECIFIED",
+		1: "TEXT_SIZE_PREFERENCE_NORMAL",
+		2: "TEXT_SIZE_PREFERENCE_LARGE",
+	}
+	TextSizePreference_value = map[string]int32{
+		"TEXT_SIZE_PREFERENCE_UNSPECIFIED": 0,
+		"TEXT_SIZE_PREFERENCE_NORMAL":      1,
+		"TEXT_SIZE_PREFERENCE_LARGE":       2,
+	}
+)
+
+func (x TextSizePreference) Enum() *TextSizePreference {
+	p := new(TextSizePreference)
+	*p = x
+	return p
+}
+
+func (x TextSizePreference) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TextSizePreference) Descriptor() protoreflect.EnumDescriptor {
+	return file_resources_v1_worker_definition_proto_enumTypes[4].Descriptor()
+}
+
+func (TextSizePreference) Type() protoreflect.EnumType {
+	return &file_resources_v1_worker_definition_proto_enumTypes[4]
+}
+
+func (x TextSizePreference) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TextSizePreference.Descriptor instead.
+func (TextSizePreference) EnumDescriptor() ([]byte, []int) {
+	return file_resources_v1_worker_definition_proto_rawDescGZIP(), []int{4}
 }
 
 // WorkerLocation describes the current operating area of a worker.
@@ -141,18 +370,27 @@ func (x *WorkerLocation) GetStationId() string {
 }
 
 type WorkerDefinition struct {
-	state              protoimpl.MessageState  `protogen:"open.v1"`
-	Id                 string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name               string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description        string                  `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Icon               string                  `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
-	Disabled           bool                    `protobuf:"varint,5,opt,name=disabled,proto3" json:"disabled,omitempty"` // If disabled, the worker can't be selected
-	EmployeeId         string                  `protobuf:"bytes,6,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
-	ArEditPermission   EditPermission          `protobuf:"varint,7,opt,name=ar_edit_permission,json=arEditPermission,proto3,enum=resources.v1.EditPermission" json:"ar_edit_permission,omitempty"`
-	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	Location           *WorkerLocation         `protobuf:"bytes,9,opt,name=location,proto3" json:"location,omitempty"` // Optional current location / operating area.
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	state                    protoimpl.MessageState  `protogen:"open.v1"`
+	Id                       string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                     string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description              string                  `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Icon                     string                  `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+	Disabled                 bool                    `protobuf:"varint,5,opt,name=disabled,proto3" json:"disabled,omitempty"` // If disabled, the worker can't be selected
+	EmployeeId               string                  `protobuf:"bytes,6,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
+	ArEditPermission         EditPermission          `protobuf:"varint,7,opt,name=ar_edit_permission,json=arEditPermission,proto3,enum=resources.v1.EditPermission" json:"ar_edit_permission,omitempty"` // Authorization level for editing authored AR/property settings.
+	ExternalReferences       []*v1.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	Location                 *WorkerLocation         `protobuf:"bytes,9,opt,name=location,proto3" json:"location,omitempty"`                                                                                                       // Optional current location / operating area.
+	Height                   int32                   `protobuf:"varint,10,opt,name=height,proto3" json:"height,omitempty"`                                                                                                         // Approximate worker height in centimeters. 0 if not defined.
+	ArmsLength               int32                   `protobuf:"varint,11,opt,name=arms_length,json=armsLength,proto3" json:"arms_length,omitempty"`                                                                               // Approximate comfortable arm reach in centimeters. 0 if not defined.
+	Handedness               Handedness              `protobuf:"varint,12,opt,name=handedness,proto3,enum=resources.v1.Handedness" json:"handedness,omitempty"`                                                                    // Physical handedness; use preferred_interaction_side first for layout decisions.
+	Role                     WorkerRole              `protobuf:"varint,13,opt,name=role,proto3,enum=resources.v1.WorkerRole" json:"role,omitempty"`                                                                                // Operational role used to select relevant views, workflows, and defaults.
+	PreferredInteractionSide InteractionSide         `protobuf:"varint,14,opt,name=preferred_interaction_side,json=preferredInteractionSide,proto3,enum=resources.v1.InteractionSide" json:"preferred_interaction_side,omitempty"` // Preferred side for AR controls, prompts, and robot approach.
+	TextSizePreference       TextSizePreference      `protobuf:"varint,15,opt,name=text_size_preference,json=textSizePreference,proto3,enum=resources.v1.TextSizePreference" json:"text_size_preference,omitempty"`                // Preferred AR text scale bucket.
+	PersonalSpaceRadius      int32                   `protobuf:"varint,16,opt,name=personal_space_radius,json=personalSpaceRadius,proto3" json:"personal_space_radius,omitempty"`                                                  // Preferred minimum robot distance from the worker in centimeters. 0 if not defined.
+	HandoffHeightPreference  int32                   `protobuf:"varint,17,opt,name=handoff_height_preference,json=handoffHeightPreference,proto3" json:"handoff_height_preference,omitempty"`                                      // Preferred object handoff height in centimeters from the floor. 0 if not defined.
+	HandoffSidePreference    InteractionSide         `protobuf:"varint,18,opt,name=handoff_side_preference,json=handoffSidePreference,proto3,enum=resources.v1.InteractionSide" json:"handoff_side_preference,omitempty"`          // Preferred side for robot-to-worker object handoffs.
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *WorkerDefinition) Reset() {
@@ -248,6 +486,69 @@ func (x *WorkerDefinition) GetLocation() *WorkerLocation {
 	return nil
 }
 
+func (x *WorkerDefinition) GetHeight() int32 {
+	if x != nil {
+		return x.Height
+	}
+	return 0
+}
+
+func (x *WorkerDefinition) GetArmsLength() int32 {
+	if x != nil {
+		return x.ArmsLength
+	}
+	return 0
+}
+
+func (x *WorkerDefinition) GetHandedness() Handedness {
+	if x != nil {
+		return x.Handedness
+	}
+	return Handedness_HANDEDNESS_UNSPECIFIED
+}
+
+func (x *WorkerDefinition) GetRole() WorkerRole {
+	if x != nil {
+		return x.Role
+	}
+	return WorkerRole_WORKER_ROLE_UNSPECIFIED
+}
+
+func (x *WorkerDefinition) GetPreferredInteractionSide() InteractionSide {
+	if x != nil {
+		return x.PreferredInteractionSide
+	}
+	return InteractionSide_INTERACTION_SIDE_UNSPECIFIED
+}
+
+func (x *WorkerDefinition) GetTextSizePreference() TextSizePreference {
+	if x != nil {
+		return x.TextSizePreference
+	}
+	return TextSizePreference_TEXT_SIZE_PREFERENCE_UNSPECIFIED
+}
+
+func (x *WorkerDefinition) GetPersonalSpaceRadius() int32 {
+	if x != nil {
+		return x.PersonalSpaceRadius
+	}
+	return 0
+}
+
+func (x *WorkerDefinition) GetHandoffHeightPreference() int32 {
+	if x != nil {
+		return x.HandoffHeightPreference
+	}
+	return 0
+}
+
+func (x *WorkerDefinition) GetHandoffSidePreference() InteractionSide {
+	if x != nil {
+		return x.HandoffSidePreference
+	}
+	return InteractionSide_INTERACTION_SIDE_UNSPECIFIED
+}
+
 type WorkerDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*WorkerDefinition    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -301,7 +602,7 @@ const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"\aline_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf2\x04\x01R\x06lineId\x12\"\n" +
 	"\acell_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12(\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\x94\x03\n" +
+	"station_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\"\x83\b\n" +
 	"\x10WorkerDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -312,14 +613,50 @@ const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"employeeId\x12J\n" +
 	"\x12ar_edit_permission\x18\a \x01(\x0e2\x1c.resources.v1.EditPermissionR\x10arEditPermission\x12M\n" +
 	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x128\n" +
-	"\blocation\x18\t \x01(\v2\x1c.resources.v1.WorkerLocationR\blocation\"I\n" +
+	"\blocation\x18\t \x01(\v2\x1c.resources.v1.WorkerLocationR\blocation\x12\x1f\n" +
+	"\x06height\x18\n" +
+	" \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x06height\x12(\n" +
+	"\varms_length\x18\v \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
+	"armsLength\x12B\n" +
+	"\n" +
+	"handedness\x18\f \x01(\x0e2\x18.resources.v1.HandednessB\b\xbaH\x05\x82\x01\x02\x10\x01R\n" +
+	"handedness\x126\n" +
+	"\x04role\x18\r \x01(\x0e2\x18.resources.v1.WorkerRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04role\x12e\n" +
+	"\x1apreferred_interaction_side\x18\x0e \x01(\x0e2\x1d.resources.v1.InteractionSideB\b\xbaH\x05\x82\x01\x02\x10\x01R\x18preferredInteractionSide\x12\\\n" +
+	"\x14text_size_preference\x18\x0f \x01(\x0e2 .resources.v1.TextSizePreferenceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x12textSizePreference\x12;\n" +
+	"\x15personal_space_radius\x18\x10 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x13personalSpaceRadius\x12C\n" +
+	"\x19handoff_height_preference\x18\x11 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x17handoffHeightPreference\x12_\n" +
+	"\x17handoff_side_preference\x18\x12 \x01(\x0e2\x1d.resources.v1.InteractionSideB\b\xbaH\x05\x82\x01\x02\x10\x01R\x15handoffSidePreference\"I\n" +
 	"\x11WorkerDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.resources.v1.WorkerDefinitionR\x05items*\x84\x01\n" +
 	"\x0eEditPermission\x12\x1f\n" +
 	"\x1bEDIT_PERMISSION_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15EDIT_PERMISSION_BASIC\x10\x01\x12\x1c\n" +
 	"\x18EDIT_PERMISSION_COSMETIC\x10\x02\x12\x18\n" +
-	"\x14EDIT_PERMISSION_FULL\x10\x03B\xc2\x01\n" +
+	"\x14EDIT_PERMISSION_FULL\x10\x03*]\n" +
+	"\n" +
+	"Handedness\x12\x1a\n" +
+	"\x16HANDEDNESS_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14HANDEDNESS_LEFT_HAND\x10\x01\x12\x19\n" +
+	"\x15HANDEDNESS_RIGHT_HAND\x10\x02*\xac\x01\n" +
+	"\n" +
+	"WorkerRole\x12\x1b\n" +
+	"\x17WORKER_ROLE_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14WORKER_ROLE_OPERATOR\x10\x01\x12\x1a\n" +
+	"\x16WORKER_ROLE_SUPERVISOR\x10\x02\x12\x1a\n" +
+	"\x16WORKER_ROLE_TECHNICIAN\x10\x03\x12\x18\n" +
+	"\x14WORKER_ROLE_ENGINEER\x10\x04\x12\x15\n" +
+	"\x11WORKER_ROLE_ADMIN\x10\x05*\xaa\x01\n" +
+	"\x0fInteractionSide\x12 \n" +
+	"\x1cINTERACTION_SIDE_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15INTERACTION_SIDE_LEFT\x10\x01\x12\x1a\n" +
+	"\x16INTERACTION_SIDE_RIGHT\x10\x02\x12\x1a\n" +
+	"\x16INTERACTION_SIDE_FRONT\x10\x03\x12\"\n" +
+	"\x1eINTERACTION_SIDE_NO_PREFERENCE\x10\x04*{\n" +
+	"\x12TextSizePreference\x12$\n" +
+	" TEXT_SIZE_PREFERENCE_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bTEXT_SIZE_PREFERENCE_NORMAL\x10\x01\x12\x1e\n" +
+	"\x1aTEXT_SIZE_PREFERENCE_LARGE\x10\x02B\xc2\x01\n" +
 	"\x10com.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
@@ -334,25 +671,34 @@ func file_resources_v1_worker_definition_proto_rawDescGZIP() []byte {
 	return file_resources_v1_worker_definition_proto_rawDescData
 }
 
-var file_resources_v1_worker_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_resources_v1_worker_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
 var file_resources_v1_worker_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_resources_v1_worker_definition_proto_goTypes = []any{
 	(EditPermission)(0),          // 0: resources.v1.EditPermission
-	(*WorkerLocation)(nil),       // 1: resources.v1.WorkerLocation
-	(*WorkerDefinition)(nil),     // 2: resources.v1.WorkerDefinition
-	(*WorkerDefinitions)(nil),    // 3: resources.v1.WorkerDefinitions
-	(*v1.ExternalReference)(nil), // 4: common.v1.ExternalReference
+	(Handedness)(0),              // 1: resources.v1.Handedness
+	(WorkerRole)(0),              // 2: resources.v1.WorkerRole
+	(InteractionSide)(0),         // 3: resources.v1.InteractionSide
+	(TextSizePreference)(0),      // 4: resources.v1.TextSizePreference
+	(*WorkerLocation)(nil),       // 5: resources.v1.WorkerLocation
+	(*WorkerDefinition)(nil),     // 6: resources.v1.WorkerDefinition
+	(*WorkerDefinitions)(nil),    // 7: resources.v1.WorkerDefinitions
+	(*v1.ExternalReference)(nil), // 8: common.v1.ExternalReference
 }
 var file_resources_v1_worker_definition_proto_depIdxs = []int32{
 	0, // 0: resources.v1.WorkerDefinition.ar_edit_permission:type_name -> resources.v1.EditPermission
-	4, // 1: resources.v1.WorkerDefinition.external_references:type_name -> common.v1.ExternalReference
-	1, // 2: resources.v1.WorkerDefinition.location:type_name -> resources.v1.WorkerLocation
-	2, // 3: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	8, // 1: resources.v1.WorkerDefinition.external_references:type_name -> common.v1.ExternalReference
+	5, // 2: resources.v1.WorkerDefinition.location:type_name -> resources.v1.WorkerLocation
+	1, // 3: resources.v1.WorkerDefinition.handedness:type_name -> resources.v1.Handedness
+	2, // 4: resources.v1.WorkerDefinition.role:type_name -> resources.v1.WorkerRole
+	3, // 5: resources.v1.WorkerDefinition.preferred_interaction_side:type_name -> resources.v1.InteractionSide
+	4, // 6: resources.v1.WorkerDefinition.text_size_preference:type_name -> resources.v1.TextSizePreference
+	3, // 7: resources.v1.WorkerDefinition.handoff_side_preference:type_name -> resources.v1.InteractionSide
+	6, // 8: resources.v1.WorkerDefinitions.items:type_name -> resources.v1.WorkerDefinition
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_worker_definition_proto_init() }
@@ -365,7 +711,7 @@ func file_resources_v1_worker_definition_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_worker_definition_proto_rawDesc), len(file_resources_v1_worker_definition_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      5,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,

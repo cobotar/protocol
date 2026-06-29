@@ -22,6 +22,11 @@ class ProcessLoadStrategy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE: _ClassVar[ProcessLoadStrategy]
     PROCESS_LOAD_STRATEGY_BEST_MATCH: _ClassVar[ProcessLoadStrategy]
 
+class AllocationStrategy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    ALLOCATION_STRATEGY_UNSPECIFIED: _ClassVar[AllocationStrategy]
+    ALLOCATION_STRATEGY_STATIC: _ClassVar[AllocationStrategy]
+
 class ProcessLoadFailure(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     PROCESS_LOAD_FAILURE_UNSPECIFIED: _ClassVar[ProcessLoadFailure]
@@ -89,6 +94,8 @@ PROCESS_LOAD_STRATEGY_FIRST_FEASIBLE: ProcessLoadStrategy
 PROCESS_LOAD_STRATEGY_PREFER_AVAILABLE: ProcessLoadStrategy
 PROCESS_LOAD_STRATEGY_PREFER_TARGET_SCOPE: ProcessLoadStrategy
 PROCESS_LOAD_STRATEGY_BEST_MATCH: ProcessLoadStrategy
+ALLOCATION_STRATEGY_UNSPECIFIED: AllocationStrategy
+ALLOCATION_STRATEGY_STATIC: AllocationStrategy
 PROCESS_LOAD_FAILURE_UNSPECIFIED: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED: ProcessLoadFailure
@@ -139,7 +146,7 @@ PROCESS_LOAD_STATUS_READY: ProcessLoadStatus
 PROCESS_LOAD_STATUS_LOADED: ProcessLoadStatus
 
 class ProcessLoadRequest(_message.Message):
-    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters")
+    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee")
     PROCESS_RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_LINE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_CELL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -150,6 +157,8 @@ class ProcessLoadRequest(_message.Message):
     STRATEGY_FIELD_NUMBER: _ClassVar[int]
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
+    ALLOCATION_STRATEGY_FIELD_NUMBER: _ClassVar[int]
+    TARGET_EMPLOYEE_FIELD_NUMBER: _ClassVar[int]
     process_recipe_id: str
     target_line_id: str
     target_cell_id: str
@@ -160,7 +169,9 @@ class ProcessLoadRequest(_message.Message):
     strategy: ProcessLoadStrategy
     order_id: str
     parameters: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    allocation_strategy: AllocationStrategy
+    target_employee: str
+    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ...) -> None: ...
 
 class ProcessRunIssue(_message.Message):
     __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "cell_id", "station_id", "actor_id", "resource_id", "remediation", "importance")

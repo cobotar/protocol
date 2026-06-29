@@ -63,3 +63,17 @@ class TaskProgressUpdate(_message.Message):
     elapsed_time: int
     estimated_time_left: int
     def __init__(self, task_run_id: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., message: _Optional[str] = ..., elapsed_time: _Optional[int] = ..., estimated_time_left: _Optional[int] = ...) -> None: ...
+
+class SequenceReassignRequest(_message.Message):
+    __slots__ = ("sequence_run_id", "actor")
+    SEQUENCE_RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
+    sequence_run_id: str
+    actor: _actor_pb2.ActorRef
+    def __init__(self, sequence_run_id: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ...) -> None: ...
+
+class SequenceCompleteRequest(_message.Message):
+    __slots__ = ("sequence_run_id",)
+    SEQUENCE_RUN_ID_FIELD_NUMBER: _ClassVar[int]
+    sequence_run_id: str
+    def __init__(self, sequence_run_id: _Optional[str] = ...) -> None: ...

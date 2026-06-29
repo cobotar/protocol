@@ -103,15 +103,15 @@ namespace Messages.AR.V1 {
             "VEVYVF9TTE9UX1RZUEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9U",
             "X1RZUEVfUFJPQ0VTU19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQ",
             "RV9TRVFVRU5DRV9SVU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9U",
-            "QVNLX1JVTl9JRBAHKucBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VM",
+            "QVNLX1JVTl9JRBAHKuwBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VM",
             "RUNUSU9OX1VOU1BFQ0lGSUVEEAASIwofQVJfUlVOX1NFTEVDVElPTl9GSVJT",
-            "VF9XT1JLQUJMRRABEiAKHEFSX1JVTl9TRUxFQ1RJT05fSU5fUFJPR1JFU1MQ",
-            "AhIiCh5BUl9SVU5fU0VMRUNUSU9OX05FWFRfRVhQRUNURUQQAxIjCh9BUl9S",
-            "VU5fU0VMRUNUSU9OX0xBU1RfQ09NUExFVEVEEAQSIwofQVJfUlVOX1NFTEVD",
-            "VElPTl9GSVJTVF9JTl9FUlJPUhAFQooBCgljb20uYXIudjFCDklucHV0U2xv",
-            "dFByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
-            "cy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeIC",
-            "EUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "VF9XT1JLQUJMRRABEiUKIUFSX1JVTl9TRUxFQ1RJT05fQ1VSUkVOVF9BU1NJ",
+            "R05FRBACEiIKHkFSX1JVTl9TRUxFQ1RJT05fTkVYVF9FWFBFQ1RFRBADEiMK",
+            "H0FSX1JVTl9TRUxFQ1RJT05fTEFTVF9DT01QTEVURUQQBBIjCh9BUl9SVU5f",
+            "U0VMRUNUSU9OX0ZJUlNUX0lOX0VSUk9SEAVCigEKCWNvbS5hci52MUIOSW5w",
+            "dXRTbG90UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
+            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
+            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -199,7 +199,7 @@ namespace Messages.AR.V1 {
   ///
   /// To summarize
   /// • FIRST_WORKABLE: actionable now.
-  /// • IN_PROGRESS: being performed now.
+  /// • CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
   /// • NEXT_EXPECTED: likely relevant next, but potentially blocked.
   /// • LAST_COMPLETED: most recently completed.
   /// • FIRST_IN_ERROR: errored task requiring attention.
@@ -216,9 +216,13 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("AR_RUN_SELECTION_FIRST_WORKABLE")] FirstWorkable = 1,
     /// <summary>
-    /// Select the first ordered IN_PROGRESS task assigned to the actor.
+    /// Select the first ordered task assigned to the actor where state is READY or
+    /// IN_PROGRESS. This answers "what is this actor's current task?".
+    ///
+    /// Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work;
+    /// the task must already be assigned to the actor.
     /// </summary>
-    [pbr::OriginalName("AR_RUN_SELECTION_IN_PROGRESS")] InProgress = 2,
+    [pbr::OriginalName("AR_RUN_SELECTION_CURRENT_ASSIGNED")] CurrentAssigned = 2,
     /// <summary>
     /// Select the next non-terminal task expected to become relevant to the actor.
     ///
