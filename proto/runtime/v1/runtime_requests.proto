@@ -39,3 +39,12 @@ message TaskProgressUpdate {
   int32 elapsed_time = 4; // elapsed time in seconds
   int32 estimated_time_left = 5; // estimated time left in seconds
 }
+
+message SequenceReassignRequest {
+  string sequence_run_id = 1;
+  common.v1.ActorRef actor = 2;
+}
+
+message SequenceCompleteRequest {
+  string sequence_run_id = 1;
+}
