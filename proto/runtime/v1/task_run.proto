@@ -6,7 +6,6 @@ import "common/v1/actor.proto";
 import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
 import "resources/v1/container_definition.proto";
-import "runtime/v1/execution_evidence.proto";
 import "runtime/v1/process_requests.proto";
 import "runtime/v1/runtime_restriction.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -59,8 +58,7 @@ message TaskRun {
   google.protobuf.Timestamp completed_at = 14;
   string error_code = 15;
   string error_message = 16;
-  repeated ExecutionEvidence evidence = 17; // TODO: consider delete, already 'linked to' from ExecutionEvidence
-  TaskRuntimeBinding binding = 18;
+  TaskRuntimeBinding binding = 17;
 
   // Effective runtime restrictions that currently apply to this task.
   //
