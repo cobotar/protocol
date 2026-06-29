@@ -28,6 +28,11 @@ enum ProcessLoadStrategy {
   PROCESS_LOAD_STRATEGY_BEST_MATCH = 4;
 }
 
+enum AllocationStrategy {
+  ALLOCATION_STRATEGY_UNSPECIFIED = 0;
+  ALLOCATION_STRATEGY_STATIC = 1;
+}
+
 // ProcessLoadRequest is used to instantiate a ProcessRecipe into a ProcessRun.
 //
 // The loader should evaluate whether the recipe can be instantiated now within
@@ -94,6 +99,9 @@ message ProcessLoadRequest {
 
   // Optional caller-provided parameters used during instantiation.
   repeated common.v1.KeyValueConstraint parameters = 10;
+
+  AllocationStrategy allocation_strategy = 11 [(buf.validate.field).enum.defined_only = true];
+  string target_employee = 12 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
 }
 
 enum ProcessLoadFailure {
