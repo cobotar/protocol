@@ -55,7 +55,7 @@ enum ARContextSlotType {
 //
 // To summarize
 // • FIRST_WORKABLE: actionable now.
-// • IN_PROGRESS: being performed now.
+// • CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
 // • NEXT_EXPECTED: likely relevant next, but potentially blocked.
 // • LAST_COMPLETED: most recently completed.
 // • FIRST_IN_ERROR: errored task requiring attention.
@@ -68,8 +68,12 @@ enum ARRunSelection {
   // state, dependencies, and other effective execution restrictions.
   AR_RUN_SELECTION_FIRST_WORKABLE = 1;
 
-  // Select the first ordered IN_PROGRESS task assigned to the actor.
-  AR_RUN_SELECTION_IN_PROGRESS = 2;
+  // Select the first ordered task assigned to the actor where state is READY or
+  // IN_PROGRESS. This answers "what is this actor's current task?".
+  //
+  // Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work;
+  // the task must already be assigned to the actor.
+  AR_RUN_SELECTION_CURRENT_ASSIGNED = 2;
 
   // Select the next non-terminal task expected to become relevant to the actor.
   //
