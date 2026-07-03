@@ -49,6 +49,8 @@ class PropertyGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROPERTY_GROUP_CONFIGURATION: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_HIDDEN: _ClassVar[PropertyGroup]
     PROPERTY_GROUP_INPUT_SLOT: _ClassVar[PropertyGroup]
+    PROPERTY_GROUP_ANIMATION: _ClassVar[PropertyGroup]
+    PROPERTY_GROUP_TARGET_INDICATOR: _ClassVar[PropertyGroup]
 
 class PropertyPermission(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -139,6 +141,8 @@ PROPERTY_GROUP_ICON: PropertyGroup
 PROPERTY_GROUP_CONFIGURATION: PropertyGroup
 PROPERTY_GROUP_HIDDEN: PropertyGroup
 PROPERTY_GROUP_INPUT_SLOT: PropertyGroup
+PROPERTY_GROUP_ANIMATION: PropertyGroup
+PROPERTY_GROUP_TARGET_INDICATOR: PropertyGroup
 PROPERTY_PERMISSION_UNSPECIFIED: PropertyPermission
 PROPERTY_PERMISSION_BASIC: PropertyPermission
 PROPERTY_PERMISSION_COSMETIC: PropertyPermission

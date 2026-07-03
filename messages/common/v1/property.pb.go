@@ -170,40 +170,46 @@ func (PropertyOrigin) EnumDescriptor() ([]byte, []int) {
 type PropertyGroup int32
 
 const (
-	PropertyGroup_PROPERTY_GROUP_UNSPECIFIED   PropertyGroup = 0
-	PropertyGroup_PROPERTY_GROUP_OUTPUT        PropertyGroup = 1
-	PropertyGroup_PROPERTY_GROUP_NON_EDITABLE  PropertyGroup = 2
-	PropertyGroup_PROPERTY_GROUP_STYLING       PropertyGroup = 3
-	PropertyGroup_PROPERTY_GROUP_LOCATION      PropertyGroup = 4
-	PropertyGroup_PROPERTY_GROUP_ICON          PropertyGroup = 5
-	PropertyGroup_PROPERTY_GROUP_CONFIGURATION PropertyGroup = 6
-	PropertyGroup_PROPERTY_GROUP_HIDDEN        PropertyGroup = 7
-	PropertyGroup_PROPERTY_GROUP_INPUT_SLOT    PropertyGroup = 8
+	PropertyGroup_PROPERTY_GROUP_UNSPECIFIED      PropertyGroup = 0
+	PropertyGroup_PROPERTY_GROUP_OUTPUT           PropertyGroup = 1
+	PropertyGroup_PROPERTY_GROUP_NON_EDITABLE     PropertyGroup = 2
+	PropertyGroup_PROPERTY_GROUP_STYLING          PropertyGroup = 3
+	PropertyGroup_PROPERTY_GROUP_LOCATION         PropertyGroup = 4
+	PropertyGroup_PROPERTY_GROUP_ICON             PropertyGroup = 5
+	PropertyGroup_PROPERTY_GROUP_CONFIGURATION    PropertyGroup = 6
+	PropertyGroup_PROPERTY_GROUP_HIDDEN           PropertyGroup = 7
+	PropertyGroup_PROPERTY_GROUP_INPUT_SLOT       PropertyGroup = 8
+	PropertyGroup_PROPERTY_GROUP_ANIMATION        PropertyGroup = 9
+	PropertyGroup_PROPERTY_GROUP_TARGET_INDICATOR PropertyGroup = 10
 )
 
 // Enum value maps for PropertyGroup.
 var (
 	PropertyGroup_name = map[int32]string{
-		0: "PROPERTY_GROUP_UNSPECIFIED",
-		1: "PROPERTY_GROUP_OUTPUT",
-		2: "PROPERTY_GROUP_NON_EDITABLE",
-		3: "PROPERTY_GROUP_STYLING",
-		4: "PROPERTY_GROUP_LOCATION",
-		5: "PROPERTY_GROUP_ICON",
-		6: "PROPERTY_GROUP_CONFIGURATION",
-		7: "PROPERTY_GROUP_HIDDEN",
-		8: "PROPERTY_GROUP_INPUT_SLOT",
+		0:  "PROPERTY_GROUP_UNSPECIFIED",
+		1:  "PROPERTY_GROUP_OUTPUT",
+		2:  "PROPERTY_GROUP_NON_EDITABLE",
+		3:  "PROPERTY_GROUP_STYLING",
+		4:  "PROPERTY_GROUP_LOCATION",
+		5:  "PROPERTY_GROUP_ICON",
+		6:  "PROPERTY_GROUP_CONFIGURATION",
+		7:  "PROPERTY_GROUP_HIDDEN",
+		8:  "PROPERTY_GROUP_INPUT_SLOT",
+		9:  "PROPERTY_GROUP_ANIMATION",
+		10: "PROPERTY_GROUP_TARGET_INDICATOR",
 	}
 	PropertyGroup_value = map[string]int32{
-		"PROPERTY_GROUP_UNSPECIFIED":   0,
-		"PROPERTY_GROUP_OUTPUT":        1,
-		"PROPERTY_GROUP_NON_EDITABLE":  2,
-		"PROPERTY_GROUP_STYLING":       3,
-		"PROPERTY_GROUP_LOCATION":      4,
-		"PROPERTY_GROUP_ICON":          5,
-		"PROPERTY_GROUP_CONFIGURATION": 6,
-		"PROPERTY_GROUP_HIDDEN":        7,
-		"PROPERTY_GROUP_INPUT_SLOT":    8,
+		"PROPERTY_GROUP_UNSPECIFIED":      0,
+		"PROPERTY_GROUP_OUTPUT":           1,
+		"PROPERTY_GROUP_NON_EDITABLE":     2,
+		"PROPERTY_GROUP_STYLING":          3,
+		"PROPERTY_GROUP_LOCATION":         4,
+		"PROPERTY_GROUP_ICON":             5,
+		"PROPERTY_GROUP_CONFIGURATION":    6,
+		"PROPERTY_GROUP_HIDDEN":           7,
+		"PROPERTY_GROUP_INPUT_SLOT":       8,
+		"PROPERTY_GROUP_ANIMATION":        9,
+		"PROPERTY_GROUP_TARGET_INDICATOR": 10,
 	}
 )
 
@@ -2207,7 +2213,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x0ePropertyOrigin\x12\x1f\n" +
 	"\x1bPROPERTY_ORIGIN_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_ORIGIN_FIXED\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\x99\x02\n" +
+	"\x16PROPERTY_ORIGIN_MIRROR\x10\x02*\xdc\x02\n" +
 	"\rPropertyGroup\x12\x1e\n" +
 	"\x1aPROPERTY_GROUP_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_GROUP_OUTPUT\x10\x01\x12\x1f\n" +
@@ -2217,7 +2223,10 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x13PROPERTY_GROUP_ICON\x10\x05\x12 \n" +
 	"\x1cPROPERTY_GROUP_CONFIGURATION\x10\x06\x12\x19\n" +
 	"\x15PROPERTY_GROUP_HIDDEN\x10\a\x12\x1d\n" +
-	"\x19PROPERTY_GROUP_INPUT_SLOT\x10\b*\xb6\x01\n" +
+	"\x19PROPERTY_GROUP_INPUT_SLOT\x10\b\x12\x1c\n" +
+	"\x18PROPERTY_GROUP_ANIMATION\x10\t\x12#\n" +
+	"\x1fPROPERTY_GROUP_TARGET_INDICATOR\x10\n" +
+	"*\xb6\x01\n" +
 	"\x12PropertyPermission\x12#\n" +
 	"\x1fPROPERTY_PERMISSION_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19PROPERTY_PERMISSION_BASIC\x10\n" +
