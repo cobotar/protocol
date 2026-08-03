@@ -10,24 +10,19 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file robot/v1/popup.proto.
  */
 export const file_robot_v1_popup: GenFile = /*@__PURE__*/
-  fileDesc("ChRyb2JvdC92MS9wb3B1cC5wcm90bxIIcm9ib3QudjEiSwoVUm9ib3RTaG93UG9wdXBSZXF1ZXN0EhIKCnJlcXVlc3RfaWQYASABKAkSEAoIcm9ib3RfaWQYAiABKAkSDAoEdGV4dBgDIAEoCSI9ChVSb2JvdEhpZGVQb3B1cFJlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCRIQCghyb2JvdF9pZBgCIAEoCUKcAQoMY29tLnJvYm90LnYxQgpQb3B1cFByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z");
+  fileDesc("ChRyb2JvdC92MS9wb3B1cC5wcm90bxIIcm9ib3QudjEiNwoVUm9ib3RTaG93UG9wdXBSZXF1ZXN0EhAKCHJvYm90X2lkGAEgASgJEgwKBHRleHQYAiABKAkiKQoVUm9ib3RIaWRlUG9wdXBSZXF1ZXN0EhAKCHJvYm90X2lkGAEgASgJQpwBCgxjb20ucm9ib3QudjFCClBvcHVwUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM");
 
 /**
  * @generated from message robot.v1.RobotShowPopupRequest
  */
 export type RobotShowPopupRequest = Message<"robot.v1.RobotShowPopupRequest"> & {
   /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: string robot_id = 2;
+   * @generated from field: string robot_id = 1;
    */
   robotId: string;
 
   /**
-   * @generated from field: string text = 3;
+   * @generated from field: string text = 2;
    */
   text: string;
 };
@@ -44,12 +39,7 @@ export const RobotShowPopupRequestSchema: GenMessage<RobotShowPopupRequest> = /*
  */
 export type RobotHidePopupRequest = Message<"robot.v1.RobotHidePopupRequest"> & {
   /**
-   * @generated from field: string request_id = 1;
-   */
-  requestId: string;
-
-  /**
-   * @generated from field: string robot_id = 2;
+   * @generated from field: string robot_id = 1;
    */
   robotId: string;
 };

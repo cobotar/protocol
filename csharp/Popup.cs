@@ -24,20 +24,19 @@ namespace Messages.Common.V1 {
     static PopupReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRyb2JvdC92MS9wb3B1cC5wcm90bxIIcm9ib3QudjEiZQoVUm9ib3RTaG93",
-            "UG9wdXBSZXF1ZXN0Eh0KCnJlcXVlc3RfaWQYASABKAlSCXJlcXVlc3RJZBIZ",
-            "Cghyb2JvdF9pZBgCIAEoCVIHcm9ib3RJZBISCgR0ZXh0GAMgASgJUgR0ZXh0",
-            "IlEKFVJvYm90SGlkZVBvcHVwUmVxdWVzdBIdCgpyZXF1ZXN0X2lkGAEgASgJ",
-            "UglyZXF1ZXN0SWQSGQoIcm9ib3RfaWQYAiABKAlSB3JvYm90SWRCnAEKDGNv",
-            "bS5yb2JvdC52MUIKUG9wdXBQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIv",
-            "cHJvdG9jb2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEk1l",
-            "c3NhZ2VzLkNvbW1vbi5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0",
-            "YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
+            "ChRyb2JvdC92MS9wb3B1cC5wcm90bxIIcm9ib3QudjEiRgoVUm9ib3RTaG93",
+            "UG9wdXBSZXF1ZXN0EhkKCHJvYm90X2lkGAEgASgJUgdyb2JvdElkEhIKBHRl",
+            "eHQYAiABKAlSBHRleHQiMgoVUm9ib3RIaWRlUG9wdXBSZXF1ZXN0EhkKCHJv",
+            "Ym90X2lkGAEgASgJUgdyb2JvdElkQpwBCgxjb20ucm9ib3QudjFCClBvcHVw",
+            "UHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHK",
+            "AghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotShowPopupRequest), global::Messages.Common.V1.RobotShowPopupRequest.Parser, new[]{ "RequestId", "RobotId", "Text" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotHidePopupRequest), global::Messages.Common.V1.RobotHidePopupRequest.Parser, new[]{ "RequestId", "RobotId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotShowPopupRequest), global::Messages.Common.V1.RobotShowPopupRequest.Parser, new[]{ "RobotId", "Text" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotHidePopupRequest), global::Messages.Common.V1.RobotHidePopupRequest.Parser, new[]{ "RobotId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -79,7 +78,6 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RobotShowPopupRequest(RobotShowPopupRequest other) : this() {
-      requestId_ = other.requestId_;
       robotId_ = other.robotId_;
       text_ = other.text_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -91,20 +89,8 @@ namespace Messages.Common.V1 {
       return new RobotShowPopupRequest(this);
     }
 
-    /// <summary>Field number for the "request_id" field.</summary>
-    public const int RequestIdFieldNumber = 1;
-    private string requestId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RequestId {
-      get { return requestId_; }
-      set {
-        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "robot_id" field.</summary>
-    public const int RobotIdFieldNumber = 2;
+    public const int RobotIdFieldNumber = 1;
     private string robotId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +102,7 @@ namespace Messages.Common.V1 {
     }
 
     /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 3;
+    public const int TextFieldNumber = 2;
     private string text_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +128,6 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RequestId != other.RequestId) return false;
       if (RobotId != other.RobotId) return false;
       if (Text != other.Text) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -152,7 +137,6 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
       if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
       if (Text.Length != 0) hash ^= Text.GetHashCode();
       if (_unknownFields != null) {
@@ -173,16 +157,12 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (RobotId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
       if (Text.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Text);
       }
       if (_unknownFields != null) {
@@ -195,16 +175,12 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (RobotId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
       if (Text.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Text);
       }
       if (_unknownFields != null) {
@@ -217,9 +193,6 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RequestId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
-      }
       if (RobotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
@@ -237,9 +210,6 @@ namespace Messages.Common.V1 {
     public void MergeFrom(RobotShowPopupRequest other) {
       if (other == null) {
         return;
-      }
-      if (other.RequestId.Length != 0) {
-        RequestId = other.RequestId;
       }
       if (other.RobotId.Length != 0) {
         RobotId = other.RobotId;
@@ -267,14 +237,10 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 18: {
             RobotId = input.ReadString();
             break;
           }
-          case 26: {
+          case 18: {
             Text = input.ReadString();
             break;
           }
@@ -298,14 +264,10 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 18: {
             RobotId = input.ReadString();
             break;
           }
-          case 26: {
+          case 18: {
             Text = input.ReadString();
             break;
           }
@@ -351,7 +313,6 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RobotHidePopupRequest(RobotHidePopupRequest other) : this() {
-      requestId_ = other.requestId_;
       robotId_ = other.robotId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -362,20 +323,8 @@ namespace Messages.Common.V1 {
       return new RobotHidePopupRequest(this);
     }
 
-    /// <summary>Field number for the "request_id" field.</summary>
-    public const int RequestIdFieldNumber = 1;
-    private string requestId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RequestId {
-      get { return requestId_; }
-      set {
-        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "robot_id" field.</summary>
-    public const int RobotIdFieldNumber = 2;
+    public const int RobotIdFieldNumber = 1;
     private string robotId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -401,7 +350,6 @@ namespace Messages.Common.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RequestId != other.RequestId) return false;
       if (RobotId != other.RobotId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -410,7 +358,6 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
       if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -430,12 +377,8 @@ namespace Messages.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (RobotId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
       if (_unknownFields != null) {
@@ -448,12 +391,8 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RequestId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(RequestId);
-      }
       if (RobotId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
       if (_unknownFields != null) {
@@ -466,9 +405,6 @@ namespace Messages.Common.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RequestId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
-      }
       if (RobotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
@@ -483,9 +419,6 @@ namespace Messages.Common.V1 {
     public void MergeFrom(RobotHidePopupRequest other) {
       if (other == null) {
         return;
-      }
-      if (other.RequestId.Length != 0) {
-        RequestId = other.RequestId;
       }
       if (other.RobotId.Length != 0) {
         RobotId = other.RobotId;
@@ -510,10 +443,6 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 18: {
             RobotId = input.ReadString();
             break;
           }
@@ -537,10 +466,6 @@ namespace Messages.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            RequestId = input.ReadString();
-            break;
-          }
-          case 18: {
             RobotId = input.ReadString();
             break;
           }

@@ -23,9 +23,8 @@ const (
 
 type RobotShowPopupRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	RobotId       string                 `protobuf:"bytes,2,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
-	Text          string                 `protobuf:"bytes,3,opt,name=text,proto3" json:"text,omitempty"`
+	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	Text          string                 `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,13 +59,6 @@ func (*RobotShowPopupRequest) Descriptor() ([]byte, []int) {
 	return file_robot_v1_popup_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RobotShowPopupRequest) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
-
 func (x *RobotShowPopupRequest) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
@@ -83,8 +75,7 @@ func (x *RobotShowPopupRequest) GetText() string {
 
 type RobotHidePopupRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	RobotId       string                 `protobuf:"bytes,2,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
+	RobotId       string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,13 +110,6 @@ func (*RobotHidePopupRequest) Descriptor() ([]byte, []int) {
 	return file_robot_v1_popup_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RobotHidePopupRequest) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
-
 func (x *RobotHidePopupRequest) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
@@ -137,16 +121,12 @@ var File_robot_v1_popup_proto protoreflect.FileDescriptor
 
 const file_robot_v1_popup_proto_rawDesc = "" +
 	"\n" +
-	"\x14robot/v1/popup.proto\x12\brobot.v1\"e\n" +
-	"\x15RobotShowPopupRequest\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12\x19\n" +
-	"\brobot_id\x18\x02 \x01(\tR\arobotId\x12\x12\n" +
-	"\x04text\x18\x03 \x01(\tR\x04text\"Q\n" +
-	"\x15RobotHidePopupRequest\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12\x19\n" +
-	"\brobot_id\x18\x02 \x01(\tR\arobotIdB\x9c\x01\n" +
+	"\x14robot/v1/popup.proto\x12\brobot.v1\"F\n" +
+	"\x15RobotShowPopupRequest\x12\x19\n" +
+	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12\x12\n" +
+	"\x04text\x18\x02 \x01(\tR\x04text\"2\n" +
+	"\x15RobotHidePopupRequest\x12\x19\n" +
+	"\brobot_id\x18\x01 \x01(\tR\arobotIdB\x9c\x01\n" +
 	"\fcom.robot.v1B\n" +
 	"PopupProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 

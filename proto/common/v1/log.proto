@@ -23,7 +23,15 @@ enum LogSeverity {
 
 // Typed value attached to a log record.
 message LogAttributeValue {
-  option (buf.validate.message).oneof = {fields: ["string_value", "bool_value", "int_value", "double_value", "bytes_value"]};
+  option (buf.validate.message).oneof = {
+    fields: [
+      "string_value",
+      "bool_value",
+      "int_value",
+      "double_value",
+      "bytes_value"
+    ]
+  };
 
   string string_value = 1;
   bool bool_value = 2;

@@ -241,6 +241,17 @@
     - [GetByIdMessage](#common-v1-GetByIdMessage)
     - [GetMessage](#common-v1-GetMessage)
   
+- [common/v1/log.proto](#common_v1_log-proto)
+    - [LogAttribute](#common-v1-LogAttribute)
+    - [LogAttributeValue](#common-v1-LogAttributeValue)
+    - [LogException](#common-v1-LogException)
+    - [LogRecord](#common-v1-LogRecord)
+    - [LogRecords](#common-v1-LogRecords)
+    - [LogResource](#common-v1-LogResource)
+    - [LogSource](#common-v1-LogSource)
+  
+    - [LogSeverity](#common-v1-LogSeverity)
+  
 - [common/v1/ref.proto](#common_v1_ref-proto)
     - [NamedRef](#common-v1-NamedRef)
     - [Ref](#common-v1-Ref)
@@ -3684,6 +3695,174 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 
 
+<a name="common_v1_log-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/log.proto
+
+
+
+<a name="common-v1-LogAttribute"></a>
+
+### LogAttribute
+Structured attribute associated with a log record.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [LogAttributeValue](#common-v1-LogAttributeValue) |  |  |
+
+
+
+
+
+
+<a name="common-v1-LogAttributeValue"></a>
+
+### LogAttributeValue
+Typed value attached to a log record.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| string_value | [string](#string) |  |  |
+| bool_value | [bool](#bool) |  |  |
+| int_value | [int64](#int64) |  |  |
+| double_value | [double](#double) |  |  |
+| bytes_value | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="common-v1-LogException"></a>
+
+### LogException
+Exception/error information when applicable.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [string](#string) |  |  |
+| message | [string](#string) |  |  |
+| stack_trace | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="common-v1-LogRecord"></a>
+
+### LogRecord
+A structured diagnostic log record.
+
+The structure is inspired by the OpenTelemetry LogRecord model while
+remaining convenient for NATS/protobuf applications.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| timestamp | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the application created the log record. |
+| observed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the logging transport observed/received the record. |
+| severity | [LogSeverity](#common-v1-LogSeverity) |  |  |
+| severity_text | [string](#string) |  |  |
+| body | [string](#string) |  | Human-readable log message. |
+| resource | [LogResource](#common-v1-LogResource) |  |  |
+| attributes | [LogAttribute](#common-v1-LogAttribute) | repeated |  |
+| source | [LogSource](#common-v1-LogSource) |  |  |
+| exception | [LogException](#common-v1-LogException) |  |  |
+| logger_name | [string](#string) |  | Logger/category name, such as a Go slog logger name or C# category. |
+| sequence_number | [uint64](#uint64) |  | Optional monotonically increasing client-local sequence number. |
+
+
+
+
+
+
+<a name="common-v1-LogRecords"></a>
+
+### LogRecords
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [LogRecord](#common-v1-LogRecord) | repeated |  |
+
+
+
+
+
+
+<a name="common-v1-LogResource"></a>
+
+### LogResource
+Identifies the application or component that produced the record.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| service_name | [string](#string) |  |  |
+| service_version | [string](#string) |  |  |
+| service_instance_id | [string](#string) |  |  |
+| environment | [string](#string) |  |  |
+| application_type | [string](#string) |  | Examples: backend, web, unity, importer, robot-driver. |
+
+
+
+
+
+
+<a name="common-v1-LogSource"></a>
+
+### LogSource
+Source-code location when available.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| file | [string](#string) |  |  |
+| line | [int32](#int32) |  |  |
+| function | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="common-v1-LogSeverity"></a>
+
+### LogSeverity
+Severity of a diagnostic log record.
+
+This deliberately describes technical diagnostic severity, not domain-event
+importance or process-run issue severity.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LOG_SEVERITY_UNSPECIFIED | 0 |  |
+| LOG_SEVERITY_TRACE | 1 |  |
+| LOG_SEVERITY_DEBUG | 2 |  |
+| LOG_SEVERITY_INFO | 3 |  |
+| LOG_SEVERITY_WARN | 4 |  |
+| LOG_SEVERITY_ERROR | 5 |  |
+| LOG_SEVERITY_FATAL | 6 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_ref-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7026,7 +7205,6 @@ ar_edit_permission.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
 | robot_id | [string](#string) |  |  |
 
 
@@ -7042,7 +7220,6 @@ ar_edit_permission.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| request_id | [string](#string) |  |  |
 | robot_id | [string](#string) |  |  |
 | text | [string](#string) |  |  |
 
