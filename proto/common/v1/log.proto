@@ -1,0 +1,107 @@
+syntax = "proto3";
+package common.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+// Severity of a diagnostic log record.
+//
+// This deliberately describes technical diagnostic severity, not domain-event
+// importance or process-run issue severity.
+enum LogSeverity {
+  LOG_SEVERITY_UNSPECIFIED = 0;
+  LOG_SEVERITY_TRACE = 1;
+  LOG_SEVERITY_DEBUG = 2;
+  LOG_SEVERITY_INFO = 3;
+  LOG_SEVERITY_WARN = 4;
+  LOG_SEVERITY_ERROR = 5;
+  LOG_SEVERITY_FATAL = 6;
+}
+
+// Typed value attached to a log record.
+message LogAttributeValue {
+  option (buf.validate.message).oneof = {fields: ["string_value", "bool_value", "int_value", "double_value", "bytes_value"]};
+
+  string string_value = 1;
+  bool bool_value = 2;
+  int64 int_value = 3;
+  double double_value = 4;
+  bytes bytes_value = 5;
+}
+
+// Structured attribute associated with a log record.
+message LogAttribute {
+  string key = 1 [(buf.validate.field).string.min_len = 1];
+  LogAttributeValue value = 2;
+}
+
+// Identifies the application or component that produced the record.
+message LogResource {
+  string service_name = 1;
+  string service_version = 2;
+  string service_instance_id = 3;
+  string environment = 4;
+
+  // Examples: backend, web, unity, importer, robot-driver.
+  string application_type = 5;
+
+  // string host_name = 6;
+  // string operating_system = 7;
+}
+
+// Source-code location when available.
+message LogSource {
+  string file = 1;
+  int32 line = 2 [(buf.validate.field).int32.gte = 0];
+  string function = 3;
+}
+
+// Exception/error information when applicable.
+message LogException {
+  string type = 1;
+  string message = 2;
+  string stack_trace = 3;
+}
+
+// A structured diagnostic log record.
+//
+// The structure is inspired by the OpenTelemetry LogRecord model while
+// remaining convenient for NATS/protobuf applications.
+message LogRecord {
+  string id = 1;
+
+  // Time at which the application created the log record.
+  google.protobuf.Timestamp timestamp = 2;
+
+  // Time at which the logging transport observed/received the record.
+  google.protobuf.Timestamp observed_at = 3;
+
+  LogSeverity severity = 4;
+  string severity_text = 5;
+
+  // Human-readable log message.
+  string body = 6;
+
+  LogResource resource = 7;
+  repeated LogAttribute attributes = 8;
+
+  LogSource source = 9;
+  LogException exception = 10;
+
+  // Distributed trace correlation when available.
+  // string trace_id = 11;
+  // string span_id = 12;
+
+  // Logger/category name, such as a Go slog logger name or C# category.
+  string logger_name = 13;
+
+  // Optional monotonically increasing client-local sequence number.
+  uint64 sequence_number = 14;
+}
+
+message LogRecords {
+  repeated LogRecord items = 1;
+}
