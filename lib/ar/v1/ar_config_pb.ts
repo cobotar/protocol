@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/ar_config.proto.
  */
 export const file_ar_v1_ar_config: GenFile = /*@__PURE__*/
-  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIvsBCg9BUkNvbmZpZ01lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRI6CgxwcmltYXJ5X3R5cGUYBSABKA4yGi5hci52MS5BUkNvbmZpZ1ByaW1hcnlUeXBlQgi6SAWCAQIQARIpChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYBiABKANCCrpIByIFSN4CKAASLgoLaW5wdXRfc2xvdHMYByADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2UiOQoQQVJDb25maWdNZXNzYWdlcxIlCgVpdGVtcxgBIAMoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZSrWAwoTQVJDb25maWdQcmltYXJ5VHlwZRImCiJBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1VOU1BFQ0lGSUVEEAASIgoeQVJfQ09ORklHX1BSSU1BUllfVFlQRV9HRU5FUkFMEAESLAooQVJfQ09ORklHX1BSSU1BUllfVFlQRV9BU1NFTUJMWV9HVUlEQU5DRRACEi4KKkFSX0NPTkZJR19QUklNQVJZX1RZUEVfUFJPQ0VEVVJFX0NIRUNLTElTVBADEikKJUFSX0NPTkZJR19QUklNQVJZX1RZUEVfUk9CT1RfR1VJREFOQ0UQBBIxCi1BUl9DT05GSUdfUFJJTUFSWV9UWVBFX0NPTExBQk9SQVRJT05fR1VJREFOQ0UQBRIwCixBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1ZBTElEQVRJT05fSU5TUEVDVElPThAGEisKJ0FSX0NPTkZJR19QUklNQVJZX1RZUEVfUFJPQ0VTU19PVkVSVklFVxAHEiwKKEFSX0NPTkZJR19QUklNQVJZX1RZUEVfVFJBSU5JTkdfR1VJREFOQ0UQCBIqCiZBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1NBRkVUWV9HVUlEQU5DRRAJQokBCgljb20uYXIudjFCDUFyQ29uZmlnUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxIl0KE0FSQ29uZmlnSW5mb01lc3NhZ2USCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkiQQoUQVJDb25maWdJbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5BUkNvbmZpZ0luZm9NZXNzYWdlIvsBCg9BUkNvbmZpZ01lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBBABGEASDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRI6CgxwcmltYXJ5X3R5cGUYBSABKA4yGi5hci52MS5BUkNvbmZpZ1ByaW1hcnlUeXBlQgi6SAWCAQIQARIpChVhcl9kaXNhcHBlYXJfZGlzdGFuY2UYBiABKANCCrpIByIFSN4CKAASLgoLaW5wdXRfc2xvdHMYByADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2UiOQoQQVJDb25maWdNZXNzYWdlcxIlCgVpdGVtcxgBIAMoCzIWLmFyLnYxLkFSQ29uZmlnTWVzc2FnZSK3AQoSQVJDb25maWdBZGRNZXNzYWdlEhcKBG5hbWUYAiABKAlCCbpIBnIEEAEYQBIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjoKDHByaW1hcnlfdHlwZRgFIAEoDjIaLmFyLnYxLkFSQ29uZmlnUHJpbWFyeVR5cGVCCLpIBYIBAhABEikKFWFyX2Rpc2FwcGVhcl9kaXN0YW5jZRgGIAEoA0IKukgHIgVI3gIoACKVAQoVQVJDb25maWdVcGRhdGVNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBJDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgQQARhAEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSKQoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAYgASgDQgq6SAciBUjeAigAKtYDChNBUkNvbmZpZ1ByaW1hcnlUeXBlEiYKIkFSX0NPTkZJR19QUklNQVJZX1RZUEVfVU5TUEVDSUZJRUQQABIiCh5BUl9DT05GSUdfUFJJTUFSWV9UWVBFX0dFTkVSQUwQARIsCihBUl9DT05GSUdfUFJJTUFSWV9UWVBFX0FTU0VNQkxZX0dVSURBTkNFEAISLgoqQVJfQ09ORklHX1BSSU1BUllfVFlQRV9QUk9DRURVUkVfQ0hFQ0tMSVNUEAMSKQolQVJfQ09ORklHX1BSSU1BUllfVFlQRV9ST0JPVF9HVUlEQU5DRRAEEjEKLUFSX0NPTkZJR19QUklNQVJZX1RZUEVfQ09MTEFCT1JBVElPTl9HVUlEQU5DRRAFEjAKLEFSX0NPTkZJR19QUklNQVJZX1RZUEVfVkFMSURBVElPTl9JTlNQRUNUSU9OEAYSKwonQVJfQ09ORklHX1BSSU1BUllfVFlQRV9QUk9DRVNTX09WRVJWSUVXEAcSLAooQVJfQ09ORklHX1BSSU1BUllfVFlQRV9UUkFJTklOR19HVUlEQU5DRRAIEioKJkFSX0NPTkZJR19QUklNQVJZX1RZUEVfU0FGRVRZX0dVSURBTkNFEAlCiQEKCWNvbS5hci52MUINQXJDb25maWdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_input_slot, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * Just delete this?
@@ -149,6 +149,88 @@ export type ARConfigMessages = Message<"ar.v1.ARConfigMessages"> & {
  */
 export const ARConfigMessagesSchema: GenMessage<ARConfigMessages> = /*@__PURE__*/
   messageDesc(file_ar_v1_ar_config, 3);
+
+/**
+ * @generated from message ar.v1.ARConfigAddMessage
+ */
+export type ARConfigAddMessage = Message<"ar.v1.ARConfigAddMessage"> & {
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * Main purpose used to seed default properties and feedback presets.
+   *
+   * @generated from field: ar.v1.ARConfigPrimaryType primary_type = 5;
+   */
+  primaryType: ARConfigPrimaryType;
+
+  /**
+   * Threshold distance in cm all AR elements should disappear. 0 = ignored
+   *
+   * @generated from field: int64 ar_disappear_distance = 6;
+   */
+  arDisappearDistance: bigint;
+};
+
+/**
+ * Describes the message ar.v1.ARConfigAddMessage.
+ * Use `create(ARConfigAddMessageSchema)` to create a new message.
+ */
+export const ARConfigAddMessageSchema: GenMessage<ARConfigAddMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 4);
+
+/**
+ * @generated from message ar.v1.ARConfigUpdateMessage
+ */
+export type ARConfigUpdateMessage = Message<"ar.v1.ARConfigUpdateMessage"> & {
+  /**
+   * Stable config identifier.
+   *
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * Threshold distance in cm all AR elements should disappear. 0 = ignored
+   *
+   * @generated from field: int64 ar_disappear_distance = 6;
+   */
+  arDisappearDistance: bigint;
+};
+
+/**
+ * Describes the message ar.v1.ARConfigUpdateMessage.
+ * Use `create(ARConfigUpdateMessageSchema)` to create a new message.
+ */
+export const ARConfigUpdateMessageSchema: GenMessage<ARConfigUpdateMessage> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config, 5);
 
 /**
  * ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.

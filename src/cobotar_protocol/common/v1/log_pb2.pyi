@@ -85,12 +85,10 @@ class LogException(_message.Message):
     def __init__(self, type: _Optional[str] = ..., message: _Optional[str] = ..., stack_trace: _Optional[str] = ...) -> None: ...
 
 class LogRecord(_message.Message):
-    __slots__ = ("id", "timestamp", "observed_at", "severity", "severity_text", "body", "resource", "attributes", "source", "exception", "logger_name", "sequence_number")
+    __slots__ = ("id", "timestamp", "severity", "body", "resource", "attributes", "source", "exception", "logger_name", "sequence_number")
     ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    OBSERVED_AT_FIELD_NUMBER: _ClassVar[int]
     SEVERITY_FIELD_NUMBER: _ClassVar[int]
-    SEVERITY_TEXT_FIELD_NUMBER: _ClassVar[int]
     BODY_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_FIELD_NUMBER: _ClassVar[int]
     ATTRIBUTES_FIELD_NUMBER: _ClassVar[int]
@@ -100,9 +98,7 @@ class LogRecord(_message.Message):
     SEQUENCE_NUMBER_FIELD_NUMBER: _ClassVar[int]
     id: str
     timestamp: _timestamp_pb2.Timestamp
-    observed_at: _timestamp_pb2.Timestamp
     severity: LogSeverity
-    severity_text: str
     body: str
     resource: LogResource
     attributes: _containers.RepeatedCompositeFieldContainer[LogAttribute]
@@ -110,7 +106,7 @@ class LogRecord(_message.Message):
     exception: LogException
     logger_name: str
     sequence_number: int
-    def __init__(self, id: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., observed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., severity: _Optional[_Union[LogSeverity, str]] = ..., severity_text: _Optional[str] = ..., body: _Optional[str] = ..., resource: _Optional[_Union[LogResource, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[LogAttribute, _Mapping]]] = ..., source: _Optional[_Union[LogSource, _Mapping]] = ..., exception: _Optional[_Union[LogException, _Mapping]] = ..., logger_name: _Optional[str] = ..., sequence_number: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., severity: _Optional[_Union[LogSeverity, str]] = ..., body: _Optional[str] = ..., resource: _Optional[_Union[LogResource, _Mapping]] = ..., attributes: _Optional[_Iterable[_Union[LogAttribute, _Mapping]]] = ..., source: _Optional[_Union[LogSource, _Mapping]] = ..., exception: _Optional[_Union[LogException, _Mapping]] = ..., logger_name: _Optional[str] = ..., sequence_number: _Optional[int] = ...) -> None: ...
 
 class LogRecords(_message.Message):
     __slots__ = ("items",)

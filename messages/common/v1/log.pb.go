@@ -427,10 +427,7 @@ type LogRecord struct {
 	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Time at which the application created the log record.
 	Timestamp *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	// Time at which the logging transport observed/received the record.
-	ObservedAt   *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=observed_at,json=observedAt,proto3" json:"observed_at,omitempty"`
-	Severity     LogSeverity            `protobuf:"varint,4,opt,name=severity,proto3,enum=common.v1.LogSeverity" json:"severity,omitempty"`
-	SeverityText string                 `protobuf:"bytes,5,opt,name=severity_text,json=severityText,proto3" json:"severity_text,omitempty"`
+	Severity  LogSeverity            `protobuf:"varint,4,opt,name=severity,proto3,enum=common.v1.LogSeverity" json:"severity,omitempty"` // string severity_text = 5;
 	// Human-readable log message.
 	Body       string          `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`
 	Resource   *LogResource    `protobuf:"bytes,7,opt,name=resource,proto3" json:"resource,omitempty"`
@@ -489,25 +486,11 @@ func (x *LogRecord) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *LogRecord) GetObservedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.ObservedAt
-	}
-	return nil
-}
-
 func (x *LogRecord) GetSeverity() LogSeverity {
 	if x != nil {
 		return x.Severity
 	}
 	return LogSeverity_LOG_SEVERITY_UNSPECIFIED
-}
-
-func (x *LogRecord) GetSeverityText() string {
-	if x != nil {
-		return x.SeverityText
-	}
-	return ""
 }
 
 func (x *LogRecord) GetBody() string {
@@ -639,14 +622,11 @@ const file_common_v1_log_proto_rawDesc = "" +
 	"\x04type\x18\x01 \x01(\tR\x04type\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x1f\n" +
 	"\vstack_trace\x18\x03 \x01(\tR\n" +
-	"stackTrace\"\x9b\x04\n" +
+	"stackTrace\"\xb9\x03\n" +
 	"\tLogRecord\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x128\n" +
-	"\ttimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12;\n" +
-	"\vobserved_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"observedAt\x122\n" +
-	"\bseverity\x18\x04 \x01(\x0e2\x16.common.v1.LogSeverityR\bseverity\x12#\n" +
-	"\rseverity_text\x18\x05 \x01(\tR\fseverityText\x12\x12\n" +
+	"\ttimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x122\n" +
+	"\bseverity\x18\x04 \x01(\x0e2\x16.common.v1.LogSeverityR\bseverity\x12\x12\n" +
 	"\x04body\x18\x06 \x01(\tR\x04body\x122\n" +
 	"\bresource\x18\a \x01(\v2\x16.common.v1.LogResourceR\bresource\x127\n" +
 	"\n" +
@@ -700,18 +680,17 @@ var file_common_v1_log_proto_goTypes = []any{
 var file_common_v1_log_proto_depIdxs = []int32{
 	1, // 0: common.v1.LogAttribute.value:type_name -> common.v1.LogAttributeValue
 	8, // 1: common.v1.LogRecord.timestamp:type_name -> google.protobuf.Timestamp
-	8, // 2: common.v1.LogRecord.observed_at:type_name -> google.protobuf.Timestamp
-	0, // 3: common.v1.LogRecord.severity:type_name -> common.v1.LogSeverity
-	3, // 4: common.v1.LogRecord.resource:type_name -> common.v1.LogResource
-	2, // 5: common.v1.LogRecord.attributes:type_name -> common.v1.LogAttribute
-	4, // 6: common.v1.LogRecord.source:type_name -> common.v1.LogSource
-	5, // 7: common.v1.LogRecord.exception:type_name -> common.v1.LogException
-	6, // 8: common.v1.LogRecords.items:type_name -> common.v1.LogRecord
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	0, // 2: common.v1.LogRecord.severity:type_name -> common.v1.LogSeverity
+	3, // 3: common.v1.LogRecord.resource:type_name -> common.v1.LogResource
+	2, // 4: common.v1.LogRecord.attributes:type_name -> common.v1.LogAttribute
+	4, // 5: common.v1.LogRecord.source:type_name -> common.v1.LogSource
+	5, // 6: common.v1.LogRecord.exception:type_name -> common.v1.LogException
+	6, // 7: common.v1.LogRecords.items:type_name -> common.v1.LogRecord
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_log_proto_init() }

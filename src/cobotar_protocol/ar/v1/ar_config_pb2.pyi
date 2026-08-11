@@ -74,3 +74,31 @@ class ARConfigMessages(_message.Message):
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _containers.RepeatedCompositeFieldContainer[ARConfigMessage]
     def __init__(self, items: _Optional[_Iterable[_Union[ARConfigMessage, _Mapping]]] = ...) -> None: ...
+
+class ARConfigAddMessage(_message.Message):
+    __slots__ = ("name", "icon", "description", "primary_type", "ar_disappear_distance")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    PRIMARY_TYPE_FIELD_NUMBER: _ClassVar[int]
+    AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    icon: str
+    description: str
+    primary_type: ARConfigPrimaryType
+    ar_disappear_distance: int
+    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., primary_type: _Optional[_Union[ARConfigPrimaryType, str]] = ..., ar_disappear_distance: _Optional[int] = ...) -> None: ...
+
+class ARConfigUpdateMessage(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    ar_disappear_distance: int
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ...) -> None: ...

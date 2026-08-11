@@ -108,10 +108,12 @@
     - [ARRunSelection](#ar-v1-ARRunSelection)
   
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
+    - [ARConfigAddMessage](#ar-v1-ARConfigAddMessage)
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
     - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
+    - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
   
     - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
   
@@ -1662,6 +1664,25 @@ The selected task need not currently be workable. Tasks that cannot be assigned 
 
 
 
+<a name="ar-v1-ARConfigAddMessage"></a>
+
+### ARConfigAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+
+
+
+
+
+
 <a name="ar-v1-ARConfigInfoMessage"></a>
 
 ### ARConfigInfoMessage
@@ -1728,6 +1749,25 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigUpdateMessage"></a>
+
+### ARConfigUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
 
 
 
@@ -3767,9 +3807,7 @@ remaining convenient for NATS/protobuf applications.
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | timestamp | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the application created the log record. |
-| observed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the logging transport observed/received the record. |
-| severity | [LogSeverity](#common-v1-LogSeverity) |  |  |
-| severity_text | [string](#string) |  |  |
+| severity | [LogSeverity](#common-v1-LogSeverity) |  | string severity_text = 5; |
 | body | [string](#string) |  | Human-readable log message. |
 | resource | [LogResource](#common-v1-LogResource) |  |  |
 | attributes | [LogAttribute](#common-v1-LogAttribute) | repeated |  |

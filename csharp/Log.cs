@@ -42,29 +42,26 @@ namespace Messages.Common.V1 {
             "EhIKBGZpbGUYASABKAlSBGZpbGUSGwoEbGluZRgCIAEoBUIHukgEGgIoAFIE",
             "bGluZRIaCghmdW5jdGlvbhgDIAEoCVIIZnVuY3Rpb24iXQoMTG9nRXhjZXB0",
             "aW9uEhIKBHR5cGUYASABKAlSBHR5cGUSGAoHbWVzc2FnZRgCIAEoCVIHbWVz",
-            "c2FnZRIfCgtzdGFja190cmFjZRgDIAEoCVIKc3RhY2tUcmFjZSKbBAoJTG9n",
+            "c2FnZRIfCgtzdGFja190cmFjZRgDIAEoCVIKc3RhY2tUcmFjZSK5AwoJTG9n",
             "UmVjb3JkEg4KAmlkGAEgASgJUgJpZBI4Cgl0aW1lc3RhbXAYAiABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl0aW1lc3RhbXASOwoLb2JzZXJ2",
-            "ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpvYnNl",
-            "cnZlZEF0EjIKCHNldmVyaXR5GAQgASgOMhYuY29tbW9uLnYxLkxvZ1NldmVy",
-            "aXR5UghzZXZlcml0eRIjCg1zZXZlcml0eV90ZXh0GAUgASgJUgxzZXZlcml0",
-            "eVRleHQSEgoEYm9keRgGIAEoCVIEYm9keRIyCghyZXNvdXJjZRgHIAEoCzIW",
-            "LmNvbW1vbi52MS5Mb2dSZXNvdXJjZVIIcmVzb3VyY2USNwoKYXR0cmlidXRl",
-            "cxgIIAMoCzIXLmNvbW1vbi52MS5Mb2dBdHRyaWJ1dGVSCmF0dHJpYnV0ZXMS",
-            "LAoGc291cmNlGAkgASgLMhQuY29tbW9uLnYxLkxvZ1NvdXJjZVIGc291cmNl",
-            "EjUKCWV4Y2VwdGlvbhgKIAEoCzIXLmNvbW1vbi52MS5Mb2dFeGNlcHRpb25S",
-            "CWV4Y2VwdGlvbhIfCgtsb2dnZXJfbmFtZRgNIAEoCVIKbG9nZ2VyTmFtZRIn",
-            "Cg9zZXF1ZW5jZV9udW1iZXIYDiABKARSDnNlcXVlbmNlTnVtYmVyIjgKCkxv",
-            "Z1JlY29yZHMSKgoFaXRlbXMYASADKAsyFC5jb21tb24udjEuTG9nUmVjb3Jk",
-            "UgVpdGVtcyq5AQoLTG9nU2V2ZXJpdHkSHAoYTE9HX1NFVkVSSVRZX1VOU1BF",
-            "Q0lGSUVEEAASFgoSTE9HX1NFVkVSSVRZX1RSQUNFEAESFgoSTE9HX1NFVkVS",
-            "SVRZX0RFQlVHEAISFQoRTE9HX1NFVkVSSVRZX0lORk8QAxIVChFMT0dfU0VW",
-            "RVJJVFlfV0FSThAEEhYKEkxPR19TRVZFUklUWV9FUlJPUhAFEhYKEkxPR19T",
-            "RVZFUklUWV9GQVRBTBAGQqABCg1jb20uY29tbW9uLnYxQghMb2dQcm90b1AB",
-            "WjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9u",
-            "L3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29t",
-            "bW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIG",
-            "cHJvdG8z"));
+            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl0aW1lc3RhbXASMgoIc2V2ZXJp",
+            "dHkYBCABKA4yFi5jb21tb24udjEuTG9nU2V2ZXJpdHlSCHNldmVyaXR5EhIK",
+            "BGJvZHkYBiABKAlSBGJvZHkSMgoIcmVzb3VyY2UYByABKAsyFi5jb21tb24u",
+            "djEuTG9nUmVzb3VyY2VSCHJlc291cmNlEjcKCmF0dHJpYnV0ZXMYCCADKAsy",
+            "Fy5jb21tb24udjEuTG9nQXR0cmlidXRlUgphdHRyaWJ1dGVzEiwKBnNvdXJj",
+            "ZRgJIAEoCzIULmNvbW1vbi52MS5Mb2dTb3VyY2VSBnNvdXJjZRI1CglleGNl",
+            "cHRpb24YCiABKAsyFy5jb21tb24udjEuTG9nRXhjZXB0aW9uUglleGNlcHRp",
+            "b24SHwoLbG9nZ2VyX25hbWUYDSABKAlSCmxvZ2dlck5hbWUSJwoPc2VxdWVu",
+            "Y2VfbnVtYmVyGA4gASgEUg5zZXF1ZW5jZU51bWJlciI4CgpMb2dSZWNvcmRz",
+            "EioKBWl0ZW1zGAEgAygLMhQuY29tbW9uLnYxLkxvZ1JlY29yZFIFaXRlbXMq",
+            "uQEKC0xvZ1NldmVyaXR5EhwKGExPR19TRVZFUklUWV9VTlNQRUNJRklFRBAA",
+            "EhYKEkxPR19TRVZFUklUWV9UUkFDRRABEhYKEkxPR19TRVZFUklUWV9ERUJV",
+            "RxACEhUKEUxPR19TRVZFUklUWV9JTkZPEAMSFQoRTE9HX1NFVkVSSVRZX1dB",
+            "Uk4QBBIWChJMT0dfU0VWRVJJVFlfRVJST1IQBRIWChJMT0dfU0VWRVJJVFlf",
+            "RkFUQUwQBkKgAQoNY29tLmNvbW1vbi52MUIITG9nUHJvdG9QAVo3Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21t",
+            "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
+            "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.LogSeverity), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -73,7 +70,7 @@ namespace Messages.Common.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogResource), global::Messages.Common.V1.LogResource.Parser, new[]{ "ServiceName", "ServiceVersion", "ServiceInstanceId", "Environment", "ApplicationType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogSource), global::Messages.Common.V1.LogSource.Parser, new[]{ "File", "Line", "Function" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogException), global::Messages.Common.V1.LogException.Parser, new[]{ "Type", "Message", "StackTrace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogRecord), global::Messages.Common.V1.LogRecord.Parser, new[]{ "Id", "Timestamp", "ObservedAt", "Severity", "SeverityText", "Body", "Resource", "Attributes", "Source", "Exception", "LoggerName", "SequenceNumber" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogRecord), global::Messages.Common.V1.LogRecord.Parser, new[]{ "Id", "Timestamp", "Severity", "Body", "Resource", "Attributes", "Source", "Exception", "LoggerName", "SequenceNumber" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.LogRecords), global::Messages.Common.V1.LogRecords.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -1641,9 +1638,7 @@ namespace Messages.Common.V1 {
     public LogRecord(LogRecord other) : this() {
       id_ = other.id_;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
-      observedAt_ = other.observedAt_ != null ? other.observedAt_.Clone() : null;
       severity_ = other.severity_;
-      severityText_ = other.severityText_;
       body_ = other.body_;
       resource_ = other.resource_ != null ? other.resource_.Clone() : null;
       attributes_ = other.attributes_.Clone();
@@ -1687,42 +1682,18 @@ namespace Messages.Common.V1 {
       }
     }
 
-    /// <summary>Field number for the "observed_at" field.</summary>
-    public const int ObservedAtFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp observedAt_;
-    /// <summary>
-    /// Time at which the logging transport observed/received the record.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp ObservedAt {
-      get { return observedAt_; }
-      set {
-        observedAt_ = value;
-      }
-    }
-
     /// <summary>Field number for the "severity" field.</summary>
     public const int SeverityFieldNumber = 4;
     private global::Messages.Common.V1.LogSeverity severity_ = global::Messages.Common.V1.LogSeverity.Unspecified;
+    /// <summary>
+    /// string severity_text = 5;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.LogSeverity Severity {
       get { return severity_; }
       set {
         severity_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "severity_text" field.</summary>
-    public const int SeverityTextFieldNumber = 5;
-    private string severityText_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SeverityText {
-      get { return severityText_; }
-      set {
-        severityText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1835,9 +1806,7 @@ namespace Messages.Common.V1 {
       }
       if (Id != other.Id) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
-      if (!object.Equals(ObservedAt, other.ObservedAt)) return false;
       if (Severity != other.Severity) return false;
-      if (SeverityText != other.SeverityText) return false;
       if (Body != other.Body) return false;
       if (!object.Equals(Resource, other.Resource)) return false;
       if(!attributes_.Equals(other.attributes_)) return false;
@@ -1854,9 +1823,7 @@ namespace Messages.Common.V1 {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
-      if (observedAt_ != null) hash ^= ObservedAt.GetHashCode();
       if (Severity != global::Messages.Common.V1.LogSeverity.Unspecified) hash ^= Severity.GetHashCode();
-      if (SeverityText.Length != 0) hash ^= SeverityText.GetHashCode();
       if (Body.Length != 0) hash ^= Body.GetHashCode();
       if (resource_ != null) hash ^= Resource.GetHashCode();
       hash ^= attributes_.GetHashCode();
@@ -1890,17 +1857,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Timestamp);
       }
-      if (observedAt_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(ObservedAt);
-      }
       if (Severity != global::Messages.Common.V1.LogSeverity.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Severity);
-      }
-      if (SeverityText.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(SeverityText);
       }
       if (Body.Length != 0) {
         output.WriteRawTag(50);
@@ -1945,17 +1904,9 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Timestamp);
       }
-      if (observedAt_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(ObservedAt);
-      }
       if (Severity != global::Messages.Common.V1.LogSeverity.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Severity);
-      }
-      if (SeverityText.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(SeverityText);
       }
       if (Body.Length != 0) {
         output.WriteRawTag(50);
@@ -1998,14 +1949,8 @@ namespace Messages.Common.V1 {
       if (timestamp_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
-      if (observedAt_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ObservedAt);
-      }
       if (Severity != global::Messages.Common.V1.LogSeverity.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Severity);
-      }
-      if (SeverityText.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SeverityText);
       }
       if (Body.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Body);
@@ -2047,17 +1992,8 @@ namespace Messages.Common.V1 {
         }
         Timestamp.MergeFrom(other.Timestamp);
       }
-      if (other.observedAt_ != null) {
-        if (observedAt_ == null) {
-          ObservedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        ObservedAt.MergeFrom(other.ObservedAt);
-      }
       if (other.Severity != global::Messages.Common.V1.LogSeverity.Unspecified) {
         Severity = other.Severity;
-      }
-      if (other.SeverityText.Length != 0) {
-        SeverityText = other.SeverityText;
       }
       if (other.Body.Length != 0) {
         Body = other.Body;
@@ -2117,19 +2053,8 @@ namespace Messages.Common.V1 {
             input.ReadMessage(Timestamp);
             break;
           }
-          case 26: {
-            if (observedAt_ == null) {
-              ObservedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(ObservedAt);
-            break;
-          }
           case 32: {
             Severity = (global::Messages.Common.V1.LogSeverity) input.ReadEnum();
-            break;
-          }
-          case 42: {
-            SeverityText = input.ReadString();
             break;
           }
           case 50: {
@@ -2199,19 +2124,8 @@ namespace Messages.Common.V1 {
             input.ReadMessage(Timestamp);
             break;
           }
-          case 26: {
-            if (observedAt_ == null) {
-              ObservedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(ObservedAt);
-            break;
-          }
           case 32: {
             Severity = (global::Messages.Common.V1.LogSeverity) input.ReadEnum();
-            break;
-          }
-          case 42: {
-            SeverityText = input.ReadString();
             break;
           }
           case 50: {

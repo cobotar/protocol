@@ -107,3 +107,31 @@ message ARConfigMessage {
 message ARConfigMessages {
   repeated ARConfigMessage items = 1; // AR config templates.
 }
+
+message ARConfigAddMessage {
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
+  string icon = 3;
+  string description = 4;
+  ARConfigPrimaryType primary_type = 5 [(buf.validate.field).enum.defined_only = true]; // Main purpose used to seed default properties and feedback presets.
+  int64 ar_disappear_distance = 6 [(buf.validate.field).int64 = {
+    gte: 0
+    example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
+  }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
+}
+
+message ARConfigUpdateMessage {
+  string id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true]; // Stable config identifier.
+  string name = 2 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }];
+  string icon = 3;
+  string description = 4;
+  int64 ar_disappear_distance = 6 [(buf.validate.field).int64 = {
+    gte: 0
+    example: 350 // All AR elements will disappear when the user is more than 350cm from the main marker.
+  }]; // Threshold distance in cm all AR elements should disappear. 0 = ignored
+}

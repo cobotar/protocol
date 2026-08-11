@@ -385,6 +385,158 @@ func (x *ARConfigMessages) GetItems() []*ARConfigMessage {
 	return nil
 }
 
+type ARConfigAddMessage struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	PrimaryType         ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"` // Main purpose used to seed default properties and feedback presets.
+	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`      // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *ARConfigAddMessage) Reset() {
+	*x = ARConfigAddMessage{}
+	mi := &file_ar_v1_ar_config_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARConfigAddMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARConfigAddMessage) ProtoMessage() {}
+
+func (x *ARConfigAddMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARConfigAddMessage.ProtoReflect.Descriptor instead.
+func (*ARConfigAddMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ARConfigAddMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ARConfigAddMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ARConfigAddMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ARConfigAddMessage) GetPrimaryType() ARConfigPrimaryType {
+	if x != nil {
+		return x.PrimaryType
+	}
+	return ARConfigPrimaryType_AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED
+}
+
+func (x *ARConfigAddMessage) GetArDisappearDistance() int64 {
+	if x != nil {
+		return x.ArDisappearDistance
+	}
+	return 0
+}
+
+type ARConfigUpdateMessage struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
+	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *ARConfigUpdateMessage) Reset() {
+	*x = ARConfigUpdateMessage{}
+	mi := &file_ar_v1_ar_config_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARConfigUpdateMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARConfigUpdateMessage) ProtoMessage() {}
+
+func (x *ARConfigUpdateMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARConfigUpdateMessage.ProtoReflect.Descriptor instead.
+func (*ARConfigUpdateMessage) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ARConfigUpdateMessage) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ARConfigUpdateMessage) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ARConfigUpdateMessage) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *ARConfigUpdateMessage) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ARConfigUpdateMessage) GetArDisappearDistance() int64 {
+	if x != nil {
+		return x.ArDisappearDistance
+	}
+	return 0
+}
+
 var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
@@ -408,7 +560,21 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\vinput_slots\x18\a \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
 	"inputSlots\"@\n" +
 	"\x10ARConfigMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05items*\xd6\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05items\"\xf2\x01\n" +
+	"\x12ARConfigAddMessage\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12G\n" +
+	"\fprimary_type\x18\x05 \x01(\x0e2\x1a.ar.v1.ARConfigPrimaryTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vprimaryType\x12>\n" +
+	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\"\xc7\x01\n" +
+	"\x15ARConfigUpdateMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
+	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance*\xd6\x03\n" +
 	"\x13ARConfigPrimaryType\x12&\n" +
 	"\"AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eAR_CONFIG_PRIMARY_TYPE_GENERAL\x10\x01\x12,\n" +
@@ -435,25 +601,28 @@ func file_ar_v1_ar_config_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_ar_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ar_v1_ar_config_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_ar_v1_ar_config_proto_goTypes = []any{
-	(ARConfigPrimaryType)(0),     // 0: ar.v1.ARConfigPrimaryType
-	(*ARConfigInfoMessage)(nil),  // 1: ar.v1.ARConfigInfoMessage
-	(*ARConfigInfoMessages)(nil), // 2: ar.v1.ARConfigInfoMessages
-	(*ARConfigMessage)(nil),      // 3: ar.v1.ARConfigMessage
-	(*ARConfigMessages)(nil),     // 4: ar.v1.ARConfigMessages
-	(*ARInputSlotMessage)(nil),   // 5: ar.v1.ARInputSlotMessage
+	(ARConfigPrimaryType)(0),      // 0: ar.v1.ARConfigPrimaryType
+	(*ARConfigInfoMessage)(nil),   // 1: ar.v1.ARConfigInfoMessage
+	(*ARConfigInfoMessages)(nil),  // 2: ar.v1.ARConfigInfoMessages
+	(*ARConfigMessage)(nil),       // 3: ar.v1.ARConfigMessage
+	(*ARConfigMessages)(nil),      // 4: ar.v1.ARConfigMessages
+	(*ARConfigAddMessage)(nil),    // 5: ar.v1.ARConfigAddMessage
+	(*ARConfigUpdateMessage)(nil), // 6: ar.v1.ARConfigUpdateMessage
+	(*ARInputSlotMessage)(nil),    // 7: ar.v1.ARInputSlotMessage
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
 	1, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
 	0, // 1: ar.v1.ARConfigMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
-	5, // 2: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
+	7, // 2: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
 	3, // 3: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 4: ar.v1.ARConfigAddMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -468,7 +637,7 @@ func file_ar_v1_ar_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_ar_config_proto_rawDesc), len(file_ar_v1_ar_config_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

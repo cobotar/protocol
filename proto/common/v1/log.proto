@@ -85,10 +85,10 @@ message LogRecord {
   google.protobuf.Timestamp timestamp = 2;
 
   // Time at which the logging transport observed/received the record.
-  google.protobuf.Timestamp observed_at = 3;
+  // google.protobuf.Timestamp observed_at = 3;
 
   LogSeverity severity = 4;
-  string severity_text = 5;
+  // string severity_text = 5;
 
   // Human-readable log message.
   string body = 6;
