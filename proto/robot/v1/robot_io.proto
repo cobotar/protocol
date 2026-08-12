@@ -1,0 +1,58 @@
+syntax = "proto3";
+package robot.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+
+message RobotIOSignalValue {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "bool_value",
+      "int_value",
+      "double_value"
+    ]
+    required: true
+  };
+
+  // Stable public identity, e.g. "cycle_started".
+  // This is deliberately not the RTDE register name.
+  string signal_id = 1 [
+    (buf.validate.field).string.min_len = 1
+  ];
+
+  optional bool bool_value = 10;
+  optional sint32 int_value = 11;
+  optional double double_value = 12 [
+    (buf.validate.field).double.finite = true
+  ];
+}
+
+// Complete snapshot of the configured readable signals.
+message RobotIOState {
+  string robot_id = 1 [
+    (buf.validate.field).string.min_len = 1
+  ];
+
+  repeated RobotIOSignalValue values = 2 [
+    (buf.validate.field).repeated.min_items = 1
+  ];
+
+  // Time the RTDE output frame was received.
+  google.protobuf.Timestamp observed_at = 3 [
+    (buf.validate.field).required = true
+  ];
+}
+
+// One or more signal updates to apply in the same RTDE input frame.
+message RobotIOCommand {
+  string robot_id = 1 [
+    (buf.validate.field).string.min_len = 1
+  ];
+
+  repeated RobotIOSignalValue writes = 2 [
+    (buf.validate.field).repeated.min_items = 1
+  ];
+}

@@ -1,0 +1,94 @@
+syntax = "proto3";
+package robot.v1;
+
+import "buf/validate/validate.proto";
+import "robot/v1/robot_io_catalog.proto";
+
+option csharp_namespace = "Messages.Robot.V1";
+option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+
+enum RobotAdapterCommandType {
+  ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED = 0;
+
+  ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY = 1;
+  ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE = 2;
+  ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP = 3;
+
+  ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE = 10;
+  ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP = 11;
+  ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP = 12;
+
+  ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM = 20;
+  ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION = 21;
+
+  ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON = 30;
+  ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF = 31;
+  ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE = 32;
+}
+
+enum RobotAdapterTelemetryType {
+  ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED = 0;
+
+  ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE = 1;
+  ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE = 2;
+  ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE = 3;
+  ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH = 4;
+  ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE = 5;
+}
+
+message RobotAdapterCommandCapability {
+  RobotAdapterCommandType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+}
+
+message RobotAdapterTelemetryCapability {
+  RobotAdapterTelemetryType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Actual configured publication rate, not the theoretical robot maximum.
+  optional double frequency_hz = 2 [
+    (buf.validate.field).double = {
+      gt: 0
+      finite: true
+    }
+  ];
+}
+
+message RobotAdapterCapabilities {
+  repeated RobotAdapterCommandCapability commands = 1;
+  repeated RobotAdapterTelemetryCapability telemetry = 2;
+  robot.v1.RobotIOSignalCatalog io_signals = 3;
+}
+
+message RobotControllerIdentity {
+  string manufacturer = 1;
+  string model = 2;
+  string serial_number = 3;
+  string controller_software_version = 4;
+}
+
+message RobotAdapterInfoMessage {
+  string robot_id = 1;
+
+  // Existing fields can remain for wire compatibility.
+  string robot_type = 2 [deprecated = true];
+  string identifier = 3 [deprecated = true];
+
+  // Stable implementation name, e.g. "ur.rtde-dashboard".
+  string adapter_type = 4;
+
+  // Version of the adapter implementation, not the Protobuf API.
+  string adapter_version = 5;
+
+  // Identity actually reported by the connected controller.
+  RobotControllerIdentity controller = 6;
+
+  RobotAdapterCapabilities capabilities = 7;
+
+  // Deterministic fingerprint of the effective capabilities and I/O catalog.
+  string capabilities_revision = 8;
+}

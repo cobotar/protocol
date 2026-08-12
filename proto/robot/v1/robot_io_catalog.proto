@@ -1,0 +1,27 @@
+syntax = "proto3";
+package robot.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+
+enum RobotIODataType {
+  ROBOT_IO_DATA_TYPE_UNSPECIFIED = 0;
+  ROBOT_IO_DATA_TYPE_BOOL = 1;
+  ROBOT_IO_DATA_TYPE_INT32 = 2;
+  ROBOT_IO_DATA_TYPE_DOUBLE = 3;
+}
+
+message RobotIOSignalDefinition {
+  string signal_id = 1;
+  string name = 2;
+  RobotIODataType data_type = 3;
+
+  // From the public API's perspective—not RTDE's terminology.
+  bool readable = 4;
+  bool writable = 5;
+}
+
+message RobotIOSignalCatalog {
+  string robot_id = 1;
+  repeated RobotIOSignalDefinition signals = 2;
+}
