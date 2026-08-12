@@ -90,8 +90,8 @@ const file_robot_v1_path_proto_rawDesc = "" +
 	"\vPathMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\brobot_id\x18\x02 \x01(\tR\arobotId\x12*\n" +
-	"\x06points\x18\x03 \x03(\v2\x12.geometry.v1.PointR\x06pointsB\x9b\x01\n" +
-	"\fcom.robot.v1B\tPathProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x06points\x18\x03 \x03(\v2\x12.geometry.v1.PointR\x06pointsB\x9a\x01\n" +
+	"\fcom.robot.v1B\tPathProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_path_proto_rawDescOnce sync.Once

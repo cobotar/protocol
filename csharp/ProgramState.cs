@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/program_state.proto</summary>
   public static partial class ProgramStateReflection {
@@ -31,15 +31,15 @@ namespace Messages.Common.V1 {
             "ZmlsZRgEIAEoCVILcHJvZ3JhbUZpbGUqdgoMUHJvZ3JhbVN0YXRlEh0KGVBS",
             "T0dSQU1fU1RBVEVfVU5TUEVDSUZJRUQQABIWChJQUk9HUkFNX1NUQVRFX1BM",
             "QVkQARIXChNQUk9HUkFNX1NUQVRFX1BBVVNFEAISFgoSUFJPR1JBTV9TVEFU",
-            "RV9TVE9QEANCowEKDGNvbS5yb2JvdC52MUIRUHJvZ3JhbVN0YXRlUHJvdG9Q",
+            "RV9TVE9QEANCogEKDGNvbS5yb2JvdC52MUIRUHJvZ3JhbVN0YXRlUHJvdG9Q",
             "AVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90",
-            "L3YxO3JvYm90djGiAgNSWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAghSb2Jv",
-            "dFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90",
-            "bzM="));
+            "L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90",
+            "XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.ProgramState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ProgramStateMessage), global::Messages.Common.V1.ProgramStateMessage.Parser, new[]{ "RobotId", "StateCode", "State", "ProgramFile" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.ProgramState), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.ProgramStateMessage), global::Messages.Robot.V1.ProgramStateMessage.Parser, new[]{ "RobotId", "StateCode", "State", "ProgramFile" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,7 +71,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.ProgramStateReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.ProgramStateReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,10 +118,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "state_code" field.</summary>
     public const int StateCodeFieldNumber = 2;
-    private global::Messages.Common.V1.ProgramState stateCode_ = global::Messages.Common.V1.ProgramState.Unspecified;
+    private global::Messages.Robot.V1.ProgramState stateCode_ = global::Messages.Robot.V1.ProgramState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.ProgramState StateCode {
+    public global::Messages.Robot.V1.ProgramState StateCode {
       get { return stateCode_; }
       set {
         stateCode_ = value;
@@ -179,7 +179,7 @@ namespace Messages.Common.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
-      if (StateCode != global::Messages.Common.V1.ProgramState.Unspecified) hash ^= StateCode.GetHashCode();
+      if (StateCode != global::Messages.Robot.V1.ProgramState.Unspecified) hash ^= StateCode.GetHashCode();
       if (State.Length != 0) hash ^= State.GetHashCode();
       if (ProgramFile.Length != 0) hash ^= ProgramFile.GetHashCode();
       if (_unknownFields != null) {
@@ -204,7 +204,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (StateCode != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (StateCode != global::Messages.Robot.V1.ProgramState.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) StateCode);
       }
@@ -230,7 +230,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (StateCode != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (StateCode != global::Messages.Robot.V1.ProgramState.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) StateCode);
       }
@@ -255,7 +255,7 @@ namespace Messages.Common.V1 {
       if (RobotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
-      if (StateCode != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (StateCode != global::Messages.Robot.V1.ProgramState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StateCode);
       }
       if (State.Length != 0) {
@@ -279,7 +279,7 @@ namespace Messages.Common.V1 {
       if (other.RobotId.Length != 0) {
         RobotId = other.RobotId;
       }
-      if (other.StateCode != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (other.StateCode != global::Messages.Robot.V1.ProgramState.Unspecified) {
         StateCode = other.StateCode;
       }
       if (other.State.Length != 0) {
@@ -312,7 +312,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 16: {
-            StateCode = (global::Messages.Common.V1.ProgramState) input.ReadEnum();
+            StateCode = (global::Messages.Robot.V1.ProgramState) input.ReadEnum();
             break;
           }
           case 26: {
@@ -347,7 +347,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 16: {
-            StateCode = (global::Messages.Common.V1.ProgramState) input.ReadEnum();
+            StateCode = (global::Messages.Robot.V1.ProgramState) input.ReadEnum();
             break;
           }
           case 26: {

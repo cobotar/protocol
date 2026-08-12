@@ -126,8 +126,8 @@ const file_robot_v1_robot_visibility_proto_rawDesc = "" +
 	"\rwrist_visible\x18\x05 \x01(\bR\fwristVisible\x120\n" +
 	"\x14end_effector_visible\x18\x06 \x01(\bR\x12endEffectorVisible\x12\x1f\n" +
 	"\vtcp_visible\x18\a \x01(\bR\n" +
-	"tcpVisibleB\xa6\x01\n" +
-	"\fcom.robot.v1B\x14RobotVisibilityProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"tcpVisibleB\xa5\x01\n" +
+	"\fcom.robot.v1B\x14RobotVisibilityProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_visibility_proto_rawDescOnce sync.Once

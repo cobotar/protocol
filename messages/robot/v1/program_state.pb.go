@@ -156,8 +156,8 @@ const file_robot_v1_program_state_proto_rawDesc = "" +
 	"\x19PROGRAM_STATE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROGRAM_STATE_PLAY\x10\x01\x12\x17\n" +
 	"\x13PROGRAM_STATE_PAUSE\x10\x02\x12\x16\n" +
-	"\x12PROGRAM_STATE_STOP\x10\x03B\xa3\x01\n" +
-	"\fcom.robot.v1B\x11ProgramStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x12PROGRAM_STATE_STOP\x10\x03B\xa2\x01\n" +
+	"\fcom.robot.v1B\x11ProgramStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_program_state_proto_rawDescOnce sync.Once

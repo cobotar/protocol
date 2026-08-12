@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14robot/v1/popup.proto\x12\x08robot.v1\"F\n\x15RobotShowPopupRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12\x12\n\x04text\x18\x02 \x01(\tR\x04text\"2\n\x15RobotHidePopupRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotIdB\x9c\x01\n\x0c\x63om.robot.v1B\nPopupProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14robot/v1/popup.proto\x12\x08robot.v1\"F\n\x15RobotShowPopupRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12\x12\n\x04text\x18\x02 \x01(\tR\x04text\"2\n\x15RobotHidePopupRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotIdB\x9b\x01\n\x0c\x63om.robot.v1B\nPopupProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.popup_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\nPopupProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\022Messages.Common.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\nPopupProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
   _globals['_ROBOTSHOWPOPUPREQUEST']._serialized_start=34
   _globals['_ROBOTSHOWPOPUPREQUEST']._serialized_end=104
   _globals['_ROBOTHIDEPOPUPREQUEST']._serialized_start=106

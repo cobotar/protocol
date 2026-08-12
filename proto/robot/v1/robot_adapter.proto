@@ -50,12 +50,10 @@ message RobotAdapterTelemetryCapability {
   ];
 
   // Actual configured publication rate, not the theoretical robot maximum.
-  optional double frequency_hz = 2 [
-    (buf.validate.field).double = {
-      gt: 0
-      finite: true
-    }
-  ];
+  optional double frequency_hz = 2 [(buf.validate.field).double = {
+    gt: 0
+    finite: true
+  }];
 }
 
 message RobotAdapterCapabilities {

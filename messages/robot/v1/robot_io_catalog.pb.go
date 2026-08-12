@@ -220,8 +220,8 @@ const file_robot_v1_robot_io_catalog_proto_rawDesc = "" +
 	"\x1eROBOT_IO_DATA_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17ROBOT_IO_DATA_TYPE_BOOL\x10\x01\x12\x1c\n" +
 	"\x18ROBOT_IO_DATA_TYPE_INT32\x10\x02\x12\x1d\n" +
-	"\x19ROBOT_IO_DATA_TYPE_DOUBLE\x10\x03B\xa5\x01\n" +
-	"\fcom.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x19ROBOT_IO_DATA_TYPE_DOUBLE\x10\x03B\xa4\x01\n" +
+	"\fcom.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_io_catalog_proto_rawDescOnce sync.Once

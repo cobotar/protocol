@@ -235,8 +235,8 @@ const file_robot_v1_robot_io_proto_rawDesc = "" +
 	"observedAt\"t\n" +
 	"\x0eRobotIOCommand\x12\"\n" +
 	"\brobot_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\arobotId\x12>\n" +
-	"\x06writes\x18\x02 \x03(\v2\x1c.robot.v1.RobotIOSignalValueB\b\xbaH\x05\x92\x01\x02\b\x01R\x06writesB\x9e\x01\n" +
-	"\fcom.robot.v1B\fRobotIoProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x06writes\x18\x02 \x03(\v2\x1c.robot.v1.RobotIOSignalValueB\b\xbaH\x05\x92\x01\x02\b\x01R\x06writesB\x9d\x01\n" +
+	"\fcom.robot.v1B\fRobotIoProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_io_proto_rawDescOnce sync.Once

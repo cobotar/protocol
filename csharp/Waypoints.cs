@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/waypoints.proto</summary>
   public static partial class WaypointsReflection {
@@ -31,16 +31,16 @@ namespace Messages.Common.V1 {
             "GQoIcm9ib3RfaWQYAiABKAlSB3JvYm90SWQSGQoIZnJhbWVfaWQYAyABKAlS",
             "B2ZyYW1lSWQSIwoNaGlnaGxpZ2h0X2lkeBgEIAEoBVIMaGlnaGxpZ2h0SWR4",
             "EjcKCXdheXBvaW50cxgFIAMoCzIZLnJvYm90LnYxLldheXBvaW50TWVzc2Fn",
-            "ZVIJd2F5cG9pbnRzQqABCgxjb20ucm9ib3QudjFCDldheXBvaW50c1Byb3Rv",
+            "ZVIJd2F5cG9pbnRzQp8BCgxjb20ucm9ib3QudjFCDldheXBvaW50c1Byb3Rv",
             "UAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2Jv",
-            "dC92MTtyb2JvdHYxogIDUlhYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIIUm9i",
-            "b3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJv",
-            "dG8z"));
+            "dC92MTtyb2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2Jv",
+            "dFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.WaypointMessage), global::Messages.Common.V1.WaypointMessage.Parser, new[]{ "Name", "Point" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.WaypointsMessage), global::Messages.Common.V1.WaypointsMessage.Parser, new[]{ "Id", "RobotId", "FrameId", "HighlightIdx", "Waypoints" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.WaypointMessage), global::Messages.Robot.V1.WaypointMessage.Parser, new[]{ "Name", "Point" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.WaypointsMessage), global::Messages.Robot.V1.WaypointsMessage.Parser, new[]{ "Id", "RobotId", "FrameId", "HighlightIdx", "Waypoints" }, null, null, null, null)
           }));
     }
     #endregion
@@ -62,7 +62,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.WaypointsReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.WaypointsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -306,7 +306,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.WaypointsReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Robot.V1.WaypointsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -390,12 +390,12 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "waypoints" field.</summary>
     public const int WaypointsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.WaypointMessage> _repeated_waypoints_codec
-        = pb::FieldCodec.ForMessage(42, global::Messages.Common.V1.WaypointMessage.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.WaypointMessage> waypoints_ = new pbc::RepeatedField<global::Messages.Common.V1.WaypointMessage>();
+    private static readonly pb::FieldCodec<global::Messages.Robot.V1.WaypointMessage> _repeated_waypoints_codec
+        = pb::FieldCodec.ForMessage(42, global::Messages.Robot.V1.WaypointMessage.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Robot.V1.WaypointMessage> waypoints_ = new pbc::RepeatedField<global::Messages.Robot.V1.WaypointMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.WaypointMessage> Waypoints {
+    public pbc::RepeatedField<global::Messages.Robot.V1.WaypointMessage> Waypoints {
       get { return waypoints_; }
     }
 

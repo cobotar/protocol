@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/program_state_request.proto</summary>
   public static partial class ProgramStateRequestReflection {
@@ -28,16 +28,16 @@ namespace Messages.Common.V1 {
             "LnYxGhxyb2JvdC92MS9wcm9ncmFtX3N0YXRlLnByb3RvIl4KE1Byb2dyYW1T",
             "dGF0ZVJlcXVlc3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWQSLAoFc3Rh",
             "dGUYAiABKA4yFi5yb2JvdC52MS5Qcm9ncmFtU3RhdGVSBXN0YXRlIi0KEEFj",
-            "a25vd2xlZGdlUm9ib3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWRCqgEK",
+            "a25vd2xlZGdlUm9ib3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWRCqQEK",
             "DGNvbS5yb2JvdC52MUIYUHJvZ3JhbVN0YXRlUmVxdWVzdFByb3RvUAFaNWdp",
             "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTty",
-            "b2JvdHYxogIDUlhYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIIUm9ib3RcVjHi",
-            "AhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z"));
+            "b2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeIC",
+            "FFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.ProgramStateReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.Robot.V1.ProgramStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ProgramStateRequest), global::Messages.Common.V1.ProgramStateRequest.Parser, new[]{ "RobotId", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.AcknowledgeRobot), global::Messages.Common.V1.AcknowledgeRobot.Parser, new[]{ "RobotId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.ProgramStateRequest), global::Messages.Robot.V1.ProgramStateRequest.Parser, new[]{ "RobotId", "State" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.AcknowledgeRobot), global::Messages.Robot.V1.AcknowledgeRobot.Parser, new[]{ "RobotId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -59,7 +59,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.ProgramStateRequestReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.ProgramStateRequestReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,10 +104,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 2;
-    private global::Messages.Common.V1.ProgramState state_ = global::Messages.Common.V1.ProgramState.Unspecified;
+    private global::Messages.Robot.V1.ProgramState state_ = global::Messages.Robot.V1.ProgramState.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.ProgramState State {
+    public global::Messages.Robot.V1.ProgramState State {
       get { return state_; }
       set {
         state_ = value;
@@ -139,7 +139,7 @@ namespace Messages.Common.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
-      if (State != global::Messages.Common.V1.ProgramState.Unspecified) hash ^= State.GetHashCode();
+      if (State != global::Messages.Robot.V1.ProgramState.Unspecified) hash ^= State.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -162,7 +162,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (State != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (State != global::Messages.Robot.V1.ProgramState.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
@@ -180,7 +180,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (State != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (State != global::Messages.Robot.V1.ProgramState.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
@@ -197,7 +197,7 @@ namespace Messages.Common.V1 {
       if (RobotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
-      if (State != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (State != global::Messages.Robot.V1.ProgramState.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (_unknownFields != null) {
@@ -215,7 +215,7 @@ namespace Messages.Common.V1 {
       if (other.RobotId.Length != 0) {
         RobotId = other.RobotId;
       }
-      if (other.State != global::Messages.Common.V1.ProgramState.Unspecified) {
+      if (other.State != global::Messages.Robot.V1.ProgramState.Unspecified) {
         State = other.State;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -242,7 +242,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 16: {
-            State = (global::Messages.Common.V1.ProgramState) input.ReadEnum();
+            State = (global::Messages.Robot.V1.ProgramState) input.ReadEnum();
             break;
           }
         }
@@ -269,7 +269,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 16: {
-            State = (global::Messages.Common.V1.ProgramState) input.ReadEnum();
+            State = (global::Messages.Robot.V1.ProgramState) input.ReadEnum();
             break;
           }
         }
@@ -294,7 +294,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.ProgramStateRequestReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Robot.V1.ProgramStateRequestReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

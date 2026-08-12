@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/robot_io_catalog.proto</summary>
   public static partial class RobotIoCatalogReflection {
@@ -34,16 +34,16 @@ namespace Messages.Common.V1 {
             "b3RJT1NpZ25hbERlZmluaXRpb25SB3NpZ25hbHMqjwEKD1JvYm90SU9EYXRh",
             "VHlwZRIiCh5ST0JPVF9JT19EQVRBX1RZUEVfVU5TUEVDSUZJRUQQABIbChdS",
             "T0JPVF9JT19EQVRBX1RZUEVfQk9PTBABEhwKGFJPQk9UX0lPX0RBVEFfVFlQ",
-            "RV9JTlQzMhACEh0KGVJPQk9UX0lPX0RBVEFfVFlQRV9ET1VCTEUQA0KlAQoM",
+            "RV9JTlQzMhACEh0KGVJPQk9UX0lPX0RBVEFfVFlQRV9ET1VCTEUQA0KkAQoM",
             "Y29tLnJvYm90LnYxQhNSb2JvdElvQ2F0YWxvZ1Byb3RvUAFaNWdpdGh1Yi5j",
             "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYx",
-            "ogIDUlhYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2Jv",
-            "dFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z"));
+            "ogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90",
+            "XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.RobotIODataType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotIOSignalDefinition), global::Messages.Common.V1.RobotIOSignalDefinition.Parser, new[]{ "SignalId", "Name", "DataType", "Readable", "Writable" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotIOSignalCatalog), global::Messages.Common.V1.RobotIOSignalCatalog.Parser, new[]{ "RobotId", "Signals" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotIODataType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotIOSignalDefinition), global::Messages.Robot.V1.RobotIOSignalDefinition.Parser, new[]{ "SignalId", "Name", "DataType", "Readable", "Writable" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotIOSignalCatalog), global::Messages.Robot.V1.RobotIOSignalCatalog.Parser, new[]{ "RobotId", "Signals" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +75,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.RobotIoCatalogReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,10 +135,10 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "data_type" field.</summary>
     public const int DataTypeFieldNumber = 3;
-    private global::Messages.Common.V1.RobotIODataType dataType_ = global::Messages.Common.V1.RobotIODataType.Unspecified;
+    private global::Messages.Robot.V1.RobotIODataType dataType_ = global::Messages.Robot.V1.RobotIODataType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.RobotIODataType DataType {
+    public global::Messages.Robot.V1.RobotIODataType DataType {
       get { return dataType_; }
       set {
         dataType_ = value;
@@ -201,7 +201,7 @@ namespace Messages.Common.V1 {
       int hash = 1;
       if (SignalId.Length != 0) hash ^= SignalId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (DataType != global::Messages.Common.V1.RobotIODataType.Unspecified) hash ^= DataType.GetHashCode();
+      if (DataType != global::Messages.Robot.V1.RobotIODataType.Unspecified) hash ^= DataType.GetHashCode();
       if (Readable != false) hash ^= Readable.GetHashCode();
       if (Writable != false) hash ^= Writable.GetHashCode();
       if (_unknownFields != null) {
@@ -230,7 +230,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (DataType != global::Messages.Common.V1.RobotIODataType.Unspecified) {
+      if (DataType != global::Messages.Robot.V1.RobotIODataType.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) DataType);
       }
@@ -260,7 +260,7 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (DataType != global::Messages.Common.V1.RobotIODataType.Unspecified) {
+      if (DataType != global::Messages.Robot.V1.RobotIODataType.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) DataType);
       }
@@ -288,7 +288,7 @@ namespace Messages.Common.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (DataType != global::Messages.Common.V1.RobotIODataType.Unspecified) {
+      if (DataType != global::Messages.Robot.V1.RobotIODataType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DataType);
       }
       if (Readable != false) {
@@ -315,7 +315,7 @@ namespace Messages.Common.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.DataType != global::Messages.Common.V1.RobotIODataType.Unspecified) {
+      if (other.DataType != global::Messages.Robot.V1.RobotIODataType.Unspecified) {
         DataType = other.DataType;
       }
       if (other.Readable != false) {
@@ -352,7 +352,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 24: {
-            DataType = (global::Messages.Common.V1.RobotIODataType) input.ReadEnum();
+            DataType = (global::Messages.Robot.V1.RobotIODataType) input.ReadEnum();
             break;
           }
           case 32: {
@@ -391,7 +391,7 @@ namespace Messages.Common.V1 {
             break;
           }
           case 24: {
-            DataType = (global::Messages.Common.V1.RobotIODataType) input.ReadEnum();
+            DataType = (global::Messages.Robot.V1.RobotIODataType) input.ReadEnum();
             break;
           }
           case 32: {
@@ -424,7 +424,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.RobotIoCatalogReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -469,12 +469,12 @@ namespace Messages.Common.V1 {
 
     /// <summary>Field number for the "signals" field.</summary>
     public const int SignalsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Messages.Common.V1.RobotIOSignalDefinition> _repeated_signals_codec
-        = pb::FieldCodec.ForMessage(18, global::Messages.Common.V1.RobotIOSignalDefinition.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Common.V1.RobotIOSignalDefinition> signals_ = new pbc::RepeatedField<global::Messages.Common.V1.RobotIOSignalDefinition>();
+    private static readonly pb::FieldCodec<global::Messages.Robot.V1.RobotIOSignalDefinition> _repeated_signals_codec
+        = pb::FieldCodec.ForMessage(18, global::Messages.Robot.V1.RobotIOSignalDefinition.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Robot.V1.RobotIOSignalDefinition> signals_ = new pbc::RepeatedField<global::Messages.Robot.V1.RobotIOSignalDefinition>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Common.V1.RobotIOSignalDefinition> Signals {
+    public pbc::RepeatedField<global::Messages.Robot.V1.RobotIOSignalDefinition> Signals {
       get { return signals_; }
     }
 

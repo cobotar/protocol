@@ -75,7 +75,7 @@ namespace Messages.Robot.V1 {
             "AhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BC",
             "TWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.RobotIoCatalogReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterCommandCapability), global::Messages.Robot.V1.RobotAdapterCommandCapability.Parser, new[]{ "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterTelemetryCapability), global::Messages.Robot.V1.RobotAdapterTelemetryCapability.Parser, new[]{ "Type", "FrequencyHz" }, new[]{ "FrequencyHz" }, null, null, null),
@@ -639,10 +639,10 @@ namespace Messages.Robot.V1 {
 
     /// <summary>Field number for the "io_signals" field.</summary>
     public const int IoSignalsFieldNumber = 3;
-    private global::Messages.Common.V1.RobotIOSignalCatalog ioSignals_;
+    private global::Messages.Robot.V1.RobotIOSignalCatalog ioSignals_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Common.V1.RobotIOSignalCatalog IoSignals {
+    public global::Messages.Robot.V1.RobotIOSignalCatalog IoSignals {
       get { return ioSignals_; }
       set {
         ioSignals_ = value;
@@ -748,7 +748,7 @@ namespace Messages.Robot.V1 {
       telemetry_.Add(other.telemetry_);
       if (other.ioSignals_ != null) {
         if (ioSignals_ == null) {
-          IoSignals = new global::Messages.Common.V1.RobotIOSignalCatalog();
+          IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
         }
         IoSignals.MergeFrom(other.IoSignals);
       }
@@ -781,7 +781,7 @@ namespace Messages.Robot.V1 {
           }
           case 26: {
             if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Common.V1.RobotIOSignalCatalog();
+              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
             }
             input.ReadMessage(IoSignals);
             break;
@@ -815,7 +815,7 @@ namespace Messages.Robot.V1 {
           }
           case 26: {
             if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Common.V1.RobotIOSignalCatalog();
+              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
             }
             input.ReadMessage(IoSignals);
             break;

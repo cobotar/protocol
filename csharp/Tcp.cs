@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/tcp.proto</summary>
   public static partial class TcpReflection {
@@ -28,15 +28,15 @@ namespace Messages.Common.V1 {
             "b2ludC5wcm90bxoWZ2VvbWV0cnkvdjEvcXVhZC5wcm90byKMAQoKVGNwTWVz",
             "c2FnZRIZCghyb2JvdF9pZBgBIAEoCVIHcm9ib3RJZBIuCghwb3NpdGlvbhgC",
             "IAEoCzISLmdlb21ldHJ5LnYxLlBvaW50Ughwb3NpdGlvbhIzCgtvcmllbnRh",
-            "dGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRSC29yaWVudGF0aW9uQpoB",
+            "dGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRSC29yaWVudGF0aW9uQpkB",
             "Cgxjb20ucm9ib3QudjFCCFRjcFByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgIS",
-            "TWVzc2FnZXMuQ29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJN",
-            "ZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z"));
+            "ci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgIR",
+            "TWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1l",
+            "dGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.TcpMessage), global::Messages.Common.V1.TcpMessage.Parser, new[]{ "RobotId", "Position", "Orientation" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.TcpMessage), global::Messages.Robot.V1.TcpMessage.Parser, new[]{ "RobotId", "Position", "Orientation" }, null, null, null, null)
           }));
     }
     #endregion
@@ -58,7 +58,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.TcpReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.TcpReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

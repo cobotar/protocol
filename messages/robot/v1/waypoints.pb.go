@@ -163,8 +163,8 @@ const file_robot_v1_waypoints_proto_rawDesc = "" +
 	"\brobot_id\x18\x02 \x01(\tR\arobotId\x12\x19\n" +
 	"\bframe_id\x18\x03 \x01(\tR\aframeId\x12#\n" +
 	"\rhighlight_idx\x18\x04 \x01(\x05R\fhighlightIdx\x127\n" +
-	"\twaypoints\x18\x05 \x03(\v2\x19.robot.v1.WaypointMessageR\twaypointsB\xa0\x01\n" +
-	"\fcom.robot.v1B\x0eWaypointsProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\twaypoints\x18\x05 \x03(\v2\x19.robot.v1.WaypointMessageR\twaypointsB\x9f\x01\n" +
+	"\fcom.robot.v1B\x0eWaypointsProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_waypoints_proto_rawDescOnce sync.Once

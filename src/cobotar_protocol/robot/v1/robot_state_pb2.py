@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1arobot/v1/robot_state.proto\x12\x08robot.v1\"\xbf\x01\n\x11RobotStateMessage\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12\x33\n\nstate_code\x18\x02 \x01(\x0e\x32\x14.robot.v1.RobotStateR\tstateCode\x12\x14\n\x05state\x18\x03 \x01(\tR\x05state\x12!\n\x0ctarget_speed\x18\x04 \x01(\x01R\x0btargetSpeed\x12!\n\x0c\x61\x63tual_speed\x18\x05 \x01(\x01R\x0b\x61\x63tualSpeed*\xc0\x01\n\nRobotState\x12\x1b\n\x17ROBOT_STATE_UNSPECIFIED\x10\x00\x12\x18\n\x14ROBOT_STATE_STOPPING\x10\x01\x12\x17\n\x13ROBOT_STATE_STOPPED\x10\x02\x12\x17\n\x13ROBOT_STATE_PLAYING\x10\x03\x12\x17\n\x13ROBOT_STATE_PAUSING\x10\x04\x12\x16\n\x12ROBOT_STATE_PAUSED\x10\x05\x12\x18\n\x14ROBOT_STATE_RESUMING\x10\x06\x42\xa1\x01\n\x0c\x63om.robot.v1B\x0fRobotStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1arobot/v1/robot_state.proto\x12\x08robot.v1\"\xbf\x01\n\x11RobotStateMessage\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12\x33\n\nstate_code\x18\x02 \x01(\x0e\x32\x14.robot.v1.RobotStateR\tstateCode\x12\x14\n\x05state\x18\x03 \x01(\tR\x05state\x12!\n\x0ctarget_speed\x18\x04 \x01(\x01R\x0btargetSpeed\x12!\n\x0c\x61\x63tual_speed\x18\x05 \x01(\x01R\x0b\x61\x63tualSpeed*\xc0\x01\n\nRobotState\x12\x1b\n\x17ROBOT_STATE_UNSPECIFIED\x10\x00\x12\x18\n\x14ROBOT_STATE_STOPPING\x10\x01\x12\x17\n\x13ROBOT_STATE_STOPPED\x10\x02\x12\x17\n\x13ROBOT_STATE_PLAYING\x10\x03\x12\x17\n\x13ROBOT_STATE_PAUSING\x10\x04\x12\x16\n\x12ROBOT_STATE_PAUSED\x10\x05\x12\x18\n\x14ROBOT_STATE_RESUMING\x10\x06\x42\xa0\x01\n\x0c\x63om.robot.v1B\x0fRobotStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.robot_state_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\017RobotStateProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\022Messages.Common.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\017RobotStateProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
   _globals['_ROBOTSTATE']._serialized_start=235
   _globals['_ROBOTSTATE']._serialized_end=427
   _globals['_ROBOTSTATEMESSAGE']._serialized_start=41

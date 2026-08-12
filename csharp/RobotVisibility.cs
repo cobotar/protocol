@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/robot_visibility.proto</summary>
   public static partial class RobotVisibilityReflection {
@@ -31,15 +31,15 @@ namespace Messages.Common.V1 {
             "Zm9yZWFybV92aXNpYmxlGAQgASgIUg5mb3JlYXJtVmlzaWJsZRIjCg13cmlz",
             "dF92aXNpYmxlGAUgASgIUgx3cmlzdFZpc2libGUSMAoUZW5kX2VmZmVjdG9y",
             "X3Zpc2libGUYBiABKAhSEmVuZEVmZmVjdG9yVmlzaWJsZRIfCgt0Y3Bfdmlz",
-            "aWJsZRgHIAEoCFIKdGNwVmlzaWJsZUKmAQoMY29tLnJvYm90LnYxQhRSb2Jv",
+            "aWJsZRgHIAEoCFIKdGNwVmlzaWJsZUKlAQoMY29tLnJvYm90LnYxQhRSb2Jv",
             "dFZpc2liaWxpdHlQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
-            "b2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEk1lc3NhZ2Vz",
-            "LkNvbW1vbi5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHq",
-            "AglSb2JvdDo6VjFiBnByb3RvMw=="));
+            "b2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2Vz",
+            "LlJvYm90LlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoC",
+            "CVJvYm90OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.RobotVisibilityMessage), global::Messages.Common.V1.RobotVisibilityMessage.Parser, new[]{ "RobotId", "BaseVisible", "UpperArmVisible", "ForearmVisible", "WristVisible", "EndEffectorVisible", "TcpVisible" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotVisibilityMessage), global::Messages.Robot.V1.RobotVisibilityMessage.Parser, new[]{ "RobotId", "BaseVisible", "UpperArmVisible", "ForearmVisible", "WristVisible", "EndEffectorVisible", "TcpVisible" }, null, null, null, null)
           }));
     }
     #endregion
@@ -61,7 +61,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.RobotVisibilityReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.RobotVisibilityReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

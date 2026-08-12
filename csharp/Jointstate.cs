@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Messages.Common.V1 {
+namespace Messages.Robot.V1 {
 
   /// <summary>Holder for reflection information generated from robot/v1/jointstate.proto</summary>
   public static partial class JointstateReflection {
@@ -27,15 +27,15 @@ namespace Messages.Common.V1 {
             "Chlyb2JvdC92MS9qb2ludHN0YXRlLnByb3RvEghyb2JvdC52MSJ6ChFKb2lu",
             "dFN0YXRlTWVzc2FnZRIZCghyb2JvdF9pZBgBIAEoCVIHcm9ib3RJZBISCgRs",
             "aXZlGAIgASgIUgRsaXZlEhoKCHBvc2l0aW9uGAMgAygBUghwb3NpdGlvbhIa",
-            "Cgh2ZWxvY2l0eRgEIAMoAVIIdmVsb2NpdHlCoQEKDGNvbS5yb2JvdC52MUIP",
+            "Cgh2ZWxvY2l0eRgEIAMoAVIIdmVsb2NpdHlCoAEKDGNvbS5yb2JvdC52MUIP",
             "Sm9pbnRzdGF0ZVByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
-            "bC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgISTWVzc2FnZXMu",
-            "Q29tbW9uLlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoC",
-            "CVJvYm90OjpWMWIGcHJvdG8z"));
+            "bC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgIRTWVzc2FnZXMu",
+            "Um9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJ",
+            "Um9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.JointStateMessage), global::Messages.Common.V1.JointStateMessage.Parser, new[]{ "RobotId", "Live", "Position", "Velocity" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.JointStateMessage), global::Messages.Robot.V1.JointStateMessage.Parser, new[]{ "RobotId", "Live", "Position", "Velocity" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +57,7 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Common.V1.JointstateReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Robot.V1.JointstateReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

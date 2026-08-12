@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1\"\xba\x01\n\x17RobotIOSignalDefinition\x12\x1b\n\tsignal_id\x18\x01 \x01(\tR\x08signalId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x36\n\tdata_type\x18\x03 \x01(\x0e\x32\x19.robot.v1.RobotIODataTypeR\x08\x64\x61taType\x12\x1a\n\x08readable\x18\x04 \x01(\x08R\x08readable\x12\x1a\n\x08writable\x18\x05 \x01(\x08R\x08writable\"n\n\x14RobotIOSignalCatalog\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12;\n\x07signals\x18\x02 \x03(\x0b\x32!.robot.v1.RobotIOSignalDefinitionR\x07signals*\x8f\x01\n\x0fRobotIODataType\x12\"\n\x1eROBOT_IO_DATA_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17ROBOT_IO_DATA_TYPE_BOOL\x10\x01\x12\x1c\n\x18ROBOT_IO_DATA_TYPE_INT32\x10\x02\x12\x1d\n\x19ROBOT_IO_DATA_TYPE_DOUBLE\x10\x03\x42\xa5\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1\"\xba\x01\n\x17RobotIOSignalDefinition\x12\x1b\n\tsignal_id\x18\x01 \x01(\tR\x08signalId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x36\n\tdata_type\x18\x03 \x01(\x0e\x32\x19.robot.v1.RobotIODataTypeR\x08\x64\x61taType\x12\x1a\n\x08readable\x18\x04 \x01(\x08R\x08readable\x12\x1a\n\x08writable\x18\x05 \x01(\x08R\x08writable\"n\n\x14RobotIOSignalCatalog\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12;\n\x07signals\x18\x02 \x03(\x0b\x32!.robot.v1.RobotIOSignalDefinitionR\x07signals*\x8f\x01\n\x0fRobotIODataType\x12\"\n\x1eROBOT_IO_DATA_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17ROBOT_IO_DATA_TYPE_BOOL\x10\x01\x12\x1c\n\x18ROBOT_IO_DATA_TYPE_INT32\x10\x02\x12\x1d\n\x19ROBOT_IO_DATA_TYPE_DOUBLE\x10\x03\x42\xa4\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.robot_io_catalog_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\023RobotIoCatalogProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\022Messages.Common.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\023RobotIoCatalogProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
   _globals['_ROBOTIODATATYPE']._serialized_start=347
   _globals['_ROBOTIODATATYPE']._serialized_end=490
   _globals['_ROBOTIOSIGNALDEFINITION']._serialized_start=46

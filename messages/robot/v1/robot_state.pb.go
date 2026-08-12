@@ -178,8 +178,8 @@ const file_robot_v1_robot_state_proto_rawDesc = "" +
 	"\x13ROBOT_STATE_PLAYING\x10\x03\x12\x17\n" +
 	"\x13ROBOT_STATE_PAUSING\x10\x04\x12\x16\n" +
 	"\x12ROBOT_STATE_PAUSED\x10\x05\x12\x18\n" +
-	"\x14ROBOT_STATE_RESUMING\x10\x06B\xa1\x01\n" +
-	"\fcom.robot.v1B\x0fRobotStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x12Messages.Common.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x14ROBOT_STATE_RESUMING\x10\x06B\xa0\x01\n" +
+	"\fcom.robot.v1B\x0fRobotStateProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_state_proto_rawDescOnce sync.Once
