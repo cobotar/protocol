@@ -1,0 +1,61 @@
+syntax = "proto3";
+package robot.v1;
+
+import "google/protobuf/timestamp.proto";
+import "robot/v1/program_state.proto";
+
+option csharp_namespace = "Messages.Robot.V1";
+option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+
+enum RobotControlAuthority {
+  ROBOT_CONTROL_AUTHORITY_UNSPECIFIED = 0;
+  ROBOT_CONTROL_AUTHORITY_LOCAL = 1;
+  ROBOT_CONTROL_AUTHORITY_REMOTE = 2;
+}
+
+enum RobotOperationalMode {
+  ROBOT_OPERATIONAL_MODE_UNSPECIFIED = 0;
+  ROBOT_OPERATIONAL_MODE_NONE = 1;
+  ROBOT_OPERATIONAL_MODE_MANUAL = 2;
+  ROBOT_OPERATIONAL_MODE_AUTOMATIC = 3;
+}
+
+enum RobotSafetyStatus {
+  ROBOT_SAFETY_STATUS_UNSPECIFIED = 0;
+  ROBOT_SAFETY_STATUS_NORMAL = 1;
+  ROBOT_SAFETY_STATUS_REDUCED = 2;
+  ROBOT_SAFETY_STATUS_PROTECTIVE_STOP = 3;
+  ROBOT_SAFETY_STATUS_RECOVERY = 4;
+  ROBOT_SAFETY_STATUS_SAFEGUARD_STOP = 5;
+  ROBOT_SAFETY_STATUS_SYSTEM_EMERGENCY_STOP = 6;
+  ROBOT_SAFETY_STATUS_ROBOT_EMERGENCY_STOP = 7;
+  ROBOT_SAFETY_STATUS_VIOLATION = 8;
+  ROBOT_SAFETY_STATUS_FAULT = 9;
+}
+
+enum RobotMode {
+  ROBOT_MODE_UNSPECIFIED = 0;
+  ROBOT_MODE_NO_CONTROLLER = 1;
+  ROBOT_MODE_DISCONNECTED = 2;
+  ROBOT_MODE_CONFIRM_SAFETY = 3;
+  ROBOT_MODE_BOOTING = 4;
+  ROBOT_MODE_POWER_OFF = 5;
+  ROBOT_MODE_POWER_ON = 6;
+  ROBOT_MODE_IDLE = 7;
+  ROBOT_MODE_BACKDIVE = 8;
+  ROBOT_MODE_RUNNING = 9;
+}
+
+message RobotControllerStatusMessage {
+  string robot_id = 1;
+
+  RobotControlAuthority control_authority = 2;
+  RobotMode robot_mode = 3;
+  RobotSafetyStatus safety_status = 4;
+  RobotOperationalMode operational_mode = 5;
+
+  ProgramState program_state = 6;
+  optional string loaded_program = 7;
+
+  google.protobuf.Timestamp observed_at = 8;
+}

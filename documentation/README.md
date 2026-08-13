@@ -506,6 +506,14 @@
     - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
     - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
   
+- [robot/v1/robot_controller_status.proto](#robot_v1_robot_controller_status-proto)
+    - [RobotControllerStatusMessage](#robot-v1-RobotControllerStatusMessage)
+  
+    - [RobotControlAuthority](#robot-v1-RobotControlAuthority)
+    - [RobotMode](#robot-v1-RobotMode)
+    - [RobotOperationalMode](#robot-v1-RobotOperationalMode)
+    - [RobotSafetyStatus](#robot-v1-RobotSafetyStatus)
+  
 - [robot/v1/robot_io.proto](#robot_v1_robot_io-proto)
     - [RobotIOCommand](#robot-v1-RobotIOCommand)
     - [RobotIOSignalValue](#robot-v1-RobotIOSignalValue)
@@ -7585,6 +7593,111 @@ ar_edit_permission.
 | ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE | 3 |  |
 | ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH | 4 |  |
 | ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_controller_status-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_controller_status.proto
+
+
+
+<a name="robot-v1-RobotControllerStatusMessage"></a>
+
+### RobotControllerStatusMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| control_authority | [RobotControlAuthority](#robot-v1-RobotControlAuthority) |  |  |
+| robot_mode | [RobotMode](#robot-v1-RobotMode) |  |  |
+| safety_status | [RobotSafetyStatus](#robot-v1-RobotSafetyStatus) |  |  |
+| operational_mode | [RobotOperationalMode](#robot-v1-RobotOperationalMode) |  |  |
+| program_state | [ProgramState](#robot-v1-ProgramState) |  |  |
+| loaded_program | [string](#string) | optional |  |
+| observed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-RobotControlAuthority"></a>
+
+### RobotControlAuthority
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_CONTROL_AUTHORITY_UNSPECIFIED | 0 |  |
+| ROBOT_CONTROL_AUTHORITY_LOCAL | 1 |  |
+| ROBOT_CONTROL_AUTHORITY_REMOTE | 2 |  |
+
+
+
+<a name="robot-v1-RobotMode"></a>
+
+### RobotMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_MODE_UNSPECIFIED | 0 |  |
+| ROBOT_MODE_NO_CONTROLLER | 1 |  |
+| ROBOT_MODE_DISCONNECTED | 2 |  |
+| ROBOT_MODE_CONFIRM_SAFETY | 3 |  |
+| ROBOT_MODE_BOOTING | 4 |  |
+| ROBOT_MODE_POWER_OFF | 5 |  |
+| ROBOT_MODE_POWER_ON | 6 |  |
+| ROBOT_MODE_IDLE | 7 |  |
+| ROBOT_MODE_BACKDIVE | 8 |  |
+| ROBOT_MODE_RUNNING | 9 |  |
+
+
+
+<a name="robot-v1-RobotOperationalMode"></a>
+
+### RobotOperationalMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_OPERATIONAL_MODE_UNSPECIFIED | 0 |  |
+| ROBOT_OPERATIONAL_MODE_NONE | 1 |  |
+| ROBOT_OPERATIONAL_MODE_MANUAL | 2 |  |
+| ROBOT_OPERATIONAL_MODE_AUTOMATIC | 3 |  |
+
+
+
+<a name="robot-v1-RobotSafetyStatus"></a>
+
+### RobotSafetyStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_SAFETY_STATUS_UNSPECIFIED | 0 |  |
+| ROBOT_SAFETY_STATUS_NORMAL | 1 |  |
+| ROBOT_SAFETY_STATUS_REDUCED | 2 |  |
+| ROBOT_SAFETY_STATUS_PROTECTIVE_STOP | 3 |  |
+| ROBOT_SAFETY_STATUS_RECOVERY | 4 |  |
+| ROBOT_SAFETY_STATUS_SAFEGUARD_STOP | 5 |  |
+| ROBOT_SAFETY_STATUS_SYSTEM_EMERGENCY_STOP | 6 |  |
+| ROBOT_SAFETY_STATUS_ROBOT_EMERGENCY_STOP | 7 |  |
+| ROBOT_SAFETY_STATUS_VIOLATION | 8 |  |
+| ROBOT_SAFETY_STATUS_FAULT | 9 |  |
 
 
  
