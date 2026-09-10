@@ -95,6 +95,19 @@ message TaskTarget {
   ResourceTarget resource = 3; // Optional generic resource target.
 }
 
+// Amount of material or number of discrete items acted on by a task.
+message QuantityRequirement {
+  // Required amount. Must be finite and greater than zero.
+  double amount = 1 [
+    (buf.validate.field).double.gt = 0
+  ];
+
+  // Unit such as "pcs", "g", "ml", or "m".
+  string unit = 2 [
+    (buf.validate.field).string.min_len = 1
+  ];
+}
+
 // TaskEndpoint is used for source/destination style references in tasks such
 // as pick/place, move, kitting, and transfer operations.
 //
@@ -167,6 +180,7 @@ message TaskDefinition {
   common.v1.SafetyRelevance safety_relevance = 16; // Safety significance of the task.
   TaskEndpoint source = 17; // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
   TaskEndpoint destination = 18; // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
+  QuantityRequirement quantity = 19; // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
   repeated variance.v1.VariantRule applicability = 21; // Task applies if any rule matches. Empty means always applicable.
   repeated TaskOverride overrides = 22; // adjust small authoring/runtime details when the task is otherwise the same task.
 }

@@ -5,6 +5,7 @@ import "buf/validate/validate.proto";
 import "process/v1/process_recipe.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
+import "product/v1/part_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
@@ -139,17 +140,24 @@ message DraftDisassemblyProcessRecipeGenerateRequest {
 
   // If true, the generator may prefer MOVE tasks when the operation can be
   // reasonably interpreted as repositioning rather than removal.
+  // TODO:
+  // prefer_move_tasks_when_possible may be unnecessary if staging should follow removal rather than replace it.
+  // In that case, something like generate_staging_tasks would be clearer.
   bool prefer_move_tasks_when_possible = 11;
 
   // If true, nodes marked as optional will be included.
   bool include_optional_nodes = 12;
 
   // If true, the generator may insert WIPE tasks where appropriate.
+  // TODO: A disassembly-specific wiping hint may eventually be needed; requires_wiping is currently direction-neutral.
   bool generate_wipe_tasks = 13;
 
   // Container definitions that removed parts, fasteners, or subassemblies may
   // be staged into during disassembly. These can be fixtures, trays, kits, or
   // storage containers depending on the intended workflow.
+  // TODO: target_container_definition_ids cannot map individual parts to containers or slots.
+  //  With one target, it is applied automatically; with multiple targets, they remain recipe-level candidates.
+  //  A per-node disposition/destination mapping would help.
   repeated string target_container_definition_ids = 14 [(buf.validate.field).repeated.items.string.(validation.v1.container_definition_id_component) = true];
 
   // Optional disassembly scope. If empty, the generator may consider the full
@@ -172,6 +180,13 @@ message DraftDisassemblyProcessRecipeGenerateRequest {
   // If true, the generator may insert cleanup-oriented tasks beyond WIPE where
   // appropriate, such as residue removal or debris clearing.
   // bool generate_cleanup_tasks = 19;
+
+  // TODO:
+  // Disassembly needs a per-node strategy or override for permanent and ambiguous joins—
+  // cutting adhesive, drilling rivets, releasing snap-fits, disconnecting cables, and whether destructive removal is permitted.
+
+  // TODO:
+  // A disposition such as reuse, recycle, scrap, or quarantine would also be useful.
 }
 
 // DraftProcessRecipeGenerateIssue describes a non-fatal issue or warning

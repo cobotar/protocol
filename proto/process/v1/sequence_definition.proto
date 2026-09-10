@@ -4,6 +4,7 @@ package process.v1;
 import "buf/validate/validate.proto";
 import "geometry/v1/local_target.proto";
 import "validation/v1/predefined_string_rules.proto";
+import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/messages/process/v1";
@@ -165,7 +166,7 @@ message SequenceDefinition {
   // Indicates whether all child tasks in this sequence can be completed in bulk.
   bool can_bulk_complete = 12;
 
-  // TODO: add applicability to sequence to turn it on/off?
+  repeated variance.v1.VariantRule applicability = 13; // Sequence applies if any rule matches. Empty means always applicable.
 }
 
 message SequenceDefinitions {

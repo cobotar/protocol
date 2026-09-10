@@ -1,0 +1,255 @@
+syntax = "proto3";
+package process.v1;
+
+import "buf/validate/validate.proto";
+import "process/v1/process_recipe.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
+import "product/v1/part_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
+import "variance/v1/variant_configuration.proto";
+
+option csharp_namespace = "Messages.Process.V1";
+option go_package = "github.com/cobotar/protocol/messages/process/v1";
+
+
+// Controls whether kitting expands subassemblies into their constituent parts
+// or treats each subassembly occurrence as one supplied kit item.
+enum KittingBomMode {
+  // Backend default. Recommended default: LEAF_PARTS.
+  KITTING_BOM_MODE_UNSPECIFIED = 0;
+
+  // Recursively expand subassemblies and kit their leaf-part occurrences.
+  KITTING_BOM_MODE_LEAF_PARTS = 1;
+
+  // Treat applicable subassembly occurrences as individual kit items and do
+  // not include their descendants.
+  KITTING_BOM_MODE_SUBASSEMBLIES_AS_ITEMS = 2;
+}
+
+// Controls ordering between independently kittable items. The PICK and PLACE
+// steps belonging to one item remain ordered regardless of this setting.
+enum KittingItemOrder {
+  // Backend default. Recommended default: ANY_ORDER.
+  KITTING_ITEM_ORDER_UNSPECIFIED = 0;
+
+  // Item sequences may execute in any order. This allows runtime selection
+  // based on availability, proximity, or operator preference.
+  KITTING_ITEM_ORDER_ANY_ORDER = 1;
+
+  // Follow sequence hints from the ProductDefinition.
+  KITTING_ITEM_ORDER_PRODUCT_SEQUENCE = 2;
+
+  // Follow the ordering of destination slots in the target kit definition.
+  KITTING_ITEM_ORDER_TARGET_SLOT_SEQUENCE = 3;
+}
+
+// Controls how each transferred item is validated.
+enum KittingItemValidationMode {
+  // Backend default. Recommended default: MANUAL.
+  KITTING_ITEM_VALIDATION_MODE_UNSPECIFIED = 0;
+
+  // Do not generate item-level validation.
+  KITTING_ITEM_VALIDATION_MODE_NONE = 1;
+
+  // Require manual confirmation that the correct item was transferred.
+  KITTING_ITEM_VALIDATION_MODE_MANUAL = 2;
+
+  // Generate a SCAN task to identify or verify the transferred item.
+  KITTING_ITEM_VALIDATION_MODE_SCAN = 3;
+
+  // Require a vision/presence check for the transferred item.
+  KITTING_ITEM_VALIDATION_MODE_VISION = 4;
+}
+
+// Controls how generation handles an item whose source or destination cannot
+// be resolved from container definitions and routing overrides.
+enum UnresolvedKittingItemPolicy {
+  // Backend default. Recommended default: WARN.
+  UNRESOLVED_KITTING_ITEM_POLICY_UNSPECIFIED = 0;
+
+  // Generate the item using a generic endpoint and return a generation issue.
+  UNRESOLVED_KITTING_ITEM_POLICY_WARN = 1;
+
+  // Fail the entire generation request.
+  UNRESOLVED_KITTING_ITEM_POLICY_FAIL = 2;
+
+  // Omit the unresolved item and return a generation issue.
+  UNRESOLVED_KITTING_ITEM_POLICY_SKIP = 3;
+}
+
+// Overrides whether a selected node or part should appear in the generated kit.
+enum KittingItemAction {
+  // Apply the normal variant, optional-node, BOM-mode, and part-type rules.
+  KITTING_ITEM_ACTION_UNSPECIFIED = 0;
+
+  // Explicitly include the selected item.
+  KITTING_ITEM_ACTION_INCLUDE = 1;
+
+  // Explicitly exclude the selected item.
+  KITTING_ITEM_ACTION_EXCLUDE = 2;
+}
+
+// Controls whether repeated occurrences are emitted individually or combined
+// into a quantity-bearing transfer.
+enum KittingAggregationMode {
+  // Backend default. Recommended default: BY_PART_AND_ROUTE.
+  KITTING_AGGREGATION_MODE_UNSPECIFIED = 0;
+
+  // Generate one item sequence for every applicable assembly-node occurrence.
+  KITTING_AGGREGATION_MODE_PER_OCCURRENCE = 1;
+
+  // Combine occurrences only when their part definition, source and destination
+  // are identical. This avoids merging parts routed to different kit slots.
+  KITTING_AGGREGATION_MODE_BY_PART_AND_ROUTE = 2;
+}
+
+// Controls whether a transfer is represented as one atomic task or as explicit
+// PICK and PLACE tasks.
+enum KittingTaskGranularity {
+  // Backend default. Recommended default: ATOMIC_TRANSFER.
+  KITTING_TASK_GRANULARITY_UNSPECIFIED = 0;
+
+  // Generate one MOVE task carrying source, destination and quantity.
+  KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER = 1;
+
+  // Generate an ordered PICK followed by PLACE for every item or aggregation.
+  KITTING_TASK_GRANULARITY_PICK_AND_PLACE = 2;
+}
+
+// Overrides selection or static routing for one product occurrence or every
+// occurrence of a particular part definition.
+message KittingItemRoutingOverride {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "assembly_node_id",
+      "part_definition_id"
+    ]
+    required: true
+  };
+
+  // Select one exact occurrence from the ProductDefinition assembly tree.
+  string assembly_node_id = 1;
+
+  // Select every applicable occurrence referencing this PartDefinition.
+  string part_definition_id = 2;
+
+  // Optionally force inclusion or exclusion. UNSPECIFIED only overrides routing.
+  KittingItemAction action = 3;
+
+  // Optional authoring-time source constraint. References a container
+  // definition and optionally one of its storage slots—not a runtime instance.
+  ContainerTarget source = 4;
+
+  // Optional authoring-time destination constraint. References the target kit
+  // definition and optionally a particular kit slot.
+  ContainerTarget destination = 5;
+}
+
+
+// DraftKittingProcessRecipeGenerateRequest asks the backend to generate an
+// authoring-time draft ProcessRecipe of type KITTING from a ProductDefinition.
+//
+// The resulting recipe contains static definition-level routing. Concrete
+// inventory and container instances are resolved when creating a ProcessRun.
+message DraftKittingProcessRecipeGenerateRequest {
+  // Product structure whose applicable BOM items should be kitted.
+  string product_definition_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.product_id_component) = true
+  ];
+
+  // Optional explicit ID for the generated recipe.
+  // If empty, the backend assigns a deterministic or generated ID.
+  string recipe_id = 2 [
+    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
+  ];
+
+  // Optional human-readable name. The backend derives one if empty.
+  string recipe_name = 3;
+
+  // Optional icon. The backend supplies a default if empty.
+  string recipe_icon = 4;
+
+  // Optional human-readable description.
+  string recipe_description = 5;
+
+  // Product variant selections used to determine applicable nodes and annotate
+  // the generated recipe applicability.
+  variance.v1.VariantConfiguration variant_configuration = 6;
+
+  // Optional subtree to kit. If empty, generation starts at the product root.
+  string root_node_id = 7;
+
+  // Include applicable nodes marked optional.
+  bool include_optional_nodes = 8;
+
+  // Determines whether subassemblies are expanded or supplied as kit items.
+  KittingBomMode bom_mode = 9;
+
+  // Number of product units served by one completed kit. Defaults to one.
+  // This is not the number of kits to execute; execution batching belongs to
+  // ProcessRun creation.
+  optional uint32 product_units_per_kit = 10 [
+    (buf.validate.field).uint32.gt = 0
+  ];
+
+  // Candidate source container definitions. Slots supporting each part are
+  // selected automatically unless overridden by routing_overrides.
+  repeated string source_container_definition_ids = 11;
+
+  // Destination kit container definition. Its KIT_SLOT definitions are matched
+  // to applicable parts. If empty, the backend may emit generic destinations
+  // and report generation issues.
+  string target_kit_container_definition_id = 12;
+
+  // Per-occurrence or per-part selection and routing overrides.
+  repeated KittingItemRoutingOverride routing_overrides = 13;
+
+  // Ordering between independently kittable item sequences.
+  KittingItemOrder item_order = 14;
+
+  // Validation generated for each transferred item.
+  KittingItemValidationMode item_validation_mode = 15;
+
+  // Generate a final VERIFY task confirming overall kit completeness.
+  bool generate_final_kit_verification = 16;
+
+  // Behavior when an item cannot be assigned a suitable source or kit slot.
+  UnresolvedKittingItemPolicy unresolved_item_policy = 17;
+
+  // Part classifications to omit after variant and BOM expansion.
+  repeated product.v1.PartType excluded_part_types = 18;
+
+  // Controls aggregation of repeated occurrences into quantity-bearing tasks.
+  KittingAggregationMode aggregation_mode = 19;
+
+  // Controls atomic MOVE versus explicit PICK and PLACE task generation.
+  KittingTaskGranularity task_granularity = 20;
+
+  // TODO: more parameters
+  /*
+    TODO: proposed pipeline
+    ProductDefinition
+        ↓
+    determine required part definitions and quantities
+            ↓
+    group repeated occurrences
+            ↓
+    generate acquire/place operations
+            ↓
+    perhaps associate known kit/container requirements
+            ↓
+    carry product/handling semantics forward.
+            ↓
+    Draft ProcessRecipe
+            ↓
+    author adds genuine process constraints
+
+    NOTE: What it cannot infer purely from the ProductDefinition is:
+     - whether some parts should be picked in a particular order,
+     - where they are currently stored,
+     - which concrete instances should be taken,
+     - or which actor should retrieve them.
+   */
+}
