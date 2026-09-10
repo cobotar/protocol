@@ -272,6 +272,10 @@
     - [ZoneDefinition](#geometry-v1-ZoneDefinition)
     - [ZoneDefinitions](#geometry-v1-ZoneDefinitions)
   
+- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
+    - [VariantPredicate](#variance-v1-VariantPredicate)
+    - [VariantRule](#variance-v1-VariantRule)
+  
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
@@ -296,13 +300,10 @@
     - [ContainerSlotType](#resources-v1-ContainerSlotType)
     - [ContainerType](#resources-v1-ContainerType)
   
-- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
-    - [VariantPredicate](#variance-v1-VariantPredicate)
-    - [VariantRule](#variance-v1-VariantRule)
-  
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
     - [ContainerTarget](#process-v1-ContainerTarget)
     - [ProductTarget](#process-v1-ProductTarget)
+    - [QuantityRequirement](#process-v1-QuantityRequirement)
     - [ResourceTarget](#process-v1-ResourceTarget)
     - [TaskDefinition](#process-v1-TaskDefinition)
     - [TaskDefinitions](#process-v1-TaskDefinitions)
@@ -338,12 +339,6 @@
     - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
   
-- [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
-    - [AssemblyNode](#product-v1-AssemblyNode)
-  
-    - [JoinMethod](#product-v1-JoinMethod)
-    - [NodeKind](#product-v1-NodeKind)
-  
 - [product/v1/part_definition.proto](#product_v1_part_definition-proto)
     - [Dimensions](#product-v1-Dimensions)
     - [MaterialSpec](#product-v1-MaterialSpec)
@@ -354,6 +349,24 @@
   
     - [MaterialCategory](#product-v1-MaterialCategory)
     - [PartType](#product-v1-PartType)
+  
+- [process/v1/kitting_generation.proto](#process_v1_kitting_generation-proto)
+    - [DraftKittingProcessRecipeGenerateRequest](#process-v1-DraftKittingProcessRecipeGenerateRequest)
+    - [KittingItemRoutingOverride](#process-v1-KittingItemRoutingOverride)
+  
+    - [KittingAggregationMode](#process-v1-KittingAggregationMode)
+    - [KittingBomMode](#process-v1-KittingBomMode)
+    - [KittingItemAction](#process-v1-KittingItemAction)
+    - [KittingItemOrder](#process-v1-KittingItemOrder)
+    - [KittingItemValidationMode](#process-v1-KittingItemValidationMode)
+    - [KittingTaskGranularity](#process-v1-KittingTaskGranularity)
+    - [UnresolvedKittingItemPolicy](#process-v1-UnresolvedKittingItemPolicy)
+  
+- [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
+    - [AssemblyNode](#product-v1-AssemblyNode)
+  
+    - [JoinMethod](#product-v1-JoinMethod)
+    - [NodeKind](#product-v1-NodeKind)
   
 - [product/v1/part_instance.proto](#product_v1_part_instance-proto)
     - [PartInstance](#product-v1-PartInstance)
@@ -4138,6 +4151,54 @@ importance or process-run issue severity.
 
 
 
+<a name="variance_v1_variant_rule-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_rule.proto
+
+
+
+<a name="variance-v1-VariantPredicate"></a>
+
+### VariantPredicate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
+| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
+| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
+
+
+
+
+
+
+<a name="variance-v1-VariantRule"></a>
+
+### VariantRule
+VariantRule: a rule matches if all predicates match
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="process_v1_sequence_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -4177,6 +4238,7 @@ evaluated by the runtime according to the specified operator.
 | local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional local target defining the spatial or logical context for this sequence. |
 | optional | [bool](#bool) |  | Indicates whether this sequence is optional and may be skipped during execution. |
 | can_bulk_complete | [bool](#bool) |  | Indicates whether all child tasks in this sequence can be completed in bulk. |
+| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Sequence applies if any rule matches. Empty means always applicable. |
 
 
 
@@ -4514,54 +4576,6 @@ one or more addressable slots.
 
 
 
-<a name="variance_v1_variant_rule-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## variance/v1/variant_rule.proto
-
-
-
-<a name="variance-v1-VariantPredicate"></a>
-
-### VariantPredicate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
-| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
-| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
-
-
-
-
-
-
-<a name="variance-v1-VariantRule"></a>
-
-### VariantRule
-VariantRule: a rule matches if all predicates match
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="process_v1_task_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -4597,6 +4611,22 @@ VariantRule: a rule matches if all predicates match
 | node_id | [string](#string) |  | Assembly node occurrence the task acts on. |
 | part_definition_id | [string](#string) |  | Optional denormalized helper. |
 | local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Pose/anchor relative to the chosen product reference. |
+
+
+
+
+
+
+<a name="process-v1-QuantityRequirement"></a>
+
+### QuantityRequirement
+Amount of material or number of discrete items acted on by a task.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| amount | [double](#double) |  | Required amount. Must be finite and greater than zero. |
+| unit | [string](#string) |  | Unit such as &#34;pcs&#34;, &#34;g&#34;, &#34;ml&#34;, or &#34;m&#34;. |
 
 
 
@@ -4649,6 +4679,7 @@ asset, station, or container bindings belongs in runtime.v1.TaskRun.
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  | Safety significance of the task. |
 | source | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
 | destination | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
+| quantity | [QuantityRequirement](#process-v1-QuantityRequirement) |  | Amount of the target part or material handled by this task. Omit only when quantity is not meaningful. |
 | applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Task applies if any rule matches. Empty means always applicable. |
 | overrides | [TaskOverride](#process-v1-TaskOverride) | repeated | adjust small authoring/runtime details when the task is otherwise the same task. |
 
@@ -5106,10 +5137,10 @@ This is intended for authoring-time generation, not runtime execution.
 | group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-removal-oriented sequence. |
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts disassembly sequence. |
 | generate_verify_tasks | [bool](#bool) |  | If true, the generator may insert VERIFY tasks where appropriate, for example to confirm that a part, fastener, or material has been removed. |
-| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than removal. |
+| prefer_move_tasks_when_possible | [bool](#bool) |  | If true, the generator may prefer MOVE tasks when the operation can be reasonably interpreted as repositioning rather than removal. TODO: prefer_move_tasks_when_possible may be unnecessary if staging should follow removal rather than replace it. In that case, something like generate_staging_tasks would be clearer. |
 | include_optional_nodes | [bool](#bool) |  | If true, nodes marked as optional will be included. |
-| generate_wipe_tasks | [bool](#bool) |  | If true, the generator may insert WIPE tasks where appropriate. |
-| target_container_definition_ids | [string](#string) | repeated | Container definitions that removed parts, fasteners, or subassemblies may be staged into during disassembly. These can be fixtures, trays, kits, or storage containers depending on the intended workflow. |
+| generate_wipe_tasks | [bool](#bool) |  | If true, the generator may insert WIPE tasks where appropriate. TODO: A disassembly-specific wiping hint may eventually be needed; requires_wiping is currently direction-neutral. |
+| target_container_definition_ids | [string](#string) | repeated | Container definitions that removed parts, fasteners, or subassemblies may be staged into during disassembly. These can be fixtures, trays, kits, or storage containers depending on the intended workflow. TODO: target_container_definition_ids cannot map individual parts to containers or slots. With one target, it is applied automatically; with multiple targets, they remain recipe-level candidates. A per-node disposition/destination mapping would help. |
 | root_node_id | [string](#string) |  | Optional disassembly scope. If empty, the generator may consider the full product structure. If set, generation should focus on the specified assembly node and its relevant disassembly paths/subtrees. |
 | preserve_subassemblies_when_possible | [bool](#bool) |  | If true, the generator should prefer removing subassemblies as intact units when feasible instead of always decomposing them into all child parts. |
 | reverse_child_sequence_order | [bool](#bool) |  | If true, the generator may prefer reversing child ordering hints from the product structure when deriving disassembly sequences. |
@@ -5191,91 +5222,6 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="product_v1_assembly_node-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## product/v1/assembly_node.proto
-
-
-
-<a name="product-v1-AssemblyNode"></a>
-
-### AssemblyNode
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of this assembly node |
-| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
-| kind | [NodeKind](#product-v1-NodeKind) |  |  |
-| part_definition_id | [string](#string) |  |  |
-| override_model_id | [string](#string) |  |  |
-| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
-| sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
-| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
-| join_method_hint | [JoinMethod](#product-v1-JoinMethod) |  |  |
-| insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
-| approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
-| optional | [bool](#bool) |  |  |
-| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
-
-
-
-
-
- 
-
-
-<a name="product-v1-JoinMethod"></a>
-
-### JoinMethod
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| JOIN_METHOD_UNSPECIFIED | 0 | No join method hint is available. Generation/planning should infer the operation from other data if possible. |
-| JOIN_METHOD_NONE | 1 | No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence. |
-| JOIN_METHOD_FASTEN | 2 | Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware. |
-| JOIN_METHOD_PRESS_FIT | 3 | Part is joined by interference/friction fit and usually requires controlled insertion force. |
-| JOIN_METHOD_SNAP_FIT | 4 | Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion. |
-| JOIN_METHOD_ADHESIVE | 5 | Part is joined using glue, tape, sealant, or another bonding material. |
-| JOIN_METHOD_WELD | 6 | Part is joined by welding or another permanent thermal/material fusion process. |
-| JOIN_METHOD_PLACE | 7 | Part is placed at its final pose without an explicit joining operation beyond positioning. |
-
-
-
-<a name="product-v1-NodeKind"></a>
-
-### NodeKind
-NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
-
-CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
-GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
-protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
-occurrence template.
-NodeKind               Represents                    Physical part?   Has children?
-GROUP                  logical grouping              ❌               ✅
-PART_OCCURRENCE        single physical part instance ✅               ❌
-SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NODE_KIND_UNSPECIFIED | 0 | Valid messages must use a specific kind. |
-| NODE_KIND_GROUP | 1 | Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups. |
-| NODE_KIND_PART_OCCURRENCE | 2 | Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id. |
-| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself. |
-
 
  
 
@@ -5472,6 +5418,265 @@ involving this part.
 | PART_TYPE_DISPENSED_MATERIAL | 11 | Grease, glue, sealant, potting compound, solder paste, flux, etc. |
 | PART_TYPE_FINAL_PRODUCT | 20 | A part that is itself composed of multiple child parts, which together form a product |
 | PART_TYPE_SUBASSEMBLY | 21 | A part that is itself composed of multiple child parts, |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="process_v1_kitting_generation-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## process/v1/kitting_generation.proto
+
+
+
+<a name="process-v1-DraftKittingProcessRecipeGenerateRequest"></a>
+
+### DraftKittingProcessRecipeGenerateRequest
+DraftKittingProcessRecipeGenerateRequest asks the backend to generate an
+authoring-time draft ProcessRecipe of type KITTING from a ProductDefinition.
+
+The resulting recipe contains static definition-level routing. Concrete
+inventory and container instances are resolved when creating a ProcessRun.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product_definition_id | [string](#string) |  | Product structure whose applicable BOM items should be kitted. |
+| recipe_id | [string](#string) |  | Optional explicit ID for the generated recipe. If empty, the backend assigns a deterministic or generated ID. |
+| recipe_name | [string](#string) |  | Optional human-readable name. The backend derives one if empty. |
+| recipe_icon | [string](#string) |  | Optional icon. The backend supplies a default if empty. |
+| recipe_description | [string](#string) |  | Optional human-readable description. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Product variant selections used to determine applicable nodes and annotate the generated recipe applicability. |
+| root_node_id | [string](#string) |  | Optional subtree to kit. If empty, generation starts at the product root. |
+| include_optional_nodes | [bool](#bool) |  | Include applicable nodes marked optional. |
+| bom_mode | [KittingBomMode](#process-v1-KittingBomMode) |  | Determines whether subassemblies are expanded or supplied as kit items. |
+| product_units_per_kit | [uint32](#uint32) | optional | Number of product units served by one completed kit. Defaults to one. This is not the number of kits to execute; execution batching belongs to ProcessRun creation. |
+| source_container_definition_ids | [string](#string) | repeated | Candidate source container definitions. Slots supporting each part are selected automatically unless overridden by routing_overrides. |
+| target_kit_container_definition_id | [string](#string) |  | Destination kit container definition. Its KIT_SLOT definitions are matched to applicable parts. If empty, the backend may emit generic destinations and report generation issues. |
+| routing_overrides | [KittingItemRoutingOverride](#process-v1-KittingItemRoutingOverride) | repeated | Per-occurrence or per-part selection and routing overrides. |
+| item_order | [KittingItemOrder](#process-v1-KittingItemOrder) |  | Ordering between independently kittable item sequences. |
+| item_validation_mode | [KittingItemValidationMode](#process-v1-KittingItemValidationMode) |  | Validation generated for each transferred item. |
+| generate_final_kit_verification | [bool](#bool) |  | Generate a final VERIFY task confirming overall kit completeness. |
+| unresolved_item_policy | [UnresolvedKittingItemPolicy](#process-v1-UnresolvedKittingItemPolicy) |  | Behavior when an item cannot be assigned a suitable source or kit slot. |
+| excluded_part_types | [product.v1.PartType](#product-v1-PartType) | repeated | Part classifications to omit after variant and BOM expansion. |
+| aggregation_mode | [KittingAggregationMode](#process-v1-KittingAggregationMode) |  | Controls aggregation of repeated occurrences into quantity-bearing tasks. |
+| task_granularity | [KittingTaskGranularity](#process-v1-KittingTaskGranularity) |  | Controls atomic MOVE versus explicit PICK and PLACE task generation. |
+
+
+
+
+
+
+<a name="process-v1-KittingItemRoutingOverride"></a>
+
+### KittingItemRoutingOverride
+Overrides selection or static routing for one product occurrence or every
+occurrence of a particular part definition.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assembly_node_id | [string](#string) |  | Select one exact occurrence from the ProductDefinition assembly tree. |
+| part_definition_id | [string](#string) |  | Select every applicable occurrence referencing this PartDefinition. |
+| action | [KittingItemAction](#process-v1-KittingItemAction) |  | Optionally force inclusion or exclusion. UNSPECIFIED only overrides routing. |
+| source | [ContainerTarget](#process-v1-ContainerTarget) |  | Optional authoring-time source constraint. References a container definition and optionally one of its storage slots—not a runtime instance. |
+| destination | [ContainerTarget](#process-v1-ContainerTarget) |  | Optional authoring-time destination constraint. References the target kit definition and optionally a particular kit slot. |
+
+
+
+
+
+ 
+
+
+<a name="process-v1-KittingAggregationMode"></a>
+
+### KittingAggregationMode
+Controls whether repeated occurrences are emitted individually or combined
+into a quantity-bearing transfer.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_AGGREGATION_MODE_UNSPECIFIED | 0 | Backend default. Recommended default: BY_PART_AND_ROUTE. |
+| KITTING_AGGREGATION_MODE_PER_OCCURRENCE | 1 | Generate one item sequence for every applicable assembly-node occurrence. |
+| KITTING_AGGREGATION_MODE_BY_PART_AND_ROUTE | 2 | Combine occurrences only when their part definition, source and destination are identical. This avoids merging parts routed to different kit slots. |
+
+
+
+<a name="process-v1-KittingBomMode"></a>
+
+### KittingBomMode
+Controls whether kitting expands subassemblies into their constituent parts
+or treats each subassembly occurrence as one supplied kit item.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_BOM_MODE_UNSPECIFIED | 0 | Backend default. Recommended default: LEAF_PARTS. |
+| KITTING_BOM_MODE_LEAF_PARTS | 1 | Recursively expand subassemblies and kit their leaf-part occurrences. |
+| KITTING_BOM_MODE_SUBASSEMBLIES_AS_ITEMS | 2 | Treat applicable subassembly occurrences as individual kit items and do not include their descendants. |
+
+
+
+<a name="process-v1-KittingItemAction"></a>
+
+### KittingItemAction
+Overrides whether a selected node or part should appear in the generated kit.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_ITEM_ACTION_UNSPECIFIED | 0 | Apply the normal variant, optional-node, BOM-mode, and part-type rules. |
+| KITTING_ITEM_ACTION_INCLUDE | 1 | Explicitly include the selected item. |
+| KITTING_ITEM_ACTION_EXCLUDE | 2 | Explicitly exclude the selected item. |
+
+
+
+<a name="process-v1-KittingItemOrder"></a>
+
+### KittingItemOrder
+Controls ordering between independently kittable items. The PICK and PLACE
+steps belonging to one item remain ordered regardless of this setting.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_ITEM_ORDER_UNSPECIFIED | 0 | Backend default. Recommended default: ANY_ORDER. |
+| KITTING_ITEM_ORDER_ANY_ORDER | 1 | Item sequences may execute in any order. This allows runtime selection based on availability, proximity, or operator preference. |
+| KITTING_ITEM_ORDER_PRODUCT_SEQUENCE | 2 | Follow sequence hints from the ProductDefinition. |
+| KITTING_ITEM_ORDER_TARGET_SLOT_SEQUENCE | 3 | Follow the ordering of destination slots in the target kit definition. |
+
+
+
+<a name="process-v1-KittingItemValidationMode"></a>
+
+### KittingItemValidationMode
+Controls how each transferred item is validated.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_ITEM_VALIDATION_MODE_UNSPECIFIED | 0 | Backend default. Recommended default: MANUAL. |
+| KITTING_ITEM_VALIDATION_MODE_NONE | 1 | Do not generate item-level validation. |
+| KITTING_ITEM_VALIDATION_MODE_MANUAL | 2 | Require manual confirmation that the correct item was transferred. |
+| KITTING_ITEM_VALIDATION_MODE_SCAN | 3 | Generate a SCAN task to identify or verify the transferred item. |
+| KITTING_ITEM_VALIDATION_MODE_VISION | 4 | Require a vision/presence check for the transferred item. |
+
+
+
+<a name="process-v1-KittingTaskGranularity"></a>
+
+### KittingTaskGranularity
+Controls whether a transfer is represented as one atomic task or as explicit
+PICK and PLACE tasks.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| KITTING_TASK_GRANULARITY_UNSPECIFIED | 0 | Backend default. Recommended default: ATOMIC_TRANSFER. |
+| KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER | 1 | Generate one MOVE task carrying source, destination and quantity. |
+| KITTING_TASK_GRANULARITY_PICK_AND_PLACE | 2 | Generate an ordered PICK followed by PLACE for every item or aggregation. |
+
+
+
+<a name="process-v1-UnresolvedKittingItemPolicy"></a>
+
+### UnresolvedKittingItemPolicy
+Controls how generation handles an item whose source or destination cannot
+be resolved from container definitions and routing overrides.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| UNRESOLVED_KITTING_ITEM_POLICY_UNSPECIFIED | 0 | Backend default. Recommended default: WARN. |
+| UNRESOLVED_KITTING_ITEM_POLICY_WARN | 1 | Generate the item using a generic endpoint and return a generation issue. |
+| UNRESOLVED_KITTING_ITEM_POLICY_FAIL | 2 | Fail the entire generation request. |
+| UNRESOLVED_KITTING_ITEM_POLICY_SKIP | 3 | Omit the unresolved item and return a generation issue. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="product_v1_assembly_node-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/assembly_node.proto
+
+
+
+<a name="product-v1-AssemblyNode"></a>
+
+### AssemblyNode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of this assembly node |
+| parent_node_id | [string](#string) |  | Empty if root, otherwise set to parent AssemblyNode id. |
+| kind | [NodeKind](#product-v1-NodeKind) |  |  |
+| part_definition_id | [string](#string) |  |  |
+| override_model_id | [string](#string) |  |  |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
+| sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
+| cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
+| join_method_hint | [JoinMethod](#product-v1-JoinMethod) |  |  |
+| insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
+| approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
+| optional | [bool](#bool) |  |  |
+| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+
+
+
+
+
+ 
+
+
+<a name="product-v1-JoinMethod"></a>
+
+### JoinMethod
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| JOIN_METHOD_UNSPECIFIED | 0 | No join method hint is available. Generation/planning should infer the operation from other data if possible. |
+| JOIN_METHOD_NONE | 1 | No physical joining operation is expected for this node, e.g. a logical grouping or already-integrated occurrence. |
+| JOIN_METHOD_FASTEN | 2 | Part is joined using a fastener such as a screw, bolt, nut, rivet, clip, or similar hardware. |
+| JOIN_METHOD_PRESS_FIT | 3 | Part is joined by interference/friction fit and usually requires controlled insertion force. |
+| JOIN_METHOD_SNAP_FIT | 4 | Part is joined by elastic snap features and usually requires alignment followed by a snap-in motion. |
+| JOIN_METHOD_ADHESIVE | 5 | Part is joined using glue, tape, sealant, or another bonding material. |
+| JOIN_METHOD_WELD | 6 | Part is joined by welding or another permanent thermal/material fusion process. |
+| JOIN_METHOD_PLACE | 7 | Part is placed at its final pose without an explicit joining operation beyond positioning. |
+
+
+
+<a name="product-v1-NodeKind"></a>
+
+### NodeKind
+NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
+
+CAD patterns should currently be expanded into individual PART_OCCURRENCE nodes, or represented as a
+GROUP containing those occurrences. A dedicated PATTERN kind should only be reintroduced if the
+protocol also gains fields that describe the pattern rule, count, spacing, transform, and contained
+occurrence template.
+NodeKind               Represents                    Physical part?   Has children?
+GROUP                  logical grouping              ❌               ✅
+PART_OCCURRENCE        single physical part instance ✅               ❌
+SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_KIND_UNSPECIFIED | 0 | Valid messages must use a specific kind. |
+| NODE_KIND_GROUP | 1 | Logical grouping node with no physical part of its own. Useful for CAD folders, BOM groups, fastener groups, operation groups, or AR guidance groups. |
+| NODE_KIND_PART_OCCURRENCE | 2 | Single physical occurrence of a PartDefinition. Has no children and should set part_definition_id. |
+| NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself. |
 
 
  

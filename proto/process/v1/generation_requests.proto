@@ -5,7 +5,6 @@ import "buf/validate/validate.proto";
 import "process/v1/process_recipe.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
-import "product/v1/part_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 

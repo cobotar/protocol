@@ -2,8 +2,6 @@ syntax = "proto3";
 package process.v1;
 
 import "buf/validate/validate.proto";
-import "process/v1/process_recipe.proto";
-import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
 import "product/v1/part_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -11,7 +9,6 @@ import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/messages/process/v1";
-
 
 // Controls whether kitting expands subassemblies into their constituent parts
 // or treats each subassembly occurrence as one supplied kit item.
@@ -146,7 +143,6 @@ message KittingItemRoutingOverride {
   ContainerTarget destination = 5;
 }
 
-
 // DraftKittingProcessRecipeGenerateRequest asks the backend to generate an
 // authoring-time draft ProcessRecipe of type KITTING from a ProductDefinition.
 //
@@ -161,9 +157,7 @@ message DraftKittingProcessRecipeGenerateRequest {
 
   // Optional explicit ID for the generated recipe.
   // If empty, the backend assigns a deterministic or generated ID.
-  string recipe_id = 2 [
-    (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
-  ];
+  string recipe_id = 2 [(buf.validate.field).string.(validation.v1.process_recipe_id_component) = true];
 
   // Optional human-readable name. The backend derives one if empty.
   string recipe_name = 3;
@@ -190,9 +184,7 @@ message DraftKittingProcessRecipeGenerateRequest {
   // Number of product units served by one completed kit. Defaults to one.
   // This is not the number of kits to execute; execution batching belongs to
   // ProcessRun creation.
-  optional uint32 product_units_per_kit = 10 [
-    (buf.validate.field).uint32.gt = 0
-  ];
+  optional uint32 product_units_per_kit = 10 [(buf.validate.field).uint32.gt = 0];
 
   // Candidate source container definitions. Slots supporting each part are
   // selected automatically unless overridden by routing_overrides.
@@ -229,27 +221,27 @@ message DraftKittingProcessRecipeGenerateRequest {
 
   // TODO: more parameters
   /*
-    TODO: proposed pipeline
-    ProductDefinition
-        ↓
-    determine required part definitions and quantities
-            ↓
-    group repeated occurrences
-            ↓
-    generate acquire/place operations
-            ↓
-    perhaps associate known kit/container requirements
-            ↓
-    carry product/handling semantics forward.
-            ↓
-    Draft ProcessRecipe
-            ↓
-    author adds genuine process constraints
+     TODO: proposed pipeline
+     ProductDefinition
+         ↓
+     determine required part definitions and quantities
+             ↓
+     group repeated occurrences
+             ↓
+     generate acquire/place operations
+             ↓
+     perhaps associate known kit/container requirements
+             ↓
+     carry product/handling semantics forward.
+             ↓
+     Draft ProcessRecipe
+             ↓
+     author adds genuine process constraints
 
-    NOTE: What it cannot infer purely from the ProductDefinition is:
-     - whether some parts should be picked in a particular order,
-     - where they are currently stored,
-     - which concrete instances should be taken,
-     - or which actor should retrieve them.
-   */
+     NOTE: What it cannot infer purely from the ProductDefinition is:
+      - whether some parts should be picked in a particular order,
+      - where they are currently stored,
+      - which concrete instances should be taken,
+      - or which actor should retrieve them.
+  */
 }

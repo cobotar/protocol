@@ -273,14 +273,22 @@ type DraftDisassemblyProcessRecipeGenerateRequest struct {
 	GenerateVerifyTasks bool `protobuf:"varint,10,opt,name=generate_verify_tasks,json=generateVerifyTasks,proto3" json:"generate_verify_tasks,omitempty"`
 	// If true, the generator may prefer MOVE tasks when the operation can be
 	// reasonably interpreted as repositioning rather than removal.
+	// TODO:
+	// prefer_move_tasks_when_possible may be unnecessary if staging should follow removal rather than replace it.
+	// In that case, something like generate_staging_tasks would be clearer.
 	PreferMoveTasksWhenPossible bool `protobuf:"varint,11,opt,name=prefer_move_tasks_when_possible,json=preferMoveTasksWhenPossible,proto3" json:"prefer_move_tasks_when_possible,omitempty"`
 	// If true, nodes marked as optional will be included.
 	IncludeOptionalNodes bool `protobuf:"varint,12,opt,name=include_optional_nodes,json=includeOptionalNodes,proto3" json:"include_optional_nodes,omitempty"`
 	// If true, the generator may insert WIPE tasks where appropriate.
+	// TODO: A disassembly-specific wiping hint may eventually be needed; requires_wiping is currently direction-neutral.
 	GenerateWipeTasks bool `protobuf:"varint,13,opt,name=generate_wipe_tasks,json=generateWipeTasks,proto3" json:"generate_wipe_tasks,omitempty"`
 	// Container definitions that removed parts, fasteners, or subassemblies may
 	// be staged into during disassembly. These can be fixtures, trays, kits, or
 	// storage containers depending on the intended workflow.
+	// TODO: target_container_definition_ids cannot map individual parts to containers or slots.
+	//
+	//	With one target, it is applied automatically; with multiple targets, they remain recipe-level candidates.
+	//	A per-node disposition/destination mapping would help.
 	TargetContainerDefinitionIds []string `protobuf:"bytes,14,rep,name=target_container_definition_ids,json=targetContainerDefinitionIds,proto3" json:"target_container_definition_ids,omitempty"`
 	// Optional disassembly scope. If empty, the generator may consider the full
 	// product structure. If set, generation should focus on the specified

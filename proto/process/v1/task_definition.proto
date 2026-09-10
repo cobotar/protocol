@@ -98,14 +98,10 @@ message TaskTarget {
 // Amount of material or number of discrete items acted on by a task.
 message QuantityRequirement {
   // Required amount. Must be finite and greater than zero.
-  double amount = 1 [
-    (buf.validate.field).double.gt = 0
-  ];
+  double amount = 1 [(buf.validate.field).double.gt = 0];
 
   // Unit such as "pcs", "g", "ml", or "m".
-  string unit = 2 [
-    (buf.validate.field).string.min_len = 1
-  ];
+  string unit = 2 [(buf.validate.field).string.min_len = 1];
 }
 
 // TaskEndpoint is used for source/destination style references in tasks such

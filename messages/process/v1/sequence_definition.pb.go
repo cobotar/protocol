@@ -10,6 +10,7 @@ import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/geometry/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v11 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -180,7 +181,8 @@ type SequenceDefinition struct {
 	// Indicates whether this sequence is optional and may be skipped during execution.
 	Optional bool `protobuf:"varint,11,opt,name=optional,proto3" json:"optional,omitempty"`
 	// Indicates whether all child tasks in this sequence can be completed in bulk.
-	CanBulkComplete bool `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
+	CanBulkComplete bool               `protobuf:"varint,12,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
+	Applicability   []*v11.VariantRule `protobuf:"bytes,13,rep,name=applicability,proto3" json:"applicability,omitempty"` // Sequence applies if any rule matches. Empty means always applicable.
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -299,6 +301,13 @@ func (x *SequenceDefinition) GetCanBulkComplete() bool {
 	return false
 }
 
+func (x *SequenceDefinition) GetApplicability() []*v11.VariantRule {
+	if x != nil {
+		return x.Applicability
+	}
+	return nil
+}
+
 type SequenceDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*SequenceDefinition  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -348,7 +357,7 @@ var File_process_v1_sequence_definition_proto protoreflect.FileDescriptor
 const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/sequence_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe4\r\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\xa4\x0e\n" +
 	"\x12SequenceDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -362,7 +371,8 @@ const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\flocal_target\x18\n" +
 	" \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\x12\x1a\n" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
-	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete:\xb5\t\xbaH\xb1\t\x1a\xc2\x01\n" +
+	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\x12>\n" +
+	"\rapplicability\x18\r \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability:\xb5\t\xbaH\xb1\t\x1a\xc2\x01\n" +
 	"&sequence_definition.children_not_mixed\x12Qa sequence must contain either child_sequence_ids or child_task_ids, but not both\x1aE!(size(this.child_sequence_ids) > 0 && size(this.child_task_ids) > 0)\x1a\xcd\x01\n" +
 	":sequence_definition.operator_specified_when_children_exist\x127operator must be specified when a sequence has children\x1aV(size(this.child_sequence_ids) + size(this.child_task_ids) == 0) || this.operator != 0\x1a\xc7\x01\n" +
 	"7sequence_definition.parallel_requires_multiple_children\x124PARALLEL sequences should have at least two children\x1aVthis.operator != 2 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xc9\x01\n" +
@@ -399,16 +409,18 @@ var file_process_v1_sequence_definition_proto_goTypes = []any{
 	(*SequenceDefinition)(nil),  // 1: process.v1.SequenceDefinition
 	(*SequenceDefinitions)(nil), // 2: process.v1.SequenceDefinitions
 	(*v1.LocalTarget)(nil),      // 3: geometry.v1.LocalTarget
+	(*v11.VariantRule)(nil),     // 4: variance.v1.VariantRule
 }
 var file_process_v1_sequence_definition_proto_depIdxs = []int32{
 	0, // 0: process.v1.SequenceDefinition.operator:type_name -> process.v1.SequenceOperator
 	3, // 1: process.v1.SequenceDefinition.local_target:type_name -> geometry.v1.LocalTarget
-	1, // 2: process.v1.SequenceDefinitions.items:type_name -> process.v1.SequenceDefinition
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 2: process.v1.SequenceDefinition.applicability:type_name -> variance.v1.VariantRule
+	1, // 3: process.v1.SequenceDefinitions.items:type_name -> process.v1.SequenceDefinition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_sequence_definition_proto_init() }

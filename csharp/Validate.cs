@@ -4472,7 +4472,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<FloatRules> _parser = new pb::MessageParser<FloatRules>(() => new FloatRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<FloatRules> _extensions;
-    private pb::ExtensionSet<FloatRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<FloatRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5259,7 +5259,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<DoubleRules> _parser = new pb::MessageParser<DoubleRules>(() => new DoubleRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<DoubleRules> _extensions;
-    private pb::ExtensionSet<DoubleRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<DoubleRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6046,7 +6046,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<Int32Rules> _parser = new pb::MessageParser<Int32Rules>(() => new Int32Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<Int32Rules> _extensions;
-    private pb::ExtensionSet<Int32Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<Int32Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6777,7 +6777,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<Int64Rules> _parser = new pb::MessageParser<Int64Rules>(() => new Int64Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<Int64Rules> _extensions;
-    private pb::ExtensionSet<Int64Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<Int64Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7508,7 +7508,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<UInt32Rules> _parser = new pb::MessageParser<UInt32Rules>(() => new UInt32Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<UInt32Rules> _extensions;
-    private pb::ExtensionSet<UInt32Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<UInt32Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8239,7 +8239,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<UInt64Rules> _parser = new pb::MessageParser<UInt64Rules>(() => new UInt64Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<UInt64Rules> _extensions;
-    private pb::ExtensionSet<UInt64Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<UInt64Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8969,7 +8969,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<SInt32Rules> _parser = new pb::MessageParser<SInt32Rules>(() => new SInt32Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<SInt32Rules> _extensions;
-    private pb::ExtensionSet<SInt32Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<SInt32Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9699,7 +9699,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<SInt64Rules> _parser = new pb::MessageParser<SInt64Rules>(() => new SInt64Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<SInt64Rules> _extensions;
-    private pb::ExtensionSet<SInt64Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<SInt64Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10429,7 +10429,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<Fixed32Rules> _parser = new pb::MessageParser<Fixed32Rules>(() => new Fixed32Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<Fixed32Rules> _extensions;
-    private pb::ExtensionSet<Fixed32Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<Fixed32Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11159,7 +11159,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<Fixed64Rules> _parser = new pb::MessageParser<Fixed64Rules>(() => new Fixed64Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<Fixed64Rules> _extensions;
-    private pb::ExtensionSet<Fixed64Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<Fixed64Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11889,7 +11889,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<SFixed32Rules> _parser = new pb::MessageParser<SFixed32Rules>(() => new SFixed32Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<SFixed32Rules> _extensions;
-    private pb::ExtensionSet<SFixed32Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<SFixed32Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12619,7 +12619,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<SFixed64Rules> _parser = new pb::MessageParser<SFixed64Rules>(() => new SFixed64Rules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<SFixed64Rules> _extensions;
-    private pb::ExtensionSet<SFixed64Rules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<SFixed64Rules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13350,7 +13350,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<BoolRules> _parser = new pb::MessageParser<BoolRules>(() => new BoolRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<BoolRules> _extensions;
-    private pb::ExtensionSet<BoolRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<BoolRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13667,7 +13667,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<StringRules> _parser = new pb::MessageParser<StringRules>(() => new StringRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<StringRules> _extensions;
-    private pb::ExtensionSet<StringRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<StringRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -16177,7 +16177,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<BytesRules> _parser = new pb::MessageParser<BytesRules>(() => new BytesRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<BytesRules> _extensions;
-    private pb::ExtensionSet<BytesRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<BytesRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17301,7 +17301,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<EnumRules> _parser = new pb::MessageParser<EnumRules>(() => new EnumRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<EnumRules> _extensions;
-    private pb::ExtensionSet<EnumRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<EnumRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17788,7 +17788,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<RepeatedRules> _parser = new pb::MessageParser<RepeatedRules>(() => new RepeatedRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<RepeatedRules> _extensions;
-    private pb::ExtensionSet<RepeatedRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<RepeatedRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18259,7 +18259,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<MapRules> _parser = new pb::MessageParser<MapRules>(() => new MapRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<MapRules> _extensions;
-    private pb::ExtensionSet<MapRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<MapRules>  _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18965,7 +18965,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<DurationRules> _parser = new pb::MessageParser<DurationRules>(() => new DurationRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<DurationRules> _extensions;
-    private pb::ExtensionSet<DurationRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<DurationRules>  _Extensions { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DurationRules> Parser { get { return _parser; } }
@@ -19679,7 +19679,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<FieldMaskRules> _parser = new pb::MessageParser<FieldMaskRules>(() => new FieldMaskRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<FieldMaskRules> _extensions;
-    private pb::ExtensionSet<FieldMaskRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<FieldMaskRules>  _Extensions { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FieldMaskRules> Parser { get { return _parser; } }
@@ -20072,7 +20072,7 @@ namespace Buf.Validate {
     private static readonly pb::MessageParser<TimestampRules> _parser = new pb::MessageParser<TimestampRules>(() => new TimestampRules());
     private pb::UnknownFieldSet _unknownFields;
     private pb::ExtensionSet<TimestampRules> _extensions;
-    private pb::ExtensionSet<TimestampRules> _Extensions { get { return _extensions; } }
+    private pb::ExtensionSet<TimestampRules>  _Extensions { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimestampRules> Parser { get { return _parser; } }

@@ -1224,6 +1224,9 @@ namespace Messages.Process.V1 {
     /// <summary>
     /// If true, the generator may prefer MOVE tasks when the operation can be
     /// reasonably interpreted as repositioning rather than removal.
+    /// TODO:
+    /// prefer_move_tasks_when_possible may be unnecessary if staging should follow removal rather than replace it.
+    /// In that case, something like generate_staging_tasks would be clearer.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1254,6 +1257,7 @@ namespace Messages.Process.V1 {
     private bool generateWipeTasks_;
     /// <summary>
     /// If true, the generator may insert WIPE tasks where appropriate.
+    /// TODO: A disassembly-specific wiping hint may eventually be needed; requires_wiping is currently direction-neutral.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1273,6 +1277,9 @@ namespace Messages.Process.V1 {
     /// Container definitions that removed parts, fasteners, or subassemblies may
     /// be staged into during disassembly. These can be fixtures, trays, kits, or
     /// storage containers depending on the intended workflow.
+    /// TODO: target_container_definition_ids cannot map individual parts to containers or slots.
+    ///  With one target, it is applied automatically; with multiple targets, they remain recipe-level candidates.
+    ///  A per-node disposition/destination mapping would help.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

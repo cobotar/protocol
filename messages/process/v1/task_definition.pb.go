@@ -432,6 +432,61 @@ func (x *TaskTarget) GetResource() *ResourceTarget {
 	return nil
 }
 
+// Amount of material or number of discrete items acted on by a task.
+type QuantityRequirement struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Required amount. Must be finite and greater than zero.
+	Amount float64 `protobuf:"fixed64,1,opt,name=amount,proto3" json:"amount,omitempty"`
+	// Unit such as "pcs", "g", "ml", or "m".
+	Unit          string `protobuf:"bytes,2,opt,name=unit,proto3" json:"unit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *QuantityRequirement) Reset() {
+	*x = QuantityRequirement{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *QuantityRequirement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QuantityRequirement) ProtoMessage() {}
+
+func (x *QuantityRequirement) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QuantityRequirement.ProtoReflect.Descriptor instead.
+func (*QuantityRequirement) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *QuantityRequirement) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *QuantityRequirement) GetUnit() string {
+	if x != nil {
+		return x.Unit
+	}
+	return ""
+}
+
 // TaskEndpoint is used for source/destination style references in tasks such
 // as pick/place, move, kitting, and transfer operations.
 //
@@ -447,7 +502,7 @@ type TaskEndpoint struct {
 
 func (x *TaskEndpoint) Reset() {
 	*x = TaskEndpoint{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	mi := &file_process_v1_task_definition_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -459,7 +514,7 @@ func (x *TaskEndpoint) String() string {
 func (*TaskEndpoint) ProtoMessage() {}
 
 func (x *TaskEndpoint) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[4]
+	mi := &file_process_v1_task_definition_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -472,7 +527,7 @@ func (x *TaskEndpoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskEndpoint.ProtoReflect.Descriptor instead.
 func (*TaskEndpoint) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{4}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TaskEndpoint) GetProduct() *ProductTarget {
@@ -503,7 +558,7 @@ type ValidationRequirement struct {
 
 func (x *ValidationRequirement) Reset() {
 	*x = ValidationRequirement{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[5]
+	mi := &file_process_v1_task_definition_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -515,7 +570,7 @@ func (x *ValidationRequirement) String() string {
 func (*ValidationRequirement) ProtoMessage() {}
 
 func (x *ValidationRequirement) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[5]
+	mi := &file_process_v1_task_definition_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -528,7 +583,7 @@ func (x *ValidationRequirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidationRequirement.ProtoReflect.Descriptor instead.
 func (*ValidationRequirement) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{5}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ValidationRequirement) GetRequireToolFeedback() bool {
@@ -588,7 +643,7 @@ type TaskExecutionPolicy struct {
 
 func (x *TaskExecutionPolicy) Reset() {
 	*x = TaskExecutionPolicy{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[6]
+	mi := &file_process_v1_task_definition_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -600,7 +655,7 @@ func (x *TaskExecutionPolicy) String() string {
 func (*TaskExecutionPolicy) ProtoMessage() {}
 
 func (x *TaskExecutionPolicy) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[6]
+	mi := &file_process_v1_task_definition_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -613,7 +668,7 @@ func (x *TaskExecutionPolicy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskExecutionPolicy.ProtoReflect.Descriptor instead.
 func (*TaskExecutionPolicy) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{6}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *TaskExecutionPolicy) GetAssignmentPreference() TaskAssignmentPreference {
@@ -682,7 +737,7 @@ type TaskOverride struct {
 
 func (x *TaskOverride) Reset() {
 	*x = TaskOverride{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[7]
+	mi := &file_process_v1_task_definition_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -694,7 +749,7 @@ func (x *TaskOverride) String() string {
 func (*TaskOverride) ProtoMessage() {}
 
 func (x *TaskOverride) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[7]
+	mi := &file_process_v1_task_definition_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -707,7 +762,7 @@ func (x *TaskOverride) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskOverride.ProtoReflect.Descriptor instead.
 func (*TaskOverride) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{7}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *TaskOverride) GetWhen() []*v14.VariantRule {
@@ -769,6 +824,7 @@ type TaskDefinition struct {
 	SafetyRelevance   v13.SafetyRelevance     `protobuf:"varint,16,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"` // Safety significance of the task.
 	Source            *TaskEndpoint           `protobuf:"bytes,17,opt,name=source,proto3" json:"source,omitempty"`                                                                          // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
 	Destination       *TaskEndpoint           `protobuf:"bytes,18,opt,name=destination,proto3" json:"destination,omitempty"`                                                                // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
+	Quantity          *QuantityRequirement    `protobuf:"bytes,19,opt,name=quantity,proto3" json:"quantity,omitempty"`                                                                      // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
 	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Task applies if any rule matches. Empty means always applicable.
 	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`                                                                    // adjust small authoring/runtime details when the task is otherwise the same task.
 	unknownFields     protoimpl.UnknownFields
@@ -777,7 +833,7 @@ type TaskDefinition struct {
 
 func (x *TaskDefinition) Reset() {
 	*x = TaskDefinition{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[8]
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -789,7 +845,7 @@ func (x *TaskDefinition) String() string {
 func (*TaskDefinition) ProtoMessage() {}
 
 func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[8]
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -802,7 +858,7 @@ func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinition.ProtoReflect.Descriptor instead.
 func (*TaskDefinition) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{8}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *TaskDefinition) GetId() string {
@@ -924,6 +980,13 @@ func (x *TaskDefinition) GetDestination() *TaskEndpoint {
 	return nil
 }
 
+func (x *TaskDefinition) GetQuantity() *QuantityRequirement {
+	if x != nil {
+		return x.Quantity
+	}
+	return nil
+}
+
 func (x *TaskDefinition) GetApplicability() []*v14.VariantRule {
 	if x != nil {
 		return x.Applicability
@@ -947,7 +1010,7 @@ type TaskDefinitions struct {
 
 func (x *TaskDefinitions) Reset() {
 	*x = TaskDefinitions{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	mi := &file_process_v1_task_definition_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -959,7 +1022,7 @@ func (x *TaskDefinitions) String() string {
 func (*TaskDefinitions) ProtoMessage() {}
 
 func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	mi := &file_process_v1_task_definition_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -972,7 +1035,7 @@ func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinitions.ProtoReflect.Descriptor instead.
 func (*TaskDefinitions) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{9}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *TaskDefinitions) GetItems() []*TaskDefinition {
@@ -1004,7 +1067,10 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"TaskTarget\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
 	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\x126\n" +
-	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"~\n" +
+	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"Z\n" +
+	"\x13QuantityRequirement\x12&\n" +
+	"\x06amount\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\x06amount\x12\x1b\n" +
+	"\x04unit\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04unit\"~\n" +
 	"\fTaskEndpoint\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
 	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\x8a\x03\n" +
@@ -1028,7 +1094,7 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12.\n" +
 	"\x06target\x18\x03 \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
 	"\x10insertion_offset\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
-	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\x96\b\n" +
+	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\xd3\b\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1049,7 +1115,8 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x10execution_policy\x18\x0f \x01(\v2\x1f.process.v1.TaskExecutionPolicyR\x0fexecutionPolicy\x12E\n" +
 	"\x10safety_relevance\x18\x10 \x01(\x0e2\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x120\n" +
 	"\x06source\x18\x11 \x01(\v2\x18.process.v1.TaskEndpointR\x06source\x12:\n" +
-	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12>\n" +
+	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12;\n" +
+	"\bquantity\x18\x13 \x01(\v2\x1f.process.v1.QuantityRequirementR\bquantity\x12>\n" +
 	"\rapplicability\x18\x15 \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x126\n" +
 	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\"C\n" +
 	"\x0fTaskDefinitions\x120\n" +
@@ -1099,7 +1166,7 @@ func file_process_v1_task_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_task_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_process_v1_task_definition_proto_goTypes = []any{
 	(TaskType)(0),                  // 0: process.v1.TaskType
 	(TaskAssignmentPreference)(0),  // 1: process.v1.TaskAssignmentPreference
@@ -1107,63 +1174,65 @@ var file_process_v1_task_definition_proto_goTypes = []any{
 	(*ContainerTarget)(nil),        // 3: process.v1.ContainerTarget
 	(*ResourceTarget)(nil),         // 4: process.v1.ResourceTarget
 	(*TaskTarget)(nil),             // 5: process.v1.TaskTarget
-	(*TaskEndpoint)(nil),           // 6: process.v1.TaskEndpoint
-	(*ValidationRequirement)(nil),  // 7: process.v1.ValidationRequirement
-	(*TaskExecutionPolicy)(nil),    // 8: process.v1.TaskExecutionPolicy
-	(*TaskOverride)(nil),           // 9: process.v1.TaskOverride
-	(*TaskDefinition)(nil),         // 10: process.v1.TaskDefinition
-	(*TaskDefinitions)(nil),        // 11: process.v1.TaskDefinitions
-	(*v1.LocalTarget)(nil),         // 12: geometry.v1.LocalTarget
-	(v11.ContainerSlotType)(0),     // 13: resources.v1.ContainerSlotType
-	(v12.SkillLevel)(0),            // 14: capability.v1.SkillLevel
-	(v11.ValidationMode)(0),        // 15: resources.v1.ValidationMode
-	(*v13.KeyValueConstraint)(nil), // 16: common.v1.KeyValueConstraint
-	(*v12.ActorConstraint)(nil),    // 17: capability.v1.ActorConstraint
-	(*v13.EstimatedDuration)(nil),  // 18: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 19: variance.v1.VariantRule
-	(*v1.Vector3)(nil),             // 20: geometry.v1.Vector3
-	(*v12.ToolRequirement)(nil),    // 21: capability.v1.ToolRequirement
-	(*v12.SkillRequirement)(nil),   // 22: capability.v1.SkillRequirement
-	(v13.SafetyRelevance)(0),       // 23: common.v1.SafetyRelevance
+	(*QuantityRequirement)(nil),    // 6: process.v1.QuantityRequirement
+	(*TaskEndpoint)(nil),           // 7: process.v1.TaskEndpoint
+	(*ValidationRequirement)(nil),  // 8: process.v1.ValidationRequirement
+	(*TaskExecutionPolicy)(nil),    // 9: process.v1.TaskExecutionPolicy
+	(*TaskOverride)(nil),           // 10: process.v1.TaskOverride
+	(*TaskDefinition)(nil),         // 11: process.v1.TaskDefinition
+	(*TaskDefinitions)(nil),        // 12: process.v1.TaskDefinitions
+	(*v1.LocalTarget)(nil),         // 13: geometry.v1.LocalTarget
+	(v11.ContainerSlotType)(0),     // 14: resources.v1.ContainerSlotType
+	(v12.SkillLevel)(0),            // 15: capability.v1.SkillLevel
+	(v11.ValidationMode)(0),        // 16: resources.v1.ValidationMode
+	(*v13.KeyValueConstraint)(nil), // 17: common.v1.KeyValueConstraint
+	(*v12.ActorConstraint)(nil),    // 18: capability.v1.ActorConstraint
+	(*v13.EstimatedDuration)(nil),  // 19: common.v1.EstimatedDuration
+	(*v14.VariantRule)(nil),        // 20: variance.v1.VariantRule
+	(*v1.Vector3)(nil),             // 21: geometry.v1.Vector3
+	(*v12.ToolRequirement)(nil),    // 22: capability.v1.ToolRequirement
+	(*v12.SkillRequirement)(nil),   // 23: capability.v1.SkillRequirement
+	(v13.SafetyRelevance)(0),       // 24: common.v1.SafetyRelevance
 }
 var file_process_v1_task_definition_proto_depIdxs = []int32{
-	12, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
-	13, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
+	13, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
+	14, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
 	2,  // 2: process.v1.TaskTarget.product:type_name -> process.v1.ProductTarget
 	3,  // 3: process.v1.TaskTarget.container:type_name -> process.v1.ContainerTarget
 	4,  // 4: process.v1.TaskTarget.resource:type_name -> process.v1.ResourceTarget
 	2,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
 	3,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
-	14, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
-	15, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
-	16, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
+	15, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
+	16, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
+	17, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
 	1,  // 10: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
-	17, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
-	18, // 12: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
-	18, // 13: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
-	19, // 14: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	18, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
+	19, // 12: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
+	19, // 13: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
+	20, // 14: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
 	5,  // 15: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
-	20, // 16: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
-	20, // 17: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
+	21, // 16: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
+	21, // 17: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
 	0,  // 18: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
 	5,  // 19: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	20, // 20: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	20, // 21: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	21, // 22: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
-	22, // 23: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	7,  // 24: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	8,  // 25: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	23, // 26: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	6,  // 27: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
-	6,  // 28: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
-	19, // 29: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	9,  // 30: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	10, // 31: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	32, // [32:32] is the sub-list for method output_type
-	32, // [32:32] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	21, // 20: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	21, // 21: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	22, // 22: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
+	23, // 23: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	8,  // 24: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	9,  // 25: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	24, // 26: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	7,  // 27: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	7,  // 28: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	6,  // 29: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
+	20, // 30: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	10, // 31: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	11, // 32: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	33, // [33:33] is the sub-list for method output_type
+	33, // [33:33] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }
@@ -1177,7 +1246,7 @@ func file_process_v1_task_definition_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_task_definition_proto_rawDesc), len(file_process_v1_task_definition_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   10,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
