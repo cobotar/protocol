@@ -2,6 +2,7 @@ syntax = "proto3";
 package process.v1;
 
 import "buf/validate/validate.proto";
+import "process/v1/generation_requests.proto";
 import "process/v1/task_definition.proto";
 import "product/v1/part_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -75,15 +76,23 @@ enum UnresolvedKittingItemPolicy {
   UNRESOLVED_KITTING_ITEM_POLICY_SKIP = 3;
 }
 
-// Overrides whether a selected node or part should appear in the generated kit.
+// Controls final inclusion of an item that was selected by the normal
+// variant, root, BOM, optional-node, and part-type filters.
 enum KittingItemAction {
-  // Apply the normal variant, optional-node, BOM-mode, and part-type rules.
+  // Do not change final inclusion. The override may still provide routing.
   KITTING_ITEM_ACTION_UNSPECIFIED = 0;
 
-  // Explicitly include the selected item.
+  // Keep the normally selected item included.
+  //
+  // This is primarily useful on an occurrence override to counter a broader
+  // part-definition EXCLUDE. It does not override normal variant, root, BOM,
+  // optional-node, or excluded-part-type filtering.
   KITTING_ITEM_ACTION_INCLUDE = 1;
 
-  // Explicitly exclude the selected item.
+  // Omit the normally selected item.
+  //
+  // This applies only to generated kit-item candidates and does not prune
+  // descendants of structural groups or expanded subassemblies.
   KITTING_ITEM_ACTION_EXCLUDE = 2;
 }
 
@@ -129,10 +138,10 @@ message KittingItemRoutingOverride {
   string assembly_node_id = 1;
 
   // Select every applicable occurrence referencing this PartDefinition.
-  string part_definition_id = 2;
+  string part_definition_id = 2 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true];
 
   // Optionally force inclusion or exclusion. UNSPECIFIED only overrides routing.
-  KittingItemAction action = 3;
+  KittingItemAction action = 3 [(buf.validate.field).enum.defined_only = true];
 
   // Optional authoring-time source constraint. References a container
   // definition and optionally one of its storage slots—not a runtime instance.
@@ -168,8 +177,10 @@ message DraftKittingProcessRecipeGenerateRequest {
   // Optional human-readable description.
   string recipe_description = 5;
 
-  // Product variant selections used to determine applicable nodes and annotate
-  // the generated recipe applicability.
+  VariantGenerationMode variant_generation_mode = 21 [(buf.validate.field).enum.defined_only = true];
+
+  // Required when variant_generation_mode is SELECTED_CONFIGURATION.
+  // At most one selection is allowed per axis.
   variance.v1.VariantConfiguration variant_configuration = 6;
 
   // Optional subtree to kit. If empty, generation starts at the product root.
@@ -179,7 +190,7 @@ message DraftKittingProcessRecipeGenerateRequest {
   bool include_optional_nodes = 8;
 
   // Determines whether subassemblies are expanded or supplied as kit items.
-  KittingBomMode bom_mode = 9;
+  KittingBomMode bom_mode = 9 [(buf.validate.field).enum.defined_only = true];
 
   // Number of product units served by one completed kit. Defaults to one.
   // This is not the number of kits to execute; execution batching belongs to
@@ -188,36 +199,38 @@ message DraftKittingProcessRecipeGenerateRequest {
 
   // Candidate source container definitions. Slots supporting each part are
   // selected automatically unless overridden by routing_overrides.
-  repeated string source_container_definition_ids = 11;
+  repeated string source_container_definition_ids = 11 [(buf.validate.field).repeated.items.string.(validation.v1.container_definition_id_component) = true];
 
-  // Destination kit container definition. Its KIT_SLOT definitions are matched
-  // to applicable parts. If empty, the backend may emit generic destinations
-  // and report generation issues.
-  string target_kit_container_definition_id = 12;
+  // Destination kit container definition.
+  // Must reference a ContainerDefinition with type CONTAINER_TYPE_KIT.
+  // Automatic routing uses its KIT_SLOT definitions.
+  // Its KIT_SLOT definitions are matched to applicable parts.
+  // If empty, the backend may emit generic destinations and report generation issues.
+  string target_kit_container_definition_id = 12 [(buf.validate.field).string.(validation.v1.container_definition_id_component) = true];
 
   // Per-occurrence or per-part selection and routing overrides.
   repeated KittingItemRoutingOverride routing_overrides = 13;
 
   // Ordering between independently kittable item sequences.
-  KittingItemOrder item_order = 14;
+  KittingItemOrder item_order = 14 [(buf.validate.field).enum.defined_only = true];
 
   // Validation generated for each transferred item.
-  KittingItemValidationMode item_validation_mode = 15;
+  KittingItemValidationMode item_validation_mode = 15 [(buf.validate.field).enum.defined_only = true];
 
   // Generate a final VERIFY task confirming overall kit completeness.
   bool generate_final_kit_verification = 16;
 
   // Behavior when an item cannot be assigned a suitable source or kit slot.
-  UnresolvedKittingItemPolicy unresolved_item_policy = 17;
+  UnresolvedKittingItemPolicy unresolved_item_policy = 17 [(buf.validate.field).enum.defined_only = true];
 
   // Part classifications to omit after variant and BOM expansion.
-  repeated product.v1.PartType excluded_part_types = 18;
+  repeated product.v1.PartType excluded_part_types = 18 [(buf.validate.field).repeated.items.enum.defined_only = true];
 
   // Controls aggregation of repeated occurrences into quantity-bearing tasks.
-  KittingAggregationMode aggregation_mode = 19;
+  KittingAggregationMode aggregation_mode = 19 [(buf.validate.field).enum.defined_only = true];
 
   // Controls atomic MOVE versus explicit PICK and PLACE task generation.
-  KittingTaskGranularity task_granularity = 20;
+  KittingTaskGranularity task_granularity = 20 [(buf.validate.field).enum.defined_only = true];
 
   // TODO: more parameters
   /*

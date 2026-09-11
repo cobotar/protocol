@@ -11,6 +11,17 @@ import "variance/v1/variant_configuration.proto";
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/messages/process/v1";
 
+enum VariantGenerationMode {
+  VARIANT_GENERATION_MODE_UNSPECIFIED = 0;
+
+  // Generate one recipe containing every potentially applicable node.
+  // Variant-dependent sequences and tasks retain their applicability rules.
+  VARIANT_GENERATION_MODE_ALL_VARIANTS = 1;
+
+  // Generate a recipe specialized for one concrete variant configuration.
+  VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION = 2;
+}
+
 // DraftProcessRecipeGenerateRequest asks the backend to generate a draft
 // ProcessRecipe from a ProductDefinition plus generation options.
 //
@@ -38,8 +49,10 @@ message DraftProcessRecipeGenerateRequest {
   // Optional human-readable description for the generated recipe.
   string recipe_description = 5;
 
-  // Selected product variants used to filter applicability and annotate the
-  // generated recipe applicability.
+  VariantGenerationMode variant_generation_mode = 19 [(buf.validate.field).enum.defined_only = true];
+
+  // Required when variant_generation_mode is SELECTED_CONFIGURATION.
+  // At most one selection is allowed per axis.
   variance.v1.VariantConfiguration variant_configuration = 6;
 
   // If true, the generator may insert ALIGN tasks before grouped fastener work
@@ -117,8 +130,10 @@ message DraftDisassemblyProcessRecipeGenerateRequest {
   // Optional human-readable description for the generated recipe.
   string recipe_description = 5;
 
-  // Selected product variants used to filter applicability and annotate the
-  // generated recipe applicability.
+  VariantGenerationMode variant_generation_mode = 19 [(buf.validate.field).enum.defined_only = true];
+
+  // Required when variant_generation_mode is SELECTED_CONFIGURATION.
+  // At most one selection is allowed per axis.
   variance.v1.VariantConfiguration variant_configuration = 6;
 
   // If true, the generator may insert HOLD tasks before grouped UNFASTEN work

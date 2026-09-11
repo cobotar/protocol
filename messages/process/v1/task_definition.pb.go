@@ -1050,19 +1050,19 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x93\x01\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x9e\x01\n" +
 	"\rProductTarget\x12\x17\n" +
-	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x12,\n" +
-	"\x12part_definition_id\x18\x02 \x01(\tR\x10partDefinitionId\x12;\n" +
-	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\"\xa0\x01\n" +
-	"\x0fContainerTarget\x126\n" +
-	"\x17container_definition_id\x18\x01 \x01(\tR\x15containerDefinitionId\x12\x17\n" +
-	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x12<\n" +
-	"\tslot_type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\bslotType\"\xa8\x01\n" +
-	"\x0eResourceTarget\x12.\n" +
-	"\x13asset_definition_id\x18\x01 \x01(\tR\x11assetDefinitionId\x12.\n" +
-	"\x13robot_definition_id\x18\x02 \x01(\tR\x11robotDefinitionId\x126\n" +
-	"\x17container_definition_id\x18\x03 \x01(\tR\x15containerDefinitionId\"\xb4\x01\n" +
+	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x127\n" +
+	"\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12;\n" +
+	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\"\xb5\x01\n" +
+	"\x0fContainerTarget\x12A\n" +
+	"\x17container_definition_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf2\x04\x01R\x15containerDefinitionId\x12\x17\n" +
+	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x12F\n" +
+	"\tslot_type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\bslotType\"\xc9\x01\n" +
+	"\x0eResourceTarget\x129\n" +
+	"\x13asset_definition_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb0\xf1\x04\x01R\x11assetDefinitionId\x129\n" +
+	"\x13robot_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf1\x04\x01R\x11robotDefinitionId\x12A\n" +
+	"\x17container_definition_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xc8\xf2\x04\x01R\x15containerDefinitionId\"\xb4\x01\n" +
 	"\n" +
 	"TaskTarget\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
@@ -1073,13 +1073,13 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x04unit\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04unit\"~\n" +
 	"\fTaskEndpoint\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
-	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\x8a\x03\n" +
+	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\"\x9e\x03\n" +
 	"\x15ValidationRequirement\x122\n" +
 	"\x15require_tool_feedback\x18\x01 \x01(\bR\x13requireToolFeedback\x120\n" +
 	"\x14require_vision_check\x18\x02 \x01(\bR\x12requireVisionCheck\x12:\n" +
-	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12\\\n" +
-	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelR\x1amanualConfirmationMinLevel\x120\n" +
-	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeR\x04mode\x12?\n" +
+	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12f\n" +
+	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelB\b\xbaH\x05\x82\x01\x02\x10\x01R\x1amanualConfirmationMinLevel\x12:\n" +
+	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04mode\x12?\n" +
 	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x03\n" +
 	"\x13TaskExecutionPolicy\x12Y\n" +
 	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +

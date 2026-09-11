@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from process.v1 import generation_requests_pb2 as _generation_requests_pb2
 from process.v1 import task_definition_pb2 as _task_definition_pb2
 from product.v1 import part_definition_pb2 as _part_definition_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -98,12 +99,13 @@ class KittingItemRoutingOverride(_message.Message):
     def __init__(self, assembly_node_id: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., action: _Optional[_Union[KittingItemAction, str]] = ..., source: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ..., destination: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ...) -> None: ...
 
 class DraftKittingProcessRecipeGenerateRequest(_message.Message):
-    __slots__ = ("product_definition_id", "recipe_id", "recipe_name", "recipe_icon", "recipe_description", "variant_configuration", "root_node_id", "include_optional_nodes", "bom_mode", "product_units_per_kit", "source_container_definition_ids", "target_kit_container_definition_id", "routing_overrides", "item_order", "item_validation_mode", "generate_final_kit_verification", "unresolved_item_policy", "excluded_part_types", "aggregation_mode", "task_granularity")
+    __slots__ = ("product_definition_id", "recipe_id", "recipe_name", "recipe_icon", "recipe_description", "variant_generation_mode", "variant_configuration", "root_node_id", "include_optional_nodes", "bom_mode", "product_units_per_kit", "source_container_definition_ids", "target_kit_container_definition_id", "routing_overrides", "item_order", "item_validation_mode", "generate_final_kit_verification", "unresolved_item_policy", "excluded_part_types", "aggregation_mode", "task_granularity")
     PRODUCT_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     RECIPE_NAME_FIELD_NUMBER: _ClassVar[int]
     RECIPE_ICON_FIELD_NUMBER: _ClassVar[int]
     RECIPE_DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_GENERATION_MODE_FIELD_NUMBER: _ClassVar[int]
     VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
     ROOT_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     INCLUDE_OPTIONAL_NODES_FIELD_NUMBER: _ClassVar[int]
@@ -124,6 +126,7 @@ class DraftKittingProcessRecipeGenerateRequest(_message.Message):
     recipe_name: str
     recipe_icon: str
     recipe_description: str
+    variant_generation_mode: _generation_requests_pb2.VariantGenerationMode
     variant_configuration: _variant_configuration_pb2.VariantConfiguration
     root_node_id: str
     include_optional_nodes: bool
@@ -139,4 +142,4 @@ class DraftKittingProcessRecipeGenerateRequest(_message.Message):
     excluded_part_types: _containers.RepeatedScalarFieldContainer[_part_definition_pb2.PartType]
     aggregation_mode: KittingAggregationMode
     task_granularity: KittingTaskGranularity
-    def __init__(self, product_definition_id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., recipe_name: _Optional[str] = ..., recipe_icon: _Optional[str] = ..., recipe_description: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., root_node_id: _Optional[str] = ..., include_optional_nodes: bool = ..., bom_mode: _Optional[_Union[KittingBomMode, str]] = ..., product_units_per_kit: _Optional[int] = ..., source_container_definition_ids: _Optional[_Iterable[str]] = ..., target_kit_container_definition_id: _Optional[str] = ..., routing_overrides: _Optional[_Iterable[_Union[KittingItemRoutingOverride, _Mapping]]] = ..., item_order: _Optional[_Union[KittingItemOrder, str]] = ..., item_validation_mode: _Optional[_Union[KittingItemValidationMode, str]] = ..., generate_final_kit_verification: bool = ..., unresolved_item_policy: _Optional[_Union[UnresolvedKittingItemPolicy, str]] = ..., excluded_part_types: _Optional[_Iterable[_Union[_part_definition_pb2.PartType, str]]] = ..., aggregation_mode: _Optional[_Union[KittingAggregationMode, str]] = ..., task_granularity: _Optional[_Union[KittingTaskGranularity, str]] = ...) -> None: ...
+    def __init__(self, product_definition_id: _Optional[str] = ..., recipe_id: _Optional[str] = ..., recipe_name: _Optional[str] = ..., recipe_icon: _Optional[str] = ..., recipe_description: _Optional[str] = ..., variant_generation_mode: _Optional[_Union[_generation_requests_pb2.VariantGenerationMode, str]] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., root_node_id: _Optional[str] = ..., include_optional_nodes: bool = ..., bom_mode: _Optional[_Union[KittingBomMode, str]] = ..., product_units_per_kit: _Optional[int] = ..., source_container_definition_ids: _Optional[_Iterable[str]] = ..., target_kit_container_definition_id: _Optional[str] = ..., routing_overrides: _Optional[_Iterable[_Union[KittingItemRoutingOverride, _Mapping]]] = ..., item_order: _Optional[_Union[KittingItemOrder, str]] = ..., item_validation_mode: _Optional[_Union[KittingItemValidationMode, str]] = ..., generate_final_kit_verification: bool = ..., unresolved_item_policy: _Optional[_Union[UnresolvedKittingItemPolicy, str]] = ..., excluded_part_types: _Optional[_Iterable[_Union[_part_definition_pb2.PartType, str]]] = ..., aggregation_mode: _Optional[_Union[KittingAggregationMode, str]] = ..., task_granularity: _Optional[_Union[KittingTaskGranularity, str]] = ...) -> None: ...

@@ -339,6 +339,8 @@
     - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
   
+    - [VariantGenerationMode](#process-v1-VariantGenerationMode)
+  
 - [product/v1/part_definition.proto](#product_v1_part_definition-proto)
     - [Dimensions](#product-v1-Dimensions)
     - [MaterialSpec](#product-v1-MaterialSpec)
@@ -5132,7 +5134,8 @@ This is intended for authoring-time generation, not runtime execution.
 | recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
 | recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
 | recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
+| variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
 | insert_hold_before_unfasten_group | [bool](#bool) |  | If true, the generator may insert HOLD tasks before grouped UNFASTEN work when that improves stability and task flow during disassembly. |
 | group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-removal-oriented sequence. |
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts disassembly sequence. |
@@ -5185,7 +5188,8 @@ This is intended for authoring-time generation, not runtime execution.
 | recipe_name | [string](#string) |  | Human-readable name for the generated recipe. |
 | recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
 | recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Selected product variants used to filter applicability and annotate the generated recipe applicability. |
+| variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
 | insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
 | group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-oriented sequence. |
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
@@ -5222,6 +5226,19 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 
  
+
+
+<a name="process-v1-VariantGenerationMode"></a>
+
+### VariantGenerationMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VARIANT_GENERATION_MODE_UNSPECIFIED | 0 |  |
+| VARIANT_GENERATION_MODE_ALL_VARIANTS | 1 | Generate one recipe containing every potentially applicable node. Variant-dependent sequences and tasks retain their applicability rules. |
+| VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION | 2 | Generate a recipe specialized for one concrete variant configuration. |
+
 
  
 
@@ -5452,13 +5469,14 @@ inventory and container instances are resolved when creating a ProcessRun.
 | recipe_name | [string](#string) |  | Optional human-readable name. The backend derives one if empty. |
 | recipe_icon | [string](#string) |  | Optional icon. The backend supplies a default if empty. |
 | recipe_description | [string](#string) |  | Optional human-readable description. |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Product variant selections used to determine applicable nodes and annotate the generated recipe applicability. |
+| variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
 | root_node_id | [string](#string) |  | Optional subtree to kit. If empty, generation starts at the product root. |
 | include_optional_nodes | [bool](#bool) |  | Include applicable nodes marked optional. |
 | bom_mode | [KittingBomMode](#process-v1-KittingBomMode) |  | Determines whether subassemblies are expanded or supplied as kit items. |
 | product_units_per_kit | [uint32](#uint32) | optional | Number of product units served by one completed kit. Defaults to one. This is not the number of kits to execute; execution batching belongs to ProcessRun creation. |
 | source_container_definition_ids | [string](#string) | repeated | Candidate source container definitions. Slots supporting each part are selected automatically unless overridden by routing_overrides. |
-| target_kit_container_definition_id | [string](#string) |  | Destination kit container definition. Its KIT_SLOT definitions are matched to applicable parts. If empty, the backend may emit generic destinations and report generation issues. |
+| target_kit_container_definition_id | [string](#string) |  | Destination kit container definition. Must reference a ContainerDefinition with type CONTAINER_TYPE_KIT. Automatic routing uses its KIT_SLOT definitions. Its KIT_SLOT definitions are matched to applicable parts. If empty, the backend may emit generic destinations and report generation issues. |
 | routing_overrides | [KittingItemRoutingOverride](#process-v1-KittingItemRoutingOverride) | repeated | Per-occurrence or per-part selection and routing overrides. |
 | item_order | [KittingItemOrder](#process-v1-KittingItemOrder) |  | Ordering between independently kittable item sequences. |
 | item_validation_mode | [KittingItemValidationMode](#process-v1-KittingItemValidationMode) |  | Validation generated for each transferred item. |
@@ -5526,13 +5544,18 @@ or treats each subassembly occurrence as one supplied kit item.
 <a name="process-v1-KittingItemAction"></a>
 
 ### KittingItemAction
-Overrides whether a selected node or part should appear in the generated kit.
+Controls final inclusion of an item that was selected by the normal
+variant, root, BOM, optional-node, and part-type filters.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| KITTING_ITEM_ACTION_UNSPECIFIED | 0 | Apply the normal variant, optional-node, BOM-mode, and part-type rules. |
-| KITTING_ITEM_ACTION_INCLUDE | 1 | Explicitly include the selected item. |
-| KITTING_ITEM_ACTION_EXCLUDE | 2 | Explicitly exclude the selected item. |
+| KITTING_ITEM_ACTION_UNSPECIFIED | 0 | Do not change final inclusion. The override may still provide routing. |
+| KITTING_ITEM_ACTION_INCLUDE | 1 | Keep the normally selected item included.
+
+This is primarily useful on an occurrence override to counter a broader part-definition EXCLUDE. It does not override normal variant, root, BOM, optional-node, or excluded-part-type filtering. |
+| KITTING_ITEM_ACTION_EXCLUDE | 2 | Omit the normally selected item.
+
+This applies only to generated kit-item candidates and does not prune descendants of structural groups or expanded subassemblies. |
 
 
 

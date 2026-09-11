@@ -258,15 +258,23 @@ func (UnresolvedKittingItemPolicy) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_kitting_generation_proto_rawDescGZIP(), []int{3}
 }
 
-// Overrides whether a selected node or part should appear in the generated kit.
+// Controls final inclusion of an item that was selected by the normal
+// variant, root, BOM, optional-node, and part-type filters.
 type KittingItemAction int32
 
 const (
-	// Apply the normal variant, optional-node, BOM-mode, and part-type rules.
+	// Do not change final inclusion. The override may still provide routing.
 	KittingItemAction_KITTING_ITEM_ACTION_UNSPECIFIED KittingItemAction = 0
-	// Explicitly include the selected item.
+	// Keep the normally selected item included.
+	//
+	// This is primarily useful on an occurrence override to counter a broader
+	// part-definition EXCLUDE. It does not override normal variant, root, BOM,
+	// optional-node, or excluded-part-type filtering.
 	KittingItemAction_KITTING_ITEM_ACTION_INCLUDE KittingItemAction = 1
-	// Explicitly exclude the selected item.
+	// Omit the normally selected item.
+	//
+	// This applies only to generated kit-item candidates and does not prune
+	// descendants of structural groups or expanded subassemblies.
 	KittingItemAction_KITTING_ITEM_ACTION_EXCLUDE KittingItemAction = 2
 )
 
@@ -522,9 +530,10 @@ type DraftKittingProcessRecipeGenerateRequest struct {
 	// Optional icon. The backend supplies a default if empty.
 	RecipeIcon string `protobuf:"bytes,4,opt,name=recipe_icon,json=recipeIcon,proto3" json:"recipe_icon,omitempty"`
 	// Optional human-readable description.
-	RecipeDescription string `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
-	// Product variant selections used to determine applicable nodes and annotate
-	// the generated recipe applicability.
+	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
+	VariantGenerationMode VariantGenerationMode `protobuf:"varint,21,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+	// At most one selection is allowed per axis.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// Optional subtree to kit. If empty, generation starts at the product root.
 	RootNodeId string `protobuf:"bytes,7,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
@@ -539,9 +548,11 @@ type DraftKittingProcessRecipeGenerateRequest struct {
 	// Candidate source container definitions. Slots supporting each part are
 	// selected automatically unless overridden by routing_overrides.
 	SourceContainerDefinitionIds []string `protobuf:"bytes,11,rep,name=source_container_definition_ids,json=sourceContainerDefinitionIds,proto3" json:"source_container_definition_ids,omitempty"`
-	// Destination kit container definition. Its KIT_SLOT definitions are matched
-	// to applicable parts. If empty, the backend may emit generic destinations
-	// and report generation issues.
+	// Destination kit container definition.
+	// Must reference a ContainerDefinition with type CONTAINER_TYPE_KIT.
+	// Automatic routing uses its KIT_SLOT definitions.
+	// Its KIT_SLOT definitions are matched to applicable parts.
+	// If empty, the backend may emit generic destinations and report generation issues.
 	TargetKitContainerDefinitionId string `protobuf:"bytes,12,opt,name=target_kit_container_definition_id,json=targetKitContainerDefinitionId,proto3" json:"target_kit_container_definition_id,omitempty"`
 	// Per-occurrence or per-part selection and routing overrides.
 	RoutingOverrides []*KittingItemRoutingOverride `protobuf:"bytes,13,rep,name=routing_overrides,json=routingOverrides,proto3" json:"routing_overrides,omitempty"`
@@ -626,6 +637,13 @@ func (x *DraftKittingProcessRecipeGenerateRequest) GetRecipeDescription() string
 		return x.RecipeDescription
 	}
 	return ""
+}
+
+func (x *DraftKittingProcessRecipeGenerateRequest) GetVariantGenerationMode() VariantGenerationMode {
+	if x != nil {
+		return x.VariantGenerationMode
+	}
+	return VariantGenerationMode_VARIANT_GENERATION_MODE_UNSPECIFIED
 }
 
 func (x *DraftKittingProcessRecipeGenerateRequest) GetVariantConfiguration() *v1.VariantConfiguration {
@@ -738,16 +756,15 @@ var File_process_v1_kitting_generation_proto protoreflect.FileDescriptor
 const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"\n" +
 	"#process/v1/kitting_generation.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xce\x02\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$process/v1/generation_requests.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xe3\x02\n" +
 	"\x1aKittingItemRoutingOverride\x12(\n" +
-	"\x10assembly_node_id\x18\x01 \x01(\tR\x0eassemblyNodeId\x12,\n" +
-	"\x12part_definition_id\x18\x02 \x01(\tR\x10partDefinitionId\x125\n" +
-	"\x06action\x18\x03 \x01(\x0e2\x1d.process.v1.KittingItemActionR\x06action\x123\n" +
+	"\x10assembly_node_id\x18\x01 \x01(\tR\x0eassemblyNodeId\x127\n" +
+	"\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12?\n" +
+	"\x06action\x18\x03 \x01(\x0e2\x1d.process.v1.KittingItemActionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06action\x123\n" +
 	"\x06source\x18\x04 \x01(\v2\x1b.process.v1.ContainerTargetR\x06source\x12=\n" +
 	"\vdestination\x18\x05 \x01(\v2\x1b.process.v1.ContainerTargetR\vdestination:-\xbaH*\"(\n" +
 	"\x10assembly_node_id\n" +
-	"\x12part_definition_id\x10\x01\"\xcf\n" +
-	"\n" +
+	"\x12part_definition_id\x10\x01\"\x9a\f\n" +
 	"(DraftKittingProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12&\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -755,25 +772,27 @@ const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"recipeName\x12\x1f\n" +
 	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
 	"recipeIcon\x12-\n" +
-	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n" +
+	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12c\n" +
+	"\x17variant_generation_mode\x18\x15 \x01(\x0e2!.process.v1.VariantGenerationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x15variantGenerationMode\x12V\n" +
 	"\x15variant_configuration\x18\x06 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12 \n" +
 	"\froot_node_id\x18\a \x01(\tR\n" +
 	"rootNodeId\x124\n" +
-	"\x16include_optional_nodes\x18\b \x01(\bR\x14includeOptionalNodes\x125\n" +
-	"\bbom_mode\x18\t \x01(\x0e2\x1a.process.v1.KittingBomModeR\abomMode\x12?\n" +
+	"\x16include_optional_nodes\x18\b \x01(\bR\x14includeOptionalNodes\x12?\n" +
+	"\bbom_mode\x18\t \x01(\x0e2\x1a.process.v1.KittingBomModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\abomMode\x12?\n" +
 	"\x15product_units_per_kit\x18\n" +
-	" \x01(\rB\a\xbaH\x04*\x02 \x00H\x00R\x12productUnitsPerKit\x88\x01\x01\x12E\n" +
-	"\x1fsource_container_definition_ids\x18\v \x03(\tR\x1csourceContainerDefinitionIds\x12J\n" +
-	"\"target_kit_container_definition_id\x18\f \x01(\tR\x1etargetKitContainerDefinitionId\x12S\n" +
-	"\x11routing_overrides\x18\r \x03(\v2&.process.v1.KittingItemRoutingOverrideR\x10routingOverrides\x12;\n" +
+	" \x01(\rB\a\xbaH\x04*\x02 \x00H\x00R\x12productUnitsPerKit\x88\x01\x01\x12U\n" +
+	"\x1fsource_container_definition_ids\x18\v \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1csourceContainerDefinitionIds\x12U\n" +
+	"\"target_kit_container_definition_id\x18\f \x01(\tB\t\xbaH\x06r\x04\xc8\xf2\x04\x01R\x1etargetKitContainerDefinitionId\x12S\n" +
+	"\x11routing_overrides\x18\r \x03(\v2&.process.v1.KittingItemRoutingOverrideR\x10routingOverrides\x12E\n" +
 	"\n" +
-	"item_order\x18\x0e \x01(\x0e2\x1c.process.v1.KittingItemOrderR\titemOrder\x12W\n" +
-	"\x14item_validation_mode\x18\x0f \x01(\x0e2%.process.v1.KittingItemValidationModeR\x12itemValidationMode\x12E\n" +
-	"\x1fgenerate_final_kit_verification\x18\x10 \x01(\bR\x1cgenerateFinalKitVerification\x12]\n" +
-	"\x16unresolved_item_policy\x18\x11 \x01(\x0e2'.process.v1.UnresolvedKittingItemPolicyR\x14unresolvedItemPolicy\x12D\n" +
-	"\x13excluded_part_types\x18\x12 \x03(\x0e2\x14.product.v1.PartTypeR\x11excludedPartTypes\x12M\n" +
-	"\x10aggregation_mode\x18\x13 \x01(\x0e2\".process.v1.KittingAggregationModeR\x0faggregationMode\x12M\n" +
-	"\x10task_granularity\x18\x14 \x01(\x0e2\".process.v1.KittingTaskGranularityR\x0ftaskGranularityB\x18\n" +
+	"item_order\x18\x0e \x01(\x0e2\x1c.process.v1.KittingItemOrderB\b\xbaH\x05\x82\x01\x02\x10\x01R\titemOrder\x12a\n" +
+	"\x14item_validation_mode\x18\x0f \x01(\x0e2%.process.v1.KittingItemValidationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x12itemValidationMode\x12E\n" +
+	"\x1fgenerate_final_kit_verification\x18\x10 \x01(\bR\x1cgenerateFinalKitVerification\x12g\n" +
+	"\x16unresolved_item_policy\x18\x11 \x01(\x0e2'.process.v1.UnresolvedKittingItemPolicyB\b\xbaH\x05\x82\x01\x02\x10\x01R\x14unresolvedItemPolicy\x12S\n" +
+	"\x13excluded_part_types\x18\x12 \x03(\x0e2\x14.product.v1.PartTypeB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x11excludedPartTypes\x12W\n" +
+	"\x10aggregation_mode\x18\x13 \x01(\x0e2\".process.v1.KittingAggregationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0faggregationMode\x12W\n" +
+	"\x10task_granularity\x18\x14 \x01(\x0e2\".process.v1.KittingTaskGranularityB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0ftaskGranularityB\x18\n" +
 	"\x16_product_units_per_kit*\x80\x01\n" +
 	"\x0eKittingBomMode\x12 \n" +
 	"\x1cKITTING_BOM_MODE_UNSPECIFIED\x10\x00\x12\x1f\n" +
@@ -835,27 +854,29 @@ var file_process_v1_kitting_generation_proto_goTypes = []any{
 	(*KittingItemRoutingOverride)(nil),               // 7: process.v1.KittingItemRoutingOverride
 	(*DraftKittingProcessRecipeGenerateRequest)(nil), // 8: process.v1.DraftKittingProcessRecipeGenerateRequest
 	(*ContainerTarget)(nil),                          // 9: process.v1.ContainerTarget
-	(*v1.VariantConfiguration)(nil),                  // 10: variance.v1.VariantConfiguration
-	(v11.PartType)(0),                                // 11: product.v1.PartType
+	(VariantGenerationMode)(0),                       // 10: process.v1.VariantGenerationMode
+	(*v1.VariantConfiguration)(nil),                  // 11: variance.v1.VariantConfiguration
+	(v11.PartType)(0),                                // 12: product.v1.PartType
 }
 var file_process_v1_kitting_generation_proto_depIdxs = []int32{
 	4,  // 0: process.v1.KittingItemRoutingOverride.action:type_name -> process.v1.KittingItemAction
 	9,  // 1: process.v1.KittingItemRoutingOverride.source:type_name -> process.v1.ContainerTarget
 	9,  // 2: process.v1.KittingItemRoutingOverride.destination:type_name -> process.v1.ContainerTarget
-	10, // 3: process.v1.DraftKittingProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	0,  // 4: process.v1.DraftKittingProcessRecipeGenerateRequest.bom_mode:type_name -> process.v1.KittingBomMode
-	7,  // 5: process.v1.DraftKittingProcessRecipeGenerateRequest.routing_overrides:type_name -> process.v1.KittingItemRoutingOverride
-	1,  // 6: process.v1.DraftKittingProcessRecipeGenerateRequest.item_order:type_name -> process.v1.KittingItemOrder
-	2,  // 7: process.v1.DraftKittingProcessRecipeGenerateRequest.item_validation_mode:type_name -> process.v1.KittingItemValidationMode
-	3,  // 8: process.v1.DraftKittingProcessRecipeGenerateRequest.unresolved_item_policy:type_name -> process.v1.UnresolvedKittingItemPolicy
-	11, // 9: process.v1.DraftKittingProcessRecipeGenerateRequest.excluded_part_types:type_name -> product.v1.PartType
-	5,  // 10: process.v1.DraftKittingProcessRecipeGenerateRequest.aggregation_mode:type_name -> process.v1.KittingAggregationMode
-	6,  // 11: process.v1.DraftKittingProcessRecipeGenerateRequest.task_granularity:type_name -> process.v1.KittingTaskGranularity
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	10, // 3: process.v1.DraftKittingProcessRecipeGenerateRequest.variant_generation_mode:type_name -> process.v1.VariantGenerationMode
+	11, // 4: process.v1.DraftKittingProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	0,  // 5: process.v1.DraftKittingProcessRecipeGenerateRequest.bom_mode:type_name -> process.v1.KittingBomMode
+	7,  // 6: process.v1.DraftKittingProcessRecipeGenerateRequest.routing_overrides:type_name -> process.v1.KittingItemRoutingOverride
+	1,  // 7: process.v1.DraftKittingProcessRecipeGenerateRequest.item_order:type_name -> process.v1.KittingItemOrder
+	2,  // 8: process.v1.DraftKittingProcessRecipeGenerateRequest.item_validation_mode:type_name -> process.v1.KittingItemValidationMode
+	3,  // 9: process.v1.DraftKittingProcessRecipeGenerateRequest.unresolved_item_policy:type_name -> process.v1.UnresolvedKittingItemPolicy
+	12, // 10: process.v1.DraftKittingProcessRecipeGenerateRequest.excluded_part_types:type_name -> product.v1.PartType
+	5,  // 11: process.v1.DraftKittingProcessRecipeGenerateRequest.aggregation_mode:type_name -> process.v1.KittingAggregationMode
+	6,  // 12: process.v1.DraftKittingProcessRecipeGenerateRequest.task_granularity:type_name -> process.v1.KittingTaskGranularity
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_kitting_generation_proto_init() }
@@ -863,6 +884,7 @@ func file_process_v1_kitting_generation_proto_init() {
 	if File_process_v1_kitting_generation_proto != nil {
 		return
 	}
+	file_process_v1_generation_requests_proto_init()
 	file_process_v1_task_definition_proto_init()
 	file_process_v1_kitting_generation_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}

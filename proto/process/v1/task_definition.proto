@@ -54,21 +54,21 @@ enum TaskAssignmentPreference {
 
 message ProductTarget {
   string node_id = 1; // Assembly node occurrence the task acts on.
-  string part_definition_id = 2; // Optional denormalized helper.
+  string part_definition_id = 2 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true]; // Optional denormalized helper.
   geometry.v1.LocalTarget local_target = 3; // Pose/anchor relative to the chosen product reference.
 }
 
 message ContainerTarget {
-  string container_definition_id = 1; // Generic container type, e.g. pallet, tray, jig, fixture, bin.
+  string container_definition_id = 1 [(buf.validate.field).string.(validation.v1.container_definition_id_component) = true]; // Generic container type, e.g. pallet, tray, jig, fixture, bin.
   string slot_id = 2; // Optional slot definition within that container definition.
-  resources.v1.ContainerSlotType slot_type = 3; // Semantic slot kind if known.
+  resources.v1.ContainerSlotType slot_type = 3 [(buf.validate.field).enum.defined_only = true]; // Semantic slot kind if known.
 }
 
 // Generic authoring-time resource references.
 message ResourceTarget {
-  string asset_definition_id = 1; // Camera, feeder, HMI, sensor, conveyor, etc.
-  string robot_definition_id = 2; // Robot type required or referenced by the task.
-  string container_definition_id = 3; // Optional generic container used outside explicit workpiece targeting.
+  string asset_definition_id = 1 [(buf.validate.field).string.(validation.v1.asset_definition_id_component) = true]; // Camera, feeder, HMI, sensor, conveyor, etc.
+  string robot_definition_id = 2 [(buf.validate.field).string.(validation.v1.robot_definition_id_component) = true]; // Robot type required or referenced by the task.
+  string container_definition_id = 3 [(buf.validate.field).string.(validation.v1.container_definition_id_component) = true]; // Optional generic container used outside explicit workpiece targeting.
 }
 
 // TaskTarget captures the static authoring-time target of a task.
@@ -118,8 +118,8 @@ message ValidationRequirement {
   bool require_tool_feedback = 1;
   bool require_vision_check = 2;
   bool allow_manual_confirmation = 3;
-  capability.v1.SkillLevel manual_confirmation_min_level = 4;
-  resources.v1.ValidationMode mode = 5;
+  capability.v1.SkillLevel manual_confirmation_min_level = 4 [(buf.validate.field).enum.defined_only = true];
+  resources.v1.ValidationMode mode = 5 [(buf.validate.field).enum.defined_only = true];
   repeated common.v1.KeyValueConstraint constraints = 6;
 }
 

@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from process.v1 import generation_requests_pb2 as process_dot_v1_dot_generation__requests__pb2
 from process.v1 import task_definition_pb2 as process_dot_v1_dot_task__definition__pb2
 from product.v1 import part_definition_pb2 as product_dot_v1_dot_part__definition__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 from variance.v1 import variant_configuration_pb2 as variance_dot_v1_dot_variant__configuration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#process/v1/kitting_generation.proto\x12\nprocess.v1\x1a\x1b\x62uf/validate/validate.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\'variance/v1/variant_configuration.proto\"\xce\x02\n\x1aKittingItemRoutingOverride\x12(\n\x10\x61ssembly_node_id\x18\x01 \x01(\tR\x0e\x61ssemblyNodeId\x12,\n\x12part_definition_id\x18\x02 \x01(\tR\x10partDefinitionId\x12\x35\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x1d.process.v1.KittingItemActionR\x06\x61\x63tion\x12\x33\n\x06source\x18\x04 \x01(\x0b\x32\x1b.process.v1.ContainerTargetR\x06source\x12=\n\x0b\x64\x65stination\x18\x05 \x01(\x0b\x32\x1b.process.v1.ContainerTargetR\x0b\x64\x65stination:-\xbaH*\"(\n\x10\x61ssembly_node_id\n\x12part_definition_id\x10\x01\"\xcf\n\n(DraftKittingProcessRecipeGenerateRequest\x12@\n\x15product_definition_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xeb\x30\x01\xc8\x01\x01R\x13productDefinitionId\x12&\n\trecipe_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x08recipeId\x12\x1f\n\x0brecipe_name\x18\x03 \x01(\tR\nrecipeName\x12\x1f\n\x0brecipe_icon\x18\x04 \x01(\tR\nrecipeIcon\x12-\n\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n\x15variant_configuration\x18\x06 \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12 \n\x0croot_node_id\x18\x07 \x01(\tR\nrootNodeId\x12\x34\n\x16include_optional_nodes\x18\x08 \x01(\x08R\x14includeOptionalNodes\x12\x35\n\x08\x62om_mode\x18\t \x01(\x0e\x32\x1a.process.v1.KittingBomModeR\x07\x62omMode\x12?\n\x15product_units_per_kit\x18\n \x01(\rB\x07\xbaH\x04*\x02 \x00H\x00R\x12productUnitsPerKit\x88\x01\x01\x12\x45\n\x1fsource_container_definition_ids\x18\x0b \x03(\tR\x1csourceContainerDefinitionIds\x12J\n\"target_kit_container_definition_id\x18\x0c \x01(\tR\x1etargetKitContainerDefinitionId\x12S\n\x11routing_overrides\x18\r \x03(\x0b\x32&.process.v1.KittingItemRoutingOverrideR\x10routingOverrides\x12;\n\nitem_order\x18\x0e \x01(\x0e\x32\x1c.process.v1.KittingItemOrderR\titemOrder\x12W\n\x14item_validation_mode\x18\x0f \x01(\x0e\x32%.process.v1.KittingItemValidationModeR\x12itemValidationMode\x12\x45\n\x1fgenerate_final_kit_verification\x18\x10 \x01(\x08R\x1cgenerateFinalKitVerification\x12]\n\x16unresolved_item_policy\x18\x11 \x01(\x0e\x32\'.process.v1.UnresolvedKittingItemPolicyR\x14unresolvedItemPolicy\x12\x44\n\x13\x65xcluded_part_types\x18\x12 \x03(\x0e\x32\x14.product.v1.PartTypeR\x11\x65xcludedPartTypes\x12M\n\x10\x61ggregation_mode\x18\x13 \x01(\x0e\x32\".process.v1.KittingAggregationModeR\x0f\x61ggregationMode\x12M\n\x10task_granularity\x18\x14 \x01(\x0e\x32\".process.v1.KittingTaskGranularityR\x0ftaskGranularityB\x18\n\x16_product_units_per_kit*\x80\x01\n\x0eKittingBomMode\x12 \n\x1cKITTING_BOM_MODE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bKITTING_BOM_MODE_LEAF_PARTS\x10\x01\x12+\n\'KITTING_BOM_MODE_SUBASSEMBLIES_AS_ITEMS\x10\x02*\xae\x01\n\x10KittingItemOrder\x12\"\n\x1eKITTING_ITEM_ORDER_UNSPECIFIED\x10\x00\x12 \n\x1cKITTING_ITEM_ORDER_ANY_ORDER\x10\x01\x12\'\n#KITTING_ITEM_ORDER_PRODUCT_SEQUENCE\x10\x02\x12+\n\'KITTING_ITEM_ORDER_TARGET_SLOT_SEQUENCE\x10\x03*\xe9\x01\n\x19KittingItemValidationMode\x12,\n(KITTING_ITEM_VALIDATION_MODE_UNSPECIFIED\x10\x00\x12%\n!KITTING_ITEM_VALIDATION_MODE_NONE\x10\x01\x12\'\n#KITTING_ITEM_VALIDATION_MODE_MANUAL\x10\x02\x12%\n!KITTING_ITEM_VALIDATION_MODE_SCAN\x10\x03\x12\'\n#KITTING_ITEM_VALIDATION_MODE_VISION\x10\x04*\xc8\x01\n\x1bUnresolvedKittingItemPolicy\x12.\n*UNRESOLVED_KITTING_ITEM_POLICY_UNSPECIFIED\x10\x00\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_WARN\x10\x01\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_FAIL\x10\x02\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_SKIP\x10\x03*z\n\x11KittingItemAction\x12#\n\x1fKITTING_ITEM_ACTION_UNSPECIFIED\x10\x00\x12\x1f\n\x1bKITTING_ITEM_ACTION_INCLUDE\x10\x01\x12\x1f\n\x1bKITTING_ITEM_ACTION_EXCLUDE\x10\x02*\x9f\x01\n\x16KittingAggregationMode\x12(\n$KITTING_AGGREGATION_MODE_UNSPECIFIED\x10\x00\x12+\n\'KITTING_AGGREGATION_MODE_PER_OCCURRENCE\x10\x01\x12.\n*KITTING_AGGREGATION_MODE_BY_PART_AND_ROUTE\x10\x02*\x9d\x01\n\x16KittingTaskGranularity\x12(\n$KITTING_TASK_GRANULARITY_UNSPECIFIED\x10\x00\x12,\n(KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER\x10\x01\x12+\n\'KITTING_TASK_GRANULARITY_PICK_AND_PLACE\x10\x02\x42\xb5\x01\n\x0e\x63om.process.v1B\x16KittingGenerationProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#process/v1/kitting_generation.proto\x12\nprocess.v1\x1a\x1b\x62uf/validate/validate.proto\x1a$process/v1/generation_requests.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\'variance/v1/variant_configuration.proto\"\xe3\x02\n\x1aKittingItemRoutingOverride\x12(\n\x10\x61ssembly_node_id\x18\x01 \x01(\tR\x0e\x61ssemblyNodeId\x12\x37\n\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12?\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x1d.process.v1.KittingItemActionB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06\x61\x63tion\x12\x33\n\x06source\x18\x04 \x01(\x0b\x32\x1b.process.v1.ContainerTargetR\x06source\x12=\n\x0b\x64\x65stination\x18\x05 \x01(\x0b\x32\x1b.process.v1.ContainerTargetR\x0b\x64\x65stination:-\xbaH*\"(\n\x10\x61ssembly_node_id\n\x12part_definition_id\x10\x01\"\x9a\x0c\n(DraftKittingProcessRecipeGenerateRequest\x12@\n\x15product_definition_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xeb\x30\x01\xc8\x01\x01R\x13productDefinitionId\x12&\n\trecipe_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\x08recipeId\x12\x1f\n\x0brecipe_name\x18\x03 \x01(\tR\nrecipeName\x12\x1f\n\x0brecipe_icon\x18\x04 \x01(\tR\nrecipeIcon\x12-\n\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12\x63\n\x17variant_generation_mode\x18\x15 \x01(\x0e\x32!.process.v1.VariantGenerationModeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x15variantGenerationMode\x12V\n\x15variant_configuration\x18\x06 \x01(\x0b\x32!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12 \n\x0croot_node_id\x18\x07 \x01(\tR\nrootNodeId\x12\x34\n\x16include_optional_nodes\x18\x08 \x01(\x08R\x14includeOptionalNodes\x12?\n\x08\x62om_mode\x18\t \x01(\x0e\x32\x1a.process.v1.KittingBomModeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x07\x62omMode\x12?\n\x15product_units_per_kit\x18\n \x01(\rB\x07\xbaH\x04*\x02 \x00H\x00R\x12productUnitsPerKit\x88\x01\x01\x12U\n\x1fsource_container_definition_ids\x18\x0b \x03(\tB\x0e\xbaH\x0b\x92\x01\x08\"\x06r\x04\xc8\xf2\x04\x01R\x1csourceContainerDefinitionIds\x12U\n\"target_kit_container_definition_id\x18\x0c \x01(\tB\t\xbaH\x06r\x04\xc8\xf2\x04\x01R\x1etargetKitContainerDefinitionId\x12S\n\x11routing_overrides\x18\r \x03(\x0b\x32&.process.v1.KittingItemRoutingOverrideR\x10routingOverrides\x12\x45\n\nitem_order\x18\x0e \x01(\x0e\x32\x1c.process.v1.KittingItemOrderB\x08\xbaH\x05\x82\x01\x02\x10\x01R\titemOrder\x12\x61\n\x14item_validation_mode\x18\x0f \x01(\x0e\x32%.process.v1.KittingItemValidationModeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x12itemValidationMode\x12\x45\n\x1fgenerate_final_kit_verification\x18\x10 \x01(\x08R\x1cgenerateFinalKitVerification\x12g\n\x16unresolved_item_policy\x18\x11 \x01(\x0e\x32\'.process.v1.UnresolvedKittingItemPolicyB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x14unresolvedItemPolicy\x12S\n\x13\x65xcluded_part_types\x18\x12 \x03(\x0e\x32\x14.product.v1.PartTypeB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\x11\x65xcludedPartTypes\x12W\n\x10\x61ggregation_mode\x18\x13 \x01(\x0e\x32\".process.v1.KittingAggregationModeB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x0f\x61ggregationMode\x12W\n\x10task_granularity\x18\x14 \x01(\x0e\x32\".process.v1.KittingTaskGranularityB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x0ftaskGranularityB\x18\n\x16_product_units_per_kit*\x80\x01\n\x0eKittingBomMode\x12 \n\x1cKITTING_BOM_MODE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bKITTING_BOM_MODE_LEAF_PARTS\x10\x01\x12+\n\'KITTING_BOM_MODE_SUBASSEMBLIES_AS_ITEMS\x10\x02*\xae\x01\n\x10KittingItemOrder\x12\"\n\x1eKITTING_ITEM_ORDER_UNSPECIFIED\x10\x00\x12 \n\x1cKITTING_ITEM_ORDER_ANY_ORDER\x10\x01\x12\'\n#KITTING_ITEM_ORDER_PRODUCT_SEQUENCE\x10\x02\x12+\n\'KITTING_ITEM_ORDER_TARGET_SLOT_SEQUENCE\x10\x03*\xe9\x01\n\x19KittingItemValidationMode\x12,\n(KITTING_ITEM_VALIDATION_MODE_UNSPECIFIED\x10\x00\x12%\n!KITTING_ITEM_VALIDATION_MODE_NONE\x10\x01\x12\'\n#KITTING_ITEM_VALIDATION_MODE_MANUAL\x10\x02\x12%\n!KITTING_ITEM_VALIDATION_MODE_SCAN\x10\x03\x12\'\n#KITTING_ITEM_VALIDATION_MODE_VISION\x10\x04*\xc8\x01\n\x1bUnresolvedKittingItemPolicy\x12.\n*UNRESOLVED_KITTING_ITEM_POLICY_UNSPECIFIED\x10\x00\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_WARN\x10\x01\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_FAIL\x10\x02\x12\'\n#UNRESOLVED_KITTING_ITEM_POLICY_SKIP\x10\x03*z\n\x11KittingItemAction\x12#\n\x1fKITTING_ITEM_ACTION_UNSPECIFIED\x10\x00\x12\x1f\n\x1bKITTING_ITEM_ACTION_INCLUDE\x10\x01\x12\x1f\n\x1bKITTING_ITEM_ACTION_EXCLUDE\x10\x02*\x9f\x01\n\x16KittingAggregationMode\x12(\n$KITTING_AGGREGATION_MODE_UNSPECIFIED\x10\x00\x12+\n\'KITTING_AGGREGATION_MODE_PER_OCCURRENCE\x10\x01\x12.\n*KITTING_AGGREGATION_MODE_BY_PART_AND_ROUTE\x10\x02*\x9d\x01\n\x16KittingTaskGranularity\x12(\n$KITTING_TASK_GRANULARITY_UNSPECIFIED\x10\x00\x12,\n(KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER\x10\x01\x12+\n\'KITTING_TASK_GRANULARITY_PICK_AND_PLACE\x10\x02\x42\xb5\x01\n\x0e\x63om.process.v1B\x16KittingGenerationProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\nProcess\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\x0bProcess::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,30 +38,54 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'process.v1.kitting_generati
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.process.v1B\026KittingGenerationProtoP\001Z9github.com/cobotar/protocol/messages/process/v1;processv1\242\002\003PXX\252\002\023Messages.Process.V1\312\002\nProcess\\V1\342\002\026Process\\V1\\GPBMetadata\352\002\013Process::V1'
+  _globals['_KITTINGITEMROUTINGOVERRIDE'].fields_by_name['part_definition_id']._loaded_options = None
+  _globals['_KITTINGITEMROUTINGOVERRIDE'].fields_by_name['part_definition_id']._serialized_options = b'\272H\006r\004\310\361\004\001'
+  _globals['_KITTINGITEMROUTINGOVERRIDE'].fields_by_name['action']._loaded_options = None
+  _globals['_KITTINGITEMROUTINGOVERRIDE'].fields_by_name['action']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_KITTINGITEMROUTINGOVERRIDE']._loaded_options = None
   _globals['_KITTINGITEMROUTINGOVERRIDE']._serialized_options = b'\272H*\"(\n\020assembly_node_id\n\022part_definition_id\020\001'
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_definition_id']._loaded_options = None
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_definition_id']._serialized_options = b'\272H\tr\004\340\3530\001\310\001\001'
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['recipe_id']._loaded_options = None
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['recipe_id']._serialized_options = b'\272H\006r\004\240\362\004\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['variant_generation_mode']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['variant_generation_mode']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['bom_mode']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['bom_mode']._serialized_options = b'\272H\005\202\001\002\020\001'
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_units_per_kit']._loaded_options = None
   _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['product_units_per_kit']._serialized_options = b'\272H\004*\002 \000'
-  _globals['_KITTINGBOMMODE']._serialized_start=1934
-  _globals['_KITTINGBOMMODE']._serialized_end=2062
-  _globals['_KITTINGITEMORDER']._serialized_start=2065
-  _globals['_KITTINGITEMORDER']._serialized_end=2239
-  _globals['_KITTINGITEMVALIDATIONMODE']._serialized_start=2242
-  _globals['_KITTINGITEMVALIDATIONMODE']._serialized_end=2475
-  _globals['_UNRESOLVEDKITTINGITEMPOLICY']._serialized_start=2478
-  _globals['_UNRESOLVEDKITTINGITEMPOLICY']._serialized_end=2678
-  _globals['_KITTINGITEMACTION']._serialized_start=2680
-  _globals['_KITTINGITEMACTION']._serialized_end=2802
-  _globals['_KITTINGAGGREGATIONMODE']._serialized_start=2805
-  _globals['_KITTINGAGGREGATIONMODE']._serialized_end=2964
-  _globals['_KITTINGTASKGRANULARITY']._serialized_start=2967
-  _globals['_KITTINGTASKGRANULARITY']._serialized_end=3124
-  _globals['_KITTINGITEMROUTINGOVERRIDE']._serialized_start=235
-  _globals['_KITTINGITEMROUTINGOVERRIDE']._serialized_end=569
-  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST']._serialized_start=572
-  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST']._serialized_end=1931
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['source_container_definition_ids']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['source_container_definition_ids']._serialized_options = b'\272H\013\222\001\010\"\006r\004\310\362\004\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['target_kit_container_definition_id']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['target_kit_container_definition_id']._serialized_options = b'\272H\006r\004\310\362\004\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['item_order']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['item_order']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['item_validation_mode']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['item_validation_mode']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['unresolved_item_policy']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['unresolved_item_policy']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['excluded_part_types']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['excluded_part_types']._serialized_options = b'\272H\n\222\001\007\"\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['aggregation_mode']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['aggregation_mode']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['task_granularity']._loaded_options = None
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST'].fields_by_name['task_granularity']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_KITTINGBOMMODE']._serialized_start=2196
+  _globals['_KITTINGBOMMODE']._serialized_end=2324
+  _globals['_KITTINGITEMORDER']._serialized_start=2327
+  _globals['_KITTINGITEMORDER']._serialized_end=2501
+  _globals['_KITTINGITEMVALIDATIONMODE']._serialized_start=2504
+  _globals['_KITTINGITEMVALIDATIONMODE']._serialized_end=2737
+  _globals['_UNRESOLVEDKITTINGITEMPOLICY']._serialized_start=2740
+  _globals['_UNRESOLVEDKITTINGITEMPOLICY']._serialized_end=2940
+  _globals['_KITTINGITEMACTION']._serialized_start=2942
+  _globals['_KITTINGITEMACTION']._serialized_end=3064
+  _globals['_KITTINGAGGREGATIONMODE']._serialized_start=3067
+  _globals['_KITTINGAGGREGATIONMODE']._serialized_end=3226
+  _globals['_KITTINGTASKGRANULARITY']._serialized_start=3229
+  _globals['_KITTINGTASKGRANULARITY']._serialized_end=3386
+  _globals['_KITTINGITEMROUTINGOVERRIDE']._serialized_start=273
+  _globals['_KITTINGITEMROUTINGOVERRIDE']._serialized_end=628
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST']._serialized_start=631
+  _globals['_DRAFTKITTINGPROCESSRECIPEGENERATEREQUEST']._serialized_end=2193
 # @@protoc_insertion_point(module_scope)

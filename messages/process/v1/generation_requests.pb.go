@@ -24,6 +24,58 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type VariantGenerationMode int32
+
+const (
+	VariantGenerationMode_VARIANT_GENERATION_MODE_UNSPECIFIED VariantGenerationMode = 0
+	// Generate one recipe containing every potentially applicable node.
+	// Variant-dependent sequences and tasks retain their applicability rules.
+	VariantGenerationMode_VARIANT_GENERATION_MODE_ALL_VARIANTS VariantGenerationMode = 1
+	// Generate a recipe specialized for one concrete variant configuration.
+	VariantGenerationMode_VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION VariantGenerationMode = 2
+)
+
+// Enum value maps for VariantGenerationMode.
+var (
+	VariantGenerationMode_name = map[int32]string{
+		0: "VARIANT_GENERATION_MODE_UNSPECIFIED",
+		1: "VARIANT_GENERATION_MODE_ALL_VARIANTS",
+		2: "VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION",
+	}
+	VariantGenerationMode_value = map[string]int32{
+		"VARIANT_GENERATION_MODE_UNSPECIFIED":            0,
+		"VARIANT_GENERATION_MODE_ALL_VARIANTS":           1,
+		"VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION": 2,
+	}
+)
+
+func (x VariantGenerationMode) Enum() *VariantGenerationMode {
+	p := new(VariantGenerationMode)
+	*p = x
+	return p
+}
+
+func (x VariantGenerationMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VariantGenerationMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_process_v1_generation_requests_proto_enumTypes[0].Descriptor()
+}
+
+func (VariantGenerationMode) Type() protoreflect.EnumType {
+	return &file_process_v1_generation_requests_proto_enumTypes[0]
+}
+
+func (x VariantGenerationMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VariantGenerationMode.Descriptor instead.
+func (VariantGenerationMode) EnumDescriptor() ([]byte, []int) {
+	return file_process_v1_generation_requests_proto_rawDescGZIP(), []int{0}
+}
+
 // DraftProcessRecipeGenerateRequest asks the backend to generate a draft
 // ProcessRecipe from a ProductDefinition plus generation options.
 //
@@ -40,9 +92,10 @@ type DraftProcessRecipeGenerateRequest struct {
 	// Optional icon for the generated recipe.
 	RecipeIcon string `protobuf:"bytes,4,opt,name=recipe_icon,json=recipeIcon,proto3" json:"recipe_icon,omitempty"`
 	// Optional human-readable description for the generated recipe.
-	RecipeDescription string `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
-	// Selected product variants used to filter applicability and annotate the
-	// generated recipe applicability.
+	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
+	VariantGenerationMode VariantGenerationMode `protobuf:"varint,19,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+	// At most one selection is allowed per axis.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// If true, the generator may insert ALIGN tasks before grouped fastener work
 	// when that improves the generated task flow.
@@ -145,6 +198,13 @@ func (x *DraftProcessRecipeGenerateRequest) GetRecipeDescription() string {
 		return x.RecipeDescription
 	}
 	return ""
+}
+
+func (x *DraftProcessRecipeGenerateRequest) GetVariantGenerationMode() VariantGenerationMode {
+	if x != nil {
+		return x.VariantGenerationMode
+	}
+	return VariantGenerationMode_VARIANT_GENERATION_MODE_UNSPECIFIED
 }
 
 func (x *DraftProcessRecipeGenerateRequest) GetVariantConfiguration() *v1.VariantConfiguration {
@@ -255,9 +315,10 @@ type DraftDisassemblyProcessRecipeGenerateRequest struct {
 	// Optional icon for the generated recipe.
 	RecipeIcon string `protobuf:"bytes,4,opt,name=recipe_icon,json=recipeIcon,proto3" json:"recipe_icon,omitempty"`
 	// Optional human-readable description for the generated recipe.
-	RecipeDescription string `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
-	// Selected product variants used to filter applicability and annotate the
-	// generated recipe applicability.
+	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
+	VariantGenerationMode VariantGenerationMode `protobuf:"varint,19,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+	// At most one selection is allowed per axis.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// If true, the generator may insert HOLD tasks before grouped UNFASTEN work
 	// when that improves stability and task flow during disassembly.
@@ -370,6 +431,13 @@ func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetRecipeDescription() st
 		return x.RecipeDescription
 	}
 	return ""
+}
+
+func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetVariantGenerationMode() VariantGenerationMode {
+	if x != nil {
+		return x.VariantGenerationMode
+	}
+	return VariantGenerationMode_VARIANT_GENERATION_MODE_UNSPECIFIED
 }
 
 func (x *DraftDisassemblyProcessRecipeGenerateRequest) GetVariantConfiguration() *v1.VariantConfiguration {
@@ -599,7 +667,7 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xeb\b\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xd0\t\n" +
 	"!DraftProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -607,7 +675,8 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"recipeName\x12\x1f\n" +
 	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
 	"recipeIcon\x12-\n" +
-	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n" +
+	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12c\n" +
+	"\x17variant_generation_mode\x18\x13 \x01(\x0e2!.process.v1.VariantGenerationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x15variantGenerationMode\x12V\n" +
 	"\x15variant_configuration\x18\x06 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12F\n" +
 	" insert_align_before_fasten_group\x18\a \x01(\bR\x1cinsertAlignBeforeFastenGroup\x12:\n" +
 	"\x19group_fasteners_threshold\x18\b \x01(\x05R\x17groupFastenersThreshold\x12C\n" +
@@ -622,7 +691,7 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"-assemble_subassemblies_as_units_when_possible\x18\x0f \x01(\bR(assembleSubassembliesAsUnitsWhenPossible\x124\n" +
 	"\x16generate_inspect_tasks\x18\x10 \x01(\bR\x14generateInspectTasks\x12U\n" +
 	"\x1fsource_container_definition_ids\x18\x11 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1csourceContainerDefinitionIds\x12U\n" +
-	"\x1ftarget_container_definition_ids\x18\x12 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds\"\xd0\b\n" +
+	"\x1ftarget_container_definition_ids\x18\x12 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds\"\xb5\t\n" +
 	",DraftDisassemblyProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -630,7 +699,8 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"recipeName\x12\x1f\n" +
 	"\vrecipe_icon\x18\x04 \x01(\tR\n" +
 	"recipeIcon\x12-\n" +
-	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12V\n" +
+	"\x12recipe_description\x18\x05 \x01(\tR\x11recipeDescription\x12c\n" +
+	"\x17variant_generation_mode\x18\x13 \x01(\x0e2!.process.v1.VariantGenerationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x15variantGenerationMode\x12V\n" +
 	"\x15variant_configuration\x18\x06 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12H\n" +
 	"!insert_hold_before_unfasten_group\x18\a \x01(\bR\x1dinsertHoldBeforeUnfastenGroup\x12:\n" +
 	"\x19group_fasteners_threshold\x18\b \x01(\x05R\x17groupFastenersThreshold\x12C\n" +
@@ -654,7 +724,11 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\x06recipe\x18\x01 \x01(\v2\x19.process.v1.ProcessRecipeB\x06\xbaH\x03\xc8\x01\x01R\x06recipe\x12<\n" +
 	"\tsequences\x18\x02 \x03(\v2\x1e.process.v1.SequenceDefinitionR\tsequences\x120\n" +
 	"\x05tasks\x18\x03 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05tasks\x12C\n" +
-	"\x06issues\x18\x04 \x03(\v2+.process.v1.DraftProcessRecipeGenerateIssueR\x06issuesB\xb6\x01\n" +
+	"\x06issues\x18\x04 \x03(\v2+.process.v1.DraftProcessRecipeGenerateIssueR\x06issues*\x9e\x01\n" +
+	"\x15VariantGenerationMode\x12'\n" +
+	"#VARIANT_GENERATION_MODE_UNSPECIFIED\x10\x00\x12(\n" +
+	"$VARIANT_GENERATION_MODE_ALL_VARIANTS\x10\x01\x122\n" +
+	".VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION\x10\x02B\xb6\x01\n" +
 	"\x0ecom.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
@@ -670,29 +744,33 @@ func file_process_v1_generation_requests_proto_rawDescGZIP() []byte {
 	return file_process_v1_generation_requests_proto_rawDescData
 }
 
+var file_process_v1_generation_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_process_v1_generation_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_process_v1_generation_requests_proto_goTypes = []any{
-	(*DraftProcessRecipeGenerateRequest)(nil),            // 0: process.v1.DraftProcessRecipeGenerateRequest
-	(*DraftDisassemblyProcessRecipeGenerateRequest)(nil), // 1: process.v1.DraftDisassemblyProcessRecipeGenerateRequest
-	(*DraftProcessRecipeGenerateIssue)(nil),              // 2: process.v1.DraftProcessRecipeGenerateIssue
-	(*DraftProcessRecipeGenerateResult)(nil),             // 3: process.v1.DraftProcessRecipeGenerateResult
-	(*v1.VariantConfiguration)(nil),                      // 4: variance.v1.VariantConfiguration
-	(*ProcessRecipe)(nil),                                // 5: process.v1.ProcessRecipe
-	(*SequenceDefinition)(nil),                           // 6: process.v1.SequenceDefinition
-	(*TaskDefinition)(nil),                               // 7: process.v1.TaskDefinition
+	(VariantGenerationMode)(0),                           // 0: process.v1.VariantGenerationMode
+	(*DraftProcessRecipeGenerateRequest)(nil),            // 1: process.v1.DraftProcessRecipeGenerateRequest
+	(*DraftDisassemblyProcessRecipeGenerateRequest)(nil), // 2: process.v1.DraftDisassemblyProcessRecipeGenerateRequest
+	(*DraftProcessRecipeGenerateIssue)(nil),              // 3: process.v1.DraftProcessRecipeGenerateIssue
+	(*DraftProcessRecipeGenerateResult)(nil),             // 4: process.v1.DraftProcessRecipeGenerateResult
+	(*v1.VariantConfiguration)(nil),                      // 5: variance.v1.VariantConfiguration
+	(*ProcessRecipe)(nil),                                // 6: process.v1.ProcessRecipe
+	(*SequenceDefinition)(nil),                           // 7: process.v1.SequenceDefinition
+	(*TaskDefinition)(nil),                               // 8: process.v1.TaskDefinition
 }
 var file_process_v1_generation_requests_proto_depIdxs = []int32{
-	4, // 0: process.v1.DraftProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	4, // 1: process.v1.DraftDisassemblyProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	5, // 2: process.v1.DraftProcessRecipeGenerateResult.recipe:type_name -> process.v1.ProcessRecipe
-	6, // 3: process.v1.DraftProcessRecipeGenerateResult.sequences:type_name -> process.v1.SequenceDefinition
-	7, // 4: process.v1.DraftProcessRecipeGenerateResult.tasks:type_name -> process.v1.TaskDefinition
-	2, // 5: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	0, // 0: process.v1.DraftProcessRecipeGenerateRequest.variant_generation_mode:type_name -> process.v1.VariantGenerationMode
+	5, // 1: process.v1.DraftProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	0, // 2: process.v1.DraftDisassemblyProcessRecipeGenerateRequest.variant_generation_mode:type_name -> process.v1.VariantGenerationMode
+	5, // 3: process.v1.DraftDisassemblyProcessRecipeGenerateRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	6, // 4: process.v1.DraftProcessRecipeGenerateResult.recipe:type_name -> process.v1.ProcessRecipe
+	7, // 5: process.v1.DraftProcessRecipeGenerateResult.sequences:type_name -> process.v1.SequenceDefinition
+	8, // 6: process.v1.DraftProcessRecipeGenerateResult.tasks:type_name -> process.v1.TaskDefinition
+	3, // 7: process.v1.DraftProcessRecipeGenerateResult.issues:type_name -> process.v1.DraftProcessRecipeGenerateIssue
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_generation_requests_proto_init() }
@@ -708,13 +786,14 @@ func file_process_v1_generation_requests_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_generation_requests_proto_rawDesc), len(file_process_v1_generation_requests_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_process_v1_generation_requests_proto_goTypes,
 		DependencyIndexes: file_process_v1_generation_requests_proto_depIdxs,
+		EnumInfos:         file_process_v1_generation_requests_proto_enumTypes,
 		MessageInfos:      file_process_v1_generation_requests_proto_msgTypes,
 	}.Build()
 	File_process_v1_generation_requests_proto = out.File

@@ -30,75 +30,83 @@ namespace Messages.Process.V1 {
             "ZWZpbml0aW9uLnByb3RvGiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5w",
             "cm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5w",
             "cm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9jb25maWd1cmF0aW9uLnByb3Rv",
-            "IusICiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJv",
+            "ItAJCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJv",
             "ZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQgy6SAlyBODrMAHIAQFSE3Byb2R1",
             "Y3REZWZpbml0aW9uSWQSKQoJcmVjaXBlX2lkGAIgASgJQgy6SAlyBKDyBAHI",
             "AQFSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1l",
             "Eh8KC3JlY2lwZV9pY29uGAQgASgJUgpyZWNpcGVJY29uEi0KEnJlY2lwZV9k",
-            "ZXNjcmlwdGlvbhgFIAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SVgoVdmFyaWFu",
-            "dF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENv",
-            "bmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1cmF0aW9uEkYKIGluc2VydF9h",
-            "bGlnbl9iZWZvcmVfZmFzdGVuX2dyb3VwGAcgASgIUhxpbnNlcnRBbGlnbkJl",
-            "Zm9yZUZhc3Rlbkdyb3VwEjoKGWdyb3VwX2Zhc3RlbmVyc190aHJlc2hvbGQY",
-            "CCABKAVSF2dyb3VwRmFzdGVuZXJzVGhyZXNob2xkEkMKHmdyb3VwX3JlcGVh",
-            "dGVkX3BhcnRzX3RocmVzaG9sZBgJIAEoBVIbZ3JvdXBSZXBlYXRlZFBhcnRz",
-            "VGhyZXNob2xkEjIKFWdlbmVyYXRlX3ZlcmlmeV90YXNrcxgKIAEoCFITZ2Vu",
-            "ZXJhdGVWZXJpZnlUYXNrcxJECh9wcmVmZXJfbW92ZV90YXNrc193aGVuX3Bv",
-            "c3NpYmxlGAsgASgIUhtwcmVmZXJNb3ZlVGFza3NXaGVuUG9zc2libGUSNAoW",
-            "aW5jbHVkZV9vcHRpb25hbF9ub2RlcxgMIAEoCFIUaW5jbHVkZU9wdGlvbmFs",
-            "Tm9kZXMSMAoUZ2VuZXJhdGVfYXBwbHlfdGFza3MYDSABKAhSEmdlbmVyYXRl",
-            "QXBwbHlUYXNrcxIgCgxyb290X25vZGVfaWQYDiABKAlSCnJvb3ROb2RlSWQS",
-            "XwotYXNzZW1ibGVfc3ViYXNzZW1ibGllc19hc191bml0c193aGVuX3Bvc3Np",
-            "YmxlGA8gASgIUihhc3NlbWJsZVN1YmFzc2VtYmxpZXNBc1VuaXRzV2hlblBv",
-            "c3NpYmxlEjQKFmdlbmVyYXRlX2luc3BlY3RfdGFza3MYECABKAhSFGdlbmVy",
-            "YXRlSW5zcGVjdFRhc2tzElUKH3NvdXJjZV9jb250YWluZXJfZGVmaW5pdGlv",
-            "bl9pZHMYESADKAlCDrpIC5IBCCIGcgTI8gQBUhxzb3VyY2VDb250YWluZXJE",
-            "ZWZpbml0aW9uSWRzElUKH3RhcmdldF9jb250YWluZXJfZGVmaW5pdGlvbl9p",
-            "ZHMYEiADKAlCDrpIC5IBCCIGcgTI8gQBUhx0YXJnZXRDb250YWluZXJEZWZp",
-            "bml0aW9uSWRzItAICixEcmFmdERpc2Fzc2VtYmx5UHJvY2Vzc1JlY2lwZUdl",
-            "bmVyYXRlUmVxdWVzdBJAChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlC",
-            "DLpICXIE4OswAcgBAVITcHJvZHVjdERlZmluaXRpb25JZBIpCglyZWNpcGVf",
-            "aWQYAiABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSHwoLcmVjaXBlX25h",
-            "bWUYAyABKAlSCnJlY2lwZU5hbWUSHwoLcmVjaXBlX2ljb24YBCABKAlSCnJl",
-            "Y2lwZUljb24SLQoScmVjaXBlX2Rlc2NyaXB0aW9uGAUgASgJUhFyZWNpcGVE",
-            "ZXNjcmlwdGlvbhJWChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YBiABKAsyIS52",
-            "YXJpYW5jZS52MS5WYXJpYW50Q29uZmlndXJhdGlvblIUdmFyaWFudENvbmZp",
-            "Z3VyYXRpb24SSAohaW5zZXJ0X2hvbGRfYmVmb3JlX3VuZmFzdGVuX2dyb3Vw",
-            "GAcgASgIUh1pbnNlcnRIb2xkQmVmb3JlVW5mYXN0ZW5Hcm91cBI6Chlncm91",
-            "cF9mYXN0ZW5lcnNfdGhyZXNob2xkGAggASgFUhdncm91cEZhc3RlbmVyc1Ro",
-            "cmVzaG9sZBJDCh5ncm91cF9yZXBlYXRlZF9wYXJ0c190aHJlc2hvbGQYCSAB",
-            "KAVSG2dyb3VwUmVwZWF0ZWRQYXJ0c1RocmVzaG9sZBIyChVnZW5lcmF0ZV92",
-            "ZXJpZnlfdGFza3MYCiABKAhSE2dlbmVyYXRlVmVyaWZ5VGFza3MSRAofcHJl",
-            "ZmVyX21vdmVfdGFza3Nfd2hlbl9wb3NzaWJsZRgLIAEoCFIbcHJlZmVyTW92",
-            "ZVRhc2tzV2hlblBvc3NpYmxlEjQKFmluY2x1ZGVfb3B0aW9uYWxfbm9kZXMY",
-            "DCABKAhSFGluY2x1ZGVPcHRpb25hbE5vZGVzEi4KE2dlbmVyYXRlX3dpcGVf",
-            "dGFza3MYDSABKAhSEWdlbmVyYXRlV2lwZVRhc2tzElUKH3RhcmdldF9jb250",
-            "YWluZXJfZGVmaW5pdGlvbl9pZHMYDiADKAlCDrpIC5IBCCIGcgTI8gQBUhx0",
-            "YXJnZXRDb250YWluZXJEZWZpbml0aW9uSWRzEiAKDHJvb3Rfbm9kZV9pZBgP",
-            "IAEoCVIKcm9vdE5vZGVJZBJPCiRwcmVzZXJ2ZV9zdWJhc3NlbWJsaWVzX3do",
-            "ZW5fcG9zc2libGUYECABKAhSIXByZXNlcnZlU3ViYXNzZW1ibGllc1doZW5Q",
-            "b3NzaWJsZRI/ChxyZXZlcnNlX2NoaWxkX3NlcXVlbmNlX29yZGVyGBEgASgI",
-            "UhlyZXZlcnNlQ2hpbGRTZXF1ZW5jZU9yZGVyEjQKFmdlbmVyYXRlX2luc3Bl",
-            "Y3RfdGFza3MYEiABKAhSFGdlbmVyYXRlSW5zcGVjdFRhc2tzIp0BCh9EcmFm",
-            "dFByb2Nlc3NSZWNpcGVHZW5lcmF0ZUlzc3VlEiAKB21lc3NhZ2UYASABKAlC",
-            "BrpIA8gBAVIHbWVzc2FnZRIfCgdub2RlX2lkGAIgASgJQga6SAPIAQFSBm5v",
-            "ZGVJZBI3ChJwYXJ0X2RlZmluaXRpb25faWQYAyABKAlCCbpIBnIEyPEEAVIQ",
-            "cGFydERlZmluaXRpb25JZCKSAgogRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJh",
-            "dGVSZXN1bHQSOQoGcmVjaXBlGAEgASgLMhkucHJvY2Vzcy52MS5Qcm9jZXNz",
-            "UmVjaXBlQga6SAPIAQFSBnJlY2lwZRI8CglzZXF1ZW5jZXMYAiADKAsyHi5w",
-            "cm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvblIJc2VxdWVuY2VzEjAKBXRh",
-            "c2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvblIFdGFza3MS",
-            "QwoGaXNzdWVzGAQgAygLMisucHJvY2Vzcy52MS5EcmFmdFByb2Nlc3NSZWNp",
-            "cGVHZW5lcmF0ZUlzc3VlUgZpc3N1ZXNCtgEKDmNvbS5wcm9jZXNzLnYxQhdH",
-            "ZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIv",
-            "cHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiq",
-            "AhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3Nc",
-            "VjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
+            "ZXNjcmlwdGlvbhgFIAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SYwoXdmFyaWFu",
+            "dF9nZW5lcmF0aW9uX21vZGUYEyABKA4yIS5wcm9jZXNzLnYxLlZhcmlhbnRH",
+            "ZW5lcmF0aW9uTW9kZUIIukgFggECEAFSFXZhcmlhbnRHZW5lcmF0aW9uTW9k",
+            "ZRJWChV2YXJpYW50X2NvbmZpZ3VyYXRpb24YBiABKAsyIS52YXJpYW5jZS52",
+            "MS5WYXJpYW50Q29uZmlndXJhdGlvblIUdmFyaWFudENvbmZpZ3VyYXRpb24S",
+            "RgogaW5zZXJ0X2FsaWduX2JlZm9yZV9mYXN0ZW5fZ3JvdXAYByABKAhSHGlu",
+            "c2VydEFsaWduQmVmb3JlRmFzdGVuR3JvdXASOgoZZ3JvdXBfZmFzdGVuZXJz",
+            "X3RocmVzaG9sZBgIIAEoBVIXZ3JvdXBGYXN0ZW5lcnNUaHJlc2hvbGQSQwoe",
+            "Z3JvdXBfcmVwZWF0ZWRfcGFydHNfdGhyZXNob2xkGAkgASgFUhtncm91cFJl",
+            "cGVhdGVkUGFydHNUaHJlc2hvbGQSMgoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tz",
+            "GAogASgIUhNnZW5lcmF0ZVZlcmlmeVRhc2tzEkQKH3ByZWZlcl9tb3ZlX3Rh",
+            "c2tzX3doZW5fcG9zc2libGUYCyABKAhSG3ByZWZlck1vdmVUYXNrc1doZW5Q",
+            "b3NzaWJsZRI0ChZpbmNsdWRlX29wdGlvbmFsX25vZGVzGAwgASgIUhRpbmNs",
+            "dWRlT3B0aW9uYWxOb2RlcxIwChRnZW5lcmF0ZV9hcHBseV90YXNrcxgNIAEo",
+            "CFISZ2VuZXJhdGVBcHBseVRhc2tzEiAKDHJvb3Rfbm9kZV9pZBgOIAEoCVIK",
+            "cm9vdE5vZGVJZBJfCi1hc3NlbWJsZV9zdWJhc3NlbWJsaWVzX2FzX3VuaXRz",
+            "X3doZW5fcG9zc2libGUYDyABKAhSKGFzc2VtYmxlU3ViYXNzZW1ibGllc0Fz",
+            "VW5pdHNXaGVuUG9zc2libGUSNAoWZ2VuZXJhdGVfaW5zcGVjdF90YXNrcxgQ",
+            "IAEoCFIUZ2VuZXJhdGVJbnNwZWN0VGFza3MSVQofc291cmNlX2NvbnRhaW5l",
+            "cl9kZWZpbml0aW9uX2lkcxgRIAMoCUIOukgLkgEIIgZyBMjyBAFSHHNvdXJj",
+            "ZUNvbnRhaW5lckRlZmluaXRpb25JZHMSVQofdGFyZ2V0X2NvbnRhaW5lcl9k",
+            "ZWZpbml0aW9uX2lkcxgSIAMoCUIOukgLkgEIIgZyBMjyBAFSHHRhcmdldENv",
+            "bnRhaW5lckRlZmluaXRpb25JZHMitQkKLERyYWZ0RGlzYXNzZW1ibHlQcm9j",
+            "ZXNzUmVjaXBlR2VuZXJhdGVSZXF1ZXN0EkAKFXByb2R1Y3RfZGVmaW5pdGlv",
+            "bl9pZBgBIAEoCUIMukgJcgTg6zAByAEBUhNwcm9kdWN0RGVmaW5pdGlvbklk",
+            "EikKCXJlY2lwZV9pZBgCIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIf",
+            "CgtyZWNpcGVfbmFtZRgDIAEoCVIKcmVjaXBlTmFtZRIfCgtyZWNpcGVfaWNv",
+            "bhgEIAEoCVIKcmVjaXBlSWNvbhItChJyZWNpcGVfZGVzY3JpcHRpb24YBSAB",
+            "KAlSEXJlY2lwZURlc2NyaXB0aW9uEmMKF3ZhcmlhbnRfZ2VuZXJhdGlvbl9t",
+            "b2RlGBMgASgOMiEucHJvY2Vzcy52MS5WYXJpYW50R2VuZXJhdGlvbk1vZGVC",
+            "CLpIBYIBAhABUhV2YXJpYW50R2VuZXJhdGlvbk1vZGUSVgoVdmFyaWFudF9j",
+            "b25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZp",
+            "Z3VyYXRpb25SFHZhcmlhbnRDb25maWd1cmF0aW9uEkgKIWluc2VydF9ob2xk",
+            "X2JlZm9yZV91bmZhc3Rlbl9ncm91cBgHIAEoCFIdaW5zZXJ0SG9sZEJlZm9y",
+            "ZVVuZmFzdGVuR3JvdXASOgoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgI",
+            "IAEoBVIXZ3JvdXBGYXN0ZW5lcnNUaHJlc2hvbGQSQwoeZ3JvdXBfcmVwZWF0",
+            "ZWRfcGFydHNfdGhyZXNob2xkGAkgASgFUhtncm91cFJlcGVhdGVkUGFydHNU",
+            "aHJlc2hvbGQSMgoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIUhNnZW5l",
+            "cmF0ZVZlcmlmeVRhc2tzEkQKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9z",
+            "c2libGUYCyABKAhSG3ByZWZlck1vdmVUYXNrc1doZW5Qb3NzaWJsZRI0ChZp",
+            "bmNsdWRlX29wdGlvbmFsX25vZGVzGAwgASgIUhRpbmNsdWRlT3B0aW9uYWxO",
+            "b2RlcxIuChNnZW5lcmF0ZV93aXBlX3Rhc2tzGA0gASgIUhFnZW5lcmF0ZVdp",
+            "cGVUYXNrcxJVCh90YXJnZXRfY29udGFpbmVyX2RlZmluaXRpb25faWRzGA4g",
+            "AygJQg66SAuSAQgiBnIEyPIEAVIcdGFyZ2V0Q29udGFpbmVyRGVmaW5pdGlv",
+            "bklkcxIgCgxyb290X25vZGVfaWQYDyABKAlSCnJvb3ROb2RlSWQSTwokcHJl",
+            "c2VydmVfc3ViYXNzZW1ibGllc193aGVuX3Bvc3NpYmxlGBAgASgIUiFwcmVz",
+            "ZXJ2ZVN1YmFzc2VtYmxpZXNXaGVuUG9zc2libGUSPwoccmV2ZXJzZV9jaGls",
+            "ZF9zZXF1ZW5jZV9vcmRlchgRIAEoCFIZcmV2ZXJzZUNoaWxkU2VxdWVuY2VP",
+            "cmRlchI0ChZnZW5lcmF0ZV9pbnNwZWN0X3Rhc2tzGBIgASgIUhRnZW5lcmF0",
+            "ZUluc3BlY3RUYXNrcyKdAQofRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJ",
+            "c3N1ZRIgCgdtZXNzYWdlGAEgASgJQga6SAPIAQFSB21lc3NhZ2USHwoHbm9k",
+            "ZV9pZBgCIAEoCUIGukgDyAEBUgZub2RlSWQSNwoScGFydF9kZWZpbml0aW9u",
+            "X2lkGAMgASgJQgm6SAZyBMjxBAFSEHBhcnREZWZpbml0aW9uSWQikgIKIERy",
+            "YWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVzdWx0EjkKBnJlY2lwZRgBIAEo",
+            "CzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBUgZyZWNpcGUS",
+            "PAoJc2VxdWVuY2VzGAIgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmlu",
+            "aXRpb25SCXNlcXVlbmNlcxIwCgV0YXNrcxgDIAMoCzIaLnByb2Nlc3MudjEu",
+            "VGFza0RlZmluaXRpb25SBXRhc2tzEkMKBmlzc3VlcxgEIAMoCzIrLnByb2Nl",
+            "c3MudjEuRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1ZVIGaXNzdWVz",
+            "Kp4BChVWYXJpYW50R2VuZXJhdGlvbk1vZGUSJwojVkFSSUFOVF9HRU5FUkFU",
+            "SU9OX01PREVfVU5TUEVDSUZJRUQQABIoCiRWQVJJQU5UX0dFTkVSQVRJT05f",
+            "TU9ERV9BTExfVkFSSUFOVFMQARIyCi5WQVJJQU5UX0dFTkVSQVRJT05fTU9E",
+            "RV9TRUxFQ1RFRF9DT05GSUdVUkFUSU9OEAJCtgEKDmNvbS5wcm9jZXNzLnYx",
+            "QhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90",
+            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQ",
+            "WFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nl",
+            "c3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateApplyTasks", "RootNodeId", "AssembleSubassembliesAsUnitsWhenPossible", "GenerateInspectTasks", "SourceContainerDefinitionIds", "TargetContainerDefinitionIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "InsertHoldBeforeUnfastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateWipeTasks", "TargetContainerDefinitionIds", "RootNodeId", "PreserveSubassembliesWhenPossible", "ReverseChildSequenceOrder", "GenerateInspectTasks" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.VariantGenerationMode), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantGenerationMode", "VariantConfiguration", "InsertAlignBeforeFastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateApplyTasks", "RootNodeId", "AssembleSubassembliesAsUnitsWhenPossible", "GenerateInspectTasks", "SourceContainerDefinitionIds", "TargetContainerDefinitionIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftDisassemblyProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantGenerationMode", "VariantConfiguration", "InsertHoldBeforeUnfastenGroup", "GroupFastenersThreshold", "GroupRepeatedPartsThreshold", "GenerateVerifyTasks", "PreferMoveTasksWhenPossible", "IncludeOptionalNodes", "GenerateWipeTasks", "TargetContainerDefinitionIds", "RootNodeId", "PreserveSubassembliesWhenPossible", "ReverseChildSequenceOrder", "GenerateInspectTasks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateIssue), global::Messages.Process.V1.DraftProcessRecipeGenerateIssue.Parser, new[]{ "Message", "NodeId", "PartDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftProcessRecipeGenerateResult), global::Messages.Process.V1.DraftProcessRecipeGenerateResult.Parser, new[]{ "Recipe", "Sequences", "Tasks", "Issues" }, null, null, null, null)
           }));
@@ -106,6 +114,22 @@ namespace Messages.Process.V1 {
     #endregion
 
   }
+  #region Enums
+  public enum VariantGenerationMode {
+    [pbr::OriginalName("VARIANT_GENERATION_MODE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Generate one recipe containing every potentially applicable node.
+    /// Variant-dependent sequences and tasks retain their applicability rules.
+    /// </summary>
+    [pbr::OriginalName("VARIANT_GENERATION_MODE_ALL_VARIANTS")] AllVariants = 1,
+    /// <summary>
+    /// Generate a recipe specialized for one concrete variant configuration.
+    /// </summary>
+    [pbr::OriginalName("VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION")] SelectedConfiguration = 2,
+  }
+
+  #endregion
+
   #region Messages
   /// <summary>
   /// DraftProcessRecipeGenerateRequest asks the backend to generate a draft
@@ -153,6 +177,7 @@ namespace Messages.Process.V1 {
       recipeName_ = other.recipeName_;
       recipeIcon_ = other.recipeIcon_;
       recipeDescription_ = other.recipeDescription_;
+      variantGenerationMode_ = other.variantGenerationMode_;
       variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       insertAlignBeforeFastenGroup_ = other.insertAlignBeforeFastenGroup_;
       groupFastenersThreshold_ = other.groupFastenersThreshold_;
@@ -251,12 +276,24 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "variant_generation_mode" field.</summary>
+    public const int VariantGenerationModeFieldNumber = 19;
+    private global::Messages.Process.V1.VariantGenerationMode variantGenerationMode_ = global::Messages.Process.V1.VariantGenerationMode.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.VariantGenerationMode VariantGenerationMode {
+      get { return variantGenerationMode_; }
+      set {
+        variantGenerationMode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "variant_configuration" field.</summary>
     public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Selected product variants used to filter applicability and annotate the
-    /// generated recipe applicability.
+    /// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+    /// At most one selection is allowed per axis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -475,6 +512,7 @@ namespace Messages.Process.V1 {
       if (RecipeName != other.RecipeName) return false;
       if (RecipeIcon != other.RecipeIcon) return false;
       if (RecipeDescription != other.RecipeDescription) return false;
+      if (VariantGenerationMode != other.VariantGenerationMode) return false;
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
       if (InsertAlignBeforeFastenGroup != other.InsertAlignBeforeFastenGroup) return false;
       if (GroupFastenersThreshold != other.GroupFastenersThreshold) return false;
@@ -500,6 +538,7 @@ namespace Messages.Process.V1 {
       if (RecipeName.Length != 0) hash ^= RecipeName.GetHashCode();
       if (RecipeIcon.Length != 0) hash ^= RecipeIcon.GetHashCode();
       if (RecipeDescription.Length != 0) hash ^= RecipeDescription.GetHashCode();
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) hash ^= VariantGenerationMode.GetHashCode();
       if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
       if (InsertAlignBeforeFastenGroup != false) hash ^= InsertAlignBeforeFastenGroup.GetHashCode();
       if (GroupFastenersThreshold != 0) hash ^= GroupFastenersThreshold.GetHashCode();
@@ -597,6 +636,10 @@ namespace Messages.Process.V1 {
       }
       sourceContainerDefinitionIds_.WriteTo(output, _repeated_sourceContainerDefinitionIds_codec);
       targetContainerDefinitionIds_.WriteTo(output, _repeated_targetContainerDefinitionIds_codec);
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(152, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -673,6 +716,10 @@ namespace Messages.Process.V1 {
       }
       sourceContainerDefinitionIds_.WriteTo(ref output, _repeated_sourceContainerDefinitionIds_codec);
       targetContainerDefinitionIds_.WriteTo(ref output, _repeated_targetContainerDefinitionIds_codec);
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(152, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -697,6 +744,9 @@ namespace Messages.Process.V1 {
       }
       if (RecipeDescription.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeDescription);
+      }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) VariantGenerationMode);
       }
       if (variantConfiguration_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
@@ -759,6 +809,9 @@ namespace Messages.Process.V1 {
       }
       if (other.RecipeDescription.Length != 0) {
         RecipeDescription = other.RecipeDescription;
+      }
+      if (other.VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        VariantGenerationMode = other.VariantGenerationMode;
       }
       if (other.variantConfiguration_ != null) {
         if (variantConfiguration_ == null) {
@@ -892,6 +945,10 @@ namespace Messages.Process.V1 {
             targetContainerDefinitionIds_.AddEntriesFrom(input, _repeated_targetContainerDefinitionIds_codec);
             break;
           }
+          case 152: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -986,6 +1043,10 @@ namespace Messages.Process.V1 {
             targetContainerDefinitionIds_.AddEntriesFrom(ref input, _repeated_targetContainerDefinitionIds_codec);
             break;
           }
+          case 152: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
+            break;
+          }
         }
       }
     }
@@ -1040,6 +1101,7 @@ namespace Messages.Process.V1 {
       recipeName_ = other.recipeName_;
       recipeIcon_ = other.recipeIcon_;
       recipeDescription_ = other.recipeDescription_;
+      variantGenerationMode_ = other.variantGenerationMode_;
       variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       insertHoldBeforeUnfastenGroup_ = other.insertHoldBeforeUnfastenGroup_;
       groupFastenersThreshold_ = other.groupFastenersThreshold_;
@@ -1138,12 +1200,24 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "variant_generation_mode" field.</summary>
+    public const int VariantGenerationModeFieldNumber = 19;
+    private global::Messages.Process.V1.VariantGenerationMode variantGenerationMode_ = global::Messages.Process.V1.VariantGenerationMode.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.VariantGenerationMode VariantGenerationMode {
+      get { return variantGenerationMode_; }
+      set {
+        variantGenerationMode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "variant_configuration" field.</summary>
     public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Selected product variants used to filter applicability and annotate the
-    /// generated recipe applicability.
+    /// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+    /// At most one selection is allowed per axis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1372,6 +1446,7 @@ namespace Messages.Process.V1 {
       if (RecipeName != other.RecipeName) return false;
       if (RecipeIcon != other.RecipeIcon) return false;
       if (RecipeDescription != other.RecipeDescription) return false;
+      if (VariantGenerationMode != other.VariantGenerationMode) return false;
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
       if (InsertHoldBeforeUnfastenGroup != other.InsertHoldBeforeUnfastenGroup) return false;
       if (GroupFastenersThreshold != other.GroupFastenersThreshold) return false;
@@ -1397,6 +1472,7 @@ namespace Messages.Process.V1 {
       if (RecipeName.Length != 0) hash ^= RecipeName.GetHashCode();
       if (RecipeIcon.Length != 0) hash ^= RecipeIcon.GetHashCode();
       if (RecipeDescription.Length != 0) hash ^= RecipeDescription.GetHashCode();
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) hash ^= VariantGenerationMode.GetHashCode();
       if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
       if (InsertHoldBeforeUnfastenGroup != false) hash ^= InsertHoldBeforeUnfastenGroup.GetHashCode();
       if (GroupFastenersThreshold != 0) hash ^= GroupFastenersThreshold.GetHashCode();
@@ -1497,6 +1573,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(144, 1);
         output.WriteBool(GenerateInspectTasks);
       }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(152, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1576,6 +1656,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(144, 1);
         output.WriteBool(GenerateInspectTasks);
       }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(152, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1600,6 +1684,9 @@ namespace Messages.Process.V1 {
       }
       if (RecipeDescription.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeDescription);
+      }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) VariantGenerationMode);
       }
       if (variantConfiguration_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
@@ -1664,6 +1751,9 @@ namespace Messages.Process.V1 {
       }
       if (other.RecipeDescription.Length != 0) {
         RecipeDescription = other.RecipeDescription;
+      }
+      if (other.VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        VariantGenerationMode = other.VariantGenerationMode;
       }
       if (other.variantConfiguration_ != null) {
         if (variantConfiguration_ == null) {
@@ -1799,6 +1889,10 @@ namespace Messages.Process.V1 {
             GenerateInspectTasks = input.ReadBool();
             break;
           }
+          case 152: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -1891,6 +1985,10 @@ namespace Messages.Process.V1 {
           }
           case 144: {
             GenerateInspectTasks = input.ReadBool();
+            break;
+          }
+          case 152: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
             break;
           }
         }

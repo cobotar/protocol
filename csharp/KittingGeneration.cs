@@ -25,84 +25,90 @@ namespace Messages.Process.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNwcm9jZXNzL3YxL2tpdHRpbmdfZ2VuZXJhdGlvbi5wcm90bxIKcHJvY2Vz",
-            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiBwcm9jZXNzL3Yx",
-            "L3Rhc2tfZGVmaW5pdGlvbi5wcm90bxogcHJvZHVjdC92MS9wYXJ0X2RlZmlu",
-            "aXRpb24ucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
-            "cnVsZXMucHJvdG8aJ3ZhcmlhbmNlL3YxL3ZhcmlhbnRfY29uZmlndXJhdGlv",
-            "bi5wcm90byLOAgoaS2l0dGluZ0l0ZW1Sb3V0aW5nT3ZlcnJpZGUSKAoQYXNz",
-            "ZW1ibHlfbm9kZV9pZBgBIAEoCVIOYXNzZW1ibHlOb2RlSWQSLAoScGFydF9k",
-            "ZWZpbml0aW9uX2lkGAIgASgJUhBwYXJ0RGVmaW5pdGlvbklkEjUKBmFjdGlv",
-            "bhgDIAEoDjIdLnByb2Nlc3MudjEuS2l0dGluZ0l0ZW1BY3Rpb25SBmFjdGlv",
-            "bhIzCgZzb3VyY2UYBCABKAsyGy5wcm9jZXNzLnYxLkNvbnRhaW5lclRhcmdl",
-            "dFIGc291cmNlEj0KC2Rlc3RpbmF0aW9uGAUgASgLMhsucHJvY2Vzcy52MS5D",
-            "b250YWluZXJUYXJnZXRSC2Rlc3RpbmF0aW9uOi26SCoiKAoQYXNzZW1ibHlf",
-            "bm9kZV9pZAoScGFydF9kZWZpbml0aW9uX2lkEAEizwoKKERyYWZ0S2l0dGlu",
-            "Z1Byb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJvZHVjdF9kZWZp",
-            "bml0aW9uX2lkGAEgASgJQgy6SAlyBODrMAHIAQFSE3Byb2R1Y3REZWZpbml0",
-            "aW9uSWQSJgoJcmVjaXBlX2lkGAIgASgJQgm6SAZyBKDyBAFSCHJlY2lwZUlk",
-            "Eh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1lEh8KC3JlY2lwZV9p",
-            "Y29uGAQgASgJUgpyZWNpcGVJY29uEi0KEnJlY2lwZV9kZXNjcmlwdGlvbhgF",
-            "IAEoCVIRcmVjaXBlRGVzY3JpcHRpb24SVgoVdmFyaWFudF9jb25maWd1cmF0",
-            "aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25S",
-            "FHZhcmlhbnRDb25maWd1cmF0aW9uEiAKDHJvb3Rfbm9kZV9pZBgHIAEoCVIK",
-            "cm9vdE5vZGVJZBI0ChZpbmNsdWRlX29wdGlvbmFsX25vZGVzGAggASgIUhRp",
-            "bmNsdWRlT3B0aW9uYWxOb2RlcxI1Cghib21fbW9kZRgJIAEoDjIaLnByb2Nl",
-            "c3MudjEuS2l0dGluZ0JvbU1vZGVSB2JvbU1vZGUSPwoVcHJvZHVjdF91bml0",
-            "c19wZXJfa2l0GAogASgNQge6SAQqAiAASABSEnByb2R1Y3RVbml0c1Blcktp",
-            "dIgBARJFCh9zb3VyY2VfY29udGFpbmVyX2RlZmluaXRpb25faWRzGAsgAygJ",
-            "Uhxzb3VyY2VDb250YWluZXJEZWZpbml0aW9uSWRzEkoKInRhcmdldF9raXRf",
-            "Y29udGFpbmVyX2RlZmluaXRpb25faWQYDCABKAlSHnRhcmdldEtpdENvbnRh",
-            "aW5lckRlZmluaXRpb25JZBJTChFyb3V0aW5nX292ZXJyaWRlcxgNIAMoCzIm",
-            "LnByb2Nlc3MudjEuS2l0dGluZ0l0ZW1Sb3V0aW5nT3ZlcnJpZGVSEHJvdXRp",
-            "bmdPdmVycmlkZXMSOwoKaXRlbV9vcmRlchgOIAEoDjIcLnByb2Nlc3MudjEu",
-            "S2l0dGluZ0l0ZW1PcmRlclIJaXRlbU9yZGVyElcKFGl0ZW1fdmFsaWRhdGlv",
-            "bl9tb2RlGA8gASgOMiUucHJvY2Vzcy52MS5LaXR0aW5nSXRlbVZhbGlkYXRp",
-            "b25Nb2RlUhJpdGVtVmFsaWRhdGlvbk1vZGUSRQofZ2VuZXJhdGVfZmluYWxf",
-            "a2l0X3ZlcmlmaWNhdGlvbhgQIAEoCFIcZ2VuZXJhdGVGaW5hbEtpdFZlcmlm",
-            "aWNhdGlvbhJdChZ1bnJlc29sdmVkX2l0ZW1fcG9saWN5GBEgASgOMicucHJv",
-            "Y2Vzcy52MS5VbnJlc29sdmVkS2l0dGluZ0l0ZW1Qb2xpY3lSFHVucmVzb2x2",
-            "ZWRJdGVtUG9saWN5EkQKE2V4Y2x1ZGVkX3BhcnRfdHlwZXMYEiADKA4yFC5w",
-            "cm9kdWN0LnYxLlBhcnRUeXBlUhFleGNsdWRlZFBhcnRUeXBlcxJNChBhZ2dy",
-            "ZWdhdGlvbl9tb2RlGBMgASgOMiIucHJvY2Vzcy52MS5LaXR0aW5nQWdncmVn",
-            "YXRpb25Nb2RlUg9hZ2dyZWdhdGlvbk1vZGUSTQoQdGFza19ncmFudWxhcml0",
-            "eRgUIAEoDjIiLnByb2Nlc3MudjEuS2l0dGluZ1Rhc2tHcmFudWxhcml0eVIP",
-            "dGFza0dyYW51bGFyaXR5QhgKFl9wcm9kdWN0X3VuaXRzX3Blcl9raXQqgAEK",
-            "DktpdHRpbmdCb21Nb2RlEiAKHEtJVFRJTkdfQk9NX01PREVfVU5TUEVDSUZJ",
-            "RUQQABIfChtLSVRUSU5HX0JPTV9NT0RFX0xFQUZfUEFSVFMQARIrCidLSVRU",
-            "SU5HX0JPTV9NT0RFX1NVQkFTU0VNQkxJRVNfQVNfSVRFTVMQAiquAQoQS2l0",
-            "dGluZ0l0ZW1PcmRlchIiCh5LSVRUSU5HX0lURU1fT1JERVJfVU5TUEVDSUZJ",
-            "RUQQABIgChxLSVRUSU5HX0lURU1fT1JERVJfQU5ZX09SREVSEAESJwojS0lU",
-            "VElOR19JVEVNX09SREVSX1BST0RVQ1RfU0VRVUVOQ0UQAhIrCidLSVRUSU5H",
-            "X0lURU1fT1JERVJfVEFSR0VUX1NMT1RfU0VRVUVOQ0UQAyrpAQoZS2l0dGlu",
-            "Z0l0ZW1WYWxpZGF0aW9uTW9kZRIsCihLSVRUSU5HX0lURU1fVkFMSURBVElP",
-            "Tl9NT0RFX1VOU1BFQ0lGSUVEEAASJQohS0lUVElOR19JVEVNX1ZBTElEQVRJ",
-            "T05fTU9ERV9OT05FEAESJwojS0lUVElOR19JVEVNX1ZBTElEQVRJT05fTU9E",
-            "RV9NQU5VQUwQAhIlCiFLSVRUSU5HX0lURU1fVkFMSURBVElPTl9NT0RFX1ND",
-            "QU4QAxInCiNLSVRUSU5HX0lURU1fVkFMSURBVElPTl9NT0RFX1ZJU0lPThAE",
-            "KsgBChtVbnJlc29sdmVkS2l0dGluZ0l0ZW1Qb2xpY3kSLgoqVU5SRVNPTFZF",
-            "RF9LSVRUSU5HX0lURU1fUE9MSUNZX1VOU1BFQ0lGSUVEEAASJwojVU5SRVNP",
-            "TFZFRF9LSVRUSU5HX0lURU1fUE9MSUNZX1dBUk4QARInCiNVTlJFU09MVkVE",
-            "X0tJVFRJTkdfSVRFTV9QT0xJQ1lfRkFJTBACEicKI1VOUkVTT0xWRURfS0lU",
-            "VElOR19JVEVNX1BPTElDWV9TS0lQEAMqegoRS2l0dGluZ0l0ZW1BY3Rpb24S",
-            "IwofS0lUVElOR19JVEVNX0FDVElPTl9VTlNQRUNJRklFRBAAEh8KG0tJVFRJ",
-            "TkdfSVRFTV9BQ1RJT05fSU5DTFVERRABEh8KG0tJVFRJTkdfSVRFTV9BQ1RJ",
-            "T05fRVhDTFVERRACKp8BChZLaXR0aW5nQWdncmVnYXRpb25Nb2RlEigKJEtJ",
-            "VFRJTkdfQUdHUkVHQVRJT05fTU9ERV9VTlNQRUNJRklFRBAAEisKJ0tJVFRJ",
-            "TkdfQUdHUkVHQVRJT05fTU9ERV9QRVJfT0NDVVJSRU5DRRABEi4KKktJVFRJ",
-            "TkdfQUdHUkVHQVRJT05fTU9ERV9CWV9QQVJUX0FORF9ST1VURRACKp0BChZL",
-            "aXR0aW5nVGFza0dyYW51bGFyaXR5EigKJEtJVFRJTkdfVEFTS19HUkFOVUxB",
-            "UklUWV9VTlNQRUNJRklFRBAAEiwKKEtJVFRJTkdfVEFTS19HUkFOVUxBUklU",
-            "WV9BVE9NSUNfVFJBTlNGRVIQARIrCidLSVRUSU5HX1RBU0tfR1JBTlVMQVJJ",
-            "VFlfUElDS19BTkRfUExBQ0UQAkK1AQoOY29tLnByb2Nlc3MudjFCFktpdHRp",
-            "bmdHZW5lcmF0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
-            "Y29sL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVz",
-            "c2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQ",
-            "Qk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3RvMw=="));
+            "cy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiRwcm9jZXNzL3Yx",
+            "L2dlbmVyYXRpb25fcmVxdWVzdHMucHJvdG8aIHByb2Nlc3MvdjEvdGFza19k",
+            "ZWZpbml0aW9uLnByb3RvGiBwcm9kdWN0L3YxL3BhcnRfZGVmaW5pdGlvbi5w",
+            "cm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5w",
+            "cm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9jb25maWd1cmF0aW9uLnByb3Rv",
+            "IuMCChpLaXR0aW5nSXRlbVJvdXRpbmdPdmVycmlkZRIoChBhc3NlbWJseV9u",
+            "b2RlX2lkGAEgASgJUg5hc3NlbWJseU5vZGVJZBI3ChJwYXJ0X2RlZmluaXRp",
+            "b25faWQYAiABKAlCCbpIBnIEyPEEAVIQcGFydERlZmluaXRpb25JZBI/CgZh",
+            "Y3Rpb24YAyABKA4yHS5wcm9jZXNzLnYxLktpdHRpbmdJdGVtQWN0aW9uQgi6",
+            "SAWCAQIQAVIGYWN0aW9uEjMKBnNvdXJjZRgEIAEoCzIbLnByb2Nlc3MudjEu",
+            "Q29udGFpbmVyVGFyZ2V0UgZzb3VyY2USPQoLZGVzdGluYXRpb24YBSABKAsy",
+            "Gy5wcm9jZXNzLnYxLkNvbnRhaW5lclRhcmdldFILZGVzdGluYXRpb246LbpI",
+            "KiIoChBhc3NlbWJseV9ub2RlX2lkChJwYXJ0X2RlZmluaXRpb25faWQQASKa",
+            "DAooRHJhZnRLaXR0aW5nUHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVxdWVzdBJA",
+            "ChVwcm9kdWN0X2RlZmluaXRpb25faWQYASABKAlCDLpICXIE4OswAcgBAVIT",
+            "cHJvZHVjdERlZmluaXRpb25JZBImCglyZWNpcGVfaWQYAiABKAlCCbpIBnIE",
+            "oPIEAVIIcmVjaXBlSWQSHwoLcmVjaXBlX25hbWUYAyABKAlSCnJlY2lwZU5h",
+            "bWUSHwoLcmVjaXBlX2ljb24YBCABKAlSCnJlY2lwZUljb24SLQoScmVjaXBl",
+            "X2Rlc2NyaXB0aW9uGAUgASgJUhFyZWNpcGVEZXNjcmlwdGlvbhJjChd2YXJp",
+            "YW50X2dlbmVyYXRpb25fbW9kZRgVIAEoDjIhLnByb2Nlc3MudjEuVmFyaWFu",
+            "dEdlbmVyYXRpb25Nb2RlQgi6SAWCAQIQAVIVdmFyaWFudEdlbmVyYXRpb25N",
+            "b2RlElYKFXZhcmlhbnRfY29uZmlndXJhdGlvbhgGIAEoCzIhLnZhcmlhbmNl",
+            "LnYxLlZhcmlhbnRDb25maWd1cmF0aW9uUhR2YXJpYW50Q29uZmlndXJhdGlv",
+            "bhIgCgxyb290X25vZGVfaWQYByABKAlSCnJvb3ROb2RlSWQSNAoWaW5jbHVk",
+            "ZV9vcHRpb25hbF9ub2RlcxgIIAEoCFIUaW5jbHVkZU9wdGlvbmFsTm9kZXMS",
+            "PwoIYm9tX21vZGUYCSABKA4yGi5wcm9jZXNzLnYxLktpdHRpbmdCb21Nb2Rl",
+            "Qgi6SAWCAQIQAVIHYm9tTW9kZRI/ChVwcm9kdWN0X3VuaXRzX3Blcl9raXQY",
+            "CiABKA1CB7pIBCoCIABIAFIScHJvZHVjdFVuaXRzUGVyS2l0iAEBElUKH3Nv",
+            "dXJjZV9jb250YWluZXJfZGVmaW5pdGlvbl9pZHMYCyADKAlCDrpIC5IBCCIG",
+            "cgTI8gQBUhxzb3VyY2VDb250YWluZXJEZWZpbml0aW9uSWRzElUKInRhcmdl",
+            "dF9raXRfY29udGFpbmVyX2RlZmluaXRpb25faWQYDCABKAlCCbpIBnIEyPIE",
+            "AVIedGFyZ2V0S2l0Q29udGFpbmVyRGVmaW5pdGlvbklkElMKEXJvdXRpbmdf",
+            "b3ZlcnJpZGVzGA0gAygLMiYucHJvY2Vzcy52MS5LaXR0aW5nSXRlbVJvdXRp",
+            "bmdPdmVycmlkZVIQcm91dGluZ092ZXJyaWRlcxJFCgppdGVtX29yZGVyGA4g",
+            "ASgOMhwucHJvY2Vzcy52MS5LaXR0aW5nSXRlbU9yZGVyQgi6SAWCAQIQAVIJ",
+            "aXRlbU9yZGVyEmEKFGl0ZW1fdmFsaWRhdGlvbl9tb2RlGA8gASgOMiUucHJv",
+            "Y2Vzcy52MS5LaXR0aW5nSXRlbVZhbGlkYXRpb25Nb2RlQgi6SAWCAQIQAVIS",
+            "aXRlbVZhbGlkYXRpb25Nb2RlEkUKH2dlbmVyYXRlX2ZpbmFsX2tpdF92ZXJp",
+            "ZmljYXRpb24YECABKAhSHGdlbmVyYXRlRmluYWxLaXRWZXJpZmljYXRpb24S",
+            "ZwoWdW5yZXNvbHZlZF9pdGVtX3BvbGljeRgRIAEoDjInLnByb2Nlc3MudjEu",
+            "VW5yZXNvbHZlZEtpdHRpbmdJdGVtUG9saWN5Qgi6SAWCAQIQAVIUdW5yZXNv",
+            "bHZlZEl0ZW1Qb2xpY3kSUwoTZXhjbHVkZWRfcGFydF90eXBlcxgSIAMoDjIU",
+            "LnByb2R1Y3QudjEuUGFydFR5cGVCDbpICpIBByIFggECEAFSEWV4Y2x1ZGVk",
+            "UGFydFR5cGVzElcKEGFnZ3JlZ2F0aW9uX21vZGUYEyABKA4yIi5wcm9jZXNz",
+            "LnYxLktpdHRpbmdBZ2dyZWdhdGlvbk1vZGVCCLpIBYIBAhABUg9hZ2dyZWdh",
+            "dGlvbk1vZGUSVwoQdGFza19ncmFudWxhcml0eRgUIAEoDjIiLnByb2Nlc3Mu",
+            "djEuS2l0dGluZ1Rhc2tHcmFudWxhcml0eUIIukgFggECEAFSD3Rhc2tHcmFu",
+            "dWxhcml0eUIYChZfcHJvZHVjdF91bml0c19wZXJfa2l0KoABCg5LaXR0aW5n",
+            "Qm9tTW9kZRIgChxLSVRUSU5HX0JPTV9NT0RFX1VOU1BFQ0lGSUVEEAASHwob",
+            "S0lUVElOR19CT01fTU9ERV9MRUFGX1BBUlRTEAESKwonS0lUVElOR19CT01f",
+            "TU9ERV9TVUJBU1NFTUJMSUVTX0FTX0lURU1TEAIqrgEKEEtpdHRpbmdJdGVt",
+            "T3JkZXISIgoeS0lUVElOR19JVEVNX09SREVSX1VOU1BFQ0lGSUVEEAASIAoc",
+            "S0lUVElOR19JVEVNX09SREVSX0FOWV9PUkRFUhABEicKI0tJVFRJTkdfSVRF",
+            "TV9PUkRFUl9QUk9EVUNUX1NFUVVFTkNFEAISKwonS0lUVElOR19JVEVNX09S",
+            "REVSX1RBUkdFVF9TTE9UX1NFUVVFTkNFEAMq6QEKGUtpdHRpbmdJdGVtVmFs",
+            "aWRhdGlvbk1vZGUSLAooS0lUVElOR19JVEVNX1ZBTElEQVRJT05fTU9ERV9V",
+            "TlNQRUNJRklFRBAAEiUKIUtJVFRJTkdfSVRFTV9WQUxJREFUSU9OX01PREVf",
+            "Tk9ORRABEicKI0tJVFRJTkdfSVRFTV9WQUxJREFUSU9OX01PREVfTUFOVUFM",
+            "EAISJQohS0lUVElOR19JVEVNX1ZBTElEQVRJT05fTU9ERV9TQ0FOEAMSJwoj",
+            "S0lUVElOR19JVEVNX1ZBTElEQVRJT05fTU9ERV9WSVNJT04QBCrIAQobVW5y",
+            "ZXNvbHZlZEtpdHRpbmdJdGVtUG9saWN5Ei4KKlVOUkVTT0xWRURfS0lUVElO",
+            "R19JVEVNX1BPTElDWV9VTlNQRUNJRklFRBAAEicKI1VOUkVTT0xWRURfS0lU",
+            "VElOR19JVEVNX1BPTElDWV9XQVJOEAESJwojVU5SRVNPTFZFRF9LSVRUSU5H",
+            "X0lURU1fUE9MSUNZX0ZBSUwQAhInCiNVTlJFU09MVkVEX0tJVFRJTkdfSVRF",
+            "TV9QT0xJQ1lfU0tJUBADKnoKEUtpdHRpbmdJdGVtQWN0aW9uEiMKH0tJVFRJ",
+            "TkdfSVRFTV9BQ1RJT05fVU5TUEVDSUZJRUQQABIfChtLSVRUSU5HX0lURU1f",
+            "QUNUSU9OX0lOQ0xVREUQARIfChtLSVRUSU5HX0lURU1fQUNUSU9OX0VYQ0xV",
+            "REUQAiqfAQoWS2l0dGluZ0FnZ3JlZ2F0aW9uTW9kZRIoCiRLSVRUSU5HX0FH",
+            "R1JFR0FUSU9OX01PREVfVU5TUEVDSUZJRUQQABIrCidLSVRUSU5HX0FHR1JF",
+            "R0FUSU9OX01PREVfUEVSX09DQ1VSUkVOQ0UQARIuCipLSVRUSU5HX0FHR1JF",
+            "R0FUSU9OX01PREVfQllfUEFSVF9BTkRfUk9VVEUQAiqdAQoWS2l0dGluZ1Rh",
+            "c2tHcmFudWxhcml0eRIoCiRLSVRUSU5HX1RBU0tfR1JBTlVMQVJJVFlfVU5T",
+            "UEVDSUZJRUQQABIsCihLSVRUSU5HX1RBU0tfR1JBTlVMQVJJVFlfQVRPTUlD",
+            "X1RSQU5TRkVSEAESKwonS0lUVElOR19UQVNLX0dSQU5VTEFSSVRZX1BJQ0tf",
+            "QU5EX1BMQUNFEAJCtQEKDmNvbS5wcm9jZXNzLnYxQhZLaXR0aW5nR2VuZXJh",
+            "dGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
+            "YWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlBy",
+            "b2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0",
+            "YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.GenerationRequestsReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.KittingBomMode), typeof(global::Messages.Process.V1.KittingItemOrder), typeof(global::Messages.Process.V1.KittingItemValidationMode), typeof(global::Messages.Process.V1.UnresolvedKittingItemPolicy), typeof(global::Messages.Process.V1.KittingItemAction), typeof(global::Messages.Process.V1.KittingAggregationMode), typeof(global::Messages.Process.V1.KittingTaskGranularity), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.KittingItemRoutingOverride), global::Messages.Process.V1.KittingItemRoutingOverride.Parser, new[]{ "AssemblyNodeId", "PartDefinitionId", "Action", "Source", "Destination" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftKittingProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftKittingProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantConfiguration", "RootNodeId", "IncludeOptionalNodes", "BomMode", "ProductUnitsPerKit", "SourceContainerDefinitionIds", "TargetKitContainerDefinitionId", "RoutingOverrides", "ItemOrder", "ItemValidationMode", "GenerateFinalKitVerification", "UnresolvedItemPolicy", "ExcludedPartTypes", "AggregationMode", "TaskGranularity" }, new[]{ "ProductUnitsPerKit" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.DraftKittingProcessRecipeGenerateRequest), global::Messages.Process.V1.DraftKittingProcessRecipeGenerateRequest.Parser, new[]{ "ProductDefinitionId", "RecipeId", "RecipeName", "RecipeIcon", "RecipeDescription", "VariantGenerationMode", "VariantConfiguration", "RootNodeId", "IncludeOptionalNodes", "BomMode", "ProductUnitsPerKit", "SourceContainerDefinitionIds", "TargetKitContainerDefinitionId", "RoutingOverrides", "ItemOrder", "ItemValidationMode", "GenerateFinalKitVerification", "UnresolvedItemPolicy", "ExcludedPartTypes", "AggregationMode", "TaskGranularity" }, new[]{ "ProductUnitsPerKit" }, null, null, null)
           }));
     }
     #endregion
@@ -203,19 +209,27 @@ namespace Messages.Process.V1 {
   }
 
   /// <summary>
-  /// Overrides whether a selected node or part should appear in the generated kit.
+  /// Controls final inclusion of an item that was selected by the normal
+  /// variant, root, BOM, optional-node, and part-type filters.
   /// </summary>
   public enum KittingItemAction {
     /// <summary>
-    /// Apply the normal variant, optional-node, BOM-mode, and part-type rules.
+    /// Do not change final inclusion. The override may still provide routing.
     /// </summary>
     [pbr::OriginalName("KITTING_ITEM_ACTION_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// Explicitly include the selected item.
+    /// Keep the normally selected item included.
+    ///
+    /// This is primarily useful on an occurrence override to counter a broader
+    /// part-definition EXCLUDE. It does not override normal variant, root, BOM,
+    /// optional-node, or excluded-part-type filtering.
     /// </summary>
     [pbr::OriginalName("KITTING_ITEM_ACTION_INCLUDE")] Include = 1,
     /// <summary>
-    /// Explicitly exclude the selected item.
+    /// Omit the normally selected item.
+    ///
+    /// This applies only to generated kit-item candidates and does not prune
+    /// descendants of structural groups or expanded subassemblies.
     /// </summary>
     [pbr::OriginalName("KITTING_ITEM_ACTION_EXCLUDE")] Exclude = 2,
   }
@@ -696,6 +710,7 @@ namespace Messages.Process.V1 {
       recipeName_ = other.recipeName_;
       recipeIcon_ = other.recipeIcon_;
       recipeDescription_ = other.recipeDescription_;
+      variantGenerationMode_ = other.variantGenerationMode_;
       variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       rootNodeId_ = other.rootNodeId_;
       includeOptionalNodes_ = other.includeOptionalNodes_;
@@ -796,12 +811,24 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "variant_generation_mode" field.</summary>
+    public const int VariantGenerationModeFieldNumber = 21;
+    private global::Messages.Process.V1.VariantGenerationMode variantGenerationMode_ = global::Messages.Process.V1.VariantGenerationMode.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.VariantGenerationMode VariantGenerationMode {
+      get { return variantGenerationMode_; }
+      set {
+        variantGenerationMode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "variant_configuration" field.</summary>
     public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Product variant selections used to determine applicable nodes and annotate
-    /// the generated recipe applicability.
+    /// Required when variant_generation_mode is SELECTED_CONFIGURATION.
+    /// At most one selection is allowed per axis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -908,9 +935,11 @@ namespace Messages.Process.V1 {
     public const int TargetKitContainerDefinitionIdFieldNumber = 12;
     private string targetKitContainerDefinitionId_ = "";
     /// <summary>
-    /// Destination kit container definition. Its KIT_SLOT definitions are matched
-    /// to applicable parts. If empty, the backend may emit generic destinations
-    /// and report generation issues.
+    /// Destination kit container definition.
+    /// Must reference a ContainerDefinition with type CONTAINER_TYPE_KIT.
+    /// Automatic routing uses its KIT_SLOT definitions.
+    /// Its KIT_SLOT definitions are matched to applicable parts.
+    /// If empty, the backend may emit generic destinations and report generation issues.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1059,6 +1088,7 @@ namespace Messages.Process.V1 {
       if (RecipeName != other.RecipeName) return false;
       if (RecipeIcon != other.RecipeIcon) return false;
       if (RecipeDescription != other.RecipeDescription) return false;
+      if (VariantGenerationMode != other.VariantGenerationMode) return false;
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
       if (RootNodeId != other.RootNodeId) return false;
       if (IncludeOptionalNodes != other.IncludeOptionalNodes) return false;
@@ -1086,6 +1116,7 @@ namespace Messages.Process.V1 {
       if (RecipeName.Length != 0) hash ^= RecipeName.GetHashCode();
       if (RecipeIcon.Length != 0) hash ^= RecipeIcon.GetHashCode();
       if (RecipeDescription.Length != 0) hash ^= RecipeDescription.GetHashCode();
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) hash ^= VariantGenerationMode.GetHashCode();
       if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
       if (RootNodeId.Length != 0) hash ^= RootNodeId.GetHashCode();
       if (IncludeOptionalNodes != false) hash ^= IncludeOptionalNodes.GetHashCode();
@@ -1190,6 +1221,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(160, 1);
         output.WriteEnum((int) TaskGranularity);
       }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(168, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1271,6 +1306,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(160, 1);
         output.WriteEnum((int) TaskGranularity);
       }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        output.WriteRawTag(168, 1);
+        output.WriteEnum((int) VariantGenerationMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1295,6 +1334,9 @@ namespace Messages.Process.V1 {
       }
       if (RecipeDescription.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeDescription);
+      }
+      if (VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) VariantGenerationMode);
       }
       if (variantConfiguration_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
@@ -1361,6 +1403,9 @@ namespace Messages.Process.V1 {
       }
       if (other.RecipeDescription.Length != 0) {
         RecipeDescription = other.RecipeDescription;
+      }
+      if (other.VariantGenerationMode != global::Messages.Process.V1.VariantGenerationMode.Unspecified) {
+        VariantGenerationMode = other.VariantGenerationMode;
       }
       if (other.variantConfiguration_ != null) {
         if (variantConfiguration_ == null) {
@@ -1507,6 +1552,10 @@ namespace Messages.Process.V1 {
             TaskGranularity = (global::Messages.Process.V1.KittingTaskGranularity) input.ReadEnum();
             break;
           }
+          case 168: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -1608,6 +1657,10 @@ namespace Messages.Process.V1 {
           }
           case 160: {
             TaskGranularity = (global::Messages.Process.V1.KittingTaskGranularity) input.ReadEnum();
+            break;
+          }
+          case 168: {
+            VariantGenerationMode = (global::Messages.Process.V1.VariantGenerationMode) input.ReadEnum();
             break;
           }
         }
