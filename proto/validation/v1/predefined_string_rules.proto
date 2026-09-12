@@ -231,4 +231,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a zone id"
     expression: "(this == '' || this.startsWith('zone-'))"
   }];
+
+  optional bool actor_availability_id_component = 100038 [(buf.validate.predefined).cel = {
+    id: "string.actor_availability_id_component"
+    message: "this does not seem to be a actor-availability id"
+    expression: "(this == '' || this.startsWith('actor_availability-'))"
+  }];
 }

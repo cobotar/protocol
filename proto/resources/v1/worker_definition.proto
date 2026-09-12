@@ -62,16 +62,6 @@ enum TextSizePreference {
   TEXT_SIZE_PREFERENCE_LARGE = 2;
 }
 
-// WorkerLocation describes the current operating area of a worker.
-//
-// Dynamic resources such as workers own their current location because they
-// move independently through the system.
-message WorkerLocation {
-  string line_id = 1 [(buf.validate.field).string.(validation.v1.line_id_component) = true];
-  string cell_id = 2 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
-  string station_id = 3 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
-}
-
 message WorkerDefinition {
   string id = 1 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
@@ -81,8 +71,6 @@ message WorkerDefinition {
   string employee_id = 6;
   EditPermission ar_edit_permission = 7; // Authorization level for editing authored AR/property settings.
   repeated common.v1.ExternalReference external_references = 8;
-
-  WorkerLocation location = 9; // Optional current location / operating area.
 
   int32 height = 10 [(buf.validate.field).int32.gte = 0]; // Approximate worker height in centimeters. 0 if not defined.
   int32 arms_length = 11 [(buf.validate.field).int32.gte = 0]; // Approximate comfortable arm reach in centimeters. 0 if not defined.

@@ -79,3 +79,5 @@ DEVICE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 device_id_component: _descriptor.FieldDescriptor
 ZONE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 zone_id_component: _descriptor.FieldDescriptor
+ACTOR_AVAILABILITY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+actor_availability_id_component: _descriptor.FieldDescriptor

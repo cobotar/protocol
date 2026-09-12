@@ -27,60 +27,55 @@ namespace Messages.Resources.V1 {
             "CiRyZXNvdXJjZXMvdjEvd29ya2VyX2RlZmluaXRpb24ucHJvdG8SDHJlc291",
             "cmNlcy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiNjb21tb24v",
             "djEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxordmFsaWRhdGlvbi92MS9w",
-            "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKCAQoOV29ya2VyTG9jYXRp",
-            "b24SIgoHbGluZV9pZBgBIAEoCUIJukgGcgTA8gQBUgZsaW5lSWQSIgoHY2Vs",
-            "bF9pZBgCIAEoCUIJukgGcgS48gQBUgZjZWxsSWQSKAoKc3RhdGlvbl9pZBgD",
-            "IAEoCUIJukgGcgT48QQBUglzdGF0aW9uSWQigwgKEFdvcmtlckRlZmluaXRp",
-            "b24SGQoCaWQYASABKAlCCbpIBnIE2OswAVICaWQSHQoEbmFtZRgCIAEoCUIJ",
-            "ukgGcgSA8QQBUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
-            "dGlvbhISCgRpY29uGAQgASgJUgRpY29uEhoKCGRpc2FibGVkGAUgASgIUghk",
-            "aXNhYmxlZBIfCgtlbXBsb3llZV9pZBgGIAEoCVIKZW1wbG95ZWVJZBJKChJh",
-            "cl9lZGl0X3Blcm1pc3Npb24YByABKA4yHC5yZXNvdXJjZXMudjEuRWRpdFBl",
-            "cm1pc3Npb25SEGFyRWRpdFBlcm1pc3Npb24STQoTZXh0ZXJuYWxfcmVmZXJl",
-            "bmNlcxgIIAMoCzIcLmNvbW1vbi52MS5FeHRlcm5hbFJlZmVyZW5jZVISZXh0",
-            "ZXJuYWxSZWZlcmVuY2VzEjgKCGxvY2F0aW9uGAkgASgLMhwucmVzb3VyY2Vz",
-            "LnYxLldvcmtlckxvY2F0aW9uUghsb2NhdGlvbhIfCgZoZWlnaHQYCiABKAVC",
-            "B7pIBBoCKABSBmhlaWdodBIoCgthcm1zX2xlbmd0aBgLIAEoBUIHukgEGgIo",
-            "AFIKYXJtc0xlbmd0aBJCCgpoYW5kZWRuZXNzGAwgASgOMhgucmVzb3VyY2Vz",
-            "LnYxLkhhbmRlZG5lc3NCCLpIBYIBAhABUgpoYW5kZWRuZXNzEjYKBHJvbGUY",
-            "DSABKA4yGC5yZXNvdXJjZXMudjEuV29ya2VyUm9sZUIIukgFggECEAFSBHJv",
-            "bGUSZQoacHJlZmVycmVkX2ludGVyYWN0aW9uX3NpZGUYDiABKA4yHS5yZXNv",
-            "dXJjZXMudjEuSW50ZXJhY3Rpb25TaWRlQgi6SAWCAQIQAVIYcHJlZmVycmVk",
-            "SW50ZXJhY3Rpb25TaWRlElwKFHRleHRfc2l6ZV9wcmVmZXJlbmNlGA8gASgO",
-            "MiAucmVzb3VyY2VzLnYxLlRleHRTaXplUHJlZmVyZW5jZUIIukgFggECEAFS",
-            "EnRleHRTaXplUHJlZmVyZW5jZRI7ChVwZXJzb25hbF9zcGFjZV9yYWRpdXMY",
-            "ECABKAVCB7pIBBoCKABSE3BlcnNvbmFsU3BhY2VSYWRpdXMSQwoZaGFuZG9m",
-            "Zl9oZWlnaHRfcHJlZmVyZW5jZRgRIAEoBUIHukgEGgIoAFIXaGFuZG9mZkhl",
-            "aWdodFByZWZlcmVuY2USXwoXaGFuZG9mZl9zaWRlX3ByZWZlcmVuY2UYEiAB",
-            "KA4yHS5yZXNvdXJjZXMudjEuSW50ZXJhY3Rpb25TaWRlQgi6SAWCAQIQAVIV",
-            "aGFuZG9mZlNpZGVQcmVmZXJlbmNlIkkKEVdvcmtlckRlZmluaXRpb25zEjQK",
-            "BWl0ZW1zGAEgAygLMh4ucmVzb3VyY2VzLnYxLldvcmtlckRlZmluaXRpb25S",
-            "BWl0ZW1zKoQBCg5FZGl0UGVybWlzc2lvbhIfChtFRElUX1BFUk1JU1NJT05f",
-            "VU5TUEVDSUZJRUQQABIZChVFRElUX1BFUk1JU1NJT05fQkFTSUMQARIcChhF",
-            "RElUX1BFUk1JU1NJT05fQ09TTUVUSUMQAhIYChRFRElUX1BFUk1JU1NJT05f",
-            "RlVMTBADKl0KCkhhbmRlZG5lc3MSGgoWSEFOREVETkVTU19VTlNQRUNJRklF",
-            "RBAAEhgKFEhBTkRFRE5FU1NfTEVGVF9IQU5EEAESGQoVSEFOREVETkVTU19S",
-            "SUdIVF9IQU5EEAIqrAEKCldvcmtlclJvbGUSGwoXV09SS0VSX1JPTEVfVU5T",
-            "UEVDSUZJRUQQABIYChRXT1JLRVJfUk9MRV9PUEVSQVRPUhABEhoKFldPUktF",
-            "Ul9ST0xFX1NVUEVSVklTT1IQAhIaChZXT1JLRVJfUk9MRV9URUNITklDSUFO",
-            "EAMSGAoUV09SS0VSX1JPTEVfRU5HSU5FRVIQBBIVChFXT1JLRVJfUk9MRV9B",
-            "RE1JThAFKqoBCg9JbnRlcmFjdGlvblNpZGUSIAocSU5URVJBQ1RJT05fU0lE",
-            "RV9VTlNQRUNJRklFRBAAEhkKFUlOVEVSQUNUSU9OX1NJREVfTEVGVBABEhoK",
-            "FklOVEVSQUNUSU9OX1NJREVfUklHSFQQAhIaChZJTlRFUkFDVElPTl9TSURF",
-            "X0ZST05UEAMSIgoeSU5URVJBQ1RJT05fU0lERV9OT19QUkVGRVJFTkNFEAQq",
-            "ewoSVGV4dFNpemVQcmVmZXJlbmNlEiQKIFRFWFRfU0laRV9QUkVGRVJFTkNF",
-            "X1VOU1BFQ0lGSUVEEAASHwobVEVYVF9TSVpFX1BSRUZFUkVOQ0VfTk9STUFM",
-            "EAESHgoaVEVYVF9TSVpFX1BSRUZFUkVOQ0VfTEFSR0UQAkLCAQoQY29tLnJl",
-            "c291cmNlcy52MUIVV29ya2VyRGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVz",
-            "b3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNv",
-            "dXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJj",
-            "ZXM6OlYxYgZwcm90bzM="));
+            "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLJBwoQV29ya2VyRGVmaW5p",
+            "dGlvbhIZCgJpZBgBIAEoCUIJukgGcgTY6zABUgJpZBIdCgRuYW1lGAIgASgJ",
+            "Qgm6SAZyBIDxBAFSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2Ny",
+            "aXB0aW9uEhIKBGljb24YBCABKAlSBGljb24SGgoIZGlzYWJsZWQYBSABKAhS",
+            "CGRpc2FibGVkEh8KC2VtcGxveWVlX2lkGAYgASgJUgplbXBsb3llZUlkEkoK",
+            "EmFyX2VkaXRfcGVybWlzc2lvbhgHIAEoDjIcLnJlc291cmNlcy52MS5FZGl0",
+            "UGVybWlzc2lvblIQYXJFZGl0UGVybWlzc2lvbhJNChNleHRlcm5hbF9yZWZl",
+            "cmVuY2VzGAggAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJl",
+            "eHRlcm5hbFJlZmVyZW5jZXMSHwoGaGVpZ2h0GAogASgFQge6SAQaAigAUgZo",
+            "ZWlnaHQSKAoLYXJtc19sZW5ndGgYCyABKAVCB7pIBBoCKABSCmFybXNMZW5n",
+            "dGgSQgoKaGFuZGVkbmVzcxgMIAEoDjIYLnJlc291cmNlcy52MS5IYW5kZWRu",
+            "ZXNzQgi6SAWCAQIQAVIKaGFuZGVkbmVzcxI2CgRyb2xlGA0gASgOMhgucmVz",
+            "b3VyY2VzLnYxLldvcmtlclJvbGVCCLpIBYIBAhABUgRyb2xlEmUKGnByZWZl",
+            "cnJlZF9pbnRlcmFjdGlvbl9zaWRlGA4gASgOMh0ucmVzb3VyY2VzLnYxLklu",
+            "dGVyYWN0aW9uU2lkZUIIukgFggECEAFSGHByZWZlcnJlZEludGVyYWN0aW9u",
+            "U2lkZRJcChR0ZXh0X3NpemVfcHJlZmVyZW5jZRgPIAEoDjIgLnJlc291cmNl",
+            "cy52MS5UZXh0U2l6ZVByZWZlcmVuY2VCCLpIBYIBAhABUhJ0ZXh0U2l6ZVBy",
+            "ZWZlcmVuY2USOwoVcGVyc29uYWxfc3BhY2VfcmFkaXVzGBAgASgFQge6SAQa",
+            "AigAUhNwZXJzb25hbFNwYWNlUmFkaXVzEkMKGWhhbmRvZmZfaGVpZ2h0X3By",
+            "ZWZlcmVuY2UYESABKAVCB7pIBBoCKABSF2hhbmRvZmZIZWlnaHRQcmVmZXJl",
+            "bmNlEl8KF2hhbmRvZmZfc2lkZV9wcmVmZXJlbmNlGBIgASgOMh0ucmVzb3Vy",
+            "Y2VzLnYxLkludGVyYWN0aW9uU2lkZUIIukgFggECEAFSFWhhbmRvZmZTaWRl",
+            "UHJlZmVyZW5jZSJJChFXb3JrZXJEZWZpbml0aW9ucxI0CgVpdGVtcxgBIAMo",
+            "CzIeLnJlc291cmNlcy52MS5Xb3JrZXJEZWZpbml0aW9uUgVpdGVtcyqEAQoO",
+            "RWRpdFBlcm1pc3Npb24SHwobRURJVF9QRVJNSVNTSU9OX1VOU1BFQ0lGSUVE",
+            "EAASGQoVRURJVF9QRVJNSVNTSU9OX0JBU0lDEAESHAoYRURJVF9QRVJNSVNT",
+            "SU9OX0NPU01FVElDEAISGAoURURJVF9QRVJNSVNTSU9OX0ZVTEwQAypdCgpI",
+            "YW5kZWRuZXNzEhoKFkhBTkRFRE5FU1NfVU5TUEVDSUZJRUQQABIYChRIQU5E",
+            "RURORVNTX0xFRlRfSEFORBABEhkKFUhBTkRFRE5FU1NfUklHSFRfSEFORBAC",
+            "KqwBCgpXb3JrZXJSb2xlEhsKF1dPUktFUl9ST0xFX1VOU1BFQ0lGSUVEEAAS",
+            "GAoUV09SS0VSX1JPTEVfT1BFUkFUT1IQARIaChZXT1JLRVJfUk9MRV9TVVBF",
+            "UlZJU09SEAISGgoWV09SS0VSX1JPTEVfVEVDSE5JQ0lBThADEhgKFFdPUktF",
+            "Ul9ST0xFX0VOR0lORUVSEAQSFQoRV09SS0VSX1JPTEVfQURNSU4QBSqqAQoP",
+            "SW50ZXJhY3Rpb25TaWRlEiAKHElOVEVSQUNUSU9OX1NJREVfVU5TUEVDSUZJ",
+            "RUQQABIZChVJTlRFUkFDVElPTl9TSURFX0xFRlQQARIaChZJTlRFUkFDVElP",
+            "Tl9TSURFX1JJR0hUEAISGgoWSU5URVJBQ1RJT05fU0lERV9GUk9OVBADEiIK",
+            "HklOVEVSQUNUSU9OX1NJREVfTk9fUFJFRkVSRU5DRRAEKnsKElRleHRTaXpl",
+            "UHJlZmVyZW5jZRIkCiBURVhUX1NJWkVfUFJFRkVSRU5DRV9VTlNQRUNJRklF",
+            "RBAAEh8KG1RFWFRfU0laRV9QUkVGRVJFTkNFX05PUk1BTBABEh4KGlRFWFRf",
+            "U0laRV9QUkVGRVJFTkNFX0xBUkdFEAJCwgEKEGNvbS5yZXNvdXJjZXMudjFC",
+            "FVdvcmtlckRlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIv",
+            "cHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogID",
+            "UlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIY",
+            "UmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.EditPermission), typeof(global::Messages.Resources.V1.Handedness), typeof(global::Messages.Resources.V1.WorkerRole), typeof(global::Messages.Resources.V1.InteractionSide), typeof(global::Messages.Resources.V1.TextSizePreference), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerLocation), global::Messages.Resources.V1.WorkerLocation.Parser, new[]{ "LineId", "CellId", "StationId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Location", "Height", "ArmsLength", "Handedness", "Role", "PreferredInteractionSide", "TextSizePreference", "PersonalSpaceRadius", "HandoffHeightPreference", "HandoffSidePreference" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinition), global::Messages.Resources.V1.WorkerDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Disabled", "EmployeeId", "ArEditPermission", "ExternalReferences", "Height", "ArmsLength", "Handedness", "Role", "PreferredInteractionSide", "TextSizePreference", "PersonalSpaceRadius", "HandoffHeightPreference", "HandoffSidePreference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.WorkerDefinitions), global::Messages.Resources.V1.WorkerDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -164,284 +159,6 @@ namespace Messages.Resources.V1 {
   #endregion
 
   #region Messages
-  /// <summary>
-  /// WorkerLocation describes the current operating area of a worker.
-  ///
-  /// Dynamic resources such as workers own their current location because they
-  /// move independently through the system.
-  /// </summary>
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class WorkerLocation : pb::IMessage<WorkerLocation>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<WorkerLocation> _parser = new pb::MessageParser<WorkerLocation>(() => new WorkerLocation());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<WorkerLocation> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor.MessageTypes[0]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public WorkerLocation() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public WorkerLocation(WorkerLocation other) : this() {
-      lineId_ = other.lineId_;
-      cellId_ = other.cellId_;
-      stationId_ = other.stationId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public WorkerLocation Clone() {
-      return new WorkerLocation(this);
-    }
-
-    /// <summary>Field number for the "line_id" field.</summary>
-    public const int LineIdFieldNumber = 1;
-    private string lineId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string LineId {
-      get { return lineId_; }
-      set {
-        lineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "cell_id" field.</summary>
-    public const int CellIdFieldNumber = 2;
-    private string cellId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CellId {
-      get { return cellId_; }
-      set {
-        cellId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 3;
-    private string stationId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StationId {
-      get { return stationId_; }
-      set {
-        stationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as WorkerLocation);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(WorkerLocation other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (LineId != other.LineId) return false;
-      if (CellId != other.CellId) return false;
-      if (StationId != other.StationId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (LineId.Length != 0) hash ^= LineId.GetHashCode();
-      if (CellId.Length != 0) hash ^= CellId.GetHashCode();
-      if (StationId.Length != 0) hash ^= StationId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (LineId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(LineId);
-      }
-      if (CellId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(CellId);
-      }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(StationId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LineId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(LineId);
-      }
-      if (CellId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(CellId);
-      }
-      if (StationId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(StationId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (LineId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LineId);
-      }
-      if (CellId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CellId);
-      }
-      if (StationId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(WorkerLocation other) {
-      if (other == null) {
-        return;
-      }
-      if (other.LineId.Length != 0) {
-        LineId = other.LineId;
-      }
-      if (other.CellId.Length != 0) {
-        CellId = other.CellId;
-      }
-      if (other.StationId.Length != 0) {
-        StationId = other.StationId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            LineId = input.ReadString();
-            break;
-          }
-          case 18: {
-            CellId = input.ReadString();
-            break;
-          }
-          case 26: {
-            StationId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            LineId = input.ReadString();
-            break;
-          }
-          case 18: {
-            CellId = input.ReadString();
-            break;
-          }
-          case 26: {
-            StationId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class WorkerDefinition : pb::IMessage<WorkerDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -457,7 +174,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -485,7 +202,6 @@ namespace Messages.Resources.V1 {
       employeeId_ = other.employeeId_;
       arEditPermission_ = other.arEditPermission_;
       externalReferences_ = other.externalReferences_.Clone();
-      location_ = other.location_ != null ? other.location_.Clone() : null;
       height_ = other.height_;
       armsLength_ = other.armsLength_;
       handedness_ = other.handedness_;
@@ -603,21 +319,6 @@ namespace Messages.Resources.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Common.V1.ExternalReference> ExternalReferences {
       get { return externalReferences_; }
-    }
-
-    /// <summary>Field number for the "location" field.</summary>
-    public const int LocationFieldNumber = 9;
-    private global::Messages.Resources.V1.WorkerLocation location_;
-    /// <summary>
-    /// Optional current location / operating area.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Resources.V1.WorkerLocation Location {
-      get { return location_; }
-      set {
-        location_ = value;
-      }
     }
 
     /// <summary>Field number for the "height" field.</summary>
@@ -778,7 +479,6 @@ namespace Messages.Resources.V1 {
       if (EmployeeId != other.EmployeeId) return false;
       if (ArEditPermission != other.ArEditPermission) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
-      if (!object.Equals(Location, other.Location)) return false;
       if (Height != other.Height) return false;
       if (ArmsLength != other.ArmsLength) return false;
       if (Handedness != other.Handedness) return false;
@@ -803,7 +503,6 @@ namespace Messages.Resources.V1 {
       if (EmployeeId.Length != 0) hash ^= EmployeeId.GetHashCode();
       if (ArEditPermission != global::Messages.Resources.V1.EditPermission.Unspecified) hash ^= ArEditPermission.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
-      if (location_ != null) hash ^= Location.GetHashCode();
       if (Height != 0) hash ^= Height.GetHashCode();
       if (ArmsLength != 0) hash ^= ArmsLength.GetHashCode();
       if (Handedness != global::Messages.Resources.V1.Handedness.Unspecified) hash ^= Handedness.GetHashCode();
@@ -860,10 +559,6 @@ namespace Messages.Resources.V1 {
         output.WriteEnum((int) ArEditPermission);
       }
       externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
-      if (location_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Location);
-      }
       if (Height != 0) {
         output.WriteRawTag(80);
         output.WriteInt32(Height);
@@ -939,10 +634,6 @@ namespace Messages.Resources.V1 {
         output.WriteEnum((int) ArEditPermission);
       }
       externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
-      if (location_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Location);
-      }
       if (Height != 0) {
         output.WriteRawTag(80);
         output.WriteInt32(Height);
@@ -1011,9 +702,6 @@ namespace Messages.Resources.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArEditPermission);
       }
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
-      if (location_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
-      }
       if (Height != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
       }
@@ -1075,12 +763,6 @@ namespace Messages.Resources.V1 {
         ArEditPermission = other.ArEditPermission;
       }
       externalReferences_.Add(other.externalReferences_);
-      if (other.location_ != null) {
-        if (location_ == null) {
-          Location = new global::Messages.Resources.V1.WorkerLocation();
-        }
-        Location.MergeFrom(other.Location);
-      }
       if (other.Height != 0) {
         Height = other.Height;
       }
@@ -1157,13 +839,6 @@ namespace Messages.Resources.V1 {
           }
           case 66: {
             externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
-            break;
-          }
-          case 74: {
-            if (location_ == null) {
-              Location = new global::Messages.Resources.V1.WorkerLocation();
-            }
-            input.ReadMessage(Location);
             break;
           }
           case 80: {
@@ -1253,13 +928,6 @@ namespace Messages.Resources.V1 {
             externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
             break;
           }
-          case 74: {
-            if (location_ == null) {
-              Location = new global::Messages.Resources.V1.WorkerLocation();
-            }
-            input.ReadMessage(Location);
-            break;
-          }
           case 80: {
             Height = input.ReadInt32();
             break;
@@ -1318,7 +986,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

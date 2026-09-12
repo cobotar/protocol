@@ -1,0 +1,78 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/actor.proto";
+import "google/protobuf/timestamp.proto";
+import "runtime/v1/actor_availability.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+// Reports a new availability or location observation for an actor.
+//
+// The service resolves this observation together with other observations and
+// updates the managed ActorAvailability projection. Reporting an observation
+// does not guarantee that it becomes the resolved state.
+message ActorAvailabilityReportRequest {
+  // Actor to which the observation applies.
+  common.v1.ActorRef actor = 1;
+
+  // Observed availability, if the reporter can determine it.
+  optional ActorAvailabilityStatus status = 2 [(buf.validate.field).enum.defined_only = true];
+
+  // Observed operational location, if known.
+  //
+  // External robot-location reports should normally be rejected because robot
+  // placement is owned by StationDefinition or CellDefinition.
+  ActorLocation location = 3;
+
+  // Origin of this observation.
+  //
+  // The backend should validate that the caller is authorized to report using
+  // the selected source.
+  ActorAvailabilitySource source = 4 [(buf.validate.field).enum.defined_only = true];
+
+  // Optional explanation accompanying the observation.
+  string reason = 5;
+
+  // Time at which the observation was made.
+  google.protobuf.Timestamp observed_at = 6;
+
+  // Optional time after which the observation should no longer be considered.
+  google.protobuf.Timestamp valid_until = 7;
+}
+
+// Applies an explicit availability override.
+//
+// Overrides take precedence over inferred device, schedule, and system
+// observations until cleared or expired.
+message ActorAvailabilityOverrideRequest {
+  // Availability entity to override.
+  string actor_availability_id = 1 [(buf.validate.field).string.(validation.v1.actor_availability_id_component) = true];
+
+  // Availability state imposed by the override.
+  ActorAvailabilityStatus status = 2 [(buf.validate.field).enum.defined_only = true];
+
+  // Optional human-readable explanation for the override.
+  string reason = 3;
+
+  // Optional expiration time. An absent value means the override remains in
+  // effect until explicitly cleared.
+  google.protobuf.Timestamp valid_until = 4;
+
+  // Revision the caller expects to update. The request should fail if the
+  // current projection has another revision.
+  uint64 expected_revision = 5;
+}
+
+// Removes an active manual or supervisor override and causes availability to
+// be resolved again from remaining observations.
+message ActorAvailabilityOverrideClearRequest {
+  // Availability entity whose override should be removed.
+  string actor_availability_id = 1 [(buf.validate.field).string.(validation.v1.actor_availability_id_component) = true];
+
+  // Revision the caller expects to update.
+  uint64 expected_revision = 2;
+}

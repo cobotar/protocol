@@ -47,6 +47,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
@@ -475,7 +476,6 @@
 - [resources/v1/worker_definition.proto](#resources_v1_worker_definition-proto)
     - [WorkerDefinition](#resources-v1-WorkerDefinition)
     - [WorkerDefinitions](#resources-v1-WorkerDefinitions)
-    - [WorkerLocation](#resources-v1-WorkerLocation)
   
     - [EditPermission](#resources-v1-EditPermission)
     - [Handedness](#resources-v1-Handedness)
@@ -552,6 +552,19 @@
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
     - [ActorAssignments](#runtime-v1-ActorAssignments)
+  
+- [runtime/v1/actor_availability.proto](#runtime_v1_actor_availability-proto)
+    - [ActorAvailabilities](#runtime-v1-ActorAvailabilities)
+    - [ActorAvailability](#runtime-v1-ActorAvailability)
+    - [ActorLocation](#runtime-v1-ActorLocation)
+  
+    - [ActorAvailabilitySource](#runtime-v1-ActorAvailabilitySource)
+    - [ActorAvailabilityStatus](#runtime-v1-ActorAvailabilityStatus)
+  
+- [runtime/v1/actor_availability_requests.proto](#runtime_v1_actor_availability_requests-proto)
+    - [ActorAvailabilityOverrideClearRequest](#runtime-v1-ActorAvailabilityOverrideClearRequest)
+    - [ActorAvailabilityOverrideRequest](#runtime-v1-ActorAvailabilityOverrideRequest)
+    - [ActorAvailabilityReportRequest](#runtime-v1-ActorAvailabilityReportRequest)
   
 - [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
     - [EvidenceFact](#runtime-v1-EvidenceFact)
@@ -712,6 +725,7 @@
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
 | ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
 | ar_config_instance_id_component | bool | .buf.validate.StringRules | 100030 |  |
@@ -7237,7 +7251,6 @@ max_concurrent_processes, which is separate from this status field.
 | employee_id | [string](#string) |  |  |
 | ar_edit_permission | [EditPermission](#resources-v1-EditPermission) |  | Authorization level for editing authored AR/property settings. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| location | [WorkerLocation](#resources-v1-WorkerLocation) |  | Optional current location / operating area. |
 | height | [int32](#int32) |  | Approximate worker height in centimeters. 0 if not defined. |
 | arms_length | [int32](#int32) |  | Approximate comfortable arm reach in centimeters. 0 if not defined. |
 | handedness | [Handedness](#resources-v1-Handedness) |  | Physical handedness; use preferred_interaction_side first for layout decisions. |
@@ -7262,26 +7275,6 @@ max_concurrent_processes, which is separate from this status field.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [WorkerDefinition](#resources-v1-WorkerDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="resources-v1-WorkerLocation"></a>
-
-### WorkerLocation
-WorkerLocation describes the current operating area of a worker.
-
-Dynamic resources such as workers own their current location because they
-move independently through the system.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| line_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
 
 
 
@@ -8213,6 +8206,217 @@ Complete snapshot of the configured readable signals.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | items | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_actor_availability-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/actor_availability.proto
+
+
+
+<a name="runtime-v1-ActorAvailabilities"></a>
+
+### ActorAvailabilities
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ActorAvailability](#runtime-v1-ActorAvailability) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-ActorAvailability"></a>
+
+### ActorAvailability
+ActorAvailability is the current resolved runtime availability projection
+for one human or robot actor.
+
+It contains operational state rather than authored actor information.
+Availability changes should produce update events so active ProcessRuns can
+re-evaluate affected task assignments.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier of this availability entity.
+
+There should normally be exactly one ActorAvailability entity for each ActorRef. The service should enforce that uniqueness. |
+| name | [string](#string) |  | Optional human-readable name for administration and diagnostics.
+
+This is display metadata for the availability entity and is not the canonical name of the referenced actor. |
+| icon | [string](#string) |  | Optional icon used when presenting this availability entity.
+
+This is display metadata and should not replace the referenced actor&#39;s canonical icon. |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | The human or robot actor whose current availability is represented. |
+| status | [ActorAvailabilityStatus](#runtime-v1-ActorAvailabilityStatus) |  | The actor&#39;s currently resolved availability for new task assignments. |
+| location | [ActorLocation](#runtime-v1-ActorLocation) |  | The actor&#39;s most recently known operational scope.
+
+An absent location means that the actor&#39;s location is unknown; it must not imply that the actor is globally available. |
+| source | [ActorAvailabilitySource](#runtime-v1-ActorAvailabilitySource) |  | The primary source that determined the current resolved status. |
+| reason | [string](#string) |  | Optional explanation for the current status, such as &#34;signed_out&#34;, &#34;off_shift&#34;, &#34;device_offline&#34;, or &#34;robot_fault&#34;. |
+| observed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the underlying availability observation was made.
+
+This may differ from the time at which this entity was persisted. |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Optional time after which this availability must no longer be trusted.
+
+Once expired, the resolver should normally treat the actor&#39;s availability as UNKNOWN until a newer observation is received. |
+| revision | [uint64](#uint64) |  | Service-managed monotonic revision of this resolved availability.
+
+Consumers can use this to reject duplicate or out-of-order updates. |
+
+
+
+
+
+
+<a name="runtime-v1-ActorLocation"></a>
+
+### ActorLocation
+ActorLocation identifies the actor&#39;s currently known operational scope.
+
+Only the most specific known scope should normally be supplied. Parent
+scopes can be resolved through the station/cell/line hierarchy.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| line_id | [string](#string) |  | The actor is known to be operating somewhere within this line. |
+| cell_id | [string](#string) |  | The actor is known to be operating somewhere within this cell. |
+| station_id | [string](#string) |  | The actor is known to be operating at this station. |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ActorAvailabilitySource"></a>
+
+### ActorAvailabilitySource
+ActorAvailabilitySource identifies the primary source that determined the
+current resolved availability state.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTOR_AVAILABILITY_SOURCE_UNSPECIFIED | 0 | The source of the current availability state is not known. |
+| ACTOR_AVAILABILITY_SOURCE_MANUAL | 1 | The availability was explicitly reported by the actor or entered manually by an operator. |
+| ACTOR_AVAILABILITY_SOURCE_DEVICE | 2 | The availability was inferred from an equipped device, such as an active AR headset or mobile device. |
+| ACTOR_AVAILABILITY_SOURCE_SCHEDULE | 3 | The availability was derived from a work schedule, shift, or planned attendance period. |
+| ACTOR_AVAILABILITY_SOURCE_SYSTEM | 4 | The availability was derived automatically by a backend service, controller, heartbeat monitor, or other system process. |
+| ACTOR_AVAILABILITY_SOURCE_SUPERVISOR | 5 | The availability was explicitly set or overridden by a supervisor. |
+
+
+
+<a name="runtime-v1-ActorAvailabilityStatus"></a>
+
+### ActorAvailabilityStatus
+ActorAvailabilityStatus describes whether an actor can currently be
+considered for new task assignments.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTOR_AVAILABILITY_STATUS_UNSPECIFIED | 0 | No status was supplied. Services should normally resolve this to UNKNOWN rather than treating the actor as available. |
+| ACTOR_AVAILABILITY_STATUS_AVAILABLE | 1 | The actor is currently eligible to receive new task assignments, subject to task-specific capability, location, and resource requirements. |
+| ACTOR_AVAILABILITY_STATUS_UNAVAILABLE | 2 | The actor is explicitly known not to be available for new task assignments. |
+| ACTOR_AVAILABILITY_STATUS_UNKNOWN | 3 | The actor&#39;s current availability cannot be determined from the available observations. UNKNOWN must not be treated as AVAILABLE automatically. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_actor_availability_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/actor_availability_requests.proto
+
+
+
+<a name="runtime-v1-ActorAvailabilityOverrideClearRequest"></a>
+
+### ActorAvailabilityOverrideClearRequest
+Removes an active manual or supervisor override and causes availability to
+be resolved again from remaining observations.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor_availability_id | [string](#string) |  | Availability entity whose override should be removed. |
+| expected_revision | [uint64](#uint64) |  | Revision the caller expects to update. |
+
+
+
+
+
+
+<a name="runtime-v1-ActorAvailabilityOverrideRequest"></a>
+
+### ActorAvailabilityOverrideRequest
+Applies an explicit availability override.
+
+Overrides take precedence over inferred device, schedule, and system
+observations until cleared or expired.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor_availability_id | [string](#string) |  | Availability entity to override. |
+| status | [ActorAvailabilityStatus](#runtime-v1-ActorAvailabilityStatus) |  | Availability state imposed by the override. |
+| reason | [string](#string) |  | Optional human-readable explanation for the override. |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Optional expiration time. An absent value means the override remains in effect until explicitly cleared. |
+| expected_revision | [uint64](#uint64) |  | Revision the caller expects to update. The request should fail if the current projection has another revision. |
+
+
+
+
+
+
+<a name="runtime-v1-ActorAvailabilityReportRequest"></a>
+
+### ActorAvailabilityReportRequest
+Reports a new availability or location observation for an actor.
+
+The service resolves this observation together with other observations and
+updates the managed ActorAvailability projection. Reporting an observation
+does not guarantee that it becomes the resolved state.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | Actor to which the observation applies. |
+| status | [ActorAvailabilityStatus](#runtime-v1-ActorAvailabilityStatus) | optional | Observed availability, if the reporter can determine it. |
+| location | [ActorLocation](#runtime-v1-ActorLocation) |  | Observed operational location, if known.
+
+External robot-location reports should normally be rejected because robot placement is owned by StationDefinition or CellDefinition. |
+| source | [ActorAvailabilitySource](#runtime-v1-ActorAvailabilitySource) |  | Origin of this observation.
+
+The backend should validate that the caller is authorized to report using the selected source. |
+| reason | [string](#string) |  | Optional explanation accompanying the observation. |
+| observed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the observation was made. |
+| valid_until | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Optional time after which the observation should no longer be considered. |
 
 
 
