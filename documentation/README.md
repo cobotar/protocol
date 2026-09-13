@@ -48,6 +48,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
@@ -730,6 +731,7 @@
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| actor_assignment_id_component | bool | .buf.validate.StringRules | 100039 |  |
 | actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
 | ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
 | ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
@@ -9071,6 +9073,7 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | process_run_id | [string](#string) |  |  |
 | reason | [string](#string) |  |  |
+| expected_revision | [uint64](#uint64) |  | Revision of the ProcessRun on which this request is based. |
 
 
 
@@ -9123,6 +9126,7 @@ A human is required but no worker with valid skills exists. |
 | message | [string](#string) |  |  |
 | elapsed_time | [int32](#int32) |  | elapsed time in seconds |
 | estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
+| expected_revision | [uint64](#uint64) |  | Revision of the SequenceRun on which this request is based. |
 
 
 

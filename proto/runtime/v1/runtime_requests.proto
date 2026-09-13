@@ -14,6 +14,9 @@ message ProcessAbortRequest {
     (buf.validate.field).string.(validation.v1.process_run_id_component) = true
   ];
   string reason = 2;
+
+  // Revision of the ProcessRun on which this request is based.
+  uint64 expected_revision = 3 [(buf.validate.field).uint64.gte = 1];
 }
 
 enum TaskStateRequest {
@@ -67,6 +70,7 @@ message TaskProgressUpdate {
   string message = 3;
   int32 elapsed_time = 4 [(buf.validate.field).int32.gte = 0]; // elapsed time in seconds
   int32 estimated_time_left = 5 [(buf.validate.field).int32.gte = 0]; // estimated time left in seconds
+  uint64 expected_revision = 6 [(buf.validate.field).uint64.gte = 1]; // Revision of the SequenceRun on which this request is based.
 }
 
 message SequenceReassignRequest {

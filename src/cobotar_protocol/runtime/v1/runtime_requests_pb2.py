@@ -27,7 +27,7 @@ from common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/runtime_requests.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"a\n\x13ProcessAbortRequest\x12\x32\n\x0eprocess_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x16\n\x06reason\x18\x02 \x01(\tR\x06reason\"\x81\x02\n\x16TaskStateChangeRequest\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12?\n\x05state\x18\x02 \x01(\x0e\x32\x1c.runtime.v1.TaskStateRequestB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05state\x12\x1d\n\nerror_code\x18\x03 \x01(\tR\terrorCode\x12#\n\rerror_message\x18\x04 \x01(\tR\x0c\x65rrorMessage\x12\x34\n\x11\x65xpected_revision\x18\x05 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\xac\x01\n\x13TaskReassignRequest\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x34\n\x11\x65xpected_revision\x18\x03 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\xf4\x01\n\x12TaskProgressUpdate\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\x12*\n\x0c\x65lapsed_time\x18\x04 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x0b\x65lapsedTime\x12\x37\n\x13\x65stimated_time_left\x18\x05 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x11\x65stimatedTimeLeft\"\xb8\x01\n\x17SequenceReassignRequest\x12\x34\n\x0fsequence_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x34\n\x11\x65xpected_revision\x18\x03 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\x85\x01\n\x17SequenceCompleteRequest\x12\x34\n\x0fsequence_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12\x34\n\x11\x65xpected_revision\x18\x02 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision*\xf2\x01\n\x10TaskStateRequest\x12\"\n\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12\x1c\n\x18TASK_STATE_REQUEST_ABORT\x10\x05\x12 \n\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06\x42\xb3\x01\n\x0e\x63om.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/runtime_requests.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x01\n\x13ProcessAbortRequest\x12\x32\n\x0eprocess_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x16\n\x06reason\x18\x02 \x01(\tR\x06reason\x12\x34\n\x11\x65xpected_revision\x18\x03 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\x81\x02\n\x16TaskStateChangeRequest\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12?\n\x05state\x18\x02 \x01(\x0e\x32\x1c.runtime.v1.TaskStateRequestB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05state\x12\x1d\n\nerror_code\x18\x03 \x01(\tR\terrorCode\x12#\n\rerror_message\x18\x04 \x01(\tR\x0c\x65rrorMessage\x12\x34\n\x11\x65xpected_revision\x18\x05 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\xac\x01\n\x13TaskReassignRequest\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x34\n\x11\x65xpected_revision\x18\x03 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\xaa\x02\n\x12TaskProgressUpdate\x12,\n\x0btask_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\x12*\n\x0c\x65lapsed_time\x18\x04 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x0b\x65lapsedTime\x12\x37\n\x13\x65stimated_time_left\x18\x05 \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\x11\x65stimatedTimeLeft\x12\x34\n\x11\x65xpected_revision\x18\x06 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\xb8\x01\n\x17SequenceReassignRequest\x12\x34\n\x0fsequence_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x34\n\x11\x65xpected_revision\x18\x03 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision\"\x85\x01\n\x17SequenceCompleteRequest\x12\x34\n\x0fsequence_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12\x34\n\x11\x65xpected_revision\x18\x02 \x01(\x04\x42\x07\xbaH\x04\x32\x02(\x01R\x10\x65xpectedRevision*\xf2\x01\n\x10TaskStateRequest\x12\"\n\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12\x1c\n\x18TASK_STATE_REQUEST_ABORT\x10\x05\x12 \n\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06\x42\xb3\x01\n\x0e\x63om.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +37,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\016com.runtime.v1B\024RuntimeRequestsProtoP\001Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\242\002\003RXX\252\002\023Messages.Runtime.V1\312\002\nRuntime\\V1\342\002\026Runtime\\V1\\GPBMetadata\352\002\013Runtime::V1'
   _globals['_PROCESSABORTREQUEST'].fields_by_name['process_run_id']._loaded_options = None
   _globals['_PROCESSABORTREQUEST'].fields_by_name['process_run_id']._serialized_options = b'\272H\tr\004\210\362\004\001\310\001\001'
+  _globals['_PROCESSABORTREQUEST'].fields_by_name['expected_revision']._loaded_options = None
+  _globals['_PROCESSABORTREQUEST'].fields_by_name['expected_revision']._serialized_options = b'\272H\0042\002(\001'
   _globals['_TASKSTATECHANGEREQUEST'].fields_by_name['task_run_id']._loaded_options = None
   _globals['_TASKSTATECHANGEREQUEST'].fields_by_name['task_run_id']._serialized_options = b'\272H\tr\004\230\362\004\001\310\001\001'
   _globals['_TASKSTATECHANGEREQUEST'].fields_by_name['state']._loaded_options = None
@@ -57,6 +59,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TASKPROGRESSUPDATE'].fields_by_name['elapsed_time']._serialized_options = b'\272H\004\032\002(\000'
   _globals['_TASKPROGRESSUPDATE'].fields_by_name['estimated_time_left']._loaded_options = None
   _globals['_TASKPROGRESSUPDATE'].fields_by_name['estimated_time_left']._serialized_options = b'\272H\004\032\002(\000'
+  _globals['_TASKPROGRESSUPDATE'].fields_by_name['expected_revision']._loaded_options = None
+  _globals['_TASKPROGRESSUPDATE'].fields_by_name['expected_revision']._serialized_options = b'\272H\0042\002(\001'
   _globals['_SEQUENCEREASSIGNREQUEST'].fields_by_name['sequence_run_id']._loaded_options = None
   _globals['_SEQUENCEREASSIGNREQUEST'].fields_by_name['sequence_run_id']._serialized_options = b'\272H\tr\004\220\362\004\001\310\001\001'
   _globals['_SEQUENCEREASSIGNREQUEST'].fields_by_name['actor']._loaded_options = None
@@ -67,18 +71,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SEQUENCECOMPLETEREQUEST'].fields_by_name['sequence_run_id']._serialized_options = b'\272H\tr\004\220\362\004\001\310\001\001'
   _globals['_SEQUENCECOMPLETEREQUEST'].fields_by_name['expected_revision']._loaded_options = None
   _globals['_SEQUENCECOMPLETEREQUEST'].fields_by_name['expected_revision']._serialized_options = b'\272H\0042\002(\001'
-  _globals['_TASKSTATEREQUEST']._serialized_start=1251
-  _globals['_TASKSTATEREQUEST']._serialized_end=1493
-  _globals['_PROCESSABORTREQUEST']._serialized_start=146
-  _globals['_PROCESSABORTREQUEST']._serialized_end=243
-  _globals['_TASKSTATECHANGEREQUEST']._serialized_start=246
-  _globals['_TASKSTATECHANGEREQUEST']._serialized_end=503
-  _globals['_TASKREASSIGNREQUEST']._serialized_start=506
-  _globals['_TASKREASSIGNREQUEST']._serialized_end=678
-  _globals['_TASKPROGRESSUPDATE']._serialized_start=681
-  _globals['_TASKPROGRESSUPDATE']._serialized_end=925
-  _globals['_SEQUENCEREASSIGNREQUEST']._serialized_start=928
-  _globals['_SEQUENCEREASSIGNREQUEST']._serialized_end=1112
-  _globals['_SEQUENCECOMPLETEREQUEST']._serialized_start=1115
-  _globals['_SEQUENCECOMPLETEREQUEST']._serialized_end=1248
+  _globals['_TASKSTATEREQUEST']._serialized_start=1360
+  _globals['_TASKSTATEREQUEST']._serialized_end=1602
+  _globals['_PROCESSABORTREQUEST']._serialized_start=147
+  _globals['_PROCESSABORTREQUEST']._serialized_end=298
+  _globals['_TASKSTATECHANGEREQUEST']._serialized_start=301
+  _globals['_TASKSTATECHANGEREQUEST']._serialized_end=558
+  _globals['_TASKREASSIGNREQUEST']._serialized_start=561
+  _globals['_TASKREASSIGNREQUEST']._serialized_end=733
+  _globals['_TASKPROGRESSUPDATE']._serialized_start=736
+  _globals['_TASKPROGRESSUPDATE']._serialized_end=1034
+  _globals['_SEQUENCEREASSIGNREQUEST']._serialized_start=1037
+  _globals['_SEQUENCEREASSIGNREQUEST']._serialized_end=1221
+  _globals['_SEQUENCECOMPLETEREQUEST']._serialized_start=1224
+  _globals['_SEQUENCECOMPLETEREQUEST']._serialized_end=1357
 # @@protoc_insertion_point(module_scope)

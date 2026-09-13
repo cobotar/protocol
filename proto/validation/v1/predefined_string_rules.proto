@@ -237,4 +237,10 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a actor-availability id"
     expression: "(this == '' || this.startsWith('actor_availability-'))"
   }];
+
+  optional bool actor_assignment_id_component = 100039 [(buf.validate.predefined).cel = {
+    id: "string.actor_assignment_id_component"
+    message: "this does not seem to be a actor-assignment id"
+    expression: "(this == '' || this.startsWith('actor_assignment-'))"
+  }];
 }

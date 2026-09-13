@@ -363,14 +363,14 @@ var File_runtime_v1_actor_assignment_proto protoreflect.FileDescriptor
 const file_runtime_v1_actor_assignment_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/actor_assignment.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n" +
-	"\x0fActorAssignment\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x121\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf9\x02\n" +
+	"\x0fActorAssignment\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xec0\x01R\x02id\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x122\n" +
 	"\x0eprocess_run_id\x18\x03 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\fprocessRunId\x124\n" +
 	"\x0fsequence_run_id\x18\x04 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x12,\n" +
-	"\vtask_run_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12;\n" +
-	"\vassigned_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"\vtask_run_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12C\n" +
+	"\vassigned_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"assignedAt\x12;\n" +
 	"\vreleased_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"releasedAt\"E\n" +

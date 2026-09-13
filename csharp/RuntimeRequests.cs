@@ -27,48 +27,50 @@ namespace Messages.Runtime.V1 {
             "CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUu",
             "djEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoVY29tbW9uL3YxL2Fj",
             "dG9yLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1",
-            "bGVzLnByb3RvImEKE1Byb2Nlc3NBYm9ydFJlcXVlc3QSMgoOcHJvY2Vzc19y",
-            "dW5faWQYASABKAlCDLpICXIEiPIEAcgBAVIMcHJvY2Vzc1J1bklkEhYKBnJl",
-            "YXNvbhgCIAEoCVIGcmVhc29uIoECChZUYXNrU3RhdGVDaGFuZ2VSZXF1ZXN0",
-            "EiwKC3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5J",
-            "ZBI/CgVzdGF0ZRgCIAEoDjIcLnJ1bnRpbWUudjEuVGFza1N0YXRlUmVxdWVz",
-            "dEILukgIggECEAHIAQFSBXN0YXRlEh0KCmVycm9yX2NvZGUYAyABKAlSCWVy",
-            "cm9yQ29kZRIjCg1lcnJvcl9tZXNzYWdlGAQgASgJUgxlcnJvck1lc3NhZ2US",
-            "NAoRZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAFSEGV4cGVjdGVk",
-            "UmV2aXNpb24irAEKE1Rhc2tSZWFzc2lnblJlcXVlc3QSLAoLdGFza19ydW5f",
-            "aWQYASABKAlCDLpICXIEmPIEAcgBAVIJdGFza1J1bklkEjEKBWFjdG9yGAIg",
-            "ASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEjQKEWV4",
-            "cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlz",
-            "aW9uIvQBChJUYXNrUHJvZ3Jlc3NVcGRhdGUSLAoLdGFza19ydW5faWQYASAB",
-            "KAlCDLpICXIEmPIEAcgBAVIJdGFza1J1bklkEjEKBWFjdG9yGAIgASgLMhMu",
-            "Y29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEhgKB21lc3NhZ2UY",
-            "AyABKAlSB21lc3NhZ2USKgoMZWxhcHNlZF90aW1lGAQgASgFQge6SAQaAigA",
-            "UgtlbGFwc2VkVGltZRI3ChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAUgASgFQge6",
-            "SAQaAigAUhFlc3RpbWF0ZWRUaW1lTGVmdCK4AQoXU2VxdWVuY2VSZWFzc2ln",
-            "blJlcXVlc3QSNAoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAlyBJDyBAHI",
-            "AQFSDXNlcXVlbmNlUnVuSWQSMQoFYWN0b3IYAiABKAsyEy5jb21tb24udjEu",
-            "QWN0b3JSZWZCBrpIA8gBAVIFYWN0b3ISNAoRZXhwZWN0ZWRfcmV2aXNpb24Y",
-            "AyABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24ihQEKF1NlcXVlbmNl",
-            "Q29tcGxldGVSZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCUIMukgJ",
-            "cgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjQKEWV4cGVjdGVkX3JldmlzaW9u",
-            "GAIgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlzaW9uKvIBChBUYXNrU3Rh",
-            "dGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJRklFRBAA",
-            "EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsKF1RBU0tf",
-            "U1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFVRVNUX1VO",
-            "RE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIcChhUQVNLX1NU",
-            "QVRFX1JFUVVFU1RfQUJPUlQQBRIgChxUQVNLX1NUQVRFX1JFUVVFU1RfU1VT",
-            "UEVOREVEEAZCswEKDmNvbS5ydW50aW1lLnYxQhRSdW50aW1lUmVxdWVzdHNQ",
-            "cm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
-            "cnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1l",
-            "LlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtS",
-            "dW50aW1lOjpWMWIGcHJvdG8z"));
+            "bGVzLnByb3RvIpcBChNQcm9jZXNzQWJvcnRSZXF1ZXN0EjIKDnByb2Nlc3Nf",
+            "cnVuX2lkGAEgASgJQgy6SAlyBIjyBAHIAQFSDHByb2Nlc3NSdW5JZBIWCgZy",
+            "ZWFzb24YAiABKAlSBnJlYXNvbhI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEo",
+            "BEIHukgEMgIoAVIQZXhwZWN0ZWRSZXZpc2lvbiKBAgoWVGFza1N0YXRlQ2hh",
+            "bmdlUmVxdWVzdBIsCgt0YXNrX3J1bl9pZBgBIAEoCUIMukgJcgSY8gQByAEB",
+            "Ugl0YXNrUnVuSWQSPwoFc3RhdGUYAiABKA4yHC5ydW50aW1lLnYxLlRhc2tT",
+            "dGF0ZVJlcXVlc3RCC7pICIIBAhAByAEBUgVzdGF0ZRIdCgplcnJvcl9jb2Rl",
+            "GAMgASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgEIAEoCVIMZXJy",
+            "b3JNZXNzYWdlEjQKEWV4cGVjdGVkX3JldmlzaW9uGAUgASgEQge6SAQyAigB",
+            "UhBleHBlY3RlZFJldmlzaW9uIqwBChNUYXNrUmVhc3NpZ25SZXF1ZXN0EiwK",
+            "C3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIx",
+            "CgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVh",
+            "Y3RvchI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoAVIQZXhw",
+            "ZWN0ZWRSZXZpc2lvbiKqAgoSVGFza1Byb2dyZXNzVXBkYXRlEiwKC3Rhc2tf",
+            "cnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIxCgVhY3Rv",
+            "chgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVhY3RvchIY",
+            "CgdtZXNzYWdlGAMgASgJUgdtZXNzYWdlEioKDGVsYXBzZWRfdGltZRgEIAEo",
+            "BUIHukgEGgIoAFILZWxhcHNlZFRpbWUSNwoTZXN0aW1hdGVkX3RpbWVfbGVm",
+            "dBgFIAEoBUIHukgEGgIoAFIRZXN0aW1hdGVkVGltZUxlZnQSNAoRZXhwZWN0",
+            "ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24i",
+            "uAEKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9p",
+            "ZBgBIAEoCUIMukgJcgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjEKBWFjdG9y",
+            "GAIgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEjQK",
+            "EWV4cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBUhBleHBlY3RlZFJl",
+            "dmlzaW9uIoUBChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBI0Cg9zZXF1ZW5j",
+            "ZV9ydW5faWQYASABKAlCDLpICXIEkPIEAcgBAVINc2VxdWVuY2VSdW5JZBI0",
+            "ChFleHBlY3RlZF9yZXZpc2lvbhgCIAEoBEIHukgEMgIoAVIQZXhwZWN0ZWRS",
+            "ZXZpc2lvbiryAQoQVGFza1N0YXRlUmVxdWVzdBIiCh5UQVNLX1NUQVRFX1JF",
+            "UVVFU1RfVU5TUEVDSUZJRUQQABIiCh5UQVNLX1NUQVRFX1JFUVVFU1RfSU5f",
+            "UFJPR1JFU1MQARIbChdUQVNLX1NUQVRFX1JFUVVFU1RfRE9ORRACEhsKF1RB",
+            "U0tfU1RBVEVfUkVRVUVTVF9VTkRPEAMSHAoYVEFTS19TVEFURV9SRVFVRVNU",
+            "X0VSUk9SEAQSHAoYVEFTS19TVEFURV9SRVFVRVNUX0FCT1JUEAUSIAocVEFT",
+            "S19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAGQrMBCg5jb20ucnVudGltZS52",
+            "MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFy",
+            "L3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhY",
+            "qgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1l",
+            "XFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceReassignRequest), global::Messages.Runtime.V1.SequenceReassignRequest.Parser, new[]{ "SequenceRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceCompleteRequest), global::Messages.Runtime.V1.SequenceCompleteRequest.Parser, new[]{ "SequenceRunId", "ExpectedRevision" }, null, null, null, null)
           }));
@@ -133,6 +135,7 @@ namespace Messages.Runtime.V1 {
     public ProcessAbortRequest(ProcessAbortRequest other) : this() {
       processRunId_ = other.processRunId_;
       reason_ = other.reason_;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -166,6 +169,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 3;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the ProcessRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -183,6 +201,7 @@ namespace Messages.Runtime.V1 {
       }
       if (ProcessRunId != other.ProcessRunId) return false;
       if (Reason != other.Reason) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,6 +211,7 @@ namespace Messages.Runtime.V1 {
       int hash = 1;
       if (ProcessRunId.Length != 0) hash ^= ProcessRunId.GetHashCode();
       if (Reason.Length != 0) hash ^= Reason.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -218,6 +238,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteString(Reason);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -236,6 +260,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteString(Reason);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -251,6 +279,9 @@ namespace Messages.Runtime.V1 {
       }
       if (Reason.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -269,6 +300,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Reason.Length != 0) {
         Reason = other.Reason;
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -297,6 +331,10 @@ namespace Messages.Runtime.V1 {
             Reason = input.ReadString();
             break;
           }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -322,6 +360,10 @@ namespace Messages.Runtime.V1 {
           }
           case 18: {
             Reason = input.ReadString();
+            break;
+          }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }
@@ -1004,6 +1046,7 @@ namespace Messages.Runtime.V1 {
       message_ = other.message_;
       elapsedTime_ = other.elapsedTime_;
       estimatedTimeLeft_ = other.estimatedTimeLeft_;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1079,6 +1122,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 6;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the SequenceRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1099,6 +1157,7 @@ namespace Messages.Runtime.V1 {
       if (Message != other.Message) return false;
       if (ElapsedTime != other.ElapsedTime) return false;
       if (EstimatedTimeLeft != other.EstimatedTimeLeft) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1111,6 +1170,7 @@ namespace Messages.Runtime.V1 {
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (ElapsedTime != 0) hash ^= ElapsedTime.GetHashCode();
       if (EstimatedTimeLeft != 0) hash ^= EstimatedTimeLeft.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1149,6 +1209,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(40);
         output.WriteInt32(EstimatedTimeLeft);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1179,6 +1243,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(40);
         output.WriteInt32(EstimatedTimeLeft);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1203,6 +1271,9 @@ namespace Messages.Runtime.V1 {
       }
       if (EstimatedTimeLeft != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(EstimatedTimeLeft);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1233,6 +1304,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.EstimatedTimeLeft != 0) {
         EstimatedTimeLeft = other.EstimatedTimeLeft;
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1276,6 +1350,10 @@ namespace Messages.Runtime.V1 {
             EstimatedTimeLeft = input.ReadInt32();
             break;
           }
+          case 48: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -1316,6 +1394,10 @@ namespace Messages.Runtime.V1 {
           }
           case 40: {
             EstimatedTimeLeft = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }

@@ -88,11 +88,13 @@ func (TaskStateRequest) EnumDescriptor() ([]byte, []int) {
 }
 
 type ProcessAbortRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ProcessRunId  string                 `protobuf:"bytes,1,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`
-	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	ProcessRunId string                 `protobuf:"bytes,1,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`
+	Reason       string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	// Revision of the ProcessRun on which this request is based.
+	ExpectedRevision uint64 `protobuf:"varint,3,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ProcessAbortRequest) Reset() {
@@ -137,6 +139,13 @@ func (x *ProcessAbortRequest) GetReason() string {
 		return x.Reason
 	}
 	return ""
+}
+
+func (x *ProcessAbortRequest) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
+	}
+	return 0
 }
 
 type TaskStateChangeRequest struct {
@@ -284,6 +293,7 @@ type TaskProgressUpdate struct {
 	Message           string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	ElapsedTime       int32                  `protobuf:"varint,4,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`                     // elapsed time in seconds
 	EstimatedTimeLeft int32                  `protobuf:"varint,5,opt,name=estimated_time_left,json=estimatedTimeLeft,proto3" json:"estimated_time_left,omitempty"` // estimated time left in seconds
+	ExpectedRevision  uint64                 `protobuf:"varint,6,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`      // Revision of the SequenceRun on which this request is based.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -349,6 +359,13 @@ func (x *TaskProgressUpdate) GetElapsedTime() int32 {
 func (x *TaskProgressUpdate) GetEstimatedTimeLeft() int32 {
 	if x != nil {
 		return x.EstimatedTimeLeft
+	}
+	return 0
+}
+
+func (x *TaskProgressUpdate) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
 	}
 	return 0
 }
@@ -472,10 +489,11 @@ var File_runtime_v1_runtime_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/runtime_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"a\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x01\n" +
 	"\x13ProcessAbortRequest\x122\n" +
 	"\x0eprocess_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\fprocessRunId\x12\x16\n" +
-	"\x06reason\x18\x02 \x01(\tR\x06reason\"\x81\x02\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\x124\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\x81\x02\n" +
 	"\x16TaskStateChangeRequest\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12?\n" +
 	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12\x1d\n" +
@@ -486,13 +504,14 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x13TaskReassignRequest\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
-	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xf4\x01\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xaa\x02\n" +
 	"\x12TaskProgressUpdate\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x12*\n" +
 	"\felapsed_time\x18\x04 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\velapsedTime\x127\n" +
-	"\x13estimated_time_left\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x11estimatedTimeLeft\"\xb8\x01\n" +
+	"\x13estimated_time_left\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x11estimatedTimeLeft\x124\n" +
+	"\x11expected_revision\x18\x06 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xb8\x01\n" +
 	"\x17SequenceReassignRequest\x124\n" +
 	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +

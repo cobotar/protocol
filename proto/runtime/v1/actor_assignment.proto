@@ -10,7 +10,7 @@ option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 message ActorAssignment {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.actor_assignment_id_component) = true];
   common.v1.ActorRef actor = 2 [(buf.validate.field).required = true];
   string process_run_id = 3 [
     (buf.validate.field).required = true,
@@ -24,7 +24,7 @@ message ActorAssignment {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_run_id_component) = true
   ];
-  google.protobuf.Timestamp assigned_at = 6;
+  google.protobuf.Timestamp assigned_at = 6 [(buf.validate.field).required = true];
   google.protobuf.Timestamp released_at = 7;
 }
 
