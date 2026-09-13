@@ -26,7 +26,7 @@ SEQUENCE_RUN_STATE_DONE: SequenceRunState
 SEQUENCE_RUN_STATE_ABORTED: SequenceRunState
 
 class SequenceRun(_message.Message):
-    __slots__ = ("id", "name", "icon", "sequence_definition_id", "parent_sequence_run_id", "child_sequence_run_ids", "child_task_run_ids", "state", "completed_tasks", "can_bulk_complete", "assigned_actors")
+    __slots__ = ("id", "name", "icon", "sequence_definition_id", "parent_sequence_run_id", "child_sequence_run_ids", "child_task_run_ids", "state", "completed_tasks", "can_bulk_complete", "assigned_actors", "revision")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -38,6 +38,7 @@ class SequenceRun(_message.Message):
     COMPLETED_TASKS_FIELD_NUMBER: _ClassVar[int]
     CAN_BULK_COMPLETE_FIELD_NUMBER: _ClassVar[int]
     ASSIGNED_ACTORS_FIELD_NUMBER: _ClassVar[int]
+    REVISION_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -49,7 +50,8 @@ class SequenceRun(_message.Message):
     completed_tasks: int
     can_bulk_complete: bool
     assigned_actors: _containers.RepeatedCompositeFieldContainer[_actor_pb2.ActorRef]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., child_sequence_run_ids: _Optional[_Iterable[str]] = ..., child_task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[SequenceRunState, str]] = ..., completed_tasks: _Optional[int] = ..., can_bulk_complete: bool = ..., assigned_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ...) -> None: ...
+    revision: int
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., child_sequence_run_ids: _Optional[_Iterable[str]] = ..., child_task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[SequenceRunState, str]] = ..., completed_tasks: _Optional[int] = ..., can_bulk_complete: bool = ..., assigned_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., revision: _Optional[int] = ...) -> None: ...
 
 class SequenceRuns(_message.Message):
     __slots__ = ("items",)

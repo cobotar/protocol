@@ -36,6 +36,7 @@ const (
 	TaskRunState_TASK_RUN_STATE_DONE        TaskRunState = 4
 	TaskRunState_TASK_RUN_STATE_ERROR       TaskRunState = 5
 	TaskRunState_TASK_RUN_STATE_ABORTED     TaskRunState = 6
+	TaskRunState_TASK_RUN_STATE_SUSPENDED   TaskRunState = 7
 )
 
 // Enum value maps for TaskRunState.
@@ -48,6 +49,7 @@ var (
 		4: "TASK_RUN_STATE_DONE",
 		5: "TASK_RUN_STATE_ERROR",
 		6: "TASK_RUN_STATE_ABORTED",
+		7: "TASK_RUN_STATE_SUSPENDED",
 	}
 	TaskRunState_value = map[string]int32{
 		"TASK_RUN_STATE_UNSPECIFIED": 0,
@@ -57,6 +59,7 @@ var (
 		"TASK_RUN_STATE_DONE":        4,
 		"TASK_RUN_STATE_ERROR":       5,
 		"TASK_RUN_STATE_ABORTED":     6,
+		"TASK_RUN_STATE_SUSPENDED":   7,
 	}
 )
 
@@ -91,10 +94,9 @@ func (TaskRunState) EnumDescriptor() ([]byte, []int) {
 type TaskRuntimeBinding struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`
-	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"` // TODO: think this should be removed
-	StationId       string                 `protobuf:"bytes,3,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId          string                 `protobuf:"bytes,4,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,5,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
+	StationId       string                 `protobuf:"bytes,2,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	CellId          string                 `protobuf:"bytes,3,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -136,13 +138,6 @@ func (x *TaskRuntimeBinding) GetAssetInstanceId() string {
 	return ""
 }
 
-func (x *TaskRuntimeBinding) GetRobotInstanceId() string {
-	if x != nil {
-		return x.RobotInstanceId
-	}
-	return ""
-}
-
 func (x *TaskRuntimeBinding) GetStationId() string {
 	if x != nil {
 		return x.StationId
@@ -173,7 +168,7 @@ type TaskRun struct {
 	ParentSequenceRunId string                 `protobuf:"bytes,5,opt,name=parent_sequence_run_id,json=parentSequenceRunId,proto3" json:"parent_sequence_run_id,omitempty"`
 	State               TaskRunState           `protobuf:"varint,6,opt,name=state,proto3,enum=runtime.v1.TaskRunState" json:"state,omitempty"`
 	CandidateActors     []*v11.ActorRef        `protobuf:"bytes,7,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
-	AssignedActor       *v11.ActorRef          `protobuf:"bytes,8,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"`
+	AssignedActor       *v11.ActorRef          `protobuf:"bytes,8,opt,name=assigned_actor,json=assignedActor,proto3" json:"assigned_actor,omitempty"` // is the authoritative current task assignment.
 	CanDo               bool                   `protobuf:"varint,9,opt,name=can_do,json=canDo,proto3" json:"can_do,omitempty"`
 	CanUndo             bool                   `protobuf:"varint,10,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
 	WorkableHorizon     int32                  `protobuf:"varint,11,opt,name=workable_horizon,json=workableHorizon,proto3" json:"workable_horizon,omitempty"` // steps needed to complete before this step is workable.
@@ -195,8 +190,13 @@ type TaskRun struct {
 	// - tool feedback required due to safety/quality constraints
 	Restrictions              []*RuntimeRestriction       `protobuf:"bytes,19,rep,name=restrictions,proto3" json:"restrictions,omitempty"`
 	CandidateActorEvaluations []*CandidateActorEvaluation `protobuf:"bytes,20,rep,name=candidate_actor_evaluations,json=candidateActorEvaluations,proto3" json:"candidate_actor_evaluations,omitempty"`
-	unknownFields             protoimpl.UnknownFields
-	sizeCache                 protoimpl.SizeCache
+	// Current actor-assignment resolution for this task.
+	ActorAssignmentStatus *TaskActorAssignmentStatus `protobuf:"bytes,21,opt,name=actor_assignment_status,json=actorAssignmentStatus,proto3" json:"actor_assignment_status,omitempty"`
+	// Revision used to prevent concurrent state changes and reassignments from
+	// overwriting one another. Starts at 1.
+	Revision      uint64 `protobuf:"varint,22,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TaskRun) Reset() {
@@ -362,6 +362,20 @@ func (x *TaskRun) GetCandidateActorEvaluations() []*CandidateActorEvaluation {
 	return nil
 }
 
+func (x *TaskRun) GetActorAssignmentStatus() *TaskActorAssignmentStatus {
+	if x != nil {
+		return x.ActorAssignmentStatus
+	}
+	return nil
+}
+
+func (x *TaskRun) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type TaskRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*TaskRun             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -411,14 +425,13 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x01\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbf\x01\n" +
 	"\x12TaskRuntimeBinding\x12*\n" +
-	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12*\n" +
-	"\x11robot_instance_id\x18\x02 \x01(\tR\x0frobotInstanceId\x12\x1d\n" +
+	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12\x1d\n" +
 	"\n" +
-	"station_id\x18\x03 \x01(\tR\tstationId\x12\x17\n" +
-	"\acell_id\x18\x04 \x01(\tR\x06cellId\x12E\n" +
-	"\x0econtainer_slot\x18\x05 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xc5\a\n" +
+	"station_id\x18\x02 \x01(\tR\tstationId\x12\x17\n" +
+	"\acell_id\x18\x03 \x01(\tR\x06cellId\x12E\n" +
+	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd1\b\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -441,9 +454,11 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x128\n" +
 	"\abinding\x18\x11 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\x12B\n" +
 	"\frestrictions\x18\x13 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x12d\n" +
-	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\"5\n" +
+	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\x12e\n" +
+	"\x17actor_assignment_status\x18\x15 \x01(\v2%.runtime.v1.TaskActorAssignmentStatusB\x06\xbaH\x03\xc8\x01\x01R\x15actorAssignmentStatus\x12#\n" +
+	"\brevision\x18\x16 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\"5\n" +
 	"\bTaskRuns\x12)\n" +
-	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xd5\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xf3\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
 	"\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18TASK_RUN_STATE_NOT_READY\x10\x01\x12\x18\n" +
@@ -451,7 +466,8 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x17\n" +
 	"\x13TASK_RUN_STATE_DONE\x10\x04\x12\x18\n" +
 	"\x14TASK_RUN_STATE_ERROR\x10\x05\x12\x1a\n" +
-	"\x16TASK_RUN_STATE_ABORTED\x10\x06B\xab\x01\n" +
+	"\x16TASK_RUN_STATE_ABORTED\x10\x06\x12\x1c\n" +
+	"\x18TASK_RUN_STATE_SUSPENDED\x10\aB\xab\x01\n" +
 	"\x0ecom.runtime.v1B\fTaskRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
@@ -470,16 +486,17 @@ func file_runtime_v1_task_run_proto_rawDescGZIP() []byte {
 var file_runtime_v1_task_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_runtime_v1_task_run_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_task_run_proto_goTypes = []any{
-	(TaskRunState)(0),                // 0: runtime.v1.TaskRunState
-	(*TaskRuntimeBinding)(nil),       // 1: runtime.v1.TaskRuntimeBinding
-	(*TaskRun)(nil),                  // 2: runtime.v1.TaskRun
-	(*TaskRuns)(nil),                 // 3: runtime.v1.TaskRuns
-	(*v1.ContainerSlotRef)(nil),      // 4: resources.v1.ContainerSlotRef
-	(*v11.ActorRef)(nil),             // 5: common.v1.ActorRef
-	(*v11.EstimatedDuration)(nil),    // 6: common.v1.EstimatedDuration
-	(*timestamppb.Timestamp)(nil),    // 7: google.protobuf.Timestamp
-	(*RuntimeRestriction)(nil),       // 8: runtime.v1.RuntimeRestriction
-	(*CandidateActorEvaluation)(nil), // 9: runtime.v1.CandidateActorEvaluation
+	(TaskRunState)(0),                 // 0: runtime.v1.TaskRunState
+	(*TaskRuntimeBinding)(nil),        // 1: runtime.v1.TaskRuntimeBinding
+	(*TaskRun)(nil),                   // 2: runtime.v1.TaskRun
+	(*TaskRuns)(nil),                  // 3: runtime.v1.TaskRuns
+	(*v1.ContainerSlotRef)(nil),       // 4: resources.v1.ContainerSlotRef
+	(*v11.ActorRef)(nil),              // 5: common.v1.ActorRef
+	(*v11.EstimatedDuration)(nil),     // 6: common.v1.EstimatedDuration
+	(*timestamppb.Timestamp)(nil),     // 7: google.protobuf.Timestamp
+	(*RuntimeRestriction)(nil),        // 8: runtime.v1.RuntimeRestriction
+	(*CandidateActorEvaluation)(nil),  // 9: runtime.v1.CandidateActorEvaluation
+	(*TaskActorAssignmentStatus)(nil), // 10: runtime.v1.TaskActorAssignmentStatus
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
@@ -492,12 +509,13 @@ var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	1,  // 7: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
 	8,  // 8: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
 	9,  // 9: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	2,  // 10: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	10, // 10: runtime.v1.TaskRun.actor_assignment_status:type_name -> runtime.v1.TaskActorAssignmentStatus
+	2,  // 11: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_task_run_proto_init() }
@@ -505,6 +523,7 @@ func file_runtime_v1_task_run_proto_init() {
 	if File_runtime_v1_task_run_proto != nil {
 		return
 	}
+	file_runtime_v1_actor_assignment_proto_init()
 	file_runtime_v1_process_requests_proto_init()
 	file_runtime_v1_runtime_restriction_proto_init()
 	type x struct{}

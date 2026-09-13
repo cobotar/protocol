@@ -186,6 +186,73 @@ func (TaskAssignmentPreference) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{1}
 }
 
+type ActorUnavailabilityPolicy int32
+
+const (
+	// Use the default policy:
+	//   - for a task that has not started, attempt reassignment when can_reassign
+	//     is true;
+	//   - for an in-progress task, suspend it and require an explicit handover or
+	//     resume decision;
+	//   - if no replacement exists, mark assignment as blocked and retry after a
+	//     later availability change.
+	ActorUnavailabilityPolicy_ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED ActorUnavailabilityPolicy = 0
+	// Retain the current assignment. If the task is in progress, suspend it
+	// until the same actor becomes available again.
+	ActorUnavailabilityPolicy_ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR ActorUnavailabilityPolicy = 1
+	// Automatically choose another available capable actor if the task has not
+	// started. An in-progress task is instead suspended and requires an explicit
+	// handover decision.
+	ActorUnavailabilityPolicy_ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED ActorUnavailabilityPolicy = 2
+	// For an in-progress task, suspend execution and select another available
+	// capable actor. The task remains suspended until the handover is explicitly
+	// accepted by resuming it.
+	ActorUnavailabilityPolicy_ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN ActorUnavailabilityPolicy = 3
+)
+
+// Enum value maps for ActorUnavailabilityPolicy.
+var (
+	ActorUnavailabilityPolicy_name = map[int32]string{
+		0: "ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED",
+		1: "ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR",
+		2: "ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED",
+		3: "ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN",
+	}
+	ActorUnavailabilityPolicy_value = map[string]int32{
+		"ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED":             0,
+		"ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR":          1,
+		"ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED": 2,
+		"ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN":    3,
+	}
+)
+
+func (x ActorUnavailabilityPolicy) Enum() *ActorUnavailabilityPolicy {
+	p := new(ActorUnavailabilityPolicy)
+	*p = x
+	return p
+}
+
+func (x ActorUnavailabilityPolicy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ActorUnavailabilityPolicy) Descriptor() protoreflect.EnumDescriptor {
+	return file_process_v1_task_definition_proto_enumTypes[2].Descriptor()
+}
+
+func (ActorUnavailabilityPolicy) Type() protoreflect.EnumType {
+	return &file_process_v1_task_definition_proto_enumTypes[2]
+}
+
+func (x ActorUnavailabilityPolicy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ActorUnavailabilityPolicy.Descriptor instead.
+func (ActorUnavailabilityPolicy) EnumDescriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{2}
+}
+
 type ProductTarget struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	NodeId           string                 `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`                                 // Assembly node occurrence the task acts on.
@@ -629,16 +696,17 @@ func (x *ValidationRequirement) GetConstraints() []*v13.KeyValueConstraint {
 }
 
 type TaskExecutionPolicy struct {
-	state                  protoimpl.MessageState   `protogen:"open.v1"`
-	AssignmentPreference   TaskAssignmentPreference `protobuf:"varint,1,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=process.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
-	ActorConstraint        *v12.ActorConstraint     `protobuf:"bytes,2,opt,name=actor_constraint,json=actorConstraint,proto3" json:"actor_constraint,omitempty"`
-	CanReassign            bool                     `protobuf:"varint,3,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
-	CanUndo                bool                     `protobuf:"varint,4,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
-	EstimatedHumanDuration *v13.EstimatedDuration   `protobuf:"bytes,5,opt,name=estimated_human_duration,json=estimatedHumanDuration,proto3" json:"estimated_human_duration,omitempty"`
-	EstimatedRobotDuration *v13.EstimatedDuration   `protobuf:"bytes,6,opt,name=estimated_robot_duration,json=estimatedRobotDuration,proto3" json:"estimated_robot_duration,omitempty"`
-	RequireFullGuidance    bool                     `protobuf:"varint,7,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	state                     protoimpl.MessageState    `protogen:"open.v1"`
+	AssignmentPreference      TaskAssignmentPreference  `protobuf:"varint,1,opt,name=assignment_preference,json=assignmentPreference,proto3,enum=process.v1.TaskAssignmentPreference" json:"assignment_preference,omitempty"`
+	ActorConstraint           *v12.ActorConstraint      `protobuf:"bytes,2,opt,name=actor_constraint,json=actorConstraint,proto3" json:"actor_constraint,omitempty"`
+	CanReassign               bool                      `protobuf:"varint,3,opt,name=can_reassign,json=canReassign,proto3" json:"can_reassign,omitempty"`
+	CanUndo                   bool                      `protobuf:"varint,4,opt,name=can_undo,json=canUndo,proto3" json:"can_undo,omitempty"`
+	ActorUnavailabilityPolicy ActorUnavailabilityPolicy `protobuf:"varint,8,opt,name=actor_unavailability_policy,json=actorUnavailabilityPolicy,proto3,enum=process.v1.ActorUnavailabilityPolicy" json:"actor_unavailability_policy,omitempty"`
+	EstimatedHumanDuration    *v13.EstimatedDuration    `protobuf:"bytes,5,opt,name=estimated_human_duration,json=estimatedHumanDuration,proto3" json:"estimated_human_duration,omitempty"`
+	EstimatedRobotDuration    *v13.EstimatedDuration    `protobuf:"bytes,6,opt,name=estimated_robot_duration,json=estimatedRobotDuration,proto3" json:"estimated_robot_duration,omitempty"`
+	RequireFullGuidance       bool                      `protobuf:"varint,7,opt,name=require_full_guidance,json=requireFullGuidance,proto3" json:"require_full_guidance,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
 }
 
 func (x *TaskExecutionPolicy) Reset() {
@@ -697,6 +765,13 @@ func (x *TaskExecutionPolicy) GetCanUndo() bool {
 		return x.CanUndo
 	}
 	return false
+}
+
+func (x *TaskExecutionPolicy) GetActorUnavailabilityPolicy() ActorUnavailabilityPolicy {
+	if x != nil {
+		return x.ActorUnavailabilityPolicy
+	}
+	return ActorUnavailabilityPolicy_ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED
 }
 
 func (x *TaskExecutionPolicy) GetEstimatedHumanDuration() *v13.EstimatedDuration {
@@ -1080,12 +1155,13 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12f\n" +
 	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelB\b\xbaH\x05\x82\x01\x02\x10\x01R\x1amanualConfirmationMinLevel\x12:\n" +
 	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04mode\x12?\n" +
-	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdd\x03\n" +
+	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc4\x04\n" +
 	"\x13TaskExecutionPolicy\x12Y\n" +
 	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +
 	"\x10actor_constraint\x18\x02 \x01(\v2\x1e.capability.v1.ActorConstraintR\x0factorConstraint\x12!\n" +
 	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x19\n" +
-	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12V\n" +
+	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12e\n" +
+	"\x1bactor_unavailability_policy\x18\b \x01(\x0e2%.process.v1.ActorUnavailabilityPolicyR\x19actorUnavailabilityPolicy\x12V\n" +
 	"\x18estimated_human_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
 	"\x18estimated_robot_duration\x18\x06 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +
 	"\x15require_full_guidance\x18\a \x01(\bR\x13requireFullGuidance\"\x97\x02\n" +
@@ -1149,7 +1225,12 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"%TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN\x10\x02\x12+\n" +
 	"'TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT\x10\x03\x12)\n" +
 	"%TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT\x10\x04\x12%\n" +
-	"!TASK_ASSIGNMENT_PREFERENCE_EITHER\x10\x05B\xb2\x01\n" +
+	"!TASK_ASSIGNMENT_PREFERENCE_EITHER\x10\x05*\xe7\x01\n" +
+	"\x19ActorUnavailabilityPolicy\x12+\n" +
+	"'ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED\x10\x00\x12.\n" +
+	"*ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR\x10\x01\x127\n" +
+	"3ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED\x10\x02\x124\n" +
+	"0ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN\x10\x03B\xb2\x01\n" +
 	"\x0ecom.process.v1B\x13TaskDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
@@ -1165,74 +1246,76 @@ func file_process_v1_task_definition_proto_rawDescGZIP() []byte {
 	return file_process_v1_task_definition_proto_rawDescData
 }
 
-var file_process_v1_task_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_process_v1_task_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_process_v1_task_definition_proto_goTypes = []any{
 	(TaskType)(0),                  // 0: process.v1.TaskType
 	(TaskAssignmentPreference)(0),  // 1: process.v1.TaskAssignmentPreference
-	(*ProductTarget)(nil),          // 2: process.v1.ProductTarget
-	(*ContainerTarget)(nil),        // 3: process.v1.ContainerTarget
-	(*ResourceTarget)(nil),         // 4: process.v1.ResourceTarget
-	(*TaskTarget)(nil),             // 5: process.v1.TaskTarget
-	(*QuantityRequirement)(nil),    // 6: process.v1.QuantityRequirement
-	(*TaskEndpoint)(nil),           // 7: process.v1.TaskEndpoint
-	(*ValidationRequirement)(nil),  // 8: process.v1.ValidationRequirement
-	(*TaskExecutionPolicy)(nil),    // 9: process.v1.TaskExecutionPolicy
-	(*TaskOverride)(nil),           // 10: process.v1.TaskOverride
-	(*TaskDefinition)(nil),         // 11: process.v1.TaskDefinition
-	(*TaskDefinitions)(nil),        // 12: process.v1.TaskDefinitions
-	(*v1.LocalTarget)(nil),         // 13: geometry.v1.LocalTarget
-	(v11.ContainerSlotType)(0),     // 14: resources.v1.ContainerSlotType
-	(v12.SkillLevel)(0),            // 15: capability.v1.SkillLevel
-	(v11.ValidationMode)(0),        // 16: resources.v1.ValidationMode
-	(*v13.KeyValueConstraint)(nil), // 17: common.v1.KeyValueConstraint
-	(*v12.ActorConstraint)(nil),    // 18: capability.v1.ActorConstraint
-	(*v13.EstimatedDuration)(nil),  // 19: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 20: variance.v1.VariantRule
-	(*v1.Vector3)(nil),             // 21: geometry.v1.Vector3
-	(*v12.ToolRequirement)(nil),    // 22: capability.v1.ToolRequirement
-	(*v12.SkillRequirement)(nil),   // 23: capability.v1.SkillRequirement
-	(v13.SafetyRelevance)(0),       // 24: common.v1.SafetyRelevance
+	(ActorUnavailabilityPolicy)(0), // 2: process.v1.ActorUnavailabilityPolicy
+	(*ProductTarget)(nil),          // 3: process.v1.ProductTarget
+	(*ContainerTarget)(nil),        // 4: process.v1.ContainerTarget
+	(*ResourceTarget)(nil),         // 5: process.v1.ResourceTarget
+	(*TaskTarget)(nil),             // 6: process.v1.TaskTarget
+	(*QuantityRequirement)(nil),    // 7: process.v1.QuantityRequirement
+	(*TaskEndpoint)(nil),           // 8: process.v1.TaskEndpoint
+	(*ValidationRequirement)(nil),  // 9: process.v1.ValidationRequirement
+	(*TaskExecutionPolicy)(nil),    // 10: process.v1.TaskExecutionPolicy
+	(*TaskOverride)(nil),           // 11: process.v1.TaskOverride
+	(*TaskDefinition)(nil),         // 12: process.v1.TaskDefinition
+	(*TaskDefinitions)(nil),        // 13: process.v1.TaskDefinitions
+	(*v1.LocalTarget)(nil),         // 14: geometry.v1.LocalTarget
+	(v11.ContainerSlotType)(0),     // 15: resources.v1.ContainerSlotType
+	(v12.SkillLevel)(0),            // 16: capability.v1.SkillLevel
+	(v11.ValidationMode)(0),        // 17: resources.v1.ValidationMode
+	(*v13.KeyValueConstraint)(nil), // 18: common.v1.KeyValueConstraint
+	(*v12.ActorConstraint)(nil),    // 19: capability.v1.ActorConstraint
+	(*v13.EstimatedDuration)(nil),  // 20: common.v1.EstimatedDuration
+	(*v14.VariantRule)(nil),        // 21: variance.v1.VariantRule
+	(*v1.Vector3)(nil),             // 22: geometry.v1.Vector3
+	(*v12.ToolRequirement)(nil),    // 23: capability.v1.ToolRequirement
+	(*v12.SkillRequirement)(nil),   // 24: capability.v1.SkillRequirement
+	(v13.SafetyRelevance)(0),       // 25: common.v1.SafetyRelevance
 }
 var file_process_v1_task_definition_proto_depIdxs = []int32{
-	13, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
-	14, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
-	2,  // 2: process.v1.TaskTarget.product:type_name -> process.v1.ProductTarget
-	3,  // 3: process.v1.TaskTarget.container:type_name -> process.v1.ContainerTarget
-	4,  // 4: process.v1.TaskTarget.resource:type_name -> process.v1.ResourceTarget
-	2,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
-	3,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
-	15, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
-	16, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
-	17, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
+	14, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
+	15, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
+	3,  // 2: process.v1.TaskTarget.product:type_name -> process.v1.ProductTarget
+	4,  // 3: process.v1.TaskTarget.container:type_name -> process.v1.ContainerTarget
+	5,  // 4: process.v1.TaskTarget.resource:type_name -> process.v1.ResourceTarget
+	3,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
+	4,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
+	16, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
+	17, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
+	18, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
 	1,  // 10: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
-	18, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
-	19, // 12: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
-	19, // 13: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
-	20, // 14: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
-	5,  // 15: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
-	21, // 16: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
-	21, // 17: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
-	0,  // 18: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
-	5,  // 19: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	21, // 20: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	21, // 21: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	22, // 22: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
-	23, // 23: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	8,  // 24: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	9,  // 25: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	24, // 26: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	7,  // 27: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
-	7,  // 28: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
-	6,  // 29: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
-	20, // 30: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	10, // 31: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	11, // 32: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	33, // [33:33] is the sub-list for method output_type
-	33, // [33:33] is the sub-list for method input_type
-	33, // [33:33] is the sub-list for extension type_name
-	33, // [33:33] is the sub-list for extension extendee
-	0,  // [0:33] is the sub-list for field type_name
+	19, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
+	2,  // 12: process.v1.TaskExecutionPolicy.actor_unavailability_policy:type_name -> process.v1.ActorUnavailabilityPolicy
+	20, // 13: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
+	20, // 14: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
+	21, // 15: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	6,  // 16: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
+	22, // 17: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
+	22, // 18: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
+	0,  // 19: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
+	6,  // 20: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
+	22, // 21: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	22, // 22: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	23, // 23: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
+	24, // 24: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	9,  // 25: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	10, // 26: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	25, // 27: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	8,  // 28: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	8,  // 29: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	7,  // 30: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
+	21, // 31: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	11, // 32: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	12, // 33: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	34, // [34:34] is the sub-list for method output_type
+	34, // [34:34] is the sub-list for method input_type
+	34, // [34:34] is the sub-list for extension type_name
+	34, // [34:34] is the sub-list for extension extendee
+	0,  // [0:34] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }
@@ -1245,7 +1328,7 @@ func file_process_v1_task_definition_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_task_definition_proto_rawDesc), len(file_process_v1_task_definition_proto_rawDesc)),
-			NumEnums:      2,
+			NumEnums:      3,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,

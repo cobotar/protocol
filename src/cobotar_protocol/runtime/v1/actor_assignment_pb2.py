@@ -28,7 +28,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/actor_assignment.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n\x0f\x41\x63torAssignment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x32\n\x0eprocess_run_id\x18\x03 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x34\n\x0fsequence_run_id\x18\x04 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12,\n\x0btask_run_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12;\n\x0b\x61ssigned_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nassignedAt\x12;\n\x0breleased_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nreleasedAt\"E\n\x10\x41\x63torAssignments\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x05itemsB\xb3\x01\n\x0e\x63om.runtime.v1B\x14\x41\x63torAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!runtime/v1/actor_assignment.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x02\n\x0f\x41\x63torAssignment\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x31\n\x05\x61\x63tor\x18\x02 \x01(\x0b\x32\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05\x61\x63tor\x12\x32\n\x0eprocess_run_id\x18\x03 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12\x34\n\x0fsequence_run_id\x18\x04 \x01(\tB\x0c\xbaH\tr\x04\x90\xf2\x04\x01\xc8\x01\x01R\rsequenceRunId\x12,\n\x0btask_run_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\x98\xf2\x04\x01\xc8\x01\x01R\ttaskRunId\x12;\n\x0b\x61ssigned_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nassignedAt\x12;\n\x0breleased_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nreleasedAt\"E\n\x10\x41\x63torAssignments\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\x1b.runtime.v1.ActorAssignmentR\x05items\"\xd4\x03\n\x19TaskActorAssignmentStatus\x12G\n\x05state\x18\x01 \x01(\x0e\x32$.runtime.v1.TaskActorAssignmentStateB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x05state\x12G\n\x06reason\x18\x02 \x01(\x0e\x32%.runtime.v1.TaskActorAssignmentReasonB\x08\xbaH\x05\x82\x01\x02\x10\x01R\x06reason\x12:\n\x0e\x61\x66\x66\x65\x63ted_actor\x18\x03 \x01(\x0b\x32\x13.common.v1.ActorRefR\raffectedActor\x12\"\n\x07message\x18\x04 \x01(\tB\x08\xbaH\x05r\x03\x18\x80\x08R\x07message\x12\x45\n\x0c\x65valuated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\x0b\x65valuatedAt:~\xbaH{\x1ay\n%task_assignment_status.blocked_reason\x12+blocked assignment status requires a reason\x1a#this.state != 3 || this.reason != 0*\xc6\x01\n\x18TaskActorAssignmentState\x12+\n\'TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED\x10\x00\x12*\n&TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED\x10\x01\x12(\n$TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED\x10\x02\x12\'\n#TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED\x10\x03*\xa9\x02\n\x19TaskActorAssignmentReason\x12,\n(TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED\x10\x00\x12\x32\n.TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE\x10\x01\x12;\n7TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE\x10\x02\x12\x39\n5TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED\x10\x03\x12\x32\n.TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED\x10\x04\x42\xb3\x01\n\x0e\x63om.runtime.v1B\x14\x41\x63torAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,8 +44,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACTORASSIGNMENT'].fields_by_name['sequence_run_id']._serialized_options = b'\272H\tr\004\220\362\004\001\310\001\001'
   _globals['_ACTORASSIGNMENT'].fields_by_name['task_run_id']._loaded_options = None
   _globals['_ACTORASSIGNMENT'].fields_by_name['task_run_id']._serialized_options = b'\272H\tr\004\230\362\004\001\310\001\001'
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['state']._loaded_options = None
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['state']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['reason']._loaded_options = None
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['reason']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['message']._loaded_options = None
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['message']._serialized_options = b'\272H\005r\003\030\200\010'
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['evaluated_at']._loaded_options = None
+  _globals['_TASKACTORASSIGNMENTSTATUS'].fields_by_name['evaluated_at']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_TASKACTORASSIGNMENTSTATUS']._loaded_options = None
+  _globals['_TASKACTORASSIGNMENTSTATUS']._serialized_options = b'\272H{\032y\n%task_assignment_status.blocked_reason\022+blocked assignment status requires a reason\032#this.state != 3 || this.reason != 0'
+  _globals['_TASKACTORASSIGNMENTSTATE']._serialized_start=1083
+  _globals['_TASKACTORASSIGNMENTSTATE']._serialized_end=1281
+  _globals['_TASKACTORASSIGNMENTREASON']._serialized_start=1284
+  _globals['_TASKACTORASSIGNMENTREASON']._serialized_end=1581
   _globals['_ACTORASSIGNMENT']._serialized_start=180
   _globals['_ACTORASSIGNMENT']._serialized_end=538
   _globals['_ACTORASSIGNMENTS']._serialized_start=540
   _globals['_ACTORASSIGNMENTS']._serialized_end=609
+  _globals['_TASKACTORASSIGNMENTSTATUS']._serialized_start=612
+  _globals['_TASKACTORASSIGNMENTSTATUS']._serialized_end=1080
 # @@protoc_insertion_point(module_scope)

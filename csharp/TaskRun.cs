@@ -28,51 +28,55 @@ namespace Messages.Runtime.V1 {
             "dmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aFWNvbW1vbi92MS9hY3Rvci5wcm90",
             "bxoUY29tbW9uL3YxL3RpbWUucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1l",
             "c3RhbXAucHJvdG8aJ3Jlc291cmNlcy92MS9jb250YWluZXJfZGVmaW5pdGlv",
-            "bi5wcm90bxohcnVudGltZS92MS9wcm9jZXNzX3JlcXVlc3RzLnByb3RvGiRy",
-            "dW50aW1lL3YxL3J1bnRpbWVfcmVzdHJpY3Rpb24ucHJvdG8aK3ZhbGlkYXRp",
-            "b24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i6wEKElRhc2tS",
-            "dW50aW1lQmluZGluZxIqChFhc3NldF9pbnN0YW5jZV9pZBgBIAEoCVIPYXNz",
-            "ZXRJbnN0YW5jZUlkEioKEXJvYm90X2luc3RhbmNlX2lkGAIgASgJUg9yb2Jv",
-            "dEluc3RhbmNlSWQSHQoKc3RhdGlvbl9pZBgDIAEoCVIJc3RhdGlvbklkEhcK",
-            "B2NlbGxfaWQYBCABKAlSBmNlbGxJZBJFCg5jb250YWluZXJfc2xvdBgFIAEo",
-            "CzIeLnJlc291cmNlcy52MS5Db250YWluZXJTbG90UmVmUg1jb250YWluZXJT",
-            "bG90IsUHCgdUYXNrUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJ",
-            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SOgoSdGFza19kZWZpbml0aW9u",
-            "X2lkGAQgASgJQgy6SAlyBLDyBAHIAQFSEHRhc2tEZWZpbml0aW9uSWQSQQoW",
-            "cGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJcgSQ8gQByAEBUhNw",
-            "YXJlbnRTZXF1ZW5jZVJ1bklkEjsKBXN0YXRlGAYgASgOMhgucnVudGltZS52",
-            "MS5UYXNrUnVuU3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRI+ChBjYW5kaWRh",
-            "dGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmUg9jYW5kaWRh",
-            "dGVBY3RvcnMSOgoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5jb21tb24udjEu",
-            "QWN0b3JSZWZSDWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAkgASgIUgVjYW5E",
-            "bxIZCghjYW5fdW5kbxgKIAEoCFIHY2FuVW5kbxIpChB3b3JrYWJsZV9ob3Jp",
-            "em9uGAsgASgFUg93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1hdGVkX2R1cmF0",
-            "aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhFlc3Rp",
-            "bWF0ZWREdXJhdGlvbhI5CgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgO",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0",
-            "Eh0KCmVycm9yX2NvZGUYDyABKAlSCWVycm9yQ29kZRIjCg1lcnJvcl9tZXNz",
-            "YWdlGBAgASgJUgxlcnJvck1lc3NhZ2USOAoHYmluZGluZxgRIAEoCzIeLnJ1",
-            "bnRpbWUudjEuVGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nEkIKDHJlc3Ry",
-            "aWN0aW9ucxgTIAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3RyaWN0aW9u",
-            "UgxyZXN0cmljdGlvbnMSZAobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25z",
-            "GBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb25S",
-            "GWNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlvbnMiNQoIVGFza1J1bnMSKQoFaXRl",
-            "bXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW5SBWl0ZW1zKtUBCgxUYXNr",
-            "UnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhU",
-            "QVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9S",
-            "RUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFT",
-            "S19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUS",
-            "GgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGQqsBCg5jb20ucnVudGltZS52",
-            "MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
-            "bC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3Nh",
-            "Z2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJN",
-            "ZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "bi5wcm90bxohcnVudGltZS92MS9hY3Rvcl9hc3NpZ25tZW50LnByb3RvGiFy",
+            "dW50aW1lL3YxL3Byb2Nlc3NfcmVxdWVzdHMucHJvdG8aJHJ1bnRpbWUvdjEv",
+            "cnVudGltZV9yZXN0cmljdGlvbi5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
+            "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byK/AQoSVGFza1J1bnRpbWVCaW5k",
+            "aW5nEioKEWFzc2V0X2luc3RhbmNlX2lkGAEgASgJUg9hc3NldEluc3RhbmNl",
+            "SWQSHQoKc3RhdGlvbl9pZBgCIAEoCVIJc3RhdGlvbklkEhcKB2NlbGxfaWQY",
+            "AyABKAlSBmNlbGxJZBJFCg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291",
+            "cmNlcy52MS5Db250YWluZXJTbG90UmVmUg1jb250YWluZXJTbG90ItEICgdU",
+            "YXNrUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SOgoSdGFza19kZWZpbml0aW9uX2lkGAQgASgJ",
+            "Qgy6SAlyBLDyBAHIAQFSEHRhc2tEZWZpbml0aW9uSWQSQQoWcGFyZW50X3Nl",
+            "cXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJcgSQ8gQByAEBUhNwYXJlbnRTZXF1",
+            "ZW5jZVJ1bklkEjsKBXN0YXRlGAYgASgOMhgucnVudGltZS52MS5UYXNrUnVu",
+            "U3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRI+ChBjYW5kaWRhdGVfYWN0b3Jz",
+            "GAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmUg9jYW5kaWRhdGVBY3RvcnMS",
+            "OgoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5jb21tb24udjEuQWN0b3JSZWZS",
+            "DWFzc2lnbmVkQWN0b3ISFQoGY2FuX2RvGAkgASgIUgVjYW5EbxIZCghjYW5f",
+            "dW5kbxgKIAEoCFIHY2FuVW5kbxIpChB3b3JrYWJsZV9ob3Jpem9uGAsgASgF",
+            "Ug93b3JrYWJsZUhvcml6b24SSwoSZXN0aW1hdGVkX2R1cmF0aW9uGAwgASgL",
+            "MhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uUhFlc3RpbWF0ZWREdXJh",
+            "dGlvbhI5CgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcFIJc3RhcnRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgOIAEoCzIaLmdv",
+            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0Eh0KCmVycm9y",
+            "X2NvZGUYDyABKAlSCWVycm9yQ29kZRIjCg1lcnJvcl9tZXNzYWdlGBAgASgJ",
+            "UgxlcnJvck1lc3NhZ2USOAoHYmluZGluZxgRIAEoCzIeLnJ1bnRpbWUudjEu",
+            "VGFza1J1bnRpbWVCaW5kaW5nUgdiaW5kaW5nEkIKDHJlc3RyaWN0aW9ucxgT",
+            "IAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3RyaWN0aW9uUgxyZXN0cmlj",
+            "dGlvbnMSZAobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25zGBQgAygLMiQu",
+            "cnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb25SGWNhbmRpZGF0",
+            "ZUFjdG9yRXZhbHVhdGlvbnMSZQoXYWN0b3JfYXNzaWdubWVudF9zdGF0dXMY",
+            "FSABKAsyJS5ydW50aW1lLnYxLlRhc2tBY3RvckFzc2lnbm1lbnRTdGF0dXNC",
+            "BrpIA8gBAVIVYWN0b3JBc3NpZ25tZW50U3RhdHVzEiMKCHJldmlzaW9uGBYg",
+            "ASgEQge6SAQyAigBUghyZXZpc2lvbiI1CghUYXNrUnVucxIpCgVpdGVtcxgB",
+            "IAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIFaXRlbXMq8wEKDFRhc2tSdW5T",
+            "dGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEhwKGFRBU0tf",
+            "UlVOX1NUQVRFX05PVF9SRUFEWRABEhgKFFRBU0tfUlVOX1NUQVRFX1JFQURZ",
+            "EAISHgoaVEFTS19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIXChNUQVNLX1JV",
+            "Tl9TVEFURV9ET05FEAQSGAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZU",
+            "QVNLX1JVTl9TVEFURV9BQk9SVEVEEAYSHAoYVEFTS19SVU5fU1RBVEVfU1VT",
+            "UEVOREVEEAdCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
+            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
+            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "RobotInstanceId", "StationId", "CellId", "ContainerSlot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Binding", "Restrictions", "CandidateActorEvaluations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "StationId", "CellId", "ContainerSlot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Binding", "Restrictions", "CandidateActorEvaluations", "ActorAssignmentStatus", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -88,6 +92,7 @@ namespace Messages.Runtime.V1 {
     [pbr::OriginalName("TASK_RUN_STATE_DONE")] Done = 4,
     [pbr::OriginalName("TASK_RUN_STATE_ERROR")] Error = 5,
     [pbr::OriginalName("TASK_RUN_STATE_ABORTED")] Aborted = 6,
+    [pbr::OriginalName("TASK_RUN_STATE_SUSPENDED")] Suspended = 7,
   }
 
   #endregion
@@ -132,7 +137,6 @@ namespace Messages.Runtime.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskRuntimeBinding(TaskRuntimeBinding other) : this() {
       assetInstanceId_ = other.assetInstanceId_;
-      robotInstanceId_ = other.robotInstanceId_;
       stationId_ = other.stationId_;
       cellId_ = other.cellId_;
       containerSlot_ = other.containerSlot_ != null ? other.containerSlot_.Clone() : null;
@@ -157,23 +161,8 @@ namespace Messages.Runtime.V1 {
       }
     }
 
-    /// <summary>Field number for the "robot_instance_id" field.</summary>
-    public const int RobotInstanceIdFieldNumber = 2;
-    private string robotInstanceId_ = "";
-    /// <summary>
-    /// TODO: think this should be removed
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RobotInstanceId {
-      get { return robotInstanceId_; }
-      set {
-        robotInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "station_id" field.</summary>
-    public const int StationIdFieldNumber = 3;
+    public const int StationIdFieldNumber = 2;
     private string stationId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,7 +174,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "cell_id" field.</summary>
-    public const int CellIdFieldNumber = 4;
+    public const int CellIdFieldNumber = 3;
     private string cellId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -197,7 +186,7 @@ namespace Messages.Runtime.V1 {
     }
 
     /// <summary>Field number for the "container_slot" field.</summary>
-    public const int ContainerSlotFieldNumber = 5;
+    public const int ContainerSlotFieldNumber = 4;
     private global::Messages.Resources.V1.ContainerSlotRef containerSlot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -224,7 +213,6 @@ namespace Messages.Runtime.V1 {
         return true;
       }
       if (AssetInstanceId != other.AssetInstanceId) return false;
-      if (RobotInstanceId != other.RobotInstanceId) return false;
       if (StationId != other.StationId) return false;
       if (CellId != other.CellId) return false;
       if (!object.Equals(ContainerSlot, other.ContainerSlot)) return false;
@@ -236,7 +224,6 @@ namespace Messages.Runtime.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
-      if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
       if (StationId.Length != 0) hash ^= StationId.GetHashCode();
       if (CellId.Length != 0) hash ^= CellId.GetHashCode();
       if (containerSlot_ != null) hash ^= ContainerSlot.GetHashCode();
@@ -262,20 +249,16 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(AssetInstanceId);
       }
-      if (RobotInstanceId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(RobotInstanceId);
-      }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(StationId);
       }
       if (CellId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(CellId);
       }
       if (containerSlot_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteMessage(ContainerSlot);
       }
       if (_unknownFields != null) {
@@ -292,20 +275,16 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(AssetInstanceId);
       }
-      if (RobotInstanceId.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(RobotInstanceId);
-      }
       if (StationId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(StationId);
       }
       if (CellId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(CellId);
       }
       if (containerSlot_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteMessage(ContainerSlot);
       }
       if (_unknownFields != null) {
@@ -320,9 +299,6 @@ namespace Messages.Runtime.V1 {
       int size = 0;
       if (AssetInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetInstanceId);
-      }
-      if (RobotInstanceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotInstanceId);
       }
       if (StationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StationId);
@@ -347,9 +323,6 @@ namespace Messages.Runtime.V1 {
       }
       if (other.AssetInstanceId.Length != 0) {
         AssetInstanceId = other.AssetInstanceId;
-      }
-      if (other.RobotInstanceId.Length != 0) {
-        RobotInstanceId = other.RobotInstanceId;
       }
       if (other.StationId.Length != 0) {
         StationId = other.StationId;
@@ -387,18 +360,14 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            RobotInstanceId = input.ReadString();
-            break;
-          }
-          case 26: {
             StationId = input.ReadString();
             break;
           }
-          case 34: {
+          case 26: {
             CellId = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             if (containerSlot_ == null) {
               ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
             }
@@ -429,18 +398,14 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 18: {
-            RobotInstanceId = input.ReadString();
-            break;
-          }
-          case 26: {
             StationId = input.ReadString();
             break;
           }
-          case 34: {
+          case 26: {
             CellId = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             if (containerSlot_ == null) {
               ContainerSlot = new global::Messages.Resources.V1.ContainerSlotRef();
             }
@@ -508,6 +473,8 @@ namespace Messages.Runtime.V1 {
       binding_ = other.binding_ != null ? other.binding_.Clone() : null;
       restrictions_ = other.restrictions_.Clone();
       candidateActorEvaluations_ = other.candidateActorEvaluations_.Clone();
+      actorAssignmentStatus_ = other.actorAssignmentStatus_ != null ? other.actorAssignmentStatus_.Clone() : null;
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -603,6 +570,9 @@ namespace Messages.Runtime.V1 {
     /// <summary>Field number for the "assigned_actor" field.</summary>
     public const int AssignedActorFieldNumber = 8;
     private global::Messages.Common.V1.ActorRef assignedActor_;
+    /// <summary>
+    /// is the authoritative current task assignment.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.ActorRef AssignedActor {
@@ -757,6 +727,37 @@ namespace Messages.Runtime.V1 {
       get { return candidateActorEvaluations_; }
     }
 
+    /// <summary>Field number for the "actor_assignment_status" field.</summary>
+    public const int ActorAssignmentStatusFieldNumber = 21;
+    private global::Messages.Runtime.V1.TaskActorAssignmentStatus actorAssignmentStatus_;
+    /// <summary>
+    /// Current actor-assignment resolution for this task.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Runtime.V1.TaskActorAssignmentStatus ActorAssignmentStatus {
+      get { return actorAssignmentStatus_; }
+      set {
+        actorAssignmentStatus_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 22;
+    private ulong revision_;
+    /// <summary>
+    /// Revision used to prevent concurrent state changes and reassignments from
+    /// overwriting one another. Starts at 1.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { return revision_; }
+      set {
+        revision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -791,6 +792,8 @@ namespace Messages.Runtime.V1 {
       if (!object.Equals(Binding, other.Binding)) return false;
       if(!restrictions_.Equals(other.restrictions_)) return false;
       if(!candidateActorEvaluations_.Equals(other.candidateActorEvaluations_)) return false;
+      if (!object.Equals(ActorAssignmentStatus, other.ActorAssignmentStatus)) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -817,6 +820,8 @@ namespace Messages.Runtime.V1 {
       if (binding_ != null) hash ^= Binding.GetHashCode();
       hash ^= restrictions_.GetHashCode();
       hash ^= candidateActorEvaluations_.GetHashCode();
+      if (actorAssignmentStatus_ != null) hash ^= ActorAssignmentStatus.GetHashCode();
+      if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -902,6 +907,14 @@ namespace Messages.Runtime.V1 {
       }
       restrictions_.WriteTo(output, _repeated_restrictions_codec);
       candidateActorEvaluations_.WriteTo(output, _repeated_candidateActorEvaluations_codec);
+      if (actorAssignmentStatus_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(ActorAssignmentStatus);
+      }
+      if (Revision != 0UL) {
+        output.WriteRawTag(176, 1);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -979,6 +992,14 @@ namespace Messages.Runtime.V1 {
       }
       restrictions_.WriteTo(ref output, _repeated_restrictions_codec);
       candidateActorEvaluations_.WriteTo(ref output, _repeated_candidateActorEvaluations_codec);
+      if (actorAssignmentStatus_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(ActorAssignmentStatus);
+      }
+      if (Revision != 0UL) {
+        output.WriteRawTag(176, 1);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1040,6 +1061,12 @@ namespace Messages.Runtime.V1 {
       }
       size += restrictions_.CalculateSize(_repeated_restrictions_codec);
       size += candidateActorEvaluations_.CalculateSize(_repeated_candidateActorEvaluations_codec);
+      if (actorAssignmentStatus_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ActorAssignmentStatus);
+      }
+      if (Revision != 0UL) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1118,6 +1145,15 @@ namespace Messages.Runtime.V1 {
       }
       restrictions_.Add(other.restrictions_);
       candidateActorEvaluations_.Add(other.candidateActorEvaluations_);
+      if (other.actorAssignmentStatus_ != null) {
+        if (actorAssignmentStatus_ == null) {
+          ActorAssignmentStatus = new global::Messages.Runtime.V1.TaskActorAssignmentStatus();
+        }
+        ActorAssignmentStatus.MergeFrom(other.ActorAssignmentStatus);
+      }
+      if (other.Revision != 0UL) {
+        Revision = other.Revision;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1228,6 +1264,17 @@ namespace Messages.Runtime.V1 {
             candidateActorEvaluations_.AddEntriesFrom(input, _repeated_candidateActorEvaluations_codec);
             break;
           }
+          case 170: {
+            if (actorAssignmentStatus_ == null) {
+              ActorAssignmentStatus = new global::Messages.Runtime.V1.TaskActorAssignmentStatus();
+            }
+            input.ReadMessage(ActorAssignmentStatus);
+            break;
+          }
+          case 176: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -1336,6 +1383,17 @@ namespace Messages.Runtime.V1 {
           }
           case 162: {
             candidateActorEvaluations_.AddEntriesFrom(ref input, _repeated_candidateActorEvaluations_codec);
+            break;
+          }
+          case 170: {
+            if (actorAssignmentStatus_ == null) {
+              ActorAssignmentStatus = new global::Messages.Runtime.V1.TaskActorAssignmentStatus();
+            }
+            input.ReadMessage(ActorAssignmentStatus);
+            break;
+          }
+          case 176: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

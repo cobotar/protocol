@@ -94,9 +94,12 @@ type SequenceRun struct {
 	State                SequenceRunState       `protobuf:"varint,8,opt,name=state,proto3,enum=runtime.v1.SequenceRunState" json:"state,omitempty"`
 	CompletedTasks       int32                  `protobuf:"varint,9,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
 	CanBulkComplete      bool                   `protobuf:"varint,10,opt,name=can_bulk_complete,json=canBulkComplete,proto3" json:"can_bulk_complete,omitempty"`
-	AssignedActors       []*v1.ActorRef         `protobuf:"bytes,11,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	AssignedActors       []*v1.ActorRef         `protobuf:"bytes,11,rep,name=assigned_actors,json=assignedActors,proto3" json:"assigned_actors,omitempty"` // a derived set calculated from descendant TaskRuns.
+	// Revision used to prevent concurrent state changes and reassignments from
+	// overwriting one another. Starts at 1.
+	Revision      uint64 `protobuf:"varint,12,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SequenceRun) Reset() {
@@ -206,6 +209,13 @@ func (x *SequenceRun) GetAssignedActors() []*v1.ActorRef {
 	return nil
 }
 
+func (x *SequenceRun) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type SequenceRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*SequenceRun         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -255,7 +265,7 @@ var File_runtime_v1_sequence_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\n" +
 	"\x1druntime/v1/sequence_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa8\x04\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xcd\x04\n" +
 	"\vSequenceRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -268,7 +278,8 @@ const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\x0fcompleted_tasks\x18\t \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0ecompletedTasks\x12*\n" +
 	"\x11can_bulk_complete\x18\n" +
 	" \x01(\bR\x0fcanBulkComplete\x12<\n" +
-	"\x0fassigned_actors\x18\v \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\"=\n" +
+	"\x0fassigned_actors\x18\v \x03(\v2\x13.common.v1.ActorRefR\x0eassignedActors\x12#\n" +
+	"\brevision\x18\f \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\"=\n" +
 	"\fSequenceRuns\x12-\n" +
 	"\x05items\x18\x01 \x03(\v2\x17.runtime.v1.SequenceRunR\x05items*\xd7\x01\n" +
 	"\x10SequenceRunState\x12\"\n" +

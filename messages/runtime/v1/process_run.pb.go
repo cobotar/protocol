@@ -136,8 +136,11 @@ func (x *RunParameter) GetValue() string {
 	return ""
 }
 
-// ProcessRun is only created when a concrete cell can currently satisfy it.
-// Is is based upon a ProcessRecipe which defines what must be possible.
+// ProcessRun is a concrete runtime instantiation of a ProcessRecipe.
+//
+// Feasibility is evaluated against a concrete line/cell/station context when
+// the run is created. Runtime conditions may subsequently change, causing
+// individual tasks to be reassigned, blocked, or suspended.
 type ProcessRun struct {
 	state                protoimpl.MessageState    `protogen:"open.v1"`
 	Id                   string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -155,11 +158,14 @@ type ProcessRun struct {
 	State                ProcessRunState           `protobuf:"varint,13,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
 	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,14,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
 	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,15,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
-	Assignments          []*ActorAssignment        `protobuf:"bytes,16,rep,name=assignments,proto3" json:"assignments,omitempty"`
+	Assignments          []*ActorAssignment        `protobuf:"bytes,16,rep,name=assignments,proto3" json:"assignments,omitempty"` // is assignment history; released records remain present with released_at populated.
 	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,17,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	Parameters           []*RunParameter           `protobuf:"bytes,18,rep,name=parameters,proto3" json:"parameters,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// Revision used to prevent concurrent state changes and reassignments from
+	// overwriting one another. Starts at 1.
+	Revision      uint64 `protobuf:"varint,19,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessRun) Reset() {
@@ -318,6 +324,13 @@ func (x *ProcessRun) GetParameters() []*RunParameter {
 	return nil
 }
 
+func (x *ProcessRun) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type ProcessRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProcessRun          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -370,7 +383,7 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xef\x06\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\x94\a\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -395,7 +408,8 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\x15variant_configuration\x18\x11 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x128\n" +
 	"\n" +
 	"parameters\x18\x12 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
-	"parameters\";\n" +
+	"parameters\x12#\n" +
+	"\brevision\x18\x13 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\";\n" +
 	"\vProcessRuns\x12,\n" +
 	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xcd\x01\n" +
 	"\x0fProcessRunState\x12!\n" +

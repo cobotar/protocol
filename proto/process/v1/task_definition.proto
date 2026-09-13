@@ -52,6 +52,31 @@ enum TaskAssignmentPreference {
   TASK_ASSIGNMENT_PREFERENCE_EITHER = 5;
 }
 
+enum ActorUnavailabilityPolicy {
+  // Use the default policy:
+  // - for a task that has not started, attempt reassignment when can_reassign
+  //   is true;
+  // - for an in-progress task, suspend it and require an explicit handover or
+  //   resume decision;
+  // - if no replacement exists, mark assignment as blocked and retry after a
+  //   later availability change.
+  ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED = 0;
+
+  // Retain the current assignment. If the task is in progress, suspend it
+  // until the same actor becomes available again.
+  ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR = 1;
+
+  // Automatically choose another available capable actor if the task has not
+  // started. An in-progress task is instead suspended and requires an explicit
+  // handover decision.
+  ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED = 2;
+
+  // For an in-progress task, suspend execution and select another available
+  // capable actor. The task remains suspended until the handover is explicitly
+  // accepted by resuming it.
+  ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN = 3;
+}
+
 message ProductTarget {
   string node_id = 1; // Assembly node occurrence the task acts on.
   string part_definition_id = 2 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true]; // Optional denormalized helper.
@@ -124,10 +149,13 @@ message ValidationRequirement {
 }
 
 message TaskExecutionPolicy {
+  // TODO: ActorUnavailabilityPolicy 2 and 3 only allowed when `can_reassign = true`
+
   TaskAssignmentPreference assignment_preference = 1;
   capability.v1.ActorConstraint actor_constraint = 2;
   bool can_reassign = 3;
   bool can_undo = 4;
+  ActorUnavailabilityPolicy actor_unavailability_policy = 8;
   common.v1.EstimatedDuration estimated_human_duration = 5;
   common.v1.EstimatedDuration estimated_robot_duration = 6;
   bool require_full_guidance = 7;

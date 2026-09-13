@@ -7,7 +7,9 @@
 package runtimev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,11 +28,14 @@ type TaskStateRequest int32
 
 const (
 	TaskStateRequest_TASK_STATE_REQUEST_UNSPECIFIED TaskStateRequest = 0
+	// Start a ready task or resume a suspended task.
 	TaskStateRequest_TASK_STATE_REQUEST_IN_PROGRESS TaskStateRequest = 1
 	TaskStateRequest_TASK_STATE_REQUEST_DONE        TaskStateRequest = 2
 	TaskStateRequest_TASK_STATE_REQUEST_UNDO        TaskStateRequest = 3
 	TaskStateRequest_TASK_STATE_REQUEST_ERROR       TaskStateRequest = 4
 	TaskStateRequest_TASK_STATE_REQUEST_ABORT       TaskStateRequest = 5
+	// Suspend a started task without completing or failing it.
+	TaskStateRequest_TASK_STATE_REQUEST_SUSPENDED TaskStateRequest = 6
 )
 
 // Enum value maps for TaskStateRequest.
@@ -42,6 +47,7 @@ var (
 		3: "TASK_STATE_REQUEST_UNDO",
 		4: "TASK_STATE_REQUEST_ERROR",
 		5: "TASK_STATE_REQUEST_ABORT",
+		6: "TASK_STATE_REQUEST_SUSPENDED",
 	}
 	TaskStateRequest_value = map[string]int32{
 		"TASK_STATE_REQUEST_UNSPECIFIED": 0,
@@ -50,6 +56,7 @@ var (
 		"TASK_STATE_REQUEST_UNDO":        3,
 		"TASK_STATE_REQUEST_ERROR":       4,
 		"TASK_STATE_REQUEST_ABORT":       5,
+		"TASK_STATE_REQUEST_SUSPENDED":   6,
 	}
 )
 
@@ -133,13 +140,15 @@ func (x *ProcessAbortRequest) GetReason() string {
 }
 
 type TaskStateChangeRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TaskRunId     string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
-	State         TaskStateRequest       `protobuf:"varint,2,opt,name=state,proto3,enum=runtime.v1.TaskStateRequest" json:"state,omitempty"`
-	ErrorCode     string                 `protobuf:"bytes,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
-	ErrorMessage  string                 `protobuf:"bytes,4,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	TaskRunId    string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
+	State        TaskStateRequest       `protobuf:"varint,2,opt,name=state,proto3,enum=runtime.v1.TaskStateRequest" json:"state,omitempty"`
+	ErrorCode    string                 `protobuf:"bytes,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
+	ErrorMessage string                 `protobuf:"bytes,4,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
+	// Revision of the TaskRun on which this request is based.
+	ExpectedRevision uint64 `protobuf:"varint,5,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *TaskStateChangeRequest) Reset() {
@@ -200,12 +209,21 @@ func (x *TaskStateChangeRequest) GetErrorMessage() string {
 	return ""
 }
 
+func (x *TaskStateChangeRequest) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
+	}
+	return 0
+}
+
 type TaskReassignRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TaskRunId     string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
-	Actor         *v1.ActorRef           `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	TaskRunId string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
+	Actor     *v1.ActorRef           `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
+	// Revision of the TaskRun on which this request is based.
+	ExpectedRevision uint64 `protobuf:"varint,3,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *TaskReassignRequest) Reset() {
@@ -250,6 +268,13 @@ func (x *TaskReassignRequest) GetActor() *v1.ActorRef {
 		return x.Actor
 	}
 	return nil
+}
+
+func (x *TaskReassignRequest) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
+	}
+	return 0
 }
 
 type TaskProgressUpdate struct {
@@ -332,8 +357,10 @@ type SequenceReassignRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SequenceRunId string                 `protobuf:"bytes,1,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
 	Actor         *v1.ActorRef           `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// Revision of the SequenceRun on which this request is based.
+	ExpectedRevision uint64 `protobuf:"varint,3,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *SequenceReassignRequest) Reset() {
@@ -380,11 +407,20 @@ func (x *SequenceReassignRequest) GetActor() *v1.ActorRef {
 	return nil
 }
 
+func (x *SequenceReassignRequest) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
+	}
+	return 0
+}
+
 type SequenceCompleteRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SequenceRunId string                 `protobuf:"bytes,1,opt,name=sequence_run_id,json=sequenceRunId,proto3" json:"sequence_run_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// Revision of the SequenceRun on which this request is based.
+	ExpectedRevision uint64 `protobuf:"varint,2,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *SequenceCompleteRequest) Reset() {
@@ -424,42 +460,54 @@ func (x *SequenceCompleteRequest) GetSequenceRunId() string {
 	return ""
 }
 
+func (x *SequenceCompleteRequest) GetExpectedRevision() uint64 {
+	if x != nil {
+		return x.ExpectedRevision
+	}
+	return 0
+}
+
 var File_runtime_v1_runtime_requests_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/runtime_requests.proto\x12\n" +
-	"runtime.v1\x1a\x15common/v1/actor.proto\"S\n" +
-	"\x13ProcessAbortRequest\x12$\n" +
-	"\x0eprocess_run_id\x18\x01 \x01(\tR\fprocessRunId\x12\x16\n" +
-	"\x06reason\x18\x02 \x01(\tR\x06reason\"\xb0\x01\n" +
-	"\x16TaskStateChangeRequest\x12\x1e\n" +
-	"\vtask_run_id\x18\x01 \x01(\tR\ttaskRunId\x122\n" +
-	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestR\x05state\x12\x1d\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"a\n" +
+	"\x13ProcessAbortRequest\x122\n" +
+	"\x0eprocess_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\fprocessRunId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"\x81\x02\n" +
+	"\x16TaskStateChangeRequest\x12,\n" +
+	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12?\n" +
+	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12\x1d\n" +
 	"\n" +
 	"error_code\x18\x03 \x01(\tR\terrorCode\x12#\n" +
-	"\rerror_message\x18\x04 \x01(\tR\ferrorMessage\"`\n" +
-	"\x13TaskReassignRequest\x12\x1e\n" +
-	"\vtask_run_id\x18\x01 \x01(\tR\ttaskRunId\x12)\n" +
-	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\"\xcc\x01\n" +
-	"\x12TaskProgressUpdate\x12\x1e\n" +
-	"\vtask_run_id\x18\x01 \x01(\tR\ttaskRunId\x12)\n" +
-	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessage\x12!\n" +
-	"\felapsed_time\x18\x04 \x01(\x05R\velapsedTime\x12.\n" +
-	"\x13estimated_time_left\x18\x05 \x01(\x05R\x11estimatedTimeLeft\"l\n" +
-	"\x17SequenceReassignRequest\x12&\n" +
-	"\x0fsequence_run_id\x18\x01 \x01(\tR\rsequenceRunId\x12)\n" +
-	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefR\x05actor\"A\n" +
-	"\x17SequenceCompleteRequest\x12&\n" +
-	"\x0fsequence_run_id\x18\x01 \x01(\tR\rsequenceRunId*\xd0\x01\n" +
+	"\rerror_message\x18\x04 \x01(\tR\ferrorMessage\x124\n" +
+	"\x11expected_revision\x18\x05 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xac\x01\n" +
+	"\x13TaskReassignRequest\x12,\n" +
+	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
+	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xf4\x01\n" +
+	"\x12TaskProgressUpdate\x12,\n" +
+	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
+	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x12\x18\n" +
+	"\amessage\x18\x03 \x01(\tR\amessage\x12*\n" +
+	"\felapsed_time\x18\x04 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\velapsedTime\x127\n" +
+	"\x13estimated_time_left\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x11estimatedTimeLeft\"\xb8\x01\n" +
+	"\x17SequenceReassignRequest\x124\n" +
+	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x121\n" +
+	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\x85\x01\n" +
+	"\x17SequenceCompleteRequest\x124\n" +
+	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x124\n" +
+	"\x11expected_revision\x18\x02 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision*\xf2\x01\n" +
 	"\x10TaskStateRequest\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n" +
 	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12\x1c\n" +
-	"\x18TASK_STATE_REQUEST_ABORT\x10\x05B\xb3\x01\n" +
+	"\x18TASK_STATE_REQUEST_ABORT\x10\x05\x12 \n" +
+	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06B\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 

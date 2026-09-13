@@ -314,6 +314,7 @@
     - [TaskTarget](#process-v1-TaskTarget)
     - [ValidationRequirement](#process-v1-ValidationRequirement)
   
+    - [ActorUnavailabilityPolicy](#process-v1-ActorUnavailabilityPolicy)
     - [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference)
     - [TaskType](#process-v1-TaskType)
   
@@ -552,6 +553,10 @@
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
     - [ActorAssignments](#runtime-v1-ActorAssignments)
+    - [TaskActorAssignmentStatus](#runtime-v1-TaskActorAssignmentStatus)
+  
+    - [TaskActorAssignmentReason](#runtime-v1-TaskActorAssignmentReason)
+    - [TaskActorAssignmentState](#runtime-v1-TaskActorAssignmentState)
   
 - [runtime/v1/actor_availability.proto](#runtime_v1_actor_availability-proto)
     - [ActorAvailabilities](#runtime-v1-ActorAvailabilities)
@@ -4742,7 +4747,7 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 <a name="process-v1-TaskExecutionPolicy"></a>
 
 ### TaskExecutionPolicy
-
+TODO: ActorUnavailabilityPolicy 2 and 3 only allowed when `can_reassign = true`
 
 
 | Field | Type | Label | Description |
@@ -4751,6 +4756,7 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 | actor_constraint | [capability.v1.ActorConstraint](#capability-v1-ActorConstraint) |  |  |
 | can_reassign | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
+| actor_unavailability_policy | [ActorUnavailabilityPolicy](#process-v1-ActorUnavailabilityPolicy) |  |  |
 | estimated_human_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
 | estimated_robot_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
 | require_full_guidance | [bool](#bool) |  |  |
@@ -4829,6 +4835,20 @@ They should stay reusable across workcells and deployments.
 
 
  
+
+
+<a name="process-v1-ActorUnavailabilityPolicy"></a>
+
+### ActorUnavailabilityPolicy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED | 0 | Use the default policy: - for a task that has not started, attempt reassignment when can_reassign is true; - for an in-progress task, suspend it and require an explicit handover or resume decision; - if no replacement exists, mark assignment as blocked and retry after a later availability change. |
+| ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR | 1 | Retain the current assignment. If the task is in progress, suspend it until the same actor becomes available again. |
+| ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED | 2 | Automatically choose another available capable actor if the task has not started. An in-progress task is instead suspended and requires an explicit handover decision. |
+| ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN | 3 | For an in-progress task, suspend execution and select another available capable actor. The task remains suspended until the handover is explicitly accepted by resuming it. |
+
 
 
 <a name="process-v1-TaskAssignmentPreference"></a>
@@ -8211,7 +8231,55 @@ Complete snapshot of the configured readable signals.
 
 
 
+
+<a name="runtime-v1-TaskActorAssignmentStatus"></a>
+
+### TaskActorAssignmentStatus
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| state | [TaskActorAssignmentState](#runtime-v1-TaskActorAssignmentState) |  | Current result of actor-assignment resolution. |
+| reason | [TaskActorAssignmentReason](#runtime-v1-TaskActorAssignmentReason) |  | Present when the assignment is blocked. Normally unspecified for a currently valid assignment. |
+| affected_actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | Actor related to the blocking condition, when there is one. |
+| message | [string](#string) |  | Additional diagnostic information intended for operators and logs. |
+| evaluated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time at which the current assignment resolution was calculated. |
+
+
+
+
+
  
+
+
+<a name="runtime-v1-TaskActorAssignmentReason"></a>
+
+### TaskActorAssignmentReason
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED | 0 |  |
+| TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE | 1 | The previously assigned actor became unavailable. |
+| TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE | 2 | No currently available actor satisfies the task requirements. |
+| TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED | 3 | The task definition or execution state does not permit reassignment. |
+| TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED | 4 | Reassignment requires an explicit handover or operator decision. |
+
+
+
+<a name="runtime-v1-TaskActorAssignmentState"></a>
+
+### TaskActorAssignmentState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED | 0 | Assignment has not yet been evaluated. |
+| TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED | 1 | The task currently has no assigned actor but is not known to be blocked. |
+| TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED | 2 | The task has a currently valid assigned actor. |
+| TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED | 3 | Assignment was evaluated, but no currently available capable actor exists. |
+
 
  
 
@@ -8522,8 +8590,11 @@ simpler and more robust than parsing facts alone.
 <a name="runtime-v1-ProcessRun"></a>
 
 ### ProcessRun
-ProcessRun is only created when a concrete cell can currently satisfy it.
-Is is based upon a ProcessRecipe which defines what must be possible.
+ProcessRun is a concrete runtime instantiation of a ProcessRecipe.
+
+Feasibility is evaluated against a concrete line/cell/station context when
+the run is created. Runtime conditions may subsequently change, causing
+individual tasks to be reassigned, blocked, or suspended.
 
 
 | Field | Type | Label | Description |
@@ -8543,9 +8614,10 @@ Is is based upon a ProcessRecipe which defines what must be possible.
 | state | [ProcessRunState](#runtime-v1-ProcessRunState) |  |  |
 | initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated |  |
+| assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated | is assignment history; released records remain present with released_at populated. |
 | variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
 | parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
+| revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
 
 
 
@@ -9014,6 +9086,7 @@ A human is required but no worker with valid skills exists. |
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | sequence_run_id | [string](#string) |  |  |
+| expected_revision | [uint64](#uint64) |  | Revision of the SequenceRun on which this request is based. |
 
 
 
@@ -9030,6 +9103,7 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | sequence_run_id | [string](#string) |  |  |
 | actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| expected_revision | [uint64](#uint64) |  | Revision of the SequenceRun on which this request is based. |
 
 
 
@@ -9065,6 +9139,7 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | task_run_id | [string](#string) |  |  |
 | actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| expected_revision | [uint64](#uint64) |  | Revision of the TaskRun on which this request is based. |
 
 
 
@@ -9083,6 +9158,7 @@ A human is required but no worker with valid skills exists. |
 | state | [TaskStateRequest](#runtime-v1-TaskStateRequest) |  |  |
 | error_code | [string](#string) |  |  |
 | error_message | [string](#string) |  |  |
+| expected_revision | [uint64](#uint64) |  | Revision of the TaskRun on which this request is based. |
 
 
 
@@ -9099,11 +9175,12 @@ A human is required but no worker with valid skills exists. |
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TASK_STATE_REQUEST_UNSPECIFIED | 0 |  |
-| TASK_STATE_REQUEST_IN_PROGRESS | 1 |  |
+| TASK_STATE_REQUEST_IN_PROGRESS | 1 | Start a ready task or resume a suspended task. |
 | TASK_STATE_REQUEST_DONE | 2 |  |
 | TASK_STATE_REQUEST_UNDO | 3 |  |
 | TASK_STATE_REQUEST_ERROR | 4 |  |
 | TASK_STATE_REQUEST_ABORT | 5 |  |
+| TASK_STATE_REQUEST_SUSPENDED | 6 | Suspend a started task without completing or failing it. |
 
 
  
@@ -9139,7 +9216,8 @@ A human is required but no worker with valid skills exists. |
 | state | [SequenceRunState](#runtime-v1-SequenceRunState) |  |  |
 | completed_tasks | [int32](#int32) |  |  |
 | can_bulk_complete | [bool](#bool) |  |  |
-| assigned_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated |  |
+| assigned_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated | a derived set calculated from descendant TaskRuns. |
+| revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
 
 
 
@@ -9208,7 +9286,7 @@ A human is required but no worker with valid skills exists. |
 | parent_sequence_run_id | [string](#string) |  |  |
 | state | [TaskRunState](#runtime-v1-TaskRunState) |  |  |
 | candidate_actors | [common.v1.ActorRef](#common-v1-ActorRef) | repeated |  |
-| assigned_actor | [common.v1.ActorRef](#common-v1-ActorRef) |  |  |
+| assigned_actor | [common.v1.ActorRef](#common-v1-ActorRef) |  | is the authoritative current task assignment. |
 | can_do | [bool](#bool) |  |  |
 | can_undo | [bool](#bool) |  |  |
 | workable_horizon | [int32](#int32) |  | steps needed to complete before this step is workable. |
@@ -9224,6 +9302,8 @@ These restrictions are the effective restrictions for the currently assigned act
 
 Examples: - AR guidance required because the assigned actor&#39;s skill is restricted - supervisor approval required before completion - tool feedback required due to safety/quality constraints |
 | candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
+| actor_assignment_status | [TaskActorAssignmentStatus](#runtime-v1-TaskActorAssignmentStatus) |  | Current actor-assignment resolution for this task. |
+| revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
 
 
 
@@ -9254,7 +9334,6 @@ Concrete runtime/deployment bindings resolved for this task run.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | asset_instance_id | [string](#string) |  |  |
-| robot_instance_id | [string](#string) |  | TODO: think this should be removed |
 | station_id | [string](#string) |  |  |
 | cell_id | [string](#string) |  |  |
 | container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
@@ -9280,6 +9359,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | TASK_RUN_STATE_DONE | 4 |  |
 | TASK_RUN_STATE_ERROR | 5 |  |
 | TASK_RUN_STATE_ABORTED | 6 |  |
+| TASK_RUN_STATE_SUSPENDED | 7 |  |
 
 
  

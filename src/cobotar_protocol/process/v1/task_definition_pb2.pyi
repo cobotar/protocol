@@ -52,6 +52,13 @@ class TaskAssignmentPreference(int, metaclass=_enum_type_wrapper.EnumTypeWrapper
     TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: _ClassVar[TaskAssignmentPreference]
     TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: _ClassVar[TaskAssignmentPreference]
     TASK_ASSIGNMENT_PREFERENCE_EITHER: _ClassVar[TaskAssignmentPreference]
+
+class ActorUnavailabilityPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED: _ClassVar[ActorUnavailabilityPolicy]
+    ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR: _ClassVar[ActorUnavailabilityPolicy]
+    ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED: _ClassVar[ActorUnavailabilityPolicy]
+    ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN: _ClassVar[ActorUnavailabilityPolicy]
 TASK_TYPE_UNSPECIFIED: TaskType
 TASK_TYPE_INSPECT: TaskType
 TASK_TYPE_FASTEN: TaskType
@@ -78,6 +85,10 @@ TASK_ASSIGNMENT_PREFERENCE_ONLY_HUMAN: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_PREFER_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_ONLY_ROBOT: TaskAssignmentPreference
 TASK_ASSIGNMENT_PREFERENCE_EITHER: TaskAssignmentPreference
+ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED: ActorUnavailabilityPolicy
+ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR: ActorUnavailabilityPolicy
+ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED: ActorUnavailabilityPolicy
+ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN: ActorUnavailabilityPolicy
 
 class ProductTarget(_message.Message):
     __slots__ = ("node_id", "part_definition_id", "local_target")
@@ -152,11 +163,12 @@ class ValidationRequirement(_message.Message):
     def __init__(self, require_tool_feedback: bool = ..., require_vision_check: bool = ..., allow_manual_confirmation: bool = ..., manual_confirmation_min_level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ..., mode: _Optional[_Union[_asset_definition_pb2.ValidationMode, str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class TaskExecutionPolicy(_message.Message):
-    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_undo", "estimated_human_duration", "estimated_robot_duration", "require_full_guidance")
+    __slots__ = ("assignment_preference", "actor_constraint", "can_reassign", "can_undo", "actor_unavailability_policy", "estimated_human_duration", "estimated_robot_duration", "require_full_guidance")
     ASSIGNMENT_PREFERENCE_FIELD_NUMBER: _ClassVar[int]
     ACTOR_CONSTRAINT_FIELD_NUMBER: _ClassVar[int]
     CAN_REASSIGN_FIELD_NUMBER: _ClassVar[int]
     CAN_UNDO_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_UNAVAILABILITY_POLICY_FIELD_NUMBER: _ClassVar[int]
     ESTIMATED_HUMAN_DURATION_FIELD_NUMBER: _ClassVar[int]
     ESTIMATED_ROBOT_DURATION_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_FULL_GUIDANCE_FIELD_NUMBER: _ClassVar[int]
@@ -164,10 +176,11 @@ class TaskExecutionPolicy(_message.Message):
     actor_constraint: _actor_constraint_pb2.ActorConstraint
     can_reassign: bool
     can_undo: bool
+    actor_unavailability_policy: ActorUnavailabilityPolicy
     estimated_human_duration: _time_pb2.EstimatedDuration
     estimated_robot_duration: _time_pb2.EstimatedDuration
     require_full_guidance: bool
-    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_undo: bool = ..., estimated_human_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., estimated_robot_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ...) -> None: ...
+    def __init__(self, assignment_preference: _Optional[_Union[TaskAssignmentPreference, str]] = ..., actor_constraint: _Optional[_Union[_actor_constraint_pb2.ActorConstraint, _Mapping]] = ..., can_reassign: bool = ..., can_undo: bool = ..., actor_unavailability_policy: _Optional[_Union[ActorUnavailabilityPolicy, str]] = ..., estimated_human_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., estimated_robot_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., require_full_guidance: bool = ...) -> None: ...
 
 class TaskOverride(_message.Message):
     __slots__ = ("when", "instruction_text", "target", "insertion_offset", "approach_offset")

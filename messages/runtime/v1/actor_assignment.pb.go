@@ -25,6 +25,121 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type TaskActorAssignmentState int32
+
+const (
+	// Assignment has not yet been evaluated.
+	TaskActorAssignmentState_TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED TaskActorAssignmentState = 0
+	// The task currently has no assigned actor but is not known to be blocked.
+	TaskActorAssignmentState_TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED TaskActorAssignmentState = 1
+	// The task has a currently valid assigned actor.
+	TaskActorAssignmentState_TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED TaskActorAssignmentState = 2
+	// Assignment was evaluated, but no currently available capable actor exists.
+	TaskActorAssignmentState_TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED TaskActorAssignmentState = 3
+)
+
+// Enum value maps for TaskActorAssignmentState.
+var (
+	TaskActorAssignmentState_name = map[int32]string{
+		0: "TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED",
+		1: "TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED",
+		2: "TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED",
+		3: "TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED",
+	}
+	TaskActorAssignmentState_value = map[string]int32{
+		"TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED": 0,
+		"TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED":  1,
+		"TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED":    2,
+		"TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED":     3,
+	}
+)
+
+func (x TaskActorAssignmentState) Enum() *TaskActorAssignmentState {
+	p := new(TaskActorAssignmentState)
+	*p = x
+	return p
+}
+
+func (x TaskActorAssignmentState) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TaskActorAssignmentState) Descriptor() protoreflect.EnumDescriptor {
+	return file_runtime_v1_actor_assignment_proto_enumTypes[0].Descriptor()
+}
+
+func (TaskActorAssignmentState) Type() protoreflect.EnumType {
+	return &file_runtime_v1_actor_assignment_proto_enumTypes[0]
+}
+
+func (x TaskActorAssignmentState) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TaskActorAssignmentState.Descriptor instead.
+func (TaskActorAssignmentState) EnumDescriptor() ([]byte, []int) {
+	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{0}
+}
+
+type TaskActorAssignmentReason int32
+
+const (
+	TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED TaskActorAssignmentReason = 0
+	// The previously assigned actor became unavailable.
+	TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE TaskActorAssignmentReason = 1
+	// No currently available actor satisfies the task requirements.
+	TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE TaskActorAssignmentReason = 2
+	// The task definition or execution state does not permit reassignment.
+	TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED TaskActorAssignmentReason = 3
+	// Reassignment requires an explicit handover or operator decision.
+	TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED TaskActorAssignmentReason = 4
+)
+
+// Enum value maps for TaskActorAssignmentReason.
+var (
+	TaskActorAssignmentReason_name = map[int32]string{
+		0: "TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED",
+		1: "TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE",
+		2: "TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE",
+		3: "TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED",
+		4: "TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED",
+	}
+	TaskActorAssignmentReason_value = map[string]int32{
+		"TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED":                0,
+		"TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE":          1,
+		"TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE": 2,
+		"TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED":   3,
+		"TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED":          4,
+	}
+)
+
+func (x TaskActorAssignmentReason) Enum() *TaskActorAssignmentReason {
+	p := new(TaskActorAssignmentReason)
+	*p = x
+	return p
+}
+
+func (x TaskActorAssignmentReason) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TaskActorAssignmentReason) Descriptor() protoreflect.EnumDescriptor {
+	return file_runtime_v1_actor_assignment_proto_enumTypes[1].Descriptor()
+}
+
+func (TaskActorAssignmentReason) Type() protoreflect.EnumType {
+	return &file_runtime_v1_actor_assignment_proto_enumTypes[1]
+}
+
+func (x TaskActorAssignmentReason) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TaskActorAssignmentReason.Descriptor instead.
+func (TaskActorAssignmentReason) EnumDescriptor() ([]byte, []int) {
+	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{1}
+}
+
 type ActorAssignment struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -161,6 +276,88 @@ func (x *ActorAssignments) GetItems() []*ActorAssignment {
 	return nil
 }
 
+type TaskActorAssignmentStatus struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Current result of actor-assignment resolution.
+	State TaskActorAssignmentState `protobuf:"varint,1,opt,name=state,proto3,enum=runtime.v1.TaskActorAssignmentState" json:"state,omitempty"`
+	// Present when the assignment is blocked. Normally unspecified for a
+	// currently valid assignment.
+	Reason TaskActorAssignmentReason `protobuf:"varint,2,opt,name=reason,proto3,enum=runtime.v1.TaskActorAssignmentReason" json:"reason,omitempty"`
+	// Actor related to the blocking condition, when there is one.
+	AffectedActor *v1.ActorRef `protobuf:"bytes,3,opt,name=affected_actor,json=affectedActor,proto3" json:"affected_actor,omitempty"`
+	// Additional diagnostic information intended for operators and logs.
+	Message string `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
+	// Time at which the current assignment resolution was calculated.
+	EvaluatedAt   *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=evaluated_at,json=evaluatedAt,proto3" json:"evaluated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskActorAssignmentStatus) Reset() {
+	*x = TaskActorAssignmentStatus{}
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskActorAssignmentStatus) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskActorAssignmentStatus) ProtoMessage() {}
+
+func (x *TaskActorAssignmentStatus) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_actor_assignment_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskActorAssignmentStatus.ProtoReflect.Descriptor instead.
+func (*TaskActorAssignmentStatus) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_actor_assignment_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *TaskActorAssignmentStatus) GetState() TaskActorAssignmentState {
+	if x != nil {
+		return x.State
+	}
+	return TaskActorAssignmentState_TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED
+}
+
+func (x *TaskActorAssignmentStatus) GetReason() TaskActorAssignmentReason {
+	if x != nil {
+		return x.Reason
+	}
+	return TaskActorAssignmentReason_TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED
+}
+
+func (x *TaskActorAssignmentStatus) GetAffectedActor() *v1.ActorRef {
+	if x != nil {
+		return x.AffectedActor
+	}
+	return nil
+}
+
+func (x *TaskActorAssignmentStatus) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *TaskActorAssignmentStatus) GetEvaluatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EvaluatedAt
+	}
+	return nil
+}
+
 var File_runtime_v1_actor_assignment_proto protoreflect.FileDescriptor
 
 const file_runtime_v1_actor_assignment_proto_rawDesc = "" +
@@ -178,7 +375,25 @@ const file_runtime_v1_actor_assignment_proto_rawDesc = "" +
 	"\vreleased_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"releasedAt\"E\n" +
 	"\x10ActorAssignments\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.runtime.v1.ActorAssignmentR\x05itemsB\xb3\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.runtime.v1.ActorAssignmentR\x05items\"\xd4\x03\n" +
+	"\x19TaskActorAssignmentStatus\x12G\n" +
+	"\x05state\x18\x01 \x01(\x0e2$.runtime.v1.TaskActorAssignmentStateB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12G\n" +
+	"\x06reason\x18\x02 \x01(\x0e2%.runtime.v1.TaskActorAssignmentReasonB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06reason\x12:\n" +
+	"\x0eaffected_actor\x18\x03 \x01(\v2\x13.common.v1.ActorRefR\raffectedActor\x12\"\n" +
+	"\amessage\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\x80\bR\amessage\x12E\n" +
+	"\fevaluated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\vevaluatedAt:~\xbaH{\x1ay\n" +
+	"%task_assignment_status.blocked_reason\x12+blocked assignment status requires a reason\x1a#this.state != 3 || this.reason != 0*\xc6\x01\n" +
+	"\x18TaskActorAssignmentState\x12+\n" +
+	"'TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED\x10\x00\x12*\n" +
+	"&TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED\x10\x01\x12(\n" +
+	"$TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED\x10\x02\x12'\n" +
+	"#TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED\x10\x03*\xa9\x02\n" +
+	"\x19TaskActorAssignmentReason\x12,\n" +
+	"(TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED\x10\x00\x122\n" +
+	".TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE\x10\x01\x12;\n" +
+	"7TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE\x10\x02\x129\n" +
+	"5TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED\x10\x03\x122\n" +
+	".TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED\x10\x04B\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14ActorAssignmentProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
@@ -194,23 +409,31 @@ func file_runtime_v1_actor_assignment_proto_rawDescGZIP() []byte {
 	return file_runtime_v1_actor_assignment_proto_rawDescData
 }
 
-var file_runtime_v1_actor_assignment_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_runtime_v1_actor_assignment_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_runtime_v1_actor_assignment_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_runtime_v1_actor_assignment_proto_goTypes = []any{
-	(*ActorAssignment)(nil),       // 0: runtime.v1.ActorAssignment
-	(*ActorAssignments)(nil),      // 1: runtime.v1.ActorAssignments
-	(*v1.ActorRef)(nil),           // 2: common.v1.ActorRef
-	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
+	(TaskActorAssignmentState)(0),     // 0: runtime.v1.TaskActorAssignmentState
+	(TaskActorAssignmentReason)(0),    // 1: runtime.v1.TaskActorAssignmentReason
+	(*ActorAssignment)(nil),           // 2: runtime.v1.ActorAssignment
+	(*ActorAssignments)(nil),          // 3: runtime.v1.ActorAssignments
+	(*TaskActorAssignmentStatus)(nil), // 4: runtime.v1.TaskActorAssignmentStatus
+	(*v1.ActorRef)(nil),               // 5: common.v1.ActorRef
+	(*timestamppb.Timestamp)(nil),     // 6: google.protobuf.Timestamp
 }
 var file_runtime_v1_actor_assignment_proto_depIdxs = []int32{
-	2, // 0: runtime.v1.ActorAssignment.actor:type_name -> common.v1.ActorRef
-	3, // 1: runtime.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
-	3, // 2: runtime.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
-	0, // 3: runtime.v1.ActorAssignments.items:type_name -> runtime.v1.ActorAssignment
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 0: runtime.v1.ActorAssignment.actor:type_name -> common.v1.ActorRef
+	6, // 1: runtime.v1.ActorAssignment.assigned_at:type_name -> google.protobuf.Timestamp
+	6, // 2: runtime.v1.ActorAssignment.released_at:type_name -> google.protobuf.Timestamp
+	2, // 3: runtime.v1.ActorAssignments.items:type_name -> runtime.v1.ActorAssignment
+	0, // 4: runtime.v1.TaskActorAssignmentStatus.state:type_name -> runtime.v1.TaskActorAssignmentState
+	1, // 5: runtime.v1.TaskActorAssignmentStatus.reason:type_name -> runtime.v1.TaskActorAssignmentReason
+	5, // 6: runtime.v1.TaskActorAssignmentStatus.affected_actor:type_name -> common.v1.ActorRef
+	6, // 7: runtime.v1.TaskActorAssignmentStatus.evaluated_at:type_name -> google.protobuf.Timestamp
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_actor_assignment_proto_init() }
@@ -223,13 +446,14 @@ func file_runtime_v1_actor_assignment_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_actor_assignment_proto_rawDesc), len(file_runtime_v1_actor_assignment_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   2,
+			NumEnums:      2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_runtime_v1_actor_assignment_proto_goTypes,
 		DependencyIndexes: file_runtime_v1_actor_assignment_proto_depIdxs,
+		EnumInfos:         file_runtime_v1_actor_assignment_proto_enumTypes,
 		MessageInfos:      file_runtime_v1_actor_assignment_proto_msgTypes,
 	}.Build()
 	File_runtime_v1_actor_assignment_proto = out.File

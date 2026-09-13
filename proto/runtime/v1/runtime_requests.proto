@@ -1,50 +1,91 @@
 syntax = "proto3";
 package runtime.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/actor.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 message ProcessAbortRequest {
-  string process_run_id = 1;
+  string process_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_run_id_component) = true
+  ];
   string reason = 2;
 }
 
 enum TaskStateRequest {
   TASK_STATE_REQUEST_UNSPECIFIED = 0;
+
+  // Start a ready task or resume a suspended task.
   TASK_STATE_REQUEST_IN_PROGRESS = 1;
+
   TASK_STATE_REQUEST_DONE = 2;
   TASK_STATE_REQUEST_UNDO = 3;
   TASK_STATE_REQUEST_ERROR = 4;
   TASK_STATE_REQUEST_ABORT = 5;
+
+  // Suspend a started task without completing or failing it.
+  TASK_STATE_REQUEST_SUSPENDED = 6;
 }
 
 message TaskStateChangeRequest {
-  string task_run_id = 1;
-  TaskStateRequest state = 2;
+  string task_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_run_id_component) = true
+  ];
+  TaskStateRequest state = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   string error_code = 3;
   string error_message = 4;
+
+  // Revision of the TaskRun on which this request is based.
+  uint64 expected_revision = 5 [(buf.validate.field).uint64.gte = 1];
 }
 
 message TaskReassignRequest {
-  string task_run_id = 1;
-  common.v1.ActorRef actor = 2;
+  string task_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_run_id_component) = true
+  ];
+  common.v1.ActorRef actor = 2 [(buf.validate.field).required = true];
+
+  // Revision of the TaskRun on which this request is based.
+  uint64 expected_revision = 3 [(buf.validate.field).uint64.gte = 1];
 }
 
 message TaskProgressUpdate {
-  string task_run_id = 1;
-  common.v1.ActorRef actor = 2;
+  string task_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.task_run_id_component) = true
+  ];
+  common.v1.ActorRef actor = 2 [(buf.validate.field).required = true];
   string message = 3;
-  int32 elapsed_time = 4; // elapsed time in seconds
-  int32 estimated_time_left = 5; // estimated time left in seconds
+  int32 elapsed_time = 4 [(buf.validate.field).int32.gte = 0]; // elapsed time in seconds
+  int32 estimated_time_left = 5 [(buf.validate.field).int32.gte = 0]; // estimated time left in seconds
 }
 
 message SequenceReassignRequest {
-  string sequence_run_id = 1;
-  common.v1.ActorRef actor = 2;
+  string sequence_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
+  ];
+  common.v1.ActorRef actor = 2 [(buf.validate.field).required = true];
+
+  // Revision of the SequenceRun on which this request is based.
+  uint64 expected_revision = 3 [(buf.validate.field).uint64.gte = 1];
 }
 
 message SequenceCompleteRequest {
-  string sequence_run_id = 1;
+  string sequence_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.sequence_run_id_component) = true
+  ];
+
+  // Revision of the SequenceRun on which this request is based.
+  uint64 expected_revision = 2 [(buf.validate.field).uint64.gte = 1];
 }

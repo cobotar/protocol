@@ -6,6 +6,7 @@ import "common/v1/actor.proto";
 import "common/v1/time.proto";
 import "google/protobuf/timestamp.proto";
 import "resources/v1/container_definition.proto";
+import "runtime/v1/actor_assignment.proto";
 import "runtime/v1/process_requests.proto";
 import "runtime/v1/runtime_restriction.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -21,15 +22,15 @@ enum TaskRunState {
   TASK_RUN_STATE_DONE = 4;
   TASK_RUN_STATE_ERROR = 5;
   TASK_RUN_STATE_ABORTED = 6;
+  TASK_RUN_STATE_SUSPENDED = 7;
 }
 
 // Concrete runtime/deployment bindings resolved for this task run.
 message TaskRuntimeBinding {
   string asset_instance_id = 1;
-  string robot_instance_id = 2; // TODO: think this should be removed
-  string station_id = 3;
-  string cell_id = 4;
-  resources.v1.ContainerSlotRef container_slot = 5;
+  string station_id = 2;
+  string cell_id = 3;
+  resources.v1.ContainerSlotRef container_slot = 4;
 }
 
 message TaskRun {
@@ -49,7 +50,7 @@ message TaskRun {
     (buf.validate.field).enum.defined_only = true
   ];
   repeated common.v1.ActorRef candidate_actors = 7;
-  common.v1.ActorRef assigned_actor = 8;
+  common.v1.ActorRef assigned_actor = 8; // is the authoritative current task assignment.
   bool can_do = 9;
   bool can_undo = 10;
   int32 workable_horizon = 11; // steps needed to complete before this step is workable.
@@ -73,6 +74,13 @@ message TaskRun {
   repeated RuntimeRestriction restrictions = 19;
 
   repeated CandidateActorEvaluation candidate_actor_evaluations = 20;
+
+  // Current actor-assignment resolution for this task.
+  TaskActorAssignmentStatus actor_assignment_status = 21 [(buf.validate.field).required = true];
+
+  // Revision used to prevent concurrent state changes and reassignments from
+  // overwriting one another. Starts at 1.
+  uint64 revision = 22 [(buf.validate.field).uint64.gte = 1];
 }
 
 message TaskRuns {

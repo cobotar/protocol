@@ -25,42 +25,52 @@ namespace Messages.Runtime.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUu",
-            "djEaFWNvbW1vbi92MS9hY3Rvci5wcm90byJTChNQcm9jZXNzQWJvcnRSZXF1",
-            "ZXN0EiQKDnByb2Nlc3NfcnVuX2lkGAEgASgJUgxwcm9jZXNzUnVuSWQSFgoG",
-            "cmVhc29uGAIgASgJUgZyZWFzb24isAEKFlRhc2tTdGF0ZUNoYW5nZVJlcXVl",
-            "c3QSHgoLdGFza19ydW5faWQYASABKAlSCXRhc2tSdW5JZBIyCgVzdGF0ZRgC",
-            "IAEoDjIcLnJ1bnRpbWUudjEuVGFza1N0YXRlUmVxdWVzdFIFc3RhdGUSHQoK",
-            "ZXJyb3JfY29kZRgDIAEoCVIJZXJyb3JDb2RlEiMKDWVycm9yX21lc3NhZ2UY",
-            "BCABKAlSDGVycm9yTWVzc2FnZSJgChNUYXNrUmVhc3NpZ25SZXF1ZXN0Eh4K",
-            "C3Rhc2tfcnVuX2lkGAEgASgJUgl0YXNrUnVuSWQSKQoFYWN0b3IYAiABKAsy",
-            "Ey5jb21tb24udjEuQWN0b3JSZWZSBWFjdG9yIswBChJUYXNrUHJvZ3Jlc3NV",
-            "cGRhdGUSHgoLdGFza19ydW5faWQYASABKAlSCXRhc2tSdW5JZBIpCgVhY3Rv",
-            "chgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZlIFYWN0b3ISGAoHbWVzc2Fn",
-            "ZRgDIAEoCVIHbWVzc2FnZRIhCgxlbGFwc2VkX3RpbWUYBCABKAVSC2VsYXBz",
-            "ZWRUaW1lEi4KE2VzdGltYXRlZF90aW1lX2xlZnQYBSABKAVSEWVzdGltYXRl",
-            "ZFRpbWVMZWZ0ImwKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EiYKD3NlcXVl",
-            "bmNlX3J1bl9pZBgBIAEoCVINc2VxdWVuY2VSdW5JZBIpCgVhY3RvchgCIAEo",
-            "CzITLmNvbW1vbi52MS5BY3RvclJlZlIFYWN0b3IiQQoXU2VxdWVuY2VDb21w",
-            "bGV0ZVJlcXVlc3QSJgoPc2VxdWVuY2VfcnVuX2lkGAEgASgJUg1zZXF1ZW5j",
-            "ZVJ1bklkKtABChBUYXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVR",
-            "VUVTVF9VTlNQRUNJRklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9Q",
-            "Uk9HUkVTUxABEhsKF1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFT",
-            "S19TVEFURV9SRVFVRVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1Rf",
-            "RVJST1IQBBIcChhUQVNLX1NUQVRFX1JFUVVFU1RfQUJPUlQQBUKzAQoOY29t",
-            "LnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRp",
-            "bWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx",
-            "4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90",
-            "bzM="));
+            "djEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoVY29tbW9uL3YxL2Fj",
+            "dG9yLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1",
+            "bGVzLnByb3RvImEKE1Byb2Nlc3NBYm9ydFJlcXVlc3QSMgoOcHJvY2Vzc19y",
+            "dW5faWQYASABKAlCDLpICXIEiPIEAcgBAVIMcHJvY2Vzc1J1bklkEhYKBnJl",
+            "YXNvbhgCIAEoCVIGcmVhc29uIoECChZUYXNrU3RhdGVDaGFuZ2VSZXF1ZXN0",
+            "EiwKC3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5J",
+            "ZBI/CgVzdGF0ZRgCIAEoDjIcLnJ1bnRpbWUudjEuVGFza1N0YXRlUmVxdWVz",
+            "dEILukgIggECEAHIAQFSBXN0YXRlEh0KCmVycm9yX2NvZGUYAyABKAlSCWVy",
+            "cm9yQ29kZRIjCg1lcnJvcl9tZXNzYWdlGAQgASgJUgxlcnJvck1lc3NhZ2US",
+            "NAoRZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAFSEGV4cGVjdGVk",
+            "UmV2aXNpb24irAEKE1Rhc2tSZWFzc2lnblJlcXVlc3QSLAoLdGFza19ydW5f",
+            "aWQYASABKAlCDLpICXIEmPIEAcgBAVIJdGFza1J1bklkEjEKBWFjdG9yGAIg",
+            "ASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEjQKEWV4",
+            "cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlz",
+            "aW9uIvQBChJUYXNrUHJvZ3Jlc3NVcGRhdGUSLAoLdGFza19ydW5faWQYASAB",
+            "KAlCDLpICXIEmPIEAcgBAVIJdGFza1J1bklkEjEKBWFjdG9yGAIgASgLMhMu",
+            "Y29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEhgKB21lc3NhZ2UY",
+            "AyABKAlSB21lc3NhZ2USKgoMZWxhcHNlZF90aW1lGAQgASgFQge6SAQaAigA",
+            "UgtlbGFwc2VkVGltZRI3ChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAUgASgFQge6",
+            "SAQaAigAUhFlc3RpbWF0ZWRUaW1lTGVmdCK4AQoXU2VxdWVuY2VSZWFzc2ln",
+            "blJlcXVlc3QSNAoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAlyBJDyBAHI",
+            "AQFSDXNlcXVlbmNlUnVuSWQSMQoFYWN0b3IYAiABKAsyEy5jb21tb24udjEu",
+            "QWN0b3JSZWZCBrpIA8gBAVIFYWN0b3ISNAoRZXhwZWN0ZWRfcmV2aXNpb24Y",
+            "AyABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24ihQEKF1NlcXVlbmNl",
+            "Q29tcGxldGVSZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCUIMukgJ",
+            "cgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjQKEWV4cGVjdGVkX3JldmlzaW9u",
+            "GAIgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlzaW9uKvIBChBUYXNrU3Rh",
+            "dGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJRklFRBAA",
+            "EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsKF1RBU0tf",
+            "U1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFVRVNUX1VO",
+            "RE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIcChhUQVNLX1NU",
+            "QVRFX1JFUVVFU1RfQUJPUlQQBRIgChxUQVNLX1NUQVRFX1JFUVVFU1RfU1VT",
+            "UEVOREVEEAZCswEKDmNvbS5ydW50aW1lLnYxQhRSdW50aW1lUmVxdWVzdHNQ",
+            "cm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
+            "cnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1l",
+            "LlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtS",
+            "dW50aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Common.V1.ActorReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage", "ExpectedRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceReassignRequest), global::Messages.Runtime.V1.SequenceReassignRequest.Parser, new[]{ "SequenceRunId", "Actor" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceCompleteRequest), global::Messages.Runtime.V1.SequenceCompleteRequest.Parser, new[]{ "SequenceRunId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceReassignRequest), global::Messages.Runtime.V1.SequenceReassignRequest.Parser, new[]{ "SequenceRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceCompleteRequest), global::Messages.Runtime.V1.SequenceCompleteRequest.Parser, new[]{ "SequenceRunId", "ExpectedRevision" }, null, null, null, null)
           }));
     }
     #endregion
@@ -69,11 +79,18 @@ namespace Messages.Runtime.V1 {
   #region Enums
   public enum TaskStateRequest {
     [pbr::OriginalName("TASK_STATE_REQUEST_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Start a ready task or resume a suspended task.
+    /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_IN_PROGRESS")] InProgress = 1,
     [pbr::OriginalName("TASK_STATE_REQUEST_DONE")] Done = 2,
     [pbr::OriginalName("TASK_STATE_REQUEST_UNDO")] Undo = 3,
     [pbr::OriginalName("TASK_STATE_REQUEST_ERROR")] Error = 4,
     [pbr::OriginalName("TASK_STATE_REQUEST_ABORT")] Abort = 5,
+    /// <summary>
+    /// Suspend a started task without completing or failing it.
+    /// </summary>
+    [pbr::OriginalName("TASK_STATE_REQUEST_SUSPENDED")] Suspended = 6,
   }
 
   #endregion
@@ -353,6 +370,7 @@ namespace Messages.Runtime.V1 {
       state_ = other.state_;
       errorCode_ = other.errorCode_;
       errorMessage_ = other.errorMessage_;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -410,6 +428,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 5;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the TaskRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -429,6 +462,7 @@ namespace Messages.Runtime.V1 {
       if (State != other.State) return false;
       if (ErrorCode != other.ErrorCode) return false;
       if (ErrorMessage != other.ErrorMessage) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -440,6 +474,7 @@ namespace Messages.Runtime.V1 {
       if (State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) hash ^= State.GetHashCode();
       if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
       if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -474,6 +509,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(34);
         output.WriteString(ErrorMessage);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -500,6 +539,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(34);
         output.WriteString(ErrorMessage);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -521,6 +564,9 @@ namespace Messages.Runtime.V1 {
       }
       if (ErrorMessage.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -545,6 +591,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.ErrorMessage.Length != 0) {
         ErrorMessage = other.ErrorMessage;
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -581,6 +630,10 @@ namespace Messages.Runtime.V1 {
             ErrorMessage = input.ReadString();
             break;
           }
+          case 40: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -614,6 +667,10 @@ namespace Messages.Runtime.V1 {
           }
           case 34: {
             ErrorMessage = input.ReadString();
+            break;
+          }
+          case 40: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }
@@ -660,6 +717,7 @@ namespace Messages.Runtime.V1 {
     public TaskReassignRequest(TaskReassignRequest other) : this() {
       taskRunId_ = other.taskRunId_;
       actor_ = other.actor_ != null ? other.actor_.Clone() : null;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -693,6 +751,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 3;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the TaskRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -710,6 +783,7 @@ namespace Messages.Runtime.V1 {
       }
       if (TaskRunId != other.TaskRunId) return false;
       if (!object.Equals(Actor, other.Actor)) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -719,6 +793,7 @@ namespace Messages.Runtime.V1 {
       int hash = 1;
       if (TaskRunId.Length != 0) hash ^= TaskRunId.GetHashCode();
       if (actor_ != null) hash ^= Actor.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -745,6 +820,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Actor);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -763,6 +842,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Actor);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -778,6 +861,9 @@ namespace Messages.Runtime.V1 {
       }
       if (actor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Actor);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -799,6 +885,9 @@ namespace Messages.Runtime.V1 {
           Actor = new global::Messages.Common.V1.ActorRef();
         }
         Actor.MergeFrom(other.Actor);
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -830,6 +919,10 @@ namespace Messages.Runtime.V1 {
             input.ReadMessage(Actor);
             break;
           }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -858,6 +951,10 @@ namespace Messages.Runtime.V1 {
               Actor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(Actor);
+            break;
+          }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }
@@ -1265,6 +1362,7 @@ namespace Messages.Runtime.V1 {
     public SequenceReassignRequest(SequenceReassignRequest other) : this() {
       sequenceRunId_ = other.sequenceRunId_;
       actor_ = other.actor_ != null ? other.actor_.Clone() : null;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1298,6 +1396,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 3;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the SequenceRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1315,6 +1428,7 @@ namespace Messages.Runtime.V1 {
       }
       if (SequenceRunId != other.SequenceRunId) return false;
       if (!object.Equals(Actor, other.Actor)) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1324,6 +1438,7 @@ namespace Messages.Runtime.V1 {
       int hash = 1;
       if (SequenceRunId.Length != 0) hash ^= SequenceRunId.GetHashCode();
       if (actor_ != null) hash ^= Actor.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1350,6 +1465,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Actor);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1368,6 +1487,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Actor);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1383,6 +1506,9 @@ namespace Messages.Runtime.V1 {
       }
       if (actor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Actor);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1404,6 +1530,9 @@ namespace Messages.Runtime.V1 {
           Actor = new global::Messages.Common.V1.ActorRef();
         }
         Actor.MergeFrom(other.Actor);
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1435,6 +1564,10 @@ namespace Messages.Runtime.V1 {
             input.ReadMessage(Actor);
             break;
           }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -1463,6 +1596,10 @@ namespace Messages.Runtime.V1 {
               Actor = new global::Messages.Common.V1.ActorRef();
             }
             input.ReadMessage(Actor);
+            break;
+          }
+          case 24: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }
@@ -1508,6 +1645,7 @@ namespace Messages.Runtime.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SequenceCompleteRequest(SequenceCompleteRequest other) : this() {
       sequenceRunId_ = other.sequenceRunId_;
+      expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1529,6 +1667,21 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "expected_revision" field.</summary>
+    public const int ExpectedRevisionFieldNumber = 2;
+    private ulong expectedRevision_;
+    /// <summary>
+    /// Revision of the SequenceRun on which this request is based.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ExpectedRevision {
+      get { return expectedRevision_; }
+      set {
+        expectedRevision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1545,6 +1698,7 @@ namespace Messages.Runtime.V1 {
         return true;
       }
       if (SequenceRunId != other.SequenceRunId) return false;
+      if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1553,6 +1707,7 @@ namespace Messages.Runtime.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (SequenceRunId.Length != 0) hash ^= SequenceRunId.GetHashCode();
+      if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1575,6 +1730,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(SequenceRunId);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1589,6 +1748,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(10);
         output.WriteString(SequenceRunId);
       }
+      if (ExpectedRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(ExpectedRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1601,6 +1764,9 @@ namespace Messages.Runtime.V1 {
       int size = 0;
       if (SequenceRunId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SequenceRunId);
+      }
+      if (ExpectedRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1616,6 +1782,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.SequenceRunId.Length != 0) {
         SequenceRunId = other.SequenceRunId;
+      }
+      if (other.ExpectedRevision != 0UL) {
+        ExpectedRevision = other.ExpectedRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1640,6 +1809,10 @@ namespace Messages.Runtime.V1 {
             SequenceRunId = input.ReadString();
             break;
           }
+          case 16: {
+            ExpectedRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -1661,6 +1834,10 @@ namespace Messages.Runtime.V1 {
             break;
           case 10: {
             SequenceRunId = input.ReadString();
+            break;
+          }
+          case 16: {
+            ExpectedRevision = input.ReadUInt64();
             break;
           }
         }

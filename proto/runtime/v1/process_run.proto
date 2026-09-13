@@ -25,8 +25,11 @@ message RunParameter {
   string value = 2;
 }
 
-// ProcessRun is only created when a concrete cell can currently satisfy it.
-// Is is based upon a ProcessRecipe which defines what must be possible.
+// ProcessRun is a concrete runtime instantiation of a ProcessRecipe.
+//
+// Feasibility is evaluated against a concrete line/cell/station context when
+// the run is created. Runtime conditions may subsequently change, causing
+// individual tasks to be reassigned, blocked, or suspended.
 message ProcessRun {
   string id = 1;
   string name = 2;
@@ -61,9 +64,13 @@ message ProcessRun {
   ];
   google.protobuf.Timestamp initiated_at = 14;
   google.protobuf.Timestamp ended_at = 15;
-  repeated ActorAssignment assignments = 16;
+  repeated ActorAssignment assignments = 16; // is assignment history; released records remain present with released_at populated.
   variance.v1.VariantConfiguration variant_configuration = 17;
   repeated RunParameter parameters = 18;
+
+  // Revision used to prevent concurrent state changes and reassignments from
+  // overwriting one another. Starts at 1.
+  uint64 revision = 19 [(buf.validate.field).uint64.gte = 1];
 }
 
 message ProcessRuns {

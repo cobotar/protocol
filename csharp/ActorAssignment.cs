@@ -37,21 +37,86 @@ namespace Messages.Runtime.V1 {
             "dG9idWYuVGltZXN0YW1wUgphc3NpZ25lZEF0EjsKC3JlbGVhc2VkX2F0GAcg",
             "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVsZWFzZWRBdCJF",
             "ChBBY3RvckFzc2lnbm1lbnRzEjEKBWl0ZW1zGAEgAygLMhsucnVudGltZS52",
-            "MS5BY3RvckFzc2lnbm1lbnRSBWl0ZW1zQrMBCg5jb20ucnVudGltZS52MUIU",
-            "QWN0b3JBc3NpZ25tZW50UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgIT",
-            "TWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYx",
-            "XEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "MS5BY3RvckFzc2lnbm1lbnRSBWl0ZW1zItQDChlUYXNrQWN0b3JBc3NpZ25t",
+            "ZW50U3RhdHVzEkcKBXN0YXRlGAEgASgOMiQucnVudGltZS52MS5UYXNrQWN0",
+            "b3JBc3NpZ25tZW50U3RhdGVCC7pICIIBAhAByAEBUgVzdGF0ZRJHCgZyZWFz",
+            "b24YAiABKA4yJS5ydW50aW1lLnYxLlRhc2tBY3RvckFzc2lnbm1lbnRSZWFz",
+            "b25CCLpIBYIBAhABUgZyZWFzb24SOgoOYWZmZWN0ZWRfYWN0b3IYAyABKAsy",
+            "Ey5jb21tb24udjEuQWN0b3JSZWZSDWFmZmVjdGVkQWN0b3ISIgoHbWVzc2Fn",
+            "ZRgEIAEoCUIIukgFcgMYgAhSB21lc3NhZ2USRQoMZXZhbHVhdGVkX2F0GAUg",
+            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIGukgDyAEBUgtldmFs",
+            "dWF0ZWRBdDp+ukh7GnkKJXRhc2tfYXNzaWdubWVudF9zdGF0dXMuYmxvY2tl",
+            "ZF9yZWFzb24SK2Jsb2NrZWQgYXNzaWdubWVudCBzdGF0dXMgcmVxdWlyZXMg",
+            "YSByZWFzb24aI3RoaXMuc3RhdGUgIT0gMyB8fCB0aGlzLnJlYXNvbiAhPSAw",
+            "KsYBChhUYXNrQWN0b3JBc3NpZ25tZW50U3RhdGUSKwonVEFTS19BQ1RPUl9B",
+            "U1NJR05NRU5UX1NUQVRFX1VOU1BFQ0lGSUVEEAASKgomVEFTS19BQ1RPUl9B",
+            "U1NJR05NRU5UX1NUQVRFX1VOQVNTSUdORUQQARIoCiRUQVNLX0FDVE9SX0FT",
+            "U0lHTk1FTlRfU1RBVEVfQVNTSUdORUQQAhInCiNUQVNLX0FDVE9SX0FTU0lH",
+            "Tk1FTlRfU1RBVEVfQkxPQ0tFRBADKqkCChlUYXNrQWN0b3JBc3NpZ25tZW50",
+            "UmVhc29uEiwKKFRBU0tfQUNUT1JfQVNTSUdOTUVOVF9SRUFTT05fVU5TUEVD",
+            "SUZJRUQQABIyCi5UQVNLX0FDVE9SX0FTU0lHTk1FTlRfUkVBU09OX0FDVE9S",
+            "X1VOQVZBSUxBQkxFEAESOwo3VEFTS19BQ1RPUl9BU1NJR05NRU5UX1JFQVNP",
+            "Tl9OT19DQVBBQkxFX0FDVE9SX0FWQUlMQUJMRRACEjkKNVRBU0tfQUNUT1Jf",
+            "QVNTSUdOTUVOVF9SRUFTT05fUkVBU1NJR05NRU5UX05PVF9BTExPV0VEEAMS",
+            "MgouVEFTS19BQ1RPUl9BU1NJR05NRU5UX1JFQVNPTl9IQU5ET1ZFUl9SRVFV",
+            "SVJFRBAEQrMBCg5jb20ucnVudGltZS52MUIUQWN0b3JBc3NpZ25tZW50UHJv",
+            "dG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1",
+            "bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5W",
+            "McoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVu",
+            "dGltZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskActorAssignmentState), typeof(global::Messages.Runtime.V1.TaskActorAssignmentReason), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ActorAssignment), global::Messages.Runtime.V1.ActorAssignment.Parser, new[]{ "Id", "Actor", "ProcessRunId", "SequenceRunId", "TaskRunId", "AssignedAt", "ReleasedAt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ActorAssignments), global::Messages.Runtime.V1.ActorAssignments.Parser, new[]{ "Items" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ActorAssignments), global::Messages.Runtime.V1.ActorAssignments.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskActorAssignmentStatus), global::Messages.Runtime.V1.TaskActorAssignmentStatus.Parser, new[]{ "State", "Reason", "AffectedActor", "Message", "EvaluatedAt" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum TaskActorAssignmentState {
+    /// <summary>
+    /// Assignment has not yet been evaluated.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// The task currently has no assigned actor but is not known to be blocked.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED")] Unassigned = 1,
+    /// <summary>
+    /// The task has a currently valid assigned actor.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED")] Assigned = 2,
+    /// <summary>
+    /// Assignment was evaluated, but no currently available capable actor exists.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED")] Blocked = 3,
+  }
+
+  public enum TaskActorAssignmentReason {
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// The previously assigned actor became unavailable.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE")] ActorUnavailable = 1,
+    /// <summary>
+    /// No currently available actor satisfies the task requirements.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE")] NoCapableActorAvailable = 2,
+    /// <summary>
+    /// The task definition or execution state does not permit reassignment.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED")] ReassignmentNotAllowed = 3,
+    /// <summary>
+    /// Reassignment requires an explicit handover or operator decision.
+    /// </summary>
+    [pbr::OriginalName("TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED")] HandoverRequired = 4,
+  }
+
+  #endregion
+
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ActorAssignment : pb::IMessage<ActorAssignment>
@@ -678,6 +743,386 @@ namespace Messages.Runtime.V1 {
             break;
           case 10: {
             items_.AddEntriesFrom(ref input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TaskActorAssignmentStatus : pb::IMessage<TaskActorAssignmentStatus>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskActorAssignmentStatus> _parser = new pb::MessageParser<TaskActorAssignmentStatus>(() => new TaskActorAssignmentStatus());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TaskActorAssignmentStatus> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskActorAssignmentStatus() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskActorAssignmentStatus(TaskActorAssignmentStatus other) : this() {
+      state_ = other.state_;
+      reason_ = other.reason_;
+      affectedActor_ = other.affectedActor_ != null ? other.affectedActor_.Clone() : null;
+      message_ = other.message_;
+      evaluatedAt_ = other.evaluatedAt_ != null ? other.evaluatedAt_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskActorAssignmentStatus Clone() {
+      return new TaskActorAssignmentStatus(this);
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 1;
+    private global::Messages.Runtime.V1.TaskActorAssignmentState state_ = global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified;
+    /// <summary>
+    /// Current result of actor-assignment resolution.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Runtime.V1.TaskActorAssignmentState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 2;
+    private global::Messages.Runtime.V1.TaskActorAssignmentReason reason_ = global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified;
+    /// <summary>
+    /// Present when the assignment is blocked. Normally unspecified for a
+    /// currently valid assignment.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Runtime.V1.TaskActorAssignmentReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "affected_actor" field.</summary>
+    public const int AffectedActorFieldNumber = 3;
+    private global::Messages.Common.V1.ActorRef affectedActor_;
+    /// <summary>
+    /// Actor related to the blocking condition, when there is one.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.ActorRef AffectedActor {
+      get { return affectedActor_; }
+      set {
+        affectedActor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 4;
+    private string message_ = "";
+    /// <summary>
+    /// Additional diagnostic information intended for operators and logs.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "evaluated_at" field.</summary>
+    public const int EvaluatedAtFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp evaluatedAt_;
+    /// <summary>
+    /// Time at which the current assignment resolution was calculated.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp EvaluatedAt {
+      get { return evaluatedAt_; }
+      set {
+        evaluatedAt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TaskActorAssignmentStatus);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TaskActorAssignmentStatus other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (State != other.State) return false;
+      if (Reason != other.Reason) return false;
+      if (!object.Equals(AffectedActor, other.AffectedActor)) return false;
+      if (Message != other.Message) return false;
+      if (!object.Equals(EvaluatedAt, other.EvaluatedAt)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (State != global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified) hash ^= State.GetHashCode();
+      if (Reason != global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified) hash ^= Reason.GetHashCode();
+      if (affectedActor_ != null) hash ^= AffectedActor.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (evaluatedAt_ != null) hash ^= EvaluatedAt.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (State != global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) State);
+      }
+      if (Reason != global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Reason);
+      }
+      if (affectedActor_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(AffectedActor);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Message);
+      }
+      if (evaluatedAt_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(EvaluatedAt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (State != global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) State);
+      }
+      if (Reason != global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Reason);
+      }
+      if (affectedActor_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(AffectedActor);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Message);
+      }
+      if (evaluatedAt_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(EvaluatedAt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (State != global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (Reason != global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (affectedActor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AffectedActor);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (evaluatedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EvaluatedAt);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TaskActorAssignmentStatus other) {
+      if (other == null) {
+        return;
+      }
+      if (other.State != global::Messages.Runtime.V1.TaskActorAssignmentState.Unspecified) {
+        State = other.State;
+      }
+      if (other.Reason != global::Messages.Runtime.V1.TaskActorAssignmentReason.Unspecified) {
+        Reason = other.Reason;
+      }
+      if (other.affectedActor_ != null) {
+        if (affectedActor_ == null) {
+          AffectedActor = new global::Messages.Common.V1.ActorRef();
+        }
+        AffectedActor.MergeFrom(other.AffectedActor);
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      if (other.evaluatedAt_ != null) {
+        if (evaluatedAt_ == null) {
+          EvaluatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        EvaluatedAt.MergeFrom(other.EvaluatedAt);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            State = (global::Messages.Runtime.V1.TaskActorAssignmentState) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            Reason = (global::Messages.Runtime.V1.TaskActorAssignmentReason) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            if (affectedActor_ == null) {
+              AffectedActor = new global::Messages.Common.V1.ActorRef();
+            }
+            input.ReadMessage(AffectedActor);
+            break;
+          }
+          case 34: {
+            Message = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (evaluatedAt_ == null) {
+              EvaluatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EvaluatedAt);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            State = (global::Messages.Runtime.V1.TaskActorAssignmentState) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            Reason = (global::Messages.Runtime.V1.TaskActorAssignmentReason) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            if (affectedActor_ == null) {
+              AffectedActor = new global::Messages.Common.V1.ActorRef();
+            }
+            input.ReadMessage(AffectedActor);
+            break;
+          }
+          case 34: {
+            Message = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (evaluatedAt_ == null) {
+              EvaluatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EvaluatedAt);
             break;
           }
         }

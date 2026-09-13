@@ -31,3 +31,60 @@ message ActorAssignment {
 message ActorAssignments {
   repeated ActorAssignment items = 1;
 }
+
+enum TaskActorAssignmentState {
+  // Assignment has not yet been evaluated.
+  TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED = 0;
+
+  // The task currently has no assigned actor but is not known to be blocked.
+  TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED = 1;
+
+  // The task has a currently valid assigned actor.
+  TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED = 2;
+
+  // Assignment was evaluated, but no currently available capable actor exists.
+  TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED = 3;
+}
+
+enum TaskActorAssignmentReason {
+  TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED = 0;
+
+  // The previously assigned actor became unavailable.
+  TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE = 1;
+
+  // No currently available actor satisfies the task requirements.
+  TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE = 2;
+
+  // The task definition or execution state does not permit reassignment.
+  TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED = 3;
+
+  // Reassignment requires an explicit handover or operator decision.
+  TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED = 4;
+}
+
+message TaskActorAssignmentStatus {
+  // Current result of actor-assignment resolution.
+  TaskActorAssignmentState state = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Present when the assignment is blocked. Normally unspecified for a
+  // currently valid assignment.
+  TaskActorAssignmentReason reason = 2 [(buf.validate.field).enum.defined_only = true];
+
+  // Actor related to the blocking condition, when there is one.
+  common.v1.ActorRef affected_actor = 3;
+
+  // Additional diagnostic information intended for operators and logs.
+  string message = 4 [(buf.validate.field).string.max_len = 1024];
+
+  // Time at which the current assignment resolution was calculated.
+  google.protobuf.Timestamp evaluated_at = 5 [(buf.validate.field).required = true];
+
+  option (buf.validate.message).cel = {
+    id: "task_assignment_status.blocked_reason"
+    message: "blocked assignment status requires a reason"
+    expression: "this.state != 3 || this.reason != 0"
+  };
+}

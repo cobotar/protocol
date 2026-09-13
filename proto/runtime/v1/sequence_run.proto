@@ -34,7 +34,11 @@ message SequenceRun {
   ];
   int32 completed_tasks = 9 [(buf.validate.field).int32.gte = 0];
   bool can_bulk_complete = 10;
-  repeated common.v1.ActorRef assigned_actors = 11;
+  repeated common.v1.ActorRef assigned_actors = 11; // a derived set calculated from descendant TaskRuns.
+
+  // Revision used to prevent concurrent state changes and reassignments from
+  // overwriting one another. Starts at 1.
+  uint64 revision = 12 [(buf.validate.field).uint64.gte = 1];
 }
 
 message SequenceRuns {

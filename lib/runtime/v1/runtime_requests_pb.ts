@@ -4,15 +4,17 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ActorRef } from "../../common/v1/actor_pb.ts";
 import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file runtime/v1/runtime_requests.proto.
  */
 export const file_runtime_v1_runtime_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEiPQoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIWCg5wcm9jZXNzX3J1bl9pZBgBIAEoCRIOCgZyZWFzb24YAiABKAkihQEKFlRhc2tTdGF0ZUNoYW5nZVJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSKwoFc3RhdGUYAiABKA4yHC5ydW50aW1lLnYxLlRhc2tTdGF0ZVJlcXVlc3QSEgoKZXJyb3JfY29kZRgDIAEoCRIVCg1lcnJvcl9tZXNzYWdlGAQgASgJIk4KE1Rhc2tSZWFzc2lnblJlcXVlc3QSEwoLdGFza19ydW5faWQYASABKAkSIgoFYWN0b3IYAiABKAsyEy5jb21tb24udjEuQWN0b3JSZWYikQEKElRhc2tQcm9ncmVzc1VwZGF0ZRITCgt0YXNrX3J1bl9pZBgBIAEoCRIiCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZhIPCgdtZXNzYWdlGAMgASgJEhQKDGVsYXBzZWRfdGltZRgEIAEoBRIbChNlc3RpbWF0ZWRfdGltZV9sZWZ0GAUgASgFIlYKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EhcKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCRIiCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZiIyChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBIXCg9zZXF1ZW5jZV9ydW5faWQYASABKAkq0AEKEFRhc2tTdGF0ZVJlcXVlc3QSIgoeVEFTS19TVEFURV9SRVFVRVNUX1VOU1BFQ0lGSUVEEAASIgoeVEFTS19TVEFURV9SRVFVRVNUX0lOX1BST0dSRVNTEAESGwoXVEFTS19TVEFURV9SRVFVRVNUX0RPTkUQAhIbChdUQVNLX1NUQVRFX1JFUVVFU1RfVU5ETxADEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9FUlJPUhAEEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9BQk9SVBAFQrMBCg5jb20ucnVudGltZS52MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_common_v1_actor]);
+  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEiSwoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIkCg5wcm9jZXNzX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSI8gQBEg4KBnJlYXNvbhgCIAEoCSLEAQoWVGFza1N0YXRlQ2hhbmdlUmVxdWVzdBIhCgt0YXNrX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSY8gQBEjgKBXN0YXRlGAIgASgOMhwucnVudGltZS52MS5UYXNrU3RhdGVSZXF1ZXN0Qgu6SAjIAQGCAQIQARISCgplcnJvcl9jb2RlGAMgASgJEhUKDWVycm9yX21lc3NhZ2UYBCABKAkSIgoRZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAEiiAEKE1Rhc2tSZWFzc2lnblJlcXVlc3QSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiIKEWV4cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBIrkBChJUYXNrUHJvZ3Jlc3NVcGRhdGUSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEg8KB21lc3NhZ2UYAyABKAkSHQoMZWxhcHNlZF90aW1lGAQgASgFQge6SAQaAigAEiQKE2VzdGltYXRlZF90aW1lX2xlZnQYBSABKAVCB7pIBBoCKAAikAEKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EiUKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSQ8gQBEioKBWFjdG9yGAIgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQESIgoRZXhwZWN0ZWRfcmV2aXNpb24YAyABKARCB7pIBDICKAEiZAoXU2VxdWVuY2VDb21wbGV0ZVJlcXVlc3QSJQoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAnIAQFyBJDyBAESIgoRZXhwZWN0ZWRfcmV2aXNpb24YAiABKARCB7pIBDICKAEq8gEKEFRhc2tTdGF0ZVJlcXVlc3QSIgoeVEFTS19TVEFURV9SRVFVRVNUX1VOU1BFQ0lGSUVEEAASIgoeVEFTS19TVEFURV9SRVFVRVNUX0lOX1BST0dSRVNTEAESGwoXVEFTS19TVEFURV9SRVFVRVNUX0RPTkUQAhIbChdUQVNLX1NUQVRFX1JFUVVFU1RfVU5ETxADEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9FUlJPUhAEEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9BQk9SVBAFEiAKHFRBU0tfU1RBVEVfUkVRVUVTVF9TVVNQRU5ERUQQBkKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.ProcessAbortRequest
@@ -59,6 +61,13 @@ export type TaskStateChangeRequest = Message<"runtime.v1.TaskStateChangeRequest"
    * @generated from field: string error_message = 4;
    */
   errorMessage: string;
+
+  /**
+   * Revision of the TaskRun on which this request is based.
+   *
+   * @generated from field: uint64 expected_revision = 5;
+   */
+  expectedRevision: bigint;
 };
 
 /**
@@ -81,6 +90,13 @@ export type TaskReassignRequest = Message<"runtime.v1.TaskReassignRequest"> & {
    * @generated from field: common.v1.ActorRef actor = 2;
    */
   actor?: ActorRef;
+
+  /**
+   * Revision of the TaskRun on which this request is based.
+   *
+   * @generated from field: uint64 expected_revision = 3;
+   */
+  expectedRevision: bigint;
 };
 
 /**
@@ -144,6 +160,13 @@ export type SequenceReassignRequest = Message<"runtime.v1.SequenceReassignReques
    * @generated from field: common.v1.ActorRef actor = 2;
    */
   actor?: ActorRef;
+
+  /**
+   * Revision of the SequenceRun on which this request is based.
+   *
+   * @generated from field: uint64 expected_revision = 3;
+   */
+  expectedRevision: bigint;
 };
 
 /**
@@ -161,6 +184,13 @@ export type SequenceCompleteRequest = Message<"runtime.v1.SequenceCompleteReques
    * @generated from field: string sequence_run_id = 1;
    */
   sequenceRunId: string;
+
+  /**
+   * Revision of the SequenceRun on which this request is based.
+   *
+   * @generated from field: uint64 expected_revision = 2;
+   */
+  expectedRevision: bigint;
 };
 
 /**
@@ -180,6 +210,8 @@ export enum TaskStateRequest {
   UNSPECIFIED = 0,
 
   /**
+   * Start a ready task or resume a suspended task.
+   *
    * @generated from enum value: TASK_STATE_REQUEST_IN_PROGRESS = 1;
    */
   IN_PROGRESS = 1,
@@ -203,6 +235,13 @@ export enum TaskStateRequest {
    * @generated from enum value: TASK_STATE_REQUEST_ABORT = 5;
    */
   ABORT = 5,
+
+  /**
+   * Suspend a started task without completing or failing it.
+   *
+   * @generated from enum value: TASK_STATE_REQUEST_SUSPENDED = 6;
+   */
+  SUSPENDED = 6,
 }
 
 /**

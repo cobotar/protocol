@@ -13,6 +13,8 @@ import type { Timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { ContainerSlotRef } from "../../resources/v1/container_definition_pb.ts";
 import { file_resources_v1_container_definition } from "../../resources/v1/container_definition_pb.ts";
+import type { TaskActorAssignmentStatus } from "./actor_assignment_pb.ts";
+import { file_runtime_v1_actor_assignment } from "./actor_assignment_pb.ts";
 import type { CandidateActorEvaluation } from "./process_requests_pb.ts";
 import { file_runtime_v1_process_requests } from "./process_requests_pb.ts";
 import type { RuntimeRestriction } from "./runtime_restriction_pb.ts";
@@ -24,7 +26,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIqcBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSGQoRcm9ib3RfaW5zdGFuY2VfaWQYAiABKAkSEgoKc3RhdGlvbl9pZBgDIAEoCRIPCgdjZWxsX2lkGAQgASgJEjYKDmNvbnRhaW5lcl9zbG90GAUgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYi0AUKB1Rhc2tSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEigKEnRhc2tfZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJyAEBcgSw8gQBEiwKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpICcgBAXIEkPIEARI0CgVzdGF0ZRgGIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0YXRlQgu6SAjIAQGCAQIQARItChBjYW5kaWRhdGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmEisKDmFzc2lnbmVkX2FjdG9yGAggASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgJIAEoCBIQCghjYW5fdW5kbxgKIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAsgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgMIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDyABKAkSFQoNZXJyb3JfbWVzc2FnZRgQIAEoCRIvCgdiaW5kaW5nGBEgASgLMh4ucnVudGltZS52MS5UYXNrUnVudGltZUJpbmRpbmcSNAoMcmVzdHJpY3Rpb25zGBMgAygLMh4ucnVudGltZS52MS5SdW50aW1lUmVzdHJpY3Rpb24SSQobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb24iLgoIVGFza1J1bnMSIgoFaXRlbXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tSdW4q1QEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEhwKGFRBU0tfUlVOX1NUQVRFX05PVF9SRUFEWRABEhgKFFRBU0tfUlVOX1NUQVRFX1JFQURZEAISHgoaVEFTS19SVU5fU1RBVEVfSU5fUFJPR1JFU1MQAxIXChNUQVNLX1JVTl9TVEFURV9ET05FEAQSGAoUVEFTS19SVU5fU1RBVEVfRVJST1IQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVEEAZCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_process_requests, file_runtime_v1_runtime_restriction, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIowBChJUYXNrUnVudGltZUJpbmRpbmcSGQoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAkSEgoKc3RhdGlvbl9pZBgCIAEoCRIPCgdjZWxsX2lkGAMgASgJEjYKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYiuwYKB1Rhc2tSdW4SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEigKEnRhc2tfZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJyAEBcgSw8gQBEiwKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpICcgBAXIEkPIEARI0CgVzdGF0ZRgGIAEoDjIYLnJ1bnRpbWUudjEuVGFza1J1blN0YXRlQgu6SAjIAQGCAQIQARItChBjYW5kaWRhdGVfYWN0b3JzGAcgAygLMhMuY29tbW9uLnYxLkFjdG9yUmVmEisKDmFzc2lnbmVkX2FjdG9yGAggASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEg4KBmNhbl9kbxgJIAEoCBIQCghjYW5fdW5kbxgKIAEoCBIYChB3b3JrYWJsZV9ob3Jpem9uGAsgASgFEjgKEmVzdGltYXRlZF9kdXJhdGlvbhgMIAEoCzIcLmNvbW1vbi52MS5Fc3RpbWF0ZWREdXJhdGlvbhIuCgpzdGFydGVkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjb21wbGV0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmVycm9yX2NvZGUYDyABKAkSFQoNZXJyb3JfbWVzc2FnZRgQIAEoCRIvCgdiaW5kaW5nGBEgASgLMh4ucnVudGltZS52MS5UYXNrUnVudGltZUJpbmRpbmcSNAoMcmVzdHJpY3Rpb25zGBMgAygLMh4ucnVudGltZS52MS5SdW50aW1lUmVzdHJpY3Rpb24SSQobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb24STgoXYWN0b3JfYXNzaWdubWVudF9zdGF0dXMYFSABKAsyJS5ydW50aW1lLnYxLlRhc2tBY3RvckFzc2lnbm1lbnRTdGF0dXNCBrpIA8gBARIZCghyZXZpc2lvbhgWIAEoBEIHukgEMgIoASIuCghUYXNrUnVucxIiCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1birzAQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASHAoYVEFTS19SVU5fU1RBVEVfTk9UX1JFQURZEAESGAoUVEFTS19SVU5fU1RBVEVfUkVBRFkQAhIeChpUQVNLX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhcKE1RBU0tfUlVOX1NUQVRFX0RPTkUQBBIYChRUQVNLX1JVTl9TVEFURV9FUlJPUhAFEhoKFlRBU0tfUlVOX1NUQVRFX0FCT1JURUQQBhIcChhUQVNLX1JVTl9TVEFURV9TVVNQRU5ERUQQB0KrAQoOY29tLnJ1bnRpbWUudjFCDFRhc2tSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_actor_assignment, file_runtime_v1_process_requests, file_runtime_v1_runtime_restriction, file_validation_v1_predefined_string_rules]);
 
 /**
  * Concrete runtime/deployment bindings resolved for this task run.
@@ -38,24 +40,17 @@ export type TaskRuntimeBinding = Message<"runtime.v1.TaskRuntimeBinding"> & {
   assetInstanceId: string;
 
   /**
-   * TODO: think this should be removed
-   *
-   * @generated from field: string robot_instance_id = 2;
-   */
-  robotInstanceId: string;
-
-  /**
-   * @generated from field: string station_id = 3;
+   * @generated from field: string station_id = 2;
    */
   stationId: string;
 
   /**
-   * @generated from field: string cell_id = 4;
+   * @generated from field: string cell_id = 3;
    */
   cellId: string;
 
   /**
-   * @generated from field: resources.v1.ContainerSlotRef container_slot = 5;
+   * @generated from field: resources.v1.ContainerSlotRef container_slot = 4;
    */
   containerSlot?: ContainerSlotRef;
 };
@@ -107,6 +102,8 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   candidateActors: ActorRef[];
 
   /**
+   * is the authoritative current task assignment.
+   *
    * @generated from field: common.v1.ActorRef assigned_actor = 8;
    */
   assignedActor?: ActorRef;
@@ -178,6 +175,21 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
    * @generated from field: repeated runtime.v1.CandidateActorEvaluation candidate_actor_evaluations = 20;
    */
   candidateActorEvaluations: CandidateActorEvaluation[];
+
+  /**
+   * Current actor-assignment resolution for this task.
+   *
+   * @generated from field: runtime.v1.TaskActorAssignmentStatus actor_assignment_status = 21;
+   */
+  actorAssignmentStatus?: TaskActorAssignmentStatus;
+
+  /**
+   * Revision used to prevent concurrent state changes and reassignments from
+   * overwriting one another. Starts at 1.
+   *
+   * @generated from field: uint64 revision = 22;
+   */
+  revision: bigint;
 };
 
 /**
@@ -242,6 +254,11 @@ export enum TaskRunState {
    * @generated from enum value: TASK_RUN_STATE_ABORTED = 6;
    */
   ABORTED = 6,
+
+  /**
+   * @generated from enum value: TASK_RUN_STATE_SUSPENDED = 7;
+   */
+  SUSPENDED = 7,
 }
 
 /**

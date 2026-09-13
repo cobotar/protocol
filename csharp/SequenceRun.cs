@@ -27,7 +27,7 @@ namespace Messages.Runtime.V1 {
             "Ch1ydW50aW1lL3YxL3NlcXVlbmNlX3J1bi5wcm90bxIKcnVudGltZS52MRob",
             "YnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhVjb21tb24vdjEvYWN0b3Iu",
             "cHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMu",
-            "cHJvdG8iqAQKC1NlcXVlbmNlUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1l",
+            "cHJvdG8izQQKC1NlcXVlbmNlUnVuEg4KAmlkGAEgASgJUgJpZBISCgRuYW1l",
             "GAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SQgoWc2VxdWVuY2Vf",
             "ZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJcgSo8gQByAEBUhRzZXF1ZW5jZURl",
             "ZmluaXRpb25JZBI+ChZwYXJlbnRfc2VxdWVuY2VfcnVuX2lkGAUgASgJQgm6",
@@ -39,21 +39,22 @@ namespace Messages.Runtime.V1 {
             "MAoPY29tcGxldGVkX3Rhc2tzGAkgASgFQge6SAQaAigAUg5jb21wbGV0ZWRU",
             "YXNrcxIqChFjYW5fYnVsa19jb21wbGV0ZRgKIAEoCFIPY2FuQnVsa0NvbXBs",
             "ZXRlEjwKD2Fzc2lnbmVkX2FjdG9ycxgLIAMoCzITLmNvbW1vbi52MS5BY3Rv",
-            "clJlZlIOYXNzaWduZWRBY3RvcnMiPQoMU2VxdWVuY2VSdW5zEi0KBWl0ZW1z",
-            "GAEgAygLMhcucnVudGltZS52MS5TZXF1ZW5jZVJ1blIFaXRlbXMq1wEKEFNl",
-            "cXVlbmNlUnVuU3RhdGUSIgoeU0VRVUVOQ0VfUlVOX1NUQVRFX1VOU1BFQ0lG",
-            "SUVEEAASIAocU0VRVUVOQ0VfUlVOX1NUQVRFX05PVF9SRUFEWRABEhwKGFNF",
-            "UVVFTkNFX1JVTl9TVEFURV9SRUFEWRACEiIKHlNFUVVFTkNFX1JVTl9TVEFU",
-            "RV9JTl9QUk9HUkVTUxADEhsKF1NFUVVFTkNFX1JVTl9TVEFURV9ET05FEAQS",
-            "HgoaU0VRVUVOQ0VfUlVOX1NUQVRFX0FCT1JURUQQBUKvAQoOY29tLnJ1bnRp",
-            "bWUudjFCEFNlcXVlbmNlUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhY",
-            "qgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1l",
-            "XFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "clJlZlIOYXNzaWduZWRBY3RvcnMSIwoIcmV2aXNpb24YDCABKARCB7pIBDIC",
+            "KAFSCHJldmlzaW9uIj0KDFNlcXVlbmNlUnVucxItCgVpdGVtcxgBIAMoCzIX",
+            "LnJ1bnRpbWUudjEuU2VxdWVuY2VSdW5SBWl0ZW1zKtcBChBTZXF1ZW5jZVJ1",
+            "blN0YXRlEiIKHlNFUVVFTkNFX1JVTl9TVEFURV9VTlNQRUNJRklFRBAAEiAK",
+            "HFNFUVVFTkNFX1JVTl9TVEFURV9OT1RfUkVBRFkQARIcChhTRVFVRU5DRV9S",
+            "VU5fU1RBVEVfUkVBRFkQAhIiCh5TRVFVRU5DRV9SVU5fU1RBVEVfSU5fUFJP",
+            "R1JFU1MQAxIbChdTRVFVRU5DRV9SVU5fU1RBVEVfRE9ORRAEEh4KGlNFUVVF",
+            "TkNFX1JVTl9TVEFURV9BQk9SVEVEEAVCrwEKDmNvbS5ydW50aW1lLnYxQhBT",
+            "ZXF1ZW5jZVJ1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3Nh",
+            "Z2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJN",
+            "ZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.SequenceRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "Name", "Icon", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRun), global::Messages.Runtime.V1.SequenceRun.Parser, new[]{ "Id", "Name", "Icon", "SequenceDefinitionId", "ParentSequenceRunId", "ChildSequenceRunIds", "ChildTaskRunIds", "State", "CompletedTasks", "CanBulkComplete", "AssignedActors", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceRuns), global::Messages.Runtime.V1.SequenceRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -119,6 +120,7 @@ namespace Messages.Runtime.V1 {
       completedTasks_ = other.completedTasks_;
       canBulkComplete_ = other.canBulkComplete_;
       assignedActors_ = other.assignedActors_.Clone();
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -251,10 +253,29 @@ namespace Messages.Runtime.V1 {
     private static readonly pb::FieldCodec<global::Messages.Common.V1.ActorRef> _repeated_assignedActors_codec
         = pb::FieldCodec.ForMessage(90, global::Messages.Common.V1.ActorRef.Parser);
     private readonly pbc::RepeatedField<global::Messages.Common.V1.ActorRef> assignedActors_ = new pbc::RepeatedField<global::Messages.Common.V1.ActorRef>();
+    /// <summary>
+    /// a derived set calculated from descendant TaskRuns.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Common.V1.ActorRef> AssignedActors {
       get { return assignedActors_; }
+    }
+
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 12;
+    private ulong revision_;
+    /// <summary>
+    /// Revision used to prevent concurrent state changes and reassignments from
+    /// overwriting one another. Starts at 1.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { return revision_; }
+      set {
+        revision_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -283,6 +304,7 @@ namespace Messages.Runtime.V1 {
       if (CompletedTasks != other.CompletedTasks) return false;
       if (CanBulkComplete != other.CanBulkComplete) return false;
       if(!assignedActors_.Equals(other.assignedActors_)) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -301,6 +323,7 @@ namespace Messages.Runtime.V1 {
       if (CompletedTasks != 0) hash ^= CompletedTasks.GetHashCode();
       if (CanBulkComplete != false) hash ^= CanBulkComplete.GetHashCode();
       hash ^= assignedActors_.GetHashCode();
+      if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -354,6 +377,10 @@ namespace Messages.Runtime.V1 {
         output.WriteBool(CanBulkComplete);
       }
       assignedActors_.WriteTo(output, _repeated_assignedActors_codec);
+      if (Revision != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -399,6 +426,10 @@ namespace Messages.Runtime.V1 {
         output.WriteBool(CanBulkComplete);
       }
       assignedActors_.WriteTo(ref output, _repeated_assignedActors_codec);
+      if (Revision != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -436,6 +467,9 @@ namespace Messages.Runtime.V1 {
         size += 1 + 1;
       }
       size += assignedActors_.CalculateSize(_repeated_assignedActors_codec);
+      if (Revision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -475,6 +509,9 @@ namespace Messages.Runtime.V1 {
         CanBulkComplete = other.CanBulkComplete;
       }
       assignedActors_.Add(other.assignedActors_);
+      if (other.Revision != 0UL) {
+        Revision = other.Revision;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -538,6 +575,10 @@ namespace Messages.Runtime.V1 {
             assignedActors_.AddEntriesFrom(input, _repeated_assignedActors_codec);
             break;
           }
+          case 96: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -599,6 +640,10 @@ namespace Messages.Runtime.V1 {
           }
           case 90: {
             assignedActors_.AddEntriesFrom(ref input, _repeated_assignedActors_codec);
+            break;
+          }
+          case 96: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

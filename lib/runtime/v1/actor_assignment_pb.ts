@@ -2,8 +2,8 @@
 // @generated from file runtime/v1/actor_assignment.proto (package runtime.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ActorRef } from "../../common/v1/actor_pb.ts";
 import { file_common_v1_actor } from "../../common/v1/actor_pb.ts";
@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/actor_assignment.proto.
  */
 export const file_runtime_v1_actor_assignment: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8SCnJ1bnRpbWUudjEimwIKD0FjdG9yQXNzaWdubWVudBIKCgJpZBgBIAEoCRIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiQKDnByb2Nlc3NfcnVuX2lkGAMgASgJQgy6SAnIAQFyBIjyBAESJQoPc2VxdWVuY2VfcnVuX2lkGAQgASgJQgy6SAnIAQFyBJDyBAESIQoLdGFza19ydW5faWQYBSABKAlCDLpICcgBAXIEmPIEARIvCgthc3NpZ25lZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLcmVsZWFzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIj4KEEFjdG9yQXNzaWdubWVudHMSKgoFaXRlbXMYASADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNzaWdubWVudEKzAQoOY29tLnJ1bnRpbWUudjFCFEFjdG9yQXNzaWdubWVudFByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiFydW50aW1lL3YxL2FjdG9yX2Fzc2lnbm1lbnQucHJvdG8SCnJ1bnRpbWUudjEimwIKD0FjdG9yQXNzaWdubWVudBIKCgJpZBgBIAEoCRIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiQKDnByb2Nlc3NfcnVuX2lkGAMgASgJQgy6SAnIAQFyBIjyBAESJQoPc2VxdWVuY2VfcnVuX2lkGAQgASgJQgy6SAnIAQFyBJDyBAESIQoLdGFza19ydW5faWQYBSABKAlCDLpICcgBAXIEmPIEARIvCgthc3NpZ25lZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLcmVsZWFzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIj4KEEFjdG9yQXNzaWdubWVudHMSKgoFaXRlbXMYASADKAsyGy5ydW50aW1lLnYxLkFjdG9yQXNzaWdubWVudCKgAwoZVGFza0FjdG9yQXNzaWdubWVudFN0YXR1cxJACgVzdGF0ZRgBIAEoDjIkLnJ1bnRpbWUudjEuVGFza0FjdG9yQXNzaWdubWVudFN0YXRlQgu6SAjIAQGCAQIQARI/CgZyZWFzb24YAiABKA4yJS5ydW50aW1lLnYxLlRhc2tBY3RvckFzc2lnbm1lbnRSZWFzb25CCLpIBYIBAhABEisKDmFmZmVjdGVkX2FjdG9yGAMgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmEhkKB21lc3NhZ2UYBCABKAlCCLpIBXIDGIAIEjgKDGV2YWx1YXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCBrpIA8gBATp+ukh7GnkKJXRhc2tfYXNzaWdubWVudF9zdGF0dXMuYmxvY2tlZF9yZWFzb24SK2Jsb2NrZWQgYXNzaWdubWVudCBzdGF0dXMgcmVxdWlyZXMgYSByZWFzb24aI3RoaXMuc3RhdGUgIT0gMyB8fCB0aGlzLnJlYXNvbiAhPSAwKsYBChhUYXNrQWN0b3JBc3NpZ25tZW50U3RhdGUSKwonVEFTS19BQ1RPUl9BU1NJR05NRU5UX1NUQVRFX1VOU1BFQ0lGSUVEEAASKgomVEFTS19BQ1RPUl9BU1NJR05NRU5UX1NUQVRFX1VOQVNTSUdORUQQARIoCiRUQVNLX0FDVE9SX0FTU0lHTk1FTlRfU1RBVEVfQVNTSUdORUQQAhInCiNUQVNLX0FDVE9SX0FTU0lHTk1FTlRfU1RBVEVfQkxPQ0tFRBADKqkCChlUYXNrQWN0b3JBc3NpZ25tZW50UmVhc29uEiwKKFRBU0tfQUNUT1JfQVNTSUdOTUVOVF9SRUFTT05fVU5TUEVDSUZJRUQQABIyCi5UQVNLX0FDVE9SX0FTU0lHTk1FTlRfUkVBU09OX0FDVE9SX1VOQVZBSUxBQkxFEAESOwo3VEFTS19BQ1RPUl9BU1NJR05NRU5UX1JFQVNPTl9OT19DQVBBQkxFX0FDVE9SX0FWQUlMQUJMRRACEjkKNVRBU0tfQUNUT1JfQVNTSUdOTUVOVF9SRUFTT05fUkVBU1NJR05NRU5UX05PVF9BTExPV0VEEAMSMgouVEFTS19BQ1RPUl9BU1NJR05NRU5UX1JFQVNPTl9IQU5ET1ZFUl9SRVFVSVJFRBAEQrMBCg5jb20ucnVudGltZS52MUIUQWN0b3JBc3NpZ25tZW50UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.ActorAssignment
@@ -81,4 +81,135 @@ export type ActorAssignments = Message<"runtime.v1.ActorAssignments"> & {
  */
 export const ActorAssignmentsSchema: GenMessage<ActorAssignments> = /*@__PURE__*/
   messageDesc(file_runtime_v1_actor_assignment, 1);
+
+/**
+ * @generated from message runtime.v1.TaskActorAssignmentStatus
+ */
+export type TaskActorAssignmentStatus = Message<"runtime.v1.TaskActorAssignmentStatus"> & {
+  /**
+   * Current result of actor-assignment resolution.
+   *
+   * @generated from field: runtime.v1.TaskActorAssignmentState state = 1;
+   */
+  state: TaskActorAssignmentState;
+
+  /**
+   * Present when the assignment is blocked. Normally unspecified for a
+   * currently valid assignment.
+   *
+   * @generated from field: runtime.v1.TaskActorAssignmentReason reason = 2;
+   */
+  reason: TaskActorAssignmentReason;
+
+  /**
+   * Actor related to the blocking condition, when there is one.
+   *
+   * @generated from field: common.v1.ActorRef affected_actor = 3;
+   */
+  affectedActor?: ActorRef;
+
+  /**
+   * Additional diagnostic information intended for operators and logs.
+   *
+   * @generated from field: string message = 4;
+   */
+  message: string;
+
+  /**
+   * Time at which the current assignment resolution was calculated.
+   *
+   * @generated from field: google.protobuf.Timestamp evaluated_at = 5;
+   */
+  evaluatedAt?: Timestamp;
+};
+
+/**
+ * Describes the message runtime.v1.TaskActorAssignmentStatus.
+ * Use `create(TaskActorAssignmentStatusSchema)` to create a new message.
+ */
+export const TaskActorAssignmentStatusSchema: GenMessage<TaskActorAssignmentStatus> = /*@__PURE__*/
+  messageDesc(file_runtime_v1_actor_assignment, 2);
+
+/**
+ * @generated from enum runtime.v1.TaskActorAssignmentState
+ */
+export enum TaskActorAssignmentState {
+  /**
+   * Assignment has not yet been evaluated.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The task currently has no assigned actor but is not known to be blocked.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_STATE_UNASSIGNED = 1;
+   */
+  UNASSIGNED = 1,
+
+  /**
+   * The task has a currently valid assigned actor.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_STATE_ASSIGNED = 2;
+   */
+  ASSIGNED = 2,
+
+  /**
+   * Assignment was evaluated, but no currently available capable actor exists.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED = 3;
+   */
+  BLOCKED = 3,
+}
+
+/**
+ * Describes the enum runtime.v1.TaskActorAssignmentState.
+ */
+export const TaskActorAssignmentStateSchema: GenEnum<TaskActorAssignmentState> = /*@__PURE__*/
+  enumDesc(file_runtime_v1_actor_assignment, 0);
+
+/**
+ * @generated from enum runtime.v1.TaskActorAssignmentReason
+ */
+export enum TaskActorAssignmentReason {
+  /**
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_REASON_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The previously assigned actor became unavailable.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_REASON_ACTOR_UNAVAILABLE = 1;
+   */
+  ACTOR_UNAVAILABLE = 1,
+
+  /**
+   * No currently available actor satisfies the task requirements.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_REASON_NO_CAPABLE_ACTOR_AVAILABLE = 2;
+   */
+  NO_CAPABLE_ACTOR_AVAILABLE = 2,
+
+  /**
+   * The task definition or execution state does not permit reassignment.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_REASON_REASSIGNMENT_NOT_ALLOWED = 3;
+   */
+  REASSIGNMENT_NOT_ALLOWED = 3,
+
+  /**
+   * Reassignment requires an explicit handover or operator decision.
+   *
+   * @generated from enum value: TASK_ACTOR_ASSIGNMENT_REASON_HANDOVER_REQUIRED = 4;
+   */
+  HANDOVER_REQUIRED = 4,
+}
+
+/**
+ * Describes the enum runtime.v1.TaskActorAssignmentReason.
+ */
+export const TaskActorAssignmentReasonSchema: GenEnum<TaskActorAssignmentReason> = /*@__PURE__*/
+  enumDesc(file_runtime_v1_actor_assignment, 1);
 
