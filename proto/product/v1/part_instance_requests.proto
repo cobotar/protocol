@@ -1,0 +1,64 @@
+syntax = "proto3";
+package product.v1;
+
+import "buf/validate/validate.proto";
+import "product/v1/part_instance.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Product.V1";
+option go_package = "github.com/cobotar/protocol/messages/product/v1";
+
+// PartInstanceBulkCreateSpec describes the instances to create for one
+// PartDefinition.
+message PartInstanceBulkCreateSpec {
+  // Definition from which display information such as name and icon is copied.
+  string part_definition_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.part_definition_id_component) = true
+  ];
+
+  // Number of distinct PartInstances to create.
+  //
+  // Use one instance per independently identifiable physical part. For example,
+  // instance_count=12 creates twelve bolt instances.
+  uint32 instance_count = 2 [
+    (buf.validate.field).uint32.gt = 0,
+    (buf.validate.field).uint32.lte = 1000
+  ];
+
+  // Optional initial quantity carried by each created PartInstance.
+  //
+  // This describes the contents of each instance, not the number of instances
+  // to create. For example, one lubricant bottle may have instance_count=1 and
+  // quantity_per_instance={amount: 500, unit: "ml", nominal_amount: 500}.
+  //
+  // Omit this for independently tracked discrete parts.
+  QuantityStatus quantity_per_instance = 3;
+}
+
+// BulkCreatePartInstancesRequest creates PartInstances from one or more
+// PartDefinitions and places every created instance at the same location.
+//
+// This is primarily an authoring/study convenience operation. Runtime inventory
+// integrations may instead create or synchronize instances individually.
+message BulkCreatePartInstancesRequest {
+  // Parts and instance counts to create.
+  //
+  // A PartDefinition should occur at most once in this list. The backend should
+  // reject duplicate part_definition_id values rather than silently combining
+  // them.
+  repeated PartInstanceBulkCreateSpec parts = 1 [
+    (buf.validate.field).repeated.min_items = 1,
+    (buf.validate.field).repeated.max_items = 100
+  ];
+
+  // Initial location assigned to every created PartInstance.
+  //
+  // The backend must verify that referenced line, cell, station, container
+  // instance, and container slot identifiers exist and are mutually consistent.
+  PartInstanceLocation location = 2 [(buf.validate.field).required = true];
+
+  // Optional client-generated key that makes retries of the complete request
+  // return the originally created instances instead of creating duplicates.
+  string idempotency_key = 3 [(buf.validate.field).string.max_len = 128];
+}

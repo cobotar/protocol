@@ -16,14 +16,12 @@ class TaskStateRequest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TASK_STATE_REQUEST_DONE: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_UNDO: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_ERROR: _ClassVar[TaskStateRequest]
-    TASK_STATE_REQUEST_ABORT: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_SUSPENDED: _ClassVar[TaskStateRequest]
 TASK_STATE_REQUEST_UNSPECIFIED: TaskStateRequest
 TASK_STATE_REQUEST_IN_PROGRESS: TaskStateRequest
 TASK_STATE_REQUEST_DONE: TaskStateRequest
 TASK_STATE_REQUEST_UNDO: TaskStateRequest
 TASK_STATE_REQUEST_ERROR: TaskStateRequest
-TASK_STATE_REQUEST_ABORT: TaskStateRequest
 TASK_STATE_REQUEST_SUSPENDED: TaskStateRequest
 
 class ProcessAbortRequest(_message.Message):

@@ -54,16 +54,16 @@ namespace Messages.Runtime.V1 {
             "dmlzaW9uIoUBChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBI0Cg9zZXF1ZW5j",
             "ZV9ydW5faWQYASABKAlCDLpICXIEkPIEAcgBAVINc2VxdWVuY2VSdW5JZBI0",
             "ChFleHBlY3RlZF9yZXZpc2lvbhgCIAEoBEIHukgEMgIoAVIQZXhwZWN0ZWRS",
-            "ZXZpc2lvbiryAQoQVGFza1N0YXRlUmVxdWVzdBIiCh5UQVNLX1NUQVRFX1JF",
+            "ZXZpc2lvbirUAQoQVGFza1N0YXRlUmVxdWVzdBIiCh5UQVNLX1NUQVRFX1JF",
             "UVVFU1RfVU5TUEVDSUZJRUQQABIiCh5UQVNLX1NUQVRFX1JFUVVFU1RfSU5f",
             "UFJPR1JFU1MQARIbChdUQVNLX1NUQVRFX1JFUVVFU1RfRE9ORRACEhsKF1RB",
             "U0tfU1RBVEVfUkVRVUVTVF9VTkRPEAMSHAoYVEFTS19TVEFURV9SRVFVRVNU",
-            "X0VSUk9SEAQSHAoYVEFTS19TVEFURV9SRVFVRVNUX0FCT1JUEAUSIAocVEFT",
-            "S19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAGQrMBCg5jb20ucnVudGltZS52",
-            "MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFy",
-            "L3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhY",
-            "qgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1l",
-            "XFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "X0VSUk9SEAQSIAocVEFTS19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAGQrMB",
+            "Cg5jb20ucnVudGltZS52MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0",
+            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7",
+            "cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRp",
+            "bWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,8 +87,10 @@ namespace Messages.Runtime.V1 {
     [pbr::OriginalName("TASK_STATE_REQUEST_IN_PROGRESS")] InProgress = 1,
     [pbr::OriginalName("TASK_STATE_REQUEST_DONE")] Done = 2,
     [pbr::OriginalName("TASK_STATE_REQUEST_UNDO")] Undo = 3,
+    /// <summary>
+    /// TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?)
+    /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_ERROR")] Error = 4,
-    [pbr::OriginalName("TASK_STATE_REQUEST_ABORT")] Abort = 5,
     /// <summary>
     /// Suspend a started task without completing or failing it.
     /// </summary>
@@ -1126,7 +1128,7 @@ namespace Messages.Runtime.V1 {
     public const int ExpectedRevisionFieldNumber = 6;
     private ulong expectedRevision_;
     /// <summary>
-    /// Revision of the SequenceRun on which this request is based.
+    /// Revision of the TaskRun on which this request is based.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -379,6 +379,10 @@
     - [PartInstances](#product-v1-PartInstances)
     - [QuantityStatus](#product-v1-QuantityStatus)
   
+- [product/v1/part_instance_requests.proto](#product_v1_part_instance_requests-proto)
+    - [BulkCreatePartInstancesRequest](#product-v1-BulkCreatePartInstancesRequest)
+    - [PartInstanceBulkCreateSpec](#product-v1-PartInstanceBulkCreateSpec)
+  
 - [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
     - [VariantAxis](#variance-v1-VariantAxis)
     - [VariantOption](#variance-v1-VariantOption)
@@ -5850,6 +5854,71 @@ Examples:
 
 
 
+<a name="product_v1_part_instance_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/part_instance_requests.proto
+
+
+
+<a name="product-v1-BulkCreatePartInstancesRequest"></a>
+
+### BulkCreatePartInstancesRequest
+BulkCreatePartInstancesRequest creates PartInstances from one or more
+PartDefinitions and places every created instance at the same location.
+
+This is primarily an authoring/study convenience operation. Runtime inventory
+integrations may instead create or synchronize instances individually.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parts | [PartInstanceBulkCreateSpec](#product-v1-PartInstanceBulkCreateSpec) | repeated | Parts and instance counts to create.
+
+A PartDefinition should occur at most once in this list. The backend should reject duplicate part_definition_id values rather than silently combining them. |
+| location | [PartInstanceLocation](#product-v1-PartInstanceLocation) |  | Initial location assigned to every created PartInstance.
+
+The backend must verify that referenced line, cell, station, container instance, and container slot identifiers exist and are mutually consistent. |
+| idempotency_key | [string](#string) |  | Optional client-generated key that makes retries of the complete request return the originally created instances instead of creating duplicates. |
+
+
+
+
+
+
+<a name="product-v1-PartInstanceBulkCreateSpec"></a>
+
+### PartInstanceBulkCreateSpec
+PartInstanceBulkCreateSpec describes the instances to create for one
+PartDefinition.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| part_definition_id | [string](#string) |  | Definition from which display information such as name and icon is copied. |
+| instance_count | [uint32](#uint32) |  | Number of distinct PartInstances to create.
+
+Use one instance per independently identifiable physical part. For example, instance_count=12 creates twelve bolt instances. |
+| quantity_per_instance | [QuantityStatus](#product-v1-QuantityStatus) |  | Optional initial quantity carried by each created PartInstance.
+
+This describes the contents of each instance, not the number of instances to create. For example, one lubricant bottle may have instance_count=1 and quantity_per_instance={amount: 500, unit: &#34;ml&#34;, nominal_amount: 500}.
+
+Omit this for independently tracked discrete parts. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="variance_v1_variant_axis-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -9126,7 +9195,7 @@ A human is required but no worker with valid skills exists. |
 | message | [string](#string) |  |  |
 | elapsed_time | [int32](#int32) |  | elapsed time in seconds |
 | estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
-| expected_revision | [uint64](#uint64) |  | Revision of the SequenceRun on which this request is based. |
+| expected_revision | [uint64](#uint64) |  | Revision of the TaskRun on which this request is based. |
 
 
 
@@ -9182,8 +9251,7 @@ A human is required but no worker with valid skills exists. |
 | TASK_STATE_REQUEST_IN_PROGRESS | 1 | Start a ready task or resume a suspended task. |
 | TASK_STATE_REQUEST_DONE | 2 |  |
 | TASK_STATE_REQUEST_UNDO | 3 |  |
-| TASK_STATE_REQUEST_ERROR | 4 |  |
-| TASK_STATE_REQUEST_ABORT | 5 |  |
+| TASK_STATE_REQUEST_ERROR | 4 | TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?) |
 | TASK_STATE_REQUEST_SUSPENDED | 6 | Suspend a started task without completing or failing it. |
 
 

@@ -32,8 +32,7 @@ const (
 	TaskStateRequest_TASK_STATE_REQUEST_IN_PROGRESS TaskStateRequest = 1
 	TaskStateRequest_TASK_STATE_REQUEST_DONE        TaskStateRequest = 2
 	TaskStateRequest_TASK_STATE_REQUEST_UNDO        TaskStateRequest = 3
-	TaskStateRequest_TASK_STATE_REQUEST_ERROR       TaskStateRequest = 4
-	TaskStateRequest_TASK_STATE_REQUEST_ABORT       TaskStateRequest = 5
+	TaskStateRequest_TASK_STATE_REQUEST_ERROR       TaskStateRequest = 4 // TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?)
 	// Suspend a started task without completing or failing it.
 	TaskStateRequest_TASK_STATE_REQUEST_SUSPENDED TaskStateRequest = 6
 )
@@ -46,7 +45,6 @@ var (
 		2: "TASK_STATE_REQUEST_DONE",
 		3: "TASK_STATE_REQUEST_UNDO",
 		4: "TASK_STATE_REQUEST_ERROR",
-		5: "TASK_STATE_REQUEST_ABORT",
 		6: "TASK_STATE_REQUEST_SUSPENDED",
 	}
 	TaskStateRequest_value = map[string]int32{
@@ -55,7 +53,6 @@ var (
 		"TASK_STATE_REQUEST_DONE":        2,
 		"TASK_STATE_REQUEST_UNDO":        3,
 		"TASK_STATE_REQUEST_ERROR":       4,
-		"TASK_STATE_REQUEST_ABORT":       5,
 		"TASK_STATE_REQUEST_SUSPENDED":   6,
 	}
 )
@@ -293,7 +290,7 @@ type TaskProgressUpdate struct {
 	Message           string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	ElapsedTime       int32                  `protobuf:"varint,4,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`                     // elapsed time in seconds
 	EstimatedTimeLeft int32                  `protobuf:"varint,5,opt,name=estimated_time_left,json=estimatedTimeLeft,proto3" json:"estimated_time_left,omitempty"` // estimated time left in seconds
-	ExpectedRevision  uint64                 `protobuf:"varint,6,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`      // Revision of the SequenceRun on which this request is based.
+	ExpectedRevision  uint64                 `protobuf:"varint,6,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`      // Revision of the TaskRun on which this request is based.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -518,14 +515,13 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\x85\x01\n" +
 	"\x17SequenceCompleteRequest\x124\n" +
 	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x124\n" +
-	"\x11expected_revision\x18\x02 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision*\xf2\x01\n" +
+	"\x11expected_revision\x18\x02 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision*\xd4\x01\n" +
 	"\x10TaskStateRequest\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n" +
-	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12\x1c\n" +
-	"\x18TASK_STATE_REQUEST_ABORT\x10\x05\x12 \n" +
+	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12 \n" +
 	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06B\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
