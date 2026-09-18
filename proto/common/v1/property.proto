@@ -205,7 +205,7 @@ message PropertyDefinition {
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true];
-  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string name = 2;
   string icon = 3;
   string description = 4;
   PropertyType type = 5 [
