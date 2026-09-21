@@ -17,22 +17,42 @@ class FunctionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FUNCTION_TYPE_TIMER: _ClassVar[FunctionType]
     FUNCTION_TYPE_PART_FOR_TASK: _ClassVar[FunctionType]
     FUNCTION_TYPE_IS_PART_OF_TYPE: _ClassVar[FunctionType]
+    FUNCTION_TYPE_CLOSEST_WORKABLE_TASK: _ClassVar[FunctionType]
     FUNCTION_TYPE_STRING_FORMAT_1: _ClassVar[FunctionType]
     FUNCTION_TYPE_STRING_FORMAT_2: _ClassVar[FunctionType]
+    FUNCTION_TYPE_STRING_EMPTY: _ClassVar[FunctionType]
+    FUNCTION_TYPE_INT_FORMAT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_INT_COMPARE: _ClassVar[FunctionType]
+    FUNCTION_TYPE_FLOAT_FORMAT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_FLOAT_COMPARE: _ClassVar[FunctionType]
+    FUNCTION_TYPE_DOUBLE_FORMAT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_DOUBLE_COMPARE: _ClassVar[FunctionType]
     FUNCTION_TYPE_AND: _ClassVar[FunctionType]
     FUNCTION_TYPE_OR: _ClassVar[FunctionType]
     FUNCTION_TYPE_NOT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: _ClassVar[FunctionType]
 FUNCTION_TYPE_UNSPECIFIED: FunctionType
 FUNCTION_TYPE_PROXIMITY: FunctionType
 FUNCTION_TYPE_STATIONARY: FunctionType
 FUNCTION_TYPE_TIMER: FunctionType
 FUNCTION_TYPE_PART_FOR_TASK: FunctionType
 FUNCTION_TYPE_IS_PART_OF_TYPE: FunctionType
+FUNCTION_TYPE_CLOSEST_WORKABLE_TASK: FunctionType
 FUNCTION_TYPE_STRING_FORMAT_1: FunctionType
 FUNCTION_TYPE_STRING_FORMAT_2: FunctionType
+FUNCTION_TYPE_STRING_EMPTY: FunctionType
+FUNCTION_TYPE_INT_FORMAT: FunctionType
+FUNCTION_TYPE_INT_COMPARE: FunctionType
+FUNCTION_TYPE_FLOAT_FORMAT: FunctionType
+FUNCTION_TYPE_FLOAT_COMPARE: FunctionType
+FUNCTION_TYPE_DOUBLE_FORMAT: FunctionType
+FUNCTION_TYPE_DOUBLE_COMPARE: FunctionType
 FUNCTION_TYPE_AND: FunctionType
 FUNCTION_TYPE_OR: FunctionType
 FUNCTION_TYPE_NOT: FunctionType
+FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: FunctionType
+FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: FunctionType
 
 class FunctionMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "config_id")

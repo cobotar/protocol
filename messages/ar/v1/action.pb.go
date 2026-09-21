@@ -27,16 +27,33 @@ const (
 type ActionType int32
 
 const (
-	ActionType_ACTION_TYPE_UNSPECIFIED       ActionType = 0
-	ActionType_ACTION_TYPE_TASK_COMPLETE     ActionType = 10
-	ActionType_ACTION_TYPE_TASK_UNDO         ActionType = 11
-	ActionType_ACTION_TYPE_TASK_ASSIGN       ActionType = 12
-	ActionType_ACTION_TYPE_TASK_HIGHLIGHT    ActionType = 13
-	ActionType_ACTION_TYPE_TASK_HELP         ActionType = 14
-	ActionType_ACTION_TYPE_ROBOT_PLAY_PAUSE  ActionType = 50
+	ActionType_ACTION_TYPE_UNSPECIFIED ActionType = 0
+	// Marks a task as complete.
+	ActionType_ACTION_TYPE_TASK_COMPLETE ActionType = 10
+	// Reverts the most recent state-changing operation on a task.
+	ActionType_ACTION_TYPE_TASK_UNDO ActionType = 11
+	// Assigns a task to an actor.
+	ActionType_ACTION_TYPE_TASK_ASSIGN ActionType = 12
+	// Assigns the next available actor to a task.
+	ActionType_ACTION_TYPE_TASK_ASSIGN_NEXT ActionType = 13
+	// Requests that a task be visually emphasized.
+	ActionType_ACTION_TYPE_TASK_HIGHLIGHT ActionType = 14
+	// Requests help for a task.
+	ActionType_ACTION_TYPE_TASK_HELP ActionType = 15
+	// Marks a task as being in progress.
+	ActionType_ACTION_TYPE_TASK_IN_PROGRESS ActionType = 16
+	// Toggles robot execution between playing and paused.
+	ActionType_ACTION_TYPE_ROBOT_PLAY_PAUSE ActionType = 50
+	// Acknowledges a robot notification or request.
 	ActionType_ACTION_TYPE_ROBOT_ACKNOWLEDGE ActionType = 51
-	ActionType_ACTION_TYPE_ROBOT_FREE_DRIVE  ActionType = 52
-	ActionType_ACTION_TYPE_ROBOT_COLLABORATE ActionType = 53
+	// Enables or disables the robot's free-drive mode.
+	ActionType_ACTION_TYPE_ROBOT_FREE_DRIVE ActionType = 52
+	// Starts a collaborative robot operation.
+	ActionType_ACTION_TYPE_ROBOT_BEGIN_COLLABORATE ActionType = 53
+	// Ends a collaborative robot operation.
+	ActionType_ACTION_TYPE_ROBOT_END_COLLABORATE ActionType = 54
+	// Activates a configured robot input.
+	ActionType_ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT ActionType = 55
 )
 
 // Enum value maps for ActionType.
@@ -46,24 +63,32 @@ var (
 		10: "ACTION_TYPE_TASK_COMPLETE",
 		11: "ACTION_TYPE_TASK_UNDO",
 		12: "ACTION_TYPE_TASK_ASSIGN",
-		13: "ACTION_TYPE_TASK_HIGHLIGHT",
-		14: "ACTION_TYPE_TASK_HELP",
+		13: "ACTION_TYPE_TASK_ASSIGN_NEXT",
+		14: "ACTION_TYPE_TASK_HIGHLIGHT",
+		15: "ACTION_TYPE_TASK_HELP",
+		16: "ACTION_TYPE_TASK_IN_PROGRESS",
 		50: "ACTION_TYPE_ROBOT_PLAY_PAUSE",
 		51: "ACTION_TYPE_ROBOT_ACKNOWLEDGE",
 		52: "ACTION_TYPE_ROBOT_FREE_DRIVE",
-		53: "ACTION_TYPE_ROBOT_COLLABORATE",
+		53: "ACTION_TYPE_ROBOT_BEGIN_COLLABORATE",
+		54: "ACTION_TYPE_ROBOT_END_COLLABORATE",
+		55: "ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT",
 	}
 	ActionType_value = map[string]int32{
-		"ACTION_TYPE_UNSPECIFIED":       0,
-		"ACTION_TYPE_TASK_COMPLETE":     10,
-		"ACTION_TYPE_TASK_UNDO":         11,
-		"ACTION_TYPE_TASK_ASSIGN":       12,
-		"ACTION_TYPE_TASK_HIGHLIGHT":    13,
-		"ACTION_TYPE_TASK_HELP":         14,
-		"ACTION_TYPE_ROBOT_PLAY_PAUSE":  50,
-		"ACTION_TYPE_ROBOT_ACKNOWLEDGE": 51,
-		"ACTION_TYPE_ROBOT_FREE_DRIVE":  52,
-		"ACTION_TYPE_ROBOT_COLLABORATE": 53,
+		"ACTION_TYPE_UNSPECIFIED":              0,
+		"ACTION_TYPE_TASK_COMPLETE":            10,
+		"ACTION_TYPE_TASK_UNDO":                11,
+		"ACTION_TYPE_TASK_ASSIGN":              12,
+		"ACTION_TYPE_TASK_ASSIGN_NEXT":         13,
+		"ACTION_TYPE_TASK_HIGHLIGHT":           14,
+		"ACTION_TYPE_TASK_HELP":                15,
+		"ACTION_TYPE_TASK_IN_PROGRESS":         16,
+		"ACTION_TYPE_ROBOT_PLAY_PAUSE":         50,
+		"ACTION_TYPE_ROBOT_ACKNOWLEDGE":        51,
+		"ACTION_TYPE_ROBOT_FREE_DRIVE":         52,
+		"ACTION_TYPE_ROBOT_BEGIN_COLLABORATE":  53,
+		"ACTION_TYPE_ROBOT_END_COLLABORATE":    54,
+		"ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT": 55,
 	}
 )
 
@@ -406,81 +431,13 @@ func (x *ActionUpdateMessage) GetEligibilityRequirements() []*v1.SkillRequiremen
 	return nil
 }
 
-type ActionCloneMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	OriginalId    string                 `protobuf:"bytes,1,opt,name=original_id,json=originalId,proto3" json:"original_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ActionCloneMessage) Reset() {
-	*x = ActionCloneMessage{}
-	mi := &file_ar_v1_action_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ActionCloneMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ActionCloneMessage) ProtoMessage() {}
-
-func (x *ActionCloneMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_action_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ActionCloneMessage.ProtoReflect.Descriptor instead.
-func (*ActionCloneMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_action_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *ActionCloneMessage) GetOriginalId() string {
-	if x != nil {
-		return x.OriginalId
-	}
-	return ""
-}
-
-func (x *ActionCloneMessage) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *ActionCloneMessage) GetIcon() string {
-	if x != nil {
-		return x.Icon
-	}
-	return ""
-}
-
-func (x *ActionCloneMessage) GetDescription() string {
-	if x != nil {
-		return x.Description
-	}
-	return ""
-}
-
 var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x02\n" +
-	"\rActionMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x02\n" +
+	"\rActionMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
@@ -488,41 +445,39 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12&\n" +
 	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"<\n" +
 	"\x0eActionMessages\x12*\n" +
-	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x8c\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x97\x03\n" +
 	"\x10ActionAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
 	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n" +
 	"\x16activating_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14activatingPropertyId\x12Z\n" +
-	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xd6\x01\n" +
-	"\x13ActionUpdateMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xe1\x01\n" +
+	"\x13ActionUpdateMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12Z\n" +
-	"\x18eligibility_requirements\x18\x05 \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\x7f\n" +
-	"\x12ActionCloneMessage\x12\x1f\n" +
-	"\voriginal_id\x18\x01 \x01(\tR\n" +
-	"originalId\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xc5\x02\n" +
+	"\x18eligibility_requirements\x18\x05 \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements*\xe0\x03\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19ACTION_TYPE_TASK_COMPLETE\x10\n" +
 	"\x12\x19\n" +
 	"\x15ACTION_TYPE_TASK_UNDO\x10\v\x12\x1b\n" +
-	"\x17ACTION_TYPE_TASK_ASSIGN\x10\f\x12\x1e\n" +
-	"\x1aACTION_TYPE_TASK_HIGHLIGHT\x10\r\x12\x19\n" +
-	"\x15ACTION_TYPE_TASK_HELP\x10\x0e\x12 \n" +
+	"\x17ACTION_TYPE_TASK_ASSIGN\x10\f\x12 \n" +
+	"\x1cACTION_TYPE_TASK_ASSIGN_NEXT\x10\r\x12\x1e\n" +
+	"\x1aACTION_TYPE_TASK_HIGHLIGHT\x10\x0e\x12\x19\n" +
+	"\x15ACTION_TYPE_TASK_HELP\x10\x0f\x12 \n" +
+	"\x1cACTION_TYPE_TASK_IN_PROGRESS\x10\x10\x12 \n" +
 	"\x1cACTION_TYPE_ROBOT_PLAY_PAUSE\x102\x12!\n" +
 	"\x1dACTION_TYPE_ROBOT_ACKNOWLEDGE\x103\x12 \n" +
-	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104\x12!\n" +
-	"\x1dACTION_TYPE_ROBOT_COLLABORATE\x105B\x87\x01\n" +
+	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104\x12'\n" +
+	"#ACTION_TYPE_ROBOT_BEGIN_COLLABORATE\x105\x12%\n" +
+	"!ACTION_TYPE_ROBOT_END_COLLABORATE\x106\x12(\n" +
+	"$ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x107B\x87\x01\n" +
 	"\tcom.ar.v1B\vActionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -538,23 +493,22 @@ func file_ar_v1_action_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_ar_v1_action_proto_goTypes = []any{
 	(ActionType)(0),             // 0: ar.v1.ActionType
 	(*ActionMessage)(nil),       // 1: ar.v1.ActionMessage
 	(*ActionMessages)(nil),      // 2: ar.v1.ActionMessages
 	(*ActionAddMessage)(nil),    // 3: ar.v1.ActionAddMessage
 	(*ActionUpdateMessage)(nil), // 4: ar.v1.ActionUpdateMessage
-	(*ActionCloneMessage)(nil),  // 5: ar.v1.ActionCloneMessage
-	(*v1.SkillRequirement)(nil), // 6: capability.v1.SkillRequirement
+	(*v1.SkillRequirement)(nil), // 5: capability.v1.SkillRequirement
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	6, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	5, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
 	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
 	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
-	6, // 4: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	6, // 5: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	5, // 4: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	5, // 5: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -573,7 +527,7 @@ func file_ar_v1_action_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_proto_rawDesc), len(file_ar_v1_action_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

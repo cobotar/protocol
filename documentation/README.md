@@ -49,6 +49,9 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
@@ -71,7 +74,6 @@
   
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
-    - [ActionCloneMessage](#ar-v1-ActionCloneMessage)
     - [ActionMessage](#ar-v1-ActionMessage)
     - [ActionMessages](#ar-v1-ActionMessages)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
@@ -170,7 +172,6 @@
   
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
-    - [FeedbackCloneMessage](#ar-v1-FeedbackCloneMessage)
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
     - [FeedbackMessages](#ar-v1-FeedbackMessages)
     - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
@@ -735,6 +736,7 @@
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| action_id_component | bool | .buf.validate.StringRules | 10041 |  |
 | actor_assignment_id_component | bool | .buf.validate.StringRules | 100039 |  |
 | actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
 | ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
@@ -748,7 +750,9 @@
 | container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
 | device_id_component | bool | .buf.validate.StringRules | 100036 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| feedback_id_component | bool | .buf.validate.StringRules | 10040 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| function_id_component | bool | .buf.validate.StringRules | 10042 |  |
 | image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
 | line_id_component | bool | .buf.validate.StringRules | 10024 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
@@ -1123,24 +1127,6 @@ Examples: - AR guidance required - manual confirmation required - second check r
 
 
 
-<a name="ar-v1-ActionCloneMessage"></a>
-
-### ActionCloneMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| original_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="ar-v1-ActionMessage"></a>
 
 ### ActionMessage
@@ -1206,15 +1192,19 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | ACTION_TYPE_UNSPECIFIED | 0 |  |
-| ACTION_TYPE_TASK_COMPLETE | 10 |  |
-| ACTION_TYPE_TASK_UNDO | 11 |  |
-| ACTION_TYPE_TASK_ASSIGN | 12 |  |
-| ACTION_TYPE_TASK_HIGHLIGHT | 13 |  |
-| ACTION_TYPE_TASK_HELP | 14 |  |
-| ACTION_TYPE_ROBOT_PLAY_PAUSE | 50 |  |
-| ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 |  |
-| ACTION_TYPE_ROBOT_FREE_DRIVE | 52 |  |
-| ACTION_TYPE_ROBOT_COLLABORATE | 53 |  |
+| ACTION_TYPE_TASK_COMPLETE | 10 | Marks a task as complete. |
+| ACTION_TYPE_TASK_UNDO | 11 | Reverts the most recent state-changing operation on a task. |
+| ACTION_TYPE_TASK_ASSIGN | 12 | Assigns a task to an actor. |
+| ACTION_TYPE_TASK_ASSIGN_NEXT | 13 | Assigns the next available actor to a task. |
+| ACTION_TYPE_TASK_HIGHLIGHT | 14 | Requests that a task be visually emphasized. |
+| ACTION_TYPE_TASK_HELP | 15 | Requests help for a task. |
+| ACTION_TYPE_TASK_IN_PROGRESS | 16 | Marks a task as being in progress. |
+| ACTION_TYPE_ROBOT_PLAY_PAUSE | 50 | Toggles robot execution between playing and paused. |
+| ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 | Acknowledges a robot notification or request. |
+| ACTION_TYPE_ROBOT_FREE_DRIVE | 52 | Enables or disables the robot&#39;s free-drive mode. |
+| ACTION_TYPE_ROBOT_BEGIN_COLLABORATE | 53 | Starts a collaborative robot operation. |
+| ACTION_TYPE_ROBOT_END_COLLABORATE | 54 | Ends a collaborative robot operation. |
+| ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT | 55 | Activates a configured robot input. |
 
 
  
@@ -2727,25 +2717,6 @@ instance owned by the target station or cell.
 
 
 
-<a name="ar-v1-FeedbackCloneMessage"></a>
-
-### FeedbackCloneMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| original_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
-
-
-
-
-
-
 <a name="ar-v1-FeedbackMessage"></a>
 
 ### FeedbackMessage
@@ -2896,11 +2867,11 @@ Custom training video       MANUAL_ONLY
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| VISIBILITY_SCOPE_UNSPECIFIED | 0 |  |
-| VISIBILITY_SCOPE_ALWAYS | 1 |  |
-| VISIBILITY_SCOPE_LOW_GUIDANCE | 2 |  |
-| VISIBILITY_SCOPE_MEDIUM_GUIDANCE | 3 |  |
-| VISIBILITY_SCOPE_FULL_GUIDANCE | 4 |  |
+| VISIBILITY_SCOPE_UNSPECIFIED | 0 | No visibility scope has been specified. |
+| VISIBILITY_SCOPE_ALWAYS | 1 | Shows the feedback regardless of the selected guidance level. |
+| VISIBILITY_SCOPE_LOW_GUIDANCE | 2 | Shows the feedback at the low guidance level. |
+| VISIBILITY_SCOPE_MEDIUM_GUIDANCE | 3 | Shows the feedback at the medium guidance level. |
+| VISIBILITY_SCOPE_FULL_GUIDANCE | 4 | Shows the feedback at the full guidance level. |
 
 
  
@@ -3075,16 +3046,26 @@ Custom training video       MANUAL_ONLY
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | FUNCTION_TYPE_UNSPECIFIED | 0 |  |
-| FUNCTION_TYPE_PROXIMITY | 10 |  |
-| FUNCTION_TYPE_STATIONARY | 11 |  |
-| FUNCTION_TYPE_TIMER | 21 |  |
-| FUNCTION_TYPE_PART_FOR_TASK | 40 |  |
-| FUNCTION_TYPE_IS_PART_OF_TYPE | 50 |  |
-| FUNCTION_TYPE_STRING_FORMAT_1 | 60 |  |
-| FUNCTION_TYPE_STRING_FORMAT_2 | 61 |  |
-| FUNCTION_TYPE_AND | 100 |  |
-| FUNCTION_TYPE_OR | 101 |  |
-| FUNCTION_TYPE_NOT | 102 |  |
+| FUNCTION_TYPE_PROXIMITY | 10 | Evaluates whether two spatial entities are within a configured distance. |
+| FUNCTION_TYPE_STATIONARY | 11 | Evaluates whether a spatial entity is stationary. |
+| FUNCTION_TYPE_TIMER | 21 | Evaluates whether a configured duration has elapsed. |
+| FUNCTION_TYPE_PART_FOR_TASK | 40 | Resolves the part associated with a task. |
+| FUNCTION_TYPE_IS_PART_OF_TYPE | 50 | Evaluates whether a part matches a specified part type. |
+| FUNCTION_TYPE_CLOSEST_WORKABLE_TASK | 51 | Resolves the closest task that is currently workable. |
+| FUNCTION_TYPE_STRING_FORMAT_1 | 60 | Formats a string using one replacement value. |
+| FUNCTION_TYPE_STRING_FORMAT_2 | 61 | Formats a string using two replacement values. |
+| FUNCTION_TYPE_STRING_EMPTY | 62 | Evaluates whether a string is empty. |
+| FUNCTION_TYPE_INT_FORMAT | 70 | Formats an integer as a string. |
+| FUNCTION_TYPE_INT_COMPARE | 71 | Compares two integer values. |
+| FUNCTION_TYPE_FLOAT_FORMAT | 80 | Formats a single-precision floating-point value as a string. |
+| FUNCTION_TYPE_FLOAT_COMPARE | 81 | Compares two single-precision floating-point values. |
+| FUNCTION_TYPE_DOUBLE_FORMAT | 90 | Formats a double-precision floating-point value as a string. |
+| FUNCTION_TYPE_DOUBLE_COMPARE | 91 | Compares two double-precision floating-point values. |
+| FUNCTION_TYPE_AND | 100 | Evaluates the logical conjunction of two boolean values. |
+| FUNCTION_TYPE_OR | 101 | Evaluates the logical disjunction of two boolean values. |
+| FUNCTION_TYPE_NOT | 102 | Negates a boolean value. |
+| FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT | 120 | Reads a configured robot input. |
+| FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT | 121 | Reads a configured robot output. |
 
 
  

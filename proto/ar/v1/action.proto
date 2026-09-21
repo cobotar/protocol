@@ -11,20 +11,56 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 enum ActionType {
   ACTION_TYPE_UNSPECIFIED = 0;
 
-  ACTION_TYPE_TASK_COMPLETE = 10;
-  ACTION_TYPE_TASK_UNDO = 11;
-  ACTION_TYPE_TASK_ASSIGN = 12;
-  ACTION_TYPE_TASK_HIGHLIGHT = 13;
-  ACTION_TYPE_TASK_HELP = 14;
+  // -------------------------
+  // Task actions (10–29)
+  // -------------------------
 
+  // Marks a task as complete.
+  ACTION_TYPE_TASK_COMPLETE = 10;
+
+  // Reverts the most recent state-changing operation on a task.
+  ACTION_TYPE_TASK_UNDO = 11;
+
+  // Assigns a task to an actor.
+  ACTION_TYPE_TASK_ASSIGN = 12;
+
+  // Assigns the next available actor to a task.
+  ACTION_TYPE_TASK_ASSIGN_NEXT = 13;
+
+  // Requests that a task be visually emphasized.
+  ACTION_TYPE_TASK_HIGHLIGHT = 14;
+
+  // Requests help for a task.
+  ACTION_TYPE_TASK_HELP = 15;
+
+  // Marks a task as being in progress.
+  ACTION_TYPE_TASK_IN_PROGRESS = 16;
+
+  // -------------------------
+  // Robot actions (50–69)
+  // -------------------------
+
+  // Toggles robot execution between playing and paused.
   ACTION_TYPE_ROBOT_PLAY_PAUSE = 50;
+
+  // Acknowledges a robot notification or request.
   ACTION_TYPE_ROBOT_ACKNOWLEDGE = 51;
+
+  // Enables or disables the robot's free-drive mode.
   ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
-  ACTION_TYPE_ROBOT_COLLABORATE = 53;
+
+  // Starts a collaborative robot operation.
+  ACTION_TYPE_ROBOT_BEGIN_COLLABORATE = 53;
+
+  // Ends a collaborative robot operation.
+  ACTION_TYPE_ROBOT_END_COLLABORATE = 54;
+
+  // Activates a configured robot input.
+  ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT = 55;
 }
 
 message ActionMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.action_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
@@ -42,7 +78,7 @@ message ActionMessages {
 
 message ActionAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   ActionType type = 5 [
@@ -55,16 +91,9 @@ message ActionAddMessage {
 }
 
 message ActionUpdateMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.action_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   repeated capability.v1.SkillRequirement eligibility_requirements = 5;
-}
-
-message ActionCloneMessage {
-  string original_id = 1;
-  string name = 2;
-  string icon = 3;
-  string description = 4;
 }

@@ -83,3 +83,9 @@ ACTOR_AVAILABILITY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 actor_availability_id_component: _descriptor.FieldDescriptor
 ACTOR_ASSIGNMENT_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 actor_assignment_id_component: _descriptor.FieldDescriptor
+FEEDBACK_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+feedback_id_component: _descriptor.FieldDescriptor
+ACTION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+action_id_component: _descriptor.FieldDescriptor
+FUNCTION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+function_id_component: _descriptor.FieldDescriptor

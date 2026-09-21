@@ -155,17 +155,3 @@ class FeedbackUpdateMessage(_message.Message):
     description: str
     visibility_scope: VisibilityScope
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ...) -> None: ...
-
-class FeedbackCloneMessage(_message.Message):
-    __slots__ = ("original_id", "name", "icon", "description", "visibility_scope")
-    ORIGINAL_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    ICON_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    VISIBILITY_SCOPE_FIELD_NUMBER: _ClassVar[int]
-    original_id: str
-    name: str
-    icon: str
-    description: str
-    visibility_scope: VisibilityScope
-    def __init__(self, original_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., visibility_scope: _Optional[_Union[VisibilityScope, str]] = ...) -> None: ...

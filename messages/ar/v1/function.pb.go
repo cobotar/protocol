@@ -26,17 +26,47 @@ const (
 type FunctionType int32
 
 const (
-	FunctionType_FUNCTION_TYPE_UNSPECIFIED     FunctionType = 0
-	FunctionType_FUNCTION_TYPE_PROXIMITY       FunctionType = 10
-	FunctionType_FUNCTION_TYPE_STATIONARY      FunctionType = 11
-	FunctionType_FUNCTION_TYPE_TIMER           FunctionType = 21
-	FunctionType_FUNCTION_TYPE_PART_FOR_TASK   FunctionType = 40
+	FunctionType_FUNCTION_TYPE_UNSPECIFIED FunctionType = 0
+	// Evaluates whether two spatial entities are within a configured distance.
+	FunctionType_FUNCTION_TYPE_PROXIMITY FunctionType = 10
+	// Evaluates whether a spatial entity is stationary.
+	FunctionType_FUNCTION_TYPE_STATIONARY FunctionType = 11
+	// Evaluates whether a configured duration has elapsed.
+	FunctionType_FUNCTION_TYPE_TIMER FunctionType = 21
+	// Resolves the part associated with a task.
+	FunctionType_FUNCTION_TYPE_PART_FOR_TASK FunctionType = 40
+	// Evaluates whether a part matches a specified part type.
 	FunctionType_FUNCTION_TYPE_IS_PART_OF_TYPE FunctionType = 50
+	// Resolves the closest task that is currently workable.
+	FunctionType_FUNCTION_TYPE_CLOSEST_WORKABLE_TASK FunctionType = 51
+	// Formats a string using one replacement value.
 	FunctionType_FUNCTION_TYPE_STRING_FORMAT_1 FunctionType = 60
+	// Formats a string using two replacement values.
 	FunctionType_FUNCTION_TYPE_STRING_FORMAT_2 FunctionType = 61
-	FunctionType_FUNCTION_TYPE_AND             FunctionType = 100
-	FunctionType_FUNCTION_TYPE_OR              FunctionType = 101
-	FunctionType_FUNCTION_TYPE_NOT             FunctionType = 102
+	// Evaluates whether a string is empty.
+	FunctionType_FUNCTION_TYPE_STRING_EMPTY FunctionType = 62
+	// Formats an integer as a string.
+	FunctionType_FUNCTION_TYPE_INT_FORMAT FunctionType = 70
+	// Compares two integer values.
+	FunctionType_FUNCTION_TYPE_INT_COMPARE FunctionType = 71
+	// Formats a single-precision floating-point value as a string.
+	FunctionType_FUNCTION_TYPE_FLOAT_FORMAT FunctionType = 80
+	// Compares two single-precision floating-point values.
+	FunctionType_FUNCTION_TYPE_FLOAT_COMPARE FunctionType = 81
+	// Formats a double-precision floating-point value as a string.
+	FunctionType_FUNCTION_TYPE_DOUBLE_FORMAT FunctionType = 90
+	// Compares two double-precision floating-point values.
+	FunctionType_FUNCTION_TYPE_DOUBLE_COMPARE FunctionType = 91
+	// Evaluates the logical conjunction of two boolean values.
+	FunctionType_FUNCTION_TYPE_AND FunctionType = 100
+	// Evaluates the logical disjunction of two boolean values.
+	FunctionType_FUNCTION_TYPE_OR FunctionType = 101
+	// Negates a boolean value.
+	FunctionType_FUNCTION_TYPE_NOT FunctionType = 102
+	// Reads a configured robot input.
+	FunctionType_FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT FunctionType = 120
+	// Reads a configured robot output.
+	FunctionType_FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT FunctionType = 121
 )
 
 // Enum value maps for FunctionType.
@@ -48,24 +78,44 @@ var (
 		21:  "FUNCTION_TYPE_TIMER",
 		40:  "FUNCTION_TYPE_PART_FOR_TASK",
 		50:  "FUNCTION_TYPE_IS_PART_OF_TYPE",
+		51:  "FUNCTION_TYPE_CLOSEST_WORKABLE_TASK",
 		60:  "FUNCTION_TYPE_STRING_FORMAT_1",
 		61:  "FUNCTION_TYPE_STRING_FORMAT_2",
+		62:  "FUNCTION_TYPE_STRING_EMPTY",
+		70:  "FUNCTION_TYPE_INT_FORMAT",
+		71:  "FUNCTION_TYPE_INT_COMPARE",
+		80:  "FUNCTION_TYPE_FLOAT_FORMAT",
+		81:  "FUNCTION_TYPE_FLOAT_COMPARE",
+		90:  "FUNCTION_TYPE_DOUBLE_FORMAT",
+		91:  "FUNCTION_TYPE_DOUBLE_COMPARE",
 		100: "FUNCTION_TYPE_AND",
 		101: "FUNCTION_TYPE_OR",
 		102: "FUNCTION_TYPE_NOT",
+		120: "FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT",
+		121: "FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT",
 	}
 	FunctionType_value = map[string]int32{
-		"FUNCTION_TYPE_UNSPECIFIED":     0,
-		"FUNCTION_TYPE_PROXIMITY":       10,
-		"FUNCTION_TYPE_STATIONARY":      11,
-		"FUNCTION_TYPE_TIMER":           21,
-		"FUNCTION_TYPE_PART_FOR_TASK":   40,
-		"FUNCTION_TYPE_IS_PART_OF_TYPE": 50,
-		"FUNCTION_TYPE_STRING_FORMAT_1": 60,
-		"FUNCTION_TYPE_STRING_FORMAT_2": 61,
-		"FUNCTION_TYPE_AND":             100,
-		"FUNCTION_TYPE_OR":              101,
-		"FUNCTION_TYPE_NOT":             102,
+		"FUNCTION_TYPE_UNSPECIFIED":               0,
+		"FUNCTION_TYPE_PROXIMITY":                 10,
+		"FUNCTION_TYPE_STATIONARY":                11,
+		"FUNCTION_TYPE_TIMER":                     21,
+		"FUNCTION_TYPE_PART_FOR_TASK":             40,
+		"FUNCTION_TYPE_IS_PART_OF_TYPE":           50,
+		"FUNCTION_TYPE_CLOSEST_WORKABLE_TASK":     51,
+		"FUNCTION_TYPE_STRING_FORMAT_1":           60,
+		"FUNCTION_TYPE_STRING_FORMAT_2":           61,
+		"FUNCTION_TYPE_STRING_EMPTY":              62,
+		"FUNCTION_TYPE_INT_FORMAT":                70,
+		"FUNCTION_TYPE_INT_COMPARE":               71,
+		"FUNCTION_TYPE_FLOAT_FORMAT":              80,
+		"FUNCTION_TYPE_FLOAT_COMPARE":             81,
+		"FUNCTION_TYPE_DOUBLE_FORMAT":             90,
+		"FUNCTION_TYPE_DOUBLE_COMPARE":            91,
+		"FUNCTION_TYPE_AND":                       100,
+		"FUNCTION_TYPE_OR":                        101,
+		"FUNCTION_TYPE_NOT":                       102,
+		"FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT":  120,
+		"FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT": 121,
 	}
 )
 
@@ -372,27 +422,27 @@ var File_ar_v1_function_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc7\x01\n" +
-	"\x0fFunctionMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdf\x01\n" +
+	"\x0fFunctionMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12'\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeR\x04type\x12&\n" +
-	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
-	"\x10FunctionMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xbc\x01\n" +
-	"\x12FunctionAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"|\n" +
-	"\x15FunctionUpdateMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12&\n" +
+	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
+	"\x10FunctionMessages\x12,\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xc7\x01\n" +
+	"\x12FunctionAddMessage\x12&\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xcf\x02\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\x87\x01\n" +
+	"\x15FunctionUpdateMessage\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xb2\x05\n" +
 	"\fFunctionType\x12\x1d\n" +
 	"\x19FUNCTION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17FUNCTION_TYPE_PROXIMITY\x10\n" +
@@ -400,12 +450,22 @@ const file_ar_v1_function_proto_rawDesc = "" +
 	"\x18FUNCTION_TYPE_STATIONARY\x10\v\x12\x17\n" +
 	"\x13FUNCTION_TYPE_TIMER\x10\x15\x12\x1f\n" +
 	"\x1bFUNCTION_TYPE_PART_FOR_TASK\x10(\x12!\n" +
-	"\x1dFUNCTION_TYPE_IS_PART_OF_TYPE\x102\x12!\n" +
+	"\x1dFUNCTION_TYPE_IS_PART_OF_TYPE\x102\x12'\n" +
+	"#FUNCTION_TYPE_CLOSEST_WORKABLE_TASK\x103\x12!\n" +
 	"\x1dFUNCTION_TYPE_STRING_FORMAT_1\x10<\x12!\n" +
-	"\x1dFUNCTION_TYPE_STRING_FORMAT_2\x10=\x12\x15\n" +
+	"\x1dFUNCTION_TYPE_STRING_FORMAT_2\x10=\x12\x1e\n" +
+	"\x1aFUNCTION_TYPE_STRING_EMPTY\x10>\x12\x1c\n" +
+	"\x18FUNCTION_TYPE_INT_FORMAT\x10F\x12\x1d\n" +
+	"\x19FUNCTION_TYPE_INT_COMPARE\x10G\x12\x1e\n" +
+	"\x1aFUNCTION_TYPE_FLOAT_FORMAT\x10P\x12\x1f\n" +
+	"\x1bFUNCTION_TYPE_FLOAT_COMPARE\x10Q\x12\x1f\n" +
+	"\x1bFUNCTION_TYPE_DOUBLE_FORMAT\x10Z\x12 \n" +
+	"\x1cFUNCTION_TYPE_DOUBLE_COMPARE\x10[\x12\x15\n" +
 	"\x11FUNCTION_TYPE_AND\x10d\x12\x14\n" +
 	"\x10FUNCTION_TYPE_OR\x10e\x12\x15\n" +
-	"\x11FUNCTION_TYPE_NOT\x10fB\x89\x01\n" +
+	"\x11FUNCTION_TYPE_NOT\x10f\x12*\n" +
+	"&FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10x\x12+\n" +
+	"'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10yB\x89\x01\n" +
 	"\tcom.ar.v1B\rFunctionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

@@ -342,6 +342,30 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,100039,opt,name=actor_assignment_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10040,
+		Name:          "validation.v1.feedback_id_component",
+		Tag:           "varint,10040,opt,name=feedback_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10041,
+		Name:          "validation.v1.action_id_component",
+		Tag:           "varint,10041,opt,name=action_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10042,
+		Name:          "validation.v1.function_id_component",
+		Tag:           "varint,10042,opt,name=function_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -426,6 +450,12 @@ var (
 	E_ActorAvailabilityIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[38]
 	// optional bool actor_assignment_id_component = 100039;
 	E_ActorAssignmentIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[39]
+	// optional bool feedback_id_component = 10040;
+	E_FeedbackIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[40]
+	// optional bool action_id_component = 10041;
+	E_ActionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[41]
+	// optional bool function_id_component = 10042;
+	E_FunctionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[42]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -552,7 +582,16 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"&string.actor_availability_id_component\x120this does not seem to be a actor-availability id\x1a6(this == '' || this.startsWith('actor_availability-'))R\x1cactorAvailabilityIdComponent:\xf4\x01\n" +
 	"\x1dactor_assignment_id_component\x12\x19.buf.validate.StringRules\x18Ǎ\x06 \x01(\bB\x93\x01\xc2H\x8f\x01\n" +
 	"\x8c\x01\n" +
-	"$string.actor_assignment_id_component\x12.this does not seem to be a actor-assignment id\x1a4(this == '' || this.startsWith('actor_assignment-'))R\x1aactorAssignmentIdComponentB\xb5\x01\n" +
+	"$string.actor_assignment_id_component\x12.this does not seem to be a actor-assignment id\x1a4(this == '' || this.startsWith('actor_assignment-'))R\x1aactorAssignmentIdComponent:\xc9\x01\n" +
+	"\x15feedback_id_component\x12\x19.buf.validate.StringRules\x18\xb8N \x01(\bBy\xc2Hv\n" +
+	"t\n" +
+	"\x1cstring.feedback_id_component\x12&this does not seem to be a feedback id\x1a,(this == '' || this.startsWith('feedback-'))R\x13feedbackIdComponent:\xbf\x01\n" +
+	"\x13action_id_component\x12\x19.buf.validate.StringRules\x18\xb9N \x01(\bBs\xc2Hp\n" +
+	"n\n" +
+	"\x1astring.action_id_component\x12$this does not seem to be a action id\x1a*(this == '' || this.startsWith('action-'))R\x11actionIdComponent:\xc9\x01\n" +
+	"\x15function_id_component\x12\x19.buf.validate.StringRules\x18\xbaN \x01(\bBy\xc2Hv\n" +
+	"t\n" +
+	"\x1cstring.function_id_component\x12&this does not seem to be a function id\x1a,(this == '' || this.startsWith('function-'))R\x13functionIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -599,10 +638,13 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 37: validation.v1.zone_id_component:extendee -> buf.validate.StringRules
 	0,  // 38: validation.v1.actor_availability_id_component:extendee -> buf.validate.StringRules
 	0,  // 39: validation.v1.actor_assignment_id_component:extendee -> buf.validate.StringRules
-	40, // [40:40] is the sub-list for method output_type
-	40, // [40:40] is the sub-list for method input_type
-	40, // [40:40] is the sub-list for extension type_name
-	0,  // [0:40] is the sub-list for extension extendee
+	0,  // 40: validation.v1.feedback_id_component:extendee -> buf.validate.StringRules
+	0,  // 41: validation.v1.action_id_component:extendee -> buf.validate.StringRules
+	0,  // 42: validation.v1.function_id_component:extendee -> buf.validate.StringRules
+	43, // [43:43] is the sub-list for method output_type
+	43, // [43:43] is the sub-list for method input_type
+	43, // [43:43] is the sub-list for extension type_name
+	0,  // [0:43] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -618,7 +660,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 40,
+			NumExtensions: 43,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

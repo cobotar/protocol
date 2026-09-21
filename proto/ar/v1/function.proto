@@ -9,24 +9,113 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 enum FunctionType {
   FUNCTION_TYPE_UNSPECIFIED = 0;
+
+  // -------------------------
+  // Spatial evaluation (10–19)
+  // -------------------------
+
+  // Evaluates whether two spatial entities are within a configured distance.
   FUNCTION_TYPE_PROXIMITY = 10;
+
+  // Evaluates whether a spatial entity is stationary.
   FUNCTION_TYPE_STATIONARY = 11;
+
+  // -------------------------
+  // Temporal evaluation (20–29)
+  // -------------------------
+
+  // Evaluates whether a configured duration has elapsed.
   FUNCTION_TYPE_TIMER = 21;
+
+  // -------------------------
+  // Task and part lookup (40–59)
+  // -------------------------
+
+  // Resolves the part associated with a task.
   FUNCTION_TYPE_PART_FOR_TASK = 40;
+
+  // Evaluates whether a part matches a specified part type.
   FUNCTION_TYPE_IS_PART_OF_TYPE = 50;
+
+  // Resolves the closest task that is currently workable.
+  FUNCTION_TYPE_CLOSEST_WORKABLE_TASK = 51;
+
+  // -------------------------
+  // String operations (60–69)
+  // -------------------------
+
+  // Formats a string using one replacement value.
   FUNCTION_TYPE_STRING_FORMAT_1 = 60;
+
+  // Formats a string using two replacement values.
   FUNCTION_TYPE_STRING_FORMAT_2 = 61;
+
+  // Evaluates whether a string is empty.
+  FUNCTION_TYPE_STRING_EMPTY = 62;
+
+  // -------------------------
+  // Integer operations (70–79)
+  // -------------------------
+
+  // Formats an integer as a string.
+  FUNCTION_TYPE_INT_FORMAT = 70;
+
+  // Compares two integer values.
+  FUNCTION_TYPE_INT_COMPARE = 71;
+
+  // -------------------------
+  // Float operations (80–89)
+  // -------------------------
+
+  // Formats a single-precision floating-point value as a string.
+  FUNCTION_TYPE_FLOAT_FORMAT = 80;
+
+  // Compares two single-precision floating-point values.
+  FUNCTION_TYPE_FLOAT_COMPARE = 81;
+
+  // -------------------------
+  // Double operations (90–99)
+  // -------------------------
+
+  // Formats a double-precision floating-point value as a string.
+  FUNCTION_TYPE_DOUBLE_FORMAT = 90;
+
+  // Compares two double-precision floating-point values.
+  FUNCTION_TYPE_DOUBLE_COMPARE = 91;
+
+  // -------------------------
+  // Logical operations (100–119)
+  // -------------------------
+
+  // Evaluates the logical conjunction of two boolean values.
   FUNCTION_TYPE_AND = 100;
+
+  // Evaluates the logical disjunction of two boolean values.
   FUNCTION_TYPE_OR = 101;
+
+  // Negates a boolean value.
   FUNCTION_TYPE_NOT = 102;
+
+  // -------------------------
+  // Robot I/O (120–139)
+  // -------------------------
+
+  // Reads a configured robot input.
+  FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT = 120;
+
+  // Reads a configured robot output.
+  FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT = 121;
 }
 
 message FunctionMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.function_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  FunctionType type = 5;
+  FunctionType type = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
   string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
 }
 
@@ -36,7 +125,7 @@ message FunctionMessages {
 
 message FunctionAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   FunctionType type = 5 [
@@ -46,7 +135,7 @@ message FunctionAddMessage {
 }
 
 message FunctionUpdateMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.function_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;

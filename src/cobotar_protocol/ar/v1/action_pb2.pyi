@@ -16,22 +16,30 @@ class ActionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ACTION_TYPE_TASK_COMPLETE: _ClassVar[ActionType]
     ACTION_TYPE_TASK_UNDO: _ClassVar[ActionType]
     ACTION_TYPE_TASK_ASSIGN: _ClassVar[ActionType]
+    ACTION_TYPE_TASK_ASSIGN_NEXT: _ClassVar[ActionType]
     ACTION_TYPE_TASK_HIGHLIGHT: _ClassVar[ActionType]
     ACTION_TYPE_TASK_HELP: _ClassVar[ActionType]
+    ACTION_TYPE_TASK_IN_PROGRESS: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_PLAY_PAUSE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_ACKNOWLEDGE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_FREE_DRIVE: _ClassVar[ActionType]
-    ACTION_TYPE_ROBOT_COLLABORATE: _ClassVar[ActionType]
+    ACTION_TYPE_ROBOT_BEGIN_COLLABORATE: _ClassVar[ActionType]
+    ACTION_TYPE_ROBOT_END_COLLABORATE: _ClassVar[ActionType]
+    ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT: _ClassVar[ActionType]
 ACTION_TYPE_UNSPECIFIED: ActionType
 ACTION_TYPE_TASK_COMPLETE: ActionType
 ACTION_TYPE_TASK_UNDO: ActionType
 ACTION_TYPE_TASK_ASSIGN: ActionType
+ACTION_TYPE_TASK_ASSIGN_NEXT: ActionType
 ACTION_TYPE_TASK_HIGHLIGHT: ActionType
 ACTION_TYPE_TASK_HELP: ActionType
+ACTION_TYPE_TASK_IN_PROGRESS: ActionType
 ACTION_TYPE_ROBOT_PLAY_PAUSE: ActionType
 ACTION_TYPE_ROBOT_ACKNOWLEDGE: ActionType
 ACTION_TYPE_ROBOT_FREE_DRIVE: ActionType
-ACTION_TYPE_ROBOT_COLLABORATE: ActionType
+ACTION_TYPE_ROBOT_BEGIN_COLLABORATE: ActionType
+ACTION_TYPE_ROBOT_END_COLLABORATE: ActionType
+ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT: ActionType
 
 class ActionMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "eligibility_requirements", "config_id")
@@ -90,15 +98,3 @@ class ActionUpdateMessage(_message.Message):
     description: str
     eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
-
-class ActionCloneMessage(_message.Message):
-    __slots__ = ("original_id", "name", "icon", "description")
-    ORIGINAL_ID_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    ICON_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    original_id: str
-    name: str
-    icon: str
-    description: str
-    def __init__(self, original_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...

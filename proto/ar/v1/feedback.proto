@@ -182,15 +182,24 @@ enum FeedbackType {
 }
 
 enum VisibilityScope {
+  // No visibility scope has been specified.
   VISIBILITY_SCOPE_UNSPECIFIED = 0;
+
+  // Shows the feedback regardless of the selected guidance level.
   VISIBILITY_SCOPE_ALWAYS = 1;
+
+  // Shows the feedback at the low guidance level.
   VISIBILITY_SCOPE_LOW_GUIDANCE = 2;
+
+  // Shows the feedback at the medium guidance level.
   VISIBILITY_SCOPE_MEDIUM_GUIDANCE = 3;
+
+  // Shows the feedback at the full guidance level.
   VISIBILITY_SCOPE_FULL_GUIDANCE = 4;
 }
 
 message FeedbackMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.feedback_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
@@ -208,7 +217,7 @@ message FeedbackMessages {
 
 message FeedbackAddMessage {
   string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
-  string name = 2;
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
   FeedbackType type = 5 [
@@ -222,16 +231,8 @@ message FeedbackAddMessage {
 }
 
 message FeedbackUpdateMessage {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.feedback_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
-  string icon = 3;
-  string description = 4;
-  VisibilityScope visibility_scope = 5 [(buf.validate.field).enum.defined_only = true];
-}
-
-message FeedbackCloneMessage {
-  string original_id = 1;
-  string name = 2;
   string icon = 3;
   string description = 4;
   VisibilityScope visibility_scope = 5 [(buf.validate.field).enum.defined_only = true];

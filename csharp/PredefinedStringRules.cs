@@ -224,14 +224,28 @@ namespace Validation.V1 {
             "bmcuYWN0b3JfYXNzaWdubWVudF9pZF9jb21wb25lbnQSLnRoaXMgZG9lcyBu",
             "b3Qgc2VlbSB0byBiZSBhIGFjdG9yLWFzc2lnbm1lbnQgaWQaNCh0aGlzID09",
             "ICcnIHx8IHRoaXMuc3RhcnRzV2l0aCgnYWN0b3JfYXNzaWdubWVudC0nKSlS",
-            "GmFjdG9yQXNzaWdubWVudElkQ29tcG9uZW50QrUBChFjb20udmFsaWRhdGlv",
-            "bi52MUIaUHJlZGVmaW5lZFN0cmluZ1J1bGVzUHJvdG9QAVo/Z2l0aHViLmNv",
-            "bS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3ZhbGlkYXRpb24vdjE7dmFs",
-            "aWRhdGlvbnYxogIDVlhYygINVmFsaWRhdGlvblxWMeICGVZhbGlkYXRpb25c",
-            "VjFcR1BCTWV0YWRhdGHqAg5WYWxpZGF0aW9uOjpWMQ=="));
+            "GmFjdG9yQXNzaWdubWVudElkQ29tcG9uZW50OskBChVmZWVkYmFja19pZF9j",
+            "b21wb25lbnQSGS5idWYudmFsaWRhdGUuU3RyaW5nUnVsZXMYuE4gASgIQnnC",
+            "SHYKdAocc3RyaW5nLmZlZWRiYWNrX2lkX2NvbXBvbmVudBImdGhpcyBkb2Vz",
+            "IG5vdCBzZWVtIHRvIGJlIGEgZmVlZGJhY2sgaWQaLCh0aGlzID09ICcnIHx8",
+            "IHRoaXMuc3RhcnRzV2l0aCgnZmVlZGJhY2stJykpUhNmZWVkYmFja0lkQ29t",
+            "cG9uZW50Or8BChNhY3Rpb25faWRfY29tcG9uZW50EhkuYnVmLnZhbGlkYXRl",
+            "LlN0cmluZ1J1bGVzGLlOIAEoCEJzwkhwCm4KGnN0cmluZy5hY3Rpb25faWRf",
+            "Y29tcG9uZW50EiR0aGlzIGRvZXMgbm90IHNlZW0gdG8gYmUgYSBhY3Rpb24g",
+            "aWQaKih0aGlzID09ICcnIHx8IHRoaXMuc3RhcnRzV2l0aCgnYWN0aW9uLScp",
+            "KVIRYWN0aW9uSWRDb21wb25lbnQ6yQEKFWZ1bmN0aW9uX2lkX2NvbXBvbmVu",
+            "dBIZLmJ1Zi52YWxpZGF0ZS5TdHJpbmdSdWxlcxi6TiABKAhCecJIdgp0Chxz",
+            "dHJpbmcuZnVuY3Rpb25faWRfY29tcG9uZW50EiZ0aGlzIGRvZXMgbm90IHNl",
+            "ZW0gdG8gYmUgYSBmdW5jdGlvbiBpZBosKHRoaXMgPT0gJycgfHwgdGhpcy5z",
+            "dGFydHNXaXRoKCdmdW5jdGlvbi0nKSlSE2Z1bmN0aW9uSWRDb21wb25lbnRC",
+            "tQEKEWNvbS52YWxpZGF0aW9uLnYxQhpQcmVkZWZpbmVkU3RyaW5nUnVsZXNQ",
+            "cm90b1ABWj9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
+            "dmFsaWRhdGlvbi92MTt2YWxpZGF0aW9udjGiAgNWWFjKAg1WYWxpZGF0aW9u",
+            "XFYx4gIZVmFsaWRhdGlvblxWMVxHUEJNZXRhZGF0YeoCDlZhbGlkYXRpb246",
+            "OlYx"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent, PredefinedStringRulesExtensions.ArConfigIdComponent, PredefinedStringRulesExtensions.PropertyDefinitionIdComponent, PredefinedStringRulesExtensions.PropertyInstanceIdComponent, PredefinedStringRulesExtensions.RobotDefinitionIdComponent, PredefinedStringRulesExtensions.RobotInstanceIdComponent, PredefinedStringRulesExtensions.AssetDefinitionIdComponent, PredefinedStringRulesExtensions.AssetInstanceIdComponent, PredefinedStringRulesExtensions.EnvironmentIdComponent, PredefinedStringRulesExtensions.PartDefinitionIdComponent, PredefinedStringRulesExtensions.PartInstanceIdComponent, PredefinedStringRulesExtensions.ToolDefinitionIdComponent, PredefinedStringRulesExtensions.ToolInstanceIdComponent, PredefinedStringRulesExtensions.MarkerIdComponent, PredefinedStringRulesExtensions.FixtureIdComponent, PredefinedStringRulesExtensions.StationIdComponent, PredefinedStringRulesExtensions.SkillIdComponent, PredefinedStringRulesExtensions.ProcessRunIdComponent, PredefinedStringRulesExtensions.SequenceRunIdComponent, PredefinedStringRulesExtensions.TaskRunIdComponent, PredefinedStringRulesExtensions.ProcessRecipeIdComponent, PredefinedStringRulesExtensions.SequenceDefinitionIdComponent, PredefinedStringRulesExtensions.TaskDefinitionIdComponent, PredefinedStringRulesExtensions.CellIdComponent, PredefinedStringRulesExtensions.LineIdComponent, PredefinedStringRulesExtensions.ContainerDefinitionIdComponent, PredefinedStringRulesExtensions.ContainerInstanceIdComponent, PredefinedStringRulesExtensions.WorkerIdComponent, PredefinedStringRulesExtensions.ProductIdComponent, PredefinedStringRulesExtensions.ArConfigBindingIdComponent, PredefinedStringRulesExtensions.ArConfigInstanceIdComponent, PredefinedStringRulesExtensions.ArInputSlotIdComponent, PredefinedStringRulesExtensions.ModelAssetIdComponent, PredefinedStringRulesExtensions.SidecarAssetIdComponent, PredefinedStringRulesExtensions.ImageAssetIdComponent, PredefinedStringRulesExtensions.DeviceIdComponent, PredefinedStringRulesExtensions.ZoneIdComponent, PredefinedStringRulesExtensions.ActorAvailabilityIdComponent, PredefinedStringRulesExtensions.ActorAssignmentIdComponent }, null));
+          new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PredefinedStringRulesExtensions.NameComponent, PredefinedStringRulesExtensions.ModelIdComponent, PredefinedStringRulesExtensions.ArConfigIdComponent, PredefinedStringRulesExtensions.PropertyDefinitionIdComponent, PredefinedStringRulesExtensions.PropertyInstanceIdComponent, PredefinedStringRulesExtensions.RobotDefinitionIdComponent, PredefinedStringRulesExtensions.RobotInstanceIdComponent, PredefinedStringRulesExtensions.AssetDefinitionIdComponent, PredefinedStringRulesExtensions.AssetInstanceIdComponent, PredefinedStringRulesExtensions.EnvironmentIdComponent, PredefinedStringRulesExtensions.PartDefinitionIdComponent, PredefinedStringRulesExtensions.PartInstanceIdComponent, PredefinedStringRulesExtensions.ToolDefinitionIdComponent, PredefinedStringRulesExtensions.ToolInstanceIdComponent, PredefinedStringRulesExtensions.MarkerIdComponent, PredefinedStringRulesExtensions.FixtureIdComponent, PredefinedStringRulesExtensions.StationIdComponent, PredefinedStringRulesExtensions.SkillIdComponent, PredefinedStringRulesExtensions.ProcessRunIdComponent, PredefinedStringRulesExtensions.SequenceRunIdComponent, PredefinedStringRulesExtensions.TaskRunIdComponent, PredefinedStringRulesExtensions.ProcessRecipeIdComponent, PredefinedStringRulesExtensions.SequenceDefinitionIdComponent, PredefinedStringRulesExtensions.TaskDefinitionIdComponent, PredefinedStringRulesExtensions.CellIdComponent, PredefinedStringRulesExtensions.LineIdComponent, PredefinedStringRulesExtensions.ContainerDefinitionIdComponent, PredefinedStringRulesExtensions.ContainerInstanceIdComponent, PredefinedStringRulesExtensions.WorkerIdComponent, PredefinedStringRulesExtensions.ProductIdComponent, PredefinedStringRulesExtensions.ArConfigBindingIdComponent, PredefinedStringRulesExtensions.ArConfigInstanceIdComponent, PredefinedStringRulesExtensions.ArInputSlotIdComponent, PredefinedStringRulesExtensions.ModelAssetIdComponent, PredefinedStringRulesExtensions.SidecarAssetIdComponent, PredefinedStringRulesExtensions.ImageAssetIdComponent, PredefinedStringRulesExtensions.DeviceIdComponent, PredefinedStringRulesExtensions.ZoneIdComponent, PredefinedStringRulesExtensions.ActorAvailabilityIdComponent, PredefinedStringRulesExtensions.ActorAssignmentIdComponent, PredefinedStringRulesExtensions.FeedbackIdComponent, PredefinedStringRulesExtensions.ActionIdComponent, PredefinedStringRulesExtensions.FunctionIdComponent }, null));
     }
     #endregion
 
@@ -318,6 +332,12 @@ namespace Validation.V1 {
       new pb::Extension<global::Buf.Validate.StringRules, bool>(100038, pb::FieldCodec.ForBool(800304, false));
     public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> ActorAssignmentIdComponent =
       new pb::Extension<global::Buf.Validate.StringRules, bool>(100039, pb::FieldCodec.ForBool(800312, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> FeedbackIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10040, pb::FieldCodec.ForBool(80320, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> ActionIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10041, pb::FieldCodec.ForBool(80328, false));
+    public static readonly pb::Extension<global::Buf.Validate.StringRules, bool> FunctionIdComponent =
+      new pb::Extension<global::Buf.Validate.StringRules, bool>(10042, pb::FieldCodec.ForBool(80336, false));
   }
 
 }

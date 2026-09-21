@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/action.proto.
  */
 export const file_ar_v1_action: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxIuYBCg1BY3Rpb25NZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiwKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAjIAQGCAQIQARJBChhlbGlnaWJpbGl0eV9yZXF1aXJlbWVudHMYByADKAsyHy5jYXBhYmlsaXR5LnYxLlNraWxsUmVxdWlyZW1lbnQSHAoJY29uZmlnX2lkGAggASgJQgm6SAZyBJDxBAEiNQoOQWN0aW9uTWVzc2FnZXMSIwoFaXRlbXMYASADKAsyFC5hci52MS5BY3Rpb25NZXNzYWdlIqMCChBBY3Rpb25BZGRNZXNzYWdlEhwKCWNvbmZpZ19pZBgBIAEoCUIJukgGcgSQ8QQBEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIsCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESJAoRcm9ib3RfcHJvcGVydHlfaWQYBiABKAlCCbpIBnIEmPEEARIpChZhY3RpdmF0aW5nX3Byb3BlcnR5X2lkGAcgASgJQgm6SAZyBJjxBAESQQoYZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAggAygLMh8uY2FwYWJpbGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50IqABChNBY3Rpb25VcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgFIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudCJaChJBY3Rpb25DbG9uZU1lc3NhZ2USEwoLb3JpZ2luYWxfaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKsUCCgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSHgoaQUNUSU9OX1RZUEVfVEFTS19ISUdITElHSFQQDRIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQDhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDQSIQodQUNUSU9OX1RZUEVfUk9CT1RfQ09MTEFCT1JBVEUQNUKHAQoJY29tLmFyLnYxQgtBY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_skill_requirement, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxIvEBCg1BY3Rpb25NZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBMjzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgHIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudBIcCgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEASI1Cg5BY3Rpb25NZXNzYWdlcxIjCgVpdGVtcxgBIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2UirgIKEEFjdGlvbkFkZE1lc3NhZ2USHAoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEiQKEXJvYm90X3Byb3BlcnR5X2lkGAYgASgJQgm6SAZyBJjxBAESKQoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgIIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudCKrAQoTQWN0aW9uVXBkYXRlTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTI8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgFIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudCrgAwoKQWN0aW9uVHlwZRIbChdBQ1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFDVElPTl9UWVBFX1RBU0tfQ09NUExFVEUQChIZChVBQ1RJT05fVFlQRV9UQVNLX1VORE8QCxIbChdBQ1RJT05fVFlQRV9UQVNLX0FTU0lHThAMEiAKHEFDVElPTl9UWVBFX1RBU0tfQVNTSUdOX05FWFQQDRIeChpBQ1RJT05fVFlQRV9UQVNLX0hJR0hMSUdIVBAOEhkKFUFDVElPTl9UWVBFX1RBU0tfSEVMUBAPEiAKHEFDVElPTl9UWVBFX1RBU0tfSU5fUFJPR1JFU1MQEBIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDQSJwojQUNUSU9OX1RZUEVfUk9CT1RfQkVHSU5fQ09MTEFCT1JBVEUQNRIlCiFBQ1RJT05fVFlQRV9ST0JPVF9FTkRfQ09MTEFCT1JBVEUQNhIoCiRBQ1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfSU5QVVQQN0KHAQoJY29tLmFyLnYxQgtBY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_skill_requirement, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionMessage
@@ -174,38 +174,6 @@ export const ActionUpdateMessageSchema: GenMessage<ActionUpdateMessage> = /*@__P
   messageDesc(file_ar_v1_action, 3);
 
 /**
- * @generated from message ar.v1.ActionCloneMessage
- */
-export type ActionCloneMessage = Message<"ar.v1.ActionCloneMessage"> & {
-  /**
-   * @generated from field: string original_id = 1;
-   */
-  originalId: string;
-
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
-
-  /**
-   * @generated from field: string icon = 3;
-   */
-  icon: string;
-
-  /**
-   * @generated from field: string description = 4;
-   */
-  description: string;
-};
-
-/**
- * Describes the message ar.v1.ActionCloneMessage.
- * Use `create(ActionCloneMessageSchema)` to create a new message.
- */
-export const ActionCloneMessageSchema: GenMessage<ActionCloneMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_action, 4);
-
-/**
  * @generated from enum ar.v1.ActionType
  */
 export enum ActionType {
@@ -215,49 +183,95 @@ export enum ActionType {
   UNSPECIFIED = 0,
 
   /**
+   * Marks a task as complete.
+   *
    * @generated from enum value: ACTION_TYPE_TASK_COMPLETE = 10;
    */
   TASK_COMPLETE = 10,
 
   /**
+   * Reverts the most recent state-changing operation on a task.
+   *
    * @generated from enum value: ACTION_TYPE_TASK_UNDO = 11;
    */
   TASK_UNDO = 11,
 
   /**
+   * Assigns a task to an actor.
+   *
    * @generated from enum value: ACTION_TYPE_TASK_ASSIGN = 12;
    */
   TASK_ASSIGN = 12,
 
   /**
-   * @generated from enum value: ACTION_TYPE_TASK_HIGHLIGHT = 13;
+   * Assigns the next available actor to a task.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_ASSIGN_NEXT = 13;
    */
-  TASK_HIGHLIGHT = 13,
+  TASK_ASSIGN_NEXT = 13,
 
   /**
-   * @generated from enum value: ACTION_TYPE_TASK_HELP = 14;
+   * Requests that a task be visually emphasized.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_HIGHLIGHT = 14;
    */
-  TASK_HELP = 14,
+  TASK_HIGHLIGHT = 14,
 
   /**
+   * Requests help for a task.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_HELP = 15;
+   */
+  TASK_HELP = 15,
+
+  /**
+   * Marks a task as being in progress.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_IN_PROGRESS = 16;
+   */
+  TASK_IN_PROGRESS = 16,
+
+  /**
+   * Toggles robot execution between playing and paused.
+   *
    * @generated from enum value: ACTION_TYPE_ROBOT_PLAY_PAUSE = 50;
    */
   ROBOT_PLAY_PAUSE = 50,
 
   /**
+   * Acknowledges a robot notification or request.
+   *
    * @generated from enum value: ACTION_TYPE_ROBOT_ACKNOWLEDGE = 51;
    */
   ROBOT_ACKNOWLEDGE = 51,
 
   /**
+   * Enables or disables the robot's free-drive mode.
+   *
    * @generated from enum value: ACTION_TYPE_ROBOT_FREE_DRIVE = 52;
    */
   ROBOT_FREE_DRIVE = 52,
 
   /**
-   * @generated from enum value: ACTION_TYPE_ROBOT_COLLABORATE = 53;
+   * Starts a collaborative robot operation.
+   *
+   * @generated from enum value: ACTION_TYPE_ROBOT_BEGIN_COLLABORATE = 53;
    */
-  ROBOT_COLLABORATE = 53,
+  ROBOT_BEGIN_COLLABORATE = 53,
+
+  /**
+   * Ends a collaborative robot operation.
+   *
+   * @generated from enum value: ACTION_TYPE_ROBOT_END_COLLABORATE = 54;
+   */
+  ROBOT_END_COLLABORATE = 54,
+
+  /**
+   * Activates a configured robot input.
+   *
+   * @generated from enum value: ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT = 55;
+   */
+  ROBOT_CONFIGURABLE_INPUT = 55,
 }
 
 /**

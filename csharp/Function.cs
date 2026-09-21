@@ -26,31 +26,40 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChRhci92MS9mdW5jdGlvbi5wcm90bxIFYXIudjEaG2J1Zi92YWxpZGF0ZS92",
             "YWxpZGF0ZS5wcm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmlu",
-            "Z19ydWxlcy5wcm90byLHAQoPRnVuY3Rpb25NZXNzYWdlEg4KAmlkGAEgASgJ",
-            "UgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgD",
-            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
-            "JwoEdHlwZRgFIAEoDjITLmFyLnYxLkZ1bmN0aW9uVHlwZVIEdHlwZRImCglj",
-            "b25maWdfaWQYBiABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQiQAoQRnVuY3Rp",
-            "b25NZXNzYWdlcxIsCgVpdGVtcxgBIAMoCzIWLmFyLnYxLkZ1bmN0aW9uTWVz",
-            "c2FnZVIFaXRlbXMivAEKEkZ1bmN0aW9uQWRkTWVzc2FnZRImCgljb25maWdf",
-            "aWQYASABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQSEgoEbmFtZRgCIAEoCVIE",
-            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
-            "UgtkZXNjcmlwdGlvbhI0CgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25U",
-            "eXBlQgu6SAiCAQIQAcgBAVIEdHlwZSJ8ChVGdW5jdGlvblVwZGF0ZU1lc3Nh",
-            "Z2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
-            "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
-            "UgtkZXNjcmlwdGlvbirPAgoMRnVuY3Rpb25UeXBlEh0KGUZVTkNUSU9OX1RZ",
-            "UEVfVU5TUEVDSUZJRUQQABIbChdGVU5DVElPTl9UWVBFX1BST1hJTUlUWRAK",
-            "EhwKGEZVTkNUSU9OX1RZUEVfU1RBVElPTkFSWRALEhcKE0ZVTkNUSU9OX1RZ",
-            "UEVfVElNRVIQFRIfChtGVU5DVElPTl9UWVBFX1BBUlRfRk9SX1RBU0sQKBIh",
-            "Ch1GVU5DVElPTl9UWVBFX0lTX1BBUlRfT0ZfVFlQRRAyEiEKHUZVTkNUSU9O",
-            "X1RZUEVfU1RSSU5HX0ZPUk1BVF8xEDwSIQodRlVOQ1RJT05fVFlQRV9TVFJJ",
-            "TkdfRk9STUFUXzIQPRIVChFGVU5DVElPTl9UWVBFX0FORBBkEhQKEEZVTkNU",
-            "SU9OX1RZUEVfT1IQZRIVChFGVU5DVElPTl9UWVBFX05PVBBmQokBCgljb20u",
-            "YXIudjFCDUZ1bmN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5B",
-            "Ui5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnBy",
-            "b3RvMw=="));
+            "Z19ydWxlcy5wcm90byLfAQoPRnVuY3Rpb25NZXNzYWdlEhkKAmlkGAEgASgJ",
+            "Qgm6SAZyBNDzBAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
+            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
+            "ZXNjcmlwdGlvbhI0CgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBl",
+            "Qgu6SAiCAQIQAcgBAVIEdHlwZRImCgljb25maWdfaWQYBiABKAlCCbpIBnIE",
+            "kPEEAVIIY29uZmlnSWQiQAoQRnVuY3Rpb25NZXNzYWdlcxIsCgVpdGVtcxgB",
+            "IAMoCzIWLmFyLnYxLkZ1bmN0aW9uTWVzc2FnZVIFaXRlbXMixwEKEkZ1bmN0",
+            "aW9uQWRkTWVzc2FnZRImCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEAVII",
+            "Y29uZmlnSWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGlj",
+            "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
+            "aW9uEjQKBHR5cGUYBSABKA4yEy5hci52MS5GdW5jdGlvblR5cGVCC7pICIIB",
+            "AhAByAEBUgR0eXBlIocBChVGdW5jdGlvblVwZGF0ZU1lc3NhZ2USGQoCaWQY",
+            "ASABKAlCCbpIBnIE0PMEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
+            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
+            "KAlSC2Rlc2NyaXB0aW9uKrIFCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05f",
+            "VFlQRV9VTlNQRUNJRklFRBAAEhsKF0ZVTkNUSU9OX1RZUEVfUFJPWElNSVRZ",
+            "EAoSHAoYRlVOQ1RJT05fVFlQRV9TVEFUSU9OQVJZEAsSFwoTRlVOQ1RJT05f",
+            "VFlQRV9USU1FUhAVEh8KG0ZVTkNUSU9OX1RZUEVfUEFSVF9GT1JfVEFTSxAo",
+            "EiEKHUZVTkNUSU9OX1RZUEVfSVNfUEFSVF9PRl9UWVBFEDISJwojRlVOQ1RJ",
+            "T05fVFlQRV9DTE9TRVNUX1dPUktBQkxFX1RBU0sQMxIhCh1GVU5DVElPTl9U",
+            "WVBFX1NUUklOR19GT1JNQVRfMRA8EiEKHUZVTkNUSU9OX1RZUEVfU1RSSU5H",
+            "X0ZPUk1BVF8yED0SHgoaRlVOQ1RJT05fVFlQRV9TVFJJTkdfRU1QVFkQPhIc",
+            "ChhGVU5DVElPTl9UWVBFX0lOVF9GT1JNQVQQRhIdChlGVU5DVElPTl9UWVBF",
+            "X0lOVF9DT01QQVJFEEcSHgoaRlVOQ1RJT05fVFlQRV9GTE9BVF9GT1JNQVQQ",
+            "UBIfChtGVU5DVElPTl9UWVBFX0ZMT0FUX0NPTVBBUkUQURIfChtGVU5DVElP",
+            "Tl9UWVBFX0RPVUJMRV9GT1JNQVQQWhIgChxGVU5DVElPTl9UWVBFX0RPVUJM",
+            "RV9DT01QQVJFEFsSFQoRRlVOQ1RJT05fVFlQRV9BTkQQZBIUChBGVU5DVElP",
+            "Tl9UWVBFX09SEGUSFQoRRlVOQ1RJT05fVFlQRV9OT1QQZhIqCiZGVU5DVElP",
+            "Tl9UWVBFX1JPQk9UX0NPTkZJR1VSQUJMRV9JTlBVVBB4EisKJ0ZVTkNUSU9O",
+            "X1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX09VVFBVVBB5QokBCgljb20uYXIu",
+            "djFCDUZ1bmN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5W",
+            "McoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FunctionType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -66,16 +75,86 @@ namespace Messages.AR.V1 {
   #region Enums
   public enum FunctionType {
     [pbr::OriginalName("FUNCTION_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Evaluates whether two spatial entities are within a configured distance.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_PROXIMITY")] Proximity = 10,
+    /// <summary>
+    /// Evaluates whether a spatial entity is stationary.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_STATIONARY")] Stationary = 11,
+    /// <summary>
+    /// Evaluates whether a configured duration has elapsed.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_TIMER")] Timer = 21,
+    /// <summary>
+    /// Resolves the part associated with a task.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_PART_FOR_TASK")] PartForTask = 40,
+    /// <summary>
+    /// Evaluates whether a part matches a specified part type.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_IS_PART_OF_TYPE")] IsPartOfType = 50,
+    /// <summary>
+    /// Resolves the closest task that is currently workable.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_CLOSEST_WORKABLE_TASK")] ClosestWorkableTask = 51,
+    /// <summary>
+    /// Formats a string using one replacement value.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_STRING_FORMAT_1")] StringFormat1 = 60,
+    /// <summary>
+    /// Formats a string using two replacement values.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_STRING_FORMAT_2")] StringFormat2 = 61,
+    /// <summary>
+    /// Evaluates whether a string is empty.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_STRING_EMPTY")] StringEmpty = 62,
+    /// <summary>
+    /// Formats an integer as a string.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_INT_FORMAT")] IntFormat = 70,
+    /// <summary>
+    /// Compares two integer values.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_INT_COMPARE")] IntCompare = 71,
+    /// <summary>
+    /// Formats a single-precision floating-point value as a string.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_FLOAT_FORMAT")] FloatFormat = 80,
+    /// <summary>
+    /// Compares two single-precision floating-point values.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_FLOAT_COMPARE")] FloatCompare = 81,
+    /// <summary>
+    /// Formats a double-precision floating-point value as a string.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_DOUBLE_FORMAT")] DoubleFormat = 90,
+    /// <summary>
+    /// Compares two double-precision floating-point values.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_DOUBLE_COMPARE")] DoubleCompare = 91,
+    /// <summary>
+    /// Evaluates the logical conjunction of two boolean values.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_AND")] And = 100,
+    /// <summary>
+    /// Evaluates the logical disjunction of two boolean values.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_OR")] Or = 101,
+    /// <summary>
+    /// Negates a boolean value.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_NOT")] Not = 102,
+    /// <summary>
+    /// Reads a configured robot input.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT")] RobotConfigurableInput = 120,
+    /// <summary>
+    /// Reads a configured robot output.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT")] RobotConfigurableOutput = 121,
   }
 
   #endregion

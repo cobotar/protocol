@@ -27,50 +27,50 @@ namespace Messages.AR.V1 {
             "ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxGhtidWYvdmFsaWRhdGUvdmFs",
             "aWRhdGUucHJvdG8aJWNhcGFiaWxpdHkvdjEvc2tpbGxfcmVxdWlyZW1lbnQu",
             "cHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMu",
-            "cHJvdG8irAIKDUFjdGlvbk1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5h",
-            "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
-            "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUg",
-            "ASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIggECEAHIAQFSBHR5cGUSWgoY",
-            "ZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAcgAygLMh8uY2FwYWJpbGl0eS52",
-            "MS5Ta2lsbFJlcXVpcmVtZW50UhdlbGlnaWJpbGl0eVJlcXVpcmVtZW50cxIm",
-            "Cgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQiPAoOQWN0",
-            "aW9uTWVzc2FnZXMSKgoFaXRlbXMYASADKAsyFC5hci52MS5BY3Rpb25NZXNz",
-            "YWdlUgVpdGVtcyKMAwoQQWN0aW9uQWRkTWVzc2FnZRImCgljb25maWdfaWQY",
-            "ASABKAlCCbpIBnIEkPEEAVIIY29uZmlnSWQSEgoEbmFtZRgCIAEoCVIEbmFt",
-            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
-            "ZXNjcmlwdGlvbhIyCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUIL",
-            "ukgIggECEAHIAQFSBHR5cGUSNQoRcm9ib3RfcHJvcGVydHlfaWQYBiABKAlC",
-            "CbpIBnIEmPEEAVIPcm9ib3RQcm9wZXJ0eUlkEj8KFmFjdGl2YXRpbmdfcHJv",
-            "cGVydHlfaWQYByABKAlCCbpIBnIEmPEEAVIUYWN0aXZhdGluZ1Byb3BlcnR5",
-            "SWQSWgoYZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAggAygLMh8uY2FwYWJp",
-            "bGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50UhdlbGlnaWJpbGl0eVJlcXVpcmVt",
-            "ZW50cyLWAQoTQWN0aW9uVXBkYXRlTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQS",
-            "HQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlS",
-            "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEloKGGVs",
-            "aWdpYmlsaXR5X3JlcXVpcmVtZW50cxgFIAMoCzIfLmNhcGFiaWxpdHkudjEu",
-            "U2tpbGxSZXF1aXJlbWVudFIXZWxpZ2liaWxpdHlSZXF1aXJlbWVudHMifwoS",
-            "QWN0aW9uQ2xvbmVNZXNzYWdlEh8KC29yaWdpbmFsX2lkGAEgASgJUgpvcmln",
-            "aW5hbElkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNv",
-            "bhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24qxQIKCkFjdGlv",
-            "blR5cGUSGwoXQUNUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIdChlBQ1RJT05f",
-            "VFlQRV9UQVNLX0NPTVBMRVRFEAoSGQoVQUNUSU9OX1RZUEVfVEFTS19VTkRP",
-            "EAsSGwoXQUNUSU9OX1RZUEVfVEFTS19BU1NJR04QDBIeChpBQ1RJT05fVFlQ",
-            "RV9UQVNLX0hJR0hMSUdIVBANEhkKFUFDVElPTl9UWVBFX1RBU0tfSEVMUBAO",
-            "EiAKHEFDVElPTl9UWVBFX1JPQk9UX1BMQVlfUEFVU0UQMhIhCh1BQ1RJT05f",
-            "VFlQRV9ST0JPVF9BQ0tOT1dMRURHRRAzEiAKHEFDVElPTl9UWVBFX1JPQk9U",
-            "X0ZSRUVfRFJJVkUQNBIhCh1BQ1RJT05fVFlQRV9ST0JPVF9DT0xMQUJPUkFU",
-            "RRA1QocBCgljb20uYXIudjFCC0FjdGlvblByb3RvUAFaL2dpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIO",
-            "TWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIG",
-            "QXI6OlYxYgZwcm90bzM="));
+            "cHJvdG8itwIKDUFjdGlvbk1lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIEyPME",
+            "AVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24Y",
+            "AyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u",
+            "EjIKBHR5cGUYBSABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAiCAQIQAcgB",
+            "AVIEdHlwZRJaChhlbGlnaWJpbGl0eV9yZXF1aXJlbWVudHMYByADKAsyHy5j",
+            "YXBhYmlsaXR5LnYxLlNraWxsUmVxdWlyZW1lbnRSF2VsaWdpYmlsaXR5UmVx",
+            "dWlyZW1lbnRzEiYKCWNvbmZpZ19pZBgIIAEoCUIJukgGcgSQ8QQBUghjb25m",
+            "aWdJZCI8Cg5BY3Rpb25NZXNzYWdlcxIqCgVpdGVtcxgBIAMoCzIULmFyLnYx",
+            "LkFjdGlvbk1lc3NhZ2VSBWl0ZW1zIpcDChBBY3Rpb25BZGRNZXNzYWdlEiYK",
+            "CWNvbmZpZ19pZBgBIAEoCUIJukgGcgSQ8QQBUghjb25maWdJZBIdCgRuYW1l",
+            "GAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIg",
+            "CgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SMgoEdHlwZRgFIAEo",
+            "DjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjUKEXJv",
+            "Ym90X3Byb3BlcnR5X2lkGAYgASgJQgm6SAZyBJjxBAFSD3JvYm90UHJvcGVy",
+            "dHlJZBI/ChZhY3RpdmF0aW5nX3Byb3BlcnR5X2lkGAcgASgJQgm6SAZyBJjx",
+            "BAFSFGFjdGl2YXRpbmdQcm9wZXJ0eUlkEloKGGVsaWdpYmlsaXR5X3JlcXVp",
+            "cmVtZW50cxgIIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVu",
+            "dFIXZWxpZ2liaWxpdHlSZXF1aXJlbWVudHMi4QEKE0FjdGlvblVwZGF0ZU1l",
+            "c3NhZ2USGQoCaWQYASABKAlCCbpIBnIEyPMEAVICaWQSHQoEbmFtZRgCIAEo",
+            "CUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
+            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEloKGGVsaWdpYmlsaXR5X3Jl",
+            "cXVpcmVtZW50cxgFIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJl",
+            "bWVudFIXZWxpZ2liaWxpdHlSZXF1aXJlbWVudHMq4AMKCkFjdGlvblR5cGUS",
+            "GwoXQUNUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIdChlBQ1RJT05fVFlQRV9U",
+            "QVNLX0NPTVBMRVRFEAoSGQoVQUNUSU9OX1RZUEVfVEFTS19VTkRPEAsSGwoX",
+            "QUNUSU9OX1RZUEVfVEFTS19BU1NJR04QDBIgChxBQ1RJT05fVFlQRV9UQVNL",
+            "X0FTU0lHTl9ORVhUEA0SHgoaQUNUSU9OX1RZUEVfVEFTS19ISUdITElHSFQQ",
+            "DhIZChVBQ1RJT05fVFlQRV9UQVNLX0hFTFAQDxIgChxBQ1RJT05fVFlQRV9U",
+            "QVNLX0lOX1BST0dSRVNTEBASIAocQUNUSU9OX1RZUEVfUk9CT1RfUExBWV9Q",
+            "QVVTRRAyEiEKHUFDVElPTl9UWVBFX1JPQk9UX0FDS05PV0xFREdFEDMSIAoc",
+            "QUNUSU9OX1RZUEVfUk9CT1RfRlJFRV9EUklWRRA0EicKI0FDVElPTl9UWVBF",
+            "X1JPQk9UX0JFR0lOX0NPTExBQk9SQVRFEDUSJQohQUNUSU9OX1RZUEVfUk9C",
+            "T1RfRU5EX0NPTExBQk9SQVRFEDYSKAokQUNUSU9OX1RZUEVfUk9CT1RfQ09O",
+            "RklHVVJBQkxFX0lOUFVUEDdChwEKCWNvbS5hci52MUILQWN0aW9uUHJvdG9Q",
+            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
+            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
+            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ActionType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessage), global::Messages.AR.V1.ActionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "EligibilityRequirements", "ConfigId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionMessages), global::Messages.AR.V1.ActionMessages.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionAddMessage), global::Messages.AR.V1.ActionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type", "RobotPropertyId", "ActivatingPropertyId", "EligibilityRequirements" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionUpdateMessage), global::Messages.AR.V1.ActionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EligibilityRequirements" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionCloneMessage), global::Messages.AR.V1.ActionCloneMessage.Parser, new[]{ "OriginalId", "Name", "Icon", "Description" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionUpdateMessage), global::Messages.AR.V1.ActionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "EligibilityRequirements" }, null, null, null, null)
           }));
     }
     #endregion
@@ -79,15 +79,58 @@ namespace Messages.AR.V1 {
   #region Enums
   public enum ActionType {
     [pbr::OriginalName("ACTION_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Marks a task as complete.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_TASK_COMPLETE")] TaskComplete = 10,
+    /// <summary>
+    /// Reverts the most recent state-changing operation on a task.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_TASK_UNDO")] TaskUndo = 11,
+    /// <summary>
+    /// Assigns a task to an actor.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_TASK_ASSIGN")] TaskAssign = 12,
-    [pbr::OriginalName("ACTION_TYPE_TASK_HIGHLIGHT")] TaskHighlight = 13,
-    [pbr::OriginalName("ACTION_TYPE_TASK_HELP")] TaskHelp = 14,
+    /// <summary>
+    /// Assigns the next available actor to a task.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_TASK_ASSIGN_NEXT")] TaskAssignNext = 13,
+    /// <summary>
+    /// Requests that a task be visually emphasized.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_TASK_HIGHLIGHT")] TaskHighlight = 14,
+    /// <summary>
+    /// Requests help for a task.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_TASK_HELP")] TaskHelp = 15,
+    /// <summary>
+    /// Marks a task as being in progress.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_TASK_IN_PROGRESS")] TaskInProgress = 16,
+    /// <summary>
+    /// Toggles robot execution between playing and paused.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_ROBOT_PLAY_PAUSE")] RobotPlayPause = 50,
+    /// <summary>
+    /// Acknowledges a robot notification or request.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_ROBOT_ACKNOWLEDGE")] RobotAcknowledge = 51,
+    /// <summary>
+    /// Enables or disables the robot's free-drive mode.
+    /// </summary>
     [pbr::OriginalName("ACTION_TYPE_ROBOT_FREE_DRIVE")] RobotFreeDrive = 52,
-    [pbr::OriginalName("ACTION_TYPE_ROBOT_COLLABORATE")] RobotCollaborate = 53,
+    /// <summary>
+    /// Starts a collaborative robot operation.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_ROBOT_BEGIN_COLLABORATE")] RobotBeginCollaborate = 53,
+    /// <summary>
+    /// Ends a collaborative robot operation.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_ROBOT_END_COLLABORATE")] RobotEndCollaborate = 54,
+    /// <summary>
+    /// Activates a configured robot input.
+    /// </summary>
+    [pbr::OriginalName("ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT")] RobotConfigurableInput = 55,
   }
 
   #endregion
@@ -1467,315 +1510,6 @@ namespace Messages.AR.V1 {
           }
           case 42: {
             eligibilityRequirements_.AddEntriesFrom(ref input, _repeated_eligibilityRequirements_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ActionCloneMessage : pb::IMessage<ActionCloneMessage>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<ActionCloneMessage> _parser = new pb::MessageParser<ActionCloneMessage>(() => new ActionCloneMessage());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ActionCloneMessage> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ActionReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionCloneMessage() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionCloneMessage(ActionCloneMessage other) : this() {
-      originalId_ = other.originalId_;
-      name_ = other.name_;
-      icon_ = other.icon_;
-      description_ = other.description_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ActionCloneMessage Clone() {
-      return new ActionCloneMessage(this);
-    }
-
-    /// <summary>Field number for the "original_id" field.</summary>
-    public const int OriginalIdFieldNumber = 1;
-    private string originalId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OriginalId {
-      get { return originalId_; }
-      set {
-        originalId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 3;
-    private string icon_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Icon {
-      get { return icon_; }
-      set {
-        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 4;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as ActionCloneMessage);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ActionCloneMessage other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (OriginalId != other.OriginalId) return false;
-      if (Name != other.Name) return false;
-      if (Icon != other.Icon) return false;
-      if (Description != other.Description) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (OriginalId.Length != 0) hash ^= OriginalId.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (OriginalId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(OriginalId);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (Icon.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Icon);
-      }
-      if (Description.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Description);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OriginalId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(OriginalId);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (Icon.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Icon);
-      }
-      if (Description.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Description);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (OriginalId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OriginalId);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Icon.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
-      }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ActionCloneMessage other) {
-      if (other == null) {
-        return;
-      }
-      if (other.OriginalId.Length != 0) {
-        OriginalId = other.OriginalId;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Icon.Length != 0) {
-        Icon = other.Icon;
-      }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            OriginalId = input.ReadString();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            Icon = input.ReadString();
-            break;
-          }
-          case 34: {
-            Description = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            OriginalId = input.ReadString();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            Icon = input.ReadString();
-            break;
-          }
-          case 34: {
-            Description = input.ReadString();
             break;
           }
         }

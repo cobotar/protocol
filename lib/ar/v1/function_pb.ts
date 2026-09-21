@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/function.proto.
  */
 export const file_ar_v1_function: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mdW5jdGlvbi5wcm90bxIFYXIudjEimgEKD0Z1bmN0aW9uTWVzc2FnZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIhCgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBlEhwKCWNvbmZpZ19pZBgGIAEoCUIJukgGcgSQ8QQBIjkKEEZ1bmN0aW9uTWVzc2FnZXMSJQoFaXRlbXMYASADKAsyFi5hci52MS5GdW5jdGlvbk1lc3NhZ2UikwEKEkZ1bmN0aW9uQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLgoEdHlwZRgFIAEoDjITLmFyLnYxLkZ1bmN0aW9uVHlwZUILukgIyAEBggECEAEiXwoVRnVuY3Rpb25VcGRhdGVNZXNzYWdlEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJKs8CCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEhsKF0ZVTkNUSU9OX1RZUEVfUFJPWElNSVRZEAoSHAoYRlVOQ1RJT05fVFlQRV9TVEFUSU9OQVJZEAsSFwoTRlVOQ1RJT05fVFlQRV9USU1FUhAVEh8KG0ZVTkNUSU9OX1RZUEVfUEFSVF9GT1JfVEFTSxAoEiEKHUZVTkNUSU9OX1RZUEVfSVNfUEFSVF9PRl9UWVBFEDISIQodRlVOQ1RJT05fVFlQRV9TVFJJTkdfRk9STUFUXzEQPBIhCh1GVU5DVElPTl9UWVBFX1NUUklOR19GT1JNQVRfMhA9EhUKEUZVTkNUSU9OX1RZUEVfQU5EEGQSFAoQRlVOQ1RJT05fVFlQRV9PUhBlEhUKEUZVTkNUSU9OX1RZUEVfTk9UEGZCiQEKCWNvbS5hci52MUINRnVuY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChRhci92MS9mdW5jdGlvbi5wcm90bxIFYXIudjEisgEKD0Z1bmN0aW9uTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTQ8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GdW5jdGlvblR5cGVCC7pICMgBAYIBAhABEhwKCWNvbmZpZ19pZBgGIAEoCUIJukgGcgSQ8QQBIjkKEEZ1bmN0aW9uTWVzc2FnZXMSJQoFaXRlbXMYASADKAsyFi5hci52MS5GdW5jdGlvbk1lc3NhZ2UingEKEkZ1bmN0aW9uQWRkTWVzc2FnZRIcCgljb25maWdfaWQYASABKAlCCbpIBnIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBlQgu6SAjIAQGCAQIQASJqChVGdW5jdGlvblVwZGF0ZU1lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIE0PMEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSqyBQoMRnVuY3Rpb25UeXBlEh0KGUZVTkNUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIbChdGVU5DVElPTl9UWVBFX1BST1hJTUlUWRAKEhwKGEZVTkNUSU9OX1RZUEVfU1RBVElPTkFSWRALEhcKE0ZVTkNUSU9OX1RZUEVfVElNRVIQFRIfChtGVU5DVElPTl9UWVBFX1BBUlRfRk9SX1RBU0sQKBIhCh1GVU5DVElPTl9UWVBFX0lTX1BBUlRfT0ZfVFlQRRAyEicKI0ZVTkNUSU9OX1RZUEVfQ0xPU0VTVF9XT1JLQUJMRV9UQVNLEDMSIQodRlVOQ1RJT05fVFlQRV9TVFJJTkdfRk9STUFUXzEQPBIhCh1GVU5DVElPTl9UWVBFX1NUUklOR19GT1JNQVRfMhA9Eh4KGkZVTkNUSU9OX1RZUEVfU1RSSU5HX0VNUFRZED4SHAoYRlVOQ1RJT05fVFlQRV9JTlRfRk9STUFUEEYSHQoZRlVOQ1RJT05fVFlQRV9JTlRfQ09NUEFSRRBHEh4KGkZVTkNUSU9OX1RZUEVfRkxPQVRfRk9STUFUEFASHwobRlVOQ1RJT05fVFlQRV9GTE9BVF9DT01QQVJFEFESHwobRlVOQ1RJT05fVFlQRV9ET1VCTEVfRk9STUFUEFoSIAocRlVOQ1RJT05fVFlQRV9ET1VCTEVfQ09NUEFSRRBbEhUKEUZVTkNUSU9OX1RZUEVfQU5EEGQSFAoQRlVOQ1RJT05fVFlQRV9PUhBlEhUKEUZVTkNUSU9OX1RZUEVfTk9UEGYSKgomRlVOQ1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfSU5QVVQQeBIrCidGVU5DVElPTl9UWVBFX1JPQk9UX0NPTkZJR1VSQUJMRV9PVVRQVVQQeUKJAQoJY29tLmFyLnYxQg1GdW5jdGlvblByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FunctionMessage
@@ -152,54 +152,144 @@ export enum FunctionType {
   UNSPECIFIED = 0,
 
   /**
+   * Evaluates whether two spatial entities are within a configured distance.
+   *
    * @generated from enum value: FUNCTION_TYPE_PROXIMITY = 10;
    */
   PROXIMITY = 10,
 
   /**
+   * Evaluates whether a spatial entity is stationary.
+   *
    * @generated from enum value: FUNCTION_TYPE_STATIONARY = 11;
    */
   STATIONARY = 11,
 
   /**
+   * Evaluates whether a configured duration has elapsed.
+   *
    * @generated from enum value: FUNCTION_TYPE_TIMER = 21;
    */
   TIMER = 21,
 
   /**
+   * Resolves the part associated with a task.
+   *
    * @generated from enum value: FUNCTION_TYPE_PART_FOR_TASK = 40;
    */
   PART_FOR_TASK = 40,
 
   /**
+   * Evaluates whether a part matches a specified part type.
+   *
    * @generated from enum value: FUNCTION_TYPE_IS_PART_OF_TYPE = 50;
    */
   IS_PART_OF_TYPE = 50,
 
   /**
+   * Resolves the closest task that is currently workable.
+   *
+   * @generated from enum value: FUNCTION_TYPE_CLOSEST_WORKABLE_TASK = 51;
+   */
+  CLOSEST_WORKABLE_TASK = 51,
+
+  /**
+   * Formats a string using one replacement value.
+   *
    * @generated from enum value: FUNCTION_TYPE_STRING_FORMAT_1 = 60;
    */
   STRING_FORMAT_1 = 60,
 
   /**
+   * Formats a string using two replacement values.
+   *
    * @generated from enum value: FUNCTION_TYPE_STRING_FORMAT_2 = 61;
    */
   STRING_FORMAT_2 = 61,
 
   /**
+   * Evaluates whether a string is empty.
+   *
+   * @generated from enum value: FUNCTION_TYPE_STRING_EMPTY = 62;
+   */
+  STRING_EMPTY = 62,
+
+  /**
+   * Formats an integer as a string.
+   *
+   * @generated from enum value: FUNCTION_TYPE_INT_FORMAT = 70;
+   */
+  INT_FORMAT = 70,
+
+  /**
+   * Compares two integer values.
+   *
+   * @generated from enum value: FUNCTION_TYPE_INT_COMPARE = 71;
+   */
+  INT_COMPARE = 71,
+
+  /**
+   * Formats a single-precision floating-point value as a string.
+   *
+   * @generated from enum value: FUNCTION_TYPE_FLOAT_FORMAT = 80;
+   */
+  FLOAT_FORMAT = 80,
+
+  /**
+   * Compares two single-precision floating-point values.
+   *
+   * @generated from enum value: FUNCTION_TYPE_FLOAT_COMPARE = 81;
+   */
+  FLOAT_COMPARE = 81,
+
+  /**
+   * Formats a double-precision floating-point value as a string.
+   *
+   * @generated from enum value: FUNCTION_TYPE_DOUBLE_FORMAT = 90;
+   */
+  DOUBLE_FORMAT = 90,
+
+  /**
+   * Compares two double-precision floating-point values.
+   *
+   * @generated from enum value: FUNCTION_TYPE_DOUBLE_COMPARE = 91;
+   */
+  DOUBLE_COMPARE = 91,
+
+  /**
+   * Evaluates the logical conjunction of two boolean values.
+   *
    * @generated from enum value: FUNCTION_TYPE_AND = 100;
    */
   AND = 100,
 
   /**
+   * Evaluates the logical disjunction of two boolean values.
+   *
    * @generated from enum value: FUNCTION_TYPE_OR = 101;
    */
   OR = 101,
 
   /**
+   * Negates a boolean value.
+   *
    * @generated from enum value: FUNCTION_TYPE_NOT = 102;
    */
   NOT = 102,
+
+  /**
+   * Reads a configured robot input.
+   *
+   * @generated from enum value: FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT = 120;
+   */
+  ROBOT_CONFIGURABLE_INPUT = 120,
+
+  /**
+   * Reads a configured robot output.
+   *
+   * @generated from enum value: FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT = 121;
+   */
+  ROBOT_CONFIGURABLE_OUTPUT = 121,
 }
 
 /**
