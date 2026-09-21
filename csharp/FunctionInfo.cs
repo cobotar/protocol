@@ -40,15 +40,16 @@ namespace Messages.AR.V1 {
             "DCADKAsyEy5hci52MS5FeGNoYW5nZVR5cGVSBWVtaXRzEhoKCGRpc2FibGVk",
             "GA0gASgIUghkaXNhYmxlZCJIChRGdW5jdGlvbkluZm9NZXNzYWdlcxIwCgVp",
             "bmZvcxgBIAMoCzIaLmFyLnYxLkZ1bmN0aW9uSW5mb01lc3NhZ2VSBWluZm9z",
-            "KvEBCg1GdW5jdGlvbkdyb3VwEh4KGkZVTkNUSU9OX0dST1VQX1VOU1BFQ0lG",
+            "KqcCCg1GdW5jdGlvbkdyb3VwEh4KGkZVTkNUSU9OX0dST1VQX1VOU1BFQ0lG",
             "SUVEEAASGgoWRlVOQ1RJT05fR1JPVVBfR0VORVJBTBABEhgKFEZVTkNUSU9O",
             "X0dST1VQX1JPQk9UEAISFwoTRlVOQ1RJT05fR1JPVVBfVEFTSxADEh4KGkZV",
             "TkNUSU9OX0dST1VQX0VOVklST05NRU5UEAQSGwoXRlVOQ1RJT05fR1JPVVBf",
             "T1BFUkFUT1IQBRIaChZGVU5DVElPTl9HUk9VUF9TUEFUSUFMEAYSGAoURlVO",
-            "Q1RJT05fR1JPVVBfTE9HSUMQB0KNAQoJY29tLmFyLnYxQhFGdW5jdGlvbklu",
-            "Zm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
-            "ZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHi",
-            "AhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "Q1RJT05fR1JPVVBfTE9HSUMQBxIXChNGVU5DVElPTl9HUk9VUF9EQVRBEAgS",
+            "GwoXRlVOQ1RJT05fR1JPVVBfVEVNUE9SQUwQCUKNAQoJY29tLmFyLnYxQhFG",
+            "dW5jdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYx",
+            "ygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.EventsReflection.Descriptor, global::Messages.AR.V1.FunctionReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FunctionGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -62,13 +63,42 @@ namespace Messages.AR.V1 {
   #region Enums
   public enum FunctionGroup {
     [pbr::OriginalName("FUNCTION_GROUP_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Functions that do not yet fit a more specific domain.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_GENERAL")] General = 1,
+    /// <summary>
+    /// Functions that read or evaluate robot-specific information.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_ROBOT")] Robot = 2,
+    /// <summary>
+    /// Functions that resolve or evaluate task and process information.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_TASK")] Task = 3,
+    /// <summary>
+    /// Functions that evaluate the surrounding work environment.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_ENVIRONMENT")] Environment = 4,
+    /// <summary>
+    /// Functions that resolve or evaluate operator-specific information.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_OPERATOR")] Operator = 5,
+    /// <summary>
+    /// Functions that evaluate positions, movement, distance, or geometry.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_SPATIAL")] Spatial = 6,
+    /// <summary>
+    /// Boolean operations and predicates.
+    /// </summary>
     [pbr::OriginalName("FUNCTION_GROUP_LOGIC")] Logic = 7,
+    /// <summary>
+    /// Formatting, conversion, parsing, and other value transformations.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_GROUP_DATA")] Data = 8,
+    /// <summary>
+    /// Functions related to durations, timing, and schedules.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_GROUP_TEMPORAL")] Temporal = 9,
   }
 
   #endregion

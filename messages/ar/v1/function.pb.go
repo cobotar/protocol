@@ -31,8 +31,18 @@ const (
 	FunctionType_FUNCTION_TYPE_PROXIMITY FunctionType = 10
 	// Evaluates whether a spatial entity is stationary.
 	FunctionType_FUNCTION_TYPE_STATIONARY FunctionType = 11
-	// Evaluates whether a configured duration has elapsed.
+	// Produces an active output for a configured duration after being triggered.
 	FunctionType_FUNCTION_TYPE_TIMER FunctionType = 21
+	// Propagates an input or trigger after a configured delay.
+	FunctionType_FUNCTION_TYPE_DELAY FunctionType = 22
+	// Indicates that an expected input or event did not occur within a configured duration.
+	FunctionType_FUNCTION_TYPE_TIMEOUT FunctionType = 23
+	// Changes its output only after the input has remained stable for a configured duration.
+	FunctionType_FUNCTION_TYPE_DEBOUNCE FunctionType = 24
+	// Reports the time elapsed since it was triggered or reset.
+	FunctionType_FUNCTION_TYPE_ELAPSED_TIME FunctionType = 25
+	// Indicates whether the current time falls within a configured absolute or recurring schedule.
+	FunctionType_FUNCTION_TYPE_SCHEDULE FunctionType = 26
 	// Resolves the part associated with a task.
 	FunctionType_FUNCTION_TYPE_PART_FOR_TASK FunctionType = 40
 	// Evaluates whether a part matches a specified part type.
@@ -76,6 +86,11 @@ var (
 		10:  "FUNCTION_TYPE_PROXIMITY",
 		11:  "FUNCTION_TYPE_STATIONARY",
 		21:  "FUNCTION_TYPE_TIMER",
+		22:  "FUNCTION_TYPE_DELAY",
+		23:  "FUNCTION_TYPE_TIMEOUT",
+		24:  "FUNCTION_TYPE_DEBOUNCE",
+		25:  "FUNCTION_TYPE_ELAPSED_TIME",
+		26:  "FUNCTION_TYPE_SCHEDULE",
 		40:  "FUNCTION_TYPE_PART_FOR_TASK",
 		50:  "FUNCTION_TYPE_IS_PART_OF_TYPE",
 		51:  "FUNCTION_TYPE_CLOSEST_WORKABLE_TASK",
@@ -99,6 +114,11 @@ var (
 		"FUNCTION_TYPE_PROXIMITY":                 10,
 		"FUNCTION_TYPE_STATIONARY":                11,
 		"FUNCTION_TYPE_TIMER":                     21,
+		"FUNCTION_TYPE_DELAY":                     22,
+		"FUNCTION_TYPE_TIMEOUT":                   23,
+		"FUNCTION_TYPE_DEBOUNCE":                  24,
+		"FUNCTION_TYPE_ELAPSED_TIME":              25,
+		"FUNCTION_TYPE_SCHEDULE":                  26,
 		"FUNCTION_TYPE_PART_FOR_TASK":             40,
 		"FUNCTION_TYPE_IS_PART_OF_TYPE":           50,
 		"FUNCTION_TYPE_CLOSEST_WORKABLE_TASK":     51,
@@ -442,13 +462,18 @@ const file_ar_v1_function_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xb2\x05\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xbe\x06\n" +
 	"\fFunctionType\x12\x1d\n" +
 	"\x19FUNCTION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17FUNCTION_TYPE_PROXIMITY\x10\n" +
 	"\x12\x1c\n" +
 	"\x18FUNCTION_TYPE_STATIONARY\x10\v\x12\x17\n" +
-	"\x13FUNCTION_TYPE_TIMER\x10\x15\x12\x1f\n" +
+	"\x13FUNCTION_TYPE_TIMER\x10\x15\x12\x17\n" +
+	"\x13FUNCTION_TYPE_DELAY\x10\x16\x12\x19\n" +
+	"\x15FUNCTION_TYPE_TIMEOUT\x10\x17\x12\x1a\n" +
+	"\x16FUNCTION_TYPE_DEBOUNCE\x10\x18\x12\x1e\n" +
+	"\x1aFUNCTION_TYPE_ELAPSED_TIME\x10\x19\x12\x1a\n" +
+	"\x16FUNCTION_TYPE_SCHEDULE\x10\x1a\x12\x1f\n" +
 	"\x1bFUNCTION_TYPE_PART_FOR_TASK\x10(\x12!\n" +
 	"\x1dFUNCTION_TYPE_IS_PART_OF_TYPE\x102\x12'\n" +
 	"#FUNCTION_TYPE_CLOSEST_WORKABLE_TASK\x103\x12!\n" +

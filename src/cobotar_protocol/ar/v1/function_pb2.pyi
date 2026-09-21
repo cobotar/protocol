@@ -15,6 +15,11 @@ class FunctionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FUNCTION_TYPE_PROXIMITY: _ClassVar[FunctionType]
     FUNCTION_TYPE_STATIONARY: _ClassVar[FunctionType]
     FUNCTION_TYPE_TIMER: _ClassVar[FunctionType]
+    FUNCTION_TYPE_DELAY: _ClassVar[FunctionType]
+    FUNCTION_TYPE_TIMEOUT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_DEBOUNCE: _ClassVar[FunctionType]
+    FUNCTION_TYPE_ELAPSED_TIME: _ClassVar[FunctionType]
+    FUNCTION_TYPE_SCHEDULE: _ClassVar[FunctionType]
     FUNCTION_TYPE_PART_FOR_TASK: _ClassVar[FunctionType]
     FUNCTION_TYPE_IS_PART_OF_TYPE: _ClassVar[FunctionType]
     FUNCTION_TYPE_CLOSEST_WORKABLE_TASK: _ClassVar[FunctionType]
@@ -36,6 +41,11 @@ FUNCTION_TYPE_UNSPECIFIED: FunctionType
 FUNCTION_TYPE_PROXIMITY: FunctionType
 FUNCTION_TYPE_STATIONARY: FunctionType
 FUNCTION_TYPE_TIMER: FunctionType
+FUNCTION_TYPE_DELAY: FunctionType
+FUNCTION_TYPE_TIMEOUT: FunctionType
+FUNCTION_TYPE_DEBOUNCE: FunctionType
+FUNCTION_TYPE_ELAPSED_TIME: FunctionType
+FUNCTION_TYPE_SCHEDULE: FunctionType
 FUNCTION_TYPE_PART_FOR_TASK: FunctionType
 FUNCTION_TYPE_IS_PART_OF_TYPE: FunctionType
 FUNCTION_TYPE_CLOSEST_WORKABLE_TASK: FunctionType

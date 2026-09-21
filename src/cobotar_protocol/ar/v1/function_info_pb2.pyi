@@ -21,6 +21,8 @@ class FunctionGroup(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FUNCTION_GROUP_OPERATOR: _ClassVar[FunctionGroup]
     FUNCTION_GROUP_SPATIAL: _ClassVar[FunctionGroup]
     FUNCTION_GROUP_LOGIC: _ClassVar[FunctionGroup]
+    FUNCTION_GROUP_DATA: _ClassVar[FunctionGroup]
+    FUNCTION_GROUP_TEMPORAL: _ClassVar[FunctionGroup]
 FUNCTION_GROUP_UNSPECIFIED: FunctionGroup
 FUNCTION_GROUP_GENERAL: FunctionGroup
 FUNCTION_GROUP_ROBOT: FunctionGroup
@@ -29,6 +31,8 @@ FUNCTION_GROUP_ENVIRONMENT: FunctionGroup
 FUNCTION_GROUP_OPERATOR: FunctionGroup
 FUNCTION_GROUP_SPATIAL: FunctionGroup
 FUNCTION_GROUP_LOGIC: FunctionGroup
+FUNCTION_GROUP_DATA: FunctionGroup
+FUNCTION_GROUP_TEMPORAL: FunctionGroup
 
 class FunctionInfoMessage(_message.Message):
     __slots__ = ("name", "icon", "description", "type", "group", "consumers_required", "consumers_optional", "required_handlers", "emits", "disabled")

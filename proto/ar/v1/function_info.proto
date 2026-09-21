@@ -11,13 +11,33 @@ option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
 enum FunctionGroup {
   FUNCTION_GROUP_UNSPECIFIED = 0;
+
+  // Functions that do not yet fit a more specific domain.
   FUNCTION_GROUP_GENERAL = 1;
+
+  // Functions that read or evaluate robot-specific information.
   FUNCTION_GROUP_ROBOT = 2;
+
+  // Functions that resolve or evaluate task and process information.
   FUNCTION_GROUP_TASK = 3;
+
+  // Functions that evaluate the surrounding work environment.
   FUNCTION_GROUP_ENVIRONMENT = 4;
+
+  // Functions that resolve or evaluate operator-specific information.
   FUNCTION_GROUP_OPERATOR = 5;
+
+  // Functions that evaluate positions, movement, distance, or geometry.
   FUNCTION_GROUP_SPATIAL = 6;
+
+  // Boolean operations and predicates.
   FUNCTION_GROUP_LOGIC = 7;
+
+  // Formatting, conversion, parsing, and other value transformations.
+  FUNCTION_GROUP_DATA = 8;
+
+  // Functions related to durations, timing, and schedules.
+  FUNCTION_GROUP_TEMPORAL = 9;
 }
 
 message FunctionInfoMessage {

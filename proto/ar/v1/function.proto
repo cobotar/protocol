@@ -24,8 +24,23 @@ enum FunctionType {
   // Temporal evaluation (20–29)
   // -------------------------
 
-  // Evaluates whether a configured duration has elapsed.
+  // Produces an active output for a configured duration after being triggered.
   FUNCTION_TYPE_TIMER = 21;
+
+  // Propagates an input or trigger after a configured delay.
+  FUNCTION_TYPE_DELAY = 22;
+
+  // Indicates that an expected input or event did not occur within a configured duration.
+  FUNCTION_TYPE_TIMEOUT = 23;
+
+  // Changes its output only after the input has remained stable for a configured duration.
+  FUNCTION_TYPE_DEBOUNCE = 24;
+
+  // Reports the time elapsed since it was triggered or reset.
+  FUNCTION_TYPE_ELAPSED_TIME = 25;
+
+  // Indicates whether the current time falls within a configured absolute or recurring schedule.
+  FUNCTION_TYPE_SCHEDULE = 26;
 
   // -------------------------
   // Task and part lookup (40–59)

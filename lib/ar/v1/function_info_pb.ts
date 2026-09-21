@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/function_info.proto.
  */
 export const file_ar_v1_function_info: GenFile = /*@__PURE__*/
-  fileDesc("Chlhci92MS9mdW5jdGlvbl9pbmZvLnByb3RvEgVhci52MSL+AgoTRnVuY3Rpb25JbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZ1bmN0aW9uR3JvdXBCCLpIBYIBAhABEi8KEmNvbnN1bWVyc19yZXF1aXJlZBgJIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRIvChJjb25zdW1lcnNfb3B0aW9uYWwYCiADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSNAoRcmVxdWlyZWRfaGFuZGxlcnMYCyADKAsyGS5hci52MS5IYW5kbGVyUmVxdWlyZW1lbnQSIgoFZW1pdHMYDCADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSEAoIZGlzYWJsZWQYDSABKAgiQQoURnVuY3Rpb25JbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5GdW5jdGlvbkluZm9NZXNzYWdlKvEBCg1GdW5jdGlvbkdyb3VwEh4KGkZVTkNUSU9OX0dST1VQX1VOU1BFQ0lGSUVEEAASGgoWRlVOQ1RJT05fR1JPVVBfR0VORVJBTBABEhgKFEZVTkNUSU9OX0dST1VQX1JPQk9UEAISFwoTRlVOQ1RJT05fR1JPVVBfVEFTSxADEh4KGkZVTkNUSU9OX0dST1VQX0VOVklST05NRU5UEAQSGwoXRlVOQ1RJT05fR1JPVVBfT1BFUkFUT1IQBRIaChZGVU5DVElPTl9HUk9VUF9TUEFUSUFMEAYSGAoURlVOQ1RJT05fR1JPVVBfTE9HSUMQB0KNAQoJY29tLmFyLnYxQhFGdW5jdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_events, file_ar_v1_function, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chlhci92MS9mdW5jdGlvbl9pbmZvLnByb3RvEgVhci52MSL+AgoTRnVuY3Rpb25JbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZ1bmN0aW9uR3JvdXBCCLpIBYIBAhABEi8KEmNvbnN1bWVyc19yZXF1aXJlZBgJIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRIvChJjb25zdW1lcnNfb3B0aW9uYWwYCiADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSNAoRcmVxdWlyZWRfaGFuZGxlcnMYCyADKAsyGS5hci52MS5IYW5kbGVyUmVxdWlyZW1lbnQSIgoFZW1pdHMYDCADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSEAoIZGlzYWJsZWQYDSABKAgiQQoURnVuY3Rpb25JbmZvTWVzc2FnZXMSKQoFaW5mb3MYASADKAsyGi5hci52MS5GdW5jdGlvbkluZm9NZXNzYWdlKqcCCg1GdW5jdGlvbkdyb3VwEh4KGkZVTkNUSU9OX0dST1VQX1VOU1BFQ0lGSUVEEAASGgoWRlVOQ1RJT05fR1JPVVBfR0VORVJBTBABEhgKFEZVTkNUSU9OX0dST1VQX1JPQk9UEAISFwoTRlVOQ1RJT05fR1JPVVBfVEFTSxADEh4KGkZVTkNUSU9OX0dST1VQX0VOVklST05NRU5UEAQSGwoXRlVOQ1RJT05fR1JPVVBfT1BFUkFUT1IQBRIaChZGVU5DVElPTl9HUk9VUF9TUEFUSUFMEAYSGAoURlVOQ1RJT05fR1JPVVBfTE9HSUMQBxIXChNGVU5DVElPTl9HUk9VUF9EQVRBEAgSGwoXRlVOQ1RJT05fR1JPVVBfVEVNUE9SQUwQCUKNAQoJY29tLmFyLnYxQhFGdW5jdGlvbkluZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_events, file_ar_v1_function, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FunctionInfoMessage
@@ -115,39 +115,67 @@ export enum FunctionGroup {
   UNSPECIFIED = 0,
 
   /**
+   * Functions that do not yet fit a more specific domain.
+   *
    * @generated from enum value: FUNCTION_GROUP_GENERAL = 1;
    */
   GENERAL = 1,
 
   /**
+   * Functions that read or evaluate robot-specific information.
+   *
    * @generated from enum value: FUNCTION_GROUP_ROBOT = 2;
    */
   ROBOT = 2,
 
   /**
+   * Functions that resolve or evaluate task and process information.
+   *
    * @generated from enum value: FUNCTION_GROUP_TASK = 3;
    */
   TASK = 3,
 
   /**
+   * Functions that evaluate the surrounding work environment.
+   *
    * @generated from enum value: FUNCTION_GROUP_ENVIRONMENT = 4;
    */
   ENVIRONMENT = 4,
 
   /**
+   * Functions that resolve or evaluate operator-specific information.
+   *
    * @generated from enum value: FUNCTION_GROUP_OPERATOR = 5;
    */
   OPERATOR = 5,
 
   /**
+   * Functions that evaluate positions, movement, distance, or geometry.
+   *
    * @generated from enum value: FUNCTION_GROUP_SPATIAL = 6;
    */
   SPATIAL = 6,
 
   /**
+   * Boolean operations and predicates.
+   *
    * @generated from enum value: FUNCTION_GROUP_LOGIC = 7;
    */
   LOGIC = 7,
+
+  /**
+   * Formatting, conversion, parsing, and other value transformations.
+   *
+   * @generated from enum value: FUNCTION_GROUP_DATA = 8;
+   */
+  DATA = 8,
+
+  /**
+   * Functions related to durations, timing, and schedules.
+   *
+   * @generated from enum value: FUNCTION_GROUP_TEMPORAL = 9;
+   */
+  TEMPORAL = 9,
 }
 
 /**

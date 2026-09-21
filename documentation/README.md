@@ -3048,7 +3048,12 @@ Custom training video       MANUAL_ONLY
 | FUNCTION_TYPE_UNSPECIFIED | 0 |  |
 | FUNCTION_TYPE_PROXIMITY | 10 | Evaluates whether two spatial entities are within a configured distance. |
 | FUNCTION_TYPE_STATIONARY | 11 | Evaluates whether a spatial entity is stationary. |
-| FUNCTION_TYPE_TIMER | 21 | Evaluates whether a configured duration has elapsed. |
+| FUNCTION_TYPE_TIMER | 21 | Produces an active output for a configured duration after being triggered. |
+| FUNCTION_TYPE_DELAY | 22 | Propagates an input or trigger after a configured delay. |
+| FUNCTION_TYPE_TIMEOUT | 23 | Indicates that an expected input or event did not occur within a configured duration. |
+| FUNCTION_TYPE_DEBOUNCE | 24 | Changes its output only after the input has remained stable for a configured duration. |
+| FUNCTION_TYPE_ELAPSED_TIME | 25 | Reports the time elapsed since it was triggered or reset. |
+| FUNCTION_TYPE_SCHEDULE | 26 | Indicates whether the current time falls within a configured absolute or recurring schedule. |
 | FUNCTION_TYPE_PART_FOR_TASK | 40 | Resolves the part associated with a task. |
 | FUNCTION_TYPE_IS_PART_OF_TYPE | 50 | Evaluates whether a part matches a specified part type. |
 | FUNCTION_TYPE_CLOSEST_WORKABLE_TASK | 51 | Resolves the closest task that is currently workable. |
@@ -3132,13 +3137,15 @@ Custom training video       MANUAL_ONLY
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | FUNCTION_GROUP_UNSPECIFIED | 0 |  |
-| FUNCTION_GROUP_GENERAL | 1 |  |
-| FUNCTION_GROUP_ROBOT | 2 |  |
-| FUNCTION_GROUP_TASK | 3 |  |
-| FUNCTION_GROUP_ENVIRONMENT | 4 |  |
-| FUNCTION_GROUP_OPERATOR | 5 |  |
-| FUNCTION_GROUP_SPATIAL | 6 |  |
-| FUNCTION_GROUP_LOGIC | 7 |  |
+| FUNCTION_GROUP_GENERAL | 1 | Functions that do not yet fit a more specific domain. |
+| FUNCTION_GROUP_ROBOT | 2 | Functions that read or evaluate robot-specific information. |
+| FUNCTION_GROUP_TASK | 3 | Functions that resolve or evaluate task and process information. |
+| FUNCTION_GROUP_ENVIRONMENT | 4 | Functions that evaluate the surrounding work environment. |
+| FUNCTION_GROUP_OPERATOR | 5 | Functions that resolve or evaluate operator-specific information. |
+| FUNCTION_GROUP_SPATIAL | 6 | Functions that evaluate positions, movement, distance, or geometry. |
+| FUNCTION_GROUP_LOGIC | 7 | Boolean operations and predicates. |
+| FUNCTION_GROUP_DATA | 8 | Formatting, conversion, parsing, and other value transformations. |
+| FUNCTION_GROUP_TEMPORAL | 9 | Functions related to durations, timing, and schedules. |
 
 
  

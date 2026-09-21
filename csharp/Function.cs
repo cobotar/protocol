@@ -40,26 +40,29 @@ namespace Messages.AR.V1 {
             "AhAByAEBUgR0eXBlIocBChVGdW5jdGlvblVwZGF0ZU1lc3NhZ2USGQoCaWQY",
             "ASABKAlCCbpIBnIE0PMEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
             "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
-            "KAlSC2Rlc2NyaXB0aW9uKrIFCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05f",
+            "KAlSC2Rlc2NyaXB0aW9uKr4GCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05f",
             "VFlQRV9VTlNQRUNJRklFRBAAEhsKF0ZVTkNUSU9OX1RZUEVfUFJPWElNSVRZ",
             "EAoSHAoYRlVOQ1RJT05fVFlQRV9TVEFUSU9OQVJZEAsSFwoTRlVOQ1RJT05f",
-            "VFlQRV9USU1FUhAVEh8KG0ZVTkNUSU9OX1RZUEVfUEFSVF9GT1JfVEFTSxAo",
-            "EiEKHUZVTkNUSU9OX1RZUEVfSVNfUEFSVF9PRl9UWVBFEDISJwojRlVOQ1RJ",
-            "T05fVFlQRV9DTE9TRVNUX1dPUktBQkxFX1RBU0sQMxIhCh1GVU5DVElPTl9U",
-            "WVBFX1NUUklOR19GT1JNQVRfMRA8EiEKHUZVTkNUSU9OX1RZUEVfU1RSSU5H",
-            "X0ZPUk1BVF8yED0SHgoaRlVOQ1RJT05fVFlQRV9TVFJJTkdfRU1QVFkQPhIc",
-            "ChhGVU5DVElPTl9UWVBFX0lOVF9GT1JNQVQQRhIdChlGVU5DVElPTl9UWVBF",
-            "X0lOVF9DT01QQVJFEEcSHgoaRlVOQ1RJT05fVFlQRV9GTE9BVF9GT1JNQVQQ",
-            "UBIfChtGVU5DVElPTl9UWVBFX0ZMT0FUX0NPTVBBUkUQURIfChtGVU5DVElP",
-            "Tl9UWVBFX0RPVUJMRV9GT1JNQVQQWhIgChxGVU5DVElPTl9UWVBFX0RPVUJM",
-            "RV9DT01QQVJFEFsSFQoRRlVOQ1RJT05fVFlQRV9BTkQQZBIUChBGVU5DVElP",
-            "Tl9UWVBFX09SEGUSFQoRRlVOQ1RJT05fVFlQRV9OT1QQZhIqCiZGVU5DVElP",
-            "Tl9UWVBFX1JPQk9UX0NPTkZJR1VSQUJMRV9JTlBVVBB4EisKJ0ZVTkNUSU9O",
-            "X1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX09VVFBVVBB5QokBCgljb20uYXIu",
-            "djFCDUZ1bmN0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
-            "Y29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5W",
-            "McoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3Rv",
-            "Mw=="));
+            "VFlQRV9USU1FUhAVEhcKE0ZVTkNUSU9OX1RZUEVfREVMQVkQFhIZChVGVU5D",
+            "VElPTl9UWVBFX1RJTUVPVVQQFxIaChZGVU5DVElPTl9UWVBFX0RFQk9VTkNF",
+            "EBgSHgoaRlVOQ1RJT05fVFlQRV9FTEFQU0VEX1RJTUUQGRIaChZGVU5DVElP",
+            "Tl9UWVBFX1NDSEVEVUxFEBoSHwobRlVOQ1RJT05fVFlQRV9QQVJUX0ZPUl9U",
+            "QVNLECgSIQodRlVOQ1RJT05fVFlQRV9JU19QQVJUX09GX1RZUEUQMhInCiNG",
+            "VU5DVElPTl9UWVBFX0NMT1NFU1RfV09SS0FCTEVfVEFTSxAzEiEKHUZVTkNU",
+            "SU9OX1RZUEVfU1RSSU5HX0ZPUk1BVF8xEDwSIQodRlVOQ1RJT05fVFlQRV9T",
+            "VFJJTkdfRk9STUFUXzIQPRIeChpGVU5DVElPTl9UWVBFX1NUUklOR19FTVBU",
+            "WRA+EhwKGEZVTkNUSU9OX1RZUEVfSU5UX0ZPUk1BVBBGEh0KGUZVTkNUSU9O",
+            "X1RZUEVfSU5UX0NPTVBBUkUQRxIeChpGVU5DVElPTl9UWVBFX0ZMT0FUX0ZP",
+            "Uk1BVBBQEh8KG0ZVTkNUSU9OX1RZUEVfRkxPQVRfQ09NUEFSRRBREh8KG0ZV",
+            "TkNUSU9OX1RZUEVfRE9VQkxFX0ZPUk1BVBBaEiAKHEZVTkNUSU9OX1RZUEVf",
+            "RE9VQkxFX0NPTVBBUkUQWxIVChFGVU5DVElPTl9UWVBFX0FORBBkEhQKEEZV",
+            "TkNUSU9OX1RZUEVfT1IQZRIVChFGVU5DVElPTl9UWVBFX05PVBBmEioKJkZV",
+            "TkNUSU9OX1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX0lOUFVUEHgSKwonRlVO",
+            "Q1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfT1VUUFVUEHlCiQEKCWNv",
+            "bS5hci52MUINRnVuY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIv",
+            "cHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2Vz",
+            "LkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FunctionType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +87,29 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_STATIONARY")] Stationary = 11,
     /// <summary>
-    /// Evaluates whether a configured duration has elapsed.
+    /// Produces an active output for a configured duration after being triggered.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_TIMER")] Timer = 21,
+    /// <summary>
+    /// Propagates an input or trigger after a configured delay.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_DELAY")] Delay = 22,
+    /// <summary>
+    /// Indicates that an expected input or event did not occur within a configured duration.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_TIMEOUT")] Timeout = 23,
+    /// <summary>
+    /// Changes its output only after the input has remained stable for a configured duration.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_DEBOUNCE")] Debounce = 24,
+    /// <summary>
+    /// Reports the time elapsed since it was triggered or reset.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_ELAPSED_TIME")] ElapsedTime = 25,
+    /// <summary>
+    /// Indicates whether the current time falls within a configured absolute or recurring schedule.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_SCHEDULE")] Schedule = 26,
     /// <summary>
     /// Resolves the part associated with a task.
     /// </summary>

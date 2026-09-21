@@ -27,13 +27,24 @@ type FunctionGroup int32
 
 const (
 	FunctionGroup_FUNCTION_GROUP_UNSPECIFIED FunctionGroup = 0
-	FunctionGroup_FUNCTION_GROUP_GENERAL     FunctionGroup = 1
-	FunctionGroup_FUNCTION_GROUP_ROBOT       FunctionGroup = 2
-	FunctionGroup_FUNCTION_GROUP_TASK        FunctionGroup = 3
+	// Functions that do not yet fit a more specific domain.
+	FunctionGroup_FUNCTION_GROUP_GENERAL FunctionGroup = 1
+	// Functions that read or evaluate robot-specific information.
+	FunctionGroup_FUNCTION_GROUP_ROBOT FunctionGroup = 2
+	// Functions that resolve or evaluate task and process information.
+	FunctionGroup_FUNCTION_GROUP_TASK FunctionGroup = 3
+	// Functions that evaluate the surrounding work environment.
 	FunctionGroup_FUNCTION_GROUP_ENVIRONMENT FunctionGroup = 4
-	FunctionGroup_FUNCTION_GROUP_OPERATOR    FunctionGroup = 5
-	FunctionGroup_FUNCTION_GROUP_SPATIAL     FunctionGroup = 6
-	FunctionGroup_FUNCTION_GROUP_LOGIC       FunctionGroup = 7
+	// Functions that resolve or evaluate operator-specific information.
+	FunctionGroup_FUNCTION_GROUP_OPERATOR FunctionGroup = 5
+	// Functions that evaluate positions, movement, distance, or geometry.
+	FunctionGroup_FUNCTION_GROUP_SPATIAL FunctionGroup = 6
+	// Boolean operations and predicates.
+	FunctionGroup_FUNCTION_GROUP_LOGIC FunctionGroup = 7
+	// Formatting, conversion, parsing, and other value transformations.
+	FunctionGroup_FUNCTION_GROUP_DATA FunctionGroup = 8
+	// Functions related to durations, timing, and schedules.
+	FunctionGroup_FUNCTION_GROUP_TEMPORAL FunctionGroup = 9
 )
 
 // Enum value maps for FunctionGroup.
@@ -47,6 +58,8 @@ var (
 		5: "FUNCTION_GROUP_OPERATOR",
 		6: "FUNCTION_GROUP_SPATIAL",
 		7: "FUNCTION_GROUP_LOGIC",
+		8: "FUNCTION_GROUP_DATA",
+		9: "FUNCTION_GROUP_TEMPORAL",
 	}
 	FunctionGroup_value = map[string]int32{
 		"FUNCTION_GROUP_UNSPECIFIED": 0,
@@ -57,6 +70,8 @@ var (
 		"FUNCTION_GROUP_OPERATOR":    5,
 		"FUNCTION_GROUP_SPATIAL":     6,
 		"FUNCTION_GROUP_LOGIC":       7,
+		"FUNCTION_GROUP_DATA":        8,
+		"FUNCTION_GROUP_TEMPORAL":    9,
 	}
 )
 
@@ -265,7 +280,7 @@ const file_ar_v1_function_info_proto_rawDesc = "" +
 	"\x05emits\x18\f \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\x1a\n" +
 	"\bdisabled\x18\r \x01(\bR\bdisabled\"H\n" +
 	"\x14FunctionInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FunctionInfoMessageR\x05infos*\xf1\x01\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FunctionInfoMessageR\x05infos*\xa7\x02\n" +
 	"\rFunctionGroup\x12\x1e\n" +
 	"\x1aFUNCTION_GROUP_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16FUNCTION_GROUP_GENERAL\x10\x01\x12\x18\n" +
@@ -274,7 +289,9 @@ const file_ar_v1_function_info_proto_rawDesc = "" +
 	"\x1aFUNCTION_GROUP_ENVIRONMENT\x10\x04\x12\x1b\n" +
 	"\x17FUNCTION_GROUP_OPERATOR\x10\x05\x12\x1a\n" +
 	"\x16FUNCTION_GROUP_SPATIAL\x10\x06\x12\x18\n" +
-	"\x14FUNCTION_GROUP_LOGIC\x10\aB\x8d\x01\n" +
+	"\x14FUNCTION_GROUP_LOGIC\x10\a\x12\x17\n" +
+	"\x13FUNCTION_GROUP_DATA\x10\b\x12\x1b\n" +
+	"\x17FUNCTION_GROUP_TEMPORAL\x10\tB\x8d\x01\n" +
 	"\tcom.ar.v1B\x11FunctionInfoProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
