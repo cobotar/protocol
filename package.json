@@ -1,6 +1,6 @@
 {
   "name": "@cobotar/protocol",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A collection of protobuf messages for the CobotAR-project",
   "homepage": "https://github.com/cobotar/protocol#readme",
   "files": [
