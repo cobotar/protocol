@@ -1499,6 +1499,7 @@ ARInputSlotAddMessage creates a new config-owned input slot.
 The source kind determines the generated property&#39;s value kind. If the source
 kind must change later, prefer delete &#43; recreate. A run selector is a mutable
 resolution policy and may be changed with ARInputSlotUpdateMessage.
+Resource slots are always required; context slots are always optional.
 
 
 | Field | Type | Label | Description |
@@ -1507,7 +1508,6 @@ resolution policy and may be changed with ARInputSlotUpdateMessage.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| required | [bool](#bool) |  | If true, future bindings/resolution must satisfy the slot. |
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
 | run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
@@ -1542,6 +1542,10 @@ The backend is expected to derive and manage generated_property_id from the
 slot identity and value kind. Users should not author or edit the generated
 property directly.
 
+Resource slots are mandatory and materialization fails if no compatible
+resource binding can satisfy them. Context slots are optional and leave their
+generated property empty when the requested context cannot be resolved.
+
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
@@ -1550,7 +1554,6 @@ property directly.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| required | [bool](#bool) |  | If true, bindings/resolution should fail when this slot cannot be satisfied. |
 | generated_property_id | [string](#string) |  | Server-managed property that should receive the resolved slot value at runtime. |
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
@@ -1593,7 +1596,6 @@ be updated because it changes resolution policy without changing value type.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| required | [bool](#bool) | optional | Optional replacement for the slot&#39;s required flag. |
 | run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type. |
 
 
@@ -1614,9 +1616,8 @@ ID requested by the owning input slot:
 FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
 to a parent sequence or process.
 
-If no task satisfies the policy, resolution produces no value. An optional
-input slot receives an empty generated property value; a required input slot
-makes materialization fail.
+If no task satisfies the policy, resolution produces no value and the
+context slot&#39;s generated property remains empty.
 
 
 | Field | Type | Label | Description |
@@ -2147,7 +2148,9 @@ Creates a PropertyDefinition and its required template PropertyInstance.
 | ----- | ---- | ----- | ----------- |
 | parent_id | [string](#string) |  | Ownership |
 | authoring_context_id | [string](#string) |  |  |
-| name | [string](#string) |  | Definition |
+| name | [string](#string) |  | Definition
+
+TODO [(buf.validate.field).string.(validation.v1.name_component) = true]; |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [PropertyType](#common-v1-PropertyType) |  |  |

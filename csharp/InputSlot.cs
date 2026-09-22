@@ -33,94 +33,92 @@ namespace Messages.AR.V1 {
             "Q29udGV4dFNlbGVjdG9yEkAKCXNlbGVjdGlvbhgBIAEoDjIVLmFyLnYxLkFS",
             "UnVuU2VsZWN0aW9uQgu6SAiCAQIQAcgBAVIJc2VsZWN0aW9uEjQKBWFjdG9y",
             "GAIgASgLMhYuYXIudjEuQVJBY3RvclNlbGVjdG9yQga6SAPIAQFSBWFjdG9y",
-            "IrgJChJBUklucHV0U2xvdE1lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE+Osw",
+            "IpwJChJBUklucHV0U2xvdE1lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE+Osw",
             "AVICaWQSKQoJY29uZmlnX2lkGAIgASgJQgy6SAlyBJDxBAHIAQFSCGNvbmZp",
             "Z0lkEh0KBG5hbWUYAyABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAQg",
-            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbhIa",
-            "CghyZXF1aXJlZBgGIAEoCFIIcmVxdWlyZWQSQAoVZ2VuZXJhdGVkX3Byb3Bl",
-            "cnR5X2lkGAcgASgJQgy6SAlyBJjxBAHIAQFSE2dlbmVyYXRlZFByb3BlcnR5",
-            "SWQSSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFSUmVzb3VyY2VT",
-            "bG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlwZRJFCgxjb250ZXh0X3R5",
-            "cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90VHlwZUIIukgFggECEAFS",
-            "C2NvbnRleHRUeXBlEj4KDHJ1bl9zZWxlY3RvchgKIAEoCzIbLmFyLnYxLkFS",
-            "UnVuQ29udGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvcjrXBbpI0wUanQIKK2Fy",
-            "X2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVpcmVzX3Rhc2sSLEZJ",
-            "UlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRBU0tfUlVOX0lEGr8B",
-            "IWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5ydW5fc2VsZWN0b3Iu",
-            "c2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9uLkFSX1JVTl9TRUxF",
-            "Q1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250ZXh0X3R5cGUgPT0g",
-            "YXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVf",
-            "VEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVuX3NlbGVjdG9yX21h",
-            "dGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3IgaXMgcmVxdWlyZWQg",
-            "Zm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJpdGVkIG90aGVyd2lz",
-            "ZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
-            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNTX1JVTl9JRCB8fCB0",
-            "aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5B",
-            "Ul9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQgfHwgdGhpcy5j",
-            "b250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09O",
-            "VEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhhcyh0aGlzLnJ1bl9z",
-            "ZWxlY3RvcikiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4dF90eXBlEAEiRgoT",
-            "QVJJbnB1dFNsb3RNZXNzYWdlcxIvCgVzbG90cxgBIAMoCzIZLmFyLnYxLkFS",
-            "SW5wdXRTbG90TWVzc2FnZVIFc2xvdHMi3ggKFUFSSW5wdXRTbG90QWRkTWVz",
-            "c2FnZRIpCgljb25maWdfaWQYASABKAlCDLpICXIEkPEEAcgBAVIIY29uZmln",
-            "SWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEhoK",
-            "CHJlcXVpcmVkGAUgASgIUghyZXF1aXJlZBJICg1yZXNvdXJjZV90eXBlGAgg",
-            "ASgOMhkuYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVz",
-            "b3VyY2VUeXBlEkUKDGNvbnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29u",
-            "dGV4dFNsb3RUeXBlQgi6SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3Nl",
-            "bGVjdG9yGAogASgLMhsuYXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1",
-            "blNlbGVjdG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxl",
-            "Y3Rpb25fcmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2",
-            "YWxpZCBmb3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9y",
-            "KSB8fCB0aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJS",
-            "dW5TZWxlY3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8",
-            "fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlw",
-            "ZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5w",
-            "dXRfc2xvdC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1",
-            "bl9zZWxlY3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMg",
-            "YW5kIHByb2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBl",
-            "ID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9U",
-            "WVBFX1BST0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFy",
-            "LnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NF",
-            "UVVFTkNFX1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5B",
-            "UkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JV",
-            "Tl9JRCkgPT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90",
-            "eXBlCgxjb250ZXh0X3R5cGUQASL4AQoYQVJJbnB1dFNsb3RVcGRhdGVNZXNz",
-            "YWdlEhkKAmlkGAEgASgJQgm6SAZyBPjrMAFSAmlkEh0KBG5hbWUYAiABKAlC",
-            "CbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIfCghyZXF1aXJlZBgFIAEoCEgA",
-            "UghyZXF1aXJlZIgBARI+CgxydW5fc2VsZWN0b3IYBiABKAsyGy5hci52MS5B",
-            "UlJ1bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3JCCwoJX3JlcXVpcmVk",
-            "IjgKGEFSSW5wdXRTbG90RGVsZXRlTWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJ",
-            "cgT46zAByAEBUgJpZCp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVT",
-            "T1VSQ0VfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0Vf",
-            "U0xPVF9UWVBFX1JPQk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FT",
-            "U0VUEAIqvwIKEUFSQ29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xP",
-            "VF9UWVBFX1VOU1BFQ0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVf",
-            "TElORV9JRBABEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIj",
-            "Ch9BUl9DT05URVhUX1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09O",
-            "VEVYVF9TTE9UX1RZUEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9U",
-            "X1RZUEVfUFJPQ0VTU19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQ",
-            "RV9TRVFVRU5DRV9SVU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9U",
-            "QVNLX1JVTl9JRBAHKuwBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VM",
-            "RUNUSU9OX1VOU1BFQ0lGSUVEEAASIwofQVJfUlVOX1NFTEVDVElPTl9GSVJT",
-            "VF9XT1JLQUJMRRABEiUKIUFSX1JVTl9TRUxFQ1RJT05fQ1VSUkVOVF9BU1NJ",
-            "R05FRBACEiIKHkFSX1JVTl9TRUxFQ1RJT05fTkVYVF9FWFBFQ1RFRBADEiMK",
-            "H0FSX1JVTl9TRUxFQ1RJT05fTEFTVF9DT01QTEVURUQQBBIjCh9BUl9SVU5f",
-            "U0VMRUNUSU9OX0ZJUlNUX0lOX0VSUk9SEAVCigEKCWNvbS5hci52MUIOSW5w",
-            "dXRTbG90UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
-            "c3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFy",
-            "XFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbhJA",
+            "ChVnZW5lcmF0ZWRfcHJvcGVydHlfaWQYByABKAlCDLpICXIEmPEEAcgBAVIT",
+            "Z2VuZXJhdGVkUHJvcGVydHlJZBJICg1yZXNvdXJjZV90eXBlGAggASgOMhku",
+            "YXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVzb3VyY2VU",
+            "eXBlEkUKDGNvbnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNs",
+            "b3RUeXBlQgi6SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3NlbGVjdG9y",
+            "GAogASgLMhsuYXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVj",
+            "dG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25f",
+            "cmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBm",
+            "b3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0",
+            "aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxl",
+            "Y3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlz",
+            "LmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9D",
+            "T05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xv",
+            "dC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxl",
+            "Y3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHBy",
+            "b2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFy",
+            "LnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BS",
+            "T0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFS",
+            "Q29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNF",
+            "X1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
+            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkg",
+            "PT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90eXBlCgxj",
+            "b250ZXh0X3R5cGUQASJGChNBUklucHV0U2xvdE1lc3NhZ2VzEi8KBXNsb3Rz",
+            "GAEgAygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlUgVzbG90cyLCCAoV",
+            "QVJJbnB1dFNsb3RBZGRNZXNzYWdlEikKCWNvbmZpZ19pZBgBIAEoCUIMukgJ",
+            "cgSQ8QQByAEBUghjb25maWdJZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
+            "BG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEo",
+            "CVILZGVzY3JpcHRpb24SSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYx",
+            "LkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlwZRJF",
+            "Cgxjb250ZXh0X3R5cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90VHlw",
+            "ZUIIukgFggECEAFSC2NvbnRleHRUeXBlEj4KDHJ1bl9zZWxlY3RvchgKIAEo",
+            "CzIbLmFyLnYxLkFSUnVuQ29udGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvcjrX",
+            "BbpI0wUanQIKK2FyX2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVp",
+            "cmVzX3Rhc2sSLEZJUlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRB",
+            "U0tfUlVOX0lEGr8BIWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5y",
+            "dW5fc2VsZWN0b3Iuc2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9u",
+            "LkFSX1JVTl9TRUxFQ1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250",
+            "ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVY",
+            "VF9TTE9UX1RZUEVfVEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVu",
+            "X3NlbGVjdG9yX21hdGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3Ig",
+            "aXMgcmVxdWlyZWQgZm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJp",
+            "dGVkIG90aGVyd2lzZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5B",
+            "UkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNT",
+            "X1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
+            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5f",
+            "SUQgfHwgdGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xv",
+            "dFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhh",
+            "cyh0aGlzLnJ1bl9zZWxlY3RvcikiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4",
+            "dF90eXBlEAEiygEKGEFSSW5wdXRTbG90VXBkYXRlTWVzc2FnZRIZCgJpZBgB",
+            "IAEoCUIJukgGcgT46zABUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
+            "BG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEo",
+            "CVILZGVzY3JpcHRpb24SPgoMcnVuX3NlbGVjdG9yGAYgASgLMhsuYXIudjEu",
+            "QVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVjdG9yIjgKGEFSSW5wdXRT",
+            "bG90RGVsZXRlTWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJcgT46zAByAEBUgJp",
+            "ZCp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVTT1VSQ0VfU0xPVF9U",
+            "WVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1JP",
+            "Qk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FTU0VUEAIqvwIKEUFS",
+            "Q29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xPVF9UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVfTElORV9JRBABEiAK",
+            "HEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIjCh9BUl9DT05URVhU",
+            "X1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09OVEVYVF9TTE9UX1RZ",
+            "UEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9UX1RZUEVfUFJPQ0VT",
+            "U19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9S",
+            "VU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBAH",
+            "KuwBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VMRUNUSU9OX1VOU1BF",
+            "Q0lGSUVEEAASIwofQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9XT1JLQUJMRRAB",
+            "EiUKIUFSX1JVTl9TRUxFQ1RJT05fQ1VSUkVOVF9BU1NJR05FRBACEiIKHkFS",
+            "X1JVTl9TRUxFQ1RJT05fTkVYVF9FWFBFQ1RFRBADEiMKH0FSX1JVTl9TRUxF",
+            "Q1RJT05fTEFTVF9DT01QTEVURUQQBBIjCh9BUl9SVU5fU0VMRUNUSU9OX0ZJ",
+            "UlNUX0lOX0VSUk9SEAVCigEKCWNvbS5hci52MUIOSW5wdXRTbG90UHJvdG9Q",
+            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
+            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
+            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARActorSelector), global::Messages.AR.V1.ARActorSelector.Parser, new[]{ "CurrentWorker", "ResourceSlotId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARRunContextSelector), global::Messages.AR.V1.ARRunContextSelector.Parser, new[]{ "Selection", "Actor" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "Required", "GeneratedPropertyId", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "GeneratedPropertyId", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessages), global::Messages.AR.V1.ARInputSlotMessages.Parser, new[]{ "Slots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Required", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Required", "RunSelector" }, new[]{ "Required" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "RunSelector" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotDeleteMessage), global::Messages.AR.V1.ARInputSlotDeleteMessage.Parser, new[]{ "Id" }, null, null, null, null)
           }));
     }
@@ -512,9 +510,8 @@ namespace Messages.AR.V1 {
   /// FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
   /// to a parent sequence or process.
   ///
-  /// If no task satisfies the policy, resolution produces no value. An optional
-  /// input slot receives an empty generated property value; a required input slot
-  /// makes materialization fail.
+  /// If no task satisfies the policy, resolution produces no value and the
+  /// context slot's generated property remains empty.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARRunContextSelector : pb::IMessage<ARRunContextSelector>
@@ -773,6 +770,10 @@ namespace Messages.AR.V1 {
   /// The backend is expected to derive and manage generated_property_id from the
   /// slot identity and value kind. Users should not author or edit the generated
   /// property directly.
+  ///
+  /// Resource slots are mandatory and materialization fails if no compatible
+  /// resource binding can satisfy them. Context slots are optional and leave their
+  /// generated property empty when the requested context cannot be resolved.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARInputSlotMessage : pb::IMessage<ARInputSlotMessage>
@@ -814,7 +815,6 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      required_ = other.required_;
       generatedPropertyId_ = other.generatedPropertyId_;
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
@@ -891,21 +891,6 @@ namespace Messages.AR.V1 {
       get { return description_; }
       set {
         description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "required" field.</summary>
-    public const int RequiredFieldNumber = 6;
-    private bool required_;
-    /// <summary>
-    /// If true, bindings/resolution should fail when this slot cannot be satisfied.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Required {
-      get { return required_; }
-      set {
-        required_ = value;
       }
     }
 
@@ -989,7 +974,6 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if (Required != other.Required) return false;
       if (GeneratedPropertyId != other.GeneratedPropertyId) return false;
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
@@ -1006,7 +990,6 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Required != false) hash ^= Required.GetHashCode();
       if (GeneratedPropertyId.Length != 0) hash ^= GeneratedPropertyId.GetHashCode();
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
@@ -1048,10 +1031,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Description);
-      }
-      if (Required != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(Required);
       }
       if (GeneratedPropertyId.Length != 0) {
         output.WriteRawTag(58);
@@ -1099,10 +1078,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(42);
         output.WriteString(Description);
       }
-      if (Required != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(Required);
-      }
       if (GeneratedPropertyId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(GeneratedPropertyId);
@@ -1144,9 +1119,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Required != false) {
-        size += 1 + 1;
-      }
       if (GeneratedPropertyId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(GeneratedPropertyId);
       }
@@ -1185,9 +1157,6 @@ namespace Messages.AR.V1 {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
-      }
-      if (other.Required != false) {
-        Required = other.Required;
       }
       if (other.GeneratedPropertyId.Length != 0) {
         GeneratedPropertyId = other.GeneratedPropertyId;
@@ -1241,10 +1210,6 @@ namespace Messages.AR.V1 {
           }
           case 42: {
             Description = input.ReadString();
-            break;
-          }
-          case 48: {
-            Required = input.ReadBool();
             break;
           }
           case 58: {
@@ -1303,10 +1268,6 @@ namespace Messages.AR.V1 {
           }
           case 42: {
             Description = input.ReadString();
-            break;
-          }
-          case 48: {
-            Required = input.ReadBool();
             break;
           }
           case 58: {
@@ -1531,6 +1492,7 @@ namespace Messages.AR.V1 {
   /// The source kind determines the generated property's value kind. If the source
   /// kind must change later, prefer delete + recreate. A run selector is a mutable
   /// resolution policy and may be changed with ARInputSlotUpdateMessage.
+  /// Resource slots are always required; context slots are always optional.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARInputSlotAddMessage : pb::IMessage<ARInputSlotAddMessage>
@@ -1571,7 +1533,6 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      required_ = other.required_;
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
       runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
@@ -1632,21 +1593,6 @@ namespace Messages.AR.V1 {
       get { return description_; }
       set {
         description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "required" field.</summary>
-    public const int RequiredFieldNumber = 5;
-    private bool required_;
-    /// <summary>
-    /// If true, future bindings/resolution must satisfy the slot.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Required {
-      get { return required_; }
-      set {
-        required_ = value;
       }
     }
 
@@ -1714,7 +1660,6 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if (Required != other.Required) return false;
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
       if (!object.Equals(RunSelector, other.RunSelector)) return false;
@@ -1729,7 +1674,6 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Required != false) hash ^= Required.GetHashCode();
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
       if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
@@ -1766,10 +1710,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(Description);
-      }
-      if (Required != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(Required);
       }
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) {
         output.WriteRawTag(64);
@@ -1809,10 +1749,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Required != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(Required);
-      }
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) {
         output.WriteRawTag(64);
         output.WriteEnum((int) ResourceType);
@@ -1847,9 +1783,6 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Required != false) {
-        size += 1 + 1;
-      }
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResourceType);
       }
@@ -1882,9 +1815,6 @@ namespace Messages.AR.V1 {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
-      }
-      if (other.Required != false) {
-        Required = other.Required;
       }
       if (other.ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) {
         ResourceType = other.ResourceType;
@@ -1931,10 +1861,6 @@ namespace Messages.AR.V1 {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 40: {
-            Required = input.ReadBool();
             break;
           }
           case 64: {
@@ -1987,10 +1913,6 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Required = input.ReadBool();
-            break;
-          }
           case 64: {
             ResourceType = (global::Messages.AR.V1.ARResourceSlotType) input.ReadEnum();
             break;
@@ -2029,7 +1951,6 @@ namespace Messages.AR.V1 {
   {
     private static readonly pb::MessageParser<ARInputSlotUpdateMessage> _parser = new pb::MessageParser<ARInputSlotUpdateMessage>(() => new ARInputSlotUpdateMessage());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ARInputSlotUpdateMessage> Parser { get { return _parser; } }
@@ -2057,12 +1978,10 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ARInputSlotUpdateMessage(ARInputSlotUpdateMessage other) : this() {
-      _hasBits0 = other._hasBits0;
       id_ = other.id_;
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      required_ = other.required_;
       runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2124,36 +2043,6 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "required" field.</summary>
-    public const int RequiredFieldNumber = 5;
-    private readonly static bool RequiredDefaultValue = false;
-
-    private bool required_;
-    /// <summary>
-    /// Optional replacement for the slot's required flag.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Required {
-      get { if ((_hasBits0 & 1) != 0) { return required_; } else { return RequiredDefaultValue; } }
-      set {
-        _hasBits0 |= 1;
-        required_ = value;
-      }
-    }
-    /// <summary>Gets whether the "required" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasRequired {
-      get { return (_hasBits0 & 1) != 0; }
-    }
-    /// <summary>Clears the value of the "required" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearRequired() {
-      _hasBits0 &= ~1;
-    }
-
     /// <summary>Field number for the "run_selector" field.</summary>
     public const int RunSelectorFieldNumber = 6;
     private global::Messages.AR.V1.ARRunContextSelector runSelector_;
@@ -2188,7 +2077,6 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if (Required != other.Required) return false;
       if (!object.Equals(RunSelector, other.RunSelector)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2201,7 +2089,6 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (HasRequired) hash ^= Required.GetHashCode();
       if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2237,10 +2124,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (HasRequired) {
-        output.WriteRawTag(40);
-        output.WriteBool(Required);
-      }
       if (runSelector_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(RunSelector);
@@ -2271,10 +2154,6 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (HasRequired) {
-        output.WriteRawTag(40);
-        output.WriteBool(Required);
-      }
       if (runSelector_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(RunSelector);
@@ -2300,9 +2179,6 @@ namespace Messages.AR.V1 {
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      if (HasRequired) {
-        size += 1 + 1;
       }
       if (runSelector_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
@@ -2330,9 +2206,6 @@ namespace Messages.AR.V1 {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
-      }
-      if (other.HasRequired) {
-        Required = other.Required;
       }
       if (other.runSelector_ != null) {
         if (runSelector_ == null) {
@@ -2375,10 +2248,6 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Required = input.ReadBool();
-            break;
-          }
           case 50: {
             if (runSelector_ == null) {
               RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
@@ -2419,10 +2288,6 @@ namespace Messages.AR.V1 {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 40: {
-            Required = input.ReadBool();
             break;
           }
           case 50: {

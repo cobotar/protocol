@@ -323,9 +323,8 @@ func (x *ARActorSelector) GetResourceSlotId() string {
 // FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
 // to a parent sequence or process.
 //
-// If no task satisfies the policy, resolution produces no value. An optional
-// input slot receives an empty generated property value; a required input slot
-// makes materialization fail.
+// If no task satisfies the policy, resolution produces no value and the
+// context slot's generated property remains empty.
 type ARRunContextSelector struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Policy used to choose a task before projecting it to the requested run ID.
@@ -385,6 +384,10 @@ func (x *ARRunContextSelector) GetActor() *ARActorSelector {
 // The backend is expected to derive and manage generated_property_id from the
 // slot identity and value kind. Users should not author or edit the generated
 // property directly.
+//
+// Resource slots are mandatory and materialization fails if no compatible
+// resource binding can satisfy them. Context slots are optional and leave their
+// generated property empty when the requested context cannot be resolved.
 type ARInputSlotMessage struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                             // Stable slot identifier used by configs and runtime resolution.
@@ -392,7 +395,6 @@ type ARInputSlotMessage struct {
 	Name                string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description         string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
-	Required            bool                   `protobuf:"varint,6,opt,name=required,proto3" json:"required,omitempty"`                                                           // If true, bindings/resolution should fail when this slot cannot be satisfied.
 	GeneratedPropertyId string                 `protobuf:"bytes,7,opt,name=generated_property_id,json=generatedPropertyId,proto3" json:"generated_property_id,omitempty"`         // Server-managed property that should receive the resolved slot value at runtime.
 	ResourceType        ARResourceSlotType     `protobuf:"varint,8,opt,name=resource_type,json=resourceType,proto3,enum=ar.v1.ARResourceSlotType" json:"resource_type,omitempty"` // Selected when this slot expects a concrete resource binding.
 	ContextType         ARContextSlotType      `protobuf:"varint,9,opt,name=context_type,json=contextType,proto3,enum=ar.v1.ARContextSlotType" json:"context_type,omitempty"`     // Selected when this slot expects a runtime context value.
@@ -464,13 +466,6 @@ func (x *ARInputSlotMessage) GetDescription() string {
 		return x.Description
 	}
 	return ""
-}
-
-func (x *ARInputSlotMessage) GetRequired() bool {
-	if x != nil {
-		return x.Required
-	}
-	return false
 }
 
 func (x *ARInputSlotMessage) GetGeneratedPropertyId() string {
@@ -550,13 +545,13 @@ func (x *ARInputSlotMessages) GetSlots() []*ARInputSlotMessage {
 // The source kind determines the generated property's value kind. If the source
 // kind must change later, prefer delete + recreate. A run selector is a mutable
 // resolution policy and may be changed with ARInputSlotUpdateMessage.
+// Resource slots are always required; context slots are always optional.
 type ARInputSlotAddMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ConfigId      string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"` // Owning AR config to attach the new slot to.
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Required      bool                   `protobuf:"varint,5,opt,name=required,proto3" json:"required,omitempty"`                                                           // If true, future bindings/resolution must satisfy the slot.
 	ResourceType  ARResourceSlotType     `protobuf:"varint,8,opt,name=resource_type,json=resourceType,proto3,enum=ar.v1.ARResourceSlotType" json:"resource_type,omitempty"` // Use for slots that should be bound to a resource instance.
 	ContextType   ARContextSlotType      `protobuf:"varint,9,opt,name=context_type,json=contextType,proto3,enum=ar.v1.ARContextSlotType" json:"context_type,omitempty"`     // Use for slots that should be populated from runtime context.
 	RunSelector   *ARRunContextSelector  `protobuf:"bytes,10,opt,name=run_selector,json=runSelector,proto3" json:"run_selector,omitempty"`                                  // Required resolution policy for process, sequence, and task run context slots.
@@ -622,13 +617,6 @@ func (x *ARInputSlotAddMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ARInputSlotAddMessage) GetRequired() bool {
-	if x != nil {
-		return x.Required
-	}
-	return false
-}
-
 func (x *ARInputSlotAddMessage) GetResourceType() ARResourceSlotType {
 	if x != nil {
 		return x.ResourceType
@@ -662,7 +650,6 @@ type ARInputSlotUpdateMessage struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Required      *bool                  `protobuf:"varint,5,opt,name=required,proto3,oneof" json:"required,omitempty"`                   // Optional replacement for the slot's required flag.
 	RunSelector   *ARRunContextSelector  `protobuf:"bytes,6,opt,name=run_selector,json=runSelector,proto3" json:"run_selector,omitempty"` // Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -724,13 +711,6 @@ func (x *ARInputSlotUpdateMessage) GetDescription() string {
 		return x.Description
 	}
 	return ""
-}
-
-func (x *ARInputSlotUpdateMessage) GetRequired() bool {
-	if x != nil && x.Required != nil {
-		return *x.Required
-	}
-	return false
 }
 
 func (x *ARInputSlotUpdateMessage) GetRunSelector() *ARRunContextSelector {
@@ -796,14 +776,13 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\x10resource_slot_id\x10\x01\"\x8e\x01\n" +
 	"\x14ARRunContextSelector\x12@\n" +
 	"\tselection\x18\x01 \x01(\x0e2\x15.ar.v1.ARRunSelectionB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\tselection\x124\n" +
-	"\x05actor\x18\x02 \x01(\v2\x16.ar.v1.ARActorSelectorB\x06\xbaH\x03\xc8\x01\x01R\x05actor\"\xb8\t\n" +
+	"\x05actor\x18\x02 \x01(\v2\x16.ar.v1.ARActorSelectorB\x06\xbaH\x03\xc8\x01\x01R\x05actor\"\x9c\t\n" +
 	"\x12ARInputSlotMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x02id\x12)\n" +
 	"\tconfig_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x05 \x01(\tR\vdescription\x12\x1a\n" +
-	"\brequired\x18\x06 \x01(\bR\brequired\x12@\n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12@\n" +
 	"\x15generated_property_id\x18\a \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf1\x04\x01R\x13generatedPropertyId\x12H\n" +
 	"\rresource_type\x18\b \x01(\x0e2\x19.ar.v1.ARResourceSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\fresourceType\x12E\n" +
 	"\fcontext_type\x18\t \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcontextType\x12>\n" +
@@ -814,13 +793,12 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\rresource_type\n" +
 	"\fcontext_type\x10\x01\"F\n" +
 	"\x13ARInputSlotMessages\x12/\n" +
-	"\x05slots\x18\x01 \x03(\v2\x19.ar.v1.ARInputSlotMessageR\x05slots\"\xde\b\n" +
+	"\x05slots\x18\x01 \x03(\v2\x19.ar.v1.ARInputSlotMessageR\x05slots\"\xc2\b\n" +
 	"\x15ARInputSlotAddMessage\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1a\n" +
-	"\brequired\x18\x05 \x01(\bR\brequired\x12H\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12H\n" +
 	"\rresource_type\x18\b \x01(\x0e2\x19.ar.v1.ARResourceSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\fresourceType\x12E\n" +
 	"\fcontext_type\x18\t \x01(\x0e2\x18.ar.v1.ARContextSlotTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vcontextType\x12>\n" +
 	"\frun_selector\x18\n" +
@@ -828,15 +806,13 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"+ar_input_slot.error_selection_requires_task\x12,FIRST_IN_ERROR is only valid for TASK_RUN_ID\x1a\xbf\x01!has(this.run_selector) || this.run_selector.selection != ar.v1.ARRunSelection.AR_RUN_SELECTION_FIRST_IN_ERROR || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x1a\x8f\x03\n" +
 	"/ar_input_slot.run_selector_matches_context_type\x12Grun_selector is required for run context slots and prohibited otherwise\x1a\x92\x02(this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID) == has(this.run_selector)\"\x1f\n" +
 	"\rresource_type\n" +
-	"\fcontext_type\x10\x01\"\xf8\x01\n" +
+	"\fcontext_type\x10\x01\"\xca\x01\n" +
 	"\x18ARInputSlotUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1f\n" +
-	"\brequired\x18\x05 \x01(\bH\x00R\brequired\x88\x01\x01\x12>\n" +
-	"\frun_selector\x18\x06 \x01(\v2\x1b.ar.v1.ARRunContextSelectorR\vrunSelectorB\v\n" +
-	"\t_required\"8\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
+	"\frun_selector\x18\x06 \x01(\v2\x1b.ar.v1.ARRunContextSelectorR\vrunSelector\"8\n" +
 	"\x18ARInputSlotDeleteMessage\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xeb0\x01R\x02id*}\n" +
 	"\x12ARResourceSlotType\x12%\n" +
@@ -910,7 +886,6 @@ func file_ar_v1_input_slot_proto_init() {
 	if File_ar_v1_input_slot_proto != nil {
 		return
 	}
-	file_ar_v1_input_slot_proto_msgTypes[5].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

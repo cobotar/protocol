@@ -129,9 +129,8 @@ message ARActorSelector {
 // FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
 // to a parent sequence or process.
 //
-// If no task satisfies the policy, resolution produces no value. An optional
-// input slot receives an empty generated property value; a required input slot
-// makes materialization fail.
+// If no task satisfies the policy, resolution produces no value and the
+// context slot's generated property remains empty.
 message ARRunContextSelector {
   // Policy used to choose a task before projecting it to the requested run ID.
   ARRunSelection selection = 1 [
@@ -148,6 +147,10 @@ message ARRunContextSelector {
 // The backend is expected to derive and manage generated_property_id from the
 // slot identity and value kind. Users should not author or edit the generated
 // property directly.
+//
+// Resource slots are mandatory and materialization fails if no compatible
+// resource binding can satisfy them. Context slots are optional and leave their
+// generated property empty when the requested context cannot be resolved.
 message ARInputSlotMessage {
   option (buf.validate.message).oneof = {
     fields: [
@@ -177,7 +180,6 @@ message ARInputSlotMessage {
   string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 4;
   string description = 5;
-  bool required = 6; // If true, bindings/resolution should fail when this slot cannot be satisfied.
   string generated_property_id = 7 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.property_definition_id_component) = true
@@ -196,6 +198,7 @@ message ARInputSlotMessages {
 // The source kind determines the generated property's value kind. If the source
 // kind must change later, prefer delete + recreate. A run selector is a mutable
 // resolution policy and may be changed with ARInputSlotUpdateMessage.
+// Resource slots are always required; context slots are always optional.
 message ARInputSlotAddMessage {
   option (buf.validate.message).oneof = {
     fields: [
@@ -224,7 +227,6 @@ message ARInputSlotAddMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  bool required = 5; // If true, future bindings/resolution must satisfy the slot.
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be bound to a resource instance.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be populated from runtime context.
   ARRunContextSelector run_selector = 10; // Required resolution policy for process, sequence, and task run context slots.
@@ -241,7 +243,6 @@ message ARInputSlotUpdateMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  optional bool required = 5; // Optional replacement for the slot's required flag.
   ARRunContextSelector run_selector = 6; // Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
 }
 

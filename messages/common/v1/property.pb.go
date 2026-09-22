@@ -1699,7 +1699,7 @@ type CreatePropertyMessage struct {
 	ParentId           string `protobuf:"bytes,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	AuthoringContextId string `protobuf:"bytes,2,opt,name=authoring_context_id,json=authoringContextId,proto3" json:"authoring_context_id,omitempty"`
 	// Definition
-	Name                      string               `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Name                      string               `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"` // TODO [(buf.validate.field).string.(validation.v1.name_component) = true];
 	Icon                      string               `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description               string               `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
 	Type                      PropertyType         `protobuf:"varint,6,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`

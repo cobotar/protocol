@@ -665,6 +665,8 @@ export type CreatePropertyMessage = Message<"common.v1.CreatePropertyMessage"> &
   /**
    * Definition
    *
+   * TODO [(buf.validate.field).string.(validation.v1.name_component) = true];
+   *
    * @generated from field: string name = 3;
    */
   name: string;

@@ -69,13 +69,12 @@ class ARRunContextSelector(_message.Message):
     def __init__(self, selection: _Optional[_Union[ARRunSelection, str]] = ..., actor: _Optional[_Union[ARActorSelector, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotMessage(_message.Message):
-    __slots__ = ("id", "config_id", "name", "icon", "description", "required", "generated_property_id", "resource_type", "context_type", "run_selector")
+    __slots__ = ("id", "config_id", "name", "icon", "description", "generated_property_id", "resource_type", "context_type", "run_selector")
     ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
     GENERATED_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -85,12 +84,11 @@ class ARInputSlotMessage(_message.Message):
     name: str
     icon: str
     description: str
-    required: bool
     generated_property_id: str
     resource_type: ARResourceSlotType
     context_type: ARContextSlotType
     run_selector: ARRunContextSelector
-    def __init__(self, id: _Optional[str] = ..., config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., required: bool = ..., generated_property_id: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., generated_property_id: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotMessages(_message.Message):
     __slots__ = ("slots",)
@@ -99,12 +97,11 @@ class ARInputSlotMessages(_message.Message):
     def __init__(self, slots: _Optional[_Iterable[_Union[ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
 
 class ARInputSlotAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "required", "resource_type", "context_type", "run_selector")
+    __slots__ = ("config_id", "name", "icon", "description", "resource_type", "context_type", "run_selector")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
     RESOURCE_TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_TYPE_FIELD_NUMBER: _ClassVar[int]
     RUN_SELECTOR_FIELD_NUMBER: _ClassVar[int]
@@ -112,27 +109,24 @@ class ARInputSlotAddMessage(_message.Message):
     name: str
     icon: str
     description: str
-    required: bool
     resource_type: ARResourceSlotType
     context_type: ARContextSlotType
     run_selector: ARRunContextSelector
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., required: bool = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "required", "run_selector")
+    __slots__ = ("id", "name", "icon", "description", "run_selector")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    REQUIRED_FIELD_NUMBER: _ClassVar[int]
     RUN_SELECTOR_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    required: bool
     run_selector: ARRunContextSelector
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., required: bool = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotDeleteMessage(_message.Message):
     __slots__ = ("id",)

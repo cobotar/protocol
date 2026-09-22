@@ -434,7 +434,7 @@ message CreatePropertyMessage {
   string authoring_context_id = 2;
 
   // Definition
-  string name = 3;
+  string name = 3; // TODO [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 4;
   string description = 5;
 
