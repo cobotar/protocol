@@ -205,6 +205,11 @@ message PropertyDefinition {
   };
 
   string id = 1 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true];
+  string key = 17 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+    pattern: "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+  }]; // Stable machine-readable key; unlike name, this is safe for runtime binding and capability references.
   string name = 2;
   string icon = 3;
   string description = 4;
@@ -456,6 +461,11 @@ message CreatePropertyMessage {
   bool advanced = 13;
   bool allow_to_be_mirrored = 14;
   PropertySemanticRole semantic_role = 16 [(buf.validate.field).enum.defined_only = true];
+  string key = 17 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+    pattern: "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+  }]; // Stable machine-readable key copied to PropertyDefinition.
 
   // Template instance
   PropertyOrigin origin = 20 [

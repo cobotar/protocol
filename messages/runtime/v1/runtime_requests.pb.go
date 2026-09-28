@@ -84,6 +84,72 @@ func (TaskStateRequest) EnumDescriptor() ([]byte, []int) {
 	return file_runtime_v1_runtime_requests_proto_rawDescGZIP(), []int{0}
 }
 
+// Fine-grained progress within an in-progress task. This complements
+// TaskRunState and deliberately does not include a completed phase; completion
+// is represented by TASK_RUN_STATE_DONE.
+type TaskProgressPhase int32
+
+const (
+	TaskProgressPhase_TASK_PROGRESS_PHASE_UNSPECIFIED TaskProgressPhase = 0
+	// The actor is finding the target, part, tool, or work area.
+	TaskProgressPhase_TASK_PROGRESS_PHASE_LOCATING TaskProgressPhase = 1
+	// The actor is moving toward the target or preferred pre-target pose.
+	TaskProgressPhase_TASK_PROGRESS_PHASE_APPROACHING TaskProgressPhase = 2
+	// The actor is aligning, inserting, or otherwise establishing the target pose.
+	TaskProgressPhase_TASK_PROGRESS_PHASE_POSITIONING TaskProgressPhase = 3
+	// The task result is being checked against its validation requirements.
+	TaskProgressPhase_TASK_PROGRESS_PHASE_VERIFYING TaskProgressPhase = 4
+	// All known requirements are satisfied and the task may be completed.
+	TaskProgressPhase_TASK_PROGRESS_PHASE_READY_TO_COMPLETE TaskProgressPhase = 5
+)
+
+// Enum value maps for TaskProgressPhase.
+var (
+	TaskProgressPhase_name = map[int32]string{
+		0: "TASK_PROGRESS_PHASE_UNSPECIFIED",
+		1: "TASK_PROGRESS_PHASE_LOCATING",
+		2: "TASK_PROGRESS_PHASE_APPROACHING",
+		3: "TASK_PROGRESS_PHASE_POSITIONING",
+		4: "TASK_PROGRESS_PHASE_VERIFYING",
+		5: "TASK_PROGRESS_PHASE_READY_TO_COMPLETE",
+	}
+	TaskProgressPhase_value = map[string]int32{
+		"TASK_PROGRESS_PHASE_UNSPECIFIED":       0,
+		"TASK_PROGRESS_PHASE_LOCATING":          1,
+		"TASK_PROGRESS_PHASE_APPROACHING":       2,
+		"TASK_PROGRESS_PHASE_POSITIONING":       3,
+		"TASK_PROGRESS_PHASE_VERIFYING":         4,
+		"TASK_PROGRESS_PHASE_READY_TO_COMPLETE": 5,
+	}
+)
+
+func (x TaskProgressPhase) Enum() *TaskProgressPhase {
+	p := new(TaskProgressPhase)
+	*p = x
+	return p
+}
+
+func (x TaskProgressPhase) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TaskProgressPhase) Descriptor() protoreflect.EnumDescriptor {
+	return file_runtime_v1_runtime_requests_proto_enumTypes[1].Descriptor()
+}
+
+func (TaskProgressPhase) Type() protoreflect.EnumType {
+	return &file_runtime_v1_runtime_requests_proto_enumTypes[1]
+}
+
+func (x TaskProgressPhase) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TaskProgressPhase.Descriptor instead.
+func (TaskProgressPhase) EnumDescriptor() ([]byte, []int) {
+	return file_runtime_v1_runtime_requests_proto_rawDescGZIP(), []int{1}
+}
+
 type ProcessAbortRequest struct {
 	state        protoimpl.MessageState `protogen:"open.v1"`
 	ProcessRunId string                 `protobuf:"bytes,1,opt,name=process_run_id,json=processRunId,proto3" json:"process_run_id,omitempty"`
@@ -291,6 +357,8 @@ type TaskProgressUpdate struct {
 	ElapsedTime       int32                  `protobuf:"varint,4,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`                     // elapsed time in seconds
 	EstimatedTimeLeft int32                  `protobuf:"varint,5,opt,name=estimated_time_left,json=estimatedTimeLeft,proto3" json:"estimated_time_left,omitempty"` // estimated time left in seconds
 	ExpectedRevision  uint64                 `protobuf:"varint,6,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`      // Revision of the TaskRun on which this request is based.
+	Phase             TaskProgressPhase      `protobuf:"varint,7,opt,name=phase,proto3,enum=runtime.v1.TaskProgressPhase" json:"phase,omitempty"`                  // Optional semantic execution phase. UNSPECIFIED preserves compatibility with phase-unaware reporters.
+	PhaseConfidence   *float32               `protobuf:"fixed32,8,opt,name=phase_confidence,json=phaseConfidence,proto3,oneof" json:"phase_confidence,omitempty"`  // Reporter confidence in phase, from 0 (no confidence) to 1 (fully confident).
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -363,6 +431,20 @@ func (x *TaskProgressUpdate) GetEstimatedTimeLeft() int32 {
 func (x *TaskProgressUpdate) GetExpectedRevision() uint64 {
 	if x != nil {
 		return x.ExpectedRevision
+	}
+	return 0
+}
+
+func (x *TaskProgressUpdate) GetPhase() TaskProgressPhase {
+	if x != nil {
+		return x.Phase
+	}
+	return TaskProgressPhase_TASK_PROGRESS_PHASE_UNSPECIFIED
+}
+
+func (x *TaskProgressUpdate) GetPhaseConfidence() float32 {
+	if x != nil && x.PhaseConfidence != nil {
+		return *x.PhaseConfidence
 	}
 	return 0
 }
@@ -501,14 +583,19 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x13TaskReassignRequest\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
-	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xaa\x02\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xd8\x04\n" +
 	"\x12TaskProgressUpdate\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x12*\n" +
 	"\felapsed_time\x18\x04 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\velapsedTime\x127\n" +
 	"\x13estimated_time_left\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x11estimatedTimeLeft\x124\n" +
-	"\x11expected_revision\x18\x06 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xb8\x01\n" +
+	"\x11expected_revision\x18\x06 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\x12=\n" +
+	"\x05phase\x18\a \x01(\x0e2\x1d.runtime.v1.TaskProgressPhaseB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05phase\x12A\n" +
+	"\x10phase_confidence\x18\b \x01(\x02B\x11\xbaH\x0e\n" +
+	"\f@\x01\x1d\x00\x00\x80?-\x00\x00\x00\x00H\x00R\x0fphaseConfidence\x88\x01\x01:\x94\x01\xbaH\x90\x01\x1a\x8d\x01\n" +
+	".task_progress_update.confidence_requires_phase\x12+phase_confidence requires a specified phase\x1a.!has(this.phase_confidence) || this.phase != 0B\x13\n" +
+	"\x11_phase_confidence\"\xb8\x01\n" +
 	"\x17SequenceReassignRequest\x124\n" +
 	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
@@ -522,7 +609,14 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n" +
 	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12 \n" +
-	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06B\xb3\x01\n" +
+	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06*\xf2\x01\n" +
+	"\x11TaskProgressPhase\x12#\n" +
+	"\x1fTASK_PROGRESS_PHASE_UNSPECIFIED\x10\x00\x12 \n" +
+	"\x1cTASK_PROGRESS_PHASE_LOCATING\x10\x01\x12#\n" +
+	"\x1fTASK_PROGRESS_PHASE_APPROACHING\x10\x02\x12#\n" +
+	"\x1fTASK_PROGRESS_PHASE_POSITIONING\x10\x03\x12!\n" +
+	"\x1dTASK_PROGRESS_PHASE_VERIFYING\x10\x04\x12)\n" +
+	"%TASK_PROGRESS_PHASE_READY_TO_COMPLETE\x10\x05B\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
@@ -538,28 +632,30 @@ func file_runtime_v1_runtime_requests_proto_rawDescGZIP() []byte {
 	return file_runtime_v1_runtime_requests_proto_rawDescData
 }
 
-var file_runtime_v1_runtime_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_runtime_v1_runtime_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_runtime_v1_runtime_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_runtime_v1_runtime_requests_proto_goTypes = []any{
 	(TaskStateRequest)(0),           // 0: runtime.v1.TaskStateRequest
-	(*ProcessAbortRequest)(nil),     // 1: runtime.v1.ProcessAbortRequest
-	(*TaskStateChangeRequest)(nil),  // 2: runtime.v1.TaskStateChangeRequest
-	(*TaskReassignRequest)(nil),     // 3: runtime.v1.TaskReassignRequest
-	(*TaskProgressUpdate)(nil),      // 4: runtime.v1.TaskProgressUpdate
-	(*SequenceReassignRequest)(nil), // 5: runtime.v1.SequenceReassignRequest
-	(*SequenceCompleteRequest)(nil), // 6: runtime.v1.SequenceCompleteRequest
-	(*v1.ActorRef)(nil),             // 7: common.v1.ActorRef
+	(TaskProgressPhase)(0),          // 1: runtime.v1.TaskProgressPhase
+	(*ProcessAbortRequest)(nil),     // 2: runtime.v1.ProcessAbortRequest
+	(*TaskStateChangeRequest)(nil),  // 3: runtime.v1.TaskStateChangeRequest
+	(*TaskReassignRequest)(nil),     // 4: runtime.v1.TaskReassignRequest
+	(*TaskProgressUpdate)(nil),      // 5: runtime.v1.TaskProgressUpdate
+	(*SequenceReassignRequest)(nil), // 6: runtime.v1.SequenceReassignRequest
+	(*SequenceCompleteRequest)(nil), // 7: runtime.v1.SequenceCompleteRequest
+	(*v1.ActorRef)(nil),             // 8: common.v1.ActorRef
 }
 var file_runtime_v1_runtime_requests_proto_depIdxs = []int32{
 	0, // 0: runtime.v1.TaskStateChangeRequest.state:type_name -> runtime.v1.TaskStateRequest
-	7, // 1: runtime.v1.TaskReassignRequest.actor:type_name -> common.v1.ActorRef
-	7, // 2: runtime.v1.TaskProgressUpdate.actor:type_name -> common.v1.ActorRef
-	7, // 3: runtime.v1.SequenceReassignRequest.actor:type_name -> common.v1.ActorRef
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	8, // 1: runtime.v1.TaskReassignRequest.actor:type_name -> common.v1.ActorRef
+	8, // 2: runtime.v1.TaskProgressUpdate.actor:type_name -> common.v1.ActorRef
+	1, // 3: runtime.v1.TaskProgressUpdate.phase:type_name -> runtime.v1.TaskProgressPhase
+	8, // 4: runtime.v1.SequenceReassignRequest.actor:type_name -> common.v1.ActorRef
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_runtime_requests_proto_init() }
@@ -567,12 +663,13 @@ func file_runtime_v1_runtime_requests_proto_init() {
 	if File_runtime_v1_runtime_requests_proto != nil {
 		return
 	}
+	file_runtime_v1_runtime_requests_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_runtime_requests_proto_rawDesc), len(file_runtime_v1_runtime_requests_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,

@@ -38,16 +38,18 @@ TASK_RUN_STATE_ABORTED: TaskRunState
 TASK_RUN_STATE_SUSPENDED: TaskRunState
 
 class TaskRuntimeBinding(_message.Message):
-    __slots__ = ("asset_instance_id", "station_id", "cell_id", "container_slot")
+    __slots__ = ("asset_instance_id", "station_id", "cell_id", "container_slot", "candidate_part_instance_ids")
     ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     CELL_ID_FIELD_NUMBER: _ClassVar[int]
     CONTAINER_SLOT_FIELD_NUMBER: _ClassVar[int]
+    CANDIDATE_PART_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
     asset_instance_id: str
     station_id: str
     cell_id: str
     container_slot: _container_definition_pb2.ContainerSlotRef
-    def __init__(self, asset_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., container_slot: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ...) -> None: ...
+    candidate_part_instance_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, asset_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., container_slot: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ..., candidate_part_instance_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TaskRun(_message.Message):
     __slots__ = ("id", "name", "icon", "task_definition_id", "parent_sequence_run_id", "state", "candidate_actors", "assigned_actor", "can_do", "can_undo", "workable_horizon", "estimated_duration", "started_at", "completed_at", "error_code", "error_message", "binding", "restrictions", "candidate_actor_evaluations", "actor_assignment_status", "revision")

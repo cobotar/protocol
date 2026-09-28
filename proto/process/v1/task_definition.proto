@@ -181,12 +181,44 @@ message TaskOverride {
   //TaskExecutionPolicy execution_policy = 9; // Minor variant-specific execution guidance or estimates.
 }
 
+// Requires the observed orientation to be within an angular tolerance of the
+// orientation in TaskDefinition.target.product.local_target. The target pose
+// remains authoritative and is intentionally not duplicated here.
+message OrientationConstraint {
+  // Maximum angular difference from the target orientation. When omitted, the
+  // validating implementation may apply its configured default tolerance.
+  optional double angular_tolerance_degrees = 1 [(buf.validate.field).double = {
+    gte: 0
+    lte: 180
+    finite: true
+  }];
+}
+
+// A semantic condition that can be evaluated while executing or validating a
+// task. Exactly one constraint kind must be selected.
+message TaskConstraint {
+  string id = 1 [(buf.validate.field).string.min_len = 1]; // Stable identifier within the task definition.
+
+  option (buf.validate.message).oneof = {
+    fields: ["orientation"]
+    required: true
+  };
+
+  OrientationConstraint orientation = 10;
+}
+
 // TaskDefinition is the static/universal authoring-time description of a task.
 //
 // It should remain reusable across workcells, deployments, and specific
 // equipment instances. Runtime-specific information such as concrete robot,
 // asset, station, or container bindings belongs in runtime.v1.TaskRun.
 message TaskDefinition {
+  option (buf.validate.message).cel = {
+    id: "task_definition.orientation_constraint_requires_target_orientation"
+    message: "orientation constraints require target.product.local_target.orientation"
+    expression: "this.constraints.all(c, !has(c.orientation) || has(this.target.product.local_target.orientation))"
+  };
+
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
@@ -207,6 +239,7 @@ message TaskDefinition {
   QuantityRequirement quantity = 19; // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
   repeated variance.v1.VariantRule applicability = 21; // Task applies if any rule matches. Empty means always applicable.
   repeated TaskOverride overrides = 22; // adjust small authoring/runtime details when the task is otherwise the same task.
+  repeated TaskConstraint constraints = 23; // Semantic conditions that supplement the task's validation mechanism.
 }
 
 message TaskDefinitions {

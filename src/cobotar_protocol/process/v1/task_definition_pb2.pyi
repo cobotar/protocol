@@ -196,8 +196,22 @@ class TaskOverride(_message.Message):
     approach_offset: _vector3_pb2.Vector3
     def __init__(self, when: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., instruction_text: _Optional[str] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ...) -> None: ...
 
+class OrientationConstraint(_message.Message):
+    __slots__ = ("angular_tolerance_degrees",)
+    ANGULAR_TOLERANCE_DEGREES_FIELD_NUMBER: _ClassVar[int]
+    angular_tolerance_degrees: float
+    def __init__(self, angular_tolerance_degrees: _Optional[float] = ...) -> None: ...
+
+class TaskConstraint(_message.Message):
+    __slots__ = ("id", "orientation")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    ORIENTATION_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    orientation: OrientationConstraint
+    def __init__(self, id: _Optional[str] = ..., orientation: _Optional[_Union[OrientationConstraint, _Mapping]] = ...) -> None: ...
+
 class TaskDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirement", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "quantity", "applicability", "overrides")
+    __slots__ = ("id", "name", "icon", "description", "instruction_text", "sequence_number", "task_type", "target", "insertion_offset", "approach_offset", "tool_requirement", "skill_requirements", "validation", "execution_policy", "safety_relevance", "source", "destination", "quantity", "applicability", "overrides", "constraints")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -218,6 +232,7 @@ class TaskDefinition(_message.Message):
     QUANTITY_FIELD_NUMBER: _ClassVar[int]
     APPLICABILITY_FIELD_NUMBER: _ClassVar[int]
     OVERRIDES_FIELD_NUMBER: _ClassVar[int]
+    CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -238,7 +253,8 @@ class TaskDefinition(_message.Message):
     quantity: QuantityRequirement
     applicability: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
     overrides: _containers.RepeatedCompositeFieldContainer[TaskOverride]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirement: _Optional[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., destination: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., quantity: _Optional[_Union[QuantityRequirement, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ...) -> None: ...
+    constraints: _containers.RepeatedCompositeFieldContainer[TaskConstraint]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., instruction_text: _Optional[str] = ..., sequence_number: _Optional[int] = ..., task_type: _Optional[_Union[TaskType, str]] = ..., target: _Optional[_Union[TaskTarget, _Mapping]] = ..., insertion_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., tool_requirement: _Optional[_Union[_tool_requirement_pb2.ToolRequirement, _Mapping]] = ..., skill_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., validation: _Optional[_Union[ValidationRequirement, _Mapping]] = ..., execution_policy: _Optional[_Union[TaskExecutionPolicy, _Mapping]] = ..., safety_relevance: _Optional[_Union[_enums_pb2.SafetyRelevance, str]] = ..., source: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., destination: _Optional[_Union[TaskEndpoint, _Mapping]] = ..., quantity: _Optional[_Union[QuantityRequirement, _Mapping]] = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., overrides: _Optional[_Iterable[_Union[TaskOverride, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[TaskConstraint, _Mapping]]] = ...) -> None: ...
 
 class TaskDefinitions(_message.Message):
     __slots__ = ("items",)

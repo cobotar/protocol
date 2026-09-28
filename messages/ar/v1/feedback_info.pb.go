@@ -94,6 +94,70 @@ func (FeedbackGroup) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{0}
 }
 
+// Describes a type-level behavior supported by a feedback implementation.
+// Capability metadata is server-owned and intended for read-only discovery by
+// authoring clients. It does not describe whether a particular feedback
+// instance is currently active.
+type FeedbackCapability struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`                                       // Stable machine-readable capability identifier.
+	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`                       // Human-readable explanation shown by authoring tools.
+	PropertyKeys  []string               `protobuf:"bytes,3,rep,name=property_keys,json=propertyKeys,proto3" json:"property_keys,omitempty"` // Stable PropertyDefinition keys used to configure this capability.
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FeedbackCapability) Reset() {
+	*x = FeedbackCapability{}
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FeedbackCapability) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FeedbackCapability) ProtoMessage() {}
+
+func (x *FeedbackCapability) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FeedbackCapability.ProtoReflect.Descriptor instead.
+func (*FeedbackCapability) Descriptor() ([]byte, []int) {
+	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *FeedbackCapability) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *FeedbackCapability) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *FeedbackCapability) GetPropertyKeys() []string {
+	if x != nil {
+		return x.PropertyKeys
+	}
+	return nil
+}
+
 type FeedbackInfoMessage struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -108,13 +172,14 @@ type FeedbackInfoMessage struct {
 	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,11,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
 	Emits             []*ExchangeType        `protobuf:"bytes,12,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // / Outputs the feedback publishes
 	Disabled          bool                   `protobuf:"varint,13,opt,name=disabled,proto3" json:"disabled,omitempty"`
+	Capabilities      []*FeedbackCapability  `protobuf:"bytes,14,rep,name=capabilities,proto3" json:"capabilities,omitempty"` // Optional behaviors supported by this feedback type.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *FeedbackInfoMessage) Reset() {
 	*x = FeedbackInfoMessage{}
-	mi := &file_ar_v1_feedback_info_proto_msgTypes[0]
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -126,7 +191,7 @@ func (x *FeedbackInfoMessage) String() string {
 func (*FeedbackInfoMessage) ProtoMessage() {}
 
 func (x *FeedbackInfoMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_feedback_info_proto_msgTypes[0]
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -139,7 +204,7 @@ func (x *FeedbackInfoMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeedbackInfoMessage.ProtoReflect.Descriptor instead.
 func (*FeedbackInfoMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *FeedbackInfoMessage) GetName() string {
@@ -226,6 +291,13 @@ func (x *FeedbackInfoMessage) GetDisabled() bool {
 	return false
 }
 
+func (x *FeedbackInfoMessage) GetCapabilities() []*FeedbackCapability {
+	if x != nil {
+		return x.Capabilities
+	}
+	return nil
+}
+
 type FeedbackInfoMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Infos         []*FeedbackInfoMessage `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
@@ -235,7 +307,7 @@ type FeedbackInfoMessages struct {
 
 func (x *FeedbackInfoMessages) Reset() {
 	*x = FeedbackInfoMessages{}
-	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -247,7 +319,7 @@ func (x *FeedbackInfoMessages) String() string {
 func (*FeedbackInfoMessages) ProtoMessage() {}
 
 func (x *FeedbackInfoMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_feedback_info_proto_msgTypes[1]
+	mi := &file_ar_v1_feedback_info_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -260,7 +332,7 @@ func (x *FeedbackInfoMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeedbackInfoMessages.ProtoReflect.Descriptor instead.
 func (*FeedbackInfoMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_feedback_info_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *FeedbackInfoMessages) GetInfos() []*FeedbackInfoMessage {
@@ -274,7 +346,12 @@ var File_ar_v1_feedback_info_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_info_proto_rawDesc = "" +
 	"\n" +
-	"\x19ar/v1/feedback_info.proto\x12\x05ar.v1\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/feedback.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x04\n" +
+	"\x19ar/v1/feedback_info.proto\x12\x05ar.v1\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/feedback.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8a\x01\n" +
+	"\x12FeedbackCapability\x12\x1b\n" +
+	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x03key\x12 \n" +
+	"\vdescription\x18\x02 \x01(\tR\vdescription\x125\n" +
+	"\rproperty_keys\x18\x03 \x03(\tB\x10\xbaH\r\x92\x01\n" +
+	"\x18\x01\"\x06r\x04\x10\x01\x18@R\fpropertyKeys\"\xf6\x04\n" +
 	"\x13FeedbackInfoMessage\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
@@ -288,7 +365,8 @@ const file_ar_v1_feedback_info_proto_rawDesc = "" +
 	" \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersOptional\x12F\n" +
 	"\x11required_handlers\x18\v \x03(\v2\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n" +
 	"\x05emits\x18\f \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\x1a\n" +
-	"\bdisabled\x18\r \x01(\bR\bdisabled\"H\n" +
+	"\bdisabled\x18\r \x01(\bR\bdisabled\x12=\n" +
+	"\fcapabilities\x18\x0e \x03(\v2\x19.ar.v1.FeedbackCapabilityR\fcapabilities\"H\n" +
 	"\x14FeedbackInfoMessages\x120\n" +
 	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.FeedbackInfoMessageR\x05infos*\xfb\x01\n" +
 	"\rFeedbackGroup\x12\x1e\n" +
@@ -315,28 +393,30 @@ func file_ar_v1_feedback_info_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_feedback_info_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_feedback_info_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_ar_v1_feedback_info_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ar_v1_feedback_info_proto_goTypes = []any{
 	(FeedbackGroup)(0),           // 0: ar.v1.FeedbackGroup
-	(*FeedbackInfoMessage)(nil),  // 1: ar.v1.FeedbackInfoMessage
-	(*FeedbackInfoMessages)(nil), // 2: ar.v1.FeedbackInfoMessages
-	(FeedbackType)(0),            // 3: ar.v1.FeedbackType
-	(*ExchangeType)(nil),         // 4: ar.v1.ExchangeType
-	(*HandlerRequirement)(nil),   // 5: ar.v1.HandlerRequirement
+	(*FeedbackCapability)(nil),   // 1: ar.v1.FeedbackCapability
+	(*FeedbackInfoMessage)(nil),  // 2: ar.v1.FeedbackInfoMessage
+	(*FeedbackInfoMessages)(nil), // 3: ar.v1.FeedbackInfoMessages
+	(FeedbackType)(0),            // 4: ar.v1.FeedbackType
+	(*ExchangeType)(nil),         // 5: ar.v1.ExchangeType
+	(*HandlerRequirement)(nil),   // 6: ar.v1.HandlerRequirement
 }
 var file_ar_v1_feedback_info_proto_depIdxs = []int32{
-	3, // 0: ar.v1.FeedbackInfoMessage.type:type_name -> ar.v1.FeedbackType
+	4, // 0: ar.v1.FeedbackInfoMessage.type:type_name -> ar.v1.FeedbackType
 	0, // 1: ar.v1.FeedbackInfoMessage.group:type_name -> ar.v1.FeedbackGroup
-	4, // 2: ar.v1.FeedbackInfoMessage.consumers_required:type_name -> ar.v1.ExchangeType
-	4, // 3: ar.v1.FeedbackInfoMessage.consumers_optional:type_name -> ar.v1.ExchangeType
-	5, // 4: ar.v1.FeedbackInfoMessage.required_handlers:type_name -> ar.v1.HandlerRequirement
-	4, // 5: ar.v1.FeedbackInfoMessage.emits:type_name -> ar.v1.ExchangeType
-	1, // 6: ar.v1.FeedbackInfoMessages.infos:type_name -> ar.v1.FeedbackInfoMessage
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	5, // 2: ar.v1.FeedbackInfoMessage.consumers_required:type_name -> ar.v1.ExchangeType
+	5, // 3: ar.v1.FeedbackInfoMessage.consumers_optional:type_name -> ar.v1.ExchangeType
+	6, // 4: ar.v1.FeedbackInfoMessage.required_handlers:type_name -> ar.v1.HandlerRequirement
+	5, // 5: ar.v1.FeedbackInfoMessage.emits:type_name -> ar.v1.ExchangeType
+	1, // 6: ar.v1.FeedbackInfoMessage.capabilities:type_name -> ar.v1.FeedbackCapability
+	2, // 7: ar.v1.FeedbackInfoMessages.infos:type_name -> ar.v1.FeedbackInfoMessage
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_info_proto_init() }
@@ -352,7 +432,7 @@ func file_ar_v1_feedback_info_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_feedback_info_proto_rawDesc), len(file_ar_v1_feedback_info_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

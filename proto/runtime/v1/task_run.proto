@@ -27,10 +27,11 @@ enum TaskRunState {
 
 // Concrete runtime/deployment bindings resolved for this task run.
 message TaskRuntimeBinding {
-  string asset_instance_id = 1;
-  string station_id = 2;
-  string cell_id = 3;
-  resources.v1.ContainerSlotRef container_slot = 4;
+  string asset_instance_id = 1 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Concrete asset selected for this task run.
+  string station_id = 2 [(buf.validate.field).string.(validation.v1.station_id_component) = true]; // Concrete station in which the task runs.
+  string cell_id = 3 [(buf.validate.field).string.(validation.v1.cell_id_component) = true]; // Concrete cell in which the task runs.
+  resources.v1.ContainerSlotRef container_slot = 4; // Concrete container slot selected for source or destination work.
+  repeated string candidate_part_instance_ids = 5 [(buf.validate.field).repeated.items.string.(validation.v1.part_instance_id_component) = true]; // Candidate parts. Notice that their availability must be checked during runtime. Also, new candidates might be available.
 }
 
 message TaskRun {

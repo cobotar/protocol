@@ -198,8 +198,9 @@ PROPERTY_SCOPE_ENTITY: PropertyScope
 PROPERTY_SCOPE_RUNTIME: PropertyScope
 
 class PropertyDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "parent_id", "authoring_context_id", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    __slots__ = ("id", "key", "name", "icon", "description", "type", "parent_id", "authoring_context_id", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     ID_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -222,6 +223,7 @@ class PropertyDefinition(_message.Message):
     POSE_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_EXTRAS_FIELD_NUMBER: _ClassVar[int]
     id: str
+    key: str
     name: str
     icon: str
     description: str
@@ -243,7 +245,7 @@ class PropertyDefinition(_message.Message):
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
 
 class PropertyInstance(_message.Message):
     __slots__ = ("id", "property_definition_id", "scope", "scope_id", "origin", "mirror_property_definition_id", "value")
@@ -408,7 +410,7 @@ class PoseExtras(_message.Message):
     def __init__(self, anchor_editable: bool = ..., pose_editable: bool = ...) -> None: ...
 
 class CreatePropertyMessage(_message.Message):
-    __slots__ = ("parent_id", "authoring_context_id", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "origin", "scope_id", "mirror_property_definition_id", "initial_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    __slots__ = ("parent_id", "authoring_context_id", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "key", "origin", "scope_id", "mirror_property_definition_id", "initial_value", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
     AUTHORING_CONTEXT_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -424,6 +426,7 @@ class CreatePropertyMessage(_message.Message):
     ADVANCED_FIELD_NUMBER: _ClassVar[int]
     ALLOW_TO_BE_MIRRORED_FIELD_NUMBER: _ClassVar[int]
     SEMANTIC_ROLE_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_FIELD_NUMBER: _ClassVar[int]
     SCOPE_ID_FIELD_NUMBER: _ClassVar[int]
     MIRROR_PROPERTY_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -449,6 +452,7 @@ class CreatePropertyMessage(_message.Message):
     advanced: bool
     allow_to_be_mirrored: bool
     semantic_role: PropertySemanticRole
+    key: str
     origin: PropertyOrigin
     scope_id: str
     mirror_property_definition_id: str
@@ -459,4 +463,4 @@ class CreatePropertyMessage(_message.Message):
     color_extras: ColorExtras
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
-    def __init__(self, parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., scope_id: _Optional[str] = ..., mirror_property_definition_id: _Optional[str] = ..., initial_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+    def __init__(self, parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., key: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., scope_id: _Optional[str] = ..., mirror_property_definition_id: _Optional[str] = ..., initial_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...

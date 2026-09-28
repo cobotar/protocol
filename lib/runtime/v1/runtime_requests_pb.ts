@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/runtime_requests.proto.
  */
 export const file_runtime_v1_runtime_requests: GenFile = /*@__PURE__*/
-  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEibwoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIkCg5wcm9jZXNzX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSI8gQBEg4KBnJlYXNvbhgCIAEoCRIiChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoASLEAQoWVGFza1N0YXRlQ2hhbmdlUmVxdWVzdBIhCgt0YXNrX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSY8gQBEjgKBXN0YXRlGAIgASgOMhwucnVudGltZS52MS5UYXNrU3RhdGVSZXF1ZXN0Qgu6SAjIAQGCAQIQARISCgplcnJvcl9jb2RlGAMgASgJEhUKDWVycm9yX21lc3NhZ2UYBCABKAkSIgoRZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAEiiAEKE1Rhc2tSZWFzc2lnblJlcXVlc3QSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiIKEWV4cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBIt0BChJUYXNrUHJvZ3Jlc3NVcGRhdGUSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEg8KB21lc3NhZ2UYAyABKAkSHQoMZWxhcHNlZF90aW1lGAQgASgFQge6SAQaAigAEiQKE2VzdGltYXRlZF90aW1lX2xlZnQYBSABKAVCB7pIBBoCKAASIgoRZXhwZWN0ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAEikAEKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EiUKD3NlcXVlbmNlX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSQ8gQBEioKBWFjdG9yGAIgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQESIgoRZXhwZWN0ZWRfcmV2aXNpb24YAyABKARCB7pIBDICKAEiZAoXU2VxdWVuY2VDb21wbGV0ZVJlcXVlc3QSJQoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAnIAQFyBJDyBAESIgoRZXhwZWN0ZWRfcmV2aXNpb24YAiABKARCB7pIBDICKAEq1AEKEFRhc2tTdGF0ZVJlcXVlc3QSIgoeVEFTS19TVEFURV9SRVFVRVNUX1VOU1BFQ0lGSUVEEAASIgoeVEFTS19TVEFURV9SRVFVRVNUX0lOX1BST0dSRVNTEAESGwoXVEFTS19TVEFURV9SRVFVRVNUX0RPTkUQAhIbChdUQVNLX1NUQVRFX1JFUVVFU1RfVU5ETxADEhwKGFRBU0tfU1RBVEVfUkVRVUVTVF9FUlJPUhAEEiAKHFRBU0tfU1RBVEVfUkVRVUVTVF9TVVNQRU5ERUQQBkKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiFydW50aW1lL3YxL3J1bnRpbWVfcmVxdWVzdHMucHJvdG8SCnJ1bnRpbWUudjEibwoTUHJvY2Vzc0Fib3J0UmVxdWVzdBIkCg5wcm9jZXNzX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSI8gQBEg4KBnJlYXNvbhgCIAEoCRIiChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoASLEAQoWVGFza1N0YXRlQ2hhbmdlUmVxdWVzdBIhCgt0YXNrX3J1bl9pZBgBIAEoCUIMukgJyAEBcgSY8gQBEjgKBXN0YXRlGAIgASgOMhwucnVudGltZS52MS5UYXNrU3RhdGVSZXF1ZXN0Qgu6SAjIAQGCAQIQARISCgplcnJvcl9jb2RlGAMgASgJEhUKDWVycm9yX21lc3NhZ2UYBCABKAkSIgoRZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAEiiAEKE1Rhc2tSZWFzc2lnblJlcXVlc3QSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEiIKEWV4cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBIvMDChJUYXNrUHJvZ3Jlc3NVcGRhdGUSIQoLdGFza19ydW5faWQYASABKAlCDLpICcgBAXIEmPIEARIqCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBEg8KB21lc3NhZ2UYAyABKAkSHQoMZWxhcHNlZF90aW1lGAQgASgFQge6SAQaAigAEiQKE2VzdGltYXRlZF90aW1lX2xlZnQYBSABKAVCB7pIBBoCKAASIgoRZXhwZWN0ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAESNgoFcGhhc2UYByABKA4yHS5ydW50aW1lLnYxLlRhc2tQcm9ncmVzc1BoYXNlQgi6SAWCAQIQARIwChBwaGFzZV9jb25maWRlbmNlGAggASgCQhG6SA4KDEABHQAAgD8tAAAAAEgAiAEBOpQBukiQARqNAQoudGFza19wcm9ncmVzc191cGRhdGUuY29uZmlkZW5jZV9yZXF1aXJlc19waGFzZRIrcGhhc2VfY29uZmlkZW5jZSByZXF1aXJlcyBhIHNwZWNpZmllZCBwaGFzZRouIWhhcyh0aGlzLnBoYXNlX2NvbmZpZGVuY2UpIHx8IHRoaXMucGhhc2UgIT0gMEITChFfcGhhc2VfY29uZmlkZW5jZSKQAQoXU2VxdWVuY2VSZWFzc2lnblJlcXVlc3QSJQoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAnIAQFyBJDyBAESKgoFYWN0b3IYAiABKAsyEy5jb21tb24udjEuQWN0b3JSZWZCBrpIA8gBARIiChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoASJkChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBIlCg9zZXF1ZW5jZV9ydW5faWQYASABKAlCDLpICcgBAXIEkPIEARIiChFleHBlY3RlZF9yZXZpc2lvbhgCIAEoBEIHukgEMgIoASrUAQoQVGFza1N0YXRlUmVxdWVzdBIiCh5UQVNLX1NUQVRFX1JFUVVFU1RfVU5TUEVDSUZJRUQQABIiCh5UQVNLX1NUQVRFX1JFUVVFU1RfSU5fUFJPR1JFU1MQARIbChdUQVNLX1NUQVRFX1JFUVVFU1RfRE9ORRACEhsKF1RBU0tfU1RBVEVfUkVRVUVTVF9VTkRPEAMSHAoYVEFTS19TVEFURV9SRVFVRVNUX0VSUk9SEAQSIAocVEFTS19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAGKvIBChFUYXNrUHJvZ3Jlc3NQaGFzZRIjCh9UQVNLX1BST0dSRVNTX1BIQVNFX1VOU1BFQ0lGSUVEEAASIAocVEFTS19QUk9HUkVTU19QSEFTRV9MT0NBVElORxABEiMKH1RBU0tfUFJPR1JFU1NfUEhBU0VfQVBQUk9BQ0hJTkcQAhIjCh9UQVNLX1BST0dSRVNTX1BIQVNFX1BPU0lUSU9OSU5HEAMSIQodVEFTS19QUk9HUkVTU19QSEFTRV9WRVJJRllJTkcQBBIpCiVUQVNLX1BST0dSRVNTX1BIQVNFX1JFQURZX1RPX0NPTVBMRVRFEAVCswEKDmNvbS5ydW50aW1lLnYxQhRSdW50aW1lUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_actor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message runtime.v1.ProcessAbortRequest
@@ -152,6 +152,20 @@ export type TaskProgressUpdate = Message<"runtime.v1.TaskProgressUpdate"> & {
    * @generated from field: uint64 expected_revision = 6;
    */
   expectedRevision: bigint;
+
+  /**
+   * Optional semantic execution phase. UNSPECIFIED preserves compatibility with phase-unaware reporters.
+   *
+   * @generated from field: runtime.v1.TaskProgressPhase phase = 7;
+   */
+  phase: TaskProgressPhase;
+
+  /**
+   * Reporter confidence in phase, from 0 (no confidence) to 1 (fully confident).
+   *
+   * @generated from field: optional float phase_confidence = 8;
+   */
+  phaseConfidence?: number;
 };
 
 /**
@@ -260,4 +274,59 @@ export enum TaskStateRequest {
  */
 export const TaskStateRequestSchema: GenEnum<TaskStateRequest> = /*@__PURE__*/
   enumDesc(file_runtime_v1_runtime_requests, 0);
+
+/**
+ * Fine-grained progress within an in-progress task. This complements
+ * TaskRunState and deliberately does not include a completed phase; completion
+ * is represented by TASK_RUN_STATE_DONE.
+ *
+ * @generated from enum runtime.v1.TaskProgressPhase
+ */
+export enum TaskProgressPhase {
+  /**
+   * @generated from enum value: TASK_PROGRESS_PHASE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The actor is finding the target, part, tool, or work area.
+   *
+   * @generated from enum value: TASK_PROGRESS_PHASE_LOCATING = 1;
+   */
+  LOCATING = 1,
+
+  /**
+   * The actor is moving toward the target or preferred pre-target pose.
+   *
+   * @generated from enum value: TASK_PROGRESS_PHASE_APPROACHING = 2;
+   */
+  APPROACHING = 2,
+
+  /**
+   * The actor is aligning, inserting, or otherwise establishing the target pose.
+   *
+   * @generated from enum value: TASK_PROGRESS_PHASE_POSITIONING = 3;
+   */
+  POSITIONING = 3,
+
+  /**
+   * The task result is being checked against its validation requirements.
+   *
+   * @generated from enum value: TASK_PROGRESS_PHASE_VERIFYING = 4;
+   */
+  VERIFYING = 4,
+
+  /**
+   * All known requirements are satisfied and the task may be completed.
+   *
+   * @generated from enum value: TASK_PROGRESS_PHASE_READY_TO_COMPLETE = 5;
+   */
+  READY_TO_COMPLETE = 5,
+}
+
+/**
+ * Describes the enum runtime.v1.TaskProgressPhase.
+ */
+export const TaskProgressPhaseSchema: GenEnum<TaskProgressPhase> = /*@__PURE__*/
+  enumDesc(file_runtime_v1_runtime_requests, 1);
 

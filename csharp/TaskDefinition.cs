@@ -85,59 +85,72 @@ namespace Messages.Process.V1 {
             "c2tUYXJnZXRSBnRhcmdldBI/ChBpbnNlcnRpb25fb2Zmc2V0GAQgASgLMhQu",
             "Z2VvbWV0cnkudjEuVmVjdG9yM1IPaW5zZXJ0aW9uT2Zmc2V0Ej0KD2FwcHJv",
             "YWNoX29mZnNldBgFIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSDmFwcHJv",
-            "YWNoT2Zmc2V0ItMICg5UYXNrRGVmaW5pdGlvbhIOCgJpZBgBIAEoCVICaWQS",
-            "HQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyABKAlS",
-            "BGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEikKEGlu",
-            "c3RydWN0aW9uX3RleHQYBSABKAlSD2luc3RydWN0aW9uVGV4dBIwCg9zZXF1",
-            "ZW5jZV9udW1iZXIYBiABKAVCB7pIBBoCKABSDnNlcXVlbmNlTnVtYmVyEjsK",
-            "CXRhc2tfdHlwZRgHIAEoDjIULnByb2Nlc3MudjEuVGFza1R5cGVCCLpIBYIB",
-            "AhABUgh0YXNrVHlwZRIuCgZ0YXJnZXQYCCABKAsyFi5wcm9jZXNzLnYxLlRh",
-            "c2tUYXJnZXRSBnRhcmdldBI/ChBpbnNlcnRpb25fb2Zmc2V0GAkgASgLMhQu",
-            "Z2VvbWV0cnkudjEuVmVjdG9yM1IPaW5zZXJ0aW9uT2Zmc2V0Ej0KD2FwcHJv",
-            "YWNoX29mZnNldBgKIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSDmFwcHJv",
-            "YWNoT2Zmc2V0EkkKEHRvb2xfcmVxdWlyZW1lbnQYDCABKAsyHi5jYXBhYmls",
-            "aXR5LnYxLlRvb2xSZXF1aXJlbWVudFIPdG9vbFJlcXVpcmVtZW50Ek4KEnNr",
-            "aWxsX3JlcXVpcmVtZW50cxgNIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxS",
-            "ZXF1aXJlbWVudFIRc2tpbGxSZXF1aXJlbWVudHMSQQoKdmFsaWRhdGlvbhgO",
-            "IAEoCzIhLnByb2Nlc3MudjEuVmFsaWRhdGlvblJlcXVpcmVtZW50Ugp2YWxp",
-            "ZGF0aW9uEkoKEGV4ZWN1dGlvbl9wb2xpY3kYDyABKAsyHy5wcm9jZXNzLnYx",
-            "LlRhc2tFeGVjdXRpb25Qb2xpY3lSD2V4ZWN1dGlvblBvbGljeRJFChBzYWZl",
-            "dHlfcmVsZXZhbmNlGBAgASgOMhouY29tbW9uLnYxLlNhZmV0eVJlbGV2YW5j",
-            "ZVIPc2FmZXR5UmVsZXZhbmNlEjAKBnNvdXJjZRgRIAEoCzIYLnByb2Nlc3Mu",
-            "djEuVGFza0VuZHBvaW50UgZzb3VyY2USOgoLZGVzdGluYXRpb24YEiABKAsy",
-            "GC5wcm9jZXNzLnYxLlRhc2tFbmRwb2ludFILZGVzdGluYXRpb24SOwoIcXVh",
-            "bnRpdHkYEyABKAsyHy5wcm9jZXNzLnYxLlF1YW50aXR5UmVxdWlyZW1lbnRS",
-            "CHF1YW50aXR5Ej4KDWFwcGxpY2FiaWxpdHkYFSADKAsyGC52YXJpYW5jZS52",
-            "MS5WYXJpYW50UnVsZVINYXBwbGljYWJpbGl0eRI2CglvdmVycmlkZXMYFiAD",
-            "KAsyGC5wcm9jZXNzLnYxLlRhc2tPdmVycmlkZVIJb3ZlcnJpZGVzIkMKD1Rh",
-            "c2tEZWZpbml0aW9ucxIwCgVpdGVtcxgBIAMoCzIaLnByb2Nlc3MudjEuVGFz",
-            "a0RlZmluaXRpb25SBWl0ZW1zKr8DCghUYXNrVHlwZRIZChVUQVNLX1RZUEVf",
-            "VU5TUEVDSUZJRUQQABIVChFUQVNLX1RZUEVfSU5TUEVDVBABEhQKEFRBU0tf",
-            "VFlQRV9GQVNURU4QAhIWChJUQVNLX1RZUEVfVU5GQVNURU4QAxITCg9UQVNL",
-            "X1RZUEVfTU9VTlQQBBIVChFUQVNLX1RZUEVfVU5NT1VOVBAFEhIKDlRBU0tf",
-            "VFlQRV9NT1ZFEAYSFAoQVEFTS19UWVBFX1JFTU9WRRAHEhMKD1RBU0tfVFlQ",
-            "RV9BUFBMWRAIEhIKDlRBU0tfVFlQRV9XSVBFEAkSEwoPVEFTS19UWVBFX0FM",
-            "SUdOEAoSFAoQVEFTS19UWVBFX0lOU0VSVBALEhIKDlRBU0tfVFlQRV9IT0xE",
-            "EAwSFAoQVEFTS19UWVBFX1ZFUklGWRANEhIKDlRBU0tfVFlQRV9QSUNLEA4S",
-            "EwoPVEFTS19UWVBFX1BMQUNFEA8SEgoOVEFTS19UWVBFX1NDQU4QEBISCg5U",
-            "QVNLX1RZUEVfV0FJVBAREhMKD1RBU0tfVFlQRV9DSEVDSxASEhkKFVRBU0tf",
-            "VFlQRV9BQ0tOT1dMRURHRRATKp0CChhUYXNrQXNzaWdubWVudFByZWZlcmVu",
-            "Y2USKgomVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfVU5TUEVDSUZJRUQQ",
-            "ABIrCidUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9QUkVGRVJfSFVNQU4Q",
-            "ARIpCiVUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9PTkxZX0hVTUFOEAIS",
-            "KwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJFRkVSX1JPQk9UEAMS",
-            "KQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05MWV9ST0JPVBAEEiUK",
-            "IVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX0VJVEhFUhAFKucBChlBY3Rv",
-            "clVuYXZhaWxhYmlsaXR5UG9saWN5EisKJ0FDVE9SX1VOQVZBSUxBQklMSVRZ",
-            "X1BPTElDWV9VTlNQRUNJRklFRBAAEi4KKkFDVE9SX1VOQVZBSUxBQklMSVRZ",
-            "X1BPTElDWV9XQUlUX0ZPUl9BQ1RPUhABEjcKM0FDVE9SX1VOQVZBSUxBQklM",
-            "SVRZX1BPTElDWV9SRUFTU0lHTl9JRl9OT1RfU1RBUlRFRBACEjQKMEFDVE9S",
-            "X1VOQVZBSUxBQklMSVRZX1BPTElDWV9TVVNQRU5EX0FORF9SRUFTU0lHThAD",
-            "QrIBCg5jb20ucHJvY2Vzcy52MUITVGFza0RlZmluaXRpb25Qcm90b1ABWjln",
-            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcHJvY2Vzcy92",
-            "MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJv",
-            "Y2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpW",
-            "MWIGcHJvdG8z"));
+            "YWNoT2Zmc2V0IpEBChVPcmllbnRhdGlvbkNvbnN0cmFpbnQSWgoZYW5ndWxh",
+            "cl90b2xlcmFuY2VfZGVncmVlcxgBIAEoAUIZukgWEhQZAAAAAACAZkApAAAA",
+            "AAAAAABAAUgAUhdhbmd1bGFyVG9sZXJhbmNlRGVncmVlc4gBAUIcChpfYW5n",
+            "dWxhcl90b2xlcmFuY2VfZGVncmVlcyKEAQoOVGFza0NvbnN0cmFpbnQSFwoC",
+            "aWQYASABKAlCB7pIBHICEAFSAmlkEkMKC29yaWVudGF0aW9uGAogASgLMiEu",
+            "cHJvY2Vzcy52MS5PcmllbnRhdGlvbkNvbnN0cmFpbnRSC29yaWVudGF0aW9u",
+            "OhS6SBEiDwoLb3JpZW50YXRpb24QASKLCwoOVGFza0RlZmluaXRpb24SDgoC",
+            "aWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRIS",
+            "CgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNj",
+            "cmlwdGlvbhIpChBpbnN0cnVjdGlvbl90ZXh0GAUgASgJUg9pbnN0cnVjdGlv",
+            "blRleHQSMAoPc2VxdWVuY2VfbnVtYmVyGAYgASgFQge6SAQaAigAUg5zZXF1",
+            "ZW5jZU51bWJlchI7Cgl0YXNrX3R5cGUYByABKA4yFC5wcm9jZXNzLnYxLlRh",
+            "c2tUeXBlQgi6SAWCAQIQAVIIdGFza1R5cGUSLgoGdGFyZ2V0GAggASgLMhYu",
+            "cHJvY2Vzcy52MS5UYXNrVGFyZ2V0UgZ0YXJnZXQSPwoQaW5zZXJ0aW9uX29m",
+            "ZnNldBgJIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSD2luc2VydGlvbk9m",
+            "ZnNldBI9Cg9hcHByb2FjaF9vZmZzZXQYCiABKAsyFC5nZW9tZXRyeS52MS5W",
+            "ZWN0b3IzUg5hcHByb2FjaE9mZnNldBJJChB0b29sX3JlcXVpcmVtZW50GAwg",
+            "ASgLMh4uY2FwYWJpbGl0eS52MS5Ub29sUmVxdWlyZW1lbnRSD3Rvb2xSZXF1",
+            "aXJlbWVudBJOChJza2lsbF9yZXF1aXJlbWVudHMYDSADKAsyHy5jYXBhYmls",
+            "aXR5LnYxLlNraWxsUmVxdWlyZW1lbnRSEXNraWxsUmVxdWlyZW1lbnRzEkEK",
+            "CnZhbGlkYXRpb24YDiABKAsyIS5wcm9jZXNzLnYxLlZhbGlkYXRpb25SZXF1",
+            "aXJlbWVudFIKdmFsaWRhdGlvbhJKChBleGVjdXRpb25fcG9saWN5GA8gASgL",
+            "Mh8ucHJvY2Vzcy52MS5UYXNrRXhlY3V0aW9uUG9saWN5Ug9leGVjdXRpb25Q",
+            "b2xpY3kSRQoQc2FmZXR5X3JlbGV2YW5jZRgQIAEoDjIaLmNvbW1vbi52MS5T",
+            "YWZldHlSZWxldmFuY2VSD3NhZmV0eVJlbGV2YW5jZRIwCgZzb3VyY2UYESAB",
+            "KAsyGC5wcm9jZXNzLnYxLlRhc2tFbmRwb2ludFIGc291cmNlEjoKC2Rlc3Rp",
+            "bmF0aW9uGBIgASgLMhgucHJvY2Vzcy52MS5UYXNrRW5kcG9pbnRSC2Rlc3Rp",
+            "bmF0aW9uEjsKCHF1YW50aXR5GBMgASgLMh8ucHJvY2Vzcy52MS5RdWFudGl0",
+            "eVJlcXVpcmVtZW50UghxdWFudGl0eRI+Cg1hcHBsaWNhYmlsaXR5GBUgAygL",
+            "MhgudmFyaWFuY2UudjEuVmFyaWFudFJ1bGVSDWFwcGxpY2FiaWxpdHkSNgoJ",
+            "b3ZlcnJpZGVzGBYgAygLMhgucHJvY2Vzcy52MS5UYXNrT3ZlcnJpZGVSCW92",
+            "ZXJyaWRlcxI8Cgtjb25zdHJhaW50cxgXIAMoCzIaLnByb2Nlc3MudjEuVGFz",
+            "a0NvbnN0cmFpbnRSC2NvbnN0cmFpbnRzOvcBukjzARrwAQpCdGFza19kZWZp",
+            "bml0aW9uLm9yaWVudGF0aW9uX2NvbnN0cmFpbnRfcmVxdWlyZXNfdGFyZ2V0",
+            "X29yaWVudGF0aW9uEkdvcmllbnRhdGlvbiBjb25zdHJhaW50cyByZXF1aXJl",
+            "IHRhcmdldC5wcm9kdWN0LmxvY2FsX3RhcmdldC5vcmllbnRhdGlvbhphdGhp",
+            "cy5jb25zdHJhaW50cy5hbGwoYywgIWhhcyhjLm9yaWVudGF0aW9uKSB8fCBo",
+            "YXModGhpcy50YXJnZXQucHJvZHVjdC5sb2NhbF90YXJnZXQub3JpZW50YXRp",
+            "b24pKSJDCg9UYXNrRGVmaW5pdGlvbnMSMAoFaXRlbXMYASADKAsyGi5wcm9j",
+            "ZXNzLnYxLlRhc2tEZWZpbml0aW9uUgVpdGVtcyq/AwoIVGFza1R5cGUSGQoV",
+            "VEFTS19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRVEFTS19UWVBFX0lOU1BFQ1QQ",
+            "ARIUChBUQVNLX1RZUEVfRkFTVEVOEAISFgoSVEFTS19UWVBFX1VORkFTVEVO",
+            "EAMSEwoPVEFTS19UWVBFX01PVU5UEAQSFQoRVEFTS19UWVBFX1VOTU9VTlQQ",
+            "BRISCg5UQVNLX1RZUEVfTU9WRRAGEhQKEFRBU0tfVFlQRV9SRU1PVkUQBxIT",
+            "Cg9UQVNLX1RZUEVfQVBQTFkQCBISCg5UQVNLX1RZUEVfV0lQRRAJEhMKD1RB",
+            "U0tfVFlQRV9BTElHThAKEhQKEFRBU0tfVFlQRV9JTlNFUlQQCxISCg5UQVNL",
+            "X1RZUEVfSE9MRBAMEhQKEFRBU0tfVFlQRV9WRVJJRlkQDRISCg5UQVNLX1RZ",
+            "UEVfUElDSxAOEhMKD1RBU0tfVFlQRV9QTEFDRRAPEhIKDlRBU0tfVFlQRV9T",
+            "Q0FOEBASEgoOVEFTS19UWVBFX1dBSVQQERITCg9UQVNLX1RZUEVfQ0hFQ0sQ",
+            "EhIZChVUQVNLX1RZUEVfQUNLTk9XTEVER0UQEyqdAgoYVGFza0Fzc2lnbm1l",
+            "bnRQcmVmZXJlbmNlEioKJlRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1VO",
+            "U1BFQ0lGSUVEEAASKwonVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfUFJF",
+            "RkVSX0hVTUFOEAESKQolVEFTS19BU1NJR05NRU5UX1BSRUZFUkVOQ0VfT05M",
+            "WV9IVU1BThACEisKJ1RBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX1BSRUZF",
+            "Ul9ST0JPVBADEikKJVRBU0tfQVNTSUdOTUVOVF9QUkVGRVJFTkNFX09OTFlf",
+            "Uk9CT1QQBBIlCiFUQVNLX0FTU0lHTk1FTlRfUFJFRkVSRU5DRV9FSVRIRVIQ",
+            "BSrnAQoZQWN0b3JVbmF2YWlsYWJpbGl0eVBvbGljeRIrCidBQ1RPUl9VTkFW",
+            "QUlMQUJJTElUWV9QT0xJQ1lfVU5TUEVDSUZJRUQQABIuCipBQ1RPUl9VTkFW",
+            "QUlMQUJJTElUWV9QT0xJQ1lfV0FJVF9GT1JfQUNUT1IQARI3CjNBQ1RPUl9V",
+            "TkFWQUlMQUJJTElUWV9QT0xJQ1lfUkVBU1NJR05fSUZfTk9UX1NUQVJURUQQ",
+            "AhI0CjBBQ1RPUl9VTkFWQUlMQUJJTElUWV9QT0xJQ1lfU1VTUEVORF9BTkRf",
+            "UkVBU1NJR04QA0KyAQoOY29tLnByb2Nlc3MudjFCE1Rhc2tEZWZpbml0aW9u",
+            "UHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
+            "L3Byb2Nlc3MvdjE7cHJvY2Vzc3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vz",
+            "cy5WMcoCClByb2Nlc3NcVjHiAhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gIL",
+            "UHJvY2Vzczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Geometry.V1.LocalTargetReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.TaskType), typeof(global::Messages.Process.V1.TaskAssignmentPreference), typeof(global::Messages.Process.V1.ActorUnavailabilityPolicy), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -150,7 +163,9 @@ namespace Messages.Process.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ValidationRequirement), global::Messages.Process.V1.ValidationRequirement.Parser, new[]{ "RequireToolFeedback", "RequireVisionCheck", "AllowManualConfirmation", "ManualConfirmationMinLevel", "Mode", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskExecutionPolicy), global::Messages.Process.V1.TaskExecutionPolicy.Parser, new[]{ "AssignmentPreference", "ActorConstraint", "CanReassign", "CanUndo", "ActorUnavailabilityPolicy", "EstimatedHumanDuration", "EstimatedRobotDuration", "RequireFullGuidance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskOverride), global::Messages.Process.V1.TaskOverride.Parser, new[]{ "When", "InstructionText", "Target", "InsertionOffset", "ApproachOffset" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinition), global::Messages.Process.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "InsertionOffset", "ApproachOffset", "ToolRequirement", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "Source", "Destination", "Quantity", "Applicability", "Overrides" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.OrientationConstraint), global::Messages.Process.V1.OrientationConstraint.Parser, new[]{ "AngularToleranceDegrees" }, new[]{ "AngularToleranceDegrees" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskConstraint), global::Messages.Process.V1.TaskConstraint.Parser, new[]{ "Id", "Orientation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinition), global::Messages.Process.V1.TaskDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "InstructionText", "SequenceNumber", "TaskType", "Target", "InsertionOffset", "ApproachOffset", "ToolRequirement", "SkillRequirements", "Validation", "ExecutionPolicy", "SafetyRelevance", "Source", "Destination", "Quantity", "Applicability", "Overrides", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.TaskDefinitions), global::Messages.Process.V1.TaskDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -3143,6 +3158,481 @@ namespace Messages.Process.V1 {
   }
 
   /// <summary>
+  /// Requires the observed orientation to be within an angular tolerance of the
+  /// orientation in TaskDefinition.target.product.local_target. The target pose
+  /// remains authoritative and is intentionally not duplicated here.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class OrientationConstraint : pb::IMessage<OrientationConstraint>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OrientationConstraint> _parser = new pb::MessageParser<OrientationConstraint>(() => new OrientationConstraint());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<OrientationConstraint> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OrientationConstraint() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OrientationConstraint(OrientationConstraint other) : this() {
+      _hasBits0 = other._hasBits0;
+      angularToleranceDegrees_ = other.angularToleranceDegrees_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OrientationConstraint Clone() {
+      return new OrientationConstraint(this);
+    }
+
+    /// <summary>Field number for the "angular_tolerance_degrees" field.</summary>
+    public const int AngularToleranceDegreesFieldNumber = 1;
+    private readonly static double AngularToleranceDegreesDefaultValue = 0D;
+
+    private double angularToleranceDegrees_;
+    /// <summary>
+    /// Maximum angular difference from the target orientation. When omitted, the
+    /// validating implementation may apply its configured default tolerance.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double AngularToleranceDegrees {
+      get { if ((_hasBits0 & 1) != 0) { return angularToleranceDegrees_; } else { return AngularToleranceDegreesDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        angularToleranceDegrees_ = value;
+      }
+    }
+    /// <summary>Gets whether the "angular_tolerance_degrees" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAngularToleranceDegrees {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "angular_tolerance_degrees" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAngularToleranceDegrees() {
+      _hasBits0 &= ~1;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as OrientationConstraint);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(OrientationConstraint other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(AngularToleranceDegrees, other.AngularToleranceDegrees)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HasAngularToleranceDegrees) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(AngularToleranceDegrees);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HasAngularToleranceDegrees) {
+        output.WriteRawTag(9);
+        output.WriteDouble(AngularToleranceDegrees);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasAngularToleranceDegrees) {
+        output.WriteRawTag(9);
+        output.WriteDouble(AngularToleranceDegrees);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HasAngularToleranceDegrees) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(OrientationConstraint other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HasAngularToleranceDegrees) {
+        AngularToleranceDegrees = other.AngularToleranceDegrees;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 9: {
+            AngularToleranceDegrees = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 9: {
+            AngularToleranceDegrees = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// A semantic condition that can be evaluated while executing or validating a
+  /// task. Exactly one constraint kind must be selected.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class TaskConstraint : pb::IMessage<TaskConstraint>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskConstraint> _parser = new pb::MessageParser<TaskConstraint>(() => new TaskConstraint());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TaskConstraint> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskConstraint() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskConstraint(TaskConstraint other) : this() {
+      id_ = other.id_;
+      orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TaskConstraint Clone() {
+      return new TaskConstraint(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    /// <summary>
+    /// Stable identifier within the task definition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "orientation" field.</summary>
+    public const int OrientationFieldNumber = 10;
+    private global::Messages.Process.V1.OrientationConstraint orientation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.OrientationConstraint Orientation {
+      get { return orientation_; }
+      set {
+        orientation_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TaskConstraint);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TaskConstraint other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(Orientation, other.Orientation)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (orientation_ != null) hash ^= Orientation.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Orientation);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (orientation_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Orientation);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (orientation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Orientation);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TaskConstraint other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.orientation_ != null) {
+        if (orientation_ == null) {
+          Orientation = new global::Messages.Process.V1.OrientationConstraint();
+        }
+        Orientation.MergeFrom(other.Orientation);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 82: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Process.V1.OrientationConstraint();
+            }
+            input.ReadMessage(Orientation);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 82: {
+            if (orientation_ == null) {
+              Orientation = new global::Messages.Process.V1.OrientationConstraint();
+            }
+            input.ReadMessage(Orientation);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// TaskDefinition is the static/universal authoring-time description of a task.
   ///
   /// It should remain reusable across workcells, deployments, and specific
@@ -3164,7 +3654,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3204,6 +3694,7 @@ namespace Messages.Process.V1 {
       quantity_ = other.quantity_ != null ? other.quantity_.Clone() : null;
       applicability_ = other.applicability_.Clone();
       overrides_ = other.overrides_.Clone();
+      constraints_ = other.constraints_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3498,6 +3989,20 @@ namespace Messages.Process.V1 {
       get { return overrides_; }
     }
 
+    /// <summary>Field number for the "constraints" field.</summary>
+    public const int ConstraintsFieldNumber = 23;
+    private static readonly pb::FieldCodec<global::Messages.Process.V1.TaskConstraint> _repeated_constraints_codec
+        = pb::FieldCodec.ForMessage(186, global::Messages.Process.V1.TaskConstraint.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Process.V1.TaskConstraint> constraints_ = new pbc::RepeatedField<global::Messages.Process.V1.TaskConstraint>();
+    /// <summary>
+    /// Semantic conditions that supplement the task's validation mechanism.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Process.V1.TaskConstraint> Constraints {
+      get { return constraints_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -3533,6 +4038,7 @@ namespace Messages.Process.V1 {
       if (!object.Equals(Quantity, other.Quantity)) return false;
       if(!applicability_.Equals(other.applicability_)) return false;
       if(!overrides_.Equals(other.overrides_)) return false;
+      if(!constraints_.Equals(other.constraints_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3560,6 +4066,7 @@ namespace Messages.Process.V1 {
       if (quantity_ != null) hash ^= Quantity.GetHashCode();
       hash ^= applicability_.GetHashCode();
       hash ^= overrides_.GetHashCode();
+      hash ^= constraints_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3649,6 +4156,7 @@ namespace Messages.Process.V1 {
       }
       applicability_.WriteTo(output, _repeated_applicability_codec);
       overrides_.WriteTo(output, _repeated_overrides_codec);
+      constraints_.WriteTo(output, _repeated_constraints_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3730,6 +4238,7 @@ namespace Messages.Process.V1 {
       }
       applicability_.WriteTo(ref output, _repeated_applicability_codec);
       overrides_.WriteTo(ref output, _repeated_overrides_codec);
+      constraints_.WriteTo(ref output, _repeated_constraints_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3794,6 +4303,7 @@ namespace Messages.Process.V1 {
       }
       size += applicability_.CalculateSize(_repeated_applicability_codec);
       size += overrides_.CalculateSize(_repeated_overrides_codec);
+      size += constraints_.CalculateSize(_repeated_constraints_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3887,6 +4397,7 @@ namespace Messages.Process.V1 {
       }
       applicability_.Add(other.applicability_);
       overrides_.Add(other.overrides_);
+      constraints_.Add(other.constraints_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4011,6 +4522,10 @@ namespace Messages.Process.V1 {
           }
           case 178: {
             overrides_.AddEntriesFrom(input, _repeated_overrides_codec);
+            break;
+          }
+          case 186: {
+            constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
         }
@@ -4139,6 +4654,10 @@ namespace Messages.Process.V1 {
             overrides_.AddEntriesFrom(ref input, _repeated_overrides_codec);
             break;
           }
+          case 186: {
+            constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
+            break;
+          }
         }
       }
     }
@@ -4161,7 +4680,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Messages.Process.V1.TaskDefinitionReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

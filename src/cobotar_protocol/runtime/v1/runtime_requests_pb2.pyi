@@ -17,12 +17,27 @@ class TaskStateRequest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TASK_STATE_REQUEST_UNDO: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_ERROR: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_SUSPENDED: _ClassVar[TaskStateRequest]
+
+class TaskProgressPhase(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    TASK_PROGRESS_PHASE_UNSPECIFIED: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_LOCATING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_APPROACHING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_POSITIONING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_VERIFYING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_READY_TO_COMPLETE: _ClassVar[TaskProgressPhase]
 TASK_STATE_REQUEST_UNSPECIFIED: TaskStateRequest
 TASK_STATE_REQUEST_IN_PROGRESS: TaskStateRequest
 TASK_STATE_REQUEST_DONE: TaskStateRequest
 TASK_STATE_REQUEST_UNDO: TaskStateRequest
 TASK_STATE_REQUEST_ERROR: TaskStateRequest
 TASK_STATE_REQUEST_SUSPENDED: TaskStateRequest
+TASK_PROGRESS_PHASE_UNSPECIFIED: TaskProgressPhase
+TASK_PROGRESS_PHASE_LOCATING: TaskProgressPhase
+TASK_PROGRESS_PHASE_APPROACHING: TaskProgressPhase
+TASK_PROGRESS_PHASE_POSITIONING: TaskProgressPhase
+TASK_PROGRESS_PHASE_VERIFYING: TaskProgressPhase
+TASK_PROGRESS_PHASE_READY_TO_COMPLETE: TaskProgressPhase
 
 class ProcessAbortRequest(_message.Message):
     __slots__ = ("process_run_id", "reason", "expected_revision")
@@ -59,20 +74,24 @@ class TaskReassignRequest(_message.Message):
     def __init__(self, task_run_id: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., expected_revision: _Optional[int] = ...) -> None: ...
 
 class TaskProgressUpdate(_message.Message):
-    __slots__ = ("task_run_id", "actor", "message", "elapsed_time", "estimated_time_left", "expected_revision")
+    __slots__ = ("task_run_id", "actor", "message", "elapsed_time", "estimated_time_left", "expected_revision", "phase", "phase_confidence")
     TASK_RUN_ID_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     ELAPSED_TIME_FIELD_NUMBER: _ClassVar[int]
     ESTIMATED_TIME_LEFT_FIELD_NUMBER: _ClassVar[int]
     EXPECTED_REVISION_FIELD_NUMBER: _ClassVar[int]
+    PHASE_FIELD_NUMBER: _ClassVar[int]
+    PHASE_CONFIDENCE_FIELD_NUMBER: _ClassVar[int]
     task_run_id: str
     actor: _actor_pb2.ActorRef
     message: str
     elapsed_time: int
     estimated_time_left: int
     expected_revision: int
-    def __init__(self, task_run_id: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., message: _Optional[str] = ..., elapsed_time: _Optional[int] = ..., estimated_time_left: _Optional[int] = ..., expected_revision: _Optional[int] = ...) -> None: ...
+    phase: TaskProgressPhase
+    phase_confidence: float
+    def __init__(self, task_run_id: _Optional[str] = ..., actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., message: _Optional[str] = ..., elapsed_time: _Optional[int] = ..., estimated_time_left: _Optional[int] = ..., expected_revision: _Optional[int] = ..., phase: _Optional[_Union[TaskProgressPhase, str]] = ..., phase_confidence: _Optional[float] = ...) -> None: ...
 
 class SequenceReassignRequest(_message.Message):
     __slots__ = ("sequence_run_id", "actor", "expected_revision")

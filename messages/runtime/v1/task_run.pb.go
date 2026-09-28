@@ -92,13 +92,14 @@ func (TaskRunState) EnumDescriptor() ([]byte, []int) {
 
 // Concrete runtime/deployment bindings resolved for this task run.
 type TaskRuntimeBinding struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	AssetInstanceId string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`
-	StationId       string                 `protobuf:"bytes,2,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId          string                 `protobuf:"bytes,3,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	ContainerSlot   *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	AssetInstanceId          string                 `protobuf:"bytes,1,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`                              // Concrete asset selected for this task run.
+	StationId                string                 `protobuf:"bytes,2,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                                                  // Concrete station in which the task runs.
+	CellId                   string                 `protobuf:"bytes,3,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                                           // Concrete cell in which the task runs.
+	ContainerSlot            *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`                                      // Concrete container slot selected for source or destination work.
+	CandidatePartInstanceIds []string               `protobuf:"bytes,5,rep,name=candidate_part_instance_ids,json=candidatePartInstanceIds,proto3" json:"candidate_part_instance_ids,omitempty"` // Candidate parts. Notice that their availability must be checked during runtime. Also, new candidates might be available.
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *TaskRuntimeBinding) Reset() {
@@ -155,6 +156,13 @@ func (x *TaskRuntimeBinding) GetCellId() string {
 func (x *TaskRuntimeBinding) GetContainerSlot() *v1.ContainerSlotRef {
 	if x != nil {
 		return x.ContainerSlot
+	}
+	return nil
+}
+
+func (x *TaskRuntimeBinding) GetCandidatePartInstanceIds() []string {
+	if x != nil {
+		return x.CandidatePartInstanceIds
 	}
 	return nil
 }
@@ -425,13 +433,14 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbf\x01\n" +
-	"\x12TaskRuntimeBinding\x12*\n" +
-	"\x11asset_instance_id\x18\x01 \x01(\tR\x0fassetInstanceId\x12\x1d\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xaf\x02\n" +
+	"\x12TaskRuntimeBinding\x125\n" +
+	"\x11asset_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId\x12(\n" +
 	"\n" +
-	"station_id\x18\x02 \x01(\tR\tstationId\x12\x17\n" +
-	"\acell_id\x18\x03 \x01(\tR\x06cellId\x12E\n" +
-	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\"\xd1\b\n" +
+	"station_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\"\n" +
+	"\acell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12E\n" +
+	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\x12M\n" +
+	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\xd1\b\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +

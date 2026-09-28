@@ -34,6 +34,28 @@ enum TaskStateRequest {
   TASK_STATE_REQUEST_SUSPENDED = 6;
 }
 
+// Fine-grained progress within an in-progress task. This complements
+// TaskRunState and deliberately does not include a completed phase; completion
+// is represented by TASK_RUN_STATE_DONE.
+enum TaskProgressPhase {
+  TASK_PROGRESS_PHASE_UNSPECIFIED = 0;
+
+  // The actor is finding the target, part, tool, or work area.
+  TASK_PROGRESS_PHASE_LOCATING = 1;
+
+  // The actor is moving toward the target or preferred pre-target pose.
+  TASK_PROGRESS_PHASE_APPROACHING = 2;
+
+  // The actor is aligning, inserting, or otherwise establishing the target pose.
+  TASK_PROGRESS_PHASE_POSITIONING = 3;
+
+  // The task result is being checked against its validation requirements.
+  TASK_PROGRESS_PHASE_VERIFYING = 4;
+
+  // All known requirements are satisfied and the task may be completed.
+  TASK_PROGRESS_PHASE_READY_TO_COMPLETE = 5;
+}
+
 message TaskStateChangeRequest {
   string task_run_id = 1 [
     (buf.validate.field).required = true,
@@ -62,6 +84,12 @@ message TaskReassignRequest {
 }
 
 message TaskProgressUpdate {
+  option (buf.validate.message).cel = {
+    id: "task_progress_update.confidence_requires_phase"
+    message: "phase_confidence requires a specified phase"
+    expression: "!has(this.phase_confidence) || this.phase != 0"
+  };
+
   string task_run_id = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_run_id_component) = true
@@ -71,6 +99,12 @@ message TaskProgressUpdate {
   int32 elapsed_time = 4 [(buf.validate.field).int32.gte = 0]; // elapsed time in seconds
   int32 estimated_time_left = 5 [(buf.validate.field).int32.gte = 0]; // estimated time left in seconds
   uint64 expected_revision = 6 [(buf.validate.field).uint64.gte = 1]; // Revision of the TaskRun on which this request is based.
+  TaskProgressPhase phase = 7 [(buf.validate.field).enum.defined_only = true]; // Optional semantic execution phase. UNSPECIFIED preserves compatibility with phase-unaware reporters.
+  optional float phase_confidence = 8 [(buf.validate.field).float = {
+    gte: 0
+    lte: 1
+    finite: true
+  }]; // Reporter confidence in phase, from 0 (no confidence) to 1 (fully confident).
 }
 
 message SequenceReassignRequest {

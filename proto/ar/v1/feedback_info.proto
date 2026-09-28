@@ -9,6 +9,27 @@ import "validation/v1/predefined_string_rules.proto";
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
 
+// Describes a type-level behavior supported by a feedback implementation.
+// Capability metadata is server-owned and intended for read-only discovery by
+// authoring clients. It does not describe whether a particular feedback
+// instance is currently active.
+message FeedbackCapability {
+  string key = 1 [(buf.validate.field).string = {
+    min_len: 1
+    max_len: 64
+  }]; // Stable machine-readable capability identifier.
+  string description = 2; // Human-readable explanation shown by authoring tools.
+  repeated string property_keys = 3 [(buf.validate.field).repeated = {
+    unique: true
+    items: {
+      string: {
+        min_len: 1
+        max_len: 64
+      }
+    }
+  }]; // Stable PropertyDefinition keys used to configure this capability.
+}
+
 enum FeedbackGroup {
   FEEDBACK_GROUP_UNSPECIFIED = 0;
 
@@ -50,6 +71,7 @@ message FeedbackInfoMessage {
   repeated HandlerRequirement required_handlers = 11; // Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
   repeated ExchangeType emits = 12; // / Outputs the feedback publishes
   bool disabled = 13;
+  repeated FeedbackCapability capabilities = 14; // Optional behaviors supported by this feedback type.
 }
 
 message FeedbackInfoMessages {

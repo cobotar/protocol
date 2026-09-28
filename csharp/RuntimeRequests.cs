@@ -40,37 +40,49 @@ namespace Messages.Runtime.V1 {
             "C3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIx",
             "CgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVh",
             "Y3RvchI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoAVIQZXhw",
-            "ZWN0ZWRSZXZpc2lvbiKqAgoSVGFza1Byb2dyZXNzVXBkYXRlEiwKC3Rhc2tf",
+            "ZWN0ZWRSZXZpc2lvbiLYBAoSVGFza1Byb2dyZXNzVXBkYXRlEiwKC3Rhc2tf",
             "cnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIxCgVhY3Rv",
             "chgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVhY3RvchIY",
             "CgdtZXNzYWdlGAMgASgJUgdtZXNzYWdlEioKDGVsYXBzZWRfdGltZRgEIAEo",
             "BUIHukgEGgIoAFILZWxhcHNlZFRpbWUSNwoTZXN0aW1hdGVkX3RpbWVfbGVm",
             "dBgFIAEoBUIHukgEGgIoAFIRZXN0aW1hdGVkVGltZUxlZnQSNAoRZXhwZWN0",
-            "ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24i",
-            "uAEKF1NlcXVlbmNlUmVhc3NpZ25SZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9p",
-            "ZBgBIAEoCUIMukgJcgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjEKBWFjdG9y",
-            "GAIgASgLMhMuY29tbW9uLnYxLkFjdG9yUmVmQga6SAPIAQFSBWFjdG9yEjQK",
-            "EWV4cGVjdGVkX3JldmlzaW9uGAMgASgEQge6SAQyAigBUhBleHBlY3RlZFJl",
-            "dmlzaW9uIoUBChdTZXF1ZW5jZUNvbXBsZXRlUmVxdWVzdBI0Cg9zZXF1ZW5j",
-            "ZV9ydW5faWQYASABKAlCDLpICXIEkPIEAcgBAVINc2VxdWVuY2VSdW5JZBI0",
-            "ChFleHBlY3RlZF9yZXZpc2lvbhgCIAEoBEIHukgEMgIoAVIQZXhwZWN0ZWRS",
-            "ZXZpc2lvbirUAQoQVGFza1N0YXRlUmVxdWVzdBIiCh5UQVNLX1NUQVRFX1JF",
-            "UVVFU1RfVU5TUEVDSUZJRUQQABIiCh5UQVNLX1NUQVRFX1JFUVVFU1RfSU5f",
-            "UFJPR1JFU1MQARIbChdUQVNLX1NUQVRFX1JFUVVFU1RfRE9ORRACEhsKF1RB",
-            "U0tfU1RBVEVfUkVRVUVTVF9VTkRPEAMSHAoYVEFTS19TVEFURV9SRVFVRVNU",
-            "X0VSUk9SEAQSIAocVEFTS19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAGQrMB",
-            "Cg5jb20ucnVudGltZS52MUIUUnVudGltZVJlcXVlc3RzUHJvdG9QAVo5Z2l0",
-            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7",
-            "cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRp",
-            "bWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFi",
-            "BnByb3RvMw=="));
+            "ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24S",
+            "PQoFcGhhc2UYByABKA4yHS5ydW50aW1lLnYxLlRhc2tQcm9ncmVzc1BoYXNl",
+            "Qgi6SAWCAQIQAVIFcGhhc2USQQoQcGhhc2VfY29uZmlkZW5jZRgIIAEoAkIR",
+            "ukgOCgwdAACAPy0AAAAAQAFIAFIPcGhhc2VDb25maWRlbmNliAEBOpQBukiQ",
+            "ARqNAQoudGFza19wcm9ncmVzc191cGRhdGUuY29uZmlkZW5jZV9yZXF1aXJl",
+            "c19waGFzZRIrcGhhc2VfY29uZmlkZW5jZSByZXF1aXJlcyBhIHNwZWNpZmll",
+            "ZCBwaGFzZRouIWhhcyh0aGlzLnBoYXNlX2NvbmZpZGVuY2UpIHx8IHRoaXMu",
+            "cGhhc2UgIT0gMEITChFfcGhhc2VfY29uZmlkZW5jZSK4AQoXU2VxdWVuY2VS",
+            "ZWFzc2lnblJlcXVlc3QSNAoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAly",
+            "BJDyBAHIAQFSDXNlcXVlbmNlUnVuSWQSMQoFYWN0b3IYAiABKAsyEy5jb21t",
+            "b24udjEuQWN0b3JSZWZCBrpIA8gBAVIFYWN0b3ISNAoRZXhwZWN0ZWRfcmV2",
+            "aXNpb24YAyABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24ihQEKF1Nl",
+            "cXVlbmNlQ29tcGxldGVSZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9pZBgBIAEo",
+            "CUIMukgJcgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjQKEWV4cGVjdGVkX3Jl",
+            "dmlzaW9uGAIgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlzaW9uKtQBChBU",
+            "YXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJ",
+            "RklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsK",
+            "F1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFV",
+            "RVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIgChxU",
+            "QVNLX1NUQVRFX1JFUVVFU1RfU1VTUEVOREVEEAYq8gEKEVRhc2tQcm9ncmVz",
+            "c1BoYXNlEiMKH1RBU0tfUFJPR1JFU1NfUEhBU0VfVU5TUEVDSUZJRUQQABIg",
+            "ChxUQVNLX1BST0dSRVNTX1BIQVNFX0xPQ0FUSU5HEAESIwofVEFTS19QUk9H",
+            "UkVTU19QSEFTRV9BUFBST0FDSElORxACEiMKH1RBU0tfUFJPR1JFU1NfUEhB",
+            "U0VfUE9TSVRJT05JTkcQAxIhCh1UQVNLX1BST0dSRVNTX1BIQVNFX1ZFUklG",
+            "WUlORxAEEikKJVRBU0tfUFJPR1JFU1NfUEhBU0VfUkVBRFlfVE9fQ09NUExF",
+            "VEUQBUKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3Rv",
+            "UAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50",
+            "aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHK",
+            "AgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRp",
+            "bWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), typeof(global::Messages.Runtime.V1.TaskProgressPhase), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft", "ExpectedRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft", "ExpectedRevision", "Phase", "PhaseConfidence" }, new[]{ "PhaseConfidence" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceReassignRequest), global::Messages.Runtime.V1.SequenceReassignRequest.Parser, new[]{ "SequenceRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceCompleteRequest), global::Messages.Runtime.V1.SequenceCompleteRequest.Parser, new[]{ "SequenceRunId", "ExpectedRevision" }, null, null, null, null)
           }));
@@ -95,6 +107,35 @@ namespace Messages.Runtime.V1 {
     /// Suspend a started task without completing or failing it.
     /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_SUSPENDED")] Suspended = 6,
+  }
+
+  /// <summary>
+  /// Fine-grained progress within an in-progress task. This complements
+  /// TaskRunState and deliberately does not include a completed phase; completion
+  /// is represented by TASK_RUN_STATE_DONE.
+  /// </summary>
+  public enum TaskProgressPhase {
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// The actor is finding the target, part, tool, or work area.
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_LOCATING")] Locating = 1,
+    /// <summary>
+    /// The actor is moving toward the target or preferred pre-target pose.
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_APPROACHING")] Approaching = 2,
+    /// <summary>
+    /// The actor is aligning, inserting, or otherwise establishing the target pose.
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_POSITIONING")] Positioning = 3,
+    /// <summary>
+    /// The task result is being checked against its validation requirements.
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_VERIFYING")] Verifying = 4,
+    /// <summary>
+    /// All known requirements are satisfied and the task may be completed.
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_READY_TO_COMPLETE")] ReadyToComplete = 5,
   }
 
   #endregion
@@ -1016,6 +1057,7 @@ namespace Messages.Runtime.V1 {
   {
     private static readonly pb::MessageParser<TaskProgressUpdate> _parser = new pb::MessageParser<TaskProgressUpdate>(() => new TaskProgressUpdate());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TaskProgressUpdate> Parser { get { return _parser; } }
@@ -1043,12 +1085,15 @@ namespace Messages.Runtime.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskProgressUpdate(TaskProgressUpdate other) : this() {
+      _hasBits0 = other._hasBits0;
       taskRunId_ = other.taskRunId_;
       actor_ = other.actor_ != null ? other.actor_.Clone() : null;
       message_ = other.message_;
       elapsedTime_ = other.elapsedTime_;
       estimatedTimeLeft_ = other.estimatedTimeLeft_;
       expectedRevision_ = other.expectedRevision_;
+      phase_ = other.phase_;
+      phaseConfidence_ = other.phaseConfidence_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1139,6 +1184,51 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "phase" field.</summary>
+    public const int PhaseFieldNumber = 7;
+    private global::Messages.Runtime.V1.TaskProgressPhase phase_ = global::Messages.Runtime.V1.TaskProgressPhase.Unspecified;
+    /// <summary>
+    /// Optional semantic execution phase. UNSPECIFIED preserves compatibility with phase-unaware reporters.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Runtime.V1.TaskProgressPhase Phase {
+      get { return phase_; }
+      set {
+        phase_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phase_confidence" field.</summary>
+    public const int PhaseConfidenceFieldNumber = 8;
+    private readonly static float PhaseConfidenceDefaultValue = 0F;
+
+    private float phaseConfidence_;
+    /// <summary>
+    /// Reporter confidence in phase, from 0 (no confidence) to 1 (fully confident).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float PhaseConfidence {
+      get { if ((_hasBits0 & 1) != 0) { return phaseConfidence_; } else { return PhaseConfidenceDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        phaseConfidence_ = value;
+      }
+    }
+    /// <summary>Gets whether the "phase_confidence" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPhaseConfidence {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "phase_confidence" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPhaseConfidence() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1160,6 +1250,8 @@ namespace Messages.Runtime.V1 {
       if (ElapsedTime != other.ElapsedTime) return false;
       if (EstimatedTimeLeft != other.EstimatedTimeLeft) return false;
       if (ExpectedRevision != other.ExpectedRevision) return false;
+      if (Phase != other.Phase) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PhaseConfidence, other.PhaseConfidence)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1173,6 +1265,8 @@ namespace Messages.Runtime.V1 {
       if (ElapsedTime != 0) hash ^= ElapsedTime.GetHashCode();
       if (EstimatedTimeLeft != 0) hash ^= EstimatedTimeLeft.GetHashCode();
       if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
+      if (Phase != global::Messages.Runtime.V1.TaskProgressPhase.Unspecified) hash ^= Phase.GetHashCode();
+      if (HasPhaseConfidence) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PhaseConfidence);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1215,6 +1309,14 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(48);
         output.WriteUInt64(ExpectedRevision);
       }
+      if (Phase != global::Messages.Runtime.V1.TaskProgressPhase.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Phase);
+      }
+      if (HasPhaseConfidence) {
+        output.WriteRawTag(69);
+        output.WriteFloat(PhaseConfidence);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1249,6 +1351,14 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(48);
         output.WriteUInt64(ExpectedRevision);
       }
+      if (Phase != global::Messages.Runtime.V1.TaskProgressPhase.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Phase);
+      }
+      if (HasPhaseConfidence) {
+        output.WriteRawTag(69);
+        output.WriteFloat(PhaseConfidence);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1276,6 +1386,12 @@ namespace Messages.Runtime.V1 {
       }
       if (ExpectedRevision != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
+      }
+      if (Phase != global::Messages.Runtime.V1.TaskProgressPhase.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Phase);
+      }
+      if (HasPhaseConfidence) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1309,6 +1425,12 @@ namespace Messages.Runtime.V1 {
       }
       if (other.ExpectedRevision != 0UL) {
         ExpectedRevision = other.ExpectedRevision;
+      }
+      if (other.Phase != global::Messages.Runtime.V1.TaskProgressPhase.Unspecified) {
+        Phase = other.Phase;
+      }
+      if (other.HasPhaseConfidence) {
+        PhaseConfidence = other.PhaseConfidence;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1356,6 +1478,14 @@ namespace Messages.Runtime.V1 {
             ExpectedRevision = input.ReadUInt64();
             break;
           }
+          case 56: {
+            Phase = (global::Messages.Runtime.V1.TaskProgressPhase) input.ReadEnum();
+            break;
+          }
+          case 69: {
+            PhaseConfidence = input.ReadFloat();
+            break;
+          }
         }
       }
     #endif
@@ -1400,6 +1530,14 @@ namespace Messages.Runtime.V1 {
           }
           case 48: {
             ExpectedRevision = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Phase = (global::Messages.Runtime.V1.TaskProgressPhase) input.ReadEnum();
+            break;
+          }
+          case 69: {
+            PhaseConfidence = input.ReadFloat();
             break;
           }
         }

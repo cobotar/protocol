@@ -875,6 +875,109 @@ func (x *TaskOverride) GetApproachOffset() *v1.Vector3 {
 	return nil
 }
 
+// Requires the observed orientation to be within an angular tolerance of the
+// orientation in TaskDefinition.target.product.local_target. The target pose
+// remains authoritative and is intentionally not duplicated here.
+type OrientationConstraint struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Maximum angular difference from the target orientation. When omitted, the
+	// validating implementation may apply its configured default tolerance.
+	AngularToleranceDegrees *float64 `protobuf:"fixed64,1,opt,name=angular_tolerance_degrees,json=angularToleranceDegrees,proto3,oneof" json:"angular_tolerance_degrees,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *OrientationConstraint) Reset() {
+	*x = OrientationConstraint{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrientationConstraint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrientationConstraint) ProtoMessage() {}
+
+func (x *OrientationConstraint) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrientationConstraint.ProtoReflect.Descriptor instead.
+func (*OrientationConstraint) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *OrientationConstraint) GetAngularToleranceDegrees() float64 {
+	if x != nil && x.AngularToleranceDegrees != nil {
+		return *x.AngularToleranceDegrees
+	}
+	return 0
+}
+
+// A semantic condition that can be evaluated while executing or validating a
+// task. Exactly one constraint kind must be selected.
+type TaskConstraint struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable identifier within the task definition.
+	Orientation   *OrientationConstraint `protobuf:"bytes,10,opt,name=orientation,proto3" json:"orientation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskConstraint) Reset() {
+	*x = TaskConstraint{}
+	mi := &file_process_v1_task_definition_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskConstraint) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskConstraint) ProtoMessage() {}
+
+func (x *TaskConstraint) ProtoReflect() protoreflect.Message {
+	mi := &file_process_v1_task_definition_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskConstraint.ProtoReflect.Descriptor instead.
+func (*TaskConstraint) Descriptor() ([]byte, []int) {
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *TaskConstraint) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TaskConstraint) GetOrientation() *OrientationConstraint {
+	if x != nil {
+		return x.Orientation
+	}
+	return nil
+}
+
 // TaskDefinition is the static/universal authoring-time description of a task.
 //
 // It should remain reusable across workcells, deployments, and specific
@@ -902,13 +1005,14 @@ type TaskDefinition struct {
 	Quantity          *QuantityRequirement    `protobuf:"bytes,19,opt,name=quantity,proto3" json:"quantity,omitempty"`                                                                      // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
 	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Task applies if any rule matches. Empty means always applicable.
 	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`                                                                    // adjust small authoring/runtime details when the task is otherwise the same task.
+	Constraints       []*TaskConstraint       `protobuf:"bytes,23,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                // Semantic conditions that supplement the task's validation mechanism.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *TaskDefinition) Reset() {
 	*x = TaskDefinition{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	mi := &file_process_v1_task_definition_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -920,7 +1024,7 @@ func (x *TaskDefinition) String() string {
 func (*TaskDefinition) ProtoMessage() {}
 
 func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[9]
+	mi := &file_process_v1_task_definition_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -933,7 +1037,7 @@ func (x *TaskDefinition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinition.ProtoReflect.Descriptor instead.
 func (*TaskDefinition) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{9}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *TaskDefinition) GetId() string {
@@ -1076,6 +1180,13 @@ func (x *TaskDefinition) GetOverrides() []*TaskOverride {
 	return nil
 }
 
+func (x *TaskDefinition) GetConstraints() []*TaskConstraint {
+	if x != nil {
+		return x.Constraints
+	}
+	return nil
+}
+
 type TaskDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*TaskDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -1085,7 +1196,7 @@ type TaskDefinitions struct {
 
 func (x *TaskDefinitions) Reset() {
 	*x = TaskDefinitions{}
-	mi := &file_process_v1_task_definition_proto_msgTypes[10]
+	mi := &file_process_v1_task_definition_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1097,7 +1208,7 @@ func (x *TaskDefinitions) String() string {
 func (*TaskDefinitions) ProtoMessage() {}
 
 func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
-	mi := &file_process_v1_task_definition_proto_msgTypes[10]
+	mi := &file_process_v1_task_definition_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1110,7 +1221,7 @@ func (x *TaskDefinitions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskDefinitions.ProtoReflect.Descriptor instead.
 func (*TaskDefinitions) Descriptor() ([]byte, []int) {
-	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{10}
+	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *TaskDefinitions) GetItems() []*TaskDefinition {
@@ -1170,7 +1281,15 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12.\n" +
 	"\x06target\x18\x03 \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
 	"\x10insertion_offset\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
-	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\xd3\b\n" +
+	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\x91\x01\n" +
+	"\x15OrientationConstraint\x12Z\n" +
+	"\x19angular_tolerance_degrees\x18\x01 \x01(\x01B\x19\xbaH\x16\x12\x14@\x01\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\x17angularToleranceDegrees\x88\x01\x01B\x1c\n" +
+	"\x1a_angular_tolerance_degrees\"\x84\x01\n" +
+	"\x0eTaskConstraint\x12\x17\n" +
+	"\x02id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x02id\x12C\n" +
+	"\vorientation\x18\n" +
+	" \x01(\v2!.process.v1.OrientationConstraintR\vorientation:\x14\xbaH\x11\"\x0f\n" +
+	"\vorientation\x10\x01\"\x8b\v\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1194,7 +1313,9 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12;\n" +
 	"\bquantity\x18\x13 \x01(\v2\x1f.process.v1.QuantityRequirementR\bquantity\x12>\n" +
 	"\rapplicability\x18\x15 \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x126\n" +
-	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\"C\n" +
+	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\x12<\n" +
+	"\vconstraints\x18\x17 \x03(\v2\x1a.process.v1.TaskConstraintR\vconstraints:\xf7\x01\xbaH\xf3\x01\x1a\xf0\x01\n" +
+	"Btask_definition.orientation_constraint_requires_target_orientation\x12Gorientation constraints require target.product.local_target.orientation\x1aathis.constraints.all(c, !has(c.orientation) || has(this.target.product.local_target.orientation))\"C\n" +
 	"\x0fTaskDefinitions\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05items*\xbf\x03\n" +
 	"\bTaskType\x12\x19\n" +
@@ -1247,7 +1368,7 @@ func file_process_v1_task_definition_proto_rawDescGZIP() []byte {
 }
 
 var file_process_v1_task_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_process_v1_task_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_process_v1_task_definition_proto_goTypes = []any{
 	(TaskType)(0),                  // 0: process.v1.TaskType
 	(TaskAssignmentPreference)(0),  // 1: process.v1.TaskAssignmentPreference
@@ -1261,61 +1382,65 @@ var file_process_v1_task_definition_proto_goTypes = []any{
 	(*ValidationRequirement)(nil),  // 9: process.v1.ValidationRequirement
 	(*TaskExecutionPolicy)(nil),    // 10: process.v1.TaskExecutionPolicy
 	(*TaskOverride)(nil),           // 11: process.v1.TaskOverride
-	(*TaskDefinition)(nil),         // 12: process.v1.TaskDefinition
-	(*TaskDefinitions)(nil),        // 13: process.v1.TaskDefinitions
-	(*v1.LocalTarget)(nil),         // 14: geometry.v1.LocalTarget
-	(v11.ContainerSlotType)(0),     // 15: resources.v1.ContainerSlotType
-	(v12.SkillLevel)(0),            // 16: capability.v1.SkillLevel
-	(v11.ValidationMode)(0),        // 17: resources.v1.ValidationMode
-	(*v13.KeyValueConstraint)(nil), // 18: common.v1.KeyValueConstraint
-	(*v12.ActorConstraint)(nil),    // 19: capability.v1.ActorConstraint
-	(*v13.EstimatedDuration)(nil),  // 20: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 21: variance.v1.VariantRule
-	(*v1.Vector3)(nil),             // 22: geometry.v1.Vector3
-	(*v12.ToolRequirement)(nil),    // 23: capability.v1.ToolRequirement
-	(*v12.SkillRequirement)(nil),   // 24: capability.v1.SkillRequirement
-	(v13.SafetyRelevance)(0),       // 25: common.v1.SafetyRelevance
+	(*OrientationConstraint)(nil),  // 12: process.v1.OrientationConstraint
+	(*TaskConstraint)(nil),         // 13: process.v1.TaskConstraint
+	(*TaskDefinition)(nil),         // 14: process.v1.TaskDefinition
+	(*TaskDefinitions)(nil),        // 15: process.v1.TaskDefinitions
+	(*v1.LocalTarget)(nil),         // 16: geometry.v1.LocalTarget
+	(v11.ContainerSlotType)(0),     // 17: resources.v1.ContainerSlotType
+	(v12.SkillLevel)(0),            // 18: capability.v1.SkillLevel
+	(v11.ValidationMode)(0),        // 19: resources.v1.ValidationMode
+	(*v13.KeyValueConstraint)(nil), // 20: common.v1.KeyValueConstraint
+	(*v12.ActorConstraint)(nil),    // 21: capability.v1.ActorConstraint
+	(*v13.EstimatedDuration)(nil),  // 22: common.v1.EstimatedDuration
+	(*v14.VariantRule)(nil),        // 23: variance.v1.VariantRule
+	(*v1.Vector3)(nil),             // 24: geometry.v1.Vector3
+	(*v12.ToolRequirement)(nil),    // 25: capability.v1.ToolRequirement
+	(*v12.SkillRequirement)(nil),   // 26: capability.v1.SkillRequirement
+	(v13.SafetyRelevance)(0),       // 27: common.v1.SafetyRelevance
 }
 var file_process_v1_task_definition_proto_depIdxs = []int32{
-	14, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
-	15, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
+	16, // 0: process.v1.ProductTarget.local_target:type_name -> geometry.v1.LocalTarget
+	17, // 1: process.v1.ContainerTarget.slot_type:type_name -> resources.v1.ContainerSlotType
 	3,  // 2: process.v1.TaskTarget.product:type_name -> process.v1.ProductTarget
 	4,  // 3: process.v1.TaskTarget.container:type_name -> process.v1.ContainerTarget
 	5,  // 4: process.v1.TaskTarget.resource:type_name -> process.v1.ResourceTarget
 	3,  // 5: process.v1.TaskEndpoint.product:type_name -> process.v1.ProductTarget
 	4,  // 6: process.v1.TaskEndpoint.container:type_name -> process.v1.ContainerTarget
-	16, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
-	17, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
-	18, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
+	18, // 7: process.v1.ValidationRequirement.manual_confirmation_min_level:type_name -> capability.v1.SkillLevel
+	19, // 8: process.v1.ValidationRequirement.mode:type_name -> resources.v1.ValidationMode
+	20, // 9: process.v1.ValidationRequirement.constraints:type_name -> common.v1.KeyValueConstraint
 	1,  // 10: process.v1.TaskExecutionPolicy.assignment_preference:type_name -> process.v1.TaskAssignmentPreference
-	19, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
+	21, // 11: process.v1.TaskExecutionPolicy.actor_constraint:type_name -> capability.v1.ActorConstraint
 	2,  // 12: process.v1.TaskExecutionPolicy.actor_unavailability_policy:type_name -> process.v1.ActorUnavailabilityPolicy
-	20, // 13: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
-	20, // 14: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
-	21, // 15: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	22, // 13: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
+	22, // 14: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
+	23, // 15: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
 	6,  // 16: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
-	22, // 17: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
-	22, // 18: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
-	0,  // 19: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
-	6,  // 20: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
-	22, // 21: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
-	22, // 22: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
-	23, // 23: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
-	24, // 24: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
-	9,  // 25: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
-	10, // 26: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
-	25, // 27: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
-	8,  // 28: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
-	8,  // 29: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
-	7,  // 30: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
-	21, // 31: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
-	11, // 32: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
-	12, // 33: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
-	34, // [34:34] is the sub-list for method output_type
-	34, // [34:34] is the sub-list for method input_type
-	34, // [34:34] is the sub-list for extension type_name
-	34, // [34:34] is the sub-list for extension extendee
-	0,  // [0:34] is the sub-list for field type_name
+	24, // 17: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
+	24, // 18: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
+	12, // 19: process.v1.TaskConstraint.orientation:type_name -> process.v1.OrientationConstraint
+	0,  // 20: process.v1.TaskDefinition.task_type:type_name -> process.v1.TaskType
+	6,  // 21: process.v1.TaskDefinition.target:type_name -> process.v1.TaskTarget
+	24, // 22: process.v1.TaskDefinition.insertion_offset:type_name -> geometry.v1.Vector3
+	24, // 23: process.v1.TaskDefinition.approach_offset:type_name -> geometry.v1.Vector3
+	25, // 24: process.v1.TaskDefinition.tool_requirement:type_name -> capability.v1.ToolRequirement
+	26, // 25: process.v1.TaskDefinition.skill_requirements:type_name -> capability.v1.SkillRequirement
+	9,  // 26: process.v1.TaskDefinition.validation:type_name -> process.v1.ValidationRequirement
+	10, // 27: process.v1.TaskDefinition.execution_policy:type_name -> process.v1.TaskExecutionPolicy
+	27, // 28: process.v1.TaskDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
+	8,  // 29: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
+	8,  // 30: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
+	7,  // 31: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
+	23, // 32: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	11, // 33: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
+	13, // 34: process.v1.TaskDefinition.constraints:type_name -> process.v1.TaskConstraint
+	14, // 35: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition
+	36, // [36:36] is the sub-list for method output_type
+	36, // [36:36] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_process_v1_task_definition_proto_init() }
@@ -1323,13 +1448,14 @@ func file_process_v1_task_definition_proto_init() {
 	if File_process_v1_task_definition_proto != nil {
 		return
 	}
+	file_process_v1_task_definition_proto_msgTypes[9].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_process_v1_task_definition_proto_rawDesc), len(file_process_v1_task_definition_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

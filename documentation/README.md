@@ -180,6 +180,7 @@
     - [VisibilityScope](#ar-v1-VisibilityScope)
   
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
+    - [FeedbackCapability](#ar-v1-FeedbackCapability)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
     - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
   
@@ -305,9 +306,11 @@
   
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
     - [ContainerTarget](#process-v1-ContainerTarget)
+    - [OrientationConstraint](#process-v1-OrientationConstraint)
     - [ProductTarget](#process-v1-ProductTarget)
     - [QuantityRequirement](#process-v1-QuantityRequirement)
     - [ResourceTarget](#process-v1-ResourceTarget)
+    - [TaskConstraint](#process-v1-TaskConstraint)
     - [TaskDefinition](#process-v1-TaskDefinition)
     - [TaskDefinitions](#process-v1-TaskDefinitions)
     - [TaskEndpoint](#process-v1-TaskEndpoint)
@@ -618,6 +621,7 @@
     - [TaskReassignRequest](#runtime-v1-TaskReassignRequest)
     - [TaskStateChangeRequest](#runtime-v1-TaskStateChangeRequest)
   
+    - [TaskProgressPhase](#runtime-v1-TaskProgressPhase)
     - [TaskStateRequest](#runtime-v1-TaskStateRequest)
   
 - [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
@@ -2163,6 +2167,7 @@ TODO [(buf.validate.field).string.(validation.v1.name_component) = true]; |
 | advanced | [bool](#bool) |  |  |
 | allow_to_be_mirrored | [bool](#bool) |  |  |
 | semantic_role | [PropertySemanticRole](#common-v1-PropertySemanticRole) |  |  |
+| key | [string](#string) |  | Stable machine-readable key copied to PropertyDefinition. |
 | origin | [PropertyOrigin](#common-v1-PropertyOrigin) |  | Template instance |
 | scope_id | [string](#string) |  | Defaults to parent_id when empty. Needed for input-slot scopes. |
 | mirror_property_definition_id | [string](#string) |  |  |
@@ -2289,6 +2294,7 @@ Overall, we have these categories of properties:
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| key | [string](#string) |  | Stable machine-readable key; unlike name, this is safe for runtime binding and capability references. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
@@ -2892,6 +2898,26 @@ Custom training video       MANUAL_ONLY
 
 
 
+<a name="ar-v1-FeedbackCapability"></a>
+
+### FeedbackCapability
+Describes a type-level behavior supported by a feedback implementation.
+Capability metadata is server-owned and intended for read-only discovery by
+authoring clients. It does not describe whether a particular feedback
+instance is currently active.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | Stable machine-readable capability identifier. |
+| description | [string](#string) |  | Human-readable explanation shown by authoring tools. |
+| property_keys | [string](#string) | repeated | Stable PropertyDefinition keys used to configure this capability. |
+
+
+
+
+
+
 <a name="ar-v1-FeedbackInfoMessage"></a>
 
 ### FeedbackInfoMessage
@@ -2912,6 +2938,7 @@ Custom training video       MANUAL_ONLY
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react) |
 | emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
 | disabled | [bool](#bool) |  |  |
+| capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Optional behaviors supported by this feedback type. |
 
 
 
@@ -4618,6 +4645,23 @@ one or more addressable slots.
 
 
 
+<a name="process-v1-OrientationConstraint"></a>
+
+### OrientationConstraint
+Requires the observed orientation to be within an angular tolerance of the
+orientation in TaskDefinition.target.product.local_target. The target pose
+remains authoritative and is intentionally not duplicated here.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| angular_tolerance_degrees | [double](#double) | optional | Maximum angular difference from the target orientation. When omitted, the validating implementation may apply its configured default tolerance. |
+
+
+
+
+
+
 <a name="process-v1-ProductTarget"></a>
 
 ### ProductTarget
@@ -4668,6 +4712,23 @@ Generic authoring-time resource references.
 
 
 
+<a name="process-v1-TaskConstraint"></a>
+
+### TaskConstraint
+A semantic condition that can be evaluated while executing or validating a
+task. Exactly one constraint kind must be selected.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identifier within the task definition. |
+| orientation | [OrientationConstraint](#process-v1-OrientationConstraint) |  |  |
+
+
+
+
+
+
 <a name="process-v1-TaskDefinition"></a>
 
 ### TaskDefinition
@@ -4700,6 +4761,7 @@ asset, station, or container bindings belongs in runtime.v1.TaskRun.
 | quantity | [QuantityRequirement](#process-v1-QuantityRequirement) |  | Amount of the target part or material handled by this task. Omit only when quantity is not meaningful. |
 | applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Task applies if any rule matches. Empty means always applicable. |
 | overrides | [TaskOverride](#process-v1-TaskOverride) | repeated | adjust small authoring/runtime details when the task is otherwise the same task. |
+| constraints | [TaskConstraint](#process-v1-TaskConstraint) | repeated | Semantic conditions that supplement the task&#39;s validation mechanism. |
 
 
 
@@ -9187,6 +9249,8 @@ A human is required but no worker with valid skills exists. |
 | elapsed_time | [int32](#int32) |  | elapsed time in seconds |
 | estimated_time_left | [int32](#int32) |  | estimated time left in seconds |
 | expected_revision | [uint64](#uint64) |  | Revision of the TaskRun on which this request is based. |
+| phase | [TaskProgressPhase](#runtime-v1-TaskProgressPhase) |  | Optional semantic execution phase. UNSPECIFIED preserves compatibility with phase-unaware reporters. |
+| phase_confidence | [float](#float) | optional | Reporter confidence in phase, from 0 (no confidence) to 1 (fully confident). |
 
 
 
@@ -9229,6 +9293,24 @@ A human is required but no worker with valid skills exists. |
 
 
  
+
+
+<a name="runtime-v1-TaskProgressPhase"></a>
+
+### TaskProgressPhase
+Fine-grained progress within an in-progress task. This complements
+TaskRunState and deliberately does not include a completed phase; completion
+is represented by TASK_RUN_STATE_DONE.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TASK_PROGRESS_PHASE_UNSPECIFIED | 0 |  |
+| TASK_PROGRESS_PHASE_LOCATING | 1 | The actor is finding the target, part, tool, or work area. |
+| TASK_PROGRESS_PHASE_APPROACHING | 2 | The actor is moving toward the target or preferred pre-target pose. |
+| TASK_PROGRESS_PHASE_POSITIONING | 3 | The actor is aligning, inserting, or otherwise establishing the target pose. |
+| TASK_PROGRESS_PHASE_VERIFYING | 4 | The task result is being checked against its validation requirements. |
+| TASK_PROGRESS_PHASE_READY_TO_COMPLETE | 5 | All known requirements are satisfied and the task may be completed. |
+
 
 
 <a name="runtime-v1-TaskStateRequest"></a>
@@ -9396,10 +9478,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| asset_instance_id | [string](#string) |  |  |
-| station_id | [string](#string) |  |  |
-| cell_id | [string](#string) |  |  |
-| container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  |  |
+| asset_instance_id | [string](#string) |  | Concrete asset selected for this task run. |
+| station_id | [string](#string) |  | Concrete station in which the task runs. |
+| cell_id | [string](#string) |  | Concrete cell in which the task runs. |
+| container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Concrete container slot selected for source or destination work. |
+| candidate_part_instance_ids | [string](#string) | repeated | Candidate parts. Notice that their availability must be checked during runtime. Also, new candidates might be available. |
 
 
 

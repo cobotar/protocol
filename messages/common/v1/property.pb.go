@@ -577,6 +577,7 @@ func (PropertyScope) EnumDescriptor() ([]byte, []int) {
 type PropertyDefinition struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Key                string                 `protobuf:"bytes,17,opt,name=key,proto3" json:"key,omitempty"` // Stable machine-readable key; unlike name, this is safe for runtime binding and capability references.
 	Name               string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon               string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
@@ -636,6 +637,13 @@ func (*PropertyDefinition) Descriptor() ([]byte, []int) {
 func (x *PropertyDefinition) GetId() string {
 	if x != nil {
 		return x.Id
+	}
+	return ""
+}
+
+func (x *PropertyDefinition) GetKey() string {
+	if x != nil {
+		return x.Key
 	}
 	return ""
 }
@@ -1712,6 +1720,7 @@ type CreatePropertyMessage struct {
 	Advanced                  bool                 `protobuf:"varint,13,opt,name=advanced,proto3" json:"advanced,omitempty"`
 	AllowToBeMirrored         bool                 `protobuf:"varint,14,opt,name=allow_to_be_mirrored,json=allowToBeMirrored,proto3" json:"allow_to_be_mirrored,omitempty"`
 	SemanticRole              PropertySemanticRole `protobuf:"varint,16,opt,name=semantic_role,json=semanticRole,proto3,enum=common.v1.PropertySemanticRole" json:"semantic_role,omitempty"`
+	Key                       string               `protobuf:"bytes,17,opt,name=key,proto3" json:"key,omitempty"` // Stable machine-readable key copied to PropertyDefinition.
 	// Template instance
 	Origin PropertyOrigin `protobuf:"varint,20,opt,name=origin,proto3,enum=common.v1.PropertyOrigin" json:"origin,omitempty"`
 	// Defaults to parent_id when empty. Needed for input-slot scopes.
@@ -1868,6 +1877,13 @@ func (x *CreatePropertyMessage) GetSemanticRole() PropertySemanticRole {
 	return PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UNSPECIFIED
 }
 
+func (x *CreatePropertyMessage) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
 func (x *CreatePropertyMessage) GetOrigin() PropertyOrigin {
 	if x != nil {
 		return x.Origin
@@ -2001,10 +2017,10 @@ var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe8\n" +
-	"\n" +
+	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa6\v\n" +
 	"\x12PropertyDefinition\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12<\n" +
+	"\x03key\x18\x11 \x01(\tB*\xbaH'r%\x10\x01\x18@2\x1f^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$R\x03key\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
@@ -2158,7 +2174,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\xcf\f\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\x8d\r\n" +
 	"\x15CreatePropertyMessage\x12\x1b\n" +
 	"\tparent_id\x18\x01 \x01(\tR\bparentId\x120\n" +
 	"\x14authoring_context_id\x18\x02 \x01(\tR\x12authoringContextId\x12\x12\n" +
@@ -2176,7 +2192,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1a\n" +
 	"\badvanced\x18\r \x01(\bR\badvanced\x12/\n" +
 	"\x14allow_to_be_mirrored\x18\x0e \x01(\bR\x11allowToBeMirrored\x12N\n" +
-	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12>\n" +
+	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12<\n" +
+	"\x03key\x18\x11 \x01(\tB*\xbaH'r%\x10\x01\x18@2\x1f^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$R\x03key\x12>\n" +
 	"\x06origin\x18\x14 \x01(\x0e2\x19.common.v1.PropertyOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x19\n" +
 	"\bscope_id\x18\x15 \x01(\tR\ascopeId\x12L\n" +
 	"\x1dmirror_property_definition_id\x18\x16 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x1amirrorPropertyDefinitionId\x12E\n" +
