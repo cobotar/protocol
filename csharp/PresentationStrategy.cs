@@ -24,87 +24,87 @@ namespace Messages.AR.V1 {
     static PresentationStrategyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFhci92MS9wcmVzZW50YXRpb25fc3RyYXRlZ3kucHJvdG8SBWFyLnYxGhJh",
-            "ci92MS9hY3Rpb24ucHJvdG8aFGFyL3YxL2ZlZWRiYWNrLnByb3RvGhthci92",
-            "MS9zZW1hbnRpY19zb3VyY2UucHJvdG8aG2J1Zi92YWxpZGF0ZS92YWxpZGF0",
-            "ZS5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnByb3RvGit2YWxpZGF0aW9u",
-            "L3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoIBChdQcm9wZXJ0",
-            "eVZhbHVlQXNzaWdubWVudBIvCgxwcm9wZXJ0eV9rZXkYASABKAlCDLpICXIE",
-            "4PMEAcgBAVILcHJvcGVydHlLZXkSNgoFdmFsdWUYAiABKAsyGC5jb21tb24u",
-            "djEuUHJvcGVydHlWYWx1ZUIGukgDyAEBUgV2YWx1ZSLlAwoQUHJlc2VudGF0",
-            "aW9uUm9sZRIeCgNrZXkYASABKAlCDLpICXIE4PMEAcgBAVIDa2V5Eh0KBG5h",
-            "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEo",
-            "CVILZGVzY3JpcHRpb24SWwoScmVxdWlyZWRfc2VtYW50aWNzGAQgAygOMhku",
-            "YXIudjEuQXNzaXN0YW5jZVNlbWFudGljQhG6SA6SAQsYASIHggEEEAEgAFIR",
-            "cmVxdWlyZWRTZW1hbnRpY3MSWAoVZGVmYXVsdF9mZWVkYmFja190eXBlGAUg",
-            "ASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgq6SAeCAQQQASAASABSE2RlZmF1",
-            "bHRGZWVkYmFja1R5cGWIAQESUgoTZGVmYXVsdF9hY3Rpb25fdHlwZRgGIAEo",
-            "DjIRLmFyLnYxLkFjdGlvblR5cGVCCrpIB4IBBBABIABIAVIRZGVmYXVsdEFj",
-            "dGlvblR5cGWIAQE6M7pIMCIuChVkZWZhdWx0X2ZlZWRiYWNrX3R5cGUKE2Rl",
-            "ZmF1bHRfYWN0aW9uX3R5cGUQAUIYChZfZGVmYXVsdF9mZWVkYmFja190eXBl",
-            "QhYKFF9kZWZhdWx0X2FjdGlvbl90eXBlIpkCChZQcmVzZW50YXRpb25Sb2xl",
-            "UHJlc2V0EicKCHJvbGVfa2V5GAEgASgJQgy6SAlyBODzBAHIAQFSB3JvbGVL",
-            "ZXkS1QEKCnByb3BlcnRpZXMYAiADKAsyHi5hci52MS5Qcm9wZXJ0eVZhbHVl",
-            "QXNzaWdubWVudEKUAbpIkAG6AYwBCjhwcmVzZW50YXRpb25fcm9sZV9wcmVz",
-            "ZXQucHJvcGVydGllcy51bmlxdWVfcHJvcGVydHlfa2V5cxIccHJvcGVydHkg",
-            "a2V5cyBtdXN0IGJlIHVuaXF1ZRoydGhpcy5tYXAocHJvcGVydHksIHByb3Bl",
-            "cnR5LnByb3BlcnR5X2tleSkudW5pcXVlKClSCnByb3BlcnRpZXMihAMKGlBy",
-            "ZXNlbnRhdGlvbkZpZGVsaXR5QW5jaG9yEkQKCGZpZGVsaXR5GAEgASgOMhsu",
-            "YXIudjEuUHJlc2VudGF0aW9uRmlkZWxpdHlCC7pICIIBAhAByAEBUghmaWRl",
-            "bGl0eRJACg90YXJnZXRfY292ZXJhZ2UYAiABKAFCF7pIFBISGQAAAAAAAPA/",
-            "KQAAAAAAAAAAUg50YXJnZXRDb3ZlcmFnZRLdAQoNcHJlc2VudGF0aW9ucxgD",
-            "IAMoCzIdLmFyLnYxLlByZXNlbnRhdGlvblJvbGVQcmVzZXRClwG6SJMBugGP",
-            "AQo7cHJlc2VudGF0aW9uX2ZpZGVsaXR5X2FuY2hvci5wcmVzZW50YXRpb25z",
-            "LnVuaXF1ZV9yb2xlX2tleXMSGHJvbGUga2V5cyBtdXN0IGJlIHVuaXF1ZRo2",
-            "dGhpcy5tYXAocHJlc2VudGF0aW9uLCBwcmVzZW50YXRpb24ucm9sZV9rZXkp",
-            "LnVuaXF1ZSgpUg1wcmVzZW50YXRpb25zIrQCChpBc3Npc3RhbmNlUHJlc2Vu",
-            "dGF0aW9uUnVsZRJCCghzZW1hbnRpYxgBIAEoDjIZLmFyLnYxLkFzc2lzdGFu",
-            "Y2VTZW1hbnRpY0ILukgIggECEAHIAQFSCHNlbWFudGljEtEBCgdhbmNob3Jz",
-            "GAIgAygLMiEuYXIudjEuUHJlc2VudGF0aW9uRmlkZWxpdHlBbmNob3JCkwG6",
-            "SI8BkgEECAMQA7oBhAEKNmFzc2lzdGFuY2VfcHJlc2VudGF0aW9uX3J1bGUu",
-            "YW5jaG9ycy51bmlxdWVfZmlkZWxpdGllcxIeYW5jaG9yIGZpZGVsaXR5IG11",
-            "c3QgYmUgdW5pcXVlGip0aGlzLm1hcChhbmNob3IsIGFuY2hvci5maWRlbGl0",
-            "eSkudW5pcXVlKClSB2FuY2hvcnMivQgKFFByZXNlbnRhdGlvblN0cmF0ZWd5",
-            "EhwKAmlkGAEgASgJQgy6SAlyBNjzBAHIAQFSAmlkEh0KBG5hbWUYAiABKAlC",
-            "CbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2Ny",
-            "aXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIeCgNrZXkYBSABKAlCDLpICXIE",
-            "4PMEAcgBAVIDa2V5EpsBCgVyb2xlcxgGIAMoCzIXLmFyLnYxLlByZXNlbnRh",
-            "dGlvblJvbGVCbLpIaboBZgoncHJlc2VudGF0aW9uX3N0cmF0ZWd5LnJvbGVz",
-            "LnVuaXF1ZV9rZXlzEhhyb2xlIGtleXMgbXVzdCBiZSB1bmlxdWUaIXRoaXMu",
-            "bWFwKHJvbGUsIHJvbGUua2V5KS51bmlxdWUoKVIFcm9sZXMStAEKBXJ1bGVz",
-            "GAcgAygLMiEuYXIudjEuQXNzaXN0YW5jZVByZXNlbnRhdGlvblJ1bGVCe7pI",
-            "eLoBdQoscHJlc2VudGF0aW9uX3N0cmF0ZWd5LnJ1bGVzLnVuaXF1ZV9zZW1h",
-            "bnRpY3MSHXJ1bGUgc2VtYW50aWNzIG11c3QgYmUgdW5pcXVlGiZ0aGlzLm1h",
-            "cChydWxlLCBydWxlLnNlbWFudGljKS51bmlxdWUoKVIFcnVsZXM6vAS6SLgE",
-            "GvYBCi1wcmVzZW50YXRpb25fc3RyYXRlZ3kucHJlc2V0cy5yZWZlcmVuY2Vf",
-            "cm9sZXMSP2V2ZXJ5IHByZXNlbnRhdGlvbiBwcmVzZXQgbXVzdCByZWZlcmVu",
-            "Y2UgYSByb2xlIGluIHRoZSBzdHJhdGVneRqDAXRoaXMucnVsZXMuYWxsKHJ1",
-            "bGUsIHJ1bGUuYW5jaG9ycy5hbGwoYW5jaG9yLCBhbmNob3IucHJlc2VudGF0",
-            "aW9ucy5hbGwocHJlc2V0LCBwcmVzZXQucm9sZV9rZXkgaW4gdGhpcy5yb2xl",
-            "cy5tYXAocm9sZSwgcm9sZS5rZXkpKSkpGrwCCjpwcmVzZW50YXRpb25fc3Ry",
-            "YXRlZ3kucHJlc2V0cy5yb2xlc19zdXBwb3J0X3J1bGVfc2VtYW50aWNzEkFl",
-            "dmVyeSByZWZlcmVuY2VkIHJvbGUgbXVzdCBkZWNsYXJlIHRoZSBydWxlJ3Mg",
-            "YXNzaXN0YW5jZSBzZW1hbnRpYxq6AXRoaXMucnVsZXMuYWxsKHJ1bGUsIHJ1",
-            "bGUuYW5jaG9ycy5hbGwoYW5jaG9yLCBhbmNob3IucHJlc2VudGF0aW9ucy5h",
-            "bGwocHJlc2V0LCB0aGlzLnJvbGVzLmZpbHRlcihyb2xlLCByb2xlLmtleSA9",
-            "PSBwcmVzZXQucm9sZV9rZXkpLmFsbChyb2xlLCBydWxlLnNlbWFudGljIGlu",
-            "IHJvbGUucmVxdWlyZWRfc2VtYW50aWNzKSkpKSJuChdQcmVzZW50YXRpb25T",
-            "dHJhdGVneUFkZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoE",
-            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
-            "cHRpb24iSwoWUHJlc2VudGF0aW9uU3RyYXRlZ2llcxIxCgVpdGVtcxgBIAMo",
-            "CzIbLmFyLnYxLlByZXNlbnRhdGlvblN0cmF0ZWd5UgVpdGVtcyqeAQoUUHJl",
-            "c2VudGF0aW9uRmlkZWxpdHkSJQohUFJFU0VOVEFUSU9OX0ZJREVMSVRZX1VO",
-            "U1BFQ0lGSUVEEAASHQoZUFJFU0VOVEFUSU9OX0ZJREVMSVRZX0xPVxABEiAK",
-            "HFBSRVNFTlRBVElPTl9GSURFTElUWV9NRURJVU0QAhIeChpQUkVTRU5UQVRJ",
-            "T05fRklERUxJVFlfSElHSBADQpUBCgljb20uYXIudjFCGVByZXNlbnRhdGlv",
-            "blN0cmF0ZWd5UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoC",
-            "BUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "CiFhci92MS9wcmVzZW50YXRpb25fc3RyYXRlZ3kucHJvdG8SBWFyLnYxGhth",
+            "ci92MS9zZW1hbnRpY19zb3VyY2UucHJvdG8aG2J1Zi92YWxpZGF0ZS92YWxp",
+            "ZGF0ZS5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnByb3RvGit2YWxpZGF0",
+            "aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIoIBChdQcm9w",
+            "ZXJ0eVZhbHVlQXNzaWdubWVudBIvCgxwcm9wZXJ0eV9rZXkYASABKAlCDLpI",
+            "CXIE4PMEAcgBAVILcHJvcGVydHlLZXkSNgoFdmFsdWUYAiABKAsyGC5jb21t",
+            "b24udjEuUHJvcGVydHlWYWx1ZUIGukgDyAEBUgV2YWx1ZSKFBAoQUHJlc2Vu",
+            "dGF0aW9uUm9sZRIeCgNrZXkYASABKAlCDLpICXIE4PMEAcgBAVIDa2V5Eh0K",
+            "BG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgD",
+            "IAEoCVILZGVzY3JpcHRpb24SWwoScmVxdWlyZWRfc2VtYW50aWNzGAQgAygO",
+            "MhkuYXIudjEuQXNzaXN0YW5jZVNlbWFudGljQhG6SA6SAQsYASIHggEEEAEg",
+            "AFIRcmVxdWlyZWRTZW1hbnRpY3MSVQoeZGVmYXVsdF9mZWVkYmFja19kZWZp",
+            "bml0aW9uX2lkGAUgASgJQgu6SAhyBhAB8PMEAUgAUhtkZWZhdWx0RmVlZGJh",
+            "Y2tEZWZpbml0aW9uSWSIAQESUQocZGVmYXVsdF9hY3Rpb25fZGVmaW5pdGlv",
+            "bl9pZBgGIAEoCUILukgIcgYQAejzBAFIAVIZZGVmYXVsdEFjdGlvbkRlZmlu",
+            "aXRpb25JZIgBATpFukhCIkAKHmRlZmF1bHRfZmVlZGJhY2tfZGVmaW5pdGlv",
+            "bl9pZAocZGVmYXVsdF9hY3Rpb25fZGVmaW5pdGlvbl9pZBABQiEKH19kZWZh",
+            "dWx0X2ZlZWRiYWNrX2RlZmluaXRpb25faWRCHwodX2RlZmF1bHRfYWN0aW9u",
+            "X2RlZmluaXRpb25faWQimQIKFlByZXNlbnRhdGlvblJvbGVQcmVzZXQSJwoI",
+            "cm9sZV9rZXkYASABKAlCDLpICXIE4PMEAcgBAVIHcm9sZUtleRLVAQoKcHJv",
+            "cGVydGllcxgCIAMoCzIeLmFyLnYxLlByb3BlcnR5VmFsdWVBc3NpZ25tZW50",
+            "QpQBukiQAboBjAEKOHByZXNlbnRhdGlvbl9yb2xlX3ByZXNldC5wcm9wZXJ0",
+            "aWVzLnVuaXF1ZV9wcm9wZXJ0eV9rZXlzEhxwcm9wZXJ0eSBrZXlzIG11c3Qg",
+            "YmUgdW5pcXVlGjJ0aGlzLm1hcChwcm9wZXJ0eSwgcHJvcGVydHkucHJvcGVy",
+            "dHlfa2V5KS51bmlxdWUoKVIKcHJvcGVydGllcyKEAwoaUHJlc2VudGF0aW9u",
+            "RmlkZWxpdHlBbmNob3ISRAoIZmlkZWxpdHkYASABKA4yGy5hci52MS5QcmVz",
+            "ZW50YXRpb25GaWRlbGl0eUILukgIggECEAHIAQFSCGZpZGVsaXR5EkAKD3Rh",
+            "cmdldF9jb3ZlcmFnZRgCIAEoAUIXukgUEhIZAAAAAAAA8D8pAAAAAAAAAABS",
+            "DnRhcmdldENvdmVyYWdlEt0BCg1wcmVzZW50YXRpb25zGAMgAygLMh0uYXIu",
+            "djEuUHJlc2VudGF0aW9uUm9sZVByZXNldEKXAbpIkwG6AY8BCjtwcmVzZW50",
+            "YXRpb25fZmlkZWxpdHlfYW5jaG9yLnByZXNlbnRhdGlvbnMudW5pcXVlX3Jv",
+            "bGVfa2V5cxIYcm9sZSBrZXlzIG11c3QgYmUgdW5pcXVlGjZ0aGlzLm1hcChw",
+            "cmVzZW50YXRpb24sIHByZXNlbnRhdGlvbi5yb2xlX2tleSkudW5pcXVlKClS",
+            "DXByZXNlbnRhdGlvbnMitAIKGkFzc2lzdGFuY2VQcmVzZW50YXRpb25SdWxl",
+            "EkIKCHNlbWFudGljGAEgASgOMhkuYXIudjEuQXNzaXN0YW5jZVNlbWFudGlj",
+            "Qgu6SAiCAQIQAcgBAVIIc2VtYW50aWMS0QEKB2FuY2hvcnMYAiADKAsyIS5h",
+            "ci52MS5QcmVzZW50YXRpb25GaWRlbGl0eUFuY2hvckKTAbpIjwGSAQQIAxAD",
+            "ugGEAQo2YXNzaXN0YW5jZV9wcmVzZW50YXRpb25fcnVsZS5hbmNob3JzLnVu",
+            "aXF1ZV9maWRlbGl0aWVzEh5hbmNob3IgZmlkZWxpdHkgbXVzdCBiZSB1bmlx",
+            "dWUaKnRoaXMubWFwKGFuY2hvciwgYW5jaG9yLmZpZGVsaXR5KS51bmlxdWUo",
+            "KVIHYW5jaG9ycyK9CAoUUHJlc2VudGF0aW9uU3RyYXRlZ3kSHAoCaWQYASAB",
+            "KAlCDLpICXIE2PMEAcgBAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
+            "UgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCAB",
+            "KAlSC2Rlc2NyaXB0aW9uEh4KA2tleRgFIAEoCUIMukgJcgTg8wQByAEBUgNr",
+            "ZXkSmwEKBXJvbGVzGAYgAygLMhcuYXIudjEuUHJlc2VudGF0aW9uUm9sZUJs",
+            "ukhpugFmCidwcmVzZW50YXRpb25fc3RyYXRlZ3kucm9sZXMudW5pcXVlX2tl",
+            "eXMSGHJvbGUga2V5cyBtdXN0IGJlIHVuaXF1ZRohdGhpcy5tYXAocm9sZSwg",
+            "cm9sZS5rZXkpLnVuaXF1ZSgpUgVyb2xlcxK0AQoFcnVsZXMYByADKAsyIS5h",
+            "ci52MS5Bc3Npc3RhbmNlUHJlc2VudGF0aW9uUnVsZUJ7ukh4ugF1CixwcmVz",
+            "ZW50YXRpb25fc3RyYXRlZ3kucnVsZXMudW5pcXVlX3NlbWFudGljcxIdcnVs",
+            "ZSBzZW1hbnRpY3MgbXVzdCBiZSB1bmlxdWUaJnRoaXMubWFwKHJ1bGUsIHJ1",
+            "bGUuc2VtYW50aWMpLnVuaXF1ZSgpUgVydWxlczq8BLpIuAQa9gEKLXByZXNl",
+            "bnRhdGlvbl9zdHJhdGVneS5wcmVzZXRzLnJlZmVyZW5jZV9yb2xlcxI/ZXZl",
+            "cnkgcHJlc2VudGF0aW9uIHByZXNldCBtdXN0IHJlZmVyZW5jZSBhIHJvbGUg",
+            "aW4gdGhlIHN0cmF0ZWd5GoMBdGhpcy5ydWxlcy5hbGwocnVsZSwgcnVsZS5h",
+            "bmNob3JzLmFsbChhbmNob3IsIGFuY2hvci5wcmVzZW50YXRpb25zLmFsbChw",
+            "cmVzZXQsIHByZXNldC5yb2xlX2tleSBpbiB0aGlzLnJvbGVzLm1hcChyb2xl",
+            "LCByb2xlLmtleSkpKSkavAIKOnByZXNlbnRhdGlvbl9zdHJhdGVneS5wcmVz",
+            "ZXRzLnJvbGVzX3N1cHBvcnRfcnVsZV9zZW1hbnRpY3MSQWV2ZXJ5IHJlZmVy",
+            "ZW5jZWQgcm9sZSBtdXN0IGRlY2xhcmUgdGhlIHJ1bGUncyBhc3Npc3RhbmNl",
+            "IHNlbWFudGljGroBdGhpcy5ydWxlcy5hbGwocnVsZSwgcnVsZS5hbmNob3Jz",
+            "LmFsbChhbmNob3IsIGFuY2hvci5wcmVzZW50YXRpb25zLmFsbChwcmVzZXQs",
+            "IHRoaXMucm9sZXMuZmlsdGVyKHJvbGUsIHJvbGUua2V5ID09IHByZXNldC5y",
+            "b2xlX2tleSkuYWxsKHJvbGUsIHJ1bGUuc2VtYW50aWMgaW4gcm9sZS5yZXF1",
+            "aXJlZF9zZW1hbnRpY3MpKSkpIm4KF1ByZXNlbnRhdGlvblN0cmF0ZWd5QWRk",
+            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbiJLChZQ",
+            "cmVzZW50YXRpb25TdHJhdGVnaWVzEjEKBWl0ZW1zGAEgAygLMhsuYXIudjEu",
+            "UHJlc2VudGF0aW9uU3RyYXRlZ3lSBWl0ZW1zKp4BChRQcmVzZW50YXRpb25G",
+            "aWRlbGl0eRIlCiFQUkVTRU5UQVRJT05fRklERUxJVFlfVU5TUEVDSUZJRUQQ",
+            "ABIdChlQUkVTRU5UQVRJT05fRklERUxJVFlfTE9XEAESIAocUFJFU0VOVEFU",
+            "SU9OX0ZJREVMSVRZX01FRElVTRACEh4KGlBSRVNFTlRBVElPTl9GSURFTElU",
+            "WV9ISUdIEANClQEKCWNvbS5hci52MUIZUHJlc2VudGF0aW9uU3RyYXRlZ3lQ",
+            "cm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMv",
+            "YXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFB",
+            "clxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Messages.AR.V1.SemanticSourceReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.SemanticSourceReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.PresentationFidelity), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PropertyValueAssignment), global::Messages.AR.V1.PropertyValueAssignment.Parser, new[]{ "PropertyKey", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PresentationRole), global::Messages.AR.V1.PresentationRole.Parser, new[]{ "Key", "Name", "Description", "RequiredSemantics", "DefaultFeedbackType", "DefaultActionType" }, new[]{ "DefaultFeedbackType", "DefaultActionType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PresentationRole), global::Messages.AR.V1.PresentationRole.Parser, new[]{ "Key", "Name", "Description", "RequiredSemantics", "DefaultFeedbackDefinitionId", "DefaultActionDefinitionId" }, new[]{ "DefaultFeedbackDefinitionId", "DefaultActionDefinitionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PresentationRolePreset), global::Messages.AR.V1.PresentationRolePreset.Parser, new[]{ "RoleKey", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.PresentationFidelityAnchor), global::Messages.AR.V1.PresentationFidelityAnchor.Parser, new[]{ "Fidelity", "TargetCoverage", "Presentations" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.AssistancePresentationRule), global::Messages.AR.V1.AssistancePresentationRule.Parser, new[]{ "Semantic", "Anchors" }, null, null, null, null),
@@ -399,7 +399,6 @@ namespace Messages.AR.V1 {
   {
     private static readonly pb::MessageParser<PresentationRole> _parser = new pb::MessageParser<PresentationRole>(() => new PresentationRole());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PresentationRole> Parser { get { return _parser; } }
@@ -427,13 +426,12 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PresentationRole(PresentationRole other) : this() {
-      _hasBits0 = other._hasBits0;
       key_ = other.key_;
       name_ = other.name_;
       description_ = other.description_;
       requiredSemantics_ = other.requiredSemantics_.Clone();
-      defaultFeedbackType_ = other.defaultFeedbackType_;
-      defaultActionType_ = other.defaultActionType_;
+      defaultFeedbackDefinitionId_ = other.defaultFeedbackDefinitionId_;
+      defaultActionDefinitionId_ = other.defaultActionDefinitionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -487,8 +485,8 @@ namespace Messages.AR.V1 {
     /// <summary>
     /// Assistance semantics that an implementation of this role must support.
     ///
-    /// For Feedback, these are checked against FeedbackInfoMessage.capabilities.
-    /// Action compatibility may initially also depend on ActionType until
+    /// For Feedback, these are checked against FeedbackDefinition.capabilities.
+    /// Action compatibility may initially also depend on ActionDefinition.type until
     /// semantic Action capabilities are introduced.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -497,62 +495,60 @@ namespace Messages.AR.V1 {
       get { return requiredSemantics_; }
     }
 
-    /// <summary>Field number for the "default_feedback_type" field.</summary>
-    public const int DefaultFeedbackTypeFieldNumber = 5;
-    private readonly static global::Messages.AR.V1.FeedbackType DefaultFeedbackTypeDefaultValue = global::Messages.AR.V1.FeedbackType.Unspecified;
+    /// <summary>Field number for the "default_feedback_definition_id" field.</summary>
+    public const int DefaultFeedbackDefinitionIdFieldNumber = 5;
+    private readonly static string DefaultFeedbackDefinitionIdDefaultValue = "";
 
-    private global::Messages.AR.V1.FeedbackType defaultFeedbackType_;
+    private string defaultFeedbackDefinitionId_;
     /// <summary>
     /// Default implementation created by reconciliation when the role has no
     /// compatible explicit binding.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.AR.V1.FeedbackType DefaultFeedbackType {
-      get { if ((_hasBits0 & 1) != 0) { return defaultFeedbackType_; } else { return DefaultFeedbackTypeDefaultValue; } }
+    public string DefaultFeedbackDefinitionId {
+      get { return defaultFeedbackDefinitionId_ ?? DefaultFeedbackDefinitionIdDefaultValue; }
       set {
-        _hasBits0 |= 1;
-        defaultFeedbackType_ = value;
+        defaultFeedbackDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "default_feedback_type" field is set</summary>
+    /// <summary>Gets whether the "default_feedback_definition_id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasDefaultFeedbackType {
-      get { return (_hasBits0 & 1) != 0; }
+    public bool HasDefaultFeedbackDefinitionId {
+      get { return defaultFeedbackDefinitionId_ != null; }
     }
-    /// <summary>Clears the value of the "default_feedback_type" field</summary>
+    /// <summary>Clears the value of the "default_feedback_definition_id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearDefaultFeedbackType() {
-      _hasBits0 &= ~1;
+    public void ClearDefaultFeedbackDefinitionId() {
+      defaultFeedbackDefinitionId_ = null;
     }
 
-    /// <summary>Field number for the "default_action_type" field.</summary>
-    public const int DefaultActionTypeFieldNumber = 6;
-    private readonly static global::Messages.AR.V1.ActionType DefaultActionTypeDefaultValue = global::Messages.AR.V1.ActionType.Unspecified;
+    /// <summary>Field number for the "default_action_definition_id" field.</summary>
+    public const int DefaultActionDefinitionIdFieldNumber = 6;
+    private readonly static string DefaultActionDefinitionIdDefaultValue = "";
 
-    private global::Messages.AR.V1.ActionType defaultActionType_;
+    private string defaultActionDefinitionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.AR.V1.ActionType DefaultActionType {
-      get { if ((_hasBits0 & 2) != 0) { return defaultActionType_; } else { return DefaultActionTypeDefaultValue; } }
+    public string DefaultActionDefinitionId {
+      get { return defaultActionDefinitionId_ ?? DefaultActionDefinitionIdDefaultValue; }
       set {
-        _hasBits0 |= 2;
-        defaultActionType_ = value;
+        defaultActionDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "default_action_type" field is set</summary>
+    /// <summary>Gets whether the "default_action_definition_id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasDefaultActionType {
-      get { return (_hasBits0 & 2) != 0; }
+    public bool HasDefaultActionDefinitionId {
+      get { return defaultActionDefinitionId_ != null; }
     }
-    /// <summary>Clears the value of the "default_action_type" field</summary>
+    /// <summary>Clears the value of the "default_action_definition_id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearDefaultActionType() {
-      _hasBits0 &= ~2;
+    public void ClearDefaultActionDefinitionId() {
+      defaultActionDefinitionId_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -574,8 +570,8 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if(!requiredSemantics_.Equals(other.requiredSemantics_)) return false;
-      if (DefaultFeedbackType != other.DefaultFeedbackType) return false;
-      if (DefaultActionType != other.DefaultActionType) return false;
+      if (DefaultFeedbackDefinitionId != other.DefaultFeedbackDefinitionId) return false;
+      if (DefaultActionDefinitionId != other.DefaultActionDefinitionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -587,8 +583,8 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= requiredSemantics_.GetHashCode();
-      if (HasDefaultFeedbackType) hash ^= DefaultFeedbackType.GetHashCode();
-      if (HasDefaultActionType) hash ^= DefaultActionType.GetHashCode();
+      if (HasDefaultFeedbackDefinitionId) hash ^= DefaultFeedbackDefinitionId.GetHashCode();
+      if (HasDefaultActionDefinitionId) hash ^= DefaultActionDefinitionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -620,13 +616,13 @@ namespace Messages.AR.V1 {
         output.WriteString(Description);
       }
       requiredSemantics_.WriteTo(output, _repeated_requiredSemantics_codec);
-      if (HasDefaultFeedbackType) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) DefaultFeedbackType);
+      if (HasDefaultFeedbackDefinitionId) {
+        output.WriteRawTag(42);
+        output.WriteString(DefaultFeedbackDefinitionId);
       }
-      if (HasDefaultActionType) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DefaultActionType);
+      if (HasDefaultActionDefinitionId) {
+        output.WriteRawTag(50);
+        output.WriteString(DefaultActionDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -651,13 +647,13 @@ namespace Messages.AR.V1 {
         output.WriteString(Description);
       }
       requiredSemantics_.WriteTo(ref output, _repeated_requiredSemantics_codec);
-      if (HasDefaultFeedbackType) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) DefaultFeedbackType);
+      if (HasDefaultFeedbackDefinitionId) {
+        output.WriteRawTag(42);
+        output.WriteString(DefaultFeedbackDefinitionId);
       }
-      if (HasDefaultActionType) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DefaultActionType);
+      if (HasDefaultActionDefinitionId) {
+        output.WriteRawTag(50);
+        output.WriteString(DefaultActionDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -679,11 +675,11 @@ namespace Messages.AR.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       size += requiredSemantics_.CalculateSize(_repeated_requiredSemantics_codec);
-      if (HasDefaultFeedbackType) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DefaultFeedbackType);
+      if (HasDefaultFeedbackDefinitionId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefaultFeedbackDefinitionId);
       }
-      if (HasDefaultActionType) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DefaultActionType);
+      if (HasDefaultActionDefinitionId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefaultActionDefinitionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -707,11 +703,11 @@ namespace Messages.AR.V1 {
         Description = other.Description;
       }
       requiredSemantics_.Add(other.requiredSemantics_);
-      if (other.HasDefaultFeedbackType) {
-        DefaultFeedbackType = other.DefaultFeedbackType;
+      if (other.HasDefaultFeedbackDefinitionId) {
+        DefaultFeedbackDefinitionId = other.DefaultFeedbackDefinitionId;
       }
-      if (other.HasDefaultActionType) {
-        DefaultActionType = other.DefaultActionType;
+      if (other.HasDefaultActionDefinitionId) {
+        DefaultActionDefinitionId = other.DefaultActionDefinitionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -749,12 +745,12 @@ namespace Messages.AR.V1 {
             requiredSemantics_.AddEntriesFrom(input, _repeated_requiredSemantics_codec);
             break;
           }
-          case 40: {
-            DefaultFeedbackType = (global::Messages.AR.V1.FeedbackType) input.ReadEnum();
+          case 42: {
+            DefaultFeedbackDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            DefaultActionType = (global::Messages.AR.V1.ActionType) input.ReadEnum();
+          case 50: {
+            DefaultActionDefinitionId = input.ReadString();
             break;
           }
         }
@@ -793,12 +789,12 @@ namespace Messages.AR.V1 {
             requiredSemantics_.AddEntriesFrom(ref input, _repeated_requiredSemantics_codec);
             break;
           }
-          case 40: {
-            DefaultFeedbackType = (global::Messages.AR.V1.FeedbackType) input.ReadEnum();
+          case 42: {
+            DefaultFeedbackDefinitionId = input.ReadString();
             break;
           }
-          case 48: {
-            DefaultActionType = (global::Messages.AR.V1.ActionType) input.ReadEnum();
+          case 50: {
+            DefaultActionDefinitionId = input.ReadString();
             break;
           }
         }

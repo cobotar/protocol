@@ -47,12 +47,12 @@ ACTION_TYPE_ROBOT_END_COLLABORATE: ActionType
 ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT: ActionType
 
 class ActionMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "eligibility_requirements", "config_id", "provenance")
+    __slots__ = ("id", "name", "icon", "description", "action_definition_id", "eligibility_requirements", "config_id", "provenance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    ACTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     PROVENANCE_FIELD_NUMBER: _ClassVar[int]
@@ -60,11 +60,11 @@ class ActionMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: ActionType
+    action_definition_id: str
     eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
     config_id: str
     provenance: _provenance_pb2.ARContentProvenance
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., action_definition_id: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
 
 class ActionMessages(_message.Message):
     __slots__ = ("items",)
@@ -73,12 +73,12 @@ class ActionMessages(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[ActionMessage, _Mapping]]] = ...) -> None: ...
 
 class ActionAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "robot_property_id", "activating_property_id", "eligibility_requirements")
+    __slots__ = ("config_id", "name", "icon", "description", "action_definition_id", "robot_property_id", "activating_property_id", "eligibility_requirements")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    ACTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     ROBOT_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     ACTIVATING_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
@@ -86,11 +86,11 @@ class ActionAddMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: ActionType
+    action_definition_id: str
     robot_property_id: str
     activating_property_id: str
     eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., robot_property_id: _Optional[str] = ..., activating_property_id: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., action_definition_id: _Optional[str] = ..., robot_property_id: _Optional[str] = ..., activating_property_id: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
 
 class ActionUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "eligibility_requirements", "participation")

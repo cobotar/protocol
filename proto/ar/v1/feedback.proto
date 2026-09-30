@@ -187,9 +187,9 @@ message FeedbackMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  FeedbackType type = 5 [
+  string feedback_definition_id = 5 [ // Pins the exact immutable FeedbackDefinition revision used by this instance.
     (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
+    (buf.validate.field).string.(validation.v1.feedback_definition_id_component) = true
   ];
   string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
   ARContentProvenance provenance = 7 [(buf.validate.field).required = true];
@@ -207,9 +207,9 @@ message FeedbackAddMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  FeedbackType type = 5 [
+  string feedback_definition_id = 5 [
     (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
+    (buf.validate.field).string.(validation.v1.feedback_definition_id_component) = true
   ];
   string robot_property_id = 6 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
   geometry.v1.Anchor anchor = 7;

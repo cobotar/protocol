@@ -1,3 +1,4 @@
+from ar.v1 import definition_status_pb2 as _definition_status_pb2
 from ar.v1 import events_pb2 as _events_pb2
 from ar.v1 import feedback_pb2 as _feedback_pb2
 from ar.v1 import feedback_capability_pb2 as _feedback_capability_pb2
@@ -32,40 +33,46 @@ FEEDBACK_GROUP_VALIDATION: FeedbackGroup
 FEEDBACK_GROUP_ROBOT: FeedbackGroup
 FEEDBACK_GROUP_COLLABORATION: FeedbackGroup
 
-class FeedbackInfoMessage(_message.Message):
-    __slots__ = ("name", "icon", "description", "type", "group", "require_agent", "require_frame", "consumers_required", "consumers_optional", "required_handlers", "emits", "disabled", "features", "capabilities")
+class FeedbackDefinition(_message.Message):
+    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "require_agent", "require_frame", "consumers_required", "consumers_optional", "required_handlers", "emits", "features", "capabilities")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
+    REVISION_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_AGENT_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_FRAME_FIELD_NUMBER: _ClassVar[int]
     CONSUMERS_REQUIRED_FIELD_NUMBER: _ClassVar[int]
     CONSUMERS_OPTIONAL_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_HANDLERS_FIELD_NUMBER: _ClassVar[int]
     EMITS_FIELD_NUMBER: _ClassVar[int]
-    DISABLED_FIELD_NUMBER: _ClassVar[int]
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     CAPABILITIES_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    key: str
     name: str
     icon: str
     description: str
     type: _feedback_pb2.FeedbackType
     group: FeedbackGroup
+    revision: int
+    status: _definition_status_pb2.DefinitionStatus
     require_agent: bool
     require_frame: bool
     consumers_required: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
     consumers_optional: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
     required_handlers: _containers.RepeatedCompositeFieldContainer[_events_pb2.HandlerRequirement]
     emits: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
-    disabled: bool
     features: _containers.RepeatedCompositeFieldContainer[_feedback_features_pb2.FeedbackFeature]
     capabilities: _containers.RepeatedCompositeFieldContainer[_feedback_capability_pb2.FeedbackCapability]
-    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., group: _Optional[_Union[FeedbackGroup, str]] = ..., require_agent: bool = ..., require_frame: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., disabled: bool = ..., features: _Optional[_Iterable[_Union[_feedback_features_pb2.FeedbackFeature, _Mapping]]] = ..., capabilities: _Optional[_Iterable[_Union[_feedback_capability_pb2.FeedbackCapability, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., group: _Optional[_Union[FeedbackGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., require_agent: bool = ..., require_frame: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., features: _Optional[_Iterable[_Union[_feedback_features_pb2.FeedbackFeature, _Mapping]]] = ..., capabilities: _Optional[_Iterable[_Union[_feedback_capability_pb2.FeedbackCapability, _Mapping]]] = ...) -> None: ...
 
-class FeedbackInfoMessages(_message.Message):
-    __slots__ = ("infos",)
-    INFOS_FIELD_NUMBER: _ClassVar[int]
-    infos: _containers.RepeatedCompositeFieldContainer[FeedbackInfoMessage]
-    def __init__(self, infos: _Optional[_Iterable[_Union[FeedbackInfoMessage, _Mapping]]] = ...) -> None: ...
+class FeedbackDefinitions(_message.Message):
+    __slots__ = ("items",)
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[FeedbackDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[FeedbackDefinition, _Mapping]]] = ...) -> None: ...

@@ -49,6 +49,9 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/provenance.proto](#ar_v1_provenance-proto)
     - [ARContentProvenance](#ar-v1-ARContentProvenance)
@@ -89,6 +92,9 @@
   
     - [ActionType](#ar-v1-ActionType)
   
+- [ar/v1/definition_status.proto](#ar_v1_definition_status-proto)
+    - [DefinitionStatus](#ar-v1-DefinitionStatus)
+  
 - [ar/v1/events.proto](#ar_v1_events-proto)
     - [ExchangeSupport](#ar-v1-ExchangeSupport)
     - [ExchangeType](#ar-v1-ExchangeType)
@@ -101,9 +107,9 @@
     - [PlanType](#ar-v1-PlanType)
     - [TelemetryType](#ar-v1-TelemetryType)
   
-- [ar/v1/action_info.proto](#ar_v1_action_info-proto)
-    - [ActionInfoMessage](#ar-v1-ActionInfoMessage)
-    - [ActionInfoMessages](#ar-v1-ActionInfoMessages)
+- [ar/v1/action_definition.proto](#ar_v1_action_definition-proto)
+    - [ActionDefinition](#ar-v1-ActionDefinition)
+    - [ActionDefinitions](#ar-v1-ActionDefinitions)
   
     - [ActionGroup](#ar-v1-ActionGroup)
   
@@ -212,9 +218,9 @@
 - [ar/v1/feedback_features.proto](#ar_v1_feedback_features-proto)
     - [FeedbackFeature](#ar-v1-FeedbackFeature)
   
-- [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
-    - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
-    - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
+- [ar/v1/feedback_definition.proto](#ar_v1_feedback_definition-proto)
+    - [FeedbackDefinition](#ar-v1-FeedbackDefinition)
+    - [FeedbackDefinitions](#ar-v1-FeedbackDefinitions)
   
     - [FeedbackGroup](#ar-v1-FeedbackGroup)
   
@@ -226,9 +232,9 @@
   
     - [FunctionType](#ar-v1-FunctionType)
   
-- [ar/v1/function_info.proto](#ar_v1_function_info-proto)
-    - [FunctionInfoMessage](#ar-v1-FunctionInfoMessage)
-    - [FunctionInfoMessages](#ar-v1-FunctionInfoMessages)
+- [ar/v1/function_definition.proto](#ar_v1_function_definition-proto)
+    - [FunctionDefinition](#ar-v1-FunctionDefinition)
+    - [FunctionDefinitions](#ar-v1-FunctionDefinitions)
   
     - [FunctionGroup](#ar-v1-FunctionGroup)
   
@@ -738,6 +744,7 @@
 ### File-level Extensions
 | Extension | Type | Base | Number | Description |
 | --------- | ---- | ---- | ------ | ----------- |
+| action_definition_id_component | bool | .buf.validate.StringRules | 10045 |  |
 | action_id_component | bool | .buf.validate.StringRules | 10041 |  |
 | actor_assignment_id_component | bool | .buf.validate.StringRules | 100039 |  |
 | actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
@@ -752,8 +759,10 @@
 | container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
 | device_id_component | bool | .buf.validate.StringRules | 100036 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| feedback_definition_id_component | bool | .buf.validate.StringRules | 10046 |  |
 | feedback_id_component | bool | .buf.validate.StringRules | 10040 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| function_definition_id_component | bool | .buf.validate.StringRules | 10047 |  |
 | function_id_component | bool | .buf.validate.StringRules | 10042 |  |
 | image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
 | key_component | bool | .buf.validate.StringRules | 10044 |  |
@@ -1255,7 +1264,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [ActionType](#ar-v1-ActionType) |  |  |
+| action_definition_id | [string](#string) |  |  |
 | robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
 | activating_property_id | [string](#string) |  | Optional (but highly recommended), this should point to a property definition of type BOOL |
 | eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
@@ -1277,7 +1286,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [ActionType](#ar-v1-ActionType) |  |  |
+| action_definition_id | [string](#string) |  |  |
 | eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
 | config_id | [string](#string) |  |  |
 | provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
@@ -1364,6 +1373,39 @@ It will result in AUTHOR/AVAILABLE.
 | ACTION_TYPE_ROBOT_BEGIN_COLLABORATE | 53 | Starts a collaborative robot operation. |
 | ACTION_TYPE_ROBOT_END_COLLABORATE | 54 | Ends a collaborative robot operation. |
 | ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT | 55 | Activates a configured robot input. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_definition_status-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/definition_status.proto
+
+
+ 
+
+
+<a name="ar-v1-DefinitionStatus"></a>
+
+### DefinitionStatus
+Lifecycle of a built-in, system-owned AR content definition.
+
+Definitions are read-only catalog entities. The public protocol deliberately
+exposes no create, update, or delete messages for them.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DEFINITION_STATUS_UNSPECIFIED | 0 |  |
+| DEFINITION_STATUS_ACTIVE | 1 | Available for new instances and supported at runtime. |
+| DEFINITION_STATUS_DEPRECATED | 2 | Retained for existing instances, but hidden from normal new authoring. |
+| DEFINITION_STATUS_DISABLED | 3 | Not available for new instances or runtime execution. |
 
 
  
@@ -1556,47 +1598,51 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
-<a name="ar_v1_action_info-proto"></a>
+<a name="ar_v1_action_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/action_info.proto
+## ar/v1/action_definition.proto
 
 
 
-<a name="ar-v1-ActionInfoMessage"></a>
+<a name="ar-v1-ActionDefinition"></a>
 
-### ActionInfoMessage
-TODO: Rename to ActionDefinition
+### ActionDefinition
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identity of this immutable built-in definition revision. |
+| key | [string](#string) |  | Stable logical identity shared by every revision of this definition. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | group | [ActionGroup](#ar-v1-ActionGroup) |  |  |
+| revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
+| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
 | require_agent | [bool](#bool) |  |  |
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but are not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
 | emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the action publishes |
-| disabled | [bool](#bool) |  |  |
 
 
 
 
 
 
-<a name="ar-v1-ActionInfoMessages"></a>
+<a name="ar-v1-ActionDefinitions"></a>
 
-### ActionInfoMessages
-
+### ActionDefinitions
+The catalog service additionally enforces that revisions sharing a key also
+share a type, and that at most one revision per key/type is ACTIVE.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [ActionInfoMessage](#ar-v1-ActionInfoMessage) | repeated |  |
+| items | [ActionDefinition](#ar-v1-ActionDefinition) | repeated |  |
 
 
 
@@ -2943,7 +2989,7 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| feedback_definition_id | [string](#string) |  |  |
 | robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
 | anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 | link_default_properties | [bool](#bool) |  |  |
@@ -2965,7 +3011,7 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
+| feedback_definition_id | [string](#string) |  |  |
 | config_id | [string](#string) |  |  |
 | provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
 
@@ -3353,33 +3399,36 @@ Feature says what behavior/configuration the implementation exposes.
 
 
 
-<a name="ar_v1_feedback_info-proto"></a>
+<a name="ar_v1_feedback_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/feedback_info.proto
+## ar/v1/feedback_definition.proto
 
 
 
-<a name="ar-v1-FeedbackInfoMessage"></a>
+<a name="ar-v1-FeedbackDefinition"></a>
 
-### FeedbackInfoMessage
-TODO: Rename to FeedbackDefinition
+### FeedbackDefinition
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identity of this immutable built-in definition revision. |
+| key | [string](#string) |  | Stable logical identity shared by every revision of this definition. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | group | [FeedbackGroup](#ar-v1-FeedbackGroup) |  |  |
+| revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
+| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
 | require_agent | [bool](#bool) |  |  |
 | require_frame | [bool](#bool) |  |  |
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the feedback expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the feedback, but not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react) |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the feedback, but are not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
 | emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
-| disabled | [bool](#bool) |  |  |
 | features | [FeedbackFeature](#ar-v1-FeedbackFeature) | repeated | Implementation/configuration features |
 | capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Assistance semantics |
 
@@ -3388,15 +3437,16 @@ TODO: Rename to FeedbackDefinition
 
 
 
-<a name="ar-v1-FeedbackInfoMessages"></a>
+<a name="ar-v1-FeedbackDefinitions"></a>
 
-### FeedbackInfoMessages
-
+### FeedbackDefinitions
+The catalog service additionally enforces that revisions sharing a key also
+share a type, and that at most one revision per key/type is ACTIVE.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage) | repeated |  |
+| items | [FeedbackDefinition](#ar-v1-FeedbackDefinition) | repeated |  |
 
 
 
@@ -3449,7 +3499,7 @@ TODO: Rename to FeedbackDefinition
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [FunctionType](#ar-v1-FunctionType) |  |  |
+| function_definition_id | [string](#string) |  |  |
 
 
 
@@ -3468,7 +3518,7 @@ TODO: Rename to FeedbackDefinition
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| type | [FunctionType](#ar-v1-FunctionType) |  |  |
+| function_definition_id | [string](#string) |  |  |
 | config_id | [string](#string) |  |  |
 | provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
 
@@ -3555,46 +3605,50 @@ TODO: Rename to FeedbackDefinition
 
 
 
-<a name="ar_v1_function_info-proto"></a>
+<a name="ar_v1_function_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/function_info.proto
+## ar/v1/function_definition.proto
 
 
 
-<a name="ar-v1-FunctionInfoMessage"></a>
+<a name="ar-v1-FunctionDefinition"></a>
 
-### FunctionInfoMessage
+### FunctionDefinition
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identity of this immutable built-in definition revision. |
+| key | [string](#string) |  | Stable logical identity shared by every revision of this definition. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FunctionType](#ar-v1-FunctionType) |  |  |
 | group | [FunctionGroup](#ar-v1-FunctionGroup) |  |  |
-| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the action emits these, it expects the environment to react) |
-| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
-| disabled | [bool](#bool) |  |  |
+| revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
+| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
+| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the function expects to receive |
+| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the function, but are not needed to function |
+| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
+| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the function publishes |
 
 
 
 
 
 
-<a name="ar-v1-FunctionInfoMessages"></a>
+<a name="ar-v1-FunctionDefinitions"></a>
 
-### FunctionInfoMessages
-
+### FunctionDefinitions
+The catalog service additionally enforces that revisions sharing a key also
+share a type, and that at most one revision per key/type is ACTIVE.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| infos | [FunctionInfoMessage](#ar-v1-FunctionInfoMessage) | repeated |  |
+| items | [FunctionDefinition](#ar-v1-FunctionDefinition) | repeated |  |
 
 
 
@@ -3701,9 +3755,9 @@ performs that mapping for each ARConfig using the strategy.
 | description | [string](#string) |  |  |
 | required_semantics | [AssistanceSemantic](#ar-v1-AssistanceSemantic) | repeated | Assistance semantics that an implementation of this role must support.
 
-For Feedback, these are checked against FeedbackInfoMessage.capabilities. Action compatibility may initially also depend on ActionType until semantic Action capabilities are introduced. |
-| default_feedback_type | [FeedbackType](#ar-v1-FeedbackType) | optional | Default implementation created by reconciliation when the role has no compatible explicit binding. |
-| default_action_type | [ActionType](#ar-v1-ActionType) | optional |  |
+For Feedback, these are checked against FeedbackDefinition.capabilities. Action compatibility may initially also depend on ActionDefinition.type until semantic Action capabilities are introduced. |
+| default_feedback_definition_id | [string](#string) | optional | Default implementation created by reconciliation when the role has no compatible explicit binding. |
+| default_action_definition_id | [string](#string) | optional |  |
 
 
 

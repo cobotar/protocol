@@ -66,22 +66,22 @@ FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: FunctionType
 FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: FunctionType
 
 class FunctionMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "config_id", "provenance")
+    __slots__ = ("id", "name", "icon", "description", "function_definition_id", "config_id", "provenance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    FUNCTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     PROVENANCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    type: FunctionType
+    function_definition_id: str
     config_id: str
     provenance: _provenance_pb2.ARContentProvenance
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FunctionType, str]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., function_definition_id: _Optional[str] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
 
 class FunctionMessages(_message.Message):
     __slots__ = ("items",)
@@ -90,18 +90,18 @@ class FunctionMessages(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[FunctionMessage, _Mapping]]] = ...) -> None: ...
 
 class FunctionAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type")
+    __slots__ = ("config_id", "name", "icon", "description", "function_definition_id")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    FUNCTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
     icon: str
     description: str
-    type: FunctionType
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FunctionType, str]] = ...) -> None: ...
+    function_definition_id: str
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., function_definition_id: _Optional[str] = ...) -> None: ...
 
 class FunctionUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description")

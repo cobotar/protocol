@@ -26,51 +26,51 @@ namespace Messages.AR.V1 {
           string.Concat(
             "ChRhci92MS9mdW5jdGlvbi5wcm90bxIFYXIudjEaFmFyL3YxL3Byb3ZlbmFu",
             "Y2UucHJvdG8aG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxordmFsaWRh",
-            "dGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKpAgoPRnVu",
+            "dGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byK3AgoPRnVu",
             "Y3Rpb25NZXNzYWdlEhwKAmlkGAEgASgJQgy6SAlyBNDzBAHIAQFSAmlkEh0K",
             "BG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRp",
-            "Y29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI0CgR0eXBl",
-            "GAUgASgOMhMuYXIudjEuRnVuY3Rpb25UeXBlQgu6SAiCAQIQAcgBAVIEdHlw",
-            "ZRIpCgljb25maWdfaWQYBiABKAlCDLpICXIEkPEEAcgBAVIIY29uZmlnSWQS",
-            "QgoKcHJvdmVuYW5jZRgHIAEoCzIaLmFyLnYxLkFSQ29udGVudFByb3ZlbmFu",
-            "Y2VCBrpIA8gBAVIKcHJvdmVuYW5jZSJAChBGdW5jdGlvbk1lc3NhZ2VzEiwK",
-            "BWl0ZW1zGAEgAygLMhYuYXIudjEuRnVuY3Rpb25NZXNzYWdlUgVpdGVtcyLK",
-            "AQoSRnVuY3Rpb25BZGRNZXNzYWdlEikKCWNvbmZpZ19pZBgBIAEoCUIMukgJ",
-            "cgSQ8QQByAEBUghjb25maWdJZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
-            "BG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEo",
-            "CVILZGVzY3JpcHRpb24SNAoEdHlwZRgFIAEoDjITLmFyLnYxLkZ1bmN0aW9u",
-            "VHlwZUILukgIggECEAHIAQFSBHR5cGUihwEKFUZ1bmN0aW9uVXBkYXRlTWVz",
-            "c2FnZRIZCgJpZBgBIAEoCUIJukgGcgTQ8wQBUgJpZBIdCgRuYW1lGAIgASgJ",
-            "Qgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNj",
-            "cmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24qvgYKDEZ1bmN0aW9uVHlwZRId",
-            "ChlGVU5DVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASGwoXRlVOQ1RJT05fVFlQ",
-            "RV9QUk9YSU1JVFkQChIcChhGVU5DVElPTl9UWVBFX1NUQVRJT05BUlkQCxIX",
-            "ChNGVU5DVElPTl9UWVBFX1RJTUVSEBUSFwoTRlVOQ1RJT05fVFlQRV9ERUxB",
-            "WRAWEhkKFUZVTkNUSU9OX1RZUEVfVElNRU9VVBAXEhoKFkZVTkNUSU9OX1RZ",
-            "UEVfREVCT1VOQ0UQGBIeChpGVU5DVElPTl9UWVBFX0VMQVBTRURfVElNRRAZ",
-            "EhoKFkZVTkNUSU9OX1RZUEVfU0NIRURVTEUQGhIfChtGVU5DVElPTl9UWVBF",
-            "X1BBUlRfRk9SX1RBU0sQKBIhCh1GVU5DVElPTl9UWVBFX0lTX1BBUlRfT0Zf",
-            "VFlQRRAyEicKI0ZVTkNUSU9OX1RZUEVfQ0xPU0VTVF9XT1JLQUJMRV9UQVNL",
-            "EDMSIQodRlVOQ1RJT05fVFlQRV9TVFJJTkdfRk9STUFUXzEQPBIhCh1GVU5D",
-            "VElPTl9UWVBFX1NUUklOR19GT1JNQVRfMhA9Eh4KGkZVTkNUSU9OX1RZUEVf",
-            "U1RSSU5HX0VNUFRZED4SHAoYRlVOQ1RJT05fVFlQRV9JTlRfRk9STUFUEEYS",
-            "HQoZRlVOQ1RJT05fVFlQRV9JTlRfQ09NUEFSRRBHEh4KGkZVTkNUSU9OX1RZ",
-            "UEVfRkxPQVRfRk9STUFUEFASHwobRlVOQ1RJT05fVFlQRV9GTE9BVF9DT01Q",
-            "QVJFEFESHwobRlVOQ1RJT05fVFlQRV9ET1VCTEVfRk9STUFUEFoSIAocRlVO",
-            "Q1RJT05fVFlQRV9ET1VCTEVfQ09NUEFSRRBbEhUKEUZVTkNUSU9OX1RZUEVf",
-            "QU5EEGQSFAoQRlVOQ1RJT05fVFlQRV9PUhBlEhUKEUZVTkNUSU9OX1RZUEVf",
-            "Tk9UEGYSKgomRlVOQ1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfSU5Q",
-            "VVQQeBIrCidGVU5DVElPTl9UWVBFX1JPQk9UX0NPTkZJR1VSQUJMRV9PVVRQ",
-            "VVQQeUKJAQoJY29tLmFyLnYxQg1GdW5jdGlvblByb3RvUAFaL2dpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhY",
-            "qgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh",
-            "6gIGQXI6OlYxYgZwcm90bzM="));
+            "Y29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhJCChZmdW5j",
+            "dGlvbl9kZWZpbml0aW9uX2lkGAUgASgJQgy6SAlyBPjzBAHIAQFSFGZ1bmN0",
+            "aW9uRGVmaW5pdGlvbklkEikKCWNvbmZpZ19pZBgGIAEoCUIMukgJcgSQ8QQB",
+            "yAEBUghjb25maWdJZBJCCgpwcm92ZW5hbmNlGAcgASgLMhouYXIudjEuQVJD",
+            "b250ZW50UHJvdmVuYW5jZUIGukgDyAEBUgpwcm92ZW5hbmNlIkAKEEZ1bmN0",
+            "aW9uTWVzc2FnZXMSLAoFaXRlbXMYASADKAsyFi5hci52MS5GdW5jdGlvbk1l",
+            "c3NhZ2VSBWl0ZW1zItgBChJGdW5jdGlvbkFkZE1lc3NhZ2USKQoJY29uZmln",
+            "X2lkGAEgASgJQgy6SAlyBJDxBAHIAQFSCGNvbmZpZ0lkEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhJCChZmdW5jdGlvbl9kZWZp",
+            "bml0aW9uX2lkGAUgASgJQgy6SAlyBPjzBAHIAQFSFGZ1bmN0aW9uRGVmaW5p",
+            "dGlvbklkIocBChVGdW5jdGlvblVwZGF0ZU1lc3NhZ2USGQoCaWQYASABKAlC",
+            "CbpIBnIE0PMEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
+            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
+            "c2NyaXB0aW9uKr4GCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05fVFlQRV9V",
+            "TlNQRUNJRklFRBAAEhsKF0ZVTkNUSU9OX1RZUEVfUFJPWElNSVRZEAoSHAoY",
+            "RlVOQ1RJT05fVFlQRV9TVEFUSU9OQVJZEAsSFwoTRlVOQ1RJT05fVFlQRV9U",
+            "SU1FUhAVEhcKE0ZVTkNUSU9OX1RZUEVfREVMQVkQFhIZChVGVU5DVElPTl9U",
+            "WVBFX1RJTUVPVVQQFxIaChZGVU5DVElPTl9UWVBFX0RFQk9VTkNFEBgSHgoa",
+            "RlVOQ1RJT05fVFlQRV9FTEFQU0VEX1RJTUUQGRIaChZGVU5DVElPTl9UWVBF",
+            "X1NDSEVEVUxFEBoSHwobRlVOQ1RJT05fVFlQRV9QQVJUX0ZPUl9UQVNLECgS",
+            "IQodRlVOQ1RJT05fVFlQRV9JU19QQVJUX09GX1RZUEUQMhInCiNGVU5DVElP",
+            "Tl9UWVBFX0NMT1NFU1RfV09SS0FCTEVfVEFTSxAzEiEKHUZVTkNUSU9OX1RZ",
+            "UEVfU1RSSU5HX0ZPUk1BVF8xEDwSIQodRlVOQ1RJT05fVFlQRV9TVFJJTkdf",
+            "Rk9STUFUXzIQPRIeChpGVU5DVElPTl9UWVBFX1NUUklOR19FTVBUWRA+EhwK",
+            "GEZVTkNUSU9OX1RZUEVfSU5UX0ZPUk1BVBBGEh0KGUZVTkNUSU9OX1RZUEVf",
+            "SU5UX0NPTVBBUkUQRxIeChpGVU5DVElPTl9UWVBFX0ZMT0FUX0ZPUk1BVBBQ",
+            "Eh8KG0ZVTkNUSU9OX1RZUEVfRkxPQVRfQ09NUEFSRRBREh8KG0ZVTkNUSU9O",
+            "X1RZUEVfRE9VQkxFX0ZPUk1BVBBaEiAKHEZVTkNUSU9OX1RZUEVfRE9VQkxF",
+            "X0NPTVBBUkUQWxIVChFGVU5DVElPTl9UWVBFX0FORBBkEhQKEEZVTkNUSU9O",
+            "X1RZUEVfT1IQZRIVChFGVU5DVElPTl9UWVBFX05PVBBmEioKJkZVTkNUSU9O",
+            "X1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX0lOUFVUEHgSKwonRlVOQ1RJT05f",
+            "VFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfT1VUUFVUEHlCiQEKCWNvbS5hci52",
+            "MUINRnVuY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYx",
+            "ygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.ProvenanceReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FunctionType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionMessage), global::Messages.AR.V1.FunctionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ConfigId", "Provenance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionMessage), global::Messages.AR.V1.FunctionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "FunctionDefinitionId", "ConfigId", "Provenance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionMessages), global::Messages.AR.V1.FunctionMessages.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionAddMessage), global::Messages.AR.V1.FunctionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionAddMessage), global::Messages.AR.V1.FunctionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "FunctionDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionUpdateMessage), global::Messages.AR.V1.FunctionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null)
           }));
     }
@@ -224,7 +224,7 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      type_ = other.type_;
+      functionDefinitionId_ = other.functionDefinitionId_;
       configId_ = other.configId_;
       provenance_ = other.provenance_ != null ? other.provenance_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -284,15 +284,15 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 5;
-    private global::Messages.AR.V1.FunctionType type_ = global::Messages.AR.V1.FunctionType.Unspecified;
+    /// <summary>Field number for the "function_definition_id" field.</summary>
+    public const int FunctionDefinitionIdFieldNumber = 5;
+    private string functionDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.AR.V1.FunctionType Type {
-      get { return type_; }
+    public string FunctionDefinitionId {
+      get { return functionDefinitionId_; }
       set {
-        type_ = value;
+        functionDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -339,7 +339,7 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if (Type != other.Type) return false;
+      if (FunctionDefinitionId != other.FunctionDefinitionId) return false;
       if (ConfigId != other.ConfigId) return false;
       if (!object.Equals(Provenance, other.Provenance)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -353,7 +353,7 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) hash ^= Type.GetHashCode();
+      if (FunctionDefinitionId.Length != 0) hash ^= FunctionDefinitionId.GetHashCode();
       if (ConfigId.Length != 0) hash ^= ConfigId.GetHashCode();
       if (provenance_ != null) hash ^= Provenance.GetHashCode();
       if (_unknownFields != null) {
@@ -390,9 +390,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FunctionDefinitionId);
       }
       if (ConfigId.Length != 0) {
         output.WriteRawTag(50);
@@ -428,9 +428,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FunctionDefinitionId);
       }
       if (ConfigId.Length != 0) {
         output.WriteRawTag(50);
@@ -462,8 +462,8 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FunctionDefinitionId);
       }
       if (ConfigId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ConfigId);
@@ -495,8 +495,8 @@ namespace Messages.AR.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        Type = other.Type;
+      if (other.FunctionDefinitionId.Length != 0) {
+        FunctionDefinitionId = other.FunctionDefinitionId;
       }
       if (other.ConfigId.Length != 0) {
         ConfigId = other.ConfigId;
@@ -542,8 +542,8 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Type = (global::Messages.AR.V1.FunctionType) input.ReadEnum();
+          case 42: {
+            FunctionDefinitionId = input.ReadString();
             break;
           }
           case 50: {
@@ -592,8 +592,8 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Type = (global::Messages.AR.V1.FunctionType) input.ReadEnum();
+          case 42: {
+            FunctionDefinitionId = input.ReadString();
             break;
           }
           case 50: {
@@ -840,7 +840,7 @@ namespace Messages.AR.V1 {
       name_ = other.name_;
       icon_ = other.icon_;
       description_ = other.description_;
-      type_ = other.type_;
+      functionDefinitionId_ = other.functionDefinitionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -898,15 +898,15 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 5;
-    private global::Messages.AR.V1.FunctionType type_ = global::Messages.AR.V1.FunctionType.Unspecified;
+    /// <summary>Field number for the "function_definition_id" field.</summary>
+    public const int FunctionDefinitionIdFieldNumber = 5;
+    private string functionDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.AR.V1.FunctionType Type {
-      get { return type_; }
+    public string FunctionDefinitionId {
+      get { return functionDefinitionId_; }
       set {
-        type_ = value;
+        functionDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -929,7 +929,7 @@ namespace Messages.AR.V1 {
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
-      if (Type != other.Type) return false;
+      if (FunctionDefinitionId != other.FunctionDefinitionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -941,7 +941,7 @@ namespace Messages.AR.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) hash ^= Type.GetHashCode();
+      if (FunctionDefinitionId.Length != 0) hash ^= FunctionDefinitionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -976,9 +976,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FunctionDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1006,9 +1006,9 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FunctionDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1032,8 +1032,8 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      if (FunctionDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FunctionDefinitionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1059,8 +1059,8 @@ namespace Messages.AR.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Type != global::Messages.AR.V1.FunctionType.Unspecified) {
-        Type = other.Type;
+      if (other.FunctionDefinitionId.Length != 0) {
+        FunctionDefinitionId = other.FunctionDefinitionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1097,8 +1097,8 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Type = (global::Messages.AR.V1.FunctionType) input.ReadEnum();
+          case 42: {
+            FunctionDefinitionId = input.ReadString();
             break;
           }
         }
@@ -1136,8 +1136,8 @@ namespace Messages.AR.V1 {
             Description = input.ReadString();
             break;
           }
-          case 40: {
-            Type = (global::Messages.AR.V1.FunctionType) input.ReadEnum();
+          case 42: {
+            FunctionDefinitionId = input.ReadString();
             break;
           }
         }

@@ -71,9 +71,9 @@ message ActionMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ActionType type = 5 [
+  string action_definition_id = 5 [ // Pins the exact immutable ActionDefinition revision used by this instance.
     (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
+    (buf.validate.field).string.(validation.v1.action_definition_id_component) = true
   ];
   repeated capability.v1.SkillRequirement eligibility_requirements = 7;
   string config_id = 8 [
@@ -95,9 +95,9 @@ message ActionAddMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  ActionType type = 5 [
+  string action_definition_id = 5 [
     (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
+    (buf.validate.field).string.(validation.v1.action_definition_id_component) = true
   ];
   string robot_property_id = 6 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
   string activating_property_id = 7 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // Optional (but highly recommended), this should point to a property definition of type BOOL

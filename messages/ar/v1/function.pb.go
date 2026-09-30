@@ -167,16 +167,16 @@ func (FunctionType) EnumDescriptor() ([]byte, []int) {
 }
 
 type FunctionMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          FunctionType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
-	ConfigId      string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Provenance    *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	FunctionDefinitionId string                 `protobuf:"bytes,5,opt,name=function_definition_id,json=functionDefinitionId,proto3" json:"function_definition_id,omitempty"`
+	ConfigId             string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Provenance           *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *FunctionMessage) Reset() {
@@ -237,11 +237,11 @@ func (x *FunctionMessage) GetDescription() string {
 	return ""
 }
 
-func (x *FunctionMessage) GetType() FunctionType {
+func (x *FunctionMessage) GetFunctionDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.FunctionDefinitionId
 	}
-	return FunctionType_FUNCTION_TYPE_UNSPECIFIED
+	return ""
 }
 
 func (x *FunctionMessage) GetConfigId() string {
@@ -303,14 +303,14 @@ func (x *FunctionMessages) GetItems() []*FunctionMessage {
 }
 
 type FunctionAddMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ConfigId      string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          FunctionType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	ConfigId             string                 `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	FunctionDefinitionId string                 `protobuf:"bytes,5,opt,name=function_definition_id,json=functionDefinitionId,proto3" json:"function_definition_id,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *FunctionAddMessage) Reset() {
@@ -371,11 +371,11 @@ func (x *FunctionAddMessage) GetDescription() string {
 	return ""
 }
 
-func (x *FunctionAddMessage) GetType() FunctionType {
+func (x *FunctionAddMessage) GetFunctionDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.FunctionDefinitionId
 	}
-	return FunctionType_FUNCTION_TYPE_UNSPECIFIED
+	return ""
 }
 
 type FunctionUpdateMessage struct {
@@ -450,25 +450,25 @@ var File_ar_v1_function_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa9\x02\n" +
+	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x02\n" +
 	"\x0fFunctionMessage\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12)\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
+	"\x16function_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x14functionDefinitionId\x12)\n" +
 	"\tconfig_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
 	"\n" +
 	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"provenance\"@\n" +
 	"\x10FunctionMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xca\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xd8\x01\n" +
 	"\x12FunctionAddMessage\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\x87\x01\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
+	"\x16function_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x14functionDefinitionId\"\x87\x01\n" +
 	"\x15FunctionUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -527,15 +527,13 @@ var file_ar_v1_function_proto_goTypes = []any{
 	(*ARContentProvenance)(nil),   // 5: ar.v1.ARContentProvenance
 }
 var file_ar_v1_function_proto_depIdxs = []int32{
-	0, // 0: ar.v1.FunctionMessage.type:type_name -> ar.v1.FunctionType
-	5, // 1: ar.v1.FunctionMessage.provenance:type_name -> ar.v1.ARContentProvenance
-	1, // 2: ar.v1.FunctionMessages.items:type_name -> ar.v1.FunctionMessage
-	0, // 3: ar.v1.FunctionAddMessage.type:type_name -> ar.v1.FunctionType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 0: ar.v1.FunctionMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 1: ar.v1.FunctionMessages.items:type_name -> ar.v1.FunctionMessage
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_function_proto_init() }

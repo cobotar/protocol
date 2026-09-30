@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ar.v1;
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// Lifecycle of a built-in, system-owned AR content definition.
+//
+// Definitions are read-only catalog entities. The public protocol deliberately
+// exposes no create, update, or delete messages for them.
+enum DefinitionStatus {
+  DEFINITION_STATUS_UNSPECIFIED = 0;
+
+  // Available for new instances and supported at runtime.
+  DEFINITION_STATUS_ACTIVE = 1;
+
+  // Retained for existing instances, but hidden from normal new authoring.
+  DEFINITION_STATUS_DEPRECATED = 2;
+
+  // Not available for new instances or runtime execution.
+  DEFINITION_STATUS_DISABLED = 3;
+}

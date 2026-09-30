@@ -382,6 +382,30 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10044,opt,name=key_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10045,
+		Name:          "validation.v1.action_definition_id_component",
+		Tag:           "varint,10045,opt,name=action_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10046,
+		Name:          "validation.v1.feedback_definition_id_component",
+		Tag:           "varint,10046,opt,name=feedback_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10047,
+		Name:          "validation.v1.function_definition_id_component",
+		Tag:           "varint,10047,opt,name=function_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -476,6 +500,12 @@ var (
 	E_PresentationStrategyIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[43]
 	// optional bool key_component = 10044;
 	E_KeyComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[44]
+	// optional bool action_definition_id_component = 10045;
+	E_ActionDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[45]
+	// optional bool feedback_definition_id_component = 10046;
+	E_FeedbackDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[46]
+	// optional bool function_definition_id_component = 10047;
+	E_FunctionDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[47]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -611,13 +641,22 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1astring.action_id_component\x12$this does not seem to be a action id\x1a*(this == '' || this.startsWith('action-'))R\x11actionIdComponent:\xc9\x01\n" +
 	"\x15function_id_component\x12\x19.buf.validate.StringRules\x18\xbaN \x01(\bBy\xc2Hv\n" +
 	"t\n" +
-	"\x1cstring.function_id_component\x12&this does not seem to be a function id\x1a,(this == '' || this.startsWith('function-'))R\x13functionIdComponent:\x83\x02\n" +
-	"\"presentation_strategy_id_component\x12\x19.buf.validate.StringRules\x18\xbbN \x01(\bB\x99\x01\xc2H\x95\x01\n" +
-	"\x92\x01\n" +
-	")string.presentation_strategy_id_component\x123this does not seem to be a presentation-strategy id\x1a0(this == '' || this.startsWith('presentation-'))R\x1fpresentationStrategyIdComponent:\x9f\x02\n" +
+	"\x1cstring.function_id_component\x12&this does not seem to be a function id\x1a,(this == '' || this.startsWith('function-'))R\x13functionIdComponent:\x8c\x02\n" +
+	"\"presentation_strategy_id_component\x12\x19.buf.validate.StringRules\x18\xbbN \x01(\bB\xa2\x01\xc2H\x9e\x01\n" +
+	"\x9b\x01\n" +
+	")string.presentation_strategy_id_component\x123this does not seem to be a presentation-strategy id\x1a9(this == '' || this.startsWith('presentation_strategy-'))R\x1fpresentationStrategyIdComponent:\x9f\x02\n" +
 	"\rkey_component\x12\x19.buf.validate.StringRules\x18\xbcN \x01(\bB\xdd\x01\xc2H\xd9\x01\n" +
 	"\xd6\x01\n" +
-	"\x14string.key_component\x12rKey must be 1 to 64 characters and contain only lowercase letters, digits, and underscores, starting with a letter\x1aJthis.size() >= 1 && this.size() <= 64 && this.matches('^[a-z][a-z0-9_]*$')R\fkeyComponentB\xb5\x01\n" +
+	"\x14string.key_component\x12rKey must be 1 to 64 characters and contain only lowercase letters, digits, and underscores, starting with a letter\x1aJthis.size() >= 1 && this.size() <= 64 && this.matches('^[a-z][a-z0-9_]*$')R\fkeyComponent:\xf9\x01\n" +
+	"\x1eaction_definition_id_component\x12\x19.buf.validate.StringRules\x18\xbdN \x01(\bB\x97\x01\xc2H\x93\x01\n" +
+	"\x90\x01\n" +
+	"%string.action_definition_id_component\x120this does not seem to be an action definition id\x1a5(this == '' || this.startsWith('action_definition-'))R\x1bactionDefinitionIdComponent:\x82\x02\n" +
+	" feedback_definition_id_component\x12\x19.buf.validate.StringRules\x18\xbeN \x01(\bB\x9c\x01\xc2H\x98\x01\n" +
+	"\x95\x01\n" +
+	"'string.feedback_definition_id_component\x121this does not seem to be a feedback definition id\x1a7(this == '' || this.startsWith('feedback_definition-'))R\x1dfeedbackDefinitionIdComponent:\x82\x02\n" +
+	" function_definition_id_component\x12\x19.buf.validate.StringRules\x18\xbfN \x01(\bB\x9c\x01\xc2H\x98\x01\n" +
+	"\x95\x01\n" +
+	"'string.function_definition_id_component\x121this does not seem to be a function definition id\x1a7(this == '' || this.startsWith('function_definition-'))R\x1dfunctionDefinitionIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -669,10 +708,13 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 42: validation.v1.function_id_component:extendee -> buf.validate.StringRules
 	0,  // 43: validation.v1.presentation_strategy_id_component:extendee -> buf.validate.StringRules
 	0,  // 44: validation.v1.key_component:extendee -> buf.validate.StringRules
-	45, // [45:45] is the sub-list for method output_type
-	45, // [45:45] is the sub-list for method input_type
-	45, // [45:45] is the sub-list for extension type_name
-	0,  // [0:45] is the sub-list for extension extendee
+	0,  // 45: validation.v1.action_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 46: validation.v1.feedback_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 47: validation.v1.function_definition_id_component:extendee -> buf.validate.StringRules
+	48, // [48:48] is the sub-list for method output_type
+	48, // [48:48] is the sub-list for method input_type
+	48, // [48:48] is the sub-list for extension type_name
+	0,  // [0:48] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -688,7 +730,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 45,
+			NumExtensions: 48,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

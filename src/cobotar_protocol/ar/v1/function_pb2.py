@@ -27,7 +27,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61r/v1/function.proto\x12\x05\x61r.v1\x1a\x16\x61r/v1/provenance.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa9\x02\n\x0f\x46unctionMessage\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xd0\xf3\x04\x01\xc8\x01\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x34\n\x04type\x18\x05 \x01(\x0e\x32\x13.ar.v1.FunctionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12)\n\tconfig_id\x18\x06 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x42\n\nprovenance\x18\x07 \x01(\x0b\x32\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\nprovenance\"@\n\x10\x46unctionMessages\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x16.ar.v1.FunctionMessageR\x05items\"\xca\x01\n\x12\x46unctionAddMessage\x12)\n\tconfig_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x34\n\x04type\x18\x05 \x01(\x0e\x32\x13.ar.v1.FunctionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\"\x87\x01\n\x15\x46unctionUpdateMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription*\xbe\x06\n\x0c\x46unctionType\x12\x1d\n\x19\x46UNCTION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x46UNCTION_TYPE_PROXIMITY\x10\n\x12\x1c\n\x18\x46UNCTION_TYPE_STATIONARY\x10\x0b\x12\x17\n\x13\x46UNCTION_TYPE_TIMER\x10\x15\x12\x17\n\x13\x46UNCTION_TYPE_DELAY\x10\x16\x12\x19\n\x15\x46UNCTION_TYPE_TIMEOUT\x10\x17\x12\x1a\n\x16\x46UNCTION_TYPE_DEBOUNCE\x10\x18\x12\x1e\n\x1a\x46UNCTION_TYPE_ELAPSED_TIME\x10\x19\x12\x1a\n\x16\x46UNCTION_TYPE_SCHEDULE\x10\x1a\x12\x1f\n\x1b\x46UNCTION_TYPE_PART_FOR_TASK\x10(\x12!\n\x1d\x46UNCTION_TYPE_IS_PART_OF_TYPE\x10\x32\x12\'\n#FUNCTION_TYPE_CLOSEST_WORKABLE_TASK\x10\x33\x12!\n\x1d\x46UNCTION_TYPE_STRING_FORMAT_1\x10<\x12!\n\x1d\x46UNCTION_TYPE_STRING_FORMAT_2\x10=\x12\x1e\n\x1a\x46UNCTION_TYPE_STRING_EMPTY\x10>\x12\x1c\n\x18\x46UNCTION_TYPE_INT_FORMAT\x10\x46\x12\x1d\n\x19\x46UNCTION_TYPE_INT_COMPARE\x10G\x12\x1e\n\x1a\x46UNCTION_TYPE_FLOAT_FORMAT\x10P\x12\x1f\n\x1b\x46UNCTION_TYPE_FLOAT_COMPARE\x10Q\x12\x1f\n\x1b\x46UNCTION_TYPE_DOUBLE_FORMAT\x10Z\x12 \n\x1c\x46UNCTION_TYPE_DOUBLE_COMPARE\x10[\x12\x15\n\x11\x46UNCTION_TYPE_AND\x10\x64\x12\x14\n\x10\x46UNCTION_TYPE_OR\x10\x65\x12\x15\n\x11\x46UNCTION_TYPE_NOT\x10\x66\x12*\n&FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10x\x12+\n\'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10yB\x89\x01\n\tcom.ar.v1B\rFunctionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61r/v1/function.proto\x12\x05\x61r.v1\x1a\x16\x61r/v1/provenance.proto\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x02\n\x0f\x46unctionMessage\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xd0\xf3\x04\x01\xc8\x01\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x42\n\x16\x66unction_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xf8\xf3\x04\x01\xc8\x01\x01R\x14\x66unctionDefinitionId\x12)\n\tconfig_id\x18\x06 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x42\n\nprovenance\x18\x07 \x01(\x0b\x32\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\nprovenance\"@\n\x10\x46unctionMessages\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x16.ar.v1.FunctionMessageR\x05items\"\xd8\x01\n\x12\x46unctionAddMessage\x12)\n\tconfig_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x42\n\x16\x66unction_definition_id\x18\x05 \x01(\tB\x0c\xbaH\tr\x04\xf8\xf3\x04\x01\xc8\x01\x01R\x14\x66unctionDefinitionId\"\x87\x01\n\x15\x46unctionUpdateMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription*\xbe\x06\n\x0c\x46unctionType\x12\x1d\n\x19\x46UNCTION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x46UNCTION_TYPE_PROXIMITY\x10\n\x12\x1c\n\x18\x46UNCTION_TYPE_STATIONARY\x10\x0b\x12\x17\n\x13\x46UNCTION_TYPE_TIMER\x10\x15\x12\x17\n\x13\x46UNCTION_TYPE_DELAY\x10\x16\x12\x19\n\x15\x46UNCTION_TYPE_TIMEOUT\x10\x17\x12\x1a\n\x16\x46UNCTION_TYPE_DEBOUNCE\x10\x18\x12\x1e\n\x1a\x46UNCTION_TYPE_ELAPSED_TIME\x10\x19\x12\x1a\n\x16\x46UNCTION_TYPE_SCHEDULE\x10\x1a\x12\x1f\n\x1b\x46UNCTION_TYPE_PART_FOR_TASK\x10(\x12!\n\x1d\x46UNCTION_TYPE_IS_PART_OF_TYPE\x10\x32\x12\'\n#FUNCTION_TYPE_CLOSEST_WORKABLE_TASK\x10\x33\x12!\n\x1d\x46UNCTION_TYPE_STRING_FORMAT_1\x10<\x12!\n\x1d\x46UNCTION_TYPE_STRING_FORMAT_2\x10=\x12\x1e\n\x1a\x46UNCTION_TYPE_STRING_EMPTY\x10>\x12\x1c\n\x18\x46UNCTION_TYPE_INT_FORMAT\x10\x46\x12\x1d\n\x19\x46UNCTION_TYPE_INT_COMPARE\x10G\x12\x1e\n\x1a\x46UNCTION_TYPE_FLOAT_FORMAT\x10P\x12\x1f\n\x1b\x46UNCTION_TYPE_FLOAT_COMPARE\x10Q\x12\x1f\n\x1b\x46UNCTION_TYPE_DOUBLE_FORMAT\x10Z\x12 \n\x1c\x46UNCTION_TYPE_DOUBLE_COMPARE\x10[\x12\x15\n\x11\x46UNCTION_TYPE_AND\x10\x64\x12\x14\n\x10\x46UNCTION_TYPE_OR\x10\x65\x12\x15\n\x11\x46UNCTION_TYPE_NOT\x10\x66\x12*\n&FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10x\x12+\n\'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10yB\x89\x01\n\tcom.ar.v1B\rFunctionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,8 +39,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FUNCTIONMESSAGE'].fields_by_name['id']._serialized_options = b'\272H\tr\004\320\363\004\001\310\001\001'
   _globals['_FUNCTIONMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_FUNCTIONMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_FUNCTIONMESSAGE'].fields_by_name['type']._loaded_options = None
-  _globals['_FUNCTIONMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_FUNCTIONMESSAGE'].fields_by_name['function_definition_id']._loaded_options = None
+  _globals['_FUNCTIONMESSAGE'].fields_by_name['function_definition_id']._serialized_options = b'\272H\tr\004\370\363\004\001\310\001\001'
   _globals['_FUNCTIONMESSAGE'].fields_by_name['config_id']._loaded_options = None
   _globals['_FUNCTIONMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\tr\004\220\361\004\001\310\001\001'
   _globals['_FUNCTIONMESSAGE'].fields_by_name['provenance']._loaded_options = None
@@ -49,20 +49,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FUNCTIONADDMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\tr\004\220\361\004\001\310\001\001'
   _globals['_FUNCTIONADDMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_FUNCTIONADDMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_FUNCTIONADDMESSAGE'].fields_by_name['type']._loaded_options = None
-  _globals['_FUNCTIONADDMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
+  _globals['_FUNCTIONADDMESSAGE'].fields_by_name['function_definition_id']._loaded_options = None
+  _globals['_FUNCTIONADDMESSAGE'].fields_by_name['function_definition_id']._serialized_options = b'\272H\tr\004\370\363\004\001\310\001\001'
   _globals['_FUNCTIONUPDATEMESSAGE'].fields_by_name['id']._loaded_options = None
   _globals['_FUNCTIONUPDATEMESSAGE'].fields_by_name['id']._serialized_options = b'\272H\006r\004\320\363\004\001'
   _globals['_FUNCTIONUPDATEMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_FUNCTIONUPDATEMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_FUNCTIONTYPE']._serialized_start=839
-  _globals['_FUNCTIONTYPE']._serialized_end=1669
+  _globals['_FUNCTIONTYPE']._serialized_start=867
+  _globals['_FUNCTIONTYPE']._serialized_end=1697
   _globals['_FUNCTIONMESSAGE']._serialized_start=130
-  _globals['_FUNCTIONMESSAGE']._serialized_end=427
-  _globals['_FUNCTIONMESSAGES']._serialized_start=429
-  _globals['_FUNCTIONMESSAGES']._serialized_end=493
-  _globals['_FUNCTIONADDMESSAGE']._serialized_start=496
-  _globals['_FUNCTIONADDMESSAGE']._serialized_end=698
-  _globals['_FUNCTIONUPDATEMESSAGE']._serialized_start=701
-  _globals['_FUNCTIONUPDATEMESSAGE']._serialized_end=836
+  _globals['_FUNCTIONMESSAGE']._serialized_end=441
+  _globals['_FUNCTIONMESSAGES']._serialized_start=443
+  _globals['_FUNCTIONMESSAGES']._serialized_end=507
+  _globals['_FUNCTIONADDMESSAGE']._serialized_start=510
+  _globals['_FUNCTIONADDMESSAGE']._serialized_end=726
+  _globals['_FUNCTIONUPDATEMESSAGE']._serialized_start=729
+  _globals['_FUNCTIONUPDATEMESSAGE']._serialized_end=864
 # @@protoc_insertion_point(module_scope)

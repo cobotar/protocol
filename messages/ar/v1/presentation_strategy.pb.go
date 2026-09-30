@@ -152,16 +152,16 @@ type PresentationRole struct {
 	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	// Assistance semantics that an implementation of this role must support.
 	//
-	// For Feedback, these are checked against FeedbackInfoMessage.capabilities.
-	// Action compatibility may initially also depend on ActionType until
+	// For Feedback, these are checked against FeedbackDefinition.capabilities.
+	// Action compatibility may initially also depend on ActionDefinition.type until
 	// semantic Action capabilities are introduced.
 	RequiredSemantics []AssistanceSemantic `protobuf:"varint,4,rep,packed,name=required_semantics,json=requiredSemantics,proto3,enum=ar.v1.AssistanceSemantic" json:"required_semantics,omitempty"`
 	// Default implementation created by reconciliation when the role has no
 	// compatible explicit binding.
-	DefaultFeedbackType *FeedbackType `protobuf:"varint,5,opt,name=default_feedback_type,json=defaultFeedbackType,proto3,enum=ar.v1.FeedbackType,oneof" json:"default_feedback_type,omitempty"`
-	DefaultActionType   *ActionType   `protobuf:"varint,6,opt,name=default_action_type,json=defaultActionType,proto3,enum=ar.v1.ActionType,oneof" json:"default_action_type,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	DefaultFeedbackDefinitionId *string `protobuf:"bytes,5,opt,name=default_feedback_definition_id,json=defaultFeedbackDefinitionId,proto3,oneof" json:"default_feedback_definition_id,omitempty"`
+	DefaultActionDefinitionId   *string `protobuf:"bytes,6,opt,name=default_action_definition_id,json=defaultActionDefinitionId,proto3,oneof" json:"default_action_definition_id,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
 }
 
 func (x *PresentationRole) Reset() {
@@ -222,18 +222,18 @@ func (x *PresentationRole) GetRequiredSemantics() []AssistanceSemantic {
 	return nil
 }
 
-func (x *PresentationRole) GetDefaultFeedbackType() FeedbackType {
-	if x != nil && x.DefaultFeedbackType != nil {
-		return *x.DefaultFeedbackType
+func (x *PresentationRole) GetDefaultFeedbackDefinitionId() string {
+	if x != nil && x.DefaultFeedbackDefinitionId != nil {
+		return *x.DefaultFeedbackDefinitionId
 	}
-	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
+	return ""
 }
 
-func (x *PresentationRole) GetDefaultActionType() ActionType {
-	if x != nil && x.DefaultActionType != nil {
-		return *x.DefaultActionType
+func (x *PresentationRole) GetDefaultActionDefinitionId() string {
+	if x != nil && x.DefaultActionDefinitionId != nil {
+		return *x.DefaultActionDefinitionId
 	}
-	return ActionType_ACTION_TYPE_UNSPECIFIED
+	return ""
 }
 
 // Configures one strategy role at a particular fidelity anchor.
@@ -629,23 +629,21 @@ var File_ar_v1_presentation_strategy_proto protoreflect.FileDescriptor
 
 const file_ar_v1_presentation_strategy_proto_rawDesc = "" +
 	"\n" +
-	"!ar/v1/presentation_strategy.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x1bar/v1/semantic_source.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n" +
+	"!ar/v1/presentation_strategy.proto\x12\x05ar.v1\x1a\x1bar/v1/semantic_source.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x82\x01\n" +
 	"\x17PropertyValueAssignment\x12/\n" +
 	"\fproperty_key\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\vpropertyKey\x126\n" +
-	"\x05value\x18\x02 \x01(\v2\x18.common.v1.PropertyValueB\x06\xbaH\x03\xc8\x01\x01R\x05value\"\xe5\x03\n" +
+	"\x05value\x18\x02 \x01(\v2\x18.common.v1.PropertyValueB\x06\xbaH\x03\xc8\x01\x01R\x05value\"\x85\x04\n" +
 	"\x10PresentationRole\x12\x1e\n" +
 	"\x03key\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12[\n" +
-	"\x12required_semantics\x18\x04 \x03(\x0e2\x19.ar.v1.AssistanceSemanticB\x11\xbaH\x0e\x92\x01\v\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x11requiredSemantics\x12X\n" +
-	"\x15default_feedback_type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\n" +
-	"\xbaH\a\x82\x01\x04\x10\x01 \x00H\x00R\x13defaultFeedbackType\x88\x01\x01\x12R\n" +
-	"\x13default_action_type\x18\x06 \x01(\x0e2\x11.ar.v1.ActionTypeB\n" +
-	"\xbaH\a\x82\x01\x04\x10\x01 \x00H\x01R\x11defaultActionType\x88\x01\x01:3\xbaH0\".\n" +
-	"\x15default_feedback_type\n" +
-	"\x13default_action_type\x10\x01B\x18\n" +
-	"\x16_default_feedback_typeB\x16\n" +
-	"\x14_default_action_type\"\x99\x02\n" +
+	"\x12required_semantics\x18\x04 \x03(\x0e2\x19.ar.v1.AssistanceSemanticB\x11\xbaH\x0e\x92\x01\v\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x11requiredSemantics\x12U\n" +
+	"\x1edefault_feedback_definition_id\x18\x05 \x01(\tB\v\xbaH\br\x06\xf0\xf3\x04\x01\x10\x01H\x00R\x1bdefaultFeedbackDefinitionId\x88\x01\x01\x12Q\n" +
+	"\x1cdefault_action_definition_id\x18\x06 \x01(\tB\v\xbaH\br\x06\xe8\xf3\x04\x01\x10\x01H\x01R\x19defaultActionDefinitionId\x88\x01\x01:E\xbaHB\"@\n" +
+	"\x1edefault_feedback_definition_id\n" +
+	"\x1cdefault_action_definition_id\x10\x01B!\n" +
+	"\x1f_default_feedback_definition_idB\x1f\n" +
+	"\x1d_default_action_definition_id\"\x99\x02\n" +
 	"\x16PresentationRolePreset\x12'\n" +
 	"\brole_key\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\aroleKey\x12\xd5\x01\n" +
 	"\n" +
@@ -712,27 +710,23 @@ var file_ar_v1_presentation_strategy_proto_goTypes = []any{
 	(*PresentationStrategies)(nil),     // 8: ar.v1.PresentationStrategies
 	(*v1.PropertyValue)(nil),           // 9: common.v1.PropertyValue
 	(AssistanceSemantic)(0),            // 10: ar.v1.AssistanceSemantic
-	(FeedbackType)(0),                  // 11: ar.v1.FeedbackType
-	(ActionType)(0),                    // 12: ar.v1.ActionType
 }
 var file_ar_v1_presentation_strategy_proto_depIdxs = []int32{
 	9,  // 0: ar.v1.PropertyValueAssignment.value:type_name -> common.v1.PropertyValue
 	10, // 1: ar.v1.PresentationRole.required_semantics:type_name -> ar.v1.AssistanceSemantic
-	11, // 2: ar.v1.PresentationRole.default_feedback_type:type_name -> ar.v1.FeedbackType
-	12, // 3: ar.v1.PresentationRole.default_action_type:type_name -> ar.v1.ActionType
-	1,  // 4: ar.v1.PresentationRolePreset.properties:type_name -> ar.v1.PropertyValueAssignment
-	0,  // 5: ar.v1.PresentationFidelityAnchor.fidelity:type_name -> ar.v1.PresentationFidelity
-	3,  // 6: ar.v1.PresentationFidelityAnchor.presentations:type_name -> ar.v1.PresentationRolePreset
-	10, // 7: ar.v1.AssistancePresentationRule.semantic:type_name -> ar.v1.AssistanceSemantic
-	4,  // 8: ar.v1.AssistancePresentationRule.anchors:type_name -> ar.v1.PresentationFidelityAnchor
-	2,  // 9: ar.v1.PresentationStrategy.roles:type_name -> ar.v1.PresentationRole
-	5,  // 10: ar.v1.PresentationStrategy.rules:type_name -> ar.v1.AssistancePresentationRule
-	6,  // 11: ar.v1.PresentationStrategies.items:type_name -> ar.v1.PresentationStrategy
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	1,  // 2: ar.v1.PresentationRolePreset.properties:type_name -> ar.v1.PropertyValueAssignment
+	0,  // 3: ar.v1.PresentationFidelityAnchor.fidelity:type_name -> ar.v1.PresentationFidelity
+	3,  // 4: ar.v1.PresentationFidelityAnchor.presentations:type_name -> ar.v1.PresentationRolePreset
+	10, // 5: ar.v1.AssistancePresentationRule.semantic:type_name -> ar.v1.AssistanceSemantic
+	4,  // 6: ar.v1.AssistancePresentationRule.anchors:type_name -> ar.v1.PresentationFidelityAnchor
+	2,  // 7: ar.v1.PresentationStrategy.roles:type_name -> ar.v1.PresentationRole
+	5,  // 8: ar.v1.PresentationStrategy.rules:type_name -> ar.v1.AssistancePresentationRule
+	6,  // 9: ar.v1.PresentationStrategies.items:type_name -> ar.v1.PresentationStrategy
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_presentation_strategy_proto_init() }
@@ -740,8 +734,6 @@ func file_ar_v1_presentation_strategy_proto_init() {
 	if File_ar_v1_presentation_strategy_proto != nil {
 		return
 	}
-	file_ar_v1_action_proto_init()
-	file_ar_v1_feedback_proto_init()
 	file_ar_v1_semantic_source_proto_init()
 	file_ar_v1_presentation_strategy_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}

@@ -133,7 +133,7 @@ type ActionMessage struct {
 	Name                    string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                    ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	ActionDefinitionId      string                 `protobuf:"bytes,5,opt,name=action_definition_id,json=actionDefinitionId,proto3" json:"action_definition_id,omitempty"`
 	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,7,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
 	ConfigId                string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 	Provenance              *ARContentProvenance   `protobuf:"bytes,9,opt,name=provenance,proto3" json:"provenance,omitempty"`
@@ -199,11 +199,11 @@ func (x *ActionMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ActionMessage) GetType() ActionType {
+func (x *ActionMessage) GetActionDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.ActionDefinitionId
 	}
-	return ActionType_ACTION_TYPE_UNSPECIFIED
+	return ""
 }
 
 func (x *ActionMessage) GetEligibilityRequirements() []*v1.SkillRequirement {
@@ -277,7 +277,7 @@ type ActionAddMessage struct {
 	Name                    string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                    ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
+	ActionDefinitionId      string                 `protobuf:"bytes,5,opt,name=action_definition_id,json=actionDefinitionId,proto3" json:"action_definition_id,omitempty"`
 	RobotPropertyId         string                 `protobuf:"bytes,6,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"`                // If required, this should point to a property definition of type ROBOT
 	ActivatingPropertyId    string                 `protobuf:"bytes,7,opt,name=activating_property_id,json=activatingPropertyId,proto3" json:"activating_property_id,omitempty"` // Optional (but highly recommended), this should point to a property definition of type BOOL
 	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,8,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
@@ -343,11 +343,11 @@ func (x *ActionAddMessage) GetDescription() string {
 	return ""
 }
 
-func (x *ActionAddMessage) GetType() ActionType {
+func (x *ActionAddMessage) GetActionDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.ActionDefinitionId
 	}
-	return ActionType_ACTION_TYPE_UNSPECIFIED
+	return ""
 }
 
 func (x *ActionAddMessage) GetRobotPropertyId() string {
@@ -506,26 +506,26 @@ var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfe\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8a\x03\n" +
 	"\rActionMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12Z\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
+	"\x14action_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe8\xf3\x04\x01R\x12actionDefinitionId\x12Z\n" +
 	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12)\n" +
 	"\tconfig_id\x18\b \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
 	"\n" +
 	"provenance\x18\t \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"provenance\"<\n" +
 	"\x0eActionMessages\x12*\n" +
-	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x9a\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\xa6\x03\n" +
 	"\x10ActionAddMessage\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
+	"\x14action_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe8\xf3\x04\x01R\x12actionDefinitionId\x125\n" +
 	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n" +
 	"\x16activating_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14activatingPropertyId\x12Z\n" +
 	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xb1\x02\n" +
@@ -586,19 +586,17 @@ var file_ar_v1_action_proto_goTypes = []any{
 	(AdaptiveParticipation)(0),     // 8: ar.v1.AdaptiveParticipation
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
-	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	6, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	7, // 2: ar.v1.ActionMessage.provenance:type_name -> ar.v1.ARContentProvenance
-	1, // 3: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
-	0, // 4: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
-	6, // 5: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	6, // 6: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	8, // 7: ar.v1.ActionUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	6, // 0: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	7, // 1: ar.v1.ActionMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
+	6, // 3: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	6, // 4: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	8, // 5: ar.v1.ActionUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }

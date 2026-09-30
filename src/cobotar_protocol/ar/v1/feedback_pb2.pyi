@@ -85,22 +85,22 @@ FEEDBACK_TYPE_ZONE: FeedbackType
 FEEDBACK_TYPE_PLAY_SOUND: FeedbackType
 
 class FeedbackMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "config_id", "provenance")
+    __slots__ = ("id", "name", "icon", "description", "feedback_definition_id", "config_id", "provenance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    FEEDBACK_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     PROVENANCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
-    type: FeedbackType
+    feedback_definition_id: str
     config_id: str
     provenance: _provenance_pb2.ARContentProvenance
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., feedback_definition_id: _Optional[str] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
 
 class FeedbackMessages(_message.Message):
     __slots__ = ("feedbacks",)
@@ -109,12 +109,12 @@ class FeedbackMessages(_message.Message):
     def __init__(self, feedbacks: _Optional[_Iterable[_Union[FeedbackMessage, _Mapping]]] = ...) -> None: ...
 
 class FeedbackAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "type", "robot_property_id", "anchor", "link_default_properties")
+    __slots__ = ("config_id", "name", "icon", "description", "feedback_definition_id", "robot_property_id", "anchor", "link_default_properties")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    FEEDBACK_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     ROBOT_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     ANCHOR_FIELD_NUMBER: _ClassVar[int]
     LINK_DEFAULT_PROPERTIES_FIELD_NUMBER: _ClassVar[int]
@@ -122,11 +122,11 @@ class FeedbackAddMessage(_message.Message):
     name: str
     icon: str
     description: str
-    type: FeedbackType
+    feedback_definition_id: str
     robot_property_id: str
     anchor: _anchor_pb2.Anchor
     link_default_properties: bool
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FeedbackType, str]] = ..., robot_property_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., link_default_properties: bool = ...) -> None: ...
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., feedback_definition_id: _Optional[str] = ..., robot_property_id: _Optional[str] = ..., anchor: _Optional[_Union[_anchor_pb2.Anchor, _Mapping]] = ..., link_default_properties: bool = ...) -> None: ...
 
 class FeedbackUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "participation")

@@ -1,4 +1,5 @@
 from ar.v1 import action_pb2 as _action_pb2
+from ar.v1 import definition_status_pb2 as _definition_status_pb2
 from ar.v1 import events_pb2 as _events_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -22,34 +23,40 @@ ACTION_GROUP_GENERAL: ActionGroup
 ACTION_GROUP_ROBOT: ActionGroup
 ACTION_GROUP_TASK: ActionGroup
 
-class ActionInfoMessage(_message.Message):
-    __slots__ = ("name", "icon", "description", "type", "group", "require_agent", "consumers_required", "consumers_optional", "required_handlers", "emits", "disabled")
+class ActionDefinition(_message.Message):
+    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "require_agent", "consumers_required", "consumers_optional", "required_handlers", "emits")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
+    REVISION_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     REQUIRE_AGENT_FIELD_NUMBER: _ClassVar[int]
     CONSUMERS_REQUIRED_FIELD_NUMBER: _ClassVar[int]
     CONSUMERS_OPTIONAL_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_HANDLERS_FIELD_NUMBER: _ClassVar[int]
     EMITS_FIELD_NUMBER: _ClassVar[int]
-    DISABLED_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    key: str
     name: str
     icon: str
     description: str
     type: _action_pb2.ActionType
     group: ActionGroup
+    revision: int
+    status: _definition_status_pb2.DefinitionStatus
     require_agent: bool
     consumers_required: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
     consumers_optional: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
     required_handlers: _containers.RepeatedCompositeFieldContainer[_events_pb2.HandlerRequirement]
     emits: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
-    disabled: bool
-    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_action_pb2.ActionType, str]] = ..., group: _Optional[_Union[ActionGroup, str]] = ..., require_agent: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., disabled: bool = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_action_pb2.ActionType, str]] = ..., group: _Optional[_Union[ActionGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., require_agent: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ...) -> None: ...
 
-class ActionInfoMessages(_message.Message):
+class ActionDefinitions(_message.Message):
     __slots__ = ("items",)
     ITEMS_FIELD_NUMBER: _ClassVar[int]
-    items: _containers.RepeatedCompositeFieldContainer[ActionInfoMessage]
-    def __init__(self, items: _Optional[_Iterable[_Union[ActionInfoMessage, _Mapping]]] = ...) -> None: ...
+    items: _containers.RepeatedCompositeFieldContainer[ActionDefinition]
+    def __init__(self, items: _Optional[_Iterable[_Union[ActionDefinition, _Mapping]]] = ...) -> None: ...

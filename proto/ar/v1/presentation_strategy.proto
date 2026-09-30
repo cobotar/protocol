@@ -1,8 +1,6 @@
 syntax = "proto3";
 package ar.v1;
 
-import "ar/v1/action.proto";
-import "ar/v1/feedback.proto";
 import "ar/v1/semantic_source.proto";
 import "buf/validate/validate.proto";
 import "common/v1/property.proto";
@@ -39,8 +37,8 @@ message PropertyValueAssignment {
 message PresentationRole {
   option (buf.validate.message).oneof = {
     fields: [
-      "default_feedback_type",
-      "default_action_type"
+      "default_feedback_definition_id",
+      "default_action_definition_id"
     ]
     required: true
   };
@@ -56,8 +54,8 @@ message PresentationRole {
 
   // Assistance semantics that an implementation of this role must support.
   //
-  // For Feedback, these are checked against FeedbackInfoMessage.capabilities.
-  // Action compatibility may initially also depend on ActionType until
+  // For Feedback, these are checked against FeedbackDefinition.capabilities.
+  // Action compatibility may initially also depend on ActionDefinition.type until
   // semantic Action capabilities are introduced.
   repeated AssistanceSemantic required_semantics = 4 [
     (buf.validate.field).repeated.unique = true,
@@ -69,15 +67,15 @@ message PresentationRole {
 
   // Default implementation created by reconciliation when the role has no
   // compatible explicit binding.
-  optional FeedbackType default_feedback_type = 5 [(buf.validate.field).enum = {
-    not_in: [0]
-    defined_only: true
-  }];
+  optional string default_feedback_definition_id = 5 [ // Pins an exact immutable FeedbackDefinition revision.
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.(validation.v1.feedback_definition_id_component) = true
+  ];
 
-  optional ActionType default_action_type = 6 [(buf.validate.field).enum = {
-    not_in: [0]
-    defined_only: true
-  }];
+  optional string default_action_definition_id = 6 [ // Pins an exact immutable ActionDefinition revision.
+    (buf.validate.field).string.min_len = 1,
+    (buf.validate.field).string.(validation.v1.action_definition_id_component) = true
+  ];
 }
 
 enum PresentationFidelity {

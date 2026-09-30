@@ -241,16 +241,16 @@ func (FeedbackType) EnumDescriptor() ([]byte, []int) {
 }
 
 type FeedbackMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type          FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	ConfigId      string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	Provenance    *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	FeedbackDefinitionId string                 `protobuf:"bytes,5,opt,name=feedback_definition_id,json=feedbackDefinitionId,proto3" json:"feedback_definition_id,omitempty"`
+	ConfigId             string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Provenance           *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *FeedbackMessage) Reset() {
@@ -311,11 +311,11 @@ func (x *FeedbackMessage) GetDescription() string {
 	return ""
 }
 
-func (x *FeedbackMessage) GetType() FeedbackType {
+func (x *FeedbackMessage) GetFeedbackDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.FeedbackDefinitionId
 	}
-	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
+	return ""
 }
 
 func (x *FeedbackMessage) GetConfigId() string {
@@ -382,7 +382,7 @@ type FeedbackAddMessage struct {
 	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type                  FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	FeedbackDefinitionId  string                 `protobuf:"bytes,5,opt,name=feedback_definition_id,json=feedbackDefinitionId,proto3" json:"feedback_definition_id,omitempty"`
 	RobotPropertyId       string                 `protobuf:"bytes,6,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
 	Anchor                *v1.Anchor             `protobuf:"bytes,7,opt,name=anchor,proto3" json:"anchor,omitempty"`
 	LinkDefaultProperties bool                   `protobuf:"varint,8,opt,name=link_default_properties,json=linkDefaultProperties,proto3" json:"link_default_properties,omitempty"`
@@ -448,11 +448,11 @@ func (x *FeedbackAddMessage) GetDescription() string {
 	return ""
 }
 
-func (x *FeedbackAddMessage) GetType() FeedbackType {
+func (x *FeedbackAddMessage) GetFeedbackDefinitionId() string {
 	if x != nil {
-		return x.Type
+		return x.FeedbackDefinitionId
 	}
-	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
+	return ""
 }
 
 func (x *FeedbackAddMessage) GetRobotPropertyId() string {
@@ -603,25 +603,25 @@ var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa3\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb1\x02\n" +
 	"\x0fFeedbackMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12&\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
+	"\x16feedback_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x14feedbackDefinitionId\x12&\n" +
 	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
 	"\n" +
 	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"provenance\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xe6\x02\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xf4\x02\n" +
 	"\x12FeedbackAddMessage\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
+	"\x16feedback_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x14feedbackDefinitionId\x125\n" +
 	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12+\n" +
 	"\x06anchor\x18\a \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x126\n" +
 	"\x17link_default_properties\x18\b \x01(\bR\x15linkDefaultProperties\"\xd7\x01\n" +
@@ -699,17 +699,15 @@ var file_ar_v1_feedback_proto_goTypes = []any{
 	(AdaptiveParticipation)(0),       // 8: ar.v1.AdaptiveParticipation
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
-	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
-	6, // 1: ar.v1.FeedbackMessage.provenance:type_name -> ar.v1.ARContentProvenance
-	1, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
-	0, // 3: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
-	7, // 4: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
-	8, // 5: ar.v1.FeedbackUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	6, // 0: ar.v1.FeedbackMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 1: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
+	7, // 2: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
+	8, // 3: ar.v1.FeedbackUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }

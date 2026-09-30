@@ -1,0 +1,101 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/definition_status.proto";
+import "ar/v1/events.proto";
+import "ar/v1/feedback.proto";
+import "ar/v1/feedback_capability.proto";
+import "ar/v1/feedback_features.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum FeedbackGroup {
+  FEEDBACK_GROUP_UNSPECIFIED = 0;
+
+  // Generic UI and feedback elements not tied to a specific semantic domain.
+  FEEDBACK_GROUP_GENERAL = 1;
+
+  // Spatial guidance and task-localized visualizations.
+  FEEDBACK_GROUP_SPATIAL = 2;
+
+  // Resource guidance (parts, tools, consumables, assets).
+  FEEDBACK_GROUP_RESOURCE = 3;
+
+  // Process flow, task lists, instructions, dependencies, and status.
+  FEEDBACK_GROUP_PROCESS = 4;
+
+  // Validation and verification guidance.
+  FEEDBACK_GROUP_VALIDATION = 5;
+
+  // Robot awareness and robot intent visualizations.
+  FEEDBACK_GROUP_ROBOT = 6;
+
+  // Human-robot collaboration semantics.
+  FEEDBACK_GROUP_COLLABORATION = 7;
+}
+
+message FeedbackDefinition {
+  // Stable identity of this immutable built-in definition revision.
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.feedback_definition_id_component) = true
+  ];
+  // Stable logical identity shared by every revision of this definition.
+  string key = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 4;
+  string description = 5;
+  FeedbackType type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  FeedbackGroup group = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // Monotonic revision of the externally visible definition contract.
+  uint64 revision = 8 [(buf.validate.field).uint64.gte = 1];
+  DefinitionStatus status = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  bool require_agent = 10;
+  bool require_frame = 11;
+  repeated ExchangeType consumers_required = 12; // Inputs the feedback expects to receive
+  repeated ExchangeType consumers_optional = 13; // Inputs that will enhance the feedback, but are not needed to function
+  repeated HandlerRequirement required_handlers = 14; // Events that MUST have at least one handler somewhere else in the system.
+  repeated ExchangeType emits = 15; // Outputs the feedback publishes
+  repeated FeedbackFeature features = 16 [(buf.validate.field).cel = {
+    id: "feedback_definition.features.unique_keys"
+    message: "feature keys must be unique"
+    expression: "this.map(feature, feature.key).unique()"
+  }]; // Implementation/configuration features
+  repeated FeedbackCapability capabilities = 17 [(buf.validate.field).cel = {
+    id: "feedback_definition.capabilities.unique_semantics"
+    message: "capability semantics must be unique"
+    expression: "this.map(capability, capability.semantic).unique()"
+  }]; // Assistance semantics
+}
+
+// The catalog service additionally enforces that revisions sharing a key also
+// share a type, and that at most one revision per key/type is ACTIVE.
+message FeedbackDefinitions {
+  repeated FeedbackDefinition items = 1 [
+    (buf.validate.field).cel = {
+      id: "feedback_definitions.items.unique_ids"
+      message: "feedback definition ids must be unique"
+      expression: "this.map(definition, definition.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "feedback_definitions.items.unique_key_revisions"
+      message: "feedback definition key and revision pairs must be unique"
+      expression: "this.all(definition, this.filter(candidate, candidate.key == definition.key && candidate.revision == definition.revision).size() == 1)"
+    }
+  ];
+}

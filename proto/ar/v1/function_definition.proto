@@ -1,0 +1,93 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/definition_status.proto";
+import "ar/v1/events.proto";
+import "ar/v1/function.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum FunctionGroup {
+  FUNCTION_GROUP_UNSPECIFIED = 0;
+
+  // Functions that do not yet fit a more specific domain.
+  FUNCTION_GROUP_GENERAL = 1;
+
+  // Functions that read or evaluate robot-specific information.
+  FUNCTION_GROUP_ROBOT = 2;
+
+  // Functions that resolve or evaluate task and process information.
+  FUNCTION_GROUP_TASK = 3;
+
+  // Functions that evaluate the surrounding work environment.
+  FUNCTION_GROUP_ENVIRONMENT = 4;
+
+  // Functions that resolve or evaluate operator-specific information.
+  FUNCTION_GROUP_OPERATOR = 5;
+
+  // Functions that evaluate positions, movement, distance, or geometry.
+  FUNCTION_GROUP_SPATIAL = 6;
+
+  // Boolean operations and predicates.
+  FUNCTION_GROUP_LOGIC = 7;
+
+  // Formatting, conversion, parsing, and other value transformations.
+  FUNCTION_GROUP_DATA = 8;
+
+  // Functions related to durations, timing, and schedules.
+  FUNCTION_GROUP_TEMPORAL = 9;
+}
+
+message FunctionDefinition {
+  // Stable identity of this immutable built-in definition revision.
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.function_definition_id_component) = true
+  ];
+  // Stable logical identity shared by every revision of this definition.
+  string key = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 4;
+  string description = 5;
+  FunctionType type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  FunctionGroup group = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // Monotonic revision of the externally visible definition contract.
+  uint64 revision = 8 [(buf.validate.field).uint64.gte = 1];
+  DefinitionStatus status = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated ExchangeType consumers_required = 10; // Inputs the function expects to receive
+  repeated ExchangeType consumers_optional = 11; // Inputs that will enhance the function, but are not needed to function
+  repeated HandlerRequirement required_handlers = 12; // Events that MUST have at least one handler somewhere else in the system.
+  repeated ExchangeType emits = 13; // Outputs the function publishes
+}
+
+// The catalog service additionally enforces that revisions sharing a key also
+// share a type, and that at most one revision per key/type is ACTIVE.
+message FunctionDefinitions {
+  repeated FunctionDefinition items = 1 [
+    (buf.validate.field).cel = {
+      id: "function_definitions.items.unique_ids"
+      message: "function definition ids must be unique"
+      expression: "this.map(definition, definition.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "function_definitions.items.unique_key_revisions"
+      message: "function definition key and revision pairs must be unique"
+      expression: "this.all(definition, this.filter(candidate, candidate.key == definition.key && candidate.revision == definition.revision).size() == 1)"
+    }
+  ];
+}

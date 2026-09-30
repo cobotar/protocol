@@ -1,5 +1,3 @@
-from ar.v1 import action_pb2 as _action_pb2
-from ar.v1 import feedback_pb2 as _feedback_pb2
 from ar.v1 import semantic_source_pb2 as _semantic_source_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import property_pb2 as _property_pb2
@@ -33,20 +31,20 @@ class PropertyValueAssignment(_message.Message):
     def __init__(self, property_key: _Optional[str] = ..., value: _Optional[_Union[_property_pb2.PropertyValue, _Mapping]] = ...) -> None: ...
 
 class PresentationRole(_message.Message):
-    __slots__ = ("key", "name", "description", "required_semantics", "default_feedback_type", "default_action_type")
+    __slots__ = ("key", "name", "description", "required_semantics", "default_feedback_definition_id", "default_action_definition_id")
     KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_SEMANTICS_FIELD_NUMBER: _ClassVar[int]
-    DEFAULT_FEEDBACK_TYPE_FIELD_NUMBER: _ClassVar[int]
-    DEFAULT_ACTION_TYPE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_FEEDBACK_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_ACTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     key: str
     name: str
     description: str
     required_semantics: _containers.RepeatedScalarFieldContainer[_semantic_source_pb2.AssistanceSemantic]
-    default_feedback_type: _feedback_pb2.FeedbackType
-    default_action_type: _action_pb2.ActionType
-    def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., required_semantics: _Optional[_Iterable[_Union[_semantic_source_pb2.AssistanceSemantic, str]]] = ..., default_feedback_type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., default_action_type: _Optional[_Union[_action_pb2.ActionType, str]] = ...) -> None: ...
+    default_feedback_definition_id: str
+    default_action_definition_id: str
+    def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., required_semantics: _Optional[_Iterable[_Union[_semantic_source_pb2.AssistanceSemantic, str]]] = ..., default_feedback_definition_id: _Optional[str] = ..., default_action_definition_id: _Optional[str] = ...) -> None: ...
 
 class PresentationRolePreset(_message.Message):
     __slots__ = ("role_key", "properties")

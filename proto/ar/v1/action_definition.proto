@@ -1,0 +1,70 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/action.proto";
+import "ar/v1/definition_status.proto";
+import "ar/v1/events.proto";
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum ActionGroup {
+  ACTION_GROUP_UNSPECIFIED = 0;
+  ACTION_GROUP_GENERAL = 1;
+  ACTION_GROUP_ROBOT = 2;
+  ACTION_GROUP_TASK = 3;
+}
+
+message ActionDefinition {
+  // Stable identity of this immutable built-in definition revision.
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.action_definition_id_component) = true
+  ];
+  // Stable logical identity shared by every revision of this definition.
+  string key = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 3 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 4;
+  string description = 5;
+  ActionType type = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ActionGroup group = 7 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // Monotonic revision of the externally visible definition contract.
+  uint64 revision = 8 [(buf.validate.field).uint64.gte = 1];
+  DefinitionStatus status = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  bool require_agent = 10;
+  repeated ExchangeType consumers_required = 11; // Inputs the action expects to receive
+  repeated ExchangeType consumers_optional = 12; // Inputs that will enhance the action, but are not needed to function
+  repeated HandlerRequirement required_handlers = 13; // Events that MUST have at least one handler somewhere else in the system.
+  repeated ExchangeType emits = 14; // Outputs the action publishes
+}
+
+// The catalog service additionally enforces that revisions sharing a key also
+// share a type, and that at most one revision per key/type is ACTIVE.
+message ActionDefinitions {
+  repeated ActionDefinition items = 1 [
+    (buf.validate.field).cel = {
+      id: "action_definitions.items.unique_ids"
+      message: "action definition ids must be unique"
+      expression: "this.map(definition, definition.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "action_definitions.items.unique_key_revisions"
+      message: "action definition key and revision pairs must be unique"
+      expression: "this.all(definition, this.filter(candidate, candidate.key == definition.key && candidate.revision == definition.revision).size() == 1)"
+    }
+  ];
+}
